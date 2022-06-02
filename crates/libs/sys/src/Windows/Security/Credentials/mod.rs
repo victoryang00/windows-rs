@@ -1,6 +1,187 @@
 #[cfg(feature = "Security_Credentials_UI")]
 pub mod UI;
-pub type IWebAccount = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct ICredentialFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CreatePasswordCredential: unsafe extern "system" fn(this: *mut *mut Self, resource: ::windows_sys::core::HSTRING, username: ::windows_sys::core::HSTRING, password: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IKeyCredential {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Name: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Storage_Streams")]
+    pub RetrievePublicKeyWithDefaultBlobType: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Storage_Streams"))]
+    RetrievePublicKeyWithDefaultBlobType: usize,
+    #[cfg(all(feature = "Security_Cryptography_Core", feature = "Storage_Streams"))]
+    pub RetrievePublicKeyWithBlobType: unsafe extern "system" fn(this: *mut *mut Self, blobtype: super::Cryptography::Core::CryptographicPublicKeyBlobType, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Security_Cryptography_Core", feature = "Storage_Streams")))]
+    RetrievePublicKeyWithBlobType: usize,
+    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    pub RequestSignAsync: unsafe extern "system" fn(this: *mut *mut Self, data: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    RequestSignAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub GetAttestationAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    GetAttestationAsync: usize,
+}
+#[repr(C)]
+pub struct IKeyCredentialAttestationResult {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Storage_Streams")]
+    pub CertificateChainBuffer: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Storage_Streams"))]
+    CertificateChainBuffer: usize,
+    #[cfg(feature = "Storage_Streams")]
+    pub AttestationBuffer: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Storage_Streams"))]
+    AttestationBuffer: usize,
+    pub Status: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut KeyCredentialAttestationStatus) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IKeyCredentialManagerStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub IsSupportedAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    IsSupportedAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub RenewAttestationAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RenewAttestationAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub RequestCreateAsync: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::HSTRING, option: KeyCredentialCreationOption, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RequestCreateAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub OpenAsync: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    OpenAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub DeleteAsync: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    DeleteAsync: usize,
+}
+#[repr(C)]
+pub struct IKeyCredentialOperationResult {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Storage_Streams")]
+    pub Result: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Storage_Streams"))]
+    Result: usize,
+    pub Status: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut KeyCredentialStatus) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IKeyCredentialRetrievalResult {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Credential: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Status: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut KeyCredentialStatus) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPasswordCredential {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Resource: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetResource: unsafe extern "system" fn(this: *mut *mut Self, resource: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub UserName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetUserName: unsafe extern "system" fn(this: *mut *mut Self, username: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Password: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetPassword: unsafe extern "system" fn(this: *mut *mut Self, password: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub RetrievePassword: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub Properties: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    Properties: usize,
+}
+#[repr(C)]
+pub struct IPasswordVault {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Add: unsafe extern "system" fn(this: *mut *mut Self, credential: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Remove: unsafe extern "system" fn(this: *mut *mut Self, credential: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Retrieve: unsafe extern "system" fn(this: *mut *mut Self, resource: ::windows_sys::core::HSTRING, username: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub FindAllByResource: unsafe extern "system" fn(this: *mut *mut Self, resource: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    FindAllByResource: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub FindAllByUserName: unsafe extern "system" fn(this: *mut *mut Self, username: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    FindAllByUserName: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub RetrieveAll: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    RetrieveAll: usize,
+}
+#[repr(C)]
+pub struct IWebAccount {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub WebAccountProvider: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub UserName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub State: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut WebAccountState) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWebAccount2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Id: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub Properties: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    Properties: usize,
+    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    pub GetPictureAsync: unsafe extern "system" fn(this: *mut *mut Self, desizedsize: WebAccountPictureSize, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    GetPictureAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub SignOutAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    SignOutAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub SignOutWithClientIdAsync: unsafe extern "system" fn(this: *mut *mut Self, clientid: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    SignOutWithClientIdAsync: usize,
+}
+#[repr(C)]
+pub struct IWebAccountFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CreateWebAccount: unsafe extern "system" fn(this: *mut *mut Self, webaccountprovider: *mut ::core::ffi::c_void, username: ::windows_sys::core::HSTRING, state: WebAccountState, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWebAccountProvider {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Id: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub DisplayName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
+    pub IconUri: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    IconUri: usize,
+}
+#[repr(C)]
+pub struct IWebAccountProvider2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub DisplayPurpose: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Authority: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWebAccountProvider3 {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "System")]
+    pub User: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "System"))]
+    User: usize,
+}
+#[repr(C)]
+pub struct IWebAccountProvider4 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub IsSystemProvider: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWebAccountProviderFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub CreateWebAccountProvider: unsafe extern "system" fn(this: *mut *mut Self, id: ::windows_sys::core::HSTRING, displayname: ::windows_sys::core::HSTRING, iconuri: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    CreateWebAccountProvider: usize,
+}
 pub type KeyCredential = *mut ::core::ffi::c_void;
 pub type KeyCredentialAttestationResult = *mut ::core::ffi::c_void;
 #[doc = "*Required features: `\"Security_Credentials\"`*"]

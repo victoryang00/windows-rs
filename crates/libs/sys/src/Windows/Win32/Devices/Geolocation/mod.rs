@@ -1238,18 +1238,170 @@ impl ::core::clone::Clone for GNSS_V2UPL_NI_INFO {
     }
 }
 pub const GUID_DEVINTERFACE_GNSS: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 859235812, data2: 394, data3: 18025, data4: [132, 197, 189, 5, 243, 189, 54, 139] };
-pub type ICivicAddressReport = *mut ::core::ffi::c_void;
-pub type ICivicAddressReportFactory = *mut ::core::ffi::c_void;
-pub type IDefaultLocation = *mut ::core::ffi::c_void;
-pub type IDispCivicAddressReport = *mut ::core::ffi::c_void;
-pub type IDispLatLongReport = *mut ::core::ffi::c_void;
-pub type ILatLongReport = *mut ::core::ffi::c_void;
-pub type ILatLongReportFactory = *mut ::core::ffi::c_void;
-pub type ILocation = *mut ::core::ffi::c_void;
-pub type ILocationEvents = *mut ::core::ffi::c_void;
-pub type ILocationPower = *mut ::core::ffi::c_void;
-pub type ILocationReport = *mut ::core::ffi::c_void;
-pub type ILocationReportFactory = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct ICivicAddressReport {
+    pub base__: ILocationReport,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetAddressLine1: unsafe extern "system" fn(this: *mut *mut Self, pbstraddress1: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetAddressLine1: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetAddressLine2: unsafe extern "system" fn(this: *mut *mut Self, pbstraddress2: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetAddressLine2: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetCity: unsafe extern "system" fn(this: *mut *mut Self, pbstrcity: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetCity: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetStateProvince: unsafe extern "system" fn(this: *mut *mut Self, pbstrstateprovince: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetStateProvince: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetPostalCode: unsafe extern "system" fn(this: *mut *mut Self, pbstrpostalcode: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetPostalCode: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetCountryRegion: unsafe extern "system" fn(this: *mut *mut Self, pbstrcountryregion: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetCountryRegion: usize,
+    pub GetDetailLevel: unsafe extern "system" fn(this: *mut *mut Self, pdetaillevel: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ICivicAddressReportFactory {
+    pub base__: ILocationReportFactory,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CivicAddressReport: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CivicAddressReport: usize,
+}
+#[repr(C)]
+pub struct IDefaultLocation {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetReport: unsafe extern "system" fn(this: *mut *mut Self, reporttype: *const ::windows_sys::core::GUID, plocationreport: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetReport: unsafe extern "system" fn(this: *mut *mut Self, reporttype: *const ::windows_sys::core::GUID, pplocationreport: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IDispCivicAddressReport {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AddressLine1: unsafe extern "system" fn(this: *mut *mut Self, paddress1: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AddressLine1: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AddressLine2: unsafe extern "system" fn(this: *mut *mut Self, paddress2: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AddressLine2: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub City: unsafe extern "system" fn(this: *mut *mut Self, pcity: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    City: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub StateProvince: unsafe extern "system" fn(this: *mut *mut Self, pstateprovince: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    StateProvince: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub PostalCode: unsafe extern "system" fn(this: *mut *mut Self, ppostalcode: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    PostalCode: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CountryRegion: unsafe extern "system" fn(this: *mut *mut Self, pcountryregion: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CountryRegion: usize,
+    pub DetailLevel: unsafe extern "system" fn(this: *mut *mut Self, pdetaillevel: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Timestamp: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut f64) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IDispLatLongReport {
+    pub base__: super::super::System::Com::IDispatch,
+    pub Latitude: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut f64) -> ::windows_sys::core::HRESULT,
+    pub Longitude: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut f64) -> ::windows_sys::core::HRESULT,
+    pub ErrorRadius: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut f64) -> ::windows_sys::core::HRESULT,
+    pub Altitude: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut f64) -> ::windows_sys::core::HRESULT,
+    pub AltitudeError: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut f64) -> ::windows_sys::core::HRESULT,
+    pub Timestamp: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut f64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ILatLongReport {
+    pub base__: ILocationReport,
+    pub GetLatitude: unsafe extern "system" fn(this: *mut *mut Self, platitude: *mut f64) -> ::windows_sys::core::HRESULT,
+    pub GetLongitude: unsafe extern "system" fn(this: *mut *mut Self, plongitude: *mut f64) -> ::windows_sys::core::HRESULT,
+    pub GetErrorRadius: unsafe extern "system" fn(this: *mut *mut Self, perrorradius: *mut f64) -> ::windows_sys::core::HRESULT,
+    pub GetAltitude: unsafe extern "system" fn(this: *mut *mut Self, paltitude: *mut f64) -> ::windows_sys::core::HRESULT,
+    pub GetAltitudeError: unsafe extern "system" fn(this: *mut *mut Self, paltitudeerror: *mut f64) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ILatLongReportFactory {
+    pub base__: ILocationReportFactory,
+    #[cfg(feature = "Win32_System_Com")]
+    pub LatLongReport: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    LatLongReport: usize,
+}
+#[repr(C)]
+pub struct ILocation {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub RegisterForReport: unsafe extern "system" fn(this: *mut *mut Self, pevents: *mut ::core::ffi::c_void, reporttype: *const ::windows_sys::core::GUID, dwrequestedreportinterval: u32) -> ::windows_sys::core::HRESULT,
+    pub UnregisterForReport: unsafe extern "system" fn(this: *mut *mut Self, reporttype: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub GetReport: unsafe extern "system" fn(this: *mut *mut Self, reporttype: *const ::windows_sys::core::GUID, pplocationreport: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetReportStatus: unsafe extern "system" fn(this: *mut *mut Self, reporttype: *const ::windows_sys::core::GUID, pstatus: *mut LOCATION_REPORT_STATUS) -> ::windows_sys::core::HRESULT,
+    pub GetReportInterval: unsafe extern "system" fn(this: *mut *mut Self, reporttype: *const ::windows_sys::core::GUID, pmilliseconds: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetReportInterval: unsafe extern "system" fn(this: *mut *mut Self, reporttype: *const ::windows_sys::core::GUID, millisecondsrequested: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Devices_Sensors")]
+    pub GetDesiredAccuracy: unsafe extern "system" fn(this: *mut *mut Self, reporttype: *const ::windows_sys::core::GUID, pdesiredaccuracy: *mut super::Sensors::LOCATION_DESIRED_ACCURACY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Devices_Sensors"))]
+    GetDesiredAccuracy: usize,
+    #[cfg(feature = "Win32_Devices_Sensors")]
+    pub SetDesiredAccuracy: unsafe extern "system" fn(this: *mut *mut Self, reporttype: *const ::windows_sys::core::GUID, desiredaccuracy: super::Sensors::LOCATION_DESIRED_ACCURACY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Devices_Sensors"))]
+    SetDesiredAccuracy: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RequestPermissions: unsafe extern "system" fn(this: *mut *mut Self, hparent: super::super::Foundation::HWND, preporttypes: *const ::windows_sys::core::GUID, count: u32, fmodal: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RequestPermissions: usize,
+}
+#[repr(C)]
+pub struct ILocationEvents {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnLocationChanged: unsafe extern "system" fn(this: *mut *mut Self, reporttype: *const ::windows_sys::core::GUID, plocationreport: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub OnStatusChanged: unsafe extern "system" fn(this: *mut *mut Self, reporttype: *const ::windows_sys::core::GUID, newstatus: LOCATION_REPORT_STATUS) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ILocationPower {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Connect: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Disconnect: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ILocationReport {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetSensorID: unsafe extern "system" fn(this: *mut *mut Self, psensorid: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetTimestamp: unsafe extern "system" fn(this: *mut *mut Self, pcreationtime: *mut super::super::Foundation::SYSTEMTIME) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetTimestamp: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+    pub GetValue: unsafe extern "system" fn(this: *mut *mut Self, pkey: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY, pvalue: *mut super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem")))]
+    GetValue: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ILocationReportFactory {
+    pub base__: super::super::System::Com::IDispatch,
+    pub ListenForReports: unsafe extern "system" fn(this: *mut *mut Self, requestedreportinterval: u32) -> ::windows_sys::core::HRESULT,
+    pub StopListeningForReports: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Status: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub ReportInterval: unsafe extern "system" fn(this: *mut *mut Self, pmilliseconds: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetReportInterval: unsafe extern "system" fn(this: *mut *mut Self, millisecondsrequested: u32) -> ::windows_sys::core::HRESULT,
+    pub DesiredAccuracy: unsafe extern "system" fn(this: *mut *mut Self, pdesiredaccuracy: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetDesiredAccuracy: unsafe extern "system" fn(this: *mut *mut Self, desiredaccuracy: u32) -> ::windows_sys::core::HRESULT,
+    pub RequestPermissions: unsafe extern "system" fn(this: *mut *mut Self, hwnd: *const u32) -> ::windows_sys::core::HRESULT,
+}
 #[doc = "*Required features: `\"Win32_Devices_Geolocation\"`*"]
 pub const IOCTL_GNSS_CONFIG_SUPL_CERT: u32 = 2228488u32;
 #[doc = "*Required features: `\"Win32_Devices_Geolocation\"`*"]
@@ -1329,5 +1481,13 @@ pub const MAX_SERVER_URL_NAME: u32 = 260u32;
 pub const MIN_BREADCRUMBS_SUPPORTED: u32 = 120u32;
 #[doc = "*Required features: `\"Win32_Devices_Geolocation\"`*"]
 pub const MIN_GEOFENCES_REQUIRED: u32 = 100u32;
-pub type _ICivicAddressReportFactoryEvents = *mut ::core::ffi::c_void;
-pub type _ILatLongReportFactoryEvents = *mut ::core::ffi::c_void;
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct _ICivicAddressReportFactoryEvents {
+    pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct _ILatLongReportFactoryEvents {
+    pub base__: super::super::System::Com::IDispatch,
+}

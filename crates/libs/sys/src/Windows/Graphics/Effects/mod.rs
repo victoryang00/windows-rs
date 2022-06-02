@@ -1,2 +1,10 @@
-pub type IGraphicsEffect = *mut ::core::ffi::c_void;
-pub type IGraphicsEffectSource = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IGraphicsEffect {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Name: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetName: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IGraphicsEffectSource {
+    pub base__: ::windows_sys::core::IInspectable,
+}

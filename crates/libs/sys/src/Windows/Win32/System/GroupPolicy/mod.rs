@@ -76,10 +76,10 @@ extern "system" {
     pub fn RsopFileAccessCheck(pszfilename: ::windows_sys::core::PCWSTR, prsoptoken: *const ::core::ffi::c_void, dwdesiredaccessmask: u32, pdwgrantedaccessmask: *mut u32, pbaccessstatus: *mut i32) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_GroupPolicy\"`, `\"Win32_System_Wmi\"`*"]
     #[cfg(feature = "Win32_System_Wmi")]
-    pub fn RsopResetPolicySettingStatus(dwflags: u32, pservices: super::Wmi::IWbemServices, psettinginstance: super::Wmi::IWbemClassObject) -> ::windows_sys::core::HRESULT;
+    pub fn RsopResetPolicySettingStatus(dwflags: u32, pservices: *mut *mut super::Wmi::IWbemServices, psettinginstance: *mut *mut super::Wmi::IWbemClassObject) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_GroupPolicy\"`, `\"Win32_Foundation\"`, `\"Win32_System_Wmi\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Wmi"))]
-    pub fn RsopSetPolicySettingStatus(dwflags: u32, pservices: super::Wmi::IWbemServices, psettinginstance: super::Wmi::IWbemClassObject, ninfo: u32, pstatus: *const POLICYSETTINGSTATUSINFO) -> ::windows_sys::core::HRESULT;
+    pub fn RsopSetPolicySettingStatus(dwflags: u32, pservices: *mut *mut super::Wmi::IWbemServices, psettinginstance: *mut *mut super::Wmi::IWbemClassObject, ninfo: u32, pstatus: *const POLICYSETTINGSTATUSINFO) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_GroupPolicy\"`*"]
     pub fn UninstallApplication(productcode: ::windows_sys::core::PCWSTR, dwstatus: u32) -> u32;
     #[doc = "*Required features: `\"Win32_System_GroupPolicy\"`, `\"Win32_Foundation\"`*"]
@@ -520,49 +520,1167 @@ pub const GPOTypeDS: GROUP_POLICY_OBJECT_TYPE = 2i32;
 pub const GPOTypeLocalUser: GROUP_POLICY_OBJECT_TYPE = 3i32;
 #[doc = "*Required features: `\"Win32_System_GroupPolicy\"`*"]
 pub const GPOTypeLocalGroup: GROUP_POLICY_OBJECT_TYPE = 4i32;
-pub type IGPEInformation = *mut ::core::ffi::c_void;
-pub type IGPM = *mut ::core::ffi::c_void;
-pub type IGPM2 = *mut ::core::ffi::c_void;
-pub type IGPMAsyncCancel = *mut ::core::ffi::c_void;
-pub type IGPMAsyncProgress = *mut ::core::ffi::c_void;
-pub type IGPMBackup = *mut ::core::ffi::c_void;
-pub type IGPMBackupCollection = *mut ::core::ffi::c_void;
-pub type IGPMBackupDir = *mut ::core::ffi::c_void;
-pub type IGPMBackupDirEx = *mut ::core::ffi::c_void;
-pub type IGPMCSECollection = *mut ::core::ffi::c_void;
-pub type IGPMClientSideExtension = *mut ::core::ffi::c_void;
-pub type IGPMConstants = *mut ::core::ffi::c_void;
-pub type IGPMConstants2 = *mut ::core::ffi::c_void;
-pub type IGPMDomain = *mut ::core::ffi::c_void;
-pub type IGPMDomain2 = *mut ::core::ffi::c_void;
-pub type IGPMDomain3 = *mut ::core::ffi::c_void;
-pub type IGPMGPO = *mut ::core::ffi::c_void;
-pub type IGPMGPO2 = *mut ::core::ffi::c_void;
-pub type IGPMGPO3 = *mut ::core::ffi::c_void;
-pub type IGPMGPOCollection = *mut ::core::ffi::c_void;
-pub type IGPMGPOLink = *mut ::core::ffi::c_void;
-pub type IGPMGPOLinksCollection = *mut ::core::ffi::c_void;
-pub type IGPMMapEntry = *mut ::core::ffi::c_void;
-pub type IGPMMapEntryCollection = *mut ::core::ffi::c_void;
-pub type IGPMMigrationTable = *mut ::core::ffi::c_void;
-pub type IGPMPermission = *mut ::core::ffi::c_void;
-pub type IGPMRSOP = *mut ::core::ffi::c_void;
-pub type IGPMResult = *mut ::core::ffi::c_void;
-pub type IGPMSOM = *mut ::core::ffi::c_void;
-pub type IGPMSOMCollection = *mut ::core::ffi::c_void;
-pub type IGPMSearchCriteria = *mut ::core::ffi::c_void;
-pub type IGPMSecurityInfo = *mut ::core::ffi::c_void;
-pub type IGPMSitesContainer = *mut ::core::ffi::c_void;
-pub type IGPMStarterGPO = *mut ::core::ffi::c_void;
-pub type IGPMStarterGPOBackup = *mut ::core::ffi::c_void;
-pub type IGPMStarterGPOBackupCollection = *mut ::core::ffi::c_void;
-pub type IGPMStarterGPOCollection = *mut ::core::ffi::c_void;
-pub type IGPMStatusMessage = *mut ::core::ffi::c_void;
-pub type IGPMStatusMsgCollection = *mut ::core::ffi::c_void;
-pub type IGPMTrustee = *mut ::core::ffi::c_void;
-pub type IGPMWMIFilter = *mut ::core::ffi::c_void;
-pub type IGPMWMIFilterCollection = *mut ::core::ffi::c_void;
-pub type IGroupPolicyObject = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IGPEInformation {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetName: unsafe extern "system" fn(this: *mut *mut Self, pszname: ::windows_sys::core::PWSTR, cchmaxlength: i32) -> ::windows_sys::core::HRESULT,
+    pub GetDisplayName: unsafe extern "system" fn(this: *mut *mut Self, pszname: ::windows_sys::core::PWSTR, cchmaxlength: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Registry")]
+    pub GetRegistryKey: unsafe extern "system" fn(this: *mut *mut Self, dwsection: u32, hkey: *mut super::Registry::HKEY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Registry"))]
+    GetRegistryKey: usize,
+    pub GetDSPath: unsafe extern "system" fn(this: *mut *mut Self, dwsection: u32, pszpath: ::windows_sys::core::PWSTR, cchmaxpath: i32) -> ::windows_sys::core::HRESULT,
+    pub GetFileSysPath: unsafe extern "system" fn(this: *mut *mut Self, dwsection: u32, pszpath: ::windows_sys::core::PWSTR, cchmaxpath: i32) -> ::windows_sys::core::HRESULT,
+    pub GetOptions: unsafe extern "system" fn(this: *mut *mut Self, dwoptions: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetType: unsafe extern "system" fn(this: *mut *mut Self, gpotype: *mut GROUP_POLICY_OBJECT_TYPE) -> ::windows_sys::core::HRESULT,
+    pub GetHint: unsafe extern "system" fn(this: *mut *mut Self, gphint: *mut GROUP_POLICY_HINT_TYPE) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub PolicyChanged: unsafe extern "system" fn(this: *mut *mut Self, bmachine: super::super::Foundation::BOOL, badd: super::super::Foundation::BOOL, pguidextension: *mut ::windows_sys::core::GUID, pguidsnapin: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    PolicyChanged: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IGPM {
+    pub base__: super::Com::IDispatch,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub GetDomain: unsafe extern "system" fn(this: *mut *mut Self, bstrdomain: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrdomaincontroller: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ldcflags: i32, pigpmdomain: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    GetDomain: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub GetBackupDir: unsafe extern "system" fn(this: *mut *mut Self, bstrbackupdir: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pigpmbackupdir: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    GetBackupDir: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub GetSitesContainer: unsafe extern "system" fn(this: *mut *mut Self, bstrforest: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrdomain: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrdomaincontroller: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ldcflags: i32, ppigpmsitescontainer: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    GetSitesContainer: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub GetRSOP: unsafe extern "system" fn(this: *mut *mut Self, gpmrsopmode: GPMRSOPMode, bstrnamespace: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, lflags: i32, ppigpmrsop: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    GetRSOP: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub CreatePermission: unsafe extern "system" fn(this: *mut *mut Self, bstrtrustee: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, perm: GPMPermissionType, binheritable: i16, ppperm: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    CreatePermission: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreateSearchCriteria: unsafe extern "system" fn(this: *mut *mut Self, ppigpmsearchcriteria: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CreateSearchCriteria: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub CreateTrustee: unsafe extern "system" fn(this: *mut *mut Self, bstrtrustee: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppigpmtrustee: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    CreateTrustee: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetClientSideExtensions: unsafe extern "system" fn(this: *mut *mut Self, ppigpmcsecollection: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetClientSideExtensions: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetConstants: unsafe extern "system" fn(this: *mut *mut Self, ppigpmconstants: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetConstants: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub GetMigrationTable: unsafe extern "system" fn(this: *mut *mut Self, bstrmigrationtablepath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppmigrationtable: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    GetMigrationTable: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreateMigrationTable: unsafe extern "system" fn(this: *mut *mut Self, ppmigrationtable: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CreateMigrationTable: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InitializeReporting: unsafe extern "system" fn(this: *mut *mut Self, bstradmpath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InitializeReporting: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IGPM2 {
+    pub base__: IGPM,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub GetBackupDirEx: unsafe extern "system" fn(this: *mut *mut Self, bstrbackupdir: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, backupdirtype: GPMBackupType, ppigpmbackupdirex: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    GetBackupDirEx: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InitializeReportingEx: unsafe extern "system" fn(this: *mut *mut Self, bstradmpath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, reportingoptions: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InitializeReportingEx: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IGPMAsyncCancel {
+    pub base__: super::Com::IDispatch,
+    pub Cancel: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IGPMAsyncProgress {
+    pub base__: super::Com::IDispatch,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Status: unsafe extern "system" fn(this: *mut *mut Self, lprogressnumerator: i32, lprogressdenominator: i32, hrstatus: ::windows_sys::core::HRESULT, presult: *const super::Com::VARIANT, ppigpmstatusmsgcollection: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Status: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IGPMBackup {
+    pub base__: super::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ID: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ID: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GPOID: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GPOID: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GPODomain: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GPODomain: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GPODisplayName: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GPODisplayName: usize,
+    pub Timestamp: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut f64) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Comment: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Comment: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub BackupDir: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    BackupDir: usize,
+    pub Delete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GenerateReport: unsafe extern "system" fn(this: *mut *mut Self, gpmreporttype: GPMReportType, pvargpmprogress: *const super::Com::VARIANT, pvargpmcancel: *mut super::Com::VARIANT, ppigpmresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GenerateReport: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub GenerateReportToFile: unsafe extern "system" fn(this: *mut *mut Self, gpmreporttype: GPMReportType, bstrtargetfilepath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppigpmresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    GenerateReportToFile: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IGPMBackupCollection {
+    pub base__: super::Com::IDispatch,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub get_Item: unsafe extern "system" fn(this: *mut *mut Self, lindex: i32, pval: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    get_Item: usize,
+    #[cfg(feature = "Win32_System_Ole")]
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, ppigpmbackup: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Ole"))]
+    _NewEnum: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IGPMBackupDir {
+    pub base__: super::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub BackupDirectory: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    BackupDirectory: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub GetBackup: unsafe extern "system" fn(this: *mut *mut Self, bstrid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppbackup: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    GetBackup: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SearchBackups: unsafe extern "system" fn(this: *mut *mut Self, pigpmsearchcriteria: *mut ::core::ffi::c_void, ppigpmbackupcollection: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SearchBackups: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IGPMBackupDirEx {
+    pub base__: super::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub BackupDir: unsafe extern "system" fn(this: *mut *mut Self, pbstrbackupdir: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    BackupDir: usize,
+    pub BackupType: unsafe extern "system" fn(this: *mut *mut Self, pgpmbackuptype: *mut GPMBackupType) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetBackup: unsafe extern "system" fn(this: *mut *mut Self, bstrid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pvarbackup: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetBackup: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SearchBackups: unsafe extern "system" fn(this: *mut *mut Self, pigpmsearchcriteria: *mut ::core::ffi::c_void, pvarbackupcollection: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SearchBackups: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IGPMCSECollection {
+    pub base__: super::Com::IDispatch,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub get_Item: unsafe extern "system" fn(this: *mut *mut Self, lindex: i32, pval: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    get_Item: usize,
+    #[cfg(feature = "Win32_System_Ole")]
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, ppigpmcses: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Ole"))]
+    _NewEnum: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IGPMClientSideExtension {
+    pub base__: super::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ID: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ID: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DisplayName: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DisplayName: usize,
+    pub IsUserEnabled: unsafe extern "system" fn(this: *mut *mut Self, pvbenabled: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub IsComputerEnabled: unsafe extern "system" fn(this: *mut *mut Self, pvbenabled: *mut i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IGPMConstants {
+    pub base__: super::Com::IDispatch,
+    pub PermGPOApply: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMPermissionType) -> ::windows_sys::core::HRESULT,
+    pub PermGPORead: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMPermissionType) -> ::windows_sys::core::HRESULT,
+    pub PermGPOEdit: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMPermissionType) -> ::windows_sys::core::HRESULT,
+    pub PermGPOEditSecurityAndDelete: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMPermissionType) -> ::windows_sys::core::HRESULT,
+    pub PermGPOCustom: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMPermissionType) -> ::windows_sys::core::HRESULT,
+    pub PermWMIFilterEdit: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMPermissionType) -> ::windows_sys::core::HRESULT,
+    pub PermWMIFilterFullControl: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMPermissionType) -> ::windows_sys::core::HRESULT,
+    pub PermWMIFilterCustom: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMPermissionType) -> ::windows_sys::core::HRESULT,
+    pub PermSOMLink: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMPermissionType) -> ::windows_sys::core::HRESULT,
+    pub PermSOMLogging: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMPermissionType) -> ::windows_sys::core::HRESULT,
+    pub PermSOMPlanning: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMPermissionType) -> ::windows_sys::core::HRESULT,
+    pub PermSOMGPOCreate: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMPermissionType) -> ::windows_sys::core::HRESULT,
+    pub PermSOMWMICreate: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMPermissionType) -> ::windows_sys::core::HRESULT,
+    pub PermSOMWMIFullControl: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMPermissionType) -> ::windows_sys::core::HRESULT,
+    pub SearchPropertyGPOPermissions: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMSearchProperty) -> ::windows_sys::core::HRESULT,
+    pub SearchPropertyGPOEffectivePermissions: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMSearchProperty) -> ::windows_sys::core::HRESULT,
+    pub SearchPropertyGPODisplayName: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMSearchProperty) -> ::windows_sys::core::HRESULT,
+    pub SearchPropertyGPOWMIFilter: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMSearchProperty) -> ::windows_sys::core::HRESULT,
+    pub SearchPropertyGPOID: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMSearchProperty) -> ::windows_sys::core::HRESULT,
+    pub SearchPropertyGPOComputerExtensions: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMSearchProperty) -> ::windows_sys::core::HRESULT,
+    pub SearchPropertyGPOUserExtensions: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMSearchProperty) -> ::windows_sys::core::HRESULT,
+    pub SearchPropertySOMLinks: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMSearchProperty) -> ::windows_sys::core::HRESULT,
+    pub SearchPropertyGPODomain: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMSearchProperty) -> ::windows_sys::core::HRESULT,
+    pub SearchPropertyBackupMostRecent: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMSearchProperty) -> ::windows_sys::core::HRESULT,
+    pub SearchOpEquals: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMSearchOperation) -> ::windows_sys::core::HRESULT,
+    pub SearchOpContains: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMSearchOperation) -> ::windows_sys::core::HRESULT,
+    pub SearchOpNotContains: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMSearchOperation) -> ::windows_sys::core::HRESULT,
+    pub SearchOpNotEquals: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMSearchOperation) -> ::windows_sys::core::HRESULT,
+    pub UsePDC: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub UseAnyDC: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub DoNotUseW2KDC: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SOMSite: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMSOMType) -> ::windows_sys::core::HRESULT,
+    pub SOMDomain: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMSOMType) -> ::windows_sys::core::HRESULT,
+    pub SOMOU: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMSOMType) -> ::windows_sys::core::HRESULT,
+    pub get_SecurityFlags: unsafe extern "system" fn(this: *mut *mut Self, vbowner: i16, vbgroup: i16, vbdacl: i16, vbsacl: i16, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub DoNotValidateDC: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub ReportHTML: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMReportType) -> ::windows_sys::core::HRESULT,
+    pub ReportXML: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMReportType) -> ::windows_sys::core::HRESULT,
+    pub RSOPModeUnknown: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMRSOPMode) -> ::windows_sys::core::HRESULT,
+    pub RSOPModePlanning: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMRSOPMode) -> ::windows_sys::core::HRESULT,
+    pub RSOPModeLogging: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMRSOPMode) -> ::windows_sys::core::HRESULT,
+    pub EntryTypeUser: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMEntryType) -> ::windows_sys::core::HRESULT,
+    pub EntryTypeComputer: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMEntryType) -> ::windows_sys::core::HRESULT,
+    pub EntryTypeLocalGroup: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMEntryType) -> ::windows_sys::core::HRESULT,
+    pub EntryTypeGlobalGroup: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMEntryType) -> ::windows_sys::core::HRESULT,
+    pub EntryTypeUniversalGroup: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMEntryType) -> ::windows_sys::core::HRESULT,
+    pub EntryTypeUNCPath: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMEntryType) -> ::windows_sys::core::HRESULT,
+    pub EntryTypeUnknown: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMEntryType) -> ::windows_sys::core::HRESULT,
+    pub DestinationOptionSameAsSource: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMDestinationOption) -> ::windows_sys::core::HRESULT,
+    pub DestinationOptionNone: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMDestinationOption) -> ::windows_sys::core::HRESULT,
+    pub DestinationOptionByRelativeName: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMDestinationOption) -> ::windows_sys::core::HRESULT,
+    pub DestinationOptionSet: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMDestinationOption) -> ::windows_sys::core::HRESULT,
+    pub MigrationTableOnly: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub ProcessSecurity: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub RsopLoggingNoComputer: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub RsopLoggingNoUser: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub RsopPlanningAssumeSlowLink: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub get_RsopPlanningLoopbackOption: unsafe extern "system" fn(this: *mut *mut Self, vbmerge: i16, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub RsopPlanningAssumeUserWQLFilterTrue: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub RsopPlanningAssumeCompWQLFilterTrue: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IGPMConstants2 {
+    pub base__: IGPMConstants,
+    pub BackupTypeGPO: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMBackupType) -> ::windows_sys::core::HRESULT,
+    pub BackupTypeStarterGPO: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMBackupType) -> ::windows_sys::core::HRESULT,
+    pub StarterGPOTypeSystem: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMStarterGPOType) -> ::windows_sys::core::HRESULT,
+    pub StarterGPOTypeCustom: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMStarterGPOType) -> ::windows_sys::core::HRESULT,
+    pub SearchPropertyStarterGPOPermissions: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMSearchProperty) -> ::windows_sys::core::HRESULT,
+    pub SearchPropertyStarterGPOEffectivePermissions: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMSearchProperty) -> ::windows_sys::core::HRESULT,
+    pub SearchPropertyStarterGPODisplayName: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMSearchProperty) -> ::windows_sys::core::HRESULT,
+    pub SearchPropertyStarterGPOID: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMSearchProperty) -> ::windows_sys::core::HRESULT,
+    pub SearchPropertyStarterGPODomain: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMSearchProperty) -> ::windows_sys::core::HRESULT,
+    pub PermStarterGPORead: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMPermissionType) -> ::windows_sys::core::HRESULT,
+    pub PermStarterGPOEdit: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMPermissionType) -> ::windows_sys::core::HRESULT,
+    pub PermStarterGPOFullControl: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMPermissionType) -> ::windows_sys::core::HRESULT,
+    pub PermStarterGPOCustom: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMPermissionType) -> ::windows_sys::core::HRESULT,
+    pub ReportLegacy: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMReportingOptions) -> ::windows_sys::core::HRESULT,
+    pub ReportComments: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMReportingOptions) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IGPMDomain {
+    pub base__: super::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DomainController: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DomainController: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Domain: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Domain: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreateGPO: unsafe extern "system" fn(this: *mut *mut Self, ppnewgpo: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CreateGPO: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub GetGPO: unsafe extern "system" fn(this: *mut *mut Self, bstrguid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppgpo: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    GetGPO: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SearchGPOs: unsafe extern "system" fn(this: *mut *mut Self, pigpmsearchcriteria: *mut ::core::ffi::c_void, ppigpmgpocollection: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SearchGPOs: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub RestoreGPO: unsafe extern "system" fn(this: *mut *mut Self, pigpmbackup: *mut ::core::ffi::c_void, ldcflags: i32, pvargpmprogress: *const super::Com::VARIANT, pvargpmcancel: *mut super::Com::VARIANT, ppigpmresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    RestoreGPO: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub GetSOM: unsafe extern "system" fn(this: *mut *mut Self, bstrpath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppsom: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    GetSOM: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SearchSOMs: unsafe extern "system" fn(this: *mut *mut Self, pigpmsearchcriteria: *mut ::core::ffi::c_void, ppigpmsomcollection: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SearchSOMs: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub GetWMIFilter: unsafe extern "system" fn(this: *mut *mut Self, bstrpath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppwmifilter: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    GetWMIFilter: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SearchWMIFilters: unsafe extern "system" fn(this: *mut *mut Self, pigpmsearchcriteria: *mut ::core::ffi::c_void, ppigpmwmifiltercollection: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SearchWMIFilters: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IGPMDomain2 {
+    pub base__: IGPMDomain,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreateStarterGPO: unsafe extern "system" fn(this: *mut *mut Self, ppnewtemplate: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CreateStarterGPO: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreateGPOFromStarterGPO: unsafe extern "system" fn(this: *mut *mut Self, pgpotemplate: *mut ::core::ffi::c_void, ppnewgpo: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CreateGPOFromStarterGPO: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub GetStarterGPO: unsafe extern "system" fn(this: *mut *mut Self, bstrguid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pptemplate: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    GetStarterGPO: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SearchStarterGPOs: unsafe extern "system" fn(this: *mut *mut Self, pigpmsearchcriteria: *mut ::core::ffi::c_void, ppigpmtemplatecollection: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SearchStarterGPOs: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub LoadStarterGPO: unsafe extern "system" fn(this: *mut *mut Self, bstrloadfile: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, boverwrite: i16, pvargpmprogress: *const super::Com::VARIANT, pvargpmcancel: *mut super::Com::VARIANT, ppigpmresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    LoadStarterGPO: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub RestoreStarterGPO: unsafe extern "system" fn(this: *mut *mut Self, pigpmtmplbackup: *mut ::core::ffi::c_void, pvargpmprogress: *const super::Com::VARIANT, pvargpmcancel: *mut super::Com::VARIANT, ppigpmresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    RestoreStarterGPO: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IGPMDomain3 {
+    pub base__: IGPMDomain2,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GenerateReport: unsafe extern "system" fn(this: *mut *mut Self, gpmreporttype: GPMReportType, pvargpmprogress: *const super::Com::VARIANT, pvargpmcancel: *mut super::Com::VARIANT, ppigpmresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GenerateReport: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InfrastructureDC: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InfrastructureDC: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetInfrastructureDC: unsafe extern "system" fn(this: *mut *mut Self, newval: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetInfrastructureDC: usize,
+    pub SetInfrastructureFlags: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IGPMGPO {
+    pub base__: super::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DisplayName: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DisplayName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetDisplayName: unsafe extern "system" fn(this: *mut *mut Self, newval: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetDisplayName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Path: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Path: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ID: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ID: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DomainName: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DomainName: usize,
+    pub CreationTime: unsafe extern "system" fn(this: *mut *mut Self, pdate: *mut f64) -> ::windows_sys::core::HRESULT,
+    pub ModificationTime: unsafe extern "system" fn(this: *mut *mut Self, pdate: *mut f64) -> ::windows_sys::core::HRESULT,
+    pub UserDSVersionNumber: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub ComputerDSVersionNumber: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub UserSysvolVersionNumber: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub ComputerSysvolVersionNumber: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetWMIFilter: unsafe extern "system" fn(this: *mut *mut Self, ppigpmwmifilter: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetWMIFilter: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetWMIFilter: unsafe extern "system" fn(this: *mut *mut Self, pigpmwmifilter: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetWMIFilter: usize,
+    pub SetUserEnabled: unsafe extern "system" fn(this: *mut *mut Self, vbenabled: i16) -> ::windows_sys::core::HRESULT,
+    pub SetComputerEnabled: unsafe extern "system" fn(this: *mut *mut Self, vbenabled: i16) -> ::windows_sys::core::HRESULT,
+    pub IsUserEnabled: unsafe extern "system" fn(this: *mut *mut Self, pvbenabled: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub IsComputerEnabled: unsafe extern "system" fn(this: *mut *mut Self, pvbenabled: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetSecurityInfo: unsafe extern "system" fn(this: *mut *mut Self, ppsecurityinfo: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetSecurityInfo: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetSecurityInfo: unsafe extern "system" fn(this: *mut *mut Self, psecurityinfo: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetSecurityInfo: usize,
+    pub Delete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Backup: unsafe extern "system" fn(this: *mut *mut Self, bstrbackupdir: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrcomment: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pvargpmprogress: *const super::Com::VARIANT, pvargpmcancel: *mut super::Com::VARIANT, ppigpmresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Backup: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Import: unsafe extern "system" fn(this: *mut *mut Self, lflags: i32, pigpmbackup: *mut ::core::ffi::c_void, pvarmigrationtable: *const super::Com::VARIANT, pvargpmprogress: *const super::Com::VARIANT, pvargpmcancel: *mut super::Com::VARIANT, ppigpmresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Import: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GenerateReport: unsafe extern "system" fn(this: *mut *mut Self, gpmreporttype: GPMReportType, pvargpmprogress: *const super::Com::VARIANT, pvargpmcancel: *mut super::Com::VARIANT, ppigpmresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GenerateReport: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub GenerateReportToFile: unsafe extern "system" fn(this: *mut *mut Self, gpmreporttype: GPMReportType, bstrtargetfilepath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppigpmresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    GenerateReportToFile: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub CopyTo: unsafe extern "system" fn(this: *mut *mut Self, lflags: i32, pigpmdomain: *mut ::core::ffi::c_void, pvarnewdisplayname: *const super::Com::VARIANT, pvarmigrationtable: *const super::Com::VARIANT, pvargpmprogress: *const super::Com::VARIANT, pvargpmcancel: *mut super::Com::VARIANT, ppigpmresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    CopyTo: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetSecurityDescriptor: unsafe extern "system" fn(this: *mut *mut Self, lflags: i32, psd: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetSecurityDescriptor: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetSecurityDescriptor: unsafe extern "system" fn(this: *mut *mut Self, lflags: i32, ppsd: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetSecurityDescriptor: usize,
+    pub IsACLConsistent: unsafe extern "system" fn(this: *mut *mut Self, pvbconsistent: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub MakeACLConsistent: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IGPMGPO2 {
+    pub base__: IGPMGPO,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Description: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Description: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetDescription: unsafe extern "system" fn(this: *mut *mut Self, newval: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetDescription: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IGPMGPO3 {
+    pub base__: IGPMGPO2,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InfrastructureDC: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InfrastructureDC: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetInfrastructureDC: unsafe extern "system" fn(this: *mut *mut Self, newval: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetInfrastructureDC: usize,
+    pub SetInfrastructureFlags: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IGPMGPOCollection {
+    pub base__: super::Com::IDispatch,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub get_Item: unsafe extern "system" fn(this: *mut *mut Self, lindex: i32, pval: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    get_Item: usize,
+    #[cfg(feature = "Win32_System_Ole")]
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, ppigpmgpos: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Ole"))]
+    _NewEnum: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IGPMGPOLink {
+    pub base__: super::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GPOID: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GPOID: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GPODomain: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GPODomain: usize,
+    pub Enabled: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetEnabled: unsafe extern "system" fn(this: *mut *mut Self, newval: i16) -> ::windows_sys::core::HRESULT,
+    pub Enforced: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetEnforced: unsafe extern "system" fn(this: *mut *mut Self, newval: i16) -> ::windows_sys::core::HRESULT,
+    pub SOMLinkOrder: unsafe extern "system" fn(this: *mut *mut Self, lval: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SOM: unsafe extern "system" fn(this: *mut *mut Self, ppigpmsom: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SOM: usize,
+    pub Delete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IGPMGPOLinksCollection {
+    pub base__: super::Com::IDispatch,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub get_Item: unsafe extern "system" fn(this: *mut *mut Self, lindex: i32, pval: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    get_Item: usize,
+    #[cfg(feature = "Win32_System_Ole")]
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, ppigpmlinks: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Ole"))]
+    _NewEnum: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IGPMMapEntry {
+    pub base__: super::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Source: unsafe extern "system" fn(this: *mut *mut Self, pbstrsource: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Source: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Destination: unsafe extern "system" fn(this: *mut *mut Self, pbstrdestination: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Destination: usize,
+    pub DestinationOption: unsafe extern "system" fn(this: *mut *mut Self, pgpmdestoption: *mut GPMDestinationOption) -> ::windows_sys::core::HRESULT,
+    pub EntryType: unsafe extern "system" fn(this: *mut *mut Self, pgpmentrytype: *mut GPMEntryType) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IGPMMapEntryCollection {
+    pub base__: super::Com::IDispatch,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub get_Item: unsafe extern "system" fn(this: *mut *mut Self, lindex: i32, pval: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    get_Item: usize,
+    #[cfg(feature = "Win32_System_Ole")]
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Ole"))]
+    _NewEnum: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IGPMMigrationTable {
+    pub base__: super::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Save: unsafe extern "system" fn(this: *mut *mut Self, bstrmigrationtablepath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Save: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Add: unsafe extern "system" fn(this: *mut *mut Self, lflags: i32, var: ::core::mem::ManuallyDrop<super::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Add: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub AddEntry: unsafe extern "system" fn(this: *mut *mut Self, bstrsource: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, gpmentrytype: GPMEntryType, pvardestination: *const super::Com::VARIANT, ppentry: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    AddEntry: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub GetEntry: unsafe extern "system" fn(this: *mut *mut Self, bstrsource: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppentry: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    GetEntry: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DeleteEntry: unsafe extern "system" fn(this: *mut *mut Self, bstrsource: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DeleteEntry: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub UpdateDestination: unsafe extern "system" fn(this: *mut *mut Self, bstrsource: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pvardestination: *const super::Com::VARIANT, ppentry: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    UpdateDestination: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Validate: unsafe extern "system" fn(this: *mut *mut Self, ppresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Validate: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetEntries: unsafe extern "system" fn(this: *mut *mut Self, ppentries: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetEntries: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IGPMPermission {
+    pub base__: super::Com::IDispatch,
+    pub Inherited: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub Inheritable: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub Denied: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub Permission: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMPermissionType) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Trustee: unsafe extern "system" fn(this: *mut *mut Self, ppigpmtrustee: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Trustee: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IGPMRSOP {
+    pub base__: super::Com::IDispatch,
+    pub Mode: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMRSOPMode) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Namespace: unsafe extern "system" fn(this: *mut *mut Self, bstrval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Namespace: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetLoggingComputer: unsafe extern "system" fn(this: *mut *mut Self, bstrval: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetLoggingComputer: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub LoggingComputer: unsafe extern "system" fn(this: *mut *mut Self, bstrval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    LoggingComputer: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetLoggingUser: unsafe extern "system" fn(this: *mut *mut Self, bstrval: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetLoggingUser: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub LoggingUser: unsafe extern "system" fn(this: *mut *mut Self, bstrval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    LoggingUser: usize,
+    pub SetLoggingFlags: unsafe extern "system" fn(this: *mut *mut Self, lval: i32) -> ::windows_sys::core::HRESULT,
+    pub LoggingFlags: unsafe extern "system" fn(this: *mut *mut Self, lval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetPlanningFlags: unsafe extern "system" fn(this: *mut *mut Self, lval: i32) -> ::windows_sys::core::HRESULT,
+    pub PlanningFlags: unsafe extern "system" fn(this: *mut *mut Self, lval: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetPlanningDomainController: unsafe extern "system" fn(this: *mut *mut Self, bstrval: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetPlanningDomainController: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub PlanningDomainController: unsafe extern "system" fn(this: *mut *mut Self, bstrval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    PlanningDomainController: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetPlanningSiteName: unsafe extern "system" fn(this: *mut *mut Self, bstrval: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetPlanningSiteName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub PlanningSiteName: unsafe extern "system" fn(this: *mut *mut Self, bstrval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    PlanningSiteName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetPlanningUser: unsafe extern "system" fn(this: *mut *mut Self, bstrval: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetPlanningUser: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub PlanningUser: unsafe extern "system" fn(this: *mut *mut Self, bstrval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    PlanningUser: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetPlanningUserSOM: unsafe extern "system" fn(this: *mut *mut Self, bstrval: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetPlanningUserSOM: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub PlanningUserSOM: unsafe extern "system" fn(this: *mut *mut Self, bstrval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    PlanningUserSOM: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetPlanningUserWMIFilters: unsafe extern "system" fn(this: *mut *mut Self, varval: ::core::mem::ManuallyDrop<super::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetPlanningUserWMIFilters: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub PlanningUserWMIFilters: unsafe extern "system" fn(this: *mut *mut Self, varval: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    PlanningUserWMIFilters: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetPlanningUserSecurityGroups: unsafe extern "system" fn(this: *mut *mut Self, varval: ::core::mem::ManuallyDrop<super::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetPlanningUserSecurityGroups: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub PlanningUserSecurityGroups: unsafe extern "system" fn(this: *mut *mut Self, varval: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    PlanningUserSecurityGroups: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetPlanningComputer: unsafe extern "system" fn(this: *mut *mut Self, bstrval: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetPlanningComputer: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub PlanningComputer: unsafe extern "system" fn(this: *mut *mut Self, bstrval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    PlanningComputer: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetPlanningComputerSOM: unsafe extern "system" fn(this: *mut *mut Self, bstrval: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetPlanningComputerSOM: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub PlanningComputerSOM: unsafe extern "system" fn(this: *mut *mut Self, bstrval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    PlanningComputerSOM: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetPlanningComputerWMIFilters: unsafe extern "system" fn(this: *mut *mut Self, varval: ::core::mem::ManuallyDrop<super::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetPlanningComputerWMIFilters: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub PlanningComputerWMIFilters: unsafe extern "system" fn(this: *mut *mut Self, varval: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    PlanningComputerWMIFilters: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetPlanningComputerSecurityGroups: unsafe extern "system" fn(this: *mut *mut Self, varval: ::core::mem::ManuallyDrop<super::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetPlanningComputerSecurityGroups: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub PlanningComputerSecurityGroups: unsafe extern "system" fn(this: *mut *mut Self, varval: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    PlanningComputerSecurityGroups: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub LoggingEnumerateUsers: unsafe extern "system" fn(this: *mut *mut Self, varval: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    LoggingEnumerateUsers: usize,
+    pub CreateQueryResults: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub ReleaseQueryResults: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GenerateReport: unsafe extern "system" fn(this: *mut *mut Self, gpmreporttype: GPMReportType, pvargpmprogress: *const super::Com::VARIANT, pvargpmcancel: *mut super::Com::VARIANT, ppigpmresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GenerateReport: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub GenerateReportToFile: unsafe extern "system" fn(this: *mut *mut Self, gpmreporttype: GPMReportType, bstrtargetfilepath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppigpmresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    GenerateReportToFile: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IGPMResult {
+    pub base__: super::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Status: unsafe extern "system" fn(this: *mut *mut Self, ppigpmstatusmsgcollection: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Status: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Result: unsafe extern "system" fn(this: *mut *mut Self, pvarresult: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Result: usize,
+    pub OverallStatus: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IGPMSOM {
+    pub base__: super::Com::IDispatch,
+    pub GPOInheritanceBlocked: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetGPOInheritanceBlocked: unsafe extern "system" fn(this: *mut *mut Self, newval: i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Name: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Name: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Path: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Path: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreateGPOLink: unsafe extern "system" fn(this: *mut *mut Self, llinkpos: i32, pgpo: *mut ::core::ffi::c_void, ppnewgpolink: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CreateGPOLink: usize,
+    pub Type: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMSOMType) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetGPOLinks: unsafe extern "system" fn(this: *mut *mut Self, ppgpolinks: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetGPOLinks: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetInheritedGPOLinks: unsafe extern "system" fn(this: *mut *mut Self, ppgpolinks: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetInheritedGPOLinks: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetSecurityInfo: unsafe extern "system" fn(this: *mut *mut Self, ppsecurityinfo: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetSecurityInfo: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetSecurityInfo: unsafe extern "system" fn(this: *mut *mut Self, psecurityinfo: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetSecurityInfo: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IGPMSOMCollection {
+    pub base__: super::Com::IDispatch,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub get_Item: unsafe extern "system" fn(this: *mut *mut Self, lindex: i32, pval: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    get_Item: usize,
+    #[cfg(feature = "Win32_System_Ole")]
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, ppigpmsom: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Ole"))]
+    _NewEnum: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IGPMSearchCriteria {
+    pub base__: super::Com::IDispatch,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Add: unsafe extern "system" fn(this: *mut *mut Self, searchproperty: GPMSearchProperty, searchoperation: GPMSearchOperation, varvalue: ::core::mem::ManuallyDrop<super::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Add: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IGPMSecurityInfo {
+    pub base__: super::Com::IDispatch,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub get_Item: unsafe extern "system" fn(this: *mut *mut Self, lindex: i32, pval: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    get_Item: usize,
+    #[cfg(feature = "Win32_System_Ole")]
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Ole"))]
+    _NewEnum: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Add: unsafe extern "system" fn(this: *mut *mut Self, pperm: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Add: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Remove: unsafe extern "system" fn(this: *mut *mut Self, pperm: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Remove: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RemoveTrustee: unsafe extern "system" fn(this: *mut *mut Self, bstrtrustee: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RemoveTrustee: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IGPMSitesContainer {
+    pub base__: super::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DomainController: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DomainController: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Domain: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Domain: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Forest: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Forest: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub GetSite: unsafe extern "system" fn(this: *mut *mut Self, bstrsitename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppsom: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    GetSite: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SearchSites: unsafe extern "system" fn(this: *mut *mut Self, pigpmsearchcriteria: *mut ::core::ffi::c_void, ppigpmsomcollection: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SearchSites: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IGPMStarterGPO {
+    pub base__: super::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DisplayName: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DisplayName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetDisplayName: unsafe extern "system" fn(this: *mut *mut Self, newval: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetDisplayName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Description: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Description: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetDescription: unsafe extern "system" fn(this: *mut *mut Self, newval: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetDescription: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Author: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Author: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Product: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Product: usize,
+    pub CreationTime: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut f64) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ID: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ID: usize,
+    pub ModifiedTime: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut f64) -> ::windows_sys::core::HRESULT,
+    pub Type: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMStarterGPOType) -> ::windows_sys::core::HRESULT,
+    pub ComputerVersion: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub UserVersion: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut u16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub StarterGPOVersion: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    StarterGPOVersion: usize,
+    pub Delete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Save: unsafe extern "system" fn(this: *mut *mut Self, bstrsavefile: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, boverwrite: i16, bsaveassystem: i16, bstrlanguage: *const super::Com::VARIANT, bstrauthor: *const super::Com::VARIANT, bstrproduct: *const super::Com::VARIANT, bstruniqueid: *const super::Com::VARIANT, bstrversion: *const super::Com::VARIANT, pvargpmprogress: *const super::Com::VARIANT, pvargpmcancel: *mut super::Com::VARIANT, ppigpmresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Save: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Backup: unsafe extern "system" fn(this: *mut *mut Self, bstrbackupdir: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrcomment: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pvargpmprogress: *const super::Com::VARIANT, pvargpmcancel: *mut super::Com::VARIANT, ppigpmresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Backup: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub CopyTo: unsafe extern "system" fn(this: *mut *mut Self, pvarnewdisplayname: *const super::Com::VARIANT, pvargpmprogress: *const super::Com::VARIANT, pvargpmcancel: *const super::Com::VARIANT, ppigpmresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    CopyTo: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GenerateReport: unsafe extern "system" fn(this: *mut *mut Self, gpmreporttype: GPMReportType, pvargpmprogress: *const super::Com::VARIANT, pvargpmcancel: *const super::Com::VARIANT, ppigpmresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GenerateReport: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub GenerateReportToFile: unsafe extern "system" fn(this: *mut *mut Self, gpmreporttype: GPMReportType, bstrtargetfilepath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppigpmresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    GenerateReportToFile: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetSecurityInfo: unsafe extern "system" fn(this: *mut *mut Self, ppsecurityinfo: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetSecurityInfo: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetSecurityInfo: unsafe extern "system" fn(this: *mut *mut Self, psecurityinfo: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetSecurityInfo: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IGPMStarterGPOBackup {
+    pub base__: super::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub BackupDir: unsafe extern "system" fn(this: *mut *mut Self, pbstrbackupdir: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    BackupDir: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Comment: unsafe extern "system" fn(this: *mut *mut Self, pbstrcomment: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Comment: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DisplayName: unsafe extern "system" fn(this: *mut *mut Self, pbstrdisplayname: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DisplayName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Domain: unsafe extern "system" fn(this: *mut *mut Self, pbstrtemplatedomain: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Domain: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub StarterGPOID: unsafe extern "system" fn(this: *mut *mut Self, pbstrtemplateid: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    StarterGPOID: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ID: unsafe extern "system" fn(this: *mut *mut Self, pbstrid: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ID: usize,
+    pub Timestamp: unsafe extern "system" fn(this: *mut *mut Self, ptimestamp: *mut f64) -> ::windows_sys::core::HRESULT,
+    pub Type: unsafe extern "system" fn(this: *mut *mut Self, ptype: *mut GPMStarterGPOType) -> ::windows_sys::core::HRESULT,
+    pub Delete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GenerateReport: unsafe extern "system" fn(this: *mut *mut Self, gpmreporttype: GPMReportType, pvargpmprogress: *const super::Com::VARIANT, pvargpmcancel: *mut super::Com::VARIANT, ppigpmresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GenerateReport: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub GenerateReportToFile: unsafe extern "system" fn(this: *mut *mut Self, gpmreporttype: GPMReportType, bstrtargetfilepath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppigpmresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    GenerateReportToFile: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IGPMStarterGPOBackupCollection {
+    pub base__: super::Com::IDispatch,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub get_Item: unsafe extern "system" fn(this: *mut *mut Self, lindex: i32, pval: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    get_Item: usize,
+    #[cfg(feature = "Win32_System_Ole")]
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, ppigpmtmplbackup: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Ole"))]
+    _NewEnum: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IGPMStarterGPOCollection {
+    pub base__: super::Com::IDispatch,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub get_Item: unsafe extern "system" fn(this: *mut *mut Self, lindex: i32, pval: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    get_Item: usize,
+    #[cfg(feature = "Win32_System_Ole")]
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, ppigpmtemplates: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Ole"))]
+    _NewEnum: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IGPMStatusMessage {
+    pub base__: super::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ObjectPath: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ObjectPath: usize,
+    pub ErrorCode: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ExtensionName: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ExtensionName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SettingsName: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SettingsName: usize,
+    pub OperationCode: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Message: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Message: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IGPMStatusMsgCollection {
+    pub base__: super::Com::IDispatch,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub get_Item: unsafe extern "system" fn(this: *mut *mut Self, lindex: i32, pval: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    get_Item: usize,
+    #[cfg(feature = "Win32_System_Ole")]
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Ole"))]
+    _NewEnum: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IGPMTrustee {
+    pub base__: super::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub TrusteeSid: unsafe extern "system" fn(this: *mut *mut Self, bstrval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    TrusteeSid: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub TrusteeName: unsafe extern "system" fn(this: *mut *mut Self, bstrval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    TrusteeName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub TrusteeDomain: unsafe extern "system" fn(this: *mut *mut Self, bstrval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    TrusteeDomain: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub TrusteeDSPath: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    TrusteeDSPath: usize,
+    pub TrusteeType: unsafe extern "system" fn(this: *mut *mut Self, lval: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IGPMWMIFilter {
+    pub base__: super::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Path: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Path: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetName: unsafe extern "system" fn(this: *mut *mut Self, newval: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Name: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Name: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetDescription: unsafe extern "system" fn(this: *mut *mut Self, newval: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetDescription: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Description: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Description: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetQueryList: unsafe extern "system" fn(this: *mut *mut Self, pqrylist: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetQueryList: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetSecurityInfo: unsafe extern "system" fn(this: *mut *mut Self, ppsecurityinfo: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetSecurityInfo: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetSecurityInfo: unsafe extern "system" fn(this: *mut *mut Self, psecurityinfo: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetSecurityInfo: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IGPMWMIFilterCollection {
+    pub base__: super::Com::IDispatch,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub get_Item: unsafe extern "system" fn(this: *mut *mut Self, lindex: i32, pval: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    get_Item: usize,
+    #[cfg(feature = "Win32_System_Ole")]
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Ole"))]
+    _NewEnum: usize,
+}
+#[repr(C)]
+pub struct IGroupPolicyObject {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub New: unsafe extern "system" fn(this: *mut *mut Self, pszdomainname: ::windows_sys::core::PCWSTR, pszdisplayname: ::windows_sys::core::PCWSTR, dwflags: u32) -> ::windows_sys::core::HRESULT,
+    pub OpenDSGPO: unsafe extern "system" fn(this: *mut *mut Self, pszpath: ::windows_sys::core::PCWSTR, dwflags: u32) -> ::windows_sys::core::HRESULT,
+    pub OpenLocalMachineGPO: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32) -> ::windows_sys::core::HRESULT,
+    pub OpenRemoteMachineGPO: unsafe extern "system" fn(this: *mut *mut Self, pszcomputername: ::windows_sys::core::PCWSTR, dwflags: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Save: unsafe extern "system" fn(this: *mut *mut Self, bmachine: super::super::Foundation::BOOL, badd: super::super::Foundation::BOOL, pguidextension: *mut ::windows_sys::core::GUID, pguid: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Save: usize,
+    pub Delete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetName: unsafe extern "system" fn(this: *mut *mut Self, pszname: ::windows_sys::core::PWSTR, cchmaxlength: i32) -> ::windows_sys::core::HRESULT,
+    pub GetDisplayName: unsafe extern "system" fn(this: *mut *mut Self, pszname: ::windows_sys::core::PWSTR, cchmaxlength: i32) -> ::windows_sys::core::HRESULT,
+    pub SetDisplayName: unsafe extern "system" fn(this: *mut *mut Self, pszname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetPath: unsafe extern "system" fn(this: *mut *mut Self, pszpath: ::windows_sys::core::PWSTR, cchmaxlength: i32) -> ::windows_sys::core::HRESULT,
+    pub GetDSPath: unsafe extern "system" fn(this: *mut *mut Self, dwsection: u32, pszpath: ::windows_sys::core::PWSTR, cchmaxpath: i32) -> ::windows_sys::core::HRESULT,
+    pub GetFileSysPath: unsafe extern "system" fn(this: *mut *mut Self, dwsection: u32, pszpath: ::windows_sys::core::PWSTR, cchmaxpath: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Registry")]
+    pub GetRegistryKey: unsafe extern "system" fn(this: *mut *mut Self, dwsection: u32, hkey: *mut super::Registry::HKEY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Registry"))]
+    GetRegistryKey: usize,
+    pub GetOptions: unsafe extern "system" fn(this: *mut *mut Self, dwoptions: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetOptions: unsafe extern "system" fn(this: *mut *mut Self, dwoptions: u32, dwmask: u32) -> ::windows_sys::core::HRESULT,
+    pub GetType: unsafe extern "system" fn(this: *mut *mut Self, gpotype: *mut GROUP_POLICY_OBJECT_TYPE) -> ::windows_sys::core::HRESULT,
+    pub GetMachineName: unsafe extern "system" fn(this: *mut *mut Self, pszname: ::windows_sys::core::PWSTR, cchmaxlength: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_UI_Controls")]
+    pub GetPropertySheetPages: unsafe extern "system" fn(this: *mut *mut Self, hpages: *mut *mut super::super::UI::Controls::HPROPSHEETPAGE, upagecount: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Controls"))]
+    GetPropertySheetPages: usize,
+}
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_GroupPolicy\"`*"]
 pub struct INSTALLDATA {
@@ -623,7 +1741,13 @@ pub const FILEEXT: INSTALLSPECTYPE = 2i32;
 pub const PROGID: INSTALLSPECTYPE = 3i32;
 #[doc = "*Required features: `\"Win32_System_GroupPolicy\"`*"]
 pub const COMCLASS: INSTALLSPECTYPE = 4i32;
-pub type IRSOPInformation = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IRSOPInformation {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetNamespace: unsafe extern "system" fn(this: *mut *mut Self, dwsection: u32, pszname: ::windows_sys::core::PWSTR, cchmaxlength: i32) -> ::windows_sys::core::HRESULT,
+    pub GetFlags: unsafe extern "system" fn(this: *mut *mut Self, pdwflags: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetEventLogEntryText: unsafe extern "system" fn(this: *mut *mut Self, pszeventsource: ::windows_sys::core::PCWSTR, pszeventlogname: ::windows_sys::core::PCWSTR, pszeventtime: ::windows_sys::core::PCWSTR, dweventid: u32, ppsztext: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_GroupPolicy\"`*"]
 pub struct LOCALMANAGEDAPPLICATION {
@@ -709,7 +1833,7 @@ pub type PFNGENERATEGROUPPOLICY = ::core::option::Option<unsafe extern "system" 
 pub type PFNPROCESSGROUPPOLICY = ::core::option::Option<unsafe extern "system" fn(dwflags: u32, htoken: super::super::Foundation::HANDLE, hkeyroot: super::Registry::HKEY, pdeletedgpolist: *const GROUP_POLICY_OBJECTA, pchangedgpolist: *const GROUP_POLICY_OBJECTA, phandle: usize, pbabort: *mut super::super::Foundation::BOOL, pstatuscallback: PFNSTATUSMESSAGECALLBACK) -> u32>;
 #[doc = "*Required features: `\"Win32_System_GroupPolicy\"`, `\"Win32_Foundation\"`, `\"Win32_System_Registry\"`, `\"Win32_System_Wmi\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry", feature = "Win32_System_Wmi"))]
-pub type PFNPROCESSGROUPPOLICYEX = ::core::option::Option<unsafe extern "system" fn(dwflags: u32, htoken: super::super::Foundation::HANDLE, hkeyroot: super::Registry::HKEY, pdeletedgpolist: *const GROUP_POLICY_OBJECTA, pchangedgpolist: *const GROUP_POLICY_OBJECTA, phandle: usize, pbabort: *mut super::super::Foundation::BOOL, pstatuscallback: PFNSTATUSMESSAGECALLBACK, pwbemservices: super::Wmi::IWbemServices, prsopstatus: *mut ::windows_sys::core::HRESULT) -> u32>;
+pub type PFNPROCESSGROUPPOLICYEX = ::core::option::Option<unsafe extern "system" fn(dwflags: u32, htoken: super::super::Foundation::HANDLE, hkeyroot: super::Registry::HKEY, pdeletedgpolist: *const GROUP_POLICY_OBJECTA, pchangedgpolist: *const GROUP_POLICY_OBJECTA, phandle: usize, pbabort: *mut super::super::Foundation::BOOL, pstatuscallback: PFNSTATUSMESSAGECALLBACK, pwbemservices: *mut *mut super::Wmi::IWbemServices, prsopstatus: *mut ::windows_sys::core::HRESULT) -> u32>;
 #[doc = "*Required features: `\"Win32_System_GroupPolicy\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 pub type PFNSTATUSMESSAGECALLBACK = ::core::option::Option<unsafe extern "system" fn(bverbose: super::super::Foundation::BOOL, lpmessage: ::windows_sys::core::PCWSTR) -> u32>;
@@ -776,7 +1900,7 @@ pub struct RSOP_TARGET {
     pub psaSecurityGroups: *mut super::Com::SAFEARRAY,
     pub pRsopToken: *mut ::core::ffi::c_void,
     pub pGPOList: *mut GROUP_POLICY_OBJECTA,
-    pub pWbemServices: super::Wmi::IWbemServices,
+    pub pWbemServices: *mut *mut *mut *mut super::Wmi::IWbemServices,
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Wmi"))]
 impl ::core::marker::Copy for RSOP_TARGET {}

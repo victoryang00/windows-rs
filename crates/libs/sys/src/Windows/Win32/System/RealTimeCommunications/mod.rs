@@ -4,72 +4,1049 @@ pub const FACILITY_PINT_STATUS_CODE: u32 = 240u32;
 pub const FACILITY_RTC_INTERFACE: u32 = 238u32;
 #[doc = "*Required features: `\"Win32_System_RealTimeCommunications\"`*"]
 pub const FACILITY_SIP_STATUS_CODE: u32 = 239u32;
-pub type INetworkTransportSettings = *mut ::core::ffi::c_void;
-pub type INotificationTransportSync = *mut ::core::ffi::c_void;
-pub type IRTCBuddy = *mut ::core::ffi::c_void;
-pub type IRTCBuddy2 = *mut ::core::ffi::c_void;
-pub type IRTCBuddyEvent = *mut ::core::ffi::c_void;
-pub type IRTCBuddyEvent2 = *mut ::core::ffi::c_void;
-pub type IRTCBuddyGroup = *mut ::core::ffi::c_void;
-pub type IRTCBuddyGroupEvent = *mut ::core::ffi::c_void;
-pub type IRTCClient = *mut ::core::ffi::c_void;
-pub type IRTCClient2 = *mut ::core::ffi::c_void;
-pub type IRTCClientEvent = *mut ::core::ffi::c_void;
-pub type IRTCClientPortManagement = *mut ::core::ffi::c_void;
-pub type IRTCClientPresence = *mut ::core::ffi::c_void;
-pub type IRTCClientPresence2 = *mut ::core::ffi::c_void;
-pub type IRTCClientProvisioning = *mut ::core::ffi::c_void;
-pub type IRTCClientProvisioning2 = *mut ::core::ffi::c_void;
-pub type IRTCCollection = *mut ::core::ffi::c_void;
-pub type IRTCDispatchEventNotification = *mut ::core::ffi::c_void;
-pub type IRTCEnumBuddies = *mut ::core::ffi::c_void;
-pub type IRTCEnumGroups = *mut ::core::ffi::c_void;
-pub type IRTCEnumParticipants = *mut ::core::ffi::c_void;
-pub type IRTCEnumPresenceDevices = *mut ::core::ffi::c_void;
-pub type IRTCEnumProfiles = *mut ::core::ffi::c_void;
-pub type IRTCEnumUserSearchResults = *mut ::core::ffi::c_void;
-pub type IRTCEnumWatchers = *mut ::core::ffi::c_void;
-pub type IRTCEventNotification = *mut ::core::ffi::c_void;
-pub type IRTCInfoEvent = *mut ::core::ffi::c_void;
-pub type IRTCIntensityEvent = *mut ::core::ffi::c_void;
-pub type IRTCMediaEvent = *mut ::core::ffi::c_void;
-pub type IRTCMediaRequestEvent = *mut ::core::ffi::c_void;
-pub type IRTCMessagingEvent = *mut ::core::ffi::c_void;
-pub type IRTCParticipant = *mut ::core::ffi::c_void;
-pub type IRTCParticipantStateChangeEvent = *mut ::core::ffi::c_void;
-pub type IRTCPortManager = *mut ::core::ffi::c_void;
-pub type IRTCPresenceContact = *mut ::core::ffi::c_void;
-pub type IRTCPresenceDataEvent = *mut ::core::ffi::c_void;
-pub type IRTCPresenceDevice = *mut ::core::ffi::c_void;
-pub type IRTCPresencePropertyEvent = *mut ::core::ffi::c_void;
-pub type IRTCPresenceStatusEvent = *mut ::core::ffi::c_void;
-pub type IRTCProfile = *mut ::core::ffi::c_void;
-pub type IRTCProfile2 = *mut ::core::ffi::c_void;
-pub type IRTCProfileEvent = *mut ::core::ffi::c_void;
-pub type IRTCProfileEvent2 = *mut ::core::ffi::c_void;
-pub type IRTCReInviteEvent = *mut ::core::ffi::c_void;
-pub type IRTCRegistrationStateChangeEvent = *mut ::core::ffi::c_void;
-pub type IRTCRoamingEvent = *mut ::core::ffi::c_void;
-pub type IRTCSession = *mut ::core::ffi::c_void;
-pub type IRTCSession2 = *mut ::core::ffi::c_void;
-pub type IRTCSessionCallControl = *mut ::core::ffi::c_void;
-pub type IRTCSessionDescriptionManager = *mut ::core::ffi::c_void;
-pub type IRTCSessionOperationCompleteEvent = *mut ::core::ffi::c_void;
-pub type IRTCSessionOperationCompleteEvent2 = *mut ::core::ffi::c_void;
-pub type IRTCSessionPortManagement = *mut ::core::ffi::c_void;
-pub type IRTCSessionReferStatusEvent = *mut ::core::ffi::c_void;
-pub type IRTCSessionReferredEvent = *mut ::core::ffi::c_void;
-pub type IRTCSessionStateChangeEvent = *mut ::core::ffi::c_void;
-pub type IRTCSessionStateChangeEvent2 = *mut ::core::ffi::c_void;
-pub type IRTCUserSearch = *mut ::core::ffi::c_void;
-pub type IRTCUserSearchQuery = *mut ::core::ffi::c_void;
-pub type IRTCUserSearchResult = *mut ::core::ffi::c_void;
-pub type IRTCUserSearchResultsEvent = *mut ::core::ffi::c_void;
-pub type IRTCWatcher = *mut ::core::ffi::c_void;
-pub type IRTCWatcher2 = *mut ::core::ffi::c_void;
-pub type IRTCWatcherEvent = *mut ::core::ffi::c_void;
-pub type IRTCWatcherEvent2 = *mut ::core::ffi::c_void;
-pub type ITransportSettingsInternal = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct INetworkTransportSettings {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Networking_WinSock")]
+    pub ApplySetting: unsafe extern "system" fn(this: *mut *mut Self, settingid: *const super::super::Networking::WinSock::TRANSPORT_SETTING_ID, lengthin: u32, valuein: *const u8, lengthout: *mut u32, valueout: *mut *mut u8) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Networking_WinSock"))]
+    ApplySetting: usize,
+    #[cfg(feature = "Win32_Networking_WinSock")]
+    pub QuerySetting: unsafe extern "system" fn(this: *mut *mut Self, settingid: *const super::super::Networking::WinSock::TRANSPORT_SETTING_ID, lengthin: u32, valuein: *const u8, lengthout: *mut u32, valueout: *mut *mut u8) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Networking_WinSock"))]
+    QuerySetting: usize,
+}
+#[repr(C)]
+pub struct INotificationTransportSync {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub CompleteDelivery: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Flush: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRTCBuddy {
+    pub base__: IRTCPresenceContact,
+    pub Status: unsafe extern "system" fn(this: *mut *mut Self, penstatus: *mut RTC_PRESENCE_STATUS) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Notes: unsafe extern "system" fn(this: *mut *mut Self, pbstrnotes: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Notes: usize,
+}
+#[repr(C)]
+pub struct IRTCBuddy2 {
+    pub base__: IRTCBuddy,
+    pub Profile: unsafe extern "system" fn(this: *mut *mut Self, ppprofile: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Refresh: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub EnumerateGroups: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Groups: unsafe extern "system" fn(this: *mut *mut Self, ppcollection: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Groups: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub get_PresenceProperty: unsafe extern "system" fn(this: *mut *mut Self, enproperty: RTC_PRESENCE_PROPERTY, pbstrproperty: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    get_PresenceProperty: usize,
+    pub EnumeratePresenceDevices: unsafe extern "system" fn(this: *mut *mut Self, ppenumdevices: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub PresenceDevices: unsafe extern "system" fn(this: *mut *mut Self, ppdevicescollection: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    PresenceDevices: usize,
+    pub SubscriptionType: unsafe extern "system" fn(this: *mut *mut Self, pensubscriptiontype: *mut RTC_BUDDY_SUBSCRIPTION_TYPE) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IRTCBuddyEvent {
+    pub base__: super::Com::IDispatch,
+    pub Buddy: unsafe extern "system" fn(this: *mut *mut Self, ppbuddy: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IRTCBuddyEvent2 {
+    pub base__: IRTCBuddyEvent,
+    pub EventType: unsafe extern "system" fn(this: *mut *mut Self, peventtype: *mut RTC_BUDDY_EVENT_TYPE) -> ::windows_sys::core::HRESULT,
+    pub StatusCode: unsafe extern "system" fn(this: *mut *mut Self, plstatuscode: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub StatusText: unsafe extern "system" fn(this: *mut *mut Self, pbstrstatustext: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    StatusText: usize,
+}
+#[repr(C)]
+pub struct IRTCBuddyGroup {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Name: unsafe extern "system" fn(this: *mut *mut Self, pbstrgroupname: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Name: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetName: unsafe extern "system" fn(this: *mut *mut Self, bstrgroupname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetName: usize,
+    pub AddBuddy: unsafe extern "system" fn(this: *mut *mut Self, pbuddy: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RemoveBuddy: unsafe extern "system" fn(this: *mut *mut Self, pbuddy: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EnumerateBuddies: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Buddies: unsafe extern "system" fn(this: *mut *mut Self, ppcollection: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Buddies: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Data: unsafe extern "system" fn(this: *mut *mut Self, pbstrdata: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Data: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetData: unsafe extern "system" fn(this: *mut *mut Self, bstrdata: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetData: usize,
+    pub Profile: unsafe extern "system" fn(this: *mut *mut Self, ppprofile: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IRTCBuddyGroupEvent {
+    pub base__: super::Com::IDispatch,
+    pub EventType: unsafe extern "system" fn(this: *mut *mut Self, peventtype: *mut RTC_GROUP_EVENT_TYPE) -> ::windows_sys::core::HRESULT,
+    pub Group: unsafe extern "system" fn(this: *mut *mut Self, ppgroup: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Buddy: unsafe extern "system" fn(this: *mut *mut Self, ppbuddy: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub StatusCode: unsafe extern "system" fn(this: *mut *mut Self, plstatuscode: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRTCClient {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Shutdown: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub PrepareForShutdown: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub SetEventFilter: unsafe extern "system" fn(this: *mut *mut Self, lfilter: i32) -> ::windows_sys::core::HRESULT,
+    pub EventFilter: unsafe extern "system" fn(this: *mut *mut Self, plfilter: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetPreferredMediaTypes: unsafe extern "system" fn(this: *mut *mut Self, lmediatypes: i32, fpersistent: i16) -> ::windows_sys::core::HRESULT,
+    pub PreferredMediaTypes: unsafe extern "system" fn(this: *mut *mut Self, plmediatypes: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub MediaCapabilities: unsafe extern "system" fn(this: *mut *mut Self, plmediatypes: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CreateSession: unsafe extern "system" fn(this: *mut *mut Self, entype: RTC_SESSION_TYPE, bstrlocalphoneuri: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pprofile: *mut ::core::ffi::c_void, lflags: i32, ppsession: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CreateSession: usize,
+    pub SetListenForIncomingSessions: unsafe extern "system" fn(this: *mut *mut Self, enlisten: RTC_LISTEN_MODE) -> ::windows_sys::core::HRESULT,
+    pub ListenForIncomingSessions: unsafe extern "system" fn(this: *mut *mut Self, penlisten: *mut RTC_LISTEN_MODE) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub get_NetworkAddresses: unsafe extern "system" fn(this: *mut *mut Self, ftcp: i16, fexternal: i16, pvaddresses: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    get_NetworkAddresses: usize,
+    pub put_Volume: unsafe extern "system" fn(this: *mut *mut Self, endevice: RTC_AUDIO_DEVICE, lvolume: i32) -> ::windows_sys::core::HRESULT,
+    pub get_Volume: unsafe extern "system" fn(this: *mut *mut Self, endevice: RTC_AUDIO_DEVICE, plvolume: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub put_AudioMuted: unsafe extern "system" fn(this: *mut *mut Self, endevice: RTC_AUDIO_DEVICE, fmuted: i16) -> ::windows_sys::core::HRESULT,
+    pub get_AudioMuted: unsafe extern "system" fn(this: *mut *mut Self, endevice: RTC_AUDIO_DEVICE, pfmuted: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Media_DirectShow", feature = "Win32_System_Com"))]
+    pub get_IVideoWindow: unsafe extern "system" fn(this: *mut *mut Self, endevice: RTC_VIDEO_DEVICE, ppivideowindow: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Media_DirectShow", feature = "Win32_System_Com")))]
+    get_IVideoWindow: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub put_PreferredAudioDevice: unsafe extern "system" fn(this: *mut *mut Self, endevice: RTC_AUDIO_DEVICE, bstrdevicename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    put_PreferredAudioDevice: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub get_PreferredAudioDevice: unsafe extern "system" fn(this: *mut *mut Self, endevice: RTC_AUDIO_DEVICE, pbstrdevicename: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    get_PreferredAudioDevice: usize,
+    pub put_PreferredVolume: unsafe extern "system" fn(this: *mut *mut Self, endevice: RTC_AUDIO_DEVICE, lvolume: i32) -> ::windows_sys::core::HRESULT,
+    pub get_PreferredVolume: unsafe extern "system" fn(this: *mut *mut Self, endevice: RTC_AUDIO_DEVICE, plvolume: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetPreferredAEC: unsafe extern "system" fn(this: *mut *mut Self, benable: i16) -> ::windows_sys::core::HRESULT,
+    pub PreferredAEC: unsafe extern "system" fn(this: *mut *mut Self, pbenabled: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetPreferredVideoDevice: unsafe extern "system" fn(this: *mut *mut Self, bstrdevicename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetPreferredVideoDevice: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub PreferredVideoDevice: unsafe extern "system" fn(this: *mut *mut Self, pbstrdevicename: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    PreferredVideoDevice: usize,
+    pub ActiveMedia: unsafe extern "system" fn(this: *mut *mut Self, plmediatype: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetMaxBitrate: unsafe extern "system" fn(this: *mut *mut Self, lmaxbitrate: i32) -> ::windows_sys::core::HRESULT,
+    pub MaxBitrate: unsafe extern "system" fn(this: *mut *mut Self, plmaxbitrate: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetTemporalSpatialTradeOff: unsafe extern "system" fn(this: *mut *mut Self, lvalue: i32) -> ::windows_sys::core::HRESULT,
+    pub TemporalSpatialTradeOff: unsafe extern "system" fn(this: *mut *mut Self, plvalue: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub NetworkQuality: unsafe extern "system" fn(this: *mut *mut Self, plnetworkquality: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub StartT120Applet: unsafe extern "system" fn(this: *mut *mut Self, enapplet: RTC_T120_APPLET) -> ::windows_sys::core::HRESULT,
+    pub StopT120Applets: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub get_IsT120AppletRunning: unsafe extern "system" fn(this: *mut *mut Self, enapplet: RTC_T120_APPLET, pfrunning: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub LocalUserURI: unsafe extern "system" fn(this: *mut *mut Self, pbstruseruri: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    LocalUserURI: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetLocalUserURI: unsafe extern "system" fn(this: *mut *mut Self, bstruseruri: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetLocalUserURI: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub LocalUserName: unsafe extern "system" fn(this: *mut *mut Self, pbstrusername: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    LocalUserName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetLocalUserName: unsafe extern "system" fn(this: *mut *mut Self, bstrusername: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetLocalUserName: usize,
+    pub PlayRing: unsafe extern "system" fn(this: *mut *mut Self, entype: RTC_RING_TYPE, bplay: i16) -> ::windows_sys::core::HRESULT,
+    pub SendDTMF: unsafe extern "system" fn(this: *mut *mut Self, endtmf: RTC_DTMF) -> ::windows_sys::core::HRESULT,
+    pub InvokeTuningWizard: unsafe extern "system" fn(this: *mut *mut Self, hwndparent: isize) -> ::windows_sys::core::HRESULT,
+    pub IsTuned: unsafe extern "system" fn(this: *mut *mut Self, pftuned: *mut i16) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRTCClient2 {
+    pub base__: IRTCClient,
+    pub put_AnswerMode: unsafe extern "system" fn(this: *mut *mut Self, entype: RTC_SESSION_TYPE, enmode: RTC_ANSWER_MODE) -> ::windows_sys::core::HRESULT,
+    pub get_AnswerMode: unsafe extern "system" fn(this: *mut *mut Self, entype: RTC_SESSION_TYPE, penmode: *mut RTC_ANSWER_MODE) -> ::windows_sys::core::HRESULT,
+    pub InvokeTuningWizardEx: unsafe extern "system" fn(this: *mut *mut Self, hwndparent: isize, fallowaudio: i16, fallowvideo: i16) -> ::windows_sys::core::HRESULT,
+    pub Version: unsafe extern "system" fn(this: *mut *mut Self, plversion: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetClientName: unsafe extern "system" fn(this: *mut *mut Self, bstrclientname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetClientName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetClientCurVer: unsafe extern "system" fn(this: *mut *mut Self, bstrclientcurver: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetClientCurVer: usize,
+    pub InitializeEx: unsafe extern "system" fn(this: *mut *mut Self, lflags: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CreateSessionWithDescription: unsafe extern "system" fn(this: *mut *mut Self, bstrcontenttype: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrsessiondescription: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pprofile: *mut ::core::ffi::c_void, lflags: i32, ppsession2: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CreateSessionWithDescription: usize,
+    pub SetSessionDescriptionManager: unsafe extern "system" fn(this: *mut *mut Self, psessiondescriptionmanager: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub put_PreferredSecurityLevel: unsafe extern "system" fn(this: *mut *mut Self, ensecuritytype: RTC_SECURITY_TYPE, ensecuritylevel: RTC_SECURITY_LEVEL) -> ::windows_sys::core::HRESULT,
+    pub get_PreferredSecurityLevel: unsafe extern "system" fn(this: *mut *mut Self, ensecuritytype: RTC_SECURITY_TYPE, pensecuritylevel: *mut RTC_SECURITY_LEVEL) -> ::windows_sys::core::HRESULT,
+    pub put_AllowedPorts: unsafe extern "system" fn(this: *mut *mut Self, ltransport: i32, enlistenmode: RTC_LISTEN_MODE) -> ::windows_sys::core::HRESULT,
+    pub get_AllowedPorts: unsafe extern "system" fn(this: *mut *mut Self, ltransport: i32, penlistenmode: *mut RTC_LISTEN_MODE) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IRTCClientEvent {
+    pub base__: super::Com::IDispatch,
+    pub EventType: unsafe extern "system" fn(this: *mut *mut Self, peneventtype: *mut RTC_CLIENT_EVENT_TYPE) -> ::windows_sys::core::HRESULT,
+    pub Client: unsafe extern "system" fn(this: *mut *mut Self, ppclient: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRTCClientPortManagement {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub StartListenAddressAndPort: unsafe extern "system" fn(this: *mut *mut Self, bstrinternallocaladdress: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, linternallocalport: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    StartListenAddressAndPort: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub StopListenAddressAndPort: unsafe extern "system" fn(this: *mut *mut Self, bstrinternallocaladdress: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, linternallocalport: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    StopListenAddressAndPort: usize,
+    pub GetPortRange: unsafe extern "system" fn(this: *mut *mut Self, enporttype: RTC_PORT_TYPE, plminvalue: *mut i32, plmaxvalue: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRTCClientPresence {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub EnablePresence: unsafe extern "system" fn(this: *mut *mut Self, fusestorage: i16, varstorage: ::core::mem::ManuallyDrop<super::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    EnablePresence: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Export: unsafe extern "system" fn(this: *mut *mut Self, varstorage: ::core::mem::ManuallyDrop<super::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Export: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Import: unsafe extern "system" fn(this: *mut *mut Self, varstorage: ::core::mem::ManuallyDrop<super::Com::VARIANT>, freplaceall: i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Import: usize,
+    pub EnumerateBuddies: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Buddies: unsafe extern "system" fn(this: *mut *mut Self, ppcollection: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Buddies: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub get_Buddy: unsafe extern "system" fn(this: *mut *mut Self, bstrpresentityuri: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppbuddy: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    get_Buddy: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AddBuddy: unsafe extern "system" fn(this: *mut *mut Self, bstrpresentityuri: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrusername: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrdata: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, fpersistent: i16, pprofile: *mut ::core::ffi::c_void, lflags: i32, ppbuddy: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AddBuddy: usize,
+    pub RemoveBuddy: unsafe extern "system" fn(this: *mut *mut Self, pbuddy: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EnumerateWatchers: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Watchers: unsafe extern "system" fn(this: *mut *mut Self, ppcollection: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Watchers: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub get_Watcher: unsafe extern "system" fn(this: *mut *mut Self, bstrpresentityuri: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppwatcher: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    get_Watcher: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AddWatcher: unsafe extern "system" fn(this: *mut *mut Self, bstrpresentityuri: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrusername: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrdata: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, fblocked: i16, fpersistent: i16, ppwatcher: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AddWatcher: usize,
+    pub RemoveWatcher: unsafe extern "system" fn(this: *mut *mut Self, pwatcher: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetLocalPresenceInfo: unsafe extern "system" fn(this: *mut *mut Self, enstatus: RTC_PRESENCE_STATUS, bstrnotes: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetLocalPresenceInfo: usize,
+    pub OfferWatcherMode: unsafe extern "system" fn(this: *mut *mut Self, penmode: *mut RTC_OFFER_WATCHER_MODE) -> ::windows_sys::core::HRESULT,
+    pub SetOfferWatcherMode: unsafe extern "system" fn(this: *mut *mut Self, enmode: RTC_OFFER_WATCHER_MODE) -> ::windows_sys::core::HRESULT,
+    pub PrivacyMode: unsafe extern "system" fn(this: *mut *mut Self, penmode: *mut RTC_PRIVACY_MODE) -> ::windows_sys::core::HRESULT,
+    pub SetPrivacyMode: unsafe extern "system" fn(this: *mut *mut Self, enmode: RTC_PRIVACY_MODE) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRTCClientPresence2 {
+    pub base__: IRTCClientPresence,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub EnablePresenceEx: unsafe extern "system" fn(this: *mut *mut Self, pprofile: *mut ::core::ffi::c_void, varstorage: ::core::mem::ManuallyDrop<super::Com::VARIANT>, lflags: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    EnablePresenceEx: usize,
+    pub DisablePresence: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AddGroup: unsafe extern "system" fn(this: *mut *mut Self, bstrgroupname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrdata: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pprofile: *mut ::core::ffi::c_void, lflags: i32, ppgroup: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AddGroup: usize,
+    pub RemoveGroup: unsafe extern "system" fn(this: *mut *mut Self, pgroup: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EnumerateGroups: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Groups: unsafe extern "system" fn(this: *mut *mut Self, ppcollection: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Groups: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub get_Group: unsafe extern "system" fn(this: *mut *mut Self, bstrgroupname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppgroup: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    get_Group: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AddWatcherEx: unsafe extern "system" fn(this: *mut *mut Self, bstrpresentityuri: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrusername: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrdata: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, enstate: RTC_WATCHER_STATE, fpersistent: i16, enscope: RTC_ACE_SCOPE, pprofile: *mut ::core::ffi::c_void, lflags: i32, ppwatcher: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AddWatcherEx: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub get_WatcherEx: unsafe extern "system" fn(this: *mut *mut Self, enmode: RTC_WATCHER_MATCH_MODE, bstrpresentityuri: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppwatcher: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    get_WatcherEx: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub put_PresenceProperty: unsafe extern "system" fn(this: *mut *mut Self, enproperty: RTC_PRESENCE_PROPERTY, bstrproperty: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    put_PresenceProperty: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub get_PresenceProperty: unsafe extern "system" fn(this: *mut *mut Self, enproperty: RTC_PRESENCE_PROPERTY, pbstrproperty: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    get_PresenceProperty: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetPresenceData: unsafe extern "system" fn(this: *mut *mut Self, bstrnamespace: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrdata: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetPresenceData: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetPresenceData: unsafe extern "system" fn(this: *mut *mut Self, pbstrnamespace: *mut super::super::Foundation::BSTR, pbstrdata: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetPresenceData: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetLocalPresenceInfo: unsafe extern "system" fn(this: *mut *mut Self, penstatus: *mut RTC_PRESENCE_STATUS, pbstrnotes: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetLocalPresenceInfo: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AddBuddyEx: unsafe extern "system" fn(this: *mut *mut Self, bstrpresentityuri: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrusername: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrdata: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, fpersistent: i16, ensubscriptiontype: RTC_BUDDY_SUBSCRIPTION_TYPE, pprofile: *mut ::core::ffi::c_void, lflags: i32, ppbuddy: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AddBuddyEx: usize,
+}
+#[repr(C)]
+pub struct IRTCClientProvisioning {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CreateProfile: unsafe extern "system" fn(this: *mut *mut Self, bstrprofilexml: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppprofile: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CreateProfile: usize,
+    pub EnableProfile: unsafe extern "system" fn(this: *mut *mut Self, pprofile: *mut ::core::ffi::c_void, lregisterflags: i32) -> ::windows_sys::core::HRESULT,
+    pub DisableProfile: unsafe extern "system" fn(this: *mut *mut Self, pprofile: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EnumerateProfiles: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Profiles: unsafe extern "system" fn(this: *mut *mut Self, ppcollection: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Profiles: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetProfile: unsafe extern "system" fn(this: *mut *mut Self, bstruseraccount: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstruserpassword: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstruseruri: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrserver: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ltransport: i32, lcookie: isize) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetProfile: usize,
+    pub SessionCapabilities: unsafe extern "system" fn(this: *mut *mut Self, plsupportedsessions: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRTCClientProvisioning2 {
+    pub base__: IRTCClientProvisioning,
+    pub EnableProfileEx: unsafe extern "system" fn(this: *mut *mut Self, pprofile: *mut ::core::ffi::c_void, lregisterflags: i32, lroamingflags: i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IRTCCollection {
+    pub base__: super::Com::IDispatch,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, lcount: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub get_Item: unsafe extern "system" fn(this: *mut *mut Self, index: i32, pvariant: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    get_Item: usize,
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, ppnewenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IRTCDispatchEventNotification {
+    pub base__: super::Com::IDispatch,
+}
+#[repr(C)]
+pub struct IRTCEnumBuddies {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, celt: u32, ppelements: *mut *mut ::core::ffi::c_void, pceltfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Skip: unsafe extern "system" fn(this: *mut *mut Self, celt: u32) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRTCEnumGroups {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, celt: u32, ppelements: *mut *mut ::core::ffi::c_void, pceltfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Skip: unsafe extern "system" fn(this: *mut *mut Self, celt: u32) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRTCEnumParticipants {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, celt: u32, ppelements: *mut *mut ::core::ffi::c_void, pceltfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Skip: unsafe extern "system" fn(this: *mut *mut Self, celt: u32) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRTCEnumPresenceDevices {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, celt: u32, ppelements: *mut *mut ::core::ffi::c_void, pceltfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Skip: unsafe extern "system" fn(this: *mut *mut Self, celt: u32) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRTCEnumProfiles {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, celt: u32, ppelements: *mut *mut ::core::ffi::c_void, pceltfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Skip: unsafe extern "system" fn(this: *mut *mut Self, celt: u32) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRTCEnumUserSearchResults {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, celt: u32, ppelements: *mut *mut ::core::ffi::c_void, pceltfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Skip: unsafe extern "system" fn(this: *mut *mut Self, celt: u32) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRTCEnumWatchers {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, celt: u32, ppelements: *mut *mut ::core::ffi::c_void, pceltfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Skip: unsafe extern "system" fn(this: *mut *mut Self, celt: u32) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRTCEventNotification {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Event: unsafe extern "system" fn(this: *mut *mut Self, rtcevent: RTC_EVENT, pevent: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Event: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IRTCInfoEvent {
+    pub base__: super::Com::IDispatch,
+    pub Session: unsafe extern "system" fn(this: *mut *mut Self, ppsession: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Participant: unsafe extern "system" fn(this: *mut *mut Self, ppparticipant: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Info: unsafe extern "system" fn(this: *mut *mut Self, pbstrinfo: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Info: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InfoHeader: unsafe extern "system" fn(this: *mut *mut Self, pbstrinfoheader: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InfoHeader: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IRTCIntensityEvent {
+    pub base__: super::Com::IDispatch,
+    pub Level: unsafe extern "system" fn(this: *mut *mut Self, pllevel: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub Min: unsafe extern "system" fn(this: *mut *mut Self, plmin: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub Max: unsafe extern "system" fn(this: *mut *mut Self, plmax: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub Direction: unsafe extern "system" fn(this: *mut *mut Self, pendirection: *mut RTC_AUDIO_DEVICE) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IRTCMediaEvent {
+    pub base__: super::Com::IDispatch,
+    pub MediaType: unsafe extern "system" fn(this: *mut *mut Self, pmediatype: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub EventType: unsafe extern "system" fn(this: *mut *mut Self, peneventtype: *mut RTC_MEDIA_EVENT_TYPE) -> ::windows_sys::core::HRESULT,
+    pub EventReason: unsafe extern "system" fn(this: *mut *mut Self, peneventreason: *mut RTC_MEDIA_EVENT_REASON) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IRTCMediaRequestEvent {
+    pub base__: super::Com::IDispatch,
+    pub Session: unsafe extern "system" fn(this: *mut *mut Self, ppsession: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ProposedMedia: unsafe extern "system" fn(this: *mut *mut Self, plmediatypes: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub CurrentMedia: unsafe extern "system" fn(this: *mut *mut Self, plmediatypes: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub Accept: unsafe extern "system" fn(this: *mut *mut Self, lmediatypes: i32) -> ::windows_sys::core::HRESULT,
+    pub get_RemotePreferredSecurityLevel: unsafe extern "system" fn(this: *mut *mut Self, ensecuritytype: RTC_SECURITY_TYPE, pensecuritylevel: *mut RTC_SECURITY_LEVEL) -> ::windows_sys::core::HRESULT,
+    pub Reject: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub State: unsafe extern "system" fn(this: *mut *mut Self, pstate: *mut RTC_REINVITE_STATE) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IRTCMessagingEvent {
+    pub base__: super::Com::IDispatch,
+    pub Session: unsafe extern "system" fn(this: *mut *mut Self, ppsession: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Participant: unsafe extern "system" fn(this: *mut *mut Self, ppparticipant: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EventType: unsafe extern "system" fn(this: *mut *mut Self, peneventtype: *mut RTC_MESSAGING_EVENT_TYPE) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Message: unsafe extern "system" fn(this: *mut *mut Self, pbstrmessage: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Message: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MessageHeader: unsafe extern "system" fn(this: *mut *mut Self, pbstrmessageheader: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MessageHeader: usize,
+    pub UserStatus: unsafe extern "system" fn(this: *mut *mut Self, penuserstatus: *mut RTC_MESSAGING_USER_STATUS) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRTCParticipant {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub UserURI: unsafe extern "system" fn(this: *mut *mut Self, pbstruseruri: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    UserURI: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Name: unsafe extern "system" fn(this: *mut *mut Self, pbstrname: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Name: usize,
+    pub Removable: unsafe extern "system" fn(this: *mut *mut Self, pfremovable: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub State: unsafe extern "system" fn(this: *mut *mut Self, penstate: *mut RTC_PARTICIPANT_STATE) -> ::windows_sys::core::HRESULT,
+    pub Session: unsafe extern "system" fn(this: *mut *mut Self, ppsession: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IRTCParticipantStateChangeEvent {
+    pub base__: super::Com::IDispatch,
+    pub Participant: unsafe extern "system" fn(this: *mut *mut Self, ppparticipant: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub State: unsafe extern "system" fn(this: *mut *mut Self, penstate: *mut RTC_PARTICIPANT_STATE) -> ::windows_sys::core::HRESULT,
+    pub StatusCode: unsafe extern "system" fn(this: *mut *mut Self, plstatuscode: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRTCPortManager {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetMapping: unsafe extern "system" fn(this: *mut *mut Self, bstrremoteaddress: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, enporttype: RTC_PORT_TYPE, pbstrinternallocaladdress: *mut super::super::Foundation::BSTR, plinternallocalport: *mut i32, pbstrexternallocaladdress: *mut super::super::Foundation::BSTR, plexternallocalport: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetMapping: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub UpdateRemoteAddress: unsafe extern "system" fn(this: *mut *mut Self, bstrremoteaddress: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrinternallocaladdress: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, linternallocalport: i32, bstrexternallocaladdress: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, lexternallocalport: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    UpdateRemoteAddress: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ReleaseMapping: unsafe extern "system" fn(this: *mut *mut Self, bstrinternallocaladdress: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, linternallocalport: i32, bstrexternallocaladdress: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, lexternallocaladdress: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ReleaseMapping: usize,
+}
+#[repr(C)]
+pub struct IRTCPresenceContact {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub PresentityURI: unsafe extern "system" fn(this: *mut *mut Self, pbstrpresentityuri: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    PresentityURI: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetPresentityURI: unsafe extern "system" fn(this: *mut *mut Self, bstrpresentityuri: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetPresentityURI: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Name: unsafe extern "system" fn(this: *mut *mut Self, pbstrname: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Name: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetName: unsafe extern "system" fn(this: *mut *mut Self, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Data: unsafe extern "system" fn(this: *mut *mut Self, pbstrdata: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Data: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetData: unsafe extern "system" fn(this: *mut *mut Self, bstrdata: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetData: usize,
+    pub Persistent: unsafe extern "system" fn(this: *mut *mut Self, pfpersistent: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetPersistent: unsafe extern "system" fn(this: *mut *mut Self, fpersistent: i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IRTCPresenceDataEvent {
+    pub base__: super::Com::IDispatch,
+    pub StatusCode: unsafe extern "system" fn(this: *mut *mut Self, plstatuscode: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub StatusText: unsafe extern "system" fn(this: *mut *mut Self, pbstrstatustext: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    StatusText: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetPresenceData: unsafe extern "system" fn(this: *mut *mut Self, pbstrnamespace: *mut super::super::Foundation::BSTR, pbstrdata: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetPresenceData: usize,
+}
+#[repr(C)]
+pub struct IRTCPresenceDevice {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Status: unsafe extern "system" fn(this: *mut *mut Self, penstatus: *mut RTC_PRESENCE_STATUS) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Notes: unsafe extern "system" fn(this: *mut *mut Self, pbstrnotes: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Notes: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub get_PresenceProperty: unsafe extern "system" fn(this: *mut *mut Self, enproperty: RTC_PRESENCE_PROPERTY, pbstrproperty: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    get_PresenceProperty: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetPresenceData: unsafe extern "system" fn(this: *mut *mut Self, pbstrnamespace: *mut super::super::Foundation::BSTR, pbstrdata: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetPresenceData: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IRTCPresencePropertyEvent {
+    pub base__: super::Com::IDispatch,
+    pub StatusCode: unsafe extern "system" fn(this: *mut *mut Self, plstatuscode: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub StatusText: unsafe extern "system" fn(this: *mut *mut Self, pbstrstatustext: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    StatusText: usize,
+    pub PresenceProperty: unsafe extern "system" fn(this: *mut *mut Self, penpresprop: *mut RTC_PRESENCE_PROPERTY) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Value: unsafe extern "system" fn(this: *mut *mut Self, pbstrvalue: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Value: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IRTCPresenceStatusEvent {
+    pub base__: super::Com::IDispatch,
+    pub StatusCode: unsafe extern "system" fn(this: *mut *mut Self, plstatuscode: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub StatusText: unsafe extern "system" fn(this: *mut *mut Self, pbstrstatustext: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    StatusText: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetLocalPresenceInfo: unsafe extern "system" fn(this: *mut *mut Self, penstatus: *mut RTC_PRESENCE_STATUS, pbstrnotes: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetLocalPresenceInfo: usize,
+}
+#[repr(C)]
+pub struct IRTCProfile {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Key: unsafe extern "system" fn(this: *mut *mut Self, pbstrkey: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Key: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Name: unsafe extern "system" fn(this: *mut *mut Self, pbstrname: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Name: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub XML: unsafe extern "system" fn(this: *mut *mut Self, pbstrxml: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    XML: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ProviderName: unsafe extern "system" fn(this: *mut *mut Self, pbstrname: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ProviderName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub get_ProviderURI: unsafe extern "system" fn(this: *mut *mut Self, enuri: RTC_PROVIDER_URI, pbstruri: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    get_ProviderURI: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ProviderData: unsafe extern "system" fn(this: *mut *mut Self, pbstrdata: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ProviderData: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ClientName: unsafe extern "system" fn(this: *mut *mut Self, pbstrname: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ClientName: usize,
+    pub ClientBanner: unsafe extern "system" fn(this: *mut *mut Self, pfbanner: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ClientMinVer: unsafe extern "system" fn(this: *mut *mut Self, pbstrminver: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ClientMinVer: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ClientCurVer: unsafe extern "system" fn(this: *mut *mut Self, pbstrcurver: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ClientCurVer: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ClientUpdateURI: unsafe extern "system" fn(this: *mut *mut Self, pbstrupdateuri: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ClientUpdateURI: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ClientData: unsafe extern "system" fn(this: *mut *mut Self, pbstrdata: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ClientData: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub UserURI: unsafe extern "system" fn(this: *mut *mut Self, pbstruseruri: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    UserURI: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub UserName: unsafe extern "system" fn(this: *mut *mut Self, pbstrusername: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    UserName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub UserAccount: unsafe extern "system" fn(this: *mut *mut Self, pbstruseraccount: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    UserAccount: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetCredentials: unsafe extern "system" fn(this: *mut *mut Self, bstruseruri: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstruseraccount: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrpassword: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetCredentials: usize,
+    pub SessionCapabilities: unsafe extern "system" fn(this: *mut *mut Self, plsupportedsessions: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub State: unsafe extern "system" fn(this: *mut *mut Self, penstate: *mut RTC_REGISTRATION_STATE) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRTCProfile2 {
+    pub base__: IRTCProfile,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Realm: unsafe extern "system" fn(this: *mut *mut Self, pbstrrealm: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Realm: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetRealm: unsafe extern "system" fn(this: *mut *mut Self, bstrrealm: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetRealm: usize,
+    pub AllowedAuth: unsafe extern "system" fn(this: *mut *mut Self, plallowedauth: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetAllowedAuth: unsafe extern "system" fn(this: *mut *mut Self, lallowedauth: i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IRTCProfileEvent {
+    pub base__: super::Com::IDispatch,
+    pub Profile: unsafe extern "system" fn(this: *mut *mut Self, ppprofile: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Cookie: unsafe extern "system" fn(this: *mut *mut Self, plcookie: *mut isize) -> ::windows_sys::core::HRESULT,
+    pub StatusCode: unsafe extern "system" fn(this: *mut *mut Self, plstatuscode: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IRTCProfileEvent2 {
+    pub base__: IRTCProfileEvent,
+    pub EventType: unsafe extern "system" fn(this: *mut *mut Self, peventtype: *mut RTC_PROFILE_EVENT_TYPE) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IRTCReInviteEvent {
+    pub base__: super::Com::IDispatch,
+    pub Session: unsafe extern "system" fn(this: *mut *mut Self, ppsession2: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Accept: unsafe extern "system" fn(this: *mut *mut Self, bstrcontenttype: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrsessiondescription: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Accept: usize,
+    pub Reject: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub State: unsafe extern "system" fn(this: *mut *mut Self, pstate: *mut RTC_REINVITE_STATE) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetRemoteSessionDescription: unsafe extern "system" fn(this: *mut *mut Self, pbstrcontenttype: *mut super::super::Foundation::BSTR, pbstrsessiondescription: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetRemoteSessionDescription: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IRTCRegistrationStateChangeEvent {
+    pub base__: super::Com::IDispatch,
+    pub Profile: unsafe extern "system" fn(this: *mut *mut Self, ppprofile: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub State: unsafe extern "system" fn(this: *mut *mut Self, penstate: *mut RTC_REGISTRATION_STATE) -> ::windows_sys::core::HRESULT,
+    pub StatusCode: unsafe extern "system" fn(this: *mut *mut Self, plstatuscode: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub StatusText: unsafe extern "system" fn(this: *mut *mut Self, pbstrstatustext: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    StatusText: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IRTCRoamingEvent {
+    pub base__: super::Com::IDispatch,
+    pub EventType: unsafe extern "system" fn(this: *mut *mut Self, peventtype: *mut RTC_ROAMING_EVENT_TYPE) -> ::windows_sys::core::HRESULT,
+    pub Profile: unsafe extern "system" fn(this: *mut *mut Self, ppprofile: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub StatusCode: unsafe extern "system" fn(this: *mut *mut Self, plstatuscode: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub StatusText: unsafe extern "system" fn(this: *mut *mut Self, pbstrstatustext: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    StatusText: usize,
+}
+#[repr(C)]
+pub struct IRTCSession {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Client: unsafe extern "system" fn(this: *mut *mut Self, ppclient: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub State: unsafe extern "system" fn(this: *mut *mut Self, penstate: *mut RTC_SESSION_STATE) -> ::windows_sys::core::HRESULT,
+    pub Type: unsafe extern "system" fn(this: *mut *mut Self, pentype: *mut RTC_SESSION_TYPE) -> ::windows_sys::core::HRESULT,
+    pub Profile: unsafe extern "system" fn(this: *mut *mut Self, ppprofile: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Participants: unsafe extern "system" fn(this: *mut *mut Self, ppcollection: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Participants: usize,
+    pub Answer: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Terminate: unsafe extern "system" fn(this: *mut *mut Self, enreason: RTC_TERMINATE_REASON) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Redirect: unsafe extern "system" fn(this: *mut *mut Self, entype: RTC_SESSION_TYPE, bstrlocalphoneuri: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pprofile: *mut ::core::ffi::c_void, lflags: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Redirect: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AddParticipant: unsafe extern "system" fn(this: *mut *mut Self, bstraddress: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppparticipant: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AddParticipant: usize,
+    pub RemoveParticipant: unsafe extern "system" fn(this: *mut *mut Self, pparticipant: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EnumerateParticipants: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CanAddParticipants: unsafe extern "system" fn(this: *mut *mut Self, pfcanadd: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RedirectedUserURI: unsafe extern "system" fn(this: *mut *mut Self, pbstruseruri: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RedirectedUserURI: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RedirectedUserName: unsafe extern "system" fn(this: *mut *mut Self, pbstrusername: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RedirectedUserName: usize,
+    pub NextRedirectedUser: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SendMessage: unsafe extern "system" fn(this: *mut *mut Self, bstrmessageheader: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrmessage: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, lcookie: isize) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SendMessage: usize,
+    pub SendMessageStatus: unsafe extern "system" fn(this: *mut *mut Self, enuserstatus: RTC_MESSAGING_USER_STATUS, lcookie: isize) -> ::windows_sys::core::HRESULT,
+    pub AddStream: unsafe extern "system" fn(this: *mut *mut Self, lmediatype: i32, lcookie: isize) -> ::windows_sys::core::HRESULT,
+    pub RemoveStream: unsafe extern "system" fn(this: *mut *mut Self, lmediatype: i32, lcookie: isize) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub put_EncryptionKey: unsafe extern "system" fn(this: *mut *mut Self, lmediatype: i32, encryptionkey: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    put_EncryptionKey: usize,
+}
+#[repr(C)]
+pub struct IRTCSession2 {
+    pub base__: IRTCSession,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SendInfo: unsafe extern "system" fn(this: *mut *mut Self, bstrinfoheader: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrinfo: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, lcookie: isize) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SendInfo: usize,
+    pub put_PreferredSecurityLevel: unsafe extern "system" fn(this: *mut *mut Self, ensecuritytype: RTC_SECURITY_TYPE, ensecuritylevel: RTC_SECURITY_LEVEL) -> ::windows_sys::core::HRESULT,
+    pub get_PreferredSecurityLevel: unsafe extern "system" fn(this: *mut *mut Self, ensecuritytype: RTC_SECURITY_TYPE, pensecuritylevel: *mut RTC_SECURITY_LEVEL) -> ::windows_sys::core::HRESULT,
+    pub IsSecurityEnabled: unsafe extern "system" fn(this: *mut *mut Self, ensecuritytype: RTC_SECURITY_TYPE, pfsecurityenabled: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AnswerWithSessionDescription: unsafe extern "system" fn(this: *mut *mut Self, bstrcontenttype: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrsessiondescription: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AnswerWithSessionDescription: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ReInviteWithSessionDescription: unsafe extern "system" fn(this: *mut *mut Self, bstrcontenttype: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrsessiondescription: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, lcookie: isize) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ReInviteWithSessionDescription: usize,
+}
+#[repr(C)]
+pub struct IRTCSessionCallControl {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Hold: unsafe extern "system" fn(this: *mut *mut Self, lcookie: isize) -> ::windows_sys::core::HRESULT,
+    pub UnHold: unsafe extern "system" fn(this: *mut *mut Self, lcookie: isize) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Forward: unsafe extern "system" fn(this: *mut *mut Self, bstrforwardtouri: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Forward: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Refer: unsafe extern "system" fn(this: *mut *mut Self, bstrrefertouri: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrrefercookie: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Refer: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetReferredByURI: unsafe extern "system" fn(this: *mut *mut Self, bstrreferredbyuri: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetReferredByURI: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ReferredByURI: unsafe extern "system" fn(this: *mut *mut Self, pbstrreferredbyuri: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ReferredByURI: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetReferCookie: unsafe extern "system" fn(this: *mut *mut Self, bstrrefercookie: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetReferCookie: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ReferCookie: unsafe extern "system" fn(this: *mut *mut Self, pbstrrefercookie: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ReferCookie: usize,
+    pub IsReferred: unsafe extern "system" fn(this: *mut *mut Self, pfisreferred: *mut i16) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRTCSessionDescriptionManager {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub EvaluateSessionDescription: unsafe extern "system" fn(this: *mut *mut Self, bstrcontenttype: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrsessiondescription: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pfapplicationsession: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    EvaluateSessionDescription: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IRTCSessionOperationCompleteEvent {
+    pub base__: super::Com::IDispatch,
+    pub Session: unsafe extern "system" fn(this: *mut *mut Self, ppsession: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Cookie: unsafe extern "system" fn(this: *mut *mut Self, plcookie: *mut isize) -> ::windows_sys::core::HRESULT,
+    pub StatusCode: unsafe extern "system" fn(this: *mut *mut Self, plstatuscode: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub StatusText: unsafe extern "system" fn(this: *mut *mut Self, pbstrstatustext: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    StatusText: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IRTCSessionOperationCompleteEvent2 {
+    pub base__: IRTCSessionOperationCompleteEvent,
+    pub Participant: unsafe extern "system" fn(this: *mut *mut Self, ppparticipant: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetRemoteSessionDescription: unsafe extern "system" fn(this: *mut *mut Self, pbstrcontenttype: *mut super::super::Foundation::BSTR, pbstrsessiondescription: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetRemoteSessionDescription: usize,
+}
+#[repr(C)]
+pub struct IRTCSessionPortManagement {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetPortManager: unsafe extern "system" fn(this: *mut *mut Self, pportmanager: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IRTCSessionReferStatusEvent {
+    pub base__: super::Com::IDispatch,
+    pub Session: unsafe extern "system" fn(this: *mut *mut Self, ppsession: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ReferStatus: unsafe extern "system" fn(this: *mut *mut Self, penreferstatus: *mut RTC_SESSION_REFER_STATUS) -> ::windows_sys::core::HRESULT,
+    pub StatusCode: unsafe extern "system" fn(this: *mut *mut Self, plstatuscode: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub StatusText: unsafe extern "system" fn(this: *mut *mut Self, pbstrstatustext: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    StatusText: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IRTCSessionReferredEvent {
+    pub base__: super::Com::IDispatch,
+    pub Session: unsafe extern "system" fn(this: *mut *mut Self, ppsession: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ReferredByURI: unsafe extern "system" fn(this: *mut *mut Self, pbstrreferredbyuri: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ReferredByURI: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ReferToURI: unsafe extern "system" fn(this: *mut *mut Self, pbstrreferouri: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ReferToURI: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ReferCookie: unsafe extern "system" fn(this: *mut *mut Self, pbstrrefercookie: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ReferCookie: usize,
+    pub Accept: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Reject: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub SetReferredSessionState: unsafe extern "system" fn(this: *mut *mut Self, enstate: RTC_SESSION_STATE) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IRTCSessionStateChangeEvent {
+    pub base__: super::Com::IDispatch,
+    pub Session: unsafe extern "system" fn(this: *mut *mut Self, ppsession: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub State: unsafe extern "system" fn(this: *mut *mut Self, penstate: *mut RTC_SESSION_STATE) -> ::windows_sys::core::HRESULT,
+    pub StatusCode: unsafe extern "system" fn(this: *mut *mut Self, plstatuscode: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub StatusText: unsafe extern "system" fn(this: *mut *mut Self, pbstrstatustext: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    StatusText: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IRTCSessionStateChangeEvent2 {
+    pub base__: IRTCSessionStateChangeEvent,
+    pub MediaTypes: unsafe extern "system" fn(this: *mut *mut Self, pmediatypes: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub get_RemotePreferredSecurityLevel: unsafe extern "system" fn(this: *mut *mut Self, ensecuritytype: RTC_SECURITY_TYPE, pensecuritylevel: *mut RTC_SECURITY_LEVEL) -> ::windows_sys::core::HRESULT,
+    pub IsForked: unsafe extern "system" fn(this: *mut *mut Self, pfisforked: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetRemoteSessionDescription: unsafe extern "system" fn(this: *mut *mut Self, pbstrcontenttype: *mut super::super::Foundation::BSTR, pbstrsessiondescription: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetRemoteSessionDescription: usize,
+}
+#[repr(C)]
+pub struct IRTCUserSearch {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub CreateQuery: unsafe extern "system" fn(this: *mut *mut Self, ppquery: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ExecuteSearch: unsafe extern "system" fn(this: *mut *mut Self, pquery: *mut ::core::ffi::c_void, pprofile: *mut ::core::ffi::c_void, lcookie: isize) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRTCUserSearchQuery {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub put_SearchTerm: unsafe extern "system" fn(this: *mut *mut Self, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrvalue: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    put_SearchTerm: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub get_SearchTerm: unsafe extern "system" fn(this: *mut *mut Self, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pbstrvalue: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    get_SearchTerm: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SearchTerms: unsafe extern "system" fn(this: *mut *mut Self, pbstrnames: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SearchTerms: usize,
+    pub put_SearchPreference: unsafe extern "system" fn(this: *mut *mut Self, enpreference: RTC_USER_SEARCH_PREFERENCE, lvalue: i32) -> ::windows_sys::core::HRESULT,
+    pub get_SearchPreference: unsafe extern "system" fn(this: *mut *mut Self, enpreference: RTC_USER_SEARCH_PREFERENCE, plvalue: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetSearchDomain: unsafe extern "system" fn(this: *mut *mut Self, bstrdomain: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetSearchDomain: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SearchDomain: unsafe extern "system" fn(this: *mut *mut Self, pbstrdomain: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SearchDomain: usize,
+}
+#[repr(C)]
+pub struct IRTCUserSearchResult {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub get_Value: unsafe extern "system" fn(this: *mut *mut Self, encolumn: RTC_USER_SEARCH_COLUMN, pbstrvalue: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    get_Value: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IRTCUserSearchResultsEvent {
+    pub base__: super::Com::IDispatch,
+    pub EnumerateResults: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Results: unsafe extern "system" fn(this: *mut *mut Self, ppcollection: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Results: usize,
+    pub Profile: unsafe extern "system" fn(this: *mut *mut Self, ppprofile: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Query: unsafe extern "system" fn(this: *mut *mut Self, ppquery: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Cookie: unsafe extern "system" fn(this: *mut *mut Self, plcookie: *mut isize) -> ::windows_sys::core::HRESULT,
+    pub StatusCode: unsafe extern "system" fn(this: *mut *mut Self, plstatuscode: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub MoreAvailable: unsafe extern "system" fn(this: *mut *mut Self, pfmoreavailable: *mut i16) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRTCWatcher {
+    pub base__: IRTCPresenceContact,
+    pub State: unsafe extern "system" fn(this: *mut *mut Self, penstate: *mut RTC_WATCHER_STATE) -> ::windows_sys::core::HRESULT,
+    pub SetState: unsafe extern "system" fn(this: *mut *mut Self, enstate: RTC_WATCHER_STATE) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRTCWatcher2 {
+    pub base__: IRTCWatcher,
+    pub Profile: unsafe extern "system" fn(this: *mut *mut Self, ppprofile: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Scope: unsafe extern "system" fn(this: *mut *mut Self, penscope: *mut RTC_ACE_SCOPE) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IRTCWatcherEvent {
+    pub base__: super::Com::IDispatch,
+    pub Watcher: unsafe extern "system" fn(this: *mut *mut Self, ppwatcher: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IRTCWatcherEvent2 {
+    pub base__: IRTCWatcherEvent,
+    pub EventType: unsafe extern "system" fn(this: *mut *mut Self, peventtype: *mut RTC_WATCHER_EVENT_TYPE) -> ::windows_sys::core::HRESULT,
+    pub StatusCode: unsafe extern "system" fn(this: *mut *mut Self, plstatuscode: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITransportSettingsInternal {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Networking_WinSock")]
+    pub ApplySetting: unsafe extern "system" fn(this: *mut *mut Self, setting: *mut TRANSPORT_SETTING) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Networking_WinSock"))]
+    ApplySetting: usize,
+    #[cfg(feature = "Win32_Networking_WinSock")]
+    pub QuerySetting: unsafe extern "system" fn(this: *mut *mut Self, setting: *mut TRANSPORT_SETTING) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Networking_WinSock"))]
+    QuerySetting: usize,
+}
 #[doc = "*Required features: `\"Win32_System_RealTimeCommunications\"`*"]
 pub const RTCAU_BASIC: u32 = 1u32;
 #[doc = "*Required features: `\"Win32_System_RealTimeCommunications\"`*"]

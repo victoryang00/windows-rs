@@ -1,36 +1,436 @@
 #[link(name = "windows")]
 extern "system" {
     #[doc = "*Required features: `\"Win32_Storage_Vss\"`*"]
-    pub fn CreateVssExpressWriterInternal(ppwriter: *mut IVssExpressWriter) -> ::windows_sys::core::HRESULT;
+    pub fn CreateVssExpressWriterInternal(ppwriter: *mut *mut *mut IVssExpressWriter) -> ::windows_sys::core::HRESULT;
 }
-pub type IVssAdmin = *mut ::core::ffi::c_void;
-pub type IVssAdminEx = *mut ::core::ffi::c_void;
-pub type IVssAsync = *mut ::core::ffi::c_void;
-pub type IVssComponent = *mut ::core::ffi::c_void;
-pub type IVssComponentEx = *mut ::core::ffi::c_void;
-pub type IVssComponentEx2 = *mut ::core::ffi::c_void;
-pub type IVssCreateExpressWriterMetadata = *mut ::core::ffi::c_void;
-pub type IVssCreateWriterMetadata = *mut ::core::ffi::c_void;
-pub type IVssDifferentialSoftwareSnapshotMgmt = *mut ::core::ffi::c_void;
-pub type IVssDifferentialSoftwareSnapshotMgmt2 = *mut ::core::ffi::c_void;
-pub type IVssDifferentialSoftwareSnapshotMgmt3 = *mut ::core::ffi::c_void;
-pub type IVssEnumMgmtObject = *mut ::core::ffi::c_void;
-pub type IVssEnumObject = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IVssAdmin {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub RegisterProvider: unsafe extern "system" fn(this: *mut *mut Self, pproviderid: ::windows_sys::core::GUID, classid: ::windows_sys::core::GUID, pwszprovidername: *const u16, eprovidertype: VSS_PROVIDER_TYPE, pwszproviderversion: *const u16, providerversionid: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub UnregisterProvider: unsafe extern "system" fn(this: *mut *mut Self, providerid: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub QueryProviders: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AbortAllSnapshotsInProgress: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IVssAdminEx {
+    pub base__: IVssAdmin,
+    pub GetProviderCapability: unsafe extern "system" fn(this: *mut *mut Self, pproviderid: ::windows_sys::core::GUID, plloriginalcapabilitymask: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetProviderContext: unsafe extern "system" fn(this: *mut *mut Self, providerid: ::windows_sys::core::GUID, plcontext: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetProviderContext: unsafe extern "system" fn(this: *mut *mut Self, providerid: ::windows_sys::core::GUID, lcontext: i32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IVssAsync {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Cancel: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Wait: unsafe extern "system" fn(this: *mut *mut Self, dwmilliseconds: u32) -> ::windows_sys::core::HRESULT,
+    pub QueryStatus: unsafe extern "system" fn(this: *mut *mut Self, phrresult: *mut ::windows_sys::core::HRESULT, preserved: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IVssComponent {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetLogicalPath: unsafe extern "system" fn(this: *mut *mut Self, pbstrpath: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetLogicalPath: usize,
+    pub GetComponentType: unsafe extern "system" fn(this: *mut *mut Self, pct: *mut VSS_COMPONENT_TYPE) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetComponentName: unsafe extern "system" fn(this: *mut *mut Self, pbstrname: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetComponentName: usize,
+    pub GetBackupSucceeded: unsafe extern "system" fn(this: *mut *mut Self, pbsucceeded: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub GetAlternateLocationMappingCount: unsafe extern "system" fn(this: *mut *mut Self, pcmappings: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetAlternateLocationMapping: unsafe extern "system" fn(this: *mut *mut Self, imapping: u32, ppfiledesc: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetBackupMetadata: unsafe extern "system" fn(this: *mut *mut Self, wszdata: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetBackupMetadata: unsafe extern "system" fn(this: *mut *mut Self, pbstrdata: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetBackupMetadata: usize,
+    pub AddPartialFile: unsafe extern "system" fn(this: *mut *mut Self, wszpath: ::windows_sys::core::PCWSTR, wszfilename: ::windows_sys::core::PCWSTR, wszranges: ::windows_sys::core::PCWSTR, wszmetadata: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetPartialFileCount: unsafe extern "system" fn(this: *mut *mut Self, pcpartialfiles: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetPartialFile: unsafe extern "system" fn(this: *mut *mut Self, ipartialfile: u32, pbstrpath: *mut super::super::Foundation::BSTR, pbstrfilename: *mut super::super::Foundation::BSTR, pbstrrange: *mut super::super::Foundation::BSTR, pbstrmetadata: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetPartialFile: usize,
+    pub IsSelectedForRestore: unsafe extern "system" fn(this: *mut *mut Self, pbselectedforrestore: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub GetAdditionalRestores: unsafe extern "system" fn(this: *mut *mut Self, pbadditionalrestores: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub GetNewTargetCount: unsafe extern "system" fn(this: *mut *mut Self, pcnewtarget: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetNewTarget: unsafe extern "system" fn(this: *mut *mut Self, inewtarget: u32, ppfiledesc: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AddDirectedTarget: unsafe extern "system" fn(this: *mut *mut Self, wszsourcepath: ::windows_sys::core::PCWSTR, wszsourcefilename: ::windows_sys::core::PCWSTR, wszsourcerangelist: ::windows_sys::core::PCWSTR, wszdestinationpath: ::windows_sys::core::PCWSTR, wszdestinationfilename: ::windows_sys::core::PCWSTR, wszdestinationrangelist: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetDirectedTargetCount: unsafe extern "system" fn(this: *mut *mut Self, pcdirectedtarget: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetDirectedTarget: unsafe extern "system" fn(this: *mut *mut Self, idirectedtarget: u32, pbstrsourcepath: *mut super::super::Foundation::BSTR, pbstrsourcefilename: *mut super::super::Foundation::BSTR, pbstrsourcerangelist: *mut super::super::Foundation::BSTR, pbstrdestinationpath: *mut super::super::Foundation::BSTR, pbstrdestinationfilename: *mut super::super::Foundation::BSTR, pbstrdestinationrangelist: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetDirectedTarget: usize,
+    pub SetRestoreMetadata: unsafe extern "system" fn(this: *mut *mut Self, wszrestoremetadata: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetRestoreMetadata: unsafe extern "system" fn(this: *mut *mut Self, pbstrrestoremetadata: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetRestoreMetadata: usize,
+    pub SetRestoreTarget: unsafe extern "system" fn(this: *mut *mut Self, target: VSS_RESTORE_TARGET) -> ::windows_sys::core::HRESULT,
+    pub GetRestoreTarget: unsafe extern "system" fn(this: *mut *mut Self, ptarget: *mut VSS_RESTORE_TARGET) -> ::windows_sys::core::HRESULT,
+    pub SetPreRestoreFailureMsg: unsafe extern "system" fn(this: *mut *mut Self, wszprerestorefailuremsg: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetPreRestoreFailureMsg: unsafe extern "system" fn(this: *mut *mut Self, pbstrprerestorefailuremsg: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetPreRestoreFailureMsg: usize,
+    pub SetPostRestoreFailureMsg: unsafe extern "system" fn(this: *mut *mut Self, wszpostrestorefailuremsg: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetPostRestoreFailureMsg: unsafe extern "system" fn(this: *mut *mut Self, pbstrpostrestorefailuremsg: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetPostRestoreFailureMsg: usize,
+    pub SetBackupStamp: unsafe extern "system" fn(this: *mut *mut Self, wszbackupstamp: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetBackupStamp: unsafe extern "system" fn(this: *mut *mut Self, pbstrbackupstamp: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetBackupStamp: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetPreviousBackupStamp: unsafe extern "system" fn(this: *mut *mut Self, pbstrbackupstamp: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetPreviousBackupStamp: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetBackupOptions: unsafe extern "system" fn(this: *mut *mut Self, pbstrbackupoptions: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetBackupOptions: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetRestoreOptions: unsafe extern "system" fn(this: *mut *mut Self, pbstrrestoreoptions: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetRestoreOptions: usize,
+    pub GetRestoreSubcomponentCount: unsafe extern "system" fn(this: *mut *mut Self, pcrestoresubcomponent: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetRestoreSubcomponent: unsafe extern "system" fn(this: *mut *mut Self, icomponent: u32, pbstrlogicalpath: *mut super::super::Foundation::BSTR, pbstrcomponentname: *mut super::super::Foundation::BSTR, pbrepair: *mut bool) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetRestoreSubcomponent: usize,
+    pub GetFileRestoreStatus: unsafe extern "system" fn(this: *mut *mut Self, pstatus: *mut VSS_FILE_RESTORE_STATUS) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AddDifferencedFilesByLastModifyTime: unsafe extern "system" fn(this: *mut *mut Self, wszpath: ::windows_sys::core::PCWSTR, wszfilespec: ::windows_sys::core::PCWSTR, brecursive: super::super::Foundation::BOOL, ftlastmodifytime: super::super::Foundation::FILETIME) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AddDifferencedFilesByLastModifyTime: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AddDifferencedFilesByLastModifyLSN: unsafe extern "system" fn(this: *mut *mut Self, wszpath: ::windows_sys::core::PCWSTR, wszfilespec: ::windows_sys::core::PCWSTR, brecursive: super::super::Foundation::BOOL, bstrlsnstring: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AddDifferencedFilesByLastModifyLSN: usize,
+    pub GetDifferencedFilesCount: unsafe extern "system" fn(this: *mut *mut Self, pcdifferencedfiles: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetDifferencedFile: unsafe extern "system" fn(this: *mut *mut Self, idifferencedfile: u32, pbstrpath: *mut super::super::Foundation::BSTR, pbstrfilespec: *mut super::super::Foundation::BSTR, pbrecursive: *mut super::super::Foundation::BOOL, pbstrlsnstring: *mut super::super::Foundation::BSTR, pftlastmodifytime: *mut super::super::Foundation::FILETIME) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetDifferencedFile: usize,
+}
+#[repr(C)]
+pub struct IVssComponentEx {
+    pub base__: IVssComponent,
+    pub SetPrepareForBackupFailureMsg: unsafe extern "system" fn(this: *mut *mut Self, wszfailuremsg: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetPostSnapshotFailureMsg: unsafe extern "system" fn(this: *mut *mut Self, wszfailuremsg: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetPrepareForBackupFailureMsg: unsafe extern "system" fn(this: *mut *mut Self, pbstrfailuremsg: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetPrepareForBackupFailureMsg: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetPostSnapshotFailureMsg: unsafe extern "system" fn(this: *mut *mut Self, pbstrfailuremsg: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetPostSnapshotFailureMsg: usize,
+    pub GetAuthoritativeRestore: unsafe extern "system" fn(this: *mut *mut Self, pbauth: *mut bool) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetRollForward: unsafe extern "system" fn(this: *mut *mut Self, prolltype: *mut VSS_ROLLFORWARD_TYPE, pbstrpoint: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetRollForward: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetRestoreName: unsafe extern "system" fn(this: *mut *mut Self, pbstrname: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetRestoreName: usize,
+}
+#[repr(C)]
+pub struct IVssComponentEx2 {
+    pub base__: IVssComponentEx,
+    pub SetFailure: unsafe extern "system" fn(this: *mut *mut Self, hr: ::windows_sys::core::HRESULT, hrapplication: ::windows_sys::core::HRESULT, wszapplicationmessage: ::windows_sys::core::PCWSTR, dwreserved: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetFailure: unsafe extern "system" fn(this: *mut *mut Self, phr: *mut ::windows_sys::core::HRESULT, phrapplication: *mut ::windows_sys::core::HRESULT, pbstrapplicationmessage: *mut super::super::Foundation::BSTR, pdwreserved: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetFailure: usize,
+}
+#[repr(C)]
+pub struct IVssCreateExpressWriterMetadata {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub AddExcludeFiles: unsafe extern "system" fn(this: *mut *mut Self, wszpath: ::windows_sys::core::PCWSTR, wszfilespec: ::windows_sys::core::PCWSTR, brecursive: u8) -> ::windows_sys::core::HRESULT,
+    pub AddComponent: unsafe extern "system" fn(this: *mut *mut Self, ct: VSS_COMPONENT_TYPE, wszlogicalpath: ::windows_sys::core::PCWSTR, wszcomponentname: ::windows_sys::core::PCWSTR, wszcaption: ::windows_sys::core::PCWSTR, pbicon: *const u8, cbicon: u32, brestoremetadata: u8, bnotifyonbackupcomplete: u8, bselectable: u8, bselectableforrestore: u8, dwcomponentflags: u32) -> ::windows_sys::core::HRESULT,
+    pub AddFilesToFileGroup: unsafe extern "system" fn(this: *mut *mut Self, wszlogicalpath: ::windows_sys::core::PCWSTR, wszgroupname: ::windows_sys::core::PCWSTR, wszpath: ::windows_sys::core::PCWSTR, wszfilespec: ::windows_sys::core::PCWSTR, brecursive: u8, wszalternatelocation: ::windows_sys::core::PCWSTR, dwbackuptypemask: u32) -> ::windows_sys::core::HRESULT,
+    pub SetRestoreMethod: unsafe extern "system" fn(this: *mut *mut Self, method: VSS_RESTOREMETHOD_ENUM, wszservice: ::windows_sys::core::PCWSTR, wszuserprocedure: ::windows_sys::core::PCWSTR, writerrestore: VSS_WRITERRESTORE_ENUM, brebootrequired: u8) -> ::windows_sys::core::HRESULT,
+    pub AddComponentDependency: unsafe extern "system" fn(this: *mut *mut Self, wszforlogicalpath: ::windows_sys::core::PCWSTR, wszforcomponentname: ::windows_sys::core::PCWSTR, onwriterid: ::windows_sys::core::GUID, wszonlogicalpath: ::windows_sys::core::PCWSTR, wszoncomponentname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetBackupSchema: unsafe extern "system" fn(this: *mut *mut Self, dwschemamask: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SaveAsXML: unsafe extern "system" fn(this: *mut *mut Self, pbstrxml: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SaveAsXML: usize,
+}
+#[repr(C)]
+pub struct IVssCreateWriterMetadata {
+    pub AddIncludeFiles: unsafe extern "system" fn(this: *mut *mut Self, wszpath: ::windows_sys::core::PCWSTR, wszfilespec: ::windows_sys::core::PCWSTR, brecursive: u8, wszalternatelocation: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub AddExcludeFiles: unsafe extern "system" fn(this: *mut *mut Self, wszpath: ::windows_sys::core::PCWSTR, wszfilespec: ::windows_sys::core::PCWSTR, brecursive: u8) -> ::windows_sys::core::HRESULT,
+    pub AddComponent: unsafe extern "system" fn(this: *mut *mut Self, ct: VSS_COMPONENT_TYPE, wszlogicalpath: ::windows_sys::core::PCWSTR, wszcomponentname: ::windows_sys::core::PCWSTR, wszcaption: ::windows_sys::core::PCWSTR, pbicon: *const u8, cbicon: u32, brestoremetadata: u8, bnotifyonbackupcomplete: u8, bselectable: u8, bselectableforrestore: u8, dwcomponentflags: u32) -> ::windows_sys::core::HRESULT,
+    pub AddDatabaseFiles: unsafe extern "system" fn(this: *mut *mut Self, wszlogicalpath: ::windows_sys::core::PCWSTR, wszdatabasename: ::windows_sys::core::PCWSTR, wszpath: ::windows_sys::core::PCWSTR, wszfilespec: ::windows_sys::core::PCWSTR, dwbackuptypemask: u32) -> ::windows_sys::core::HRESULT,
+    pub AddDatabaseLogFiles: unsafe extern "system" fn(this: *mut *mut Self, wszlogicalpath: ::windows_sys::core::PCWSTR, wszdatabasename: ::windows_sys::core::PCWSTR, wszpath: ::windows_sys::core::PCWSTR, wszfilespec: ::windows_sys::core::PCWSTR, dwbackuptypemask: u32) -> ::windows_sys::core::HRESULT,
+    pub AddFilesToFileGroup: unsafe extern "system" fn(this: *mut *mut Self, wszlogicalpath: ::windows_sys::core::PCWSTR, wszgroupname: ::windows_sys::core::PCWSTR, wszpath: ::windows_sys::core::PCWSTR, wszfilespec: ::windows_sys::core::PCWSTR, brecursive: u8, wszalternatelocation: ::windows_sys::core::PCWSTR, dwbackuptypemask: u32) -> ::windows_sys::core::HRESULT,
+    pub SetRestoreMethod: unsafe extern "system" fn(this: *mut *mut Self, method: VSS_RESTOREMETHOD_ENUM, wszservice: ::windows_sys::core::PCWSTR, wszuserprocedure: ::windows_sys::core::PCWSTR, writerrestore: VSS_WRITERRESTORE_ENUM, brebootrequired: u8) -> ::windows_sys::core::HRESULT,
+    pub AddAlternateLocationMapping: unsafe extern "system" fn(this: *mut *mut Self, wszsourcepath: ::windows_sys::core::PCWSTR, wszsourcefilespec: ::windows_sys::core::PCWSTR, brecursive: u8, wszdestination: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub AddComponentDependency: unsafe extern "system" fn(this: *mut *mut Self, wszforlogicalpath: ::windows_sys::core::PCWSTR, wszforcomponentname: ::windows_sys::core::PCWSTR, onwriterid: ::windows_sys::core::GUID, wszonlogicalpath: ::windows_sys::core::PCWSTR, wszoncomponentname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetBackupSchema: unsafe extern "system" fn(this: *mut *mut Self, dwschemamask: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_System_Com"))]
+    pub GetDocument: unsafe extern "system" fn(this: *mut *mut Self, pdoc: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_System_Com")))]
+    GetDocument: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SaveAsXML: unsafe extern "system" fn(this: *mut *mut Self, pbstrxml: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SaveAsXML: usize,
+}
+#[repr(C)]
+pub struct IVssDifferentialSoftwareSnapshotMgmt {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub AddDiffArea: unsafe extern "system" fn(this: *mut *mut Self, pwszvolumename: *const u16, pwszdiffareavolumename: *const u16, llmaximumdiffspace: i64) -> ::windows_sys::core::HRESULT,
+    pub ChangeDiffAreaMaximumSize: unsafe extern "system" fn(this: *mut *mut Self, pwszvolumename: *const u16, pwszdiffareavolumename: *const u16, llmaximumdiffspace: i64) -> ::windows_sys::core::HRESULT,
+    pub QueryVolumesSupportedForDiffAreas: unsafe extern "system" fn(this: *mut *mut Self, pwszoriginalvolumename: *const u16, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub QueryDiffAreasForVolume: unsafe extern "system" fn(this: *mut *mut Self, pwszvolumename: *const u16, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub QueryDiffAreasOnVolume: unsafe extern "system" fn(this: *mut *mut Self, pwszvolumename: *const u16, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub QueryDiffAreasForSnapshot: unsafe extern "system" fn(this: *mut *mut Self, snapshotid: ::windows_sys::core::GUID, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IVssDifferentialSoftwareSnapshotMgmt2 {
+    pub base__: IVssDifferentialSoftwareSnapshotMgmt,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ChangeDiffAreaMaximumSizeEx: unsafe extern "system" fn(this: *mut *mut Self, pwszvolumename: *const u16, pwszdiffareavolumename: *const u16, llmaximumdiffspace: i64, bvolatile: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ChangeDiffAreaMaximumSizeEx: usize,
+    pub MigrateDiffAreas: unsafe extern "system" fn(this: *mut *mut Self, pwszvolumename: *const u16, pwszdiffareavolumename: *const u16, pwsznewdiffareavolumename: *const u16) -> ::windows_sys::core::HRESULT,
+    pub QueryMigrationStatus: unsafe extern "system" fn(this: *mut *mut Self, pwszvolumename: *const u16, pwszdiffareavolumename: *const u16, ppasync: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetSnapshotPriority: unsafe extern "system" fn(this: *mut *mut Self, idsnapshot: ::windows_sys::core::GUID, priority: u8) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IVssDifferentialSoftwareSnapshotMgmt3 {
+    pub base__: IVssDifferentialSoftwareSnapshotMgmt2,
+    pub SetVolumeProtectLevel: unsafe extern "system" fn(this: *mut *mut Self, pwszvolumename: *const u16, protectionlevel: VSS_PROTECTION_LEVEL) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetVolumeProtectLevel: unsafe extern "system" fn(this: *mut *mut Self, pwszvolumename: *const u16, protectionlevel: *mut VSS_VOLUME_PROTECTION_INFO) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetVolumeProtectLevel: usize,
+    pub ClearVolumeProtectFault: unsafe extern "system" fn(this: *mut *mut Self, pwszvolumename: *const u16) -> ::windows_sys::core::HRESULT,
+    pub DeleteUnusedDiffAreas: unsafe extern "system" fn(this: *mut *mut Self, pwszdiffareavolumename: *const u16) -> ::windows_sys::core::HRESULT,
+    pub QuerySnapshotDeltaBitmap: unsafe extern "system" fn(this: *mut *mut Self, idsnapshotolder: ::windows_sys::core::GUID, idsnapshotyounger: ::windows_sys::core::GUID, pcblocksizeperbit: *mut u32, pcbitmaplength: *mut u32, ppbbitmap: *mut *mut u8) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IVssEnumMgmtObject {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, celt: u32, rgelt: *mut VSS_MGMT_OBJECT_PROP, pceltfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Skip: unsafe extern "system" fn(this: *mut *mut Self, celt: u32) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IVssEnumObject {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, celt: u32, rgelt: *mut VSS_OBJECT_PROP, pceltfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Skip: unsafe extern "system" fn(this: *mut *mut Self, celt: u32) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
 #[repr(C)]
 pub struct IVssExamineWriterMetadata(pub u8);
-pub type IVssExpressWriter = *mut ::core::ffi::c_void;
-pub type IVssFileShareSnapshotProvider = *mut ::core::ffi::c_void;
-pub type IVssHardwareSnapshotProvider = *mut ::core::ffi::c_void;
-pub type IVssHardwareSnapshotProviderEx = *mut ::core::ffi::c_void;
-pub type IVssProviderCreateSnapshotSet = *mut ::core::ffi::c_void;
-pub type IVssProviderNotifications = *mut ::core::ffi::c_void;
-pub type IVssSnapshotMgmt = *mut ::core::ffi::c_void;
-pub type IVssSnapshotMgmt2 = *mut ::core::ffi::c_void;
-pub type IVssSoftwareSnapshotProvider = *mut ::core::ffi::c_void;
-pub type IVssWMDependency = *mut ::core::ffi::c_void;
-pub type IVssWMFiledesc = *mut ::core::ffi::c_void;
-pub type IVssWriterComponents = *mut ::core::ffi::c_void;
-pub type IVssWriterImpl = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IVssExpressWriter {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub CreateMetadata: unsafe extern "system" fn(this: *mut *mut Self, writerid: ::windows_sys::core::GUID, writername: ::windows_sys::core::PCWSTR, usagetype: VSS_USAGE_TYPE, versionmajor: u32, versionminor: u32, reserved: u32, ppmetadata: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub LoadMetadata: unsafe extern "system" fn(this: *mut *mut Self, metadata: ::windows_sys::core::PCWSTR, reserved: u32) -> ::windows_sys::core::HRESULT,
+    pub Register: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Unregister: unsafe extern "system" fn(this: *mut *mut Self, writerid: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IVssFileShareSnapshotProvider {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetContext: unsafe extern "system" fn(this: *mut *mut Self, lcontext: i32) -> ::windows_sys::core::HRESULT,
+    pub GetSnapshotProperties: unsafe extern "system" fn(this: *mut *mut Self, snapshotid: ::windows_sys::core::GUID, pprop: *mut VSS_SNAPSHOT_PROP) -> ::windows_sys::core::HRESULT,
+    pub Query: unsafe extern "system" fn(this: *mut *mut Self, queriedobjectid: ::windows_sys::core::GUID, equeriedobjecttype: VSS_OBJECT_TYPE, ereturnedobjectstype: VSS_OBJECT_TYPE, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DeleteSnapshots: unsafe extern "system" fn(this: *mut *mut Self, sourceobjectid: ::windows_sys::core::GUID, esourceobjecttype: VSS_OBJECT_TYPE, bforcedelete: super::super::Foundation::BOOL, pldeletedsnapshots: *mut i32, pnondeletedsnapshotid: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DeleteSnapshots: usize,
+    pub BeginPrepareSnapshot: unsafe extern "system" fn(this: *mut *mut Self, snapshotsetid: ::windows_sys::core::GUID, snapshotid: ::windows_sys::core::GUID, pwszsharepath: *const u16, lnewcontext: i32, providerid: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsPathSupported: unsafe extern "system" fn(this: *mut *mut Self, pwszsharepath: *const u16, pbsupportedbythisprovider: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsPathSupported: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsPathSnapshotted: unsafe extern "system" fn(this: *mut *mut Self, pwszsharepath: *const u16, pbsnapshotspresent: *mut super::super::Foundation::BOOL, plsnapshotcompatibility: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsPathSnapshotted: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetSnapshotProperty: unsafe extern "system" fn(this: *mut *mut Self, snapshotid: ::windows_sys::core::GUID, esnapshotpropertyid: VSS_SNAPSHOT_PROPERTY_ID, vproperty: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetSnapshotProperty: usize,
+}
+#[repr(C)]
+pub struct IVssHardwareSnapshotProvider {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_VirtualDiskService"))]
+    pub AreLunsSupported: unsafe extern "system" fn(this: *mut *mut Self, lluncount: i32, lcontext: i32, rgwszdevices: *const *const u16, pluninformation: *mut super::VirtualDiskService::VDS_LUN_INFORMATION, pbissupported: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Storage_VirtualDiskService")))]
+    AreLunsSupported: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_VirtualDiskService"))]
+    pub FillInLunInfo: unsafe extern "system" fn(this: *mut *mut Self, wszdevicename: *const u16, pluninfo: *mut super::VirtualDiskService::VDS_LUN_INFORMATION, pbissupported: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Storage_VirtualDiskService")))]
+    FillInLunInfo: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_VirtualDiskService"))]
+    pub BeginPrepareSnapshot: unsafe extern "system" fn(this: *mut *mut Self, snapshotsetid: ::windows_sys::core::GUID, snapshotid: ::windows_sys::core::GUID, lcontext: i32, lluncount: i32, rgdevicenames: *const *const u16, rgluninformation: *mut super::VirtualDiskService::VDS_LUN_INFORMATION) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Storage_VirtualDiskService")))]
+    BeginPrepareSnapshot: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_VirtualDiskService"))]
+    pub GetTargetLuns: unsafe extern "system" fn(this: *mut *mut Self, lluncount: i32, rgdevicenames: *const *const u16, rgsourceluns: *const super::VirtualDiskService::VDS_LUN_INFORMATION, rgdestinationluns: *mut super::VirtualDiskService::VDS_LUN_INFORMATION) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Storage_VirtualDiskService")))]
+    GetTargetLuns: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_VirtualDiskService"))]
+    pub LocateLuns: unsafe extern "system" fn(this: *mut *mut Self, lluncount: i32, rgsourceluns: *const super::VirtualDiskService::VDS_LUN_INFORMATION) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Storage_VirtualDiskService")))]
+    LocateLuns: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_VirtualDiskService"))]
+    pub OnLunEmpty: unsafe extern "system" fn(this: *mut *mut Self, wszdevicename: *const u16, pinformation: *const super::VirtualDiskService::VDS_LUN_INFORMATION) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Storage_VirtualDiskService")))]
+    OnLunEmpty: usize,
+}
+#[repr(C)]
+pub struct IVssHardwareSnapshotProviderEx {
+    pub base__: IVssHardwareSnapshotProvider,
+    pub GetProviderCapabilities: unsafe extern "system" fn(this: *mut *mut Self, plloriginalcapabilitymask: *mut u64) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_VirtualDiskService"))]
+    pub OnLunStateChange: unsafe extern "system" fn(this: *mut *mut Self, psnapshotluns: *const super::VirtualDiskService::VDS_LUN_INFORMATION, poriginalluns: *const super::VirtualDiskService::VDS_LUN_INFORMATION, dwcount: u32, dwflags: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Storage_VirtualDiskService")))]
+    OnLunStateChange: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_VirtualDiskService"))]
+    pub ResyncLuns: unsafe extern "system" fn(this: *mut *mut Self, psourceluns: *const super::VirtualDiskService::VDS_LUN_INFORMATION, ptargetluns: *const super::VirtualDiskService::VDS_LUN_INFORMATION, dwcount: u32, ppasync: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Storage_VirtualDiskService")))]
+    ResyncLuns: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_VirtualDiskService"))]
+    pub OnReuseLuns: unsafe extern "system" fn(this: *mut *mut Self, psnapshotluns: *const super::VirtualDiskService::VDS_LUN_INFORMATION, poriginalluns: *const super::VirtualDiskService::VDS_LUN_INFORMATION, dwcount: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Storage_VirtualDiskService")))]
+    OnReuseLuns: usize,
+}
+#[repr(C)]
+pub struct IVssProviderCreateSnapshotSet {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub EndPrepareSnapshots: unsafe extern "system" fn(this: *mut *mut Self, snapshotsetid: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub PreCommitSnapshots: unsafe extern "system" fn(this: *mut *mut Self, snapshotsetid: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub CommitSnapshots: unsafe extern "system" fn(this: *mut *mut Self, snapshotsetid: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub PostCommitSnapshots: unsafe extern "system" fn(this: *mut *mut Self, snapshotsetid: ::windows_sys::core::GUID, lsnapshotscount: i32) -> ::windows_sys::core::HRESULT,
+    pub PreFinalCommitSnapshots: unsafe extern "system" fn(this: *mut *mut Self, snapshotsetid: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub PostFinalCommitSnapshots: unsafe extern "system" fn(this: *mut *mut Self, snapshotsetid: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub AbortSnapshots: unsafe extern "system" fn(this: *mut *mut Self, snapshotsetid: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IVssProviderNotifications {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnLoad: unsafe extern "system" fn(this: *mut *mut Self, pcallback: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OnUnload: unsafe extern "system" fn(this: *mut *mut Self, bforceunload: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OnUnload: usize,
+}
+#[repr(C)]
+pub struct IVssSnapshotMgmt {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetProviderMgmtInterface: unsafe extern "system" fn(this: *mut *mut Self, providerid: ::windows_sys::core::GUID, interfaceid: *const ::windows_sys::core::GUID, ppitf: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub QueryVolumesSupportedForSnapshots: unsafe extern "system" fn(this: *mut *mut Self, providerid: ::windows_sys::core::GUID, lcontext: i32, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub QuerySnapshotsByVolume: unsafe extern "system" fn(this: *mut *mut Self, pwszvolumename: *const u16, providerid: ::windows_sys::core::GUID, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IVssSnapshotMgmt2 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetMinDiffAreaSize: unsafe extern "system" fn(this: *mut *mut Self, pllmindiffareasize: *mut i64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IVssSoftwareSnapshotProvider {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetContext: unsafe extern "system" fn(this: *mut *mut Self, lcontext: i32) -> ::windows_sys::core::HRESULT,
+    pub GetSnapshotProperties: unsafe extern "system" fn(this: *mut *mut Self, snapshotid: ::windows_sys::core::GUID, pprop: *mut VSS_SNAPSHOT_PROP) -> ::windows_sys::core::HRESULT,
+    pub Query: unsafe extern "system" fn(this: *mut *mut Self, queriedobjectid: ::windows_sys::core::GUID, equeriedobjecttype: VSS_OBJECT_TYPE, ereturnedobjectstype: VSS_OBJECT_TYPE, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DeleteSnapshots: unsafe extern "system" fn(this: *mut *mut Self, sourceobjectid: ::windows_sys::core::GUID, esourceobjecttype: VSS_OBJECT_TYPE, bforcedelete: super::super::Foundation::BOOL, pldeletedsnapshots: *mut i32, pnondeletedsnapshotid: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DeleteSnapshots: usize,
+    pub BeginPrepareSnapshot: unsafe extern "system" fn(this: *mut *mut Self, snapshotsetid: ::windows_sys::core::GUID, snapshotid: ::windows_sys::core::GUID, pwszvolumename: *const u16, lnewcontext: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsVolumeSupported: unsafe extern "system" fn(this: *mut *mut Self, pwszvolumename: *const u16, pbsupportedbythisprovider: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsVolumeSupported: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsVolumeSnapshotted: unsafe extern "system" fn(this: *mut *mut Self, pwszvolumename: *const u16, pbsnapshotspresent: *mut super::super::Foundation::BOOL, plsnapshotcompatibility: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsVolumeSnapshotted: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetSnapshotProperty: unsafe extern "system" fn(this: *mut *mut Self, snapshotid: ::windows_sys::core::GUID, esnapshotpropertyid: VSS_SNAPSHOT_PROPERTY_ID, vproperty: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetSnapshotProperty: usize,
+    pub RevertToSnapshot: unsafe extern "system" fn(this: *mut *mut Self, snapshotid: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub QueryRevertStatus: unsafe extern "system" fn(this: *mut *mut Self, pwszvolume: *const u16, ppasync: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IVssWMDependency {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetWriterId: unsafe extern "system" fn(this: *mut *mut Self, pwriterid: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetLogicalPath: unsafe extern "system" fn(this: *mut *mut Self, pbstrlogicalpath: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetLogicalPath: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetComponentName: unsafe extern "system" fn(this: *mut *mut Self, pbstrcomponentname: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetComponentName: usize,
+}
+#[repr(C)]
+pub struct IVssWMFiledesc {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetPath: unsafe extern "system" fn(this: *mut *mut Self, pbstrpath: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetPath: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetFilespec: unsafe extern "system" fn(this: *mut *mut Self, pbstrfilespec: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetFilespec: usize,
+    pub GetRecursive: unsafe extern "system" fn(this: *mut *mut Self, pbrecursive: *mut bool) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetAlternateLocation: unsafe extern "system" fn(this: *mut *mut Self, pbstralternatelocation: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetAlternateLocation: usize,
+    pub GetBackupTypeMask: unsafe extern "system" fn(this: *mut *mut Self, pdwtypemask: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IVssWriterComponents {
+    pub GetComponentCount: unsafe extern "system" fn(this: *mut *mut Self, pccomponents: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetWriterInfo: unsafe extern "system" fn(this: *mut *mut Self, pidinstance: *mut ::windows_sys::core::GUID, pidwriter: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub GetComponent: unsafe extern "system" fn(this: *mut *mut Self, icomponent: u32, ppcomponent: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IVssWriterImpl {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, writerid: ::windows_sys::core::GUID, wszwritername: ::windows_sys::core::PCWSTR, wszwriterinstancename: ::windows_sys::core::PCWSTR, dwmajorversion: u32, dwminorversion: u32, ut: VSS_USAGE_TYPE, st: VSS_SOURCE_TYPE, nlevel: VSS_APPLICATION_LEVEL, dwtimeout: u32, aws: VSS_ALTERNATE_WRITER_STATE, biothrottlingonly: u8) -> ::windows_sys::core::HRESULT,
+    pub Subscribe: unsafe extern "system" fn(this: *mut *mut Self, dwsubscribetimeout: u32, dweventflags: u32) -> ::windows_sys::core::HRESULT,
+    pub Unsubscribe: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Uninitialize: unsafe extern "system" fn(this: *mut *mut Self),
+    pub GetCurrentVolumeArray: unsafe extern "system" fn(this: *mut *mut Self) -> *mut ::windows_sys::core::PWSTR,
+    pub GetCurrentVolumeCount: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
+    pub GetSnapshotDeviceName: unsafe extern "system" fn(this: *mut *mut Self, wszoriginalvolume: ::windows_sys::core::PCWSTR, ppwszsnapshotdevice: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentSnapshotSetId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID),
+    pub GetContext: unsafe extern "system" fn(this: *mut *mut Self) -> i32,
+    pub GetCurrentLevel: unsafe extern "system" fn(this: *mut *mut Self) -> VSS_APPLICATION_LEVEL,
+    pub IsPathAffected: unsafe extern "system" fn(this: *mut *mut Self, wszpath: ::windows_sys::core::PCWSTR) -> bool,
+    pub IsBootableSystemStateBackedUp: unsafe extern "system" fn(this: *mut *mut Self) -> bool,
+    pub AreComponentsSelected: unsafe extern "system" fn(this: *mut *mut Self) -> bool,
+    pub GetBackupType: unsafe extern "system" fn(this: *mut *mut Self) -> VSS_BACKUP_TYPE,
+    pub GetRestoreType: unsafe extern "system" fn(this: *mut *mut Self) -> VSS_RESTORE_TYPE,
+    pub SetWriterFailure: unsafe extern "system" fn(this: *mut *mut Self, hr: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+    pub IsPartialFileSupportEnabled: unsafe extern "system" fn(this: *mut *mut Self) -> bool,
+    pub InstallAlternateWriter: unsafe extern "system" fn(this: *mut *mut Self, idwriter: ::windows_sys::core::GUID, clsid: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub GetIdentityInformation: unsafe extern "system" fn(this: *mut *mut Self) -> *mut IVssExamineWriterMetadata,
+    pub SetWriterFailureEx: unsafe extern "system" fn(this: *mut *mut Self, hr: ::windows_sys::core::HRESULT, hrapplication: ::windows_sys::core::HRESULT, wszapplicationmessage: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetSessionId: unsafe extern "system" fn(this: *mut *mut Self, idsession: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub IsWriterShuttingDown: unsafe extern "system" fn(this: *mut *mut Self) -> bool,
+}
 pub const VSSCoordinator: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3849956191, data2: 7364, data3: 17588, data4: [190, 217, 222, 9, 145, 255, 6, 35] };
 #[doc = "*Required features: `\"Win32_Storage_Vss\"`*"]
 pub type VSS_ALTERNATE_WRITER_STATE = i32;

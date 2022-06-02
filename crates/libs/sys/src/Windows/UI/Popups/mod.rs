@@ -1,4 +1,68 @@
-pub type IUICommand = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IMessageDialog {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Title: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetTitle: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub Commands: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    Commands: usize,
+    pub DefaultCommandIndex: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetDefaultCommandIndex: unsafe extern "system" fn(this: *mut *mut Self, value: u32) -> ::windows_sys::core::HRESULT,
+    pub CancelCommandIndex: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetCancelCommandIndex: unsafe extern "system" fn(this: *mut *mut Self, value: u32) -> ::windows_sys::core::HRESULT,
+    pub Content: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetContent: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub ShowAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    ShowAsync: usize,
+    pub Options: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut MessageDialogOptions) -> ::windows_sys::core::HRESULT,
+    pub SetOptions: unsafe extern "system" fn(this: *mut *mut Self, value: MessageDialogOptions) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMessageDialogFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Create: unsafe extern "system" fn(this: *mut *mut Self, content: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateWithTitle: unsafe extern "system" fn(this: *mut *mut Self, content: ::windows_sys::core::HSTRING, title: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPopupMenu {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation_Collections")]
+    pub Commands: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    Commands: usize,
+    #[cfg(feature = "Foundation")]
+    pub ShowAsync: unsafe extern "system" fn(this: *mut *mut Self, invocationpoint: super::super::Foundation::Point, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    ShowAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub ShowAsyncWithRect: unsafe extern "system" fn(this: *mut *mut Self, selection: super::super::Foundation::Rect, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    ShowAsyncWithRect: usize,
+    #[cfg(feature = "Foundation")]
+    pub ShowAsyncWithRectAndPlacement: unsafe extern "system" fn(this: *mut *mut Self, selection: super::super::Foundation::Rect, preferredplacement: Placement, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    ShowAsyncWithRectAndPlacement: usize,
+}
+#[repr(C)]
+pub struct IUICommand {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Label: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetLabel: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Invoked: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetInvoked: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Id: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetId: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IUICommandFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Create: unsafe extern "system" fn(this: *mut *mut Self, label: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateWithHandler: unsafe extern "system" fn(this: *mut *mut Self, label: ::windows_sys::core::HSTRING, action: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateWithHandlerAndId: unsafe extern "system" fn(this: *mut *mut Self, label: ::windows_sys::core::HSTRING, action: *mut ::core::ffi::c_void, commandid: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
 pub type MessageDialog = *mut ::core::ffi::c_void;
 #[doc = "*Required features: `\"UI_Popups\"`*"]
 #[repr(transparent)]

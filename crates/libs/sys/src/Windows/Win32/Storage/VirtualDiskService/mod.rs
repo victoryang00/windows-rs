@@ -2,42 +2,353 @@ pub const CLSID_VdsLoader: ::windows_sys::core::GUID = ::windows_sys::core::GUID
 pub const CLSID_VdsService: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2098803659, data2: 34550, data3: 19096, data4: [134, 40, 1, 190, 148, 201, 165, 117] };
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 pub const GPT_PARTITION_NAME_LENGTH: u32 = 36u32;
-pub type IEnumVdsObject = *mut ::core::ffi::c_void;
-pub type IVdsAdmin = *mut ::core::ffi::c_void;
-pub type IVdsAdviseSink = *mut ::core::ffi::c_void;
-pub type IVdsAsync = *mut ::core::ffi::c_void;
-pub type IVdsController = *mut ::core::ffi::c_void;
-pub type IVdsControllerControllerPort = *mut ::core::ffi::c_void;
-pub type IVdsControllerPort = *mut ::core::ffi::c_void;
-pub type IVdsDrive = *mut ::core::ffi::c_void;
-pub type IVdsDrive2 = *mut ::core::ffi::c_void;
-pub type IVdsHwProvider = *mut ::core::ffi::c_void;
-pub type IVdsHwProviderPrivate = *mut ::core::ffi::c_void;
-pub type IVdsHwProviderPrivateMpio = *mut ::core::ffi::c_void;
-pub type IVdsHwProviderStoragePools = *mut ::core::ffi::c_void;
-pub type IVdsHwProviderType = *mut ::core::ffi::c_void;
-pub type IVdsHwProviderType2 = *mut ::core::ffi::c_void;
-pub type IVdsIscsiPortal = *mut ::core::ffi::c_void;
-pub type IVdsIscsiPortalGroup = *mut ::core::ffi::c_void;
-pub type IVdsIscsiTarget = *mut ::core::ffi::c_void;
-pub type IVdsLun = *mut ::core::ffi::c_void;
-pub type IVdsLun2 = *mut ::core::ffi::c_void;
-pub type IVdsLunControllerPorts = *mut ::core::ffi::c_void;
-pub type IVdsLunIscsi = *mut ::core::ffi::c_void;
-pub type IVdsLunMpio = *mut ::core::ffi::c_void;
-pub type IVdsLunNaming = *mut ::core::ffi::c_void;
-pub type IVdsLunNumber = *mut ::core::ffi::c_void;
-pub type IVdsLunPlex = *mut ::core::ffi::c_void;
-pub type IVdsMaintenance = *mut ::core::ffi::c_void;
-pub type IVdsProvider = *mut ::core::ffi::c_void;
-pub type IVdsProviderPrivate = *mut ::core::ffi::c_void;
-pub type IVdsProviderSupport = *mut ::core::ffi::c_void;
-pub type IVdsStoragePool = *mut ::core::ffi::c_void;
-pub type IVdsSubSystem = *mut ::core::ffi::c_void;
-pub type IVdsSubSystem2 = *mut ::core::ffi::c_void;
-pub type IVdsSubSystemInterconnect = *mut ::core::ffi::c_void;
-pub type IVdsSubSystemIscsi = *mut ::core::ffi::c_void;
-pub type IVdsSubSystemNaming = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IEnumVdsObject {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, celt: u32, ppobjectarray: *mut *mut ::core::ffi::c_void, pcfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Skip: unsafe extern "system" fn(this: *mut *mut Self, celt: u32) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IVdsAdmin {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub RegisterProvider: unsafe extern "system" fn(this: *mut *mut Self, providerid: ::windows_sys::core::GUID, providerclsid: ::windows_sys::core::GUID, pwszname: ::windows_sys::core::PCWSTR, r#type: VDS_PROVIDER_TYPE, pwszmachinename: ::windows_sys::core::PCWSTR, pwszversion: ::windows_sys::core::PCWSTR, guidversionid: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub UnregisterProvider: unsafe extern "system" fn(this: *mut *mut Self, providerid: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IVdsAdviseSink {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnNotify: unsafe extern "system" fn(this: *mut *mut Self, lnumberofnotifications: i32, pnotificationarray: *const VDS_NOTIFICATION) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IVdsAsync {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Cancel: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Wait: unsafe extern "system" fn(this: *mut *mut Self, phrresult: *mut ::windows_sys::core::HRESULT, pasyncout: *mut VDS_ASYNC_OUTPUT) -> ::windows_sys::core::HRESULT,
+    pub QueryStatus: unsafe extern "system" fn(this: *mut *mut Self, phrresult: *mut ::windows_sys::core::HRESULT, pulpercentcompleted: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IVdsController {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetProperties: unsafe extern "system" fn(this: *mut *mut Self, pcontrollerprop: *mut VDS_CONTROLLER_PROP) -> ::windows_sys::core::HRESULT,
+    pub GetSubSystem: unsafe extern "system" fn(this: *mut *mut Self, ppsubsystem: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetPortProperties: unsafe extern "system" fn(this: *mut *mut Self, sportnumber: i16, pportprop: *mut VDS_PORT_PROP) -> ::windows_sys::core::HRESULT,
+    pub FlushCache: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub InvalidateCache: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub QueryAssociatedLuns: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetStatus: unsafe extern "system" fn(this: *mut *mut Self, status: VDS_CONTROLLER_STATUS) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IVdsControllerControllerPort {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub QueryControllerPorts: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IVdsControllerPort {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetProperties: unsafe extern "system" fn(this: *mut *mut Self, pportprop: *mut VDS_PORT_PROP) -> ::windows_sys::core::HRESULT,
+    pub GetController: unsafe extern "system" fn(this: *mut *mut Self, ppcontroller: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub QueryAssociatedLuns: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub SetStatus: unsafe extern "system" fn(this: *mut *mut Self, status: VDS_PORT_STATUS) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IVdsDrive {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetProperties: unsafe extern "system" fn(this: *mut *mut Self, pdriveprop: *mut VDS_DRIVE_PROP) -> ::windows_sys::core::HRESULT,
+    pub GetSubSystem: unsafe extern "system" fn(this: *mut *mut Self, ppsubsystem: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub QueryExtents: unsafe extern "system" fn(this: *mut *mut Self, ppextentarray: *mut *mut VDS_DRIVE_EXTENT, plnumberofextents: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    QueryExtents: usize,
+    pub SetFlags: unsafe extern "system" fn(this: *mut *mut Self, ulflags: u32) -> ::windows_sys::core::HRESULT,
+    pub ClearFlags: unsafe extern "system" fn(this: *mut *mut Self, ulflags: u32) -> ::windows_sys::core::HRESULT,
+    pub SetStatus: unsafe extern "system" fn(this: *mut *mut Self, status: VDS_DRIVE_STATUS) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IVdsDrive2 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetProperties2: unsafe extern "system" fn(this: *mut *mut Self, pdriveprop2: *mut VDS_DRIVE_PROP2) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IVdsHwProvider {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub QuerySubSystems: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Reenumerate: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Refresh: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IVdsHwProviderPrivate {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub QueryIfCreatedLun: unsafe extern "system" fn(this: *mut *mut Self, pwszdevicepath: ::windows_sys::core::PCWSTR, pvdsluninformation: *const VDS_LUN_INFORMATION, plunid: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    QueryIfCreatedLun: usize,
+}
+#[repr(C)]
+pub struct IVdsHwProviderPrivateMpio {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetAllPathStatusesFromHbaPort: unsafe extern "system" fn(this: *mut *mut Self, hbaportprop: VDS_HBAPORT_PROP, status: VDS_PATH_STATUS) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IVdsHwProviderStoragePools {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub QueryStoragePools: unsafe extern "system" fn(this: *mut *mut Self, ulflags: u32, ullremainingfreespace: u64, ppoolattributes: *const VDS_POOL_ATTRIBUTES, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    QueryStoragePools: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CreateLunInStoragePool: unsafe extern "system" fn(this: *mut *mut Self, r#type: VDS_LUN_TYPE, ullsizeinbytes: u64, storagepoolid: ::windows_sys::core::GUID, pwszunmaskinglist: ::windows_sys::core::PCWSTR, phints2: *const VDS_HINTS2, ppasync: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CreateLunInStoragePool: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub QueryMaxLunCreateSizeInStoragePool: unsafe extern "system" fn(this: *mut *mut Self, r#type: VDS_LUN_TYPE, storagepoolid: ::windows_sys::core::GUID, phints2: *const VDS_HINTS2, pullmaxlunsize: *mut u64) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    QueryMaxLunCreateSizeInStoragePool: usize,
+}
+#[repr(C)]
+pub struct IVdsHwProviderType {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetProviderType: unsafe extern "system" fn(this: *mut *mut Self, ptype: *mut VDS_HWPROVIDER_TYPE) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IVdsHwProviderType2 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetProviderType2: unsafe extern "system" fn(this: *mut *mut Self, ptype: *mut VDS_HWPROVIDER_TYPE) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IVdsIscsiPortal {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetProperties: unsafe extern "system" fn(this: *mut *mut Self, pportalprop: *mut VDS_ISCSI_PORTAL_PROP) -> ::windows_sys::core::HRESULT,
+    pub GetSubSystem: unsafe extern "system" fn(this: *mut *mut Self, ppsubsystem: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub QueryAssociatedPortalGroups: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetStatus: unsafe extern "system" fn(this: *mut *mut Self, status: VDS_ISCSI_PORTAL_STATUS) -> ::windows_sys::core::HRESULT,
+    pub SetIpsecTunnelAddress: unsafe extern "system" fn(this: *mut *mut Self, ptunneladdress: *const VDS_IPADDRESS, pdestinationaddress: *const VDS_IPADDRESS) -> ::windows_sys::core::HRESULT,
+    pub GetIpsecSecurity: unsafe extern "system" fn(this: *mut *mut Self, pinitiatorportaladdress: *const VDS_IPADDRESS, pullsecurityflags: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub SetIpsecSecurity: unsafe extern "system" fn(this: *mut *mut Self, pinitiatorportaladdress: *const VDS_IPADDRESS, ullsecurityflags: u64, pipseckey: *const VDS_ISCSI_IPSEC_KEY) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IVdsIscsiPortalGroup {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetProperties: unsafe extern "system" fn(this: *mut *mut Self, pportalgroupprop: *mut VDS_ISCSI_PORTALGROUP_PROP) -> ::windows_sys::core::HRESULT,
+    pub GetTarget: unsafe extern "system" fn(this: *mut *mut Self, pptarget: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub QueryAssociatedPortals: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AddPortal: unsafe extern "system" fn(this: *mut *mut Self, portalid: ::windows_sys::core::GUID, ppasync: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RemovePortal: unsafe extern "system" fn(this: *mut *mut Self, portalid: ::windows_sys::core::GUID, ppasync: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Delete: unsafe extern "system" fn(this: *mut *mut Self, ppasync: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IVdsIscsiTarget {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetProperties: unsafe extern "system" fn(this: *mut *mut Self, ptargetprop: *mut VDS_ISCSI_TARGET_PROP) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetProperties: usize,
+    pub GetSubSystem: unsafe extern "system" fn(this: *mut *mut Self, ppsubsystem: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub QueryPortalGroups: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub QueryAssociatedLuns: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreatePortalGroup: unsafe extern "system" fn(this: *mut *mut Self, ppasync: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Delete: unsafe extern "system" fn(this: *mut *mut Self, ppasync: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetFriendlyName: unsafe extern "system" fn(this: *mut *mut Self, pwszfriendlyname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetSharedSecret: unsafe extern "system" fn(this: *mut *mut Self, ptargetsharedsecret: *const VDS_ISCSI_SHARED_SECRET, pwszinitiatorname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub RememberInitiatorSharedSecret: unsafe extern "system" fn(this: *mut *mut Self, pwszinitiatorname: ::windows_sys::core::PCWSTR, pinitiatorsharedsecret: *const VDS_ISCSI_SHARED_SECRET) -> ::windows_sys::core::HRESULT,
+    pub GetConnectedInitiators: unsafe extern "system" fn(this: *mut *mut Self, pppwszinitiatorlist: *mut *mut ::windows_sys::core::PWSTR, plnumberofinitiators: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IVdsLun {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetProperties: unsafe extern "system" fn(this: *mut *mut Self, plunprop: *mut VDS_LUN_PROP) -> ::windows_sys::core::HRESULT,
+    pub GetSubSystem: unsafe extern "system" fn(this: *mut *mut Self, ppsubsystem: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetIdentificationData: unsafe extern "system" fn(this: *mut *mut Self, pluninfo: *mut VDS_LUN_INFORMATION) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetIdentificationData: usize,
+    pub QueryActiveControllers: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Extend: unsafe extern "system" fn(this: *mut *mut Self, ullnumberofbytestoadd: u64, pdriveidarray: *const ::windows_sys::core::GUID, lnumberofdrives: i32, ppasync: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Shrink: unsafe extern "system" fn(this: *mut *mut Self, ullnumberofbytestoremove: u64, ppasync: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub QueryPlexes: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AddPlex: unsafe extern "system" fn(this: *mut *mut Self, lunid: ::windows_sys::core::GUID, ppasync: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RemovePlex: unsafe extern "system" fn(this: *mut *mut Self, plexid: ::windows_sys::core::GUID, ppasync: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Recover: unsafe extern "system" fn(this: *mut *mut Self, ppasync: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetMask: unsafe extern "system" fn(this: *mut *mut Self, pwszunmaskinglist: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub Delete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub AssociateControllers: unsafe extern "system" fn(this: *mut *mut Self, pactivecontrolleridarray: *const ::windows_sys::core::GUID, lnumberofactivecontrollers: i32, pinactivecontrolleridarray: *const ::windows_sys::core::GUID, lnumberofinactivecontrollers: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub QueryHints: unsafe extern "system" fn(this: *mut *mut Self, phints: *mut VDS_HINTS) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    QueryHints: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ApplyHints: unsafe extern "system" fn(this: *mut *mut Self, phints: *const VDS_HINTS) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ApplyHints: usize,
+    pub SetStatus: unsafe extern "system" fn(this: *mut *mut Self, status: VDS_LUN_STATUS) -> ::windows_sys::core::HRESULT,
+    pub QueryMaxLunExtendSize: unsafe extern "system" fn(this: *mut *mut Self, pdriveidarray: *const ::windows_sys::core::GUID, lnumberofdrives: i32, pullmaxbytestobeadded: *mut u64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IVdsLun2 {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub QueryHints2: unsafe extern "system" fn(this: *mut *mut Self, phints2: *mut VDS_HINTS2) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    QueryHints2: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ApplyHints2: unsafe extern "system" fn(this: *mut *mut Self, phints2: *const VDS_HINTS2) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ApplyHints2: usize,
+}
+#[repr(C)]
+pub struct IVdsLunControllerPorts {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub AssociateControllerPorts: unsafe extern "system" fn(this: *mut *mut Self, pactivecontrollerportidarray: *const ::windows_sys::core::GUID, lnumberofactivecontrollerports: i32, pinactivecontrollerportidarray: *const ::windows_sys::core::GUID, lnumberofinactivecontrollerports: i32) -> ::windows_sys::core::HRESULT,
+    pub QueryActiveControllerPorts: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IVdsLunIscsi {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub AssociateTargets: unsafe extern "system" fn(this: *mut *mut Self, ptargetidarray: *const ::windows_sys::core::GUID, lnumberoftargets: i32) -> ::windows_sys::core::HRESULT,
+    pub QueryAssociatedTargets: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IVdsLunMpio {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetPathInfo: unsafe extern "system" fn(this: *mut *mut Self, pppaths: *mut *mut VDS_PATH_INFO, plnumberofpaths: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetLoadBalancePolicy: unsafe extern "system" fn(this: *mut *mut Self, ppolicy: *mut VDS_LOADBALANCE_POLICY_ENUM, pppaths: *mut *mut VDS_PATH_POLICY, plnumberofpaths: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetLoadBalancePolicy: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetLoadBalancePolicy: unsafe extern "system" fn(this: *mut *mut Self, policy: VDS_LOADBALANCE_POLICY_ENUM, ppaths: *const VDS_PATH_POLICY, lnumberofpaths: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetLoadBalancePolicy: usize,
+    pub GetSupportedLbPolicies: unsafe extern "system" fn(this: *mut *mut Self, pullbflags: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IVdsLunNaming {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetFriendlyName: unsafe extern "system" fn(this: *mut *mut Self, pwszfriendlyname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IVdsLunNumber {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetLunNumber: unsafe extern "system" fn(this: *mut *mut Self, pullunnumber: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IVdsLunPlex {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetProperties: unsafe extern "system" fn(this: *mut *mut Self, pplexprop: *mut VDS_LUN_PLEX_PROP) -> ::windows_sys::core::HRESULT,
+    pub GetLun: unsafe extern "system" fn(this: *mut *mut Self, pplun: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub QueryExtents: unsafe extern "system" fn(this: *mut *mut Self, ppextentarray: *mut *mut VDS_DRIVE_EXTENT, plnumberofextents: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    QueryExtents: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub QueryHints: unsafe extern "system" fn(this: *mut *mut Self, phints: *mut VDS_HINTS) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    QueryHints: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ApplyHints: unsafe extern "system" fn(this: *mut *mut Self, phints: *const VDS_HINTS) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ApplyHints: usize,
+}
+#[repr(C)]
+pub struct IVdsMaintenance {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub StartMaintenance: unsafe extern "system" fn(this: *mut *mut Self, operation: VDS_MAINTENANCE_OPERATION) -> ::windows_sys::core::HRESULT,
+    pub StopMaintenance: unsafe extern "system" fn(this: *mut *mut Self, operation: VDS_MAINTENANCE_OPERATION) -> ::windows_sys::core::HRESULT,
+    pub PulseMaintenance: unsafe extern "system" fn(this: *mut *mut Self, operation: VDS_MAINTENANCE_OPERATION, ulcount: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IVdsProvider {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetProperties: unsafe extern "system" fn(this: *mut *mut Self, pproviderprop: *mut VDS_PROVIDER_PROP) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IVdsProviderPrivate {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetObject: unsafe extern "system" fn(this: *mut *mut Self, objectid: ::windows_sys::core::GUID, r#type: VDS_OBJECT_TYPE, ppobjectunk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub OnLoad: unsafe extern "system" fn(this: *mut *mut Self, pwszmachinename: ::windows_sys::core::PCWSTR, pcallbackobject: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OnUnload: unsafe extern "system" fn(this: *mut *mut Self, bforceunload: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OnUnload: usize,
+}
+#[repr(C)]
+pub struct IVdsProviderSupport {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetVersionSupport: unsafe extern "system" fn(this: *mut *mut Self, ulversionsupport: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IVdsStoragePool {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetProvider: unsafe extern "system" fn(this: *mut *mut Self, ppprovider: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetProperties: unsafe extern "system" fn(this: *mut *mut Self, pstoragepoolprop: *mut VDS_STORAGE_POOL_PROP) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetAttributes: unsafe extern "system" fn(this: *mut *mut Self, pstoragepoolattributes: *mut VDS_POOL_ATTRIBUTES) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetAttributes: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub QueryDriveExtents: unsafe extern "system" fn(this: *mut *mut Self, ppextentarray: *mut *mut VDS_STORAGE_POOL_DRIVE_EXTENT, plnumberofextents: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    QueryDriveExtents: usize,
+    pub QueryAllocatedLuns: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub QueryAllocatedStoragePools: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IVdsSubSystem {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetProperties: unsafe extern "system" fn(this: *mut *mut Self, psubsystemprop: *mut VDS_SUB_SYSTEM_PROP) -> ::windows_sys::core::HRESULT,
+    pub GetProvider: unsafe extern "system" fn(this: *mut *mut Self, ppprovider: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub QueryControllers: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub QueryLuns: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub QueryDrives: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetDrive: unsafe extern "system" fn(this: *mut *mut Self, sbusnumber: i16, sslotnumber: i16, ppdrive: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Reenumerate: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub SetControllerStatus: unsafe extern "system" fn(this: *mut *mut Self, ponlinecontrolleridarray: *const ::windows_sys::core::GUID, lnumberofonlinecontrollers: i32, pofflinecontrolleridarray: *const ::windows_sys::core::GUID, lnumberofofflinecontrollers: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CreateLun: unsafe extern "system" fn(this: *mut *mut Self, r#type: VDS_LUN_TYPE, ullsizeinbytes: u64, pdriveidarray: *const ::windows_sys::core::GUID, lnumberofdrives: i32, pwszunmaskinglist: ::windows_sys::core::PCWSTR, phints: *const VDS_HINTS, ppasync: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CreateLun: usize,
+    pub ReplaceDrive: unsafe extern "system" fn(this: *mut *mut Self, drivetobereplaced: ::windows_sys::core::GUID, replacementdrive: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub SetStatus: unsafe extern "system" fn(this: *mut *mut Self, status: VDS_SUB_SYSTEM_STATUS) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub QueryMaxLunCreateSize: unsafe extern "system" fn(this: *mut *mut Self, r#type: VDS_LUN_TYPE, pdriveidarray: *const ::windows_sys::core::GUID, lnumberofdrives: i32, phints: *const VDS_HINTS, pullmaxlunsize: *mut u64) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    QueryMaxLunCreateSize: usize,
+}
+#[repr(C)]
+pub struct IVdsSubSystem2 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetProperties2: unsafe extern "system" fn(this: *mut *mut Self, psubsystemprop2: *mut VDS_SUB_SYSTEM_PROP2) -> ::windows_sys::core::HRESULT,
+    pub GetDrive2: unsafe extern "system" fn(this: *mut *mut Self, sbusnumber: i16, sslotnumber: i16, ulenclosurenumber: u32, ppdrive: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CreateLun2: unsafe extern "system" fn(this: *mut *mut Self, r#type: VDS_LUN_TYPE, ullsizeinbytes: u64, pdriveidarray: *const ::windows_sys::core::GUID, lnumberofdrives: i32, pwszunmaskinglist: ::windows_sys::core::PCWSTR, phints2: *const VDS_HINTS2, ppasync: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CreateLun2: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub QueryMaxLunCreateSize2: unsafe extern "system" fn(this: *mut *mut Self, r#type: VDS_LUN_TYPE, pdriveidarray: *const ::windows_sys::core::GUID, lnumberofdrives: i32, phints2: *const VDS_HINTS2, pullmaxlunsize: *mut u64) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    QueryMaxLunCreateSize2: usize,
+}
+#[repr(C)]
+pub struct IVdsSubSystemInterconnect {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetSupportedInterconnects: unsafe extern "system" fn(this: *mut *mut Self, pulsupportedinterconnectsflag: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IVdsSubSystemIscsi {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub QueryTargets: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub QueryPortals: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateTarget: unsafe extern "system" fn(this: *mut *mut Self, pwsziscsiname: ::windows_sys::core::PCWSTR, pwszfriendlyname: ::windows_sys::core::PCWSTR, ppasync: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetIpsecGroupPresharedKey: unsafe extern "system" fn(this: *mut *mut Self, pipseckey: *const VDS_ISCSI_IPSEC_KEY) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IVdsSubSystemNaming {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetFriendlyName: unsafe extern "system" fn(this: *mut *mut Self, pwszfriendlyname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 pub const MAX_FS_ALLOWED_CLUSTER_SIZES_SIZE: u32 = 32u32;
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
@@ -77,7 +388,7 @@ impl ::core::clone::Clone for VDS_ASYNC_OUTPUT_0 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 pub struct VDS_ASYNC_OUTPUT_0_0 {
-    pub pVolumeUnk: ::windows_sys::core::IUnknown,
+    pub pVolumeUnk: *mut *mut *mut *mut ::windows_sys::core::IUnknown,
 }
 impl ::core::marker::Copy for VDS_ASYNC_OUTPUT_0_0 {}
 impl ::core::clone::Clone for VDS_ASYNC_OUTPUT_0_0 {
@@ -88,7 +399,7 @@ impl ::core::clone::Clone for VDS_ASYNC_OUTPUT_0_0 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 pub struct VDS_ASYNC_OUTPUT_0_1 {
-    pub pLunUnk: ::windows_sys::core::IUnknown,
+    pub pLunUnk: *mut *mut *mut *mut ::windows_sys::core::IUnknown,
 }
 impl ::core::marker::Copy for VDS_ASYNC_OUTPUT_0_1 {}
 impl ::core::clone::Clone for VDS_ASYNC_OUTPUT_0_1 {
@@ -111,7 +422,7 @@ impl ::core::clone::Clone for VDS_ASYNC_OUTPUT_0_2 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 pub struct VDS_ASYNC_OUTPUT_0_3 {
-    pub pPortalGroupUnk: ::windows_sys::core::IUnknown,
+    pub pPortalGroupUnk: *mut *mut *mut *mut ::windows_sys::core::IUnknown,
 }
 impl ::core::marker::Copy for VDS_ASYNC_OUTPUT_0_3 {}
 impl ::core::clone::Clone for VDS_ASYNC_OUTPUT_0_3 {
@@ -122,7 +433,7 @@ impl ::core::clone::Clone for VDS_ASYNC_OUTPUT_0_3 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 pub struct VDS_ASYNC_OUTPUT_0_4 {
-    pub pTargetUnk: ::windows_sys::core::IUnknown,
+    pub pTargetUnk: *mut *mut *mut *mut ::windows_sys::core::IUnknown,
 }
 impl ::core::marker::Copy for VDS_ASYNC_OUTPUT_0_4 {}
 impl ::core::clone::Clone for VDS_ASYNC_OUTPUT_0_4 {
@@ -133,7 +444,7 @@ impl ::core::clone::Clone for VDS_ASYNC_OUTPUT_0_4 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 pub struct VDS_ASYNC_OUTPUT_0_5 {
-    pub pVolumeUnk: ::windows_sys::core::IUnknown,
+    pub pVolumeUnk: *mut *mut *mut *mut ::windows_sys::core::IUnknown,
 }
 impl ::core::marker::Copy for VDS_ASYNC_OUTPUT_0_5 {}
 impl ::core::clone::Clone for VDS_ASYNC_OUTPUT_0_5 {
@@ -144,7 +455,7 @@ impl ::core::clone::Clone for VDS_ASYNC_OUTPUT_0_5 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 pub struct VDS_ASYNC_OUTPUT_0_6 {
-    pub pVDiskUnk: ::windows_sys::core::IUnknown,
+    pub pVDiskUnk: *mut *mut *mut *mut ::windows_sys::core::IUnknown,
 }
 impl ::core::marker::Copy for VDS_ASYNC_OUTPUT_0_6 {}
 impl ::core::clone::Clone for VDS_ASYNC_OUTPUT_0_6 {

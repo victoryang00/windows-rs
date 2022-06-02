@@ -35,19 +35,19 @@ extern "system" {
     #[doc = "*Required features: `\"Win32_System_WinRT\"`*"]
     pub fn CreateControlInput(riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_WinRT\"`*"]
-    pub fn CreateControlInputEx(pcorewindow: ::windows_sys::core::IUnknown, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn CreateControlInputEx(pcorewindow: *mut *mut ::windows_sys::core::IUnknown, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_WinRT\"`, `\"System\"`*"]
     #[cfg(feature = "System")]
-    pub fn CreateDispatcherQueueController(options: DispatcherQueueOptions, dispatcherqueuecontroller: *mut super::super::super::System::DispatcherQueueController) -> ::windows_sys::core::HRESULT;
+    pub fn CreateDispatcherQueueController(options: DispatcherQueueOptions, dispatcherqueuecontroller: *mut *mut *mut super::super::super::System::DispatcherQueueController) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_WinRT\"`*"]
     pub fn CreateRandomAccessStreamOnFile(filepath: ::windows_sys::core::PCWSTR, accessmode: u32, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_WinRT\"`, `\"Win32_System_Com\"`*"]
     #[cfg(feature = "Win32_System_Com")]
-    pub fn CreateRandomAccessStreamOverStream(stream: super::Com::IStream, options: BSOS_OPTIONS, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn CreateRandomAccessStreamOverStream(stream: *mut *mut super::Com::IStream, options: BSOS_OPTIONS, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_WinRT\"`*"]
-    pub fn CreateStreamOverRandomAccessStream(randomaccessstream: ::windows_sys::core::IUnknown, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn CreateStreamOverRandomAccessStream(randomaccessstream: *mut *mut ::windows_sys::core::IUnknown, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_WinRT\"`*"]
-    pub fn GetRestrictedErrorInfo(pprestrictederrorinfo: *mut IRestrictedErrorInfo) -> ::windows_sys::core::HRESULT;
+    pub fn GetRestrictedErrorInfo(pprestrictederrorinfo: *mut *mut *mut IRestrictedErrorInfo) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_WinRT\"`*"]
     pub fn HSTRING_UserFree(param0: *const u32, param1: *const ::windows_sys::core::HSTRING);
     #[doc = "*Required features: `\"Win32_System_WinRT\"`*"]
@@ -70,7 +70,7 @@ extern "system" {
     #[doc = "*Required features: `\"Win32_System_WinRT\"`*"]
     pub fn MetaDataGetDispenser(rclsid: *const ::windows_sys::core::GUID, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_WinRT\"`*"]
-    pub fn RoActivateInstance(activatableclassid: ::windows_sys::core::HSTRING, instance: *mut ::windows_sys::core::IInspectable) -> ::windows_sys::core::HRESULT;
+    pub fn RoActivateInstance(activatableclassid: ::windows_sys::core::HSTRING, instance: *mut *mut *mut ::windows_sys::core::IInspectable) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_WinRT\"`*"]
     pub fn RoCaptureErrorContext(hr: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_WinRT\"`*"]
@@ -82,18 +82,18 @@ extern "system" {
     #[doc = "*Required features: `\"Win32_System_WinRT\"`*"]
     pub fn RoGetActivationFactory(activatableclassid: ::windows_sys::core::HSTRING, iid: *const ::windows_sys::core::GUID, factory: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_WinRT\"`*"]
-    pub fn RoGetAgileReference(options: AgileReferenceOptions, riid: *const ::windows_sys::core::GUID, punk: ::windows_sys::core::IUnknown, ppagilereference: *mut IAgileReference) -> ::windows_sys::core::HRESULT;
+    pub fn RoGetAgileReference(options: AgileReferenceOptions, riid: *const ::windows_sys::core::GUID, punk: *mut *mut ::windows_sys::core::IUnknown, ppagilereference: *mut *mut *mut IAgileReference) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_WinRT\"`*"]
     pub fn RoGetApartmentIdentifier(apartmentidentifier: *mut u64) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_WinRT\"`, `\"Win32_System_Com_Marshal\"`*"]
     #[cfg(feature = "Win32_System_Com_Marshal")]
-    pub fn RoGetBufferMarshaler(buffermarshaler: *mut super::Com::Marshal::IMarshal) -> ::windows_sys::core::HRESULT;
+    pub fn RoGetBufferMarshaler(buffermarshaler: *mut *mut *mut super::Com::Marshal::IMarshal) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_WinRT\"`*"]
     pub fn RoGetErrorReportingFlags(pflags: *mut u32) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_WinRT\"`*"]
-    pub fn RoGetMatchingRestrictedErrorInfo(hrin: ::windows_sys::core::HRESULT, pprestrictederrorinfo: *mut IRestrictedErrorInfo) -> ::windows_sys::core::HRESULT;
+    pub fn RoGetMatchingRestrictedErrorInfo(hrin: ::windows_sys::core::HRESULT, pprestrictederrorinfo: *mut *mut *mut IRestrictedErrorInfo) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_WinRT\"`*"]
-    pub fn RoGetParameterizedTypeInstanceIID(nameelementcount: u32, nameelements: *const ::windows_sys::core::PWSTR, metadatalocator: IRoMetaDataLocator, iid: *mut ::windows_sys::core::GUID, pextra: *mut ROPARAMIIDHANDLE) -> ::windows_sys::core::HRESULT;
+    pub fn RoGetParameterizedTypeInstanceIID(nameelementcount: u32, nameelements: *const ::windows_sys::core::PWSTR, metadatalocator: *mut *mut IRoMetaDataLocator, iid: *mut ::windows_sys::core::GUID, pextra: *mut ROPARAMIIDHANDLE) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_WinRT\"`*"]
     pub fn RoGetServerActivatableClasses(servername: ::windows_sys::core::HSTRING, activatableclassids: *mut *mut ::windows_sys::core::HSTRING, count: *mut u32) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_WinRT\"`*"]
@@ -110,19 +110,19 @@ extern "system" {
     pub fn RoOriginateErrorW(error: ::windows_sys::core::HRESULT, cchmax: u32, message: ::windows_sys::core::PCWSTR) -> super::super::Foundation::BOOL;
     #[doc = "*Required features: `\"Win32_System_WinRT\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn RoOriginateLanguageException(error: ::windows_sys::core::HRESULT, message: ::windows_sys::core::HSTRING, languageexception: ::windows_sys::core::IUnknown) -> super::super::Foundation::BOOL;
+    pub fn RoOriginateLanguageException(error: ::windows_sys::core::HRESULT, message: ::windows_sys::core::HSTRING, languageexception: *mut *mut ::windows_sys::core::IUnknown) -> super::super::Foundation::BOOL;
     #[doc = "*Required features: `\"Win32_System_WinRT\"`*"]
     pub fn RoParameterizedTypeExtraGetTypeSignature(extra: ROPARAMIIDHANDLE) -> ::windows_sys::core::PSTR;
     #[doc = "*Required features: `\"Win32_System_WinRT\"`*"]
     pub fn RoRegisterActivationFactories(activatableclassids: *const ::windows_sys::core::HSTRING, activationfactorycallbacks: *const isize, count: u32, cookie: *mut isize) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_WinRT\"`*"]
-    pub fn RoRegisterForApartmentShutdown(callbackobject: IApartmentShutdown, apartmentidentifier: *mut u64, regcookie: *mut APARTMENT_SHUTDOWN_REGISTRATION_COOKIE) -> ::windows_sys::core::HRESULT;
+    pub fn RoRegisterForApartmentShutdown(callbackobject: *mut *mut IApartmentShutdown, apartmentidentifier: *mut u64, regcookie: *mut APARTMENT_SHUTDOWN_REGISTRATION_COOKIE) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_WinRT\"`*"]
-    pub fn RoReportFailedDelegate(punkdelegate: ::windows_sys::core::IUnknown, prestrictederrorinfo: IRestrictedErrorInfo) -> ::windows_sys::core::HRESULT;
+    pub fn RoReportFailedDelegate(punkdelegate: *mut *mut ::windows_sys::core::IUnknown, prestrictederrorinfo: *mut *mut IRestrictedErrorInfo) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_WinRT\"`*"]
-    pub fn RoReportUnhandledError(prestrictederrorinfo: IRestrictedErrorInfo) -> ::windows_sys::core::HRESULT;
+    pub fn RoReportUnhandledError(prestrictederrorinfo: *mut *mut IRestrictedErrorInfo) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_WinRT\"`*"]
-    pub fn RoResolveRestrictedErrorInfoReference(reference: ::windows_sys::core::PCWSTR, pprestrictederrorinfo: *mut IRestrictedErrorInfo) -> ::windows_sys::core::HRESULT;
+    pub fn RoResolveRestrictedErrorInfoReference(reference: ::windows_sys::core::PCWSTR, pprestrictederrorinfo: *mut *mut *mut IRestrictedErrorInfo) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_WinRT\"`*"]
     pub fn RoRevokeActivationFactories(cookie: isize);
     #[doc = "*Required features: `\"Win32_System_WinRT\"`*"]
@@ -138,7 +138,7 @@ extern "system" {
     #[doc = "*Required features: `\"Win32_System_WinRT\"`*"]
     pub fn RoUnregisterForApartmentShutdown(regcookie: APARTMENT_SHUTDOWN_REGISTRATION_COOKIE) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_WinRT\"`*"]
-    pub fn SetRestrictedErrorInfo(prestrictederrorinfo: IRestrictedErrorInfo) -> ::windows_sys::core::HRESULT;
+    pub fn SetRestrictedErrorInfo(prestrictederrorinfo: *mut *mut IRestrictedErrorInfo) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_WinRT\"`*"]
     pub fn WindowsCompareStringOrdinal(string1: ::windows_sys::core::HSTRING, string2: ::windows_sys::core::HSTRING, result: *mut i32) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_WinRT\"`*"]
@@ -297,46 +297,307 @@ impl ::core::clone::Clone for HSTRING_HEADER {
         *self
     }
 }
-pub type IAccountsSettingsPaneInterop = *mut ::core::ffi::c_void;
-pub type IActivationFactory = *mut ::core::ffi::c_void;
-pub type IAgileReference = *mut ::core::ffi::c_void;
-pub type IApartmentShutdown = *mut ::core::ffi::c_void;
-pub type IAppServiceConnectionExtendedExecution = *mut ::core::ffi::c_void;
-pub type IBufferByteAccess = *mut ::core::ffi::c_void;
-pub type ICastingController = *mut ::core::ffi::c_void;
-pub type ICastingEventHandler = *mut ::core::ffi::c_void;
-pub type ICastingSourceInfo = *mut ::core::ffi::c_void;
-pub type ICoreInputInterop = *mut ::core::ffi::c_void;
-pub type ICoreWindowAdapterInterop = *mut ::core::ffi::c_void;
-pub type ICoreWindowComponentInterop = *mut ::core::ffi::c_void;
-pub type ICoreWindowInterop = *mut ::core::ffi::c_void;
-pub type ICorrelationVectorInformation = *mut ::core::ffi::c_void;
-pub type ICorrelationVectorSource = *mut ::core::ffi::c_void;
-pub type IDragDropManagerInterop = *mut ::core::ffi::c_void;
-pub type IHolographicSpaceInterop = *mut ::core::ffi::c_void;
-pub type IInputPaneInterop = *mut ::core::ffi::c_void;
-pub type ILanguageExceptionErrorInfo = *mut ::core::ffi::c_void;
-pub type ILanguageExceptionErrorInfo2 = *mut ::core::ffi::c_void;
-pub type ILanguageExceptionStackBackTrace = *mut ::core::ffi::c_void;
-pub type ILanguageExceptionTransform = *mut ::core::ffi::c_void;
-pub type IMemoryBufferByteAccess = *mut ::core::ffi::c_void;
-pub type IMessageDispatcher = *mut ::core::ffi::c_void;
-pub type IPlayToManagerInterop = *mut ::core::ffi::c_void;
-pub type IRestrictedErrorInfo = *mut ::core::ffi::c_void;
-pub type IRoMetaDataLocator = *mut ::core::ffi::c_void;
-pub type IRoSimpleMetaDataBuilder = *mut ::core::ffi::c_void;
-pub type IShareWindowCommandEventArgsInterop = *mut ::core::ffi::c_void;
-pub type IShareWindowCommandSourceInterop = *mut ::core::ffi::c_void;
-pub type ISpatialInteractionManagerInterop = *mut ::core::ffi::c_void;
-pub type ISystemMediaTransportControlsInterop = *mut ::core::ffi::c_void;
-pub type IUIViewSettingsInterop = *mut ::core::ffi::c_void;
-pub type IUserActivityInterop = *mut ::core::ffi::c_void;
-pub type IUserActivityRequestManagerInterop = *mut ::core::ffi::c_void;
-pub type IUserActivitySourceHostInterop = *mut ::core::ffi::c_void;
-pub type IUserConsentVerifierInterop = *mut ::core::ffi::c_void;
-pub type IWeakReference = *mut ::core::ffi::c_void;
-pub type IWeakReferenceSource = *mut ::core::ffi::c_void;
-pub type IWebAuthenticationCoreManagerInterop = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IAccountsSettingsPaneInterop {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetForWindow: unsafe extern "system" fn(this: *mut *mut Self, appwindow: super::super::Foundation::HWND, riid: *const ::windows_sys::core::GUID, accountssettingspane: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetForWindow: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ShowManageAccountsForWindowAsync: unsafe extern "system" fn(this: *mut *mut Self, appwindow: super::super::Foundation::HWND, riid: *const ::windows_sys::core::GUID, asyncaction: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ShowManageAccountsForWindowAsync: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ShowAddAccountForWindowAsync: unsafe extern "system" fn(this: *mut *mut Self, appwindow: super::super::Foundation::HWND, riid: *const ::windows_sys::core::GUID, asyncaction: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ShowAddAccountForWindowAsync: usize,
+}
+#[repr(C)]
+pub struct IActivationFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub ActivateInstance: unsafe extern "system" fn(this: *mut *mut Self, instance: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAgileReference {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Resolve: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppvobjectreference: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IApartmentShutdown {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnUninitialize: unsafe extern "system" fn(this: *mut *mut Self, ui64apartmentidentifier: u64),
+}
+#[repr(C)]
+pub struct IAppServiceConnectionExtendedExecution {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OpenForExtendedExecutionAsync: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, operation: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IBufferByteAccess {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Buffer: unsafe extern "system" fn(this: *mut *mut Self, value: *mut *mut u8) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ICastingController {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, castingengine: *mut ::core::ffi::c_void, castingsource: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Connect: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Disconnect: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Advise: unsafe extern "system" fn(this: *mut *mut Self, eventhandler: *mut ::core::ffi::c_void, cookie: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub UnAdvise: unsafe extern "system" fn(this: *mut *mut Self, cookie: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ICastingEventHandler {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnStateChanged: unsafe extern "system" fn(this: *mut *mut Self, newstate: CASTING_CONNECTION_STATE) -> ::windows_sys::core::HRESULT,
+    pub OnError: unsafe extern "system" fn(this: *mut *mut Self, errorstatus: CASTING_CONNECTION_ERROR_STATUS, errormessage: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ICastingSourceInfo {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetController: unsafe extern "system" fn(this: *mut *mut Self, controller: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub GetProperties: unsafe extern "system" fn(this: *mut *mut Self, props: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    GetProperties: usize,
+}
+#[repr(C)]
+pub struct ICoreInputInterop {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetInputSource: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetMessageHandled: unsafe extern "system" fn(this: *mut *mut Self, value: u8) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ICoreWindowAdapterInterop {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub AppActivationClientAdapter: unsafe extern "system" fn(this: *mut *mut Self, value: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ApplicationViewClientAdapter: unsafe extern "system" fn(this: *mut *mut Self, value: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CoreApplicationViewClientAdapter: unsafe extern "system" fn(this: *mut *mut Self, value: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub HoloViewClientAdapter: unsafe extern "system" fn(this: *mut *mut Self, value: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub PositionerClientAdapter: unsafe extern "system" fn(this: *mut *mut Self, value: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SystemNavigationClientAdapter: unsafe extern "system" fn(this: *mut *mut Self, value: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub TitleBarClientAdapter: unsafe extern "system" fn(this: *mut *mut Self, value: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetWindowClientAdapter: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ICoreWindowComponentInterop {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ConfigureComponentInput: unsafe extern "system" fn(this: *mut *mut Self, hostviewinstanceid: u32, hwndhost: super::super::Foundation::HWND, inputsourcevisual: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ConfigureComponentInput: usize,
+    pub GetViewInstanceId: unsafe extern "system" fn(this: *mut *mut Self, componentviewinstanceid: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ICoreWindowInterop {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub WindowHandle: unsafe extern "system" fn(this: *mut *mut Self, hwnd: *mut super::super::Foundation::HWND) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    WindowHandle: usize,
+    pub SetMessageHandled: unsafe extern "system" fn(this: *mut *mut Self, value: u8) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ICorrelationVectorInformation {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub LastCorrelationVectorForThread: unsafe extern "system" fn(this: *mut *mut Self, cv: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub NextCorrelationVectorForThread: unsafe extern "system" fn(this: *mut *mut Self, cv: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetNextCorrelationVectorForThread: unsafe extern "system" fn(this: *mut *mut Self, cv: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ICorrelationVectorSource {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub CorrelationVector: unsafe extern "system" fn(this: *mut *mut Self, cv: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDragDropManagerInterop {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetForWindow: unsafe extern "system" fn(this: *mut *mut Self, hwnd: super::super::Foundation::HWND, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetForWindow: usize,
+}
+#[repr(C)]
+pub struct IHolographicSpaceInterop {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CreateForWindow: unsafe extern "system" fn(this: *mut *mut Self, window: super::super::Foundation::HWND, riid: *const ::windows_sys::core::GUID, holographicspace: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CreateForWindow: usize,
+}
+#[repr(C)]
+pub struct IInputPaneInterop {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetForWindow: unsafe extern "system" fn(this: *mut *mut Self, appwindow: super::super::Foundation::HWND, riid: *const ::windows_sys::core::GUID, inputpane: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetForWindow: usize,
+}
+#[repr(C)]
+pub struct ILanguageExceptionErrorInfo {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetLanguageException: unsafe extern "system" fn(this: *mut *mut Self, languageexception: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ILanguageExceptionErrorInfo2 {
+    pub base__: ILanguageExceptionErrorInfo,
+    pub GetPreviousLanguageExceptionErrorInfo: unsafe extern "system" fn(this: *mut *mut Self, previouslanguageexceptionerrorinfo: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CapturePropagationContext: unsafe extern "system" fn(this: *mut *mut Self, languageexception: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetPropagationContextHead: unsafe extern "system" fn(this: *mut *mut Self, propagatedlanguageexceptionerrorinfohead: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ILanguageExceptionStackBackTrace {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetStackBackTrace: unsafe extern "system" fn(this: *mut *mut Self, maxframestocapture: u32, stackbacktrace: *mut usize, framescaptured: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ILanguageExceptionTransform {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetTransformedRestrictedErrorInfo: unsafe extern "system" fn(this: *mut *mut Self, restrictederrorinfo: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMemoryBufferByteAccess {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetBuffer: unsafe extern "system" fn(this: *mut *mut Self, value: *mut *mut u8, capacity: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMessageDispatcher {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub PumpMessages: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPlayToManagerInterop {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetForWindow: unsafe extern "system" fn(this: *mut *mut Self, appwindow: super::super::Foundation::HWND, riid: *const ::windows_sys::core::GUID, playtomanager: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetForWindow: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ShowPlayToUIForWindow: unsafe extern "system" fn(this: *mut *mut Self, appwindow: super::super::Foundation::HWND) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ShowPlayToUIForWindow: usize,
+}
+#[repr(C)]
+pub struct IRestrictedErrorInfo {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetErrorDetails: unsafe extern "system" fn(this: *mut *mut Self, description: *mut super::super::Foundation::BSTR, error: *mut ::windows_sys::core::HRESULT, restricteddescription: *mut super::super::Foundation::BSTR, capabilitysid: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetErrorDetails: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetReference: unsafe extern "system" fn(this: *mut *mut Self, reference: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetReference: usize,
+}
+#[repr(C)]
+pub struct IRoMetaDataLocator {
+    pub Locate: unsafe extern "system" fn(this: *mut *mut Self, nameelement: ::windows_sys::core::PCWSTR, metadatadestination: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRoSimpleMetaDataBuilder {
+    pub SetWinRtInterface: unsafe extern "system" fn(this: *mut *mut Self, iid: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub SetDelegate: unsafe extern "system" fn(this: *mut *mut Self, iid: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub SetInterfaceGroupSimpleDefault: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::PCWSTR, defaultinterfacename: ::windows_sys::core::PCWSTR, defaultinterfaceiid: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub SetInterfaceGroupParameterizedDefault: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::PCWSTR, elementcount: u32, defaultinterfacenameelements: *const ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetRuntimeClassSimpleDefault: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::PCWSTR, defaultinterfacename: ::windows_sys::core::PCWSTR, defaultinterfaceiid: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub SetRuntimeClassParameterizedDefault: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::PCWSTR, elementcount: u32, defaultinterfacenameelements: *const ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetStruct: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::PCWSTR, numfields: u32, fieldtypenames: *const ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetEnum: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::PCWSTR, basetype: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetParameterizedInterface: unsafe extern "system" fn(this: *mut *mut Self, piid: ::windows_sys::core::GUID, numargs: u32) -> ::windows_sys::core::HRESULT,
+    pub SetParameterizedDelegate: unsafe extern "system" fn(this: *mut *mut Self, piid: ::windows_sys::core::GUID, numargs: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IShareWindowCommandEventArgsInterop {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetWindow: unsafe extern "system" fn(this: *mut *mut Self, value: *mut super::super::Foundation::HWND) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetWindow: usize,
+}
+#[repr(C)]
+pub struct IShareWindowCommandSourceInterop {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetForWindow: unsafe extern "system" fn(this: *mut *mut Self, appwindow: super::super::Foundation::HWND, riid: *const ::windows_sys::core::GUID, sharewindowcommandsource: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetForWindow: usize,
+}
+#[repr(C)]
+pub struct ISpatialInteractionManagerInterop {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetForWindow: unsafe extern "system" fn(this: *mut *mut Self, window: super::super::Foundation::HWND, riid: *const ::windows_sys::core::GUID, spatialinteractionmanager: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetForWindow: usize,
+}
+#[repr(C)]
+pub struct ISystemMediaTransportControlsInterop {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetForWindow: unsafe extern "system" fn(this: *mut *mut Self, appwindow: super::super::Foundation::HWND, riid: *const ::windows_sys::core::GUID, mediatransportcontrol: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetForWindow: usize,
+}
+#[repr(C)]
+pub struct IUIViewSettingsInterop {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetForWindow: unsafe extern "system" fn(this: *mut *mut Self, hwnd: super::super::Foundation::HWND, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetForWindow: usize,
+}
+#[repr(C)]
+pub struct IUserActivityInterop {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CreateSessionForWindow: unsafe extern "system" fn(this: *mut *mut Self, window: super::super::Foundation::HWND, iid: *const ::windows_sys::core::GUID, value: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CreateSessionForWindow: usize,
+}
+#[repr(C)]
+pub struct IUserActivityRequestManagerInterop {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetForWindow: unsafe extern "system" fn(this: *mut *mut Self, window: super::super::Foundation::HWND, iid: *const ::windows_sys::core::GUID, value: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetForWindow: usize,
+}
+#[repr(C)]
+pub struct IUserActivitySourceHostInterop {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub SetActivitySourceHost: unsafe extern "system" fn(this: *mut *mut Self, activitysourcehost: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IUserConsentVerifierInterop {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RequestVerificationForWindowAsync: unsafe extern "system" fn(this: *mut *mut Self, appwindow: super::super::Foundation::HWND, message: ::windows_sys::core::HSTRING, riid: *const ::windows_sys::core::GUID, asyncoperation: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RequestVerificationForWindowAsync: usize,
+}
+#[repr(C)]
+pub struct IWeakReference {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Resolve: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, objectreference: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWeakReferenceSource {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetWeakReference: unsafe extern "system" fn(this: *mut *mut Self, weakreference: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWebAuthenticationCoreManagerInterop {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RequestTokenForWindowAsync: unsafe extern "system" fn(this: *mut *mut Self, appwindow: super::super::Foundation::HWND, request: *mut ::core::ffi::c_void, riid: *const ::windows_sys::core::GUID, asyncinfo: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RequestTokenForWindowAsync: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RequestTokenWithWebAccountForWindowAsync: unsafe extern "system" fn(this: *mut *mut Self, appwindow: super::super::Foundation::HWND, request: *mut ::core::ffi::c_void, webaccount: *mut ::core::ffi::c_void, riid: *const ::windows_sys::core::GUID, asyncinfo: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RequestTokenWithWebAccountForWindowAsync: usize,
+}
 #[doc = "*Required features: `\"Win32_System_WinRT\"`*"]
 pub const MAX_ERROR_MESSAGE_CHARS: u32 = 512u32;
 #[doc = "*Required features: `\"Win32_System_WinRT\"`*"]

@@ -9,16 +9,13 @@ pub fn gen(gen: &Gen, def: TypeDef) -> TokenStream {
 }
 
 fn gen_sys_interface(gen: &Gen, def: TypeDef) -> TokenStream {
-    let name = gen.reader.type_def_name(def);
-    let ident = to_ident(name);
+    let generics: &Vec<Type> = &gen.reader.type_def_generics(def).collect();
+    let ident = gen.type_def_name(def, generics);
+    let constraints = gen.generic_constraints(generics);
+    let cfg = gen.reader.type_def_cfg(def, &[]);
+    let features = gen.cfg_features(&cfg);
 
-    if gen.reader.type_def_is_exclusive(def) {
-        quote! {}
-    } else {
-        quote! {
-            pub type #ident = *mut ::core::ffi::c_void;
-        }
-    }
+    gen.interface_vtbl(def, generics, &ident, &constraints, &features)
 }
 
 fn gen_win_interface(gen: &Gen, def: TypeDef) -> TokenStream {

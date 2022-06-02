@@ -108,6 +108,339 @@ impl ::core::clone::Clone for HdrMetadataFormat {
     }
 }
 #[repr(C)]
+pub struct IAdvancedColorInfo {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CurrentAdvancedColorKind: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut AdvancedColorKind) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub RedPrimary: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Foundation::Point) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RedPrimary: usize,
+    #[cfg(feature = "Foundation")]
+    pub GreenPrimary: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Foundation::Point) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    GreenPrimary: usize,
+    #[cfg(feature = "Foundation")]
+    pub BluePrimary: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Foundation::Point) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    BluePrimary: usize,
+    #[cfg(feature = "Foundation")]
+    pub WhitePoint: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Foundation::Point) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    WhitePoint: usize,
+    pub MaxLuminanceInNits: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f32) -> ::windows_sys::core::HRESULT,
+    pub MinLuminanceInNits: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f32) -> ::windows_sys::core::HRESULT,
+    pub MaxAverageFullFrameLuminanceInNits: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f32) -> ::windows_sys::core::HRESULT,
+    pub SdrWhiteLevelInNits: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f32) -> ::windows_sys::core::HRESULT,
+    pub IsHdrMetadataFormatCurrentlySupported: unsafe extern "system" fn(this: *mut *mut Self, format: HdrMetadataFormat, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub IsAdvancedColorKindAvailable: unsafe extern "system" fn(this: *mut *mut Self, kind: AdvancedColorKind, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IBrightnessOverride {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub IsSupported: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub IsOverrideActive: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub BrightnessLevel: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f64) -> ::windows_sys::core::HRESULT,
+    pub SetBrightnessLevel: unsafe extern "system" fn(this: *mut *mut Self, brightnesslevel: f64, options: DisplayBrightnessOverrideOptions) -> ::windows_sys::core::HRESULT,
+    pub SetBrightnessScenario: unsafe extern "system" fn(this: *mut *mut Self, scenario: DisplayBrightnessScenario, options: DisplayBrightnessOverrideOptions) -> ::windows_sys::core::HRESULT,
+    pub GetLevelForScenario: unsafe extern "system" fn(this: *mut *mut Self, scenario: DisplayBrightnessScenario, result__: *mut f64) -> ::windows_sys::core::HRESULT,
+    pub StartOverride: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub StopOverride: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub IsSupportedChanged: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    IsSupportedChanged: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveIsSupportedChanged: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveIsSupportedChanged: usize,
+    #[cfg(feature = "Foundation")]
+    pub IsOverrideActiveChanged: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    IsOverrideActiveChanged: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveIsOverrideActiveChanged: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveIsOverrideActiveChanged: usize,
+    #[cfg(feature = "Foundation")]
+    pub BrightnessLevelChanged: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    BrightnessLevelChanged: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveBrightnessLevelChanged: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveBrightnessLevelChanged: usize,
+}
+#[repr(C)]
+pub struct IBrightnessOverrideSettings {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub DesiredLevel: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f64) -> ::windows_sys::core::HRESULT,
+    pub DesiredNits: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IBrightnessOverrideSettingsStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CreateFromLevel: unsafe extern "system" fn(this: *mut *mut Self, level: f64, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateFromNits: unsafe extern "system" fn(this: *mut *mut Self, nits: f32, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateFromDisplayBrightnessOverrideScenario: unsafe extern "system" fn(this: *mut *mut Self, overridescenario: DisplayBrightnessOverrideScenario, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IBrightnessOverrideStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub GetDefaultForSystem: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetForCurrentView: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub SaveForSystemAsync: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    SaveForSystemAsync: usize,
+}
+#[repr(C)]
+pub struct IColorOverrideSettings {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub DesiredDisplayColorOverrideScenario: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut DisplayColorOverrideScenario) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IColorOverrideSettingsStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CreateFromDisplayColorOverrideScenario: unsafe extern "system" fn(this: *mut *mut Self, overridescenario: DisplayColorOverrideScenario, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDisplayEnhancementOverride {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub ColorOverrideSettings: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetColorOverrideSettings: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub BrightnessOverrideSettings: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetBrightnessOverrideSettings: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CanOverride: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub IsOverrideActive: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentDisplayEnhancementOverrideCapabilities: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RequestOverride: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub StopOverride: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub CanOverrideChanged: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    CanOverrideChanged: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveCanOverrideChanged: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveCanOverrideChanged: usize,
+    #[cfg(feature = "Foundation")]
+    pub IsOverrideActiveChanged: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    IsOverrideActiveChanged: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveIsOverrideActiveChanged: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveIsOverrideActiveChanged: usize,
+    #[cfg(feature = "Foundation")]
+    pub DisplayEnhancementOverrideCapabilitiesChanged: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    DisplayEnhancementOverrideCapabilitiesChanged: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveDisplayEnhancementOverrideCapabilitiesChanged: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveDisplayEnhancementOverrideCapabilitiesChanged: usize,
+}
+#[repr(C)]
+pub struct IDisplayEnhancementOverrideCapabilities {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub IsBrightnessControlSupported: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub IsBrightnessNitsControlSupported: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub GetSupportedNitRanges: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    GetSupportedNitRanges: usize,
+}
+#[repr(C)]
+pub struct IDisplayEnhancementOverrideCapabilitiesChangedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Capabilities: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDisplayEnhancementOverrideStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub GetForCurrentView: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDisplayInformation {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CurrentOrientation: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut DisplayOrientations) -> ::windows_sys::core::HRESULT,
+    pub NativeOrientation: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut DisplayOrientations) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub OrientationChanged: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    OrientationChanged: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveOrientationChanged: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveOrientationChanged: usize,
+    pub ResolutionScale: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ResolutionScale) -> ::windows_sys::core::HRESULT,
+    pub LogicalDpi: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f32) -> ::windows_sys::core::HRESULT,
+    pub RawDpiX: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f32) -> ::windows_sys::core::HRESULT,
+    pub RawDpiY: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub DpiChanged: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    DpiChanged: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveDpiChanged: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveDpiChanged: usize,
+    pub StereoEnabled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub StereoEnabledChanged: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    StereoEnabledChanged: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveStereoEnabledChanged: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveStereoEnabledChanged: usize,
+    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    pub GetColorProfileAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    GetColorProfileAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub ColorProfileChanged: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    ColorProfileChanged: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveColorProfileChanged: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveColorProfileChanged: usize,
+}
+#[repr(C)]
+pub struct IDisplayInformation2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub RawPixelsPerViewPixel: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDisplayInformation3 {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub DiagonalSizeInInches: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    DiagonalSizeInInches: usize,
+}
+#[repr(C)]
+pub struct IDisplayInformation4 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub ScreenWidthInRawPixels: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub ScreenHeightInRawPixels: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDisplayInformation5 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub GetAdvancedColorInfo: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub AdvancedColorInfoChanged: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    AdvancedColorInfoChanged: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveAdvancedColorInfoChanged: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveAdvancedColorInfoChanged: usize,
+}
+#[repr(C)]
+pub struct IDisplayInformationStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub GetForCurrentView: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AutoRotationPreferences: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut DisplayOrientations) -> ::windows_sys::core::HRESULT,
+    pub SetAutoRotationPreferences: unsafe extern "system" fn(this: *mut *mut Self, value: DisplayOrientations) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub DisplayContentsInvalidated: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    DisplayContentsInvalidated: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveDisplayContentsInvalidated: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveDisplayContentsInvalidated: usize,
+}
+#[cfg(feature = "deprecated")]
+#[repr(C)]
+pub struct IDisplayPropertiesStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "deprecated")]
+    pub CurrentOrientation: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut DisplayOrientations) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "deprecated"))]
+    CurrentOrientation: usize,
+    #[cfg(feature = "deprecated")]
+    pub NativeOrientation: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut DisplayOrientations) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "deprecated"))]
+    NativeOrientation: usize,
+    #[cfg(feature = "deprecated")]
+    pub AutoRotationPreferences: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut DisplayOrientations) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "deprecated"))]
+    AutoRotationPreferences: usize,
+    #[cfg(feature = "deprecated")]
+    pub SetAutoRotationPreferences: unsafe extern "system" fn(this: *mut *mut Self, value: DisplayOrientations) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "deprecated"))]
+    SetAutoRotationPreferences: usize,
+    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
+    pub OrientationChanged: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    OrientationChanged: usize,
+    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
+    pub RemoveOrientationChanged: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    RemoveOrientationChanged: usize,
+    #[cfg(feature = "deprecated")]
+    pub ResolutionScale: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ResolutionScale) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "deprecated"))]
+    ResolutionScale: usize,
+    #[cfg(feature = "deprecated")]
+    pub LogicalDpi: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "deprecated"))]
+    LogicalDpi: usize,
+    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
+    pub LogicalDpiChanged: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    LogicalDpiChanged: usize,
+    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
+    pub RemoveLogicalDpiChanged: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    RemoveLogicalDpiChanged: usize,
+    #[cfg(feature = "deprecated")]
+    pub StereoEnabled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "deprecated"))]
+    StereoEnabled: usize,
+    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
+    pub StereoEnabledChanged: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    StereoEnabledChanged: usize,
+    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
+    pub RemoveStereoEnabledChanged: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    RemoveStereoEnabledChanged: usize,
+    #[cfg(all(feature = "Foundation", feature = "Storage_Streams", feature = "deprecated"))]
+    pub GetColorProfileAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams", feature = "deprecated")))]
+    GetColorProfileAsync: usize,
+    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
+    pub ColorProfileChanged: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    ColorProfileChanged: usize,
+    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
+    pub RemoveColorProfileChanged: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    RemoveColorProfileChanged: usize,
+    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
+    pub DisplayContentsInvalidated: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    DisplayContentsInvalidated: usize,
+    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
+    pub RemoveDisplayContentsInvalidated: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    RemoveDisplayContentsInvalidated: usize,
+}
+#[repr(C)]
+pub struct IDisplayServices {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IDisplayServicesStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub FindAll: unsafe extern "system" fn(this: *mut *mut Self, result_size__: *mut u32, result__: *mut *mut super::DisplayId) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
 #[doc = "*Required features: `\"Graphics_Display\"`*"]
 pub struct NitRange {
     pub MinNits: f32,

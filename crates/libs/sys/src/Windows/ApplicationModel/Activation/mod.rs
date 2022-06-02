@@ -96,67 +96,501 @@ pub type FileOpenPickerContinuationEventArgs = *mut ::core::ffi::c_void;
 pub type FileSavePickerActivatedEventArgs = *mut ::core::ffi::c_void;
 pub type FileSavePickerContinuationEventArgs = *mut ::core::ffi::c_void;
 pub type FolderPickerContinuationEventArgs = *mut ::core::ffi::c_void;
-pub type IActivatedEventArgs = *mut ::core::ffi::c_void;
-pub type IActivatedEventArgsWithUser = *mut ::core::ffi::c_void;
-pub type IApplicationViewActivatedEventArgs = *mut ::core::ffi::c_void;
-pub type IAppointmentsProviderActivatedEventArgs = *mut ::core::ffi::c_void;
-pub type IAppointmentsProviderAddAppointmentActivatedEventArgs = *mut ::core::ffi::c_void;
-pub type IAppointmentsProviderRemoveAppointmentActivatedEventArgs = *mut ::core::ffi::c_void;
-pub type IAppointmentsProviderReplaceAppointmentActivatedEventArgs = *mut ::core::ffi::c_void;
-pub type IAppointmentsProviderShowAppointmentDetailsActivatedEventArgs = *mut ::core::ffi::c_void;
-pub type IAppointmentsProviderShowTimeFrameActivatedEventArgs = *mut ::core::ffi::c_void;
-pub type IBackgroundActivatedEventArgs = *mut ::core::ffi::c_void;
-pub type IBarcodeScannerPreviewActivatedEventArgs = *mut ::core::ffi::c_void;
-pub type ICachedFileUpdaterActivatedEventArgs = *mut ::core::ffi::c_void;
-pub type ICameraSettingsActivatedEventArgs = *mut ::core::ffi::c_void;
-pub type ICommandLineActivatedEventArgs = *mut ::core::ffi::c_void;
-pub type IContactActivatedEventArgs = *mut ::core::ffi::c_void;
-pub type IContactCallActivatedEventArgs = *mut ::core::ffi::c_void;
-pub type IContactMapActivatedEventArgs = *mut ::core::ffi::c_void;
-pub type IContactMessageActivatedEventArgs = *mut ::core::ffi::c_void;
-pub type IContactPanelActivatedEventArgs = *mut ::core::ffi::c_void;
-pub type IContactPickerActivatedEventArgs = *mut ::core::ffi::c_void;
-pub type IContactPostActivatedEventArgs = *mut ::core::ffi::c_void;
-pub type IContactVideoCallActivatedEventArgs = *mut ::core::ffi::c_void;
-pub type IContactsProviderActivatedEventArgs = *mut ::core::ffi::c_void;
-pub type IContinuationActivatedEventArgs = *mut ::core::ffi::c_void;
-pub type IDeviceActivatedEventArgs = *mut ::core::ffi::c_void;
-pub type IDevicePairingActivatedEventArgs = *mut ::core::ffi::c_void;
-pub type IDialReceiverActivatedEventArgs = *mut ::core::ffi::c_void;
-pub type IFileActivatedEventArgs = *mut ::core::ffi::c_void;
-pub type IFileActivatedEventArgsWithCallerPackageFamilyName = *mut ::core::ffi::c_void;
-pub type IFileActivatedEventArgsWithNeighboringFiles = *mut ::core::ffi::c_void;
-pub type IFileOpenPickerActivatedEventArgs = *mut ::core::ffi::c_void;
-pub type IFileOpenPickerActivatedEventArgs2 = *mut ::core::ffi::c_void;
-pub type IFileOpenPickerContinuationEventArgs = *mut ::core::ffi::c_void;
-pub type IFileSavePickerActivatedEventArgs = *mut ::core::ffi::c_void;
-pub type IFileSavePickerActivatedEventArgs2 = *mut ::core::ffi::c_void;
-pub type IFileSavePickerContinuationEventArgs = *mut ::core::ffi::c_void;
-pub type IFolderPickerContinuationEventArgs = *mut ::core::ffi::c_void;
-pub type ILaunchActivatedEventArgs = *mut ::core::ffi::c_void;
-pub type ILaunchActivatedEventArgs2 = *mut ::core::ffi::c_void;
-pub type ILockScreenActivatedEventArgs = *mut ::core::ffi::c_void;
-pub type ILockScreenCallActivatedEventArgs = *mut ::core::ffi::c_void;
-pub type IPhoneCallActivatedEventArgs = *mut ::core::ffi::c_void;
-pub type IPickerReturnedActivatedEventArgs = *mut ::core::ffi::c_void;
-pub type IPrelaunchActivatedEventArgs = *mut ::core::ffi::c_void;
-pub type IPrint3DWorkflowActivatedEventArgs = *mut ::core::ffi::c_void;
-pub type IPrintTaskSettingsActivatedEventArgs = *mut ::core::ffi::c_void;
-pub type IProtocolActivatedEventArgs = *mut ::core::ffi::c_void;
-pub type IProtocolActivatedEventArgsWithCallerPackageFamilyNameAndData = *mut ::core::ffi::c_void;
-pub type IProtocolForResultsActivatedEventArgs = *mut ::core::ffi::c_void;
-pub type IRestrictedLaunchActivatedEventArgs = *mut ::core::ffi::c_void;
-pub type ISearchActivatedEventArgs = *mut ::core::ffi::c_void;
-pub type ISearchActivatedEventArgsWithLinguisticDetails = *mut ::core::ffi::c_void;
-pub type IShareTargetActivatedEventArgs = *mut ::core::ffi::c_void;
-pub type IStartupTaskActivatedEventArgs = *mut ::core::ffi::c_void;
-pub type IToastNotificationActivatedEventArgs = *mut ::core::ffi::c_void;
-pub type IUserDataAccountProviderActivatedEventArgs = *mut ::core::ffi::c_void;
-pub type IViewSwitcherProvider = *mut ::core::ffi::c_void;
-pub type IVoiceCommandActivatedEventArgs = *mut ::core::ffi::c_void;
-pub type IWalletActionActivatedEventArgs = *mut ::core::ffi::c_void;
-pub type IWebAccountProviderActivatedEventArgs = *mut ::core::ffi::c_void;
-pub type IWebAuthenticationBrokerContinuationEventArgs = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IActivatedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Kind: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ActivationKind) -> ::windows_sys::core::HRESULT,
+    pub PreviousExecutionState: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ApplicationExecutionState) -> ::windows_sys::core::HRESULT,
+    pub SplashScreen: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IActivatedEventArgsWithUser {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "System")]
+    pub User: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "System"))]
+    User: usize,
+}
+#[repr(C)]
+pub struct IApplicationViewActivatedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CurrentlyShownApplicationViewId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAppointmentsProviderActivatedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Verb: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAppointmentsProviderAddAppointmentActivatedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "ApplicationModel_Appointments_AppointmentsProvider")]
+    pub AddAppointmentOperation: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "ApplicationModel_Appointments_AppointmentsProvider"))]
+    AddAppointmentOperation: usize,
+}
+#[repr(C)]
+pub struct IAppointmentsProviderRemoveAppointmentActivatedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "ApplicationModel_Appointments_AppointmentsProvider")]
+    pub RemoveAppointmentOperation: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "ApplicationModel_Appointments_AppointmentsProvider"))]
+    RemoveAppointmentOperation: usize,
+}
+#[repr(C)]
+pub struct IAppointmentsProviderReplaceAppointmentActivatedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "ApplicationModel_Appointments_AppointmentsProvider")]
+    pub ReplaceAppointmentOperation: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "ApplicationModel_Appointments_AppointmentsProvider"))]
+    ReplaceAppointmentOperation: usize,
+}
+#[repr(C)]
+pub struct IAppointmentsProviderShowAppointmentDetailsActivatedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub InstanceStartDate: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    InstanceStartDate: usize,
+    pub LocalId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub RoamingId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAppointmentsProviderShowTimeFrameActivatedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub TimeToShow: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Foundation::DateTime) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    TimeToShow: usize,
+    #[cfg(feature = "Foundation")]
+    pub Duration: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Foundation::TimeSpan) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    Duration: usize,
+}
+#[repr(C)]
+pub struct IBackgroundActivatedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "ApplicationModel_Background")]
+    pub TaskInstance: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "ApplicationModel_Background"))]
+    TaskInstance: usize,
+}
+#[repr(C)]
+pub struct IBarcodeScannerPreviewActivatedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub ConnectionId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ICachedFileUpdaterActivatedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Storage_Provider")]
+    pub CachedFileUpdaterUI: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Storage_Provider"))]
+    CachedFileUpdaterUI: usize,
+}
+#[repr(C)]
+pub struct ICameraSettingsActivatedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub VideoDeviceController: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub VideoDeviceExtension: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ICommandLineActivatedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Operation: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ICommandLineActivationOperation {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Arguments: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub CurrentDirectoryPath: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetExitCode: unsafe extern "system" fn(this: *mut *mut Self, value: i32) -> ::windows_sys::core::HRESULT,
+    pub ExitCode: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub GetDeferral: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    GetDeferral: usize,
+}
+#[repr(C)]
+pub struct IContactActivatedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Verb: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IContactCallActivatedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub ServiceId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub ServiceUserId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "ApplicationModel_Contacts")]
+    pub Contact: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "ApplicationModel_Contacts"))]
+    Contact: usize,
+}
+#[repr(C)]
+pub struct IContactMapActivatedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "ApplicationModel_Contacts")]
+    pub Address: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "ApplicationModel_Contacts"))]
+    Address: usize,
+    #[cfg(feature = "ApplicationModel_Contacts")]
+    pub Contact: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "ApplicationModel_Contacts"))]
+    Contact: usize,
+}
+#[repr(C)]
+pub struct IContactMessageActivatedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub ServiceId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub ServiceUserId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "ApplicationModel_Contacts")]
+    pub Contact: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "ApplicationModel_Contacts"))]
+    Contact: usize,
+}
+#[repr(C)]
+pub struct IContactPanelActivatedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "ApplicationModel_Contacts")]
+    pub ContactPanel: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "ApplicationModel_Contacts"))]
+    ContactPanel: usize,
+    #[cfg(feature = "ApplicationModel_Contacts")]
+    pub Contact: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "ApplicationModel_Contacts"))]
+    Contact: usize,
+}
+#[repr(C)]
+pub struct IContactPickerActivatedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "ApplicationModel_Contacts_Provider")]
+    pub ContactPickerUI: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "ApplicationModel_Contacts_Provider"))]
+    ContactPickerUI: usize,
+}
+#[repr(C)]
+pub struct IContactPostActivatedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub ServiceId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub ServiceUserId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "ApplicationModel_Contacts")]
+    pub Contact: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "ApplicationModel_Contacts"))]
+    Contact: usize,
+}
+#[repr(C)]
+pub struct IContactVideoCallActivatedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub ServiceId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub ServiceUserId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "ApplicationModel_Contacts")]
+    pub Contact: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "ApplicationModel_Contacts"))]
+    Contact: usize,
+}
+#[repr(C)]
+pub struct IContactsProviderActivatedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Verb: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IContinuationActivatedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation_Collections")]
+    pub ContinuationData: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    ContinuationData: usize,
+}
+#[repr(C)]
+pub struct IDeviceActivatedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub DeviceInformationId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Verb: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDevicePairingActivatedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Devices_Enumeration")]
+    pub DeviceInformation: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Devices_Enumeration"))]
+    DeviceInformation: usize,
+}
+#[repr(C)]
+pub struct IDialReceiverActivatedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub AppName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IFileActivatedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(all(feature = "Foundation_Collections", feature = "Storage"))]
+    pub Files: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation_Collections", feature = "Storage")))]
+    Files: usize,
+    pub Verb: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IFileActivatedEventArgsWithCallerPackageFamilyName {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CallerPackageFamilyName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IFileActivatedEventArgsWithNeighboringFiles {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Storage_Search")]
+    pub NeighboringFilesQuery: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Storage_Search"))]
+    NeighboringFilesQuery: usize,
+}
+#[repr(C)]
+pub struct IFileOpenPickerActivatedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Storage_Pickers_Provider")]
+    pub FileOpenPickerUI: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Storage_Pickers_Provider"))]
+    FileOpenPickerUI: usize,
+}
+#[repr(C)]
+pub struct IFileOpenPickerActivatedEventArgs2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CallerPackageFamilyName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "deprecated")]
+#[repr(C)]
+pub struct IFileOpenPickerContinuationEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(all(feature = "Foundation_Collections", feature = "Storage", feature = "deprecated"))]
+    pub Files: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation_Collections", feature = "Storage", feature = "deprecated")))]
+    Files: usize,
+}
+#[repr(C)]
+pub struct IFileSavePickerActivatedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Storage_Pickers_Provider")]
+    pub FileSavePickerUI: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Storage_Pickers_Provider"))]
+    FileSavePickerUI: usize,
+}
+#[repr(C)]
+pub struct IFileSavePickerActivatedEventArgs2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CallerPackageFamilyName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub EnterpriseId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "deprecated")]
+#[repr(C)]
+pub struct IFileSavePickerContinuationEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(all(feature = "Storage", feature = "deprecated"))]
+    pub File: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Storage", feature = "deprecated")))]
+    File: usize,
+}
+#[cfg(feature = "deprecated")]
+#[repr(C)]
+pub struct IFolderPickerContinuationEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(all(feature = "Storage", feature = "deprecated"))]
+    pub Folder: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Storage", feature = "deprecated")))]
+    Folder: usize,
+}
+#[repr(C)]
+pub struct ILaunchActivatedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Arguments: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub TileId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ILaunchActivatedEventArgs2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub TileActivatedInfo: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ILockScreenActivatedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Info: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ILockScreenCallActivatedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "ApplicationModel_Calls")]
+    pub CallUI: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "ApplicationModel_Calls"))]
+    CallUI: usize,
+}
+#[repr(C)]
+pub struct IPhoneCallActivatedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub LineId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPickerReturnedActivatedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub PickerOperationId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPrelaunchActivatedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub PrelaunchActivated: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPrint3DWorkflowActivatedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Devices_Printers_Extensions")]
+    pub Workflow: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Devices_Printers_Extensions"))]
+    Workflow: usize,
+}
+#[repr(C)]
+pub struct IPrintTaskSettingsActivatedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Devices_Printers_Extensions")]
+    pub Configuration: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Devices_Printers_Extensions"))]
+    Configuration: usize,
+}
+#[repr(C)]
+pub struct IProtocolActivatedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub Uri: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    Uri: usize,
+}
+#[repr(C)]
+pub struct IProtocolActivatedEventArgsWithCallerPackageFamilyNameAndData {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CallerPackageFamilyName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub Data: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    Data: usize,
+}
+#[repr(C)]
+pub struct IProtocolForResultsActivatedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "System")]
+    pub ProtocolForResultsOperation: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "System"))]
+    ProtocolForResultsOperation: usize,
+}
+#[repr(C)]
+pub struct IRestrictedLaunchActivatedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub SharedContext: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISearchActivatedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub QueryText: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Language: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISearchActivatedEventArgsWithLinguisticDetails {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "ApplicationModel_Search")]
+    pub LinguisticDetails: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "ApplicationModel_Search"))]
+    LinguisticDetails: usize,
+}
+#[repr(C)]
+pub struct IShareTargetActivatedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "ApplicationModel_DataTransfer_ShareTarget")]
+    pub ShareOperation: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "ApplicationModel_DataTransfer_ShareTarget"))]
+    ShareOperation: usize,
+}
+#[repr(C)]
+pub struct ISplashScreen {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub ImageLocation: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Foundation::Rect) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    ImageLocation: usize,
+    #[cfg(feature = "Foundation")]
+    pub Dismissed: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    Dismissed: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveDismissed: unsafe extern "system" fn(this: *mut *mut Self, cookie: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveDismissed: usize,
+}
+#[repr(C)]
+pub struct IStartupTaskActivatedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub TaskId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITileActivatedInfo {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(all(feature = "Foundation_Collections", feature = "UI_Notifications"))]
+    pub RecentlyShownNotifications: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation_Collections", feature = "UI_Notifications")))]
+    RecentlyShownNotifications: usize,
+}
+#[repr(C)]
+pub struct IToastNotificationActivatedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Argument: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub UserInput: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    UserInput: usize,
+}
+#[repr(C)]
+pub struct IUserDataAccountProviderActivatedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "ApplicationModel_UserDataAccounts_Provider")]
+    pub Operation: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "ApplicationModel_UserDataAccounts_Provider"))]
+    Operation: usize,
+}
+#[repr(C)]
+pub struct IViewSwitcherProvider {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_ViewManagement")]
+    pub ViewSwitcher: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_ViewManagement"))]
+    ViewSwitcher: usize,
+}
+#[repr(C)]
+pub struct IVoiceCommandActivatedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Media_SpeechRecognition")]
+    pub Result: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Media_SpeechRecognition"))]
+    Result: usize,
+}
+#[repr(C)]
+pub struct IWalletActionActivatedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub ItemId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "ApplicationModel_Wallet")]
+    pub ActionKind: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::Wallet::WalletActionKind) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "ApplicationModel_Wallet"))]
+    ActionKind: usize,
+    pub ActionId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWebAccountProviderActivatedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Security_Authentication_Web_Provider")]
+    pub Operation: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Security_Authentication_Web_Provider"))]
+    Operation: usize,
+}
+#[repr(C)]
+pub struct IWebAuthenticationBrokerContinuationEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Security_Authentication_Web")]
+    pub WebAuthenticationResult: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Security_Authentication_Web"))]
+    WebAuthenticationResult: usize,
+}
 pub type LaunchActivatedEventArgs = *mut ::core::ffi::c_void;
 pub type LockScreenActivatedEventArgs = *mut ::core::ffi::c_void;
 pub type LockScreenCallActivatedEventArgs = *mut ::core::ffi::c_void;

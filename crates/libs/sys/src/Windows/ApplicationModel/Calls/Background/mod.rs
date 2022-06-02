@@ -1,3 +1,49 @@
+#[repr(C)]
+pub struct IPhoneCallBlockedTriggerDetails {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub PhoneNumber: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub LineId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub CallBlockedReason: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut PhoneCallBlockedReason) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPhoneCallOriginDataRequestTriggerDetails {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub RequestId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub PhoneNumber: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPhoneIncomingCallDismissedTriggerDetails {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub LineId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub PhoneNumber: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub DisplayName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub DismissalTime: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::super::Foundation::DateTime) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    DismissalTime: usize,
+    pub TextReplyMessage: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Reason: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut PhoneIncomingCallDismissedReason) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPhoneIncomingCallNotificationTriggerDetails {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub LineId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub CallId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPhoneLineChangedTriggerDetails {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub LineId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub ChangeType: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut PhoneLineChangeKind) -> ::windows_sys::core::HRESULT,
+    pub HasLinePropertyChanged: unsafe extern "system" fn(this: *mut *mut Self, lineproperty: PhoneLineProperties, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPhoneNewVoicemailMessageTriggerDetails {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub LineId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub VoicemailCount: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub OperatorMessage: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
 #[doc = "*Required features: `\"ApplicationModel_Calls_Background\"`*"]
 #[repr(transparent)]
 pub struct PhoneCallBlockedReason(pub i32);

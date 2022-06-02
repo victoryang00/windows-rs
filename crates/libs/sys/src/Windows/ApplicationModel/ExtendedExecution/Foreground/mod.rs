@@ -41,3 +41,28 @@ impl ::core::clone::Clone for ExtendedExecutionForegroundRevokedReason {
     }
 }
 pub type ExtendedExecutionForegroundSession = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IExtendedExecutionForegroundRevokedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Reason: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ExtendedExecutionForegroundRevokedReason) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IExtendedExecutionForegroundSession {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Description: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetDescription: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub Revoked: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    Revoked: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveRevoked: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveRevoked: usize,
+    #[cfg(feature = "Foundation")]
+    pub RequestExtensionAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RequestExtensionAsync: usize,
+    pub Reason: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ExtendedExecutionForegroundReason) -> ::windows_sys::core::HRESULT,
+    pub SetReason: unsafe extern "system" fn(this: *mut *mut Self, value: ExtendedExecutionForegroundReason) -> ::windows_sys::core::HRESULT,
+}

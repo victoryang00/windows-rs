@@ -167,7 +167,1018 @@ impl ::core::clone::Clone for DispatcherQueuePriority {
 pub type DispatcherQueueShutdownStartingEventArgs = *mut ::core::ffi::c_void;
 pub type DispatcherQueueTimer = *mut ::core::ffi::c_void;
 pub type FolderLauncherOptions = *mut ::core::ffi::c_void;
-pub type ILauncherViewOptions = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IAppActivationResult {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub ExtendedError: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+    pub AppResourceGroupInfo: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAppDiagnosticInfo {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "ApplicationModel")]
+    pub AppInfo: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "ApplicationModel"))]
+    AppInfo: usize,
+}
+#[repr(C)]
+pub struct IAppDiagnosticInfo2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation_Collections")]
+    pub GetResourceGroups: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    GetResourceGroups: usize,
+    pub CreateResourceGroupWatcher: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAppDiagnosticInfo3 {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub LaunchAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    LaunchAsync: usize,
+}
+#[repr(C)]
+pub struct IAppDiagnosticInfoStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation_Collections")]
+    pub RequestInfoAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    RequestInfoAsync: usize,
+}
+#[repr(C)]
+pub struct IAppDiagnosticInfoStatics2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CreateWatcher: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub RequestAccessAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RequestAccessAsync: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub RequestInfoForPackageAsync: unsafe extern "system" fn(this: *mut *mut Self, packagefamilyname: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    RequestInfoForPackageAsync: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub RequestInfoForAppAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    RequestInfoForAppAsync: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub RequestInfoForAppUserModelId: unsafe extern "system" fn(this: *mut *mut Self, appusermodelid: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    RequestInfoForAppUserModelId: usize,
+}
+#[repr(C)]
+pub struct IAppDiagnosticInfoWatcher {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub Added: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    Added: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveAdded: unsafe extern "system" fn(this: *mut *mut Self, token: super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveAdded: usize,
+    #[cfg(feature = "Foundation")]
+    pub Removed: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    Removed: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveRemoved: unsafe extern "system" fn(this: *mut *mut Self, token: super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveRemoved: usize,
+    #[cfg(feature = "Foundation")]
+    pub EnumerationCompleted: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    EnumerationCompleted: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveEnumerationCompleted: unsafe extern "system" fn(this: *mut *mut Self, token: super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveEnumerationCompleted: usize,
+    #[cfg(feature = "Foundation")]
+    pub Stopped: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    Stopped: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveStopped: unsafe extern "system" fn(this: *mut *mut Self, token: super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveStopped: usize,
+    pub Status: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut AppDiagnosticInfoWatcherStatus) -> ::windows_sys::core::HRESULT,
+    pub Start: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Stop: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAppDiagnosticInfoWatcherEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub AppDiagnosticInfo: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAppExecutionStateChangeResult {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub ExtendedError: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAppMemoryReport {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub PrivateCommitUsage: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub PeakPrivateCommitUsage: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub TotalCommitUsage: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub TotalCommitLimit: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAppMemoryReport2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub ExpectedTotalCommitLimit: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAppMemoryUsageLimitChangingEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub OldLimit: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub NewLimit: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAppResourceGroupBackgroundTaskReport {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub TaskId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub Name: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Trigger: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub EntryPoint: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAppResourceGroupInfo {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub InstanceId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub IsShared: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub GetBackgroundTaskReports: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    GetBackgroundTaskReports: usize,
+    pub GetMemoryReport: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Foundation_Collections", feature = "System_Diagnostics"))]
+    pub GetProcessDiagnosticInfos: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation_Collections", feature = "System_Diagnostics")))]
+    GetProcessDiagnosticInfos: usize,
+    pub GetStateReport: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAppResourceGroupInfo2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub StartSuspendAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    StartSuspendAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub StartResumeAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    StartResumeAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub StartTerminateAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    StartTerminateAsync: usize,
+}
+#[repr(C)]
+pub struct IAppResourceGroupInfoWatcher {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub Added: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    Added: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveAdded: unsafe extern "system" fn(this: *mut *mut Self, token: super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveAdded: usize,
+    #[cfg(feature = "Foundation")]
+    pub Removed: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    Removed: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveRemoved: unsafe extern "system" fn(this: *mut *mut Self, token: super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveRemoved: usize,
+    #[cfg(feature = "Foundation")]
+    pub EnumerationCompleted: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    EnumerationCompleted: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveEnumerationCompleted: unsafe extern "system" fn(this: *mut *mut Self, token: super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveEnumerationCompleted: usize,
+    #[cfg(feature = "Foundation")]
+    pub Stopped: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    Stopped: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveStopped: unsafe extern "system" fn(this: *mut *mut Self, token: super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveStopped: usize,
+    #[cfg(feature = "Foundation")]
+    pub ExecutionStateChanged: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    ExecutionStateChanged: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveExecutionStateChanged: unsafe extern "system" fn(this: *mut *mut Self, token: super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveExecutionStateChanged: usize,
+    pub Status: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut AppResourceGroupInfoWatcherStatus) -> ::windows_sys::core::HRESULT,
+    pub Start: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Stop: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAppResourceGroupInfoWatcherEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation_Collections")]
+    pub AppDiagnosticInfos: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    AppDiagnosticInfos: usize,
+    pub AppResourceGroupInfo: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAppResourceGroupInfoWatcherExecutionStateChangedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation_Collections")]
+    pub AppDiagnosticInfos: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    AppDiagnosticInfos: usize,
+    pub AppResourceGroupInfo: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAppResourceGroupMemoryReport {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CommitUsageLimit: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub CommitUsageLevel: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut AppMemoryUsageLevel) -> ::windows_sys::core::HRESULT,
+    pub PrivateCommitUsage: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub TotalCommitUsage: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAppResourceGroupStateReport {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub ExecutionState: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut AppResourceGroupExecutionState) -> ::windows_sys::core::HRESULT,
+    pub EnergyQuotaState: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut AppResourceGroupEnergyQuotaState) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAppUriHandlerHost {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Name: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetName: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAppUriHandlerHost2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub IsEnabled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetIsEnabled: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAppUriHandlerHostFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CreateInstance: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAppUriHandlerRegistration {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Name: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub User: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub GetAppAddedHostsAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    GetAppAddedHostsAsync: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub SetAppAddedHostsAsync: unsafe extern "system" fn(this: *mut *mut Self, hosts: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    SetAppAddedHostsAsync: usize,
+}
+#[repr(C)]
+pub struct IAppUriHandlerRegistration2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation_Collections")]
+    pub GetAllHosts: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    GetAllHosts: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub UpdateHosts: unsafe extern "system" fn(this: *mut *mut Self, hosts: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    UpdateHosts: usize,
+    pub PackageFamilyName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAppUriHandlerRegistrationManager {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub User: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub TryGetRegistration: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAppUriHandlerRegistrationManager2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub PackageFamilyName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAppUriHandlerRegistrationManagerStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub GetDefault: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetForUser: unsafe extern "system" fn(this: *mut *mut Self, user: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAppUriHandlerRegistrationManagerStatics2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub GetForPackage: unsafe extern "system" fn(this: *mut *mut Self, packagefamilyname: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetForPackageForUser: unsafe extern "system" fn(this: *mut *mut Self, packagefamilyname: ::windows_sys::core::HSTRING, user: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDateTimeSettingsStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub SetSystemDateTime: unsafe extern "system" fn(this: *mut *mut Self, utcdatetime: super::Foundation::DateTime) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    SetSystemDateTime: usize,
+}
+#[repr(C)]
+pub struct IDispatcherQueue {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CreateTimer: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub TryEnqueue: unsafe extern "system" fn(this: *mut *mut Self, callback: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub TryEnqueueWithPriority: unsafe extern "system" fn(this: *mut *mut Self, priority: DispatcherQueuePriority, callback: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub ShutdownStarting: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    ShutdownStarting: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveShutdownStarting: unsafe extern "system" fn(this: *mut *mut Self, token: super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveShutdownStarting: usize,
+    #[cfg(feature = "Foundation")]
+    pub ShutdownCompleted: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    ShutdownCompleted: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveShutdownCompleted: unsafe extern "system" fn(this: *mut *mut Self, token: super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveShutdownCompleted: usize,
+}
+#[repr(C)]
+pub struct IDispatcherQueue2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub HasThreadAccess: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDispatcherQueueController {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub DispatcherQueue: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub ShutdownQueueAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    ShutdownQueueAsync: usize,
+}
+#[repr(C)]
+pub struct IDispatcherQueueControllerStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CreateOnDedicatedThread: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDispatcherQueueShutdownStartingEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub GetDeferral: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    GetDeferral: usize,
+}
+#[repr(C)]
+pub struct IDispatcherQueueStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub GetForCurrentThread: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDispatcherQueueTimer {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub Interval: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::Foundation::TimeSpan) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    Interval: usize,
+    #[cfg(feature = "Foundation")]
+    pub SetInterval: unsafe extern "system" fn(this: *mut *mut Self, value: super::Foundation::TimeSpan) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    SetInterval: usize,
+    pub IsRunning: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub IsRepeating: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetIsRepeating: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+    pub Start: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Stop: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub Tick: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    Tick: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveTick: unsafe extern "system" fn(this: *mut *mut Self, token: super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveTick: usize,
+}
+#[repr(C)]
+pub struct IFolderLauncherOptions {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(all(feature = "Foundation_Collections", feature = "Storage"))]
+    pub ItemsToSelect: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation_Collections", feature = "Storage")))]
+    ItemsToSelect: usize,
+}
+#[repr(C)]
+pub struct IKnownUserPropertiesStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub DisplayName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub FirstName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub LastName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub ProviderName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub AccountName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub GuestHost: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub PrincipalName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub DomainName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SessionInitiationProtocolUri: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IKnownUserPropertiesStatics2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub AgeEnforcementRegion: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ILaunchUriResult {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Status: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut LaunchUriStatus) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub Result: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    Result: usize,
+}
+#[repr(C)]
+pub struct ILauncherOptions {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub TreatAsUntrusted: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetTreatAsUntrusted: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+    pub DisplayApplicationPicker: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetDisplayApplicationPicker: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+    pub UI: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub PreferredApplicationPackageFamilyName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetPreferredApplicationPackageFamilyName: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub PreferredApplicationDisplayName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetPreferredApplicationDisplayName: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub FallbackUri: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    FallbackUri: usize,
+    #[cfg(feature = "Foundation")]
+    pub SetFallbackUri: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    SetFallbackUri: usize,
+    pub ContentType: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetContentType: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ILauncherOptions2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub TargetApplicationPackageFamilyName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetTargetApplicationPackageFamilyName: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Storage_Search")]
+    pub NeighboringFilesQuery: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Storage_Search"))]
+    NeighboringFilesQuery: usize,
+    #[cfg(feature = "Storage_Search")]
+    pub SetNeighboringFilesQuery: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Storage_Search"))]
+    SetNeighboringFilesQuery: usize,
+}
+#[repr(C)]
+pub struct ILauncherOptions3 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub IgnoreAppUriHandlers: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetIgnoreAppUriHandlers: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ILauncherOptions4 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub LimitPickerToCurrentAppAndAppUriHandlers: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetLimitPickerToCurrentAppAndAppUriHandlers: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ILauncherStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(all(feature = "Foundation", feature = "Storage"))]
+    pub LaunchFileAsync: unsafe extern "system" fn(this: *mut *mut Self, file: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation", feature = "Storage")))]
+    LaunchFileAsync: usize,
+    #[cfg(all(feature = "Foundation", feature = "Storage"))]
+    pub LaunchFileWithOptionsAsync: unsafe extern "system" fn(this: *mut *mut Self, file: *mut ::core::ffi::c_void, options: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation", feature = "Storage")))]
+    LaunchFileWithOptionsAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub LaunchUriAsync: unsafe extern "system" fn(this: *mut *mut Self, uri: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    LaunchUriAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub LaunchUriWithOptionsAsync: unsafe extern "system" fn(this: *mut *mut Self, uri: *mut ::core::ffi::c_void, options: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    LaunchUriWithOptionsAsync: usize,
+}
+#[repr(C)]
+pub struct ILauncherStatics2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub LaunchUriForResultsAsync: unsafe extern "system" fn(this: *mut *mut Self, uri: *mut ::core::ffi::c_void, options: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    LaunchUriForResultsAsync: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub LaunchUriForResultsWithDataAsync: unsafe extern "system" fn(this: *mut *mut Self, uri: *mut ::core::ffi::c_void, options: *mut ::core::ffi::c_void, inputdata: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    LaunchUriForResultsWithDataAsync: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub LaunchUriWithDataAsync: unsafe extern "system" fn(this: *mut *mut Self, uri: *mut ::core::ffi::c_void, options: *mut ::core::ffi::c_void, inputdata: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    LaunchUriWithDataAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub QueryUriSupportAsync: unsafe extern "system" fn(this: *mut *mut Self, uri: *mut ::core::ffi::c_void, launchquerysupporttype: LaunchQuerySupportType, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    QueryUriSupportAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub QueryUriSupportWithPackageFamilyNameAsync: unsafe extern "system" fn(this: *mut *mut Self, uri: *mut ::core::ffi::c_void, launchquerysupporttype: LaunchQuerySupportType, packagefamilyname: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    QueryUriSupportWithPackageFamilyNameAsync: usize,
+    #[cfg(all(feature = "Foundation", feature = "Storage"))]
+    pub QueryFileSupportAsync: unsafe extern "system" fn(this: *mut *mut Self, file: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation", feature = "Storage")))]
+    QueryFileSupportAsync: usize,
+    #[cfg(all(feature = "Foundation", feature = "Storage"))]
+    pub QueryFileSupportWithPackageFamilyNameAsync: unsafe extern "system" fn(this: *mut *mut Self, file: *mut ::core::ffi::c_void, packagefamilyname: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation", feature = "Storage")))]
+    QueryFileSupportWithPackageFamilyNameAsync: usize,
+    #[cfg(all(feature = "ApplicationModel", feature = "Foundation_Collections"))]
+    pub FindUriSchemeHandlersAsync: unsafe extern "system" fn(this: *mut *mut Self, scheme: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "ApplicationModel", feature = "Foundation_Collections")))]
+    FindUriSchemeHandlersAsync: usize,
+    #[cfg(all(feature = "ApplicationModel", feature = "Foundation_Collections"))]
+    pub FindUriSchemeHandlersWithLaunchUriTypeAsync: unsafe extern "system" fn(this: *mut *mut Self, scheme: ::windows_sys::core::HSTRING, launchquerysupporttype: LaunchQuerySupportType, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "ApplicationModel", feature = "Foundation_Collections")))]
+    FindUriSchemeHandlersWithLaunchUriTypeAsync: usize,
+    #[cfg(all(feature = "ApplicationModel", feature = "Foundation_Collections"))]
+    pub FindFileHandlersAsync: unsafe extern "system" fn(this: *mut *mut Self, extension: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "ApplicationModel", feature = "Foundation_Collections")))]
+    FindFileHandlersAsync: usize,
+}
+#[repr(C)]
+pub struct ILauncherStatics3 {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(all(feature = "Foundation", feature = "Storage"))]
+    pub LaunchFolderAsync: unsafe extern "system" fn(this: *mut *mut Self, folder: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation", feature = "Storage")))]
+    LaunchFolderAsync: usize,
+    #[cfg(all(feature = "Foundation", feature = "Storage"))]
+    pub LaunchFolderWithOptionsAsync: unsafe extern "system" fn(this: *mut *mut Self, folder: *mut ::core::ffi::c_void, options: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation", feature = "Storage")))]
+    LaunchFolderWithOptionsAsync: usize,
+}
+#[repr(C)]
+pub struct ILauncherStatics4 {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub QueryAppUriSupportAsync: unsafe extern "system" fn(this: *mut *mut Self, uri: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    QueryAppUriSupportAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub QueryAppUriSupportWithPackageFamilyNameAsync: unsafe extern "system" fn(this: *mut *mut Self, uri: *mut ::core::ffi::c_void, packagefamilyname: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    QueryAppUriSupportWithPackageFamilyNameAsync: usize,
+    #[cfg(all(feature = "ApplicationModel", feature = "Foundation_Collections"))]
+    pub FindAppUriHandlersAsync: unsafe extern "system" fn(this: *mut *mut Self, uri: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "ApplicationModel", feature = "Foundation_Collections")))]
+    FindAppUriHandlersAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub LaunchUriForUserAsync: unsafe extern "system" fn(this: *mut *mut Self, user: *mut ::core::ffi::c_void, uri: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    LaunchUriForUserAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub LaunchUriWithOptionsForUserAsync: unsafe extern "system" fn(this: *mut *mut Self, user: *mut ::core::ffi::c_void, uri: *mut ::core::ffi::c_void, options: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    LaunchUriWithOptionsForUserAsync: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub LaunchUriWithDataForUserAsync: unsafe extern "system" fn(this: *mut *mut Self, user: *mut ::core::ffi::c_void, uri: *mut ::core::ffi::c_void, options: *mut ::core::ffi::c_void, inputdata: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    LaunchUriWithDataForUserAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub LaunchUriForResultsForUserAsync: unsafe extern "system" fn(this: *mut *mut Self, user: *mut ::core::ffi::c_void, uri: *mut ::core::ffi::c_void, options: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    LaunchUriForResultsForUserAsync: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub LaunchUriForResultsWithDataForUserAsync: unsafe extern "system" fn(this: *mut *mut Self, user: *mut ::core::ffi::c_void, uri: *mut ::core::ffi::c_void, options: *mut ::core::ffi::c_void, inputdata: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    LaunchUriForResultsWithDataForUserAsync: usize,
+}
+#[repr(C)]
+pub struct ILauncherStatics5 {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub LaunchFolderPathAsync: unsafe extern "system" fn(this: *mut *mut Self, path: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    LaunchFolderPathAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub LaunchFolderPathWithOptionsAsync: unsafe extern "system" fn(this: *mut *mut Self, path: ::windows_sys::core::HSTRING, options: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    LaunchFolderPathWithOptionsAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub LaunchFolderPathForUserAsync: unsafe extern "system" fn(this: *mut *mut Self, user: *mut ::core::ffi::c_void, path: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    LaunchFolderPathForUserAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub LaunchFolderPathWithOptionsForUserAsync: unsafe extern "system" fn(this: *mut *mut Self, user: *mut ::core::ffi::c_void, path: ::windows_sys::core::HSTRING, options: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    LaunchFolderPathWithOptionsForUserAsync: usize,
+}
+#[repr(C)]
+pub struct ILauncherUIOptions {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub InvocationPoint: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    InvocationPoint: usize,
+    #[cfg(feature = "Foundation")]
+    pub SetInvocationPoint: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    SetInvocationPoint: usize,
+    #[cfg(feature = "Foundation")]
+    pub SelectionRect: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    SelectionRect: usize,
+    #[cfg(feature = "Foundation")]
+    pub SetSelectionRect: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    SetSelectionRect: usize,
+    #[cfg(feature = "UI_Popups")]
+    pub PreferredPlacement: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::UI::Popups::Placement) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Popups"))]
+    PreferredPlacement: usize,
+    #[cfg(feature = "UI_Popups")]
+    pub SetPreferredPlacement: unsafe extern "system" fn(this: *mut *mut Self, value: super::UI::Popups::Placement) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Popups"))]
+    SetPreferredPlacement: usize,
+}
+#[repr(C)]
+pub struct ILauncherViewOptions {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_ViewManagement")]
+    pub DesiredRemainingView: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::UI::ViewManagement::ViewSizePreference) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_ViewManagement"))]
+    DesiredRemainingView: usize,
+    #[cfg(feature = "UI_ViewManagement")]
+    pub SetDesiredRemainingView: unsafe extern "system" fn(this: *mut *mut Self, value: super::UI::ViewManagement::ViewSizePreference) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_ViewManagement"))]
+    SetDesiredRemainingView: usize,
+}
+#[repr(C)]
+pub struct IMemoryManagerStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub AppMemoryUsage: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub AppMemoryUsageLimit: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub AppMemoryUsageLevel: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut AppMemoryUsageLevel) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub AppMemoryUsageIncreased: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    AppMemoryUsageIncreased: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveAppMemoryUsageIncreased: unsafe extern "system" fn(this: *mut *mut Self, token: super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveAppMemoryUsageIncreased: usize,
+    #[cfg(feature = "Foundation")]
+    pub AppMemoryUsageDecreased: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    AppMemoryUsageDecreased: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveAppMemoryUsageDecreased: unsafe extern "system" fn(this: *mut *mut Self, token: super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveAppMemoryUsageDecreased: usize,
+    #[cfg(feature = "Foundation")]
+    pub AppMemoryUsageLimitChanging: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    AppMemoryUsageLimitChanging: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveAppMemoryUsageLimitChanging: unsafe extern "system" fn(this: *mut *mut Self, token: super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveAppMemoryUsageLimitChanging: usize,
+}
+#[repr(C)]
+pub struct IMemoryManagerStatics2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub GetAppMemoryReport: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetProcessMemoryReport: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMemoryManagerStatics3 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub TrySetAppMemoryUsageLimit: unsafe extern "system" fn(this: *mut *mut Self, value: u64, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMemoryManagerStatics4 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub ExpectedAppMemoryUsageLimit: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IProcessLauncherOptions {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Storage_Streams")]
+    pub StandardInput: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Storage_Streams"))]
+    StandardInput: usize,
+    #[cfg(feature = "Storage_Streams")]
+    pub SetStandardInput: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Storage_Streams"))]
+    SetStandardInput: usize,
+    #[cfg(feature = "Storage_Streams")]
+    pub StandardOutput: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Storage_Streams"))]
+    StandardOutput: usize,
+    #[cfg(feature = "Storage_Streams")]
+    pub SetStandardOutput: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Storage_Streams"))]
+    SetStandardOutput: usize,
+    #[cfg(feature = "Storage_Streams")]
+    pub StandardError: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Storage_Streams"))]
+    StandardError: usize,
+    #[cfg(feature = "Storage_Streams")]
+    pub SetStandardError: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Storage_Streams"))]
+    SetStandardError: usize,
+    pub WorkingDirectory: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetWorkingDirectory: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IProcessLauncherResult {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub ExitCode: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IProcessLauncherStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub RunToCompletionAsync: unsafe extern "system" fn(this: *mut *mut Self, filename: ::windows_sys::core::HSTRING, args: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RunToCompletionAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub RunToCompletionAsyncWithOptions: unsafe extern "system" fn(this: *mut *mut Self, filename: ::windows_sys::core::HSTRING, args: ::windows_sys::core::HSTRING, options: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RunToCompletionAsyncWithOptions: usize,
+}
+#[repr(C)]
+pub struct IProcessMemoryReport {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub PrivateWorkingSetUsage: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub TotalWorkingSetUsage: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IProtocolForResultsOperation {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation_Collections")]
+    pub ReportCompleted: unsafe extern "system" fn(this: *mut *mut Self, data: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    ReportCompleted: usize,
+}
+#[repr(C)]
+pub struct IRemoteLauncherOptions {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub FallbackUri: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    FallbackUri: usize,
+    #[cfg(feature = "Foundation")]
+    pub SetFallbackUri: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    SetFallbackUri: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub PreferredAppIds: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    PreferredAppIds: usize,
+}
+#[repr(C)]
+pub struct IRemoteLauncherStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(all(feature = "Foundation", feature = "System_RemoteSystems"))]
+    pub LaunchUriAsync: unsafe extern "system" fn(this: *mut *mut Self, remotesystemconnectionrequest: *mut ::core::ffi::c_void, uri: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation", feature = "System_RemoteSystems")))]
+    LaunchUriAsync: usize,
+    #[cfg(all(feature = "Foundation", feature = "System_RemoteSystems"))]
+    pub LaunchUriWithOptionsAsync: unsafe extern "system" fn(this: *mut *mut Self, remotesystemconnectionrequest: *mut ::core::ffi::c_void, uri: *mut ::core::ffi::c_void, options: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation", feature = "System_RemoteSystems")))]
+    LaunchUriWithOptionsAsync: usize,
+    #[cfg(all(feature = "Foundation_Collections", feature = "System_RemoteSystems"))]
+    pub LaunchUriWithDataAsync: unsafe extern "system" fn(this: *mut *mut Self, remotesystemconnectionrequest: *mut ::core::ffi::c_void, uri: *mut ::core::ffi::c_void, options: *mut ::core::ffi::c_void, inputdata: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation_Collections", feature = "System_RemoteSystems")))]
+    LaunchUriWithDataAsync: usize,
+}
+#[repr(C)]
+pub struct IShutdownManagerStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub BeginShutdown: unsafe extern "system" fn(this: *mut *mut Self, shutdownkind: ShutdownKind, timeout: super::Foundation::TimeSpan) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    BeginShutdown: usize,
+    pub CancelShutdown: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IShutdownManagerStatics2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub IsPowerStateSupported: unsafe extern "system" fn(this: *mut *mut Self, powerstate: PowerState, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub EnterPowerState: unsafe extern "system" fn(this: *mut *mut Self, powerstate: PowerState) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub EnterPowerStateWithTimeSpan: unsafe extern "system" fn(this: *mut *mut Self, powerstate: PowerState, wakeupafter: super::Foundation::TimeSpan) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    EnterPowerStateWithTimeSpan: usize,
+}
+#[repr(C)]
+pub struct ITimeZoneSettingsStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CurrentTimeZoneDisplayName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub SupportedTimeZoneDisplayNames: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    SupportedTimeZoneDisplayNames: usize,
+    pub CanChangeTimeZone: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub ChangeTimeZoneByDisplayName: unsafe extern "system" fn(this: *mut *mut Self, timezonedisplayname: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITimeZoneSettingsStatics2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub AutoUpdateTimeZoneAsync: unsafe extern "system" fn(this: *mut *mut Self, timeout: super::Foundation::TimeSpan, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    AutoUpdateTimeZoneAsync: usize,
+}
+#[repr(C)]
+pub struct IUser {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub NonRoamableId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub AuthenticationStatus: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut UserAuthenticationStatus) -> ::windows_sys::core::HRESULT,
+    pub Type: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut UserType) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub GetPropertyAsync: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    GetPropertyAsync: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub GetPropertiesAsync: unsafe extern "system" fn(this: *mut *mut Self, values: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    GetPropertiesAsync: usize,
+    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    pub GetPictureAsync: unsafe extern "system" fn(this: *mut *mut Self, desiredsize: UserPictureSize, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    GetPictureAsync: usize,
+}
+#[repr(C)]
+pub struct IUser2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub CheckUserAgeConsentGroupAsync: unsafe extern "system" fn(this: *mut *mut Self, consentgroup: UserAgeConsentGroup, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    CheckUserAgeConsentGroupAsync: usize,
+}
+#[repr(C)]
+pub struct IUserAuthenticationStatusChangeDeferral {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Complete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IUserAuthenticationStatusChangingEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub GetDeferral: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub User: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub NewStatus: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut UserAuthenticationStatus) -> ::windows_sys::core::HRESULT,
+    pub CurrentStatus: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut UserAuthenticationStatus) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IUserChangedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub User: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IUserChangedEventArgs2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation_Collections")]
+    pub ChangedPropertyKinds: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    ChangedPropertyKinds: usize,
+}
+#[repr(C)]
+pub struct IUserDeviceAssociationChangedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub DeviceId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub NewUser: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub OldUser: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IUserDeviceAssociationStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub FindUserFromDeviceId: unsafe extern "system" fn(this: *mut *mut Self, deviceid: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub UserDeviceAssociationChanged: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    UserDeviceAssociationChanged: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveUserDeviceAssociationChanged: unsafe extern "system" fn(this: *mut *mut Self, token: super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveUserDeviceAssociationChanged: usize,
+}
+#[repr(C)]
+pub struct IUserPicker {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub AllowGuestAccounts: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetAllowGuestAccounts: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+    pub SuggestedSelectedUser: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetSuggestedSelectedUser: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub PickSingleUserAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    PickSingleUserAsync: usize,
+}
+#[repr(C)]
+pub struct IUserPickerStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub IsSupported: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IUserStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CreateWatcher: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub FindAllAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    FindAllAsync: usize,
+    #[cfg(all(feature = "Foundation_Collections", feature = "deprecated"))]
+    pub FindAllAsyncByType: unsafe extern "system" fn(this: *mut *mut Self, r#type: UserType, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation_Collections", feature = "deprecated")))]
+    FindAllAsyncByType: usize,
+    #[cfg(all(feature = "Foundation_Collections", feature = "deprecated"))]
+    pub FindAllAsyncByTypeAndStatus: unsafe extern "system" fn(this: *mut *mut Self, r#type: UserType, status: UserAuthenticationStatus, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation_Collections", feature = "deprecated")))]
+    FindAllAsyncByTypeAndStatus: usize,
+    pub GetFromId: unsafe extern "system" fn(this: *mut *mut Self, nonroamableid: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IUserStatics2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub GetDefault: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IUserWatcher {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Status: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut UserWatcherStatus) -> ::windows_sys::core::HRESULT,
+    pub Start: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Stop: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub Added: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    Added: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveAdded: unsafe extern "system" fn(this: *mut *mut Self, token: super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveAdded: usize,
+    #[cfg(feature = "Foundation")]
+    pub Removed: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    Removed: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveRemoved: unsafe extern "system" fn(this: *mut *mut Self, token: super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveRemoved: usize,
+    #[cfg(feature = "Foundation")]
+    pub Updated: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    Updated: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveUpdated: unsafe extern "system" fn(this: *mut *mut Self, token: super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveUpdated: usize,
+    #[cfg(feature = "Foundation")]
+    pub AuthenticationStatusChanged: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    AuthenticationStatusChanged: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveAuthenticationStatusChanged: unsafe extern "system" fn(this: *mut *mut Self, token: super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveAuthenticationStatusChanged: usize,
+    #[cfg(feature = "Foundation")]
+    pub AuthenticationStatusChanging: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    AuthenticationStatusChanging: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveAuthenticationStatusChanging: unsafe extern "system" fn(this: *mut *mut Self, token: super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveAuthenticationStatusChanging: usize,
+    #[cfg(feature = "Foundation")]
+    pub EnumerationCompleted: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    EnumerationCompleted: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveEnumerationCompleted: unsafe extern "system" fn(this: *mut *mut Self, token: super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveEnumerationCompleted: usize,
+    #[cfg(feature = "Foundation")]
+    pub Stopped: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    Stopped: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveStopped: unsafe extern "system" fn(this: *mut *mut Self, token: super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveStopped: usize,
+}
 #[doc = "*Required features: `\"System\"`*"]
 #[repr(transparent)]
 pub struct LaunchFileStatus(pub i32);

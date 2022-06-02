@@ -2,10 +2,10 @@
 extern "system" {
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`, `\"Win32_Graphics_Direct3D12\"`*"]
     #[cfg(feature = "Win32_Graphics_Direct3D12")]
-    pub fn DMLCreateDevice(d3d12device: super::super::super::Graphics::Direct3D12::ID3D12Device, flags: DML_CREATE_DEVICE_FLAGS, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn DMLCreateDevice(d3d12device: *mut *mut super::super::super::Graphics::Direct3D12::ID3D12Device, flags: DML_CREATE_DEVICE_FLAGS, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`, `\"Win32_Graphics_Direct3D12\"`*"]
     #[cfg(feature = "Win32_Graphics_Direct3D12")]
-    pub fn DMLCreateDevice1(d3d12device: super::super::super::Graphics::Direct3D12::ID3D12Device, flags: DML_CREATE_DEVICE_FLAGS, minimumfeaturelevel: DML_FEATURE_LEVEL, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn DMLCreateDevice1(d3d12device: *mut *mut super::super::super::Graphics::Direct3D12::ID3D12Device, flags: DML_CREATE_DEVICE_FLAGS, minimumfeaturelevel: DML_FEATURE_LEVEL, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
 }
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
@@ -448,7 +448,7 @@ impl ::core::clone::Clone for DML_BINDING_PROPERTIES {
 #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`, `\"Win32_Graphics_Direct3D12\"`*"]
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
 pub struct DML_BINDING_TABLE_DESC {
-    pub Dispatchable: IDMLDispatchable,
+    pub Dispatchable: *mut *mut *mut *mut IDMLDispatchable,
     pub CPUDescriptorHandle: super::super::super::Graphics::Direct3D12::D3D12_CPU_DESCRIPTOR_HANDLE,
     pub GPUDescriptorHandle: super::super::super::Graphics::Direct3D12::D3D12_GPU_DESCRIPTOR_HANDLE,
     pub SizeInDescriptors: u32,
@@ -488,7 +488,7 @@ impl ::core::clone::Clone for DML_BUFFER_ARRAY_BINDING {
 #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`, `\"Win32_Graphics_Direct3D12\"`*"]
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
 pub struct DML_BUFFER_BINDING {
-    pub Buffer: super::super::super::Graphics::Direct3D12::ID3D12Resource,
+    pub Buffer: *mut *mut *mut *mut super::super::super::Graphics::Direct3D12::ID3D12Resource,
     pub Offset: u64,
     pub SizeInBytes: u64,
 }
@@ -2130,7 +2130,7 @@ impl ::core::clone::Clone for DML_OPERATOR_DESC {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_AI_MachineLearning_DirectML\"`*"]
 pub struct DML_OPERATOR_GRAPH_NODE_DESC {
-    pub Operator: IDMLOperator,
+    pub Operator: *mut *mut *mut *mut IDMLOperator,
     pub Name: ::windows_sys::core::PCSTR,
 }
 impl ::core::marker::Copy for DML_OPERATOR_GRAPH_NODE_DESC {}
@@ -3050,15 +3050,88 @@ impl ::core::clone::Clone for DML_VALUE_SCALE_2D_OPERATOR_DESC {
         *self
     }
 }
-pub type IDMLBindingTable = *mut ::core::ffi::c_void;
-pub type IDMLCommandRecorder = *mut ::core::ffi::c_void;
-pub type IDMLCompiledOperator = *mut ::core::ffi::c_void;
-pub type IDMLDebugDevice = *mut ::core::ffi::c_void;
-pub type IDMLDevice = *mut ::core::ffi::c_void;
-pub type IDMLDevice1 = *mut ::core::ffi::c_void;
-pub type IDMLDeviceChild = *mut ::core::ffi::c_void;
-pub type IDMLDispatchable = *mut ::core::ffi::c_void;
-pub type IDMLObject = *mut ::core::ffi::c_void;
-pub type IDMLOperator = *mut ::core::ffi::c_void;
-pub type IDMLOperatorInitializer = *mut ::core::ffi::c_void;
-pub type IDMLPageable = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IDMLBindingTable {
+    pub base__: IDMLDeviceChild,
+    pub BindInputs: unsafe extern "system" fn(this: *mut *mut Self, bindingcount: u32, bindings: *const DML_BINDING_DESC),
+    pub BindOutputs: unsafe extern "system" fn(this: *mut *mut Self, bindingcount: u32, bindings: *const DML_BINDING_DESC),
+    pub BindTemporaryResource: unsafe extern "system" fn(this: *mut *mut Self, binding: *const DML_BINDING_DESC),
+    pub BindPersistentResource: unsafe extern "system" fn(this: *mut *mut Self, binding: *const DML_BINDING_DESC),
+    #[cfg(feature = "Win32_Graphics_Direct3D12")]
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self, desc: *const DML_BINDING_TABLE_DESC) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Direct3D12"))]
+    Reset: usize,
+}
+#[repr(C)]
+pub struct IDMLCommandRecorder {
+    pub base__: IDMLDeviceChild,
+    #[cfg(feature = "Win32_Graphics_Direct3D12")]
+    pub RecordDispatch: unsafe extern "system" fn(this: *mut *mut Self, commandlist: *mut ::core::ffi::c_void, dispatchable: *mut ::core::ffi::c_void, bindings: *mut ::core::ffi::c_void),
+    #[cfg(not(feature = "Win32_Graphics_Direct3D12"))]
+    RecordDispatch: usize,
+}
+#[repr(C)]
+pub struct IDMLCompiledOperator {
+    pub base__: IDMLDispatchable,
+}
+#[repr(C)]
+pub struct IDMLDebugDevice {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetMuteDebugOutput: unsafe extern "system" fn(this: *mut *mut Self, mute: super::super::super::Foundation::BOOL),
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetMuteDebugOutput: usize,
+}
+#[repr(C)]
+pub struct IDMLDevice {
+    pub base__: IDMLObject,
+    pub CheckFeatureSupport: unsafe extern "system" fn(this: *mut *mut Self, feature: DML_FEATURE, featurequerydatasize: u32, featurequerydata: *const ::core::ffi::c_void, featuresupportdatasize: u32, featuresupportdata: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateOperator: unsafe extern "system" fn(this: *mut *mut Self, desc: *const DML_OPERATOR_DESC, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CompileOperator: unsafe extern "system" fn(this: *mut *mut Self, op: *mut ::core::ffi::c_void, flags: DML_EXECUTION_FLAGS, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateOperatorInitializer: unsafe extern "system" fn(this: *mut *mut Self, operatorcount: u32, operators: *const *mut ::core::ffi::c_void, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateCommandRecorder: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Graphics_Direct3D12")]
+    pub CreateBindingTable: unsafe extern "system" fn(this: *mut *mut Self, desc: *const DML_BINDING_TABLE_DESC, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Direct3D12"))]
+    CreateBindingTable: usize,
+    pub Evict: unsafe extern "system" fn(this: *mut *mut Self, count: u32, ppobjects: *const *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub MakeResident: unsafe extern "system" fn(this: *mut *mut Self, count: u32, ppobjects: *const *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetDeviceRemovedReason: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetParentDevice: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDMLDevice1 {
+    pub base__: IDMLDevice,
+    pub CompileGraph: unsafe extern "system" fn(this: *mut *mut Self, desc: *const DML_GRAPH_DESC, flags: DML_EXECUTION_FLAGS, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDMLDeviceChild {
+    pub base__: IDMLObject,
+    pub GetDevice: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDMLDispatchable {
+    pub base__: IDMLPageable,
+    pub GetBindingProperties: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut DML_BINDING_PROPERTIES),
+}
+#[repr(C)]
+pub struct IDMLObject {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetPrivateData: unsafe extern "system" fn(this: *mut *mut Self, guid: *const ::windows_sys::core::GUID, datasize: *mut u32, data: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetPrivateData: unsafe extern "system" fn(this: *mut *mut Self, guid: *const ::windows_sys::core::GUID, datasize: u32, data: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetPrivateDataInterface: unsafe extern "system" fn(this: *mut *mut Self, guid: *const ::windows_sys::core::GUID, data: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetName: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDMLOperator {
+    pub base__: IDMLDeviceChild,
+}
+#[repr(C)]
+pub struct IDMLOperatorInitializer {
+    pub base__: IDMLDispatchable,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self, operatorcount: u32, operators: *const *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDMLPageable {
+    pub base__: IDMLDeviceChild,
+}

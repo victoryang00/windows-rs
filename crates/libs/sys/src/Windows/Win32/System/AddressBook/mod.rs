@@ -2,14 +2,14 @@
 extern "system" {
     #[doc = "*Required features: `\"Win32_System_AddressBook\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub fn BuildDisplayTable(lpallocatebuffer: LPALLOCATEBUFFER, lpallocatemore: LPALLOCATEMORE, lpfreebuffer: LPFREEBUFFER, lpmalloc: super::Com::IMalloc, hinstance: super::super::Foundation::HINSTANCE, cpages: u32, lppage: *mut DTPAGE, ulflags: u32, lpptable: *mut IMAPITable, lpptbldata: *mut ITableData) -> ::windows_sys::core::HRESULT;
+    pub fn BuildDisplayTable(lpallocatebuffer: LPALLOCATEBUFFER, lpallocatemore: LPALLOCATEMORE, lpfreebuffer: LPFREEBUFFER, lpmalloc: *mut *mut super::Com::IMalloc, hinstance: super::super::Foundation::HINSTANCE, cpages: u32, lppage: *mut DTPAGE, ulflags: u32, lpptable: *mut *mut *mut IMAPITable, lpptbldata: *mut *mut *mut ITableData) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_AddressBook\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
     pub fn ChangeIdleRoutine(ftg: *mut ::core::ffi::c_void, lpfnidle: PFNIDLE, lpvidleparam: *mut ::core::ffi::c_void, priidle: i16, csecidle: u32, iroidle: u16, ircidle: u16);
     #[doc = "*Required features: `\"Win32_System_AddressBook\"`*"]
-    pub fn CreateIProp(lpinterface: *mut ::windows_sys::core::GUID, lpallocatebuffer: LPALLOCATEBUFFER, lpallocatemore: LPALLOCATEMORE, lpfreebuffer: LPFREEBUFFER, lpvreserved: *mut ::core::ffi::c_void, lpppropdata: *mut IPropData) -> i32;
+    pub fn CreateIProp(lpinterface: *mut ::windows_sys::core::GUID, lpallocatebuffer: LPALLOCATEBUFFER, lpallocatemore: LPALLOCATEMORE, lpfreebuffer: LPFREEBUFFER, lpvreserved: *mut ::core::ffi::c_void, lpppropdata: *mut *mut *mut IPropData) -> i32;
     #[doc = "*Required features: `\"Win32_System_AddressBook\"`*"]
-    pub fn CreateTable(lpinterface: *mut ::windows_sys::core::GUID, lpallocatebuffer: LPALLOCATEBUFFER, lpallocatemore: LPALLOCATEMORE, lpfreebuffer: LPFREEBUFFER, lpvreserved: *mut ::core::ffi::c_void, ultabletype: u32, ulproptagindexcolumn: u32, lpsproptagarraycolumns: *mut SPropTagArray, lpptabledata: *mut ITableData) -> i32;
+    pub fn CreateTable(lpinterface: *mut ::windows_sys::core::GUID, lpallocatebuffer: LPALLOCATEBUFFER, lpallocatemore: LPALLOCATEMORE, lpfreebuffer: LPFREEBUFFER, lpvreserved: *mut ::core::ffi::c_void, ultabletype: u32, ulproptagindexcolumn: u32, lpsproptagarraycolumns: *mut SPropTagArray, lpptabledata: *mut *mut *mut ITableData) -> i32;
     #[doc = "*Required features: `\"Win32_System_AddressBook\"`*"]
     pub fn DeinitMapiUtil();
     #[doc = "*Required features: `\"Win32_System_AddressBook\"`*"]
@@ -28,7 +28,7 @@ extern "system" {
     pub fn FPropContainsProp(lpspropvaluedst: *mut SPropValue, lpspropvaluesrc: *mut SPropValue, ulfuzzylevel: u32) -> super::super::Foundation::BOOL;
     #[doc = "*Required features: `\"Win32_System_AddressBook\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn FPropExists(lpmapiprop: IMAPIProp, ulproptag: u32) -> super::super::Foundation::BOOL;
+    pub fn FPropExists(lpmapiprop: *mut *mut IMAPIProp, ulproptag: u32) -> super::super::Foundation::BOOL;
     #[doc = "*Required features: `\"Win32_System_AddressBook\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
     pub fn FreePadrlist(lpadrlist: *mut ADRLIST);
@@ -54,28 +54,28 @@ extern "system" {
     #[cfg(feature = "Win32_Foundation")]
     pub fn FtgRegisterIdleRoutine(lpfnidle: PFNIDLE, lpvidleparam: *mut ::core::ffi::c_void, priidle: i16, csecidle: u32, iroidle: u16) -> *mut ::core::ffi::c_void;
     #[doc = "*Required features: `\"Win32_System_AddressBook\"`*"]
-    pub fn HrAddColumns(lptbl: IMAPITable, lpproptagcolumnsnew: *mut SPropTagArray, lpallocatebuffer: LPALLOCATEBUFFER, lpfreebuffer: LPFREEBUFFER) -> ::windows_sys::core::HRESULT;
+    pub fn HrAddColumns(lptbl: *mut *mut IMAPITable, lpproptagcolumnsnew: *mut SPropTagArray, lpallocatebuffer: LPALLOCATEBUFFER, lpfreebuffer: LPFREEBUFFER) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_AddressBook\"`*"]
-    pub fn HrAddColumnsEx(lptbl: IMAPITable, lpproptagcolumnsnew: *mut SPropTagArray, lpallocatebuffer: LPALLOCATEBUFFER, lpfreebuffer: LPFREEBUFFER, lpfnfiltercolumns: isize) -> ::windows_sys::core::HRESULT;
+    pub fn HrAddColumnsEx(lptbl: *mut *mut IMAPITable, lpproptagcolumnsnew: *mut SPropTagArray, lpallocatebuffer: LPALLOCATEBUFFER, lpfreebuffer: LPFREEBUFFER, lpfnfiltercolumns: isize) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_AddressBook\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub fn HrAllocAdviseSink(lpfncallback: LPNOTIFCALLBACK, lpvcontext: *mut ::core::ffi::c_void, lppadvisesink: *mut IMAPIAdviseSink) -> ::windows_sys::core::HRESULT;
+    pub fn HrAllocAdviseSink(lpfncallback: LPNOTIFCALLBACK, lpvcontext: *mut ::core::ffi::c_void, lppadvisesink: *mut *mut *mut IMAPIAdviseSink) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_AddressBook\"`*"]
     pub fn HrDispatchNotifications(ulflags: u32) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_AddressBook\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub fn HrGetOneProp(lpmapiprop: IMAPIProp, ulproptag: u32, lppprop: *mut *mut SPropValue) -> ::windows_sys::core::HRESULT;
+    pub fn HrGetOneProp(lpmapiprop: *mut *mut IMAPIProp, ulproptag: u32, lppprop: *mut *mut SPropValue) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_AddressBook\"`, `\"Win32_System_Com_StructuredStorage\"`*"]
     #[cfg(feature = "Win32_System_Com_StructuredStorage")]
-    pub fn HrIStorageFromStream(lpunkin: ::windows_sys::core::IUnknown, lpinterface: *mut ::windows_sys::core::GUID, ulflags: u32, lppstorageout: *mut super::Com::StructuredStorage::IStorage) -> ::windows_sys::core::HRESULT;
+    pub fn HrIStorageFromStream(lpunkin: *mut *mut ::windows_sys::core::IUnknown, lpinterface: *mut ::windows_sys::core::GUID, ulflags: u32, lppstorageout: *mut *mut *mut super::Com::StructuredStorage::IStorage) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_AddressBook\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub fn HrQueryAllRows(lptable: IMAPITable, lpproptags: *mut SPropTagArray, lprestriction: *mut SRestriction, lpsortorderset: *mut SSortOrderSet, crowsmax: i32, lpprows: *mut *mut SRowSet) -> ::windows_sys::core::HRESULT;
+    pub fn HrQueryAllRows(lptable: *mut *mut IMAPITable, lpproptags: *mut SPropTagArray, lprestriction: *mut SRestriction, lpsortorderset: *mut SSortOrderSet, crowsmax: i32, lpprows: *mut *mut SRowSet) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_AddressBook\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub fn HrSetOneProp(lpmapiprop: IMAPIProp, lpprop: *mut SPropValue) -> ::windows_sys::core::HRESULT;
+    pub fn HrSetOneProp(lpmapiprop: *mut *mut IMAPIProp, lpprop: *mut SPropValue) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_AddressBook\"`*"]
-    pub fn HrThisThreadAdviseSink(lpadvisesink: IMAPIAdviseSink, lppadvisesink: *mut IMAPIAdviseSink) -> ::windows_sys::core::HRESULT;
+    pub fn HrThisThreadAdviseSink(lpadvisesink: *mut *mut IMAPIAdviseSink, lppadvisesink: *mut *mut *mut IMAPIAdviseSink) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_AddressBook\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
     pub fn LPropCompareProp(lpspropvaluea: *mut SPropValue, lpspropvalueb: *mut SPropValue) -> i32;
@@ -86,12 +86,12 @@ extern "system" {
     pub fn MAPIDeinitIdle();
     #[doc = "*Required features: `\"Win32_System_AddressBook\"`, `\"Win32_System_Com\"`*"]
     #[cfg(feature = "Win32_System_Com")]
-    pub fn MAPIGetDefaultMalloc() -> super::Com::IMalloc;
+    pub fn MAPIGetDefaultMalloc() -> *mut *mut super::Com::IMalloc;
     #[doc = "*Required features: `\"Win32_System_AddressBook\"`*"]
     pub fn MAPIInitIdle(lpvreserved: *mut ::core::ffi::c_void) -> i32;
     #[doc = "*Required features: `\"Win32_System_AddressBook\"`, `\"Win32_System_Com\"`*"]
     #[cfg(feature = "Win32_System_Com")]
-    pub fn OpenStreamOnFile(lpallocatebuffer: LPALLOCATEBUFFER, lpfreebuffer: LPFREEBUFFER, ulflags: u32, lpszfilename: *const i8, lpszprefix: *const i8, lppstream: *mut super::Com::IStream) -> ::windows_sys::core::HRESULT;
+    pub fn OpenStreamOnFile(lpallocatebuffer: LPALLOCATEBUFFER, lpfreebuffer: LPFREEBUFFER, ulflags: u32, lpszfilename: *const i8, lpszprefix: *const i8, lppstream: *mut *mut *mut super::Com::IStream) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_AddressBook\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
     pub fn PpropFindProp(lpproparray: *mut SPropValue, cvalues: u32, ulproptag: u32) -> *mut SPropValue;
@@ -100,7 +100,7 @@ extern "system" {
     pub fn PropCopyMore(lpspropvaluedest: *mut SPropValue, lpspropvaluesrc: *mut SPropValue, lpfallocmore: LPALLOCATEMORE, lpvobject: *mut ::core::ffi::c_void) -> i32;
     #[doc = "*Required features: `\"Win32_System_AddressBook\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn RTFSync(lpmessage: IMessage, ulflags: u32, lpfmessageupdated: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT;
+    pub fn RTFSync(lpmessage: *mut *mut IMessage, ulflags: u32, lpfmessageupdated: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_AddressBook\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
     pub fn ScCopyNotifications(cnotification: i32, lpnotifications: *mut NOTIFICATION, lpvdst: *mut ::core::ffi::c_void, lpcb: *mut u32) -> i32;
@@ -147,7 +147,7 @@ extern "system" {
     pub fn UlRelease(lpunk: *mut ::core::ffi::c_void) -> u32;
     #[doc = "*Required features: `\"Win32_System_AddressBook\"`, `\"Win32_System_Com\"`*"]
     #[cfg(feature = "Win32_System_Com")]
-    pub fn WrapCompressedRTFStream(lpcompressedrtfstream: super::Com::IStream, ulflags: u32, lpuncompressedrtfstream: *mut super::Com::IStream) -> ::windows_sys::core::HRESULT;
+    pub fn WrapCompressedRTFStream(lpcompressedrtfstream: *mut *mut super::Com::IStream, ulflags: u32, lpuncompressedrtfstream: *mut *mut *mut super::Com::IStream) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_AddressBook\"`*"]
     pub fn WrapStoreEntryID(ulflags: u32, lpszdllname: *const i8, cborigentry: u32, lporigentry: *const ENTRYID, lpcbwrappedentry: *mut u32, lppwrappedentry: *mut *mut ENTRYID) -> ::windows_sys::core::HRESULT;
 }
@@ -214,7 +214,7 @@ impl ::core::clone::Clone for ADRPARM {
     }
 }
 #[doc = "*Required features: `\"Win32_System_AddressBook\"`*"]
-pub type CALLERRELEASE = ::core::option::Option<unsafe extern "system" fn(ulcallerdata: u32, lptbldata: ITableData, lpvue: IMAPITable)>;
+pub type CALLERRELEASE = ::core::option::Option<unsafe extern "system" fn(ulcallerdata: u32, lptbldata: *mut *mut ITableData, lpvue: *mut *mut IMAPITable)>;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_AddressBook\"`*"]
 pub struct DTBLBUTTON {
@@ -696,18 +696,197 @@ pub const genderUnspecified: Gender = 0i32;
 pub const genderFemale: Gender = 1i32;
 #[doc = "*Required features: `\"Win32_System_AddressBook\"`*"]
 pub const genderMale: Gender = 2i32;
-pub type IABContainer = *mut ::core::ffi::c_void;
-pub type IAddrBook = *mut ::core::ffi::c_void;
-pub type IAttach = *mut ::core::ffi::c_void;
-pub type IDistList = *mut ::core::ffi::c_void;
-pub type IMAPIAdviseSink = *mut ::core::ffi::c_void;
-pub type IMAPIContainer = *mut ::core::ffi::c_void;
-pub type IMAPIControl = *mut ::core::ffi::c_void;
-pub type IMAPIFolder = *mut ::core::ffi::c_void;
-pub type IMAPIProgress = *mut ::core::ffi::c_void;
-pub type IMAPIProp = *mut ::core::ffi::c_void;
-pub type IMAPIStatus = *mut ::core::ffi::c_void;
-pub type IMAPITable = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IABContainer {
+    pub base__: IMAPIContainer,
+    pub CreateEntry: unsafe extern "system" fn(this: *mut *mut Self, cbentryid: u32, lpentryid: *const ENTRYID, ulcreateflags: u32, lppmapipropentry: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CopyEntries: unsafe extern "system" fn(this: *mut *mut Self, lpentries: *const SBinaryArray, uluiparam: usize, lpprogress: *mut ::core::ffi::c_void, ulflags: u32) -> ::windows_sys::core::HRESULT,
+    pub DeleteEntries: unsafe extern "system" fn(this: *mut *mut Self, lpentries: *const SBinaryArray, ulflags: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub ResolveNames: unsafe extern "system" fn(this: *mut *mut Self, lpproptagarray: *const SPropTagArray, ulflags: u32, lpadrlist: *const ADRLIST, lpflaglist: *mut _flaglist) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    ResolveNames: usize,
+}
+#[repr(C)]
+pub struct IAddrBook {
+    pub base__: IMAPIProp,
+    pub OpenEntry: unsafe extern "system" fn(this: *mut *mut Self, cbentryid: u32, lpentryid: *mut ENTRYID, lpinterface: *mut ::windows_sys::core::GUID, ulflags: u32, lpulobjtype: *mut u32, lppunk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CompareEntryIDs: unsafe extern "system" fn(this: *mut *mut Self, cbentryid1: u32, lpentryid1: *mut ENTRYID, cbentryid2: u32, lpentryid2: *mut ENTRYID, ulflags: u32, lpulresult: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Advise: unsafe extern "system" fn(this: *mut *mut Self, cbentryid: u32, lpentryid: *mut ENTRYID, uleventmask: u32, lpadvisesink: *mut ::core::ffi::c_void, lpulconnection: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Unadvise: unsafe extern "system" fn(this: *mut *mut Self, ulconnection: u32) -> ::windows_sys::core::HRESULT,
+    pub CreateOneOff: unsafe extern "system" fn(this: *mut *mut Self, lpszname: *mut i8, lpszadrtype: *mut i8, lpszaddress: *mut i8, ulflags: u32, lpcbentryid: *mut u32, lppentryid: *mut *mut ENTRYID) -> ::windows_sys::core::HRESULT,
+    pub NewEntry: unsafe extern "system" fn(this: *mut *mut Self, uluiparam: u32, ulflags: u32, cbeidcontainer: u32, lpeidcontainer: *mut ENTRYID, cbeidnewentrytpl: u32, lpeidnewentrytpl: *mut ENTRYID, lpcbeidnewentry: *mut u32, lppeidnewentry: *mut *mut ENTRYID) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub ResolveName: unsafe extern "system" fn(this: *mut *mut Self, uluiparam: usize, ulflags: u32, lpsznewentrytitle: *mut i8, lpadrlist: *mut ADRLIST) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    ResolveName: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub Address: unsafe extern "system" fn(this: *mut *mut Self, lpuluiparam: *mut u32, lpadrparms: *mut ADRPARM, lppadrlist: *mut *mut ADRLIST) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    Address: usize,
+    pub Details: unsafe extern "system" fn(this: *mut *mut Self, lpuluiparam: *mut usize, lpfndismiss: *mut ::core::ffi::c_void, lpvdismisscontext: *mut ::core::ffi::c_void, cbentryid: u32, lpentryid: *mut ENTRYID, lpfbuttoncallback: *mut ::core::ffi::c_void, lpvbuttoncontext: *mut ::core::ffi::c_void, lpszbuttontext: *mut i8, ulflags: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub RecipOptions: unsafe extern "system" fn(this: *mut *mut Self, uluiparam: u32, ulflags: u32, lprecip: *mut ADRENTRY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    RecipOptions: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub QueryDefaultRecipOpt: unsafe extern "system" fn(this: *mut *mut Self, lpszadrtype: *mut i8, ulflags: u32, lpcvalues: *mut u32, lppoptions: *mut *mut SPropValue) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    QueryDefaultRecipOpt: usize,
+    pub GetPAB: unsafe extern "system" fn(this: *mut *mut Self, lpcbentryid: *mut u32, lppentryid: *mut *mut ENTRYID) -> ::windows_sys::core::HRESULT,
+    pub SetPAB: unsafe extern "system" fn(this: *mut *mut Self, cbentryid: u32, lpentryid: *mut ENTRYID) -> ::windows_sys::core::HRESULT,
+    pub GetDefaultDir: unsafe extern "system" fn(this: *mut *mut Self, lpcbentryid: *mut u32, lppentryid: *mut *mut ENTRYID) -> ::windows_sys::core::HRESULT,
+    pub SetDefaultDir: unsafe extern "system" fn(this: *mut *mut Self, cbentryid: u32, lpentryid: *mut ENTRYID) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub GetSearchPath: unsafe extern "system" fn(this: *mut *mut Self, ulflags: u32, lppsearchpath: *mut *mut SRowSet) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    GetSearchPath: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub SetSearchPath: unsafe extern "system" fn(this: *mut *mut Self, ulflags: u32, lpsearchpath: *mut SRowSet) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    SetSearchPath: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub PrepareRecips: unsafe extern "system" fn(this: *mut *mut Self, ulflags: u32, lpproptagarray: *mut SPropTagArray, lpreciplist: *mut ADRLIST) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    PrepareRecips: usize,
+}
+#[repr(C)]
+pub struct IAttach {
+    pub base__: IMAPIProp,
+}
+#[repr(C)]
+pub struct IDistList {
+    pub base__: IMAPIContainer,
+    pub CreateEntry: unsafe extern "system" fn(this: *mut *mut Self, cbentryid: u32, lpentryid: *const ENTRYID, ulcreateflags: u32, lppmapipropentry: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CopyEntries: unsafe extern "system" fn(this: *mut *mut Self, lpentries: *const SBinaryArray, uluiparam: usize, lpprogress: *mut ::core::ffi::c_void, ulflags: u32) -> ::windows_sys::core::HRESULT,
+    pub DeleteEntries: unsafe extern "system" fn(this: *mut *mut Self, lpentries: *const SBinaryArray, ulflags: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub ResolveNames: unsafe extern "system" fn(this: *mut *mut Self, lpproptagarray: *const SPropTagArray, ulflags: u32, lpadrlist: *const ADRLIST, lpflaglist: *mut _flaglist) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    ResolveNames: usize,
+}
+#[repr(C)]
+pub struct IMAPIAdviseSink {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub OnNotify: unsafe extern "system" fn(this: *mut *mut Self, cnotif: u32, lpnotifications: *mut NOTIFICATION) -> u32,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    OnNotify: usize,
+}
+#[repr(C)]
+pub struct IMAPIContainer {
+    pub base__: IMAPIProp,
+    pub GetContentsTable: unsafe extern "system" fn(this: *mut *mut Self, ulflags: u32, lpptable: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetHierarchyTable: unsafe extern "system" fn(this: *mut *mut Self, ulflags: u32, lpptable: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub OpenEntry: unsafe extern "system" fn(this: *mut *mut Self, cbentryid: u32, lpentryid: *const ENTRYID, lpinterface: *mut ::windows_sys::core::GUID, ulflags: u32, lpulobjtype: *mut u32, lppunk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub SetSearchCriteria: unsafe extern "system" fn(this: *mut *mut Self, lprestriction: *const SRestriction, lpcontainerlist: *const SBinaryArray, ulsearchflags: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    SetSearchCriteria: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub GetSearchCriteria: unsafe extern "system" fn(this: *mut *mut Self, ulflags: u32, lpprestriction: *mut *mut SRestriction, lppcontainerlist: *mut *mut SBinaryArray, lpulsearchstate: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    GetSearchCriteria: usize,
+}
+#[repr(C)]
+pub struct IMAPIControl {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetLastError: unsafe extern "system" fn(this: *mut *mut Self, hresult: ::windows_sys::core::HRESULT, ulflags: u32, lppmapierror: *mut *mut MAPIERROR) -> ::windows_sys::core::HRESULT,
+    pub Activate: unsafe extern "system" fn(this: *mut *mut Self, ulflags: u32, uluiparam: usize) -> ::windows_sys::core::HRESULT,
+    pub GetState: unsafe extern "system" fn(this: *mut *mut Self, ulflags: u32, lpulstate: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMAPIFolder {
+    pub base__: IMAPIContainer,
+    pub CreateMessage: unsafe extern "system" fn(this: *mut *mut Self, lpinterface: *mut ::windows_sys::core::GUID, ulflags: u32, lppmessage: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CopyMessages: unsafe extern "system" fn(this: *mut *mut Self, lpmsglist: *const SBinaryArray, lpinterface: *const ::windows_sys::core::GUID, lpdestfolder: *const ::core::ffi::c_void, uluiparam: usize, lpprogress: *mut ::core::ffi::c_void, ulflags: u32) -> ::windows_sys::core::HRESULT,
+    pub DeleteMessages: unsafe extern "system" fn(this: *mut *mut Self, lpmsglist: *const SBinaryArray, uluiparam: usize, lpprogress: *mut ::core::ffi::c_void, ulflags: u32) -> ::windows_sys::core::HRESULT,
+    pub CreateFolder: unsafe extern "system" fn(this: *mut *mut Self, ulfoldertype: u32, lpszfoldername: *const i8, lpszfoldercomment: *const i8, lpinterface: *const ::windows_sys::core::GUID, ulflags: u32, lppfolder: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CopyFolder: unsafe extern "system" fn(this: *mut *mut Self, cbentryid: u32, lpentryid: *const ENTRYID, lpinterface: *const ::windows_sys::core::GUID, lpdestfolder: *const ::core::ffi::c_void, lpsznewfoldername: *const i8, uluiparam: usize, lpprogress: *mut ::core::ffi::c_void, ulflags: u32) -> ::windows_sys::core::HRESULT,
+    pub DeleteFolder: unsafe extern "system" fn(this: *mut *mut Self, cbentryid: u32, lpentryid: *const ENTRYID, uluiparam: usize, lpprogress: *mut ::core::ffi::c_void, ulflags: u32) -> ::windows_sys::core::HRESULT,
+    pub SetReadFlags: unsafe extern "system" fn(this: *mut *mut Self, lpmsglist: *const SBinaryArray, uluiparam: usize, lpprogress: *mut ::core::ffi::c_void, ulflags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetMessageStatus: unsafe extern "system" fn(this: *mut *mut Self, cbentryid: u32, lpentryid: *const ENTRYID, ulflags: u32, lpulmessagestatus: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetMessageStatus: unsafe extern "system" fn(this: *mut *mut Self, cbentryid: u32, lpentryid: *const ENTRYID, ulnewstatus: u32, ulnewstatusmask: u32, lpuloldstatus: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SaveContentsSort: unsafe extern "system" fn(this: *mut *mut Self, lpsortcriteria: *const SSortOrderSet, ulflags: u32) -> ::windows_sys::core::HRESULT,
+    pub EmptyFolder: unsafe extern "system" fn(this: *mut *mut Self, uluiparam: usize, lpprogress: *mut ::core::ffi::c_void, ulflags: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMAPIProgress {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Progress: unsafe extern "system" fn(this: *mut *mut Self, ulvalue: u32, ulcount: u32, ultotal: u32) -> ::windows_sys::core::HRESULT,
+    pub GetFlags: unsafe extern "system" fn(this: *mut *mut Self, lpulflags: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetMax: unsafe extern "system" fn(this: *mut *mut Self, lpulmax: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetMin: unsafe extern "system" fn(this: *mut *mut Self, lpulmin: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetLimits: unsafe extern "system" fn(this: *mut *mut Self, lpulmin: *mut u32, lpulmax: *mut u32, lpulflags: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMAPIProp {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetLastError: unsafe extern "system" fn(this: *mut *mut Self, hresult: ::windows_sys::core::HRESULT, ulflags: u32, lppmapierror: *mut *mut MAPIERROR) -> ::windows_sys::core::HRESULT,
+    pub SaveChanges: unsafe extern "system" fn(this: *mut *mut Self, ulflags: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub GetProps: unsafe extern "system" fn(this: *mut *mut Self, lpproptagarray: *mut SPropTagArray, ulflags: u32, lpcvalues: *mut u32, lppproparray: *mut *mut SPropValue) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    GetProps: usize,
+    pub GetPropList: unsafe extern "system" fn(this: *mut *mut Self, ulflags: u32, lppproptagarray: *mut *mut SPropTagArray) -> ::windows_sys::core::HRESULT,
+    pub OpenProperty: unsafe extern "system" fn(this: *mut *mut Self, ulproptag: u32, lpiid: *mut ::windows_sys::core::GUID, ulinterfaceoptions: u32, ulflags: u32, lppunk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub SetProps: unsafe extern "system" fn(this: *mut *mut Self, cvalues: u32, lpproparray: *mut SPropValue, lppproblems: *mut *mut SPropProblemArray) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    SetProps: usize,
+    pub DeleteProps: unsafe extern "system" fn(this: *mut *mut Self, lpproptagarray: *mut SPropTagArray, lppproblems: *mut *mut SPropProblemArray) -> ::windows_sys::core::HRESULT,
+    pub CopyTo: unsafe extern "system" fn(this: *mut *mut Self, ciidexclude: u32, rgiidexclude: *mut ::windows_sys::core::GUID, lpexcludeprops: *mut SPropTagArray, uluiparam: usize, lpprogress: *mut ::core::ffi::c_void, lpinterface: *mut ::windows_sys::core::GUID, lpdestobj: *mut ::core::ffi::c_void, ulflags: u32, lppproblems: *mut *mut SPropProblemArray) -> ::windows_sys::core::HRESULT,
+    pub CopyProps: unsafe extern "system" fn(this: *mut *mut Self, lpincludeprops: *mut SPropTagArray, uluiparam: usize, lpprogress: *mut ::core::ffi::c_void, lpinterface: *mut ::windows_sys::core::GUID, lpdestobj: *mut ::core::ffi::c_void, ulflags: u32, lppproblems: *mut *mut SPropProblemArray) -> ::windows_sys::core::HRESULT,
+    pub GetNamesFromIDs: unsafe extern "system" fn(this: *mut *mut Self, lppproptags: *mut *mut SPropTagArray, lppropsetguid: *mut ::windows_sys::core::GUID, ulflags: u32, lpcpropnames: *mut u32, lppppropnames: *mut *mut *mut MAPINAMEID) -> ::windows_sys::core::HRESULT,
+    pub GetIDsFromNames: unsafe extern "system" fn(this: *mut *mut Self, cpropnames: u32, lpppropnames: *mut *mut MAPINAMEID, ulflags: u32, lppproptags: *mut *mut SPropTagArray) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMAPIStatus {
+    pub base__: IMAPIProp,
+    pub ValidateState: unsafe extern "system" fn(this: *mut *mut Self, uluiparam: usize, ulflags: u32) -> ::windows_sys::core::HRESULT,
+    pub SettingsDialog: unsafe extern "system" fn(this: *mut *mut Self, uluiparam: usize, ulflags: u32) -> ::windows_sys::core::HRESULT,
+    pub ChangePassword: unsafe extern "system" fn(this: *mut *mut Self, lpoldpass: *const i8, lpnewpass: *const i8, ulflags: u32) -> ::windows_sys::core::HRESULT,
+    pub FlushQueues: unsafe extern "system" fn(this: *mut *mut Self, uluiparam: usize, cbtargettransport: u32, lptargettransport: *const ENTRYID, ulflags: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMAPITable {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetLastError: unsafe extern "system" fn(this: *mut *mut Self, hresult: ::windows_sys::core::HRESULT, ulflags: u32, lppmapierror: *mut *mut MAPIERROR) -> ::windows_sys::core::HRESULT,
+    pub Advise: unsafe extern "system" fn(this: *mut *mut Self, uleventmask: u32, lpadvisesink: *mut ::core::ffi::c_void, lpulconnection: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Unadvise: unsafe extern "system" fn(this: *mut *mut Self, ulconnection: u32) -> ::windows_sys::core::HRESULT,
+    pub GetStatus: unsafe extern "system" fn(this: *mut *mut Self, lpultablestatus: *mut u32, lpultabletype: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetColumns: unsafe extern "system" fn(this: *mut *mut Self, lpproptagarray: *mut SPropTagArray, ulflags: u32) -> ::windows_sys::core::HRESULT,
+    pub QueryColumns: unsafe extern "system" fn(this: *mut *mut Self, ulflags: u32, lpproptagarray: *mut *mut SPropTagArray) -> ::windows_sys::core::HRESULT,
+    pub GetRowCount: unsafe extern "system" fn(this: *mut *mut Self, ulflags: u32, lpulcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SeekRow: unsafe extern "system" fn(this: *mut *mut Self, bkorigin: u32, lrowcount: i32, lplrowssought: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SeekRowApprox: unsafe extern "system" fn(this: *mut *mut Self, ulnumerator: u32, uldenominator: u32) -> ::windows_sys::core::HRESULT,
+    pub QueryPosition: unsafe extern "system" fn(this: *mut *mut Self, lpulrow: *mut u32, lpulnumerator: *mut u32, lpuldenominator: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub FindRow: unsafe extern "system" fn(this: *mut *mut Self, lprestriction: *mut SRestriction, bkorigin: u32, ulflags: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    FindRow: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub Restrict: unsafe extern "system" fn(this: *mut *mut Self, lprestriction: *mut SRestriction, ulflags: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    Restrict: usize,
+    pub CreateBookmark: unsafe extern "system" fn(this: *mut *mut Self, lpbkposition: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub FreeBookmark: unsafe extern "system" fn(this: *mut *mut Self, bkposition: u32) -> ::windows_sys::core::HRESULT,
+    pub SortTable: unsafe extern "system" fn(this: *mut *mut Self, lpsortcriteria: *mut SSortOrderSet, ulflags: u32) -> ::windows_sys::core::HRESULT,
+    pub QuerySortOrder: unsafe extern "system" fn(this: *mut *mut Self, lppsortcriteria: *mut *mut SSortOrderSet) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub QueryRows: unsafe extern "system" fn(this: *mut *mut Self, lrowcount: i32, ulflags: u32, lpprows: *mut *mut SRowSet) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    QueryRows: usize,
+    pub Abort: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub ExpandRow: unsafe extern "system" fn(this: *mut *mut Self, cbinstancekey: u32, pbinstancekey: *mut u8, ulrowcount: u32, ulflags: u32, lpprows: *mut *mut SRowSet, lpulmorerows: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    ExpandRow: usize,
+    pub CollapseRow: unsafe extern "system" fn(this: *mut *mut Self, cbinstancekey: u32, pbinstancekey: *mut u8, ulflags: u32, lpulrowcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub WaitForCompletion: unsafe extern "system" fn(this: *mut *mut Self, ulflags: u32, ultimeout: u32, lpultablestatus: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCollapseState: unsafe extern "system" fn(this: *mut *mut Self, ulflags: u32, cbinstancekey: u32, lpbinstancekey: *mut u8, lpcbcollapsestate: *mut u32, lppbcollapsestate: *mut *mut u8) -> ::windows_sys::core::HRESULT,
+    pub SetCollapseState: unsafe extern "system" fn(this: *mut *mut Self, ulflags: u32, cbcollapsestate: u32, pbcollapsestate: *mut u8, lpbklocation: *mut u32) -> ::windows_sys::core::HRESULT,
+}
 #[doc = "*Required features: `\"Win32_System_AddressBook\"`*"]
 pub const IMAPI_E_BAD_MULTISESSION_PARAMETER: ::windows_sys::core::HRESULT = -1062555294i32;
 #[doc = "*Required features: `\"Win32_System_AddressBook\"`*"]
@@ -832,15 +1011,148 @@ pub const IMAPI_E_UDF_REVISION_CHANGE_NOT_ALLOWED: ::windows_sys::core::HRESULT 
 pub const IMAPI_E_WORKING_DIRECTORY_SPACE: ::windows_sys::core::HRESULT = -1062555327i32;
 #[doc = "*Required features: `\"Win32_System_AddressBook\"`*"]
 pub const IMAPI_S_IMAGE_FEATURE_NOT_SUPPORTED: ::windows_sys::core::HRESULT = 11186527i32;
-pub type IMailUser = *mut ::core::ffi::c_void;
-pub type IMessage = *mut ::core::ffi::c_void;
-pub type IMsgStore = *mut ::core::ffi::c_void;
-pub type IProfSect = *mut ::core::ffi::c_void;
-pub type IPropData = *mut ::core::ffi::c_void;
-pub type IProviderAdmin = *mut ::core::ffi::c_void;
-pub type ITableData = *mut ::core::ffi::c_void;
-pub type IWABExtInit = *mut ::core::ffi::c_void;
-pub type IWABOBJECT_ = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IMailUser {
+    pub base__: IMAPIProp,
+}
+#[repr(C)]
+pub struct IMessage {
+    pub base__: IMAPIProp,
+    pub GetAttachmentTable: unsafe extern "system" fn(this: *mut *mut Self, ulflags: u32, lpptable: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub OpenAttach: unsafe extern "system" fn(this: *mut *mut Self, ulattachmentnum: u32, lpinterface: *const ::windows_sys::core::GUID, ulflags: u32, lppattach: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateAttach: unsafe extern "system" fn(this: *mut *mut Self, lpinterface: *const ::windows_sys::core::GUID, ulflags: u32, lpulattachmentnum: *mut u32, lppattach: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub DeleteAttach: unsafe extern "system" fn(this: *mut *mut Self, ulattachmentnum: u32, uluiparam: usize, lpprogress: *mut ::core::ffi::c_void, ulflags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetRecipientTable: unsafe extern "system" fn(this: *mut *mut Self, ulflags: u32, lpptable: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub ModifyRecipients: unsafe extern "system" fn(this: *mut *mut Self, ulflags: u32, lpmods: *const ADRLIST) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    ModifyRecipients: usize,
+    pub SubmitMessage: unsafe extern "system" fn(this: *mut *mut Self, ulflags: u32) -> ::windows_sys::core::HRESULT,
+    pub SetReadFlag: unsafe extern "system" fn(this: *mut *mut Self, ulflags: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMsgStore {
+    pub base__: IMAPIProp,
+    pub Advise: unsafe extern "system" fn(this: *mut *mut Self, cbentryid: u32, lpentryid: *const ENTRYID, uleventmask: u32, lpadvisesink: *mut ::core::ffi::c_void, lpulconnection: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Unadvise: unsafe extern "system" fn(this: *mut *mut Self, ulconnection: u32) -> ::windows_sys::core::HRESULT,
+    pub CompareEntryIDs: unsafe extern "system" fn(this: *mut *mut Self, cbentryid1: u32, lpentryid1: *const ENTRYID, cbentryid2: u32, lpentryid2: *const ENTRYID, ulflags: u32, lpulresult: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub OpenEntry: unsafe extern "system" fn(this: *mut *mut Self, cbentryid: u32, lpentryid: *const ENTRYID, lpinterface: *const ::windows_sys::core::GUID, ulflags: u32, lpulobjtype: *mut u32, ppunk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetReceiveFolder: unsafe extern "system" fn(this: *mut *mut Self, lpszmessageclass: *const i8, ulflags: u32, cbentryid: u32, lpentryid: *const ENTRYID) -> ::windows_sys::core::HRESULT,
+    pub GetReceiveFolder: unsafe extern "system" fn(this: *mut *mut Self, lpszmessageclass: *const i8, ulflags: u32, lpcbentryid: *mut u32, lppentryid: *mut *mut ENTRYID, lppszexplicitclass: *mut *mut i8) -> ::windows_sys::core::HRESULT,
+    pub GetReceiveFolderTable: unsafe extern "system" fn(this: *mut *mut Self, ulflags: u32, lpptable: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub StoreLogoff: unsafe extern "system" fn(this: *mut *mut Self, lpulflags: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub AbortSubmit: unsafe extern "system" fn(this: *mut *mut Self, cbentryid: u32, lpentryid: *const ENTRYID, ulflags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetOutgoingQueue: unsafe extern "system" fn(this: *mut *mut Self, ulflags: u32, lpptable: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetLockState: unsafe extern "system" fn(this: *mut *mut Self, lpmessage: *mut ::core::ffi::c_void, ullockstate: u32) -> ::windows_sys::core::HRESULT,
+    pub FinishedMsg: unsafe extern "system" fn(this: *mut *mut Self, ulflags: u32, cbentryid: u32, lpentryid: *const ENTRYID) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub NotifyNewMail: unsafe extern "system" fn(this: *mut *mut Self, lpnotification: *const NOTIFICATION) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    NotifyNewMail: usize,
+}
+#[repr(C)]
+pub struct IProfSect {
+    pub base__: IMAPIProp,
+}
+#[repr(C)]
+pub struct IPropData {
+    pub base__: IMAPIProp,
+    pub HrSetObjAccess: unsafe extern "system" fn(this: *mut *mut Self, ulaccess: u32) -> ::windows_sys::core::HRESULT,
+    pub HrSetPropAccess: unsafe extern "system" fn(this: *mut *mut Self, lpproptagarray: *mut SPropTagArray, rgulaccess: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub HrGetPropAccess: unsafe extern "system" fn(this: *mut *mut Self, lppproptagarray: *mut *mut SPropTagArray, lprgulaccess: *mut *mut u32) -> ::windows_sys::core::HRESULT,
+    pub HrAddObjProps: unsafe extern "system" fn(this: *mut *mut Self, lppproptagarray: *mut SPropTagArray, lprgulaccess: *mut *mut SPropProblemArray) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IProviderAdmin {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetLastError: unsafe extern "system" fn(this: *mut *mut Self, hresult: ::windows_sys::core::HRESULT, ulflags: u32, lppmapierror: *mut *mut MAPIERROR) -> ::windows_sys::core::HRESULT,
+    pub GetProviderTable: unsafe extern "system" fn(this: *mut *mut Self, ulflags: u32, lpptable: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub CreateProvider: unsafe extern "system" fn(this: *mut *mut Self, lpszprovider: *const i8, cvalues: u32, lpprops: *const SPropValue, uluiparam: usize, ulflags: u32, lpuid: *mut MAPIUID) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    CreateProvider: usize,
+    pub DeleteProvider: unsafe extern "system" fn(this: *mut *mut Self, lpuid: *const MAPIUID) -> ::windows_sys::core::HRESULT,
+    pub OpenProfileSection: unsafe extern "system" fn(this: *mut *mut Self, lpuid: *const MAPIUID, lpinterface: *const ::windows_sys::core::GUID, ulflags: u32, lppprofsect: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITableData {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub HrGetView: unsafe extern "system" fn(this: *mut *mut Self, lpssortorderset: *mut SSortOrderSet, lpfcallerrelease: *mut *mut ::core::ffi::c_void, ulcallerdata: u32, lppmapitable: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub HrModifyRow: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut SRow) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    HrModifyRow: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub HrDeleteRow: unsafe extern "system" fn(this: *mut *mut Self, lpspropvalue: *mut SPropValue) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    HrDeleteRow: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub HrQueryRow: unsafe extern "system" fn(this: *mut *mut Self, lpspropvalue: *mut SPropValue, lppsrow: *mut *mut SRow, lpulirow: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    HrQueryRow: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub HrEnumRow: unsafe extern "system" fn(this: *mut *mut Self, ulrownumber: u32, lppsrow: *mut *mut SRow) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    HrEnumRow: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub HrNotify: unsafe extern "system" fn(this: *mut *mut Self, ulflags: u32, cvalues: u32, lpspropvalue: *mut SPropValue) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    HrNotify: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub HrInsertRow: unsafe extern "system" fn(this: *mut *mut Self, ulirow: u32, lpsrow: *mut SRow) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    HrInsertRow: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub HrModifyRows: unsafe extern "system" fn(this: *mut *mut Self, ulflags: u32, lpsrowset: *mut SRowSet) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    HrModifyRows: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub HrDeleteRows: unsafe extern "system" fn(this: *mut *mut Self, ulflags: u32, lprowsettodelete: *mut SRowSet, crowsdeleted: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    HrDeleteRows: usize,
+}
+#[repr(C)]
+pub struct IWABExtInit {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, lpwabextdisplay: *mut WABEXTDISPLAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Initialize: usize,
+}
+#[repr(C)]
+pub struct IWABOBJECT_ {
+    pub QueryInterface: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppvobj: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AddRef: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
+    pub Release: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
+    pub GetLastError: unsafe extern "system" fn(this: *mut *mut Self, hresult: ::windows_sys::core::HRESULT, ulflags: u32, lppmapierror: *mut *mut MAPIERROR) -> ::windows_sys::core::HRESULT,
+    pub AllocateBuffer: unsafe extern "system" fn(this: *mut *mut Self, cbsize: u32, lppbuffer: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AllocateMore: unsafe extern "system" fn(this: *mut *mut Self, cbsize: u32, lpobject: *const ::core::ffi::c_void, lppbuffer: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub FreeBuffer: unsafe extern "system" fn(this: *mut *mut Self, lpbuffer: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Backup: unsafe extern "system" fn(this: *mut *mut Self, lpfilename: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub Import: unsafe extern "system" fn(this: *mut *mut Self, lpwip: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Find: unsafe extern "system" fn(this: *mut *mut Self, lpiab: *mut ::core::ffi::c_void, hwnd: super::super::Foundation::HWND) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Find: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub VCardDisplay: unsafe extern "system" fn(this: *mut *mut Self, lpiab: *mut ::core::ffi::c_void, hwnd: super::super::Foundation::HWND, lpszfilename: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    VCardDisplay: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub LDAPUrl: unsafe extern "system" fn(this: *mut *mut Self, lpiab: *mut ::core::ffi::c_void, hwnd: super::super::Foundation::HWND, ulflags: u32, lpszurl: ::windows_sys::core::PCSTR, lppmailuser: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    LDAPUrl: usize,
+    pub VCardCreate: unsafe extern "system" fn(this: *mut *mut Self, lpiab: *mut ::core::ffi::c_void, ulflags: u32, lpszvcard: ::windows_sys::core::PCSTR, lpmailuser: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub VCardRetrieve: unsafe extern "system" fn(this: *mut *mut Self, lpiab: *mut ::core::ffi::c_void, ulflags: u32, lpszvcard: ::windows_sys::core::PCSTR, lppmailuser: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetMe: unsafe extern "system" fn(this: *mut *mut Self, lpiab: *mut ::core::ffi::c_void, ulflags: u32, lpdwaction: *mut u32, lpsbeid: *mut SBinary, hwnd: super::super::Foundation::HWND) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetMe: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetMe: unsafe extern "system" fn(this: *mut *mut Self, lpiab: *mut ::core::ffi::c_void, ulflags: u32, sbeid: SBinary, hwnd: super::super::Foundation::HWND) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetMe: usize,
+}
 #[doc = "*Required features: `\"Win32_System_AddressBook\"`*"]
 pub type IWABOBJECT_AddRef_METHOD = ::core::option::Option<unsafe extern "system" fn() -> u32>;
 #[doc = "*Required features: `\"Win32_System_AddressBook\"`*"]
@@ -851,34 +1163,65 @@ pub type IWABOBJECT_AllocateMore_METHOD = ::core::option::Option<unsafe extern "
 pub type IWABOBJECT_Backup_METHOD = ::core::option::Option<unsafe extern "system" fn(lpfilename: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT>;
 #[doc = "*Required features: `\"Win32_System_AddressBook\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
-pub type IWABOBJECT_Find_METHOD = ::core::option::Option<unsafe extern "system" fn(lpiab: IAddrBook, hwnd: super::super::Foundation::HWND) -> ::windows_sys::core::HRESULT>;
+pub type IWABOBJECT_Find_METHOD = ::core::option::Option<unsafe extern "system" fn(lpiab: *mut *mut IAddrBook, hwnd: super::super::Foundation::HWND) -> ::windows_sys::core::HRESULT>;
 #[doc = "*Required features: `\"Win32_System_AddressBook\"`*"]
 pub type IWABOBJECT_FreeBuffer_METHOD = ::core::option::Option<unsafe extern "system" fn(lpbuffer: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT>;
 #[doc = "*Required features: `\"Win32_System_AddressBook\"`*"]
 pub type IWABOBJECT_GetLastError_METHOD = ::core::option::Option<unsafe extern "system" fn(hresult: ::windows_sys::core::HRESULT, ulflags: u32, lppmapierror: *mut *mut MAPIERROR) -> ::windows_sys::core::HRESULT>;
 #[doc = "*Required features: `\"Win32_System_AddressBook\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
-pub type IWABOBJECT_GetMe_METHOD = ::core::option::Option<unsafe extern "system" fn(lpiab: IAddrBook, ulflags: u32, lpdwaction: *mut u32, lpsbeid: *mut SBinary, hwnd: super::super::Foundation::HWND) -> ::windows_sys::core::HRESULT>;
+pub type IWABOBJECT_GetMe_METHOD = ::core::option::Option<unsafe extern "system" fn(lpiab: *mut *mut IAddrBook, ulflags: u32, lpdwaction: *mut u32, lpsbeid: *mut SBinary, hwnd: super::super::Foundation::HWND) -> ::windows_sys::core::HRESULT>;
 #[doc = "*Required features: `\"Win32_System_AddressBook\"`*"]
 pub type IWABOBJECT_Import_METHOD = ::core::option::Option<unsafe extern "system" fn(lpwip: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT>;
 #[doc = "*Required features: `\"Win32_System_AddressBook\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
-pub type IWABOBJECT_LDAPUrl_METHOD = ::core::option::Option<unsafe extern "system" fn(lpiab: IAddrBook, hwnd: super::super::Foundation::HWND, ulflags: u32, lpszurl: ::windows_sys::core::PCSTR, lppmailuser: *mut IMailUser) -> ::windows_sys::core::HRESULT>;
+pub type IWABOBJECT_LDAPUrl_METHOD = ::core::option::Option<unsafe extern "system" fn(lpiab: *mut *mut IAddrBook, hwnd: super::super::Foundation::HWND, ulflags: u32, lpszurl: ::windows_sys::core::PCSTR, lppmailuser: *mut *mut *mut IMailUser) -> ::windows_sys::core::HRESULT>;
 #[doc = "*Required features: `\"Win32_System_AddressBook\"`*"]
 pub type IWABOBJECT_QueryInterface_METHOD = ::core::option::Option<unsafe extern "system" fn(riid: *const ::windows_sys::core::GUID, ppvobj: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT>;
 #[doc = "*Required features: `\"Win32_System_AddressBook\"`*"]
 pub type IWABOBJECT_Release_METHOD = ::core::option::Option<unsafe extern "system" fn() -> u32>;
 #[doc = "*Required features: `\"Win32_System_AddressBook\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
-pub type IWABOBJECT_SetMe_METHOD = ::core::option::Option<unsafe extern "system" fn(lpiab: IAddrBook, ulflags: u32, sbeid: SBinary, hwnd: super::super::Foundation::HWND) -> ::windows_sys::core::HRESULT>;
+pub type IWABOBJECT_SetMe_METHOD = ::core::option::Option<unsafe extern "system" fn(lpiab: *mut *mut IAddrBook, ulflags: u32, sbeid: SBinary, hwnd: super::super::Foundation::HWND) -> ::windows_sys::core::HRESULT>;
 #[doc = "*Required features: `\"Win32_System_AddressBook\"`*"]
-pub type IWABOBJECT_VCardCreate_METHOD = ::core::option::Option<unsafe extern "system" fn(lpiab: IAddrBook, ulflags: u32, lpszvcard: ::windows_sys::core::PCSTR, lpmailuser: IMailUser) -> ::windows_sys::core::HRESULT>;
+pub type IWABOBJECT_VCardCreate_METHOD = ::core::option::Option<unsafe extern "system" fn(lpiab: *mut *mut IAddrBook, ulflags: u32, lpszvcard: ::windows_sys::core::PCSTR, lpmailuser: *mut *mut IMailUser) -> ::windows_sys::core::HRESULT>;
 #[doc = "*Required features: `\"Win32_System_AddressBook\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
-pub type IWABOBJECT_VCardDisplay_METHOD = ::core::option::Option<unsafe extern "system" fn(lpiab: IAddrBook, hwnd: super::super::Foundation::HWND, lpszfilename: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT>;
+pub type IWABOBJECT_VCardDisplay_METHOD = ::core::option::Option<unsafe extern "system" fn(lpiab: *mut *mut IAddrBook, hwnd: super::super::Foundation::HWND, lpszfilename: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT>;
 #[doc = "*Required features: `\"Win32_System_AddressBook\"`*"]
-pub type IWABOBJECT_VCardRetrieve_METHOD = ::core::option::Option<unsafe extern "system" fn(lpiab: IAddrBook, ulflags: u32, lpszvcard: ::windows_sys::core::PCSTR, lppmailuser: *mut IMailUser) -> ::windows_sys::core::HRESULT>;
-pub type IWABObject = *mut ::core::ffi::c_void;
+pub type IWABOBJECT_VCardRetrieve_METHOD = ::core::option::Option<unsafe extern "system" fn(lpiab: *mut *mut IAddrBook, ulflags: u32, lpszvcard: ::windows_sys::core::PCSTR, lppmailuser: *mut *mut *mut IMailUser) -> ::windows_sys::core::HRESULT>;
+#[repr(C)]
+pub struct IWABObject {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetLastError: unsafe extern "system" fn(this: *mut *mut Self, hresult: ::windows_sys::core::HRESULT, ulflags: u32, lppmapierror: *mut *mut MAPIERROR) -> ::windows_sys::core::HRESULT,
+    pub AllocateBuffer: unsafe extern "system" fn(this: *mut *mut Self, cbsize: u32, lppbuffer: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AllocateMore: unsafe extern "system" fn(this: *mut *mut Self, cbsize: u32, lpobject: *const ::core::ffi::c_void, lppbuffer: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub FreeBuffer: unsafe extern "system" fn(this: *mut *mut Self, lpbuffer: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Backup: unsafe extern "system" fn(this: *mut *mut Self, lpfilename: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub Import: unsafe extern "system" fn(this: *mut *mut Self, lpwip: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Find: unsafe extern "system" fn(this: *mut *mut Self, lpiab: *mut ::core::ffi::c_void, hwnd: super::super::Foundation::HWND) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Find: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub VCardDisplay: unsafe extern "system" fn(this: *mut *mut Self, lpiab: *mut ::core::ffi::c_void, hwnd: super::super::Foundation::HWND, lpszfilename: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    VCardDisplay: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub LDAPUrl: unsafe extern "system" fn(this: *mut *mut Self, lpiab: *mut ::core::ffi::c_void, hwnd: super::super::Foundation::HWND, ulflags: u32, lpszurl: ::windows_sys::core::PCSTR, lppmailuser: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    LDAPUrl: usize,
+    pub VCardCreate: unsafe extern "system" fn(this: *mut *mut Self, lpiab: *mut ::core::ffi::c_void, ulflags: u32, lpszvcard: ::windows_sys::core::PCSTR, lpmailuser: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub VCardRetrieve: unsafe extern "system" fn(this: *mut *mut Self, lpiab: *mut ::core::ffi::c_void, ulflags: u32, lpszvcard: ::windows_sys::core::PCSTR, lppmailuser: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetMe: unsafe extern "system" fn(this: *mut *mut Self, lpiab: *mut ::core::ffi::c_void, ulflags: u32, lpdwaction: *mut u32, lpsbeid: *mut SBinary, hwnd: super::super::Foundation::HWND) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetMe: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetMe: unsafe extern "system" fn(this: *mut *mut Self, lpiab: *mut ::core::ffi::c_void, ulflags: u32, sbeid: SBinary, hwnd: super::super::Foundation::HWND) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetMe: usize,
+}
 #[doc = "*Required features: `\"Win32_System_AddressBook\"`*"]
 pub type LPALLOCATEBUFFER = ::core::option::Option<unsafe extern "system" fn(cbsize: u32, lppbuffer: *mut *mut ::core::ffi::c_void) -> i32>;
 #[doc = "*Required features: `\"Win32_System_AddressBook\"`*"]
@@ -901,19 +1244,19 @@ pub type LPFREEBUFFER = ::core::option::Option<unsafe extern "system" fn(lpbuffe
 pub type LPNOTIFCALLBACK = ::core::option::Option<unsafe extern "system" fn(lpvcontext: *mut ::core::ffi::c_void, cnotification: u32, lpnotifications: *mut NOTIFICATION) -> i32>;
 #[doc = "*Required features: `\"Win32_System_AddressBook\"`, `\"Win32_System_Com\"`*"]
 #[cfg(feature = "Win32_System_Com")]
-pub type LPOPENSTREAMONFILE = ::core::option::Option<unsafe extern "system" fn(lpallocatebuffer: LPALLOCATEBUFFER, lpfreebuffer: LPFREEBUFFER, ulflags: u32, lpszfilename: *const i8, lpszprefix: *const i8, lppstream: *mut super::Com::IStream) -> ::windows_sys::core::HRESULT>;
+pub type LPOPENSTREAMONFILE = ::core::option::Option<unsafe extern "system" fn(lpallocatebuffer: LPALLOCATEBUFFER, lpfreebuffer: LPFREEBUFFER, ulflags: u32, lpszfilename: *const i8, lpszprefix: *const i8, lppstream: *mut *mut *mut super::Com::IStream) -> ::windows_sys::core::HRESULT>;
 #[doc = "*Required features: `\"Win32_System_AddressBook\"`*"]
-pub type LPWABALLOCATEBUFFER = ::core::option::Option<unsafe extern "system" fn(lpwabobject: IWABObject, cbsize: u32, lppbuffer: *mut *mut ::core::ffi::c_void) -> i32>;
+pub type LPWABALLOCATEBUFFER = ::core::option::Option<unsafe extern "system" fn(lpwabobject: *mut *mut IWABObject, cbsize: u32, lppbuffer: *mut *mut ::core::ffi::c_void) -> i32>;
 #[doc = "*Required features: `\"Win32_System_AddressBook\"`*"]
-pub type LPWABALLOCATEMORE = ::core::option::Option<unsafe extern "system" fn(lpwabobject: IWABObject, cbsize: u32, lpobject: *mut ::core::ffi::c_void, lppbuffer: *mut *mut ::core::ffi::c_void) -> i32>;
+pub type LPWABALLOCATEMORE = ::core::option::Option<unsafe extern "system" fn(lpwabobject: *mut *mut IWABObject, cbsize: u32, lpobject: *mut ::core::ffi::c_void, lppbuffer: *mut *mut ::core::ffi::c_void) -> i32>;
 #[doc = "*Required features: `\"Win32_System_AddressBook\"`*"]
-pub type LPWABFREEBUFFER = ::core::option::Option<unsafe extern "system" fn(lpwabobject: IWABObject, lpbuffer: *mut ::core::ffi::c_void) -> u32>;
+pub type LPWABFREEBUFFER = ::core::option::Option<unsafe extern "system" fn(lpwabobject: *mut *mut IWABObject, lpbuffer: *mut ::core::ffi::c_void) -> u32>;
 #[doc = "*Required features: `\"Win32_System_AddressBook\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
-pub type LPWABOPEN = ::core::option::Option<unsafe extern "system" fn(lppadrbook: *mut IAddrBook, lppwabobject: *mut IWABObject, lpwp: *mut WAB_PARAM, reserved2: u32) -> ::windows_sys::core::HRESULT>;
+pub type LPWABOPEN = ::core::option::Option<unsafe extern "system" fn(lppadrbook: *mut *mut *mut IAddrBook, lppwabobject: *mut *mut *mut IWABObject, lpwp: *mut WAB_PARAM, reserved2: u32) -> ::windows_sys::core::HRESULT>;
 #[doc = "*Required features: `\"Win32_System_AddressBook\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
-pub type LPWABOPENEX = ::core::option::Option<unsafe extern "system" fn(lppadrbook: *mut IAddrBook, lppwabobject: *mut IWABObject, lpwp: *mut WAB_PARAM, reserved: u32, fnallocatebuffer: LPALLOCATEBUFFER, fnallocatemore: LPALLOCATEMORE, fnfreebuffer: LPFREEBUFFER) -> ::windows_sys::core::HRESULT>;
+pub type LPWABOPENEX = ::core::option::Option<unsafe extern "system" fn(lppadrbook: *mut *mut *mut IAddrBook, lppwabobject: *mut *mut *mut IWABObject, lpwp: *mut WAB_PARAM, reserved: u32, fnallocatebuffer: LPALLOCATEBUFFER, fnallocatemore: LPALLOCATEMORE, fnfreebuffer: LPFREEBUFFER) -> ::windows_sys::core::HRESULT>;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_AddressBook\"`*"]
 pub struct MAPIERROR {
@@ -1674,9 +2017,9 @@ pub const UI_SERVICE: u32 = 2u32;
 #[cfg(feature = "Win32_Foundation")]
 pub struct WABEXTDISPLAY {
     pub cbSize: u32,
-    pub lpWABObject: IWABObject,
-    pub lpAdrBook: IAddrBook,
-    pub lpPropObj: IMAPIProp,
+    pub lpWABObject: *mut *mut *mut *mut IWABObject,
+    pub lpAdrBook: *mut *mut *mut *mut IAddrBook,
+    pub lpPropObj: *mut *mut *mut *mut IMAPIProp,
     pub fReadOnly: super::super::Foundation::BOOL,
     pub fDataChanged: super::super::Foundation::BOOL,
     pub ulFlags: u32,
@@ -1696,7 +2039,7 @@ impl ::core::clone::Clone for WABEXTDISPLAY {
 #[cfg(feature = "Win32_Foundation")]
 pub struct WABIMPORTPARAM {
     pub cbSize: u32,
-    pub lpAdrBook: IAddrBook,
+    pub lpAdrBook: *mut *mut *mut *mut IAddrBook,
     pub hWnd: super::super::Foundation::HWND,
     pub ulFlags: u32,
     pub lpszFileName: ::windows_sys::core::PSTR,

@@ -32,6 +32,78 @@ impl ::core::clone::Clone for CredentialSaveOption {
         *self
     }
 }
+#[repr(C)]
+pub struct ICredentialPickerOptions {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub SetCaption: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Caption: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetMessage: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Message: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetErrorCode: unsafe extern "system" fn(this: *mut *mut Self, value: u32) -> ::windows_sys::core::HRESULT,
+    pub ErrorCode: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetTargetName: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub TargetName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetAuthenticationProtocol: unsafe extern "system" fn(this: *mut *mut Self, value: AuthenticationProtocol) -> ::windows_sys::core::HRESULT,
+    pub AuthenticationProtocol: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut AuthenticationProtocol) -> ::windows_sys::core::HRESULT,
+    pub SetCustomAuthenticationProtocol: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub CustomAuthenticationProtocol: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Storage_Streams")]
+    pub SetPreviousCredential: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Storage_Streams"))]
+    SetPreviousCredential: usize,
+    #[cfg(feature = "Storage_Streams")]
+    pub PreviousCredential: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Storage_Streams"))]
+    PreviousCredential: usize,
+    pub SetAlwaysDisplayDialog: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+    pub AlwaysDisplayDialog: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetCallerSavesCredential: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+    pub CallerSavesCredential: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetCredentialSaveOption: unsafe extern "system" fn(this: *mut *mut Self, value: CredentialSaveOption) -> ::windows_sys::core::HRESULT,
+    pub CredentialSaveOption: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut CredentialSaveOption) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ICredentialPickerResults {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub ErrorCode: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub CredentialSaveOption: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut CredentialSaveOption) -> ::windows_sys::core::HRESULT,
+    pub CredentialSaved: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Storage_Streams")]
+    pub Credential: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Storage_Streams"))]
+    Credential: usize,
+    pub CredentialDomainName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub CredentialUserName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub CredentialPassword: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ICredentialPickerStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub PickWithOptionsAsync: unsafe extern "system" fn(this: *mut *mut Self, options: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    PickWithOptionsAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub PickWithMessageAsync: unsafe extern "system" fn(this: *mut *mut Self, targetname: ::windows_sys::core::HSTRING, message: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    PickWithMessageAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub PickWithCaptionAsync: unsafe extern "system" fn(this: *mut *mut Self, targetname: ::windows_sys::core::HSTRING, message: ::windows_sys::core::HSTRING, caption: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    PickWithCaptionAsync: usize,
+}
+#[repr(C)]
+pub struct IUserConsentVerifierStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub CheckAvailabilityAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    CheckAvailabilityAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub RequestVerificationAsync: unsafe extern "system" fn(this: *mut *mut Self, message: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RequestVerificationAsync: usize,
+}
 #[doc = "*Required features: `\"Security_Credentials_UI\"`*"]
 #[repr(transparent)]
 pub struct UserConsentVerificationResult(pub i32);

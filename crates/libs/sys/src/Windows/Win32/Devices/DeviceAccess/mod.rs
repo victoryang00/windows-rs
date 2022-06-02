@@ -1,7 +1,7 @@
 #[link(name = "windows")]
 extern "system" {
     #[doc = "*Required features: `\"Win32_Devices_DeviceAccess\"`*"]
-    pub fn CreateDeviceAccessInstance(deviceinterfacepath: ::windows_sys::core::PCWSTR, desiredaccess: u32, createasync: *mut ICreateDeviceAccessAsync) -> ::windows_sys::core::HRESULT;
+    pub fn CreateDeviceAccessInstance(deviceinterfacepath: ::windows_sys::core::PCWSTR, desiredaccess: u32, createasync: *mut *mut *mut ICreateDeviceAccessAsync) -> ::windows_sys::core::HRESULT;
 }
 pub const CLSID_DeviceIoControl: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 315876210, data2: 34635, data3: 17789, data4: [159, 223, 115, 151, 119, 120, 104, 108] };
 #[doc = "*Required features: `\"Win32_Devices_DeviceAccess\"`*"]
@@ -92,6 +92,23 @@ pub const ED_RIGHT: u32 = 1024u32;
 pub const ED_TOP: u32 = 1u32;
 #[doc = "*Required features: `\"Win32_Devices_DeviceAccess\"`*"]
 pub const ED_VIDEO: i32 = 33554432i32;
-pub type ICreateDeviceAccessAsync = *mut ::core::ffi::c_void;
-pub type IDeviceIoControl = *mut ::core::ffi::c_void;
-pub type IDeviceRequestCompletionCallback = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct ICreateDeviceAccessAsync {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Cancel: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Wait: unsafe extern "system" fn(this: *mut *mut Self, timeout: u32) -> ::windows_sys::core::HRESULT,
+    pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetResult: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, deviceaccess: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDeviceIoControl {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub DeviceIoControlSync: unsafe extern "system" fn(this: *mut *mut Self, iocontrolcode: u32, inputbuffer: *const u8, inputbuffersize: u32, outputbuffer: *mut u8, outputbuffersize: u32, bytesreturned: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub DeviceIoControlAsync: unsafe extern "system" fn(this: *mut *mut Self, iocontrolcode: u32, inputbuffer: *const u8, inputbuffersize: u32, outputbuffer: *mut u8, outputbuffersize: u32, requestcompletioncallback: *mut ::core::ffi::c_void, cancelcontext: *mut usize) -> ::windows_sys::core::HRESULT,
+    pub CancelOperation: unsafe extern "system" fn(this: *mut *mut Self, cancelcontext: usize) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDeviceRequestCompletionCallback {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Invoke: unsafe extern "system" fn(this: *mut *mut Self, requestresult: ::windows_sys::core::HRESULT, bytesreturned: u32) -> ::windows_sys::core::HRESULT,
+}

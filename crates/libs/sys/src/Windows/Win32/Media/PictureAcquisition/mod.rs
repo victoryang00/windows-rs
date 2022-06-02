@@ -60,17 +60,275 @@ pub const PHOTOACQUIRE_RESULT_SKIP_ALL: ERROR_ADVISE_RESULT = 4i32;
 pub const PHOTOACQUIRE_RESULT_RETRY: ERROR_ADVISE_RESULT = 5i32;
 #[doc = "*Required features: `\"Win32_Media_PictureAcquisition\"`*"]
 pub const PHOTOACQUIRE_RESULT_ABORT: ERROR_ADVISE_RESULT = 6i32;
-pub type IPhotoAcquire = *mut ::core::ffi::c_void;
-pub type IPhotoAcquireDeviceSelectionDialog = *mut ::core::ffi::c_void;
-pub type IPhotoAcquireItem = *mut ::core::ffi::c_void;
-pub type IPhotoAcquireOptionsDialog = *mut ::core::ffi::c_void;
-pub type IPhotoAcquirePlugin = *mut ::core::ffi::c_void;
-pub type IPhotoAcquireProgressCB = *mut ::core::ffi::c_void;
-pub type IPhotoAcquireSettings = *mut ::core::ffi::c_void;
-pub type IPhotoAcquireSource = *mut ::core::ffi::c_void;
-pub type IPhotoProgressActionCB = *mut ::core::ffi::c_void;
-pub type IPhotoProgressDialog = *mut ::core::ffi::c_void;
-pub type IUserInputString = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IPhotoAcquire {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub CreatePhotoSource: unsafe extern "system" fn(this: *mut *mut Self, pszdevice: ::windows_sys::core::PCWSTR, ppphotoacquiresource: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Acquire: unsafe extern "system" fn(this: *mut *mut Self, pphotoacquiresource: *mut ::core::ffi::c_void, fshowprogress: super::super::Foundation::BOOL, hwndparent: super::super::Foundation::HWND, pszapplicationname: ::windows_sys::core::PCWSTR, pphotoacquireprogresscb: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Acquire: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub EnumResults: unsafe extern "system" fn(this: *mut *mut Self, ppenumfilepaths: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    EnumResults: usize,
+}
+#[repr(C)]
+pub struct IPhotoAcquireDeviceSelectionDialog {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetTitle: unsafe extern "system" fn(this: *mut *mut Self, psztitle: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetSubmitButtonText: unsafe extern "system" fn(this: *mut *mut Self, pszsubmitbuttontext: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DoModal: unsafe extern "system" fn(this: *mut *mut Self, hwndparent: super::super::Foundation::HWND, dwdeviceflags: u32, pbstrdeviceid: *mut super::super::Foundation::BSTR, pndevicetype: *mut DEVICE_SELECTION_DEVICE_TYPE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DoModal: usize,
+}
+#[repr(C)]
+pub struct IPhotoAcquireItem {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetItemName: unsafe extern "system" fn(this: *mut *mut Self, pbstritemname: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetItemName: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+    pub GetThumbnail: unsafe extern "system" fn(this: *mut *mut Self, sizethumbnail: super::super::Foundation::SIZE, phbmpthumbnail: *mut super::super::Graphics::Gdi::HBITMAP) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi")))]
+    GetThumbnail: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+    pub GetProperty: unsafe extern "system" fn(this: *mut *mut Self, key: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY, pv: *mut super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem")))]
+    GetProperty: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+    pub SetProperty: unsafe extern "system" fn(this: *mut *mut Self, key: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY, pv: *const super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem")))]
+    SetProperty: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetStream: unsafe extern "system" fn(this: *mut *mut Self, ppstream: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetStream: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CanDelete: unsafe extern "system" fn(this: *mut *mut Self, pfcandelete: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CanDelete: usize,
+    pub Delete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetSubItemCount: unsafe extern "system" fn(this: *mut *mut Self, pncount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSubItemAt: unsafe extern "system" fn(this: *mut *mut Self, nitemindex: u32, ppphotoacquireitem: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPhotoAcquireOptionsDialog {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, pszregistryroot: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Create: unsafe extern "system" fn(this: *mut *mut Self, hwndparent: super::super::Foundation::HWND, phwnddialog: *mut super::super::Foundation::HWND) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Create: usize,
+    pub Destroy: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DoModal: unsafe extern "system" fn(this: *mut *mut Self, hwndparent: super::super::Foundation::HWND, ppnreturncode: *mut isize) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DoModal: usize,
+    pub SaveData: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPhotoAcquirePlugin {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, pphotoacquiresource: *mut ::core::ffi::c_void, pphotoacquireprogresscb: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_UI_Shell_PropertiesSystem"))]
+    pub ProcessItem: unsafe extern "system" fn(this: *mut *mut Self, dwacquirestage: u32, pphotoacquireitem: *mut ::core::ffi::c_void, poriginalitemstream: *mut ::core::ffi::c_void, pszfinalfilename: ::windows_sys::core::PCWSTR, ppropertystore: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_UI_Shell_PropertiesSystem")))]
+    ProcessItem: usize,
+    pub TransferComplete: unsafe extern "system" fn(this: *mut *mut Self, hr: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DisplayConfigureDialog: unsafe extern "system" fn(this: *mut *mut Self, hwndparent: super::super::Foundation::HWND) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DisplayConfigureDialog: usize,
+}
+#[repr(C)]
+pub struct IPhotoAcquireProgressCB {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Cancelled: unsafe extern "system" fn(this: *mut *mut Self, pfcancelled: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Cancelled: usize,
+    pub StartEnumeration: unsafe extern "system" fn(this: *mut *mut Self, pphotoacquiresource: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub FoundItem: unsafe extern "system" fn(this: *mut *mut Self, pphotoacquireitem: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EndEnumeration: unsafe extern "system" fn(this: *mut *mut Self, hr: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+    pub StartTransfer: unsafe extern "system" fn(this: *mut *mut Self, pphotoacquiresource: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub StartItemTransfer: unsafe extern "system" fn(this: *mut *mut Self, nitemindex: u32, pphotoacquireitem: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub DirectoryCreated: unsafe extern "system" fn(this: *mut *mut Self, pszdirectory: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub UpdateTransferPercent: unsafe extern "system" fn(this: *mut *mut Self, foverall: super::super::Foundation::BOOL, npercent: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    UpdateTransferPercent: usize,
+    pub EndItemTransfer: unsafe extern "system" fn(this: *mut *mut Self, nitemindex: u32, pphotoacquireitem: *mut ::core::ffi::c_void, hr: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+    pub EndTransfer: unsafe extern "system" fn(this: *mut *mut Self, hr: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+    pub StartDelete: unsafe extern "system" fn(this: *mut *mut Self, pphotoacquiresource: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub StartItemDelete: unsafe extern "system" fn(this: *mut *mut Self, nitemindex: u32, pphotoacquireitem: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub UpdateDeletePercent: unsafe extern "system" fn(this: *mut *mut Self, npercent: u32) -> ::windows_sys::core::HRESULT,
+    pub EndItemDelete: unsafe extern "system" fn(this: *mut *mut Self, nitemindex: u32, pphotoacquireitem: *mut ::core::ffi::c_void, hr: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+    pub EndDelete: unsafe extern "system" fn(this: *mut *mut Self, hr: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+    pub EndSession: unsafe extern "system" fn(this: *mut *mut Self, hr: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetDeleteAfterAcquire: unsafe extern "system" fn(this: *mut *mut Self, pfdeleteafteracquire: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetDeleteAfterAcquire: usize,
+    pub ErrorAdvise: unsafe extern "system" fn(this: *mut *mut Self, hr: ::windows_sys::core::HRESULT, pszerrormessage: ::windows_sys::core::PCWSTR, nmessagetype: ERROR_ADVISE_MESSAGE_TYPE, pnerroradviseresult: *mut ERROR_ADVISE_RESULT) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    pub GetUserInput: unsafe extern "system" fn(this: *mut *mut Self, riidtype: *const ::windows_sys::core::GUID, punknown: *mut ::core::ffi::c_void, ppropvarresult: *mut super::super::System::Com::StructuredStorage::PROPVARIANT, ppropvardefault: *const super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    GetUserInput: usize,
+}
+#[repr(C)]
+pub struct IPhotoAcquireSettings {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub InitializeFromRegistry: unsafe extern "system" fn(this: *mut *mut Self, pszregistrykey: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetFlags: unsafe extern "system" fn(this: *mut *mut Self, dwphotoacquireflags: u32) -> ::windows_sys::core::HRESULT,
+    pub SetOutputFilenameTemplate: unsafe extern "system" fn(this: *mut *mut Self, psztemplate: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetSequencePaddingWidth: unsafe extern "system" fn(this: *mut *mut Self, dwwidth: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetSequenceZeroPadding: unsafe extern "system" fn(this: *mut *mut Self, fzeropad: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetSequenceZeroPadding: usize,
+    pub SetGroupTag: unsafe extern "system" fn(this: *mut *mut Self, pszgrouptag: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetAcquisitionTime: unsafe extern "system" fn(this: *mut *mut Self, pftacquisitiontime: *const super::super::Foundation::FILETIME) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetAcquisitionTime: usize,
+    pub GetFlags: unsafe extern "system" fn(this: *mut *mut Self, pdwphotoacquireflags: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetOutputFilenameTemplate: unsafe extern "system" fn(this: *mut *mut Self, pbstrtemplate: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetOutputFilenameTemplate: usize,
+    pub GetSequencePaddingWidth: unsafe extern "system" fn(this: *mut *mut Self, pdwwidth: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetSequenceZeroPadding: unsafe extern "system" fn(this: *mut *mut Self, pfzeropad: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetSequenceZeroPadding: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetGroupTag: unsafe extern "system" fn(this: *mut *mut Self, pbstrgrouptag: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetGroupTag: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetAcquisitionTime: unsafe extern "system" fn(this: *mut *mut Self, pftacquisitiontime: *mut super::super::Foundation::FILETIME) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetAcquisitionTime: usize,
+}
+#[repr(C)]
+pub struct IPhotoAcquireSource {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetFriendlyName: unsafe extern "system" fn(this: *mut *mut Self, pbstrfriendlyname: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetFriendlyName: usize,
+    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    pub GetDeviceIcons: unsafe extern "system" fn(this: *mut *mut Self, nsize: u32, phlargeicon: *mut super::super::UI::WindowsAndMessaging::HICON, phsmallicon: *mut super::super::UI::WindowsAndMessaging::HICON) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_WindowsAndMessaging"))]
+    GetDeviceIcons: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InitializeItemList: unsafe extern "system" fn(this: *mut *mut Self, fforceenumeration: super::super::Foundation::BOOL, pphotoacquireprogresscb: *mut ::core::ffi::c_void, pnitemcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InitializeItemList: usize,
+    pub GetItemCount: unsafe extern "system" fn(this: *mut *mut Self, pnitemcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetItemAt: unsafe extern "system" fn(this: *mut *mut Self, nindex: u32, ppphotoacquireitem: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetPhotoAcquireSettings: unsafe extern "system" fn(this: *mut *mut Self, ppphotoacquiresettings: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetDeviceId: unsafe extern "system" fn(this: *mut *mut Self, pbstrdeviceid: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetDeviceId: usize,
+    pub BindToObject: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPhotoProgressActionCB {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DoAction: unsafe extern "system" fn(this: *mut *mut Self, hwndparent: super::super::Foundation::HWND) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DoAction: usize,
+}
+#[repr(C)]
+pub struct IPhotoProgressDialog {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Create: unsafe extern "system" fn(this: *mut *mut Self, hwndparent: super::super::Foundation::HWND) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Create: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetWindow: unsafe extern "system" fn(this: *mut *mut Self, phwndprogressdialog: *mut super::super::Foundation::HWND) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetWindow: usize,
+    pub Destroy: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub SetTitle: unsafe extern "system" fn(this: *mut *mut Self, psztitle: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ShowCheckbox: unsafe extern "system" fn(this: *mut *mut Self, ncheckboxid: PROGRESS_DIALOG_CHECKBOX_ID, fshow: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ShowCheckbox: usize,
+    pub SetCheckboxText: unsafe extern "system" fn(this: *mut *mut Self, ncheckboxid: PROGRESS_DIALOG_CHECKBOX_ID, pszcheckboxtext: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetCheckboxCheck: unsafe extern "system" fn(this: *mut *mut Self, ncheckboxid: PROGRESS_DIALOG_CHECKBOX_ID, fchecked: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetCheckboxCheck: usize,
+    pub SetCheckboxTooltip: unsafe extern "system" fn(this: *mut *mut Self, ncheckboxid: PROGRESS_DIALOG_CHECKBOX_ID, pszcheckboxtooltiptext: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsCheckboxChecked: unsafe extern "system" fn(this: *mut *mut Self, ncheckboxid: PROGRESS_DIALOG_CHECKBOX_ID, pfchecked: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsCheckboxChecked: usize,
+    pub SetCaption: unsafe extern "system" fn(this: *mut *mut Self, psztitle: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+    pub SetImage: unsafe extern "system" fn(this: *mut *mut Self, nimagetype: PROGRESS_DIALOG_IMAGE_TYPE, hicon: super::super::UI::WindowsAndMessaging::HICON, hbitmap: super::super::Graphics::Gdi::HBITMAP) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging")))]
+    SetImage: usize,
+    pub SetPercentComplete: unsafe extern "system" fn(this: *mut *mut Self, npercent: i32) -> ::windows_sys::core::HRESULT,
+    pub SetProgressText: unsafe extern "system" fn(this: *mut *mut Self, pszprogresstext: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetActionLinkCallback: unsafe extern "system" fn(this: *mut *mut Self, pphotoprogressactioncb: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetActionLinkText: unsafe extern "system" fn(this: *mut *mut Self, pszcaption: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ShowActionLink: unsafe extern "system" fn(this: *mut *mut Self, fshow: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ShowActionLink: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsCancelled: unsafe extern "system" fn(this: *mut *mut Self, pfcancelled: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsCancelled: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    pub GetUserInput: unsafe extern "system" fn(this: *mut *mut Self, riidtype: *const ::windows_sys::core::GUID, punknown: *mut ::core::ffi::c_void, ppropvarresult: *mut super::super::System::Com::StructuredStorage::PROPVARIANT, ppropvardefault: *const super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    GetUserInput: usize,
+}
+#[repr(C)]
+pub struct IUserInputString {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetSubmitButtonText: unsafe extern "system" fn(this: *mut *mut Self, pbstrsubmitbuttontext: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetSubmitButtonText: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetPrompt: unsafe extern "system" fn(this: *mut *mut Self, pbstrprompttitle: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetPrompt: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetStringId: unsafe extern "system" fn(this: *mut *mut Self, pbstrstringid: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetStringId: usize,
+    pub GetStringType: unsafe extern "system" fn(this: *mut *mut Self, pnstringtype: *mut USER_INPUT_STRING_TYPE) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetTooltipText: unsafe extern "system" fn(this: *mut *mut Self, pbstrtooltiptext: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetTooltipText: usize,
+    pub GetMaxLength: unsafe extern "system" fn(this: *mut *mut Self, pcchmaxlength: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetDefault: unsafe extern "system" fn(this: *mut *mut Self, pbstrdefault: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetDefault: usize,
+    pub GetMruCount: unsafe extern "system" fn(this: *mut *mut Self, pnmrucount: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetMruEntryAt: unsafe extern "system" fn(this: *mut *mut Self, nindex: u32, pbstrmruentry: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetMruEntryAt: usize,
+    #[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+    pub GetImage: unsafe extern "system" fn(this: *mut *mut Self, nsize: u32, phbitmap: *mut super::super::Graphics::Gdi::HBITMAP, phicon: *mut super::super::UI::WindowsAndMessaging::HICON) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging")))]
+    GetImage: usize,
+}
 #[doc = "*Required features: `\"Win32_Media_PictureAcquisition\"`*"]
 pub const PAPS_CLEANUP: u32 = 2u32;
 #[doc = "*Required features: `\"Win32_Media_PictureAcquisition\"`*"]

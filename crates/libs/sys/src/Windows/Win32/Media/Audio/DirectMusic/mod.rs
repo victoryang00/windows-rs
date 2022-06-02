@@ -1065,19 +1065,182 @@ pub const GUID_DMUS_PROP_WriteLatency: ::windows_sys::core::GUID = ::windows_sys
 pub const GUID_DMUS_PROP_WritePeriod: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 646582177, data2: 24818, data3: 4562, data4: [175, 166, 0, 170, 0, 36, 216, 182] };
 pub const GUID_DMUS_PROP_XG_Capable: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1687595937, data2: 25008, data3: 4562, data4: [175, 166, 0, 170, 0, 36, 216, 182] };
 pub const GUID_DMUS_PROP_XG_Hardware: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 395259686, data2: 50020, data3: 4561, data4: [167, 96, 0, 0, 248, 117, 172, 18] };
-pub type IDirectMusic = *mut ::core::ffi::c_void;
-pub type IDirectMusic8 = *mut ::core::ffi::c_void;
-pub type IDirectMusicBuffer = *mut ::core::ffi::c_void;
-pub type IDirectMusicCollection = *mut ::core::ffi::c_void;
-pub type IDirectMusicDownload = *mut ::core::ffi::c_void;
-pub type IDirectMusicDownloadedInstrument = *mut ::core::ffi::c_void;
-pub type IDirectMusicInstrument = *mut ::core::ffi::c_void;
-pub type IDirectMusicPort = *mut ::core::ffi::c_void;
-pub type IDirectMusicPortDownload = *mut ::core::ffi::c_void;
-pub type IDirectMusicSynth = *mut ::core::ffi::c_void;
-pub type IDirectMusicSynth8 = *mut ::core::ffi::c_void;
-pub type IDirectMusicSynthSink = *mut ::core::ffi::c_void;
-pub type IDirectMusicThru = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IDirectMusic {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub EnumPort: unsafe extern "system" fn(this: *mut *mut Self, dwindex: u32, pportcaps: *mut DMUS_PORTCAPS) -> ::windows_sys::core::HRESULT,
+    pub CreateMusicBuffer: unsafe extern "system" fn(this: *mut *mut Self, pbufferdesc: *mut DMUS_BUFFERDESC, ppbuffer: *mut *mut ::core::ffi::c_void, punkouter: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CreatePort: unsafe extern "system" fn(this: *mut *mut Self, rclsidport: *const ::windows_sys::core::GUID, pportparams: *mut DMUS_PORTPARAMS8, ppport: *mut *mut ::core::ffi::c_void, punkouter: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CreatePort: usize,
+    pub EnumMasterClock: unsafe extern "system" fn(this: *mut *mut Self, dwindex: u32, lpclockinfo: *mut DMUS_CLOCKINFO8) -> ::windows_sys::core::HRESULT,
+    pub GetMasterClock: unsafe extern "system" fn(this: *mut *mut Self, pguidclock: *mut ::windows_sys::core::GUID, ppreferenceclock: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetMasterClock: unsafe extern "system" fn(this: *mut *mut Self, rguidclock: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Activate: unsafe extern "system" fn(this: *mut *mut Self, fenable: super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Activate: usize,
+    pub GetDefaultPort: unsafe extern "system" fn(this: *mut *mut Self, pguidport: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Media_Audio_DirectSound"))]
+    pub SetDirectSound: unsafe extern "system" fn(this: *mut *mut Self, pdirectsound: *mut ::core::ffi::c_void, hwnd: super::super::super::Foundation::HWND) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Media_Audio_DirectSound")))]
+    SetDirectSound: usize,
+}
+#[repr(C)]
+pub struct IDirectMusic8 {
+    pub base__: IDirectMusic,
+    pub SetExternalMasterClock: unsafe extern "system" fn(this: *mut *mut Self, pclock: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDirectMusicBuffer {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Flush: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub TotalTime: unsafe extern "system" fn(this: *mut *mut Self, prttime: *mut i64) -> ::windows_sys::core::HRESULT,
+    pub PackStructured: unsafe extern "system" fn(this: *mut *mut Self, rt: i64, dwchannelgroup: u32, dwchannelmessage: u32) -> ::windows_sys::core::HRESULT,
+    pub PackUnstructured: unsafe extern "system" fn(this: *mut *mut Self, rt: i64, dwchannelgroup: u32, cb: u32, lpb: *mut u8) -> ::windows_sys::core::HRESULT,
+    pub ResetReadPtr: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetNextEvent: unsafe extern "system" fn(this: *mut *mut Self, prt: *mut i64, pdwchannelgroup: *mut u32, pdwlength: *mut u32, ppdata: *mut *mut u8) -> ::windows_sys::core::HRESULT,
+    pub GetRawBufferPtr: unsafe extern "system" fn(this: *mut *mut Self, ppdata: *mut *mut u8) -> ::windows_sys::core::HRESULT,
+    pub GetStartTime: unsafe extern "system" fn(this: *mut *mut Self, prt: *mut i64) -> ::windows_sys::core::HRESULT,
+    pub GetUsedBytes: unsafe extern "system" fn(this: *mut *mut Self, pcb: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetMaxBytes: unsafe extern "system" fn(this: *mut *mut Self, pcb: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetBufferFormat: unsafe extern "system" fn(this: *mut *mut Self, pguidformat: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub SetStartTime: unsafe extern "system" fn(this: *mut *mut Self, rt: i64) -> ::windows_sys::core::HRESULT,
+    pub SetUsedBytes: unsafe extern "system" fn(this: *mut *mut Self, cb: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDirectMusicCollection {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetInstrument: unsafe extern "system" fn(this: *mut *mut Self, dwpatch: u32, ppinstrument: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EnumInstrument: unsafe extern "system" fn(this: *mut *mut Self, dwindex: u32, pdwpatch: *mut u32, pwszname: ::windows_sys::core::PCWSTR, dwnamelen: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDirectMusicDownload {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetBuffer: unsafe extern "system" fn(this: *mut *mut Self, ppvbuffer: *mut *mut ::core::ffi::c_void, pdwsize: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDirectMusicDownloadedInstrument {
+    pub base__: ::windows_sys::core::IUnknown,
+}
+#[repr(C)]
+pub struct IDirectMusicInstrument {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetPatch: unsafe extern "system" fn(this: *mut *mut Self, pdwpatch: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetPatch: unsafe extern "system" fn(this: *mut *mut Self, dwpatch: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDirectMusicPort {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub PlayBuffer: unsafe extern "system" fn(this: *mut *mut Self, pbuffer: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetReadNotificationHandle: unsafe extern "system" fn(this: *mut *mut Self, hevent: super::super::super::Foundation::HANDLE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetReadNotificationHandle: usize,
+    pub Read: unsafe extern "system" fn(this: *mut *mut Self, pbuffer: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub DownloadInstrument: unsafe extern "system" fn(this: *mut *mut Self, pinstrument: *mut ::core::ffi::c_void, ppdownloadedinstrument: *mut *mut ::core::ffi::c_void, pnoteranges: *mut DMUS_NOTERANGE, dwnumnoteranges: u32) -> ::windows_sys::core::HRESULT,
+    pub UnloadInstrument: unsafe extern "system" fn(this: *mut *mut Self, pdownloadedinstrument: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetLatencyClock: unsafe extern "system" fn(this: *mut *mut Self, ppclock: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetRunningStats: unsafe extern "system" fn(this: *mut *mut Self, pstats: *mut DMUS_SYNTHSTATS) -> ::windows_sys::core::HRESULT,
+    pub Compact: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetCaps: unsafe extern "system" fn(this: *mut *mut Self, pportcaps: *mut DMUS_PORTCAPS) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
+    pub DeviceIoControl: unsafe extern "system" fn(this: *mut *mut Self, dwiocontrolcode: u32, lpinbuffer: *mut ::core::ffi::c_void, ninbuffersize: u32, lpoutbuffer: *mut ::core::ffi::c_void, noutbuffersize: u32, lpbytesreturned: *mut u32, lpoverlapped: *mut super::super::super::System::IO::OVERLAPPED) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_IO")))]
+    DeviceIoControl: usize,
+    pub SetNumChannelGroups: unsafe extern "system" fn(this: *mut *mut Self, dwchannelgroups: u32) -> ::windows_sys::core::HRESULT,
+    pub GetNumChannelGroups: unsafe extern "system" fn(this: *mut *mut Self, pdwchannelgroups: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Activate: unsafe extern "system" fn(this: *mut *mut Self, factive: super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Activate: usize,
+    pub SetChannelPriority: unsafe extern "system" fn(this: *mut *mut Self, dwchannelgroup: u32, dwchannel: u32, dwpriority: u32) -> ::windows_sys::core::HRESULT,
+    pub GetChannelPriority: unsafe extern "system" fn(this: *mut *mut Self, dwchannelgroup: u32, dwchannel: u32, pdwpriority: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Media_Audio_DirectSound")]
+    pub SetDirectSound: unsafe extern "system" fn(this: *mut *mut Self, pdirectsound: *mut ::core::ffi::c_void, pdirectsoundbuffer: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Media_Audio_DirectSound"))]
+    SetDirectSound: usize,
+    pub GetFormat: unsafe extern "system" fn(this: *mut *mut Self, pwaveformatex: *mut super::WAVEFORMATEX, pdwwaveformatexsize: *mut u32, pdwbuffersize: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDirectMusicPortDownload {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetBuffer: unsafe extern "system" fn(this: *mut *mut Self, dwdlid: u32, ppidmdownload: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AllocateBuffer: unsafe extern "system" fn(this: *mut *mut Self, dwsize: u32, ppidmdownload: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetDLId: unsafe extern "system" fn(this: *mut *mut Self, pdwstartdlid: *mut u32, dwcount: u32) -> ::windows_sys::core::HRESULT,
+    pub GetAppend: unsafe extern "system" fn(this: *mut *mut Self, pdwappend: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Download: unsafe extern "system" fn(this: *mut *mut Self, pidmdownload: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Unload: unsafe extern "system" fn(this: *mut *mut Self, pidmdownload: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDirectMusicSynth {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Open: unsafe extern "system" fn(this: *mut *mut Self, pportparams: *mut DMUS_PORTPARAMS8) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Open: usize,
+    pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub SetNumChannelGroups: unsafe extern "system" fn(this: *mut *mut Self, dwgroups: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Download: unsafe extern "system" fn(this: *mut *mut Self, phdownload: *mut super::super::super::Foundation::HANDLE, pvdata: *mut ::core::ffi::c_void, pbfree: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Download: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Unload: unsafe extern "system" fn(this: *mut *mut Self, hdownload: super::super::super::Foundation::HANDLE, lpfreehandle: isize, huserdata: super::super::super::Foundation::HANDLE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Unload: usize,
+    pub PlayBuffer: unsafe extern "system" fn(this: *mut *mut Self, rt: i64, pbbuffer: *mut u8, cbbuffer: u32) -> ::windows_sys::core::HRESULT,
+    pub GetRunningStats: unsafe extern "system" fn(this: *mut *mut Self, pstats: *mut DMUS_SYNTHSTATS) -> ::windows_sys::core::HRESULT,
+    pub GetPortCaps: unsafe extern "system" fn(this: *mut *mut Self, pcaps: *mut DMUS_PORTCAPS) -> ::windows_sys::core::HRESULT,
+    pub SetMasterClock: unsafe extern "system" fn(this: *mut *mut Self, pclock: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetLatencyClock: unsafe extern "system" fn(this: *mut *mut Self, ppclock: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Activate: unsafe extern "system" fn(this: *mut *mut Self, fenable: super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Activate: usize,
+    pub SetSynthSink: unsafe extern "system" fn(this: *mut *mut Self, psynthsink: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Render: unsafe extern "system" fn(this: *mut *mut Self, pbuffer: *mut i16, dwlength: u32, llposition: i64) -> ::windows_sys::core::HRESULT,
+    pub SetChannelPriority: unsafe extern "system" fn(this: *mut *mut Self, dwchannelgroup: u32, dwchannel: u32, dwpriority: u32) -> ::windows_sys::core::HRESULT,
+    pub GetChannelPriority: unsafe extern "system" fn(this: *mut *mut Self, dwchannelgroup: u32, dwchannel: u32, pdwpriority: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetFormat: unsafe extern "system" fn(this: *mut *mut Self, pwaveformatex: *mut super::WAVEFORMATEX, pdwwaveformatexsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetAppend: unsafe extern "system" fn(this: *mut *mut Self, pdwappend: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDirectMusicSynth8 {
+    pub base__: IDirectMusicSynth,
+    pub PlayVoice: unsafe extern "system" fn(this: *mut *mut Self, rt: i64, dwvoiceid: u32, dwchannelgroup: u32, dwchannel: u32, dwdlid: u32, prpitch: i32, vrvolume: i32, stvoicestart: u64, stloopstart: u64, stloopend: u64) -> ::windows_sys::core::HRESULT,
+    pub StopVoice: unsafe extern "system" fn(this: *mut *mut Self, rt: i64, dwvoiceid: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetVoiceState: unsafe extern "system" fn(this: *mut *mut Self, dwvoice: *mut u32, cbvoice: u32, dwvoicestate: *mut DMUS_VOICE_STATE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetVoiceState: usize,
+    pub Refresh: unsafe extern "system" fn(this: *mut *mut Self, dwdownloadid: u32, dwflags: u32) -> ::windows_sys::core::HRESULT,
+    pub AssignChannelToBuses: unsafe extern "system" fn(this: *mut *mut Self, dwchannelgroup: u32, dwchannel: u32, pdwbuses: *mut u32, cbuses: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDirectMusicSynthSink {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Init: unsafe extern "system" fn(this: *mut *mut Self, psynth: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetMasterClock: unsafe extern "system" fn(this: *mut *mut Self, pclock: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetLatencyClock: unsafe extern "system" fn(this: *mut *mut Self, ppclock: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Activate: unsafe extern "system" fn(this: *mut *mut Self, fenable: super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Activate: usize,
+    pub SampleToRefTime: unsafe extern "system" fn(this: *mut *mut Self, llsampletime: i64, prftime: *mut i64) -> ::windows_sys::core::HRESULT,
+    pub RefTimeToSample: unsafe extern "system" fn(this: *mut *mut Self, rftime: i64, pllsampletime: *mut i64) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Media_Audio_DirectSound")]
+    pub SetDirectSound: unsafe extern "system" fn(this: *mut *mut Self, pdirectsound: *mut ::core::ffi::c_void, pdirectsoundbuffer: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Media_Audio_DirectSound"))]
+    SetDirectSound: usize,
+    pub GetDesiredBufferSize: unsafe extern "system" fn(this: *mut *mut Self, pdwbuffersizeinsamples: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDirectMusicThru {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub ThruChannel: unsafe extern "system" fn(this: *mut *mut Self, dwsourcechannelgroup: u32, dwsourcechannel: u32, dwdestinationchannelgroup: u32, dwdestinationchannel: u32, pdestinationport: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Media_Audio_DirectMusic\"`*"]
 pub struct INSTHEADER {

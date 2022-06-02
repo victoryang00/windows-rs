@@ -27,7 +27,88 @@ impl ::core::clone::Clone for AccessListEntry {
     }
 }
 pub type AccessListEntryView = *mut ::core::ffi::c_void;
-pub type IStorageItemAccessList = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IItemRemovedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub RemovedEntry: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::core::mem::ManuallyDrop<AccessListEntry>) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IStorageApplicationPermissionsStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub FutureAccessList: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub MostRecentlyUsedList: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IStorageApplicationPermissionsStatics2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "System")]
+    pub GetFutureAccessListForUser: unsafe extern "system" fn(this: *mut *mut Self, user: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "System"))]
+    GetFutureAccessListForUser: usize,
+    #[cfg(feature = "System")]
+    pub GetMostRecentlyUsedListForUser: unsafe extern "system" fn(this: *mut *mut Self, user: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "System"))]
+    GetMostRecentlyUsedListForUser: usize,
+}
+#[repr(C)]
+pub struct IStorageItemAccessList {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub AddOverloadDefaultMetadata: unsafe extern "system" fn(this: *mut *mut Self, file: *mut ::core::ffi::c_void, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Add: unsafe extern "system" fn(this: *mut *mut Self, file: *mut ::core::ffi::c_void, metadata: ::windows_sys::core::HSTRING, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub AddOrReplaceOverloadDefaultMetadata: unsafe extern "system" fn(this: *mut *mut Self, token: ::windows_sys::core::HSTRING, file: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AddOrReplace: unsafe extern "system" fn(this: *mut *mut Self, token: ::windows_sys::core::HSTRING, file: *mut ::core::ffi::c_void, metadata: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub GetItemAsync: unsafe extern "system" fn(this: *mut *mut Self, token: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    GetItemAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub GetFileAsync: unsafe extern "system" fn(this: *mut *mut Self, token: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    GetFileAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub GetFolderAsync: unsafe extern "system" fn(this: *mut *mut Self, token: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    GetFolderAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub GetItemWithOptionsAsync: unsafe extern "system" fn(this: *mut *mut Self, token: ::windows_sys::core::HSTRING, options: AccessCacheOptions, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    GetItemWithOptionsAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub GetFileWithOptionsAsync: unsafe extern "system" fn(this: *mut *mut Self, token: ::windows_sys::core::HSTRING, options: AccessCacheOptions, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    GetFileWithOptionsAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub GetFolderWithOptionsAsync: unsafe extern "system" fn(this: *mut *mut Self, token: ::windows_sys::core::HSTRING, options: AccessCacheOptions, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    GetFolderWithOptionsAsync: usize,
+    pub Remove: unsafe extern "system" fn(this: *mut *mut Self, token: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub ContainsItem: unsafe extern "system" fn(this: *mut *mut Self, token: ::windows_sys::core::HSTRING, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub Clear: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub CheckAccess: unsafe extern "system" fn(this: *mut *mut Self, file: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub Entries: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    Entries: usize,
+    pub MaximumItemsAllowed: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IStorageItemMostRecentlyUsedList {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub ItemRemoved: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    ItemRemoved: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveItemRemoved: unsafe extern "system" fn(this: *mut *mut Self, eventcookie: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveItemRemoved: usize,
+}
+#[repr(C)]
+pub struct IStorageItemMostRecentlyUsedList2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub AddWithMetadataAndVisibility: unsafe extern "system" fn(this: *mut *mut Self, file: *mut ::core::ffi::c_void, metadata: ::windows_sys::core::HSTRING, visibility: RecentStorageItemVisibility, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub AddOrReplaceWithMetadataAndVisibility: unsafe extern "system" fn(this: *mut *mut Self, token: ::windows_sys::core::HSTRING, file: *mut ::core::ffi::c_void, metadata: ::windows_sys::core::HSTRING, visibility: RecentStorageItemVisibility) -> ::windows_sys::core::HRESULT,
+}
 pub type ItemRemovedEventArgs = *mut ::core::ffi::c_void;
 #[doc = "*Required features: `\"Storage_AccessCache\"`*"]
 #[repr(transparent)]

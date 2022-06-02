@@ -29,7 +29,751 @@ impl ::core::clone::Clone for BadgeTemplateType {
 }
 pub type BadgeUpdateManagerForUser = *mut ::core::ffi::c_void;
 pub type BadgeUpdater = *mut ::core::ffi::c_void;
-pub type IAdaptiveNotificationContent = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IAdaptiveNotificationContent {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Kind: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut AdaptiveNotificationContentKind) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub Hints: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    Hints: usize,
+}
+#[repr(C)]
+pub struct IAdaptiveNotificationText {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Text: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetText: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Language: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetLanguage: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IBadgeNotification {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Data_Xml_Dom")]
+    pub Content: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Data_Xml_Dom"))]
+    Content: usize,
+    #[cfg(feature = "Foundation")]
+    pub SetExpirationTime: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    SetExpirationTime: usize,
+    #[cfg(feature = "Foundation")]
+    pub ExpirationTime: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    ExpirationTime: usize,
+}
+#[repr(C)]
+pub struct IBadgeNotificationFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Data_Xml_Dom")]
+    pub CreateBadgeNotification: unsafe extern "system" fn(this: *mut *mut Self, content: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Data_Xml_Dom"))]
+    CreateBadgeNotification: usize,
+}
+#[repr(C)]
+pub struct IBadgeUpdateManagerForUser {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CreateBadgeUpdaterForApplication: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateBadgeUpdaterForApplicationWithId: unsafe extern "system" fn(this: *mut *mut Self, applicationid: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateBadgeUpdaterForSecondaryTile: unsafe extern "system" fn(this: *mut *mut Self, tileid: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "System")]
+    pub User: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "System"))]
+    User: usize,
+}
+#[repr(C)]
+pub struct IBadgeUpdateManagerStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CreateBadgeUpdaterForApplication: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateBadgeUpdaterForApplicationWithId: unsafe extern "system" fn(this: *mut *mut Self, applicationid: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateBadgeUpdaterForSecondaryTile: unsafe extern "system" fn(this: *mut *mut Self, tileid: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Data_Xml_Dom")]
+    pub GetTemplateContent: unsafe extern "system" fn(this: *mut *mut Self, r#type: BadgeTemplateType, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Data_Xml_Dom"))]
+    GetTemplateContent: usize,
+}
+#[repr(C)]
+pub struct IBadgeUpdateManagerStatics2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "System")]
+    pub GetForUser: unsafe extern "system" fn(this: *mut *mut Self, user: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "System"))]
+    GetForUser: usize,
+}
+#[repr(C)]
+pub struct IBadgeUpdater {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Update: unsafe extern "system" fn(this: *mut *mut Self, notification: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Clear: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub StartPeriodicUpdate: unsafe extern "system" fn(this: *mut *mut Self, badgecontent: *mut ::core::ffi::c_void, requestedinterval: PeriodicUpdateRecurrence) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    StartPeriodicUpdate: usize,
+    #[cfg(feature = "Foundation")]
+    pub StartPeriodicUpdateAtTime: unsafe extern "system" fn(this: *mut *mut Self, badgecontent: *mut ::core::ffi::c_void, starttime: super::super::Foundation::DateTime, requestedinterval: PeriodicUpdateRecurrence) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    StartPeriodicUpdateAtTime: usize,
+    pub StopPeriodicUpdate: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IKnownAdaptiveNotificationHintsStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Style: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Wrap: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub MaxLines: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub MinLines: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub TextStacking: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Align: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IKnownAdaptiveNotificationTextStylesStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Caption: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Body: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Base: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Subtitle: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Title: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Subheader: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Header: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub TitleNumeral: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SubheaderNumeral: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub HeaderNumeral: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub CaptionSubtle: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub BodySubtle: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub BaseSubtle: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SubtitleSubtle: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub TitleSubtle: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SubheaderSubtle: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SubheaderNumeralSubtle: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub HeaderSubtle: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub HeaderNumeralSubtle: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IKnownNotificationBindingsStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub ToastGeneric: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct INotification {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub ExpirationTime: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    ExpirationTime: usize,
+    #[cfg(feature = "Foundation")]
+    pub SetExpirationTime: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    SetExpirationTime: usize,
+    pub Visual: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetVisual: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct INotificationBinding {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Template: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetTemplate: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Language: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetLanguage: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub Hints: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    Hints: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub GetTextElements: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    GetTextElements: usize,
+}
+#[repr(C)]
+pub struct INotificationData {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation_Collections")]
+    pub Values: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    Values: usize,
+    pub SequenceNumber: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetSequenceNumber: unsafe extern "system" fn(this: *mut *mut Self, value: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct INotificationDataFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation_Collections")]
+    pub CreateNotificationDataWithValuesAndSequenceNumber: unsafe extern "system" fn(this: *mut *mut Self, initialvalues: *mut ::core::ffi::c_void, sequencenumber: u32, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    CreateNotificationDataWithValuesAndSequenceNumber: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub CreateNotificationDataWithValues: unsafe extern "system" fn(this: *mut *mut Self, initialvalues: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    CreateNotificationDataWithValues: usize,
+}
+#[repr(C)]
+pub struct INotificationVisual {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Language: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetLanguage: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub Bindings: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    Bindings: usize,
+    pub GetBinding: unsafe extern "system" fn(this: *mut *mut Self, templatename: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IScheduledTileNotification {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Data_Xml_Dom")]
+    pub Content: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Data_Xml_Dom"))]
+    Content: usize,
+    #[cfg(feature = "Foundation")]
+    pub DeliveryTime: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Foundation::DateTime) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    DeliveryTime: usize,
+    #[cfg(feature = "Foundation")]
+    pub SetExpirationTime: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    SetExpirationTime: usize,
+    #[cfg(feature = "Foundation")]
+    pub ExpirationTime: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    ExpirationTime: usize,
+    pub SetTag: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Tag: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetId: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Id: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IScheduledTileNotificationFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(all(feature = "Data_Xml_Dom", feature = "Foundation"))]
+    pub CreateScheduledTileNotification: unsafe extern "system" fn(this: *mut *mut Self, content: *mut ::core::ffi::c_void, deliverytime: super::super::Foundation::DateTime, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Data_Xml_Dom", feature = "Foundation")))]
+    CreateScheduledTileNotification: usize,
+}
+#[repr(C)]
+pub struct IScheduledToastNotification {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Data_Xml_Dom")]
+    pub Content: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Data_Xml_Dom"))]
+    Content: usize,
+    #[cfg(feature = "Foundation")]
+    pub DeliveryTime: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Foundation::DateTime) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    DeliveryTime: usize,
+    #[cfg(feature = "Foundation")]
+    pub SnoozeInterval: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    SnoozeInterval: usize,
+    pub MaximumSnoozeCount: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetId: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Id: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IScheduledToastNotification2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub SetTag: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Tag: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetGroup: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Group: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetSuppressPopup: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+    pub SuppressPopup: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IScheduledToastNotification3 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub NotificationMirroring: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut NotificationMirroring) -> ::windows_sys::core::HRESULT,
+    pub SetNotificationMirroring: unsafe extern "system" fn(this: *mut *mut Self, value: NotificationMirroring) -> ::windows_sys::core::HRESULT,
+    pub RemoteId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetRemoteId: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IScheduledToastNotification4 {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub ExpirationTime: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    ExpirationTime: usize,
+    #[cfg(feature = "Foundation")]
+    pub SetExpirationTime: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    SetExpirationTime: usize,
+}
+#[repr(C)]
+pub struct IScheduledToastNotificationFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(all(feature = "Data_Xml_Dom", feature = "Foundation"))]
+    pub CreateScheduledToastNotification: unsafe extern "system" fn(this: *mut *mut Self, content: *mut ::core::ffi::c_void, deliverytime: super::super::Foundation::DateTime, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Data_Xml_Dom", feature = "Foundation")))]
+    CreateScheduledToastNotification: usize,
+    #[cfg(all(feature = "Data_Xml_Dom", feature = "Foundation"))]
+    pub CreateScheduledToastNotificationRecurring: unsafe extern "system" fn(this: *mut *mut Self, content: *mut ::core::ffi::c_void, deliverytime: super::super::Foundation::DateTime, snoozeinterval: super::super::Foundation::TimeSpan, maximumsnoozecount: u32, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Data_Xml_Dom", feature = "Foundation")))]
+    CreateScheduledToastNotificationRecurring: usize,
+}
+#[repr(C)]
+pub struct IScheduledToastNotificationShowingEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Cancel: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetCancel: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+    pub ScheduledToastNotification: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub GetDeferral: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    GetDeferral: usize,
+}
+#[repr(C)]
+pub struct IShownTileNotification {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Arguments: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITileFlyoutNotification {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Data_Xml_Dom")]
+    pub Content: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Data_Xml_Dom"))]
+    Content: usize,
+    #[cfg(feature = "Foundation")]
+    pub SetExpirationTime: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    SetExpirationTime: usize,
+    #[cfg(feature = "Foundation")]
+    pub ExpirationTime: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    ExpirationTime: usize,
+}
+#[repr(C)]
+pub struct ITileFlyoutNotificationFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Data_Xml_Dom")]
+    pub CreateTileFlyoutNotification: unsafe extern "system" fn(this: *mut *mut Self, content: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Data_Xml_Dom"))]
+    CreateTileFlyoutNotification: usize,
+}
+#[repr(C)]
+pub struct ITileFlyoutUpdateManagerStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CreateTileFlyoutUpdaterForApplication: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateTileFlyoutUpdaterForApplicationWithId: unsafe extern "system" fn(this: *mut *mut Self, applicationid: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateTileFlyoutUpdaterForSecondaryTile: unsafe extern "system" fn(this: *mut *mut Self, tileid: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Data_Xml_Dom")]
+    pub GetTemplateContent: unsafe extern "system" fn(this: *mut *mut Self, r#type: TileFlyoutTemplateType, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Data_Xml_Dom"))]
+    GetTemplateContent: usize,
+}
+#[repr(C)]
+pub struct ITileFlyoutUpdater {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Update: unsafe extern "system" fn(this: *mut *mut Self, notification: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Clear: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub StartPeriodicUpdate: unsafe extern "system" fn(this: *mut *mut Self, tileflyoutcontent: *mut ::core::ffi::c_void, requestedinterval: PeriodicUpdateRecurrence) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    StartPeriodicUpdate: usize,
+    #[cfg(feature = "Foundation")]
+    pub StartPeriodicUpdateAtTime: unsafe extern "system" fn(this: *mut *mut Self, tileflyoutcontent: *mut ::core::ffi::c_void, starttime: super::super::Foundation::DateTime, requestedinterval: PeriodicUpdateRecurrence) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    StartPeriodicUpdateAtTime: usize,
+    pub StopPeriodicUpdate: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Setting: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut NotificationSetting) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITileNotification {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Data_Xml_Dom")]
+    pub Content: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Data_Xml_Dom"))]
+    Content: usize,
+    #[cfg(feature = "Foundation")]
+    pub SetExpirationTime: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    SetExpirationTime: usize,
+    #[cfg(feature = "Foundation")]
+    pub ExpirationTime: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    ExpirationTime: usize,
+    pub SetTag: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Tag: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITileNotificationFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Data_Xml_Dom")]
+    pub CreateTileNotification: unsafe extern "system" fn(this: *mut *mut Self, content: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Data_Xml_Dom"))]
+    CreateTileNotification: usize,
+}
+#[repr(C)]
+pub struct ITileUpdateManagerForUser {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CreateTileUpdaterForApplication: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateTileUpdaterForApplicationWithId: unsafe extern "system" fn(this: *mut *mut Self, applicationid: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateTileUpdaterForSecondaryTile: unsafe extern "system" fn(this: *mut *mut Self, tileid: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "System")]
+    pub User: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "System"))]
+    User: usize,
+}
+#[repr(C)]
+pub struct ITileUpdateManagerStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CreateTileUpdaterForApplication: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateTileUpdaterForApplicationWithId: unsafe extern "system" fn(this: *mut *mut Self, applicationid: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateTileUpdaterForSecondaryTile: unsafe extern "system" fn(this: *mut *mut Self, tileid: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Data_Xml_Dom")]
+    pub GetTemplateContent: unsafe extern "system" fn(this: *mut *mut Self, r#type: TileTemplateType, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Data_Xml_Dom"))]
+    GetTemplateContent: usize,
+}
+#[repr(C)]
+pub struct ITileUpdateManagerStatics2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "System")]
+    pub GetForUser: unsafe extern "system" fn(this: *mut *mut Self, user: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "System"))]
+    GetForUser: usize,
+}
+#[repr(C)]
+pub struct ITileUpdater {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Update: unsafe extern "system" fn(this: *mut *mut Self, notification: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Clear: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub EnableNotificationQueue: unsafe extern "system" fn(this: *mut *mut Self, enable: bool) -> ::windows_sys::core::HRESULT,
+    pub Setting: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut NotificationSetting) -> ::windows_sys::core::HRESULT,
+    pub AddToSchedule: unsafe extern "system" fn(this: *mut *mut Self, scheduledtile: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RemoveFromSchedule: unsafe extern "system" fn(this: *mut *mut Self, scheduledtile: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub GetScheduledTileNotifications: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    GetScheduledTileNotifications: usize,
+    #[cfg(feature = "Foundation")]
+    pub StartPeriodicUpdate: unsafe extern "system" fn(this: *mut *mut Self, tilecontent: *mut ::core::ffi::c_void, requestedinterval: PeriodicUpdateRecurrence) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    StartPeriodicUpdate: usize,
+    #[cfg(feature = "Foundation")]
+    pub StartPeriodicUpdateAtTime: unsafe extern "system" fn(this: *mut *mut Self, tilecontent: *mut ::core::ffi::c_void, starttime: super::super::Foundation::DateTime, requestedinterval: PeriodicUpdateRecurrence) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    StartPeriodicUpdateAtTime: usize,
+    pub StopPeriodicUpdate: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub StartPeriodicUpdateBatch: unsafe extern "system" fn(this: *mut *mut Self, tilecontents: *mut ::core::ffi::c_void, requestedinterval: PeriodicUpdateRecurrence) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    StartPeriodicUpdateBatch: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub StartPeriodicUpdateBatchAtTime: unsafe extern "system" fn(this: *mut *mut Self, tilecontents: *mut ::core::ffi::c_void, starttime: super::super::Foundation::DateTime, requestedinterval: PeriodicUpdateRecurrence) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    StartPeriodicUpdateBatchAtTime: usize,
+}
+#[repr(C)]
+pub struct ITileUpdater2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub EnableNotificationQueueForSquare150x150: unsafe extern "system" fn(this: *mut *mut Self, enable: bool) -> ::windows_sys::core::HRESULT,
+    pub EnableNotificationQueueForWide310x150: unsafe extern "system" fn(this: *mut *mut Self, enable: bool) -> ::windows_sys::core::HRESULT,
+    pub EnableNotificationQueueForSquare310x310: unsafe extern "system" fn(this: *mut *mut Self, enable: bool) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IToastActivatedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Arguments: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IToastActivatedEventArgs2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation_Collections")]
+    pub UserInput: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    UserInput: usize,
+}
+#[repr(C)]
+pub struct IToastCollection {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Id: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub DisplayName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetDisplayName: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub LaunchArgs: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetLaunchArgs: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub Icon: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    Icon: usize,
+    #[cfg(feature = "Foundation")]
+    pub SetIcon: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    SetIcon: usize,
+}
+#[repr(C)]
+pub struct IToastCollectionFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub CreateInstance: unsafe extern "system" fn(this: *mut *mut Self, collectionid: ::windows_sys::core::HSTRING, displayname: ::windows_sys::core::HSTRING, launchargs: ::windows_sys::core::HSTRING, iconuri: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    CreateInstance: usize,
+}
+#[repr(C)]
+pub struct IToastCollectionManager {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub SaveToastCollectionAsync: unsafe extern "system" fn(this: *mut *mut Self, collection: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    SaveToastCollectionAsync: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub FindAllToastCollectionsAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    FindAllToastCollectionsAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub GetToastCollectionAsync: unsafe extern "system" fn(this: *mut *mut Self, collectionid: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    GetToastCollectionAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveToastCollectionAsync: unsafe extern "system" fn(this: *mut *mut Self, collectionid: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveToastCollectionAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveAllToastCollectionsAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveAllToastCollectionsAsync: usize,
+    #[cfg(feature = "System")]
+    pub User: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "System"))]
+    User: usize,
+    pub AppId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IToastDismissedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Reason: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ToastDismissalReason) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IToastFailedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub ErrorCode: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IToastNotification {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Data_Xml_Dom")]
+    pub Content: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Data_Xml_Dom"))]
+    Content: usize,
+    #[cfg(feature = "Foundation")]
+    pub SetExpirationTime: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    SetExpirationTime: usize,
+    #[cfg(feature = "Foundation")]
+    pub ExpirationTime: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    ExpirationTime: usize,
+    #[cfg(feature = "Foundation")]
+    pub Dismissed: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    Dismissed: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveDismissed: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveDismissed: usize,
+    #[cfg(feature = "Foundation")]
+    pub Activated: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    Activated: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveActivated: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveActivated: usize,
+    #[cfg(feature = "Foundation")]
+    pub Failed: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    Failed: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveFailed: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveFailed: usize,
+}
+#[repr(C)]
+pub struct IToastNotification2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub SetTag: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Tag: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetGroup: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Group: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetSuppressPopup: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+    pub SuppressPopup: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IToastNotification3 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub NotificationMirroring: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut NotificationMirroring) -> ::windows_sys::core::HRESULT,
+    pub SetNotificationMirroring: unsafe extern "system" fn(this: *mut *mut Self, value: NotificationMirroring) -> ::windows_sys::core::HRESULT,
+    pub RemoteId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetRemoteId: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IToastNotification4 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Data: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetData: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Priority: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ToastNotificationPriority) -> ::windows_sys::core::HRESULT,
+    pub SetPriority: unsafe extern "system" fn(this: *mut *mut Self, value: ToastNotificationPriority) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IToastNotification6 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub ExpiresOnReboot: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetExpiresOnReboot: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IToastNotificationActionTriggerDetail {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Argument: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub UserInput: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    UserInput: usize,
+}
+#[repr(C)]
+pub struct IToastNotificationFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Data_Xml_Dom")]
+    pub CreateToastNotification: unsafe extern "system" fn(this: *mut *mut Self, content: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Data_Xml_Dom"))]
+    CreateToastNotification: usize,
+}
+#[repr(C)]
+pub struct IToastNotificationHistory {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub RemoveGroup: unsafe extern "system" fn(this: *mut *mut Self, group: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub RemoveGroupWithId: unsafe extern "system" fn(this: *mut *mut Self, group: ::windows_sys::core::HSTRING, applicationid: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub RemoveGroupedTagWithId: unsafe extern "system" fn(this: *mut *mut Self, tag: ::windows_sys::core::HSTRING, group: ::windows_sys::core::HSTRING, applicationid: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub RemoveGroupedTag: unsafe extern "system" fn(this: *mut *mut Self, tag: ::windows_sys::core::HSTRING, group: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Remove: unsafe extern "system" fn(this: *mut *mut Self, tag: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Clear: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub ClearWithId: unsafe extern "system" fn(this: *mut *mut Self, applicationid: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IToastNotificationHistory2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation_Collections")]
+    pub GetHistory: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    GetHistory: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub GetHistoryWithId: unsafe extern "system" fn(this: *mut *mut Self, applicationid: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    GetHistoryWithId: usize,
+}
+#[repr(C)]
+pub struct IToastNotificationHistoryChangedTriggerDetail {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub ChangeType: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ToastHistoryChangedType) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IToastNotificationHistoryChangedTriggerDetail2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CollectionId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IToastNotificationManagerForUser {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CreateToastNotifier: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateToastNotifierWithId: unsafe extern "system" fn(this: *mut *mut Self, applicationid: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub History: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "System")]
+    pub User: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "System"))]
+    User: usize,
+}
+#[repr(C)]
+pub struct IToastNotificationManagerForUser2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub GetToastNotifierForToastCollectionIdAsync: unsafe extern "system" fn(this: *mut *mut Self, collectionid: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    GetToastNotifierForToastCollectionIdAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub GetHistoryForToastCollectionIdAsync: unsafe extern "system" fn(this: *mut *mut Self, collectionid: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    GetHistoryForToastCollectionIdAsync: usize,
+    pub GetToastCollectionManager: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetToastCollectionManagerWithAppId: unsafe extern "system" fn(this: *mut *mut Self, appid: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IToastNotificationManagerStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CreateToastNotifier: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateToastNotifierWithId: unsafe extern "system" fn(this: *mut *mut Self, applicationid: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Data_Xml_Dom")]
+    pub GetTemplateContent: unsafe extern "system" fn(this: *mut *mut Self, r#type: ToastTemplateType, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Data_Xml_Dom"))]
+    GetTemplateContent: usize,
+}
+#[repr(C)]
+pub struct IToastNotificationManagerStatics2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub History: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IToastNotificationManagerStatics4 {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "System")]
+    pub GetForUser: unsafe extern "system" fn(this: *mut *mut Self, user: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "System"))]
+    GetForUser: usize,
+    pub ConfigureNotificationMirroring: unsafe extern "system" fn(this: *mut *mut Self, value: NotificationMirroring) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IToastNotificationManagerStatics5 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub GetDefault: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IToastNotifier {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Show: unsafe extern "system" fn(this: *mut *mut Self, notification: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Hide: unsafe extern "system" fn(this: *mut *mut Self, notification: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Setting: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut NotificationSetting) -> ::windows_sys::core::HRESULT,
+    pub AddToSchedule: unsafe extern "system" fn(this: *mut *mut Self, scheduledtoast: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RemoveFromSchedule: unsafe extern "system" fn(this: *mut *mut Self, scheduledtoast: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub GetScheduledToastNotifications: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    GetScheduledToastNotifications: usize,
+}
+#[repr(C)]
+pub struct IToastNotifier2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub UpdateWithTagAndGroup: unsafe extern "system" fn(this: *mut *mut Self, data: *mut ::core::ffi::c_void, tag: ::windows_sys::core::HSTRING, group: ::windows_sys::core::HSTRING, result__: *mut NotificationUpdateResult) -> ::windows_sys::core::HRESULT,
+    pub UpdateWithTag: unsafe extern "system" fn(this: *mut *mut Self, data: *mut ::core::ffi::c_void, tag: ::windows_sys::core::HSTRING, result__: *mut NotificationUpdateResult) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IToastNotifier3 {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub ScheduledToastNotificationShowing: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    ScheduledToastNotificationShowing: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveScheduledToastNotificationShowing: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveScheduledToastNotificationShowing: usize,
+}
+#[repr(C)]
+pub struct IUserNotification {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Notification: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "ApplicationModel")]
+    pub AppInfo: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "ApplicationModel"))]
+    AppInfo: usize,
+    pub Id: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub CreationTime: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Foundation::DateTime) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    CreationTime: usize,
+}
+#[repr(C)]
+pub struct IUserNotificationChangedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub ChangeKind: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut UserNotificationChangedKind) -> ::windows_sys::core::HRESULT,
+    pub UserNotificationId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+}
 pub type Notification = *mut ::core::ffi::c_void;
 pub type NotificationBinding = *mut ::core::ffi::c_void;
 pub type NotificationData = *mut ::core::ffi::c_void;

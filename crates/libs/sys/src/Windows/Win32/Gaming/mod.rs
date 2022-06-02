@@ -5,11 +5,11 @@ extern "system" {
     pub fn CheckGamingPrivilegeSilently(privilegeid: u32, scope: ::windows_sys::core::HSTRING, policy: ::windows_sys::core::HSTRING, hasprivilege: *mut super::Foundation::BOOL) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Gaming\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn CheckGamingPrivilegeSilentlyForUser(user: ::windows_sys::core::IInspectable, privilegeid: u32, scope: ::windows_sys::core::HSTRING, policy: ::windows_sys::core::HSTRING, hasprivilege: *mut super::Foundation::BOOL) -> ::windows_sys::core::HRESULT;
+    pub fn CheckGamingPrivilegeSilentlyForUser(user: *mut *mut ::windows_sys::core::IInspectable, privilegeid: u32, scope: ::windows_sys::core::HSTRING, policy: ::windows_sys::core::HSTRING, hasprivilege: *mut super::Foundation::BOOL) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Gaming\"`*"]
     pub fn CheckGamingPrivilegeWithUI(privilegeid: u32, scope: ::windows_sys::core::HSTRING, policy: ::windows_sys::core::HSTRING, friendlymessage: ::windows_sys::core::HSTRING, completionroutine: GameUICompletionRoutine, context: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Gaming\"`*"]
-    pub fn CheckGamingPrivilegeWithUIForUser(user: ::windows_sys::core::IInspectable, privilegeid: u32, scope: ::windows_sys::core::HSTRING, policy: ::windows_sys::core::HSTRING, friendlymessage: ::windows_sys::core::HSTRING, completionroutine: GameUICompletionRoutine, context: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn CheckGamingPrivilegeWithUIForUser(user: *mut *mut ::windows_sys::core::IInspectable, privilegeid: u32, scope: ::windows_sys::core::HSTRING, policy: ::windows_sys::core::HSTRING, friendlymessage: ::windows_sys::core::HSTRING, completionroutine: GameUICompletionRoutine, context: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Gaming\"`*"]
     pub fn GetExpandedResourceExclusiveCpuCount(exclusivecpucount: *mut u32) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Gaming\"`*"]
@@ -25,43 +25,43 @@ extern "system" {
     #[doc = "*Required features: `\"Win32_Gaming\"`*"]
     pub fn ShowChangeFriendRelationshipUI(targetuserxuid: ::windows_sys::core::HSTRING, completionroutine: GameUICompletionRoutine, context: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Gaming\"`*"]
-    pub fn ShowChangeFriendRelationshipUIForUser(user: ::windows_sys::core::IInspectable, targetuserxuid: ::windows_sys::core::HSTRING, completionroutine: GameUICompletionRoutine, context: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn ShowChangeFriendRelationshipUIForUser(user: *mut *mut ::windows_sys::core::IInspectable, targetuserxuid: ::windows_sys::core::HSTRING, completionroutine: GameUICompletionRoutine, context: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Gaming\"`*"]
     pub fn ShowCustomizeUserProfileUI(completionroutine: GameUICompletionRoutine, context: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Gaming\"`*"]
-    pub fn ShowCustomizeUserProfileUIForUser(user: ::windows_sys::core::IInspectable, completionroutine: GameUICompletionRoutine, context: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn ShowCustomizeUserProfileUIForUser(user: *mut *mut ::windows_sys::core::IInspectable, completionroutine: GameUICompletionRoutine, context: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Gaming\"`*"]
     pub fn ShowFindFriendsUI(completionroutine: GameUICompletionRoutine, context: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Gaming\"`*"]
-    pub fn ShowFindFriendsUIForUser(user: ::windows_sys::core::IInspectable, completionroutine: GameUICompletionRoutine, context: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn ShowFindFriendsUIForUser(user: *mut *mut ::windows_sys::core::IInspectable, completionroutine: GameUICompletionRoutine, context: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Gaming\"`*"]
     pub fn ShowGameInfoUI(titleid: u32, completionroutine: GameUICompletionRoutine, context: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Gaming\"`*"]
-    pub fn ShowGameInfoUIForUser(user: ::windows_sys::core::IInspectable, titleid: u32, completionroutine: GameUICompletionRoutine, context: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn ShowGameInfoUIForUser(user: *mut *mut ::windows_sys::core::IInspectable, titleid: u32, completionroutine: GameUICompletionRoutine, context: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Gaming\"`*"]
     pub fn ShowGameInviteUI(serviceconfigurationid: ::windows_sys::core::HSTRING, sessiontemplatename: ::windows_sys::core::HSTRING, sessionid: ::windows_sys::core::HSTRING, invitationdisplaytext: ::windows_sys::core::HSTRING, completionroutine: GameUICompletionRoutine, context: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Gaming\"`*"]
-    pub fn ShowGameInviteUIForUser(user: ::windows_sys::core::IInspectable, serviceconfigurationid: ::windows_sys::core::HSTRING, sessiontemplatename: ::windows_sys::core::HSTRING, sessionid: ::windows_sys::core::HSTRING, invitationdisplaytext: ::windows_sys::core::HSTRING, completionroutine: GameUICompletionRoutine, context: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn ShowGameInviteUIForUser(user: *mut *mut ::windows_sys::core::IInspectable, serviceconfigurationid: ::windows_sys::core::HSTRING, sessiontemplatename: ::windows_sys::core::HSTRING, sessionid: ::windows_sys::core::HSTRING, invitationdisplaytext: ::windows_sys::core::HSTRING, completionroutine: GameUICompletionRoutine, context: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Gaming\"`*"]
     pub fn ShowGameInviteUIWithContext(serviceconfigurationid: ::windows_sys::core::HSTRING, sessiontemplatename: ::windows_sys::core::HSTRING, sessionid: ::windows_sys::core::HSTRING, invitationdisplaytext: ::windows_sys::core::HSTRING, customactivationcontext: ::windows_sys::core::HSTRING, completionroutine: GameUICompletionRoutine, context: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Gaming\"`*"]
-    pub fn ShowGameInviteUIWithContextForUser(user: ::windows_sys::core::IInspectable, serviceconfigurationid: ::windows_sys::core::HSTRING, sessiontemplatename: ::windows_sys::core::HSTRING, sessionid: ::windows_sys::core::HSTRING, invitationdisplaytext: ::windows_sys::core::HSTRING, customactivationcontext: ::windows_sys::core::HSTRING, completionroutine: GameUICompletionRoutine, context: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn ShowGameInviteUIWithContextForUser(user: *mut *mut ::windows_sys::core::IInspectable, serviceconfigurationid: ::windows_sys::core::HSTRING, sessiontemplatename: ::windows_sys::core::HSTRING, sessionid: ::windows_sys::core::HSTRING, invitationdisplaytext: ::windows_sys::core::HSTRING, customactivationcontext: ::windows_sys::core::HSTRING, completionroutine: GameUICompletionRoutine, context: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Gaming\"`*"]
     pub fn ShowPlayerPickerUI(promptdisplaytext: ::windows_sys::core::HSTRING, xuids: *const ::windows_sys::core::HSTRING, xuidscount: usize, preselectedxuids: *const ::windows_sys::core::HSTRING, preselectedxuidscount: usize, minselectioncount: usize, maxselectioncount: usize, completionroutine: PlayerPickerUICompletionRoutine, context: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Gaming\"`*"]
-    pub fn ShowPlayerPickerUIForUser(user: ::windows_sys::core::IInspectable, promptdisplaytext: ::windows_sys::core::HSTRING, xuids: *const ::windows_sys::core::HSTRING, xuidscount: usize, preselectedxuids: *const ::windows_sys::core::HSTRING, preselectedxuidscount: usize, minselectioncount: usize, maxselectioncount: usize, completionroutine: PlayerPickerUICompletionRoutine, context: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn ShowPlayerPickerUIForUser(user: *mut *mut ::windows_sys::core::IInspectable, promptdisplaytext: ::windows_sys::core::HSTRING, xuids: *const ::windows_sys::core::HSTRING, xuidscount: usize, preselectedxuids: *const ::windows_sys::core::HSTRING, preselectedxuidscount: usize, minselectioncount: usize, maxselectioncount: usize, completionroutine: PlayerPickerUICompletionRoutine, context: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Gaming\"`*"]
     pub fn ShowProfileCardUI(targetuserxuid: ::windows_sys::core::HSTRING, completionroutine: GameUICompletionRoutine, context: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Gaming\"`*"]
-    pub fn ShowProfileCardUIForUser(user: ::windows_sys::core::IInspectable, targetuserxuid: ::windows_sys::core::HSTRING, completionroutine: GameUICompletionRoutine, context: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn ShowProfileCardUIForUser(user: *mut *mut ::windows_sys::core::IInspectable, targetuserxuid: ::windows_sys::core::HSTRING, completionroutine: GameUICompletionRoutine, context: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Gaming\"`*"]
     pub fn ShowTitleAchievementsUI(titleid: u32, completionroutine: GameUICompletionRoutine, context: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Gaming\"`*"]
-    pub fn ShowTitleAchievementsUIForUser(user: ::windows_sys::core::IInspectable, titleid: u32, completionroutine: GameUICompletionRoutine, context: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn ShowTitleAchievementsUIForUser(user: *mut *mut ::windows_sys::core::IInspectable, titleid: u32, completionroutine: GameUICompletionRoutine, context: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Gaming\"`*"]
     pub fn ShowUserSettingsUI(completionroutine: GameUICompletionRoutine, context: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Gaming\"`*"]
-    pub fn ShowUserSettingsUIForUser(user: ::windows_sys::core::IInspectable, completionroutine: GameUICompletionRoutine, context: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn ShowUserSettingsUIForUser(user: *mut *mut ::windows_sys::core::IInspectable, completionroutine: GameUICompletionRoutine, context: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Gaming\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
     pub fn TryCancelPendingGameUI() -> super::Foundation::BOOL;
@@ -124,13 +124,99 @@ pub type GameUICompletionRoutine = ::core::option::Option<unsafe extern "system"
 pub const ID_GDF_THUMBNAIL_STR: &str = "__GDF_THUMBNAIL";
 #[doc = "*Required features: `\"Win32_Gaming\"`*"]
 pub const ID_GDF_XML_STR: &str = "__GDF_XML";
-pub type IGameExplorer = *mut ::core::ffi::c_void;
-pub type IGameExplorer2 = *mut ::core::ffi::c_void;
-pub type IGameStatistics = *mut ::core::ffi::c_void;
-pub type IGameStatisticsMgr = *mut ::core::ffi::c_void;
-pub type IXblIdpAuthManager = *mut ::core::ffi::c_void;
-pub type IXblIdpAuthTokenResult = *mut ::core::ffi::c_void;
-pub type IXblIdpAuthTokenResult2 = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IGameExplorer {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AddGame: unsafe extern "system" fn(this: *mut *mut Self, bstrgdfbinarypath: ::core::mem::ManuallyDrop<super::Foundation::BSTR>, bstrgameinstalldirectory: ::core::mem::ManuallyDrop<super::Foundation::BSTR>, installscope: GAME_INSTALL_SCOPE, pguidinstanceid: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AddGame: usize,
+    pub RemoveGame: unsafe extern "system" fn(this: *mut *mut Self, guidinstanceid: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub UpdateGame: unsafe extern "system" fn(this: *mut *mut Self, guidinstanceid: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub VerifyAccess: unsafe extern "system" fn(this: *mut *mut Self, bstrgdfbinarypath: ::core::mem::ManuallyDrop<super::Foundation::BSTR>, pfhasaccess: *mut super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    VerifyAccess: usize,
+}
+#[repr(C)]
+pub struct IGameExplorer2 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub InstallGame: unsafe extern "system" fn(this: *mut *mut Self, binarygdfpath: ::windows_sys::core::PCWSTR, installdirectory: ::windows_sys::core::PCWSTR, installscope: GAME_INSTALL_SCOPE) -> ::windows_sys::core::HRESULT,
+    pub UninstallGame: unsafe extern "system" fn(this: *mut *mut Self, binarygdfpath: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CheckAccess: unsafe extern "system" fn(this: *mut *mut Self, binarygdfpath: ::windows_sys::core::PCWSTR, phasaccess: *mut super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CheckAccess: usize,
+}
+#[repr(C)]
+pub struct IGameStatistics {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetMaxCategoryLength: unsafe extern "system" fn(this: *mut *mut Self, cch: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetMaxNameLength: unsafe extern "system" fn(this: *mut *mut Self, cch: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetMaxValueLength: unsafe extern "system" fn(this: *mut *mut Self, cch: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetMaxCategories: unsafe extern "system" fn(this: *mut *mut Self, pmax: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub GetMaxStatsPerCategory: unsafe extern "system" fn(this: *mut *mut Self, pmax: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub SetCategoryTitle: unsafe extern "system" fn(this: *mut *mut Self, categoryindex: u16, title: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetCategoryTitle: unsafe extern "system" fn(this: *mut *mut Self, categoryindex: u16, ptitle: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetStatistic: unsafe extern "system" fn(this: *mut *mut Self, categoryindex: u16, statindex: u16, pname: *mut ::windows_sys::core::PWSTR, pvalue: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetStatistic: unsafe extern "system" fn(this: *mut *mut Self, categoryindex: u16, statindex: u16, name: ::windows_sys::core::PCWSTR, value: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Save: unsafe extern "system" fn(this: *mut *mut Self, trackchanges: super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Save: usize,
+    pub SetLastPlayedCategory: unsafe extern "system" fn(this: *mut *mut Self, categoryindex: u32) -> ::windows_sys::core::HRESULT,
+    pub GetLastPlayedCategory: unsafe extern "system" fn(this: *mut *mut Self, pcategoryindex: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IGameStatisticsMgr {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetGameStatistics: unsafe extern "system" fn(this: *mut *mut Self, gdfbinarypath: ::windows_sys::core::PCWSTR, opentype: GAMESTATS_OPEN_TYPE, popenresult: *mut GAMESTATS_OPEN_RESULT, ppistats: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RemoveGameStatistics: unsafe extern "system" fn(this: *mut *mut Self, gdfbinarypath: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IXblIdpAuthManager {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetGamerAccount: unsafe extern "system" fn(this: *mut *mut Self, msaaccountid: ::windows_sys::core::PCWSTR, xuid: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetGamerAccount: unsafe extern "system" fn(this: *mut *mut Self, msaaccountid: *mut ::windows_sys::core::PWSTR, xuid: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetAppViewInitialized: unsafe extern "system" fn(this: *mut *mut Self, appsid: ::windows_sys::core::PCWSTR, msaaccountid: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetEnvironment: unsafe extern "system" fn(this: *mut *mut Self, environment: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetSandbox: unsafe extern "system" fn(this: *mut *mut Self, sandbox: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetTokenAndSignatureWithTokenResult: unsafe extern "system" fn(this: *mut *mut Self, msaaccountid: ::windows_sys::core::PCWSTR, appsid: ::windows_sys::core::PCWSTR, msatarget: ::windows_sys::core::PCWSTR, msapolicy: ::windows_sys::core::PCWSTR, httpmethod: ::windows_sys::core::PCWSTR, uri: ::windows_sys::core::PCWSTR, headers: ::windows_sys::core::PCWSTR, body: *const u8, bodysize: u32, forcerefresh: super::Foundation::BOOL, result: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetTokenAndSignatureWithTokenResult: usize,
+}
+#[repr(C)]
+pub struct IXblIdpAuthTokenResult {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetStatus: unsafe extern "system" fn(this: *mut *mut Self, status: *mut XBL_IDP_AUTH_TOKEN_STATUS) -> ::windows_sys::core::HRESULT,
+    pub GetErrorCode: unsafe extern "system" fn(this: *mut *mut Self, errorcode: *mut ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+    pub GetToken: unsafe extern "system" fn(this: *mut *mut Self, token: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetSignature: unsafe extern "system" fn(this: *mut *mut Self, signature: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetSandbox: unsafe extern "system" fn(this: *mut *mut Self, sandbox: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetEnvironment: unsafe extern "system" fn(this: *mut *mut Self, environment: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetMsaAccountId: unsafe extern "system" fn(this: *mut *mut Self, msaaccountid: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetXuid: unsafe extern "system" fn(this: *mut *mut Self, xuid: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetGamertag: unsafe extern "system" fn(this: *mut *mut Self, gamertag: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetAgeGroup: unsafe extern "system" fn(this: *mut *mut Self, agegroup: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetPrivileges: unsafe extern "system" fn(this: *mut *mut Self, privileges: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetMsaTarget: unsafe extern "system" fn(this: *mut *mut Self, msatarget: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetMsaPolicy: unsafe extern "system" fn(this: *mut *mut Self, msapolicy: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetMsaAppId: unsafe extern "system" fn(this: *mut *mut Self, msaappid: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetRedirect: unsafe extern "system" fn(this: *mut *mut Self, redirect: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetMessage: unsafe extern "system" fn(this: *mut *mut Self, message: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetHelpId: unsafe extern "system" fn(this: *mut *mut Self, helpid: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetEnforcementBans: unsafe extern "system" fn(this: *mut *mut Self, enforcementbans: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetRestrictions: unsafe extern "system" fn(this: *mut *mut Self, restrictions: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetTitleRestrictions: unsafe extern "system" fn(this: *mut *mut Self, titlerestrictions: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IXblIdpAuthTokenResult2 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetModernGamertag: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetModernGamertagSuffix: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetUniqueModernGamertag: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
 #[doc = "*Required features: `\"Win32_Gaming\"`*"]
 pub type KnownGamingPrivileges = i32;
 #[doc = "*Required features: `\"Win32_Gaming\"`*"]

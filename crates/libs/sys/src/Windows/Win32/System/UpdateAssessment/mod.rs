@@ -1,4 +1,11 @@
-pub type IWaaSAssessor = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IWaaSAssessor {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetOSUpdateAssessment: unsafe extern "system" fn(this: *mut *mut Self, result: *mut OSUpdateAssessment) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetOSUpdateAssessment: usize,
+}
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_UpdateAssessment\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]

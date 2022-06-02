@@ -1,11 +1,11 @@
 #[link(name = "windows")]
 extern "system" {
     #[doc = "*Required features: `\"Win32_Graphics_DirectDraw\"`*"]
-    pub fn DirectDrawCreate(lpguid: *mut ::windows_sys::core::GUID, lplpdd: *mut IDirectDraw, punkouter: ::windows_sys::core::IUnknown) -> ::windows_sys::core::HRESULT;
+    pub fn DirectDrawCreate(lpguid: *mut ::windows_sys::core::GUID, lplpdd: *mut *mut *mut IDirectDraw, punkouter: *mut *mut ::windows_sys::core::IUnknown) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Graphics_DirectDraw\"`*"]
-    pub fn DirectDrawCreateClipper(dwflags: u32, lplpddclipper: *mut IDirectDrawClipper, punkouter: ::windows_sys::core::IUnknown) -> ::windows_sys::core::HRESULT;
+    pub fn DirectDrawCreateClipper(dwflags: u32, lplpddclipper: *mut *mut *mut IDirectDrawClipper, punkouter: *mut *mut ::windows_sys::core::IUnknown) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Graphics_DirectDraw\"`*"]
-    pub fn DirectDrawCreateEx(lpguid: *mut ::windows_sys::core::GUID, lplpdd: *mut *mut ::core::ffi::c_void, iid: *const ::windows_sys::core::GUID, punkouter: ::windows_sys::core::IUnknown) -> ::windows_sys::core::HRESULT;
+    pub fn DirectDrawCreateEx(lpguid: *mut ::windows_sys::core::GUID, lplpdd: *mut *mut ::core::ffi::c_void, iid: *const ::windows_sys::core::GUID, punkouter: *mut *mut ::windows_sys::core::IUnknown) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Graphics_DirectDraw\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
     pub fn DirectDrawEnumerateA(lpcallback: LPDDENUMCALLBACKA, lpcontext: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
@@ -198,7 +198,7 @@ pub const DDBD_8: i32 = 2048i32;
 #[cfg(feature = "Win32_Foundation")]
 pub struct DDBLTBATCH {
     pub lprDest: *mut super::super::Foundation::RECT,
-    pub lpDDSSrc: IDirectDrawSurface,
+    pub lpDDSSrc: *mut *mut *mut *mut IDirectDrawSurface,
     pub lprSrc: *mut super::super::Foundation::RECT,
     pub dwFlags: u32,
     pub lpDDBltFx: *mut DDBLTFX,
@@ -258,7 +258,7 @@ impl ::core::clone::Clone for DDBLTFX {
 #[doc = "*Required features: `\"Win32_Graphics_DirectDraw\"`*"]
 pub union DDBLTFX_0 {
     pub dwZDestConst: u32,
-    pub lpDDSZBufferDest: IDirectDrawSurface,
+    pub lpDDSZBufferDest: *mut *mut *mut *mut IDirectDrawSurface,
 }
 impl ::core::marker::Copy for DDBLTFX_0 {}
 impl ::core::clone::Clone for DDBLTFX_0 {
@@ -270,7 +270,7 @@ impl ::core::clone::Clone for DDBLTFX_0 {
 #[doc = "*Required features: `\"Win32_Graphics_DirectDraw\"`*"]
 pub union DDBLTFX_1 {
     pub dwZSrcConst: u32,
-    pub lpDDSZBufferSrc: IDirectDrawSurface,
+    pub lpDDSZBufferSrc: *mut *mut *mut *mut IDirectDrawSurface,
 }
 impl ::core::marker::Copy for DDBLTFX_1 {}
 impl ::core::clone::Clone for DDBLTFX_1 {
@@ -282,7 +282,7 @@ impl ::core::clone::Clone for DDBLTFX_1 {
 #[doc = "*Required features: `\"Win32_Graphics_DirectDraw\"`*"]
 pub union DDBLTFX_2 {
     pub dwAlphaDestConst: u32,
-    pub lpDDSAlphaDest: IDirectDrawSurface,
+    pub lpDDSAlphaDest: *mut *mut *mut *mut IDirectDrawSurface,
 }
 impl ::core::marker::Copy for DDBLTFX_2 {}
 impl ::core::clone::Clone for DDBLTFX_2 {
@@ -294,7 +294,7 @@ impl ::core::clone::Clone for DDBLTFX_2 {
 #[doc = "*Required features: `\"Win32_Graphics_DirectDraw\"`*"]
 pub union DDBLTFX_3 {
     pub dwAlphaSrcConst: u32,
-    pub lpDDSAlphaSrc: IDirectDrawSurface,
+    pub lpDDSAlphaSrc: *mut *mut *mut *mut IDirectDrawSurface,
 }
 impl ::core::marker::Copy for DDBLTFX_3 {}
 impl ::core::clone::Clone for DDBLTFX_3 {
@@ -308,7 +308,7 @@ pub union DDBLTFX_4 {
     pub dwFillColor: u32,
     pub dwFillDepth: u32,
     pub dwFillPixel: u32,
-    pub lpDDSPattern: IDirectDrawSurface,
+    pub lpDDSPattern: *mut *mut *mut *mut IDirectDrawSurface,
 }
 impl ::core::marker::Copy for DDBLTFX_4 {}
 impl ::core::clone::Clone for DDBLTFX_4 {
@@ -3422,7 +3422,7 @@ impl ::core::clone::Clone for DDOVERLAYFX {
 #[doc = "*Required features: `\"Win32_Graphics_DirectDraw\"`*"]
 pub union DDOVERLAYFX_0 {
     pub dwAlphaDestConst: u32,
-    pub lpDDSAlphaDest: IDirectDrawSurface,
+    pub lpDDSAlphaDest: *mut *mut *mut *mut IDirectDrawSurface,
 }
 impl ::core::marker::Copy for DDOVERLAYFX_0 {}
 impl ::core::clone::Clone for DDOVERLAYFX_0 {
@@ -3434,7 +3434,7 @@ impl ::core::clone::Clone for DDOVERLAYFX_0 {
 #[doc = "*Required features: `\"Win32_Graphics_DirectDraw\"`*"]
 pub union DDOVERLAYFX_1 {
     pub dwAlphaSrcConst: u32,
-    pub lpDDSAlphaSrc: IDirectDrawSurface,
+    pub lpDDSAlphaSrc: *mut *mut *mut *mut IDirectDrawSurface,
 }
 impl ::core::marker::Copy for DDOVERLAYFX_1 {}
 impl ::core::clone::Clone for DDOVERLAYFX_1 {
@@ -3975,10 +3975,10 @@ pub struct DDRAWI_DDRAWCLIPPER_LCL {
     pub lpGbl: *mut DDRAWI_DDRAWCLIPPER_GBL,
     pub lpDD_lcl: *mut DDRAWI_DIRECTDRAW_LCL,
     pub dwLocalRefCnt: u32,
-    pub pUnkOuter: ::windows_sys::core::IUnknown,
+    pub pUnkOuter: *mut *mut *mut *mut ::windows_sys::core::IUnknown,
     pub lpDD_int: *mut DDRAWI_DIRECTDRAW_INT,
     pub dwReserved1: usize,
-    pub pAddrefedThisOwner: ::windows_sys::core::IUnknown,
+    pub pAddrefedThisOwner: *mut *mut *mut *mut ::windows_sys::core::IUnknown,
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 impl ::core::marker::Copy for DDRAWI_DDRAWCLIPPER_LCL {}
@@ -4053,7 +4053,7 @@ pub struct DDRAWI_DDRAWPALETTE_LCL {
     pub lpGbl: *mut DDRAWI_DDRAWPALETTE_GBL,
     pub dwUnused0: usize,
     pub dwLocalRefCnt: u32,
-    pub pUnkOuter: ::windows_sys::core::IUnknown,
+    pub pUnkOuter: *mut *mut *mut *mut ::windows_sys::core::IUnknown,
     pub lpDD_lcl: *mut DDRAWI_DIRECTDRAW_LCL,
     pub dwReserved1: usize,
     pub dwDDRAWReserved1: usize,
@@ -4489,7 +4489,7 @@ pub struct DDRAWI_DIRECTDRAW_LCL {
     pub dwLocalFlags: u32,
     pub dwLocalRefCnt: u32,
     pub dwProcessId: u32,
-    pub pUnkOuter: ::windows_sys::core::IUnknown,
+    pub pUnkOuter: *mut *mut *mut *mut ::windows_sys::core::IUnknown,
     pub dwObsolete1: u32,
     pub hWnd: usize,
     pub hDC: usize,
@@ -4498,7 +4498,7 @@ pub struct DDRAWI_DIRECTDRAW_LCL {
     pub lpCB: *mut DDRAWI_DDRAWSURFACE_INT,
     pub dwPreferredMode: u32,
     pub hD3DInstance: super::super::Foundation::HINSTANCE,
-    pub pD3DIUnknown: ::windows_sys::core::IUnknown,
+    pub pD3DIUnknown: *mut *mut *mut *mut ::windows_sys::core::IUnknown,
     pub lpDDCB: *mut DDHAL_CALLBACKS,
     pub hDDVxd: usize,
     pub dwAppHackFlags: u32,
@@ -7430,24 +7430,620 @@ impl ::core::clone::Clone for HEAPALIGNMENT {
         *self
     }
 }
-pub type IDDVideoPortContainer = *mut ::core::ffi::c_void;
-pub type IDirectDraw = *mut ::core::ffi::c_void;
-pub type IDirectDraw2 = *mut ::core::ffi::c_void;
-pub type IDirectDraw4 = *mut ::core::ffi::c_void;
-pub type IDirectDraw7 = *mut ::core::ffi::c_void;
-pub type IDirectDrawClipper = *mut ::core::ffi::c_void;
-pub type IDirectDrawColorControl = *mut ::core::ffi::c_void;
-pub type IDirectDrawGammaControl = *mut ::core::ffi::c_void;
-pub type IDirectDrawKernel = *mut ::core::ffi::c_void;
-pub type IDirectDrawPalette = *mut ::core::ffi::c_void;
-pub type IDirectDrawSurface = *mut ::core::ffi::c_void;
-pub type IDirectDrawSurface2 = *mut ::core::ffi::c_void;
-pub type IDirectDrawSurface3 = *mut ::core::ffi::c_void;
-pub type IDirectDrawSurface4 = *mut ::core::ffi::c_void;
-pub type IDirectDrawSurface7 = *mut ::core::ffi::c_void;
-pub type IDirectDrawSurfaceKernel = *mut ::core::ffi::c_void;
-pub type IDirectDrawVideoPort = *mut ::core::ffi::c_void;
-pub type IDirectDrawVideoPortNotify = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IDDVideoPortContainer {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub CreateVideoPort: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: *mut DDVIDEOPORTDESC, param2: *mut *mut ::core::ffi::c_void, param3: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EnumVideoPorts: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: *mut DDVIDEOPORTCAPS, param2: *mut ::core::ffi::c_void, param3: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetVideoPortConnectInfo: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, pcinfo: *mut u32, param2: *mut DDVIDEOPORTCONNECT) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub QueryVideoPortStatus: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: *mut DDVIDEOPORTSTATUS) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    QueryVideoPortStatus: usize,
+}
+#[repr(C)]
+pub struct IDirectDraw {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Compact: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub CreateClipper: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: *mut *mut ::core::ffi::c_void, param2: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub CreatePalette: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: *mut super::Gdi::PALETTEENTRY, param2: *mut *mut ::core::ffi::c_void, param3: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Gdi"))]
+    CreatePalette: usize,
+    pub CreateSurface: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut DDSURFACEDESC, param1: *mut *mut ::core::ffi::c_void, param2: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub DuplicateSurface: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut ::core::ffi::c_void, param1: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EnumDisplayModes: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: *mut DDSURFACEDESC, param2: *mut ::core::ffi::c_void, param3: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EnumSurfaces: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: *mut DDSURFACEDESC, param2: *mut ::core::ffi::c_void, param3: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub FlipToGDISurface: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetCaps: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut DDCAPS_DX7, param1: *mut DDCAPS_DX7) -> ::windows_sys::core::HRESULT,
+    pub GetDisplayMode: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut DDSURFACEDESC) -> ::windows_sys::core::HRESULT,
+    pub GetFourCCCodes: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut u32, param1: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetGDISurface: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetMonitorFrequency: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetScanLine: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetVerticalBlankStatus: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub RestoreDisplayMode: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetCooperativeLevel: unsafe extern "system" fn(this: *mut *mut Self, param0: super::super::Foundation::HWND, param1: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetCooperativeLevel: usize,
+    pub SetDisplayMode: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: u32, param2: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub WaitForVerticalBlank: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: super::super::Foundation::HANDLE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    WaitForVerticalBlank: usize,
+}
+#[repr(C)]
+pub struct IDirectDraw2 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Compact: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub CreateClipper: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: *mut *mut ::core::ffi::c_void, param2: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub CreatePalette: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: *mut super::Gdi::PALETTEENTRY, param2: *mut *mut ::core::ffi::c_void, param3: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Gdi"))]
+    CreatePalette: usize,
+    pub CreateSurface: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut DDSURFACEDESC, param1: *mut *mut ::core::ffi::c_void, param2: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub DuplicateSurface: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut ::core::ffi::c_void, param1: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EnumDisplayModes: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: *mut DDSURFACEDESC, param2: *mut ::core::ffi::c_void, param3: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EnumSurfaces: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: *mut DDSURFACEDESC, param2: *mut ::core::ffi::c_void, param3: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub FlipToGDISurface: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetCaps: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut DDCAPS_DX7, param1: *mut DDCAPS_DX7) -> ::windows_sys::core::HRESULT,
+    pub GetDisplayMode: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut DDSURFACEDESC) -> ::windows_sys::core::HRESULT,
+    pub GetFourCCCodes: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut u32, param1: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetGDISurface: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetMonitorFrequency: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetScanLine: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetVerticalBlankStatus: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub RestoreDisplayMode: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetCooperativeLevel: unsafe extern "system" fn(this: *mut *mut Self, param0: super::super::Foundation::HWND, param1: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetCooperativeLevel: usize,
+    pub SetDisplayMode: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: u32, param2: u32, param3: u32, param4: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub WaitForVerticalBlank: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: super::super::Foundation::HANDLE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    WaitForVerticalBlank: usize,
+    pub GetAvailableVidMem: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut DDSCAPS, param1: *mut u32, param2: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDirectDraw4 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Compact: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub CreateClipper: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: *mut *mut ::core::ffi::c_void, param2: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub CreatePalette: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: *mut super::Gdi::PALETTEENTRY, param2: *mut *mut ::core::ffi::c_void, param3: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Gdi"))]
+    CreatePalette: usize,
+    pub CreateSurface: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut DDSURFACEDESC2, param1: *mut *mut ::core::ffi::c_void, param2: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub DuplicateSurface: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut ::core::ffi::c_void, param1: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EnumDisplayModes: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: *mut DDSURFACEDESC2, param2: *mut ::core::ffi::c_void, param3: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EnumSurfaces: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: *mut DDSURFACEDESC2, param2: *mut ::core::ffi::c_void, param3: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub FlipToGDISurface: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetCaps: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut DDCAPS_DX7, param1: *mut DDCAPS_DX7) -> ::windows_sys::core::HRESULT,
+    pub GetDisplayMode: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut DDSURFACEDESC2) -> ::windows_sys::core::HRESULT,
+    pub GetFourCCCodes: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut u32, param1: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetGDISurface: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetMonitorFrequency: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetScanLine: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetVerticalBlankStatus: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub RestoreDisplayMode: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetCooperativeLevel: unsafe extern "system" fn(this: *mut *mut Self, param0: super::super::Foundation::HWND, param1: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetCooperativeLevel: usize,
+    pub SetDisplayMode: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: u32, param2: u32, param3: u32, param4: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub WaitForVerticalBlank: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: super::super::Foundation::HANDLE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    WaitForVerticalBlank: usize,
+    pub GetAvailableVidMem: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut DDSCAPS2, param1: *mut u32, param2: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub GetSurfaceFromDC: unsafe extern "system" fn(this: *mut *mut Self, param0: super::Gdi::HDC, param1: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Gdi"))]
+    GetSurfaceFromDC: usize,
+    pub RestoreAllSurfaces: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub TestCooperativeLevel: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetDeviceIdentifier: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut DDDEVICEIDENTIFIER, param1: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetDeviceIdentifier: usize,
+}
+#[repr(C)]
+pub struct IDirectDraw7 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Compact: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub CreateClipper: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: *mut *mut ::core::ffi::c_void, param2: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub CreatePalette: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: *mut super::Gdi::PALETTEENTRY, param2: *mut *mut ::core::ffi::c_void, param3: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Gdi"))]
+    CreatePalette: usize,
+    pub CreateSurface: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut DDSURFACEDESC2, param1: *mut *mut ::core::ffi::c_void, param2: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub DuplicateSurface: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut ::core::ffi::c_void, param1: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EnumDisplayModes: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: *mut DDSURFACEDESC2, param2: *mut ::core::ffi::c_void, param3: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EnumSurfaces: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: *mut DDSURFACEDESC2, param2: *mut ::core::ffi::c_void, param3: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub FlipToGDISurface: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetCaps: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut DDCAPS_DX7, param1: *mut DDCAPS_DX7) -> ::windows_sys::core::HRESULT,
+    pub GetDisplayMode: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut DDSURFACEDESC2) -> ::windows_sys::core::HRESULT,
+    pub GetFourCCCodes: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut u32, param1: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetGDISurface: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetMonitorFrequency: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetScanLine: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetVerticalBlankStatus: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub RestoreDisplayMode: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetCooperativeLevel: unsafe extern "system" fn(this: *mut *mut Self, param0: super::super::Foundation::HWND, param1: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetCooperativeLevel: usize,
+    pub SetDisplayMode: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: u32, param2: u32, param3: u32, param4: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub WaitForVerticalBlank: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: super::super::Foundation::HANDLE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    WaitForVerticalBlank: usize,
+    pub GetAvailableVidMem: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut DDSCAPS2, param1: *mut u32, param2: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub GetSurfaceFromDC: unsafe extern "system" fn(this: *mut *mut Self, param0: super::Gdi::HDC, param1: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Gdi"))]
+    GetSurfaceFromDC: usize,
+    pub RestoreAllSurfaces: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub TestCooperativeLevel: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetDeviceIdentifier: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut DDDEVICEIDENTIFIER2, param1: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetDeviceIdentifier: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub StartModeTest: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut super::super::Foundation::SIZE, param1: u32, param2: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    StartModeTest: usize,
+    pub EvaluateMode: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDirectDrawClipper {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+    pub GetClipList: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut super::super::Foundation::RECT, param1: *mut super::Gdi::RGNDATA, param2: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi")))]
+    GetClipList: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetHWnd: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut super::super::Foundation::HWND) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetHWnd: usize,
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut ::core::ffi::c_void, param1: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsClipListChanged: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsClipListChanged: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+    pub SetClipList: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut super::Gdi::RGNDATA, param1: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi")))]
+    SetClipList: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetHWnd: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: super::super::Foundation::HWND) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetHWnd: usize,
+}
+#[repr(C)]
+pub struct IDirectDrawColorControl {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetColorControls: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut DDCOLORCONTROL) -> ::windows_sys::core::HRESULT,
+    pub SetColorControls: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut DDCOLORCONTROL) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDirectDrawGammaControl {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetGammaRamp: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: *mut DDGAMMARAMP) -> ::windows_sys::core::HRESULT,
+    pub SetGammaRamp: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: *mut DDGAMMARAMP) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDirectDrawKernel {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCaps: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut DDKERNELCAPS) -> ::windows_sys::core::HRESULT,
+    pub GetKernelHandle: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut usize) -> ::windows_sys::core::HRESULT,
+    pub ReleaseKernelHandle: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDirectDrawPalette {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCaps: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub GetEntries: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: u32, param2: u32, param3: *mut super::Gdi::PALETTEENTRY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Gdi"))]
+    GetEntries: usize,
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut ::core::ffi::c_void, param1: u32, param2: *mut super::Gdi::PALETTEENTRY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Gdi"))]
+    Initialize: usize,
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub SetEntries: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: u32, param2: u32, param3: *mut super::Gdi::PALETTEENTRY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Gdi"))]
+    SetEntries: usize,
+}
+#[repr(C)]
+pub struct IDirectDrawSurface {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub AddAttachedSurface: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AddOverlayDirtyRect: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut super::super::Foundation::RECT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AddOverlayDirtyRect: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Blt: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut super::super::Foundation::RECT, param1: *mut ::core::ffi::c_void, param2: *mut super::super::Foundation::RECT, param3: u32, param4: *mut DDBLTFX) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Blt: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub BltBatch: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut DDBLTBATCH, param1: u32, param2: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    BltBatch: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub BltFast: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: u32, param2: *mut ::core::ffi::c_void, param3: *mut super::super::Foundation::RECT, param4: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    BltFast: usize,
+    pub DeleteAttachedSurface: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EnumAttachedSurfaces: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut ::core::ffi::c_void, param1: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EnumOverlayZOrders: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: *mut ::core::ffi::c_void, param2: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Flip: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut ::core::ffi::c_void, param1: u32) -> ::windows_sys::core::HRESULT,
+    pub GetAttachedSurface: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut DDSCAPS, param1: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetBltStatus: unsafe extern "system" fn(this: *mut *mut Self, param0: u32) -> ::windows_sys::core::HRESULT,
+    pub GetCaps: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut DDSCAPS) -> ::windows_sys::core::HRESULT,
+    pub GetClipper: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetColorKey: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: *mut DDCOLORKEY) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub GetDC: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut super::Gdi::HDC) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Gdi"))]
+    GetDC: usize,
+    pub GetFlipStatus: unsafe extern "system" fn(this: *mut *mut Self, param0: u32) -> ::windows_sys::core::HRESULT,
+    pub GetOverlayPosition: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut i32, param1: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub GetPalette: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetPixelFormat: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut DDPIXELFORMAT) -> ::windows_sys::core::HRESULT,
+    pub GetSurfaceDesc: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut DDSURFACEDESC) -> ::windows_sys::core::HRESULT,
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut ::core::ffi::c_void, param1: *mut DDSURFACEDESC) -> ::windows_sys::core::HRESULT,
+    pub IsLost: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Lock: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut super::super::Foundation::RECT, param1: *mut DDSURFACEDESC, param2: u32, param3: super::super::Foundation::HANDLE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Lock: usize,
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub ReleaseDC: unsafe extern "system" fn(this: *mut *mut Self, param0: super::Gdi::HDC) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Gdi"))]
+    ReleaseDC: usize,
+    pub Restore: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub SetClipper: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetColorKey: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: *mut DDCOLORKEY) -> ::windows_sys::core::HRESULT,
+    pub SetOverlayPosition: unsafe extern "system" fn(this: *mut *mut Self, param0: i32, param1: i32) -> ::windows_sys::core::HRESULT,
+    pub SetPalette: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Unlock: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub UpdateOverlay: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut super::super::Foundation::RECT, param1: *mut ::core::ffi::c_void, param2: *mut super::super::Foundation::RECT, param3: u32, param4: *mut DDOVERLAYFX) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    UpdateOverlay: usize,
+    pub UpdateOverlayDisplay: unsafe extern "system" fn(this: *mut *mut Self, param0: u32) -> ::windows_sys::core::HRESULT,
+    pub UpdateOverlayZOrder: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDirectDrawSurface2 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub AddAttachedSurface: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AddOverlayDirtyRect: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut super::super::Foundation::RECT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AddOverlayDirtyRect: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Blt: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut super::super::Foundation::RECT, param1: *mut ::core::ffi::c_void, param2: *mut super::super::Foundation::RECT, param3: u32, param4: *mut DDBLTFX) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Blt: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub BltBatch: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut DDBLTBATCH, param1: u32, param2: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    BltBatch: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub BltFast: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: u32, param2: *mut ::core::ffi::c_void, param3: *mut super::super::Foundation::RECT, param4: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    BltFast: usize,
+    pub DeleteAttachedSurface: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EnumAttachedSurfaces: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut ::core::ffi::c_void, param1: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EnumOverlayZOrders: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: *mut ::core::ffi::c_void, param2: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Flip: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut ::core::ffi::c_void, param1: u32) -> ::windows_sys::core::HRESULT,
+    pub GetAttachedSurface: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut DDSCAPS, param1: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetBltStatus: unsafe extern "system" fn(this: *mut *mut Self, param0: u32) -> ::windows_sys::core::HRESULT,
+    pub GetCaps: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut DDSCAPS) -> ::windows_sys::core::HRESULT,
+    pub GetClipper: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetColorKey: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: *mut DDCOLORKEY) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub GetDC: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut super::Gdi::HDC) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Gdi"))]
+    GetDC: usize,
+    pub GetFlipStatus: unsafe extern "system" fn(this: *mut *mut Self, param0: u32) -> ::windows_sys::core::HRESULT,
+    pub GetOverlayPosition: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut i32, param1: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub GetPalette: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetPixelFormat: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut DDPIXELFORMAT) -> ::windows_sys::core::HRESULT,
+    pub GetSurfaceDesc: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut DDSURFACEDESC) -> ::windows_sys::core::HRESULT,
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut ::core::ffi::c_void, param1: *mut DDSURFACEDESC) -> ::windows_sys::core::HRESULT,
+    pub IsLost: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Lock: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut super::super::Foundation::RECT, param1: *mut DDSURFACEDESC, param2: u32, param3: super::super::Foundation::HANDLE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Lock: usize,
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub ReleaseDC: unsafe extern "system" fn(this: *mut *mut Self, param0: super::Gdi::HDC) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Gdi"))]
+    ReleaseDC: usize,
+    pub Restore: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub SetClipper: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetColorKey: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: *mut DDCOLORKEY) -> ::windows_sys::core::HRESULT,
+    pub SetOverlayPosition: unsafe extern "system" fn(this: *mut *mut Self, param0: i32, param1: i32) -> ::windows_sys::core::HRESULT,
+    pub SetPalette: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Unlock: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub UpdateOverlay: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut super::super::Foundation::RECT, param1: *mut ::core::ffi::c_void, param2: *mut super::super::Foundation::RECT, param3: u32, param4: *mut DDOVERLAYFX) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    UpdateOverlay: usize,
+    pub UpdateOverlayDisplay: unsafe extern "system" fn(this: *mut *mut Self, param0: u32) -> ::windows_sys::core::HRESULT,
+    pub UpdateOverlayZOrder: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetDDInterface: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub PageLock: unsafe extern "system" fn(this: *mut *mut Self, param0: u32) -> ::windows_sys::core::HRESULT,
+    pub PageUnlock: unsafe extern "system" fn(this: *mut *mut Self, param0: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDirectDrawSurface3 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub AddAttachedSurface: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AddOverlayDirtyRect: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut super::super::Foundation::RECT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AddOverlayDirtyRect: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Blt: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut super::super::Foundation::RECT, param1: *mut ::core::ffi::c_void, param2: *mut super::super::Foundation::RECT, param3: u32, param4: *mut DDBLTFX) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Blt: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub BltBatch: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut DDBLTBATCH, param1: u32, param2: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    BltBatch: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub BltFast: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: u32, param2: *mut ::core::ffi::c_void, param3: *mut super::super::Foundation::RECT, param4: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    BltFast: usize,
+    pub DeleteAttachedSurface: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EnumAttachedSurfaces: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut ::core::ffi::c_void, param1: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EnumOverlayZOrders: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: *mut ::core::ffi::c_void, param2: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Flip: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut ::core::ffi::c_void, param1: u32) -> ::windows_sys::core::HRESULT,
+    pub GetAttachedSurface: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut DDSCAPS, param1: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetBltStatus: unsafe extern "system" fn(this: *mut *mut Self, param0: u32) -> ::windows_sys::core::HRESULT,
+    pub GetCaps: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut DDSCAPS) -> ::windows_sys::core::HRESULT,
+    pub GetClipper: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetColorKey: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: *mut DDCOLORKEY) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub GetDC: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut super::Gdi::HDC) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Gdi"))]
+    GetDC: usize,
+    pub GetFlipStatus: unsafe extern "system" fn(this: *mut *mut Self, param0: u32) -> ::windows_sys::core::HRESULT,
+    pub GetOverlayPosition: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut i32, param1: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub GetPalette: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetPixelFormat: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut DDPIXELFORMAT) -> ::windows_sys::core::HRESULT,
+    pub GetSurfaceDesc: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut DDSURFACEDESC) -> ::windows_sys::core::HRESULT,
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut ::core::ffi::c_void, param1: *mut DDSURFACEDESC) -> ::windows_sys::core::HRESULT,
+    pub IsLost: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Lock: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut super::super::Foundation::RECT, param1: *mut DDSURFACEDESC, param2: u32, param3: super::super::Foundation::HANDLE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Lock: usize,
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub ReleaseDC: unsafe extern "system" fn(this: *mut *mut Self, param0: super::Gdi::HDC) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Gdi"))]
+    ReleaseDC: usize,
+    pub Restore: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub SetClipper: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetColorKey: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: *mut DDCOLORKEY) -> ::windows_sys::core::HRESULT,
+    pub SetOverlayPosition: unsafe extern "system" fn(this: *mut *mut Self, param0: i32, param1: i32) -> ::windows_sys::core::HRESULT,
+    pub SetPalette: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Unlock: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub UpdateOverlay: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut super::super::Foundation::RECT, param1: *mut ::core::ffi::c_void, param2: *mut super::super::Foundation::RECT, param3: u32, param4: *mut DDOVERLAYFX) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    UpdateOverlay: usize,
+    pub UpdateOverlayDisplay: unsafe extern "system" fn(this: *mut *mut Self, param0: u32) -> ::windows_sys::core::HRESULT,
+    pub UpdateOverlayZOrder: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetDDInterface: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub PageLock: unsafe extern "system" fn(this: *mut *mut Self, param0: u32) -> ::windows_sys::core::HRESULT,
+    pub PageUnlock: unsafe extern "system" fn(this: *mut *mut Self, param0: u32) -> ::windows_sys::core::HRESULT,
+    pub SetSurfaceDesc: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut DDSURFACEDESC, param1: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDirectDrawSurface4 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub AddAttachedSurface: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AddOverlayDirtyRect: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut super::super::Foundation::RECT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AddOverlayDirtyRect: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Blt: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut super::super::Foundation::RECT, param1: *mut ::core::ffi::c_void, param2: *mut super::super::Foundation::RECT, param3: u32, param4: *mut DDBLTFX) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Blt: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub BltBatch: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut DDBLTBATCH, param1: u32, param2: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    BltBatch: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub BltFast: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: u32, param2: *mut ::core::ffi::c_void, param3: *mut super::super::Foundation::RECT, param4: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    BltFast: usize,
+    pub DeleteAttachedSurface: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EnumAttachedSurfaces: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut ::core::ffi::c_void, param1: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EnumOverlayZOrders: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: *mut ::core::ffi::c_void, param2: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Flip: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut ::core::ffi::c_void, param1: u32) -> ::windows_sys::core::HRESULT,
+    pub GetAttachedSurface: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut DDSCAPS2, param1: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetBltStatus: unsafe extern "system" fn(this: *mut *mut Self, param0: u32) -> ::windows_sys::core::HRESULT,
+    pub GetCaps: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut DDSCAPS2) -> ::windows_sys::core::HRESULT,
+    pub GetClipper: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetColorKey: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: *mut DDCOLORKEY) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub GetDC: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut super::Gdi::HDC) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Gdi"))]
+    GetDC: usize,
+    pub GetFlipStatus: unsafe extern "system" fn(this: *mut *mut Self, param0: u32) -> ::windows_sys::core::HRESULT,
+    pub GetOverlayPosition: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut i32, param1: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub GetPalette: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetPixelFormat: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut DDPIXELFORMAT) -> ::windows_sys::core::HRESULT,
+    pub GetSurfaceDesc: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut DDSURFACEDESC2) -> ::windows_sys::core::HRESULT,
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut ::core::ffi::c_void, param1: *mut DDSURFACEDESC2) -> ::windows_sys::core::HRESULT,
+    pub IsLost: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Lock: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut super::super::Foundation::RECT, param1: *mut DDSURFACEDESC2, param2: u32, param3: super::super::Foundation::HANDLE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Lock: usize,
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub ReleaseDC: unsafe extern "system" fn(this: *mut *mut Self, param0: super::Gdi::HDC) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Gdi"))]
+    ReleaseDC: usize,
+    pub Restore: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub SetClipper: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetColorKey: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: *mut DDCOLORKEY) -> ::windows_sys::core::HRESULT,
+    pub SetOverlayPosition: unsafe extern "system" fn(this: *mut *mut Self, param0: i32, param1: i32) -> ::windows_sys::core::HRESULT,
+    pub SetPalette: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Unlock: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut super::super::Foundation::RECT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Unlock: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub UpdateOverlay: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut super::super::Foundation::RECT, param1: *mut ::core::ffi::c_void, param2: *mut super::super::Foundation::RECT, param3: u32, param4: *mut DDOVERLAYFX) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    UpdateOverlay: usize,
+    pub UpdateOverlayDisplay: unsafe extern "system" fn(this: *mut *mut Self, param0: u32) -> ::windows_sys::core::HRESULT,
+    pub UpdateOverlayZOrder: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetDDInterface: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub PageLock: unsafe extern "system" fn(this: *mut *mut Self, param0: u32) -> ::windows_sys::core::HRESULT,
+    pub PageUnlock: unsafe extern "system" fn(this: *mut *mut Self, param0: u32) -> ::windows_sys::core::HRESULT,
+    pub SetSurfaceDesc: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut DDSURFACEDESC2, param1: u32) -> ::windows_sys::core::HRESULT,
+    pub SetPrivateData: unsafe extern "system" fn(this: *mut *mut Self, param0: *const ::windows_sys::core::GUID, param1: *mut ::core::ffi::c_void, param2: u32, param3: u32) -> ::windows_sys::core::HRESULT,
+    pub GetPrivateData: unsafe extern "system" fn(this: *mut *mut Self, param0: *const ::windows_sys::core::GUID, param1: *mut ::core::ffi::c_void, param2: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub FreePrivateData: unsafe extern "system" fn(this: *mut *mut Self, param0: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub GetUniquenessValue: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub ChangeUniquenessValue: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDirectDrawSurface7 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub AddAttachedSurface: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AddOverlayDirtyRect: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut super::super::Foundation::RECT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AddOverlayDirtyRect: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Blt: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut super::super::Foundation::RECT, param1: *mut ::core::ffi::c_void, param2: *mut super::super::Foundation::RECT, param3: u32, param4: *mut DDBLTFX) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Blt: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub BltBatch: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut DDBLTBATCH, param1: u32, param2: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    BltBatch: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub BltFast: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: u32, param2: *mut ::core::ffi::c_void, param3: *mut super::super::Foundation::RECT, param4: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    BltFast: usize,
+    pub DeleteAttachedSurface: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EnumAttachedSurfaces: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut ::core::ffi::c_void, param1: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EnumOverlayZOrders: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: *mut ::core::ffi::c_void, param2: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Flip: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut ::core::ffi::c_void, param1: u32) -> ::windows_sys::core::HRESULT,
+    pub GetAttachedSurface: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut DDSCAPS2, param1: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetBltStatus: unsafe extern "system" fn(this: *mut *mut Self, param0: u32) -> ::windows_sys::core::HRESULT,
+    pub GetCaps: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut DDSCAPS2) -> ::windows_sys::core::HRESULT,
+    pub GetClipper: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetColorKey: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: *mut DDCOLORKEY) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub GetDC: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut super::Gdi::HDC) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Gdi"))]
+    GetDC: usize,
+    pub GetFlipStatus: unsafe extern "system" fn(this: *mut *mut Self, param0: u32) -> ::windows_sys::core::HRESULT,
+    pub GetOverlayPosition: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut i32, param1: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub GetPalette: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetPixelFormat: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut DDPIXELFORMAT) -> ::windows_sys::core::HRESULT,
+    pub GetSurfaceDesc: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut DDSURFACEDESC2) -> ::windows_sys::core::HRESULT,
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut ::core::ffi::c_void, param1: *mut DDSURFACEDESC2) -> ::windows_sys::core::HRESULT,
+    pub IsLost: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Lock: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut super::super::Foundation::RECT, param1: *mut DDSURFACEDESC2, param2: u32, param3: super::super::Foundation::HANDLE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Lock: usize,
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub ReleaseDC: unsafe extern "system" fn(this: *mut *mut Self, param0: super::Gdi::HDC) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Gdi"))]
+    ReleaseDC: usize,
+    pub Restore: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub SetClipper: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetColorKey: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: *mut DDCOLORKEY) -> ::windows_sys::core::HRESULT,
+    pub SetOverlayPosition: unsafe extern "system" fn(this: *mut *mut Self, param0: i32, param1: i32) -> ::windows_sys::core::HRESULT,
+    pub SetPalette: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Unlock: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut super::super::Foundation::RECT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Unlock: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub UpdateOverlay: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut super::super::Foundation::RECT, param1: *mut ::core::ffi::c_void, param2: *mut super::super::Foundation::RECT, param3: u32, param4: *mut DDOVERLAYFX) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    UpdateOverlay: usize,
+    pub UpdateOverlayDisplay: unsafe extern "system" fn(this: *mut *mut Self, param0: u32) -> ::windows_sys::core::HRESULT,
+    pub UpdateOverlayZOrder: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetDDInterface: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub PageLock: unsafe extern "system" fn(this: *mut *mut Self, param0: u32) -> ::windows_sys::core::HRESULT,
+    pub PageUnlock: unsafe extern "system" fn(this: *mut *mut Self, param0: u32) -> ::windows_sys::core::HRESULT,
+    pub SetSurfaceDesc: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut DDSURFACEDESC2, param1: u32) -> ::windows_sys::core::HRESULT,
+    pub SetPrivateData: unsafe extern "system" fn(this: *mut *mut Self, param0: *const ::windows_sys::core::GUID, param1: *mut ::core::ffi::c_void, param2: u32, param3: u32) -> ::windows_sys::core::HRESULT,
+    pub GetPrivateData: unsafe extern "system" fn(this: *mut *mut Self, param0: *const ::windows_sys::core::GUID, param1: *mut ::core::ffi::c_void, param2: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub FreePrivateData: unsafe extern "system" fn(this: *mut *mut Self, param0: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub GetUniquenessValue: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub ChangeUniquenessValue: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub SetPriority: unsafe extern "system" fn(this: *mut *mut Self, param0: u32) -> ::windows_sys::core::HRESULT,
+    pub GetPriority: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetLOD: unsafe extern "system" fn(this: *mut *mut Self, param0: u32) -> ::windows_sys::core::HRESULT,
+    pub GetLOD: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDirectDrawSurfaceKernel {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetKernelHandle: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut usize) -> ::windows_sys::core::HRESULT,
+    pub ReleaseKernelHandle: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDirectDrawVideoPort {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Flip: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut ::core::ffi::c_void, param1: u32) -> ::windows_sys::core::HRESULT,
+    pub GetBandwidthInfo: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut DDPIXELFORMAT, param1: u32, param2: u32, param3: u32, param4: *mut DDVIDEOPORTBANDWIDTH) -> ::windows_sys::core::HRESULT,
+    pub GetColorControls: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut DDCOLORCONTROL) -> ::windows_sys::core::HRESULT,
+    pub GetInputFormats: unsafe extern "system" fn(this: *mut *mut Self, lpnumformats: *mut u32, param1: *mut DDPIXELFORMAT, param2: u32) -> ::windows_sys::core::HRESULT,
+    pub GetOutputFormats: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut DDPIXELFORMAT, lpnumformats: *mut u32, param2: *mut DDPIXELFORMAT, param3: u32) -> ::windows_sys::core::HRESULT,
+    pub GetFieldPolarity: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub GetVideoLine: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetVideoSignalStatus: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetColorControls: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut DDCOLORCONTROL) -> ::windows_sys::core::HRESULT,
+    pub SetTargetSurface: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut ::core::ffi::c_void, param1: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub StartVideo: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut DDVIDEOPORTINFO) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    StartVideo: usize,
+    pub StopVideo: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub UpdateVideo: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut DDVIDEOPORTINFO) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    UpdateVideo: usize,
+    pub WaitForSync: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: u32, param2: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDirectDrawVideoPortNotify {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AcquireNotification: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut super::super::Foundation::HANDLE, param1: *mut DDVIDEOPORTNOTIFY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AcquireNotification: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ReleaseNotification: unsafe extern "system" fn(this: *mut *mut Self, param0: super::super::Foundation::HANDLE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ReleaseNotification: usize,
+}
 #[doc = "*Required features: `\"Win32_Graphics_DirectDraw\"`*"]
 pub const IRQINFO_HANDLED: u32 = 1u32;
 #[doc = "*Required features: `\"Win32_Graphics_DirectDraw\"`*"]
@@ -7457,7 +8053,7 @@ pub const IRQINFO_NOTHANDLED: u32 = 2u32;
 pub struct IUNKNOWN_LIST {
     pub lpLink: *mut IUNKNOWN_LIST,
     pub lpGuid: *mut ::windows_sys::core::GUID,
-    pub lpIUnknown: ::windows_sys::core::IUnknown,
+    pub lpIUnknown: *mut *mut *mut *mut ::windows_sys::core::IUnknown,
 }
 impl ::core::marker::Copy for IUNKNOWN_LIST {}
 impl ::core::clone::Clone for IUNKNOWN_LIST {
@@ -7467,7 +8063,7 @@ impl ::core::clone::Clone for IUNKNOWN_LIST {
 }
 #[doc = "*Required features: `\"Win32_Graphics_DirectDraw\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
-pub type LPCLIPPERCALLBACK = ::core::option::Option<unsafe extern "system" fn(lpddclipper: IDirectDrawClipper, hwnd: super::super::Foundation::HWND, code: u32, lpcontext: *mut ::core::ffi::c_void) -> u32>;
+pub type LPCLIPPERCALLBACK = ::core::option::Option<unsafe extern "system" fn(lpddclipper: *mut *mut IDirectDrawClipper, hwnd: super::super::Foundation::HWND, code: u32, lpcontext: *mut ::core::ffi::c_void) -> u32>;
 #[doc = "*Required features: `\"Win32_Graphics_DirectDraw\"`*"]
 pub type LPDD32BITDRIVERINIT = ::core::option::Option<unsafe extern "system" fn(dwcontext: u32) -> u32>;
 #[doc = "*Required features: `\"Win32_Graphics_DirectDraw\"`, `\"Win32_Foundation\"`*"]
@@ -7487,11 +8083,11 @@ pub type LPDDENUMMODESCALLBACK = ::core::option::Option<unsafe extern "system" f
 #[doc = "*Required features: `\"Win32_Graphics_DirectDraw\"`*"]
 pub type LPDDENUMMODESCALLBACK2 = ::core::option::Option<unsafe extern "system" fn(param0: *mut DDSURFACEDESC2, param1: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT>;
 #[doc = "*Required features: `\"Win32_Graphics_DirectDraw\"`*"]
-pub type LPDDENUMSURFACESCALLBACK = ::core::option::Option<unsafe extern "system" fn(param0: IDirectDrawSurface, param1: *mut DDSURFACEDESC, param2: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT>;
+pub type LPDDENUMSURFACESCALLBACK = ::core::option::Option<unsafe extern "system" fn(param0: *mut *mut IDirectDrawSurface, param1: *mut DDSURFACEDESC, param2: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT>;
 #[doc = "*Required features: `\"Win32_Graphics_DirectDraw\"`*"]
-pub type LPDDENUMSURFACESCALLBACK2 = ::core::option::Option<unsafe extern "system" fn(param0: IDirectDrawSurface4, param1: *mut DDSURFACEDESC2, param2: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT>;
+pub type LPDDENUMSURFACESCALLBACK2 = ::core::option::Option<unsafe extern "system" fn(param0: *mut *mut IDirectDrawSurface4, param1: *mut DDSURFACEDESC2, param2: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT>;
 #[doc = "*Required features: `\"Win32_Graphics_DirectDraw\"`*"]
-pub type LPDDENUMSURFACESCALLBACK7 = ::core::option::Option<unsafe extern "system" fn(param0: IDirectDrawSurface7, param1: *mut DDSURFACEDESC2, param2: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT>;
+pub type LPDDENUMSURFACESCALLBACK7 = ::core::option::Option<unsafe extern "system" fn(param0: *mut *mut IDirectDrawSurface7, param1: *mut DDSURFACEDESC2, param2: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT>;
 #[doc = "*Required features: `\"Win32_Graphics_DirectDraw\"`*"]
 pub type LPDDENUMVIDEOCALLBACK = ::core::option::Option<unsafe extern "system" fn(param0: *mut DDVIDEOPORTCAPS, param1: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT>;
 #[doc = "*Required features: `\"Win32_Graphics_DirectDraw\"`*"]

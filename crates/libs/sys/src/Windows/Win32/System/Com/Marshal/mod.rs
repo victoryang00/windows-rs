@@ -41,23 +41,23 @@ extern "system" {
     #[doc = "*Required features: `\"Win32_System_Com_Marshal\"`*"]
     pub fn CLIPFORMAT_UserUnmarshal64(param0: *const u32, param1: *const u8, param2: *mut u16) -> *mut u8;
     #[doc = "*Required features: `\"Win32_System_Com_Marshal\"`*"]
-    pub fn CoGetMarshalSizeMax(pulsize: *mut u32, riid: *const ::windows_sys::core::GUID, punk: ::windows_sys::core::IUnknown, dwdestcontext: u32, pvdestcontext: *const ::core::ffi::c_void, mshlflags: u32) -> ::windows_sys::core::HRESULT;
+    pub fn CoGetMarshalSizeMax(pulsize: *mut u32, riid: *const ::windows_sys::core::GUID, punk: *mut *mut ::windows_sys::core::IUnknown, dwdestcontext: u32, pvdestcontext: *const ::core::ffi::c_void, mshlflags: u32) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com_Marshal\"`*"]
-    pub fn CoGetStandardMarshal(riid: *const ::windows_sys::core::GUID, punk: ::windows_sys::core::IUnknown, dwdestcontext: u32, pvdestcontext: *const ::core::ffi::c_void, mshlflags: u32, ppmarshal: *mut IMarshal) -> ::windows_sys::core::HRESULT;
+    pub fn CoGetStandardMarshal(riid: *const ::windows_sys::core::GUID, punk: *mut *mut ::windows_sys::core::IUnknown, dwdestcontext: u32, pvdestcontext: *const ::core::ffi::c_void, mshlflags: u32, ppmarshal: *mut *mut *mut IMarshal) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com_Marshal\"`*"]
-    pub fn CoGetStdMarshalEx(punkouter: ::windows_sys::core::IUnknown, smexflags: u32, ppunkinner: *mut ::windows_sys::core::IUnknown) -> ::windows_sys::core::HRESULT;
+    pub fn CoGetStdMarshalEx(punkouter: *mut *mut ::windows_sys::core::IUnknown, smexflags: u32, ppunkinner: *mut *mut *mut ::windows_sys::core::IUnknown) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com_Marshal\"`*"]
-    pub fn CoMarshalHresult(pstm: super::IStream, hresult: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT;
+    pub fn CoMarshalHresult(pstm: *mut *mut super::IStream, hresult: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com_Marshal\"`*"]
-    pub fn CoMarshalInterThreadInterfaceInStream(riid: *const ::windows_sys::core::GUID, punk: ::windows_sys::core::IUnknown, ppstm: *mut super::IStream) -> ::windows_sys::core::HRESULT;
+    pub fn CoMarshalInterThreadInterfaceInStream(riid: *const ::windows_sys::core::GUID, punk: *mut *mut ::windows_sys::core::IUnknown, ppstm: *mut *mut *mut super::IStream) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com_Marshal\"`*"]
-    pub fn CoMarshalInterface(pstm: super::IStream, riid: *const ::windows_sys::core::GUID, punk: ::windows_sys::core::IUnknown, dwdestcontext: u32, pvdestcontext: *const ::core::ffi::c_void, mshlflags: u32) -> ::windows_sys::core::HRESULT;
+    pub fn CoMarshalInterface(pstm: *mut *mut super::IStream, riid: *const ::windows_sys::core::GUID, punk: *mut *mut ::windows_sys::core::IUnknown, dwdestcontext: u32, pvdestcontext: *const ::core::ffi::c_void, mshlflags: u32) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com_Marshal\"`*"]
-    pub fn CoReleaseMarshalData(pstm: super::IStream) -> ::windows_sys::core::HRESULT;
+    pub fn CoReleaseMarshalData(pstm: *mut *mut super::IStream) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com_Marshal\"`*"]
-    pub fn CoUnmarshalHresult(pstm: super::IStream, phresult: *mut ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT;
+    pub fn CoUnmarshalHresult(pstm: *mut *mut super::IStream, phresult: *mut ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com_Marshal\"`*"]
-    pub fn CoUnmarshalInterface(pstm: super::IStream, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn CoUnmarshalInterface(pstm: *mut *mut super::IStream, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com_Marshal\"`, `\"Win32_UI_WindowsAndMessaging\"`*"]
     #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
     pub fn HACCEL_UserFree(param0: *const u32, param1: *const super::super::super::UI::WindowsAndMessaging::HACCEL);
@@ -323,9 +323,25 @@ extern "system" {
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
     pub fn VARIANT_UserUnmarshal64(param0: *const u32, param1: *const u8, param2: *mut super::VARIANT) -> *mut u8;
 }
-pub type IMarshal = *mut ::core::ffi::c_void;
-pub type IMarshal2 = *mut ::core::ffi::c_void;
-pub type IMarshalingStream = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IMarshal {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetUnmarshalClass: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, pv: *const ::core::ffi::c_void, dwdestcontext: u32, pvdestcontext: *mut ::core::ffi::c_void, mshlflags: u32, pcid: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub GetMarshalSizeMax: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, pv: *const ::core::ffi::c_void, dwdestcontext: u32, pvdestcontext: *mut ::core::ffi::c_void, mshlflags: u32, psize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub MarshalInterface: unsafe extern "system" fn(this: *mut *mut Self, pstm: *mut ::core::ffi::c_void, riid: *const ::windows_sys::core::GUID, pv: *const ::core::ffi::c_void, dwdestcontext: u32, pvdestcontext: *mut ::core::ffi::c_void, mshlflags: u32) -> ::windows_sys::core::HRESULT,
+    pub UnmarshalInterface: unsafe extern "system" fn(this: *mut *mut Self, pstm: *mut ::core::ffi::c_void, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ReleaseMarshalData: unsafe extern "system" fn(this: *mut *mut Self, pstm: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub DisconnectObject: unsafe extern "system" fn(this: *mut *mut Self, dwreserved: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMarshal2 {
+    pub base__: IMarshal,
+}
+#[repr(C)]
+pub struct IMarshalingStream {
+    pub base__: super::IStream,
+    pub GetMarshalingContextAttribute: unsafe extern "system" fn(this: *mut *mut Self, attribute: super::CO_MARSHALING_CONTEXT_ATTRIBUTES, pattributevalue: *mut usize) -> ::windows_sys::core::HRESULT,
+}
 #[doc = "*Required features: `\"Win32_System_Com_Marshal\"`*"]
 pub type STDMSHLFLAGS = i32;
 #[doc = "*Required features: `\"Win32_System_Com_Marshal\"`*"]

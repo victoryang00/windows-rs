@@ -6,10 +6,269 @@ pub mod PrintSupport;
 pub mod PrintTicket;
 #[cfg(feature = "Graphics_Printing_Workflow")]
 pub mod Workflow;
-pub type IPrintDocumentSource = *mut ::core::ffi::c_void;
-pub type IPrintTaskOptionsCore = *mut ::core::ffi::c_void;
-pub type IPrintTaskOptionsCoreProperties = *mut ::core::ffi::c_void;
-pub type IPrintTaskOptionsCoreUIConfiguration = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IPrintDocumentSource {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IPrintManager {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub PrintTaskRequested: unsafe extern "system" fn(this: *mut *mut Self, eventhandler: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    PrintTaskRequested: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemovePrintTaskRequested: unsafe extern "system" fn(this: *mut *mut Self, eventcookie: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemovePrintTaskRequested: usize,
+}
+#[repr(C)]
+pub struct IPrintManagerStatic {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub GetForCurrentView: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub ShowPrintUIAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    ShowPrintUIAsync: usize,
+}
+#[repr(C)]
+pub struct IPrintManagerStatic2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub IsSupported: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPrintPageInfo {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub SetMediaSize: unsafe extern "system" fn(this: *mut *mut Self, value: PrintMediaSize) -> ::windows_sys::core::HRESULT,
+    pub MediaSize: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut PrintMediaSize) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub SetPageSize: unsafe extern "system" fn(this: *mut *mut Self, value: super::super::Foundation::Size) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    SetPageSize: usize,
+    #[cfg(feature = "Foundation")]
+    pub PageSize: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Foundation::Size) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    PageSize: usize,
+    pub SetDpiX: unsafe extern "system" fn(this: *mut *mut Self, value: u32) -> ::windows_sys::core::HRESULT,
+    pub DpiX: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetDpiY: unsafe extern "system" fn(this: *mut *mut Self, value: u32) -> ::windows_sys::core::HRESULT,
+    pub DpiY: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetOrientation: unsafe extern "system" fn(this: *mut *mut Self, value: PrintOrientation) -> ::windows_sys::core::HRESULT,
+    pub Orientation: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut PrintOrientation) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPrintPageRange {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub FirstPageNumber: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub LastPageNumber: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPrintPageRangeFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Create: unsafe extern "system" fn(this: *mut *mut Self, firstpage: i32, lastpage: i32, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateWithSinglePage: unsafe extern "system" fn(this: *mut *mut Self, page: i32, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPrintPageRangeOptions {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub SetAllowAllPages: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+    pub AllowAllPages: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetAllowCurrentPage: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+    pub AllowCurrentPage: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetAllowCustomSetOfPages: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+    pub AllowCustomSetOfPages: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPrintTask {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "ApplicationModel_DataTransfer")]
+    pub Properties: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "ApplicationModel_DataTransfer"))]
+    Properties: usize,
+    pub Source: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Options: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub Previewing: unsafe extern "system" fn(this: *mut *mut Self, eventhandler: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    Previewing: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemovePreviewing: unsafe extern "system" fn(this: *mut *mut Self, eventcookie: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemovePreviewing: usize,
+    #[cfg(feature = "Foundation")]
+    pub Submitting: unsafe extern "system" fn(this: *mut *mut Self, eventhandler: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    Submitting: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveSubmitting: unsafe extern "system" fn(this: *mut *mut Self, eventcookie: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveSubmitting: usize,
+    #[cfg(feature = "Foundation")]
+    pub Progressing: unsafe extern "system" fn(this: *mut *mut Self, eventhandler: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    Progressing: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveProgressing: unsafe extern "system" fn(this: *mut *mut Self, eventcookie: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveProgressing: usize,
+    #[cfg(feature = "Foundation")]
+    pub Completed: unsafe extern "system" fn(this: *mut *mut Self, eventhandler: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    Completed: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveCompleted: unsafe extern "system" fn(this: *mut *mut Self, eventcookie: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveCompleted: usize,
+}
+#[repr(C)]
+pub struct IPrintTask2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub SetIsPreviewEnabled: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+    pub IsPreviewEnabled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPrintTaskCompletedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Completion: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut PrintTaskCompletion) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPrintTaskOptions {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub SetBordering: unsafe extern "system" fn(this: *mut *mut Self, value: PrintBordering) -> ::windows_sys::core::HRESULT,
+    pub Bordering: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut PrintBordering) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Storage_Streams")]
+    pub GetPagePrintTicket: unsafe extern "system" fn(this: *mut *mut Self, printpageinfo: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Storage_Streams"))]
+    GetPagePrintTicket: usize,
+}
+#[repr(C)]
+pub struct IPrintTaskOptions2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub PageRangeOptions: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub CustomPageRanges: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    CustomPageRanges: usize,
+}
+#[repr(C)]
+pub struct IPrintTaskOptionsCore {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub GetPageDescription: unsafe extern "system" fn(this: *mut *mut Self, jobpagenumber: u32, result__: *mut PrintPageDescription) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    GetPageDescription: usize,
+}
+#[repr(C)]
+pub struct IPrintTaskOptionsCoreProperties {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub SetMediaSize: unsafe extern "system" fn(this: *mut *mut Self, value: PrintMediaSize) -> ::windows_sys::core::HRESULT,
+    pub MediaSize: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut PrintMediaSize) -> ::windows_sys::core::HRESULT,
+    pub SetMediaType: unsafe extern "system" fn(this: *mut *mut Self, value: PrintMediaType) -> ::windows_sys::core::HRESULT,
+    pub MediaType: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut PrintMediaType) -> ::windows_sys::core::HRESULT,
+    pub SetOrientation: unsafe extern "system" fn(this: *mut *mut Self, value: PrintOrientation) -> ::windows_sys::core::HRESULT,
+    pub Orientation: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut PrintOrientation) -> ::windows_sys::core::HRESULT,
+    pub SetPrintQuality: unsafe extern "system" fn(this: *mut *mut Self, value: PrintQuality) -> ::windows_sys::core::HRESULT,
+    pub PrintQuality: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut PrintQuality) -> ::windows_sys::core::HRESULT,
+    pub SetColorMode: unsafe extern "system" fn(this: *mut *mut Self, value: PrintColorMode) -> ::windows_sys::core::HRESULT,
+    pub ColorMode: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut PrintColorMode) -> ::windows_sys::core::HRESULT,
+    pub SetDuplex: unsafe extern "system" fn(this: *mut *mut Self, value: PrintDuplex) -> ::windows_sys::core::HRESULT,
+    pub Duplex: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut PrintDuplex) -> ::windows_sys::core::HRESULT,
+    pub SetCollation: unsafe extern "system" fn(this: *mut *mut Self, value: PrintCollation) -> ::windows_sys::core::HRESULT,
+    pub Collation: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut PrintCollation) -> ::windows_sys::core::HRESULT,
+    pub SetStaple: unsafe extern "system" fn(this: *mut *mut Self, value: PrintStaple) -> ::windows_sys::core::HRESULT,
+    pub Staple: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut PrintStaple) -> ::windows_sys::core::HRESULT,
+    pub SetHolePunch: unsafe extern "system" fn(this: *mut *mut Self, value: PrintHolePunch) -> ::windows_sys::core::HRESULT,
+    pub HolePunch: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut PrintHolePunch) -> ::windows_sys::core::HRESULT,
+    pub SetBinding: unsafe extern "system" fn(this: *mut *mut Self, value: PrintBinding) -> ::windows_sys::core::HRESULT,
+    pub Binding: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut PrintBinding) -> ::windows_sys::core::HRESULT,
+    pub MinCopies: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub MaxCopies: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetNumberOfCopies: unsafe extern "system" fn(this: *mut *mut Self, value: u32) -> ::windows_sys::core::HRESULT,
+    pub NumberOfCopies: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPrintTaskOptionsCoreUIConfiguration {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation_Collections")]
+    pub DisplayedOptions: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    DisplayedOptions: usize,
+}
+#[repr(C)]
+pub struct IPrintTaskProgressingEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub DocumentPageCount: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPrintTaskRequest {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub Deadline: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Foundation::DateTime) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    Deadline: usize,
+    pub CreatePrintTask: unsafe extern "system" fn(this: *mut *mut Self, title: ::windows_sys::core::HSTRING, handler: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetDeferral: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPrintTaskRequestedDeferral {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Complete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPrintTaskRequestedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Request: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPrintTaskSourceRequestedArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub Deadline: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Foundation::DateTime) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    Deadline: usize,
+    pub SetSource: unsafe extern "system" fn(this: *mut *mut Self, source: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetDeferral: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPrintTaskSourceRequestedDeferral {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Complete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPrintTaskTargetDeviceSupport {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub SetIsPrinterTargetEnabled: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+    pub IsPrinterTargetEnabled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetIs3DManufacturingTargetEnabled: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+    pub Is3DManufacturingTargetEnabled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IStandardPrintTaskOptionsStatic {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub MediaSize: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub MediaType: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Orientation: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub PrintQuality: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub ColorMode: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Duplex: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Collation: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Staple: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub HolePunch: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Binding: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Copies: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub NUp: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub InputBin: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IStandardPrintTaskOptionsStatic2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Bordering: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IStandardPrintTaskOptionsStatic3 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CustomPageRanges: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
 #[doc = "*Required features: `\"Graphics_Printing\"`*"]
 #[repr(transparent)]
 pub struct PrintBinding(pub i32);

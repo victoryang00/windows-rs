@@ -198,7 +198,81 @@ pub const BackupLimitUserBusyMachineOnDC: FhBackupStopReason = 3i32;
 pub const BackupCancelled: FhBackupStopReason = 4i32;
 pub const FhConfigMgr: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3980639036, data2: 2537, data3: 18826, data4: [157, 246, 33, 119, 36, 76, 109, 180] };
 pub const FhReassociation: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1299353141, data2: 5882, data3: 17184, data4: [158, 139, 191, 215, 16, 10, 136, 70] };
-pub type IFhConfigMgr = *mut ::core::ffi::c_void;
-pub type IFhReassociation = *mut ::core::ffi::c_void;
-pub type IFhScopeIterator = *mut ::core::ffi::c_void;
-pub type IFhTarget = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IFhConfigMgr {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub LoadConfiguration: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CreateDefaultConfiguration: unsafe extern "system" fn(this: *mut *mut Self, overwriteifexists: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CreateDefaultConfiguration: usize,
+    pub SaveConfiguration: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AddRemoveExcludeRule: unsafe extern "system" fn(this: *mut *mut Self, add: super::super::Foundation::BOOL, category: FH_PROTECTED_ITEM_CATEGORY, item: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AddRemoveExcludeRule: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetIncludeExcludeRules: unsafe extern "system" fn(this: *mut *mut Self, include: super::super::Foundation::BOOL, category: FH_PROTECTED_ITEM_CATEGORY, iterator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetIncludeExcludeRules: usize,
+    pub GetLocalPolicy: unsafe extern "system" fn(this: *mut *mut Self, localpolicytype: FH_LOCAL_POLICY_TYPE, policyvalue: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub SetLocalPolicy: unsafe extern "system" fn(this: *mut *mut Self, localpolicytype: FH_LOCAL_POLICY_TYPE, policyvalue: u64) -> ::windows_sys::core::HRESULT,
+    pub GetBackupStatus: unsafe extern "system" fn(this: *mut *mut Self, backupstatus: *mut FH_BACKUP_STATUS) -> ::windows_sys::core::HRESULT,
+    pub SetBackupStatus: unsafe extern "system" fn(this: *mut *mut Self, backupstatus: FH_BACKUP_STATUS) -> ::windows_sys::core::HRESULT,
+    pub GetDefaultTarget: unsafe extern "system" fn(this: *mut *mut Self, defaulttarget: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ValidateTarget: unsafe extern "system" fn(this: *mut *mut Self, targeturl: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, validationresult: *mut FH_DEVICE_VALIDATION_RESULT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ValidateTarget: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ProvisionAndSetNewTarget: unsafe extern "system" fn(this: *mut *mut Self, targeturl: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, targetname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ProvisionAndSetNewTarget: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ChangeDefaultTargetRecommendation: unsafe extern "system" fn(this: *mut *mut Self, recommend: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ChangeDefaultTargetRecommendation: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub QueryProtectionStatus: unsafe extern "system" fn(this: *mut *mut Self, protectionstate: *mut u32, protecteduntiltime: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    QueryProtectionStatus: usize,
+}
+#[repr(C)]
+pub struct IFhReassociation {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ValidateTarget: unsafe extern "system" fn(this: *mut *mut Self, targeturl: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, validationresult: *mut FH_DEVICE_VALIDATION_RESULT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ValidateTarget: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ScanTargetForConfigurations: unsafe extern "system" fn(this: *mut *mut Self, targeturl: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ScanTargetForConfigurations: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetConfigurationDetails: unsafe extern "system" fn(this: *mut *mut Self, index: u32, username: *mut super::super::Foundation::BSTR, pcname: *mut super::super::Foundation::BSTR, backuptime: *mut super::super::Foundation::FILETIME) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetConfigurationDetails: usize,
+    pub SelectConfiguration: unsafe extern "system" fn(this: *mut *mut Self, index: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub PerformReassociation: unsafe extern "system" fn(this: *mut *mut Self, overwriteifexists: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    PerformReassociation: usize,
+}
+#[repr(C)]
+pub struct IFhScopeIterator {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub MoveToNextItem: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetItem: unsafe extern "system" fn(this: *mut *mut Self, item: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetItem: usize,
+}
+#[repr(C)]
+pub struct IFhTarget {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetStringProperty: unsafe extern "system" fn(this: *mut *mut Self, propertytype: FH_TARGET_PROPERTY_TYPE, propertyvalue: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetStringProperty: usize,
+    pub GetNumericalProperty: unsafe extern "system" fn(this: *mut *mut Self, propertytype: FH_TARGET_PROPERTY_TYPE, propertyvalue: *mut u64) -> ::windows_sys::core::HRESULT,
+}

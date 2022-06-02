@@ -1,34 +1,455 @@
-pub type IOpcCertificateEnumerator = *mut ::core::ffi::c_void;
-pub type IOpcCertificateSet = *mut ::core::ffi::c_void;
-pub type IOpcDigitalSignature = *mut ::core::ffi::c_void;
-pub type IOpcDigitalSignatureEnumerator = *mut ::core::ffi::c_void;
-pub type IOpcDigitalSignatureManager = *mut ::core::ffi::c_void;
-pub type IOpcFactory = *mut ::core::ffi::c_void;
-pub type IOpcPackage = *mut ::core::ffi::c_void;
-pub type IOpcPart = *mut ::core::ffi::c_void;
-pub type IOpcPartEnumerator = *mut ::core::ffi::c_void;
-pub type IOpcPartSet = *mut ::core::ffi::c_void;
-pub type IOpcPartUri = *mut ::core::ffi::c_void;
-pub type IOpcRelationship = *mut ::core::ffi::c_void;
-pub type IOpcRelationshipEnumerator = *mut ::core::ffi::c_void;
-pub type IOpcRelationshipSelector = *mut ::core::ffi::c_void;
-pub type IOpcRelationshipSelectorEnumerator = *mut ::core::ffi::c_void;
-pub type IOpcRelationshipSelectorSet = *mut ::core::ffi::c_void;
-pub type IOpcRelationshipSet = *mut ::core::ffi::c_void;
-pub type IOpcSignatureCustomObject = *mut ::core::ffi::c_void;
-pub type IOpcSignatureCustomObjectEnumerator = *mut ::core::ffi::c_void;
-pub type IOpcSignatureCustomObjectSet = *mut ::core::ffi::c_void;
-pub type IOpcSignaturePartReference = *mut ::core::ffi::c_void;
-pub type IOpcSignaturePartReferenceEnumerator = *mut ::core::ffi::c_void;
-pub type IOpcSignaturePartReferenceSet = *mut ::core::ffi::c_void;
-pub type IOpcSignatureReference = *mut ::core::ffi::c_void;
-pub type IOpcSignatureReferenceEnumerator = *mut ::core::ffi::c_void;
-pub type IOpcSignatureReferenceSet = *mut ::core::ffi::c_void;
-pub type IOpcSignatureRelationshipReference = *mut ::core::ffi::c_void;
-pub type IOpcSignatureRelationshipReferenceEnumerator = *mut ::core::ffi::c_void;
-pub type IOpcSignatureRelationshipReferenceSet = *mut ::core::ffi::c_void;
-pub type IOpcSigningOptions = *mut ::core::ffi::c_void;
-pub type IOpcUri = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IOpcCertificateEnumerator {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MoveNext: unsafe extern "system" fn(this: *mut *mut Self, hasnext: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MoveNext: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MovePrevious: unsafe extern "system" fn(this: *mut *mut Self, hasprevious: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MovePrevious: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+    pub GetCurrent: unsafe extern "system" fn(this: *mut *mut Self, certificate: *const *const super::super::super::Security::Cryptography::CERT_CONTEXT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography")))]
+    GetCurrent: usize,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, copy: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IOpcCertificateSet {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+    pub Add: unsafe extern "system" fn(this: *mut *mut Self, certificate: *const super::super::super::Security::Cryptography::CERT_CONTEXT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography")))]
+    Add: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+    pub Remove: unsafe extern "system" fn(this: *mut *mut Self, certificate: *const super::super::super::Security::Cryptography::CERT_CONTEXT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography")))]
+    Remove: usize,
+    pub GetEnumerator: unsafe extern "system" fn(this: *mut *mut Self, certificateenumerator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IOpcDigitalSignature {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetNamespaces: unsafe extern "system" fn(this: *mut *mut Self, prefixes: *mut *mut ::windows_sys::core::PWSTR, namespaces: *mut *mut ::windows_sys::core::PWSTR, count: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSignatureId: unsafe extern "system" fn(this: *mut *mut Self, signatureid: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetSignaturePartName: unsafe extern "system" fn(this: *mut *mut Self, signaturepartname: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetSignaturePartName: usize,
+    pub GetSignatureMethod: unsafe extern "system" fn(this: *mut *mut Self, signaturemethod: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetCanonicalizationMethod: unsafe extern "system" fn(this: *mut *mut Self, canonicalizationmethod: *mut OPC_CANONICALIZATION_METHOD) -> ::windows_sys::core::HRESULT,
+    pub GetSignatureValue: unsafe extern "system" fn(this: *mut *mut Self, signaturevalue: *mut *mut u8, count: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSignaturePartReferenceEnumerator: unsafe extern "system" fn(this: *mut *mut Self, partreferenceenumerator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetSignatureRelationshipReferenceEnumerator: unsafe extern "system" fn(this: *mut *mut Self, relationshipreferenceenumerator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetSigningTime: unsafe extern "system" fn(this: *mut *mut Self, signingtime: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetTimeFormat: unsafe extern "system" fn(this: *mut *mut Self, timeformat: *mut OPC_SIGNATURE_TIME_FORMAT) -> ::windows_sys::core::HRESULT,
+    pub GetPackageObjectReference: unsafe extern "system" fn(this: *mut *mut Self, packageobjectreference: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetCertificateEnumerator: unsafe extern "system" fn(this: *mut *mut Self, certificateenumerator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetCustomReferenceEnumerator: unsafe extern "system" fn(this: *mut *mut Self, customreferenceenumerator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetCustomObjectEnumerator: unsafe extern "system" fn(this: *mut *mut Self, customobjectenumerator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetSignatureXml: unsafe extern "system" fn(this: *mut *mut Self, signaturexml: *mut *mut u8, count: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IOpcDigitalSignatureEnumerator {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MoveNext: unsafe extern "system" fn(this: *mut *mut Self, hasnext: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MoveNext: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MovePrevious: unsafe extern "system" fn(this: *mut *mut Self, hasprevious: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MovePrevious: usize,
+    pub GetCurrent: unsafe extern "system" fn(this: *mut *mut Self, digitalsignature: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, copy: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IOpcDigitalSignatureManager {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetSignatureOriginPartName: unsafe extern "system" fn(this: *mut *mut Self, signatureoriginpartname: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetSignatureOriginPartName: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetSignatureOriginPartName: unsafe extern "system" fn(this: *mut *mut Self, signatureoriginpartname: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetSignatureOriginPartName: usize,
+    pub GetSignatureEnumerator: unsafe extern "system" fn(this: *mut *mut Self, signatureenumerator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub RemoveSignature: unsafe extern "system" fn(this: *mut *mut Self, signaturepartname: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    RemoveSignature: usize,
+    pub CreateSigningOptions: unsafe extern "system" fn(this: *mut *mut Self, signingoptions: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+    pub Validate: unsafe extern "system" fn(this: *mut *mut Self, signature: *mut ::core::ffi::c_void, certificate: *const super::super::super::Security::Cryptography::CERT_CONTEXT, validationresult: *mut OPC_SIGNATURE_VALIDATION_RESULT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography")))]
+    Validate: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+    pub Sign: unsafe extern "system" fn(this: *mut *mut Self, certificate: *const super::super::super::Security::Cryptography::CERT_CONTEXT, signingoptions: *mut ::core::ffi::c_void, digitalsignature: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography")))]
+    Sign: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub ReplaceSignatureXml: unsafe extern "system" fn(this: *mut *mut Self, signaturepartname: *mut ::core::ffi::c_void, newsignaturexml: *const u8, count: u32, digitalsignature: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    ReplaceSignatureXml: usize,
+}
+#[repr(C)]
+pub struct IOpcFactory {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreatePackageRootUri: unsafe extern "system" fn(this: *mut *mut Self, rooturi: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CreatePackageRootUri: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreatePartUri: unsafe extern "system" fn(this: *mut *mut Self, pwzuri: ::windows_sys::core::PCWSTR, parturi: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CreatePartUri: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security", feature = "Win32_System_Com"))]
+    pub CreateStreamOnFile: unsafe extern "system" fn(this: *mut *mut Self, filename: ::windows_sys::core::PCWSTR, iomode: OPC_STREAM_IO_MODE, securityattributes: *const super::super::super::Security::SECURITY_ATTRIBUTES, dwflagsandattributes: u32, stream: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Security", feature = "Win32_System_Com")))]
+    CreateStreamOnFile: usize,
+    pub CreatePackage: unsafe extern "system" fn(this: *mut *mut Self, package: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub ReadPackageFromStream: unsafe extern "system" fn(this: *mut *mut Self, stream: *mut ::core::ffi::c_void, flags: OPC_READ_FLAGS, package: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    ReadPackageFromStream: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub WritePackageToStream: unsafe extern "system" fn(this: *mut *mut Self, package: *mut ::core::ffi::c_void, flags: OPC_WRITE_FLAGS, stream: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    WritePackageToStream: usize,
+    pub CreateDigitalSignatureManager: unsafe extern "system" fn(this: *mut *mut Self, package: *mut ::core::ffi::c_void, signaturemanager: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IOpcPackage {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetPartSet: unsafe extern "system" fn(this: *mut *mut Self, partset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetRelationshipSet: unsafe extern "system" fn(this: *mut *mut Self, relationshipset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IOpcPart {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetRelationshipSet: unsafe extern "system" fn(this: *mut *mut Self, relationshipset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetContentStream: unsafe extern "system" fn(this: *mut *mut Self, stream: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetContentStream: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetName: unsafe extern "system" fn(this: *mut *mut Self, name: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetName: usize,
+    pub GetContentType: unsafe extern "system" fn(this: *mut *mut Self, contenttype: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetCompressionOptions: unsafe extern "system" fn(this: *mut *mut Self, compressionoptions: *mut OPC_COMPRESSION_OPTIONS) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IOpcPartEnumerator {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MoveNext: unsafe extern "system" fn(this: *mut *mut Self, hasnext: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MoveNext: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MovePrevious: unsafe extern "system" fn(this: *mut *mut Self, hasprevious: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MovePrevious: usize,
+    pub GetCurrent: unsafe extern "system" fn(this: *mut *mut Self, part: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, copy: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IOpcPartSet {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetPart: unsafe extern "system" fn(this: *mut *mut Self, name: *mut ::core::ffi::c_void, part: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetPart: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreatePart: unsafe extern "system" fn(this: *mut *mut Self, name: *mut ::core::ffi::c_void, contenttype: ::windows_sys::core::PCWSTR, compressionoptions: OPC_COMPRESSION_OPTIONS, part: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CreatePart: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub DeletePart: unsafe extern "system" fn(this: *mut *mut Self, name: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    DeletePart: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub PartExists: unsafe extern "system" fn(this: *mut *mut Self, name: *mut ::core::ffi::c_void, partexists: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    PartExists: usize,
+    pub GetEnumerator: unsafe extern "system" fn(this: *mut *mut Self, partenumerator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IOpcPartUri {
+    pub base__: IOpcUri,
+    #[cfg(feature = "Win32_System_Com")]
+    pub ComparePartUri: unsafe extern "system" fn(this: *mut *mut Self, parturi: *mut ::core::ffi::c_void, comparisonresult: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    ComparePartUri: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetSourceUri: unsafe extern "system" fn(this: *mut *mut Self, sourceuri: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetSourceUri: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsRelationshipsPartUri: unsafe extern "system" fn(this: *mut *mut Self, isrelationshipuri: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsRelationshipsPartUri: usize,
+}
+#[repr(C)]
+pub struct IOpcRelationship {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetId: unsafe extern "system" fn(this: *mut *mut Self, relationshipidentifier: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetRelationshipType: unsafe extern "system" fn(this: *mut *mut Self, relationshiptype: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetSourceUri: unsafe extern "system" fn(this: *mut *mut Self, sourceuri: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetSourceUri: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetTargetUri: unsafe extern "system" fn(this: *mut *mut Self, targeturi: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetTargetUri: usize,
+    pub GetTargetMode: unsafe extern "system" fn(this: *mut *mut Self, targetmode: *mut OPC_URI_TARGET_MODE) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IOpcRelationshipEnumerator {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MoveNext: unsafe extern "system" fn(this: *mut *mut Self, hasnext: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MoveNext: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MovePrevious: unsafe extern "system" fn(this: *mut *mut Self, hasprevious: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MovePrevious: usize,
+    pub GetCurrent: unsafe extern "system" fn(this: *mut *mut Self, relationship: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, copy: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IOpcRelationshipSelector {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetSelectorType: unsafe extern "system" fn(this: *mut *mut Self, selector: *mut OPC_RELATIONSHIP_SELECTOR) -> ::windows_sys::core::HRESULT,
+    pub GetSelectionCriterion: unsafe extern "system" fn(this: *mut *mut Self, selectioncriterion: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IOpcRelationshipSelectorEnumerator {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MoveNext: unsafe extern "system" fn(this: *mut *mut Self, hasnext: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MoveNext: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MovePrevious: unsafe extern "system" fn(this: *mut *mut Self, hasprevious: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MovePrevious: usize,
+    pub GetCurrent: unsafe extern "system" fn(this: *mut *mut Self, relationshipselector: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, copy: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IOpcRelationshipSelectorSet {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Create: unsafe extern "system" fn(this: *mut *mut Self, selector: OPC_RELATIONSHIP_SELECTOR, selectioncriterion: ::windows_sys::core::PCWSTR, relationshipselector: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Delete: unsafe extern "system" fn(this: *mut *mut Self, relationshipselector: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetEnumerator: unsafe extern "system" fn(this: *mut *mut Self, relationshipselectorenumerator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IOpcRelationshipSet {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetRelationship: unsafe extern "system" fn(this: *mut *mut Self, relationshipidentifier: ::windows_sys::core::PCWSTR, relationship: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreateRelationship: unsafe extern "system" fn(this: *mut *mut Self, relationshipidentifier: ::windows_sys::core::PCWSTR, relationshiptype: ::windows_sys::core::PCWSTR, targeturi: *mut ::core::ffi::c_void, targetmode: OPC_URI_TARGET_MODE, relationship: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CreateRelationship: usize,
+    pub DeleteRelationship: unsafe extern "system" fn(this: *mut *mut Self, relationshipidentifier: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RelationshipExists: unsafe extern "system" fn(this: *mut *mut Self, relationshipidentifier: ::windows_sys::core::PCWSTR, relationshipexists: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RelationshipExists: usize,
+    pub GetEnumerator: unsafe extern "system" fn(this: *mut *mut Self, relationshipenumerator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetEnumeratorForType: unsafe extern "system" fn(this: *mut *mut Self, relationshiptype: ::windows_sys::core::PCWSTR, relationshipenumerator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetRelationshipsContentStream: unsafe extern "system" fn(this: *mut *mut Self, contents: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetRelationshipsContentStream: usize,
+}
+#[repr(C)]
+pub struct IOpcSignatureCustomObject {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetXml: unsafe extern "system" fn(this: *mut *mut Self, xmlmarkup: *mut *mut u8, count: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IOpcSignatureCustomObjectEnumerator {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MoveNext: unsafe extern "system" fn(this: *mut *mut Self, hasnext: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MoveNext: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MovePrevious: unsafe extern "system" fn(this: *mut *mut Self, hasprevious: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MovePrevious: usize,
+    pub GetCurrent: unsafe extern "system" fn(this: *mut *mut Self, customobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, copy: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IOpcSignatureCustomObjectSet {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Create: unsafe extern "system" fn(this: *mut *mut Self, xmlmarkup: *const u8, count: u32, customobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Delete: unsafe extern "system" fn(this: *mut *mut Self, customobject: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetEnumerator: unsafe extern "system" fn(this: *mut *mut Self, customobjectenumerator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IOpcSignaturePartReference {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetPartName: unsafe extern "system" fn(this: *mut *mut Self, partname: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetPartName: usize,
+    pub GetContentType: unsafe extern "system" fn(this: *mut *mut Self, contenttype: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetDigestMethod: unsafe extern "system" fn(this: *mut *mut Self, digestmethod: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetDigestValue: unsafe extern "system" fn(this: *mut *mut Self, digestvalue: *mut *mut u8, count: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetTransformMethod: unsafe extern "system" fn(this: *mut *mut Self, transformmethod: *mut OPC_CANONICALIZATION_METHOD) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IOpcSignaturePartReferenceEnumerator {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MoveNext: unsafe extern "system" fn(this: *mut *mut Self, hasnext: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MoveNext: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MovePrevious: unsafe extern "system" fn(this: *mut *mut Self, hasprevious: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MovePrevious: usize,
+    pub GetCurrent: unsafe extern "system" fn(this: *mut *mut Self, partreference: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, copy: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IOpcSignaturePartReferenceSet {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Create: unsafe extern "system" fn(this: *mut *mut Self, parturi: *mut ::core::ffi::c_void, digestmethod: ::windows_sys::core::PCWSTR, transformmethod: OPC_CANONICALIZATION_METHOD, partreference: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Create: usize,
+    pub Delete: unsafe extern "system" fn(this: *mut *mut Self, partreference: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetEnumerator: unsafe extern "system" fn(this: *mut *mut Self, partreferenceenumerator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IOpcSignatureReference {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetId: unsafe extern "system" fn(this: *mut *mut Self, referenceid: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetUri: unsafe extern "system" fn(this: *mut *mut Self, referenceuri: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetUri: usize,
+    pub GetType: unsafe extern "system" fn(this: *mut *mut Self, r#type: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetTransformMethod: unsafe extern "system" fn(this: *mut *mut Self, transformmethod: *mut OPC_CANONICALIZATION_METHOD) -> ::windows_sys::core::HRESULT,
+    pub GetDigestMethod: unsafe extern "system" fn(this: *mut *mut Self, digestmethod: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetDigestValue: unsafe extern "system" fn(this: *mut *mut Self, digestvalue: *mut *mut u8, count: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IOpcSignatureReferenceEnumerator {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MoveNext: unsafe extern "system" fn(this: *mut *mut Self, hasnext: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MoveNext: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MovePrevious: unsafe extern "system" fn(this: *mut *mut Self, hasprevious: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MovePrevious: usize,
+    pub GetCurrent: unsafe extern "system" fn(this: *mut *mut Self, reference: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, copy: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IOpcSignatureReferenceSet {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Create: unsafe extern "system" fn(this: *mut *mut Self, referenceuri: *mut ::core::ffi::c_void, referenceid: ::windows_sys::core::PCWSTR, r#type: ::windows_sys::core::PCWSTR, digestmethod: ::windows_sys::core::PCWSTR, transformmethod: OPC_CANONICALIZATION_METHOD, reference: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Create: usize,
+    pub Delete: unsafe extern "system" fn(this: *mut *mut Self, reference: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetEnumerator: unsafe extern "system" fn(this: *mut *mut Self, referenceenumerator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IOpcSignatureRelationshipReference {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetSourceUri: unsafe extern "system" fn(this: *mut *mut Self, sourceuri: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetSourceUri: usize,
+    pub GetDigestMethod: unsafe extern "system" fn(this: *mut *mut Self, digestmethod: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetDigestValue: unsafe extern "system" fn(this: *mut *mut Self, digestvalue: *mut *mut u8, count: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetTransformMethod: unsafe extern "system" fn(this: *mut *mut Self, transformmethod: *mut OPC_CANONICALIZATION_METHOD) -> ::windows_sys::core::HRESULT,
+    pub GetRelationshipSigningOption: unsafe extern "system" fn(this: *mut *mut Self, relationshipsigningoption: *mut OPC_RELATIONSHIPS_SIGNING_OPTION) -> ::windows_sys::core::HRESULT,
+    pub GetRelationshipSelectorEnumerator: unsafe extern "system" fn(this: *mut *mut Self, selectorenumerator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IOpcSignatureRelationshipReferenceEnumerator {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MoveNext: unsafe extern "system" fn(this: *mut *mut Self, hasnext: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MoveNext: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MovePrevious: unsafe extern "system" fn(this: *mut *mut Self, hasprevious: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MovePrevious: usize,
+    pub GetCurrent: unsafe extern "system" fn(this: *mut *mut Self, relationshipreference: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, copy: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IOpcSignatureRelationshipReferenceSet {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Create: unsafe extern "system" fn(this: *mut *mut Self, sourceuri: *mut ::core::ffi::c_void, digestmethod: ::windows_sys::core::PCWSTR, relationshipsigningoption: OPC_RELATIONSHIPS_SIGNING_OPTION, selectorset: *mut ::core::ffi::c_void, transformmethod: OPC_CANONICALIZATION_METHOD, relationshipreference: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Create: usize,
+    pub CreateRelationshipSelectorSet: unsafe extern "system" fn(this: *mut *mut Self, selectorset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Delete: unsafe extern "system" fn(this: *mut *mut Self, relationshipreference: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetEnumerator: unsafe extern "system" fn(this: *mut *mut Self, relationshipreferenceenumerator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IOpcSigningOptions {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetSignatureId: unsafe extern "system" fn(this: *mut *mut Self, signatureid: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetSignatureId: unsafe extern "system" fn(this: *mut *mut Self, signatureid: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetSignatureMethod: unsafe extern "system" fn(this: *mut *mut Self, signaturemethod: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetSignatureMethod: unsafe extern "system" fn(this: *mut *mut Self, signaturemethod: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetDefaultDigestMethod: unsafe extern "system" fn(this: *mut *mut Self, digestmethod: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetDefaultDigestMethod: unsafe extern "system" fn(this: *mut *mut Self, digestmethod: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetCertificateEmbeddingOption: unsafe extern "system" fn(this: *mut *mut Self, embeddingoption: *mut OPC_CERTIFICATE_EMBEDDING_OPTION) -> ::windows_sys::core::HRESULT,
+    pub SetCertificateEmbeddingOption: unsafe extern "system" fn(this: *mut *mut Self, embeddingoption: OPC_CERTIFICATE_EMBEDDING_OPTION) -> ::windows_sys::core::HRESULT,
+    pub GetTimeFormat: unsafe extern "system" fn(this: *mut *mut Self, timeformat: *mut OPC_SIGNATURE_TIME_FORMAT) -> ::windows_sys::core::HRESULT,
+    pub SetTimeFormat: unsafe extern "system" fn(this: *mut *mut Self, timeformat: OPC_SIGNATURE_TIME_FORMAT) -> ::windows_sys::core::HRESULT,
+    pub GetSignaturePartReferenceSet: unsafe extern "system" fn(this: *mut *mut Self, partreferenceset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetSignatureRelationshipReferenceSet: unsafe extern "system" fn(this: *mut *mut Self, relationshipreferenceset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetCustomObjectSet: unsafe extern "system" fn(this: *mut *mut Self, customobjectset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetCustomReferenceSet: unsafe extern "system" fn(this: *mut *mut Self, customreferenceset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetCertificateSet: unsafe extern "system" fn(this: *mut *mut Self, certificateset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetSignaturePartName: unsafe extern "system" fn(this: *mut *mut Self, signaturepartname: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetSignaturePartName: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetSignaturePartName: unsafe extern "system" fn(this: *mut *mut Self, signaturepartname: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetSignaturePartName: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IOpcUri {
+    pub base__: super::super::super::System::Com::IUri,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetRelationshipsPartUri: unsafe extern "system" fn(this: *mut *mut Self, relationshipparturi: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetRelationshipsPartUri: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetRelativeUri: unsafe extern "system" fn(this: *mut *mut Self, targetparturi: *mut ::core::ffi::c_void, relativeuri: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetRelativeUri: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CombinePartUri: unsafe extern "system" fn(this: *mut *mut Self, relativeuri: *mut ::core::ffi::c_void, combineduri: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CombinePartUri: usize,
+}
 #[doc = "*Required features: `\"Win32_Storage_Packaging_Opc\"`*"]
 pub type OPC_CANONICALIZATION_METHOD = i32;
 #[doc = "*Required features: `\"Win32_Storage_Packaging_Opc\"`*"]

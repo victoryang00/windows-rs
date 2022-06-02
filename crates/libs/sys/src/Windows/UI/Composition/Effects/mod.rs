@@ -1,3 +1,29 @@
+#[repr(C)]
+pub struct ISceneLightingEffect {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub AmbientAmount: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f32) -> ::windows_sys::core::HRESULT,
+    pub SetAmbientAmount: unsafe extern "system" fn(this: *mut *mut Self, value: f32) -> ::windows_sys::core::HRESULT,
+    pub DiffuseAmount: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f32) -> ::windows_sys::core::HRESULT,
+    pub SetDiffuseAmount: unsafe extern "system" fn(this: *mut *mut Self, value: f32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Graphics_Effects")]
+    pub NormalMapSource: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Graphics_Effects"))]
+    NormalMapSource: usize,
+    #[cfg(feature = "Graphics_Effects")]
+    pub SetNormalMapSource: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Graphics_Effects"))]
+    SetNormalMapSource: usize,
+    pub SpecularAmount: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f32) -> ::windows_sys::core::HRESULT,
+    pub SetSpecularAmount: unsafe extern "system" fn(this: *mut *mut Self, value: f32) -> ::windows_sys::core::HRESULT,
+    pub SpecularShine: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f32) -> ::windows_sys::core::HRESULT,
+    pub SetSpecularShine: unsafe extern "system" fn(this: *mut *mut Self, value: f32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISceneLightingEffect2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub ReflectanceModel: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut SceneLightingEffectReflectanceModel) -> ::windows_sys::core::HRESULT,
+    pub SetReflectanceModel: unsafe extern "system" fn(this: *mut *mut Self, value: SceneLightingEffectReflectanceModel) -> ::windows_sys::core::HRESULT,
+}
 pub type SceneLightingEffect = *mut ::core::ffi::c_void;
 #[doc = "*Required features: `\"UI_Composition_Effects\"`*"]
 #[repr(transparent)]

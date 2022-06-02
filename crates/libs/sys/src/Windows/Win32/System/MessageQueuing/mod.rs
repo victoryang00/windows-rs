@@ -6,48 +6,1933 @@ pub const MQ_STATUS_FOREIGN: FOREIGN_STATUS = 0i32;
 pub const MQ_STATUS_NOT_FOREIGN: FOREIGN_STATUS = 1i32;
 #[doc = "*Required features: `\"Win32_System_MessageQueuing\"`*"]
 pub const MQ_STATUS_UNKNOWN: FOREIGN_STATUS = 2i32;
-pub type IMSMQApplication = *mut ::core::ffi::c_void;
-pub type IMSMQApplication2 = *mut ::core::ffi::c_void;
-pub type IMSMQApplication3 = *mut ::core::ffi::c_void;
-pub type IMSMQCollection = *mut ::core::ffi::c_void;
-pub type IMSMQCoordinatedTransactionDispenser = *mut ::core::ffi::c_void;
-pub type IMSMQCoordinatedTransactionDispenser2 = *mut ::core::ffi::c_void;
-pub type IMSMQCoordinatedTransactionDispenser3 = *mut ::core::ffi::c_void;
-pub type IMSMQDestination = *mut ::core::ffi::c_void;
-pub type IMSMQEvent = *mut ::core::ffi::c_void;
-pub type IMSMQEvent2 = *mut ::core::ffi::c_void;
-pub type IMSMQEvent3 = *mut ::core::ffi::c_void;
-pub type IMSMQManagement = *mut ::core::ffi::c_void;
-pub type IMSMQMessage = *mut ::core::ffi::c_void;
-pub type IMSMQMessage2 = *mut ::core::ffi::c_void;
-pub type IMSMQMessage3 = *mut ::core::ffi::c_void;
-pub type IMSMQMessage4 = *mut ::core::ffi::c_void;
-pub type IMSMQOutgoingQueueManagement = *mut ::core::ffi::c_void;
-pub type IMSMQPrivateDestination = *mut ::core::ffi::c_void;
-pub type IMSMQPrivateEvent = *mut ::core::ffi::c_void;
-pub type IMSMQQuery = *mut ::core::ffi::c_void;
-pub type IMSMQQuery2 = *mut ::core::ffi::c_void;
-pub type IMSMQQuery3 = *mut ::core::ffi::c_void;
-pub type IMSMQQuery4 = *mut ::core::ffi::c_void;
-pub type IMSMQQueue = *mut ::core::ffi::c_void;
-pub type IMSMQQueue2 = *mut ::core::ffi::c_void;
-pub type IMSMQQueue3 = *mut ::core::ffi::c_void;
-pub type IMSMQQueue4 = *mut ::core::ffi::c_void;
-pub type IMSMQQueueInfo = *mut ::core::ffi::c_void;
-pub type IMSMQQueueInfo2 = *mut ::core::ffi::c_void;
-pub type IMSMQQueueInfo3 = *mut ::core::ffi::c_void;
-pub type IMSMQQueueInfo4 = *mut ::core::ffi::c_void;
-pub type IMSMQQueueInfos = *mut ::core::ffi::c_void;
-pub type IMSMQQueueInfos2 = *mut ::core::ffi::c_void;
-pub type IMSMQQueueInfos3 = *mut ::core::ffi::c_void;
-pub type IMSMQQueueInfos4 = *mut ::core::ffi::c_void;
-pub type IMSMQQueueManagement = *mut ::core::ffi::c_void;
-pub type IMSMQTransaction = *mut ::core::ffi::c_void;
-pub type IMSMQTransaction2 = *mut ::core::ffi::c_void;
-pub type IMSMQTransaction3 = *mut ::core::ffi::c_void;
-pub type IMSMQTransactionDispenser = *mut ::core::ffi::c_void;
-pub type IMSMQTransactionDispenser2 = *mut ::core::ffi::c_void;
-pub type IMSMQTransactionDispenser3 = *mut ::core::ffi::c_void;
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IMSMQApplication {
+    pub base__: super::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MachineIdOfMachineName: unsafe extern "system" fn(this: *mut *mut Self, machinename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pbstrguid: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MachineIdOfMachineName: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IMSMQApplication2 {
+    pub base__: IMSMQApplication,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub RegisterCertificate: unsafe extern "system" fn(this: *mut *mut Self, flags: *const super::Com::VARIANT, externalcertificate: *const super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    RegisterCertificate: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MachineNameOfMachineId: unsafe extern "system" fn(this: *mut *mut Self, bstrguid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pbstrmachinename: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MachineNameOfMachineId: usize,
+    pub MSMQVersionMajor: unsafe extern "system" fn(this: *mut *mut Self, psmsmqversionmajor: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub MSMQVersionMinor: unsafe extern "system" fn(this: *mut *mut Self, psmsmqversionminor: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub MSMQVersionBuild: unsafe extern "system" fn(this: *mut *mut Self, psmsmqversionbuild: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub IsDsEnabled: unsafe extern "system" fn(this: *mut *mut Self, pfisdsenabled: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Properties: unsafe extern "system" fn(this: *mut *mut Self, ppcolproperties: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Properties: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IMSMQApplication3 {
+    pub base__: IMSMQApplication2,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub ActiveQueues: unsafe extern "system" fn(this: *mut *mut Self, pvactivequeues: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    ActiveQueues: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub PrivateQueues: unsafe extern "system" fn(this: *mut *mut Self, pvprivatequeues: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    PrivateQueues: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DirectoryServiceServer: unsafe extern "system" fn(this: *mut *mut Self, pbstrdirectoryserviceserver: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DirectoryServiceServer: usize,
+    pub IsConnected: unsafe extern "system" fn(this: *mut *mut Self, pfisconnected: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub BytesInAllQueues: unsafe extern "system" fn(this: *mut *mut Self, pvbytesinallqueues: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    BytesInAllQueues: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetMachine: unsafe extern "system" fn(this: *mut *mut Self, bstrmachine: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetMachine: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Machine: unsafe extern "system" fn(this: *mut *mut Self, pbstrmachine: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Machine: usize,
+    pub Connect: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Disconnect: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Tidy: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IMSMQCollection {
+    pub base__: super::Com::IDispatch,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Item: unsafe extern "system" fn(this: *mut *mut Self, index: *const super::Com::VARIANT, pvarret: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Item: usize,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, pcount: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, ppunk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IMSMQCoordinatedTransactionDispenser {
+    pub base__: super::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub BeginTransaction: unsafe extern "system" fn(this: *mut *mut Self, ptransaction: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    BeginTransaction: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IMSMQCoordinatedTransactionDispenser2 {
+    pub base__: super::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub BeginTransaction: unsafe extern "system" fn(this: *mut *mut Self, ptransaction: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    BeginTransaction: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Properties: unsafe extern "system" fn(this: *mut *mut Self, ppcolproperties: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Properties: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IMSMQCoordinatedTransactionDispenser3 {
+    pub base__: super::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub BeginTransaction: unsafe extern "system" fn(this: *mut *mut Self, ptransaction: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    BeginTransaction: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Properties: unsafe extern "system" fn(this: *mut *mut Self, ppcolproperties: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Properties: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IMSMQDestination {
+    pub base__: super::Com::IDispatch,
+    pub Open: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub IsOpen: unsafe extern "system" fn(this: *mut *mut Self, pfisopen: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub IADs: unsafe extern "system" fn(this: *mut *mut Self, ppiads: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    IADs: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub putref_IADs: unsafe extern "system" fn(this: *mut *mut Self, piads: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    putref_IADs: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ADsPath: unsafe extern "system" fn(this: *mut *mut Self, pbstradspath: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ADsPath: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetADsPath: unsafe extern "system" fn(this: *mut *mut Self, bstradspath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetADsPath: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub PathName: unsafe extern "system" fn(this: *mut *mut Self, pbstrpathname: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    PathName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetPathName: unsafe extern "system" fn(this: *mut *mut Self, bstrpathname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetPathName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub FormatName: unsafe extern "system" fn(this: *mut *mut Self, pbstrformatname: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    FormatName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetFormatName: unsafe extern "system" fn(this: *mut *mut Self, bstrformatname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetFormatName: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Destinations: unsafe extern "system" fn(this: *mut *mut Self, ppdestinations: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Destinations: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub putref_Destinations: unsafe extern "system" fn(this: *mut *mut Self, pdestinations: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    putref_Destinations: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Properties: unsafe extern "system" fn(this: *mut *mut Self, ppcolproperties: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Properties: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IMSMQEvent {
+    pub base__: super::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IMSMQEvent2 {
+    pub base__: IMSMQEvent,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Properties: unsafe extern "system" fn(this: *mut *mut Self, ppcolproperties: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Properties: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IMSMQEvent3 {
+    pub base__: IMSMQEvent2,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IMSMQManagement {
+    pub base__: super::Com::IDispatch,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Init: unsafe extern "system" fn(this: *mut *mut Self, machine: *const super::Com::VARIANT, pathname: *const super::Com::VARIANT, formatname: *const super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Init: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub FormatName: unsafe extern "system" fn(this: *mut *mut Self, pbstrformatname: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    FormatName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Machine: unsafe extern "system" fn(this: *mut *mut Self, pbstrmachine: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Machine: usize,
+    pub MessageCount: unsafe extern "system" fn(this: *mut *mut Self, plmessagecount: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub ForeignStatus: unsafe extern "system" fn(this: *mut *mut Self, plforeignstatus: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub QueueType: unsafe extern "system" fn(this: *mut *mut Self, plqueuetype: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub IsLocal: unsafe extern "system" fn(this: *mut *mut Self, pfislocal: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub TransactionalStatus: unsafe extern "system" fn(this: *mut *mut Self, pltransactionalstatus: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub BytesInQueue: unsafe extern "system" fn(this: *mut *mut Self, pvbytesinqueue: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    BytesInQueue: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IMSMQMessage {
+    pub base__: super::Com::IDispatch,
+    pub Class: unsafe extern "system" fn(this: *mut *mut Self, plclass: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub PrivLevel: unsafe extern "system" fn(this: *mut *mut Self, plprivlevel: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetPrivLevel: unsafe extern "system" fn(this: *mut *mut Self, lprivlevel: i32) -> ::windows_sys::core::HRESULT,
+    pub AuthLevel: unsafe extern "system" fn(this: *mut *mut Self, plauthlevel: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetAuthLevel: unsafe extern "system" fn(this: *mut *mut Self, lauthlevel: i32) -> ::windows_sys::core::HRESULT,
+    pub IsAuthenticated: unsafe extern "system" fn(this: *mut *mut Self, pisauthenticated: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub Delivery: unsafe extern "system" fn(this: *mut *mut Self, pldelivery: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetDelivery: unsafe extern "system" fn(this: *mut *mut Self, ldelivery: i32) -> ::windows_sys::core::HRESULT,
+    pub Trace: unsafe extern "system" fn(this: *mut *mut Self, pltrace: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetTrace: unsafe extern "system" fn(this: *mut *mut Self, ltrace: i32) -> ::windows_sys::core::HRESULT,
+    pub Priority: unsafe extern "system" fn(this: *mut *mut Self, plpriority: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetPriority: unsafe extern "system" fn(this: *mut *mut Self, lpriority: i32) -> ::windows_sys::core::HRESULT,
+    pub Journal: unsafe extern "system" fn(this: *mut *mut Self, pljournal: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetJournal: unsafe extern "system" fn(this: *mut *mut Self, ljournal: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub ResponseQueueInfo: unsafe extern "system" fn(this: *mut *mut Self, ppqinforesponse: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    ResponseQueueInfo: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub putref_ResponseQueueInfo: unsafe extern "system" fn(this: *mut *mut Self, pqinforesponse: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    putref_ResponseQueueInfo: usize,
+    pub AppSpecific: unsafe extern "system" fn(this: *mut *mut Self, plappspecific: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetAppSpecific: unsafe extern "system" fn(this: *mut *mut Self, lappspecific: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SourceMachineGuid: unsafe extern "system" fn(this: *mut *mut Self, pbstrguidsrcmachine: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SourceMachineGuid: usize,
+    pub BodyLength: unsafe extern "system" fn(this: *mut *mut Self, pcbbody: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Body: unsafe extern "system" fn(this: *mut *mut Self, pvarbody: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Body: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetBody: unsafe extern "system" fn(this: *mut *mut Self, varbody: ::core::mem::ManuallyDrop<super::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetBody: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub AdminQueueInfo: unsafe extern "system" fn(this: *mut *mut Self, ppqinfoadmin: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    AdminQueueInfo: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub putref_AdminQueueInfo: unsafe extern "system" fn(this: *mut *mut Self, pqinfoadmin: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    putref_AdminQueueInfo: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Id: unsafe extern "system" fn(this: *mut *mut Self, pvarmsgid: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Id: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub CorrelationId: unsafe extern "system" fn(this: *mut *mut Self, pvarmsgid: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    CorrelationId: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetCorrelationId: unsafe extern "system" fn(this: *mut *mut Self, varmsgid: ::core::mem::ManuallyDrop<super::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetCorrelationId: usize,
+    pub Ack: unsafe extern "system" fn(this: *mut *mut Self, plack: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetAck: unsafe extern "system" fn(this: *mut *mut Self, lack: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Label: unsafe extern "system" fn(this: *mut *mut Self, pbstrlabel: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Label: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetLabel: unsafe extern "system" fn(this: *mut *mut Self, bstrlabel: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetLabel: usize,
+    pub MaxTimeToReachQueue: unsafe extern "system" fn(this: *mut *mut Self, plmaxtimetoreachqueue: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetMaxTimeToReachQueue: unsafe extern "system" fn(this: *mut *mut Self, lmaxtimetoreachqueue: i32) -> ::windows_sys::core::HRESULT,
+    pub MaxTimeToReceive: unsafe extern "system" fn(this: *mut *mut Self, plmaxtimetoreceive: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetMaxTimeToReceive: unsafe extern "system" fn(this: *mut *mut Self, lmaxtimetoreceive: i32) -> ::windows_sys::core::HRESULT,
+    pub HashAlgorithm: unsafe extern "system" fn(this: *mut *mut Self, plhashalg: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetHashAlgorithm: unsafe extern "system" fn(this: *mut *mut Self, lhashalg: i32) -> ::windows_sys::core::HRESULT,
+    pub EncryptAlgorithm: unsafe extern "system" fn(this: *mut *mut Self, plencryptalg: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetEncryptAlgorithm: unsafe extern "system" fn(this: *mut *mut Self, lencryptalg: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SentTime: unsafe extern "system" fn(this: *mut *mut Self, pvarsenttime: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SentTime: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub ArrivedTime: unsafe extern "system" fn(this: *mut *mut Self, plarrivedtime: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    ArrivedTime: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub DestinationQueueInfo: unsafe extern "system" fn(this: *mut *mut Self, ppqinfodest: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    DestinationQueueInfo: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SenderCertificate: unsafe extern "system" fn(this: *mut *mut Self, pvarsendercert: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SenderCertificate: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetSenderCertificate: unsafe extern "system" fn(this: *mut *mut Self, varsendercert: ::core::mem::ManuallyDrop<super::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetSenderCertificate: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SenderId: unsafe extern "system" fn(this: *mut *mut Self, pvarsenderid: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SenderId: usize,
+    pub SenderIdType: unsafe extern "system" fn(this: *mut *mut Self, plsenderidtype: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetSenderIdType: unsafe extern "system" fn(this: *mut *mut Self, lsenderidtype: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Send: unsafe extern "system" fn(this: *mut *mut Self, destinationqueue: *mut ::core::ffi::c_void, transaction: *const super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Send: usize,
+    pub AttachCurrentSecurityContext: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IMSMQMessage2 {
+    pub base__: super::Com::IDispatch,
+    pub Class: unsafe extern "system" fn(this: *mut *mut Self, plclass: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub PrivLevel: unsafe extern "system" fn(this: *mut *mut Self, plprivlevel: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetPrivLevel: unsafe extern "system" fn(this: *mut *mut Self, lprivlevel: i32) -> ::windows_sys::core::HRESULT,
+    pub AuthLevel: unsafe extern "system" fn(this: *mut *mut Self, plauthlevel: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetAuthLevel: unsafe extern "system" fn(this: *mut *mut Self, lauthlevel: i32) -> ::windows_sys::core::HRESULT,
+    pub IsAuthenticated: unsafe extern "system" fn(this: *mut *mut Self, pisauthenticated: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub Delivery: unsafe extern "system" fn(this: *mut *mut Self, pldelivery: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetDelivery: unsafe extern "system" fn(this: *mut *mut Self, ldelivery: i32) -> ::windows_sys::core::HRESULT,
+    pub Trace: unsafe extern "system" fn(this: *mut *mut Self, pltrace: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetTrace: unsafe extern "system" fn(this: *mut *mut Self, ltrace: i32) -> ::windows_sys::core::HRESULT,
+    pub Priority: unsafe extern "system" fn(this: *mut *mut Self, plpriority: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetPriority: unsafe extern "system" fn(this: *mut *mut Self, lpriority: i32) -> ::windows_sys::core::HRESULT,
+    pub Journal: unsafe extern "system" fn(this: *mut *mut Self, pljournal: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetJournal: unsafe extern "system" fn(this: *mut *mut Self, ljournal: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub ResponseQueueInfo_v1: unsafe extern "system" fn(this: *mut *mut Self, ppqinforesponse: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    ResponseQueueInfo_v1: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub putref_ResponseQueueInfo_v1: unsafe extern "system" fn(this: *mut *mut Self, pqinforesponse: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    putref_ResponseQueueInfo_v1: usize,
+    pub AppSpecific: unsafe extern "system" fn(this: *mut *mut Self, plappspecific: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetAppSpecific: unsafe extern "system" fn(this: *mut *mut Self, lappspecific: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SourceMachineGuid: unsafe extern "system" fn(this: *mut *mut Self, pbstrguidsrcmachine: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SourceMachineGuid: usize,
+    pub BodyLength: unsafe extern "system" fn(this: *mut *mut Self, pcbbody: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Body: unsafe extern "system" fn(this: *mut *mut Self, pvarbody: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Body: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetBody: unsafe extern "system" fn(this: *mut *mut Self, varbody: ::core::mem::ManuallyDrop<super::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetBody: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub AdminQueueInfo_v1: unsafe extern "system" fn(this: *mut *mut Self, ppqinfoadmin: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    AdminQueueInfo_v1: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub putref_AdminQueueInfo_v1: unsafe extern "system" fn(this: *mut *mut Self, pqinfoadmin: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    putref_AdminQueueInfo_v1: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Id: unsafe extern "system" fn(this: *mut *mut Self, pvarmsgid: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Id: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub CorrelationId: unsafe extern "system" fn(this: *mut *mut Self, pvarmsgid: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    CorrelationId: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetCorrelationId: unsafe extern "system" fn(this: *mut *mut Self, varmsgid: ::core::mem::ManuallyDrop<super::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetCorrelationId: usize,
+    pub Ack: unsafe extern "system" fn(this: *mut *mut Self, plack: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetAck: unsafe extern "system" fn(this: *mut *mut Self, lack: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Label: unsafe extern "system" fn(this: *mut *mut Self, pbstrlabel: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Label: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetLabel: unsafe extern "system" fn(this: *mut *mut Self, bstrlabel: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetLabel: usize,
+    pub MaxTimeToReachQueue: unsafe extern "system" fn(this: *mut *mut Self, plmaxtimetoreachqueue: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetMaxTimeToReachQueue: unsafe extern "system" fn(this: *mut *mut Self, lmaxtimetoreachqueue: i32) -> ::windows_sys::core::HRESULT,
+    pub MaxTimeToReceive: unsafe extern "system" fn(this: *mut *mut Self, plmaxtimetoreceive: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetMaxTimeToReceive: unsafe extern "system" fn(this: *mut *mut Self, lmaxtimetoreceive: i32) -> ::windows_sys::core::HRESULT,
+    pub HashAlgorithm: unsafe extern "system" fn(this: *mut *mut Self, plhashalg: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetHashAlgorithm: unsafe extern "system" fn(this: *mut *mut Self, lhashalg: i32) -> ::windows_sys::core::HRESULT,
+    pub EncryptAlgorithm: unsafe extern "system" fn(this: *mut *mut Self, plencryptalg: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetEncryptAlgorithm: unsafe extern "system" fn(this: *mut *mut Self, lencryptalg: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SentTime: unsafe extern "system" fn(this: *mut *mut Self, pvarsenttime: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SentTime: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub ArrivedTime: unsafe extern "system" fn(this: *mut *mut Self, plarrivedtime: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    ArrivedTime: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub DestinationQueueInfo: unsafe extern "system" fn(this: *mut *mut Self, ppqinfodest: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    DestinationQueueInfo: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SenderCertificate: unsafe extern "system" fn(this: *mut *mut Self, pvarsendercert: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SenderCertificate: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetSenderCertificate: unsafe extern "system" fn(this: *mut *mut Self, varsendercert: ::core::mem::ManuallyDrop<super::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetSenderCertificate: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SenderId: unsafe extern "system" fn(this: *mut *mut Self, pvarsenderid: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SenderId: usize,
+    pub SenderIdType: unsafe extern "system" fn(this: *mut *mut Self, plsenderidtype: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetSenderIdType: unsafe extern "system" fn(this: *mut *mut Self, lsenderidtype: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Send: unsafe extern "system" fn(this: *mut *mut Self, destinationqueue: *mut ::core::ffi::c_void, transaction: *const super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Send: usize,
+    pub AttachCurrentSecurityContext: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub SenderVersion: unsafe extern "system" fn(this: *mut *mut Self, plsenderversion: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Extension: unsafe extern "system" fn(this: *mut *mut Self, pvarextension: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Extension: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetExtension: unsafe extern "system" fn(this: *mut *mut Self, varextension: ::core::mem::ManuallyDrop<super::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetExtension: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ConnectorTypeGuid: unsafe extern "system" fn(this: *mut *mut Self, pbstrguidconnectortype: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ConnectorTypeGuid: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetConnectorTypeGuid: unsafe extern "system" fn(this: *mut *mut Self, bstrguidconnectortype: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetConnectorTypeGuid: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub TransactionStatusQueueInfo: unsafe extern "system" fn(this: *mut *mut Self, ppqinfoxactstatus: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    TransactionStatusQueueInfo: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub DestinationSymmetricKey: unsafe extern "system" fn(this: *mut *mut Self, pvardestsymmkey: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    DestinationSymmetricKey: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetDestinationSymmetricKey: unsafe extern "system" fn(this: *mut *mut Self, vardestsymmkey: ::core::mem::ManuallyDrop<super::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetDestinationSymmetricKey: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Signature: unsafe extern "system" fn(this: *mut *mut Self, pvarsignature: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Signature: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetSignature: unsafe extern "system" fn(this: *mut *mut Self, varsignature: ::core::mem::ManuallyDrop<super::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetSignature: usize,
+    pub AuthenticationProviderType: unsafe extern "system" fn(this: *mut *mut Self, plauthprovtype: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetAuthenticationProviderType: unsafe extern "system" fn(this: *mut *mut Self, lauthprovtype: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AuthenticationProviderName: unsafe extern "system" fn(this: *mut *mut Self, pbstrauthprovname: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AuthenticationProviderName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetAuthenticationProviderName: unsafe extern "system" fn(this: *mut *mut Self, bstrauthprovname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetAuthenticationProviderName: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetSenderId: unsafe extern "system" fn(this: *mut *mut Self, varsenderid: ::core::mem::ManuallyDrop<super::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetSenderId: usize,
+    pub MsgClass: unsafe extern "system" fn(this: *mut *mut Self, plmsgclass: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetMsgClass: unsafe extern "system" fn(this: *mut *mut Self, lmsgclass: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Properties: unsafe extern "system" fn(this: *mut *mut Self, ppcolproperties: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Properties: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub TransactionId: unsafe extern "system" fn(this: *mut *mut Self, pvarxactid: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    TransactionId: usize,
+    pub IsFirstInTransaction: unsafe extern "system" fn(this: *mut *mut Self, pisfirstinxact: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub IsLastInTransaction: unsafe extern "system" fn(this: *mut *mut Self, pislastinxact: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub ResponseQueueInfo: unsafe extern "system" fn(this: *mut *mut Self, ppqinforesponse: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    ResponseQueueInfo: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub putref_ResponseQueueInfo: unsafe extern "system" fn(this: *mut *mut Self, pqinforesponse: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    putref_ResponseQueueInfo: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub AdminQueueInfo: unsafe extern "system" fn(this: *mut *mut Self, ppqinfoadmin: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    AdminQueueInfo: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub putref_AdminQueueInfo: unsafe extern "system" fn(this: *mut *mut Self, pqinfoadmin: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    putref_AdminQueueInfo: usize,
+    pub ReceivedAuthenticationLevel: unsafe extern "system" fn(this: *mut *mut Self, psreceivedauthenticationlevel: *mut i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IMSMQMessage3 {
+    pub base__: super::Com::IDispatch,
+    pub Class: unsafe extern "system" fn(this: *mut *mut Self, plclass: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub PrivLevel: unsafe extern "system" fn(this: *mut *mut Self, plprivlevel: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetPrivLevel: unsafe extern "system" fn(this: *mut *mut Self, lprivlevel: i32) -> ::windows_sys::core::HRESULT,
+    pub AuthLevel: unsafe extern "system" fn(this: *mut *mut Self, plauthlevel: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetAuthLevel: unsafe extern "system" fn(this: *mut *mut Self, lauthlevel: i32) -> ::windows_sys::core::HRESULT,
+    pub IsAuthenticated: unsafe extern "system" fn(this: *mut *mut Self, pisauthenticated: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub Delivery: unsafe extern "system" fn(this: *mut *mut Self, pldelivery: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetDelivery: unsafe extern "system" fn(this: *mut *mut Self, ldelivery: i32) -> ::windows_sys::core::HRESULT,
+    pub Trace: unsafe extern "system" fn(this: *mut *mut Self, pltrace: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetTrace: unsafe extern "system" fn(this: *mut *mut Self, ltrace: i32) -> ::windows_sys::core::HRESULT,
+    pub Priority: unsafe extern "system" fn(this: *mut *mut Self, plpriority: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetPriority: unsafe extern "system" fn(this: *mut *mut Self, lpriority: i32) -> ::windows_sys::core::HRESULT,
+    pub Journal: unsafe extern "system" fn(this: *mut *mut Self, pljournal: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetJournal: unsafe extern "system" fn(this: *mut *mut Self, ljournal: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub ResponseQueueInfo_v1: unsafe extern "system" fn(this: *mut *mut Self, ppqinforesponse: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    ResponseQueueInfo_v1: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub putref_ResponseQueueInfo_v1: unsafe extern "system" fn(this: *mut *mut Self, pqinforesponse: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    putref_ResponseQueueInfo_v1: usize,
+    pub AppSpecific: unsafe extern "system" fn(this: *mut *mut Self, plappspecific: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetAppSpecific: unsafe extern "system" fn(this: *mut *mut Self, lappspecific: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SourceMachineGuid: unsafe extern "system" fn(this: *mut *mut Self, pbstrguidsrcmachine: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SourceMachineGuid: usize,
+    pub BodyLength: unsafe extern "system" fn(this: *mut *mut Self, pcbbody: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Body: unsafe extern "system" fn(this: *mut *mut Self, pvarbody: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Body: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetBody: unsafe extern "system" fn(this: *mut *mut Self, varbody: ::core::mem::ManuallyDrop<super::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetBody: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub AdminQueueInfo_v1: unsafe extern "system" fn(this: *mut *mut Self, ppqinfoadmin: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    AdminQueueInfo_v1: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub putref_AdminQueueInfo_v1: unsafe extern "system" fn(this: *mut *mut Self, pqinfoadmin: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    putref_AdminQueueInfo_v1: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Id: unsafe extern "system" fn(this: *mut *mut Self, pvarmsgid: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Id: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub CorrelationId: unsafe extern "system" fn(this: *mut *mut Self, pvarmsgid: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    CorrelationId: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetCorrelationId: unsafe extern "system" fn(this: *mut *mut Self, varmsgid: ::core::mem::ManuallyDrop<super::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetCorrelationId: usize,
+    pub Ack: unsafe extern "system" fn(this: *mut *mut Self, plack: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetAck: unsafe extern "system" fn(this: *mut *mut Self, lack: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Label: unsafe extern "system" fn(this: *mut *mut Self, pbstrlabel: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Label: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetLabel: unsafe extern "system" fn(this: *mut *mut Self, bstrlabel: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetLabel: usize,
+    pub MaxTimeToReachQueue: unsafe extern "system" fn(this: *mut *mut Self, plmaxtimetoreachqueue: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetMaxTimeToReachQueue: unsafe extern "system" fn(this: *mut *mut Self, lmaxtimetoreachqueue: i32) -> ::windows_sys::core::HRESULT,
+    pub MaxTimeToReceive: unsafe extern "system" fn(this: *mut *mut Self, plmaxtimetoreceive: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetMaxTimeToReceive: unsafe extern "system" fn(this: *mut *mut Self, lmaxtimetoreceive: i32) -> ::windows_sys::core::HRESULT,
+    pub HashAlgorithm: unsafe extern "system" fn(this: *mut *mut Self, plhashalg: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetHashAlgorithm: unsafe extern "system" fn(this: *mut *mut Self, lhashalg: i32) -> ::windows_sys::core::HRESULT,
+    pub EncryptAlgorithm: unsafe extern "system" fn(this: *mut *mut Self, plencryptalg: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetEncryptAlgorithm: unsafe extern "system" fn(this: *mut *mut Self, lencryptalg: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SentTime: unsafe extern "system" fn(this: *mut *mut Self, pvarsenttime: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SentTime: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub ArrivedTime: unsafe extern "system" fn(this: *mut *mut Self, plarrivedtime: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    ArrivedTime: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub DestinationQueueInfo: unsafe extern "system" fn(this: *mut *mut Self, ppqinfodest: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    DestinationQueueInfo: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SenderCertificate: unsafe extern "system" fn(this: *mut *mut Self, pvarsendercert: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SenderCertificate: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetSenderCertificate: unsafe extern "system" fn(this: *mut *mut Self, varsendercert: ::core::mem::ManuallyDrop<super::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetSenderCertificate: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SenderId: unsafe extern "system" fn(this: *mut *mut Self, pvarsenderid: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SenderId: usize,
+    pub SenderIdType: unsafe extern "system" fn(this: *mut *mut Self, plsenderidtype: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetSenderIdType: unsafe extern "system" fn(this: *mut *mut Self, lsenderidtype: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Send: unsafe extern "system" fn(this: *mut *mut Self, destinationqueue: *mut ::core::ffi::c_void, transaction: *const super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Send: usize,
+    pub AttachCurrentSecurityContext: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub SenderVersion: unsafe extern "system" fn(this: *mut *mut Self, plsenderversion: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Extension: unsafe extern "system" fn(this: *mut *mut Self, pvarextension: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Extension: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetExtension: unsafe extern "system" fn(this: *mut *mut Self, varextension: ::core::mem::ManuallyDrop<super::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetExtension: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ConnectorTypeGuid: unsafe extern "system" fn(this: *mut *mut Self, pbstrguidconnectortype: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ConnectorTypeGuid: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetConnectorTypeGuid: unsafe extern "system" fn(this: *mut *mut Self, bstrguidconnectortype: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetConnectorTypeGuid: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub TransactionStatusQueueInfo: unsafe extern "system" fn(this: *mut *mut Self, ppqinfoxactstatus: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    TransactionStatusQueueInfo: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub DestinationSymmetricKey: unsafe extern "system" fn(this: *mut *mut Self, pvardestsymmkey: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    DestinationSymmetricKey: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetDestinationSymmetricKey: unsafe extern "system" fn(this: *mut *mut Self, vardestsymmkey: ::core::mem::ManuallyDrop<super::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetDestinationSymmetricKey: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Signature: unsafe extern "system" fn(this: *mut *mut Self, pvarsignature: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Signature: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetSignature: unsafe extern "system" fn(this: *mut *mut Self, varsignature: ::core::mem::ManuallyDrop<super::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetSignature: usize,
+    pub AuthenticationProviderType: unsafe extern "system" fn(this: *mut *mut Self, plauthprovtype: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetAuthenticationProviderType: unsafe extern "system" fn(this: *mut *mut Self, lauthprovtype: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AuthenticationProviderName: unsafe extern "system" fn(this: *mut *mut Self, pbstrauthprovname: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AuthenticationProviderName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetAuthenticationProviderName: unsafe extern "system" fn(this: *mut *mut Self, bstrauthprovname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetAuthenticationProviderName: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetSenderId: unsafe extern "system" fn(this: *mut *mut Self, varsenderid: ::core::mem::ManuallyDrop<super::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetSenderId: usize,
+    pub MsgClass: unsafe extern "system" fn(this: *mut *mut Self, plmsgclass: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetMsgClass: unsafe extern "system" fn(this: *mut *mut Self, lmsgclass: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Properties: unsafe extern "system" fn(this: *mut *mut Self, ppcolproperties: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Properties: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub TransactionId: unsafe extern "system" fn(this: *mut *mut Self, pvarxactid: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    TransactionId: usize,
+    pub IsFirstInTransaction: unsafe extern "system" fn(this: *mut *mut Self, pisfirstinxact: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub IsLastInTransaction: unsafe extern "system" fn(this: *mut *mut Self, pislastinxact: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub ResponseQueueInfo_v2: unsafe extern "system" fn(this: *mut *mut Self, ppqinforesponse: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    ResponseQueueInfo_v2: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub putref_ResponseQueueInfo_v2: unsafe extern "system" fn(this: *mut *mut Self, pqinforesponse: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    putref_ResponseQueueInfo_v2: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub AdminQueueInfo_v2: unsafe extern "system" fn(this: *mut *mut Self, ppqinfoadmin: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    AdminQueueInfo_v2: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub putref_AdminQueueInfo_v2: unsafe extern "system" fn(this: *mut *mut Self, pqinfoadmin: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    putref_AdminQueueInfo_v2: usize,
+    pub ReceivedAuthenticationLevel: unsafe extern "system" fn(this: *mut *mut Self, psreceivedauthenticationlevel: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub ResponseQueueInfo: unsafe extern "system" fn(this: *mut *mut Self, ppqinforesponse: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    ResponseQueueInfo: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub putref_ResponseQueueInfo: unsafe extern "system" fn(this: *mut *mut Self, pqinforesponse: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    putref_ResponseQueueInfo: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub AdminQueueInfo: unsafe extern "system" fn(this: *mut *mut Self, ppqinfoadmin: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    AdminQueueInfo: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub putref_AdminQueueInfo: unsafe extern "system" fn(this: *mut *mut Self, pqinfoadmin: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    putref_AdminQueueInfo: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub ResponseDestination: unsafe extern "system" fn(this: *mut *mut Self, ppdestresponse: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    ResponseDestination: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub putref_ResponseDestination: unsafe extern "system" fn(this: *mut *mut Self, pdestresponse: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    putref_ResponseDestination: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Destination: unsafe extern "system" fn(this: *mut *mut Self, ppdestdestination: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Destination: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub LookupId: unsafe extern "system" fn(this: *mut *mut Self, pvarlookupid: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    LookupId: usize,
+    pub IsAuthenticated2: unsafe extern "system" fn(this: *mut *mut Self, pisauthenticated: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub IsFirstInTransaction2: unsafe extern "system" fn(this: *mut *mut Self, pisfirstinxact: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub IsLastInTransaction2: unsafe extern "system" fn(this: *mut *mut Self, pislastinxact: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub AttachCurrentSecurityContext2: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SoapEnvelope: unsafe extern "system" fn(this: *mut *mut Self, pbstrsoapenvelope: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SoapEnvelope: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub CompoundMessage: unsafe extern "system" fn(this: *mut *mut Self, pvarcompoundmessage: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    CompoundMessage: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetSoapHeader: unsafe extern "system" fn(this: *mut *mut Self, bstrsoapheader: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetSoapHeader: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetSoapBody: unsafe extern "system" fn(this: *mut *mut Self, bstrsoapbody: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetSoapBody: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IMSMQMessage4 {
+    pub base__: super::Com::IDispatch,
+    pub Class: unsafe extern "system" fn(this: *mut *mut Self, plclass: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub PrivLevel: unsafe extern "system" fn(this: *mut *mut Self, plprivlevel: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetPrivLevel: unsafe extern "system" fn(this: *mut *mut Self, lprivlevel: i32) -> ::windows_sys::core::HRESULT,
+    pub AuthLevel: unsafe extern "system" fn(this: *mut *mut Self, plauthlevel: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetAuthLevel: unsafe extern "system" fn(this: *mut *mut Self, lauthlevel: i32) -> ::windows_sys::core::HRESULT,
+    pub IsAuthenticated: unsafe extern "system" fn(this: *mut *mut Self, pisauthenticated: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub Delivery: unsafe extern "system" fn(this: *mut *mut Self, pldelivery: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetDelivery: unsafe extern "system" fn(this: *mut *mut Self, ldelivery: i32) -> ::windows_sys::core::HRESULT,
+    pub Trace: unsafe extern "system" fn(this: *mut *mut Self, pltrace: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetTrace: unsafe extern "system" fn(this: *mut *mut Self, ltrace: i32) -> ::windows_sys::core::HRESULT,
+    pub Priority: unsafe extern "system" fn(this: *mut *mut Self, plpriority: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetPriority: unsafe extern "system" fn(this: *mut *mut Self, lpriority: i32) -> ::windows_sys::core::HRESULT,
+    pub Journal: unsafe extern "system" fn(this: *mut *mut Self, pljournal: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetJournal: unsafe extern "system" fn(this: *mut *mut Self, ljournal: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub ResponseQueueInfo_v1: unsafe extern "system" fn(this: *mut *mut Self, ppqinforesponse: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    ResponseQueueInfo_v1: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub putref_ResponseQueueInfo_v1: unsafe extern "system" fn(this: *mut *mut Self, pqinforesponse: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    putref_ResponseQueueInfo_v1: usize,
+    pub AppSpecific: unsafe extern "system" fn(this: *mut *mut Self, plappspecific: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetAppSpecific: unsafe extern "system" fn(this: *mut *mut Self, lappspecific: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SourceMachineGuid: unsafe extern "system" fn(this: *mut *mut Self, pbstrguidsrcmachine: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SourceMachineGuid: usize,
+    pub BodyLength: unsafe extern "system" fn(this: *mut *mut Self, pcbbody: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Body: unsafe extern "system" fn(this: *mut *mut Self, pvarbody: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Body: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetBody: unsafe extern "system" fn(this: *mut *mut Self, varbody: ::core::mem::ManuallyDrop<super::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetBody: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub AdminQueueInfo_v1: unsafe extern "system" fn(this: *mut *mut Self, ppqinfoadmin: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    AdminQueueInfo_v1: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub putref_AdminQueueInfo_v1: unsafe extern "system" fn(this: *mut *mut Self, pqinfoadmin: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    putref_AdminQueueInfo_v1: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Id: unsafe extern "system" fn(this: *mut *mut Self, pvarmsgid: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Id: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub CorrelationId: unsafe extern "system" fn(this: *mut *mut Self, pvarmsgid: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    CorrelationId: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetCorrelationId: unsafe extern "system" fn(this: *mut *mut Self, varmsgid: ::core::mem::ManuallyDrop<super::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetCorrelationId: usize,
+    pub Ack: unsafe extern "system" fn(this: *mut *mut Self, plack: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetAck: unsafe extern "system" fn(this: *mut *mut Self, lack: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Label: unsafe extern "system" fn(this: *mut *mut Self, pbstrlabel: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Label: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetLabel: unsafe extern "system" fn(this: *mut *mut Self, bstrlabel: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetLabel: usize,
+    pub MaxTimeToReachQueue: unsafe extern "system" fn(this: *mut *mut Self, plmaxtimetoreachqueue: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetMaxTimeToReachQueue: unsafe extern "system" fn(this: *mut *mut Self, lmaxtimetoreachqueue: i32) -> ::windows_sys::core::HRESULT,
+    pub MaxTimeToReceive: unsafe extern "system" fn(this: *mut *mut Self, plmaxtimetoreceive: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetMaxTimeToReceive: unsafe extern "system" fn(this: *mut *mut Self, lmaxtimetoreceive: i32) -> ::windows_sys::core::HRESULT,
+    pub HashAlgorithm: unsafe extern "system" fn(this: *mut *mut Self, plhashalg: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetHashAlgorithm: unsafe extern "system" fn(this: *mut *mut Self, lhashalg: i32) -> ::windows_sys::core::HRESULT,
+    pub EncryptAlgorithm: unsafe extern "system" fn(this: *mut *mut Self, plencryptalg: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetEncryptAlgorithm: unsafe extern "system" fn(this: *mut *mut Self, lencryptalg: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SentTime: unsafe extern "system" fn(this: *mut *mut Self, pvarsenttime: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SentTime: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub ArrivedTime: unsafe extern "system" fn(this: *mut *mut Self, plarrivedtime: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    ArrivedTime: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub DestinationQueueInfo: unsafe extern "system" fn(this: *mut *mut Self, ppqinfodest: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    DestinationQueueInfo: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SenderCertificate: unsafe extern "system" fn(this: *mut *mut Self, pvarsendercert: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SenderCertificate: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetSenderCertificate: unsafe extern "system" fn(this: *mut *mut Self, varsendercert: ::core::mem::ManuallyDrop<super::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetSenderCertificate: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SenderId: unsafe extern "system" fn(this: *mut *mut Self, pvarsenderid: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SenderId: usize,
+    pub SenderIdType: unsafe extern "system" fn(this: *mut *mut Self, plsenderidtype: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetSenderIdType: unsafe extern "system" fn(this: *mut *mut Self, lsenderidtype: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Send: unsafe extern "system" fn(this: *mut *mut Self, destinationqueue: *mut ::core::ffi::c_void, transaction: *const super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Send: usize,
+    pub AttachCurrentSecurityContext: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub SenderVersion: unsafe extern "system" fn(this: *mut *mut Self, plsenderversion: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Extension: unsafe extern "system" fn(this: *mut *mut Self, pvarextension: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Extension: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetExtension: unsafe extern "system" fn(this: *mut *mut Self, varextension: ::core::mem::ManuallyDrop<super::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetExtension: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ConnectorTypeGuid: unsafe extern "system" fn(this: *mut *mut Self, pbstrguidconnectortype: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ConnectorTypeGuid: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetConnectorTypeGuid: unsafe extern "system" fn(this: *mut *mut Self, bstrguidconnectortype: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetConnectorTypeGuid: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub TransactionStatusQueueInfo: unsafe extern "system" fn(this: *mut *mut Self, ppqinfoxactstatus: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    TransactionStatusQueueInfo: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub DestinationSymmetricKey: unsafe extern "system" fn(this: *mut *mut Self, pvardestsymmkey: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    DestinationSymmetricKey: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetDestinationSymmetricKey: unsafe extern "system" fn(this: *mut *mut Self, vardestsymmkey: ::core::mem::ManuallyDrop<super::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetDestinationSymmetricKey: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Signature: unsafe extern "system" fn(this: *mut *mut Self, pvarsignature: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Signature: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetSignature: unsafe extern "system" fn(this: *mut *mut Self, varsignature: ::core::mem::ManuallyDrop<super::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetSignature: usize,
+    pub AuthenticationProviderType: unsafe extern "system" fn(this: *mut *mut Self, plauthprovtype: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetAuthenticationProviderType: unsafe extern "system" fn(this: *mut *mut Self, lauthprovtype: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AuthenticationProviderName: unsafe extern "system" fn(this: *mut *mut Self, pbstrauthprovname: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AuthenticationProviderName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetAuthenticationProviderName: unsafe extern "system" fn(this: *mut *mut Self, bstrauthprovname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetAuthenticationProviderName: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetSenderId: unsafe extern "system" fn(this: *mut *mut Self, varsenderid: ::core::mem::ManuallyDrop<super::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetSenderId: usize,
+    pub MsgClass: unsafe extern "system" fn(this: *mut *mut Self, plmsgclass: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetMsgClass: unsafe extern "system" fn(this: *mut *mut Self, lmsgclass: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Properties: unsafe extern "system" fn(this: *mut *mut Self, ppcolproperties: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Properties: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub TransactionId: unsafe extern "system" fn(this: *mut *mut Self, pvarxactid: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    TransactionId: usize,
+    pub IsFirstInTransaction: unsafe extern "system" fn(this: *mut *mut Self, pisfirstinxact: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub IsLastInTransaction: unsafe extern "system" fn(this: *mut *mut Self, pislastinxact: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub ResponseQueueInfo_v2: unsafe extern "system" fn(this: *mut *mut Self, ppqinforesponse: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    ResponseQueueInfo_v2: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub putref_ResponseQueueInfo_v2: unsafe extern "system" fn(this: *mut *mut Self, pqinforesponse: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    putref_ResponseQueueInfo_v2: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub AdminQueueInfo_v2: unsafe extern "system" fn(this: *mut *mut Self, ppqinfoadmin: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    AdminQueueInfo_v2: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub putref_AdminQueueInfo_v2: unsafe extern "system" fn(this: *mut *mut Self, pqinfoadmin: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    putref_AdminQueueInfo_v2: usize,
+    pub ReceivedAuthenticationLevel: unsafe extern "system" fn(this: *mut *mut Self, psreceivedauthenticationlevel: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub ResponseQueueInfo: unsafe extern "system" fn(this: *mut *mut Self, ppqinforesponse: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    ResponseQueueInfo: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub putref_ResponseQueueInfo: unsafe extern "system" fn(this: *mut *mut Self, pqinforesponse: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    putref_ResponseQueueInfo: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub AdminQueueInfo: unsafe extern "system" fn(this: *mut *mut Self, ppqinfoadmin: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    AdminQueueInfo: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub putref_AdminQueueInfo: unsafe extern "system" fn(this: *mut *mut Self, pqinfoadmin: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    putref_AdminQueueInfo: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub ResponseDestination: unsafe extern "system" fn(this: *mut *mut Self, ppdestresponse: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    ResponseDestination: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub putref_ResponseDestination: unsafe extern "system" fn(this: *mut *mut Self, pdestresponse: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    putref_ResponseDestination: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Destination: unsafe extern "system" fn(this: *mut *mut Self, ppdestdestination: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Destination: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub LookupId: unsafe extern "system" fn(this: *mut *mut Self, pvarlookupid: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    LookupId: usize,
+    pub IsAuthenticated2: unsafe extern "system" fn(this: *mut *mut Self, pisauthenticated: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub IsFirstInTransaction2: unsafe extern "system" fn(this: *mut *mut Self, pisfirstinxact: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub IsLastInTransaction2: unsafe extern "system" fn(this: *mut *mut Self, pislastinxact: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub AttachCurrentSecurityContext2: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SoapEnvelope: unsafe extern "system" fn(this: *mut *mut Self, pbstrsoapenvelope: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SoapEnvelope: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub CompoundMessage: unsafe extern "system" fn(this: *mut *mut Self, pvarcompoundmessage: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    CompoundMessage: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetSoapHeader: unsafe extern "system" fn(this: *mut *mut Self, bstrsoapheader: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetSoapHeader: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetSoapBody: unsafe extern "system" fn(this: *mut *mut Self, bstrsoapbody: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetSoapBody: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IMSMQOutgoingQueueManagement {
+    pub base__: IMSMQManagement,
+    pub State: unsafe extern "system" fn(this: *mut *mut Self, plstate: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub NextHops: unsafe extern "system" fn(this: *mut *mut Self, pvnexthops: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    NextHops: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub EodGetSendInfo: unsafe extern "system" fn(this: *mut *mut Self, ppcollection: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    EodGetSendInfo: usize,
+    pub Resume: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Pause: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub EodResend: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IMSMQPrivateDestination {
+    pub base__: super::Com::IDispatch,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Handle: unsafe extern "system" fn(this: *mut *mut Self, pvarhandle: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Handle: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetHandle: unsafe extern "system" fn(this: *mut *mut Self, varhandle: ::core::mem::ManuallyDrop<super::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetHandle: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IMSMQPrivateEvent {
+    pub base__: super::Com::IDispatch,
+    pub Hwnd: unsafe extern "system" fn(this: *mut *mut Self, phwnd: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub FireArrivedEvent: unsafe extern "system" fn(this: *mut *mut Self, pq: *mut ::core::ffi::c_void, msgcursor: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    FireArrivedEvent: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub FireArrivedErrorEvent: unsafe extern "system" fn(this: *mut *mut Self, pq: *mut ::core::ffi::c_void, hrstatus: ::windows_sys::core::HRESULT, msgcursor: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    FireArrivedErrorEvent: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IMSMQQuery {
+    pub base__: super::Com::IDispatch,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub LookupQueue: unsafe extern "system" fn(this: *mut *mut Self, queueguid: *const super::Com::VARIANT, servicetypeguid: *const super::Com::VARIANT, label: *const super::Com::VARIANT, createtime: *const super::Com::VARIANT, modifytime: *const super::Com::VARIANT, relservicetype: *const super::Com::VARIANT, rellabel: *const super::Com::VARIANT, relcreatetime: *const super::Com::VARIANT, relmodifytime: *const super::Com::VARIANT, ppqinfos: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    LookupQueue: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IMSMQQuery2 {
+    pub base__: super::Com::IDispatch,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub LookupQueue: unsafe extern "system" fn(this: *mut *mut Self, queueguid: *const super::Com::VARIANT, servicetypeguid: *const super::Com::VARIANT, label: *const super::Com::VARIANT, createtime: *const super::Com::VARIANT, modifytime: *const super::Com::VARIANT, relservicetype: *const super::Com::VARIANT, rellabel: *const super::Com::VARIANT, relcreatetime: *const super::Com::VARIANT, relmodifytime: *const super::Com::VARIANT, ppqinfos: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    LookupQueue: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Properties: unsafe extern "system" fn(this: *mut *mut Self, ppcolproperties: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Properties: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IMSMQQuery3 {
+    pub base__: super::Com::IDispatch,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub LookupQueue_v2: unsafe extern "system" fn(this: *mut *mut Self, queueguid: *const super::Com::VARIANT, servicetypeguid: *const super::Com::VARIANT, label: *const super::Com::VARIANT, createtime: *const super::Com::VARIANT, modifytime: *const super::Com::VARIANT, relservicetype: *const super::Com::VARIANT, rellabel: *const super::Com::VARIANT, relcreatetime: *const super::Com::VARIANT, relmodifytime: *const super::Com::VARIANT, ppqinfos: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    LookupQueue_v2: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Properties: unsafe extern "system" fn(this: *mut *mut Self, ppcolproperties: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Properties: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub LookupQueue: unsafe extern "system" fn(this: *mut *mut Self, queueguid: *const super::Com::VARIANT, servicetypeguid: *const super::Com::VARIANT, label: *const super::Com::VARIANT, createtime: *const super::Com::VARIANT, modifytime: *const super::Com::VARIANT, relservicetype: *const super::Com::VARIANT, rellabel: *const super::Com::VARIANT, relcreatetime: *const super::Com::VARIANT, relmodifytime: *const super::Com::VARIANT, multicastaddress: *const super::Com::VARIANT, relmulticastaddress: *const super::Com::VARIANT, ppqinfos: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    LookupQueue: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IMSMQQuery4 {
+    pub base__: super::Com::IDispatch,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub LookupQueue_v2: unsafe extern "system" fn(this: *mut *mut Self, queueguid: *const super::Com::VARIANT, servicetypeguid: *const super::Com::VARIANT, label: *const super::Com::VARIANT, createtime: *const super::Com::VARIANT, modifytime: *const super::Com::VARIANT, relservicetype: *const super::Com::VARIANT, rellabel: *const super::Com::VARIANT, relcreatetime: *const super::Com::VARIANT, relmodifytime: *const super::Com::VARIANT, ppqinfos: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    LookupQueue_v2: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Properties: unsafe extern "system" fn(this: *mut *mut Self, ppcolproperties: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Properties: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub LookupQueue: unsafe extern "system" fn(this: *mut *mut Self, queueguid: *const super::Com::VARIANT, servicetypeguid: *const super::Com::VARIANT, label: *const super::Com::VARIANT, createtime: *const super::Com::VARIANT, modifytime: *const super::Com::VARIANT, relservicetype: *const super::Com::VARIANT, rellabel: *const super::Com::VARIANT, relcreatetime: *const super::Com::VARIANT, relmodifytime: *const super::Com::VARIANT, multicastaddress: *const super::Com::VARIANT, relmulticastaddress: *const super::Com::VARIANT, ppqinfos: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    LookupQueue: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IMSMQQueue {
+    pub base__: super::Com::IDispatch,
+    pub Access: unsafe extern "system" fn(this: *mut *mut Self, placcess: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub ShareMode: unsafe extern "system" fn(this: *mut *mut Self, plsharemode: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub QueueInfo: unsafe extern "system" fn(this: *mut *mut Self, ppqinfo: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    QueueInfo: usize,
+    pub Handle: unsafe extern "system" fn(this: *mut *mut Self, plhandle: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub IsOpen: unsafe extern "system" fn(this: *mut *mut Self, pisopen: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Receive: unsafe extern "system" fn(this: *mut *mut Self, transaction: *const super::Com::VARIANT, wantdestinationqueue: *const super::Com::VARIANT, wantbody: *const super::Com::VARIANT, receivetimeout: *const super::Com::VARIANT, ppmsg: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Receive: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Peek: unsafe extern "system" fn(this: *mut *mut Self, wantdestinationqueue: *const super::Com::VARIANT, wantbody: *const super::Com::VARIANT, receivetimeout: *const super::Com::VARIANT, ppmsg: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Peek: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub EnableNotification: unsafe extern "system" fn(this: *mut *mut Self, event: *mut ::core::ffi::c_void, cursor: *const super::Com::VARIANT, receivetimeout: *const super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    EnableNotification: usize,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub ReceiveCurrent: unsafe extern "system" fn(this: *mut *mut Self, transaction: *const super::Com::VARIANT, wantdestinationqueue: *const super::Com::VARIANT, wantbody: *const super::Com::VARIANT, receivetimeout: *const super::Com::VARIANT, ppmsg: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    ReceiveCurrent: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub PeekNext: unsafe extern "system" fn(this: *mut *mut Self, wantdestinationqueue: *const super::Com::VARIANT, wantbody: *const super::Com::VARIANT, receivetimeout: *const super::Com::VARIANT, ppmsg: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    PeekNext: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub PeekCurrent: unsafe extern "system" fn(this: *mut *mut Self, wantdestinationqueue: *const super::Com::VARIANT, wantbody: *const super::Com::VARIANT, receivetimeout: *const super::Com::VARIANT, ppmsg: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    PeekCurrent: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IMSMQQueue2 {
+    pub base__: super::Com::IDispatch,
+    pub Access: unsafe extern "system" fn(this: *mut *mut Self, placcess: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub ShareMode: unsafe extern "system" fn(this: *mut *mut Self, plsharemode: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub QueueInfo: unsafe extern "system" fn(this: *mut *mut Self, ppqinfo: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    QueueInfo: usize,
+    pub Handle: unsafe extern "system" fn(this: *mut *mut Self, plhandle: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub IsOpen: unsafe extern "system" fn(this: *mut *mut Self, pisopen: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Receive_v1: unsafe extern "system" fn(this: *mut *mut Self, transaction: *const super::Com::VARIANT, wantdestinationqueue: *const super::Com::VARIANT, wantbody: *const super::Com::VARIANT, receivetimeout: *const super::Com::VARIANT, ppmsg: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Receive_v1: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Peek_v1: unsafe extern "system" fn(this: *mut *mut Self, wantdestinationqueue: *const super::Com::VARIANT, wantbody: *const super::Com::VARIANT, receivetimeout: *const super::Com::VARIANT, ppmsg: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Peek_v1: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub EnableNotification: unsafe extern "system" fn(this: *mut *mut Self, event: *mut ::core::ffi::c_void, cursor: *const super::Com::VARIANT, receivetimeout: *const super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    EnableNotification: usize,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub ReceiveCurrent_v1: unsafe extern "system" fn(this: *mut *mut Self, transaction: *const super::Com::VARIANT, wantdestinationqueue: *const super::Com::VARIANT, wantbody: *const super::Com::VARIANT, receivetimeout: *const super::Com::VARIANT, ppmsg: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    ReceiveCurrent_v1: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub PeekNext_v1: unsafe extern "system" fn(this: *mut *mut Self, wantdestinationqueue: *const super::Com::VARIANT, wantbody: *const super::Com::VARIANT, receivetimeout: *const super::Com::VARIANT, ppmsg: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    PeekNext_v1: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub PeekCurrent_v1: unsafe extern "system" fn(this: *mut *mut Self, wantdestinationqueue: *const super::Com::VARIANT, wantbody: *const super::Com::VARIANT, receivetimeout: *const super::Com::VARIANT, ppmsg: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    PeekCurrent_v1: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Receive: unsafe extern "system" fn(this: *mut *mut Self, transaction: *const super::Com::VARIANT, wantdestinationqueue: *const super::Com::VARIANT, wantbody: *const super::Com::VARIANT, receivetimeout: *const super::Com::VARIANT, wantconnectortype: *const super::Com::VARIANT, ppmsg: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Receive: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Peek: unsafe extern "system" fn(this: *mut *mut Self, wantdestinationqueue: *const super::Com::VARIANT, wantbody: *const super::Com::VARIANT, receivetimeout: *const super::Com::VARIANT, wantconnectortype: *const super::Com::VARIANT, ppmsg: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Peek: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub ReceiveCurrent: unsafe extern "system" fn(this: *mut *mut Self, transaction: *const super::Com::VARIANT, wantdestinationqueue: *const super::Com::VARIANT, wantbody: *const super::Com::VARIANT, receivetimeout: *const super::Com::VARIANT, wantconnectortype: *const super::Com::VARIANT, ppmsg: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    ReceiveCurrent: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub PeekNext: unsafe extern "system" fn(this: *mut *mut Self, wantdestinationqueue: *const super::Com::VARIANT, wantbody: *const super::Com::VARIANT, receivetimeout: *const super::Com::VARIANT, wantconnectortype: *const super::Com::VARIANT, ppmsg: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    PeekNext: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub PeekCurrent: unsafe extern "system" fn(this: *mut *mut Self, wantdestinationqueue: *const super::Com::VARIANT, wantbody: *const super::Com::VARIANT, receivetimeout: *const super::Com::VARIANT, wantconnectortype: *const super::Com::VARIANT, ppmsg: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    PeekCurrent: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Properties: unsafe extern "system" fn(this: *mut *mut Self, ppcolproperties: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Properties: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IMSMQQueue3 {
+    pub base__: super::Com::IDispatch,
+    pub Access: unsafe extern "system" fn(this: *mut *mut Self, placcess: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub ShareMode: unsafe extern "system" fn(this: *mut *mut Self, plsharemode: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub QueueInfo: unsafe extern "system" fn(this: *mut *mut Self, ppqinfo: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    QueueInfo: usize,
+    pub Handle: unsafe extern "system" fn(this: *mut *mut Self, plhandle: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub IsOpen: unsafe extern "system" fn(this: *mut *mut Self, pisopen: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Receive_v1: unsafe extern "system" fn(this: *mut *mut Self, transaction: *const super::Com::VARIANT, wantdestinationqueue: *const super::Com::VARIANT, wantbody: *const super::Com::VARIANT, receivetimeout: *const super::Com::VARIANT, ppmsg: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Receive_v1: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Peek_v1: unsafe extern "system" fn(this: *mut *mut Self, wantdestinationqueue: *const super::Com::VARIANT, wantbody: *const super::Com::VARIANT, receivetimeout: *const super::Com::VARIANT, ppmsg: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Peek_v1: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub EnableNotification: unsafe extern "system" fn(this: *mut *mut Self, event: *mut ::core::ffi::c_void, cursor: *const super::Com::VARIANT, receivetimeout: *const super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    EnableNotification: usize,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub ReceiveCurrent_v1: unsafe extern "system" fn(this: *mut *mut Self, transaction: *const super::Com::VARIANT, wantdestinationqueue: *const super::Com::VARIANT, wantbody: *const super::Com::VARIANT, receivetimeout: *const super::Com::VARIANT, ppmsg: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    ReceiveCurrent_v1: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub PeekNext_v1: unsafe extern "system" fn(this: *mut *mut Self, wantdestinationqueue: *const super::Com::VARIANT, wantbody: *const super::Com::VARIANT, receivetimeout: *const super::Com::VARIANT, ppmsg: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    PeekNext_v1: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub PeekCurrent_v1: unsafe extern "system" fn(this: *mut *mut Self, wantdestinationqueue: *const super::Com::VARIANT, wantbody: *const super::Com::VARIANT, receivetimeout: *const super::Com::VARIANT, ppmsg: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    PeekCurrent_v1: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Receive: unsafe extern "system" fn(this: *mut *mut Self, transaction: *const super::Com::VARIANT, wantdestinationqueue: *const super::Com::VARIANT, wantbody: *const super::Com::VARIANT, receivetimeout: *const super::Com::VARIANT, wantconnectortype: *const super::Com::VARIANT, ppmsg: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Receive: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Peek: unsafe extern "system" fn(this: *mut *mut Self, wantdestinationqueue: *const super::Com::VARIANT, wantbody: *const super::Com::VARIANT, receivetimeout: *const super::Com::VARIANT, wantconnectortype: *const super::Com::VARIANT, ppmsg: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Peek: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub ReceiveCurrent: unsafe extern "system" fn(this: *mut *mut Self, transaction: *const super::Com::VARIANT, wantdestinationqueue: *const super::Com::VARIANT, wantbody: *const super::Com::VARIANT, receivetimeout: *const super::Com::VARIANT, wantconnectortype: *const super::Com::VARIANT, ppmsg: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    ReceiveCurrent: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub PeekNext: unsafe extern "system" fn(this: *mut *mut Self, wantdestinationqueue: *const super::Com::VARIANT, wantbody: *const super::Com::VARIANT, receivetimeout: *const super::Com::VARIANT, wantconnectortype: *const super::Com::VARIANT, ppmsg: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    PeekNext: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub PeekCurrent: unsafe extern "system" fn(this: *mut *mut Self, wantdestinationqueue: *const super::Com::VARIANT, wantbody: *const super::Com::VARIANT, receivetimeout: *const super::Com::VARIANT, wantconnectortype: *const super::Com::VARIANT, ppmsg: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    PeekCurrent: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Properties: unsafe extern "system" fn(this: *mut *mut Self, ppcolproperties: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Properties: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Handle2: unsafe extern "system" fn(this: *mut *mut Self, pvarhandle: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Handle2: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub ReceiveByLookupId: unsafe extern "system" fn(this: *mut *mut Self, lookupid: ::core::mem::ManuallyDrop<super::Com::VARIANT>, transaction: *const super::Com::VARIANT, wantdestinationqueue: *const super::Com::VARIANT, wantbody: *const super::Com::VARIANT, wantconnectortype: *const super::Com::VARIANT, ppmsg: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    ReceiveByLookupId: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub ReceiveNextByLookupId: unsafe extern "system" fn(this: *mut *mut Self, lookupid: ::core::mem::ManuallyDrop<super::Com::VARIANT>, transaction: *const super::Com::VARIANT, wantdestinationqueue: *const super::Com::VARIANT, wantbody: *const super::Com::VARIANT, wantconnectortype: *const super::Com::VARIANT, ppmsg: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    ReceiveNextByLookupId: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub ReceivePreviousByLookupId: unsafe extern "system" fn(this: *mut *mut Self, lookupid: ::core::mem::ManuallyDrop<super::Com::VARIANT>, transaction: *const super::Com::VARIANT, wantdestinationqueue: *const super::Com::VARIANT, wantbody: *const super::Com::VARIANT, wantconnectortype: *const super::Com::VARIANT, ppmsg: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    ReceivePreviousByLookupId: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub ReceiveFirstByLookupId: unsafe extern "system" fn(this: *mut *mut Self, transaction: *const super::Com::VARIANT, wantdestinationqueue: *const super::Com::VARIANT, wantbody: *const super::Com::VARIANT, wantconnectortype: *const super::Com::VARIANT, ppmsg: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    ReceiveFirstByLookupId: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub ReceiveLastByLookupId: unsafe extern "system" fn(this: *mut *mut Self, transaction: *const super::Com::VARIANT, wantdestinationqueue: *const super::Com::VARIANT, wantbody: *const super::Com::VARIANT, wantconnectortype: *const super::Com::VARIANT, ppmsg: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    ReceiveLastByLookupId: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub PeekByLookupId: unsafe extern "system" fn(this: *mut *mut Self, lookupid: ::core::mem::ManuallyDrop<super::Com::VARIANT>, wantdestinationqueue: *const super::Com::VARIANT, wantbody: *const super::Com::VARIANT, wantconnectortype: *const super::Com::VARIANT, ppmsg: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    PeekByLookupId: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub PeekNextByLookupId: unsafe extern "system" fn(this: *mut *mut Self, lookupid: ::core::mem::ManuallyDrop<super::Com::VARIANT>, wantdestinationqueue: *const super::Com::VARIANT, wantbody: *const super::Com::VARIANT, wantconnectortype: *const super::Com::VARIANT, ppmsg: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    PeekNextByLookupId: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub PeekPreviousByLookupId: unsafe extern "system" fn(this: *mut *mut Self, lookupid: ::core::mem::ManuallyDrop<super::Com::VARIANT>, wantdestinationqueue: *const super::Com::VARIANT, wantbody: *const super::Com::VARIANT, wantconnectortype: *const super::Com::VARIANT, ppmsg: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    PeekPreviousByLookupId: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub PeekFirstByLookupId: unsafe extern "system" fn(this: *mut *mut Self, wantdestinationqueue: *const super::Com::VARIANT, wantbody: *const super::Com::VARIANT, wantconnectortype: *const super::Com::VARIANT, ppmsg: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    PeekFirstByLookupId: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub PeekLastByLookupId: unsafe extern "system" fn(this: *mut *mut Self, wantdestinationqueue: *const super::Com::VARIANT, wantbody: *const super::Com::VARIANT, wantconnectortype: *const super::Com::VARIANT, ppmsg: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    PeekLastByLookupId: usize,
+    pub Purge: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub IsOpen2: unsafe extern "system" fn(this: *mut *mut Self, pisopen: *mut i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IMSMQQueue4 {
+    pub base__: super::Com::IDispatch,
+    pub Access: unsafe extern "system" fn(this: *mut *mut Self, placcess: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub ShareMode: unsafe extern "system" fn(this: *mut *mut Self, plsharemode: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub QueueInfo: unsafe extern "system" fn(this: *mut *mut Self, ppqinfo: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    QueueInfo: usize,
+    pub Handle: unsafe extern "system" fn(this: *mut *mut Self, plhandle: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub IsOpen: unsafe extern "system" fn(this: *mut *mut Self, pisopen: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Receive_v1: unsafe extern "system" fn(this: *mut *mut Self, transaction: *const super::Com::VARIANT, wantdestinationqueue: *const super::Com::VARIANT, wantbody: *const super::Com::VARIANT, receivetimeout: *const super::Com::VARIANT, ppmsg: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Receive_v1: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Peek_v1: unsafe extern "system" fn(this: *mut *mut Self, wantdestinationqueue: *const super::Com::VARIANT, wantbody: *const super::Com::VARIANT, receivetimeout: *const super::Com::VARIANT, ppmsg: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Peek_v1: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub EnableNotification: unsafe extern "system" fn(this: *mut *mut Self, event: *mut ::core::ffi::c_void, cursor: *const super::Com::VARIANT, receivetimeout: *const super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    EnableNotification: usize,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub ReceiveCurrent_v1: unsafe extern "system" fn(this: *mut *mut Self, transaction: *const super::Com::VARIANT, wantdestinationqueue: *const super::Com::VARIANT, wantbody: *const super::Com::VARIANT, receivetimeout: *const super::Com::VARIANT, ppmsg: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    ReceiveCurrent_v1: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub PeekNext_v1: unsafe extern "system" fn(this: *mut *mut Self, wantdestinationqueue: *const super::Com::VARIANT, wantbody: *const super::Com::VARIANT, receivetimeout: *const super::Com::VARIANT, ppmsg: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    PeekNext_v1: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub PeekCurrent_v1: unsafe extern "system" fn(this: *mut *mut Self, wantdestinationqueue: *const super::Com::VARIANT, wantbody: *const super::Com::VARIANT, receivetimeout: *const super::Com::VARIANT, ppmsg: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    PeekCurrent_v1: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Receive: unsafe extern "system" fn(this: *mut *mut Self, transaction: *const super::Com::VARIANT, wantdestinationqueue: *const super::Com::VARIANT, wantbody: *const super::Com::VARIANT, receivetimeout: *const super::Com::VARIANT, wantconnectortype: *const super::Com::VARIANT, ppmsg: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Receive: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Peek: unsafe extern "system" fn(this: *mut *mut Self, wantdestinationqueue: *const super::Com::VARIANT, wantbody: *const super::Com::VARIANT, receivetimeout: *const super::Com::VARIANT, wantconnectortype: *const super::Com::VARIANT, ppmsg: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Peek: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub ReceiveCurrent: unsafe extern "system" fn(this: *mut *mut Self, transaction: *const super::Com::VARIANT, wantdestinationqueue: *const super::Com::VARIANT, wantbody: *const super::Com::VARIANT, receivetimeout: *const super::Com::VARIANT, wantconnectortype: *const super::Com::VARIANT, ppmsg: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    ReceiveCurrent: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub PeekNext: unsafe extern "system" fn(this: *mut *mut Self, wantdestinationqueue: *const super::Com::VARIANT, wantbody: *const super::Com::VARIANT, receivetimeout: *const super::Com::VARIANT, wantconnectortype: *const super::Com::VARIANT, ppmsg: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    PeekNext: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub PeekCurrent: unsafe extern "system" fn(this: *mut *mut Self, wantdestinationqueue: *const super::Com::VARIANT, wantbody: *const super::Com::VARIANT, receivetimeout: *const super::Com::VARIANT, wantconnectortype: *const super::Com::VARIANT, ppmsg: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    PeekCurrent: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Properties: unsafe extern "system" fn(this: *mut *mut Self, ppcolproperties: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Properties: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Handle2: unsafe extern "system" fn(this: *mut *mut Self, pvarhandle: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Handle2: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub ReceiveByLookupId: unsafe extern "system" fn(this: *mut *mut Self, lookupid: ::core::mem::ManuallyDrop<super::Com::VARIANT>, transaction: *const super::Com::VARIANT, wantdestinationqueue: *const super::Com::VARIANT, wantbody: *const super::Com::VARIANT, wantconnectortype: *const super::Com::VARIANT, ppmsg: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    ReceiveByLookupId: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub ReceiveNextByLookupId: unsafe extern "system" fn(this: *mut *mut Self, lookupid: ::core::mem::ManuallyDrop<super::Com::VARIANT>, transaction: *const super::Com::VARIANT, wantdestinationqueue: *const super::Com::VARIANT, wantbody: *const super::Com::VARIANT, wantconnectortype: *const super::Com::VARIANT, ppmsg: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    ReceiveNextByLookupId: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub ReceivePreviousByLookupId: unsafe extern "system" fn(this: *mut *mut Self, lookupid: ::core::mem::ManuallyDrop<super::Com::VARIANT>, transaction: *const super::Com::VARIANT, wantdestinationqueue: *const super::Com::VARIANT, wantbody: *const super::Com::VARIANT, wantconnectortype: *const super::Com::VARIANT, ppmsg: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    ReceivePreviousByLookupId: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub ReceiveFirstByLookupId: unsafe extern "system" fn(this: *mut *mut Self, transaction: *const super::Com::VARIANT, wantdestinationqueue: *const super::Com::VARIANT, wantbody: *const super::Com::VARIANT, wantconnectortype: *const super::Com::VARIANT, ppmsg: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    ReceiveFirstByLookupId: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub ReceiveLastByLookupId: unsafe extern "system" fn(this: *mut *mut Self, transaction: *const super::Com::VARIANT, wantdestinationqueue: *const super::Com::VARIANT, wantbody: *const super::Com::VARIANT, wantconnectortype: *const super::Com::VARIANT, ppmsg: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    ReceiveLastByLookupId: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub PeekByLookupId: unsafe extern "system" fn(this: *mut *mut Self, lookupid: ::core::mem::ManuallyDrop<super::Com::VARIANT>, wantdestinationqueue: *const super::Com::VARIANT, wantbody: *const super::Com::VARIANT, wantconnectortype: *const super::Com::VARIANT, ppmsg: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    PeekByLookupId: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub PeekNextByLookupId: unsafe extern "system" fn(this: *mut *mut Self, lookupid: ::core::mem::ManuallyDrop<super::Com::VARIANT>, wantdestinationqueue: *const super::Com::VARIANT, wantbody: *const super::Com::VARIANT, wantconnectortype: *const super::Com::VARIANT, ppmsg: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    PeekNextByLookupId: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub PeekPreviousByLookupId: unsafe extern "system" fn(this: *mut *mut Self, lookupid: ::core::mem::ManuallyDrop<super::Com::VARIANT>, wantdestinationqueue: *const super::Com::VARIANT, wantbody: *const super::Com::VARIANT, wantconnectortype: *const super::Com::VARIANT, ppmsg: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    PeekPreviousByLookupId: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub PeekFirstByLookupId: unsafe extern "system" fn(this: *mut *mut Self, wantdestinationqueue: *const super::Com::VARIANT, wantbody: *const super::Com::VARIANT, wantconnectortype: *const super::Com::VARIANT, ppmsg: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    PeekFirstByLookupId: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub PeekLastByLookupId: unsafe extern "system" fn(this: *mut *mut Self, wantdestinationqueue: *const super::Com::VARIANT, wantbody: *const super::Com::VARIANT, wantconnectortype: *const super::Com::VARIANT, ppmsg: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    PeekLastByLookupId: usize,
+    pub Purge: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub IsOpen2: unsafe extern "system" fn(this: *mut *mut Self, pisopen: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub ReceiveByLookupIdAllowPeek: unsafe extern "system" fn(this: *mut *mut Self, lookupid: ::core::mem::ManuallyDrop<super::Com::VARIANT>, transaction: *const super::Com::VARIANT, wantdestinationqueue: *const super::Com::VARIANT, wantbody: *const super::Com::VARIANT, wantconnectortype: *const super::Com::VARIANT, ppmsg: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    ReceiveByLookupIdAllowPeek: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IMSMQQueueInfo {
+    pub base__: super::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub QueueGuid: unsafe extern "system" fn(this: *mut *mut Self, pbstrguidqueue: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    QueueGuid: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ServiceTypeGuid: unsafe extern "system" fn(this: *mut *mut Self, pbstrguidservicetype: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ServiceTypeGuid: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetServiceTypeGuid: unsafe extern "system" fn(this: *mut *mut Self, bstrguidservicetype: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetServiceTypeGuid: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Label: unsafe extern "system" fn(this: *mut *mut Self, pbstrlabel: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Label: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetLabel: unsafe extern "system" fn(this: *mut *mut Self, bstrlabel: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetLabel: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub PathName: unsafe extern "system" fn(this: *mut *mut Self, pbstrpathname: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    PathName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetPathName: unsafe extern "system" fn(this: *mut *mut Self, bstrpathname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetPathName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub FormatName: unsafe extern "system" fn(this: *mut *mut Self, pbstrformatname: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    FormatName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetFormatName: unsafe extern "system" fn(this: *mut *mut Self, bstrformatname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetFormatName: usize,
+    pub IsTransactional: unsafe extern "system" fn(this: *mut *mut Self, pistransactional: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub PrivLevel: unsafe extern "system" fn(this: *mut *mut Self, plprivlevel: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetPrivLevel: unsafe extern "system" fn(this: *mut *mut Self, lprivlevel: i32) -> ::windows_sys::core::HRESULT,
+    pub Journal: unsafe extern "system" fn(this: *mut *mut Self, pljournal: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetJournal: unsafe extern "system" fn(this: *mut *mut Self, ljournal: i32) -> ::windows_sys::core::HRESULT,
+    pub Quota: unsafe extern "system" fn(this: *mut *mut Self, plquota: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetQuota: unsafe extern "system" fn(this: *mut *mut Self, lquota: i32) -> ::windows_sys::core::HRESULT,
+    pub BasePriority: unsafe extern "system" fn(this: *mut *mut Self, plbasepriority: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetBasePriority: unsafe extern "system" fn(this: *mut *mut Self, lbasepriority: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub CreateTime: unsafe extern "system" fn(this: *mut *mut Self, pvarcreatetime: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    CreateTime: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub ModifyTime: unsafe extern "system" fn(this: *mut *mut Self, pvarmodifytime: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    ModifyTime: usize,
+    pub Authenticate: unsafe extern "system" fn(this: *mut *mut Self, plauthenticate: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetAuthenticate: unsafe extern "system" fn(this: *mut *mut Self, lauthenticate: i32) -> ::windows_sys::core::HRESULT,
+    pub JournalQuota: unsafe extern "system" fn(this: *mut *mut Self, pljournalquota: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetJournalQuota: unsafe extern "system" fn(this: *mut *mut Self, ljournalquota: i32) -> ::windows_sys::core::HRESULT,
+    pub IsWorldReadable: unsafe extern "system" fn(this: *mut *mut Self, pisworldreadable: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Create: unsafe extern "system" fn(this: *mut *mut Self, istransactional: *const super::Com::VARIANT, isworldreadable: *const super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Create: usize,
+    pub Delete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Open: unsafe extern "system" fn(this: *mut *mut Self, access: i32, sharemode: i32, ppq: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Open: usize,
+    pub Refresh: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Update: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IMSMQQueueInfo2 {
+    pub base__: super::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub QueueGuid: unsafe extern "system" fn(this: *mut *mut Self, pbstrguidqueue: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    QueueGuid: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ServiceTypeGuid: unsafe extern "system" fn(this: *mut *mut Self, pbstrguidservicetype: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ServiceTypeGuid: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetServiceTypeGuid: unsafe extern "system" fn(this: *mut *mut Self, bstrguidservicetype: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetServiceTypeGuid: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Label: unsafe extern "system" fn(this: *mut *mut Self, pbstrlabel: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Label: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetLabel: unsafe extern "system" fn(this: *mut *mut Self, bstrlabel: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetLabel: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub PathName: unsafe extern "system" fn(this: *mut *mut Self, pbstrpathname: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    PathName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetPathName: unsafe extern "system" fn(this: *mut *mut Self, bstrpathname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetPathName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub FormatName: unsafe extern "system" fn(this: *mut *mut Self, pbstrformatname: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    FormatName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetFormatName: unsafe extern "system" fn(this: *mut *mut Self, bstrformatname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetFormatName: usize,
+    pub IsTransactional: unsafe extern "system" fn(this: *mut *mut Self, pistransactional: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub PrivLevel: unsafe extern "system" fn(this: *mut *mut Self, plprivlevel: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetPrivLevel: unsafe extern "system" fn(this: *mut *mut Self, lprivlevel: i32) -> ::windows_sys::core::HRESULT,
+    pub Journal: unsafe extern "system" fn(this: *mut *mut Self, pljournal: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetJournal: unsafe extern "system" fn(this: *mut *mut Self, ljournal: i32) -> ::windows_sys::core::HRESULT,
+    pub Quota: unsafe extern "system" fn(this: *mut *mut Self, plquota: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetQuota: unsafe extern "system" fn(this: *mut *mut Self, lquota: i32) -> ::windows_sys::core::HRESULT,
+    pub BasePriority: unsafe extern "system" fn(this: *mut *mut Self, plbasepriority: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetBasePriority: unsafe extern "system" fn(this: *mut *mut Self, lbasepriority: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub CreateTime: unsafe extern "system" fn(this: *mut *mut Self, pvarcreatetime: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    CreateTime: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub ModifyTime: unsafe extern "system" fn(this: *mut *mut Self, pvarmodifytime: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    ModifyTime: usize,
+    pub Authenticate: unsafe extern "system" fn(this: *mut *mut Self, plauthenticate: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetAuthenticate: unsafe extern "system" fn(this: *mut *mut Self, lauthenticate: i32) -> ::windows_sys::core::HRESULT,
+    pub JournalQuota: unsafe extern "system" fn(this: *mut *mut Self, pljournalquota: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetJournalQuota: unsafe extern "system" fn(this: *mut *mut Self, ljournalquota: i32) -> ::windows_sys::core::HRESULT,
+    pub IsWorldReadable: unsafe extern "system" fn(this: *mut *mut Self, pisworldreadable: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Create: unsafe extern "system" fn(this: *mut *mut Self, istransactional: *const super::Com::VARIANT, isworldreadable: *const super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Create: usize,
+    pub Delete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Open: unsafe extern "system" fn(this: *mut *mut Self, access: i32, sharemode: i32, ppq: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Open: usize,
+    pub Refresh: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Update: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub PathNameDNS: unsafe extern "system" fn(this: *mut *mut Self, pbstrpathnamedns: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    PathNameDNS: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Properties: unsafe extern "system" fn(this: *mut *mut Self, ppcolproperties: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Properties: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Security: unsafe extern "system" fn(this: *mut *mut Self, pvarsecurity: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Security: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetSecurity: unsafe extern "system" fn(this: *mut *mut Self, varsecurity: ::core::mem::ManuallyDrop<super::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetSecurity: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IMSMQQueueInfo3 {
+    pub base__: super::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub QueueGuid: unsafe extern "system" fn(this: *mut *mut Self, pbstrguidqueue: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    QueueGuid: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ServiceTypeGuid: unsafe extern "system" fn(this: *mut *mut Self, pbstrguidservicetype: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ServiceTypeGuid: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetServiceTypeGuid: unsafe extern "system" fn(this: *mut *mut Self, bstrguidservicetype: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetServiceTypeGuid: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Label: unsafe extern "system" fn(this: *mut *mut Self, pbstrlabel: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Label: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetLabel: unsafe extern "system" fn(this: *mut *mut Self, bstrlabel: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetLabel: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub PathName: unsafe extern "system" fn(this: *mut *mut Self, pbstrpathname: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    PathName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetPathName: unsafe extern "system" fn(this: *mut *mut Self, bstrpathname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetPathName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub FormatName: unsafe extern "system" fn(this: *mut *mut Self, pbstrformatname: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    FormatName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetFormatName: unsafe extern "system" fn(this: *mut *mut Self, bstrformatname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetFormatName: usize,
+    pub IsTransactional: unsafe extern "system" fn(this: *mut *mut Self, pistransactional: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub PrivLevel: unsafe extern "system" fn(this: *mut *mut Self, plprivlevel: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetPrivLevel: unsafe extern "system" fn(this: *mut *mut Self, lprivlevel: i32) -> ::windows_sys::core::HRESULT,
+    pub Journal: unsafe extern "system" fn(this: *mut *mut Self, pljournal: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetJournal: unsafe extern "system" fn(this: *mut *mut Self, ljournal: i32) -> ::windows_sys::core::HRESULT,
+    pub Quota: unsafe extern "system" fn(this: *mut *mut Self, plquota: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetQuota: unsafe extern "system" fn(this: *mut *mut Self, lquota: i32) -> ::windows_sys::core::HRESULT,
+    pub BasePriority: unsafe extern "system" fn(this: *mut *mut Self, plbasepriority: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetBasePriority: unsafe extern "system" fn(this: *mut *mut Self, lbasepriority: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub CreateTime: unsafe extern "system" fn(this: *mut *mut Self, pvarcreatetime: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    CreateTime: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub ModifyTime: unsafe extern "system" fn(this: *mut *mut Self, pvarmodifytime: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    ModifyTime: usize,
+    pub Authenticate: unsafe extern "system" fn(this: *mut *mut Self, plauthenticate: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetAuthenticate: unsafe extern "system" fn(this: *mut *mut Self, lauthenticate: i32) -> ::windows_sys::core::HRESULT,
+    pub JournalQuota: unsafe extern "system" fn(this: *mut *mut Self, pljournalquota: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetJournalQuota: unsafe extern "system" fn(this: *mut *mut Self, ljournalquota: i32) -> ::windows_sys::core::HRESULT,
+    pub IsWorldReadable: unsafe extern "system" fn(this: *mut *mut Self, pisworldreadable: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Create: unsafe extern "system" fn(this: *mut *mut Self, istransactional: *const super::Com::VARIANT, isworldreadable: *const super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Create: usize,
+    pub Delete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Open: unsafe extern "system" fn(this: *mut *mut Self, access: i32, sharemode: i32, ppq: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Open: usize,
+    pub Refresh: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Update: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub PathNameDNS: unsafe extern "system" fn(this: *mut *mut Self, pbstrpathnamedns: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    PathNameDNS: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Properties: unsafe extern "system" fn(this: *mut *mut Self, ppcolproperties: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Properties: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Security: unsafe extern "system" fn(this: *mut *mut Self, pvarsecurity: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Security: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetSecurity: unsafe extern "system" fn(this: *mut *mut Self, varsecurity: ::core::mem::ManuallyDrop<super::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetSecurity: usize,
+    pub IsTransactional2: unsafe extern "system" fn(this: *mut *mut Self, pistransactional: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub IsWorldReadable2: unsafe extern "system" fn(this: *mut *mut Self, pisworldreadable: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MulticastAddress: unsafe extern "system" fn(this: *mut *mut Self, pbstrmulticastaddress: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MulticastAddress: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetMulticastAddress: unsafe extern "system" fn(this: *mut *mut Self, bstrmulticastaddress: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetMulticastAddress: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ADsPath: unsafe extern "system" fn(this: *mut *mut Self, pbstradspath: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ADsPath: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IMSMQQueueInfo4 {
+    pub base__: super::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub QueueGuid: unsafe extern "system" fn(this: *mut *mut Self, pbstrguidqueue: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    QueueGuid: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ServiceTypeGuid: unsafe extern "system" fn(this: *mut *mut Self, pbstrguidservicetype: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ServiceTypeGuid: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetServiceTypeGuid: unsafe extern "system" fn(this: *mut *mut Self, bstrguidservicetype: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetServiceTypeGuid: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Label: unsafe extern "system" fn(this: *mut *mut Self, pbstrlabel: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Label: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetLabel: unsafe extern "system" fn(this: *mut *mut Self, bstrlabel: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetLabel: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub PathName: unsafe extern "system" fn(this: *mut *mut Self, pbstrpathname: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    PathName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetPathName: unsafe extern "system" fn(this: *mut *mut Self, bstrpathname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetPathName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub FormatName: unsafe extern "system" fn(this: *mut *mut Self, pbstrformatname: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    FormatName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetFormatName: unsafe extern "system" fn(this: *mut *mut Self, bstrformatname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetFormatName: usize,
+    pub IsTransactional: unsafe extern "system" fn(this: *mut *mut Self, pistransactional: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub PrivLevel: unsafe extern "system" fn(this: *mut *mut Self, plprivlevel: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetPrivLevel: unsafe extern "system" fn(this: *mut *mut Self, lprivlevel: i32) -> ::windows_sys::core::HRESULT,
+    pub Journal: unsafe extern "system" fn(this: *mut *mut Self, pljournal: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetJournal: unsafe extern "system" fn(this: *mut *mut Self, ljournal: i32) -> ::windows_sys::core::HRESULT,
+    pub Quota: unsafe extern "system" fn(this: *mut *mut Self, plquota: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetQuota: unsafe extern "system" fn(this: *mut *mut Self, lquota: i32) -> ::windows_sys::core::HRESULT,
+    pub BasePriority: unsafe extern "system" fn(this: *mut *mut Self, plbasepriority: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetBasePriority: unsafe extern "system" fn(this: *mut *mut Self, lbasepriority: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub CreateTime: unsafe extern "system" fn(this: *mut *mut Self, pvarcreatetime: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    CreateTime: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub ModifyTime: unsafe extern "system" fn(this: *mut *mut Self, pvarmodifytime: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    ModifyTime: usize,
+    pub Authenticate: unsafe extern "system" fn(this: *mut *mut Self, plauthenticate: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetAuthenticate: unsafe extern "system" fn(this: *mut *mut Self, lauthenticate: i32) -> ::windows_sys::core::HRESULT,
+    pub JournalQuota: unsafe extern "system" fn(this: *mut *mut Self, pljournalquota: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetJournalQuota: unsafe extern "system" fn(this: *mut *mut Self, ljournalquota: i32) -> ::windows_sys::core::HRESULT,
+    pub IsWorldReadable: unsafe extern "system" fn(this: *mut *mut Self, pisworldreadable: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Create: unsafe extern "system" fn(this: *mut *mut Self, istransactional: *const super::Com::VARIANT, isworldreadable: *const super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Create: usize,
+    pub Delete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Open: unsafe extern "system" fn(this: *mut *mut Self, access: i32, sharemode: i32, ppq: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Open: usize,
+    pub Refresh: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Update: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub PathNameDNS: unsafe extern "system" fn(this: *mut *mut Self, pbstrpathnamedns: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    PathNameDNS: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Properties: unsafe extern "system" fn(this: *mut *mut Self, ppcolproperties: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Properties: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Security: unsafe extern "system" fn(this: *mut *mut Self, pvarsecurity: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Security: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetSecurity: unsafe extern "system" fn(this: *mut *mut Self, varsecurity: ::core::mem::ManuallyDrop<super::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetSecurity: usize,
+    pub IsTransactional2: unsafe extern "system" fn(this: *mut *mut Self, pistransactional: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub IsWorldReadable2: unsafe extern "system" fn(this: *mut *mut Self, pisworldreadable: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MulticastAddress: unsafe extern "system" fn(this: *mut *mut Self, pbstrmulticastaddress: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MulticastAddress: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetMulticastAddress: unsafe extern "system" fn(this: *mut *mut Self, bstrmulticastaddress: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetMulticastAddress: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ADsPath: unsafe extern "system" fn(this: *mut *mut Self, pbstradspath: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ADsPath: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IMSMQQueueInfos {
+    pub base__: super::Com::IDispatch,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, ppqinfonext: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Next: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IMSMQQueueInfos2 {
+    pub base__: super::Com::IDispatch,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, ppqinfonext: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Next: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Properties: unsafe extern "system" fn(this: *mut *mut Self, ppcolproperties: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Properties: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IMSMQQueueInfos3 {
+    pub base__: super::Com::IDispatch,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, ppqinfonext: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Next: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Properties: unsafe extern "system" fn(this: *mut *mut Self, ppcolproperties: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Properties: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IMSMQQueueInfos4 {
+    pub base__: super::Com::IDispatch,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, ppqinfonext: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Next: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Properties: unsafe extern "system" fn(this: *mut *mut Self, ppcolproperties: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Properties: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IMSMQQueueManagement {
+    pub base__: IMSMQManagement,
+    pub JournalMessageCount: unsafe extern "system" fn(this: *mut *mut Self, pljournalmessagecount: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub BytesInJournal: unsafe extern "system" fn(this: *mut *mut Self, pvbytesinjournal: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    BytesInJournal: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub EodGetReceiveInfo: unsafe extern "system" fn(this: *mut *mut Self, pvcollection: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    EodGetReceiveInfo: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IMSMQTransaction {
+    pub base__: super::Com::IDispatch,
+    pub Transaction: unsafe extern "system" fn(this: *mut *mut Self, pltransaction: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Commit: unsafe extern "system" fn(this: *mut *mut Self, fretaining: *const super::Com::VARIANT, grftc: *const super::Com::VARIANT, grfrm: *const super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Commit: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Abort: unsafe extern "system" fn(this: *mut *mut Self, fretaining: *const super::Com::VARIANT, fasync: *const super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Abort: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IMSMQTransaction2 {
+    pub base__: IMSMQTransaction,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub InitNew: unsafe extern "system" fn(this: *mut *mut Self, vartransaction: ::core::mem::ManuallyDrop<super::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    InitNew: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Properties: unsafe extern "system" fn(this: *mut *mut Self, ppcolproperties: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Properties: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IMSMQTransaction3 {
+    pub base__: IMSMQTransaction2,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub ITransaction: unsafe extern "system" fn(this: *mut *mut Self, pvaritransaction: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    ITransaction: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IMSMQTransactionDispenser {
+    pub base__: super::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub BeginTransaction: unsafe extern "system" fn(this: *mut *mut Self, ptransaction: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    BeginTransaction: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IMSMQTransactionDispenser2 {
+    pub base__: super::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub BeginTransaction: unsafe extern "system" fn(this: *mut *mut Self, ptransaction: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    BeginTransaction: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Properties: unsafe extern "system" fn(this: *mut *mut Self, ppcolproperties: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Properties: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IMSMQTransactionDispenser3 {
+    pub base__: super::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub BeginTransaction: unsafe extern "system" fn(this: *mut *mut Self, ptransaction: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    BeginTransaction: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Properties: unsafe extern "system" fn(this: *mut *mut Self, ppcolproperties: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Properties: usize,
+}
 #[doc = "*Required features: `\"Win32_System_MessageQueuing\"`*"]
 pub const LONG_LIVED: u32 = 4294967294u32;
 #[doc = "*Required features: `\"Win32_System_MessageQueuing\"`*"]
@@ -1125,4 +3010,8 @@ pub const MQ_XACT_STATUS_XACT: XACT_STATUS = 0i32;
 pub const MQ_XACT_STATUS_NOT_XACT: XACT_STATUS = 1i32;
 #[doc = "*Required features: `\"Win32_System_MessageQueuing\"`*"]
 pub const MQ_XACT_STATUS_UNKNOWN: XACT_STATUS = 2i32;
-pub type _DMSMQEventEvents = *mut ::core::ffi::c_void;
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct _DMSMQEventEvents {
+    pub base__: super::Com::IDispatch,
+}

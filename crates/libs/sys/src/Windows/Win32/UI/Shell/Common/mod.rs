@@ -46,8 +46,20 @@ pub const SCALE_400_PERCENT: DEVICE_SCALE_FACTOR = 400i32;
 pub const SCALE_450_PERCENT: DEVICE_SCALE_FACTOR = 450i32;
 #[doc = "*Required features: `\"Win32_UI_Shell_Common\"`*"]
 pub const SCALE_500_PERCENT: DEVICE_SCALE_FACTOR = 500i32;
-pub type IObjectArray = *mut ::core::ffi::c_void;
-pub type IObjectCollection = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IObjectArray {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, pcobjects: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetAt: unsafe extern "system" fn(this: *mut *mut Self, uiindex: u32, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IObjectCollection {
+    pub base__: IObjectArray,
+    pub AddObject: unsafe extern "system" fn(this: *mut *mut Self, punk: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AddFromArray: unsafe extern "system" fn(this: *mut *mut Self, poasource: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RemoveObjectAt: unsafe extern "system" fn(this: *mut *mut Self, uiindex: u32) -> ::windows_sys::core::HRESULT,
+    pub Clear: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_UI_Shell_Common\"`*"]
 pub struct ITEMIDLIST {

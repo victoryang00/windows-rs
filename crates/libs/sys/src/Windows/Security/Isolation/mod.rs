@@ -1,4 +1,267 @@
 pub type HostMessageReceivedCallback = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IIsolatedWindowsEnvironment {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Id: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub StartProcessSilentlyAsync: unsafe extern "system" fn(this: *mut *mut Self, hostexepath: ::windows_sys::core::HSTRING, arguments: ::windows_sys::core::HSTRING, activator: IsolatedWindowsEnvironmentActivator, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    StartProcessSilentlyAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub StartProcessSilentlyWithTelemetryAsync: unsafe extern "system" fn(this: *mut *mut Self, hostexepath: ::windows_sys::core::HSTRING, arguments: ::windows_sys::core::HSTRING, activator: IsolatedWindowsEnvironmentActivator, telemetryparameters: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    StartProcessSilentlyWithTelemetryAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub ShareFolderAsync: unsafe extern "system" fn(this: *mut *mut Self, hostfolder: ::windows_sys::core::HSTRING, requestoptions: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    ShareFolderAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub ShareFolderWithTelemetryAsync: unsafe extern "system" fn(this: *mut *mut Self, hostfolder: ::windows_sys::core::HSTRING, requestoptions: *mut ::core::ffi::c_void, telemetryparameters: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    ShareFolderWithTelemetryAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub LaunchFileWithUIAsync: unsafe extern "system" fn(this: *mut *mut Self, appexepath: ::windows_sys::core::HSTRING, argumentstemplate: ::windows_sys::core::HSTRING, filepath: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    LaunchFileWithUIAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub LaunchFileWithUIAndTelemetryAsync: unsafe extern "system" fn(this: *mut *mut Self, appexepath: ::windows_sys::core::HSTRING, argumentstemplate: ::windows_sys::core::HSTRING, filepath: ::windows_sys::core::HSTRING, telemetryparameters: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    LaunchFileWithUIAndTelemetryAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub TerminateAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    TerminateAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub TerminateWithTelemetryAsync: unsafe extern "system" fn(this: *mut *mut Self, telemetryparameters: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    TerminateWithTelemetryAsync: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub RegisterMessageReceiver: unsafe extern "system" fn(this: *mut *mut Self, receiverid: ::windows_sys::core::GUID, messagereceivedcallback: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    RegisterMessageReceiver: usize,
+    pub UnregisterMessageReceiver: unsafe extern "system" fn(this: *mut *mut Self, receiverid: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IIsolatedWindowsEnvironment2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation_Collections")]
+    pub PostMessageToReceiverAsync: unsafe extern "system" fn(this: *mut *mut Self, receiverid: ::windows_sys::core::GUID, message: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    PostMessageToReceiverAsync: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub PostMessageToReceiverWithTelemetryAsync: unsafe extern "system" fn(this: *mut *mut Self, receiverid: ::windows_sys::core::GUID, message: *mut ::core::ffi::c_void, telemetryparameters: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    PostMessageToReceiverWithTelemetryAsync: usize,
+}
+#[repr(C)]
+pub struct IIsolatedWindowsEnvironment3 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub GetUserInfo: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub ShareFileAsync: unsafe extern "system" fn(this: *mut *mut Self, filepath: ::windows_sys::core::HSTRING, options: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    ShareFileAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub ShareFileWithTelemetryAsync: unsafe extern "system" fn(this: *mut *mut Self, filepath: ::windows_sys::core::HSTRING, options: *mut ::core::ffi::c_void, telemetryparameters: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    ShareFileWithTelemetryAsync: usize,
+}
+#[repr(C)]
+pub struct IIsolatedWindowsEnvironmentCreateResult {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Status: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut IsolatedWindowsEnvironmentCreateStatus) -> ::windows_sys::core::HRESULT,
+    pub ExtendedError: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+    pub Environment: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IIsolatedWindowsEnvironmentFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub CreateAsync: unsafe extern "system" fn(this: *mut *mut Self, options: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    CreateAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub CreateWithTelemetryAsync: unsafe extern "system" fn(this: *mut *mut Self, options: *mut ::core::ffi::c_void, telemetryparameters: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    CreateWithTelemetryAsync: usize,
+    pub GetById: unsafe extern "system" fn(this: *mut *mut Self, environmentid: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub FindByOwnerId: unsafe extern "system" fn(this: *mut *mut Self, environmentownerid: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    FindByOwnerId: usize,
+}
+#[repr(C)]
+pub struct IIsolatedWindowsEnvironmentFile {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Id: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub HostPath: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IIsolatedWindowsEnvironmentFile2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub GuestPath: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub IsReadOnly: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IIsolatedWindowsEnvironmentHostStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub IsReady: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub HostErrors: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    HostErrors: usize,
+}
+#[repr(C)]
+pub struct IIsolatedWindowsEnvironmentLaunchFileResult {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Status: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut IsolatedWindowsEnvironmentLaunchFileStatus) -> ::windows_sys::core::HRESULT,
+    pub ExtendedError: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+    pub File: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IIsolatedWindowsEnvironmentOptions {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub EnvironmentOwnerId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetEnvironmentOwnerId: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub AllowedClipboardFormats: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut IsolatedWindowsEnvironmentAllowedClipboardFormats) -> ::windows_sys::core::HRESULT,
+    pub SetAllowedClipboardFormats: unsafe extern "system" fn(this: *mut *mut Self, value: IsolatedWindowsEnvironmentAllowedClipboardFormats) -> ::windows_sys::core::HRESULT,
+    pub ClipboardCopyPasteDirections: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut IsolatedWindowsEnvironmentClipboardCopyPasteDirections) -> ::windows_sys::core::HRESULT,
+    pub SetClipboardCopyPasteDirections: unsafe extern "system" fn(this: *mut *mut Self, value: IsolatedWindowsEnvironmentClipboardCopyPasteDirections) -> ::windows_sys::core::HRESULT,
+    pub AvailablePrinters: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut IsolatedWindowsEnvironmentAvailablePrinters) -> ::windows_sys::core::HRESULT,
+    pub SetAvailablePrinters: unsafe extern "system" fn(this: *mut *mut Self, value: IsolatedWindowsEnvironmentAvailablePrinters) -> ::windows_sys::core::HRESULT,
+    pub SharedHostFolderPath: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SharedFolderNameInEnvironment: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub ShareHostFolderForUntrustedItems: unsafe extern "system" fn(this: *mut *mut Self, sharedhostfolderpath: ::windows_sys::core::HSTRING, sharefoldernameinenvironment: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub PersistUserProfile: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetPersistUserProfile: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+    pub AllowGraphicsHardwareAcceleration: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetAllowGraphicsHardwareAcceleration: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+    pub AllowCameraAndMicrophoneAccess: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetAllowCameraAndMicrophoneAccess: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IIsolatedWindowsEnvironmentOptions2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub WindowAnnotationOverride: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetWindowAnnotationOverride: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IIsolatedWindowsEnvironmentOwnerRegistrationData {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation_Collections")]
+    pub ShareableFolders: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    ShareableFolders: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub ProcessesRunnableAsSystem: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    ProcessesRunnableAsSystem: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub ProcessesRunnableAsUser: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    ProcessesRunnableAsUser: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub ActivationFileExtensions: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    ActivationFileExtensions: usize,
+}
+#[repr(C)]
+pub struct IIsolatedWindowsEnvironmentOwnerRegistrationResult {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Status: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut IsolatedWindowsEnvironmentOwnerRegistrationStatus) -> ::windows_sys::core::HRESULT,
+    pub ExtendedError: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IIsolatedWindowsEnvironmentOwnerRegistrationStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Register: unsafe extern "system" fn(this: *mut *mut Self, ownername: ::windows_sys::core::HSTRING, ownerregistrationdata: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Unregister: unsafe extern "system" fn(this: *mut *mut Self, ownername: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IIsolatedWindowsEnvironmentPostMessageResult {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Status: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut IsolatedWindowsEnvironmentPostMessageStatus) -> ::windows_sys::core::HRESULT,
+    pub ExtendedError: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IIsolatedWindowsEnvironmentProcess {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub State: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut IsolatedWindowsEnvironmentProcessState) -> ::windows_sys::core::HRESULT,
+    pub ExitCode: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub WaitForExit: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub WaitForExitWithTimeout: unsafe extern "system" fn(this: *mut *mut Self, timeoutmilliseconds: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub WaitForExitAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    WaitForExitAsync: usize,
+}
+#[repr(C)]
+pub struct IIsolatedWindowsEnvironmentShareFileRequestOptions {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub AllowWrite: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetAllowWrite: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IIsolatedWindowsEnvironmentShareFileResult {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Status: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut IsolatedWindowsEnvironmentShareFileStatus) -> ::windows_sys::core::HRESULT,
+    pub ExtendedError: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+    pub File: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IIsolatedWindowsEnvironmentShareFolderRequestOptions {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub AllowWrite: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetAllowWrite: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IIsolatedWindowsEnvironmentShareFolderResult {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Status: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut IsolatedWindowsEnvironmentShareFolderStatus) -> ::windows_sys::core::HRESULT,
+    pub ExtendedError: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IIsolatedWindowsEnvironmentStartProcessResult {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Status: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut IsolatedWindowsEnvironmentStartProcessStatus) -> ::windows_sys::core::HRESULT,
+    pub ExtendedError: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+    pub Process: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IIsolatedWindowsEnvironmentTelemetryParameters {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CorrelationId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub SetCorrelationId: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IIsolatedWindowsEnvironmentUserInfo {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub EnvironmentUserSid: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub EnvironmentUserName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub TryWaitForSignInAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    TryWaitForSignInAsync: usize,
+}
+#[repr(C)]
+pub struct IIsolatedWindowsHostMessengerStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation_Collections")]
+    pub PostMessageToReceiver: unsafe extern "system" fn(this: *mut *mut Self, receiverid: ::windows_sys::core::GUID, message: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    PostMessageToReceiver: usize,
+    pub GetFileId: unsafe extern "system" fn(this: *mut *mut Self, filepath: ::windows_sys::core::HSTRING, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IIsolatedWindowsHostMessengerStatics2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation_Collections")]
+    pub RegisterHostMessageReceiver: unsafe extern "system" fn(this: *mut *mut Self, receiverid: ::windows_sys::core::GUID, hostmessagereceivedcallback: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    RegisterHostMessageReceiver: usize,
+    pub UnregisterHostMessageReceiver: unsafe extern "system" fn(this: *mut *mut Self, receiverid: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
 pub type IsolatedWindowsEnvironment = *mut ::core::ffi::c_void;
 #[doc = "*Required features: `\"Security_Isolation\"`*"]
 #[repr(transparent)]

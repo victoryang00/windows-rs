@@ -52,7 +52,338 @@ pub type EmailAccountInfo = *mut ::core::ffi::c_void;
 pub type EmailFolderInfo = *mut ::core::ffi::c_void;
 pub type EmailNotificationTriggerDetails = *mut ::core::ffi::c_void;
 pub type EmailReadNotificationTriggerDetails = *mut ::core::ffi::c_void;
-pub type IAccessoryNotificationTriggerDetails = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IAccessoryManager {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub RegisterAccessoryApp: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub GetNextTriggerDetails: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ProcessTriggerDetails: unsafe extern "system" fn(this: *mut *mut Self, pdetails: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub PhoneLineDetails: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    PhoneLineDetails: usize,
+    pub GetPhoneLineDetails: unsafe extern "system" fn(this: *mut *mut Self, phoneline: ::windows_sys::core::GUID, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AcceptPhoneCall: unsafe extern "system" fn(this: *mut *mut Self, phonecallid: u32) -> ::windows_sys::core::HRESULT,
+    pub AcceptPhoneCallOnEndpoint: unsafe extern "system" fn(this: *mut *mut Self, phonecallid: u32, endpoint: PhoneCallAudioEndpoint) -> ::windows_sys::core::HRESULT,
+    pub AcceptPhoneCallWithVideo: unsafe extern "system" fn(this: *mut *mut Self, phonecallid: u32) -> ::windows_sys::core::HRESULT,
+    pub AcceptPhoneCallWithVideoOnAudioEndpoint: unsafe extern "system" fn(this: *mut *mut Self, phonecallid: u32, endpoint: PhoneCallAudioEndpoint) -> ::windows_sys::core::HRESULT,
+    pub RejectPhoneCall: unsafe extern "system" fn(this: *mut *mut Self, phonecallid: u32) -> ::windows_sys::core::HRESULT,
+    pub RejectPhoneCallWithText: unsafe extern "system" fn(this: *mut *mut Self, phonecallid: u32, textresponseid: u32) -> ::windows_sys::core::HRESULT,
+    pub MakePhoneCall: unsafe extern "system" fn(this: *mut *mut Self, phoneline: ::windows_sys::core::GUID, phonenumber: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub MakePhoneCallOnAudioEndpoint: unsafe extern "system" fn(this: *mut *mut Self, phoneline: ::windows_sys::core::GUID, phonenumber: ::windows_sys::core::HSTRING, endpoint: PhoneCallAudioEndpoint) -> ::windows_sys::core::HRESULT,
+    pub MakePhoneCallWithVideo: unsafe extern "system" fn(this: *mut *mut Self, phoneline: ::windows_sys::core::GUID, phonenumber: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub MakePhoneCallWithVideoOnAudioEndpoint: unsafe extern "system" fn(this: *mut *mut Self, phoneline: ::windows_sys::core::GUID, phonenumber: ::windows_sys::core::HSTRING, endpoint: PhoneCallAudioEndpoint) -> ::windows_sys::core::HRESULT,
+    pub SwapPhoneCalls: unsafe extern "system" fn(this: *mut *mut Self, phonecallidtohold: u32, phonecallidonhold: u32) -> ::windows_sys::core::HRESULT,
+    pub HoldPhoneCall: unsafe extern "system" fn(this: *mut *mut Self, phonecallid: u32, holdcall: bool) -> ::windows_sys::core::HRESULT,
+    pub EndPhoneCall: unsafe extern "system" fn(this: *mut *mut Self, phonecallid: u32) -> ::windows_sys::core::HRESULT,
+    pub SetPhoneMute: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+    pub PhoneMute: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetPhoneCallAudioEndpoint: unsafe extern "system" fn(this: *mut *mut Self, value: PhoneCallAudioEndpoint) -> ::windows_sys::core::HRESULT,
+    pub PhoneCallAudioEndpoint: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut PhoneCallAudioEndpoint) -> ::windows_sys::core::HRESULT,
+    pub SnoozeAlarm: unsafe extern "system" fn(this: *mut *mut Self, alarmid: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub SnoozeAlarmForSpecifiedTime: unsafe extern "system" fn(this: *mut *mut Self, alarmid: ::windows_sys::core::GUID, timespan: super::super::super::Foundation::TimeSpan) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    SnoozeAlarmForSpecifiedTime: usize,
+    pub DismissAlarm: unsafe extern "system" fn(this: *mut *mut Self, alarmid: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub SnoozeReminder: unsafe extern "system" fn(this: *mut *mut Self, reminderid: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub SnoozeReminderForSpecifiedTime: unsafe extern "system" fn(this: *mut *mut Self, reminderid: ::windows_sys::core::GUID, timespan: super::super::super::Foundation::TimeSpan) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    SnoozeReminderForSpecifiedTime: usize,
+    pub DismissReminder: unsafe extern "system" fn(this: *mut *mut Self, reminderid: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub GetMediaMetadata: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub MediaPlaybackCapabilities: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut PlaybackCapability) -> ::windows_sys::core::HRESULT,
+    pub MediaPlaybackStatus: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut PlaybackStatus) -> ::windows_sys::core::HRESULT,
+    pub PerformMediaPlaybackCommand: unsafe extern "system" fn(this: *mut *mut Self, command: PlaybackCommand) -> ::windows_sys::core::HRESULT,
+    pub DoNotDisturbEnabled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub DrivingModeEnabled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub BatterySaverState: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub GetApps: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    GetApps: usize,
+    pub EnableNotificationsForApplication: unsafe extern "system" fn(this: *mut *mut Self, appid: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub DisableNotificationsForApplication: unsafe extern "system" fn(this: *mut *mut Self, appid: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub IsNotificationEnabledForApplication: unsafe extern "system" fn(this: *mut *mut Self, appid: ::windows_sys::core::HSTRING, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub GetEnabledAccessoryNotificationTypes: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub EnableAccessoryNotificationTypes: unsafe extern "system" fn(this: *mut *mut Self, accessorynotificationtypes: i32) -> ::windows_sys::core::HRESULT,
+    pub DisableAllAccessoryNotificationTypes: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetUserConsent: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Storage_Streams")]
+    pub GetAppIcon: unsafe extern "system" fn(this: *mut *mut Self, appid: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Storage_Streams"))]
+    GetAppIcon: usize,
+}
+#[repr(C)]
+pub struct IAccessoryManager2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub RingDevice: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub SpeedDialList: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    SpeedDialList: usize,
+    pub ClearToast: unsafe extern "system" fn(this: *mut *mut Self, instanceid: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub IsPhonePinLocked: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub IncreaseVolume: unsafe extern "system" fn(this: *mut *mut Self, step: i32) -> ::windows_sys::core::HRESULT,
+    pub DecreaseVolume: unsafe extern "system" fn(this: *mut *mut Self, step: i32) -> ::windows_sys::core::HRESULT,
+    pub SetMute: unsafe extern "system" fn(this: *mut *mut Self, mute: bool) -> ::windows_sys::core::HRESULT,
+    pub SetRingerVibrate: unsafe extern "system" fn(this: *mut *mut Self, ringer: bool, vibrate: bool) -> ::windows_sys::core::HRESULT,
+    pub VolumeInfo: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub GetAllEmailAccounts: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    GetAllEmailAccounts: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub GetFolders: unsafe extern "system" fn(this: *mut *mut Self, emailaccount: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    GetFolders: usize,
+    pub EnableEmailNotificationEmailAccount: unsafe extern "system" fn(this: *mut *mut Self, emailaccount: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub DisableEmailNotificationEmailAccount: unsafe extern "system" fn(this: *mut *mut Self, emailaccount: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub EnableEmailNotificationFolderFilter: unsafe extern "system" fn(this: *mut *mut Self, emailaccount: ::windows_sys::core::HSTRING, folders: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    EnableEmailNotificationFolderFilter: usize,
+    pub UpdateEmailReadStatus: unsafe extern "system" fn(this: *mut *mut Self, messageentryid: *mut ::core::ffi::c_void, isread: bool) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAccessoryManager3 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub SnoozeAlarmByInstanceId: unsafe extern "system" fn(this: *mut *mut Self, instanceid: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub DismissAlarmByInstanceId: unsafe extern "system" fn(this: *mut *mut Self, instanceid: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SnoozeReminderByInstanceId: unsafe extern "system" fn(this: *mut *mut Self, instanceid: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub DismissReminderByInstanceId: unsafe extern "system" fn(this: *mut *mut Self, instanceid: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAccessoryNotificationTriggerDetails {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub TimeCreated: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::super::Foundation::DateTime) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    TimeCreated: usize,
+    pub AppDisplayName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub AppId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub AccessoryNotificationType: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut AccessoryNotificationType) -> ::windows_sys::core::HRESULT,
+    pub StartedProcessing: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetStartedProcessing: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAlarmNotificationTriggerDetails {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub AlarmId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub Title: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub Timestamp: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::super::Foundation::DateTime) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    Timestamp: usize,
+    pub ReminderState: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ReminderState) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAlarmNotificationTriggerDetails2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub InstanceId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAppNotificationInfo {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Id: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Name: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IBinaryId {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Id: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u8) -> ::windows_sys::core::HRESULT,
+    pub Length: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ICalendarChangedNotificationTriggerDetails {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub EventType: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut CalendarChangedEvent) -> ::windows_sys::core::HRESULT,
+    pub ItemId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ICortanaTileNotificationTriggerDetails {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub TileId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Content: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub LargeContent1: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub LargeContent2: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub EmphasizedText: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub NonWrappedSmallContent1: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub NonWrappedSmallContent2: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub NonWrappedSmallContent3: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub NonWrappedSmallContent4: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Source: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IEmailAccountInfo {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub DisplayName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub IsNotificationEnabled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IEmailFolderInfo {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub DisplayName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub IsNotificationEnabled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IEmailNotificationTriggerDetails {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub AccountName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub ParentFolderName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SenderName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SenderAddress: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "ApplicationModel_Email")]
+    pub EmailMessage: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "ApplicationModel_Email"))]
+    EmailMessage: usize,
+    #[cfg(feature = "Foundation")]
+    pub Timestamp: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::super::Foundation::DateTime) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    Timestamp: usize,
+}
+#[repr(C)]
+pub struct IEmailNotificationTriggerDetails2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub MessageEntryId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IEmailReadNotificationTriggerDetails {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub AccountName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub ParentFolderName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub MessageEntryId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub IsRead: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMediaControlsTriggerDetails {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub PlaybackStatus: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut PlaybackStatus) -> ::windows_sys::core::HRESULT,
+    pub MediaMetadata: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMediaMetadata {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Title: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Subtitle: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Artist: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Album: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Track: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub Duration: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::super::Foundation::TimeSpan) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    Duration: usize,
+    #[cfg(feature = "Storage_Streams")]
+    pub Thumbnail: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Storage_Streams"))]
+    Thumbnail: usize,
+}
+#[repr(C)]
+pub struct IPhoneCallDetails {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub PhoneLine: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub CallId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub CallTransport: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut PhoneCallTransport) -> ::windows_sys::core::HRESULT,
+    pub CallMediaType: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut PhoneMediaType) -> ::windows_sys::core::HRESULT,
+    pub CallDirection: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut PhoneCallDirection) -> ::windows_sys::core::HRESULT,
+    pub State: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut PhoneCallState) -> ::windows_sys::core::HRESULT,
+    pub ConferenceCallId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub StartTime: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::super::Foundation::DateTime) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    StartTime: usize,
+    #[cfg(feature = "Foundation")]
+    pub EndTime: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::super::Foundation::DateTime) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    EndTime: usize,
+    pub PhoneNumber: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub ContactName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub PresetTextResponses: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    PresetTextResponses: usize,
+}
+#[repr(C)]
+pub struct IPhoneLineDetails {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub LineId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub DisplayName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub LineNumber: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub DefaultOutgoingLine: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub VoicemailCount: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub RegistrationState: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut PhoneLineRegistrationState) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPhoneLineDetails2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub MissedCallCount: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPhoneNotificationTriggerDetails {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub PhoneNotificationType: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut PhoneNotificationType) -> ::windows_sys::core::HRESULT,
+    pub CallDetails: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub PhoneLineChangedId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IReminderNotificationTriggerDetails {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub ReminderId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub Title: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Description: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Details: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub Timestamp: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::super::Foundation::DateTime) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    Timestamp: usize,
+    #[cfg(feature = "ApplicationModel_Appointments")]
+    pub Appointment: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "ApplicationModel_Appointments"))]
+    Appointment: usize,
+    pub ReminderState: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ReminderState) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IReminderNotificationTriggerDetails2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub InstanceId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISpeedDialEntry {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub PhoneNumber: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub NumberType: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub ContactName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITextResponse {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Id: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Content: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IToastNotificationTriggerDetails {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Text1: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Text2: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Text3: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Text4: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SuppressPopup: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IToastNotificationTriggerDetails2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub InstanceId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IVolumeInfo {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub SystemVolume: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub CallVolume: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub MediaVolume: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub IsMuted: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub IsVibrateEnabled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut VibrateState) -> ::windows_sys::core::HRESULT,
+}
 pub type MediaControlsTriggerDetails = *mut ::core::ffi::c_void;
 pub type MediaMetadata = *mut ::core::ffi::c_void;
 #[doc = "*Required features: `\"Phone_Notification_Management\"`*"]

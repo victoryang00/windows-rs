@@ -15,11 +15,70 @@ extern "system" {
     #[cfg(feature = "Win32_Foundation")]
     pub fn WscUnRegisterChanges(hregistrationhandle: super::super::Foundation::HANDLE) -> ::windows_sys::core::HRESULT;
 }
-pub type IWSCDefaultProduct = *mut ::core::ffi::c_void;
-pub type IWSCProductList = *mut ::core::ffi::c_void;
-pub type IWscProduct = *mut ::core::ffi::c_void;
-pub type IWscProduct2 = *mut ::core::ffi::c_void;
-pub type IWscProduct3 = *mut ::core::ffi::c_void;
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IWSCDefaultProduct {
+    pub base__: super::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetDefaultProduct: unsafe extern "system" fn(this: *mut *mut Self, etype: SECURITY_PRODUCT_TYPE, pguid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetDefaultProduct: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IWSCProductList {
+    pub base__: super::Com::IDispatch,
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, provider: WSC_SECURITY_PROVIDER) -> ::windows_sys::core::HRESULT,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub get_Item: unsafe extern "system" fn(this: *mut *mut Self, index: u32, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    get_Item: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IWscProduct {
+    pub base__: super::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ProductName: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ProductName: usize,
+    pub ProductState: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut WSC_SECURITY_PRODUCT_STATE) -> ::windows_sys::core::HRESULT,
+    pub SignatureStatus: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut WSC_SECURITY_SIGNATURE_STATUS) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RemediationPath: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RemediationPath: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ProductStateTimestamp: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ProductStateTimestamp: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ProductGuid: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ProductGuid: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ProductIsDefault: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ProductIsDefault: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IWscProduct2 {
+    pub base__: IWscProduct,
+    pub AntivirusScanSubstatus: unsafe extern "system" fn(this: *mut *mut Self, pestatus: *mut WSC_SECURITY_PRODUCT_SUBSTATUS) -> ::windows_sys::core::HRESULT,
+    pub AntivirusSettingsSubstatus: unsafe extern "system" fn(this: *mut *mut Self, pestatus: *mut WSC_SECURITY_PRODUCT_SUBSTATUS) -> ::windows_sys::core::HRESULT,
+    pub AntivirusProtectionUpdateSubstatus: unsafe extern "system" fn(this: *mut *mut Self, pestatus: *mut WSC_SECURITY_PRODUCT_SUBSTATUS) -> ::windows_sys::core::HRESULT,
+    pub FirewallDomainProfileSubstatus: unsafe extern "system" fn(this: *mut *mut Self, pestatus: *mut WSC_SECURITY_PRODUCT_SUBSTATUS) -> ::windows_sys::core::HRESULT,
+    pub FirewallPrivateProfileSubstatus: unsafe extern "system" fn(this: *mut *mut Self, pestatus: *mut WSC_SECURITY_PRODUCT_SUBSTATUS) -> ::windows_sys::core::HRESULT,
+    pub FirewallPublicProfileSubstatus: unsafe extern "system" fn(this: *mut *mut Self, pestatus: *mut WSC_SECURITY_PRODUCT_SUBSTATUS) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IWscProduct3 {
+    pub base__: IWscProduct2,
+    pub AntivirusDaysUntilExpired: unsafe extern "system" fn(this: *mut *mut Self, pdwdays: *mut u32) -> ::windows_sys::core::HRESULT,
+}
 #[doc = "*Required features: `\"Win32_System_SecurityCenter\"`*"]
 pub type SECURITY_PRODUCT_TYPE = i32;
 #[doc = "*Required features: `\"Win32_System_SecurityCenter\"`*"]

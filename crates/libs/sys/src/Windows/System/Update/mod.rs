@@ -1,3 +1,83 @@
+#[repr(C)]
+pub struct ISystemUpdateItem {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub State: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut SystemUpdateItemState) -> ::windows_sys::core::HRESULT,
+    pub Title: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Description: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Id: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Revision: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub DownloadProgress: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f64) -> ::windows_sys::core::HRESULT,
+    pub InstallProgress: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f64) -> ::windows_sys::core::HRESULT,
+    pub ExtendedError: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISystemUpdateLastErrorInfo {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub State: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut SystemUpdateManagerState) -> ::windows_sys::core::HRESULT,
+    pub ExtendedError: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+    pub IsInteractive: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISystemUpdateManagerStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub IsSupported: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub State: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut SystemUpdateManagerState) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub StateChanged: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    StateChanged: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveStateChanged: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveStateChanged: usize,
+    pub DownloadProgress: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f64) -> ::windows_sys::core::HRESULT,
+    pub InstallProgress: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f64) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub UserActiveHoursStart: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Foundation::TimeSpan) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    UserActiveHoursStart: usize,
+    #[cfg(feature = "Foundation")]
+    pub UserActiveHoursEnd: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Foundation::TimeSpan) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    UserActiveHoursEnd: usize,
+    pub UserActiveHoursMax: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub TrySetUserActiveHours: unsafe extern "system" fn(this: *mut *mut Self, start: super::super::Foundation::TimeSpan, end: super::super::Foundation::TimeSpan, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    TrySetUserActiveHours: usize,
+    #[cfg(feature = "Foundation")]
+    pub LastUpdateCheckTime: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Foundation::DateTime) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    LastUpdateCheckTime: usize,
+    #[cfg(feature = "Foundation")]
+    pub LastUpdateInstallTime: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Foundation::DateTime) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    LastUpdateInstallTime: usize,
+    pub LastErrorInfo: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub GetAutomaticRebootBlockIds: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    GetAutomaticRebootBlockIds: usize,
+    #[cfg(feature = "Foundation")]
+    pub BlockAutomaticRebootAsync: unsafe extern "system" fn(this: *mut *mut Self, lockid: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    BlockAutomaticRebootAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub UnblockAutomaticRebootAsync: unsafe extern "system" fn(this: *mut *mut Self, lockid: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    UnblockAutomaticRebootAsync: usize,
+    pub ExtendedError: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub GetUpdateItems: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    GetUpdateItems: usize,
+    pub AttentionRequiredReason: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut SystemUpdateAttentionRequiredReason) -> ::windows_sys::core::HRESULT,
+    pub SetFlightRing: unsafe extern "system" fn(this: *mut *mut Self, flightring: ::windows_sys::core::HSTRING, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub GetFlightRing: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub StartInstall: unsafe extern "system" fn(this: *mut *mut Self, action: SystemUpdateStartInstallAction) -> ::windows_sys::core::HRESULT,
+    pub RebootToCompleteInstall: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub StartCancelUpdates: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
 #[doc = "*Required features: `\"System_Update\"`*"]
 #[repr(transparent)]
 pub struct SystemUpdateAttentionRequiredReason(pub i32);

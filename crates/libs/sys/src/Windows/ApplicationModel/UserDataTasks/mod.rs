@@ -1,5 +1,300 @@
 #[cfg(feature = "ApplicationModel_UserDataTasks_DataProvider")]
 pub mod DataProvider;
+#[repr(C)]
+pub struct IUserDataTask {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Id: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub ListId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub RemoteId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetRemoteId: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub CompletedDate: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    CompletedDate: usize,
+    #[cfg(feature = "Foundation")]
+    pub SetCompletedDate: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    SetCompletedDate: usize,
+    pub Details: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetDetails: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub DetailsKind: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut UserDataTaskDetailsKind) -> ::windows_sys::core::HRESULT,
+    pub SetDetailsKind: unsafe extern "system" fn(this: *mut *mut Self, value: UserDataTaskDetailsKind) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub DueDate: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    DueDate: usize,
+    #[cfg(feature = "Foundation")]
+    pub SetDueDate: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    SetDueDate: usize,
+    pub Kind: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut UserDataTaskKind) -> ::windows_sys::core::HRESULT,
+    pub Priority: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut UserDataTaskPriority) -> ::windows_sys::core::HRESULT,
+    pub SetPriority: unsafe extern "system" fn(this: *mut *mut Self, value: UserDataTaskPriority) -> ::windows_sys::core::HRESULT,
+    pub RecurrenceProperties: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetRecurrenceProperties: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RegenerationProperties: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetRegenerationProperties: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub Reminder: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    Reminder: usize,
+    #[cfg(feature = "Foundation")]
+    pub SetReminder: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    SetReminder: usize,
+    pub Sensitivity: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut UserDataTaskSensitivity) -> ::windows_sys::core::HRESULT,
+    pub SetSensitivity: unsafe extern "system" fn(this: *mut *mut Self, value: UserDataTaskSensitivity) -> ::windows_sys::core::HRESULT,
+    pub Subject: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetSubject: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub StartDate: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    StartDate: usize,
+    #[cfg(feature = "Foundation")]
+    pub SetStartDate: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    SetStartDate: usize,
+}
+#[repr(C)]
+pub struct IUserDataTaskBatch {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation_Collections")]
+    pub Tasks: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    Tasks: usize,
+}
+#[repr(C)]
+pub struct IUserDataTaskList {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Id: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub UserDataAccountId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub DisplayName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetDisplayName: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SourceDisplayName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub OtherAppReadAccess: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut UserDataTaskListOtherAppReadAccess) -> ::windows_sys::core::HRESULT,
+    pub SetOtherAppReadAccess: unsafe extern "system" fn(this: *mut *mut Self, value: UserDataTaskListOtherAppReadAccess) -> ::windows_sys::core::HRESULT,
+    pub OtherAppWriteAccess: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut UserDataTaskListOtherAppWriteAccess) -> ::windows_sys::core::HRESULT,
+    pub SetOtherAppWriteAccess: unsafe extern "system" fn(this: *mut *mut Self, value: UserDataTaskListOtherAppWriteAccess) -> ::windows_sys::core::HRESULT,
+    pub LimitedWriteOperations: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SyncManager: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub RegisterSyncManagerAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RegisterSyncManagerAsync: usize,
+    pub GetTaskReader: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetTaskReaderWithOptions: unsafe extern "system" fn(this: *mut *mut Self, options: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub GetTaskAsync: unsafe extern "system" fn(this: *mut *mut Self, userdatatask: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    GetTaskAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub SaveTaskAsync: unsafe extern "system" fn(this: *mut *mut Self, userdatatask: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    SaveTaskAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub DeleteTaskAsync: unsafe extern "system" fn(this: *mut *mut Self, userdatataskid: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    DeleteTaskAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub DeleteAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    DeleteAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub SaveAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    SaveAsync: usize,
+}
+#[repr(C)]
+pub struct IUserDataTaskListLimitedWriteOperations {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub TryCompleteTaskAsync: unsafe extern "system" fn(this: *mut *mut Self, userdatataskid: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    TryCompleteTaskAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub TryCreateOrUpdateTaskAsync: unsafe extern "system" fn(this: *mut *mut Self, userdatatask: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    TryCreateOrUpdateTaskAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub TryDeleteTaskAsync: unsafe extern "system" fn(this: *mut *mut Self, userdatataskid: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    TryDeleteTaskAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub TrySkipOccurrenceAsync: unsafe extern "system" fn(this: *mut *mut Self, userdatataskid: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    TrySkipOccurrenceAsync: usize,
+}
+#[repr(C)]
+pub struct IUserDataTaskListSyncManager {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub LastAttemptedSyncTime: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Foundation::DateTime) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    LastAttemptedSyncTime: usize,
+    #[cfg(feature = "Foundation")]
+    pub SetLastAttemptedSyncTime: unsafe extern "system" fn(this: *mut *mut Self, value: super::super::Foundation::DateTime) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    SetLastAttemptedSyncTime: usize,
+    #[cfg(feature = "Foundation")]
+    pub LastSuccessfulSyncTime: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Foundation::DateTime) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    LastSuccessfulSyncTime: usize,
+    #[cfg(feature = "Foundation")]
+    pub SetLastSuccessfulSyncTime: unsafe extern "system" fn(this: *mut *mut Self, value: super::super::Foundation::DateTime) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    SetLastSuccessfulSyncTime: usize,
+    pub Status: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut UserDataTaskListSyncStatus) -> ::windows_sys::core::HRESULT,
+    pub SetStatus: unsafe extern "system" fn(this: *mut *mut Self, value: UserDataTaskListSyncStatus) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub SyncAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    SyncAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub SyncStatusChanged: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    SyncStatusChanged: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveSyncStatusChanged: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveSyncStatusChanged: usize,
+}
+#[repr(C)]
+pub struct IUserDataTaskManager {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub RequestStoreAsync: unsafe extern "system" fn(this: *mut *mut Self, accesstype: UserDataTaskStoreAccessType, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RequestStoreAsync: usize,
+    #[cfg(feature = "System")]
+    pub User: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "System"))]
+    User: usize,
+}
+#[repr(C)]
+pub struct IUserDataTaskManagerStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub GetDefault: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "System")]
+    pub GetForUser: unsafe extern "system" fn(this: *mut *mut Self, user: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "System"))]
+    GetForUser: usize,
+}
+#[repr(C)]
+pub struct IUserDataTaskQueryOptions {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub SortProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut UserDataTaskQuerySortProperty) -> ::windows_sys::core::HRESULT,
+    pub SetSortProperty: unsafe extern "system" fn(this: *mut *mut Self, value: UserDataTaskQuerySortProperty) -> ::windows_sys::core::HRESULT,
+    pub Kind: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut UserDataTaskQueryKind) -> ::windows_sys::core::HRESULT,
+    pub SetKind: unsafe extern "system" fn(this: *mut *mut Self, value: UserDataTaskQueryKind) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IUserDataTaskReader {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub ReadBatchAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    ReadBatchAsync: usize,
+}
+#[repr(C)]
+pub struct IUserDataTaskRecurrenceProperties {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Unit: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut UserDataTaskRecurrenceUnit) -> ::windows_sys::core::HRESULT,
+    pub SetUnit: unsafe extern "system" fn(this: *mut *mut Self, value: UserDataTaskRecurrenceUnit) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub Occurrences: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    Occurrences: usize,
+    #[cfg(feature = "Foundation")]
+    pub SetOccurrences: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    SetOccurrences: usize,
+    #[cfg(feature = "Foundation")]
+    pub Until: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    Until: usize,
+    #[cfg(feature = "Foundation")]
+    pub SetUntil: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    SetUntil: usize,
+    pub Interval: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetInterval: unsafe extern "system" fn(this: *mut *mut Self, value: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub DaysOfWeek: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    DaysOfWeek: usize,
+    #[cfg(feature = "Foundation")]
+    pub SetDaysOfWeek: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    SetDaysOfWeek: usize,
+    #[cfg(feature = "Foundation")]
+    pub WeekOfMonth: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    WeekOfMonth: usize,
+    #[cfg(feature = "Foundation")]
+    pub SetWeekOfMonth: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    SetWeekOfMonth: usize,
+    #[cfg(feature = "Foundation")]
+    pub Month: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    Month: usize,
+    #[cfg(feature = "Foundation")]
+    pub SetMonth: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    SetMonth: usize,
+    #[cfg(feature = "Foundation")]
+    pub Day: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    Day: usize,
+    #[cfg(feature = "Foundation")]
+    pub SetDay: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    SetDay: usize,
+}
+#[repr(C)]
+pub struct IUserDataTaskRegenerationProperties {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Unit: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut UserDataTaskRegenerationUnit) -> ::windows_sys::core::HRESULT,
+    pub SetUnit: unsafe extern "system" fn(this: *mut *mut Self, value: UserDataTaskRegenerationUnit) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub Occurrences: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    Occurrences: usize,
+    #[cfg(feature = "Foundation")]
+    pub SetOccurrences: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    SetOccurrences: usize,
+    #[cfg(feature = "Foundation")]
+    pub Until: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    Until: usize,
+    #[cfg(feature = "Foundation")]
+    pub SetUntil: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    SetUntil: usize,
+    pub Interval: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetInterval: unsafe extern "system" fn(this: *mut *mut Self, value: i32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IUserDataTaskStore {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub CreateListAsync: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    CreateListAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub CreateListInAccountAsync: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::HSTRING, userdataaccountid: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    CreateListInAccountAsync: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub FindListsAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    FindListsAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub GetListAsync: unsafe extern "system" fn(this: *mut *mut Self, tasklistid: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    GetListAsync: usize,
+}
 pub type UserDataTask = *mut ::core::ffi::c_void;
 pub type UserDataTaskBatch = *mut ::core::ffi::c_void;
 #[doc = "*Required features: `\"ApplicationModel_UserDataTasks\"`*"]

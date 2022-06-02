@@ -15,6 +15,193 @@ impl ::core::clone::Clone for AlternateNormalizationFormat {
     }
 }
 pub type AlternateWordForm = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IAlternateWordForm {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub SourceTextSegment: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut TextSegment) -> ::windows_sys::core::HRESULT,
+    pub AlternateText: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub NormalizationFormat: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut AlternateNormalizationFormat) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISelectableWordSegment {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Text: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SourceTextSegment: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut TextSegment) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISelectableWordsSegmenter {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub ResolvedLanguage: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub GetTokenAt: unsafe extern "system" fn(this: *mut *mut Self, text: ::windows_sys::core::HSTRING, startindex: u32, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub GetTokens: unsafe extern "system" fn(this: *mut *mut Self, text: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    GetTokens: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub Tokenize: unsafe extern "system" fn(this: *mut *mut Self, text: ::windows_sys::core::HSTRING, startindex: u32, handler: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    Tokenize: usize,
+}
+#[repr(C)]
+pub struct ISelectableWordsSegmenterFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CreateWithLanguage: unsafe extern "system" fn(this: *mut *mut Self, language: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISemanticTextQuery {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation_Collections")]
+    pub Find: unsafe extern "system" fn(this: *mut *mut Self, content: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    Find: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub FindInProperty: unsafe extern "system" fn(this: *mut *mut Self, propertycontent: ::windows_sys::core::HSTRING, propertyname: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    FindInProperty: usize,
+}
+#[repr(C)]
+pub struct ISemanticTextQueryFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Create: unsafe extern "system" fn(this: *mut *mut Self, aqsfilter: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateWithLanguage: unsafe extern "system" fn(this: *mut *mut Self, aqsfilter: ::windows_sys::core::HSTRING, filterlanguage: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITextConversionGenerator {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub ResolvedLanguage: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub LanguageAvailableButNotInstalled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub GetCandidatesAsync: unsafe extern "system" fn(this: *mut *mut Self, input: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    GetCandidatesAsync: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub GetCandidatesWithMaxCountAsync: unsafe extern "system" fn(this: *mut *mut Self, input: ::windows_sys::core::HSTRING, maxcandidates: u32, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    GetCandidatesWithMaxCountAsync: usize,
+}
+#[repr(C)]
+pub struct ITextConversionGeneratorFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Create: unsafe extern "system" fn(this: *mut *mut Self, languagetag: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITextPhoneme {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub DisplayText: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub ReadingText: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITextPredictionGenerator {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub ResolvedLanguage: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub LanguageAvailableButNotInstalled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub GetCandidatesAsync: unsafe extern "system" fn(this: *mut *mut Self, input: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    GetCandidatesAsync: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub GetCandidatesWithMaxCountAsync: unsafe extern "system" fn(this: *mut *mut Self, input: ::windows_sys::core::HSTRING, maxcandidates: u32, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    GetCandidatesWithMaxCountAsync: usize,
+}
+#[repr(C)]
+pub struct ITextPredictionGenerator2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation_Collections")]
+    pub GetCandidatesWithParametersAsync: unsafe extern "system" fn(this: *mut *mut Self, input: ::windows_sys::core::HSTRING, maxcandidates: u32, predictionoptions: TextPredictionOptions, previousstrings: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    GetCandidatesWithParametersAsync: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub GetNextWordCandidatesAsync: unsafe extern "system" fn(this: *mut *mut Self, maxcandidates: u32, previousstrings: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    GetNextWordCandidatesAsync: usize,
+    #[cfg(feature = "UI_Text_Core")]
+    pub InputScope: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::UI::Text::Core::CoreTextInputScope) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Text_Core"))]
+    InputScope: usize,
+    #[cfg(feature = "UI_Text_Core")]
+    pub SetInputScope: unsafe extern "system" fn(this: *mut *mut Self, value: super::super::UI::Text::Core::CoreTextInputScope) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Text_Core"))]
+    SetInputScope: usize,
+}
+#[repr(C)]
+pub struct ITextPredictionGeneratorFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Create: unsafe extern "system" fn(this: *mut *mut Self, languagetag: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITextReverseConversionGenerator {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub ResolvedLanguage: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub LanguageAvailableButNotInstalled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub ConvertBackAsync: unsafe extern "system" fn(this: *mut *mut Self, input: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    ConvertBackAsync: usize,
+}
+#[repr(C)]
+pub struct ITextReverseConversionGenerator2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation_Collections")]
+    pub GetPhonemesAsync: unsafe extern "system" fn(this: *mut *mut Self, input: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    GetPhonemesAsync: usize,
+}
+#[repr(C)]
+pub struct ITextReverseConversionGeneratorFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Create: unsafe extern "system" fn(this: *mut *mut Self, languagetag: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IUnicodeCharactersStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub GetCodepointFromSurrogatePair: unsafe extern "system" fn(this: *mut *mut Self, highsurrogate: u32, lowsurrogate: u32, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSurrogatePairFromCodepoint: unsafe extern "system" fn(this: *mut *mut Self, codepoint: u32, highsurrogate: *mut u16, lowsurrogate: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub IsHighSurrogate: unsafe extern "system" fn(this: *mut *mut Self, codepoint: u32, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub IsLowSurrogate: unsafe extern "system" fn(this: *mut *mut Self, codepoint: u32, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub IsSupplementary: unsafe extern "system" fn(this: *mut *mut Self, codepoint: u32, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub IsNoncharacter: unsafe extern "system" fn(this: *mut *mut Self, codepoint: u32, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub IsWhitespace: unsafe extern "system" fn(this: *mut *mut Self, codepoint: u32, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub IsAlphabetic: unsafe extern "system" fn(this: *mut *mut Self, codepoint: u32, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub IsCased: unsafe extern "system" fn(this: *mut *mut Self, codepoint: u32, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub IsUppercase: unsafe extern "system" fn(this: *mut *mut Self, codepoint: u32, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub IsLowercase: unsafe extern "system" fn(this: *mut *mut Self, codepoint: u32, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub IsIdStart: unsafe extern "system" fn(this: *mut *mut Self, codepoint: u32, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub IsIdContinue: unsafe extern "system" fn(this: *mut *mut Self, codepoint: u32, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub IsGraphemeBase: unsafe extern "system" fn(this: *mut *mut Self, codepoint: u32, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub IsGraphemeExtend: unsafe extern "system" fn(this: *mut *mut Self, codepoint: u32, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub GetNumericType: unsafe extern "system" fn(this: *mut *mut Self, codepoint: u32, result__: *mut UnicodeNumericType) -> ::windows_sys::core::HRESULT,
+    pub GetGeneralCategory: unsafe extern "system" fn(this: *mut *mut Self, codepoint: u32, result__: *mut UnicodeGeneralCategory) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWordSegment {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Text: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SourceTextSegment: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut TextSegment) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub AlternateForms: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    AlternateForms: usize,
+}
+#[repr(C)]
+pub struct IWordsSegmenter {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub ResolvedLanguage: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub GetTokenAt: unsafe extern "system" fn(this: *mut *mut Self, text: ::windows_sys::core::HSTRING, startindex: u32, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub GetTokens: unsafe extern "system" fn(this: *mut *mut Self, text: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    GetTokens: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub Tokenize: unsafe extern "system" fn(this: *mut *mut Self, text: ::windows_sys::core::HSTRING, startindex: u32, handler: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    Tokenize: usize,
+}
+#[repr(C)]
+pub struct IWordsSegmenterFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CreateWithLanguage: unsafe extern "system" fn(this: *mut *mut Self, language: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
 pub type SelectableWordSegment = *mut ::core::ffi::c_void;
 pub type SelectableWordSegmentsTokenizingHandler = *mut ::core::ffi::c_void;
 pub type SelectableWordsSegmenter = *mut ::core::ffi::c_void;

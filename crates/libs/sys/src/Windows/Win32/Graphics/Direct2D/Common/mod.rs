@@ -544,4 +544,14 @@ impl ::core::clone::Clone for D2D_VECTOR_4F {
         *self
     }
 }
-pub type ID2D1SimplifiedGeometrySink = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct ID2D1SimplifiedGeometrySink {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetFillMode: unsafe extern "system" fn(this: *mut *mut Self, fillmode: D2D1_FILL_MODE),
+    pub SetSegmentFlags: unsafe extern "system" fn(this: *mut *mut Self, vertexflags: D2D1_PATH_SEGMENT),
+    pub BeginFigure: unsafe extern "system" fn(this: *mut *mut Self, startpoint: D2D_POINT_2F, figurebegin: D2D1_FIGURE_BEGIN),
+    pub AddLines: unsafe extern "system" fn(this: *mut *mut Self, points: *const D2D_POINT_2F, pointscount: u32),
+    pub AddBeziers: unsafe extern "system" fn(this: *mut *mut Self, beziers: *const D2D1_BEZIER_SEGMENT, bezierscount: u32),
+    pub EndFigure: unsafe extern "system" fn(this: *mut *mut Self, figureend: D2D1_FIGURE_END),
+    pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}

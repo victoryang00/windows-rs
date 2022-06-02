@@ -117,7 +117,7 @@ extern "system" {
     #[cfg(feature = "Win32_Foundation")]
     pub fn CorePrinterDriverInstalledW(pszserver: ::windows_sys::core::PCWSTR, pszenvironment: ::windows_sys::core::PCWSTR, coredriverguid: ::windows_sys::core::GUID, ftdriverdate: super::super::Foundation::FILETIME, dwldriverversion: u64, pbdriverinstalled: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Graphics_Printing\"`*"]
-    pub fn CreatePrintAsyncNotifyChannel(pszname: ::windows_sys::core::PCWSTR, pnotificationtype: *const ::windows_sys::core::GUID, euserfilter: PrintAsyncNotifyUserFilter, econversationstyle: PrintAsyncNotifyConversationStyle, pcallback: IPrintAsyncNotifyCallback, ppiasynchnotification: *mut IPrintAsyncNotifyChannel) -> ::windows_sys::core::HRESULT;
+    pub fn CreatePrintAsyncNotifyChannel(pszname: ::windows_sys::core::PCWSTR, pnotificationtype: *const ::windows_sys::core::GUID, euserfilter: PrintAsyncNotifyUserFilter, econversationstyle: PrintAsyncNotifyConversationStyle, pcallback: *mut *mut IPrintAsyncNotifyCallback, ppiasynchnotification: *mut *mut *mut IPrintAsyncNotifyChannel) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Graphics_Printing\"`, `\"Win32_Foundation\"`, `\"Win32_Graphics_Gdi\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
     pub fn CreatePrinterIC(hprinter: super::super::Foundation::HANDLE, pdevmode: *const super::Gdi::DEVMODEW) -> super::super::Foundation::HANDLE;
@@ -489,7 +489,7 @@ extern "system" {
     pub fn ReadPrinter(hprinter: super::super::Foundation::HANDLE, pbuf: *mut ::core::ffi::c_void, cbbuf: u32, pnobytesread: *mut u32) -> super::super::Foundation::BOOL;
     #[doc = "*Required features: `\"Win32_Graphics_Printing\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn RegisterForPrintAsyncNotifications(pszname: ::windows_sys::core::PCWSTR, pnotificationtype: *const ::windows_sys::core::GUID, euserfilter: PrintAsyncNotifyUserFilter, econversationstyle: PrintAsyncNotifyConversationStyle, pcallback: IPrintAsyncNotifyCallback, phnotify: *mut super::super::Foundation::HANDLE) -> ::windows_sys::core::HRESULT;
+    pub fn RegisterForPrintAsyncNotifications(pszname: ::windows_sys::core::PCWSTR, pnotificationtype: *const ::windows_sys::core::GUID, euserfilter: PrintAsyncNotifyUserFilter, econversationstyle: PrintAsyncNotifyConversationStyle, pcallback: *mut *mut IPrintAsyncNotifyCallback, phnotify: *mut super::super::Foundation::HANDLE) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Graphics_Printing\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
     pub fn RemovePrintDeviceObject(hdeviceobject: super::super::Foundation::HANDLE) -> ::windows_sys::core::HRESULT;
@@ -3006,13 +3006,71 @@ impl ::core::clone::Clone for GLYPHRUN {
 pub const GPD_OEMCUSTOMDATA: u32 = 1u32;
 pub const GUID_DEVINTERFACE_IPPUSB_PRINT: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4076077953, data2: 62573, data3: 20049, data4: [188, 231, 98, 222, 108, 242, 208, 152] };
 pub const GUID_DEVINTERFACE_USBPRINT: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 685215661, data2: 23058, data3: 4561, data4: [174, 91, 0, 0, 248, 3, 168, 194] };
-pub type IAsyncGetSendNotificationCookie = *mut ::core::ffi::c_void;
-pub type IAsyncGetSrvReferralCookie = *mut ::core::ffi::c_void;
-pub type IBidiAsyncNotifyChannel = *mut ::core::ffi::c_void;
-pub type IBidiRequest = *mut ::core::ffi::c_void;
-pub type IBidiRequestContainer = *mut ::core::ffi::c_void;
-pub type IBidiSpl = *mut ::core::ffi::c_void;
-pub type IBidiSpl2 = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IAsyncGetSendNotificationCookie {
+    pub base__: IPrintAsyncCookie,
+    #[cfg(feature = "Win32_Foundation")]
+    pub FinishAsyncCallWithData: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut ::core::ffi::c_void, param1: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    FinishAsyncCallWithData: usize,
+}
+#[repr(C)]
+pub struct IAsyncGetSrvReferralCookie {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub FinishAsyncCall: unsafe extern "system" fn(this: *mut *mut Self, param0: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+    pub CancelAsyncCall: unsafe extern "system" fn(this: *mut *mut Self, param0: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+    pub FinishAsyncCallWithData: unsafe extern "system" fn(this: *mut *mut Self, param0: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IBidiAsyncNotifyChannel {
+    pub base__: IPrintAsyncNotifyChannel,
+    pub CreateNotificationChannel: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetPrintName: unsafe extern "system" fn(this: *mut *mut Self, param0: *const *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetChannelNotificationType: unsafe extern "system" fn(this: *mut *mut Self, param0: *const *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AsyncGetNotificationSendResponse: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut ::core::ffi::c_void, param1: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AsyncCloseChannel: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut ::core::ffi::c_void, param1: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IBidiRequest {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetSchema: unsafe extern "system" fn(this: *mut *mut Self, pszschema: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetInputData: unsafe extern "system" fn(this: *mut *mut Self, dwtype: u32, pdata: *const u8, usize: u32) -> ::windows_sys::core::HRESULT,
+    pub GetResult: unsafe extern "system" fn(this: *mut *mut Self, phr: *mut ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+    pub GetOutputData: unsafe extern "system" fn(this: *mut *mut Self, dwindex: u32, ppszschema: *mut ::windows_sys::core::PWSTR, pdwtype: *mut u32, ppdata: *mut *mut u8, usize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetEnumCount: unsafe extern "system" fn(this: *mut *mut Self, pdwtotal: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IBidiRequestContainer {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub AddRequest: unsafe extern "system" fn(this: *mut *mut Self, prequest: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetEnumObject: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetEnumObject: usize,
+    pub GetRequestCount: unsafe extern "system" fn(this: *mut *mut Self, pucount: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IBidiSpl {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub BindDevice: unsafe extern "system" fn(this: *mut *mut Self, pszdevicename: ::windows_sys::core::PCWSTR, dwaccess: u32) -> ::windows_sys::core::HRESULT,
+    pub UnbindDevice: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub SendRecv: unsafe extern "system" fn(this: *mut *mut Self, pszaction: ::windows_sys::core::PCWSTR, prequest: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub MultiSendRecv: unsafe extern "system" fn(this: *mut *mut Self, pszaction: ::windows_sys::core::PCWSTR, prequestcontainer: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IBidiSpl2 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub BindDevice: unsafe extern "system" fn(this: *mut *mut Self, pszdevicename: ::windows_sys::core::PCWSTR, dwaccess: u32) -> ::windows_sys::core::HRESULT,
+    pub UnbindDevice: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SendRecvXMLString: unsafe extern "system" fn(this: *mut *mut Self, bstrrequest: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pbstrresponse: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SendRecvXMLString: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SendRecvXMLStream: unsafe extern "system" fn(this: *mut *mut Self, psrequest: *mut ::core::ffi::c_void, ppsresponse: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SendRecvXMLStream: usize,
+}
 #[doc = "*Required features: `\"Win32_Graphics_Printing\"`*"]
 pub const IDI_CPSUI_ADVANCE: u32 = 64058u32;
 #[doc = "*Required features: `\"Win32_Graphics_Printing\"`*"]
@@ -3627,12 +3685,76 @@ pub const IDS_CPSUI_WARNING: u32 = 64847u32;
 pub const IDS_CPSUI_WATERMARK: u32 = 64797u32;
 #[doc = "*Required features: `\"Win32_Graphics_Printing\"`*"]
 pub const IDS_CPSUI_YES: u32 = 64729u32;
-pub type IFixedDocument = *mut ::core::ffi::c_void;
-pub type IFixedDocumentSequence = *mut ::core::ffi::c_void;
-pub type IFixedPage = *mut ::core::ffi::c_void;
-pub type IImgCreateErrorInfo = *mut ::core::ffi::c_void;
-pub type IImgErrorInfo = *mut ::core::ffi::c_void;
-pub type IInterFilterCommunicator = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IFixedDocument {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetUri: unsafe extern "system" fn(this: *mut *mut Self, uri: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetUri: usize,
+    pub GetPrintTicket: unsafe extern "system" fn(this: *mut *mut Self, ppprintticket: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetPrintTicket: unsafe extern "system" fn(this: *mut *mut Self, pprintticket: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IFixedDocumentSequence {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetUri: unsafe extern "system" fn(this: *mut *mut Self, uri: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetUri: usize,
+    pub GetPrintTicket: unsafe extern "system" fn(this: *mut *mut Self, ppprintticket: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetPrintTicket: unsafe extern "system" fn(this: *mut *mut Self, pprintticket: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IFixedPage {
+    pub base__: IPartBase,
+    pub GetPrintTicket: unsafe extern "system" fn(this: *mut *mut Self, ppprintticket: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetPagePart: unsafe extern "system" fn(this: *mut *mut Self, uri: ::windows_sys::core::PCWSTR, ppunk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetWriteStream: unsafe extern "system" fn(this: *mut *mut Self, ppwritestream: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetPrintTicket: unsafe extern "system" fn(this: *mut *mut Self, ppprintticket: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetPagePart: unsafe extern "system" fn(this: *mut *mut Self, punk: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub DeleteResource: unsafe extern "system" fn(this: *mut *mut Self, uri: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetXpsPartIterator: unsafe extern "system" fn(this: *mut *mut Self, pxpspartit: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Ole")]
+#[repr(C)]
+pub struct IImgCreateErrorInfo {
+    pub base__: super::super::System::Ole::ICreateErrorInfo,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AttachToErrorInfo: unsafe extern "system" fn(this: *mut *mut Self, perrorinfo: *mut __MIDL___MIDL_itf_imgerror_0000_0000_0001) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AttachToErrorInfo: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IImgErrorInfo {
+    pub base__: super::super::System::Com::IErrorInfo,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetDeveloperDescription: unsafe extern "system" fn(this: *mut *mut Self, pbstrdevdescription: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetDeveloperDescription: usize,
+    pub GetUserErrorId: unsafe extern "system" fn(this: *mut *mut Self, perrorid: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub GetUserParameterCount: unsafe extern "system" fn(this: *mut *mut Self, pcuserparams: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetUserParameter: unsafe extern "system" fn(this: *mut *mut Self, cparam: u32, pbstrparam: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetUserParameter: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetUserFallback: unsafe extern "system" fn(this: *mut *mut Self, pbstrfallback: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetUserFallback: usize,
+    pub GetExceptionId: unsafe extern "system" fn(this: *mut *mut Self, pexceptionid: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DetachErrorInfo: unsafe extern "system" fn(this: *mut *mut Self, perrorinfo: *mut __MIDL___MIDL_itf_imgerror_0000_0000_0001) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DetachErrorInfo: usize,
+}
+#[repr(C)]
+pub struct IInterFilterCommunicator {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub RequestReader: unsafe extern "system" fn(this: *mut *mut Self, ppireader: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RequestWriter: unsafe extern "system" fn(this: *mut *mut Self, ppiwriter: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Graphics_Printing\"`*"]
 pub struct INSERTPSUIPAGE_INFO {
@@ -3699,93 +3821,1046 @@ pub const IOCTL_USBPRINT_VENDOR_GET_COMMAND: u32 = 2228284u32;
 pub const IOCTL_USBPRINT_VENDOR_SET_COMMAND: u32 = 2228280u32;
 #[doc = "*Required features: `\"Win32_Graphics_Printing\"`*"]
 pub const IPDFP_COPY_ALL_FILES: u32 = 1u32;
-pub type IPartBase = *mut ::core::ffi::c_void;
-pub type IPartColorProfile = *mut ::core::ffi::c_void;
-pub type IPartDiscardControl = *mut ::core::ffi::c_void;
-pub type IPartFont = *mut ::core::ffi::c_void;
-pub type IPartFont2 = *mut ::core::ffi::c_void;
-pub type IPartImage = *mut ::core::ffi::c_void;
-pub type IPartPrintTicket = *mut ::core::ffi::c_void;
-pub type IPartResourceDictionary = *mut ::core::ffi::c_void;
-pub type IPartThumbnail = *mut ::core::ffi::c_void;
-pub type IPrintAsyncCookie = *mut ::core::ffi::c_void;
-pub type IPrintAsyncNewChannelCookie = *mut ::core::ffi::c_void;
-pub type IPrintAsyncNotify = *mut ::core::ffi::c_void;
-pub type IPrintAsyncNotifyCallback = *mut ::core::ffi::c_void;
-pub type IPrintAsyncNotifyChannel = *mut ::core::ffi::c_void;
-pub type IPrintAsyncNotifyDataObject = *mut ::core::ffi::c_void;
-pub type IPrintAsyncNotifyRegistration = *mut ::core::ffi::c_void;
-pub type IPrintAsyncNotifyServerReferral = *mut ::core::ffi::c_void;
-pub type IPrintBidiAsyncNotifyRegistration = *mut ::core::ffi::c_void;
-pub type IPrintClassObjectFactory = *mut ::core::ffi::c_void;
-pub type IPrintCoreHelper = *mut ::core::ffi::c_void;
-pub type IPrintCoreHelperPS = *mut ::core::ffi::c_void;
-pub type IPrintCoreHelperUni = *mut ::core::ffi::c_void;
-pub type IPrintCoreHelperUni2 = *mut ::core::ffi::c_void;
-pub type IPrintCoreUI2 = *mut ::core::ffi::c_void;
-pub type IPrintJob = *mut ::core::ffi::c_void;
-pub type IPrintJobCollection = *mut ::core::ffi::c_void;
-pub type IPrintOemCommon = *mut ::core::ffi::c_void;
-pub type IPrintOemDriverUI = *mut ::core::ffi::c_void;
-pub type IPrintOemUI = *mut ::core::ffi::c_void;
-pub type IPrintOemUI2 = *mut ::core::ffi::c_void;
-pub type IPrintOemUIMXDC = *mut ::core::ffi::c_void;
-pub type IPrintPipelineFilter = *mut ::core::ffi::c_void;
-pub type IPrintPipelineManagerControl = *mut ::core::ffi::c_void;
-pub type IPrintPipelineProgressReport = *mut ::core::ffi::c_void;
-pub type IPrintPipelinePropertyBag = *mut ::core::ffi::c_void;
-pub type IPrintPreviewDxgiPackageTarget = *mut ::core::ffi::c_void;
-pub type IPrintReadStream = *mut ::core::ffi::c_void;
-pub type IPrintReadStreamFactory = *mut ::core::ffi::c_void;
-pub type IPrintSchemaAsyncOperation = *mut ::core::ffi::c_void;
-pub type IPrintSchemaAsyncOperationEvent = *mut ::core::ffi::c_void;
-pub type IPrintSchemaCapabilities = *mut ::core::ffi::c_void;
-pub type IPrintSchemaCapabilities2 = *mut ::core::ffi::c_void;
-pub type IPrintSchemaDisplayableElement = *mut ::core::ffi::c_void;
-pub type IPrintSchemaElement = *mut ::core::ffi::c_void;
-pub type IPrintSchemaFeature = *mut ::core::ffi::c_void;
-pub type IPrintSchemaNUpOption = *mut ::core::ffi::c_void;
-pub type IPrintSchemaOption = *mut ::core::ffi::c_void;
-pub type IPrintSchemaOptionCollection = *mut ::core::ffi::c_void;
-pub type IPrintSchemaPageImageableSize = *mut ::core::ffi::c_void;
-pub type IPrintSchemaPageMediaSizeOption = *mut ::core::ffi::c_void;
-pub type IPrintSchemaParameterDefinition = *mut ::core::ffi::c_void;
-pub type IPrintSchemaParameterInitializer = *mut ::core::ffi::c_void;
-pub type IPrintSchemaTicket = *mut ::core::ffi::c_void;
-pub type IPrintSchemaTicket2 = *mut ::core::ffi::c_void;
-pub type IPrintTicketProvider = *mut ::core::ffi::c_void;
-pub type IPrintTicketProvider2 = *mut ::core::ffi::c_void;
-pub type IPrintUnidiAsyncNotifyRegistration = *mut ::core::ffi::c_void;
-pub type IPrintWriteStream = *mut ::core::ffi::c_void;
-pub type IPrintWriteStreamFlush = *mut ::core::ffi::c_void;
-pub type IPrinterBidiSetRequestCallback = *mut ::core::ffi::c_void;
-pub type IPrinterExtensionAsyncOperation = *mut ::core::ffi::c_void;
-pub type IPrinterExtensionContext = *mut ::core::ffi::c_void;
-pub type IPrinterExtensionContextCollection = *mut ::core::ffi::c_void;
-pub type IPrinterExtensionEvent = *mut ::core::ffi::c_void;
-pub type IPrinterExtensionEventArgs = *mut ::core::ffi::c_void;
-pub type IPrinterExtensionManager = *mut ::core::ffi::c_void;
-pub type IPrinterExtensionRequest = *mut ::core::ffi::c_void;
-pub type IPrinterPropertyBag = *mut ::core::ffi::c_void;
-pub type IPrinterQueue = *mut ::core::ffi::c_void;
-pub type IPrinterQueue2 = *mut ::core::ffi::c_void;
-pub type IPrinterQueueEvent = *mut ::core::ffi::c_void;
-pub type IPrinterQueueView = *mut ::core::ffi::c_void;
-pub type IPrinterQueueViewEvent = *mut ::core::ffi::c_void;
-pub type IPrinterScriptContext = *mut ::core::ffi::c_void;
-pub type IPrinterScriptablePropertyBag = *mut ::core::ffi::c_void;
-pub type IPrinterScriptablePropertyBag2 = *mut ::core::ffi::c_void;
-pub type IPrinterScriptableSequentialStream = *mut ::core::ffi::c_void;
-pub type IPrinterScriptableStream = *mut ::core::ffi::c_void;
-pub type IXpsDocument = *mut ::core::ffi::c_void;
-pub type IXpsDocumentConsumer = *mut ::core::ffi::c_void;
-pub type IXpsDocumentProvider = *mut ::core::ffi::c_void;
-pub type IXpsPartIterator = *mut ::core::ffi::c_void;
-pub type IXpsRasterizationFactory = *mut ::core::ffi::c_void;
-pub type IXpsRasterizationFactory1 = *mut ::core::ffi::c_void;
-pub type IXpsRasterizationFactory2 = *mut ::core::ffi::c_void;
-pub type IXpsRasterizer = *mut ::core::ffi::c_void;
-pub type IXpsRasterizerNotificationCallback = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IPartBase {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetUri: unsafe extern "system" fn(this: *mut *mut Self, uri: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetUri: usize,
+    pub GetStream: unsafe extern "system" fn(this: *mut *mut Self, ppstream: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetPartCompression: unsafe extern "system" fn(this: *mut *mut Self, pcompression: *mut EXpsCompressionOptions) -> ::windows_sys::core::HRESULT,
+    pub SetPartCompression: unsafe extern "system" fn(this: *mut *mut Self, compression: EXpsCompressionOptions) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPartColorProfile {
+    pub base__: IPartBase,
+}
+#[repr(C)]
+pub struct IPartDiscardControl {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetDiscardProperties: unsafe extern "system" fn(this: *mut *mut Self, urisentinelpage: *mut super::super::Foundation::BSTR, uriparttodiscard: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetDiscardProperties: usize,
+}
+#[repr(C)]
+pub struct IPartFont {
+    pub base__: IPartBase,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetFontProperties: unsafe extern "system" fn(this: *mut *mut Self, pcontenttype: *mut super::super::Foundation::BSTR, pfontoptions: *mut EXpsFontOptions) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetFontProperties: usize,
+    pub SetFontContent: unsafe extern "system" fn(this: *mut *mut Self, pcontenttype: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetFontOptions: unsafe extern "system" fn(this: *mut *mut Self, options: EXpsFontOptions) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPartFont2 {
+    pub base__: IPartFont,
+    pub GetFontRestriction: unsafe extern "system" fn(this: *mut *mut Self, prestriction: *mut EXpsFontRestriction) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPartImage {
+    pub base__: IPartBase,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetImageProperties: unsafe extern "system" fn(this: *mut *mut Self, pcontenttype: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetImageProperties: usize,
+    pub SetImageContent: unsafe extern "system" fn(this: *mut *mut Self, pcontenttype: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPartPrintTicket {
+    pub base__: IPartBase,
+}
+#[repr(C)]
+pub struct IPartResourceDictionary {
+    pub base__: IPartBase,
+}
+#[repr(C)]
+pub struct IPartThumbnail {
+    pub base__: IPartBase,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetThumbnailProperties: unsafe extern "system" fn(this: *mut *mut Self, pcontenttype: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetThumbnailProperties: usize,
+    pub SetThumbnailContent: unsafe extern "system" fn(this: *mut *mut Self, pcontenttype: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPrintAsyncCookie {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub FinishAsyncCall: unsafe extern "system" fn(this: *mut *mut Self, param0: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+    pub CancelAsyncCall: unsafe extern "system" fn(this: *mut *mut Self, param0: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPrintAsyncNewChannelCookie {
+    pub base__: IPrintAsyncCookie,
+    pub FinishAsyncCallWithData: unsafe extern "system" fn(this: *mut *mut Self, param0: *const *mut ::core::ffi::c_void, param1: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPrintAsyncNotify {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub CreatePrintAsyncNotifyChannel: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: *const ::windows_sys::core::GUID, param2: PrintAsyncNotifyUserFilter, param3: PrintAsyncNotifyConversationStyle, param4: *mut ::core::ffi::c_void, param5: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreatePrintAsyncNotifyRegistration: unsafe extern "system" fn(this: *mut *mut Self, param0: *const ::windows_sys::core::GUID, param1: PrintAsyncNotifyUserFilter, param2: PrintAsyncNotifyConversationStyle, param3: *mut ::core::ffi::c_void, param4: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPrintAsyncNotifyCallback {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnEventNotify: unsafe extern "system" fn(this: *mut *mut Self, pchannel: *mut ::core::ffi::c_void, pdata: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ChannelClosed: unsafe extern "system" fn(this: *mut *mut Self, pchannel: *mut ::core::ffi::c_void, pdata: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPrintAsyncNotifyChannel {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SendNotification: unsafe extern "system" fn(this: *mut *mut Self, pdata: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CloseChannel: unsafe extern "system" fn(this: *mut *mut Self, pdata: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPrintAsyncNotifyDataObject {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub AcquireData: unsafe extern "system" fn(this: *mut *mut Self, ppnotificationdata: *mut *mut u8, psize: *mut u32, ppschema: *mut *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub ReleaseData: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPrintAsyncNotifyRegistration {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub RegisterForNotifications: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub UnregisterForNotifications: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPrintAsyncNotifyServerReferral {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetServerReferral: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub AsyncGetServerReferral: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetServerReferral: unsafe extern "system" fn(this: *mut *mut Self, prmtserverreferral: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPrintBidiAsyncNotifyRegistration {
+    pub base__: IPrintAsyncNotifyRegistration,
+    pub AsyncGetNewChannel: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPrintClassObjectFactory {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetPrintClassObject: unsafe extern "system" fn(this: *mut *mut Self, pszprintername: ::windows_sys::core::PCWSTR, riid: *const ::windows_sys::core::GUID, ppnewobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPrintCoreHelper {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+    pub GetOption: unsafe extern "system" fn(this: *mut *mut Self, pdevmode: *const super::Gdi::DEVMODEA, cbsize: u32, pszfeaturerequested: ::windows_sys::core::PCSTR, ppszoption: *mut ::windows_sys::core::PSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi")))]
+    GetOption: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+    pub SetOptions: unsafe extern "system" fn(this: *mut *mut Self, pdevmode: *mut super::Gdi::DEVMODEA, cbsize: u32, bresolveconflicts: super::super::Foundation::BOOL, pfopairs: *const PRINT_FEATURE_OPTION, cpairs: u32, pcpairswritten: *mut u32, pdwresult: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi")))]
+    SetOptions: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+    pub EnumConstrainedOptions: unsafe extern "system" fn(this: *mut *mut Self, pdevmode: *const super::Gdi::DEVMODEA, cbsize: u32, pszfeaturekeyword: ::windows_sys::core::PCSTR, pconstrainedoptionlist: *mut *mut *mut ::windows_sys::core::PSTR, pdwnumoptions: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi")))]
+    EnumConstrainedOptions: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+    pub WhyConstrained: unsafe extern "system" fn(this: *mut *mut Self, pdevmode: *const super::Gdi::DEVMODEA, cbsize: u32, pszfeaturekeyword: ::windows_sys::core::PCSTR, pszoptionkeyword: ::windows_sys::core::PCSTR, ppfoconstraints: *mut *mut PRINT_FEATURE_OPTION, pdwnumoptions: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi")))]
+    WhyConstrained: usize,
+    pub EnumFeatures: unsafe extern "system" fn(this: *mut *mut Self, pfeaturelist: *mut *mut *mut ::windows_sys::core::PSTR, pdwnumfeatures: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub EnumOptions: unsafe extern "system" fn(this: *mut *mut Self, pszfeaturekeyword: ::windows_sys::core::PCSTR, poptionlist: *mut *mut *mut ::windows_sys::core::PSTR, pdwnumoptions: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetFontSubstitution: unsafe extern "system" fn(this: *mut *mut Self, psztruetypefontname: ::windows_sys::core::PCWSTR, ppszdevfontname: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetFontSubstitution: unsafe extern "system" fn(this: *mut *mut Self, psztruetypefontname: ::windows_sys::core::PCWSTR, pszdevfontname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub CreateInstanceOfMSXMLObject: unsafe extern "system" fn(this: *mut *mut Self, rclsid: *const ::windows_sys::core::GUID, punkouter: *mut ::core::ffi::c_void, dwclscontext: u32, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPrintCoreHelperPS {
+    pub base__: IPrintCoreHelper,
+    pub GetGlobalAttribute: unsafe extern "system" fn(this: *mut *mut Self, pszattribute: ::windows_sys::core::PCSTR, pdwdatatype: *mut u32, ppbdata: *mut *mut u8, pcbsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetFeatureAttribute: unsafe extern "system" fn(this: *mut *mut Self, pszfeaturekeyword: ::windows_sys::core::PCSTR, pszattribute: ::windows_sys::core::PCSTR, pdwdatatype: *mut u32, ppbdata: *mut *mut u8, pcbsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetOptionAttribute: unsafe extern "system" fn(this: *mut *mut Self, pszfeaturekeyword: ::windows_sys::core::PCSTR, pszoptionkeyword: ::windows_sys::core::PCSTR, pszattribute: ::windows_sys::core::PCSTR, pdwdatatype: *mut u32, ppbdata: *mut *mut u8, pcbsize: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPrintCoreHelperUni {
+    pub base__: IPrintCoreHelper,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_System_Com"))]
+    pub CreateGDLSnapshot: unsafe extern "system" fn(this: *mut *mut Self, pdevmode: *mut super::Gdi::DEVMODEA, cbsize: u32, dwflags: u32, ppsnapshotstream: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_System_Com")))]
+    CreateGDLSnapshot: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreateDefaultGDLSnapshot: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, ppsnapshotstream: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CreateDefaultGDLSnapshot: usize,
+}
+#[repr(C)]
+pub struct IPrintCoreHelperUni2 {
+    pub base__: IPrintCoreHelperUni,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+    pub GetNamedCommand: unsafe extern "system" fn(this: *mut *mut Self, pdevmode: *const super::Gdi::DEVMODEA, cbsize: u32, pszcommandname: ::windows_sys::core::PCWSTR, ppcommandbytes: *mut *mut u8, pcbcommandsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi")))]
+    GetNamedCommand: usize,
+}
+#[repr(C)]
+pub struct IPrintCoreUI2 {
+    pub base__: IPrintOemDriverUI,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetOptions: unsafe extern "system" fn(this: *mut *mut Self, poemuiobj: *const OEMUIOBJ, dwflags: u32, pmszfeaturesrequested: *const i8, cbin: u32, pmszfeatureoptionbuf: ::windows_sys::core::PSTR, cbsize: u32, pcbneeded: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetOptions: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetOptions: unsafe extern "system" fn(this: *mut *mut Self, poemuiobj: *const OEMUIOBJ, dwflags: u32, pmszfeatureoptionbuf: *const i8, cbin: u32, pdwresult: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetOptions: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub EnumConstrainedOptions: unsafe extern "system" fn(this: *mut *mut Self, poemuiobj: *const OEMUIOBJ, dwflags: u32, pszfeaturekeyword: ::windows_sys::core::PCSTR, pmszconstrainedoptionlist: ::windows_sys::core::PSTR, cbsize: u32, pcbneeded: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    EnumConstrainedOptions: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub WhyConstrained: unsafe extern "system" fn(this: *mut *mut Self, poemuiobj: *const OEMUIOBJ, dwflags: u32, pszfeaturekeyword: ::windows_sys::core::PCSTR, pszoptionkeyword: ::windows_sys::core::PCSTR, pmszreasonlist: ::windows_sys::core::PSTR, cbsize: u32, pcbneeded: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    WhyConstrained: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetGlobalAttribute: unsafe extern "system" fn(this: *mut *mut Self, poemuiobj: *const OEMUIOBJ, dwflags: u32, pszattribute: ::windows_sys::core::PCSTR, pdwdatatype: *mut u32, pbdata: *mut u8, cbsize: u32, pcbneeded: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetGlobalAttribute: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetFeatureAttribute: unsafe extern "system" fn(this: *mut *mut Self, poemuiobj: *const OEMUIOBJ, dwflags: u32, pszfeaturekeyword: ::windows_sys::core::PCSTR, pszattribute: ::windows_sys::core::PCSTR, pdwdatatype: *mut u32, pbdata: *mut u8, cbsize: u32, pcbneeded: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetFeatureAttribute: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetOptionAttribute: unsafe extern "system" fn(this: *mut *mut Self, poemuiobj: *const OEMUIOBJ, dwflags: u32, pszfeaturekeyword: ::windows_sys::core::PCSTR, pszoptionkeyword: ::windows_sys::core::PCSTR, pszattribute: ::windows_sys::core::PCSTR, pdwdatatype: *mut u32, pbdata: *mut u8, cbsize: u32, pcbneeded: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetOptionAttribute: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub EnumFeatures: unsafe extern "system" fn(this: *mut *mut Self, poemuiobj: *const OEMUIOBJ, dwflags: u32, pmszfeaturelist: ::windows_sys::core::PSTR, cbsize: u32, pcbneeded: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    EnumFeatures: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub EnumOptions: unsafe extern "system" fn(this: *mut *mut Self, poemuiobj: *const OEMUIOBJ, dwflags: u32, pszfeaturekeyword: ::windows_sys::core::PCSTR, pmszoptionlist: ::windows_sys::core::PSTR, cbsize: u32, pcbneeded: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    EnumOptions: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub QuerySimulationSupport: unsafe extern "system" fn(this: *mut *mut Self, hprinter: super::super::Foundation::HANDLE, dwlevel: u32, pcaps: *mut u8, cbsize: u32, pcbneeded: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    QuerySimulationSupport: usize,
+}
+#[repr(C)]
+pub struct IPrintJob {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Name: unsafe extern "system" fn(this: *mut *mut Self, pbstrname: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Name: usize,
+    pub Id: unsafe extern "system" fn(this: *mut *mut Self, pulid: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub PrintedPages: unsafe extern "system" fn(this: *mut *mut Self, pulpages: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub TotalPages: unsafe extern "system" fn(this: *mut *mut Self, pulpages: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Status: unsafe extern "system" fn(this: *mut *mut Self, pstatus: *mut PrintJobStatus) -> ::windows_sys::core::HRESULT,
+    pub SubmissionTime: unsafe extern "system" fn(this: *mut *mut Self, psubmissiontime: *mut f64) -> ::windows_sys::core::HRESULT,
+    pub RequestCancel: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IPrintJobCollection {
+    pub base__: super::super::System::Com::IDispatch,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, pulcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetAt: unsafe extern "system" fn(this: *mut *mut Self, ulindex: u32, ppjob: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, ppunk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPrintOemCommon {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetInfo: unsafe extern "system" fn(this: *mut *mut Self, dwmode: u32, pbuffer: *mut ::core::ffi::c_void, cbsize: u32, pcbneeded: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+    pub DevMode: unsafe extern "system" fn(this: *mut *mut Self, dwmode: u32, poemdmparam: *mut OEMDMPARAM) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi")))]
+    DevMode: usize,
+}
+#[repr(C)]
+pub struct IPrintOemDriverUI {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub DrvGetDriverSetting: unsafe extern "system" fn(this: *mut *mut Self, pci: *mut ::core::ffi::c_void, feature: ::windows_sys::core::PCSTR, poutput: *mut ::core::ffi::c_void, cbsize: u32, pcbneeded: *mut u32, pdwoptionsreturned: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DrvUpgradeRegistrySetting: unsafe extern "system" fn(this: *mut *mut Self, hprinter: super::super::Foundation::HANDLE, pfeature: ::windows_sys::core::PCSTR, poption: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DrvUpgradeRegistrySetting: usize,
+    pub DrvUpdateUISetting: unsafe extern "system" fn(this: *mut *mut Self, pci: *mut ::core::ffi::c_void, poptitem: *mut ::core::ffi::c_void, dwpreviousselection: u32, dwmode: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPrintOemUI {
+    pub base__: IPrintOemCommon,
+    pub PublishDriverInterface: unsafe extern "system" fn(this: *mut *mut Self, piunknown: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+    pub CommonUIProp: unsafe extern "system" fn(this: *mut *mut Self, dwmode: u32, poemcuipparam: *const OEMCUIPPARAM) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging")))]
+    CommonUIProp: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DocumentPropertySheets: unsafe extern "system" fn(this: *mut *mut Self, ppsuiinfo: *mut PROPSHEETUI_INFO, lparam: super::super::Foundation::LPARAM) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DocumentPropertySheets: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DevicePropertySheets: unsafe extern "system" fn(this: *mut *mut Self, ppsuiinfo: *const PROPSHEETUI_INFO, lparam: super::super::Foundation::LPARAM) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DevicePropertySheets: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+    pub DevQueryPrintEx: unsafe extern "system" fn(this: *mut *mut Self, poemuiobj: *const OEMUIOBJ, pdqpinfo: *const DEVQUERYPRINT_INFO, ppublicdm: *const super::Gdi::DEVMODEA, poemdm: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi")))]
+    DevQueryPrintEx: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+    pub DeviceCapabilitiesA: unsafe extern "system" fn(this: *mut *mut Self, poemuiobj: *mut OEMUIOBJ, hprinter: super::super::Foundation::HANDLE, pdevicename: ::windows_sys::core::PCWSTR, wcapability: u16, poutput: *mut ::core::ffi::c_void, ppublicdm: *const super::Gdi::DEVMODEA, poemdm: *const ::core::ffi::c_void, dwold: u32, dwresult: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi")))]
+    DeviceCapabilitiesA: usize,
+    pub UpgradePrinter: unsafe extern "system" fn(this: *mut *mut Self, dwlevel: u32, pdriverupgradeinfo: *const u8) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub PrinterEvent: unsafe extern "system" fn(this: *mut *mut Self, pprintername: ::windows_sys::core::PCWSTR, idriverevent: i32, dwflags: u32, lparam: super::super::Foundation::LPARAM) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    PrinterEvent: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DriverEvent: unsafe extern "system" fn(this: *mut *mut Self, dwdriverevent: u32, dwlevel: u32, pdriverinfo: *const u8, lparam: super::super::Foundation::LPARAM) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DriverEvent: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+    pub QueryColorProfile: unsafe extern "system" fn(this: *mut *mut Self, hprinter: super::super::Foundation::HANDLE, poemuiobj: *const OEMUIOBJ, ppublicdm: *const super::Gdi::DEVMODEA, poemdm: *const ::core::ffi::c_void, ulquerymode: u32, pvprofiledata: *mut ::core::ffi::c_void, pcbprofiledata: *mut u32, pflprofiledata: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi")))]
+    QueryColorProfile: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub FontInstallerDlgProc: unsafe extern "system" fn(this: *mut *mut Self, hwnd: super::super::Foundation::HWND, usmsg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    FontInstallerDlgProc: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub UpdateExternalFonts: unsafe extern "system" fn(this: *mut *mut Self, hprinter: super::super::Foundation::HANDLE, hheap: super::super::Foundation::HANDLE, pwstrcartridges: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    UpdateExternalFonts: usize,
+}
+#[repr(C)]
+pub struct IPrintOemUI2 {
+    pub base__: IPrintOemUI,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+    pub QueryJobAttributes: unsafe extern "system" fn(this: *mut *mut Self, hprinter: super::super::Foundation::HANDLE, pdevmode: *const super::Gdi::DEVMODEA, dwlevel: u32, lpattributeinfo: *const u8) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi")))]
+    QueryJobAttributes: usize,
+    pub HideStandardUI: unsafe extern "system" fn(this: *mut *mut Self, dwmode: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+    pub DocumentEvent: unsafe extern "system" fn(this: *mut *mut Self, hprinter: super::super::Foundation::HANDLE, hdc: super::Gdi::HDC, iesc: i32, cbin: u32, pvin: *mut ::core::ffi::c_void, cbout: u32, pvout: *mut ::core::ffi::c_void, piresult: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi")))]
+    DocumentEvent: usize,
+}
+#[repr(C)]
+pub struct IPrintOemUIMXDC {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+    pub AdjustImageableArea: unsafe extern "system" fn(this: *mut *mut Self, hprinter: super::super::Foundation::HANDLE, cbdevmode: u32, pdevmode: *const super::Gdi::DEVMODEA, cboemdm: u32, poemdm: *const ::core::ffi::c_void, prclimageablearea: *mut super::super::Foundation::RECTL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi")))]
+    AdjustImageableArea: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+    pub AdjustImageCompression: unsafe extern "system" fn(this: *mut *mut Self, hprinter: super::super::Foundation::HANDLE, cbdevmode: u32, pdevmode: *const super::Gdi::DEVMODEA, cboemdm: u32, poemdm: *const ::core::ffi::c_void, pcompressionmode: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi")))]
+    AdjustImageCompression: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+    pub AdjustDPI: unsafe extern "system" fn(this: *mut *mut Self, hprinter: super::super::Foundation::HANDLE, cbdevmode: u32, pdevmode: *const super::Gdi::DEVMODEA, cboemdm: u32, poemdm: *const ::core::ffi::c_void, pdpi: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi")))]
+    AdjustDPI: usize,
+}
+#[repr(C)]
+pub struct IPrintPipelineFilter {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub InitializeFilter: unsafe extern "system" fn(this: *mut *mut Self, pinegotiation: *mut ::core::ffi::c_void, pipropertybag: *mut ::core::ffi::c_void, pipipelinecontrol: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ShutdownOperation: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub StartOperation: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPrintPipelineManagerControl {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com")]
+    pub RequestShutdown: unsafe extern "system" fn(this: *mut *mut Self, hrreason: ::windows_sys::core::HRESULT, preason: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    RequestShutdown: usize,
+    pub FilterFinished: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPrintPipelineProgressReport {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub ReportProgress: unsafe extern "system" fn(this: *mut *mut Self, update: EXpsJobConsumption) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPrintPipelinePropertyBag {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub AddProperty: unsafe extern "system" fn(this: *mut *mut Self, pszname: ::windows_sys::core::PCWSTR, pvar: *const super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    AddProperty: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetProperty: unsafe extern "system" fn(this: *mut *mut Self, pszname: ::windows_sys::core::PCWSTR, pvar: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetProperty: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DeleteProperty: unsafe extern "system" fn(this: *mut *mut Self, pszname: ::windows_sys::core::PCWSTR) -> super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DeleteProperty: usize,
+}
+#[repr(C)]
+pub struct IPrintPreviewDxgiPackageTarget {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetJobPageCount: unsafe extern "system" fn(this: *mut *mut Self, counttype: PageCountType, count: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Graphics_Dxgi")]
+    pub DrawPage: unsafe extern "system" fn(this: *mut *mut Self, jobpagenumber: u32, pageimage: *mut ::core::ffi::c_void, dpix: f32, dpiy: f32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Dxgi"))]
+    DrawPage: usize,
+    pub InvalidatePreview: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPrintReadStream {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Seek: unsafe extern "system" fn(this: *mut *mut Self, dlibmove: i64, dworigin: u32, plibnewposition: *mut u64) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ReadBytes: unsafe extern "system" fn(this: *mut *mut Self, pvbuffer: *mut ::core::ffi::c_void, cbrequested: u32, pcbread: *mut u32, pbendoffile: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ReadBytes: usize,
+}
+#[repr(C)]
+pub struct IPrintReadStreamFactory {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetStream: unsafe extern "system" fn(this: *mut *mut Self, ppstream: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IPrintSchemaAsyncOperation {
+    pub base__: super::super::System::Com::IDispatch,
+    pub Start: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Cancel: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IPrintSchemaAsyncOperationEvent {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Completed: unsafe extern "system" fn(this: *mut *mut Self, pticket: *mut ::core::ffi::c_void, hroperation: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Completed: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IPrintSchemaCapabilities {
+    pub base__: IPrintSchemaElement,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub GetFeatureByKeyName: unsafe extern "system" fn(this: *mut *mut Self, bstrkeyname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppfeature: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    GetFeatureByKeyName: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub GetFeature: unsafe extern "system" fn(this: *mut *mut Self, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrnamespaceuri: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppfeature: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    GetFeature: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub PageImageableSize: unsafe extern "system" fn(this: *mut *mut Self, pppageimageablesize: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    PageImageableSize: usize,
+    pub JobCopiesAllDocumentsMinValue: unsafe extern "system" fn(this: *mut *mut Self, puljobcopiesalldocumentsminvalue: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub JobCopiesAllDocumentsMaxValue: unsafe extern "system" fn(this: *mut *mut Self, puljobcopiesalldocumentsmaxvalue: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetSelectedOptionInPrintTicket: unsafe extern "system" fn(this: *mut *mut Self, pfeature: *mut ::core::ffi::c_void, ppoption: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetSelectedOptionInPrintTicket: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetOptions: unsafe extern "system" fn(this: *mut *mut Self, pfeature: *mut ::core::ffi::c_void, ppoptioncollection: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetOptions: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IPrintSchemaCapabilities2 {
+    pub base__: IPrintSchemaCapabilities,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub GetParameterDefinition: unsafe extern "system" fn(this: *mut *mut Self, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrnamespaceuri: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppparameterdefinition: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    GetParameterDefinition: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IPrintSchemaDisplayableElement {
+    pub base__: IPrintSchemaElement,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DisplayName: unsafe extern "system" fn(this: *mut *mut Self, pbstrdisplayname: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DisplayName: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IPrintSchemaElement {
+    pub base__: super::super::System::Com::IDispatch,
+    pub XmlNode: unsafe extern "system" fn(this: *mut *mut Self, ppxmlnode: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Name: unsafe extern "system" fn(this: *mut *mut Self, pbstrname: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Name: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub NamespaceUri: unsafe extern "system" fn(this: *mut *mut Self, pbstrnamespaceuri: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    NamespaceUri: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IPrintSchemaFeature {
+    pub base__: IPrintSchemaDisplayableElement,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SelectedOption: unsafe extern "system" fn(this: *mut *mut Self, ppoption: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SelectedOption: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetSelectedOption: unsafe extern "system" fn(this: *mut *mut Self, poption: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetSelectedOption: usize,
+    pub SelectionType: unsafe extern "system" fn(this: *mut *mut Self, pselectiontype: *mut PrintSchemaSelectionType) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub GetOption: unsafe extern "system" fn(this: *mut *mut Self, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrnamespaceuri: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppoption: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    GetOption: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DisplayUI: unsafe extern "system" fn(this: *mut *mut Self, pbshow: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DisplayUI: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IPrintSchemaNUpOption {
+    pub base__: IPrintSchemaOption,
+    pub PagesPerSheet: unsafe extern "system" fn(this: *mut *mut Self, pulpagespersheet: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IPrintSchemaOption {
+    pub base__: IPrintSchemaDisplayableElement,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Selected: unsafe extern "system" fn(this: *mut *mut Self, pbisselected: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Selected: usize,
+    pub Constrained: unsafe extern "system" fn(this: *mut *mut Self, psetting: *mut PrintSchemaConstrainedSetting) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetPropertyValue: unsafe extern "system" fn(this: *mut *mut Self, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrnamespaceuri: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppxmlvaluenode: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetPropertyValue: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IPrintSchemaOptionCollection {
+    pub base__: super::super::System::Com::IDispatch,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, pulcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetAt: unsafe extern "system" fn(this: *mut *mut Self, ulindex: u32, ppoption: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetAt: usize,
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, ppunk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IPrintSchemaPageImageableSize {
+    pub base__: IPrintSchemaElement,
+    pub ImageableSizeWidthInMicrons: unsafe extern "system" fn(this: *mut *mut Self, pulimageablesizewidth: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub ImageableSizeHeightInMicrons: unsafe extern "system" fn(this: *mut *mut Self, pulimageablesizeheight: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub OriginWidthInMicrons: unsafe extern "system" fn(this: *mut *mut Self, puloriginwidth: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub OriginHeightInMicrons: unsafe extern "system" fn(this: *mut *mut Self, puloriginheight: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub ExtentWidthInMicrons: unsafe extern "system" fn(this: *mut *mut Self, pulextentwidth: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub ExtentHeightInMicrons: unsafe extern "system" fn(this: *mut *mut Self, pulextentheight: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IPrintSchemaPageMediaSizeOption {
+    pub base__: IPrintSchemaOption,
+    pub WidthInMicrons: unsafe extern "system" fn(this: *mut *mut Self, pulwidth: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub HeightInMicrons: unsafe extern "system" fn(this: *mut *mut Self, pulheight: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IPrintSchemaParameterDefinition {
+    pub base__: IPrintSchemaDisplayableElement,
+    #[cfg(feature = "Win32_Foundation")]
+    pub UserInputRequired: unsafe extern "system" fn(this: *mut *mut Self, pbisrequired: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    UserInputRequired: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub UnitType: unsafe extern "system" fn(this: *mut *mut Self, pbstrunittype: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    UnitType: usize,
+    pub DataType: unsafe extern "system" fn(this: *mut *mut Self, pdatatype: *mut PrintSchemaParameterDataType) -> ::windows_sys::core::HRESULT,
+    pub RangeMin: unsafe extern "system" fn(this: *mut *mut Self, prangemin: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub RangeMax: unsafe extern "system" fn(this: *mut *mut Self, prangemax: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IPrintSchemaParameterInitializer {
+    pub base__: IPrintSchemaElement,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Value: unsafe extern "system" fn(this: *mut *mut Self, pvar: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Value: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetValue: unsafe extern "system" fn(this: *mut *mut Self, pvar: *const super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetValue: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IPrintSchemaTicket {
+    pub base__: IPrintSchemaElement,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub GetFeatureByKeyName: unsafe extern "system" fn(this: *mut *mut Self, bstrkeyname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppfeature: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    GetFeatureByKeyName: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub GetFeature: unsafe extern "system" fn(this: *mut *mut Self, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrnamespaceuri: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppfeature: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    GetFeature: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub ValidateAsync: unsafe extern "system" fn(this: *mut *mut Self, ppasyncoperation: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    ValidateAsync: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CommitAsync: unsafe extern "system" fn(this: *mut *mut Self, pprintticketcommit: *mut ::core::ffi::c_void, ppasyncoperation: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CommitAsync: usize,
+    pub NotifyXmlChanged: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetCapabilities: unsafe extern "system" fn(this: *mut *mut Self, ppcapabilities: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetCapabilities: usize,
+    pub JobCopiesAllDocuments: unsafe extern "system" fn(this: *mut *mut Self, puljobcopiesalldocuments: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetJobCopiesAllDocuments: unsafe extern "system" fn(this: *mut *mut Self, uljobcopiesalldocuments: u32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IPrintSchemaTicket2 {
+    pub base__: IPrintSchemaTicket,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub GetParameterInitializer: unsafe extern "system" fn(this: *mut *mut Self, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrnamespaceuri: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppparameterinitializer: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    GetParameterInitializer: usize,
+}
+#[repr(C)]
+pub struct IPrintTicketProvider {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetSupportedVersions: unsafe extern "system" fn(this: *mut *mut Self, hprinter: super::super::Foundation::HANDLE, ppversions: *mut *mut i32, cversions: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetSupportedVersions: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub BindPrinter: unsafe extern "system" fn(this: *mut *mut Self, hprinter: super::super::Foundation::HANDLE, version: i32, poptions: *mut SHIMOPTS, pdevmodeflags: *mut u32, cnamespaces: *mut i32, ppnamespaces: *mut *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    BindPrinter: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub QueryDeviceNamespace: unsafe extern "system" fn(this: *mut *mut Self, pdefaultnamespace: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    QueryDeviceNamespace: usize,
+    #[cfg(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_System_Com"))]
+    pub ConvertPrintTicketToDevMode: unsafe extern "system" fn(this: *mut *mut Self, pprintticket: *mut ::core::ffi::c_void, cbdevmodein: u32, pdevmodein: *mut super::Gdi::DEVMODEA, pcbdevmodeout: *mut u32, ppdevmodeout: *mut *mut super::Gdi::DEVMODEA) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_System_Com")))]
+    ConvertPrintTicketToDevMode: usize,
+    #[cfg(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_System_Com"))]
+    pub ConvertDevModeToPrintTicket: unsafe extern "system" fn(this: *mut *mut Self, cbdevmode: u32, pdevmode: *mut super::Gdi::DEVMODEA, pprintticket: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_System_Com")))]
+    ConvertDevModeToPrintTicket: usize,
+    #[cfg(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_System_Com"))]
+    pub GetPrintCapabilities: unsafe extern "system" fn(this: *mut *mut Self, pprintticket: *mut ::core::ffi::c_void, ppcapabilities: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_System_Com")))]
+    GetPrintCapabilities: usize,
+    #[cfg(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_System_Com"))]
+    pub ValidatePrintTicket: unsafe extern "system" fn(this: *mut *mut Self, pbaseticket: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_System_Com")))]
+    ValidatePrintTicket: usize,
+}
+#[repr(C)]
+pub struct IPrintTicketProvider2 {
+    pub base__: IPrintTicketProvider,
+    #[cfg(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_System_Com"))]
+    pub GetPrintDeviceCapabilities: unsafe extern "system" fn(this: *mut *mut Self, pprintticket: *mut ::core::ffi::c_void, ppdevicecapabilities: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_System_Com")))]
+    GetPrintDeviceCapabilities: usize,
+    #[cfg(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_System_Com"))]
+    pub GetPrintDeviceResources: unsafe extern "system" fn(this: *mut *mut Self, pszlocalename: ::windows_sys::core::PCWSTR, pprintticket: *mut ::core::ffi::c_void, ppdeviceresources: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_System_Com")))]
+    GetPrintDeviceResources: usize,
+}
+#[repr(C)]
+pub struct IPrintUnidiAsyncNotifyRegistration {
+    pub base__: IPrintAsyncNotifyRegistration,
+    pub AsyncGetNotification: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPrintWriteStream {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub WriteBytes: unsafe extern "system" fn(this: *mut *mut Self, pvbuffer: *const ::core::ffi::c_void, cbbuffer: u32, pcbwritten: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Close: unsafe extern "system" fn(this: *mut *mut Self),
+}
+#[repr(C)]
+pub struct IPrintWriteStreamFlush {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub FlushData: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPrinterBidiSetRequestCallback {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Completed: unsafe extern "system" fn(this: *mut *mut Self, bstrresponse: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, hrstatus: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Completed: usize,
+}
+#[repr(C)]
+pub struct IPrinterExtensionAsyncOperation {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Cancel: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IPrinterExtensionContext {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub PrinterQueue: unsafe extern "system" fn(this: *mut *mut Self, ppqueue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    PrinterQueue: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub PrintSchemaTicket: unsafe extern "system" fn(this: *mut *mut Self, ppticket: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    PrintSchemaTicket: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub DriverProperties: unsafe extern "system" fn(this: *mut *mut Self, pppropertybag: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    DriverProperties: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub UserProperties: unsafe extern "system" fn(this: *mut *mut Self, pppropertybag: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    UserProperties: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IPrinterExtensionContextCollection {
+    pub base__: super::super::System::Com::IDispatch,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, pulcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetAt: unsafe extern "system" fn(this: *mut *mut Self, ulindex: u32, ppcontext: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetAt: usize,
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, ppunk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IPrinterExtensionEvent {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub OnDriverEvent: unsafe extern "system" fn(this: *mut *mut Self, peventargs: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    OnDriverEvent: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub OnPrinterQueuesEnumerated: unsafe extern "system" fn(this: *mut *mut Self, pcontextcollection: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    OnPrinterQueuesEnumerated: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IPrinterExtensionEventArgs {
+    pub base__: IPrinterExtensionContext,
+    #[cfg(feature = "Win32_Foundation")]
+    pub BidiNotification: unsafe extern "system" fn(this: *mut *mut Self, pbstrbidinotification: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    BidiNotification: usize,
+    pub ReasonId: unsafe extern "system" fn(this: *mut *mut Self, preasonid: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Request: unsafe extern "system" fn(this: *mut *mut Self, pprequest: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Request: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SourceApplication: unsafe extern "system" fn(this: *mut *mut Self, pbstrapplication: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SourceApplication: usize,
+    pub DetailedReasonId: unsafe extern "system" fn(this: *mut *mut Self, pdetailedreasonid: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub WindowModal: unsafe extern "system" fn(this: *mut *mut Self, pbmodal: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    WindowModal: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub WindowParent: unsafe extern "system" fn(this: *mut *mut Self, phwndparent: *mut super::super::Foundation::HANDLE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    WindowParent: usize,
+}
+#[repr(C)]
+pub struct IPrinterExtensionManager {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub EnableEvents: unsafe extern "system" fn(this: *mut *mut Self, printerdriverid: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub DisableEvents: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IPrinterExtensionRequest {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Cancel: unsafe extern "system" fn(this: *mut *mut Self, hrstatus: ::windows_sys::core::HRESULT, bstrlogmessage: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Cancel: usize,
+    pub Complete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IPrinterPropertyBag {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetBool: unsafe extern "system" fn(this: *mut *mut Self, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pbvalue: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetBool: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetBool: unsafe extern "system" fn(this: *mut *mut Self, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bvalue: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetBool: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetInt32: unsafe extern "system" fn(this: *mut *mut Self, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pnvalue: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetInt32: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetInt32: unsafe extern "system" fn(this: *mut *mut Self, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, nvalue: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetInt32: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetString: unsafe extern "system" fn(this: *mut *mut Self, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pbstrvalue: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetString: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetString: unsafe extern "system" fn(this: *mut *mut Self, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrvalue: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetString: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetBytes: unsafe extern "system" fn(this: *mut *mut Self, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pcbvalue: *mut u32, ppvalue: *mut *mut u8) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetBytes: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetBytes: unsafe extern "system" fn(this: *mut *mut Self, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, cbvalue: u32, pvalue: *const u8) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetBytes: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub GetReadStream: unsafe extern "system" fn(this: *mut *mut Self, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    GetReadStream: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub GetWriteStream: unsafe extern "system" fn(this: *mut *mut Self, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    GetWriteStream: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IPrinterQueue {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Handle: unsafe extern "system" fn(this: *mut *mut Self, phprinter: *mut super::super::Foundation::HANDLE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Handle: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Name: unsafe extern "system" fn(this: *mut *mut Self, pbstrname: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Name: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SendBidiQuery: unsafe extern "system" fn(this: *mut *mut Self, bstrbidiquery: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SendBidiQuery: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetProperties: unsafe extern "system" fn(this: *mut *mut Self, pppropertybag: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetProperties: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IPrinterQueue2 {
+    pub base__: IPrinterQueue,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SendBidiSetRequestAsync: unsafe extern "system" fn(this: *mut *mut Self, bstrbidirequest: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pcallback: *mut ::core::ffi::c_void, ppasyncoperation: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SendBidiSetRequestAsync: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetPrinterQueueView: unsafe extern "system" fn(this: *mut *mut Self, ulviewoffset: u32, ulviewsize: u32, ppjobview: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetPrinterQueueView: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IPrinterQueueEvent {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OnBidiResponseReceived: unsafe extern "system" fn(this: *mut *mut Self, bstrresponse: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, hrstatus: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OnBidiResponseReceived: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IPrinterQueueView {
+    pub base__: super::super::System::Com::IDispatch,
+    pub SetViewRange: unsafe extern "system" fn(this: *mut *mut Self, ulviewoffset: u32, ulviewsize: u32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IPrinterQueueViewEvent {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub OnChanged: unsafe extern "system" fn(this: *mut *mut Self, pcollection: *mut ::core::ffi::c_void, ulviewoffset: u32, ulviewsize: u32, ulcountjobsinprintqueue: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    OnChanged: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IPrinterScriptContext {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub DriverProperties: unsafe extern "system" fn(this: *mut *mut Self, pppropertybag: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    DriverProperties: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub QueueProperties: unsafe extern "system" fn(this: *mut *mut Self, pppropertybag: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    QueueProperties: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub UserProperties: unsafe extern "system" fn(this: *mut *mut Self, pppropertybag: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    UserProperties: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IPrinterScriptablePropertyBag {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetBool: unsafe extern "system" fn(this: *mut *mut Self, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pbvalue: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetBool: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetBool: unsafe extern "system" fn(this: *mut *mut Self, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bvalue: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetBool: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetInt32: unsafe extern "system" fn(this: *mut *mut Self, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pnvalue: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetInt32: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetInt32: unsafe extern "system" fn(this: *mut *mut Self, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, nvalue: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetInt32: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetString: unsafe extern "system" fn(this: *mut *mut Self, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pbstrvalue: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetString: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetString: unsafe extern "system" fn(this: *mut *mut Self, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrvalue: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetString: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub GetBytes: unsafe extern "system" fn(this: *mut *mut Self, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pparray: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    GetBytes: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub SetBytes: unsafe extern "system" fn(this: *mut *mut Self, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, parray: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    SetBytes: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub GetReadStream: unsafe extern "system" fn(this: *mut *mut Self, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppstream: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    GetReadStream: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub GetWriteStream: unsafe extern "system" fn(this: *mut *mut Self, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppstream: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    GetWriteStream: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IPrinterScriptablePropertyBag2 {
+    pub base__: IPrinterScriptablePropertyBag,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetReadStreamAsXML: unsafe extern "system" fn(this: *mut *mut Self, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppxmlnode: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetReadStreamAsXML: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IPrinterScriptableSequentialStream {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Read: unsafe extern "system" fn(this: *mut *mut Self, cbread: i32, pparray: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Read: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Write: unsafe extern "system" fn(this: *mut *mut Self, parray: *mut ::core::ffi::c_void, pcbwritten: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Write: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IPrinterScriptableStream {
+    pub base__: IPrinterScriptableSequentialStream,
+    pub Commit: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Seek: unsafe extern "system" fn(this: *mut *mut Self, loffset: i32, streamseek: super::super::System::Com::STREAM_SEEK, plposition: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Seek: usize,
+    pub SetSize: unsafe extern "system" fn(this: *mut *mut Self, lsize: i32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IXpsDocument {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetThumbnail: unsafe extern "system" fn(this: *mut *mut Self, ppthumbnail: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetThumbnail: unsafe extern "system" fn(this: *mut *mut Self, pthumbnail: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IXpsDocumentConsumer {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SendXpsUnknown: unsafe extern "system" fn(this: *mut *mut Self, punknown: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SendXpsDocument: unsafe extern "system" fn(this: *mut *mut Self, pixpsdocument: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SendFixedDocumentSequence: unsafe extern "system" fn(this: *mut *mut Self, pifixeddocumentsequence: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SendFixedDocument: unsafe extern "system" fn(this: *mut *mut Self, pifixeddocument: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SendFixedPage: unsafe extern "system" fn(this: *mut *mut Self, pifixedpage: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CloseSender: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetNewEmptyPart: unsafe extern "system" fn(this: *mut *mut Self, uri: ::windows_sys::core::PCWSTR, riid: *const ::windows_sys::core::GUID, ppnewobject: *mut *mut ::core::ffi::c_void, ppwritestream: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IXpsDocumentProvider {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetXpsPart: unsafe extern "system" fn(this: *mut *mut Self, ppixpspart: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IXpsPartIterator {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self),
+    #[cfg(feature = "Win32_Foundation")]
+    pub Current: unsafe extern "system" fn(this: *mut *mut Self, puri: *mut super::super::Foundation::BSTR, ppxpspart: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Current: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsDone: unsafe extern "system" fn(this: *mut *mut Self) -> super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsDone: usize,
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self),
+}
+#[repr(C)]
+pub struct IXpsRasterizationFactory {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Storage_Xps")]
+    pub CreateRasterizer: unsafe extern "system" fn(this: *mut *mut Self, xpspage: *mut ::core::ffi::c_void, dpi: f32, nontextrenderingmode: XPSRAS_RENDERING_MODE, textrenderingmode: XPSRAS_RENDERING_MODE, ppixpsrasterizer: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Storage_Xps"))]
+    CreateRasterizer: usize,
+}
+#[repr(C)]
+pub struct IXpsRasterizationFactory1 {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Storage_Xps")]
+    pub CreateRasterizer: unsafe extern "system" fn(this: *mut *mut Self, xpspage: *mut ::core::ffi::c_void, dpi: f32, nontextrenderingmode: XPSRAS_RENDERING_MODE, textrenderingmode: XPSRAS_RENDERING_MODE, pixelformat: XPSRAS_PIXEL_FORMAT, ppixpsrasterizer: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Storage_Xps"))]
+    CreateRasterizer: usize,
+}
+#[repr(C)]
+pub struct IXpsRasterizationFactory2 {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Storage_Xps")]
+    pub CreateRasterizer: unsafe extern "system" fn(this: *mut *mut Self, xpspage: *mut ::core::ffi::c_void, dpix: f32, dpiy: f32, nontextrenderingmode: XPSRAS_RENDERING_MODE, textrenderingmode: XPSRAS_RENDERING_MODE, pixelformat: XPSRAS_PIXEL_FORMAT, backgroundcolor: XPSRAS_BACKGROUND_COLOR, ppixpsrasterizer: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Storage_Xps"))]
+    CreateRasterizer: usize,
+}
+#[repr(C)]
+pub struct IXpsRasterizer {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Graphics_Imaging")]
+    pub RasterizeRect: unsafe extern "system" fn(this: *mut *mut Self, x: i32, y: i32, width: i32, height: i32, notificationcallback: *mut ::core::ffi::c_void, bitmap: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Imaging"))]
+    RasterizeRect: usize,
+    pub SetMinimalLineWidth: unsafe extern "system" fn(this: *mut *mut Self, width: i32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IXpsRasterizerNotificationCallback {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Continue: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
 #[doc = "*Required features: `\"Win32_Graphics_Printing\"`*"]
 pub const JOB_ACCESS_ADMINISTER: u32 = 16u32;
 #[doc = "*Required features: `\"Win32_Graphics_Printing\"`*"]

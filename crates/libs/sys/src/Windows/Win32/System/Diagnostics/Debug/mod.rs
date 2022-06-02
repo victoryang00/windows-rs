@@ -35,7 +35,7 @@ extern "system" {
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
     pub fn CopyContext(destination: *mut CONTEXT, contextflags: u32, source: *const CONTEXT) -> super::super::super::Foundation::BOOL;
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub fn CreateDataModelManager(debughost: IDebugHost, manager: *mut IDataModelManager) -> ::windows_sys::core::HRESULT;
+    pub fn CreateDataModelManager(debughost: *mut *mut IDebugHost, manager: *mut *mut *mut IDataModelManager) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
     pub fn DbgHelpCreateUserDump(filename: ::windows_sys::core::PCSTR, callback: PDBGHELP_CREATE_USER_DUMP_CALLBACK, userdata: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
@@ -1264,7 +1264,18 @@ impl ::core::clone::Clone for ArrayDimension {
         *self
     }
 }
-pub type AsyncIDebugApplicationNodeEvents = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct AsyncIDebugApplicationNodeEvents {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Begin_onAddChild: unsafe extern "system" fn(this: *mut *mut Self, prddpchild: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Finish_onAddChild: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Begin_onRemoveChild: unsafe extern "system" fn(this: *mut *mut Self, prddpchild: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Finish_onRemoveChild: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Begin_onDetach: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Finish_onDetach: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Begin_onAttach: unsafe extern "system" fn(this: *mut *mut Self, prddpparent: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Finish_onAttach: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
 pub const BIND_ALL_IMAGES: u32 = 4u32;
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -5500,8 +5511,14 @@ impl ::core::clone::Clone for DUMP_HEADER64_0 {
 pub const DUMP_SUMMARY_VALID_CURRENT_USER_VA: u32 = 2u32;
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
 pub const DUMP_SUMMARY_VALID_KERNEL_VA: u32 = 1u32;
-pub type DebugBaseEventCallbacks = *mut ::core::ffi::c_void;
-pub type DebugBaseEventCallbacksWide = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct DebugBaseEventCallbacks {
+    pub base__: IDebugEventCallbacks,
+}
+#[repr(C)]
+pub struct DebugBaseEventCallbacksWide {
+    pub base__: IDebugEventCallbacksWide,
+}
 pub const DebugHelper: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 201113696, data2: 35869, data3: 4560, data4: [172, 205, 0, 170, 0, 96, 39, 92] };
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
@@ -5513,7 +5530,7 @@ pub struct DebugPropertyInfo {
     pub m_bstrValue: super::super::super::Foundation::BSTR,
     pub m_bstrFullName: super::super::super::Foundation::BSTR,
     pub m_dwAttrib: u32,
-    pub m_pDebugProp: IDebugProperty,
+    pub m_pDebugProp: *mut *mut *mut *mut IDebugProperty,
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DebugPropertyInfo {}
@@ -5527,11 +5544,11 @@ impl ::core::clone::Clone for DebugPropertyInfo {
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 pub struct DebugStackFrameDescriptor {
-    pub pdsf: IDebugStackFrame,
+    pub pdsf: *mut *mut *mut *mut IDebugStackFrame,
     pub dwMin: u32,
     pub dwLim: u32,
     pub fFinal: super::super::super::Foundation::BOOL,
-    pub punkFinal: ::windows_sys::core::IUnknown,
+    pub punkFinal: *mut *mut *mut *mut ::windows_sys::core::IUnknown,
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DebugStackFrameDescriptor {}
@@ -5545,11 +5562,11 @@ impl ::core::clone::Clone for DebugStackFrameDescriptor {
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 pub struct DebugStackFrameDescriptor64 {
-    pub pdsf: IDebugStackFrame,
+    pub pdsf: *mut *mut *mut *mut IDebugStackFrame,
     pub dwMin: u64,
     pub dwLim: u64,
     pub fFinal: super::super::super::Foundation::BOOL,
-    pub punkFinal: ::windows_sys::core::IUnknown,
+    pub punkFinal: *mut *mut *mut *mut ::windows_sys::core::IUnknown,
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DebugStackFrameDescriptor64 {}
@@ -5929,12 +5946,12 @@ pub struct ExtendedDebugPropertyInfo {
     pub pszValue: ::windows_sys::core::PWSTR,
     pub pszFullName: ::windows_sys::core::PWSTR,
     pub dwAttrib: u32,
-    pub pDebugProp: IDebugProperty,
+    pub pDebugProp: *mut *mut *mut *mut IDebugProperty,
     pub nDISPID: u32,
     pub nType: u32,
     pub varValue: super::super::Com::VARIANT,
-    pub plbValue: super::super::Com::StructuredStorage::ILockBytes,
-    pub pDebugExtProp: IDebugExtendedProperty,
+    pub plbValue: *mut *mut *mut *mut super::super::Com::StructuredStorage::ILockBytes,
+    pub pDebugExtProp: *mut *mut *mut *mut IDebugExtendedProperty,
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage", feature = "Win32_System_Ole"))]
 impl ::core::marker::Copy for ExtendedDebugPropertyInfo {}
@@ -6445,210 +6462,4627 @@ impl ::core::clone::Clone for GET_TEB_ADDRESS {
         *self
     }
 }
-pub type IActiveScript = *mut ::core::ffi::c_void;
-pub type IActiveScriptAuthor = *mut ::core::ffi::c_void;
-pub type IActiveScriptAuthorProcedure = *mut ::core::ffi::c_void;
-pub type IActiveScriptDebug32 = *mut ::core::ffi::c_void;
-pub type IActiveScriptDebug64 = *mut ::core::ffi::c_void;
-pub type IActiveScriptEncode = *mut ::core::ffi::c_void;
-pub type IActiveScriptError = *mut ::core::ffi::c_void;
-pub type IActiveScriptError64 = *mut ::core::ffi::c_void;
-pub type IActiveScriptErrorDebug = *mut ::core::ffi::c_void;
-pub type IActiveScriptErrorDebug110 = *mut ::core::ffi::c_void;
-pub type IActiveScriptGarbageCollector = *mut ::core::ffi::c_void;
-pub type IActiveScriptHostEncode = *mut ::core::ffi::c_void;
-pub type IActiveScriptParse32 = *mut ::core::ffi::c_void;
-pub type IActiveScriptParse64 = *mut ::core::ffi::c_void;
-pub type IActiveScriptParseProcedure2_32 = *mut ::core::ffi::c_void;
-pub type IActiveScriptParseProcedure2_64 = *mut ::core::ffi::c_void;
-pub type IActiveScriptParseProcedure32 = *mut ::core::ffi::c_void;
-pub type IActiveScriptParseProcedure64 = *mut ::core::ffi::c_void;
-pub type IActiveScriptParseProcedureOld32 = *mut ::core::ffi::c_void;
-pub type IActiveScriptParseProcedureOld64 = *mut ::core::ffi::c_void;
-pub type IActiveScriptProfilerCallback = *mut ::core::ffi::c_void;
-pub type IActiveScriptProfilerCallback2 = *mut ::core::ffi::c_void;
-pub type IActiveScriptProfilerCallback3 = *mut ::core::ffi::c_void;
-pub type IActiveScriptProfilerControl = *mut ::core::ffi::c_void;
-pub type IActiveScriptProfilerControl2 = *mut ::core::ffi::c_void;
-pub type IActiveScriptProfilerControl3 = *mut ::core::ffi::c_void;
-pub type IActiveScriptProfilerControl4 = *mut ::core::ffi::c_void;
-pub type IActiveScriptProfilerControl5 = *mut ::core::ffi::c_void;
-pub type IActiveScriptProfilerHeapEnum = *mut ::core::ffi::c_void;
-pub type IActiveScriptProperty = *mut ::core::ffi::c_void;
-pub type IActiveScriptSIPInfo = *mut ::core::ffi::c_void;
-pub type IActiveScriptSite = *mut ::core::ffi::c_void;
-pub type IActiveScriptSiteDebug32 = *mut ::core::ffi::c_void;
-pub type IActiveScriptSiteDebug64 = *mut ::core::ffi::c_void;
-pub type IActiveScriptSiteDebugEx = *mut ::core::ffi::c_void;
-pub type IActiveScriptSiteInterruptPoll = *mut ::core::ffi::c_void;
-pub type IActiveScriptSiteTraceInfo = *mut ::core::ffi::c_void;
-pub type IActiveScriptSiteUIControl = *mut ::core::ffi::c_void;
-pub type IActiveScriptSiteWindow = *mut ::core::ffi::c_void;
-pub type IActiveScriptStats = *mut ::core::ffi::c_void;
-pub type IActiveScriptStringCompare = *mut ::core::ffi::c_void;
-pub type IActiveScriptTraceInfo = *mut ::core::ffi::c_void;
-pub type IActiveScriptWinRTErrorDebug = *mut ::core::ffi::c_void;
-pub type IApplicationDebugger = *mut ::core::ffi::c_void;
-pub type IApplicationDebuggerUI = *mut ::core::ffi::c_void;
-pub type IBindEventHandler = *mut ::core::ffi::c_void;
-pub type ICodeAddressConcept = *mut ::core::ffi::c_void;
-pub type IComparableConcept = *mut ::core::ffi::c_void;
-pub type IDataModelConcept = *mut ::core::ffi::c_void;
-pub type IDataModelManager = *mut ::core::ffi::c_void;
-pub type IDataModelManager2 = *mut ::core::ffi::c_void;
-pub type IDataModelNameBinder = *mut ::core::ffi::c_void;
-pub type IDataModelScript = *mut ::core::ffi::c_void;
-pub type IDataModelScriptClient = *mut ::core::ffi::c_void;
-pub type IDataModelScriptDebug = *mut ::core::ffi::c_void;
-pub type IDataModelScriptDebug2 = *mut ::core::ffi::c_void;
-pub type IDataModelScriptDebugBreakpoint = *mut ::core::ffi::c_void;
-pub type IDataModelScriptDebugBreakpointEnumerator = *mut ::core::ffi::c_void;
-pub type IDataModelScriptDebugClient = *mut ::core::ffi::c_void;
-pub type IDataModelScriptDebugStack = *mut ::core::ffi::c_void;
-pub type IDataModelScriptDebugStackFrame = *mut ::core::ffi::c_void;
-pub type IDataModelScriptDebugVariableSetEnumerator = *mut ::core::ffi::c_void;
-pub type IDataModelScriptHostContext = *mut ::core::ffi::c_void;
-pub type IDataModelScriptManager = *mut ::core::ffi::c_void;
-pub type IDataModelScriptProvider = *mut ::core::ffi::c_void;
-pub type IDataModelScriptProviderEnumerator = *mut ::core::ffi::c_void;
-pub type IDataModelScriptTemplate = *mut ::core::ffi::c_void;
-pub type IDataModelScriptTemplateEnumerator = *mut ::core::ffi::c_void;
-pub type IDebugAdvanced = *mut ::core::ffi::c_void;
-pub type IDebugAdvanced2 = *mut ::core::ffi::c_void;
-pub type IDebugAdvanced3 = *mut ::core::ffi::c_void;
-pub type IDebugAdvanced4 = *mut ::core::ffi::c_void;
-pub type IDebugApplication11032 = *mut ::core::ffi::c_void;
-pub type IDebugApplication11064 = *mut ::core::ffi::c_void;
-pub type IDebugApplication32 = *mut ::core::ffi::c_void;
-pub type IDebugApplication64 = *mut ::core::ffi::c_void;
-pub type IDebugApplicationNode = *mut ::core::ffi::c_void;
-pub type IDebugApplicationNode100 = *mut ::core::ffi::c_void;
-pub type IDebugApplicationNodeEvents = *mut ::core::ffi::c_void;
-pub type IDebugApplicationThread = *mut ::core::ffi::c_void;
-pub type IDebugApplicationThread11032 = *mut ::core::ffi::c_void;
-pub type IDebugApplicationThread11064 = *mut ::core::ffi::c_void;
-pub type IDebugApplicationThread64 = *mut ::core::ffi::c_void;
-pub type IDebugApplicationThreadEvents110 = *mut ::core::ffi::c_void;
-pub type IDebugAsyncOperation = *mut ::core::ffi::c_void;
-pub type IDebugAsyncOperationCallBack = *mut ::core::ffi::c_void;
-pub type IDebugBreakpoint = *mut ::core::ffi::c_void;
-pub type IDebugBreakpoint2 = *mut ::core::ffi::c_void;
-pub type IDebugBreakpoint3 = *mut ::core::ffi::c_void;
-pub type IDebugClient = *mut ::core::ffi::c_void;
-pub type IDebugClient2 = *mut ::core::ffi::c_void;
-pub type IDebugClient3 = *mut ::core::ffi::c_void;
-pub type IDebugClient4 = *mut ::core::ffi::c_void;
-pub type IDebugClient5 = *mut ::core::ffi::c_void;
-pub type IDebugClient6 = *mut ::core::ffi::c_void;
-pub type IDebugClient7 = *mut ::core::ffi::c_void;
-pub type IDebugClient8 = *mut ::core::ffi::c_void;
-pub type IDebugCodeContext = *mut ::core::ffi::c_void;
-pub type IDebugControl = *mut ::core::ffi::c_void;
-pub type IDebugControl2 = *mut ::core::ffi::c_void;
-pub type IDebugControl3 = *mut ::core::ffi::c_void;
-pub type IDebugControl4 = *mut ::core::ffi::c_void;
-pub type IDebugControl5 = *mut ::core::ffi::c_void;
-pub type IDebugControl6 = *mut ::core::ffi::c_void;
-pub type IDebugControl7 = *mut ::core::ffi::c_void;
-pub type IDebugCookie = *mut ::core::ffi::c_void;
-pub type IDebugDataSpaces = *mut ::core::ffi::c_void;
-pub type IDebugDataSpaces2 = *mut ::core::ffi::c_void;
-pub type IDebugDataSpaces3 = *mut ::core::ffi::c_void;
-pub type IDebugDataSpaces4 = *mut ::core::ffi::c_void;
-pub type IDebugDocument = *mut ::core::ffi::c_void;
-pub type IDebugDocumentContext = *mut ::core::ffi::c_void;
-pub type IDebugDocumentHelper32 = *mut ::core::ffi::c_void;
-pub type IDebugDocumentHelper64 = *mut ::core::ffi::c_void;
-pub type IDebugDocumentHost = *mut ::core::ffi::c_void;
-pub type IDebugDocumentInfo = *mut ::core::ffi::c_void;
-pub type IDebugDocumentProvider = *mut ::core::ffi::c_void;
-pub type IDebugDocumentText = *mut ::core::ffi::c_void;
-pub type IDebugDocumentTextAuthor = *mut ::core::ffi::c_void;
-pub type IDebugDocumentTextEvents = *mut ::core::ffi::c_void;
-pub type IDebugDocumentTextExternalAuthor = *mut ::core::ffi::c_void;
-pub type IDebugEventCallbacks = *mut ::core::ffi::c_void;
-pub type IDebugEventCallbacksWide = *mut ::core::ffi::c_void;
-pub type IDebugEventContextCallbacks = *mut ::core::ffi::c_void;
-pub type IDebugExpression = *mut ::core::ffi::c_void;
-pub type IDebugExpressionCallBack = *mut ::core::ffi::c_void;
-pub type IDebugExpressionContext = *mut ::core::ffi::c_void;
-pub type IDebugExtendedProperty = *mut ::core::ffi::c_void;
-pub type IDebugFormatter = *mut ::core::ffi::c_void;
-pub type IDebugHelper = *mut ::core::ffi::c_void;
-pub type IDebugHost = *mut ::core::ffi::c_void;
-pub type IDebugHostBaseClass = *mut ::core::ffi::c_void;
-pub type IDebugHostConstant = *mut ::core::ffi::c_void;
-pub type IDebugHostContext = *mut ::core::ffi::c_void;
-pub type IDebugHostData = *mut ::core::ffi::c_void;
-pub type IDebugHostErrorSink = *mut ::core::ffi::c_void;
-pub type IDebugHostEvaluator = *mut ::core::ffi::c_void;
-pub type IDebugHostEvaluator2 = *mut ::core::ffi::c_void;
-pub type IDebugHostExtensibility = *mut ::core::ffi::c_void;
-pub type IDebugHostField = *mut ::core::ffi::c_void;
-pub type IDebugHostMemory = *mut ::core::ffi::c_void;
-pub type IDebugHostMemory2 = *mut ::core::ffi::c_void;
-pub type IDebugHostModule = *mut ::core::ffi::c_void;
-pub type IDebugHostModule2 = *mut ::core::ffi::c_void;
-pub type IDebugHostModuleSignature = *mut ::core::ffi::c_void;
-pub type IDebugHostPublic = *mut ::core::ffi::c_void;
-pub type IDebugHostScriptHost = *mut ::core::ffi::c_void;
-pub type IDebugHostStatus = *mut ::core::ffi::c_void;
-pub type IDebugHostSymbol = *mut ::core::ffi::c_void;
-pub type IDebugHostSymbol2 = *mut ::core::ffi::c_void;
-pub type IDebugHostSymbolEnumerator = *mut ::core::ffi::c_void;
-pub type IDebugHostSymbols = *mut ::core::ffi::c_void;
-pub type IDebugHostType = *mut ::core::ffi::c_void;
-pub type IDebugHostType2 = *mut ::core::ffi::c_void;
-pub type IDebugHostTypeSignature = *mut ::core::ffi::c_void;
-pub type IDebugInputCallbacks = *mut ::core::ffi::c_void;
-pub type IDebugOutputCallbacks = *mut ::core::ffi::c_void;
-pub type IDebugOutputCallbacks2 = *mut ::core::ffi::c_void;
-pub type IDebugOutputCallbacksWide = *mut ::core::ffi::c_void;
-pub type IDebugOutputStream = *mut ::core::ffi::c_void;
-pub type IDebugPlmClient = *mut ::core::ffi::c_void;
-pub type IDebugPlmClient2 = *mut ::core::ffi::c_void;
-pub type IDebugPlmClient3 = *mut ::core::ffi::c_void;
-pub type IDebugProperty = *mut ::core::ffi::c_void;
-pub type IDebugPropertyEnumType_All = *mut ::core::ffi::c_void;
-pub type IDebugPropertyEnumType_Arguments = *mut ::core::ffi::c_void;
-pub type IDebugPropertyEnumType_Locals = *mut ::core::ffi::c_void;
-pub type IDebugPropertyEnumType_LocalsPlusArgs = *mut ::core::ffi::c_void;
-pub type IDebugPropertyEnumType_Registers = *mut ::core::ffi::c_void;
-pub type IDebugRegisters = *mut ::core::ffi::c_void;
-pub type IDebugRegisters2 = *mut ::core::ffi::c_void;
-pub type IDebugSessionProvider = *mut ::core::ffi::c_void;
-pub type IDebugStackFrame = *mut ::core::ffi::c_void;
-pub type IDebugStackFrame110 = *mut ::core::ffi::c_void;
-pub type IDebugStackFrameSniffer = *mut ::core::ffi::c_void;
-pub type IDebugStackFrameSnifferEx32 = *mut ::core::ffi::c_void;
-pub type IDebugStackFrameSnifferEx64 = *mut ::core::ffi::c_void;
-pub type IDebugSymbolGroup = *mut ::core::ffi::c_void;
-pub type IDebugSymbolGroup2 = *mut ::core::ffi::c_void;
-pub type IDebugSymbols = *mut ::core::ffi::c_void;
-pub type IDebugSymbols2 = *mut ::core::ffi::c_void;
-pub type IDebugSymbols3 = *mut ::core::ffi::c_void;
-pub type IDebugSymbols4 = *mut ::core::ffi::c_void;
-pub type IDebugSymbols5 = *mut ::core::ffi::c_void;
-pub type IDebugSyncOperation = *mut ::core::ffi::c_void;
-pub type IDebugSystemObjects = *mut ::core::ffi::c_void;
-pub type IDebugSystemObjects2 = *mut ::core::ffi::c_void;
-pub type IDebugSystemObjects3 = *mut ::core::ffi::c_void;
-pub type IDebugSystemObjects4 = *mut ::core::ffi::c_void;
-pub type IDebugThreadCall32 = *mut ::core::ffi::c_void;
-pub type IDebugThreadCall64 = *mut ::core::ffi::c_void;
-pub type IDynamicConceptProviderConcept = *mut ::core::ffi::c_void;
-pub type IDynamicKeyProviderConcept = *mut ::core::ffi::c_void;
-pub type IEnumDebugApplicationNodes = *mut ::core::ffi::c_void;
-pub type IEnumDebugCodeContexts = *mut ::core::ffi::c_void;
-pub type IEnumDebugExpressionContexts = *mut ::core::ffi::c_void;
-pub type IEnumDebugExtendedPropertyInfo = *mut ::core::ffi::c_void;
-pub type IEnumDebugPropertyInfo = *mut ::core::ffi::c_void;
-pub type IEnumDebugStackFrames = *mut ::core::ffi::c_void;
-pub type IEnumDebugStackFrames64 = *mut ::core::ffi::c_void;
-pub type IEnumJsStackFrames = *mut ::core::ffi::c_void;
-pub type IEnumRemoteDebugApplicationThreads = *mut ::core::ffi::c_void;
-pub type IEnumRemoteDebugApplications = *mut ::core::ffi::c_void;
-pub type IEquatableConcept = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IActiveScript {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetScriptSite: unsafe extern "system" fn(this: *mut *mut Self, pass: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetScriptSite: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppvobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetScriptState: unsafe extern "system" fn(this: *mut *mut Self, ss: SCRIPTSTATE) -> ::windows_sys::core::HRESULT,
+    pub GetScriptState: unsafe extern "system" fn(this: *mut *mut Self, pssstate: *mut SCRIPTSTATE) -> ::windows_sys::core::HRESULT,
+    pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub AddNamedItem: unsafe extern "system" fn(this: *mut *mut Self, pstrname: ::windows_sys::core::PCWSTR, dwflags: u32) -> ::windows_sys::core::HRESULT,
+    pub AddTypeLib: unsafe extern "system" fn(this: *mut *mut Self, rguidtypelib: *const ::windows_sys::core::GUID, dwmajor: u32, dwminor: u32, dwflags: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetScriptDispatch: unsafe extern "system" fn(this: *mut *mut Self, pstritemname: ::windows_sys::core::PCWSTR, ppdisp: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetScriptDispatch: usize,
+    pub GetCurrentScriptThreadID: unsafe extern "system" fn(this: *mut *mut Self, pstidthread: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetScriptThreadID: unsafe extern "system" fn(this: *mut *mut Self, dwwin32threadid: u32, pstidthread: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetScriptThreadState: unsafe extern "system" fn(this: *mut *mut Self, stidthread: u32, pstsstate: *mut SCRIPTTHREADSTATE) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub InterruptScriptThread: unsafe extern "system" fn(this: *mut *mut Self, stidthread: u32, pexcepinfo: *const super::super::Com::EXCEPINFO, dwflags: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    InterruptScriptThread: usize,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppscript: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IActiveScriptAuthor {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com")]
+    pub AddNamedItem: unsafe extern "system" fn(this: *mut *mut Self, pszname: ::windows_sys::core::PCWSTR, dwflags: u32, pdisp: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    AddNamedItem: usize,
+    pub AddScriptlet: unsafe extern "system" fn(this: *mut *mut Self, pszdefaultname: ::windows_sys::core::PCWSTR, pszcode: ::windows_sys::core::PCWSTR, pszitemname: ::windows_sys::core::PCWSTR, pszsubitemname: ::windows_sys::core::PCWSTR, pszeventname: ::windows_sys::core::PCWSTR, pszdelimiter: ::windows_sys::core::PCWSTR, dwcookie: u32, dwflags: u32) -> ::windows_sys::core::HRESULT,
+    pub ParseScriptText: unsafe extern "system" fn(this: *mut *mut Self, pszcode: ::windows_sys::core::PCWSTR, pszitemname: ::windows_sys::core::PCWSTR, pszdelimiter: ::windows_sys::core::PCWSTR, dwcookie: u32, dwflags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetScriptTextAttributes: unsafe extern "system" fn(this: *mut *mut Self, pszcode: ::windows_sys::core::PCWSTR, cch: u32, pszdelimiter: ::windows_sys::core::PCWSTR, dwflags: u32, pattr: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub GetScriptletTextAttributes: unsafe extern "system" fn(this: *mut *mut Self, pszcode: ::windows_sys::core::PCWSTR, cch: u32, pszdelimiter: ::windows_sys::core::PCWSTR, dwflags: u32, pattr: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub GetRoot: unsafe extern "system" fn(this: *mut *mut Self, ppsp: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetLanguageFlags: unsafe extern "system" fn(this: *mut *mut Self, pgrfasa: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetEventHandler: unsafe extern "system" fn(this: *mut *mut Self, pdisp: *mut ::core::ffi::c_void, pszitem: ::windows_sys::core::PCWSTR, pszsubitem: ::windows_sys::core::PCWSTR, pszevent: ::windows_sys::core::PCWSTR, ppse: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetEventHandler: usize,
+    pub RemoveNamedItem: unsafe extern "system" fn(this: *mut *mut Self, pszname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub AddTypeLib: unsafe extern "system" fn(this: *mut *mut Self, rguidtypelib: *const ::windows_sys::core::GUID, dwmajor: u32, dwminor: u32, dwflags: u32) -> ::windows_sys::core::HRESULT,
+    pub RemoveTypeLib: unsafe extern "system" fn(this: *mut *mut Self, rguidtypelib: *const ::windows_sys::core::GUID, dwmajor: u32, dwminor: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetChars: unsafe extern "system" fn(this: *mut *mut Self, frequestedlist: u32, pbstrchars: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetChars: usize,
+    pub GetInfoFromContext: unsafe extern "system" fn(this: *mut *mut Self, pszcode: ::windows_sys::core::PCWSTR, cchcode: u32, ichcurrentposition: u32, dwlisttypesrequested: u32, pdwlisttypesprovided: *mut u32, pichlistanchorposition: *mut u32, pichfuncanchorposition: *mut u32, pmemid: *mut i32, picurrentparameter: *mut i32, ppunk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsCommitChar: unsafe extern "system" fn(this: *mut *mut Self, ch: u16, pfcommit: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsCommitChar: usize,
+}
+#[repr(C)]
+pub struct IActiveScriptAuthorProcedure {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com")]
+    pub ParseProcedureText: unsafe extern "system" fn(this: *mut *mut Self, pszcode: ::windows_sys::core::PCWSTR, pszformalparams: ::windows_sys::core::PCWSTR, pszprocedurename: ::windows_sys::core::PCWSTR, pszitemname: ::windows_sys::core::PCWSTR, pszdelimiter: ::windows_sys::core::PCWSTR, dwcookie: u32, dwflags: u32, pdispfor: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    ParseProcedureText: usize,
+}
+#[repr(C)]
+pub struct IActiveScriptDebug32 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetScriptTextAttributes: unsafe extern "system" fn(this: *mut *mut Self, pstrcode: ::windows_sys::core::PCWSTR, unumcodechars: u32, pstrdelimiter: ::windows_sys::core::PCWSTR, dwflags: u32, pattr: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub GetScriptletTextAttributes: unsafe extern "system" fn(this: *mut *mut Self, pstrcode: ::windows_sys::core::PCWSTR, unumcodechars: u32, pstrdelimiter: ::windows_sys::core::PCWSTR, dwflags: u32, pattr: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub EnumCodeContextsOfPosition: unsafe extern "system" fn(this: *mut *mut Self, dwsourcecontext: u32, ucharacteroffset: u32, unumchars: u32, ppescc: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IActiveScriptDebug64 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetScriptTextAttributes: unsafe extern "system" fn(this: *mut *mut Self, pstrcode: ::windows_sys::core::PCWSTR, unumcodechars: u32, pstrdelimiter: ::windows_sys::core::PCWSTR, dwflags: u32, pattr: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub GetScriptletTextAttributes: unsafe extern "system" fn(this: *mut *mut Self, pstrcode: ::windows_sys::core::PCWSTR, unumcodechars: u32, pstrdelimiter: ::windows_sys::core::PCWSTR, dwflags: u32, pattr: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub EnumCodeContextsOfPosition: unsafe extern "system" fn(this: *mut *mut Self, dwsourcecontext: u64, ucharacteroffset: u32, unumchars: u32, ppescc: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IActiveScriptEncode {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub EncodeSection: unsafe extern "system" fn(this: *mut *mut Self, pchin: ::windows_sys::core::PCWSTR, cchin: u32, pchout: ::windows_sys::core::PWSTR, cchout: u32, pcchret: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub DecodeScript: unsafe extern "system" fn(this: *mut *mut Self, pchin: ::windows_sys::core::PCWSTR, cchin: u32, pchout: ::windows_sys::core::PWSTR, cchout: u32, pcchret: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetEncodeProgId: unsafe extern "system" fn(this: *mut *mut Self, pbstrout: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetEncodeProgId: usize,
+}
+#[repr(C)]
+pub struct IActiveScriptError {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub GetExceptionInfo: unsafe extern "system" fn(this: *mut *mut Self, pexcepinfo: *mut super::super::Com::EXCEPINFO) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    GetExceptionInfo: usize,
+    pub GetSourcePosition: unsafe extern "system" fn(this: *mut *mut Self, pdwsourcecontext: *mut u32, pullinenumber: *mut u32, plcharacterposition: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetSourceLineText: unsafe extern "system" fn(this: *mut *mut Self, pbstrsourceline: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetSourceLineText: usize,
+}
+#[repr(C)]
+pub struct IActiveScriptError64 {
+    pub base__: IActiveScriptError,
+    pub GetSourcePosition64: unsafe extern "system" fn(this: *mut *mut Self, pdwsourcecontext: *mut u64, pullinenumber: *mut u32, plcharacterposition: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IActiveScriptErrorDebug {
+    pub base__: IActiveScriptError,
+    pub GetDocumentContext: unsafe extern "system" fn(this: *mut *mut Self, ppssc: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetStackFrame: unsafe extern "system" fn(this: *mut *mut Self, ppdsf: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IActiveScriptErrorDebug110 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetExceptionThrownKind: unsafe extern "system" fn(this: *mut *mut Self, pexceptionkind: *mut SCRIPT_ERROR_DEBUG_EXCEPTION_THROWN_KIND) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IActiveScriptGarbageCollector {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub CollectGarbage: unsafe extern "system" fn(this: *mut *mut Self, scriptgctype: SCRIPTGCTYPE) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IActiveScriptHostEncode {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub EncodeScriptHostFile: unsafe extern "system" fn(this: *mut *mut Self, bstrinfile: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, pbstroutfile: *mut super::super::super::Foundation::BSTR, cflags: u32, bstrdefaultlang: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    EncodeScriptHostFile: usize,
+}
+#[repr(C)]
+pub struct IActiveScriptParse32 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub InitNew: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub AddScriptlet: unsafe extern "system" fn(this: *mut *mut Self, pstrdefaultname: ::windows_sys::core::PCWSTR, pstrcode: ::windows_sys::core::PCWSTR, pstritemname: ::windows_sys::core::PCWSTR, pstrsubitemname: ::windows_sys::core::PCWSTR, pstreventname: ::windows_sys::core::PCWSTR, pstrdelimiter: ::windows_sys::core::PCWSTR, dwsourcecontextcookie: u32, ulstartinglinenumber: u32, dwflags: u32, pbstrname: *mut super::super::super::Foundation::BSTR, pexcepinfo: *mut super::super::Com::EXCEPINFO) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    AddScriptlet: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub ParseScriptText: unsafe extern "system" fn(this: *mut *mut Self, pstrcode: ::windows_sys::core::PCWSTR, pstritemname: ::windows_sys::core::PCWSTR, punkcontext: *mut ::core::ffi::c_void, pstrdelimiter: ::windows_sys::core::PCWSTR, dwsourcecontextcookie: u32, ulstartinglinenumber: u32, dwflags: u32, pvarresult: *mut super::super::Com::VARIANT, pexcepinfo: *mut super::super::Com::EXCEPINFO) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    ParseScriptText: usize,
+}
+#[repr(C)]
+pub struct IActiveScriptParse64 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub InitNew: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub AddScriptlet: unsafe extern "system" fn(this: *mut *mut Self, pstrdefaultname: ::windows_sys::core::PCWSTR, pstrcode: ::windows_sys::core::PCWSTR, pstritemname: ::windows_sys::core::PCWSTR, pstrsubitemname: ::windows_sys::core::PCWSTR, pstreventname: ::windows_sys::core::PCWSTR, pstrdelimiter: ::windows_sys::core::PCWSTR, dwsourcecontextcookie: u64, ulstartinglinenumber: u32, dwflags: u32, pbstrname: *mut super::super::super::Foundation::BSTR, pexcepinfo: *mut super::super::Com::EXCEPINFO) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    AddScriptlet: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub ParseScriptText: unsafe extern "system" fn(this: *mut *mut Self, pstrcode: ::windows_sys::core::PCWSTR, pstritemname: ::windows_sys::core::PCWSTR, punkcontext: *mut ::core::ffi::c_void, pstrdelimiter: ::windows_sys::core::PCWSTR, dwsourcecontextcookie: u64, ulstartinglinenumber: u32, dwflags: u32, pvarresult: *mut super::super::Com::VARIANT, pexcepinfo: *mut super::super::Com::EXCEPINFO) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    ParseScriptText: usize,
+}
+#[repr(C)]
+pub struct IActiveScriptParseProcedure2_32 {
+    pub base__: IActiveScriptParseProcedure32,
+}
+#[repr(C)]
+pub struct IActiveScriptParseProcedure2_64 {
+    pub base__: IActiveScriptParseProcedure64,
+}
+#[repr(C)]
+pub struct IActiveScriptParseProcedure32 {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com")]
+    pub ParseProcedureText: unsafe extern "system" fn(this: *mut *mut Self, pstrcode: ::windows_sys::core::PCWSTR, pstrformalparams: ::windows_sys::core::PCWSTR, pstrprocedurename: ::windows_sys::core::PCWSTR, pstritemname: ::windows_sys::core::PCWSTR, punkcontext: *mut ::core::ffi::c_void, pstrdelimiter: ::windows_sys::core::PCWSTR, dwsourcecontextcookie: u32, ulstartinglinenumber: u32, dwflags: u32, ppdisp: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    ParseProcedureText: usize,
+}
+#[repr(C)]
+pub struct IActiveScriptParseProcedure64 {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com")]
+    pub ParseProcedureText: unsafe extern "system" fn(this: *mut *mut Self, pstrcode: ::windows_sys::core::PCWSTR, pstrformalparams: ::windows_sys::core::PCWSTR, pstrprocedurename: ::windows_sys::core::PCWSTR, pstritemname: ::windows_sys::core::PCWSTR, punkcontext: *mut ::core::ffi::c_void, pstrdelimiter: ::windows_sys::core::PCWSTR, dwsourcecontextcookie: u64, ulstartinglinenumber: u32, dwflags: u32, ppdisp: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    ParseProcedureText: usize,
+}
+#[repr(C)]
+pub struct IActiveScriptParseProcedureOld32 {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com")]
+    pub ParseProcedureText: unsafe extern "system" fn(this: *mut *mut Self, pstrcode: ::windows_sys::core::PCWSTR, pstrformalparams: ::windows_sys::core::PCWSTR, pstritemname: ::windows_sys::core::PCWSTR, punkcontext: *mut ::core::ffi::c_void, pstrdelimiter: ::windows_sys::core::PCWSTR, dwsourcecontextcookie: u32, ulstartinglinenumber: u32, dwflags: u32, ppdisp: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    ParseProcedureText: usize,
+}
+#[repr(C)]
+pub struct IActiveScriptParseProcedureOld64 {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com")]
+    pub ParseProcedureText: unsafe extern "system" fn(this: *mut *mut Self, pstrcode: ::windows_sys::core::PCWSTR, pstrformalparams: ::windows_sys::core::PCWSTR, pstritemname: ::windows_sys::core::PCWSTR, punkcontext: *mut ::core::ffi::c_void, pstrdelimiter: ::windows_sys::core::PCWSTR, dwsourcecontextcookie: u64, ulstartinglinenumber: u32, dwflags: u32, ppdisp: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    ParseProcedureText: usize,
+}
+#[repr(C)]
+pub struct IActiveScriptProfilerCallback {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, dwcontext: u32) -> ::windows_sys::core::HRESULT,
+    pub Shutdown: unsafe extern "system" fn(this: *mut *mut Self, hrreason: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+    pub ScriptCompiled: unsafe extern "system" fn(this: *mut *mut Self, scriptid: i32, r#type: PROFILER_SCRIPT_TYPE, pidebugdocumentcontext: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub FunctionCompiled: unsafe extern "system" fn(this: *mut *mut Self, functionid: i32, scriptid: i32, pwszfunctionname: ::windows_sys::core::PCWSTR, pwszfunctionnamehint: ::windows_sys::core::PCWSTR, pidebugdocumentcontext: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub OnFunctionEnter: unsafe extern "system" fn(this: *mut *mut Self, scriptid: i32, functionid: i32) -> ::windows_sys::core::HRESULT,
+    pub OnFunctionExit: unsafe extern "system" fn(this: *mut *mut Self, scriptid: i32, functionid: i32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IActiveScriptProfilerCallback2 {
+    pub base__: IActiveScriptProfilerCallback,
+    pub OnFunctionEnterByName: unsafe extern "system" fn(this: *mut *mut Self, pwszfunctionname: ::windows_sys::core::PCWSTR, r#type: PROFILER_SCRIPT_TYPE) -> ::windows_sys::core::HRESULT,
+    pub OnFunctionExitByName: unsafe extern "system" fn(this: *mut *mut Self, pwszfunctionname: ::windows_sys::core::PCWSTR, r#type: PROFILER_SCRIPT_TYPE) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IActiveScriptProfilerCallback3 {
+    pub base__: IActiveScriptProfilerCallback2,
+    pub SetWebWorkerId: unsafe extern "system" fn(this: *mut *mut Self, webworkerid: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IActiveScriptProfilerControl {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub StartProfiling: unsafe extern "system" fn(this: *mut *mut Self, clsidprofilerobject: *const ::windows_sys::core::GUID, dweventmask: u32, dwcontext: u32) -> ::windows_sys::core::HRESULT,
+    pub SetProfilerEventMask: unsafe extern "system" fn(this: *mut *mut Self, dweventmask: u32) -> ::windows_sys::core::HRESULT,
+    pub StopProfiling: unsafe extern "system" fn(this: *mut *mut Self, hrshutdownreason: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IActiveScriptProfilerControl2 {
+    pub base__: IActiveScriptProfilerControl,
+    pub CompleteProfilerStart: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub PrepareProfilerStop: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IActiveScriptProfilerControl3 {
+    pub base__: IActiveScriptProfilerControl2,
+    pub EnumHeap: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IActiveScriptProfilerControl4 {
+    pub base__: IActiveScriptProfilerControl3,
+    pub SummarizeHeap: unsafe extern "system" fn(this: *mut *mut Self, heapsummary: *mut PROFILER_HEAP_SUMMARY) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IActiveScriptProfilerControl5 {
+    pub base__: IActiveScriptProfilerControl4,
+    pub EnumHeap2: unsafe extern "system" fn(this: *mut *mut Self, enumflags: PROFILER_HEAP_ENUM_FLAGS, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IActiveScriptProfilerHeapEnum {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, celt: u32, heapobjects: *mut *mut PROFILER_HEAP_OBJECT, pceltfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetOptionalInfo: unsafe extern "system" fn(this: *mut *mut Self, heapobject: *const PROFILER_HEAP_OBJECT, celt: u32, optionalinfo: *mut PROFILER_HEAP_OBJECT_OPTIONAL_INFO) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetOptionalInfo: usize,
+    pub FreeObjectAndOptionalInfo: unsafe extern "system" fn(this: *mut *mut Self, celt: u32, heapobjects: *const *const PROFILER_HEAP_OBJECT) -> ::windows_sys::core::HRESULT,
+    pub GetNameIdMap: unsafe extern "system" fn(this: *mut *mut Self, pnamelist: *mut *mut *mut ::windows_sys::core::PWSTR, pcelt: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IActiveScriptProperty {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetProperty: unsafe extern "system" fn(this: *mut *mut Self, dwproperty: u32, pvarindex: *const super::super::Com::VARIANT, pvarvalue: *mut super::super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetProperty: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetProperty: unsafe extern "system" fn(this: *mut *mut Self, dwproperty: u32, pvarindex: *const super::super::Com::VARIANT, pvarvalue: *const super::super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetProperty: usize,
+}
+#[repr(C)]
+pub struct IActiveScriptSIPInfo {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetSIPOID: unsafe extern "system" fn(this: *mut *mut Self, poid_sip: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IActiveScriptSite {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetLCID: unsafe extern "system" fn(this: *mut *mut Self, plcid: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetItemInfo: unsafe extern "system" fn(this: *mut *mut Self, pstrname: ::windows_sys::core::PCWSTR, dwreturnmask: u32, ppiunkitem: *mut *mut ::core::ffi::c_void, ppti: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetItemInfo: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetDocVersionString: unsafe extern "system" fn(this: *mut *mut Self, pbstrversion: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetDocVersionString: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub OnScriptTerminate: unsafe extern "system" fn(this: *mut *mut Self, pvarresult: *const super::super::Com::VARIANT, pexcepinfo: *const super::super::Com::EXCEPINFO) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    OnScriptTerminate: usize,
+    pub OnStateChange: unsafe extern "system" fn(this: *mut *mut Self, ssscriptstate: SCRIPTSTATE) -> ::windows_sys::core::HRESULT,
+    pub OnScriptError: unsafe extern "system" fn(this: *mut *mut Self, pscripterror: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub OnEnterScript: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub OnLeaveScript: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IActiveScriptSiteDebug32 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetDocumentContextFromPosition: unsafe extern "system" fn(this: *mut *mut Self, dwsourcecontext: u32, ucharacteroffset: u32, unumchars: u32, ppsc: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetApplication: unsafe extern "system" fn(this: *mut *mut Self, ppda: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetRootApplicationNode: unsafe extern "system" fn(this: *mut *mut Self, ppdanroot: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OnScriptErrorDebug: unsafe extern "system" fn(this: *mut *mut Self, perrordebug: *mut ::core::ffi::c_void, pfenterdebugger: *mut super::super::super::Foundation::BOOL, pfcallonscripterrorwhencontinuing: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OnScriptErrorDebug: usize,
+}
+#[repr(C)]
+pub struct IActiveScriptSiteDebug64 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetDocumentContextFromPosition: unsafe extern "system" fn(this: *mut *mut Self, dwsourcecontext: u64, ucharacteroffset: u32, unumchars: u32, ppsc: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetApplication: unsafe extern "system" fn(this: *mut *mut Self, ppda: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetRootApplicationNode: unsafe extern "system" fn(this: *mut *mut Self, ppdanroot: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OnScriptErrorDebug: unsafe extern "system" fn(this: *mut *mut Self, perrordebug: *mut ::core::ffi::c_void, pfenterdebugger: *mut super::super::super::Foundation::BOOL, pfcallonscripterrorwhencontinuing: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OnScriptErrorDebug: usize,
+}
+#[repr(C)]
+pub struct IActiveScriptSiteDebugEx {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OnCanNotJITScriptErrorDebug: unsafe extern "system" fn(this: *mut *mut Self, perrordebug: *mut ::core::ffi::c_void, pfcallonscripterrorwhencontinuing: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OnCanNotJITScriptErrorDebug: usize,
+}
+#[repr(C)]
+pub struct IActiveScriptSiteInterruptPoll {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub QueryContinue: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IActiveScriptSiteTraceInfo {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SendScriptTraceInfo: unsafe extern "system" fn(this: *mut *mut Self, stieventtype: SCRIPTTRACEINFO, guidcontextid: ::windows_sys::core::GUID, dwscriptcontextcookie: u32, lscriptstatementstart: i32, lscriptstatementend: i32, dwreserved: u64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IActiveScriptSiteUIControl {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetUIBehavior: unsafe extern "system" fn(this: *mut *mut Self, uicitem: SCRIPTUICITEM, puichandling: *mut SCRIPTUICHANDLING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IActiveScriptSiteWindow {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetWindow: unsafe extern "system" fn(this: *mut *mut Self, phwnd: *mut super::super::super::Foundation::HWND) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetWindow: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub EnableModeless: unsafe extern "system" fn(this: *mut *mut Self, fenable: super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    EnableModeless: usize,
+}
+#[repr(C)]
+pub struct IActiveScriptStats {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetStat: unsafe extern "system" fn(this: *mut *mut Self, stid: u32, pluhi: *mut u32, plulo: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetStatEx: unsafe extern "system" fn(this: *mut *mut Self, guid: *const ::windows_sys::core::GUID, pluhi: *mut u32, plulo: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub ResetStats: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IActiveScriptStringCompare {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub StrComp: unsafe extern "system" fn(this: *mut *mut Self, bszstr1: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, bszstr2: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, iret: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    StrComp: usize,
+}
+#[repr(C)]
+pub struct IActiveScriptTraceInfo {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub StartScriptTracing: unsafe extern "system" fn(this: *mut *mut Self, psitetraceinfo: *mut ::core::ffi::c_void, guidcontextid: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub StopScriptTracing: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IActiveScriptWinRTErrorDebug {
+    pub base__: IActiveScriptError,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetRestrictedErrorString: unsafe extern "system" fn(this: *mut *mut Self, errorstring: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetRestrictedErrorString: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetRestrictedErrorReference: unsafe extern "system" fn(this: *mut *mut Self, referencestring: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetRestrictedErrorReference: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetCapabilitySid: unsafe extern "system" fn(this: *mut *mut Self, capabilitysid: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetCapabilitySid: usize,
+}
+#[repr(C)]
+pub struct IApplicationDebugger {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub QueryAlive: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub CreateInstanceAtDebugger: unsafe extern "system" fn(this: *mut *mut Self, rclsid: *const ::windows_sys::core::GUID, punkouter: *mut ::core::ffi::c_void, dwclscontext: u32, riid: *const ::windows_sys::core::GUID, ppvobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub onDebugOutput: unsafe extern "system" fn(this: *mut *mut Self, pstr: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub onHandleBreakPoint: unsafe extern "system" fn(this: *mut *mut Self, prpt: *mut ::core::ffi::c_void, br: BREAKREASON, perror: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub onClose: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub onDebuggerEvent: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, punk: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IApplicationDebuggerUI {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub BringDocumentToTop: unsafe extern "system" fn(this: *mut *mut Self, pddt: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub BringDocumentContextToTop: unsafe extern "system" fn(this: *mut *mut Self, pddc: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IBindEventHandler {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com")]
+    pub BindHandler: unsafe extern "system" fn(this: *mut *mut Self, pstrevent: ::windows_sys::core::PCWSTR, pdisp: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    BindHandler: usize,
+}
+#[repr(C)]
+pub struct ICodeAddressConcept {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetContainingSymbol: unsafe extern "system" fn(this: *mut *mut Self, pcontextobject: *mut ::core::ffi::c_void, ppsymbol: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IComparableConcept {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub CompareObjects: unsafe extern "system" fn(this: *mut *mut Self, contextobject: *mut ::core::ffi::c_void, otherobject: *mut ::core::ffi::c_void, comparisonresult: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDataModelConcept {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub InitializeObject: unsafe extern "system" fn(this: *mut *mut Self, modelobject: *mut ::core::ffi::c_void, matchingtypesignature: *mut ::core::ffi::c_void, wildcardmatches: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetName: unsafe extern "system" fn(this: *mut *mut Self, modelname: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetName: usize,
+}
+#[repr(C)]
+pub struct IDataModelManager {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub CreateNoValue: unsafe extern "system" fn(this: *mut *mut Self, object: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateErrorObject: unsafe extern "system" fn(this: *mut *mut Self, hrerror: ::windows_sys::core::HRESULT, pwszmessage: ::windows_sys::core::PCWSTR, object: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateTypedObject: unsafe extern "system" fn(this: *mut *mut Self, context: *mut ::core::ffi::c_void, objectlocation: Location, objecttype: *mut ::core::ffi::c_void, object: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateTypedObjectReference: unsafe extern "system" fn(this: *mut *mut Self, context: *mut ::core::ffi::c_void, objectlocation: Location, objecttype: *mut ::core::ffi::c_void, object: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateSyntheticObject: unsafe extern "system" fn(this: *mut *mut Self, context: *mut ::core::ffi::c_void, object: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateDataModelObject: unsafe extern "system" fn(this: *mut *mut Self, datamodel: *mut ::core::ffi::c_void, object: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub CreateIntrinsicObject: unsafe extern "system" fn(this: *mut *mut Self, objectkind: ModelObjectKind, intrinsicdata: *const super::super::Com::VARIANT, object: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    CreateIntrinsicObject: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub CreateTypedIntrinsicObject: unsafe extern "system" fn(this: *mut *mut Self, intrinsicdata: *const super::super::Com::VARIANT, r#type: *mut ::core::ffi::c_void, object: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    CreateTypedIntrinsicObject: usize,
+    pub GetModelForTypeSignature: unsafe extern "system" fn(this: *mut *mut Self, typesignature: *mut ::core::ffi::c_void, datamodel: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetModelForType: unsafe extern "system" fn(this: *mut *mut Self, r#type: *mut ::core::ffi::c_void, datamodel: *mut *mut ::core::ffi::c_void, typesignature: *mut *mut ::core::ffi::c_void, wildcardmatches: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RegisterModelForTypeSignature: unsafe extern "system" fn(this: *mut *mut Self, typesignature: *mut ::core::ffi::c_void, datamodel: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub UnregisterModelForTypeSignature: unsafe extern "system" fn(this: *mut *mut Self, datamodel: *mut ::core::ffi::c_void, typesignature: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RegisterExtensionForTypeSignature: unsafe extern "system" fn(this: *mut *mut Self, typesignature: *mut ::core::ffi::c_void, datamodel: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub UnregisterExtensionForTypeSignature: unsafe extern "system" fn(this: *mut *mut Self, datamodel: *mut ::core::ffi::c_void, typesignature: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateMetadataStore: unsafe extern "system" fn(this: *mut *mut Self, parentstore: *mut ::core::ffi::c_void, metadatastore: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetRootNamespace: unsafe extern "system" fn(this: *mut *mut Self, rootnamespace: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RegisterNamedModel: unsafe extern "system" fn(this: *mut *mut Self, modelname: ::windows_sys::core::PCWSTR, modeobject: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub UnregisterNamedModel: unsafe extern "system" fn(this: *mut *mut Self, modelname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub AcquireNamedModel: unsafe extern "system" fn(this: *mut *mut Self, modelname: ::windows_sys::core::PCWSTR, modelobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDataModelManager2 {
+    pub base__: IDataModelManager,
+    pub AcquireSubNamespace: unsafe extern "system" fn(this: *mut *mut Self, modelname: ::windows_sys::core::PCWSTR, subnamespacemodelname: ::windows_sys::core::PCWSTR, accessname: ::windows_sys::core::PCWSTR, metadata: *mut ::core::ffi::c_void, namespacemodelobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub CreateTypedIntrinsicObjectEx: unsafe extern "system" fn(this: *mut *mut Self, context: *mut ::core::ffi::c_void, intrinsicdata: *const super::super::Com::VARIANT, r#type: *mut ::core::ffi::c_void, object: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    CreateTypedIntrinsicObjectEx: usize,
+}
+#[repr(C)]
+pub struct IDataModelNameBinder {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub BindValue: unsafe extern "system" fn(this: *mut *mut Self, contextobject: *mut ::core::ffi::c_void, name: ::windows_sys::core::PCWSTR, value: *mut *mut ::core::ffi::c_void, metadata: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub BindReference: unsafe extern "system" fn(this: *mut *mut Self, contextobject: *mut ::core::ffi::c_void, name: ::windows_sys::core::PCWSTR, reference: *mut *mut ::core::ffi::c_void, metadata: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EnumerateValues: unsafe extern "system" fn(this: *mut *mut Self, contextobject: *mut ::core::ffi::c_void, enumerator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EnumerateReferences: unsafe extern "system" fn(this: *mut *mut Self, contextobject: *mut ::core::ffi::c_void, enumerator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDataModelScript {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetName: unsafe extern "system" fn(this: *mut *mut Self, scriptname: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetName: usize,
+    pub Rename: unsafe extern "system" fn(this: *mut *mut Self, scriptname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Populate: unsafe extern "system" fn(this: *mut *mut Self, contentstream: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Populate: usize,
+    pub Execute: unsafe extern "system" fn(this: *mut *mut Self, client: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Unlink: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub IsInvocable: unsafe extern "system" fn(this: *mut *mut Self, isinvocable: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub InvokeMain: unsafe extern "system" fn(this: *mut *mut Self, client: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDataModelScriptClient {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub ReportError: unsafe extern "system" fn(this: *mut *mut Self, errclass: ErrorClass, hrfail: ::windows_sys::core::HRESULT, message: ::windows_sys::core::PCWSTR, line: u32, position: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDataModelScriptDebug {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetDebugState: unsafe extern "system" fn(this: *mut *mut Self) -> ScriptDebugState,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetCurrentPosition: unsafe extern "system" fn(this: *mut *mut Self, currentposition: *mut ScriptDebugPosition, positionspanend: *mut ScriptDebugPosition, linetext: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetCurrentPosition: usize,
+    pub GetStack: unsafe extern "system" fn(this: *mut *mut Self, stack: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetBreakpoint: unsafe extern "system" fn(this: *mut *mut Self, lineposition: u32, columnposition: u32, breakpoint: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub FindBreakpointById: unsafe extern "system" fn(this: *mut *mut Self, breakpointid: u64, breakpoint: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EnumerateBreakpoints: unsafe extern "system" fn(this: *mut *mut Self, breakpointenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetEventFilter: unsafe extern "system" fn(this: *mut *mut Self, eventfilter: ScriptDebugEventFilter, isbreakenabled: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetEventFilter: unsafe extern "system" fn(this: *mut *mut Self, eventfilter: ScriptDebugEventFilter, isbreakenabled: u8) -> ::windows_sys::core::HRESULT,
+    pub StartDebugging: unsafe extern "system" fn(this: *mut *mut Self, debugclient: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub StopDebugging: unsafe extern "system" fn(this: *mut *mut Self, debugclient: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDataModelScriptDebug2 {
+    pub base__: IDataModelScriptDebug,
+    pub SetBreakpointAtFunction: unsafe extern "system" fn(this: *mut *mut Self, functionname: ::windows_sys::core::PCWSTR, breakpoint: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDataModelScriptDebugBreakpoint {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetId: unsafe extern "system" fn(this: *mut *mut Self) -> u64,
+    pub IsEnabled: unsafe extern "system" fn(this: *mut *mut Self) -> bool,
+    pub Enable: unsafe extern "system" fn(this: *mut *mut Self),
+    pub Disable: unsafe extern "system" fn(this: *mut *mut Self),
+    pub Remove: unsafe extern "system" fn(this: *mut *mut Self),
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetPosition: unsafe extern "system" fn(this: *mut *mut Self, position: *mut ScriptDebugPosition, positionspanend: *mut ScriptDebugPosition, linetext: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetPosition: usize,
+}
+#[repr(C)]
+pub struct IDataModelScriptDebugBreakpointEnumerator {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetNext: unsafe extern "system" fn(this: *mut *mut Self, breakpoint: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDataModelScriptDebugClient {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub NotifyDebugEvent: unsafe extern "system" fn(this: *mut *mut Self, peventinfo: *const ScriptDebugEventInformation, pscript: *mut ::core::ffi::c_void, peventdataobject: *mut ::core::ffi::c_void, resumeeventkind: *mut ScriptExecutionKind) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDataModelScriptDebugStack {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetFrameCount: unsafe extern "system" fn(this: *mut *mut Self) -> u64,
+    pub GetStackFrame: unsafe extern "system" fn(this: *mut *mut Self, framenumber: u64, stackframe: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDataModelScriptDebugStackFrame {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetName: unsafe extern "system" fn(this: *mut *mut Self, name: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetPosition: unsafe extern "system" fn(this: *mut *mut Self, position: *mut ScriptDebugPosition, positionspanend: *mut ScriptDebugPosition, linetext: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetPosition: usize,
+    pub IsTransitionPoint: unsafe extern "system" fn(this: *mut *mut Self, istransitionpoint: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub GetTransition: unsafe extern "system" fn(this: *mut *mut Self, transitionscript: *mut *mut ::core::ffi::c_void, istransitioncontiguous: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub Evaluate: unsafe extern "system" fn(this: *mut *mut Self, pwszexpression: ::windows_sys::core::PCWSTR, ppresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EnumerateLocals: unsafe extern "system" fn(this: *mut *mut Self, variablesenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EnumerateArguments: unsafe extern "system" fn(this: *mut *mut Self, variablesenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDataModelScriptDebugVariableSetEnumerator {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetNext: unsafe extern "system" fn(this: *mut *mut Self, variablename: *mut super::super::super::Foundation::BSTR, variablevalue: *mut *mut ::core::ffi::c_void, variablemetadata: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetNext: usize,
+}
+#[repr(C)]
+pub struct IDataModelScriptHostContext {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub NotifyScriptChange: unsafe extern "system" fn(this: *mut *mut Self, script: *mut ::core::ffi::c_void, changekind: ScriptChangeKind) -> ::windows_sys::core::HRESULT,
+    pub GetNamespaceObject: unsafe extern "system" fn(this: *mut *mut Self, namespaceobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDataModelScriptManager {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetDefaultNameBinder: unsafe extern "system" fn(this: *mut *mut Self, ppnamebinder: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RegisterScriptProvider: unsafe extern "system" fn(this: *mut *mut Self, provider: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub UnregisterScriptProvider: unsafe extern "system" fn(this: *mut *mut Self, provider: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub FindProviderForScriptType: unsafe extern "system" fn(this: *mut *mut Self, scripttype: ::windows_sys::core::PCWSTR, provider: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub FindProviderForScriptExtension: unsafe extern "system" fn(this: *mut *mut Self, scriptextension: ::windows_sys::core::PCWSTR, provider: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EnumerateScriptProviders: unsafe extern "system" fn(this: *mut *mut Self, enumerator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDataModelScriptProvider {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetName: unsafe extern "system" fn(this: *mut *mut Self, name: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetExtension: unsafe extern "system" fn(this: *mut *mut Self, extension: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetExtension: usize,
+    pub CreateScript: unsafe extern "system" fn(this: *mut *mut Self, script: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetDefaultTemplateContent: unsafe extern "system" fn(this: *mut *mut Self, templatecontent: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EnumerateTemplates: unsafe extern "system" fn(this: *mut *mut Self, enumerator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDataModelScriptProviderEnumerator {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetNext: unsafe extern "system" fn(this: *mut *mut Self, provider: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDataModelScriptTemplate {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetName: unsafe extern "system" fn(this: *mut *mut Self, templatename: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetDescription: unsafe extern "system" fn(this: *mut *mut Self, templatedescription: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetDescription: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetContent: unsafe extern "system" fn(this: *mut *mut Self, contentstream: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetContent: usize,
+}
+#[repr(C)]
+pub struct IDataModelScriptTemplateEnumerator {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetNext: unsafe extern "system" fn(this: *mut *mut Self, templatecontent: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugAdvanced {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetThreadContext: unsafe extern "system" fn(this: *mut *mut Self, context: *mut ::core::ffi::c_void, contextsize: u32) -> ::windows_sys::core::HRESULT,
+    pub SetThreadContext: unsafe extern "system" fn(this: *mut *mut Self, context: *const ::core::ffi::c_void, contextsize: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugAdvanced2 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetThreadContext: unsafe extern "system" fn(this: *mut *mut Self, context: *mut ::core::ffi::c_void, contextsize: u32) -> ::windows_sys::core::HRESULT,
+    pub SetThreadContext: unsafe extern "system" fn(this: *mut *mut Self, context: *const ::core::ffi::c_void, contextsize: u32) -> ::windows_sys::core::HRESULT,
+    pub Request: unsafe extern "system" fn(this: *mut *mut Self, request: u32, inbuffer: *const ::core::ffi::c_void, inbuffersize: u32, outbuffer: *mut ::core::ffi::c_void, outbuffersize: u32, outsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSourceFileInformation: unsafe extern "system" fn(this: *mut *mut Self, which: u32, sourcefile: ::windows_sys::core::PCSTR, arg64: u64, arg32: u32, buffer: *mut ::core::ffi::c_void, buffersize: u32, infosize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub FindSourceFileAndToken: unsafe extern "system" fn(this: *mut *mut Self, startelement: u32, modaddr: u64, file: ::windows_sys::core::PCSTR, flags: u32, filetoken: *const ::core::ffi::c_void, filetokensize: u32, foundelement: *mut u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, foundsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolInformation: unsafe extern "system" fn(this: *mut *mut Self, which: u32, arg64: u64, arg32: u32, buffer: *mut ::core::ffi::c_void, buffersize: u32, infosize: *mut u32, stringbuffer: ::windows_sys::core::PSTR, stringbuffersize: u32, stringsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSystemObjectInformation: unsafe extern "system" fn(this: *mut *mut Self, which: u32, arg64: u64, arg32: u32, buffer: *mut ::core::ffi::c_void, buffersize: u32, infosize: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugAdvanced3 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetThreadContext: unsafe extern "system" fn(this: *mut *mut Self, context: *mut ::core::ffi::c_void, contextsize: u32) -> ::windows_sys::core::HRESULT,
+    pub SetThreadContext: unsafe extern "system" fn(this: *mut *mut Self, context: *const ::core::ffi::c_void, contextsize: u32) -> ::windows_sys::core::HRESULT,
+    pub Request: unsafe extern "system" fn(this: *mut *mut Self, request: u32, inbuffer: *const ::core::ffi::c_void, inbuffersize: u32, outbuffer: *mut ::core::ffi::c_void, outbuffersize: u32, outsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSourceFileInformation: unsafe extern "system" fn(this: *mut *mut Self, which: u32, sourcefile: ::windows_sys::core::PCSTR, arg64: u64, arg32: u32, buffer: *mut ::core::ffi::c_void, buffersize: u32, infosize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub FindSourceFileAndToken: unsafe extern "system" fn(this: *mut *mut Self, startelement: u32, modaddr: u64, file: ::windows_sys::core::PCSTR, flags: u32, filetoken: *const ::core::ffi::c_void, filetokensize: u32, foundelement: *mut u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, foundsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolInformation: unsafe extern "system" fn(this: *mut *mut Self, which: u32, arg64: u64, arg32: u32, buffer: *mut ::core::ffi::c_void, buffersize: u32, infosize: *mut u32, stringbuffer: ::windows_sys::core::PSTR, stringbuffersize: u32, stringsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSystemObjectInformation: unsafe extern "system" fn(this: *mut *mut Self, which: u32, arg64: u64, arg32: u32, buffer: *mut ::core::ffi::c_void, buffersize: u32, infosize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSourceFileInformationWide: unsafe extern "system" fn(this: *mut *mut Self, which: u32, sourcefile: ::windows_sys::core::PCWSTR, arg64: u64, arg32: u32, buffer: *mut ::core::ffi::c_void, buffersize: u32, infosize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub FindSourceFileAndTokenWide: unsafe extern "system" fn(this: *mut *mut Self, startelement: u32, modaddr: u64, file: ::windows_sys::core::PCWSTR, flags: u32, filetoken: *const ::core::ffi::c_void, filetokensize: u32, foundelement: *mut u32, buffer: ::windows_sys::core::PWSTR, buffersize: u32, foundsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolInformationWide: unsafe extern "system" fn(this: *mut *mut Self, which: u32, arg64: u64, arg32: u32, buffer: *mut ::core::ffi::c_void, buffersize: u32, infosize: *mut u32, stringbuffer: ::windows_sys::core::PWSTR, stringbuffersize: u32, stringsize: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugAdvanced4 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetThreadContext: unsafe extern "system" fn(this: *mut *mut Self, context: *mut ::core::ffi::c_void, contextsize: u32) -> ::windows_sys::core::HRESULT,
+    pub SetThreadContext: unsafe extern "system" fn(this: *mut *mut Self, context: *const ::core::ffi::c_void, contextsize: u32) -> ::windows_sys::core::HRESULT,
+    pub Request: unsafe extern "system" fn(this: *mut *mut Self, request: u32, inbuffer: *const ::core::ffi::c_void, inbuffersize: u32, outbuffer: *mut ::core::ffi::c_void, outbuffersize: u32, outsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSourceFileInformation: unsafe extern "system" fn(this: *mut *mut Self, which: u32, sourcefile: ::windows_sys::core::PCSTR, arg64: u64, arg32: u32, buffer: *mut ::core::ffi::c_void, buffersize: u32, infosize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub FindSourceFileAndToken: unsafe extern "system" fn(this: *mut *mut Self, startelement: u32, modaddr: u64, file: ::windows_sys::core::PCSTR, flags: u32, filetoken: *const ::core::ffi::c_void, filetokensize: u32, foundelement: *mut u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, foundsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolInformation: unsafe extern "system" fn(this: *mut *mut Self, which: u32, arg64: u64, arg32: u32, buffer: *mut ::core::ffi::c_void, buffersize: u32, infosize: *mut u32, stringbuffer: ::windows_sys::core::PSTR, stringbuffersize: u32, stringsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSystemObjectInformation: unsafe extern "system" fn(this: *mut *mut Self, which: u32, arg64: u64, arg32: u32, buffer: *mut ::core::ffi::c_void, buffersize: u32, infosize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSourceFileInformationWide: unsafe extern "system" fn(this: *mut *mut Self, which: u32, sourcefile: ::windows_sys::core::PCWSTR, arg64: u64, arg32: u32, buffer: *mut ::core::ffi::c_void, buffersize: u32, infosize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub FindSourceFileAndTokenWide: unsafe extern "system" fn(this: *mut *mut Self, startelement: u32, modaddr: u64, file: ::windows_sys::core::PCWSTR, flags: u32, filetoken: *const ::core::ffi::c_void, filetokensize: u32, foundelement: *mut u32, buffer: ::windows_sys::core::PWSTR, buffersize: u32, foundsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolInformationWide: unsafe extern "system" fn(this: *mut *mut Self, which: u32, arg64: u64, arg32: u32, buffer: *mut ::core::ffi::c_void, buffersize: u32, infosize: *mut u32, stringbuffer: ::windows_sys::core::PWSTR, stringbuffersize: u32, stringsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolInformationWideEx: unsafe extern "system" fn(this: *mut *mut Self, which: u32, arg64: u64, arg32: u32, buffer: *mut ::core::ffi::c_void, buffersize: u32, infosize: *mut u32, stringbuffer: ::windows_sys::core::PWSTR, stringbuffersize: u32, stringsize: *mut u32, pinfoex: *mut SYMBOL_INFO_EX) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugApplication11032 {
+    pub base__: IRemoteDebugApplication110,
+    pub SynchronousCallInMainThread: unsafe extern "system" fn(this: *mut *mut Self, pptc: *mut ::core::ffi::c_void, dwparam1: usize, dwparam2: usize, dwparam3: usize) -> ::windows_sys::core::HRESULT,
+    pub AsynchronousCallInMainThread: unsafe extern "system" fn(this: *mut *mut Self, pptc: *mut ::core::ffi::c_void, dwparam1: usize, dwparam2: usize, dwparam3: usize) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CallableWaitForHandles: unsafe extern "system" fn(this: *mut *mut Self, handlecount: u32, phandles: *const super::super::super::Foundation::HANDLE, pindex: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CallableWaitForHandles: usize,
+}
+#[repr(C)]
+pub struct IDebugApplication11064 {
+    pub base__: IRemoteDebugApplication110,
+    pub SynchronousCallInMainThread: unsafe extern "system" fn(this: *mut *mut Self, pptc: *mut ::core::ffi::c_void, dwparam1: usize, dwparam2: usize, dwparam3: usize) -> ::windows_sys::core::HRESULT,
+    pub AsynchronousCallInMainThread: unsafe extern "system" fn(this: *mut *mut Self, pptc: *mut ::core::ffi::c_void, dwparam1: usize, dwparam2: usize, dwparam3: usize) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CallableWaitForHandles: unsafe extern "system" fn(this: *mut *mut Self, handlecount: u32, phandles: *const super::super::super::Foundation::HANDLE, pindex: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CallableWaitForHandles: usize,
+}
+#[repr(C)]
+pub struct IDebugApplication32 {
+    pub base__: IRemoteDebugApplication,
+    pub SetName: unsafe extern "system" fn(this: *mut *mut Self, pstrname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub StepOutComplete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub DebugOutput: unsafe extern "system" fn(this: *mut *mut Self, pstr: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub StartDebugSession: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub HandleBreakPoint: unsafe extern "system" fn(this: *mut *mut Self, br: BREAKREASON, pbra: *mut BREAKRESUME_ACTION) -> ::windows_sys::core::HRESULT,
+    pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetBreakFlags: unsafe extern "system" fn(this: *mut *mut Self, pabf: *mut u32, pprdatsteppingthread: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentThread: unsafe extern "system" fn(this: *mut *mut Self, pat: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateAsyncDebugOperation: unsafe extern "system" fn(this: *mut *mut Self, psdo: *mut ::core::ffi::c_void, ppado: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AddStackFrameSniffer: unsafe extern "system" fn(this: *mut *mut Self, pdsfs: *mut ::core::ffi::c_void, pdwcookie: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub RemoveStackFrameSniffer: unsafe extern "system" fn(this: *mut *mut Self, dwcookie: u32) -> ::windows_sys::core::HRESULT,
+    pub QueryCurrentThreadIsDebuggerThread: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub SynchronousCallInDebuggerThread: unsafe extern "system" fn(this: *mut *mut Self, pptc: *mut ::core::ffi::c_void, dwparam1: u32, dwparam2: u32, dwparam3: u32) -> ::windows_sys::core::HRESULT,
+    pub CreateApplicationNode: unsafe extern "system" fn(this: *mut *mut Self, ppdannew: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub FireDebuggerEvent: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, punk: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub HandleRuntimeError: unsafe extern "system" fn(this: *mut *mut Self, perrordebug: *mut ::core::ffi::c_void, pscriptsite: *mut ::core::ffi::c_void, pbra: *mut BREAKRESUME_ACTION, perra: *mut ERRORRESUMEACTION, pfcallonscripterror: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    HandleRuntimeError: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub FCanJitDebug: unsafe extern "system" fn(this: *mut *mut Self) -> super::super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    FCanJitDebug: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub FIsAutoJitDebugEnabled: unsafe extern "system" fn(this: *mut *mut Self) -> super::super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    FIsAutoJitDebugEnabled: usize,
+    pub AddGlobalExpressionContextProvider: unsafe extern "system" fn(this: *mut *mut Self, pdsfs: *mut ::core::ffi::c_void, pdwcookie: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub RemoveGlobalExpressionContextProvider: unsafe extern "system" fn(this: *mut *mut Self, dwcookie: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugApplication64 {
+    pub base__: IRemoteDebugApplication,
+    pub SetName: unsafe extern "system" fn(this: *mut *mut Self, pstrname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub StepOutComplete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub DebugOutput: unsafe extern "system" fn(this: *mut *mut Self, pstr: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub StartDebugSession: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub HandleBreakPoint: unsafe extern "system" fn(this: *mut *mut Self, br: BREAKREASON, pbra: *mut BREAKRESUME_ACTION) -> ::windows_sys::core::HRESULT,
+    pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetBreakFlags: unsafe extern "system" fn(this: *mut *mut Self, pabf: *mut u32, pprdatsteppingthread: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentThread: unsafe extern "system" fn(this: *mut *mut Self, pat: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateAsyncDebugOperation: unsafe extern "system" fn(this: *mut *mut Self, psdo: *mut ::core::ffi::c_void, ppado: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AddStackFrameSniffer: unsafe extern "system" fn(this: *mut *mut Self, pdsfs: *mut ::core::ffi::c_void, pdwcookie: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub RemoveStackFrameSniffer: unsafe extern "system" fn(this: *mut *mut Self, dwcookie: u32) -> ::windows_sys::core::HRESULT,
+    pub QueryCurrentThreadIsDebuggerThread: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub SynchronousCallInDebuggerThread: unsafe extern "system" fn(this: *mut *mut Self, pptc: *mut ::core::ffi::c_void, dwparam1: u64, dwparam2: u64, dwparam3: u64) -> ::windows_sys::core::HRESULT,
+    pub CreateApplicationNode: unsafe extern "system" fn(this: *mut *mut Self, ppdannew: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub FireDebuggerEvent: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, punk: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub HandleRuntimeError: unsafe extern "system" fn(this: *mut *mut Self, perrordebug: *mut ::core::ffi::c_void, pscriptsite: *mut ::core::ffi::c_void, pbra: *mut BREAKRESUME_ACTION, perra: *mut ERRORRESUMEACTION, pfcallonscripterror: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    HandleRuntimeError: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub FCanJitDebug: unsafe extern "system" fn(this: *mut *mut Self) -> super::super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    FCanJitDebug: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub FIsAutoJitDebugEnabled: unsafe extern "system" fn(this: *mut *mut Self) -> super::super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    FIsAutoJitDebugEnabled: usize,
+    pub AddGlobalExpressionContextProvider: unsafe extern "system" fn(this: *mut *mut Self, pdsfs: *mut ::core::ffi::c_void, pdwcookie: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub RemoveGlobalExpressionContextProvider: unsafe extern "system" fn(this: *mut *mut Self, dwcookie: u64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugApplicationNode {
+    pub base__: IDebugDocumentProvider,
+    pub EnumChildren: unsafe extern "system" fn(this: *mut *mut Self, pperddp: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetParent: unsafe extern "system" fn(this: *mut *mut Self, pprddp: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetDocumentProvider: unsafe extern "system" fn(this: *mut *mut Self, pddp: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Attach: unsafe extern "system" fn(this: *mut *mut Self, pdanparent: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Detach: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugApplicationNode100 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetFilterForEventSink: unsafe extern "system" fn(this: *mut *mut Self, dwcookie: u32, filter: APPLICATION_NODE_EVENT_FILTER) -> ::windows_sys::core::HRESULT,
+    pub GetExcludedDocuments: unsafe extern "system" fn(this: *mut *mut Self, filter: APPLICATION_NODE_EVENT_FILTER, pdocuments: *mut TEXT_DOCUMENT_ARRAY) -> ::windows_sys::core::HRESULT,
+    pub QueryIsChildNode: unsafe extern "system" fn(this: *mut *mut Self, psearchkey: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugApplicationNodeEvents {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub onAddChild: unsafe extern "system" fn(this: *mut *mut Self, prddpchild: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub onRemoveChild: unsafe extern "system" fn(this: *mut *mut Self, prddpchild: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub onDetach: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub onAttach: unsafe extern "system" fn(this: *mut *mut Self, prddpparent: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugApplicationThread {
+    pub base__: IRemoteDebugApplicationThread,
+    pub SynchronousCallIntoThread32: unsafe extern "system" fn(this: *mut *mut Self, pstcb: *mut ::core::ffi::c_void, dwparam1: u32, dwparam2: u32, dwparam3: u32) -> ::windows_sys::core::HRESULT,
+    pub QueryIsCurrentThread: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub QueryIsDebuggerThread: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub SetDescription: unsafe extern "system" fn(this: *mut *mut Self, pstrdescription: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetStateString: unsafe extern "system" fn(this: *mut *mut Self, pstrstate: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugApplicationThread11032 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetActiveThreadRequestCount: unsafe extern "system" fn(this: *mut *mut Self, puithreadrequests: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsSuspendedForBreakPoint: unsafe extern "system" fn(this: *mut *mut Self, pfissuspended: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsSuspendedForBreakPoint: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsThreadCallable: unsafe extern "system" fn(this: *mut *mut Self, pfiscallable: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsThreadCallable: usize,
+    pub AsynchronousCallIntoThread: unsafe extern "system" fn(this: *mut *mut Self, pptc: *mut ::core::ffi::c_void, dwparam1: usize, dwparam2: usize, dwparam3: usize) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugApplicationThread11064 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetActiveThreadRequestCount: unsafe extern "system" fn(this: *mut *mut Self, puithreadrequests: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsSuspendedForBreakPoint: unsafe extern "system" fn(this: *mut *mut Self, pfissuspended: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsSuspendedForBreakPoint: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsThreadCallable: unsafe extern "system" fn(this: *mut *mut Self, pfiscallable: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsThreadCallable: usize,
+    pub AsynchronousCallIntoThread: unsafe extern "system" fn(this: *mut *mut Self, pptc: *mut ::core::ffi::c_void, dwparam1: usize, dwparam2: usize, dwparam3: usize) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugApplicationThread64 {
+    pub base__: IDebugApplicationThread,
+    pub SynchronousCallIntoThread64: unsafe extern "system" fn(this: *mut *mut Self, pstcb: *mut ::core::ffi::c_void, dwparam1: u64, dwparam2: u64, dwparam3: u64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugApplicationThreadEvents110 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnSuspendForBreakPoint: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub OnResumeFromBreakPoint: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub OnThreadRequestComplete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub OnBeginThreadRequest: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugAsyncOperation {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetSyncDebugOperation: unsafe extern "system" fn(this: *mut *mut Self, ppsdo: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Start: unsafe extern "system" fn(this: *mut *mut Self, padocb: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Abort: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub QueryIsComplete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetResult: unsafe extern "system" fn(this: *mut *mut Self, phrresult: *mut ::windows_sys::core::HRESULT, ppunkresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugAsyncOperationCallBack {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub onComplete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugBreakpoint {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetId: unsafe extern "system" fn(this: *mut *mut Self, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetType: unsafe extern "system" fn(this: *mut *mut Self, breaktype: *mut u32, proctype: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetAdder: unsafe extern "system" fn(this: *mut *mut Self, adder: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetFlags: unsafe extern "system" fn(this: *mut *mut Self, flags: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub AddFlags: unsafe extern "system" fn(this: *mut *mut Self, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub RemoveFlags: unsafe extern "system" fn(this: *mut *mut Self, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub SetFlags: unsafe extern "system" fn(this: *mut *mut Self, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub SetOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: u64) -> ::windows_sys::core::HRESULT,
+    pub GetDataParameters: unsafe extern "system" fn(this: *mut *mut Self, size: *mut u32, accesstype: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetDataParameters: unsafe extern "system" fn(this: *mut *mut Self, size: u32, accesstype: u32) -> ::windows_sys::core::HRESULT,
+    pub GetPassCount: unsafe extern "system" fn(this: *mut *mut Self, count: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetPassCount: unsafe extern "system" fn(this: *mut *mut Self, count: u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentPassCount: unsafe extern "system" fn(this: *mut *mut Self, count: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetMatchThreadId: unsafe extern "system" fn(this: *mut *mut Self, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetMatchThreadId: unsafe extern "system" fn(this: *mut *mut Self, thread: u32) -> ::windows_sys::core::HRESULT,
+    pub GetCommand: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, commandsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetCommand: unsafe extern "system" fn(this: *mut *mut Self, command: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetOffsetExpression: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, expressionsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetOffsetExpression: unsafe extern "system" fn(this: *mut *mut Self, expression: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetParameters: unsafe extern "system" fn(this: *mut *mut Self, params: *mut DEBUG_BREAKPOINT_PARAMETERS) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugBreakpoint2 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetId: unsafe extern "system" fn(this: *mut *mut Self, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetType: unsafe extern "system" fn(this: *mut *mut Self, breaktype: *mut u32, proctype: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetAdder: unsafe extern "system" fn(this: *mut *mut Self, adder: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetFlags: unsafe extern "system" fn(this: *mut *mut Self, flags: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub AddFlags: unsafe extern "system" fn(this: *mut *mut Self, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub RemoveFlags: unsafe extern "system" fn(this: *mut *mut Self, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub SetFlags: unsafe extern "system" fn(this: *mut *mut Self, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub SetOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: u64) -> ::windows_sys::core::HRESULT,
+    pub GetDataParameters: unsafe extern "system" fn(this: *mut *mut Self, size: *mut u32, accesstype: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetDataParameters: unsafe extern "system" fn(this: *mut *mut Self, size: u32, accesstype: u32) -> ::windows_sys::core::HRESULT,
+    pub GetPassCount: unsafe extern "system" fn(this: *mut *mut Self, count: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetPassCount: unsafe extern "system" fn(this: *mut *mut Self, count: u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentPassCount: unsafe extern "system" fn(this: *mut *mut Self, count: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetMatchThreadId: unsafe extern "system" fn(this: *mut *mut Self, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetMatchThreadId: unsafe extern "system" fn(this: *mut *mut Self, thread: u32) -> ::windows_sys::core::HRESULT,
+    pub GetCommand: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, commandsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetCommand: unsafe extern "system" fn(this: *mut *mut Self, command: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetOffsetExpression: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, expressionsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetOffsetExpression: unsafe extern "system" fn(this: *mut *mut Self, expression: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetParameters: unsafe extern "system" fn(this: *mut *mut Self, params: *mut DEBUG_BREAKPOINT_PARAMETERS) -> ::windows_sys::core::HRESULT,
+    pub GetCommandWide: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PWSTR, buffersize: u32, commandsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetCommandWide: unsafe extern "system" fn(this: *mut *mut Self, command: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetOffsetExpressionWide: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PWSTR, buffersize: u32, expressionsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetOffsetExpressionWide: unsafe extern "system" fn(this: *mut *mut Self, expression: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugBreakpoint3 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetId: unsafe extern "system" fn(this: *mut *mut Self, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetType: unsafe extern "system" fn(this: *mut *mut Self, breaktype: *mut u32, proctype: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetAdder: unsafe extern "system" fn(this: *mut *mut Self, adder: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetFlags: unsafe extern "system" fn(this: *mut *mut Self, flags: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub AddFlags: unsafe extern "system" fn(this: *mut *mut Self, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub RemoveFlags: unsafe extern "system" fn(this: *mut *mut Self, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub SetFlags: unsafe extern "system" fn(this: *mut *mut Self, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub SetOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: u64) -> ::windows_sys::core::HRESULT,
+    pub GetDataParameters: unsafe extern "system" fn(this: *mut *mut Self, size: *mut u32, accesstype: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetDataParameters: unsafe extern "system" fn(this: *mut *mut Self, size: u32, accesstype: u32) -> ::windows_sys::core::HRESULT,
+    pub GetPassCount: unsafe extern "system" fn(this: *mut *mut Self, count: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetPassCount: unsafe extern "system" fn(this: *mut *mut Self, count: u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentPassCount: unsafe extern "system" fn(this: *mut *mut Self, count: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetMatchThreadId: unsafe extern "system" fn(this: *mut *mut Self, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetMatchThreadId: unsafe extern "system" fn(this: *mut *mut Self, thread: u32) -> ::windows_sys::core::HRESULT,
+    pub GetCommand: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, commandsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetCommand: unsafe extern "system" fn(this: *mut *mut Self, command: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetOffsetExpression: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, expressionsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetOffsetExpression: unsafe extern "system" fn(this: *mut *mut Self, expression: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetParameters: unsafe extern "system" fn(this: *mut *mut Self, params: *mut DEBUG_BREAKPOINT_PARAMETERS) -> ::windows_sys::core::HRESULT,
+    pub GetCommandWide: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PWSTR, buffersize: u32, commandsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetCommandWide: unsafe extern "system" fn(this: *mut *mut Self, command: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetOffsetExpressionWide: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PWSTR, buffersize: u32, expressionsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetOffsetExpressionWide: unsafe extern "system" fn(this: *mut *mut Self, expression: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetGuid: unsafe extern "system" fn(this: *mut *mut Self, guid: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugClient {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub AttachKernel: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, connectoptions: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetKernelConnectionOptions: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, optionssize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetKernelConnectionOptions: unsafe extern "system" fn(this: *mut *mut Self, options: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub StartProcessServer: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, options: ::windows_sys::core::PCSTR, reserved: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ConnectProcessServer: unsafe extern "system" fn(this: *mut *mut Self, remoteoptions: ::windows_sys::core::PCSTR, server: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub DisconnectProcessServer: unsafe extern "system" fn(this: *mut *mut Self, server: u64) -> ::windows_sys::core::HRESULT,
+    pub GetRunningProcessSystemIds: unsafe extern "system" fn(this: *mut *mut Self, server: u64, ids: *mut u32, count: u32, actualcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetRunningProcessSystemIdByExecutableName: unsafe extern "system" fn(this: *mut *mut Self, server: u64, exename: ::windows_sys::core::PCSTR, flags: u32, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetRunningProcessDescription: unsafe extern "system" fn(this: *mut *mut Self, server: u64, systemid: u32, flags: u32, exename: ::windows_sys::core::PSTR, exenamesize: u32, actualexenamesize: *mut u32, description: ::windows_sys::core::PSTR, descriptionsize: u32, actualdescriptionsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub AttachProcess: unsafe extern "system" fn(this: *mut *mut Self, server: u64, processid: u32, attachflags: u32) -> ::windows_sys::core::HRESULT,
+    pub CreateProcessA: unsafe extern "system" fn(this: *mut *mut Self, server: u64, commandline: ::windows_sys::core::PCSTR, createflags: u32) -> ::windows_sys::core::HRESULT,
+    pub CreateProcessAndAttach: unsafe extern "system" fn(this: *mut *mut Self, server: u64, commandline: ::windows_sys::core::PCSTR, createflags: u32, processid: u32, attachflags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetProcessOptions: unsafe extern "system" fn(this: *mut *mut Self, options: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub AddProcessOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub RemoveProcessOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub SetProcessOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub OpenDumpFile: unsafe extern "system" fn(this: *mut *mut Self, dumpfile: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub WriteDumpFile: unsafe extern "system" fn(this: *mut *mut Self, dumpfile: ::windows_sys::core::PCSTR, qualifier: u32) -> ::windows_sys::core::HRESULT,
+    pub ConnectSession: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, historylimit: u32) -> ::windows_sys::core::HRESULT,
+    pub StartServer: unsafe extern "system" fn(this: *mut *mut Self, options: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub OutputServers: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, machine: ::windows_sys::core::PCSTR, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub TerminateProcesses: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub DetachProcesses: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub EndSession: unsafe extern "system" fn(this: *mut *mut Self, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetExitCode: unsafe extern "system" fn(this: *mut *mut Self, code: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub DispatchCallbacks: unsafe extern "system" fn(this: *mut *mut Self, timeout: u32) -> ::windows_sys::core::HRESULT,
+    pub ExitDispatch: unsafe extern "system" fn(this: *mut *mut Self, client: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateClient: unsafe extern "system" fn(this: *mut *mut Self, client: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetInputCallbacks: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetInputCallbacks: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetOutputCallbacks: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetOutputCallbacks: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetOutputMask: unsafe extern "system" fn(this: *mut *mut Self, mask: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetOutputMask: unsafe extern "system" fn(this: *mut *mut Self, mask: u32) -> ::windows_sys::core::HRESULT,
+    pub GetOtherOutputMask: unsafe extern "system" fn(this: *mut *mut Self, client: *mut ::core::ffi::c_void, mask: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetOtherOutputMask: unsafe extern "system" fn(this: *mut *mut Self, client: *mut ::core::ffi::c_void, mask: u32) -> ::windows_sys::core::HRESULT,
+    pub GetOutputWidth: unsafe extern "system" fn(this: *mut *mut Self, columns: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetOutputWidth: unsafe extern "system" fn(this: *mut *mut Self, columns: u32) -> ::windows_sys::core::HRESULT,
+    pub GetOutputLinePrefix: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, prefixsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetOutputLinePrefix: unsafe extern "system" fn(this: *mut *mut Self, prefix: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetIdentity: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, identitysize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub OutputIdentity: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, flags: u32, format: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetEventCallbacks: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetEventCallbacks: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub FlushCallbacks: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugClient2 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub AttachKernel: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, connectoptions: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetKernelConnectionOptions: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, optionssize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetKernelConnectionOptions: unsafe extern "system" fn(this: *mut *mut Self, options: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub StartProcessServer: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, options: ::windows_sys::core::PCSTR, reserved: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ConnectProcessServer: unsafe extern "system" fn(this: *mut *mut Self, remoteoptions: ::windows_sys::core::PCSTR, server: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub DisconnectProcessServer: unsafe extern "system" fn(this: *mut *mut Self, server: u64) -> ::windows_sys::core::HRESULT,
+    pub GetRunningProcessSystemIds: unsafe extern "system" fn(this: *mut *mut Self, server: u64, ids: *mut u32, count: u32, actualcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetRunningProcessSystemIdByExecutableName: unsafe extern "system" fn(this: *mut *mut Self, server: u64, exename: ::windows_sys::core::PCSTR, flags: u32, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetRunningProcessDescription: unsafe extern "system" fn(this: *mut *mut Self, server: u64, systemid: u32, flags: u32, exename: ::windows_sys::core::PSTR, exenamesize: u32, actualexenamesize: *mut u32, description: ::windows_sys::core::PSTR, descriptionsize: u32, actualdescriptionsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub AttachProcess: unsafe extern "system" fn(this: *mut *mut Self, server: u64, processid: u32, attachflags: u32) -> ::windows_sys::core::HRESULT,
+    pub CreateProcessA: unsafe extern "system" fn(this: *mut *mut Self, server: u64, commandline: ::windows_sys::core::PCSTR, createflags: u32) -> ::windows_sys::core::HRESULT,
+    pub CreateProcessAndAttach: unsafe extern "system" fn(this: *mut *mut Self, server: u64, commandline: ::windows_sys::core::PCSTR, createflags: u32, processid: u32, attachflags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetProcessOptions: unsafe extern "system" fn(this: *mut *mut Self, options: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub AddProcessOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub RemoveProcessOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub SetProcessOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub OpenDumpFile: unsafe extern "system" fn(this: *mut *mut Self, dumpfile: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub WriteDumpFile: unsafe extern "system" fn(this: *mut *mut Self, dumpfile: ::windows_sys::core::PCSTR, qualifier: u32) -> ::windows_sys::core::HRESULT,
+    pub ConnectSession: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, historylimit: u32) -> ::windows_sys::core::HRESULT,
+    pub StartServer: unsafe extern "system" fn(this: *mut *mut Self, options: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub OutputServers: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, machine: ::windows_sys::core::PCSTR, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub TerminateProcesses: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub DetachProcesses: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub EndSession: unsafe extern "system" fn(this: *mut *mut Self, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetExitCode: unsafe extern "system" fn(this: *mut *mut Self, code: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub DispatchCallbacks: unsafe extern "system" fn(this: *mut *mut Self, timeout: u32) -> ::windows_sys::core::HRESULT,
+    pub ExitDispatch: unsafe extern "system" fn(this: *mut *mut Self, client: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateClient: unsafe extern "system" fn(this: *mut *mut Self, client: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetInputCallbacks: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetInputCallbacks: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetOutputCallbacks: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetOutputCallbacks: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetOutputMask: unsafe extern "system" fn(this: *mut *mut Self, mask: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetOutputMask: unsafe extern "system" fn(this: *mut *mut Self, mask: u32) -> ::windows_sys::core::HRESULT,
+    pub GetOtherOutputMask: unsafe extern "system" fn(this: *mut *mut Self, client: *mut ::core::ffi::c_void, mask: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetOtherOutputMask: unsafe extern "system" fn(this: *mut *mut Self, client: *mut ::core::ffi::c_void, mask: u32) -> ::windows_sys::core::HRESULT,
+    pub GetOutputWidth: unsafe extern "system" fn(this: *mut *mut Self, columns: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetOutputWidth: unsafe extern "system" fn(this: *mut *mut Self, columns: u32) -> ::windows_sys::core::HRESULT,
+    pub GetOutputLinePrefix: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, prefixsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetOutputLinePrefix: unsafe extern "system" fn(this: *mut *mut Self, prefix: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetIdentity: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, identitysize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub OutputIdentity: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, flags: u32, format: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetEventCallbacks: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetEventCallbacks: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub FlushCallbacks: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub WriteDumpFile2: unsafe extern "system" fn(this: *mut *mut Self, dumpfile: ::windows_sys::core::PCSTR, qualifier: u32, formatflags: u32, comment: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub AddDumpInformationFile: unsafe extern "system" fn(this: *mut *mut Self, infofile: ::windows_sys::core::PCSTR, r#type: u32) -> ::windows_sys::core::HRESULT,
+    pub EndProcessServer: unsafe extern "system" fn(this: *mut *mut Self, server: u64) -> ::windows_sys::core::HRESULT,
+    pub WaitForProcessServerEnd: unsafe extern "system" fn(this: *mut *mut Self, timeout: u32) -> ::windows_sys::core::HRESULT,
+    pub IsKernelDebuggerEnabled: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub TerminateCurrentProcess: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub DetachCurrentProcess: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub AbandonCurrentProcess: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugClient3 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub AttachKernel: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, connectoptions: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetKernelConnectionOptions: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, optionssize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetKernelConnectionOptions: unsafe extern "system" fn(this: *mut *mut Self, options: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub StartProcessServer: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, options: ::windows_sys::core::PCSTR, reserved: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ConnectProcessServer: unsafe extern "system" fn(this: *mut *mut Self, remoteoptions: ::windows_sys::core::PCSTR, server: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub DisconnectProcessServer: unsafe extern "system" fn(this: *mut *mut Self, server: u64) -> ::windows_sys::core::HRESULT,
+    pub GetRunningProcessSystemIds: unsafe extern "system" fn(this: *mut *mut Self, server: u64, ids: *mut u32, count: u32, actualcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetRunningProcessSystemIdByExecutableName: unsafe extern "system" fn(this: *mut *mut Self, server: u64, exename: ::windows_sys::core::PCSTR, flags: u32, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetRunningProcessDescription: unsafe extern "system" fn(this: *mut *mut Self, server: u64, systemid: u32, flags: u32, exename: ::windows_sys::core::PSTR, exenamesize: u32, actualexenamesize: *mut u32, description: ::windows_sys::core::PSTR, descriptionsize: u32, actualdescriptionsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub AttachProcess: unsafe extern "system" fn(this: *mut *mut Self, server: u64, processid: u32, attachflags: u32) -> ::windows_sys::core::HRESULT,
+    pub CreateProcessA: unsafe extern "system" fn(this: *mut *mut Self, server: u64, commandline: ::windows_sys::core::PCSTR, createflags: u32) -> ::windows_sys::core::HRESULT,
+    pub CreateProcessAndAttach: unsafe extern "system" fn(this: *mut *mut Self, server: u64, commandline: ::windows_sys::core::PCSTR, createflags: u32, processid: u32, attachflags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetProcessOptions: unsafe extern "system" fn(this: *mut *mut Self, options: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub AddProcessOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub RemoveProcessOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub SetProcessOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub OpenDumpFile: unsafe extern "system" fn(this: *mut *mut Self, dumpfile: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub WriteDumpFile: unsafe extern "system" fn(this: *mut *mut Self, dumpfile: ::windows_sys::core::PCSTR, qualifier: u32) -> ::windows_sys::core::HRESULT,
+    pub ConnectSession: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, historylimit: u32) -> ::windows_sys::core::HRESULT,
+    pub StartServer: unsafe extern "system" fn(this: *mut *mut Self, options: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub OutputServers: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, machine: ::windows_sys::core::PCSTR, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub TerminateProcesses: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub DetachProcesses: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub EndSession: unsafe extern "system" fn(this: *mut *mut Self, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetExitCode: unsafe extern "system" fn(this: *mut *mut Self, code: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub DispatchCallbacks: unsafe extern "system" fn(this: *mut *mut Self, timeout: u32) -> ::windows_sys::core::HRESULT,
+    pub ExitDispatch: unsafe extern "system" fn(this: *mut *mut Self, client: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateClient: unsafe extern "system" fn(this: *mut *mut Self, client: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetInputCallbacks: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetInputCallbacks: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetOutputCallbacks: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetOutputCallbacks: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetOutputMask: unsafe extern "system" fn(this: *mut *mut Self, mask: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetOutputMask: unsafe extern "system" fn(this: *mut *mut Self, mask: u32) -> ::windows_sys::core::HRESULT,
+    pub GetOtherOutputMask: unsafe extern "system" fn(this: *mut *mut Self, client: *mut ::core::ffi::c_void, mask: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetOtherOutputMask: unsafe extern "system" fn(this: *mut *mut Self, client: *mut ::core::ffi::c_void, mask: u32) -> ::windows_sys::core::HRESULT,
+    pub GetOutputWidth: unsafe extern "system" fn(this: *mut *mut Self, columns: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetOutputWidth: unsafe extern "system" fn(this: *mut *mut Self, columns: u32) -> ::windows_sys::core::HRESULT,
+    pub GetOutputLinePrefix: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, prefixsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetOutputLinePrefix: unsafe extern "system" fn(this: *mut *mut Self, prefix: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetIdentity: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, identitysize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub OutputIdentity: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, flags: u32, format: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetEventCallbacks: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetEventCallbacks: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub FlushCallbacks: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub WriteDumpFile2: unsafe extern "system" fn(this: *mut *mut Self, dumpfile: ::windows_sys::core::PCSTR, qualifier: u32, formatflags: u32, comment: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub AddDumpInformationFile: unsafe extern "system" fn(this: *mut *mut Self, infofile: ::windows_sys::core::PCSTR, r#type: u32) -> ::windows_sys::core::HRESULT,
+    pub EndProcessServer: unsafe extern "system" fn(this: *mut *mut Self, server: u64) -> ::windows_sys::core::HRESULT,
+    pub WaitForProcessServerEnd: unsafe extern "system" fn(this: *mut *mut Self, timeout: u32) -> ::windows_sys::core::HRESULT,
+    pub IsKernelDebuggerEnabled: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub TerminateCurrentProcess: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub DetachCurrentProcess: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub AbandonCurrentProcess: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetRunningProcessSystemIdByExecutableNameWide: unsafe extern "system" fn(this: *mut *mut Self, server: u64, exename: ::windows_sys::core::PCWSTR, flags: u32, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetRunningProcessDescriptionWide: unsafe extern "system" fn(this: *mut *mut Self, server: u64, systemid: u32, flags: u32, exename: ::windows_sys::core::PWSTR, exenamesize: u32, actualexenamesize: *mut u32, description: ::windows_sys::core::PWSTR, descriptionsize: u32, actualdescriptionsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub CreateProcessWide: unsafe extern "system" fn(this: *mut *mut Self, server: u64, commandline: ::windows_sys::core::PCWSTR, createflags: u32) -> ::windows_sys::core::HRESULT,
+    pub CreateProcessAndAttachWide: unsafe extern "system" fn(this: *mut *mut Self, server: u64, commandline: ::windows_sys::core::PCWSTR, createflags: u32, processid: u32, attachflags: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugClient4 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub AttachKernel: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, connectoptions: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetKernelConnectionOptions: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, optionssize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetKernelConnectionOptions: unsafe extern "system" fn(this: *mut *mut Self, options: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub StartProcessServer: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, options: ::windows_sys::core::PCSTR, reserved: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ConnectProcessServer: unsafe extern "system" fn(this: *mut *mut Self, remoteoptions: ::windows_sys::core::PCSTR, server: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub DisconnectProcessServer: unsafe extern "system" fn(this: *mut *mut Self, server: u64) -> ::windows_sys::core::HRESULT,
+    pub GetRunningProcessSystemIds: unsafe extern "system" fn(this: *mut *mut Self, server: u64, ids: *mut u32, count: u32, actualcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetRunningProcessSystemIdByExecutableName: unsafe extern "system" fn(this: *mut *mut Self, server: u64, exename: ::windows_sys::core::PCSTR, flags: u32, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetRunningProcessDescription: unsafe extern "system" fn(this: *mut *mut Self, server: u64, systemid: u32, flags: u32, exename: ::windows_sys::core::PSTR, exenamesize: u32, actualexenamesize: *mut u32, description: ::windows_sys::core::PSTR, descriptionsize: u32, actualdescriptionsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub AttachProcess: unsafe extern "system" fn(this: *mut *mut Self, server: u64, processid: u32, attachflags: u32) -> ::windows_sys::core::HRESULT,
+    pub CreateProcessA: unsafe extern "system" fn(this: *mut *mut Self, server: u64, commandline: ::windows_sys::core::PCSTR, createflags: u32) -> ::windows_sys::core::HRESULT,
+    pub CreateProcessAndAttach: unsafe extern "system" fn(this: *mut *mut Self, server: u64, commandline: ::windows_sys::core::PCSTR, createflags: u32, processid: u32, attachflags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetProcessOptions: unsafe extern "system" fn(this: *mut *mut Self, options: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub AddProcessOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub RemoveProcessOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub SetProcessOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub OpenDumpFile: unsafe extern "system" fn(this: *mut *mut Self, dumpfile: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub WriteDumpFile: unsafe extern "system" fn(this: *mut *mut Self, dumpfile: ::windows_sys::core::PCSTR, qualifier: u32) -> ::windows_sys::core::HRESULT,
+    pub ConnectSession: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, historylimit: u32) -> ::windows_sys::core::HRESULT,
+    pub StartServer: unsafe extern "system" fn(this: *mut *mut Self, options: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub OutputServers: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, machine: ::windows_sys::core::PCSTR, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub TerminateProcesses: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub DetachProcesses: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub EndSession: unsafe extern "system" fn(this: *mut *mut Self, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetExitCode: unsafe extern "system" fn(this: *mut *mut Self, code: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub DispatchCallbacks: unsafe extern "system" fn(this: *mut *mut Self, timeout: u32) -> ::windows_sys::core::HRESULT,
+    pub ExitDispatch: unsafe extern "system" fn(this: *mut *mut Self, client: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateClient: unsafe extern "system" fn(this: *mut *mut Self, client: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetInputCallbacks: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetInputCallbacks: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetOutputCallbacks: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetOutputCallbacks: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetOutputMask: unsafe extern "system" fn(this: *mut *mut Self, mask: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetOutputMask: unsafe extern "system" fn(this: *mut *mut Self, mask: u32) -> ::windows_sys::core::HRESULT,
+    pub GetOtherOutputMask: unsafe extern "system" fn(this: *mut *mut Self, client: *mut ::core::ffi::c_void, mask: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetOtherOutputMask: unsafe extern "system" fn(this: *mut *mut Self, client: *mut ::core::ffi::c_void, mask: u32) -> ::windows_sys::core::HRESULT,
+    pub GetOutputWidth: unsafe extern "system" fn(this: *mut *mut Self, columns: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetOutputWidth: unsafe extern "system" fn(this: *mut *mut Self, columns: u32) -> ::windows_sys::core::HRESULT,
+    pub GetOutputLinePrefix: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, prefixsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetOutputLinePrefix: unsafe extern "system" fn(this: *mut *mut Self, prefix: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetIdentity: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, identitysize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub OutputIdentity: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, flags: u32, format: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetEventCallbacks: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetEventCallbacks: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub FlushCallbacks: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub WriteDumpFile2: unsafe extern "system" fn(this: *mut *mut Self, dumpfile: ::windows_sys::core::PCSTR, qualifier: u32, formatflags: u32, comment: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub AddDumpInformationFile: unsafe extern "system" fn(this: *mut *mut Self, infofile: ::windows_sys::core::PCSTR, r#type: u32) -> ::windows_sys::core::HRESULT,
+    pub EndProcessServer: unsafe extern "system" fn(this: *mut *mut Self, server: u64) -> ::windows_sys::core::HRESULT,
+    pub WaitForProcessServerEnd: unsafe extern "system" fn(this: *mut *mut Self, timeout: u32) -> ::windows_sys::core::HRESULT,
+    pub IsKernelDebuggerEnabled: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub TerminateCurrentProcess: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub DetachCurrentProcess: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub AbandonCurrentProcess: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetRunningProcessSystemIdByExecutableNameWide: unsafe extern "system" fn(this: *mut *mut Self, server: u64, exename: ::windows_sys::core::PCWSTR, flags: u32, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetRunningProcessDescriptionWide: unsafe extern "system" fn(this: *mut *mut Self, server: u64, systemid: u32, flags: u32, exename: ::windows_sys::core::PWSTR, exenamesize: u32, actualexenamesize: *mut u32, description: ::windows_sys::core::PWSTR, descriptionsize: u32, actualdescriptionsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub CreateProcessWide: unsafe extern "system" fn(this: *mut *mut Self, server: u64, commandline: ::windows_sys::core::PCWSTR, createflags: u32) -> ::windows_sys::core::HRESULT,
+    pub CreateProcessAndAttachWide: unsafe extern "system" fn(this: *mut *mut Self, server: u64, commandline: ::windows_sys::core::PCWSTR, createflags: u32, processid: u32, attachflags: u32) -> ::windows_sys::core::HRESULT,
+    pub OpenDumpFileWide: unsafe extern "system" fn(this: *mut *mut Self, filename: ::windows_sys::core::PCWSTR, filehandle: u64) -> ::windows_sys::core::HRESULT,
+    pub WriteDumpFileWide: unsafe extern "system" fn(this: *mut *mut Self, filename: ::windows_sys::core::PCWSTR, filehandle: u64, qualifier: u32, formatflags: u32, comment: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub AddDumpInformationFileWide: unsafe extern "system" fn(this: *mut *mut Self, filename: ::windows_sys::core::PCWSTR, filehandle: u64, r#type: u32) -> ::windows_sys::core::HRESULT,
+    pub GetNumberDumpFiles: unsafe extern "system" fn(this: *mut *mut Self, number: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetDumpFile: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, namesize: *mut u32, handle: *mut u64, r#type: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetDumpFileWide: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PWSTR, buffersize: u32, namesize: *mut u32, handle: *mut u64, r#type: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugClient5 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub AttachKernel: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, connectoptions: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetKernelConnectionOptions: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, optionssize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetKernelConnectionOptions: unsafe extern "system" fn(this: *mut *mut Self, options: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub StartProcessServer: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, options: ::windows_sys::core::PCSTR, reserved: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ConnectProcessServer: unsafe extern "system" fn(this: *mut *mut Self, remoteoptions: ::windows_sys::core::PCSTR, server: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub DisconnectProcessServer: unsafe extern "system" fn(this: *mut *mut Self, server: u64) -> ::windows_sys::core::HRESULT,
+    pub GetRunningProcessSystemIds: unsafe extern "system" fn(this: *mut *mut Self, server: u64, ids: *mut u32, count: u32, actualcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetRunningProcessSystemIdByExecutableName: unsafe extern "system" fn(this: *mut *mut Self, server: u64, exename: ::windows_sys::core::PCSTR, flags: u32, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetRunningProcessDescription: unsafe extern "system" fn(this: *mut *mut Self, server: u64, systemid: u32, flags: u32, exename: ::windows_sys::core::PSTR, exenamesize: u32, actualexenamesize: *mut u32, description: ::windows_sys::core::PSTR, descriptionsize: u32, actualdescriptionsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub AttachProcess: unsafe extern "system" fn(this: *mut *mut Self, server: u64, processid: u32, attachflags: u32) -> ::windows_sys::core::HRESULT,
+    pub CreateProcessA: unsafe extern "system" fn(this: *mut *mut Self, server: u64, commandline: ::windows_sys::core::PCSTR, createflags: u32) -> ::windows_sys::core::HRESULT,
+    pub CreateProcessAndAttach: unsafe extern "system" fn(this: *mut *mut Self, server: u64, commandline: ::windows_sys::core::PCSTR, createflags: u32, processid: u32, attachflags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetProcessOptions: unsafe extern "system" fn(this: *mut *mut Self, options: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub AddProcessOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub RemoveProcessOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub SetProcessOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub OpenDumpFile: unsafe extern "system" fn(this: *mut *mut Self, dumpfile: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub WriteDumpFile: unsafe extern "system" fn(this: *mut *mut Self, dumpfile: ::windows_sys::core::PCSTR, qualifier: u32) -> ::windows_sys::core::HRESULT,
+    pub ConnectSession: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, historylimit: u32) -> ::windows_sys::core::HRESULT,
+    pub StartServer: unsafe extern "system" fn(this: *mut *mut Self, options: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub OutputServers: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, machine: ::windows_sys::core::PCSTR, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub TerminateProcesses: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub DetachProcesses: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub EndSession: unsafe extern "system" fn(this: *mut *mut Self, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetExitCode: unsafe extern "system" fn(this: *mut *mut Self, code: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub DispatchCallbacks: unsafe extern "system" fn(this: *mut *mut Self, timeout: u32) -> ::windows_sys::core::HRESULT,
+    pub ExitDispatch: unsafe extern "system" fn(this: *mut *mut Self, client: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateClient: unsafe extern "system" fn(this: *mut *mut Self, client: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetInputCallbacks: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetInputCallbacks: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetOutputCallbacks: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetOutputCallbacks: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetOutputMask: unsafe extern "system" fn(this: *mut *mut Self, mask: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetOutputMask: unsafe extern "system" fn(this: *mut *mut Self, mask: u32) -> ::windows_sys::core::HRESULT,
+    pub GetOtherOutputMask: unsafe extern "system" fn(this: *mut *mut Self, client: *mut ::core::ffi::c_void, mask: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetOtherOutputMask: unsafe extern "system" fn(this: *mut *mut Self, client: *mut ::core::ffi::c_void, mask: u32) -> ::windows_sys::core::HRESULT,
+    pub GetOutputWidth: unsafe extern "system" fn(this: *mut *mut Self, columns: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetOutputWidth: unsafe extern "system" fn(this: *mut *mut Self, columns: u32) -> ::windows_sys::core::HRESULT,
+    pub GetOutputLinePrefix: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, prefixsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetOutputLinePrefix: unsafe extern "system" fn(this: *mut *mut Self, prefix: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetIdentity: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, identitysize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub OutputIdentity: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, flags: u32, format: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetEventCallbacks: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetEventCallbacks: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub FlushCallbacks: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub WriteDumpFile2: unsafe extern "system" fn(this: *mut *mut Self, dumpfile: ::windows_sys::core::PCSTR, qualifier: u32, formatflags: u32, comment: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub AddDumpInformationFile: unsafe extern "system" fn(this: *mut *mut Self, infofile: ::windows_sys::core::PCSTR, r#type: u32) -> ::windows_sys::core::HRESULT,
+    pub EndProcessServer: unsafe extern "system" fn(this: *mut *mut Self, server: u64) -> ::windows_sys::core::HRESULT,
+    pub WaitForProcessServerEnd: unsafe extern "system" fn(this: *mut *mut Self, timeout: u32) -> ::windows_sys::core::HRESULT,
+    pub IsKernelDebuggerEnabled: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub TerminateCurrentProcess: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub DetachCurrentProcess: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub AbandonCurrentProcess: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetRunningProcessSystemIdByExecutableNameWide: unsafe extern "system" fn(this: *mut *mut Self, server: u64, exename: ::windows_sys::core::PCWSTR, flags: u32, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetRunningProcessDescriptionWide: unsafe extern "system" fn(this: *mut *mut Self, server: u64, systemid: u32, flags: u32, exename: ::windows_sys::core::PWSTR, exenamesize: u32, actualexenamesize: *mut u32, description: ::windows_sys::core::PWSTR, descriptionsize: u32, actualdescriptionsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub CreateProcessWide: unsafe extern "system" fn(this: *mut *mut Self, server: u64, commandline: ::windows_sys::core::PCWSTR, createflags: u32) -> ::windows_sys::core::HRESULT,
+    pub CreateProcessAndAttachWide: unsafe extern "system" fn(this: *mut *mut Self, server: u64, commandline: ::windows_sys::core::PCWSTR, createflags: u32, processid: u32, attachflags: u32) -> ::windows_sys::core::HRESULT,
+    pub OpenDumpFileWide: unsafe extern "system" fn(this: *mut *mut Self, filename: ::windows_sys::core::PCWSTR, filehandle: u64) -> ::windows_sys::core::HRESULT,
+    pub WriteDumpFileWide: unsafe extern "system" fn(this: *mut *mut Self, filename: ::windows_sys::core::PCWSTR, filehandle: u64, qualifier: u32, formatflags: u32, comment: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub AddDumpInformationFileWide: unsafe extern "system" fn(this: *mut *mut Self, filename: ::windows_sys::core::PCWSTR, filehandle: u64, r#type: u32) -> ::windows_sys::core::HRESULT,
+    pub GetNumberDumpFiles: unsafe extern "system" fn(this: *mut *mut Self, number: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetDumpFile: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, namesize: *mut u32, handle: *mut u64, r#type: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetDumpFileWide: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PWSTR, buffersize: u32, namesize: *mut u32, handle: *mut u64, r#type: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub AttachKernelWide: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, connectoptions: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetKernelConnectionOptionsWide: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PWSTR, buffersize: u32, optionssize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetKernelConnectionOptionsWide: unsafe extern "system" fn(this: *mut *mut Self, options: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub StartProcessServerWide: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, options: ::windows_sys::core::PCWSTR, reserved: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ConnectProcessServerWide: unsafe extern "system" fn(this: *mut *mut Self, remoteoptions: ::windows_sys::core::PCWSTR, server: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub StartServerWide: unsafe extern "system" fn(this: *mut *mut Self, options: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub OutputServersWide: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, machine: ::windows_sys::core::PCWSTR, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetOutputCallbacksWide: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetOutputCallbacksWide: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetOutputLinePrefixWide: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PWSTR, buffersize: u32, prefixsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetOutputLinePrefixWide: unsafe extern "system" fn(this: *mut *mut Self, prefix: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetIdentityWide: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PWSTR, buffersize: u32, identitysize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub OutputIdentityWide: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, flags: u32, format: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetEventCallbacksWide: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetEventCallbacksWide: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateProcess2: unsafe extern "system" fn(this: *mut *mut Self, server: u64, commandline: ::windows_sys::core::PCSTR, optionsbuffer: *const ::core::ffi::c_void, optionsbuffersize: u32, initialdirectory: ::windows_sys::core::PCSTR, environment: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub CreateProcess2Wide: unsafe extern "system" fn(this: *mut *mut Self, server: u64, commandline: ::windows_sys::core::PCWSTR, optionsbuffer: *const ::core::ffi::c_void, optionsbuffersize: u32, initialdirectory: ::windows_sys::core::PCWSTR, environment: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub CreateProcessAndAttach2: unsafe extern "system" fn(this: *mut *mut Self, server: u64, commandline: ::windows_sys::core::PCSTR, optionsbuffer: *const ::core::ffi::c_void, optionsbuffersize: u32, initialdirectory: ::windows_sys::core::PCSTR, environment: ::windows_sys::core::PCSTR, processid: u32, attachflags: u32) -> ::windows_sys::core::HRESULT,
+    pub CreateProcessAndAttach2Wide: unsafe extern "system" fn(this: *mut *mut Self, server: u64, commandline: ::windows_sys::core::PCWSTR, optionsbuffer: *const ::core::ffi::c_void, optionsbuffersize: u32, initialdirectory: ::windows_sys::core::PCWSTR, environment: ::windows_sys::core::PCWSTR, processid: u32, attachflags: u32) -> ::windows_sys::core::HRESULT,
+    pub PushOutputLinePrefix: unsafe extern "system" fn(this: *mut *mut Self, newprefix: ::windows_sys::core::PCSTR, handle: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub PushOutputLinePrefixWide: unsafe extern "system" fn(this: *mut *mut Self, newprefix: ::windows_sys::core::PCWSTR, handle: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub PopOutputLinePrefix: unsafe extern "system" fn(this: *mut *mut Self, handle: u64) -> ::windows_sys::core::HRESULT,
+    pub GetNumberInputCallbacks: unsafe extern "system" fn(this: *mut *mut Self, count: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetNumberOutputCallbacks: unsafe extern "system" fn(this: *mut *mut Self, count: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetNumberEventCallbacks: unsafe extern "system" fn(this: *mut *mut Self, eventflags: u32, count: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetQuitLockString: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, stringsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetQuitLockString: unsafe extern "system" fn(this: *mut *mut Self, string: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetQuitLockStringWide: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PWSTR, buffersize: u32, stringsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetQuitLockStringWide: unsafe extern "system" fn(this: *mut *mut Self, string: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugClient6 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub AttachKernel: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, connectoptions: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetKernelConnectionOptions: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, optionssize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetKernelConnectionOptions: unsafe extern "system" fn(this: *mut *mut Self, options: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub StartProcessServer: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, options: ::windows_sys::core::PCSTR, reserved: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ConnectProcessServer: unsafe extern "system" fn(this: *mut *mut Self, remoteoptions: ::windows_sys::core::PCSTR, server: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub DisconnectProcessServer: unsafe extern "system" fn(this: *mut *mut Self, server: u64) -> ::windows_sys::core::HRESULT,
+    pub GetRunningProcessSystemIds: unsafe extern "system" fn(this: *mut *mut Self, server: u64, ids: *mut u32, count: u32, actualcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetRunningProcessSystemIdByExecutableName: unsafe extern "system" fn(this: *mut *mut Self, server: u64, exename: ::windows_sys::core::PCSTR, flags: u32, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetRunningProcessDescription: unsafe extern "system" fn(this: *mut *mut Self, server: u64, systemid: u32, flags: u32, exename: ::windows_sys::core::PSTR, exenamesize: u32, actualexenamesize: *mut u32, description: ::windows_sys::core::PSTR, descriptionsize: u32, actualdescriptionsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub AttachProcess: unsafe extern "system" fn(this: *mut *mut Self, server: u64, processid: u32, attachflags: u32) -> ::windows_sys::core::HRESULT,
+    pub CreateProcessA: unsafe extern "system" fn(this: *mut *mut Self, server: u64, commandline: ::windows_sys::core::PCSTR, createflags: u32) -> ::windows_sys::core::HRESULT,
+    pub CreateProcessAndAttach: unsafe extern "system" fn(this: *mut *mut Self, server: u64, commandline: ::windows_sys::core::PCSTR, createflags: u32, processid: u32, attachflags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetProcessOptions: unsafe extern "system" fn(this: *mut *mut Self, options: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub AddProcessOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub RemoveProcessOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub SetProcessOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub OpenDumpFile: unsafe extern "system" fn(this: *mut *mut Self, dumpfile: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub WriteDumpFile: unsafe extern "system" fn(this: *mut *mut Self, dumpfile: ::windows_sys::core::PCSTR, qualifier: u32) -> ::windows_sys::core::HRESULT,
+    pub ConnectSession: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, historylimit: u32) -> ::windows_sys::core::HRESULT,
+    pub StartServer: unsafe extern "system" fn(this: *mut *mut Self, options: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub OutputServers: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, machine: ::windows_sys::core::PCSTR, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub TerminateProcesses: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub DetachProcesses: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub EndSession: unsafe extern "system" fn(this: *mut *mut Self, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetExitCode: unsafe extern "system" fn(this: *mut *mut Self, code: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub DispatchCallbacks: unsafe extern "system" fn(this: *mut *mut Self, timeout: u32) -> ::windows_sys::core::HRESULT,
+    pub ExitDispatch: unsafe extern "system" fn(this: *mut *mut Self, client: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateClient: unsafe extern "system" fn(this: *mut *mut Self, client: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetInputCallbacks: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetInputCallbacks: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetOutputCallbacks: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetOutputCallbacks: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetOutputMask: unsafe extern "system" fn(this: *mut *mut Self, mask: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetOutputMask: unsafe extern "system" fn(this: *mut *mut Self, mask: u32) -> ::windows_sys::core::HRESULT,
+    pub GetOtherOutputMask: unsafe extern "system" fn(this: *mut *mut Self, client: *mut ::core::ffi::c_void, mask: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetOtherOutputMask: unsafe extern "system" fn(this: *mut *mut Self, client: *mut ::core::ffi::c_void, mask: u32) -> ::windows_sys::core::HRESULT,
+    pub GetOutputWidth: unsafe extern "system" fn(this: *mut *mut Self, columns: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetOutputWidth: unsafe extern "system" fn(this: *mut *mut Self, columns: u32) -> ::windows_sys::core::HRESULT,
+    pub GetOutputLinePrefix: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, prefixsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetOutputLinePrefix: unsafe extern "system" fn(this: *mut *mut Self, prefix: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetIdentity: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, identitysize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub OutputIdentity: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, flags: u32, format: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetEventCallbacks: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetEventCallbacks: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub FlushCallbacks: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub WriteDumpFile2: unsafe extern "system" fn(this: *mut *mut Self, dumpfile: ::windows_sys::core::PCSTR, qualifier: u32, formatflags: u32, comment: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub AddDumpInformationFile: unsafe extern "system" fn(this: *mut *mut Self, infofile: ::windows_sys::core::PCSTR, r#type: u32) -> ::windows_sys::core::HRESULT,
+    pub EndProcessServer: unsafe extern "system" fn(this: *mut *mut Self, server: u64) -> ::windows_sys::core::HRESULT,
+    pub WaitForProcessServerEnd: unsafe extern "system" fn(this: *mut *mut Self, timeout: u32) -> ::windows_sys::core::HRESULT,
+    pub IsKernelDebuggerEnabled: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub TerminateCurrentProcess: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub DetachCurrentProcess: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub AbandonCurrentProcess: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetRunningProcessSystemIdByExecutableNameWide: unsafe extern "system" fn(this: *mut *mut Self, server: u64, exename: ::windows_sys::core::PCWSTR, flags: u32, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetRunningProcessDescriptionWide: unsafe extern "system" fn(this: *mut *mut Self, server: u64, systemid: u32, flags: u32, exename: ::windows_sys::core::PWSTR, exenamesize: u32, actualexenamesize: *mut u32, description: ::windows_sys::core::PWSTR, descriptionsize: u32, actualdescriptionsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub CreateProcessWide: unsafe extern "system" fn(this: *mut *mut Self, server: u64, commandline: ::windows_sys::core::PCWSTR, createflags: u32) -> ::windows_sys::core::HRESULT,
+    pub CreateProcessAndAttachWide: unsafe extern "system" fn(this: *mut *mut Self, server: u64, commandline: ::windows_sys::core::PCWSTR, createflags: u32, processid: u32, attachflags: u32) -> ::windows_sys::core::HRESULT,
+    pub OpenDumpFileWide: unsafe extern "system" fn(this: *mut *mut Self, filename: ::windows_sys::core::PCWSTR, filehandle: u64) -> ::windows_sys::core::HRESULT,
+    pub WriteDumpFileWide: unsafe extern "system" fn(this: *mut *mut Self, filename: ::windows_sys::core::PCWSTR, filehandle: u64, qualifier: u32, formatflags: u32, comment: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub AddDumpInformationFileWide: unsafe extern "system" fn(this: *mut *mut Self, filename: ::windows_sys::core::PCWSTR, filehandle: u64, r#type: u32) -> ::windows_sys::core::HRESULT,
+    pub GetNumberDumpFiles: unsafe extern "system" fn(this: *mut *mut Self, number: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetDumpFile: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, namesize: *mut u32, handle: *mut u64, r#type: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetDumpFileWide: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PWSTR, buffersize: u32, namesize: *mut u32, handle: *mut u64, r#type: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub AttachKernelWide: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, connectoptions: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetKernelConnectionOptionsWide: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PWSTR, buffersize: u32, optionssize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetKernelConnectionOptionsWide: unsafe extern "system" fn(this: *mut *mut Self, options: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub StartProcessServerWide: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, options: ::windows_sys::core::PCWSTR, reserved: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ConnectProcessServerWide: unsafe extern "system" fn(this: *mut *mut Self, remoteoptions: ::windows_sys::core::PCWSTR, server: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub StartServerWide: unsafe extern "system" fn(this: *mut *mut Self, options: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub OutputServersWide: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, machine: ::windows_sys::core::PCWSTR, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetOutputCallbacksWide: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetOutputCallbacksWide: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetOutputLinePrefixWide: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PWSTR, buffersize: u32, prefixsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetOutputLinePrefixWide: unsafe extern "system" fn(this: *mut *mut Self, prefix: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetIdentityWide: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PWSTR, buffersize: u32, identitysize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub OutputIdentityWide: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, flags: u32, format: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetEventCallbacksWide: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetEventCallbacksWide: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateProcess2: unsafe extern "system" fn(this: *mut *mut Self, server: u64, commandline: ::windows_sys::core::PCSTR, optionsbuffer: *const ::core::ffi::c_void, optionsbuffersize: u32, initialdirectory: ::windows_sys::core::PCSTR, environment: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub CreateProcess2Wide: unsafe extern "system" fn(this: *mut *mut Self, server: u64, commandline: ::windows_sys::core::PCWSTR, optionsbuffer: *const ::core::ffi::c_void, optionsbuffersize: u32, initialdirectory: ::windows_sys::core::PCWSTR, environment: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub CreateProcessAndAttach2: unsafe extern "system" fn(this: *mut *mut Self, server: u64, commandline: ::windows_sys::core::PCSTR, optionsbuffer: *const ::core::ffi::c_void, optionsbuffersize: u32, initialdirectory: ::windows_sys::core::PCSTR, environment: ::windows_sys::core::PCSTR, processid: u32, attachflags: u32) -> ::windows_sys::core::HRESULT,
+    pub CreateProcessAndAttach2Wide: unsafe extern "system" fn(this: *mut *mut Self, server: u64, commandline: ::windows_sys::core::PCWSTR, optionsbuffer: *const ::core::ffi::c_void, optionsbuffersize: u32, initialdirectory: ::windows_sys::core::PCWSTR, environment: ::windows_sys::core::PCWSTR, processid: u32, attachflags: u32) -> ::windows_sys::core::HRESULT,
+    pub PushOutputLinePrefix: unsafe extern "system" fn(this: *mut *mut Self, newprefix: ::windows_sys::core::PCSTR, handle: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub PushOutputLinePrefixWide: unsafe extern "system" fn(this: *mut *mut Self, newprefix: ::windows_sys::core::PCWSTR, handle: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub PopOutputLinePrefix: unsafe extern "system" fn(this: *mut *mut Self, handle: u64) -> ::windows_sys::core::HRESULT,
+    pub GetNumberInputCallbacks: unsafe extern "system" fn(this: *mut *mut Self, count: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetNumberOutputCallbacks: unsafe extern "system" fn(this: *mut *mut Self, count: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetNumberEventCallbacks: unsafe extern "system" fn(this: *mut *mut Self, eventflags: u32, count: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetQuitLockString: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, stringsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetQuitLockString: unsafe extern "system" fn(this: *mut *mut Self, string: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetQuitLockStringWide: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PWSTR, buffersize: u32, stringsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetQuitLockStringWide: unsafe extern "system" fn(this: *mut *mut Self, string: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetEventContextCallbacks: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugClient7 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub AttachKernel: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, connectoptions: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetKernelConnectionOptions: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, optionssize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetKernelConnectionOptions: unsafe extern "system" fn(this: *mut *mut Self, options: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub StartProcessServer: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, options: ::windows_sys::core::PCSTR, reserved: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ConnectProcessServer: unsafe extern "system" fn(this: *mut *mut Self, remoteoptions: ::windows_sys::core::PCSTR, server: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub DisconnectProcessServer: unsafe extern "system" fn(this: *mut *mut Self, server: u64) -> ::windows_sys::core::HRESULT,
+    pub GetRunningProcessSystemIds: unsafe extern "system" fn(this: *mut *mut Self, server: u64, ids: *mut u32, count: u32, actualcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetRunningProcessSystemIdByExecutableName: unsafe extern "system" fn(this: *mut *mut Self, server: u64, exename: ::windows_sys::core::PCSTR, flags: u32, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetRunningProcessDescription: unsafe extern "system" fn(this: *mut *mut Self, server: u64, systemid: u32, flags: u32, exename: ::windows_sys::core::PSTR, exenamesize: u32, actualexenamesize: *mut u32, description: ::windows_sys::core::PSTR, descriptionsize: u32, actualdescriptionsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub AttachProcess: unsafe extern "system" fn(this: *mut *mut Self, server: u64, processid: u32, attachflags: u32) -> ::windows_sys::core::HRESULT,
+    pub CreateProcessA: unsafe extern "system" fn(this: *mut *mut Self, server: u64, commandline: ::windows_sys::core::PCSTR, createflags: u32) -> ::windows_sys::core::HRESULT,
+    pub CreateProcessAndAttach: unsafe extern "system" fn(this: *mut *mut Self, server: u64, commandline: ::windows_sys::core::PCSTR, createflags: u32, processid: u32, attachflags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetProcessOptions: unsafe extern "system" fn(this: *mut *mut Self, options: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub AddProcessOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub RemoveProcessOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub SetProcessOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub OpenDumpFile: unsafe extern "system" fn(this: *mut *mut Self, dumpfile: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub WriteDumpFile: unsafe extern "system" fn(this: *mut *mut Self, dumpfile: ::windows_sys::core::PCSTR, qualifier: u32) -> ::windows_sys::core::HRESULT,
+    pub ConnectSession: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, historylimit: u32) -> ::windows_sys::core::HRESULT,
+    pub StartServer: unsafe extern "system" fn(this: *mut *mut Self, options: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub OutputServers: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, machine: ::windows_sys::core::PCSTR, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub TerminateProcesses: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub DetachProcesses: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub EndSession: unsafe extern "system" fn(this: *mut *mut Self, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetExitCode: unsafe extern "system" fn(this: *mut *mut Self, code: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub DispatchCallbacks: unsafe extern "system" fn(this: *mut *mut Self, timeout: u32) -> ::windows_sys::core::HRESULT,
+    pub ExitDispatch: unsafe extern "system" fn(this: *mut *mut Self, client: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateClient: unsafe extern "system" fn(this: *mut *mut Self, client: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetInputCallbacks: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetInputCallbacks: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetOutputCallbacks: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetOutputCallbacks: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetOutputMask: unsafe extern "system" fn(this: *mut *mut Self, mask: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetOutputMask: unsafe extern "system" fn(this: *mut *mut Self, mask: u32) -> ::windows_sys::core::HRESULT,
+    pub GetOtherOutputMask: unsafe extern "system" fn(this: *mut *mut Self, client: *mut ::core::ffi::c_void, mask: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetOtherOutputMask: unsafe extern "system" fn(this: *mut *mut Self, client: *mut ::core::ffi::c_void, mask: u32) -> ::windows_sys::core::HRESULT,
+    pub GetOutputWidth: unsafe extern "system" fn(this: *mut *mut Self, columns: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetOutputWidth: unsafe extern "system" fn(this: *mut *mut Self, columns: u32) -> ::windows_sys::core::HRESULT,
+    pub GetOutputLinePrefix: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, prefixsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetOutputLinePrefix: unsafe extern "system" fn(this: *mut *mut Self, prefix: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetIdentity: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, identitysize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub OutputIdentity: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, flags: u32, format: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetEventCallbacks: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetEventCallbacks: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub FlushCallbacks: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub WriteDumpFile2: unsafe extern "system" fn(this: *mut *mut Self, dumpfile: ::windows_sys::core::PCSTR, qualifier: u32, formatflags: u32, comment: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub AddDumpInformationFile: unsafe extern "system" fn(this: *mut *mut Self, infofile: ::windows_sys::core::PCSTR, r#type: u32) -> ::windows_sys::core::HRESULT,
+    pub EndProcessServer: unsafe extern "system" fn(this: *mut *mut Self, server: u64) -> ::windows_sys::core::HRESULT,
+    pub WaitForProcessServerEnd: unsafe extern "system" fn(this: *mut *mut Self, timeout: u32) -> ::windows_sys::core::HRESULT,
+    pub IsKernelDebuggerEnabled: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub TerminateCurrentProcess: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub DetachCurrentProcess: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub AbandonCurrentProcess: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetRunningProcessSystemIdByExecutableNameWide: unsafe extern "system" fn(this: *mut *mut Self, server: u64, exename: ::windows_sys::core::PCWSTR, flags: u32, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetRunningProcessDescriptionWide: unsafe extern "system" fn(this: *mut *mut Self, server: u64, systemid: u32, flags: u32, exename: ::windows_sys::core::PWSTR, exenamesize: u32, actualexenamesize: *mut u32, description: ::windows_sys::core::PWSTR, descriptionsize: u32, actualdescriptionsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub CreateProcessWide: unsafe extern "system" fn(this: *mut *mut Self, server: u64, commandline: ::windows_sys::core::PCWSTR, createflags: u32) -> ::windows_sys::core::HRESULT,
+    pub CreateProcessAndAttachWide: unsafe extern "system" fn(this: *mut *mut Self, server: u64, commandline: ::windows_sys::core::PCWSTR, createflags: u32, processid: u32, attachflags: u32) -> ::windows_sys::core::HRESULT,
+    pub OpenDumpFileWide: unsafe extern "system" fn(this: *mut *mut Self, filename: ::windows_sys::core::PCWSTR, filehandle: u64) -> ::windows_sys::core::HRESULT,
+    pub WriteDumpFileWide: unsafe extern "system" fn(this: *mut *mut Self, filename: ::windows_sys::core::PCWSTR, filehandle: u64, qualifier: u32, formatflags: u32, comment: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub AddDumpInformationFileWide: unsafe extern "system" fn(this: *mut *mut Self, filename: ::windows_sys::core::PCWSTR, filehandle: u64, r#type: u32) -> ::windows_sys::core::HRESULT,
+    pub GetNumberDumpFiles: unsafe extern "system" fn(this: *mut *mut Self, number: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetDumpFile: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, namesize: *mut u32, handle: *mut u64, r#type: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetDumpFileWide: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PWSTR, buffersize: u32, namesize: *mut u32, handle: *mut u64, r#type: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub AttachKernelWide: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, connectoptions: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetKernelConnectionOptionsWide: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PWSTR, buffersize: u32, optionssize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetKernelConnectionOptionsWide: unsafe extern "system" fn(this: *mut *mut Self, options: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub StartProcessServerWide: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, options: ::windows_sys::core::PCWSTR, reserved: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ConnectProcessServerWide: unsafe extern "system" fn(this: *mut *mut Self, remoteoptions: ::windows_sys::core::PCWSTR, server: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub StartServerWide: unsafe extern "system" fn(this: *mut *mut Self, options: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub OutputServersWide: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, machine: ::windows_sys::core::PCWSTR, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetOutputCallbacksWide: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetOutputCallbacksWide: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetOutputLinePrefixWide: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PWSTR, buffersize: u32, prefixsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetOutputLinePrefixWide: unsafe extern "system" fn(this: *mut *mut Self, prefix: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetIdentityWide: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PWSTR, buffersize: u32, identitysize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub OutputIdentityWide: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, flags: u32, format: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetEventCallbacksWide: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetEventCallbacksWide: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateProcess2: unsafe extern "system" fn(this: *mut *mut Self, server: u64, commandline: ::windows_sys::core::PCSTR, optionsbuffer: *const ::core::ffi::c_void, optionsbuffersize: u32, initialdirectory: ::windows_sys::core::PCSTR, environment: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub CreateProcess2Wide: unsafe extern "system" fn(this: *mut *mut Self, server: u64, commandline: ::windows_sys::core::PCWSTR, optionsbuffer: *const ::core::ffi::c_void, optionsbuffersize: u32, initialdirectory: ::windows_sys::core::PCWSTR, environment: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub CreateProcessAndAttach2: unsafe extern "system" fn(this: *mut *mut Self, server: u64, commandline: ::windows_sys::core::PCSTR, optionsbuffer: *const ::core::ffi::c_void, optionsbuffersize: u32, initialdirectory: ::windows_sys::core::PCSTR, environment: ::windows_sys::core::PCSTR, processid: u32, attachflags: u32) -> ::windows_sys::core::HRESULT,
+    pub CreateProcessAndAttach2Wide: unsafe extern "system" fn(this: *mut *mut Self, server: u64, commandline: ::windows_sys::core::PCWSTR, optionsbuffer: *const ::core::ffi::c_void, optionsbuffersize: u32, initialdirectory: ::windows_sys::core::PCWSTR, environment: ::windows_sys::core::PCWSTR, processid: u32, attachflags: u32) -> ::windows_sys::core::HRESULT,
+    pub PushOutputLinePrefix: unsafe extern "system" fn(this: *mut *mut Self, newprefix: ::windows_sys::core::PCSTR, handle: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub PushOutputLinePrefixWide: unsafe extern "system" fn(this: *mut *mut Self, newprefix: ::windows_sys::core::PCWSTR, handle: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub PopOutputLinePrefix: unsafe extern "system" fn(this: *mut *mut Self, handle: u64) -> ::windows_sys::core::HRESULT,
+    pub GetNumberInputCallbacks: unsafe extern "system" fn(this: *mut *mut Self, count: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetNumberOutputCallbacks: unsafe extern "system" fn(this: *mut *mut Self, count: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetNumberEventCallbacks: unsafe extern "system" fn(this: *mut *mut Self, eventflags: u32, count: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetQuitLockString: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, stringsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetQuitLockString: unsafe extern "system" fn(this: *mut *mut Self, string: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetQuitLockStringWide: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PWSTR, buffersize: u32, stringsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetQuitLockStringWide: unsafe extern "system" fn(this: *mut *mut Self, string: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetEventContextCallbacks: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetClientContext: unsafe extern "system" fn(this: *mut *mut Self, context: *const ::core::ffi::c_void, contextsize: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugClient8 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub AttachKernel: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, connectoptions: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetKernelConnectionOptions: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, optionssize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetKernelConnectionOptions: unsafe extern "system" fn(this: *mut *mut Self, options: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub StartProcessServer: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, options: ::windows_sys::core::PCSTR, reserved: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ConnectProcessServer: unsafe extern "system" fn(this: *mut *mut Self, remoteoptions: ::windows_sys::core::PCSTR, server: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub DisconnectProcessServer: unsafe extern "system" fn(this: *mut *mut Self, server: u64) -> ::windows_sys::core::HRESULT,
+    pub GetRunningProcessSystemIds: unsafe extern "system" fn(this: *mut *mut Self, server: u64, ids: *mut u32, count: u32, actualcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetRunningProcessSystemIdByExecutableName: unsafe extern "system" fn(this: *mut *mut Self, server: u64, exename: ::windows_sys::core::PCSTR, flags: u32, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetRunningProcessDescription: unsafe extern "system" fn(this: *mut *mut Self, server: u64, systemid: u32, flags: u32, exename: ::windows_sys::core::PSTR, exenamesize: u32, actualexenamesize: *mut u32, description: ::windows_sys::core::PSTR, descriptionsize: u32, actualdescriptionsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub AttachProcess: unsafe extern "system" fn(this: *mut *mut Self, server: u64, processid: u32, attachflags: u32) -> ::windows_sys::core::HRESULT,
+    pub CreateProcessA: unsafe extern "system" fn(this: *mut *mut Self, server: u64, commandline: ::windows_sys::core::PCSTR, createflags: u32) -> ::windows_sys::core::HRESULT,
+    pub CreateProcessAndAttach: unsafe extern "system" fn(this: *mut *mut Self, server: u64, commandline: ::windows_sys::core::PCSTR, createflags: u32, processid: u32, attachflags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetProcessOptions: unsafe extern "system" fn(this: *mut *mut Self, options: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub AddProcessOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub RemoveProcessOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub SetProcessOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub OpenDumpFile: unsafe extern "system" fn(this: *mut *mut Self, dumpfile: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub WriteDumpFile: unsafe extern "system" fn(this: *mut *mut Self, dumpfile: ::windows_sys::core::PCSTR, qualifier: u32) -> ::windows_sys::core::HRESULT,
+    pub ConnectSession: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, historylimit: u32) -> ::windows_sys::core::HRESULT,
+    pub StartServer: unsafe extern "system" fn(this: *mut *mut Self, options: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub OutputServers: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, machine: ::windows_sys::core::PCSTR, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub TerminateProcesses: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub DetachProcesses: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub EndSession: unsafe extern "system" fn(this: *mut *mut Self, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetExitCode: unsafe extern "system" fn(this: *mut *mut Self, code: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub DispatchCallbacks: unsafe extern "system" fn(this: *mut *mut Self, timeout: u32) -> ::windows_sys::core::HRESULT,
+    pub ExitDispatch: unsafe extern "system" fn(this: *mut *mut Self, client: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateClient: unsafe extern "system" fn(this: *mut *mut Self, client: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetInputCallbacks: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetInputCallbacks: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetOutputCallbacks: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetOutputCallbacks: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetOutputMask: unsafe extern "system" fn(this: *mut *mut Self, mask: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetOutputMask: unsafe extern "system" fn(this: *mut *mut Self, mask: u32) -> ::windows_sys::core::HRESULT,
+    pub GetOtherOutputMask: unsafe extern "system" fn(this: *mut *mut Self, client: *mut ::core::ffi::c_void, mask: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetOtherOutputMask: unsafe extern "system" fn(this: *mut *mut Self, client: *mut ::core::ffi::c_void, mask: u32) -> ::windows_sys::core::HRESULT,
+    pub GetOutputWidth: unsafe extern "system" fn(this: *mut *mut Self, columns: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetOutputWidth: unsafe extern "system" fn(this: *mut *mut Self, columns: u32) -> ::windows_sys::core::HRESULT,
+    pub GetOutputLinePrefix: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, prefixsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetOutputLinePrefix: unsafe extern "system" fn(this: *mut *mut Self, prefix: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetIdentity: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, identitysize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub OutputIdentity: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, flags: u32, format: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetEventCallbacks: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetEventCallbacks: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub FlushCallbacks: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub WriteDumpFile2: unsafe extern "system" fn(this: *mut *mut Self, dumpfile: ::windows_sys::core::PCSTR, qualifier: u32, formatflags: u32, comment: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub AddDumpInformationFile: unsafe extern "system" fn(this: *mut *mut Self, infofile: ::windows_sys::core::PCSTR, r#type: u32) -> ::windows_sys::core::HRESULT,
+    pub EndProcessServer: unsafe extern "system" fn(this: *mut *mut Self, server: u64) -> ::windows_sys::core::HRESULT,
+    pub WaitForProcessServerEnd: unsafe extern "system" fn(this: *mut *mut Self, timeout: u32) -> ::windows_sys::core::HRESULT,
+    pub IsKernelDebuggerEnabled: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub TerminateCurrentProcess: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub DetachCurrentProcess: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub AbandonCurrentProcess: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetRunningProcessSystemIdByExecutableNameWide: unsafe extern "system" fn(this: *mut *mut Self, server: u64, exename: ::windows_sys::core::PCWSTR, flags: u32, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetRunningProcessDescriptionWide: unsafe extern "system" fn(this: *mut *mut Self, server: u64, systemid: u32, flags: u32, exename: ::windows_sys::core::PWSTR, exenamesize: u32, actualexenamesize: *mut u32, description: ::windows_sys::core::PWSTR, descriptionsize: u32, actualdescriptionsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub CreateProcessWide: unsafe extern "system" fn(this: *mut *mut Self, server: u64, commandline: ::windows_sys::core::PCWSTR, createflags: u32) -> ::windows_sys::core::HRESULT,
+    pub CreateProcessAndAttachWide: unsafe extern "system" fn(this: *mut *mut Self, server: u64, commandline: ::windows_sys::core::PCWSTR, createflags: u32, processid: u32, attachflags: u32) -> ::windows_sys::core::HRESULT,
+    pub OpenDumpFileWide: unsafe extern "system" fn(this: *mut *mut Self, filename: ::windows_sys::core::PCWSTR, filehandle: u64) -> ::windows_sys::core::HRESULT,
+    pub WriteDumpFileWide: unsafe extern "system" fn(this: *mut *mut Self, filename: ::windows_sys::core::PCWSTR, filehandle: u64, qualifier: u32, formatflags: u32, comment: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub AddDumpInformationFileWide: unsafe extern "system" fn(this: *mut *mut Self, filename: ::windows_sys::core::PCWSTR, filehandle: u64, r#type: u32) -> ::windows_sys::core::HRESULT,
+    pub GetNumberDumpFiles: unsafe extern "system" fn(this: *mut *mut Self, number: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetDumpFile: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, namesize: *mut u32, handle: *mut u64, r#type: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetDumpFileWide: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PWSTR, buffersize: u32, namesize: *mut u32, handle: *mut u64, r#type: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub AttachKernelWide: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, connectoptions: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetKernelConnectionOptionsWide: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PWSTR, buffersize: u32, optionssize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetKernelConnectionOptionsWide: unsafe extern "system" fn(this: *mut *mut Self, options: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub StartProcessServerWide: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, options: ::windows_sys::core::PCWSTR, reserved: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ConnectProcessServerWide: unsafe extern "system" fn(this: *mut *mut Self, remoteoptions: ::windows_sys::core::PCWSTR, server: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub StartServerWide: unsafe extern "system" fn(this: *mut *mut Self, options: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub OutputServersWide: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, machine: ::windows_sys::core::PCWSTR, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetOutputCallbacksWide: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetOutputCallbacksWide: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetOutputLinePrefixWide: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PWSTR, buffersize: u32, prefixsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetOutputLinePrefixWide: unsafe extern "system" fn(this: *mut *mut Self, prefix: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetIdentityWide: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PWSTR, buffersize: u32, identitysize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub OutputIdentityWide: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, flags: u32, format: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetEventCallbacksWide: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetEventCallbacksWide: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateProcess2: unsafe extern "system" fn(this: *mut *mut Self, server: u64, commandline: ::windows_sys::core::PCSTR, optionsbuffer: *const ::core::ffi::c_void, optionsbuffersize: u32, initialdirectory: ::windows_sys::core::PCSTR, environment: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub CreateProcess2Wide: unsafe extern "system" fn(this: *mut *mut Self, server: u64, commandline: ::windows_sys::core::PCWSTR, optionsbuffer: *const ::core::ffi::c_void, optionsbuffersize: u32, initialdirectory: ::windows_sys::core::PCWSTR, environment: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub CreateProcessAndAttach2: unsafe extern "system" fn(this: *mut *mut Self, server: u64, commandline: ::windows_sys::core::PCSTR, optionsbuffer: *const ::core::ffi::c_void, optionsbuffersize: u32, initialdirectory: ::windows_sys::core::PCSTR, environment: ::windows_sys::core::PCSTR, processid: u32, attachflags: u32) -> ::windows_sys::core::HRESULT,
+    pub CreateProcessAndAttach2Wide: unsafe extern "system" fn(this: *mut *mut Self, server: u64, commandline: ::windows_sys::core::PCWSTR, optionsbuffer: *const ::core::ffi::c_void, optionsbuffersize: u32, initialdirectory: ::windows_sys::core::PCWSTR, environment: ::windows_sys::core::PCWSTR, processid: u32, attachflags: u32) -> ::windows_sys::core::HRESULT,
+    pub PushOutputLinePrefix: unsafe extern "system" fn(this: *mut *mut Self, newprefix: ::windows_sys::core::PCSTR, handle: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub PushOutputLinePrefixWide: unsafe extern "system" fn(this: *mut *mut Self, newprefix: ::windows_sys::core::PCWSTR, handle: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub PopOutputLinePrefix: unsafe extern "system" fn(this: *mut *mut Self, handle: u64) -> ::windows_sys::core::HRESULT,
+    pub GetNumberInputCallbacks: unsafe extern "system" fn(this: *mut *mut Self, count: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetNumberOutputCallbacks: unsafe extern "system" fn(this: *mut *mut Self, count: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetNumberEventCallbacks: unsafe extern "system" fn(this: *mut *mut Self, eventflags: u32, count: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetQuitLockString: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, stringsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetQuitLockString: unsafe extern "system" fn(this: *mut *mut Self, string: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetQuitLockStringWide: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PWSTR, buffersize: u32, stringsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetQuitLockStringWide: unsafe extern "system" fn(this: *mut *mut Self, string: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetEventContextCallbacks: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetClientContext: unsafe extern "system" fn(this: *mut *mut Self, context: *const ::core::ffi::c_void, contextsize: u32) -> ::windows_sys::core::HRESULT,
+    pub OpenDumpFileWide2: unsafe extern "system" fn(this: *mut *mut Self, filename: ::windows_sys::core::PCWSTR, filehandle: u64, alternatearch: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugCodeContext {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetDocumentContext: unsafe extern "system" fn(this: *mut *mut Self, ppsc: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetBreakPoint: unsafe extern "system" fn(this: *mut *mut Self, bps: BREAKPOINT_STATE) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugControl {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetInterrupt: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub SetInterrupt: unsafe extern "system" fn(this: *mut *mut Self, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetInterruptTimeout: unsafe extern "system" fn(this: *mut *mut Self, seconds: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetInterruptTimeout: unsafe extern "system" fn(this: *mut *mut Self, seconds: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetLogFile: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, filesize: *mut u32, append: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetLogFile: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OpenLogFile: unsafe extern "system" fn(this: *mut *mut Self, file: ::windows_sys::core::PCSTR, append: super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OpenLogFile: usize,
+    pub CloseLogFile: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetLogMask: unsafe extern "system" fn(this: *mut *mut Self, mask: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetLogMask: unsafe extern "system" fn(this: *mut *mut Self, mask: u32) -> ::windows_sys::core::HRESULT,
+    pub Input: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, inputsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub ReturnInput: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub Output: unsafe extern "system" fn(this: *mut *mut Self, mask: u32, format: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub OutputVaList: unsafe extern "system" fn(this: *mut *mut Self, mask: u32, format: ::windows_sys::core::PCSTR, args: *const i8) -> ::windows_sys::core::HRESULT,
+    pub ControlledOutput: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, mask: u32, format: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub ControlledOutputVaList: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, mask: u32, format: ::windows_sys::core::PCSTR, args: *const i8) -> ::windows_sys::core::HRESULT,
+    pub OutputPrompt: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, format: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub OutputPromptVaList: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, format: ::windows_sys::core::PCSTR, args: *const i8) -> ::windows_sys::core::HRESULT,
+    pub GetPromptText: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, textsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub OutputCurrentState: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub OutputVersionInformation: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32) -> ::windows_sys::core::HRESULT,
+    pub GetNotifyEventHandle: unsafe extern "system" fn(this: *mut *mut Self, handle: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub SetNotifyEventHandle: unsafe extern "system" fn(this: *mut *mut Self, handle: u64) -> ::windows_sys::core::HRESULT,
+    pub Assemble: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, instr: ::windows_sys::core::PCSTR, endoffset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub Disassemble: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, flags: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, disassemblysize: *mut u32, endoffset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetDisassembleEffectiveOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub OutputDisassembly: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, offset: u64, flags: u32, endoffset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub OutputDisassemblyLines: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, previouslines: u32, totallines: u32, offset: u64, flags: u32, offsetline: *mut u32, startoffset: *mut u64, endoffset: *mut u64, lineoffsets: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetNearInstruction: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, delta: i32, nearoffset: *mut u64) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetStackTrace: unsafe extern "system" fn(this: *mut *mut Self, frameoffset: u64, stackoffset: u64, instructionoffset: u64, frames: *mut DEBUG_STACK_FRAME, framessize: u32, framesfilled: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetStackTrace: usize,
+    pub GetReturnOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OutputStackTrace: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, frames: *const DEBUG_STACK_FRAME, framessize: u32, flags: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OutputStackTrace: usize,
+    pub GetDebuggeeType: unsafe extern "system" fn(this: *mut *mut Self, class: *mut u32, qualifier: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetActualProcessorType: unsafe extern "system" fn(this: *mut *mut Self, r#type: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetExecutingProcessorType: unsafe extern "system" fn(this: *mut *mut Self, r#type: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetNumberPossibleExecutingProcessorTypes: unsafe extern "system" fn(this: *mut *mut Self, number: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetPossibleExecutingProcessorTypes: unsafe extern "system" fn(this: *mut *mut Self, start: u32, count: u32, types: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetNumberProcessors: unsafe extern "system" fn(this: *mut *mut Self, number: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSystemVersion: unsafe extern "system" fn(this: *mut *mut Self, platformid: *mut u32, major: *mut u32, minor: *mut u32, servicepackstring: ::windows_sys::core::PSTR, servicepackstringsize: u32, servicepackstringused: *mut u32, servicepacknumber: *mut u32, buildstring: ::windows_sys::core::PSTR, buildstringsize: u32, buildstringused: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetPageSize: unsafe extern "system" fn(this: *mut *mut Self, size: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub IsPointer64Bit: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub ReadBugCheckData: unsafe extern "system" fn(this: *mut *mut Self, code: *mut u32, arg1: *mut u64, arg2: *mut u64, arg3: *mut u64, arg4: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetNumberSupportedProcessorTypes: unsafe extern "system" fn(this: *mut *mut Self, number: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSupportedProcessorTypes: unsafe extern "system" fn(this: *mut *mut Self, start: u32, count: u32, types: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetProcessorTypeNames: unsafe extern "system" fn(this: *mut *mut Self, r#type: u32, fullnamebuffer: ::windows_sys::core::PSTR, fullnamebuffersize: u32, fullnamesize: *mut u32, abbrevnamebuffer: ::windows_sys::core::PSTR, abbrevnamebuffersize: u32, abbrevnamesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetEffectiveProcessorType: unsafe extern "system" fn(this: *mut *mut Self, r#type: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetEffectiveProcessorType: unsafe extern "system" fn(this: *mut *mut Self, r#type: u32) -> ::windows_sys::core::HRESULT,
+    pub GetExecutionStatus: unsafe extern "system" fn(this: *mut *mut Self, status: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetExecutionStatus: unsafe extern "system" fn(this: *mut *mut Self, status: u32) -> ::windows_sys::core::HRESULT,
+    pub GetCodeLevel: unsafe extern "system" fn(this: *mut *mut Self, level: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetCodeLevel: unsafe extern "system" fn(this: *mut *mut Self, level: u32) -> ::windows_sys::core::HRESULT,
+    pub GetEngineOptions: unsafe extern "system" fn(this: *mut *mut Self, options: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub AddEngineOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub RemoveEngineOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub SetEngineOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub GetSystemErrorControl: unsafe extern "system" fn(this: *mut *mut Self, outputlevel: *mut u32, breaklevel: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetSystemErrorControl: unsafe extern "system" fn(this: *mut *mut Self, outputlevel: u32, breaklevel: u32) -> ::windows_sys::core::HRESULT,
+    pub GetTextMacro: unsafe extern "system" fn(this: *mut *mut Self, slot: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, macrosize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetTextMacro: unsafe extern "system" fn(this: *mut *mut Self, slot: u32, r#macro: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetRadix: unsafe extern "system" fn(this: *mut *mut Self, radix: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetRadix: unsafe extern "system" fn(this: *mut *mut Self, radix: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Evaluate: unsafe extern "system" fn(this: *mut *mut Self, expression: ::windows_sys::core::PCSTR, desiredtype: u32, value: *mut DEBUG_VALUE, remainderindex: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Evaluate: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CoerceValue: unsafe extern "system" fn(this: *mut *mut Self, r#in: *const DEBUG_VALUE, outtype: u32, out: *mut DEBUG_VALUE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CoerceValue: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CoerceValues: unsafe extern "system" fn(this: *mut *mut Self, count: u32, r#in: *const DEBUG_VALUE, outtypes: *const u32, out: *mut DEBUG_VALUE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CoerceValues: usize,
+    pub Execute: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, command: ::windows_sys::core::PCSTR, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub ExecuteCommandFile: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, commandfile: ::windows_sys::core::PCSTR, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetNumberBreakpoints: unsafe extern "system" fn(this: *mut *mut Self, number: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetBreakpointByIndex: unsafe extern "system" fn(this: *mut *mut Self, index: u32, bp: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetBreakpointById: unsafe extern "system" fn(this: *mut *mut Self, id: u32, bp: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetBreakpointParameters: unsafe extern "system" fn(this: *mut *mut Self, count: u32, ids: *const u32, start: u32, params: *mut DEBUG_BREAKPOINT_PARAMETERS) -> ::windows_sys::core::HRESULT,
+    pub AddBreakpoint: unsafe extern "system" fn(this: *mut *mut Self, r#type: u32, desiredid: u32, bp: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RemoveBreakpoint: unsafe extern "system" fn(this: *mut *mut Self, bp: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AddExtension: unsafe extern "system" fn(this: *mut *mut Self, path: ::windows_sys::core::PCSTR, flags: u32, handle: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub RemoveExtension: unsafe extern "system" fn(this: *mut *mut Self, handle: u64) -> ::windows_sys::core::HRESULT,
+    pub GetExtensionByPath: unsafe extern "system" fn(this: *mut *mut Self, path: ::windows_sys::core::PCSTR, handle: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub CallExtension: unsafe extern "system" fn(this: *mut *mut Self, handle: u64, function: ::windows_sys::core::PCSTR, arguments: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetExtensionFunction: unsafe extern "system" fn(this: *mut *mut Self, handle: u64, funcname: ::windows_sys::core::PCSTR, function: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetExtensionFunction: usize,
+    #[cfg(feature = "Win32_System_Kernel")]
+    pub GetWindbgExtensionApis32: unsafe extern "system" fn(this: *mut *mut Self, api: *mut WINDBG_EXTENSION_APIS32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Kernel"))]
+    GetWindbgExtensionApis32: usize,
+    #[cfg(feature = "Win32_System_Kernel")]
+    pub GetWindbgExtensionApis64: unsafe extern "system" fn(this: *mut *mut Self, api: *mut WINDBG_EXTENSION_APIS64) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Kernel"))]
+    GetWindbgExtensionApis64: usize,
+    pub GetNumberEventFilters: unsafe extern "system" fn(this: *mut *mut Self, specificevents: *mut u32, specificexceptions: *mut u32, arbitraryexceptions: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetEventFilterText: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, textsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetEventFilterCommand: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, commandsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetEventFilterCommand: unsafe extern "system" fn(this: *mut *mut Self, index: u32, command: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetSpecificFilterParameters: unsafe extern "system" fn(this: *mut *mut Self, start: u32, count: u32, params: *mut DEBUG_SPECIFIC_FILTER_PARAMETERS) -> ::windows_sys::core::HRESULT,
+    pub SetSpecificFilterParameters: unsafe extern "system" fn(this: *mut *mut Self, start: u32, count: u32, params: *const DEBUG_SPECIFIC_FILTER_PARAMETERS) -> ::windows_sys::core::HRESULT,
+    pub GetSpecificFilterArgument: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, argumentsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetSpecificFilterArgument: unsafe extern "system" fn(this: *mut *mut Self, index: u32, argument: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetExceptionFilterParameters: unsafe extern "system" fn(this: *mut *mut Self, count: u32, codes: *const u32, start: u32, params: *mut DEBUG_EXCEPTION_FILTER_PARAMETERS) -> ::windows_sys::core::HRESULT,
+    pub SetExceptionFilterParameters: unsafe extern "system" fn(this: *mut *mut Self, count: u32, params: *const DEBUG_EXCEPTION_FILTER_PARAMETERS) -> ::windows_sys::core::HRESULT,
+    pub GetExceptionFilterSecondCommand: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, commandsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetExceptionFilterSecondCommand: unsafe extern "system" fn(this: *mut *mut Self, index: u32, command: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub WaitForEvent: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, timeout: u32) -> ::windows_sys::core::HRESULT,
+    pub GetLastEventInformation: unsafe extern "system" fn(this: *mut *mut Self, r#type: *mut u32, processid: *mut u32, threadid: *mut u32, extrainformation: *mut ::core::ffi::c_void, extrainformationsize: u32, extrainformationused: *mut u32, description: ::windows_sys::core::PSTR, descriptionsize: u32, descriptionused: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugControl2 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetInterrupt: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub SetInterrupt: unsafe extern "system" fn(this: *mut *mut Self, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetInterruptTimeout: unsafe extern "system" fn(this: *mut *mut Self, seconds: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetInterruptTimeout: unsafe extern "system" fn(this: *mut *mut Self, seconds: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetLogFile: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, filesize: *mut u32, append: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetLogFile: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OpenLogFile: unsafe extern "system" fn(this: *mut *mut Self, file: ::windows_sys::core::PCSTR, append: super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OpenLogFile: usize,
+    pub CloseLogFile: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetLogMask: unsafe extern "system" fn(this: *mut *mut Self, mask: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetLogMask: unsafe extern "system" fn(this: *mut *mut Self, mask: u32) -> ::windows_sys::core::HRESULT,
+    pub Input: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, inputsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub ReturnInput: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub Output: unsafe extern "system" fn(this: *mut *mut Self, mask: u32, format: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub OutputVaList: unsafe extern "system" fn(this: *mut *mut Self, mask: u32, format: ::windows_sys::core::PCSTR, args: *const i8) -> ::windows_sys::core::HRESULT,
+    pub ControlledOutput: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, mask: u32, format: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub ControlledOutputVaList: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, mask: u32, format: ::windows_sys::core::PCSTR, args: *const i8) -> ::windows_sys::core::HRESULT,
+    pub OutputPrompt: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, format: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub OutputPromptVaList: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, format: ::windows_sys::core::PCSTR, args: *const i8) -> ::windows_sys::core::HRESULT,
+    pub GetPromptText: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, textsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub OutputCurrentState: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub OutputVersionInformation: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32) -> ::windows_sys::core::HRESULT,
+    pub GetNotifyEventHandle: unsafe extern "system" fn(this: *mut *mut Self, handle: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub SetNotifyEventHandle: unsafe extern "system" fn(this: *mut *mut Self, handle: u64) -> ::windows_sys::core::HRESULT,
+    pub Assemble: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, instr: ::windows_sys::core::PCSTR, endoffset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub Disassemble: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, flags: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, disassemblysize: *mut u32, endoffset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetDisassembleEffectiveOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub OutputDisassembly: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, offset: u64, flags: u32, endoffset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub OutputDisassemblyLines: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, previouslines: u32, totallines: u32, offset: u64, flags: u32, offsetline: *mut u32, startoffset: *mut u64, endoffset: *mut u64, lineoffsets: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetNearInstruction: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, delta: i32, nearoffset: *mut u64) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetStackTrace: unsafe extern "system" fn(this: *mut *mut Self, frameoffset: u64, stackoffset: u64, instructionoffset: u64, frames: *mut DEBUG_STACK_FRAME, framessize: u32, framesfilled: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetStackTrace: usize,
+    pub GetReturnOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OutputStackTrace: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, frames: *const DEBUG_STACK_FRAME, framessize: u32, flags: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OutputStackTrace: usize,
+    pub GetDebuggeeType: unsafe extern "system" fn(this: *mut *mut Self, class: *mut u32, qualifier: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetActualProcessorType: unsafe extern "system" fn(this: *mut *mut Self, r#type: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetExecutingProcessorType: unsafe extern "system" fn(this: *mut *mut Self, r#type: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetNumberPossibleExecutingProcessorTypes: unsafe extern "system" fn(this: *mut *mut Self, number: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetPossibleExecutingProcessorTypes: unsafe extern "system" fn(this: *mut *mut Self, start: u32, count: u32, types: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetNumberProcessors: unsafe extern "system" fn(this: *mut *mut Self, number: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSystemVersion: unsafe extern "system" fn(this: *mut *mut Self, platformid: *mut u32, major: *mut u32, minor: *mut u32, servicepackstring: ::windows_sys::core::PSTR, servicepackstringsize: u32, servicepackstringused: *mut u32, servicepacknumber: *mut u32, buildstring: ::windows_sys::core::PSTR, buildstringsize: u32, buildstringused: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetPageSize: unsafe extern "system" fn(this: *mut *mut Self, size: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub IsPointer64Bit: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub ReadBugCheckData: unsafe extern "system" fn(this: *mut *mut Self, code: *mut u32, arg1: *mut u64, arg2: *mut u64, arg3: *mut u64, arg4: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetNumberSupportedProcessorTypes: unsafe extern "system" fn(this: *mut *mut Self, number: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSupportedProcessorTypes: unsafe extern "system" fn(this: *mut *mut Self, start: u32, count: u32, types: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetProcessorTypeNames: unsafe extern "system" fn(this: *mut *mut Self, r#type: u32, fullnamebuffer: ::windows_sys::core::PSTR, fullnamebuffersize: u32, fullnamesize: *mut u32, abbrevnamebuffer: ::windows_sys::core::PSTR, abbrevnamebuffersize: u32, abbrevnamesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetEffectiveProcessorType: unsafe extern "system" fn(this: *mut *mut Self, r#type: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetEffectiveProcessorType: unsafe extern "system" fn(this: *mut *mut Self, r#type: u32) -> ::windows_sys::core::HRESULT,
+    pub GetExecutionStatus: unsafe extern "system" fn(this: *mut *mut Self, status: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetExecutionStatus: unsafe extern "system" fn(this: *mut *mut Self, status: u32) -> ::windows_sys::core::HRESULT,
+    pub GetCodeLevel: unsafe extern "system" fn(this: *mut *mut Self, level: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetCodeLevel: unsafe extern "system" fn(this: *mut *mut Self, level: u32) -> ::windows_sys::core::HRESULT,
+    pub GetEngineOptions: unsafe extern "system" fn(this: *mut *mut Self, options: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub AddEngineOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub RemoveEngineOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub SetEngineOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub GetSystemErrorControl: unsafe extern "system" fn(this: *mut *mut Self, outputlevel: *mut u32, breaklevel: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetSystemErrorControl: unsafe extern "system" fn(this: *mut *mut Self, outputlevel: u32, breaklevel: u32) -> ::windows_sys::core::HRESULT,
+    pub GetTextMacro: unsafe extern "system" fn(this: *mut *mut Self, slot: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, macrosize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetTextMacro: unsafe extern "system" fn(this: *mut *mut Self, slot: u32, r#macro: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetRadix: unsafe extern "system" fn(this: *mut *mut Self, radix: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetRadix: unsafe extern "system" fn(this: *mut *mut Self, radix: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Evaluate: unsafe extern "system" fn(this: *mut *mut Self, expression: ::windows_sys::core::PCSTR, desiredtype: u32, value: *mut DEBUG_VALUE, remainderindex: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Evaluate: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CoerceValue: unsafe extern "system" fn(this: *mut *mut Self, r#in: *const DEBUG_VALUE, outtype: u32, out: *mut DEBUG_VALUE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CoerceValue: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CoerceValues: unsafe extern "system" fn(this: *mut *mut Self, count: u32, r#in: *const DEBUG_VALUE, outtypes: *const u32, out: *mut DEBUG_VALUE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CoerceValues: usize,
+    pub Execute: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, command: ::windows_sys::core::PCSTR, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub ExecuteCommandFile: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, commandfile: ::windows_sys::core::PCSTR, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetNumberBreakpoints: unsafe extern "system" fn(this: *mut *mut Self, number: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetBreakpointByIndex: unsafe extern "system" fn(this: *mut *mut Self, index: u32, bp: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetBreakpointById: unsafe extern "system" fn(this: *mut *mut Self, id: u32, bp: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetBreakpointParameters: unsafe extern "system" fn(this: *mut *mut Self, count: u32, ids: *const u32, start: u32, params: *mut DEBUG_BREAKPOINT_PARAMETERS) -> ::windows_sys::core::HRESULT,
+    pub AddBreakpoint: unsafe extern "system" fn(this: *mut *mut Self, r#type: u32, desiredid: u32, bp: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RemoveBreakpoint: unsafe extern "system" fn(this: *mut *mut Self, bp: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AddExtension: unsafe extern "system" fn(this: *mut *mut Self, path: ::windows_sys::core::PCSTR, flags: u32, handle: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub RemoveExtension: unsafe extern "system" fn(this: *mut *mut Self, handle: u64) -> ::windows_sys::core::HRESULT,
+    pub GetExtensionByPath: unsafe extern "system" fn(this: *mut *mut Self, path: ::windows_sys::core::PCSTR, handle: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub CallExtension: unsafe extern "system" fn(this: *mut *mut Self, handle: u64, function: ::windows_sys::core::PCSTR, arguments: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetExtensionFunction: unsafe extern "system" fn(this: *mut *mut Self, handle: u64, funcname: ::windows_sys::core::PCSTR, function: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetExtensionFunction: usize,
+    #[cfg(feature = "Win32_System_Kernel")]
+    pub GetWindbgExtensionApis32: unsafe extern "system" fn(this: *mut *mut Self, api: *mut WINDBG_EXTENSION_APIS32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Kernel"))]
+    GetWindbgExtensionApis32: usize,
+    #[cfg(feature = "Win32_System_Kernel")]
+    pub GetWindbgExtensionApis64: unsafe extern "system" fn(this: *mut *mut Self, api: *mut WINDBG_EXTENSION_APIS64) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Kernel"))]
+    GetWindbgExtensionApis64: usize,
+    pub GetNumberEventFilters: unsafe extern "system" fn(this: *mut *mut Self, specificevents: *mut u32, specificexceptions: *mut u32, arbitraryexceptions: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetEventFilterText: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, textsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetEventFilterCommand: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, commandsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetEventFilterCommand: unsafe extern "system" fn(this: *mut *mut Self, index: u32, command: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetSpecificFilterParameters: unsafe extern "system" fn(this: *mut *mut Self, start: u32, count: u32, params: *mut DEBUG_SPECIFIC_FILTER_PARAMETERS) -> ::windows_sys::core::HRESULT,
+    pub SetSpecificFilterParameters: unsafe extern "system" fn(this: *mut *mut Self, start: u32, count: u32, params: *const DEBUG_SPECIFIC_FILTER_PARAMETERS) -> ::windows_sys::core::HRESULT,
+    pub GetSpecificFilterArgument: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, argumentsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetSpecificFilterArgument: unsafe extern "system" fn(this: *mut *mut Self, index: u32, argument: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetExceptionFilterParameters: unsafe extern "system" fn(this: *mut *mut Self, count: u32, codes: *const u32, start: u32, params: *mut DEBUG_EXCEPTION_FILTER_PARAMETERS) -> ::windows_sys::core::HRESULT,
+    pub SetExceptionFilterParameters: unsafe extern "system" fn(this: *mut *mut Self, count: u32, params: *const DEBUG_EXCEPTION_FILTER_PARAMETERS) -> ::windows_sys::core::HRESULT,
+    pub GetExceptionFilterSecondCommand: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, commandsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetExceptionFilterSecondCommand: unsafe extern "system" fn(this: *mut *mut Self, index: u32, command: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub WaitForEvent: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, timeout: u32) -> ::windows_sys::core::HRESULT,
+    pub GetLastEventInformation: unsafe extern "system" fn(this: *mut *mut Self, r#type: *mut u32, processid: *mut u32, threadid: *mut u32, extrainformation: *mut ::core::ffi::c_void, extrainformationsize: u32, extrainformationused: *mut u32, description: ::windows_sys::core::PSTR, descriptionsize: u32, descriptionused: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentTimeDate: unsafe extern "system" fn(this: *mut *mut Self, timedate: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentSystemUpTime: unsafe extern "system" fn(this: *mut *mut Self, uptime: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetDumpFormatFlags: unsafe extern "system" fn(this: *mut *mut Self, formatflags: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetNumberTextReplacements: unsafe extern "system" fn(this: *mut *mut Self, numrepl: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetTextReplacement: unsafe extern "system" fn(this: *mut *mut Self, srctext: ::windows_sys::core::PCSTR, index: u32, srcbuffer: ::windows_sys::core::PSTR, srcbuffersize: u32, srcsize: *mut u32, dstbuffer: ::windows_sys::core::PSTR, dstbuffersize: u32, dstsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetTextReplacement: unsafe extern "system" fn(this: *mut *mut Self, srctext: ::windows_sys::core::PCSTR, dsttext: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub RemoveTextReplacements: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub OutputTextReplacements: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, flags: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugControl3 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetInterrupt: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub SetInterrupt: unsafe extern "system" fn(this: *mut *mut Self, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetInterruptTimeout: unsafe extern "system" fn(this: *mut *mut Self, seconds: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetInterruptTimeout: unsafe extern "system" fn(this: *mut *mut Self, seconds: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetLogFile: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, filesize: *mut u32, append: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetLogFile: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OpenLogFile: unsafe extern "system" fn(this: *mut *mut Self, file: ::windows_sys::core::PCSTR, append: super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OpenLogFile: usize,
+    pub CloseLogFile: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetLogMask: unsafe extern "system" fn(this: *mut *mut Self, mask: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetLogMask: unsafe extern "system" fn(this: *mut *mut Self, mask: u32) -> ::windows_sys::core::HRESULT,
+    pub Input: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, inputsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub ReturnInput: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub Output: unsafe extern "system" fn(this: *mut *mut Self, mask: u32, format: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub OutputVaList: unsafe extern "system" fn(this: *mut *mut Self, mask: u32, format: ::windows_sys::core::PCSTR, args: *const i8) -> ::windows_sys::core::HRESULT,
+    pub ControlledOutput: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, mask: u32, format: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub ControlledOutputVaList: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, mask: u32, format: ::windows_sys::core::PCSTR, args: *const i8) -> ::windows_sys::core::HRESULT,
+    pub OutputPrompt: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, format: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub OutputPromptVaList: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, format: ::windows_sys::core::PCSTR, args: *const i8) -> ::windows_sys::core::HRESULT,
+    pub GetPromptText: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, textsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub OutputCurrentState: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub OutputVersionInformation: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32) -> ::windows_sys::core::HRESULT,
+    pub GetNotifyEventHandle: unsafe extern "system" fn(this: *mut *mut Self, handle: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub SetNotifyEventHandle: unsafe extern "system" fn(this: *mut *mut Self, handle: u64) -> ::windows_sys::core::HRESULT,
+    pub Assemble: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, instr: ::windows_sys::core::PCSTR, endoffset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub Disassemble: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, flags: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, disassemblysize: *mut u32, endoffset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetDisassembleEffectiveOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub OutputDisassembly: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, offset: u64, flags: u32, endoffset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub OutputDisassemblyLines: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, previouslines: u32, totallines: u32, offset: u64, flags: u32, offsetline: *mut u32, startoffset: *mut u64, endoffset: *mut u64, lineoffsets: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetNearInstruction: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, delta: i32, nearoffset: *mut u64) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetStackTrace: unsafe extern "system" fn(this: *mut *mut Self, frameoffset: u64, stackoffset: u64, instructionoffset: u64, frames: *mut DEBUG_STACK_FRAME, framessize: u32, framesfilled: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetStackTrace: usize,
+    pub GetReturnOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OutputStackTrace: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, frames: *const DEBUG_STACK_FRAME, framessize: u32, flags: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OutputStackTrace: usize,
+    pub GetDebuggeeType: unsafe extern "system" fn(this: *mut *mut Self, class: *mut u32, qualifier: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetActualProcessorType: unsafe extern "system" fn(this: *mut *mut Self, r#type: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetExecutingProcessorType: unsafe extern "system" fn(this: *mut *mut Self, r#type: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetNumberPossibleExecutingProcessorTypes: unsafe extern "system" fn(this: *mut *mut Self, number: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetPossibleExecutingProcessorTypes: unsafe extern "system" fn(this: *mut *mut Self, start: u32, count: u32, types: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetNumberProcessors: unsafe extern "system" fn(this: *mut *mut Self, number: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSystemVersion: unsafe extern "system" fn(this: *mut *mut Self, platformid: *mut u32, major: *mut u32, minor: *mut u32, servicepackstring: ::windows_sys::core::PSTR, servicepackstringsize: u32, servicepackstringused: *mut u32, servicepacknumber: *mut u32, buildstring: ::windows_sys::core::PSTR, buildstringsize: u32, buildstringused: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetPageSize: unsafe extern "system" fn(this: *mut *mut Self, size: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub IsPointer64Bit: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub ReadBugCheckData: unsafe extern "system" fn(this: *mut *mut Self, code: *mut u32, arg1: *mut u64, arg2: *mut u64, arg3: *mut u64, arg4: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetNumberSupportedProcessorTypes: unsafe extern "system" fn(this: *mut *mut Self, number: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSupportedProcessorTypes: unsafe extern "system" fn(this: *mut *mut Self, start: u32, count: u32, types: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetProcessorTypeNames: unsafe extern "system" fn(this: *mut *mut Self, r#type: u32, fullnamebuffer: ::windows_sys::core::PSTR, fullnamebuffersize: u32, fullnamesize: *mut u32, abbrevnamebuffer: ::windows_sys::core::PSTR, abbrevnamebuffersize: u32, abbrevnamesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetEffectiveProcessorType: unsafe extern "system" fn(this: *mut *mut Self, r#type: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetEffectiveProcessorType: unsafe extern "system" fn(this: *mut *mut Self, r#type: u32) -> ::windows_sys::core::HRESULT,
+    pub GetExecutionStatus: unsafe extern "system" fn(this: *mut *mut Self, status: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetExecutionStatus: unsafe extern "system" fn(this: *mut *mut Self, status: u32) -> ::windows_sys::core::HRESULT,
+    pub GetCodeLevel: unsafe extern "system" fn(this: *mut *mut Self, level: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetCodeLevel: unsafe extern "system" fn(this: *mut *mut Self, level: u32) -> ::windows_sys::core::HRESULT,
+    pub GetEngineOptions: unsafe extern "system" fn(this: *mut *mut Self, options: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub AddEngineOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub RemoveEngineOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub SetEngineOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub GetSystemErrorControl: unsafe extern "system" fn(this: *mut *mut Self, outputlevel: *mut u32, breaklevel: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetSystemErrorControl: unsafe extern "system" fn(this: *mut *mut Self, outputlevel: u32, breaklevel: u32) -> ::windows_sys::core::HRESULT,
+    pub GetTextMacro: unsafe extern "system" fn(this: *mut *mut Self, slot: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, macrosize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetTextMacro: unsafe extern "system" fn(this: *mut *mut Self, slot: u32, r#macro: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetRadix: unsafe extern "system" fn(this: *mut *mut Self, radix: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetRadix: unsafe extern "system" fn(this: *mut *mut Self, radix: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Evaluate: unsafe extern "system" fn(this: *mut *mut Self, expression: ::windows_sys::core::PCSTR, desiredtype: u32, value: *mut DEBUG_VALUE, remainderindex: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Evaluate: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CoerceValue: unsafe extern "system" fn(this: *mut *mut Self, r#in: *const DEBUG_VALUE, outtype: u32, out: *mut DEBUG_VALUE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CoerceValue: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CoerceValues: unsafe extern "system" fn(this: *mut *mut Self, count: u32, r#in: *const DEBUG_VALUE, outtypes: *const u32, out: *mut DEBUG_VALUE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CoerceValues: usize,
+    pub Execute: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, command: ::windows_sys::core::PCSTR, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub ExecuteCommandFile: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, commandfile: ::windows_sys::core::PCSTR, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetNumberBreakpoints: unsafe extern "system" fn(this: *mut *mut Self, number: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetBreakpointByIndex: unsafe extern "system" fn(this: *mut *mut Self, index: u32, bp: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetBreakpointById: unsafe extern "system" fn(this: *mut *mut Self, id: u32, bp: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetBreakpointParameters: unsafe extern "system" fn(this: *mut *mut Self, count: u32, ids: *const u32, start: u32, params: *mut DEBUG_BREAKPOINT_PARAMETERS) -> ::windows_sys::core::HRESULT,
+    pub AddBreakpoint: unsafe extern "system" fn(this: *mut *mut Self, r#type: u32, desiredid: u32, bp: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RemoveBreakpoint: unsafe extern "system" fn(this: *mut *mut Self, bp: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AddExtension: unsafe extern "system" fn(this: *mut *mut Self, path: ::windows_sys::core::PCSTR, flags: u32, handle: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub RemoveExtension: unsafe extern "system" fn(this: *mut *mut Self, handle: u64) -> ::windows_sys::core::HRESULT,
+    pub GetExtensionByPath: unsafe extern "system" fn(this: *mut *mut Self, path: ::windows_sys::core::PCSTR, handle: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub CallExtension: unsafe extern "system" fn(this: *mut *mut Self, handle: u64, function: ::windows_sys::core::PCSTR, arguments: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetExtensionFunction: unsafe extern "system" fn(this: *mut *mut Self, handle: u64, funcname: ::windows_sys::core::PCSTR, function: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetExtensionFunction: usize,
+    #[cfg(feature = "Win32_System_Kernel")]
+    pub GetWindbgExtensionApis32: unsafe extern "system" fn(this: *mut *mut Self, api: *mut WINDBG_EXTENSION_APIS32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Kernel"))]
+    GetWindbgExtensionApis32: usize,
+    #[cfg(feature = "Win32_System_Kernel")]
+    pub GetWindbgExtensionApis64: unsafe extern "system" fn(this: *mut *mut Self, api: *mut WINDBG_EXTENSION_APIS64) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Kernel"))]
+    GetWindbgExtensionApis64: usize,
+    pub GetNumberEventFilters: unsafe extern "system" fn(this: *mut *mut Self, specificevents: *mut u32, specificexceptions: *mut u32, arbitraryexceptions: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetEventFilterText: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, textsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetEventFilterCommand: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, commandsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetEventFilterCommand: unsafe extern "system" fn(this: *mut *mut Self, index: u32, command: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetSpecificFilterParameters: unsafe extern "system" fn(this: *mut *mut Self, start: u32, count: u32, params: *mut DEBUG_SPECIFIC_FILTER_PARAMETERS) -> ::windows_sys::core::HRESULT,
+    pub SetSpecificFilterParameters: unsafe extern "system" fn(this: *mut *mut Self, start: u32, count: u32, params: *const DEBUG_SPECIFIC_FILTER_PARAMETERS) -> ::windows_sys::core::HRESULT,
+    pub GetSpecificFilterArgument: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, argumentsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetSpecificFilterArgument: unsafe extern "system" fn(this: *mut *mut Self, index: u32, argument: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetExceptionFilterParameters: unsafe extern "system" fn(this: *mut *mut Self, count: u32, codes: *const u32, start: u32, params: *mut DEBUG_EXCEPTION_FILTER_PARAMETERS) -> ::windows_sys::core::HRESULT,
+    pub SetExceptionFilterParameters: unsafe extern "system" fn(this: *mut *mut Self, count: u32, params: *const DEBUG_EXCEPTION_FILTER_PARAMETERS) -> ::windows_sys::core::HRESULT,
+    pub GetExceptionFilterSecondCommand: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, commandsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetExceptionFilterSecondCommand: unsafe extern "system" fn(this: *mut *mut Self, index: u32, command: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub WaitForEvent: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, timeout: u32) -> ::windows_sys::core::HRESULT,
+    pub GetLastEventInformation: unsafe extern "system" fn(this: *mut *mut Self, r#type: *mut u32, processid: *mut u32, threadid: *mut u32, extrainformation: *mut ::core::ffi::c_void, extrainformationsize: u32, extrainformationused: *mut u32, description: ::windows_sys::core::PSTR, descriptionsize: u32, descriptionused: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentTimeDate: unsafe extern "system" fn(this: *mut *mut Self, timedate: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentSystemUpTime: unsafe extern "system" fn(this: *mut *mut Self, uptime: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetDumpFormatFlags: unsafe extern "system" fn(this: *mut *mut Self, formatflags: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetNumberTextReplacements: unsafe extern "system" fn(this: *mut *mut Self, numrepl: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetTextReplacement: unsafe extern "system" fn(this: *mut *mut Self, srctext: ::windows_sys::core::PCSTR, index: u32, srcbuffer: ::windows_sys::core::PSTR, srcbuffersize: u32, srcsize: *mut u32, dstbuffer: ::windows_sys::core::PSTR, dstbuffersize: u32, dstsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetTextReplacement: unsafe extern "system" fn(this: *mut *mut Self, srctext: ::windows_sys::core::PCSTR, dsttext: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub RemoveTextReplacements: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub OutputTextReplacements: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetAssemblyOptions: unsafe extern "system" fn(this: *mut *mut Self, options: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub AddAssemblyOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub RemoveAssemblyOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub SetAssemblyOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub GetExpressionSyntax: unsafe extern "system" fn(this: *mut *mut Self, flags: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetExpressionSyntax: unsafe extern "system" fn(this: *mut *mut Self, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub SetExpressionSyntaxByName: unsafe extern "system" fn(this: *mut *mut Self, abbrevname: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetNumberExpressionSyntaxes: unsafe extern "system" fn(this: *mut *mut Self, number: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetExpressionSyntaxNames: unsafe extern "system" fn(this: *mut *mut Self, index: u32, fullnamebuffer: ::windows_sys::core::PSTR, fullnamebuffersize: u32, fullnamesize: *mut u32, abbrevnamebuffer: ::windows_sys::core::PSTR, abbrevnamebuffersize: u32, abbrevnamesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetNumberEvents: unsafe extern "system" fn(this: *mut *mut Self, events: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetEventIndexDescription: unsafe extern "system" fn(this: *mut *mut Self, index: u32, which: u32, buffer: ::windows_sys::core::PCSTR, buffersize: u32, descsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentEventIndex: unsafe extern "system" fn(this: *mut *mut Self, index: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetNextEventIndex: unsafe extern "system" fn(this: *mut *mut Self, relation: u32, value: u32, nextindex: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugControl4 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetInterrupt: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub SetInterrupt: unsafe extern "system" fn(this: *mut *mut Self, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetInterruptTimeout: unsafe extern "system" fn(this: *mut *mut Self, seconds: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetInterruptTimeout: unsafe extern "system" fn(this: *mut *mut Self, seconds: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetLogFile: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, filesize: *mut u32, append: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetLogFile: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OpenLogFile: unsafe extern "system" fn(this: *mut *mut Self, file: ::windows_sys::core::PCSTR, append: super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OpenLogFile: usize,
+    pub CloseLogFile: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetLogMask: unsafe extern "system" fn(this: *mut *mut Self, mask: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetLogMask: unsafe extern "system" fn(this: *mut *mut Self, mask: u32) -> ::windows_sys::core::HRESULT,
+    pub Input: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, inputsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub ReturnInput: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub Output: unsafe extern "system" fn(this: *mut *mut Self, mask: u32, format: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub OutputVaList: unsafe extern "system" fn(this: *mut *mut Self, mask: u32, format: ::windows_sys::core::PCSTR, args: *const i8) -> ::windows_sys::core::HRESULT,
+    pub ControlledOutput: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, mask: u32, format: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub ControlledOutputVaList: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, mask: u32, format: ::windows_sys::core::PCSTR, args: *const i8) -> ::windows_sys::core::HRESULT,
+    pub OutputPrompt: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, format: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub OutputPromptVaList: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, format: ::windows_sys::core::PCSTR, args: *const i8) -> ::windows_sys::core::HRESULT,
+    pub GetPromptText: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, textsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub OutputCurrentState: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub OutputVersionInformation: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32) -> ::windows_sys::core::HRESULT,
+    pub GetNotifyEventHandle: unsafe extern "system" fn(this: *mut *mut Self, handle: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub SetNotifyEventHandle: unsafe extern "system" fn(this: *mut *mut Self, handle: u64) -> ::windows_sys::core::HRESULT,
+    pub Assemble: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, instr: ::windows_sys::core::PCSTR, endoffset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub Disassemble: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, flags: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, disassemblysize: *mut u32, endoffset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetDisassembleEffectiveOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub OutputDisassembly: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, offset: u64, flags: u32, endoffset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub OutputDisassemblyLines: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, previouslines: u32, totallines: u32, offset: u64, flags: u32, offsetline: *mut u32, startoffset: *mut u64, endoffset: *mut u64, lineoffsets: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetNearInstruction: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, delta: i32, nearoffset: *mut u64) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetStackTrace: unsafe extern "system" fn(this: *mut *mut Self, frameoffset: u64, stackoffset: u64, instructionoffset: u64, frames: *mut DEBUG_STACK_FRAME, framessize: u32, framesfilled: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetStackTrace: usize,
+    pub GetReturnOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OutputStackTrace: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, frames: *const DEBUG_STACK_FRAME, framessize: u32, flags: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OutputStackTrace: usize,
+    pub GetDebuggeeType: unsafe extern "system" fn(this: *mut *mut Self, class: *mut u32, qualifier: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetActualProcessorType: unsafe extern "system" fn(this: *mut *mut Self, r#type: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetExecutingProcessorType: unsafe extern "system" fn(this: *mut *mut Self, r#type: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetNumberPossibleExecutingProcessorTypes: unsafe extern "system" fn(this: *mut *mut Self, number: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetPossibleExecutingProcessorTypes: unsafe extern "system" fn(this: *mut *mut Self, start: u32, count: u32, types: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetNumberProcessors: unsafe extern "system" fn(this: *mut *mut Self, number: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSystemVersion: unsafe extern "system" fn(this: *mut *mut Self, platformid: *mut u32, major: *mut u32, minor: *mut u32, servicepackstring: ::windows_sys::core::PSTR, servicepackstringsize: u32, servicepackstringused: *mut u32, servicepacknumber: *mut u32, buildstring: ::windows_sys::core::PSTR, buildstringsize: u32, buildstringused: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetPageSize: unsafe extern "system" fn(this: *mut *mut Self, size: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub IsPointer64Bit: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub ReadBugCheckData: unsafe extern "system" fn(this: *mut *mut Self, code: *mut u32, arg1: *mut u64, arg2: *mut u64, arg3: *mut u64, arg4: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetNumberSupportedProcessorTypes: unsafe extern "system" fn(this: *mut *mut Self, number: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSupportedProcessorTypes: unsafe extern "system" fn(this: *mut *mut Self, start: u32, count: u32, types: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetProcessorTypeNames: unsafe extern "system" fn(this: *mut *mut Self, r#type: u32, fullnamebuffer: ::windows_sys::core::PSTR, fullnamebuffersize: u32, fullnamesize: *mut u32, abbrevnamebuffer: ::windows_sys::core::PSTR, abbrevnamebuffersize: u32, abbrevnamesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetEffectiveProcessorType: unsafe extern "system" fn(this: *mut *mut Self, r#type: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetEffectiveProcessorType: unsafe extern "system" fn(this: *mut *mut Self, r#type: u32) -> ::windows_sys::core::HRESULT,
+    pub GetExecutionStatus: unsafe extern "system" fn(this: *mut *mut Self, status: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetExecutionStatus: unsafe extern "system" fn(this: *mut *mut Self, status: u32) -> ::windows_sys::core::HRESULT,
+    pub GetCodeLevel: unsafe extern "system" fn(this: *mut *mut Self, level: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetCodeLevel: unsafe extern "system" fn(this: *mut *mut Self, level: u32) -> ::windows_sys::core::HRESULT,
+    pub GetEngineOptions: unsafe extern "system" fn(this: *mut *mut Self, options: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub AddEngineOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub RemoveEngineOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub SetEngineOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub GetSystemErrorControl: unsafe extern "system" fn(this: *mut *mut Self, outputlevel: *mut u32, breaklevel: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetSystemErrorControl: unsafe extern "system" fn(this: *mut *mut Self, outputlevel: u32, breaklevel: u32) -> ::windows_sys::core::HRESULT,
+    pub GetTextMacro: unsafe extern "system" fn(this: *mut *mut Self, slot: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, macrosize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetTextMacro: unsafe extern "system" fn(this: *mut *mut Self, slot: u32, r#macro: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetRadix: unsafe extern "system" fn(this: *mut *mut Self, radix: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetRadix: unsafe extern "system" fn(this: *mut *mut Self, radix: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Evaluate: unsafe extern "system" fn(this: *mut *mut Self, expression: ::windows_sys::core::PCSTR, desiredtype: u32, value: *mut DEBUG_VALUE, remainderindex: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Evaluate: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CoerceValue: unsafe extern "system" fn(this: *mut *mut Self, r#in: *const DEBUG_VALUE, outtype: u32, out: *mut DEBUG_VALUE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CoerceValue: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CoerceValues: unsafe extern "system" fn(this: *mut *mut Self, count: u32, r#in: *const DEBUG_VALUE, outtypes: *const u32, out: *mut DEBUG_VALUE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CoerceValues: usize,
+    pub Execute: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, command: ::windows_sys::core::PCSTR, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub ExecuteCommandFile: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, commandfile: ::windows_sys::core::PCSTR, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetNumberBreakpoints: unsafe extern "system" fn(this: *mut *mut Self, number: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetBreakpointByIndex: unsafe extern "system" fn(this: *mut *mut Self, index: u32, bp: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetBreakpointById: unsafe extern "system" fn(this: *mut *mut Self, id: u32, bp: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetBreakpointParameters: unsafe extern "system" fn(this: *mut *mut Self, count: u32, ids: *const u32, start: u32, params: *mut DEBUG_BREAKPOINT_PARAMETERS) -> ::windows_sys::core::HRESULT,
+    pub AddBreakpoint: unsafe extern "system" fn(this: *mut *mut Self, r#type: u32, desiredid: u32, bp: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RemoveBreakpoint: unsafe extern "system" fn(this: *mut *mut Self, bp: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AddExtension: unsafe extern "system" fn(this: *mut *mut Self, path: ::windows_sys::core::PCSTR, flags: u32, handle: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub RemoveExtension: unsafe extern "system" fn(this: *mut *mut Self, handle: u64) -> ::windows_sys::core::HRESULT,
+    pub GetExtensionByPath: unsafe extern "system" fn(this: *mut *mut Self, path: ::windows_sys::core::PCSTR, handle: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub CallExtension: unsafe extern "system" fn(this: *mut *mut Self, handle: u64, function: ::windows_sys::core::PCSTR, arguments: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetExtensionFunction: unsafe extern "system" fn(this: *mut *mut Self, handle: u64, funcname: ::windows_sys::core::PCSTR, function: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetExtensionFunction: usize,
+    #[cfg(feature = "Win32_System_Kernel")]
+    pub GetWindbgExtensionApis32: unsafe extern "system" fn(this: *mut *mut Self, api: *mut WINDBG_EXTENSION_APIS32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Kernel"))]
+    GetWindbgExtensionApis32: usize,
+    #[cfg(feature = "Win32_System_Kernel")]
+    pub GetWindbgExtensionApis64: unsafe extern "system" fn(this: *mut *mut Self, api: *mut WINDBG_EXTENSION_APIS64) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Kernel"))]
+    GetWindbgExtensionApis64: usize,
+    pub GetNumberEventFilters: unsafe extern "system" fn(this: *mut *mut Self, specificevents: *mut u32, specificexceptions: *mut u32, arbitraryexceptions: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetEventFilterText: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, textsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetEventFilterCommand: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, commandsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetEventFilterCommand: unsafe extern "system" fn(this: *mut *mut Self, index: u32, command: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetSpecificFilterParameters: unsafe extern "system" fn(this: *mut *mut Self, start: u32, count: u32, params: *mut DEBUG_SPECIFIC_FILTER_PARAMETERS) -> ::windows_sys::core::HRESULT,
+    pub SetSpecificFilterParameters: unsafe extern "system" fn(this: *mut *mut Self, start: u32, count: u32, params: *const DEBUG_SPECIFIC_FILTER_PARAMETERS) -> ::windows_sys::core::HRESULT,
+    pub GetSpecificFilterArgument: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, argumentsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetSpecificFilterArgument: unsafe extern "system" fn(this: *mut *mut Self, index: u32, argument: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetExceptionFilterParameters: unsafe extern "system" fn(this: *mut *mut Self, count: u32, codes: *const u32, start: u32, params: *mut DEBUG_EXCEPTION_FILTER_PARAMETERS) -> ::windows_sys::core::HRESULT,
+    pub SetExceptionFilterParameters: unsafe extern "system" fn(this: *mut *mut Self, count: u32, params: *const DEBUG_EXCEPTION_FILTER_PARAMETERS) -> ::windows_sys::core::HRESULT,
+    pub GetExceptionFilterSecondCommand: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, commandsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetExceptionFilterSecondCommand: unsafe extern "system" fn(this: *mut *mut Self, index: u32, command: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub WaitForEvent: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, timeout: u32) -> ::windows_sys::core::HRESULT,
+    pub GetLastEventInformation: unsafe extern "system" fn(this: *mut *mut Self, r#type: *mut u32, processid: *mut u32, threadid: *mut u32, extrainformation: *mut ::core::ffi::c_void, extrainformationsize: u32, extrainformationused: *mut u32, description: ::windows_sys::core::PSTR, descriptionsize: u32, descriptionused: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentTimeDate: unsafe extern "system" fn(this: *mut *mut Self, timedate: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentSystemUpTime: unsafe extern "system" fn(this: *mut *mut Self, uptime: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetDumpFormatFlags: unsafe extern "system" fn(this: *mut *mut Self, formatflags: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetNumberTextReplacements: unsafe extern "system" fn(this: *mut *mut Self, numrepl: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetTextReplacement: unsafe extern "system" fn(this: *mut *mut Self, srctext: ::windows_sys::core::PCSTR, index: u32, srcbuffer: ::windows_sys::core::PSTR, srcbuffersize: u32, srcsize: *mut u32, dstbuffer: ::windows_sys::core::PSTR, dstbuffersize: u32, dstsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetTextReplacement: unsafe extern "system" fn(this: *mut *mut Self, srctext: ::windows_sys::core::PCSTR, dsttext: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub RemoveTextReplacements: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub OutputTextReplacements: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetAssemblyOptions: unsafe extern "system" fn(this: *mut *mut Self, options: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub AddAssemblyOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub RemoveAssemblyOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub SetAssemblyOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub GetExpressionSyntax: unsafe extern "system" fn(this: *mut *mut Self, flags: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetExpressionSyntax: unsafe extern "system" fn(this: *mut *mut Self, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub SetExpressionSyntaxByName: unsafe extern "system" fn(this: *mut *mut Self, abbrevname: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetNumberExpressionSyntaxes: unsafe extern "system" fn(this: *mut *mut Self, number: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetExpressionSyntaxNames: unsafe extern "system" fn(this: *mut *mut Self, index: u32, fullnamebuffer: ::windows_sys::core::PSTR, fullnamebuffersize: u32, fullnamesize: *mut u32, abbrevnamebuffer: ::windows_sys::core::PSTR, abbrevnamebuffersize: u32, abbrevnamesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetNumberEvents: unsafe extern "system" fn(this: *mut *mut Self, events: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetEventIndexDescription: unsafe extern "system" fn(this: *mut *mut Self, index: u32, which: u32, buffer: ::windows_sys::core::PCSTR, buffersize: u32, descsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentEventIndex: unsafe extern "system" fn(this: *mut *mut Self, index: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetNextEventIndex: unsafe extern "system" fn(this: *mut *mut Self, relation: u32, value: u32, nextindex: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetLogFileWide: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PWSTR, buffersize: u32, filesize: *mut u32, append: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetLogFileWide: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OpenLogFileWide: unsafe extern "system" fn(this: *mut *mut Self, file: ::windows_sys::core::PCWSTR, append: super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OpenLogFileWide: usize,
+    pub InputWide: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PWSTR, buffersize: u32, inputsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub ReturnInputWide: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub OutputWide: unsafe extern "system" fn(this: *mut *mut Self, mask: u32, format: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub OutputVaListWide: unsafe extern "system" fn(this: *mut *mut Self, mask: u32, format: ::windows_sys::core::PCWSTR, args: *const i8) -> ::windows_sys::core::HRESULT,
+    pub ControlledOutputWide: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, mask: u32, format: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub ControlledOutputVaListWide: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, mask: u32, format: ::windows_sys::core::PCWSTR, args: *const i8) -> ::windows_sys::core::HRESULT,
+    pub OutputPromptWide: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, format: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub OutputPromptVaListWide: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, format: ::windows_sys::core::PCWSTR, args: *const i8) -> ::windows_sys::core::HRESULT,
+    pub GetPromptTextWide: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PWSTR, buffersize: u32, textsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub AssembleWide: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, instr: ::windows_sys::core::PCWSTR, endoffset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub DisassembleWide: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, flags: u32, buffer: ::windows_sys::core::PWSTR, buffersize: u32, disassemblysize: *mut u32, endoffset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetProcessorTypeNamesWide: unsafe extern "system" fn(this: *mut *mut Self, r#type: u32, fullnamebuffer: ::windows_sys::core::PWSTR, fullnamebuffersize: u32, fullnamesize: *mut u32, abbrevnamebuffer: ::windows_sys::core::PWSTR, abbrevnamebuffersize: u32, abbrevnamesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetTextMacroWide: unsafe extern "system" fn(this: *mut *mut Self, slot: u32, buffer: ::windows_sys::core::PWSTR, buffersize: u32, macrosize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetTextMacroWide: unsafe extern "system" fn(this: *mut *mut Self, slot: u32, r#macro: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub EvaluateWide: unsafe extern "system" fn(this: *mut *mut Self, expression: ::windows_sys::core::PCWSTR, desiredtype: u32, value: *mut DEBUG_VALUE, remainderindex: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    EvaluateWide: usize,
+    pub ExecuteWide: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, command: ::windows_sys::core::PCWSTR, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub ExecuteCommandFileWide: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, commandfile: ::windows_sys::core::PCWSTR, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetBreakpointByIndex2: unsafe extern "system" fn(this: *mut *mut Self, index: u32, bp: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetBreakpointById2: unsafe extern "system" fn(this: *mut *mut Self, id: u32, bp: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AddBreakpoint2: unsafe extern "system" fn(this: *mut *mut Self, r#type: u32, desiredid: u32, bp: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RemoveBreakpoint2: unsafe extern "system" fn(this: *mut *mut Self, bp: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AddExtensionWide: unsafe extern "system" fn(this: *mut *mut Self, path: ::windows_sys::core::PCWSTR, flags: u32, handle: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetExtensionByPathWide: unsafe extern "system" fn(this: *mut *mut Self, path: ::windows_sys::core::PCWSTR, handle: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub CallExtensionWide: unsafe extern "system" fn(this: *mut *mut Self, handle: u64, function: ::windows_sys::core::PCWSTR, arguments: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetExtensionFunctionWide: unsafe extern "system" fn(this: *mut *mut Self, handle: u64, funcname: ::windows_sys::core::PCWSTR, function: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetExtensionFunctionWide: usize,
+    pub GetEventFilterTextWide: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PWSTR, buffersize: u32, textsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetEventFilterCommandWide: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PWSTR, buffersize: u32, commandsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetEventFilterCommandWide: unsafe extern "system" fn(this: *mut *mut Self, index: u32, command: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetSpecificFilterArgumentWide: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PWSTR, buffersize: u32, argumentsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetSpecificFilterArgumentWide: unsafe extern "system" fn(this: *mut *mut Self, index: u32, argument: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetExceptionFilterSecondCommandWide: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PWSTR, buffersize: u32, commandsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetExceptionFilterSecondCommandWide: unsafe extern "system" fn(this: *mut *mut Self, index: u32, command: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetLastEventInformationWide: unsafe extern "system" fn(this: *mut *mut Self, r#type: *mut u32, processid: *mut u32, threadid: *mut u32, extrainformation: *mut ::core::ffi::c_void, extrainformationsize: u32, extrainformationused: *mut u32, description: ::windows_sys::core::PWSTR, descriptionsize: u32, descriptionused: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetTextReplacementWide: unsafe extern "system" fn(this: *mut *mut Self, srctext: ::windows_sys::core::PCWSTR, index: u32, srcbuffer: ::windows_sys::core::PWSTR, srcbuffersize: u32, srcsize: *mut u32, dstbuffer: ::windows_sys::core::PWSTR, dstbuffersize: u32, dstsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetTextReplacementWide: unsafe extern "system" fn(this: *mut *mut Self, srctext: ::windows_sys::core::PCWSTR, dsttext: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetExpressionSyntaxByNameWide: unsafe extern "system" fn(this: *mut *mut Self, abbrevname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetExpressionSyntaxNamesWide: unsafe extern "system" fn(this: *mut *mut Self, index: u32, fullnamebuffer: ::windows_sys::core::PWSTR, fullnamebuffersize: u32, fullnamesize: *mut u32, abbrevnamebuffer: ::windows_sys::core::PWSTR, abbrevnamebuffersize: u32, abbrevnamesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetEventIndexDescriptionWide: unsafe extern "system" fn(this: *mut *mut Self, index: u32, which: u32, buffer: ::windows_sys::core::PCWSTR, buffersize: u32, descsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetLogFile2: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, filesize: *mut u32, flags: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub OpenLogFile2: unsafe extern "system" fn(this: *mut *mut Self, file: ::windows_sys::core::PCSTR, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetLogFile2Wide: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PWSTR, buffersize: u32, filesize: *mut u32, flags: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub OpenLogFile2Wide: unsafe extern "system" fn(this: *mut *mut Self, file: ::windows_sys::core::PCWSTR, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetSystemVersionValues: unsafe extern "system" fn(this: *mut *mut Self, platformid: *mut u32, win32major: *mut u32, win32minor: *mut u32, kdmajor: *mut u32, kdminor: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSystemVersionString: unsafe extern "system" fn(this: *mut *mut Self, which: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, stringsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSystemVersionStringWide: unsafe extern "system" fn(this: *mut *mut Self, which: u32, buffer: ::windows_sys::core::PWSTR, buffersize: u32, stringsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetContextStackTrace: unsafe extern "system" fn(this: *mut *mut Self, startcontext: *const ::core::ffi::c_void, startcontextsize: u32, frames: *mut DEBUG_STACK_FRAME, framessize: u32, framecontexts: *mut ::core::ffi::c_void, framecontextssize: u32, framecontextsentrysize: u32, framesfilled: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetContextStackTrace: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OutputContextStackTrace: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, frames: *const DEBUG_STACK_FRAME, framessize: u32, framecontexts: *const ::core::ffi::c_void, framecontextssize: u32, framecontextsentrysize: u32, flags: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OutputContextStackTrace: usize,
+    pub GetStoredEventInformation: unsafe extern "system" fn(this: *mut *mut Self, r#type: *mut u32, processid: *mut u32, threadid: *mut u32, context: *mut ::core::ffi::c_void, contextsize: u32, contextused: *mut u32, extrainformation: *mut ::core::ffi::c_void, extrainformationsize: u32, extrainformationused: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetManagedStatus: unsafe extern "system" fn(this: *mut *mut Self, flags: *mut u32, whichstring: u32, string: ::windows_sys::core::PSTR, stringsize: u32, stringneeded: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetManagedStatusWide: unsafe extern "system" fn(this: *mut *mut Self, flags: *mut u32, whichstring: u32, string: ::windows_sys::core::PWSTR, stringsize: u32, stringneeded: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub ResetManagedStatus: unsafe extern "system" fn(this: *mut *mut Self, flags: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugControl5 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetInterrupt: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub SetInterrupt: unsafe extern "system" fn(this: *mut *mut Self, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetInterruptTimeout: unsafe extern "system" fn(this: *mut *mut Self, seconds: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetInterruptTimeout: unsafe extern "system" fn(this: *mut *mut Self, seconds: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetLogFile: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, filesize: *mut u32, append: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetLogFile: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OpenLogFile: unsafe extern "system" fn(this: *mut *mut Self, file: ::windows_sys::core::PCSTR, append: super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OpenLogFile: usize,
+    pub CloseLogFile: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetLogMask: unsafe extern "system" fn(this: *mut *mut Self, mask: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetLogMask: unsafe extern "system" fn(this: *mut *mut Self, mask: u32) -> ::windows_sys::core::HRESULT,
+    pub Input: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, inputsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub ReturnInput: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub Output: unsafe extern "system" fn(this: *mut *mut Self, mask: u32, format: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub OutputVaList: unsafe extern "system" fn(this: *mut *mut Self, mask: u32, format: ::windows_sys::core::PCSTR, args: *const i8) -> ::windows_sys::core::HRESULT,
+    pub ControlledOutput: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, mask: u32, format: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub ControlledOutputVaList: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, mask: u32, format: ::windows_sys::core::PCSTR, args: *const i8) -> ::windows_sys::core::HRESULT,
+    pub OutputPrompt: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, format: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub OutputPromptVaList: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, format: ::windows_sys::core::PCSTR, args: *const i8) -> ::windows_sys::core::HRESULT,
+    pub GetPromptText: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, textsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub OutputCurrentState: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub OutputVersionInformation: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32) -> ::windows_sys::core::HRESULT,
+    pub GetNotifyEventHandle: unsafe extern "system" fn(this: *mut *mut Self, handle: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub SetNotifyEventHandle: unsafe extern "system" fn(this: *mut *mut Self, handle: u64) -> ::windows_sys::core::HRESULT,
+    pub Assemble: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, instr: ::windows_sys::core::PCSTR, endoffset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub Disassemble: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, flags: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, disassemblysize: *mut u32, endoffset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetDisassembleEffectiveOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub OutputDisassembly: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, offset: u64, flags: u32, endoffset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub OutputDisassemblyLines: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, previouslines: u32, totallines: u32, offset: u64, flags: u32, offsetline: *mut u32, startoffset: *mut u64, endoffset: *mut u64, lineoffsets: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetNearInstruction: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, delta: i32, nearoffset: *mut u64) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetStackTrace: unsafe extern "system" fn(this: *mut *mut Self, frameoffset: u64, stackoffset: u64, instructionoffset: u64, frames: *mut DEBUG_STACK_FRAME, framessize: u32, framesfilled: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetStackTrace: usize,
+    pub GetReturnOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OutputStackTrace: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, frames: *const DEBUG_STACK_FRAME, framessize: u32, flags: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OutputStackTrace: usize,
+    pub GetDebuggeeType: unsafe extern "system" fn(this: *mut *mut Self, class: *mut u32, qualifier: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetActualProcessorType: unsafe extern "system" fn(this: *mut *mut Self, r#type: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetExecutingProcessorType: unsafe extern "system" fn(this: *mut *mut Self, r#type: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetNumberPossibleExecutingProcessorTypes: unsafe extern "system" fn(this: *mut *mut Self, number: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetPossibleExecutingProcessorTypes: unsafe extern "system" fn(this: *mut *mut Self, start: u32, count: u32, types: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetNumberProcessors: unsafe extern "system" fn(this: *mut *mut Self, number: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSystemVersion: unsafe extern "system" fn(this: *mut *mut Self, platformid: *mut u32, major: *mut u32, minor: *mut u32, servicepackstring: ::windows_sys::core::PSTR, servicepackstringsize: u32, servicepackstringused: *mut u32, servicepacknumber: *mut u32, buildstring: ::windows_sys::core::PSTR, buildstringsize: u32, buildstringused: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetPageSize: unsafe extern "system" fn(this: *mut *mut Self, size: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub IsPointer64Bit: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub ReadBugCheckData: unsafe extern "system" fn(this: *mut *mut Self, code: *mut u32, arg1: *mut u64, arg2: *mut u64, arg3: *mut u64, arg4: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetNumberSupportedProcessorTypes: unsafe extern "system" fn(this: *mut *mut Self, number: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSupportedProcessorTypes: unsafe extern "system" fn(this: *mut *mut Self, start: u32, count: u32, types: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetProcessorTypeNames: unsafe extern "system" fn(this: *mut *mut Self, r#type: u32, fullnamebuffer: ::windows_sys::core::PSTR, fullnamebuffersize: u32, fullnamesize: *mut u32, abbrevnamebuffer: ::windows_sys::core::PSTR, abbrevnamebuffersize: u32, abbrevnamesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetEffectiveProcessorType: unsafe extern "system" fn(this: *mut *mut Self, r#type: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetEffectiveProcessorType: unsafe extern "system" fn(this: *mut *mut Self, r#type: u32) -> ::windows_sys::core::HRESULT,
+    pub GetExecutionStatus: unsafe extern "system" fn(this: *mut *mut Self, status: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetExecutionStatus: unsafe extern "system" fn(this: *mut *mut Self, status: u32) -> ::windows_sys::core::HRESULT,
+    pub GetCodeLevel: unsafe extern "system" fn(this: *mut *mut Self, level: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetCodeLevel: unsafe extern "system" fn(this: *mut *mut Self, level: u32) -> ::windows_sys::core::HRESULT,
+    pub GetEngineOptions: unsafe extern "system" fn(this: *mut *mut Self, options: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub AddEngineOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub RemoveEngineOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub SetEngineOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub GetSystemErrorControl: unsafe extern "system" fn(this: *mut *mut Self, outputlevel: *mut u32, breaklevel: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetSystemErrorControl: unsafe extern "system" fn(this: *mut *mut Self, outputlevel: u32, breaklevel: u32) -> ::windows_sys::core::HRESULT,
+    pub GetTextMacro: unsafe extern "system" fn(this: *mut *mut Self, slot: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, macrosize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetTextMacro: unsafe extern "system" fn(this: *mut *mut Self, slot: u32, r#macro: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetRadix: unsafe extern "system" fn(this: *mut *mut Self, radix: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetRadix: unsafe extern "system" fn(this: *mut *mut Self, radix: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Evaluate: unsafe extern "system" fn(this: *mut *mut Self, expression: ::windows_sys::core::PCSTR, desiredtype: u32, value: *mut DEBUG_VALUE, remainderindex: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Evaluate: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CoerceValue: unsafe extern "system" fn(this: *mut *mut Self, r#in: *const DEBUG_VALUE, outtype: u32, out: *mut DEBUG_VALUE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CoerceValue: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CoerceValues: unsafe extern "system" fn(this: *mut *mut Self, count: u32, r#in: *const DEBUG_VALUE, outtypes: *const u32, out: *mut DEBUG_VALUE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CoerceValues: usize,
+    pub Execute: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, command: ::windows_sys::core::PCSTR, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub ExecuteCommandFile: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, commandfile: ::windows_sys::core::PCSTR, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetNumberBreakpoints: unsafe extern "system" fn(this: *mut *mut Self, number: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetBreakpointByIndex: unsafe extern "system" fn(this: *mut *mut Self, index: u32, bp: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetBreakpointById: unsafe extern "system" fn(this: *mut *mut Self, id: u32, bp: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetBreakpointParameters: unsafe extern "system" fn(this: *mut *mut Self, count: u32, ids: *const u32, start: u32, params: *mut DEBUG_BREAKPOINT_PARAMETERS) -> ::windows_sys::core::HRESULT,
+    pub AddBreakpoint: unsafe extern "system" fn(this: *mut *mut Self, r#type: u32, desiredid: u32, bp: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RemoveBreakpoint: unsafe extern "system" fn(this: *mut *mut Self, bp: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AddExtension: unsafe extern "system" fn(this: *mut *mut Self, path: ::windows_sys::core::PCSTR, flags: u32, handle: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub RemoveExtension: unsafe extern "system" fn(this: *mut *mut Self, handle: u64) -> ::windows_sys::core::HRESULT,
+    pub GetExtensionByPath: unsafe extern "system" fn(this: *mut *mut Self, path: ::windows_sys::core::PCSTR, handle: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub CallExtension: unsafe extern "system" fn(this: *mut *mut Self, handle: u64, function: ::windows_sys::core::PCSTR, arguments: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetExtensionFunction: unsafe extern "system" fn(this: *mut *mut Self, handle: u64, funcname: ::windows_sys::core::PCSTR, function: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetExtensionFunction: usize,
+    #[cfg(feature = "Win32_System_Kernel")]
+    pub GetWindbgExtensionApis32: unsafe extern "system" fn(this: *mut *mut Self, api: *mut WINDBG_EXTENSION_APIS32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Kernel"))]
+    GetWindbgExtensionApis32: usize,
+    #[cfg(feature = "Win32_System_Kernel")]
+    pub GetWindbgExtensionApis64: unsafe extern "system" fn(this: *mut *mut Self, api: *mut WINDBG_EXTENSION_APIS64) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Kernel"))]
+    GetWindbgExtensionApis64: usize,
+    pub GetNumberEventFilters: unsafe extern "system" fn(this: *mut *mut Self, specificevents: *mut u32, specificexceptions: *mut u32, arbitraryexceptions: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetEventFilterText: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, textsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetEventFilterCommand: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, commandsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetEventFilterCommand: unsafe extern "system" fn(this: *mut *mut Self, index: u32, command: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetSpecificFilterParameters: unsafe extern "system" fn(this: *mut *mut Self, start: u32, count: u32, params: *mut DEBUG_SPECIFIC_FILTER_PARAMETERS) -> ::windows_sys::core::HRESULT,
+    pub SetSpecificFilterParameters: unsafe extern "system" fn(this: *mut *mut Self, start: u32, count: u32, params: *const DEBUG_SPECIFIC_FILTER_PARAMETERS) -> ::windows_sys::core::HRESULT,
+    pub GetSpecificFilterArgument: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, argumentsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetSpecificFilterArgument: unsafe extern "system" fn(this: *mut *mut Self, index: u32, argument: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetExceptionFilterParameters: unsafe extern "system" fn(this: *mut *mut Self, count: u32, codes: *const u32, start: u32, params: *mut DEBUG_EXCEPTION_FILTER_PARAMETERS) -> ::windows_sys::core::HRESULT,
+    pub SetExceptionFilterParameters: unsafe extern "system" fn(this: *mut *mut Self, count: u32, params: *const DEBUG_EXCEPTION_FILTER_PARAMETERS) -> ::windows_sys::core::HRESULT,
+    pub GetExceptionFilterSecondCommand: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, commandsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetExceptionFilterSecondCommand: unsafe extern "system" fn(this: *mut *mut Self, index: u32, command: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub WaitForEvent: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, timeout: u32) -> ::windows_sys::core::HRESULT,
+    pub GetLastEventInformation: unsafe extern "system" fn(this: *mut *mut Self, r#type: *mut u32, processid: *mut u32, threadid: *mut u32, extrainformation: *mut ::core::ffi::c_void, extrainformationsize: u32, extrainformationused: *mut u32, description: ::windows_sys::core::PSTR, descriptionsize: u32, descriptionused: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentTimeDate: unsafe extern "system" fn(this: *mut *mut Self, timedate: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentSystemUpTime: unsafe extern "system" fn(this: *mut *mut Self, uptime: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetDumpFormatFlags: unsafe extern "system" fn(this: *mut *mut Self, formatflags: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetNumberTextReplacements: unsafe extern "system" fn(this: *mut *mut Self, numrepl: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetTextReplacement: unsafe extern "system" fn(this: *mut *mut Self, srctext: ::windows_sys::core::PCSTR, index: u32, srcbuffer: ::windows_sys::core::PSTR, srcbuffersize: u32, srcsize: *mut u32, dstbuffer: ::windows_sys::core::PSTR, dstbuffersize: u32, dstsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetTextReplacement: unsafe extern "system" fn(this: *mut *mut Self, srctext: ::windows_sys::core::PCSTR, dsttext: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub RemoveTextReplacements: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub OutputTextReplacements: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetAssemblyOptions: unsafe extern "system" fn(this: *mut *mut Self, options: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub AddAssemblyOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub RemoveAssemblyOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub SetAssemblyOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub GetExpressionSyntax: unsafe extern "system" fn(this: *mut *mut Self, flags: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetExpressionSyntax: unsafe extern "system" fn(this: *mut *mut Self, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub SetExpressionSyntaxByName: unsafe extern "system" fn(this: *mut *mut Self, abbrevname: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetNumberExpressionSyntaxes: unsafe extern "system" fn(this: *mut *mut Self, number: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetExpressionSyntaxNames: unsafe extern "system" fn(this: *mut *mut Self, index: u32, fullnamebuffer: ::windows_sys::core::PSTR, fullnamebuffersize: u32, fullnamesize: *mut u32, abbrevnamebuffer: ::windows_sys::core::PSTR, abbrevnamebuffersize: u32, abbrevnamesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetNumberEvents: unsafe extern "system" fn(this: *mut *mut Self, events: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetEventIndexDescription: unsafe extern "system" fn(this: *mut *mut Self, index: u32, which: u32, buffer: ::windows_sys::core::PCSTR, buffersize: u32, descsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentEventIndex: unsafe extern "system" fn(this: *mut *mut Self, index: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetNextEventIndex: unsafe extern "system" fn(this: *mut *mut Self, relation: u32, value: u32, nextindex: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetLogFileWide: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PWSTR, buffersize: u32, filesize: *mut u32, append: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetLogFileWide: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OpenLogFileWide: unsafe extern "system" fn(this: *mut *mut Self, file: ::windows_sys::core::PCWSTR, append: super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OpenLogFileWide: usize,
+    pub InputWide: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PWSTR, buffersize: u32, inputsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub ReturnInputWide: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub OutputWide: unsafe extern "system" fn(this: *mut *mut Self, mask: u32, format: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub OutputVaListWide: unsafe extern "system" fn(this: *mut *mut Self, mask: u32, format: ::windows_sys::core::PCWSTR, args: *const i8) -> ::windows_sys::core::HRESULT,
+    pub ControlledOutputWide: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, mask: u32, format: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub ControlledOutputVaListWide: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, mask: u32, format: ::windows_sys::core::PCWSTR, args: *const i8) -> ::windows_sys::core::HRESULT,
+    pub OutputPromptWide: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, format: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub OutputPromptVaListWide: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, format: ::windows_sys::core::PCWSTR, args: *const i8) -> ::windows_sys::core::HRESULT,
+    pub GetPromptTextWide: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PWSTR, buffersize: u32, textsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub AssembleWide: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, instr: ::windows_sys::core::PCWSTR, endoffset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub DisassembleWide: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, flags: u32, buffer: ::windows_sys::core::PWSTR, buffersize: u32, disassemblysize: *mut u32, endoffset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetProcessorTypeNamesWide: unsafe extern "system" fn(this: *mut *mut Self, r#type: u32, fullnamebuffer: ::windows_sys::core::PWSTR, fullnamebuffersize: u32, fullnamesize: *mut u32, abbrevnamebuffer: ::windows_sys::core::PWSTR, abbrevnamebuffersize: u32, abbrevnamesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetTextMacroWide: unsafe extern "system" fn(this: *mut *mut Self, slot: u32, buffer: ::windows_sys::core::PWSTR, buffersize: u32, macrosize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetTextMacroWide: unsafe extern "system" fn(this: *mut *mut Self, slot: u32, r#macro: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub EvaluateWide: unsafe extern "system" fn(this: *mut *mut Self, expression: ::windows_sys::core::PCWSTR, desiredtype: u32, value: *mut DEBUG_VALUE, remainderindex: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    EvaluateWide: usize,
+    pub ExecuteWide: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, command: ::windows_sys::core::PCWSTR, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub ExecuteCommandFileWide: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, commandfile: ::windows_sys::core::PCWSTR, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetBreakpointByIndex2: unsafe extern "system" fn(this: *mut *mut Self, index: u32, bp: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetBreakpointById2: unsafe extern "system" fn(this: *mut *mut Self, id: u32, bp: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AddBreakpoint2: unsafe extern "system" fn(this: *mut *mut Self, r#type: u32, desiredid: u32, bp: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RemoveBreakpoint2: unsafe extern "system" fn(this: *mut *mut Self, bp: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AddExtensionWide: unsafe extern "system" fn(this: *mut *mut Self, path: ::windows_sys::core::PCWSTR, flags: u32, handle: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetExtensionByPathWide: unsafe extern "system" fn(this: *mut *mut Self, path: ::windows_sys::core::PCWSTR, handle: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub CallExtensionWide: unsafe extern "system" fn(this: *mut *mut Self, handle: u64, function: ::windows_sys::core::PCWSTR, arguments: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetExtensionFunctionWide: unsafe extern "system" fn(this: *mut *mut Self, handle: u64, funcname: ::windows_sys::core::PCWSTR, function: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetExtensionFunctionWide: usize,
+    pub GetEventFilterTextWide: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PWSTR, buffersize: u32, textsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetEventFilterCommandWide: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PWSTR, buffersize: u32, commandsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetEventFilterCommandWide: unsafe extern "system" fn(this: *mut *mut Self, index: u32, command: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetSpecificFilterArgumentWide: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PWSTR, buffersize: u32, argumentsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetSpecificFilterArgumentWide: unsafe extern "system" fn(this: *mut *mut Self, index: u32, argument: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetExceptionFilterSecondCommandWide: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PWSTR, buffersize: u32, commandsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetExceptionFilterSecondCommandWide: unsafe extern "system" fn(this: *mut *mut Self, index: u32, command: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetLastEventInformationWide: unsafe extern "system" fn(this: *mut *mut Self, r#type: *mut u32, processid: *mut u32, threadid: *mut u32, extrainformation: *mut ::core::ffi::c_void, extrainformationsize: u32, extrainformationused: *mut u32, description: ::windows_sys::core::PWSTR, descriptionsize: u32, descriptionused: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetTextReplacementWide: unsafe extern "system" fn(this: *mut *mut Self, srctext: ::windows_sys::core::PCWSTR, index: u32, srcbuffer: ::windows_sys::core::PWSTR, srcbuffersize: u32, srcsize: *mut u32, dstbuffer: ::windows_sys::core::PWSTR, dstbuffersize: u32, dstsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetTextReplacementWide: unsafe extern "system" fn(this: *mut *mut Self, srctext: ::windows_sys::core::PCWSTR, dsttext: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetExpressionSyntaxByNameWide: unsafe extern "system" fn(this: *mut *mut Self, abbrevname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetExpressionSyntaxNamesWide: unsafe extern "system" fn(this: *mut *mut Self, index: u32, fullnamebuffer: ::windows_sys::core::PWSTR, fullnamebuffersize: u32, fullnamesize: *mut u32, abbrevnamebuffer: ::windows_sys::core::PWSTR, abbrevnamebuffersize: u32, abbrevnamesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetEventIndexDescriptionWide: unsafe extern "system" fn(this: *mut *mut Self, index: u32, which: u32, buffer: ::windows_sys::core::PCWSTR, buffersize: u32, descsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetLogFile2: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, filesize: *mut u32, flags: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub OpenLogFile2: unsafe extern "system" fn(this: *mut *mut Self, file: ::windows_sys::core::PCSTR, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetLogFile2Wide: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PWSTR, buffersize: u32, filesize: *mut u32, flags: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub OpenLogFile2Wide: unsafe extern "system" fn(this: *mut *mut Self, file: ::windows_sys::core::PCWSTR, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetSystemVersionValues: unsafe extern "system" fn(this: *mut *mut Self, platformid: *mut u32, win32major: *mut u32, win32minor: *mut u32, kdmajor: *mut u32, kdminor: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSystemVersionString: unsafe extern "system" fn(this: *mut *mut Self, which: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, stringsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSystemVersionStringWide: unsafe extern "system" fn(this: *mut *mut Self, which: u32, buffer: ::windows_sys::core::PWSTR, buffersize: u32, stringsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetContextStackTrace: unsafe extern "system" fn(this: *mut *mut Self, startcontext: *const ::core::ffi::c_void, startcontextsize: u32, frames: *mut DEBUG_STACK_FRAME, framessize: u32, framecontexts: *mut ::core::ffi::c_void, framecontextssize: u32, framecontextsentrysize: u32, framesfilled: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetContextStackTrace: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OutputContextStackTrace: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, frames: *const DEBUG_STACK_FRAME, framessize: u32, framecontexts: *const ::core::ffi::c_void, framecontextssize: u32, framecontextsentrysize: u32, flags: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OutputContextStackTrace: usize,
+    pub GetStoredEventInformation: unsafe extern "system" fn(this: *mut *mut Self, r#type: *mut u32, processid: *mut u32, threadid: *mut u32, context: *mut ::core::ffi::c_void, contextsize: u32, contextused: *mut u32, extrainformation: *mut ::core::ffi::c_void, extrainformationsize: u32, extrainformationused: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetManagedStatus: unsafe extern "system" fn(this: *mut *mut Self, flags: *mut u32, whichstring: u32, string: ::windows_sys::core::PSTR, stringsize: u32, stringneeded: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetManagedStatusWide: unsafe extern "system" fn(this: *mut *mut Self, flags: *mut u32, whichstring: u32, string: ::windows_sys::core::PWSTR, stringsize: u32, stringneeded: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub ResetManagedStatus: unsafe extern "system" fn(this: *mut *mut Self, flags: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetStackTraceEx: unsafe extern "system" fn(this: *mut *mut Self, frameoffset: u64, stackoffset: u64, instructionoffset: u64, frames: *mut DEBUG_STACK_FRAME_EX, framessize: u32, framesfilled: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetStackTraceEx: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OutputStackTraceEx: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, frames: *const DEBUG_STACK_FRAME_EX, framessize: u32, flags: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OutputStackTraceEx: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetContextStackTraceEx: unsafe extern "system" fn(this: *mut *mut Self, startcontext: *const ::core::ffi::c_void, startcontextsize: u32, frames: *mut DEBUG_STACK_FRAME_EX, framessize: u32, framecontexts: *mut ::core::ffi::c_void, framecontextssize: u32, framecontextsentrysize: u32, framesfilled: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetContextStackTraceEx: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OutputContextStackTraceEx: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, frames: *const DEBUG_STACK_FRAME_EX, framessize: u32, framecontexts: *const ::core::ffi::c_void, framecontextssize: u32, framecontextsentrysize: u32, flags: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OutputContextStackTraceEx: usize,
+    pub GetBreakpointByGuid: unsafe extern "system" fn(this: *mut *mut Self, guid: *const ::windows_sys::core::GUID, bp: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugControl6 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetInterrupt: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub SetInterrupt: unsafe extern "system" fn(this: *mut *mut Self, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetInterruptTimeout: unsafe extern "system" fn(this: *mut *mut Self, seconds: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetInterruptTimeout: unsafe extern "system" fn(this: *mut *mut Self, seconds: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetLogFile: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, filesize: *mut u32, append: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetLogFile: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OpenLogFile: unsafe extern "system" fn(this: *mut *mut Self, file: ::windows_sys::core::PCSTR, append: super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OpenLogFile: usize,
+    pub CloseLogFile: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetLogMask: unsafe extern "system" fn(this: *mut *mut Self, mask: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetLogMask: unsafe extern "system" fn(this: *mut *mut Self, mask: u32) -> ::windows_sys::core::HRESULT,
+    pub Input: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, inputsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub ReturnInput: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub Output: unsafe extern "system" fn(this: *mut *mut Self, mask: u32, format: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub OutputVaList: unsafe extern "system" fn(this: *mut *mut Self, mask: u32, format: ::windows_sys::core::PCSTR, args: *const i8) -> ::windows_sys::core::HRESULT,
+    pub ControlledOutput: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, mask: u32, format: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub ControlledOutputVaList: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, mask: u32, format: ::windows_sys::core::PCSTR, args: *const i8) -> ::windows_sys::core::HRESULT,
+    pub OutputPrompt: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, format: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub OutputPromptVaList: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, format: ::windows_sys::core::PCSTR, args: *const i8) -> ::windows_sys::core::HRESULT,
+    pub GetPromptText: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, textsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub OutputCurrentState: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub OutputVersionInformation: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32) -> ::windows_sys::core::HRESULT,
+    pub GetNotifyEventHandle: unsafe extern "system" fn(this: *mut *mut Self, handle: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub SetNotifyEventHandle: unsafe extern "system" fn(this: *mut *mut Self, handle: u64) -> ::windows_sys::core::HRESULT,
+    pub Assemble: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, instr: ::windows_sys::core::PCSTR, endoffset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub Disassemble: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, flags: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, disassemblysize: *mut u32, endoffset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetDisassembleEffectiveOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub OutputDisassembly: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, offset: u64, flags: u32, endoffset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub OutputDisassemblyLines: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, previouslines: u32, totallines: u32, offset: u64, flags: u32, offsetline: *mut u32, startoffset: *mut u64, endoffset: *mut u64, lineoffsets: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetNearInstruction: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, delta: i32, nearoffset: *mut u64) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetStackTrace: unsafe extern "system" fn(this: *mut *mut Self, frameoffset: u64, stackoffset: u64, instructionoffset: u64, frames: *mut DEBUG_STACK_FRAME, framessize: u32, framesfilled: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetStackTrace: usize,
+    pub GetReturnOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OutputStackTrace: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, frames: *const DEBUG_STACK_FRAME, framessize: u32, flags: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OutputStackTrace: usize,
+    pub GetDebuggeeType: unsafe extern "system" fn(this: *mut *mut Self, class: *mut u32, qualifier: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetActualProcessorType: unsafe extern "system" fn(this: *mut *mut Self, r#type: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetExecutingProcessorType: unsafe extern "system" fn(this: *mut *mut Self, r#type: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetNumberPossibleExecutingProcessorTypes: unsafe extern "system" fn(this: *mut *mut Self, number: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetPossibleExecutingProcessorTypes: unsafe extern "system" fn(this: *mut *mut Self, start: u32, count: u32, types: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetNumberProcessors: unsafe extern "system" fn(this: *mut *mut Self, number: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSystemVersion: unsafe extern "system" fn(this: *mut *mut Self, platformid: *mut u32, major: *mut u32, minor: *mut u32, servicepackstring: ::windows_sys::core::PSTR, servicepackstringsize: u32, servicepackstringused: *mut u32, servicepacknumber: *mut u32, buildstring: ::windows_sys::core::PSTR, buildstringsize: u32, buildstringused: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetPageSize: unsafe extern "system" fn(this: *mut *mut Self, size: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub IsPointer64Bit: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub ReadBugCheckData: unsafe extern "system" fn(this: *mut *mut Self, code: *mut u32, arg1: *mut u64, arg2: *mut u64, arg3: *mut u64, arg4: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetNumberSupportedProcessorTypes: unsafe extern "system" fn(this: *mut *mut Self, number: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSupportedProcessorTypes: unsafe extern "system" fn(this: *mut *mut Self, start: u32, count: u32, types: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetProcessorTypeNames: unsafe extern "system" fn(this: *mut *mut Self, r#type: u32, fullnamebuffer: ::windows_sys::core::PSTR, fullnamebuffersize: u32, fullnamesize: *mut u32, abbrevnamebuffer: ::windows_sys::core::PSTR, abbrevnamebuffersize: u32, abbrevnamesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetEffectiveProcessorType: unsafe extern "system" fn(this: *mut *mut Self, r#type: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetEffectiveProcessorType: unsafe extern "system" fn(this: *mut *mut Self, r#type: u32) -> ::windows_sys::core::HRESULT,
+    pub GetExecutionStatus: unsafe extern "system" fn(this: *mut *mut Self, status: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetExecutionStatus: unsafe extern "system" fn(this: *mut *mut Self, status: u32) -> ::windows_sys::core::HRESULT,
+    pub GetCodeLevel: unsafe extern "system" fn(this: *mut *mut Self, level: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetCodeLevel: unsafe extern "system" fn(this: *mut *mut Self, level: u32) -> ::windows_sys::core::HRESULT,
+    pub GetEngineOptions: unsafe extern "system" fn(this: *mut *mut Self, options: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub AddEngineOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub RemoveEngineOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub SetEngineOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub GetSystemErrorControl: unsafe extern "system" fn(this: *mut *mut Self, outputlevel: *mut u32, breaklevel: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetSystemErrorControl: unsafe extern "system" fn(this: *mut *mut Self, outputlevel: u32, breaklevel: u32) -> ::windows_sys::core::HRESULT,
+    pub GetTextMacro: unsafe extern "system" fn(this: *mut *mut Self, slot: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, macrosize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetTextMacro: unsafe extern "system" fn(this: *mut *mut Self, slot: u32, r#macro: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetRadix: unsafe extern "system" fn(this: *mut *mut Self, radix: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetRadix: unsafe extern "system" fn(this: *mut *mut Self, radix: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Evaluate: unsafe extern "system" fn(this: *mut *mut Self, expression: ::windows_sys::core::PCSTR, desiredtype: u32, value: *mut DEBUG_VALUE, remainderindex: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Evaluate: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CoerceValue: unsafe extern "system" fn(this: *mut *mut Self, r#in: *const DEBUG_VALUE, outtype: u32, out: *mut DEBUG_VALUE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CoerceValue: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CoerceValues: unsafe extern "system" fn(this: *mut *mut Self, count: u32, r#in: *const DEBUG_VALUE, outtypes: *const u32, out: *mut DEBUG_VALUE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CoerceValues: usize,
+    pub Execute: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, command: ::windows_sys::core::PCSTR, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub ExecuteCommandFile: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, commandfile: ::windows_sys::core::PCSTR, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetNumberBreakpoints: unsafe extern "system" fn(this: *mut *mut Self, number: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetBreakpointByIndex: unsafe extern "system" fn(this: *mut *mut Self, index: u32, bp: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetBreakpointById: unsafe extern "system" fn(this: *mut *mut Self, id: u32, bp: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetBreakpointParameters: unsafe extern "system" fn(this: *mut *mut Self, count: u32, ids: *const u32, start: u32, params: *mut DEBUG_BREAKPOINT_PARAMETERS) -> ::windows_sys::core::HRESULT,
+    pub AddBreakpoint: unsafe extern "system" fn(this: *mut *mut Self, r#type: u32, desiredid: u32, bp: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RemoveBreakpoint: unsafe extern "system" fn(this: *mut *mut Self, bp: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AddExtension: unsafe extern "system" fn(this: *mut *mut Self, path: ::windows_sys::core::PCSTR, flags: u32, handle: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub RemoveExtension: unsafe extern "system" fn(this: *mut *mut Self, handle: u64) -> ::windows_sys::core::HRESULT,
+    pub GetExtensionByPath: unsafe extern "system" fn(this: *mut *mut Self, path: ::windows_sys::core::PCSTR, handle: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub CallExtension: unsafe extern "system" fn(this: *mut *mut Self, handle: u64, function: ::windows_sys::core::PCSTR, arguments: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetExtensionFunction: unsafe extern "system" fn(this: *mut *mut Self, handle: u64, funcname: ::windows_sys::core::PCSTR, function: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetExtensionFunction: usize,
+    #[cfg(feature = "Win32_System_Kernel")]
+    pub GetWindbgExtensionApis32: unsafe extern "system" fn(this: *mut *mut Self, api: *mut WINDBG_EXTENSION_APIS32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Kernel"))]
+    GetWindbgExtensionApis32: usize,
+    #[cfg(feature = "Win32_System_Kernel")]
+    pub GetWindbgExtensionApis64: unsafe extern "system" fn(this: *mut *mut Self, api: *mut WINDBG_EXTENSION_APIS64) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Kernel"))]
+    GetWindbgExtensionApis64: usize,
+    pub GetNumberEventFilters: unsafe extern "system" fn(this: *mut *mut Self, specificevents: *mut u32, specificexceptions: *mut u32, arbitraryexceptions: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetEventFilterText: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, textsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetEventFilterCommand: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, commandsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetEventFilterCommand: unsafe extern "system" fn(this: *mut *mut Self, index: u32, command: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetSpecificFilterParameters: unsafe extern "system" fn(this: *mut *mut Self, start: u32, count: u32, params: *mut DEBUG_SPECIFIC_FILTER_PARAMETERS) -> ::windows_sys::core::HRESULT,
+    pub SetSpecificFilterParameters: unsafe extern "system" fn(this: *mut *mut Self, start: u32, count: u32, params: *const DEBUG_SPECIFIC_FILTER_PARAMETERS) -> ::windows_sys::core::HRESULT,
+    pub GetSpecificFilterArgument: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, argumentsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetSpecificFilterArgument: unsafe extern "system" fn(this: *mut *mut Self, index: u32, argument: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetExceptionFilterParameters: unsafe extern "system" fn(this: *mut *mut Self, count: u32, codes: *const u32, start: u32, params: *mut DEBUG_EXCEPTION_FILTER_PARAMETERS) -> ::windows_sys::core::HRESULT,
+    pub SetExceptionFilterParameters: unsafe extern "system" fn(this: *mut *mut Self, count: u32, params: *const DEBUG_EXCEPTION_FILTER_PARAMETERS) -> ::windows_sys::core::HRESULT,
+    pub GetExceptionFilterSecondCommand: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, commandsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetExceptionFilterSecondCommand: unsafe extern "system" fn(this: *mut *mut Self, index: u32, command: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub WaitForEvent: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, timeout: u32) -> ::windows_sys::core::HRESULT,
+    pub GetLastEventInformation: unsafe extern "system" fn(this: *mut *mut Self, r#type: *mut u32, processid: *mut u32, threadid: *mut u32, extrainformation: *mut ::core::ffi::c_void, extrainformationsize: u32, extrainformationused: *mut u32, description: ::windows_sys::core::PSTR, descriptionsize: u32, descriptionused: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentTimeDate: unsafe extern "system" fn(this: *mut *mut Self, timedate: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentSystemUpTime: unsafe extern "system" fn(this: *mut *mut Self, uptime: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetDumpFormatFlags: unsafe extern "system" fn(this: *mut *mut Self, formatflags: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetNumberTextReplacements: unsafe extern "system" fn(this: *mut *mut Self, numrepl: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetTextReplacement: unsafe extern "system" fn(this: *mut *mut Self, srctext: ::windows_sys::core::PCSTR, index: u32, srcbuffer: ::windows_sys::core::PSTR, srcbuffersize: u32, srcsize: *mut u32, dstbuffer: ::windows_sys::core::PSTR, dstbuffersize: u32, dstsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetTextReplacement: unsafe extern "system" fn(this: *mut *mut Self, srctext: ::windows_sys::core::PCSTR, dsttext: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub RemoveTextReplacements: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub OutputTextReplacements: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetAssemblyOptions: unsafe extern "system" fn(this: *mut *mut Self, options: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub AddAssemblyOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub RemoveAssemblyOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub SetAssemblyOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub GetExpressionSyntax: unsafe extern "system" fn(this: *mut *mut Self, flags: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetExpressionSyntax: unsafe extern "system" fn(this: *mut *mut Self, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub SetExpressionSyntaxByName: unsafe extern "system" fn(this: *mut *mut Self, abbrevname: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetNumberExpressionSyntaxes: unsafe extern "system" fn(this: *mut *mut Self, number: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetExpressionSyntaxNames: unsafe extern "system" fn(this: *mut *mut Self, index: u32, fullnamebuffer: ::windows_sys::core::PSTR, fullnamebuffersize: u32, fullnamesize: *mut u32, abbrevnamebuffer: ::windows_sys::core::PSTR, abbrevnamebuffersize: u32, abbrevnamesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetNumberEvents: unsafe extern "system" fn(this: *mut *mut Self, events: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetEventIndexDescription: unsafe extern "system" fn(this: *mut *mut Self, index: u32, which: u32, buffer: ::windows_sys::core::PCSTR, buffersize: u32, descsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentEventIndex: unsafe extern "system" fn(this: *mut *mut Self, index: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetNextEventIndex: unsafe extern "system" fn(this: *mut *mut Self, relation: u32, value: u32, nextindex: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetLogFileWide: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PWSTR, buffersize: u32, filesize: *mut u32, append: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetLogFileWide: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OpenLogFileWide: unsafe extern "system" fn(this: *mut *mut Self, file: ::windows_sys::core::PCWSTR, append: super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OpenLogFileWide: usize,
+    pub InputWide: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PWSTR, buffersize: u32, inputsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub ReturnInputWide: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub OutputWide: unsafe extern "system" fn(this: *mut *mut Self, mask: u32, format: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub OutputVaListWide: unsafe extern "system" fn(this: *mut *mut Self, mask: u32, format: ::windows_sys::core::PCWSTR, args: *const i8) -> ::windows_sys::core::HRESULT,
+    pub ControlledOutputWide: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, mask: u32, format: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub ControlledOutputVaListWide: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, mask: u32, format: ::windows_sys::core::PCWSTR, args: *const i8) -> ::windows_sys::core::HRESULT,
+    pub OutputPromptWide: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, format: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub OutputPromptVaListWide: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, format: ::windows_sys::core::PCWSTR, args: *const i8) -> ::windows_sys::core::HRESULT,
+    pub GetPromptTextWide: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PWSTR, buffersize: u32, textsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub AssembleWide: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, instr: ::windows_sys::core::PCWSTR, endoffset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub DisassembleWide: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, flags: u32, buffer: ::windows_sys::core::PWSTR, buffersize: u32, disassemblysize: *mut u32, endoffset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetProcessorTypeNamesWide: unsafe extern "system" fn(this: *mut *mut Self, r#type: u32, fullnamebuffer: ::windows_sys::core::PWSTR, fullnamebuffersize: u32, fullnamesize: *mut u32, abbrevnamebuffer: ::windows_sys::core::PWSTR, abbrevnamebuffersize: u32, abbrevnamesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetTextMacroWide: unsafe extern "system" fn(this: *mut *mut Self, slot: u32, buffer: ::windows_sys::core::PWSTR, buffersize: u32, macrosize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetTextMacroWide: unsafe extern "system" fn(this: *mut *mut Self, slot: u32, r#macro: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub EvaluateWide: unsafe extern "system" fn(this: *mut *mut Self, expression: ::windows_sys::core::PCWSTR, desiredtype: u32, value: *mut DEBUG_VALUE, remainderindex: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    EvaluateWide: usize,
+    pub ExecuteWide: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, command: ::windows_sys::core::PCWSTR, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub ExecuteCommandFileWide: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, commandfile: ::windows_sys::core::PCWSTR, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetBreakpointByIndex2: unsafe extern "system" fn(this: *mut *mut Self, index: u32, bp: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetBreakpointById2: unsafe extern "system" fn(this: *mut *mut Self, id: u32, bp: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AddBreakpoint2: unsafe extern "system" fn(this: *mut *mut Self, r#type: u32, desiredid: u32, bp: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RemoveBreakpoint2: unsafe extern "system" fn(this: *mut *mut Self, bp: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AddExtensionWide: unsafe extern "system" fn(this: *mut *mut Self, path: ::windows_sys::core::PCWSTR, flags: u32, handle: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetExtensionByPathWide: unsafe extern "system" fn(this: *mut *mut Self, path: ::windows_sys::core::PCWSTR, handle: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub CallExtensionWide: unsafe extern "system" fn(this: *mut *mut Self, handle: u64, function: ::windows_sys::core::PCWSTR, arguments: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetExtensionFunctionWide: unsafe extern "system" fn(this: *mut *mut Self, handle: u64, funcname: ::windows_sys::core::PCWSTR, function: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetExtensionFunctionWide: usize,
+    pub GetEventFilterTextWide: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PWSTR, buffersize: u32, textsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetEventFilterCommandWide: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PWSTR, buffersize: u32, commandsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetEventFilterCommandWide: unsafe extern "system" fn(this: *mut *mut Self, index: u32, command: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetSpecificFilterArgumentWide: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PWSTR, buffersize: u32, argumentsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetSpecificFilterArgumentWide: unsafe extern "system" fn(this: *mut *mut Self, index: u32, argument: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetExceptionFilterSecondCommandWide: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PWSTR, buffersize: u32, commandsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetExceptionFilterSecondCommandWide: unsafe extern "system" fn(this: *mut *mut Self, index: u32, command: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetLastEventInformationWide: unsafe extern "system" fn(this: *mut *mut Self, r#type: *mut u32, processid: *mut u32, threadid: *mut u32, extrainformation: *mut ::core::ffi::c_void, extrainformationsize: u32, extrainformationused: *mut u32, description: ::windows_sys::core::PWSTR, descriptionsize: u32, descriptionused: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetTextReplacementWide: unsafe extern "system" fn(this: *mut *mut Self, srctext: ::windows_sys::core::PCWSTR, index: u32, srcbuffer: ::windows_sys::core::PWSTR, srcbuffersize: u32, srcsize: *mut u32, dstbuffer: ::windows_sys::core::PWSTR, dstbuffersize: u32, dstsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetTextReplacementWide: unsafe extern "system" fn(this: *mut *mut Self, srctext: ::windows_sys::core::PCWSTR, dsttext: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetExpressionSyntaxByNameWide: unsafe extern "system" fn(this: *mut *mut Self, abbrevname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetExpressionSyntaxNamesWide: unsafe extern "system" fn(this: *mut *mut Self, index: u32, fullnamebuffer: ::windows_sys::core::PWSTR, fullnamebuffersize: u32, fullnamesize: *mut u32, abbrevnamebuffer: ::windows_sys::core::PWSTR, abbrevnamebuffersize: u32, abbrevnamesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetEventIndexDescriptionWide: unsafe extern "system" fn(this: *mut *mut Self, index: u32, which: u32, buffer: ::windows_sys::core::PCWSTR, buffersize: u32, descsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetLogFile2: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, filesize: *mut u32, flags: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub OpenLogFile2: unsafe extern "system" fn(this: *mut *mut Self, file: ::windows_sys::core::PCSTR, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetLogFile2Wide: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PWSTR, buffersize: u32, filesize: *mut u32, flags: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub OpenLogFile2Wide: unsafe extern "system" fn(this: *mut *mut Self, file: ::windows_sys::core::PCWSTR, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetSystemVersionValues: unsafe extern "system" fn(this: *mut *mut Self, platformid: *mut u32, win32major: *mut u32, win32minor: *mut u32, kdmajor: *mut u32, kdminor: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSystemVersionString: unsafe extern "system" fn(this: *mut *mut Self, which: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, stringsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSystemVersionStringWide: unsafe extern "system" fn(this: *mut *mut Self, which: u32, buffer: ::windows_sys::core::PWSTR, buffersize: u32, stringsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetContextStackTrace: unsafe extern "system" fn(this: *mut *mut Self, startcontext: *const ::core::ffi::c_void, startcontextsize: u32, frames: *mut DEBUG_STACK_FRAME, framessize: u32, framecontexts: *mut ::core::ffi::c_void, framecontextssize: u32, framecontextsentrysize: u32, framesfilled: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetContextStackTrace: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OutputContextStackTrace: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, frames: *const DEBUG_STACK_FRAME, framessize: u32, framecontexts: *const ::core::ffi::c_void, framecontextssize: u32, framecontextsentrysize: u32, flags: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OutputContextStackTrace: usize,
+    pub GetStoredEventInformation: unsafe extern "system" fn(this: *mut *mut Self, r#type: *mut u32, processid: *mut u32, threadid: *mut u32, context: *mut ::core::ffi::c_void, contextsize: u32, contextused: *mut u32, extrainformation: *mut ::core::ffi::c_void, extrainformationsize: u32, extrainformationused: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetManagedStatus: unsafe extern "system" fn(this: *mut *mut Self, flags: *mut u32, whichstring: u32, string: ::windows_sys::core::PSTR, stringsize: u32, stringneeded: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetManagedStatusWide: unsafe extern "system" fn(this: *mut *mut Self, flags: *mut u32, whichstring: u32, string: ::windows_sys::core::PWSTR, stringsize: u32, stringneeded: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub ResetManagedStatus: unsafe extern "system" fn(this: *mut *mut Self, flags: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetStackTraceEx: unsafe extern "system" fn(this: *mut *mut Self, frameoffset: u64, stackoffset: u64, instructionoffset: u64, frames: *mut DEBUG_STACK_FRAME_EX, framessize: u32, framesfilled: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetStackTraceEx: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OutputStackTraceEx: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, frames: *const DEBUG_STACK_FRAME_EX, framessize: u32, flags: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OutputStackTraceEx: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetContextStackTraceEx: unsafe extern "system" fn(this: *mut *mut Self, startcontext: *const ::core::ffi::c_void, startcontextsize: u32, frames: *mut DEBUG_STACK_FRAME_EX, framessize: u32, framecontexts: *mut ::core::ffi::c_void, framecontextssize: u32, framecontextsentrysize: u32, framesfilled: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetContextStackTraceEx: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OutputContextStackTraceEx: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, frames: *const DEBUG_STACK_FRAME_EX, framessize: u32, framecontexts: *const ::core::ffi::c_void, framecontextssize: u32, framecontextsentrysize: u32, flags: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OutputContextStackTraceEx: usize,
+    pub GetBreakpointByGuid: unsafe extern "system" fn(this: *mut *mut Self, guid: *const ::windows_sys::core::GUID, bp: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetExecutionStatusEx: unsafe extern "system" fn(this: *mut *mut Self, status: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSynchronizationStatus: unsafe extern "system" fn(this: *mut *mut Self, sendsattempted: *mut u32, secondssincelastresponse: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugControl7 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetInterrupt: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub SetInterrupt: unsafe extern "system" fn(this: *mut *mut Self, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetInterruptTimeout: unsafe extern "system" fn(this: *mut *mut Self, seconds: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetInterruptTimeout: unsafe extern "system" fn(this: *mut *mut Self, seconds: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetLogFile: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, filesize: *mut u32, append: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetLogFile: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OpenLogFile: unsafe extern "system" fn(this: *mut *mut Self, file: ::windows_sys::core::PCSTR, append: super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OpenLogFile: usize,
+    pub CloseLogFile: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetLogMask: unsafe extern "system" fn(this: *mut *mut Self, mask: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetLogMask: unsafe extern "system" fn(this: *mut *mut Self, mask: u32) -> ::windows_sys::core::HRESULT,
+    pub Input: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, inputsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub ReturnInput: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub Output: unsafe extern "system" fn(this: *mut *mut Self, mask: u32, format: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub OutputVaList: unsafe extern "system" fn(this: *mut *mut Self, mask: u32, format: ::windows_sys::core::PCSTR, args: *const i8) -> ::windows_sys::core::HRESULT,
+    pub ControlledOutput: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, mask: u32, format: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub ControlledOutputVaList: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, mask: u32, format: ::windows_sys::core::PCSTR, args: *const i8) -> ::windows_sys::core::HRESULT,
+    pub OutputPrompt: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, format: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub OutputPromptVaList: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, format: ::windows_sys::core::PCSTR, args: *const i8) -> ::windows_sys::core::HRESULT,
+    pub GetPromptText: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, textsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub OutputCurrentState: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub OutputVersionInformation: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32) -> ::windows_sys::core::HRESULT,
+    pub GetNotifyEventHandle: unsafe extern "system" fn(this: *mut *mut Self, handle: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub SetNotifyEventHandle: unsafe extern "system" fn(this: *mut *mut Self, handle: u64) -> ::windows_sys::core::HRESULT,
+    pub Assemble: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, instr: ::windows_sys::core::PCSTR, endoffset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub Disassemble: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, flags: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, disassemblysize: *mut u32, endoffset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetDisassembleEffectiveOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub OutputDisassembly: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, offset: u64, flags: u32, endoffset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub OutputDisassemblyLines: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, previouslines: u32, totallines: u32, offset: u64, flags: u32, offsetline: *mut u32, startoffset: *mut u64, endoffset: *mut u64, lineoffsets: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetNearInstruction: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, delta: i32, nearoffset: *mut u64) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetStackTrace: unsafe extern "system" fn(this: *mut *mut Self, frameoffset: u64, stackoffset: u64, instructionoffset: u64, frames: *mut DEBUG_STACK_FRAME, framessize: u32, framesfilled: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetStackTrace: usize,
+    pub GetReturnOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OutputStackTrace: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, frames: *const DEBUG_STACK_FRAME, framessize: u32, flags: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OutputStackTrace: usize,
+    pub GetDebuggeeType: unsafe extern "system" fn(this: *mut *mut Self, class: *mut u32, qualifier: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetActualProcessorType: unsafe extern "system" fn(this: *mut *mut Self, r#type: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetExecutingProcessorType: unsafe extern "system" fn(this: *mut *mut Self, r#type: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetNumberPossibleExecutingProcessorTypes: unsafe extern "system" fn(this: *mut *mut Self, number: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetPossibleExecutingProcessorTypes: unsafe extern "system" fn(this: *mut *mut Self, start: u32, count: u32, types: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetNumberProcessors: unsafe extern "system" fn(this: *mut *mut Self, number: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSystemVersion: unsafe extern "system" fn(this: *mut *mut Self, platformid: *mut u32, major: *mut u32, minor: *mut u32, servicepackstring: ::windows_sys::core::PSTR, servicepackstringsize: u32, servicepackstringused: *mut u32, servicepacknumber: *mut u32, buildstring: ::windows_sys::core::PSTR, buildstringsize: u32, buildstringused: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetPageSize: unsafe extern "system" fn(this: *mut *mut Self, size: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub IsPointer64Bit: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub ReadBugCheckData: unsafe extern "system" fn(this: *mut *mut Self, code: *mut u32, arg1: *mut u64, arg2: *mut u64, arg3: *mut u64, arg4: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetNumberSupportedProcessorTypes: unsafe extern "system" fn(this: *mut *mut Self, number: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSupportedProcessorTypes: unsafe extern "system" fn(this: *mut *mut Self, start: u32, count: u32, types: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetProcessorTypeNames: unsafe extern "system" fn(this: *mut *mut Self, r#type: u32, fullnamebuffer: ::windows_sys::core::PSTR, fullnamebuffersize: u32, fullnamesize: *mut u32, abbrevnamebuffer: ::windows_sys::core::PSTR, abbrevnamebuffersize: u32, abbrevnamesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetEffectiveProcessorType: unsafe extern "system" fn(this: *mut *mut Self, r#type: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetEffectiveProcessorType: unsafe extern "system" fn(this: *mut *mut Self, r#type: u32) -> ::windows_sys::core::HRESULT,
+    pub GetExecutionStatus: unsafe extern "system" fn(this: *mut *mut Self, status: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetExecutionStatus: unsafe extern "system" fn(this: *mut *mut Self, status: u32) -> ::windows_sys::core::HRESULT,
+    pub GetCodeLevel: unsafe extern "system" fn(this: *mut *mut Self, level: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetCodeLevel: unsafe extern "system" fn(this: *mut *mut Self, level: u32) -> ::windows_sys::core::HRESULT,
+    pub GetEngineOptions: unsafe extern "system" fn(this: *mut *mut Self, options: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub AddEngineOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub RemoveEngineOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub SetEngineOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub GetSystemErrorControl: unsafe extern "system" fn(this: *mut *mut Self, outputlevel: *mut u32, breaklevel: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetSystemErrorControl: unsafe extern "system" fn(this: *mut *mut Self, outputlevel: u32, breaklevel: u32) -> ::windows_sys::core::HRESULT,
+    pub GetTextMacro: unsafe extern "system" fn(this: *mut *mut Self, slot: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, macrosize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetTextMacro: unsafe extern "system" fn(this: *mut *mut Self, slot: u32, r#macro: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetRadix: unsafe extern "system" fn(this: *mut *mut Self, radix: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetRadix: unsafe extern "system" fn(this: *mut *mut Self, radix: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Evaluate: unsafe extern "system" fn(this: *mut *mut Self, expression: ::windows_sys::core::PCSTR, desiredtype: u32, value: *mut DEBUG_VALUE, remainderindex: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Evaluate: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CoerceValue: unsafe extern "system" fn(this: *mut *mut Self, r#in: *const DEBUG_VALUE, outtype: u32, out: *mut DEBUG_VALUE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CoerceValue: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CoerceValues: unsafe extern "system" fn(this: *mut *mut Self, count: u32, r#in: *const DEBUG_VALUE, outtypes: *const u32, out: *mut DEBUG_VALUE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CoerceValues: usize,
+    pub Execute: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, command: ::windows_sys::core::PCSTR, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub ExecuteCommandFile: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, commandfile: ::windows_sys::core::PCSTR, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetNumberBreakpoints: unsafe extern "system" fn(this: *mut *mut Self, number: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetBreakpointByIndex: unsafe extern "system" fn(this: *mut *mut Self, index: u32, bp: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetBreakpointById: unsafe extern "system" fn(this: *mut *mut Self, id: u32, bp: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetBreakpointParameters: unsafe extern "system" fn(this: *mut *mut Self, count: u32, ids: *const u32, start: u32, params: *mut DEBUG_BREAKPOINT_PARAMETERS) -> ::windows_sys::core::HRESULT,
+    pub AddBreakpoint: unsafe extern "system" fn(this: *mut *mut Self, r#type: u32, desiredid: u32, bp: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RemoveBreakpoint: unsafe extern "system" fn(this: *mut *mut Self, bp: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AddExtension: unsafe extern "system" fn(this: *mut *mut Self, path: ::windows_sys::core::PCSTR, flags: u32, handle: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub RemoveExtension: unsafe extern "system" fn(this: *mut *mut Self, handle: u64) -> ::windows_sys::core::HRESULT,
+    pub GetExtensionByPath: unsafe extern "system" fn(this: *mut *mut Self, path: ::windows_sys::core::PCSTR, handle: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub CallExtension: unsafe extern "system" fn(this: *mut *mut Self, handle: u64, function: ::windows_sys::core::PCSTR, arguments: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetExtensionFunction: unsafe extern "system" fn(this: *mut *mut Self, handle: u64, funcname: ::windows_sys::core::PCSTR, function: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetExtensionFunction: usize,
+    #[cfg(feature = "Win32_System_Kernel")]
+    pub GetWindbgExtensionApis32: unsafe extern "system" fn(this: *mut *mut Self, api: *mut WINDBG_EXTENSION_APIS32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Kernel"))]
+    GetWindbgExtensionApis32: usize,
+    #[cfg(feature = "Win32_System_Kernel")]
+    pub GetWindbgExtensionApis64: unsafe extern "system" fn(this: *mut *mut Self, api: *mut WINDBG_EXTENSION_APIS64) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Kernel"))]
+    GetWindbgExtensionApis64: usize,
+    pub GetNumberEventFilters: unsafe extern "system" fn(this: *mut *mut Self, specificevents: *mut u32, specificexceptions: *mut u32, arbitraryexceptions: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetEventFilterText: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, textsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetEventFilterCommand: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, commandsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetEventFilterCommand: unsafe extern "system" fn(this: *mut *mut Self, index: u32, command: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetSpecificFilterParameters: unsafe extern "system" fn(this: *mut *mut Self, start: u32, count: u32, params: *mut DEBUG_SPECIFIC_FILTER_PARAMETERS) -> ::windows_sys::core::HRESULT,
+    pub SetSpecificFilterParameters: unsafe extern "system" fn(this: *mut *mut Self, start: u32, count: u32, params: *const DEBUG_SPECIFIC_FILTER_PARAMETERS) -> ::windows_sys::core::HRESULT,
+    pub GetSpecificFilterArgument: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, argumentsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetSpecificFilterArgument: unsafe extern "system" fn(this: *mut *mut Self, index: u32, argument: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetExceptionFilterParameters: unsafe extern "system" fn(this: *mut *mut Self, count: u32, codes: *const u32, start: u32, params: *mut DEBUG_EXCEPTION_FILTER_PARAMETERS) -> ::windows_sys::core::HRESULT,
+    pub SetExceptionFilterParameters: unsafe extern "system" fn(this: *mut *mut Self, count: u32, params: *const DEBUG_EXCEPTION_FILTER_PARAMETERS) -> ::windows_sys::core::HRESULT,
+    pub GetExceptionFilterSecondCommand: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, commandsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetExceptionFilterSecondCommand: unsafe extern "system" fn(this: *mut *mut Self, index: u32, command: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub WaitForEvent: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, timeout: u32) -> ::windows_sys::core::HRESULT,
+    pub GetLastEventInformation: unsafe extern "system" fn(this: *mut *mut Self, r#type: *mut u32, processid: *mut u32, threadid: *mut u32, extrainformation: *mut ::core::ffi::c_void, extrainformationsize: u32, extrainformationused: *mut u32, description: ::windows_sys::core::PSTR, descriptionsize: u32, descriptionused: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentTimeDate: unsafe extern "system" fn(this: *mut *mut Self, timedate: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentSystemUpTime: unsafe extern "system" fn(this: *mut *mut Self, uptime: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetDumpFormatFlags: unsafe extern "system" fn(this: *mut *mut Self, formatflags: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetNumberTextReplacements: unsafe extern "system" fn(this: *mut *mut Self, numrepl: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetTextReplacement: unsafe extern "system" fn(this: *mut *mut Self, srctext: ::windows_sys::core::PCSTR, index: u32, srcbuffer: ::windows_sys::core::PSTR, srcbuffersize: u32, srcsize: *mut u32, dstbuffer: ::windows_sys::core::PSTR, dstbuffersize: u32, dstsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetTextReplacement: unsafe extern "system" fn(this: *mut *mut Self, srctext: ::windows_sys::core::PCSTR, dsttext: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub RemoveTextReplacements: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub OutputTextReplacements: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetAssemblyOptions: unsafe extern "system" fn(this: *mut *mut Self, options: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub AddAssemblyOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub RemoveAssemblyOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub SetAssemblyOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub GetExpressionSyntax: unsafe extern "system" fn(this: *mut *mut Self, flags: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetExpressionSyntax: unsafe extern "system" fn(this: *mut *mut Self, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub SetExpressionSyntaxByName: unsafe extern "system" fn(this: *mut *mut Self, abbrevname: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetNumberExpressionSyntaxes: unsafe extern "system" fn(this: *mut *mut Self, number: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetExpressionSyntaxNames: unsafe extern "system" fn(this: *mut *mut Self, index: u32, fullnamebuffer: ::windows_sys::core::PSTR, fullnamebuffersize: u32, fullnamesize: *mut u32, abbrevnamebuffer: ::windows_sys::core::PSTR, abbrevnamebuffersize: u32, abbrevnamesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetNumberEvents: unsafe extern "system" fn(this: *mut *mut Self, events: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetEventIndexDescription: unsafe extern "system" fn(this: *mut *mut Self, index: u32, which: u32, buffer: ::windows_sys::core::PCSTR, buffersize: u32, descsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentEventIndex: unsafe extern "system" fn(this: *mut *mut Self, index: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetNextEventIndex: unsafe extern "system" fn(this: *mut *mut Self, relation: u32, value: u32, nextindex: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetLogFileWide: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PWSTR, buffersize: u32, filesize: *mut u32, append: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetLogFileWide: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OpenLogFileWide: unsafe extern "system" fn(this: *mut *mut Self, file: ::windows_sys::core::PCWSTR, append: super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OpenLogFileWide: usize,
+    pub InputWide: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PWSTR, buffersize: u32, inputsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub ReturnInputWide: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub OutputWide: unsafe extern "system" fn(this: *mut *mut Self, mask: u32, format: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub OutputVaListWide: unsafe extern "system" fn(this: *mut *mut Self, mask: u32, format: ::windows_sys::core::PCWSTR, args: *const i8) -> ::windows_sys::core::HRESULT,
+    pub ControlledOutputWide: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, mask: u32, format: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub ControlledOutputVaListWide: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, mask: u32, format: ::windows_sys::core::PCWSTR, args: *const i8) -> ::windows_sys::core::HRESULT,
+    pub OutputPromptWide: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, format: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub OutputPromptVaListWide: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, format: ::windows_sys::core::PCWSTR, args: *const i8) -> ::windows_sys::core::HRESULT,
+    pub GetPromptTextWide: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PWSTR, buffersize: u32, textsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub AssembleWide: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, instr: ::windows_sys::core::PCWSTR, endoffset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub DisassembleWide: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, flags: u32, buffer: ::windows_sys::core::PWSTR, buffersize: u32, disassemblysize: *mut u32, endoffset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetProcessorTypeNamesWide: unsafe extern "system" fn(this: *mut *mut Self, r#type: u32, fullnamebuffer: ::windows_sys::core::PWSTR, fullnamebuffersize: u32, fullnamesize: *mut u32, abbrevnamebuffer: ::windows_sys::core::PWSTR, abbrevnamebuffersize: u32, abbrevnamesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetTextMacroWide: unsafe extern "system" fn(this: *mut *mut Self, slot: u32, buffer: ::windows_sys::core::PWSTR, buffersize: u32, macrosize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetTextMacroWide: unsafe extern "system" fn(this: *mut *mut Self, slot: u32, r#macro: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub EvaluateWide: unsafe extern "system" fn(this: *mut *mut Self, expression: ::windows_sys::core::PCWSTR, desiredtype: u32, value: *mut DEBUG_VALUE, remainderindex: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    EvaluateWide: usize,
+    pub ExecuteWide: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, command: ::windows_sys::core::PCWSTR, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub ExecuteCommandFileWide: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, commandfile: ::windows_sys::core::PCWSTR, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetBreakpointByIndex2: unsafe extern "system" fn(this: *mut *mut Self, index: u32, bp: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetBreakpointById2: unsafe extern "system" fn(this: *mut *mut Self, id: u32, bp: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AddBreakpoint2: unsafe extern "system" fn(this: *mut *mut Self, r#type: u32, desiredid: u32, bp: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RemoveBreakpoint2: unsafe extern "system" fn(this: *mut *mut Self, bp: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AddExtensionWide: unsafe extern "system" fn(this: *mut *mut Self, path: ::windows_sys::core::PCWSTR, flags: u32, handle: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetExtensionByPathWide: unsafe extern "system" fn(this: *mut *mut Self, path: ::windows_sys::core::PCWSTR, handle: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub CallExtensionWide: unsafe extern "system" fn(this: *mut *mut Self, handle: u64, function: ::windows_sys::core::PCWSTR, arguments: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetExtensionFunctionWide: unsafe extern "system" fn(this: *mut *mut Self, handle: u64, funcname: ::windows_sys::core::PCWSTR, function: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetExtensionFunctionWide: usize,
+    pub GetEventFilterTextWide: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PWSTR, buffersize: u32, textsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetEventFilterCommandWide: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PWSTR, buffersize: u32, commandsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetEventFilterCommandWide: unsafe extern "system" fn(this: *mut *mut Self, index: u32, command: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetSpecificFilterArgumentWide: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PWSTR, buffersize: u32, argumentsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetSpecificFilterArgumentWide: unsafe extern "system" fn(this: *mut *mut Self, index: u32, argument: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetExceptionFilterSecondCommandWide: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PWSTR, buffersize: u32, commandsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetExceptionFilterSecondCommandWide: unsafe extern "system" fn(this: *mut *mut Self, index: u32, command: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetLastEventInformationWide: unsafe extern "system" fn(this: *mut *mut Self, r#type: *mut u32, processid: *mut u32, threadid: *mut u32, extrainformation: *mut ::core::ffi::c_void, extrainformationsize: u32, extrainformationused: *mut u32, description: ::windows_sys::core::PWSTR, descriptionsize: u32, descriptionused: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetTextReplacementWide: unsafe extern "system" fn(this: *mut *mut Self, srctext: ::windows_sys::core::PCWSTR, index: u32, srcbuffer: ::windows_sys::core::PWSTR, srcbuffersize: u32, srcsize: *mut u32, dstbuffer: ::windows_sys::core::PWSTR, dstbuffersize: u32, dstsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetTextReplacementWide: unsafe extern "system" fn(this: *mut *mut Self, srctext: ::windows_sys::core::PCWSTR, dsttext: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetExpressionSyntaxByNameWide: unsafe extern "system" fn(this: *mut *mut Self, abbrevname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetExpressionSyntaxNamesWide: unsafe extern "system" fn(this: *mut *mut Self, index: u32, fullnamebuffer: ::windows_sys::core::PWSTR, fullnamebuffersize: u32, fullnamesize: *mut u32, abbrevnamebuffer: ::windows_sys::core::PWSTR, abbrevnamebuffersize: u32, abbrevnamesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetEventIndexDescriptionWide: unsafe extern "system" fn(this: *mut *mut Self, index: u32, which: u32, buffer: ::windows_sys::core::PCWSTR, buffersize: u32, descsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetLogFile2: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, filesize: *mut u32, flags: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub OpenLogFile2: unsafe extern "system" fn(this: *mut *mut Self, file: ::windows_sys::core::PCSTR, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetLogFile2Wide: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PWSTR, buffersize: u32, filesize: *mut u32, flags: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub OpenLogFile2Wide: unsafe extern "system" fn(this: *mut *mut Self, file: ::windows_sys::core::PCWSTR, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetSystemVersionValues: unsafe extern "system" fn(this: *mut *mut Self, platformid: *mut u32, win32major: *mut u32, win32minor: *mut u32, kdmajor: *mut u32, kdminor: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSystemVersionString: unsafe extern "system" fn(this: *mut *mut Self, which: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, stringsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSystemVersionStringWide: unsafe extern "system" fn(this: *mut *mut Self, which: u32, buffer: ::windows_sys::core::PWSTR, buffersize: u32, stringsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetContextStackTrace: unsafe extern "system" fn(this: *mut *mut Self, startcontext: *const ::core::ffi::c_void, startcontextsize: u32, frames: *mut DEBUG_STACK_FRAME, framessize: u32, framecontexts: *mut ::core::ffi::c_void, framecontextssize: u32, framecontextsentrysize: u32, framesfilled: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetContextStackTrace: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OutputContextStackTrace: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, frames: *const DEBUG_STACK_FRAME, framessize: u32, framecontexts: *const ::core::ffi::c_void, framecontextssize: u32, framecontextsentrysize: u32, flags: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OutputContextStackTrace: usize,
+    pub GetStoredEventInformation: unsafe extern "system" fn(this: *mut *mut Self, r#type: *mut u32, processid: *mut u32, threadid: *mut u32, context: *mut ::core::ffi::c_void, contextsize: u32, contextused: *mut u32, extrainformation: *mut ::core::ffi::c_void, extrainformationsize: u32, extrainformationused: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetManagedStatus: unsafe extern "system" fn(this: *mut *mut Self, flags: *mut u32, whichstring: u32, string: ::windows_sys::core::PSTR, stringsize: u32, stringneeded: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetManagedStatusWide: unsafe extern "system" fn(this: *mut *mut Self, flags: *mut u32, whichstring: u32, string: ::windows_sys::core::PWSTR, stringsize: u32, stringneeded: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub ResetManagedStatus: unsafe extern "system" fn(this: *mut *mut Self, flags: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetStackTraceEx: unsafe extern "system" fn(this: *mut *mut Self, frameoffset: u64, stackoffset: u64, instructionoffset: u64, frames: *mut DEBUG_STACK_FRAME_EX, framessize: u32, framesfilled: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetStackTraceEx: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OutputStackTraceEx: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, frames: *const DEBUG_STACK_FRAME_EX, framessize: u32, flags: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OutputStackTraceEx: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetContextStackTraceEx: unsafe extern "system" fn(this: *mut *mut Self, startcontext: *const ::core::ffi::c_void, startcontextsize: u32, frames: *mut DEBUG_STACK_FRAME_EX, framessize: u32, framecontexts: *mut ::core::ffi::c_void, framecontextssize: u32, framecontextsentrysize: u32, framesfilled: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetContextStackTraceEx: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OutputContextStackTraceEx: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, frames: *const DEBUG_STACK_FRAME_EX, framessize: u32, framecontexts: *const ::core::ffi::c_void, framecontextssize: u32, framecontextsentrysize: u32, flags: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OutputContextStackTraceEx: usize,
+    pub GetBreakpointByGuid: unsafe extern "system" fn(this: *mut *mut Self, guid: *const ::windows_sys::core::GUID, bp: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetExecutionStatusEx: unsafe extern "system" fn(this: *mut *mut Self, status: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSynchronizationStatus: unsafe extern "system" fn(this: *mut *mut Self, sendsattempted: *mut u32, secondssincelastresponse: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetDebuggeeType2: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, class: *mut u32, qualifier: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugCookie {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetDebugCookie: unsafe extern "system" fn(this: *mut *mut Self, dwdebugappcookie: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugDataSpaces {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub ReadVirtual: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, buffer: *mut ::core::ffi::c_void, buffersize: u32, bytesread: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub WriteVirtual: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, buffer: *const ::core::ffi::c_void, buffersize: u32, byteswritten: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SearchVirtual: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, length: u64, pattern: *const ::core::ffi::c_void, patternsize: u32, patterngranularity: u32, matchoffset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub ReadVirtualUncached: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, buffer: *mut ::core::ffi::c_void, buffersize: u32, bytesread: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub WriteVirtualUncached: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, buffer: *const ::core::ffi::c_void, buffersize: u32, byteswritten: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub ReadPointersVirtual: unsafe extern "system" fn(this: *mut *mut Self, count: u32, offset: u64, ptrs: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub WritePointersVirtual: unsafe extern "system" fn(this: *mut *mut Self, count: u32, offset: u64, ptrs: *const u64) -> ::windows_sys::core::HRESULT,
+    pub ReadPhysical: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, buffer: *mut ::core::ffi::c_void, buffersize: u32, bytesread: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub WritePhysical: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, buffer: *const ::core::ffi::c_void, buffersize: u32, byteswritten: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub ReadControl: unsafe extern "system" fn(this: *mut *mut Self, processor: u32, offset: u64, buffer: *mut ::core::ffi::c_void, buffersize: u32, bytesread: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub WriteControl: unsafe extern "system" fn(this: *mut *mut Self, processor: u32, offset: u64, buffer: *const ::core::ffi::c_void, buffersize: u32, byteswritten: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub ReadIo: unsafe extern "system" fn(this: *mut *mut Self, interfacetype: u32, busnumber: u32, addressspace: u32, offset: u64, buffer: *mut ::core::ffi::c_void, buffersize: u32, bytesread: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub WriteIo: unsafe extern "system" fn(this: *mut *mut Self, interfacetype: u32, busnumber: u32, addressspace: u32, offset: u64, buffer: *const ::core::ffi::c_void, buffersize: u32, byteswritten: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub ReadMsr: unsafe extern "system" fn(this: *mut *mut Self, msr: u32, value: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub WriteMsr: unsafe extern "system" fn(this: *mut *mut Self, msr: u32, value: u64) -> ::windows_sys::core::HRESULT,
+    pub ReadBusData: unsafe extern "system" fn(this: *mut *mut Self, busdatatype: u32, busnumber: u32, slotnumber: u32, offset: u32, buffer: *mut ::core::ffi::c_void, buffersize: u32, bytesread: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub WriteBusData: unsafe extern "system" fn(this: *mut *mut Self, busdatatype: u32, busnumber: u32, slotnumber: u32, offset: u32, buffer: *const ::core::ffi::c_void, buffersize: u32, byteswritten: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub CheckLowMemory: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub ReadDebuggerData: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: *mut ::core::ffi::c_void, buffersize: u32, datasize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub ReadProcessorSystemData: unsafe extern "system" fn(this: *mut *mut Self, processor: u32, index: u32, buffer: *mut ::core::ffi::c_void, buffersize: u32, datasize: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugDataSpaces2 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub ReadVirtual: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, buffer: *mut ::core::ffi::c_void, buffersize: u32, bytesread: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub WriteVirtual: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, buffer: *const ::core::ffi::c_void, buffersize: u32, byteswritten: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SearchVirtual: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, length: u64, pattern: *const ::core::ffi::c_void, patternsize: u32, patterngranularity: u32, matchoffset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub ReadVirtualUncached: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, buffer: *mut ::core::ffi::c_void, buffersize: u32, bytesread: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub WriteVirtualUncached: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, buffer: *const ::core::ffi::c_void, buffersize: u32, byteswritten: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub ReadPointersVirtual: unsafe extern "system" fn(this: *mut *mut Self, count: u32, offset: u64, ptrs: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub WritePointersVirtual: unsafe extern "system" fn(this: *mut *mut Self, count: u32, offset: u64, ptrs: *const u64) -> ::windows_sys::core::HRESULT,
+    pub ReadPhysical: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, buffer: *mut ::core::ffi::c_void, buffersize: u32, bytesread: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub WritePhysical: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, buffer: *const ::core::ffi::c_void, buffersize: u32, byteswritten: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub ReadControl: unsafe extern "system" fn(this: *mut *mut Self, processor: u32, offset: u64, buffer: *mut ::core::ffi::c_void, buffersize: u32, bytesread: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub WriteControl: unsafe extern "system" fn(this: *mut *mut Self, processor: u32, offset: u64, buffer: *const ::core::ffi::c_void, buffersize: u32, byteswritten: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub ReadIo: unsafe extern "system" fn(this: *mut *mut Self, interfacetype: u32, busnumber: u32, addressspace: u32, offset: u64, buffer: *mut ::core::ffi::c_void, buffersize: u32, bytesread: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub WriteIo: unsafe extern "system" fn(this: *mut *mut Self, interfacetype: u32, busnumber: u32, addressspace: u32, offset: u64, buffer: *const ::core::ffi::c_void, buffersize: u32, byteswritten: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub ReadMsr: unsafe extern "system" fn(this: *mut *mut Self, msr: u32, value: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub WriteMsr: unsafe extern "system" fn(this: *mut *mut Self, msr: u32, value: u64) -> ::windows_sys::core::HRESULT,
+    pub ReadBusData: unsafe extern "system" fn(this: *mut *mut Self, busdatatype: u32, busnumber: u32, slotnumber: u32, offset: u32, buffer: *mut ::core::ffi::c_void, buffersize: u32, bytesread: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub WriteBusData: unsafe extern "system" fn(this: *mut *mut Self, busdatatype: u32, busnumber: u32, slotnumber: u32, offset: u32, buffer: *const ::core::ffi::c_void, buffersize: u32, byteswritten: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub CheckLowMemory: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub ReadDebuggerData: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: *mut ::core::ffi::c_void, buffersize: u32, datasize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub ReadProcessorSystemData: unsafe extern "system" fn(this: *mut *mut Self, processor: u32, index: u32, buffer: *mut ::core::ffi::c_void, buffersize: u32, datasize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub VirtualToPhysical: unsafe extern "system" fn(this: *mut *mut Self, r#virtual: u64, physical: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetVirtualTranslationPhysicalOffsets: unsafe extern "system" fn(this: *mut *mut Self, r#virtual: u64, offsets: *mut u64, offsetssize: u32, levels: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub ReadHandleData: unsafe extern "system" fn(this: *mut *mut Self, handle: u64, datatype: u32, buffer: *mut ::core::ffi::c_void, buffersize: u32, datasize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub FillVirtual: unsafe extern "system" fn(this: *mut *mut Self, start: u64, size: u32, pattern: *const ::core::ffi::c_void, patternsize: u32, filled: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub FillPhysical: unsafe extern "system" fn(this: *mut *mut Self, start: u64, size: u32, pattern: *const ::core::ffi::c_void, patternsize: u32, filled: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Memory")]
+    pub QueryVirtual: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, info: *mut super::super::Memory::MEMORY_BASIC_INFORMATION64) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Memory"))]
+    QueryVirtual: usize,
+}
+#[repr(C)]
+pub struct IDebugDataSpaces3 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub ReadVirtual: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, buffer: *mut ::core::ffi::c_void, buffersize: u32, bytesread: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub WriteVirtual: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, buffer: *const ::core::ffi::c_void, buffersize: u32, byteswritten: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SearchVirtual: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, length: u64, pattern: *const ::core::ffi::c_void, patternsize: u32, patterngranularity: u32, matchoffset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub ReadVirtualUncached: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, buffer: *mut ::core::ffi::c_void, buffersize: u32, bytesread: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub WriteVirtualUncached: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, buffer: *const ::core::ffi::c_void, buffersize: u32, byteswritten: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub ReadPointersVirtual: unsafe extern "system" fn(this: *mut *mut Self, count: u32, offset: u64, ptrs: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub WritePointersVirtual: unsafe extern "system" fn(this: *mut *mut Self, count: u32, offset: u64, ptrs: *const u64) -> ::windows_sys::core::HRESULT,
+    pub ReadPhysical: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, buffer: *mut ::core::ffi::c_void, buffersize: u32, bytesread: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub WritePhysical: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, buffer: *const ::core::ffi::c_void, buffersize: u32, byteswritten: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub ReadControl: unsafe extern "system" fn(this: *mut *mut Self, processor: u32, offset: u64, buffer: *mut ::core::ffi::c_void, buffersize: u32, bytesread: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub WriteControl: unsafe extern "system" fn(this: *mut *mut Self, processor: u32, offset: u64, buffer: *const ::core::ffi::c_void, buffersize: u32, byteswritten: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub ReadIo: unsafe extern "system" fn(this: *mut *mut Self, interfacetype: u32, busnumber: u32, addressspace: u32, offset: u64, buffer: *mut ::core::ffi::c_void, buffersize: u32, bytesread: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub WriteIo: unsafe extern "system" fn(this: *mut *mut Self, interfacetype: u32, busnumber: u32, addressspace: u32, offset: u64, buffer: *const ::core::ffi::c_void, buffersize: u32, byteswritten: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub ReadMsr: unsafe extern "system" fn(this: *mut *mut Self, msr: u32, value: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub WriteMsr: unsafe extern "system" fn(this: *mut *mut Self, msr: u32, value: u64) -> ::windows_sys::core::HRESULT,
+    pub ReadBusData: unsafe extern "system" fn(this: *mut *mut Self, busdatatype: u32, busnumber: u32, slotnumber: u32, offset: u32, buffer: *mut ::core::ffi::c_void, buffersize: u32, bytesread: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub WriteBusData: unsafe extern "system" fn(this: *mut *mut Self, busdatatype: u32, busnumber: u32, slotnumber: u32, offset: u32, buffer: *const ::core::ffi::c_void, buffersize: u32, byteswritten: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub CheckLowMemory: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub ReadDebuggerData: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: *mut ::core::ffi::c_void, buffersize: u32, datasize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub ReadProcessorSystemData: unsafe extern "system" fn(this: *mut *mut Self, processor: u32, index: u32, buffer: *mut ::core::ffi::c_void, buffersize: u32, datasize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub VirtualToPhysical: unsafe extern "system" fn(this: *mut *mut Self, r#virtual: u64, physical: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetVirtualTranslationPhysicalOffsets: unsafe extern "system" fn(this: *mut *mut Self, r#virtual: u64, offsets: *mut u64, offsetssize: u32, levels: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub ReadHandleData: unsafe extern "system" fn(this: *mut *mut Self, handle: u64, datatype: u32, buffer: *mut ::core::ffi::c_void, buffersize: u32, datasize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub FillVirtual: unsafe extern "system" fn(this: *mut *mut Self, start: u64, size: u32, pattern: *const ::core::ffi::c_void, patternsize: u32, filled: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub FillPhysical: unsafe extern "system" fn(this: *mut *mut Self, start: u64, size: u32, pattern: *const ::core::ffi::c_void, patternsize: u32, filled: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Memory")]
+    pub QueryVirtual: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, info: *mut super::super::Memory::MEMORY_BASIC_INFORMATION64) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Memory"))]
+    QueryVirtual: usize,
+    pub ReadImageNtHeaders: unsafe extern "system" fn(this: *mut *mut Self, imagebase: u64, headers: *mut IMAGE_NT_HEADERS64) -> ::windows_sys::core::HRESULT,
+    pub ReadTagged: unsafe extern "system" fn(this: *mut *mut Self, tag: *const ::windows_sys::core::GUID, offset: u32, buffer: *mut ::core::ffi::c_void, buffersize: u32, totalsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub StartEnumTagged: unsafe extern "system" fn(this: *mut *mut Self, handle: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetNextTagged: unsafe extern "system" fn(this: *mut *mut Self, handle: u64, tag: *mut ::windows_sys::core::GUID, size: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub EndEnumTagged: unsafe extern "system" fn(this: *mut *mut Self, handle: u64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugDataSpaces4 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub ReadVirtual: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, buffer: *mut ::core::ffi::c_void, buffersize: u32, bytesread: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub WriteVirtual: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, buffer: *const ::core::ffi::c_void, buffersize: u32, byteswritten: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SearchVirtual: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, length: u64, pattern: *const ::core::ffi::c_void, patternsize: u32, patterngranularity: u32, matchoffset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub ReadVirtualUncached: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, buffer: *mut ::core::ffi::c_void, buffersize: u32, bytesread: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub WriteVirtualUncached: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, buffer: *const ::core::ffi::c_void, buffersize: u32, byteswritten: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub ReadPointersVirtual: unsafe extern "system" fn(this: *mut *mut Self, count: u32, offset: u64, ptrs: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub WritePointersVirtual: unsafe extern "system" fn(this: *mut *mut Self, count: u32, offset: u64, ptrs: *const u64) -> ::windows_sys::core::HRESULT,
+    pub ReadPhysical: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, buffer: *mut ::core::ffi::c_void, buffersize: u32, bytesread: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub WritePhysical: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, buffer: *const ::core::ffi::c_void, buffersize: u32, byteswritten: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub ReadControl: unsafe extern "system" fn(this: *mut *mut Self, processor: u32, offset: u64, buffer: *mut ::core::ffi::c_void, buffersize: u32, bytesread: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub WriteControl: unsafe extern "system" fn(this: *mut *mut Self, processor: u32, offset: u64, buffer: *const ::core::ffi::c_void, buffersize: u32, byteswritten: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub ReadIo: unsafe extern "system" fn(this: *mut *mut Self, interfacetype: u32, busnumber: u32, addressspace: u32, offset: u64, buffer: *mut ::core::ffi::c_void, buffersize: u32, bytesread: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub WriteIo: unsafe extern "system" fn(this: *mut *mut Self, interfacetype: u32, busnumber: u32, addressspace: u32, offset: u64, buffer: *const ::core::ffi::c_void, buffersize: u32, byteswritten: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub ReadMsr: unsafe extern "system" fn(this: *mut *mut Self, msr: u32, value: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub WriteMsr: unsafe extern "system" fn(this: *mut *mut Self, msr: u32, value: u64) -> ::windows_sys::core::HRESULT,
+    pub ReadBusData: unsafe extern "system" fn(this: *mut *mut Self, busdatatype: u32, busnumber: u32, slotnumber: u32, offset: u32, buffer: *mut ::core::ffi::c_void, buffersize: u32, bytesread: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub WriteBusData: unsafe extern "system" fn(this: *mut *mut Self, busdatatype: u32, busnumber: u32, slotnumber: u32, offset: u32, buffer: *const ::core::ffi::c_void, buffersize: u32, byteswritten: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub CheckLowMemory: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub ReadDebuggerData: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: *mut ::core::ffi::c_void, buffersize: u32, datasize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub ReadProcessorSystemData: unsafe extern "system" fn(this: *mut *mut Self, processor: u32, index: u32, buffer: *mut ::core::ffi::c_void, buffersize: u32, datasize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub VirtualToPhysical: unsafe extern "system" fn(this: *mut *mut Self, r#virtual: u64, physical: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetVirtualTranslationPhysicalOffsets: unsafe extern "system" fn(this: *mut *mut Self, r#virtual: u64, offsets: *mut u64, offsetssize: u32, levels: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub ReadHandleData: unsafe extern "system" fn(this: *mut *mut Self, handle: u64, datatype: u32, buffer: *mut ::core::ffi::c_void, buffersize: u32, datasize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub FillVirtual: unsafe extern "system" fn(this: *mut *mut Self, start: u64, size: u32, pattern: *const ::core::ffi::c_void, patternsize: u32, filled: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub FillPhysical: unsafe extern "system" fn(this: *mut *mut Self, start: u64, size: u32, pattern: *const ::core::ffi::c_void, patternsize: u32, filled: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Memory")]
+    pub QueryVirtual: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, info: *mut super::super::Memory::MEMORY_BASIC_INFORMATION64) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Memory"))]
+    QueryVirtual: usize,
+    pub ReadImageNtHeaders: unsafe extern "system" fn(this: *mut *mut Self, imagebase: u64, headers: *mut IMAGE_NT_HEADERS64) -> ::windows_sys::core::HRESULT,
+    pub ReadTagged: unsafe extern "system" fn(this: *mut *mut Self, tag: *const ::windows_sys::core::GUID, offset: u32, buffer: *mut ::core::ffi::c_void, buffersize: u32, totalsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub StartEnumTagged: unsafe extern "system" fn(this: *mut *mut Self, handle: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetNextTagged: unsafe extern "system" fn(this: *mut *mut Self, handle: u64, tag: *mut ::windows_sys::core::GUID, size: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub EndEnumTagged: unsafe extern "system" fn(this: *mut *mut Self, handle: u64) -> ::windows_sys::core::HRESULT,
+    pub GetOffsetInformation: unsafe extern "system" fn(this: *mut *mut Self, space: u32, which: u32, offset: u64, buffer: *mut ::core::ffi::c_void, buffersize: u32, infosize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetNextDifferentlyValidOffsetVirtual: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, nextoffset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetValidRegionVirtual: unsafe extern "system" fn(this: *mut *mut Self, base: u64, size: u32, validbase: *mut u64, validsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SearchVirtual2: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, length: u64, flags: u32, pattern: *const ::core::ffi::c_void, patternsize: u32, patterngranularity: u32, matchoffset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub ReadMultiByteStringVirtual: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, maxbytes: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, stringbytes: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub ReadMultiByteStringVirtualWide: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, maxbytes: u32, codepage: u32, buffer: ::windows_sys::core::PWSTR, buffersize: u32, stringbytes: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub ReadUnicodeStringVirtual: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, maxbytes: u32, codepage: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, stringbytes: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub ReadUnicodeStringVirtualWide: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, maxbytes: u32, buffer: ::windows_sys::core::PWSTR, buffersize: u32, stringbytes: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub ReadPhysical2: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, flags: u32, buffer: *mut ::core::ffi::c_void, buffersize: u32, bytesread: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub WritePhysical2: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, flags: u32, buffer: *const ::core::ffi::c_void, buffersize: u32, byteswritten: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugDocument {
+    pub base__: IDebugDocumentInfo,
+}
+#[repr(C)]
+pub struct IDebugDocumentContext {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetDocument: unsafe extern "system" fn(this: *mut *mut Self, ppsd: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EnumCodeContexts: unsafe extern "system" fn(this: *mut *mut Self, ppescc: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugDocumentHelper32 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Init: unsafe extern "system" fn(this: *mut *mut Self, pda: *mut ::core::ffi::c_void, pszshortname: ::windows_sys::core::PCWSTR, pszlongname: ::windows_sys::core::PCWSTR, docattr: u32) -> ::windows_sys::core::HRESULT,
+    pub Attach: unsafe extern "system" fn(this: *mut *mut Self, pddhparent: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Detach: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub AddUnicodeText: unsafe extern "system" fn(this: *mut *mut Self, psztext: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub AddDBCSText: unsafe extern "system" fn(this: *mut *mut Self, psztext: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub SetDebugDocumentHost: unsafe extern "system" fn(this: *mut *mut Self, pddh: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AddDeferredText: unsafe extern "system" fn(this: *mut *mut Self, cchars: u32, dwtextstartcookie: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DefineScriptBlock: unsafe extern "system" fn(this: *mut *mut Self, ulcharoffset: u32, cchars: u32, pas: *mut ::core::ffi::c_void, fscriptlet: super::super::super::Foundation::BOOL, pdwsourcecontext: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DefineScriptBlock: usize,
+    pub SetDefaultTextAttr: unsafe extern "system" fn(this: *mut *mut Self, statextattr: u16) -> ::windows_sys::core::HRESULT,
+    pub SetTextAttributes: unsafe extern "system" fn(this: *mut *mut Self, ulcharoffset: u32, cchars: u32, pstatextattr: *const u16) -> ::windows_sys::core::HRESULT,
+    pub SetLongName: unsafe extern "system" fn(this: *mut *mut Self, pszlongname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetShortName: unsafe extern "system" fn(this: *mut *mut Self, pszshortname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetDocumentAttr: unsafe extern "system" fn(this: *mut *mut Self, pszattributes: u32) -> ::windows_sys::core::HRESULT,
+    pub GetDebugApplicationNode: unsafe extern "system" fn(this: *mut *mut Self, ppdan: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetScriptBlockInfo: unsafe extern "system" fn(this: *mut *mut Self, dwsourcecontext: u32, ppasd: *mut *mut ::core::ffi::c_void, picharpos: *mut u32, pcchars: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub CreateDebugDocumentContext: unsafe extern "system" fn(this: *mut *mut Self, icharpos: u32, cchars: u32, ppddc: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub BringDocumentToTop: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub BringDocumentContextToTop: unsafe extern "system" fn(this: *mut *mut Self, pddc: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugDocumentHelper64 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Init: unsafe extern "system" fn(this: *mut *mut Self, pda: *mut ::core::ffi::c_void, pszshortname: ::windows_sys::core::PCWSTR, pszlongname: ::windows_sys::core::PCWSTR, docattr: u32) -> ::windows_sys::core::HRESULT,
+    pub Attach: unsafe extern "system" fn(this: *mut *mut Self, pddhparent: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Detach: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub AddUnicodeText: unsafe extern "system" fn(this: *mut *mut Self, psztext: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub AddDBCSText: unsafe extern "system" fn(this: *mut *mut Self, psztext: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub SetDebugDocumentHost: unsafe extern "system" fn(this: *mut *mut Self, pddh: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AddDeferredText: unsafe extern "system" fn(this: *mut *mut Self, cchars: u32, dwtextstartcookie: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DefineScriptBlock: unsafe extern "system" fn(this: *mut *mut Self, ulcharoffset: u32, cchars: u32, pas: *mut ::core::ffi::c_void, fscriptlet: super::super::super::Foundation::BOOL, pdwsourcecontext: *mut u64) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DefineScriptBlock: usize,
+    pub SetDefaultTextAttr: unsafe extern "system" fn(this: *mut *mut Self, statextattr: u16) -> ::windows_sys::core::HRESULT,
+    pub SetTextAttributes: unsafe extern "system" fn(this: *mut *mut Self, ulcharoffset: u32, cchars: u32, pstatextattr: *const u16) -> ::windows_sys::core::HRESULT,
+    pub SetLongName: unsafe extern "system" fn(this: *mut *mut Self, pszlongname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetShortName: unsafe extern "system" fn(this: *mut *mut Self, pszshortname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetDocumentAttr: unsafe extern "system" fn(this: *mut *mut Self, pszattributes: u32) -> ::windows_sys::core::HRESULT,
+    pub GetDebugApplicationNode: unsafe extern "system" fn(this: *mut *mut Self, ppdan: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetScriptBlockInfo: unsafe extern "system" fn(this: *mut *mut Self, dwsourcecontext: u64, ppasd: *mut *mut ::core::ffi::c_void, picharpos: *mut u32, pcchars: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub CreateDebugDocumentContext: unsafe extern "system" fn(this: *mut *mut Self, icharpos: u32, cchars: u32, ppddc: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub BringDocumentToTop: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub BringDocumentContextToTop: unsafe extern "system" fn(this: *mut *mut Self, pddc: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugDocumentHost {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetDeferredText: unsafe extern "system" fn(this: *mut *mut Self, dwtextstartcookie: u32, pchartext: ::windows_sys::core::PWSTR, pstatextattr: *mut u16, pcnumchars: *mut u32, cmaxchars: u32) -> ::windows_sys::core::HRESULT,
+    pub GetScriptTextAttributes: unsafe extern "system" fn(this: *mut *mut Self, pstrcode: ::windows_sys::core::PCWSTR, unumcodechars: u32, pstrdelimiter: ::windows_sys::core::PCWSTR, dwflags: u32, pattr: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub OnCreateDocumentContext: unsafe extern "system" fn(this: *mut *mut Self, ppunkouter: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetPathName: unsafe extern "system" fn(this: *mut *mut Self, pbstrlongname: *mut super::super::super::Foundation::BSTR, pfisoriginalfile: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetPathName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetFileName: unsafe extern "system" fn(this: *mut *mut Self, pbstrshortname: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetFileName: usize,
+    pub NotifyChanged: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugDocumentInfo {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetName: unsafe extern "system" fn(this: *mut *mut Self, dnt: DOCUMENTNAMETYPE, pbstrname: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetName: usize,
+    pub GetDocumentClassId: unsafe extern "system" fn(this: *mut *mut Self, pclsiddocument: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugDocumentProvider {
+    pub base__: IDebugDocumentInfo,
+    pub GetDocument: unsafe extern "system" fn(this: *mut *mut Self, ppssd: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugDocumentText {
+    pub base__: IDebugDocument,
+    pub GetDocumentAttributes: unsafe extern "system" fn(this: *mut *mut Self, ptextdocattr: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSize: unsafe extern "system" fn(this: *mut *mut Self, pcnumlines: *mut u32, pcnumchars: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetPositionOfLine: unsafe extern "system" fn(this: *mut *mut Self, clinenumber: u32, pccharacterposition: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetLineOfPosition: unsafe extern "system" fn(this: *mut *mut Self, ccharacterposition: u32, pclinenumber: *mut u32, pccharacteroffsetinline: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetText: unsafe extern "system" fn(this: *mut *mut Self, ccharacterposition: u32, pchartext: ::windows_sys::core::PWSTR, pstatextattr: *mut u16, pcnumchars: *mut u32, cmaxchars: u32) -> ::windows_sys::core::HRESULT,
+    pub GetPositionOfContext: unsafe extern "system" fn(this: *mut *mut Self, psc: *mut ::core::ffi::c_void, pccharacterposition: *mut u32, cnumchars: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetContextOfPosition: unsafe extern "system" fn(this: *mut *mut Self, ccharacterposition: u32, cnumchars: u32, ppsc: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugDocumentTextAuthor {
+    pub base__: IDebugDocumentText,
+    pub InsertText: unsafe extern "system" fn(this: *mut *mut Self, ccharacterposition: u32, cnumtoinsert: u32, pchartext: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub RemoveText: unsafe extern "system" fn(this: *mut *mut Self, ccharacterposition: u32, cnumtoremove: u32) -> ::windows_sys::core::HRESULT,
+    pub ReplaceText: unsafe extern "system" fn(this: *mut *mut Self, ccharacterposition: u32, cnumtoreplace: u32, pchartext: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugDocumentTextEvents {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub onDestroy: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub onInsertText: unsafe extern "system" fn(this: *mut *mut Self, ccharacterposition: u32, cnumtoinsert: u32) -> ::windows_sys::core::HRESULT,
+    pub onRemoveText: unsafe extern "system" fn(this: *mut *mut Self, ccharacterposition: u32, cnumtoremove: u32) -> ::windows_sys::core::HRESULT,
+    pub onReplaceText: unsafe extern "system" fn(this: *mut *mut Self, ccharacterposition: u32, cnumtoreplace: u32) -> ::windows_sys::core::HRESULT,
+    pub onUpdateTextAttributes: unsafe extern "system" fn(this: *mut *mut Self, ccharacterposition: u32, cnumtoupdate: u32) -> ::windows_sys::core::HRESULT,
+    pub onUpdateDocumentAttributes: unsafe extern "system" fn(this: *mut *mut Self, textdocattr: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugDocumentTextExternalAuthor {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetPathName: unsafe extern "system" fn(this: *mut *mut Self, pbstrlongname: *mut super::super::super::Foundation::BSTR, pfisoriginalfile: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetPathName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetFileName: unsafe extern "system" fn(this: *mut *mut Self, pbstrshortname: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetFileName: usize,
+    pub NotifyChanged: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugEventCallbacks {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetInterestMask: unsafe extern "system" fn(this: *mut *mut Self, mask: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Breakpoint: unsafe extern "system" fn(this: *mut *mut Self, bp: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Exception: unsafe extern "system" fn(this: *mut *mut Self, exception: *const EXCEPTION_RECORD64, firstchance: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Exception: usize,
+    pub CreateThread: unsafe extern "system" fn(this: *mut *mut Self, handle: u64, dataoffset: u64, startoffset: u64) -> ::windows_sys::core::HRESULT,
+    pub ExitThread: unsafe extern "system" fn(this: *mut *mut Self, exitcode: u32) -> ::windows_sys::core::HRESULT,
+    pub CreateProcessA: unsafe extern "system" fn(this: *mut *mut Self, imagefilehandle: u64, handle: u64, baseoffset: u64, modulesize: u32, modulename: ::windows_sys::core::PCSTR, imagename: ::windows_sys::core::PCSTR, checksum: u32, timedatestamp: u32, initialthreadhandle: u64, threaddataoffset: u64, startoffset: u64) -> ::windows_sys::core::HRESULT,
+    pub ExitProcess: unsafe extern "system" fn(this: *mut *mut Self, exitcode: u32) -> ::windows_sys::core::HRESULT,
+    pub LoadModule: unsafe extern "system" fn(this: *mut *mut Self, imagefilehandle: u64, baseoffset: u64, modulesize: u32, modulename: ::windows_sys::core::PCSTR, imagename: ::windows_sys::core::PCSTR, checksum: u32, timedatestamp: u32) -> ::windows_sys::core::HRESULT,
+    pub UnloadModule: unsafe extern "system" fn(this: *mut *mut Self, imagebasename: ::windows_sys::core::PCSTR, baseoffset: u64) -> ::windows_sys::core::HRESULT,
+    pub SystemError: unsafe extern "system" fn(this: *mut *mut Self, error: u32, level: u32) -> ::windows_sys::core::HRESULT,
+    pub SessionStatus: unsafe extern "system" fn(this: *mut *mut Self, status: u32) -> ::windows_sys::core::HRESULT,
+    pub ChangeDebuggeeState: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, argument: u64) -> ::windows_sys::core::HRESULT,
+    pub ChangeEngineState: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, argument: u64) -> ::windows_sys::core::HRESULT,
+    pub ChangeSymbolState: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, argument: u64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugEventCallbacksWide {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetInterestMask: unsafe extern "system" fn(this: *mut *mut Self, mask: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Breakpoint: unsafe extern "system" fn(this: *mut *mut Self, bp: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Exception: unsafe extern "system" fn(this: *mut *mut Self, exception: *const EXCEPTION_RECORD64, firstchance: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Exception: usize,
+    pub CreateThread: unsafe extern "system" fn(this: *mut *mut Self, handle: u64, dataoffset: u64, startoffset: u64) -> ::windows_sys::core::HRESULT,
+    pub ExitThread: unsafe extern "system" fn(this: *mut *mut Self, exitcode: u32) -> ::windows_sys::core::HRESULT,
+    pub CreateProcessA: unsafe extern "system" fn(this: *mut *mut Self, imagefilehandle: u64, handle: u64, baseoffset: u64, modulesize: u32, modulename: ::windows_sys::core::PCWSTR, imagename: ::windows_sys::core::PCWSTR, checksum: u32, timedatestamp: u32, initialthreadhandle: u64, threaddataoffset: u64, startoffset: u64) -> ::windows_sys::core::HRESULT,
+    pub ExitProcess: unsafe extern "system" fn(this: *mut *mut Self, exitcode: u32) -> ::windows_sys::core::HRESULT,
+    pub LoadModule: unsafe extern "system" fn(this: *mut *mut Self, imagefilehandle: u64, baseoffset: u64, modulesize: u32, modulename: ::windows_sys::core::PCWSTR, imagename: ::windows_sys::core::PCWSTR, checksum: u32, timedatestamp: u32) -> ::windows_sys::core::HRESULT,
+    pub UnloadModule: unsafe extern "system" fn(this: *mut *mut Self, imagebasename: ::windows_sys::core::PCWSTR, baseoffset: u64) -> ::windows_sys::core::HRESULT,
+    pub SystemError: unsafe extern "system" fn(this: *mut *mut Self, error: u32, level: u32) -> ::windows_sys::core::HRESULT,
+    pub SessionStatus: unsafe extern "system" fn(this: *mut *mut Self, status: u32) -> ::windows_sys::core::HRESULT,
+    pub ChangeDebuggeeState: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, argument: u64) -> ::windows_sys::core::HRESULT,
+    pub ChangeEngineState: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, argument: u64) -> ::windows_sys::core::HRESULT,
+    pub ChangeSymbolState: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, argument: u64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugEventContextCallbacks {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetInterestMask: unsafe extern "system" fn(this: *mut *mut Self, mask: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Breakpoint: unsafe extern "system" fn(this: *mut *mut Self, bp: *mut ::core::ffi::c_void, context: *const ::core::ffi::c_void, contextsize: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Exception: unsafe extern "system" fn(this: *mut *mut Self, exception: *const EXCEPTION_RECORD64, firstchance: u32, context: *const ::core::ffi::c_void, contextsize: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Exception: usize,
+    pub CreateThread: unsafe extern "system" fn(this: *mut *mut Self, handle: u64, dataoffset: u64, startoffset: u64, context: *const ::core::ffi::c_void, contextsize: u32) -> ::windows_sys::core::HRESULT,
+    pub ExitThread: unsafe extern "system" fn(this: *mut *mut Self, exitcode: u32, context: *const ::core::ffi::c_void, contextsize: u32) -> ::windows_sys::core::HRESULT,
+    pub CreateProcessA: unsafe extern "system" fn(this: *mut *mut Self, imagefilehandle: u64, handle: u64, baseoffset: u64, modulesize: u32, modulename: ::windows_sys::core::PCWSTR, imagename: ::windows_sys::core::PCWSTR, checksum: u32, timedatestamp: u32, initialthreadhandle: u64, threaddataoffset: u64, startoffset: u64, context: *const ::core::ffi::c_void, contextsize: u32) -> ::windows_sys::core::HRESULT,
+    pub ExitProcess: unsafe extern "system" fn(this: *mut *mut Self, exitcode: u32, context: *const ::core::ffi::c_void, contextsize: u32) -> ::windows_sys::core::HRESULT,
+    pub LoadModule: unsafe extern "system" fn(this: *mut *mut Self, imagefilehandle: u64, baseoffset: u64, modulesize: u32, modulename: ::windows_sys::core::PCWSTR, imagename: ::windows_sys::core::PCWSTR, checksum: u32, timedatestamp: u32, context: *const ::core::ffi::c_void, contextsize: u32) -> ::windows_sys::core::HRESULT,
+    pub UnloadModule: unsafe extern "system" fn(this: *mut *mut Self, imagebasename: ::windows_sys::core::PCWSTR, baseoffset: u64, context: *const ::core::ffi::c_void, contextsize: u32) -> ::windows_sys::core::HRESULT,
+    pub SystemError: unsafe extern "system" fn(this: *mut *mut Self, error: u32, level: u32, context: *const ::core::ffi::c_void, contextsize: u32) -> ::windows_sys::core::HRESULT,
+    pub SessionStatus: unsafe extern "system" fn(this: *mut *mut Self, status: u32) -> ::windows_sys::core::HRESULT,
+    pub ChangeDebuggeeState: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, argument: u64, context: *const ::core::ffi::c_void, contextsize: u32) -> ::windows_sys::core::HRESULT,
+    pub ChangeEngineState: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, argument: u64, context: *const ::core::ffi::c_void, contextsize: u32) -> ::windows_sys::core::HRESULT,
+    pub ChangeSymbolState: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, argument: u64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugExpression {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Start: unsafe extern "system" fn(this: *mut *mut Self, pdecb: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Abort: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub QueryIsComplete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetResultAsString: unsafe extern "system" fn(this: *mut *mut Self, phrresult: *mut ::windows_sys::core::HRESULT, pbstrresult: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetResultAsString: usize,
+    pub GetResultAsDebugProperty: unsafe extern "system" fn(this: *mut *mut Self, phrresult: *mut ::windows_sys::core::HRESULT, ppdp: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugExpressionCallBack {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub onComplete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugExpressionContext {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub ParseLanguageText: unsafe extern "system" fn(this: *mut *mut Self, pstrcode: ::windows_sys::core::PCWSTR, nradix: u32, pstrdelimiter: ::windows_sys::core::PCWSTR, dwflags: u32, ppe: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetLanguageInfo: unsafe extern "system" fn(this: *mut *mut Self, pbstrlanguagename: *mut super::super::super::Foundation::BSTR, planguageid: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetLanguageInfo: usize,
+}
+#[repr(C)]
+pub struct IDebugExtendedProperty {
+    pub base__: IDebugProperty,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage", feature = "Win32_System_Ole"))]
+    pub GetExtendedPropertyInfo: unsafe extern "system" fn(this: *mut *mut Self, dwfieldspec: u32, nradix: u32, pextendedpropertyinfo: *mut ExtendedDebugPropertyInfo) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage", feature = "Win32_System_Ole")))]
+    GetExtendedPropertyInfo: usize,
+    pub EnumExtendedMembers: unsafe extern "system" fn(this: *mut *mut Self, dwfieldspec: u32, nradix: u32, ppeepi: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugFormatter {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetStringForVariant: unsafe extern "system" fn(this: *mut *mut Self, pvar: *const super::super::Com::VARIANT, nradix: u32, pbstrvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetStringForVariant: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetVariantForString: unsafe extern "system" fn(this: *mut *mut Self, pwstrvalue: ::windows_sys::core::PCWSTR, pvar: *mut super::super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetVariantForString: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetStringForVarType: unsafe extern "system" fn(this: *mut *mut Self, vt: u16, ptdescarraytype: *const super::super::Com::TYPEDESC, pbstr: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetStringForVarType: usize,
+}
+#[repr(C)]
+pub struct IDebugHelper {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub CreatePropertyBrowser: unsafe extern "system" fn(this: *mut *mut Self, pvar: *const super::super::Com::VARIANT, bstrname: ::windows_sys::core::PCWSTR, pdat: *mut ::core::ffi::c_void, ppdob: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    CreatePropertyBrowser: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub CreatePropertyBrowserEx: unsafe extern "system" fn(this: *mut *mut Self, pvar: *const super::super::Com::VARIANT, bstrname: ::windows_sys::core::PCWSTR, pdat: *mut ::core::ffi::c_void, pdf: *mut ::core::ffi::c_void, ppdob: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    CreatePropertyBrowserEx: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreateSimpleConnectionPoint: unsafe extern "system" fn(this: *mut *mut Self, pdisp: *mut ::core::ffi::c_void, ppscp: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CreateSimpleConnectionPoint: usize,
+}
+#[repr(C)]
+pub struct IDebugHost {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetHostDefinedInterface: unsafe extern "system" fn(this: *mut *mut Self, hostunk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentContext: unsafe extern "system" fn(this: *mut *mut Self, context: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetDefaultMetadata: unsafe extern "system" fn(this: *mut *mut Self, defaultmetadatastore: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugHostBaseClass {
+    pub base__: IDebugHostSymbol,
+    pub GetOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugHostConstant {
+    pub base__: IDebugHostSymbol,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetValue: unsafe extern "system" fn(this: *mut *mut Self, value: *mut super::super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetValue: usize,
+}
+#[repr(C)]
+pub struct IDebugHostContext {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub IsEqualTo: unsafe extern "system" fn(this: *mut *mut Self, pcontext: *mut ::core::ffi::c_void, pisequal: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugHostData {
+    pub base__: IDebugHostSymbol,
+    pub GetLocationKind: unsafe extern "system" fn(this: *mut *mut Self, locationkind: *mut LocationKind) -> ::windows_sys::core::HRESULT,
+    pub GetLocation: unsafe extern "system" fn(this: *mut *mut Self, location: *mut Location) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetValue: unsafe extern "system" fn(this: *mut *mut Self, value: *mut super::super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetValue: usize,
+}
+#[repr(C)]
+pub struct IDebugHostErrorSink {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub ReportError: unsafe extern "system" fn(this: *mut *mut Self, errclass: ErrorClass, hrerror: ::windows_sys::core::HRESULT, message: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugHostEvaluator {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub EvaluateExpression: unsafe extern "system" fn(this: *mut *mut Self, context: *mut ::core::ffi::c_void, expression: ::windows_sys::core::PCWSTR, bindingcontext: *mut ::core::ffi::c_void, result: *mut *mut ::core::ffi::c_void, metadata: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EvaluateExtendedExpression: unsafe extern "system" fn(this: *mut *mut Self, context: *mut ::core::ffi::c_void, expression: ::windows_sys::core::PCWSTR, bindingcontext: *mut ::core::ffi::c_void, result: *mut *mut ::core::ffi::c_void, metadata: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugHostEvaluator2 {
+    pub base__: IDebugHostEvaluator,
+    pub AssignTo: unsafe extern "system" fn(this: *mut *mut Self, assignmentreference: *mut ::core::ffi::c_void, assignmentvalue: *mut ::core::ffi::c_void, assignmentresult: *mut *mut ::core::ffi::c_void, assignmentmetadata: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugHostExtensibility {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub CreateFunctionAlias: unsafe extern "system" fn(this: *mut *mut Self, aliasname: ::windows_sys::core::PCWSTR, functionobject: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub DestroyFunctionAlias: unsafe extern "system" fn(this: *mut *mut Self, aliasname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugHostField {
+    pub base__: IDebugHostSymbol,
+    pub GetLocationKind: unsafe extern "system" fn(this: *mut *mut Self, locationkind: *mut LocationKind) -> ::windows_sys::core::HRESULT,
+    pub GetOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetLocation: unsafe extern "system" fn(this: *mut *mut Self, location: *mut Location) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetValue: unsafe extern "system" fn(this: *mut *mut Self, value: *mut super::super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetValue: usize,
+}
+#[repr(C)]
+pub struct IDebugHostMemory {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub ReadBytes: unsafe extern "system" fn(this: *mut *mut Self, context: *mut ::core::ffi::c_void, location: Location, buffer: *mut ::core::ffi::c_void, buffersize: u64, bytesread: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub WriteBytes: unsafe extern "system" fn(this: *mut *mut Self, context: *mut ::core::ffi::c_void, location: Location, buffer: *const ::core::ffi::c_void, buffersize: u64, byteswritten: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub ReadPointers: unsafe extern "system" fn(this: *mut *mut Self, context: *mut ::core::ffi::c_void, location: Location, count: u64, pointers: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub WritePointers: unsafe extern "system" fn(this: *mut *mut Self, context: *mut ::core::ffi::c_void, location: Location, count: u64, pointers: *const u64) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetDisplayStringForLocation: unsafe extern "system" fn(this: *mut *mut Self, context: *mut ::core::ffi::c_void, location: Location, verbose: u8, locationname: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetDisplayStringForLocation: usize,
+}
+#[repr(C)]
+pub struct IDebugHostMemory2 {
+    pub base__: IDebugHostMemory,
+    pub LinearizeLocation: unsafe extern "system" fn(this: *mut *mut Self, context: *mut ::core::ffi::c_void, location: Location, plinearizedlocation: *mut Location) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugHostModule {
+    pub base__: IDebugHostSymbol,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetImageName: unsafe extern "system" fn(this: *mut *mut Self, allowpath: u8, imagename: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetImageName: usize,
+    pub GetBaseLocation: unsafe extern "system" fn(this: *mut *mut Self, modulebaselocation: *mut Location) -> ::windows_sys::core::HRESULT,
+    pub GetVersion: unsafe extern "system" fn(this: *mut *mut Self, fileversion: *mut u64, productversion: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub FindTypeByName: unsafe extern "system" fn(this: *mut *mut Self, typename: ::windows_sys::core::PCWSTR, r#type: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub FindSymbolByRVA: unsafe extern "system" fn(this: *mut *mut Self, rva: u64, symbol: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub FindSymbolByName: unsafe extern "system" fn(this: *mut *mut Self, symbolname: ::windows_sys::core::PCWSTR, symbol: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugHostModule2 {
+    pub base__: IDebugHostModule,
+    pub FindContainingSymbolByRVA: unsafe extern "system" fn(this: *mut *mut Self, rva: u64, symbol: *mut *mut ::core::ffi::c_void, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugHostModuleSignature {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub IsMatch: unsafe extern "system" fn(this: *mut *mut Self, pmodule: *mut ::core::ffi::c_void, ismatch: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugHostPublic {
+    pub base__: IDebugHostSymbol,
+    pub GetLocationKind: unsafe extern "system" fn(this: *mut *mut Self, locationkind: *mut LocationKind) -> ::windows_sys::core::HRESULT,
+    pub GetLocation: unsafe extern "system" fn(this: *mut *mut Self, location: *mut Location) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugHostScriptHost {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub CreateContext: unsafe extern "system" fn(this: *mut *mut Self, script: *mut ::core::ffi::c_void, scriptcontext: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugHostStatus {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub PollUserInterrupt: unsafe extern "system" fn(this: *mut *mut Self, interruptrequested: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugHostSymbol {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetContext: unsafe extern "system" fn(this: *mut *mut Self, context: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EnumerateChildren: unsafe extern "system" fn(this: *mut *mut Self, kind: SymbolKind, name: ::windows_sys::core::PCWSTR, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolKind: unsafe extern "system" fn(this: *mut *mut Self, kind: *mut SymbolKind) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetName: unsafe extern "system" fn(this: *mut *mut Self, symbolname: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetName: usize,
+    pub GetType: unsafe extern "system" fn(this: *mut *mut Self, r#type: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetContainingModule: unsafe extern "system" fn(this: *mut *mut Self, containingmodule: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CompareAgainst: unsafe extern "system" fn(this: *mut *mut Self, pcomparisonsymbol: *mut ::core::ffi::c_void, comparisonflags: u32, pmatches: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugHostSymbol2 {
+    pub base__: IDebugHostSymbol,
+    pub GetLanguage: unsafe extern "system" fn(this: *mut *mut Self, pkind: *mut LanguageKind) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugHostSymbolEnumerator {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetNext: unsafe extern "system" fn(this: *mut *mut Self, symbol: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugHostSymbols {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub CreateModuleSignature: unsafe extern "system" fn(this: *mut *mut Self, pwszmodulename: ::windows_sys::core::PCWSTR, pwszminversion: ::windows_sys::core::PCWSTR, pwszmaxversion: ::windows_sys::core::PCWSTR, ppmodulesignature: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateTypeSignature: unsafe extern "system" fn(this: *mut *mut Self, signaturespecification: ::windows_sys::core::PCWSTR, module: *mut ::core::ffi::c_void, typesignature: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateTypeSignatureForModuleRange: unsafe extern "system" fn(this: *mut *mut Self, signaturespecification: ::windows_sys::core::PCWSTR, modulename: ::windows_sys::core::PCWSTR, minversion: ::windows_sys::core::PCWSTR, maxversion: ::windows_sys::core::PCWSTR, typesignature: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EnumerateModules: unsafe extern "system" fn(this: *mut *mut Self, context: *mut ::core::ffi::c_void, moduleenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub FindModuleByName: unsafe extern "system" fn(this: *mut *mut Self, context: *mut ::core::ffi::c_void, modulename: ::windows_sys::core::PCWSTR, module: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub FindModuleByLocation: unsafe extern "system" fn(this: *mut *mut Self, context: *mut ::core::ffi::c_void, modulelocation: Location, module: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetMostDerivedObject: unsafe extern "system" fn(this: *mut *mut Self, pcontext: *mut ::core::ffi::c_void, location: Location, objecttype: *mut ::core::ffi::c_void, derivedlocation: *mut Location, derivedtype: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugHostType {
+    pub base__: IDebugHostSymbol,
+    pub GetTypeKind: unsafe extern "system" fn(this: *mut *mut Self, kind: *mut TypeKind) -> ::windows_sys::core::HRESULT,
+    pub GetSize: unsafe extern "system" fn(this: *mut *mut Self, size: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetBaseType: unsafe extern "system" fn(this: *mut *mut Self, basetype: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetHashCode: unsafe extern "system" fn(this: *mut *mut Self, hashcode: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetIntrinsicType: unsafe extern "system" fn(this: *mut *mut Self, intrinsickind: *mut IntrinsicKind, carriertype: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub GetBitField: unsafe extern "system" fn(this: *mut *mut Self, lsboffield: *mut u32, lengthoffield: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetPointerKind: unsafe extern "system" fn(this: *mut *mut Self, pointerkind: *mut PointerKind) -> ::windows_sys::core::HRESULT,
+    pub GetMemberType: unsafe extern "system" fn(this: *mut *mut Self, membertype: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreatePointerTo: unsafe extern "system" fn(this: *mut *mut Self, kind: PointerKind, newtype: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetArrayDimensionality: unsafe extern "system" fn(this: *mut *mut Self, arraydimensionality: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetArrayDimensions: unsafe extern "system" fn(this: *mut *mut Self, dimensions: u64, pdimensions: *mut ArrayDimension) -> ::windows_sys::core::HRESULT,
+    pub CreateArrayOf: unsafe extern "system" fn(this: *mut *mut Self, dimensions: u64, pdimensions: *const ArrayDimension, newtype: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetFunctionCallingConvention: unsafe extern "system" fn(this: *mut *mut Self, conventionkind: *mut CallingConventionKind) -> ::windows_sys::core::HRESULT,
+    pub GetFunctionReturnType: unsafe extern "system" fn(this: *mut *mut Self, returntype: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetFunctionParameterTypeCount: unsafe extern "system" fn(this: *mut *mut Self, count: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetFunctionParameterTypeAt: unsafe extern "system" fn(this: *mut *mut Self, i: u64, parametertype: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub IsGeneric: unsafe extern "system" fn(this: *mut *mut Self, isgeneric: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub GetGenericArgumentCount: unsafe extern "system" fn(this: *mut *mut Self, argcount: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetGenericArgumentAt: unsafe extern "system" fn(this: *mut *mut Self, i: u64, argument: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugHostType2 {
+    pub base__: IDebugHostType,
+    pub IsTypedef: unsafe extern "system" fn(this: *mut *mut Self, istypedef: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub GetTypedefBaseType: unsafe extern "system" fn(this: *mut *mut Self, basetype: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetTypedefFinalBaseType: unsafe extern "system" fn(this: *mut *mut Self, finalbasetype: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetFunctionVarArgsKind: unsafe extern "system" fn(this: *mut *mut Self, varargskind: *mut VarArgsKind) -> ::windows_sys::core::HRESULT,
+    pub GetFunctionInstancePointerType: unsafe extern "system" fn(this: *mut *mut Self, instancepointertype: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugHostTypeSignature {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetHashCode: unsafe extern "system" fn(this: *mut *mut Self, hashcode: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub IsMatch: unsafe extern "system" fn(this: *mut *mut Self, r#type: *mut ::core::ffi::c_void, ismatch: *mut bool, wildcardmatches: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CompareAgainst: unsafe extern "system" fn(this: *mut *mut Self, typesignature: *mut ::core::ffi::c_void, result: *mut SignatureComparison) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugInputCallbacks {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub StartInput: unsafe extern "system" fn(this: *mut *mut Self, buffersize: u32) -> ::windows_sys::core::HRESULT,
+    pub EndInput: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugOutputCallbacks {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Output: unsafe extern "system" fn(this: *mut *mut Self, mask: u32, text: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugOutputCallbacks2 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Output: unsafe extern "system" fn(this: *mut *mut Self, mask: u32, text: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetInterestMask: unsafe extern "system" fn(this: *mut *mut Self, mask: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Output2: unsafe extern "system" fn(this: *mut *mut Self, which: u32, flags: u32, arg: u64, text: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugOutputCallbacksWide {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Output: unsafe extern "system" fn(this: *mut *mut Self, mask: u32, text: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugOutputStream {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Write: unsafe extern "system" fn(this: *mut *mut Self, psz: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugPlmClient {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub LaunchPlmPackageForDebugWide: unsafe extern "system" fn(this: *mut *mut Self, server: u64, timeout: u32, packagefullname: ::windows_sys::core::PCWSTR, appname: ::windows_sys::core::PCWSTR, arguments: ::windows_sys::core::PCWSTR, processid: *mut u32, threadid: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugPlmClient2 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub LaunchPlmPackageForDebugWide: unsafe extern "system" fn(this: *mut *mut Self, server: u64, timeout: u32, packagefullname: ::windows_sys::core::PCWSTR, appname: ::windows_sys::core::PCWSTR, arguments: ::windows_sys::core::PCWSTR, processid: *mut u32, threadid: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub LaunchPlmBgTaskForDebugWide: unsafe extern "system" fn(this: *mut *mut Self, server: u64, timeout: u32, packagefullname: ::windows_sys::core::PCWSTR, backgroundtaskid: ::windows_sys::core::PCWSTR, processid: *mut u32, threadid: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugPlmClient3 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub LaunchPlmPackageForDebugWide: unsafe extern "system" fn(this: *mut *mut Self, server: u64, timeout: u32, packagefullname: ::windows_sys::core::PCWSTR, appname: ::windows_sys::core::PCWSTR, arguments: ::windows_sys::core::PCWSTR, processid: *mut u32, threadid: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub LaunchPlmBgTaskForDebugWide: unsafe extern "system" fn(this: *mut *mut Self, server: u64, timeout: u32, packagefullname: ::windows_sys::core::PCWSTR, backgroundtaskid: ::windows_sys::core::PCWSTR, processid: *mut u32, threadid: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub QueryPlmPackageWide: unsafe extern "system" fn(this: *mut *mut Self, server: u64, packagefullname: ::windows_sys::core::PCWSTR, stream: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub QueryPlmPackageList: unsafe extern "system" fn(this: *mut *mut Self, server: u64, stream: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EnablePlmPackageDebugWide: unsafe extern "system" fn(this: *mut *mut Self, server: u64, packagefullname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub DisablePlmPackageDebugWide: unsafe extern "system" fn(this: *mut *mut Self, server: u64, packagefullname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub SuspendPlmPackageWide: unsafe extern "system" fn(this: *mut *mut Self, server: u64, packagefullname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub ResumePlmPackageWide: unsafe extern "system" fn(this: *mut *mut Self, server: u64, packagefullname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub TerminatePlmPackageWide: unsafe extern "system" fn(this: *mut *mut Self, server: u64, packagefullname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub LaunchAndDebugPlmAppWide: unsafe extern "system" fn(this: *mut *mut Self, server: u64, packagefullname: ::windows_sys::core::PCWSTR, appname: ::windows_sys::core::PCWSTR, arguments: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub ActivateAndDebugPlmBgTaskWide: unsafe extern "system" fn(this: *mut *mut Self, server: u64, packagefullname: ::windows_sys::core::PCWSTR, backgroundtaskid: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugProperty {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetPropertyInfo: unsafe extern "system" fn(this: *mut *mut Self, dwfieldspec: u32, nradix: u32, ppropertyinfo: *mut DebugPropertyInfo) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetPropertyInfo: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetExtendedInfo: unsafe extern "system" fn(this: *mut *mut Self, cinfos: u32, rgguidextendedinfo: *const ::windows_sys::core::GUID, rgvar: *mut super::super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetExtendedInfo: usize,
+    pub SetValueAsString: unsafe extern "system" fn(this: *mut *mut Self, pszvalue: ::windows_sys::core::PCWSTR, nradix: u32) -> ::windows_sys::core::HRESULT,
+    pub EnumMembers: unsafe extern "system" fn(this: *mut *mut Self, dwfieldspec: u32, nradix: u32, refiid: *const ::windows_sys::core::GUID, ppepi: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetParent: unsafe extern "system" fn(this: *mut *mut Self, ppdebugprop: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugPropertyEnumType_All {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetName: unsafe extern "system" fn(this: *mut *mut Self, __midl__idebugpropertyenumtype_all0000: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetName: usize,
+}
+#[repr(C)]
+pub struct IDebugPropertyEnumType_Arguments {
+    pub base__: IDebugPropertyEnumType_All,
+}
+#[repr(C)]
+pub struct IDebugPropertyEnumType_Locals {
+    pub base__: IDebugPropertyEnumType_All,
+}
+#[repr(C)]
+pub struct IDebugPropertyEnumType_LocalsPlusArgs {
+    pub base__: IDebugPropertyEnumType_All,
+}
+#[repr(C)]
+pub struct IDebugPropertyEnumType_Registers {
+    pub base__: IDebugPropertyEnumType_All,
+}
+#[repr(C)]
+pub struct IDebugRegisters {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetNumberRegisters: unsafe extern "system" fn(this: *mut *mut Self, number: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetDescription: unsafe extern "system" fn(this: *mut *mut Self, register: u32, namebuffer: ::windows_sys::core::PSTR, namebuffersize: u32, namesize: *mut u32, desc: *mut DEBUG_REGISTER_DESCRIPTION) -> ::windows_sys::core::HRESULT,
+    pub GetIndexByName: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::PCSTR, index: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetValue: unsafe extern "system" fn(this: *mut *mut Self, register: u32, value: *mut DEBUG_VALUE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetValue: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetValue: unsafe extern "system" fn(this: *mut *mut Self, register: u32, value: *const DEBUG_VALUE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetValue: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetValues: unsafe extern "system" fn(this: *mut *mut Self, count: u32, indices: *const u32, start: u32, values: *mut DEBUG_VALUE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetValues: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetValues: unsafe extern "system" fn(this: *mut *mut Self, count: u32, indices: *const u32, start: u32, values: *const DEBUG_VALUE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetValues: usize,
+    pub OutputRegisters: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetInstructionOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetStackOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetFrameOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugRegisters2 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetNumberRegisters: unsafe extern "system" fn(this: *mut *mut Self, number: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetDescription: unsafe extern "system" fn(this: *mut *mut Self, register: u32, namebuffer: ::windows_sys::core::PSTR, namebuffersize: u32, namesize: *mut u32, desc: *mut DEBUG_REGISTER_DESCRIPTION) -> ::windows_sys::core::HRESULT,
+    pub GetIndexByName: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::PCSTR, index: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetValue: unsafe extern "system" fn(this: *mut *mut Self, register: u32, value: *mut DEBUG_VALUE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetValue: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetValue: unsafe extern "system" fn(this: *mut *mut Self, register: u32, value: *const DEBUG_VALUE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetValue: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetValues: unsafe extern "system" fn(this: *mut *mut Self, count: u32, indices: *const u32, start: u32, values: *mut DEBUG_VALUE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetValues: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetValues: unsafe extern "system" fn(this: *mut *mut Self, count: u32, indices: *const u32, start: u32, values: *const DEBUG_VALUE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetValues: usize,
+    pub OutputRegisters: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetInstructionOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetStackOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetFrameOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetDescriptionWide: unsafe extern "system" fn(this: *mut *mut Self, register: u32, namebuffer: ::windows_sys::core::PWSTR, namebuffersize: u32, namesize: *mut u32, desc: *mut DEBUG_REGISTER_DESCRIPTION) -> ::windows_sys::core::HRESULT,
+    pub GetIndexByNameWide: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::PCWSTR, index: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetNumberPseudoRegisters: unsafe extern "system" fn(this: *mut *mut Self, number: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetPseudoDescription: unsafe extern "system" fn(this: *mut *mut Self, register: u32, namebuffer: ::windows_sys::core::PSTR, namebuffersize: u32, namesize: *mut u32, typemodule: *mut u64, typeid: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetPseudoDescriptionWide: unsafe extern "system" fn(this: *mut *mut Self, register: u32, namebuffer: ::windows_sys::core::PWSTR, namebuffersize: u32, namesize: *mut u32, typemodule: *mut u64, typeid: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetPseudoIndexByName: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::PCSTR, index: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetPseudoIndexByNameWide: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::PCWSTR, index: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetPseudoValues: unsafe extern "system" fn(this: *mut *mut Self, source: u32, count: u32, indices: *const u32, start: u32, values: *mut DEBUG_VALUE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetPseudoValues: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetPseudoValues: unsafe extern "system" fn(this: *mut *mut Self, source: u32, count: u32, indices: *const u32, start: u32, values: *const DEBUG_VALUE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetPseudoValues: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetValues2: unsafe extern "system" fn(this: *mut *mut Self, source: u32, count: u32, indices: *const u32, start: u32, values: *mut DEBUG_VALUE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetValues2: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetValues2: unsafe extern "system" fn(this: *mut *mut Self, source: u32, count: u32, indices: *const u32, start: u32, values: *const DEBUG_VALUE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetValues2: usize,
+    pub OutputRegisters2: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, source: u32, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetInstructionOffset2: unsafe extern "system" fn(this: *mut *mut Self, source: u32, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetStackOffset2: unsafe extern "system" fn(this: *mut *mut Self, source: u32, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetFrameOffset2: unsafe extern "system" fn(this: *mut *mut Self, source: u32, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugSessionProvider {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub StartDebugSession: unsafe extern "system" fn(this: *mut *mut Self, pda: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugStackFrame {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCodeContext: unsafe extern "system" fn(this: *mut *mut Self, ppcc: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetDescriptionString: unsafe extern "system" fn(this: *mut *mut Self, flong: super::super::super::Foundation::BOOL, pbstrdescription: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetDescriptionString: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetLanguageString: unsafe extern "system" fn(this: *mut *mut Self, flong: super::super::super::Foundation::BOOL, pbstrlanguage: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetLanguageString: usize,
+    pub GetThread: unsafe extern "system" fn(this: *mut *mut Self, ppat: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetDebugProperty: unsafe extern "system" fn(this: *mut *mut Self, ppdebugprop: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugStackFrame110 {
+    pub base__: IDebugStackFrame,
+    pub GetStackFrameType: unsafe extern "system" fn(this: *mut *mut Self, pstackframekind: *mut DEBUG_STACKFRAME_TYPE) -> ::windows_sys::core::HRESULT,
+    pub GetScriptInvocationContext: unsafe extern "system" fn(this: *mut *mut Self, ppinvocationcontext: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugStackFrameSniffer {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub EnumStackFrames: unsafe extern "system" fn(this: *mut *mut Self, ppedsf: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugStackFrameSnifferEx32 {
+    pub base__: IDebugStackFrameSniffer,
+    pub EnumStackFramesEx32: unsafe extern "system" fn(this: *mut *mut Self, dwspmin: u32, ppedsf: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugStackFrameSnifferEx64 {
+    pub base__: IDebugStackFrameSniffer,
+    pub EnumStackFramesEx64: unsafe extern "system" fn(this: *mut *mut Self, dwspmin: u64, ppedsf: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugSymbolGroup {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetNumberSymbols: unsafe extern "system" fn(this: *mut *mut Self, number: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub AddSymbol: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::PCSTR, index: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub RemoveSymbolByName: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub RemoveSymbolByIndex: unsafe extern "system" fn(this: *mut *mut Self, index: u32) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolName: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, namesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolParameters: unsafe extern "system" fn(this: *mut *mut Self, start: u32, count: u32, params: *mut DEBUG_SYMBOL_PARAMETERS) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ExpandSymbol: unsafe extern "system" fn(this: *mut *mut Self, index: u32, expand: super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ExpandSymbol: usize,
+    pub OutputSymbols: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, flags: u32, start: u32, count: u32) -> ::windows_sys::core::HRESULT,
+    pub WriteSymbol: unsafe extern "system" fn(this: *mut *mut Self, index: u32, value: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub OutputAsType: unsafe extern "system" fn(this: *mut *mut Self, index: u32, r#type: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugSymbolGroup2 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetNumberSymbols: unsafe extern "system" fn(this: *mut *mut Self, number: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub AddSymbol: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::PCSTR, index: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub RemoveSymbolByName: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub RemoveSymbolByIndex: unsafe extern "system" fn(this: *mut *mut Self, index: u32) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolName: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, namesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolParameters: unsafe extern "system" fn(this: *mut *mut Self, start: u32, count: u32, params: *mut DEBUG_SYMBOL_PARAMETERS) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ExpandSymbol: unsafe extern "system" fn(this: *mut *mut Self, index: u32, expand: super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ExpandSymbol: usize,
+    pub OutputSymbols: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, flags: u32, start: u32, count: u32) -> ::windows_sys::core::HRESULT,
+    pub WriteSymbol: unsafe extern "system" fn(this: *mut *mut Self, index: u32, value: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub OutputAsType: unsafe extern "system" fn(this: *mut *mut Self, index: u32, r#type: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub AddSymbolWide: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::PCWSTR, index: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub RemoveSymbolByNameWide: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolNameWide: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PWSTR, buffersize: u32, namesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub WriteSymbolWide: unsafe extern "system" fn(this: *mut *mut Self, index: u32, value: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub OutputAsTypeWide: unsafe extern "system" fn(this: *mut *mut Self, index: u32, r#type: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolTypeName: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, namesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolTypeNameWide: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PWSTR, buffersize: u32, namesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolSize: unsafe extern "system" fn(this: *mut *mut Self, index: u32, size: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolOffset: unsafe extern "system" fn(this: *mut *mut Self, index: u32, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolRegister: unsafe extern "system" fn(this: *mut *mut Self, index: u32, register: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolValueText: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, namesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolValueTextWide: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PWSTR, buffersize: u32, namesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolEntryInformation: unsafe extern "system" fn(this: *mut *mut Self, index: u32, entry: *mut DEBUG_SYMBOL_ENTRY) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugSymbols {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetSymbolOptions: unsafe extern "system" fn(this: *mut *mut Self, options: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub AddSymbolOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub RemoveSymbolOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub SetSymbolOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub GetNameByOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, namebuffer: ::windows_sys::core::PSTR, namebuffersize: u32, namesize: *mut u32, displacement: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetOffsetByName: unsafe extern "system" fn(this: *mut *mut Self, symbol: ::windows_sys::core::PCSTR, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetNearNameByOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, delta: i32, namebuffer: ::windows_sys::core::PSTR, namebuffersize: u32, namesize: *mut u32, displacement: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetLineByOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, line: *mut u32, filebuffer: ::windows_sys::core::PSTR, filebuffersize: u32, filesize: *mut u32, displacement: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetOffsetByLine: unsafe extern "system" fn(this: *mut *mut Self, line: u32, file: ::windows_sys::core::PCSTR, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetNumberModules: unsafe extern "system" fn(this: *mut *mut Self, loaded: *mut u32, unloaded: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetModuleByIndex: unsafe extern "system" fn(this: *mut *mut Self, index: u32, base: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetModuleByModuleName: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::PCSTR, startindex: u32, index: *mut u32, base: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetModuleByOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, startindex: u32, index: *mut u32, base: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetModuleNames: unsafe extern "system" fn(this: *mut *mut Self, index: u32, base: u64, imagenamebuffer: ::windows_sys::core::PSTR, imagenamebuffersize: u32, imagenamesize: *mut u32, modulenamebuffer: ::windows_sys::core::PSTR, modulenamebuffersize: u32, modulenamesize: *mut u32, loadedimagenamebuffer: ::windows_sys::core::PSTR, loadedimagenamebuffersize: u32, loadedimagenamesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetModuleParameters: unsafe extern "system" fn(this: *mut *mut Self, count: u32, bases: *const u64, start: u32, params: *mut DEBUG_MODULE_PARAMETERS) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolModule: unsafe extern "system" fn(this: *mut *mut Self, symbol: ::windows_sys::core::PCSTR, base: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetTypeName: unsafe extern "system" fn(this: *mut *mut Self, module: u64, typeid: u32, namebuffer: ::windows_sys::core::PSTR, namebuffersize: u32, namesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetTypeId: unsafe extern "system" fn(this: *mut *mut Self, module: u64, name: ::windows_sys::core::PCSTR, typeid: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetTypeSize: unsafe extern "system" fn(this: *mut *mut Self, module: u64, typeid: u32, size: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetFieldOffset: unsafe extern "system" fn(this: *mut *mut Self, module: u64, typeid: u32, field: ::windows_sys::core::PCSTR, offset: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolTypeId: unsafe extern "system" fn(this: *mut *mut Self, symbol: ::windows_sys::core::PCSTR, typeid: *mut u32, module: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetOffsetTypeId: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, typeid: *mut u32, module: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub ReadTypedDataVirtual: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, module: u64, typeid: u32, buffer: *mut ::core::ffi::c_void, buffersize: u32, bytesread: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub WriteTypedDataVirtual: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, module: u64, typeid: u32, buffer: *const ::core::ffi::c_void, buffersize: u32, byteswritten: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub OutputTypedDataVirtual: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, offset: u64, module: u64, typeid: u32, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub ReadTypedDataPhysical: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, module: u64, typeid: u32, buffer: *mut ::core::ffi::c_void, buffersize: u32, bytesread: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub WriteTypedDataPhysical: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, module: u64, typeid: u32, buffer: *const ::core::ffi::c_void, buffersize: u32, byteswritten: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub OutputTypedDataPhysical: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, offset: u64, module: u64, typeid: u32, flags: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetScope: unsafe extern "system" fn(this: *mut *mut Self, instructionoffset: *mut u64, scopeframe: *mut DEBUG_STACK_FRAME, scopecontext: *mut ::core::ffi::c_void, scopecontextsize: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetScope: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetScope: unsafe extern "system" fn(this: *mut *mut Self, instructionoffset: u64, scopeframe: *const DEBUG_STACK_FRAME, scopecontext: *const ::core::ffi::c_void, scopecontextsize: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetScope: usize,
+    pub ResetScope: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetScopeSymbolGroup: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, update: *mut ::core::ffi::c_void, symbols: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateSymbolGroup: unsafe extern "system" fn(this: *mut *mut Self, group: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub StartSymbolMatch: unsafe extern "system" fn(this: *mut *mut Self, pattern: ::windows_sys::core::PCSTR, handle: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetNextSymbolMatch: unsafe extern "system" fn(this: *mut *mut Self, handle: u64, buffer: ::windows_sys::core::PSTR, buffersize: u32, matchsize: *mut u32, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub EndSymbolMatch: unsafe extern "system" fn(this: *mut *mut Self, handle: u64) -> ::windows_sys::core::HRESULT,
+    pub Reload: unsafe extern "system" fn(this: *mut *mut Self, module: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolPath: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, pathsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetSymbolPath: unsafe extern "system" fn(this: *mut *mut Self, path: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub AppendSymbolPath: unsafe extern "system" fn(this: *mut *mut Self, addition: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetImagePath: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, pathsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetImagePath: unsafe extern "system" fn(this: *mut *mut Self, path: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub AppendImagePath: unsafe extern "system" fn(this: *mut *mut Self, addition: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetSourcePath: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, pathsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSourcePathElement: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, elementsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetSourcePath: unsafe extern "system" fn(this: *mut *mut Self, path: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub AppendSourcePath: unsafe extern "system" fn(this: *mut *mut Self, addition: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub FindSourceFile: unsafe extern "system" fn(this: *mut *mut Self, startelement: u32, file: ::windows_sys::core::PCSTR, flags: u32, foundelement: *mut u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, foundsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSourceFileLineOffsets: unsafe extern "system" fn(this: *mut *mut Self, file: ::windows_sys::core::PCSTR, buffer: *mut u64, bufferlines: u32, filelines: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugSymbols2 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetSymbolOptions: unsafe extern "system" fn(this: *mut *mut Self, options: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub AddSymbolOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub RemoveSymbolOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub SetSymbolOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub GetNameByOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, namebuffer: ::windows_sys::core::PSTR, namebuffersize: u32, namesize: *mut u32, displacement: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetOffsetByName: unsafe extern "system" fn(this: *mut *mut Self, symbol: ::windows_sys::core::PCSTR, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetNearNameByOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, delta: i32, namebuffer: ::windows_sys::core::PSTR, namebuffersize: u32, namesize: *mut u32, displacement: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetLineByOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, line: *mut u32, filebuffer: ::windows_sys::core::PSTR, filebuffersize: u32, filesize: *mut u32, displacement: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetOffsetByLine: unsafe extern "system" fn(this: *mut *mut Self, line: u32, file: ::windows_sys::core::PCSTR, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetNumberModules: unsafe extern "system" fn(this: *mut *mut Self, loaded: *mut u32, unloaded: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetModuleByIndex: unsafe extern "system" fn(this: *mut *mut Self, index: u32, base: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetModuleByModuleName: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::PCSTR, startindex: u32, index: *mut u32, base: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetModuleByOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, startindex: u32, index: *mut u32, base: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetModuleNames: unsafe extern "system" fn(this: *mut *mut Self, index: u32, base: u64, imagenamebuffer: ::windows_sys::core::PSTR, imagenamebuffersize: u32, imagenamesize: *mut u32, modulenamebuffer: ::windows_sys::core::PSTR, modulenamebuffersize: u32, modulenamesize: *mut u32, loadedimagenamebuffer: ::windows_sys::core::PSTR, loadedimagenamebuffersize: u32, loadedimagenamesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetModuleParameters: unsafe extern "system" fn(this: *mut *mut Self, count: u32, bases: *const u64, start: u32, params: *mut DEBUG_MODULE_PARAMETERS) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolModule: unsafe extern "system" fn(this: *mut *mut Self, symbol: ::windows_sys::core::PCSTR, base: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetTypeName: unsafe extern "system" fn(this: *mut *mut Self, module: u64, typeid: u32, namebuffer: ::windows_sys::core::PSTR, namebuffersize: u32, namesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetTypeId: unsafe extern "system" fn(this: *mut *mut Self, module: u64, name: ::windows_sys::core::PCSTR, typeid: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetTypeSize: unsafe extern "system" fn(this: *mut *mut Self, module: u64, typeid: u32, size: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetFieldOffset: unsafe extern "system" fn(this: *mut *mut Self, module: u64, typeid: u32, field: ::windows_sys::core::PCSTR, offset: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolTypeId: unsafe extern "system" fn(this: *mut *mut Self, symbol: ::windows_sys::core::PCSTR, typeid: *mut u32, module: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetOffsetTypeId: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, typeid: *mut u32, module: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub ReadTypedDataVirtual: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, module: u64, typeid: u32, buffer: *mut ::core::ffi::c_void, buffersize: u32, bytesread: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub WriteTypedDataVirtual: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, module: u64, typeid: u32, buffer: *const ::core::ffi::c_void, buffersize: u32, byteswritten: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub OutputTypedDataVirtual: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, offset: u64, module: u64, typeid: u32, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub ReadTypedDataPhysical: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, module: u64, typeid: u32, buffer: *mut ::core::ffi::c_void, buffersize: u32, bytesread: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub WriteTypedDataPhysical: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, module: u64, typeid: u32, buffer: *const ::core::ffi::c_void, buffersize: u32, byteswritten: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub OutputTypedDataPhysical: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, offset: u64, module: u64, typeid: u32, flags: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetScope: unsafe extern "system" fn(this: *mut *mut Self, instructionoffset: *mut u64, scopeframe: *mut DEBUG_STACK_FRAME, scopecontext: *mut ::core::ffi::c_void, scopecontextsize: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetScope: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetScope: unsafe extern "system" fn(this: *mut *mut Self, instructionoffset: u64, scopeframe: *const DEBUG_STACK_FRAME, scopecontext: *const ::core::ffi::c_void, scopecontextsize: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetScope: usize,
+    pub ResetScope: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetScopeSymbolGroup: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, update: *mut ::core::ffi::c_void, symbols: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateSymbolGroup: unsafe extern "system" fn(this: *mut *mut Self, group: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub StartSymbolMatch: unsafe extern "system" fn(this: *mut *mut Self, pattern: ::windows_sys::core::PCSTR, handle: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetNextSymbolMatch: unsafe extern "system" fn(this: *mut *mut Self, handle: u64, buffer: ::windows_sys::core::PSTR, buffersize: u32, matchsize: *mut u32, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub EndSymbolMatch: unsafe extern "system" fn(this: *mut *mut Self, handle: u64) -> ::windows_sys::core::HRESULT,
+    pub Reload: unsafe extern "system" fn(this: *mut *mut Self, module: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolPath: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, pathsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetSymbolPath: unsafe extern "system" fn(this: *mut *mut Self, path: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub AppendSymbolPath: unsafe extern "system" fn(this: *mut *mut Self, addition: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetImagePath: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, pathsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetImagePath: unsafe extern "system" fn(this: *mut *mut Self, path: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub AppendImagePath: unsafe extern "system" fn(this: *mut *mut Self, addition: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetSourcePath: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, pathsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSourcePathElement: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, elementsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetSourcePath: unsafe extern "system" fn(this: *mut *mut Self, path: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub AppendSourcePath: unsafe extern "system" fn(this: *mut *mut Self, addition: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub FindSourceFile: unsafe extern "system" fn(this: *mut *mut Self, startelement: u32, file: ::windows_sys::core::PCSTR, flags: u32, foundelement: *mut u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, foundsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSourceFileLineOffsets: unsafe extern "system" fn(this: *mut *mut Self, file: ::windows_sys::core::PCSTR, buffer: *mut u64, bufferlines: u32, filelines: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetModuleVersionInformation: unsafe extern "system" fn(this: *mut *mut Self, index: u32, base: u64, item: ::windows_sys::core::PCSTR, buffer: *mut ::core::ffi::c_void, buffersize: u32, verinfosize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetModuleNameString: unsafe extern "system" fn(this: *mut *mut Self, which: u32, index: u32, base: u64, buffer: ::windows_sys::core::PSTR, buffersize: u32, namesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetConstantName: unsafe extern "system" fn(this: *mut *mut Self, module: u64, typeid: u32, value: u64, namebuffer: ::windows_sys::core::PSTR, namebuffersize: u32, namesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetFieldName: unsafe extern "system" fn(this: *mut *mut Self, module: u64, typeid: u32, fieldindex: u32, namebuffer: ::windows_sys::core::PSTR, namebuffersize: u32, namesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetTypeOptions: unsafe extern "system" fn(this: *mut *mut Self, options: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub AddTypeOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub RemoveTypeOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub SetTypeOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugSymbols3 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetSymbolOptions: unsafe extern "system" fn(this: *mut *mut Self, options: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub AddSymbolOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub RemoveSymbolOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub SetSymbolOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub GetNameByOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, namebuffer: ::windows_sys::core::PSTR, namebuffersize: u32, namesize: *mut u32, displacement: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetOffsetByName: unsafe extern "system" fn(this: *mut *mut Self, symbol: ::windows_sys::core::PCSTR, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetNearNameByOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, delta: i32, namebuffer: ::windows_sys::core::PSTR, namebuffersize: u32, namesize: *mut u32, displacement: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetLineByOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, line: *mut u32, filebuffer: ::windows_sys::core::PSTR, filebuffersize: u32, filesize: *mut u32, displacement: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetOffsetByLine: unsafe extern "system" fn(this: *mut *mut Self, line: u32, file: ::windows_sys::core::PCSTR, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetNumberModules: unsafe extern "system" fn(this: *mut *mut Self, loaded: *mut u32, unloaded: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetModuleByIndex: unsafe extern "system" fn(this: *mut *mut Self, index: u32, base: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetModuleByModuleName: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::PCSTR, startindex: u32, index: *mut u32, base: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetModuleByOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, startindex: u32, index: *mut u32, base: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetModuleNames: unsafe extern "system" fn(this: *mut *mut Self, index: u32, base: u64, imagenamebuffer: ::windows_sys::core::PSTR, imagenamebuffersize: u32, imagenamesize: *mut u32, modulenamebuffer: ::windows_sys::core::PSTR, modulenamebuffersize: u32, modulenamesize: *mut u32, loadedimagenamebuffer: ::windows_sys::core::PSTR, loadedimagenamebuffersize: u32, loadedimagenamesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetModuleParameters: unsafe extern "system" fn(this: *mut *mut Self, count: u32, bases: *const u64, start: u32, params: *mut DEBUG_MODULE_PARAMETERS) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolModule: unsafe extern "system" fn(this: *mut *mut Self, symbol: ::windows_sys::core::PCSTR, base: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetTypeName: unsafe extern "system" fn(this: *mut *mut Self, module: u64, typeid: u32, namebuffer: ::windows_sys::core::PSTR, namebuffersize: u32, namesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetTypeId: unsafe extern "system" fn(this: *mut *mut Self, module: u64, name: ::windows_sys::core::PCSTR, typeid: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetTypeSize: unsafe extern "system" fn(this: *mut *mut Self, module: u64, typeid: u32, size: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetFieldOffset: unsafe extern "system" fn(this: *mut *mut Self, module: u64, typeid: u32, field: ::windows_sys::core::PCSTR, offset: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolTypeId: unsafe extern "system" fn(this: *mut *mut Self, symbol: ::windows_sys::core::PCSTR, typeid: *mut u32, module: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetOffsetTypeId: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, typeid: *mut u32, module: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub ReadTypedDataVirtual: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, module: u64, typeid: u32, buffer: *mut ::core::ffi::c_void, buffersize: u32, bytesread: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub WriteTypedDataVirtual: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, module: u64, typeid: u32, buffer: *const ::core::ffi::c_void, buffersize: u32, byteswritten: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub OutputTypedDataVirtual: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, offset: u64, module: u64, typeid: u32, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub ReadTypedDataPhysical: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, module: u64, typeid: u32, buffer: *mut ::core::ffi::c_void, buffersize: u32, bytesread: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub WriteTypedDataPhysical: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, module: u64, typeid: u32, buffer: *const ::core::ffi::c_void, buffersize: u32, byteswritten: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub OutputTypedDataPhysical: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, offset: u64, module: u64, typeid: u32, flags: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetScope: unsafe extern "system" fn(this: *mut *mut Self, instructionoffset: *mut u64, scopeframe: *mut DEBUG_STACK_FRAME, scopecontext: *mut ::core::ffi::c_void, scopecontextsize: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetScope: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetScope: unsafe extern "system" fn(this: *mut *mut Self, instructionoffset: u64, scopeframe: *const DEBUG_STACK_FRAME, scopecontext: *const ::core::ffi::c_void, scopecontextsize: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetScope: usize,
+    pub ResetScope: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetScopeSymbolGroup: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, update: *mut ::core::ffi::c_void, symbols: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateSymbolGroup: unsafe extern "system" fn(this: *mut *mut Self, group: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub StartSymbolMatch: unsafe extern "system" fn(this: *mut *mut Self, pattern: ::windows_sys::core::PCSTR, handle: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetNextSymbolMatch: unsafe extern "system" fn(this: *mut *mut Self, handle: u64, buffer: ::windows_sys::core::PSTR, buffersize: u32, matchsize: *mut u32, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub EndSymbolMatch: unsafe extern "system" fn(this: *mut *mut Self, handle: u64) -> ::windows_sys::core::HRESULT,
+    pub Reload: unsafe extern "system" fn(this: *mut *mut Self, module: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolPath: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, pathsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetSymbolPath: unsafe extern "system" fn(this: *mut *mut Self, path: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub AppendSymbolPath: unsafe extern "system" fn(this: *mut *mut Self, addition: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetImagePath: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, pathsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetImagePath: unsafe extern "system" fn(this: *mut *mut Self, path: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub AppendImagePath: unsafe extern "system" fn(this: *mut *mut Self, addition: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetSourcePath: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, pathsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSourcePathElement: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, elementsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetSourcePath: unsafe extern "system" fn(this: *mut *mut Self, path: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub AppendSourcePath: unsafe extern "system" fn(this: *mut *mut Self, addition: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub FindSourceFile: unsafe extern "system" fn(this: *mut *mut Self, startelement: u32, file: ::windows_sys::core::PCSTR, flags: u32, foundelement: *mut u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, foundsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSourceFileLineOffsets: unsafe extern "system" fn(this: *mut *mut Self, file: ::windows_sys::core::PCSTR, buffer: *mut u64, bufferlines: u32, filelines: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetModuleVersionInformation: unsafe extern "system" fn(this: *mut *mut Self, index: u32, base: u64, item: ::windows_sys::core::PCSTR, buffer: *mut ::core::ffi::c_void, buffersize: u32, verinfosize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetModuleNameString: unsafe extern "system" fn(this: *mut *mut Self, which: u32, index: u32, base: u64, buffer: ::windows_sys::core::PSTR, buffersize: u32, namesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetConstantName: unsafe extern "system" fn(this: *mut *mut Self, module: u64, typeid: u32, value: u64, namebuffer: ::windows_sys::core::PSTR, namebuffersize: u32, namesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetFieldName: unsafe extern "system" fn(this: *mut *mut Self, module: u64, typeid: u32, fieldindex: u32, namebuffer: ::windows_sys::core::PSTR, namebuffersize: u32, namesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetTypeOptions: unsafe extern "system" fn(this: *mut *mut Self, options: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub AddTypeOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub RemoveTypeOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub SetTypeOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub GetNameByOffsetWide: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, namebuffer: ::windows_sys::core::PWSTR, namebuffersize: u32, namesize: *mut u32, displacement: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetOffsetByNameWide: unsafe extern "system" fn(this: *mut *mut Self, symbol: ::windows_sys::core::PCWSTR, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetNearNameByOffsetWide: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, delta: i32, namebuffer: ::windows_sys::core::PWSTR, namebuffersize: u32, namesize: *mut u32, displacement: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetLineByOffsetWide: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, line: *mut u32, filebuffer: ::windows_sys::core::PWSTR, filebuffersize: u32, filesize: *mut u32, displacement: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetOffsetByLineWide: unsafe extern "system" fn(this: *mut *mut Self, line: u32, file: ::windows_sys::core::PCWSTR, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetModuleByModuleNameWide: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::PCWSTR, startindex: u32, index: *mut u32, base: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolModuleWide: unsafe extern "system" fn(this: *mut *mut Self, symbol: ::windows_sys::core::PCWSTR, base: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetTypeNameWide: unsafe extern "system" fn(this: *mut *mut Self, module: u64, typeid: u32, namebuffer: ::windows_sys::core::PWSTR, namebuffersize: u32, namesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetTypeIdWide: unsafe extern "system" fn(this: *mut *mut Self, module: u64, name: ::windows_sys::core::PCWSTR, typeid: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetFieldOffsetWide: unsafe extern "system" fn(this: *mut *mut Self, module: u64, typeid: u32, field: ::windows_sys::core::PCWSTR, offset: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolTypeIdWide: unsafe extern "system" fn(this: *mut *mut Self, symbol: ::windows_sys::core::PCWSTR, typeid: *mut u32, module: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetScopeSymbolGroup2: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, update: *mut ::core::ffi::c_void, symbols: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateSymbolGroup2: unsafe extern "system" fn(this: *mut *mut Self, group: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub StartSymbolMatchWide: unsafe extern "system" fn(this: *mut *mut Self, pattern: ::windows_sys::core::PCWSTR, handle: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetNextSymbolMatchWide: unsafe extern "system" fn(this: *mut *mut Self, handle: u64, buffer: ::windows_sys::core::PWSTR, buffersize: u32, matchsize: *mut u32, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub ReloadWide: unsafe extern "system" fn(this: *mut *mut Self, module: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolPathWide: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PWSTR, buffersize: u32, pathsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetSymbolPathWide: unsafe extern "system" fn(this: *mut *mut Self, path: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub AppendSymbolPathWide: unsafe extern "system" fn(this: *mut *mut Self, addition: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetImagePathWide: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PWSTR, buffersize: u32, pathsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetImagePathWide: unsafe extern "system" fn(this: *mut *mut Self, path: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub AppendImagePathWide: unsafe extern "system" fn(this: *mut *mut Self, addition: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetSourcePathWide: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PWSTR, buffersize: u32, pathsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSourcePathElementWide: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PWSTR, buffersize: u32, elementsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetSourcePathWide: unsafe extern "system" fn(this: *mut *mut Self, path: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub AppendSourcePathWide: unsafe extern "system" fn(this: *mut *mut Self, addition: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub FindSourceFileWide: unsafe extern "system" fn(this: *mut *mut Self, startelement: u32, file: ::windows_sys::core::PCWSTR, flags: u32, foundelement: *mut u32, buffer: ::windows_sys::core::PWSTR, buffersize: u32, foundsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSourceFileLineOffsetsWide: unsafe extern "system" fn(this: *mut *mut Self, file: ::windows_sys::core::PCWSTR, buffer: *mut u64, bufferlines: u32, filelines: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetModuleVersionInformationWide: unsafe extern "system" fn(this: *mut *mut Self, index: u32, base: u64, item: ::windows_sys::core::PCWSTR, buffer: *mut ::core::ffi::c_void, buffersize: u32, verinfosize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetModuleNameStringWide: unsafe extern "system" fn(this: *mut *mut Self, which: u32, index: u32, base: u64, buffer: ::windows_sys::core::PWSTR, buffersize: u32, namesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetConstantNameWide: unsafe extern "system" fn(this: *mut *mut Self, module: u64, typeid: u32, value: u64, namebuffer: ::windows_sys::core::PWSTR, namebuffersize: u32, namesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetFieldNameWide: unsafe extern "system" fn(this: *mut *mut Self, module: u64, typeid: u32, fieldindex: u32, namebuffer: ::windows_sys::core::PWSTR, namebuffersize: u32, namesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub IsManagedModule: unsafe extern "system" fn(this: *mut *mut Self, index: u32, base: u64) -> ::windows_sys::core::HRESULT,
+    pub GetModuleByModuleName2: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::PCSTR, startindex: u32, flags: u32, index: *mut u32, base: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetModuleByModuleName2Wide: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::PCWSTR, startindex: u32, flags: u32, index: *mut u32, base: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetModuleByOffset2: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, startindex: u32, flags: u32, index: *mut u32, base: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub AddSyntheticModule: unsafe extern "system" fn(this: *mut *mut Self, base: u64, size: u32, imagepath: ::windows_sys::core::PCSTR, modulename: ::windows_sys::core::PCSTR, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub AddSyntheticModuleWide: unsafe extern "system" fn(this: *mut *mut Self, base: u64, size: u32, imagepath: ::windows_sys::core::PCWSTR, modulename: ::windows_sys::core::PCWSTR, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub RemoveSyntheticModule: unsafe extern "system" fn(this: *mut *mut Self, base: u64) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentScopeFrameIndex: unsafe extern "system" fn(this: *mut *mut Self, index: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetScopeFrameByIndex: unsafe extern "system" fn(this: *mut *mut Self, index: u32) -> ::windows_sys::core::HRESULT,
+    pub SetScopeFromJitDebugInfo: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, infooffset: u64) -> ::windows_sys::core::HRESULT,
+    pub SetScopeFromStoredEvent: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub OutputSymbolByOffset: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, flags: u32, offset: u64) -> ::windows_sys::core::HRESULT,
+    pub GetFunctionEntryByOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, flags: u32, buffer: *mut ::core::ffi::c_void, buffersize: u32, bufferneeded: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetFieldTypeAndOffset: unsafe extern "system" fn(this: *mut *mut Self, module: u64, containertypeid: u32, field: ::windows_sys::core::PCSTR, fieldtypeid: *mut u32, offset: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetFieldTypeAndOffsetWide: unsafe extern "system" fn(this: *mut *mut Self, module: u64, containertypeid: u32, field: ::windows_sys::core::PCWSTR, fieldtypeid: *mut u32, offset: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub AddSyntheticSymbol: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, size: u32, name: ::windows_sys::core::PCSTR, flags: u32, id: *mut DEBUG_MODULE_AND_ID) -> ::windows_sys::core::HRESULT,
+    pub AddSyntheticSymbolWide: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, size: u32, name: ::windows_sys::core::PCWSTR, flags: u32, id: *mut DEBUG_MODULE_AND_ID) -> ::windows_sys::core::HRESULT,
+    pub RemoveSyntheticSymbol: unsafe extern "system" fn(this: *mut *mut Self, id: *const DEBUG_MODULE_AND_ID) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolEntriesByOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, flags: u32, ids: *mut DEBUG_MODULE_AND_ID, displacements: *mut u64, idscount: u32, entries: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolEntriesByName: unsafe extern "system" fn(this: *mut *mut Self, symbol: ::windows_sys::core::PCSTR, flags: u32, ids: *mut DEBUG_MODULE_AND_ID, idscount: u32, entries: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolEntriesByNameWide: unsafe extern "system" fn(this: *mut *mut Self, symbol: ::windows_sys::core::PCWSTR, flags: u32, ids: *mut DEBUG_MODULE_AND_ID, idscount: u32, entries: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolEntryByToken: unsafe extern "system" fn(this: *mut *mut Self, modulebase: u64, token: u32, id: *mut DEBUG_MODULE_AND_ID) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolEntryInformation: unsafe extern "system" fn(this: *mut *mut Self, id: *const DEBUG_MODULE_AND_ID, info: *mut DEBUG_SYMBOL_ENTRY) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolEntryString: unsafe extern "system" fn(this: *mut *mut Self, id: *const DEBUG_MODULE_AND_ID, which: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, stringsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolEntryStringWide: unsafe extern "system" fn(this: *mut *mut Self, id: *const DEBUG_MODULE_AND_ID, which: u32, buffer: ::windows_sys::core::PWSTR, buffersize: u32, stringsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolEntryOffsetRegions: unsafe extern "system" fn(this: *mut *mut Self, id: *const DEBUG_MODULE_AND_ID, flags: u32, regions: *mut DEBUG_OFFSET_REGION, regionscount: u32, regionsavail: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolEntryBySymbolEntry: unsafe extern "system" fn(this: *mut *mut Self, fromid: *const DEBUG_MODULE_AND_ID, flags: u32, toid: *mut DEBUG_MODULE_AND_ID) -> ::windows_sys::core::HRESULT,
+    pub GetSourceEntriesByOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, flags: u32, entries: *mut DEBUG_SYMBOL_SOURCE_ENTRY, entriescount: u32, entriesavail: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSourceEntriesByLine: unsafe extern "system" fn(this: *mut *mut Self, line: u32, file: ::windows_sys::core::PCSTR, flags: u32, entries: *mut DEBUG_SYMBOL_SOURCE_ENTRY, entriescount: u32, entriesavail: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSourceEntriesByLineWide: unsafe extern "system" fn(this: *mut *mut Self, line: u32, file: ::windows_sys::core::PCWSTR, flags: u32, entries: *mut DEBUG_SYMBOL_SOURCE_ENTRY, entriescount: u32, entriesavail: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSourceEntryString: unsafe extern "system" fn(this: *mut *mut Self, entry: *const DEBUG_SYMBOL_SOURCE_ENTRY, which: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, stringsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSourceEntryStringWide: unsafe extern "system" fn(this: *mut *mut Self, entry: *const DEBUG_SYMBOL_SOURCE_ENTRY, which: u32, buffer: ::windows_sys::core::PWSTR, buffersize: u32, stringsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSourceEntryOffsetRegions: unsafe extern "system" fn(this: *mut *mut Self, entry: *const DEBUG_SYMBOL_SOURCE_ENTRY, flags: u32, regions: *mut DEBUG_OFFSET_REGION, regionscount: u32, regionsavail: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSourceEntryBySourceEntry: unsafe extern "system" fn(this: *mut *mut Self, fromentry: *const DEBUG_SYMBOL_SOURCE_ENTRY, flags: u32, toentry: *mut DEBUG_SYMBOL_SOURCE_ENTRY) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugSymbols4 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetSymbolOptions: unsafe extern "system" fn(this: *mut *mut Self, options: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub AddSymbolOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub RemoveSymbolOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub SetSymbolOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub GetNameByOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, namebuffer: ::windows_sys::core::PSTR, namebuffersize: u32, namesize: *mut u32, displacement: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetOffsetByName: unsafe extern "system" fn(this: *mut *mut Self, symbol: ::windows_sys::core::PCSTR, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetNearNameByOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, delta: i32, namebuffer: ::windows_sys::core::PSTR, namebuffersize: u32, namesize: *mut u32, displacement: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetLineByOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, line: *mut u32, filebuffer: ::windows_sys::core::PSTR, filebuffersize: u32, filesize: *mut u32, displacement: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetOffsetByLine: unsafe extern "system" fn(this: *mut *mut Self, line: u32, file: ::windows_sys::core::PCSTR, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetNumberModules: unsafe extern "system" fn(this: *mut *mut Self, loaded: *mut u32, unloaded: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetModuleByIndex: unsafe extern "system" fn(this: *mut *mut Self, index: u32, base: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetModuleByModuleName: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::PCSTR, startindex: u32, index: *mut u32, base: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetModuleByOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, startindex: u32, index: *mut u32, base: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetModuleNames: unsafe extern "system" fn(this: *mut *mut Self, index: u32, base: u64, imagenamebuffer: ::windows_sys::core::PSTR, imagenamebuffersize: u32, imagenamesize: *mut u32, modulenamebuffer: ::windows_sys::core::PSTR, modulenamebuffersize: u32, modulenamesize: *mut u32, loadedimagenamebuffer: ::windows_sys::core::PSTR, loadedimagenamebuffersize: u32, loadedimagenamesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetModuleParameters: unsafe extern "system" fn(this: *mut *mut Self, count: u32, bases: *const u64, start: u32, params: *mut DEBUG_MODULE_PARAMETERS) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolModule: unsafe extern "system" fn(this: *mut *mut Self, symbol: ::windows_sys::core::PCSTR, base: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetTypeName: unsafe extern "system" fn(this: *mut *mut Self, module: u64, typeid: u32, namebuffer: ::windows_sys::core::PSTR, namebuffersize: u32, namesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetTypeId: unsafe extern "system" fn(this: *mut *mut Self, module: u64, name: ::windows_sys::core::PCSTR, typeid: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetTypeSize: unsafe extern "system" fn(this: *mut *mut Self, module: u64, typeid: u32, size: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetFieldOffset: unsafe extern "system" fn(this: *mut *mut Self, module: u64, typeid: u32, field: ::windows_sys::core::PCSTR, offset: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolTypeId: unsafe extern "system" fn(this: *mut *mut Self, symbol: ::windows_sys::core::PCSTR, typeid: *mut u32, module: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetOffsetTypeId: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, typeid: *mut u32, module: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub ReadTypedDataVirtual: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, module: u64, typeid: u32, buffer: *mut ::core::ffi::c_void, buffersize: u32, bytesread: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub WriteTypedDataVirtual: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, module: u64, typeid: u32, buffer: *const ::core::ffi::c_void, buffersize: u32, byteswritten: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub OutputTypedDataVirtual: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, offset: u64, module: u64, typeid: u32, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub ReadTypedDataPhysical: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, module: u64, typeid: u32, buffer: *mut ::core::ffi::c_void, buffersize: u32, bytesread: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub WriteTypedDataPhysical: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, module: u64, typeid: u32, buffer: *const ::core::ffi::c_void, buffersize: u32, byteswritten: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub OutputTypedDataPhysical: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, offset: u64, module: u64, typeid: u32, flags: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetScope: unsafe extern "system" fn(this: *mut *mut Self, instructionoffset: *mut u64, scopeframe: *mut DEBUG_STACK_FRAME, scopecontext: *mut ::core::ffi::c_void, scopecontextsize: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetScope: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetScope: unsafe extern "system" fn(this: *mut *mut Self, instructionoffset: u64, scopeframe: *const DEBUG_STACK_FRAME, scopecontext: *const ::core::ffi::c_void, scopecontextsize: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetScope: usize,
+    pub ResetScope: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetScopeSymbolGroup: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, update: *mut ::core::ffi::c_void, symbols: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateSymbolGroup: unsafe extern "system" fn(this: *mut *mut Self, group: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub StartSymbolMatch: unsafe extern "system" fn(this: *mut *mut Self, pattern: ::windows_sys::core::PCSTR, handle: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetNextSymbolMatch: unsafe extern "system" fn(this: *mut *mut Self, handle: u64, buffer: ::windows_sys::core::PSTR, buffersize: u32, matchsize: *mut u32, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub EndSymbolMatch: unsafe extern "system" fn(this: *mut *mut Self, handle: u64) -> ::windows_sys::core::HRESULT,
+    pub Reload: unsafe extern "system" fn(this: *mut *mut Self, module: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolPath: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, pathsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetSymbolPath: unsafe extern "system" fn(this: *mut *mut Self, path: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub AppendSymbolPath: unsafe extern "system" fn(this: *mut *mut Self, addition: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetImagePath: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, pathsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetImagePath: unsafe extern "system" fn(this: *mut *mut Self, path: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub AppendImagePath: unsafe extern "system" fn(this: *mut *mut Self, addition: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetSourcePath: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, pathsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSourcePathElement: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, elementsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetSourcePath: unsafe extern "system" fn(this: *mut *mut Self, path: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub AppendSourcePath: unsafe extern "system" fn(this: *mut *mut Self, addition: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub FindSourceFile: unsafe extern "system" fn(this: *mut *mut Self, startelement: u32, file: ::windows_sys::core::PCSTR, flags: u32, foundelement: *mut u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, foundsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSourceFileLineOffsets: unsafe extern "system" fn(this: *mut *mut Self, file: ::windows_sys::core::PCSTR, buffer: *mut u64, bufferlines: u32, filelines: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetModuleVersionInformation: unsafe extern "system" fn(this: *mut *mut Self, index: u32, base: u64, item: ::windows_sys::core::PCSTR, buffer: *mut ::core::ffi::c_void, buffersize: u32, verinfosize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetModuleNameString: unsafe extern "system" fn(this: *mut *mut Self, which: u32, index: u32, base: u64, buffer: ::windows_sys::core::PSTR, buffersize: u32, namesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetConstantName: unsafe extern "system" fn(this: *mut *mut Self, module: u64, typeid: u32, value: u64, namebuffer: ::windows_sys::core::PSTR, namebuffersize: u32, namesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetFieldName: unsafe extern "system" fn(this: *mut *mut Self, module: u64, typeid: u32, fieldindex: u32, namebuffer: ::windows_sys::core::PSTR, namebuffersize: u32, namesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetTypeOptions: unsafe extern "system" fn(this: *mut *mut Self, options: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub AddTypeOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub RemoveTypeOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub SetTypeOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub GetNameByOffsetWide: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, namebuffer: ::windows_sys::core::PWSTR, namebuffersize: u32, namesize: *mut u32, displacement: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetOffsetByNameWide: unsafe extern "system" fn(this: *mut *mut Self, symbol: ::windows_sys::core::PCWSTR, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetNearNameByOffsetWide: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, delta: i32, namebuffer: ::windows_sys::core::PWSTR, namebuffersize: u32, namesize: *mut u32, displacement: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetLineByOffsetWide: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, line: *mut u32, filebuffer: ::windows_sys::core::PWSTR, filebuffersize: u32, filesize: *mut u32, displacement: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetOffsetByLineWide: unsafe extern "system" fn(this: *mut *mut Self, line: u32, file: ::windows_sys::core::PCWSTR, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetModuleByModuleNameWide: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::PCWSTR, startindex: u32, index: *mut u32, base: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolModuleWide: unsafe extern "system" fn(this: *mut *mut Self, symbol: ::windows_sys::core::PCWSTR, base: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetTypeNameWide: unsafe extern "system" fn(this: *mut *mut Self, module: u64, typeid: u32, namebuffer: ::windows_sys::core::PWSTR, namebuffersize: u32, namesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetTypeIdWide: unsafe extern "system" fn(this: *mut *mut Self, module: u64, name: ::windows_sys::core::PCWSTR, typeid: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetFieldOffsetWide: unsafe extern "system" fn(this: *mut *mut Self, module: u64, typeid: u32, field: ::windows_sys::core::PCWSTR, offset: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolTypeIdWide: unsafe extern "system" fn(this: *mut *mut Self, symbol: ::windows_sys::core::PCWSTR, typeid: *mut u32, module: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetScopeSymbolGroup2: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, update: *mut ::core::ffi::c_void, symbols: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateSymbolGroup2: unsafe extern "system" fn(this: *mut *mut Self, group: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub StartSymbolMatchWide: unsafe extern "system" fn(this: *mut *mut Self, pattern: ::windows_sys::core::PCWSTR, handle: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetNextSymbolMatchWide: unsafe extern "system" fn(this: *mut *mut Self, handle: u64, buffer: ::windows_sys::core::PWSTR, buffersize: u32, matchsize: *mut u32, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub ReloadWide: unsafe extern "system" fn(this: *mut *mut Self, module: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolPathWide: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PWSTR, buffersize: u32, pathsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetSymbolPathWide: unsafe extern "system" fn(this: *mut *mut Self, path: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub AppendSymbolPathWide: unsafe extern "system" fn(this: *mut *mut Self, addition: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetImagePathWide: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PWSTR, buffersize: u32, pathsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetImagePathWide: unsafe extern "system" fn(this: *mut *mut Self, path: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub AppendImagePathWide: unsafe extern "system" fn(this: *mut *mut Self, addition: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetSourcePathWide: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PWSTR, buffersize: u32, pathsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSourcePathElementWide: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PWSTR, buffersize: u32, elementsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetSourcePathWide: unsafe extern "system" fn(this: *mut *mut Self, path: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub AppendSourcePathWide: unsafe extern "system" fn(this: *mut *mut Self, addition: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub FindSourceFileWide: unsafe extern "system" fn(this: *mut *mut Self, startelement: u32, file: ::windows_sys::core::PCWSTR, flags: u32, foundelement: *mut u32, buffer: ::windows_sys::core::PWSTR, buffersize: u32, foundsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSourceFileLineOffsetsWide: unsafe extern "system" fn(this: *mut *mut Self, file: ::windows_sys::core::PCWSTR, buffer: *mut u64, bufferlines: u32, filelines: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetModuleVersionInformationWide: unsafe extern "system" fn(this: *mut *mut Self, index: u32, base: u64, item: ::windows_sys::core::PCWSTR, buffer: *mut ::core::ffi::c_void, buffersize: u32, verinfosize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetModuleNameStringWide: unsafe extern "system" fn(this: *mut *mut Self, which: u32, index: u32, base: u64, buffer: ::windows_sys::core::PWSTR, buffersize: u32, namesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetConstantNameWide: unsafe extern "system" fn(this: *mut *mut Self, module: u64, typeid: u32, value: u64, namebuffer: ::windows_sys::core::PWSTR, namebuffersize: u32, namesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetFieldNameWide: unsafe extern "system" fn(this: *mut *mut Self, module: u64, typeid: u32, fieldindex: u32, namebuffer: ::windows_sys::core::PWSTR, namebuffersize: u32, namesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub IsManagedModule: unsafe extern "system" fn(this: *mut *mut Self, index: u32, base: u64) -> ::windows_sys::core::HRESULT,
+    pub GetModuleByModuleName2: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::PCSTR, startindex: u32, flags: u32, index: *mut u32, base: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetModuleByModuleName2Wide: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::PCWSTR, startindex: u32, flags: u32, index: *mut u32, base: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetModuleByOffset2: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, startindex: u32, flags: u32, index: *mut u32, base: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub AddSyntheticModule: unsafe extern "system" fn(this: *mut *mut Self, base: u64, size: u32, imagepath: ::windows_sys::core::PCSTR, modulename: ::windows_sys::core::PCSTR, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub AddSyntheticModuleWide: unsafe extern "system" fn(this: *mut *mut Self, base: u64, size: u32, imagepath: ::windows_sys::core::PCWSTR, modulename: ::windows_sys::core::PCWSTR, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub RemoveSyntheticModule: unsafe extern "system" fn(this: *mut *mut Self, base: u64) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentScopeFrameIndex: unsafe extern "system" fn(this: *mut *mut Self, index: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetScopeFrameByIndex: unsafe extern "system" fn(this: *mut *mut Self, index: u32) -> ::windows_sys::core::HRESULT,
+    pub SetScopeFromJitDebugInfo: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, infooffset: u64) -> ::windows_sys::core::HRESULT,
+    pub SetScopeFromStoredEvent: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub OutputSymbolByOffset: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, flags: u32, offset: u64) -> ::windows_sys::core::HRESULT,
+    pub GetFunctionEntryByOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, flags: u32, buffer: *mut ::core::ffi::c_void, buffersize: u32, bufferneeded: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetFieldTypeAndOffset: unsafe extern "system" fn(this: *mut *mut Self, module: u64, containertypeid: u32, field: ::windows_sys::core::PCSTR, fieldtypeid: *mut u32, offset: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetFieldTypeAndOffsetWide: unsafe extern "system" fn(this: *mut *mut Self, module: u64, containertypeid: u32, field: ::windows_sys::core::PCWSTR, fieldtypeid: *mut u32, offset: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub AddSyntheticSymbol: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, size: u32, name: ::windows_sys::core::PCSTR, flags: u32, id: *mut DEBUG_MODULE_AND_ID) -> ::windows_sys::core::HRESULT,
+    pub AddSyntheticSymbolWide: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, size: u32, name: ::windows_sys::core::PCWSTR, flags: u32, id: *mut DEBUG_MODULE_AND_ID) -> ::windows_sys::core::HRESULT,
+    pub RemoveSyntheticSymbol: unsafe extern "system" fn(this: *mut *mut Self, id: *const DEBUG_MODULE_AND_ID) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolEntriesByOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, flags: u32, ids: *mut DEBUG_MODULE_AND_ID, displacements: *mut u64, idscount: u32, entries: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolEntriesByName: unsafe extern "system" fn(this: *mut *mut Self, symbol: ::windows_sys::core::PCSTR, flags: u32, ids: *mut DEBUG_MODULE_AND_ID, idscount: u32, entries: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolEntriesByNameWide: unsafe extern "system" fn(this: *mut *mut Self, symbol: ::windows_sys::core::PCWSTR, flags: u32, ids: *mut DEBUG_MODULE_AND_ID, idscount: u32, entries: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolEntryByToken: unsafe extern "system" fn(this: *mut *mut Self, modulebase: u64, token: u32, id: *mut DEBUG_MODULE_AND_ID) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolEntryInformation: unsafe extern "system" fn(this: *mut *mut Self, id: *const DEBUG_MODULE_AND_ID, info: *mut DEBUG_SYMBOL_ENTRY) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolEntryString: unsafe extern "system" fn(this: *mut *mut Self, id: *const DEBUG_MODULE_AND_ID, which: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, stringsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolEntryStringWide: unsafe extern "system" fn(this: *mut *mut Self, id: *const DEBUG_MODULE_AND_ID, which: u32, buffer: ::windows_sys::core::PWSTR, buffersize: u32, stringsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolEntryOffsetRegions: unsafe extern "system" fn(this: *mut *mut Self, id: *const DEBUG_MODULE_AND_ID, flags: u32, regions: *mut DEBUG_OFFSET_REGION, regionscount: u32, regionsavail: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolEntryBySymbolEntry: unsafe extern "system" fn(this: *mut *mut Self, fromid: *const DEBUG_MODULE_AND_ID, flags: u32, toid: *mut DEBUG_MODULE_AND_ID) -> ::windows_sys::core::HRESULT,
+    pub GetSourceEntriesByOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, flags: u32, entries: *mut DEBUG_SYMBOL_SOURCE_ENTRY, entriescount: u32, entriesavail: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSourceEntriesByLine: unsafe extern "system" fn(this: *mut *mut Self, line: u32, file: ::windows_sys::core::PCSTR, flags: u32, entries: *mut DEBUG_SYMBOL_SOURCE_ENTRY, entriescount: u32, entriesavail: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSourceEntriesByLineWide: unsafe extern "system" fn(this: *mut *mut Self, line: u32, file: ::windows_sys::core::PCWSTR, flags: u32, entries: *mut DEBUG_SYMBOL_SOURCE_ENTRY, entriescount: u32, entriesavail: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSourceEntryString: unsafe extern "system" fn(this: *mut *mut Self, entry: *const DEBUG_SYMBOL_SOURCE_ENTRY, which: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, stringsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSourceEntryStringWide: unsafe extern "system" fn(this: *mut *mut Self, entry: *const DEBUG_SYMBOL_SOURCE_ENTRY, which: u32, buffer: ::windows_sys::core::PWSTR, buffersize: u32, stringsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSourceEntryOffsetRegions: unsafe extern "system" fn(this: *mut *mut Self, entry: *const DEBUG_SYMBOL_SOURCE_ENTRY, flags: u32, regions: *mut DEBUG_OFFSET_REGION, regionscount: u32, regionsavail: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSourceEntryBySourceEntry: unsafe extern "system" fn(this: *mut *mut Self, fromentry: *const DEBUG_SYMBOL_SOURCE_ENTRY, flags: u32, toentry: *mut DEBUG_SYMBOL_SOURCE_ENTRY) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetScopeEx: unsafe extern "system" fn(this: *mut *mut Self, instructionoffset: *mut u64, scopeframe: *mut DEBUG_STACK_FRAME_EX, scopecontext: *mut ::core::ffi::c_void, scopecontextsize: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetScopeEx: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetScopeEx: unsafe extern "system" fn(this: *mut *mut Self, instructionoffset: u64, scopeframe: *const DEBUG_STACK_FRAME_EX, scopecontext: *const ::core::ffi::c_void, scopecontextsize: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetScopeEx: usize,
+    pub GetNameByInlineContext: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, inlinecontext: u32, namebuffer: ::windows_sys::core::PSTR, namebuffersize: u32, namesize: *mut u32, displacement: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetNameByInlineContextWide: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, inlinecontext: u32, namebuffer: ::windows_sys::core::PWSTR, namebuffersize: u32, namesize: *mut u32, displacement: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetLineByInlineContext: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, inlinecontext: u32, line: *mut u32, filebuffer: ::windows_sys::core::PSTR, filebuffersize: u32, filesize: *mut u32, displacement: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetLineByInlineContextWide: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, inlinecontext: u32, line: *mut u32, filebuffer: ::windows_sys::core::PWSTR, filebuffersize: u32, filesize: *mut u32, displacement: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub OutputSymbolByInlineContext: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, flags: u32, offset: u64, inlinecontext: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugSymbols5 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetSymbolOptions: unsafe extern "system" fn(this: *mut *mut Self, options: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub AddSymbolOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub RemoveSymbolOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub SetSymbolOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub GetNameByOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, namebuffer: ::windows_sys::core::PSTR, namebuffersize: u32, namesize: *mut u32, displacement: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetOffsetByName: unsafe extern "system" fn(this: *mut *mut Self, symbol: ::windows_sys::core::PCSTR, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetNearNameByOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, delta: i32, namebuffer: ::windows_sys::core::PSTR, namebuffersize: u32, namesize: *mut u32, displacement: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetLineByOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, line: *mut u32, filebuffer: ::windows_sys::core::PSTR, filebuffersize: u32, filesize: *mut u32, displacement: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetOffsetByLine: unsafe extern "system" fn(this: *mut *mut Self, line: u32, file: ::windows_sys::core::PCSTR, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetNumberModules: unsafe extern "system" fn(this: *mut *mut Self, loaded: *mut u32, unloaded: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetModuleByIndex: unsafe extern "system" fn(this: *mut *mut Self, index: u32, base: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetModuleByModuleName: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::PCSTR, startindex: u32, index: *mut u32, base: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetModuleByOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, startindex: u32, index: *mut u32, base: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetModuleNames: unsafe extern "system" fn(this: *mut *mut Self, index: u32, base: u64, imagenamebuffer: ::windows_sys::core::PSTR, imagenamebuffersize: u32, imagenamesize: *mut u32, modulenamebuffer: ::windows_sys::core::PSTR, modulenamebuffersize: u32, modulenamesize: *mut u32, loadedimagenamebuffer: ::windows_sys::core::PSTR, loadedimagenamebuffersize: u32, loadedimagenamesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetModuleParameters: unsafe extern "system" fn(this: *mut *mut Self, count: u32, bases: *const u64, start: u32, params: *mut DEBUG_MODULE_PARAMETERS) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolModule: unsafe extern "system" fn(this: *mut *mut Self, symbol: ::windows_sys::core::PCSTR, base: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetTypeName: unsafe extern "system" fn(this: *mut *mut Self, module: u64, typeid: u32, namebuffer: ::windows_sys::core::PSTR, namebuffersize: u32, namesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetTypeId: unsafe extern "system" fn(this: *mut *mut Self, module: u64, name: ::windows_sys::core::PCSTR, typeid: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetTypeSize: unsafe extern "system" fn(this: *mut *mut Self, module: u64, typeid: u32, size: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetFieldOffset: unsafe extern "system" fn(this: *mut *mut Self, module: u64, typeid: u32, field: ::windows_sys::core::PCSTR, offset: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolTypeId: unsafe extern "system" fn(this: *mut *mut Self, symbol: ::windows_sys::core::PCSTR, typeid: *mut u32, module: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetOffsetTypeId: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, typeid: *mut u32, module: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub ReadTypedDataVirtual: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, module: u64, typeid: u32, buffer: *mut ::core::ffi::c_void, buffersize: u32, bytesread: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub WriteTypedDataVirtual: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, module: u64, typeid: u32, buffer: *const ::core::ffi::c_void, buffersize: u32, byteswritten: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub OutputTypedDataVirtual: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, offset: u64, module: u64, typeid: u32, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub ReadTypedDataPhysical: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, module: u64, typeid: u32, buffer: *mut ::core::ffi::c_void, buffersize: u32, bytesread: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub WriteTypedDataPhysical: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, module: u64, typeid: u32, buffer: *const ::core::ffi::c_void, buffersize: u32, byteswritten: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub OutputTypedDataPhysical: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, offset: u64, module: u64, typeid: u32, flags: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetScope: unsafe extern "system" fn(this: *mut *mut Self, instructionoffset: *mut u64, scopeframe: *mut DEBUG_STACK_FRAME, scopecontext: *mut ::core::ffi::c_void, scopecontextsize: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetScope: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetScope: unsafe extern "system" fn(this: *mut *mut Self, instructionoffset: u64, scopeframe: *const DEBUG_STACK_FRAME, scopecontext: *const ::core::ffi::c_void, scopecontextsize: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetScope: usize,
+    pub ResetScope: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetScopeSymbolGroup: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, update: *mut ::core::ffi::c_void, symbols: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateSymbolGroup: unsafe extern "system" fn(this: *mut *mut Self, group: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub StartSymbolMatch: unsafe extern "system" fn(this: *mut *mut Self, pattern: ::windows_sys::core::PCSTR, handle: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetNextSymbolMatch: unsafe extern "system" fn(this: *mut *mut Self, handle: u64, buffer: ::windows_sys::core::PSTR, buffersize: u32, matchsize: *mut u32, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub EndSymbolMatch: unsafe extern "system" fn(this: *mut *mut Self, handle: u64) -> ::windows_sys::core::HRESULT,
+    pub Reload: unsafe extern "system" fn(this: *mut *mut Self, module: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolPath: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, pathsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetSymbolPath: unsafe extern "system" fn(this: *mut *mut Self, path: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub AppendSymbolPath: unsafe extern "system" fn(this: *mut *mut Self, addition: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetImagePath: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, pathsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetImagePath: unsafe extern "system" fn(this: *mut *mut Self, path: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub AppendImagePath: unsafe extern "system" fn(this: *mut *mut Self, addition: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub GetSourcePath: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, pathsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSourcePathElement: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, elementsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetSourcePath: unsafe extern "system" fn(this: *mut *mut Self, path: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub AppendSourcePath: unsafe extern "system" fn(this: *mut *mut Self, addition: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub FindSourceFile: unsafe extern "system" fn(this: *mut *mut Self, startelement: u32, file: ::windows_sys::core::PCSTR, flags: u32, foundelement: *mut u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, foundsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSourceFileLineOffsets: unsafe extern "system" fn(this: *mut *mut Self, file: ::windows_sys::core::PCSTR, buffer: *mut u64, bufferlines: u32, filelines: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetModuleVersionInformation: unsafe extern "system" fn(this: *mut *mut Self, index: u32, base: u64, item: ::windows_sys::core::PCSTR, buffer: *mut ::core::ffi::c_void, buffersize: u32, verinfosize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetModuleNameString: unsafe extern "system" fn(this: *mut *mut Self, which: u32, index: u32, base: u64, buffer: ::windows_sys::core::PSTR, buffersize: u32, namesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetConstantName: unsafe extern "system" fn(this: *mut *mut Self, module: u64, typeid: u32, value: u64, namebuffer: ::windows_sys::core::PSTR, namebuffersize: u32, namesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetFieldName: unsafe extern "system" fn(this: *mut *mut Self, module: u64, typeid: u32, fieldindex: u32, namebuffer: ::windows_sys::core::PSTR, namebuffersize: u32, namesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetTypeOptions: unsafe extern "system" fn(this: *mut *mut Self, options: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub AddTypeOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub RemoveTypeOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub SetTypeOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+    pub GetNameByOffsetWide: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, namebuffer: ::windows_sys::core::PWSTR, namebuffersize: u32, namesize: *mut u32, displacement: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetOffsetByNameWide: unsafe extern "system" fn(this: *mut *mut Self, symbol: ::windows_sys::core::PCWSTR, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetNearNameByOffsetWide: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, delta: i32, namebuffer: ::windows_sys::core::PWSTR, namebuffersize: u32, namesize: *mut u32, displacement: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetLineByOffsetWide: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, line: *mut u32, filebuffer: ::windows_sys::core::PWSTR, filebuffersize: u32, filesize: *mut u32, displacement: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetOffsetByLineWide: unsafe extern "system" fn(this: *mut *mut Self, line: u32, file: ::windows_sys::core::PCWSTR, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetModuleByModuleNameWide: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::PCWSTR, startindex: u32, index: *mut u32, base: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolModuleWide: unsafe extern "system" fn(this: *mut *mut Self, symbol: ::windows_sys::core::PCWSTR, base: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetTypeNameWide: unsafe extern "system" fn(this: *mut *mut Self, module: u64, typeid: u32, namebuffer: ::windows_sys::core::PWSTR, namebuffersize: u32, namesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetTypeIdWide: unsafe extern "system" fn(this: *mut *mut Self, module: u64, name: ::windows_sys::core::PCWSTR, typeid: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetFieldOffsetWide: unsafe extern "system" fn(this: *mut *mut Self, module: u64, typeid: u32, field: ::windows_sys::core::PCWSTR, offset: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolTypeIdWide: unsafe extern "system" fn(this: *mut *mut Self, symbol: ::windows_sys::core::PCWSTR, typeid: *mut u32, module: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetScopeSymbolGroup2: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, update: *mut ::core::ffi::c_void, symbols: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateSymbolGroup2: unsafe extern "system" fn(this: *mut *mut Self, group: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub StartSymbolMatchWide: unsafe extern "system" fn(this: *mut *mut Self, pattern: ::windows_sys::core::PCWSTR, handle: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetNextSymbolMatchWide: unsafe extern "system" fn(this: *mut *mut Self, handle: u64, buffer: ::windows_sys::core::PWSTR, buffersize: u32, matchsize: *mut u32, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub ReloadWide: unsafe extern "system" fn(this: *mut *mut Self, module: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolPathWide: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PWSTR, buffersize: u32, pathsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetSymbolPathWide: unsafe extern "system" fn(this: *mut *mut Self, path: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub AppendSymbolPathWide: unsafe extern "system" fn(this: *mut *mut Self, addition: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetImagePathWide: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PWSTR, buffersize: u32, pathsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetImagePathWide: unsafe extern "system" fn(this: *mut *mut Self, path: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub AppendImagePathWide: unsafe extern "system" fn(this: *mut *mut Self, addition: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetSourcePathWide: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PWSTR, buffersize: u32, pathsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSourcePathElementWide: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PWSTR, buffersize: u32, elementsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetSourcePathWide: unsafe extern "system" fn(this: *mut *mut Self, path: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub AppendSourcePathWide: unsafe extern "system" fn(this: *mut *mut Self, addition: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub FindSourceFileWide: unsafe extern "system" fn(this: *mut *mut Self, startelement: u32, file: ::windows_sys::core::PCWSTR, flags: u32, foundelement: *mut u32, buffer: ::windows_sys::core::PWSTR, buffersize: u32, foundsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSourceFileLineOffsetsWide: unsafe extern "system" fn(this: *mut *mut Self, file: ::windows_sys::core::PCWSTR, buffer: *mut u64, bufferlines: u32, filelines: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetModuleVersionInformationWide: unsafe extern "system" fn(this: *mut *mut Self, index: u32, base: u64, item: ::windows_sys::core::PCWSTR, buffer: *mut ::core::ffi::c_void, buffersize: u32, verinfosize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetModuleNameStringWide: unsafe extern "system" fn(this: *mut *mut Self, which: u32, index: u32, base: u64, buffer: ::windows_sys::core::PWSTR, buffersize: u32, namesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetConstantNameWide: unsafe extern "system" fn(this: *mut *mut Self, module: u64, typeid: u32, value: u64, namebuffer: ::windows_sys::core::PWSTR, namebuffersize: u32, namesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetFieldNameWide: unsafe extern "system" fn(this: *mut *mut Self, module: u64, typeid: u32, fieldindex: u32, namebuffer: ::windows_sys::core::PWSTR, namebuffersize: u32, namesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub IsManagedModule: unsafe extern "system" fn(this: *mut *mut Self, index: u32, base: u64) -> ::windows_sys::core::HRESULT,
+    pub GetModuleByModuleName2: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::PCSTR, startindex: u32, flags: u32, index: *mut u32, base: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetModuleByModuleName2Wide: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::PCWSTR, startindex: u32, flags: u32, index: *mut u32, base: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetModuleByOffset2: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, startindex: u32, flags: u32, index: *mut u32, base: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub AddSyntheticModule: unsafe extern "system" fn(this: *mut *mut Self, base: u64, size: u32, imagepath: ::windows_sys::core::PCSTR, modulename: ::windows_sys::core::PCSTR, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub AddSyntheticModuleWide: unsafe extern "system" fn(this: *mut *mut Self, base: u64, size: u32, imagepath: ::windows_sys::core::PCWSTR, modulename: ::windows_sys::core::PCWSTR, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub RemoveSyntheticModule: unsafe extern "system" fn(this: *mut *mut Self, base: u64) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentScopeFrameIndex: unsafe extern "system" fn(this: *mut *mut Self, index: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetScopeFrameByIndex: unsafe extern "system" fn(this: *mut *mut Self, index: u32) -> ::windows_sys::core::HRESULT,
+    pub SetScopeFromJitDebugInfo: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, infooffset: u64) -> ::windows_sys::core::HRESULT,
+    pub SetScopeFromStoredEvent: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub OutputSymbolByOffset: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, flags: u32, offset: u64) -> ::windows_sys::core::HRESULT,
+    pub GetFunctionEntryByOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, flags: u32, buffer: *mut ::core::ffi::c_void, buffersize: u32, bufferneeded: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetFieldTypeAndOffset: unsafe extern "system" fn(this: *mut *mut Self, module: u64, containertypeid: u32, field: ::windows_sys::core::PCSTR, fieldtypeid: *mut u32, offset: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetFieldTypeAndOffsetWide: unsafe extern "system" fn(this: *mut *mut Self, module: u64, containertypeid: u32, field: ::windows_sys::core::PCWSTR, fieldtypeid: *mut u32, offset: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub AddSyntheticSymbol: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, size: u32, name: ::windows_sys::core::PCSTR, flags: u32, id: *mut DEBUG_MODULE_AND_ID) -> ::windows_sys::core::HRESULT,
+    pub AddSyntheticSymbolWide: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, size: u32, name: ::windows_sys::core::PCWSTR, flags: u32, id: *mut DEBUG_MODULE_AND_ID) -> ::windows_sys::core::HRESULT,
+    pub RemoveSyntheticSymbol: unsafe extern "system" fn(this: *mut *mut Self, id: *const DEBUG_MODULE_AND_ID) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolEntriesByOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, flags: u32, ids: *mut DEBUG_MODULE_AND_ID, displacements: *mut u64, idscount: u32, entries: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolEntriesByName: unsafe extern "system" fn(this: *mut *mut Self, symbol: ::windows_sys::core::PCSTR, flags: u32, ids: *mut DEBUG_MODULE_AND_ID, idscount: u32, entries: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolEntriesByNameWide: unsafe extern "system" fn(this: *mut *mut Self, symbol: ::windows_sys::core::PCWSTR, flags: u32, ids: *mut DEBUG_MODULE_AND_ID, idscount: u32, entries: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolEntryByToken: unsafe extern "system" fn(this: *mut *mut Self, modulebase: u64, token: u32, id: *mut DEBUG_MODULE_AND_ID) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolEntryInformation: unsafe extern "system" fn(this: *mut *mut Self, id: *const DEBUG_MODULE_AND_ID, info: *mut DEBUG_SYMBOL_ENTRY) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolEntryString: unsafe extern "system" fn(this: *mut *mut Self, id: *const DEBUG_MODULE_AND_ID, which: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, stringsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolEntryStringWide: unsafe extern "system" fn(this: *mut *mut Self, id: *const DEBUG_MODULE_AND_ID, which: u32, buffer: ::windows_sys::core::PWSTR, buffersize: u32, stringsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolEntryOffsetRegions: unsafe extern "system" fn(this: *mut *mut Self, id: *const DEBUG_MODULE_AND_ID, flags: u32, regions: *mut DEBUG_OFFSET_REGION, regionscount: u32, regionsavail: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolEntryBySymbolEntry: unsafe extern "system" fn(this: *mut *mut Self, fromid: *const DEBUG_MODULE_AND_ID, flags: u32, toid: *mut DEBUG_MODULE_AND_ID) -> ::windows_sys::core::HRESULT,
+    pub GetSourceEntriesByOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, flags: u32, entries: *mut DEBUG_SYMBOL_SOURCE_ENTRY, entriescount: u32, entriesavail: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSourceEntriesByLine: unsafe extern "system" fn(this: *mut *mut Self, line: u32, file: ::windows_sys::core::PCSTR, flags: u32, entries: *mut DEBUG_SYMBOL_SOURCE_ENTRY, entriescount: u32, entriesavail: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSourceEntriesByLineWide: unsafe extern "system" fn(this: *mut *mut Self, line: u32, file: ::windows_sys::core::PCWSTR, flags: u32, entries: *mut DEBUG_SYMBOL_SOURCE_ENTRY, entriescount: u32, entriesavail: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSourceEntryString: unsafe extern "system" fn(this: *mut *mut Self, entry: *const DEBUG_SYMBOL_SOURCE_ENTRY, which: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, stringsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSourceEntryStringWide: unsafe extern "system" fn(this: *mut *mut Self, entry: *const DEBUG_SYMBOL_SOURCE_ENTRY, which: u32, buffer: ::windows_sys::core::PWSTR, buffersize: u32, stringsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSourceEntryOffsetRegions: unsafe extern "system" fn(this: *mut *mut Self, entry: *const DEBUG_SYMBOL_SOURCE_ENTRY, flags: u32, regions: *mut DEBUG_OFFSET_REGION, regionscount: u32, regionsavail: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSourceEntryBySourceEntry: unsafe extern "system" fn(this: *mut *mut Self, fromentry: *const DEBUG_SYMBOL_SOURCE_ENTRY, flags: u32, toentry: *mut DEBUG_SYMBOL_SOURCE_ENTRY) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetScopeEx: unsafe extern "system" fn(this: *mut *mut Self, instructionoffset: *mut u64, scopeframe: *mut DEBUG_STACK_FRAME_EX, scopecontext: *mut ::core::ffi::c_void, scopecontextsize: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetScopeEx: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetScopeEx: unsafe extern "system" fn(this: *mut *mut Self, instructionoffset: u64, scopeframe: *const DEBUG_STACK_FRAME_EX, scopecontext: *const ::core::ffi::c_void, scopecontextsize: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetScopeEx: usize,
+    pub GetNameByInlineContext: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, inlinecontext: u32, namebuffer: ::windows_sys::core::PSTR, namebuffersize: u32, namesize: *mut u32, displacement: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetNameByInlineContextWide: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, inlinecontext: u32, namebuffer: ::windows_sys::core::PWSTR, namebuffersize: u32, namesize: *mut u32, displacement: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetLineByInlineContext: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, inlinecontext: u32, line: *mut u32, filebuffer: ::windows_sys::core::PSTR, filebuffersize: u32, filesize: *mut u32, displacement: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetLineByInlineContextWide: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, inlinecontext: u32, line: *mut u32, filebuffer: ::windows_sys::core::PWSTR, filebuffersize: u32, filesize: *mut u32, displacement: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub OutputSymbolByInlineContext: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, flags: u32, offset: u64, inlinecontext: u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentScopeFrameIndexEx: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, index: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetScopeFrameByIndexEx: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, index: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugSyncOperation {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetTargetThread: unsafe extern "system" fn(this: *mut *mut Self, ppattarget: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Execute: unsafe extern "system" fn(this: *mut *mut Self, ppunkresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub InProgressAbort: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugSystemObjects {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetEventThread: unsafe extern "system" fn(this: *mut *mut Self, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetEventProcess: unsafe extern "system" fn(this: *mut *mut Self, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentThreadId: unsafe extern "system" fn(this: *mut *mut Self, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetCurrentThreadId: unsafe extern "system" fn(this: *mut *mut Self, id: u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentProcessId: unsafe extern "system" fn(this: *mut *mut Self, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetCurrentProcessId: unsafe extern "system" fn(this: *mut *mut Self, id: u32) -> ::windows_sys::core::HRESULT,
+    pub GetNumberThreads: unsafe extern "system" fn(this: *mut *mut Self, number: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetTotalNumberThreads: unsafe extern "system" fn(this: *mut *mut Self, total: *mut u32, largestprocess: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetThreadIdsByIndex: unsafe extern "system" fn(this: *mut *mut Self, start: u32, count: u32, ids: *mut u32, sysids: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetThreadIdByProcessor: unsafe extern "system" fn(this: *mut *mut Self, processor: u32, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentThreadDataOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetThreadIdByDataOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentThreadTeb: unsafe extern "system" fn(this: *mut *mut Self, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetThreadIdByTeb: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentThreadSystemId: unsafe extern "system" fn(this: *mut *mut Self, sysid: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetThreadIdBySystemId: unsafe extern "system" fn(this: *mut *mut Self, sysid: u32, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentThreadHandle: unsafe extern "system" fn(this: *mut *mut Self, handle: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetThreadIdByHandle: unsafe extern "system" fn(this: *mut *mut Self, handle: u64, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetNumberProcesses: unsafe extern "system" fn(this: *mut *mut Self, number: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetProcessIdsByIndex: unsafe extern "system" fn(this: *mut *mut Self, start: u32, count: u32, ids: *mut u32, sysids: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentProcessDataOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetProcessIdByDataOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentProcessPeb: unsafe extern "system" fn(this: *mut *mut Self, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetProcessIdByPeb: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentProcessSystemId: unsafe extern "system" fn(this: *mut *mut Self, sysid: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetProcessIdBySystemId: unsafe extern "system" fn(this: *mut *mut Self, sysid: u32, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentProcessHandle: unsafe extern "system" fn(this: *mut *mut Self, handle: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetProcessIdByHandle: unsafe extern "system" fn(this: *mut *mut Self, handle: u64, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentProcessExecutableName: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, exesize: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugSystemObjects2 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetEventThread: unsafe extern "system" fn(this: *mut *mut Self, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetEventProcess: unsafe extern "system" fn(this: *mut *mut Self, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentThreadId: unsafe extern "system" fn(this: *mut *mut Self, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetCurrentThreadId: unsafe extern "system" fn(this: *mut *mut Self, id: u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentProcessId: unsafe extern "system" fn(this: *mut *mut Self, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetCurrentProcessId: unsafe extern "system" fn(this: *mut *mut Self, id: u32) -> ::windows_sys::core::HRESULT,
+    pub GetNumberThreads: unsafe extern "system" fn(this: *mut *mut Self, number: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetTotalNumberThreads: unsafe extern "system" fn(this: *mut *mut Self, total: *mut u32, largestprocess: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetThreadIdsByIndex: unsafe extern "system" fn(this: *mut *mut Self, start: u32, count: u32, ids: *mut u32, sysids: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetThreadIdByProcessor: unsafe extern "system" fn(this: *mut *mut Self, processor: u32, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentThreadDataOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetThreadIdByDataOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentThreadTeb: unsafe extern "system" fn(this: *mut *mut Self, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetThreadIdByTeb: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentThreadSystemId: unsafe extern "system" fn(this: *mut *mut Self, sysid: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetThreadIdBySystemId: unsafe extern "system" fn(this: *mut *mut Self, sysid: u32, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentThreadHandle: unsafe extern "system" fn(this: *mut *mut Self, handle: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetThreadIdByHandle: unsafe extern "system" fn(this: *mut *mut Self, handle: u64, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetNumberProcesses: unsafe extern "system" fn(this: *mut *mut Self, number: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetProcessIdsByIndex: unsafe extern "system" fn(this: *mut *mut Self, start: u32, count: u32, ids: *mut u32, sysids: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentProcessDataOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetProcessIdByDataOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentProcessPeb: unsafe extern "system" fn(this: *mut *mut Self, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetProcessIdByPeb: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentProcessSystemId: unsafe extern "system" fn(this: *mut *mut Self, sysid: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetProcessIdBySystemId: unsafe extern "system" fn(this: *mut *mut Self, sysid: u32, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentProcessHandle: unsafe extern "system" fn(this: *mut *mut Self, handle: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetProcessIdByHandle: unsafe extern "system" fn(this: *mut *mut Self, handle: u64, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentProcessExecutableName: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, exesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentProcessUpTime: unsafe extern "system" fn(this: *mut *mut Self, uptime: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetImplicitThreadDataOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub SetImplicitThreadDataOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: u64) -> ::windows_sys::core::HRESULT,
+    pub GetImplicitProcessDataOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub SetImplicitProcessDataOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: u64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugSystemObjects3 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetEventThread: unsafe extern "system" fn(this: *mut *mut Self, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetEventProcess: unsafe extern "system" fn(this: *mut *mut Self, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentThreadId: unsafe extern "system" fn(this: *mut *mut Self, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetCurrentThreadId: unsafe extern "system" fn(this: *mut *mut Self, id: u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentProcessId: unsafe extern "system" fn(this: *mut *mut Self, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetCurrentProcessId: unsafe extern "system" fn(this: *mut *mut Self, id: u32) -> ::windows_sys::core::HRESULT,
+    pub GetNumberThreads: unsafe extern "system" fn(this: *mut *mut Self, number: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetTotalNumberThreads: unsafe extern "system" fn(this: *mut *mut Self, total: *mut u32, largestprocess: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetThreadIdsByIndex: unsafe extern "system" fn(this: *mut *mut Self, start: u32, count: u32, ids: *mut u32, sysids: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetThreadIdByProcessor: unsafe extern "system" fn(this: *mut *mut Self, processor: u32, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentThreadDataOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetThreadIdByDataOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentThreadTeb: unsafe extern "system" fn(this: *mut *mut Self, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetThreadIdByTeb: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentThreadSystemId: unsafe extern "system" fn(this: *mut *mut Self, sysid: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetThreadIdBySystemId: unsafe extern "system" fn(this: *mut *mut Self, sysid: u32, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentThreadHandle: unsafe extern "system" fn(this: *mut *mut Self, handle: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetThreadIdByHandle: unsafe extern "system" fn(this: *mut *mut Self, handle: u64, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetNumberProcesses: unsafe extern "system" fn(this: *mut *mut Self, number: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetProcessIdsByIndex: unsafe extern "system" fn(this: *mut *mut Self, start: u32, count: u32, ids: *mut u32, sysids: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentProcessDataOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetProcessIdByDataOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentProcessPeb: unsafe extern "system" fn(this: *mut *mut Self, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetProcessIdByPeb: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentProcessSystemId: unsafe extern "system" fn(this: *mut *mut Self, sysid: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetProcessIdBySystemId: unsafe extern "system" fn(this: *mut *mut Self, sysid: u32, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentProcessHandle: unsafe extern "system" fn(this: *mut *mut Self, handle: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetProcessIdByHandle: unsafe extern "system" fn(this: *mut *mut Self, handle: u64, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentProcessExecutableName: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, exesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentProcessUpTime: unsafe extern "system" fn(this: *mut *mut Self, uptime: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetImplicitThreadDataOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub SetImplicitThreadDataOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: u64) -> ::windows_sys::core::HRESULT,
+    pub GetImplicitProcessDataOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub SetImplicitProcessDataOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: u64) -> ::windows_sys::core::HRESULT,
+    pub GetEventSystem: unsafe extern "system" fn(this: *mut *mut Self, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentSystemId: unsafe extern "system" fn(this: *mut *mut Self, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetCurrentSystemId: unsafe extern "system" fn(this: *mut *mut Self, id: u32) -> ::windows_sys::core::HRESULT,
+    pub GetNumberSystems: unsafe extern "system" fn(this: *mut *mut Self, number: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSystemIdsByIndex: unsafe extern "system" fn(this: *mut *mut Self, start: u32, count: u32, ids: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetTotalNumberThreadsAndProcesses: unsafe extern "system" fn(this: *mut *mut Self, totalthreads: *mut u32, totalprocesses: *mut u32, largestprocessthreads: *mut u32, largestsystemthreads: *mut u32, largestsystemprocesses: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentSystemServer: unsafe extern "system" fn(this: *mut *mut Self, server: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetSystemByServer: unsafe extern "system" fn(this: *mut *mut Self, server: u64, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentSystemServerName: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, namesize: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugSystemObjects4 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetEventThread: unsafe extern "system" fn(this: *mut *mut Self, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetEventProcess: unsafe extern "system" fn(this: *mut *mut Self, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentThreadId: unsafe extern "system" fn(this: *mut *mut Self, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetCurrentThreadId: unsafe extern "system" fn(this: *mut *mut Self, id: u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentProcessId: unsafe extern "system" fn(this: *mut *mut Self, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetCurrentProcessId: unsafe extern "system" fn(this: *mut *mut Self, id: u32) -> ::windows_sys::core::HRESULT,
+    pub GetNumberThreads: unsafe extern "system" fn(this: *mut *mut Self, number: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetTotalNumberThreads: unsafe extern "system" fn(this: *mut *mut Self, total: *mut u32, largestprocess: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetThreadIdsByIndex: unsafe extern "system" fn(this: *mut *mut Self, start: u32, count: u32, ids: *mut u32, sysids: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetThreadIdByProcessor: unsafe extern "system" fn(this: *mut *mut Self, processor: u32, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentThreadDataOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetThreadIdByDataOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentThreadTeb: unsafe extern "system" fn(this: *mut *mut Self, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetThreadIdByTeb: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentThreadSystemId: unsafe extern "system" fn(this: *mut *mut Self, sysid: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetThreadIdBySystemId: unsafe extern "system" fn(this: *mut *mut Self, sysid: u32, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentThreadHandle: unsafe extern "system" fn(this: *mut *mut Self, handle: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetThreadIdByHandle: unsafe extern "system" fn(this: *mut *mut Self, handle: u64, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetNumberProcesses: unsafe extern "system" fn(this: *mut *mut Self, number: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetProcessIdsByIndex: unsafe extern "system" fn(this: *mut *mut Self, start: u32, count: u32, ids: *mut u32, sysids: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentProcessDataOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetProcessIdByDataOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentProcessPeb: unsafe extern "system" fn(this: *mut *mut Self, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetProcessIdByPeb: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentProcessSystemId: unsafe extern "system" fn(this: *mut *mut Self, sysid: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetProcessIdBySystemId: unsafe extern "system" fn(this: *mut *mut Self, sysid: u32, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentProcessHandle: unsafe extern "system" fn(this: *mut *mut Self, handle: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetProcessIdByHandle: unsafe extern "system" fn(this: *mut *mut Self, handle: u64, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentProcessExecutableName: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, exesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentProcessUpTime: unsafe extern "system" fn(this: *mut *mut Self, uptime: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetImplicitThreadDataOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub SetImplicitThreadDataOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: u64) -> ::windows_sys::core::HRESULT,
+    pub GetImplicitProcessDataOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub SetImplicitProcessDataOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: u64) -> ::windows_sys::core::HRESULT,
+    pub GetEventSystem: unsafe extern "system" fn(this: *mut *mut Self, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentSystemId: unsafe extern "system" fn(this: *mut *mut Self, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetCurrentSystemId: unsafe extern "system" fn(this: *mut *mut Self, id: u32) -> ::windows_sys::core::HRESULT,
+    pub GetNumberSystems: unsafe extern "system" fn(this: *mut *mut Self, number: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSystemIdsByIndex: unsafe extern "system" fn(this: *mut *mut Self, start: u32, count: u32, ids: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetTotalNumberThreadsAndProcesses: unsafe extern "system" fn(this: *mut *mut Self, totalthreads: *mut u32, totalprocesses: *mut u32, largestprocessthreads: *mut u32, largestsystemthreads: *mut u32, largestsystemprocesses: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentSystemServer: unsafe extern "system" fn(this: *mut *mut Self, server: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetSystemByServer: unsafe extern "system" fn(this: *mut *mut Self, server: u64, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentSystemServerName: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, namesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentProcessExecutableNameWide: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PWSTR, buffersize: u32, exesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentSystemServerNameWide: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PWSTR, buffersize: u32, namesize: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugThreadCall32 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub ThreadCallHandler: unsafe extern "system" fn(this: *mut *mut Self, dwparam1: u32, dwparam2: u32, dwparam3: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDebugThreadCall64 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub ThreadCallHandler: unsafe extern "system" fn(this: *mut *mut Self, dwparam1: u64, dwparam2: u64, dwparam3: u64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDynamicConceptProviderConcept {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetConcept: unsafe extern "system" fn(this: *mut *mut Self, contextobject: *mut ::core::ffi::c_void, conceptid: *const ::windows_sys::core::GUID, conceptinterface: *mut *mut ::core::ffi::c_void, conceptmetadata: *mut *mut ::core::ffi::c_void, hasconcept: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetConcept: unsafe extern "system" fn(this: *mut *mut Self, contextobject: *mut ::core::ffi::c_void, conceptid: *const ::windows_sys::core::GUID, conceptinterface: *mut ::core::ffi::c_void, conceptmetadata: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub NotifyParent: unsafe extern "system" fn(this: *mut *mut Self, parentmodel: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub NotifyParentChange: unsafe extern "system" fn(this: *mut *mut Self, parentmodel: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub NotifyDestruct: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDynamicKeyProviderConcept {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetKey: unsafe extern "system" fn(this: *mut *mut Self, contextobject: *mut ::core::ffi::c_void, key: ::windows_sys::core::PCWSTR, keyvalue: *mut *mut ::core::ffi::c_void, metadata: *mut *mut ::core::ffi::c_void, haskey: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetKey: unsafe extern "system" fn(this: *mut *mut Self, contextobject: *mut ::core::ffi::c_void, key: ::windows_sys::core::PCWSTR, keyvalue: *mut ::core::ffi::c_void, metadata: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EnumerateKeys: unsafe extern "system" fn(this: *mut *mut Self, contextobject: *mut ::core::ffi::c_void, ppenumerator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IEnumDebugApplicationNodes {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, celt: u32, pprddp: *mut *mut ::core::ffi::c_void, pceltfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Skip: unsafe extern "system" fn(this: *mut *mut Self, celt: u32) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, pperddp: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IEnumDebugCodeContexts {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, celt: u32, pscc: *mut *mut ::core::ffi::c_void, pceltfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Skip: unsafe extern "system" fn(this: *mut *mut Self, celt: u32) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppescc: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IEnumDebugExpressionContexts {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, celt: u32, ppdec: *mut *mut ::core::ffi::c_void, pceltfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Skip: unsafe extern "system" fn(this: *mut *mut Self, celt: u32) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppedec: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IEnumDebugExtendedPropertyInfo {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage", feature = "Win32_System_Ole"))]
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, celt: u32, rgextendedpropertyinfo: *mut ExtendedDebugPropertyInfo, pceltfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage", feature = "Win32_System_Ole")))]
+    Next: usize,
+    pub Skip: unsafe extern "system" fn(this: *mut *mut Self, celt: u32) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, pedpe: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, pcelt: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IEnumDebugPropertyInfo {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, celt: u32, pi: *mut DebugPropertyInfo, pceltsfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Next: usize,
+    pub Skip: unsafe extern "system" fn(this: *mut *mut Self, celt: u32) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppepi: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, pcelt: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IEnumDebugStackFrames {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, celt: u32, prgdsfd: *mut DebugStackFrameDescriptor, pceltfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Next: usize,
+    pub Skip: unsafe extern "system" fn(this: *mut *mut Self, celt: u32) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppedsf: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IEnumDebugStackFrames64 {
+    pub base__: IEnumDebugStackFrames,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Next64: unsafe extern "system" fn(this: *mut *mut Self, celt: u32, prgdsfd: *mut DebugStackFrameDescriptor64, pceltfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Next64: usize,
+}
+#[repr(C)]
+pub struct IEnumJsStackFrames {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, cframecount: u32, pframes: *mut __MIDL___MIDL_itf_jscript9diag_0000_0007_0001, pcfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IEnumRemoteDebugApplicationThreads {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, celt: u32, pprdat: *mut *mut ::core::ffi::c_void, pceltfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Skip: unsafe extern "system" fn(this: *mut *mut Self, celt: u32) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, pperdat: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IEnumRemoteDebugApplications {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, celt: u32, ppda: *mut *mut ::core::ffi::c_void, pceltfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Skip: unsafe extern "system" fn(this: *mut *mut Self, celt: u32) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppessd: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IEquatableConcept {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub AreObjectsEqual: unsafe extern "system" fn(this: *mut *mut Self, contextobject: *mut ::core::ffi::c_void, otherobject: *mut ::core::ffi::c_void, isequal: *mut bool) -> ::windows_sys::core::HRESULT,
+}
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
 pub const IG_DISASSEMBLE_BUFFER: u32 = 44u32;
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -6749,19 +11183,129 @@ pub const IG_WRITE_MSR: u32 = 13u32;
 pub const IG_WRITE_PHYSICAL: u32 = 7u32;
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
 pub const IG_WRITE_PHYSICAL_WITH_FLAGS: u32 = 34u32;
-pub type IHostDataModelAccess = *mut ::core::ffi::c_void;
-pub type IIndexableConcept = *mut ::core::ffi::c_void;
-pub type IIterableConcept = *mut ::core::ffi::c_void;
-pub type IJsDebug = *mut ::core::ffi::c_void;
-pub type IJsDebugBreakPoint = *mut ::core::ffi::c_void;
-pub type IJsDebugDataTarget = *mut ::core::ffi::c_void;
-pub type IJsDebugFrame = *mut ::core::ffi::c_void;
-pub type IJsDebugProcess = *mut ::core::ffi::c_void;
-pub type IJsDebugProperty = *mut ::core::ffi::c_void;
-pub type IJsDebugStackWalker = *mut ::core::ffi::c_void;
-pub type IJsEnumDebugProperty = *mut ::core::ffi::c_void;
-pub type IKeyEnumerator = *mut ::core::ffi::c_void;
-pub type IKeyStore = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IHostDataModelAccess {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetDataModel: unsafe extern "system" fn(this: *mut *mut Self, manager: *mut *mut ::core::ffi::c_void, host: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IIndexableConcept {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetDimensionality: unsafe extern "system" fn(this: *mut *mut Self, contextobject: *mut ::core::ffi::c_void, dimensionality: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetAt: unsafe extern "system" fn(this: *mut *mut Self, contextobject: *mut ::core::ffi::c_void, indexercount: u64, indexers: *const *mut ::core::ffi::c_void, object: *mut *mut ::core::ffi::c_void, metadata: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetAt: unsafe extern "system" fn(this: *mut *mut Self, contextobject: *mut ::core::ffi::c_void, indexercount: u64, indexers: *const *mut ::core::ffi::c_void, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IIterableConcept {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetDefaultIndexDimensionality: unsafe extern "system" fn(this: *mut *mut Self, contextobject: *mut ::core::ffi::c_void, dimensionality: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetIterator: unsafe extern "system" fn(this: *mut *mut Self, contextobject: *mut ::core::ffi::c_void, iterator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IJsDebug {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OpenVirtualProcess: unsafe extern "system" fn(this: *mut *mut Self, processid: u32, runtimejsbaseaddress: u64, pdatatarget: *mut ::core::ffi::c_void, ppprocess: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IJsDebugBreakPoint {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsEnabled: unsafe extern "system" fn(this: *mut *mut Self, pisenabled: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsEnabled: usize,
+    pub Enable: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Disable: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Delete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetDocumentPosition: unsafe extern "system" fn(this: *mut *mut Self, pdocumentid: *mut u64, pcharacteroffset: *mut u32, pstatementcharcount: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IJsDebugDataTarget {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub ReadMemory: unsafe extern "system" fn(this: *mut *mut Self, address: u64, flags: JsDebugReadMemoryFlags, pbuffer: *mut u8, size: u32, pbytesread: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub WriteMemory: unsafe extern "system" fn(this: *mut *mut Self, address: u64, pmemory: *const u8, size: u32) -> ::windows_sys::core::HRESULT,
+    pub AllocateVirtualMemory: unsafe extern "system" fn(this: *mut *mut Self, address: u64, size: u32, allocationtype: u32, pageprotection: u32, pallocatedaddress: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub FreeVirtualMemory: unsafe extern "system" fn(this: *mut *mut Self, address: u64, size: u32, freetype: u32) -> ::windows_sys::core::HRESULT,
+    pub GetTlsValue: unsafe extern "system" fn(this: *mut *mut Self, threadid: u32, tlsindex: u32, pvalue: *mut u64) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ReadBSTR: unsafe extern "system" fn(this: *mut *mut Self, address: u64, pstring: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ReadBSTR: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ReadNullTerminatedString: unsafe extern "system" fn(this: *mut *mut Self, address: u64, charactersize: u16, maxcharacters: u32, pstring: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ReadNullTerminatedString: usize,
+    pub CreateStackFrameEnumerator: unsafe extern "system" fn(this: *mut *mut Self, threadid: u32, ppenumerator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetThreadContext: unsafe extern "system" fn(this: *mut *mut Self, threadid: u32, contextflags: u32, contextsize: u32, pcontext: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IJsDebugFrame {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetStackRange: unsafe extern "system" fn(this: *mut *mut Self, pstart: *mut u64, pend: *mut u64) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetName: unsafe extern "system" fn(this: *mut *mut Self, pname: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetName: usize,
+    pub GetDocumentPositionWithId: unsafe extern "system" fn(this: *mut *mut Self, pdocumentid: *mut u64, pcharacteroffset: *mut u32, pstatementcharcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetDocumentPositionWithName: unsafe extern "system" fn(this: *mut *mut Self, pdocumentname: *mut super::super::super::Foundation::BSTR, pline: *mut u32, pcolumn: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetDocumentPositionWithName: usize,
+    pub GetDebugProperty: unsafe extern "system" fn(this: *mut *mut Self, ppdebugproperty: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetReturnAddress: unsafe extern "system" fn(this: *mut *mut Self, preturnaddress: *mut u64) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Evaluate: unsafe extern "system" fn(this: *mut *mut Self, pexpressiontext: ::windows_sys::core::PCWSTR, ppdebugproperty: *mut *mut ::core::ffi::c_void, perror: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Evaluate: usize,
+}
+#[repr(C)]
+pub struct IJsDebugProcess {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub CreateStackWalker: unsafe extern "system" fn(this: *mut *mut Self, threadid: u32, ppstackwalker: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CreateBreakPoint: unsafe extern "system" fn(this: *mut *mut Self, documentid: u64, characteroffset: u32, charactercount: u32, isenabled: super::super::super::Foundation::BOOL, ppdebugbreakpoint: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CreateBreakPoint: usize,
+    pub PerformAsyncBreak: unsafe extern "system" fn(this: *mut *mut Self, threadid: u32) -> ::windows_sys::core::HRESULT,
+    pub GetExternalStepAddress: unsafe extern "system" fn(this: *mut *mut Self, pcodeaddress: *mut u64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IJsDebugProperty {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetPropertyInfo: unsafe extern "system" fn(this: *mut *mut Self, nradix: u32, ppropertyinfo: *mut JsDebugPropertyInfo) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetPropertyInfo: usize,
+    pub GetMembers: unsafe extern "system" fn(this: *mut *mut Self, members: JS_PROPERTY_MEMBERS, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IJsDebugStackWalker {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetNext: unsafe extern "system" fn(this: *mut *mut Self, ppframe: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IJsEnumDebugProperty {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, count: u32, ppdebugproperty: *mut *mut ::core::ffi::c_void, pactualcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, pcount: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IKeyEnumerator {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetNext: unsafe extern "system" fn(this: *mut *mut Self, key: *mut super::super::super::Foundation::BSTR, value: *mut *mut ::core::ffi::c_void, metadata: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetNext: usize,
+}
+#[repr(C)]
+pub struct IKeyStore {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetKey: unsafe extern "system" fn(this: *mut *mut Self, key: ::windows_sys::core::PCWSTR, object: *mut *mut ::core::ffi::c_void, metadata: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetKey: unsafe extern "system" fn(this: *mut *mut Self, key: ::windows_sys::core::PCWSTR, object: *mut ::core::ffi::c_void, metadata: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetKeyValue: unsafe extern "system" fn(this: *mut *mut Self, key: ::windows_sys::core::PCWSTR, object: *mut *mut ::core::ffi::c_void, metadata: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetKeyValue: unsafe extern "system" fn(this: *mut *mut Self, key: ::windows_sys::core::PCWSTR, object: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ClearKeys: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
 pub struct IMAGEHLP_CBA_EVENT {
@@ -8428,15 +12972,105 @@ pub const IMAGE_SUBSYSTEM_XBOX: IMAGE_SUBSYSTEM = 14u16;
 pub const IMAGE_SUBSYSTEM_WINDOWS_BOOT_APPLICATION: IMAGE_SUBSYSTEM = 16u16;
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
 pub const IMAGE_SUBSYSTEM_XBOX_CODE_CATALOG: IMAGE_SUBSYSTEM = 17u16;
-pub type IMachineDebugManager = *mut ::core::ffi::c_void;
-pub type IMachineDebugManagerCookie = *mut ::core::ffi::c_void;
-pub type IMachineDebugManagerEvents = *mut ::core::ffi::c_void;
-pub type IModelIterator = *mut ::core::ffi::c_void;
-pub type IModelKeyReference = *mut ::core::ffi::c_void;
-pub type IModelKeyReference2 = *mut ::core::ffi::c_void;
-pub type IModelMethod = *mut ::core::ffi::c_void;
-pub type IModelObject = *mut ::core::ffi::c_void;
-pub type IModelPropertyAccessor = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IMachineDebugManager {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub AddApplication: unsafe extern "system" fn(this: *mut *mut Self, pda: *mut ::core::ffi::c_void, pdwappcookie: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub RemoveApplication: unsafe extern "system" fn(this: *mut *mut Self, dwappcookie: u32) -> ::windows_sys::core::HRESULT,
+    pub EnumApplications: unsafe extern "system" fn(this: *mut *mut Self, ppeda: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMachineDebugManagerCookie {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub AddApplication: unsafe extern "system" fn(this: *mut *mut Self, pda: *mut ::core::ffi::c_void, dwdebugappcookie: u32, pdwappcookie: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub RemoveApplication: unsafe extern "system" fn(this: *mut *mut Self, dwdebugappcookie: u32, dwappcookie: u32) -> ::windows_sys::core::HRESULT,
+    pub EnumApplications: unsafe extern "system" fn(this: *mut *mut Self, ppeda: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMachineDebugManagerEvents {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub onAddApplication: unsafe extern "system" fn(this: *mut *mut Self, pda: *mut ::core::ffi::c_void, dwappcookie: u32) -> ::windows_sys::core::HRESULT,
+    pub onRemoveApplication: unsafe extern "system" fn(this: *mut *mut Self, pda: *mut ::core::ffi::c_void, dwappcookie: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IModelIterator {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetNext: unsafe extern "system" fn(this: *mut *mut Self, object: *mut *mut ::core::ffi::c_void, dimensions: u64, indexers: *mut *mut ::core::ffi::c_void, metadata: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IModelKeyReference {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetKeyName: unsafe extern "system" fn(this: *mut *mut Self, keyname: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetKeyName: usize,
+    pub GetOriginalObject: unsafe extern "system" fn(this: *mut *mut Self, originalobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetContextObject: unsafe extern "system" fn(this: *mut *mut Self, containingobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetKey: unsafe extern "system" fn(this: *mut *mut Self, object: *mut *mut ::core::ffi::c_void, metadata: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetKeyValue: unsafe extern "system" fn(this: *mut *mut Self, object: *mut *mut ::core::ffi::c_void, metadata: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetKey: unsafe extern "system" fn(this: *mut *mut Self, object: *mut ::core::ffi::c_void, metadata: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetKeyValue: unsafe extern "system" fn(this: *mut *mut Self, object: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IModelKeyReference2 {
+    pub base__: IModelKeyReference,
+    pub OverrideContextObject: unsafe extern "system" fn(this: *mut *mut Self, newcontextobject: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IModelMethod {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Call: unsafe extern "system" fn(this: *mut *mut Self, pcontextobject: *mut ::core::ffi::c_void, argcount: u64, pparguments: *const *mut ::core::ffi::c_void, ppresult: *mut *mut ::core::ffi::c_void, ppmetadata: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IModelObject {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetContext: unsafe extern "system" fn(this: *mut *mut Self, context: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetKind: unsafe extern "system" fn(this: *mut *mut Self, kind: *mut ModelObjectKind) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetIntrinsicValue: unsafe extern "system" fn(this: *mut *mut Self, intrinsicdata: *mut super::super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetIntrinsicValue: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetIntrinsicValueAs: unsafe extern "system" fn(this: *mut *mut Self, vt: u16, intrinsicdata: *mut super::super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetIntrinsicValueAs: usize,
+    pub GetKeyValue: unsafe extern "system" fn(this: *mut *mut Self, key: ::windows_sys::core::PCWSTR, object: *mut *mut ::core::ffi::c_void, metadata: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetKeyValue: unsafe extern "system" fn(this: *mut *mut Self, key: ::windows_sys::core::PCWSTR, object: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EnumerateKeyValues: unsafe extern "system" fn(this: *mut *mut Self, enumerator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetRawValue: unsafe extern "system" fn(this: *mut *mut Self, kind: SymbolKind, name: ::windows_sys::core::PCWSTR, searchflags: u32, object: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EnumerateRawValues: unsafe extern "system" fn(this: *mut *mut Self, kind: SymbolKind, searchflags: u32, enumerator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Dereference: unsafe extern "system" fn(this: *mut *mut Self, object: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub TryCastToRuntimeType: unsafe extern "system" fn(this: *mut *mut Self, runtimetypedobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetConcept: unsafe extern "system" fn(this: *mut *mut Self, conceptid: *const ::windows_sys::core::GUID, conceptinterface: *mut *mut ::core::ffi::c_void, conceptmetadata: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetLocation: unsafe extern "system" fn(this: *mut *mut Self, location: *mut Location) -> ::windows_sys::core::HRESULT,
+    pub GetTypeInfo: unsafe extern "system" fn(this: *mut *mut Self, r#type: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetTargetInfo: unsafe extern "system" fn(this: *mut *mut Self, location: *mut Location, r#type: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetNumberOfParentModels: unsafe extern "system" fn(this: *mut *mut Self, nummodels: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetParentModel: unsafe extern "system" fn(this: *mut *mut Self, i: u64, model: *mut *mut ::core::ffi::c_void, contextobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AddParentModel: unsafe extern "system" fn(this: *mut *mut Self, model: *mut ::core::ffi::c_void, contextobject: *mut ::core::ffi::c_void, r#override: u8) -> ::windows_sys::core::HRESULT,
+    pub RemoveParentModel: unsafe extern "system" fn(this: *mut *mut Self, model: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetKey: unsafe extern "system" fn(this: *mut *mut Self, key: ::windows_sys::core::PCWSTR, object: *mut *mut ::core::ffi::c_void, metadata: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetKeyReference: unsafe extern "system" fn(this: *mut *mut Self, key: ::windows_sys::core::PCWSTR, objectreference: *mut *mut ::core::ffi::c_void, metadata: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetKey: unsafe extern "system" fn(this: *mut *mut Self, key: ::windows_sys::core::PCWSTR, object: *mut ::core::ffi::c_void, metadata: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ClearKeys: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub EnumerateKeys: unsafe extern "system" fn(this: *mut *mut Self, enumerator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EnumerateKeyReferences: unsafe extern "system" fn(this: *mut *mut Self, enumerator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetConcept: unsafe extern "system" fn(this: *mut *mut Self, conceptid: *const ::windows_sys::core::GUID, conceptinterface: *mut ::core::ffi::c_void, conceptmetadata: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ClearConcepts: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetRawReference: unsafe extern "system" fn(this: *mut *mut Self, kind: SymbolKind, name: ::windows_sys::core::PCWSTR, searchflags: u32, object: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EnumerateRawReferences: unsafe extern "system" fn(this: *mut *mut Self, kind: SymbolKind, searchflags: u32, enumerator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetContextForDataModel: unsafe extern "system" fn(this: *mut *mut Self, datamodelobject: *mut ::core::ffi::c_void, context: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetContextForDataModel: unsafe extern "system" fn(this: *mut *mut Self, datamodelobject: *mut ::core::ffi::c_void, context: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Compare: unsafe extern "system" fn(this: *mut *mut Self, other: *mut ::core::ffi::c_void, ppresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub IsEqualTo: unsafe extern "system" fn(this: *mut *mut Self, other: *mut ::core::ffi::c_void, equal: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IModelPropertyAccessor {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetValue: unsafe extern "system" fn(this: *mut *mut Self, key: ::windows_sys::core::PCWSTR, contextobject: *mut ::core::ffi::c_void, value: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetValue: unsafe extern "system" fn(this: *mut *mut Self, key: ::windows_sys::core::PCWSTR, contextobject: *mut ::core::ffi::c_void, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
 pub const INCORRECT_VERSION_INFO: u32 = 7u32;
 #[repr(C)]
@@ -8567,7 +13201,12 @@ impl ::core::clone::Clone for IOSPACE_EX64 {
         *self
     }
 }
-pub type IObjectSafety = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IObjectSafety {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetInterfaceSafetyOptions: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, pdwsupportedoptions: *mut u32, pdwenabledoptions: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetInterfaceSafetyOptions: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, dwoptionsetmask: u32, dwenabledoptions: u32) -> ::windows_sys::core::HRESULT,
+}
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
 pub const IPMI_IOCTL_INDEX: u32 = 1024u32;
 #[repr(C, packed(1))]
@@ -8616,27 +13255,254 @@ pub const IpmiOsSelRecordTypeMax: IPMI_OS_SEL_RECORD_TYPE = 10i32;
 pub const IPMI_OS_SEL_RECORD_VERSION: u32 = 1u32;
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
 pub const IPMI_OS_SEL_RECORD_VERSION_1: u32 = 1u32;
-pub type IPerPropertyBrowsing2 = *mut ::core::ffi::c_void;
-pub type IPreferredRuntimeTypeConcept = *mut ::core::ffi::c_void;
-pub type IProcessDebugManager32 = *mut ::core::ffi::c_void;
-pub type IProcessDebugManager64 = *mut ::core::ffi::c_void;
-pub type IProvideExpressionContexts = *mut ::core::ffi::c_void;
-pub type IRawEnumerator = *mut ::core::ffi::c_void;
-pub type IRemoteDebugApplication = *mut ::core::ffi::c_void;
-pub type IRemoteDebugApplication110 = *mut ::core::ffi::c_void;
-pub type IRemoteDebugApplicationEvents = *mut ::core::ffi::c_void;
-pub type IRemoteDebugApplicationThread = *mut ::core::ffi::c_void;
-pub type IRemoteDebugCriticalErrorEvent110 = *mut ::core::ffi::c_void;
-pub type IRemoteDebugInfoEvent110 = *mut ::core::ffi::c_void;
-pub type IScriptEntry = *mut ::core::ffi::c_void;
-pub type IScriptInvocationContext = *mut ::core::ffi::c_void;
-pub type IScriptNode = *mut ::core::ffi::c_void;
-pub type IScriptScriptlet = *mut ::core::ffi::c_void;
-pub type ISimpleConnectionPoint = *mut ::core::ffi::c_void;
-pub type IStringDisplayableConcept = *mut ::core::ffi::c_void;
-pub type ITridentEventSink = *mut ::core::ffi::c_void;
-pub type IWebAppDiagnosticsObjectInitialization = *mut ::core::ffi::c_void;
-pub type IWebAppDiagnosticsSetup = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IPerPropertyBrowsing2 {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetDisplayString: unsafe extern "system" fn(this: *mut *mut Self, dispid: i32, pbstr: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetDisplayString: usize,
+    pub MapPropertyToPage: unsafe extern "system" fn(this: *mut *mut Self, dispid: i32, pclsidproppage: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Ole")]
+    pub GetPredefinedStrings: unsafe extern "system" fn(this: *mut *mut Self, dispid: i32, pcastrings: *mut super::super::Ole::CALPOLESTR, pcacookies: *mut super::super::Ole::CADWORD) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Ole"))]
+    GetPredefinedStrings: usize,
+    pub SetPredefinedValue: unsafe extern "system" fn(this: *mut *mut Self, dispid: i32, dwcookie: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPreferredRuntimeTypeConcept {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub CastToPreferredRuntimeType: unsafe extern "system" fn(this: *mut *mut Self, contextobject: *mut ::core::ffi::c_void, object: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IProcessDebugManager32 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub CreateApplication: unsafe extern "system" fn(this: *mut *mut Self, ppda: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetDefaultApplication: unsafe extern "system" fn(this: *mut *mut Self, ppda: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AddApplication: unsafe extern "system" fn(this: *mut *mut Self, pda: *mut ::core::ffi::c_void, pdwappcookie: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub RemoveApplication: unsafe extern "system" fn(this: *mut *mut Self, dwappcookie: u32) -> ::windows_sys::core::HRESULT,
+    pub CreateDebugDocumentHelper: unsafe extern "system" fn(this: *mut *mut Self, punkouter: *mut ::core::ffi::c_void, pddh: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IProcessDebugManager64 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub CreateApplication: unsafe extern "system" fn(this: *mut *mut Self, ppda: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetDefaultApplication: unsafe extern "system" fn(this: *mut *mut Self, ppda: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AddApplication: unsafe extern "system" fn(this: *mut *mut Self, pda: *mut ::core::ffi::c_void, pdwappcookie: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub RemoveApplication: unsafe extern "system" fn(this: *mut *mut Self, dwappcookie: u32) -> ::windows_sys::core::HRESULT,
+    pub CreateDebugDocumentHelper: unsafe extern "system" fn(this: *mut *mut Self, punkouter: *mut ::core::ffi::c_void, pddh: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IProvideExpressionContexts {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub EnumExpressionContexts: unsafe extern "system" fn(this: *mut *mut Self, ppedec: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRawEnumerator {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetNext: unsafe extern "system" fn(this: *mut *mut Self, name: *mut super::super::super::Foundation::BSTR, kind: *mut SymbolKind, value: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetNext: usize,
+}
+#[repr(C)]
+pub struct IRemoteDebugApplication {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub ResumeFromBreakPoint: unsafe extern "system" fn(this: *mut *mut Self, prptfocus: *mut ::core::ffi::c_void, bra: BREAKRESUME_ACTION, era: ERRORRESUMEACTION) -> ::windows_sys::core::HRESULT,
+    pub CauseBreak: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub ConnectDebugger: unsafe extern "system" fn(this: *mut *mut Self, pad: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub DisconnectDebugger: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetDebugger: unsafe extern "system" fn(this: *mut *mut Self, pad: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateInstanceAtApplication: unsafe extern "system" fn(this: *mut *mut Self, rclsid: *const ::windows_sys::core::GUID, punkouter: *mut ::core::ffi::c_void, dwclscontext: u32, riid: *const ::windows_sys::core::GUID, ppvobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub QueryAlive: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub EnumThreads: unsafe extern "system" fn(this: *mut *mut Self, pperdat: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetName: unsafe extern "system" fn(this: *mut *mut Self, pbstrname: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetName: usize,
+    pub GetRootNode: unsafe extern "system" fn(this: *mut *mut Self, ppdanroot: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EnumGlobalExpressionContexts: unsafe extern "system" fn(this: *mut *mut Self, ppedec: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRemoteDebugApplication110 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetDebuggerOptions: unsafe extern "system" fn(this: *mut *mut Self, mask: SCRIPT_DEBUGGER_OPTIONS, value: SCRIPT_DEBUGGER_OPTIONS) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentDebuggerOptions: unsafe extern "system" fn(this: *mut *mut Self, pcurrentoptions: *mut SCRIPT_DEBUGGER_OPTIONS) -> ::windows_sys::core::HRESULT,
+    pub GetMainThread: unsafe extern "system" fn(this: *mut *mut Self, ppthread: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRemoteDebugApplicationEvents {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnConnectDebugger: unsafe extern "system" fn(this: *mut *mut Self, pad: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub OnDisconnectDebugger: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub OnSetName: unsafe extern "system" fn(this: *mut *mut Self, pstrname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub OnDebugOutput: unsafe extern "system" fn(this: *mut *mut Self, pstr: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub OnClose: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub OnEnterBreakPoint: unsafe extern "system" fn(this: *mut *mut Self, prdat: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub OnLeaveBreakPoint: unsafe extern "system" fn(this: *mut *mut Self, prdat: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub OnCreateThread: unsafe extern "system" fn(this: *mut *mut Self, prdat: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub OnDestroyThread: unsafe extern "system" fn(this: *mut *mut Self, prdat: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub OnBreakFlagChange: unsafe extern "system" fn(this: *mut *mut Self, abf: u32, prdatsteppingthread: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRemoteDebugApplicationThread {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetSystemThreadId: unsafe extern "system" fn(this: *mut *mut Self, dwthreadid: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetApplication: unsafe extern "system" fn(this: *mut *mut Self, pprda: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EnumStackFrames: unsafe extern "system" fn(this: *mut *mut Self, ppedsf: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetDescription: unsafe extern "system" fn(this: *mut *mut Self, pbstrdescription: *mut super::super::super::Foundation::BSTR, pbstrstate: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetDescription: usize,
+    pub SetNextStatement: unsafe extern "system" fn(this: *mut *mut Self, pstackframe: *mut ::core::ffi::c_void, pcodecontext: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetState: unsafe extern "system" fn(this: *mut *mut Self, pstate: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Suspend: unsafe extern "system" fn(this: *mut *mut Self, pdwcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Resume: unsafe extern "system" fn(this: *mut *mut Self, pdwcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSuspendCount: unsafe extern "system" fn(this: *mut *mut Self, pdwcount: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRemoteDebugCriticalErrorEvent110 {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetErrorInfo: unsafe extern "system" fn(this: *mut *mut Self, pbstrsource: *mut super::super::super::Foundation::BSTR, pmessageid: *mut i32, pbstrmessage: *mut super::super::super::Foundation::BSTR, pplocation: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetErrorInfo: usize,
+}
+#[repr(C)]
+pub struct IRemoteDebugInfoEvent110 {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetEventInfo: unsafe extern "system" fn(this: *mut *mut Self, pmessagetype: *mut DEBUG_EVENT_INFO_TYPE, pbstrmessage: *mut super::super::super::Foundation::BSTR, pbstrurl: *mut super::super::super::Foundation::BSTR, pplocation: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetEventInfo: usize,
+}
+#[repr(C)]
+pub struct IScriptEntry {
+    pub base__: IScriptNode,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetText: unsafe extern "system" fn(this: *mut *mut Self, pbstr: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetText: usize,
+    pub SetText: unsafe extern "system" fn(this: *mut *mut Self, psz: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetBody: unsafe extern "system" fn(this: *mut *mut Self, pbstr: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetBody: usize,
+    pub SetBody: unsafe extern "system" fn(this: *mut *mut Self, psz: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetName: unsafe extern "system" fn(this: *mut *mut Self, pbstr: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetName: usize,
+    pub SetName: unsafe extern "system" fn(this: *mut *mut Self, psz: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetItemName: unsafe extern "system" fn(this: *mut *mut Self, pbstr: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetItemName: usize,
+    pub SetItemName: unsafe extern "system" fn(this: *mut *mut Self, psz: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetSignature: unsafe extern "system" fn(this: *mut *mut Self, ppti: *mut *mut ::core::ffi::c_void, pimethod: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetSignature: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetSignature: unsafe extern "system" fn(this: *mut *mut Self, pti: *mut ::core::ffi::c_void, imethod: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetSignature: usize,
+    pub GetRange: unsafe extern "system" fn(this: *mut *mut Self, pichmin: *mut u32, pcch: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IScriptInvocationContext {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetContextType: unsafe extern "system" fn(this: *mut *mut Self, pinvocationcontexttype: *mut SCRIPT_INVOCATION_CONTEXT_TYPE) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetContextDescription: unsafe extern "system" fn(this: *mut *mut Self, pdescription: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetContextDescription: usize,
+    pub GetContextObject: unsafe extern "system" fn(this: *mut *mut Self, ppcontextobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IScriptNode {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Alive: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Delete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetParent: unsafe extern "system" fn(this: *mut *mut Self, ppsnparent: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetIndexInParent: unsafe extern "system" fn(this: *mut *mut Self, pisn: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCookie: unsafe extern "system" fn(this: *mut *mut Self, pdwcookie: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetNumberOfChildren: unsafe extern "system" fn(this: *mut *mut Self, pcsn: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetChild: unsafe extern "system" fn(this: *mut *mut Self, isn: u32, ppsn: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetLanguage: unsafe extern "system" fn(this: *mut *mut Self, pbstr: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetLanguage: usize,
+    pub CreateChildEntry: unsafe extern "system" fn(this: *mut *mut Self, isn: u32, dwcookie: u32, pszdelimiter: ::windows_sys::core::PCWSTR, ppse: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreateChildHandler: unsafe extern "system" fn(this: *mut *mut Self, pszdefaultname: ::windows_sys::core::PCWSTR, prgpsznames: *const ::windows_sys::core::PWSTR, cpsznames: u32, pszevent: ::windows_sys::core::PCWSTR, pszdelimiter: ::windows_sys::core::PCWSTR, ptisignature: *mut ::core::ffi::c_void, imethodsignature: u32, isn: u32, dwcookie: u32, ppse: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CreateChildHandler: usize,
+}
+#[repr(C)]
+pub struct IScriptScriptlet {
+    pub base__: IScriptEntry,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetSubItemName: unsafe extern "system" fn(this: *mut *mut Self, pbstr: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetSubItemName: usize,
+    pub SetSubItemName: unsafe extern "system" fn(this: *mut *mut Self, psz: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetEventName: unsafe extern "system" fn(this: *mut *mut Self, pbstr: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetEventName: usize,
+    pub SetEventName: unsafe extern "system" fn(this: *mut *mut Self, psz: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetSimpleEventName: unsafe extern "system" fn(this: *mut *mut Self, pbstr: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetSimpleEventName: usize,
+    pub SetSimpleEventName: unsafe extern "system" fn(this: *mut *mut Self, psz: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISimpleConnectionPoint {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetEventCount: unsafe extern "system" fn(this: *mut *mut Self, pulcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DescribeEvents: unsafe extern "system" fn(this: *mut *mut Self, ievent: u32, cevents: u32, prgid: *mut i32, prgbstr: *mut super::super::super::Foundation::BSTR, pceventsfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DescribeEvents: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Advise: unsafe extern "system" fn(this: *mut *mut Self, pdisp: *mut ::core::ffi::c_void, pdwcookie: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Advise: usize,
+    pub Unadvise: unsafe extern "system" fn(this: *mut *mut Self, dwcookie: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IStringDisplayableConcept {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ToDisplayString: unsafe extern "system" fn(this: *mut *mut Self, contextobject: *mut ::core::ffi::c_void, metadata: *mut ::core::ffi::c_void, displaystring: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ToDisplayString: usize,
+}
+#[repr(C)]
+pub struct ITridentEventSink {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub FireEvent: unsafe extern "system" fn(this: *mut *mut Self, pstrevent: ::windows_sys::core::PCWSTR, pdp: *const super::super::Com::DISPPARAMS, pvarres: *mut super::super::Com::VARIANT, pei: *mut super::super::Com::EXCEPINFO) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    FireEvent: usize,
+}
+#[repr(C)]
+pub struct IWebAppDiagnosticsObjectInitialization {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, hpassedhandle: super::super::super::Foundation::HANDLE_PTR, pdebugapplication: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Initialize: usize,
+}
+#[repr(C)]
+pub struct IWebAppDiagnosticsSetup {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub DiagnosticsSupported: unsafe extern "system" fn(this: *mut *mut Self, pretval: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub CreateObjectWithSiteAtWebApp: unsafe extern "system" fn(this: *mut *mut Self, rclsid: *const ::windows_sys::core::GUID, dwclscontext: u32, riid: *const ::windows_sys::core::GUID, hpasstoobject: usize) -> ::windows_sys::core::HRESULT,
+}
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
 pub type IntrinsicKind = i32;
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -11263,7 +16129,7 @@ pub type PCOGETCALLSTATE = ::core::option::Option<unsafe extern "system" fn(para
 #[cfg(feature = "Win32_Foundation")]
 pub type PDBGHELP_CREATE_USER_DUMP_CALLBACK = ::core::option::Option<unsafe extern "system" fn(datatype: u32, data: *const *const ::core::ffi::c_void, datalength: *mut u32, userdata: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL>;
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-pub type PDEBUG_EXTENSION_CALL = ::core::option::Option<unsafe extern "system" fn(client: IDebugClient, args: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT>;
+pub type PDEBUG_EXTENSION_CALL = ::core::option::Option<unsafe extern "system" fn(client: *mut *mut IDebugClient, args: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT>;
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
 pub type PDEBUG_EXTENSION_CANUNLOAD = ::core::option::Option<unsafe extern "system" fn() -> ::windows_sys::core::HRESULT>;
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -11271,13 +16137,13 @@ pub type PDEBUG_EXTENSION_INITIALIZE = ::core::option::Option<unsafe extern "sys
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
 pub type PDEBUG_EXTENSION_KNOWN_STRUCT = ::core::option::Option<unsafe extern "system" fn(flags: u32, offset: u64, typename: ::windows_sys::core::PCSTR, buffer: ::windows_sys::core::PSTR, bufferchars: *mut u32) -> ::windows_sys::core::HRESULT>;
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-pub type PDEBUG_EXTENSION_KNOWN_STRUCT_EX = ::core::option::Option<unsafe extern "system" fn(client: IDebugClient, flags: u32, offset: u64, typename: ::windows_sys::core::PCSTR, buffer: ::windows_sys::core::PSTR, bufferchars: *mut u32) -> ::windows_sys::core::HRESULT>;
+pub type PDEBUG_EXTENSION_KNOWN_STRUCT_EX = ::core::option::Option<unsafe extern "system" fn(client: *mut *mut IDebugClient, flags: u32, offset: u64, typename: ::windows_sys::core::PCSTR, buffer: ::windows_sys::core::PSTR, bufferchars: *mut u32) -> ::windows_sys::core::HRESULT>;
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
 pub type PDEBUG_EXTENSION_NOTIFY = ::core::option::Option<unsafe extern "system" fn(notify: u32, argument: u64)>;
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-pub type PDEBUG_EXTENSION_PROVIDE_VALUE = ::core::option::Option<unsafe extern "system" fn(client: IDebugClient, flags: u32, name: ::windows_sys::core::PCWSTR, value: *mut u64, typemodbase: *mut u64, typeid: *mut u32, typeflags: *mut u32) -> ::windows_sys::core::HRESULT>;
+pub type PDEBUG_EXTENSION_PROVIDE_VALUE = ::core::option::Option<unsafe extern "system" fn(client: *mut *mut IDebugClient, flags: u32, name: ::windows_sys::core::PCWSTR, value: *mut u64, typemodbase: *mut u64, typeid: *mut u32, typeflags: *mut u32) -> ::windows_sys::core::HRESULT>;
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-pub type PDEBUG_EXTENSION_QUERY_VALUE_NAMES = ::core::option::Option<unsafe extern "system" fn(client: IDebugClient, flags: u32, buffer: ::windows_sys::core::PWSTR, bufferchars: u32, bufferneeded: *mut u32) -> ::windows_sys::core::HRESULT>;
+pub type PDEBUG_EXTENSION_QUERY_VALUE_NAMES = ::core::option::Option<unsafe extern "system" fn(client: *mut *mut IDebugClient, flags: u32, buffer: ::windows_sys::core::PWSTR, bufferchars: u32, bufferneeded: *mut u32) -> ::windows_sys::core::HRESULT>;
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
 pub type PDEBUG_EXTENSION_UNINITIALIZE = ::core::option::Option<unsafe extern "system" fn()>;
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -13354,7 +18220,7 @@ pub const SymbolSearchCaseInsensitive: SymbolSearchOptions = 2i32;
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
 pub struct TEXT_DOCUMENT_ARRAY {
     pub dwCount: u32,
-    pub Members: *mut IDebugDocumentText,
+    pub Members: *mut *mut *mut IDebugDocumentText,
 }
 impl ::core::marker::Copy for TEXT_DOCUMENT_ARRAY {}
 impl ::core::clone::Clone for TEXT_DOCUMENT_ARRAY {

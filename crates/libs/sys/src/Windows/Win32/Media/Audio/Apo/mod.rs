@@ -43,10 +43,10 @@ impl ::core::clone::Clone for APOInitBaseStruct {
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
 pub struct APOInitSystemEffects {
     pub APOInit: APOInitBaseStruct,
-    pub pAPOEndpointProperties: super::super::super::UI::Shell::PropertiesSystem::IPropertyStore,
-    pub pAPOSystemEffectsProperties: super::super::super::UI::Shell::PropertiesSystem::IPropertyStore,
+    pub pAPOEndpointProperties: *mut *mut *mut *mut super::super::super::UI::Shell::PropertiesSystem::IPropertyStore,
+    pub pAPOSystemEffectsProperties: *mut *mut *mut *mut super::super::super::UI::Shell::PropertiesSystem::IPropertyStore,
     pub pReserved: *mut ::core::ffi::c_void,
-    pub pDeviceCollection: super::IMMDeviceCollection,
+    pub pDeviceCollection: *mut *mut *mut *mut super::IMMDeviceCollection,
 }
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
 impl ::core::marker::Copy for APOInitSystemEffects {}
@@ -61,10 +61,10 @@ impl ::core::clone::Clone for APOInitSystemEffects {
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_PropertiesSystem"))]
 pub struct APOInitSystemEffects2 {
     pub APOInit: APOInitBaseStruct,
-    pub pAPOEndpointProperties: super::super::super::UI::Shell::PropertiesSystem::IPropertyStore,
-    pub pAPOSystemEffectsProperties: super::super::super::UI::Shell::PropertiesSystem::IPropertyStore,
+    pub pAPOEndpointProperties: *mut *mut *mut *mut super::super::super::UI::Shell::PropertiesSystem::IPropertyStore,
+    pub pAPOSystemEffectsProperties: *mut *mut *mut *mut super::super::super::UI::Shell::PropertiesSystem::IPropertyStore,
     pub pReserved: *mut ::core::ffi::c_void,
-    pub pDeviceCollection: super::IMMDeviceCollection,
+    pub pDeviceCollection: *mut *mut *mut *mut super::IMMDeviceCollection,
     pub nSoftwareIoDeviceInCollection: u32,
     pub nSoftwareIoConnectorIndex: u32,
     pub AudioProcessingMode: ::windows_sys::core::GUID,
@@ -83,9 +83,9 @@ impl ::core::clone::Clone for APOInitSystemEffects2 {
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_UI_Shell_PropertiesSystem"))]
 pub struct APOInitSystemEffects3 {
     pub APOInit: APOInitBaseStruct,
-    pub pAPOEndpointProperties: super::super::super::UI::Shell::PropertiesSystem::IPropertyStore,
-    pub pServiceProvider: super::super::super::System::Com::IServiceProvider,
-    pub pDeviceCollection: super::IMMDeviceCollection,
+    pub pAPOEndpointProperties: *mut *mut *mut *mut super::super::super::UI::Shell::PropertiesSystem::IPropertyStore,
+    pub pServiceProvider: *mut *mut *mut *mut super::super::super::System::Com::IServiceProvider,
+    pub pDeviceCollection: *mut *mut *mut *mut super::IMMDeviceCollection,
     pub nSoftwareIoDeviceInCollection: u32,
     pub nSoftwareIoConnectorIndex: u32,
     pub AudioProcessingMode: ::windows_sys::core::GUID,
@@ -121,7 +121,7 @@ pub struct APO_CONNECTION_DESCRIPTOR {
     pub Type: APO_CONNECTION_BUFFER_TYPE,
     pub pBuffer: usize,
     pub u32MaxFrameCount: u32,
-    pub pFormat: IAudioMediaType,
+    pub pFormat: *mut *mut *mut *mut IAudioMediaType,
     pub u32Signature: u32,
 }
 impl ::core::marker::Copy for APO_CONNECTION_DESCRIPTOR {}
@@ -284,7 +284,7 @@ pub const AUDIOMEDIATYPE_EQUAL_FORMAT_USER_DATA: u32 = 8u32;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Media_Audio_Apo\"`*"]
 pub struct AUDIO_ENDPOINT_PROPERTY_CHANGE_APO_NOTIFICATION_DESCRIPTOR {
-    pub device: super::IMMDevice,
+    pub device: *mut *mut *mut *mut super::IMMDevice,
 }
 impl ::core::marker::Copy for AUDIO_ENDPOINT_PROPERTY_CHANGE_APO_NOTIFICATION_DESCRIPTOR {}
 impl ::core::clone::Clone for AUDIO_ENDPOINT_PROPERTY_CHANGE_APO_NOTIFICATION_DESCRIPTOR {
@@ -296,8 +296,8 @@ impl ::core::clone::Clone for AUDIO_ENDPOINT_PROPERTY_CHANGE_APO_NOTIFICATION_DE
 #[doc = "*Required features: `\"Win32_Media_Audio_Apo\"`, `\"Win32_UI_Shell_PropertiesSystem\"`*"]
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
 pub struct AUDIO_ENDPOINT_PROPERTY_CHANGE_NOTIFICATION {
-    pub endpoint: super::IMMDevice,
-    pub propertyStore: super::super::super::UI::Shell::PropertiesSystem::IPropertyStore,
+    pub endpoint: *mut *mut *mut *mut super::IMMDevice,
+    pub propertyStore: *mut *mut *mut *mut super::super::super::UI::Shell::PropertiesSystem::IPropertyStore,
     pub propertyKey: super::super::super::UI::Shell::PropertiesSystem::PROPERTYKEY,
 }
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
@@ -311,7 +311,7 @@ impl ::core::clone::Clone for AUDIO_ENDPOINT_PROPERTY_CHANGE_NOTIFICATION {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Media_Audio_Apo\"`*"]
 pub struct AUDIO_ENDPOINT_VOLUME_APO_NOTIFICATION_DESCRIPTOR {
-    pub device: super::IMMDevice,
+    pub device: *mut *mut *mut *mut super::IMMDevice,
 }
 impl ::core::marker::Copy for AUDIO_ENDPOINT_VOLUME_APO_NOTIFICATION_DESCRIPTOR {}
 impl ::core::clone::Clone for AUDIO_ENDPOINT_VOLUME_APO_NOTIFICATION_DESCRIPTOR {
@@ -323,7 +323,7 @@ impl ::core::clone::Clone for AUDIO_ENDPOINT_VOLUME_APO_NOTIFICATION_DESCRIPTOR 
 #[doc = "*Required features: `\"Win32_Media_Audio_Apo\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 pub struct AUDIO_ENDPOINT_VOLUME_CHANGE_NOTIFICATION {
-    pub endpoint: super::IMMDevice,
+    pub endpoint: *mut *mut *mut *mut super::IMMDevice,
     pub volume: *mut super::AUDIO_VOLUME_NOTIFICATION_DATA,
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -367,7 +367,7 @@ impl ::core::clone::Clone for AUDIO_SYSTEMEFFECT {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Media_Audio_Apo\"`*"]
 pub struct AUDIO_SYSTEMEFFECTS_PROPERTY_CHANGE_APO_NOTIFICATION_DESCRIPTOR {
-    pub device: super::IMMDevice,
+    pub device: *mut *mut *mut *mut super::IMMDevice,
     pub propertyStoreContext: ::windows_sys::core::GUID,
 }
 impl ::core::marker::Copy for AUDIO_SYSTEMEFFECTS_PROPERTY_CHANGE_APO_NOTIFICATION_DESCRIPTOR {}
@@ -380,10 +380,10 @@ impl ::core::clone::Clone for AUDIO_SYSTEMEFFECTS_PROPERTY_CHANGE_APO_NOTIFICATI
 #[doc = "*Required features: `\"Win32_Media_Audio_Apo\"`, `\"Win32_UI_Shell_PropertiesSystem\"`*"]
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
 pub struct AUDIO_SYSTEMEFFECTS_PROPERTY_CHANGE_NOTIFICATION {
-    pub endpoint: super::IMMDevice,
+    pub endpoint: *mut *mut *mut *mut super::IMMDevice,
     pub propertyStoreContext: ::windows_sys::core::GUID,
     pub propertyStoreType: super::__MIDL___MIDL_itf_mmdeviceapi_0000_0008_0002,
-    pub propertyStore: super::super::super::UI::Shell::PropertiesSystem::IPropertyStore,
+    pub propertyStore: *mut *mut *mut *mut super::super::super::UI::Shell::PropertiesSystem::IPropertyStore,
     pub propertyKey: super::super::super::UI::Shell::PropertiesSystem::PROPERTYKEY,
 }
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
@@ -406,7 +406,7 @@ pub const AUDIO_SYSTEMEFFECT_STATE_ON: AUDIO_SYSTEMEFFECT_STATE = 1i32;
 pub struct AudioFXExtensionParams {
     pub AddPageParam: super::super::super::Foundation::LPARAM,
     pub pwstrEndpointID: ::windows_sys::core::PWSTR,
-    pub pFxProperties: super::super::super::UI::Shell::PropertiesSystem::IPropertyStore,
+    pub pFxProperties: *mut *mut *mut *mut super::super::super::UI::Shell::PropertiesSystem::IPropertyStore,
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_PropertiesSystem"))]
 impl ::core::marker::Copy for AudioFXExtensionParams {}
@@ -430,22 +430,115 @@ pub const eAudioConstriction14_14: EAudioConstriction = 3i32;
 pub const eAudioConstrictionMute: EAudioConstriction = 4i32;
 #[doc = "*Required features: `\"Win32_Media_Audio_Apo\"`*"]
 pub type FNAPONOTIFICATIONCALLBACK = ::core::option::Option<unsafe extern "system" fn(pproperties: *mut APO_REG_PROPERTIES, pvrefdata: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT>;
-pub type IApoAcousticEchoCancellation = *mut ::core::ffi::c_void;
-pub type IApoAuxiliaryInputConfiguration = *mut ::core::ffi::c_void;
-pub type IApoAuxiliaryInputRT = *mut ::core::ffi::c_void;
-pub type IAudioDeviceModulesClient = *mut ::core::ffi::c_void;
-pub type IAudioMediaType = *mut ::core::ffi::c_void;
-pub type IAudioProcessingObject = *mut ::core::ffi::c_void;
-pub type IAudioProcessingObjectConfiguration = *mut ::core::ffi::c_void;
-pub type IAudioProcessingObjectLoggingService = *mut ::core::ffi::c_void;
-pub type IAudioProcessingObjectNotifications = *mut ::core::ffi::c_void;
-pub type IAudioProcessingObjectRT = *mut ::core::ffi::c_void;
-pub type IAudioProcessingObjectRTQueueService = *mut ::core::ffi::c_void;
-pub type IAudioProcessingObjectVBR = *mut ::core::ffi::c_void;
-pub type IAudioSystemEffects = *mut ::core::ffi::c_void;
-pub type IAudioSystemEffects2 = *mut ::core::ffi::c_void;
-pub type IAudioSystemEffects3 = *mut ::core::ffi::c_void;
-pub type IAudioSystemEffectsCustomFormats = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IApoAcousticEchoCancellation {
+    pub base__: ::windows_sys::core::IUnknown,
+}
+#[repr(C)]
+pub struct IApoAuxiliaryInputConfiguration {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub AddAuxiliaryInput: unsafe extern "system" fn(this: *mut *mut Self, dwinputid: u32, cbdatasize: u32, pbydata: *const u8, pinputconnection: *const APO_CONNECTION_DESCRIPTOR) -> ::windows_sys::core::HRESULT,
+    pub RemoveAuxiliaryInput: unsafe extern "system" fn(this: *mut *mut Self, dwinputid: u32) -> ::windows_sys::core::HRESULT,
+    pub IsInputFormatSupported: unsafe extern "system" fn(this: *mut *mut Self, prequestedinputformat: *mut ::core::ffi::c_void, ppsupportedinputformat: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IApoAuxiliaryInputRT {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub AcceptInput: unsafe extern "system" fn(this: *mut *mut Self, dwinputid: u32, pinputconnection: *const APO_CONNECTION_PROPERTY),
+}
+#[repr(C)]
+pub struct IAudioDeviceModulesClient {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetAudioDeviceModulesManager: unsafe extern "system" fn(this: *mut *mut Self, paudiodevicemodulesmanager: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAudioMediaType {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsCompressedFormat: unsafe extern "system" fn(this: *mut *mut Self, pfcompressed: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsCompressedFormat: usize,
+    pub IsEqual: unsafe extern "system" fn(this: *mut *mut Self, piaudiotype: *mut ::core::ffi::c_void, pdwflags: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetAudioFormat: unsafe extern "system" fn(this: *mut *mut Self) -> *mut super::WAVEFORMATEX,
+    pub GetUncompressedAudioFormat: unsafe extern "system" fn(this: *mut *mut Self, puncompressedaudioformat: *mut UNCOMPRESSEDAUDIOFORMAT) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAudioProcessingObject {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetLatency: unsafe extern "system" fn(this: *mut *mut Self, ptime: *mut i64) -> ::windows_sys::core::HRESULT,
+    pub GetRegistrationProperties: unsafe extern "system" fn(this: *mut *mut Self, ppregprops: *mut *mut APO_REG_PROPERTIES) -> ::windows_sys::core::HRESULT,
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, cbdatasize: u32, pbydata: *const u8) -> ::windows_sys::core::HRESULT,
+    pub IsInputFormatSupported: unsafe extern "system" fn(this: *mut *mut Self, poppositeformat: *mut ::core::ffi::c_void, prequestedinputformat: *mut ::core::ffi::c_void, ppsupportedinputformat: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub IsOutputFormatSupported: unsafe extern "system" fn(this: *mut *mut Self, poppositeformat: *mut ::core::ffi::c_void, prequestedoutputformat: *mut ::core::ffi::c_void, ppsupportedoutputformat: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetInputChannelCount: unsafe extern "system" fn(this: *mut *mut Self, pu32channelcount: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAudioProcessingObjectConfiguration {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub LockForProcess: unsafe extern "system" fn(this: *mut *mut Self, u32numinputconnections: u32, ppinputconnections: *const *const APO_CONNECTION_DESCRIPTOR, u32numoutputconnections: u32, ppoutputconnections: *const *const APO_CONNECTION_DESCRIPTOR) -> ::windows_sys::core::HRESULT,
+    pub UnlockForProcess: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAudioProcessingObjectLoggingService {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub ApoLog: unsafe extern "system" fn(this: *mut *mut Self, level: APO_LOG_LEVEL, format: ::windows_sys::core::PCWSTR),
+}
+#[repr(C)]
+pub struct IAudioProcessingObjectNotifications {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetApoNotificationRegistrationInfo: unsafe extern "system" fn(this: *mut *mut Self, aponotifications: *mut *mut APO_NOTIFICATION_DESCRIPTOR, count: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_PropertiesSystem"))]
+    pub HandleNotification: unsafe extern "system" fn(this: *mut *mut Self, aponotification: *const APO_NOTIFICATION),
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_PropertiesSystem")))]
+    HandleNotification: usize,
+}
+#[repr(C)]
+pub struct IAudioProcessingObjectRT {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub APOProcess: unsafe extern "system" fn(this: *mut *mut Self, u32numinputconnections: u32, ppinputconnections: *const *const APO_CONNECTION_PROPERTY, u32numoutputconnections: u32, ppoutputconnections: *mut *mut APO_CONNECTION_PROPERTY),
+    pub CalcInputFrames: unsafe extern "system" fn(this: *mut *mut Self, u32outputframecount: u32) -> u32,
+    pub CalcOutputFrames: unsafe extern "system" fn(this: *mut *mut Self, u32inputframecount: u32) -> u32,
+}
+#[repr(C)]
+pub struct IAudioProcessingObjectRTQueueService {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetRealTimeWorkQueue: unsafe extern "system" fn(this: *mut *mut Self, workqueueid: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAudioProcessingObjectVBR {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub CalcMaxInputFrames: unsafe extern "system" fn(this: *mut *mut Self, u32maxoutputframecount: u32, pu32inputframecount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub CalcMaxOutputFrames: unsafe extern "system" fn(this: *mut *mut Self, u32maxinputframecount: u32, pu32outputframecount: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAudioSystemEffects {
+    pub base__: ::windows_sys::core::IUnknown,
+}
+#[repr(C)]
+pub struct IAudioSystemEffects2 {
+    pub base__: IAudioSystemEffects,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetEffectsList: unsafe extern "system" fn(this: *mut *mut Self, ppeffectsids: *mut *mut ::windows_sys::core::GUID, pceffects: *mut u32, event: super::super::super::Foundation::HANDLE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetEffectsList: usize,
+}
+#[repr(C)]
+pub struct IAudioSystemEffects3 {
+    pub base__: IAudioSystemEffects2,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetControllableSystemEffectsList: unsafe extern "system" fn(this: *mut *mut Self, effects: *mut *mut AUDIO_SYSTEMEFFECT, numeffects: *mut u32, event: super::super::super::Foundation::HANDLE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetControllableSystemEffectsList: usize,
+    pub SetAudioSystemEffectState: unsafe extern "system" fn(this: *mut *mut Self, effectid: ::windows_sys::core::GUID, state: AUDIO_SYSTEMEFFECT_STATE) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAudioSystemEffectsCustomFormats {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetFormatCount: unsafe extern "system" fn(this: *mut *mut Self, pcformats: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetFormat: unsafe extern "system" fn(this: *mut *mut Self, nformat: u32, ppformat: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetFormatRepresentation: unsafe extern "system" fn(this: *mut *mut Self, nformat: u32, ppwstrformatrep: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
 #[doc = "*Required features: `\"Win32_Media_Audio_Apo\"`, `\"Win32_UI_Shell_PropertiesSystem\"`*"]
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
 pub const PKEY_APO_SWFallback_ProcessingModes: super::super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_sys::core::GUID { data1: 3550034495, data2: 39362, data3: 17410, data4: [181, 236, 169, 42, 3, 103, 102, 75] }, pid: 13u32 };

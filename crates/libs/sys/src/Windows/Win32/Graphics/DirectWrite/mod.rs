@@ -1,7 +1,7 @@
 #[link(name = "windows")]
 extern "system" {
     #[doc = "*Required features: `\"Win32_Graphics_DirectWrite\"`*"]
-    pub fn DWriteCreateFactory(factorytype: DWRITE_FACTORY_TYPE, iid: *const ::windows_sys::core::GUID, factory: *mut ::windows_sys::core::IUnknown) -> ::windows_sys::core::HRESULT;
+    pub fn DWriteCreateFactory(factorytype: DWRITE_FACTORY_TYPE, iid: *const ::windows_sys::core::GUID, factory: *mut *mut *mut ::windows_sys::core::IUnknown) -> ::windows_sys::core::HRESULT;
 }
 #[doc = "*Required features: `\"Win32_Graphics_DirectWrite\"`*"]
 pub const DWRITE_ALPHA_MAX: u32 = 255u32;
@@ -710,7 +710,7 @@ pub const DWRITE_GLYPH_ORIENTATION_ANGLE_270_DEGREES: DWRITE_GLYPH_ORIENTATION_A
 #[doc = "*Required features: `\"Win32_Graphics_DirectWrite\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 pub struct DWRITE_GLYPH_RUN {
-    pub fontFace: IDWriteFontFace,
+    pub fontFace: *mut *mut *mut *mut IDWriteFontFace,
     pub fontEmSize: f32,
     pub glyphCount: u32,
     pub glyphIndices: *const u16,
@@ -1998,92 +1998,1190 @@ pub const DWRITE_WORD_WRAPPING_WHOLE_WORD: DWRITE_WORD_WRAPPING = 3i32;
 pub const DWRITE_WORD_WRAPPING_CHARACTER: DWRITE_WORD_WRAPPING = 4i32;
 #[doc = "*Required features: `\"Win32_Graphics_DirectWrite\"`*"]
 pub const FACILITY_DWRITE: u32 = 2200u32;
-pub type IDWriteAsyncResult = *mut ::core::ffi::c_void;
-pub type IDWriteBitmapRenderTarget = *mut ::core::ffi::c_void;
-pub type IDWriteBitmapRenderTarget1 = *mut ::core::ffi::c_void;
-pub type IDWriteColorGlyphRunEnumerator = *mut ::core::ffi::c_void;
-pub type IDWriteColorGlyphRunEnumerator1 = *mut ::core::ffi::c_void;
-pub type IDWriteFactory = *mut ::core::ffi::c_void;
-pub type IDWriteFactory1 = *mut ::core::ffi::c_void;
-pub type IDWriteFactory2 = *mut ::core::ffi::c_void;
-pub type IDWriteFactory3 = *mut ::core::ffi::c_void;
-pub type IDWriteFactory4 = *mut ::core::ffi::c_void;
-pub type IDWriteFactory5 = *mut ::core::ffi::c_void;
-pub type IDWriteFactory6 = *mut ::core::ffi::c_void;
-pub type IDWriteFactory7 = *mut ::core::ffi::c_void;
-pub type IDWriteFont = *mut ::core::ffi::c_void;
-pub type IDWriteFont1 = *mut ::core::ffi::c_void;
-pub type IDWriteFont2 = *mut ::core::ffi::c_void;
-pub type IDWriteFont3 = *mut ::core::ffi::c_void;
-pub type IDWriteFontCollection = *mut ::core::ffi::c_void;
-pub type IDWriteFontCollection1 = *mut ::core::ffi::c_void;
-pub type IDWriteFontCollection2 = *mut ::core::ffi::c_void;
-pub type IDWriteFontCollection3 = *mut ::core::ffi::c_void;
-pub type IDWriteFontCollectionLoader = *mut ::core::ffi::c_void;
-pub type IDWriteFontDownloadListener = *mut ::core::ffi::c_void;
-pub type IDWriteFontDownloadQueue = *mut ::core::ffi::c_void;
-pub type IDWriteFontFace = *mut ::core::ffi::c_void;
-pub type IDWriteFontFace1 = *mut ::core::ffi::c_void;
-pub type IDWriteFontFace2 = *mut ::core::ffi::c_void;
-pub type IDWriteFontFace3 = *mut ::core::ffi::c_void;
-pub type IDWriteFontFace4 = *mut ::core::ffi::c_void;
-pub type IDWriteFontFace5 = *mut ::core::ffi::c_void;
-pub type IDWriteFontFace6 = *mut ::core::ffi::c_void;
-pub type IDWriteFontFaceReference = *mut ::core::ffi::c_void;
-pub type IDWriteFontFaceReference1 = *mut ::core::ffi::c_void;
-pub type IDWriteFontFallback = *mut ::core::ffi::c_void;
-pub type IDWriteFontFallback1 = *mut ::core::ffi::c_void;
-pub type IDWriteFontFallbackBuilder = *mut ::core::ffi::c_void;
-pub type IDWriteFontFamily = *mut ::core::ffi::c_void;
-pub type IDWriteFontFamily1 = *mut ::core::ffi::c_void;
-pub type IDWriteFontFamily2 = *mut ::core::ffi::c_void;
-pub type IDWriteFontFile = *mut ::core::ffi::c_void;
-pub type IDWriteFontFileEnumerator = *mut ::core::ffi::c_void;
-pub type IDWriteFontFileLoader = *mut ::core::ffi::c_void;
-pub type IDWriteFontFileStream = *mut ::core::ffi::c_void;
-pub type IDWriteFontList = *mut ::core::ffi::c_void;
-pub type IDWriteFontList1 = *mut ::core::ffi::c_void;
-pub type IDWriteFontList2 = *mut ::core::ffi::c_void;
-pub type IDWriteFontResource = *mut ::core::ffi::c_void;
-pub type IDWriteFontSet = *mut ::core::ffi::c_void;
-pub type IDWriteFontSet1 = *mut ::core::ffi::c_void;
-pub type IDWriteFontSet2 = *mut ::core::ffi::c_void;
-pub type IDWriteFontSet3 = *mut ::core::ffi::c_void;
-pub type IDWriteFontSetBuilder = *mut ::core::ffi::c_void;
-pub type IDWriteFontSetBuilder1 = *mut ::core::ffi::c_void;
-pub type IDWriteFontSetBuilder2 = *mut ::core::ffi::c_void;
-pub type IDWriteGdiInterop = *mut ::core::ffi::c_void;
-pub type IDWriteGdiInterop1 = *mut ::core::ffi::c_void;
-pub type IDWriteGlyphRunAnalysis = *mut ::core::ffi::c_void;
-pub type IDWriteInMemoryFontFileLoader = *mut ::core::ffi::c_void;
-pub type IDWriteInlineObject = *mut ::core::ffi::c_void;
-pub type IDWriteLocalFontFileLoader = *mut ::core::ffi::c_void;
-pub type IDWriteLocalizedStrings = *mut ::core::ffi::c_void;
-pub type IDWriteNumberSubstitution = *mut ::core::ffi::c_void;
-pub type IDWritePixelSnapping = *mut ::core::ffi::c_void;
-pub type IDWriteRemoteFontFileLoader = *mut ::core::ffi::c_void;
-pub type IDWriteRemoteFontFileStream = *mut ::core::ffi::c_void;
-pub type IDWriteRenderingParams = *mut ::core::ffi::c_void;
-pub type IDWriteRenderingParams1 = *mut ::core::ffi::c_void;
-pub type IDWriteRenderingParams2 = *mut ::core::ffi::c_void;
-pub type IDWriteRenderingParams3 = *mut ::core::ffi::c_void;
-pub type IDWriteStringList = *mut ::core::ffi::c_void;
-pub type IDWriteTextAnalysisSink = *mut ::core::ffi::c_void;
-pub type IDWriteTextAnalysisSink1 = *mut ::core::ffi::c_void;
-pub type IDWriteTextAnalysisSource = *mut ::core::ffi::c_void;
-pub type IDWriteTextAnalysisSource1 = *mut ::core::ffi::c_void;
-pub type IDWriteTextAnalyzer = *mut ::core::ffi::c_void;
-pub type IDWriteTextAnalyzer1 = *mut ::core::ffi::c_void;
-pub type IDWriteTextAnalyzer2 = *mut ::core::ffi::c_void;
-pub type IDWriteTextFormat = *mut ::core::ffi::c_void;
-pub type IDWriteTextFormat1 = *mut ::core::ffi::c_void;
-pub type IDWriteTextFormat2 = *mut ::core::ffi::c_void;
-pub type IDWriteTextFormat3 = *mut ::core::ffi::c_void;
-pub type IDWriteTextLayout = *mut ::core::ffi::c_void;
-pub type IDWriteTextLayout1 = *mut ::core::ffi::c_void;
-pub type IDWriteTextLayout2 = *mut ::core::ffi::c_void;
-pub type IDWriteTextLayout3 = *mut ::core::ffi::c_void;
-pub type IDWriteTextLayout4 = *mut ::core::ffi::c_void;
-pub type IDWriteTextRenderer = *mut ::core::ffi::c_void;
-pub type IDWriteTextRenderer1 = *mut ::core::ffi::c_void;
-pub type IDWriteTypography = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IDWriteAsyncResult {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetWaitHandle: unsafe extern "system" fn(this: *mut *mut Self) -> super::super::Foundation::HANDLE,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetWaitHandle: usize,
+    pub GetResult: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDWriteBitmapRenderTarget {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DrawGlyphRun: unsafe extern "system" fn(this: *mut *mut Self, baselineoriginx: f32, baselineoriginy: f32, measuringmode: DWRITE_MEASURING_MODE, glyphrun: *const DWRITE_GLYPH_RUN, renderingparams: *mut ::core::ffi::c_void, textcolor: u32, blackboxrect: *mut super::super::Foundation::RECT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DrawGlyphRun: usize,
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub GetMemoryDC: unsafe extern "system" fn(this: *mut *mut Self) -> super::Gdi::HDC,
+    #[cfg(not(feature = "Win32_Graphics_Gdi"))]
+    GetMemoryDC: usize,
+    pub GetPixelsPerDip: unsafe extern "system" fn(this: *mut *mut Self) -> f32,
+    pub SetPixelsPerDip: unsafe extern "system" fn(this: *mut *mut Self, pixelsperdip: f32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentTransform: unsafe extern "system" fn(this: *mut *mut Self, transform: *mut DWRITE_MATRIX) -> ::windows_sys::core::HRESULT,
+    pub SetCurrentTransform: unsafe extern "system" fn(this: *mut *mut Self, transform: *const DWRITE_MATRIX) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetSize: unsafe extern "system" fn(this: *mut *mut Self, size: *mut super::super::Foundation::SIZE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetSize: usize,
+    pub Resize: unsafe extern "system" fn(this: *mut *mut Self, width: u32, height: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDWriteBitmapRenderTarget1 {
+    pub base__: IDWriteBitmapRenderTarget,
+    pub GetTextAntialiasMode: unsafe extern "system" fn(this: *mut *mut Self) -> DWRITE_TEXT_ANTIALIAS_MODE,
+    pub SetTextAntialiasMode: unsafe extern "system" fn(this: *mut *mut Self, antialiasmode: DWRITE_TEXT_ANTIALIAS_MODE) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDWriteColorGlyphRunEnumerator {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MoveNext: unsafe extern "system" fn(this: *mut *mut Self, hasrun: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MoveNext: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetCurrentRun: unsafe extern "system" fn(this: *mut *mut Self, colorglyphrun: *mut *mut DWRITE_COLOR_GLYPH_RUN) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetCurrentRun: usize,
+}
+#[repr(C)]
+pub struct IDWriteColorGlyphRunEnumerator1 {
+    pub base__: IDWriteColorGlyphRunEnumerator,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetCurrentRun2: unsafe extern "system" fn(this: *mut *mut Self, colorglyphrun: *mut *mut DWRITE_COLOR_GLYPH_RUN1) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetCurrentRun2: usize,
+}
+#[repr(C)]
+pub struct IDWriteFactory {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetSystemFontCollection: unsafe extern "system" fn(this: *mut *mut Self, fontcollection: *mut *mut ::core::ffi::c_void, checkforupdates: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetSystemFontCollection: usize,
+    pub CreateCustomFontCollection: unsafe extern "system" fn(this: *mut *mut Self, collectionloader: *mut ::core::ffi::c_void, collectionkey: *const ::core::ffi::c_void, collectionkeysize: u32, fontcollection: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RegisterFontCollectionLoader: unsafe extern "system" fn(this: *mut *mut Self, fontcollectionloader: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub UnregisterFontCollectionLoader: unsafe extern "system" fn(this: *mut *mut Self, fontcollectionloader: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CreateFontFileReference: unsafe extern "system" fn(this: *mut *mut Self, filepath: ::windows_sys::core::PCWSTR, lastwritetime: *const super::super::Foundation::FILETIME, fontfile: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CreateFontFileReference: usize,
+    pub CreateCustomFontFileReference: unsafe extern "system" fn(this: *mut *mut Self, fontfilereferencekey: *const ::core::ffi::c_void, fontfilereferencekeysize: u32, fontfileloader: *mut ::core::ffi::c_void, fontfile: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateFontFace: unsafe extern "system" fn(this: *mut *mut Self, fontfacetype: DWRITE_FONT_FACE_TYPE, numberoffiles: u32, fontfiles: *const *mut ::core::ffi::c_void, faceindex: u32, fontfacesimulationflags: DWRITE_FONT_SIMULATIONS, fontface: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateRenderingParams: unsafe extern "system" fn(this: *mut *mut Self, renderingparams: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub CreateMonitorRenderingParams: unsafe extern "system" fn(this: *mut *mut Self, monitor: super::Gdi::HMONITOR, renderingparams: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Gdi"))]
+    CreateMonitorRenderingParams: usize,
+    pub CreateCustomRenderingParams: unsafe extern "system" fn(this: *mut *mut Self, gamma: f32, enhancedcontrast: f32, cleartypelevel: f32, pixelgeometry: DWRITE_PIXEL_GEOMETRY, renderingmode: DWRITE_RENDERING_MODE, renderingparams: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RegisterFontFileLoader: unsafe extern "system" fn(this: *mut *mut Self, fontfileloader: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub UnregisterFontFileLoader: unsafe extern "system" fn(this: *mut *mut Self, fontfileloader: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateTextFormat: unsafe extern "system" fn(this: *mut *mut Self, fontfamilyname: ::windows_sys::core::PCWSTR, fontcollection: *mut ::core::ffi::c_void, fontweight: DWRITE_FONT_WEIGHT, fontstyle: DWRITE_FONT_STYLE, fontstretch: DWRITE_FONT_STRETCH, fontsize: f32, localename: ::windows_sys::core::PCWSTR, textformat: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateTypography: unsafe extern "system" fn(this: *mut *mut Self, typography: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetGdiInterop: unsafe extern "system" fn(this: *mut *mut Self, gdiinterop: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateTextLayout: unsafe extern "system" fn(this: *mut *mut Self, string: ::windows_sys::core::PCWSTR, stringlength: u32, textformat: *mut ::core::ffi::c_void, maxwidth: f32, maxheight: f32, textlayout: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CreateGdiCompatibleTextLayout: unsafe extern "system" fn(this: *mut *mut Self, string: ::windows_sys::core::PCWSTR, stringlength: u32, textformat: *mut ::core::ffi::c_void, layoutwidth: f32, layoutheight: f32, pixelsperdip: f32, transform: *const DWRITE_MATRIX, usegdinatural: super::super::Foundation::BOOL, textlayout: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CreateGdiCompatibleTextLayout: usize,
+    pub CreateEllipsisTrimmingSign: unsafe extern "system" fn(this: *mut *mut Self, textformat: *mut ::core::ffi::c_void, trimmingsign: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateTextAnalyzer: unsafe extern "system" fn(this: *mut *mut Self, textanalyzer: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CreateNumberSubstitution: unsafe extern "system" fn(this: *mut *mut Self, substitutionmethod: DWRITE_NUMBER_SUBSTITUTION_METHOD, localename: ::windows_sys::core::PCWSTR, ignoreuseroverride: super::super::Foundation::BOOL, numbersubstitution: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CreateNumberSubstitution: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CreateGlyphRunAnalysis: unsafe extern "system" fn(this: *mut *mut Self, glyphrun: *const DWRITE_GLYPH_RUN, pixelsperdip: f32, transform: *const DWRITE_MATRIX, renderingmode: DWRITE_RENDERING_MODE, measuringmode: DWRITE_MEASURING_MODE, baselineoriginx: f32, baselineoriginy: f32, glyphrunanalysis: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CreateGlyphRunAnalysis: usize,
+}
+#[repr(C)]
+pub struct IDWriteFactory1 {
+    pub base__: IDWriteFactory,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetEudcFontCollection: unsafe extern "system" fn(this: *mut *mut Self, fontcollection: *mut *mut ::core::ffi::c_void, checkforupdates: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetEudcFontCollection: usize,
+    pub CreateCustomRenderingParams2: unsafe extern "system" fn(this: *mut *mut Self, gamma: f32, enhancedcontrast: f32, enhancedcontrastgrayscale: f32, cleartypelevel: f32, pixelgeometry: DWRITE_PIXEL_GEOMETRY, renderingmode: DWRITE_RENDERING_MODE, renderingparams: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDWriteFactory2 {
+    pub base__: IDWriteFactory1,
+    pub GetSystemFontFallback: unsafe extern "system" fn(this: *mut *mut Self, fontfallback: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateFontFallbackBuilder: unsafe extern "system" fn(this: *mut *mut Self, fontfallbackbuilder: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub TranslateColorGlyphRun: unsafe extern "system" fn(this: *mut *mut Self, baselineoriginx: f32, baselineoriginy: f32, glyphrun: *const DWRITE_GLYPH_RUN, glyphrundescription: *const DWRITE_GLYPH_RUN_DESCRIPTION, measuringmode: DWRITE_MEASURING_MODE, worldtodevicetransform: *const DWRITE_MATRIX, colorpaletteindex: u32, colorlayers: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    TranslateColorGlyphRun: usize,
+    pub CreateCustomRenderingParams3: unsafe extern "system" fn(this: *mut *mut Self, gamma: f32, enhancedcontrast: f32, grayscaleenhancedcontrast: f32, cleartypelevel: f32, pixelgeometry: DWRITE_PIXEL_GEOMETRY, renderingmode: DWRITE_RENDERING_MODE, gridfitmode: DWRITE_GRID_FIT_MODE, renderingparams: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CreateGlyphRunAnalysis2: unsafe extern "system" fn(this: *mut *mut Self, glyphrun: *const DWRITE_GLYPH_RUN, transform: *const DWRITE_MATRIX, renderingmode: DWRITE_RENDERING_MODE, measuringmode: DWRITE_MEASURING_MODE, gridfitmode: DWRITE_GRID_FIT_MODE, antialiasmode: DWRITE_TEXT_ANTIALIAS_MODE, baselineoriginx: f32, baselineoriginy: f32, glyphrunanalysis: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CreateGlyphRunAnalysis2: usize,
+}
+#[repr(C)]
+pub struct IDWriteFactory3 {
+    pub base__: IDWriteFactory2,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CreateGlyphRunAnalysis3: unsafe extern "system" fn(this: *mut *mut Self, glyphrun: *const DWRITE_GLYPH_RUN, transform: *const DWRITE_MATRIX, renderingmode: DWRITE_RENDERING_MODE1, measuringmode: DWRITE_MEASURING_MODE, gridfitmode: DWRITE_GRID_FIT_MODE, antialiasmode: DWRITE_TEXT_ANTIALIAS_MODE, baselineoriginx: f32, baselineoriginy: f32, glyphrunanalysis: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CreateGlyphRunAnalysis3: usize,
+    pub CreateCustomRenderingParams4: unsafe extern "system" fn(this: *mut *mut Self, gamma: f32, enhancedcontrast: f32, grayscaleenhancedcontrast: f32, cleartypelevel: f32, pixelgeometry: DWRITE_PIXEL_GEOMETRY, renderingmode: DWRITE_RENDERING_MODE1, gridfitmode: DWRITE_GRID_FIT_MODE, renderingparams: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateFontFaceReference: unsafe extern "system" fn(this: *mut *mut Self, fontfile: *mut ::core::ffi::c_void, faceindex: u32, fontsimulations: DWRITE_FONT_SIMULATIONS, fontfacereference: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CreateFontFaceReference2: unsafe extern "system" fn(this: *mut *mut Self, filepath: ::windows_sys::core::PCWSTR, lastwritetime: *const super::super::Foundation::FILETIME, faceindex: u32, fontsimulations: DWRITE_FONT_SIMULATIONS, fontfacereference: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CreateFontFaceReference2: usize,
+    pub GetSystemFontSet: unsafe extern "system" fn(this: *mut *mut Self, fontset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateFontSetBuilder: unsafe extern "system" fn(this: *mut *mut Self, fontsetbuilder: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateFontCollectionFromFontSet: unsafe extern "system" fn(this: *mut *mut Self, fontset: *mut ::core::ffi::c_void, fontcollection: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetSystemFontCollection2: unsafe extern "system" fn(this: *mut *mut Self, includedownloadablefonts: super::super::Foundation::BOOL, fontcollection: *mut *mut ::core::ffi::c_void, checkforupdates: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetSystemFontCollection2: usize,
+    pub GetFontDownloadQueue: unsafe extern "system" fn(this: *mut *mut Self, fontdownloadqueue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDWriteFactory4 {
+    pub base__: IDWriteFactory3,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct2D_Common"))]
+    pub TranslateColorGlyphRun2: unsafe extern "system" fn(this: *mut *mut Self, baselineorigin: super::Direct2D::Common::D2D_POINT_2F, glyphrun: *const DWRITE_GLYPH_RUN, glyphrundescription: *const DWRITE_GLYPH_RUN_DESCRIPTION, desiredglyphimageformats: DWRITE_GLYPH_IMAGE_FORMATS, measuringmode: DWRITE_MEASURING_MODE, worldanddpitransform: *const DWRITE_MATRIX, colorpaletteindex: u32, colorlayers: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct2D_Common")))]
+    TranslateColorGlyphRun2: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct2D_Common"))]
+    pub ComputeGlyphOrigins: unsafe extern "system" fn(this: *mut *mut Self, glyphrun: *const DWRITE_GLYPH_RUN, baselineorigin: super::Direct2D::Common::D2D_POINT_2F, glyphorigins: *mut super::Direct2D::Common::D2D_POINT_2F) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct2D_Common")))]
+    ComputeGlyphOrigins: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct2D_Common"))]
+    pub ComputeGlyphOrigins2: unsafe extern "system" fn(this: *mut *mut Self, glyphrun: *const DWRITE_GLYPH_RUN, measuringmode: DWRITE_MEASURING_MODE, baselineorigin: super::Direct2D::Common::D2D_POINT_2F, worldanddpitransform: *const DWRITE_MATRIX, glyphorigins: *mut super::Direct2D::Common::D2D_POINT_2F) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct2D_Common")))]
+    ComputeGlyphOrigins2: usize,
+}
+#[repr(C)]
+pub struct IDWriteFactory5 {
+    pub base__: IDWriteFactory4,
+    pub CreateFontSetBuilder2: unsafe extern "system" fn(this: *mut *mut Self, fontsetbuilder: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateInMemoryFontFileLoader: unsafe extern "system" fn(this: *mut *mut Self, newloader: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateHttpFontFileLoader: unsafe extern "system" fn(this: *mut *mut Self, referrerurl: ::windows_sys::core::PCWSTR, extraheaders: ::windows_sys::core::PCWSTR, newloader: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AnalyzeContainerType: unsafe extern "system" fn(this: *mut *mut Self, filedata: *const ::core::ffi::c_void, filedatasize: u32) -> DWRITE_CONTAINER_TYPE,
+    pub UnpackFontFile: unsafe extern "system" fn(this: *mut *mut Self, containertype: DWRITE_CONTAINER_TYPE, filedata: *const ::core::ffi::c_void, filedatasize: u32, unpackedfontstream: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDWriteFactory6 {
+    pub base__: IDWriteFactory5,
+    pub CreateFontFaceReference3: unsafe extern "system" fn(this: *mut *mut Self, fontfile: *mut ::core::ffi::c_void, faceindex: u32, fontsimulations: DWRITE_FONT_SIMULATIONS, fontaxisvalues: *const DWRITE_FONT_AXIS_VALUE, fontaxisvaluecount: u32, fontfacereference: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateFontResource: unsafe extern "system" fn(this: *mut *mut Self, fontfile: *mut ::core::ffi::c_void, faceindex: u32, fontresource: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetSystemFontSet2: unsafe extern "system" fn(this: *mut *mut Self, includedownloadablefonts: super::super::Foundation::BOOL, fontset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetSystemFontSet2: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetSystemFontCollection3: unsafe extern "system" fn(this: *mut *mut Self, includedownloadablefonts: super::super::Foundation::BOOL, fontfamilymodel: DWRITE_FONT_FAMILY_MODEL, fontcollection: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetSystemFontCollection3: usize,
+    pub CreateFontCollectionFromFontSet2: unsafe extern "system" fn(this: *mut *mut Self, fontset: *mut ::core::ffi::c_void, fontfamilymodel: DWRITE_FONT_FAMILY_MODEL, fontcollection: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateFontSetBuilder3: unsafe extern "system" fn(this: *mut *mut Self, fontsetbuilder: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateTextFormat2: unsafe extern "system" fn(this: *mut *mut Self, fontfamilyname: ::windows_sys::core::PCWSTR, fontcollection: *mut ::core::ffi::c_void, fontaxisvalues: *const DWRITE_FONT_AXIS_VALUE, fontaxisvaluecount: u32, fontsize: f32, localename: ::windows_sys::core::PCWSTR, textformat: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDWriteFactory7 {
+    pub base__: IDWriteFactory6,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetSystemFontSet3: unsafe extern "system" fn(this: *mut *mut Self, includedownloadablefonts: super::super::Foundation::BOOL, fontset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetSystemFontSet3: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetSystemFontCollection4: unsafe extern "system" fn(this: *mut *mut Self, includedownloadablefonts: super::super::Foundation::BOOL, fontfamilymodel: DWRITE_FONT_FAMILY_MODEL, fontcollection: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetSystemFontCollection4: usize,
+}
+#[repr(C)]
+pub struct IDWriteFont {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetFontFamily: unsafe extern "system" fn(this: *mut *mut Self, fontfamily: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetWeight: unsafe extern "system" fn(this: *mut *mut Self) -> DWRITE_FONT_WEIGHT,
+    pub GetStretch: unsafe extern "system" fn(this: *mut *mut Self) -> DWRITE_FONT_STRETCH,
+    pub GetStyle: unsafe extern "system" fn(this: *mut *mut Self) -> DWRITE_FONT_STYLE,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsSymbolFont: unsafe extern "system" fn(this: *mut *mut Self) -> super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsSymbolFont: usize,
+    pub GetFaceNames: unsafe extern "system" fn(this: *mut *mut Self, names: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetInformationalStrings: unsafe extern "system" fn(this: *mut *mut Self, informationalstringid: DWRITE_INFORMATIONAL_STRING_ID, informationalstrings: *mut *mut ::core::ffi::c_void, exists: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetInformationalStrings: usize,
+    pub GetSimulations: unsafe extern "system" fn(this: *mut *mut Self) -> DWRITE_FONT_SIMULATIONS,
+    pub GetMetrics: unsafe extern "system" fn(this: *mut *mut Self, fontmetrics: *mut DWRITE_FONT_METRICS),
+    #[cfg(feature = "Win32_Foundation")]
+    pub HasCharacter: unsafe extern "system" fn(this: *mut *mut Self, unicodevalue: u32, exists: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    HasCharacter: usize,
+    pub CreateFontFace: unsafe extern "system" fn(this: *mut *mut Self, fontface: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDWriteFont1 {
+    pub base__: IDWriteFont,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetMetrics2: unsafe extern "system" fn(this: *mut *mut Self, fontmetrics: *mut DWRITE_FONT_METRICS1),
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetMetrics2: usize,
+    pub GetPanose: unsafe extern "system" fn(this: *mut *mut Self, panose: *mut DWRITE_PANOSE),
+    pub GetUnicodeRanges: unsafe extern "system" fn(this: *mut *mut Self, maxrangecount: u32, unicoderanges: *mut DWRITE_UNICODE_RANGE, actualrangecount: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsMonospacedFont: unsafe extern "system" fn(this: *mut *mut Self) -> super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsMonospacedFont: usize,
+}
+#[repr(C)]
+pub struct IDWriteFont2 {
+    pub base__: IDWriteFont1,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsColorFont: unsafe extern "system" fn(this: *mut *mut Self) -> super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsColorFont: usize,
+}
+#[repr(C)]
+pub struct IDWriteFont3 {
+    pub base__: IDWriteFont2,
+    pub CreateFontFace2: unsafe extern "system" fn(this: *mut *mut Self, fontface: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Equals: unsafe extern "system" fn(this: *mut *mut Self, font: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Equals: usize,
+    pub GetFontFaceReference: unsafe extern "system" fn(this: *mut *mut Self, fontfacereference: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub HasCharacter2: unsafe extern "system" fn(this: *mut *mut Self, unicodevalue: u32) -> super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    HasCharacter2: usize,
+    pub GetLocality: unsafe extern "system" fn(this: *mut *mut Self) -> DWRITE_LOCALITY,
+}
+#[repr(C)]
+pub struct IDWriteFontCollection {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetFontFamilyCount: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
+    pub GetFontFamily: unsafe extern "system" fn(this: *mut *mut Self, index: u32, fontfamily: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub FindFamilyName: unsafe extern "system" fn(this: *mut *mut Self, familyname: ::windows_sys::core::PCWSTR, index: *mut u32, exists: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    FindFamilyName: usize,
+    pub GetFontFromFontFace: unsafe extern "system" fn(this: *mut *mut Self, fontface: *mut ::core::ffi::c_void, font: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDWriteFontCollection1 {
+    pub base__: IDWriteFontCollection,
+    pub GetFontSet: unsafe extern "system" fn(this: *mut *mut Self, fontset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetFontFamily2: unsafe extern "system" fn(this: *mut *mut Self, index: u32, fontfamily: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDWriteFontCollection2 {
+    pub base__: IDWriteFontCollection1,
+    pub GetFontFamily3: unsafe extern "system" fn(this: *mut *mut Self, index: u32, fontfamily: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetMatchingFonts: unsafe extern "system" fn(this: *mut *mut Self, familyname: ::windows_sys::core::PCWSTR, fontaxisvalues: *const DWRITE_FONT_AXIS_VALUE, fontaxisvaluecount: u32, fontlist: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetFontFamilyModel: unsafe extern "system" fn(this: *mut *mut Self) -> DWRITE_FONT_FAMILY_MODEL,
+    pub GetFontSet2: unsafe extern "system" fn(this: *mut *mut Self, fontset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDWriteFontCollection3 {
+    pub base__: IDWriteFontCollection2,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetExpirationEvent: unsafe extern "system" fn(this: *mut *mut Self) -> super::super::Foundation::HANDLE,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetExpirationEvent: usize,
+}
+#[repr(C)]
+pub struct IDWriteFontCollectionLoader {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub CreateEnumeratorFromKey: unsafe extern "system" fn(this: *mut *mut Self, factory: *mut ::core::ffi::c_void, collectionkey: *const ::core::ffi::c_void, collectionkeysize: u32, fontfileenumerator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDWriteFontDownloadListener {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub DownloadCompleted: unsafe extern "system" fn(this: *mut *mut Self, downloadqueue: *mut ::core::ffi::c_void, context: *mut ::core::ffi::c_void, downloadresult: ::windows_sys::core::HRESULT),
+}
+#[repr(C)]
+pub struct IDWriteFontDownloadQueue {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub AddListener: unsafe extern "system" fn(this: *mut *mut Self, listener: *mut ::core::ffi::c_void, token: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub RemoveListener: unsafe extern "system" fn(this: *mut *mut Self, token: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsEmpty: unsafe extern "system" fn(this: *mut *mut Self) -> super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsEmpty: usize,
+    pub BeginDownload: unsafe extern "system" fn(this: *mut *mut Self, context: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CancelDownload: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetGenerationCount: unsafe extern "system" fn(this: *mut *mut Self) -> u64,
+}
+#[repr(C)]
+pub struct IDWriteFontFace {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetType: unsafe extern "system" fn(this: *mut *mut Self) -> DWRITE_FONT_FACE_TYPE,
+    pub GetFiles: unsafe extern "system" fn(this: *mut *mut Self, numberoffiles: *mut u32, fontfiles: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetIndex: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
+    pub GetSimulations: unsafe extern "system" fn(this: *mut *mut Self) -> DWRITE_FONT_SIMULATIONS,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsSymbolFont: unsafe extern "system" fn(this: *mut *mut Self) -> super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsSymbolFont: usize,
+    pub GetMetrics: unsafe extern "system" fn(this: *mut *mut Self, fontfacemetrics: *mut DWRITE_FONT_METRICS),
+    pub GetGlyphCount: unsafe extern "system" fn(this: *mut *mut Self) -> u16,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetDesignGlyphMetrics: unsafe extern "system" fn(this: *mut *mut Self, glyphindices: *const u16, glyphcount: u32, glyphmetrics: *mut DWRITE_GLYPH_METRICS, issideways: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetDesignGlyphMetrics: usize,
+    pub GetGlyphIndices: unsafe extern "system" fn(this: *mut *mut Self, codepoints: *const u32, codepointcount: u32, glyphindices: *mut u16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub TryGetFontTable: unsafe extern "system" fn(this: *mut *mut Self, opentypetabletag: u32, tabledata: *mut *mut ::core::ffi::c_void, tablesize: *mut u32, tablecontext: *mut *mut ::core::ffi::c_void, exists: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    TryGetFontTable: usize,
+    pub ReleaseFontTable: unsafe extern "system" fn(this: *mut *mut Self, tablecontext: *const ::core::ffi::c_void),
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct2D_Common"))]
+    pub GetGlyphRunOutline: unsafe extern "system" fn(this: *mut *mut Self, emsize: f32, glyphindices: *const u16, glyphadvances: *const f32, glyphoffsets: *const DWRITE_GLYPH_OFFSET, glyphcount: u32, issideways: super::super::Foundation::BOOL, isrighttoleft: super::super::Foundation::BOOL, geometrysink: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct2D_Common")))]
+    GetGlyphRunOutline: usize,
+    pub GetRecommendedRenderingMode: unsafe extern "system" fn(this: *mut *mut Self, emsize: f32, pixelsperdip: f32, measuringmode: DWRITE_MEASURING_MODE, renderingparams: *mut ::core::ffi::c_void, renderingmode: *mut DWRITE_RENDERING_MODE) -> ::windows_sys::core::HRESULT,
+    pub GetGdiCompatibleMetrics: unsafe extern "system" fn(this: *mut *mut Self, emsize: f32, pixelsperdip: f32, transform: *const DWRITE_MATRIX, fontfacemetrics: *mut DWRITE_FONT_METRICS) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetGdiCompatibleGlyphMetrics: unsafe extern "system" fn(this: *mut *mut Self, emsize: f32, pixelsperdip: f32, transform: *const DWRITE_MATRIX, usegdinatural: super::super::Foundation::BOOL, glyphindices: *const u16, glyphcount: u32, glyphmetrics: *mut DWRITE_GLYPH_METRICS, issideways: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetGdiCompatibleGlyphMetrics: usize,
+}
+#[repr(C)]
+pub struct IDWriteFontFace1 {
+    pub base__: IDWriteFontFace,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetMetrics2: unsafe extern "system" fn(this: *mut *mut Self, fontmetrics: *mut DWRITE_FONT_METRICS1),
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetMetrics2: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetGdiCompatibleMetrics2: unsafe extern "system" fn(this: *mut *mut Self, emsize: f32, pixelsperdip: f32, transform: *const DWRITE_MATRIX, fontmetrics: *mut DWRITE_FONT_METRICS1) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetGdiCompatibleMetrics2: usize,
+    pub GetCaretMetrics: unsafe extern "system" fn(this: *mut *mut Self, caretmetrics: *mut DWRITE_CARET_METRICS),
+    pub GetUnicodeRanges: unsafe extern "system" fn(this: *mut *mut Self, maxrangecount: u32, unicoderanges: *mut DWRITE_UNICODE_RANGE, actualrangecount: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsMonospacedFont: unsafe extern "system" fn(this: *mut *mut Self) -> super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsMonospacedFont: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetDesignGlyphAdvances: unsafe extern "system" fn(this: *mut *mut Self, glyphcount: u32, glyphindices: *const u16, glyphadvances: *mut i32, issideways: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetDesignGlyphAdvances: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetGdiCompatibleGlyphAdvances: unsafe extern "system" fn(this: *mut *mut Self, emsize: f32, pixelsperdip: f32, transform: *const DWRITE_MATRIX, usegdinatural: super::super::Foundation::BOOL, issideways: super::super::Foundation::BOOL, glyphcount: u32, glyphindices: *const u16, glyphadvances: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetGdiCompatibleGlyphAdvances: usize,
+    pub GetKerningPairAdjustments: unsafe extern "system" fn(this: *mut *mut Self, glyphcount: u32, glyphindices: *const u16, glyphadvanceadjustments: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub HasKerningPairs: unsafe extern "system" fn(this: *mut *mut Self) -> super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    HasKerningPairs: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetRecommendedRenderingMode2: unsafe extern "system" fn(this: *mut *mut Self, fontemsize: f32, dpix: f32, dpiy: f32, transform: *const DWRITE_MATRIX, issideways: super::super::Foundation::BOOL, outlinethreshold: DWRITE_OUTLINE_THRESHOLD, measuringmode: DWRITE_MEASURING_MODE, renderingmode: *mut DWRITE_RENDERING_MODE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetRecommendedRenderingMode2: usize,
+    pub GetVerticalGlyphVariants: unsafe extern "system" fn(this: *mut *mut Self, glyphcount: u32, nominalglyphindices: *const u16, verticalglyphindices: *mut u16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub HasVerticalGlyphVariants: unsafe extern "system" fn(this: *mut *mut Self) -> super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    HasVerticalGlyphVariants: usize,
+}
+#[repr(C)]
+pub struct IDWriteFontFace2 {
+    pub base__: IDWriteFontFace1,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsColorFont: unsafe extern "system" fn(this: *mut *mut Self) -> super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsColorFont: usize,
+    pub GetColorPaletteCount: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
+    pub GetPaletteEntryCount: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
+    pub GetPaletteEntries: unsafe extern "system" fn(this: *mut *mut Self, colorpaletteindex: u32, firstentryindex: u32, entrycount: u32, paletteentries: *mut DWRITE_COLOR_F) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetRecommendedRenderingMode3: unsafe extern "system" fn(this: *mut *mut Self, fontemsize: f32, dpix: f32, dpiy: f32, transform: *const DWRITE_MATRIX, issideways: super::super::Foundation::BOOL, outlinethreshold: DWRITE_OUTLINE_THRESHOLD, measuringmode: DWRITE_MEASURING_MODE, renderingparams: *mut ::core::ffi::c_void, renderingmode: *mut DWRITE_RENDERING_MODE, gridfitmode: *mut DWRITE_GRID_FIT_MODE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetRecommendedRenderingMode3: usize,
+}
+#[repr(C)]
+pub struct IDWriteFontFace3 {
+    pub base__: IDWriteFontFace2,
+    pub GetFontFaceReference: unsafe extern "system" fn(this: *mut *mut Self, fontfacereference: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetPanose: unsafe extern "system" fn(this: *mut *mut Self, panose: *mut DWRITE_PANOSE),
+    pub GetWeight: unsafe extern "system" fn(this: *mut *mut Self) -> DWRITE_FONT_WEIGHT,
+    pub GetStretch: unsafe extern "system" fn(this: *mut *mut Self) -> DWRITE_FONT_STRETCH,
+    pub GetStyle: unsafe extern "system" fn(this: *mut *mut Self) -> DWRITE_FONT_STYLE,
+    pub GetFamilyNames: unsafe extern "system" fn(this: *mut *mut Self, names: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetFaceNames: unsafe extern "system" fn(this: *mut *mut Self, names: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetInformationalStrings: unsafe extern "system" fn(this: *mut *mut Self, informationalstringid: DWRITE_INFORMATIONAL_STRING_ID, informationalstrings: *mut *mut ::core::ffi::c_void, exists: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetInformationalStrings: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub HasCharacter: unsafe extern "system" fn(this: *mut *mut Self, unicodevalue: u32) -> super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    HasCharacter: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetRecommendedRenderingMode4: unsafe extern "system" fn(this: *mut *mut Self, fontemsize: f32, dpix: f32, dpiy: f32, transform: *const DWRITE_MATRIX, issideways: super::super::Foundation::BOOL, outlinethreshold: DWRITE_OUTLINE_THRESHOLD, measuringmode: DWRITE_MEASURING_MODE, renderingparams: *mut ::core::ffi::c_void, renderingmode: *mut DWRITE_RENDERING_MODE1, gridfitmode: *mut DWRITE_GRID_FIT_MODE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetRecommendedRenderingMode4: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsCharacterLocal: unsafe extern "system" fn(this: *mut *mut Self, unicodevalue: u32) -> super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsCharacterLocal: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsGlyphLocal: unsafe extern "system" fn(this: *mut *mut Self, glyphid: u16) -> super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsGlyphLocal: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AreCharactersLocal: unsafe extern "system" fn(this: *mut *mut Self, characters: ::windows_sys::core::PCWSTR, charactercount: u32, enqueueifnotlocal: super::super::Foundation::BOOL, islocal: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AreCharactersLocal: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AreGlyphsLocal: unsafe extern "system" fn(this: *mut *mut Self, glyphindices: *const u16, glyphcount: u32, enqueueifnotlocal: super::super::Foundation::BOOL, islocal: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AreGlyphsLocal: usize,
+}
+#[repr(C)]
+pub struct IDWriteFontFace4 {
+    pub base__: IDWriteFontFace3,
+    pub GetGlyphImageFormats: unsafe extern "system" fn(this: *mut *mut Self, glyphid: u16, pixelsperemfirst: u32, pixelsperemlast: u32, glyphimageformats: *mut DWRITE_GLYPH_IMAGE_FORMATS) -> ::windows_sys::core::HRESULT,
+    pub GetGlyphImageFormats2: unsafe extern "system" fn(this: *mut *mut Self) -> DWRITE_GLYPH_IMAGE_FORMATS,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct2D_Common"))]
+    pub GetGlyphImageData: unsafe extern "system" fn(this: *mut *mut Self, glyphid: u16, pixelsperem: u32, glyphimageformat: DWRITE_GLYPH_IMAGE_FORMATS, glyphdata: *mut DWRITE_GLYPH_IMAGE_DATA, glyphdatacontext: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct2D_Common")))]
+    GetGlyphImageData: usize,
+    pub ReleaseGlyphImageData: unsafe extern "system" fn(this: *mut *mut Self, glyphdatacontext: *mut ::core::ffi::c_void),
+}
+#[repr(C)]
+pub struct IDWriteFontFace5 {
+    pub base__: IDWriteFontFace4,
+    pub GetFontAxisValueCount: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
+    pub GetFontAxisValues: unsafe extern "system" fn(this: *mut *mut Self, fontaxisvalues: *mut DWRITE_FONT_AXIS_VALUE, fontaxisvaluecount: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub HasVariations: unsafe extern "system" fn(this: *mut *mut Self) -> super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    HasVariations: usize,
+    pub GetFontResource: unsafe extern "system" fn(this: *mut *mut Self, fontresource: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Equals: unsafe extern "system" fn(this: *mut *mut Self, fontface: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Equals: usize,
+}
+#[repr(C)]
+pub struct IDWriteFontFace6 {
+    pub base__: IDWriteFontFace5,
+    pub GetFamilyNames2: unsafe extern "system" fn(this: *mut *mut Self, fontfamilymodel: DWRITE_FONT_FAMILY_MODEL, names: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetFaceNames2: unsafe extern "system" fn(this: *mut *mut Self, fontfamilymodel: DWRITE_FONT_FAMILY_MODEL, names: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDWriteFontFaceReference {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub CreateFontFace: unsafe extern "system" fn(this: *mut *mut Self, fontface: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateFontFaceWithSimulations: unsafe extern "system" fn(this: *mut *mut Self, fontfacesimulationflags: DWRITE_FONT_SIMULATIONS, fontface: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Equals: unsafe extern "system" fn(this: *mut *mut Self, fontfacereference: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Equals: usize,
+    pub GetFontFaceIndex: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
+    pub GetSimulations: unsafe extern "system" fn(this: *mut *mut Self) -> DWRITE_FONT_SIMULATIONS,
+    pub GetFontFile: unsafe extern "system" fn(this: *mut *mut Self, fontfile: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetLocalFileSize: unsafe extern "system" fn(this: *mut *mut Self) -> u64,
+    pub GetFileSize: unsafe extern "system" fn(this: *mut *mut Self) -> u64,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetFileTime: unsafe extern "system" fn(this: *mut *mut Self, lastwritetime: *mut super::super::Foundation::FILETIME) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetFileTime: usize,
+    pub GetLocality: unsafe extern "system" fn(this: *mut *mut Self) -> DWRITE_LOCALITY,
+    pub EnqueueFontDownloadRequest: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub EnqueueCharacterDownloadRequest: unsafe extern "system" fn(this: *mut *mut Self, characters: ::windows_sys::core::PCWSTR, charactercount: u32) -> ::windows_sys::core::HRESULT,
+    pub EnqueueGlyphDownloadRequest: unsafe extern "system" fn(this: *mut *mut Self, glyphindices: *const u16, glyphcount: u32) -> ::windows_sys::core::HRESULT,
+    pub EnqueueFileFragmentDownloadRequest: unsafe extern "system" fn(this: *mut *mut Self, fileoffset: u64, fragmentsize: u64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDWriteFontFaceReference1 {
+    pub base__: IDWriteFontFaceReference,
+    pub CreateFontFace2: unsafe extern "system" fn(this: *mut *mut Self, fontface: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetFontAxisValueCount: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
+    pub GetFontAxisValues: unsafe extern "system" fn(this: *mut *mut Self, fontaxisvalues: *mut DWRITE_FONT_AXIS_VALUE, fontaxisvaluecount: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDWriteFontFallback {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub MapCharacters: unsafe extern "system" fn(this: *mut *mut Self, analysissource: *mut ::core::ffi::c_void, textposition: u32, textlength: u32, basefontcollection: *mut ::core::ffi::c_void, basefamilyname: ::windows_sys::core::PCWSTR, baseweight: DWRITE_FONT_WEIGHT, basestyle: DWRITE_FONT_STYLE, basestretch: DWRITE_FONT_STRETCH, mappedlength: *mut u32, mappedfont: *mut *mut ::core::ffi::c_void, scale: *mut f32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDWriteFontFallback1 {
+    pub base__: IDWriteFontFallback,
+    pub MapCharacters2: unsafe extern "system" fn(this: *mut *mut Self, analysissource: *mut ::core::ffi::c_void, textposition: u32, textlength: u32, basefontcollection: *mut ::core::ffi::c_void, basefamilyname: ::windows_sys::core::PCWSTR, fontaxisvalues: *const DWRITE_FONT_AXIS_VALUE, fontaxisvaluecount: u32, mappedlength: *mut u32, scale: *mut f32, mappedfontface: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDWriteFontFallbackBuilder {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub AddMapping: unsafe extern "system" fn(this: *mut *mut Self, ranges: *const DWRITE_UNICODE_RANGE, rangescount: u32, targetfamilynames: *const *const u16, targetfamilynamescount: u32, fontcollection: *mut ::core::ffi::c_void, localename: ::windows_sys::core::PCWSTR, basefamilyname: ::windows_sys::core::PCWSTR, scale: f32) -> ::windows_sys::core::HRESULT,
+    pub AddMappings: unsafe extern "system" fn(this: *mut *mut Self, fontfallback: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateFontFallback: unsafe extern "system" fn(this: *mut *mut Self, fontfallback: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDWriteFontFamily {
+    pub base__: IDWriteFontList,
+    pub GetFamilyNames: unsafe extern "system" fn(this: *mut *mut Self, names: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetFirstMatchingFont: unsafe extern "system" fn(this: *mut *mut Self, weight: DWRITE_FONT_WEIGHT, stretch: DWRITE_FONT_STRETCH, style: DWRITE_FONT_STYLE, matchingfont: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetMatchingFonts: unsafe extern "system" fn(this: *mut *mut Self, weight: DWRITE_FONT_WEIGHT, stretch: DWRITE_FONT_STRETCH, style: DWRITE_FONT_STYLE, matchingfonts: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDWriteFontFamily1 {
+    pub base__: IDWriteFontFamily,
+    pub GetFontLocality: unsafe extern "system" fn(this: *mut *mut Self, listindex: u32) -> DWRITE_LOCALITY,
+    pub GetFont2: unsafe extern "system" fn(this: *mut *mut Self, listindex: u32, font: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetFontFaceReference: unsafe extern "system" fn(this: *mut *mut Self, listindex: u32, fontfacereference: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDWriteFontFamily2 {
+    pub base__: IDWriteFontFamily1,
+    pub GetMatchingFonts2: unsafe extern "system" fn(this: *mut *mut Self, fontaxisvalues: *const DWRITE_FONT_AXIS_VALUE, fontaxisvaluecount: u32, matchingfonts: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetFontSet: unsafe extern "system" fn(this: *mut *mut Self, fontset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDWriteFontFile {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetReferenceKey: unsafe extern "system" fn(this: *mut *mut Self, fontfilereferencekey: *mut *mut ::core::ffi::c_void, fontfilereferencekeysize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetLoader: unsafe extern "system" fn(this: *mut *mut Self, fontfileloader: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Analyze: unsafe extern "system" fn(this: *mut *mut Self, issupportedfonttype: *mut super::super::Foundation::BOOL, fontfiletype: *mut DWRITE_FONT_FILE_TYPE, fontfacetype: *mut DWRITE_FONT_FACE_TYPE, numberoffaces: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Analyze: usize,
+}
+#[repr(C)]
+pub struct IDWriteFontFileEnumerator {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MoveNext: unsafe extern "system" fn(this: *mut *mut Self, hascurrentfile: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MoveNext: usize,
+    pub GetCurrentFontFile: unsafe extern "system" fn(this: *mut *mut Self, fontfile: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDWriteFontFileLoader {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub CreateStreamFromKey: unsafe extern "system" fn(this: *mut *mut Self, fontfilereferencekey: *const ::core::ffi::c_void, fontfilereferencekeysize: u32, fontfilestream: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDWriteFontFileStream {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub ReadFileFragment: unsafe extern "system" fn(this: *mut *mut Self, fragmentstart: *mut *mut ::core::ffi::c_void, fileoffset: u64, fragmentsize: u64, fragmentcontext: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ReleaseFileFragment: unsafe extern "system" fn(this: *mut *mut Self, fragmentcontext: *mut ::core::ffi::c_void),
+    pub GetFileSize: unsafe extern "system" fn(this: *mut *mut Self, filesize: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetLastWriteTime: unsafe extern "system" fn(this: *mut *mut Self, lastwritetime: *mut u64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDWriteFontList {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetFontCollection: unsafe extern "system" fn(this: *mut *mut Self, fontcollection: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetFontCount: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
+    pub GetFont: unsafe extern "system" fn(this: *mut *mut Self, index: u32, font: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDWriteFontList1 {
+    pub base__: IDWriteFontList,
+    pub GetFontLocality: unsafe extern "system" fn(this: *mut *mut Self, listindex: u32) -> DWRITE_LOCALITY,
+    pub GetFont2: unsafe extern "system" fn(this: *mut *mut Self, listindex: u32, font: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetFontFaceReference: unsafe extern "system" fn(this: *mut *mut Self, listindex: u32, fontfacereference: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDWriteFontList2 {
+    pub base__: IDWriteFontList1,
+    pub GetFontSet: unsafe extern "system" fn(this: *mut *mut Self, fontset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDWriteFontResource {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetFontFile: unsafe extern "system" fn(this: *mut *mut Self, fontfile: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetFontFaceIndex: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
+    pub GetFontAxisCount: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
+    pub GetDefaultFontAxisValues: unsafe extern "system" fn(this: *mut *mut Self, fontaxisvalues: *mut DWRITE_FONT_AXIS_VALUE, fontaxisvaluecount: u32) -> ::windows_sys::core::HRESULT,
+    pub GetFontAxisRanges: unsafe extern "system" fn(this: *mut *mut Self, fontaxisranges: *mut DWRITE_FONT_AXIS_RANGE, fontaxisrangecount: u32) -> ::windows_sys::core::HRESULT,
+    pub GetFontAxisAttributes: unsafe extern "system" fn(this: *mut *mut Self, axisindex: u32) -> DWRITE_FONT_AXIS_ATTRIBUTES,
+    pub GetAxisNames: unsafe extern "system" fn(this: *mut *mut Self, axisindex: u32, names: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetAxisValueNameCount: unsafe extern "system" fn(this: *mut *mut Self, axisindex: u32) -> u32,
+    pub GetAxisValueNames: unsafe extern "system" fn(this: *mut *mut Self, axisindex: u32, axisvalueindex: u32, fontaxisrange: *mut DWRITE_FONT_AXIS_RANGE, names: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub HasVariations: unsafe extern "system" fn(this: *mut *mut Self) -> super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    HasVariations: usize,
+    pub CreateFontFace: unsafe extern "system" fn(this: *mut *mut Self, fontsimulations: DWRITE_FONT_SIMULATIONS, fontaxisvalues: *const DWRITE_FONT_AXIS_VALUE, fontaxisvaluecount: u32, fontface: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateFontFaceReference: unsafe extern "system" fn(this: *mut *mut Self, fontsimulations: DWRITE_FONT_SIMULATIONS, fontaxisvalues: *const DWRITE_FONT_AXIS_VALUE, fontaxisvaluecount: u32, fontfacereference: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDWriteFontSet {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetFontCount: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
+    pub GetFontFaceReference: unsafe extern "system" fn(this: *mut *mut Self, listindex: u32, fontfacereference: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub FindFontFaceReference: unsafe extern "system" fn(this: *mut *mut Self, fontfacereference: *mut ::core::ffi::c_void, listindex: *mut u32, exists: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    FindFontFaceReference: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub FindFontFace: unsafe extern "system" fn(this: *mut *mut Self, fontface: *mut ::core::ffi::c_void, listindex: *mut u32, exists: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    FindFontFace: usize,
+    pub GetPropertyValues: unsafe extern "system" fn(this: *mut *mut Self, propertyid: DWRITE_FONT_PROPERTY_ID, values: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetPropertyValues2: unsafe extern "system" fn(this: *mut *mut Self, propertyid: DWRITE_FONT_PROPERTY_ID, preferredlocalenames: ::windows_sys::core::PCWSTR, values: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetPropertyValues3: unsafe extern "system" fn(this: *mut *mut Self, listindex: u32, propertyid: DWRITE_FONT_PROPERTY_ID, exists: *mut super::super::Foundation::BOOL, values: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetPropertyValues3: usize,
+    pub GetPropertyOccurrenceCount: unsafe extern "system" fn(this: *mut *mut Self, property: *const DWRITE_FONT_PROPERTY, propertyoccurrencecount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetMatchingFonts: unsafe extern "system" fn(this: *mut *mut Self, familyname: ::windows_sys::core::PCWSTR, fontweight: DWRITE_FONT_WEIGHT, fontstretch: DWRITE_FONT_STRETCH, fontstyle: DWRITE_FONT_STYLE, filteredset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetMatchingFonts2: unsafe extern "system" fn(this: *mut *mut Self, properties: *const DWRITE_FONT_PROPERTY, propertycount: u32, filteredset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDWriteFontSet1 {
+    pub base__: IDWriteFontSet,
+    pub GetMatchingFonts3: unsafe extern "system" fn(this: *mut *mut Self, fontproperty: *const DWRITE_FONT_PROPERTY, fontaxisvalues: *const DWRITE_FONT_AXIS_VALUE, fontaxisvaluecount: u32, matchingfonts: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetFirstFontResources: unsafe extern "system" fn(this: *mut *mut Self, filteredfontset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetFilteredFonts: unsafe extern "system" fn(this: *mut *mut Self, indices: *const u32, indexcount: u32, filteredfontset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetFilteredFonts2: unsafe extern "system" fn(this: *mut *mut Self, fontaxisranges: *const DWRITE_FONT_AXIS_RANGE, fontaxisrangecount: u32, selectanyrange: super::super::Foundation::BOOL, filteredfontset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetFilteredFonts2: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetFilteredFonts3: unsafe extern "system" fn(this: *mut *mut Self, properties: *const DWRITE_FONT_PROPERTY, propertycount: u32, selectanyproperty: super::super::Foundation::BOOL, filteredfontset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetFilteredFonts3: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetFilteredFontIndices: unsafe extern "system" fn(this: *mut *mut Self, fontaxisranges: *const DWRITE_FONT_AXIS_RANGE, fontaxisrangecount: u32, selectanyrange: super::super::Foundation::BOOL, indices: *mut u32, maxindexcount: u32, actualindexcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetFilteredFontIndices: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetFilteredFontIndices2: unsafe extern "system" fn(this: *mut *mut Self, properties: *const DWRITE_FONT_PROPERTY, propertycount: u32, selectanyproperty: super::super::Foundation::BOOL, indices: *mut u32, maxindexcount: u32, actualindexcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetFilteredFontIndices2: usize,
+    pub GetFontAxisRanges: unsafe extern "system" fn(this: *mut *mut Self, listindex: u32, fontaxisranges: *mut DWRITE_FONT_AXIS_RANGE, maxfontaxisrangecount: u32, actualfontaxisrangecount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetFontAxisRanges2: unsafe extern "system" fn(this: *mut *mut Self, fontaxisranges: *mut DWRITE_FONT_AXIS_RANGE, maxfontaxisrangecount: u32, actualfontaxisrangecount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetFontFaceReference2: unsafe extern "system" fn(this: *mut *mut Self, listindex: u32, fontfacereference: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateFontResource: unsafe extern "system" fn(this: *mut *mut Self, listindex: u32, fontresource: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateFontFace: unsafe extern "system" fn(this: *mut *mut Self, listindex: u32, fontface: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetFontLocality: unsafe extern "system" fn(this: *mut *mut Self, listindex: u32) -> DWRITE_LOCALITY,
+}
+#[repr(C)]
+pub struct IDWriteFontSet2 {
+    pub base__: IDWriteFontSet1,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetExpirationEvent: unsafe extern "system" fn(this: *mut *mut Self) -> super::super::Foundation::HANDLE,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetExpirationEvent: usize,
+}
+#[repr(C)]
+pub struct IDWriteFontSet3 {
+    pub base__: IDWriteFontSet2,
+    pub GetFontSourceType: unsafe extern "system" fn(this: *mut *mut Self, fontindex: u32) -> DWRITE_FONT_SOURCE_TYPE,
+    pub GetFontSourceNameLength: unsafe extern "system" fn(this: *mut *mut Self, listindex: u32) -> u32,
+    pub GetFontSourceName: unsafe extern "system" fn(this: *mut *mut Self, listindex: u32, stringbuffer: ::windows_sys::core::PWSTR, stringbuffersize: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDWriteFontSetBuilder {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub AddFontFaceReference: unsafe extern "system" fn(this: *mut *mut Self, fontfacereference: *mut ::core::ffi::c_void, properties: *const DWRITE_FONT_PROPERTY, propertycount: u32) -> ::windows_sys::core::HRESULT,
+    pub AddFontFaceReference2: unsafe extern "system" fn(this: *mut *mut Self, fontfacereference: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AddFontSet: unsafe extern "system" fn(this: *mut *mut Self, fontset: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateFontSet: unsafe extern "system" fn(this: *mut *mut Self, fontset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDWriteFontSetBuilder1 {
+    pub base__: IDWriteFontSetBuilder,
+    pub AddFontFile: unsafe extern "system" fn(this: *mut *mut Self, fontfile: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDWriteFontSetBuilder2 {
+    pub base__: IDWriteFontSetBuilder1,
+    pub AddFont: unsafe extern "system" fn(this: *mut *mut Self, fontfile: *mut ::core::ffi::c_void, fontfaceindex: u32, fontsimulations: DWRITE_FONT_SIMULATIONS, fontaxisvalues: *const DWRITE_FONT_AXIS_VALUE, fontaxisvaluecount: u32, fontaxisranges: *const DWRITE_FONT_AXIS_RANGE, fontaxisrangecount: u32, properties: *const DWRITE_FONT_PROPERTY, propertycount: u32) -> ::windows_sys::core::HRESULT,
+    pub AddFontFile2: unsafe extern "system" fn(this: *mut *mut Self, filepath: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDWriteGdiInterop {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub CreateFontFromLOGFONT: unsafe extern "system" fn(this: *mut *mut Self, logfont: *const super::Gdi::LOGFONTW, font: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Gdi"))]
+    CreateFontFromLOGFONT: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+    pub ConvertFontToLOGFONT: unsafe extern "system" fn(this: *mut *mut Self, font: *mut ::core::ffi::c_void, logfont: *mut super::Gdi::LOGFONTW, issystemfont: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi")))]
+    ConvertFontToLOGFONT: usize,
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub ConvertFontFaceToLOGFONT: unsafe extern "system" fn(this: *mut *mut Self, font: *mut ::core::ffi::c_void, logfont: *mut super::Gdi::LOGFONTW) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Gdi"))]
+    ConvertFontFaceToLOGFONT: usize,
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub CreateFontFaceFromHdc: unsafe extern "system" fn(this: *mut *mut Self, hdc: super::Gdi::HDC, fontface: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Gdi"))]
+    CreateFontFaceFromHdc: usize,
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub CreateBitmapRenderTarget: unsafe extern "system" fn(this: *mut *mut Self, hdc: super::Gdi::HDC, width: u32, height: u32, rendertarget: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Gdi"))]
+    CreateBitmapRenderTarget: usize,
+}
+#[repr(C)]
+pub struct IDWriteGdiInterop1 {
+    pub base__: IDWriteGdiInterop,
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub CreateFontFromLOGFONT2: unsafe extern "system" fn(this: *mut *mut Self, logfont: *const super::Gdi::LOGFONTW, fontcollection: *mut ::core::ffi::c_void, font: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Gdi"))]
+    CreateFontFromLOGFONT2: usize,
+    #[cfg(feature = "Win32_Globalization")]
+    pub GetFontSignature: unsafe extern "system" fn(this: *mut *mut Self, fontface: *mut ::core::ffi::c_void, fontsignature: *mut super::super::Globalization::FONTSIGNATURE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Globalization"))]
+    GetFontSignature: usize,
+    #[cfg(feature = "Win32_Globalization")]
+    pub GetFontSignature2: unsafe extern "system" fn(this: *mut *mut Self, font: *mut ::core::ffi::c_void, fontsignature: *mut super::super::Globalization::FONTSIGNATURE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Globalization"))]
+    GetFontSignature2: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+    pub GetMatchingFontsByLOGFONT: unsafe extern "system" fn(this: *mut *mut Self, logfont: *const super::Gdi::LOGFONTA, fontset: *mut ::core::ffi::c_void, filteredset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi")))]
+    GetMatchingFontsByLOGFONT: usize,
+}
+#[repr(C)]
+pub struct IDWriteGlyphRunAnalysis {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetAlphaTextureBounds: unsafe extern "system" fn(this: *mut *mut Self, texturetype: DWRITE_TEXTURE_TYPE, texturebounds: *mut super::super::Foundation::RECT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetAlphaTextureBounds: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CreateAlphaTexture: unsafe extern "system" fn(this: *mut *mut Self, texturetype: DWRITE_TEXTURE_TYPE, texturebounds: *const super::super::Foundation::RECT, alphavalues: *mut u8, buffersize: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CreateAlphaTexture: usize,
+    pub GetAlphaBlendParams: unsafe extern "system" fn(this: *mut *mut Self, renderingparams: *mut ::core::ffi::c_void, blendgamma: *mut f32, blendenhancedcontrast: *mut f32, blendcleartypelevel: *mut f32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDWriteInMemoryFontFileLoader {
+    pub base__: IDWriteFontFileLoader,
+    pub CreateInMemoryFontFileReference: unsafe extern "system" fn(this: *mut *mut Self, factory: *mut ::core::ffi::c_void, fontdata: *const ::core::ffi::c_void, fontdatasize: u32, ownerobject: *mut ::core::ffi::c_void, fontfile: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetFileCount: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
+}
+#[repr(C)]
+pub struct IDWriteInlineObject {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Draw: unsafe extern "system" fn(this: *mut *mut Self, clientdrawingcontext: *const ::core::ffi::c_void, renderer: *mut ::core::ffi::c_void, originx: f32, originy: f32, issideways: super::super::Foundation::BOOL, isrighttoleft: super::super::Foundation::BOOL, clientdrawingeffect: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Draw: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetMetrics: unsafe extern "system" fn(this: *mut *mut Self, metrics: *mut DWRITE_INLINE_OBJECT_METRICS) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetMetrics: usize,
+    pub GetOverhangMetrics: unsafe extern "system" fn(this: *mut *mut Self, overhangs: *mut DWRITE_OVERHANG_METRICS) -> ::windows_sys::core::HRESULT,
+    pub GetBreakConditions: unsafe extern "system" fn(this: *mut *mut Self, breakconditionbefore: *mut DWRITE_BREAK_CONDITION, breakconditionafter: *mut DWRITE_BREAK_CONDITION) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDWriteLocalFontFileLoader {
+    pub base__: IDWriteFontFileLoader,
+    pub GetFilePathLengthFromKey: unsafe extern "system" fn(this: *mut *mut Self, fontfilereferencekey: *const ::core::ffi::c_void, fontfilereferencekeysize: u32, filepathlength: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetFilePathFromKey: unsafe extern "system" fn(this: *mut *mut Self, fontfilereferencekey: *const ::core::ffi::c_void, fontfilereferencekeysize: u32, filepath: ::windows_sys::core::PWSTR, filepathsize: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetLastWriteTimeFromKey: unsafe extern "system" fn(this: *mut *mut Self, fontfilereferencekey: *const ::core::ffi::c_void, fontfilereferencekeysize: u32, lastwritetime: *mut super::super::Foundation::FILETIME) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetLastWriteTimeFromKey: usize,
+}
+#[repr(C)]
+pub struct IDWriteLocalizedStrings {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCount: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
+    #[cfg(feature = "Win32_Foundation")]
+    pub FindLocaleName: unsafe extern "system" fn(this: *mut *mut Self, localename: ::windows_sys::core::PCWSTR, index: *mut u32, exists: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    FindLocaleName: usize,
+    pub GetLocaleNameLength: unsafe extern "system" fn(this: *mut *mut Self, index: u32, length: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetLocaleName: unsafe extern "system" fn(this: *mut *mut Self, index: u32, localename: ::windows_sys::core::PWSTR, size: u32) -> ::windows_sys::core::HRESULT,
+    pub GetStringLength: unsafe extern "system" fn(this: *mut *mut Self, index: u32, length: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetString: unsafe extern "system" fn(this: *mut *mut Self, index: u32, stringbuffer: ::windows_sys::core::PWSTR, size: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDWriteNumberSubstitution {
+    pub base__: ::windows_sys::core::IUnknown,
+}
+#[repr(C)]
+pub struct IDWritePixelSnapping {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsPixelSnappingDisabled: unsafe extern "system" fn(this: *mut *mut Self, clientdrawingcontext: *const ::core::ffi::c_void, isdisabled: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsPixelSnappingDisabled: usize,
+    pub GetCurrentTransform: unsafe extern "system" fn(this: *mut *mut Self, clientdrawingcontext: *const ::core::ffi::c_void, transform: *mut DWRITE_MATRIX) -> ::windows_sys::core::HRESULT,
+    pub GetPixelsPerDip: unsafe extern "system" fn(this: *mut *mut Self, clientdrawingcontext: *const ::core::ffi::c_void, pixelsperdip: *mut f32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDWriteRemoteFontFileLoader {
+    pub base__: IDWriteFontFileLoader,
+    pub CreateRemoteStreamFromKey: unsafe extern "system" fn(this: *mut *mut Self, fontfilereferencekey: *const ::core::ffi::c_void, fontfilereferencekeysize: u32, fontfilestream: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetLocalityFromKey: unsafe extern "system" fn(this: *mut *mut Self, fontfilereferencekey: *const ::core::ffi::c_void, fontfilereferencekeysize: u32, locality: *mut DWRITE_LOCALITY) -> ::windows_sys::core::HRESULT,
+    pub CreateFontFileReferenceFromUrl: unsafe extern "system" fn(this: *mut *mut Self, factory: *mut ::core::ffi::c_void, baseurl: ::windows_sys::core::PCWSTR, fontfileurl: ::windows_sys::core::PCWSTR, fontfile: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDWriteRemoteFontFileStream {
+    pub base__: IDWriteFontFileStream,
+    pub GetLocalFileSize: unsafe extern "system" fn(this: *mut *mut Self, localfilesize: *mut u64) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetFileFragmentLocality: unsafe extern "system" fn(this: *mut *mut Self, fileoffset: u64, fragmentsize: u64, islocal: *mut super::super::Foundation::BOOL, partialsize: *mut u64) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetFileFragmentLocality: usize,
+    pub GetLocality: unsafe extern "system" fn(this: *mut *mut Self) -> DWRITE_LOCALITY,
+    pub BeginDownload: unsafe extern "system" fn(this: *mut *mut Self, downloadoperationid: *const ::windows_sys::core::GUID, filefragments: *const DWRITE_FILE_FRAGMENT, fragmentcount: u32, asyncresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDWriteRenderingParams {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetGamma: unsafe extern "system" fn(this: *mut *mut Self) -> f32,
+    pub GetEnhancedContrast: unsafe extern "system" fn(this: *mut *mut Self) -> f32,
+    pub GetClearTypeLevel: unsafe extern "system" fn(this: *mut *mut Self) -> f32,
+    pub GetPixelGeometry: unsafe extern "system" fn(this: *mut *mut Self) -> DWRITE_PIXEL_GEOMETRY,
+    pub GetRenderingMode: unsafe extern "system" fn(this: *mut *mut Self) -> DWRITE_RENDERING_MODE,
+}
+#[repr(C)]
+pub struct IDWriteRenderingParams1 {
+    pub base__: IDWriteRenderingParams,
+    pub GetGrayscaleEnhancedContrast: unsafe extern "system" fn(this: *mut *mut Self) -> f32,
+}
+#[repr(C)]
+pub struct IDWriteRenderingParams2 {
+    pub base__: IDWriteRenderingParams1,
+    pub GetGridFitMode: unsafe extern "system" fn(this: *mut *mut Self) -> DWRITE_GRID_FIT_MODE,
+}
+#[repr(C)]
+pub struct IDWriteRenderingParams3 {
+    pub base__: IDWriteRenderingParams2,
+    pub GetRenderingMode1: unsafe extern "system" fn(this: *mut *mut Self) -> DWRITE_RENDERING_MODE1,
+}
+#[repr(C)]
+pub struct IDWriteStringList {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCount: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
+    pub GetLocaleNameLength: unsafe extern "system" fn(this: *mut *mut Self, listindex: u32, length: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetLocaleName: unsafe extern "system" fn(this: *mut *mut Self, listindex: u32, localename: ::windows_sys::core::PWSTR, size: u32) -> ::windows_sys::core::HRESULT,
+    pub GetStringLength: unsafe extern "system" fn(this: *mut *mut Self, listindex: u32, length: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetString: unsafe extern "system" fn(this: *mut *mut Self, listindex: u32, stringbuffer: ::windows_sys::core::PWSTR, stringbuffersize: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDWriteTextAnalysisSink {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetScriptAnalysis: unsafe extern "system" fn(this: *mut *mut Self, textposition: u32, textlength: u32, scriptanalysis: *const DWRITE_SCRIPT_ANALYSIS) -> ::windows_sys::core::HRESULT,
+    pub SetLineBreakpoints: unsafe extern "system" fn(this: *mut *mut Self, textposition: u32, textlength: u32, linebreakpoints: *const DWRITE_LINE_BREAKPOINT) -> ::windows_sys::core::HRESULT,
+    pub SetBidiLevel: unsafe extern "system" fn(this: *mut *mut Self, textposition: u32, textlength: u32, explicitlevel: u8, resolvedlevel: u8) -> ::windows_sys::core::HRESULT,
+    pub SetNumberSubstitution: unsafe extern "system" fn(this: *mut *mut Self, textposition: u32, textlength: u32, numbersubstitution: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDWriteTextAnalysisSink1 {
+    pub base__: IDWriteTextAnalysisSink,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetGlyphOrientation: unsafe extern "system" fn(this: *mut *mut Self, textposition: u32, textlength: u32, glyphorientationangle: DWRITE_GLYPH_ORIENTATION_ANGLE, adjustedbidilevel: u8, issideways: super::super::Foundation::BOOL, isrighttoleft: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetGlyphOrientation: usize,
+}
+#[repr(C)]
+pub struct IDWriteTextAnalysisSource {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetTextAtPosition: unsafe extern "system" fn(this: *mut *mut Self, textposition: u32, textstring: *mut *mut u16, textlength: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetTextBeforePosition: unsafe extern "system" fn(this: *mut *mut Self, textposition: u32, textstring: *mut *mut u16, textlength: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetParagraphReadingDirection: unsafe extern "system" fn(this: *mut *mut Self) -> DWRITE_READING_DIRECTION,
+    pub GetLocaleName: unsafe extern "system" fn(this: *mut *mut Self, textposition: u32, textlength: *mut u32, localename: *mut *mut u16) -> ::windows_sys::core::HRESULT,
+    pub GetNumberSubstitution: unsafe extern "system" fn(this: *mut *mut Self, textposition: u32, textlength: *mut u32, numbersubstitution: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDWriteTextAnalysisSource1 {
+    pub base__: IDWriteTextAnalysisSource,
+    pub GetVerticalGlyphOrientation: unsafe extern "system" fn(this: *mut *mut Self, textposition: u32, textlength: *mut u32, glyphorientation: *mut DWRITE_VERTICAL_GLYPH_ORIENTATION, bidilevel: *mut u8) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDWriteTextAnalyzer {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub AnalyzeScript: unsafe extern "system" fn(this: *mut *mut Self, analysissource: *mut ::core::ffi::c_void, textposition: u32, textlength: u32, analysissink: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AnalyzeBidi: unsafe extern "system" fn(this: *mut *mut Self, analysissource: *mut ::core::ffi::c_void, textposition: u32, textlength: u32, analysissink: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AnalyzeNumberSubstitution: unsafe extern "system" fn(this: *mut *mut Self, analysissource: *mut ::core::ffi::c_void, textposition: u32, textlength: u32, analysissink: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AnalyzeLineBreakpoints: unsafe extern "system" fn(this: *mut *mut Self, analysissource: *mut ::core::ffi::c_void, textposition: u32, textlength: u32, analysissink: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetGlyphs: unsafe extern "system" fn(this: *mut *mut Self, textstring: ::windows_sys::core::PCWSTR, textlength: u32, fontface: *mut ::core::ffi::c_void, issideways: super::super::Foundation::BOOL, isrighttoleft: super::super::Foundation::BOOL, scriptanalysis: *const DWRITE_SCRIPT_ANALYSIS, localename: ::windows_sys::core::PCWSTR, numbersubstitution: *mut ::core::ffi::c_void, features: *const *const DWRITE_TYPOGRAPHIC_FEATURES, featurerangelengths: *const u32, featureranges: u32, maxglyphcount: u32, clustermap: *mut u16, textprops: *mut DWRITE_SHAPING_TEXT_PROPERTIES, glyphindices: *mut u16, glyphprops: *mut DWRITE_SHAPING_GLYPH_PROPERTIES, actualglyphcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetGlyphs: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetGlyphPlacements: unsafe extern "system" fn(this: *mut *mut Self, textstring: ::windows_sys::core::PCWSTR, clustermap: *const u16, textprops: *mut DWRITE_SHAPING_TEXT_PROPERTIES, textlength: u32, glyphindices: *const u16, glyphprops: *const DWRITE_SHAPING_GLYPH_PROPERTIES, glyphcount: u32, fontface: *mut ::core::ffi::c_void, fontemsize: f32, issideways: super::super::Foundation::BOOL, isrighttoleft: super::super::Foundation::BOOL, scriptanalysis: *const DWRITE_SCRIPT_ANALYSIS, localename: ::windows_sys::core::PCWSTR, features: *const *const DWRITE_TYPOGRAPHIC_FEATURES, featurerangelengths: *const u32, featureranges: u32, glyphadvances: *mut f32, glyphoffsets: *mut DWRITE_GLYPH_OFFSET) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetGlyphPlacements: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetGdiCompatibleGlyphPlacements: unsafe extern "system" fn(
+        this: *mut *mut Self,
+        textstring: ::windows_sys::core::PCWSTR,
+        clustermap: *const u16,
+        textprops: *const DWRITE_SHAPING_TEXT_PROPERTIES,
+        textlength: u32,
+        glyphindices: *const u16,
+        glyphprops: *const DWRITE_SHAPING_GLYPH_PROPERTIES,
+        glyphcount: u32,
+        fontface: *mut ::core::ffi::c_void,
+        fontemsize: f32,
+        pixelsperdip: f32,
+        transform: *const DWRITE_MATRIX,
+        usegdinatural: super::super::Foundation::BOOL,
+        issideways: super::super::Foundation::BOOL,
+        isrighttoleft: super::super::Foundation::BOOL,
+        scriptanalysis: *const DWRITE_SCRIPT_ANALYSIS,
+        localename: ::windows_sys::core::PCWSTR,
+        features: *const *const DWRITE_TYPOGRAPHIC_FEATURES,
+        featurerangelengths: *const u32,
+        featureranges: u32,
+        glyphadvances: *mut f32,
+        glyphoffsets: *mut DWRITE_GLYPH_OFFSET,
+    ) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetGdiCompatibleGlyphPlacements: usize,
+}
+#[repr(C)]
+pub struct IDWriteTextAnalyzer1 {
+    pub base__: IDWriteTextAnalyzer,
+    pub ApplyCharacterSpacing: unsafe extern "system" fn(this: *mut *mut Self, leadingspacing: f32, trailingspacing: f32, minimumadvancewidth: f32, textlength: u32, glyphcount: u32, clustermap: *const u16, glyphadvances: *const f32, glyphoffsets: *const DWRITE_GLYPH_OFFSET, glyphproperties: *const DWRITE_SHAPING_GLYPH_PROPERTIES, modifiedglyphadvances: *mut f32, modifiedglyphoffsets: *mut DWRITE_GLYPH_OFFSET) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetBaseline: unsafe extern "system" fn(this: *mut *mut Self, fontface: *mut ::core::ffi::c_void, baseline: DWRITE_BASELINE, isvertical: super::super::Foundation::BOOL, issimulationallowed: super::super::Foundation::BOOL, scriptanalysis: DWRITE_SCRIPT_ANALYSIS, localename: ::windows_sys::core::PCWSTR, baselinecoordinate: *mut i32, exists: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetBaseline: usize,
+    pub AnalyzeVerticalGlyphOrientation: unsafe extern "system" fn(this: *mut *mut Self, analysissource: *mut ::core::ffi::c_void, textposition: u32, textlength: u32, analysissink: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetGlyphOrientationTransform: unsafe extern "system" fn(this: *mut *mut Self, glyphorientationangle: DWRITE_GLYPH_ORIENTATION_ANGLE, issideways: super::super::Foundation::BOOL, transform: *mut DWRITE_MATRIX) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetGlyphOrientationTransform: usize,
+    pub GetScriptProperties: unsafe extern "system" fn(this: *mut *mut Self, scriptanalysis: DWRITE_SCRIPT_ANALYSIS, scriptproperties: *mut DWRITE_SCRIPT_PROPERTIES) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetTextComplexity: unsafe extern "system" fn(this: *mut *mut Self, textstring: ::windows_sys::core::PCWSTR, textlength: u32, fontface: *mut ::core::ffi::c_void, istextsimple: *mut super::super::Foundation::BOOL, textlengthread: *mut u32, glyphindices: *mut u16) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetTextComplexity: usize,
+    pub GetJustificationOpportunities: unsafe extern "system" fn(this: *mut *mut Self, fontface: *mut ::core::ffi::c_void, fontemsize: f32, scriptanalysis: DWRITE_SCRIPT_ANALYSIS, textlength: u32, glyphcount: u32, textstring: ::windows_sys::core::PCWSTR, clustermap: *const u16, glyphproperties: *const DWRITE_SHAPING_GLYPH_PROPERTIES, justificationopportunities: *mut DWRITE_JUSTIFICATION_OPPORTUNITY) -> ::windows_sys::core::HRESULT,
+    pub JustifyGlyphAdvances: unsafe extern "system" fn(this: *mut *mut Self, linewidth: f32, glyphcount: u32, justificationopportunities: *const DWRITE_JUSTIFICATION_OPPORTUNITY, glyphadvances: *const f32, glyphoffsets: *const DWRITE_GLYPH_OFFSET, justifiedglyphadvances: *mut f32, justifiedglyphoffsets: *mut DWRITE_GLYPH_OFFSET) -> ::windows_sys::core::HRESULT,
+    pub GetJustifiedGlyphs: unsafe extern "system" fn(this: *mut *mut Self, fontface: *mut ::core::ffi::c_void, fontemsize: f32, scriptanalysis: DWRITE_SCRIPT_ANALYSIS, textlength: u32, glyphcount: u32, maxglyphcount: u32, clustermap: *const u16, glyphindices: *const u16, glyphadvances: *const f32, justifiedglyphadvances: *const f32, justifiedglyphoffsets: *const DWRITE_GLYPH_OFFSET, glyphproperties: *const DWRITE_SHAPING_GLYPH_PROPERTIES, actualglyphcount: *mut u32, modifiedclustermap: *mut u16, modifiedglyphindices: *mut u16, modifiedglyphadvances: *mut f32, modifiedglyphoffsets: *mut DWRITE_GLYPH_OFFSET) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDWriteTextAnalyzer2 {
+    pub base__: IDWriteTextAnalyzer1,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetGlyphOrientationTransform2: unsafe extern "system" fn(this: *mut *mut Self, glyphorientationangle: DWRITE_GLYPH_ORIENTATION_ANGLE, issideways: super::super::Foundation::BOOL, originx: f32, originy: f32, transform: *mut DWRITE_MATRIX) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetGlyphOrientationTransform2: usize,
+    pub GetTypographicFeatures: unsafe extern "system" fn(this: *mut *mut Self, fontface: *mut ::core::ffi::c_void, scriptanalysis: DWRITE_SCRIPT_ANALYSIS, localename: ::windows_sys::core::PCWSTR, maxtagcount: u32, actualtagcount: *mut u32, tags: *mut DWRITE_FONT_FEATURE_TAG) -> ::windows_sys::core::HRESULT,
+    pub CheckTypographicFeature: unsafe extern "system" fn(this: *mut *mut Self, fontface: *mut ::core::ffi::c_void, scriptanalysis: DWRITE_SCRIPT_ANALYSIS, localename: ::windows_sys::core::PCWSTR, featuretag: DWRITE_FONT_FEATURE_TAG, glyphcount: u32, glyphindices: *const u16, featureapplies: *mut u8) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDWriteTextFormat {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetTextAlignment: unsafe extern "system" fn(this: *mut *mut Self, textalignment: DWRITE_TEXT_ALIGNMENT) -> ::windows_sys::core::HRESULT,
+    pub SetParagraphAlignment: unsafe extern "system" fn(this: *mut *mut Self, paragraphalignment: DWRITE_PARAGRAPH_ALIGNMENT) -> ::windows_sys::core::HRESULT,
+    pub SetWordWrapping: unsafe extern "system" fn(this: *mut *mut Self, wordwrapping: DWRITE_WORD_WRAPPING) -> ::windows_sys::core::HRESULT,
+    pub SetReadingDirection: unsafe extern "system" fn(this: *mut *mut Self, readingdirection: DWRITE_READING_DIRECTION) -> ::windows_sys::core::HRESULT,
+    pub SetFlowDirection: unsafe extern "system" fn(this: *mut *mut Self, flowdirection: DWRITE_FLOW_DIRECTION) -> ::windows_sys::core::HRESULT,
+    pub SetIncrementalTabStop: unsafe extern "system" fn(this: *mut *mut Self, incrementaltabstop: f32) -> ::windows_sys::core::HRESULT,
+    pub SetTrimming: unsafe extern "system" fn(this: *mut *mut Self, trimmingoptions: *const DWRITE_TRIMMING, trimmingsign: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetLineSpacing: unsafe extern "system" fn(this: *mut *mut Self, linespacingmethod: DWRITE_LINE_SPACING_METHOD, linespacing: f32, baseline: f32) -> ::windows_sys::core::HRESULT,
+    pub GetTextAlignment: unsafe extern "system" fn(this: *mut *mut Self) -> DWRITE_TEXT_ALIGNMENT,
+    pub GetParagraphAlignment: unsafe extern "system" fn(this: *mut *mut Self) -> DWRITE_PARAGRAPH_ALIGNMENT,
+    pub GetWordWrapping: unsafe extern "system" fn(this: *mut *mut Self) -> DWRITE_WORD_WRAPPING,
+    pub GetReadingDirection: unsafe extern "system" fn(this: *mut *mut Self) -> DWRITE_READING_DIRECTION,
+    pub GetFlowDirection: unsafe extern "system" fn(this: *mut *mut Self) -> DWRITE_FLOW_DIRECTION,
+    pub GetIncrementalTabStop: unsafe extern "system" fn(this: *mut *mut Self) -> f32,
+    pub GetTrimming: unsafe extern "system" fn(this: *mut *mut Self, trimmingoptions: *mut DWRITE_TRIMMING, trimmingsign: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetLineSpacing: unsafe extern "system" fn(this: *mut *mut Self, linespacingmethod: *mut DWRITE_LINE_SPACING_METHOD, linespacing: *mut f32, baseline: *mut f32) -> ::windows_sys::core::HRESULT,
+    pub GetFontCollection: unsafe extern "system" fn(this: *mut *mut Self, fontcollection: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetFontFamilyNameLength: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
+    pub GetFontFamilyName: unsafe extern "system" fn(this: *mut *mut Self, fontfamilyname: ::windows_sys::core::PWSTR, namesize: u32) -> ::windows_sys::core::HRESULT,
+    pub GetFontWeight: unsafe extern "system" fn(this: *mut *mut Self) -> DWRITE_FONT_WEIGHT,
+    pub GetFontStyle: unsafe extern "system" fn(this: *mut *mut Self) -> DWRITE_FONT_STYLE,
+    pub GetFontStretch: unsafe extern "system" fn(this: *mut *mut Self) -> DWRITE_FONT_STRETCH,
+    pub GetFontSize: unsafe extern "system" fn(this: *mut *mut Self) -> f32,
+    pub GetLocaleNameLength: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
+    pub GetLocaleName: unsafe extern "system" fn(this: *mut *mut Self, localename: ::windows_sys::core::PWSTR, namesize: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDWriteTextFormat1 {
+    pub base__: IDWriteTextFormat,
+    pub SetVerticalGlyphOrientation: unsafe extern "system" fn(this: *mut *mut Self, glyphorientation: DWRITE_VERTICAL_GLYPH_ORIENTATION) -> ::windows_sys::core::HRESULT,
+    pub GetVerticalGlyphOrientation: unsafe extern "system" fn(this: *mut *mut Self) -> DWRITE_VERTICAL_GLYPH_ORIENTATION,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetLastLineWrapping: unsafe extern "system" fn(this: *mut *mut Self, islastlinewrappingenabled: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetLastLineWrapping: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetLastLineWrapping: unsafe extern "system" fn(this: *mut *mut Self) -> super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetLastLineWrapping: usize,
+    pub SetOpticalAlignment: unsafe extern "system" fn(this: *mut *mut Self, opticalalignment: DWRITE_OPTICAL_ALIGNMENT) -> ::windows_sys::core::HRESULT,
+    pub GetOpticalAlignment: unsafe extern "system" fn(this: *mut *mut Self) -> DWRITE_OPTICAL_ALIGNMENT,
+    pub SetFontFallback: unsafe extern "system" fn(this: *mut *mut Self, fontfallback: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetFontFallback: unsafe extern "system" fn(this: *mut *mut Self, fontfallback: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDWriteTextFormat2 {
+    pub base__: IDWriteTextFormat1,
+    pub SetLineSpacing2: unsafe extern "system" fn(this: *mut *mut Self, linespacingoptions: *const DWRITE_LINE_SPACING) -> ::windows_sys::core::HRESULT,
+    pub GetLineSpacing2: unsafe extern "system" fn(this: *mut *mut Self, linespacingoptions: *mut DWRITE_LINE_SPACING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDWriteTextFormat3 {
+    pub base__: IDWriteTextFormat2,
+    pub SetFontAxisValues: unsafe extern "system" fn(this: *mut *mut Self, fontaxisvalues: *const DWRITE_FONT_AXIS_VALUE, fontaxisvaluecount: u32) -> ::windows_sys::core::HRESULT,
+    pub GetFontAxisValueCount: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
+    pub GetFontAxisValues: unsafe extern "system" fn(this: *mut *mut Self, fontaxisvalues: *mut DWRITE_FONT_AXIS_VALUE, fontaxisvaluecount: u32) -> ::windows_sys::core::HRESULT,
+    pub GetAutomaticFontAxes: unsafe extern "system" fn(this: *mut *mut Self) -> DWRITE_AUTOMATIC_FONT_AXES,
+    pub SetAutomaticFontAxes: unsafe extern "system" fn(this: *mut *mut Self, automaticfontaxes: DWRITE_AUTOMATIC_FONT_AXES) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDWriteTextLayout {
+    pub base__: IDWriteTextFormat,
+    pub SetMaxWidth: unsafe extern "system" fn(this: *mut *mut Self, maxwidth: f32) -> ::windows_sys::core::HRESULT,
+    pub SetMaxHeight: unsafe extern "system" fn(this: *mut *mut Self, maxheight: f32) -> ::windows_sys::core::HRESULT,
+    pub SetFontCollection: unsafe extern "system" fn(this: *mut *mut Self, fontcollection: *mut ::core::ffi::c_void, textrange: DWRITE_TEXT_RANGE) -> ::windows_sys::core::HRESULT,
+    pub SetFontFamilyName: unsafe extern "system" fn(this: *mut *mut Self, fontfamilyname: ::windows_sys::core::PCWSTR, textrange: DWRITE_TEXT_RANGE) -> ::windows_sys::core::HRESULT,
+    pub SetFontWeight: unsafe extern "system" fn(this: *mut *mut Self, fontweight: DWRITE_FONT_WEIGHT, textrange: DWRITE_TEXT_RANGE) -> ::windows_sys::core::HRESULT,
+    pub SetFontStyle: unsafe extern "system" fn(this: *mut *mut Self, fontstyle: DWRITE_FONT_STYLE, textrange: DWRITE_TEXT_RANGE) -> ::windows_sys::core::HRESULT,
+    pub SetFontStretch: unsafe extern "system" fn(this: *mut *mut Self, fontstretch: DWRITE_FONT_STRETCH, textrange: DWRITE_TEXT_RANGE) -> ::windows_sys::core::HRESULT,
+    pub SetFontSize: unsafe extern "system" fn(this: *mut *mut Self, fontsize: f32, textrange: DWRITE_TEXT_RANGE) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetUnderline: unsafe extern "system" fn(this: *mut *mut Self, hasunderline: super::super::Foundation::BOOL, textrange: DWRITE_TEXT_RANGE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetUnderline: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetStrikethrough: unsafe extern "system" fn(this: *mut *mut Self, hasstrikethrough: super::super::Foundation::BOOL, textrange: DWRITE_TEXT_RANGE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetStrikethrough: usize,
+    pub SetDrawingEffect: unsafe extern "system" fn(this: *mut *mut Self, drawingeffect: *mut ::core::ffi::c_void, textrange: DWRITE_TEXT_RANGE) -> ::windows_sys::core::HRESULT,
+    pub SetInlineObject: unsafe extern "system" fn(this: *mut *mut Self, inlineobject: *mut ::core::ffi::c_void, textrange: DWRITE_TEXT_RANGE) -> ::windows_sys::core::HRESULT,
+    pub SetTypography: unsafe extern "system" fn(this: *mut *mut Self, typography: *mut ::core::ffi::c_void, textrange: DWRITE_TEXT_RANGE) -> ::windows_sys::core::HRESULT,
+    pub SetLocaleName: unsafe extern "system" fn(this: *mut *mut Self, localename: ::windows_sys::core::PCWSTR, textrange: DWRITE_TEXT_RANGE) -> ::windows_sys::core::HRESULT,
+    pub GetMaxWidth: unsafe extern "system" fn(this: *mut *mut Self) -> f32,
+    pub GetMaxHeight: unsafe extern "system" fn(this: *mut *mut Self) -> f32,
+    pub GetFontCollection2: unsafe extern "system" fn(this: *mut *mut Self, currentposition: u32, fontcollection: *mut *mut ::core::ffi::c_void, textrange: *mut DWRITE_TEXT_RANGE) -> ::windows_sys::core::HRESULT,
+    pub GetFontFamilyNameLength2: unsafe extern "system" fn(this: *mut *mut Self, currentposition: u32, namelength: *mut u32, textrange: *mut DWRITE_TEXT_RANGE) -> ::windows_sys::core::HRESULT,
+    pub GetFontFamilyName2: unsafe extern "system" fn(this: *mut *mut Self, currentposition: u32, fontfamilyname: ::windows_sys::core::PWSTR, namesize: u32, textrange: *mut DWRITE_TEXT_RANGE) -> ::windows_sys::core::HRESULT,
+    pub GetFontWeight2: unsafe extern "system" fn(this: *mut *mut Self, currentposition: u32, fontweight: *mut DWRITE_FONT_WEIGHT, textrange: *mut DWRITE_TEXT_RANGE) -> ::windows_sys::core::HRESULT,
+    pub GetFontStyle2: unsafe extern "system" fn(this: *mut *mut Self, currentposition: u32, fontstyle: *mut DWRITE_FONT_STYLE, textrange: *mut DWRITE_TEXT_RANGE) -> ::windows_sys::core::HRESULT,
+    pub GetFontStretch2: unsafe extern "system" fn(this: *mut *mut Self, currentposition: u32, fontstretch: *mut DWRITE_FONT_STRETCH, textrange: *mut DWRITE_TEXT_RANGE) -> ::windows_sys::core::HRESULT,
+    pub GetFontSize2: unsafe extern "system" fn(this: *mut *mut Self, currentposition: u32, fontsize: *mut f32, textrange: *mut DWRITE_TEXT_RANGE) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetUnderline: unsafe extern "system" fn(this: *mut *mut Self, currentposition: u32, hasunderline: *mut super::super::Foundation::BOOL, textrange: *mut DWRITE_TEXT_RANGE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetUnderline: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetStrikethrough: unsafe extern "system" fn(this: *mut *mut Self, currentposition: u32, hasstrikethrough: *mut super::super::Foundation::BOOL, textrange: *mut DWRITE_TEXT_RANGE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetStrikethrough: usize,
+    pub GetDrawingEffect: unsafe extern "system" fn(this: *mut *mut Self, currentposition: u32, drawingeffect: *mut *mut ::core::ffi::c_void, textrange: *mut DWRITE_TEXT_RANGE) -> ::windows_sys::core::HRESULT,
+    pub GetInlineObject: unsafe extern "system" fn(this: *mut *mut Self, currentposition: u32, inlineobject: *mut *mut ::core::ffi::c_void, textrange: *mut DWRITE_TEXT_RANGE) -> ::windows_sys::core::HRESULT,
+    pub GetTypography: unsafe extern "system" fn(this: *mut *mut Self, currentposition: u32, typography: *mut *mut ::core::ffi::c_void, textrange: *mut DWRITE_TEXT_RANGE) -> ::windows_sys::core::HRESULT,
+    pub GetLocaleNameLength2: unsafe extern "system" fn(this: *mut *mut Self, currentposition: u32, namelength: *mut u32, textrange: *mut DWRITE_TEXT_RANGE) -> ::windows_sys::core::HRESULT,
+    pub GetLocaleName2: unsafe extern "system" fn(this: *mut *mut Self, currentposition: u32, localename: ::windows_sys::core::PWSTR, namesize: u32, textrange: *mut DWRITE_TEXT_RANGE) -> ::windows_sys::core::HRESULT,
+    pub Draw: unsafe extern "system" fn(this: *mut *mut Self, clientdrawingcontext: *const ::core::ffi::c_void, renderer: *mut ::core::ffi::c_void, originx: f32, originy: f32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetLineMetrics: unsafe extern "system" fn(this: *mut *mut Self, linemetrics: *mut DWRITE_LINE_METRICS, maxlinecount: u32, actuallinecount: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetLineMetrics: usize,
+    pub GetMetrics: unsafe extern "system" fn(this: *mut *mut Self, textmetrics: *mut DWRITE_TEXT_METRICS) -> ::windows_sys::core::HRESULT,
+    pub GetOverhangMetrics: unsafe extern "system" fn(this: *mut *mut Self, overhangs: *mut DWRITE_OVERHANG_METRICS) -> ::windows_sys::core::HRESULT,
+    pub GetClusterMetrics: unsafe extern "system" fn(this: *mut *mut Self, clustermetrics: *mut DWRITE_CLUSTER_METRICS, maxclustercount: u32, actualclustercount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub DetermineMinWidth: unsafe extern "system" fn(this: *mut *mut Self, minwidth: *mut f32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub HitTestPoint: unsafe extern "system" fn(this: *mut *mut Self, pointx: f32, pointy: f32, istrailinghit: *mut super::super::Foundation::BOOL, isinside: *mut super::super::Foundation::BOOL, hittestmetrics: *mut DWRITE_HIT_TEST_METRICS) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    HitTestPoint: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub HitTestTextPosition: unsafe extern "system" fn(this: *mut *mut Self, textposition: u32, istrailinghit: super::super::Foundation::BOOL, pointx: *mut f32, pointy: *mut f32, hittestmetrics: *mut DWRITE_HIT_TEST_METRICS) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    HitTestTextPosition: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub HitTestTextRange: unsafe extern "system" fn(this: *mut *mut Self, textposition: u32, textlength: u32, originx: f32, originy: f32, hittestmetrics: *mut DWRITE_HIT_TEST_METRICS, maxhittestmetricscount: u32, actualhittestmetricscount: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    HitTestTextRange: usize,
+}
+#[repr(C)]
+pub struct IDWriteTextLayout1 {
+    pub base__: IDWriteTextLayout,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetPairKerning: unsafe extern "system" fn(this: *mut *mut Self, ispairkerningenabled: super::super::Foundation::BOOL, textrange: DWRITE_TEXT_RANGE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetPairKerning: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetPairKerning: unsafe extern "system" fn(this: *mut *mut Self, currentposition: u32, ispairkerningenabled: *mut super::super::Foundation::BOOL, textrange: *mut DWRITE_TEXT_RANGE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetPairKerning: usize,
+    pub SetCharacterSpacing: unsafe extern "system" fn(this: *mut *mut Self, leadingspacing: f32, trailingspacing: f32, minimumadvancewidth: f32, textrange: DWRITE_TEXT_RANGE) -> ::windows_sys::core::HRESULT,
+    pub GetCharacterSpacing: unsafe extern "system" fn(this: *mut *mut Self, currentposition: u32, leadingspacing: *mut f32, trailingspacing: *mut f32, minimumadvancewidth: *mut f32, textrange: *mut DWRITE_TEXT_RANGE) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDWriteTextLayout2 {
+    pub base__: IDWriteTextLayout1,
+    pub GetMetrics2: unsafe extern "system" fn(this: *mut *mut Self, textmetrics: *mut DWRITE_TEXT_METRICS1) -> ::windows_sys::core::HRESULT,
+    pub SetVerticalGlyphOrientation: unsafe extern "system" fn(this: *mut *mut Self, glyphorientation: DWRITE_VERTICAL_GLYPH_ORIENTATION) -> ::windows_sys::core::HRESULT,
+    pub GetVerticalGlyphOrientation: unsafe extern "system" fn(this: *mut *mut Self) -> DWRITE_VERTICAL_GLYPH_ORIENTATION,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetLastLineWrapping: unsafe extern "system" fn(this: *mut *mut Self, islastlinewrappingenabled: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetLastLineWrapping: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetLastLineWrapping: unsafe extern "system" fn(this: *mut *mut Self) -> super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetLastLineWrapping: usize,
+    pub SetOpticalAlignment: unsafe extern "system" fn(this: *mut *mut Self, opticalalignment: DWRITE_OPTICAL_ALIGNMENT) -> ::windows_sys::core::HRESULT,
+    pub GetOpticalAlignment: unsafe extern "system" fn(this: *mut *mut Self) -> DWRITE_OPTICAL_ALIGNMENT,
+    pub SetFontFallback: unsafe extern "system" fn(this: *mut *mut Self, fontfallback: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetFontFallback: unsafe extern "system" fn(this: *mut *mut Self, fontfallback: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDWriteTextLayout3 {
+    pub base__: IDWriteTextLayout2,
+    pub InvalidateLayout: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub SetLineSpacing2: unsafe extern "system" fn(this: *mut *mut Self, linespacingoptions: *const DWRITE_LINE_SPACING) -> ::windows_sys::core::HRESULT,
+    pub GetLineSpacing2: unsafe extern "system" fn(this: *mut *mut Self, linespacingoptions: *mut DWRITE_LINE_SPACING) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetLineMetrics2: unsafe extern "system" fn(this: *mut *mut Self, linemetrics: *mut DWRITE_LINE_METRICS1, maxlinecount: u32, actuallinecount: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetLineMetrics2: usize,
+}
+#[repr(C)]
+pub struct IDWriteTextLayout4 {
+    pub base__: IDWriteTextLayout3,
+    pub SetFontAxisValues: unsafe extern "system" fn(this: *mut *mut Self, fontaxisvalues: *const DWRITE_FONT_AXIS_VALUE, fontaxisvaluecount: u32, textrange: DWRITE_TEXT_RANGE) -> ::windows_sys::core::HRESULT,
+    pub GetFontAxisValueCount: unsafe extern "system" fn(this: *mut *mut Self, currentposition: u32) -> u32,
+    pub GetFontAxisValues: unsafe extern "system" fn(this: *mut *mut Self, currentposition: u32, fontaxisvalues: *mut DWRITE_FONT_AXIS_VALUE, fontaxisvaluecount: u32, textrange: *mut DWRITE_TEXT_RANGE) -> ::windows_sys::core::HRESULT,
+    pub GetAutomaticFontAxes: unsafe extern "system" fn(this: *mut *mut Self) -> DWRITE_AUTOMATIC_FONT_AXES,
+    pub SetAutomaticFontAxes: unsafe extern "system" fn(this: *mut *mut Self, automaticfontaxes: DWRITE_AUTOMATIC_FONT_AXES) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDWriteTextRenderer {
+    pub base__: IDWritePixelSnapping,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DrawGlyphRun: unsafe extern "system" fn(this: *mut *mut Self, clientdrawingcontext: *const ::core::ffi::c_void, baselineoriginx: f32, baselineoriginy: f32, measuringmode: DWRITE_MEASURING_MODE, glyphrun: *const DWRITE_GLYPH_RUN, glyphrundescription: *const DWRITE_GLYPH_RUN_DESCRIPTION, clientdrawingeffect: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DrawGlyphRun: usize,
+    pub DrawUnderline: unsafe extern "system" fn(this: *mut *mut Self, clientdrawingcontext: *const ::core::ffi::c_void, baselineoriginx: f32, baselineoriginy: f32, underline: *const DWRITE_UNDERLINE, clientdrawingeffect: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub DrawStrikethrough: unsafe extern "system" fn(this: *mut *mut Self, clientdrawingcontext: *const ::core::ffi::c_void, baselineoriginx: f32, baselineoriginy: f32, strikethrough: *const DWRITE_STRIKETHROUGH, clientdrawingeffect: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DrawInlineObject: unsafe extern "system" fn(this: *mut *mut Self, clientdrawingcontext: *const ::core::ffi::c_void, originx: f32, originy: f32, inlineobject: *mut ::core::ffi::c_void, issideways: super::super::Foundation::BOOL, isrighttoleft: super::super::Foundation::BOOL, clientdrawingeffect: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DrawInlineObject: usize,
+}
+#[repr(C)]
+pub struct IDWriteTextRenderer1 {
+    pub base__: IDWriteTextRenderer,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DrawGlyphRun2: unsafe extern "system" fn(this: *mut *mut Self, clientdrawingcontext: *const ::core::ffi::c_void, baselineoriginx: f32, baselineoriginy: f32, orientationangle: DWRITE_GLYPH_ORIENTATION_ANGLE, measuringmode: DWRITE_MEASURING_MODE, glyphrun: *const DWRITE_GLYPH_RUN, glyphrundescription: *const DWRITE_GLYPH_RUN_DESCRIPTION, clientdrawingeffect: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DrawGlyphRun2: usize,
+    pub DrawUnderline2: unsafe extern "system" fn(this: *mut *mut Self, clientdrawingcontext: *const ::core::ffi::c_void, baselineoriginx: f32, baselineoriginy: f32, orientationangle: DWRITE_GLYPH_ORIENTATION_ANGLE, underline: *const DWRITE_UNDERLINE, clientdrawingeffect: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub DrawStrikethrough2: unsafe extern "system" fn(this: *mut *mut Self, clientdrawingcontext: *const ::core::ffi::c_void, baselineoriginx: f32, baselineoriginy: f32, orientationangle: DWRITE_GLYPH_ORIENTATION_ANGLE, strikethrough: *const DWRITE_STRIKETHROUGH, clientdrawingeffect: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DrawInlineObject2: unsafe extern "system" fn(this: *mut *mut Self, clientdrawingcontext: *const ::core::ffi::c_void, originx: f32, originy: f32, orientationangle: DWRITE_GLYPH_ORIENTATION_ANGLE, inlineobject: *mut ::core::ffi::c_void, issideways: super::super::Foundation::BOOL, isrighttoleft: super::super::Foundation::BOOL, clientdrawingeffect: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DrawInlineObject2: usize,
+}
+#[repr(C)]
+pub struct IDWriteTypography {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub AddFontFeature: unsafe extern "system" fn(this: *mut *mut Self, fontfeature: DWRITE_FONT_FEATURE) -> ::windows_sys::core::HRESULT,
+    pub GetFontFeatureCount: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
+    pub GetFontFeature: unsafe extern "system" fn(this: *mut *mut Self, fontfeatureindex: u32, fontfeature: *mut DWRITE_FONT_FEATURE) -> ::windows_sys::core::HRESULT,
+}

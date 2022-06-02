@@ -67,3 +67,61 @@ impl ::core::clone::Clone for HdmiDisplayPixelEncoding {
         *self
     }
 }
+#[repr(C)]
+pub struct IHdmiDisplayInformation {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation_Collections")]
+    pub GetSupportedDisplayModes: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    GetSupportedDisplayModes: usize,
+    pub GetCurrentDisplayMode: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub SetDefaultDisplayModeAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    SetDefaultDisplayModeAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub RequestSetCurrentDisplayModeAsync: unsafe extern "system" fn(this: *mut *mut Self, mode: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RequestSetCurrentDisplayModeAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub RequestSetCurrentDisplayModeWithHdrAsync: unsafe extern "system" fn(this: *mut *mut Self, mode: *mut ::core::ffi::c_void, hdroption: HdmiDisplayHdrOption, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RequestSetCurrentDisplayModeWithHdrAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub RequestSetCurrentDisplayModeWithHdrAndMetadataAsync: unsafe extern "system" fn(this: *mut *mut Self, mode: *mut ::core::ffi::c_void, hdroption: HdmiDisplayHdrOption, hdrmetadata: HdmiDisplayHdr2086Metadata, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RequestSetCurrentDisplayModeWithHdrAndMetadataAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub DisplayModesChanged: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    DisplayModesChanged: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveDisplayModesChanged: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveDisplayModesChanged: usize,
+}
+#[repr(C)]
+pub struct IHdmiDisplayInformationStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub GetForCurrentView: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IHdmiDisplayMode {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub ResolutionWidthInRawPixels: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub ResolutionHeightInRawPixels: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub RefreshRate: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f64) -> ::windows_sys::core::HRESULT,
+    pub StereoEnabled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub BitsPerPixel: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub IsEqual: unsafe extern "system" fn(this: *mut *mut Self, mode: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub ColorSpace: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut HdmiDisplayColorSpace) -> ::windows_sys::core::HRESULT,
+    pub PixelEncoding: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut HdmiDisplayPixelEncoding) -> ::windows_sys::core::HRESULT,
+    pub IsSdrLuminanceSupported: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub IsSmpte2084Supported: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub Is2086MetadataSupported: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IHdmiDisplayMode2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub IsDolbyVisionLowLatencySupported: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}

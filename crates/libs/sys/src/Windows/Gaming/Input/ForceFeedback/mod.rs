@@ -60,7 +60,103 @@ impl ::core::clone::Clone for ForceFeedbackLoadEffectResult {
     }
 }
 pub type ForceFeedbackMotor = *mut ::core::ffi::c_void;
-pub type IForceFeedbackEffect = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IConditionForceEffect {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Kind: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ConditionForceEffectKind) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Numerics")]
+    pub SetParameters: unsafe extern "system" fn(this: *mut *mut Self, direction: super::super::super::Foundation::Numerics::Vector3, positivecoefficient: f32, negativecoefficient: f32, maxpositivemagnitude: f32, maxnegativemagnitude: f32, deadzone: f32, bias: f32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Numerics"))]
+    SetParameters: usize,
+}
+#[repr(C)]
+pub struct IConditionForceEffectFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CreateInstance: unsafe extern "system" fn(this: *mut *mut Self, effectkind: ConditionForceEffectKind, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IConstantForceEffect {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation_Numerics")]
+    pub SetParameters: unsafe extern "system" fn(this: *mut *mut Self, vector: super::super::super::Foundation::Numerics::Vector3, duration: super::super::super::Foundation::TimeSpan) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Numerics"))]
+    SetParameters: usize,
+    #[cfg(feature = "Foundation_Numerics")]
+    pub SetParametersWithEnvelope: unsafe extern "system" fn(this: *mut *mut Self, vector: super::super::super::Foundation::Numerics::Vector3, attackgain: f32, sustaingain: f32, releasegain: f32, startdelay: super::super::super::Foundation::TimeSpan, attackduration: super::super::super::Foundation::TimeSpan, sustainduration: super::super::super::Foundation::TimeSpan, releaseduration: super::super::super::Foundation::TimeSpan, repeatcount: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Numerics"))]
+    SetParametersWithEnvelope: usize,
+}
+#[repr(C)]
+pub struct IForceFeedbackEffect {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Gain: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f64) -> ::windows_sys::core::HRESULT,
+    pub SetGain: unsafe extern "system" fn(this: *mut *mut Self, value: f64) -> ::windows_sys::core::HRESULT,
+    pub State: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ForceFeedbackEffectState) -> ::windows_sys::core::HRESULT,
+    pub Start: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Stop: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IForceFeedbackMotor {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub AreEffectsPaused: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub MasterGain: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f64) -> ::windows_sys::core::HRESULT,
+    pub SetMasterGain: unsafe extern "system" fn(this: *mut *mut Self, value: f64) -> ::windows_sys::core::HRESULT,
+    pub IsEnabled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SupportedAxes: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ForceFeedbackEffectAxes) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub LoadEffectAsync: unsafe extern "system" fn(this: *mut *mut Self, effect: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    LoadEffectAsync: usize,
+    pub PauseAllEffects: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub ResumeAllEffects: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub StopAllEffects: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub TryDisableAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    TryDisableAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub TryEnableAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    TryEnableAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub TryResetAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    TryResetAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub TryUnloadEffectAsync: unsafe extern "system" fn(this: *mut *mut Self, effect: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    TryUnloadEffectAsync: usize,
+}
+#[repr(C)]
+pub struct IPeriodicForceEffect {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Kind: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut PeriodicForceEffectKind) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Numerics")]
+    pub SetParameters: unsafe extern "system" fn(this: *mut *mut Self, vector: super::super::super::Foundation::Numerics::Vector3, frequency: f32, phase: f32, bias: f32, duration: super::super::super::Foundation::TimeSpan) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Numerics"))]
+    SetParameters: usize,
+    #[cfg(feature = "Foundation_Numerics")]
+    pub SetParametersWithEnvelope: unsafe extern "system" fn(this: *mut *mut Self, vector: super::super::super::Foundation::Numerics::Vector3, frequency: f32, phase: f32, bias: f32, attackgain: f32, sustaingain: f32, releasegain: f32, startdelay: super::super::super::Foundation::TimeSpan, attackduration: super::super::super::Foundation::TimeSpan, sustainduration: super::super::super::Foundation::TimeSpan, releaseduration: super::super::super::Foundation::TimeSpan, repeatcount: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Numerics"))]
+    SetParametersWithEnvelope: usize,
+}
+#[repr(C)]
+pub struct IPeriodicForceEffectFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CreateInstance: unsafe extern "system" fn(this: *mut *mut Self, effectkind: PeriodicForceEffectKind, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRampForceEffect {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation_Numerics")]
+    pub SetParameters: unsafe extern "system" fn(this: *mut *mut Self, startvector: super::super::super::Foundation::Numerics::Vector3, endvector: super::super::super::Foundation::Numerics::Vector3, duration: super::super::super::Foundation::TimeSpan) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Numerics"))]
+    SetParameters: usize,
+    #[cfg(feature = "Foundation_Numerics")]
+    pub SetParametersWithEnvelope: unsafe extern "system" fn(this: *mut *mut Self, startvector: super::super::super::Foundation::Numerics::Vector3, endvector: super::super::super::Foundation::Numerics::Vector3, attackgain: f32, sustaingain: f32, releasegain: f32, startdelay: super::super::super::Foundation::TimeSpan, attackduration: super::super::super::Foundation::TimeSpan, sustainduration: super::super::super::Foundation::TimeSpan, releaseduration: super::super::super::Foundation::TimeSpan, repeatcount: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Numerics"))]
+    SetParametersWithEnvelope: usize,
+}
 pub type PeriodicForceEffect = *mut ::core::ffi::c_void;
 #[doc = "*Required features: `\"Gaming_Input_ForceFeedback\"`*"]
 #[repr(transparent)]

@@ -1,3 +1,40 @@
+#[repr(C)]
+pub struct IPlatformDiagnosticActionsStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub IsScenarioEnabled: unsafe extern "system" fn(this: *mut *mut Self, scenarioid: ::windows_sys::core::GUID, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub TryEscalateScenario: unsafe extern "system" fn(this: *mut *mut Self, scenarioid: ::windows_sys::core::GUID, escalationtype: PlatformDiagnosticEscalationType, outputdirectory: ::windows_sys::core::HSTRING, timestampoutputdirectory: bool, forceescalationupload: bool, triggers: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    TryEscalateScenario: usize,
+    pub DownloadLatestSettingsForNamespace: unsafe extern "system" fn(this: *mut *mut Self, partner: ::windows_sys::core::HSTRING, feature: ::windows_sys::core::HSTRING, isscenarionamespace: bool, downloadovercostednetwork: bool, downloadoverbattery: bool, result__: *mut PlatformDiagnosticActionState) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub GetActiveScenarioList: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    GetActiveScenarioList: usize,
+    pub ForceUpload: unsafe extern "system" fn(this: *mut *mut Self, latency: PlatformDiagnosticEventBufferLatencies, uploadovercostednetwork: bool, uploadoverbattery: bool, result__: *mut PlatformDiagnosticActionState) -> ::windows_sys::core::HRESULT,
+    pub IsTraceRunning: unsafe extern "system" fn(this: *mut *mut Self, slottype: PlatformDiagnosticTraceSlotType, scenarioid: ::windows_sys::core::GUID, traceprofilehash: u64, result__: *mut PlatformDiagnosticTraceSlotState) -> ::windows_sys::core::HRESULT,
+    pub GetActiveTraceRuntime: unsafe extern "system" fn(this: *mut *mut Self, slottype: PlatformDiagnosticTraceSlotType, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub GetKnownTraceList: unsafe extern "system" fn(this: *mut *mut Self, slottype: PlatformDiagnosticTraceSlotType, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    GetKnownTraceList: usize,
+}
+#[repr(C)]
+pub struct IPlatformDiagnosticTraceInfo {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub ScenarioId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub ProfileHash: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub IsExclusive: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub IsAutoLogger: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub MaxTraceDurationFileTime: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i64) -> ::windows_sys::core::HRESULT,
+    pub Priority: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut PlatformDiagnosticTracePriority) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPlatformDiagnosticTraceRuntimeInfo {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub RuntimeFileTime: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i64) -> ::windows_sys::core::HRESULT,
+    pub EtwRuntimeFileTime: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i64) -> ::windows_sys::core::HRESULT,
+}
 #[doc = "*Required features: `\"System_Diagnostics_TraceReporting\"`*"]
 #[repr(transparent)]
 pub struct PlatformDiagnosticActionState(pub i32);

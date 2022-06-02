@@ -1,5 +1,208 @@
-pub type IMidiMessage = *mut ::core::ffi::c_void;
-pub type IMidiOutPort = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IMidiChannelPressureMessage {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Channel: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u8) -> ::windows_sys::core::HRESULT,
+    pub Pressure: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u8) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMidiChannelPressureMessageFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CreateMidiChannelPressureMessage: unsafe extern "system" fn(this: *mut *mut Self, channel: u8, pressure: u8, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMidiControlChangeMessage {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Channel: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u8) -> ::windows_sys::core::HRESULT,
+    pub Controller: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u8) -> ::windows_sys::core::HRESULT,
+    pub ControlValue: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u8) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMidiControlChangeMessageFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CreateMidiControlChangeMessage: unsafe extern "system" fn(this: *mut *mut Self, channel: u8, controller: u8, controlvalue: u8, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMidiInPort {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub MessageReceived: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    MessageReceived: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveMessageReceived: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveMessageReceived: usize,
+    pub DeviceId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMidiInPortStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub FromIdAsync: unsafe extern "system" fn(this: *mut *mut Self, deviceid: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    FromIdAsync: usize,
+    pub GetDeviceSelector: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMidiMessage {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub Timestamp: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Foundation::TimeSpan) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    Timestamp: usize,
+    #[cfg(feature = "Storage_Streams")]
+    pub RawData: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Storage_Streams"))]
+    RawData: usize,
+    pub Type: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut MidiMessageType) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMidiMessageReceivedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Message: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMidiNoteOffMessage {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Channel: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u8) -> ::windows_sys::core::HRESULT,
+    pub Note: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u8) -> ::windows_sys::core::HRESULT,
+    pub Velocity: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u8) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMidiNoteOffMessageFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CreateMidiNoteOffMessage: unsafe extern "system" fn(this: *mut *mut Self, channel: u8, note: u8, velocity: u8, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMidiNoteOnMessage {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Channel: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u8) -> ::windows_sys::core::HRESULT,
+    pub Note: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u8) -> ::windows_sys::core::HRESULT,
+    pub Velocity: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u8) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMidiNoteOnMessageFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CreateMidiNoteOnMessage: unsafe extern "system" fn(this: *mut *mut Self, channel: u8, note: u8, velocity: u8, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMidiOutPort {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub SendMessage: unsafe extern "system" fn(this: *mut *mut Self, midimessage: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Storage_Streams")]
+    pub SendBuffer: unsafe extern "system" fn(this: *mut *mut Self, mididata: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Storage_Streams"))]
+    SendBuffer: usize,
+    pub DeviceId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMidiOutPortStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub FromIdAsync: unsafe extern "system" fn(this: *mut *mut Self, deviceid: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    FromIdAsync: usize,
+    pub GetDeviceSelector: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMidiPitchBendChangeMessage {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Channel: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u8) -> ::windows_sys::core::HRESULT,
+    pub Bend: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u16) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMidiPitchBendChangeMessageFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CreateMidiPitchBendChangeMessage: unsafe extern "system" fn(this: *mut *mut Self, channel: u8, bend: u16, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMidiPolyphonicKeyPressureMessage {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Channel: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u8) -> ::windows_sys::core::HRESULT,
+    pub Note: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u8) -> ::windows_sys::core::HRESULT,
+    pub Pressure: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u8) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMidiPolyphonicKeyPressureMessageFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CreateMidiPolyphonicKeyPressureMessage: unsafe extern "system" fn(this: *mut *mut Self, channel: u8, note: u8, pressure: u8, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMidiProgramChangeMessage {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Channel: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u8) -> ::windows_sys::core::HRESULT,
+    pub Program: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u8) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMidiProgramChangeMessageFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CreateMidiProgramChangeMessage: unsafe extern "system" fn(this: *mut *mut Self, channel: u8, program: u8, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMidiSongPositionPointerMessage {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Beats: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u16) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMidiSongPositionPointerMessageFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CreateMidiSongPositionPointerMessage: unsafe extern "system" fn(this: *mut *mut Self, beats: u16, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMidiSongSelectMessage {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Song: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u8) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMidiSongSelectMessageFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CreateMidiSongSelectMessage: unsafe extern "system" fn(this: *mut *mut Self, song: u8, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMidiSynthesizer {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Devices_Enumeration")]
+    pub AudioDevice: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Devices_Enumeration"))]
+    AudioDevice: usize,
+    pub Volume: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f64) -> ::windows_sys::core::HRESULT,
+    pub SetVolume: unsafe extern "system" fn(this: *mut *mut Self, value: f64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMidiSynthesizerStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub CreateAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    CreateAsync: usize,
+    #[cfg(all(feature = "Devices_Enumeration", feature = "Foundation"))]
+    pub CreateFromAudioDeviceAsync: unsafe extern "system" fn(this: *mut *mut Self, audiodevice: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Devices_Enumeration", feature = "Foundation")))]
+    CreateFromAudioDeviceAsync: usize,
+    #[cfg(feature = "Devices_Enumeration")]
+    pub IsSynthesizer: unsafe extern "system" fn(this: *mut *mut Self, mididevice: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Devices_Enumeration"))]
+    IsSynthesizer: usize,
+}
+#[repr(C)]
+pub struct IMidiSystemExclusiveMessageFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Storage_Streams")]
+    pub CreateMidiSystemExclusiveMessage: unsafe extern "system" fn(this: *mut *mut Self, rawdata: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Storage_Streams"))]
+    CreateMidiSystemExclusiveMessage: usize,
+}
+#[repr(C)]
+pub struct IMidiTimeCodeMessage {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub FrameType: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u8) -> ::windows_sys::core::HRESULT,
+    pub Values: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u8) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMidiTimeCodeMessageFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CreateMidiTimeCodeMessage: unsafe extern "system" fn(this: *mut *mut Self, frametype: u8, values: u8, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
 pub type MidiActiveSensingMessage = *mut ::core::ffi::c_void;
 pub type MidiChannelPressureMessage = *mut ::core::ffi::c_void;
 pub type MidiContinueMessage = *mut ::core::ffi::c_void;

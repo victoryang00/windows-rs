@@ -166,44 +166,536 @@ pub const FLAG_MessageObj_DayOfWeekWednesday: u32 = 8u32;
 pub const GUID_DEVINTERFACE_WPD: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1791129720, data2: 42746, data3: 16725, data4: [186, 133, 249, 143, 73, 29, 79, 51] };
 pub const GUID_DEVINTERFACE_WPD_PRIVATE: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3121377679, data2: 19949, data3: 18871, data4: [189, 211, 250, 190, 40, 102, 18, 17] };
 pub const GUID_DEVINTERFACE_WPD_SERVICE: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2666811264, data2: 15716, data3: 16966, data4: [166, 170, 32, 111, 50, 141, 30, 220] };
-pub type IConnectionRequestCallback = *mut ::core::ffi::c_void;
-pub type IEnumPortableDeviceConnectors = *mut ::core::ffi::c_void;
-pub type IEnumPortableDeviceObjectIDs = *mut ::core::ffi::c_void;
-pub type IMediaRadioManager = *mut ::core::ffi::c_void;
-pub type IMediaRadioManagerNotifySink = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IConnectionRequestCallback {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnComplete: unsafe extern "system" fn(this: *mut *mut Self, hrstatus: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IEnumPortableDeviceConnectors {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, crequested: u32, pconnectors: *mut *mut ::core::ffi::c_void, pcfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Skip: unsafe extern "system" fn(this: *mut *mut Self, cconnectors: u32) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IEnumPortableDeviceObjectIDs {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, cobjects: u32, pobjids: *mut ::windows_sys::core::PWSTR, pcfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Skip: unsafe extern "system" fn(this: *mut *mut Self, cobjects: u32) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Cancel: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMediaRadioManager {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetRadioInstances: unsafe extern "system" fn(this: *mut *mut Self, ppcollection: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub OnSystemRadioStateChange: unsafe extern "system" fn(this: *mut *mut Self, sysradiostate: SYSTEM_RADIO_STATE, utimeoutsec: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMediaRadioManagerNotifySink {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnInstanceAdd: unsafe extern "system" fn(this: *mut *mut Self, pradioinstance: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OnInstanceRemove: unsafe extern "system" fn(this: *mut *mut Self, bstrradioinstanceid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OnInstanceRemove: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OnInstanceRadioChange: unsafe extern "system" fn(this: *mut *mut Self, bstrradioinstanceid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, radiostate: DEVICE_RADIO_STATE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OnInstanceRadioChange: usize,
+}
 #[doc = "*Required features: `\"Win32_Devices_PortableDevices\"`*"]
 pub const IOCTL_WPD_MESSAGE_READWRITE_ACCESS: u32 = 4243720u32;
 #[doc = "*Required features: `\"Win32_Devices_PortableDevices\"`*"]
 pub const IOCTL_WPD_MESSAGE_READ_ACCESS: u32 = 4210952u32;
-pub type IPortableDevice = *mut ::core::ffi::c_void;
-pub type IPortableDeviceCapabilities = *mut ::core::ffi::c_void;
-pub type IPortableDeviceConnector = *mut ::core::ffi::c_void;
-pub type IPortableDeviceContent = *mut ::core::ffi::c_void;
-pub type IPortableDeviceContent2 = *mut ::core::ffi::c_void;
-pub type IPortableDeviceDataStream = *mut ::core::ffi::c_void;
-pub type IPortableDeviceDispatchFactory = *mut ::core::ffi::c_void;
-pub type IPortableDeviceEventCallback = *mut ::core::ffi::c_void;
-pub type IPortableDeviceKeyCollection = *mut ::core::ffi::c_void;
-pub type IPortableDeviceManager = *mut ::core::ffi::c_void;
-pub type IPortableDevicePropVariantCollection = *mut ::core::ffi::c_void;
-pub type IPortableDeviceProperties = *mut ::core::ffi::c_void;
-pub type IPortableDevicePropertiesBulk = *mut ::core::ffi::c_void;
-pub type IPortableDevicePropertiesBulkCallback = *mut ::core::ffi::c_void;
-pub type IPortableDeviceResources = *mut ::core::ffi::c_void;
-pub type IPortableDeviceService = *mut ::core::ffi::c_void;
-pub type IPortableDeviceServiceActivation = *mut ::core::ffi::c_void;
-pub type IPortableDeviceServiceCapabilities = *mut ::core::ffi::c_void;
-pub type IPortableDeviceServiceManager = *mut ::core::ffi::c_void;
-pub type IPortableDeviceServiceMethodCallback = *mut ::core::ffi::c_void;
-pub type IPortableDeviceServiceMethods = *mut ::core::ffi::c_void;
-pub type IPortableDeviceServiceOpenCallback = *mut ::core::ffi::c_void;
-pub type IPortableDeviceUnitsStream = *mut ::core::ffi::c_void;
-pub type IPortableDeviceValues = *mut ::core::ffi::c_void;
-pub type IPortableDeviceValuesCollection = *mut ::core::ffi::c_void;
-pub type IPortableDeviceWebControl = *mut ::core::ffi::c_void;
-pub type IRadioInstance = *mut ::core::ffi::c_void;
-pub type IRadioInstanceCollection = *mut ::core::ffi::c_void;
-pub type IWpdSerializer = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IPortableDevice {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Open: unsafe extern "system" fn(this: *mut *mut Self, pszpnpdeviceid: ::windows_sys::core::PCWSTR, pclientinfo: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SendCommand: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, pparameters: *mut ::core::ffi::c_void, ppresults: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Content: unsafe extern "system" fn(this: *mut *mut Self, ppcontent: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Capabilities: unsafe extern "system" fn(this: *mut *mut Self, ppcapabilities: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Cancel: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Advise: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, pcallback: *mut ::core::ffi::c_void, pparameters: *mut ::core::ffi::c_void, ppszcookie: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub Unadvise: unsafe extern "system" fn(this: *mut *mut Self, pszcookie: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetPnPDeviceID: unsafe extern "system" fn(this: *mut *mut Self, ppszpnpdeviceid: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPortableDeviceCapabilities {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetSupportedCommands: unsafe extern "system" fn(this: *mut *mut Self, ppcommands: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub GetCommandOptions: unsafe extern "system" fn(this: *mut *mut Self, command: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY, ppoptions: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    GetCommandOptions: usize,
+    pub GetFunctionalCategories: unsafe extern "system" fn(this: *mut *mut Self, ppcategories: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetFunctionalObjects: unsafe extern "system" fn(this: *mut *mut Self, category: *const ::windows_sys::core::GUID, ppobjectids: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetSupportedContentTypes: unsafe extern "system" fn(this: *mut *mut Self, category: *const ::windows_sys::core::GUID, ppcontenttypes: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetSupportedFormats: unsafe extern "system" fn(this: *mut *mut Self, contenttype: *const ::windows_sys::core::GUID, ppformats: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetSupportedFormatProperties: unsafe extern "system" fn(this: *mut *mut Self, format: *const ::windows_sys::core::GUID, ppkeys: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub GetFixedPropertyAttributes: unsafe extern "system" fn(this: *mut *mut Self, format: *const ::windows_sys::core::GUID, key: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY, ppattributes: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    GetFixedPropertyAttributes: usize,
+    pub Cancel: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetSupportedEvents: unsafe extern "system" fn(this: *mut *mut Self, ppevents: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetEventOptions: unsafe extern "system" fn(this: *mut *mut Self, event: *const ::windows_sys::core::GUID, ppoptions: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPortableDeviceConnector {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Connect: unsafe extern "system" fn(this: *mut *mut Self, pcallback: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Disconnect: unsafe extern "system" fn(this: *mut *mut Self, pcallback: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Cancel: unsafe extern "system" fn(this: *mut *mut Self, pcallback: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Devices_Properties")]
+    pub GetProperty: unsafe extern "system" fn(this: *mut *mut Self, ppropertykey: *const super::Properties::DEVPROPKEY, ppropertytype: *mut u32, ppdata: *mut *mut u8, pcbdata: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Devices_Properties"))]
+    GetProperty: usize,
+    #[cfg(feature = "Win32_Devices_Properties")]
+    pub SetProperty: unsafe extern "system" fn(this: *mut *mut Self, ppropertykey: *const super::Properties::DEVPROPKEY, propertytype: u32, pdata: *const u8, cbdata: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Devices_Properties"))]
+    SetProperty: usize,
+    pub GetPnPID: unsafe extern "system" fn(this: *mut *mut Self, ppwszpnpid: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPortableDeviceContent {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub EnumObjects: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, pszparentobjectid: ::windows_sys::core::PCWSTR, pfilter: *mut ::core::ffi::c_void, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Properties: unsafe extern "system" fn(this: *mut *mut Self, ppproperties: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Transfer: unsafe extern "system" fn(this: *mut *mut Self, ppresources: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateObjectWithPropertiesOnly: unsafe extern "system" fn(this: *mut *mut Self, pvalues: *mut ::core::ffi::c_void, ppszobjectid: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreateObjectWithPropertiesAndData: unsafe extern "system" fn(this: *mut *mut Self, pvalues: *mut ::core::ffi::c_void, ppdata: *mut *mut ::core::ffi::c_void, pdwoptimalwritebuffersize: *mut u32, ppszcookie: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CreateObjectWithPropertiesAndData: usize,
+    pub Delete: unsafe extern "system" fn(this: *mut *mut Self, dwoptions: u32, pobjectids: *mut ::core::ffi::c_void, ppresults: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetObjectIDsFromPersistentUniqueIDs: unsafe extern "system" fn(this: *mut *mut Self, ppersistentuniqueids: *mut ::core::ffi::c_void, ppobjectids: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Cancel: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Move: unsafe extern "system" fn(this: *mut *mut Self, pobjectids: *mut ::core::ffi::c_void, pszdestinationfolderobjectid: ::windows_sys::core::PCWSTR, ppresults: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Copy: unsafe extern "system" fn(this: *mut *mut Self, pobjectids: *mut ::core::ffi::c_void, pszdestinationfolderobjectid: ::windows_sys::core::PCWSTR, ppresults: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPortableDeviceContent2 {
+    pub base__: IPortableDeviceContent,
+    #[cfg(feature = "Win32_System_Com")]
+    pub UpdateObjectWithPropertiesAndData: unsafe extern "system" fn(this: *mut *mut Self, pszobjectid: ::windows_sys::core::PCWSTR, pproperties: *mut ::core::ffi::c_void, ppdata: *mut *mut ::core::ffi::c_void, pdwoptimalwritebuffersize: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    UpdateObjectWithPropertiesAndData: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IPortableDeviceDataStream {
+    pub base__: super::super::System::Com::IStream,
+    pub GetObjectID: unsafe extern "system" fn(this: *mut *mut Self, ppszobjectid: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub Cancel: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPortableDeviceDispatchFactory {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetDeviceDispatch: unsafe extern "system" fn(this: *mut *mut Self, pszpnpdeviceid: ::windows_sys::core::PCWSTR, ppdevicedispatch: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetDeviceDispatch: usize,
+}
+#[repr(C)]
+pub struct IPortableDeviceEventCallback {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnEvent: unsafe extern "system" fn(this: *mut *mut Self, peventparameters: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPortableDeviceKeyCollection {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, pcelems: *const u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub GetAt: unsafe extern "system" fn(this: *mut *mut Self, dwindex: u32, pkey: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    GetAt: usize,
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub Add: unsafe extern "system" fn(this: *mut *mut Self, key: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    Add: usize,
+    pub Clear: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub RemoveAt: unsafe extern "system" fn(this: *mut *mut Self, dwindex: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPortableDeviceManager {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetDevices: unsafe extern "system" fn(this: *mut *mut Self, ppnpdeviceids: *mut ::windows_sys::core::PWSTR, pcpnpdeviceids: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub RefreshDeviceList: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetDeviceFriendlyName: unsafe extern "system" fn(this: *mut *mut Self, pszpnpdeviceid: ::windows_sys::core::PCWSTR, pdevicefriendlyname: ::windows_sys::core::PWSTR, pcchdevicefriendlyname: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetDeviceDescription: unsafe extern "system" fn(this: *mut *mut Self, pszpnpdeviceid: ::windows_sys::core::PCWSTR, pdevicedescription: ::windows_sys::core::PWSTR, pcchdevicedescription: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetDeviceManufacturer: unsafe extern "system" fn(this: *mut *mut Self, pszpnpdeviceid: ::windows_sys::core::PCWSTR, pdevicemanufacturer: ::windows_sys::core::PWSTR, pcchdevicemanufacturer: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetDeviceProperty: unsafe extern "system" fn(this: *mut *mut Self, pszpnpdeviceid: ::windows_sys::core::PCWSTR, pszdevicepropertyname: ::windows_sys::core::PCWSTR, pdata: *mut u8, pcbdata: *mut u32, pdwtype: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetPrivateDevices: unsafe extern "system" fn(this: *mut *mut Self, ppnpdeviceids: *mut ::windows_sys::core::PWSTR, pcpnpdeviceids: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPortableDevicePropVariantCollection {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, pcelems: *const u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    pub GetAt: unsafe extern "system" fn(this: *mut *mut Self, dwindex: u32, pvalue: *const super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    GetAt: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    pub Add: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *const super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    Add: usize,
+    pub GetType: unsafe extern "system" fn(this: *mut *mut Self, pvt: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub ChangeType: unsafe extern "system" fn(this: *mut *mut Self, vt: u16) -> ::windows_sys::core::HRESULT,
+    pub Clear: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub RemoveAt: unsafe extern "system" fn(this: *mut *mut Self, dwindex: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPortableDeviceProperties {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetSupportedProperties: unsafe extern "system" fn(this: *mut *mut Self, pszobjectid: ::windows_sys::core::PCWSTR, ppkeys: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub GetPropertyAttributes: unsafe extern "system" fn(this: *mut *mut Self, pszobjectid: ::windows_sys::core::PCWSTR, key: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY, ppattributes: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    GetPropertyAttributes: usize,
+    pub GetValues: unsafe extern "system" fn(this: *mut *mut Self, pszobjectid: ::windows_sys::core::PCWSTR, pkeys: *mut ::core::ffi::c_void, ppvalues: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetValues: unsafe extern "system" fn(this: *mut *mut Self, pszobjectid: ::windows_sys::core::PCWSTR, pvalues: *mut ::core::ffi::c_void, ppresults: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Delete: unsafe extern "system" fn(this: *mut *mut Self, pszobjectid: ::windows_sys::core::PCWSTR, pkeys: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Cancel: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPortableDevicePropertiesBulk {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub QueueGetValuesByObjectList: unsafe extern "system" fn(this: *mut *mut Self, pobjectids: *mut ::core::ffi::c_void, pkeys: *mut ::core::ffi::c_void, pcallback: *mut ::core::ffi::c_void, pcontext: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub QueueGetValuesByObjectFormat: unsafe extern "system" fn(this: *mut *mut Self, pguidobjectformat: *const ::windows_sys::core::GUID, pszparentobjectid: ::windows_sys::core::PCWSTR, dwdepth: u32, pkeys: *mut ::core::ffi::c_void, pcallback: *mut ::core::ffi::c_void, pcontext: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub QueueSetValuesByObjectList: unsafe extern "system" fn(this: *mut *mut Self, pobjectvalues: *mut ::core::ffi::c_void, pcallback: *mut ::core::ffi::c_void, pcontext: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub Start: unsafe extern "system" fn(this: *mut *mut Self, pcontext: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub Cancel: unsafe extern "system" fn(this: *mut *mut Self, pcontext: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPortableDevicePropertiesBulkCallback {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnStart: unsafe extern "system" fn(this: *mut *mut Self, pcontext: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub OnProgress: unsafe extern "system" fn(this: *mut *mut Self, pcontext: *const ::windows_sys::core::GUID, presults: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub OnEnd: unsafe extern "system" fn(this: *mut *mut Self, pcontext: *const ::windows_sys::core::GUID, hrstatus: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPortableDeviceResources {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetSupportedResources: unsafe extern "system" fn(this: *mut *mut Self, pszobjectid: ::windows_sys::core::PCWSTR, ppkeys: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub GetResourceAttributes: unsafe extern "system" fn(this: *mut *mut Self, pszobjectid: ::windows_sys::core::PCWSTR, key: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY, ppresourceattributes: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    GetResourceAttributes: usize,
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_UI_Shell_PropertiesSystem"))]
+    pub GetStream: unsafe extern "system" fn(this: *mut *mut Self, pszobjectid: ::windows_sys::core::PCWSTR, key: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY, dwmode: u32, pdwoptimalbuffersize: *mut u32, ppstream: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_UI_Shell_PropertiesSystem")))]
+    GetStream: usize,
+    pub Delete: unsafe extern "system" fn(this: *mut *mut Self, pszobjectid: ::windows_sys::core::PCWSTR, pkeys: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Cancel: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreateResource: unsafe extern "system" fn(this: *mut *mut Self, presourceattributes: *mut ::core::ffi::c_void, ppdata: *mut *mut ::core::ffi::c_void, pdwoptimalwritebuffersize: *mut u32, ppszcookie: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CreateResource: usize,
+}
+#[repr(C)]
+pub struct IPortableDeviceService {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Open: unsafe extern "system" fn(this: *mut *mut Self, pszpnpserviceid: ::windows_sys::core::PCWSTR, pclientinfo: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Capabilities: unsafe extern "system" fn(this: *mut *mut Self, ppcapabilities: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Content: unsafe extern "system" fn(this: *mut *mut Self, ppcontent: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Methods: unsafe extern "system" fn(this: *mut *mut Self, ppmethods: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Cancel: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetServiceObjectID: unsafe extern "system" fn(this: *mut *mut Self, ppszserviceobjectid: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetPnPServiceID: unsafe extern "system" fn(this: *mut *mut Self, ppszpnpserviceid: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub Advise: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, pcallback: *mut ::core::ffi::c_void, pparameters: *mut ::core::ffi::c_void, ppszcookie: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub Unadvise: unsafe extern "system" fn(this: *mut *mut Self, pszcookie: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub SendCommand: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, pparameters: *mut ::core::ffi::c_void, ppresults: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPortableDeviceServiceActivation {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OpenAsync: unsafe extern "system" fn(this: *mut *mut Self, pszpnpserviceid: ::windows_sys::core::PCWSTR, pclientinfo: *mut ::core::ffi::c_void, pcallback: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CancelOpenAsync: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPortableDeviceServiceCapabilities {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetSupportedMethods: unsafe extern "system" fn(this: *mut *mut Self, ppmethods: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetSupportedMethodsByFormat: unsafe extern "system" fn(this: *mut *mut Self, format: *const ::windows_sys::core::GUID, ppmethods: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetMethodAttributes: unsafe extern "system" fn(this: *mut *mut Self, method: *const ::windows_sys::core::GUID, ppattributes: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub GetMethodParameterAttributes: unsafe extern "system" fn(this: *mut *mut Self, method: *const ::windows_sys::core::GUID, parameter: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY, ppattributes: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    GetMethodParameterAttributes: usize,
+    pub GetSupportedFormats: unsafe extern "system" fn(this: *mut *mut Self, ppformats: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetFormatAttributes: unsafe extern "system" fn(this: *mut *mut Self, format: *const ::windows_sys::core::GUID, ppattributes: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetSupportedFormatProperties: unsafe extern "system" fn(this: *mut *mut Self, format: *const ::windows_sys::core::GUID, ppkeys: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub GetFormatPropertyAttributes: unsafe extern "system" fn(this: *mut *mut Self, format: *const ::windows_sys::core::GUID, property: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY, ppattributes: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    GetFormatPropertyAttributes: usize,
+    pub GetSupportedEvents: unsafe extern "system" fn(this: *mut *mut Self, ppevents: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetEventAttributes: unsafe extern "system" fn(this: *mut *mut Self, event: *const ::windows_sys::core::GUID, ppattributes: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub GetEventParameterAttributes: unsafe extern "system" fn(this: *mut *mut Self, event: *const ::windows_sys::core::GUID, parameter: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY, ppattributes: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    GetEventParameterAttributes: usize,
+    pub GetInheritedServices: unsafe extern "system" fn(this: *mut *mut Self, dwinheritancetype: u32, ppservices: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetFormatRenderingProfiles: unsafe extern "system" fn(this: *mut *mut Self, format: *const ::windows_sys::core::GUID, pprenderingprofiles: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetSupportedCommands: unsafe extern "system" fn(this: *mut *mut Self, ppcommands: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub GetCommandOptions: unsafe extern "system" fn(this: *mut *mut Self, command: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY, ppoptions: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    GetCommandOptions: usize,
+    pub Cancel: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPortableDeviceServiceManager {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetDeviceServices: unsafe extern "system" fn(this: *mut *mut Self, pszpnpdeviceid: ::windows_sys::core::PCWSTR, guidservicecategory: *const ::windows_sys::core::GUID, pservices: *mut ::windows_sys::core::PWSTR, pcservices: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetDeviceForService: unsafe extern "system" fn(this: *mut *mut Self, pszpnpserviceid: ::windows_sys::core::PCWSTR, ppszpnpdeviceid: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPortableDeviceServiceMethodCallback {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnComplete: unsafe extern "system" fn(this: *mut *mut Self, hrstatus: ::windows_sys::core::HRESULT, presults: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPortableDeviceServiceMethods {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Invoke: unsafe extern "system" fn(this: *mut *mut Self, method: *const ::windows_sys::core::GUID, pparameters: *mut ::core::ffi::c_void, ppresults: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub InvokeAsync: unsafe extern "system" fn(this: *mut *mut Self, method: *const ::windows_sys::core::GUID, pparameters: *mut ::core::ffi::c_void, pcallback: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Cancel: unsafe extern "system" fn(this: *mut *mut Self, pcallback: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPortableDeviceServiceOpenCallback {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnComplete: unsafe extern "system" fn(this: *mut *mut Self, hrstatus: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPortableDeviceUnitsStream {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SeekInUnits: unsafe extern "system" fn(this: *mut *mut Self, dlibmove: i64, units: WPD_STREAM_UNITS, dworigin: u32, plibnewposition: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub Cancel: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPortableDeviceValues {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, pcelt: *const u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+    pub GetAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32, pkey: *mut super::super::UI::Shell::PropertiesSystem::PROPERTYKEY, pvalue: *mut super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem")))]
+    GetAt: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+    pub SetValue: unsafe extern "system" fn(this: *mut *mut Self, key: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY, pvalue: *const super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem")))]
+    SetValue: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+    pub GetValue: unsafe extern "system" fn(this: *mut *mut Self, key: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY, pvalue: *mut super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem")))]
+    GetValue: usize,
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub SetStringValue: unsafe extern "system" fn(this: *mut *mut Self, key: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY, value: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    SetStringValue: usize,
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub GetStringValue: unsafe extern "system" fn(this: *mut *mut Self, key: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY, pvalue: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    GetStringValue: usize,
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub SetUnsignedIntegerValue: unsafe extern "system" fn(this: *mut *mut Self, key: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY, value: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    SetUnsignedIntegerValue: usize,
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub GetUnsignedIntegerValue: unsafe extern "system" fn(this: *mut *mut Self, key: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY, pvalue: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    GetUnsignedIntegerValue: usize,
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub SetSignedIntegerValue: unsafe extern "system" fn(this: *mut *mut Self, key: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY, value: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    SetSignedIntegerValue: usize,
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub GetSignedIntegerValue: unsafe extern "system" fn(this: *mut *mut Self, key: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY, pvalue: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    GetSignedIntegerValue: usize,
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub SetUnsignedLargeIntegerValue: unsafe extern "system" fn(this: *mut *mut Self, key: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY, value: u64) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    SetUnsignedLargeIntegerValue: usize,
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub GetUnsignedLargeIntegerValue: unsafe extern "system" fn(this: *mut *mut Self, key: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY, pvalue: *mut u64) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    GetUnsignedLargeIntegerValue: usize,
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub SetSignedLargeIntegerValue: unsafe extern "system" fn(this: *mut *mut Self, key: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY, value: i64) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    SetSignedLargeIntegerValue: usize,
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub GetSignedLargeIntegerValue: unsafe extern "system" fn(this: *mut *mut Self, key: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY, pvalue: *mut i64) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    GetSignedLargeIntegerValue: usize,
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub SetFloatValue: unsafe extern "system" fn(this: *mut *mut Self, key: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY, value: f32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    SetFloatValue: usize,
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub GetFloatValue: unsafe extern "system" fn(this: *mut *mut Self, key: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY, pvalue: *mut f32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    GetFloatValue: usize,
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub SetErrorValue: unsafe extern "system" fn(this: *mut *mut Self, key: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY, value: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    SetErrorValue: usize,
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub GetErrorValue: unsafe extern "system" fn(this: *mut *mut Self, key: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY, pvalue: *mut ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    GetErrorValue: usize,
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub SetKeyValue: unsafe extern "system" fn(this: *mut *mut Self, key: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY, value: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    SetKeyValue: usize,
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub GetKeyValue: unsafe extern "system" fn(this: *mut *mut Self, key: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY, pvalue: *mut super::super::UI::Shell::PropertiesSystem::PROPERTYKEY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    GetKeyValue: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_PropertiesSystem"))]
+    pub SetBoolValue: unsafe extern "system" fn(this: *mut *mut Self, key: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY, value: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_PropertiesSystem")))]
+    SetBoolValue: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_PropertiesSystem"))]
+    pub GetBoolValue: unsafe extern "system" fn(this: *mut *mut Self, key: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY, pvalue: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_PropertiesSystem")))]
+    GetBoolValue: usize,
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub SetIUnknownValue: unsafe extern "system" fn(this: *mut *mut Self, key: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY, pvalue: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    SetIUnknownValue: usize,
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub GetIUnknownValue: unsafe extern "system" fn(this: *mut *mut Self, key: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    GetIUnknownValue: usize,
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub SetGuidValue: unsafe extern "system" fn(this: *mut *mut Self, key: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY, value: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    SetGuidValue: usize,
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub GetGuidValue: unsafe extern "system" fn(this: *mut *mut Self, key: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY, pvalue: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    GetGuidValue: usize,
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub SetBufferValue: unsafe extern "system" fn(this: *mut *mut Self, key: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY, pvalue: *const u8, cbvalue: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    SetBufferValue: usize,
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub GetBufferValue: unsafe extern "system" fn(this: *mut *mut Self, key: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY, ppvalue: *mut *mut u8, pcbvalue: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    GetBufferValue: usize,
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub SetIPortableDeviceValuesValue: unsafe extern "system" fn(this: *mut *mut Self, key: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY, pvalue: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    SetIPortableDeviceValuesValue: usize,
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub GetIPortableDeviceValuesValue: unsafe extern "system" fn(this: *mut *mut Self, key: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    GetIPortableDeviceValuesValue: usize,
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub SetIPortableDevicePropVariantCollectionValue: unsafe extern "system" fn(this: *mut *mut Self, key: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY, pvalue: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    SetIPortableDevicePropVariantCollectionValue: usize,
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub GetIPortableDevicePropVariantCollectionValue: unsafe extern "system" fn(this: *mut *mut Self, key: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    GetIPortableDevicePropVariantCollectionValue: usize,
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub SetIPortableDeviceKeyCollectionValue: unsafe extern "system" fn(this: *mut *mut Self, key: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY, pvalue: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    SetIPortableDeviceKeyCollectionValue: usize,
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub GetIPortableDeviceKeyCollectionValue: unsafe extern "system" fn(this: *mut *mut Self, key: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    GetIPortableDeviceKeyCollectionValue: usize,
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub SetIPortableDeviceValuesCollectionValue: unsafe extern "system" fn(this: *mut *mut Self, key: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY, pvalue: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    SetIPortableDeviceValuesCollectionValue: usize,
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub GetIPortableDeviceValuesCollectionValue: unsafe extern "system" fn(this: *mut *mut Self, key: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    GetIPortableDeviceValuesCollectionValue: usize,
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub RemoveValue: unsafe extern "system" fn(this: *mut *mut Self, key: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    RemoveValue: usize,
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub CopyValuesFromPropertyStore: unsafe extern "system" fn(this: *mut *mut Self, pstore: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    CopyValuesFromPropertyStore: usize,
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub CopyValuesToPropertyStore: unsafe extern "system" fn(this: *mut *mut Self, pstore: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    CopyValuesToPropertyStore: usize,
+    pub Clear: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPortableDeviceValuesCollection {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, pcelems: *const u32) -> ::windows_sys::core::HRESULT,
+    pub GetAt: unsafe extern "system" fn(this: *mut *mut Self, dwindex: u32, ppvalues: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Add: unsafe extern "system" fn(this: *mut *mut Self, pvalues: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Clear: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub RemoveAt: unsafe extern "system" fn(this: *mut *mut Self, dwindex: u32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IPortableDeviceWebControl {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub GetDeviceFromId: unsafe extern "system" fn(this: *mut *mut Self, deviceid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppdevice: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    GetDeviceFromId: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub GetDeviceFromIdAsync: unsafe extern "system" fn(this: *mut *mut Self, deviceid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pcompletionhandler: *mut ::core::ffi::c_void, perrorhandler: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    GetDeviceFromIdAsync: usize,
+}
+#[repr(C)]
+pub struct IRadioInstance {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetRadioManagerSignature: unsafe extern "system" fn(this: *mut *mut Self, pguidsignature: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetInstanceSignature: unsafe extern "system" fn(this: *mut *mut Self, pbstrid: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetInstanceSignature: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetFriendlyName: unsafe extern "system" fn(this: *mut *mut Self, lcid: u32, pbstrname: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetFriendlyName: usize,
+    pub GetRadioState: unsafe extern "system" fn(this: *mut *mut Self, pradiostate: *mut DEVICE_RADIO_STATE) -> ::windows_sys::core::HRESULT,
+    pub SetRadioState: unsafe extern "system" fn(this: *mut *mut Self, radiostate: DEVICE_RADIO_STATE, utimeoutsec: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsMultiComm: unsafe extern "system" fn(this: *mut *mut Self) -> super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsMultiComm: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsAssociatingDevice: unsafe extern "system" fn(this: *mut *mut Self) -> super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsAssociatingDevice: usize,
+}
+#[repr(C)]
+pub struct IRadioInstanceCollection {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, pcinstance: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetAt: unsafe extern "system" fn(this: *mut *mut Self, uindex: u32, ppradioinstance: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWpdSerializer {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetIPortableDeviceValuesFromBuffer: unsafe extern "system" fn(this: *mut *mut Self, pbuffer: *const u8, dwinputbufferlength: u32, ppparams: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub WriteIPortableDeviceValuesToBuffer: unsafe extern "system" fn(this: *mut *mut Self, dwoutputbufferlength: u32, presults: *mut ::core::ffi::c_void, pbuffer: *mut u8, pdwbyteswritten: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetBufferFromIPortableDeviceValues: unsafe extern "system" fn(this: *mut *mut Self, psource: *mut ::core::ffi::c_void, ppbuffer: *mut *mut u8, pdwbuffersize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSerializedSize: unsafe extern "system" fn(this: *mut *mut Self, psource: *mut ::core::ffi::c_void, pdwsize: *mut u32) -> ::windows_sys::core::HRESULT,
+}
 #[doc = "*Required features: `\"Win32_Devices_PortableDevices\"`*"]
 pub const NAME_3GPP2File: &str = "3GPP2File";
 #[doc = "*Required features: `\"Win32_Devices_PortableDevices\"`*"]

@@ -5,11 +5,11 @@ extern "system" {
     #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
     pub fn DceErrorInqTextW(rpcstatus: RPC_STATUS, errortext: *mut u16) -> RPC_STATUS;
     #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
-    pub fn IUnknown_AddRef_Proxy(this: ::windows_sys::core::IUnknown) -> u32;
+    pub fn IUnknown_AddRef_Proxy(this: *mut *mut ::windows_sys::core::IUnknown) -> u32;
     #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
-    pub fn IUnknown_QueryInterface_Proxy(this: ::windows_sys::core::IUnknown, riid: *const ::windows_sys::core::GUID, ppvobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn IUnknown_QueryInterface_Proxy(this: *mut *mut ::windows_sys::core::IUnknown, riid: *const ::windows_sys::core::GUID, ppvobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
-    pub fn IUnknown_Release_Proxy(this: ::windows_sys::core::IUnknown) -> u32;
+    pub fn IUnknown_Release_Proxy(this: *mut *mut ::windows_sys::core::IUnknown) -> u32;
     #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
     pub fn I_RpcAllocate(size: u32) -> *mut ::core::ffi::c_void;
     #[doc = "*Required features: `\"Win32_System_Rpc\"`, `\"Win32_Foundation\"`, `\"Win32_System_IO\"`*"]
@@ -205,7 +205,7 @@ extern "system" {
     pub fn Ndr64DcomAsyncClientCall(pproxyinfo: *mut MIDL_STUBLESS_PROXY_INFO, nprocnum: u32, preturnvalue: *mut ::core::ffi::c_void) -> CLIENT_CALL_RETURN;
     #[doc = "*Required features: `\"Win32_System_Rpc\"`, `\"Win32_System_Com\"`*"]
     #[cfg(feature = "Win32_System_Com")]
-    pub fn Ndr64DcomAsyncStubCall(pthis: super::Com::IRpcStubBuffer, pchannel: super::Com::IRpcChannelBuffer, prpcmsg: *mut RPC_MESSAGE, pdwstubphase: *mut u32) -> i32;
+    pub fn Ndr64DcomAsyncStubCall(pthis: *mut *mut super::Com::IRpcStubBuffer, pchannel: *mut *mut super::Com::IRpcChannelBuffer, prpcmsg: *mut RPC_MESSAGE, pdwstubphase: *mut u32) -> i32;
     #[doc = "*Required features: `\"Win32_System_Rpc\"`, `\"Win32_System_Com\"`*"]
     #[cfg(feature = "Win32_System_Com")]
     pub fn NdrAllocate(pstubmsg: *mut MIDL_STUB_MESSAGE, len: usize) -> *mut ::core::ffi::c_void;
@@ -372,13 +372,13 @@ extern "system" {
     pub fn NdrCorrelationPass(pstubmsg: *mut MIDL_STUB_MESSAGE);
     #[doc = "*Required features: `\"Win32_System_Rpc\"`, `\"Win32_System_Com\"`*"]
     #[cfg(feature = "Win32_System_Com")]
-    pub fn NdrCreateServerInterfaceFromStub(pstub: super::Com::IRpcStubBuffer, pserverif: *mut RPC_SERVER_INTERFACE) -> RPC_STATUS;
+    pub fn NdrCreateServerInterfaceFromStub(pstub: *mut *mut super::Com::IRpcStubBuffer, pserverif: *mut RPC_SERVER_INTERFACE) -> RPC_STATUS;
     #[doc = "*Required features: `\"Win32_System_Rpc\"`, `\"Win32_System_Com\"`*"]
     #[cfg(feature = "Win32_System_Com")]
     pub fn NdrDcomAsyncClientCall(pstubdescriptor: *mut MIDL_STUB_DESC, pformat: *mut u8) -> CLIENT_CALL_RETURN;
     #[doc = "*Required features: `\"Win32_System_Rpc\"`, `\"Win32_System_Com\"`*"]
     #[cfg(feature = "Win32_System_Com")]
-    pub fn NdrDcomAsyncStubCall(pthis: super::Com::IRpcStubBuffer, pchannel: super::Com::IRpcChannelBuffer, prpcmsg: *mut RPC_MESSAGE, pdwstubphase: *mut u32) -> i32;
+    pub fn NdrDcomAsyncStubCall(pthis: *mut *mut super::Com::IRpcStubBuffer, pchannel: *mut *mut super::Com::IRpcChannelBuffer, prpcmsg: *mut RPC_MESSAGE, pdwstubphase: *mut u32) -> i32;
     #[doc = "*Required features: `\"Win32_System_Rpc\"`, `\"Win32_System_Com\"`*"]
     #[cfg(feature = "Win32_System_Com")]
     pub fn NdrEncapsulatedUnionBufferSize(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8);
@@ -1634,7 +1634,7 @@ pub struct MIDL_STUB_MESSAGE {
     pub pvDestContext: *mut ::core::ffi::c_void,
     pub SavedContextHandles: *mut *mut NDR_SCONTEXT_1,
     pub ParamNumber: i32,
-    pub pRpcChannelBuffer: super::Com::IRpcChannelBuffer,
+    pub pRpcChannelBuffer: *mut *mut *mut *mut super::Com::IRpcChannelBuffer,
     pub pArrayInfo: *mut ARRAY_INFO,
     pub SizePtrCountArray: *mut u32,
     pub SizePtrOffsetArray: *mut u32,
@@ -2732,7 +2732,7 @@ pub struct NDR_USER_MARSHAL_INFO_LEVEL1 {
     pub BufferSize: u32,
     pub pfnAllocate: isize,
     pub pfnFree: isize,
-    pub pRpcChannelBuffer: super::Com::IRpcChannelBuffer,
+    pub pRpcChannelBuffer: *mut *mut *mut *mut super::Com::IRpcChannelBuffer,
     pub Reserved: [usize; 5],
 }
 #[cfg(feature = "Win32_System_Com")]

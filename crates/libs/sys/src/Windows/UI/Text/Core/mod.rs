@@ -171,3 +171,292 @@ impl ::core::clone::Clone for CoreTextTextUpdatingResult {
         *self
     }
 }
+#[repr(C)]
+pub struct ICoreTextCompositionCompletedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub IsCanceled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub CompositionSegments: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    CompositionSegments: usize,
+    #[cfg(feature = "Foundation")]
+    pub GetDeferral: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    GetDeferral: usize,
+}
+#[repr(C)]
+pub struct ICoreTextCompositionSegment {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub PreconversionString: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Range: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut CoreTextRange) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ICoreTextCompositionStartedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub IsCanceled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub GetDeferral: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    GetDeferral: usize,
+}
+#[repr(C)]
+pub struct ICoreTextEditContext {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Name: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetName: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub InputScope: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut CoreTextInputScope) -> ::windows_sys::core::HRESULT,
+    pub SetInputScope: unsafe extern "system" fn(this: *mut *mut Self, value: CoreTextInputScope) -> ::windows_sys::core::HRESULT,
+    pub IsReadOnly: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetIsReadOnly: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+    pub InputPaneDisplayPolicy: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut CoreTextInputPaneDisplayPolicy) -> ::windows_sys::core::HRESULT,
+    pub SetInputPaneDisplayPolicy: unsafe extern "system" fn(this: *mut *mut Self, value: CoreTextInputPaneDisplayPolicy) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub TextRequested: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    TextRequested: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveTextRequested: unsafe extern "system" fn(this: *mut *mut Self, cookie: super::super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveTextRequested: usize,
+    #[cfg(feature = "Foundation")]
+    pub SelectionRequested: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    SelectionRequested: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveSelectionRequested: unsafe extern "system" fn(this: *mut *mut Self, cookie: super::super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveSelectionRequested: usize,
+    #[cfg(feature = "Foundation")]
+    pub LayoutRequested: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    LayoutRequested: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveLayoutRequested: unsafe extern "system" fn(this: *mut *mut Self, cookie: super::super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveLayoutRequested: usize,
+    #[cfg(feature = "Foundation")]
+    pub TextUpdating: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    TextUpdating: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveTextUpdating: unsafe extern "system" fn(this: *mut *mut Self, cookie: super::super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveTextUpdating: usize,
+    #[cfg(feature = "Foundation")]
+    pub SelectionUpdating: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    SelectionUpdating: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveSelectionUpdating: unsafe extern "system" fn(this: *mut *mut Self, cookie: super::super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveSelectionUpdating: usize,
+    #[cfg(feature = "Foundation")]
+    pub FormatUpdating: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    FormatUpdating: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveFormatUpdating: unsafe extern "system" fn(this: *mut *mut Self, cookie: super::super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveFormatUpdating: usize,
+    #[cfg(feature = "Foundation")]
+    pub CompositionStarted: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    CompositionStarted: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveCompositionStarted: unsafe extern "system" fn(this: *mut *mut Self, cookie: super::super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveCompositionStarted: usize,
+    #[cfg(feature = "Foundation")]
+    pub CompositionCompleted: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    CompositionCompleted: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveCompositionCompleted: unsafe extern "system" fn(this: *mut *mut Self, cookie: super::super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveCompositionCompleted: usize,
+    #[cfg(feature = "Foundation")]
+    pub FocusRemoved: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    FocusRemoved: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveFocusRemoved: unsafe extern "system" fn(this: *mut *mut Self, cookie: super::super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveFocusRemoved: usize,
+    pub NotifyFocusEnter: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub NotifyFocusLeave: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub NotifyTextChanged: unsafe extern "system" fn(this: *mut *mut Self, modifiedrange: CoreTextRange, newlength: i32, newselection: CoreTextRange) -> ::windows_sys::core::HRESULT,
+    pub NotifySelectionChanged: unsafe extern "system" fn(this: *mut *mut Self, selection: CoreTextRange) -> ::windows_sys::core::HRESULT,
+    pub NotifyLayoutChanged: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ICoreTextEditContext2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub NotifyFocusLeaveCompleted: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    NotifyFocusLeaveCompleted: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveNotifyFocusLeaveCompleted: unsafe extern "system" fn(this: *mut *mut Self, cookie: super::super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveNotifyFocusLeaveCompleted: usize,
+}
+#[repr(C)]
+pub struct ICoreTextFormatUpdatingEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Range: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut CoreTextRange) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Foundation", feature = "UI_ViewManagement"))]
+    pub TextColor: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation", feature = "UI_ViewManagement")))]
+    TextColor: usize,
+    #[cfg(all(feature = "Foundation", feature = "UI_ViewManagement"))]
+    pub BackgroundColor: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation", feature = "UI_ViewManagement")))]
+    BackgroundColor: usize,
+    #[cfg(all(feature = "Foundation", feature = "UI_ViewManagement"))]
+    pub UnderlineColor: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation", feature = "UI_ViewManagement")))]
+    UnderlineColor: usize,
+    #[cfg(feature = "Foundation")]
+    pub UnderlineType: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    UnderlineType: usize,
+    pub Reason: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut CoreTextFormatUpdatingReason) -> ::windows_sys::core::HRESULT,
+    pub Result: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut CoreTextFormatUpdatingResult) -> ::windows_sys::core::HRESULT,
+    pub SetResult: unsafe extern "system" fn(this: *mut *mut Self, value: CoreTextFormatUpdatingResult) -> ::windows_sys::core::HRESULT,
+    pub IsCanceled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub GetDeferral: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    GetDeferral: usize,
+}
+#[repr(C)]
+pub struct ICoreTextLayoutBounds {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub TextBounds: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::super::Foundation::Rect) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    TextBounds: usize,
+    #[cfg(feature = "Foundation")]
+    pub SetTextBounds: unsafe extern "system" fn(this: *mut *mut Self, value: super::super::super::Foundation::Rect) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    SetTextBounds: usize,
+    #[cfg(feature = "Foundation")]
+    pub ControlBounds: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::super::Foundation::Rect) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    ControlBounds: usize,
+    #[cfg(feature = "Foundation")]
+    pub SetControlBounds: unsafe extern "system" fn(this: *mut *mut Self, value: super::super::super::Foundation::Rect) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    SetControlBounds: usize,
+}
+#[repr(C)]
+pub struct ICoreTextLayoutRequest {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Range: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut CoreTextRange) -> ::windows_sys::core::HRESULT,
+    pub LayoutBounds: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub IsCanceled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub GetDeferral: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    GetDeferral: usize,
+}
+#[repr(C)]
+pub struct ICoreTextLayoutRequest2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub LayoutBoundsVisualPixels: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ICoreTextLayoutRequestedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Request: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ICoreTextSelectionRequest {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Selection: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut CoreTextRange) -> ::windows_sys::core::HRESULT,
+    pub SetSelection: unsafe extern "system" fn(this: *mut *mut Self, value: CoreTextRange) -> ::windows_sys::core::HRESULT,
+    pub IsCanceled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub GetDeferral: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    GetDeferral: usize,
+}
+#[repr(C)]
+pub struct ICoreTextSelectionRequestedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Request: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ICoreTextSelectionUpdatingEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Selection: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut CoreTextRange) -> ::windows_sys::core::HRESULT,
+    pub Result: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut CoreTextSelectionUpdatingResult) -> ::windows_sys::core::HRESULT,
+    pub SetResult: unsafe extern "system" fn(this: *mut *mut Self, value: CoreTextSelectionUpdatingResult) -> ::windows_sys::core::HRESULT,
+    pub IsCanceled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub GetDeferral: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    GetDeferral: usize,
+}
+#[repr(C)]
+pub struct ICoreTextServicesManager {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Globalization")]
+    pub InputLanguage: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Globalization"))]
+    InputLanguage: usize,
+    #[cfg(feature = "Foundation")]
+    pub InputLanguageChanged: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    InputLanguageChanged: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveInputLanguageChanged: unsafe extern "system" fn(this: *mut *mut Self, cookie: super::super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveInputLanguageChanged: usize,
+    pub CreateEditContext: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ICoreTextServicesManagerStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub GetForCurrentView: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ICoreTextServicesStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub HiddenCharacter: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u16) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ICoreTextTextRequest {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Range: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut CoreTextRange) -> ::windows_sys::core::HRESULT,
+    pub Text: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetText: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub IsCanceled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub GetDeferral: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    GetDeferral: usize,
+}
+#[repr(C)]
+pub struct ICoreTextTextRequestedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Request: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ICoreTextTextUpdatingEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Range: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut CoreTextRange) -> ::windows_sys::core::HRESULT,
+    pub Text: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub NewSelection: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut CoreTextRange) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Globalization")]
+    pub InputLanguage: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Globalization"))]
+    InputLanguage: usize,
+    pub Result: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut CoreTextTextUpdatingResult) -> ::windows_sys::core::HRESULT,
+    pub SetResult: unsafe extern "system" fn(this: *mut *mut Self, value: CoreTextTextUpdatingResult) -> ::windows_sys::core::HRESULT,
+    pub IsCanceled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub GetDeferral: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    GetDeferral: usize,
+}

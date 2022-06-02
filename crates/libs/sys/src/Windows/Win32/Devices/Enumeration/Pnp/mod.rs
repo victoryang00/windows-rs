@@ -41,32 +41,387 @@ pub const FAULT_INVALID_SEQUENCE_NUMBER: u32 = 403u32;
 #[doc = "*Required features: `\"Win32_Devices_Enumeration_Pnp\"`*"]
 pub const FAULT_INVALID_VARIABLE: u32 = 404u32;
 pub type HSWDEVICE = isize;
-pub type IUPnPAddressFamilyControl = *mut ::core::ffi::c_void;
-pub type IUPnPAsyncResult = *mut ::core::ffi::c_void;
-pub type IUPnPDescriptionDocument = *mut ::core::ffi::c_void;
-pub type IUPnPDescriptionDocumentCallback = *mut ::core::ffi::c_void;
-pub type IUPnPDevice = *mut ::core::ffi::c_void;
-pub type IUPnPDeviceControl = *mut ::core::ffi::c_void;
-pub type IUPnPDeviceControlHttpHeaders = *mut ::core::ffi::c_void;
-pub type IUPnPDeviceDocumentAccess = *mut ::core::ffi::c_void;
-pub type IUPnPDeviceDocumentAccessEx = *mut ::core::ffi::c_void;
-pub type IUPnPDeviceFinder = *mut ::core::ffi::c_void;
-pub type IUPnPDeviceFinderAddCallbackWithInterface = *mut ::core::ffi::c_void;
-pub type IUPnPDeviceFinderCallback = *mut ::core::ffi::c_void;
-pub type IUPnPDeviceProvider = *mut ::core::ffi::c_void;
-pub type IUPnPDevices = *mut ::core::ffi::c_void;
-pub type IUPnPEventSink = *mut ::core::ffi::c_void;
-pub type IUPnPEventSource = *mut ::core::ffi::c_void;
-pub type IUPnPHttpHeaderControl = *mut ::core::ffi::c_void;
-pub type IUPnPRegistrar = *mut ::core::ffi::c_void;
-pub type IUPnPRemoteEndpointInfo = *mut ::core::ffi::c_void;
-pub type IUPnPReregistrar = *mut ::core::ffi::c_void;
-pub type IUPnPService = *mut ::core::ffi::c_void;
-pub type IUPnPServiceAsync = *mut ::core::ffi::c_void;
-pub type IUPnPServiceCallback = *mut ::core::ffi::c_void;
-pub type IUPnPServiceDocumentAccess = *mut ::core::ffi::c_void;
-pub type IUPnPServiceEnumProperty = *mut ::core::ffi::c_void;
-pub type IUPnPServices = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IUPnPAddressFamilyControl {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetAddressFamily: unsafe extern "system" fn(this: *mut *mut Self, dwflags: i32) -> ::windows_sys::core::HRESULT,
+    pub GetAddressFamily: unsafe extern "system" fn(this: *mut *mut Self, pdwflags: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IUPnPAsyncResult {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub AsyncOperationComplete: unsafe extern "system" fn(this: *mut *mut Self, ullrequestid: u64) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IUPnPDescriptionDocument {
+    pub base__: super::super::super::System::Com::IDispatch,
+    pub ReadyState: unsafe extern "system" fn(this: *mut *mut Self, plreadystate: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Load: unsafe extern "system" fn(this: *mut *mut Self, bstrurl: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Load: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub LoadAsync: unsafe extern "system" fn(this: *mut *mut Self, bstrurl: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, punkcallback: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    LoadAsync: usize,
+    pub LoadResult: unsafe extern "system" fn(this: *mut *mut Self, phrerror: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub Abort: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub RootDevice: unsafe extern "system" fn(this: *mut *mut Self, ppudrootdevice: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    RootDevice: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub DeviceByUDN: unsafe extern "system" fn(this: *mut *mut Self, bstrudn: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, ppuddevice: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    DeviceByUDN: usize,
+}
+#[repr(C)]
+pub struct IUPnPDescriptionDocumentCallback {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub LoadComplete: unsafe extern "system" fn(this: *mut *mut Self, hrloadresult: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IUPnPDevice {
+    pub base__: super::super::super::System::Com::IDispatch,
+    pub IsRootDevice: unsafe extern "system" fn(this: *mut *mut Self, pvarb: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub RootDevice: unsafe extern "system" fn(this: *mut *mut Self, ppudrootdevice: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    RootDevice: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub ParentDevice: unsafe extern "system" fn(this: *mut *mut Self, ppuddeviceparent: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    ParentDevice: usize,
+    pub HasChildren: unsafe extern "system" fn(this: *mut *mut Self, pvarb: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Children: unsafe extern "system" fn(this: *mut *mut Self, ppudchildren: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Children: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub UniqueDeviceName: unsafe extern "system" fn(this: *mut *mut Self, pbstr: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    UniqueDeviceName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub FriendlyName: unsafe extern "system" fn(this: *mut *mut Self, pbstr: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    FriendlyName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Type: unsafe extern "system" fn(this: *mut *mut Self, pbstr: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Type: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub PresentationURL: unsafe extern "system" fn(this: *mut *mut Self, pbstr: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    PresentationURL: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ManufacturerName: unsafe extern "system" fn(this: *mut *mut Self, pbstr: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ManufacturerName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ManufacturerURL: unsafe extern "system" fn(this: *mut *mut Self, pbstr: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ManufacturerURL: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ModelName: unsafe extern "system" fn(this: *mut *mut Self, pbstr: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ModelName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ModelNumber: unsafe extern "system" fn(this: *mut *mut Self, pbstr: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ModelNumber: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Description: unsafe extern "system" fn(this: *mut *mut Self, pbstr: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Description: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ModelURL: unsafe extern "system" fn(this: *mut *mut Self, pbstr: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ModelURL: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub UPC: unsafe extern "system" fn(this: *mut *mut Self, pbstr: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    UPC: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SerialNumber: unsafe extern "system" fn(this: *mut *mut Self, pbstr: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SerialNumber: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IconURL: unsafe extern "system" fn(this: *mut *mut Self, bstrencodingformat: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, lsizex: i32, lsizey: i32, lbitdepth: i32, pbstriconurl: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IconURL: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Services: unsafe extern "system" fn(this: *mut *mut Self, ppusservices: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Services: usize,
+}
+#[repr(C)]
+pub struct IUPnPDeviceControl {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, bstrxmldesc: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, bstrdeviceidentifier: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, bstrinitstring: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Initialize: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub GetServiceObject: unsafe extern "system" fn(this: *mut *mut Self, bstrudn: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, bstrserviceid: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, ppdispservice: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    GetServiceObject: usize,
+}
+#[repr(C)]
+pub struct IUPnPDeviceControlHttpHeaders {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetAdditionalResponseHeaders: unsafe extern "system" fn(this: *mut *mut Self, bstrhttpresponseheaders: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetAdditionalResponseHeaders: usize,
+}
+#[repr(C)]
+pub struct IUPnPDeviceDocumentAccess {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetDocumentURL: unsafe extern "system" fn(this: *mut *mut Self, pbstrdocument: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetDocumentURL: usize,
+}
+#[repr(C)]
+pub struct IUPnPDeviceDocumentAccessEx {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetDocument: unsafe extern "system" fn(this: *mut *mut Self, pbstrdocument: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetDocument: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IUPnPDeviceFinder {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub FindByType: unsafe extern "system" fn(this: *mut *mut Self, bstrtypeuri: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, dwflags: u32, pdevices: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    FindByType: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CreateAsyncFind: unsafe extern "system" fn(this: *mut *mut Self, bstrtypeuri: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, dwflags: u32, punkdevicefindercallback: *mut ::core::ffi::c_void, plfinddata: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CreateAsyncFind: usize,
+    pub StartAsyncFind: unsafe extern "system" fn(this: *mut *mut Self, lfinddata: i32) -> ::windows_sys::core::HRESULT,
+    pub CancelAsyncFind: unsafe extern "system" fn(this: *mut *mut Self, lfinddata: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub FindByUDN: unsafe extern "system" fn(this: *mut *mut Self, bstrudn: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, pdevice: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    FindByUDN: usize,
+}
+#[repr(C)]
+pub struct IUPnPDeviceFinderAddCallbackWithInterface {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com")]
+    pub DeviceAddedWithInterface: unsafe extern "system" fn(this: *mut *mut Self, lfinddata: i32, pdevice: *mut ::core::ffi::c_void, pguidinterface: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    DeviceAddedWithInterface: usize,
+}
+#[repr(C)]
+pub struct IUPnPDeviceFinderCallback {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com")]
+    pub DeviceAdded: unsafe extern "system" fn(this: *mut *mut Self, lfinddata: i32, pdevice: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    DeviceAdded: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DeviceRemoved: unsafe extern "system" fn(this: *mut *mut Self, lfinddata: i32, bstrudn: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DeviceRemoved: usize,
+    pub SearchComplete: unsafe extern "system" fn(this: *mut *mut Self, lfinddata: i32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IUPnPDeviceProvider {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Start: unsafe extern "system" fn(this: *mut *mut Self, bstrinitstring: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Start: usize,
+    pub Stop: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IUPnPDevices {
+    pub base__: super::super::super::System::Com::IDispatch,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, plcount: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, ppunk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub get_Item: unsafe extern "system" fn(this: *mut *mut Self, bstrudn: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, ppdevice: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    get_Item: usize,
+}
+#[repr(C)]
+pub struct IUPnPEventSink {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnStateChanged: unsafe extern "system" fn(this: *mut *mut Self, cchanges: u32, rgdispidchanges: *const i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub OnStateChangedSafe: unsafe extern "system" fn(this: *mut *mut Self, varsadispidchanges: ::core::mem::ManuallyDrop<super::super::super::System::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    OnStateChangedSafe: usize,
+}
+#[repr(C)]
+pub struct IUPnPEventSource {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Advise: unsafe extern "system" fn(this: *mut *mut Self, pessubscriber: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Unadvise: unsafe extern "system" fn(this: *mut *mut Self, pessubscriber: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IUPnPHttpHeaderControl {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AddRequestHeaders: unsafe extern "system" fn(this: *mut *mut Self, bstrhttpheaders: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AddRequestHeaders: usize,
+}
+#[repr(C)]
+pub struct IUPnPRegistrar {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RegisterDevice: unsafe extern "system" fn(this: *mut *mut Self, bstrxmldesc: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, bstrprogiddevicecontrolclass: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, bstrinitstring: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, bstrcontainerid: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, bstrresourcepath: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, nlifetime: i32, pbstrdeviceidentifier: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RegisterDevice: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RegisterRunningDevice: unsafe extern "system" fn(this: *mut *mut Self, bstrxmldesc: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, punkdevicecontrol: *mut ::core::ffi::c_void, bstrinitstring: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, bstrresourcepath: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, nlifetime: i32, pbstrdeviceidentifier: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RegisterRunningDevice: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RegisterDeviceProvider: unsafe extern "system" fn(this: *mut *mut Self, bstrprovidername: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, bstrprogidproviderclass: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, bstrinitstring: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, bstrcontainerid: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RegisterDeviceProvider: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetUniqueDeviceName: unsafe extern "system" fn(this: *mut *mut Self, bstrdeviceidentifier: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, bstrtemplateudn: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, pbstrudn: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetUniqueDeviceName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub UnregisterDevice: unsafe extern "system" fn(this: *mut *mut Self, bstrdeviceidentifier: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, fpermanent: super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    UnregisterDevice: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub UnregisterDeviceProvider: unsafe extern "system" fn(this: *mut *mut Self, bstrprovidername: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    UnregisterDeviceProvider: usize,
+}
+#[repr(C)]
+pub struct IUPnPRemoteEndpointInfo {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetDwordValue: unsafe extern "system" fn(this: *mut *mut Self, bstrvaluename: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, pdwvalue: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetDwordValue: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetStringValue: unsafe extern "system" fn(this: *mut *mut Self, bstrvaluename: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, pbstrvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetStringValue: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetGuidValue: unsafe extern "system" fn(this: *mut *mut Self, bstrvaluename: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, pguidvalue: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetGuidValue: usize,
+}
+#[repr(C)]
+pub struct IUPnPReregistrar {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ReregisterDevice: unsafe extern "system" fn(this: *mut *mut Self, bstrdeviceidentifier: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, bstrxmldesc: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, bstrprogiddevicecontrolclass: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, bstrinitstring: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, bstrcontainerid: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, bstrresourcepath: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, nlifetime: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ReregisterDevice: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ReregisterRunningDevice: unsafe extern "system" fn(this: *mut *mut Self, bstrdeviceidentifier: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, bstrxmldesc: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, punkdevicecontrol: *mut ::core::ffi::c_void, bstrinitstring: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, bstrresourcepath: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, nlifetime: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ReregisterRunningDevice: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IUPnPService {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub QueryStateVariable: unsafe extern "system" fn(this: *mut *mut Self, bstrvariablename: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, pvalue: *mut super::super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    QueryStateVariable: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub InvokeAction: unsafe extern "system" fn(this: *mut *mut Self, bstractionname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, vinactionargs: ::core::mem::ManuallyDrop<super::super::super::System::Com::VARIANT>, pvoutactionargs: *mut super::super::super::System::Com::VARIANT, pvretval: *mut super::super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    InvokeAction: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ServiceTypeIdentifier: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ServiceTypeIdentifier: usize,
+    pub AddCallback: unsafe extern "system" fn(this: *mut *mut Self, punkcallback: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Id: unsafe extern "system" fn(this: *mut *mut Self, pbstrid: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Id: usize,
+    pub LastTransportStatus: unsafe extern "system" fn(this: *mut *mut Self, plvalue: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IUPnPServiceAsync {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub BeginInvokeAction: unsafe extern "system" fn(this: *mut *mut Self, bstractionname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, vinactionargs: ::core::mem::ManuallyDrop<super::super::super::System::Com::VARIANT>, pasyncresult: *mut ::core::ffi::c_void, pullrequestid: *mut u64) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    BeginInvokeAction: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub EndInvokeAction: unsafe extern "system" fn(this: *mut *mut Self, ullrequestid: u64, pvoutactionargs: *mut super::super::super::System::Com::VARIANT, pvretval: *mut super::super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    EndInvokeAction: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub BeginQueryStateVariable: unsafe extern "system" fn(this: *mut *mut Self, bstrvariablename: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, pasyncresult: *mut ::core::ffi::c_void, pullrequestid: *mut u64) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    BeginQueryStateVariable: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub EndQueryStateVariable: unsafe extern "system" fn(this: *mut *mut Self, ullrequestid: u64, pvalue: *mut super::super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    EndQueryStateVariable: usize,
+    pub BeginSubscribeToEvents: unsafe extern "system" fn(this: *mut *mut Self, punkcallback: *mut ::core::ffi::c_void, pasyncresult: *mut ::core::ffi::c_void, pullrequestid: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub EndSubscribeToEvents: unsafe extern "system" fn(this: *mut *mut Self, ullrequestid: u64) -> ::windows_sys::core::HRESULT,
+    pub BeginSCPDDownload: unsafe extern "system" fn(this: *mut *mut Self, pasyncresult: *mut ::core::ffi::c_void, pullrequestid: *mut u64) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub EndSCPDDownload: unsafe extern "system" fn(this: *mut *mut Self, ullrequestid: u64, pbstrscpddoc: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    EndSCPDDownload: usize,
+    pub CancelAsyncOperation: unsafe extern "system" fn(this: *mut *mut Self, ullrequestid: u64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IUPnPServiceCallback {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub StateVariableChanged: unsafe extern "system" fn(this: *mut *mut Self, pus: *mut ::core::ffi::c_void, pcwszstatevarname: ::windows_sys::core::PCWSTR, vavalue: ::core::mem::ManuallyDrop<super::super::super::System::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    StateVariableChanged: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub ServiceInstanceDied: unsafe extern "system" fn(this: *mut *mut Self, pus: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    ServiceInstanceDied: usize,
+}
+#[repr(C)]
+pub struct IUPnPServiceDocumentAccess {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetDocumentURL: unsafe extern "system" fn(this: *mut *mut Self, pbstrdocurl: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetDocumentURL: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetDocument: unsafe extern "system" fn(this: *mut *mut Self, pbstrdoc: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetDocument: usize,
+}
+#[repr(C)]
+pub struct IUPnPServiceEnumProperty {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetServiceEnumProperty: unsafe extern "system" fn(this: *mut *mut Self, dwmask: u32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IUPnPServices {
+    pub base__: super::super::super::System::Com::IDispatch,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, plcount: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, ppunk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub get_Item: unsafe extern "system" fn(this: *mut *mut Self, bstrserviceid: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, ppservice: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    get_Item: usize,
+}
 #[doc = "*Required features: `\"Win32_Devices_Enumeration_Pnp\"`*"]
 pub const REMOTE_ADDRESS_VALUE_NAME: &str = "RemoteAddress";
 #[doc = "*Required features: `\"Win32_Devices_Enumeration_Pnp\"`*"]

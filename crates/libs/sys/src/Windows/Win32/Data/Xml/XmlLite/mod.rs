@@ -2,22 +2,22 @@
 extern "system" {
     #[doc = "*Required features: `\"Win32_Data_Xml_XmlLite\"`, `\"Win32_System_Com\"`*"]
     #[cfg(feature = "Win32_System_Com")]
-    pub fn CreateXmlReader(riid: *const ::windows_sys::core::GUID, ppvobject: *mut *mut ::core::ffi::c_void, pmalloc: super::super::super::System::Com::IMalloc) -> ::windows_sys::core::HRESULT;
+    pub fn CreateXmlReader(riid: *const ::windows_sys::core::GUID, ppvobject: *mut *mut ::core::ffi::c_void, pmalloc: *mut *mut super::super::super::System::Com::IMalloc) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Data_Xml_XmlLite\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub fn CreateXmlReaderInputWithEncodingCodePage(pinputstream: ::windows_sys::core::IUnknown, pmalloc: super::super::super::System::Com::IMalloc, nencodingcodepage: u32, fencodinghint: super::super::super::Foundation::BOOL, pwszbaseuri: ::windows_sys::core::PCWSTR, ppinput: *mut ::windows_sys::core::IUnknown) -> ::windows_sys::core::HRESULT;
+    pub fn CreateXmlReaderInputWithEncodingCodePage(pinputstream: *mut *mut ::windows_sys::core::IUnknown, pmalloc: *mut *mut super::super::super::System::Com::IMalloc, nencodingcodepage: u32, fencodinghint: super::super::super::Foundation::BOOL, pwszbaseuri: ::windows_sys::core::PCWSTR, ppinput: *mut *mut *mut ::windows_sys::core::IUnknown) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Data_Xml_XmlLite\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub fn CreateXmlReaderInputWithEncodingName(pinputstream: ::windows_sys::core::IUnknown, pmalloc: super::super::super::System::Com::IMalloc, pwszencodingname: ::windows_sys::core::PCWSTR, fencodinghint: super::super::super::Foundation::BOOL, pwszbaseuri: ::windows_sys::core::PCWSTR, ppinput: *mut ::windows_sys::core::IUnknown) -> ::windows_sys::core::HRESULT;
+    pub fn CreateXmlReaderInputWithEncodingName(pinputstream: *mut *mut ::windows_sys::core::IUnknown, pmalloc: *mut *mut super::super::super::System::Com::IMalloc, pwszencodingname: ::windows_sys::core::PCWSTR, fencodinghint: super::super::super::Foundation::BOOL, pwszbaseuri: ::windows_sys::core::PCWSTR, ppinput: *mut *mut *mut ::windows_sys::core::IUnknown) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Data_Xml_XmlLite\"`, `\"Win32_System_Com\"`*"]
     #[cfg(feature = "Win32_System_Com")]
-    pub fn CreateXmlWriter(riid: *const ::windows_sys::core::GUID, ppvobject: *mut *mut ::core::ffi::c_void, pmalloc: super::super::super::System::Com::IMalloc) -> ::windows_sys::core::HRESULT;
+    pub fn CreateXmlWriter(riid: *const ::windows_sys::core::GUID, ppvobject: *mut *mut ::core::ffi::c_void, pmalloc: *mut *mut super::super::super::System::Com::IMalloc) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Data_Xml_XmlLite\"`, `\"Win32_System_Com\"`*"]
     #[cfg(feature = "Win32_System_Com")]
-    pub fn CreateXmlWriterOutputWithEncodingCodePage(poutputstream: ::windows_sys::core::IUnknown, pmalloc: super::super::super::System::Com::IMalloc, nencodingcodepage: u32, ppoutput: *mut ::windows_sys::core::IUnknown) -> ::windows_sys::core::HRESULT;
+    pub fn CreateXmlWriterOutputWithEncodingCodePage(poutputstream: *mut *mut ::windows_sys::core::IUnknown, pmalloc: *mut *mut super::super::super::System::Com::IMalloc, nencodingcodepage: u32, ppoutput: *mut *mut *mut ::windows_sys::core::IUnknown) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Data_Xml_XmlLite\"`, `\"Win32_System_Com\"`*"]
     #[cfg(feature = "Win32_System_Com")]
-    pub fn CreateXmlWriterOutputWithEncodingName(poutputstream: ::windows_sys::core::IUnknown, pmalloc: super::super::super::System::Com::IMalloc, pwszencodingname: ::windows_sys::core::PCWSTR, ppoutput: *mut ::windows_sys::core::IUnknown) -> ::windows_sys::core::HRESULT;
+    pub fn CreateXmlWriterOutputWithEncodingName(poutputstream: *mut *mut ::windows_sys::core::IUnknown, pmalloc: *mut *mut super::super::super::System::Com::IMalloc, pwszencodingname: ::windows_sys::core::PCWSTR, ppoutput: *mut *mut *mut ::windows_sys::core::IUnknown) -> ::windows_sys::core::HRESULT;
 }
 #[doc = "*Required features: `\"Win32_Data_Xml_XmlLite\"`*"]
 pub type DtdProcessing = i32;
@@ -27,10 +27,130 @@ pub const DtdProcessing_Prohibit: DtdProcessing = 0i32;
 pub const DtdProcessing_Parse: DtdProcessing = 1i32;
 #[doc = "*Required features: `\"Win32_Data_Xml_XmlLite\"`*"]
 pub const _DtdProcessing_Last: DtdProcessing = 1i32;
-pub type IXmlReader = *mut ::core::ffi::c_void;
-pub type IXmlResolver = *mut ::core::ffi::c_void;
-pub type IXmlWriter = *mut ::core::ffi::c_void;
-pub type IXmlWriterLite = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IXmlReader {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetInput: unsafe extern "system" fn(this: *mut *mut Self, pinput: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetProperty: unsafe extern "system" fn(this: *mut *mut Self, nproperty: u32, ppvalue: *mut isize) -> ::windows_sys::core::HRESULT,
+    pub SetProperty: unsafe extern "system" fn(this: *mut *mut Self, nproperty: u32, pvalue: isize) -> ::windows_sys::core::HRESULT,
+    pub Read: unsafe extern "system" fn(this: *mut *mut Self, pnodetype: *mut XmlNodeType) -> ::windows_sys::core::HRESULT,
+    pub GetNodeType: unsafe extern "system" fn(this: *mut *mut Self, pnodetype: *mut XmlNodeType) -> ::windows_sys::core::HRESULT,
+    pub MoveToFirstAttribute: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub MoveToNextAttribute: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub MoveToAttributeByName: unsafe extern "system" fn(this: *mut *mut Self, pwszlocalname: ::windows_sys::core::PCWSTR, pwsznamespaceuri: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub MoveToElement: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetQualifiedName: unsafe extern "system" fn(this: *mut *mut Self, ppwszqualifiedname: *mut ::windows_sys::core::PWSTR, pcwchqualifiedname: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetNamespaceUri: unsafe extern "system" fn(this: *mut *mut Self, ppwsznamespaceuri: *mut ::windows_sys::core::PWSTR, pcwchnamespaceuri: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetLocalName: unsafe extern "system" fn(this: *mut *mut Self, ppwszlocalname: *mut ::windows_sys::core::PWSTR, pcwchlocalname: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetPrefix: unsafe extern "system" fn(this: *mut *mut Self, ppwszprefix: *mut ::windows_sys::core::PWSTR, pcwchprefix: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetValue: unsafe extern "system" fn(this: *mut *mut Self, ppwszvalue: *mut ::windows_sys::core::PWSTR, pcwchvalue: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub ReadValueChunk: unsafe extern "system" fn(this: *mut *mut Self, pwchbuffer: ::windows_sys::core::PWSTR, cwchchunksize: u32, pcwchread: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetBaseUri: unsafe extern "system" fn(this: *mut *mut Self, ppwszbaseuri: *mut ::windows_sys::core::PWSTR, pcwchbaseuri: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsDefault: unsafe extern "system" fn(this: *mut *mut Self) -> super::super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsDefault: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsEmptyElement: unsafe extern "system" fn(this: *mut *mut Self) -> super::super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsEmptyElement: usize,
+    pub GetLineNumber: unsafe extern "system" fn(this: *mut *mut Self, pnlinenumber: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetLinePosition: unsafe extern "system" fn(this: *mut *mut Self, pnlineposition: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetAttributeCount: unsafe extern "system" fn(this: *mut *mut Self, pnattributecount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetDepth: unsafe extern "system" fn(this: *mut *mut Self, pndepth: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsEOF: unsafe extern "system" fn(this: *mut *mut Self) -> super::super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsEOF: usize,
+}
+#[repr(C)]
+pub struct IXmlResolver {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub ResolveUri: unsafe extern "system" fn(this: *mut *mut Self, pwszbaseuri: ::windows_sys::core::PCWSTR, pwszpublicidentifier: ::windows_sys::core::PCWSTR, pwszsystemidentifier: ::windows_sys::core::PCWSTR, ppresolvedinput: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IXmlWriter {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetOutput: unsafe extern "system" fn(this: *mut *mut Self, poutput: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetProperty: unsafe extern "system" fn(this: *mut *mut Self, nproperty: u32, ppvalue: *mut isize) -> ::windows_sys::core::HRESULT,
+    pub SetProperty: unsafe extern "system" fn(this: *mut *mut Self, nproperty: u32, pvalue: isize) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub WriteAttributes: unsafe extern "system" fn(this: *mut *mut Self, preader: *mut ::core::ffi::c_void, fwritedefaultattributes: super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    WriteAttributes: usize,
+    pub WriteAttributeString: unsafe extern "system" fn(this: *mut *mut Self, pwszprefix: ::windows_sys::core::PCWSTR, pwszlocalname: ::windows_sys::core::PCWSTR, pwsznamespaceuri: ::windows_sys::core::PCWSTR, pwszvalue: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub WriteCData: unsafe extern "system" fn(this: *mut *mut Self, pwsztext: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub WriteCharEntity: unsafe extern "system" fn(this: *mut *mut Self, wch: u16) -> ::windows_sys::core::HRESULT,
+    pub WriteChars: unsafe extern "system" fn(this: *mut *mut Self, pwch: ::windows_sys::core::PCWSTR, cwch: u32) -> ::windows_sys::core::HRESULT,
+    pub WriteComment: unsafe extern "system" fn(this: *mut *mut Self, pwszcomment: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub WriteDocType: unsafe extern "system" fn(this: *mut *mut Self, pwszname: ::windows_sys::core::PCWSTR, pwszpublicid: ::windows_sys::core::PCWSTR, pwszsystemid: ::windows_sys::core::PCWSTR, pwszsubset: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub WriteElementString: unsafe extern "system" fn(this: *mut *mut Self, pwszprefix: ::windows_sys::core::PCWSTR, pwszlocalname: ::windows_sys::core::PCWSTR, pwsznamespaceuri: ::windows_sys::core::PCWSTR, pwszvalue: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub WriteEndDocument: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub WriteEndElement: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub WriteEntityRef: unsafe extern "system" fn(this: *mut *mut Self, pwszname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub WriteFullEndElement: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub WriteName: unsafe extern "system" fn(this: *mut *mut Self, pwszname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub WriteNmToken: unsafe extern "system" fn(this: *mut *mut Self, pwsznmtoken: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub WriteNode: unsafe extern "system" fn(this: *mut *mut Self, preader: *mut ::core::ffi::c_void, fwritedefaultattributes: super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    WriteNode: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub WriteNodeShallow: unsafe extern "system" fn(this: *mut *mut Self, preader: *mut ::core::ffi::c_void, fwritedefaultattributes: super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    WriteNodeShallow: usize,
+    pub WriteProcessingInstruction: unsafe extern "system" fn(this: *mut *mut Self, pwszname: ::windows_sys::core::PCWSTR, pwsztext: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub WriteQualifiedName: unsafe extern "system" fn(this: *mut *mut Self, pwszlocalname: ::windows_sys::core::PCWSTR, pwsznamespaceuri: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub WriteRaw: unsafe extern "system" fn(this: *mut *mut Self, pwszdata: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub WriteRawChars: unsafe extern "system" fn(this: *mut *mut Self, pwch: ::windows_sys::core::PCWSTR, cwch: u32) -> ::windows_sys::core::HRESULT,
+    pub WriteStartDocument: unsafe extern "system" fn(this: *mut *mut Self, standalone: XmlStandalone) -> ::windows_sys::core::HRESULT,
+    pub WriteStartElement: unsafe extern "system" fn(this: *mut *mut Self, pwszprefix: ::windows_sys::core::PCWSTR, pwszlocalname: ::windows_sys::core::PCWSTR, pwsznamespaceuri: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub WriteString: unsafe extern "system" fn(this: *mut *mut Self, pwsztext: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub WriteSurrogateCharEntity: unsafe extern "system" fn(this: *mut *mut Self, wchlow: u16, wchhigh: u16) -> ::windows_sys::core::HRESULT,
+    pub WriteWhitespace: unsafe extern "system" fn(this: *mut *mut Self, pwszwhitespace: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub Flush: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IXmlWriterLite {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetOutput: unsafe extern "system" fn(this: *mut *mut Self, poutput: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetProperty: unsafe extern "system" fn(this: *mut *mut Self, nproperty: u32, ppvalue: *mut isize) -> ::windows_sys::core::HRESULT,
+    pub SetProperty: unsafe extern "system" fn(this: *mut *mut Self, nproperty: u32, pvalue: isize) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub WriteAttributes: unsafe extern "system" fn(this: *mut *mut Self, preader: *mut ::core::ffi::c_void, fwritedefaultattributes: super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    WriteAttributes: usize,
+    pub WriteAttributeString: unsafe extern "system" fn(this: *mut *mut Self, pwszqname: ::windows_sys::core::PCWSTR, cwszqname: u32, pwszvalue: ::windows_sys::core::PCWSTR, cwszvalue: u32) -> ::windows_sys::core::HRESULT,
+    pub WriteCData: unsafe extern "system" fn(this: *mut *mut Self, pwsztext: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub WriteCharEntity: unsafe extern "system" fn(this: *mut *mut Self, wch: u16) -> ::windows_sys::core::HRESULT,
+    pub WriteChars: unsafe extern "system" fn(this: *mut *mut Self, pwch: ::windows_sys::core::PCWSTR, cwch: u32) -> ::windows_sys::core::HRESULT,
+    pub WriteComment: unsafe extern "system" fn(this: *mut *mut Self, pwszcomment: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub WriteDocType: unsafe extern "system" fn(this: *mut *mut Self, pwszname: ::windows_sys::core::PCWSTR, pwszpublicid: ::windows_sys::core::PCWSTR, pwszsystemid: ::windows_sys::core::PCWSTR, pwszsubset: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub WriteElementString: unsafe extern "system" fn(this: *mut *mut Self, pwszqname: ::windows_sys::core::PCWSTR, cwszqname: u32, pwszvalue: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub WriteEndDocument: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub WriteEndElement: unsafe extern "system" fn(this: *mut *mut Self, pwszqname: ::windows_sys::core::PCWSTR, cwszqname: u32) -> ::windows_sys::core::HRESULT,
+    pub WriteEntityRef: unsafe extern "system" fn(this: *mut *mut Self, pwszname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub WriteFullEndElement: unsafe extern "system" fn(this: *mut *mut Self, pwszqname: ::windows_sys::core::PCWSTR, cwszqname: u32) -> ::windows_sys::core::HRESULT,
+    pub WriteName: unsafe extern "system" fn(this: *mut *mut Self, pwszname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub WriteNmToken: unsafe extern "system" fn(this: *mut *mut Self, pwsznmtoken: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub WriteNode: unsafe extern "system" fn(this: *mut *mut Self, preader: *mut ::core::ffi::c_void, fwritedefaultattributes: super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    WriteNode: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub WriteNodeShallow: unsafe extern "system" fn(this: *mut *mut Self, preader: *mut ::core::ffi::c_void, fwritedefaultattributes: super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    WriteNodeShallow: usize,
+    pub WriteProcessingInstruction: unsafe extern "system" fn(this: *mut *mut Self, pwszname: ::windows_sys::core::PCWSTR, pwsztext: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub WriteRaw: unsafe extern "system" fn(this: *mut *mut Self, pwszdata: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub WriteRawChars: unsafe extern "system" fn(this: *mut *mut Self, pwch: ::windows_sys::core::PCWSTR, cwch: u32) -> ::windows_sys::core::HRESULT,
+    pub WriteStartDocument: unsafe extern "system" fn(this: *mut *mut Self, standalone: XmlStandalone) -> ::windows_sys::core::HRESULT,
+    pub WriteStartElement: unsafe extern "system" fn(this: *mut *mut Self, pwszqname: ::windows_sys::core::PCWSTR, cwszqname: u32) -> ::windows_sys::core::HRESULT,
+    pub WriteString: unsafe extern "system" fn(this: *mut *mut Self, pwsztext: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub WriteSurrogateCharEntity: unsafe extern "system" fn(this: *mut *mut Self, wchlow: u16, wchhigh: u16) -> ::windows_sys::core::HRESULT,
+    pub WriteWhitespace: unsafe extern "system" fn(this: *mut *mut Self, pwszwhitespace: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub Flush: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
 #[doc = "*Required features: `\"Win32_Data_Xml_XmlLite\"`*"]
 pub type XmlConformanceLevel = i32;
 #[doc = "*Required features: `\"Win32_Data_Xml_XmlLite\"`*"]

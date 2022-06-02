@@ -1,5 +1,24 @@
-pub type IWCNConnectNotify = *mut ::core::ffi::c_void;
-pub type IWCNDevice = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IWCNConnectNotify {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub ConnectSucceeded: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub ConnectFailed: unsafe extern "system" fn(this: *mut *mut Self, hrfailure: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWCNDevice {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetPassword: unsafe extern "system" fn(this: *mut *mut Self, r#type: WCN_PASSWORD_TYPE, dwpasswordlength: u32, pbpassword: *const u8) -> ::windows_sys::core::HRESULT,
+    pub Connect: unsafe extern "system" fn(this: *mut *mut Self, pnotify: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetAttribute: unsafe extern "system" fn(this: *mut *mut Self, attributetype: WCN_ATTRIBUTE_TYPE, dwmaxbuffersize: u32, pbbuffer: *mut u8, pdwbufferused: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetIntegerAttribute: unsafe extern "system" fn(this: *mut *mut Self, attributetype: WCN_ATTRIBUTE_TYPE, puinteger: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetStringAttribute: unsafe extern "system" fn(this: *mut *mut Self, attributetype: WCN_ATTRIBUTE_TYPE, cchmaxstring: u32, wszstring: ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetNetworkProfile: unsafe extern "system" fn(this: *mut *mut Self, cchmaxstringlength: u32, wszprofile: ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetNetworkProfile: unsafe extern "system" fn(this: *mut *mut Self, pszprofilexml: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetVendorExtension: unsafe extern "system" fn(this: *mut *mut Self, pvendorextspec: *const WCN_VENDOR_EXTENSION_SPEC, dwmaxbuffersize: u32, pbbuffer: *mut u8, pdwbufferused: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetVendorExtension: unsafe extern "system" fn(this: *mut *mut Self, pvendorextspec: *const WCN_VENDOR_EXTENSION_SPEC, cbbuffer: u32, pbbuffer: *const u8) -> ::windows_sys::core::HRESULT,
+    pub Unadvise: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub SetNFCPasswordParams: unsafe extern "system" fn(this: *mut *mut Self, r#type: WCN_PASSWORD_TYPE, dwoobpasswordid: u32, dwpasswordlength: u32, pbpassword: *const u8, dwremotepublickeyhashlength: u32, pbremotepublickeyhash: *const u8, dwdhkeybloblength: u32, pbdhkeyblob: *const u8) -> ::windows_sys::core::HRESULT,
+}
 #[doc = "*Required features: `\"Win32_NetworkManagement_WindowsConnectNow\"`, `\"Win32_UI_Shell_PropertiesSystem\"`*"]
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
 pub const PKEY_WCN_DeviceType_Category: super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_sys::core::GUID { data1: 2283342731, data2: 18052, data3: 4570, data4: [162, 106, 0, 2, 179, 152, 142, 129] }, pid: 16u32 };

@@ -11,3 +11,8 @@ impl ::core::clone::Clone for ApplicationProfileModes {
         *self
     }
 }
+#[repr(C)]
+pub struct IApplicationProfileStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Modes: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ApplicationProfileModes) -> ::windows_sys::core::HRESULT,
+}

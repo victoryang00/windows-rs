@@ -50,13 +50,18 @@ fn gen_struct_with_name(gen: &Gen, def: TypeDef, struct_name: &str, cfg: &Cfg) -
     let fields = gen.reader.type_def_fields(def).map(|f| {
         let name = to_ident(gen.reader.field_name(f));
         let ty = gen.reader.field_type(f, Some(def));
-        let ty = gen.type_default_name(&ty);
+        
 
         if gen.reader.field_flags(f).literal() {
             quote! {}
         } else if !gen.sys && flags.union() && !gen.reader.field_is_blittable(f, def) {
+            let ty = gen.type_default_name(&ty);
             quote! { pub #name: ::core::mem::ManuallyDrop<#ty>, }
+        } else if gen.sys && gen.reader.type_is_nullable(&ty) {
+            let ty = gen.type_default_name(&ty);
+            quote! { pub #name: *mut *mut #ty, }
         } else {
+            let ty = gen.type_default_name(&ty);
             quote! { pub #name: #ty, }
         }
     });

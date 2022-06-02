@@ -199,7 +199,443 @@ impl ::core::clone::Clone for DeviceWatcherStatus {
 }
 pub type DeviceWatcherTriggerDetails = *mut ::core::ffi::c_void;
 pub type EnclosureLocation = *mut ::core::ffi::c_void;
-pub type IDevicePairingSettings = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IDeviceAccessChangedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Status: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut DeviceAccessStatus) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDeviceAccessChangedEventArgs2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Id: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDeviceAccessInformation {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub AccessChanged: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    AccessChanged: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveAccessChanged: unsafe extern "system" fn(this: *mut *mut Self, cookie: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveAccessChanged: usize,
+    pub CurrentStatus: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut DeviceAccessStatus) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDeviceAccessInformationStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CreateFromId: unsafe extern "system" fn(this: *mut *mut Self, deviceid: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateFromDeviceClassId: unsafe extern "system" fn(this: *mut *mut Self, deviceclassid: ::windows_sys::core::GUID, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateFromDeviceClass: unsafe extern "system" fn(this: *mut *mut Self, deviceclass: DeviceClass, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDeviceConnectionChangeTriggerDetails {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub DeviceId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDeviceDisconnectButtonClickedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Device: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDeviceInformation {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Id: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Name: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub IsEnabled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub IsDefault: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub EnclosureLocation: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub Properties: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    Properties: usize,
+    pub Update: unsafe extern "system" fn(this: *mut *mut Self, updateinfo: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    pub GetThumbnailAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    GetThumbnailAsync: usize,
+    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    pub GetGlyphThumbnailAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    GetGlyphThumbnailAsync: usize,
+}
+#[repr(C)]
+pub struct IDeviceInformation2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Kind: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut DeviceInformationKind) -> ::windows_sys::core::HRESULT,
+    pub Pairing: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDeviceInformationCustomPairing {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub PairAsync: unsafe extern "system" fn(this: *mut *mut Self, pairingkindssupported: DevicePairingKinds, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    PairAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub PairWithProtectionLevelAsync: unsafe extern "system" fn(this: *mut *mut Self, pairingkindssupported: DevicePairingKinds, minprotectionlevel: DevicePairingProtectionLevel, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    PairWithProtectionLevelAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub PairWithProtectionLevelAndSettingsAsync: unsafe extern "system" fn(this: *mut *mut Self, pairingkindssupported: DevicePairingKinds, minprotectionlevel: DevicePairingProtectionLevel, devicepairingsettings: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    PairWithProtectionLevelAndSettingsAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub PairingRequested: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    PairingRequested: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemovePairingRequested: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemovePairingRequested: usize,
+}
+#[repr(C)]
+pub struct IDeviceInformationPairing {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub IsPaired: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub CanPair: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub PairAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    PairAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub PairWithProtectionLevelAsync: unsafe extern "system" fn(this: *mut *mut Self, minprotectionlevel: DevicePairingProtectionLevel, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    PairWithProtectionLevelAsync: usize,
+}
+#[repr(C)]
+pub struct IDeviceInformationPairing2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub ProtectionLevel: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut DevicePairingProtectionLevel) -> ::windows_sys::core::HRESULT,
+    pub Custom: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub PairWithProtectionLevelAndSettingsAsync: unsafe extern "system" fn(this: *mut *mut Self, minprotectionlevel: DevicePairingProtectionLevel, devicepairingsettings: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    PairWithProtectionLevelAndSettingsAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub UnpairAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    UnpairAsync: usize,
+}
+#[repr(C)]
+pub struct IDeviceInformationPairingStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub TryRegisterForAllInboundPairingRequests: unsafe extern "system" fn(this: *mut *mut Self, pairingkindssupported: DevicePairingKinds, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDeviceInformationPairingStatics2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub TryRegisterForAllInboundPairingRequestsWithProtectionLevel: unsafe extern "system" fn(this: *mut *mut Self, pairingkindssupported: DevicePairingKinds, minprotectionlevel: DevicePairingProtectionLevel, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDeviceInformationStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub CreateFromIdAsync: unsafe extern "system" fn(this: *mut *mut Self, deviceid: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    CreateFromIdAsync: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub CreateFromIdAsyncAdditionalProperties: unsafe extern "system" fn(this: *mut *mut Self, deviceid: ::windows_sys::core::HSTRING, additionalproperties: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    CreateFromIdAsyncAdditionalProperties: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub FindAllAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    FindAllAsync: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub FindAllAsyncDeviceClass: unsafe extern "system" fn(this: *mut *mut Self, deviceclass: DeviceClass, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    FindAllAsyncDeviceClass: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub FindAllAsyncAqsFilter: unsafe extern "system" fn(this: *mut *mut Self, aqsfilter: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    FindAllAsyncAqsFilter: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub FindAllAsyncAqsFilterAndAdditionalProperties: unsafe extern "system" fn(this: *mut *mut Self, aqsfilter: ::windows_sys::core::HSTRING, additionalproperties: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    FindAllAsyncAqsFilterAndAdditionalProperties: usize,
+    pub CreateWatcher: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateWatcherDeviceClass: unsafe extern "system" fn(this: *mut *mut Self, deviceclass: DeviceClass, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateWatcherAqsFilter: unsafe extern "system" fn(this: *mut *mut Self, aqsfilter: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub CreateWatcherAqsFilterAndAdditionalProperties: unsafe extern "system" fn(this: *mut *mut Self, aqsfilter: ::windows_sys::core::HSTRING, additionalproperties: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    CreateWatcherAqsFilterAndAdditionalProperties: usize,
+}
+#[repr(C)]
+pub struct IDeviceInformationStatics2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub GetAqsFilterFromDeviceClass: unsafe extern "system" fn(this: *mut *mut Self, deviceclass: DeviceClass, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub CreateFromIdAsyncWithKindAndAdditionalProperties: unsafe extern "system" fn(this: *mut *mut Self, deviceid: ::windows_sys::core::HSTRING, additionalproperties: *mut ::core::ffi::c_void, kind: DeviceInformationKind, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    CreateFromIdAsyncWithKindAndAdditionalProperties: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub FindAllAsyncWithKindAqsFilterAndAdditionalProperties: unsafe extern "system" fn(this: *mut *mut Self, aqsfilter: ::windows_sys::core::HSTRING, additionalproperties: *mut ::core::ffi::c_void, kind: DeviceInformationKind, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    FindAllAsyncWithKindAqsFilterAndAdditionalProperties: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub CreateWatcherWithKindAqsFilterAndAdditionalProperties: unsafe extern "system" fn(this: *mut *mut Self, aqsfilter: ::windows_sys::core::HSTRING, additionalproperties: *mut ::core::ffi::c_void, kind: DeviceInformationKind, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    CreateWatcherWithKindAqsFilterAndAdditionalProperties: usize,
+}
+#[repr(C)]
+pub struct IDeviceInformationUpdate {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Id: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub Properties: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    Properties: usize,
+}
+#[repr(C)]
+pub struct IDeviceInformationUpdate2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Kind: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut DeviceInformationKind) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDevicePairingRequestedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub DeviceInformation: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub PairingKind: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut DevicePairingKinds) -> ::windows_sys::core::HRESULT,
+    pub Pin: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Accept: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub AcceptWithPin: unsafe extern "system" fn(this: *mut *mut Self, pin: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub GetDeferral: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    GetDeferral: usize,
+}
+#[repr(C)]
+pub struct IDevicePairingRequestedEventArgs2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Security_Credentials")]
+    pub AcceptWithPasswordCredential: unsafe extern "system" fn(this: *mut *mut Self, passwordcredential: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Security_Credentials"))]
+    AcceptWithPasswordCredential: usize,
+}
+#[repr(C)]
+pub struct IDevicePairingResult {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Status: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut DevicePairingResultStatus) -> ::windows_sys::core::HRESULT,
+    pub ProtectionLevelUsed: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut DevicePairingProtectionLevel) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDevicePairingSettings {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IDevicePicker {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Filter: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Appearance: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub RequestedProperties: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    RequestedProperties: usize,
+    #[cfg(feature = "Foundation")]
+    pub DeviceSelected: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    DeviceSelected: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveDeviceSelected: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveDeviceSelected: usize,
+    #[cfg(feature = "Foundation")]
+    pub DisconnectButtonClicked: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    DisconnectButtonClicked: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveDisconnectButtonClicked: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveDisconnectButtonClicked: usize,
+    #[cfg(feature = "Foundation")]
+    pub DevicePickerDismissed: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    DevicePickerDismissed: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveDevicePickerDismissed: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveDevicePickerDismissed: usize,
+    #[cfg(feature = "Foundation")]
+    pub Show: unsafe extern "system" fn(this: *mut *mut Self, selection: super::super::Foundation::Rect) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    Show: usize,
+    #[cfg(all(feature = "Foundation", feature = "UI_Popups"))]
+    pub ShowWithPlacement: unsafe extern "system" fn(this: *mut *mut Self, selection: super::super::Foundation::Rect, placement: super::super::UI::Popups::Placement) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation", feature = "UI_Popups")))]
+    ShowWithPlacement: usize,
+    #[cfg(feature = "Foundation")]
+    pub PickSingleDeviceAsync: unsafe extern "system" fn(this: *mut *mut Self, selection: super::super::Foundation::Rect, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    PickSingleDeviceAsync: usize,
+    #[cfg(all(feature = "Foundation", feature = "UI_Popups"))]
+    pub PickSingleDeviceAsyncWithPlacement: unsafe extern "system" fn(this: *mut *mut Self, selection: super::super::Foundation::Rect, placement: super::super::UI::Popups::Placement, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation", feature = "UI_Popups")))]
+    PickSingleDeviceAsyncWithPlacement: usize,
+    pub Hide: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub SetDisplayStatus: unsafe extern "system" fn(this: *mut *mut Self, device: *mut ::core::ffi::c_void, status: ::windows_sys::core::HSTRING, options: DevicePickerDisplayStatusOptions) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDevicePickerAppearance {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Title: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetTitle: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "UI")]
+    pub ForegroundColor: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::UI::Color) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI"))]
+    ForegroundColor: usize,
+    #[cfg(feature = "UI")]
+    pub SetForegroundColor: unsafe extern "system" fn(this: *mut *mut Self, value: super::super::UI::Color) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI"))]
+    SetForegroundColor: usize,
+    #[cfg(feature = "UI")]
+    pub BackgroundColor: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::UI::Color) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI"))]
+    BackgroundColor: usize,
+    #[cfg(feature = "UI")]
+    pub SetBackgroundColor: unsafe extern "system" fn(this: *mut *mut Self, value: super::super::UI::Color) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI"))]
+    SetBackgroundColor: usize,
+    #[cfg(feature = "UI")]
+    pub AccentColor: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::UI::Color) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI"))]
+    AccentColor: usize,
+    #[cfg(feature = "UI")]
+    pub SetAccentColor: unsafe extern "system" fn(this: *mut *mut Self, value: super::super::UI::Color) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI"))]
+    SetAccentColor: usize,
+    #[cfg(feature = "UI")]
+    pub SelectedForegroundColor: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::UI::Color) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI"))]
+    SelectedForegroundColor: usize,
+    #[cfg(feature = "UI")]
+    pub SetSelectedForegroundColor: unsafe extern "system" fn(this: *mut *mut Self, value: super::super::UI::Color) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI"))]
+    SetSelectedForegroundColor: usize,
+    #[cfg(feature = "UI")]
+    pub SelectedBackgroundColor: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::UI::Color) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI"))]
+    SelectedBackgroundColor: usize,
+    #[cfg(feature = "UI")]
+    pub SetSelectedBackgroundColor: unsafe extern "system" fn(this: *mut *mut Self, value: super::super::UI::Color) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI"))]
+    SetSelectedBackgroundColor: usize,
+    #[cfg(feature = "UI")]
+    pub SelectedAccentColor: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::UI::Color) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI"))]
+    SelectedAccentColor: usize,
+    #[cfg(feature = "UI")]
+    pub SetSelectedAccentColor: unsafe extern "system" fn(this: *mut *mut Self, value: super::super::UI::Color) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI"))]
+    SetSelectedAccentColor: usize,
+}
+#[repr(C)]
+pub struct IDevicePickerFilter {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation_Collections")]
+    pub SupportedDeviceClasses: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    SupportedDeviceClasses: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub SupportedDeviceSelectors: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    SupportedDeviceSelectors: usize,
+}
+#[repr(C)]
+pub struct IDeviceSelectedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub SelectedDevice: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDeviceUnpairingResult {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Status: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut DeviceUnpairingResultStatus) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDeviceWatcher {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub Added: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    Added: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveAdded: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveAdded: usize,
+    #[cfg(feature = "Foundation")]
+    pub Updated: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    Updated: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveUpdated: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveUpdated: usize,
+    #[cfg(feature = "Foundation")]
+    pub Removed: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    Removed: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveRemoved: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveRemoved: usize,
+    #[cfg(feature = "Foundation")]
+    pub EnumerationCompleted: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    EnumerationCompleted: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveEnumerationCompleted: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveEnumerationCompleted: usize,
+    #[cfg(feature = "Foundation")]
+    pub Stopped: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    Stopped: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveStopped: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveStopped: usize,
+    pub Status: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut DeviceWatcherStatus) -> ::windows_sys::core::HRESULT,
+    pub Start: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Stop: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDeviceWatcher2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(all(feature = "ApplicationModel_Background", feature = "Foundation_Collections"))]
+    pub GetBackgroundTrigger: unsafe extern "system" fn(this: *mut *mut Self, requestedeventkinds: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "ApplicationModel_Background", feature = "Foundation_Collections")))]
+    GetBackgroundTrigger: usize,
+}
+#[repr(C)]
+pub struct IDeviceWatcherEvent {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Kind: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut DeviceWatcherEventKind) -> ::windows_sys::core::HRESULT,
+    pub DeviceInformation: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub DeviceInformationUpdate: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDeviceWatcherTriggerDetails {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation_Collections")]
+    pub DeviceWatcherEvents: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    DeviceWatcherEvents: usize,
+}
+#[repr(C)]
+pub struct IEnclosureLocation {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub InDock: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub InLid: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub Panel: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut Panel) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IEnclosureLocation2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub RotationAngleInDegreesClockwise: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+}
 #[doc = "*Required features: `\"Devices_Enumeration\"`*"]
 #[repr(transparent)]
 pub struct Panel(pub i32);

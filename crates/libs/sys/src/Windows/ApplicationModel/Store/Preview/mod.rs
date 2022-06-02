@@ -31,6 +31,172 @@ impl ::core::clone::Clone for DeliveryOptimizationDownloadModeSource {
     }
 }
 pub type DeliveryOptimizationSettings = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IDeliveryOptimizationSettings {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub DownloadMode: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut DeliveryOptimizationDownloadMode) -> ::windows_sys::core::HRESULT,
+    pub DownloadModeSource: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut DeliveryOptimizationDownloadModeSource) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDeliveryOptimizationSettingsStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub GetCurrentSettings: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IStoreConfigurationStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub SetSystemConfiguration: unsafe extern "system" fn(this: *mut *mut Self, cataloghardwaremanufacturerid: ::windows_sys::core::HSTRING, catalogstorecontentmodifierid: ::windows_sys::core::HSTRING, systemconfigurationexpiration: super::super::super::Foundation::DateTime, cataloghardwaredescriptor: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    SetSystemConfiguration: usize,
+    pub SetMobileOperatorConfiguration: unsafe extern "system" fn(this: *mut *mut Self, mobileoperatorid: ::windows_sys::core::HSTRING, appdownloadlimitinmegabytes: u32, updatedownloadlimitinmegabytes: u32) -> ::windows_sys::core::HRESULT,
+    pub SetStoreWebAccountId: unsafe extern "system" fn(this: *mut *mut Self, webaccountid: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub IsStoreWebAccountId: unsafe extern "system" fn(this: *mut *mut Self, webaccountid: ::windows_sys::core::HSTRING, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub HardwareManufacturerInfo: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub FilterUnsupportedSystemFeaturesAsync: unsafe extern "system" fn(this: *mut *mut Self, systemfeatures: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    FilterUnsupportedSystemFeaturesAsync: usize,
+}
+#[repr(C)]
+pub struct IStoreConfigurationStatics2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub PurchasePromptingPolicy: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    PurchasePromptingPolicy: usize,
+    #[cfg(feature = "Foundation")]
+    pub SetPurchasePromptingPolicy: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    SetPurchasePromptingPolicy: usize,
+}
+#[repr(C)]
+pub struct IStoreConfigurationStatics3 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub HasStoreWebAccount: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "System")]
+    pub HasStoreWebAccountForUser: unsafe extern "system" fn(this: *mut *mut Self, user: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "System"))]
+    HasStoreWebAccountForUser: usize,
+    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    pub GetStoreLogDataAsync: unsafe extern "system" fn(this: *mut *mut Self, options: StoreLogOptions, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    GetStoreLogDataAsync: usize,
+    #[cfg(feature = "System")]
+    pub SetStoreWebAccountIdForUser: unsafe extern "system" fn(this: *mut *mut Self, user: *mut ::core::ffi::c_void, webaccountid: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "System"))]
+    SetStoreWebAccountIdForUser: usize,
+    #[cfg(feature = "System")]
+    pub IsStoreWebAccountIdForUser: unsafe extern "system" fn(this: *mut *mut Self, user: *mut ::core::ffi::c_void, webaccountid: ::windows_sys::core::HSTRING, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "System"))]
+    IsStoreWebAccountIdForUser: usize,
+    #[cfg(all(feature = "Foundation", feature = "System"))]
+    pub GetPurchasePromptingPolicyForUser: unsafe extern "system" fn(this: *mut *mut Self, user: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation", feature = "System")))]
+    GetPurchasePromptingPolicyForUser: usize,
+    #[cfg(all(feature = "Foundation", feature = "System"))]
+    pub SetPurchasePromptingPolicyForUser: unsafe extern "system" fn(this: *mut *mut Self, user: *mut ::core::ffi::c_void, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation", feature = "System")))]
+    SetPurchasePromptingPolicyForUser: usize,
+}
+#[repr(C)]
+pub struct IStoreConfigurationStatics4 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub GetStoreWebAccountId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "System")]
+    pub GetStoreWebAccountIdForUser: unsafe extern "system" fn(this: *mut *mut Self, user: *mut ::core::ffi::c_void, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "System"))]
+    GetStoreWebAccountIdForUser: usize,
+    pub SetEnterpriseStoreWebAccountId: unsafe extern "system" fn(this: *mut *mut Self, webaccountid: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "System")]
+    pub SetEnterpriseStoreWebAccountIdForUser: unsafe extern "system" fn(this: *mut *mut Self, user: *mut ::core::ffi::c_void, webaccountid: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "System"))]
+    SetEnterpriseStoreWebAccountIdForUser: usize,
+    pub GetEnterpriseStoreWebAccountId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "System")]
+    pub GetEnterpriseStoreWebAccountIdForUser: unsafe extern "system" fn(this: *mut *mut Self, user: *mut ::core::ffi::c_void, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "System"))]
+    GetEnterpriseStoreWebAccountIdForUser: usize,
+    pub ShouldRestrictToEnterpriseStoreOnly: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "System")]
+    pub ShouldRestrictToEnterpriseStoreOnlyForUser: unsafe extern "system" fn(this: *mut *mut Self, user: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "System"))]
+    ShouldRestrictToEnterpriseStoreOnlyForUser: usize,
+}
+#[repr(C)]
+pub struct IStoreConfigurationStatics5 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub IsPinToDesktopSupported: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub IsPinToTaskbarSupported: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub IsPinToStartSupported: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub PinToDesktop: unsafe extern "system" fn(this: *mut *mut Self, apppackagefamilyname: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "System")]
+    pub PinToDesktopForUser: unsafe extern "system" fn(this: *mut *mut Self, user: *mut ::core::ffi::c_void, apppackagefamilyname: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "System"))]
+    PinToDesktopForUser: usize,
+}
+#[repr(C)]
+pub struct IStoreHardwareManufacturerInfo {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub HardwareManufacturerId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub StoreContentModifierId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub ModelName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub ManufacturerName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IStorePreview {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub RequestProductPurchaseByProductIdAndSkuIdAsync: unsafe extern "system" fn(this: *mut *mut Self, productid: ::windows_sys::core::HSTRING, skuid: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RequestProductPurchaseByProductIdAndSkuIdAsync: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub LoadAddOnProductInfosAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    LoadAddOnProductInfosAsync: usize,
+}
+#[repr(C)]
+pub struct IStorePreviewProductInfo {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub ProductId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub ProductType: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Title: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Description: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub SkuInfoList: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    SkuInfoList: usize,
+}
+#[repr(C)]
+pub struct IStorePreviewPurchaseResults {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub ProductPurchaseStatus: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut StorePreviewProductPurchaseStatus) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IStorePreviewSkuInfo {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub ProductId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SkuId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SkuType: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Title: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Description: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub CustomDeveloperData: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub CurrencyCode: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub FormattedListPrice: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub ExtendedData: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWebAuthenticationCoreManagerHelper {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(all(feature = "Foundation", feature = "Security_Authentication_Web_Core", feature = "UI_Xaml"))]
+    pub RequestTokenWithUIElementHostingAsync: unsafe extern "system" fn(this: *mut *mut Self, request: *mut ::core::ffi::c_void, uielement: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation", feature = "Security_Authentication_Web_Core", feature = "UI_Xaml")))]
+    RequestTokenWithUIElementHostingAsync: usize,
+    #[cfg(all(feature = "Foundation", feature = "Security_Authentication_Web_Core", feature = "Security_Credentials", feature = "UI_Xaml"))]
+    pub RequestTokenWithUIElementHostingAndWebAccountAsync: unsafe extern "system" fn(this: *mut *mut Self, request: *mut ::core::ffi::c_void, webaccount: *mut ::core::ffi::c_void, uielement: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation", feature = "Security_Authentication_Web_Core", feature = "Security_Credentials", feature = "UI_Xaml")))]
+    RequestTokenWithUIElementHostingAndWebAccountAsync: usize,
+}
 pub type StoreHardwareManufacturerInfo = *mut ::core::ffi::c_void;
 #[doc = "*Required features: `\"ApplicationModel_Store_Preview\"`*"]
 #[repr(transparent)]

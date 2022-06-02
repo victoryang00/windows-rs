@@ -977,8 +977,36 @@ pub const ICM_ON: ICM_MODE = 2i32;
 pub const ICM_QUERY: ICM_MODE = 3i32;
 #[doc = "*Required features: `\"Win32_UI_ColorSystem\"`*"]
 pub const ICM_DONE_OUTSIDEDC: ICM_MODE = 4i32;
-pub type IDeviceModelPlugIn = *mut ::core::ffi::c_void;
-pub type IGamutMapModelPlugIn = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IDeviceModelPlugIn {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, bstrxml: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, cnummodels: u32, imodelposition: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Initialize: usize,
+    pub GetNumChannels: unsafe extern "system" fn(this: *mut *mut Self, pnumchannels: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub DeviceToColorimetricColors: unsafe extern "system" fn(this: *mut *mut Self, ccolors: u32, cchannels: u32, pdevicevalues: *const f32, pxyzcolors: *mut XYZColorF) -> ::windows_sys::core::HRESULT,
+    pub ColorimetricToDeviceColors: unsafe extern "system" fn(this: *mut *mut Self, ccolors: u32, cchannels: u32, pxyzcolors: *const XYZColorF, pdevicevalues: *mut f32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ColorimetricToDeviceColorsWithBlack: unsafe extern "system" fn(this: *mut *mut Self, ccolors: u32, cchannels: u32, pxyzcolors: *const XYZColorF, pblackinformation: *const BlackInformation, pdevicevalues: *mut f32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ColorimetricToDeviceColorsWithBlack: usize,
+    pub SetTransformDeviceModelInfo: unsafe extern "system" fn(this: *mut *mut Self, imodelposition: u32, pidevicemodelother: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetPrimarySamples: unsafe extern "system" fn(this: *mut *mut Self, pprimarycolor: *mut PrimaryXYZColors) -> ::windows_sys::core::HRESULT,
+    pub GetGamutBoundaryMeshSize: unsafe extern "system" fn(this: *mut *mut Self, pnumvertices: *mut u32, pnumtriangles: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetGamutBoundaryMesh: unsafe extern "system" fn(this: *mut *mut Self, cchannels: u32, cvertices: u32, ctriangles: u32, pvertices: *mut f32, ptriangles: *mut GamutShellTriangle) -> ::windows_sys::core::HRESULT,
+    pub GetNeutralAxisSize: unsafe extern "system" fn(this: *mut *mut Self, pccolors: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetNeutralAxis: unsafe extern "system" fn(this: *mut *mut Self, ccolors: u32, pxyzcolors: *mut XYZColorF) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IGamutMapModelPlugIn {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, bstrxml: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, psrcplugin: *mut ::core::ffi::c_void, pdestplugin: *mut ::core::ffi::c_void, psrcgbd: *const GamutBoundaryDescription, pdestgbd: *const GamutBoundaryDescription) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Initialize: usize,
+    pub SourceToDestinationAppearanceColors: unsafe extern "system" fn(this: *mut *mut Self, ccolors: u32, pinputcolors: *const JChColorF, poutputcolors: *mut JChColorF) -> ::windows_sys::core::HRESULT,
+}
 #[doc = "*Required features: `\"Win32_UI_ColorSystem\"`*"]
 pub const INDEX_DONT_CARE: u32 = 0u32;
 #[doc = "*Required features: `\"Win32_UI_ColorSystem\"`*"]

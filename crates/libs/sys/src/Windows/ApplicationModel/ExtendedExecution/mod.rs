@@ -42,3 +42,30 @@ impl ::core::clone::Clone for ExtendedExecutionRevokedReason {
     }
 }
 pub type ExtendedExecutionSession = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IExtendedExecutionRevokedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Reason: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ExtendedExecutionRevokedReason) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IExtendedExecutionSession {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Reason: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ExtendedExecutionReason) -> ::windows_sys::core::HRESULT,
+    pub SetReason: unsafe extern "system" fn(this: *mut *mut Self, value: ExtendedExecutionReason) -> ::windows_sys::core::HRESULT,
+    pub Description: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetDescription: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub PercentProgress: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetPercentProgress: unsafe extern "system" fn(this: *mut *mut Self, value: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub Revoked: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    Revoked: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveRevoked: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveRevoked: usize,
+    #[cfg(feature = "Foundation")]
+    pub RequestExtensionAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RequestExtensionAsync: usize,
+}

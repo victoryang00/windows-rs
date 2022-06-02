@@ -2,19 +2,47 @@
 extern "system" {
     #[doc = "*Required features: `\"Win32_Storage_Xps_Printing\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub fn StartXpsPrintJob(printername: ::windows_sys::core::PCWSTR, jobname: ::windows_sys::core::PCWSTR, outputfilename: ::windows_sys::core::PCWSTR, progressevent: super::super::super::Foundation::HANDLE, completionevent: super::super::super::Foundation::HANDLE, printablepageson: *const u8, printablepagesoncount: u32, xpsprintjob: *mut IXpsPrintJob, documentstream: *mut IXpsPrintJobStream, printticketstream: *mut IXpsPrintJobStream) -> ::windows_sys::core::HRESULT;
+    pub fn StartXpsPrintJob(printername: ::windows_sys::core::PCWSTR, jobname: ::windows_sys::core::PCWSTR, outputfilename: ::windows_sys::core::PCWSTR, progressevent: super::super::super::Foundation::HANDLE, completionevent: super::super::super::Foundation::HANDLE, printablepageson: *const u8, printablepagesoncount: u32, xpsprintjob: *mut *mut *mut IXpsPrintJob, documentstream: *mut *mut *mut IXpsPrintJobStream, printticketstream: *mut *mut *mut IXpsPrintJobStream) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Storage_Xps_Printing\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn StartXpsPrintJob1(printername: ::windows_sys::core::PCWSTR, jobname: ::windows_sys::core::PCWSTR, outputfilename: ::windows_sys::core::PCWSTR, progressevent: super::super::super::Foundation::HANDLE, completionevent: super::super::super::Foundation::HANDLE, xpsprintjob: *mut IXpsPrintJob, printcontentreceiver: *mut super::IXpsOMPackageTarget) -> ::windows_sys::core::HRESULT;
+    pub fn StartXpsPrintJob1(printername: ::windows_sys::core::PCWSTR, jobname: ::windows_sys::core::PCWSTR, outputfilename: ::windows_sys::core::PCWSTR, progressevent: super::super::super::Foundation::HANDLE, completionevent: super::super::super::Foundation::HANDLE, xpsprintjob: *mut *mut *mut IXpsPrintJob, printcontentreceiver: *mut *mut *mut super::IXpsOMPackageTarget) -> ::windows_sys::core::HRESULT;
 }
 pub const ID_DOCUMENTPACKAGETARGET_MSXPS: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2628665512, data2: 57041, data3: 16841, data4: [169, 253, 215, 53, 239, 51, 174, 218] };
 pub const ID_DOCUMENTPACKAGETARGET_OPENXPS: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 5684082, data2: 35996, data3: 17938, data4: [189, 15, 147, 1, 42, 135, 9, 157] };
 pub const ID_DOCUMENTPACKAGETARGET_OPENXPS_WITH_3D: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1675351840, data2: 35604, data3: 17783, data4: [176, 116, 123, 177, 27, 89, 109, 40] };
-pub type IPrintDocumentPackageStatusEvent = *mut ::core::ffi::c_void;
-pub type IPrintDocumentPackageTarget = *mut ::core::ffi::c_void;
-pub type IPrintDocumentPackageTargetFactory = *mut ::core::ffi::c_void;
-pub type IXpsPrintJob = *mut ::core::ffi::c_void;
-pub type IXpsPrintJobStream = *mut ::core::ffi::c_void;
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IPrintDocumentPackageStatusEvent {
+    pub base__: super::super::super::System::Com::IDispatch,
+    pub PackageStatusUpdated: unsafe extern "system" fn(this: *mut *mut Self, packagestatus: *const PrintDocumentPackageStatus) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPrintDocumentPackageTarget {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetPackageTargetTypes: unsafe extern "system" fn(this: *mut *mut Self, targetcount: *mut u32, targettypes: *mut *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub GetPackageTarget: unsafe extern "system" fn(this: *mut *mut Self, guidtargettype: *const ::windows_sys::core::GUID, riid: *const ::windows_sys::core::GUID, ppvtarget: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Cancel: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPrintDocumentPackageTargetFactory {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreateDocumentPackageTargetForPrintJob: unsafe extern "system" fn(this: *mut *mut Self, printername: ::windows_sys::core::PCWSTR, jobname: ::windows_sys::core::PCWSTR, joboutputstream: *mut ::core::ffi::c_void, jobprintticketstream: *mut ::core::ffi::c_void, docpackagetarget: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CreateDocumentPackageTargetForPrintJob: usize,
+}
+#[repr(C)]
+pub struct IXpsPrintJob {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Cancel: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetJobStatus: unsafe extern "system" fn(this: *mut *mut Self, jobstatus: *mut XPS_JOB_STATUS) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IXpsPrintJobStream {
+    pub base__: super::super::super::System::Com::ISequentialStream,
+    pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
 #[doc = "*Required features: `\"Win32_Storage_Xps_Printing\"`*"]
 pub type PrintDocumentPackageCompletion = i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps_Printing\"`*"]

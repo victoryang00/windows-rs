@@ -93,13 +93,13 @@ extern "system" {
     pub fn DPA_InsertPtr(hdpa: HDPA, i: i32, p: *const ::core::ffi::c_void) -> i32;
     #[doc = "*Required features: `\"Win32_UI_Controls\"`, `\"Win32_System_Com\"`*"]
     #[cfg(feature = "Win32_System_Com")]
-    pub fn DPA_LoadStream(phdpa: *mut HDPA, pfn: PFNDPASTREAM, pstream: super::super::System::Com::IStream, pvinstdata: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn DPA_LoadStream(phdpa: *mut HDPA, pfn: PFNDPASTREAM, pstream: *mut *mut super::super::System::Com::IStream, pvinstdata: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_UI_Controls\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
     pub fn DPA_Merge(hdpadest: HDPA, hdpasrc: HDPA, dwflags: u32, pfncompare: PFNDACOMPARE, pfnmerge: PFNDPAMERGE, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::BOOL;
     #[doc = "*Required features: `\"Win32_UI_Controls\"`, `\"Win32_System_Com\"`*"]
     #[cfg(feature = "Win32_System_Com")]
-    pub fn DPA_SaveStream(hdpa: HDPA, pfn: PFNDPASTREAM, pstream: super::super::System::Com::IStream, pvinstdata: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn DPA_SaveStream(hdpa: HDPA, pfn: PFNDPASTREAM, pstream: *mut *mut super::super::System::Com::IStream, pvinstdata: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_UI_Controls\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
     pub fn DPA_Search(hdpa: HDPA, pfind: *const ::core::ffi::c_void, istart: i32, pfncompare: PFNDACOMPARE, lparam: super::super::Foundation::LPARAM, options: u32) -> i32;
@@ -391,7 +391,7 @@ extern "system" {
     #[cfg(feature = "Win32_Foundation")]
     pub fn ImageList_BeginDrag(himltrack: HIMAGELIST, itrack: i32, dxhotspot: i32, dyhotspot: i32) -> super::super::Foundation::BOOL;
     #[doc = "*Required features: `\"Win32_UI_Controls\"`*"]
-    pub fn ImageList_CoCreateInstance(rclsid: *const ::windows_sys::core::GUID, punkouter: ::windows_sys::core::IUnknown, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn ImageList_CoCreateInstance(rclsid: *const ::windows_sys::core::GUID, punkouter: *mut *mut ::windows_sys::core::IUnknown, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_UI_Controls\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
     pub fn ImageList_Copy(himldst: HIMAGELIST, idst: i32, himlsrc: HIMAGELIST, isrc: i32, uflags: IMAGE_LIST_COPY_FLAGS) -> super::super::Foundation::BOOL;
@@ -451,10 +451,10 @@ extern "system" {
     pub fn ImageList_Merge(himl1: HIMAGELIST, i1: i32, himl2: HIMAGELIST, i2: i32, dx: i32, dy: i32) -> HIMAGELIST;
     #[doc = "*Required features: `\"Win32_UI_Controls\"`, `\"Win32_System_Com\"`*"]
     #[cfg(feature = "Win32_System_Com")]
-    pub fn ImageList_Read(pstm: super::super::System::Com::IStream) -> HIMAGELIST;
+    pub fn ImageList_Read(pstm: *mut *mut super::super::System::Com::IStream) -> HIMAGELIST;
     #[doc = "*Required features: `\"Win32_UI_Controls\"`, `\"Win32_System_Com\"`*"]
     #[cfg(feature = "Win32_System_Com")]
-    pub fn ImageList_ReadEx(dwflags: u32, pstm: super::super::System::Com::IStream, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn ImageList_ReadEx(dwflags: u32, pstm: *mut *mut super::super::System::Com::IStream, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_UI_Controls\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
     pub fn ImageList_Remove(himl: HIMAGELIST, i: i32) -> super::super::Foundation::BOOL;
@@ -480,10 +480,10 @@ extern "system" {
     pub fn ImageList_SetOverlayImage(himl: HIMAGELIST, iimage: i32, ioverlay: i32) -> super::super::Foundation::BOOL;
     #[doc = "*Required features: `\"Win32_UI_Controls\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub fn ImageList_Write(himl: HIMAGELIST, pstm: super::super::System::Com::IStream) -> super::super::Foundation::BOOL;
+    pub fn ImageList_Write(himl: HIMAGELIST, pstm: *mut *mut super::super::System::Com::IStream) -> super::super::Foundation::BOOL;
     #[doc = "*Required features: `\"Win32_UI_Controls\"`, `\"Win32_System_Com\"`*"]
     #[cfg(feature = "Win32_System_Com")]
-    pub fn ImageList_WriteEx(himl: HIMAGELIST, dwflags: u32, pstm: super::super::System::Com::IStream) -> ::windows_sys::core::HRESULT;
+    pub fn ImageList_WriteEx(himl: HIMAGELIST, dwflags: u32, pstm: *mut *mut super::super::System::Com::IStream) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_UI_Controls\"`*"]
     pub fn InitCommonControls();
     #[doc = "*Required features: `\"Win32_UI_Controls\"`, `\"Win32_Foundation\"`*"]
@@ -2364,8 +2364,97 @@ pub const IDB_VIEW_SMALL_COLOR: u32 = 4u32;
 pub const IDC_MANAGE_LINK: u32 = 1592u32;
 #[doc = "*Required features: `\"Win32_UI_Controls\"`*"]
 pub const ID_PSRESTARTWINDOWS: u32 = 2u32;
-pub type IImageList = *mut ::core::ffi::c_void;
-pub type IImageList2 = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IImageList {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub Add: unsafe extern "system" fn(this: *mut *mut Self, hbmimage: super::super::Graphics::Gdi::HBITMAP, hbmmask: super::super::Graphics::Gdi::HBITMAP, pi: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Gdi"))]
+    Add: usize,
+    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    pub ReplaceIcon: unsafe extern "system" fn(this: *mut *mut Self, i: i32, hicon: super::WindowsAndMessaging::HICON, pi: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_WindowsAndMessaging"))]
+    ReplaceIcon: usize,
+    pub SetOverlayImage: unsafe extern "system" fn(this: *mut *mut Self, iimage: i32, ioverlay: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub Replace: unsafe extern "system" fn(this: *mut *mut Self, i: i32, hbmimage: super::super::Graphics::Gdi::HBITMAP, hbmmask: super::super::Graphics::Gdi::HBITMAP) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Gdi"))]
+    Replace: usize,
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub AddMasked: unsafe extern "system" fn(this: *mut *mut Self, hbmimage: super::super::Graphics::Gdi::HBITMAP, crmask: u32, pi: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Gdi"))]
+    AddMasked: usize,
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub Draw: unsafe extern "system" fn(this: *mut *mut Self, pimldp: *const IMAGELISTDRAWPARAMS) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Gdi"))]
+    Draw: usize,
+    pub Remove: unsafe extern "system" fn(this: *mut *mut Self, i: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    pub GetIcon: unsafe extern "system" fn(this: *mut *mut Self, i: i32, flags: u32, picon: *mut super::WindowsAndMessaging::HICON) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_WindowsAndMessaging"))]
+    GetIcon: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+    pub GetImageInfo: unsafe extern "system" fn(this: *mut *mut Self, i: i32, pimageinfo: *mut IMAGEINFO) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi")))]
+    GetImageInfo: usize,
+    pub Copy: unsafe extern "system" fn(this: *mut *mut Self, idst: i32, punksrc: *mut ::core::ffi::c_void, isrc: i32, uflags: u32) -> ::windows_sys::core::HRESULT,
+    pub Merge: unsafe extern "system" fn(this: *mut *mut Self, i1: i32, punk2: *mut ::core::ffi::c_void, i2: i32, dx: i32, dy: i32, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetImageRect: unsafe extern "system" fn(this: *mut *mut Self, i: i32, prc: *mut super::super::Foundation::RECT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetImageRect: usize,
+    pub GetIconSize: unsafe extern "system" fn(this: *mut *mut Self, cx: *mut i32, cy: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetIconSize: unsafe extern "system" fn(this: *mut *mut Self, cx: i32, cy: i32) -> ::windows_sys::core::HRESULT,
+    pub GetImageCount: unsafe extern "system" fn(this: *mut *mut Self, pi: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetImageCount: unsafe extern "system" fn(this: *mut *mut Self, unewcount: u32) -> ::windows_sys::core::HRESULT,
+    pub SetBkColor: unsafe extern "system" fn(this: *mut *mut Self, clrbk: u32, pclr: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetBkColor: unsafe extern "system" fn(this: *mut *mut Self, pclr: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub BeginDrag: unsafe extern "system" fn(this: *mut *mut Self, itrack: i32, dxhotspot: i32, dyhotspot: i32) -> ::windows_sys::core::HRESULT,
+    pub EndDrag: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DragEnter: unsafe extern "system" fn(this: *mut *mut Self, hwndlock: super::super::Foundation::HWND, x: i32, y: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DragEnter: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DragLeave: unsafe extern "system" fn(this: *mut *mut Self, hwndlock: super::super::Foundation::HWND) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DragLeave: usize,
+    pub DragMove: unsafe extern "system" fn(this: *mut *mut Self, x: i32, y: i32) -> ::windows_sys::core::HRESULT,
+    pub SetDragCursorImage: unsafe extern "system" fn(this: *mut *mut Self, punk: *mut ::core::ffi::c_void, idrag: i32, dxhotspot: i32, dyhotspot: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DragShowNolock: unsafe extern "system" fn(this: *mut *mut Self, fshow: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DragShowNolock: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetDragImage: unsafe extern "system" fn(this: *mut *mut Self, ppt: *mut super::super::Foundation::POINT, ppthotspot: *mut super::super::Foundation::POINT, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetDragImage: usize,
+    pub GetItemFlags: unsafe extern "system" fn(this: *mut *mut Self, i: i32, dwflags: *mut IMAGE_LIST_ITEM_FLAGS) -> ::windows_sys::core::HRESULT,
+    pub GetOverlayImage: unsafe extern "system" fn(this: *mut *mut Self, ioverlay: i32, piindex: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IImageList2 {
+    pub base__: IImageList,
+    pub Resize: unsafe extern "system" fn(this: *mut *mut Self, cxnewiconsize: i32, cynewiconsize: i32) -> ::windows_sys::core::HRESULT,
+    pub GetOriginalSize: unsafe extern "system" fn(this: *mut *mut Self, iimage: i32, dwflags: u32, pcx: *mut i32, pcy: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetOriginalSize: unsafe extern "system" fn(this: *mut *mut Self, iimage: i32, cx: i32, cy: i32) -> ::windows_sys::core::HRESULT,
+    pub SetCallback: unsafe extern "system" fn(this: *mut *mut Self, punk: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetCallback: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ForceImagePresent: unsafe extern "system" fn(this: *mut *mut Self, iimage: i32, dwflags: u32) -> ::windows_sys::core::HRESULT,
+    pub DiscardImages: unsafe extern "system" fn(this: *mut *mut Self, ifirstimage: i32, ilastimage: i32, dwflags: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub PreloadImages: unsafe extern "system" fn(this: *mut *mut Self, pimldp: *const IMAGELISTDRAWPARAMS) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Gdi"))]
+    PreloadImages: usize,
+    pub GetStatistics: unsafe extern "system" fn(this: *mut *mut Self, pils: *mut IMAGELISTSTATS) -> ::windows_sys::core::HRESULT,
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, cx: i32, cy: i32, flags: IMAGELIST_CREATION_FLAGS, cinitial: i32, cgrow: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub Replace2: unsafe extern "system" fn(this: *mut *mut Self, i: i32, hbmimage: super::super::Graphics::Gdi::HBITMAP, hbmmask: super::super::Graphics::Gdi::HBITMAP, punk: *mut ::core::ffi::c_void, dwflags: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Gdi"))]
+    Replace2: usize,
+    pub ReplaceFromImageList: unsafe extern "system" fn(this: *mut *mut Self, i: i32, pil: *mut ::core::ffi::c_void, isrc: i32, punk: *mut ::core::ffi::c_void, dwflags: u32) -> ::windows_sys::core::HRESULT,
+}
 #[doc = "*Required features: `\"Win32_UI_Controls\"`*"]
 pub const ILDI_PURGE: u32 = 1u32;
 #[doc = "*Required features: `\"Win32_UI_Controls\"`*"]
@@ -6091,7 +6180,7 @@ pub type PFNDPAMERGE = ::core::option::Option<unsafe extern "system" fn(umsg: DP
 pub type PFNDPAMERGECONST = ::core::option::Option<unsafe extern "system" fn(umsg: DPAMM_MESSAGE, pvdest: *const ::core::ffi::c_void, pvsrc: *const ::core::ffi::c_void, lparam: super::super::Foundation::LPARAM) -> *mut ::core::ffi::c_void>;
 #[doc = "*Required features: `\"Win32_UI_Controls\"`, `\"Win32_System_Com\"`*"]
 #[cfg(feature = "Win32_System_Com")]
-pub type PFNDPASTREAM = ::core::option::Option<unsafe extern "system" fn(pinfo: *const DPASTREAMINFO, pstream: super::super::System::Com::IStream, pvinstdata: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT>;
+pub type PFNDPASTREAM = ::core::option::Option<unsafe extern "system" fn(pinfo: *const DPASTREAMINFO, pstream: *mut *mut super::super::System::Com::IStream, pvinstdata: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT>;
 #[doc = "*Required features: `\"Win32_UI_Controls\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 pub type PFNLVCOMPARE = ::core::option::Option<unsafe extern "system" fn(param0: super::super::Foundation::LPARAM, param1: super::super::Foundation::LPARAM, param2: super::super::Foundation::LPARAM) -> i32>;

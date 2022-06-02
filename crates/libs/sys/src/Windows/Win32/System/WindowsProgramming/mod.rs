@@ -1750,12 +1750,65 @@ impl ::core::clone::Clone for HW_PROFILE_INFOW {
         *self
     }
 }
-pub type ICameraUIControl = *mut ::core::ffi::c_void;
-pub type ICameraUIControlEventCallback = *mut ::core::ffi::c_void;
-pub type IClipServiceNotificationHelper = *mut ::core::ffi::c_void;
-pub type IContainerActivationHelper = *mut ::core::ffi::c_void;
-pub type IDefaultBrowserSyncSettings = *mut ::core::ffi::c_void;
-pub type IDeleteBrowsingHistory = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct ICameraUIControl {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Show: unsafe extern "system" fn(this: *mut *mut Self, pwindow: *mut ::core::ffi::c_void, mode: CameraUIControlMode, selectionmode: CameraUIControlLinearSelectionMode, capturemode: CameraUIControlCaptureMode, photoformat: CameraUIControlPhotoFormat, videoformat: CameraUIControlVideoFormat, bhasclosebutton: super::super::Foundation::BOOL, peventcallback: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Show: usize,
+    pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Suspend: unsafe extern "system" fn(this: *mut *mut Self, pbdeferralrequired: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Suspend: usize,
+    pub Resume: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentViewType: unsafe extern "system" fn(this: *mut *mut Self, pviewtype: *mut CameraUIControlViewType) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetActiveItem: unsafe extern "system" fn(this: *mut *mut Self, pbstractiveitempath: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetActiveItem: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetSelectedItems: unsafe extern "system" fn(this: *mut *mut Self, ppselecteditempaths: *mut *mut super::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetSelectedItems: usize,
+    pub RemoveCapturedItem: unsafe extern "system" fn(this: *mut *mut Self, pszpath: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ICameraUIControlEventCallback {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnStartupComplete: unsafe extern "system" fn(this: *mut *mut Self),
+    pub OnSuspendComplete: unsafe extern "system" fn(this: *mut *mut Self),
+    pub OnItemCaptured: unsafe extern "system" fn(this: *mut *mut Self, pszpath: ::windows_sys::core::PCWSTR),
+    pub OnItemDeleted: unsafe extern "system" fn(this: *mut *mut Self, pszpath: ::windows_sys::core::PCWSTR),
+    pub OnClosed: unsafe extern "system" fn(this: *mut *mut Self),
+}
+#[repr(C)]
+pub struct IClipServiceNotificationHelper {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ShowToast: unsafe extern "system" fn(this: *mut *mut Self, titletext: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bodytext: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, packagename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, appid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, launchcommand: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ShowToast: usize,
+}
+#[repr(C)]
+pub struct IContainerActivationHelper {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub CanActivateClientVM: unsafe extern "system" fn(this: *mut *mut Self, isallowed: *mut i16) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDefaultBrowserSyncSettings {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsEnabled: unsafe extern "system" fn(this: *mut *mut Self) -> super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsEnabled: usize,
+}
+#[repr(C)]
+pub struct IDeleteBrowsingHistory {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub DeleteBrowsingHistory: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32) -> ::windows_sys::core::HRESULT,
+}
 #[doc = "*Required features: `\"Win32_System_WindowsProgramming\"`*"]
 pub const IE4_BACKNEW: u32 = 2u32;
 #[doc = "*Required features: `\"Win32_System_WindowsProgramming\"`*"]
@@ -1798,8 +1851,32 @@ pub const IE_MEMORY: i32 = -4i32;
 pub const IE_NOPEN: i32 = -3i32;
 #[doc = "*Required features: `\"Win32_System_WindowsProgramming\"`*"]
 pub const IE_OPEN: i32 = -2i32;
-pub type IEditionUpgradeBroker = *mut ::core::ffi::c_void;
-pub type IEditionUpgradeHelper = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IEditionUpgradeBroker {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub InitializeParentWindow: unsafe extern "system" fn(this: *mut *mut Self, parenthandle: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub UpdateOperatingSystem: unsafe extern "system" fn(this: *mut *mut Self, parameter: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    UpdateOperatingSystem: usize,
+    pub ShowProductKeyUI: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub CanUpgrade: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IEditionUpgradeHelper {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CanUpgrade: unsafe extern "system" fn(this: *mut *mut Self, isallowed: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CanUpgrade: usize,
+    pub UpdateOperatingSystem: unsafe extern "system" fn(this: *mut *mut Self, contentid: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub ShowProductKeyUI: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetOsProductContentId: unsafe extern "system" fn(this: *mut *mut Self, contentid: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetGenuineLocalStatus: unsafe extern "system" fn(this: *mut *mut Self, isgenuine: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetGenuineLocalStatus: usize,
+}
 #[doc = "*Required features: `\"Win32_System_WindowsProgramming\"`*"]
 pub const IF_GENERIC: u32 = 512u32;
 #[doc = "*Required features: `\"Win32_System_WindowsProgramming\"`*"]
@@ -2114,7 +2191,14 @@ pub const IR_STRINGEX: u32 = 384u32;
 pub const IR_STRINGSTART: u32 = 256u32;
 #[doc = "*Required features: `\"Win32_System_WindowsProgramming\"`*"]
 pub const IR_UNDETERMINE: u32 = 368u32;
-pub type IWindowsLockModeHelper = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IWindowsLockModeHelper {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetSMode: unsafe extern "system" fn(this: *mut *mut Self, issmode: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetSMode: usize,
+}
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_WindowsProgramming\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]

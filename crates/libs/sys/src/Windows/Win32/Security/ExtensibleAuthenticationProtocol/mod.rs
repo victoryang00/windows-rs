@@ -7,13 +7,13 @@ extern "system" {
     pub fn EapHostPeerClearConnection(pconnectionid: *mut ::windows_sys::core::GUID, ppeaperror: *mut *mut EAP_ERROR) -> u32;
     #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`, `\"Win32_Data_Xml_MsXml\"`, `\"Win32_System_Com\"`*"]
     #[cfg(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_System_Com"))]
-    pub fn EapHostPeerConfigBlob2Xml(dwflags: u32, eapmethodtype: EAP_METHOD_TYPE, dwsizeofconfigin: u32, pconfigin: *const u8, ppconfigdoc: *mut super::super::Data::Xml::MsXml::IXMLDOMDocument2, ppeaperror: *mut *mut EAP_ERROR) -> u32;
+    pub fn EapHostPeerConfigBlob2Xml(dwflags: u32, eapmethodtype: EAP_METHOD_TYPE, dwsizeofconfigin: u32, pconfigin: *const u8, ppconfigdoc: *mut *mut *mut super::super::Data::Xml::MsXml::IXMLDOMDocument2, ppeaperror: *mut *mut EAP_ERROR) -> u32;
     #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`, `\"Win32_Data_Xml_MsXml\"`, `\"Win32_System_Com\"`*"]
     #[cfg(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_System_Com"))]
-    pub fn EapHostPeerConfigXml2Blob(dwflags: u32, pconfigdoc: super::super::Data::Xml::MsXml::IXMLDOMNode, pdwsizeofconfigout: *mut u32, ppconfigout: *mut *mut u8, peapmethodtype: *mut EAP_METHOD_TYPE, ppeaperror: *mut *mut EAP_ERROR) -> u32;
+    pub fn EapHostPeerConfigXml2Blob(dwflags: u32, pconfigdoc: *mut *mut super::super::Data::Xml::MsXml::IXMLDOMNode, pdwsizeofconfigout: *mut u32, ppconfigout: *mut *mut u8, peapmethodtype: *mut EAP_METHOD_TYPE, ppeaperror: *mut *mut EAP_ERROR) -> u32;
     #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`, `\"Win32_Data_Xml_MsXml\"`, `\"Win32_System_Com\"`*"]
     #[cfg(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_System_Com"))]
-    pub fn EapHostPeerCredentialsXml2Blob(dwflags: u32, pcredentialsdoc: super::super::Data::Xml::MsXml::IXMLDOMNode, dwsizeofconfigin: u32, pconfigin: *const u8, pdwsizeofcredentialsout: *mut u32, ppcredentialsout: *mut *mut u8, peapmethodtype: *mut EAP_METHOD_TYPE, ppeaperror: *mut *mut EAP_ERROR) -> u32;
+    pub fn EapHostPeerCredentialsXml2Blob(dwflags: u32, pcredentialsdoc: *mut *mut super::super::Data::Xml::MsXml::IXMLDOMNode, dwsizeofconfigin: u32, pconfigin: *const u8, pdwsizeofcredentialsout: *mut u32, ppcredentialsout: *mut *mut u8, peapmethodtype: *mut EAP_METHOD_TYPE, ppeaperror: *mut *mut EAP_ERROR) -> u32;
     #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`*"]
     pub fn EapHostPeerEndSession(sessionhandle: u32, ppeaperror: *mut *mut EAP_ERROR) -> u32;
     #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`*"]
@@ -1306,12 +1306,77 @@ pub const GUID_EapHost_Repair_Server_ClientSelectServerCert: ::windows_sys::core
 pub const GUID_EapHost_Repair_User_AuthFailure: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2517826663, data2: 24912, data3: 16905, data4: [168, 94, 168, 216, 0, 0, 0, 25] };
 pub const GUID_EapHost_Repair_User_GetNewCert: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2517826663, data2: 24912, data3: 16905, data4: [168, 94, 168, 216, 0, 0, 0, 26] };
 pub const GUID_EapHost_Repair_User_SelectValidCert: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2517826663, data2: 24912, data3: 16905, data4: [168, 94, 168, 216, 0, 0, 0, 27] };
-pub type IAccountingProviderConfig = *mut ::core::ffi::c_void;
-pub type IAuthenticationProviderConfig = *mut ::core::ffi::c_void;
-pub type IEAPProviderConfig = *mut ::core::ffi::c_void;
-pub type IEAPProviderConfig2 = *mut ::core::ffi::c_void;
-pub type IEAPProviderConfig3 = *mut ::core::ffi::c_void;
-pub type IRouterProtocolConfig = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IAccountingProviderConfig {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, pszmachinename: ::windows_sys::core::PCWSTR, puconnectionparam: *mut usize) -> ::windows_sys::core::HRESULT,
+    pub Uninitialize: unsafe extern "system" fn(this: *mut *mut Self, uconnectionparam: usize) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Configure: unsafe extern "system" fn(this: *mut *mut Self, uconnectionparam: usize, hwnd: super::super::Foundation::HWND, dwflags: u32, ureserved1: usize, ureserved2: usize) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Configure: usize,
+    pub Activate: unsafe extern "system" fn(this: *mut *mut Self, uconnectionparam: usize, ureserved1: usize, ureserved2: usize) -> ::windows_sys::core::HRESULT,
+    pub Deactivate: unsafe extern "system" fn(this: *mut *mut Self, uconnectionparam: usize, ureserved1: usize, ureserved2: usize) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAuthenticationProviderConfig {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, pszmachinename: ::windows_sys::core::PCWSTR, puconnectionparam: *mut usize) -> ::windows_sys::core::HRESULT,
+    pub Uninitialize: unsafe extern "system" fn(this: *mut *mut Self, uconnectionparam: usize) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Configure: unsafe extern "system" fn(this: *mut *mut Self, uconnectionparam: usize, hwnd: super::super::Foundation::HWND, dwflags: u32, ureserved1: usize, ureserved2: usize) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Configure: usize,
+    pub Activate: unsafe extern "system" fn(this: *mut *mut Self, uconnectionparam: usize, ureserved1: usize, ureserved2: usize) -> ::windows_sys::core::HRESULT,
+    pub Deactivate: unsafe extern "system" fn(this: *mut *mut Self, uconnectionparam: usize, ureserved1: usize, ureserved2: usize) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IEAPProviderConfig {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, pszmachinename: ::windows_sys::core::PCWSTR, dweaptypeid: u32, puconnectionparam: *mut usize) -> ::windows_sys::core::HRESULT,
+    pub Uninitialize: unsafe extern "system" fn(this: *mut *mut Self, dweaptypeid: u32, uconnectionparam: usize) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ServerInvokeConfigUI: unsafe extern "system" fn(this: *mut *mut Self, dweaptypeid: u32, uconnectionparam: usize, hwnd: super::super::Foundation::HWND, ureserved1: usize, ureserved2: usize) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ServerInvokeConfigUI: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RouterInvokeConfigUI: unsafe extern "system" fn(this: *mut *mut Self, dweaptypeid: u32, uconnectionparam: usize, hwndparent: super::super::Foundation::HWND, dwflags: u32, pconnectiondatain: *const u8, dwsizeofconnectiondatain: u32, ppconnectiondataout: *mut *mut u8, pdwsizeofconnectiondataout: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RouterInvokeConfigUI: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RouterInvokeCredentialsUI: unsafe extern "system" fn(this: *mut *mut Self, dweaptypeid: u32, uconnectionparam: usize, hwndparent: super::super::Foundation::HWND, dwflags: u32, pconnectiondatain: *const u8, dwsizeofconnectiondatain: u32, puserdatain: *const u8, dwsizeofuserdatain: u32, ppuserdataout: *mut *mut u8, pdwsizeofuserdataout: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RouterInvokeCredentialsUI: usize,
+}
+#[repr(C)]
+pub struct IEAPProviderConfig2 {
+    pub base__: IEAPProviderConfig,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ServerInvokeConfigUI2: unsafe extern "system" fn(this: *mut *mut Self, dweaptypeid: u32, uconnectionparam: usize, hwnd: super::super::Foundation::HWND, pconfigdatain: *const u8, dwsizeofconfigdatain: u32, ppconfigdataout: *mut *mut u8, pdwsizeofconfigdataout: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ServerInvokeConfigUI2: usize,
+    pub GetGlobalConfig: unsafe extern "system" fn(this: *mut *mut Self, dweaptypeid: u32, ppconfigdataout: *mut *mut u8, pdwsizeofconfigdataout: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IEAPProviderConfig3 {
+    pub base__: IEAPProviderConfig2,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ServerInvokeCertificateConfigUI: unsafe extern "system" fn(this: *mut *mut Self, dweaptypeid: u32, uconnectionparam: usize, hwnd: super::super::Foundation::HWND, pconfigdatain: *const u8, dwsizeofconfigdatain: u32, ppconfigdataout: *mut *mut u8, pdwsizeofconfigdataout: *mut u32, ureserved: usize) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ServerInvokeCertificateConfigUI: usize,
+}
+#[repr(C)]
+pub struct IRouterProtocolConfig {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AddProtocol: unsafe extern "system" fn(this: *mut *mut Self, pszmachinename: ::windows_sys::core::PCWSTR, dwtransportid: u32, dwprotocolid: u32, hwnd: super::super::Foundation::HWND, dwflags: u32, prouter: *mut ::core::ffi::c_void, ureserved1: usize) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AddProtocol: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RemoveProtocol: unsafe extern "system" fn(this: *mut *mut Self, pszmachinename: ::windows_sys::core::PCWSTR, dwtransportid: u32, dwprotocolid: u32, hwnd: super::super::Foundation::HWND, dwflags: u32, prouter: *mut ::core::ffi::c_void, ureserved1: usize) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RemoveProtocol: usize,
+}
 #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`*"]
 pub type ISOLATION_STATE = i32;
 #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`*"]

@@ -59,7 +59,12 @@ impl<'a> Gen<'a> {
         self.type_def_name_imp(def, generics, "")
     }
     pub fn type_def_vtbl_name(&self, def: TypeDef, generics: &[Type]) -> TokenStream {
-        self.type_def_name_imp(def, generics, "_Vtbl")
+        let suffix = if self.sys {
+            ""
+        } else {
+            "_Vtbl"
+        };
+        self.type_def_name_imp(def, generics, suffix)
     }
     pub fn type_def_name_imp(&self, def: TypeDef, generics: &[Type], suffix: &str) -> TokenStream {
         let type_name = self.reader.type_def_type_name(def);
@@ -71,7 +76,7 @@ impl<'a> Gen<'a> {
             let mut name = to_ident(type_name.name);
             name.push_str(suffix);
 
-            if generics.is_empty() || self.sys {
+            if generics.is_empty() {
                 namespace.combine(&name);
                 namespace
             } else {
@@ -99,8 +104,12 @@ impl<'a> Gen<'a> {
 
             if self.reader.type_is_generic(ty) {
                 quote! { <#kind as ::windows::core::RuntimeType>::DefaultType }
-            } else if self.reader.type_is_nullable(ty) && !self.sys {
-                quote! { ::core::option::Option<#kind> }
+            } else if self.reader.type_is_nullable(ty) {
+                if self.sys {
+                    quote! { *mut *mut #kind }
+                } else {
+                    quote! { ::core::option::Option<#kind> }
+                }
             } else {
                 kind
             }
@@ -196,7 +205,11 @@ impl<'a> Gen<'a> {
     fn type_abi_name_imp(&self, ty: &Type, ptr: bool) -> TokenStream {
         match ty {
             Type::String => {
-                quote! { ::core::mem::ManuallyDrop<::windows::core::HSTRING> }
+                if self.sys {
+                    quote! { ::windows_sys::core::HSTRING }
+                } else {
+                    quote! { ::core::mem::ManuallyDrop<::windows::core::HSTRING> }
+                }
             }
             Type::IUnknown | Type::IInspectable => {
                 quote! { *mut ::core::ffi::c_void }
@@ -208,7 +221,11 @@ impl<'a> Gen<'a> {
             }
             Type::GenericParam(generic) => {
                 let name = to_ident(self.reader.generic_param_name(*generic));
-                quote! { <#name as ::windows::core::Abi>::Abi }
+                if self.sys {
+                    name
+                } else {
+                    quote! { <#name as ::windows::core::Abi>::Abi }
+                }
             }
             Type::TypeDef((def, _)) => match self.reader.type_def_kind(*def) {
                 TypeKind::Enum => self.type_def_name(*def, &[]),
@@ -260,10 +277,14 @@ impl<'a> Gen<'a> {
             .collect()
     }
     pub fn generic_constraints(&self, generics: &[Type]) -> TokenStream {
+        if self.sys {
+            return quote!{};
+        }
         let mut tokens = TokenStream::new();
         for generic in generics {
             let generic = self.type_name(generic);
-            tokens.combine(&quote! { #generic: ::windows::core::RuntimeType + 'static, });
+            let crate_name = self.crate_name();
+            tokens.combine(&quote! { #generic: ::#crate_name::core::RuntimeType + 'static, });
         }
         tokens
     }
@@ -722,8 +743,20 @@ impl<'a> Gen<'a> {
         let phantoms = self.generic_named_phantoms(generics);
 
         match self.reader.type_def_vtables(def).last() {
-            Some(Type::IUnknown) => methods.combine(&quote! { pub base__: ::windows::core::IUnknownVtbl, }),
-            Some(Type::IInspectable) => methods.combine(&quote! { pub base__: ::windows::core::IInspectableVtbl, }),
+            Some(Type::IUnknown) => {
+                let mut type_name = self.type_name(&Type::IUnknown);
+                if !self.sys {
+                    type_name.push_str("Vtbl");
+                }
+                methods.combine(&quote! { pub base__: #type_name, });
+            }
+            Some(Type::IInspectable) => {
+                let mut type_name = self.type_name(&Type::IInspectable);
+                if !self.sys {
+                    type_name.push_str("Vtbl");
+                }
+                methods.combine(&quote! { pub base__: #type_name, });
+            }
             Some(Type::TypeDef((def, _))) => {
                 let vtbl = self.type_def_vtbl_name(*def, &[]);
                 methods.combine(&quote! { pub base__: #vtbl, });
@@ -757,9 +790,15 @@ impl<'a> Gen<'a> {
             }
         }
 
+        let doc_hidden = if self.sys {
+            quote! {}
+        } else {
+            quote! { #[doc(hidden)] }
+        };
+
         quote! {
             #features
-            #[repr(C)] #[doc(hidden)] pub struct #vtbl where #constraints {
+            #[repr(C)] #doc_hidden pub struct #vtbl where #constraints {
                 #methods
                 #(pub #phantoms)*
             }
@@ -820,7 +859,11 @@ impl<'a> Gen<'a> {
             }
         });
 
-        quote! { (this: *mut ::core::ffi::c_void, #udt_return_type #(#params)* #trailing_return_type) #return_type }
+        if self.sys {
+            quote! { (this: *mut *mut Self, #udt_return_type #(#params)* #trailing_return_type) #return_type }
+        } else {
+            quote! { (this: *mut ::core::ffi::c_void, #udt_return_type #(#params)* #trailing_return_type) #return_type }
+        }
     }
     pub fn param_name(&self, param: Param) -> TokenStream {
         // TODO: why do we need to_lowercase

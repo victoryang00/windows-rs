@@ -1,45 +1,521 @@
-pub type IDummyMBNUCMExt = *mut ::core::ffi::c_void;
-pub type IMbnConnection = *mut ::core::ffi::c_void;
-pub type IMbnConnectionContext = *mut ::core::ffi::c_void;
-pub type IMbnConnectionContextEvents = *mut ::core::ffi::c_void;
-pub type IMbnConnectionEvents = *mut ::core::ffi::c_void;
-pub type IMbnConnectionManager = *mut ::core::ffi::c_void;
-pub type IMbnConnectionManagerEvents = *mut ::core::ffi::c_void;
-pub type IMbnConnectionProfile = *mut ::core::ffi::c_void;
-pub type IMbnConnectionProfileEvents = *mut ::core::ffi::c_void;
-pub type IMbnConnectionProfileManager = *mut ::core::ffi::c_void;
-pub type IMbnConnectionProfileManagerEvents = *mut ::core::ffi::c_void;
-pub type IMbnDeviceService = *mut ::core::ffi::c_void;
-pub type IMbnDeviceServiceStateEvents = *mut ::core::ffi::c_void;
-pub type IMbnDeviceServicesContext = *mut ::core::ffi::c_void;
-pub type IMbnDeviceServicesEvents = *mut ::core::ffi::c_void;
-pub type IMbnDeviceServicesManager = *mut ::core::ffi::c_void;
-pub type IMbnInterface = *mut ::core::ffi::c_void;
-pub type IMbnInterfaceEvents = *mut ::core::ffi::c_void;
-pub type IMbnInterfaceManager = *mut ::core::ffi::c_void;
-pub type IMbnInterfaceManagerEvents = *mut ::core::ffi::c_void;
-pub type IMbnMultiCarrier = *mut ::core::ffi::c_void;
-pub type IMbnMultiCarrierEvents = *mut ::core::ffi::c_void;
-pub type IMbnPin = *mut ::core::ffi::c_void;
-pub type IMbnPinEvents = *mut ::core::ffi::c_void;
-pub type IMbnPinManager = *mut ::core::ffi::c_void;
-pub type IMbnPinManagerEvents = *mut ::core::ffi::c_void;
-pub type IMbnRadio = *mut ::core::ffi::c_void;
-pub type IMbnRadioEvents = *mut ::core::ffi::c_void;
-pub type IMbnRegistration = *mut ::core::ffi::c_void;
-pub type IMbnRegistrationEvents = *mut ::core::ffi::c_void;
-pub type IMbnServiceActivation = *mut ::core::ffi::c_void;
-pub type IMbnServiceActivationEvents = *mut ::core::ffi::c_void;
-pub type IMbnSignal = *mut ::core::ffi::c_void;
-pub type IMbnSignalEvents = *mut ::core::ffi::c_void;
-pub type IMbnSms = *mut ::core::ffi::c_void;
-pub type IMbnSmsConfiguration = *mut ::core::ffi::c_void;
-pub type IMbnSmsEvents = *mut ::core::ffi::c_void;
-pub type IMbnSmsReadMsgPdu = *mut ::core::ffi::c_void;
-pub type IMbnSmsReadMsgTextCdma = *mut ::core::ffi::c_void;
-pub type IMbnSubscriberInformation = *mut ::core::ffi::c_void;
-pub type IMbnVendorSpecificEvents = *mut ::core::ffi::c_void;
-pub type IMbnVendorSpecificOperation = *mut ::core::ffi::c_void;
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IDummyMBNUCMExt {
+    pub base__: super::super::System::Com::IDispatch,
+}
+#[repr(C)]
+pub struct IMbnConnection {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ConnectionID: unsafe extern "system" fn(this: *mut *mut Self, connectionid: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ConnectionID: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InterfaceID: unsafe extern "system" fn(this: *mut *mut Self, interfaceid: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InterfaceID: usize,
+    pub Connect: unsafe extern "system" fn(this: *mut *mut Self, connectionmode: MBN_CONNECTION_MODE, strprofile: ::windows_sys::core::PCWSTR, requestid: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Disconnect: unsafe extern "system" fn(this: *mut *mut Self, requestid: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetConnectionState: unsafe extern "system" fn(this: *mut *mut Self, connectionstate: *mut MBN_ACTIVATION_STATE, profilename: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetConnectionState: usize,
+    pub GetVoiceCallState: unsafe extern "system" fn(this: *mut *mut Self, voicecallstate: *mut MBN_VOICE_CALL_STATE) -> ::windows_sys::core::HRESULT,
+    pub GetActivationNetworkError: unsafe extern "system" fn(this: *mut *mut Self, networkerror: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMbnConnectionContext {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetProvisionedContexts: unsafe extern "system" fn(this: *mut *mut Self, provisionedcontexts: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetProvisionedContexts: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetProvisionedContext: unsafe extern "system" fn(this: *mut *mut Self, provisionedcontexts: ::core::mem::ManuallyDrop<MBN_CONTEXT>, providerid: ::windows_sys::core::PCWSTR, requestid: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetProvisionedContext: usize,
+}
+#[repr(C)]
+pub struct IMbnConnectionContextEvents {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnProvisionedContextListChange: unsafe extern "system" fn(this: *mut *mut Self, newinterface: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub OnSetProvisionedContextComplete: unsafe extern "system" fn(this: *mut *mut Self, newinterface: *mut ::core::ffi::c_void, requestid: u32, status: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMbnConnectionEvents {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnConnectComplete: unsafe extern "system" fn(this: *mut *mut Self, newconnection: *mut ::core::ffi::c_void, requestid: u32, status: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+    pub OnDisconnectComplete: unsafe extern "system" fn(this: *mut *mut Self, newconnection: *mut ::core::ffi::c_void, requestid: u32, status: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+    pub OnConnectStateChange: unsafe extern "system" fn(this: *mut *mut Self, newconnection: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub OnVoiceCallStateChange: unsafe extern "system" fn(this: *mut *mut Self, newconnection: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMbnConnectionManager {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetConnection: unsafe extern "system" fn(this: *mut *mut Self, connectionid: ::windows_sys::core::PCWSTR, mbnconnection: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetConnections: unsafe extern "system" fn(this: *mut *mut Self, mbnconnections: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetConnections: usize,
+}
+#[repr(C)]
+pub struct IMbnConnectionManagerEvents {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnConnectionArrival: unsafe extern "system" fn(this: *mut *mut Self, newconnection: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub OnConnectionRemoval: unsafe extern "system" fn(this: *mut *mut Self, oldconnection: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMbnConnectionProfile {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetProfileXmlData: unsafe extern "system" fn(this: *mut *mut Self, profiledata: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetProfileXmlData: usize,
+    pub UpdateProfile: unsafe extern "system" fn(this: *mut *mut Self, strprofile: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub Delete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMbnConnectionProfileEvents {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnProfileUpdate: unsafe extern "system" fn(this: *mut *mut Self, newprofile: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMbnConnectionProfileManager {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetConnectionProfiles: unsafe extern "system" fn(this: *mut *mut Self, mbninterface: *mut ::core::ffi::c_void, connectionprofiles: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetConnectionProfiles: usize,
+    pub GetConnectionProfile: unsafe extern "system" fn(this: *mut *mut Self, mbninterface: *mut ::core::ffi::c_void, profilename: ::windows_sys::core::PCWSTR, connectionprofile: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateConnectionProfile: unsafe extern "system" fn(this: *mut *mut Self, xmlprofile: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMbnConnectionProfileManagerEvents {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnConnectionProfileArrival: unsafe extern "system" fn(this: *mut *mut Self, newconnectionprofile: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub OnConnectionProfileRemoval: unsafe extern "system" fn(this: *mut *mut Self, oldconnectionprofile: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMbnDeviceService {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub QuerySupportedCommands: unsafe extern "system" fn(this: *mut *mut Self, requestid: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub OpenCommandSession: unsafe extern "system" fn(this: *mut *mut Self, requestid: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub CloseCommandSession: unsafe extern "system" fn(this: *mut *mut Self, requestid: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetCommand: unsafe extern "system" fn(this: *mut *mut Self, commandid: u32, deviceservicedata: *const super::super::System::Com::SAFEARRAY, requestid: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetCommand: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub QueryCommand: unsafe extern "system" fn(this: *mut *mut Self, commandid: u32, deviceservicedata: *const super::super::System::Com::SAFEARRAY, requestid: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    QueryCommand: usize,
+    pub OpenDataSession: unsafe extern "system" fn(this: *mut *mut Self, requestid: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub CloseDataSession: unsafe extern "system" fn(this: *mut *mut Self, requestid: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub WriteData: unsafe extern "system" fn(this: *mut *mut Self, deviceservicedata: *const super::super::System::Com::SAFEARRAY, requestid: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    WriteData: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InterfaceID: unsafe extern "system" fn(this: *mut *mut Self, interfaceid: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InterfaceID: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DeviceServiceID: unsafe extern "system" fn(this: *mut *mut Self, deviceserviceid: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DeviceServiceID: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsCommandSessionOpen: unsafe extern "system" fn(this: *mut *mut Self, value: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsCommandSessionOpen: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsDataSessionOpen: unsafe extern "system" fn(this: *mut *mut Self, value: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsDataSessionOpen: usize,
+}
+#[repr(C)]
+pub struct IMbnDeviceServiceStateEvents {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OnSessionsStateChange: unsafe extern "system" fn(this: *mut *mut Self, interfaceid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, statechange: MBN_DEVICE_SERVICE_SESSIONS_STATE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OnSessionsStateChange: usize,
+}
+#[repr(C)]
+pub struct IMbnDeviceServicesContext {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com")]
+    pub EnumerateDeviceServices: unsafe extern "system" fn(this: *mut *mut Self, deviceservices: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    EnumerateDeviceServices: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetDeviceService: unsafe extern "system" fn(this: *mut *mut Self, deviceserviceid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, mbndeviceservice: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetDeviceService: usize,
+    pub MaxCommandSize: unsafe extern "system" fn(this: *mut *mut Self, maxcommandsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub MaxDataSize: unsafe extern "system" fn(this: *mut *mut Self, maxdatasize: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMbnDeviceServicesEvents {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com")]
+    pub OnQuerySupportedCommandsComplete: unsafe extern "system" fn(this: *mut *mut Self, deviceservice: *mut ::core::ffi::c_void, commandidlist: *const super::super::System::Com::SAFEARRAY, status: ::windows_sys::core::HRESULT, requestid: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    OnQuerySupportedCommandsComplete: usize,
+    pub OnOpenCommandSessionComplete: unsafe extern "system" fn(this: *mut *mut Self, deviceservice: *mut ::core::ffi::c_void, status: ::windows_sys::core::HRESULT, requestid: u32) -> ::windows_sys::core::HRESULT,
+    pub OnCloseCommandSessionComplete: unsafe extern "system" fn(this: *mut *mut Self, deviceservice: *mut ::core::ffi::c_void, status: ::windows_sys::core::HRESULT, requestid: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub OnSetCommandComplete: unsafe extern "system" fn(this: *mut *mut Self, deviceservice: *mut ::core::ffi::c_void, responseid: u32, deviceservicedata: *const super::super::System::Com::SAFEARRAY, status: ::windows_sys::core::HRESULT, requestid: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    OnSetCommandComplete: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub OnQueryCommandComplete: unsafe extern "system" fn(this: *mut *mut Self, deviceservice: *mut ::core::ffi::c_void, responseid: u32, deviceservicedata: *const super::super::System::Com::SAFEARRAY, status: ::windows_sys::core::HRESULT, requestid: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    OnQueryCommandComplete: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub OnEventNotification: unsafe extern "system" fn(this: *mut *mut Self, deviceservice: *mut ::core::ffi::c_void, eventid: u32, deviceservicedata: *const super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    OnEventNotification: usize,
+    pub OnOpenDataSessionComplete: unsafe extern "system" fn(this: *mut *mut Self, deviceservice: *mut ::core::ffi::c_void, status: ::windows_sys::core::HRESULT, requestid: u32) -> ::windows_sys::core::HRESULT,
+    pub OnCloseDataSessionComplete: unsafe extern "system" fn(this: *mut *mut Self, deviceservice: *mut ::core::ffi::c_void, status: ::windows_sys::core::HRESULT, requestid: u32) -> ::windows_sys::core::HRESULT,
+    pub OnWriteDataComplete: unsafe extern "system" fn(this: *mut *mut Self, deviceservice: *mut ::core::ffi::c_void, status: ::windows_sys::core::HRESULT, requestid: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub OnReadData: unsafe extern "system" fn(this: *mut *mut Self, deviceservice: *mut ::core::ffi::c_void, deviceservicedata: *const super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    OnReadData: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OnInterfaceStateChange: unsafe extern "system" fn(this: *mut *mut Self, interfaceid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, statechange: MBN_DEVICE_SERVICES_INTERFACE_STATE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OnInterfaceStateChange: usize,
+}
+#[repr(C)]
+pub struct IMbnDeviceServicesManager {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetDeviceServicesContext: unsafe extern "system" fn(this: *mut *mut Self, networkinterfaceid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, mbndevicescontext: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetDeviceServicesContext: usize,
+}
+#[repr(C)]
+pub struct IMbnInterface {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InterfaceID: unsafe extern "system" fn(this: *mut *mut Self, interfaceid: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InterfaceID: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetInterfaceCapability: unsafe extern "system" fn(this: *mut *mut Self, interfacecaps: *mut MBN_INTERFACE_CAPS) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetInterfaceCapability: usize,
+    pub GetSubscriberInformation: unsafe extern "system" fn(this: *mut *mut Self, subscriberinformation: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetReadyState: unsafe extern "system" fn(this: *mut *mut Self, readystate: *mut MBN_READY_STATE) -> ::windows_sys::core::HRESULT,
+    pub InEmergencyMode: unsafe extern "system" fn(this: *mut *mut Self, emergencymode: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetHomeProvider: unsafe extern "system" fn(this: *mut *mut Self, homeprovider: *mut MBN_PROVIDER) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetHomeProvider: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetPreferredProviders: unsafe extern "system" fn(this: *mut *mut Self, preferredproviders: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetPreferredProviders: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetPreferredProviders: unsafe extern "system" fn(this: *mut *mut Self, preferredproviders: *const super::super::System::Com::SAFEARRAY, requestid: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetPreferredProviders: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetVisibleProviders: unsafe extern "system" fn(this: *mut *mut Self, age: *mut u32, visibleproviders: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetVisibleProviders: usize,
+    pub ScanNetwork: unsafe extern "system" fn(this: *mut *mut Self, requestid: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetConnection: unsafe extern "system" fn(this: *mut *mut Self, mbnconnection: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMbnInterfaceEvents {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnInterfaceCapabilityAvailable: unsafe extern "system" fn(this: *mut *mut Self, newinterface: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub OnSubscriberInformationChange: unsafe extern "system" fn(this: *mut *mut Self, newinterface: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub OnReadyStateChange: unsafe extern "system" fn(this: *mut *mut Self, newinterface: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub OnEmergencyModeChange: unsafe extern "system" fn(this: *mut *mut Self, newinterface: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub OnHomeProviderAvailable: unsafe extern "system" fn(this: *mut *mut Self, newinterface: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub OnPreferredProvidersChange: unsafe extern "system" fn(this: *mut *mut Self, newinterface: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub OnSetPreferredProvidersComplete: unsafe extern "system" fn(this: *mut *mut Self, newinterface: *mut ::core::ffi::c_void, requestid: u32, status: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+    pub OnScanNetworkComplete: unsafe extern "system" fn(this: *mut *mut Self, newinterface: *mut ::core::ffi::c_void, requestid: u32, status: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMbnInterfaceManager {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetInterface: unsafe extern "system" fn(this: *mut *mut Self, interfaceid: ::windows_sys::core::PCWSTR, mbninterface: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetInterfaces: unsafe extern "system" fn(this: *mut *mut Self, mbninterfaces: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetInterfaces: usize,
+}
+#[repr(C)]
+pub struct IMbnInterfaceManagerEvents {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnInterfaceArrival: unsafe extern "system" fn(this: *mut *mut Self, newinterface: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub OnInterfaceRemoval: unsafe extern "system" fn(this: *mut *mut Self, oldinterface: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMbnMultiCarrier {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetHomeProvider: unsafe extern "system" fn(this: *mut *mut Self, homeprovider: *const MBN_PROVIDER2, requestid: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetHomeProvider: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetPreferredProviders: unsafe extern "system" fn(this: *mut *mut Self, preferredmulticarrierproviders: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetPreferredProviders: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetVisibleProviders: unsafe extern "system" fn(this: *mut *mut Self, age: *mut u32, visibleproviders: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetVisibleProviders: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetSupportedCellularClasses: unsafe extern "system" fn(this: *mut *mut Self, cellularclasses: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetSupportedCellularClasses: usize,
+    pub GetCurrentCellularClass: unsafe extern "system" fn(this: *mut *mut Self, currentcellularclass: *mut MBN_CELLULAR_CLASS) -> ::windows_sys::core::HRESULT,
+    pub ScanNetwork: unsafe extern "system" fn(this: *mut *mut Self, requestid: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMbnMultiCarrierEvents {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnSetHomeProviderComplete: unsafe extern "system" fn(this: *mut *mut Self, mbninterface: *mut ::core::ffi::c_void, requestid: u32, status: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+    pub OnCurrentCellularClassChange: unsafe extern "system" fn(this: *mut *mut Self, mbninterface: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub OnPreferredProvidersChange: unsafe extern "system" fn(this: *mut *mut Self, mbninterface: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub OnScanNetworkComplete: unsafe extern "system" fn(this: *mut *mut Self, mbninterface: *mut ::core::ffi::c_void, requestid: u32, status: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+    pub OnInterfaceCapabilityChange: unsafe extern "system" fn(this: *mut *mut Self, mbninterface: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMbnPin {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub PinType: unsafe extern "system" fn(this: *mut *mut Self, pintype: *mut MBN_PIN_TYPE) -> ::windows_sys::core::HRESULT,
+    pub PinFormat: unsafe extern "system" fn(this: *mut *mut Self, pinformat: *mut MBN_PIN_FORMAT) -> ::windows_sys::core::HRESULT,
+    pub PinLengthMin: unsafe extern "system" fn(this: *mut *mut Self, pinlengthmin: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub PinLengthMax: unsafe extern "system" fn(this: *mut *mut Self, pinlengthmax: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub PinMode: unsafe extern "system" fn(this: *mut *mut Self, pinmode: *mut MBN_PIN_MODE) -> ::windows_sys::core::HRESULT,
+    pub Enable: unsafe extern "system" fn(this: *mut *mut Self, pin: ::windows_sys::core::PCWSTR, requestid: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Disable: unsafe extern "system" fn(this: *mut *mut Self, pin: ::windows_sys::core::PCWSTR, requestid: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Enter: unsafe extern "system" fn(this: *mut *mut Self, pin: ::windows_sys::core::PCWSTR, requestid: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Change: unsafe extern "system" fn(this: *mut *mut Self, pin: ::windows_sys::core::PCWSTR, newpin: ::windows_sys::core::PCWSTR, requestid: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Unblock: unsafe extern "system" fn(this: *mut *mut Self, puk: ::windows_sys::core::PCWSTR, newpin: ::windows_sys::core::PCWSTR, requestid: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetPinManager: unsafe extern "system" fn(this: *mut *mut Self, pinmanager: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMbnPinEvents {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnEnableComplete: unsafe extern "system" fn(this: *mut *mut Self, pin: *mut ::core::ffi::c_void, pininfo: *const MBN_PIN_INFO, requestid: u32, status: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+    pub OnDisableComplete: unsafe extern "system" fn(this: *mut *mut Self, pin: *mut ::core::ffi::c_void, pininfo: *const MBN_PIN_INFO, requestid: u32, status: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+    pub OnEnterComplete: unsafe extern "system" fn(this: *mut *mut Self, pin: *mut ::core::ffi::c_void, pininfo: *const MBN_PIN_INFO, requestid: u32, status: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+    pub OnChangeComplete: unsafe extern "system" fn(this: *mut *mut Self, pin: *mut ::core::ffi::c_void, pininfo: *const MBN_PIN_INFO, requestid: u32, status: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+    pub OnUnblockComplete: unsafe extern "system" fn(this: *mut *mut Self, pin: *mut ::core::ffi::c_void, pininfo: *const MBN_PIN_INFO, requestid: u32, status: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMbnPinManager {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetPinList: unsafe extern "system" fn(this: *mut *mut Self, pinlist: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetPinList: usize,
+    pub GetPin: unsafe extern "system" fn(this: *mut *mut Self, pintype: MBN_PIN_TYPE, pin: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetPinState: unsafe extern "system" fn(this: *mut *mut Self, requestid: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMbnPinManagerEvents {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnPinListAvailable: unsafe extern "system" fn(this: *mut *mut Self, pinmanager: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub OnGetPinStateComplete: unsafe extern "system" fn(this: *mut *mut Self, pinmanager: *mut ::core::ffi::c_void, pininfo: MBN_PIN_INFO, requestid: u32, status: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMbnRadio {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SoftwareRadioState: unsafe extern "system" fn(this: *mut *mut Self, softwareradiostate: *mut MBN_RADIO) -> ::windows_sys::core::HRESULT,
+    pub HardwareRadioState: unsafe extern "system" fn(this: *mut *mut Self, hardwareradiostate: *mut MBN_RADIO) -> ::windows_sys::core::HRESULT,
+    pub SetSoftwareRadioState: unsafe extern "system" fn(this: *mut *mut Self, radiostate: MBN_RADIO, requestid: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMbnRadioEvents {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnRadioStateChange: unsafe extern "system" fn(this: *mut *mut Self, newinterface: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub OnSetSoftwareRadioStateComplete: unsafe extern "system" fn(this: *mut *mut Self, newinterface: *mut ::core::ffi::c_void, requestid: u32, status: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMbnRegistration {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetRegisterState: unsafe extern "system" fn(this: *mut *mut Self, registerstate: *mut MBN_REGISTER_STATE) -> ::windows_sys::core::HRESULT,
+    pub GetRegisterMode: unsafe extern "system" fn(this: *mut *mut Self, registermode: *mut MBN_REGISTER_MODE) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetProviderID: unsafe extern "system" fn(this: *mut *mut Self, providerid: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetProviderID: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetProviderName: unsafe extern "system" fn(this: *mut *mut Self, providername: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetProviderName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetRoamingText: unsafe extern "system" fn(this: *mut *mut Self, roamingtext: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetRoamingText: usize,
+    pub GetAvailableDataClasses: unsafe extern "system" fn(this: *mut *mut Self, availabledataclasses: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentDataClass: unsafe extern "system" fn(this: *mut *mut Self, currentdataclass: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetRegistrationNetworkError: unsafe extern "system" fn(this: *mut *mut Self, registrationnetworkerror: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetPacketAttachNetworkError: unsafe extern "system" fn(this: *mut *mut Self, packetattachnetworkerror: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetRegisterMode: unsafe extern "system" fn(this: *mut *mut Self, registermode: MBN_REGISTER_MODE, providerid: ::windows_sys::core::PCWSTR, dataclass: u32, requestid: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMbnRegistrationEvents {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnRegisterModeAvailable: unsafe extern "system" fn(this: *mut *mut Self, newinterface: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub OnRegisterStateChange: unsafe extern "system" fn(this: *mut *mut Self, newinterface: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub OnPacketServiceStateChange: unsafe extern "system" fn(this: *mut *mut Self, newinterface: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub OnSetRegisterModeComplete: unsafe extern "system" fn(this: *mut *mut Self, newinterface: *mut ::core::ffi::c_void, requestid: u32, status: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMbnServiceActivation {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Activate: unsafe extern "system" fn(this: *mut *mut Self, vendorspecificdata: *const super::super::System::Com::SAFEARRAY, requestid: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Activate: usize,
+}
+#[repr(C)]
+pub struct IMbnServiceActivationEvents {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com")]
+    pub OnActivationComplete: unsafe extern "system" fn(this: *mut *mut Self, serviceactivation: *mut ::core::ffi::c_void, vendorspecificdata: *const super::super::System::Com::SAFEARRAY, requestid: u32, status: ::windows_sys::core::HRESULT, networkerror: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    OnActivationComplete: usize,
+}
+#[repr(C)]
+pub struct IMbnSignal {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetSignalStrength: unsafe extern "system" fn(this: *mut *mut Self, signalstrength: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSignalError: unsafe extern "system" fn(this: *mut *mut Self, signalerror: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMbnSignalEvents {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnSignalStateChange: unsafe extern "system" fn(this: *mut *mut Self, newinterface: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMbnSms {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetSmsConfiguration: unsafe extern "system" fn(this: *mut *mut Self, smsconfiguration: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetSmsConfiguration: unsafe extern "system" fn(this: *mut *mut Self, smsconfiguration: *mut ::core::ffi::c_void, requestid: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SmsSendPdu: unsafe extern "system" fn(this: *mut *mut Self, pdudata: ::windows_sys::core::PCWSTR, size: u8, requestid: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SmsSendCdma: unsafe extern "system" fn(this: *mut *mut Self, address: ::windows_sys::core::PCWSTR, encoding: MBN_SMS_CDMA_ENCODING, language: MBN_SMS_CDMA_LANG, sizeincharacters: u32, message: *const super::super::System::Com::SAFEARRAY, requestid: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SmsSendCdma: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SmsSendCdmaPdu: unsafe extern "system" fn(this: *mut *mut Self, message: *const super::super::System::Com::SAFEARRAY, requestid: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SmsSendCdmaPdu: usize,
+    pub SmsRead: unsafe extern "system" fn(this: *mut *mut Self, smsfilter: *const MBN_SMS_FILTER, smsformat: MBN_SMS_FORMAT, requestid: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SmsDelete: unsafe extern "system" fn(this: *mut *mut Self, smsfilter: *const MBN_SMS_FILTER, requestid: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSmsStatus: unsafe extern "system" fn(this: *mut *mut Self, smsstatusinfo: *mut MBN_SMS_STATUS_INFO) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMbnSmsConfiguration {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ServiceCenterAddress: unsafe extern "system" fn(this: *mut *mut Self, scaddress: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ServiceCenterAddress: usize,
+    pub SetServiceCenterAddress: unsafe extern "system" fn(this: *mut *mut Self, scaddress: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub MaxMessageIndex: unsafe extern "system" fn(this: *mut *mut Self, index: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub CdmaShortMsgSize: unsafe extern "system" fn(this: *mut *mut Self, shortmsgsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SmsFormat: unsafe extern "system" fn(this: *mut *mut Self, smsformat: *mut MBN_SMS_FORMAT) -> ::windows_sys::core::HRESULT,
+    pub SetSmsFormat: unsafe extern "system" fn(this: *mut *mut Self, smsformat: MBN_SMS_FORMAT) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMbnSmsEvents {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnSmsConfigurationChange: unsafe extern "system" fn(this: *mut *mut Self, sms: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub OnSetSmsConfigurationComplete: unsafe extern "system" fn(this: *mut *mut Self, sms: *mut ::core::ffi::c_void, requestid: u32, status: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+    pub OnSmsSendComplete: unsafe extern "system" fn(this: *mut *mut Self, sms: *mut ::core::ffi::c_void, requestid: u32, status: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub OnSmsReadComplete: unsafe extern "system" fn(this: *mut *mut Self, sms: *mut ::core::ffi::c_void, smsformat: MBN_SMS_FORMAT, readmsgs: *const super::super::System::Com::SAFEARRAY, moremsgs: i16, requestid: u32, status: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    OnSmsReadComplete: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub OnSmsNewClass0Message: unsafe extern "system" fn(this: *mut *mut Self, sms: *mut ::core::ffi::c_void, smsformat: MBN_SMS_FORMAT, readmsgs: *const super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    OnSmsNewClass0Message: usize,
+    pub OnSmsDeleteComplete: unsafe extern "system" fn(this: *mut *mut Self, sms: *mut ::core::ffi::c_void, requestid: u32, status: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+    pub OnSmsStatusChange: unsafe extern "system" fn(this: *mut *mut Self, sms: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMbnSmsReadMsgPdu {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Index: unsafe extern "system" fn(this: *mut *mut Self, index: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Status: unsafe extern "system" fn(this: *mut *mut Self, status: *mut MBN_MSG_STATUS) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub PduData: unsafe extern "system" fn(this: *mut *mut Self, pdudata: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    PduData: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Message: unsafe extern "system" fn(this: *mut *mut Self, message: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Message: usize,
+}
+#[repr(C)]
+pub struct IMbnSmsReadMsgTextCdma {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Index: unsafe extern "system" fn(this: *mut *mut Self, index: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Status: unsafe extern "system" fn(this: *mut *mut Self, status: *mut MBN_MSG_STATUS) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Address: unsafe extern "system" fn(this: *mut *mut Self, address: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Address: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Timestamp: unsafe extern "system" fn(this: *mut *mut Self, timestamp: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Timestamp: usize,
+    pub EncodingID: unsafe extern "system" fn(this: *mut *mut Self, encodingid: *mut MBN_SMS_CDMA_ENCODING) -> ::windows_sys::core::HRESULT,
+    pub LanguageID: unsafe extern "system" fn(this: *mut *mut Self, languageid: *mut MBN_SMS_CDMA_LANG) -> ::windows_sys::core::HRESULT,
+    pub SizeInCharacters: unsafe extern "system" fn(this: *mut *mut Self, sizeincharacters: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Message: unsafe extern "system" fn(this: *mut *mut Self, message: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Message: usize,
+}
+#[repr(C)]
+pub struct IMbnSubscriberInformation {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SubscriberID: unsafe extern "system" fn(this: *mut *mut Self, subscriberid: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SubscriberID: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SimIccID: unsafe extern "system" fn(this: *mut *mut Self, simiccid: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SimIccID: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub TelephoneNumbers: unsafe extern "system" fn(this: *mut *mut Self, telephonenumbers: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    TelephoneNumbers: usize,
+}
+#[repr(C)]
+pub struct IMbnVendorSpecificEvents {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com")]
+    pub OnEventNotification: unsafe extern "system" fn(this: *mut *mut Self, vendoroperation: *mut ::core::ffi::c_void, vendorspecificdata: *const super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    OnEventNotification: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub OnSetVendorSpecificComplete: unsafe extern "system" fn(this: *mut *mut Self, vendoroperation: *mut ::core::ffi::c_void, vendorspecificdata: *const super::super::System::Com::SAFEARRAY, requestid: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    OnSetVendorSpecificComplete: usize,
+}
+#[repr(C)]
+pub struct IMbnVendorSpecificOperation {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetVendorSpecific: unsafe extern "system" fn(this: *mut *mut Self, vendorspecificdata: *const super::super::System::Com::SAFEARRAY, requestid: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetVendorSpecific: usize,
+}
 #[doc = "*Required features: `\"Win32_NetworkManagement_MobileBroadband\"`*"]
 pub type MBN_ACTIVATION_STATE = i32;
 #[doc = "*Required features: `\"Win32_NetworkManagement_MobileBroadband\"`*"]

@@ -37,7 +37,10 @@ impl ::core::clone::Clone for DisplayId {
         *self
     }
 }
-pub type IGeometrySource2D = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IGeometrySource2D {
+    pub base__: ::windows_sys::core::IInspectable,
+}
 #[repr(C)]
 #[doc = "*Required features: `\"Graphics\"`*"]
 pub struct PointInt32 {

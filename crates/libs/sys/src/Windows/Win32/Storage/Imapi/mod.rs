@@ -9,10 +9,10 @@ extern "system" {
     pub fn MapStorageSCode(stgscode: i32) -> i32;
     #[doc = "*Required features: `\"Win32_Storage_Imapi\"`, `\"Win32_System_AddressBook\"`, `\"Win32_System_Com_StructuredStorage\"`*"]
     #[cfg(all(feature = "Win32_System_AddressBook", feature = "Win32_System_Com_StructuredStorage"))]
-    pub fn OpenIMsgOnIStg(lpmsgsess: *mut _MSGSESS, lpallocatebuffer: super::super::System::AddressBook::LPALLOCATEBUFFER, lpallocatemore: super::super::System::AddressBook::LPALLOCATEMORE, lpfreebuffer: super::super::System::AddressBook::LPFREEBUFFER, lpmalloc: super::super::System::Com::IMalloc, lpmapisup: *mut ::core::ffi::c_void, lpstg: super::super::System::Com::StructuredStorage::IStorage, lpfmsgcallrelease: *mut MSGCALLRELEASE, ulcallerdata: u32, ulflags: u32, lppmsg: *mut super::super::System::AddressBook::IMessage) -> i32;
+    pub fn OpenIMsgOnIStg(lpmsgsess: *mut _MSGSESS, lpallocatebuffer: super::super::System::AddressBook::LPALLOCATEBUFFER, lpallocatemore: super::super::System::AddressBook::LPALLOCATEMORE, lpfreebuffer: super::super::System::AddressBook::LPFREEBUFFER, lpmalloc: *mut *mut super::super::System::Com::IMalloc, lpmapisup: *mut ::core::ffi::c_void, lpstg: *mut *mut super::super::System::Com::StructuredStorage::IStorage, lpfmsgcallrelease: *mut MSGCALLRELEASE, ulcallerdata: u32, ulflags: u32, lppmsg: *mut *mut *mut super::super::System::AddressBook::IMessage) -> i32;
     #[doc = "*Required features: `\"Win32_Storage_Imapi\"`, `\"Win32_System_Com\"`*"]
     #[cfg(feature = "Win32_System_Com")]
-    pub fn OpenIMsgSession(lpmalloc: super::super::System::Com::IMalloc, ulflags: u32, lppmsgsess: *mut *mut _MSGSESS) -> i32;
+    pub fn OpenIMsgSession(lpmalloc: *mut *mut super::super::System::Com::IMalloc, ulflags: u32, lppmsgsess: *mut *mut _MSGSESS) -> i32;
     #[doc = "*Required features: `\"Win32_Storage_Imapi\"`, `\"Win32_System_AddressBook\"`*"]
     #[cfg(feature = "Win32_System_AddressBook")]
     pub fn SetAttribIMsgOnIStg(lpobject: *mut ::core::ffi::c_void, lpproptags: *mut super::super::System::AddressBook::SPropTagArray, lppropattrs: *mut SPropAttrArray, lpppropproblems: *mut *mut super::super::System::AddressBook::SPropProblemArray) -> ::windows_sys::core::HRESULT;
@@ -40,13 +40,73 @@ pub const CATID_SMTP_TRANSPORT_PRECATEGORIZE: ::windows_sys::core::GUID = ::wind
 pub const CATID_SMTP_TRANSPORT_ROUTER: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 674509001, data2: 6224, data3: 4562, data4: [158, 3, 0, 192, 79, 163, 34, 186] };
 pub const CATID_SMTP_TRANSPORT_SUBMISSION: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4282165795, data2: 185, data3: 4562, data4: [157, 251, 0, 192, 79, 163, 34, 186] };
 pub const CLSID_SmtpCat: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2990290359, data2: 37401, data3: 4562, data4: [158, 23, 0, 192, 79, 163, 34, 186] };
-pub type DDiscFormat2DataEvents = *mut ::core::ffi::c_void;
-pub type DDiscFormat2EraseEvents = *mut ::core::ffi::c_void;
-pub type DDiscFormat2RawCDEvents = *mut ::core::ffi::c_void;
-pub type DDiscFormat2TrackAtOnceEvents = *mut ::core::ffi::c_void;
-pub type DDiscMaster2Events = *mut ::core::ffi::c_void;
-pub type DFileSystemImageEvents = *mut ::core::ffi::c_void;
-pub type DFileSystemImageImportEvents = *mut ::core::ffi::c_void;
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct DDiscFormat2DataEvents {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Update: unsafe extern "system" fn(this: *mut *mut Self, object: *mut ::core::ffi::c_void, progress: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Update: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct DDiscFormat2EraseEvents {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Update: unsafe extern "system" fn(this: *mut *mut Self, object: *mut ::core::ffi::c_void, elapsedseconds: i32, estimatedtotalseconds: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Update: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct DDiscFormat2RawCDEvents {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Update: unsafe extern "system" fn(this: *mut *mut Self, object: *mut ::core::ffi::c_void, progress: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Update: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct DDiscFormat2TrackAtOnceEvents {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Update: unsafe extern "system" fn(this: *mut *mut Self, object: *mut ::core::ffi::c_void, progress: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Update: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct DDiscMaster2Events {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub NotifyDeviceAdded: unsafe extern "system" fn(this: *mut *mut Self, object: *mut ::core::ffi::c_void, uniqueid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    NotifyDeviceAdded: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub NotifyDeviceRemoved: unsafe extern "system" fn(this: *mut *mut Self, object: *mut ::core::ffi::c_void, uniqueid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    NotifyDeviceRemoved: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct DFileSystemImageEvents {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub Update: unsafe extern "system" fn(this: *mut *mut Self, object: *mut ::core::ffi::c_void, currentfile: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, copiedsectors: i32, totalsectors: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    Update: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct DFileSystemImageImportEvents {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub UpdateImport: unsafe extern "system" fn(this: *mut *mut Self, object: *mut ::core::ffi::c_void, filesystem: FsiFileSystems, currentitem: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, importeddirectoryitems: i32, totaldirectoryitems: i32, importedfileitems: i32, totalfileitems: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    UpdateImport: usize,
+}
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
 pub type DISC_RECORDER_STATE_FLAGS = u32;
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
@@ -399,7 +459,15 @@ pub const DISPID_IWRITEENGINE2_USESTREAMINGWRITE12: u32 = 257u32;
 pub const DISPID_IWRITEENGINE2_WRITEINPROGRESS: u32 = 261u32;
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
 pub const DISPID_IWRITEENGINE2_WRITESECTION: u32 = 512u32;
-pub type DWriteEngine2Events = *mut ::core::ffi::c_void;
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct DWriteEngine2Events {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Update: unsafe extern "system" fn(this: *mut *mut Self, object: *mut ::core::ffi::c_void, progress: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Update: usize,
+}
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
 pub type EmulationType = i32;
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
@@ -441,41 +509,852 @@ pub const FsiNamedStreams: ::windows_sys::core::GUID = ::windows_sys::core::GUID
 pub const FsiStream: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 747904973, data2: 38747, data3: 22974, data4: [169, 96, 154, 42, 38, 40, 83, 165] };
 pub const GUID_SMTPSVC_SOURCE: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 456918630, data2: 58480, data3: 4561, data4: [170, 103, 0, 192, 79, 163, 69, 246] };
 pub const GUID_SMTP_SOURCE_TYPE: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4217750748, data2: 58472, data3: 4561, data4: [170, 103, 0, 192, 79, 163, 69, 246] };
-pub type IBlockRange = *mut ::core::ffi::c_void;
-pub type IBlockRangeList = *mut ::core::ffi::c_void;
-pub type IBootOptions = *mut ::core::ffi::c_void;
-pub type IBurnVerification = *mut ::core::ffi::c_void;
-pub type IDiscFormat2 = *mut ::core::ffi::c_void;
-pub type IDiscFormat2Data = *mut ::core::ffi::c_void;
-pub type IDiscFormat2DataEventArgs = *mut ::core::ffi::c_void;
-pub type IDiscFormat2Erase = *mut ::core::ffi::c_void;
-pub type IDiscFormat2RawCD = *mut ::core::ffi::c_void;
-pub type IDiscFormat2RawCDEventArgs = *mut ::core::ffi::c_void;
-pub type IDiscFormat2TrackAtOnce = *mut ::core::ffi::c_void;
-pub type IDiscFormat2TrackAtOnceEventArgs = *mut ::core::ffi::c_void;
-pub type IDiscMaster = *mut ::core::ffi::c_void;
-pub type IDiscMaster2 = *mut ::core::ffi::c_void;
-pub type IDiscMasterProgressEvents = *mut ::core::ffi::c_void;
-pub type IDiscRecorder = *mut ::core::ffi::c_void;
-pub type IDiscRecorder2 = *mut ::core::ffi::c_void;
-pub type IDiscRecorder2Ex = *mut ::core::ffi::c_void;
-pub type IEnumDiscMasterFormats = *mut ::core::ffi::c_void;
-pub type IEnumDiscRecorders = *mut ::core::ffi::c_void;
-pub type IEnumFsiItems = *mut ::core::ffi::c_void;
-pub type IEnumProgressItems = *mut ::core::ffi::c_void;
-pub type IFileSystemImage = *mut ::core::ffi::c_void;
-pub type IFileSystemImage2 = *mut ::core::ffi::c_void;
-pub type IFileSystemImage3 = *mut ::core::ffi::c_void;
-pub type IFileSystemImageResult = *mut ::core::ffi::c_void;
-pub type IFileSystemImageResult2 = *mut ::core::ffi::c_void;
-pub type IFsiDirectoryItem = *mut ::core::ffi::c_void;
-pub type IFsiDirectoryItem2 = *mut ::core::ffi::c_void;
-pub type IFsiFileItem = *mut ::core::ffi::c_void;
-pub type IFsiFileItem2 = *mut ::core::ffi::c_void;
-pub type IFsiItem = *mut ::core::ffi::c_void;
-pub type IFsiNamedStreams = *mut ::core::ffi::c_void;
-pub type IIsoImageManager = *mut ::core::ffi::c_void;
-pub type IJolietDiscMaster = *mut ::core::ffi::c_void;
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IBlockRange {
+    pub base__: super::super::System::Com::IDispatch,
+    pub StartLba: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub EndLba: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IBlockRangeList {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub BlockRanges: unsafe extern "system" fn(this: *mut *mut Self, value: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    BlockRanges: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IBootOptions {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub BootImage: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    BootImage: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Manufacturer: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Manufacturer: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetManufacturer: unsafe extern "system" fn(this: *mut *mut Self, newval: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetManufacturer: usize,
+    pub PlatformId: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut PlatformId) -> ::windows_sys::core::HRESULT,
+    pub SetPlatformId: unsafe extern "system" fn(this: *mut *mut Self, newval: PlatformId) -> ::windows_sys::core::HRESULT,
+    pub Emulation: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut EmulationType) -> ::windows_sys::core::HRESULT,
+    pub SetEmulation: unsafe extern "system" fn(this: *mut *mut Self, newval: EmulationType) -> ::windows_sys::core::HRESULT,
+    pub ImageSize: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub AssignBootImage: unsafe extern "system" fn(this: *mut *mut Self, newval: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    AssignBootImage: usize,
+}
+#[repr(C)]
+pub struct IBurnVerification {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetBurnVerificationLevel: unsafe extern "system" fn(this: *mut *mut Self, value: IMAPI_BURN_VERIFICATION_LEVEL) -> ::windows_sys::core::HRESULT,
+    pub BurnVerificationLevel: unsafe extern "system" fn(this: *mut *mut Self, value: *mut IMAPI_BURN_VERIFICATION_LEVEL) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IDiscFormat2 {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub IsRecorderSupported: unsafe extern "system" fn(this: *mut *mut Self, recorder: *mut ::core::ffi::c_void, value: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    IsRecorderSupported: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub IsCurrentMediaSupported: unsafe extern "system" fn(this: *mut *mut Self, recorder: *mut ::core::ffi::c_void, value: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    IsCurrentMediaSupported: usize,
+    pub MediaPhysicallyBlank: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub MediaHeuristicallyBlank: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SupportedMediaTypes: unsafe extern "system" fn(this: *mut *mut Self, value: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SupportedMediaTypes: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IDiscFormat2Data {
+    pub base__: IDiscFormat2,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetRecorder: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetRecorder: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Recorder: unsafe extern "system" fn(this: *mut *mut Self, value: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Recorder: usize,
+    pub SetBufferUnderrunFreeDisabled: unsafe extern "system" fn(this: *mut *mut Self, value: i16) -> ::windows_sys::core::HRESULT,
+    pub BufferUnderrunFreeDisabled: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetPostgapAlreadyInImage: unsafe extern "system" fn(this: *mut *mut Self, value: i16) -> ::windows_sys::core::HRESULT,
+    pub PostgapAlreadyInImage: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub CurrentMediaStatus: unsafe extern "system" fn(this: *mut *mut Self, value: *mut IMAPI_FORMAT2_DATA_MEDIA_STATE) -> ::windows_sys::core::HRESULT,
+    pub WriteProtectStatus: unsafe extern "system" fn(this: *mut *mut Self, value: *mut IMAPI_MEDIA_WRITE_PROTECT_STATE) -> ::windows_sys::core::HRESULT,
+    pub TotalSectorsOnMedia: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub FreeSectorsOnMedia: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub NextWritableAddress: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub StartAddressOfPreviousSession: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub LastWrittenAddressOfPreviousSession: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetForceMediaToBeClosed: unsafe extern "system" fn(this: *mut *mut Self, value: i16) -> ::windows_sys::core::HRESULT,
+    pub ForceMediaToBeClosed: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetDisableConsumerDvdCompatibilityMode: unsafe extern "system" fn(this: *mut *mut Self, value: i16) -> ::windows_sys::core::HRESULT,
+    pub DisableConsumerDvdCompatibilityMode: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub CurrentPhysicalMediaType: unsafe extern "system" fn(this: *mut *mut Self, value: *mut IMAPI_MEDIA_PHYSICAL_TYPE) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetClientName: unsafe extern "system" fn(this: *mut *mut Self, value: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetClientName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ClientName: unsafe extern "system" fn(this: *mut *mut Self, value: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ClientName: usize,
+    pub RequestedWriteSpeed: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub RequestedRotationTypeIsPureCAV: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub CurrentWriteSpeed: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub CurrentRotationTypeIsPureCAV: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SupportedWriteSpeeds: unsafe extern "system" fn(this: *mut *mut Self, supportedspeeds: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SupportedWriteSpeeds: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SupportedWriteSpeedDescriptors: unsafe extern "system" fn(this: *mut *mut Self, supportedspeeddescriptors: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SupportedWriteSpeedDescriptors: usize,
+    pub SetForceOverwrite: unsafe extern "system" fn(this: *mut *mut Self, value: i16) -> ::windows_sys::core::HRESULT,
+    pub ForceOverwrite: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub MultisessionInterfaces: unsafe extern "system" fn(this: *mut *mut Self, value: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    MultisessionInterfaces: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Write: unsafe extern "system" fn(this: *mut *mut Self, data: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Write: usize,
+    pub CancelWrite: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub SetWriteSpeed: unsafe extern "system" fn(this: *mut *mut Self, requestedsectorspersecond: i32, rotationtypeispurecav: i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IDiscFormat2DataEventArgs {
+    pub base__: IWriteEngine2EventArgs,
+    pub ElapsedTime: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub RemainingTime: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub TotalTime: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub CurrentAction: unsafe extern "system" fn(this: *mut *mut Self, value: *mut IMAPI_FORMAT2_DATA_WRITE_ACTION) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IDiscFormat2Erase {
+    pub base__: IDiscFormat2,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetRecorder: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetRecorder: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Recorder: unsafe extern "system" fn(this: *mut *mut Self, value: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Recorder: usize,
+    pub SetFullErase: unsafe extern "system" fn(this: *mut *mut Self, value: i16) -> ::windows_sys::core::HRESULT,
+    pub FullErase: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub CurrentPhysicalMediaType: unsafe extern "system" fn(this: *mut *mut Self, value: *mut IMAPI_MEDIA_PHYSICAL_TYPE) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetClientName: unsafe extern "system" fn(this: *mut *mut Self, value: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetClientName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ClientName: unsafe extern "system" fn(this: *mut *mut Self, value: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ClientName: usize,
+    pub EraseMedia: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IDiscFormat2RawCD {
+    pub base__: IDiscFormat2,
+    pub PrepareMedia: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub WriteMedia: unsafe extern "system" fn(this: *mut *mut Self, data: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    WriteMedia: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub WriteMedia2: unsafe extern "system" fn(this: *mut *mut Self, data: *mut ::core::ffi::c_void, streamleadinsectors: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    WriteMedia2: usize,
+    pub CancelWrite: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub ReleaseMedia: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub SetWriteSpeed: unsafe extern "system" fn(this: *mut *mut Self, requestedsectorspersecond: i32, rotationtypeispurecav: i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetRecorder: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetRecorder: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Recorder: unsafe extern "system" fn(this: *mut *mut Self, value: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Recorder: usize,
+    pub SetBufferUnderrunFreeDisabled: unsafe extern "system" fn(this: *mut *mut Self, value: i16) -> ::windows_sys::core::HRESULT,
+    pub BufferUnderrunFreeDisabled: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub StartOfNextSession: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub LastPossibleStartOfLeadout: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub CurrentPhysicalMediaType: unsafe extern "system" fn(this: *mut *mut Self, value: *mut IMAPI_MEDIA_PHYSICAL_TYPE) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SupportedSectorTypes: unsafe extern "system" fn(this: *mut *mut Self, value: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SupportedSectorTypes: usize,
+    pub SetRequestedSectorType: unsafe extern "system" fn(this: *mut *mut Self, value: IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE) -> ::windows_sys::core::HRESULT,
+    pub RequestedSectorType: unsafe extern "system" fn(this: *mut *mut Self, value: *mut IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetClientName: unsafe extern "system" fn(this: *mut *mut Self, value: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetClientName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ClientName: unsafe extern "system" fn(this: *mut *mut Self, value: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ClientName: usize,
+    pub RequestedWriteSpeed: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub RequestedRotationTypeIsPureCAV: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub CurrentWriteSpeed: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub CurrentRotationTypeIsPureCAV: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SupportedWriteSpeeds: unsafe extern "system" fn(this: *mut *mut Self, supportedspeeds: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SupportedWriteSpeeds: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SupportedWriteSpeedDescriptors: unsafe extern "system" fn(this: *mut *mut Self, supportedspeeddescriptors: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SupportedWriteSpeedDescriptors: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IDiscFormat2RawCDEventArgs {
+    pub base__: IWriteEngine2EventArgs,
+    pub CurrentAction: unsafe extern "system" fn(this: *mut *mut Self, value: *mut IMAPI_FORMAT2_RAW_CD_WRITE_ACTION) -> ::windows_sys::core::HRESULT,
+    pub ElapsedTime: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub RemainingTime: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IDiscFormat2TrackAtOnce {
+    pub base__: IDiscFormat2,
+    pub PrepareMedia: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub AddAudioTrack: unsafe extern "system" fn(this: *mut *mut Self, data: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    AddAudioTrack: usize,
+    pub CancelAddTrack: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub ReleaseMedia: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub SetWriteSpeed: unsafe extern "system" fn(this: *mut *mut Self, requestedsectorspersecond: i32, rotationtypeispurecav: i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetRecorder: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetRecorder: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Recorder: unsafe extern "system" fn(this: *mut *mut Self, value: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Recorder: usize,
+    pub SetBufferUnderrunFreeDisabled: unsafe extern "system" fn(this: *mut *mut Self, value: i16) -> ::windows_sys::core::HRESULT,
+    pub BufferUnderrunFreeDisabled: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub NumberOfExistingTracks: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub TotalSectorsOnMedia: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub FreeSectorsOnMedia: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub UsedSectorsOnMedia: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetDoNotFinalizeMedia: unsafe extern "system" fn(this: *mut *mut Self, value: i16) -> ::windows_sys::core::HRESULT,
+    pub DoNotFinalizeMedia: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub ExpectedTableOfContents: unsafe extern "system" fn(this: *mut *mut Self, value: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    ExpectedTableOfContents: usize,
+    pub CurrentPhysicalMediaType: unsafe extern "system" fn(this: *mut *mut Self, value: *mut IMAPI_MEDIA_PHYSICAL_TYPE) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetClientName: unsafe extern "system" fn(this: *mut *mut Self, value: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetClientName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ClientName: unsafe extern "system" fn(this: *mut *mut Self, value: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ClientName: usize,
+    pub RequestedWriteSpeed: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub RequestedRotationTypeIsPureCAV: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub CurrentWriteSpeed: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub CurrentRotationTypeIsPureCAV: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SupportedWriteSpeeds: unsafe extern "system" fn(this: *mut *mut Self, supportedspeeds: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SupportedWriteSpeeds: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SupportedWriteSpeedDescriptors: unsafe extern "system" fn(this: *mut *mut Self, supportedspeeddescriptors: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SupportedWriteSpeedDescriptors: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IDiscFormat2TrackAtOnceEventArgs {
+    pub base__: IWriteEngine2EventArgs,
+    pub CurrentTrackNumber: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub CurrentAction: unsafe extern "system" fn(this: *mut *mut Self, value: *mut IMAPI_FORMAT2_TAO_WRITE_ACTION) -> ::windows_sys::core::HRESULT,
+    pub ElapsedTime: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub RemainingTime: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDiscMaster {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Open: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub EnumDiscMasterFormats: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetActiveDiscMasterFormat: unsafe extern "system" fn(this: *mut *mut Self, lpiid: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub SetActiveDiscMasterFormat: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppunk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EnumDiscRecorders: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetActiveDiscRecorder: unsafe extern "system" fn(this: *mut *mut Self, pprecorder: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetActiveDiscRecorder: unsafe extern "system" fn(this: *mut *mut Self, precorder: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ClearFormatContent: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub ProgressAdvise: unsafe extern "system" fn(this: *mut *mut Self, pevents: *mut ::core::ffi::c_void, pvcookie: *mut usize) -> ::windows_sys::core::HRESULT,
+    pub ProgressUnadvise: unsafe extern "system" fn(this: *mut *mut Self, vcookie: usize) -> ::windows_sys::core::HRESULT,
+    pub RecordDisc: unsafe extern "system" fn(this: *mut *mut Self, bsimulate: u8, bejectafterburn: u8) -> ::windows_sys::core::HRESULT,
+    pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IDiscMaster2 {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Ole")]
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, ppunk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Ole"))]
+    _NewEnum: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub get_Item: unsafe extern "system" fn(this: *mut *mut Self, index: i32, value: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    get_Item: usize,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub IsSupportedEnvironment: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i16) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDiscMasterProgressEvents {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub QueryCancel: unsafe extern "system" fn(this: *mut *mut Self, pbcancel: *mut u8) -> ::windows_sys::core::HRESULT,
+    pub NotifyPnPActivity: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub NotifyAddProgress: unsafe extern "system" fn(this: *mut *mut Self, ncompletedsteps: i32, ntotalsteps: i32) -> ::windows_sys::core::HRESULT,
+    pub NotifyBlockProgress: unsafe extern "system" fn(this: *mut *mut Self, ncompleted: i32, ntotal: i32) -> ::windows_sys::core::HRESULT,
+    pub NotifyTrackProgress: unsafe extern "system" fn(this: *mut *mut Self, ncurrenttrack: i32, ntotaltracks: i32) -> ::windows_sys::core::HRESULT,
+    pub NotifyPreparingBurn: unsafe extern "system" fn(this: *mut *mut Self, nestimatedseconds: i32) -> ::windows_sys::core::HRESULT,
+    pub NotifyClosingDisc: unsafe extern "system" fn(this: *mut *mut Self, nestimatedseconds: i32) -> ::windows_sys::core::HRESULT,
+    pub NotifyBurnComplete: unsafe extern "system" fn(this: *mut *mut Self, status: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+    pub NotifyEraseComplete: unsafe extern "system" fn(this: *mut *mut Self, status: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDiscRecorder {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Init: unsafe extern "system" fn(this: *mut *mut Self, pbyuniqueid: *const u8, nulidsize: u32, nuldrivenumber: u32) -> ::windows_sys::core::HRESULT,
+    pub GetRecorderGUID: unsafe extern "system" fn(this: *mut *mut Self, pbyuniqueid: *mut u8, ulbuffersize: u32, pulreturnsizerequired: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetRecorderType: unsafe extern "system" fn(this: *mut *mut Self, ftypecode: *mut RECORDER_TYPES) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetDisplayNames: unsafe extern "system" fn(this: *mut *mut Self, pbstrvendorid: *mut super::super::Foundation::BSTR, pbstrproductid: *mut super::super::Foundation::BSTR, pbstrrevision: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetDisplayNames: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetBasePnPID: unsafe extern "system" fn(this: *mut *mut Self, pbstrbasepnpid: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetBasePnPID: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetPath: unsafe extern "system" fn(this: *mut *mut Self, pbstrpath: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetPath: usize,
+    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    pub GetRecorderProperties: unsafe extern "system" fn(this: *mut *mut Self, pppropstg: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
+    GetRecorderProperties: usize,
+    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    pub SetRecorderProperties: unsafe extern "system" fn(this: *mut *mut Self, ppropstg: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
+    SetRecorderProperties: usize,
+    pub GetRecorderState: unsafe extern "system" fn(this: *mut *mut Self, puldevstateflags: *mut DISC_RECORDER_STATE_FLAGS) -> ::windows_sys::core::HRESULT,
+    pub OpenExclusive: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub QueryMediaType: unsafe extern "system" fn(this: *mut *mut Self, fmediatype: *mut MEDIA_TYPES, fmediaflags: *mut MEDIA_FLAGS) -> ::windows_sys::core::HRESULT,
+    pub QueryMediaInfo: unsafe extern "system" fn(this: *mut *mut Self, pbsessions: *mut u8, pblasttrack: *mut u8, ulstartaddress: *mut u32, ulnextwritable: *mut u32, ulfreeblocks: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Eject: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Erase: unsafe extern "system" fn(this: *mut *mut Self, bfullerase: u8) -> ::windows_sys::core::HRESULT,
+    pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IDiscRecorder2 {
+    pub base__: super::super::System::Com::IDispatch,
+    pub EjectMedia: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub CloseTray: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AcquireExclusiveAccess: unsafe extern "system" fn(this: *mut *mut Self, force: i16, __midl__idiscrecorder20000: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AcquireExclusiveAccess: usize,
+    pub ReleaseExclusiveAccess: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub DisableMcn: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub EnableMcn: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InitializeDiscRecorder: unsafe extern "system" fn(this: *mut *mut Self, recorderuniqueid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InitializeDiscRecorder: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ActiveDiscRecorder: unsafe extern "system" fn(this: *mut *mut Self, value: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ActiveDiscRecorder: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub VendorId: unsafe extern "system" fn(this: *mut *mut Self, value: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    VendorId: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ProductId: unsafe extern "system" fn(this: *mut *mut Self, value: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ProductId: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ProductRevision: unsafe extern "system" fn(this: *mut *mut Self, value: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ProductRevision: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub VolumeName: unsafe extern "system" fn(this: *mut *mut Self, value: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    VolumeName: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub VolumePathNames: unsafe extern "system" fn(this: *mut *mut Self, value: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    VolumePathNames: usize,
+    pub DeviceCanLoadMedia: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub LegacyDeviceNumber: unsafe extern "system" fn(this: *mut *mut Self, legacydevicenumber: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SupportedFeaturePages: unsafe extern "system" fn(this: *mut *mut Self, value: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SupportedFeaturePages: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CurrentFeaturePages: unsafe extern "system" fn(this: *mut *mut Self, value: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CurrentFeaturePages: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SupportedProfiles: unsafe extern "system" fn(this: *mut *mut Self, value: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SupportedProfiles: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CurrentProfiles: unsafe extern "system" fn(this: *mut *mut Self, value: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CurrentProfiles: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SupportedModePages: unsafe extern "system" fn(this: *mut *mut Self, value: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SupportedModePages: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ExclusiveAccessOwner: unsafe extern "system" fn(this: *mut *mut Self, value: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ExclusiveAccessOwner: usize,
+}
+#[repr(C)]
+pub struct IDiscRecorder2Ex {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SendCommandNoData: unsafe extern "system" fn(this: *mut *mut Self, cdb: *const u8, cdbsize: u32, sensebuffer: *mut u8, timeout: u32) -> ::windows_sys::core::HRESULT,
+    pub SendCommandSendDataToDevice: unsafe extern "system" fn(this: *mut *mut Self, cdb: *const u8, cdbsize: u32, sensebuffer: *mut u8, timeout: u32, buffer: *const u8, buffersize: u32) -> ::windows_sys::core::HRESULT,
+    pub SendCommandGetDataFromDevice: unsafe extern "system" fn(this: *mut *mut Self, cdb: *const u8, cdbsize: u32, sensebuffer: *mut u8, timeout: u32, buffer: *mut u8, buffersize: u32, bufferfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub ReadDvdStructure: unsafe extern "system" fn(this: *mut *mut Self, format: u32, address: u32, layer: u32, agid: u32, data: *mut *mut u8, count: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SendDvdStructure: unsafe extern "system" fn(this: *mut *mut Self, format: u32, data: *const u8, count: u32) -> ::windows_sys::core::HRESULT,
+    pub GetAdapterDescriptor: unsafe extern "system" fn(this: *mut *mut Self, data: *mut *mut u8, bytesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetDeviceDescriptor: unsafe extern "system" fn(this: *mut *mut Self, data: *mut *mut u8, bytesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetDiscInformation: unsafe extern "system" fn(this: *mut *mut Self, discinformation: *mut *mut u8, bytesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetTrackInformation: unsafe extern "system" fn(this: *mut *mut Self, address: u32, addresstype: IMAPI_READ_TRACK_ADDRESS_TYPE, trackinformation: *mut *mut u8, bytesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetFeaturePage: unsafe extern "system" fn(this: *mut *mut Self, requestedfeature: IMAPI_FEATURE_PAGE_TYPE, currentfeatureonly: super::super::Foundation::BOOLEAN, featuredata: *mut *mut u8, bytesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetFeaturePage: usize,
+    pub GetModePage: unsafe extern "system" fn(this: *mut *mut Self, requestedmodepage: IMAPI_MODE_PAGE_TYPE, requesttype: IMAPI_MODE_PAGE_REQUEST_TYPE, modepagedata: *mut *mut u8, bytesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetModePage: unsafe extern "system" fn(this: *mut *mut Self, requesttype: IMAPI_MODE_PAGE_REQUEST_TYPE, data: *const u8, bytesize: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetSupportedFeaturePages: unsafe extern "system" fn(this: *mut *mut Self, currentfeatureonly: super::super::Foundation::BOOLEAN, featuredata: *mut *mut IMAPI_FEATURE_PAGE_TYPE, bytesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetSupportedFeaturePages: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetSupportedProfiles: unsafe extern "system" fn(this: *mut *mut Self, currentonly: super::super::Foundation::BOOLEAN, profiletypes: *mut *mut IMAPI_PROFILE_TYPE, validprofiles: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetSupportedProfiles: usize,
+    pub GetSupportedModePages: unsafe extern "system" fn(this: *mut *mut Self, requesttype: IMAPI_MODE_PAGE_REQUEST_TYPE, modepagetypes: *mut *mut IMAPI_MODE_PAGE_TYPE, validpages: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetByteAlignmentMask: unsafe extern "system" fn(this: *mut *mut Self, value: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetMaximumNonPageAlignedTransferSize: unsafe extern "system" fn(this: *mut *mut Self, value: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetMaximumPageAlignedTransferSize: unsafe extern "system" fn(this: *mut *mut Self, value: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IEnumDiscMasterFormats {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, cformats: u32, lpiidformatid: *mut ::windows_sys::core::GUID, pcfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Skip: unsafe extern "system" fn(this: *mut *mut Self, cformats: u32) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IEnumDiscRecorders {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, crecorders: u32, pprecorder: *mut *mut ::core::ffi::c_void, pcfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Skip: unsafe extern "system" fn(this: *mut *mut Self, crecorders: u32) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IEnumFsiItems {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, celt: u32, rgelt: *mut *mut ::core::ffi::c_void, pceltfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Next: usize,
+    pub Skip: unsafe extern "system" fn(this: *mut *mut Self, celt: u32) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IEnumProgressItems {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, celt: u32, rgelt: *mut *mut ::core::ffi::c_void, pceltfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Next: usize,
+    pub Skip: unsafe extern "system" fn(this: *mut *mut Self, celt: u32) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFileSystemImage {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Root: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Root: usize,
+    pub SessionStartBlock: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetSessionStartBlock: unsafe extern "system" fn(this: *mut *mut Self, newval: i32) -> ::windows_sys::core::HRESULT,
+    pub FreeMediaBlocks: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetFreeMediaBlocks: unsafe extern "system" fn(this: *mut *mut Self, newval: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetMaxMediaBlocksFromDevice: unsafe extern "system" fn(this: *mut *mut Self, discrecorder: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetMaxMediaBlocksFromDevice: usize,
+    pub UsedBlocks: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub VolumeName: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    VolumeName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetVolumeName: unsafe extern "system" fn(this: *mut *mut Self, newval: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetVolumeName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ImportedVolumeName: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ImportedVolumeName: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub BootImageOptions: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    BootImageOptions: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetBootImageOptions: unsafe extern "system" fn(this: *mut *mut Self, newval: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetBootImageOptions: usize,
+    pub FileCount: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub DirectoryCount: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub WorkingDirectory: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    WorkingDirectory: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetWorkingDirectory: unsafe extern "system" fn(this: *mut *mut Self, newval: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetWorkingDirectory: usize,
+    pub ChangePoint: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub StrictFileSystemCompliance: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetStrictFileSystemCompliance: unsafe extern "system" fn(this: *mut *mut Self, newval: i16) -> ::windows_sys::core::HRESULT,
+    pub UseRestrictedCharacterSet: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetUseRestrictedCharacterSet: unsafe extern "system" fn(this: *mut *mut Self, newval: i16) -> ::windows_sys::core::HRESULT,
+    pub FileSystemsToCreate: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut FsiFileSystems) -> ::windows_sys::core::HRESULT,
+    pub SetFileSystemsToCreate: unsafe extern "system" fn(this: *mut *mut Self, newval: FsiFileSystems) -> ::windows_sys::core::HRESULT,
+    pub FileSystemsSupported: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut FsiFileSystems) -> ::windows_sys::core::HRESULT,
+    pub SetUDFRevision: unsafe extern "system" fn(this: *mut *mut Self, newval: i32) -> ::windows_sys::core::HRESULT,
+    pub UDFRevision: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub UDFRevisionsSupported: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    UDFRevisionsSupported: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub ChooseImageDefaults: unsafe extern "system" fn(this: *mut *mut Self, discrecorder: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    ChooseImageDefaults: usize,
+    pub ChooseImageDefaultsForMediaType: unsafe extern "system" fn(this: *mut *mut Self, value: IMAPI_MEDIA_PHYSICAL_TYPE) -> ::windows_sys::core::HRESULT,
+    pub SetISO9660InterchangeLevel: unsafe extern "system" fn(this: *mut *mut Self, newval: i32) -> ::windows_sys::core::HRESULT,
+    pub ISO9660InterchangeLevel: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub ISO9660InterchangeLevelsSupported: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    ISO9660InterchangeLevelsSupported: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreateResultImage: unsafe extern "system" fn(this: *mut *mut Self, resultstream: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CreateResultImage: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Exists: unsafe extern "system" fn(this: *mut *mut Self, fullpath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, itemtype: *mut FsiItemType) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Exists: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CalculateDiscIdentifier: unsafe extern "system" fn(this: *mut *mut Self, discidentifier: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CalculateDiscIdentifier: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub IdentifyFileSystemsOnDisc: unsafe extern "system" fn(this: *mut *mut Self, discrecorder: *mut ::core::ffi::c_void, filesystems: *mut FsiFileSystems) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    IdentifyFileSystemsOnDisc: usize,
+    pub GetDefaultFileSystemForImport: unsafe extern "system" fn(this: *mut *mut Self, filesystems: FsiFileSystems, importdefault: *mut FsiFileSystems) -> ::windows_sys::core::HRESULT,
+    pub ImportFileSystem: unsafe extern "system" fn(this: *mut *mut Self, importedfilesystem: *mut FsiFileSystems) -> ::windows_sys::core::HRESULT,
+    pub ImportSpecificFileSystem: unsafe extern "system" fn(this: *mut *mut Self, filesystemtouse: FsiFileSystems) -> ::windows_sys::core::HRESULT,
+    pub RollbackToChangePoint: unsafe extern "system" fn(this: *mut *mut Self, changepoint: i32) -> ::windows_sys::core::HRESULT,
+    pub LockInChangePoint: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub CreateDirectoryItem: unsafe extern "system" fn(this: *mut *mut Self, name: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, newitem: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    CreateDirectoryItem: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub CreateFileItem: unsafe extern "system" fn(this: *mut *mut Self, name: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, newitem: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    CreateFileItem: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub VolumeNameUDF: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    VolumeNameUDF: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub VolumeNameJoliet: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    VolumeNameJoliet: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub VolumeNameISO9660: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    VolumeNameISO9660: usize,
+    pub StageFiles: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetStageFiles: unsafe extern "system" fn(this: *mut *mut Self, newval: i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub MultisessionInterfaces: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    MultisessionInterfaces: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetMultisessionInterfaces: unsafe extern "system" fn(this: *mut *mut Self, newval: *const super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetMultisessionInterfaces: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFileSystemImage2 {
+    pub base__: IFileSystemImage,
+    #[cfg(feature = "Win32_System_Com")]
+    pub BootImageOptionsArray: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    BootImageOptionsArray: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetBootImageOptionsArray: unsafe extern "system" fn(this: *mut *mut Self, newval: *const super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetBootImageOptionsArray: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFileSystemImage3 {
+    pub base__: IFileSystemImage2,
+    pub CreateRedundantUdfMetadataFiles: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetCreateRedundantUdfMetadataFiles: unsafe extern "system" fn(this: *mut *mut Self, newval: i16) -> ::windows_sys::core::HRESULT,
+    pub ProbeSpecificFileSystem: unsafe extern "system" fn(this: *mut *mut Self, filesystemtoprobe: FsiFileSystems, isappendable: *mut i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFileSystemImageResult {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub ImageStream: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    ImageStream: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub ProgressItems: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    ProgressItems: usize,
+    pub TotalBlocks: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub BlockSize: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DiscId: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DiscId: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFileSystemImageResult2 {
+    pub base__: IFileSystemImageResult,
+    #[cfg(feature = "Win32_System_Com")]
+    pub ModifiedBlocks: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    ModifiedBlocks: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFsiDirectoryItem {
+    pub base__: IFsiItem,
+    #[cfg(feature = "Win32_System_Ole")]
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, newenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Ole"))]
+    _NewEnum: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub get_Item: unsafe extern "system" fn(this: *mut *mut Self, path: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, item: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    get_Item: usize,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, count: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub EnumFsiItems: unsafe extern "system" fn(this: *mut *mut Self, newenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AddDirectory: unsafe extern "system" fn(this: *mut *mut Self, path: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AddDirectory: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub AddFile: unsafe extern "system" fn(this: *mut *mut Self, path: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, filedata: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    AddFile: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AddTree: unsafe extern "system" fn(this: *mut *mut Self, sourcedirectory: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, includebasedirectory: i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AddTree: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Add: unsafe extern "system" fn(this: *mut *mut Self, item: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Add: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Remove: unsafe extern "system" fn(this: *mut *mut Self, path: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Remove: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RemoveTree: unsafe extern "system" fn(this: *mut *mut Self, path: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RemoveTree: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFsiDirectoryItem2 {
+    pub base__: IFsiDirectoryItem,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AddTreeWithNamedStreams: unsafe extern "system" fn(this: *mut *mut Self, sourcedirectory: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, includebasedirectory: i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AddTreeWithNamedStreams: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFsiFileItem {
+    pub base__: IFsiItem,
+    pub DataSize: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i64) -> ::windows_sys::core::HRESULT,
+    pub DataSize32BitLow: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub DataSize32BitHigh: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Data: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Data: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetData: unsafe extern "system" fn(this: *mut *mut Self, newval: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetData: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFsiFileItem2 {
+    pub base__: IFsiFileItem,
+    #[cfg(feature = "Win32_System_Com")]
+    pub FsiNamedStreams: unsafe extern "system" fn(this: *mut *mut Self, streams: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    FsiNamedStreams: usize,
+    pub IsNamedStream: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub AddStream: unsafe extern "system" fn(this: *mut *mut Self, name: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, streamdata: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    AddStream: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RemoveStream: unsafe extern "system" fn(this: *mut *mut Self, name: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RemoveStream: usize,
+    pub IsRealTime: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetIsRealTime: unsafe extern "system" fn(this: *mut *mut Self, newval: i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFsiItem {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Name: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Name: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub FullPath: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    FullPath: usize,
+    pub CreationTime: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut f64) -> ::windows_sys::core::HRESULT,
+    pub SetCreationTime: unsafe extern "system" fn(this: *mut *mut Self, newval: f64) -> ::windows_sys::core::HRESULT,
+    pub LastAccessedTime: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut f64) -> ::windows_sys::core::HRESULT,
+    pub SetLastAccessedTime: unsafe extern "system" fn(this: *mut *mut Self, newval: f64) -> ::windows_sys::core::HRESULT,
+    pub LastModifiedTime: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut f64) -> ::windows_sys::core::HRESULT,
+    pub SetLastModifiedTime: unsafe extern "system" fn(this: *mut *mut Self, newval: f64) -> ::windows_sys::core::HRESULT,
+    pub IsHidden: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetIsHidden: unsafe extern "system" fn(this: *mut *mut Self, newval: i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub FileSystemName: unsafe extern "system" fn(this: *mut *mut Self, filesystem: FsiFileSystems, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    FileSystemName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub FileSystemPath: unsafe extern "system" fn(this: *mut *mut Self, filesystem: FsiFileSystems, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    FileSystemPath: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFsiNamedStreams {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Ole")]
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, newenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Ole"))]
+    _NewEnum: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub get_Item: unsafe extern "system" fn(this: *mut *mut Self, index: i32, item: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    get_Item: usize,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, count: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub EnumNamedStreams: unsafe extern "system" fn(this: *mut *mut Self, newenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IIsoImageManager {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Path: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Path: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Stream: unsafe extern "system" fn(this: *mut *mut Self, data: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Stream: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetPath: unsafe extern "system" fn(this: *mut *mut Self, val: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetPath: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetStream: unsafe extern "system" fn(this: *mut *mut Self, data: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetStream: usize,
+    pub Validate: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IJolietDiscMaster {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetTotalDataBlocks: unsafe extern "system" fn(this: *mut *mut Self, pnblocks: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub GetUsedDataBlocks: unsafe extern "system" fn(this: *mut *mut Self, pnblocks: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub GetDataBlockSize: unsafe extern "system" fn(this: *mut *mut Self, pnblockbytes: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    pub AddData: unsafe extern "system" fn(this: *mut *mut Self, pstorage: *mut ::core::ffi::c_void, lfileoverwrite: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
+    AddData: usize,
+    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    pub GetJolietProperties: unsafe extern "system" fn(this: *mut *mut Self, pppropstg: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
+    GetJolietProperties: usize,
+    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    pub SetJolietProperties: unsafe extern "system" fn(this: *mut *mut Self, ppropstg: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
+    SetJolietProperties: usize,
+}
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
 pub const IMAPI2FS_BOOT_ENTRY_COUNT_MAX: u32 = 32u32;
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
@@ -1195,21 +2074,244 @@ impl ::core::clone::Clone for IMMP_MPV_STORE_DRIVER_HANDLE {
         *self
     }
 }
-pub type IMultisession = *mut ::core::ffi::c_void;
-pub type IMultisessionRandomWrite = *mut ::core::ffi::c_void;
-pub type IMultisessionSequential = *mut ::core::ffi::c_void;
-pub type IMultisessionSequential2 = *mut ::core::ffi::c_void;
-pub type IProgressItem = *mut ::core::ffi::c_void;
-pub type IProgressItems = *mut ::core::ffi::c_void;
-pub type IRawCDImageCreator = *mut ::core::ffi::c_void;
-pub type IRawCDImageTrackInfo = *mut ::core::ffi::c_void;
-pub type IRedbookDiscMaster = *mut ::core::ffi::c_void;
-pub type IStreamConcatenate = *mut ::core::ffi::c_void;
-pub type IStreamInterleave = *mut ::core::ffi::c_void;
-pub type IStreamPseudoRandomBased = *mut ::core::ffi::c_void;
-pub type IWriteEngine2 = *mut ::core::ffi::c_void;
-pub type IWriteEngine2EventArgs = *mut ::core::ffi::c_void;
-pub type IWriteSpeedDescriptor = *mut ::core::ffi::c_void;
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IMultisession {
+    pub base__: super::super::System::Com::IDispatch,
+    pub IsSupportedOnCurrentMediaState: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetInUse: unsafe extern "system" fn(this: *mut *mut Self, value: i16) -> ::windows_sys::core::HRESULT,
+    pub InUse: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub ImportRecorder: unsafe extern "system" fn(this: *mut *mut Self, value: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    ImportRecorder: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IMultisessionRandomWrite {
+    pub base__: IMultisession,
+    pub WriteUnitSize: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub LastWrittenAddress: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub TotalSectorsOnMedia: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IMultisessionSequential {
+    pub base__: IMultisession,
+    pub IsFirstDataSession: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub StartAddressOfPreviousSession: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub LastWrittenAddressOfPreviousSession: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub NextWritableAddress: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub FreeSectorsOnMedia: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IMultisessionSequential2 {
+    pub base__: IMultisessionSequential,
+    pub WriteUnitSize: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IProgressItem {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Description: unsafe extern "system" fn(this: *mut *mut Self, desc: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Description: usize,
+    pub FirstBlock: unsafe extern "system" fn(this: *mut *mut Self, block: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub LastBlock: unsafe extern "system" fn(this: *mut *mut Self, block: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub BlockCount: unsafe extern "system" fn(this: *mut *mut Self, blocks: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IProgressItems {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Ole")]
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, newenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Ole"))]
+    _NewEnum: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub get_Item: unsafe extern "system" fn(this: *mut *mut Self, index: i32, item: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    get_Item: usize,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, count: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub ProgressItemFromBlock: unsafe extern "system" fn(this: *mut *mut Self, block: u32, item: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    ProgressItemFromBlock: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub ProgressItemFromDescription: unsafe extern "system" fn(this: *mut *mut Self, description: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, item: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    ProgressItemFromDescription: usize,
+    pub EnumProgressItems: unsafe extern "system" fn(this: *mut *mut Self, newenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IRawCDImageCreator {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreateResultImage: unsafe extern "system" fn(this: *mut *mut Self, resultstream: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CreateResultImage: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub AddTrack: unsafe extern "system" fn(this: *mut *mut Self, datatype: IMAPI_CD_SECTOR_TYPE, data: *mut ::core::ffi::c_void, trackindex: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    AddTrack: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub AddSpecialPregap: unsafe extern "system" fn(this: *mut *mut Self, data: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    AddSpecialPregap: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub AddSubcodeRWGenerator: unsafe extern "system" fn(this: *mut *mut Self, subcode: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    AddSubcodeRWGenerator: usize,
+    pub SetResultingImageType: unsafe extern "system" fn(this: *mut *mut Self, value: IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE) -> ::windows_sys::core::HRESULT,
+    pub ResultingImageType: unsafe extern "system" fn(this: *mut *mut Self, value: *mut IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE) -> ::windows_sys::core::HRESULT,
+    pub StartOfLeadout: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetStartOfLeadoutLimit: unsafe extern "system" fn(this: *mut *mut Self, value: i32) -> ::windows_sys::core::HRESULT,
+    pub StartOfLeadoutLimit: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetDisableGaplessAudio: unsafe extern "system" fn(this: *mut *mut Self, value: i16) -> ::windows_sys::core::HRESULT,
+    pub DisableGaplessAudio: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetMediaCatalogNumber: unsafe extern "system" fn(this: *mut *mut Self, value: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetMediaCatalogNumber: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MediaCatalogNumber: unsafe extern "system" fn(this: *mut *mut Self, value: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MediaCatalogNumber: usize,
+    pub SetStartingTrackNumber: unsafe extern "system" fn(this: *mut *mut Self, value: i32) -> ::windows_sys::core::HRESULT,
+    pub StartingTrackNumber: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub get_TrackInfo: unsafe extern "system" fn(this: *mut *mut Self, trackindex: i32, value: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    get_TrackInfo: usize,
+    pub NumberOfExistingTracks: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub LastUsedUserSectorInImage: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub ExpectedTableOfContents: unsafe extern "system" fn(this: *mut *mut Self, value: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    ExpectedTableOfContents: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IRawCDImageTrackInfo {
+    pub base__: super::super::System::Com::IDispatch,
+    pub StartingLba: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SectorCount: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub TrackNumber: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SectorType: unsafe extern "system" fn(this: *mut *mut Self, value: *mut IMAPI_CD_SECTOR_TYPE) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ISRC: unsafe extern "system" fn(this: *mut *mut Self, value: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ISRC: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetISRC: unsafe extern "system" fn(this: *mut *mut Self, value: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetISRC: usize,
+    pub DigitalAudioCopySetting: unsafe extern "system" fn(this: *mut *mut Self, value: *mut IMAPI_CD_TRACK_DIGITAL_COPY_SETTING) -> ::windows_sys::core::HRESULT,
+    pub SetDigitalAudioCopySetting: unsafe extern "system" fn(this: *mut *mut Self, value: IMAPI_CD_TRACK_DIGITAL_COPY_SETTING) -> ::windows_sys::core::HRESULT,
+    pub AudioHasPreemphasis: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetAudioHasPreemphasis: unsafe extern "system" fn(this: *mut *mut Self, value: i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub TrackIndexes: unsafe extern "system" fn(this: *mut *mut Self, value: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    TrackIndexes: usize,
+    pub AddTrackIndex: unsafe extern "system" fn(this: *mut *mut Self, lbaoffset: i32) -> ::windows_sys::core::HRESULT,
+    pub ClearTrackIndex: unsafe extern "system" fn(this: *mut *mut Self, lbaoffset: i32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRedbookDiscMaster {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetTotalAudioTracks: unsafe extern "system" fn(this: *mut *mut Self, pntracks: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub GetTotalAudioBlocks: unsafe extern "system" fn(this: *mut *mut Self, pnblocks: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub GetUsedAudioBlocks: unsafe extern "system" fn(this: *mut *mut Self, pnblocks: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub GetAvailableAudioTrackBlocks: unsafe extern "system" fn(this: *mut *mut Self, pnblocks: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub GetAudioBlockSize: unsafe extern "system" fn(this: *mut *mut Self, pnblockbytes: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub CreateAudioTrack: unsafe extern "system" fn(this: *mut *mut Self, nblocks: i32) -> ::windows_sys::core::HRESULT,
+    pub AddAudioTrackBlocks: unsafe extern "system" fn(this: *mut *mut Self, pby: *const u8, cb: i32) -> ::windows_sys::core::HRESULT,
+    pub CloseAudioTrack: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IStreamConcatenate {
+    pub base__: super::super::System::Com::IStream,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, stream1: *mut ::core::ffi::c_void, stream2: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Initialize: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Initialize2: unsafe extern "system" fn(this: *mut *mut Self, streams: *const *mut ::core::ffi::c_void, streamcount: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Initialize2: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Append: unsafe extern "system" fn(this: *mut *mut Self, stream: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Append: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Append2: unsafe extern "system" fn(this: *mut *mut Self, streams: *const *mut ::core::ffi::c_void, streamcount: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Append2: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IStreamInterleave {
+    pub base__: super::super::System::Com::IStream,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, streams: *const *mut ::core::ffi::c_void, interleavesizes: *const u32, streamcount: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Initialize: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IStreamPseudoRandomBased {
+    pub base__: super::super::System::Com::IStream,
+    pub SetSeed: unsafe extern "system" fn(this: *mut *mut Self, value: u32) -> ::windows_sys::core::HRESULT,
+    pub Seed: unsafe extern "system" fn(this: *mut *mut Self, value: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub put_ExtendedSeed: unsafe extern "system" fn(this: *mut *mut Self, values: *const u32, ecount: u32) -> ::windows_sys::core::HRESULT,
+    pub get_ExtendedSeed: unsafe extern "system" fn(this: *mut *mut Self, values: *mut *mut u32, ecount: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IWriteEngine2 {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub WriteSection: unsafe extern "system" fn(this: *mut *mut Self, data: *mut ::core::ffi::c_void, startingblockaddress: i32, numberofblocks: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    WriteSection: usize,
+    pub CancelWrite: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub SetRecorder: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Recorder: unsafe extern "system" fn(this: *mut *mut Self, value: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetUseStreamingWrite12: unsafe extern "system" fn(this: *mut *mut Self, value: i16) -> ::windows_sys::core::HRESULT,
+    pub UseStreamingWrite12: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetStartingSectorsPerSecond: unsafe extern "system" fn(this: *mut *mut Self, value: i32) -> ::windows_sys::core::HRESULT,
+    pub StartingSectorsPerSecond: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetEndingSectorsPerSecond: unsafe extern "system" fn(this: *mut *mut Self, value: i32) -> ::windows_sys::core::HRESULT,
+    pub EndingSectorsPerSecond: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetBytesPerSector: unsafe extern "system" fn(this: *mut *mut Self, value: i32) -> ::windows_sys::core::HRESULT,
+    pub BytesPerSector: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub WriteInProgress: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IWriteEngine2EventArgs {
+    pub base__: super::super::System::Com::IDispatch,
+    pub StartLba: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SectorCount: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub LastReadLba: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub LastWrittenLba: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub TotalSystemBuffer: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub UsedSystemBuffer: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub FreeSystemBuffer: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IWriteSpeedDescriptor {
+    pub base__: super::super::System::Com::IDispatch,
+    pub MediaType: unsafe extern "system" fn(this: *mut *mut Self, value: *mut IMAPI_MEDIA_PHYSICAL_TYPE) -> ::windows_sys::core::HRESULT,
+    pub RotationTypeIsPureCAV: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub WriteSpeed: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
+}
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
 pub type MEDIA_FLAGS = i32;
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
@@ -1265,7 +2367,7 @@ pub const MSDiscRecorderObj: ::windows_sys::core::GUID = ::windows_sys::core::GU
 pub const MSEnumDiscRecordersObj: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2315474554, data2: 25547, data3: 19368, data4: [186, 246, 82, 17, 152, 22, 209, 239] };
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`, `\"Win32_System_AddressBook\"`*"]
 #[cfg(feature = "Win32_System_AddressBook")]
-pub type MSGCALLRELEASE = ::core::option::Option<unsafe extern "system" fn(ulcallerdata: u32, lpmessage: super::super::System::AddressBook::IMessage)>;
+pub type MSGCALLRELEASE = ::core::option::Option<unsafe extern "system" fn(ulcallerdata: u32, lpmessage: *mut *mut super::super::System::AddressBook::IMessage)>;
 pub const MsftDiscFormat2Data: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 657801514, data2: 32612, data3: 23311, data4: [143, 0, 93, 119, 175, 190, 38, 30] };
 pub const MsftDiscFormat2Erase: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 657801515, data2: 32612, data3: 23311, data4: [143, 0, 93, 119, 175, 190, 38, 30] };
 pub const MsftDiscFormat2RawCD: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 657801512, data2: 32612, data3: 23311, data4: [143, 0, 93, 119, 175, 190, 38, 30] };

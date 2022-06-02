@@ -49,7 +49,136 @@ impl ::core::clone::Clone for HdcpSetProtectionResult {
         *self
     }
 }
-pub type IMediaProtectionServiceRequest = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IComponentLoadFailedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Information: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Completion: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IComponentRenewalStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub RenewSystemComponentsAsync: unsafe extern "system" fn(this: *mut *mut Self, information: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RenewSystemComponentsAsync: usize,
+}
+#[repr(C)]
+pub struct IHdcpSession {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub IsEffectiveProtectionAtLeast: unsafe extern "system" fn(this: *mut *mut Self, protection: HdcpProtection, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub GetEffectiveProtection: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    GetEffectiveProtection: usize,
+    #[cfg(feature = "Foundation")]
+    pub SetDesiredMinProtectionAsync: unsafe extern "system" fn(this: *mut *mut Self, protection: HdcpProtection, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    SetDesiredMinProtectionAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub ProtectionChanged: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    ProtectionChanged: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveProtectionChanged: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveProtectionChanged: usize,
+}
+#[repr(C)]
+pub struct IMediaProtectionManager {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub ServiceRequested: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    ServiceRequested: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveServiceRequested: unsafe extern "system" fn(this: *mut *mut Self, cookie: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveServiceRequested: usize,
+    #[cfg(feature = "Foundation")]
+    pub RebootNeeded: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RebootNeeded: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveRebootNeeded: unsafe extern "system" fn(this: *mut *mut Self, cookie: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveRebootNeeded: usize,
+    #[cfg(feature = "Foundation")]
+    pub ComponentLoadFailed: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    ComponentLoadFailed: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveComponentLoadFailed: unsafe extern "system" fn(this: *mut *mut Self, cookie: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveComponentLoadFailed: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub Properties: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    Properties: usize,
+}
+#[repr(C)]
+pub struct IMediaProtectionPMPServer {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation_Collections")]
+    pub Properties: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    Properties: usize,
+}
+#[repr(C)]
+pub struct IMediaProtectionPMPServerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation_Collections")]
+    pub CreatePMPServer: unsafe extern "system" fn(this: *mut *mut Self, pproperties: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    CreatePMPServer: usize,
+}
+#[repr(C)]
+pub struct IMediaProtectionServiceCompletion {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Complete: unsafe extern "system" fn(this: *mut *mut Self, success: bool) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMediaProtectionServiceRequest {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub ProtectionSystem: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub Type: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IProtectionCapabilities {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub IsTypeSupported: unsafe extern "system" fn(this: *mut *mut Self, r#type: ::windows_sys::core::HSTRING, keysystem: ::windows_sys::core::HSTRING, result__: *mut ProtectionCapabilityResult) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRevocationAndRenewalInformation {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation_Collections")]
+    pub Items: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    Items: usize,
+}
+#[repr(C)]
+pub struct IRevocationAndRenewalItem {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Reasons: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut RevocationAndRenewalReasons) -> ::windows_sys::core::HRESULT,
+    pub HeaderHash: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub PublicKeyHash: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Name: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub RenewalId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IServiceRequestedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Request: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Completion: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IServiceRequestedEventArgs2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Media_Playback")]
+    pub MediaPlaybackItem: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Media_Playback"))]
+    MediaPlaybackItem: usize,
+}
 pub type MediaProtectionManager = *mut ::core::ffi::c_void;
 pub type MediaProtectionPMPServer = *mut ::core::ffi::c_void;
 pub type MediaProtectionServiceCompletion = *mut ::core::ffi::c_void;

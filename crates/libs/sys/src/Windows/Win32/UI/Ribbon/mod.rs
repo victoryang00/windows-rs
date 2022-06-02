@@ -1,15 +1,118 @@
-pub type IUIApplication = *mut ::core::ffi::c_void;
-pub type IUICollection = *mut ::core::ffi::c_void;
-pub type IUICollectionChangedEvent = *mut ::core::ffi::c_void;
-pub type IUICommandHandler = *mut ::core::ffi::c_void;
-pub type IUIContextualUI = *mut ::core::ffi::c_void;
-pub type IUIEventLogger = *mut ::core::ffi::c_void;
-pub type IUIEventingManager = *mut ::core::ffi::c_void;
-pub type IUIFramework = *mut ::core::ffi::c_void;
-pub type IUIImage = *mut ::core::ffi::c_void;
-pub type IUIImageFromBitmap = *mut ::core::ffi::c_void;
-pub type IUIRibbon = *mut ::core::ffi::c_void;
-pub type IUISimplePropertySet = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IUIApplication {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnViewChanged: unsafe extern "system" fn(this: *mut *mut Self, viewid: u32, typeid: UI_VIEWTYPE, view: *mut ::core::ffi::c_void, verb: UI_VIEWVERB, ureasoncode: i32) -> ::windows_sys::core::HRESULT,
+    pub OnCreateUICommand: unsafe extern "system" fn(this: *mut *mut Self, commandid: u32, typeid: UI_COMMANDTYPE, commandhandler: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub OnDestroyUICommand: unsafe extern "system" fn(this: *mut *mut Self, commandid: u32, typeid: UI_COMMANDTYPE, commandhandler: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IUICollection {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, count: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetItem: unsafe extern "system" fn(this: *mut *mut Self, index: u32, item: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Add: unsafe extern "system" fn(this: *mut *mut Self, item: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Insert: unsafe extern "system" fn(this: *mut *mut Self, index: u32, item: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RemoveAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32) -> ::windows_sys::core::HRESULT,
+    pub Replace: unsafe extern "system" fn(this: *mut *mut Self, indexreplaced: u32, itemreplacewith: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Clear: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IUICollectionChangedEvent {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnChanged: unsafe extern "system" fn(this: *mut *mut Self, action: UI_COLLECTIONCHANGE, oldindex: u32, olditem: *mut ::core::ffi::c_void, newindex: u32, newitem: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IUICommandHandler {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+    pub Execute: unsafe extern "system" fn(this: *mut *mut Self, commandid: u32, verb: UI_EXECUTIONVERB, key: *const super::Shell::PropertiesSystem::PROPERTYKEY, currentvalue: *const super::super::System::Com::StructuredStorage::PROPVARIANT, commandexecutionproperties: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem")))]
+    Execute: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+    pub UpdateProperty: unsafe extern "system" fn(this: *mut *mut Self, commandid: u32, key: *const super::Shell::PropertiesSystem::PROPERTYKEY, currentvalue: *const super::super::System::Com::StructuredStorage::PROPVARIANT, newvalue: *mut super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem")))]
+    UpdateProperty: usize,
+}
+#[repr(C)]
+pub struct IUIContextualUI {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub ShowAtLocation: unsafe extern "system" fn(this: *mut *mut Self, x: i32, y: i32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IUIEventLogger {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnUIEvent: unsafe extern "system" fn(this: *mut *mut Self, peventparams: *const UI_EVENTPARAMS),
+}
+#[repr(C)]
+pub struct IUIEventingManager {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetEventLogger: unsafe extern "system" fn(this: *mut *mut Self, eventlogger: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IUIFramework {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, framewnd: super::super::Foundation::HWND, application: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Initialize: usize,
+    pub Destroy: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub LoadUI: unsafe extern "system" fn(this: *mut *mut Self, instance: super::super::Foundation::HINSTANCE, resourcename: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    LoadUI: usize,
+    pub GetView: unsafe extern "system" fn(this: *mut *mut Self, viewid: u32, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+    pub GetUICommandProperty: unsafe extern "system" fn(this: *mut *mut Self, commandid: u32, key: *const super::Shell::PropertiesSystem::PROPERTYKEY, value: *mut super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem")))]
+    GetUICommandProperty: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+    pub SetUICommandProperty: unsafe extern "system" fn(this: *mut *mut Self, commandid: u32, key: *const super::Shell::PropertiesSystem::PROPERTYKEY, value: *const super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem")))]
+    SetUICommandProperty: usize,
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub InvalidateUICommand: unsafe extern "system" fn(this: *mut *mut Self, commandid: u32, flags: UI_INVALIDATIONS, key: *const super::Shell::PropertiesSystem::PROPERTYKEY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    InvalidateUICommand: usize,
+    pub FlushPendingInvalidations: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub SetModes: unsafe extern "system" fn(this: *mut *mut Self, imodes: i32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IUIImage {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub GetBitmap: unsafe extern "system" fn(this: *mut *mut Self, bitmap: *mut super::super::Graphics::Gdi::HBITMAP) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Gdi"))]
+    GetBitmap: usize,
+}
+#[repr(C)]
+pub struct IUIImageFromBitmap {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub CreateImage: unsafe extern "system" fn(this: *mut *mut Self, bitmap: super::super::Graphics::Gdi::HBITMAP, options: UI_OWNERSHIP, image: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Gdi"))]
+    CreateImage: usize,
+}
+#[repr(C)]
+pub struct IUIRibbon {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetHeight: unsafe extern "system" fn(this: *mut *mut Self, cy: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub LoadSettingsFromStream: unsafe extern "system" fn(this: *mut *mut Self, pstream: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    LoadSettingsFromStream: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SaveSettingsToStream: unsafe extern "system" fn(this: *mut *mut Self, pstream: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SaveSettingsToStream: usize,
+}
+#[repr(C)]
+pub struct IUISimplePropertySet {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+    pub GetValue: unsafe extern "system" fn(this: *mut *mut Self, key: *const super::Shell::PropertiesSystem::PROPERTYKEY, value: *mut super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem")))]
+    GetValue: usize,
+}
 pub const LIBID_UIRibbon: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2486121922, data2: 59451, data3: 17903, data4: [176, 133, 172, 41, 93, 214, 61, 91] };
 pub const UIRibbonFramework: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2456242682, data2: 9749, data3: 18823, data4: [136, 69, 195, 62, 101, 242, 185, 87] };
 pub const UIRibbonImageFromBitmapFactory: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 259273910, data2: 22966, data3: 16976, data4: [153, 158, 209, 104, 214, 174, 66, 147] };

@@ -570,106 +570,1422 @@ pub const FORCE_REJOIN: u32 = 2u32;
 #[doc = "*Required features: `\"Win32_System_RemoteDesktop\"`*"]
 pub const FORCE_REJOIN_IN_CLUSTERMODE: u32 = 3u32;
 pub type HwtsVirtualChannelHandle = isize;
-pub type IADsTSUserEx = *mut ::core::ffi::c_void;
-pub type IAudioDeviceEndpoint = *mut ::core::ffi::c_void;
-pub type IAudioEndpoint = *mut ::core::ffi::c_void;
-pub type IAudioEndpointControl = *mut ::core::ffi::c_void;
-pub type IAudioEndpointRT = *mut ::core::ffi::c_void;
-pub type IAudioInputEndpointRT = *mut ::core::ffi::c_void;
-pub type IAudioOutputEndpointRT = *mut ::core::ffi::c_void;
-pub type IRemoteDesktopClient = *mut ::core::ffi::c_void;
-pub type IRemoteDesktopClientActions = *mut ::core::ffi::c_void;
-pub type IRemoteDesktopClientSettings = *mut ::core::ffi::c_void;
-pub type IRemoteDesktopClientTouchPointer = *mut ::core::ffi::c_void;
-pub type IRemoteSystemAdditionalInfoProvider = *mut ::core::ffi::c_void;
-pub type ITSGAccountingEngine = *mut ::core::ffi::c_void;
-pub type ITSGAuthenticateUserSink = *mut ::core::ffi::c_void;
-pub type ITSGAuthenticationEngine = *mut ::core::ffi::c_void;
-pub type ITSGAuthorizeConnectionSink = *mut ::core::ffi::c_void;
-pub type ITSGAuthorizeResourceSink = *mut ::core::ffi::c_void;
-pub type ITSGPolicyEngine = *mut ::core::ffi::c_void;
-pub type ITsSbBaseNotifySink = *mut ::core::ffi::c_void;
-pub type ITsSbClientConnection = *mut ::core::ffi::c_void;
-pub type ITsSbClientConnectionPropertySet = *mut ::core::ffi::c_void;
-pub type ITsSbEnvironment = *mut ::core::ffi::c_void;
-pub type ITsSbEnvironmentPropertySet = *mut ::core::ffi::c_void;
-pub type ITsSbFilterPluginStore = *mut ::core::ffi::c_void;
-pub type ITsSbGenericNotifySink = *mut ::core::ffi::c_void;
-pub type ITsSbGlobalStore = *mut ::core::ffi::c_void;
-pub type ITsSbLoadBalanceResult = *mut ::core::ffi::c_void;
-pub type ITsSbLoadBalancing = *mut ::core::ffi::c_void;
-pub type ITsSbLoadBalancingNotifySink = *mut ::core::ffi::c_void;
-pub type ITsSbOrchestration = *mut ::core::ffi::c_void;
-pub type ITsSbOrchestrationNotifySink = *mut ::core::ffi::c_void;
-pub type ITsSbPlacement = *mut ::core::ffi::c_void;
-pub type ITsSbPlacementNotifySink = *mut ::core::ffi::c_void;
-pub type ITsSbPlugin = *mut ::core::ffi::c_void;
-pub type ITsSbPluginNotifySink = *mut ::core::ffi::c_void;
-pub type ITsSbPluginPropertySet = *mut ::core::ffi::c_void;
-pub type ITsSbPropertySet = *mut ::core::ffi::c_void;
-pub type ITsSbProvider = *mut ::core::ffi::c_void;
-pub type ITsSbProvisioning = *mut ::core::ffi::c_void;
-pub type ITsSbProvisioningPluginNotifySink = *mut ::core::ffi::c_void;
-pub type ITsSbResourceNotification = *mut ::core::ffi::c_void;
-pub type ITsSbResourceNotificationEx = *mut ::core::ffi::c_void;
-pub type ITsSbResourcePlugin = *mut ::core::ffi::c_void;
-pub type ITsSbResourcePluginStore = *mut ::core::ffi::c_void;
-pub type ITsSbServiceNotification = *mut ::core::ffi::c_void;
-pub type ITsSbSession = *mut ::core::ffi::c_void;
-pub type ITsSbTarget = *mut ::core::ffi::c_void;
-pub type ITsSbTargetPropertySet = *mut ::core::ffi::c_void;
-pub type ITsSbTaskInfo = *mut ::core::ffi::c_void;
-pub type ITsSbTaskPlugin = *mut ::core::ffi::c_void;
-pub type ITsSbTaskPluginNotifySink = *mut ::core::ffi::c_void;
-pub type IWRdsEnhancedFastReconnectArbitrator = *mut ::core::ffi::c_void;
-pub type IWRdsGraphicsChannel = *mut ::core::ffi::c_void;
-pub type IWRdsGraphicsChannelEvents = *mut ::core::ffi::c_void;
-pub type IWRdsGraphicsChannelManager = *mut ::core::ffi::c_void;
-pub type IWRdsProtocolConnection = *mut ::core::ffi::c_void;
-pub type IWRdsProtocolConnectionCallback = *mut ::core::ffi::c_void;
-pub type IWRdsProtocolConnectionSettings = *mut ::core::ffi::c_void;
-pub type IWRdsProtocolLicenseConnection = *mut ::core::ffi::c_void;
-pub type IWRdsProtocolListener = *mut ::core::ffi::c_void;
-pub type IWRdsProtocolListenerCallback = *mut ::core::ffi::c_void;
-pub type IWRdsProtocolLogonErrorRedirector = *mut ::core::ffi::c_void;
-pub type IWRdsProtocolManager = *mut ::core::ffi::c_void;
-pub type IWRdsProtocolSettings = *mut ::core::ffi::c_void;
-pub type IWRdsProtocolShadowCallback = *mut ::core::ffi::c_void;
-pub type IWRdsProtocolShadowConnection = *mut ::core::ffi::c_void;
-pub type IWRdsWddmIddProps = *mut ::core::ffi::c_void;
-pub type IWTSBitmapRenderService = *mut ::core::ffi::c_void;
-pub type IWTSBitmapRenderer = *mut ::core::ffi::c_void;
-pub type IWTSBitmapRendererCallback = *mut ::core::ffi::c_void;
-pub type IWTSListener = *mut ::core::ffi::c_void;
-pub type IWTSListenerCallback = *mut ::core::ffi::c_void;
-pub type IWTSPlugin = *mut ::core::ffi::c_void;
-pub type IWTSPluginServiceProvider = *mut ::core::ffi::c_void;
-pub type IWTSProtocolConnection = *mut ::core::ffi::c_void;
-pub type IWTSProtocolConnectionCallback = *mut ::core::ffi::c_void;
-pub type IWTSProtocolLicenseConnection = *mut ::core::ffi::c_void;
-pub type IWTSProtocolListener = *mut ::core::ffi::c_void;
-pub type IWTSProtocolListenerCallback = *mut ::core::ffi::c_void;
-pub type IWTSProtocolLogonErrorRedirector = *mut ::core::ffi::c_void;
-pub type IWTSProtocolManager = *mut ::core::ffi::c_void;
-pub type IWTSProtocolShadowCallback = *mut ::core::ffi::c_void;
-pub type IWTSProtocolShadowConnection = *mut ::core::ffi::c_void;
-pub type IWTSSBPlugin = *mut ::core::ffi::c_void;
-pub type IWTSVirtualChannel = *mut ::core::ffi::c_void;
-pub type IWTSVirtualChannelCallback = *mut ::core::ffi::c_void;
-pub type IWTSVirtualChannelManager = *mut ::core::ffi::c_void;
-pub type IWorkspace = *mut ::core::ffi::c_void;
-pub type IWorkspace2 = *mut ::core::ffi::c_void;
-pub type IWorkspace3 = *mut ::core::ffi::c_void;
-pub type IWorkspaceClientExt = *mut ::core::ffi::c_void;
-pub type IWorkspaceRegistration = *mut ::core::ffi::c_void;
-pub type IWorkspaceRegistration2 = *mut ::core::ffi::c_void;
-pub type IWorkspaceReportMessage = *mut ::core::ffi::c_void;
-pub type IWorkspaceResTypeRegistry = *mut ::core::ffi::c_void;
-pub type IWorkspaceScriptable = *mut ::core::ffi::c_void;
-pub type IWorkspaceScriptable2 = *mut ::core::ffi::c_void;
-pub type IWorkspaceScriptable3 = *mut ::core::ffi::c_void;
-pub type ItsPubPlugin = *mut ::core::ffi::c_void;
-pub type ItsPubPlugin2 = *mut ::core::ffi::c_void;
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IADsTSUserEx {
+    pub base__: super::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub TerminalServicesProfilePath: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    TerminalServicesProfilePath: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetTerminalServicesProfilePath: unsafe extern "system" fn(this: *mut *mut Self, pnewval: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetTerminalServicesProfilePath: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub TerminalServicesHomeDirectory: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    TerminalServicesHomeDirectory: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetTerminalServicesHomeDirectory: unsafe extern "system" fn(this: *mut *mut Self, pnewval: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetTerminalServicesHomeDirectory: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub TerminalServicesHomeDrive: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    TerminalServicesHomeDrive: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetTerminalServicesHomeDrive: unsafe extern "system" fn(this: *mut *mut Self, pnewval: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetTerminalServicesHomeDrive: usize,
+    pub AllowLogon: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetAllowLogon: unsafe extern "system" fn(this: *mut *mut Self, newval: i32) -> ::windows_sys::core::HRESULT,
+    pub EnableRemoteControl: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetEnableRemoteControl: unsafe extern "system" fn(this: *mut *mut Self, newval: i32) -> ::windows_sys::core::HRESULT,
+    pub MaxDisconnectionTime: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetMaxDisconnectionTime: unsafe extern "system" fn(this: *mut *mut Self, newval: i32) -> ::windows_sys::core::HRESULT,
+    pub MaxConnectionTime: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetMaxConnectionTime: unsafe extern "system" fn(this: *mut *mut Self, newval: i32) -> ::windows_sys::core::HRESULT,
+    pub MaxIdleTime: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetMaxIdleTime: unsafe extern "system" fn(this: *mut *mut Self, newval: i32) -> ::windows_sys::core::HRESULT,
+    pub ReconnectionAction: unsafe extern "system" fn(this: *mut *mut Self, pnewval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetReconnectionAction: unsafe extern "system" fn(this: *mut *mut Self, newval: i32) -> ::windows_sys::core::HRESULT,
+    pub BrokenConnectionAction: unsafe extern "system" fn(this: *mut *mut Self, pnewval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetBrokenConnectionAction: unsafe extern "system" fn(this: *mut *mut Self, newval: i32) -> ::windows_sys::core::HRESULT,
+    pub ConnectClientDrivesAtLogon: unsafe extern "system" fn(this: *mut *mut Self, pnewval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetConnectClientDrivesAtLogon: unsafe extern "system" fn(this: *mut *mut Self, newval: i32) -> ::windows_sys::core::HRESULT,
+    pub ConnectClientPrintersAtLogon: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetConnectClientPrintersAtLogon: unsafe extern "system" fn(this: *mut *mut Self, newval: i32) -> ::windows_sys::core::HRESULT,
+    pub DefaultToMainPrinter: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetDefaultToMainPrinter: unsafe extern "system" fn(this: *mut *mut Self, newval: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub TerminalServicesWorkDirectory: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    TerminalServicesWorkDirectory: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetTerminalServicesWorkDirectory: unsafe extern "system" fn(this: *mut *mut Self, pnewval: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetTerminalServicesWorkDirectory: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub TerminalServicesInitialProgram: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    TerminalServicesInitialProgram: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetTerminalServicesInitialProgram: unsafe extern "system" fn(this: *mut *mut Self, pnewval: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetTerminalServicesInitialProgram: usize,
+}
+#[repr(C)]
+pub struct IAudioDeviceEndpoint {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetBuffer: unsafe extern "system" fn(this: *mut *mut Self, maxperiod: i64, u32latencycoefficient: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetRTCaps: unsafe extern "system" fn(this: *mut *mut Self, pbisrtcapable: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetRTCaps: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetEventDrivenCapable: unsafe extern "system" fn(this: *mut *mut Self, pbiseventcapable: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetEventDrivenCapable: usize,
+    pub WriteExclusiveModeParametersToSharedMemory: unsafe extern "system" fn(this: *mut *mut Self, htargetprocess: usize, hnsperiod: i64, hnsbufferduration: i64, u32latencycoefficient: u32, pu32sharedmemorysize: *mut u32, phsharedmemory: *mut usize) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAudioEndpoint {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Media_Audio")]
+    pub GetFrameFormat: unsafe extern "system" fn(this: *mut *mut Self, ppformat: *mut *mut super::super::Media::Audio::WAVEFORMATEX) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Media_Audio"))]
+    GetFrameFormat: usize,
+    pub GetFramesPerPacket: unsafe extern "system" fn(this: *mut *mut Self, pframesperpacket: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetLatency: unsafe extern "system" fn(this: *mut *mut Self, platency: *mut i64) -> ::windows_sys::core::HRESULT,
+    pub SetStreamFlags: unsafe extern "system" fn(this: *mut *mut Self, streamflags: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetEventHandle: unsafe extern "system" fn(this: *mut *mut Self, eventhandle: super::super::Foundation::HANDLE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetEventHandle: usize,
+}
+#[repr(C)]
+pub struct IAudioEndpointControl {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Start: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Stop: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAudioEndpointRT {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCurrentPadding: unsafe extern "system" fn(this: *mut *mut Self, ppadding: *mut i64, paecurrentposition: *mut AE_CURRENT_POSITION),
+    pub ProcessingComplete: unsafe extern "system" fn(this: *mut *mut Self),
+    pub SetPinInactive: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub SetPinActive: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAudioInputEndpointRT {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Media_Audio_Apo")]
+    pub GetInputDataPointer: unsafe extern "system" fn(this: *mut *mut Self, pconnectionproperty: *mut super::super::Media::Audio::Apo::APO_CONNECTION_PROPERTY, paetimestamp: *mut AE_CURRENT_POSITION),
+    #[cfg(not(feature = "Win32_Media_Audio_Apo"))]
+    GetInputDataPointer: usize,
+    pub ReleaseInputDataPointer: unsafe extern "system" fn(this: *mut *mut Self, u32framecount: u32, pdatapointer: usize),
+    pub PulseEndpoint: unsafe extern "system" fn(this: *mut *mut Self),
+}
+#[repr(C)]
+pub struct IAudioOutputEndpointRT {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetOutputDataPointer: unsafe extern "system" fn(this: *mut *mut Self, u32framecount: u32, paetimestamp: *const AE_CURRENT_POSITION) -> usize,
+    #[cfg(feature = "Win32_Media_Audio_Apo")]
+    pub ReleaseOutputDataPointer: unsafe extern "system" fn(this: *mut *mut Self, pconnectionproperty: *const super::super::Media::Audio::Apo::APO_CONNECTION_PROPERTY),
+    #[cfg(not(feature = "Win32_Media_Audio_Apo"))]
+    ReleaseOutputDataPointer: usize,
+    pub PulseEndpoint: unsafe extern "system" fn(this: *mut *mut Self),
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IRemoteDesktopClient {
+    pub base__: super::Com::IDispatch,
+    pub Connect: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Disconnect: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Reconnect: unsafe extern "system" fn(this: *mut *mut Self, width: u32, height: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Settings: unsafe extern "system" fn(this: *mut *mut Self, settings: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Settings: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Actions: unsafe extern "system" fn(this: *mut *mut Self, actions: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Actions: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub TouchPointer: unsafe extern "system" fn(this: *mut *mut Self, touchpointer: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    TouchPointer: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DeleteSavedCredentials: unsafe extern "system" fn(this: *mut *mut Self, servername: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DeleteSavedCredentials: usize,
+    pub UpdateSessionDisplaySettings: unsafe extern "system" fn(this: *mut *mut Self, width: u32, height: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub attachEvent: unsafe extern "system" fn(this: *mut *mut Self, eventname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, callback: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    attachEvent: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub detachEvent: unsafe extern "system" fn(this: *mut *mut Self, eventname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, callback: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    detachEvent: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IRemoteDesktopClientActions {
+    pub base__: super::Com::IDispatch,
+    pub SuspendScreenUpdates: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub ResumeScreenUpdates: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub ExecuteRemoteAction: unsafe extern "system" fn(this: *mut *mut Self, remoteaction: RemoteActionType) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetSnapshot: unsafe extern "system" fn(this: *mut *mut Self, snapshotencoding: SnapshotEncodingType, snapshotformat: SnapshotFormatType, snapshotwidth: u32, snapshotheight: u32, snapshotdata: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetSnapshot: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IRemoteDesktopClientSettings {
+    pub base__: super::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ApplySettings: unsafe extern "system" fn(this: *mut *mut Self, rdpfilecontents: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ApplySettings: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RetrieveSettings: unsafe extern "system" fn(this: *mut *mut Self, rdpfilecontents: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RetrieveSettings: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetRdpProperty: unsafe extern "system" fn(this: *mut *mut Self, propertyname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, value: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetRdpProperty: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetRdpProperty: unsafe extern "system" fn(this: *mut *mut Self, propertyname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, value: ::core::mem::ManuallyDrop<super::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetRdpProperty: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IRemoteDesktopClientTouchPointer {
+    pub base__: super::Com::IDispatch,
+    pub SetEnabled: unsafe extern "system" fn(this: *mut *mut Self, enabled: i16) -> ::windows_sys::core::HRESULT,
+    pub Enabled: unsafe extern "system" fn(this: *mut *mut Self, enabled: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetEventsEnabled: unsafe extern "system" fn(this: *mut *mut Self, eventsenabled: i16) -> ::windows_sys::core::HRESULT,
+    pub EventsEnabled: unsafe extern "system" fn(this: *mut *mut Self, eventsenabled: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetPointerSpeed: unsafe extern "system" fn(this: *mut *mut Self, pointerspeed: u32) -> ::windows_sys::core::HRESULT,
+    pub PointerSpeed: unsafe extern "system" fn(this: *mut *mut Self, pointerspeed: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRemoteSystemAdditionalInfoProvider {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetAdditionalInfo: unsafe extern "system" fn(this: *mut *mut Self, deduplicationid: *mut ::windows_sys::core::HSTRING, riid: *const ::windows_sys::core::GUID, mapview: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITSGAccountingEngine {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DoAccounting: unsafe extern "system" fn(this: *mut *mut Self, accountingdatatype: AAAccountingDataType, accountingdata: ::core::mem::ManuallyDrop<AAAccountingData>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DoAccounting: usize,
+}
+#[repr(C)]
+pub struct ITSGAuthenticateUserSink {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OnUserAuthenticated: unsafe extern "system" fn(this: *mut *mut Self, username: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, userdomain: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, context: usize, usertoken: super::super::Foundation::HANDLE_PTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OnUserAuthenticated: usize,
+    pub OnUserAuthenticationFailed: unsafe extern "system" fn(this: *mut *mut Self, context: usize, genericerrorcode: ::windows_sys::core::HRESULT, specificerrorcode: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+    pub ReauthenticateUser: unsafe extern "system" fn(this: *mut *mut Self, context: usize) -> ::windows_sys::core::HRESULT,
+    pub DisconnectUser: unsafe extern "system" fn(this: *mut *mut Self, context: usize) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITSGAuthenticationEngine {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub AuthenticateUser: unsafe extern "system" fn(this: *mut *mut Self, mainsessionid: ::windows_sys::core::GUID, cookiedata: *const u8, numcookiebytes: u32, context: usize, psink: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CancelAuthentication: unsafe extern "system" fn(this: *mut *mut Self, mainsessionid: ::windows_sys::core::GUID, context: usize) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITSGAuthorizeConnectionSink {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnConnectionAuthorized: unsafe extern "system" fn(this: *mut *mut Self, hrin: ::windows_sys::core::HRESULT, mainsessionid: ::windows_sys::core::GUID, cbsohresponse: u32, pbsohresponse: *const u8, idletimeout: u32, sessiontimeout: u32, sessiontimeoutaction: SESSION_TIMEOUT_ACTION_TYPE, trustclass: AATrustClassID, policyattributes: *const u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITSGAuthorizeResourceSink {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OnChannelAuthorized: unsafe extern "system" fn(this: *mut *mut Self, hrin: ::windows_sys::core::HRESULT, mainsessionid: ::windows_sys::core::GUID, subsessionid: i32, allowedresourcenames: *const super::super::Foundation::BSTR, numallowedresourcenames: u32, failedresourcenames: *const super::super::Foundation::BSTR, numfailedresourcenames: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OnChannelAuthorized: usize,
+}
+#[repr(C)]
+pub struct ITSGPolicyEngine {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AuthorizeConnection: unsafe extern "system" fn(this: *mut *mut Self, mainsessionid: ::windows_sys::core::GUID, username: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, authtype: AAAuthSchemes, clientmachineip: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, clientmachinename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, sohdata: *const u8, numsohbytes: u32, cookiedata: *const u8, numcookiebytes: u32, usertoken: super::super::Foundation::HANDLE_PTR, psink: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AuthorizeConnection: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AuthorizeResource: unsafe extern "system" fn(this: *mut *mut Self, mainsessionid: ::windows_sys::core::GUID, subsessionid: i32, username: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, resourcenames: *const super::super::Foundation::BSTR, numresources: u32, alternateresourcenames: *const super::super::Foundation::BSTR, numalternateresourcename: u32, portnumber: u32, operation: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, cookie: *const u8, numbytesincookie: u32, psink: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AuthorizeResource: usize,
+    pub Refresh: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsQuarantineEnabled: unsafe extern "system" fn(this: *mut *mut Self, quarantineenabled: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsQuarantineEnabled: usize,
+}
+#[repr(C)]
+pub struct ITsSbBaseNotifySink {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnError: unsafe extern "system" fn(this: *mut *mut Self, hrerror: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+    pub OnReportStatus: unsafe extern "system" fn(this: *mut *mut Self, messagetype: CLIENT_MESSAGE_TYPE, messageid: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITsSbClientConnection {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub UserName: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    UserName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Domain: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Domain: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InitialProgram: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InitialProgram: usize,
+    pub LoadBalanceResult: unsafe extern "system" fn(this: *mut *mut Self, ppval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub FarmName: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    FarmName: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub PutContext: unsafe extern "system" fn(this: *mut *mut Self, contextid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, context: ::core::mem::ManuallyDrop<super::Com::VARIANT>, existingcontext: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    PutContext: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetContext: unsafe extern "system" fn(this: *mut *mut Self, contextid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, context: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetContext: usize,
+    pub Environment: unsafe extern "system" fn(this: *mut *mut Self, ppenvironment: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub get_ConnectionError: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SamUserAccount: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SamUserAccount: usize,
+    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    pub ClientConnectionPropertySet: unsafe extern "system" fn(this: *mut *mut Self, pppropertyset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
+    ClientConnectionPropertySet: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsFirstAssignment: unsafe extern "system" fn(this: *mut *mut Self, ppval: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsFirstAssignment: usize,
+    pub RdFarmType: unsafe extern "system" fn(this: *mut *mut Self, prdfarmtype: *mut RD_FARM_TYPE) -> ::windows_sys::core::HRESULT,
+    pub UserSidString: unsafe extern "system" fn(this: *mut *mut Self, pszusersidstring: *mut *mut i8) -> ::windows_sys::core::HRESULT,
+    pub GetDisconnectedSession: unsafe extern "system" fn(this: *mut *mut Self, ppsession: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[repr(C)]
+pub struct ITsSbClientConnectionPropertySet {
+    pub base__: ITsSbPropertySet,
+}
+#[repr(C)]
+pub struct ITsSbEnvironment {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Name: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Name: usize,
+    pub ServerWeight: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    pub EnvironmentPropertySet: unsafe extern "system" fn(this: *mut *mut Self, pppropertyset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
+    EnvironmentPropertySet: usize,
+    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    pub SetEnvironmentPropertySet: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
+    SetEnvironmentPropertySet: usize,
+}
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[repr(C)]
+pub struct ITsSbEnvironmentPropertySet {
+    pub base__: ITsSbPropertySet,
+}
+#[repr(C)]
+pub struct ITsSbFilterPluginStore {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    pub SaveProperties: unsafe extern "system" fn(this: *mut *mut Self, ppropertyset: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
+    SaveProperties: usize,
+    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    pub EnumerateProperties: unsafe extern "system" fn(this: *mut *mut Self, pppropertyset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
+    EnumerateProperties: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DeleteProperties: unsafe extern "system" fn(this: *mut *mut Self, propertyname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DeleteProperties: usize,
+}
+#[repr(C)]
+pub struct ITsSbGenericNotifySink {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnCompleted: unsafe extern "system" fn(this: *mut *mut Self, status: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetWaitTimeout: unsafe extern "system" fn(this: *mut *mut Self, pfttimeout: *mut super::super::Foundation::FILETIME) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetWaitTimeout: usize,
+}
+#[repr(C)]
+pub struct ITsSbGlobalStore {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub QueryTarget: unsafe extern "system" fn(this: *mut *mut Self, providername: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, targetname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, farmname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pptarget: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    QueryTarget: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub QuerySessionBySessionId: unsafe extern "system" fn(this: *mut *mut Self, providername: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, dwsessionid: u32, targetname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppsession: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    QuerySessionBySessionId: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub EnumerateFarms: unsafe extern "system" fn(this: *mut *mut Self, providername: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pdwcount: *mut u32, pval: *mut *mut super::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    EnumerateFarms: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub EnumerateTargets: unsafe extern "system" fn(this: *mut *mut Self, providername: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, farmname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, envname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pdwcount: *mut u32, pval: *mut *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    EnumerateTargets: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub EnumerateEnvironmentsByProvider: unsafe extern "system" fn(this: *mut *mut Self, providername: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pdwcount: *mut u32, ppval: *mut *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    EnumerateEnvironmentsByProvider: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub EnumerateSessions: unsafe extern "system" fn(this: *mut *mut Self, providername: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, targetname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, username: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, userdomain: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, poolname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, initialprogram: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, psessionstate: *const TSSESSION_STATE, pdwcount: *mut u32, ppval: *mut *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    EnumerateSessions: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetFarmProperty: unsafe extern "system" fn(this: *mut *mut Self, farmname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, propertyname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pvarvalue: *const super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetFarmProperty: usize,
+}
+#[repr(C)]
+pub struct ITsSbLoadBalanceResult {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub TargetName: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    TargetName: usize,
+}
+#[repr(C)]
+pub struct ITsSbLoadBalancing {
+    pub base__: ITsSbPlugin,
+    pub GetMostSuitableTarget: unsafe extern "system" fn(this: *mut *mut Self, pconnection: *mut ::core::ffi::c_void, plbsink: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITsSbLoadBalancingNotifySink {
+    pub base__: ITsSbBaseNotifySink,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OnGetMostSuitableTarget: unsafe extern "system" fn(this: *mut *mut Self, plbresult: *mut ::core::ffi::c_void, fisnewconnection: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OnGetMostSuitableTarget: usize,
+}
+#[repr(C)]
+pub struct ITsSbOrchestration {
+    pub base__: ITsSbPlugin,
+    pub PrepareTargetForConnect: unsafe extern "system" fn(this: *mut *mut Self, pconnection: *mut ::core::ffi::c_void, porchestrationnotifysink: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITsSbOrchestrationNotifySink {
+    pub base__: ITsSbBaseNotifySink,
+    pub OnReadyToConnect: unsafe extern "system" fn(this: *mut *mut Self, ptarget: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITsSbPlacement {
+    pub base__: ITsSbPlugin,
+    pub QueryEnvironmentForTarget: unsafe extern "system" fn(this: *mut *mut Self, pconnection: *mut ::core::ffi::c_void, pplacementsink: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITsSbPlacementNotifySink {
+    pub base__: ITsSbBaseNotifySink,
+    pub OnQueryEnvironmentCompleted: unsafe extern "system" fn(this: *mut *mut Self, penvironment: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITsSbPlugin {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, pprovider: *mut ::core::ffi::c_void, pnotifysink: *mut ::core::ffi::c_void, ppropertyset: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
+    Initialize: usize,
+    pub Terminate: unsafe extern "system" fn(this: *mut *mut Self, hr: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITsSbPluginNotifySink {
+    pub base__: ITsSbBaseNotifySink,
+    pub OnInitialized: unsafe extern "system" fn(this: *mut *mut Self, hr: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+    pub OnTerminated: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[repr(C)]
+pub struct ITsSbPluginPropertySet {
+    pub base__: ITsSbPropertySet,
+}
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[repr(C)]
+pub struct ITsSbPropertySet {
+    pub base__: super::Com::StructuredStorage::IPropertyBag,
+}
+#[repr(C)]
+pub struct ITsSbProvider {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CreateTargetObject: unsafe extern "system" fn(this: *mut *mut Self, targetname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, environmentname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pptarget: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CreateTargetObject: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CreateLoadBalanceResultObject: unsafe extern "system" fn(this: *mut *mut Self, targetname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pplbresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CreateLoadBalanceResultObject: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CreateSessionObject: unsafe extern "system" fn(this: *mut *mut Self, targetname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, username: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, domain: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, sessionid: u32, ppsession: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CreateSessionObject: usize,
+    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    pub CreatePluginPropertySet: unsafe extern "system" fn(this: *mut *mut Self, pppropertyset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
+    CreatePluginPropertySet: usize,
+    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    pub CreateTargetPropertySetObject: unsafe extern "system" fn(this: *mut *mut Self, pppropertyset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
+    CreateTargetPropertySetObject: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CreateEnvironmentObject: unsafe extern "system" fn(this: *mut *mut Self, name: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, serverweight: u32, ppenvironment: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CreateEnvironmentObject: usize,
+    pub GetResourcePluginStore: unsafe extern "system" fn(this: *mut *mut Self, ppstore: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetFilterPluginStore: unsafe extern "system" fn(this: *mut *mut Self, ppstore: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RegisterForNotification: unsafe extern "system" fn(this: *mut *mut Self, notificationtype: u32, resourcetomonitor: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppluginnotification: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RegisterForNotification: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub UnRegisterForNotification: unsafe extern "system" fn(this: *mut *mut Self, notificationtype: u32, resourcetomonitor: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    UnRegisterForNotification: usize,
+    pub GetInstanceOfGlobalStore: unsafe extern "system" fn(this: *mut *mut Self, ppglobalstore: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    pub CreateEnvironmentPropertySetObject: unsafe extern "system" fn(this: *mut *mut Self, pppropertyset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
+    CreateEnvironmentPropertySetObject: usize,
+}
+#[repr(C)]
+pub struct ITsSbProvisioning {
+    pub base__: ITsSbPlugin,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CreateVirtualMachines: unsafe extern "system" fn(this: *mut *mut Self, jobxmlstring: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, jobguid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, psink: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CreateVirtualMachines: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub PatchVirtualMachines: unsafe extern "system" fn(this: *mut *mut Self, jobxmlstring: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, jobguid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, psink: *mut ::core::ffi::c_void, pvmpatchinfo: *const VM_PATCH_INFO) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    PatchVirtualMachines: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DeleteVirtualMachines: unsafe extern "system" fn(this: *mut *mut Self, jobxmlstring: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, jobguid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, psink: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DeleteVirtualMachines: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CancelJob: unsafe extern "system" fn(this: *mut *mut Self, jobguid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CancelJob: usize,
+}
+#[repr(C)]
+pub struct ITsSbProvisioningPluginNotifySink {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnJobCreated: unsafe extern "system" fn(this: *mut *mut Self, pvmnotifyinfo: *const VM_NOTIFY_INFO) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OnVirtualMachineStatusChanged: unsafe extern "system" fn(this: *mut *mut Self, pvmnotifyentry: *const VM_NOTIFY_ENTRY, vmnotifystatus: VM_NOTIFY_STATUS, errorcode: ::windows_sys::core::HRESULT, errordescr: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OnVirtualMachineStatusChanged: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OnJobCompleted: unsafe extern "system" fn(this: *mut *mut Self, resultcode: ::windows_sys::core::HRESULT, resultdescription: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OnJobCompleted: usize,
+    pub OnJobCancelled: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub LockVirtualMachine: unsafe extern "system" fn(this: *mut *mut Self, pvmnotifyentry: *const VM_NOTIFY_ENTRY) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OnVirtualMachineHostStatusChanged: unsafe extern "system" fn(this: *mut *mut Self, vmhost: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, vmhostnotifystatus: VM_HOST_NOTIFY_STATUS, errorcode: ::windows_sys::core::HRESULT, errordescr: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OnVirtualMachineHostStatusChanged: usize,
+}
+#[repr(C)]
+pub struct ITsSbResourceNotification {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub NotifySessionChange: unsafe extern "system" fn(this: *mut *mut Self, changetype: TSSESSION_STATE, psession: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub NotifyTargetChange: unsafe extern "system" fn(this: *mut *mut Self, targetchangetype: u32, ptarget: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub NotifyClientConnectionStateChange: unsafe extern "system" fn(this: *mut *mut Self, changetype: CONNECTION_CHANGE_NOTIFICATION, pconnection: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITsSbResourceNotificationEx {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub NotifySessionChangeEx: unsafe extern "system" fn(this: *mut *mut Self, targetname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, username: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, domain: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, sessionid: u32, sessionstate: TSSESSION_STATE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    NotifySessionChangeEx: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub NotifyTargetChangeEx: unsafe extern "system" fn(this: *mut *mut Self, targetname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, targetchangetype: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    NotifyTargetChangeEx: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub NotifyClientConnectionStateChangeEx: unsafe extern "system" fn(this: *mut *mut Self, username: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, domain: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, initialprogram: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, poolname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, targetname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, connectionchangetype: CONNECTION_CHANGE_NOTIFICATION) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    NotifyClientConnectionStateChangeEx: usize,
+}
+#[repr(C)]
+pub struct ITsSbResourcePlugin {
+    pub base__: ITsSbPlugin,
+}
+#[repr(C)]
+pub struct ITsSbResourcePluginStore {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub QueryTarget: unsafe extern "system" fn(this: *mut *mut Self, targetname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, farmname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pptarget: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    QueryTarget: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub QuerySessionBySessionId: unsafe extern "system" fn(this: *mut *mut Self, dwsessionid: u32, targetname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppsession: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    QuerySessionBySessionId: usize,
+    pub AddTargetToStore: unsafe extern "system" fn(this: *mut *mut Self, ptarget: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AddSessionToStore: unsafe extern "system" fn(this: *mut *mut Self, psession: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AddEnvironmentToStore: unsafe extern "system" fn(this: *mut *mut Self, penvironment: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RemoveEnvironmentFromStore: unsafe extern "system" fn(this: *mut *mut Self, environmentname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bignoreowner: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RemoveEnvironmentFromStore: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub EnumerateFarms: unsafe extern "system" fn(this: *mut *mut Self, pdwcount: *mut u32, pval: *mut *mut super::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    EnumerateFarms: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub QueryEnvironment: unsafe extern "system" fn(this: *mut *mut Self, environmentname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppenvironment: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    QueryEnvironment: usize,
+    pub EnumerateEnvironments: unsafe extern "system" fn(this: *mut *mut Self, pdwcount: *mut u32, pval: *mut *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SaveTarget: unsafe extern "system" fn(this: *mut *mut Self, ptarget: *mut ::core::ffi::c_void, bforcewrite: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SaveTarget: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SaveEnvironment: unsafe extern "system" fn(this: *mut *mut Self, penvironment: *mut ::core::ffi::c_void, bforcewrite: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SaveEnvironment: usize,
+    pub SaveSession: unsafe extern "system" fn(this: *mut *mut Self, psession: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetTargetProperty: unsafe extern "system" fn(this: *mut *mut Self, targetname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, propertyname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pproperty: *const super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetTargetProperty: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetEnvironmentProperty: unsafe extern "system" fn(this: *mut *mut Self, environmentname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, propertyname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pproperty: *const super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetEnvironmentProperty: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetTargetState: unsafe extern "system" fn(this: *mut *mut Self, targetname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, newstate: TARGET_STATE, poldstate: *mut TARGET_STATE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetTargetState: usize,
+    pub SetSessionState: unsafe extern "system" fn(this: *mut *mut Self, sbsession: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub EnumerateTargets: unsafe extern "system" fn(this: *mut *mut Self, farmname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, envname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, sortbyfieldid: TS_SB_SORT_BY, sortybypropname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pdwcount: *mut u32, pval: *mut *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    EnumerateTargets: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub EnumerateSessions: unsafe extern "system" fn(this: *mut *mut Self, targetname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, username: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, userdomain: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, poolname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, initialprogram: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, psessionstate: *const TSSESSION_STATE, pdwcount: *mut u32, ppval: *mut *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    EnumerateSessions: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetFarmProperty: unsafe extern "system" fn(this: *mut *mut Self, farmname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, propertyname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pvarvalue: *const super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetFarmProperty: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DeleteTarget: unsafe extern "system" fn(this: *mut *mut Self, targetname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, hostname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DeleteTarget: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetTargetPropertyWithVersionCheck: unsafe extern "system" fn(this: *mut *mut Self, ptarget: *mut ::core::ffi::c_void, propertyname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pproperty: *const super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetTargetPropertyWithVersionCheck: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetEnvironmentPropertyWithVersionCheck: unsafe extern "system" fn(this: *mut *mut Self, penvironment: *mut ::core::ffi::c_void, propertyname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pproperty: *const super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetEnvironmentPropertyWithVersionCheck: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AcquireTargetLock: unsafe extern "system" fn(this: *mut *mut Self, targetname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, dwtimeout: u32, ppcontext: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AcquireTargetLock: usize,
+    pub ReleaseTargetLock: unsafe extern "system" fn(this: *mut *mut Self, pcontext: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub TestAndSetServerState: unsafe extern "system" fn(this: *mut *mut Self, poolname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, serverfqdn: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, newstate: TARGET_STATE, teststate: TARGET_STATE, pinitstate: *mut TARGET_STATE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    TestAndSetServerState: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetServerWaitingToStart: unsafe extern "system" fn(this: *mut *mut Self, poolname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, servername: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetServerWaitingToStart: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetServerState: unsafe extern "system" fn(this: *mut *mut Self, poolname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, serverfqdn: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pstate: *mut TARGET_STATE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetServerState: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetServerDrainMode: unsafe extern "system" fn(this: *mut *mut Self, serverfqdn: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, drainmode: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetServerDrainMode: usize,
+}
+#[repr(C)]
+pub struct ITsSbServiceNotification {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub NotifyServiceFailure: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub NotifyServiceSuccess: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITsSbSession {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SessionId: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub TargetName: unsafe extern "system" fn(this: *mut *mut Self, targetname: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    TargetName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetTargetName: unsafe extern "system" fn(this: *mut *mut Self, targetname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetTargetName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Username: unsafe extern "system" fn(this: *mut *mut Self, username: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Username: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Domain: unsafe extern "system" fn(this: *mut *mut Self, domain: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Domain: usize,
+    pub State: unsafe extern "system" fn(this: *mut *mut Self, pstate: *mut TSSESSION_STATE) -> ::windows_sys::core::HRESULT,
+    pub SetState: unsafe extern "system" fn(this: *mut *mut Self, state: TSSESSION_STATE) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CreateTime: unsafe extern "system" fn(this: *mut *mut Self, ptime: *mut super::super::Foundation::FILETIME) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CreateTime: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetCreateTime: unsafe extern "system" fn(this: *mut *mut Self, time: super::super::Foundation::FILETIME) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetCreateTime: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DisconnectTime: unsafe extern "system" fn(this: *mut *mut Self, ptime: *mut super::super::Foundation::FILETIME) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DisconnectTime: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetDisconnectTime: unsafe extern "system" fn(this: *mut *mut Self, time: super::super::Foundation::FILETIME) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetDisconnectTime: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InitialProgram: unsafe extern "system" fn(this: *mut *mut Self, app: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InitialProgram: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetInitialProgram: unsafe extern "system" fn(this: *mut *mut Self, application: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetInitialProgram: usize,
+    pub ClientDisplay: unsafe extern "system" fn(this: *mut *mut Self, pclientdisplay: *mut CLIENT_DISPLAY) -> ::windows_sys::core::HRESULT,
+    pub SetClientDisplay: unsafe extern "system" fn(this: *mut *mut Self, pclientdisplay: CLIENT_DISPLAY) -> ::windows_sys::core::HRESULT,
+    pub ProtocolType: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetProtocolType: unsafe extern "system" fn(this: *mut *mut Self, val: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITsSbTarget {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub TargetName: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    TargetName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetTargetName: unsafe extern "system" fn(this: *mut *mut Self, val: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetTargetName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub FarmName: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    FarmName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetFarmName: unsafe extern "system" fn(this: *mut *mut Self, val: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetFarmName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub TargetFQDN: unsafe extern "system" fn(this: *mut *mut Self, targetfqdnname: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    TargetFQDN: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetTargetFQDN: unsafe extern "system" fn(this: *mut *mut Self, val: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetTargetFQDN: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub TargetNetbios: unsafe extern "system" fn(this: *mut *mut Self, targetnetbiosname: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    TargetNetbios: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetTargetNetbios: unsafe extern "system" fn(this: *mut *mut Self, val: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetTargetNetbios: usize,
+    pub get_IpAddresses: unsafe extern "system" fn(this: *mut *mut Self, sockaddr: *mut TSSD_ConnectionPoint, numaddresses: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub put_IpAddresses: unsafe extern "system" fn(this: *mut *mut Self, sockaddr: *const TSSD_ConnectionPoint, numaddresses: u32) -> ::windows_sys::core::HRESULT,
+    pub TargetState: unsafe extern "system" fn(this: *mut *mut Self, pstate: *mut TARGET_STATE) -> ::windows_sys::core::HRESULT,
+    pub SetTargetState: unsafe extern "system" fn(this: *mut *mut Self, state: TARGET_STATE) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    pub TargetPropertySet: unsafe extern "system" fn(this: *mut *mut Self, pppropertyset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
+    TargetPropertySet: usize,
+    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    pub SetTargetPropertySet: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
+    SetTargetPropertySet: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub EnvironmentName: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    EnvironmentName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetEnvironmentName: unsafe extern "system" fn(this: *mut *mut Self, val: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetEnvironmentName: usize,
+    pub NumSessions: unsafe extern "system" fn(this: *mut *mut Self, pnumsessions: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub NumPendingConnections: unsafe extern "system" fn(this: *mut *mut Self, pnumpendingconnections: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub TargetLoad: unsafe extern "system" fn(this: *mut *mut Self, ptargetload: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+#[repr(C)]
+pub struct ITsSbTargetPropertySet {
+    pub base__: ITsSbPropertySet,
+}
+#[repr(C)]
+pub struct ITsSbTaskInfo {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub TargetId: unsafe extern "system" fn(this: *mut *mut Self, pname: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    TargetId: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub StartTime: unsafe extern "system" fn(this: *mut *mut Self, pstarttime: *mut super::super::Foundation::FILETIME) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    StartTime: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub EndTime: unsafe extern "system" fn(this: *mut *mut Self, pendtime: *mut super::super::Foundation::FILETIME) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    EndTime: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Deadline: unsafe extern "system" fn(this: *mut *mut Self, pdeadline: *mut super::super::Foundation::FILETIME) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Deadline: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Identifier: unsafe extern "system" fn(this: *mut *mut Self, pidentifier: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Identifier: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Label: unsafe extern "system" fn(this: *mut *mut Self, plabel: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Label: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Context: unsafe extern "system" fn(this: *mut *mut Self, pcontext: *mut *mut super::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Context: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Plugin: unsafe extern "system" fn(this: *mut *mut Self, pplugin: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Plugin: usize,
+    pub Status: unsafe extern "system" fn(this: *mut *mut Self, pstatus: *mut RDV_TASK_STATUS) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITsSbTaskPlugin {
+    pub base__: ITsSbPlugin,
+    pub InitializeTaskPlugin: unsafe extern "system" fn(this: *mut *mut Self, pitssbtaskpluginnotifysink: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetTaskQueue: unsafe extern "system" fn(this: *mut *mut Self, pszhostname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, sbtaskinfosize: u32, pitssbtaskinfo: *const *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetTaskQueue: usize,
+}
+#[repr(C)]
+pub struct ITsSbTaskPluginNotifySink {
+    pub base__: ITsSbBaseNotifySink,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub OnSetTaskTime: unsafe extern "system" fn(this: *mut *mut Self, sztargetname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, taskstarttime: super::super::Foundation::FILETIME, taskendtime: super::super::Foundation::FILETIME, taskdeadline: super::super::Foundation::FILETIME, sztasklabel: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, sztaskidentifier: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, sztaskplugin: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, dwtaskstatus: u32, sacontext: *const super::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    OnSetTaskTime: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OnDeleteTaskTime: unsafe extern "system" fn(this: *mut *mut Self, sztargetname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, sztaskidentifier: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OnDeleteTaskTime: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OnUpdateTaskStatus: unsafe extern "system" fn(this: *mut *mut Self, sztargetname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, taskidentifier: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, taskstatus: RDV_TASK_STATUS) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OnUpdateTaskStatus: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OnReportTasks: unsafe extern "system" fn(this: *mut *mut Self, szhostname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OnReportTasks: usize,
+}
+#[repr(C)]
+pub struct IWRdsEnhancedFastReconnectArbitrator {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetSessionForEnhancedFastReconnect: unsafe extern "system" fn(this: *mut *mut Self, psessionidarray: *const i32, dwsessioncount: u32, presultsessionid: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWRdsGraphicsChannel {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Write: unsafe extern "system" fn(this: *mut *mut Self, cbsize: u32, pbuffer: *const u8, pcontext: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Open: unsafe extern "system" fn(this: *mut *mut Self, pchannelevents: *mut ::core::ffi::c_void, popencontext: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWRdsGraphicsChannelEvents {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnDataReceived: unsafe extern "system" fn(this: *mut *mut Self, cbsize: u32, pbuffer: *const u8) -> ::windows_sys::core::HRESULT,
+    pub OnClose: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub OnChannelOpened: unsafe extern "system" fn(this: *mut *mut Self, openresult: ::windows_sys::core::HRESULT, popencontext: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OnDataSent: unsafe extern "system" fn(this: *mut *mut Self, pwritecontext: *mut ::core::ffi::c_void, bcancelled: super::super::Foundation::BOOL, pbuffer: *const u8, cbbuffer: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OnDataSent: usize,
+    pub OnMetricsUpdate: unsafe extern "system" fn(this: *mut *mut Self, bandwidth: u32, rtt: u32, lastsentbyteindex: u64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWRdsGraphicsChannelManager {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub CreateChannel: unsafe extern "system" fn(this: *mut *mut Self, pszchannelname: *const u8, channeltype: WRdsGraphicsChannelType, ppvirtualchannel: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWRdsProtocolConnection {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetLogonErrorRedirector: unsafe extern "system" fn(this: *mut *mut Self, pplogonerrorredir: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AcceptConnection: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetClientData: unsafe extern "system" fn(this: *mut *mut Self, pclientdata: *mut WTS_CLIENT_DATA) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetClientData: usize,
+    pub GetClientMonitorData: unsafe extern "system" fn(this: *mut *mut Self, pnummonitors: *mut u32, pprimarymonitor: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetUserCredentials: unsafe extern "system" fn(this: *mut *mut Self, pusercreds: *mut WTS_USER_CREDENTIAL) -> ::windows_sys::core::HRESULT,
+    pub GetLicenseConnection: unsafe extern "system" fn(this: *mut *mut Self, pplicenseconnection: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AuthenticateClientToSession: unsafe extern "system" fn(this: *mut *mut Self, sessionid: *mut WTS_SESSION_ID) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub NotifySessionId: unsafe extern "system" fn(this: *mut *mut Self, sessionid: *const WTS_SESSION_ID, sessionhandle: super::super::Foundation::HANDLE_PTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    NotifySessionId: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetInputHandles: unsafe extern "system" fn(this: *mut *mut Self, pkeyboardhandle: *mut super::super::Foundation::HANDLE_PTR, pmousehandle: *mut super::super::Foundation::HANDLE_PTR, pbeephandle: *mut super::super::Foundation::HANDLE_PTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetInputHandles: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetVideoHandle: unsafe extern "system" fn(this: *mut *mut Self, pvideohandle: *mut super::super::Foundation::HANDLE_PTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetVideoHandle: usize,
+    pub ConnectNotify: unsafe extern "system" fn(this: *mut *mut Self, sessionid: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsUserAllowedToLogon: unsafe extern "system" fn(this: *mut *mut Self, sessionid: u32, usertoken: super::super::Foundation::HANDLE_PTR, pdomainname: ::windows_sys::core::PCWSTR, pusername: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsUserAllowedToLogon: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SessionArbitrationEnumeration: unsafe extern "system" fn(this: *mut *mut Self, husertoken: super::super::Foundation::HANDLE_PTR, bsinglesessionperuserenabled: super::super::Foundation::BOOL, psessionidarray: *mut u32, pdwsessionidentifiercount: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SessionArbitrationEnumeration: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub LogonNotify: unsafe extern "system" fn(this: *mut *mut Self, hclienttoken: super::super::Foundation::HANDLE_PTR, wszusername: ::windows_sys::core::PCWSTR, wszdomainname: ::windows_sys::core::PCWSTR, sessionid: *const WTS_SESSION_ID, pwrdsconnectionsettings: *mut WRDS_CONNECTION_SETTINGS) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    LogonNotify: usize,
+    pub PreDisconnect: unsafe extern "system" fn(this: *mut *mut Self, disconnectreason: u32) -> ::windows_sys::core::HRESULT,
+    pub DisconnectNotify: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetProtocolStatus: unsafe extern "system" fn(this: *mut *mut Self, pprotocolstatus: *mut WTS_PROTOCOL_STATUS) -> ::windows_sys::core::HRESULT,
+    pub GetLastInputTime: unsafe extern "system" fn(this: *mut *mut Self, plastinputtime: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub SetErrorInfo: unsafe extern "system" fn(this: *mut *mut Self, ulerror: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CreateVirtualChannel: unsafe extern "system" fn(this: *mut *mut Self, szendpointname: ::windows_sys::core::PCSTR, bstatic: super::super::Foundation::BOOL, requestedpriority: u32, phchannel: *mut usize) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CreateVirtualChannel: usize,
+    pub QueryProperty: unsafe extern "system" fn(this: *mut *mut Self, querytype: ::windows_sys::core::GUID, ulnumentriesin: u32, ulnumentriesout: u32, ppropertyentriesin: *const WTS_PROPERTY_VALUE, ppropertyentriesout: *mut WTS_PROPERTY_VALUE) -> ::windows_sys::core::HRESULT,
+    pub GetShadowConnection: unsafe extern "system" fn(this: *mut *mut Self, ppshadowconnection: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub NotifyCommandProcessCreated: unsafe extern "system" fn(this: *mut *mut Self, sessionid: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWRdsProtocolConnectionCallback {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnReady: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub BrokenConnection: unsafe extern "system" fn(this: *mut *mut Self, reason: u32, source: u32) -> ::windows_sys::core::HRESULT,
+    pub StopScreenUpdates: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub RedrawWindow: unsafe extern "system" fn(this: *mut *mut Self, rect: *const WTS_SMALL_RECT) -> ::windows_sys::core::HRESULT,
+    pub GetConnectionId: unsafe extern "system" fn(this: *mut *mut Self, pconnectionid: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWRdsProtocolConnectionSettings {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetConnectionSetting: unsafe extern "system" fn(this: *mut *mut Self, propertyid: ::windows_sys::core::GUID, ppropertyentriesin: *const WTS_PROPERTY_VALUE) -> ::windows_sys::core::HRESULT,
+    pub GetConnectionSetting: unsafe extern "system" fn(this: *mut *mut Self, propertyid: ::windows_sys::core::GUID, ppropertyentriesout: *mut WTS_PROPERTY_VALUE) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWRdsProtocolLicenseConnection {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RequestLicensingCapabilities: unsafe extern "system" fn(this: *mut *mut Self, pplicensecapabilities: *mut WTS_LICENSE_CAPABILITIES, pcblicensecapabilities: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RequestLicensingCapabilities: usize,
+    pub SendClientLicense: unsafe extern "system" fn(this: *mut *mut Self, pclientlicense: *const u8, cbclientlicense: u32) -> ::windows_sys::core::HRESULT,
+    pub RequestClientLicense: unsafe extern "system" fn(this: *mut *mut Self, reserve1: *const u8, reserve2: u32, ppclientlicense: *mut u8, pcbclientlicense: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub ProtocolComplete: unsafe extern "system" fn(this: *mut *mut Self, ulcomplete: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWRdsProtocolListener {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetSettings: unsafe extern "system" fn(this: *mut *mut Self, wrdslistenersettinglevel: WRDS_LISTENER_SETTING_LEVEL, pwrdslistenersettings: *mut WRDS_LISTENER_SETTINGS) -> ::windows_sys::core::HRESULT,
+    pub StartListen: unsafe extern "system" fn(this: *mut *mut Self, pcallback: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub StopListen: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWRdsProtocolListenerCallback {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OnConnected: unsafe extern "system" fn(this: *mut *mut Self, pconnection: *mut ::core::ffi::c_void, pwrdsconnectionsettings: *const WRDS_CONNECTION_SETTINGS, pcallback: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OnConnected: usize,
+}
+#[repr(C)]
+pub struct IWRdsProtocolLogonErrorRedirector {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnBeginPainting: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub RedirectStatus: unsafe extern "system" fn(this: *mut *mut Self, pszmessage: ::windows_sys::core::PCWSTR, presponse: *mut WTS_LOGON_ERROR_REDIRECTOR_RESPONSE) -> ::windows_sys::core::HRESULT,
+    pub RedirectMessage: unsafe extern "system" fn(this: *mut *mut Self, pszcaption: ::windows_sys::core::PCWSTR, pszmessage: ::windows_sys::core::PCWSTR, utype: u32, presponse: *mut WTS_LOGON_ERROR_REDIRECTOR_RESPONSE) -> ::windows_sys::core::HRESULT,
+    pub RedirectLogonError: unsafe extern "system" fn(this: *mut *mut Self, ntsstatus: i32, ntssubstatus: i32, pszcaption: ::windows_sys::core::PCWSTR, pszmessage: ::windows_sys::core::PCWSTR, utype: u32, presponse: *mut WTS_LOGON_ERROR_REDIRECTOR_RESPONSE) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWRdsProtocolManager {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, piwrdssettings: *mut ::core::ffi::c_void, pwrdssettings: *const WRDS_SETTINGS) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Initialize: usize,
+    pub CreateListener: unsafe extern "system" fn(this: *mut *mut Self, wszlistenername: ::windows_sys::core::PCWSTR, pprotocollistener: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub NotifyServiceStateChange: unsafe extern "system" fn(this: *mut *mut Self, ptsservicestatechange: *const WTS_SERVICE_STATE) -> ::windows_sys::core::HRESULT,
+    pub NotifySessionOfServiceStart: unsafe extern "system" fn(this: *mut *mut Self, sessionid: *const WTS_SESSION_ID) -> ::windows_sys::core::HRESULT,
+    pub NotifySessionOfServiceStop: unsafe extern "system" fn(this: *mut *mut Self, sessionid: *const WTS_SESSION_ID) -> ::windows_sys::core::HRESULT,
+    pub NotifySessionStateChange: unsafe extern "system" fn(this: *mut *mut Self, sessionid: *const WTS_SESSION_ID, eventid: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub NotifySettingsChange: unsafe extern "system" fn(this: *mut *mut Self, pwrdssettings: *const WRDS_SETTINGS) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    NotifySettingsChange: usize,
+    pub Uninitialize: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWRdsProtocolSettings {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetSettings: unsafe extern "system" fn(this: *mut *mut Self, wrdssettingtype: WRDS_SETTING_TYPE, wrdssettinglevel: WRDS_SETTING_LEVEL, pwrdssettings: *mut WRDS_SETTINGS) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetSettings: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MergeSettings: unsafe extern "system" fn(this: *mut *mut Self, pwrdssettings: *const WRDS_SETTINGS, wrdsconnectionsettinglevel: WRDS_CONNECTION_SETTING_LEVEL, pwrdsconnectionsettings: *mut WRDS_CONNECTION_SETTINGS) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MergeSettings: usize,
+}
+#[repr(C)]
+pub struct IWRdsProtocolShadowCallback {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub StopShadow: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub InvokeTargetShadow: unsafe extern "system" fn(this: *mut *mut Self, ptargetservername: ::windows_sys::core::PCWSTR, targetsessionid: u32, pparam1: *const u8, param1size: u32, pparam2: *const u8, param2size: u32, pparam3: *const u8, param3size: u32, pparam4: *const u8, param4size: u32, pclientname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWRdsProtocolShadowConnection {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Start: unsafe extern "system" fn(this: *mut *mut Self, ptargetservername: ::windows_sys::core::PCWSTR, targetsessionid: u32, hotkeyvk: u8, hotkeymodifiers: u16, pshadowcallback: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Stop: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub DoTarget: unsafe extern "system" fn(this: *mut *mut Self, pparam1: *const u8, param1size: u32, pparam2: *const u8, param2size: u32, pparam3: *const u8, param3size: u32, pparam4: *const u8, param4size: u32, pclientname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWRdsWddmIddProps {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetHardwareId: unsafe extern "system" fn(this: *mut *mut Self, pdisplaydriverhardwareid: ::windows_sys::core::PCWSTR, count: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OnDriverLoad: unsafe extern "system" fn(this: *mut *mut Self, sessionid: u32, driverhandle: super::super::Foundation::HANDLE_PTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OnDriverLoad: usize,
+    pub OnDriverUnload: unsafe extern "system" fn(this: *mut *mut Self, sessionid: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub EnableWddmIdd: unsafe extern "system" fn(this: *mut *mut Self, enabled: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    EnableWddmIdd: usize,
+}
+#[repr(C)]
+pub struct IWTSBitmapRenderService {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetMappedRenderer: unsafe extern "system" fn(this: *mut *mut Self, mappingid: u64, pmappedrenderercallback: *mut ::core::ffi::c_void, ppmappedrenderer: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWTSBitmapRenderer {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Render: unsafe extern "system" fn(this: *mut *mut Self, imageformat: ::windows_sys::core::GUID, dwwidth: u32, dwheight: u32, cbstride: i32, cbimagebuffer: u32, pimagebuffer: *const u8) -> ::windows_sys::core::HRESULT,
+    pub GetRendererStatistics: unsafe extern "system" fn(this: *mut *mut Self, pstatistics: *mut BITMAP_RENDERER_STATISTICS) -> ::windows_sys::core::HRESULT,
+    pub RemoveMapping: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWTSBitmapRendererCallback {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OnTargetSizeChanged: unsafe extern "system" fn(this: *mut *mut Self, rcnewsize: super::super::Foundation::RECT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OnTargetSizeChanged: usize,
+}
+#[repr(C)]
+pub struct IWTSListener {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    pub GetConfiguration: unsafe extern "system" fn(this: *mut *mut Self, pppropertybag: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
+    GetConfiguration: usize,
+}
+#[repr(C)]
+pub struct IWTSListenerCallback {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OnNewChannelConnection: unsafe extern "system" fn(this: *mut *mut Self, pchannel: *mut ::core::ffi::c_void, data: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pbaccept: *mut super::super::Foundation::BOOL, ppcallback: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OnNewChannelConnection: usize,
+}
+#[repr(C)]
+pub struct IWTSPlugin {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, pchannelmgr: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Connected: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Disconnected: unsafe extern "system" fn(this: *mut *mut Self, dwdisconnectcode: u32) -> ::windows_sys::core::HRESULT,
+    pub Terminated: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWTSPluginServiceProvider {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetService: unsafe extern "system" fn(this: *mut *mut Self, serviceid: ::windows_sys::core::GUID, ppunkobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWTSProtocolConnection {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetLogonErrorRedirector: unsafe extern "system" fn(this: *mut *mut Self, pplogonerrorredir: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SendPolicyData: unsafe extern "system" fn(this: *mut *mut Self, ppolicydata: *const WTS_POLICY_DATA) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SendPolicyData: usize,
+    pub AcceptConnection: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetClientData: unsafe extern "system" fn(this: *mut *mut Self, pclientdata: *mut WTS_CLIENT_DATA) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetClientData: usize,
+    pub GetUserCredentials: unsafe extern "system" fn(this: *mut *mut Self, pusercreds: *mut WTS_USER_CREDENTIAL) -> ::windows_sys::core::HRESULT,
+    pub GetLicenseConnection: unsafe extern "system" fn(this: *mut *mut Self, pplicenseconnection: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AuthenticateClientToSession: unsafe extern "system" fn(this: *mut *mut Self, sessionid: *mut WTS_SESSION_ID) -> ::windows_sys::core::HRESULT,
+    pub NotifySessionId: unsafe extern "system" fn(this: *mut *mut Self, sessionid: *const WTS_SESSION_ID) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetProtocolHandles: unsafe extern "system" fn(this: *mut *mut Self, pkeyboardhandle: *mut super::super::Foundation::HANDLE_PTR, pmousehandle: *mut super::super::Foundation::HANDLE_PTR, pbeephandle: *mut super::super::Foundation::HANDLE_PTR, pvideohandle: *mut super::super::Foundation::HANDLE_PTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetProtocolHandles: usize,
+    pub ConnectNotify: unsafe extern "system" fn(this: *mut *mut Self, sessionid: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsUserAllowedToLogon: unsafe extern "system" fn(this: *mut *mut Self, sessionid: u32, usertoken: super::super::Foundation::HANDLE_PTR, pdomainname: ::windows_sys::core::PCWSTR, pusername: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsUserAllowedToLogon: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SessionArbitrationEnumeration: unsafe extern "system" fn(this: *mut *mut Self, husertoken: super::super::Foundation::HANDLE_PTR, bsinglesessionperuserenabled: super::super::Foundation::BOOL, psessionidarray: *mut u32, pdwsessionidentifiercount: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SessionArbitrationEnumeration: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub LogonNotify: unsafe extern "system" fn(this: *mut *mut Self, hclienttoken: super::super::Foundation::HANDLE_PTR, wszusername: ::windows_sys::core::PCWSTR, wszdomainname: ::windows_sys::core::PCWSTR, sessionid: *const WTS_SESSION_ID) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    LogonNotify: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetUserData: unsafe extern "system" fn(this: *mut *mut Self, ppolicydata: *const WTS_POLICY_DATA, pclientdata: *mut WTS_USER_DATA) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetUserData: usize,
+    pub DisconnectNotify: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetProtocolStatus: unsafe extern "system" fn(this: *mut *mut Self, pprotocolstatus: *mut WTS_PROTOCOL_STATUS) -> ::windows_sys::core::HRESULT,
+    pub GetLastInputTime: unsafe extern "system" fn(this: *mut *mut Self, plastinputtime: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub SetErrorInfo: unsafe extern "system" fn(this: *mut *mut Self, ulerror: u32) -> ::windows_sys::core::HRESULT,
+    pub SendBeep: unsafe extern "system" fn(this: *mut *mut Self, frequency: u32, duration: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CreateVirtualChannel: unsafe extern "system" fn(this: *mut *mut Self, szendpointname: ::windows_sys::core::PCSTR, bstatic: super::super::Foundation::BOOL, requestedpriority: u32, phchannel: *mut usize) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CreateVirtualChannel: usize,
+    pub QueryProperty: unsafe extern "system" fn(this: *mut *mut Self, querytype: ::windows_sys::core::GUID, ulnumentriesin: u32, ulnumentriesout: u32, ppropertyentriesin: *const WTS_PROPERTY_VALUE, ppropertyentriesout: *mut WTS_PROPERTY_VALUE) -> ::windows_sys::core::HRESULT,
+    pub GetShadowConnection: unsafe extern "system" fn(this: *mut *mut Self, ppshadowconnection: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWTSProtocolConnectionCallback {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnReady: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub BrokenConnection: unsafe extern "system" fn(this: *mut *mut Self, reason: u32, source: u32) -> ::windows_sys::core::HRESULT,
+    pub StopScreenUpdates: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub RedrawWindow: unsafe extern "system" fn(this: *mut *mut Self, rect: *const WTS_SMALL_RECT) -> ::windows_sys::core::HRESULT,
+    pub DisplayIOCtl: unsafe extern "system" fn(this: *mut *mut Self, displayioctl: *const WTS_DISPLAY_IOCTL) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWTSProtocolLicenseConnection {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RequestLicensingCapabilities: unsafe extern "system" fn(this: *mut *mut Self, pplicensecapabilities: *mut WTS_LICENSE_CAPABILITIES, pcblicensecapabilities: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RequestLicensingCapabilities: usize,
+    pub SendClientLicense: unsafe extern "system" fn(this: *mut *mut Self, pclientlicense: *const u8, cbclientlicense: u32) -> ::windows_sys::core::HRESULT,
+    pub RequestClientLicense: unsafe extern "system" fn(this: *mut *mut Self, reserve1: *const u8, reserve2: u32, ppclientlicense: *mut u8, pcbclientlicense: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub ProtocolComplete: unsafe extern "system" fn(this: *mut *mut Self, ulcomplete: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWTSProtocolListener {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub StartListen: unsafe extern "system" fn(this: *mut *mut Self, pcallback: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub StopListen: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWTSProtocolListenerCallback {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnConnected: unsafe extern "system" fn(this: *mut *mut Self, pconnection: *mut ::core::ffi::c_void, pcallback: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWTSProtocolLogonErrorRedirector {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnBeginPainting: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub RedirectStatus: unsafe extern "system" fn(this: *mut *mut Self, pszmessage: ::windows_sys::core::PCWSTR, presponse: *mut WTS_LOGON_ERROR_REDIRECTOR_RESPONSE) -> ::windows_sys::core::HRESULT,
+    pub RedirectMessage: unsafe extern "system" fn(this: *mut *mut Self, pszcaption: ::windows_sys::core::PCWSTR, pszmessage: ::windows_sys::core::PCWSTR, utype: u32, presponse: *mut WTS_LOGON_ERROR_REDIRECTOR_RESPONSE) -> ::windows_sys::core::HRESULT,
+    pub RedirectLogonError: unsafe extern "system" fn(this: *mut *mut Self, ntsstatus: i32, ntssubstatus: i32, pszcaption: ::windows_sys::core::PCWSTR, pszmessage: ::windows_sys::core::PCWSTR, utype: u32, presponse: *mut WTS_LOGON_ERROR_REDIRECTOR_RESPONSE) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWTSProtocolManager {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub CreateListener: unsafe extern "system" fn(this: *mut *mut Self, wszlistenername: ::windows_sys::core::PCWSTR, pprotocollistener: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub NotifyServiceStateChange: unsafe extern "system" fn(this: *mut *mut Self, ptsservicestatechange: *const WTS_SERVICE_STATE) -> ::windows_sys::core::HRESULT,
+    pub NotifySessionOfServiceStart: unsafe extern "system" fn(this: *mut *mut Self, sessionid: *const WTS_SESSION_ID) -> ::windows_sys::core::HRESULT,
+    pub NotifySessionOfServiceStop: unsafe extern "system" fn(this: *mut *mut Self, sessionid: *const WTS_SESSION_ID) -> ::windows_sys::core::HRESULT,
+    pub NotifySessionStateChange: unsafe extern "system" fn(this: *mut *mut Self, sessionid: *const WTS_SESSION_ID, eventid: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWTSProtocolShadowCallback {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub StopShadow: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub InvokeTargetShadow: unsafe extern "system" fn(this: *mut *mut Self, ptargetservername: ::windows_sys::core::PCWSTR, targetsessionid: u32, pparam1: *const u8, param1size: u32, pparam2: *const u8, param2size: u32, pparam3: *const u8, param3size: u32, pparam4: *const u8, param4size: u32, pclientname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWTSProtocolShadowConnection {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Start: unsafe extern "system" fn(this: *mut *mut Self, ptargetservername: ::windows_sys::core::PCWSTR, targetsessionid: u32, hotkeyvk: u8, hotkeymodifiers: u16, pshadowcallback: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Stop: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub DoTarget: unsafe extern "system" fn(this: *mut *mut Self, pparam1: *const u8, param1size: u32, pparam2: *const u8, param2size: u32, pparam3: *const u8, param3size: u32, pparam4: *const u8, param4size: u32, pclientname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWTSSBPlugin {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, plugincapabilities: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub WTSSBX_MachineChangeNotification: unsafe extern "system" fn(this: *mut *mut Self, notificationtype: WTSSBX_NOTIFICATION_TYPE, machineid: i32, pmachineinfo: *const WTSSBX_MACHINE_INFO) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub WTSSBX_SessionChangeNotification: unsafe extern "system" fn(this: *mut *mut Self, notificationtype: WTSSBX_NOTIFICATION_TYPE, machineid: i32, numofsessions: u32, sessioninfo: *const WTSSBX_SESSION_INFO) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    WTSSBX_SessionChangeNotification: usize,
+    pub WTSSBX_GetMostSuitableServer: unsafe extern "system" fn(this: *mut *mut Self, username: ::windows_sys::core::PCWSTR, domainname: ::windows_sys::core::PCWSTR, applicationtype: ::windows_sys::core::PCWSTR, farmname: ::windows_sys::core::PCWSTR, pmachineid: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub Terminated: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub WTSSBX_GetUserExternalSession: unsafe extern "system" fn(this: *mut *mut Self, username: ::windows_sys::core::PCWSTR, domainname: ::windows_sys::core::PCWSTR, applicationtype: ::windows_sys::core::PCWSTR, redirectorinternalip: *const WTSSBX_IP_ADDRESS, psessionid: *mut u32, pmachineconnectinfo: *mut WTSSBX_MACHINE_CONNECT_INFO) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWTSVirtualChannel {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Write: unsafe extern "system" fn(this: *mut *mut Self, cbsize: u32, pbuffer: *const u8, preserved: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWTSVirtualChannelCallback {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnDataReceived: unsafe extern "system" fn(this: *mut *mut Self, cbsize: u32, pbuffer: *const u8) -> ::windows_sys::core::HRESULT,
+    pub OnClose: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWTSVirtualChannelManager {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub CreateListener: unsafe extern "system" fn(this: *mut *mut Self, pszchannelname: *const u8, uflags: u32, plistenercallback: *mut ::core::ffi::c_void, pplistener: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWorkspace {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetWorkspaceNames: unsafe extern "system" fn(this: *mut *mut Self, psawkspnames: *mut *mut super::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetWorkspaceNames: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub StartRemoteApplication: unsafe extern "system" fn(this: *mut *mut Self, bstrworkspaceid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, psaparams: *const super::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    StartRemoteApplication: usize,
+    pub GetProcessId: unsafe extern "system" fn(this: *mut *mut Self, pulprocessid: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWorkspace2 {
+    pub base__: IWorkspace,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub StartRemoteApplicationEx: unsafe extern "system" fn(this: *mut *mut Self, bstrworkspaceid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrrequestingappid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrrequestingappfamilyname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, blaunchintoimmersiveclient: i16, bstrimmersiveclientactivationcontext: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, psaparams: *const super::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    StartRemoteApplicationEx: usize,
+}
+#[repr(C)]
+pub struct IWorkspace3 {
+    pub base__: IWorkspace2,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetClaimsToken2: unsafe extern "system" fn(this: *mut *mut Self, bstrclaimshint: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstruserhint: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, claimcookie: u32, hwndcreduiparent: u32, rectcreduiparent: super::super::Foundation::RECT, pbstraccesstoken: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetClaimsToken2: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetClaimsToken: unsafe extern "system" fn(this: *mut *mut Self, bstraccesstoken: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ullaccesstokenexpiration: u64, bstrrefreshtoken: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetClaimsToken: usize,
+}
+#[repr(C)]
+pub struct IWorkspaceClientExt {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetResourceId: unsafe extern "system" fn(this: *mut *mut Self, bstrworkspaceid: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetResourceId: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetResourceDisplayName: unsafe extern "system" fn(this: *mut *mut Self, bstrworkspacedisplayname: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetResourceDisplayName: usize,
+    pub IssueDisconnect: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWorkspaceRegistration {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub AddResource: unsafe extern "system" fn(this: *mut *mut Self, punk: *mut ::core::ffi::c_void, pdwcookie: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub RemoveResource: unsafe extern "system" fn(this: *mut *mut Self, dwcookieconnection: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWorkspaceRegistration2 {
+    pub base__: IWorkspaceRegistration,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AddResourceEx: unsafe extern "system" fn(this: *mut *mut Self, punk: *mut ::core::ffi::c_void, bstreventloguploadaddress: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pdwcookie: *mut u32, correlationid: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AddResourceEx: usize,
+    pub RemoveResourceEx: unsafe extern "system" fn(this: *mut *mut Self, dwcookieconnection: u32, correlationid: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWorkspaceReportMessage {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RegisterErrorLogMessage: unsafe extern "system" fn(this: *mut *mut Self, bstrmessage: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RegisterErrorLogMessage: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsErrorMessageRegistered: unsafe extern "system" fn(this: *mut *mut Self, bstrwkspid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, dwerrortype: u32, bstrerrormessagetype: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, dwerrorcode: u32, pferrorexist: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsErrorMessageRegistered: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RegisterErrorEvent: unsafe extern "system" fn(this: *mut *mut Self, bstrwkspid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, dwerrortype: u32, bstrerrormessagetype: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, dwerrorcode: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RegisterErrorEvent: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IWorkspaceResTypeRegistry {
+    pub base__: super::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AddResourceType: unsafe extern "system" fn(this: *mut *mut Self, fmachinewide: i16, bstrfileextension: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrlauncher: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AddResourceType: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DeleteResourceType: unsafe extern "system" fn(this: *mut *mut Self, fmachinewide: i16, bstrfileextension: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DeleteResourceType: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetRegisteredFileExtensions: unsafe extern "system" fn(this: *mut *mut Self, fmachinewide: i16, psafileextensions: *mut *mut super::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetRegisteredFileExtensions: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetResourceTypeInfo: unsafe extern "system" fn(this: *mut *mut Self, fmachinewide: i16, bstrfileextension: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pbstrlauncher: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetResourceTypeInfo: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ModifyResourceType: unsafe extern "system" fn(this: *mut *mut Self, fmachinewide: i16, bstrfileextension: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrlauncher: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ModifyResourceType: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IWorkspaceScriptable {
+    pub base__: super::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DisconnectWorkspace: unsafe extern "system" fn(this: *mut *mut Self, bstrworkspaceid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DisconnectWorkspace: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub StartWorkspace: unsafe extern "system" fn(this: *mut *mut Self, bstrworkspaceid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrusername: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrpassword: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrworkspaceparams: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ltimeout: i32, lflags: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    StartWorkspace: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsWorkspaceCredentialSpecified: unsafe extern "system" fn(this: *mut *mut Self, bstrworkspaceid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bcountunauthenticatedcredentials: i16, pbcredexist: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsWorkspaceCredentialSpecified: usize,
+    pub IsWorkspaceSSOEnabled: unsafe extern "system" fn(this: *mut *mut Self, pbssoenabled: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ClearWorkspaceCredential: unsafe extern "system" fn(this: *mut *mut Self, bstrworkspaceid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ClearWorkspaceCredential: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OnAuthenticated: unsafe extern "system" fn(this: *mut *mut Self, bstrworkspaceid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrusername: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OnAuthenticated: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DisconnectWorkspaceByFriendlyName: unsafe extern "system" fn(this: *mut *mut Self, bstrworkspacefriendlyname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DisconnectWorkspaceByFriendlyName: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IWorkspaceScriptable2 {
+    pub base__: IWorkspaceScriptable,
+    #[cfg(feature = "Win32_Foundation")]
+    pub StartWorkspaceEx: unsafe extern "system" fn(this: *mut *mut Self, bstrworkspaceid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrworkspacefriendlyname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrredirectorname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrusername: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrpassword: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrappcontainer: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrworkspaceparams: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ltimeout: i32, lflags: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    StartWorkspaceEx: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ResourceDismissed: unsafe extern "system" fn(this: *mut *mut Self, bstrworkspaceid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrworkspacefriendlyname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ResourceDismissed: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IWorkspaceScriptable3 {
+    pub base__: IWorkspaceScriptable2,
+    #[cfg(feature = "Win32_Foundation")]
+    pub StartWorkspaceEx2:
+        unsafe extern "system" fn(this: *mut *mut Self, bstrworkspaceid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrworkspacefriendlyname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrredirectorname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrusername: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrpassword: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrappcontainer: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrworkspaceparams: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ltimeout: i32, lflags: i32, bstreventloguploadaddress: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, correlationid: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    StartWorkspaceEx2: usize,
+}
+#[repr(C)]
+pub struct ItsPubPlugin {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetResourceList: unsafe extern "system" fn(this: *mut *mut Self, userid: ::windows_sys::core::PCWSTR, pceapplistsize: *mut i32, resourcelist: *mut *mut pluginResource) -> ::windows_sys::core::HRESULT,
+    pub GetResource: unsafe extern "system" fn(this: *mut *mut Self, alias: ::windows_sys::core::PCWSTR, flags: i32, resource: *mut pluginResource) -> ::windows_sys::core::HRESULT,
+    pub GetCacheLastUpdateTime: unsafe extern "system" fn(this: *mut *mut Self, lastupdatetime: *mut u64) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub pluginName: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    pluginName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub pluginVersion: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    pluginVersion: usize,
+    pub ResolveResource: unsafe extern "system" fn(this: *mut *mut Self, resourcetype: *mut u32, resourcelocation: ::windows_sys::core::PWSTR, endpointname: ::windows_sys::core::PWSTR, userid: ::windows_sys::core::PCWSTR, alias: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ItsPubPlugin2 {
+    pub base__: ItsPubPlugin,
+    pub GetResource2List: unsafe extern "system" fn(this: *mut *mut Self, userid: ::windows_sys::core::PCWSTR, pceapplistsize: *mut i32, resourcelist: *mut *mut pluginResource2) -> ::windows_sys::core::HRESULT,
+    pub GetResource2: unsafe extern "system" fn(this: *mut *mut Self, alias: ::windows_sys::core::PCWSTR, flags: i32, resource: *mut pluginResource2) -> ::windows_sys::core::HRESULT,
+    pub ResolvePersonalDesktop: unsafe extern "system" fn(this: *mut *mut Self, userid: ::windows_sys::core::PCWSTR, poolid: ::windows_sys::core::PCWSTR, epdresolutiontype: TSPUB_PLUGIN_PD_RESOLUTION_TYPE, ppdassignmenttype: *mut TSPUB_PLUGIN_PD_ASSIGNMENT_TYPE, endpointname: ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub DeletePersonalDesktopAssignment: unsafe extern "system" fn(this: *mut *mut Self, userid: ::windows_sys::core::PCWSTR, poolid: ::windows_sys::core::PCWSTR, endpointname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
 #[doc = "*Required features: `\"Win32_System_RemoteDesktop\"`*"]
 pub const KEEP_EXISTING_SESSIONS: u32 = 8u32;
 #[doc = "*Required features: `\"Win32_System_RemoteDesktop\"`*"]
@@ -3152,7 +4468,11 @@ pub const WTS_WSD_REBOOT: u32 = 4u32;
 #[doc = "*Required features: `\"Win32_System_RemoteDesktop\"`*"]
 pub const WTS_WSD_SHUTDOWN: u32 = 2u32;
 pub const Workspace: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1327365286, data2: 15021, data3: 18657, data4: [132, 6, 75, 194, 26, 80, 29, 124] };
-pub type _ITSWkspEvents = *mut ::core::ffi::c_void;
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct _ITSWkspEvents {
+    pub base__: super::Com::IDispatch,
+}
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_RemoteDesktop\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]

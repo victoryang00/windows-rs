@@ -1,5 +1,311 @@
 #[cfg(feature = "ApplicationModel_Wallet_System")]
 pub mod System;
+#[repr(C)]
+pub struct IWalletBarcode {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Symbology: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut WalletBarcodeSymbology) -> ::windows_sys::core::HRESULT,
+    pub Value: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    pub GetImageAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    GetImageAsync: usize,
+}
+#[repr(C)]
+pub struct IWalletBarcodeFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CreateWalletBarcode: unsafe extern "system" fn(this: *mut *mut Self, symbology: WalletBarcodeSymbology, value: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Storage_Streams")]
+    pub CreateCustomWalletBarcode: unsafe extern "system" fn(this: *mut *mut Self, streamtobarcodeimage: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Storage_Streams"))]
+    CreateCustomWalletBarcode: usize,
+}
+#[repr(C)]
+pub struct IWalletItem {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub DisplayName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetDisplayName: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Id: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub IsAcknowledged: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetIsAcknowledged: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+    pub IssuerDisplayName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetIssuerDisplayName: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub LastUpdated: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    LastUpdated: usize,
+    #[cfg(feature = "Foundation")]
+    pub SetLastUpdated: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    SetLastUpdated: usize,
+    pub Kind: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut WalletItemKind) -> ::windows_sys::core::HRESULT,
+    pub Barcode: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetBarcode: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub ExpirationDate: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    ExpirationDate: usize,
+    #[cfg(feature = "Foundation")]
+    pub SetExpirationDate: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    SetExpirationDate: usize,
+    #[cfg(feature = "Storage_Streams")]
+    pub Logo159x159: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Storage_Streams"))]
+    Logo159x159: usize,
+    #[cfg(feature = "Storage_Streams")]
+    pub SetLogo159x159: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Storage_Streams"))]
+    SetLogo159x159: usize,
+    #[cfg(feature = "Storage_Streams")]
+    pub Logo336x336: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Storage_Streams"))]
+    Logo336x336: usize,
+    #[cfg(feature = "Storage_Streams")]
+    pub SetLogo336x336: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Storage_Streams"))]
+    SetLogo336x336: usize,
+    #[cfg(feature = "Storage_Streams")]
+    pub Logo99x99: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Storage_Streams"))]
+    Logo99x99: usize,
+    #[cfg(feature = "Storage_Streams")]
+    pub SetLogo99x99: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Storage_Streams"))]
+    SetLogo99x99: usize,
+    pub DisplayMessage: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetDisplayMessage: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub IsDisplayMessageLaunchable: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetIsDisplayMessageLaunchable: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+    pub LogoText: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetLogoText: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "UI")]
+    pub HeaderColor: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::UI::Color) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI"))]
+    HeaderColor: usize,
+    #[cfg(feature = "UI")]
+    pub SetHeaderColor: unsafe extern "system" fn(this: *mut *mut Self, value: super::super::UI::Color) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI"))]
+    SetHeaderColor: usize,
+    #[cfg(feature = "UI")]
+    pub BodyColor: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::UI::Color) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI"))]
+    BodyColor: usize,
+    #[cfg(feature = "UI")]
+    pub SetBodyColor: unsafe extern "system" fn(this: *mut *mut Self, value: super::super::UI::Color) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI"))]
+    SetBodyColor: usize,
+    #[cfg(feature = "UI")]
+    pub HeaderFontColor: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::UI::Color) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI"))]
+    HeaderFontColor: usize,
+    #[cfg(feature = "UI")]
+    pub SetHeaderFontColor: unsafe extern "system" fn(this: *mut *mut Self, value: super::super::UI::Color) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI"))]
+    SetHeaderFontColor: usize,
+    #[cfg(feature = "UI")]
+    pub BodyFontColor: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::UI::Color) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI"))]
+    BodyFontColor: usize,
+    #[cfg(feature = "UI")]
+    pub SetBodyFontColor: unsafe extern "system" fn(this: *mut *mut Self, value: super::super::UI::Color) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI"))]
+    SetBodyFontColor: usize,
+    #[cfg(feature = "Storage_Streams")]
+    pub HeaderBackgroundImage: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Storage_Streams"))]
+    HeaderBackgroundImage: usize,
+    #[cfg(feature = "Storage_Streams")]
+    pub SetHeaderBackgroundImage: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Storage_Streams"))]
+    SetHeaderBackgroundImage: usize,
+    #[cfg(feature = "Storage_Streams")]
+    pub BodyBackgroundImage: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Storage_Streams"))]
+    BodyBackgroundImage: usize,
+    #[cfg(feature = "Storage_Streams")]
+    pub SetBodyBackgroundImage: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Storage_Streams"))]
+    SetBodyBackgroundImage: usize,
+    #[cfg(feature = "Storage_Streams")]
+    pub LogoImage: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Storage_Streams"))]
+    LogoImage: usize,
+    #[cfg(feature = "Storage_Streams")]
+    pub SetLogoImage: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Storage_Streams"))]
+    SetLogoImage: usize,
+    #[cfg(feature = "Storage_Streams")]
+    pub PromotionalImage: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Storage_Streams"))]
+    PromotionalImage: usize,
+    #[cfg(feature = "Storage_Streams")]
+    pub SetPromotionalImage: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Storage_Streams"))]
+    SetPromotionalImage: usize,
+    #[cfg(feature = "Foundation")]
+    pub RelevantDate: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RelevantDate: usize,
+    #[cfg(feature = "Foundation")]
+    pub SetRelevantDate: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    SetRelevantDate: usize,
+    pub RelevantDateDisplayMessage: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetRelevantDateDisplayMessage: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub TransactionHistory: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    TransactionHistory: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub RelevantLocations: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    RelevantLocations: usize,
+    pub IsMoreTransactionHistoryLaunchable: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetIsMoreTransactionHistoryLaunchable: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub DisplayProperties: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    DisplayProperties: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub Verbs: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    Verbs: usize,
+}
+#[repr(C)]
+pub struct IWalletItemCustomProperty {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Name: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetName: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Value: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetValue: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub AutoDetectLinks: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetAutoDetectLinks: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+    pub DetailViewPosition: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut WalletDetailViewPosition) -> ::windows_sys::core::HRESULT,
+    pub SetDetailViewPosition: unsafe extern "system" fn(this: *mut *mut Self, value: WalletDetailViewPosition) -> ::windows_sys::core::HRESULT,
+    pub SummaryViewPosition: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut WalletSummaryViewPosition) -> ::windows_sys::core::HRESULT,
+    pub SetSummaryViewPosition: unsafe extern "system" fn(this: *mut *mut Self, value: WalletSummaryViewPosition) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWalletItemCustomPropertyFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CreateWalletItemCustomProperty: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::HSTRING, value: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWalletItemFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CreateWalletItem: unsafe extern "system" fn(this: *mut *mut Self, kind: WalletItemKind, displayname: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWalletItemStore {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub AddAsync: unsafe extern "system" fn(this: *mut *mut Self, id: ::windows_sys::core::HSTRING, item: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    AddAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub ClearAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    ClearAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub GetWalletItemAsync: unsafe extern "system" fn(this: *mut *mut Self, id: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    GetWalletItemAsync: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub GetItemsAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    GetItemsAsync: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub GetItemsWithKindAsync: unsafe extern "system" fn(this: *mut *mut Self, kind: WalletItemKind, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    GetItemsWithKindAsync: usize,
+    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    pub ImportItemAsync: unsafe extern "system" fn(this: *mut *mut Self, stream: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    ImportItemAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub DeleteAsync: unsafe extern "system" fn(this: *mut *mut Self, id: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    DeleteAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub ShowAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    ShowAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub ShowItemAsync: unsafe extern "system" fn(this: *mut *mut Self, id: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    ShowItemAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub UpdateAsync: unsafe extern "system" fn(this: *mut *mut Self, item: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    UpdateAsync: usize,
+}
+#[repr(C)]
+pub struct IWalletItemStore2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub ItemsChanged: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    ItemsChanged: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveItemsChanged: unsafe extern "system" fn(this: *mut *mut Self, cookie: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveItemsChanged: usize,
+}
+#[repr(C)]
+pub struct IWalletManagerStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub RequestStoreAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RequestStoreAsync: usize,
+}
+#[repr(C)]
+pub struct IWalletRelevantLocation {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Devices_Geolocation")]
+    pub Position: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Devices::Geolocation::BasicGeoposition) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Devices_Geolocation"))]
+    Position: usize,
+    #[cfg(feature = "Devices_Geolocation")]
+    pub SetPosition: unsafe extern "system" fn(this: *mut *mut Self, value: super::super::Devices::Geolocation::BasicGeoposition) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Devices_Geolocation"))]
+    SetPosition: usize,
+    pub DisplayMessage: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetDisplayMessage: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWalletTransaction {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Description: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetDescription: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub DisplayAmount: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetDisplayAmount: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub IgnoreTimeOfDay: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetIgnoreTimeOfDay: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+    pub DisplayLocation: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetDisplayLocation: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub TransactionDate: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    TransactionDate: usize,
+    #[cfg(feature = "Foundation")]
+    pub SetTransactionDate: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    SetTransactionDate: usize,
+    pub IsLaunchable: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetIsLaunchable: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWalletVerb {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Name: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetName: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWalletVerbFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CreateWalletVerb: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
 #[doc = "*Required features: `\"ApplicationModel_Wallet\"`*"]
 #[repr(transparent)]
 pub struct WalletActionKind(pub i32);

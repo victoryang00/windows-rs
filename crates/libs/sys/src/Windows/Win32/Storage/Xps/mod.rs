@@ -152,74 +152,1189 @@ impl ::core::clone::Clone for DRAWPATRECT {
     }
 }
 pub type HPTPROVIDER = isize;
-pub type IXpsDocumentPackageTarget = *mut ::core::ffi::c_void;
-pub type IXpsDocumentPackageTarget3D = *mut ::core::ffi::c_void;
-pub type IXpsOMBrush = *mut ::core::ffi::c_void;
-pub type IXpsOMCanvas = *mut ::core::ffi::c_void;
-pub type IXpsOMColorProfileResource = *mut ::core::ffi::c_void;
-pub type IXpsOMColorProfileResourceCollection = *mut ::core::ffi::c_void;
-pub type IXpsOMCoreProperties = *mut ::core::ffi::c_void;
-pub type IXpsOMDashCollection = *mut ::core::ffi::c_void;
-pub type IXpsOMDictionary = *mut ::core::ffi::c_void;
-pub type IXpsOMDocument = *mut ::core::ffi::c_void;
-pub type IXpsOMDocumentCollection = *mut ::core::ffi::c_void;
-pub type IXpsOMDocumentSequence = *mut ::core::ffi::c_void;
-pub type IXpsOMDocumentStructureResource = *mut ::core::ffi::c_void;
-pub type IXpsOMFontResource = *mut ::core::ffi::c_void;
-pub type IXpsOMFontResourceCollection = *mut ::core::ffi::c_void;
-pub type IXpsOMGeometry = *mut ::core::ffi::c_void;
-pub type IXpsOMGeometryFigure = *mut ::core::ffi::c_void;
-pub type IXpsOMGeometryFigureCollection = *mut ::core::ffi::c_void;
-pub type IXpsOMGlyphs = *mut ::core::ffi::c_void;
-pub type IXpsOMGlyphsEditor = *mut ::core::ffi::c_void;
-pub type IXpsOMGradientBrush = *mut ::core::ffi::c_void;
-pub type IXpsOMGradientStop = *mut ::core::ffi::c_void;
-pub type IXpsOMGradientStopCollection = *mut ::core::ffi::c_void;
-pub type IXpsOMImageBrush = *mut ::core::ffi::c_void;
-pub type IXpsOMImageResource = *mut ::core::ffi::c_void;
-pub type IXpsOMImageResourceCollection = *mut ::core::ffi::c_void;
-pub type IXpsOMLinearGradientBrush = *mut ::core::ffi::c_void;
-pub type IXpsOMMatrixTransform = *mut ::core::ffi::c_void;
-pub type IXpsOMNameCollection = *mut ::core::ffi::c_void;
-pub type IXpsOMObjectFactory = *mut ::core::ffi::c_void;
-pub type IXpsOMObjectFactory1 = *mut ::core::ffi::c_void;
-pub type IXpsOMPackage = *mut ::core::ffi::c_void;
-pub type IXpsOMPackage1 = *mut ::core::ffi::c_void;
-pub type IXpsOMPackageTarget = *mut ::core::ffi::c_void;
-pub type IXpsOMPackageWriter = *mut ::core::ffi::c_void;
-pub type IXpsOMPackageWriter3D = *mut ::core::ffi::c_void;
-pub type IXpsOMPage = *mut ::core::ffi::c_void;
-pub type IXpsOMPage1 = *mut ::core::ffi::c_void;
-pub type IXpsOMPageReference = *mut ::core::ffi::c_void;
-pub type IXpsOMPageReferenceCollection = *mut ::core::ffi::c_void;
-pub type IXpsOMPart = *mut ::core::ffi::c_void;
-pub type IXpsOMPartResources = *mut ::core::ffi::c_void;
-pub type IXpsOMPartUriCollection = *mut ::core::ffi::c_void;
-pub type IXpsOMPath = *mut ::core::ffi::c_void;
-pub type IXpsOMPrintTicketResource = *mut ::core::ffi::c_void;
-pub type IXpsOMRadialGradientBrush = *mut ::core::ffi::c_void;
-pub type IXpsOMRemoteDictionaryResource = *mut ::core::ffi::c_void;
-pub type IXpsOMRemoteDictionaryResource1 = *mut ::core::ffi::c_void;
-pub type IXpsOMRemoteDictionaryResourceCollection = *mut ::core::ffi::c_void;
-pub type IXpsOMResource = *mut ::core::ffi::c_void;
-pub type IXpsOMShareable = *mut ::core::ffi::c_void;
-pub type IXpsOMSignatureBlockResource = *mut ::core::ffi::c_void;
-pub type IXpsOMSignatureBlockResourceCollection = *mut ::core::ffi::c_void;
-pub type IXpsOMSolidColorBrush = *mut ::core::ffi::c_void;
-pub type IXpsOMStoryFragmentsResource = *mut ::core::ffi::c_void;
-pub type IXpsOMThumbnailGenerator = *mut ::core::ffi::c_void;
-pub type IXpsOMTileBrush = *mut ::core::ffi::c_void;
-pub type IXpsOMVisual = *mut ::core::ffi::c_void;
-pub type IXpsOMVisualBrush = *mut ::core::ffi::c_void;
-pub type IXpsOMVisualCollection = *mut ::core::ffi::c_void;
-pub type IXpsSignature = *mut ::core::ffi::c_void;
-pub type IXpsSignatureBlock = *mut ::core::ffi::c_void;
-pub type IXpsSignatureBlockCollection = *mut ::core::ffi::c_void;
-pub type IXpsSignatureCollection = *mut ::core::ffi::c_void;
-pub type IXpsSignatureManager = *mut ::core::ffi::c_void;
-pub type IXpsSignatureRequest = *mut ::core::ffi::c_void;
-pub type IXpsSignatureRequestCollection = *mut ::core::ffi::c_void;
-pub type IXpsSigningOptions = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IXpsDocumentPackageTarget {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub GetXpsOMPackageWriter: unsafe extern "system" fn(this: *mut *mut Self, documentsequencepartname: *mut ::core::ffi::c_void, discardcontrolpartname: *mut ::core::ffi::c_void, packagewriter: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
+    GetXpsOMPackageWriter: usize,
+    pub GetXpsOMFactory: unsafe extern "system" fn(this: *mut *mut Self, xpsfactory: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetXpsType: unsafe extern "system" fn(this: *mut *mut Self, documenttype: *mut XPS_DOCUMENT_TYPE) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IXpsDocumentPackageTarget3D {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub GetXpsOMPackageWriter3D: unsafe extern "system" fn(this: *mut *mut Self, documentsequencepartname: *mut ::core::ffi::c_void, discardcontrolpartname: *mut ::core::ffi::c_void, modelpartname: *mut ::core::ffi::c_void, modeldata: *mut ::core::ffi::c_void, packagewriter: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
+    GetXpsOMPackageWriter3D: usize,
+    pub GetXpsOMFactory: unsafe extern "system" fn(this: *mut *mut Self, xpsfactory: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IXpsOMBrush {
+    pub base__: IXpsOMShareable,
+    pub GetOpacity: unsafe extern "system" fn(this: *mut *mut Self, opacity: *mut f32) -> ::windows_sys::core::HRESULT,
+    pub SetOpacity: unsafe extern "system" fn(this: *mut *mut Self, opacity: f32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IXpsOMCanvas {
+    pub base__: IXpsOMVisual,
+    pub GetVisuals: unsafe extern "system" fn(this: *mut *mut Self, visuals: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetUseAliasedEdgeMode: unsafe extern "system" fn(this: *mut *mut Self, usealiasededgemode: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetUseAliasedEdgeMode: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetUseAliasedEdgeMode: unsafe extern "system" fn(this: *mut *mut Self, usealiasededgemode: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetUseAliasedEdgeMode: usize,
+    pub GetAccessibilityShortDescription: unsafe extern "system" fn(this: *mut *mut Self, shortdescription: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetAccessibilityShortDescription: unsafe extern "system" fn(this: *mut *mut Self, shortdescription: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetAccessibilityLongDescription: unsafe extern "system" fn(this: *mut *mut Self, longdescription: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetAccessibilityLongDescription: unsafe extern "system" fn(this: *mut *mut Self, longdescription: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetDictionary: unsafe extern "system" fn(this: *mut *mut Self, resourcedictionary: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetDictionaryLocal: unsafe extern "system" fn(this: *mut *mut Self, resourcedictionary: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetDictionaryLocal: unsafe extern "system" fn(this: *mut *mut Self, resourcedictionary: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetDictionaryResource: unsafe extern "system" fn(this: *mut *mut Self, remotedictionaryresource: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetDictionaryResource: unsafe extern "system" fn(this: *mut *mut Self, remotedictionaryresource: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, canvas: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IXpsOMColorProfileResource {
+    pub base__: IXpsOMResource,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetStream: unsafe extern "system" fn(this: *mut *mut Self, stream: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetStream: usize,
+    #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub SetContent: unsafe extern "system" fn(this: *mut *mut Self, sourcestream: *mut ::core::ffi::c_void, partname: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
+    SetContent: usize,
+}
+#[repr(C)]
+pub struct IXpsOMColorProfileResourceCollection {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, count: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32, object: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub InsertAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32, object: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RemoveAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32) -> ::windows_sys::core::HRESULT,
+    pub SetAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32, object: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Append: unsafe extern "system" fn(this: *mut *mut Self, object: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub GetByPartName: unsafe extern "system" fn(this: *mut *mut Self, partname: *mut ::core::ffi::c_void, part: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
+    GetByPartName: usize,
+}
+#[repr(C)]
+pub struct IXpsOMCoreProperties {
+    pub base__: IXpsOMPart,
+    pub GetOwner: unsafe extern "system" fn(this: *mut *mut Self, package: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetCategory: unsafe extern "system" fn(this: *mut *mut Self, category: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetCategory: unsafe extern "system" fn(this: *mut *mut Self, category: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetContentStatus: unsafe extern "system" fn(this: *mut *mut Self, contentstatus: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetContentStatus: unsafe extern "system" fn(this: *mut *mut Self, contentstatus: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetContentType: unsafe extern "system" fn(this: *mut *mut Self, contenttype: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetContentType: unsafe extern "system" fn(this: *mut *mut Self, contenttype: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetCreated: unsafe extern "system" fn(this: *mut *mut Self, created: *mut super::super::Foundation::SYSTEMTIME) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetCreated: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetCreated: unsafe extern "system" fn(this: *mut *mut Self, created: *const super::super::Foundation::SYSTEMTIME) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetCreated: usize,
+    pub GetCreator: unsafe extern "system" fn(this: *mut *mut Self, creator: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetCreator: unsafe extern "system" fn(this: *mut *mut Self, creator: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetDescription: unsafe extern "system" fn(this: *mut *mut Self, description: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetDescription: unsafe extern "system" fn(this: *mut *mut Self, description: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetIdentifier: unsafe extern "system" fn(this: *mut *mut Self, identifier: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetIdentifier: unsafe extern "system" fn(this: *mut *mut Self, identifier: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetKeywords: unsafe extern "system" fn(this: *mut *mut Self, keywords: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetKeywords: unsafe extern "system" fn(this: *mut *mut Self, keywords: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetLanguage: unsafe extern "system" fn(this: *mut *mut Self, language: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetLanguage: unsafe extern "system" fn(this: *mut *mut Self, language: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetLastModifiedBy: unsafe extern "system" fn(this: *mut *mut Self, lastmodifiedby: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetLastModifiedBy: unsafe extern "system" fn(this: *mut *mut Self, lastmodifiedby: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetLastPrinted: unsafe extern "system" fn(this: *mut *mut Self, lastprinted: *mut super::super::Foundation::SYSTEMTIME) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetLastPrinted: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetLastPrinted: unsafe extern "system" fn(this: *mut *mut Self, lastprinted: *const super::super::Foundation::SYSTEMTIME) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetLastPrinted: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetModified: unsafe extern "system" fn(this: *mut *mut Self, modified: *mut super::super::Foundation::SYSTEMTIME) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetModified: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetModified: unsafe extern "system" fn(this: *mut *mut Self, modified: *const super::super::Foundation::SYSTEMTIME) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetModified: usize,
+    pub GetRevision: unsafe extern "system" fn(this: *mut *mut Self, revision: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetRevision: unsafe extern "system" fn(this: *mut *mut Self, revision: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetSubject: unsafe extern "system" fn(this: *mut *mut Self, subject: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetSubject: unsafe extern "system" fn(this: *mut *mut Self, subject: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetTitle: unsafe extern "system" fn(this: *mut *mut Self, title: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetTitle: unsafe extern "system" fn(this: *mut *mut Self, title: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetVersion: unsafe extern "system" fn(this: *mut *mut Self, version: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetVersion: unsafe extern "system" fn(this: *mut *mut Self, version: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, coreproperties: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IXpsOMDashCollection {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, count: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32, dash: *mut XPS_DASH) -> ::windows_sys::core::HRESULT,
+    pub InsertAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32, dash: *const XPS_DASH) -> ::windows_sys::core::HRESULT,
+    pub RemoveAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32) -> ::windows_sys::core::HRESULT,
+    pub SetAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32, dash: *const XPS_DASH) -> ::windows_sys::core::HRESULT,
+    pub Append: unsafe extern "system" fn(this: *mut *mut Self, dash: *const XPS_DASH) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IXpsOMDictionary {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, count: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32, key: *mut ::windows_sys::core::PWSTR, entry: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetByKey: unsafe extern "system" fn(this: *mut *mut Self, key: ::windows_sys::core::PCWSTR, beforeentry: *mut ::core::ffi::c_void, entry: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetIndex: unsafe extern "system" fn(this: *mut *mut Self, entry: *mut ::core::ffi::c_void, index: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Append: unsafe extern "system" fn(this: *mut *mut Self, key: ::windows_sys::core::PCWSTR, entry: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub InsertAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32, key: ::windows_sys::core::PCWSTR, entry: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RemoveAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32) -> ::windows_sys::core::HRESULT,
+    pub SetAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32, key: ::windows_sys::core::PCWSTR, entry: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, dictionary: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IXpsOMDocument {
+    pub base__: IXpsOMPart,
+    pub GetOwner: unsafe extern "system" fn(this: *mut *mut Self, documentsequence: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetPageReferences: unsafe extern "system" fn(this: *mut *mut Self, pagereferences: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetPrintTicketResource: unsafe extern "system" fn(this: *mut *mut Self, printticketresource: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetPrintTicketResource: unsafe extern "system" fn(this: *mut *mut Self, printticketresource: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetDocumentStructureResource: unsafe extern "system" fn(this: *mut *mut Self, documentstructureresource: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetDocumentStructureResource: unsafe extern "system" fn(this: *mut *mut Self, documentstructureresource: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetSignatureBlockResources: unsafe extern "system" fn(this: *mut *mut Self, signatureblockresources: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, document: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IXpsOMDocumentCollection {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, count: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32, document: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub InsertAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32, document: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RemoveAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32) -> ::windows_sys::core::HRESULT,
+    pub SetAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32, document: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Append: unsafe extern "system" fn(this: *mut *mut Self, document: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IXpsOMDocumentSequence {
+    pub base__: IXpsOMPart,
+    pub GetOwner: unsafe extern "system" fn(this: *mut *mut Self, package: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetDocuments: unsafe extern "system" fn(this: *mut *mut Self, documents: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetPrintTicketResource: unsafe extern "system" fn(this: *mut *mut Self, printticketresource: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetPrintTicketResource: unsafe extern "system" fn(this: *mut *mut Self, printticketresource: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IXpsOMDocumentStructureResource {
+    pub base__: IXpsOMResource,
+    pub GetOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetStream: unsafe extern "system" fn(this: *mut *mut Self, stream: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetStream: usize,
+    #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub SetContent: unsafe extern "system" fn(this: *mut *mut Self, sourcestream: *mut ::core::ffi::c_void, partname: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
+    SetContent: usize,
+}
+#[repr(C)]
+pub struct IXpsOMFontResource {
+    pub base__: IXpsOMResource,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetStream: unsafe extern "system" fn(this: *mut *mut Self, readerstream: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetStream: usize,
+    #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub SetContent: unsafe extern "system" fn(this: *mut *mut Self, sourcestream: *mut ::core::ffi::c_void, embeddingoption: XPS_FONT_EMBEDDING, partname: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
+    SetContent: usize,
+    pub GetEmbeddingOption: unsafe extern "system" fn(this: *mut *mut Self, embeddingoption: *mut XPS_FONT_EMBEDDING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IXpsOMFontResourceCollection {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, count: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32, value: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub InsertAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Append: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RemoveAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub GetByPartName: unsafe extern "system" fn(this: *mut *mut Self, partname: *mut ::core::ffi::c_void, part: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
+    GetByPartName: usize,
+}
+#[repr(C)]
+pub struct IXpsOMGeometry {
+    pub base__: IXpsOMShareable,
+    pub GetFigures: unsafe extern "system" fn(this: *mut *mut Self, figures: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetFillRule: unsafe extern "system" fn(this: *mut *mut Self, fillrule: *mut XPS_FILL_RULE) -> ::windows_sys::core::HRESULT,
+    pub SetFillRule: unsafe extern "system" fn(this: *mut *mut Self, fillrule: XPS_FILL_RULE) -> ::windows_sys::core::HRESULT,
+    pub GetTransform: unsafe extern "system" fn(this: *mut *mut Self, transform: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetTransformLocal: unsafe extern "system" fn(this: *mut *mut Self, transform: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetTransformLocal: unsafe extern "system" fn(this: *mut *mut Self, transform: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetTransformLookup: unsafe extern "system" fn(this: *mut *mut Self, lookup: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetTransformLookup: unsafe extern "system" fn(this: *mut *mut Self, lookup: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, geometry: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IXpsOMGeometryFigure {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetSegmentData: unsafe extern "system" fn(this: *mut *mut Self, datacount: *mut u32, segmentdata: *mut f32) -> ::windows_sys::core::HRESULT,
+    pub GetSegmentTypes: unsafe extern "system" fn(this: *mut *mut Self, segmentcount: *mut u32, segmenttypes: *mut XPS_SEGMENT_TYPE) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetSegmentStrokes: unsafe extern "system" fn(this: *mut *mut Self, segmentcount: *mut u32, segmentstrokes: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetSegmentStrokes: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetSegments: unsafe extern "system" fn(this: *mut *mut Self, segmentcount: u32, segmentdatacount: u32, segmenttypes: *const XPS_SEGMENT_TYPE, segmentdata: *const f32, segmentstrokes: *const super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetSegments: usize,
+    pub GetStartPoint: unsafe extern "system" fn(this: *mut *mut Self, startpoint: *mut XPS_POINT) -> ::windows_sys::core::HRESULT,
+    pub SetStartPoint: unsafe extern "system" fn(this: *mut *mut Self, startpoint: *const XPS_POINT) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetIsClosed: unsafe extern "system" fn(this: *mut *mut Self, isclosed: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetIsClosed: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetIsClosed: unsafe extern "system" fn(this: *mut *mut Self, isclosed: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetIsClosed: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetIsFilled: unsafe extern "system" fn(this: *mut *mut Self, isfilled: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetIsFilled: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetIsFilled: unsafe extern "system" fn(this: *mut *mut Self, isfilled: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetIsFilled: usize,
+    pub GetSegmentCount: unsafe extern "system" fn(this: *mut *mut Self, segmentcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSegmentDataCount: unsafe extern "system" fn(this: *mut *mut Self, segmentdatacount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSegmentStrokePattern: unsafe extern "system" fn(this: *mut *mut Self, segmentstrokepattern: *mut XPS_SEGMENT_STROKE_PATTERN) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, geometryfigure: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IXpsOMGeometryFigureCollection {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, count: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32, geometryfigure: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub InsertAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32, geometryfigure: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RemoveAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32) -> ::windows_sys::core::HRESULT,
+    pub SetAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32, geometryfigure: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Append: unsafe extern "system" fn(this: *mut *mut Self, geometryfigure: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IXpsOMGlyphs {
+    pub base__: IXpsOMVisual,
+    pub GetUnicodeString: unsafe extern "system" fn(this: *mut *mut Self, unicodestring: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetGlyphIndexCount: unsafe extern "system" fn(this: *mut *mut Self, indexcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetGlyphIndices: unsafe extern "system" fn(this: *mut *mut Self, indexcount: *mut u32, glyphindices: *mut XPS_GLYPH_INDEX) -> ::windows_sys::core::HRESULT,
+    pub GetGlyphMappingCount: unsafe extern "system" fn(this: *mut *mut Self, glyphmappingcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetGlyphMappings: unsafe extern "system" fn(this: *mut *mut Self, glyphmappingcount: *mut u32, glyphmappings: *mut XPS_GLYPH_MAPPING) -> ::windows_sys::core::HRESULT,
+    pub GetProhibitedCaretStopCount: unsafe extern "system" fn(this: *mut *mut Self, prohibitedcaretstopcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetProhibitedCaretStops: unsafe extern "system" fn(this: *mut *mut Self, prohibitedcaretstopcount: *mut u32, prohibitedcaretstops: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetBidiLevel: unsafe extern "system" fn(this: *mut *mut Self, bidilevel: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetIsSideways: unsafe extern "system" fn(this: *mut *mut Self, issideways: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetIsSideways: usize,
+    pub GetDeviceFontName: unsafe extern "system" fn(this: *mut *mut Self, devicefontname: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetStyleSimulations: unsafe extern "system" fn(this: *mut *mut Self, stylesimulations: *mut XPS_STYLE_SIMULATION) -> ::windows_sys::core::HRESULT,
+    pub SetStyleSimulations: unsafe extern "system" fn(this: *mut *mut Self, stylesimulations: XPS_STYLE_SIMULATION) -> ::windows_sys::core::HRESULT,
+    pub GetOrigin: unsafe extern "system" fn(this: *mut *mut Self, origin: *mut XPS_POINT) -> ::windows_sys::core::HRESULT,
+    pub SetOrigin: unsafe extern "system" fn(this: *mut *mut Self, origin: *const XPS_POINT) -> ::windows_sys::core::HRESULT,
+    pub GetFontRenderingEmSize: unsafe extern "system" fn(this: *mut *mut Self, fontrenderingemsize: *mut f32) -> ::windows_sys::core::HRESULT,
+    pub SetFontRenderingEmSize: unsafe extern "system" fn(this: *mut *mut Self, fontrenderingemsize: f32) -> ::windows_sys::core::HRESULT,
+    pub GetFontResource: unsafe extern "system" fn(this: *mut *mut Self, fontresource: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetFontResource: unsafe extern "system" fn(this: *mut *mut Self, fontresource: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetFontFaceIndex: unsafe extern "system" fn(this: *mut *mut Self, fontfaceindex: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetFontFaceIndex: unsafe extern "system" fn(this: *mut *mut Self, fontfaceindex: i16) -> ::windows_sys::core::HRESULT,
+    pub GetFillBrush: unsafe extern "system" fn(this: *mut *mut Self, fillbrush: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetFillBrushLocal: unsafe extern "system" fn(this: *mut *mut Self, fillbrush: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetFillBrushLocal: unsafe extern "system" fn(this: *mut *mut Self, fillbrush: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetFillBrushLookup: unsafe extern "system" fn(this: *mut *mut Self, key: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetFillBrushLookup: unsafe extern "system" fn(this: *mut *mut Self, key: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetGlyphsEditor: unsafe extern "system" fn(this: *mut *mut Self, editor: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, glyphs: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IXpsOMGlyphsEditor {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub ApplyEdits: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetUnicodeString: unsafe extern "system" fn(this: *mut *mut Self, unicodestring: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetUnicodeString: unsafe extern "system" fn(this: *mut *mut Self, unicodestring: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetGlyphIndexCount: unsafe extern "system" fn(this: *mut *mut Self, indexcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetGlyphIndices: unsafe extern "system" fn(this: *mut *mut Self, indexcount: *mut u32, glyphindices: *mut XPS_GLYPH_INDEX) -> ::windows_sys::core::HRESULT,
+    pub SetGlyphIndices: unsafe extern "system" fn(this: *mut *mut Self, indexcount: u32, glyphindices: *const XPS_GLYPH_INDEX) -> ::windows_sys::core::HRESULT,
+    pub GetGlyphMappingCount: unsafe extern "system" fn(this: *mut *mut Self, glyphmappingcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetGlyphMappings: unsafe extern "system" fn(this: *mut *mut Self, glyphmappingcount: *mut u32, glyphmappings: *mut XPS_GLYPH_MAPPING) -> ::windows_sys::core::HRESULT,
+    pub SetGlyphMappings: unsafe extern "system" fn(this: *mut *mut Self, glyphmappingcount: u32, glyphmappings: *const XPS_GLYPH_MAPPING) -> ::windows_sys::core::HRESULT,
+    pub GetProhibitedCaretStopCount: unsafe extern "system" fn(this: *mut *mut Self, prohibitedcaretstopcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetProhibitedCaretStops: unsafe extern "system" fn(this: *mut *mut Self, count: *mut u32, prohibitedcaretstops: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetProhibitedCaretStops: unsafe extern "system" fn(this: *mut *mut Self, count: u32, prohibitedcaretstops: *const u32) -> ::windows_sys::core::HRESULT,
+    pub GetBidiLevel: unsafe extern "system" fn(this: *mut *mut Self, bidilevel: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetBidiLevel: unsafe extern "system" fn(this: *mut *mut Self, bidilevel: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetIsSideways: unsafe extern "system" fn(this: *mut *mut Self, issideways: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetIsSideways: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetIsSideways: unsafe extern "system" fn(this: *mut *mut Self, issideways: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetIsSideways: usize,
+    pub GetDeviceFontName: unsafe extern "system" fn(this: *mut *mut Self, devicefontname: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetDeviceFontName: unsafe extern "system" fn(this: *mut *mut Self, devicefontname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IXpsOMGradientBrush {
+    pub base__: IXpsOMBrush,
+    pub GetGradientStops: unsafe extern "system" fn(this: *mut *mut Self, gradientstops: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetTransform: unsafe extern "system" fn(this: *mut *mut Self, transform: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetTransformLocal: unsafe extern "system" fn(this: *mut *mut Self, transform: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetTransformLocal: unsafe extern "system" fn(this: *mut *mut Self, transform: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetTransformLookup: unsafe extern "system" fn(this: *mut *mut Self, key: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetTransformLookup: unsafe extern "system" fn(this: *mut *mut Self, key: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetSpreadMethod: unsafe extern "system" fn(this: *mut *mut Self, spreadmethod: *mut XPS_SPREAD_METHOD) -> ::windows_sys::core::HRESULT,
+    pub SetSpreadMethod: unsafe extern "system" fn(this: *mut *mut Self, spreadmethod: XPS_SPREAD_METHOD) -> ::windows_sys::core::HRESULT,
+    pub GetColorInterpolationMode: unsafe extern "system" fn(this: *mut *mut Self, colorinterpolationmode: *mut XPS_COLOR_INTERPOLATION) -> ::windows_sys::core::HRESULT,
+    pub SetColorInterpolationMode: unsafe extern "system" fn(this: *mut *mut Self, colorinterpolationmode: XPS_COLOR_INTERPOLATION) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IXpsOMGradientStop {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: *mut f32) -> ::windows_sys::core::HRESULT,
+    pub SetOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: f32) -> ::windows_sys::core::HRESULT,
+    pub GetColor: unsafe extern "system" fn(this: *mut *mut Self, color: *mut XPS_COLOR, colorprofile: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetColor: unsafe extern "system" fn(this: *mut *mut Self, color: *const XPS_COLOR, colorprofile: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, gradientstop: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IXpsOMGradientStopCollection {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, count: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32, stop: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub InsertAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32, stop: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RemoveAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32) -> ::windows_sys::core::HRESULT,
+    pub SetAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32, stop: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Append: unsafe extern "system" fn(this: *mut *mut Self, stop: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IXpsOMImageBrush {
+    pub base__: IXpsOMTileBrush,
+    pub GetImageResource: unsafe extern "system" fn(this: *mut *mut Self, imageresource: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetImageResource: unsafe extern "system" fn(this: *mut *mut Self, imageresource: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetColorProfileResource: unsafe extern "system" fn(this: *mut *mut Self, colorprofileresource: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetColorProfileResource: unsafe extern "system" fn(this: *mut *mut Self, colorprofileresource: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, imagebrush: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IXpsOMImageResource {
+    pub base__: IXpsOMResource,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetStream: unsafe extern "system" fn(this: *mut *mut Self, readerstream: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetStream: usize,
+    #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub SetContent: unsafe extern "system" fn(this: *mut *mut Self, sourcestream: *mut ::core::ffi::c_void, imagetype: XPS_IMAGE_TYPE, partname: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
+    SetContent: usize,
+    pub GetImageType: unsafe extern "system" fn(this: *mut *mut Self, imagetype: *mut XPS_IMAGE_TYPE) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IXpsOMImageResourceCollection {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, count: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32, object: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub InsertAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32, object: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RemoveAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32) -> ::windows_sys::core::HRESULT,
+    pub SetAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32, object: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Append: unsafe extern "system" fn(this: *mut *mut Self, object: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub GetByPartName: unsafe extern "system" fn(this: *mut *mut Self, partname: *mut ::core::ffi::c_void, part: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
+    GetByPartName: usize,
+}
+#[repr(C)]
+pub struct IXpsOMLinearGradientBrush {
+    pub base__: IXpsOMGradientBrush,
+    pub GetStartPoint: unsafe extern "system" fn(this: *mut *mut Self, startpoint: *mut XPS_POINT) -> ::windows_sys::core::HRESULT,
+    pub SetStartPoint: unsafe extern "system" fn(this: *mut *mut Self, startpoint: *const XPS_POINT) -> ::windows_sys::core::HRESULT,
+    pub GetEndPoint: unsafe extern "system" fn(this: *mut *mut Self, endpoint: *mut XPS_POINT) -> ::windows_sys::core::HRESULT,
+    pub SetEndPoint: unsafe extern "system" fn(this: *mut *mut Self, endpoint: *const XPS_POINT) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, lineargradientbrush: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IXpsOMMatrixTransform {
+    pub base__: IXpsOMShareable,
+    pub GetMatrix: unsafe extern "system" fn(this: *mut *mut Self, matrix: *mut XPS_MATRIX) -> ::windows_sys::core::HRESULT,
+    pub SetMatrix: unsafe extern "system" fn(this: *mut *mut Self, matrix: *const XPS_MATRIX) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, matrixtransform: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IXpsOMNameCollection {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, count: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32, name: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IXpsOMObjectFactory {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub CreatePackage: unsafe extern "system" fn(this: *mut *mut Self, package: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CreatePackageFromFile: unsafe extern "system" fn(this: *mut *mut Self, filename: ::windows_sys::core::PCWSTR, reuseobjects: super::super::Foundation::BOOL, package: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CreatePackageFromFile: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub CreatePackageFromStream: unsafe extern "system" fn(this: *mut *mut Self, stream: *mut ::core::ffi::c_void, reuseobjects: super::super::Foundation::BOOL, package: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    CreatePackageFromStream: usize,
+    #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub CreateStoryFragmentsResource: unsafe extern "system" fn(this: *mut *mut Self, acquiredstream: *mut ::core::ffi::c_void, parturi: *mut ::core::ffi::c_void, storyfragmentsresource: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
+    CreateStoryFragmentsResource: usize,
+    #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub CreateDocumentStructureResource: unsafe extern "system" fn(this: *mut *mut Self, acquiredstream: *mut ::core::ffi::c_void, parturi: *mut ::core::ffi::c_void, documentstructureresource: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
+    CreateDocumentStructureResource: usize,
+    #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub CreateSignatureBlockResource: unsafe extern "system" fn(this: *mut *mut Self, acquiredstream: *mut ::core::ffi::c_void, parturi: *mut ::core::ffi::c_void, signatureblockresource: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
+    CreateSignatureBlockResource: usize,
+    #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub CreateRemoteDictionaryResource: unsafe extern "system" fn(this: *mut *mut Self, dictionary: *mut ::core::ffi::c_void, parturi: *mut ::core::ffi::c_void, remotedictionaryresource: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
+    CreateRemoteDictionaryResource: usize,
+    #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub CreateRemoteDictionaryResourceFromStream: unsafe extern "system" fn(this: *mut *mut Self, dictionarymarkupstream: *mut ::core::ffi::c_void, dictionaryparturi: *mut ::core::ffi::c_void, resources: *mut ::core::ffi::c_void, dictionaryresource: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
+    CreateRemoteDictionaryResourceFromStream: usize,
+    pub CreatePartResources: unsafe extern "system" fn(this: *mut *mut Self, partresources: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub CreateDocumentSequence: unsafe extern "system" fn(this: *mut *mut Self, parturi: *mut ::core::ffi::c_void, documentsequence: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
+    CreateDocumentSequence: usize,
+    #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub CreateDocument: unsafe extern "system" fn(this: *mut *mut Self, parturi: *mut ::core::ffi::c_void, document: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
+    CreateDocument: usize,
+    pub CreatePageReference: unsafe extern "system" fn(this: *mut *mut Self, advisorypagedimensions: *const XPS_SIZE, pagereference: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub CreatePage: unsafe extern "system" fn(this: *mut *mut Self, pagedimensions: *const XPS_SIZE, language: ::windows_sys::core::PCWSTR, parturi: *mut ::core::ffi::c_void, page: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
+    CreatePage: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub CreatePageFromStream: unsafe extern "system" fn(this: *mut *mut Self, pagemarkupstream: *mut ::core::ffi::c_void, parturi: *mut ::core::ffi::c_void, resources: *mut ::core::ffi::c_void, reuseobjects: super::super::Foundation::BOOL, page: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
+    CreatePageFromStream: usize,
+    pub CreateCanvas: unsafe extern "system" fn(this: *mut *mut Self, canvas: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateGlyphs: unsafe extern "system" fn(this: *mut *mut Self, fontresource: *mut ::core::ffi::c_void, glyphs: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreatePath: unsafe extern "system" fn(this: *mut *mut Self, path: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateGeometry: unsafe extern "system" fn(this: *mut *mut Self, geometry: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateGeometryFigure: unsafe extern "system" fn(this: *mut *mut Self, startpoint: *const XPS_POINT, figure: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateMatrixTransform: unsafe extern "system" fn(this: *mut *mut Self, matrix: *const XPS_MATRIX, transform: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateSolidColorBrush: unsafe extern "system" fn(this: *mut *mut Self, color: *const XPS_COLOR, colorprofile: *mut ::core::ffi::c_void, solidcolorbrush: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub CreateColorProfileResource: unsafe extern "system" fn(this: *mut *mut Self, acquiredstream: *mut ::core::ffi::c_void, parturi: *mut ::core::ffi::c_void, colorprofileresource: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
+    CreateColorProfileResource: usize,
+    pub CreateImageBrush: unsafe extern "system" fn(this: *mut *mut Self, image: *mut ::core::ffi::c_void, viewbox: *const XPS_RECT, viewport: *const XPS_RECT, imagebrush: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateVisualBrush: unsafe extern "system" fn(this: *mut *mut Self, viewbox: *const XPS_RECT, viewport: *const XPS_RECT, visualbrush: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub CreateImageResource: unsafe extern "system" fn(this: *mut *mut Self, acquiredstream: *mut ::core::ffi::c_void, contenttype: XPS_IMAGE_TYPE, parturi: *mut ::core::ffi::c_void, imageresource: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
+    CreateImageResource: usize,
+    #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub CreatePrintTicketResource: unsafe extern "system" fn(this: *mut *mut Self, acquiredstream: *mut ::core::ffi::c_void, parturi: *mut ::core::ffi::c_void, printticketresource: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
+    CreatePrintTicketResource: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub CreateFontResource: unsafe extern "system" fn(this: *mut *mut Self, acquiredstream: *mut ::core::ffi::c_void, fontembedding: XPS_FONT_EMBEDDING, parturi: *mut ::core::ffi::c_void, isobfsourcestream: super::super::Foundation::BOOL, fontresource: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
+    CreateFontResource: usize,
+    pub CreateGradientStop: unsafe extern "system" fn(this: *mut *mut Self, color: *const XPS_COLOR, colorprofile: *mut ::core::ffi::c_void, offset: f32, gradientstop: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateLinearGradientBrush: unsafe extern "system" fn(this: *mut *mut Self, gradstop1: *mut ::core::ffi::c_void, gradstop2: *mut ::core::ffi::c_void, startpoint: *const XPS_POINT, endpoint: *const XPS_POINT, lineargradientbrush: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateRadialGradientBrush: unsafe extern "system" fn(this: *mut *mut Self, gradstop1: *mut ::core::ffi::c_void, gradstop2: *mut ::core::ffi::c_void, centerpoint: *const XPS_POINT, gradientorigin: *const XPS_POINT, radiisizes: *const XPS_SIZE, radialgradientbrush: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub CreateCoreProperties: unsafe extern "system" fn(this: *mut *mut Self, parturi: *mut ::core::ffi::c_void, coreproperties: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
+    CreateCoreProperties: usize,
+    pub CreateDictionary: unsafe extern "system" fn(this: *mut *mut Self, dictionary: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreatePartUriCollection: unsafe extern "system" fn(this: *mut *mut Self, parturicollection: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security", feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub CreatePackageWriterOnFile: unsafe extern "system" fn(this: *mut *mut Self, filename: ::windows_sys::core::PCWSTR, securityattributes: *const super::super::Security::SECURITY_ATTRIBUTES, flagsandattributes: u32, optimizemarkupsize: super::super::Foundation::BOOL, interleaving: XPS_INTERLEAVING, documentsequencepartname: *mut ::core::ffi::c_void, coreproperties: *mut ::core::ffi::c_void, packagethumbnail: *mut ::core::ffi::c_void, documentsequenceprintticket: *mut ::core::ffi::c_void, discardcontrolpartname: *mut ::core::ffi::c_void, packagewriter: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Security", feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
+    CreatePackageWriterOnFile: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub CreatePackageWriterOnStream: unsafe extern "system" fn(this: *mut *mut Self, outputstream: *mut ::core::ffi::c_void, optimizemarkupsize: super::super::Foundation::BOOL, interleaving: XPS_INTERLEAVING, documentsequencepartname: *mut ::core::ffi::c_void, coreproperties: *mut ::core::ffi::c_void, packagethumbnail: *mut ::core::ffi::c_void, documentsequenceprintticket: *mut ::core::ffi::c_void, discardcontrolpartname: *mut ::core::ffi::c_void, packagewriter: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
+    CreatePackageWriterOnStream: usize,
+    #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub CreatePartUri: unsafe extern "system" fn(this: *mut *mut Self, uri: ::windows_sys::core::PCWSTR, parturi: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
+    CreatePartUri: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreateReadOnlyStreamOnFile: unsafe extern "system" fn(this: *mut *mut Self, filename: ::windows_sys::core::PCWSTR, stream: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CreateReadOnlyStreamOnFile: usize,
+}
+#[repr(C)]
+pub struct IXpsOMObjectFactory1 {
+    pub base__: IXpsOMObjectFactory,
+    pub GetDocumentTypeFromFile: unsafe extern "system" fn(this: *mut *mut Self, filename: ::windows_sys::core::PCWSTR, documenttype: *mut XPS_DOCUMENT_TYPE) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetDocumentTypeFromStream: unsafe extern "system" fn(this: *mut *mut Self, xpsdocumentstream: *mut ::core::ffi::c_void, documenttype: *mut XPS_DOCUMENT_TYPE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetDocumentTypeFromStream: usize,
+    pub ConvertHDPhotoToJpegXR: unsafe extern "system" fn(this: *mut *mut Self, imageresource: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ConvertJpegXRToHDPhoto: unsafe extern "system" fn(this: *mut *mut Self, imageresource: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security", feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub CreatePackageWriterOnFile1: unsafe extern "system" fn(this: *mut *mut Self, filename: ::windows_sys::core::PCWSTR, securityattributes: *const super::super::Security::SECURITY_ATTRIBUTES, flagsandattributes: u32, optimizemarkupsize: super::super::Foundation::BOOL, interleaving: XPS_INTERLEAVING, documentsequencepartname: *mut ::core::ffi::c_void, coreproperties: *mut ::core::ffi::c_void, packagethumbnail: *mut ::core::ffi::c_void, documentsequenceprintticket: *mut ::core::ffi::c_void, discardcontrolpartname: *mut ::core::ffi::c_void, documenttype: XPS_DOCUMENT_TYPE, packagewriter: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Security", feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
+    CreatePackageWriterOnFile1: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub CreatePackageWriterOnStream1: unsafe extern "system" fn(this: *mut *mut Self, outputstream: *mut ::core::ffi::c_void, optimizemarkupsize: super::super::Foundation::BOOL, interleaving: XPS_INTERLEAVING, documentsequencepartname: *mut ::core::ffi::c_void, coreproperties: *mut ::core::ffi::c_void, packagethumbnail: *mut ::core::ffi::c_void, documentsequenceprintticket: *mut ::core::ffi::c_void, discardcontrolpartname: *mut ::core::ffi::c_void, documenttype: XPS_DOCUMENT_TYPE, packagewriter: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
+    CreatePackageWriterOnStream1: usize,
+    pub CreatePackage1: unsafe extern "system" fn(this: *mut *mut Self, package: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub CreatePackageFromStream1: unsafe extern "system" fn(this: *mut *mut Self, stream: *mut ::core::ffi::c_void, reuseobjects: super::super::Foundation::BOOL, package: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    CreatePackageFromStream1: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CreatePackageFromFile1: unsafe extern "system" fn(this: *mut *mut Self, filename: ::windows_sys::core::PCWSTR, reuseobjects: super::super::Foundation::BOOL, package: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CreatePackageFromFile1: usize,
+    #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub CreatePage1: unsafe extern "system" fn(this: *mut *mut Self, pagedimensions: *const XPS_SIZE, language: ::windows_sys::core::PCWSTR, parturi: *mut ::core::ffi::c_void, page: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
+    CreatePage1: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub CreatePageFromStream1: unsafe extern "system" fn(this: *mut *mut Self, pagemarkupstream: *mut ::core::ffi::c_void, parturi: *mut ::core::ffi::c_void, resources: *mut ::core::ffi::c_void, reuseobjects: super::super::Foundation::BOOL, page: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
+    CreatePageFromStream1: usize,
+    #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub CreateRemoteDictionaryResourceFromStream1: unsafe extern "system" fn(this: *mut *mut Self, dictionarymarkupstream: *mut ::core::ffi::c_void, parturi: *mut ::core::ffi::c_void, resources: *mut ::core::ffi::c_void, dictionaryresource: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
+    CreateRemoteDictionaryResourceFromStream1: usize,
+}
+#[repr(C)]
+pub struct IXpsOMPackage {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetDocumentSequence: unsafe extern "system" fn(this: *mut *mut Self, documentsequence: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetDocumentSequence: unsafe extern "system" fn(this: *mut *mut Self, documentsequence: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetCoreProperties: unsafe extern "system" fn(this: *mut *mut Self, coreproperties: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetCoreProperties: unsafe extern "system" fn(this: *mut *mut Self, coreproperties: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub GetDiscardControlPartName: unsafe extern "system" fn(this: *mut *mut Self, discardcontrolparturi: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
+    GetDiscardControlPartName: usize,
+    #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub SetDiscardControlPartName: unsafe extern "system" fn(this: *mut *mut Self, discardcontrolparturi: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
+    SetDiscardControlPartName: usize,
+    pub GetThumbnailResource: unsafe extern "system" fn(this: *mut *mut Self, imageresource: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetThumbnailResource: unsafe extern "system" fn(this: *mut *mut Self, imageresource: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+    pub WriteToFile: unsafe extern "system" fn(this: *mut *mut Self, filename: ::windows_sys::core::PCWSTR, securityattributes: *const super::super::Security::SECURITY_ATTRIBUTES, flagsandattributes: u32, optimizemarkupsize: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Security")))]
+    WriteToFile: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub WriteToStream: unsafe extern "system" fn(this: *mut *mut Self, stream: *mut ::core::ffi::c_void, optimizemarkupsize: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    WriteToStream: usize,
+}
+#[repr(C)]
+pub struct IXpsOMPackage1 {
+    pub base__: IXpsOMPackage,
+    pub GetDocumentType: unsafe extern "system" fn(this: *mut *mut Self, documenttype: *mut XPS_DOCUMENT_TYPE) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+    pub WriteToFile1: unsafe extern "system" fn(this: *mut *mut Self, filename: ::windows_sys::core::PCWSTR, securityattributes: *const super::super::Security::SECURITY_ATTRIBUTES, flagsandattributes: u32, optimizemarkupsize: super::super::Foundation::BOOL, documenttype: XPS_DOCUMENT_TYPE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Security")))]
+    WriteToFile1: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub WriteToStream1: unsafe extern "system" fn(this: *mut *mut Self, outputstream: *mut ::core::ffi::c_void, optimizemarkupsize: super::super::Foundation::BOOL, documenttype: XPS_DOCUMENT_TYPE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    WriteToStream1: usize,
+}
+#[repr(C)]
+pub struct IXpsOMPackageTarget {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub CreateXpsOMPackageWriter: unsafe extern "system" fn(this: *mut *mut Self, documentsequencepartname: *mut ::core::ffi::c_void, documentsequenceprintticket: *mut ::core::ffi::c_void, discardcontrolpartname: *mut ::core::ffi::c_void, packagewriter: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
+    CreateXpsOMPackageWriter: usize,
+}
+#[repr(C)]
+pub struct IXpsOMPackageWriter {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub StartNewDocument: unsafe extern "system" fn(this: *mut *mut Self, documentpartname: *mut ::core::ffi::c_void, documentprintticket: *mut ::core::ffi::c_void, documentstructure: *mut ::core::ffi::c_void, signatureblockresources: *mut ::core::ffi::c_void, restrictedfonts: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
+    StartNewDocument: usize,
+    pub AddPage: unsafe extern "system" fn(this: *mut *mut Self, page: *mut ::core::ffi::c_void, advisorypagedimensions: *const XPS_SIZE, discardableresourceparts: *mut ::core::ffi::c_void, storyfragments: *mut ::core::ffi::c_void, pageprintticket: *mut ::core::ffi::c_void, pagethumbnail: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AddResource: unsafe extern "system" fn(this: *mut *mut Self, resource: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsClosed: unsafe extern "system" fn(this: *mut *mut Self, isclosed: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsClosed: usize,
+}
+#[repr(C)]
+pub struct IXpsOMPackageWriter3D {
+    pub base__: IXpsOMPackageWriter,
+    #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub AddModelTexture: unsafe extern "system" fn(this: *mut *mut Self, texturepartname: *mut ::core::ffi::c_void, texturedata: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
+    AddModelTexture: usize,
+    #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub SetModelPrintTicket: unsafe extern "system" fn(this: *mut *mut Self, printticketpartname: *mut ::core::ffi::c_void, printticketdata: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
+    SetModelPrintTicket: usize,
+}
+#[repr(C)]
+pub struct IXpsOMPage {
+    pub base__: IXpsOMPart,
+    pub GetOwner: unsafe extern "system" fn(this: *mut *mut Self, pagereference: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetVisuals: unsafe extern "system" fn(this: *mut *mut Self, visuals: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetPageDimensions: unsafe extern "system" fn(this: *mut *mut Self, pagedimensions: *mut XPS_SIZE) -> ::windows_sys::core::HRESULT,
+    pub SetPageDimensions: unsafe extern "system" fn(this: *mut *mut Self, pagedimensions: *const XPS_SIZE) -> ::windows_sys::core::HRESULT,
+    pub GetContentBox: unsafe extern "system" fn(this: *mut *mut Self, contentbox: *mut XPS_RECT) -> ::windows_sys::core::HRESULT,
+    pub SetContentBox: unsafe extern "system" fn(this: *mut *mut Self, contentbox: *const XPS_RECT) -> ::windows_sys::core::HRESULT,
+    pub GetBleedBox: unsafe extern "system" fn(this: *mut *mut Self, bleedbox: *mut XPS_RECT) -> ::windows_sys::core::HRESULT,
+    pub SetBleedBox: unsafe extern "system" fn(this: *mut *mut Self, bleedbox: *const XPS_RECT) -> ::windows_sys::core::HRESULT,
+    pub GetLanguage: unsafe extern "system" fn(this: *mut *mut Self, language: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetLanguage: unsafe extern "system" fn(this: *mut *mut Self, language: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetName: unsafe extern "system" fn(this: *mut *mut Self, name: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetName: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetIsHyperlinkTarget: unsafe extern "system" fn(this: *mut *mut Self, ishyperlinktarget: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetIsHyperlinkTarget: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetIsHyperlinkTarget: unsafe extern "system" fn(this: *mut *mut Self, ishyperlinktarget: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetIsHyperlinkTarget: usize,
+    pub GetDictionary: unsafe extern "system" fn(this: *mut *mut Self, resourcedictionary: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetDictionaryLocal: unsafe extern "system" fn(this: *mut *mut Self, resourcedictionary: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetDictionaryLocal: unsafe extern "system" fn(this: *mut *mut Self, resourcedictionary: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetDictionaryResource: unsafe extern "system" fn(this: *mut *mut Self, remotedictionaryresource: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetDictionaryResource: unsafe extern "system" fn(this: *mut *mut Self, remotedictionaryresource: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub Write: unsafe extern "system" fn(this: *mut *mut Self, stream: *mut ::core::ffi::c_void, optimizemarkupsize: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    Write: usize,
+    pub GenerateUnusedLookupKey: unsafe extern "system" fn(this: *mut *mut Self, r#type: XPS_OBJECT_TYPE, key: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, page: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IXpsOMPage1 {
+    pub base__: IXpsOMPage,
+    pub GetDocumentType: unsafe extern "system" fn(this: *mut *mut Self, documenttype: *mut XPS_DOCUMENT_TYPE) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub Write1: unsafe extern "system" fn(this: *mut *mut Self, stream: *mut ::core::ffi::c_void, optimizemarkupsize: super::super::Foundation::BOOL, documenttype: XPS_DOCUMENT_TYPE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    Write1: usize,
+}
+#[repr(C)]
+pub struct IXpsOMPageReference {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetOwner: unsafe extern "system" fn(this: *mut *mut Self, document: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetPage: unsafe extern "system" fn(this: *mut *mut Self, page: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetPage: unsafe extern "system" fn(this: *mut *mut Self, page: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub DiscardPage: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsPageLoaded: unsafe extern "system" fn(this: *mut *mut Self, ispageloaded: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsPageLoaded: usize,
+    pub GetAdvisoryPageDimensions: unsafe extern "system" fn(this: *mut *mut Self, pagedimensions: *mut XPS_SIZE) -> ::windows_sys::core::HRESULT,
+    pub SetAdvisoryPageDimensions: unsafe extern "system" fn(this: *mut *mut Self, pagedimensions: *const XPS_SIZE) -> ::windows_sys::core::HRESULT,
+    pub GetStoryFragmentsResource: unsafe extern "system" fn(this: *mut *mut Self, storyfragmentsresource: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetStoryFragmentsResource: unsafe extern "system" fn(this: *mut *mut Self, storyfragmentsresource: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetPrintTicketResource: unsafe extern "system" fn(this: *mut *mut Self, printticketresource: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetPrintTicketResource: unsafe extern "system" fn(this: *mut *mut Self, printticketresource: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetThumbnailResource: unsafe extern "system" fn(this: *mut *mut Self, imageresource: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetThumbnailResource: unsafe extern "system" fn(this: *mut *mut Self, imageresource: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CollectLinkTargets: unsafe extern "system" fn(this: *mut *mut Self, linktargets: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CollectPartResources: unsafe extern "system" fn(this: *mut *mut Self, partresources: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub HasRestrictedFonts: unsafe extern "system" fn(this: *mut *mut Self, restrictedfonts: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    HasRestrictedFonts: usize,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, pagereference: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IXpsOMPageReferenceCollection {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, count: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32, pagereference: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub InsertAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32, pagereference: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RemoveAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32) -> ::windows_sys::core::HRESULT,
+    pub SetAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32, pagereference: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Append: unsafe extern "system" fn(this: *mut *mut Self, pagereference: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IXpsOMPart {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub GetPartName: unsafe extern "system" fn(this: *mut *mut Self, parturi: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
+    GetPartName: usize,
+    #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub SetPartName: unsafe extern "system" fn(this: *mut *mut Self, parturi: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
+    SetPartName: usize,
+}
+#[repr(C)]
+pub struct IXpsOMPartResources {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetFontResources: unsafe extern "system" fn(this: *mut *mut Self, fontresources: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetImageResources: unsafe extern "system" fn(this: *mut *mut Self, imageresources: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetColorProfileResources: unsafe extern "system" fn(this: *mut *mut Self, colorprofileresources: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetRemoteDictionaryResources: unsafe extern "system" fn(this: *mut *mut Self, dictionaryresources: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IXpsOMPartUriCollection {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, count: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub GetAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32, parturi: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
+    GetAt: usize,
+    #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub InsertAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32, parturi: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
+    InsertAt: usize,
+    pub RemoveAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub SetAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32, parturi: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
+    SetAt: usize,
+    #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub Append: unsafe extern "system" fn(this: *mut *mut Self, parturi: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
+    Append: usize,
+}
+#[repr(C)]
+pub struct IXpsOMPath {
+    pub base__: IXpsOMVisual,
+    pub GetGeometry: unsafe extern "system" fn(this: *mut *mut Self, geometry: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetGeometryLocal: unsafe extern "system" fn(this: *mut *mut Self, geometry: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetGeometryLocal: unsafe extern "system" fn(this: *mut *mut Self, geometry: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetGeometryLookup: unsafe extern "system" fn(this: *mut *mut Self, lookup: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetGeometryLookup: unsafe extern "system" fn(this: *mut *mut Self, lookup: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetAccessibilityShortDescription: unsafe extern "system" fn(this: *mut *mut Self, shortdescription: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetAccessibilityShortDescription: unsafe extern "system" fn(this: *mut *mut Self, shortdescription: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetAccessibilityLongDescription: unsafe extern "system" fn(this: *mut *mut Self, longdescription: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetAccessibilityLongDescription: unsafe extern "system" fn(this: *mut *mut Self, longdescription: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetSnapsToPixels: unsafe extern "system" fn(this: *mut *mut Self, snapstopixels: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetSnapsToPixels: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetSnapsToPixels: unsafe extern "system" fn(this: *mut *mut Self, snapstopixels: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetSnapsToPixels: usize,
+    pub GetStrokeBrush: unsafe extern "system" fn(this: *mut *mut Self, brush: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetStrokeBrushLocal: unsafe extern "system" fn(this: *mut *mut Self, brush: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetStrokeBrushLocal: unsafe extern "system" fn(this: *mut *mut Self, brush: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetStrokeBrushLookup: unsafe extern "system" fn(this: *mut *mut Self, lookup: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetStrokeBrushLookup: unsafe extern "system" fn(this: *mut *mut Self, lookup: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetStrokeDashes: unsafe extern "system" fn(this: *mut *mut Self, strokedashes: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetStrokeDashCap: unsafe extern "system" fn(this: *mut *mut Self, strokedashcap: *mut XPS_DASH_CAP) -> ::windows_sys::core::HRESULT,
+    pub SetStrokeDashCap: unsafe extern "system" fn(this: *mut *mut Self, strokedashcap: XPS_DASH_CAP) -> ::windows_sys::core::HRESULT,
+    pub GetStrokeDashOffset: unsafe extern "system" fn(this: *mut *mut Self, strokedashoffset: *mut f32) -> ::windows_sys::core::HRESULT,
+    pub SetStrokeDashOffset: unsafe extern "system" fn(this: *mut *mut Self, strokedashoffset: f32) -> ::windows_sys::core::HRESULT,
+    pub GetStrokeStartLineCap: unsafe extern "system" fn(this: *mut *mut Self, strokestartlinecap: *mut XPS_LINE_CAP) -> ::windows_sys::core::HRESULT,
+    pub SetStrokeStartLineCap: unsafe extern "system" fn(this: *mut *mut Self, strokestartlinecap: XPS_LINE_CAP) -> ::windows_sys::core::HRESULT,
+    pub GetStrokeEndLineCap: unsafe extern "system" fn(this: *mut *mut Self, strokeendlinecap: *mut XPS_LINE_CAP) -> ::windows_sys::core::HRESULT,
+    pub SetStrokeEndLineCap: unsafe extern "system" fn(this: *mut *mut Self, strokeendlinecap: XPS_LINE_CAP) -> ::windows_sys::core::HRESULT,
+    pub GetStrokeLineJoin: unsafe extern "system" fn(this: *mut *mut Self, strokelinejoin: *mut XPS_LINE_JOIN) -> ::windows_sys::core::HRESULT,
+    pub SetStrokeLineJoin: unsafe extern "system" fn(this: *mut *mut Self, strokelinejoin: XPS_LINE_JOIN) -> ::windows_sys::core::HRESULT,
+    pub GetStrokeMiterLimit: unsafe extern "system" fn(this: *mut *mut Self, strokemiterlimit: *mut f32) -> ::windows_sys::core::HRESULT,
+    pub SetStrokeMiterLimit: unsafe extern "system" fn(this: *mut *mut Self, strokemiterlimit: f32) -> ::windows_sys::core::HRESULT,
+    pub GetStrokeThickness: unsafe extern "system" fn(this: *mut *mut Self, strokethickness: *mut f32) -> ::windows_sys::core::HRESULT,
+    pub SetStrokeThickness: unsafe extern "system" fn(this: *mut *mut Self, strokethickness: f32) -> ::windows_sys::core::HRESULT,
+    pub GetFillBrush: unsafe extern "system" fn(this: *mut *mut Self, brush: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetFillBrushLocal: unsafe extern "system" fn(this: *mut *mut Self, brush: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetFillBrushLocal: unsafe extern "system" fn(this: *mut *mut Self, brush: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetFillBrushLookup: unsafe extern "system" fn(this: *mut *mut Self, lookup: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetFillBrushLookup: unsafe extern "system" fn(this: *mut *mut Self, lookup: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, path: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IXpsOMPrintTicketResource {
+    pub base__: IXpsOMResource,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetStream: unsafe extern "system" fn(this: *mut *mut Self, stream: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetStream: usize,
+    #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub SetContent: unsafe extern "system" fn(this: *mut *mut Self, sourcestream: *mut ::core::ffi::c_void, partname: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
+    SetContent: usize,
+}
+#[repr(C)]
+pub struct IXpsOMRadialGradientBrush {
+    pub base__: IXpsOMGradientBrush,
+    pub GetCenter: unsafe extern "system" fn(this: *mut *mut Self, center: *mut XPS_POINT) -> ::windows_sys::core::HRESULT,
+    pub SetCenter: unsafe extern "system" fn(this: *mut *mut Self, center: *const XPS_POINT) -> ::windows_sys::core::HRESULT,
+    pub GetRadiiSizes: unsafe extern "system" fn(this: *mut *mut Self, radiisizes: *mut XPS_SIZE) -> ::windows_sys::core::HRESULT,
+    pub SetRadiiSizes: unsafe extern "system" fn(this: *mut *mut Self, radiisizes: *const XPS_SIZE) -> ::windows_sys::core::HRESULT,
+    pub GetGradientOrigin: unsafe extern "system" fn(this: *mut *mut Self, origin: *mut XPS_POINT) -> ::windows_sys::core::HRESULT,
+    pub SetGradientOrigin: unsafe extern "system" fn(this: *mut *mut Self, origin: *const XPS_POINT) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, radialgradientbrush: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IXpsOMRemoteDictionaryResource {
+    pub base__: IXpsOMResource,
+    pub GetDictionary: unsafe extern "system" fn(this: *mut *mut Self, dictionary: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetDictionary: unsafe extern "system" fn(this: *mut *mut Self, dictionary: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IXpsOMRemoteDictionaryResource1 {
+    pub base__: IXpsOMRemoteDictionaryResource,
+    pub GetDocumentType: unsafe extern "system" fn(this: *mut *mut Self, documenttype: *mut XPS_DOCUMENT_TYPE) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Write1: unsafe extern "system" fn(this: *mut *mut Self, stream: *mut ::core::ffi::c_void, documenttype: XPS_DOCUMENT_TYPE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Write1: usize,
+}
+#[repr(C)]
+pub struct IXpsOMRemoteDictionaryResourceCollection {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, count: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32, object: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub InsertAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32, object: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RemoveAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32) -> ::windows_sys::core::HRESULT,
+    pub SetAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32, object: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Append: unsafe extern "system" fn(this: *mut *mut Self, object: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub GetByPartName: unsafe extern "system" fn(this: *mut *mut Self, partname: *mut ::core::ffi::c_void, remotedictionaryresource: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
+    GetByPartName: usize,
+}
+#[repr(C)]
+pub struct IXpsOMResource {
+    pub base__: IXpsOMPart,
+}
+#[repr(C)]
+pub struct IXpsOMShareable {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetType: unsafe extern "system" fn(this: *mut *mut Self, r#type: *mut XPS_OBJECT_TYPE) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IXpsOMSignatureBlockResource {
+    pub base__: IXpsOMResource,
+    pub GetOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetStream: unsafe extern "system" fn(this: *mut *mut Self, stream: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetStream: usize,
+    #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub SetContent: unsafe extern "system" fn(this: *mut *mut Self, sourcestream: *mut ::core::ffi::c_void, partname: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
+    SetContent: usize,
+}
+#[repr(C)]
+pub struct IXpsOMSignatureBlockResourceCollection {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, count: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32, signatureblockresource: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub InsertAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32, signatureblockresource: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RemoveAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32) -> ::windows_sys::core::HRESULT,
+    pub SetAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32, signatureblockresource: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Append: unsafe extern "system" fn(this: *mut *mut Self, signatureblockresource: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub GetByPartName: unsafe extern "system" fn(this: *mut *mut Self, partname: *mut ::core::ffi::c_void, signatureblockresource: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
+    GetByPartName: usize,
+}
+#[repr(C)]
+pub struct IXpsOMSolidColorBrush {
+    pub base__: IXpsOMBrush,
+    pub GetColor: unsafe extern "system" fn(this: *mut *mut Self, color: *mut XPS_COLOR, colorprofile: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetColor: unsafe extern "system" fn(this: *mut *mut Self, color: *const XPS_COLOR, colorprofile: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, solidcolorbrush: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IXpsOMStoryFragmentsResource {
+    pub base__: IXpsOMResource,
+    pub GetOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetStream: unsafe extern "system" fn(this: *mut *mut Self, stream: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetStream: usize,
+    #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub SetContent: unsafe extern "system" fn(this: *mut *mut Self, sourcestream: *mut ::core::ffi::c_void, partname: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
+    SetContent: usize,
+}
+#[repr(C)]
+pub struct IXpsOMThumbnailGenerator {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub GenerateThumbnail: unsafe extern "system" fn(this: *mut *mut Self, page: *mut ::core::ffi::c_void, thumbnailtype: XPS_IMAGE_TYPE, thumbnailsize: XPS_THUMBNAIL_SIZE, imageresourcepartname: *mut ::core::ffi::c_void, imageresource: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
+    GenerateThumbnail: usize,
+}
+#[repr(C)]
+pub struct IXpsOMTileBrush {
+    pub base__: IXpsOMBrush,
+    pub GetTransform: unsafe extern "system" fn(this: *mut *mut Self, transform: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetTransformLocal: unsafe extern "system" fn(this: *mut *mut Self, transform: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetTransformLocal: unsafe extern "system" fn(this: *mut *mut Self, transform: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetTransformLookup: unsafe extern "system" fn(this: *mut *mut Self, key: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetTransformLookup: unsafe extern "system" fn(this: *mut *mut Self, key: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetViewbox: unsafe extern "system" fn(this: *mut *mut Self, viewbox: *mut XPS_RECT) -> ::windows_sys::core::HRESULT,
+    pub SetViewbox: unsafe extern "system" fn(this: *mut *mut Self, viewbox: *const XPS_RECT) -> ::windows_sys::core::HRESULT,
+    pub GetViewport: unsafe extern "system" fn(this: *mut *mut Self, viewport: *mut XPS_RECT) -> ::windows_sys::core::HRESULT,
+    pub SetViewport: unsafe extern "system" fn(this: *mut *mut Self, viewport: *const XPS_RECT) -> ::windows_sys::core::HRESULT,
+    pub GetTileMode: unsafe extern "system" fn(this: *mut *mut Self, tilemode: *mut XPS_TILE_MODE) -> ::windows_sys::core::HRESULT,
+    pub SetTileMode: unsafe extern "system" fn(this: *mut *mut Self, tilemode: XPS_TILE_MODE) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IXpsOMVisual {
+    pub base__: IXpsOMShareable,
+    pub GetTransform: unsafe extern "system" fn(this: *mut *mut Self, matrixtransform: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetTransformLocal: unsafe extern "system" fn(this: *mut *mut Self, matrixtransform: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetTransformLocal: unsafe extern "system" fn(this: *mut *mut Self, matrixtransform: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetTransformLookup: unsafe extern "system" fn(this: *mut *mut Self, key: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetTransformLookup: unsafe extern "system" fn(this: *mut *mut Self, key: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetClipGeometry: unsafe extern "system" fn(this: *mut *mut Self, clipgeometry: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetClipGeometryLocal: unsafe extern "system" fn(this: *mut *mut Self, clipgeometry: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetClipGeometryLocal: unsafe extern "system" fn(this: *mut *mut Self, clipgeometry: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetClipGeometryLookup: unsafe extern "system" fn(this: *mut *mut Self, key: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetClipGeometryLookup: unsafe extern "system" fn(this: *mut *mut Self, key: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetOpacity: unsafe extern "system" fn(this: *mut *mut Self, opacity: *mut f32) -> ::windows_sys::core::HRESULT,
+    pub SetOpacity: unsafe extern "system" fn(this: *mut *mut Self, opacity: f32) -> ::windows_sys::core::HRESULT,
+    pub GetOpacityMaskBrush: unsafe extern "system" fn(this: *mut *mut Self, opacitymaskbrush: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetOpacityMaskBrushLocal: unsafe extern "system" fn(this: *mut *mut Self, opacitymaskbrush: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetOpacityMaskBrushLocal: unsafe extern "system" fn(this: *mut *mut Self, opacitymaskbrush: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetOpacityMaskBrushLookup: unsafe extern "system" fn(this: *mut *mut Self, key: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetOpacityMaskBrushLookup: unsafe extern "system" fn(this: *mut *mut Self, key: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetName: unsafe extern "system" fn(this: *mut *mut Self, name: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetName: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetIsHyperlinkTarget: unsafe extern "system" fn(this: *mut *mut Self, ishyperlink: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetIsHyperlinkTarget: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetIsHyperlinkTarget: unsafe extern "system" fn(this: *mut *mut Self, ishyperlink: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetIsHyperlinkTarget: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetHyperlinkNavigateUri: unsafe extern "system" fn(this: *mut *mut Self, hyperlinkuri: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetHyperlinkNavigateUri: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetHyperlinkNavigateUri: unsafe extern "system" fn(this: *mut *mut Self, hyperlinkuri: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetHyperlinkNavigateUri: usize,
+    pub GetLanguage: unsafe extern "system" fn(this: *mut *mut Self, language: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetLanguage: unsafe extern "system" fn(this: *mut *mut Self, language: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IXpsOMVisualBrush {
+    pub base__: IXpsOMTileBrush,
+    pub GetVisual: unsafe extern "system" fn(this: *mut *mut Self, visual: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetVisualLocal: unsafe extern "system" fn(this: *mut *mut Self, visual: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetVisualLocal: unsafe extern "system" fn(this: *mut *mut Self, visual: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetVisualLookup: unsafe extern "system" fn(this: *mut *mut Self, lookup: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetVisualLookup: unsafe extern "system" fn(this: *mut *mut Self, lookup: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, visualbrush: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IXpsOMVisualCollection {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, count: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32, object: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub InsertAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32, object: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RemoveAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32) -> ::windows_sys::core::HRESULT,
+    pub SetAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32, object: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Append: unsafe extern "system" fn(this: *mut *mut Self, object: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IXpsSignature {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetSignatureId: unsafe extern "system" fn(this: *mut *mut Self, sigid: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetSignatureValue: unsafe extern "system" fn(this: *mut *mut Self, signaturehashvalue: *mut *mut u8, count: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Storage_Packaging_Opc")]
+    pub GetCertificateEnumerator: unsafe extern "system" fn(this: *mut *mut Self, certificateenumerator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Storage_Packaging_Opc"))]
+    GetCertificateEnumerator: usize,
+    pub GetSigningTime: unsafe extern "system" fn(this: *mut *mut Self, sigdatetimestring: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Storage_Packaging_Opc")]
+    pub GetSigningTimeFormat: unsafe extern "system" fn(this: *mut *mut Self, timeformat: *mut super::Packaging::Opc::OPC_SIGNATURE_TIME_FORMAT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Storage_Packaging_Opc"))]
+    GetSigningTimeFormat: usize,
+    #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub GetSignaturePartName: unsafe extern "system" fn(this: *mut *mut Self, signaturepartname: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
+    GetSignaturePartName: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+    pub Verify: unsafe extern "system" fn(this: *mut *mut Self, x509certificate: *const super::super::Security::Cryptography::CERT_CONTEXT, sigstatus: *mut XPS_SIGNATURE_STATUS) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography")))]
+    Verify: usize,
+    pub GetPolicy: unsafe extern "system" fn(this: *mut *mut Self, policy: *mut XPS_SIGN_POLICY) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Storage_Packaging_Opc")]
+    pub GetCustomObjectEnumerator: unsafe extern "system" fn(this: *mut *mut Self, customobjectenumerator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Storage_Packaging_Opc"))]
+    GetCustomObjectEnumerator: usize,
+    #[cfg(feature = "Win32_Storage_Packaging_Opc")]
+    pub GetCustomReferenceEnumerator: unsafe extern "system" fn(this: *mut *mut Self, customreferenceenumerator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Storage_Packaging_Opc"))]
+    GetCustomReferenceEnumerator: usize,
+    pub GetSignatureXml: unsafe extern "system" fn(this: *mut *mut Self, signaturexml: *mut *mut u8, count: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetSignatureXml: unsafe extern "system" fn(this: *mut *mut Self, signaturexml: *const u8, count: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IXpsSignatureBlock {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetRequests: unsafe extern "system" fn(this: *mut *mut Self, requests: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub GetPartName: unsafe extern "system" fn(this: *mut *mut Self, partname: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
+    GetPartName: usize,
+    pub GetDocumentIndex: unsafe extern "system" fn(this: *mut *mut Self, fixeddocumentindex: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub GetDocumentName: unsafe extern "system" fn(this: *mut *mut Self, fixeddocumentname: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
+    GetDocumentName: usize,
+    pub CreateRequest: unsafe extern "system" fn(this: *mut *mut Self, requestid: ::windows_sys::core::PCWSTR, signaturerequest: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IXpsSignatureBlockCollection {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, count: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32, signatureblock: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RemoveAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IXpsSignatureCollection {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, count: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32, signature: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RemoveAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IXpsSignatureManager {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub LoadPackageFile: unsafe extern "system" fn(this: *mut *mut Self, filename: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub LoadPackageStream: unsafe extern "system" fn(this: *mut *mut Self, stream: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    LoadPackageStream: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+    pub Sign: unsafe extern "system" fn(this: *mut *mut Self, signoptions: *mut ::core::ffi::c_void, x509certificate: *const super::super::Security::Cryptography::CERT_CONTEXT, signature: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography")))]
+    Sign: usize,
+    #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub GetSignatureOriginPartName: unsafe extern "system" fn(this: *mut *mut Self, signatureoriginpartname: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
+    GetSignatureOriginPartName: usize,
+    #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub SetSignatureOriginPartName: unsafe extern "system" fn(this: *mut *mut Self, signatureoriginpartname: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
+    SetSignatureOriginPartName: usize,
+    pub GetSignatures: unsafe extern "system" fn(this: *mut *mut Self, signatures: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub AddSignatureBlock: unsafe extern "system" fn(this: *mut *mut Self, partname: *mut ::core::ffi::c_void, fixeddocumentindex: u32, signatureblock: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
+    AddSignatureBlock: usize,
+    pub GetSignatureBlocks: unsafe extern "system" fn(this: *mut *mut Self, signatureblocks: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateSigningOptions: unsafe extern "system" fn(this: *mut *mut Self, signingoptions: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+    pub SavePackageToFile: unsafe extern "system" fn(this: *mut *mut Self, filename: ::windows_sys::core::PCWSTR, securityattributes: *const super::super::Security::SECURITY_ATTRIBUTES, flagsandattributes: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Security")))]
+    SavePackageToFile: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SavePackageToStream: unsafe extern "system" fn(this: *mut *mut Self, stream: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SavePackageToStream: usize,
+}
+#[repr(C)]
+pub struct IXpsSignatureRequest {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetIntent: unsafe extern "system" fn(this: *mut *mut Self, intent: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetIntent: unsafe extern "system" fn(this: *mut *mut Self, intent: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetRequestedSigner: unsafe extern "system" fn(this: *mut *mut Self, signername: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetRequestedSigner: unsafe extern "system" fn(this: *mut *mut Self, signername: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetRequestSignByDate: unsafe extern "system" fn(this: *mut *mut Self, datestring: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetRequestSignByDate: unsafe extern "system" fn(this: *mut *mut Self, datestring: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetSigningLocale: unsafe extern "system" fn(this: *mut *mut Self, place: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetSigningLocale: unsafe extern "system" fn(this: *mut *mut Self, place: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub GetSpotLocation: unsafe extern "system" fn(this: *mut *mut Self, pageindex: *mut i32, pagepartname: *mut *mut ::core::ffi::c_void, x: *mut f32, y: *mut f32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
+    GetSpotLocation: usize,
+    pub SetSpotLocation: unsafe extern "system" fn(this: *mut *mut Self, pageindex: i32, x: f32, y: f32) -> ::windows_sys::core::HRESULT,
+    pub GetRequestId: unsafe extern "system" fn(this: *mut *mut Self, requestid: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetSignature: unsafe extern "system" fn(this: *mut *mut Self, signature: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IXpsSignatureRequestCollection {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, count: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32, signaturerequest: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RemoveAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IXpsSigningOptions {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetSignatureId: unsafe extern "system" fn(this: *mut *mut Self, signatureid: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetSignatureId: unsafe extern "system" fn(this: *mut *mut Self, signatureid: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetSignatureMethod: unsafe extern "system" fn(this: *mut *mut Self, signaturemethod: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetSignatureMethod: unsafe extern "system" fn(this: *mut *mut Self, signaturemethod: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetDigestMethod: unsafe extern "system" fn(this: *mut *mut Self, digestmethod: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetDigestMethod: unsafe extern "system" fn(this: *mut *mut Self, digestmethod: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub GetSignaturePartName: unsafe extern "system" fn(this: *mut *mut Self, signaturepartname: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
+    GetSignaturePartName: usize,
+    #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub SetSignaturePartName: unsafe extern "system" fn(this: *mut *mut Self, signaturepartname: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
+    SetSignaturePartName: usize,
+    pub GetPolicy: unsafe extern "system" fn(this: *mut *mut Self, policy: *mut XPS_SIGN_POLICY) -> ::windows_sys::core::HRESULT,
+    pub SetPolicy: unsafe extern "system" fn(this: *mut *mut Self, policy: XPS_SIGN_POLICY) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Storage_Packaging_Opc")]
+    pub GetSigningTimeFormat: unsafe extern "system" fn(this: *mut *mut Self, timeformat: *mut super::Packaging::Opc::OPC_SIGNATURE_TIME_FORMAT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Storage_Packaging_Opc"))]
+    GetSigningTimeFormat: usize,
+    #[cfg(feature = "Win32_Storage_Packaging_Opc")]
+    pub SetSigningTimeFormat: unsafe extern "system" fn(this: *mut *mut Self, timeformat: super::Packaging::Opc::OPC_SIGNATURE_TIME_FORMAT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Storage_Packaging_Opc"))]
+    SetSigningTimeFormat: usize,
+    #[cfg(feature = "Win32_Storage_Packaging_Opc")]
+    pub GetCustomObjects: unsafe extern "system" fn(this: *mut *mut Self, customobjectset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Storage_Packaging_Opc"))]
+    GetCustomObjects: usize,
+    #[cfg(feature = "Win32_Storage_Packaging_Opc")]
+    pub GetCustomReferences: unsafe extern "system" fn(this: *mut *mut Self, customreferenceset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Storage_Packaging_Opc"))]
+    GetCustomReferences: usize,
+    #[cfg(feature = "Win32_Storage_Packaging_Opc")]
+    pub GetCertificateSet: unsafe extern "system" fn(this: *mut *mut Self, certificateset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Storage_Packaging_Opc"))]
+    GetCertificateSet: usize,
+    pub GetFlags: unsafe extern "system" fn(this: *mut *mut Self, flags: *mut XPS_SIGN_FLAGS) -> ::windows_sys::core::HRESULT,
+    pub SetFlags: unsafe extern "system" fn(this: *mut *mut Self, flags: XPS_SIGN_FLAGS) -> ::windows_sys::core::HRESULT,
+}
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
 pub type PRINT_WINDOW_FLAGS = u32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]

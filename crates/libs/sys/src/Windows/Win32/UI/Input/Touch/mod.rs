@@ -104,8 +104,90 @@ impl ::core::clone::Clone for GESTURENOTIFYSTRUCT {
 }
 pub type HGESTUREINFO = isize;
 pub type HTOUCHINPUT = isize;
-pub type IInertiaProcessor = *mut ::core::ffi::c_void;
-pub type IManipulationProcessor = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IInertiaProcessor {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub InitialOriginX: unsafe extern "system" fn(this: *mut *mut Self, x: *mut f32) -> ::windows_sys::core::HRESULT,
+    pub SetInitialOriginX: unsafe extern "system" fn(this: *mut *mut Self, x: f32) -> ::windows_sys::core::HRESULT,
+    pub InitialOriginY: unsafe extern "system" fn(this: *mut *mut Self, y: *mut f32) -> ::windows_sys::core::HRESULT,
+    pub SetInitialOriginY: unsafe extern "system" fn(this: *mut *mut Self, y: f32) -> ::windows_sys::core::HRESULT,
+    pub InitialVelocityX: unsafe extern "system" fn(this: *mut *mut Self, x: *mut f32) -> ::windows_sys::core::HRESULT,
+    pub SetInitialVelocityX: unsafe extern "system" fn(this: *mut *mut Self, x: f32) -> ::windows_sys::core::HRESULT,
+    pub InitialVelocityY: unsafe extern "system" fn(this: *mut *mut Self, y: *mut f32) -> ::windows_sys::core::HRESULT,
+    pub SetInitialVelocityY: unsafe extern "system" fn(this: *mut *mut Self, y: f32) -> ::windows_sys::core::HRESULT,
+    pub InitialAngularVelocity: unsafe extern "system" fn(this: *mut *mut Self, velocity: *mut f32) -> ::windows_sys::core::HRESULT,
+    pub SetInitialAngularVelocity: unsafe extern "system" fn(this: *mut *mut Self, velocity: f32) -> ::windows_sys::core::HRESULT,
+    pub InitialExpansionVelocity: unsafe extern "system" fn(this: *mut *mut Self, velocity: *mut f32) -> ::windows_sys::core::HRESULT,
+    pub SetInitialExpansionVelocity: unsafe extern "system" fn(this: *mut *mut Self, velocity: f32) -> ::windows_sys::core::HRESULT,
+    pub InitialRadius: unsafe extern "system" fn(this: *mut *mut Self, radius: *mut f32) -> ::windows_sys::core::HRESULT,
+    pub SetInitialRadius: unsafe extern "system" fn(this: *mut *mut Self, radius: f32) -> ::windows_sys::core::HRESULT,
+    pub BoundaryLeft: unsafe extern "system" fn(this: *mut *mut Self, left: *mut f32) -> ::windows_sys::core::HRESULT,
+    pub SetBoundaryLeft: unsafe extern "system" fn(this: *mut *mut Self, left: f32) -> ::windows_sys::core::HRESULT,
+    pub BoundaryTop: unsafe extern "system" fn(this: *mut *mut Self, top: *mut f32) -> ::windows_sys::core::HRESULT,
+    pub SetBoundaryTop: unsafe extern "system" fn(this: *mut *mut Self, top: f32) -> ::windows_sys::core::HRESULT,
+    pub BoundaryRight: unsafe extern "system" fn(this: *mut *mut Self, right: *mut f32) -> ::windows_sys::core::HRESULT,
+    pub SetBoundaryRight: unsafe extern "system" fn(this: *mut *mut Self, right: f32) -> ::windows_sys::core::HRESULT,
+    pub BoundaryBottom: unsafe extern "system" fn(this: *mut *mut Self, bottom: *mut f32) -> ::windows_sys::core::HRESULT,
+    pub SetBoundaryBottom: unsafe extern "system" fn(this: *mut *mut Self, bottom: f32) -> ::windows_sys::core::HRESULT,
+    pub ElasticMarginLeft: unsafe extern "system" fn(this: *mut *mut Self, left: *mut f32) -> ::windows_sys::core::HRESULT,
+    pub SetElasticMarginLeft: unsafe extern "system" fn(this: *mut *mut Self, left: f32) -> ::windows_sys::core::HRESULT,
+    pub ElasticMarginTop: unsafe extern "system" fn(this: *mut *mut Self, top: *mut f32) -> ::windows_sys::core::HRESULT,
+    pub SetElasticMarginTop: unsafe extern "system" fn(this: *mut *mut Self, top: f32) -> ::windows_sys::core::HRESULT,
+    pub ElasticMarginRight: unsafe extern "system" fn(this: *mut *mut Self, right: *mut f32) -> ::windows_sys::core::HRESULT,
+    pub SetElasticMarginRight: unsafe extern "system" fn(this: *mut *mut Self, right: f32) -> ::windows_sys::core::HRESULT,
+    pub ElasticMarginBottom: unsafe extern "system" fn(this: *mut *mut Self, bottom: *mut f32) -> ::windows_sys::core::HRESULT,
+    pub SetElasticMarginBottom: unsafe extern "system" fn(this: *mut *mut Self, bottom: f32) -> ::windows_sys::core::HRESULT,
+    pub DesiredDisplacement: unsafe extern "system" fn(this: *mut *mut Self, displacement: *mut f32) -> ::windows_sys::core::HRESULT,
+    pub SetDesiredDisplacement: unsafe extern "system" fn(this: *mut *mut Self, displacement: f32) -> ::windows_sys::core::HRESULT,
+    pub DesiredRotation: unsafe extern "system" fn(this: *mut *mut Self, rotation: *mut f32) -> ::windows_sys::core::HRESULT,
+    pub SetDesiredRotation: unsafe extern "system" fn(this: *mut *mut Self, rotation: f32) -> ::windows_sys::core::HRESULT,
+    pub DesiredExpansion: unsafe extern "system" fn(this: *mut *mut Self, expansion: *mut f32) -> ::windows_sys::core::HRESULT,
+    pub SetDesiredExpansion: unsafe extern "system" fn(this: *mut *mut Self, expansion: f32) -> ::windows_sys::core::HRESULT,
+    pub DesiredDeceleration: unsafe extern "system" fn(this: *mut *mut Self, deceleration: *mut f32) -> ::windows_sys::core::HRESULT,
+    pub SetDesiredDeceleration: unsafe extern "system" fn(this: *mut *mut Self, deceleration: f32) -> ::windows_sys::core::HRESULT,
+    pub DesiredAngularDeceleration: unsafe extern "system" fn(this: *mut *mut Self, deceleration: *mut f32) -> ::windows_sys::core::HRESULT,
+    pub SetDesiredAngularDeceleration: unsafe extern "system" fn(this: *mut *mut Self, deceleration: f32) -> ::windows_sys::core::HRESULT,
+    pub DesiredExpansionDeceleration: unsafe extern "system" fn(this: *mut *mut Self, deceleration: *mut f32) -> ::windows_sys::core::HRESULT,
+    pub SetDesiredExpansionDeceleration: unsafe extern "system" fn(this: *mut *mut Self, deceleration: f32) -> ::windows_sys::core::HRESULT,
+    pub InitialTimestamp: unsafe extern "system" fn(this: *mut *mut Self, timestamp: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetInitialTimestamp: unsafe extern "system" fn(this: *mut *mut Self, timestamp: u32) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Process: unsafe extern "system" fn(this: *mut *mut Self, completed: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Process: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ProcessTime: unsafe extern "system" fn(this: *mut *mut Self, timestamp: u32, completed: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ProcessTime: usize,
+    pub Complete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub CompleteTime: unsafe extern "system" fn(this: *mut *mut Self, timestamp: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IManipulationProcessor {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SupportedManipulations: unsafe extern "system" fn(this: *mut *mut Self, manipulations: *mut MANIPULATION_PROCESSOR_MANIPULATIONS) -> ::windows_sys::core::HRESULT,
+    pub SetSupportedManipulations: unsafe extern "system" fn(this: *mut *mut Self, manipulations: MANIPULATION_PROCESSOR_MANIPULATIONS) -> ::windows_sys::core::HRESULT,
+    pub PivotPointX: unsafe extern "system" fn(this: *mut *mut Self, pivotpointx: *mut f32) -> ::windows_sys::core::HRESULT,
+    pub SetPivotPointX: unsafe extern "system" fn(this: *mut *mut Self, pivotpointx: f32) -> ::windows_sys::core::HRESULT,
+    pub PivotPointY: unsafe extern "system" fn(this: *mut *mut Self, pivotpointy: *mut f32) -> ::windows_sys::core::HRESULT,
+    pub SetPivotPointY: unsafe extern "system" fn(this: *mut *mut Self, pivotpointy: f32) -> ::windows_sys::core::HRESULT,
+    pub PivotRadius: unsafe extern "system" fn(this: *mut *mut Self, pivotradius: *mut f32) -> ::windows_sys::core::HRESULT,
+    pub SetPivotRadius: unsafe extern "system" fn(this: *mut *mut Self, pivotradius: f32) -> ::windows_sys::core::HRESULT,
+    pub CompleteManipulation: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub ProcessDown: unsafe extern "system" fn(this: *mut *mut Self, manipulatorid: u32, x: f32, y: f32) -> ::windows_sys::core::HRESULT,
+    pub ProcessMove: unsafe extern "system" fn(this: *mut *mut Self, manipulatorid: u32, x: f32, y: f32) -> ::windows_sys::core::HRESULT,
+    pub ProcessUp: unsafe extern "system" fn(this: *mut *mut Self, manipulatorid: u32, x: f32, y: f32) -> ::windows_sys::core::HRESULT,
+    pub ProcessDownWithTime: unsafe extern "system" fn(this: *mut *mut Self, manipulatorid: u32, x: f32, y: f32, timestamp: u32) -> ::windows_sys::core::HRESULT,
+    pub ProcessMoveWithTime: unsafe extern "system" fn(this: *mut *mut Self, manipulatorid: u32, x: f32, y: f32, timestamp: u32) -> ::windows_sys::core::HRESULT,
+    pub ProcessUpWithTime: unsafe extern "system" fn(this: *mut *mut Self, manipulatorid: u32, x: f32, y: f32, timestamp: u32) -> ::windows_sys::core::HRESULT,
+    pub GetVelocityX: unsafe extern "system" fn(this: *mut *mut Self, velocityx: *mut f32) -> ::windows_sys::core::HRESULT,
+    pub GetVelocityY: unsafe extern "system" fn(this: *mut *mut Self, velocityy: *mut f32) -> ::windows_sys::core::HRESULT,
+    pub GetExpansionVelocity: unsafe extern "system" fn(this: *mut *mut Self, expansionvelocity: *mut f32) -> ::windows_sys::core::HRESULT,
+    pub GetAngularVelocity: unsafe extern "system" fn(this: *mut *mut Self, angularvelocity: *mut f32) -> ::windows_sys::core::HRESULT,
+    pub MinimumScaleRotateRadius: unsafe extern "system" fn(this: *mut *mut Self, minradius: *mut f32) -> ::windows_sys::core::HRESULT,
+    pub SetMinimumScaleRotateRadius: unsafe extern "system" fn(this: *mut *mut Self, minradius: f32) -> ::windows_sys::core::HRESULT,
+}
 pub const InertiaProcessor: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2880598151, data2: 19680, data3: 20056, data4: [160, 203, 226, 77, 249, 104, 20, 190] };
 #[doc = "*Required features: `\"Win32_UI_Input_Touch\"`*"]
 pub type MANIPULATION_PROCESSOR_MANIPULATIONS = i32;
@@ -177,4 +259,10 @@ pub const TOUCHINPUTMASKF_TIMEFROMSYSTEM: TOUCHINPUTMASKF_MASK = 1u32;
 pub const TOUCHINPUTMASKF_EXTRAINFO: TOUCHINPUTMASKF_MASK = 2u32;
 #[doc = "*Required features: `\"Win32_UI_Input_Touch\"`*"]
 pub const TOUCHINPUTMASKF_CONTACTAREA: TOUCHINPUTMASKF_MASK = 4u32;
-pub type _IManipulationEvents = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct _IManipulationEvents {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub ManipulationStarted: unsafe extern "system" fn(this: *mut *mut Self, x: f32, y: f32) -> ::windows_sys::core::HRESULT,
+    pub ManipulationDelta: unsafe extern "system" fn(this: *mut *mut Self, x: f32, y: f32, translationdeltax: f32, translationdeltay: f32, scaledelta: f32, expansiondelta: f32, rotationdelta: f32, cumulativetranslationx: f32, cumulativetranslationy: f32, cumulativescale: f32, cumulativeexpansion: f32, cumulativerotation: f32) -> ::windows_sys::core::HRESULT,
+    pub ManipulationCompleted: unsafe extern "system" fn(this: *mut *mut Self, x: f32, y: f32, cumulativetranslationx: f32, cumulativetranslationy: f32, cumulativescale: f32, cumulativeexpansion: f32, cumulativerotation: f32) -> ::windows_sys::core::HRESULT,
+}

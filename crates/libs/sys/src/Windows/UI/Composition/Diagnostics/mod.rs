@@ -20,3 +20,21 @@ impl ::core::clone::Clone for CompositionDebugOverdrawContentKinds {
     }
 }
 pub type CompositionDebugSettings = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct ICompositionDebugHeatMaps {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Hide: unsafe extern "system" fn(this: *mut *mut Self, subtree: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ShowMemoryUsage: unsafe extern "system" fn(this: *mut *mut Self, subtree: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ShowOverdraw: unsafe extern "system" fn(this: *mut *mut Self, subtree: *mut ::core::ffi::c_void, contentkinds: CompositionDebugOverdrawContentKinds) -> ::windows_sys::core::HRESULT,
+    pub ShowRedraw: unsafe extern "system" fn(this: *mut *mut Self, subtree: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ICompositionDebugSettings {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub HeatMaps: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ICompositionDebugSettingsStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub TryGetSettings: unsafe extern "system" fn(this: *mut *mut Self, compositor: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}

@@ -2400,9 +2400,31 @@ pub const IDSI_FLAG_PROXY: u32 = 4u32;
 pub const IDSI_FLAG_SECURE: u32 = 2u32;
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`*"]
 pub const IDSI_FLAG_TUNNEL: u32 = 8u32;
-pub type IDialBranding = *mut ::core::ffi::c_void;
-pub type IDialEngine = *mut ::core::ffi::c_void;
-pub type IDialEventSink = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IDialBranding {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, pwzconnectoid: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub GetBitmap: unsafe extern "system" fn(this: *mut *mut Self, dwindex: u32, phbitmap: *mut super::super::Graphics::Gdi::HBITMAP) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Gdi"))]
+    GetBitmap: usize,
+}
+#[repr(C)]
+pub struct IDialEngine {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, pwzconnectoid: ::windows_sys::core::PCWSTR, pides: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetProperty: unsafe extern "system" fn(this: *mut *mut Self, pwzproperty: ::windows_sys::core::PCWSTR, pwzvalue: ::windows_sys::core::PCWSTR, dwbufsize: u32) -> ::windows_sys::core::HRESULT,
+    pub SetProperty: unsafe extern "system" fn(this: *mut *mut Self, pwzproperty: ::windows_sys::core::PCWSTR, pwzvalue: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub Dial: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub HangUp: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetConnectedState: unsafe extern "system" fn(this: *mut *mut Self, pdwstate: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetConnectHandle: unsafe extern "system" fn(this: *mut *mut Self, pdwhandle: *mut usize) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDialEventSink {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnEvent: unsafe extern "system" fn(this: *mut *mut Self, dwevent: u32, dwstatus: u32) -> ::windows_sys::core::HRESULT,
+}
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`*"]
 pub const IMMUTABLE_CACHE_ENTRY: u32 = 524288u32;
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`*"]
@@ -4068,8 +4090,16 @@ impl ::core::clone::Clone for INTERNET_VERSION_INFO {
         *self
     }
 }
-pub type IProofOfPossessionCookieInfoManager = *mut ::core::ffi::c_void;
-pub type IProofOfPossessionCookieInfoManager2 = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IProofOfPossessionCookieInfoManager {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCookieInfoForUri: unsafe extern "system" fn(this: *mut *mut Self, uri: ::windows_sys::core::PCWSTR, cookieinfocount: *mut u32, cookieinfo: *mut *mut ProofOfPossessionCookieInfo) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IProofOfPossessionCookieInfoManager2 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCookieInfoWithUriForAccount: unsafe extern "system" fn(this: *mut *mut Self, webaccount: *mut ::core::ffi::c_void, uri: ::windows_sys::core::PCWSTR, cookieinfocount: *mut u32, cookieinfo: *mut *mut ProofOfPossessionCookieInfo) -> ::windows_sys::core::HRESULT,
+}
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`*"]
 pub const IRF_ASYNC: u32 = 1u32;
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`*"]

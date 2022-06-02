@@ -123,10 +123,43 @@ pub type DXCoreSegmentGroup = u32;
 pub const Local: DXCoreSegmentGroup = 0u32;
 #[doc = "*Required features: `\"Win32_Graphics_DXCore\"`*"]
 pub const NonLocal: DXCoreSegmentGroup = 1u32;
-pub type IDXCoreAdapter = *mut ::core::ffi::c_void;
-pub type IDXCoreAdapterFactory = *mut ::core::ffi::c_void;
-pub type IDXCoreAdapterList = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IDXCoreAdapter {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub IsValid: unsafe extern "system" fn(this: *mut *mut Self) -> bool,
+    pub IsAttributeSupported: unsafe extern "system" fn(this: *mut *mut Self, attributeguid: *const ::windows_sys::core::GUID) -> bool,
+    pub IsPropertySupported: unsafe extern "system" fn(this: *mut *mut Self, property: DXCoreAdapterProperty) -> bool,
+    pub GetProperty: unsafe extern "system" fn(this: *mut *mut Self, property: DXCoreAdapterProperty, buffersize: usize, propertydata: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetPropertySize: unsafe extern "system" fn(this: *mut *mut Self, property: DXCoreAdapterProperty, buffersize: *mut usize) -> ::windows_sys::core::HRESULT,
+    pub IsQueryStateSupported: unsafe extern "system" fn(this: *mut *mut Self, property: DXCoreAdapterState) -> bool,
+    pub QueryState: unsafe extern "system" fn(this: *mut *mut Self, state: DXCoreAdapterState, inputstatedetailssize: usize, inputstatedetails: *const ::core::ffi::c_void, outputbuffersize: usize, outputbuffer: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub IsSetStateSupported: unsafe extern "system" fn(this: *mut *mut Self, property: DXCoreAdapterState) -> bool,
+    pub SetState: unsafe extern "system" fn(this: *mut *mut Self, state: DXCoreAdapterState, inputstatedetailssize: usize, inputstatedetails: *const ::core::ffi::c_void, inputdatasize: usize, inputdata: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetFactory: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppvfactory: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDXCoreAdapterFactory {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub CreateAdapterList: unsafe extern "system" fn(this: *mut *mut Self, numattributes: u32, filterattributes: *const ::windows_sys::core::GUID, riid: *const ::windows_sys::core::GUID, ppvadapterlist: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetAdapterByLuid: unsafe extern "system" fn(this: *mut *mut Self, adapterluid: *const super::super::Foundation::LUID, riid: *const ::windows_sys::core::GUID, ppvadapter: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetAdapterByLuid: usize,
+    pub IsNotificationTypeSupported: unsafe extern "system" fn(this: *mut *mut Self, notificationtype: DXCoreNotificationType) -> bool,
+    pub RegisterEventNotification: unsafe extern "system" fn(this: *mut *mut Self, dxcoreobject: *mut ::core::ffi::c_void, notificationtype: DXCoreNotificationType, callbackfunction: *mut ::core::ffi::c_void, callbackcontext: *const ::core::ffi::c_void, eventcookie: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub UnregisterEventNotification: unsafe extern "system" fn(this: *mut *mut Self, eventcookie: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDXCoreAdapterList {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetAdapter: unsafe extern "system" fn(this: *mut *mut Self, index: u32, riid: *const ::windows_sys::core::GUID, ppvadapter: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetAdapterCount: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
+    pub IsStale: unsafe extern "system" fn(this: *mut *mut Self) -> bool,
+    pub GetFactory: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppvfactory: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Sort: unsafe extern "system" fn(this: *mut *mut Self, numpreferences: u32, preferences: *const DXCoreAdapterPreference) -> ::windows_sys::core::HRESULT,
+    pub IsAdapterPreferenceSupported: unsafe extern "system" fn(this: *mut *mut Self, preference: DXCoreAdapterPreference) -> bool,
+}
 #[doc = "*Required features: `\"Win32_Graphics_DXCore\"`*"]
-pub type PFN_DXCORE_NOTIFICATION_CALLBACK = ::core::option::Option<unsafe extern "system" fn(notificationtype: DXCoreNotificationType, object: ::windows_sys::core::IUnknown, context: *const ::core::ffi::c_void)>;
+pub type PFN_DXCORE_NOTIFICATION_CALLBACK = ::core::option::Option<unsafe extern "system" fn(notificationtype: DXCoreNotificationType, object: *mut *mut ::windows_sys::core::IUnknown, context: *const ::core::ffi::c_void)>;
 #[doc = "*Required features: `\"Win32_Graphics_DXCore\"`*"]
 pub const _FACDXCORE: u32 = 2176u32;

@@ -406,21 +406,74 @@ pub const FramingProp_Old: FRAMING_PROP = 2i32;
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 pub const FramingProp_Ex: FRAMING_PROP = 3i32;
 pub const GUID_NULL: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 0, data2: 0, data3: 0, data4: [0, 0, 0, 0, 0, 0, 0, 0] };
-pub type IKsAggregateControl = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IKsAggregateControl {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub KsAddAggregate: unsafe extern "system" fn(this: *mut *mut Self, aggregateclass: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub KsRemoveAggregate: unsafe extern "system" fn(this: *mut *mut Self, aggregateclass: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
 #[repr(C)]
 pub struct IKsAllocator(pub u8);
 #[repr(C)]
 pub struct IKsAllocatorEx(pub u8);
-pub type IKsControl = *mut ::core::ffi::c_void;
-pub type IKsFormatSupport = *mut ::core::ffi::c_void;
-pub type IKsJackContainerId = *mut ::core::ffi::c_void;
-pub type IKsJackDescription = *mut ::core::ffi::c_void;
-pub type IKsJackDescription2 = *mut ::core::ffi::c_void;
-pub type IKsJackSinkInformation = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IKsControl {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub KsProperty: unsafe extern "system" fn(this: *mut *mut Self, property: *const KSIDENTIFIER, propertylength: u32, propertydata: *mut ::core::ffi::c_void, datalength: u32, bytesreturned: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub KsMethod: unsafe extern "system" fn(this: *mut *mut Self, method: *const KSIDENTIFIER, methodlength: u32, methoddata: *mut ::core::ffi::c_void, datalength: u32, bytesreturned: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub KsEvent: unsafe extern "system" fn(this: *mut *mut Self, event: *const KSIDENTIFIER, eventlength: u32, eventdata: *mut ::core::ffi::c_void, datalength: u32, bytesreturned: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IKsFormatSupport {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsFormatSupported: unsafe extern "system" fn(this: *mut *mut Self, pksformat: *mut KSDATAFORMAT, cbformat: u32, pbsupported: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsFormatSupported: usize,
+    pub GetDevicePreferredFormat: unsafe extern "system" fn(this: *mut *mut Self, ppksformat: *mut *mut KSDATAFORMAT) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IKsJackContainerId {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetJackContainerId: unsafe extern "system" fn(this: *mut *mut Self, pjackcontainerid: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IKsJackDescription {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetJackCount: unsafe extern "system" fn(this: *mut *mut Self, pcjacks: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetJackDescription: unsafe extern "system" fn(this: *mut *mut Self, njack: u32, pdescription: *mut KSJACK_DESCRIPTION) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetJackDescription: usize,
+}
+#[repr(C)]
+pub struct IKsJackDescription2 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetJackCount: unsafe extern "system" fn(this: *mut *mut Self, pcjacks: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetJackDescription2: unsafe extern "system" fn(this: *mut *mut Self, njack: u32, pdescription2: *mut KSJACK_DESCRIPTION2) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IKsJackSinkInformation {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetJackSinkInformation: unsafe extern "system" fn(this: *mut *mut Self, pjacksinkinformation: *mut KSJACK_SINK_INFORMATION) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetJackSinkInformation: usize,
+}
 #[repr(C)]
 pub struct IKsPin(pub u8);
-pub type IKsPropertySet = *mut ::core::ffi::c_void;
-pub type IKsTopology = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IKsPropertySet {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Set: unsafe extern "system" fn(this: *mut *mut Self, propset: *const ::windows_sys::core::GUID, id: u32, instancedata: *const ::core::ffi::c_void, instancelength: u32, propertydata: *const ::core::ffi::c_void, datalength: u32) -> ::windows_sys::core::HRESULT,
+    pub Get: unsafe extern "system" fn(this: *mut *mut Self, propset: *const ::windows_sys::core::GUID, id: u32, instancedata: *const ::core::ffi::c_void, instancelength: u32, propertydata: *mut ::core::ffi::c_void, datalength: u32, bytesreturned: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub QuerySupported: unsafe extern "system" fn(this: *mut *mut Self, propset: *const ::windows_sys::core::GUID, id: u32, typesupport: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IKsTopology {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub CreateNodeInstance: unsafe extern "system" fn(this: *mut *mut Self, nodeid: u32, flags: u32, desiredaccess: u32, unkouter: *mut ::core::ffi::c_void, interfaceid: *const ::windows_sys::core::GUID, interface: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]
 pub struct INTERLEAVED_AUDIO_FORMAT_INFORMATION {

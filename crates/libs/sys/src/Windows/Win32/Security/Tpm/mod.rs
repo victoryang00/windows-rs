@@ -1,7 +1,37 @@
-pub type ITpmVirtualSmartCardManager = *mut ::core::ffi::c_void;
-pub type ITpmVirtualSmartCardManager2 = *mut ::core::ffi::c_void;
-pub type ITpmVirtualSmartCardManager3 = *mut ::core::ffi::c_void;
-pub type ITpmVirtualSmartCardManagerStatusCallback = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct ITpmVirtualSmartCardManager {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CreateVirtualSmartCard: unsafe extern "system" fn(this: *mut *mut Self, pszfriendlyname: ::windows_sys::core::PCWSTR, badminalgid: u8, pbadminkey: *const u8, cbadminkey: u32, pbadminkcv: *const u8, cbadminkcv: u32, pbpuk: *const u8, cbpuk: u32, pbpin: *const u8, cbpin: u32, fgenerate: super::super::Foundation::BOOL, pstatuscallback: *mut ::core::ffi::c_void, ppszinstanceid: *mut ::windows_sys::core::PWSTR, pfneedreboot: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CreateVirtualSmartCard: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DestroyVirtualSmartCard: unsafe extern "system" fn(this: *mut *mut Self, pszinstanceid: ::windows_sys::core::PCWSTR, pstatuscallback: *mut ::core::ffi::c_void, pfneedreboot: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DestroyVirtualSmartCard: usize,
+}
+#[repr(C)]
+pub struct ITpmVirtualSmartCardManager2 {
+    pub base__: ITpmVirtualSmartCardManager,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CreateVirtualSmartCardWithPinPolicy: unsafe extern "system" fn(this: *mut *mut Self, pszfriendlyname: ::windows_sys::core::PCWSTR, badminalgid: u8, pbadminkey: *const u8, cbadminkey: u32, pbadminkcv: *const u8, cbadminkcv: u32, pbpuk: *const u8, cbpuk: u32, pbpin: *const u8, cbpin: u32, pbpinpolicy: *const u8, cbpinpolicy: u32, fgenerate: super::super::Foundation::BOOL, pstatuscallback: *mut ::core::ffi::c_void, ppszinstanceid: *mut ::windows_sys::core::PWSTR, pfneedreboot: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CreateVirtualSmartCardWithPinPolicy: usize,
+}
+#[repr(C)]
+pub struct ITpmVirtualSmartCardManager3 {
+    pub base__: ITpmVirtualSmartCardManager2,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CreateVirtualSmartCardWithAttestation: unsafe extern "system" fn(this: *mut *mut Self, pszfriendlyname: ::windows_sys::core::PCWSTR, badminalgid: u8, pbadminkey: *const u8, cbadminkey: u32, pbadminkcv: *const u8, cbadminkcv: u32, pbpuk: *const u8, cbpuk: u32, pbpin: *const u8, cbpin: u32, pbpinpolicy: *const u8, cbpinpolicy: u32, attestationtype: TPMVSC_ATTESTATION_TYPE, fgenerate: super::super::Foundation::BOOL, pstatuscallback: *mut ::core::ffi::c_void, ppszinstanceid: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CreateVirtualSmartCardWithAttestation: usize,
+}
+#[repr(C)]
+pub struct ITpmVirtualSmartCardManagerStatusCallback {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub ReportProgress: unsafe extern "system" fn(this: *mut *mut Self, status: TPMVSCMGR_STATUS) -> ::windows_sys::core::HRESULT,
+    pub ReportError: unsafe extern "system" fn(this: *mut *mut Self, error: TPMVSCMGR_ERROR) -> ::windows_sys::core::HRESULT,
+}
 pub const RemoteTpmVirtualSmartCardManager: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 355377832, data2: 28892, data3: 19545, data4: [139, 42, 50, 170, 60, 160, 220, 172] };
 #[doc = "*Required features: `\"Win32_Security_Tpm\"`*"]
 pub type TPMVSCMGR_ERROR = i32;

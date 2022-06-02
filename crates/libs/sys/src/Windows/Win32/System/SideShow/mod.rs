@@ -59,17 +59,121 @@ impl ::core::clone::Clone for EVENT_DATA_HEADER {
     }
 }
 pub const GUID_DEVINTERFACE_SIDESHOW: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 355358737, data2: 65209, data3: 19200, data4: [144, 244, 211, 41, 71, 174, 22, 129] };
-pub type ISideShowBulkCapabilities = *mut ::core::ffi::c_void;
-pub type ISideShowCapabilities = *mut ::core::ffi::c_void;
-pub type ISideShowCapabilitiesCollection = *mut ::core::ffi::c_void;
-pub type ISideShowContent = *mut ::core::ffi::c_void;
-pub type ISideShowContentManager = *mut ::core::ffi::c_void;
-pub type ISideShowEvents = *mut ::core::ffi::c_void;
-pub type ISideShowKeyCollection = *mut ::core::ffi::c_void;
-pub type ISideShowNotification = *mut ::core::ffi::c_void;
-pub type ISideShowNotificationManager = *mut ::core::ffi::c_void;
-pub type ISideShowPropVariantCollection = *mut ::core::ffi::c_void;
-pub type ISideShowSession = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct ISideShowBulkCapabilities {
+    pub base__: ISideShowCapabilities,
+    pub GetCapabilities: unsafe extern "system" fn(this: *mut *mut Self, in_keycollection: *mut ::core::ffi::c_void, inout_pvalues: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISideShowCapabilities {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+    pub GetCapability: unsafe extern "system" fn(this: *mut *mut Self, in_keycapability: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY, inout_pvalue: *mut super::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem")))]
+    GetCapability: usize,
+}
+#[repr(C)]
+pub struct ISideShowCapabilitiesCollection {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, out_pdwcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetAt: unsafe extern "system" fn(this: *mut *mut Self, in_dwindex: u32, out_ppcapabilities: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISideShowContent {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetContent: unsafe extern "system" fn(this: *mut *mut Self, in_picapabilities: *mut ::core::ffi::c_void, out_pdwsize: *mut u32, out_ppbdata: *mut *mut u8) -> ::windows_sys::core::HRESULT,
+    pub ContentId: unsafe extern "system" fn(this: *mut *mut Self, out_pcontentid: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DifferentiateContent: unsafe extern "system" fn(this: *mut *mut Self, out_pfdifferentiatecontent: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DifferentiateContent: usize,
+}
+#[repr(C)]
+pub struct ISideShowContentManager {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Add: unsafe extern "system" fn(this: *mut *mut Self, in_picontent: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Remove: unsafe extern "system" fn(this: *mut *mut Self, in_contentid: u32) -> ::windows_sys::core::HRESULT,
+    pub RemoveAll: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub SetEventSink: unsafe extern "system" fn(this: *mut *mut Self, in_pievents: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetDeviceCapabilities: unsafe extern "system" fn(this: *mut *mut Self, out_ppcollection: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISideShowEvents {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub ContentMissing: unsafe extern "system" fn(this: *mut *mut Self, in_contentid: u32, out_ppicontent: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ApplicationEvent: unsafe extern "system" fn(this: *mut *mut Self, in_picapabilities: *mut ::core::ffi::c_void, in_dweventid: u32, in_dweventsize: u32, in_pbeventdata: *const u8) -> ::windows_sys::core::HRESULT,
+    pub DeviceAdded: unsafe extern "system" fn(this: *mut *mut Self, in_pidevice: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub DeviceRemoved: unsafe extern "system" fn(this: *mut *mut Self, in_pidevice: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISideShowKeyCollection {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub Add: unsafe extern "system" fn(this: *mut *mut Self, key: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    Add: usize,
+    pub Clear: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub GetAt: unsafe extern "system" fn(this: *mut *mut Self, dwindex: u32, pkey: *mut super::super::UI::Shell::PropertiesSystem::PROPERTYKEY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    GetAt: usize,
+    pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, pcelems: *const u32) -> ::windows_sys::core::HRESULT,
+    pub RemoveAt: unsafe extern "system" fn(this: *mut *mut Self, dwindex: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISideShowNotification {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub NotificationId: unsafe extern "system" fn(this: *mut *mut Self, out_pnotificationid: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetNotificationId: unsafe extern "system" fn(this: *mut *mut Self, in_notificationid: u32) -> ::windows_sys::core::HRESULT,
+    pub Title: unsafe extern "system" fn(this: *mut *mut Self, out_ppwsztitle: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetTitle: unsafe extern "system" fn(this: *mut *mut Self, in_pwsztitle: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub Message: unsafe extern "system" fn(this: *mut *mut Self, out_ppwszmessage: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetMessage: unsafe extern "system" fn(this: *mut *mut Self, in_pwszmessage: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    pub Image: unsafe extern "system" fn(this: *mut *mut Self, out_phicon: *mut super::super::UI::WindowsAndMessaging::HICON) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_WindowsAndMessaging"))]
+    Image: usize,
+    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    pub SetImage: unsafe extern "system" fn(this: *mut *mut Self, in_hicon: super::super::UI::WindowsAndMessaging::HICON) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_WindowsAndMessaging"))]
+    SetImage: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ExpirationTime: unsafe extern "system" fn(this: *mut *mut Self, out_ptime: *mut super::super::Foundation::SYSTEMTIME) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ExpirationTime: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetExpirationTime: unsafe extern "system" fn(this: *mut *mut Self, in_ptime: *const super::super::Foundation::SYSTEMTIME) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetExpirationTime: usize,
+}
+#[repr(C)]
+pub struct ISideShowNotificationManager {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Show: unsafe extern "system" fn(this: *mut *mut Self, in_pinotification: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Revoke: unsafe extern "system" fn(this: *mut *mut Self, in_notificationid: u32) -> ::windows_sys::core::HRESULT,
+    pub RevokeAll: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISideShowPropVariantCollection {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    pub Add: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *const super::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    Add: usize,
+    pub Clear: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    pub GetAt: unsafe extern "system" fn(this: *mut *mut Self, dwindex: u32, pvalue: *mut super::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    GetAt: usize,
+    pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, pcelems: *const u32) -> ::windows_sys::core::HRESULT,
+    pub RemoveAt: unsafe extern "system" fn(this: *mut *mut Self, dwindex: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISideShowSession {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub RegisterContent: unsafe extern "system" fn(this: *mut *mut Self, in_applicationid: *const ::windows_sys::core::GUID, in_endpointid: *const ::windows_sys::core::GUID, out_ppicontent: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RegisterNotifications: unsafe extern "system" fn(this: *mut *mut Self, in_applicationid: *const ::windows_sys::core::GUID, out_ppinotification: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
 #[repr(C, packed(1))]
 #[doc = "*Required features: `\"Win32_System_SideShow\"`*"]
 pub struct NEW_EVENT_DATA_AVAILABLE {

@@ -33,14 +33,68 @@ pub const ASP_MD_ID_END_RESERVED: u32 = 29951u32;
 pub const ASP_MD_SERVER_BASE: u32 = 7000u32;
 #[doc = "*Required features: `\"Win32_System_Iis\"`*"]
 pub const ASP_MD_UT_APP: u32 = 101u32;
-pub type AsyncIFtpAuthenticationProvider = *mut ::core::ffi::c_void;
-pub type AsyncIFtpAuthorizationProvider = *mut ::core::ffi::c_void;
-pub type AsyncIFtpHomeDirectoryProvider = *mut ::core::ffi::c_void;
-pub type AsyncIFtpLogProvider = *mut ::core::ffi::c_void;
-pub type AsyncIFtpPostprocessProvider = *mut ::core::ffi::c_void;
-pub type AsyncIFtpPreprocessProvider = *mut ::core::ffi::c_void;
-pub type AsyncIFtpRoleProvider = *mut ::core::ffi::c_void;
-pub type AsyncIMSAdminBaseSinkW = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct AsyncIFtpAuthenticationProvider {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Begin_AuthenticateUser: unsafe extern "system" fn(this: *mut *mut Self, pszsessionid: ::windows_sys::core::PCWSTR, pszsitename: ::windows_sys::core::PCWSTR, pszusername: ::windows_sys::core::PCWSTR, pszpassword: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Finish_AuthenticateUser: unsafe extern "system" fn(this: *mut *mut Self, ppszcanonicalusername: *mut ::windows_sys::core::PWSTR, pfauthenticated: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Finish_AuthenticateUser: usize,
+}
+#[repr(C)]
+pub struct AsyncIFtpAuthorizationProvider {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Begin_GetUserAccessPermission: unsafe extern "system" fn(this: *mut *mut Self, pszsessionid: ::windows_sys::core::PCWSTR, pszsitename: ::windows_sys::core::PCWSTR, pszvirtualpath: ::windows_sys::core::PCWSTR, pszusername: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub Finish_GetUserAccessPermission: unsafe extern "system" fn(this: *mut *mut Self, pftpaccess: *mut FTP_ACCESS) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct AsyncIFtpHomeDirectoryProvider {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Begin_GetUserHomeDirectoryData: unsafe extern "system" fn(this: *mut *mut Self, pszsessionid: ::windows_sys::core::PCWSTR, pszsitename: ::windows_sys::core::PCWSTR, pszusername: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub Finish_GetUserHomeDirectoryData: unsafe extern "system" fn(this: *mut *mut Self, ppszhomedirectorydata: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct AsyncIFtpLogProvider {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Begin_Log: unsafe extern "system" fn(this: *mut *mut Self, ploggingparameters: *const LOGGING_PARAMETERS) -> ::windows_sys::core::HRESULT,
+    pub Finish_Log: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct AsyncIFtpPostprocessProvider {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Begin_HandlePostprocess: unsafe extern "system" fn(this: *mut *mut Self, ppostprocessparameters: *const POST_PROCESS_PARAMETERS) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Begin_HandlePostprocess: usize,
+    pub Finish_HandlePostprocess: unsafe extern "system" fn(this: *mut *mut Self, pftpprocessstatus: *mut FTP_PROCESS_STATUS) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct AsyncIFtpPreprocessProvider {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Begin_HandlePreprocess: unsafe extern "system" fn(this: *mut *mut Self, ppreprocessparameters: *const PRE_PROCESS_PARAMETERS) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Begin_HandlePreprocess: usize,
+    pub Finish_HandlePreprocess: unsafe extern "system" fn(this: *mut *mut Self, pftpprocessstatus: *mut FTP_PROCESS_STATUS) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct AsyncIFtpRoleProvider {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Begin_IsUserInRole: unsafe extern "system" fn(this: *mut *mut Self, pszsessionid: ::windows_sys::core::PCWSTR, pszsitename: ::windows_sys::core::PCWSTR, pszusername: ::windows_sys::core::PCWSTR, pszrole: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Finish_IsUserInRole: unsafe extern "system" fn(this: *mut *mut Self, pfisinrole: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Finish_IsUserInRole: usize,
+}
+#[repr(C)]
+pub struct AsyncIMSAdminBaseSinkW {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Begin_SinkNotify: unsafe extern "system" fn(this: *mut *mut Self, dwmdnumelements: u32, pcochangelist: *const MD_CHANGE_OBJECT_W) -> ::windows_sys::core::HRESULT,
+    pub Finish_SinkNotify: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Begin_ShutdownNotify: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Finish_ShutdownNotify: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Iis\"`, `\"Win32_Foundation\"`, `\"Win32_Security_Cryptography\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
@@ -859,15 +913,68 @@ pub const HTTP_TRACE_TYPE_LPCSTR: HTTP_TRACE_TYPE = 30i32;
 pub const HTTP_TRACE_TYPE_LPCGUID: HTTP_TRACE_TYPE = 72i32;
 #[doc = "*Required features: `\"Win32_System_Iis\"`*"]
 pub const HTTP_TRACE_TYPE_BOOL: HTTP_TRACE_TYPE = 11i32;
-pub type IADMEXT = *mut ::core::ffi::c_void;
-pub type IFtpAuthenticationProvider = *mut ::core::ffi::c_void;
-pub type IFtpAuthorizationProvider = *mut ::core::ffi::c_void;
-pub type IFtpHomeDirectoryProvider = *mut ::core::ffi::c_void;
-pub type IFtpLogProvider = *mut ::core::ffi::c_void;
-pub type IFtpPostprocessProvider = *mut ::core::ffi::c_void;
-pub type IFtpPreprocessProvider = *mut ::core::ffi::c_void;
-pub type IFtpProviderConstruct = *mut ::core::ffi::c_void;
-pub type IFtpRoleProvider = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IADMEXT {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub EnumDcomCLSIDs: unsafe extern "system" fn(this: *mut *mut Self, pclsiddcom: *mut ::windows_sys::core::GUID, dwenumindex: u32) -> ::windows_sys::core::HRESULT,
+    pub Terminate: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IFtpAuthenticationProvider {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AuthenticateUser: unsafe extern "system" fn(this: *mut *mut Self, pszsessionid: ::windows_sys::core::PCWSTR, pszsitename: ::windows_sys::core::PCWSTR, pszusername: ::windows_sys::core::PCWSTR, pszpassword: ::windows_sys::core::PCWSTR, ppszcanonicalusername: *mut ::windows_sys::core::PWSTR, pfauthenticated: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AuthenticateUser: usize,
+}
+#[repr(C)]
+pub struct IFtpAuthorizationProvider {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetUserAccessPermission: unsafe extern "system" fn(this: *mut *mut Self, pszsessionid: ::windows_sys::core::PCWSTR, pszsitename: ::windows_sys::core::PCWSTR, pszvirtualpath: ::windows_sys::core::PCWSTR, pszusername: ::windows_sys::core::PCWSTR, pftpaccess: *mut FTP_ACCESS) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IFtpHomeDirectoryProvider {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetUserHomeDirectoryData: unsafe extern "system" fn(this: *mut *mut Self, pszsessionid: ::windows_sys::core::PCWSTR, pszsitename: ::windows_sys::core::PCWSTR, pszusername: ::windows_sys::core::PCWSTR, ppszhomedirectorydata: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IFtpLogProvider {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Log: unsafe extern "system" fn(this: *mut *mut Self, ploggingparameters: *const LOGGING_PARAMETERS) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IFtpPostprocessProvider {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub HandlePostprocess: unsafe extern "system" fn(this: *mut *mut Self, ppostprocessparameters: *const POST_PROCESS_PARAMETERS, pftpprocessstatus: *mut FTP_PROCESS_STATUS) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    HandlePostprocess: usize,
+}
+#[repr(C)]
+pub struct IFtpPreprocessProvider {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub HandlePreprocess: unsafe extern "system" fn(this: *mut *mut Self, ppreprocessparameters: *const PRE_PROCESS_PARAMETERS, pftpprocessstatus: *mut FTP_PROCESS_STATUS) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    HandlePreprocess: usize,
+}
+#[repr(C)]
+pub struct IFtpProviderConstruct {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Construct: unsafe extern "system" fn(this: *mut *mut Self, configurationentries: *const super::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Construct: usize,
+}
+#[repr(C)]
+pub struct IFtpRoleProvider {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsUserInRole: unsafe extern "system" fn(this: *mut *mut Self, pszsessionid: ::windows_sys::core::PCWSTR, pszsitename: ::windows_sys::core::PCWSTR, pszusername: ::windows_sys::core::PCWSTR, pszrole: ::windows_sys::core::PCWSTR, pfisinrole: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsUserInRole: usize,
+}
 #[doc = "*Required features: `\"Win32_System_Iis\"`*"]
 pub const IISADMIN_EXTENSIONS_CLSID_MD_KEY: &str = "LM/IISADMIN/EXTENSIONS/DCOMCLSIDS";
 #[doc = "*Required features: `\"Win32_System_Iis\"`*"]
@@ -1054,11 +1161,85 @@ pub const IMGLOAD_STOPPED: u32 = 4194304u32;
 pub const IMGTRANS_MASK: u32 = 536870912u32;
 #[doc = "*Required features: `\"Win32_System_Iis\"`*"]
 pub const IMGTRANS_OPAQUE: u32 = 536870912u32;
-pub type IMSAdminBase2W = *mut ::core::ffi::c_void;
-pub type IMSAdminBase3W = *mut ::core::ffi::c_void;
-pub type IMSAdminBaseSinkW = *mut ::core::ffi::c_void;
-pub type IMSAdminBaseW = *mut ::core::ffi::c_void;
-pub type IMSImpExpHelpW = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IMSAdminBase2W {
+    pub base__: IMSAdminBaseW,
+    pub BackupWithPasswd: unsafe extern "system" fn(this: *mut *mut Self, pszmdbackuplocation: ::windows_sys::core::PCWSTR, dwmdversion: u32, dwmdflags: u32, pszpasswd: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub RestoreWithPasswd: unsafe extern "system" fn(this: *mut *mut Self, pszmdbackuplocation: ::windows_sys::core::PCWSTR, dwmdversion: u32, dwmdflags: u32, pszpasswd: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub Export: unsafe extern "system" fn(this: *mut *mut Self, pszpasswd: ::windows_sys::core::PCWSTR, pszfilename: ::windows_sys::core::PCWSTR, pszsourcepath: ::windows_sys::core::PCWSTR, dwmdflags: u32) -> ::windows_sys::core::HRESULT,
+    pub Import: unsafe extern "system" fn(this: *mut *mut Self, pszpasswd: ::windows_sys::core::PCWSTR, pszfilename: ::windows_sys::core::PCWSTR, pszsourcepath: ::windows_sys::core::PCWSTR, pszdestpath: ::windows_sys::core::PCWSTR, dwmdflags: u32) -> ::windows_sys::core::HRESULT,
+    pub RestoreHistory: unsafe extern "system" fn(this: *mut *mut Self, pszmdhistorylocation: ::windows_sys::core::PCWSTR, dwmdmajorversion: u32, dwmdminorversion: u32, dwmdflags: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub EnumHistory: unsafe extern "system" fn(this: *mut *mut Self, pszmdhistorylocation: ::windows_sys::core::PWSTR, pdwmdmajorversion: *mut u32, pdwmdminorversion: *mut u32, pftmdhistorytime: *mut super::super::Foundation::FILETIME, dwmdenumindex: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    EnumHistory: usize,
+}
+#[repr(C)]
+pub struct IMSAdminBase3W {
+    pub base__: IMSAdminBase2W,
+    pub GetChildPaths: unsafe extern "system" fn(this: *mut *mut Self, hmdhandle: u32, pszmdpath: ::windows_sys::core::PCWSTR, cchmdbuffersize: u32, pszbuffer: ::windows_sys::core::PWSTR, pcchmdrequiredbuffersize: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMSAdminBaseSinkW {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SinkNotify: unsafe extern "system" fn(this: *mut *mut Self, dwmdnumelements: u32, pcochangelist: *const MD_CHANGE_OBJECT_W) -> ::windows_sys::core::HRESULT,
+    pub ShutdownNotify: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMSAdminBaseW {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub AddKey: unsafe extern "system" fn(this: *mut *mut Self, hmdhandle: u32, pszmdpath: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub DeleteKey: unsafe extern "system" fn(this: *mut *mut Self, hmdhandle: u32, pszmdpath: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub DeleteChildKeys: unsafe extern "system" fn(this: *mut *mut Self, hmdhandle: u32, pszmdpath: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub EnumKeys: unsafe extern "system" fn(this: *mut *mut Self, hmdhandle: u32, pszmdpath: ::windows_sys::core::PCWSTR, pszmdname: ::windows_sys::core::PWSTR, dwmdenumobjectindex: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CopyKey: unsafe extern "system" fn(this: *mut *mut Self, hmdsourcehandle: u32, pszmdsourcepath: ::windows_sys::core::PCWSTR, hmddesthandle: u32, pszmddestpath: ::windows_sys::core::PCWSTR, bmdoverwriteflag: super::super::Foundation::BOOL, bmdcopyflag: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CopyKey: usize,
+    pub RenameKey: unsafe extern "system" fn(this: *mut *mut Self, hmdhandle: u32, pszmdpath: ::windows_sys::core::PCWSTR, pszmdnewname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetData: unsafe extern "system" fn(this: *mut *mut Self, hmdhandle: u32, pszmdpath: ::windows_sys::core::PCWSTR, pmdrmddata: *mut METADATA_RECORD) -> ::windows_sys::core::HRESULT,
+    pub GetData: unsafe extern "system" fn(this: *mut *mut Self, hmdhandle: u32, pszmdpath: ::windows_sys::core::PCWSTR, pmdrmddata: *mut METADATA_RECORD, pdwmdrequireddatalen: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub DeleteData: unsafe extern "system" fn(this: *mut *mut Self, hmdhandle: u32, pszmdpath: ::windows_sys::core::PCWSTR, dwmdidentifier: u32, dwmddatatype: u32) -> ::windows_sys::core::HRESULT,
+    pub EnumData: unsafe extern "system" fn(this: *mut *mut Self, hmdhandle: u32, pszmdpath: ::windows_sys::core::PCWSTR, pmdrmddata: *mut METADATA_RECORD, dwmdenumdataindex: u32, pdwmdrequireddatalen: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetAllData: unsafe extern "system" fn(this: *mut *mut Self, hmdhandle: u32, pszmdpath: ::windows_sys::core::PCWSTR, dwmdattributes: u32, dwmdusertype: u32, dwmddatatype: u32, pdwmdnumdataentries: *mut u32, pdwmddatasetnumber: *mut u32, dwmdbuffersize: u32, pbmdbuffer: *mut u8, pdwmdrequiredbuffersize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub DeleteAllData: unsafe extern "system" fn(this: *mut *mut Self, hmdhandle: u32, pszmdpath: ::windows_sys::core::PCWSTR, dwmdusertype: u32, dwmddatatype: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CopyData: unsafe extern "system" fn(this: *mut *mut Self, hmdsourcehandle: u32, pszmdsourcepath: ::windows_sys::core::PCWSTR, hmddesthandle: u32, pszmddestpath: ::windows_sys::core::PCWSTR, dwmdattributes: u32, dwmdusertype: u32, dwmddatatype: u32, bmdcopyflag: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CopyData: usize,
+    pub GetDataPaths: unsafe extern "system" fn(this: *mut *mut Self, hmdhandle: u32, pszmdpath: ::windows_sys::core::PCWSTR, dwmdidentifier: u32, dwmddatatype: u32, dwmdbuffersize: u32, pszbuffer: ::windows_sys::core::PWSTR, pdwmdrequiredbuffersize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub OpenKey: unsafe extern "system" fn(this: *mut *mut Self, hmdhandle: u32, pszmdpath: ::windows_sys::core::PCWSTR, dwmdaccessrequested: u32, dwmdtimeout: u32, phmdnewhandle: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub CloseKey: unsafe extern "system" fn(this: *mut *mut Self, hmdhandle: u32) -> ::windows_sys::core::HRESULT,
+    pub ChangePermissions: unsafe extern "system" fn(this: *mut *mut Self, hmdhandle: u32, dwmdtimeout: u32, dwmdaccessrequested: u32) -> ::windows_sys::core::HRESULT,
+    pub SaveData: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetHandleInfo: unsafe extern "system" fn(this: *mut *mut Self, hmdhandle: u32, pmdhiinfo: *mut METADATA_HANDLE_INFO) -> ::windows_sys::core::HRESULT,
+    pub GetSystemChangeNumber: unsafe extern "system" fn(this: *mut *mut Self, pdwsystemchangenumber: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetDataSetNumber: unsafe extern "system" fn(this: *mut *mut Self, hmdhandle: u32, pszmdpath: ::windows_sys::core::PCWSTR, pdwmddatasetnumber: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetLastChangeTime: unsafe extern "system" fn(this: *mut *mut Self, hmdhandle: u32, pszmdpath: ::windows_sys::core::PCWSTR, pftmdlastchangetime: *const super::super::Foundation::FILETIME, blocaltime: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetLastChangeTime: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetLastChangeTime: unsafe extern "system" fn(this: *mut *mut Self, hmdhandle: u32, pszmdpath: ::windows_sys::core::PCWSTR, pftmdlastchangetime: *mut super::super::Foundation::FILETIME, blocaltime: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetLastChangeTime: usize,
+    pub KeyExchangePhase1: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub KeyExchangePhase2: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Backup: unsafe extern "system" fn(this: *mut *mut Self, pszmdbackuplocation: ::windows_sys::core::PCWSTR, dwmdversion: u32, dwmdflags: u32) -> ::windows_sys::core::HRESULT,
+    pub Restore: unsafe extern "system" fn(this: *mut *mut Self, pszmdbackuplocation: ::windows_sys::core::PCWSTR, dwmdversion: u32, dwmdflags: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub EnumBackups: unsafe extern "system" fn(this: *mut *mut Self, pszmdbackuplocation: ::windows_sys::core::PWSTR, pdwmdversion: *mut u32, pftmdbackuptime: *mut super::super::Foundation::FILETIME, dwmdenumindex: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    EnumBackups: usize,
+    pub DeleteBackup: unsafe extern "system" fn(this: *mut *mut Self, pszmdbackuplocation: ::windows_sys::core::PCWSTR, dwmdversion: u32) -> ::windows_sys::core::HRESULT,
+    pub UnmarshalInterface: unsafe extern "system" fn(this: *mut *mut Self, piadmbwinterface: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetServerGuid: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMSImpExpHelpW {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub EnumeratePathsInFile: unsafe extern "system" fn(this: *mut *mut Self, pszfilename: ::windows_sys::core::PCWSTR, pszkeytype: ::windows_sys::core::PCWSTR, dwmdbuffersize: u32, pszbuffer: ::windows_sys::core::PWSTR, pdwmdrequiredbuffersize: *mut u32) -> ::windows_sys::core::HRESULT,
+}
 pub const LIBID_ASPTypeLibrary: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3648679328, data2: 43100, data3: 4559, data4: [131, 174, 0, 160, 201, 12, 43, 216] };
 pub const LIBID_IISRSTALib: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3908797972, data2: 22671, data3: 4562, data4: [157, 97, 0, 192, 79, 121, 197, 254] };
 pub const LIBID_WAMREGLib: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 696396456, data2: 62210, data3: 4560, data4: [153, 83, 0, 192, 79, 217, 25, 193] };

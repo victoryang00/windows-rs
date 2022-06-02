@@ -43,76 +43,1264 @@ pub const CIM_CHAR16: CIMTYPE_ENUMERATION = 103i32;
 pub const CIM_OBJECT: CIMTYPE_ENUMERATION = 13i32;
 #[doc = "*Required features: `\"Win32_System_Wmi\"`*"]
 pub const CIM_FLAG_ARRAY: CIMTYPE_ENUMERATION = 8192i32;
-pub type IEnumWbemClassObject = *mut ::core::ffi::c_void;
-pub type IMofCompiler = *mut ::core::ffi::c_void;
-pub type ISWbemDateTime = *mut ::core::ffi::c_void;
-pub type ISWbemEventSource = *mut ::core::ffi::c_void;
-pub type ISWbemLastError = *mut ::core::ffi::c_void;
-pub type ISWbemLocator = *mut ::core::ffi::c_void;
-pub type ISWbemMethod = *mut ::core::ffi::c_void;
-pub type ISWbemMethodSet = *mut ::core::ffi::c_void;
-pub type ISWbemNamedValue = *mut ::core::ffi::c_void;
-pub type ISWbemNamedValueSet = *mut ::core::ffi::c_void;
-pub type ISWbemObject = *mut ::core::ffi::c_void;
-pub type ISWbemObjectEx = *mut ::core::ffi::c_void;
-pub type ISWbemObjectPath = *mut ::core::ffi::c_void;
-pub type ISWbemObjectSet = *mut ::core::ffi::c_void;
-pub type ISWbemPrivilege = *mut ::core::ffi::c_void;
-pub type ISWbemPrivilegeSet = *mut ::core::ffi::c_void;
-pub type ISWbemProperty = *mut ::core::ffi::c_void;
-pub type ISWbemPropertySet = *mut ::core::ffi::c_void;
-pub type ISWbemQualifier = *mut ::core::ffi::c_void;
-pub type ISWbemQualifierSet = *mut ::core::ffi::c_void;
-pub type ISWbemRefreshableItem = *mut ::core::ffi::c_void;
-pub type ISWbemRefresher = *mut ::core::ffi::c_void;
-pub type ISWbemSecurity = *mut ::core::ffi::c_void;
-pub type ISWbemServices = *mut ::core::ffi::c_void;
-pub type ISWbemServicesEx = *mut ::core::ffi::c_void;
-pub type ISWbemSink = *mut ::core::ffi::c_void;
-pub type ISWbemSinkEvents = *mut ::core::ffi::c_void;
-pub type IUnsecuredApartment = *mut ::core::ffi::c_void;
-pub type IWMIExtension = *mut ::core::ffi::c_void;
-pub type IWbemAddressResolution = *mut ::core::ffi::c_void;
-pub type IWbemBackupRestore = *mut ::core::ffi::c_void;
-pub type IWbemBackupRestoreEx = *mut ::core::ffi::c_void;
-pub type IWbemCallResult = *mut ::core::ffi::c_void;
-pub type IWbemClassObject = *mut ::core::ffi::c_void;
-pub type IWbemClientConnectionTransport = *mut ::core::ffi::c_void;
-pub type IWbemClientTransport = *mut ::core::ffi::c_void;
-pub type IWbemConfigureRefresher = *mut ::core::ffi::c_void;
-pub type IWbemConnectorLogin = *mut ::core::ffi::c_void;
-pub type IWbemConstructClassObject = *mut ::core::ffi::c_void;
-pub type IWbemContext = *mut ::core::ffi::c_void;
-pub type IWbemDecoupledBasicEventProvider = *mut ::core::ffi::c_void;
-pub type IWbemDecoupledRegistrar = *mut ::core::ffi::c_void;
-pub type IWbemEventConsumerProvider = *mut ::core::ffi::c_void;
-pub type IWbemEventProvider = *mut ::core::ffi::c_void;
-pub type IWbemEventProviderQuerySink = *mut ::core::ffi::c_void;
-pub type IWbemEventProviderSecurity = *mut ::core::ffi::c_void;
-pub type IWbemEventSink = *mut ::core::ffi::c_void;
-pub type IWbemHiPerfEnum = *mut ::core::ffi::c_void;
-pub type IWbemHiPerfProvider = *mut ::core::ffi::c_void;
-pub type IWbemLevel1Login = *mut ::core::ffi::c_void;
-pub type IWbemLocator = *mut ::core::ffi::c_void;
-pub type IWbemObjectAccess = *mut ::core::ffi::c_void;
-pub type IWbemObjectSink = *mut ::core::ffi::c_void;
-pub type IWbemObjectSinkEx = *mut ::core::ffi::c_void;
-pub type IWbemObjectTextSrc = *mut ::core::ffi::c_void;
-pub type IWbemPath = *mut ::core::ffi::c_void;
-pub type IWbemPathKeyList = *mut ::core::ffi::c_void;
-pub type IWbemPropertyProvider = *mut ::core::ffi::c_void;
-pub type IWbemProviderIdentity = *mut ::core::ffi::c_void;
-pub type IWbemProviderInit = *mut ::core::ffi::c_void;
-pub type IWbemProviderInitSink = *mut ::core::ffi::c_void;
-pub type IWbemQualifierSet = *mut ::core::ffi::c_void;
-pub type IWbemQuery = *mut ::core::ffi::c_void;
-pub type IWbemRefresher = *mut ::core::ffi::c_void;
-pub type IWbemServices = *mut ::core::ffi::c_void;
-pub type IWbemShutdown = *mut ::core::ffi::c_void;
-pub type IWbemStatusCodeText = *mut ::core::ffi::c_void;
-pub type IWbemTransport = *mut ::core::ffi::c_void;
-pub type IWbemUnboundObjectSink = *mut ::core::ffi::c_void;
-pub type IWbemUnsecuredApartment = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IEnumWbemClassObject {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, ltimeout: i32, ucount: u32, apobjects: *mut *mut ::core::ffi::c_void, pureturned: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub NextAsync: unsafe extern "system" fn(this: *mut *mut Self, ucount: u32, psink: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Skip: unsafe extern "system" fn(this: *mut *mut Self, ltimeout: i32, ncount: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMofCompiler {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub CompileFile: unsafe extern "system" fn(this: *mut *mut Self, filename: ::windows_sys::core::PCWSTR, serverandnamespace: ::windows_sys::core::PCWSTR, user: ::windows_sys::core::PCWSTR, authority: ::windows_sys::core::PCWSTR, password: ::windows_sys::core::PCWSTR, loptionflags: i32, lclassflags: i32, linstanceflags: i32, pinfo: *mut WBEM_COMPILE_STATUS_INFO) -> ::windows_sys::core::HRESULT,
+    pub CompileBuffer: unsafe extern "system" fn(this: *mut *mut Self, buffsize: i32, pbuffer: *const u8, serverandnamespace: ::windows_sys::core::PCWSTR, user: ::windows_sys::core::PCWSTR, authority: ::windows_sys::core::PCWSTR, password: ::windows_sys::core::PCWSTR, loptionflags: i32, lclassflags: i32, linstanceflags: i32, pinfo: *mut WBEM_COMPILE_STATUS_INFO) -> ::windows_sys::core::HRESULT,
+    pub CreateBMOF: unsafe extern "system" fn(this: *mut *mut Self, textfilename: ::windows_sys::core::PCWSTR, bmoffilename: ::windows_sys::core::PCWSTR, serverandnamespace: ::windows_sys::core::PCWSTR, loptionflags: i32, lclassflags: i32, linstanceflags: i32, pinfo: *mut WBEM_COMPILE_STATUS_INFO) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISWbemDateTime {
+    pub base__: super::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Value: unsafe extern "system" fn(this: *mut *mut Self, strvalue: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Value: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetValue: unsafe extern "system" fn(this: *mut *mut Self, strvalue: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetValue: usize,
+    pub Year: unsafe extern "system" fn(this: *mut *mut Self, iyear: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetYear: unsafe extern "system" fn(this: *mut *mut Self, iyear: i32) -> ::windows_sys::core::HRESULT,
+    pub YearSpecified: unsafe extern "system" fn(this: *mut *mut Self, byearspecified: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetYearSpecified: unsafe extern "system" fn(this: *mut *mut Self, byearspecified: i16) -> ::windows_sys::core::HRESULT,
+    pub Month: unsafe extern "system" fn(this: *mut *mut Self, imonth: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetMonth: unsafe extern "system" fn(this: *mut *mut Self, imonth: i32) -> ::windows_sys::core::HRESULT,
+    pub MonthSpecified: unsafe extern "system" fn(this: *mut *mut Self, bmonthspecified: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetMonthSpecified: unsafe extern "system" fn(this: *mut *mut Self, bmonthspecified: i16) -> ::windows_sys::core::HRESULT,
+    pub Day: unsafe extern "system" fn(this: *mut *mut Self, iday: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetDay: unsafe extern "system" fn(this: *mut *mut Self, iday: i32) -> ::windows_sys::core::HRESULT,
+    pub DaySpecified: unsafe extern "system" fn(this: *mut *mut Self, bdayspecified: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetDaySpecified: unsafe extern "system" fn(this: *mut *mut Self, bdayspecified: i16) -> ::windows_sys::core::HRESULT,
+    pub Hours: unsafe extern "system" fn(this: *mut *mut Self, ihours: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetHours: unsafe extern "system" fn(this: *mut *mut Self, ihours: i32) -> ::windows_sys::core::HRESULT,
+    pub HoursSpecified: unsafe extern "system" fn(this: *mut *mut Self, bhoursspecified: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetHoursSpecified: unsafe extern "system" fn(this: *mut *mut Self, bhoursspecified: i16) -> ::windows_sys::core::HRESULT,
+    pub Minutes: unsafe extern "system" fn(this: *mut *mut Self, iminutes: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetMinutes: unsafe extern "system" fn(this: *mut *mut Self, iminutes: i32) -> ::windows_sys::core::HRESULT,
+    pub MinutesSpecified: unsafe extern "system" fn(this: *mut *mut Self, bminutesspecified: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetMinutesSpecified: unsafe extern "system" fn(this: *mut *mut Self, bminutesspecified: i16) -> ::windows_sys::core::HRESULT,
+    pub Seconds: unsafe extern "system" fn(this: *mut *mut Self, iseconds: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetSeconds: unsafe extern "system" fn(this: *mut *mut Self, iseconds: i32) -> ::windows_sys::core::HRESULT,
+    pub SecondsSpecified: unsafe extern "system" fn(this: *mut *mut Self, bsecondsspecified: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetSecondsSpecified: unsafe extern "system" fn(this: *mut *mut Self, bsecondsspecified: i16) -> ::windows_sys::core::HRESULT,
+    pub Microseconds: unsafe extern "system" fn(this: *mut *mut Self, imicroseconds: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetMicroseconds: unsafe extern "system" fn(this: *mut *mut Self, imicroseconds: i32) -> ::windows_sys::core::HRESULT,
+    pub MicrosecondsSpecified: unsafe extern "system" fn(this: *mut *mut Self, bmicrosecondsspecified: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetMicrosecondsSpecified: unsafe extern "system" fn(this: *mut *mut Self, bmicrosecondsspecified: i16) -> ::windows_sys::core::HRESULT,
+    pub UTC: unsafe extern "system" fn(this: *mut *mut Self, iutc: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetUTC: unsafe extern "system" fn(this: *mut *mut Self, iutc: i32) -> ::windows_sys::core::HRESULT,
+    pub UTCSpecified: unsafe extern "system" fn(this: *mut *mut Self, butcspecified: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetUTCSpecified: unsafe extern "system" fn(this: *mut *mut Self, butcspecified: i16) -> ::windows_sys::core::HRESULT,
+    pub IsInterval: unsafe extern "system" fn(this: *mut *mut Self, bisinterval: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetIsInterval: unsafe extern "system" fn(this: *mut *mut Self, bisinterval: i16) -> ::windows_sys::core::HRESULT,
+    pub GetVarDate: unsafe extern "system" fn(this: *mut *mut Self, bislocal: i16, dvardate: *mut f64) -> ::windows_sys::core::HRESULT,
+    pub SetVarDate: unsafe extern "system" fn(this: *mut *mut Self, dvardate: f64, bislocal: i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetFileTime: unsafe extern "system" fn(this: *mut *mut Self, bislocal: i16, strfiletime: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetFileTime: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetFileTime: unsafe extern "system" fn(this: *mut *mut Self, strfiletime: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bislocal: i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetFileTime: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISWbemEventSource {
+    pub base__: super::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub NextEvent: unsafe extern "system" fn(this: *mut *mut Self, itimeoutms: i32, objwbemobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    NextEvent: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Security_: unsafe extern "system" fn(this: *mut *mut Self, objwbemsecurity: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Security_: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISWbemLastError {
+    pub base__: ISWbemObject,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISWbemLocator {
+    pub base__: super::Com::IDispatch,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub ConnectServer: unsafe extern "system" fn(this: *mut *mut Self, strserver: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, strnamespace: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, struser: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, strpassword: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, strlocale: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, strauthority: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, isecurityflags: i32, objwbemnamedvalueset: *mut ::core::ffi::c_void, objwbemservices: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    ConnectServer: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Security_: unsafe extern "system" fn(this: *mut *mut Self, objwbemsecurity: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Security_: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISWbemMethod {
+    pub base__: super::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Name: unsafe extern "system" fn(this: *mut *mut Self, strname: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Name: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Origin: unsafe extern "system" fn(this: *mut *mut Self, strorigin: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Origin: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub InParameters: unsafe extern "system" fn(this: *mut *mut Self, objwbeminparameters: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    InParameters: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub OutParameters: unsafe extern "system" fn(this: *mut *mut Self, objwbemoutparameters: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    OutParameters: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Qualifiers_: unsafe extern "system" fn(this: *mut *mut Self, objwbemqualifierset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Qualifiers_: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISWbemMethodSet {
+    pub base__: super::Com::IDispatch,
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, punk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub Item: unsafe extern "system" fn(this: *mut *mut Self, strname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, iflags: i32, objwbemmethod: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    Item: usize,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, icount: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISWbemNamedValue {
+    pub base__: super::Com::IDispatch,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Value: unsafe extern "system" fn(this: *mut *mut Self, varvalue: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Value: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetValue: unsafe extern "system" fn(this: *mut *mut Self, varvalue: *const super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetValue: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Name: unsafe extern "system" fn(this: *mut *mut Self, strname: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Name: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISWbemNamedValueSet {
+    pub base__: super::Com::IDispatch,
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, punk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub Item: unsafe extern "system" fn(this: *mut *mut Self, strname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, iflags: i32, objwbemnamedvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    Item: usize,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, icount: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Add: unsafe extern "system" fn(this: *mut *mut Self, strname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, varvalue: *const super::Com::VARIANT, iflags: i32, objwbemnamedvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Add: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Remove: unsafe extern "system" fn(this: *mut *mut Self, strname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, iflags: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Remove: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, objwbemnamedvalueset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Clone: usize,
+    pub DeleteAll: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISWbemObject {
+    pub base__: super::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Put_: unsafe extern "system" fn(this: *mut *mut Self, iflags: i32, objwbemnamedvalueset: *mut ::core::ffi::c_void, objwbemobjectpath: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Put_: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub PutAsync_: unsafe extern "system" fn(this: *mut *mut Self, objwbemsink: *mut ::core::ffi::c_void, iflags: i32, objwbemnamedvalueset: *mut ::core::ffi::c_void, objwbemasynccontext: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    PutAsync_: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Delete_: unsafe extern "system" fn(this: *mut *mut Self, iflags: i32, objwbemnamedvalueset: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Delete_: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub DeleteAsync_: unsafe extern "system" fn(this: *mut *mut Self, objwbemsink: *mut ::core::ffi::c_void, iflags: i32, objwbemnamedvalueset: *mut ::core::ffi::c_void, objwbemasynccontext: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    DeleteAsync_: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Instances_: unsafe extern "system" fn(this: *mut *mut Self, iflags: i32, objwbemnamedvalueset: *mut ::core::ffi::c_void, objwbemobjectset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Instances_: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub InstancesAsync_: unsafe extern "system" fn(this: *mut *mut Self, objwbemsink: *mut ::core::ffi::c_void, iflags: i32, objwbemnamedvalueset: *mut ::core::ffi::c_void, objwbemasynccontext: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    InstancesAsync_: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Subclasses_: unsafe extern "system" fn(this: *mut *mut Self, iflags: i32, objwbemnamedvalueset: *mut ::core::ffi::c_void, objwbemobjectset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Subclasses_: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SubclassesAsync_: unsafe extern "system" fn(this: *mut *mut Self, objwbemsink: *mut ::core::ffi::c_void, iflags: i32, objwbemnamedvalueset: *mut ::core::ffi::c_void, objwbemasynccontext: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SubclassesAsync_: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub Associators_: unsafe extern "system" fn(this: *mut *mut Self, strassocclass: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, strresultclass: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, strresultrole: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, strrole: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bclassesonly: i16, bschemaonly: i16, strrequiredassocqualifier: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, strrequiredqualifier: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, iflags: i32, objwbemnamedvalueset: *mut ::core::ffi::c_void, objwbemobjectset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    Associators_: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub AssociatorsAsync_: unsafe extern "system" fn(this: *mut *mut Self, objwbemsink: *mut ::core::ffi::c_void, strassocclass: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, strresultclass: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, strresultrole: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, strrole: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bclassesonly: i16, bschemaonly: i16, strrequiredassocqualifier: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, strrequiredqualifier: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, iflags: i32, objwbemnamedvalueset: *mut ::core::ffi::c_void, objwbemasynccontext: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    AssociatorsAsync_: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub References_: unsafe extern "system" fn(this: *mut *mut Self, strresultclass: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, strrole: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bclassesonly: i16, bschemaonly: i16, strrequiredqualifier: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, iflags: i32, objwbemnamedvalueset: *mut ::core::ffi::c_void, objwbemobjectset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    References_: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub ReferencesAsync_: unsafe extern "system" fn(this: *mut *mut Self, objwbemsink: *mut ::core::ffi::c_void, strresultclass: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, strrole: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bclassesonly: i16, bschemaonly: i16, strrequiredqualifier: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, iflags: i32, objwbemnamedvalueset: *mut ::core::ffi::c_void, objwbemasynccontext: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    ReferencesAsync_: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub ExecMethod_: unsafe extern "system" fn(this: *mut *mut Self, strmethodname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, objwbeminparameters: *mut ::core::ffi::c_void, iflags: i32, objwbemnamedvalueset: *mut ::core::ffi::c_void, objwbemoutparameters: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    ExecMethod_: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub ExecMethodAsync_: unsafe extern "system" fn(this: *mut *mut Self, objwbemsink: *mut ::core::ffi::c_void, strmethodname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, objwbeminparameters: *mut ::core::ffi::c_void, iflags: i32, objwbemnamedvalueset: *mut ::core::ffi::c_void, objwbemasynccontext: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    ExecMethodAsync_: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Clone_: unsafe extern "system" fn(this: *mut *mut Self, objwbemobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Clone_: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetObjectText_: unsafe extern "system" fn(this: *mut *mut Self, iflags: i32, strobjecttext: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetObjectText_: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SpawnDerivedClass_: unsafe extern "system" fn(this: *mut *mut Self, iflags: i32, objwbemobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SpawnDerivedClass_: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SpawnInstance_: unsafe extern "system" fn(this: *mut *mut Self, iflags: i32, objwbemobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SpawnInstance_: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CompareTo_: unsafe extern "system" fn(this: *mut *mut Self, objwbemobject: *mut ::core::ffi::c_void, iflags: i32, bresult: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CompareTo_: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Qualifiers_: unsafe extern "system" fn(this: *mut *mut Self, objwbemqualifierset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Qualifiers_: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Properties_: unsafe extern "system" fn(this: *mut *mut Self, objwbempropertyset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Properties_: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Methods_: unsafe extern "system" fn(this: *mut *mut Self, objwbemmethodset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Methods_: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Derivation_: unsafe extern "system" fn(this: *mut *mut Self, strclassnamearray: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Derivation_: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Path_: unsafe extern "system" fn(this: *mut *mut Self, objwbemobjectpath: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Path_: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Security_: unsafe extern "system" fn(this: *mut *mut Self, objwbemsecurity: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Security_: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISWbemObjectEx {
+    pub base__: ISWbemObject,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Refresh_: unsafe extern "system" fn(this: *mut *mut Self, iflags: i32, objwbemnamedvalueset: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Refresh_: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SystemProperties_: unsafe extern "system" fn(this: *mut *mut Self, objwbempropertyset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SystemProperties_: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub GetText_: unsafe extern "system" fn(this: *mut *mut Self, iobjecttextformat: WbemObjectTextFormatEnum, iflags: i32, objwbemnamedvalueset: *mut ::core::ffi::c_void, bstext: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    GetText_: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub SetFromText_: unsafe extern "system" fn(this: *mut *mut Self, bstext: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, iobjecttextformat: WbemObjectTextFormatEnum, iflags: i32, objwbemnamedvalueset: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    SetFromText_: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISWbemObjectPath {
+    pub base__: super::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Path: unsafe extern "system" fn(this: *mut *mut Self, strpath: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Path: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetPath: unsafe extern "system" fn(this: *mut *mut Self, strpath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetPath: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RelPath: unsafe extern "system" fn(this: *mut *mut Self, strrelpath: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RelPath: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetRelPath: unsafe extern "system" fn(this: *mut *mut Self, strrelpath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetRelPath: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Server: unsafe extern "system" fn(this: *mut *mut Self, strserver: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Server: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetServer: unsafe extern "system" fn(this: *mut *mut Self, strserver: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetServer: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Namespace: unsafe extern "system" fn(this: *mut *mut Self, strnamespace: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Namespace: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetNamespace: unsafe extern "system" fn(this: *mut *mut Self, strnamespace: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetNamespace: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ParentNamespace: unsafe extern "system" fn(this: *mut *mut Self, strparentnamespace: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ParentNamespace: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DisplayName: unsafe extern "system" fn(this: *mut *mut Self, strdisplayname: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DisplayName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetDisplayName: unsafe extern "system" fn(this: *mut *mut Self, strdisplayname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetDisplayName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Class: unsafe extern "system" fn(this: *mut *mut Self, strclass: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Class: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetClass: unsafe extern "system" fn(this: *mut *mut Self, strclass: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetClass: usize,
+    pub IsClass: unsafe extern "system" fn(this: *mut *mut Self, bisclass: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetAsClass: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub IsSingleton: unsafe extern "system" fn(this: *mut *mut Self, bissingleton: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetAsSingleton: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Keys: unsafe extern "system" fn(this: *mut *mut Self, objwbemnamedvalueset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Keys: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Security_: unsafe extern "system" fn(this: *mut *mut Self, objwbemsecurity: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Security_: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Locale: unsafe extern "system" fn(this: *mut *mut Self, strlocale: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Locale: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetLocale: unsafe extern "system" fn(this: *mut *mut Self, strlocale: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetLocale: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Authority: unsafe extern "system" fn(this: *mut *mut Self, strauthority: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Authority: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetAuthority: unsafe extern "system" fn(this: *mut *mut Self, strauthority: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetAuthority: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISWbemObjectSet {
+    pub base__: super::Com::IDispatch,
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, punk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub Item: unsafe extern "system" fn(this: *mut *mut Self, strobjectpath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, iflags: i32, objwbemobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    Item: usize,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, icount: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Security_: unsafe extern "system" fn(this: *mut *mut Self, objwbemsecurity: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Security_: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub ItemIndex: unsafe extern "system" fn(this: *mut *mut Self, lindex: i32, objwbemobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    ItemIndex: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISWbemPrivilege {
+    pub base__: super::Com::IDispatch,
+    pub IsEnabled: unsafe extern "system" fn(this: *mut *mut Self, bisenabled: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetIsEnabled: unsafe extern "system" fn(this: *mut *mut Self, bisenabled: i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Name: unsafe extern "system" fn(this: *mut *mut Self, strdisplayname: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Name: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DisplayName: unsafe extern "system" fn(this: *mut *mut Self, strdisplayname: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DisplayName: usize,
+    pub Identifier: unsafe extern "system" fn(this: *mut *mut Self, iprivilege: *mut WbemPrivilegeEnum) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISWbemPrivilegeSet {
+    pub base__: super::Com::IDispatch,
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, punk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Item: unsafe extern "system" fn(this: *mut *mut Self, iprivilege: WbemPrivilegeEnum, objwbemprivilege: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Item: usize,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, icount: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Add: unsafe extern "system" fn(this: *mut *mut Self, iprivilege: WbemPrivilegeEnum, bisenabled: i16, objwbemprivilege: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Add: usize,
+    pub Remove: unsafe extern "system" fn(this: *mut *mut Self, iprivilege: WbemPrivilegeEnum) -> ::windows_sys::core::HRESULT,
+    pub DeleteAll: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub AddAsString: unsafe extern "system" fn(this: *mut *mut Self, strprivilege: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bisenabled: i16, objwbemprivilege: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    AddAsString: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISWbemProperty {
+    pub base__: super::Com::IDispatch,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Value: unsafe extern "system" fn(this: *mut *mut Self, varvalue: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Value: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetValue: unsafe extern "system" fn(this: *mut *mut Self, varvalue: *const super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetValue: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Name: unsafe extern "system" fn(this: *mut *mut Self, strname: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Name: usize,
+    pub IsLocal: unsafe extern "system" fn(this: *mut *mut Self, bislocal: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Origin: unsafe extern "system" fn(this: *mut *mut Self, strorigin: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Origin: usize,
+    pub CIMType: unsafe extern "system" fn(this: *mut *mut Self, icimtype: *mut WbemCimtypeEnum) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Qualifiers_: unsafe extern "system" fn(this: *mut *mut Self, objwbemqualifierset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Qualifiers_: usize,
+    pub IsArray: unsafe extern "system" fn(this: *mut *mut Self, bisarray: *mut i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISWbemPropertySet {
+    pub base__: super::Com::IDispatch,
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, punk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub Item: unsafe extern "system" fn(this: *mut *mut Self, strname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, iflags: i32, objwbemproperty: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    Item: usize,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, icount: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub Add: unsafe extern "system" fn(this: *mut *mut Self, strname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, icimtype: WbemCimtypeEnum, bisarray: i16, iflags: i32, objwbemproperty: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    Add: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Remove: unsafe extern "system" fn(this: *mut *mut Self, strname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, iflags: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Remove: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISWbemQualifier {
+    pub base__: super::Com::IDispatch,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Value: unsafe extern "system" fn(this: *mut *mut Self, varvalue: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Value: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetValue: unsafe extern "system" fn(this: *mut *mut Self, varvalue: *const super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetValue: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Name: unsafe extern "system" fn(this: *mut *mut Self, strname: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Name: usize,
+    pub IsLocal: unsafe extern "system" fn(this: *mut *mut Self, bislocal: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub PropagatesToSubclass: unsafe extern "system" fn(this: *mut *mut Self, bpropagatestosubclass: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetPropagatesToSubclass: unsafe extern "system" fn(this: *mut *mut Self, bpropagatestosubclass: i16) -> ::windows_sys::core::HRESULT,
+    pub PropagatesToInstance: unsafe extern "system" fn(this: *mut *mut Self, bpropagatestoinstance: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetPropagatesToInstance: unsafe extern "system" fn(this: *mut *mut Self, bpropagatestoinstance: i16) -> ::windows_sys::core::HRESULT,
+    pub IsOverridable: unsafe extern "system" fn(this: *mut *mut Self, bisoverridable: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetIsOverridable: unsafe extern "system" fn(this: *mut *mut Self, bisoverridable: i16) -> ::windows_sys::core::HRESULT,
+    pub IsAmended: unsafe extern "system" fn(this: *mut *mut Self, bisamended: *mut i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISWbemQualifierSet {
+    pub base__: super::Com::IDispatch,
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, punk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub Item: unsafe extern "system" fn(this: *mut *mut Self, name: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, iflags: i32, objwbemqualifier: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    Item: usize,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, icount: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Add: unsafe extern "system" fn(this: *mut *mut Self, strname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, varval: *const super::Com::VARIANT, bpropagatestosubclass: i16, bpropagatestoinstance: i16, bisoverridable: i16, iflags: i32, objwbemqualifier: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Add: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Remove: unsafe extern "system" fn(this: *mut *mut Self, strname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, iflags: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Remove: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISWbemRefreshableItem {
+    pub base__: super::Com::IDispatch,
+    pub Index: unsafe extern "system" fn(this: *mut *mut Self, iindex: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Refresher: unsafe extern "system" fn(this: *mut *mut Self, objwbemrefresher: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Refresher: usize,
+    pub IsSet: unsafe extern "system" fn(this: *mut *mut Self, bisset: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Object: unsafe extern "system" fn(this: *mut *mut Self, objwbemobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Object: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub ObjectSet: unsafe extern "system" fn(this: *mut *mut Self, objwbemobjectset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    ObjectSet: usize,
+    pub Remove: unsafe extern "system" fn(this: *mut *mut Self, iflags: i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISWbemRefresher {
+    pub base__: super::Com::IDispatch,
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, punk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Item: unsafe extern "system" fn(this: *mut *mut Self, iindex: i32, objwbemrefreshableitem: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Item: usize,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, icount: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub Add: unsafe extern "system" fn(this: *mut *mut Self, objwbemservices: *mut ::core::ffi::c_void, bsinstancepath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, iflags: i32, objwbemnamedvalueset: *mut ::core::ffi::c_void, objwbemrefreshableitem: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    Add: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub AddEnum: unsafe extern "system" fn(this: *mut *mut Self, objwbemservices: *mut ::core::ffi::c_void, bsclassname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, iflags: i32, objwbemnamedvalueset: *mut ::core::ffi::c_void, objwbemrefreshableitem: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    AddEnum: usize,
+    pub Remove: unsafe extern "system" fn(this: *mut *mut Self, iindex: i32, iflags: i32) -> ::windows_sys::core::HRESULT,
+    pub Refresh: unsafe extern "system" fn(this: *mut *mut Self, iflags: i32) -> ::windows_sys::core::HRESULT,
+    pub AutoReconnect: unsafe extern "system" fn(this: *mut *mut Self, bcount: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetAutoReconnect: unsafe extern "system" fn(this: *mut *mut Self, bcount: i16) -> ::windows_sys::core::HRESULT,
+    pub DeleteAll: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISWbemSecurity {
+    pub base__: super::Com::IDispatch,
+    pub ImpersonationLevel: unsafe extern "system" fn(this: *mut *mut Self, iimpersonationlevel: *mut WbemImpersonationLevelEnum) -> ::windows_sys::core::HRESULT,
+    pub SetImpersonationLevel: unsafe extern "system" fn(this: *mut *mut Self, iimpersonationlevel: WbemImpersonationLevelEnum) -> ::windows_sys::core::HRESULT,
+    pub AuthenticationLevel: unsafe extern "system" fn(this: *mut *mut Self, iauthenticationlevel: *mut WbemAuthenticationLevelEnum) -> ::windows_sys::core::HRESULT,
+    pub SetAuthenticationLevel: unsafe extern "system" fn(this: *mut *mut Self, iauthenticationlevel: WbemAuthenticationLevelEnum) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Privileges: unsafe extern "system" fn(this: *mut *mut Self, objwbemprivilegeset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Privileges: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISWbemServices {
+    pub base__: super::Com::IDispatch,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub Get: unsafe extern "system" fn(this: *mut *mut Self, strobjectpath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, iflags: i32, objwbemnamedvalueset: *mut ::core::ffi::c_void, objwbemobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    Get: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub GetAsync: unsafe extern "system" fn(this: *mut *mut Self, objwbemsink: *mut ::core::ffi::c_void, strobjectpath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, iflags: i32, objwbemnamedvalueset: *mut ::core::ffi::c_void, objwbemasynccontext: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    GetAsync: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub Delete: unsafe extern "system" fn(this: *mut *mut Self, strobjectpath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, iflags: i32, objwbemnamedvalueset: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    Delete: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub DeleteAsync: unsafe extern "system" fn(this: *mut *mut Self, objwbemsink: *mut ::core::ffi::c_void, strobjectpath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, iflags: i32, objwbemnamedvalueset: *mut ::core::ffi::c_void, objwbemasynccontext: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    DeleteAsync: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub InstancesOf: unsafe extern "system" fn(this: *mut *mut Self, strclass: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, iflags: i32, objwbemnamedvalueset: *mut ::core::ffi::c_void, objwbemobjectset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    InstancesOf: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub InstancesOfAsync: unsafe extern "system" fn(this: *mut *mut Self, objwbemsink: *mut ::core::ffi::c_void, strclass: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, iflags: i32, objwbemnamedvalueset: *mut ::core::ffi::c_void, objwbemasynccontext: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    InstancesOfAsync: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub SubclassesOf: unsafe extern "system" fn(this: *mut *mut Self, strsuperclass: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, iflags: i32, objwbemnamedvalueset: *mut ::core::ffi::c_void, objwbemobjectset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    SubclassesOf: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub SubclassesOfAsync: unsafe extern "system" fn(this: *mut *mut Self, objwbemsink: *mut ::core::ffi::c_void, strsuperclass: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, iflags: i32, objwbemnamedvalueset: *mut ::core::ffi::c_void, objwbemasynccontext: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    SubclassesOfAsync: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub ExecQuery: unsafe extern "system" fn(this: *mut *mut Self, strquery: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, strquerylanguage: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, iflags: i32, objwbemnamedvalueset: *mut ::core::ffi::c_void, objwbemobjectset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    ExecQuery: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub ExecQueryAsync: unsafe extern "system" fn(this: *mut *mut Self, objwbemsink: *mut ::core::ffi::c_void, strquery: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, strquerylanguage: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, lflags: i32, objwbemnamedvalueset: *mut ::core::ffi::c_void, objwbemasynccontext: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    ExecQueryAsync: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub AssociatorsOf: unsafe extern "system" fn(this: *mut *mut Self, strobjectpath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, strassocclass: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, strresultclass: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, strresultrole: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, strrole: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bclassesonly: i16, bschemaonly: i16, strrequiredassocqualifier: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, strrequiredqualifier: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, iflags: i32, objwbemnamedvalueset: *mut ::core::ffi::c_void, objwbemobjectset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    AssociatorsOf: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub AssociatorsOfAsync: unsafe extern "system" fn(
+        this: *mut *mut Self,
+        objwbemsink: *mut ::core::ffi::c_void,
+        strobjectpath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>,
+        strassocclass: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>,
+        strresultclass: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>,
+        strresultrole: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>,
+        strrole: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>,
+        bclassesonly: i16,
+        bschemaonly: i16,
+        strrequiredassocqualifier: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>,
+        strrequiredqualifier: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>,
+        iflags: i32,
+        objwbemnamedvalueset: *mut ::core::ffi::c_void,
+        objwbemasynccontext: *mut ::core::ffi::c_void,
+    ) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    AssociatorsOfAsync: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub ReferencesTo: unsafe extern "system" fn(this: *mut *mut Self, strobjectpath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, strresultclass: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, strrole: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bclassesonly: i16, bschemaonly: i16, strrequiredqualifier: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, iflags: i32, objwbemnamedvalueset: *mut ::core::ffi::c_void, objwbemobjectset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    ReferencesTo: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub ReferencesToAsync: unsafe extern "system" fn(this: *mut *mut Self, objwbemsink: *mut ::core::ffi::c_void, strobjectpath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, strresultclass: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, strrole: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bclassesonly: i16, bschemaonly: i16, strrequiredqualifier: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, iflags: i32, objwbemnamedvalueset: *mut ::core::ffi::c_void, objwbemasynccontext: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    ReferencesToAsync: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub ExecNotificationQuery: unsafe extern "system" fn(this: *mut *mut Self, strquery: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, strquerylanguage: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, iflags: i32, objwbemnamedvalueset: *mut ::core::ffi::c_void, objwbemeventsource: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    ExecNotificationQuery: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub ExecNotificationQueryAsync: unsafe extern "system" fn(this: *mut *mut Self, objwbemsink: *mut ::core::ffi::c_void, strquery: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, strquerylanguage: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, iflags: i32, objwbemnamedvalueset: *mut ::core::ffi::c_void, objwbemasynccontext: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    ExecNotificationQueryAsync: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub ExecMethod: unsafe extern "system" fn(this: *mut *mut Self, strobjectpath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, strmethodname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, objwbeminparameters: *mut ::core::ffi::c_void, iflags: i32, objwbemnamedvalueset: *mut ::core::ffi::c_void, objwbemoutparameters: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    ExecMethod: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub ExecMethodAsync: unsafe extern "system" fn(this: *mut *mut Self, objwbemsink: *mut ::core::ffi::c_void, strobjectpath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, strmethodname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, objwbeminparameters: *mut ::core::ffi::c_void, iflags: i32, objwbemnamedvalueset: *mut ::core::ffi::c_void, objwbemasynccontext: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    ExecMethodAsync: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Security_: unsafe extern "system" fn(this: *mut *mut Self, objwbemsecurity: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Security_: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISWbemServicesEx {
+    pub base__: ISWbemServices,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Put: unsafe extern "system" fn(this: *mut *mut Self, objwbemobject: *mut ::core::ffi::c_void, iflags: i32, objwbemnamedvalueset: *mut ::core::ffi::c_void, objwbemobjectpath: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Put: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub PutAsync: unsafe extern "system" fn(this: *mut *mut Self, objwbemsink: *mut ::core::ffi::c_void, objwbemobject: *mut ::core::ffi::c_void, iflags: i32, objwbemnamedvalueset: *mut ::core::ffi::c_void, objwbemasynccontext: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    PutAsync: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISWbemSink {
+    pub base__: super::Com::IDispatch,
+    pub Cancel: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISWbemSinkEvents {
+    pub base__: super::Com::IDispatch,
+}
+#[repr(C)]
+pub struct IUnsecuredApartment {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub CreateObjectStub: unsafe extern "system" fn(this: *mut *mut Self, pobject: *mut ::core::ffi::c_void, ppstub: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IWMIExtension {
+    pub base__: super::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub WMIObjectPath: unsafe extern "system" fn(this: *mut *mut Self, strwmiobjectpath: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    WMIObjectPath: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetWMIObject: unsafe extern "system" fn(this: *mut *mut Self, objwmiobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetWMIObject: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetWMIServices: unsafe extern "system" fn(this: *mut *mut Self, objwmiservices: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetWMIServices: usize,
+}
+#[repr(C)]
+pub struct IWbemAddressResolution {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Resolve: unsafe extern "system" fn(this: *mut *mut Self, wsznamespacepath: ::windows_sys::core::PCWSTR, wszaddresstype: ::windows_sys::core::PWSTR, pdwaddresslength: *mut u32, pabbinaryaddress: *mut *mut u8) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWbemBackupRestore {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Backup: unsafe extern "system" fn(this: *mut *mut Self, strbackuptofile: ::windows_sys::core::PCWSTR, lflags: i32) -> ::windows_sys::core::HRESULT,
+    pub Restore: unsafe extern "system" fn(this: *mut *mut Self, strrestorefromfile: ::windows_sys::core::PCWSTR, lflags: i32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWbemBackupRestoreEx {
+    pub base__: IWbemBackupRestore,
+    pub Pause: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Resume: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWbemCallResult {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetResultObject: unsafe extern "system" fn(this: *mut *mut Self, ltimeout: i32, ppresultobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetResultString: unsafe extern "system" fn(this: *mut *mut Self, ltimeout: i32, pstrresultstring: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetResultString: usize,
+    pub GetResultServices: unsafe extern "system" fn(this: *mut *mut Self, ltimeout: i32, ppservices: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetCallStatus: unsafe extern "system" fn(this: *mut *mut Self, ltimeout: i32, plstatus: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWbemClassObject {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetQualifierSet: unsafe extern "system" fn(this: *mut *mut Self, ppqualset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Get: unsafe extern "system" fn(this: *mut *mut Self, wszname: ::windows_sys::core::PCWSTR, lflags: i32, pval: *mut super::Com::VARIANT, ptype: *mut i32, plflavor: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Get: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Put: unsafe extern "system" fn(this: *mut *mut Self, wszname: ::windows_sys::core::PCWSTR, lflags: i32, pval: *const super::Com::VARIANT, r#type: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Put: usize,
+    pub Delete: unsafe extern "system" fn(this: *mut *mut Self, wszname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetNames: unsafe extern "system" fn(this: *mut *mut Self, wszqualifiername: ::windows_sys::core::PCWSTR, lflags: i32, pqualifierval: *const super::Com::VARIANT, pnames: *mut *mut super::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetNames: usize,
+    pub BeginEnumeration: unsafe extern "system" fn(this: *mut *mut Self, lenumflags: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, lflags: i32, strname: *mut super::super::Foundation::BSTR, pval: *mut super::Com::VARIANT, ptype: *mut i32, plflavor: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Next: usize,
+    pub EndEnumeration: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetPropertyQualifierSet: unsafe extern "system" fn(this: *mut *mut Self, wszproperty: ::windows_sys::core::PCWSTR, ppqualset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppcopy: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetObjectText: unsafe extern "system" fn(this: *mut *mut Self, lflags: i32, pstrobjecttext: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetObjectText: usize,
+    pub SpawnDerivedClass: unsafe extern "system" fn(this: *mut *mut Self, lflags: i32, ppnewclass: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SpawnInstance: unsafe extern "system" fn(this: *mut *mut Self, lflags: i32, ppnewinstance: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CompareTo: unsafe extern "system" fn(this: *mut *mut Self, lflags: i32, pcompareto: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetPropertyOrigin: unsafe extern "system" fn(this: *mut *mut Self, wszname: ::windows_sys::core::PCWSTR, pstrclassname: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetPropertyOrigin: usize,
+    pub InheritsFrom: unsafe extern "system" fn(this: *mut *mut Self, strancestor: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetMethod: unsafe extern "system" fn(this: *mut *mut Self, wszname: ::windows_sys::core::PCWSTR, lflags: i32, ppinsignature: *mut *mut ::core::ffi::c_void, ppoutsignature: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub PutMethod: unsafe extern "system" fn(this: *mut *mut Self, wszname: ::windows_sys::core::PCWSTR, lflags: i32, pinsignature: *mut ::core::ffi::c_void, poutsignature: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub DeleteMethod: unsafe extern "system" fn(this: *mut *mut Self, wszname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub BeginMethodEnumeration: unsafe extern "system" fn(this: *mut *mut Self, lenumflags: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub NextMethod: unsafe extern "system" fn(this: *mut *mut Self, lflags: i32, pstrname: *mut super::super::Foundation::BSTR, ppinsignature: *mut *mut ::core::ffi::c_void, ppoutsignature: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    NextMethod: usize,
+    pub EndMethodEnumeration: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetMethodQualifierSet: unsafe extern "system" fn(this: *mut *mut Self, wszmethod: ::windows_sys::core::PCWSTR, ppqualset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetMethodOrigin: unsafe extern "system" fn(this: *mut *mut Self, wszmethodname: ::windows_sys::core::PCWSTR, pstrclassname: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetMethodOrigin: usize,
+}
+#[repr(C)]
+pub struct IWbemClientConnectionTransport {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Open: unsafe extern "system" fn(this: *mut *mut Self, straddresstype: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, dwbinaryaddresslength: u32, abbinaryaddress: *const u8, strobject: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, struser: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, strpassword: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, strlocale: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, lflags: i32, pctx: *mut ::core::ffi::c_void, riid: *const ::windows_sys::core::GUID, pinterface: *mut *mut ::core::ffi::c_void, pcallres: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Open: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OpenAsync: unsafe extern "system" fn(this: *mut *mut Self, straddresstype: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, dwbinaryaddresslength: u32, abbinaryaddress: *const u8, strobject: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, struser: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, strpassword: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, strlocale: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, lflags: i32, pctx: *mut ::core::ffi::c_void, riid: *const ::windows_sys::core::GUID, presponsehandler: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OpenAsync: usize,
+    pub Cancel: unsafe extern "system" fn(this: *mut *mut Self, lflags: i32, phandler: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWbemClientTransport {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ConnectServer: unsafe extern "system" fn(this: *mut *mut Self, straddresstype: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, dwbinaryaddresslength: u32, abbinaryaddress: *const u8, strnetworkresource: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, struser: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, strpassword: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, strlocale: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, lsecurityflags: i32, strauthority: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pctx: *mut ::core::ffi::c_void, ppnamespace: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ConnectServer: usize,
+}
+#[repr(C)]
+pub struct IWbemConfigureRefresher {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub AddObjectByPath: unsafe extern "system" fn(this: *mut *mut Self, pnamespace: *mut ::core::ffi::c_void, wszpath: ::windows_sys::core::PCWSTR, lflags: i32, pcontext: *mut ::core::ffi::c_void, pprefreshable: *mut *mut ::core::ffi::c_void, plid: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub AddObjectByTemplate: unsafe extern "system" fn(this: *mut *mut Self, pnamespace: *mut ::core::ffi::c_void, ptemplate: *mut ::core::ffi::c_void, lflags: i32, pcontext: *mut ::core::ffi::c_void, pprefreshable: *mut *mut ::core::ffi::c_void, plid: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub AddRefresher: unsafe extern "system" fn(this: *mut *mut Self, prefresher: *mut ::core::ffi::c_void, lflags: i32, plid: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub Remove: unsafe extern "system" fn(this: *mut *mut Self, lid: i32, lflags: i32) -> ::windows_sys::core::HRESULT,
+    pub AddEnum: unsafe extern "system" fn(this: *mut *mut Self, pnamespace: *mut ::core::ffi::c_void, wszclassname: ::windows_sys::core::PCWSTR, lflags: i32, pcontext: *mut ::core::ffi::c_void, ppenum: *mut *mut ::core::ffi::c_void, plid: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWbemConnectorLogin {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub ConnectorLogin: unsafe extern "system" fn(this: *mut *mut Self, wsznetworkresource: ::windows_sys::core::PCWSTR, wszpreferredlocale: ::windows_sys::core::PCWSTR, lflags: i32, pctx: *mut ::core::ffi::c_void, riid: *const ::windows_sys::core::GUID, pinterface: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWbemConstructClassObject {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetInheritanceChain: unsafe extern "system" fn(this: *mut *mut Self, lnumantecedents: i32, awszantecedents: *const ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetPropertyOrigin: unsafe extern "system" fn(this: *mut *mut Self, wszpropertyname: ::windows_sys::core::PCWSTR, loriginindex: i32) -> ::windows_sys::core::HRESULT,
+    pub SetMethodOrigin: unsafe extern "system" fn(this: *mut *mut Self, wszmethodname: ::windows_sys::core::PCWSTR, loriginindex: i32) -> ::windows_sys::core::HRESULT,
+    pub SetServerNamespace: unsafe extern "system" fn(this: *mut *mut Self, wszserver: ::windows_sys::core::PCWSTR, wsznamespace: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWbemContext {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppnewcopy: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetNames: unsafe extern "system" fn(this: *mut *mut Self, lflags: i32, pnames: *mut *mut super::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetNames: usize,
+    pub BeginEnumeration: unsafe extern "system" fn(this: *mut *mut Self, lflags: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, lflags: i32, pstrname: *mut super::super::Foundation::BSTR, pvalue: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Next: usize,
+    pub EndEnumeration: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetValue: unsafe extern "system" fn(this: *mut *mut Self, wszname: ::windows_sys::core::PCWSTR, lflags: i32, pvalue: *const super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetValue: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetValue: unsafe extern "system" fn(this: *mut *mut Self, wszname: ::windows_sys::core::PCWSTR, lflags: i32, pvalue: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetValue: usize,
+    pub DeleteValue: unsafe extern "system" fn(this: *mut *mut Self, wszname: ::windows_sys::core::PCWSTR, lflags: i32) -> ::windows_sys::core::HRESULT,
+    pub DeleteAll: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWbemDecoupledBasicEventProvider {
+    pub base__: IWbemDecoupledRegistrar,
+    pub GetSink: unsafe extern "system" fn(this: *mut *mut Self, a_flags: i32, a_context: *mut ::core::ffi::c_void, a_sink: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetService: unsafe extern "system" fn(this: *mut *mut Self, a_flags: i32, a_context: *mut ::core::ffi::c_void, a_service: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWbemDecoupledRegistrar {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Register: unsafe extern "system" fn(this: *mut *mut Self, a_flags: i32, a_context: *mut ::core::ffi::c_void, a_user: ::windows_sys::core::PCWSTR, a_locale: ::windows_sys::core::PCWSTR, a_scope: ::windows_sys::core::PCWSTR, a_registration: ::windows_sys::core::PCWSTR, piunknown: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub UnRegister: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWbemEventConsumerProvider {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub FindConsumer: unsafe extern "system" fn(this: *mut *mut Self, plogicalconsumer: *mut ::core::ffi::c_void, ppconsumer: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWbemEventProvider {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub ProvideEvents: unsafe extern "system" fn(this: *mut *mut Self, psink: *mut ::core::ffi::c_void, lflags: i32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWbemEventProviderQuerySink {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub NewQuery: unsafe extern "system" fn(this: *mut *mut Self, dwid: u32, wszquerylanguage: *const u16, wszquery: *const u16) -> ::windows_sys::core::HRESULT,
+    pub CancelQuery: unsafe extern "system" fn(this: *mut *mut Self, dwid: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWbemEventProviderSecurity {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub AccessCheck: unsafe extern "system" fn(this: *mut *mut Self, wszquerylanguage: *const u16, wszquery: *const u16, lsidlength: i32, psid: *const u8) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWbemEventSink {
+    pub base__: IWbemObjectSink,
+    pub SetSinkSecurity: unsafe extern "system" fn(this: *mut *mut Self, lsdlength: i32, psd: *const u8) -> ::windows_sys::core::HRESULT,
+    pub IsActive: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetRestrictedSink: unsafe extern "system" fn(this: *mut *mut Self, lnumqueries: i32, awszqueries: *const ::windows_sys::core::PWSTR, pcallback: *mut ::core::ffi::c_void, ppsink: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetBatchingParameters: unsafe extern "system" fn(this: *mut *mut Self, lflags: i32, dwmaxbuffersize: u32, dwmaxsendlatency: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWbemHiPerfEnum {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub AddObjects: unsafe extern "system" fn(this: *mut *mut Self, lflags: i32, unumobjects: u32, apids: *const i32, apobj: *const *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RemoveObjects: unsafe extern "system" fn(this: *mut *mut Self, lflags: i32, unumobjects: u32, apids: *const i32) -> ::windows_sys::core::HRESULT,
+    pub GetObjects: unsafe extern "system" fn(this: *mut *mut Self, lflags: i32, unumobjects: u32, apobj: *mut *mut ::core::ffi::c_void, pureturned: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub RemoveAll: unsafe extern "system" fn(this: *mut *mut Self, lflags: i32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWbemHiPerfProvider {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub QueryInstances: unsafe extern "system" fn(this: *mut *mut Self, pnamespace: *mut ::core::ffi::c_void, wszclass: ::windows_sys::core::PCWSTR, lflags: i32, pctx: *mut ::core::ffi::c_void, psink: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateRefresher: unsafe extern "system" fn(this: *mut *mut Self, pnamespace: *mut ::core::ffi::c_void, lflags: i32, pprefresher: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateRefreshableObject: unsafe extern "system" fn(this: *mut *mut Self, pnamespace: *mut ::core::ffi::c_void, ptemplate: *mut ::core::ffi::c_void, prefresher: *mut ::core::ffi::c_void, lflags: i32, pcontext: *mut ::core::ffi::c_void, pprefreshable: *mut *mut ::core::ffi::c_void, plid: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub StopRefreshing: unsafe extern "system" fn(this: *mut *mut Self, prefresher: *mut ::core::ffi::c_void, lid: i32, lflags: i32) -> ::windows_sys::core::HRESULT,
+    pub CreateRefreshableEnum: unsafe extern "system" fn(this: *mut *mut Self, pnamespace: *mut ::core::ffi::c_void, wszclass: ::windows_sys::core::PCWSTR, prefresher: *mut ::core::ffi::c_void, lflags: i32, pcontext: *mut ::core::ffi::c_void, phiperfenum: *mut ::core::ffi::c_void, plid: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub GetObjects: unsafe extern "system" fn(this: *mut *mut Self, pnamespace: *mut ::core::ffi::c_void, lnumobjects: i32, apobj: *mut *mut ::core::ffi::c_void, lflags: i32, pcontext: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWbemLevel1Login {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub EstablishPosition: unsafe extern "system" fn(this: *mut *mut Self, wszlocalelist: ::windows_sys::core::PCWSTR, dwnumlocales: u32, reserved: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub RequestChallenge: unsafe extern "system" fn(this: *mut *mut Self, wsznetworkresource: ::windows_sys::core::PCWSTR, wszuser: ::windows_sys::core::PCWSTR, nonce: *mut u8) -> ::windows_sys::core::HRESULT,
+    pub WBEMLogin: unsafe extern "system" fn(this: *mut *mut Self, wszpreferredlocale: ::windows_sys::core::PCWSTR, accesstoken: *const u8, lflags: i32, pctx: *mut ::core::ffi::c_void, ppnamespace: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub NTLMLogin: unsafe extern "system" fn(this: *mut *mut Self, wsznetworkresource: ::windows_sys::core::PCWSTR, wszpreferredlocale: ::windows_sys::core::PCWSTR, lflags: i32, pctx: *mut ::core::ffi::c_void, ppnamespace: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWbemLocator {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ConnectServer: unsafe extern "system" fn(this: *mut *mut Self, strnetworkresource: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, struser: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, strpassword: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, strlocale: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, lsecurityflags: i32, strauthority: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pctx: *mut ::core::ffi::c_void, ppnamespace: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ConnectServer: usize,
+}
+#[repr(C)]
+pub struct IWbemObjectAccess {
+    pub base__: IWbemClassObject,
+    pub GetPropertyHandle: unsafe extern "system" fn(this: *mut *mut Self, wszpropertyname: ::windows_sys::core::PCWSTR, ptype: *mut i32, plhandle: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub WritePropertyValue: unsafe extern "system" fn(this: *mut *mut Self, lhandle: i32, lnumbytes: i32, adata: *const u8) -> ::windows_sys::core::HRESULT,
+    pub ReadPropertyValue: unsafe extern "system" fn(this: *mut *mut Self, lhandle: i32, lbuffersize: i32, plnumbytes: *mut i32, adata: *mut u8) -> ::windows_sys::core::HRESULT,
+    pub ReadDWORD: unsafe extern "system" fn(this: *mut *mut Self, lhandle: i32, pdw: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub WriteDWORD: unsafe extern "system" fn(this: *mut *mut Self, lhandle: i32, dw: u32) -> ::windows_sys::core::HRESULT,
+    pub ReadQWORD: unsafe extern "system" fn(this: *mut *mut Self, lhandle: i32, pqw: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub WriteQWORD: unsafe extern "system" fn(this: *mut *mut Self, lhandle: i32, pw: u64) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetPropertyInfoByHandle: unsafe extern "system" fn(this: *mut *mut Self, lhandle: i32, pstrname: *mut super::super::Foundation::BSTR, ptype: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetPropertyInfoByHandle: usize,
+    pub Lock: unsafe extern "system" fn(this: *mut *mut Self, lflags: i32) -> ::windows_sys::core::HRESULT,
+    pub Unlock: unsafe extern "system" fn(this: *mut *mut Self, lflags: i32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWbemObjectSink {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Indicate: unsafe extern "system" fn(this: *mut *mut Self, lobjectcount: i32, apobjarray: *const *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetStatus: unsafe extern "system" fn(this: *mut *mut Self, lflags: i32, hresult: ::windows_sys::core::HRESULT, strparam: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pobjparam: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetStatus: usize,
+}
+#[repr(C)]
+pub struct IWbemObjectSinkEx {
+    pub base__: IWbemObjectSink,
+    #[cfg(feature = "Win32_Foundation")]
+    pub WriteMessage: unsafe extern "system" fn(this: *mut *mut Self, uchannel: u32, strmessage: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    WriteMessage: usize,
+    pub WriteError: unsafe extern "system" fn(this: *mut *mut Self, pobjerror: *mut ::core::ffi::c_void, pureturned: *mut u8) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub PromptUser: unsafe extern "system" fn(this: *mut *mut Self, strmessage: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, uprompttype: u8, pureturned: *mut u8) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    PromptUser: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub WriteProgress: unsafe extern "system" fn(this: *mut *mut Self, stractivity: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, strcurrentoperation: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, strstatusdescription: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, upercentcomplete: u32, usecondsremaining: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    WriteProgress: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub WriteStreamParameter: unsafe extern "system" fn(this: *mut *mut Self, strname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, vtvalue: *const super::Com::VARIANT, ultype: u32, ulflags: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    WriteStreamParameter: usize,
+}
+#[repr(C)]
+pub struct IWbemObjectTextSrc {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetText: unsafe extern "system" fn(this: *mut *mut Self, lflags: i32, pobj: *mut ::core::ffi::c_void, uobjtextformat: u32, pctx: *mut ::core::ffi::c_void, strtext: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetText: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CreateFromText: unsafe extern "system" fn(this: *mut *mut Self, lflags: i32, strtext: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, uobjtextformat: u32, pctx: *mut ::core::ffi::c_void, pnewobj: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CreateFromText: usize,
+}
+#[repr(C)]
+pub struct IWbemPath {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetText: unsafe extern "system" fn(this: *mut *mut Self, umode: u32, pszpath: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetText: unsafe extern "system" fn(this: *mut *mut Self, lflags: i32, pubufflength: *mut u32, psztext: ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetInfo: unsafe extern "system" fn(this: *mut *mut Self, urequestedinfo: u32, puresponse: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub SetServer: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetServer: unsafe extern "system" fn(this: *mut *mut Self, punamebuflength: *mut u32, pname: ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetNamespaceCount: unsafe extern "system" fn(this: *mut *mut Self, pucount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetNamespaceAt: unsafe extern "system" fn(this: *mut *mut Self, uindex: u32, pszname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetNamespaceAt: unsafe extern "system" fn(this: *mut *mut Self, uindex: u32, punamebuflength: *mut u32, pname: ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub RemoveNamespaceAt: unsafe extern "system" fn(this: *mut *mut Self, uindex: u32) -> ::windows_sys::core::HRESULT,
+    pub RemoveAllNamespaces: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetScopeCount: unsafe extern "system" fn(this: *mut *mut Self, pucount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetScope: unsafe extern "system" fn(this: *mut *mut Self, uindex: u32, pszclass: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetScopeFromText: unsafe extern "system" fn(this: *mut *mut Self, uindex: u32, psztext: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetScope: unsafe extern "system" fn(this: *mut *mut Self, uindex: u32, puclassnamebufsize: *mut u32, pszclass: ::windows_sys::core::PWSTR, pkeylist: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetScopeAsText: unsafe extern "system" fn(this: *mut *mut Self, uindex: u32, putextbufsize: *mut u32, psztext: ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub RemoveScope: unsafe extern "system" fn(this: *mut *mut Self, uindex: u32) -> ::windows_sys::core::HRESULT,
+    pub RemoveAllScopes: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub SetClassName: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetClassName: unsafe extern "system" fn(this: *mut *mut Self, pubufflength: *mut u32, pszname: ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetKeyList: unsafe extern "system" fn(this: *mut *mut Self, pout: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateClassPart: unsafe extern "system" fn(this: *mut *mut Self, lflags: i32, name: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub DeleteClassPart: unsafe extern "system" fn(this: *mut *mut Self, lflags: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsRelative: unsafe extern "system" fn(this: *mut *mut Self, wszmachine: ::windows_sys::core::PCWSTR, wsznamespace: ::windows_sys::core::PCWSTR) -> super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsRelative: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsRelativeOrChild: unsafe extern "system" fn(this: *mut *mut Self, wszmachine: ::windows_sys::core::PCWSTR, wsznamespace: ::windows_sys::core::PCWSTR, lflags: i32) -> super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsRelativeOrChild: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsLocal: unsafe extern "system" fn(this: *mut *mut Self, wszmachine: ::windows_sys::core::PCWSTR) -> super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsLocal: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsSameClassName: unsafe extern "system" fn(this: *mut *mut Self, wszclass: ::windows_sys::core::PCWSTR) -> super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsSameClassName: usize,
+}
+#[repr(C)]
+pub struct IWbemPathKeyList {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, pukeycount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetKey: unsafe extern "system" fn(this: *mut *mut Self, wszname: ::windows_sys::core::PCWSTR, uflags: u32, ucimtype: u32, pkeyval: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetKey2: unsafe extern "system" fn(this: *mut *mut Self, wszname: ::windows_sys::core::PCWSTR, uflags: u32, ucimtype: u32, pkeyval: *const super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetKey2: usize,
+    pub GetKey: unsafe extern "system" fn(this: *mut *mut Self, ukeyix: u32, uflags: u32, punamebufsize: *mut u32, pszkeyname: ::windows_sys::core::PWSTR, pukeyvalbufsize: *mut u32, pkeyval: *mut ::core::ffi::c_void, puapparentcimtype: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetKey2: unsafe extern "system" fn(this: *mut *mut Self, ukeyix: u32, uflags: u32, punamebufsize: *mut u32, pszkeyname: ::windows_sys::core::PWSTR, pkeyvalue: *mut super::Com::VARIANT, puapparentcimtype: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetKey2: usize,
+    pub RemoveKey: unsafe extern "system" fn(this: *mut *mut Self, wszname: ::windows_sys::core::PCWSTR, uflags: u32) -> ::windows_sys::core::HRESULT,
+    pub RemoveAllKeys: unsafe extern "system" fn(this: *mut *mut Self, uflags: u32) -> ::windows_sys::core::HRESULT,
+    pub MakeSingleton: unsafe extern "system" fn(this: *mut *mut Self, bset: u8) -> ::windows_sys::core::HRESULT,
+    pub GetInfo: unsafe extern "system" fn(this: *mut *mut Self, urequestedinfo: u32, puresponse: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetText: unsafe extern "system" fn(this: *mut *mut Self, lflags: i32, pubufflength: *mut u32, psztext: ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWbemPropertyProvider {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetProperty: unsafe extern "system" fn(this: *mut *mut Self, lflags: i32, strlocale: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, strclassmapping: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, strinstmapping: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, strpropmapping: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pvvalue: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetProperty: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub PutProperty: unsafe extern "system" fn(this: *mut *mut Self, lflags: i32, strlocale: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, strclassmapping: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, strinstmapping: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, strpropmapping: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pvvalue: *const super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    PutProperty: usize,
+}
+#[repr(C)]
+pub struct IWbemProviderIdentity {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetRegistrationObject: unsafe extern "system" fn(this: *mut *mut Self, lflags: i32, pprovreg: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWbemProviderInit {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, wszuser: ::windows_sys::core::PCWSTR, lflags: i32, wsznamespace: ::windows_sys::core::PCWSTR, wszlocale: ::windows_sys::core::PCWSTR, pnamespace: *mut ::core::ffi::c_void, pctx: *mut ::core::ffi::c_void, pinitsink: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWbemProviderInitSink {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetStatus: unsafe extern "system" fn(this: *mut *mut Self, lstatus: i32, lflags: i32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWbemQualifierSet {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Get: unsafe extern "system" fn(this: *mut *mut Self, wszname: ::windows_sys::core::PCWSTR, lflags: i32, pval: *mut super::Com::VARIANT, plflavor: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Get: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Put: unsafe extern "system" fn(this: *mut *mut Self, wszname: ::windows_sys::core::PCWSTR, pval: *const super::Com::VARIANT, lflavor: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Put: usize,
+    pub Delete: unsafe extern "system" fn(this: *mut *mut Self, wszname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetNames: unsafe extern "system" fn(this: *mut *mut Self, lflags: i32, pnames: *mut *mut super::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetNames: usize,
+    pub BeginEnumeration: unsafe extern "system" fn(this: *mut *mut Self, lflags: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, lflags: i32, pstrname: *mut super::super::Foundation::BSTR, pval: *mut super::Com::VARIANT, plflavor: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Next: usize,
+    pub EndEnumeration: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWbemQuery {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Empty: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub SetLanguageFeatures: unsafe extern "system" fn(this: *mut *mut Self, uflags: u32, uarraysize: u32, pufeatures: *const u32) -> ::windows_sys::core::HRESULT,
+    pub TestLanguageFeatures: unsafe extern "system" fn(this: *mut *mut Self, uflags: u32, uarraysize: *mut u32, pufeatures: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Parse: unsafe extern "system" fn(this: *mut *mut Self, pszlang: ::windows_sys::core::PCWSTR, pszquery: ::windows_sys::core::PCWSTR, uflags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetAnalysis: unsafe extern "system" fn(this: *mut *mut Self, uanalysistype: u32, uflags: u32, panalysis: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub FreeMemory: unsafe extern "system" fn(this: *mut *mut Self, pmem: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetQueryInfo: unsafe extern "system" fn(this: *mut *mut Self, uanalysistype: u32, uinfoid: u32, ubufsize: u32, pdestbuf: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWbemRefresher {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Refresh: unsafe extern "system" fn(this: *mut *mut Self, lflags: i32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWbemServices {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OpenNamespace: unsafe extern "system" fn(this: *mut *mut Self, strnamespace: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, lflags: i32, pctx: *mut ::core::ffi::c_void, ppworkingnamespace: *mut *mut ::core::ffi::c_void, ppresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OpenNamespace: usize,
+    pub CancelAsyncCall: unsafe extern "system" fn(this: *mut *mut Self, psink: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub QueryObjectSink: unsafe extern "system" fn(this: *mut *mut Self, lflags: i32, ppresponsehandler: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetObject: unsafe extern "system" fn(this: *mut *mut Self, strobjectpath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, lflags: i32, pctx: *mut ::core::ffi::c_void, ppobject: *mut *mut ::core::ffi::c_void, ppcallresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetObject: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetObjectAsync: unsafe extern "system" fn(this: *mut *mut Self, strobjectpath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, lflags: i32, pctx: *mut ::core::ffi::c_void, presponsehandler: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetObjectAsync: usize,
+    pub PutClass: unsafe extern "system" fn(this: *mut *mut Self, pobject: *mut ::core::ffi::c_void, lflags: i32, pctx: *mut ::core::ffi::c_void, ppcallresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub PutClassAsync: unsafe extern "system" fn(this: *mut *mut Self, pobject: *mut ::core::ffi::c_void, lflags: i32, pctx: *mut ::core::ffi::c_void, presponsehandler: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DeleteClass: unsafe extern "system" fn(this: *mut *mut Self, strclass: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, lflags: i32, pctx: *mut ::core::ffi::c_void, ppcallresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DeleteClass: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DeleteClassAsync: unsafe extern "system" fn(this: *mut *mut Self, strclass: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, lflags: i32, pctx: *mut ::core::ffi::c_void, presponsehandler: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DeleteClassAsync: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CreateClassEnum: unsafe extern "system" fn(this: *mut *mut Self, strsuperclass: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, lflags: i32, pctx: *mut ::core::ffi::c_void, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CreateClassEnum: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CreateClassEnumAsync: unsafe extern "system" fn(this: *mut *mut Self, strsuperclass: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, lflags: i32, pctx: *mut ::core::ffi::c_void, presponsehandler: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CreateClassEnumAsync: usize,
+    pub PutInstance: unsafe extern "system" fn(this: *mut *mut Self, pinst: *mut ::core::ffi::c_void, lflags: i32, pctx: *mut ::core::ffi::c_void, ppcallresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub PutInstanceAsync: unsafe extern "system" fn(this: *mut *mut Self, pinst: *mut ::core::ffi::c_void, lflags: i32, pctx: *mut ::core::ffi::c_void, presponsehandler: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DeleteInstance: unsafe extern "system" fn(this: *mut *mut Self, strobjectpath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, lflags: i32, pctx: *mut ::core::ffi::c_void, ppcallresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DeleteInstance: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DeleteInstanceAsync: unsafe extern "system" fn(this: *mut *mut Self, strobjectpath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, lflags: i32, pctx: *mut ::core::ffi::c_void, presponsehandler: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DeleteInstanceAsync: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CreateInstanceEnum: unsafe extern "system" fn(this: *mut *mut Self, strfilter: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, lflags: i32, pctx: *mut ::core::ffi::c_void, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CreateInstanceEnum: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CreateInstanceEnumAsync: unsafe extern "system" fn(this: *mut *mut Self, strfilter: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, lflags: i32, pctx: *mut ::core::ffi::c_void, presponsehandler: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CreateInstanceEnumAsync: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ExecQuery: unsafe extern "system" fn(this: *mut *mut Self, strquerylanguage: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, strquery: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, lflags: i32, pctx: *mut ::core::ffi::c_void, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ExecQuery: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ExecQueryAsync: unsafe extern "system" fn(this: *mut *mut Self, strquerylanguage: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, strquery: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, lflags: i32, pctx: *mut ::core::ffi::c_void, presponsehandler: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ExecQueryAsync: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ExecNotificationQuery: unsafe extern "system" fn(this: *mut *mut Self, strquerylanguage: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, strquery: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, lflags: i32, pctx: *mut ::core::ffi::c_void, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ExecNotificationQuery: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ExecNotificationQueryAsync: unsafe extern "system" fn(this: *mut *mut Self, strquerylanguage: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, strquery: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, lflags: i32, pctx: *mut ::core::ffi::c_void, presponsehandler: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ExecNotificationQueryAsync: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ExecMethod: unsafe extern "system" fn(this: *mut *mut Self, strobjectpath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, strmethodname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, lflags: i32, pctx: *mut ::core::ffi::c_void, pinparams: *mut ::core::ffi::c_void, ppoutparams: *mut *mut ::core::ffi::c_void, ppcallresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ExecMethod: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ExecMethodAsync: unsafe extern "system" fn(this: *mut *mut Self, strobjectpath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, strmethodname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, lflags: i32, pctx: *mut ::core::ffi::c_void, pinparams: *mut ::core::ffi::c_void, presponsehandler: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ExecMethodAsync: usize,
+}
+#[repr(C)]
+pub struct IWbemShutdown {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Shutdown: unsafe extern "system" fn(this: *mut *mut Self, ureason: i32, umaxmilliseconds: u32, pctx: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWbemStatusCodeText {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetErrorCodeText: unsafe extern "system" fn(this: *mut *mut Self, hres: ::windows_sys::core::HRESULT, localeid: u32, lflags: i32, messagetext: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetErrorCodeText: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetFacilityCodeText: unsafe extern "system" fn(this: *mut *mut Self, hres: ::windows_sys::core::HRESULT, localeid: u32, lflags: i32, messagetext: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetFacilityCodeText: usize,
+}
+#[repr(C)]
+pub struct IWbemTransport {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWbemUnboundObjectSink {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub IndicateToConsumer: unsafe extern "system" fn(this: *mut *mut Self, plogicalconsumer: *mut ::core::ffi::c_void, lnumobjects: i32, apobjects: *const *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWbemUnsecuredApartment {
+    pub base__: IUnsecuredApartment,
+    pub CreateSinkStub: unsafe extern "system" fn(this: *mut *mut Self, psink: *mut ::core::ffi::c_void, dwflags: u32, wszreserved: ::windows_sys::core::PCWSTR, ppstub: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Wmi\"`*"]
 pub struct MI_Application {
@@ -2815,7 +4003,7 @@ pub struct SWbemAssocQueryInf {
     pub m_uVersion: u32,
     pub m_uAnalysisType: u32,
     pub m_uFeatureMask: u32,
-    pub m_pPath: IWbemPath,
+    pub m_pPath: *mut *mut *mut *mut IWbemPath,
     pub m_pszPath: ::windows_sys::core::PWSTR,
     pub m_pszQueryText: ::windows_sys::core::PWSTR,
     pub m_pszResultClass: ::windows_sys::core::PWSTR,

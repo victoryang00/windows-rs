@@ -29,7 +29,14 @@ extern "system" {
     #[cfg(feature = "Win32_Foundation")]
     pub fn IsProcessInWDAGContainer(reserved: *const ::core::ffi::c_void, isprocessinwdagcontainer: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT;
 }
-pub type IIsolatedAppLauncher = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IIsolatedAppLauncher {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Launch: unsafe extern "system" fn(this: *mut *mut Self, appusermodelid: ::windows_sys::core::PCWSTR, arguments: ::windows_sys::core::PCWSTR, telemetryparameters: *const IsolatedAppLauncherTelemetryParameters) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Launch: usize,
+}
 pub const IsolatedAppLauncher: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3162580016, data2: 59230, data3: 20433, data4: [150, 65, 31, 159, 30, 45, 154, 31] };
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Isolation\"`, `\"Win32_Foundation\"`*"]

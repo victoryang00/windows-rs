@@ -453,7 +453,12 @@ extern "system" {
     #[cfg(feature = "Win32_Foundation")]
     pub fn WsXmlStringEquals(string1: *const WS_XML_STRING, string2: *const WS_XML_STRING, error: *const WS_ERROR) -> ::windows_sys::core::HRESULT;
 }
-pub type IContentPrefetcherTaskTrigger = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IContentPrefetcherTaskTrigger {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub TriggerContentPrefetcherTask: unsafe extern "system" fn(this: *mut *mut Self, packagefullname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub IsRegisteredForContentPrefetch: unsafe extern "system" fn(this: *mut *mut Self, packagefullname: ::windows_sys::core::PCWSTR, isregistered: *mut u8) -> ::windows_sys::core::HRESULT,
+}
 #[doc = "*Required features: `\"Win32_Networking_WindowsWebServices\"`*"]
 pub const WEBAUTHN_API_CURRENT_VERSION: u32 = 3u32;
 #[doc = "*Required features: `\"Win32_Networking_WindowsWebServices\"`*"]

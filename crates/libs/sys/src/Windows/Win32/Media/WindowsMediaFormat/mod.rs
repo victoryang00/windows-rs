@@ -1,25 +1,25 @@
 #[link(name = "windows")]
 extern "system" {
     #[doc = "*Required features: `\"Win32_Media_WindowsMediaFormat\"`*"]
-    pub fn WMCreateBackupRestorer(pcallback: ::windows_sys::core::IUnknown, ppbackup: *mut IWMLicenseBackup) -> ::windows_sys::core::HRESULT;
+    pub fn WMCreateBackupRestorer(pcallback: *mut *mut ::windows_sys::core::IUnknown, ppbackup: *mut *mut *mut IWMLicenseBackup) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_WindowsMediaFormat\"`*"]
-    pub fn WMCreateEditor(ppeditor: *mut IWMMetadataEditor) -> ::windows_sys::core::HRESULT;
+    pub fn WMCreateEditor(ppeditor: *mut *mut *mut IWMMetadataEditor) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_WindowsMediaFormat\"`*"]
-    pub fn WMCreateIndexer(ppindexer: *mut IWMIndexer) -> ::windows_sys::core::HRESULT;
+    pub fn WMCreateIndexer(ppindexer: *mut *mut *mut IWMIndexer) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_WindowsMediaFormat\"`*"]
-    pub fn WMCreateProfileManager(ppprofilemanager: *mut IWMProfileManager) -> ::windows_sys::core::HRESULT;
+    pub fn WMCreateProfileManager(ppprofilemanager: *mut *mut *mut IWMProfileManager) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_WindowsMediaFormat\"`*"]
-    pub fn WMCreateReader(punkcert: ::windows_sys::core::IUnknown, dwrights: u32, ppreader: *mut IWMReader) -> ::windows_sys::core::HRESULT;
+    pub fn WMCreateReader(punkcert: *mut *mut ::windows_sys::core::IUnknown, dwrights: u32, ppreader: *mut *mut *mut IWMReader) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_WindowsMediaFormat\"`*"]
-    pub fn WMCreateSyncReader(punkcert: ::windows_sys::core::IUnknown, dwrights: u32, ppsyncreader: *mut IWMSyncReader) -> ::windows_sys::core::HRESULT;
+    pub fn WMCreateSyncReader(punkcert: *mut *mut ::windows_sys::core::IUnknown, dwrights: u32, ppsyncreader: *mut *mut *mut IWMSyncReader) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_WindowsMediaFormat\"`*"]
-    pub fn WMCreateWriter(punkcert: ::windows_sys::core::IUnknown, ppwriter: *mut IWMWriter) -> ::windows_sys::core::HRESULT;
+    pub fn WMCreateWriter(punkcert: *mut *mut ::windows_sys::core::IUnknown, ppwriter: *mut *mut *mut IWMWriter) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_WindowsMediaFormat\"`*"]
-    pub fn WMCreateWriterFileSink(ppsink: *mut IWMWriterFileSink) -> ::windows_sys::core::HRESULT;
+    pub fn WMCreateWriterFileSink(ppsink: *mut *mut *mut IWMWriterFileSink) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_WindowsMediaFormat\"`*"]
-    pub fn WMCreateWriterNetworkSink(ppsink: *mut IWMWriterNetworkSink) -> ::windows_sys::core::HRESULT;
+    pub fn WMCreateWriterNetworkSink(ppsink: *mut *mut *mut IWMWriterNetworkSink) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_WindowsMediaFormat\"`*"]
-    pub fn WMCreateWriterPushSink(ppsink: *mut IWMWriterPushSink) -> ::windows_sys::core::HRESULT;
+    pub fn WMCreateWriterPushSink(ppsink: *mut *mut *mut IWMWriterPushSink) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_WindowsMediaFormat\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
     pub fn WMIsContentProtected(pwszfilename: ::windows_sys::core::PCWSTR, pfisprotected: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT;
@@ -133,112 +133,1225 @@ impl ::core::clone::Clone for DRM_VIDEO_OUTPUT_PROTECTION_IDS {
         *self
     }
 }
-pub type INSNetSourceCreator = *mut ::core::ffi::c_void;
-pub type INSSBuffer = *mut ::core::ffi::c_void;
-pub type INSSBuffer2 = *mut ::core::ffi::c_void;
-pub type INSSBuffer3 = *mut ::core::ffi::c_void;
-pub type INSSBuffer4 = *mut ::core::ffi::c_void;
-pub type IWMAddressAccess = *mut ::core::ffi::c_void;
-pub type IWMAddressAccess2 = *mut ::core::ffi::c_void;
-pub type IWMAuthorizer = *mut ::core::ffi::c_void;
-pub type IWMBackupRestoreProps = *mut ::core::ffi::c_void;
-pub type IWMBandwidthSharing = *mut ::core::ffi::c_void;
-pub type IWMClientConnections = *mut ::core::ffi::c_void;
-pub type IWMClientConnections2 = *mut ::core::ffi::c_void;
-pub type IWMCodecInfo = *mut ::core::ffi::c_void;
-pub type IWMCodecInfo2 = *mut ::core::ffi::c_void;
-pub type IWMCodecInfo3 = *mut ::core::ffi::c_void;
-pub type IWMCredentialCallback = *mut ::core::ffi::c_void;
-pub type IWMDRMEditor = *mut ::core::ffi::c_void;
-pub type IWMDRMMessageParser = *mut ::core::ffi::c_void;
-pub type IWMDRMReader = *mut ::core::ffi::c_void;
-pub type IWMDRMReader2 = *mut ::core::ffi::c_void;
-pub type IWMDRMReader3 = *mut ::core::ffi::c_void;
-pub type IWMDRMTranscryptionManager = *mut ::core::ffi::c_void;
-pub type IWMDRMTranscryptor = *mut ::core::ffi::c_void;
-pub type IWMDRMTranscryptor2 = *mut ::core::ffi::c_void;
-pub type IWMDRMWriter = *mut ::core::ffi::c_void;
-pub type IWMDRMWriter2 = *mut ::core::ffi::c_void;
-pub type IWMDRMWriter3 = *mut ::core::ffi::c_void;
-pub type IWMDeviceRegistration = *mut ::core::ffi::c_void;
-pub type IWMGetSecureChannel = *mut ::core::ffi::c_void;
-pub type IWMHeaderInfo = *mut ::core::ffi::c_void;
-pub type IWMHeaderInfo2 = *mut ::core::ffi::c_void;
-pub type IWMHeaderInfo3 = *mut ::core::ffi::c_void;
-pub type IWMIStreamProps = *mut ::core::ffi::c_void;
-pub type IWMImageInfo = *mut ::core::ffi::c_void;
-pub type IWMIndexer = *mut ::core::ffi::c_void;
-pub type IWMIndexer2 = *mut ::core::ffi::c_void;
-pub type IWMInputMediaProps = *mut ::core::ffi::c_void;
-pub type IWMLanguageList = *mut ::core::ffi::c_void;
-pub type IWMLicenseBackup = *mut ::core::ffi::c_void;
-pub type IWMLicenseRestore = *mut ::core::ffi::c_void;
-pub type IWMLicenseRevocationAgent = *mut ::core::ffi::c_void;
-pub type IWMMediaProps = *mut ::core::ffi::c_void;
-pub type IWMMetadataEditor = *mut ::core::ffi::c_void;
-pub type IWMMetadataEditor2 = *mut ::core::ffi::c_void;
-pub type IWMMutualExclusion = *mut ::core::ffi::c_void;
-pub type IWMMutualExclusion2 = *mut ::core::ffi::c_void;
-pub type IWMOutputMediaProps = *mut ::core::ffi::c_void;
-pub type IWMPacketSize = *mut ::core::ffi::c_void;
-pub type IWMPacketSize2 = *mut ::core::ffi::c_void;
-pub type IWMPlayerHook = *mut ::core::ffi::c_void;
-pub type IWMPlayerTimestampHook = *mut ::core::ffi::c_void;
-pub type IWMProfile = *mut ::core::ffi::c_void;
-pub type IWMProfile2 = *mut ::core::ffi::c_void;
-pub type IWMProfile3 = *mut ::core::ffi::c_void;
-pub type IWMProfileManager = *mut ::core::ffi::c_void;
-pub type IWMProfileManager2 = *mut ::core::ffi::c_void;
-pub type IWMProfileManagerLanguage = *mut ::core::ffi::c_void;
-pub type IWMPropertyVault = *mut ::core::ffi::c_void;
-pub type IWMProximityDetection = *mut ::core::ffi::c_void;
-pub type IWMReader = *mut ::core::ffi::c_void;
-pub type IWMReaderAccelerator = *mut ::core::ffi::c_void;
-pub type IWMReaderAdvanced = *mut ::core::ffi::c_void;
-pub type IWMReaderAdvanced2 = *mut ::core::ffi::c_void;
-pub type IWMReaderAdvanced3 = *mut ::core::ffi::c_void;
-pub type IWMReaderAdvanced4 = *mut ::core::ffi::c_void;
-pub type IWMReaderAdvanced5 = *mut ::core::ffi::c_void;
-pub type IWMReaderAdvanced6 = *mut ::core::ffi::c_void;
-pub type IWMReaderAllocatorEx = *mut ::core::ffi::c_void;
-pub type IWMReaderCallback = *mut ::core::ffi::c_void;
-pub type IWMReaderCallbackAdvanced = *mut ::core::ffi::c_void;
-pub type IWMReaderNetworkConfig = *mut ::core::ffi::c_void;
-pub type IWMReaderNetworkConfig2 = *mut ::core::ffi::c_void;
-pub type IWMReaderPlaylistBurn = *mut ::core::ffi::c_void;
-pub type IWMReaderStreamClock = *mut ::core::ffi::c_void;
-pub type IWMReaderTimecode = *mut ::core::ffi::c_void;
-pub type IWMReaderTypeNegotiation = *mut ::core::ffi::c_void;
-pub type IWMRegisterCallback = *mut ::core::ffi::c_void;
-pub type IWMRegisteredDevice = *mut ::core::ffi::c_void;
-pub type IWMSBufferAllocator = *mut ::core::ffi::c_void;
-pub type IWMSInternalAdminNetSource = *mut ::core::ffi::c_void;
-pub type IWMSInternalAdminNetSource2 = *mut ::core::ffi::c_void;
-pub type IWMSInternalAdminNetSource3 = *mut ::core::ffi::c_void;
-pub type IWMSecureChannel = *mut ::core::ffi::c_void;
-pub type IWMStatusCallback = *mut ::core::ffi::c_void;
-pub type IWMStreamConfig = *mut ::core::ffi::c_void;
-pub type IWMStreamConfig2 = *mut ::core::ffi::c_void;
-pub type IWMStreamConfig3 = *mut ::core::ffi::c_void;
-pub type IWMStreamList = *mut ::core::ffi::c_void;
-pub type IWMStreamPrioritization = *mut ::core::ffi::c_void;
-pub type IWMSyncReader = *mut ::core::ffi::c_void;
-pub type IWMSyncReader2 = *mut ::core::ffi::c_void;
-pub type IWMVideoMediaProps = *mut ::core::ffi::c_void;
-pub type IWMWatermarkInfo = *mut ::core::ffi::c_void;
-pub type IWMWriter = *mut ::core::ffi::c_void;
-pub type IWMWriterAdvanced = *mut ::core::ffi::c_void;
-pub type IWMWriterAdvanced2 = *mut ::core::ffi::c_void;
-pub type IWMWriterAdvanced3 = *mut ::core::ffi::c_void;
-pub type IWMWriterFileSink = *mut ::core::ffi::c_void;
-pub type IWMWriterFileSink2 = *mut ::core::ffi::c_void;
-pub type IWMWriterFileSink3 = *mut ::core::ffi::c_void;
-pub type IWMWriterNetworkSink = *mut ::core::ffi::c_void;
-pub type IWMWriterPostView = *mut ::core::ffi::c_void;
-pub type IWMWriterPostViewCallback = *mut ::core::ffi::c_void;
-pub type IWMWriterPreprocess = *mut ::core::ffi::c_void;
-pub type IWMWriterPushSink = *mut ::core::ffi::c_void;
-pub type IWMWriterSink = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct INSNetSourceCreator {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub CreateNetSource: unsafe extern "system" fn(this: *mut *mut Self, pszstreamname: ::windows_sys::core::PCWSTR, pmonitor: *mut ::core::ffi::c_void, pdata: *const u8, pusercontext: *mut ::core::ffi::c_void, pcallback: *mut ::core::ffi::c_void, qwcontext: u64) -> ::windows_sys::core::HRESULT,
+    pub GetNetSourceProperties: unsafe extern "system" fn(this: *mut *mut Self, pszstreamname: ::windows_sys::core::PCWSTR, pppropertiesnode: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetNetSourceSharedNamespace: unsafe extern "system" fn(this: *mut *mut Self, ppsharednamespace: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetNetSourceAdminInterface: unsafe extern "system" fn(this: *mut *mut Self, pszstreamname: ::windows_sys::core::PCWSTR, pval: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetNetSourceAdminInterface: usize,
+    pub GetNumProtocolsSupported: unsafe extern "system" fn(this: *mut *mut Self, pcprotocols: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetProtocolName: unsafe extern "system" fn(this: *mut *mut Self, dwprotocolnum: u32, pwszprotocolname: ::windows_sys::core::PWSTR, pcchprotocolname: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub Shutdown: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct INSSBuffer {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetLength: unsafe extern "system" fn(this: *mut *mut Self, pdwlength: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetLength: unsafe extern "system" fn(this: *mut *mut Self, dwlength: u32) -> ::windows_sys::core::HRESULT,
+    pub GetMaxLength: unsafe extern "system" fn(this: *mut *mut Self, pdwlength: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetBuffer: unsafe extern "system" fn(this: *mut *mut Self, ppdwbuffer: *mut *mut u8) -> ::windows_sys::core::HRESULT,
+    pub GetBufferAndLength: unsafe extern "system" fn(this: *mut *mut Self, ppdwbuffer: *mut *mut u8, pdwlength: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct INSSBuffer2 {
+    pub base__: INSSBuffer,
+    pub GetSampleProperties: unsafe extern "system" fn(this: *mut *mut Self, cbproperties: u32, pbproperties: *mut u8) -> ::windows_sys::core::HRESULT,
+    pub SetSampleProperties: unsafe extern "system" fn(this: *mut *mut Self, cbproperties: u32, pbproperties: *const u8) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct INSSBuffer3 {
+    pub base__: INSSBuffer2,
+    pub SetProperty: unsafe extern "system" fn(this: *mut *mut Self, guidbufferproperty: ::windows_sys::core::GUID, pvbufferproperty: *const ::core::ffi::c_void, dwbufferpropertysize: u32) -> ::windows_sys::core::HRESULT,
+    pub GetProperty: unsafe extern "system" fn(this: *mut *mut Self, guidbufferproperty: ::windows_sys::core::GUID, pvbufferproperty: *mut ::core::ffi::c_void, pdwbufferpropertysize: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct INSSBuffer4 {
+    pub base__: INSSBuffer3,
+    pub GetPropertyCount: unsafe extern "system" fn(this: *mut *mut Self, pcbufferproperties: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetPropertyByIndex: unsafe extern "system" fn(this: *mut *mut Self, dwbufferpropertyindex: u32, pguidbufferproperty: *mut ::windows_sys::core::GUID, pvbufferproperty: *mut ::core::ffi::c_void, pdwbufferpropertysize: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMAddressAccess {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetAccessEntryCount: unsafe extern "system" fn(this: *mut *mut Self, aetype: WM_AETYPE, pcentries: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetAccessEntry: unsafe extern "system" fn(this: *mut *mut Self, aetype: WM_AETYPE, dwentrynum: u32, paddraccessentry: *mut WM_ADDRESS_ACCESSENTRY) -> ::windows_sys::core::HRESULT,
+    pub AddAccessEntry: unsafe extern "system" fn(this: *mut *mut Self, aetype: WM_AETYPE, paddraccessentry: *const WM_ADDRESS_ACCESSENTRY) -> ::windows_sys::core::HRESULT,
+    pub RemoveAccessEntry: unsafe extern "system" fn(this: *mut *mut Self, aetype: WM_AETYPE, dwentrynum: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMAddressAccess2 {
+    pub base__: IWMAddressAccess,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetAccessEntryEx: unsafe extern "system" fn(this: *mut *mut Self, aetype: WM_AETYPE, dwentrynum: u32, pbstraddress: *mut super::super::Foundation::BSTR, pbstrmask: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetAccessEntryEx: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AddAccessEntryEx: unsafe extern "system" fn(this: *mut *mut Self, aetype: WM_AETYPE, bstraddress: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrmask: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AddAccessEntryEx: usize,
+}
+#[repr(C)]
+pub struct IWMAuthorizer {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCertCount: unsafe extern "system" fn(this: *mut *mut Self, pccerts: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCert: unsafe extern "system" fn(this: *mut *mut Self, dwindex: u32, ppbcertdata: *mut *mut u8) -> ::windows_sys::core::HRESULT,
+    pub GetSharedData: unsafe extern "system" fn(this: *mut *mut Self, dwcertindex: u32, pbshareddata: *const u8, pbcert: *const u8, ppbshareddata: *mut *mut u8) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMBackupRestoreProps {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetPropCount: unsafe extern "system" fn(this: *mut *mut Self, pcprops: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub GetPropByIndex: unsafe extern "system" fn(this: *mut *mut Self, windex: u16, pwszname: ::windows_sys::core::PWSTR, pcchnamelen: *mut u16, ptype: *mut WMT_ATTR_DATATYPE, pvalue: *mut u8, pcblength: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub GetPropByName: unsafe extern "system" fn(this: *mut *mut Self, pszname: ::windows_sys::core::PCWSTR, ptype: *mut WMT_ATTR_DATATYPE, pvalue: *mut u8, pcblength: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub SetProp: unsafe extern "system" fn(this: *mut *mut Self, pszname: ::windows_sys::core::PCWSTR, r#type: WMT_ATTR_DATATYPE, pvalue: *const u8, cblength: u16) -> ::windows_sys::core::HRESULT,
+    pub RemoveProp: unsafe extern "system" fn(this: *mut *mut Self, pcwszname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub RemoveAllProps: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMBandwidthSharing {
+    pub base__: IWMStreamList,
+    pub GetType: unsafe extern "system" fn(this: *mut *mut Self, pguidtype: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub SetType: unsafe extern "system" fn(this: *mut *mut Self, guidtype: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub GetBandwidth: unsafe extern "system" fn(this: *mut *mut Self, pdwbitrate: *mut u32, pmsbufferwindow: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetBandwidth: unsafe extern "system" fn(this: *mut *mut Self, dwbitrate: u32, msbufferwindow: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMClientConnections {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetClientCount: unsafe extern "system" fn(this: *mut *mut Self, pcclients: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetClientProperties: unsafe extern "system" fn(this: *mut *mut Self, dwclientnum: u32, pclientproperties: *mut WM_CLIENT_PROPERTIES) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMClientConnections2 {
+    pub base__: IWMClientConnections,
+    pub GetClientInfo: unsafe extern "system" fn(this: *mut *mut Self, dwclientnum: u32, pwsznetworkaddress: ::windows_sys::core::PWSTR, pcchnetworkaddress: *mut u32, pwszport: ::windows_sys::core::PWSTR, pcchport: *mut u32, pwszdnsname: ::windows_sys::core::PWSTR, pcchdnsname: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMCodecInfo {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCodecInfoCount: unsafe extern "system" fn(this: *mut *mut Self, guidtype: *const ::windows_sys::core::GUID, pccodecs: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCodecFormatCount: unsafe extern "system" fn(this: *mut *mut Self, guidtype: *const ::windows_sys::core::GUID, dwcodecindex: u32, pcformat: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCodecFormat: unsafe extern "system" fn(this: *mut *mut Self, guidtype: *const ::windows_sys::core::GUID, dwcodecindex: u32, dwformatindex: u32, ppistreamconfig: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMCodecInfo2 {
+    pub base__: IWMCodecInfo,
+    pub GetCodecName: unsafe extern "system" fn(this: *mut *mut Self, guidtype: *const ::windows_sys::core::GUID, dwcodecindex: u32, wszname: ::windows_sys::core::PWSTR, pcchname: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCodecFormatDesc: unsafe extern "system" fn(this: *mut *mut Self, guidtype: *const ::windows_sys::core::GUID, dwcodecindex: u32, dwformatindex: u32, ppistreamconfig: *mut *mut ::core::ffi::c_void, wszdesc: ::windows_sys::core::PWSTR, pcchdesc: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMCodecInfo3 {
+    pub base__: IWMCodecInfo2,
+    pub GetCodecFormatProp: unsafe extern "system" fn(this: *mut *mut Self, guidtype: *const ::windows_sys::core::GUID, dwcodecindex: u32, dwformatindex: u32, pszname: ::windows_sys::core::PCWSTR, ptype: *mut WMT_ATTR_DATATYPE, pvalue: *mut u8, pdwsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCodecProp: unsafe extern "system" fn(this: *mut *mut Self, guidtype: *const ::windows_sys::core::GUID, dwcodecindex: u32, pszname: ::windows_sys::core::PCWSTR, ptype: *mut WMT_ATTR_DATATYPE, pvalue: *mut u8, pdwsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetCodecEnumerationSetting: unsafe extern "system" fn(this: *mut *mut Self, guidtype: *const ::windows_sys::core::GUID, dwcodecindex: u32, pszname: ::windows_sys::core::PCWSTR, r#type: WMT_ATTR_DATATYPE, pvalue: *const u8, dwsize: u32) -> ::windows_sys::core::HRESULT,
+    pub GetCodecEnumerationSetting: unsafe extern "system" fn(this: *mut *mut Self, guidtype: *const ::windows_sys::core::GUID, dwcodecindex: u32, pszname: ::windows_sys::core::PCWSTR, ptype: *mut WMT_ATTR_DATATYPE, pvalue: *mut u8, pdwsize: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMCredentialCallback {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub AcquireCredentials: unsafe extern "system" fn(this: *mut *mut Self, pwszrealm: ::windows_sys::core::PCWSTR, pwszsite: ::windows_sys::core::PCWSTR, pwszuser: ::windows_sys::core::PWSTR, cchuser: u32, pwszpassword: ::windows_sys::core::PWSTR, cchpassword: u32, hrstatus: ::windows_sys::core::HRESULT, pdwflags: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMDRMEditor {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetDRMProperty: unsafe extern "system" fn(this: *mut *mut Self, pwstrname: ::windows_sys::core::PCWSTR, pdwtype: *mut WMT_ATTR_DATATYPE, pvalue: *mut u8, pcblength: *mut u16) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMDRMMessageParser {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub ParseRegistrationReqMsg: unsafe extern "system" fn(this: *mut *mut Self, pbregistrationreqmsg: *const u8, cbregistrationreqmsg: u32, ppdevicecert: *mut *mut ::core::ffi::c_void, pdeviceserialnumber: *mut DRM_VAL16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ParseLicenseRequestMsg: unsafe extern "system" fn(this: *mut *mut Self, pblicenserequestmsg: *const u8, cblicenserequestmsg: u32, ppdevicecert: *mut *mut ::core::ffi::c_void, pdeviceserialnumber: *mut DRM_VAL16, pbstraction: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ParseLicenseRequestMsg: usize,
+}
+#[repr(C)]
+pub struct IWMDRMReader {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub AcquireLicense: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32) -> ::windows_sys::core::HRESULT,
+    pub CancelLicenseAcquisition: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Individualize: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32) -> ::windows_sys::core::HRESULT,
+    pub CancelIndividualization: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub MonitorLicenseAcquisition: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub CancelMonitorLicenseAcquisition: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub SetDRMProperty: unsafe extern "system" fn(this: *mut *mut Self, pwstrname: ::windows_sys::core::PCWSTR, dwtype: WMT_ATTR_DATATYPE, pvalue: *const u8, cblength: u16) -> ::windows_sys::core::HRESULT,
+    pub GetDRMProperty: unsafe extern "system" fn(this: *mut *mut Self, pwstrname: ::windows_sys::core::PCWSTR, pdwtype: *mut WMT_ATTR_DATATYPE, pvalue: *mut u8, pcblength: *mut u16) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMDRMReader2 {
+    pub base__: IWMDRMReader,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetEvaluateOutputLevelLicenses: unsafe extern "system" fn(this: *mut *mut Self, fevaluate: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetEvaluateOutputLevelLicenses: usize,
+    pub GetPlayOutputLevels: unsafe extern "system" fn(this: *mut *mut Self, pplayopl: *mut DRM_PLAY_OPL, pcblength: *mut u32, pdwminappcompliancelevel: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCopyOutputLevels: unsafe extern "system" fn(this: *mut *mut Self, pcopyopl: *mut DRM_COPY_OPL, pcblength: *mut u32, pdwminappcompliancelevel: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub TryNextLicense: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMDRMReader3 {
+    pub base__: IWMDRMReader2,
+    pub GetInclusionList: unsafe extern "system" fn(this: *mut *mut Self, ppguids: *mut *mut ::windows_sys::core::GUID, pcguids: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMDRMTranscryptionManager {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub CreateTranscryptor: unsafe extern "system" fn(this: *mut *mut Self, pptranscryptor: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMDRMTranscryptor {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, bstrfilename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pblicenserequestmsg: *mut u8, cblicenserequestmsg: u32, pplicenseresponsemsg: *mut *mut ::core::ffi::c_void, pcallback: *mut ::core::ffi::c_void, pvcontext: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Initialize: usize,
+    pub Seek: unsafe extern "system" fn(this: *mut *mut Self, hnstime: u64) -> ::windows_sys::core::HRESULT,
+    pub Read: unsafe extern "system" fn(this: *mut *mut Self, pbdata: *const u8, pcbdata: *const u32) -> ::windows_sys::core::HRESULT,
+    pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMDRMTranscryptor2 {
+    pub base__: IWMDRMTranscryptor,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SeekEx: unsafe extern "system" fn(this: *mut *mut Self, cnsstarttime: u64, cnsduration: u64, flrate: f32, fincludefileheader: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SeekEx: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ZeroAdjustTimestamps: unsafe extern "system" fn(this: *mut *mut Self, fenable: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ZeroAdjustTimestamps: usize,
+    pub GetSeekStartTime: unsafe extern "system" fn(this: *mut *mut Self, pcnstime: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetDuration: unsafe extern "system" fn(this: *mut *mut Self, pcnsduration: *mut u64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMDRMWriter {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GenerateKeySeed: unsafe extern "system" fn(this: *mut *mut Self, pwszkeyseed: ::windows_sys::core::PWSTR, pcwchlength: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GenerateKeyID: unsafe extern "system" fn(this: *mut *mut Self, pwszkeyid: ::windows_sys::core::PWSTR, pcwchlength: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GenerateSigningKeyPair: unsafe extern "system" fn(this: *mut *mut Self, pwszprivkey: ::windows_sys::core::PWSTR, pcwchprivkeylength: *mut u32, pwszpubkey: ::windows_sys::core::PWSTR, pcwchpubkeylength: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetDRMAttribute: unsafe extern "system" fn(this: *mut *mut Self, wstreamnum: u16, pszname: ::windows_sys::core::PCWSTR, r#type: WMT_ATTR_DATATYPE, pvalue: *const u8, cblength: u16) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMDRMWriter2 {
+    pub base__: IWMDRMWriter,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetWMDRMNetEncryption: unsafe extern "system" fn(this: *mut *mut Self, fsamplesencrypted: super::super::Foundation::BOOL, pbkeyid: *const u8, cbkeyid: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetWMDRMNetEncryption: usize,
+}
+#[repr(C)]
+pub struct IWMDRMWriter3 {
+    pub base__: IWMDRMWriter2,
+    pub SetProtectStreamSamples: unsafe extern "system" fn(this: *mut *mut Self, pimportinitstruct: *const WMDRM_IMPORT_INIT_STRUCT) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMDeviceRegistration {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub RegisterDevice: unsafe extern "system" fn(this: *mut *mut Self, dwregistertype: u32, pbcertificate: *const u8, cbcertificate: u32, serialnumber: DRM_VAL16, ppdevice: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub UnregisterDevice: unsafe extern "system" fn(this: *mut *mut Self, dwregistertype: u32, pbcertificate: *const u8, cbcertificate: u32, serialnumber: DRM_VAL16) -> ::windows_sys::core::HRESULT,
+    pub GetRegistrationStats: unsafe extern "system" fn(this: *mut *mut Self, dwregistertype: u32, pcregistereddevices: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetFirstRegisteredDevice: unsafe extern "system" fn(this: *mut *mut Self, dwregistertype: u32, ppdevice: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetNextRegisteredDevice: unsafe extern "system" fn(this: *mut *mut Self, ppdevice: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetRegisteredDeviceByID: unsafe extern "system" fn(this: *mut *mut Self, dwregistertype: u32, pbcertificate: *const u8, cbcertificate: u32, serialnumber: DRM_VAL16, ppdevice: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMGetSecureChannel {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetPeerSecureChannelInterface: unsafe extern "system" fn(this: *mut *mut Self, pppeer: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMHeaderInfo {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetAttributeCount: unsafe extern "system" fn(this: *mut *mut Self, wstreamnum: u16, pcattributes: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub GetAttributeByIndex: unsafe extern "system" fn(this: *mut *mut Self, windex: u16, pwstreamnum: *mut u16, pwszname: ::windows_sys::core::PWSTR, pcchnamelen: *mut u16, ptype: *mut WMT_ATTR_DATATYPE, pvalue: *mut u8, pcblength: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub GetAttributeByName: unsafe extern "system" fn(this: *mut *mut Self, pwstreamnum: *mut u16, pszname: ::windows_sys::core::PCWSTR, ptype: *mut WMT_ATTR_DATATYPE, pvalue: *mut u8, pcblength: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub SetAttribute: unsafe extern "system" fn(this: *mut *mut Self, wstreamnum: u16, pszname: ::windows_sys::core::PCWSTR, r#type: WMT_ATTR_DATATYPE, pvalue: *const u8, cblength: u16) -> ::windows_sys::core::HRESULT,
+    pub GetMarkerCount: unsafe extern "system" fn(this: *mut *mut Self, pcmarkers: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub GetMarker: unsafe extern "system" fn(this: *mut *mut Self, windex: u16, pwszmarkername: ::windows_sys::core::PWSTR, pcchmarkernamelen: *mut u16, pcnsmarkertime: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub AddMarker: unsafe extern "system" fn(this: *mut *mut Self, pwszmarkername: ::windows_sys::core::PCWSTR, cnsmarkertime: u64) -> ::windows_sys::core::HRESULT,
+    pub RemoveMarker: unsafe extern "system" fn(this: *mut *mut Self, windex: u16) -> ::windows_sys::core::HRESULT,
+    pub GetScriptCount: unsafe extern "system" fn(this: *mut *mut Self, pcscripts: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub GetScript: unsafe extern "system" fn(this: *mut *mut Self, windex: u16, pwsztype: ::windows_sys::core::PWSTR, pcchtypelen: *mut u16, pwszcommand: ::windows_sys::core::PWSTR, pcchcommandlen: *mut u16, pcnsscripttime: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub AddScript: unsafe extern "system" fn(this: *mut *mut Self, pwsztype: ::windows_sys::core::PCWSTR, pwszcommand: ::windows_sys::core::PCWSTR, cnsscripttime: u64) -> ::windows_sys::core::HRESULT,
+    pub RemoveScript: unsafe extern "system" fn(this: *mut *mut Self, windex: u16) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMHeaderInfo2 {
+    pub base__: IWMHeaderInfo,
+    pub GetCodecInfoCount: unsafe extern "system" fn(this: *mut *mut Self, pccodecinfos: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCodecInfo: unsafe extern "system" fn(this: *mut *mut Self, windex: u32, pcchname: *mut u16, pwszname: ::windows_sys::core::PWSTR, pcchdescription: *mut u16, pwszdescription: ::windows_sys::core::PWSTR, pcodectype: *mut WMT_CODEC_INFO_TYPE, pcbcodecinfo: *mut u16, pbcodecinfo: *mut u8) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMHeaderInfo3 {
+    pub base__: IWMHeaderInfo2,
+    pub GetAttributeCountEx: unsafe extern "system" fn(this: *mut *mut Self, wstreamnum: u16, pcattributes: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub GetAttributeIndices: unsafe extern "system" fn(this: *mut *mut Self, wstreamnum: u16, pwszname: ::windows_sys::core::PCWSTR, pwlangindex: *const u16, pwindices: *mut u16, pwcount: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub GetAttributeByIndexEx: unsafe extern "system" fn(this: *mut *mut Self, wstreamnum: u16, windex: u16, pwszname: ::windows_sys::core::PWSTR, pwnamelen: *mut u16, ptype: *mut WMT_ATTR_DATATYPE, pwlangindex: *mut u16, pvalue: *mut u8, pdwdatalength: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub ModifyAttribute: unsafe extern "system" fn(this: *mut *mut Self, wstreamnum: u16, windex: u16, r#type: WMT_ATTR_DATATYPE, wlangindex: u16, pvalue: *const u8, dwlength: u32) -> ::windows_sys::core::HRESULT,
+    pub AddAttribute: unsafe extern "system" fn(this: *mut *mut Self, wstreamnum: u16, pszname: ::windows_sys::core::PCWSTR, pwindex: *mut u16, r#type: WMT_ATTR_DATATYPE, wlangindex: u16, pvalue: *const u8, dwlength: u32) -> ::windows_sys::core::HRESULT,
+    pub DeleteAttribute: unsafe extern "system" fn(this: *mut *mut Self, wstreamnum: u16, windex: u16) -> ::windows_sys::core::HRESULT,
+    pub AddCodecInfo: unsafe extern "system" fn(this: *mut *mut Self, pwszname: ::windows_sys::core::PCWSTR, pwszdescription: ::windows_sys::core::PCWSTR, codectype: WMT_CODEC_INFO_TYPE, cbcodecinfo: u16, pbcodecinfo: *const u8) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMIStreamProps {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetProperty: unsafe extern "system" fn(this: *mut *mut Self, pszname: ::windows_sys::core::PCWSTR, ptype: *mut WMT_ATTR_DATATYPE, pvalue: *mut u8, pdwsize: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMImageInfo {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetImageCount: unsafe extern "system" fn(this: *mut *mut Self, pcimages: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetImage: unsafe extern "system" fn(this: *mut *mut Self, windex: u32, pcchmimetype: *mut u16, pwszmimetype: ::windows_sys::core::PWSTR, pcchdescription: *mut u16, pwszdescription: ::windows_sys::core::PWSTR, pimagetype: *mut u16, pcbimagedata: *mut u32, pbimagedata: *mut u8) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMIndexer {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub StartIndexing: unsafe extern "system" fn(this: *mut *mut Self, pwszurl: ::windows_sys::core::PCWSTR, pcallback: *mut ::core::ffi::c_void, pvcontext: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Cancel: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMIndexer2 {
+    pub base__: IWMIndexer,
+    pub Configure: unsafe extern "system" fn(this: *mut *mut Self, wstreamnum: u16, nindexertype: WMT_INDEXER_TYPE, pvinterval: *const ::core::ffi::c_void, pvindextype: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMInputMediaProps {
+    pub base__: IWMMediaProps,
+    pub GetConnectionName: unsafe extern "system" fn(this: *mut *mut Self, pwszname: ::windows_sys::core::PWSTR, pcchname: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub GetGroupName: unsafe extern "system" fn(this: *mut *mut Self, pwszname: ::windows_sys::core::PWSTR, pcchname: *mut u16) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMLanguageList {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetLanguageCount: unsafe extern "system" fn(this: *mut *mut Self, pwcount: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub GetLanguageDetails: unsafe extern "system" fn(this: *mut *mut Self, windex: u16, pwszlanguagestring: ::windows_sys::core::PWSTR, pcchlanguagestringlength: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub AddLanguageByRFC1766String: unsafe extern "system" fn(this: *mut *mut Self, pwszlanguagestring: ::windows_sys::core::PCWSTR, pwindex: *mut u16) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMLicenseBackup {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub BackupLicenses: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, pcallback: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CancelLicenseBackup: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMLicenseRestore {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub RestoreLicenses: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, pcallback: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CancelLicenseRestore: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMLicenseRevocationAgent {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetLRBChallenge: unsafe extern "system" fn(this: *mut *mut Self, pmachineid: *const u8, dwmachineidlength: u32, pchallenge: *const u8, dwchallengelength: u32, pchallengeoutput: *mut u8, pdwchallengeoutputlength: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub ProcessLRB: unsafe extern "system" fn(this: *mut *mut Self, psignedlrb: *const u8, dwsignedlrblength: u32, psignedack: *mut u8, pdwsignedacklength: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMMediaProps {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetType: unsafe extern "system" fn(this: *mut *mut Self, pguidtype: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetMediaType: unsafe extern "system" fn(this: *mut *mut Self, ptype: *mut WM_MEDIA_TYPE, pcbtype: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetMediaType: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetMediaType: unsafe extern "system" fn(this: *mut *mut Self, ptype: *const WM_MEDIA_TYPE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetMediaType: usize,
+}
+#[repr(C)]
+pub struct IWMMetadataEditor {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Open: unsafe extern "system" fn(this: *mut *mut Self, pwszfilename: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Flush: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMMetadataEditor2 {
+    pub base__: IWMMetadataEditor,
+    pub OpenEx: unsafe extern "system" fn(this: *mut *mut Self, pwszfilename: ::windows_sys::core::PCWSTR, dwdesiredaccess: u32, dwsharemode: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMMutualExclusion {
+    pub base__: IWMStreamList,
+    pub GetType: unsafe extern "system" fn(this: *mut *mut Self, pguidtype: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub SetType: unsafe extern "system" fn(this: *mut *mut Self, guidtype: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMMutualExclusion2 {
+    pub base__: IWMMutualExclusion,
+    pub GetName: unsafe extern "system" fn(this: *mut *mut Self, pwszname: ::windows_sys::core::PWSTR, pcchname: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub SetName: unsafe extern "system" fn(this: *mut *mut Self, pwszname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetRecordCount: unsafe extern "system" fn(this: *mut *mut Self, pwrecordcount: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub AddRecord: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub RemoveRecord: unsafe extern "system" fn(this: *mut *mut Self, wrecordnumber: u16) -> ::windows_sys::core::HRESULT,
+    pub GetRecordName: unsafe extern "system" fn(this: *mut *mut Self, wrecordnumber: u16, pwszrecordname: ::windows_sys::core::PWSTR, pcchrecordname: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub SetRecordName: unsafe extern "system" fn(this: *mut *mut Self, wrecordnumber: u16, pwszrecordname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetStreamsForRecord: unsafe extern "system" fn(this: *mut *mut Self, wrecordnumber: u16, pwstreamnumarray: *mut u16, pcstreams: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub AddStreamForRecord: unsafe extern "system" fn(this: *mut *mut Self, wrecordnumber: u16, wstreamnumber: u16) -> ::windows_sys::core::HRESULT,
+    pub RemoveStreamForRecord: unsafe extern "system" fn(this: *mut *mut Self, wrecordnumber: u16, wstreamnumber: u16) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMOutputMediaProps {
+    pub base__: IWMMediaProps,
+    pub GetStreamGroupName: unsafe extern "system" fn(this: *mut *mut Self, pwszname: ::windows_sys::core::PWSTR, pcchname: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub GetConnectionName: unsafe extern "system" fn(this: *mut *mut Self, pwszname: ::windows_sys::core::PWSTR, pcchname: *mut u16) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMPacketSize {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetMaxPacketSize: unsafe extern "system" fn(this: *mut *mut Self, pdwmaxpacketsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetMaxPacketSize: unsafe extern "system" fn(this: *mut *mut Self, dwmaxpacketsize: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMPacketSize2 {
+    pub base__: IWMPacketSize,
+    pub GetMinPacketSize: unsafe extern "system" fn(this: *mut *mut Self, pdwminpacketsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetMinPacketSize: unsafe extern "system" fn(this: *mut *mut Self, dwminpacketsize: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMPlayerHook {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub PreDecode: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMPlayerTimestampHook {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub MapTimestamp: unsafe extern "system" fn(this: *mut *mut Self, rtin: i64, prtout: *mut i64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMProfile {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetVersion: unsafe extern "system" fn(this: *mut *mut Self, pdwversion: *mut WMT_VERSION) -> ::windows_sys::core::HRESULT,
+    pub GetName: unsafe extern "system" fn(this: *mut *mut Self, pwszname: ::windows_sys::core::PWSTR, pcchname: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetName: unsafe extern "system" fn(this: *mut *mut Self, pwszname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetDescription: unsafe extern "system" fn(this: *mut *mut Self, pwszdescription: ::windows_sys::core::PWSTR, pcchdescription: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetDescription: unsafe extern "system" fn(this: *mut *mut Self, pwszdescription: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetStreamCount: unsafe extern "system" fn(this: *mut *mut Self, pcstreams: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetStream: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32, ppconfig: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetStreamByNumber: unsafe extern "system" fn(this: *mut *mut Self, wstreamnum: u16, ppconfig: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RemoveStream: unsafe extern "system" fn(this: *mut *mut Self, pconfig: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RemoveStreamByNumber: unsafe extern "system" fn(this: *mut *mut Self, wstreamnum: u16) -> ::windows_sys::core::HRESULT,
+    pub AddStream: unsafe extern "system" fn(this: *mut *mut Self, pconfig: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ReconfigStream: unsafe extern "system" fn(this: *mut *mut Self, pconfig: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateNewStream: unsafe extern "system" fn(this: *mut *mut Self, guidstreamtype: *const ::windows_sys::core::GUID, ppconfig: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetMutualExclusionCount: unsafe extern "system" fn(this: *mut *mut Self, pcme: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetMutualExclusion: unsafe extern "system" fn(this: *mut *mut Self, dwmeindex: u32, ppme: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RemoveMutualExclusion: unsafe extern "system" fn(this: *mut *mut Self, pme: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AddMutualExclusion: unsafe extern "system" fn(this: *mut *mut Self, pme: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateNewMutualExclusion: unsafe extern "system" fn(this: *mut *mut Self, ppme: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMProfile2 {
+    pub base__: IWMProfile,
+    pub GetProfileID: unsafe extern "system" fn(this: *mut *mut Self, pguidid: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMProfile3 {
+    pub base__: IWMProfile2,
+    pub GetStorageFormat: unsafe extern "system" fn(this: *mut *mut Self, pnstorageformat: *mut WMT_STORAGE_FORMAT) -> ::windows_sys::core::HRESULT,
+    pub SetStorageFormat: unsafe extern "system" fn(this: *mut *mut Self, nstorageformat: WMT_STORAGE_FORMAT) -> ::windows_sys::core::HRESULT,
+    pub GetBandwidthSharingCount: unsafe extern "system" fn(this: *mut *mut Self, pcbs: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetBandwidthSharing: unsafe extern "system" fn(this: *mut *mut Self, dwbsindex: u32, ppbs: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RemoveBandwidthSharing: unsafe extern "system" fn(this: *mut *mut Self, pbs: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AddBandwidthSharing: unsafe extern "system" fn(this: *mut *mut Self, pbs: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateNewBandwidthSharing: unsafe extern "system" fn(this: *mut *mut Self, ppbs: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetStreamPrioritization: unsafe extern "system" fn(this: *mut *mut Self, ppsp: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetStreamPrioritization: unsafe extern "system" fn(this: *mut *mut Self, psp: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RemoveStreamPrioritization: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub CreateNewStreamPrioritization: unsafe extern "system" fn(this: *mut *mut Self, ppsp: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetExpectedPacketCount: unsafe extern "system" fn(this: *mut *mut Self, msduration: u64, pcpackets: *mut u64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMProfileManager {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub CreateEmptyProfile: unsafe extern "system" fn(this: *mut *mut Self, dwversion: WMT_VERSION, ppprofile: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub LoadProfileByID: unsafe extern "system" fn(this: *mut *mut Self, guidprofile: *const ::windows_sys::core::GUID, ppprofile: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub LoadProfileByData: unsafe extern "system" fn(this: *mut *mut Self, pwszprofile: ::windows_sys::core::PCWSTR, ppprofile: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SaveProfile: unsafe extern "system" fn(this: *mut *mut Self, piwmprofile: *mut ::core::ffi::c_void, pwszprofile: ::windows_sys::core::PCWSTR, pdwlength: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSystemProfileCount: unsafe extern "system" fn(this: *mut *mut Self, pcprofiles: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub LoadSystemProfile: unsafe extern "system" fn(this: *mut *mut Self, dwprofileindex: u32, ppprofile: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMProfileManager2 {
+    pub base__: IWMProfileManager,
+    pub GetSystemProfileVersion: unsafe extern "system" fn(this: *mut *mut Self, pdwversion: *mut WMT_VERSION) -> ::windows_sys::core::HRESULT,
+    pub SetSystemProfileVersion: unsafe extern "system" fn(this: *mut *mut Self, dwversion: WMT_VERSION) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMProfileManagerLanguage {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetUserLanguageID: unsafe extern "system" fn(this: *mut *mut Self, wlangid: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub SetUserLanguageID: unsafe extern "system" fn(this: *mut *mut Self, wlangid: u16) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMPropertyVault {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetPropertyCount: unsafe extern "system" fn(this: *mut *mut Self, pdwcount: *const u32) -> ::windows_sys::core::HRESULT,
+    pub GetPropertyByName: unsafe extern "system" fn(this: *mut *mut Self, pszname: ::windows_sys::core::PCWSTR, ptype: *mut WMT_ATTR_DATATYPE, pvalue: *mut u8, pdwsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetProperty: unsafe extern "system" fn(this: *mut *mut Self, pszname: ::windows_sys::core::PCWSTR, ptype: WMT_ATTR_DATATYPE, pvalue: *const u8, dwsize: u32) -> ::windows_sys::core::HRESULT,
+    pub GetPropertyByIndex: unsafe extern "system" fn(this: *mut *mut Self, dwindex: u32, pszname: ::windows_sys::core::PWSTR, pdwnamelen: *mut u32, ptype: *mut WMT_ATTR_DATATYPE, pvalue: *mut u8, pdwsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub CopyPropertiesFrom: unsafe extern "system" fn(this: *mut *mut Self, piwmpropertyvault: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Clear: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMProximityDetection {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub StartDetection: unsafe extern "system" fn(this: *mut *mut Self, pbregistrationmsg: *const u8, cbregistrationmsg: u32, pblocaladdress: *const u8, cblocaladdress: u32, dwextraportsallowed: u32, ppregistrationresponsemsg: *mut *mut ::core::ffi::c_void, pcallback: *mut ::core::ffi::c_void, pvcontext: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMReader {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Open: unsafe extern "system" fn(this: *mut *mut Self, pwszurl: ::windows_sys::core::PCWSTR, pcallback: *mut ::core::ffi::c_void, pvcontext: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetOutputCount: unsafe extern "system" fn(this: *mut *mut Self, pcoutputs: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetOutputProps: unsafe extern "system" fn(this: *mut *mut Self, dwoutputnum: u32, ppoutput: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetOutputProps: unsafe extern "system" fn(this: *mut *mut Self, dwoutputnum: u32, poutput: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetOutputFormatCount: unsafe extern "system" fn(this: *mut *mut Self, dwoutputnumber: u32, pcformats: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetOutputFormat: unsafe extern "system" fn(this: *mut *mut Self, dwoutputnumber: u32, dwformatnumber: u32, ppprops: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Start: unsafe extern "system" fn(this: *mut *mut Self, cnsstart: u64, cnsduration: u64, frate: f32, pvcontext: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Stop: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Pause: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Resume: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMReaderAccelerator {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCodecInterface: unsafe extern "system" fn(this: *mut *mut Self, dwoutputnum: u32, riid: *const ::windows_sys::core::GUID, ppvcodecinterface: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Notify: unsafe extern "system" fn(this: *mut *mut Self, dwoutputnum: u32, psubtype: *const WM_MEDIA_TYPE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Notify: usize,
+}
+#[repr(C)]
+pub struct IWMReaderAdvanced {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetUserProvidedClock: unsafe extern "system" fn(this: *mut *mut Self, fuserclock: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetUserProvidedClock: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetUserProvidedClock: unsafe extern "system" fn(this: *mut *mut Self, pfuserclock: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetUserProvidedClock: usize,
+    pub DeliverTime: unsafe extern "system" fn(this: *mut *mut Self, cnstime: u64) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetManualStreamSelection: unsafe extern "system" fn(this: *mut *mut Self, fselection: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetManualStreamSelection: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetManualStreamSelection: unsafe extern "system" fn(this: *mut *mut Self, pfselection: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetManualStreamSelection: usize,
+    pub SetStreamsSelected: unsafe extern "system" fn(this: *mut *mut Self, cstreamcount: u16, pwstreamnumbers: *const u16, pselections: *const WMT_STREAM_SELECTION) -> ::windows_sys::core::HRESULT,
+    pub GetStreamSelected: unsafe extern "system" fn(this: *mut *mut Self, wstreamnum: u16, pselection: *mut WMT_STREAM_SELECTION) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetReceiveSelectionCallbacks: unsafe extern "system" fn(this: *mut *mut Self, fgetcallbacks: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetReceiveSelectionCallbacks: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetReceiveSelectionCallbacks: unsafe extern "system" fn(this: *mut *mut Self, pfgetcallbacks: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetReceiveSelectionCallbacks: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetReceiveStreamSamples: unsafe extern "system" fn(this: *mut *mut Self, wstreamnum: u16, freceivestreamsamples: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetReceiveStreamSamples: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetReceiveStreamSamples: unsafe extern "system" fn(this: *mut *mut Self, wstreamnum: u16, pfreceivestreamsamples: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetReceiveStreamSamples: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetAllocateForOutput: unsafe extern "system" fn(this: *mut *mut Self, dwoutputnum: u32, fallocate: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetAllocateForOutput: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetAllocateForOutput: unsafe extern "system" fn(this: *mut *mut Self, dwoutputnum: u32, pfallocate: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetAllocateForOutput: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetAllocateForStream: unsafe extern "system" fn(this: *mut *mut Self, wstreamnum: u16, fallocate: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetAllocateForStream: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetAllocateForStream: unsafe extern "system" fn(this: *mut *mut Self, dwsreamnum: u16, pfallocate: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetAllocateForStream: usize,
+    pub GetStatistics: unsafe extern "system" fn(this: *mut *mut Self, pstatistics: *mut WM_READER_STATISTICS) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetClientInfo: unsafe extern "system" fn(this: *mut *mut Self, pclientinfo: *const WM_READER_CLIENTINFO) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetClientInfo: usize,
+    pub GetMaxOutputSampleSize: unsafe extern "system" fn(this: *mut *mut Self, dwoutput: u32, pcbmax: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetMaxStreamSampleSize: unsafe extern "system" fn(this: *mut *mut Self, wstream: u16, pcbmax: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub NotifyLateDelivery: unsafe extern "system" fn(this: *mut *mut Self, cnslateness: u64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMReaderAdvanced2 {
+    pub base__: IWMReaderAdvanced,
+    pub SetPlayMode: unsafe extern "system" fn(this: *mut *mut Self, mode: WMT_PLAY_MODE) -> ::windows_sys::core::HRESULT,
+    pub GetPlayMode: unsafe extern "system" fn(this: *mut *mut Self, pmode: *mut WMT_PLAY_MODE) -> ::windows_sys::core::HRESULT,
+    pub GetBufferProgress: unsafe extern "system" fn(this: *mut *mut Self, pdwpercent: *mut u32, pcnsbuffering: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetDownloadProgress: unsafe extern "system" fn(this: *mut *mut Self, pdwpercent: *mut u32, pqwbytesdownloaded: *mut u64, pcnsdownload: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetSaveAsProgress: unsafe extern "system" fn(this: *mut *mut Self, pdwpercent: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SaveFileAs: unsafe extern "system" fn(this: *mut *mut Self, pwszfilename: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetProtocolName: unsafe extern "system" fn(this: *mut *mut Self, pwszprotocol: ::windows_sys::core::PWSTR, pcchprotocol: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub StartAtMarker: unsafe extern "system" fn(this: *mut *mut Self, wmarkerindex: u16, cnsduration: u64, frate: f32, pvcontext: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetOutputSetting: unsafe extern "system" fn(this: *mut *mut Self, dwoutputnum: u32, pszname: ::windows_sys::core::PCWSTR, ptype: *mut WMT_ATTR_DATATYPE, pvalue: *mut u8, pcblength: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub SetOutputSetting: unsafe extern "system" fn(this: *mut *mut Self, dwoutputnum: u32, pszname: ::windows_sys::core::PCWSTR, r#type: WMT_ATTR_DATATYPE, pvalue: *const u8, cblength: u16) -> ::windows_sys::core::HRESULT,
+    pub Preroll: unsafe extern "system" fn(this: *mut *mut Self, cnsstart: u64, cnsduration: u64, frate: f32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetLogClientID: unsafe extern "system" fn(this: *mut *mut Self, flogclientid: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetLogClientID: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetLogClientID: unsafe extern "system" fn(this: *mut *mut Self, pflogclientid: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetLogClientID: usize,
+    pub StopBuffering: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub OpenStream: unsafe extern "system" fn(this: *mut *mut Self, pstream: *mut ::core::ffi::c_void, pcallback: *mut ::core::ffi::c_void, pvcontext: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    OpenStream: usize,
+}
+#[repr(C)]
+pub struct IWMReaderAdvanced3 {
+    pub base__: IWMReaderAdvanced2,
+    pub StopNetStreaming: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub StartAtPosition: unsafe extern "system" fn(this: *mut *mut Self, wstreamnum: u16, pvoffsetstart: *const ::core::ffi::c_void, pvduration: *const ::core::ffi::c_void, dwoffsetformat: WMT_OFFSET_FORMAT, frate: f32, pvcontext: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMReaderAdvanced4 {
+    pub base__: IWMReaderAdvanced3,
+    pub GetLanguageCount: unsafe extern "system" fn(this: *mut *mut Self, dwoutputnum: u32, pwlanguagecount: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub GetLanguage: unsafe extern "system" fn(this: *mut *mut Self, dwoutputnum: u32, wlanguage: u16, pwszlanguagestring: ::windows_sys::core::PWSTR, pcchlanguagestringlength: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub GetMaxSpeedFactor: unsafe extern "system" fn(this: *mut *mut Self, pdblfactor: *mut f64) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsUsingFastCache: unsafe extern "system" fn(this: *mut *mut Self, pfusingfastcache: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsUsingFastCache: usize,
+    pub AddLogParam: unsafe extern "system" fn(this: *mut *mut Self, wsznamespace: ::windows_sys::core::PCWSTR, wszname: ::windows_sys::core::PCWSTR, wszvalue: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub SendLogParams: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CanSaveFileAs: unsafe extern "system" fn(this: *mut *mut Self, pfcansave: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CanSaveFileAs: usize,
+    pub CancelSaveFileAs: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetURL: unsafe extern "system" fn(this: *mut *mut Self, pwszurl: ::windows_sys::core::PWSTR, pcchurl: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMReaderAdvanced5 {
+    pub base__: IWMReaderAdvanced4,
+    pub SetPlayerHook: unsafe extern "system" fn(this: *mut *mut Self, dwoutputnum: u32, phook: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMReaderAdvanced6 {
+    pub base__: IWMReaderAdvanced5,
+    pub SetProtectStreamSamples: unsafe extern "system" fn(this: *mut *mut Self, pbcertificate: *const u8, cbcertificate: u32, dwcertificatetype: u32, dwflags: u32, pbinitializationvector: *mut u8, pcbinitializationvector: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMReaderAllocatorEx {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub AllocateForStreamEx: unsafe extern "system" fn(this: *mut *mut Self, wstreamnum: u16, cbbuffer: u32, ppbuffer: *mut *mut ::core::ffi::c_void, dwflags: u32, cnssampletime: u64, cnssampleduration: u64, pvcontext: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AllocateForOutputEx: unsafe extern "system" fn(this: *mut *mut Self, dwoutputnum: u32, cbbuffer: u32, ppbuffer: *mut *mut ::core::ffi::c_void, dwflags: u32, cnssampletime: u64, cnssampleduration: u64, pvcontext: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMReaderCallback {
+    pub base__: IWMStatusCallback,
+    pub OnSample: unsafe extern "system" fn(this: *mut *mut Self, dwoutputnum: u32, cnssampletime: u64, cnssampleduration: u64, dwflags: u32, psample: *mut ::core::ffi::c_void, pvcontext: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMReaderCallbackAdvanced {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnStreamSample: unsafe extern "system" fn(this: *mut *mut Self, wstreamnum: u16, cnssampletime: u64, cnssampleduration: u64, dwflags: u32, psample: *mut ::core::ffi::c_void, pvcontext: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub OnTime: unsafe extern "system" fn(this: *mut *mut Self, cnscurrenttime: u64, pvcontext: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub OnStreamSelection: unsafe extern "system" fn(this: *mut *mut Self, wstreamcount: u16, pstreamnumbers: *const u16, pselections: *const WMT_STREAM_SELECTION, pvcontext: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OnOutputPropsChanged: unsafe extern "system" fn(this: *mut *mut Self, dwoutputnum: u32, pmediatype: *const WM_MEDIA_TYPE, pvcontext: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OnOutputPropsChanged: usize,
+    pub AllocateForStream: unsafe extern "system" fn(this: *mut *mut Self, wstreamnum: u16, cbbuffer: u32, ppbuffer: *mut *mut ::core::ffi::c_void, pvcontext: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AllocateForOutput: unsafe extern "system" fn(this: *mut *mut Self, dwoutputnum: u32, cbbuffer: u32, ppbuffer: *mut *mut ::core::ffi::c_void, pvcontext: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMReaderNetworkConfig {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetBufferingTime: unsafe extern "system" fn(this: *mut *mut Self, pcnsbufferingtime: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub SetBufferingTime: unsafe extern "system" fn(this: *mut *mut Self, cnsbufferingtime: u64) -> ::windows_sys::core::HRESULT,
+    pub GetUDPPortRanges: unsafe extern "system" fn(this: *mut *mut Self, prangearray: *mut WM_PORT_NUMBER_RANGE, pcranges: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetUDPPortRanges: unsafe extern "system" fn(this: *mut *mut Self, prangearray: *const WM_PORT_NUMBER_RANGE, cranges: u32) -> ::windows_sys::core::HRESULT,
+    pub GetProxySettings: unsafe extern "system" fn(this: *mut *mut Self, pwszprotocol: ::windows_sys::core::PCWSTR, pproxysetting: *mut WMT_PROXY_SETTINGS) -> ::windows_sys::core::HRESULT,
+    pub SetProxySettings: unsafe extern "system" fn(this: *mut *mut Self, pwszprotocol: ::windows_sys::core::PCWSTR, proxysetting: WMT_PROXY_SETTINGS) -> ::windows_sys::core::HRESULT,
+    pub GetProxyHostName: unsafe extern "system" fn(this: *mut *mut Self, pwszprotocol: ::windows_sys::core::PCWSTR, pwszhostname: ::windows_sys::core::PWSTR, pcchhostname: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetProxyHostName: unsafe extern "system" fn(this: *mut *mut Self, pwszprotocol: ::windows_sys::core::PCWSTR, pwszhostname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetProxyPort: unsafe extern "system" fn(this: *mut *mut Self, pwszprotocol: ::windows_sys::core::PCWSTR, pdwport: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetProxyPort: unsafe extern "system" fn(this: *mut *mut Self, pwszprotocol: ::windows_sys::core::PCWSTR, dwport: u32) -> ::windows_sys::core::HRESULT,
+    pub GetProxyExceptionList: unsafe extern "system" fn(this: *mut *mut Self, pwszprotocol: ::windows_sys::core::PCWSTR, pwszexceptionlist: ::windows_sys::core::PWSTR, pcchexceptionlist: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetProxyExceptionList: unsafe extern "system" fn(this: *mut *mut Self, pwszprotocol: ::windows_sys::core::PCWSTR, pwszexceptionlist: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetProxyBypassForLocal: unsafe extern "system" fn(this: *mut *mut Self, pwszprotocol: ::windows_sys::core::PCWSTR, pfbypassforlocal: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetProxyBypassForLocal: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetProxyBypassForLocal: unsafe extern "system" fn(this: *mut *mut Self, pwszprotocol: ::windows_sys::core::PCWSTR, fbypassforlocal: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetProxyBypassForLocal: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetForceRerunAutoProxyDetection: unsafe extern "system" fn(this: *mut *mut Self, pfforcererundetection: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetForceRerunAutoProxyDetection: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetForceRerunAutoProxyDetection: unsafe extern "system" fn(this: *mut *mut Self, fforcererundetection: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetForceRerunAutoProxyDetection: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetEnableMulticast: unsafe extern "system" fn(this: *mut *mut Self, pfenablemulticast: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetEnableMulticast: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetEnableMulticast: unsafe extern "system" fn(this: *mut *mut Self, fenablemulticast: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetEnableMulticast: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetEnableHTTP: unsafe extern "system" fn(this: *mut *mut Self, pfenablehttp: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetEnableHTTP: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetEnableHTTP: unsafe extern "system" fn(this: *mut *mut Self, fenablehttp: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetEnableHTTP: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetEnableUDP: unsafe extern "system" fn(this: *mut *mut Self, pfenableudp: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetEnableUDP: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetEnableUDP: unsafe extern "system" fn(this: *mut *mut Self, fenableudp: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetEnableUDP: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetEnableTCP: unsafe extern "system" fn(this: *mut *mut Self, pfenabletcp: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetEnableTCP: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetEnableTCP: unsafe extern "system" fn(this: *mut *mut Self, fenabletcp: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetEnableTCP: usize,
+    pub ResetProtocolRollover: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetConnectionBandwidth: unsafe extern "system" fn(this: *mut *mut Self, pdwconnectionbandwidth: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetConnectionBandwidth: unsafe extern "system" fn(this: *mut *mut Self, dwconnectionbandwidth: u32) -> ::windows_sys::core::HRESULT,
+    pub GetNumProtocolsSupported: unsafe extern "system" fn(this: *mut *mut Self, pcprotocols: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSupportedProtocolName: unsafe extern "system" fn(this: *mut *mut Self, dwprotocolnum: u32, pwszprotocolname: ::windows_sys::core::PWSTR, pcchprotocolname: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub AddLoggingUrl: unsafe extern "system" fn(this: *mut *mut Self, pwszurl: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetLoggingUrl: unsafe extern "system" fn(this: *mut *mut Self, dwindex: u32, pwszurl: ::windows_sys::core::PWSTR, pcchurl: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetLoggingUrlCount: unsafe extern "system" fn(this: *mut *mut Self, pdwurlcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub ResetLoggingUrlList: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMReaderNetworkConfig2 {
+    pub base__: IWMReaderNetworkConfig,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetEnableContentCaching: unsafe extern "system" fn(this: *mut *mut Self, pfenablecontentcaching: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetEnableContentCaching: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetEnableContentCaching: unsafe extern "system" fn(this: *mut *mut Self, fenablecontentcaching: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetEnableContentCaching: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetEnableFastCache: unsafe extern "system" fn(this: *mut *mut Self, pfenablefastcache: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetEnableFastCache: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetEnableFastCache: unsafe extern "system" fn(this: *mut *mut Self, fenablefastcache: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetEnableFastCache: usize,
+    pub GetAcceleratedStreamingDuration: unsafe extern "system" fn(this: *mut *mut Self, pcnsaccelduration: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub SetAcceleratedStreamingDuration: unsafe extern "system" fn(this: *mut *mut Self, cnsaccelduration: u64) -> ::windows_sys::core::HRESULT,
+    pub GetAutoReconnectLimit: unsafe extern "system" fn(this: *mut *mut Self, pdwautoreconnectlimit: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetAutoReconnectLimit: unsafe extern "system" fn(this: *mut *mut Self, dwautoreconnectlimit: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetEnableResends: unsafe extern "system" fn(this: *mut *mut Self, pfenableresends: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetEnableResends: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetEnableResends: unsafe extern "system" fn(this: *mut *mut Self, fenableresends: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetEnableResends: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetEnableThinning: unsafe extern "system" fn(this: *mut *mut Self, pfenablethinning: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetEnableThinning: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetEnableThinning: unsafe extern "system" fn(this: *mut *mut Self, fenablethinning: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetEnableThinning: usize,
+    pub GetMaxNetPacketSize: unsafe extern "system" fn(this: *mut *mut Self, pdwmaxnetpacketsize: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMReaderPlaylistBurn {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub InitPlaylistBurn: unsafe extern "system" fn(this: *mut *mut Self, cfiles: u32, ppwszfilenames: *const ::windows_sys::core::PWSTR, pcallback: *mut ::core::ffi::c_void, pvcontext: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetInitResults: unsafe extern "system" fn(this: *mut *mut Self, cfiles: u32, phrstati: *mut ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+    pub Cancel: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub EndPlaylistBurn: unsafe extern "system" fn(this: *mut *mut Self, hrburnresult: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMReaderStreamClock {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetTime: unsafe extern "system" fn(this: *mut *mut Self, pcnsnow: *const u64) -> ::windows_sys::core::HRESULT,
+    pub SetTimer: unsafe extern "system" fn(this: *mut *mut Self, cnswhen: u64, pvparam: *const ::core::ffi::c_void, pdwtimerid: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub KillTimer: unsafe extern "system" fn(this: *mut *mut Self, dwtimerid: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMReaderTimecode {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetTimecodeRangeCount: unsafe extern "system" fn(this: *mut *mut Self, wstreamnum: u16, pwrangecount: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub GetTimecodeRangeBounds: unsafe extern "system" fn(this: *mut *mut Self, wstreamnum: u16, wrangenum: u16, pstarttimecode: *mut u32, pendtimecode: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMReaderTypeNegotiation {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub TryOutputProps: unsafe extern "system" fn(this: *mut *mut Self, dwoutputnum: u32, poutput: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMRegisterCallback {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Advise: unsafe extern "system" fn(this: *mut *mut Self, pcallback: *mut ::core::ffi::c_void, pvcontext: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Unadvise: unsafe extern "system" fn(this: *mut *mut Self, pcallback: *mut ::core::ffi::c_void, pvcontext: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMRegisteredDevice {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetDeviceSerialNumber: unsafe extern "system" fn(this: *mut *mut Self, pserialnumber: *mut DRM_VAL16) -> ::windows_sys::core::HRESULT,
+    pub GetDeviceCertificate: unsafe extern "system" fn(this: *mut *mut Self, ppcertificate: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetDeviceType: unsafe extern "system" fn(this: *mut *mut Self, pdwtype: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetAttributeCount: unsafe extern "system" fn(this: *mut *mut Self, pcattributes: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetAttributeByIndex: unsafe extern "system" fn(this: *mut *mut Self, dwindex: u32, pbstrname: *mut super::super::Foundation::BSTR, pbstrvalue: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetAttributeByIndex: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetAttributeByName: unsafe extern "system" fn(this: *mut *mut Self, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pbstrvalue: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetAttributeByName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetAttributeByName: unsafe extern "system" fn(this: *mut *mut Self, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrvalue: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetAttributeByName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Approve: unsafe extern "system" fn(this: *mut *mut Self, fapprove: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Approve: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsValid: unsafe extern "system" fn(this: *mut *mut Self, pfvalid: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsValid: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsApproved: unsafe extern "system" fn(this: *mut *mut Self, pfapproved: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsApproved: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsWmdrmCompliant: unsafe extern "system" fn(this: *mut *mut Self, pfcompliant: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsWmdrmCompliant: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsOpened: unsafe extern "system" fn(this: *mut *mut Self, pfopened: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsOpened: usize,
+    pub Open: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMSBufferAllocator {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub AllocateBuffer: unsafe extern "system" fn(this: *mut *mut Self, dwmaxbuffersize: u32, ppbuffer: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AllocatePageSizeBuffer: unsafe extern "system" fn(this: *mut *mut Self, dwmaxbuffersize: u32, ppbuffer: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMSInternalAdminNetSource {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, psharednamespace: *mut ::core::ffi::c_void, pnamespacenode: *mut ::core::ffi::c_void, pnetsourcecreator: *mut ::core::ffi::c_void, fembeddedinserver: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Initialize: usize,
+    pub GetNetSourceCreator: unsafe extern "system" fn(this: *mut *mut Self, ppnetsourcecreator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetCredentials: unsafe extern "system" fn(this: *mut *mut Self, bstrrealm: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrpassword: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, fpersist: super::super::Foundation::BOOL, fconfirmedgood: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetCredentials: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetCredentials: unsafe extern "system" fn(this: *mut *mut Self, bstrrealm: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pbstrname: *mut super::super::Foundation::BSTR, pbstrpassword: *mut super::super::Foundation::BSTR, pfconfirmedgood: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetCredentials: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DeleteCredentials: unsafe extern "system" fn(this: *mut *mut Self, bstrrealm: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DeleteCredentials: usize,
+    pub GetCredentialFlags: unsafe extern "system" fn(this: *mut *mut Self, lpdwflags: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetCredentialFlags: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub FindProxyForURL: unsafe extern "system" fn(this: *mut *mut Self, bstrprotocol: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrhost: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pfproxyenabled: *mut super::super::Foundation::BOOL, pbstrproxyserver: *mut super::super::Foundation::BSTR, pdwproxyport: *mut u32, pdwproxycontext: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    FindProxyForURL: usize,
+    pub RegisterProxyFailure: unsafe extern "system" fn(this: *mut *mut Self, hrparam: ::windows_sys::core::HRESULT, dwproxycontext: u32) -> ::windows_sys::core::HRESULT,
+    pub ShutdownProxyContext: unsafe extern "system" fn(this: *mut *mut Self, dwproxycontext: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsUsingIE: unsafe extern "system" fn(this: *mut *mut Self, dwproxycontext: u32, pfisusingie: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsUsingIE: usize,
+}
+#[repr(C)]
+pub struct IWMSInternalAdminNetSource2 {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetCredentialsEx: unsafe extern "system" fn(this: *mut *mut Self, bstrrealm: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrurl: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, fproxy: super::super::Foundation::BOOL, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrpassword: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, fpersist: super::super::Foundation::BOOL, fconfirmedgood: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetCredentialsEx: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetCredentialsEx: unsafe extern "system" fn(this: *mut *mut Self, bstrrealm: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrurl: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, fproxy: super::super::Foundation::BOOL, pdwurlpolicy: *mut NETSOURCE_URLCREDPOLICY_SETTINGS, pbstrname: *mut super::super::Foundation::BSTR, pbstrpassword: *mut super::super::Foundation::BSTR, pfconfirmedgood: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetCredentialsEx: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DeleteCredentialsEx: unsafe extern "system" fn(this: *mut *mut Self, bstrrealm: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrurl: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, fproxy: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DeleteCredentialsEx: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub FindProxyForURLEx: unsafe extern "system" fn(this: *mut *mut Self, bstrprotocol: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrhost: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrurl: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pfproxyenabled: *mut super::super::Foundation::BOOL, pbstrproxyserver: *mut super::super::Foundation::BSTR, pdwproxyport: *mut u32, pdwproxycontext: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    FindProxyForURLEx: usize,
+}
+#[repr(C)]
+pub struct IWMSInternalAdminNetSource3 {
+    pub base__: IWMSInternalAdminNetSource2,
+    pub GetNetSourceCreator2: unsafe extern "system" fn(this: *mut *mut Self, ppnetsourcecreator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub FindProxyForURLEx2: unsafe extern "system" fn(this: *mut *mut Self, bstrprotocol: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrhost: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrurl: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pfproxyenabled: *mut super::super::Foundation::BOOL, pbstrproxyserver: *mut super::super::Foundation::BSTR, pdwproxyport: *mut u32, pqwproxycontext: *mut u64) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    FindProxyForURLEx2: usize,
+    pub RegisterProxyFailure2: unsafe extern "system" fn(this: *mut *mut Self, hrparam: ::windows_sys::core::HRESULT, qwproxycontext: u64) -> ::windows_sys::core::HRESULT,
+    pub ShutdownProxyContext2: unsafe extern "system" fn(this: *mut *mut Self, qwproxycontext: u64) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsUsingIE2: unsafe extern "system" fn(this: *mut *mut Self, qwproxycontext: u64, pfisusingie: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsUsingIE2: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetCredentialsEx2: unsafe extern "system" fn(this: *mut *mut Self, bstrrealm: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrurl: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, fproxy: super::super::Foundation::BOOL, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrpassword: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, fpersist: super::super::Foundation::BOOL, fconfirmedgood: super::super::Foundation::BOOL, fcleartextauthentication: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetCredentialsEx2: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetCredentialsEx2: unsafe extern "system" fn(this: *mut *mut Self, bstrrealm: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrurl: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, fproxy: super::super::Foundation::BOOL, fcleartextauthentication: super::super::Foundation::BOOL, pdwurlpolicy: *mut NETSOURCE_URLCREDPOLICY_SETTINGS, pbstrname: *mut super::super::Foundation::BSTR, pbstrpassword: *mut super::super::Foundation::BSTR, pfconfirmedgood: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetCredentialsEx2: usize,
+}
+#[repr(C)]
+pub struct IWMSecureChannel {
+    pub base__: IWMAuthorizer,
+    pub WMSC_AddCertificate: unsafe extern "system" fn(this: *mut *mut Self, pcert: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub WMSC_AddSignature: unsafe extern "system" fn(this: *mut *mut Self, pbcertsig: *const u8, cbcertsig: u32) -> ::windows_sys::core::HRESULT,
+    pub WMSC_Connect: unsafe extern "system" fn(this: *mut *mut Self, potherside: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub WMSC_IsConnected: unsafe extern "system" fn(this: *mut *mut Self, pfisconnected: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    WMSC_IsConnected: usize,
+    pub WMSC_Disconnect: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub WMSC_GetValidCertificate: unsafe extern "system" fn(this: *mut *mut Self, ppbcertificate: *mut *mut u8, pdwsignature: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub WMSC_Encrypt: unsafe extern "system" fn(this: *mut *mut Self, pbdata: *const u8, cbdata: u32) -> ::windows_sys::core::HRESULT,
+    pub WMSC_Decrypt: unsafe extern "system" fn(this: *mut *mut Self, pbdata: *const u8, cbdata: u32) -> ::windows_sys::core::HRESULT,
+    pub WMSC_Lock: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub WMSC_Unlock: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub WMSC_SetSharedData: unsafe extern "system" fn(this: *mut *mut Self, dwcertindex: u32, pbshareddata: *const u8) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMStatusCallback {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnStatus: unsafe extern "system" fn(this: *mut *mut Self, status: WMT_STATUS, hr: ::windows_sys::core::HRESULT, dwtype: WMT_ATTR_DATATYPE, pvalue: *const u8, pvcontext: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMStreamConfig {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetStreamType: unsafe extern "system" fn(this: *mut *mut Self, pguidstreamtype: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub GetStreamNumber: unsafe extern "system" fn(this: *mut *mut Self, pwstreamnum: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub SetStreamNumber: unsafe extern "system" fn(this: *mut *mut Self, wstreamnum: u16) -> ::windows_sys::core::HRESULT,
+    pub GetStreamName: unsafe extern "system" fn(this: *mut *mut Self, pwszstreamname: ::windows_sys::core::PWSTR, pcchstreamname: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub SetStreamName: unsafe extern "system" fn(this: *mut *mut Self, pwszstreamname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetConnectionName: unsafe extern "system" fn(this: *mut *mut Self, pwszinputname: ::windows_sys::core::PWSTR, pcchinputname: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub SetConnectionName: unsafe extern "system" fn(this: *mut *mut Self, pwszinputname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetBitrate: unsafe extern "system" fn(this: *mut *mut Self, pdwbitrate: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetBitrate: unsafe extern "system" fn(this: *mut *mut Self, pdwbitrate: u32) -> ::windows_sys::core::HRESULT,
+    pub GetBufferWindow: unsafe extern "system" fn(this: *mut *mut Self, pmsbufferwindow: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetBufferWindow: unsafe extern "system" fn(this: *mut *mut Self, msbufferwindow: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMStreamConfig2 {
+    pub base__: IWMStreamConfig,
+    pub GetTransportType: unsafe extern "system" fn(this: *mut *mut Self, pntransporttype: *mut WMT_TRANSPORT_TYPE) -> ::windows_sys::core::HRESULT,
+    pub SetTransportType: unsafe extern "system" fn(this: *mut *mut Self, ntransporttype: WMT_TRANSPORT_TYPE) -> ::windows_sys::core::HRESULT,
+    pub AddDataUnitExtension: unsafe extern "system" fn(this: *mut *mut Self, guidextensionsystemid: ::windows_sys::core::GUID, cbextensiondatasize: u16, pbextensionsysteminfo: *const u8, cbextensionsysteminfo: u32) -> ::windows_sys::core::HRESULT,
+    pub GetDataUnitExtensionCount: unsafe extern "system" fn(this: *mut *mut Self, pcdataunitextensions: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub GetDataUnitExtension: unsafe extern "system" fn(this: *mut *mut Self, wdataunitextensionnumber: u16, pguidextensionsystemid: *mut ::windows_sys::core::GUID, pcbextensiondatasize: *mut u16, pbextensionsysteminfo: *mut u8, pcbextensionsysteminfo: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub RemoveAllDataUnitExtensions: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMStreamConfig3 {
+    pub base__: IWMStreamConfig2,
+    pub GetLanguage: unsafe extern "system" fn(this: *mut *mut Self, pwszlanguagestring: ::windows_sys::core::PWSTR, pcchlanguagestringlength: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub SetLanguage: unsafe extern "system" fn(this: *mut *mut Self, pwszlanguagestring: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMStreamList {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetStreams: unsafe extern "system" fn(this: *mut *mut Self, pwstreamnumarray: *mut u16, pcstreams: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub AddStream: unsafe extern "system" fn(this: *mut *mut Self, wstreamnum: u16) -> ::windows_sys::core::HRESULT,
+    pub RemoveStream: unsafe extern "system" fn(this: *mut *mut Self, wstreamnum: u16) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMStreamPrioritization {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetPriorityRecords: unsafe extern "system" fn(this: *mut *mut Self, precordarray: *mut WM_STREAM_PRIORITY_RECORD, pcrecords: *mut u16) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetPriorityRecords: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetPriorityRecords: unsafe extern "system" fn(this: *mut *mut Self, precordarray: *const WM_STREAM_PRIORITY_RECORD, crecords: u16) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetPriorityRecords: usize,
+}
+#[repr(C)]
+pub struct IWMSyncReader {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Open: unsafe extern "system" fn(this: *mut *mut Self, pwszfilename: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub SetRange: unsafe extern "system" fn(this: *mut *mut Self, cnsstarttime: u64, cnsduration: i64) -> ::windows_sys::core::HRESULT,
+    pub SetRangeByFrame: unsafe extern "system" fn(this: *mut *mut Self, wstreamnum: u16, qwframenumber: u64, cframestoread: i64) -> ::windows_sys::core::HRESULT,
+    pub GetNextSample: unsafe extern "system" fn(this: *mut *mut Self, wstreamnum: u16, ppsample: *mut *mut ::core::ffi::c_void, pcnssampletime: *mut u64, pcnsduration: *mut u64, pdwflags: *mut u32, pdwoutputnum: *mut u32, pwstreamnum: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub SetStreamsSelected: unsafe extern "system" fn(this: *mut *mut Self, cstreamcount: u16, pwstreamnumbers: *const u16, pselections: *const WMT_STREAM_SELECTION) -> ::windows_sys::core::HRESULT,
+    pub GetStreamSelected: unsafe extern "system" fn(this: *mut *mut Self, wstreamnum: u16, pselection: *mut WMT_STREAM_SELECTION) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetReadStreamSamples: unsafe extern "system" fn(this: *mut *mut Self, wstreamnum: u16, fcompressed: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetReadStreamSamples: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetReadStreamSamples: unsafe extern "system" fn(this: *mut *mut Self, wstreamnum: u16, pfcompressed: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetReadStreamSamples: usize,
+    pub GetOutputSetting: unsafe extern "system" fn(this: *mut *mut Self, dwoutputnum: u32, pszname: ::windows_sys::core::PCWSTR, ptype: *mut WMT_ATTR_DATATYPE, pvalue: *mut u8, pcblength: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub SetOutputSetting: unsafe extern "system" fn(this: *mut *mut Self, dwoutputnum: u32, pszname: ::windows_sys::core::PCWSTR, r#type: WMT_ATTR_DATATYPE, pvalue: *const u8, cblength: u16) -> ::windows_sys::core::HRESULT,
+    pub GetOutputCount: unsafe extern "system" fn(this: *mut *mut Self, pcoutputs: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetOutputProps: unsafe extern "system" fn(this: *mut *mut Self, dwoutputnum: u32, ppoutput: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetOutputProps: unsafe extern "system" fn(this: *mut *mut Self, dwoutputnum: u32, poutput: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetOutputFormatCount: unsafe extern "system" fn(this: *mut *mut Self, dwoutputnum: u32, pcformats: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetOutputFormat: unsafe extern "system" fn(this: *mut *mut Self, dwoutputnum: u32, dwformatnum: u32, ppprops: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetOutputNumberForStream: unsafe extern "system" fn(this: *mut *mut Self, wstreamnum: u16, pdwoutputnum: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetStreamNumberForOutput: unsafe extern "system" fn(this: *mut *mut Self, dwoutputnum: u32, pwstreamnum: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub GetMaxOutputSampleSize: unsafe extern "system" fn(this: *mut *mut Self, dwoutput: u32, pcbmax: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetMaxStreamSampleSize: unsafe extern "system" fn(this: *mut *mut Self, wstream: u16, pcbmax: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub OpenStream: unsafe extern "system" fn(this: *mut *mut Self, pstream: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    OpenStream: usize,
+}
+#[repr(C)]
+pub struct IWMSyncReader2 {
+    pub base__: IWMSyncReader,
+    pub SetRangeByTimecode: unsafe extern "system" fn(this: *mut *mut Self, wstreamnum: u16, pstart: *const WMT_TIMECODE_EXTENSION_DATA, pend: *const WMT_TIMECODE_EXTENSION_DATA) -> ::windows_sys::core::HRESULT,
+    pub SetRangeByFrameEx: unsafe extern "system" fn(this: *mut *mut Self, wstreamnum: u16, qwframenumber: u64, cframestoread: i64, pcnsstarttime: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub SetAllocateForOutput: unsafe extern "system" fn(this: *mut *mut Self, dwoutputnum: u32, pallocator: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetAllocateForOutput: unsafe extern "system" fn(this: *mut *mut Self, dwoutputnum: u32, ppallocator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetAllocateForStream: unsafe extern "system" fn(this: *mut *mut Self, wstreamnum: u16, pallocator: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetAllocateForStream: unsafe extern "system" fn(this: *mut *mut Self, dwsreamnum: u16, ppallocator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMVideoMediaProps {
+    pub base__: IWMMediaProps,
+    pub GetMaxKeyFrameSpacing: unsafe extern "system" fn(this: *mut *mut Self, plltime: *mut i64) -> ::windows_sys::core::HRESULT,
+    pub SetMaxKeyFrameSpacing: unsafe extern "system" fn(this: *mut *mut Self, lltime: i64) -> ::windows_sys::core::HRESULT,
+    pub GetQuality: unsafe extern "system" fn(this: *mut *mut Self, pdwquality: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetQuality: unsafe extern "system" fn(this: *mut *mut Self, dwquality: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMWatermarkInfo {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetWatermarkEntryCount: unsafe extern "system" fn(this: *mut *mut Self, wmettype: WMT_WATERMARK_ENTRY_TYPE, pdwcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetWatermarkEntry: unsafe extern "system" fn(this: *mut *mut Self, wmettype: WMT_WATERMARK_ENTRY_TYPE, dwentrynum: u32, pentry: *mut WMT_WATERMARK_ENTRY) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMWriter {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetProfileByID: unsafe extern "system" fn(this: *mut *mut Self, guidprofile: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub SetProfile: unsafe extern "system" fn(this: *mut *mut Self, pprofile: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetOutputFilename: unsafe extern "system" fn(this: *mut *mut Self, pwszfilename: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetInputCount: unsafe extern "system" fn(this: *mut *mut Self, pcinputs: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetInputProps: unsafe extern "system" fn(this: *mut *mut Self, dwinputnum: u32, ppinput: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetInputProps: unsafe extern "system" fn(this: *mut *mut Self, dwinputnum: u32, pinput: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetInputFormatCount: unsafe extern "system" fn(this: *mut *mut Self, dwinputnumber: u32, pcformats: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetInputFormat: unsafe extern "system" fn(this: *mut *mut Self, dwinputnumber: u32, dwformatnumber: u32, pprops: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub BeginWriting: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub EndWriting: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub AllocateSample: unsafe extern "system" fn(this: *mut *mut Self, dwsamplesize: u32, ppsample: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub WriteSample: unsafe extern "system" fn(this: *mut *mut Self, dwinputnum: u32, cnssampletime: u64, dwflags: u32, psample: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Flush: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMWriterAdvanced {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetSinkCount: unsafe extern "system" fn(this: *mut *mut Self, pcsinks: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSink: unsafe extern "system" fn(this: *mut *mut Self, dwsinknum: u32, ppsink: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AddSink: unsafe extern "system" fn(this: *mut *mut Self, psink: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RemoveSink: unsafe extern "system" fn(this: *mut *mut Self, psink: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub WriteStreamSample: unsafe extern "system" fn(this: *mut *mut Self, wstreamnum: u16, cnssampletime: u64, mssamplesendtime: u32, cnssampleduration: u64, dwflags: u32, psample: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetLiveSource: unsafe extern "system" fn(this: *mut *mut Self, fislivesource: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetLiveSource: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsRealTime: unsafe extern "system" fn(this: *mut *mut Self, pfrealtime: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsRealTime: usize,
+    pub GetWriterTime: unsafe extern "system" fn(this: *mut *mut Self, pcnscurrenttime: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetStatistics: unsafe extern "system" fn(this: *mut *mut Self, wstreamnum: u16, pstats: *mut WM_WRITER_STATISTICS) -> ::windows_sys::core::HRESULT,
+    pub SetSyncTolerance: unsafe extern "system" fn(this: *mut *mut Self, mswindow: u32) -> ::windows_sys::core::HRESULT,
+    pub GetSyncTolerance: unsafe extern "system" fn(this: *mut *mut Self, pmswindow: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMWriterAdvanced2 {
+    pub base__: IWMWriterAdvanced,
+    pub GetInputSetting: unsafe extern "system" fn(this: *mut *mut Self, dwinputnum: u32, pszname: ::windows_sys::core::PCWSTR, ptype: *mut WMT_ATTR_DATATYPE, pvalue: *mut u8, pcblength: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub SetInputSetting: unsafe extern "system" fn(this: *mut *mut Self, dwinputnum: u32, pszname: ::windows_sys::core::PCWSTR, r#type: WMT_ATTR_DATATYPE, pvalue: *const u8, cblength: u16) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMWriterAdvanced3 {
+    pub base__: IWMWriterAdvanced2,
+    pub GetStatisticsEx: unsafe extern "system" fn(this: *mut *mut Self, wstreamnum: u16, pstats: *mut WM_WRITER_STATISTICS_EX) -> ::windows_sys::core::HRESULT,
+    pub SetNonBlocking: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMWriterFileSink {
+    pub base__: IWMWriterSink,
+    pub Open: unsafe extern "system" fn(this: *mut *mut Self, pwszfilename: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMWriterFileSink2 {
+    pub base__: IWMWriterFileSink,
+    pub Start: unsafe extern "system" fn(this: *mut *mut Self, cnsstarttime: u64) -> ::windows_sys::core::HRESULT,
+    pub Stop: unsafe extern "system" fn(this: *mut *mut Self, cnsstoptime: u64) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsStopped: unsafe extern "system" fn(this: *mut *mut Self, pfstopped: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsStopped: usize,
+    pub GetFileDuration: unsafe extern "system" fn(this: *mut *mut Self, pcnsduration: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetFileSize: unsafe extern "system" fn(this: *mut *mut Self, pcbfile: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsClosed: unsafe extern "system" fn(this: *mut *mut Self, pfclosed: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsClosed: usize,
+}
+#[repr(C)]
+pub struct IWMWriterFileSink3 {
+    pub base__: IWMWriterFileSink2,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetAutoIndexing: unsafe extern "system" fn(this: *mut *mut Self, fdoautoindexing: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetAutoIndexing: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetAutoIndexing: unsafe extern "system" fn(this: *mut *mut Self, pfautoindexing: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetAutoIndexing: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetControlStream: unsafe extern "system" fn(this: *mut *mut Self, wstreamnumber: u16, fshouldcontrolstartandstop: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetControlStream: usize,
+    pub GetMode: unsafe extern "system" fn(this: *mut *mut Self, pdwfilesinkmode: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub OnDataUnitEx: unsafe extern "system" fn(this: *mut *mut Self, pfilesinkdataunit: *const WMT_FILESINK_DATA_UNIT) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetUnbufferedIO: unsafe extern "system" fn(this: *mut *mut Self, funbufferedio: super::super::Foundation::BOOL, frestrictmemusage: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetUnbufferedIO: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetUnbufferedIO: unsafe extern "system" fn(this: *mut *mut Self, pfunbufferedio: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetUnbufferedIO: usize,
+    pub CompleteOperations: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMWriterNetworkSink {
+    pub base__: IWMWriterSink,
+    pub SetMaximumClients: unsafe extern "system" fn(this: *mut *mut Self, dwmaxclients: u32) -> ::windows_sys::core::HRESULT,
+    pub GetMaximumClients: unsafe extern "system" fn(this: *mut *mut Self, pdwmaxclients: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetNetworkProtocol: unsafe extern "system" fn(this: *mut *mut Self, protocol: WMT_NET_PROTOCOL) -> ::windows_sys::core::HRESULT,
+    pub GetNetworkProtocol: unsafe extern "system" fn(this: *mut *mut Self, pprotocol: *mut WMT_NET_PROTOCOL) -> ::windows_sys::core::HRESULT,
+    pub GetHostURL: unsafe extern "system" fn(this: *mut *mut Self, pwszurl: ::windows_sys::core::PWSTR, pcchurl: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Open: unsafe extern "system" fn(this: *mut *mut Self, pdwportnum: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Disconnect: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMWriterPostView {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetPostViewCallback: unsafe extern "system" fn(this: *mut *mut Self, pcallback: *mut ::core::ffi::c_void, pvcontext: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetReceivePostViewSamples: unsafe extern "system" fn(this: *mut *mut Self, wstreamnum: u16, freceivepostviewsamples: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetReceivePostViewSamples: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetReceivePostViewSamples: unsafe extern "system" fn(this: *mut *mut Self, wstreamnum: u16, pfreceivepostviewsamples: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetReceivePostViewSamples: usize,
+    pub GetPostViewProps: unsafe extern "system" fn(this: *mut *mut Self, wstreamnumber: u16, ppoutput: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetPostViewProps: unsafe extern "system" fn(this: *mut *mut Self, wstreamnumber: u16, poutput: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetPostViewFormatCount: unsafe extern "system" fn(this: *mut *mut Self, wstreamnumber: u16, pcformats: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetPostViewFormat: unsafe extern "system" fn(this: *mut *mut Self, wstreamnumber: u16, dwformatnumber: u32, ppprops: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetAllocateForPostView: unsafe extern "system" fn(this: *mut *mut Self, wstreamnumber: u16, fallocate: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetAllocateForPostView: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetAllocateForPostView: unsafe extern "system" fn(this: *mut *mut Self, wstreamnumber: u16, pfallocate: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetAllocateForPostView: usize,
+}
+#[repr(C)]
+pub struct IWMWriterPostViewCallback {
+    pub base__: IWMStatusCallback,
+    pub OnPostViewSample: unsafe extern "system" fn(this: *mut *mut Self, wstreamnumber: u16, cnssampletime: u64, cnssampleduration: u64, dwflags: u32, psample: *mut ::core::ffi::c_void, pvcontext: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AllocateForPostView: unsafe extern "system" fn(this: *mut *mut Self, wstreamnum: u16, cbbuffer: u32, ppbuffer: *mut *mut ::core::ffi::c_void, pvcontext: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMWriterPreprocess {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetMaxPreprocessingPasses: unsafe extern "system" fn(this: *mut *mut Self, dwinputnum: u32, dwflags: u32, pdwmaxnumpasses: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetNumPreprocessingPasses: unsafe extern "system" fn(this: *mut *mut Self, dwinputnum: u32, dwflags: u32, dwnumpasses: u32) -> ::windows_sys::core::HRESULT,
+    pub BeginPreprocessingPass: unsafe extern "system" fn(this: *mut *mut Self, dwinputnum: u32, dwflags: u32) -> ::windows_sys::core::HRESULT,
+    pub PreprocessSample: unsafe extern "system" fn(this: *mut *mut Self, dwinputnum: u32, cnssampletime: u64, dwflags: u32, psample: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EndPreprocessingPass: unsafe extern "system" fn(this: *mut *mut Self, dwinputnum: u32, dwflags: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMWriterPushSink {
+    pub base__: IWMWriterSink,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Connect: unsafe extern "system" fn(this: *mut *mut Self, pwszurl: ::windows_sys::core::PCWSTR, pwsztemplateurl: ::windows_sys::core::PCWSTR, fautodestroy: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Connect: usize,
+    pub Disconnect: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub EndSession: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMWriterSink {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnHeader: unsafe extern "system" fn(this: *mut *mut Self, pheader: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsRealTime: unsafe extern "system" fn(this: *mut *mut Self, pfrealtime: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsRealTime: usize,
+    pub AllocateDataUnit: unsafe extern "system" fn(this: *mut *mut Self, cbdataunit: u32, ppdataunit: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub OnDataUnit: unsafe extern "system" fn(this: *mut *mut Self, pdataunit: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub OnEndWriting: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
 #[doc = "*Required features: `\"Win32_Media_WindowsMediaFormat\"`*"]
 pub type NETSOURCE_URLCREDPOLICY_SETTINGS = i32;
 #[doc = "*Required features: `\"Win32_Media_WindowsMediaFormat\"`*"]
@@ -382,7 +1495,7 @@ pub const WMT_IMAGETYPE_GIF: WMT_ATTR_IMAGETYPE = 3i32;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Media_WindowsMediaFormat\"`*"]
 pub struct WMT_BUFFER_SEGMENT {
-    pub pBuffer: INSSBuffer,
+    pub pBuffer: *mut *mut *mut *mut INSSBuffer,
     pub cbOffset: u32,
     pub cbLength: u32,
 }
@@ -1066,7 +2179,7 @@ pub struct WM_MEDIA_TYPE {
     pub bTemporalCompression: super::super::Foundation::BOOL,
     pub lSampleSize: u32,
     pub formattype: ::windows_sys::core::GUID,
-    pub pUnk: ::windows_sys::core::IUnknown,
+    pub pUnk: *mut *mut *mut *mut ::windows_sys::core::IUnknown,
     pub cbFormat: u32,
     pub pbFormat: *mut u8,
 }

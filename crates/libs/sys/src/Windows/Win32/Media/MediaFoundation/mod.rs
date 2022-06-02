@@ -2,20 +2,20 @@
 extern "system" {
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_UI_Shell_PropertiesSystem\"`*"]
     #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-    pub fn CreateNamedPropertyStore(ppstore: *mut super::super::UI::Shell::PropertiesSystem::INamedPropertyStore) -> ::windows_sys::core::HRESULT;
+    pub fn CreateNamedPropertyStore(ppstore: *mut *mut *mut super::super::UI::Shell::PropertiesSystem::INamedPropertyStore) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_UI_Shell_PropertiesSystem\"`*"]
     #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-    pub fn CreatePropertyStore(ppstore: *mut super::super::UI::Shell::PropertiesSystem::IPropertyStore) -> ::windows_sys::core::HRESULT;
+    pub fn CreatePropertyStore(ppstore: *mut *mut *mut super::super::UI::Shell::PropertiesSystem::IPropertyStore) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn DXVA2CreateDirect3DDeviceManager9(presettoken: *mut u32, ppdevicemanager: *mut IDirect3DDeviceManager9) -> ::windows_sys::core::HRESULT;
+    pub fn DXVA2CreateDirect3DDeviceManager9(presettoken: *mut u32, ppdevicemanager: *mut *mut *mut IDirect3DDeviceManager9) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_Graphics_Direct3D9\"`*"]
     #[cfg(feature = "Win32_Graphics_Direct3D9")]
-    pub fn DXVA2CreateVideoService(pdd: super::super::Graphics::Direct3D9::IDirect3DDevice9, riid: *const ::windows_sys::core::GUID, ppservice: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn DXVA2CreateVideoService(pdd: *mut *mut super::super::Graphics::Direct3D9::IDirect3DDevice9, riid: *const ::windows_sys::core::GUID, ppservice: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_Graphics_Direct3D9\"`*"]
     #[cfg(feature = "Win32_Graphics_Direct3D9")]
-    pub fn DXVAHD_CreateDevice(pd3ddevice: super::super::Graphics::Direct3D9::IDirect3DDevice9Ex, pcontentdesc: *const DXVAHD_CONTENT_DESC, usage: DXVAHD_DEVICE_USAGE, pplugin: PDXVAHDSW_Plugin, ppdevice: *mut IDXVAHD_Device) -> ::windows_sys::core::HRESULT;
+    pub fn DXVAHD_CreateDevice(pd3ddevice: *mut *mut super::super::Graphics::Direct3D9::IDirect3DDevice9Ex, pcontentdesc: *const DXVAHD_CONTENT_DESC, usage: DXVAHD_DEVICE_USAGE, pplugin: PDXVAHDSW_Plugin, ppdevice: *mut *mut *mut IDXVAHD_Device) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFAddPeriodicCallback(callback: MFPERIODICCALLBACK, pcontext: ::windows_sys::core::IUnknown, pdwkey: *mut u32) -> ::windows_sys::core::HRESULT;
+    pub fn MFAddPeriodicCallback(callback: MFPERIODICCALLBACK, pcontext: *mut *mut ::windows_sys::core::IUnknown, pdwkey: *mut u32) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
     pub fn MFAllocateSerialWorkQueue(dwworkqueue: u32, pdwworkqueue: *mut u32) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
@@ -25,28 +25,28 @@ extern "system" {
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
     pub fn MFAverageTimePerFrameToFrameRate(unaveragetimeperframe: u64, punnumerator: *mut u32, pundenominator: *mut u32) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFBeginCreateFile(accessmode: MF_FILE_ACCESSMODE, openmode: MF_FILE_OPENMODE, fflags: MF_FILE_FLAGS, pwszfilepath: ::windows_sys::core::PCWSTR, pcallback: IMFAsyncCallback, pstate: ::windows_sys::core::IUnknown, ppcancelcookie: *mut ::windows_sys::core::IUnknown) -> ::windows_sys::core::HRESULT;
+    pub fn MFBeginCreateFile(accessmode: MF_FILE_ACCESSMODE, openmode: MF_FILE_OPENMODE, fflags: MF_FILE_FLAGS, pwszfilepath: ::windows_sys::core::PCWSTR, pcallback: *mut *mut IMFAsyncCallback, pstate: *mut *mut ::windows_sys::core::IUnknown, ppcancelcookie: *mut *mut *mut ::windows_sys::core::IUnknown) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFBeginRegisterWorkQueueWithMMCSS(dwworkqueueid: u32, wszclass: ::windows_sys::core::PCWSTR, dwtaskid: u32, pdonecallback: IMFAsyncCallback, pdonestate: ::windows_sys::core::IUnknown) -> ::windows_sys::core::HRESULT;
+    pub fn MFBeginRegisterWorkQueueWithMMCSS(dwworkqueueid: u32, wszclass: ::windows_sys::core::PCWSTR, dwtaskid: u32, pdonecallback: *mut *mut IMFAsyncCallback, pdonestate: *mut *mut ::windows_sys::core::IUnknown) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFBeginRegisterWorkQueueWithMMCSSEx(dwworkqueueid: u32, wszclass: ::windows_sys::core::PCWSTR, dwtaskid: u32, lpriority: i32, pdonecallback: IMFAsyncCallback, pdonestate: ::windows_sys::core::IUnknown) -> ::windows_sys::core::HRESULT;
+    pub fn MFBeginRegisterWorkQueueWithMMCSSEx(dwworkqueueid: u32, wszclass: ::windows_sys::core::PCWSTR, dwtaskid: u32, lpriority: i32, pdonecallback: *mut *mut IMFAsyncCallback, pdonestate: *mut *mut ::windows_sys::core::IUnknown) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFBeginUnregisterWorkQueueWithMMCSS(dwworkqueueid: u32, pdonecallback: IMFAsyncCallback, pdonestate: ::windows_sys::core::IUnknown) -> ::windows_sys::core::HRESULT;
+    pub fn MFBeginUnregisterWorkQueueWithMMCSS(dwworkqueueid: u32, pdonecallback: *mut *mut IMFAsyncCallback, pdonestate: *mut *mut ::windows_sys::core::IUnknown) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_Foundation\"`, `\"Win32_Graphics_Gdi\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
     pub fn MFCalculateBitmapImageSize(pbmih: *const super::super::Graphics::Gdi::BITMAPINFOHEADER, cbbufsize: u32, pcbimagesize: *mut u32, pbknown: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
     pub fn MFCalculateImageSize(guidsubtype: *const ::windows_sys::core::GUID, unwidth: u32, unheight: u32, pcbimagesize: *mut u32) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCancelCreateFile(pcancelcookie: ::windows_sys::core::IUnknown) -> ::windows_sys::core::HRESULT;
+    pub fn MFCancelCreateFile(pcancelcookie: *mut *mut ::windows_sys::core::IUnknown) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
     pub fn MFCancelWorkItem(key: u64) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn MFCombineSamples(psample: IMFSample, psampletoadd: IMFSample, dwmaxmergeddurationinms: u32, pmerged: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT;
+    pub fn MFCombineSamples(psample: *mut *mut IMFSample, psampletoadd: *mut *mut IMFSample, dwmaxmergeddurationinms: u32, pmerged: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn MFCompareFullToPartialMediaType(pmftypefull: IMFMediaType, pmftypepartial: IMFMediaType) -> super::super::Foundation::BOOL;
+    pub fn MFCompareFullToPartialMediaType(pmftypefull: *mut *mut IMFMediaType, pmftypepartial: *mut *mut IMFMediaType) -> super::super::Foundation::BOOL;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
     pub fn MFConvertColorInfoFromDXVA(ptoformat: *mut MFVIDEOFORMAT, dwfromdxva: u32) -> ::windows_sys::core::HRESULT;
@@ -61,302 +61,302 @@ extern "system" {
     pub fn MFCopyImage(pdest: *mut u8, ldeststride: i32, psrc: *const u8, lsrcstride: i32, dwwidthinbytes: u32, dwlines: u32) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn MFCreate2DMediaBuffer(dwwidth: u32, dwheight: u32, dwfourcc: u32, fbottomup: super::super::Foundation::BOOL, ppbuffer: *mut IMFMediaBuffer) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreate2DMediaBuffer(dwwidth: u32, dwheight: u32, dwfourcc: u32, fbottomup: super::super::Foundation::BOOL, ppbuffer: *mut *mut *mut IMFMediaBuffer) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreate3GPMediaSink(pibytestream: IMFByteStream, pvideomediatype: IMFMediaType, paudiomediatype: IMFMediaType, ppimediasink: *mut IMFMediaSink) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreate3GPMediaSink(pibytestream: *mut *mut IMFByteStream, pvideomediatype: *mut *mut IMFMediaType, paudiomediatype: *mut *mut IMFMediaType, ppimediasink: *mut *mut *mut IMFMediaSink) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateAC3MediaSink(ptargetbytestream: IMFByteStream, paudiomediatype: IMFMediaType, ppmediasink: *mut IMFMediaSink) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateAC3MediaSink(ptargetbytestream: *mut *mut IMFByteStream, paudiomediatype: *mut *mut IMFMediaType, ppmediasink: *mut *mut *mut IMFMediaSink) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateADTSMediaSink(ptargetbytestream: IMFByteStream, paudiomediatype: IMFMediaType, ppmediasink: *mut IMFMediaSink) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateADTSMediaSink(ptargetbytestream: *mut *mut IMFByteStream, paudiomediatype: *mut *mut IMFMediaType, ppmediasink: *mut *mut *mut IMFMediaSink) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn MFCreateAMMediaTypeFromMFMediaType(pmftype: IMFMediaType, guidformatblocktype: ::windows_sys::core::GUID, ppamtype: *mut *mut AM_MEDIA_TYPE) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateAMMediaTypeFromMFMediaType(pmftype: *mut *mut IMFMediaType, guidformatblocktype: ::windows_sys::core::GUID, ppamtype: *mut *mut AM_MEDIA_TYPE) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateASFContentInfo(ppicontentinfo: *mut IMFASFContentInfo) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateASFContentInfo(ppicontentinfo: *mut *mut *mut IMFASFContentInfo) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateASFIndexer(ppiindexer: *mut IMFASFIndexer) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateASFIndexer(ppiindexer: *mut *mut *mut IMFASFIndexer) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateASFIndexerByteStream(picontentbytestream: IMFByteStream, cbindexstartoffset: u64, piindexbytestream: *mut IMFByteStream) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateASFIndexerByteStream(picontentbytestream: *mut *mut IMFByteStream, cbindexstartoffset: u64, piindexbytestream: *mut *mut *mut IMFByteStream) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateASFMediaSink(pibytestream: IMFByteStream, ppimediasink: *mut IMFMediaSink) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateASFMediaSink(pibytestream: *mut *mut IMFByteStream, ppimediasink: *mut *mut *mut IMFMediaSink) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateASFMediaSinkActivate(pwszfilename: ::windows_sys::core::PCWSTR, pcontentinfo: IMFASFContentInfo, ppiactivate: *mut IMFActivate) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateASFMediaSinkActivate(pwszfilename: ::windows_sys::core::PCWSTR, pcontentinfo: *mut *mut IMFASFContentInfo, ppiactivate: *mut *mut *mut IMFActivate) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateASFMultiplexer(ppimultiplexer: *mut IMFASFMultiplexer) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateASFMultiplexer(ppimultiplexer: *mut *mut *mut IMFASFMultiplexer) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateASFProfile(ppiprofile: *mut IMFASFProfile) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateASFProfile(ppiprofile: *mut *mut *mut IMFASFProfile) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateASFProfileFromPresentationDescriptor(pipd: IMFPresentationDescriptor, ppiprofile: *mut IMFASFProfile) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateASFProfileFromPresentationDescriptor(pipd: *mut *mut IMFPresentationDescriptor, ppiprofile: *mut *mut *mut IMFASFProfile) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateASFSplitter(ppisplitter: *mut IMFASFSplitter) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateASFSplitter(ppisplitter: *mut *mut *mut IMFASFSplitter) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateASFStreamSelector(piasfprofile: IMFASFProfile, ppselector: *mut IMFASFStreamSelector) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateASFStreamSelector(piasfprofile: *mut *mut IMFASFProfile, ppselector: *mut *mut *mut IMFASFStreamSelector) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateASFStreamingMediaSink(pibytestream: IMFByteStream, ppimediasink: *mut IMFMediaSink) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateASFStreamingMediaSink(pibytestream: *mut *mut IMFByteStream, ppimediasink: *mut *mut *mut IMFMediaSink) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateASFStreamingMediaSinkActivate(pbytestreamactivate: IMFActivate, pcontentinfo: IMFASFContentInfo, ppiactivate: *mut IMFActivate) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateASFStreamingMediaSinkActivate(pbytestreamactivate: *mut *mut IMFActivate, pcontentinfo: *mut *mut IMFASFContentInfo, ppiactivate: *mut *mut *mut IMFActivate) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateAVIMediaSink(pibytestream: IMFByteStream, pvideomediatype: IMFMediaType, paudiomediatype: IMFMediaType, ppimediasink: *mut IMFMediaSink) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateAVIMediaSink(pibytestream: *mut *mut IMFByteStream, pvideomediatype: *mut *mut IMFMediaType, paudiomediatype: *mut *mut IMFMediaType, ppimediasink: *mut *mut *mut IMFMediaSink) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateAggregateSource(psourcecollection: IMFCollection, ppaggsource: *mut IMFMediaSource) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateAggregateSource(psourcecollection: *mut *mut IMFCollection, ppaggsource: *mut *mut *mut IMFMediaSource) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateAlignedMemoryBuffer(cbmaxlength: u32, cbaligment: u32, ppbuffer: *mut IMFMediaBuffer) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateAlignedMemoryBuffer(cbmaxlength: u32, cbaligment: u32, ppbuffer: *mut *mut *mut IMFMediaBuffer) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateAsyncResult(punkobject: ::windows_sys::core::IUnknown, pcallback: IMFAsyncCallback, punkstate: ::windows_sys::core::IUnknown, ppasyncresult: *mut IMFAsyncResult) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateAsyncResult(punkobject: *mut *mut ::windows_sys::core::IUnknown, pcallback: *mut *mut IMFAsyncCallback, punkstate: *mut *mut ::windows_sys::core::IUnknown, ppasyncresult: *mut *mut *mut IMFAsyncResult) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateAttributes(ppmfattributes: *mut IMFAttributes, cinitialsize: u32) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateAttributes(ppmfattributes: *mut *mut *mut IMFAttributes, cinitialsize: u32) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_Media_Audio\"`*"]
     #[cfg(feature = "Win32_Media_Audio")]
-    pub fn MFCreateAudioMediaType(paudioformat: *const super::Audio::WAVEFORMATEX, ppiaudiomediatype: *mut IMFAudioMediaType) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateAudioMediaType(paudioformat: *const super::Audio::WAVEFORMATEX, ppiaudiomediatype: *mut *mut *mut IMFAudioMediaType) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateAudioRenderer(paudioattributes: IMFAttributes, ppsink: *mut IMFMediaSink) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateAudioRenderer(paudioattributes: *mut *mut IMFAttributes, ppsink: *mut *mut *mut IMFMediaSink) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateAudioRendererActivate(ppactivate: *mut IMFActivate) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateAudioRendererActivate(ppactivate: *mut *mut *mut IMFActivate) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateCameraOcclusionStateMonitor(symboliclink: ::windows_sys::core::PCWSTR, callback: IMFCameraOcclusionStateReportCallback, occlusionstatemonitor: *mut IMFCameraOcclusionStateMonitor) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateCameraOcclusionStateMonitor(symboliclink: ::windows_sys::core::PCWSTR, callback: *mut *mut IMFCameraOcclusionStateReportCallback, occlusionstatemonitor: *mut *mut *mut IMFCameraOcclusionStateMonitor) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateCollection(ppimfcollection: *mut IMFCollection) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateCollection(ppimfcollection: *mut *mut *mut IMFCollection) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateContentDecryptorContext(guidmediaprotectionsystemid: *const ::windows_sys::core::GUID, pd3dmanager: IMFDXGIDeviceManager, pcontentprotectiondevice: IMFContentProtectionDevice, ppcontentdecryptorcontext: *mut IMFContentDecryptorContext) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateContentDecryptorContext(guidmediaprotectionsystemid: *const ::windows_sys::core::GUID, pd3dmanager: *mut *mut IMFDXGIDeviceManager, pcontentprotectiondevice: *mut *mut IMFContentProtectionDevice, ppcontentdecryptorcontext: *mut *mut *mut IMFContentDecryptorContext) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateContentProtectionDevice(protectionsystemid: *const ::windows_sys::core::GUID, contentprotectiondevice: *mut IMFContentProtectionDevice) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateContentProtectionDevice(protectionsystemid: *const ::windows_sys::core::GUID, contentprotectiondevice: *mut *mut *mut IMFContentProtectionDevice) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateCredentialCache(ppcache: *mut IMFNetCredentialCache) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateCredentialCache(ppcache: *mut *mut *mut IMFNetCredentialCache) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_Graphics_Direct3D12\"`*"]
     #[cfg(feature = "Win32_Graphics_Direct3D12")]
-    pub fn MFCreateD3D12SynchronizationObject(pdevice: super::super::Graphics::Direct3D12::ID3D12Device, riid: *const ::windows_sys::core::GUID, ppvsyncobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateD3D12SynchronizationObject(pdevice: *mut *mut super::super::Graphics::Direct3D12::ID3D12Device, riid: *const ::windows_sys::core::GUID, ppvsyncobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateDXGIDeviceManager(resettoken: *mut u32, ppdevicemanager: *mut IMFDXGIDeviceManager) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateDXGIDeviceManager(resettoken: *mut u32, ppdevicemanager: *mut *mut *mut IMFDXGIDeviceManager) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn MFCreateDXGISurfaceBuffer(riid: *const ::windows_sys::core::GUID, punksurface: ::windows_sys::core::IUnknown, usubresourceindex: u32, fbottomupwhenlinear: super::super::Foundation::BOOL, ppbuffer: *mut IMFMediaBuffer) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateDXGISurfaceBuffer(riid: *const ::windows_sys::core::GUID, punksurface: *mut *mut ::windows_sys::core::IUnknown, usubresourceindex: u32, fbottomupwhenlinear: super::super::Foundation::BOOL, ppbuffer: *mut *mut *mut IMFMediaBuffer) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn MFCreateDXSurfaceBuffer(riid: *const ::windows_sys::core::GUID, punksurface: ::windows_sys::core::IUnknown, fbottomupwhenlinear: super::super::Foundation::BOOL, ppbuffer: *mut IMFMediaBuffer) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateDXSurfaceBuffer(riid: *const ::windows_sys::core::GUID, punksurface: *mut *mut ::windows_sys::core::IUnknown, fbottomupwhenlinear: super::super::Foundation::BOOL, ppbuffer: *mut *mut *mut IMFMediaBuffer) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateDeviceSource(pattributes: IMFAttributes, ppsource: *mut IMFMediaSource) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateDeviceSource(pattributes: *mut *mut IMFAttributes, ppsource: *mut *mut *mut IMFMediaSource) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateDeviceSourceActivate(pattributes: IMFAttributes, ppactivate: *mut IMFActivate) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateDeviceSourceActivate(pattributes: *mut *mut IMFAttributes, ppactivate: *mut *mut *mut IMFActivate) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_System_Com\"`*"]
     #[cfg(feature = "Win32_System_Com")]
-    pub fn MFCreateEncryptedMediaExtensionsStoreActivate(pmphost: IMFPMPHostApp, objectstream: super::super::System::Com::IStream, classid: ::windows_sys::core::PCWSTR, activate: *mut IMFActivate) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateEncryptedMediaExtensionsStoreActivate(pmphost: *mut *mut IMFPMPHostApp, objectstream: *mut *mut super::super::System::Com::IStream, classid: ::windows_sys::core::PCWSTR, activate: *mut *mut *mut IMFActivate) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateEventQueue(ppmediaeventqueue: *mut IMFMediaEventQueue) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateEventQueue(ppmediaeventqueue: *mut *mut *mut IMFMediaEventQueue) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateExtendedCameraIntrinsicModel(distortionmodeltype: MFCameraIntrinsic_DistortionModelType, ppextendedcameraintrinsicmodel: *mut IMFExtendedCameraIntrinsicModel) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateExtendedCameraIntrinsicModel(distortionmodeltype: MFCameraIntrinsic_DistortionModelType, ppextendedcameraintrinsicmodel: *mut *mut *mut IMFExtendedCameraIntrinsicModel) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateExtendedCameraIntrinsics(ppextendedcameraintrinsics: *mut IMFExtendedCameraIntrinsics) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateExtendedCameraIntrinsics(ppextendedcameraintrinsics: *mut *mut *mut IMFExtendedCameraIntrinsics) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateFMPEG4MediaSink(pibytestream: IMFByteStream, pvideomediatype: IMFMediaType, paudiomediatype: IMFMediaType, ppimediasink: *mut IMFMediaSink) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateFMPEG4MediaSink(pibytestream: *mut *mut IMFByteStream, pvideomediatype: *mut *mut IMFMediaType, paudiomediatype: *mut *mut IMFMediaType, ppimediasink: *mut *mut *mut IMFMediaSink) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateFile(accessmode: MF_FILE_ACCESSMODE, openmode: MF_FILE_OPENMODE, fflags: MF_FILE_FLAGS, pwszfileurl: ::windows_sys::core::PCWSTR, ppibytestream: *mut IMFByteStream) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateFile(accessmode: MF_FILE_ACCESSMODE, openmode: MF_FILE_OPENMODE, fflags: MF_FILE_FLAGS, pwszfileurl: ::windows_sys::core::PCWSTR, ppibytestream: *mut *mut *mut IMFByteStream) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_Media_DxMediaObjects\"`*"]
     #[cfg(feature = "Win32_Media_DxMediaObjects")]
-    pub fn MFCreateLegacyMediaBufferOnMFMediaBuffer(psample: IMFSample, pmfmediabuffer: IMFMediaBuffer, cboffset: u32, ppmediabuffer: *mut super::DxMediaObjects::IMediaBuffer) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateLegacyMediaBufferOnMFMediaBuffer(psample: *mut *mut IMFSample, pmfmediabuffer: *mut *mut IMFMediaBuffer, cboffset: u32, ppmediabuffer: *mut *mut *mut super::DxMediaObjects::IMediaBuffer) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_System_Com\"`*"]
     #[cfg(feature = "Win32_System_Com")]
-    pub fn MFCreateMFByteStreamOnStream(pstream: super::super::System::Com::IStream, ppbytestream: *mut IMFByteStream) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateMFByteStreamOnStream(pstream: *mut *mut super::super::System::Com::IStream, ppbytestream: *mut *mut *mut IMFByteStream) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateMFByteStreamOnStreamEx(punkstream: ::windows_sys::core::IUnknown, ppbytestream: *mut IMFByteStream) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateMFByteStreamOnStreamEx(punkstream: *mut *mut ::windows_sys::core::IUnknown, ppbytestream: *mut *mut *mut IMFByteStream) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateMFByteStreamWrapper(pstream: IMFByteStream, ppstreamwrapper: *mut IMFByteStream) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateMFByteStreamWrapper(pstream: *mut *mut IMFByteStream, ppstreamwrapper: *mut *mut *mut IMFByteStream) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn MFCreateMFVideoFormatFromMFMediaType(pmftype: IMFMediaType, ppmfvf: *mut *mut MFVIDEOFORMAT, pcbsize: *mut u32) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateMFVideoFormatFromMFMediaType(pmftype: *mut *mut IMFMediaType, ppmfvf: *mut *mut MFVIDEOFORMAT, pcbsize: *mut u32) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateMP3MediaSink(ptargetbytestream: IMFByteStream, ppmediasink: *mut IMFMediaSink) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateMP3MediaSink(ptargetbytestream: *mut *mut IMFByteStream, ppmediasink: *mut *mut *mut IMFMediaSink) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateMPEG4MediaSink(pibytestream: IMFByteStream, pvideomediatype: IMFMediaType, paudiomediatype: IMFMediaType, ppimediasink: *mut IMFMediaSink) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateMPEG4MediaSink(pibytestream: *mut *mut IMFByteStream, pvideomediatype: *mut *mut IMFMediaType, paudiomediatype: *mut *mut IMFMediaType, ppimediasink: *mut *mut *mut IMFMediaSink) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateMediaBufferFromMediaType(pmediatype: IMFMediaType, llduration: i64, dwminlength: u32, dwminalignment: u32, ppbuffer: *mut IMFMediaBuffer) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateMediaBufferFromMediaType(pmediatype: *mut *mut IMFMediaType, llduration: i64, dwminlength: u32, dwminalignment: u32, ppbuffer: *mut *mut *mut IMFMediaBuffer) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateMediaBufferWrapper(pbuffer: IMFMediaBuffer, cboffset: u32, dwlength: u32, ppbuffer: *mut IMFMediaBuffer) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateMediaBufferWrapper(pbuffer: *mut *mut IMFMediaBuffer, cboffset: u32, dwlength: u32, ppbuffer: *mut *mut *mut IMFMediaBuffer) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com_StructuredStorage\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
-    pub fn MFCreateMediaEvent(met: u32, guidextendedtype: *const ::windows_sys::core::GUID, hrstatus: ::windows_sys::core::HRESULT, pvvalue: *const super::super::System::Com::StructuredStorage::PROPVARIANT, ppevent: *mut IMFMediaEvent) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateMediaEvent(met: u32, guidextendedtype: *const ::windows_sys::core::GUID, hrstatus: ::windows_sys::core::HRESULT, pvvalue: *const super::super::System::Com::StructuredStorage::PROPVARIANT, ppevent: *mut *mut *mut IMFMediaEvent) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateMediaExtensionActivate(szactivatableclassid: ::windows_sys::core::PCWSTR, pconfiguration: ::windows_sys::core::IUnknown, riid: *const ::windows_sys::core::GUID, ppvobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateMediaExtensionActivate(szactivatableclassid: ::windows_sys::core::PCWSTR, pconfiguration: *mut *mut ::windows_sys::core::IUnknown, riid: *const ::windows_sys::core::GUID, ppvobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateMediaSession(pconfiguration: IMFAttributes, ppmediasession: *mut IMFMediaSession) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateMediaSession(pconfiguration: *mut *mut IMFAttributes, ppmediasession: *mut *mut *mut IMFMediaSession) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateMediaType(ppmftype: *mut IMFMediaType) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateMediaType(ppmftype: *mut *mut *mut IMFMediaType) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateMediaTypeFromProperties(punkstream: ::windows_sys::core::IUnknown, ppmediatype: *mut IMFMediaType) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateMediaTypeFromProperties(punkstream: *mut *mut ::windows_sys::core::IUnknown, ppmediatype: *mut *mut *mut IMFMediaType) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateMediaTypeFromRepresentation(guidrepresentation: ::windows_sys::core::GUID, pvrepresentation: *const ::core::ffi::c_void, ppimediatype: *mut IMFMediaType) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateMediaTypeFromRepresentation(guidrepresentation: ::windows_sys::core::GUID, pvrepresentation: *const ::core::ffi::c_void, ppimediatype: *mut *mut *mut IMFMediaType) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateMemoryBuffer(cbmaxlength: u32, ppbuffer: *mut IMFMediaBuffer) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateMemoryBuffer(cbmaxlength: u32, ppbuffer: *mut *mut *mut IMFMediaBuffer) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateMuxSink(guidoutputsubtype: ::windows_sys::core::GUID, poutputattributes: IMFAttributes, poutputbytestream: IMFByteStream, ppmuxsink: *mut IMFMediaSink) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateMuxSink(guidoutputsubtype: ::windows_sys::core::GUID, poutputattributes: *mut *mut IMFAttributes, poutputbytestream: *mut *mut IMFByteStream, ppmuxsink: *mut *mut *mut IMFMediaSink) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateMuxStreamAttributes(pattributestomux: IMFCollection, ppmuxattribs: *mut IMFAttributes) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateMuxStreamAttributes(pattributestomux: *mut *mut IMFCollection, ppmuxattribs: *mut *mut *mut IMFAttributes) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateMuxStreamMediaType(pmediatypestomux: IMFCollection, ppmuxmediatype: *mut IMFMediaType) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateMuxStreamMediaType(pmediatypestomux: *mut *mut IMFCollection, ppmuxmediatype: *mut *mut *mut IMFMediaType) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateMuxStreamSample(psamplestomux: IMFCollection, ppmuxsample: *mut IMFSample) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateMuxStreamSample(psamplestomux: *mut *mut IMFCollection, ppmuxsample: *mut *mut *mut IMFSample) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
     pub fn MFCreateNetSchemePlugin(riid: *const ::windows_sys::core::GUID, ppvhandler: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreatePMPMediaSession(dwcreationflags: u32, pconfiguration: IMFAttributes, ppmediasession: *mut IMFMediaSession, ppenableractivate: *mut IMFActivate) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreatePMPMediaSession(dwcreationflags: u32, pconfiguration: *mut *mut IMFAttributes, ppmediasession: *mut *mut *mut IMFMediaSession, ppenableractivate: *mut *mut *mut IMFActivate) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreatePMPServer(dwcreationflags: u32, pppmpserver: *mut IMFPMPServer) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreatePMPServer(dwcreationflags: u32, pppmpserver: *mut *mut *mut IMFPMPServer) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreatePresentationClock(pppresentationclock: *mut IMFPresentationClock) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreatePresentationClock(pppresentationclock: *mut *mut *mut IMFPresentationClock) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreatePresentationDescriptor(cstreamdescriptors: u32, apstreamdescriptors: *const IMFStreamDescriptor, pppresentationdescriptor: *mut IMFPresentationDescriptor) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreatePresentationDescriptor(cstreamdescriptors: u32, apstreamdescriptors: *const *mut *mut IMFStreamDescriptor, pppresentationdescriptor: *mut *mut *mut IMFPresentationDescriptor) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreatePresentationDescriptorFromASFProfile(piprofile: IMFASFProfile, ppipd: *mut IMFPresentationDescriptor) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreatePresentationDescriptorFromASFProfile(piprofile: *mut *mut IMFASFProfile, ppipd: *mut *mut *mut IMFPresentationDescriptor) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreatePropertiesFromMediaType(pmediatype: IMFMediaType, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreatePropertiesFromMediaType(pmediatype: *mut *mut IMFMediaType, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateProtectedEnvironmentAccess(ppaccess: *mut IMFProtectedEnvironmentAccess) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateProtectedEnvironmentAccess(ppaccess: *mut *mut *mut IMFProtectedEnvironmentAccess) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_UI_Shell_PropertiesSystem\"`*"]
     #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-    pub fn MFCreateProxyLocator(pszprotocol: ::windows_sys::core::PCWSTR, pproxyconfig: super::super::UI::Shell::PropertiesSystem::IPropertyStore, ppproxylocator: *mut IMFNetProxyLocator) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateProxyLocator(pszprotocol: ::windows_sys::core::PCWSTR, pproxyconfig: *mut *mut super::super::UI::Shell::PropertiesSystem::IPropertyStore, ppproxylocator: *mut *mut *mut IMFNetProxyLocator) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateRelativePanelWatcher(videodeviceid: ::windows_sys::core::PCWSTR, displaymonitordeviceid: ::windows_sys::core::PCWSTR, pprelativepanelwatcher: *mut IMFRelativePanelWatcher) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateRelativePanelWatcher(videodeviceid: ::windows_sys::core::PCWSTR, displaymonitordeviceid: ::windows_sys::core::PCWSTR, pprelativepanelwatcher: *mut *mut *mut IMFRelativePanelWatcher) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateRemoteDesktopPlugin(ppplugin: *mut IMFRemoteDesktopPlugin) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateRemoteDesktopPlugin(ppplugin: *mut *mut *mut IMFRemoteDesktopPlugin) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateSample(ppimfsample: *mut IMFSample) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateSample(ppimfsample: *mut *mut *mut IMFSample) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateSampleCopierMFT(ppcopiermft: *mut IMFTransform) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateSampleCopierMFT(ppcopiermft: *mut *mut *mut IMFTransform) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateSampleGrabberSinkActivate(pimfmediatype: IMFMediaType, pimfsamplegrabbersinkcallback: IMFSampleGrabberSinkCallback, ppiactivate: *mut IMFActivate) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateSampleGrabberSinkActivate(pimfmediatype: *mut *mut IMFMediaType, pimfsamplegrabbersinkcallback: *mut *mut IMFSampleGrabberSinkCallback, ppiactivate: *mut *mut *mut IMFActivate) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateSensorActivityMonitor(pcallback: IMFSensorActivitiesReportCallback, ppactivitymonitor: *mut IMFSensorActivityMonitor) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateSensorActivityMonitor(pcallback: *mut *mut IMFSensorActivitiesReportCallback, ppactivitymonitor: *mut *mut *mut IMFSensorActivityMonitor) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateSensorGroup(sensorgroupsymboliclink: ::windows_sys::core::PCWSTR, ppsensorgroup: *mut IMFSensorGroup) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateSensorGroup(sensorgroupsymboliclink: ::windows_sys::core::PCWSTR, ppsensorgroup: *mut *mut *mut IMFSensorGroup) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateSensorProfile(profiletype: *const ::windows_sys::core::GUID, profileindex: u32, constraints: ::windows_sys::core::PCWSTR, ppprofile: *mut IMFSensorProfile) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateSensorProfile(profiletype: *const ::windows_sys::core::GUID, profileindex: u32, constraints: ::windows_sys::core::PCWSTR, ppprofile: *mut *mut *mut IMFSensorProfile) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateSensorProfileCollection(ppsensorprofile: *mut IMFSensorProfileCollection) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateSensorProfileCollection(ppsensorprofile: *mut *mut *mut IMFSensorProfileCollection) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateSensorStream(streamid: u32, pattributes: IMFAttributes, pmediatypecollection: IMFCollection, ppstream: *mut IMFSensorStream) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateSensorStream(streamid: u32, pattributes: *mut *mut IMFAttributes, pmediatypecollection: *mut *mut IMFCollection, ppstream: *mut *mut *mut IMFSensorStream) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com_StructuredStorage\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
     pub fn MFCreateSequencerSegmentOffset(dwid: u32, hnsoffset: i64, pvarsegmentoffset: *mut super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateSequencerSource(preserved: ::windows_sys::core::IUnknown, ppsequencersource: *mut IMFSequencerSource) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateSequencerSource(preserved: *mut *mut ::windows_sys::core::IUnknown, ppsequencersource: *mut *mut *mut IMFSequencerSource) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateSimpleTypeHandler(pphandler: *mut IMFMediaTypeHandler) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateSimpleTypeHandler(pphandler: *mut *mut *mut IMFMediaTypeHandler) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateSinkWriterFromMediaSink(pmediasink: IMFMediaSink, pattributes: IMFAttributes, ppsinkwriter: *mut IMFSinkWriter) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateSinkWriterFromMediaSink(pmediasink: *mut *mut IMFMediaSink, pattributes: *mut *mut IMFAttributes, ppsinkwriter: *mut *mut *mut IMFSinkWriter) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateSinkWriterFromURL(pwszoutputurl: ::windows_sys::core::PCWSTR, pbytestream: IMFByteStream, pattributes: IMFAttributes, ppsinkwriter: *mut IMFSinkWriter) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateSinkWriterFromURL(pwszoutputurl: ::windows_sys::core::PCWSTR, pbytestream: *mut *mut IMFByteStream, pattributes: *mut *mut IMFAttributes, ppsinkwriter: *mut *mut *mut IMFSinkWriter) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateSourceReaderFromByteStream(pbytestream: IMFByteStream, pattributes: IMFAttributes, ppsourcereader: *mut IMFSourceReader) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateSourceReaderFromByteStream(pbytestream: *mut *mut IMFByteStream, pattributes: *mut *mut IMFAttributes, ppsourcereader: *mut *mut *mut IMFSourceReader) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateSourceReaderFromMediaSource(pmediasource: IMFMediaSource, pattributes: IMFAttributes, ppsourcereader: *mut IMFSourceReader) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateSourceReaderFromMediaSource(pmediasource: *mut *mut IMFMediaSource, pattributes: *mut *mut IMFAttributes, ppsourcereader: *mut *mut *mut IMFSourceReader) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateSourceReaderFromURL(pwszurl: ::windows_sys::core::PCWSTR, pattributes: IMFAttributes, ppsourcereader: *mut IMFSourceReader) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateSourceReaderFromURL(pwszurl: ::windows_sys::core::PCWSTR, pattributes: *mut *mut IMFAttributes, ppsourcereader: *mut *mut *mut IMFSourceReader) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateSourceResolver(ppisourceresolver: *mut IMFSourceResolver) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateSourceResolver(ppisourceresolver: *mut *mut *mut IMFSourceResolver) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateStandardQualityManager(ppqualitymanager: *mut IMFQualityManager) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateStandardQualityManager(ppqualitymanager: *mut *mut *mut IMFQualityManager) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateStreamDescriptor(dwstreamidentifier: u32, cmediatypes: u32, apmediatypes: *const IMFMediaType, ppdescriptor: *mut IMFStreamDescriptor) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateStreamDescriptor(dwstreamidentifier: u32, cmediatypes: u32, apmediatypes: *const *mut *mut IMFMediaType, ppdescriptor: *mut *mut *mut IMFStreamDescriptor) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_System_Com\"`*"]
     #[cfg(feature = "Win32_System_Com")]
-    pub fn MFCreateStreamOnMFByteStream(pbytestream: IMFByteStream, ppstream: *mut super::super::System::Com::IStream) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateStreamOnMFByteStream(pbytestream: *mut *mut IMFByteStream, ppstream: *mut *mut *mut super::super::System::Com::IStream) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateStreamOnMFByteStreamEx(pbytestream: IMFByteStream, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateStreamOnMFByteStreamEx(pbytestream: *mut *mut IMFByteStream, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateSystemTimeSource(ppsystemtimesource: *mut IMFPresentationTimeSource) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateSystemTimeSource(ppsystemtimesource: *mut *mut *mut IMFPresentationTimeSource) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateTempFile(accessmode: MF_FILE_ACCESSMODE, openmode: MF_FILE_OPENMODE, fflags: MF_FILE_FLAGS, ppibytestream: *mut IMFByteStream) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateTempFile(accessmode: MF_FILE_ACCESSMODE, openmode: MF_FILE_OPENMODE, fflags: MF_FILE_FLAGS, ppibytestream: *mut *mut *mut IMFByteStream) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateTopoLoader(ppobj: *mut IMFTopoLoader) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateTopoLoader(ppobj: *mut *mut *mut IMFTopoLoader) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateTopology(pptopo: *mut IMFTopology) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateTopology(pptopo: *mut *mut *mut IMFTopology) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateTopologyNode(nodetype: MF_TOPOLOGY_TYPE, ppnode: *mut IMFTopologyNode) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateTopologyNode(nodetype: MF_TOPOLOGY_TYPE, ppnode: *mut *mut *mut IMFTopologyNode) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateTrackedSample(ppmfsample: *mut IMFTrackedSample) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateTrackedSample(ppmfsample: *mut *mut *mut IMFTrackedSample) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateTranscodeProfile(pptranscodeprofile: *mut IMFTranscodeProfile) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateTranscodeProfile(pptranscodeprofile: *mut *mut *mut IMFTranscodeProfile) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateTranscodeSinkActivate(ppactivate: *mut IMFActivate) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateTranscodeSinkActivate(ppactivate: *mut *mut *mut IMFActivate) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateTranscodeTopology(psrc: IMFMediaSource, pwszoutputfilepath: ::windows_sys::core::PCWSTR, pprofile: IMFTranscodeProfile, pptranscodetopo: *mut IMFTopology) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateTranscodeTopology(psrc: *mut *mut IMFMediaSource, pwszoutputfilepath: ::windows_sys::core::PCWSTR, pprofile: *mut *mut IMFTranscodeProfile, pptranscodetopo: *mut *mut *mut IMFTopology) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateTranscodeTopologyFromByteStream(psrc: IMFMediaSource, poutputstream: IMFByteStream, pprofile: IMFTranscodeProfile, pptranscodetopo: *mut IMFTopology) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateTranscodeTopologyFromByteStream(psrc: *mut *mut IMFMediaSource, poutputstream: *mut *mut IMFByteStream, pprofile: *mut *mut IMFTranscodeProfile, pptranscodetopo: *mut *mut *mut IMFTopology) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateTransformActivate(ppactivate: *mut IMFActivate) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateTransformActivate(ppactivate: *mut *mut *mut IMFActivate) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn MFCreateVideoMediaType(pvideoformat: *const MFVIDEOFORMAT, ppivideomediatype: *mut IMFVideoMediaType) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateVideoMediaType(pvideoformat: *const MFVIDEOFORMAT, ppivideomediatype: *mut *mut *mut IMFVideoMediaType) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_Graphics_Gdi\"`*"]
     #[cfg(feature = "Win32_Graphics_Gdi")]
-    pub fn MFCreateVideoMediaTypeFromBitMapInfoHeader(pbmihbitmapinfoheader: *const super::super::Graphics::Gdi::BITMAPINFOHEADER, dwpixelaspectratiox: u32, dwpixelaspectratioy: u32, interlacemode: MFVideoInterlaceMode, videoflags: u64, qwframespersecondnumerator: u64, qwframesperseconddenominator: u64, dwmaxbitrate: u32, ppivideomediatype: *mut IMFVideoMediaType) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateVideoMediaTypeFromBitMapInfoHeader(pbmihbitmapinfoheader: *const super::super::Graphics::Gdi::BITMAPINFOHEADER, dwpixelaspectratiox: u32, dwpixelaspectratioy: u32, interlacemode: MFVideoInterlaceMode, videoflags: u64, qwframespersecondnumerator: u64, qwframesperseconddenominator: u64, dwmaxbitrate: u32, ppivideomediatype: *mut *mut *mut IMFVideoMediaType) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_Graphics_Gdi\"`*"]
     #[cfg(feature = "Win32_Graphics_Gdi")]
-    pub fn MFCreateVideoMediaTypeFromBitMapInfoHeaderEx(pbmihbitmapinfoheader: *const super::super::Graphics::Gdi::BITMAPINFOHEADER, cbbitmapinfoheader: u32, dwpixelaspectratiox: u32, dwpixelaspectratioy: u32, interlacemode: MFVideoInterlaceMode, videoflags: u64, dwframespersecondnumerator: u32, dwframesperseconddenominator: u32, dwmaxbitrate: u32, ppivideomediatype: *mut IMFVideoMediaType) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateVideoMediaTypeFromBitMapInfoHeaderEx(pbmihbitmapinfoheader: *const super::super::Graphics::Gdi::BITMAPINFOHEADER, cbbitmapinfoheader: u32, dwpixelaspectratiox: u32, dwpixelaspectratioy: u32, interlacemode: MFVideoInterlaceMode, videoflags: u64, dwframespersecondnumerator: u32, dwframesperseconddenominator: u32, dwmaxbitrate: u32, ppivideomediatype: *mut *mut *mut IMFVideoMediaType) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateVideoMediaTypeFromSubtype(pamsubtype: *const ::windows_sys::core::GUID, ppivideomediatype: *mut IMFVideoMediaType) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateVideoMediaTypeFromSubtype(pamsubtype: *const ::windows_sys::core::GUID, ppivideomediatype: *mut *mut *mut IMFVideoMediaType) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateVideoMixer(powner: ::windows_sys::core::IUnknown, riiddevice: *const ::windows_sys::core::GUID, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateVideoMixer(powner: *mut *mut ::windows_sys::core::IUnknown, riiddevice: *const ::windows_sys::core::GUID, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateVideoMixerAndPresenter(pmixerowner: ::windows_sys::core::IUnknown, ppresenterowner: ::windows_sys::core::IUnknown, riidmixer: *const ::windows_sys::core::GUID, ppvvideomixer: *mut *mut ::core::ffi::c_void, riidpresenter: *const ::windows_sys::core::GUID, ppvvideopresenter: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateVideoMixerAndPresenter(pmixerowner: *mut *mut ::windows_sys::core::IUnknown, ppresenterowner: *mut *mut ::windows_sys::core::IUnknown, riidmixer: *const ::windows_sys::core::GUID, ppvvideomixer: *mut *mut ::core::ffi::c_void, riidpresenter: *const ::windows_sys::core::GUID, ppvvideopresenter: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateVideoPresenter(powner: ::windows_sys::core::IUnknown, riiddevice: *const ::windows_sys::core::GUID, riid: *const ::windows_sys::core::GUID, ppvideopresenter: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateVideoPresenter(powner: *mut *mut ::windows_sys::core::IUnknown, riiddevice: *const ::windows_sys::core::GUID, riid: *const ::windows_sys::core::GUID, ppvideopresenter: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
     pub fn MFCreateVideoRenderer(riidrenderer: *const ::windows_sys::core::GUID, ppvideorenderer: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn MFCreateVideoRendererActivate(hwndvideo: super::super::Foundation::HWND, ppactivate: *mut IMFActivate) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateVideoRendererActivate(hwndvideo: super::super::Foundation::HWND, ppactivate: *mut *mut *mut IMFActivate) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
     pub fn MFCreateVideoSampleAllocator(riid: *const ::windows_sys::core::GUID, ppsampleallocator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
     pub fn MFCreateVideoSampleAllocatorEx(riid: *const ::windows_sys::core::GUID, ppsampleallocator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateVideoSampleFromSurface(punksurface: ::windows_sys::core::IUnknown, ppsample: *mut IMFSample) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateVideoSampleFromSurface(punksurface: *mut *mut ::windows_sys::core::IUnknown, ppsample: *mut *mut *mut IMFSample) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateVirtualCamera(r#type: __MIDL___MIDL_itf_mfvirtualcamera_0000_0000_0001, lifetime: __MIDL___MIDL_itf_mfvirtualcamera_0000_0000_0002, access: __MIDL___MIDL_itf_mfvirtualcamera_0000_0000_0003, friendlyname: ::windows_sys::core::PCWSTR, sourceid: ::windows_sys::core::PCWSTR, categories: *const ::windows_sys::core::GUID, categorycount: u32, virtualcamera: *mut IMFVirtualCamera) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateVirtualCamera(r#type: __MIDL___MIDL_itf_mfvirtualcamera_0000_0000_0001, lifetime: __MIDL___MIDL_itf_mfvirtualcamera_0000_0000_0002, access: __MIDL___MIDL_itf_mfvirtualcamera_0000_0000_0003, friendlyname: ::windows_sys::core::PCWSTR, sourceid: ::windows_sys::core::PCWSTR, categories: *const ::windows_sys::core::GUID, categorycount: u32, virtualcamera: *mut *mut *mut IMFVirtualCamera) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateWAVEMediaSink(ptargetbytestream: IMFByteStream, paudiomediatype: IMFMediaType, ppmediasink: *mut IMFMediaSink) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateWAVEMediaSink(ptargetbytestream: *mut *mut IMFByteStream, paudiomediatype: *mut *mut IMFMediaType, ppmediasink: *mut *mut *mut IMFMediaSink) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFCreateWICBitmapBuffer(riid: *const ::windows_sys::core::GUID, punksurface: ::windows_sys::core::IUnknown, ppbuffer: *mut IMFMediaBuffer) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateWICBitmapBuffer(riid: *const ::windows_sys::core::GUID, punksurface: *mut *mut ::windows_sys::core::IUnknown, ppbuffer: *mut *mut *mut IMFMediaBuffer) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_UI_Shell_PropertiesSystem\"`*"]
     #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-    pub fn MFCreateWMAEncoderActivate(pmediatype: IMFMediaType, pencodingconfigurationproperties: super::super::UI::Shell::PropertiesSystem::IPropertyStore, ppactivate: *mut IMFActivate) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateWMAEncoderActivate(pmediatype: *mut *mut IMFMediaType, pencodingconfigurationproperties: *mut *mut super::super::UI::Shell::PropertiesSystem::IPropertyStore, ppactivate: *mut *mut *mut IMFActivate) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_UI_Shell_PropertiesSystem\"`*"]
     #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-    pub fn MFCreateWMVEncoderActivate(pmediatype: IMFMediaType, pencodingconfigurationproperties: super::super::UI::Shell::PropertiesSystem::IPropertyStore, ppactivate: *mut IMFActivate) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateWMVEncoderActivate(pmediatype: *mut *mut IMFMediaType, pencodingconfigurationproperties: *mut *mut super::super::UI::Shell::PropertiesSystem::IPropertyStore, ppactivate: *mut *mut *mut IMFActivate) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_Media_Audio\"`*"]
     #[cfg(feature = "Win32_Media_Audio")]
-    pub fn MFCreateWaveFormatExFromMFMediaType(pmftype: IMFMediaType, ppwf: *mut *mut super::Audio::WAVEFORMATEX, pcbsize: *mut u32, flags: u32) -> ::windows_sys::core::HRESULT;
+    pub fn MFCreateWaveFormatExFromMFMediaType(pmftype: *mut *mut IMFMediaType, ppwf: *mut *mut super::Audio::WAVEFORMATEX, pcbsize: *mut u32, flags: u32) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_System_Com\"`*"]
     #[cfg(feature = "Win32_System_Com")]
-    pub fn MFDeserializeAttributesFromStream(pattr: IMFAttributes, dwoptions: u32, pstm: super::super::System::Com::IStream) -> ::windows_sys::core::HRESULT;
+    pub fn MFDeserializeAttributesFromStream(pattr: *mut *mut IMFAttributes, dwoptions: u32, pstm: *mut *mut super::super::System::Com::IStream) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFDeserializePresentationDescriptor(cbdata: u32, pbdata: *const u8, pppd: *mut IMFPresentationDescriptor) -> ::windows_sys::core::HRESULT;
+    pub fn MFDeserializePresentationDescriptor(cbdata: u32, pbdata: *const u8, pppd: *mut *mut *mut IMFPresentationDescriptor) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFEndCreateFile(presult: IMFAsyncResult, ppfile: *mut IMFByteStream) -> ::windows_sys::core::HRESULT;
+    pub fn MFEndCreateFile(presult: *mut *mut IMFAsyncResult, ppfile: *mut *mut *mut IMFByteStream) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFEndRegisterWorkQueueWithMMCSS(presult: IMFAsyncResult, pdwtaskid: *mut u32) -> ::windows_sys::core::HRESULT;
+    pub fn MFEndRegisterWorkQueueWithMMCSS(presult: *mut *mut IMFAsyncResult, pdwtaskid: *mut u32) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFEndUnregisterWorkQueueWithMMCSS(presult: IMFAsyncResult) -> ::windows_sys::core::HRESULT;
+    pub fn MFEndUnregisterWorkQueueWithMMCSS(presult: *mut *mut IMFAsyncResult) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFEnumDeviceSources(pattributes: IMFAttributes, pppsourceactivate: *mut *mut IMFActivate, pcsourceactivate: *mut u32) -> ::windows_sys::core::HRESULT;
+    pub fn MFEnumDeviceSources(pattributes: *mut *mut IMFAttributes, pppsourceactivate: *mut *mut *mut *mut IMFActivate, pcsourceactivate: *mut u32) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
     pub fn MFFrameRateToAverageTimePerFrame(unnumerator: u32, undenominator: u32, punaveragetimeperframe: *mut u64) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFGetAttributesAsBlob(pattributes: IMFAttributes, pbuf: *mut u8, cbbufsize: u32) -> ::windows_sys::core::HRESULT;
+    pub fn MFGetAttributesAsBlob(pattributes: *mut *mut IMFAttributes, pbuf: *mut u8, cbbufsize: u32) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFGetAttributesAsBlobSize(pattributes: IMFAttributes, pcbbufsize: *mut u32) -> ::windows_sys::core::HRESULT;
+    pub fn MFGetAttributesAsBlobSize(pattributes: *mut *mut IMFAttributes, pcbbufsize: *mut u32) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
     pub fn MFGetContentProtectionSystemCLSID(guidprotectionsystemid: *const ::windows_sys::core::GUID, pclsid: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
     pub fn MFGetLocalId(verifier: *const u8, size: u32, id: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFGetMFTMerit(pmft: ::windows_sys::core::IUnknown, cbverifier: u32, verifier: *const u8, merit: *mut u32) -> ::windows_sys::core::HRESULT;
+    pub fn MFGetMFTMerit(pmft: *mut *mut ::windows_sys::core::IUnknown, cbverifier: u32, verifier: *const u8, merit: *mut u32) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
     pub fn MFGetPlaneSize(format: u32, dwwidth: u32, dwheight: u32, pdwplanesize: *mut u32) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFGetPluginControl(ppplugincontrol: *mut IMFPluginControl) -> ::windows_sys::core::HRESULT;
+    pub fn MFGetPluginControl(ppplugincontrol: *mut *mut *mut IMFPluginControl) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFGetService(punkobject: ::windows_sys::core::IUnknown, guidservice: *const ::windows_sys::core::GUID, riid: *const ::windows_sys::core::GUID, ppvobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn MFGetService(punkobject: *mut *mut ::windows_sys::core::IUnknown, guidservice: *const ::windows_sys::core::GUID, riid: *const ::windows_sys::core::GUID, ppvobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
     pub fn MFGetStrideForBitmapInfoHeader(format: u32, dwwidth: u32, pstride: *mut i32) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com_StructuredStorage\"`*"]
@@ -366,14 +366,14 @@ extern "system" {
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
     pub fn MFGetSupportedSchemes(ppropvarschemearray: *mut super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFGetSystemId(ppid: *mut IMFSystemId) -> ::windows_sys::core::HRESULT;
+    pub fn MFGetSystemId(ppid: *mut *mut *mut IMFSystemId) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
     pub fn MFGetSystemTime() -> i64;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
     pub fn MFGetTimerPeriodicity(periodicity: *mut u32) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn MFGetTopoNodeCurrentType(pnode: IMFTopologyNode, dwstreamindex: u32, foutput: super::super::Foundation::BOOL, pptype: *mut IMFMediaType) -> ::windows_sys::core::HRESULT;
+    pub fn MFGetTopoNodeCurrentType(pnode: *mut *mut IMFTopologyNode, dwstreamindex: u32, foutput: super::super::Foundation::BOOL, pptype: *mut *mut *mut IMFMediaType) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
     pub fn MFGetUncompressedVideoFormat(pvideoformat: *const MFVIDEOFORMAT) -> u32;
@@ -389,30 +389,30 @@ extern "system" {
     pub fn MFHeapFree(pv: *mut ::core::ffi::c_void);
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn MFInitAMMediaTypeFromMFMediaType(pmftype: IMFMediaType, guidformatblocktype: ::windows_sys::core::GUID, pamtype: *mut AM_MEDIA_TYPE) -> ::windows_sys::core::HRESULT;
+    pub fn MFInitAMMediaTypeFromMFMediaType(pmftype: *mut *mut IMFMediaType, guidformatblocktype: ::windows_sys::core::GUID, pamtype: *mut AM_MEDIA_TYPE) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFInitAttributesFromBlob(pattributes: IMFAttributes, pbuf: *const u8, cbbufsize: u32) -> ::windows_sys::core::HRESULT;
+    pub fn MFInitAttributesFromBlob(pattributes: *mut *mut IMFAttributes, pbuf: *const u8, cbbufsize: u32) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn MFInitMediaTypeFromAMMediaType(pmftype: IMFMediaType, pamtype: *const AM_MEDIA_TYPE) -> ::windows_sys::core::HRESULT;
+    pub fn MFInitMediaTypeFromAMMediaType(pmftype: *mut *mut IMFMediaType, pamtype: *const AM_MEDIA_TYPE) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn MFInitMediaTypeFromMFVideoFormat(pmftype: IMFMediaType, pmfvf: *const MFVIDEOFORMAT, cbbufsize: u32) -> ::windows_sys::core::HRESULT;
+    pub fn MFInitMediaTypeFromMFVideoFormat(pmftype: *mut *mut IMFMediaType, pmfvf: *const MFVIDEOFORMAT, cbbufsize: u32) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_Foundation\"`, `\"Win32_Graphics_Gdi\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub fn MFInitMediaTypeFromMPEG1VideoInfo(pmftype: IMFMediaType, pmp1vi: *const MPEG1VIDEOINFO, cbbufsize: u32, psubtype: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT;
+    pub fn MFInitMediaTypeFromMPEG1VideoInfo(pmftype: *mut *mut IMFMediaType, pmp1vi: *const MPEG1VIDEOINFO, cbbufsize: u32, psubtype: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_Foundation\"`, `\"Win32_Graphics_Gdi\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub fn MFInitMediaTypeFromMPEG2VideoInfo(pmftype: IMFMediaType, pmp2vi: *const MPEG2VIDEOINFO, cbbufsize: u32, psubtype: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT;
+    pub fn MFInitMediaTypeFromMPEG2VideoInfo(pmftype: *mut *mut IMFMediaType, pmp2vi: *const MPEG2VIDEOINFO, cbbufsize: u32, psubtype: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_Foundation\"`, `\"Win32_Graphics_Gdi\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub fn MFInitMediaTypeFromVideoInfoHeader(pmftype: IMFMediaType, pvih: *const VIDEOINFOHEADER, cbbufsize: u32, psubtype: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT;
+    pub fn MFInitMediaTypeFromVideoInfoHeader(pmftype: *mut *mut IMFMediaType, pvih: *const VIDEOINFOHEADER, cbbufsize: u32, psubtype: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_Foundation\"`, `\"Win32_Graphics_Gdi\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub fn MFInitMediaTypeFromVideoInfoHeader2(pmftype: IMFMediaType, pvih2: *const VIDEOINFOHEADER2, cbbufsize: u32, psubtype: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT;
+    pub fn MFInitMediaTypeFromVideoInfoHeader2(pmftype: *mut *mut IMFMediaType, pvih2: *const VIDEOINFOHEADER2, cbbufsize: u32, psubtype: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_Media_Audio\"`*"]
     #[cfg(feature = "Win32_Media_Audio")]
-    pub fn MFInitMediaTypeFromWaveFormatEx(pmftype: IMFMediaType, pwaveformat: *const super::Audio::WAVEFORMATEX, cbbufsize: u32) -> ::windows_sys::core::HRESULT;
+    pub fn MFInitMediaTypeFromWaveFormatEx(pmftype: *mut *mut IMFMediaType, pwaveformat: *const super::Audio::WAVEFORMATEX, cbbufsize: u32) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
     pub fn MFInitVideoFormat(pvideoformat: *const MFVIDEOFORMAT, r#type: MFStandardVideoFormat) -> ::windows_sys::core::HRESULT;
@@ -420,7 +420,7 @@ extern "system" {
     #[cfg(feature = "Win32_Foundation")]
     pub fn MFInitVideoFormat_RGB(pvideoformat: *const MFVIDEOFORMAT, dwwidth: u32, dwheight: u32, d3dfmt: u32) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFInvokeCallback(pasyncresult: IMFAsyncResult) -> ::windows_sys::core::HRESULT;
+    pub fn MFInvokeCallback(pasyncresult: *mut *mut IMFAsyncResult) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
     pub fn MFIsContentProtectionDeviceSupported(protectionsystemid: *const ::windows_sys::core::GUID, issupported: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT;
@@ -431,9 +431,9 @@ extern "system" {
     #[cfg(feature = "Win32_Foundation")]
     pub fn MFIsVirtualCameraTypeSupported(r#type: __MIDL___MIDL_itf_mfvirtualcamera_0000_0000_0001, supported: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFLoadSignedLibrary(pszname: ::windows_sys::core::PCWSTR, pplib: *mut IMFSignedLibrary) -> ::windows_sys::core::HRESULT;
+    pub fn MFLoadSignedLibrary(pszname: ::windows_sys::core::PCWSTR, pplib: *mut *mut *mut IMFSignedLibrary) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFLockDXGIDeviceManager(presettoken: *mut u32, ppmanager: *mut IMFDXGIDeviceManager) -> ::windows_sys::core::HRESULT;
+    pub fn MFLockDXGIDeviceManager(presettoken: *mut u32, ppmanager: *mut *mut *mut IMFDXGIDeviceManager) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
     pub fn MFLockPlatform() -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
@@ -448,69 +448,69 @@ extern "system" {
     pub fn MFMapDXGIFormatToDX9Format(dx11: super::super::Graphics::Dxgi::Common::DXGI_FORMAT) -> u32;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn MFPCreateMediaPlayer(pwszurl: ::windows_sys::core::PCWSTR, fstartplayback: super::super::Foundation::BOOL, creationoptions: MFP_CREATION_OPTIONS, pcallback: IMFPMediaPlayerCallback, hwnd: super::super::Foundation::HWND, ppmediaplayer: *mut IMFPMediaPlayer) -> ::windows_sys::core::HRESULT;
+    pub fn MFPCreateMediaPlayer(pwszurl: ::windows_sys::core::PCWSTR, fstartplayback: super::super::Foundation::BOOL, creationoptions: MFP_CREATION_OPTIONS, pcallback: *mut *mut IMFPMediaPlayerCallback, hwnd: super::super::Foundation::HWND, ppmediaplayer: *mut *mut *mut IMFPMediaPlayer) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn MFPutWaitingWorkItem(hevent: super::super::Foundation::HANDLE, priority: i32, presult: IMFAsyncResult, pkey: *mut u64) -> ::windows_sys::core::HRESULT;
+    pub fn MFPutWaitingWorkItem(hevent: super::super::Foundation::HANDLE, priority: i32, presult: *mut *mut IMFAsyncResult, pkey: *mut u64) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFPutWorkItem(dwqueue: u32, pcallback: IMFAsyncCallback, pstate: ::windows_sys::core::IUnknown) -> ::windows_sys::core::HRESULT;
+    pub fn MFPutWorkItem(dwqueue: u32, pcallback: *mut *mut IMFAsyncCallback, pstate: *mut *mut ::windows_sys::core::IUnknown) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFPutWorkItem2(dwqueue: u32, priority: i32, pcallback: IMFAsyncCallback, pstate: ::windows_sys::core::IUnknown) -> ::windows_sys::core::HRESULT;
+    pub fn MFPutWorkItem2(dwqueue: u32, priority: i32, pcallback: *mut *mut IMFAsyncCallback, pstate: *mut *mut ::windows_sys::core::IUnknown) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFPutWorkItemEx(dwqueue: u32, presult: IMFAsyncResult) -> ::windows_sys::core::HRESULT;
+    pub fn MFPutWorkItemEx(dwqueue: u32, presult: *mut *mut IMFAsyncResult) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFPutWorkItemEx2(dwqueue: u32, priority: i32, presult: IMFAsyncResult) -> ::windows_sys::core::HRESULT;
+    pub fn MFPutWorkItemEx2(dwqueue: u32, priority: i32, presult: *mut *mut IMFAsyncResult) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFRegisterLocalByteStreamHandler(szfileextension: ::windows_sys::core::PCWSTR, szmimetype: ::windows_sys::core::PCWSTR, pactivate: IMFActivate) -> ::windows_sys::core::HRESULT;
+    pub fn MFRegisterLocalByteStreamHandler(szfileextension: ::windows_sys::core::PCWSTR, szmimetype: ::windows_sys::core::PCWSTR, pactivate: *mut *mut IMFActivate) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFRegisterLocalSchemeHandler(szscheme: ::windows_sys::core::PCWSTR, pactivate: IMFActivate) -> ::windows_sys::core::HRESULT;
+    pub fn MFRegisterLocalSchemeHandler(szscheme: ::windows_sys::core::PCWSTR, pactivate: *mut *mut IMFActivate) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
     pub fn MFRegisterPlatformWithMMCSS(wszclass: ::windows_sys::core::PCWSTR, pdwtaskid: *mut u32, lpriority: i32) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
     pub fn MFRemovePeriodicCallback(dwkey: u32) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFRequireProtectedEnvironment(ppresentationdescriptor: IMFPresentationDescriptor) -> ::windows_sys::core::HRESULT;
+    pub fn MFRequireProtectedEnvironment(ppresentationdescriptor: *mut *mut IMFPresentationDescriptor) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFScheduleWorkItem(pcallback: IMFAsyncCallback, pstate: ::windows_sys::core::IUnknown, timeout: i64, pkey: *mut u64) -> ::windows_sys::core::HRESULT;
+    pub fn MFScheduleWorkItem(pcallback: *mut *mut IMFAsyncCallback, pstate: *mut *mut ::windows_sys::core::IUnknown, timeout: i64, pkey: *mut u64) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFScheduleWorkItemEx(presult: IMFAsyncResult, timeout: i64, pkey: *mut u64) -> ::windows_sys::core::HRESULT;
+    pub fn MFScheduleWorkItemEx(presult: *mut *mut IMFAsyncResult, timeout: i64, pkey: *mut u64) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_System_Com\"`*"]
     #[cfg(feature = "Win32_System_Com")]
-    pub fn MFSerializeAttributesToStream(pattr: IMFAttributes, dwoptions: u32, pstm: super::super::System::Com::IStream) -> ::windows_sys::core::HRESULT;
+    pub fn MFSerializeAttributesToStream(pattr: *mut *mut IMFAttributes, dwoptions: u32, pstm: *mut *mut super::super::System::Com::IStream) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFSerializePresentationDescriptor(ppd: IMFPresentationDescriptor, pcbdata: *mut u32, ppbdata: *mut *mut u8) -> ::windows_sys::core::HRESULT;
+    pub fn MFSerializePresentationDescriptor(ppd: *mut *mut IMFPresentationDescriptor, pcbdata: *mut u32, ppbdata: *mut *mut u8) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
     pub fn MFShutdown() -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFShutdownObject(punk: ::windows_sys::core::IUnknown) -> ::windows_sys::core::HRESULT;
+    pub fn MFShutdownObject(punk: *mut *mut ::windows_sys::core::IUnknown) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFSplitSample(psample: IMFSample, poutputsamples: *mut IMFSample, dwoutputsamplemaxcount: u32, pdwoutputsamplecount: *mut u32) -> ::windows_sys::core::HRESULT;
+    pub fn MFSplitSample(psample: *mut *mut IMFSample, poutputsamples: *mut *mut *mut IMFSample, dwoutputsamplemaxcount: u32, pdwoutputsamplecount: *mut u32) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
     pub fn MFStartup(version: u32, dwflags: u32) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFTEnum(guidcategory: ::windows_sys::core::GUID, flags: u32, pinputtype: *const MFT_REGISTER_TYPE_INFO, poutputtype: *const MFT_REGISTER_TYPE_INFO, pattributes: IMFAttributes, ppclsidmft: *mut *mut ::windows_sys::core::GUID, pcmfts: *mut u32) -> ::windows_sys::core::HRESULT;
+    pub fn MFTEnum(guidcategory: ::windows_sys::core::GUID, flags: u32, pinputtype: *const MFT_REGISTER_TYPE_INFO, poutputtype: *const MFT_REGISTER_TYPE_INFO, pattributes: *mut *mut IMFAttributes, ppclsidmft: *mut *mut ::windows_sys::core::GUID, pcmfts: *mut u32) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFTEnum2(guidcategory: ::windows_sys::core::GUID, flags: MFT_ENUM_FLAG, pinputtype: *const MFT_REGISTER_TYPE_INFO, poutputtype: *const MFT_REGISTER_TYPE_INFO, pattributes: IMFAttributes, pppmftactivate: *mut *mut IMFActivate, pnummftactivate: *mut u32) -> ::windows_sys::core::HRESULT;
+    pub fn MFTEnum2(guidcategory: ::windows_sys::core::GUID, flags: MFT_ENUM_FLAG, pinputtype: *const MFT_REGISTER_TYPE_INFO, poutputtype: *const MFT_REGISTER_TYPE_INFO, pattributes: *mut *mut IMFAttributes, pppmftactivate: *mut *mut *mut *mut IMFActivate, pnummftactivate: *mut u32) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFTEnumEx(guidcategory: ::windows_sys::core::GUID, flags: MFT_ENUM_FLAG, pinputtype: *const MFT_REGISTER_TYPE_INFO, poutputtype: *const MFT_REGISTER_TYPE_INFO, pppmftactivate: *mut *mut IMFActivate, pnummftactivate: *mut u32) -> ::windows_sys::core::HRESULT;
+    pub fn MFTEnumEx(guidcategory: ::windows_sys::core::GUID, flags: MFT_ENUM_FLAG, pinputtype: *const MFT_REGISTER_TYPE_INFO, poutputtype: *const MFT_REGISTER_TYPE_INFO, pppmftactivate: *mut *mut *mut *mut IMFActivate, pnummftactivate: *mut u32) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFTGetInfo(clsidmft: ::windows_sys::core::GUID, pszname: *mut ::windows_sys::core::PWSTR, ppinputtypes: *mut *mut MFT_REGISTER_TYPE_INFO, pcinputtypes: *mut u32, ppoutputtypes: *mut *mut MFT_REGISTER_TYPE_INFO, pcoutputtypes: *mut u32, ppattributes: *mut IMFAttributes) -> ::windows_sys::core::HRESULT;
+    pub fn MFTGetInfo(clsidmft: ::windows_sys::core::GUID, pszname: *mut ::windows_sys::core::PWSTR, ppinputtypes: *mut *mut MFT_REGISTER_TYPE_INFO, pcinputtypes: *mut u32, ppoutputtypes: *mut *mut MFT_REGISTER_TYPE_INFO, pcoutputtypes: *mut u32, ppattributes: *mut *mut *mut IMFAttributes) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFTRegister(clsidmft: ::windows_sys::core::GUID, guidcategory: ::windows_sys::core::GUID, pszname: ::windows_sys::core::PCWSTR, flags: u32, cinputtypes: u32, pinputtypes: *const MFT_REGISTER_TYPE_INFO, coutputtypes: u32, poutputtypes: *const MFT_REGISTER_TYPE_INFO, pattributes: IMFAttributes) -> ::windows_sys::core::HRESULT;
+    pub fn MFTRegister(clsidmft: ::windows_sys::core::GUID, guidcategory: ::windows_sys::core::GUID, pszname: ::windows_sys::core::PCWSTR, flags: u32, cinputtypes: u32, pinputtypes: *const MFT_REGISTER_TYPE_INFO, coutputtypes: u32, poutputtypes: *const MFT_REGISTER_TYPE_INFO, pattributes: *mut *mut IMFAttributes) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_System_Com\"`*"]
     #[cfg(feature = "Win32_System_Com")]
-    pub fn MFTRegisterLocal(pclassfactory: super::super::System::Com::IClassFactory, guidcategory: *const ::windows_sys::core::GUID, pszname: ::windows_sys::core::PCWSTR, flags: u32, cinputtypes: u32, pinputtypes: *const MFT_REGISTER_TYPE_INFO, coutputtypes: u32, poutputtypes: *const MFT_REGISTER_TYPE_INFO) -> ::windows_sys::core::HRESULT;
+    pub fn MFTRegisterLocal(pclassfactory: *mut *mut super::super::System::Com::IClassFactory, guidcategory: *const ::windows_sys::core::GUID, pszname: ::windows_sys::core::PCWSTR, flags: u32, cinputtypes: u32, pinputtypes: *const MFT_REGISTER_TYPE_INFO, coutputtypes: u32, poutputtypes: *const MFT_REGISTER_TYPE_INFO) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
     pub fn MFTRegisterLocalByCLSID(clisdmft: *const ::windows_sys::core::GUID, guidcategory: *const ::windows_sys::core::GUID, pszname: ::windows_sys::core::PCWSTR, flags: u32, cinputtypes: u32, pinputtypes: *const MFT_REGISTER_TYPE_INFO, coutputtypes: u32, poutputtypes: *const MFT_REGISTER_TYPE_INFO) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
     pub fn MFTUnregister(clsidmft: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_System_Com\"`*"]
     #[cfg(feature = "Win32_System_Com")]
-    pub fn MFTUnregisterLocal(pclassfactory: super::super::System::Com::IClassFactory) -> ::windows_sys::core::HRESULT;
+    pub fn MFTUnregisterLocal(pclassfactory: *mut *mut super::super::System::Com::IClassFactory) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
     pub fn MFTUnregisterLocalByCLSID(clsidmft: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFTranscodeGetAudioOutputAvailableTypes(guidsubtype: *const ::windows_sys::core::GUID, dwmftflags: u32, pcodecconfig: IMFAttributes, ppavailabletypes: *mut IMFCollection) -> ::windows_sys::core::HRESULT;
+    pub fn MFTranscodeGetAudioOutputAvailableTypes(guidsubtype: *const ::windows_sys::core::GUID, dwmftflags: u32, pcodecconfig: *mut *mut IMFAttributes, ppavailabletypes: *mut *mut *mut IMFCollection) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
     pub fn MFUnlockDXGIDeviceManager() -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
@@ -520,22 +520,22 @@ extern "system" {
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
     pub fn MFUnregisterPlatformFromMMCSS() -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFUnwrapMediaType(pwrap: IMFMediaType, pporig: *mut IMFMediaType) -> ::windows_sys::core::HRESULT;
+    pub fn MFUnwrapMediaType(pwrap: *mut *mut IMFMediaType, pporig: *mut *mut *mut IMFMediaType) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
     pub fn MFValidateMediaTypeSize(formattype: ::windows_sys::core::GUID, pblock: *const u8, cbsize: u32) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-    pub fn MFWrapMediaType(porig: IMFMediaType, majortype: *const ::windows_sys::core::GUID, subtype: *const ::windows_sys::core::GUID, ppwrap: *mut IMFMediaType) -> ::windows_sys::core::HRESULT;
+    pub fn MFWrapMediaType(porig: *mut *mut IMFMediaType, majortype: *const ::windows_sys::core::GUID, subtype: *const ::windows_sys::core::GUID, ppwrap: *mut *mut *mut IMFMediaType) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
     pub fn MFllMulDiv(a: i64, b: i64, c: i64, d: i64) -> i64;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn OPMGetVideoOutputForTarget(padapterluid: *const super::super::Foundation::LUID, vidpntarget: u32, vos: OPM_VIDEO_OUTPUT_SEMANTICS, ppopmvideooutput: *mut IOPMVideoOutput) -> ::windows_sys::core::HRESULT;
+    pub fn OPMGetVideoOutputForTarget(padapterluid: *const super::super::Foundation::LUID, vidpntarget: u32, vos: OPM_VIDEO_OUTPUT_SEMANTICS, ppopmvideooutput: *mut *mut *mut IOPMVideoOutput) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_Graphics_Gdi\"`*"]
     #[cfg(feature = "Win32_Graphics_Gdi")]
-    pub fn OPMGetVideoOutputsFromHMONITOR(hmonitor: super::super::Graphics::Gdi::HMONITOR, vos: OPM_VIDEO_OUTPUT_SEMANTICS, pulnumvideooutputs: *mut u32, pppopmvideooutputarray: *mut *mut IOPMVideoOutput) -> ::windows_sys::core::HRESULT;
+    pub fn OPMGetVideoOutputsFromHMONITOR(hmonitor: super::super::Graphics::Gdi::HMONITOR, vos: OPM_VIDEO_OUTPUT_SEMANTICS, pulnumvideooutputs: *mut u32, pppopmvideooutputarray: *mut *mut *mut *mut IOPMVideoOutput) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_Graphics_Direct3D9\"`*"]
     #[cfg(feature = "Win32_Graphics_Direct3D9")]
-    pub fn OPMGetVideoOutputsFromIDirect3DDevice9Object(pdirect3ddevice9: super::super::Graphics::Direct3D9::IDirect3DDevice9, vos: OPM_VIDEO_OUTPUT_SEMANTICS, pulnumvideooutputs: *mut u32, pppopmvideooutputarray: *mut *mut IOPMVideoOutput) -> ::windows_sys::core::HRESULT;
+    pub fn OPMGetVideoOutputsFromIDirect3DDevice9Object(pdirect3ddevice9: *mut *mut super::super::Graphics::Direct3D9::IDirect3DDevice9, vos: OPM_VIDEO_OUTPUT_SEMANTICS, pulnumvideooutputs: *mut u32, pppopmvideooutputarray: *mut *mut *mut *mut IOPMVideoOutput) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
     pub fn OPMXboxEnableHDCP(hdcptype: OPM_HDCP_TYPE) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
@@ -589,7 +589,7 @@ pub struct AM_MEDIA_TYPE {
     pub bTemporalCompression: super::super::Foundation::BOOL,
     pub lSampleSize: u32,
     pub formattype: ::windows_sys::core::GUID,
-    pub pUnk: ::windows_sys::core::IUnknown,
+    pub pUnk: *mut *mut *mut *mut ::windows_sys::core::IUnknown,
     pub cbFormat: u32,
     pub pbFormat: *mut u8,
 }
@@ -1974,7 +1974,7 @@ impl ::core::clone::Clone for D3D12_QUERY_DATA_VIDEO_DECODE_STATISTICS {
 #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_Graphics_Direct3D12\"`*"]
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
 pub struct D3D12_RESOLVE_VIDEO_MOTION_VECTOR_HEAP_INPUT {
-    pub pMotionVectorHeap: ID3D12VideoMotionVectorHeap,
+    pub pMotionVectorHeap: *mut *mut *mut *mut ID3D12VideoMotionVectorHeap,
     pub PixelWidth: u32,
     pub PixelHeight: u32,
 }
@@ -1990,7 +1990,7 @@ impl ::core::clone::Clone for D3D12_RESOLVE_VIDEO_MOTION_VECTOR_HEAP_INPUT {
 #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_Graphics_Direct3D12\"`*"]
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
 pub struct D3D12_RESOLVE_VIDEO_MOTION_VECTOR_HEAP_OUTPUT {
-    pub pMotionVectorTexture2D: super::super::Graphics::Direct3D12::ID3D12Resource,
+    pub pMotionVectorTexture2D: *mut *mut *mut *mut super::super::Graphics::Direct3D12::ID3D12Resource,
     pub MotionVectorCoordinate: D3D12_RESOURCE_COORDINATE,
 }
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
@@ -2062,7 +2062,7 @@ pub const D3D12_VIDEO_DECODE_ARGUMENT_TYPE_MAX_VALID: D3D12_VIDEO_DECODE_ARGUMEN
 #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_Graphics_Direct3D12\"`*"]
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
 pub struct D3D12_VIDEO_DECODE_COMPRESSED_BITSTREAM {
-    pub pBuffer: super::super::Graphics::Direct3D12::ID3D12Resource,
+    pub pBuffer: *mut *mut *mut *mut super::super::Graphics::Direct3D12::ID3D12Resource,
     pub Offset: u64,
     pub Size: u64,
 }
@@ -2104,7 +2104,7 @@ pub const D3D12_VIDEO_DECODE_CONFIGURATION_FLAG_ALLOW_RESOLUTION_CHANGE_ON_NON_K
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct3D12", feature = "Win32_Graphics_Dxgi_Common"))]
 pub struct D3D12_VIDEO_DECODE_CONVERSION_ARGUMENTS {
     pub Enable: super::super::Foundation::BOOL,
-    pub pReferenceTexture2D: super::super::Graphics::Direct3D12::ID3D12Resource,
+    pub pReferenceTexture2D: *mut *mut *mut *mut super::super::Graphics::Direct3D12::ID3D12Resource,
     pub ReferenceSubresource: u32,
     pub OutputColorSpace: super::super::Graphics::Dxgi::Common::DXGI_COLOR_SPACE_TYPE,
     pub DecodeColorSpace: super::super::Graphics::Dxgi::Common::DXGI_COLOR_SPACE_TYPE,
@@ -2122,7 +2122,7 @@ impl ::core::clone::Clone for D3D12_VIDEO_DECODE_CONVERSION_ARGUMENTS {
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct3D12", feature = "Win32_Graphics_Dxgi_Common"))]
 pub struct D3D12_VIDEO_DECODE_CONVERSION_ARGUMENTS1 {
     pub Enable: super::super::Foundation::BOOL,
-    pub pReferenceTexture2D: super::super::Graphics::Direct3D12::ID3D12Resource,
+    pub pReferenceTexture2D: *mut *mut *mut *mut super::super::Graphics::Direct3D12::ID3D12Resource,
     pub ReferenceSubresource: u32,
     pub OutputColorSpace: super::super::Graphics::Dxgi::Common::DXGI_COLOR_SPACE_TYPE,
     pub DecodeColorSpace: super::super::Graphics::Dxgi::Common::DXGI_COLOR_SPACE_TYPE,
@@ -2198,7 +2198,7 @@ pub struct D3D12_VIDEO_DECODE_INPUT_STREAM_ARGUMENTS {
     pub FrameArguments: [D3D12_VIDEO_DECODE_FRAME_ARGUMENT; 10],
     pub ReferenceFrames: D3D12_VIDEO_DECODE_REFERENCE_FRAMES,
     pub CompressedBitstream: D3D12_VIDEO_DECODE_COMPRESSED_BITSTREAM,
-    pub pHeap: ID3D12VideoDecoderHeap,
+    pub pHeap: *mut *mut *mut *mut ID3D12VideoDecoderHeap,
 }
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
 impl ::core::marker::Copy for D3D12_VIDEO_DECODE_INPUT_STREAM_ARGUMENTS {}
@@ -2213,7 +2213,7 @@ impl ::core::clone::Clone for D3D12_VIDEO_DECODE_INPUT_STREAM_ARGUMENTS {
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
 pub struct D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM {
     pub Offset: u64,
-    pub pBuffer: super::super::Graphics::Direct3D12::ID3D12Resource,
+    pub pBuffer: *mut *mut *mut *mut super::super::Graphics::Direct3D12::ID3D12Resource,
 }
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
 impl ::core::marker::Copy for D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM {}
@@ -2227,7 +2227,7 @@ impl ::core::clone::Clone for D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM {
 #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_Foundation\"`, `\"Win32_Graphics_Direct3D12\"`, `\"Win32_Graphics_Dxgi_Common\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct3D12", feature = "Win32_Graphics_Dxgi_Common"))]
 pub struct D3D12_VIDEO_DECODE_OUTPUT_STREAM_ARGUMENTS {
-    pub pOutputTexture2D: super::super::Graphics::Direct3D12::ID3D12Resource,
+    pub pOutputTexture2D: *mut *mut *mut *mut super::super::Graphics::Direct3D12::ID3D12Resource,
     pub OutputSubresource: u32,
     pub ConversionArguments: D3D12_VIDEO_DECODE_CONVERSION_ARGUMENTS,
 }
@@ -2243,7 +2243,7 @@ impl ::core::clone::Clone for D3D12_VIDEO_DECODE_OUTPUT_STREAM_ARGUMENTS {
 #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_Foundation\"`, `\"Win32_Graphics_Direct3D12\"`, `\"Win32_Graphics_Dxgi_Common\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct3D12", feature = "Win32_Graphics_Dxgi_Common"))]
 pub struct D3D12_VIDEO_DECODE_OUTPUT_STREAM_ARGUMENTS1 {
-    pub pOutputTexture2D: super::super::Graphics::Direct3D12::ID3D12Resource,
+    pub pOutputTexture2D: *mut *mut *mut *mut super::super::Graphics::Direct3D12::ID3D12Resource,
     pub OutputSubresource: u32,
     pub ConversionArguments: D3D12_VIDEO_DECODE_CONVERSION_ARGUMENTS1,
     pub Histograms: [D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM; 4],
@@ -2281,9 +2281,9 @@ pub const D3D12_VIDEO_DECODE_PROFILE_VP9_10BIT_PROFILE2: ::windows_sys::core::GU
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
 pub struct D3D12_VIDEO_DECODE_REFERENCE_FRAMES {
     pub NumTexture2Ds: u32,
-    pub ppTexture2Ds: *mut super::super::Graphics::Direct3D12::ID3D12Resource,
+    pub ppTexture2Ds: *mut *mut *mut super::super::Graphics::Direct3D12::ID3D12Resource,
     pub pSubresources: *mut u32,
-    pub ppHeaps: *mut ID3D12VideoDecoderHeap,
+    pub ppHeaps: *mut *mut *mut ID3D12VideoDecoderHeap,
 }
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
 impl ::core::marker::Copy for D3D12_VIDEO_DECODE_REFERENCE_FRAMES {}
@@ -2624,7 +2624,7 @@ impl ::core::clone::Clone for D3D12_VIDEO_ENCODER_CODEC_PICTURE_CONTROL_SUPPORT_
 #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_Graphics_Direct3D12\"`*"]
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
 pub struct D3D12_VIDEO_ENCODER_COMPRESSED_BITSTREAM {
-    pub pBuffer: super::super::Graphics::Direct3D12::ID3D12Resource,
+    pub pBuffer: *mut *mut *mut *mut super::super::Graphics::Direct3D12::ID3D12Resource,
     pub FrameStartOffset: u64,
 }
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
@@ -2661,7 +2661,7 @@ impl ::core::clone::Clone for D3D12_VIDEO_ENCODER_DESC {
 pub struct D3D12_VIDEO_ENCODER_ENCODEFRAME_INPUT_ARGUMENTS {
     pub SequenceControlDesc: D3D12_VIDEO_ENCODER_SEQUENCE_CONTROL_DESC,
     pub PictureControlDesc: D3D12_VIDEO_ENCODER_PICTURE_CONTROL_DESC,
-    pub pInputFrame: super::super::Graphics::Direct3D12::ID3D12Resource,
+    pub pInputFrame: *mut *mut *mut *mut super::super::Graphics::Direct3D12::ID3D12Resource,
     pub InputFrameSubresource: u32,
     pub CurrentFrameBitstreamMetadataSize: u32,
 }
@@ -2707,7 +2707,7 @@ pub const D3D12_VIDEO_ENCODER_ENCODE_ERROR_FLAG_INVALID_METADATA_BUFFER_SOURCE: 
 #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_Graphics_Direct3D12\"`*"]
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
 pub struct D3D12_VIDEO_ENCODER_ENCODE_OPERATION_METADATA_BUFFER {
-    pub pBuffer: super::super::Graphics::Direct3D12::ID3D12Resource,
+    pub pBuffer: *mut *mut *mut *mut super::super::Graphics::Direct3D12::ID3D12Resource,
     pub Offset: u64,
 }
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
@@ -3361,7 +3361,7 @@ impl ::core::clone::Clone for D3D12_VIDEO_ENCODER_RATE_CONTROL_VBR {
 #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_Graphics_Direct3D12\"`*"]
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
 pub struct D3D12_VIDEO_ENCODER_RECONSTRUCTED_PICTURE {
-    pub pReconstructedPicture: super::super::Graphics::Direct3D12::ID3D12Resource,
+    pub pReconstructedPicture: *mut *mut *mut *mut super::super::Graphics::Direct3D12::ID3D12Resource,
     pub ReconstructedPictureSubresource: u32,
 }
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
@@ -3590,7 +3590,7 @@ pub const D3D12_VIDEO_ENCODER_VALIDATION_FLAG_GOP_STRUCTURE_NOT_SUPPORTED: D3D12
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
 pub struct D3D12_VIDEO_ENCODE_REFERENCE_FRAMES {
     pub NumTexture2Ds: u32,
-    pub ppTexture2Ds: *mut super::super::Graphics::Direct3D12::ID3D12Resource,
+    pub ppTexture2Ds: *mut *mut *mut super::super::Graphics::Direct3D12::ID3D12Resource,
     pub pSubresources: *mut u32,
 }
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
@@ -3753,11 +3753,11 @@ impl ::core::clone::Clone for D3D12_VIDEO_MOTION_ESTIMATOR_DESC {
 #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_Graphics_Direct3D12\"`*"]
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
 pub struct D3D12_VIDEO_MOTION_ESTIMATOR_INPUT {
-    pub pInputTexture2D: super::super::Graphics::Direct3D12::ID3D12Resource,
+    pub pInputTexture2D: *mut *mut *mut *mut super::super::Graphics::Direct3D12::ID3D12Resource,
     pub InputSubresourceIndex: u32,
-    pub pReferenceTexture2D: super::super::Graphics::Direct3D12::ID3D12Resource,
+    pub pReferenceTexture2D: *mut *mut *mut *mut super::super::Graphics::Direct3D12::ID3D12Resource,
     pub ReferenceSubresourceIndex: u32,
-    pub pHintMotionVectorHeap: ID3D12VideoMotionVectorHeap,
+    pub pHintMotionVectorHeap: *mut *mut *mut *mut ID3D12VideoMotionVectorHeap,
 }
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
 impl ::core::marker::Copy for D3D12_VIDEO_MOTION_ESTIMATOR_INPUT {}
@@ -3771,7 +3771,7 @@ impl ::core::clone::Clone for D3D12_VIDEO_MOTION_ESTIMATOR_INPUT {
 #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_Graphics_Direct3D12\"`*"]
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
 pub struct D3D12_VIDEO_MOTION_ESTIMATOR_OUTPUT {
-    pub pMotionVectorHeap: ID3D12VideoMotionVectorHeap,
+    pub pMotionVectorHeap: *mut *mut *mut *mut ID3D12VideoMotionVectorHeap,
 }
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
 impl ::core::marker::Copy for D3D12_VIDEO_MOTION_ESTIMATOR_OUTPUT {}
@@ -3952,7 +3952,7 @@ impl ::core::clone::Clone for D3D12_VIDEO_PROCESS_FILTER_RANGE {
 #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_Graphics_Direct3D12\"`*"]
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
 pub struct D3D12_VIDEO_PROCESS_INPUT_STREAM {
-    pub pTexture2D: super::super::Graphics::Direct3D12::ID3D12Resource,
+    pub pTexture2D: *mut *mut *mut *mut super::super::Graphics::Direct3D12::ID3D12Resource,
     pub Subresource: u32,
     pub ReferenceSet: D3D12_VIDEO_PROCESS_REFERENCE_SET,
 }
@@ -4091,7 +4091,7 @@ pub const D3D12_VIDEO_PROCESS_ORIENTATION_CLOCKWISE_270_FLIP_HORIZONTAL: D3D12_V
 #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_Graphics_Direct3D12\"`*"]
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
 pub struct D3D12_VIDEO_PROCESS_OUTPUT_STREAM {
-    pub pTexture2D: super::super::Graphics::Direct3D12::ID3D12Resource,
+    pub pTexture2D: *mut *mut *mut *mut super::super::Graphics::Direct3D12::ID3D12Resource,
     pub Subresource: u32,
 }
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
@@ -4142,10 +4142,10 @@ impl ::core::clone::Clone for D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC {
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
 pub struct D3D12_VIDEO_PROCESS_REFERENCE_SET {
     pub NumPastFrames: u32,
-    pub ppPastFrames: *mut super::super::Graphics::Direct3D12::ID3D12Resource,
+    pub ppPastFrames: *mut *mut *mut super::super::Graphics::Direct3D12::ID3D12Resource,
     pub pPastSubresources: *mut u32,
     pub NumFutureFrames: u32,
-    pub ppFutureFrames: *mut super::super::Graphics::Direct3D12::ID3D12Resource,
+    pub ppFutureFrames: *mut *mut *mut super::super::Graphics::Direct3D12::ID3D12Resource,
     pub pFutureSubresources: *mut u32,
 }
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
@@ -4972,7 +4972,7 @@ pub struct DXVA2_VideoSample {
     pub Start: i64,
     pub End: i64,
     pub SampleFormat: DXVA2_ExtendedFormat,
-    pub SrcSurface: super::super::Graphics::Direct3D9::IDirect3DSurface9,
+    pub SrcSurface: *mut *mut *mut *mut super::super::Graphics::Direct3D9::IDirect3DSurface9,
     pub SrcRect: super::super::Foundation::RECT,
     pub DstRect: super::super::Foundation::RECT,
     pub Pal: [DXVA2_AYUVSample8; 16],
@@ -5564,9 +5564,9 @@ pub struct DXVAHD_STREAM_DATA {
     pub InputFrameOrField: u32,
     pub PastFrames: u32,
     pub FutureFrames: u32,
-    pub ppPastSurfaces: *mut super::super::Graphics::Direct3D9::IDirect3DSurface9,
-    pub pInputSurface: super::super::Graphics::Direct3D9::IDirect3DSurface9,
-    pub ppFutureSurfaces: *mut super::super::Graphics::Direct3D9::IDirect3DSurface9,
+    pub ppPastSurfaces: *mut *mut *mut super::super::Graphics::Direct3D9::IDirect3DSurface9,
+    pub pInputSurface: *mut *mut *mut *mut super::super::Graphics::Direct3D9::IDirect3DSurface9,
+    pub ppFutureSurfaces: *mut *mut *mut super::super::Graphics::Direct3D9::IDirect3DSurface9,
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct3D9"))]
 impl ::core::marker::Copy for DXVAHD_STREAM_DATA {}
@@ -6662,362 +6662,4078 @@ pub const OPENMODE_DELETE_IF_EXIST: FILE_OPENMODE = 4i32;
 pub const FORMAT_MFVideoFormat: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2933173037, data2: 29478, data3: 17355, data4: [148, 100, 200, 121, 202, 185, 196, 61] };
 pub const GUID_NativeDeviceService: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4017218876, data2: 21236, data3: 17349, data4: [184, 106, 173, 108, 178, 22, 166, 30] };
 pub const GUID_PlayToService: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4138270621, data2: 40468, data3: 16841, data4: [191, 15, 18, 10, 43, 60, 225, 32] };
-pub type IAdvancedMediaCapture = *mut ::core::ffi::c_void;
-pub type IAdvancedMediaCaptureInitializationSettings = *mut ::core::ffi::c_void;
-pub type IAdvancedMediaCaptureSettings = *mut ::core::ffi::c_void;
-pub type IAudioSourceProvider = *mut ::core::ffi::c_void;
-pub type IClusterDetector = *mut ::core::ffi::c_void;
-pub type ICodecAPI = *mut ::core::ffi::c_void;
-pub type ID3D12VideoDecodeCommandList = *mut ::core::ffi::c_void;
-pub type ID3D12VideoDecodeCommandList1 = *mut ::core::ffi::c_void;
-pub type ID3D12VideoDecodeCommandList2 = *mut ::core::ffi::c_void;
-pub type ID3D12VideoDecoder = *mut ::core::ffi::c_void;
-pub type ID3D12VideoDecoder1 = *mut ::core::ffi::c_void;
-pub type ID3D12VideoDecoderHeap = *mut ::core::ffi::c_void;
-pub type ID3D12VideoDecoderHeap1 = *mut ::core::ffi::c_void;
-pub type ID3D12VideoDevice = *mut ::core::ffi::c_void;
-pub type ID3D12VideoDevice1 = *mut ::core::ffi::c_void;
-pub type ID3D12VideoDevice2 = *mut ::core::ffi::c_void;
-pub type ID3D12VideoDevice3 = *mut ::core::ffi::c_void;
-pub type ID3D12VideoEncodeCommandList = *mut ::core::ffi::c_void;
-pub type ID3D12VideoEncodeCommandList1 = *mut ::core::ffi::c_void;
-pub type ID3D12VideoEncodeCommandList2 = *mut ::core::ffi::c_void;
-pub type ID3D12VideoEncoder = *mut ::core::ffi::c_void;
-pub type ID3D12VideoEncoderHeap = *mut ::core::ffi::c_void;
-pub type ID3D12VideoExtensionCommand = *mut ::core::ffi::c_void;
-pub type ID3D12VideoMotionEstimator = *mut ::core::ffi::c_void;
-pub type ID3D12VideoMotionVectorHeap = *mut ::core::ffi::c_void;
-pub type ID3D12VideoProcessCommandList = *mut ::core::ffi::c_void;
-pub type ID3D12VideoProcessCommandList1 = *mut ::core::ffi::c_void;
-pub type ID3D12VideoProcessCommandList2 = *mut ::core::ffi::c_void;
-pub type ID3D12VideoProcessor = *mut ::core::ffi::c_void;
-pub type ID3D12VideoProcessor1 = *mut ::core::ffi::c_void;
-pub type IDXVAHD_Device = *mut ::core::ffi::c_void;
-pub type IDXVAHD_VideoProcessor = *mut ::core::ffi::c_void;
-pub type IDirect3D9ExOverlayExtension = *mut ::core::ffi::c_void;
-pub type IDirect3DAuthenticatedChannel9 = *mut ::core::ffi::c_void;
-pub type IDirect3DCryptoSession9 = *mut ::core::ffi::c_void;
-pub type IDirect3DDevice9Video = *mut ::core::ffi::c_void;
-pub type IDirect3DDeviceManager9 = *mut ::core::ffi::c_void;
-pub type IDirectXVideoAccelerationService = *mut ::core::ffi::c_void;
-pub type IDirectXVideoDecoder = *mut ::core::ffi::c_void;
-pub type IDirectXVideoDecoderService = *mut ::core::ffi::c_void;
-pub type IDirectXVideoMemoryConfiguration = *mut ::core::ffi::c_void;
-pub type IDirectXVideoProcessor = *mut ::core::ffi::c_void;
-pub type IDirectXVideoProcessorService = *mut ::core::ffi::c_void;
-pub type IEVRFilterConfig = *mut ::core::ffi::c_void;
-pub type IEVRFilterConfigEx = *mut ::core::ffi::c_void;
-pub type IEVRTrustedVideoPlugin = *mut ::core::ffi::c_void;
-pub type IEVRVideoStreamControl = *mut ::core::ffi::c_void;
-pub type IFileClient = *mut ::core::ffi::c_void;
-pub type IFileIo = *mut ::core::ffi::c_void;
-pub type IMF2DBuffer = *mut ::core::ffi::c_void;
-pub type IMF2DBuffer2 = *mut ::core::ffi::c_void;
-pub type IMFASFContentInfo = *mut ::core::ffi::c_void;
-pub type IMFASFIndexer = *mut ::core::ffi::c_void;
-pub type IMFASFMultiplexer = *mut ::core::ffi::c_void;
-pub type IMFASFMutualExclusion = *mut ::core::ffi::c_void;
-pub type IMFASFProfile = *mut ::core::ffi::c_void;
-pub type IMFASFSplitter = *mut ::core::ffi::c_void;
-pub type IMFASFStreamConfig = *mut ::core::ffi::c_void;
-pub type IMFASFStreamPrioritization = *mut ::core::ffi::c_void;
-pub type IMFASFStreamSelector = *mut ::core::ffi::c_void;
-pub type IMFActivate = *mut ::core::ffi::c_void;
-pub type IMFAsyncCallback = *mut ::core::ffi::c_void;
-pub type IMFAsyncCallbackLogging = *mut ::core::ffi::c_void;
-pub type IMFAsyncResult = *mut ::core::ffi::c_void;
-pub type IMFAttributes = *mut ::core::ffi::c_void;
-pub type IMFAudioMediaType = *mut ::core::ffi::c_void;
-pub type IMFAudioPolicy = *mut ::core::ffi::c_void;
-pub type IMFAudioStreamVolume = *mut ::core::ffi::c_void;
-pub type IMFBufferListNotify = *mut ::core::ffi::c_void;
-pub type IMFByteStream = *mut ::core::ffi::c_void;
-pub type IMFByteStreamBuffering = *mut ::core::ffi::c_void;
-pub type IMFByteStreamCacheControl = *mut ::core::ffi::c_void;
-pub type IMFByteStreamCacheControl2 = *mut ::core::ffi::c_void;
-pub type IMFByteStreamHandler = *mut ::core::ffi::c_void;
-pub type IMFByteStreamProxyClassFactory = *mut ::core::ffi::c_void;
-pub type IMFByteStreamTimeSeek = *mut ::core::ffi::c_void;
-pub type IMFCameraOcclusionStateMonitor = *mut ::core::ffi::c_void;
-pub type IMFCameraOcclusionStateReport = *mut ::core::ffi::c_void;
-pub type IMFCameraOcclusionStateReportCallback = *mut ::core::ffi::c_void;
-pub type IMFCameraSyncObject = *mut ::core::ffi::c_void;
-pub type IMFCaptureEngine = *mut ::core::ffi::c_void;
-pub type IMFCaptureEngineClassFactory = *mut ::core::ffi::c_void;
-pub type IMFCaptureEngineOnEventCallback = *mut ::core::ffi::c_void;
-pub type IMFCaptureEngineOnSampleCallback = *mut ::core::ffi::c_void;
-pub type IMFCaptureEngineOnSampleCallback2 = *mut ::core::ffi::c_void;
-pub type IMFCapturePhotoConfirmation = *mut ::core::ffi::c_void;
-pub type IMFCapturePhotoSink = *mut ::core::ffi::c_void;
-pub type IMFCapturePreviewSink = *mut ::core::ffi::c_void;
-pub type IMFCaptureRecordSink = *mut ::core::ffi::c_void;
-pub type IMFCaptureSink = *mut ::core::ffi::c_void;
-pub type IMFCaptureSink2 = *mut ::core::ffi::c_void;
-pub type IMFCaptureSource = *mut ::core::ffi::c_void;
-pub type IMFCdmSuspendNotify = *mut ::core::ffi::c_void;
-pub type IMFClock = *mut ::core::ffi::c_void;
-pub type IMFClockConsumer = *mut ::core::ffi::c_void;
-pub type IMFClockStateSink = *mut ::core::ffi::c_void;
-pub type IMFCollection = *mut ::core::ffi::c_void;
-pub type IMFContentDecryptionModule = *mut ::core::ffi::c_void;
-pub type IMFContentDecryptionModuleAccess = *mut ::core::ffi::c_void;
-pub type IMFContentDecryptionModuleFactory = *mut ::core::ffi::c_void;
-pub type IMFContentDecryptionModuleSession = *mut ::core::ffi::c_void;
-pub type IMFContentDecryptionModuleSessionCallbacks = *mut ::core::ffi::c_void;
-pub type IMFContentDecryptorContext = *mut ::core::ffi::c_void;
-pub type IMFContentEnabler = *mut ::core::ffi::c_void;
-pub type IMFContentProtectionDevice = *mut ::core::ffi::c_void;
-pub type IMFContentProtectionManager = *mut ::core::ffi::c_void;
-pub type IMFD3D12SynchronizationObject = *mut ::core::ffi::c_void;
-pub type IMFD3D12SynchronizationObjectCommands = *mut ::core::ffi::c_void;
-pub type IMFDLNASinkInit = *mut ::core::ffi::c_void;
-pub type IMFDRMNetHelper = *mut ::core::ffi::c_void;
-pub type IMFDXGIBuffer = *mut ::core::ffi::c_void;
-pub type IMFDXGIDeviceManager = *mut ::core::ffi::c_void;
-pub type IMFDXGIDeviceManagerSource = *mut ::core::ffi::c_void;
-pub type IMFDesiredSample = *mut ::core::ffi::c_void;
-pub type IMFDeviceTransform = *mut ::core::ffi::c_void;
-pub type IMFDeviceTransformCallback = *mut ::core::ffi::c_void;
-pub type IMFExtendedCameraControl = *mut ::core::ffi::c_void;
-pub type IMFExtendedCameraController = *mut ::core::ffi::c_void;
-pub type IMFExtendedCameraIntrinsicModel = *mut ::core::ffi::c_void;
-pub type IMFExtendedCameraIntrinsics = *mut ::core::ffi::c_void;
-pub type IMFExtendedCameraIntrinsicsDistortionModel6KT = *mut ::core::ffi::c_void;
-pub type IMFExtendedCameraIntrinsicsDistortionModelArcTan = *mut ::core::ffi::c_void;
-pub type IMFExtendedDRMTypeSupport = *mut ::core::ffi::c_void;
-pub type IMFFieldOfUseMFTUnlock = *mut ::core::ffi::c_void;
-pub type IMFFinalizableMediaSink = *mut ::core::ffi::c_void;
-pub type IMFGetService = *mut ::core::ffi::c_void;
-pub type IMFHDCPStatus = *mut ::core::ffi::c_void;
-pub type IMFHttpDownloadRequest = *mut ::core::ffi::c_void;
-pub type IMFHttpDownloadSession = *mut ::core::ffi::c_void;
-pub type IMFHttpDownloadSessionProvider = *mut ::core::ffi::c_void;
-pub type IMFImageSharingEngine = *mut ::core::ffi::c_void;
-pub type IMFImageSharingEngineClassFactory = *mut ::core::ffi::c_void;
-pub type IMFInputTrustAuthority = *mut ::core::ffi::c_void;
-pub type IMFLocalMFTRegistration = *mut ::core::ffi::c_void;
-pub type IMFMediaBuffer = *mut ::core::ffi::c_void;
-pub type IMFMediaEngine = *mut ::core::ffi::c_void;
-pub type IMFMediaEngineAudioEndpointId = *mut ::core::ffi::c_void;
-pub type IMFMediaEngineClassFactory = *mut ::core::ffi::c_void;
-pub type IMFMediaEngineClassFactory2 = *mut ::core::ffi::c_void;
-pub type IMFMediaEngineClassFactory3 = *mut ::core::ffi::c_void;
-pub type IMFMediaEngineClassFactory4 = *mut ::core::ffi::c_void;
-pub type IMFMediaEngineClassFactoryEx = *mut ::core::ffi::c_void;
-pub type IMFMediaEngineEME = *mut ::core::ffi::c_void;
-pub type IMFMediaEngineEMENotify = *mut ::core::ffi::c_void;
-pub type IMFMediaEngineEx = *mut ::core::ffi::c_void;
-pub type IMFMediaEngineExtension = *mut ::core::ffi::c_void;
-pub type IMFMediaEngineNeedKeyNotify = *mut ::core::ffi::c_void;
-pub type IMFMediaEngineNotify = *mut ::core::ffi::c_void;
-pub type IMFMediaEngineOPMInfo = *mut ::core::ffi::c_void;
-pub type IMFMediaEngineProtectedContent = *mut ::core::ffi::c_void;
-pub type IMFMediaEngineSrcElements = *mut ::core::ffi::c_void;
-pub type IMFMediaEngineSrcElementsEx = *mut ::core::ffi::c_void;
-pub type IMFMediaEngineSupportsSourceTransfer = *mut ::core::ffi::c_void;
-pub type IMFMediaEngineTransferSource = *mut ::core::ffi::c_void;
-pub type IMFMediaEngineWebSupport = *mut ::core::ffi::c_void;
-pub type IMFMediaError = *mut ::core::ffi::c_void;
-pub type IMFMediaEvent = *mut ::core::ffi::c_void;
-pub type IMFMediaEventGenerator = *mut ::core::ffi::c_void;
-pub type IMFMediaEventQueue = *mut ::core::ffi::c_void;
-pub type IMFMediaKeySession = *mut ::core::ffi::c_void;
-pub type IMFMediaKeySession2 = *mut ::core::ffi::c_void;
-pub type IMFMediaKeySessionNotify = *mut ::core::ffi::c_void;
-pub type IMFMediaKeySessionNotify2 = *mut ::core::ffi::c_void;
-pub type IMFMediaKeySystemAccess = *mut ::core::ffi::c_void;
-pub type IMFMediaKeys = *mut ::core::ffi::c_void;
-pub type IMFMediaKeys2 = *mut ::core::ffi::c_void;
-pub type IMFMediaSession = *mut ::core::ffi::c_void;
-pub type IMFMediaSharingEngine = *mut ::core::ffi::c_void;
-pub type IMFMediaSharingEngineClassFactory = *mut ::core::ffi::c_void;
-pub type IMFMediaSink = *mut ::core::ffi::c_void;
-pub type IMFMediaSinkPreroll = *mut ::core::ffi::c_void;
-pub type IMFMediaSource = *mut ::core::ffi::c_void;
-pub type IMFMediaSource2 = *mut ::core::ffi::c_void;
-pub type IMFMediaSourceEx = *mut ::core::ffi::c_void;
-pub type IMFMediaSourceExtension = *mut ::core::ffi::c_void;
-pub type IMFMediaSourceExtensionLiveSeekableRange = *mut ::core::ffi::c_void;
-pub type IMFMediaSourceExtensionNotify = *mut ::core::ffi::c_void;
-pub type IMFMediaSourcePresentationProvider = *mut ::core::ffi::c_void;
-pub type IMFMediaSourceTopologyProvider = *mut ::core::ffi::c_void;
-pub type IMFMediaStream = *mut ::core::ffi::c_void;
-pub type IMFMediaStream2 = *mut ::core::ffi::c_void;
-pub type IMFMediaStreamSourceSampleRequest = *mut ::core::ffi::c_void;
-pub type IMFMediaTimeRange = *mut ::core::ffi::c_void;
-pub type IMFMediaType = *mut ::core::ffi::c_void;
-pub type IMFMediaTypeHandler = *mut ::core::ffi::c_void;
-pub type IMFMetadata = *mut ::core::ffi::c_void;
-pub type IMFMetadataProvider = *mut ::core::ffi::c_void;
-pub type IMFMuxStreamAttributesManager = *mut ::core::ffi::c_void;
-pub type IMFMuxStreamMediaTypeManager = *mut ::core::ffi::c_void;
-pub type IMFMuxStreamSampleManager = *mut ::core::ffi::c_void;
-pub type IMFNetCredential = *mut ::core::ffi::c_void;
-pub type IMFNetCredentialCache = *mut ::core::ffi::c_void;
-pub type IMFNetCredentialManager = *mut ::core::ffi::c_void;
-pub type IMFNetCrossOriginSupport = *mut ::core::ffi::c_void;
-pub type IMFNetProxyLocator = *mut ::core::ffi::c_void;
-pub type IMFNetProxyLocatorFactory = *mut ::core::ffi::c_void;
-pub type IMFNetResourceFilter = *mut ::core::ffi::c_void;
-pub type IMFNetSchemeHandlerConfig = *mut ::core::ffi::c_void;
-pub type IMFObjectReferenceStream = *mut ::core::ffi::c_void;
-pub type IMFOutputPolicy = *mut ::core::ffi::c_void;
-pub type IMFOutputSchema = *mut ::core::ffi::c_void;
-pub type IMFOutputTrustAuthority = *mut ::core::ffi::c_void;
-pub type IMFPMPClient = *mut ::core::ffi::c_void;
-pub type IMFPMPClientApp = *mut ::core::ffi::c_void;
-pub type IMFPMPHost = *mut ::core::ffi::c_void;
-pub type IMFPMPHostApp = *mut ::core::ffi::c_void;
-pub type IMFPMPServer = *mut ::core::ffi::c_void;
-pub type IMFPMediaItem = *mut ::core::ffi::c_void;
-pub type IMFPMediaPlayer = *mut ::core::ffi::c_void;
-pub type IMFPMediaPlayerCallback = *mut ::core::ffi::c_void;
-pub type IMFPluginControl = *mut ::core::ffi::c_void;
-pub type IMFPluginControl2 = *mut ::core::ffi::c_void;
-pub type IMFPresentationClock = *mut ::core::ffi::c_void;
-pub type IMFPresentationDescriptor = *mut ::core::ffi::c_void;
-pub type IMFPresentationTimeSource = *mut ::core::ffi::c_void;
-pub type IMFProtectedEnvironmentAccess = *mut ::core::ffi::c_void;
-pub type IMFQualityAdvise = *mut ::core::ffi::c_void;
-pub type IMFQualityAdvise2 = *mut ::core::ffi::c_void;
-pub type IMFQualityAdviseLimits = *mut ::core::ffi::c_void;
-pub type IMFQualityManager = *mut ::core::ffi::c_void;
-pub type IMFRateControl = *mut ::core::ffi::c_void;
-pub type IMFRateSupport = *mut ::core::ffi::c_void;
-pub type IMFReadWriteClassFactory = *mut ::core::ffi::c_void;
-pub type IMFRealTimeClient = *mut ::core::ffi::c_void;
-pub type IMFRealTimeClientEx = *mut ::core::ffi::c_void;
-pub type IMFRelativePanelReport = *mut ::core::ffi::c_void;
-pub type IMFRelativePanelWatcher = *mut ::core::ffi::c_void;
-pub type IMFRemoteAsyncCallback = *mut ::core::ffi::c_void;
-pub type IMFRemoteDesktopPlugin = *mut ::core::ffi::c_void;
-pub type IMFRemoteProxy = *mut ::core::ffi::c_void;
-pub type IMFSAMIStyle = *mut ::core::ffi::c_void;
-pub type IMFSSLCertificateManager = *mut ::core::ffi::c_void;
-pub type IMFSample = *mut ::core::ffi::c_void;
-pub type IMFSampleAllocatorControl = *mut ::core::ffi::c_void;
-pub type IMFSampleGrabberSinkCallback = *mut ::core::ffi::c_void;
-pub type IMFSampleGrabberSinkCallback2 = *mut ::core::ffi::c_void;
-pub type IMFSampleOutputStream = *mut ::core::ffi::c_void;
-pub type IMFSampleProtection = *mut ::core::ffi::c_void;
-pub type IMFSaveJob = *mut ::core::ffi::c_void;
-pub type IMFSchemeHandler = *mut ::core::ffi::c_void;
-pub type IMFSecureBuffer = *mut ::core::ffi::c_void;
-pub type IMFSecureChannel = *mut ::core::ffi::c_void;
-pub type IMFSeekInfo = *mut ::core::ffi::c_void;
-pub type IMFSensorActivitiesReport = *mut ::core::ffi::c_void;
-pub type IMFSensorActivitiesReportCallback = *mut ::core::ffi::c_void;
-pub type IMFSensorActivityMonitor = *mut ::core::ffi::c_void;
-pub type IMFSensorActivityReport = *mut ::core::ffi::c_void;
-pub type IMFSensorDevice = *mut ::core::ffi::c_void;
-pub type IMFSensorGroup = *mut ::core::ffi::c_void;
-pub type IMFSensorProcessActivity = *mut ::core::ffi::c_void;
-pub type IMFSensorProfile = *mut ::core::ffi::c_void;
-pub type IMFSensorProfileCollection = *mut ::core::ffi::c_void;
-pub type IMFSensorStream = *mut ::core::ffi::c_void;
-pub type IMFSensorTransformFactory = *mut ::core::ffi::c_void;
-pub type IMFSequencerSource = *mut ::core::ffi::c_void;
-pub type IMFSharingEngineClassFactory = *mut ::core::ffi::c_void;
-pub type IMFShutdown = *mut ::core::ffi::c_void;
-pub type IMFSignedLibrary = *mut ::core::ffi::c_void;
-pub type IMFSimpleAudioVolume = *mut ::core::ffi::c_void;
-pub type IMFSinkWriter = *mut ::core::ffi::c_void;
-pub type IMFSinkWriterCallback = *mut ::core::ffi::c_void;
-pub type IMFSinkWriterCallback2 = *mut ::core::ffi::c_void;
-pub type IMFSinkWriterEncoderConfig = *mut ::core::ffi::c_void;
-pub type IMFSinkWriterEx = *mut ::core::ffi::c_void;
-pub type IMFSourceBuffer = *mut ::core::ffi::c_void;
-pub type IMFSourceBufferAppendMode = *mut ::core::ffi::c_void;
-pub type IMFSourceBufferList = *mut ::core::ffi::c_void;
-pub type IMFSourceBufferNotify = *mut ::core::ffi::c_void;
-pub type IMFSourceOpenMonitor = *mut ::core::ffi::c_void;
-pub type IMFSourceReader = *mut ::core::ffi::c_void;
-pub type IMFSourceReaderCallback = *mut ::core::ffi::c_void;
-pub type IMFSourceReaderCallback2 = *mut ::core::ffi::c_void;
-pub type IMFSourceReaderEx = *mut ::core::ffi::c_void;
-pub type IMFSourceResolver = *mut ::core::ffi::c_void;
-pub type IMFSpatialAudioObjectBuffer = *mut ::core::ffi::c_void;
-pub type IMFSpatialAudioSample = *mut ::core::ffi::c_void;
-pub type IMFStreamDescriptor = *mut ::core::ffi::c_void;
-pub type IMFStreamSink = *mut ::core::ffi::c_void;
-pub type IMFStreamingSinkConfig = *mut ::core::ffi::c_void;
-pub type IMFSystemId = *mut ::core::ffi::c_void;
-pub type IMFTimecodeTranslate = *mut ::core::ffi::c_void;
-pub type IMFTimedText = *mut ::core::ffi::c_void;
-pub type IMFTimedTextBinary = *mut ::core::ffi::c_void;
-pub type IMFTimedTextBouten = *mut ::core::ffi::c_void;
-pub type IMFTimedTextCue = *mut ::core::ffi::c_void;
-pub type IMFTimedTextCueList = *mut ::core::ffi::c_void;
-pub type IMFTimedTextFormattedText = *mut ::core::ffi::c_void;
-pub type IMFTimedTextNotify = *mut ::core::ffi::c_void;
-pub type IMFTimedTextRegion = *mut ::core::ffi::c_void;
-pub type IMFTimedTextRuby = *mut ::core::ffi::c_void;
-pub type IMFTimedTextStyle = *mut ::core::ffi::c_void;
-pub type IMFTimedTextStyle2 = *mut ::core::ffi::c_void;
-pub type IMFTimedTextTrack = *mut ::core::ffi::c_void;
-pub type IMFTimedTextTrackList = *mut ::core::ffi::c_void;
-pub type IMFTimer = *mut ::core::ffi::c_void;
-pub type IMFTopoLoader = *mut ::core::ffi::c_void;
-pub type IMFTopology = *mut ::core::ffi::c_void;
-pub type IMFTopologyNode = *mut ::core::ffi::c_void;
-pub type IMFTopologyNodeAttributeEditor = *mut ::core::ffi::c_void;
-pub type IMFTopologyServiceLookup = *mut ::core::ffi::c_void;
-pub type IMFTopologyServiceLookupClient = *mut ::core::ffi::c_void;
-pub type IMFTrackedSample = *mut ::core::ffi::c_void;
-pub type IMFTranscodeProfile = *mut ::core::ffi::c_void;
-pub type IMFTranscodeSinkInfoProvider = *mut ::core::ffi::c_void;
-pub type IMFTransform = *mut ::core::ffi::c_void;
-pub type IMFTrustedInput = *mut ::core::ffi::c_void;
-pub type IMFTrustedOutput = *mut ::core::ffi::c_void;
-pub type IMFVideoCaptureSampleAllocator = *mut ::core::ffi::c_void;
-pub type IMFVideoDeviceID = *mut ::core::ffi::c_void;
-pub type IMFVideoDisplayControl = *mut ::core::ffi::c_void;
-pub type IMFVideoMediaType = *mut ::core::ffi::c_void;
-pub type IMFVideoMixerBitmap = *mut ::core::ffi::c_void;
-pub type IMFVideoMixerControl = *mut ::core::ffi::c_void;
-pub type IMFVideoMixerControl2 = *mut ::core::ffi::c_void;
-pub type IMFVideoPositionMapper = *mut ::core::ffi::c_void;
-pub type IMFVideoPresenter = *mut ::core::ffi::c_void;
-pub type IMFVideoProcessor = *mut ::core::ffi::c_void;
-pub type IMFVideoProcessorControl = *mut ::core::ffi::c_void;
-pub type IMFVideoProcessorControl2 = *mut ::core::ffi::c_void;
-pub type IMFVideoProcessorControl3 = *mut ::core::ffi::c_void;
-pub type IMFVideoRenderer = *mut ::core::ffi::c_void;
-pub type IMFVideoRendererEffectControl = *mut ::core::ffi::c_void;
-pub type IMFVideoSampleAllocator = *mut ::core::ffi::c_void;
-pub type IMFVideoSampleAllocatorCallback = *mut ::core::ffi::c_void;
-pub type IMFVideoSampleAllocatorEx = *mut ::core::ffi::c_void;
-pub type IMFVideoSampleAllocatorNotify = *mut ::core::ffi::c_void;
-pub type IMFVideoSampleAllocatorNotifyEx = *mut ::core::ffi::c_void;
-pub type IMFVirtualCamera = *mut ::core::ffi::c_void;
-pub type IMFWorkQueueServices = *mut ::core::ffi::c_void;
-pub type IMFWorkQueueServicesEx = *mut ::core::ffi::c_void;
-pub type IOPMVideoOutput = *mut ::core::ffi::c_void;
-pub type IPlayToControl = *mut ::core::ffi::c_void;
-pub type IPlayToControlWithCapabilities = *mut ::core::ffi::c_void;
-pub type IPlayToSourceClassFactory = *mut ::core::ffi::c_void;
-pub type IToc = *mut ::core::ffi::c_void;
-pub type ITocCollection = *mut ::core::ffi::c_void;
-pub type ITocEntry = *mut ::core::ffi::c_void;
-pub type ITocEntryList = *mut ::core::ffi::c_void;
-pub type ITocParser = *mut ::core::ffi::c_void;
-pub type IValidateBinding = *mut ::core::ffi::c_void;
-pub type IWMCodecLeakyBucket = *mut ::core::ffi::c_void;
-pub type IWMCodecOutputTimestamp = *mut ::core::ffi::c_void;
-pub type IWMCodecPrivateData = *mut ::core::ffi::c_void;
-pub type IWMCodecProps = *mut ::core::ffi::c_void;
-pub type IWMCodecStrings = *mut ::core::ffi::c_void;
-pub type IWMColorConvProps = *mut ::core::ffi::c_void;
-pub type IWMColorLegalizerProps = *mut ::core::ffi::c_void;
-pub type IWMFrameInterpProps = *mut ::core::ffi::c_void;
-pub type IWMInterlaceProps = *mut ::core::ffi::c_void;
-pub type IWMResamplerProps = *mut ::core::ffi::c_void;
-pub type IWMResizerProps = *mut ::core::ffi::c_void;
-pub type IWMSampleExtensionSupport = *mut ::core::ffi::c_void;
-pub type IWMValidate = *mut ::core::ffi::c_void;
-pub type IWMVideoDecoderHurryup = *mut ::core::ffi::c_void;
-pub type IWMVideoDecoderReconBuffer = *mut ::core::ffi::c_void;
-pub type IWMVideoForceKeyFrame = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IAdvancedMediaCapture {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetAdvancedMediaCaptureSettings: unsafe extern "system" fn(this: *mut *mut Self, value: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAdvancedMediaCaptureInitializationSettings {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetDirectxDeviceManager: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAdvancedMediaCaptureSettings {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetDirectxDeviceManager: unsafe extern "system" fn(this: *mut *mut Self, value: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAudioSourceProvider {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub ProvideInput: unsafe extern "system" fn(this: *mut *mut Self, dwsamplecount: u32, pdwchannelcount: *mut u32, pinterleavedaudiodata: *mut f32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IClusterDetector {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, wbaseentrylevel: u16, wclusterentrylevel: u16) -> ::windows_sys::core::HRESULT,
+    pub Detect: unsafe extern "system" fn(this: *mut *mut Self, dwmaxnumclusters: u32, fminclusterduration: f32, fmaxclusterduration: f32, psrctoc: *mut ::core::ffi::c_void, ppdsttoc: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ICodecAPI {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub IsSupported: unsafe extern "system" fn(this: *mut *mut Self, api: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub IsModifiable: unsafe extern "system" fn(this: *mut *mut Self, api: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetParameterRange: unsafe extern "system" fn(this: *mut *mut Self, api: *const ::windows_sys::core::GUID, valuemin: *mut super::super::System::Com::VARIANT, valuemax: *mut super::super::System::Com::VARIANT, steppingdelta: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetParameterRange: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetParameterValues: unsafe extern "system" fn(this: *mut *mut Self, api: *const ::windows_sys::core::GUID, values: *mut *mut super::super::System::Com::VARIANT, valuescount: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetParameterValues: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetDefaultValue: unsafe extern "system" fn(this: *mut *mut Self, api: *const ::windows_sys::core::GUID, value: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetDefaultValue: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetValue: unsafe extern "system" fn(this: *mut *mut Self, api: *const ::windows_sys::core::GUID, value: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetValue: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetValue: unsafe extern "system" fn(this: *mut *mut Self, api: *const ::windows_sys::core::GUID, value: *const super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetValue: usize,
+    pub RegisterForEvent: unsafe extern "system" fn(this: *mut *mut Self, api: *const ::windows_sys::core::GUID, userdata: isize) -> ::windows_sys::core::HRESULT,
+    pub UnregisterForEvent: unsafe extern "system" fn(this: *mut *mut Self, api: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub SetAllDefaults: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetValueWithNotify: unsafe extern "system" fn(this: *mut *mut Self, api: *const ::windows_sys::core::GUID, value: *mut super::super::System::Com::VARIANT, changedparam: *mut *mut ::windows_sys::core::GUID, changedparamcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetValueWithNotify: usize,
+    pub SetAllDefaultsWithNotify: unsafe extern "system" fn(this: *mut *mut Self, changedparam: *mut *mut ::windows_sys::core::GUID, changedparamcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetAllSettings: unsafe extern "system" fn(this: *mut *mut Self, __midl__icodecapi0000: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetAllSettings: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetAllSettings: unsafe extern "system" fn(this: *mut *mut Self, __midl__icodecapi0001: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetAllSettings: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetAllSettingsWithNotify: unsafe extern "system" fn(this: *mut *mut Self, __midl__icodecapi0002: *mut ::core::ffi::c_void, changedparam: *mut *mut ::windows_sys::core::GUID, changedparamcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetAllSettingsWithNotify: usize,
+}
+#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[repr(C)]
+pub struct ID3D12VideoDecodeCommandList {
+    pub base__: super::super::Graphics::Direct3D12::ID3D12CommandList,
+    pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Graphics_Direct3D12")]
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self, pallocator: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Direct3D12"))]
+    Reset: usize,
+    pub ClearState: unsafe extern "system" fn(this: *mut *mut Self),
+    #[cfg(feature = "Win32_Graphics_Direct3D12")]
+    pub ResourceBarrier: unsafe extern "system" fn(this: *mut *mut Self, numbarriers: u32, pbarriers: *const super::super::Graphics::Direct3D12::D3D12_RESOURCE_BARRIER),
+    #[cfg(not(feature = "Win32_Graphics_Direct3D12"))]
+    ResourceBarrier: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct3D12"))]
+    pub DiscardResource: unsafe extern "system" fn(this: *mut *mut Self, presource: *mut ::core::ffi::c_void, pregion: *const super::super::Graphics::Direct3D12::D3D12_DISCARD_REGION),
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct3D12")))]
+    DiscardResource: usize,
+    #[cfg(feature = "Win32_Graphics_Direct3D12")]
+    pub BeginQuery: unsafe extern "system" fn(this: *mut *mut Self, pqueryheap: *mut ::core::ffi::c_void, r#type: super::super::Graphics::Direct3D12::D3D12_QUERY_TYPE, index: u32),
+    #[cfg(not(feature = "Win32_Graphics_Direct3D12"))]
+    BeginQuery: usize,
+    #[cfg(feature = "Win32_Graphics_Direct3D12")]
+    pub EndQuery: unsafe extern "system" fn(this: *mut *mut Self, pqueryheap: *mut ::core::ffi::c_void, r#type: super::super::Graphics::Direct3D12::D3D12_QUERY_TYPE, index: u32),
+    #[cfg(not(feature = "Win32_Graphics_Direct3D12"))]
+    EndQuery: usize,
+    #[cfg(feature = "Win32_Graphics_Direct3D12")]
+    pub ResolveQueryData: unsafe extern "system" fn(this: *mut *mut Self, pqueryheap: *mut ::core::ffi::c_void, r#type: super::super::Graphics::Direct3D12::D3D12_QUERY_TYPE, startindex: u32, numqueries: u32, pdestinationbuffer: *mut ::core::ffi::c_void, aligneddestinationbufferoffset: u64),
+    #[cfg(not(feature = "Win32_Graphics_Direct3D12"))]
+    ResolveQueryData: usize,
+    #[cfg(feature = "Win32_Graphics_Direct3D12")]
+    pub SetPredication: unsafe extern "system" fn(this: *mut *mut Self, pbuffer: *mut ::core::ffi::c_void, alignedbufferoffset: u64, operation: super::super::Graphics::Direct3D12::D3D12_PREDICATION_OP),
+    #[cfg(not(feature = "Win32_Graphics_Direct3D12"))]
+    SetPredication: usize,
+    pub SetMarker: unsafe extern "system" fn(this: *mut *mut Self, metadata: u32, pdata: *const ::core::ffi::c_void, size: u32),
+    pub BeginEvent: unsafe extern "system" fn(this: *mut *mut Self, metadata: u32, pdata: *const ::core::ffi::c_void, size: u32),
+    pub EndEvent: unsafe extern "system" fn(this: *mut *mut Self),
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct3D12", feature = "Win32_Graphics_Dxgi_Common"))]
+    pub DecodeFrame: unsafe extern "system" fn(this: *mut *mut Self, pdecoder: *mut ::core::ffi::c_void, poutputarguments: *const D3D12_VIDEO_DECODE_OUTPUT_STREAM_ARGUMENTS, pinputarguments: *const D3D12_VIDEO_DECODE_INPUT_STREAM_ARGUMENTS),
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct3D12", feature = "Win32_Graphics_Dxgi_Common")))]
+    DecodeFrame: usize,
+    #[cfg(feature = "Win32_Graphics_Direct3D12")]
+    pub WriteBufferImmediate: unsafe extern "system" fn(this: *mut *mut Self, count: u32, pparams: *const super::super::Graphics::Direct3D12::D3D12_WRITEBUFFERIMMEDIATE_PARAMETER, pmodes: *const super::super::Graphics::Direct3D12::D3D12_WRITEBUFFERIMMEDIATE_MODE),
+    #[cfg(not(feature = "Win32_Graphics_Direct3D12"))]
+    WriteBufferImmediate: usize,
+}
+#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[repr(C)]
+pub struct ID3D12VideoDecodeCommandList1 {
+    pub base__: ID3D12VideoDecodeCommandList,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct3D12", feature = "Win32_Graphics_Dxgi_Common"))]
+    pub DecodeFrame1: unsafe extern "system" fn(this: *mut *mut Self, pdecoder: *mut ::core::ffi::c_void, poutputarguments: *const D3D12_VIDEO_DECODE_OUTPUT_STREAM_ARGUMENTS1, pinputarguments: *const D3D12_VIDEO_DECODE_INPUT_STREAM_ARGUMENTS),
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct3D12", feature = "Win32_Graphics_Dxgi_Common")))]
+    DecodeFrame1: usize,
+}
+#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[repr(C)]
+pub struct ID3D12VideoDecodeCommandList2 {
+    pub base__: ID3D12VideoDecodeCommandList1,
+    #[cfg(feature = "Win32_Graphics_Direct3D12")]
+    pub SetProtectedResourceSession: unsafe extern "system" fn(this: *mut *mut Self, pprotectedresourcesession: *mut ::core::ffi::c_void),
+    #[cfg(not(feature = "Win32_Graphics_Direct3D12"))]
+    SetProtectedResourceSession: usize,
+    #[cfg(feature = "Win32_Graphics_Direct3D12")]
+    pub InitializeExtensionCommand: unsafe extern "system" fn(this: *mut *mut Self, pextensioncommand: *mut ::core::ffi::c_void, pinitializationparameters: *const ::core::ffi::c_void, initializationparameterssizeinbytes: usize),
+    #[cfg(not(feature = "Win32_Graphics_Direct3D12"))]
+    InitializeExtensionCommand: usize,
+    #[cfg(feature = "Win32_Graphics_Direct3D12")]
+    pub ExecuteExtensionCommand: unsafe extern "system" fn(this: *mut *mut Self, pextensioncommand: *mut ::core::ffi::c_void, pexecutionparameters: *const ::core::ffi::c_void, executionparameterssizeinbytes: usize),
+    #[cfg(not(feature = "Win32_Graphics_Direct3D12"))]
+    ExecuteExtensionCommand: usize,
+}
+#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[repr(C)]
+pub struct ID3D12VideoDecoder {
+    pub base__: super::super::Graphics::Direct3D12::ID3D12Pageable,
+    pub GetDesc: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut D3D12_VIDEO_DECODER_DESC),
+}
+#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[repr(C)]
+pub struct ID3D12VideoDecoder1 {
+    pub base__: ID3D12VideoDecoder,
+    pub GetProtectedResourceSession: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppprotectedsession: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[repr(C)]
+pub struct ID3D12VideoDecoderHeap {
+    pub base__: super::super::Graphics::Direct3D12::ID3D12Pageable,
+    #[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+    pub GetDesc: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut D3D12_VIDEO_DECODER_HEAP_DESC),
+    #[cfg(not(feature = "Win32_Graphics_Dxgi_Common"))]
+    GetDesc: usize,
+}
+#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[repr(C)]
+pub struct ID3D12VideoDecoderHeap1 {
+    pub base__: ID3D12VideoDecoderHeap,
+    pub GetProtectedResourceSession: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppprotectedsession: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ID3D12VideoDevice {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub CheckFeatureSupport: unsafe extern "system" fn(this: *mut *mut Self, featurevideo: D3D12_FEATURE_VIDEO, pfeaturesupportdata: *mut ::core::ffi::c_void, featuresupportdatasize: u32) -> ::windows_sys::core::HRESULT,
+    pub CreateVideoDecoder: unsafe extern "system" fn(this: *mut *mut Self, pdesc: *const D3D12_VIDEO_DECODER_DESC, riid: *const ::windows_sys::core::GUID, ppvideodecoder: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+    pub CreateVideoDecoderHeap: unsafe extern "system" fn(this: *mut *mut Self, pvideodecoderheapdesc: *const D3D12_VIDEO_DECODER_HEAP_DESC, riid: *const ::windows_sys::core::GUID, ppvideodecoderheap: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Dxgi_Common"))]
+    CreateVideoDecoderHeap: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common"))]
+    pub CreateVideoProcessor: unsafe extern "system" fn(this: *mut *mut Self, nodemask: u32, poutputstreamdesc: *const D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC, numinputstreamdescs: u32, pinputstreamdescs: *const D3D12_VIDEO_PROCESS_INPUT_STREAM_DESC, riid: *const ::windows_sys::core::GUID, ppvideoprocessor: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common")))]
+    CreateVideoProcessor: usize,
+}
+#[repr(C)]
+pub struct ID3D12VideoDevice1 {
+    pub base__: ID3D12VideoDevice,
+    #[cfg(all(feature = "Win32_Graphics_Direct3D12", feature = "Win32_Graphics_Dxgi_Common"))]
+    pub CreateVideoMotionEstimator: unsafe extern "system" fn(this: *mut *mut Self, pdesc: *const D3D12_VIDEO_MOTION_ESTIMATOR_DESC, pprotectedresourcesession: *mut ::core::ffi::c_void, riid: *const ::windows_sys::core::GUID, ppvideomotionestimator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Graphics_Direct3D12", feature = "Win32_Graphics_Dxgi_Common")))]
+    CreateVideoMotionEstimator: usize,
+    #[cfg(all(feature = "Win32_Graphics_Direct3D12", feature = "Win32_Graphics_Dxgi_Common"))]
+    pub CreateVideoMotionVectorHeap: unsafe extern "system" fn(this: *mut *mut Self, pdesc: *const D3D12_VIDEO_MOTION_VECTOR_HEAP_DESC, pprotectedresourcesession: *mut ::core::ffi::c_void, riid: *const ::windows_sys::core::GUID, ppvideomotionvectorheap: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Graphics_Direct3D12", feature = "Win32_Graphics_Dxgi_Common")))]
+    CreateVideoMotionVectorHeap: usize,
+}
+#[repr(C)]
+pub struct ID3D12VideoDevice2 {
+    pub base__: ID3D12VideoDevice1,
+    #[cfg(feature = "Win32_Graphics_Direct3D12")]
+    pub CreateVideoDecoder1: unsafe extern "system" fn(this: *mut *mut Self, pdesc: *const D3D12_VIDEO_DECODER_DESC, pprotectedresourcesession: *mut ::core::ffi::c_void, riid: *const ::windows_sys::core::GUID, ppvideodecoder: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Direct3D12"))]
+    CreateVideoDecoder1: usize,
+    #[cfg(all(feature = "Win32_Graphics_Direct3D12", feature = "Win32_Graphics_Dxgi_Common"))]
+    pub CreateVideoDecoderHeap1: unsafe extern "system" fn(this: *mut *mut Self, pvideodecoderheapdesc: *const D3D12_VIDEO_DECODER_HEAP_DESC, pprotectedresourcesession: *mut ::core::ffi::c_void, riid: *const ::windows_sys::core::GUID, ppvideodecoderheap: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Graphics_Direct3D12", feature = "Win32_Graphics_Dxgi_Common")))]
+    CreateVideoDecoderHeap1: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct3D12", feature = "Win32_Graphics_Dxgi_Common"))]
+    pub CreateVideoProcessor1: unsafe extern "system" fn(this: *mut *mut Self, nodemask: u32, poutputstreamdesc: *const D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC, numinputstreamdescs: u32, pinputstreamdescs: *const D3D12_VIDEO_PROCESS_INPUT_STREAM_DESC, pprotectedresourcesession: *mut ::core::ffi::c_void, riid: *const ::windows_sys::core::GUID, ppvideoprocessor: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct3D12", feature = "Win32_Graphics_Dxgi_Common")))]
+    CreateVideoProcessor1: usize,
+    #[cfg(feature = "Win32_Graphics_Direct3D12")]
+    pub CreateVideoExtensionCommand: unsafe extern "system" fn(this: *mut *mut Self, pdesc: *const D3D12_VIDEO_EXTENSION_COMMAND_DESC, pcreationparameters: *const ::core::ffi::c_void, creationparametersdatasizeinbytes: usize, pprotectedresourcesession: *mut ::core::ffi::c_void, riid: *const ::windows_sys::core::GUID, ppvideoextensioncommand: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Direct3D12"))]
+    CreateVideoExtensionCommand: usize,
+    #[cfg(feature = "Win32_Graphics_Direct3D12")]
+    pub ExecuteExtensionCommand: unsafe extern "system" fn(this: *mut *mut Self, pextensioncommand: *mut ::core::ffi::c_void, pexecutionparameters: *const ::core::ffi::c_void, executionparameterssizeinbytes: usize, poutputdata: *mut ::core::ffi::c_void, outputdatasizeinbytes: usize) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Direct3D12"))]
+    ExecuteExtensionCommand: usize,
+}
+#[repr(C)]
+pub struct ID3D12VideoDevice3 {
+    pub base__: ID3D12VideoDevice2,
+    #[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+    pub CreateVideoEncoder: unsafe extern "system" fn(this: *mut *mut Self, pdesc: *const D3D12_VIDEO_ENCODER_DESC, riid: *const ::windows_sys::core::GUID, ppvideoencoder: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Dxgi_Common"))]
+    CreateVideoEncoder: usize,
+    pub CreateVideoEncoderHeap: unsafe extern "system" fn(this: *mut *mut Self, pdesc: *const D3D12_VIDEO_ENCODER_HEAP_DESC, riid: *const ::windows_sys::core::GUID, ppvideoencoderheap: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[repr(C)]
+pub struct ID3D12VideoEncodeCommandList {
+    pub base__: super::super::Graphics::Direct3D12::ID3D12CommandList,
+    pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Graphics_Direct3D12")]
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self, pallocator: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Direct3D12"))]
+    Reset: usize,
+    pub ClearState: unsafe extern "system" fn(this: *mut *mut Self),
+    #[cfg(feature = "Win32_Graphics_Direct3D12")]
+    pub ResourceBarrier: unsafe extern "system" fn(this: *mut *mut Self, numbarriers: u32, pbarriers: *const super::super::Graphics::Direct3D12::D3D12_RESOURCE_BARRIER),
+    #[cfg(not(feature = "Win32_Graphics_Direct3D12"))]
+    ResourceBarrier: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct3D12"))]
+    pub DiscardResource: unsafe extern "system" fn(this: *mut *mut Self, presource: *mut ::core::ffi::c_void, pregion: *const super::super::Graphics::Direct3D12::D3D12_DISCARD_REGION),
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct3D12")))]
+    DiscardResource: usize,
+    #[cfg(feature = "Win32_Graphics_Direct3D12")]
+    pub BeginQuery: unsafe extern "system" fn(this: *mut *mut Self, pqueryheap: *mut ::core::ffi::c_void, r#type: super::super::Graphics::Direct3D12::D3D12_QUERY_TYPE, index: u32),
+    #[cfg(not(feature = "Win32_Graphics_Direct3D12"))]
+    BeginQuery: usize,
+    #[cfg(feature = "Win32_Graphics_Direct3D12")]
+    pub EndQuery: unsafe extern "system" fn(this: *mut *mut Self, pqueryheap: *mut ::core::ffi::c_void, r#type: super::super::Graphics::Direct3D12::D3D12_QUERY_TYPE, index: u32),
+    #[cfg(not(feature = "Win32_Graphics_Direct3D12"))]
+    EndQuery: usize,
+    #[cfg(feature = "Win32_Graphics_Direct3D12")]
+    pub ResolveQueryData: unsafe extern "system" fn(this: *mut *mut Self, pqueryheap: *mut ::core::ffi::c_void, r#type: super::super::Graphics::Direct3D12::D3D12_QUERY_TYPE, startindex: u32, numqueries: u32, pdestinationbuffer: *mut ::core::ffi::c_void, aligneddestinationbufferoffset: u64),
+    #[cfg(not(feature = "Win32_Graphics_Direct3D12"))]
+    ResolveQueryData: usize,
+    #[cfg(feature = "Win32_Graphics_Direct3D12")]
+    pub SetPredication: unsafe extern "system" fn(this: *mut *mut Self, pbuffer: *mut ::core::ffi::c_void, alignedbufferoffset: u64, operation: super::super::Graphics::Direct3D12::D3D12_PREDICATION_OP),
+    #[cfg(not(feature = "Win32_Graphics_Direct3D12"))]
+    SetPredication: usize,
+    pub SetMarker: unsafe extern "system" fn(this: *mut *mut Self, metadata: u32, pdata: *const ::core::ffi::c_void, size: u32),
+    pub BeginEvent: unsafe extern "system" fn(this: *mut *mut Self, metadata: u32, pdata: *const ::core::ffi::c_void, size: u32),
+    pub EndEvent: unsafe extern "system" fn(this: *mut *mut Self),
+    #[cfg(feature = "Win32_Graphics_Direct3D12")]
+    pub EstimateMotion: unsafe extern "system" fn(this: *mut *mut Self, pmotionestimator: *mut ::core::ffi::c_void, poutputarguments: *const D3D12_VIDEO_MOTION_ESTIMATOR_OUTPUT, pinputarguments: *const D3D12_VIDEO_MOTION_ESTIMATOR_INPUT),
+    #[cfg(not(feature = "Win32_Graphics_Direct3D12"))]
+    EstimateMotion: usize,
+    #[cfg(feature = "Win32_Graphics_Direct3D12")]
+    pub ResolveMotionVectorHeap: unsafe extern "system" fn(this: *mut *mut Self, poutputarguments: *const D3D12_RESOLVE_VIDEO_MOTION_VECTOR_HEAP_OUTPUT, pinputarguments: *const D3D12_RESOLVE_VIDEO_MOTION_VECTOR_HEAP_INPUT),
+    #[cfg(not(feature = "Win32_Graphics_Direct3D12"))]
+    ResolveMotionVectorHeap: usize,
+    #[cfg(feature = "Win32_Graphics_Direct3D12")]
+    pub WriteBufferImmediate: unsafe extern "system" fn(this: *mut *mut Self, count: u32, pparams: *const super::super::Graphics::Direct3D12::D3D12_WRITEBUFFERIMMEDIATE_PARAMETER, pmodes: *const super::super::Graphics::Direct3D12::D3D12_WRITEBUFFERIMMEDIATE_MODE),
+    #[cfg(not(feature = "Win32_Graphics_Direct3D12"))]
+    WriteBufferImmediate: usize,
+    #[cfg(feature = "Win32_Graphics_Direct3D12")]
+    pub SetProtectedResourceSession: unsafe extern "system" fn(this: *mut *mut Self, pprotectedresourcesession: *mut ::core::ffi::c_void),
+    #[cfg(not(feature = "Win32_Graphics_Direct3D12"))]
+    SetProtectedResourceSession: usize,
+}
+#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[repr(C)]
+pub struct ID3D12VideoEncodeCommandList1 {
+    pub base__: ID3D12VideoEncodeCommandList,
+    #[cfg(feature = "Win32_Graphics_Direct3D12")]
+    pub InitializeExtensionCommand: unsafe extern "system" fn(this: *mut *mut Self, pextensioncommand: *mut ::core::ffi::c_void, pinitializationparameters: *const ::core::ffi::c_void, initializationparameterssizeinbytes: usize),
+    #[cfg(not(feature = "Win32_Graphics_Direct3D12"))]
+    InitializeExtensionCommand: usize,
+    #[cfg(feature = "Win32_Graphics_Direct3D12")]
+    pub ExecuteExtensionCommand: unsafe extern "system" fn(this: *mut *mut Self, pextensioncommand: *mut ::core::ffi::c_void, pexecutionparameters: *const ::core::ffi::c_void, executionparameterssizeinbytes: usize),
+    #[cfg(not(feature = "Win32_Graphics_Direct3D12"))]
+    ExecuteExtensionCommand: usize,
+}
+#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[repr(C)]
+pub struct ID3D12VideoEncodeCommandList2 {
+    pub base__: ID3D12VideoEncodeCommandList1,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct3D12", feature = "Win32_Graphics_Dxgi_Common"))]
+    pub EncodeFrame: unsafe extern "system" fn(this: *mut *mut Self, pencoder: *mut ::core::ffi::c_void, pheap: *mut ::core::ffi::c_void, pinputarguments: *const D3D12_VIDEO_ENCODER_ENCODEFRAME_INPUT_ARGUMENTS, poutputarguments: *const D3D12_VIDEO_ENCODER_ENCODEFRAME_OUTPUT_ARGUMENTS),
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct3D12", feature = "Win32_Graphics_Dxgi_Common")))]
+    EncodeFrame: usize,
+    #[cfg(all(feature = "Win32_Graphics_Direct3D12", feature = "Win32_Graphics_Dxgi_Common"))]
+    pub ResolveEncoderOutputMetadata: unsafe extern "system" fn(this: *mut *mut Self, pinputarguments: *const D3D12_VIDEO_ENCODER_RESOLVE_METADATA_INPUT_ARGUMENTS, poutputarguments: *const D3D12_VIDEO_ENCODER_RESOLVE_METADATA_OUTPUT_ARGUMENTS),
+    #[cfg(not(all(feature = "Win32_Graphics_Direct3D12", feature = "Win32_Graphics_Dxgi_Common")))]
+    ResolveEncoderOutputMetadata: usize,
+}
+#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[repr(C)]
+pub struct ID3D12VideoEncoder {
+    pub base__: super::super::Graphics::Direct3D12::ID3D12Pageable,
+    pub GetNodeMask: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
+    pub GetEncoderFlags: unsafe extern "system" fn(this: *mut *mut Self) -> D3D12_VIDEO_ENCODER_FLAGS,
+    pub GetCodec: unsafe extern "system" fn(this: *mut *mut Self) -> D3D12_VIDEO_ENCODER_CODEC,
+    pub GetCodecProfile: unsafe extern "system" fn(this: *mut *mut Self, dstprofile: D3D12_VIDEO_ENCODER_PROFILE_DESC) -> ::windows_sys::core::HRESULT,
+    pub GetCodecConfiguration: unsafe extern "system" fn(this: *mut *mut Self, dstcodecconfig: D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+    pub GetInputFormat: unsafe extern "system" fn(this: *mut *mut Self) -> super::super::Graphics::Dxgi::Common::DXGI_FORMAT,
+    #[cfg(not(feature = "Win32_Graphics_Dxgi_Common"))]
+    GetInputFormat: usize,
+    pub GetMaxMotionEstimationPrecision: unsafe extern "system" fn(this: *mut *mut Self) -> D3D12_VIDEO_ENCODER_MOTION_ESTIMATION_PRECISION_MODE,
+}
+#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[repr(C)]
+pub struct ID3D12VideoEncoderHeap {
+    pub base__: super::super::Graphics::Direct3D12::ID3D12Pageable,
+    pub GetNodeMask: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
+    pub GetEncoderHeapFlags: unsafe extern "system" fn(this: *mut *mut Self) -> D3D12_VIDEO_ENCODER_HEAP_FLAGS,
+    pub GetCodec: unsafe extern "system" fn(this: *mut *mut Self) -> D3D12_VIDEO_ENCODER_CODEC,
+    pub GetCodecProfile: unsafe extern "system" fn(this: *mut *mut Self, dstprofile: D3D12_VIDEO_ENCODER_PROFILE_DESC) -> ::windows_sys::core::HRESULT,
+    pub GetCodecLevel: unsafe extern "system" fn(this: *mut *mut Self, dstlevel: D3D12_VIDEO_ENCODER_LEVEL_SETTING) -> ::windows_sys::core::HRESULT,
+    pub GetResolutionListCount: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
+    pub GetResolutionList: unsafe extern "system" fn(this: *mut *mut Self, resolutionslistcount: u32, presolutionlist: *mut D3D12_VIDEO_ENCODER_PICTURE_RESOLUTION_DESC) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[repr(C)]
+pub struct ID3D12VideoExtensionCommand {
+    pub base__: super::super::Graphics::Direct3D12::ID3D12Pageable,
+    pub GetDesc: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut D3D12_VIDEO_EXTENSION_COMMAND_DESC),
+    pub GetProtectedResourceSession: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppprotectedsession: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[repr(C)]
+pub struct ID3D12VideoMotionEstimator {
+    pub base__: super::super::Graphics::Direct3D12::ID3D12Pageable,
+    #[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+    pub GetDesc: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut D3D12_VIDEO_MOTION_ESTIMATOR_DESC),
+    #[cfg(not(feature = "Win32_Graphics_Dxgi_Common"))]
+    GetDesc: usize,
+    pub GetProtectedResourceSession: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppprotectedsession: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[repr(C)]
+pub struct ID3D12VideoMotionVectorHeap {
+    pub base__: super::super::Graphics::Direct3D12::ID3D12Pageable,
+    #[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+    pub GetDesc: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut D3D12_VIDEO_MOTION_VECTOR_HEAP_DESC),
+    #[cfg(not(feature = "Win32_Graphics_Dxgi_Common"))]
+    GetDesc: usize,
+    pub GetProtectedResourceSession: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppprotectedsession: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[repr(C)]
+pub struct ID3D12VideoProcessCommandList {
+    pub base__: super::super::Graphics::Direct3D12::ID3D12CommandList,
+    pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Graphics_Direct3D12")]
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self, pallocator: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Direct3D12"))]
+    Reset: usize,
+    pub ClearState: unsafe extern "system" fn(this: *mut *mut Self),
+    #[cfg(feature = "Win32_Graphics_Direct3D12")]
+    pub ResourceBarrier: unsafe extern "system" fn(this: *mut *mut Self, numbarriers: u32, pbarriers: *const super::super::Graphics::Direct3D12::D3D12_RESOURCE_BARRIER),
+    #[cfg(not(feature = "Win32_Graphics_Direct3D12"))]
+    ResourceBarrier: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct3D12"))]
+    pub DiscardResource: unsafe extern "system" fn(this: *mut *mut Self, presource: *mut ::core::ffi::c_void, pregion: *const super::super::Graphics::Direct3D12::D3D12_DISCARD_REGION),
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct3D12")))]
+    DiscardResource: usize,
+    #[cfg(feature = "Win32_Graphics_Direct3D12")]
+    pub BeginQuery: unsafe extern "system" fn(this: *mut *mut Self, pqueryheap: *mut ::core::ffi::c_void, r#type: super::super::Graphics::Direct3D12::D3D12_QUERY_TYPE, index: u32),
+    #[cfg(not(feature = "Win32_Graphics_Direct3D12"))]
+    BeginQuery: usize,
+    #[cfg(feature = "Win32_Graphics_Direct3D12")]
+    pub EndQuery: unsafe extern "system" fn(this: *mut *mut Self, pqueryheap: *mut ::core::ffi::c_void, r#type: super::super::Graphics::Direct3D12::D3D12_QUERY_TYPE, index: u32),
+    #[cfg(not(feature = "Win32_Graphics_Direct3D12"))]
+    EndQuery: usize,
+    #[cfg(feature = "Win32_Graphics_Direct3D12")]
+    pub ResolveQueryData: unsafe extern "system" fn(this: *mut *mut Self, pqueryheap: *mut ::core::ffi::c_void, r#type: super::super::Graphics::Direct3D12::D3D12_QUERY_TYPE, startindex: u32, numqueries: u32, pdestinationbuffer: *mut ::core::ffi::c_void, aligneddestinationbufferoffset: u64),
+    #[cfg(not(feature = "Win32_Graphics_Direct3D12"))]
+    ResolveQueryData: usize,
+    #[cfg(feature = "Win32_Graphics_Direct3D12")]
+    pub SetPredication: unsafe extern "system" fn(this: *mut *mut Self, pbuffer: *mut ::core::ffi::c_void, alignedbufferoffset: u64, operation: super::super::Graphics::Direct3D12::D3D12_PREDICATION_OP),
+    #[cfg(not(feature = "Win32_Graphics_Direct3D12"))]
+    SetPredication: usize,
+    pub SetMarker: unsafe extern "system" fn(this: *mut *mut Self, metadata: u32, pdata: *const ::core::ffi::c_void, size: u32),
+    pub BeginEvent: unsafe extern "system" fn(this: *mut *mut Self, metadata: u32, pdata: *const ::core::ffi::c_void, size: u32),
+    pub EndEvent: unsafe extern "system" fn(this: *mut *mut Self),
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct3D12"))]
+    pub ProcessFrames: unsafe extern "system" fn(this: *mut *mut Self, pvideoprocessor: *mut ::core::ffi::c_void, poutputarguments: *const D3D12_VIDEO_PROCESS_OUTPUT_STREAM_ARGUMENTS, numinputstreams: u32, pinputarguments: *const D3D12_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS),
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct3D12")))]
+    ProcessFrames: usize,
+    #[cfg(feature = "Win32_Graphics_Direct3D12")]
+    pub WriteBufferImmediate: unsafe extern "system" fn(this: *mut *mut Self, count: u32, pparams: *const super::super::Graphics::Direct3D12::D3D12_WRITEBUFFERIMMEDIATE_PARAMETER, pmodes: *const super::super::Graphics::Direct3D12::D3D12_WRITEBUFFERIMMEDIATE_MODE),
+    #[cfg(not(feature = "Win32_Graphics_Direct3D12"))]
+    WriteBufferImmediate: usize,
+}
+#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[repr(C)]
+pub struct ID3D12VideoProcessCommandList1 {
+    pub base__: ID3D12VideoProcessCommandList,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct3D12"))]
+    pub ProcessFrames1: unsafe extern "system" fn(this: *mut *mut Self, pvideoprocessor: *mut ::core::ffi::c_void, poutputarguments: *const D3D12_VIDEO_PROCESS_OUTPUT_STREAM_ARGUMENTS, numinputstreams: u32, pinputarguments: *const D3D12_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS1),
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct3D12")))]
+    ProcessFrames1: usize,
+}
+#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[repr(C)]
+pub struct ID3D12VideoProcessCommandList2 {
+    pub base__: ID3D12VideoProcessCommandList1,
+    #[cfg(feature = "Win32_Graphics_Direct3D12")]
+    pub SetProtectedResourceSession: unsafe extern "system" fn(this: *mut *mut Self, pprotectedresourcesession: *mut ::core::ffi::c_void),
+    #[cfg(not(feature = "Win32_Graphics_Direct3D12"))]
+    SetProtectedResourceSession: usize,
+    #[cfg(feature = "Win32_Graphics_Direct3D12")]
+    pub InitializeExtensionCommand: unsafe extern "system" fn(this: *mut *mut Self, pextensioncommand: *mut ::core::ffi::c_void, pinitializationparameters: *const ::core::ffi::c_void, initializationparameterssizeinbytes: usize),
+    #[cfg(not(feature = "Win32_Graphics_Direct3D12"))]
+    InitializeExtensionCommand: usize,
+    #[cfg(feature = "Win32_Graphics_Direct3D12")]
+    pub ExecuteExtensionCommand: unsafe extern "system" fn(this: *mut *mut Self, pextensioncommand: *mut ::core::ffi::c_void, pexecutionparameters: *const ::core::ffi::c_void, executionparameterssizeinbytes: usize),
+    #[cfg(not(feature = "Win32_Graphics_Direct3D12"))]
+    ExecuteExtensionCommand: usize,
+}
+#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[repr(C)]
+pub struct ID3D12VideoProcessor {
+    pub base__: super::super::Graphics::Direct3D12::ID3D12Pageable,
+    pub GetNodeMask: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
+    pub GetNumInputStreamDescs: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common"))]
+    pub GetInputStreamDescs: unsafe extern "system" fn(this: *mut *mut Self, numinputstreamdescs: u32, pinputstreamdescs: *mut D3D12_VIDEO_PROCESS_INPUT_STREAM_DESC) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common")))]
+    GetInputStreamDescs: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common"))]
+    pub GetOutputStreamDesc: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC),
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common")))]
+    GetOutputStreamDesc: usize,
+}
+#[cfg(feature = "Win32_Graphics_Direct3D12")]
+#[repr(C)]
+pub struct ID3D12VideoProcessor1 {
+    pub base__: ID3D12VideoProcessor,
+    pub GetProtectedResourceSession: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppprotectedsession: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDXVAHD_Device {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct3D9"))]
+    pub CreateVideoSurface: unsafe extern "system" fn(this: *mut *mut Self, width: u32, height: u32, format: super::super::Graphics::Direct3D9::D3DFORMAT, pool: super::super::Graphics::Direct3D9::D3DPOOL, usage: u32, r#type: DXVAHD_SURFACE_TYPE, numsurfaces: u32, ppsurfaces: *mut *mut ::core::ffi::c_void, psharedhandle: *mut super::super::Foundation::HANDLE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct3D9")))]
+    CreateVideoSurface: usize,
+    #[cfg(feature = "Win32_Graphics_Direct3D9")]
+    pub GetVideoProcessorDeviceCaps: unsafe extern "system" fn(this: *mut *mut Self, pcaps: *mut DXVAHD_VPDEVCAPS) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Direct3D9"))]
+    GetVideoProcessorDeviceCaps: usize,
+    #[cfg(feature = "Win32_Graphics_Direct3D9")]
+    pub GetVideoProcessorOutputFormats: unsafe extern "system" fn(this: *mut *mut Self, count: u32, pformats: *mut super::super::Graphics::Direct3D9::D3DFORMAT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Direct3D9"))]
+    GetVideoProcessorOutputFormats: usize,
+    #[cfg(feature = "Win32_Graphics_Direct3D9")]
+    pub GetVideoProcessorInputFormats: unsafe extern "system" fn(this: *mut *mut Self, count: u32, pformats: *mut super::super::Graphics::Direct3D9::D3DFORMAT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Direct3D9"))]
+    GetVideoProcessorInputFormats: usize,
+    pub GetVideoProcessorCaps: unsafe extern "system" fn(this: *mut *mut Self, count: u32, pcaps: *mut DXVAHD_VPCAPS) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetVideoProcessorCustomRates: unsafe extern "system" fn(this: *mut *mut Self, pvpguid: *const ::windows_sys::core::GUID, count: u32, prates: *mut DXVAHD_CUSTOM_RATE_DATA) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetVideoProcessorCustomRates: usize,
+    pub GetVideoProcessorFilterRange: unsafe extern "system" fn(this: *mut *mut Self, filter: DXVAHD_FILTER, prange: *mut DXVAHD_FILTER_RANGE_DATA) -> ::windows_sys::core::HRESULT,
+    pub CreateVideoProcessor: unsafe extern "system" fn(this: *mut *mut Self, pvpguid: *const ::windows_sys::core::GUID, ppvideoprocessor: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDXVAHD_VideoProcessor {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetVideoProcessBltState: unsafe extern "system" fn(this: *mut *mut Self, state: DXVAHD_BLT_STATE, datasize: u32, pdata: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetVideoProcessBltState: unsafe extern "system" fn(this: *mut *mut Self, state: DXVAHD_BLT_STATE, datasize: u32, pdata: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetVideoProcessStreamState: unsafe extern "system" fn(this: *mut *mut Self, streamnumber: u32, state: DXVAHD_STREAM_STATE, datasize: u32, pdata: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetVideoProcessStreamState: unsafe extern "system" fn(this: *mut *mut Self, streamnumber: u32, state: DXVAHD_STREAM_STATE, datasize: u32, pdata: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct3D9"))]
+    pub VideoProcessBltHD: unsafe extern "system" fn(this: *mut *mut Self, poutputsurface: *mut ::core::ffi::c_void, outputframe: u32, streamcount: u32, pstreams: *const DXVAHD_STREAM_DATA) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct3D9")))]
+    VideoProcessBltHD: usize,
+}
+#[repr(C)]
+pub struct IDirect3D9ExOverlayExtension {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Graphics_Direct3D9")]
+    pub CheckDeviceOverlayType: unsafe extern "system" fn(this: *mut *mut Self, adapter: u32, devtype: super::super::Graphics::Direct3D9::D3DDEVTYPE, overlaywidth: u32, overlayheight: u32, overlayformat: super::super::Graphics::Direct3D9::D3DFORMAT, pdisplaymode: *mut super::super::Graphics::Direct3D9::D3DDISPLAYMODEEX, displayrotation: super::super::Graphics::Direct3D9::D3DDISPLAYROTATION, poverlaycaps: *mut D3DOVERLAYCAPS) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Direct3D9"))]
+    CheckDeviceOverlayType: usize,
+}
+#[repr(C)]
+pub struct IDirect3DAuthenticatedChannel9 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCertificateSize: unsafe extern "system" fn(this: *mut *mut Self, pcertificatesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCertificate: unsafe extern "system" fn(this: *mut *mut Self, certifactesize: u32, ppcertificate: *mut u8) -> ::windows_sys::core::HRESULT,
+    pub NegotiateKeyExchange: unsafe extern "system" fn(this: *mut *mut Self, datasize: u32, pdata: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Query: unsafe extern "system" fn(this: *mut *mut Self, inputsize: u32, pinput: *const ::core::ffi::c_void, outputsize: u32, poutput: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct3D9"))]
+    pub Configure: unsafe extern "system" fn(this: *mut *mut Self, inputsize: u32, pinput: *const ::core::ffi::c_void, poutput: *mut super::super::Graphics::Direct3D9::D3DAUTHENTICATEDCHANNEL_CONFIGURE_OUTPUT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct3D9")))]
+    Configure: usize,
+}
+#[repr(C)]
+pub struct IDirect3DCryptoSession9 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCertificateSize: unsafe extern "system" fn(this: *mut *mut Self, pcertificatesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCertificate: unsafe extern "system" fn(this: *mut *mut Self, certifactesize: u32, ppcertificate: *mut u8) -> ::windows_sys::core::HRESULT,
+    pub NegotiateKeyExchange: unsafe extern "system" fn(this: *mut *mut Self, datasize: u32, pdata: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Graphics_Direct3D9")]
+    pub EncryptionBlt: unsafe extern "system" fn(this: *mut *mut Self, psrcsurface: *mut ::core::ffi::c_void, pdstsurface: *mut ::core::ffi::c_void, dstsurfacesize: u32, piv: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Direct3D9"))]
+    EncryptionBlt: usize,
+    #[cfg(feature = "Win32_Graphics_Direct3D9")]
+    pub DecryptionBlt: unsafe extern "system" fn(this: *mut *mut Self, psrcsurface: *mut ::core::ffi::c_void, pdstsurface: *mut ::core::ffi::c_void, srcsurfacesize: u32, pencryptedblockinfo: *mut super::super::Graphics::Direct3D9::D3DENCRYPTED_BLOCK_INFO, pcontentkey: *mut ::core::ffi::c_void, piv: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Direct3D9"))]
+    DecryptionBlt: usize,
+    #[cfg(feature = "Win32_Graphics_Direct3D9")]
+    pub GetSurfacePitch: unsafe extern "system" fn(this: *mut *mut Self, psrcsurface: *mut ::core::ffi::c_void, psurfacepitch: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Direct3D9"))]
+    GetSurfacePitch: usize,
+    pub StartSessionKeyRefresh: unsafe extern "system" fn(this: *mut *mut Self, prandomnumber: *mut ::core::ffi::c_void, randomnumbersize: u32) -> ::windows_sys::core::HRESULT,
+    pub FinishSessionKeyRefresh: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetEncryptionBltKey: unsafe extern "system" fn(this: *mut *mut Self, preadbackkey: *mut ::core::ffi::c_void, keysize: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDirect3DDevice9Video {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetContentProtectionCaps: unsafe extern "system" fn(this: *mut *mut Self, pcryptotype: *const ::windows_sys::core::GUID, pdecodeprofile: *const ::windows_sys::core::GUID, pcaps: *mut D3DCONTENTPROTECTIONCAPS) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct3D9"))]
+    pub CreateAuthenticatedChannel: unsafe extern "system" fn(this: *mut *mut Self, channeltype: super::super::Graphics::Direct3D9::D3DAUTHENTICATEDCHANNELTYPE, ppauthenticatedchannel: *mut *mut ::core::ffi::c_void, pchannelhandle: *mut super::super::Foundation::HANDLE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct3D9")))]
+    CreateAuthenticatedChannel: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CreateCryptoSession: unsafe extern "system" fn(this: *mut *mut Self, pcryptotype: *const ::windows_sys::core::GUID, pdecodeprofile: *const ::windows_sys::core::GUID, ppcryptosession: *mut *mut ::core::ffi::c_void, pcryptohandle: *mut super::super::Foundation::HANDLE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CreateCryptoSession: usize,
+}
+#[repr(C)]
+pub struct IDirect3DDeviceManager9 {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Graphics_Direct3D9")]
+    pub ResetDevice: unsafe extern "system" fn(this: *mut *mut Self, pdevice: *mut ::core::ffi::c_void, resettoken: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Direct3D9"))]
+    ResetDevice: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OpenDeviceHandle: unsafe extern "system" fn(this: *mut *mut Self, phdevice: *mut super::super::Foundation::HANDLE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OpenDeviceHandle: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CloseDeviceHandle: unsafe extern "system" fn(this: *mut *mut Self, hdevice: super::super::Foundation::HANDLE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CloseDeviceHandle: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub TestDevice: unsafe extern "system" fn(this: *mut *mut Self, hdevice: super::super::Foundation::HANDLE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    TestDevice: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct3D9"))]
+    pub LockDevice: unsafe extern "system" fn(this: *mut *mut Self, hdevice: super::super::Foundation::HANDLE, ppdevice: *mut *mut ::core::ffi::c_void, fblock: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct3D9")))]
+    LockDevice: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub UnlockDevice: unsafe extern "system" fn(this: *mut *mut Self, hdevice: super::super::Foundation::HANDLE, fsavestate: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    UnlockDevice: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetVideoService: unsafe extern "system" fn(this: *mut *mut Self, hdevice: super::super::Foundation::HANDLE, riid: *const ::windows_sys::core::GUID, ppservice: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetVideoService: usize,
+}
+#[repr(C)]
+pub struct IDirectXVideoAccelerationService {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct3D9"))]
+    pub CreateSurface: unsafe extern "system" fn(this: *mut *mut Self, width: u32, height: u32, backbuffers: u32, format: super::super::Graphics::Direct3D9::D3DFORMAT, pool: super::super::Graphics::Direct3D9::D3DPOOL, usage: u32, dxvatype: DXVA2_VideoRenderTargetType, ppsurface: *mut *mut ::core::ffi::c_void, psharedhandle: *mut super::super::Foundation::HANDLE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct3D9")))]
+    CreateSurface: usize,
+}
+#[repr(C)]
+pub struct IDirectXVideoDecoder {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetVideoDecoderService: unsafe extern "system" fn(this: *mut *mut Self, ppservice: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Graphics_Direct3D9")]
+    pub GetCreationParameters: unsafe extern "system" fn(this: *mut *mut Self, pdeviceguid: *mut ::windows_sys::core::GUID, pvideodesc: *mut DXVA2_VideoDesc, pconfig: *mut DXVA2_ConfigPictureDecode, pdecoderrendertargets: *mut *mut *mut ::core::ffi::c_void, pnumsurfaces: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Direct3D9"))]
+    GetCreationParameters: usize,
+    pub GetBuffer: unsafe extern "system" fn(this: *mut *mut Self, buffertype: DXVA2_BufferfType, ppbuffer: *mut *mut ::core::ffi::c_void, pbuffersize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub ReleaseBuffer: unsafe extern "system" fn(this: *mut *mut Self, buffertype: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Graphics_Direct3D9")]
+    pub BeginFrame: unsafe extern "system" fn(this: *mut *mut Self, prendertarget: *mut ::core::ffi::c_void, pvpvpdata: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Direct3D9"))]
+    BeginFrame: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub EndFrame: unsafe extern "system" fn(this: *mut *mut Self, phandlecomplete: *mut super::super::Foundation::HANDLE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    EndFrame: usize,
+    pub Execute: unsafe extern "system" fn(this: *mut *mut Self, pexecuteparams: *const DXVA2_DecodeExecuteParams) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDirectXVideoDecoderService {
+    pub base__: IDirectXVideoAccelerationService,
+    pub GetDecoderDeviceGuids: unsafe extern "system" fn(this: *mut *mut Self, pcount: *mut u32, pguids: *mut *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Graphics_Direct3D9")]
+    pub GetDecoderRenderTargets: unsafe extern "system" fn(this: *mut *mut Self, guid: *const ::windows_sys::core::GUID, pcount: *mut u32, pformats: *mut *mut super::super::Graphics::Direct3D9::D3DFORMAT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Direct3D9"))]
+    GetDecoderRenderTargets: usize,
+    #[cfg(feature = "Win32_Graphics_Direct3D9")]
+    pub GetDecoderConfigurations: unsafe extern "system" fn(this: *mut *mut Self, guid: *const ::windows_sys::core::GUID, pvideodesc: *const DXVA2_VideoDesc, preserved: *mut ::core::ffi::c_void, pcount: *mut u32, ppconfigs: *mut *mut DXVA2_ConfigPictureDecode) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Direct3D9"))]
+    GetDecoderConfigurations: usize,
+    #[cfg(feature = "Win32_Graphics_Direct3D9")]
+    pub CreateVideoDecoder: unsafe extern "system" fn(this: *mut *mut Self, guid: *const ::windows_sys::core::GUID, pvideodesc: *const DXVA2_VideoDesc, pconfig: *const DXVA2_ConfigPictureDecode, ppdecoderrendertargets: *const *mut ::core::ffi::c_void, numrendertargets: u32, ppdecode: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Direct3D9"))]
+    CreateVideoDecoder: usize,
+}
+#[repr(C)]
+pub struct IDirectXVideoMemoryConfiguration {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetAvailableSurfaceTypeByIndex: unsafe extern "system" fn(this: *mut *mut Self, dwtypeindex: u32, pdwtype: *mut DXVA2_SurfaceType) -> ::windows_sys::core::HRESULT,
+    pub SetSurfaceType: unsafe extern "system" fn(this: *mut *mut Self, dwtype: DXVA2_SurfaceType) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDirectXVideoProcessor {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetVideoProcessorService: unsafe extern "system" fn(this: *mut *mut Self, ppservice: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Graphics_Direct3D9")]
+    pub GetCreationParameters: unsafe extern "system" fn(this: *mut *mut Self, pdeviceguid: *mut ::windows_sys::core::GUID, pvideodesc: *mut DXVA2_VideoDesc, prendertargetformat: *mut super::super::Graphics::Direct3D9::D3DFORMAT, pmaxnumsubstreams: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Direct3D9"))]
+    GetCreationParameters: usize,
+    #[cfg(feature = "Win32_Graphics_Direct3D9")]
+    pub GetVideoProcessorCaps: unsafe extern "system" fn(this: *mut *mut Self, pcaps: *mut DXVA2_VideoProcessorCaps) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Direct3D9"))]
+    GetVideoProcessorCaps: usize,
+    pub GetProcAmpRange: unsafe extern "system" fn(this: *mut *mut Self, procampcap: u32, prange: *mut DXVA2_ValueRange) -> ::windows_sys::core::HRESULT,
+    pub GetFilterPropertyRange: unsafe extern "system" fn(this: *mut *mut Self, filtersetting: u32, prange: *mut DXVA2_ValueRange) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct3D9"))]
+    pub VideoProcessBlt: unsafe extern "system" fn(this: *mut *mut Self, prendertarget: *mut ::core::ffi::c_void, pbltparams: *const DXVA2_VideoProcessBltParams, psamples: *const DXVA2_VideoSample, numsamples: u32, phandlecomplete: *mut super::super::Foundation::HANDLE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct3D9")))]
+    VideoProcessBlt: usize,
+}
+#[repr(C)]
+pub struct IDirectXVideoProcessorService {
+    pub base__: IDirectXVideoAccelerationService,
+    pub RegisterVideoProcessorSoftwareDevice: unsafe extern "system" fn(this: *mut *mut Self, pcallbacks: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Graphics_Direct3D9")]
+    pub GetVideoProcessorDeviceGuids: unsafe extern "system" fn(this: *mut *mut Self, pvideodesc: *const DXVA2_VideoDesc, pcount: *mut u32, pguids: *mut *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Direct3D9"))]
+    GetVideoProcessorDeviceGuids: usize,
+    #[cfg(feature = "Win32_Graphics_Direct3D9")]
+    pub GetVideoProcessorRenderTargets: unsafe extern "system" fn(this: *mut *mut Self, videoprocdeviceguid: *const ::windows_sys::core::GUID, pvideodesc: *const DXVA2_VideoDesc, pcount: *mut u32, pformats: *mut *mut super::super::Graphics::Direct3D9::D3DFORMAT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Direct3D9"))]
+    GetVideoProcessorRenderTargets: usize,
+    #[cfg(feature = "Win32_Graphics_Direct3D9")]
+    pub GetVideoProcessorSubStreamFormats: unsafe extern "system" fn(this: *mut *mut Self, videoprocdeviceguid: *const ::windows_sys::core::GUID, pvideodesc: *const DXVA2_VideoDesc, rendertargetformat: super::super::Graphics::Direct3D9::D3DFORMAT, pcount: *mut u32, pformats: *mut *mut super::super::Graphics::Direct3D9::D3DFORMAT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Direct3D9"))]
+    GetVideoProcessorSubStreamFormats: usize,
+    #[cfg(feature = "Win32_Graphics_Direct3D9")]
+    pub GetVideoProcessorCaps: unsafe extern "system" fn(this: *mut *mut Self, videoprocdeviceguid: *const ::windows_sys::core::GUID, pvideodesc: *const DXVA2_VideoDesc, rendertargetformat: super::super::Graphics::Direct3D9::D3DFORMAT, pcaps: *mut DXVA2_VideoProcessorCaps) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Direct3D9"))]
+    GetVideoProcessorCaps: usize,
+    #[cfg(feature = "Win32_Graphics_Direct3D9")]
+    pub GetProcAmpRange: unsafe extern "system" fn(this: *mut *mut Self, videoprocdeviceguid: *const ::windows_sys::core::GUID, pvideodesc: *const DXVA2_VideoDesc, rendertargetformat: super::super::Graphics::Direct3D9::D3DFORMAT, procampcap: u32, prange: *mut DXVA2_ValueRange) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Direct3D9"))]
+    GetProcAmpRange: usize,
+    #[cfg(feature = "Win32_Graphics_Direct3D9")]
+    pub GetFilterPropertyRange: unsafe extern "system" fn(this: *mut *mut Self, videoprocdeviceguid: *const ::windows_sys::core::GUID, pvideodesc: *const DXVA2_VideoDesc, rendertargetformat: super::super::Graphics::Direct3D9::D3DFORMAT, filtersetting: u32, prange: *mut DXVA2_ValueRange) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Direct3D9"))]
+    GetFilterPropertyRange: usize,
+    #[cfg(feature = "Win32_Graphics_Direct3D9")]
+    pub CreateVideoProcessor: unsafe extern "system" fn(this: *mut *mut Self, videoprocdeviceguid: *const ::windows_sys::core::GUID, pvideodesc: *const DXVA2_VideoDesc, rendertargetformat: super::super::Graphics::Direct3D9::D3DFORMAT, maxnumsubstreams: u32, ppvidprocess: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Direct3D9"))]
+    CreateVideoProcessor: usize,
+}
+#[repr(C)]
+pub struct IEVRFilterConfig {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetNumberOfStreams: unsafe extern "system" fn(this: *mut *mut Self, dwmaxstreams: u32) -> ::windows_sys::core::HRESULT,
+    pub GetNumberOfStreams: unsafe extern "system" fn(this: *mut *mut Self, pdwmaxstreams: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IEVRFilterConfigEx {
+    pub base__: IEVRFilterConfig,
+    pub SetConfigPrefs: unsafe extern "system" fn(this: *mut *mut Self, dwconfigflags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetConfigPrefs: unsafe extern "system" fn(this: *mut *mut Self, pdwconfigflags: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IEVRTrustedVideoPlugin {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsInTrustedVideoMode: unsafe extern "system" fn(this: *mut *mut Self, pyes: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsInTrustedVideoMode: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CanConstrict: unsafe extern "system" fn(this: *mut *mut Self, pyes: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CanConstrict: usize,
+    pub SetConstriction: unsafe extern "system" fn(this: *mut *mut Self, dwkpix: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DisableImageExport: unsafe extern "system" fn(this: *mut *mut Self, bdisable: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DisableImageExport: usize,
+}
+#[repr(C)]
+pub struct IEVRVideoStreamControl {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetStreamActiveState: unsafe extern "system" fn(this: *mut *mut Self, factive: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetStreamActiveState: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetStreamActiveState: unsafe extern "system" fn(this: *mut *mut Self, lpfactive: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetStreamActiveState: usize,
+}
+#[repr(C)]
+pub struct IFileClient {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetObjectDiskSize: unsafe extern "system" fn(this: *mut *mut Self, pqwsize: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub Write: unsafe extern "system" fn(this: *mut *mut Self, pfio: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Read: unsafe extern "system" fn(this: *mut *mut Self, pfio: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IFileIo {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, eaccessmode: FILE_ACCESSMODE, eopenmode: FILE_OPENMODE, pwszfilename: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetLength: unsafe extern "system" fn(this: *mut *mut Self, pqwlength: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub SetLength: unsafe extern "system" fn(this: *mut *mut Self, qwlength: u64) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentPosition: unsafe extern "system" fn(this: *mut *mut Self, pqwposition: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub SetCurrentPosition: unsafe extern "system" fn(this: *mut *mut Self, qwposition: u64) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsEndOfStream: unsafe extern "system" fn(this: *mut *mut Self, pbendofstream: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsEndOfStream: usize,
+    pub Read: unsafe extern "system" fn(this: *mut *mut Self, pbt: *mut u8, ul: u32, pulread: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Write: unsafe extern "system" fn(this: *mut *mut Self, pbt: *mut u8, ul: u32, pulwritten: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Seek: unsafe extern "system" fn(this: *mut *mut Self, eseekorigin: SEEK_ORIGIN, qwseekoffset: u64, dwseekflags: u32, pqwcurrentposition: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMF2DBuffer {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Lock2D: unsafe extern "system" fn(this: *mut *mut Self, ppbscanline0: *mut *mut u8, plpitch: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub Unlock2D: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetScanline0AndPitch: unsafe extern "system" fn(this: *mut *mut Self, pbscanline0: *mut *mut u8, plpitch: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsContiguousFormat: unsafe extern "system" fn(this: *mut *mut Self, pfiscontiguous: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsContiguousFormat: usize,
+    pub GetContiguousLength: unsafe extern "system" fn(this: *mut *mut Self, pcblength: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub ContiguousCopyTo: unsafe extern "system" fn(this: *mut *mut Self, pbdestbuffer: *mut u8, cbdestbuffer: u32) -> ::windows_sys::core::HRESULT,
+    pub ContiguousCopyFrom: unsafe extern "system" fn(this: *mut *mut Self, pbsrcbuffer: *const u8, cbsrcbuffer: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMF2DBuffer2 {
+    pub base__: IMF2DBuffer,
+    pub Lock2DSize: unsafe extern "system" fn(this: *mut *mut Self, lockflags: MF2DBuffer_LockFlags, ppbscanline0: *mut *mut u8, plpitch: *mut i32, ppbbufferstart: *mut *mut u8, pcbbufferlength: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Copy2DTo: unsafe extern "system" fn(this: *mut *mut Self, pdestbuffer: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFASFContentInfo {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetHeaderSize: unsafe extern "system" fn(this: *mut *mut Self, pistartofcontent: *mut ::core::ffi::c_void, cbheadersize: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub ParseHeader: unsafe extern "system" fn(this: *mut *mut Self, piheaderbuffer: *mut ::core::ffi::c_void, cboffsetwithinheader: u64) -> ::windows_sys::core::HRESULT,
+    pub GenerateHeader: unsafe extern "system" fn(this: *mut *mut Self, piheader: *mut ::core::ffi::c_void, pcbheader: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetProfile: unsafe extern "system" fn(this: *mut *mut Self, ppiprofile: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetProfile: unsafe extern "system" fn(this: *mut *mut Self, piprofile: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GeneratePresentationDescriptor: unsafe extern "system" fn(this: *mut *mut Self, ppipresentationdescriptor: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub GetEncodingConfigurationPropertyStore: unsafe extern "system" fn(this: *mut *mut Self, wstreamnumber: u16, ppistore: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    GetEncodingConfigurationPropertyStore: usize,
+}
+#[repr(C)]
+pub struct IMFASFIndexer {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetFlags: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetFlags: unsafe extern "system" fn(this: *mut *mut Self, pdwflags: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, picontentinfo: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetIndexPosition: unsafe extern "system" fn(this: *mut *mut Self, picontentinfo: *mut ::core::ffi::c_void, pcbindexoffset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub SetIndexByteStreams: unsafe extern "system" fn(this: *mut *mut Self, ppibytestreams: *const *mut ::core::ffi::c_void, cbytestreams: u32) -> ::windows_sys::core::HRESULT,
+    pub GetIndexByteStreamCount: unsafe extern "system" fn(this: *mut *mut Self, pcbytestreams: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetIndexStatus: unsafe extern "system" fn(this: *mut *mut Self, pindexidentifier: *const ASF_INDEX_IDENTIFIER, pfisindexed: *mut super::super::Foundation::BOOL, pbindexdescriptor: *mut u8, pcbindexdescriptor: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetIndexStatus: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetIndexStatus: unsafe extern "system" fn(this: *mut *mut Self, pbindexdescriptor: *const u8, cbindexdescriptor: u32, fgenerateindex: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetIndexStatus: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    pub GetSeekPositionForValue: unsafe extern "system" fn(this: *mut *mut Self, pvarvalue: *const super::super::System::Com::StructuredStorage::PROPVARIANT, pindexidentifier: *const ASF_INDEX_IDENTIFIER, pcboffsetwithindata: *mut u64, phnsapproxtime: *mut i64, pdwpayloadnumberofstreamwithinpacket: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    GetSeekPositionForValue: usize,
+    pub GenerateIndexEntries: unsafe extern "system" fn(this: *mut *mut Self, piasfpacketsample: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CommitIndex: unsafe extern "system" fn(this: *mut *mut Self, picontentinfo: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetIndexWriteSpace: unsafe extern "system" fn(this: *mut *mut Self, pcbindexwritespace: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetCompletedIndex: unsafe extern "system" fn(this: *mut *mut Self, piindexbuffer: *mut ::core::ffi::c_void, cboffsetwithinindex: u64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFASFMultiplexer {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, picontentinfo: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetFlags: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetFlags: unsafe extern "system" fn(this: *mut *mut Self, pdwflags: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub ProcessSample: unsafe extern "system" fn(this: *mut *mut Self, wstreamnumber: u16, pisample: *mut ::core::ffi::c_void, hnstimestampadjust: i64) -> ::windows_sys::core::HRESULT,
+    pub GetNextPacket: unsafe extern "system" fn(this: *mut *mut Self, pdwstatusflags: *mut u32, ppipacket: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Flush: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub End: unsafe extern "system" fn(this: *mut *mut Self, picontentinfo: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetStatistics: unsafe extern "system" fn(this: *mut *mut Self, wstreamnumber: u16, pmuxstats: *mut ASF_MUX_STATISTICS) -> ::windows_sys::core::HRESULT,
+    pub SetSyncTolerance: unsafe extern "system" fn(this: *mut *mut Self, mssynctolerance: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFASFMutualExclusion {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetType: unsafe extern "system" fn(this: *mut *mut Self, pguidtype: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub SetType: unsafe extern "system" fn(this: *mut *mut Self, guidtype: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub GetRecordCount: unsafe extern "system" fn(this: *mut *mut Self, pdwrecordcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetStreamsForRecord: unsafe extern "system" fn(this: *mut *mut Self, dwrecordnumber: u32, pwstreamnumarray: *mut u16, pcstreams: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub AddStreamForRecord: unsafe extern "system" fn(this: *mut *mut Self, dwrecordnumber: u32, wstreamnumber: u16) -> ::windows_sys::core::HRESULT,
+    pub RemoveStreamFromRecord: unsafe extern "system" fn(this: *mut *mut Self, dwrecordnumber: u32, wstreamnumber: u16) -> ::windows_sys::core::HRESULT,
+    pub RemoveRecord: unsafe extern "system" fn(this: *mut *mut Self, dwrecordnumber: u32) -> ::windows_sys::core::HRESULT,
+    pub AddRecord: unsafe extern "system" fn(this: *mut *mut Self, pdwrecordnumber: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppimutex: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFASFProfile {
+    pub base__: IMFAttributes,
+    pub GetStreamCount: unsafe extern "system" fn(this: *mut *mut Self, pcstreams: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetStream: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32, pwstreamnumber: *mut u16, ppistream: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetStreamByNumber: unsafe extern "system" fn(this: *mut *mut Self, wstreamnumber: u16, ppistream: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetStream: unsafe extern "system" fn(this: *mut *mut Self, pistream: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RemoveStream: unsafe extern "system" fn(this: *mut *mut Self, wstreamnumber: u16) -> ::windows_sys::core::HRESULT,
+    pub CreateStream: unsafe extern "system" fn(this: *mut *mut Self, pimediatype: *mut ::core::ffi::c_void, ppistream: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetMutualExclusionCount: unsafe extern "system" fn(this: *mut *mut Self, pcmutexs: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetMutualExclusion: unsafe extern "system" fn(this: *mut *mut Self, dwmutexindex: u32, ppimutex: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AddMutualExclusion: unsafe extern "system" fn(this: *mut *mut Self, pimutex: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RemoveMutualExclusion: unsafe extern "system" fn(this: *mut *mut Self, dwmutexindex: u32) -> ::windows_sys::core::HRESULT,
+    pub CreateMutualExclusion: unsafe extern "system" fn(this: *mut *mut Self, ppimutex: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetStreamPrioritization: unsafe extern "system" fn(this: *mut *mut Self, ppistreamprioritization: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AddStreamPrioritization: unsafe extern "system" fn(this: *mut *mut Self, pistreamprioritization: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RemoveStreamPrioritization: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub CreateStreamPrioritization: unsafe extern "system" fn(this: *mut *mut Self, ppistreamprioritization: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppiprofile: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFASFSplitter {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, picontentinfo: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetFlags: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetFlags: unsafe extern "system" fn(this: *mut *mut Self, pdwflags: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SelectStreams: unsafe extern "system" fn(this: *mut *mut Self, pwstreamnumbers: *const u16, wnumstreams: u16) -> ::windows_sys::core::HRESULT,
+    pub GetSelectedStreams: unsafe extern "system" fn(this: *mut *mut Self, pwstreamnumbers: *mut u16, pwnumstreams: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub ParseData: unsafe extern "system" fn(this: *mut *mut Self, pibuffer: *mut ::core::ffi::c_void, cbbufferoffset: u32, cblength: u32) -> ::windows_sys::core::HRESULT,
+    pub GetNextSample: unsafe extern "system" fn(this: *mut *mut Self, pdwstatusflags: *mut ASF_STATUSFLAGS, pwstreamnumber: *mut u16, ppisample: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Flush: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetLastSendTime: unsafe extern "system" fn(this: *mut *mut Self, pdwlastsendtime: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFASFStreamConfig {
+    pub base__: IMFAttributes,
+    pub GetStreamType: unsafe extern "system" fn(this: *mut *mut Self, pguidstreamtype: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub GetStreamNumber: unsafe extern "system" fn(this: *mut *mut Self) -> u16,
+    pub SetStreamNumber: unsafe extern "system" fn(this: *mut *mut Self, wstreamnum: u16) -> ::windows_sys::core::HRESULT,
+    pub GetMediaType: unsafe extern "system" fn(this: *mut *mut Self, ppimediatype: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetMediaType: unsafe extern "system" fn(this: *mut *mut Self, pimediatype: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetPayloadExtensionCount: unsafe extern "system" fn(this: *mut *mut Self, pcpayloadextensions: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub GetPayloadExtension: unsafe extern "system" fn(this: *mut *mut Self, wpayloadextensionnumber: u16, pguidextensionsystemid: *mut ::windows_sys::core::GUID, pcbextensiondatasize: *mut u16, pbextensionsysteminfo: *mut u8, pcbextensionsysteminfo: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub AddPayloadExtension: unsafe extern "system" fn(this: *mut *mut Self, guidextensionsystemid: ::windows_sys::core::GUID, cbextensiondatasize: u16, pbextensionsysteminfo: *const u8, cbextensionsysteminfo: u32) -> ::windows_sys::core::HRESULT,
+    pub RemoveAllPayloadExtensions: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppistreamconfig: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFASFStreamPrioritization {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetStreamCount: unsafe extern "system" fn(this: *mut *mut Self, pdwstreamcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetStream: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32, pwstreamnumber: *mut u16, pwstreamflags: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub AddStream: unsafe extern "system" fn(this: *mut *mut Self, wstreamnumber: u16, wstreamflags: u16) -> ::windows_sys::core::HRESULT,
+    pub RemoveStream: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppistreamprioritization: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFASFStreamSelector {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetStreamCount: unsafe extern "system" fn(this: *mut *mut Self, pcstreams: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetOutputCount: unsafe extern "system" fn(this: *mut *mut Self, pcoutputs: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetOutputStreamCount: unsafe extern "system" fn(this: *mut *mut Self, dwoutputnum: u32, pcstreams: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetOutputStreamNumbers: unsafe extern "system" fn(this: *mut *mut Self, dwoutputnum: u32, rgwstreamnumbers: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub GetOutputFromStream: unsafe extern "system" fn(this: *mut *mut Self, wstreamnum: u16, pdwoutput: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetOutputOverride: unsafe extern "system" fn(this: *mut *mut Self, dwoutputnum: u32, pselection: *mut ASF_SELECTION_STATUS) -> ::windows_sys::core::HRESULT,
+    pub SetOutputOverride: unsafe extern "system" fn(this: *mut *mut Self, dwoutputnum: u32, selection: ASF_SELECTION_STATUS) -> ::windows_sys::core::HRESULT,
+    pub GetOutputMutexCount: unsafe extern "system" fn(this: *mut *mut Self, dwoutputnum: u32, pcmutexes: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetOutputMutex: unsafe extern "system" fn(this: *mut *mut Self, dwoutputnum: u32, dwmutexnum: u32, ppmutex: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetOutputMutexSelection: unsafe extern "system" fn(this: *mut *mut Self, dwoutputnum: u32, dwmutexnum: u32, wselectedrecord: u16) -> ::windows_sys::core::HRESULT,
+    pub GetBandwidthStepCount: unsafe extern "system" fn(this: *mut *mut Self, pcstepcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetBandwidthStep: unsafe extern "system" fn(this: *mut *mut Self, dwstepnum: u32, pdwbitrate: *mut u32, rgwstreamnumbers: *mut u16, rgselections: *mut ASF_SELECTION_STATUS) -> ::windows_sys::core::HRESULT,
+    pub BitrateToStepNumber: unsafe extern "system" fn(this: *mut *mut Self, dwbitrate: u32, pdwstepnum: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetStreamSelectorFlags: unsafe extern "system" fn(this: *mut *mut Self, dwstreamselectorflags: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFActivate {
+    pub base__: IMFAttributes,
+    pub ActivateObject: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ShutdownObject: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub DetachObject: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFAsyncCallback {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetParameters: unsafe extern "system" fn(this: *mut *mut Self, pdwflags: *mut u32, pdwqueue: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Invoke: unsafe extern "system" fn(this: *mut *mut Self, pasyncresult: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFAsyncCallbackLogging {
+    pub base__: IMFAsyncCallback,
+    pub GetObjectPointer: unsafe extern "system" fn(this: *mut *mut Self) -> *mut ::core::ffi::c_void,
+    pub GetObjectTag: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
+}
+#[repr(C)]
+pub struct IMFAsyncResult {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetState: unsafe extern "system" fn(this: *mut *mut Self, ppunkstate: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetStatus: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub SetStatus: unsafe extern "system" fn(this: *mut *mut Self, hrstatus: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+    pub GetObject: unsafe extern "system" fn(this: *mut *mut Self, ppobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetStateNoAddRef: unsafe extern "system" fn(this: *mut *mut Self) -> *mut *mut ::windows_sys::core::IUnknown,
+}
+#[repr(C)]
+pub struct IMFAttributes {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    pub GetItem: unsafe extern "system" fn(this: *mut *mut Self, guidkey: *const ::windows_sys::core::GUID, pvalue: *mut super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    GetItem: usize,
+    pub GetItemType: unsafe extern "system" fn(this: *mut *mut Self, guidkey: *const ::windows_sys::core::GUID, ptype: *mut MF_ATTRIBUTE_TYPE) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    pub CompareItem: unsafe extern "system" fn(this: *mut *mut Self, guidkey: *const ::windows_sys::core::GUID, value: *const super::super::System::Com::StructuredStorage::PROPVARIANT, pbresult: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    CompareItem: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Compare: unsafe extern "system" fn(this: *mut *mut Self, ptheirs: *mut ::core::ffi::c_void, matchtype: MF_ATTRIBUTES_MATCH_TYPE, pbresult: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Compare: usize,
+    pub GetUINT32: unsafe extern "system" fn(this: *mut *mut Self, guidkey: *const ::windows_sys::core::GUID, punvalue: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetUINT64: unsafe extern "system" fn(this: *mut *mut Self, guidkey: *const ::windows_sys::core::GUID, punvalue: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetDouble: unsafe extern "system" fn(this: *mut *mut Self, guidkey: *const ::windows_sys::core::GUID, pfvalue: *mut f64) -> ::windows_sys::core::HRESULT,
+    pub GetGUID: unsafe extern "system" fn(this: *mut *mut Self, guidkey: *const ::windows_sys::core::GUID, pguidvalue: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub GetStringLength: unsafe extern "system" fn(this: *mut *mut Self, guidkey: *const ::windows_sys::core::GUID, pcchlength: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetString: unsafe extern "system" fn(this: *mut *mut Self, guidkey: *const ::windows_sys::core::GUID, pwszvalue: ::windows_sys::core::PWSTR, cchbufsize: u32, pcchlength: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetAllocatedString: unsafe extern "system" fn(this: *mut *mut Self, guidkey: *const ::windows_sys::core::GUID, ppwszvalue: *mut ::windows_sys::core::PWSTR, pcchlength: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetBlobSize: unsafe extern "system" fn(this: *mut *mut Self, guidkey: *const ::windows_sys::core::GUID, pcbblobsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetBlob: unsafe extern "system" fn(this: *mut *mut Self, guidkey: *const ::windows_sys::core::GUID, pbuf: *mut u8, cbbufsize: u32, pcbblobsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetAllocatedBlob: unsafe extern "system" fn(this: *mut *mut Self, guidkey: *const ::windows_sys::core::GUID, ppbuf: *mut *mut u8, pcbsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetUnknown: unsafe extern "system" fn(this: *mut *mut Self, guidkey: *const ::windows_sys::core::GUID, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    pub SetItem: unsafe extern "system" fn(this: *mut *mut Self, guidkey: *const ::windows_sys::core::GUID, value: *const super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    SetItem: usize,
+    pub DeleteItem: unsafe extern "system" fn(this: *mut *mut Self, guidkey: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub DeleteAllItems: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub SetUINT32: unsafe extern "system" fn(this: *mut *mut Self, guidkey: *const ::windows_sys::core::GUID, unvalue: u32) -> ::windows_sys::core::HRESULT,
+    pub SetUINT64: unsafe extern "system" fn(this: *mut *mut Self, guidkey: *const ::windows_sys::core::GUID, unvalue: u64) -> ::windows_sys::core::HRESULT,
+    pub SetDouble: unsafe extern "system" fn(this: *mut *mut Self, guidkey: *const ::windows_sys::core::GUID, fvalue: f64) -> ::windows_sys::core::HRESULT,
+    pub SetGUID: unsafe extern "system" fn(this: *mut *mut Self, guidkey: *const ::windows_sys::core::GUID, guidvalue: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub SetString: unsafe extern "system" fn(this: *mut *mut Self, guidkey: *const ::windows_sys::core::GUID, wszvalue: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetBlob: unsafe extern "system" fn(this: *mut *mut Self, guidkey: *const ::windows_sys::core::GUID, pbuf: *const u8, cbbufsize: u32) -> ::windows_sys::core::HRESULT,
+    pub SetUnknown: unsafe extern "system" fn(this: *mut *mut Self, guidkey: *const ::windows_sys::core::GUID, punknown: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub LockStore: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub UnlockStore: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, pcitems: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    pub GetItemByIndex: unsafe extern "system" fn(this: *mut *mut Self, unindex: u32, pguidkey: *mut ::windows_sys::core::GUID, pvalue: *mut super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    GetItemByIndex: usize,
+    pub CopyAllItems: unsafe extern "system" fn(this: *mut *mut Self, pdest: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFAudioMediaType {
+    pub base__: IMFMediaType,
+    #[cfg(feature = "Win32_Media_Audio")]
+    pub GetAudioFormat: unsafe extern "system" fn(this: *mut *mut Self) -> *mut super::Audio::WAVEFORMATEX,
+    #[cfg(not(feature = "Win32_Media_Audio"))]
+    GetAudioFormat: usize,
+}
+#[repr(C)]
+pub struct IMFAudioPolicy {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetGroupingParam: unsafe extern "system" fn(this: *mut *mut Self, rguidclass: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub GetGroupingParam: unsafe extern "system" fn(this: *mut *mut Self, pguidclass: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub SetDisplayName: unsafe extern "system" fn(this: *mut *mut Self, pszname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetDisplayName: unsafe extern "system" fn(this: *mut *mut Self, pszname: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetIconPath: unsafe extern "system" fn(this: *mut *mut Self, pszpath: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetIconPath: unsafe extern "system" fn(this: *mut *mut Self, pszpath: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFAudioStreamVolume {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetChannelCount: unsafe extern "system" fn(this: *mut *mut Self, pdwcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetChannelVolume: unsafe extern "system" fn(this: *mut *mut Self, dwindex: u32, flevel: f32) -> ::windows_sys::core::HRESULT,
+    pub GetChannelVolume: unsafe extern "system" fn(this: *mut *mut Self, dwindex: u32, pflevel: *mut f32) -> ::windows_sys::core::HRESULT,
+    pub SetAllVolumes: unsafe extern "system" fn(this: *mut *mut Self, dwcount: u32, pfvolumes: *const f32) -> ::windows_sys::core::HRESULT,
+    pub GetAllVolumes: unsafe extern "system" fn(this: *mut *mut Self, dwcount: u32, pfvolumes: *mut f32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFBufferListNotify {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnAddSourceBuffer: unsafe extern "system" fn(this: *mut *mut Self),
+    pub OnRemoveSourceBuffer: unsafe extern "system" fn(this: *mut *mut Self),
+}
+#[repr(C)]
+pub struct IMFByteStream {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCapabilities: unsafe extern "system" fn(this: *mut *mut Self, pdwcapabilities: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetLength: unsafe extern "system" fn(this: *mut *mut Self, pqwlength: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub SetLength: unsafe extern "system" fn(this: *mut *mut Self, qwlength: u64) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentPosition: unsafe extern "system" fn(this: *mut *mut Self, pqwposition: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub SetCurrentPosition: unsafe extern "system" fn(this: *mut *mut Self, qwposition: u64) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsEndOfStream: unsafe extern "system" fn(this: *mut *mut Self, pfendofstream: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsEndOfStream: usize,
+    pub Read: unsafe extern "system" fn(this: *mut *mut Self, pb: *mut u8, cb: u32, pcbread: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub BeginRead: unsafe extern "system" fn(this: *mut *mut Self, pb: *mut u8, cb: u32, pcallback: *mut ::core::ffi::c_void, punkstate: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EndRead: unsafe extern "system" fn(this: *mut *mut Self, presult: *mut ::core::ffi::c_void, pcbread: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Write: unsafe extern "system" fn(this: *mut *mut Self, pb: *const u8, cb: u32, pcbwritten: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub BeginWrite: unsafe extern "system" fn(this: *mut *mut Self, pb: *const u8, cb: u32, pcallback: *mut ::core::ffi::c_void, punkstate: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EndWrite: unsafe extern "system" fn(this: *mut *mut Self, presult: *mut ::core::ffi::c_void, pcbwritten: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Seek: unsafe extern "system" fn(this: *mut *mut Self, seekorigin: MFBYTESTREAM_SEEK_ORIGIN, llseekoffset: i64, dwseekflags: u32, pqwcurrentposition: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub Flush: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFByteStreamBuffering {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetBufferingParams: unsafe extern "system" fn(this: *mut *mut Self, pparams: *const MFBYTESTREAM_BUFFERING_PARAMS) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub EnableBuffering: unsafe extern "system" fn(this: *mut *mut Self, fenable: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    EnableBuffering: usize,
+    pub StopBuffering: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFByteStreamCacheControl {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub StopBackgroundTransfer: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFByteStreamCacheControl2 {
+    pub base__: IMFByteStreamCacheControl,
+    pub GetByteRanges: unsafe extern "system" fn(this: *mut *mut Self, pcranges: *mut u32, ppranges: *mut *mut MF_BYTE_STREAM_CACHE_RANGE) -> ::windows_sys::core::HRESULT,
+    pub SetCacheLimit: unsafe extern "system" fn(this: *mut *mut Self, qwbytes: u64) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsBackgroundTransferActive: unsafe extern "system" fn(this: *mut *mut Self, pfactive: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsBackgroundTransferActive: usize,
+}
+#[repr(C)]
+pub struct IMFByteStreamHandler {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub BeginCreateObject: unsafe extern "system" fn(this: *mut *mut Self, pbytestream: *mut ::core::ffi::c_void, pwszurl: ::windows_sys::core::PCWSTR, dwflags: u32, pprops: *mut ::core::ffi::c_void, ppiunknowncancelcookie: *mut *mut ::core::ffi::c_void, pcallback: *mut ::core::ffi::c_void, punkstate: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    BeginCreateObject: usize,
+    pub EndCreateObject: unsafe extern "system" fn(this: *mut *mut Self, presult: *mut ::core::ffi::c_void, pobjecttype: *mut MF_OBJECT_TYPE, ppobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CancelObjectCreation: unsafe extern "system" fn(this: *mut *mut Self, piunknowncancelcookie: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetMaxNumberOfBytesRequiredForResolution: unsafe extern "system" fn(this: *mut *mut Self, pqwbytes: *mut u64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFByteStreamProxyClassFactory {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub CreateByteStreamProxy: unsafe extern "system" fn(this: *mut *mut Self, pbytestream: *mut ::core::ffi::c_void, pattributes: *mut ::core::ffi::c_void, riid: *const ::windows_sys::core::GUID, ppvobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFByteStreamTimeSeek {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsTimeSeekSupported: unsafe extern "system" fn(this: *mut *mut Self, pftimeseekissupported: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsTimeSeekSupported: usize,
+    pub TimeSeek: unsafe extern "system" fn(this: *mut *mut Self, qwtimeposition: u64) -> ::windows_sys::core::HRESULT,
+    pub GetTimeSeekResult: unsafe extern "system" fn(this: *mut *mut Self, pqwstarttime: *mut u64, pqwstoptime: *mut u64, pqwduration: *mut u64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFCameraOcclusionStateMonitor {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Start: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Stop: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetSupportedStates: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
+}
+#[repr(C)]
+pub struct IMFCameraOcclusionStateReport {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetOcclusionState: unsafe extern "system" fn(this: *mut *mut Self, occlusionstate: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFCameraOcclusionStateReportCallback {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnOcclusionStateReport: unsafe extern "system" fn(this: *mut *mut Self, occlusionstatereport: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFCameraSyncObject {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub WaitOnSignal: unsafe extern "system" fn(this: *mut *mut Self, timeoutinms: u32) -> ::windows_sys::core::HRESULT,
+    pub Shutdown: unsafe extern "system" fn(this: *mut *mut Self),
+}
+#[repr(C)]
+pub struct IMFCaptureEngine {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, peventcallback: *mut ::core::ffi::c_void, pattributes: *mut ::core::ffi::c_void, paudiosource: *mut ::core::ffi::c_void, pvideosource: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub StartPreview: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub StopPreview: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub StartRecord: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub StopRecord: unsafe extern "system" fn(this: *mut *mut Self, bfinalize: super::super::Foundation::BOOL, bflushunprocessedsamples: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    StopRecord: usize,
+    pub TakePhoto: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetSink: unsafe extern "system" fn(this: *mut *mut Self, mfcaptureenginesinktype: MF_CAPTURE_ENGINE_SINK_TYPE, ppsink: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetSource: unsafe extern "system" fn(this: *mut *mut Self, ppsource: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFCaptureEngineClassFactory {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub CreateInstance: unsafe extern "system" fn(this: *mut *mut Self, clsid: *const ::windows_sys::core::GUID, riid: *const ::windows_sys::core::GUID, ppvobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFCaptureEngineOnEventCallback {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnEvent: unsafe extern "system" fn(this: *mut *mut Self, pevent: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFCaptureEngineOnSampleCallback {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnSample: unsafe extern "system" fn(this: *mut *mut Self, psample: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFCaptureEngineOnSampleCallback2 {
+    pub base__: IMFCaptureEngineOnSampleCallback,
+    pub OnSynchronizedEvent: unsafe extern "system" fn(this: *mut *mut Self, pevent: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFCapturePhotoConfirmation {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetPhotoConfirmationCallback: unsafe extern "system" fn(this: *mut *mut Self, pnotificationcallback: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetPixelFormat: unsafe extern "system" fn(this: *mut *mut Self, subtype: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub GetPixelFormat: unsafe extern "system" fn(this: *mut *mut Self, subtype: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFCapturePhotoSink {
+    pub base__: IMFCaptureSink,
+    pub SetOutputFileName: unsafe extern "system" fn(this: *mut *mut Self, filename: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetSampleCallback: unsafe extern "system" fn(this: *mut *mut Self, pcallback: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetOutputByteStream: unsafe extern "system" fn(this: *mut *mut Self, pbytestream: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFCapturePreviewSink {
+    pub base__: IMFCaptureSink,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetRenderHandle: unsafe extern "system" fn(this: *mut *mut Self, handle: super::super::Foundation::HANDLE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetRenderHandle: usize,
+    pub SetRenderSurface: unsafe extern "system" fn(this: *mut *mut Self, psurface: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub UpdateVideo: unsafe extern "system" fn(this: *mut *mut Self, psrc: *const MFVideoNormalizedRect, pdst: *const super::super::Foundation::RECT, pborderclr: *const u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    UpdateVideo: usize,
+    pub SetSampleCallback: unsafe extern "system" fn(this: *mut *mut Self, dwstreamsinkindex: u32, pcallback: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetMirrorState: unsafe extern "system" fn(this: *mut *mut Self, pfmirrorstate: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetMirrorState: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetMirrorState: unsafe extern "system" fn(this: *mut *mut Self, fmirrorstate: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetMirrorState: usize,
+    pub GetRotation: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32, pdwrotationvalue: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetRotation: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32, dwrotationvalue: u32) -> ::windows_sys::core::HRESULT,
+    pub SetCustomSink: unsafe extern "system" fn(this: *mut *mut Self, pmediasink: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFCaptureRecordSink {
+    pub base__: IMFCaptureSink,
+    pub SetOutputByteStream: unsafe extern "system" fn(this: *mut *mut Self, pbytestream: *mut ::core::ffi::c_void, guidcontainertype: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub SetOutputFileName: unsafe extern "system" fn(this: *mut *mut Self, filename: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetSampleCallback: unsafe extern "system" fn(this: *mut *mut Self, dwstreamsinkindex: u32, pcallback: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetCustomSink: unsafe extern "system" fn(this: *mut *mut Self, pmediasink: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetRotation: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32, pdwrotationvalue: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetRotation: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32, dwrotationvalue: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFCaptureSink {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetOutputMediaType: unsafe extern "system" fn(this: *mut *mut Self, dwsinkstreamindex: u32, ppmediatype: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetService: unsafe extern "system" fn(this: *mut *mut Self, dwsinkstreamindex: u32, rguidservice: *const ::windows_sys::core::GUID, riid: *const ::windows_sys::core::GUID, ppunknown: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AddStream: unsafe extern "system" fn(this: *mut *mut Self, dwsourcestreamindex: u32, pmediatype: *mut ::core::ffi::c_void, pattributes: *mut ::core::ffi::c_void, pdwsinkstreamindex: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Prepare: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub RemoveAllStreams: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFCaptureSink2 {
+    pub base__: IMFCaptureSink,
+    pub SetOutputMediaType: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32, pmediatype: *mut ::core::ffi::c_void, pencodingattributes: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFCaptureSource {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCaptureDeviceSource: unsafe extern "system" fn(this: *mut *mut Self, mfcaptureenginedevicetype: MF_CAPTURE_ENGINE_DEVICE_TYPE, ppmediasource: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetCaptureDeviceActivate: unsafe extern "system" fn(this: *mut *mut Self, mfcaptureenginedevicetype: MF_CAPTURE_ENGINE_DEVICE_TYPE, ppactivate: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetService: unsafe extern "system" fn(this: *mut *mut Self, rguidservice: *const ::windows_sys::core::GUID, riid: *const ::windows_sys::core::GUID, ppunknown: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AddEffect: unsafe extern "system" fn(this: *mut *mut Self, dwsourcestreamindex: u32, punknown: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RemoveEffect: unsafe extern "system" fn(this: *mut *mut Self, dwsourcestreamindex: u32, punknown: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RemoveAllEffects: unsafe extern "system" fn(this: *mut *mut Self, dwsourcestreamindex: u32) -> ::windows_sys::core::HRESULT,
+    pub GetAvailableDeviceMediaType: unsafe extern "system" fn(this: *mut *mut Self, dwsourcestreamindex: u32, dwmediatypeindex: u32, ppmediatype: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetCurrentDeviceMediaType: unsafe extern "system" fn(this: *mut *mut Self, dwsourcestreamindex: u32, pmediatype: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentDeviceMediaType: unsafe extern "system" fn(this: *mut *mut Self, dwsourcestreamindex: u32, ppmediatype: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetDeviceStreamCount: unsafe extern "system" fn(this: *mut *mut Self, pdwstreamcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetDeviceStreamCategory: unsafe extern "system" fn(this: *mut *mut Self, dwsourcestreamindex: u32, pstreamcategory: *mut MF_CAPTURE_ENGINE_STREAM_CATEGORY) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetMirrorState: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32, pfmirrorstate: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetMirrorState: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetMirrorState: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32, fmirrorstate: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetMirrorState: usize,
+    pub GetStreamIndexFromFriendlyName: unsafe extern "system" fn(this: *mut *mut Self, uifriendlyname: u32, pdwactualstreamindex: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFCdmSuspendNotify {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Begin: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub End: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFClock {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetClockCharacteristics: unsafe extern "system" fn(this: *mut *mut Self, pdwcharacteristics: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCorrelatedTime: unsafe extern "system" fn(this: *mut *mut Self, dwreserved: u32, pllclocktime: *mut i64, phnssystemtime: *mut i64) -> ::windows_sys::core::HRESULT,
+    pub GetContinuityKey: unsafe extern "system" fn(this: *mut *mut Self, pdwcontinuitykey: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetState: unsafe extern "system" fn(this: *mut *mut Self, dwreserved: u32, peclockstate: *mut MFCLOCK_STATE) -> ::windows_sys::core::HRESULT,
+    pub GetProperties: unsafe extern "system" fn(this: *mut *mut Self, pclockproperties: *mut MFCLOCK_PROPERTIES) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFClockConsumer {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetPresentationClock: unsafe extern "system" fn(this: *mut *mut Self, ppresentationclock: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetPresentationClock: unsafe extern "system" fn(this: *mut *mut Self, pppresentationclock: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFClockStateSink {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnClockStart: unsafe extern "system" fn(this: *mut *mut Self, hnssystemtime: i64, llclockstartoffset: i64) -> ::windows_sys::core::HRESULT,
+    pub OnClockStop: unsafe extern "system" fn(this: *mut *mut Self, hnssystemtime: i64) -> ::windows_sys::core::HRESULT,
+    pub OnClockPause: unsafe extern "system" fn(this: *mut *mut Self, hnssystemtime: i64) -> ::windows_sys::core::HRESULT,
+    pub OnClockRestart: unsafe extern "system" fn(this: *mut *mut Self, hnssystemtime: i64) -> ::windows_sys::core::HRESULT,
+    pub OnClockSetRate: unsafe extern "system" fn(this: *mut *mut Self, hnssystemtime: i64, flrate: f32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFCollection {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetElementCount: unsafe extern "system" fn(this: *mut *mut Self, pcelements: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetElement: unsafe extern "system" fn(this: *mut *mut Self, dwelementindex: u32, ppunkelement: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AddElement: unsafe extern "system" fn(this: *mut *mut Self, punkelement: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RemoveElement: unsafe extern "system" fn(this: *mut *mut Self, dwelementindex: u32, ppunkelement: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub InsertElementAt: unsafe extern "system" fn(this: *mut *mut Self, dwindex: u32, punknown: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RemoveAllElements: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFContentDecryptionModule {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetContentEnabler: unsafe extern "system" fn(this: *mut *mut Self, contentenabler: *mut ::core::ffi::c_void, result: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetSuspendNotify: unsafe extern "system" fn(this: *mut *mut Self, notify: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetPMPHostApp: unsafe extern "system" fn(this: *mut *mut Self, pmphostapp: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateSession: unsafe extern "system" fn(this: *mut *mut Self, sessiontype: MF_MEDIAKEYSESSION_TYPE, callbacks: *mut ::core::ffi::c_void, session: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetServerCertificate: unsafe extern "system" fn(this: *mut *mut Self, certificate: *const u8, certificatesize: u32) -> ::windows_sys::core::HRESULT,
+    pub CreateTrustedInput: unsafe extern "system" fn(this: *mut *mut Self, contentinitdata: *const u8, contentinitdatasize: u32, trustedinput: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetProtectionSystemIds: unsafe extern "system" fn(this: *mut *mut Self, systemids: *mut *mut ::windows_sys::core::GUID, count: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFContentDecryptionModuleAccess {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub CreateContentDecryptionModule: unsafe extern "system" fn(this: *mut *mut Self, contentdecryptionmoduleproperties: *mut ::core::ffi::c_void, contentdecryptionmodule: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    CreateContentDecryptionModule: usize,
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub GetConfiguration: unsafe extern "system" fn(this: *mut *mut Self, configuration: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    GetConfiguration: usize,
+    pub GetKeySystem: unsafe extern "system" fn(this: *mut *mut Self, keysystem: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFContentDecryptionModuleFactory {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsTypeSupported: unsafe extern "system" fn(this: *mut *mut Self, keysystem: ::windows_sys::core::PCWSTR, contenttype: ::windows_sys::core::PCWSTR) -> super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsTypeSupported: usize,
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub CreateContentDecryptionModuleAccess: unsafe extern "system" fn(this: *mut *mut Self, keysystem: ::windows_sys::core::PCWSTR, configurations: *const *mut ::core::ffi::c_void, numconfigurations: u32, contentdecryptionmoduleaccess: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    CreateContentDecryptionModuleAccess: usize,
+}
+#[repr(C)]
+pub struct IMFContentDecryptionModuleSession {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetSessionId: unsafe extern "system" fn(this: *mut *mut Self, sessionid: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetExpiration: unsafe extern "system" fn(this: *mut *mut Self, expiration: *mut f64) -> ::windows_sys::core::HRESULT,
+    pub GetKeyStatuses: unsafe extern "system" fn(this: *mut *mut Self, keystatuses: *mut *mut MFMediaKeyStatus, numkeystatuses: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Load: unsafe extern "system" fn(this: *mut *mut Self, sessionid: ::windows_sys::core::PCWSTR, loaded: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Load: usize,
+    pub GenerateRequest: unsafe extern "system" fn(this: *mut *mut Self, initdatatype: ::windows_sys::core::PCWSTR, initdata: *const u8, initdatasize: u32) -> ::windows_sys::core::HRESULT,
+    pub Update: unsafe extern "system" fn(this: *mut *mut Self, response: *const u8, responsesize: u32) -> ::windows_sys::core::HRESULT,
+    pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Remove: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFContentDecryptionModuleSessionCallbacks {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub KeyMessage: unsafe extern "system" fn(this: *mut *mut Self, messagetype: MF_MEDIAKEYSESSION_MESSAGETYPE, message: *const u8, messagesize: u32, destinationurl: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub KeyStatusChanged: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFContentDecryptorContext {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub InitializeHardwareKey: unsafe extern "system" fn(this: *mut *mut Self, inputprivatedatabytecount: u32, inputprivatedata: *const ::core::ffi::c_void, outputprivatedata: *mut u64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFContentEnabler {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetEnableType: unsafe extern "system" fn(this: *mut *mut Self, ptype: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub GetEnableURL: unsafe extern "system" fn(this: *mut *mut Self, ppwszurl: *mut ::windows_sys::core::PWSTR, pcchurl: *mut u32, ptruststatus: *mut MF_URL_TRUST_STATUS) -> ::windows_sys::core::HRESULT,
+    pub GetEnableData: unsafe extern "system" fn(this: *mut *mut Self, ppbdata: *mut *mut u8, pcbdata: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsAutomaticSupported: unsafe extern "system" fn(this: *mut *mut Self, pfautomatic: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsAutomaticSupported: usize,
+    pub AutomaticEnable: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub MonitorEnable: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Cancel: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFContentProtectionDevice {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub InvokeFunction: unsafe extern "system" fn(this: *mut *mut Self, functionid: u32, inputbufferbytecount: u32, inputbuffer: *const u8, outputbufferbytecount: *mut u32, outputbuffer: *mut u8) -> ::windows_sys::core::HRESULT,
+    pub GetPrivateDataByteCount: unsafe extern "system" fn(this: *mut *mut Self, privateinputbytecount: *mut u32, privateoutputbytecount: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFContentProtectionManager {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub BeginEnableContent: unsafe extern "system" fn(this: *mut *mut Self, penableractivate: *mut ::core::ffi::c_void, ptopo: *mut ::core::ffi::c_void, pcallback: *mut ::core::ffi::c_void, punkstate: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EndEnableContent: unsafe extern "system" fn(this: *mut *mut Self, presult: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFD3D12SynchronizationObject {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SignalEventOnFinalResourceRelease: unsafe extern "system" fn(this: *mut *mut Self, hevent: super::super::Foundation::HANDLE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SignalEventOnFinalResourceRelease: usize,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFD3D12SynchronizationObjectCommands {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Graphics_Direct3D12")]
+    pub EnqueueResourceReady: unsafe extern "system" fn(this: *mut *mut Self, pproducercommandqueue: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Direct3D12"))]
+    EnqueueResourceReady: usize,
+    #[cfg(feature = "Win32_Graphics_Direct3D12")]
+    pub EnqueueResourceReadyWait: unsafe extern "system" fn(this: *mut *mut Self, pconsumercommandqueue: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Direct3D12"))]
+    EnqueueResourceReadyWait: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SignalEventOnResourceReady: unsafe extern "system" fn(this: *mut *mut Self, hevent: super::super::Foundation::HANDLE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SignalEventOnResourceReady: usize,
+    #[cfg(feature = "Win32_Graphics_Direct3D12")]
+    pub EnqueueResourceRelease: unsafe extern "system" fn(this: *mut *mut Self, pconsumercommandqueue: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Direct3D12"))]
+    EnqueueResourceRelease: usize,
+}
+#[repr(C)]
+pub struct IMFDLNASinkInit {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, pbytestream: *mut ::core::ffi::c_void, fpal: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Initialize: usize,
+}
+#[repr(C)]
+pub struct IMFDRMNetHelper {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ProcessLicenseRequest: unsafe extern "system" fn(this: *mut *mut Self, plicenserequest: *const u8, cblicenserequest: u32, pplicenseresponse: *mut *mut u8, pcblicenseresponse: *mut u32, pbstrkid: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ProcessLicenseRequest: usize,
+    pub GetChainedLicenseResponse: unsafe extern "system" fn(this: *mut *mut Self, pplicenseresponse: *mut *mut u8, pcblicenseresponse: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFDXGIBuffer {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetResource: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppvobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetSubresourceIndex: unsafe extern "system" fn(this: *mut *mut Self, pusubresource: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetUnknown: unsafe extern "system" fn(this: *mut *mut Self, guid: *const ::windows_sys::core::GUID, riid: *const ::windows_sys::core::GUID, ppvobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetUnknown: unsafe extern "system" fn(this: *mut *mut Self, guid: *const ::windows_sys::core::GUID, punkdata: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFDXGIDeviceManager {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CloseDeviceHandle: unsafe extern "system" fn(this: *mut *mut Self, hdevice: super::super::Foundation::HANDLE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CloseDeviceHandle: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetVideoService: unsafe extern "system" fn(this: *mut *mut Self, hdevice: super::super::Foundation::HANDLE, riid: *const ::windows_sys::core::GUID, ppservice: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetVideoService: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub LockDevice: unsafe extern "system" fn(this: *mut *mut Self, hdevice: super::super::Foundation::HANDLE, riid: *const ::windows_sys::core::GUID, ppunkdevice: *mut *mut ::core::ffi::c_void, fblock: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    LockDevice: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OpenDeviceHandle: unsafe extern "system" fn(this: *mut *mut Self, phdevice: *mut super::super::Foundation::HANDLE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OpenDeviceHandle: usize,
+    pub ResetDevice: unsafe extern "system" fn(this: *mut *mut Self, punkdevice: *mut ::core::ffi::c_void, resettoken: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub TestDevice: unsafe extern "system" fn(this: *mut *mut Self, hdevice: super::super::Foundation::HANDLE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    TestDevice: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub UnlockDevice: unsafe extern "system" fn(this: *mut *mut Self, hdevice: super::super::Foundation::HANDLE, fsavestate: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    UnlockDevice: usize,
+}
+#[repr(C)]
+pub struct IMFDXGIDeviceManagerSource {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetManager: unsafe extern "system" fn(this: *mut *mut Self, ppmanager: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFDesiredSample {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetDesiredSampleTimeAndDuration: unsafe extern "system" fn(this: *mut *mut Self, phnssampletime: *mut i64, phnssampleduration: *mut i64) -> ::windows_sys::core::HRESULT,
+    pub SetDesiredSampleTimeAndDuration: unsafe extern "system" fn(this: *mut *mut Self, hnssampletime: i64, hnssampleduration: i64),
+    pub Clear: unsafe extern "system" fn(this: *mut *mut Self),
+}
+#[repr(C)]
+pub struct IMFDeviceTransform {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub InitializeTransform: unsafe extern "system" fn(this: *mut *mut Self, pattributes: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetInputAvailableType: unsafe extern "system" fn(this: *mut *mut Self, dwinputstreamid: u32, dwtypeindex: u32, pmediatype: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetInputCurrentType: unsafe extern "system" fn(this: *mut *mut Self, dwinputstreamid: u32, pmediatype: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetInputStreamAttributes: unsafe extern "system" fn(this: *mut *mut Self, dwinputstreamid: u32, ppattributes: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetOutputAvailableType: unsafe extern "system" fn(this: *mut *mut Self, dwoutputstreamid: u32, dwtypeindex: u32, pmediatype: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetOutputCurrentType: unsafe extern "system" fn(this: *mut *mut Self, dwoutputstreamid: u32, pmediatype: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetOutputStreamAttributes: unsafe extern "system" fn(this: *mut *mut Self, dwoutputstreamid: u32, ppattributes: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetStreamCount: unsafe extern "system" fn(this: *mut *mut Self, pcinputstreams: *mut u32, pcoutputstreams: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetStreamIDs: unsafe extern "system" fn(this: *mut *mut Self, dwinputidarraysize: u32, pdwinputstreamids: *mut u32, dwoutputidarraysize: u32, pdwoutputstreamids: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub ProcessEvent: unsafe extern "system" fn(this: *mut *mut Self, dwinputstreamid: u32, pevent: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ProcessInput: unsafe extern "system" fn(this: *mut *mut Self, dwinputstreamid: u32, psample: *mut ::core::ffi::c_void, dwflags: u32) -> ::windows_sys::core::HRESULT,
+    pub ProcessMessage: unsafe extern "system" fn(this: *mut *mut Self, emessage: MFT_MESSAGE_TYPE, ulparam: usize) -> ::windows_sys::core::HRESULT,
+    pub ProcessOutput: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, coutputbuffercount: u32, poutputsample: *mut MFT_OUTPUT_DATA_BUFFER, pdwstatus: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetInputStreamState: unsafe extern "system" fn(this: *mut *mut Self, dwstreamid: u32, pmediatype: *mut ::core::ffi::c_void, value: DeviceStreamState, dwflags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetInputStreamState: unsafe extern "system" fn(this: *mut *mut Self, dwstreamid: u32, value: *mut DeviceStreamState) -> ::windows_sys::core::HRESULT,
+    pub SetOutputStreamState: unsafe extern "system" fn(this: *mut *mut Self, dwstreamid: u32, pmediatype: *mut ::core::ffi::c_void, value: DeviceStreamState, dwflags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetOutputStreamState: unsafe extern "system" fn(this: *mut *mut Self, dwstreamid: u32, value: *mut DeviceStreamState) -> ::windows_sys::core::HRESULT,
+    pub GetInputStreamPreferredState: unsafe extern "system" fn(this: *mut *mut Self, dwstreamid: u32, value: *mut DeviceStreamState, ppmediatype: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub FlushInputStream: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32, dwflags: u32) -> ::windows_sys::core::HRESULT,
+    pub FlushOutputStream: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32, dwflags: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFDeviceTransformCallback {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnBufferSent: unsafe extern "system" fn(this: *mut *mut Self, pcallbackattributes: *mut ::core::ffi::c_void, pinid: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFExtendedCameraControl {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCapabilities: unsafe extern "system" fn(this: *mut *mut Self) -> u64,
+    pub SetFlags: unsafe extern "system" fn(this: *mut *mut Self, ulflags: u64) -> ::windows_sys::core::HRESULT,
+    pub GetFlags: unsafe extern "system" fn(this: *mut *mut Self) -> u64,
+    pub LockPayload: unsafe extern "system" fn(this: *mut *mut Self, pppayload: *mut *mut u8, pulpayload: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub UnlockPayload: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub CommitSettings: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFExtendedCameraController {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetExtendedCameraControl: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32, ulpropertyid: u32, ppcontrol: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFExtendedCameraIntrinsicModel {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetModel: unsafe extern "system" fn(this: *mut *mut Self, pintrinsicmodel: *mut MFExtendedCameraIntrinsic_IntrinsicModel) -> ::windows_sys::core::HRESULT,
+    pub SetModel: unsafe extern "system" fn(this: *mut *mut Self, pintrinsicmodel: *const MFExtendedCameraIntrinsic_IntrinsicModel) -> ::windows_sys::core::HRESULT,
+    pub GetDistortionModelType: unsafe extern "system" fn(this: *mut *mut Self, pdistortionmodeltype: *mut MFCameraIntrinsic_DistortionModelType) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFExtendedCameraIntrinsics {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub InitializeFromBuffer: unsafe extern "system" fn(this: *mut *mut Self, pbbuffer: *const u8, dwbuffersize: u32) -> ::windows_sys::core::HRESULT,
+    pub GetBufferSize: unsafe extern "system" fn(this: *mut *mut Self, pdwbuffersize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SerializeToBuffer: unsafe extern "system" fn(this: *mut *mut Self, pbbuffer: *mut u8, pdwbuffersize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetIntrinsicModelCount: unsafe extern "system" fn(this: *mut *mut Self, pdwcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetIntrinsicModelByIndex: unsafe extern "system" fn(this: *mut *mut Self, dwindex: u32, ppintrinsicmodel: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AddIntrinsicModel: unsafe extern "system" fn(this: *mut *mut Self, pintrinsicmodel: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFExtendedCameraIntrinsicsDistortionModel6KT {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetDistortionModel: unsafe extern "system" fn(this: *mut *mut Self, pdistortionmodel: *mut MFCameraIntrinsic_DistortionModel6KT) -> ::windows_sys::core::HRESULT,
+    pub SetDistortionModel: unsafe extern "system" fn(this: *mut *mut Self, pdistortionmodel: *const MFCameraIntrinsic_DistortionModel6KT) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFExtendedCameraIntrinsicsDistortionModelArcTan {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetDistortionModel: unsafe extern "system" fn(this: *mut *mut Self, pdistortionmodel: *mut MFCameraIntrinsic_DistortionModelArcTan) -> ::windows_sys::core::HRESULT,
+    pub SetDistortionModel: unsafe extern "system" fn(this: *mut *mut Self, pdistortionmodel: *const MFCameraIntrinsic_DistortionModelArcTan) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFExtendedDRMTypeSupport {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsTypeSupportedEx: unsafe extern "system" fn(this: *mut *mut Self, r#type: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, keysystem: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, panswer: *mut MF_MEDIA_ENGINE_CANPLAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsTypeSupportedEx: usize,
+}
+#[repr(C)]
+pub struct IMFFieldOfUseMFTUnlock {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Unlock: unsafe extern "system" fn(this: *mut *mut Self, punkmft: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFFinalizableMediaSink {
+    pub base__: IMFMediaSink,
+    pub BeginFinalize: unsafe extern "system" fn(this: *mut *mut Self, pcallback: *mut ::core::ffi::c_void, punkstate: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EndFinalize: unsafe extern "system" fn(this: *mut *mut Self, presult: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFGetService {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetService: unsafe extern "system" fn(this: *mut *mut Self, guidservice: *const ::windows_sys::core::GUID, riid: *const ::windows_sys::core::GUID, ppvobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFHDCPStatus {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Query: unsafe extern "system" fn(this: *mut *mut Self, pstatus: *mut MF_HDCP_STATUS, pfstatus: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Query: usize,
+    pub Set: unsafe extern "system" fn(this: *mut *mut Self, status: MF_HDCP_STATUS) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFHttpDownloadRequest {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub AddHeader: unsafe extern "system" fn(this: *mut *mut Self, szheader: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub BeginSendRequest: unsafe extern "system" fn(this: *mut *mut Self, pbpayload: *const u8, cbpayload: u32, pcallback: *mut ::core::ffi::c_void, punkstate: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EndSendRequest: unsafe extern "system" fn(this: *mut *mut Self, presult: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub BeginReceiveResponse: unsafe extern "system" fn(this: *mut *mut Self, pcallback: *mut ::core::ffi::c_void, punkstate: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EndReceiveResponse: unsafe extern "system" fn(this: *mut *mut Self, presult: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub BeginReadPayload: unsafe extern "system" fn(this: *mut *mut Self, pb: *mut u8, cb: u32, pcallback: *mut ::core::ffi::c_void, punkstate: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EndReadPayload: unsafe extern "system" fn(this: *mut *mut Self, presult: *mut ::core::ffi::c_void, pqwoffset: *mut u64, pcbread: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub QueryHeader: unsafe extern "system" fn(this: *mut *mut Self, szheadername: ::windows_sys::core::PCWSTR, dwindex: u32, ppszheadervalue: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetURL: unsafe extern "system" fn(this: *mut *mut Self, ppszurl: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub HasNullSourceOrigin: unsafe extern "system" fn(this: *mut *mut Self, pfnullsourceorigin: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    HasNullSourceOrigin: usize,
+    pub GetTimeSeekResult: unsafe extern "system" fn(this: *mut *mut Self, pqwstarttime: *mut u64, pqwstoptime: *mut u64, pqwduration: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetHttpStatus: unsafe extern "system" fn(this: *mut *mut Self, pdwhttpstatus: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetAtEndOfPayload: unsafe extern "system" fn(this: *mut *mut Self, pfatendofpayload: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetAtEndOfPayload: usize,
+    pub GetTotalLength: unsafe extern "system" fn(this: *mut *mut Self, pqwtotallength: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetRangeEndOffset: unsafe extern "system" fn(this: *mut *mut Self, pqwrangeend: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFHttpDownloadSession {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetServer: unsafe extern "system" fn(this: *mut *mut Self, szservername: ::windows_sys::core::PCWSTR, nport: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CreateRequest: unsafe extern "system" fn(this: *mut *mut Self, szobjectname: ::windows_sys::core::PCWSTR, fbypassproxycache: super::super::Foundation::BOOL, fsecure: super::super::Foundation::BOOL, szverb: ::windows_sys::core::PCWSTR, szreferrer: ::windows_sys::core::PCWSTR, pprequest: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CreateRequest: usize,
+    pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFHttpDownloadSessionProvider {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub CreateHttpDownloadSession: unsafe extern "system" fn(this: *mut *mut Self, wszscheme: ::windows_sys::core::PCWSTR, ppdownloadsession: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFImageSharingEngine {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetSource: unsafe extern "system" fn(this: *mut *mut Self, pstream: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetDevice: unsafe extern "system" fn(this: *mut *mut Self, pdevice: *mut DEVICE_INFO) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetDevice: usize,
+    pub Shutdown: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFImageSharingEngineClassFactory {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CreateInstanceFromUDN: unsafe extern "system" fn(this: *mut *mut Self, puniquedevicename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppengine: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CreateInstanceFromUDN: usize,
+}
+#[repr(C)]
+pub struct IMFInputTrustAuthority {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetDecrypter: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RequestAccess: unsafe extern "system" fn(this: *mut *mut Self, action: MFPOLICYMANAGER_ACTION, ppcontentenableractivate: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetPolicy: unsafe extern "system" fn(this: *mut *mut Self, action: MFPOLICYMANAGER_ACTION, pppolicy: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub BindAccess: unsafe extern "system" fn(this: *mut *mut Self, pparam: *const MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS) -> ::windows_sys::core::HRESULT,
+    pub UpdateAccess: unsafe extern "system" fn(this: *mut *mut Self, pparam: *const MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFLocalMFTRegistration {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub RegisterMFTs: unsafe extern "system" fn(this: *mut *mut Self, pmfts: *const MFT_REGISTRATION_INFO, cmfts: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFMediaBuffer {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Lock: unsafe extern "system" fn(this: *mut *mut Self, ppbbuffer: *mut *mut u8, pcbmaxlength: *mut u32, pcbcurrentlength: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Unlock: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentLength: unsafe extern "system" fn(this: *mut *mut Self, pcbcurrentlength: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetCurrentLength: unsafe extern "system" fn(this: *mut *mut Self, cbcurrentlength: u32) -> ::windows_sys::core::HRESULT,
+    pub GetMaxLength: unsafe extern "system" fn(this: *mut *mut Self, pcbmaxlength: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFMediaEngine {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetError: unsafe extern "system" fn(this: *mut *mut Self, pperror: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetErrorCode: unsafe extern "system" fn(this: *mut *mut Self, error: MF_MEDIA_ENGINE_ERR) -> ::windows_sys::core::HRESULT,
+    pub SetSourceElements: unsafe extern "system" fn(this: *mut *mut Self, psrcelements: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetSource: unsafe extern "system" fn(this: *mut *mut Self, purl: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetSource: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetCurrentSource: unsafe extern "system" fn(this: *mut *mut Self, ppurl: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetCurrentSource: usize,
+    pub GetNetworkState: unsafe extern "system" fn(this: *mut *mut Self) -> u16,
+    pub GetPreload: unsafe extern "system" fn(this: *mut *mut Self) -> MF_MEDIA_ENGINE_PRELOAD,
+    pub SetPreload: unsafe extern "system" fn(this: *mut *mut Self, preload: MF_MEDIA_ENGINE_PRELOAD) -> ::windows_sys::core::HRESULT,
+    pub GetBuffered: unsafe extern "system" fn(this: *mut *mut Self, ppbuffered: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Load: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CanPlayType: unsafe extern "system" fn(this: *mut *mut Self, r#type: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, panswer: *mut MF_MEDIA_ENGINE_CANPLAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CanPlayType: usize,
+    pub GetReadyState: unsafe extern "system" fn(this: *mut *mut Self) -> u16,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsSeeking: unsafe extern "system" fn(this: *mut *mut Self) -> super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsSeeking: usize,
+    pub GetCurrentTime: unsafe extern "system" fn(this: *mut *mut Self) -> f64,
+    pub SetCurrentTime: unsafe extern "system" fn(this: *mut *mut Self, seektime: f64) -> ::windows_sys::core::HRESULT,
+    pub GetStartTime: unsafe extern "system" fn(this: *mut *mut Self) -> f64,
+    pub GetDuration: unsafe extern "system" fn(this: *mut *mut Self) -> f64,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsPaused: unsafe extern "system" fn(this: *mut *mut Self) -> super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsPaused: usize,
+    pub GetDefaultPlaybackRate: unsafe extern "system" fn(this: *mut *mut Self) -> f64,
+    pub SetDefaultPlaybackRate: unsafe extern "system" fn(this: *mut *mut Self, rate: f64) -> ::windows_sys::core::HRESULT,
+    pub GetPlaybackRate: unsafe extern "system" fn(this: *mut *mut Self) -> f64,
+    pub SetPlaybackRate: unsafe extern "system" fn(this: *mut *mut Self, rate: f64) -> ::windows_sys::core::HRESULT,
+    pub GetPlayed: unsafe extern "system" fn(this: *mut *mut Self, ppplayed: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetSeekable: unsafe extern "system" fn(this: *mut *mut Self, ppseekable: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsEnded: unsafe extern "system" fn(this: *mut *mut Self) -> super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsEnded: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetAutoPlay: unsafe extern "system" fn(this: *mut *mut Self) -> super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetAutoPlay: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetAutoPlay: unsafe extern "system" fn(this: *mut *mut Self, autoplay: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetAutoPlay: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetLoop: unsafe extern "system" fn(this: *mut *mut Self) -> super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetLoop: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetLoop: unsafe extern "system" fn(this: *mut *mut Self, r#loop: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetLoop: usize,
+    pub Play: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Pause: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetMuted: unsafe extern "system" fn(this: *mut *mut Self) -> super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetMuted: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetMuted: unsafe extern "system" fn(this: *mut *mut Self, muted: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetMuted: usize,
+    pub GetVolume: unsafe extern "system" fn(this: *mut *mut Self) -> f64,
+    pub SetVolume: unsafe extern "system" fn(this: *mut *mut Self, volume: f64) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub HasVideo: unsafe extern "system" fn(this: *mut *mut Self) -> super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    HasVideo: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub HasAudio: unsafe extern "system" fn(this: *mut *mut Self) -> super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    HasAudio: usize,
+    pub GetNativeVideoSize: unsafe extern "system" fn(this: *mut *mut Self, cx: *mut u32, cy: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetVideoAspectRatio: unsafe extern "system" fn(this: *mut *mut Self, cx: *mut u32, cy: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Shutdown: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub TransferVideoFrame: unsafe extern "system" fn(this: *mut *mut Self, pdstsurf: *mut ::core::ffi::c_void, psrc: *const MFVideoNormalizedRect, pdst: *const super::super::Foundation::RECT, pborderclr: *const MFARGB) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    TransferVideoFrame: usize,
+    pub OnVideoStreamTick: unsafe extern "system" fn(this: *mut *mut Self, ppts: *mut i64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFMediaEngineAudioEndpointId {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetAudioEndpointId: unsafe extern "system" fn(this: *mut *mut Self, pszendpointid: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetAudioEndpointId: unsafe extern "system" fn(this: *mut *mut Self, ppszendpointid: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFMediaEngineClassFactory {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub CreateInstance: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, pattr: *mut ::core::ffi::c_void, ppplayer: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateTimeRange: unsafe extern "system" fn(this: *mut *mut Self, pptimerange: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateError: unsafe extern "system" fn(this: *mut *mut Self, pperror: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFMediaEngineClassFactory2 {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CreateMediaKeys2: unsafe extern "system" fn(this: *mut *mut Self, keysystem: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, defaultcdmstorepath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, inprivatecdmstorepath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppkeys: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CreateMediaKeys2: usize,
+}
+#[repr(C)]
+pub struct IMFMediaEngineClassFactory3 {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_PropertiesSystem"))]
+    pub CreateMediaKeySystemAccess: unsafe extern "system" fn(this: *mut *mut Self, keysystem: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppsupportedconfigurationsarray: *const *mut ::core::ffi::c_void, usize: u32, ppkeyaccess: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_PropertiesSystem")))]
+    CreateMediaKeySystemAccess: usize,
+}
+#[repr(C)]
+pub struct IMFMediaEngineClassFactory4 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub CreateContentDecryptionModuleFactory: unsafe extern "system" fn(this: *mut *mut Self, keysystem: ::windows_sys::core::PCWSTR, riid: *const ::windows_sys::core::GUID, ppvobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFMediaEngineClassFactoryEx {
+    pub base__: IMFMediaEngineClassFactory,
+    pub CreateMediaSourceExtension: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, pattr: *mut ::core::ffi::c_void, ppmse: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CreateMediaKeys: unsafe extern "system" fn(this: *mut *mut Self, keysystem: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, cdmstorepath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppkeys: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CreateMediaKeys: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsTypeSupported: unsafe extern "system" fn(this: *mut *mut Self, r#type: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, keysystem: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, issupported: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsTypeSupported: usize,
+}
+#[repr(C)]
+pub struct IMFMediaEngineEME {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Keys: unsafe extern "system" fn(this: *mut *mut Self, keys: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetMediaKeys: unsafe extern "system" fn(this: *mut *mut Self, keys: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFMediaEngineEMENotify {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Encrypted: unsafe extern "system" fn(this: *mut *mut Self, pbinitdata: *const u8, cb: u32, bstrinitdatatype: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>),
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Encrypted: usize,
+    pub WaitingForKey: unsafe extern "system" fn(this: *mut *mut Self),
+}
+#[repr(C)]
+pub struct IMFMediaEngineEx {
+    pub base__: IMFMediaEngine,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetSourceFromByteStream: unsafe extern "system" fn(this: *mut *mut Self, pbytestream: *mut ::core::ffi::c_void, purl: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetSourceFromByteStream: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    pub GetStatistics: unsafe extern "system" fn(this: *mut *mut Self, statisticid: MF_MEDIA_ENGINE_STATISTIC, pstatistic: *mut super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    GetStatistics: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub UpdateVideoStream: unsafe extern "system" fn(this: *mut *mut Self, psrc: *const MFVideoNormalizedRect, pdst: *const super::super::Foundation::RECT, pborderclr: *const MFARGB) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    UpdateVideoStream: usize,
+    pub GetBalance: unsafe extern "system" fn(this: *mut *mut Self) -> f64,
+    pub SetBalance: unsafe extern "system" fn(this: *mut *mut Self, balance: f64) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsPlaybackRateSupported: unsafe extern "system" fn(this: *mut *mut Self, rate: f64) -> super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsPlaybackRateSupported: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub FrameStep: unsafe extern "system" fn(this: *mut *mut Self, forward: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    FrameStep: usize,
+    pub GetResourceCharacteristics: unsafe extern "system" fn(this: *mut *mut Self, pcharacteristics: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    pub GetPresentationAttribute: unsafe extern "system" fn(this: *mut *mut Self, guidmfattribute: *const ::windows_sys::core::GUID, pvvalue: *mut super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    GetPresentationAttribute: usize,
+    pub GetNumberOfStreams: unsafe extern "system" fn(this: *mut *mut Self, pdwstreamcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    pub GetStreamAttribute: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32, guidmfattribute: *const ::windows_sys::core::GUID, pvvalue: *mut super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    GetStreamAttribute: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetStreamSelection: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32, penabled: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetStreamSelection: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetStreamSelection: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32, enabled: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetStreamSelection: usize,
+    pub ApplyStreamSelections: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsProtected: unsafe extern "system" fn(this: *mut *mut Self, pprotected: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsProtected: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InsertVideoEffect: unsafe extern "system" fn(this: *mut *mut Self, peffect: *mut ::core::ffi::c_void, foptional: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InsertVideoEffect: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InsertAudioEffect: unsafe extern "system" fn(this: *mut *mut Self, peffect: *mut ::core::ffi::c_void, foptional: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InsertAudioEffect: usize,
+    pub RemoveAllEffects: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub SetTimelineMarkerTimer: unsafe extern "system" fn(this: *mut *mut Self, timetofire: f64) -> ::windows_sys::core::HRESULT,
+    pub GetTimelineMarkerTimer: unsafe extern "system" fn(this: *mut *mut Self, ptimetofire: *mut f64) -> ::windows_sys::core::HRESULT,
+    pub CancelTimelineMarkerTimer: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsStereo3D: unsafe extern "system" fn(this: *mut *mut Self) -> super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsStereo3D: usize,
+    pub GetStereo3DFramePackingMode: unsafe extern "system" fn(this: *mut *mut Self, packmode: *mut MF_MEDIA_ENGINE_S3D_PACKING_MODE) -> ::windows_sys::core::HRESULT,
+    pub SetStereo3DFramePackingMode: unsafe extern "system" fn(this: *mut *mut Self, packmode: MF_MEDIA_ENGINE_S3D_PACKING_MODE) -> ::windows_sys::core::HRESULT,
+    pub GetStereo3DRenderMode: unsafe extern "system" fn(this: *mut *mut Self, outputtype: *mut MF3DVideoOutputType) -> ::windows_sys::core::HRESULT,
+    pub SetStereo3DRenderMode: unsafe extern "system" fn(this: *mut *mut Self, outputtype: MF3DVideoOutputType) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub EnableWindowlessSwapchainMode: unsafe extern "system" fn(this: *mut *mut Self, fenable: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    EnableWindowlessSwapchainMode: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetVideoSwapchainHandle: unsafe extern "system" fn(this: *mut *mut Self, phswapchain: *mut super::super::Foundation::HANDLE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetVideoSwapchainHandle: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub EnableHorizontalMirrorMode: unsafe extern "system" fn(this: *mut *mut Self, fenable: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    EnableHorizontalMirrorMode: usize,
+    pub GetAudioStreamCategory: unsafe extern "system" fn(this: *mut *mut Self, pcategory: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetAudioStreamCategory: unsafe extern "system" fn(this: *mut *mut Self, category: u32) -> ::windows_sys::core::HRESULT,
+    pub GetAudioEndpointRole: unsafe extern "system" fn(this: *mut *mut Self, prole: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetAudioEndpointRole: unsafe extern "system" fn(this: *mut *mut Self, role: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetRealTimeMode: unsafe extern "system" fn(this: *mut *mut Self, pfenabled: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetRealTimeMode: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetRealTimeMode: unsafe extern "system" fn(this: *mut *mut Self, fenable: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetRealTimeMode: usize,
+    pub SetCurrentTimeEx: unsafe extern "system" fn(this: *mut *mut Self, seektime: f64, seekmode: MF_MEDIA_ENGINE_SEEK_MODE) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub EnableTimeUpdateTimer: unsafe extern "system" fn(this: *mut *mut Self, fenabletimer: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    EnableTimeUpdateTimer: usize,
+}
+#[repr(C)]
+pub struct IMFMediaEngineExtension {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CanPlayType: unsafe extern "system" fn(this: *mut *mut Self, audioonly: super::super::Foundation::BOOL, mimetype: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, panswer: *mut MF_MEDIA_ENGINE_CANPLAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CanPlayType: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub BeginCreateObject: unsafe extern "system" fn(this: *mut *mut Self, bstrurl: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pbytestream: *mut ::core::ffi::c_void, r#type: MF_OBJECT_TYPE, ppiunknowncancelcookie: *mut *mut ::core::ffi::c_void, pcallback: *mut ::core::ffi::c_void, punkstate: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    BeginCreateObject: usize,
+    pub CancelObjectCreation: unsafe extern "system" fn(this: *mut *mut Self, piunknowncancelcookie: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EndCreateObject: unsafe extern "system" fn(this: *mut *mut Self, presult: *mut ::core::ffi::c_void, ppobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFMediaEngineNeedKeyNotify {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub NeedKey: unsafe extern "system" fn(this: *mut *mut Self, initdata: *const u8, cb: u32),
+}
+#[repr(C)]
+pub struct IMFMediaEngineNotify {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub EventNotify: unsafe extern "system" fn(this: *mut *mut Self, event: u32, param1: usize, param2: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFMediaEngineOPMInfo {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetOPMInfo: unsafe extern "system" fn(this: *mut *mut Self, pstatus: *mut MF_MEDIA_ENGINE_OPM_STATUS, pconstricted: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetOPMInfo: usize,
+}
+#[repr(C)]
+pub struct IMFMediaEngineProtectedContent {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub ShareResources: unsafe extern "system" fn(this: *mut *mut Self, punkdevicecontext: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetRequiredProtections: unsafe extern "system" fn(this: *mut *mut Self, pframeprotectionflags: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetOPMWindow: unsafe extern "system" fn(this: *mut *mut Self, hwnd: super::super::Foundation::HWND) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetOPMWindow: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub TransferVideoFrame: unsafe extern "system" fn(this: *mut *mut Self, pdstsurf: *mut ::core::ffi::c_void, psrc: *const MFVideoNormalizedRect, pdst: *const super::super::Foundation::RECT, pborderclr: *const MFARGB, pframeprotectionflags: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    TransferVideoFrame: usize,
+    pub SetContentProtectionManager: unsafe extern "system" fn(this: *mut *mut Self, pcpm: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetApplicationCertificate: unsafe extern "system" fn(this: *mut *mut Self, pbblob: *const u8, cbblob: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFMediaEngineSrcElements {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetLength: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetURL: unsafe extern "system" fn(this: *mut *mut Self, index: u32, purl: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetURL: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetType: unsafe extern "system" fn(this: *mut *mut Self, index: u32, ptype: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetType: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetMedia: unsafe extern "system" fn(this: *mut *mut Self, index: u32, pmedia: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetMedia: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AddElement: unsafe extern "system" fn(this: *mut *mut Self, purl: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ptype: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pmedia: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AddElement: usize,
+    pub RemoveAllElements: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFMediaEngineSrcElementsEx {
+    pub base__: IMFMediaEngineSrcElements,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AddElementEx: unsafe extern "system" fn(this: *mut *mut Self, purl: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ptype: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pmedia: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, keysystem: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AddElementEx: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetKeySystem: unsafe extern "system" fn(this: *mut *mut Self, index: u32, ptype: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetKeySystem: usize,
+}
+#[repr(C)]
+pub struct IMFMediaEngineSupportsSourceTransfer {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ShouldTransferSource: unsafe extern "system" fn(this: *mut *mut Self, pfshouldtransfer: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ShouldTransferSource: usize,
+    pub DetachMediaSource: unsafe extern "system" fn(this: *mut *mut Self, ppbytestream: *mut *mut ::core::ffi::c_void, ppmediasource: *mut *mut ::core::ffi::c_void, ppmse: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AttachMediaSource: unsafe extern "system" fn(this: *mut *mut Self, pbytestream: *mut ::core::ffi::c_void, pmediasource: *mut ::core::ffi::c_void, pmse: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFMediaEngineTransferSource {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub TransferSourceToMediaEngine: unsafe extern "system" fn(this: *mut *mut Self, destination: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFMediaEngineWebSupport {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ShouldDelayTheLoadEvent: unsafe extern "system" fn(this: *mut *mut Self) -> super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ShouldDelayTheLoadEvent: usize,
+    pub ConnectWebAudio: unsafe extern "system" fn(this: *mut *mut Self, dwsamplerate: u32, ppsourceprovider: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub DisconnectWebAudio: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFMediaError {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetErrorCode: unsafe extern "system" fn(this: *mut *mut Self) -> u16,
+    pub GetExtendedErrorCode: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub SetErrorCode: unsafe extern "system" fn(this: *mut *mut Self, error: MF_MEDIA_ENGINE_ERR) -> ::windows_sys::core::HRESULT,
+    pub SetExtendedErrorCode: unsafe extern "system" fn(this: *mut *mut Self, error: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFMediaEvent {
+    pub base__: IMFAttributes,
+    pub GetType: unsafe extern "system" fn(this: *mut *mut Self, pmet: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetExtendedType: unsafe extern "system" fn(this: *mut *mut Self, pguidextendedtype: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub GetStatus: unsafe extern "system" fn(this: *mut *mut Self, phrstatus: *mut ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    pub GetValue: unsafe extern "system" fn(this: *mut *mut Self, pvvalue: *mut super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    GetValue: usize,
+}
+#[repr(C)]
+pub struct IMFMediaEventGenerator {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetEvent: unsafe extern "system" fn(this: *mut *mut Self, dwflags: MEDIA_EVENT_GENERATOR_GET_EVENT_FLAGS, ppevent: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub BeginGetEvent: unsafe extern "system" fn(this: *mut *mut Self, pcallback: *mut ::core::ffi::c_void, punkstate: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EndGetEvent: unsafe extern "system" fn(this: *mut *mut Self, presult: *mut ::core::ffi::c_void, ppevent: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    pub QueueEvent: unsafe extern "system" fn(this: *mut *mut Self, met: u32, guidextendedtype: *const ::windows_sys::core::GUID, hrstatus: ::windows_sys::core::HRESULT, pvvalue: *const super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    QueueEvent: usize,
+}
+#[repr(C)]
+pub struct IMFMediaEventQueue {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetEvent: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, ppevent: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub BeginGetEvent: unsafe extern "system" fn(this: *mut *mut Self, pcallback: *mut ::core::ffi::c_void, punkstate: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EndGetEvent: unsafe extern "system" fn(this: *mut *mut Self, presult: *mut ::core::ffi::c_void, ppevent: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub QueueEvent: unsafe extern "system" fn(this: *mut *mut Self, pevent: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    pub QueueEventParamVar: unsafe extern "system" fn(this: *mut *mut Self, met: u32, guidextendedtype: *const ::windows_sys::core::GUID, hrstatus: ::windows_sys::core::HRESULT, pvvalue: *const super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    QueueEventParamVar: usize,
+    pub QueueEventParamUnk: unsafe extern "system" fn(this: *mut *mut Self, met: u32, guidextendedtype: *const ::windows_sys::core::GUID, hrstatus: ::windows_sys::core::HRESULT, punk: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Shutdown: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFMediaKeySession {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetError: unsafe extern "system" fn(this: *mut *mut Self, code: *mut u16, systemcode: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub KeySystem: unsafe extern "system" fn(this: *mut *mut Self, keysystem: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    KeySystem: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SessionId: unsafe extern "system" fn(this: *mut *mut Self, sessionid: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SessionId: usize,
+    pub Update: unsafe extern "system" fn(this: *mut *mut Self, key: *const u8, cb: u32) -> ::windows_sys::core::HRESULT,
+    pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFMediaKeySession2 {
+    pub base__: IMFMediaKeySession,
+    pub get_KeyStatuses: unsafe extern "system" fn(this: *mut *mut Self, pkeystatusesarray: *mut *mut MFMediaKeyStatus, pusize: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Load: unsafe extern "system" fn(this: *mut *mut Self, bstrsessionid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pfloaded: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Load: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GenerateRequest: unsafe extern "system" fn(this: *mut *mut Self, initdatatype: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pbinitdata: *const u8, cb: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GenerateRequest: usize,
+    pub Expiration: unsafe extern "system" fn(this: *mut *mut Self, dblexpiration: *mut f64) -> ::windows_sys::core::HRESULT,
+    pub Remove: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Shutdown: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFMediaKeySessionNotify {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub KeyMessage: unsafe extern "system" fn(this: *mut *mut Self, destinationurl: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, message: *const u8, cb: u32),
+    #[cfg(not(feature = "Win32_Foundation"))]
+    KeyMessage: usize,
+    pub KeyAdded: unsafe extern "system" fn(this: *mut *mut Self),
+    pub KeyError: unsafe extern "system" fn(this: *mut *mut Self, code: u16, systemcode: u32),
+}
+#[repr(C)]
+pub struct IMFMediaKeySessionNotify2 {
+    pub base__: IMFMediaKeySessionNotify,
+    #[cfg(feature = "Win32_Foundation")]
+    pub KeyMessage2: unsafe extern "system" fn(this: *mut *mut Self, emessagetype: MF_MEDIAKEYSESSION_MESSAGETYPE, destinationurl: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pbmessage: *const u8, cbmessage: u32),
+    #[cfg(not(feature = "Win32_Foundation"))]
+    KeyMessage2: usize,
+    pub KeyStatusChange: unsafe extern "system" fn(this: *mut *mut Self),
+}
+#[repr(C)]
+pub struct IMFMediaKeySystemAccess {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub CreateMediaKeys: unsafe extern "system" fn(this: *mut *mut Self, pcdmcustomconfig: *mut ::core::ffi::c_void, ppkeys: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    CreateMediaKeys: usize,
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub SupportedConfiguration: unsafe extern "system" fn(this: *mut *mut Self, ppsupportedconfiguration: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    SupportedConfiguration: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub KeySystem: unsafe extern "system" fn(this: *mut *mut Self, pkeysystem: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    KeySystem: usize,
+}
+#[repr(C)]
+pub struct IMFMediaKeys {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CreateSession: unsafe extern "system" fn(this: *mut *mut Self, mimetype: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, initdata: *const u8, cb: u32, customdata: *const u8, cbcustomdata: u32, notify: *mut ::core::ffi::c_void, ppsession: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CreateSession: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub KeySystem: unsafe extern "system" fn(this: *mut *mut Self, keysystem: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    KeySystem: usize,
+    pub Shutdown: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetSuspendNotify: unsafe extern "system" fn(this: *mut *mut Self, notify: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFMediaKeys2 {
+    pub base__: IMFMediaKeys,
+    pub CreateSession2: unsafe extern "system" fn(this: *mut *mut Self, esessiontype: MF_MEDIAKEYSESSION_TYPE, pmfmediakeysessionnotify2: *mut ::core::ffi::c_void, ppsession: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetServerCertificate: unsafe extern "system" fn(this: *mut *mut Self, pbservercertificate: *const u8, cb: u32) -> ::windows_sys::core::HRESULT,
+    pub GetDOMException: unsafe extern "system" fn(this: *mut *mut Self, systemcode: ::windows_sys::core::HRESULT, code: *mut ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFMediaSession {
+    pub base__: IMFMediaEventGenerator,
+    pub SetTopology: unsafe extern "system" fn(this: *mut *mut Self, dwsettopologyflags: u32, ptopology: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ClearTopologies: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    pub Start: unsafe extern "system" fn(this: *mut *mut Self, pguidtimeformat: *const ::windows_sys::core::GUID, pvarstartposition: *const super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    Start: usize,
+    pub Pause: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Stop: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Shutdown: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetClock: unsafe extern "system" fn(this: *mut *mut Self, ppclock: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetSessionCapabilities: unsafe extern "system" fn(this: *mut *mut Self, pdwcaps: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetFullTopology: unsafe extern "system" fn(this: *mut *mut Self, dwgetfulltopologyflags: u32, topoid: u64, ppfulltopology: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFMediaSharingEngine {
+    pub base__: IMFMediaEngine,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetDevice: unsafe extern "system" fn(this: *mut *mut Self, pdevice: *mut DEVICE_INFO) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetDevice: usize,
+}
+#[repr(C)]
+pub struct IMFMediaSharingEngineClassFactory {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub CreateInstance: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, pattr: *mut ::core::ffi::c_void, ppengine: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFMediaSink {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCharacteristics: unsafe extern "system" fn(this: *mut *mut Self, pdwcharacteristics: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub AddStreamSink: unsafe extern "system" fn(this: *mut *mut Self, dwstreamsinkidentifier: u32, pmediatype: *mut ::core::ffi::c_void, ppstreamsink: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RemoveStreamSink: unsafe extern "system" fn(this: *mut *mut Self, dwstreamsinkidentifier: u32) -> ::windows_sys::core::HRESULT,
+    pub GetStreamSinkCount: unsafe extern "system" fn(this: *mut *mut Self, pcstreamsinkcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetStreamSinkByIndex: unsafe extern "system" fn(this: *mut *mut Self, dwindex: u32, ppstreamsink: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetStreamSinkById: unsafe extern "system" fn(this: *mut *mut Self, dwstreamsinkidentifier: u32, ppstreamsink: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetPresentationClock: unsafe extern "system" fn(this: *mut *mut Self, ppresentationclock: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetPresentationClock: unsafe extern "system" fn(this: *mut *mut Self, pppresentationclock: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Shutdown: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFMediaSinkPreroll {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub NotifyPreroll: unsafe extern "system" fn(this: *mut *mut Self, hnsupcomingstarttime: i64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFMediaSource {
+    pub base__: IMFMediaEventGenerator,
+    pub GetCharacteristics: unsafe extern "system" fn(this: *mut *mut Self, pdwcharacteristics: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub CreatePresentationDescriptor: unsafe extern "system" fn(this: *mut *mut Self, pppresentationdescriptor: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    pub Start: unsafe extern "system" fn(this: *mut *mut Self, ppresentationdescriptor: *mut ::core::ffi::c_void, pguidtimeformat: *const ::windows_sys::core::GUID, pvarstartposition: *const super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    Start: usize,
+    pub Stop: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Pause: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Shutdown: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFMediaSource2 {
+    pub base__: IMFMediaSourceEx,
+    pub SetMediaType: unsafe extern "system" fn(this: *mut *mut Self, dwstreamid: u32, pmediatype: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFMediaSourceEx {
+    pub base__: IMFMediaSource,
+    pub GetSourceAttributes: unsafe extern "system" fn(this: *mut *mut Self, ppattributes: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetStreamAttributes: unsafe extern "system" fn(this: *mut *mut Self, dwstreamidentifier: u32, ppattributes: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetD3DManager: unsafe extern "system" fn(this: *mut *mut Self, pmanager: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFMediaSourceExtension {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetSourceBuffers: unsafe extern "system" fn(this: *mut *mut Self) -> *mut *mut IMFSourceBufferList,
+    pub GetActiveSourceBuffers: unsafe extern "system" fn(this: *mut *mut Self) -> *mut *mut IMFSourceBufferList,
+    pub GetReadyState: unsafe extern "system" fn(this: *mut *mut Self) -> MF_MSE_READY,
+    pub GetDuration: unsafe extern "system" fn(this: *mut *mut Self) -> f64,
+    pub SetDuration: unsafe extern "system" fn(this: *mut *mut Self, duration: f64) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AddSourceBuffer: unsafe extern "system" fn(this: *mut *mut Self, r#type: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pnotify: *mut ::core::ffi::c_void, ppsourcebuffer: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AddSourceBuffer: usize,
+    pub RemoveSourceBuffer: unsafe extern "system" fn(this: *mut *mut Self, psourcebuffer: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetEndOfStream: unsafe extern "system" fn(this: *mut *mut Self, error: MF_MSE_ERROR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsTypeSupported: unsafe extern "system" fn(this: *mut *mut Self, r#type: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsTypeSupported: usize,
+    pub GetSourceBuffer: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32) -> *mut *mut IMFSourceBuffer,
+}
+#[repr(C)]
+pub struct IMFMediaSourceExtensionLiveSeekableRange {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetLiveSeekableRange: unsafe extern "system" fn(this: *mut *mut Self, start: f64, end: f64) -> ::windows_sys::core::HRESULT,
+    pub ClearLiveSeekableRange: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFMediaSourceExtensionNotify {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnSourceOpen: unsafe extern "system" fn(this: *mut *mut Self),
+    pub OnSourceEnded: unsafe extern "system" fn(this: *mut *mut Self),
+    pub OnSourceClose: unsafe extern "system" fn(this: *mut *mut Self),
+}
+#[repr(C)]
+pub struct IMFMediaSourcePresentationProvider {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub ForceEndOfPresentation: unsafe extern "system" fn(this: *mut *mut Self, ppresentationdescriptor: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFMediaSourceTopologyProvider {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetMediaSourceTopology: unsafe extern "system" fn(this: *mut *mut Self, ppresentationdescriptor: *mut ::core::ffi::c_void, pptopology: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFMediaStream {
+    pub base__: IMFMediaEventGenerator,
+    pub GetMediaSource: unsafe extern "system" fn(this: *mut *mut Self, ppmediasource: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetStreamDescriptor: unsafe extern "system" fn(this: *mut *mut Self, ppstreamdescriptor: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RequestSample: unsafe extern "system" fn(this: *mut *mut Self, ptoken: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFMediaStream2 {
+    pub base__: IMFMediaStream,
+    pub SetStreamState: unsafe extern "system" fn(this: *mut *mut Self, value: MF_STREAM_STATE) -> ::windows_sys::core::HRESULT,
+    pub GetStreamState: unsafe extern "system" fn(this: *mut *mut Self, value: *mut MF_STREAM_STATE) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFMediaStreamSourceSampleRequest {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetSample: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFMediaTimeRange {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetLength: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
+    pub GetStart: unsafe extern "system" fn(this: *mut *mut Self, index: u32, pstart: *mut f64) -> ::windows_sys::core::HRESULT,
+    pub GetEnd: unsafe extern "system" fn(this: *mut *mut Self, index: u32, pend: *mut f64) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ContainsTime: unsafe extern "system" fn(this: *mut *mut Self, time: f64) -> super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ContainsTime: usize,
+    pub AddRange: unsafe extern "system" fn(this: *mut *mut Self, starttime: f64, endtime: f64) -> ::windows_sys::core::HRESULT,
+    pub Clear: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFMediaType {
+    pub base__: IMFAttributes,
+    pub GetMajorType: unsafe extern "system" fn(this: *mut *mut Self, pguidmajortype: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsCompressedFormat: unsafe extern "system" fn(this: *mut *mut Self, pfcompressed: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsCompressedFormat: usize,
+    pub IsEqual: unsafe extern "system" fn(this: *mut *mut Self, pimediatype: *mut ::core::ffi::c_void, pdwflags: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetRepresentation: unsafe extern "system" fn(this: *mut *mut Self, guidrepresentation: ::windows_sys::core::GUID, ppvrepresentation: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub FreeRepresentation: unsafe extern "system" fn(this: *mut *mut Self, guidrepresentation: ::windows_sys::core::GUID, pvrepresentation: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFMediaTypeHandler {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub IsMediaTypeSupported: unsafe extern "system" fn(this: *mut *mut Self, pmediatype: *mut ::core::ffi::c_void, ppmediatype: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetMediaTypeCount: unsafe extern "system" fn(this: *mut *mut Self, pdwtypecount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetMediaTypeByIndex: unsafe extern "system" fn(this: *mut *mut Self, dwindex: u32, pptype: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetCurrentMediaType: unsafe extern "system" fn(this: *mut *mut Self, pmediatype: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentMediaType: unsafe extern "system" fn(this: *mut *mut Self, ppmediatype: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetMajorType: unsafe extern "system" fn(this: *mut *mut Self, pguidmajortype: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFMetadata {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetLanguage: unsafe extern "system" fn(this: *mut *mut Self, pwszrfc1766: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetLanguage: unsafe extern "system" fn(this: *mut *mut Self, ppwszrfc1766: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    pub GetAllLanguages: unsafe extern "system" fn(this: *mut *mut Self, ppvlanguages: *mut super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    GetAllLanguages: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    pub SetProperty: unsafe extern "system" fn(this: *mut *mut Self, pwszname: ::windows_sys::core::PCWSTR, ppvvalue: *const super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    SetProperty: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    pub GetProperty: unsafe extern "system" fn(this: *mut *mut Self, pwszname: ::windows_sys::core::PCWSTR, ppvvalue: *mut super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    GetProperty: usize,
+    pub DeleteProperty: unsafe extern "system" fn(this: *mut *mut Self, pwszname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    pub GetAllPropertyNames: unsafe extern "system" fn(this: *mut *mut Self, ppvnames: *mut super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    GetAllPropertyNames: usize,
+}
+#[repr(C)]
+pub struct IMFMetadataProvider {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetMFMetadata: unsafe extern "system" fn(this: *mut *mut Self, ppresentationdescriptor: *mut ::core::ffi::c_void, dwstreamidentifier: u32, dwflags: u32, ppmfmetadata: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFMuxStreamAttributesManager {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetStreamCount: unsafe extern "system" fn(this: *mut *mut Self, pdwmuxstreamcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetAttributes: unsafe extern "system" fn(this: *mut *mut Self, dwmuxstreamindex: u32, ppstreamattributes: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFMuxStreamMediaTypeManager {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetStreamCount: unsafe extern "system" fn(this: *mut *mut Self, pdwmuxstreamcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetMediaType: unsafe extern "system" fn(this: *mut *mut Self, dwmuxstreamindex: u32, ppmediatype: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetStreamConfigurationCount: unsafe extern "system" fn(this: *mut *mut Self, pdwcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub AddStreamConfiguration: unsafe extern "system" fn(this: *mut *mut Self, ullstreammask: u64) -> ::windows_sys::core::HRESULT,
+    pub RemoveStreamConfiguration: unsafe extern "system" fn(this: *mut *mut Self, ullstreammask: u64) -> ::windows_sys::core::HRESULT,
+    pub GetStreamConfiguration: unsafe extern "system" fn(this: *mut *mut Self, ulindex: u32, pullstreammask: *mut u64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFMuxStreamSampleManager {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetStreamCount: unsafe extern "system" fn(this: *mut *mut Self, pdwmuxstreamcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSample: unsafe extern "system" fn(this: *mut *mut Self, dwmuxstreamindex: u32, ppsample: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetStreamConfiguration: unsafe extern "system" fn(this: *mut *mut Self) -> u64,
+}
+#[repr(C)]
+pub struct IMFNetCredential {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetUser: unsafe extern "system" fn(this: *mut *mut Self, pbdata: *const u8, cbdata: u32, fdataisencrypted: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetUser: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetPassword: unsafe extern "system" fn(this: *mut *mut Self, pbdata: *const u8, cbdata: u32, fdataisencrypted: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetPassword: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetUser: unsafe extern "system" fn(this: *mut *mut Self, pbdata: *mut u8, pcbdata: *mut u32, fencryptdata: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetUser: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetPassword: unsafe extern "system" fn(this: *mut *mut Self, pbdata: *mut u8, pcbdata: *mut u32, fencryptdata: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetPassword: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub LoggedOnUser: unsafe extern "system" fn(this: *mut *mut Self, pfloggedonuser: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    LoggedOnUser: usize,
+}
+#[repr(C)]
+pub struct IMFNetCredentialCache {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCredential: unsafe extern "system" fn(this: *mut *mut Self, pszurl: ::windows_sys::core::PCWSTR, pszrealm: ::windows_sys::core::PCWSTR, dwauthenticationflags: u32, ppcred: *mut *mut ::core::ffi::c_void, pdwrequirementsflags: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetGood: unsafe extern "system" fn(this: *mut *mut Self, pcred: *mut ::core::ffi::c_void, fgood: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetGood: usize,
+    pub SetUserOptions: unsafe extern "system" fn(this: *mut *mut Self, pcred: *mut ::core::ffi::c_void, dwoptionsflags: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFNetCredentialManager {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub BeginGetCredentials: unsafe extern "system" fn(this: *mut *mut Self, pparam: *const MFNetCredentialManagerGetParam, pcallback: *mut ::core::ffi::c_void, pstate: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    BeginGetCredentials: usize,
+    pub EndGetCredentials: unsafe extern "system" fn(this: *mut *mut Self, presult: *mut ::core::ffi::c_void, ppcred: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetGood: unsafe extern "system" fn(this: *mut *mut Self, pcred: *mut ::core::ffi::c_void, fgood: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetGood: usize,
+}
+#[repr(C)]
+pub struct IMFNetCrossOriginSupport {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCrossOriginPolicy: unsafe extern "system" fn(this: *mut *mut Self, ppolicy: *mut MF_CROSS_ORIGIN_POLICY) -> ::windows_sys::core::HRESULT,
+    pub GetSourceOrigin: unsafe extern "system" fn(this: *mut *mut Self, wszsourceorigin: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsSameOrigin: unsafe extern "system" fn(this: *mut *mut Self, wszurl: ::windows_sys::core::PCWSTR, pfissameorigin: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsSameOrigin: usize,
+}
+#[repr(C)]
+pub struct IMFNetProxyLocator {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub FindFirstProxy: unsafe extern "system" fn(this: *mut *mut Self, pszhost: ::windows_sys::core::PCWSTR, pszurl: ::windows_sys::core::PCWSTR, freserved: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    FindFirstProxy: usize,
+    pub FindNextProxy: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub RegisterProxyResult: unsafe extern "system" fn(this: *mut *mut Self, hrop: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentProxy: unsafe extern "system" fn(this: *mut *mut Self, pszstr: ::windows_sys::core::PWSTR, pcchstr: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppproxylocator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFNetProxyLocatorFactory {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub CreateProxyLocator: unsafe extern "system" fn(this: *mut *mut Self, pszprotocol: ::windows_sys::core::PCWSTR, ppproxylocator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFNetResourceFilter {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnRedirect: unsafe extern "system" fn(this: *mut *mut Self, pszurl: ::windows_sys::core::PCWSTR, pvbcancel: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub OnSendingRequest: unsafe extern "system" fn(this: *mut *mut Self, pszurl: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFNetSchemeHandlerConfig {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetNumberOfSupportedProtocols: unsafe extern "system" fn(this: *mut *mut Self, pcprotocols: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSupportedProtocolType: unsafe extern "system" fn(this: *mut *mut Self, nprotocolindex: u32, pnprotocoltype: *mut MFNETSOURCE_PROTOCOL_TYPE) -> ::windows_sys::core::HRESULT,
+    pub ResetProtocolRolloverSettings: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFObjectReferenceStream {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SaveReference: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, punk: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub LoadReference: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFOutputPolicy {
+    pub base__: IMFAttributes,
+    pub GenerateRequiredSchemas: unsafe extern "system" fn(this: *mut *mut Self, dwattributes: u32, guidoutputsubtype: ::windows_sys::core::GUID, rgguidprotectionschemassupported: *const ::windows_sys::core::GUID, cprotectionschemassupported: u32, pprequiredprotectionschemas: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetOriginatorID: unsafe extern "system" fn(this: *mut *mut Self, pguidoriginatorid: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub GetMinimumGRLVersion: unsafe extern "system" fn(this: *mut *mut Self, pdwminimumgrlversion: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFOutputSchema {
+    pub base__: IMFAttributes,
+    pub GetSchemaType: unsafe extern "system" fn(this: *mut *mut Self, pguidschematype: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub GetConfigurationData: unsafe extern "system" fn(this: *mut *mut Self, pdwval: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetOriginatorID: unsafe extern "system" fn(this: *mut *mut Self, pguidoriginatorid: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFOutputTrustAuthority {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetAction: unsafe extern "system" fn(this: *mut *mut Self, paction: *mut MFPOLICYMANAGER_ACTION) -> ::windows_sys::core::HRESULT,
+    pub SetPolicy: unsafe extern "system" fn(this: *mut *mut Self, pppolicy: *const *mut ::core::ffi::c_void, npolicy: u32, ppbticket: *mut *mut u8, pcbticket: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFPMPClient {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetPMPHost: unsafe extern "system" fn(this: *mut *mut Self, ppmphost: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFPMPClientApp {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetPMPHost: unsafe extern "system" fn(this: *mut *mut Self, ppmphost: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFPMPHost {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub LockProcess: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub UnlockProcess: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreateObjectByCLSID: unsafe extern "system" fn(this: *mut *mut Self, clsid: *const ::windows_sys::core::GUID, pstream: *mut ::core::ffi::c_void, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CreateObjectByCLSID: usize,
+}
+#[repr(C)]
+pub struct IMFPMPHostApp {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub LockProcess: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub UnlockProcess: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub ActivateClassById: unsafe extern "system" fn(this: *mut *mut Self, id: ::windows_sys::core::PCWSTR, pstream: *mut ::core::ffi::c_void, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    ActivateClassById: usize,
+}
+#[repr(C)]
+pub struct IMFPMPServer {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub LockProcess: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub UnlockProcess: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub CreateObjectByCLSID: unsafe extern "system" fn(this: *mut *mut Self, clsid: *const ::windows_sys::core::GUID, riid: *const ::windows_sys::core::GUID, ppobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFPMediaItem {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetMediaPlayer: unsafe extern "system" fn(this: *mut *mut Self, ppmediaplayer: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetURL: unsafe extern "system" fn(this: *mut *mut Self, ppwszurl: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetObject: unsafe extern "system" fn(this: *mut *mut Self, ppiunknown: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetUserData: unsafe extern "system" fn(this: *mut *mut Self, pdwuserdata: *mut usize) -> ::windows_sys::core::HRESULT,
+    pub SetUserData: unsafe extern "system" fn(this: *mut *mut Self, dwuserdata: usize) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    pub GetStartStopPosition: unsafe extern "system" fn(this: *mut *mut Self, pguidstartpositiontype: *mut ::windows_sys::core::GUID, pvstartvalue: *mut super::super::System::Com::StructuredStorage::PROPVARIANT, pguidstoppositiontype: *mut ::windows_sys::core::GUID, pvstopvalue: *mut super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    GetStartStopPosition: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    pub SetStartStopPosition: unsafe extern "system" fn(this: *mut *mut Self, pguidstartpositiontype: *const ::windows_sys::core::GUID, pvstartvalue: *const super::super::System::Com::StructuredStorage::PROPVARIANT, pguidstoppositiontype: *const ::windows_sys::core::GUID, pvstopvalue: *const super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    SetStartStopPosition: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub HasVideo: unsafe extern "system" fn(this: *mut *mut Self, pfhasvideo: *mut super::super::Foundation::BOOL, pfselected: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    HasVideo: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub HasAudio: unsafe extern "system" fn(this: *mut *mut Self, pfhasaudio: *mut super::super::Foundation::BOOL, pfselected: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    HasAudio: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsProtected: unsafe extern "system" fn(this: *mut *mut Self, pfprotected: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsProtected: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    pub GetDuration: unsafe extern "system" fn(this: *mut *mut Self, guidpositiontype: *const ::windows_sys::core::GUID, pvdurationvalue: *mut super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    GetDuration: usize,
+    pub GetNumberOfStreams: unsafe extern "system" fn(this: *mut *mut Self, pdwstreamcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetStreamSelection: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32, pfenabled: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetStreamSelection: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetStreamSelection: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32, fenabled: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetStreamSelection: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    pub GetStreamAttribute: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32, guidmfattribute: *const ::windows_sys::core::GUID, pvvalue: *mut super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    GetStreamAttribute: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    pub GetPresentationAttribute: unsafe extern "system" fn(this: *mut *mut Self, guidmfattribute: *const ::windows_sys::core::GUID, pvvalue: *mut super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    GetPresentationAttribute: usize,
+    pub GetCharacteristics: unsafe extern "system" fn(this: *mut *mut Self, pcharacteristics: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetStreamSink: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32, pmediasink: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub GetMetadata: unsafe extern "system" fn(this: *mut *mut Self, ppmetadatastore: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    GetMetadata: usize,
+}
+#[repr(C)]
+pub struct IMFPMediaPlayer {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Play: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Pause: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Stop: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub FrameStep: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    pub SetPosition: unsafe extern "system" fn(this: *mut *mut Self, guidpositiontype: *const ::windows_sys::core::GUID, pvpositionvalue: *const super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    SetPosition: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    pub GetPosition: unsafe extern "system" fn(this: *mut *mut Self, guidpositiontype: *const ::windows_sys::core::GUID, pvpositionvalue: *mut super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    GetPosition: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    pub GetDuration: unsafe extern "system" fn(this: *mut *mut Self, guidpositiontype: *const ::windows_sys::core::GUID, pvdurationvalue: *mut super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    GetDuration: usize,
+    pub SetRate: unsafe extern "system" fn(this: *mut *mut Self, flrate: f32) -> ::windows_sys::core::HRESULT,
+    pub GetRate: unsafe extern "system" fn(this: *mut *mut Self, pflrate: *mut f32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetSupportedRates: unsafe extern "system" fn(this: *mut *mut Self, fforwarddirection: super::super::Foundation::BOOL, pflslowestrate: *mut f32, pflfastestrate: *mut f32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetSupportedRates: usize,
+    pub GetState: unsafe extern "system" fn(this: *mut *mut Self, pestate: *mut MFP_MEDIAPLAYER_STATE) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CreateMediaItemFromURL: unsafe extern "system" fn(this: *mut *mut Self, pwszurl: ::windows_sys::core::PCWSTR, fsync: super::super::Foundation::BOOL, dwuserdata: usize, ppmediaitem: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CreateMediaItemFromURL: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CreateMediaItemFromObject: unsafe extern "system" fn(this: *mut *mut Self, piunknownobj: *mut ::core::ffi::c_void, fsync: super::super::Foundation::BOOL, dwuserdata: usize, ppmediaitem: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CreateMediaItemFromObject: usize,
+    pub SetMediaItem: unsafe extern "system" fn(this: *mut *mut Self, pimfpmediaitem: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ClearMediaItem: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetMediaItem: unsafe extern "system" fn(this: *mut *mut Self, ppimfpmediaitem: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetVolume: unsafe extern "system" fn(this: *mut *mut Self, pflvolume: *mut f32) -> ::windows_sys::core::HRESULT,
+    pub SetVolume: unsafe extern "system" fn(this: *mut *mut Self, flvolume: f32) -> ::windows_sys::core::HRESULT,
+    pub GetBalance: unsafe extern "system" fn(this: *mut *mut Self, pflbalance: *mut f32) -> ::windows_sys::core::HRESULT,
+    pub SetBalance: unsafe extern "system" fn(this: *mut *mut Self, flbalance: f32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetMute: unsafe extern "system" fn(this: *mut *mut Self, pfmute: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetMute: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetMute: unsafe extern "system" fn(this: *mut *mut Self, fmute: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetMute: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetNativeVideoSize: unsafe extern "system" fn(this: *mut *mut Self, pszvideo: *mut super::super::Foundation::SIZE, pszarvideo: *mut super::super::Foundation::SIZE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetNativeVideoSize: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetIdealVideoSize: unsafe extern "system" fn(this: *mut *mut Self, pszmin: *mut super::super::Foundation::SIZE, pszmax: *mut super::super::Foundation::SIZE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetIdealVideoSize: usize,
+    pub SetVideoSourceRect: unsafe extern "system" fn(this: *mut *mut Self, pnrcsource: *const MFVideoNormalizedRect) -> ::windows_sys::core::HRESULT,
+    pub GetVideoSourceRect: unsafe extern "system" fn(this: *mut *mut Self, pnrcsource: *mut MFVideoNormalizedRect) -> ::windows_sys::core::HRESULT,
+    pub SetAspectRatioMode: unsafe extern "system" fn(this: *mut *mut Self, dwaspectratiomode: u32) -> ::windows_sys::core::HRESULT,
+    pub GetAspectRatioMode: unsafe extern "system" fn(this: *mut *mut Self, pdwaspectratiomode: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetVideoWindow: unsafe extern "system" fn(this: *mut *mut Self, phwndvideo: *mut super::super::Foundation::HWND) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetVideoWindow: usize,
+    pub UpdateVideo: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub SetBorderColor: unsafe extern "system" fn(this: *mut *mut Self, clr: u32) -> ::windows_sys::core::HRESULT,
+    pub GetBorderColor: unsafe extern "system" fn(this: *mut *mut Self, pclr: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InsertEffect: unsafe extern "system" fn(this: *mut *mut Self, peffect: *mut ::core::ffi::c_void, foptional: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InsertEffect: usize,
+    pub RemoveEffect: unsafe extern "system" fn(this: *mut *mut Self, peffect: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RemoveAllEffects: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Shutdown: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFPMediaPlayerCallback {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub OnMediaPlayerEvent: unsafe extern "system" fn(this: *mut *mut Self, peventheader: *const MFP_EVENT_HEADER),
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    OnMediaPlayerEvent: usize,
+}
+#[repr(C)]
+pub struct IMFPluginControl {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetPreferredClsid: unsafe extern "system" fn(this: *mut *mut Self, plugintype: u32, selector: ::windows_sys::core::PCWSTR, clsid: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub GetPreferredClsidByIndex: unsafe extern "system" fn(this: *mut *mut Self, plugintype: u32, index: u32, selector: *mut ::windows_sys::core::PWSTR, clsid: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub SetPreferredClsid: unsafe extern "system" fn(this: *mut *mut Self, plugintype: u32, selector: ::windows_sys::core::PCWSTR, clsid: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub IsDisabled: unsafe extern "system" fn(this: *mut *mut Self, plugintype: u32, clsid: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub GetDisabledByIndex: unsafe extern "system" fn(this: *mut *mut Self, plugintype: u32, index: u32, clsid: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetDisabled: unsafe extern "system" fn(this: *mut *mut Self, plugintype: u32, clsid: *const ::windows_sys::core::GUID, disabled: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetDisabled: usize,
+}
+#[repr(C)]
+pub struct IMFPluginControl2 {
+    pub base__: IMFPluginControl,
+    pub SetPolicy: unsafe extern "system" fn(this: *mut *mut Self, policy: MF_PLUGIN_CONTROL_POLICY) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFPresentationClock {
+    pub base__: IMFClock,
+    pub SetTimeSource: unsafe extern "system" fn(this: *mut *mut Self, ptimesource: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetTimeSource: unsafe extern "system" fn(this: *mut *mut Self, pptimesource: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetTime: unsafe extern "system" fn(this: *mut *mut Self, phnsclocktime: *mut i64) -> ::windows_sys::core::HRESULT,
+    pub AddClockStateSink: unsafe extern "system" fn(this: *mut *mut Self, pstatesink: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RemoveClockStateSink: unsafe extern "system" fn(this: *mut *mut Self, pstatesink: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Start: unsafe extern "system" fn(this: *mut *mut Self, llclockstartoffset: i64) -> ::windows_sys::core::HRESULT,
+    pub Stop: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Pause: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFPresentationDescriptor {
+    pub base__: IMFAttributes,
+    pub GetStreamDescriptorCount: unsafe extern "system" fn(this: *mut *mut Self, pdwdescriptorcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetStreamDescriptorByIndex: unsafe extern "system" fn(this: *mut *mut Self, dwindex: u32, pfselected: *mut super::super::Foundation::BOOL, ppdescriptor: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetStreamDescriptorByIndex: usize,
+    pub SelectStream: unsafe extern "system" fn(this: *mut *mut Self, dwdescriptorindex: u32) -> ::windows_sys::core::HRESULT,
+    pub DeselectStream: unsafe extern "system" fn(this: *mut *mut Self, dwdescriptorindex: u32) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, pppresentationdescriptor: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFPresentationTimeSource {
+    pub base__: IMFClock,
+    pub GetUnderlyingClock: unsafe extern "system" fn(this: *mut *mut Self, ppclock: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFProtectedEnvironmentAccess {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Call: unsafe extern "system" fn(this: *mut *mut Self, inputlength: u32, input: *const u8, outputlength: u32, output: *mut u8) -> ::windows_sys::core::HRESULT,
+    pub ReadGRL: unsafe extern "system" fn(this: *mut *mut Self, outputlength: *mut u32, output: *mut *mut u8) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFQualityAdvise {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetDropMode: unsafe extern "system" fn(this: *mut *mut Self, edropmode: MF_QUALITY_DROP_MODE) -> ::windows_sys::core::HRESULT,
+    pub SetQualityLevel: unsafe extern "system" fn(this: *mut *mut Self, equalitylevel: MF_QUALITY_LEVEL) -> ::windows_sys::core::HRESULT,
+    pub GetDropMode: unsafe extern "system" fn(this: *mut *mut Self, pedropmode: *mut MF_QUALITY_DROP_MODE) -> ::windows_sys::core::HRESULT,
+    pub GetQualityLevel: unsafe extern "system" fn(this: *mut *mut Self, pequalitylevel: *mut MF_QUALITY_LEVEL) -> ::windows_sys::core::HRESULT,
+    pub DropTime: unsafe extern "system" fn(this: *mut *mut Self, hnsamounttodrop: i64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFQualityAdvise2 {
+    pub base__: IMFQualityAdvise,
+    pub NotifyQualityEvent: unsafe extern "system" fn(this: *mut *mut Self, pevent: *mut ::core::ffi::c_void, pdwflags: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFQualityAdviseLimits {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetMaximumDropMode: unsafe extern "system" fn(this: *mut *mut Self, pedropmode: *mut MF_QUALITY_DROP_MODE) -> ::windows_sys::core::HRESULT,
+    pub GetMinimumQualityLevel: unsafe extern "system" fn(this: *mut *mut Self, pequalitylevel: *mut MF_QUALITY_LEVEL) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFQualityManager {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub NotifyTopology: unsafe extern "system" fn(this: *mut *mut Self, ptopology: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub NotifyPresentationClock: unsafe extern "system" fn(this: *mut *mut Self, pclock: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub NotifyProcessInput: unsafe extern "system" fn(this: *mut *mut Self, pnode: *mut ::core::ffi::c_void, linputindex: i32, psample: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub NotifyProcessOutput: unsafe extern "system" fn(this: *mut *mut Self, pnode: *mut ::core::ffi::c_void, loutputindex: i32, psample: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub NotifyQualityEvent: unsafe extern "system" fn(this: *mut *mut Self, pobject: *mut ::core::ffi::c_void, pevent: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Shutdown: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFRateControl {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetRate: unsafe extern "system" fn(this: *mut *mut Self, fthin: super::super::Foundation::BOOL, flrate: f32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetRate: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetRate: unsafe extern "system" fn(this: *mut *mut Self, pfthin: *mut super::super::Foundation::BOOL, pflrate: *mut f32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetRate: usize,
+}
+#[repr(C)]
+pub struct IMFRateSupport {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetSlowestRate: unsafe extern "system" fn(this: *mut *mut Self, edirection: MFRATE_DIRECTION, fthin: super::super::Foundation::BOOL, pflrate: *mut f32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetSlowestRate: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetFastestRate: unsafe extern "system" fn(this: *mut *mut Self, edirection: MFRATE_DIRECTION, fthin: super::super::Foundation::BOOL, pflrate: *mut f32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetFastestRate: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsRateSupported: unsafe extern "system" fn(this: *mut *mut Self, fthin: super::super::Foundation::BOOL, flrate: f32, pflnearestsupportedrate: *mut f32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsRateSupported: usize,
+}
+#[repr(C)]
+pub struct IMFReadWriteClassFactory {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub CreateInstanceFromURL: unsafe extern "system" fn(this: *mut *mut Self, clsid: *const ::windows_sys::core::GUID, pwszurl: ::windows_sys::core::PCWSTR, pattributes: *mut ::core::ffi::c_void, riid: *const ::windows_sys::core::GUID, ppvobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateInstanceFromObject: unsafe extern "system" fn(this: *mut *mut Self, clsid: *const ::windows_sys::core::GUID, punkobject: *mut ::core::ffi::c_void, pattributes: *mut ::core::ffi::c_void, riid: *const ::windows_sys::core::GUID, ppvobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFRealTimeClient {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub RegisterThreads: unsafe extern "system" fn(this: *mut *mut Self, dwtaskindex: u32, wszclass: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub UnregisterThreads: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub SetWorkQueue: unsafe extern "system" fn(this: *mut *mut Self, dwworkqueueid: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFRealTimeClientEx {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub RegisterThreadsEx: unsafe extern "system" fn(this: *mut *mut Self, pdwtaskindex: *mut u32, wszclassname: ::windows_sys::core::PCWSTR, lbasepriority: i32) -> ::windows_sys::core::HRESULT,
+    pub UnregisterThreads: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub SetWorkQueueEx: unsafe extern "system" fn(this: *mut *mut Self, dwmultithreadedworkqueueid: u32, lworkitembasepriority: i32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFRelativePanelReport {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetRelativePanel: unsafe extern "system" fn(this: *mut *mut Self, panel: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFRelativePanelWatcher {
+    pub base__: IMFShutdown,
+    pub BeginGetReport: unsafe extern "system" fn(this: *mut *mut Self, pcallback: *mut ::core::ffi::c_void, pstate: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EndGetReport: unsafe extern "system" fn(this: *mut *mut Self, presult: *mut ::core::ffi::c_void, pprelativepanelreport: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetReport: unsafe extern "system" fn(this: *mut *mut Self, pprelativepanelreport: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFRemoteAsyncCallback {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Invoke: unsafe extern "system" fn(this: *mut *mut Self, hr: ::windows_sys::core::HRESULT, premoteresult: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFRemoteDesktopPlugin {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub UpdateTopology: unsafe extern "system" fn(this: *mut *mut Self, ptopology: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFRemoteProxy {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetRemoteObject: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetRemoteHost: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFSAMIStyle {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetStyleCount: unsafe extern "system" fn(this: *mut *mut Self, pdwcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    pub GetStyles: unsafe extern "system" fn(this: *mut *mut Self, ppropvarstylearray: *mut super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    GetStyles: usize,
+    pub SetSelectedStyle: unsafe extern "system" fn(this: *mut *mut Self, pwszstyle: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetSelectedStyle: unsafe extern "system" fn(this: *mut *mut Self, ppwszstyle: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFSSLCertificateManager {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetClientCertificate: unsafe extern "system" fn(this: *mut *mut Self, pszurl: ::windows_sys::core::PCWSTR, ppbdata: *mut *mut u8, pcbdata: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub BeginGetClientCertificate: unsafe extern "system" fn(this: *mut *mut Self, pszurl: ::windows_sys::core::PCWSTR, pcallback: *mut ::core::ffi::c_void, pstate: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EndGetClientCertificate: unsafe extern "system" fn(this: *mut *mut Self, presult: *mut ::core::ffi::c_void, ppbdata: *mut *mut u8, pcbdata: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetCertificatePolicy: unsafe extern "system" fn(this: *mut *mut Self, pszurl: ::windows_sys::core::PCWSTR, pfoverrideautomaticcheck: *mut super::super::Foundation::BOOL, pfclientcertificateavailable: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetCertificatePolicy: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OnServerCertificate: unsafe extern "system" fn(this: *mut *mut Self, pszurl: ::windows_sys::core::PCWSTR, pbdata: *const u8, cbdata: u32, pfisgood: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OnServerCertificate: usize,
+}
+#[repr(C)]
+pub struct IMFSample {
+    pub base__: IMFAttributes,
+    pub GetSampleFlags: unsafe extern "system" fn(this: *mut *mut Self, pdwsampleflags: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetSampleFlags: unsafe extern "system" fn(this: *mut *mut Self, dwsampleflags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetSampleTime: unsafe extern "system" fn(this: *mut *mut Self, phnssampletime: *mut i64) -> ::windows_sys::core::HRESULT,
+    pub SetSampleTime: unsafe extern "system" fn(this: *mut *mut Self, hnssampletime: i64) -> ::windows_sys::core::HRESULT,
+    pub GetSampleDuration: unsafe extern "system" fn(this: *mut *mut Self, phnssampleduration: *mut i64) -> ::windows_sys::core::HRESULT,
+    pub SetSampleDuration: unsafe extern "system" fn(this: *mut *mut Self, hnssampleduration: i64) -> ::windows_sys::core::HRESULT,
+    pub GetBufferCount: unsafe extern "system" fn(this: *mut *mut Self, pdwbuffercount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetBufferByIndex: unsafe extern "system" fn(this: *mut *mut Self, dwindex: u32, ppbuffer: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ConvertToContiguousBuffer: unsafe extern "system" fn(this: *mut *mut Self, ppbuffer: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AddBuffer: unsafe extern "system" fn(this: *mut *mut Self, pbuffer: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RemoveBufferByIndex: unsafe extern "system" fn(this: *mut *mut Self, dwindex: u32) -> ::windows_sys::core::HRESULT,
+    pub RemoveAllBuffers: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetTotalLength: unsafe extern "system" fn(this: *mut *mut Self, pcbtotallength: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub CopyToBuffer: unsafe extern "system" fn(this: *mut *mut Self, pbuffer: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFSampleAllocatorControl {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetDefaultAllocator: unsafe extern "system" fn(this: *mut *mut Self, dwoutputstreamid: u32, pallocator: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetAllocatorUsage: unsafe extern "system" fn(this: *mut *mut Self, dwoutputstreamid: u32, pdwinputstreamid: *mut u32, peusage: *mut MFSampleAllocatorUsage) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFSampleGrabberSinkCallback {
+    pub base__: IMFClockStateSink,
+    pub OnSetPresentationClock: unsafe extern "system" fn(this: *mut *mut Self, ppresentationclock: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub OnProcessSample: unsafe extern "system" fn(this: *mut *mut Self, guidmajormediatype: *const ::windows_sys::core::GUID, dwsampleflags: u32, llsampletime: i64, llsampleduration: i64, psamplebuffer: *const u8, dwsamplesize: u32) -> ::windows_sys::core::HRESULT,
+    pub OnShutdown: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFSampleGrabberSinkCallback2 {
+    pub base__: IMFSampleGrabberSinkCallback,
+    pub OnProcessSampleEx: unsafe extern "system" fn(this: *mut *mut Self, guidmajormediatype: *const ::windows_sys::core::GUID, dwsampleflags: u32, llsampletime: i64, llsampleduration: i64, psamplebuffer: *const u8, dwsamplesize: u32, pattributes: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFSampleOutputStream {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub BeginWriteSample: unsafe extern "system" fn(this: *mut *mut Self, psample: *mut ::core::ffi::c_void, pcallback: *mut ::core::ffi::c_void, punkstate: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EndWriteSample: unsafe extern "system" fn(this: *mut *mut Self, presult: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFSampleProtection {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetInputProtectionVersion: unsafe extern "system" fn(this: *mut *mut Self, pdwversion: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetOutputProtectionVersion: unsafe extern "system" fn(this: *mut *mut Self, pdwversion: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetProtectionCertificate: unsafe extern "system" fn(this: *mut *mut Self, dwversion: u32, ppcert: *mut *mut u8, pcbcert: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub InitOutputProtection: unsafe extern "system" fn(this: *mut *mut Self, dwversion: u32, dwoutputid: u32, pbcert: *const u8, cbcert: u32, ppbseed: *mut *mut u8, pcbseed: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub InitInputProtection: unsafe extern "system" fn(this: *mut *mut Self, dwversion: u32, dwinputid: u32, pbseed: *const u8, cbseed: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFSaveJob {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub BeginSave: unsafe extern "system" fn(this: *mut *mut Self, pstream: *mut ::core::ffi::c_void, pcallback: *mut ::core::ffi::c_void, pstate: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EndSave: unsafe extern "system" fn(this: *mut *mut Self, presult: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CancelSave: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetProgress: unsafe extern "system" fn(this: *mut *mut Self, pdwpercentcomplete: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFSchemeHandler {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub BeginCreateObject: unsafe extern "system" fn(this: *mut *mut Self, pwszurl: ::windows_sys::core::PCWSTR, dwflags: u32, pprops: *mut ::core::ffi::c_void, ppiunknowncancelcookie: *mut *mut ::core::ffi::c_void, pcallback: *mut ::core::ffi::c_void, punkstate: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    BeginCreateObject: usize,
+    pub EndCreateObject: unsafe extern "system" fn(this: *mut *mut Self, presult: *mut ::core::ffi::c_void, pobjecttype: *mut MF_OBJECT_TYPE, ppobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CancelObjectCreation: unsafe extern "system" fn(this: *mut *mut Self, piunknowncancelcookie: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFSecureBuffer {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetIdentifier: unsafe extern "system" fn(this: *mut *mut Self, pguididentifier: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFSecureChannel {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCertificate: unsafe extern "system" fn(this: *mut *mut Self, ppcert: *mut *mut u8, pcbcert: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetupSession: unsafe extern "system" fn(this: *mut *mut Self, pbencryptedsessionkey: *const u8, cbsessionkey: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFSeekInfo {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    pub GetNearestKeyFrames: unsafe extern "system" fn(this: *mut *mut Self, pguidtimeformat: *const ::windows_sys::core::GUID, pvarstartposition: *const super::super::System::Com::StructuredStorage::PROPVARIANT, pvarpreviouskeyframe: *mut super::super::System::Com::StructuredStorage::PROPVARIANT, pvarnextkeyframe: *mut super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    GetNearestKeyFrames: usize,
+}
+#[repr(C)]
+pub struct IMFSensorActivitiesReport {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, pccount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetActivityReport: unsafe extern "system" fn(this: *mut *mut Self, index: u32, sensoractivityreport: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetActivityReportByDeviceName: unsafe extern "system" fn(this: *mut *mut Self, symbolicname: ::windows_sys::core::PCWSTR, sensoractivityreport: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFSensorActivitiesReportCallback {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnActivitiesReport: unsafe extern "system" fn(this: *mut *mut Self, sensoractivitiesreport: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFSensorActivityMonitor {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Start: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Stop: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFSensorActivityReport {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetFriendlyName: unsafe extern "system" fn(this: *mut *mut Self, friendlyname: ::windows_sys::core::PWSTR, cchfriendlyname: u32, pcchwritten: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolicLink: unsafe extern "system" fn(this: *mut *mut Self, symboliclink: ::windows_sys::core::PWSTR, cchsymboliclink: u32, pcchwritten: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetProcessCount: unsafe extern "system" fn(this: *mut *mut Self, pccount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetProcessActivity: unsafe extern "system" fn(this: *mut *mut Self, index: u32, ppprocessactivity: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFSensorDevice {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetDeviceId: unsafe extern "system" fn(this: *mut *mut Self, pdeviceid: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetDeviceType: unsafe extern "system" fn(this: *mut *mut Self, ptype: *mut MFSensorDeviceType) -> ::windows_sys::core::HRESULT,
+    pub GetFlags: unsafe extern "system" fn(this: *mut *mut Self, pflags: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetSymbolicLink: unsafe extern "system" fn(this: *mut *mut Self, symboliclink: ::windows_sys::core::PWSTR, cchsymboliclink: i32, pcchwritten: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub GetDeviceAttributes: unsafe extern "system" fn(this: *mut *mut Self, ppattributes: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetStreamAttributesCount: unsafe extern "system" fn(this: *mut *mut Self, etype: MFSensorStreamType, pdwcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetStreamAttributes: unsafe extern "system" fn(this: *mut *mut Self, etype: MFSensorStreamType, dwindex: u32, ppattributes: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetSensorDeviceMode: unsafe extern "system" fn(this: *mut *mut Self, emode: MFSensorDeviceMode) -> ::windows_sys::core::HRESULT,
+    pub GetSensorDeviceMode: unsafe extern "system" fn(this: *mut *mut Self, pemode: *mut MFSensorDeviceMode) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFSensorGroup {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetSymbolicLink: unsafe extern "system" fn(this: *mut *mut Self, symboliclink: ::windows_sys::core::PWSTR, cchsymboliclink: i32, pcchwritten: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub GetFlags: unsafe extern "system" fn(this: *mut *mut Self, pflags: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetSensorGroupAttributes: unsafe extern "system" fn(this: *mut *mut Self, ppattributes: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetSensorDeviceCount: unsafe extern "system" fn(this: *mut *mut Self, pdwcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSensorDevice: unsafe extern "system" fn(this: *mut *mut Self, dwindex: u32, ppdevice: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetDefaultSensorDeviceIndex: unsafe extern "system" fn(this: *mut *mut Self, dwindex: u32) -> ::windows_sys::core::HRESULT,
+    pub GetDefaultSensorDeviceIndex: unsafe extern "system" fn(this: *mut *mut Self, pdwindex: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub CreateMediaSource: unsafe extern "system" fn(this: *mut *mut Self, ppsource: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFSensorProcessActivity {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetProcessId: unsafe extern "system" fn(this: *mut *mut Self, ppid: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetStreamingState: unsafe extern "system" fn(this: *mut *mut Self, pfstreaming: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetStreamingState: usize,
+    pub GetStreamingMode: unsafe extern "system" fn(this: *mut *mut Self, pmode: *mut MFSensorDeviceMode) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetReportTime: unsafe extern "system" fn(this: *mut *mut Self, pft: *mut super::super::Foundation::FILETIME) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetReportTime: usize,
+}
+#[repr(C)]
+pub struct IMFSensorProfile {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetProfileId: unsafe extern "system" fn(this: *mut *mut Self, pid: *mut SENSORPROFILEID) -> ::windows_sys::core::HRESULT,
+    pub AddProfileFilter: unsafe extern "system" fn(this: *mut *mut Self, streamid: u32, wzfiltersetstring: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsMediaTypeSupported: unsafe extern "system" fn(this: *mut *mut Self, streamid: u32, pmediatype: *mut ::core::ffi::c_void, pfsupported: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsMediaTypeSupported: usize,
+    pub AddBlockedControl: unsafe extern "system" fn(this: *mut *mut Self, wzblockedcontrol: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFSensorProfileCollection {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetProfileCount: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
+    pub GetProfile: unsafe extern "system" fn(this: *mut *mut Self, index: u32, ppprofile: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AddProfile: unsafe extern "system" fn(this: *mut *mut Self, pprofile: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub FindProfile: unsafe extern "system" fn(this: *mut *mut Self, profileid: *const SENSORPROFILEID, ppprofile: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RemoveProfileByIndex: unsafe extern "system" fn(this: *mut *mut Self, index: u32),
+    pub RemoveProfile: unsafe extern "system" fn(this: *mut *mut Self, profileid: *const SENSORPROFILEID),
+}
+#[repr(C)]
+pub struct IMFSensorStream {
+    pub base__: IMFAttributes,
+    pub GetMediaTypeCount: unsafe extern "system" fn(this: *mut *mut Self, pdwcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetMediaType: unsafe extern "system" fn(this: *mut *mut Self, dwindex: u32, ppmediatype: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CloneSensorStream: unsafe extern "system" fn(this: *mut *mut Self, ppstream: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFSensorTransformFactory {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetFactoryAttributes: unsafe extern "system" fn(this: *mut *mut Self, ppattributes: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub InitializeFactory: unsafe extern "system" fn(this: *mut *mut Self, dwmaxtransformcount: u32, psensordevices: *mut ::core::ffi::c_void, pattributes: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetTransformCount: unsafe extern "system" fn(this: *mut *mut Self, pdwcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetTransformInformation: unsafe extern "system" fn(this: *mut *mut Self, transformindex: u32, pguidtransformid: *mut ::windows_sys::core::GUID, ppattributes: *mut *mut ::core::ffi::c_void, ppstreaminformation: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateTransform: unsafe extern "system" fn(this: *mut *mut Self, guidsensortransformid: *const ::windows_sys::core::GUID, pattributes: *mut ::core::ffi::c_void, ppdevicemft: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFSequencerSource {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub AppendTopology: unsafe extern "system" fn(this: *mut *mut Self, ptopology: *mut ::core::ffi::c_void, dwflags: u32, pdwid: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub DeleteTopology: unsafe extern "system" fn(this: *mut *mut Self, dwid: u32) -> ::windows_sys::core::HRESULT,
+    pub GetPresentationContext: unsafe extern "system" fn(this: *mut *mut Self, ppd: *mut ::core::ffi::c_void, pid: *mut u32, pptopology: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub UpdateTopology: unsafe extern "system" fn(this: *mut *mut Self, dwid: u32, ptopology: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub UpdateTopologyFlags: unsafe extern "system" fn(this: *mut *mut Self, dwid: u32, dwflags: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFSharingEngineClassFactory {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub CreateInstance: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, pattr: *mut ::core::ffi::c_void, ppengine: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFShutdown {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Shutdown: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetShutdownStatus: unsafe extern "system" fn(this: *mut *mut Self, pstatus: *mut MFSHUTDOWN_STATUS) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFSignedLibrary {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetProcedureAddress: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::PCSTR, address: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFSimpleAudioVolume {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetMasterVolume: unsafe extern "system" fn(this: *mut *mut Self, flevel: f32) -> ::windows_sys::core::HRESULT,
+    pub GetMasterVolume: unsafe extern "system" fn(this: *mut *mut Self, pflevel: *mut f32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetMute: unsafe extern "system" fn(this: *mut *mut Self, bmute: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetMute: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetMute: unsafe extern "system" fn(this: *mut *mut Self, pbmute: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetMute: usize,
+}
+#[repr(C)]
+pub struct IMFSinkWriter {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub AddStream: unsafe extern "system" fn(this: *mut *mut Self, ptargetmediatype: *mut ::core::ffi::c_void, pdwstreamindex: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetInputMediaType: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32, pinputmediatype: *mut ::core::ffi::c_void, pencodingparameters: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub BeginWriting: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub WriteSample: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32, psample: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SendStreamTick: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32, lltimestamp: i64) -> ::windows_sys::core::HRESULT,
+    pub PlaceMarker: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32, pvcontext: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub NotifyEndOfSegment: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32) -> ::windows_sys::core::HRESULT,
+    pub Flush: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32) -> ::windows_sys::core::HRESULT,
+    pub Finalize: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetServiceForStream: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32, guidservice: *const ::windows_sys::core::GUID, riid: *const ::windows_sys::core::GUID, ppvobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetStatistics: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32, pstats: *mut MF_SINK_WRITER_STATISTICS) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFSinkWriterCallback {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnFinalize: unsafe extern "system" fn(this: *mut *mut Self, hrstatus: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+    pub OnMarker: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32, pvcontext: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFSinkWriterCallback2 {
+    pub base__: IMFSinkWriterCallback,
+    pub OnTransformChange: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub OnStreamError: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32, hrstatus: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFSinkWriterEncoderConfig {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetTargetMediaType: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32, ptargetmediatype: *mut ::core::ffi::c_void, pencodingparameters: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub PlaceEncodingParameters: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32, pencodingparameters: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFSinkWriterEx {
+    pub base__: IMFSinkWriter,
+    pub GetTransformForStream: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32, dwtransformindex: u32, pguidcategory: *mut ::windows_sys::core::GUID, pptransform: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFSourceBuffer {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetUpdating: unsafe extern "system" fn(this: *mut *mut Self) -> super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetUpdating: usize,
+    pub GetBuffered: unsafe extern "system" fn(this: *mut *mut Self, ppbuffered: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetTimeStampOffset: unsafe extern "system" fn(this: *mut *mut Self) -> f64,
+    pub SetTimeStampOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: f64) -> ::windows_sys::core::HRESULT,
+    pub GetAppendWindowStart: unsafe extern "system" fn(this: *mut *mut Self) -> f64,
+    pub SetAppendWindowStart: unsafe extern "system" fn(this: *mut *mut Self, time: f64) -> ::windows_sys::core::HRESULT,
+    pub GetAppendWindowEnd: unsafe extern "system" fn(this: *mut *mut Self) -> f64,
+    pub SetAppendWindowEnd: unsafe extern "system" fn(this: *mut *mut Self, time: f64) -> ::windows_sys::core::HRESULT,
+    pub Append: unsafe extern "system" fn(this: *mut *mut Self, pdata: *const u8, len: u32) -> ::windows_sys::core::HRESULT,
+    pub AppendByteStream: unsafe extern "system" fn(this: *mut *mut Self, pstream: *mut ::core::ffi::c_void, pmaxlen: *const u64) -> ::windows_sys::core::HRESULT,
+    pub Abort: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Remove: unsafe extern "system" fn(this: *mut *mut Self, start: f64, end: f64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFSourceBufferAppendMode {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetAppendMode: unsafe extern "system" fn(this: *mut *mut Self) -> MF_MSE_APPEND_MODE,
+    pub SetAppendMode: unsafe extern "system" fn(this: *mut *mut Self, mode: MF_MSE_APPEND_MODE) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFSourceBufferList {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetLength: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
+    pub GetSourceBuffer: unsafe extern "system" fn(this: *mut *mut Self, index: u32) -> *mut *mut IMFSourceBuffer,
+}
+#[repr(C)]
+pub struct IMFSourceBufferNotify {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnUpdateStart: unsafe extern "system" fn(this: *mut *mut Self),
+    pub OnAbort: unsafe extern "system" fn(this: *mut *mut Self),
+    pub OnError: unsafe extern "system" fn(this: *mut *mut Self, hr: ::windows_sys::core::HRESULT),
+    pub OnUpdate: unsafe extern "system" fn(this: *mut *mut Self),
+    pub OnUpdateEnd: unsafe extern "system" fn(this: *mut *mut Self),
+}
+#[repr(C)]
+pub struct IMFSourceOpenMonitor {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnSourceEvent: unsafe extern "system" fn(this: *mut *mut Self, pevent: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFSourceReader {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetStreamSelection: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32, pfselected: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetStreamSelection: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetStreamSelection: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32, fselected: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetStreamSelection: usize,
+    pub GetNativeMediaType: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32, dwmediatypeindex: u32, ppmediatype: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentMediaType: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32, ppmediatype: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetCurrentMediaType: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32, pdwreserved: *mut u32, pmediatype: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    pub SetCurrentPosition: unsafe extern "system" fn(this: *mut *mut Self, guidtimeformat: *const ::windows_sys::core::GUID, varposition: *const super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    SetCurrentPosition: usize,
+    pub ReadSample: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32, dwcontrolflags: u32, pdwactualstreamindex: *mut u32, pdwstreamflags: *mut u32, plltimestamp: *mut i64, ppsample: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Flush: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32) -> ::windows_sys::core::HRESULT,
+    pub GetServiceForStream: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32, guidservice: *const ::windows_sys::core::GUID, riid: *const ::windows_sys::core::GUID, ppvobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    pub GetPresentationAttribute: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32, guidattribute: *const ::windows_sys::core::GUID, pvarattribute: *mut super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    GetPresentationAttribute: usize,
+}
+#[repr(C)]
+pub struct IMFSourceReaderCallback {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnReadSample: unsafe extern "system" fn(this: *mut *mut Self, hrstatus: ::windows_sys::core::HRESULT, dwstreamindex: u32, dwstreamflags: u32, lltimestamp: i64, psample: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub OnFlush: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32) -> ::windows_sys::core::HRESULT,
+    pub OnEvent: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32, pevent: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFSourceReaderCallback2 {
+    pub base__: IMFSourceReaderCallback,
+    pub OnTransformChange: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub OnStreamError: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32, hrstatus: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFSourceReaderEx {
+    pub base__: IMFSourceReader,
+    pub SetNativeMediaType: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32, pmediatype: *mut ::core::ffi::c_void, pdwstreamflags: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub AddTransformForStream: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32, ptransformoractivate: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RemoveAllTransformsForStream: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32) -> ::windows_sys::core::HRESULT,
+    pub GetTransformForStream: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32, dwtransformindex: u32, pguidcategory: *mut ::windows_sys::core::GUID, pptransform: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFSourceResolver {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub CreateObjectFromURL: unsafe extern "system" fn(this: *mut *mut Self, pwszurl: ::windows_sys::core::PCWSTR, dwflags: u32, pprops: *mut ::core::ffi::c_void, pobjecttype: *mut MF_OBJECT_TYPE, ppobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    CreateObjectFromURL: usize,
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub CreateObjectFromByteStream: unsafe extern "system" fn(this: *mut *mut Self, pbytestream: *mut ::core::ffi::c_void, pwszurl: ::windows_sys::core::PCWSTR, dwflags: u32, pprops: *mut ::core::ffi::c_void, pobjecttype: *mut MF_OBJECT_TYPE, ppobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    CreateObjectFromByteStream: usize,
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub BeginCreateObjectFromURL: unsafe extern "system" fn(this: *mut *mut Self, pwszurl: ::windows_sys::core::PCWSTR, dwflags: u32, pprops: *mut ::core::ffi::c_void, ppiunknowncancelcookie: *mut *mut ::core::ffi::c_void, pcallback: *mut ::core::ffi::c_void, punkstate: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    BeginCreateObjectFromURL: usize,
+    pub EndCreateObjectFromURL: unsafe extern "system" fn(this: *mut *mut Self, presult: *mut ::core::ffi::c_void, pobjecttype: *mut MF_OBJECT_TYPE, ppobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub BeginCreateObjectFromByteStream: unsafe extern "system" fn(this: *mut *mut Self, pbytestream: *mut ::core::ffi::c_void, pwszurl: ::windows_sys::core::PCWSTR, dwflags: u32, pprops: *mut ::core::ffi::c_void, ppiunknowncancelcookie: *mut *mut ::core::ffi::c_void, pcallback: *mut ::core::ffi::c_void, punkstate: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    BeginCreateObjectFromByteStream: usize,
+    pub EndCreateObjectFromByteStream: unsafe extern "system" fn(this: *mut *mut Self, presult: *mut ::core::ffi::c_void, pobjecttype: *mut MF_OBJECT_TYPE, ppobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CancelObjectCreation: unsafe extern "system" fn(this: *mut *mut Self, piunknowncancelcookie: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFSpatialAudioObjectBuffer {
+    pub base__: IMFMediaBuffer,
+    pub SetID: unsafe extern "system" fn(this: *mut *mut Self, u32id: u32) -> ::windows_sys::core::HRESULT,
+    pub GetID: unsafe extern "system" fn(this: *mut *mut Self, pu32id: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Media_Audio")]
+    pub SetType: unsafe extern "system" fn(this: *mut *mut Self, r#type: super::Audio::AudioObjectType) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Media_Audio"))]
+    SetType: usize,
+    #[cfg(feature = "Win32_Media_Audio")]
+    pub GetType: unsafe extern "system" fn(this: *mut *mut Self, ptype: *mut super::Audio::AudioObjectType) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Media_Audio"))]
+    GetType: usize,
+    #[cfg(feature = "Win32_Media_Audio")]
+    pub GetMetadataItems: unsafe extern "system" fn(this: *mut *mut Self, ppmetadataitems: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Media_Audio"))]
+    GetMetadataItems: usize,
+}
+#[repr(C)]
+pub struct IMFSpatialAudioSample {
+    pub base__: IMFSample,
+    pub GetObjectCount: unsafe extern "system" fn(this: *mut *mut Self, pdwobjectcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub AddSpatialAudioObject: unsafe extern "system" fn(this: *mut *mut Self, paudioobjbuffer: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetSpatialAudioObjectByIndex: unsafe extern "system" fn(this: *mut *mut Self, dwindex: u32, ppaudioobjbuffer: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFStreamDescriptor {
+    pub base__: IMFAttributes,
+    pub GetStreamIdentifier: unsafe extern "system" fn(this: *mut *mut Self, pdwstreamidentifier: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetMediaTypeHandler: unsafe extern "system" fn(this: *mut *mut Self, ppmediatypehandler: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFStreamSink {
+    pub base__: IMFMediaEventGenerator,
+    pub GetMediaSink: unsafe extern "system" fn(this: *mut *mut Self, ppmediasink: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetIdentifier: unsafe extern "system" fn(this: *mut *mut Self, pdwidentifier: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetMediaTypeHandler: unsafe extern "system" fn(this: *mut *mut Self, pphandler: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ProcessSample: unsafe extern "system" fn(this: *mut *mut Self, psample: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    pub PlaceMarker: unsafe extern "system" fn(this: *mut *mut Self, emarkertype: MFSTREAMSINK_MARKER_TYPE, pvarmarkervalue: *const super::super::System::Com::StructuredStorage::PROPVARIANT, pvarcontextvalue: *const super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    PlaceMarker: usize,
+    pub Flush: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFStreamingSinkConfig {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub StartStreaming: unsafe extern "system" fn(this: *mut *mut Self, fseekoffsetisbyteoffset: super::super::Foundation::BOOL, qwseekoffset: u64) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    StartStreaming: usize,
+}
+#[repr(C)]
+pub struct IMFSystemId {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetData: unsafe extern "system" fn(this: *mut *mut Self, size: *mut u32, data: *mut *mut u8) -> ::windows_sys::core::HRESULT,
+    pub Setup: unsafe extern "system" fn(this: *mut *mut Self, stage: u32, cbin: u32, pbin: *const u8, pcbout: *mut u32, ppbout: *mut *mut u8) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFTimecodeTranslate {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    pub BeginConvertTimecodeToHNS: unsafe extern "system" fn(this: *mut *mut Self, ppropvartimecode: *const super::super::System::Com::StructuredStorage::PROPVARIANT, pcallback: *mut ::core::ffi::c_void, punkstate: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    BeginConvertTimecodeToHNS: usize,
+    pub EndConvertTimecodeToHNS: unsafe extern "system" fn(this: *mut *mut Self, presult: *mut ::core::ffi::c_void, phnstime: *mut i64) -> ::windows_sys::core::HRESULT,
+    pub BeginConvertHNSToTimecode: unsafe extern "system" fn(this: *mut *mut Self, hnstime: i64, pcallback: *mut ::core::ffi::c_void, punkstate: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    pub EndConvertHNSToTimecode: unsafe extern "system" fn(this: *mut *mut Self, presult: *mut ::core::ffi::c_void, ppropvartimecode: *mut super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    EndConvertHNSToTimecode: usize,
+}
+#[repr(C)]
+pub struct IMFTimedText {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub RegisterNotifications: unsafe extern "system" fn(this: *mut *mut Self, notify: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SelectTrack: unsafe extern "system" fn(this: *mut *mut Self, trackid: u32, selected: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SelectTrack: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AddDataSource: unsafe extern "system" fn(this: *mut *mut Self, bytestream: *mut ::core::ffi::c_void, label: ::windows_sys::core::PCWSTR, language: ::windows_sys::core::PCWSTR, kind: MF_TIMED_TEXT_TRACK_KIND, isdefault: super::super::Foundation::BOOL, trackid: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AddDataSource: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AddDataSourceFromUrl: unsafe extern "system" fn(this: *mut *mut Self, url: ::windows_sys::core::PCWSTR, label: ::windows_sys::core::PCWSTR, language: ::windows_sys::core::PCWSTR, kind: MF_TIMED_TEXT_TRACK_KIND, isdefault: super::super::Foundation::BOOL, trackid: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AddDataSourceFromUrl: usize,
+    pub AddTrack: unsafe extern "system" fn(this: *mut *mut Self, label: ::windows_sys::core::PCWSTR, language: ::windows_sys::core::PCWSTR, kind: MF_TIMED_TEXT_TRACK_KIND, track: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RemoveTrack: unsafe extern "system" fn(this: *mut *mut Self, track: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetCueTimeOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: *mut f64) -> ::windows_sys::core::HRESULT,
+    pub SetCueTimeOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: f64) -> ::windows_sys::core::HRESULT,
+    pub GetTracks: unsafe extern "system" fn(this: *mut *mut Self, tracks: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetActiveTracks: unsafe extern "system" fn(this: *mut *mut Self, activetracks: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetTextTracks: unsafe extern "system" fn(this: *mut *mut Self, texttracks: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetMetadataTracks: unsafe extern "system" fn(this: *mut *mut Self, metadatatracks: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetInBandEnabled: unsafe extern "system" fn(this: *mut *mut Self, enabled: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetInBandEnabled: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsInBandEnabled: unsafe extern "system" fn(this: *mut *mut Self) -> super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsInBandEnabled: usize,
+}
+#[repr(C)]
+pub struct IMFTimedTextBinary {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetData: unsafe extern "system" fn(this: *mut *mut Self, data: *mut *mut u8, length: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFTimedTextBouten {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetBoutenType: unsafe extern "system" fn(this: *mut *mut Self, value: *mut MF_TIMED_TEXT_BOUTEN_TYPE) -> ::windows_sys::core::HRESULT,
+    pub GetBoutenColor: unsafe extern "system" fn(this: *mut *mut Self, value: *mut MFARGB) -> ::windows_sys::core::HRESULT,
+    pub GetBoutenPosition: unsafe extern "system" fn(this: *mut *mut Self, value: *mut MF_TIMED_TEXT_BOUTEN_POSITION) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFTimedTextCue {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetId: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
+    pub GetOriginalId: unsafe extern "system" fn(this: *mut *mut Self, originalid: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetCueKind: unsafe extern "system" fn(this: *mut *mut Self) -> MF_TIMED_TEXT_TRACK_KIND,
+    pub GetStartTime: unsafe extern "system" fn(this: *mut *mut Self) -> f64,
+    pub GetDuration: unsafe extern "system" fn(this: *mut *mut Self) -> f64,
+    pub GetTrackId: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
+    pub GetData: unsafe extern "system" fn(this: *mut *mut Self, data: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetRegion: unsafe extern "system" fn(this: *mut *mut Self, region: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetStyle: unsafe extern "system" fn(this: *mut *mut Self, style: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetLineCount: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
+    pub GetLine: unsafe extern "system" fn(this: *mut *mut Self, index: u32, line: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFTimedTextCueList {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetLength: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
+    pub GetCueByIndex: unsafe extern "system" fn(this: *mut *mut Self, index: u32, cue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetCueById: unsafe extern "system" fn(this: *mut *mut Self, id: u32, cue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetCueByOriginalId: unsafe extern "system" fn(this: *mut *mut Self, originalid: ::windows_sys::core::PCWSTR, cue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AddTextCue: unsafe extern "system" fn(this: *mut *mut Self, start: f64, duration: f64, text: ::windows_sys::core::PCWSTR, cue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AddDataCue: unsafe extern "system" fn(this: *mut *mut Self, start: f64, duration: f64, data: *const u8, datasize: u32, cue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RemoveCue: unsafe extern "system" fn(this: *mut *mut Self, cue: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFTimedTextFormattedText {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetText: unsafe extern "system" fn(this: *mut *mut Self, text: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetSubformattingCount: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
+    pub GetSubformatting: unsafe extern "system" fn(this: *mut *mut Self, index: u32, firstchar: *mut u32, charlength: *mut u32, style: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFTimedTextNotify {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub TrackAdded: unsafe extern "system" fn(this: *mut *mut Self, trackid: u32),
+    pub TrackRemoved: unsafe extern "system" fn(this: *mut *mut Self, trackid: u32),
+    #[cfg(feature = "Win32_Foundation")]
+    pub TrackSelected: unsafe extern "system" fn(this: *mut *mut Self, trackid: u32, selected: super::super::Foundation::BOOL),
+    #[cfg(not(feature = "Win32_Foundation"))]
+    TrackSelected: usize,
+    pub TrackReadyStateChanged: unsafe extern "system" fn(this: *mut *mut Self, trackid: u32),
+    pub Error: unsafe extern "system" fn(this: *mut *mut Self, errorcode: MF_TIMED_TEXT_ERROR_CODE, extendederrorcode: ::windows_sys::core::HRESULT, sourcetrackid: u32),
+    pub Cue: unsafe extern "system" fn(this: *mut *mut Self, cueevent: MF_TIMED_TEXT_CUE_EVENT, currenttime: f64, cue: *mut ::core::ffi::c_void),
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self),
+}
+#[repr(C)]
+pub struct IMFTimedTextRegion {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetName: unsafe extern "system" fn(this: *mut *mut Self, name: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetPosition: unsafe extern "system" fn(this: *mut *mut Self, px: *mut f64, py: *mut f64, unittype: *mut MF_TIMED_TEXT_UNIT_TYPE) -> ::windows_sys::core::HRESULT,
+    pub GetExtent: unsafe extern "system" fn(this: *mut *mut Self, pwidth: *mut f64, pheight: *mut f64, unittype: *mut MF_TIMED_TEXT_UNIT_TYPE) -> ::windows_sys::core::HRESULT,
+    pub GetBackgroundColor: unsafe extern "system" fn(this: *mut *mut Self, bgcolor: *mut MFARGB) -> ::windows_sys::core::HRESULT,
+    pub GetWritingMode: unsafe extern "system" fn(this: *mut *mut Self, writingmode: *mut MF_TIMED_TEXT_WRITING_MODE) -> ::windows_sys::core::HRESULT,
+    pub GetDisplayAlignment: unsafe extern "system" fn(this: *mut *mut Self, displayalign: *mut MF_TIMED_TEXT_DISPLAY_ALIGNMENT) -> ::windows_sys::core::HRESULT,
+    pub GetLineHeight: unsafe extern "system" fn(this: *mut *mut Self, plineheight: *mut f64, unittype: *mut MF_TIMED_TEXT_UNIT_TYPE) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetClipOverflow: unsafe extern "system" fn(this: *mut *mut Self, clipoverflow: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetClipOverflow: usize,
+    pub GetPadding: unsafe extern "system" fn(this: *mut *mut Self, before: *mut f64, start: *mut f64, after: *mut f64, end: *mut f64, unittype: *mut MF_TIMED_TEXT_UNIT_TYPE) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetWrap: unsafe extern "system" fn(this: *mut *mut Self, wrap: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetWrap: usize,
+    pub GetZIndex: unsafe extern "system" fn(this: *mut *mut Self, zindex: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub GetScrollMode: unsafe extern "system" fn(this: *mut *mut Self, scrollmode: *mut MF_TIMED_TEXT_SCROLL_MODE) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFTimedTextRuby {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetRubyText: unsafe extern "system" fn(this: *mut *mut Self, rubytext: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetRubyPosition: unsafe extern "system" fn(this: *mut *mut Self, value: *mut MF_TIMED_TEXT_RUBY_POSITION) -> ::windows_sys::core::HRESULT,
+    pub GetRubyAlign: unsafe extern "system" fn(this: *mut *mut Self, value: *mut MF_TIMED_TEXT_RUBY_ALIGN) -> ::windows_sys::core::HRESULT,
+    pub GetRubyReserve: unsafe extern "system" fn(this: *mut *mut Self, value: *mut MF_TIMED_TEXT_RUBY_RESERVE) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFTimedTextStyle {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetName: unsafe extern "system" fn(this: *mut *mut Self, name: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsExternal: unsafe extern "system" fn(this: *mut *mut Self) -> super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsExternal: usize,
+    pub GetFontFamily: unsafe extern "system" fn(this: *mut *mut Self, fontfamily: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetFontSize: unsafe extern "system" fn(this: *mut *mut Self, fontsize: *mut f64, unittype: *mut MF_TIMED_TEXT_UNIT_TYPE) -> ::windows_sys::core::HRESULT,
+    pub GetColor: unsafe extern "system" fn(this: *mut *mut Self, color: *mut MFARGB) -> ::windows_sys::core::HRESULT,
+    pub GetBackgroundColor: unsafe extern "system" fn(this: *mut *mut Self, bgcolor: *mut MFARGB) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetShowBackgroundAlways: unsafe extern "system" fn(this: *mut *mut Self, showbackgroundalways: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetShowBackgroundAlways: usize,
+    pub GetFontStyle: unsafe extern "system" fn(this: *mut *mut Self, fontstyle: *mut MF_TIMED_TEXT_FONT_STYLE) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetBold: unsafe extern "system" fn(this: *mut *mut Self, bold: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetBold: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetRightToLeft: unsafe extern "system" fn(this: *mut *mut Self, righttoleft: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetRightToLeft: usize,
+    pub GetTextAlignment: unsafe extern "system" fn(this: *mut *mut Self, textalign: *mut MF_TIMED_TEXT_ALIGNMENT) -> ::windows_sys::core::HRESULT,
+    pub GetTextDecoration: unsafe extern "system" fn(this: *mut *mut Self, textdecoration: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetTextOutline: unsafe extern "system" fn(this: *mut *mut Self, color: *mut MFARGB, thickness: *mut f64, blurradius: *mut f64, unittype: *mut MF_TIMED_TEXT_UNIT_TYPE) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFTimedTextStyle2 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetRuby: unsafe extern "system" fn(this: *mut *mut Self, ruby: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetBouten: unsafe extern "system" fn(this: *mut *mut Self, bouten: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsTextCombined: unsafe extern "system" fn(this: *mut *mut Self, value: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsTextCombined: usize,
+    pub GetFontAngleInDegrees: unsafe extern "system" fn(this: *mut *mut Self, value: *mut f64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFTimedTextTrack {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetId: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
+    pub GetLabel: unsafe extern "system" fn(this: *mut *mut Self, label: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetLabel: unsafe extern "system" fn(this: *mut *mut Self, label: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetLanguage: unsafe extern "system" fn(this: *mut *mut Self, language: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetTrackKind: unsafe extern "system" fn(this: *mut *mut Self) -> MF_TIMED_TEXT_TRACK_KIND,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsInBand: unsafe extern "system" fn(this: *mut *mut Self) -> super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsInBand: usize,
+    pub GetInBandMetadataTrackDispatchType: unsafe extern "system" fn(this: *mut *mut Self, dispatchtype: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsActive: unsafe extern "system" fn(this: *mut *mut Self) -> super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsActive: usize,
+    pub GetErrorCode: unsafe extern "system" fn(this: *mut *mut Self) -> MF_TIMED_TEXT_ERROR_CODE,
+    pub GetExtendedErrorCode: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetDataFormat: unsafe extern "system" fn(this: *mut *mut Self, format: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub GetReadyState: unsafe extern "system" fn(this: *mut *mut Self) -> MF_TIMED_TEXT_TRACK_READY_STATE,
+    pub GetCueList: unsafe extern "system" fn(this: *mut *mut Self, cues: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFTimedTextTrackList {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetLength: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
+    pub GetTrack: unsafe extern "system" fn(this: *mut *mut Self, index: u32, track: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetTrackById: unsafe extern "system" fn(this: *mut *mut Self, trackid: u32, track: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFTimer {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetTimer: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, llclocktime: i64, pcallback: *mut ::core::ffi::c_void, punkstate: *mut ::core::ffi::c_void, ppunkkey: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CancelTimer: unsafe extern "system" fn(this: *mut *mut Self, punkkey: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFTopoLoader {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Load: unsafe extern "system" fn(this: *mut *mut Self, pinputtopo: *mut ::core::ffi::c_void, ppoutputtopo: *mut *mut ::core::ffi::c_void, pcurrenttopo: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFTopology {
+    pub base__: IMFAttributes,
+    pub GetTopologyID: unsafe extern "system" fn(this: *mut *mut Self, pid: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub AddNode: unsafe extern "system" fn(this: *mut *mut Self, pnode: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RemoveNode: unsafe extern "system" fn(this: *mut *mut Self, pnode: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetNodeCount: unsafe extern "system" fn(this: *mut *mut Self, pwnodes: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub GetNode: unsafe extern "system" fn(this: *mut *mut Self, windex: u16, ppnode: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Clear: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub CloneFrom: unsafe extern "system" fn(this: *mut *mut Self, ptopology: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetNodeByID: unsafe extern "system" fn(this: *mut *mut Self, qwtoponodeid: u64, ppnode: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetSourceNodeCollection: unsafe extern "system" fn(this: *mut *mut Self, ppcollection: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetOutputNodeCollection: unsafe extern "system" fn(this: *mut *mut Self, ppcollection: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFTopologyNode {
+    pub base__: IMFAttributes,
+    pub SetObject: unsafe extern "system" fn(this: *mut *mut Self, pobject: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetObject: unsafe extern "system" fn(this: *mut *mut Self, ppobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetNodeType: unsafe extern "system" fn(this: *mut *mut Self, ptype: *mut MF_TOPOLOGY_TYPE) -> ::windows_sys::core::HRESULT,
+    pub GetTopoNodeID: unsafe extern "system" fn(this: *mut *mut Self, pid: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub SetTopoNodeID: unsafe extern "system" fn(this: *mut *mut Self, ulltopoid: u64) -> ::windows_sys::core::HRESULT,
+    pub GetInputCount: unsafe extern "system" fn(this: *mut *mut Self, pcinputs: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetOutputCount: unsafe extern "system" fn(this: *mut *mut Self, pcoutputs: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub ConnectOutput: unsafe extern "system" fn(this: *mut *mut Self, dwoutputindex: u32, pdownstreamnode: *mut ::core::ffi::c_void, dwinputindexondownstreamnode: u32) -> ::windows_sys::core::HRESULT,
+    pub DisconnectOutput: unsafe extern "system" fn(this: *mut *mut Self, dwoutputindex: u32) -> ::windows_sys::core::HRESULT,
+    pub GetInput: unsafe extern "system" fn(this: *mut *mut Self, dwinputindex: u32, ppupstreamnode: *mut *mut ::core::ffi::c_void, pdwoutputindexonupstreamnode: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetOutput: unsafe extern "system" fn(this: *mut *mut Self, dwoutputindex: u32, ppdownstreamnode: *mut *mut ::core::ffi::c_void, pdwinputindexondownstreamnode: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetOutputPrefType: unsafe extern "system" fn(this: *mut *mut Self, dwoutputindex: u32, ptype: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetOutputPrefType: unsafe extern "system" fn(this: *mut *mut Self, dwoutputindex: u32, pptype: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetInputPrefType: unsafe extern "system" fn(this: *mut *mut Self, dwinputindex: u32, ptype: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetInputPrefType: unsafe extern "system" fn(this: *mut *mut Self, dwinputindex: u32, pptype: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CloneFrom: unsafe extern "system" fn(this: *mut *mut Self, pnode: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFTopologyNodeAttributeEditor {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub UpdateNodeAttributes: unsafe extern "system" fn(this: *mut *mut Self, topoid: u64, cupdates: u32, pupdates: *const MFTOPONODE_ATTRIBUTE_UPDATE) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFTopologyServiceLookup {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub LookupService: unsafe extern "system" fn(this: *mut *mut Self, r#type: MF_SERVICE_LOOKUP_TYPE, dwindex: u32, guidservice: *const ::windows_sys::core::GUID, riid: *const ::windows_sys::core::GUID, ppvobjects: *mut *mut ::core::ffi::c_void, pnobjects: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFTopologyServiceLookupClient {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub InitServicePointers: unsafe extern "system" fn(this: *mut *mut Self, plookup: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ReleaseServicePointers: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFTrackedSample {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetAllocator: unsafe extern "system" fn(this: *mut *mut Self, psampleallocator: *mut ::core::ffi::c_void, punkstate: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFTranscodeProfile {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetAudioAttributes: unsafe extern "system" fn(this: *mut *mut Self, pattrs: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetAudioAttributes: unsafe extern "system" fn(this: *mut *mut Self, ppattrs: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetVideoAttributes: unsafe extern "system" fn(this: *mut *mut Self, pattrs: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetVideoAttributes: unsafe extern "system" fn(this: *mut *mut Self, ppattrs: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetContainerAttributes: unsafe extern "system" fn(this: *mut *mut Self, pattrs: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetContainerAttributes: unsafe extern "system" fn(this: *mut *mut Self, ppattrs: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFTranscodeSinkInfoProvider {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetOutputFile: unsafe extern "system" fn(this: *mut *mut Self, pwszfilename: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetOutputByteStream: unsafe extern "system" fn(this: *mut *mut Self, pbytestreamactivate: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetProfile: unsafe extern "system" fn(this: *mut *mut Self, pprofile: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetSinkInfo: unsafe extern "system" fn(this: *mut *mut Self, psinkinfo: *mut MF_TRANSCODE_SINK_INFO) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFTransform {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetStreamLimits: unsafe extern "system" fn(this: *mut *mut Self, pdwinputminimum: *mut u32, pdwinputmaximum: *mut u32, pdwoutputminimum: *mut u32, pdwoutputmaximum: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetStreamCount: unsafe extern "system" fn(this: *mut *mut Self, pcinputstreams: *mut u32, pcoutputstreams: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetStreamIDs: unsafe extern "system" fn(this: *mut *mut Self, dwinputidarraysize: u32, pdwinputids: *mut u32, dwoutputidarraysize: u32, pdwoutputids: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetInputStreamInfo: unsafe extern "system" fn(this: *mut *mut Self, dwinputstreamid: u32, pstreaminfo: *mut MFT_INPUT_STREAM_INFO) -> ::windows_sys::core::HRESULT,
+    pub GetOutputStreamInfo: unsafe extern "system" fn(this: *mut *mut Self, dwoutputstreamid: u32, pstreaminfo: *mut MFT_OUTPUT_STREAM_INFO) -> ::windows_sys::core::HRESULT,
+    pub GetAttributes: unsafe extern "system" fn(this: *mut *mut Self, pattributes: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetInputStreamAttributes: unsafe extern "system" fn(this: *mut *mut Self, dwinputstreamid: u32, pattributes: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetOutputStreamAttributes: unsafe extern "system" fn(this: *mut *mut Self, dwoutputstreamid: u32, pattributes: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub DeleteInputStream: unsafe extern "system" fn(this: *mut *mut Self, dwstreamid: u32) -> ::windows_sys::core::HRESULT,
+    pub AddInputStreams: unsafe extern "system" fn(this: *mut *mut Self, cstreams: u32, adwstreamids: *const u32) -> ::windows_sys::core::HRESULT,
+    pub GetInputAvailableType: unsafe extern "system" fn(this: *mut *mut Self, dwinputstreamid: u32, dwtypeindex: u32, pptype: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetOutputAvailableType: unsafe extern "system" fn(this: *mut *mut Self, dwoutputstreamid: u32, dwtypeindex: u32, pptype: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetInputType: unsafe extern "system" fn(this: *mut *mut Self, dwinputstreamid: u32, ptype: *mut ::core::ffi::c_void, dwflags: u32) -> ::windows_sys::core::HRESULT,
+    pub SetOutputType: unsafe extern "system" fn(this: *mut *mut Self, dwoutputstreamid: u32, ptype: *mut ::core::ffi::c_void, dwflags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetInputCurrentType: unsafe extern "system" fn(this: *mut *mut Self, dwinputstreamid: u32, pptype: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetOutputCurrentType: unsafe extern "system" fn(this: *mut *mut Self, dwoutputstreamid: u32, pptype: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetInputStatus: unsafe extern "system" fn(this: *mut *mut Self, dwinputstreamid: u32, pdwflags: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetOutputStatus: unsafe extern "system" fn(this: *mut *mut Self, pdwflags: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetOutputBounds: unsafe extern "system" fn(this: *mut *mut Self, hnslowerbound: i64, hnsupperbound: i64) -> ::windows_sys::core::HRESULT,
+    pub ProcessEvent: unsafe extern "system" fn(this: *mut *mut Self, dwinputstreamid: u32, pevent: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ProcessMessage: unsafe extern "system" fn(this: *mut *mut Self, emessage: MFT_MESSAGE_TYPE, ulparam: usize) -> ::windows_sys::core::HRESULT,
+    pub ProcessInput: unsafe extern "system" fn(this: *mut *mut Self, dwinputstreamid: u32, psample: *mut ::core::ffi::c_void, dwflags: u32) -> ::windows_sys::core::HRESULT,
+    pub ProcessOutput: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, coutputbuffercount: u32, poutputsamples: *mut MFT_OUTPUT_DATA_BUFFER, pdwstatus: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFTrustedInput {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetInputTrustAuthority: unsafe extern "system" fn(this: *mut *mut Self, dwstreamid: u32, riid: *const ::windows_sys::core::GUID, ppunkobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFTrustedOutput {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetOutputTrustAuthorityCount: unsafe extern "system" fn(this: *mut *mut Self, pcoutputtrustauthorities: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetOutputTrustAuthorityByIndex: unsafe extern "system" fn(this: *mut *mut Self, dwindex: u32, ppauthority: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsFinal: unsafe extern "system" fn(this: *mut *mut Self, pfisfinal: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsFinal: usize,
+}
+#[repr(C)]
+pub struct IMFVideoCaptureSampleAllocator {
+    pub base__: IMFVideoSampleAllocator,
+    pub InitializeCaptureSampleAllocator: unsafe extern "system" fn(this: *mut *mut Self, cbsamplesize: u32, cbcapturemetadatasize: u32, cbalignment: u32, cminimumsamples: u32, pattributes: *mut ::core::ffi::c_void, pmediatype: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFVideoDeviceID {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetDeviceID: unsafe extern "system" fn(this: *mut *mut Self, pdeviceid: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFVideoDisplayControl {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetNativeVideoSize: unsafe extern "system" fn(this: *mut *mut Self, pszvideo: *mut super::super::Foundation::SIZE, pszarvideo: *mut super::super::Foundation::SIZE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetNativeVideoSize: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetIdealVideoSize: unsafe extern "system" fn(this: *mut *mut Self, pszmin: *mut super::super::Foundation::SIZE, pszmax: *mut super::super::Foundation::SIZE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetIdealVideoSize: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetVideoPosition: unsafe extern "system" fn(this: *mut *mut Self, pnrcsource: *const MFVideoNormalizedRect, prcdest: *const super::super::Foundation::RECT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetVideoPosition: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetVideoPosition: unsafe extern "system" fn(this: *mut *mut Self, pnrcsource: *mut MFVideoNormalizedRect, prcdest: *mut super::super::Foundation::RECT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetVideoPosition: usize,
+    pub SetAspectRatioMode: unsafe extern "system" fn(this: *mut *mut Self, dwaspectratiomode: u32) -> ::windows_sys::core::HRESULT,
+    pub GetAspectRatioMode: unsafe extern "system" fn(this: *mut *mut Self, pdwaspectratiomode: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetVideoWindow: unsafe extern "system" fn(this: *mut *mut Self, hwndvideo: super::super::Foundation::HWND) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetVideoWindow: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetVideoWindow: unsafe extern "system" fn(this: *mut *mut Self, phwndvideo: *mut super::super::Foundation::HWND) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetVideoWindow: usize,
+    pub RepaintVideo: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub GetCurrentImage: unsafe extern "system" fn(this: *mut *mut Self, pbih: *mut super::super::Graphics::Gdi::BITMAPINFOHEADER, pdib: *mut *mut u8, pcbdib: *mut u32, ptimestamp: *mut i64) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Gdi"))]
+    GetCurrentImage: usize,
+    pub SetBorderColor: unsafe extern "system" fn(this: *mut *mut Self, clr: u32) -> ::windows_sys::core::HRESULT,
+    pub GetBorderColor: unsafe extern "system" fn(this: *mut *mut Self, pclr: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetRenderingPrefs: unsafe extern "system" fn(this: *mut *mut Self, dwrenderflags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetRenderingPrefs: unsafe extern "system" fn(this: *mut *mut Self, pdwrenderflags: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetFullscreen: unsafe extern "system" fn(this: *mut *mut Self, ffullscreen: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetFullscreen: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetFullscreen: unsafe extern "system" fn(this: *mut *mut Self, pffullscreen: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetFullscreen: usize,
+}
+#[repr(C)]
+pub struct IMFVideoMediaType {
+    pub base__: IMFMediaType,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetVideoFormat: unsafe extern "system" fn(this: *mut *mut Self) -> *mut MFVIDEOFORMAT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetVideoFormat: usize,
+    pub GetVideoRepresentation: unsafe extern "system" fn(this: *mut *mut Self, guidrepresentation: ::windows_sys::core::GUID, ppvrepresentation: *mut *mut ::core::ffi::c_void, lstride: i32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFVideoMixerBitmap {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct3D9", feature = "Win32_Graphics_Gdi"))]
+    pub SetAlphaBitmap: unsafe extern "system" fn(this: *mut *mut Self, pbmpparms: *const MFVideoAlphaBitmap) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct3D9", feature = "Win32_Graphics_Gdi")))]
+    SetAlphaBitmap: usize,
+    pub ClearAlphaBitmap: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub UpdateAlphaBitmapParameters: unsafe extern "system" fn(this: *mut *mut Self, pbmpparms: *const MFVideoAlphaBitmapParams) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    UpdateAlphaBitmapParameters: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetAlphaBitmapParameters: unsafe extern "system" fn(this: *mut *mut Self, pbmpparms: *mut MFVideoAlphaBitmapParams) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetAlphaBitmapParameters: usize,
+}
+#[repr(C)]
+pub struct IMFVideoMixerControl {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetStreamZOrder: unsafe extern "system" fn(this: *mut *mut Self, dwstreamid: u32, dwz: u32) -> ::windows_sys::core::HRESULT,
+    pub GetStreamZOrder: unsafe extern "system" fn(this: *mut *mut Self, dwstreamid: u32, pdwz: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetStreamOutputRect: unsafe extern "system" fn(this: *mut *mut Self, dwstreamid: u32, pnrcoutput: *const MFVideoNormalizedRect) -> ::windows_sys::core::HRESULT,
+    pub GetStreamOutputRect: unsafe extern "system" fn(this: *mut *mut Self, dwstreamid: u32, pnrcoutput: *mut MFVideoNormalizedRect) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFVideoMixerControl2 {
+    pub base__: IMFVideoMixerControl,
+    pub SetMixingPrefs: unsafe extern "system" fn(this: *mut *mut Self, dwmixflags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetMixingPrefs: unsafe extern "system" fn(this: *mut *mut Self, pdwmixflags: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFVideoPositionMapper {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub MapOutputCoordinateToInputStream: unsafe extern "system" fn(this: *mut *mut Self, xout: f32, yout: f32, dwoutputstreamindex: u32, dwinputstreamindex: u32, pxin: *mut f32, pyin: *mut f32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFVideoPresenter {
+    pub base__: IMFClockStateSink,
+    pub ProcessMessage: unsafe extern "system" fn(this: *mut *mut Self, emessage: MFVP_MESSAGE_TYPE, ulparam: usize) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentMediaType: unsafe extern "system" fn(this: *mut *mut Self, ppmediatype: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFVideoProcessor {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetAvailableVideoProcessorModes: unsafe extern "system" fn(this: *mut *mut Self, lpdwnumprocessingmodes: *mut u32, ppvideoprocessingmodes: *mut *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Graphics_Direct3D9")]
+    pub GetVideoProcessorCaps: unsafe extern "system" fn(this: *mut *mut Self, lpvideoprocessormode: *const ::windows_sys::core::GUID, lpvideoprocessorcaps: *mut DXVA2_VideoProcessorCaps) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Direct3D9"))]
+    GetVideoProcessorCaps: usize,
+    pub GetVideoProcessorMode: unsafe extern "system" fn(this: *mut *mut Self, lpmode: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub SetVideoProcessorMode: unsafe extern "system" fn(this: *mut *mut Self, lpmode: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub GetProcAmpRange: unsafe extern "system" fn(this: *mut *mut Self, dwproperty: u32, pproprange: *mut DXVA2_ValueRange) -> ::windows_sys::core::HRESULT,
+    pub GetProcAmpValues: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, values: *mut DXVA2_ProcAmpValues) -> ::windows_sys::core::HRESULT,
+    pub SetProcAmpValues: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, pvalues: *const DXVA2_ProcAmpValues) -> ::windows_sys::core::HRESULT,
+    pub GetFilteringRange: unsafe extern "system" fn(this: *mut *mut Self, dwproperty: u32, pproprange: *mut DXVA2_ValueRange) -> ::windows_sys::core::HRESULT,
+    pub GetFilteringValue: unsafe extern "system" fn(this: *mut *mut Self, dwproperty: u32, pvalue: *mut DXVA2_Fixed32) -> ::windows_sys::core::HRESULT,
+    pub SetFilteringValue: unsafe extern "system" fn(this: *mut *mut Self, dwproperty: u32, pvalue: *const DXVA2_Fixed32) -> ::windows_sys::core::HRESULT,
+    pub GetBackgroundColor: unsafe extern "system" fn(this: *mut *mut Self, lpclrbkg: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetBackgroundColor: unsafe extern "system" fn(this: *mut *mut Self, clrbkg: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFVideoProcessorControl {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetBorderColor: unsafe extern "system" fn(this: *mut *mut Self, pbordercolor: *const MFARGB) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetSourceRectangle: unsafe extern "system" fn(this: *mut *mut Self, psrcrect: *const super::super::Foundation::RECT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetSourceRectangle: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetDestinationRectangle: unsafe extern "system" fn(this: *mut *mut Self, pdstrect: *const super::super::Foundation::RECT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetDestinationRectangle: usize,
+    pub SetMirror: unsafe extern "system" fn(this: *mut *mut Self, emirror: MF_VIDEO_PROCESSOR_MIRROR) -> ::windows_sys::core::HRESULT,
+    pub SetRotation: unsafe extern "system" fn(this: *mut *mut Self, erotation: MF_VIDEO_PROCESSOR_ROTATION) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetConstrictionSize: unsafe extern "system" fn(this: *mut *mut Self, pconstrictionsize: *const super::super::Foundation::SIZE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetConstrictionSize: usize,
+}
+#[repr(C)]
+pub struct IMFVideoProcessorControl2 {
+    pub base__: IMFVideoProcessorControl,
+    pub SetRotationOverride: unsafe extern "system" fn(this: *mut *mut Self, uirotation: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub EnableHardwareEffects: unsafe extern "system" fn(this: *mut *mut Self, fenabled: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    EnableHardwareEffects: usize,
+    pub GetSupportedHardwareEffects: unsafe extern "system" fn(this: *mut *mut Self, puisupport: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFVideoProcessorControl3 {
+    pub base__: IMFVideoProcessorControl2,
+    pub GetNaturalOutputType: unsafe extern "system" fn(this: *mut *mut Self, pptype: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub EnableSphericalVideoProcessing: unsafe extern "system" fn(this: *mut *mut Self, fenable: super::super::Foundation::BOOL, eformat: MFVideoSphericalFormat, eprojectionmode: MFVideoSphericalProjectionMode) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    EnableSphericalVideoProcessing: usize,
+    pub SetSphericalVideoProperties: unsafe extern "system" fn(this: *mut *mut Self, x: f32, y: f32, z: f32, w: f32, fieldofview: f32) -> ::windows_sys::core::HRESULT,
+    pub SetOutputDevice: unsafe extern "system" fn(this: *mut *mut Self, poutputdevice: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFVideoRenderer {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub InitializeRenderer: unsafe extern "system" fn(this: *mut *mut Self, pvideomixer: *mut ::core::ffi::c_void, pvideopresenter: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFVideoRendererEffectControl {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnAppServiceConnectionEstablished: unsafe extern "system" fn(this: *mut *mut Self, pappserviceconnection: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFVideoSampleAllocator {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetDirectXManager: unsafe extern "system" fn(this: *mut *mut Self, pmanager: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub UninitializeSampleAllocator: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub InitializeSampleAllocator: unsafe extern "system" fn(this: *mut *mut Self, crequestedframes: u32, pmediatype: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AllocateSample: unsafe extern "system" fn(this: *mut *mut Self, ppsample: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFVideoSampleAllocatorCallback {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetCallback: unsafe extern "system" fn(this: *mut *mut Self, pnotify: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetFreeSampleCount: unsafe extern "system" fn(this: *mut *mut Self, plsamples: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFVideoSampleAllocatorEx {
+    pub base__: IMFVideoSampleAllocator,
+    pub InitializeSampleAllocatorEx: unsafe extern "system" fn(this: *mut *mut Self, cinitialsamples: u32, cmaximumsamples: u32, pattributes: *mut ::core::ffi::c_void, pmediatype: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFVideoSampleAllocatorNotify {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub NotifyRelease: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFVideoSampleAllocatorNotifyEx {
+    pub base__: IMFVideoSampleAllocatorNotify,
+    pub NotifyPrune: unsafe extern "system" fn(this: *mut *mut Self, __midl__imfvideosampleallocatornotifyex0000: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFVirtualCamera {
+    pub base__: IMFAttributes,
+    pub AddDeviceSourceInfo: unsafe extern "system" fn(this: *mut *mut Self, devicesourceinfo: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Devices_Properties")]
+    pub AddProperty: unsafe extern "system" fn(this: *mut *mut Self, pkey: *const super::super::Devices::Properties::DEVPROPKEY, r#type: u32, pbdata: *const u8, cbdata: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Devices_Properties"))]
+    AddProperty: usize,
+    pub AddRegistryEntry: unsafe extern "system" fn(this: *mut *mut Self, entryname: ::windows_sys::core::PCWSTR, subkeypath: ::windows_sys::core::PCWSTR, dwregtype: u32, pbdata: *const u8, cbdata: u32) -> ::windows_sys::core::HRESULT,
+    pub Start: unsafe extern "system" fn(this: *mut *mut Self, pcallback: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Stop: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Remove: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetMediaSource: unsafe extern "system" fn(this: *mut *mut Self, ppmediasource: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SendCameraProperty: unsafe extern "system" fn(this: *mut *mut Self, propertyset: *const ::windows_sys::core::GUID, propertyid: u32, propertyflags: u32, propertypayload: *mut ::core::ffi::c_void, propertypayloadlength: u32, data: *mut ::core::ffi::c_void, datalength: u32, datawritten: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CreateSyncEvent: unsafe extern "system" fn(this: *mut *mut Self, kseventset: *const ::windows_sys::core::GUID, kseventid: u32, kseventflags: u32, eventhandle: super::super::Foundation::HANDLE, camerasyncobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CreateSyncEvent: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CreateSyncSemaphore: unsafe extern "system" fn(this: *mut *mut Self, kseventset: *const ::windows_sys::core::GUID, kseventid: u32, kseventflags: u32, semaphorehandle: super::super::Foundation::HANDLE, semaphoreadjustment: i32, camerasyncobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CreateSyncSemaphore: usize,
+    pub Shutdown: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFWorkQueueServices {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub BeginRegisterTopologyWorkQueuesWithMMCSS: unsafe extern "system" fn(this: *mut *mut Self, pcallback: *mut ::core::ffi::c_void, pstate: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EndRegisterTopologyWorkQueuesWithMMCSS: unsafe extern "system" fn(this: *mut *mut Self, presult: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub BeginUnregisterTopologyWorkQueuesWithMMCSS: unsafe extern "system" fn(this: *mut *mut Self, pcallback: *mut ::core::ffi::c_void, pstate: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EndUnregisterTopologyWorkQueuesWithMMCSS: unsafe extern "system" fn(this: *mut *mut Self, presult: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetTopologyWorkQueueMMCSSClass: unsafe extern "system" fn(this: *mut *mut Self, dwtopologyworkqueueid: u32, pwszclass: ::windows_sys::core::PWSTR, pcchclass: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetTopologyWorkQueueMMCSSTaskId: unsafe extern "system" fn(this: *mut *mut Self, dwtopologyworkqueueid: u32, pdwtaskid: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub BeginRegisterPlatformWorkQueueWithMMCSS: unsafe extern "system" fn(this: *mut *mut Self, dwplatformworkqueue: u32, wszclass: ::windows_sys::core::PCWSTR, dwtaskid: u32, pcallback: *mut ::core::ffi::c_void, pstate: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EndRegisterPlatformWorkQueueWithMMCSS: unsafe extern "system" fn(this: *mut *mut Self, presult: *mut ::core::ffi::c_void, pdwtaskid: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub BeginUnregisterPlatformWorkQueueWithMMCSS: unsafe extern "system" fn(this: *mut *mut Self, dwplatformworkqueue: u32, pcallback: *mut ::core::ffi::c_void, pstate: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EndUnregisterPlatformWorkQueueWithMMCSS: unsafe extern "system" fn(this: *mut *mut Self, presult: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetPlaftormWorkQueueMMCSSClass: unsafe extern "system" fn(this: *mut *mut Self, dwplatformworkqueueid: u32, pwszclass: ::windows_sys::core::PWSTR, pcchclass: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetPlatformWorkQueueMMCSSTaskId: unsafe extern "system" fn(this: *mut *mut Self, dwplatformworkqueueid: u32, pdwtaskid: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMFWorkQueueServicesEx {
+    pub base__: IMFWorkQueueServices,
+    pub GetTopologyWorkQueueMMCSSPriority: unsafe extern "system" fn(this: *mut *mut Self, dwtopologyworkqueueid: u32, plpriority: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub BeginRegisterPlatformWorkQueueWithMMCSSEx: unsafe extern "system" fn(this: *mut *mut Self, dwplatformworkqueue: u32, wszclass: ::windows_sys::core::PCWSTR, dwtaskid: u32, lpriority: i32, pcallback: *mut ::core::ffi::c_void, pstate: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetPlatformWorkQueueMMCSSPriority: unsafe extern "system" fn(this: *mut *mut Self, dwplatformworkqueueid: u32, plpriority: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IOPMVideoOutput {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub StartInitialization: unsafe extern "system" fn(this: *mut *mut Self, prnrandomnumber: *mut OPM_RANDOM_NUMBER, ppbcertificate: *mut *mut u8, pulcertificatelength: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub FinishInitialization: unsafe extern "system" fn(this: *mut *mut Self, pparameters: *const OPM_ENCRYPTED_INITIALIZATION_PARAMETERS) -> ::windows_sys::core::HRESULT,
+    pub GetInformation: unsafe extern "system" fn(this: *mut *mut Self, pparameters: *const OPM_GET_INFO_PARAMETERS, prequestedinformation: *mut OPM_REQUESTED_INFORMATION) -> ::windows_sys::core::HRESULT,
+    pub COPPCompatibleGetInformation: unsafe extern "system" fn(this: *mut *mut Self, pparameters: *const OPM_COPP_COMPATIBLE_GET_INFO_PARAMETERS, prequestedinformation: *mut OPM_REQUESTED_INFORMATION) -> ::windows_sys::core::HRESULT,
+    pub Configure: unsafe extern "system" fn(this: *mut *mut Self, pparameters: *const OPM_CONFIGURE_PARAMETERS, uladditionalparameterssize: u32, pbadditionalparameters: *const u8) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPlayToControl {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Connect: unsafe extern "system" fn(this: *mut *mut Self, pfactory: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Disconnect: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPlayToControlWithCapabilities {
+    pub base__: IPlayToControl,
+    pub GetCapabilities: unsafe extern "system" fn(this: *mut *mut Self, pcapabilities: *mut PLAYTO_SOURCE_CREATEFLAGS) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPlayToSourceClassFactory {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub CreateInstance: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, pcontrol: *mut ::core::ffi::c_void, ppsource: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IToc {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetDescriptor: unsafe extern "system" fn(this: *mut *mut Self, pdescriptor: *mut TOC_DESCRIPTOR) -> ::windows_sys::core::HRESULT,
+    pub GetDescriptor: unsafe extern "system" fn(this: *mut *mut Self, pdescriptor: *mut TOC_DESCRIPTOR) -> ::windows_sys::core::HRESULT,
+    pub SetDescription: unsafe extern "system" fn(this: *mut *mut Self, pwszdescription: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetDescription: unsafe extern "system" fn(this: *mut *mut Self, pwdescriptionsize: *mut u16, pwszdescription: ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetContext: unsafe extern "system" fn(this: *mut *mut Self, dwcontextsize: u32, pbtcontext: *mut u8) -> ::windows_sys::core::HRESULT,
+    pub GetContext: unsafe extern "system" fn(this: *mut *mut Self, pdwcontextsize: *mut u32, pbtcontext: *mut u8) -> ::windows_sys::core::HRESULT,
+    pub GetEntryListCount: unsafe extern "system" fn(this: *mut *mut Self, pwcount: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub GetEntryListByIndex: unsafe extern "system" fn(this: *mut *mut Self, wentrylistindex: u16, ppentrylist: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AddEntryList: unsafe extern "system" fn(this: *mut *mut Self, pentrylist: *mut ::core::ffi::c_void, pwentrylistindex: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub AddEntryListByIndex: unsafe extern "system" fn(this: *mut *mut Self, wentrylistindex: u16, pentrylist: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RemoveEntryListByIndex: unsafe extern "system" fn(this: *mut *mut Self, wentrylistindex: u16) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITocCollection {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetEntryCount: unsafe extern "system" fn(this: *mut *mut Self, pdwentrycount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetEntryByIndex: unsafe extern "system" fn(this: *mut *mut Self, dwentryindex: u32, pptoc: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AddEntry: unsafe extern "system" fn(this: *mut *mut Self, ptoc: *mut ::core::ffi::c_void, pdwentryindex: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub AddEntryByIndex: unsafe extern "system" fn(this: *mut *mut Self, dwentryindex: u32, ptoc: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RemoveEntryByIndex: unsafe extern "system" fn(this: *mut *mut Self, dwentryindex: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITocEntry {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetTitle: unsafe extern "system" fn(this: *mut *mut Self, pwsztitle: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetTitle: unsafe extern "system" fn(this: *mut *mut Self, pwtitlesize: *mut u16, pwsztitle: ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetDescriptor: unsafe extern "system" fn(this: *mut *mut Self, pdescriptor: *mut TOC_ENTRY_DESCRIPTOR) -> ::windows_sys::core::HRESULT,
+    pub GetDescriptor: unsafe extern "system" fn(this: *mut *mut Self, pdescriptor: *mut TOC_ENTRY_DESCRIPTOR) -> ::windows_sys::core::HRESULT,
+    pub SetSubEntries: unsafe extern "system" fn(this: *mut *mut Self, dwnumsubentries: u32, pwsubentryindices: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub GetSubEntries: unsafe extern "system" fn(this: *mut *mut Self, pdwnumsubentries: *mut u32, pwsubentryindices: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub SetDescriptionData: unsafe extern "system" fn(this: *mut *mut Self, dwdescriptiondatasize: u32, pbtdescriptiondata: *mut u8, pguidtype: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub GetDescriptionData: unsafe extern "system" fn(this: *mut *mut Self, pdwdescriptiondatasize: *mut u32, pbtdescriptiondata: *mut u8, pguidtype: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITocEntryList {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetEntryCount: unsafe extern "system" fn(this: *mut *mut Self, pdwentrycount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetEntryByIndex: unsafe extern "system" fn(this: *mut *mut Self, dwentryindex: u32, ppentry: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AddEntry: unsafe extern "system" fn(this: *mut *mut Self, pentry: *mut ::core::ffi::c_void, pdwentryindex: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub AddEntryByIndex: unsafe extern "system" fn(this: *mut *mut Self, dwentryindex: u32, pentry: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RemoveEntryByIndex: unsafe extern "system" fn(this: *mut *mut Self, dwentryindex: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITocParser {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Init: unsafe extern "system" fn(this: *mut *mut Self, pwszfilename: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetTocCount: unsafe extern "system" fn(this: *mut *mut Self, enumtocpostype: TOC_POS_TYPE, pdwtoccount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetTocByIndex: unsafe extern "system" fn(this: *mut *mut Self, enumtocpostype: TOC_POS_TYPE, dwtocindex: u32, pptoc: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetTocByType: unsafe extern "system" fn(this: *mut *mut Self, enumtocpostype: TOC_POS_TYPE, guidtoctype: ::windows_sys::core::GUID, pptocs: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AddToc: unsafe extern "system" fn(this: *mut *mut Self, enumtocpostype: TOC_POS_TYPE, ptoc: *mut ::core::ffi::c_void, pdwtocindex: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub RemoveTocByIndex: unsafe extern "system" fn(this: *mut *mut Self, enumtocpostype: TOC_POS_TYPE, dwtocindex: u32) -> ::windows_sys::core::HRESULT,
+    pub RemoveTocByType: unsafe extern "system" fn(this: *mut *mut Self, enumtocpostype: TOC_POS_TYPE, guidtoctype: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub Commit: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IValidateBinding {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetIdentifier: unsafe extern "system" fn(this: *mut *mut Self, guidlicensorid: ::windows_sys::core::GUID, pbephemeron: *const u8, cbephemeron: u32, ppbblobvalidationid: *mut *mut u8, pcbblobsize: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMCodecLeakyBucket {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetBufferSizeBits: unsafe extern "system" fn(this: *mut *mut Self, ulbuffersize: u32) -> ::windows_sys::core::HRESULT,
+    pub GetBufferSizeBits: unsafe extern "system" fn(this: *mut *mut Self, pulbuffersize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetBufferFullnessBits: unsafe extern "system" fn(this: *mut *mut Self, ulbufferfullness: u32) -> ::windows_sys::core::HRESULT,
+    pub GetBufferFullnessBits: unsafe extern "system" fn(this: *mut *mut Self, pulbufferfullness: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMCodecOutputTimestamp {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetNextOutputTime: unsafe extern "system" fn(this: *mut *mut Self, prttime: *mut i64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMCodecPrivateData {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Media_DxMediaObjects"))]
+    pub SetPartialOutputType: unsafe extern "system" fn(this: *mut *mut Self, pmt: *mut super::DxMediaObjects::DMO_MEDIA_TYPE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Media_DxMediaObjects")))]
+    SetPartialOutputType: usize,
+    pub GetPrivateData: unsafe extern "system" fn(this: *mut *mut Self, pbdata: *mut u8, pcbdata: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMCodecProps {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Media_DxMediaObjects"))]
+    pub GetFormatProp: unsafe extern "system" fn(this: *mut *mut Self, pmt: *mut super::DxMediaObjects::DMO_MEDIA_TYPE, pszname: ::windows_sys::core::PCWSTR, ptype: *mut WMT_PROP_DATATYPE, pvalue: *mut u8, pdwsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Media_DxMediaObjects")))]
+    GetFormatProp: usize,
+    pub GetCodecProp: unsafe extern "system" fn(this: *mut *mut Self, dwformat: u32, pszname: ::windows_sys::core::PCWSTR, ptype: *mut WMT_PROP_DATATYPE, pvalue: *mut u8, pdwsize: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMCodecStrings {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Media_DxMediaObjects"))]
+    pub GetName: unsafe extern "system" fn(this: *mut *mut Self, pmt: *mut super::DxMediaObjects::DMO_MEDIA_TYPE, cchlength: u32, szname: ::windows_sys::core::PWSTR, pcchlength: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Media_DxMediaObjects")))]
+    GetName: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Media_DxMediaObjects"))]
+    pub GetDescription: unsafe extern "system" fn(this: *mut *mut Self, pmt: *mut super::DxMediaObjects::DMO_MEDIA_TYPE, cchlength: u32, szdescription: ::windows_sys::core::PWSTR, pcchlength: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Media_DxMediaObjects")))]
+    GetDescription: usize,
+}
+#[repr(C)]
+pub struct IWMColorConvProps {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetMode: unsafe extern "system" fn(this: *mut *mut Self, lmode: i32) -> ::windows_sys::core::HRESULT,
+    pub SetFullCroppingParam: unsafe extern "system" fn(this: *mut *mut Self, lsrccropleft: i32, lsrccroptop: i32, ldstcropleft: i32, ldstcroptop: i32, lcropwidth: i32, lcropheight: i32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMColorLegalizerProps {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetColorLegalizerQuality: unsafe extern "system" fn(this: *mut *mut Self, lquality: i32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMFrameInterpProps {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetFrameRateIn: unsafe extern "system" fn(this: *mut *mut Self, lframerate: i32, lscale: i32) -> ::windows_sys::core::HRESULT,
+    pub SetFrameRateOut: unsafe extern "system" fn(this: *mut *mut Self, lframerate: i32, lscale: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetFrameInterpEnabled: unsafe extern "system" fn(this: *mut *mut Self, bfienabled: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetFrameInterpEnabled: usize,
+    pub SetComplexityLevel: unsafe extern "system" fn(this: *mut *mut Self, icomplexity: i32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMInterlaceProps {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetProcessType: unsafe extern "system" fn(this: *mut *mut Self, iprocesstype: i32) -> ::windows_sys::core::HRESULT,
+    pub SetInitInverseTeleCinePattern: unsafe extern "system" fn(this: *mut *mut Self, iinitpattern: i32) -> ::windows_sys::core::HRESULT,
+    pub SetLastFrame: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMResamplerProps {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetHalfFilterLength: unsafe extern "system" fn(this: *mut *mut Self, lhalffilterlen: i32) -> ::windows_sys::core::HRESULT,
+    pub SetUserChannelMtx: unsafe extern "system" fn(this: *mut *mut Self, userchannelmtx: *mut f32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMResizerProps {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetResizerQuality: unsafe extern "system" fn(this: *mut *mut Self, lquality: i32) -> ::windows_sys::core::HRESULT,
+    pub SetInterlaceMode: unsafe extern "system" fn(this: *mut *mut Self, lmode: i32) -> ::windows_sys::core::HRESULT,
+    pub SetClipRegion: unsafe extern "system" fn(this: *mut *mut Self, lcliporixsrc: i32, lcliporiysrc: i32, lclipwidthsrc: i32, lclipheightsrc: i32) -> ::windows_sys::core::HRESULT,
+    pub SetFullCropRegion: unsafe extern "system" fn(this: *mut *mut Self, lcliporixsrc: i32, lcliporiysrc: i32, lclipwidthsrc: i32, lclipheightsrc: i32, lcliporixdst: i32, lcliporiydst: i32, lclipwidthdst: i32, lclipheightdst: i32) -> ::windows_sys::core::HRESULT,
+    pub GetFullCropRegion: unsafe extern "system" fn(this: *mut *mut Self, lcliporixsrc: *mut i32, lcliporiysrc: *mut i32, lclipwidthsrc: *mut i32, lclipheightsrc: *mut i32, lcliporixdst: *mut i32, lcliporiydst: *mut i32, lclipwidthdst: *mut i32, lclipheightdst: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMSampleExtensionSupport {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetUseSampleExtensions: unsafe extern "system" fn(this: *mut *mut Self, fuseextensions: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetUseSampleExtensions: usize,
+}
+#[repr(C)]
+pub struct IWMValidate {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetIdentifier: unsafe extern "system" fn(this: *mut *mut Self, guidvalidationid: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMVideoDecoderHurryup {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetHurryup: unsafe extern "system" fn(this: *mut *mut Self, lhurryup: i32) -> ::windows_sys::core::HRESULT,
+    pub GetHurryup: unsafe extern "system" fn(this: *mut *mut Self, plhurryup: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWMVideoDecoderReconBuffer {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetReconstructedVideoFrameSize: unsafe extern "system" fn(this: *mut *mut Self, pdwsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Media_DxMediaObjects")]
+    pub GetReconstructedVideoFrame: unsafe extern "system" fn(this: *mut *mut Self, pbuf: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Media_DxMediaObjects"))]
+    GetReconstructedVideoFrame: usize,
+    #[cfg(feature = "Win32_Media_DxMediaObjects")]
+    pub SetReconstructedVideoFrame: unsafe extern "system" fn(this: *mut *mut Self, pbuf: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Media_DxMediaObjects"))]
+    SetReconstructedVideoFrame: usize,
+}
+#[repr(C)]
+pub struct IWMVideoForceKeyFrame {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetKeyFrame: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
 #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
 pub type KSMETHOD_OPMVIDEOOUTPUT = i32;
 #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
@@ -7229,7 +10945,10 @@ pub type MFASF_STREAMSELECTOR_FLAGS = i32;
 pub const MFASF_STREAMSELECTOR_DISABLE_THINNING: MFASF_STREAMSELECTOR_FLAGS = 1i32;
 #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
 pub const MFASF_STREAMSELECTOR_USE_AVERAGE_BITRATE: MFASF_STREAMSELECTOR_FLAGS = 2i32;
-pub type MFASYNCRESULT = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct MFASYNCRESULT {
+    pub base__: IMFAsyncResult,
+}
 #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
 pub const MFASYNC_BLOCKING_CALLBACK: u32 = 4u32;
 #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
@@ -8019,7 +11738,7 @@ impl ::core::clone::Clone for MFOffset {
     }
 }
 #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
-pub type MFPERIODICCALLBACK = ::core::option::Option<unsafe extern "system" fn(pcontext: ::windows_sys::core::IUnknown)>;
+pub type MFPERIODICCALLBACK = ::core::option::Option<unsafe extern "system" fn(pcontext: *mut *mut ::windows_sys::core::IUnknown)>;
 #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
 pub type MFPMPSESSION_CREATION_FLAGS = i32;
 #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
@@ -8080,7 +11799,7 @@ pub struct MFP_ACQUIRE_USER_CREDENTIAL_EVENT {
     pub pwszPackage: ::windows_sys::core::PCWSTR,
     pub nRetries: i32,
     pub flags: u32,
-    pub pCredential: IMFNetCredential,
+    pub pCredential: *mut *mut *mut *mut IMFNetCredential,
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_PropertiesSystem"))]
 impl ::core::marker::Copy for MFP_ACQUIRE_USER_CREDENTIAL_EVENT {}
@@ -8120,9 +11839,9 @@ impl ::core::clone::Clone for MFP_ERROR_EVENT {
 pub struct MFP_EVENT_HEADER {
     pub eEventType: MFP_EVENT_TYPE,
     pub hrEvent: ::windows_sys::core::HRESULT,
-    pub pMediaPlayer: IMFPMediaPlayer,
+    pub pMediaPlayer: *mut *mut *mut *mut IMFPMediaPlayer,
     pub eState: MFP_MEDIAPLAYER_STATE,
-    pub pPropertyStore: super::super::UI::Shell::PropertiesSystem::IPropertyStore,
+    pub pPropertyStore: *mut *mut *mut *mut super::super::UI::Shell::PropertiesSystem::IPropertyStore,
 }
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
 impl ::core::marker::Copy for MFP_EVENT_HEADER {}
@@ -8165,7 +11884,7 @@ pub const MFP_EVENT_TYPE_ACQUIRE_USER_CREDENTIAL: MFP_EVENT_TYPE = 12i32;
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
 pub struct MFP_FRAME_STEP_EVENT {
     pub header: MFP_EVENT_HEADER,
-    pub pMediaItem: IMFPMediaItem,
+    pub pMediaItem: *mut *mut *mut *mut IMFPMediaItem,
 }
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
 impl ::core::marker::Copy for MFP_FRAME_STEP_EVENT {}
@@ -8180,7 +11899,7 @@ impl ::core::clone::Clone for MFP_FRAME_STEP_EVENT {
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
 pub struct MFP_MEDIAITEM_CLEARED_EVENT {
     pub header: MFP_EVENT_HEADER,
-    pub pMediaItem: IMFPMediaItem,
+    pub pMediaItem: *mut *mut *mut *mut IMFPMediaItem,
 }
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
 impl ::core::marker::Copy for MFP_MEDIAITEM_CLEARED_EVENT {}
@@ -8195,7 +11914,7 @@ impl ::core::clone::Clone for MFP_MEDIAITEM_CLEARED_EVENT {
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
 pub struct MFP_MEDIAITEM_CREATED_EVENT {
     pub header: MFP_EVENT_HEADER,
-    pub pMediaItem: IMFPMediaItem,
+    pub pMediaItem: *mut *mut *mut *mut IMFPMediaItem,
     pub dwUserData: usize,
 }
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
@@ -8211,7 +11930,7 @@ impl ::core::clone::Clone for MFP_MEDIAITEM_CREATED_EVENT {
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
 pub struct MFP_MEDIAITEM_SET_EVENT {
     pub header: MFP_EVENT_HEADER,
-    pub pMediaItem: IMFPMediaItem,
+    pub pMediaItem: *mut *mut *mut *mut IMFPMediaItem,
 }
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
 impl ::core::marker::Copy for MFP_MEDIAITEM_SET_EVENT {}
@@ -8239,8 +11958,8 @@ pub const MFP_MEDIAPLAYER_STATE_SHUTDOWN: MFP_MEDIAPLAYER_STATE = 4i32;
 pub struct MFP_MF_EVENT {
     pub header: MFP_EVENT_HEADER,
     pub MFEventType: u32,
-    pub pMFMediaEvent: IMFMediaEvent,
-    pub pMediaItem: IMFPMediaItem,
+    pub pMFMediaEvent: *mut *mut *mut *mut IMFMediaEvent,
+    pub pMediaItem: *mut *mut *mut *mut IMFPMediaItem,
 }
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
 impl ::core::marker::Copy for MFP_MF_EVENT {}
@@ -8255,7 +11974,7 @@ impl ::core::clone::Clone for MFP_MF_EVENT {
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
 pub struct MFP_PAUSE_EVENT {
     pub header: MFP_EVENT_HEADER,
-    pub pMediaItem: IMFPMediaItem,
+    pub pMediaItem: *mut *mut *mut *mut IMFPMediaItem,
 }
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
 impl ::core::marker::Copy for MFP_PAUSE_EVENT {}
@@ -8270,7 +11989,7 @@ impl ::core::clone::Clone for MFP_PAUSE_EVENT {
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
 pub struct MFP_PLAYBACK_ENDED_EVENT {
     pub header: MFP_EVENT_HEADER,
-    pub pMediaItem: IMFPMediaItem,
+    pub pMediaItem: *mut *mut *mut *mut IMFPMediaItem,
 }
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
 impl ::core::marker::Copy for MFP_PLAYBACK_ENDED_EVENT {}
@@ -8285,7 +12004,7 @@ impl ::core::clone::Clone for MFP_PLAYBACK_ENDED_EVENT {
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
 pub struct MFP_PLAY_EVENT {
     pub header: MFP_EVENT_HEADER,
-    pub pMediaItem: IMFPMediaItem,
+    pub pMediaItem: *mut *mut *mut *mut IMFPMediaItem,
 }
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
 impl ::core::marker::Copy for MFP_PLAY_EVENT {}
@@ -8301,7 +12020,7 @@ pub const MFP_POSITIONTYPE_100NS: ::windows_sys::core::GUID = ::windows_sys::cor
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
 pub struct MFP_POSITION_SET_EVENT {
     pub header: MFP_EVENT_HEADER,
-    pub pMediaItem: IMFPMediaItem,
+    pub pMediaItem: *mut *mut *mut *mut IMFPMediaItem,
 }
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
 impl ::core::marker::Copy for MFP_POSITION_SET_EVENT {}
@@ -8316,7 +12035,7 @@ impl ::core::clone::Clone for MFP_POSITION_SET_EVENT {
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
 pub struct MFP_RATE_SET_EVENT {
     pub header: MFP_EVENT_HEADER,
-    pub pMediaItem: IMFPMediaItem,
+    pub pMediaItem: *mut *mut *mut *mut IMFPMediaItem,
     pub flRate: f32,
 }
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
@@ -8332,7 +12051,7 @@ impl ::core::clone::Clone for MFP_RATE_SET_EVENT {
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
 pub struct MFP_STOP_EVENT {
     pub header: MFP_EVENT_HEADER,
-    pub pMediaItem: IMFPMediaItem,
+    pub pMediaItem: *mut *mut *mut *mut IMFPMediaItem,
 }
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
 impl ::core::marker::Copy for MFP_STOP_EVENT {}
@@ -8827,9 +12546,9 @@ pub const MFT_OUTPUT_BOUND_UPPER_UNBOUNDED: u64 = 9223372036854775807u64;
 #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
 pub struct MFT_OUTPUT_DATA_BUFFER {
     pub dwStreamID: u32,
-    pub pSample: IMFSample,
+    pub pSample: *mut *mut *mut *mut IMFSample,
     pub dwStatus: u32,
-    pub pEvents: IMFCollection,
+    pub pEvents: *mut *mut *mut *mut IMFCollection,
 }
 impl ::core::marker::Copy for MFT_OUTPUT_DATA_BUFFER {}
 impl ::core::clone::Clone for MFT_OUTPUT_DATA_BUFFER {
@@ -8989,7 +12708,7 @@ impl ::core::clone::Clone for MFVideoAlphaBitmap {
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct3D9", feature = "Win32_Graphics_Gdi"))]
 pub union MFVideoAlphaBitmap_0 {
     pub hdc: super::super::Graphics::Gdi::HDC,
-    pub pDDS: super::super::Graphics::Direct3D9::IDirect3DSurface9,
+    pub pDDS: *mut *mut *mut *mut super::super::Graphics::Direct3D9::IDirect3DSurface9,
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct3D9", feature = "Win32_Graphics_Gdi"))]
 impl ::core::marker::Copy for MFVideoAlphaBitmap_0 {}
@@ -12125,9 +15844,9 @@ pub const MF_TRANSCODE_QUALITYVSSPEED: ::windows_sys::core::GUID = ::windows_sys
 #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
 pub struct MF_TRANSCODE_SINK_INFO {
     pub dwVideoStreamID: u32,
-    pub pVideoMediaType: IMFMediaType,
+    pub pVideoMediaType: *mut *mut *mut *mut IMFMediaType,
     pub dwAudioStreamID: u32,
-    pub pAudioMediaType: IMFMediaType,
+    pub pAudioMediaType: *mut *mut *mut *mut IMFMediaType,
 }
 impl ::core::marker::Copy for MF_TRANSCODE_SINK_INFO {}
 impl ::core::clone::Clone for MF_TRANSCODE_SINK_INFO {
@@ -12904,7 +16623,7 @@ pub const OPM_VOS_OPM_SEMANTICS: OPM_VIDEO_OUTPUT_SEMANTICS = 1i32;
 pub const OPM_VOS_OPM_INDIRECT_DISPLAY: OPM_VIDEO_OUTPUT_SEMANTICS = 2i32;
 #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_Foundation\"`, `\"Win32_Graphics_Direct3D9\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct3D9"))]
-pub type PDXVAHDSW_CreateDevice = ::core::option::Option<unsafe extern "system" fn(pd3ddevice: super::super::Graphics::Direct3D9::IDirect3DDevice9Ex, phdevice: *mut super::super::Foundation::HANDLE) -> ::windows_sys::core::HRESULT>;
+pub type PDXVAHDSW_CreateDevice = ::core::option::Option<unsafe extern "system" fn(pd3ddevice: *mut *mut super::super::Graphics::Direct3D9::IDirect3DDevice9Ex, phdevice: *mut super::super::Foundation::HANDLE) -> ::windows_sys::core::HRESULT>;
 #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 pub type PDXVAHDSW_CreateVideoProcessor = ::core::option::Option<unsafe extern "system" fn(hdevice: super::super::Foundation::HANDLE, pvpguid: *const ::windows_sys::core::GUID, phvideoprocessor: *mut super::super::Foundation::HANDLE) -> ::windows_sys::core::HRESULT>;
@@ -12951,10 +16670,10 @@ pub type PDXVAHDSW_SetVideoProcessBltState = ::core::option::Option<unsafe exter
 pub type PDXVAHDSW_SetVideoProcessStreamState = ::core::option::Option<unsafe extern "system" fn(hvideoprocessor: super::super::Foundation::HANDLE, streamnumber: u32, state: DXVAHD_STREAM_STATE, datasize: u32, pdata: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT>;
 #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_Foundation\"`, `\"Win32_Graphics_Direct3D9\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct3D9"))]
-pub type PDXVAHDSW_VideoProcessBltHD = ::core::option::Option<unsafe extern "system" fn(hvideoprocessor: super::super::Foundation::HANDLE, poutputsurface: super::super::Graphics::Direct3D9::IDirect3DSurface9, outputframe: u32, streamcount: u32, pstreams: *const DXVAHD_STREAM_DATA) -> ::windows_sys::core::HRESULT>;
+pub type PDXVAHDSW_VideoProcessBltHD = ::core::option::Option<unsafe extern "system" fn(hvideoprocessor: super::super::Foundation::HANDLE, poutputsurface: *mut *mut super::super::Graphics::Direct3D9::IDirect3DSurface9, outputframe: u32, streamcount: u32, pstreams: *const DXVAHD_STREAM_DATA) -> ::windows_sys::core::HRESULT>;
 #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`, `\"Win32_Graphics_Direct3D9\"`*"]
 #[cfg(feature = "Win32_Graphics_Direct3D9")]
-pub type PDXVAHD_CreateDevice = ::core::option::Option<unsafe extern "system" fn(pd3ddevice: super::super::Graphics::Direct3D9::IDirect3DDevice9Ex, pcontentdesc: *const DXVAHD_CONTENT_DESC, usage: DXVAHD_DEVICE_USAGE, pplugin: PDXVAHDSW_Plugin, ppdevice: *mut IDXVAHD_Device) -> ::windows_sys::core::HRESULT>;
+pub type PDXVAHD_CreateDevice = ::core::option::Option<unsafe extern "system" fn(pd3ddevice: *mut *mut super::super::Graphics::Direct3D9::IDirect3DDevice9Ex, pcontentdesc: *const DXVAHD_CONTENT_DESC, usage: DXVAHD_DEVICE_USAGE, pplugin: PDXVAHDSW_Plugin, ppdevice: *mut *mut *mut IDXVAHD_Device) -> ::windows_sys::core::HRESULT>;
 #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
 pub type PLAYTO_SOURCE_CREATEFLAGS = i32;
 #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]

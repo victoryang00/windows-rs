@@ -1614,50 +1614,628 @@ pub const DXGI_USAGE_SHADER_INPUT: u32 = 16u32;
 pub const DXGI_USAGE_SHARED: u32 = 128u32;
 #[doc = "*Required features: `\"Win32_Graphics_Dxgi\"`*"]
 pub const DXGI_USAGE_UNORDERED_ACCESS: u32 = 1024u32;
-pub type IDXGIAdapter = *mut ::core::ffi::c_void;
-pub type IDXGIAdapter1 = *mut ::core::ffi::c_void;
-pub type IDXGIAdapter2 = *mut ::core::ffi::c_void;
-pub type IDXGIAdapter3 = *mut ::core::ffi::c_void;
-pub type IDXGIAdapter4 = *mut ::core::ffi::c_void;
-pub type IDXGIDebug = *mut ::core::ffi::c_void;
-pub type IDXGIDebug1 = *mut ::core::ffi::c_void;
-pub type IDXGIDecodeSwapChain = *mut ::core::ffi::c_void;
-pub type IDXGIDevice = *mut ::core::ffi::c_void;
-pub type IDXGIDevice1 = *mut ::core::ffi::c_void;
-pub type IDXGIDevice2 = *mut ::core::ffi::c_void;
-pub type IDXGIDevice3 = *mut ::core::ffi::c_void;
-pub type IDXGIDevice4 = *mut ::core::ffi::c_void;
-pub type IDXGIDeviceSubObject = *mut ::core::ffi::c_void;
-pub type IDXGIDisplayControl = *mut ::core::ffi::c_void;
-pub type IDXGIFactory = *mut ::core::ffi::c_void;
-pub type IDXGIFactory1 = *mut ::core::ffi::c_void;
-pub type IDXGIFactory2 = *mut ::core::ffi::c_void;
-pub type IDXGIFactory3 = *mut ::core::ffi::c_void;
-pub type IDXGIFactory4 = *mut ::core::ffi::c_void;
-pub type IDXGIFactory5 = *mut ::core::ffi::c_void;
-pub type IDXGIFactory6 = *mut ::core::ffi::c_void;
-pub type IDXGIFactory7 = *mut ::core::ffi::c_void;
-pub type IDXGIFactoryMedia = *mut ::core::ffi::c_void;
-pub type IDXGIInfoQueue = *mut ::core::ffi::c_void;
-pub type IDXGIKeyedMutex = *mut ::core::ffi::c_void;
-pub type IDXGIObject = *mut ::core::ffi::c_void;
-pub type IDXGIOutput = *mut ::core::ffi::c_void;
-pub type IDXGIOutput1 = *mut ::core::ffi::c_void;
-pub type IDXGIOutput2 = *mut ::core::ffi::c_void;
-pub type IDXGIOutput3 = *mut ::core::ffi::c_void;
-pub type IDXGIOutput4 = *mut ::core::ffi::c_void;
-pub type IDXGIOutput5 = *mut ::core::ffi::c_void;
-pub type IDXGIOutput6 = *mut ::core::ffi::c_void;
-pub type IDXGIOutputDuplication = *mut ::core::ffi::c_void;
-pub type IDXGIResource = *mut ::core::ffi::c_void;
-pub type IDXGIResource1 = *mut ::core::ffi::c_void;
-pub type IDXGISurface = *mut ::core::ffi::c_void;
-pub type IDXGISurface1 = *mut ::core::ffi::c_void;
-pub type IDXGISurface2 = *mut ::core::ffi::c_void;
-pub type IDXGISwapChain = *mut ::core::ffi::c_void;
-pub type IDXGISwapChain1 = *mut ::core::ffi::c_void;
-pub type IDXGISwapChain2 = *mut ::core::ffi::c_void;
-pub type IDXGISwapChain3 = *mut ::core::ffi::c_void;
-pub type IDXGISwapChain4 = *mut ::core::ffi::c_void;
-pub type IDXGISwapChainMedia = *mut ::core::ffi::c_void;
-pub type IDXGraphicsAnalysis = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IDXGIAdapter {
+    pub base__: IDXGIObject,
+    pub EnumOutputs: unsafe extern "system" fn(this: *mut *mut Self, output: u32, ppoutput: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetDesc: unsafe extern "system" fn(this: *mut *mut Self, pdesc: *mut DXGI_ADAPTER_DESC) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetDesc: usize,
+    pub CheckInterfaceSupport: unsafe extern "system" fn(this: *mut *mut Self, interfacename: *const ::windows_sys::core::GUID, pumdversion: *mut i64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDXGIAdapter1 {
+    pub base__: IDXGIAdapter,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetDesc1: unsafe extern "system" fn(this: *mut *mut Self, pdesc: *mut DXGI_ADAPTER_DESC1) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetDesc1: usize,
+}
+#[repr(C)]
+pub struct IDXGIAdapter2 {
+    pub base__: IDXGIAdapter1,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetDesc2: unsafe extern "system" fn(this: *mut *mut Self, pdesc: *mut DXGI_ADAPTER_DESC2) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetDesc2: usize,
+}
+#[repr(C)]
+pub struct IDXGIAdapter3 {
+    pub base__: IDXGIAdapter2,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RegisterHardwareContentProtectionTeardownStatusEvent: unsafe extern "system" fn(this: *mut *mut Self, hevent: super::super::Foundation::HANDLE, pdwcookie: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RegisterHardwareContentProtectionTeardownStatusEvent: usize,
+    pub UnregisterHardwareContentProtectionTeardownStatus: unsafe extern "system" fn(this: *mut *mut Self, dwcookie: u32),
+    pub QueryVideoMemoryInfo: unsafe extern "system" fn(this: *mut *mut Self, nodeindex: u32, memorysegmentgroup: DXGI_MEMORY_SEGMENT_GROUP, pvideomemoryinfo: *mut DXGI_QUERY_VIDEO_MEMORY_INFO) -> ::windows_sys::core::HRESULT,
+    pub SetVideoMemoryReservation: unsafe extern "system" fn(this: *mut *mut Self, nodeindex: u32, memorysegmentgroup: DXGI_MEMORY_SEGMENT_GROUP, reservation: u64) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RegisterVideoMemoryBudgetChangeNotificationEvent: unsafe extern "system" fn(this: *mut *mut Self, hevent: super::super::Foundation::HANDLE, pdwcookie: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RegisterVideoMemoryBudgetChangeNotificationEvent: usize,
+    pub UnregisterVideoMemoryBudgetChangeNotification: unsafe extern "system" fn(this: *mut *mut Self, dwcookie: u32),
+}
+#[repr(C)]
+pub struct IDXGIAdapter4 {
+    pub base__: IDXGIAdapter3,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetDesc3: unsafe extern "system" fn(this: *mut *mut Self, pdesc: *mut DXGI_ADAPTER_DESC3) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetDesc3: usize,
+}
+#[repr(C)]
+pub struct IDXGIDebug {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub ReportLiveObjects: unsafe extern "system" fn(this: *mut *mut Self, apiid: ::windows_sys::core::GUID, flags: DXGI_DEBUG_RLO_FLAGS) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDXGIDebug1 {
+    pub base__: IDXGIDebug,
+    pub EnableLeakTrackingForThread: unsafe extern "system" fn(this: *mut *mut Self),
+    pub DisableLeakTrackingForThread: unsafe extern "system" fn(this: *mut *mut Self),
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsLeakTrackingEnabledForThread: unsafe extern "system" fn(this: *mut *mut Self) -> super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsLeakTrackingEnabledForThread: usize,
+}
+#[repr(C)]
+pub struct IDXGIDecodeSwapChain {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub PresentBuffer: unsafe extern "system" fn(this: *mut *mut Self, buffertopresent: u32, syncinterval: u32, flags: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetSourceRect: unsafe extern "system" fn(this: *mut *mut Self, prect: *const super::super::Foundation::RECT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetSourceRect: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetTargetRect: unsafe extern "system" fn(this: *mut *mut Self, prect: *const super::super::Foundation::RECT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetTargetRect: usize,
+    pub SetDestSize: unsafe extern "system" fn(this: *mut *mut Self, width: u32, height: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetSourceRect: unsafe extern "system" fn(this: *mut *mut Self, prect: *mut super::super::Foundation::RECT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetSourceRect: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetTargetRect: unsafe extern "system" fn(this: *mut *mut Self, prect: *mut super::super::Foundation::RECT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetTargetRect: usize,
+    pub GetDestSize: unsafe extern "system" fn(this: *mut *mut Self, pwidth: *mut u32, pheight: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetColorSpace: unsafe extern "system" fn(this: *mut *mut Self, colorspace: DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS) -> ::windows_sys::core::HRESULT,
+    pub GetColorSpace: unsafe extern "system" fn(this: *mut *mut Self) -> DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS,
+}
+#[repr(C)]
+pub struct IDXGIDevice {
+    pub base__: IDXGIObject,
+    pub GetAdapter: unsafe extern "system" fn(this: *mut *mut Self, padapter: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common"))]
+    pub CreateSurface: unsafe extern "system" fn(this: *mut *mut Self, pdesc: *const DXGI_SURFACE_DESC, numsurfaces: u32, usage: u32, psharedresource: *const DXGI_SHARED_RESOURCE, ppsurface: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common")))]
+    CreateSurface: usize,
+    pub QueryResourceResidency: unsafe extern "system" fn(this: *mut *mut Self, ppresources: *const *mut ::core::ffi::c_void, presidencystatus: *mut DXGI_RESIDENCY, numresources: u32) -> ::windows_sys::core::HRESULT,
+    pub SetGPUThreadPriority: unsafe extern "system" fn(this: *mut *mut Self, priority: i32) -> ::windows_sys::core::HRESULT,
+    pub GetGPUThreadPriority: unsafe extern "system" fn(this: *mut *mut Self, ppriority: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDXGIDevice1 {
+    pub base__: IDXGIDevice,
+    pub SetMaximumFrameLatency: unsafe extern "system" fn(this: *mut *mut Self, maxlatency: u32) -> ::windows_sys::core::HRESULT,
+    pub GetMaximumFrameLatency: unsafe extern "system" fn(this: *mut *mut Self, pmaxlatency: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDXGIDevice2 {
+    pub base__: IDXGIDevice1,
+    pub OfferResources: unsafe extern "system" fn(this: *mut *mut Self, numresources: u32, ppresources: *const *mut ::core::ffi::c_void, priority: DXGI_OFFER_RESOURCE_PRIORITY) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ReclaimResources: unsafe extern "system" fn(this: *mut *mut Self, numresources: u32, ppresources: *const *mut ::core::ffi::c_void, pdiscarded: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ReclaimResources: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub EnqueueSetEvent: unsafe extern "system" fn(this: *mut *mut Self, hevent: super::super::Foundation::HANDLE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    EnqueueSetEvent: usize,
+}
+#[repr(C)]
+pub struct IDXGIDevice3 {
+    pub base__: IDXGIDevice2,
+    pub Trim: unsafe extern "system" fn(this: *mut *mut Self),
+}
+#[repr(C)]
+pub struct IDXGIDevice4 {
+    pub base__: IDXGIDevice3,
+    pub OfferResources1: unsafe extern "system" fn(this: *mut *mut Self, numresources: u32, ppresources: *const *mut ::core::ffi::c_void, priority: DXGI_OFFER_RESOURCE_PRIORITY, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub ReclaimResources1: unsafe extern "system" fn(this: *mut *mut Self, numresources: u32, ppresources: *const *mut ::core::ffi::c_void, presults: *mut DXGI_RECLAIM_RESOURCE_RESULTS) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDXGIDeviceSubObject {
+    pub base__: IDXGIObject,
+    pub GetDevice: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppdevice: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDXGIDisplayControl {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsStereoEnabled: unsafe extern "system" fn(this: *mut *mut Self) -> super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsStereoEnabled: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetStereoEnabled: unsafe extern "system" fn(this: *mut *mut Self, enabled: super::super::Foundation::BOOL),
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetStereoEnabled: usize,
+}
+#[repr(C)]
+pub struct IDXGIFactory {
+    pub base__: IDXGIObject,
+    pub EnumAdapters: unsafe extern "system" fn(this: *mut *mut Self, adapter: u32, ppadapter: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MakeWindowAssociation: unsafe extern "system" fn(this: *mut *mut Self, windowhandle: super::super::Foundation::HWND, flags: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MakeWindowAssociation: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetWindowAssociation: unsafe extern "system" fn(this: *mut *mut Self, pwindowhandle: *mut super::super::Foundation::HWND) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetWindowAssociation: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common"))]
+    pub CreateSwapChain: unsafe extern "system" fn(this: *mut *mut Self, pdevice: *mut ::core::ffi::c_void, pdesc: *const DXGI_SWAP_CHAIN_DESC, ppswapchain: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common")))]
+    CreateSwapChain: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CreateSoftwareAdapter: unsafe extern "system" fn(this: *mut *mut Self, module: super::super::Foundation::HINSTANCE, ppadapter: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CreateSoftwareAdapter: usize,
+}
+#[repr(C)]
+pub struct IDXGIFactory1 {
+    pub base__: IDXGIFactory,
+    pub EnumAdapters1: unsafe extern "system" fn(this: *mut *mut Self, adapter: u32, ppadapter: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsCurrent: unsafe extern "system" fn(this: *mut *mut Self) -> super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsCurrent: usize,
+}
+#[repr(C)]
+pub struct IDXGIFactory2 {
+    pub base__: IDXGIFactory1,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsWindowedStereoEnabled: unsafe extern "system" fn(this: *mut *mut Self) -> super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsWindowedStereoEnabled: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common"))]
+    pub CreateSwapChainForHwnd: unsafe extern "system" fn(this: *mut *mut Self, pdevice: *mut ::core::ffi::c_void, hwnd: super::super::Foundation::HWND, pdesc: *const DXGI_SWAP_CHAIN_DESC1, pfullscreendesc: *const DXGI_SWAP_CHAIN_FULLSCREEN_DESC, prestricttooutput: *mut ::core::ffi::c_void, ppswapchain: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common")))]
+    CreateSwapChainForHwnd: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common"))]
+    pub CreateSwapChainForCoreWindow: unsafe extern "system" fn(this: *mut *mut Self, pdevice: *mut ::core::ffi::c_void, pwindow: *mut ::core::ffi::c_void, pdesc: *const DXGI_SWAP_CHAIN_DESC1, prestricttooutput: *mut ::core::ffi::c_void, ppswapchain: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common")))]
+    CreateSwapChainForCoreWindow: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetSharedResourceAdapterLuid: unsafe extern "system" fn(this: *mut *mut Self, hresource: super::super::Foundation::HANDLE, pluid: *mut super::super::Foundation::LUID) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetSharedResourceAdapterLuid: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RegisterStereoStatusWindow: unsafe extern "system" fn(this: *mut *mut Self, windowhandle: super::super::Foundation::HWND, wmsg: u32, pdwcookie: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RegisterStereoStatusWindow: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RegisterStereoStatusEvent: unsafe extern "system" fn(this: *mut *mut Self, hevent: super::super::Foundation::HANDLE, pdwcookie: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RegisterStereoStatusEvent: usize,
+    pub UnregisterStereoStatus: unsafe extern "system" fn(this: *mut *mut Self, dwcookie: u32),
+    #[cfg(feature = "Win32_Foundation")]
+    pub RegisterOcclusionStatusWindow: unsafe extern "system" fn(this: *mut *mut Self, windowhandle: super::super::Foundation::HWND, wmsg: u32, pdwcookie: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RegisterOcclusionStatusWindow: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RegisterOcclusionStatusEvent: unsafe extern "system" fn(this: *mut *mut Self, hevent: super::super::Foundation::HANDLE, pdwcookie: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RegisterOcclusionStatusEvent: usize,
+    pub UnregisterOcclusionStatus: unsafe extern "system" fn(this: *mut *mut Self, dwcookie: u32),
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common"))]
+    pub CreateSwapChainForComposition: unsafe extern "system" fn(this: *mut *mut Self, pdevice: *mut ::core::ffi::c_void, pdesc: *const DXGI_SWAP_CHAIN_DESC1, prestricttooutput: *mut ::core::ffi::c_void, ppswapchain: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common")))]
+    CreateSwapChainForComposition: usize,
+}
+#[repr(C)]
+pub struct IDXGIFactory3 {
+    pub base__: IDXGIFactory2,
+    pub GetCreationFlags: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
+}
+#[repr(C)]
+pub struct IDXGIFactory4 {
+    pub base__: IDXGIFactory3,
+    #[cfg(feature = "Win32_Foundation")]
+    pub EnumAdapterByLuid: unsafe extern "system" fn(this: *mut *mut Self, adapterluid: super::super::Foundation::LUID, riid: *const ::windows_sys::core::GUID, ppvadapter: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    EnumAdapterByLuid: usize,
+    pub EnumWarpAdapter: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppvadapter: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDXGIFactory5 {
+    pub base__: IDXGIFactory4,
+    pub CheckFeatureSupport: unsafe extern "system" fn(this: *mut *mut Self, feature: DXGI_FEATURE, pfeaturesupportdata: *mut ::core::ffi::c_void, featuresupportdatasize: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDXGIFactory6 {
+    pub base__: IDXGIFactory5,
+    pub EnumAdapterByGpuPreference: unsafe extern "system" fn(this: *mut *mut Self, adapter: u32, gpupreference: DXGI_GPU_PREFERENCE, riid: *const ::windows_sys::core::GUID, ppvadapter: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDXGIFactory7 {
+    pub base__: IDXGIFactory6,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RegisterAdaptersChangedEvent: unsafe extern "system" fn(this: *mut *mut Self, hevent: super::super::Foundation::HANDLE, pdwcookie: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RegisterAdaptersChangedEvent: usize,
+    pub UnregisterAdaptersChangedEvent: unsafe extern "system" fn(this: *mut *mut Self, dwcookie: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDXGIFactoryMedia {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common"))]
+    pub CreateSwapChainForCompositionSurfaceHandle: unsafe extern "system" fn(this: *mut *mut Self, pdevice: *mut ::core::ffi::c_void, hsurface: super::super::Foundation::HANDLE, pdesc: *const DXGI_SWAP_CHAIN_DESC1, prestricttooutput: *mut ::core::ffi::c_void, ppswapchain: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common")))]
+    CreateSwapChainForCompositionSurfaceHandle: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CreateDecodeSwapChainForCompositionSurfaceHandle: unsafe extern "system" fn(this: *mut *mut Self, pdevice: *mut ::core::ffi::c_void, hsurface: super::super::Foundation::HANDLE, pdesc: *const DXGI_DECODE_SWAP_CHAIN_DESC, pyuvdecodebuffers: *mut ::core::ffi::c_void, prestricttooutput: *mut ::core::ffi::c_void, ppswapchain: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CreateDecodeSwapChainForCompositionSurfaceHandle: usize,
+}
+#[repr(C)]
+pub struct IDXGIInfoQueue {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetMessageCountLimit: unsafe extern "system" fn(this: *mut *mut Self, producer: ::windows_sys::core::GUID, messagecountlimit: u64) -> ::windows_sys::core::HRESULT,
+    pub ClearStoredMessages: unsafe extern "system" fn(this: *mut *mut Self, producer: ::windows_sys::core::GUID),
+    pub GetMessage: unsafe extern "system" fn(this: *mut *mut Self, producer: ::windows_sys::core::GUID, messageindex: u64, pmessage: *mut DXGI_INFO_QUEUE_MESSAGE, pmessagebytelength: *mut usize) -> ::windows_sys::core::HRESULT,
+    pub GetNumStoredMessagesAllowedByRetrievalFilters: unsafe extern "system" fn(this: *mut *mut Self, producer: ::windows_sys::core::GUID) -> u64,
+    pub GetNumStoredMessages: unsafe extern "system" fn(this: *mut *mut Self, producer: ::windows_sys::core::GUID) -> u64,
+    pub GetNumMessagesDiscardedByMessageCountLimit: unsafe extern "system" fn(this: *mut *mut Self, producer: ::windows_sys::core::GUID) -> u64,
+    pub GetMessageCountLimit: unsafe extern "system" fn(this: *mut *mut Self, producer: ::windows_sys::core::GUID) -> u64,
+    pub GetNumMessagesAllowedByStorageFilter: unsafe extern "system" fn(this: *mut *mut Self, producer: ::windows_sys::core::GUID) -> u64,
+    pub GetNumMessagesDeniedByStorageFilter: unsafe extern "system" fn(this: *mut *mut Self, producer: ::windows_sys::core::GUID) -> u64,
+    pub AddStorageFilterEntries: unsafe extern "system" fn(this: *mut *mut Self, producer: ::windows_sys::core::GUID, pfilter: *const DXGI_INFO_QUEUE_FILTER) -> ::windows_sys::core::HRESULT,
+    pub GetStorageFilter: unsafe extern "system" fn(this: *mut *mut Self, producer: ::windows_sys::core::GUID, pfilter: *mut DXGI_INFO_QUEUE_FILTER, pfilterbytelength: *mut usize) -> ::windows_sys::core::HRESULT,
+    pub ClearStorageFilter: unsafe extern "system" fn(this: *mut *mut Self, producer: ::windows_sys::core::GUID),
+    pub PushEmptyStorageFilter: unsafe extern "system" fn(this: *mut *mut Self, producer: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub PushDenyAllStorageFilter: unsafe extern "system" fn(this: *mut *mut Self, producer: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub PushCopyOfStorageFilter: unsafe extern "system" fn(this: *mut *mut Self, producer: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub PushStorageFilter: unsafe extern "system" fn(this: *mut *mut Self, producer: ::windows_sys::core::GUID, pfilter: *const DXGI_INFO_QUEUE_FILTER) -> ::windows_sys::core::HRESULT,
+    pub PopStorageFilter: unsafe extern "system" fn(this: *mut *mut Self, producer: ::windows_sys::core::GUID),
+    pub GetStorageFilterStackSize: unsafe extern "system" fn(this: *mut *mut Self, producer: ::windows_sys::core::GUID) -> u32,
+    pub AddRetrievalFilterEntries: unsafe extern "system" fn(this: *mut *mut Self, producer: ::windows_sys::core::GUID, pfilter: *const DXGI_INFO_QUEUE_FILTER) -> ::windows_sys::core::HRESULT,
+    pub GetRetrievalFilter: unsafe extern "system" fn(this: *mut *mut Self, producer: ::windows_sys::core::GUID, pfilter: *mut DXGI_INFO_QUEUE_FILTER, pfilterbytelength: *mut usize) -> ::windows_sys::core::HRESULT,
+    pub ClearRetrievalFilter: unsafe extern "system" fn(this: *mut *mut Self, producer: ::windows_sys::core::GUID),
+    pub PushEmptyRetrievalFilter: unsafe extern "system" fn(this: *mut *mut Self, producer: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub PushDenyAllRetrievalFilter: unsafe extern "system" fn(this: *mut *mut Self, producer: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub PushCopyOfRetrievalFilter: unsafe extern "system" fn(this: *mut *mut Self, producer: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub PushRetrievalFilter: unsafe extern "system" fn(this: *mut *mut Self, producer: ::windows_sys::core::GUID, pfilter: *const DXGI_INFO_QUEUE_FILTER) -> ::windows_sys::core::HRESULT,
+    pub PopRetrievalFilter: unsafe extern "system" fn(this: *mut *mut Self, producer: ::windows_sys::core::GUID),
+    pub GetRetrievalFilterStackSize: unsafe extern "system" fn(this: *mut *mut Self, producer: ::windows_sys::core::GUID) -> u32,
+    pub AddMessage: unsafe extern "system" fn(this: *mut *mut Self, producer: ::windows_sys::core::GUID, category: DXGI_INFO_QUEUE_MESSAGE_CATEGORY, severity: DXGI_INFO_QUEUE_MESSAGE_SEVERITY, id: i32, pdescription: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    pub AddApplicationMessage: unsafe extern "system" fn(this: *mut *mut Self, severity: DXGI_INFO_QUEUE_MESSAGE_SEVERITY, pdescription: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetBreakOnCategory: unsafe extern "system" fn(this: *mut *mut Self, producer: ::windows_sys::core::GUID, category: DXGI_INFO_QUEUE_MESSAGE_CATEGORY, benable: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetBreakOnCategory: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetBreakOnSeverity: unsafe extern "system" fn(this: *mut *mut Self, producer: ::windows_sys::core::GUID, severity: DXGI_INFO_QUEUE_MESSAGE_SEVERITY, benable: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetBreakOnSeverity: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetBreakOnID: unsafe extern "system" fn(this: *mut *mut Self, producer: ::windows_sys::core::GUID, id: i32, benable: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetBreakOnID: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetBreakOnCategory: unsafe extern "system" fn(this: *mut *mut Self, producer: ::windows_sys::core::GUID, category: DXGI_INFO_QUEUE_MESSAGE_CATEGORY) -> super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetBreakOnCategory: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetBreakOnSeverity: unsafe extern "system" fn(this: *mut *mut Self, producer: ::windows_sys::core::GUID, severity: DXGI_INFO_QUEUE_MESSAGE_SEVERITY) -> super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetBreakOnSeverity: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetBreakOnID: unsafe extern "system" fn(this: *mut *mut Self, producer: ::windows_sys::core::GUID, id: i32) -> super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetBreakOnID: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetMuteDebugOutput: unsafe extern "system" fn(this: *mut *mut Self, producer: ::windows_sys::core::GUID, bmute: super::super::Foundation::BOOL),
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetMuteDebugOutput: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetMuteDebugOutput: unsafe extern "system" fn(this: *mut *mut Self, producer: ::windows_sys::core::GUID) -> super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetMuteDebugOutput: usize,
+}
+#[repr(C)]
+pub struct IDXGIKeyedMutex {
+    pub base__: IDXGIDeviceSubObject,
+    pub AcquireSync: unsafe extern "system" fn(this: *mut *mut Self, key: u64, dwmilliseconds: u32) -> ::windows_sys::core::HRESULT,
+    pub ReleaseSync: unsafe extern "system" fn(this: *mut *mut Self, key: u64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDXGIObject {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetPrivateData: unsafe extern "system" fn(this: *mut *mut Self, name: *const ::windows_sys::core::GUID, datasize: u32, pdata: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetPrivateDataInterface: unsafe extern "system" fn(this: *mut *mut Self, name: *const ::windows_sys::core::GUID, punknown: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetPrivateData: unsafe extern "system" fn(this: *mut *mut Self, name: *const ::windows_sys::core::GUID, pdatasize: *mut u32, pdata: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetParent: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppparent: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDXGIOutput {
+    pub base__: IDXGIObject,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common", feature = "Win32_Graphics_Gdi"))]
+    pub GetDesc: unsafe extern "system" fn(this: *mut *mut Self, pdesc: *mut DXGI_OUTPUT_DESC) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common", feature = "Win32_Graphics_Gdi")))]
+    GetDesc: usize,
+    #[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+    pub GetDisplayModeList: unsafe extern "system" fn(this: *mut *mut Self, enumformat: Common::DXGI_FORMAT, flags: u32, pnummodes: *mut u32, pdesc: *mut Common::DXGI_MODE_DESC) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Dxgi_Common"))]
+    GetDisplayModeList: usize,
+    #[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+    pub FindClosestMatchingMode: unsafe extern "system" fn(this: *mut *mut Self, pmodetomatch: *const Common::DXGI_MODE_DESC, pclosestmatch: *mut Common::DXGI_MODE_DESC, pconcerneddevice: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Dxgi_Common"))]
+    FindClosestMatchingMode: usize,
+    pub WaitForVBlank: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub TakeOwnership: unsafe extern "system" fn(this: *mut *mut Self, pdevice: *mut ::core::ffi::c_void, exclusive: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    TakeOwnership: usize,
+    pub ReleaseOwnership: unsafe extern "system" fn(this: *mut *mut Self),
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common"))]
+    pub GetGammaControlCapabilities: unsafe extern "system" fn(this: *mut *mut Self, pgammacaps: *mut Common::DXGI_GAMMA_CONTROL_CAPABILITIES) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common")))]
+    GetGammaControlCapabilities: usize,
+    #[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+    pub SetGammaControl: unsafe extern "system" fn(this: *mut *mut Self, parray: *const Common::DXGI_GAMMA_CONTROL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Dxgi_Common"))]
+    SetGammaControl: usize,
+    #[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+    pub GetGammaControl: unsafe extern "system" fn(this: *mut *mut Self, parray: *mut Common::DXGI_GAMMA_CONTROL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Dxgi_Common"))]
+    GetGammaControl: usize,
+    pub SetDisplaySurface: unsafe extern "system" fn(this: *mut *mut Self, pscanoutsurface: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetDisplaySurfaceData: unsafe extern "system" fn(this: *mut *mut Self, pdestination: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetFrameStatistics: unsafe extern "system" fn(this: *mut *mut Self, pstats: *mut DXGI_FRAME_STATISTICS) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDXGIOutput1 {
+    pub base__: IDXGIOutput,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common"))]
+    pub GetDisplayModeList1: unsafe extern "system" fn(this: *mut *mut Self, enumformat: Common::DXGI_FORMAT, flags: u32, pnummodes: *mut u32, pdesc: *mut DXGI_MODE_DESC1) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common")))]
+    GetDisplayModeList1: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common"))]
+    pub FindClosestMatchingMode1: unsafe extern "system" fn(this: *mut *mut Self, pmodetomatch: *const DXGI_MODE_DESC1, pclosestmatch: *mut DXGI_MODE_DESC1, pconcerneddevice: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common")))]
+    FindClosestMatchingMode1: usize,
+    pub GetDisplaySurfaceData1: unsafe extern "system" fn(this: *mut *mut Self, pdestination: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub DuplicateOutput: unsafe extern "system" fn(this: *mut *mut Self, pdevice: *mut ::core::ffi::c_void, ppoutputduplication: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDXGIOutput2 {
+    pub base__: IDXGIOutput1,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SupportsOverlays: unsafe extern "system" fn(this: *mut *mut Self) -> super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SupportsOverlays: usize,
+}
+#[repr(C)]
+pub struct IDXGIOutput3 {
+    pub base__: IDXGIOutput2,
+    #[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+    pub CheckOverlaySupport: unsafe extern "system" fn(this: *mut *mut Self, enumformat: Common::DXGI_FORMAT, pconcerneddevice: *mut ::core::ffi::c_void, pflags: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Dxgi_Common"))]
+    CheckOverlaySupport: usize,
+}
+#[repr(C)]
+pub struct IDXGIOutput4 {
+    pub base__: IDXGIOutput3,
+    #[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+    pub CheckOverlayColorSpaceSupport: unsafe extern "system" fn(this: *mut *mut Self, format: Common::DXGI_FORMAT, colorspace: Common::DXGI_COLOR_SPACE_TYPE, pconcerneddevice: *mut ::core::ffi::c_void, pflags: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Dxgi_Common"))]
+    CheckOverlayColorSpaceSupport: usize,
+}
+#[repr(C)]
+pub struct IDXGIOutput5 {
+    pub base__: IDXGIOutput4,
+    #[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+    pub DuplicateOutput1: unsafe extern "system" fn(this: *mut *mut Self, pdevice: *mut ::core::ffi::c_void, flags: u32, supportedformatscount: u32, psupportedformats: *const Common::DXGI_FORMAT, ppoutputduplication: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Dxgi_Common"))]
+    DuplicateOutput1: usize,
+}
+#[repr(C)]
+pub struct IDXGIOutput6 {
+    pub base__: IDXGIOutput5,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common", feature = "Win32_Graphics_Gdi"))]
+    pub GetDesc1: unsafe extern "system" fn(this: *mut *mut Self, pdesc: *mut DXGI_OUTPUT_DESC1) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common", feature = "Win32_Graphics_Gdi")))]
+    GetDesc1: usize,
+    pub CheckHardwareCompositionSupport: unsafe extern "system" fn(this: *mut *mut Self, pflags: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDXGIOutputDuplication {
+    pub base__: IDXGIObject,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common"))]
+    pub GetDesc: unsafe extern "system" fn(this: *mut *mut Self, pdesc: *mut DXGI_OUTDUPL_DESC),
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common")))]
+    GetDesc: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AcquireNextFrame: unsafe extern "system" fn(this: *mut *mut Self, timeoutinmilliseconds: u32, pframeinfo: *mut DXGI_OUTDUPL_FRAME_INFO, ppdesktopresource: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AcquireNextFrame: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetFrameDirtyRects: unsafe extern "system" fn(this: *mut *mut Self, dirtyrectsbuffersize: u32, pdirtyrectsbuffer: *mut super::super::Foundation::RECT, pdirtyrectsbuffersizerequired: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetFrameDirtyRects: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetFrameMoveRects: unsafe extern "system" fn(this: *mut *mut Self, moverectsbuffersize: u32, pmoverectbuffer: *mut DXGI_OUTDUPL_MOVE_RECT, pmoverectsbuffersizerequired: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetFrameMoveRects: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetFramePointerShape: unsafe extern "system" fn(this: *mut *mut Self, pointershapebuffersize: u32, ppointershapebuffer: *mut ::core::ffi::c_void, ppointershapebuffersizerequired: *mut u32, ppointershapeinfo: *mut DXGI_OUTDUPL_POINTER_SHAPE_INFO) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetFramePointerShape: usize,
+    pub MapDesktopSurface: unsafe extern "system" fn(this: *mut *mut Self, plockedrect: *mut DXGI_MAPPED_RECT) -> ::windows_sys::core::HRESULT,
+    pub UnMapDesktopSurface: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub ReleaseFrame: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDXGIResource {
+    pub base__: IDXGIDeviceSubObject,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetSharedHandle: unsafe extern "system" fn(this: *mut *mut Self, psharedhandle: *mut super::super::Foundation::HANDLE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetSharedHandle: usize,
+    pub GetUsage: unsafe extern "system" fn(this: *mut *mut Self, pusage: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetEvictionPriority: unsafe extern "system" fn(this: *mut *mut Self, evictionpriority: DXGI_RESOURCE_PRIORITY) -> ::windows_sys::core::HRESULT,
+    pub GetEvictionPriority: unsafe extern "system" fn(this: *mut *mut Self, pevictionpriority: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDXGIResource1 {
+    pub base__: IDXGIResource,
+    pub CreateSubresourceSurface: unsafe extern "system" fn(this: *mut *mut Self, index: u32, ppsurface: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+    pub CreateSharedHandle: unsafe extern "system" fn(this: *mut *mut Self, pattributes: *const super::super::Security::SECURITY_ATTRIBUTES, dwaccess: u32, lpname: ::windows_sys::core::PCWSTR, phandle: *mut super::super::Foundation::HANDLE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Security")))]
+    CreateSharedHandle: usize,
+}
+#[repr(C)]
+pub struct IDXGISurface {
+    pub base__: IDXGIDeviceSubObject,
+    #[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+    pub GetDesc: unsafe extern "system" fn(this: *mut *mut Self, pdesc: *mut DXGI_SURFACE_DESC) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Dxgi_Common"))]
+    GetDesc: usize,
+    pub Map: unsafe extern "system" fn(this: *mut *mut Self, plockedrect: *mut DXGI_MAPPED_RECT, mapflags: u32) -> ::windows_sys::core::HRESULT,
+    pub Unmap: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDXGISurface1 {
+    pub base__: IDXGISurface,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+    pub GetDC: unsafe extern "system" fn(this: *mut *mut Self, discard: super::super::Foundation::BOOL, phdc: *mut super::Gdi::HDC) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi")))]
+    GetDC: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ReleaseDC: unsafe extern "system" fn(this: *mut *mut Self, pdirtyrect: *const super::super::Foundation::RECT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ReleaseDC: usize,
+}
+#[repr(C)]
+pub struct IDXGISurface2 {
+    pub base__: IDXGISurface1,
+    pub GetResource: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppparentresource: *mut *mut ::core::ffi::c_void, psubresourceindex: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDXGISwapChain {
+    pub base__: IDXGIDeviceSubObject,
+    pub Present: unsafe extern "system" fn(this: *mut *mut Self, syncinterval: u32, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetBuffer: unsafe extern "system" fn(this: *mut *mut Self, buffer: u32, riid: *const ::windows_sys::core::GUID, ppsurface: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetFullscreenState: unsafe extern "system" fn(this: *mut *mut Self, fullscreen: super::super::Foundation::BOOL, ptarget: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetFullscreenState: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetFullscreenState: unsafe extern "system" fn(this: *mut *mut Self, pfullscreen: *mut super::super::Foundation::BOOL, pptarget: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetFullscreenState: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common"))]
+    pub GetDesc: unsafe extern "system" fn(this: *mut *mut Self, pdesc: *mut DXGI_SWAP_CHAIN_DESC) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common")))]
+    GetDesc: usize,
+    #[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+    pub ResizeBuffers: unsafe extern "system" fn(this: *mut *mut Self, buffercount: u32, width: u32, height: u32, newformat: Common::DXGI_FORMAT, swapchainflags: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Dxgi_Common"))]
+    ResizeBuffers: usize,
+    #[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+    pub ResizeTarget: unsafe extern "system" fn(this: *mut *mut Self, pnewtargetparameters: *const Common::DXGI_MODE_DESC) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Dxgi_Common"))]
+    ResizeTarget: usize,
+    pub GetContainingOutput: unsafe extern "system" fn(this: *mut *mut Self, ppoutput: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetFrameStatistics: unsafe extern "system" fn(this: *mut *mut Self, pstats: *mut DXGI_FRAME_STATISTICS) -> ::windows_sys::core::HRESULT,
+    pub GetLastPresentCount: unsafe extern "system" fn(this: *mut *mut Self, plastpresentcount: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDXGISwapChain1 {
+    pub base__: IDXGISwapChain,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common"))]
+    pub GetDesc1: unsafe extern "system" fn(this: *mut *mut Self, pdesc: *mut DXGI_SWAP_CHAIN_DESC1) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common")))]
+    GetDesc1: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common"))]
+    pub GetFullscreenDesc: unsafe extern "system" fn(this: *mut *mut Self, pdesc: *mut DXGI_SWAP_CHAIN_FULLSCREEN_DESC) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common")))]
+    GetFullscreenDesc: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetHwnd: unsafe extern "system" fn(this: *mut *mut Self, phwnd: *mut super::super::Foundation::HWND) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetHwnd: usize,
+    pub GetCoreWindow: unsafe extern "system" fn(this: *mut *mut Self, refiid: *const ::windows_sys::core::GUID, ppunk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Present1: unsafe extern "system" fn(this: *mut *mut Self, syncinterval: u32, presentflags: u32, ppresentparameters: *const DXGI_PRESENT_PARAMETERS) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Present1: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsTemporaryMonoSupported: unsafe extern "system" fn(this: *mut *mut Self) -> super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsTemporaryMonoSupported: usize,
+    pub GetRestrictToOutput: unsafe extern "system" fn(this: *mut *mut Self, pprestricttooutput: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetBackgroundColor: unsafe extern "system" fn(this: *mut *mut Self, pcolor: *const DXGI_RGBA) -> ::windows_sys::core::HRESULT,
+    pub GetBackgroundColor: unsafe extern "system" fn(this: *mut *mut Self, pcolor: *mut DXGI_RGBA) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+    pub SetRotation: unsafe extern "system" fn(this: *mut *mut Self, rotation: Common::DXGI_MODE_ROTATION) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Dxgi_Common"))]
+    SetRotation: usize,
+    #[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+    pub GetRotation: unsafe extern "system" fn(this: *mut *mut Self, protation: *mut Common::DXGI_MODE_ROTATION) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Dxgi_Common"))]
+    GetRotation: usize,
+}
+#[repr(C)]
+pub struct IDXGISwapChain2 {
+    pub base__: IDXGISwapChain1,
+    pub SetSourceSize: unsafe extern "system" fn(this: *mut *mut Self, width: u32, height: u32) -> ::windows_sys::core::HRESULT,
+    pub GetSourceSize: unsafe extern "system" fn(this: *mut *mut Self, pwidth: *mut u32, pheight: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetMaximumFrameLatency: unsafe extern "system" fn(this: *mut *mut Self, maxlatency: u32) -> ::windows_sys::core::HRESULT,
+    pub GetMaximumFrameLatency: unsafe extern "system" fn(this: *mut *mut Self, pmaxlatency: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetFrameLatencyWaitableObject: unsafe extern "system" fn(this: *mut *mut Self) -> super::super::Foundation::HANDLE,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetFrameLatencyWaitableObject: usize,
+    pub SetMatrixTransform: unsafe extern "system" fn(this: *mut *mut Self, pmatrix: *const DXGI_MATRIX_3X2_F) -> ::windows_sys::core::HRESULT,
+    pub GetMatrixTransform: unsafe extern "system" fn(this: *mut *mut Self, pmatrix: *mut DXGI_MATRIX_3X2_F) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDXGISwapChain3 {
+    pub base__: IDXGISwapChain2,
+    pub GetCurrentBackBufferIndex: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
+    #[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+    pub CheckColorSpaceSupport: unsafe extern "system" fn(this: *mut *mut Self, colorspace: Common::DXGI_COLOR_SPACE_TYPE, pcolorspacesupport: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Dxgi_Common"))]
+    CheckColorSpaceSupport: usize,
+    #[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+    pub SetColorSpace1: unsafe extern "system" fn(this: *mut *mut Self, colorspace: Common::DXGI_COLOR_SPACE_TYPE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Dxgi_Common"))]
+    SetColorSpace1: usize,
+    #[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+    pub ResizeBuffers1: unsafe extern "system" fn(this: *mut *mut Self, buffercount: u32, width: u32, height: u32, format: Common::DXGI_FORMAT, swapchainflags: u32, pcreationnodemask: *const u32, pppresentqueue: *const *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Dxgi_Common"))]
+    ResizeBuffers1: usize,
+}
+#[repr(C)]
+pub struct IDXGISwapChain4 {
+    pub base__: IDXGISwapChain3,
+    pub SetHDRMetaData: unsafe extern "system" fn(this: *mut *mut Self, r#type: DXGI_HDR_METADATA_TYPE, size: u32, pmetadata: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDXGISwapChainMedia {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetFrameStatisticsMedia: unsafe extern "system" fn(this: *mut *mut Self, pstats: *mut DXGI_FRAME_STATISTICS_MEDIA) -> ::windows_sys::core::HRESULT,
+    pub SetPresentDuration: unsafe extern "system" fn(this: *mut *mut Self, duration: u32) -> ::windows_sys::core::HRESULT,
+    pub CheckPresentDurationSupport: unsafe extern "system" fn(this: *mut *mut Self, desiredpresentduration: u32, pclosestsmallerpresentduration: *mut u32, pclosestlargerpresentduration: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDXGraphicsAnalysis {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub BeginCapture: unsafe extern "system" fn(this: *mut *mut Self),
+    pub EndCapture: unsafe extern "system" fn(this: *mut *mut Self),
+}

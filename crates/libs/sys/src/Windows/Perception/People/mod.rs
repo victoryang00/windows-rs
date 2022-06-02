@@ -56,6 +56,89 @@ pub type HandMeshVertexState = *mut ::core::ffi::c_void;
 pub type HandPose = *mut ::core::ffi::c_void;
 pub type HeadPose = *mut ::core::ffi::c_void;
 #[repr(C)]
+pub struct IEyesPose {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub IsCalibrationValid: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Foundation_Numerics", feature = "Perception_Spatial"))]
+    pub Gaze: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation_Numerics", feature = "Perception_Spatial")))]
+    Gaze: usize,
+    pub UpdateTimestamp: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IEyesPoseStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub IsSupported: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Foundation", feature = "UI_Input"))]
+    pub RequestAccessAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation", feature = "UI_Input")))]
+    RequestAccessAsync: usize,
+}
+#[repr(C)]
+pub struct IHandMeshObserver {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Input_Spatial")]
+    pub Source: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Input_Spatial"))]
+    Source: usize,
+    pub TriangleIndexCount: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub VertexCount: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetTriangleIndices: unsafe extern "system" fn(this: *mut *mut Self, indices_array_size: u32, indices: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub GetVertexStateForPose: unsafe extern "system" fn(this: *mut *mut Self, handpose: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub NeutralPose: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub NeutralPoseVersion: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub ModelId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IHandMeshVertexState {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Perception_Spatial")]
+    pub CoordinateSystem: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Perception_Spatial"))]
+    CoordinateSystem: usize,
+    #[cfg(feature = "Foundation_Numerics")]
+    pub GetVertices: unsafe extern "system" fn(this: *mut *mut Self, vertices_array_size: u32, vertices: *mut HandMeshVertex) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Numerics"))]
+    GetVertices: usize,
+    pub UpdateTimestamp: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IHandPose {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(all(feature = "Foundation_Numerics", feature = "Perception_Spatial"))]
+    pub TryGetJoint: unsafe extern "system" fn(this: *mut *mut Self, coordinatesystem: *mut ::core::ffi::c_void, joint: HandJointKind, jointpose: *mut JointPose, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation_Numerics", feature = "Perception_Spatial")))]
+    TryGetJoint: usize,
+    #[cfg(all(feature = "Foundation_Numerics", feature = "Perception_Spatial"))]
+    pub TryGetJoints: unsafe extern "system" fn(this: *mut *mut Self, coordinatesystem: *mut ::core::ffi::c_void, joints_array_size: u32, joints: *const HandJointKind, jointPoses_array_size: u32, jointposes: *mut JointPose, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation_Numerics", feature = "Perception_Spatial")))]
+    TryGetJoints: usize,
+    #[cfg(feature = "Foundation_Numerics")]
+    pub GetRelativeJoint: unsafe extern "system" fn(this: *mut *mut Self, joint: HandJointKind, referencejoint: HandJointKind, result__: *mut JointPose) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Numerics"))]
+    GetRelativeJoint: usize,
+    #[cfg(feature = "Foundation_Numerics")]
+    pub GetRelativeJoints: unsafe extern "system" fn(this: *mut *mut Self, joints_array_size: u32, joints: *const HandJointKind, referenceJoints_array_size: u32, referencejoints: *const HandJointKind, jointPoses_array_size: u32, jointposes: *mut JointPose) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Numerics"))]
+    GetRelativeJoints: usize,
+}
+#[repr(C)]
+pub struct IHeadPose {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation_Numerics")]
+    pub Position: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Foundation::Numerics::Vector3) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Numerics"))]
+    Position: usize,
+    #[cfg(feature = "Foundation_Numerics")]
+    pub ForwardDirection: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Foundation::Numerics::Vector3) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Numerics"))]
+    ForwardDirection: usize,
+    #[cfg(feature = "Foundation_Numerics")]
+    pub UpDirection: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Foundation::Numerics::Vector3) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Numerics"))]
+    UpDirection: usize,
+}
+#[repr(C)]
 #[doc = "*Required features: `\"Perception_People\"`, `\"Foundation_Numerics\"`*"]
 #[cfg(feature = "Foundation_Numerics")]
 pub struct JointPose {

@@ -1,3 +1,105 @@
+#[repr(C)]
+pub struct IMicrosoftAccountMultiFactorAuthenticationManager {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub GetOneTimePassCodeAsync: unsafe extern "system" fn(this: *mut *mut Self, useraccountid: ::windows_sys::core::HSTRING, codelength: u32, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    GetOneTimePassCodeAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub AddDeviceAsync: unsafe extern "system" fn(this: *mut *mut Self, useraccountid: ::windows_sys::core::HSTRING, authenticationtoken: ::windows_sys::core::HSTRING, wnschannelid: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    AddDeviceAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveDeviceAsync: unsafe extern "system" fn(this: *mut *mut Self, useraccountid: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveDeviceAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub UpdateWnsChannelAsync: unsafe extern "system" fn(this: *mut *mut Self, useraccountid: ::windows_sys::core::HSTRING, channeluri: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    UpdateWnsChannelAsync: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub GetSessionsAsync: unsafe extern "system" fn(this: *mut *mut Self, useraccountidlist: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    GetSessionsAsync: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub GetSessionsAndUnregisteredAccountsAsync: unsafe extern "system" fn(this: *mut *mut Self, useraccountidlist: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    GetSessionsAndUnregisteredAccountsAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub ApproveSessionUsingAuthSessionInfoAsync: unsafe extern "system" fn(this: *mut *mut Self, sessionauthentictionstatus: MicrosoftAccountMultiFactorSessionAuthenticationStatus, authenticationsessioninfo: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    ApproveSessionUsingAuthSessionInfoAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub ApproveSessionAsync: unsafe extern "system" fn(this: *mut *mut Self, sessionauthentictionstatus: MicrosoftAccountMultiFactorSessionAuthenticationStatus, useraccountid: ::windows_sys::core::HSTRING, sessionid: ::windows_sys::core::HSTRING, sessionauthenticationtype: MicrosoftAccountMultiFactorAuthenticationType, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    ApproveSessionAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub DenySessionUsingAuthSessionInfoAsync: unsafe extern "system" fn(this: *mut *mut Self, authenticationsessioninfo: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    DenySessionUsingAuthSessionInfoAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub DenySessionAsync: unsafe extern "system" fn(this: *mut *mut Self, useraccountid: ::windows_sys::core::HSTRING, sessionid: ::windows_sys::core::HSTRING, sessionauthenticationtype: MicrosoftAccountMultiFactorAuthenticationType, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    DenySessionAsync: usize,
+}
+#[repr(C)]
+pub struct IMicrosoftAccountMultiFactorAuthenticatorStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Current: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMicrosoftAccountMultiFactorGetSessionsResult {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation_Collections")]
+    pub Sessions: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    Sessions: usize,
+    pub ServiceResponse: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut MicrosoftAccountMultiFactorServiceResponse) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMicrosoftAccountMultiFactorOneTimeCodedInfo {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Code: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub TimeInterval: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::super::super::Foundation::TimeSpan) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    TimeInterval: usize,
+    #[cfg(feature = "Foundation")]
+    pub TimeToLive: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::super::super::Foundation::TimeSpan) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    TimeToLive: usize,
+    pub ServiceResponse: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut MicrosoftAccountMultiFactorServiceResponse) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMicrosoftAccountMultiFactorSessionInfo {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub UserAccountId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SessionId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub DisplaySessionId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub ApprovalStatus: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut MicrosoftAccountMultiFactorSessionApprovalStatus) -> ::windows_sys::core::HRESULT,
+    pub AuthenticationType: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut MicrosoftAccountMultiFactorAuthenticationType) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub RequestTime: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::super::super::Foundation::DateTime) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RequestTime: usize,
+    #[cfg(feature = "Foundation")]
+    pub ExpirationTime: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::super::super::Foundation::DateTime) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    ExpirationTime: usize,
+}
+#[repr(C)]
+pub struct IMicrosoftAccountMultiFactorUnregisteredAccountsAndSessionInfo {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation_Collections")]
+    pub Sessions: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    Sessions: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub UnregisteredAccounts: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    UnregisteredAccounts: usize,
+    pub ServiceResponse: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut MicrosoftAccountMultiFactorServiceResponse) -> ::windows_sys::core::HRESULT,
+}
 pub type MicrosoftAccountMultiFactorAuthenticationManager = *mut ::core::ffi::c_void;
 #[doc = "*Required features: `\"Security_Authentication_Identity_Core\"`*"]
 #[repr(transparent)]

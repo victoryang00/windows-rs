@@ -35,7 +35,11 @@ pub const AdrEmailFlags_IncludeDeviceClaims: AdrEmailFlags = 4i32;
 pub const AdrEmailFlags_IncludeUserInfo: AdrEmailFlags = 8i32;
 #[doc = "*Required features: `\"Win32_Storage_FileServerResourceManager\"`*"]
 pub const AdrEmailFlags_GenerateEventLog: AdrEmailFlags = 16i32;
-pub type DIFsrmClassificationEvents = *mut ::core::ffi::c_void;
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct DIFsrmClassificationEvents {
+    pub base__: super::super::System::Com::IDispatch,
+}
 #[doc = "*Required features: `\"Win32_Storage_FileServerResourceManager\"`*"]
 pub const FSRM_DISPID_FEATURE_CLASSIFICATION: u32 = 83886080u32;
 #[doc = "*Required features: `\"Win32_Storage_FileServerResourceManager\"`*"]
@@ -814,65 +818,1633 @@ pub type FsrmTemplateApplyOptions = i32;
 pub const FsrmTemplateApplyOptions_ApplyToDerivedMatching: FsrmTemplateApplyOptions = 1i32;
 #[doc = "*Required features: `\"Win32_Storage_FileServerResourceManager\"`*"]
 pub const FsrmTemplateApplyOptions_ApplyToDerivedAll: FsrmTemplateApplyOptions = 2i32;
-pub type IFsrmAccessDeniedRemediationClient = *mut ::core::ffi::c_void;
-pub type IFsrmAction = *mut ::core::ffi::c_void;
-pub type IFsrmActionCommand = *mut ::core::ffi::c_void;
-pub type IFsrmActionEmail = *mut ::core::ffi::c_void;
-pub type IFsrmActionEmail2 = *mut ::core::ffi::c_void;
-pub type IFsrmActionEventLog = *mut ::core::ffi::c_void;
-pub type IFsrmActionReport = *mut ::core::ffi::c_void;
-pub type IFsrmAutoApplyQuota = *mut ::core::ffi::c_void;
-pub type IFsrmClassificationManager = *mut ::core::ffi::c_void;
-pub type IFsrmClassificationManager2 = *mut ::core::ffi::c_void;
-pub type IFsrmClassificationRule = *mut ::core::ffi::c_void;
-pub type IFsrmClassifierModuleDefinition = *mut ::core::ffi::c_void;
-pub type IFsrmClassifierModuleImplementation = *mut ::core::ffi::c_void;
-pub type IFsrmCollection = *mut ::core::ffi::c_void;
-pub type IFsrmCommittableCollection = *mut ::core::ffi::c_void;
-pub type IFsrmDerivedObjectsResult = *mut ::core::ffi::c_void;
-pub type IFsrmExportImport = *mut ::core::ffi::c_void;
-pub type IFsrmFileCondition = *mut ::core::ffi::c_void;
-pub type IFsrmFileConditionProperty = *mut ::core::ffi::c_void;
-pub type IFsrmFileGroup = *mut ::core::ffi::c_void;
-pub type IFsrmFileGroupImported = *mut ::core::ffi::c_void;
-pub type IFsrmFileGroupManager = *mut ::core::ffi::c_void;
-pub type IFsrmFileManagementJob = *mut ::core::ffi::c_void;
-pub type IFsrmFileManagementJobManager = *mut ::core::ffi::c_void;
-pub type IFsrmFileScreen = *mut ::core::ffi::c_void;
-pub type IFsrmFileScreenBase = *mut ::core::ffi::c_void;
-pub type IFsrmFileScreenException = *mut ::core::ffi::c_void;
-pub type IFsrmFileScreenManager = *mut ::core::ffi::c_void;
-pub type IFsrmFileScreenTemplate = *mut ::core::ffi::c_void;
-pub type IFsrmFileScreenTemplateImported = *mut ::core::ffi::c_void;
-pub type IFsrmFileScreenTemplateManager = *mut ::core::ffi::c_void;
-pub type IFsrmMutableCollection = *mut ::core::ffi::c_void;
-pub type IFsrmObject = *mut ::core::ffi::c_void;
-pub type IFsrmPathMapper = *mut ::core::ffi::c_void;
-pub type IFsrmPipelineModuleConnector = *mut ::core::ffi::c_void;
-pub type IFsrmPipelineModuleDefinition = *mut ::core::ffi::c_void;
-pub type IFsrmPipelineModuleImplementation = *mut ::core::ffi::c_void;
-pub type IFsrmProperty = *mut ::core::ffi::c_void;
-pub type IFsrmPropertyBag = *mut ::core::ffi::c_void;
-pub type IFsrmPropertyBag2 = *mut ::core::ffi::c_void;
-pub type IFsrmPropertyCondition = *mut ::core::ffi::c_void;
-pub type IFsrmPropertyDefinition = *mut ::core::ffi::c_void;
-pub type IFsrmPropertyDefinition2 = *mut ::core::ffi::c_void;
-pub type IFsrmPropertyDefinitionValue = *mut ::core::ffi::c_void;
-pub type IFsrmQuota = *mut ::core::ffi::c_void;
-pub type IFsrmQuotaBase = *mut ::core::ffi::c_void;
-pub type IFsrmQuotaManager = *mut ::core::ffi::c_void;
-pub type IFsrmQuotaManagerEx = *mut ::core::ffi::c_void;
-pub type IFsrmQuotaObject = *mut ::core::ffi::c_void;
-pub type IFsrmQuotaTemplate = *mut ::core::ffi::c_void;
-pub type IFsrmQuotaTemplateImported = *mut ::core::ffi::c_void;
-pub type IFsrmQuotaTemplateManager = *mut ::core::ffi::c_void;
-pub type IFsrmReport = *mut ::core::ffi::c_void;
-pub type IFsrmReportJob = *mut ::core::ffi::c_void;
-pub type IFsrmReportManager = *mut ::core::ffi::c_void;
-pub type IFsrmReportScheduler = *mut ::core::ffi::c_void;
-pub type IFsrmRule = *mut ::core::ffi::c_void;
-pub type IFsrmSetting = *mut ::core::ffi::c_void;
-pub type IFsrmStorageModuleDefinition = *mut ::core::ffi::c_void;
-pub type IFsrmStorageModuleImplementation = *mut ::core::ffi::c_void;
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFsrmAccessDeniedRemediationClient {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Show: unsafe extern "system" fn(this: *mut *mut Self, parentwnd: usize, accesspath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, errortype: AdrClientErrorType, flags: i32, windowtitle: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, windowmessage: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, result: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Show: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFsrmAction {
+    pub base__: super::super::System::Com::IDispatch,
+    pub Id: unsafe extern "system" fn(this: *mut *mut Self, id: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub ActionType: unsafe extern "system" fn(this: *mut *mut Self, actiontype: *mut FsrmActionType) -> ::windows_sys::core::HRESULT,
+    pub RunLimitInterval: unsafe extern "system" fn(this: *mut *mut Self, minutes: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetRunLimitInterval: unsafe extern "system" fn(this: *mut *mut Self, minutes: i32) -> ::windows_sys::core::HRESULT,
+    pub Delete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFsrmActionCommand {
+    pub base__: IFsrmAction,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ExecutablePath: unsafe extern "system" fn(this: *mut *mut Self, executablepath: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ExecutablePath: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetExecutablePath: unsafe extern "system" fn(this: *mut *mut Self, executablepath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetExecutablePath: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Arguments: unsafe extern "system" fn(this: *mut *mut Self, arguments: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Arguments: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetArguments: unsafe extern "system" fn(this: *mut *mut Self, arguments: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetArguments: usize,
+    pub Account: unsafe extern "system" fn(this: *mut *mut Self, account: *mut FsrmAccountType) -> ::windows_sys::core::HRESULT,
+    pub SetAccount: unsafe extern "system" fn(this: *mut *mut Self, account: FsrmAccountType) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub WorkingDirectory: unsafe extern "system" fn(this: *mut *mut Self, workingdirectory: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    WorkingDirectory: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetWorkingDirectory: unsafe extern "system" fn(this: *mut *mut Self, workingdirectory: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetWorkingDirectory: usize,
+    pub MonitorCommand: unsafe extern "system" fn(this: *mut *mut Self, monitorcommand: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetMonitorCommand: unsafe extern "system" fn(this: *mut *mut Self, monitorcommand: i16) -> ::windows_sys::core::HRESULT,
+    pub KillTimeOut: unsafe extern "system" fn(this: *mut *mut Self, minutes: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetKillTimeOut: unsafe extern "system" fn(this: *mut *mut Self, minutes: i32) -> ::windows_sys::core::HRESULT,
+    pub LogResult: unsafe extern "system" fn(this: *mut *mut Self, logresults: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetLogResult: unsafe extern "system" fn(this: *mut *mut Self, logresults: i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFsrmActionEmail {
+    pub base__: IFsrmAction,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MailFrom: unsafe extern "system" fn(this: *mut *mut Self, mailfrom: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MailFrom: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetMailFrom: unsafe extern "system" fn(this: *mut *mut Self, mailfrom: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetMailFrom: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MailReplyTo: unsafe extern "system" fn(this: *mut *mut Self, mailreplyto: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MailReplyTo: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetMailReplyTo: unsafe extern "system" fn(this: *mut *mut Self, mailreplyto: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetMailReplyTo: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MailTo: unsafe extern "system" fn(this: *mut *mut Self, mailto: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MailTo: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetMailTo: unsafe extern "system" fn(this: *mut *mut Self, mailto: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetMailTo: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MailCc: unsafe extern "system" fn(this: *mut *mut Self, mailcc: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MailCc: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetMailCc: unsafe extern "system" fn(this: *mut *mut Self, mailcc: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetMailCc: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MailBcc: unsafe extern "system" fn(this: *mut *mut Self, mailbcc: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MailBcc: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetMailBcc: unsafe extern "system" fn(this: *mut *mut Self, mailbcc: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetMailBcc: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MailSubject: unsafe extern "system" fn(this: *mut *mut Self, mailsubject: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MailSubject: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetMailSubject: unsafe extern "system" fn(this: *mut *mut Self, mailsubject: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetMailSubject: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MessageText: unsafe extern "system" fn(this: *mut *mut Self, messagetext: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MessageText: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetMessageText: unsafe extern "system" fn(this: *mut *mut Self, messagetext: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetMessageText: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFsrmActionEmail2 {
+    pub base__: IFsrmActionEmail,
+    pub AttachmentFileListSize: unsafe extern "system" fn(this: *mut *mut Self, attachmentfilelistsize: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetAttachmentFileListSize: unsafe extern "system" fn(this: *mut *mut Self, attachmentfilelistsize: i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFsrmActionEventLog {
+    pub base__: IFsrmAction,
+    pub EventType: unsafe extern "system" fn(this: *mut *mut Self, eventtype: *mut FsrmEventType) -> ::windows_sys::core::HRESULT,
+    pub SetEventType: unsafe extern "system" fn(this: *mut *mut Self, eventtype: FsrmEventType) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MessageText: unsafe extern "system" fn(this: *mut *mut Self, messagetext: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MessageText: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetMessageText: unsafe extern "system" fn(this: *mut *mut Self, messagetext: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetMessageText: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFsrmActionReport {
+    pub base__: IFsrmAction,
+    #[cfg(feature = "Win32_System_Com")]
+    pub ReportTypes: unsafe extern "system" fn(this: *mut *mut Self, reporttypes: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    ReportTypes: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetReportTypes: unsafe extern "system" fn(this: *mut *mut Self, reporttypes: *const super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetReportTypes: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MailTo: unsafe extern "system" fn(this: *mut *mut Self, mailto: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MailTo: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetMailTo: unsafe extern "system" fn(this: *mut *mut Self, mailto: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetMailTo: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFsrmAutoApplyQuota {
+    pub base__: IFsrmQuotaObject,
+    #[cfg(feature = "Win32_System_Com")]
+    pub ExcludeFolders: unsafe extern "system" fn(this: *mut *mut Self, folders: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    ExcludeFolders: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetExcludeFolders: unsafe extern "system" fn(this: *mut *mut Self, folders: *const super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetExcludeFolders: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CommitAndUpdateDerived: unsafe extern "system" fn(this: *mut *mut Self, commitoptions: FsrmCommitOptions, applyoptions: FsrmTemplateApplyOptions, derivedobjectsresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CommitAndUpdateDerived: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFsrmClassificationManager {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub ClassificationReportFormats: unsafe extern "system" fn(this: *mut *mut Self, formats: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    ClassificationReportFormats: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetClassificationReportFormats: unsafe extern "system" fn(this: *mut *mut Self, formats: *const super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetClassificationReportFormats: usize,
+    pub Logging: unsafe extern "system" fn(this: *mut *mut Self, logging: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetLogging: unsafe extern "system" fn(this: *mut *mut Self, logging: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ClassificationReportMailTo: unsafe extern "system" fn(this: *mut *mut Self, mailto: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ClassificationReportMailTo: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetClassificationReportMailTo: unsafe extern "system" fn(this: *mut *mut Self, mailto: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetClassificationReportMailTo: usize,
+    pub ClassificationReportEnabled: unsafe extern "system" fn(this: *mut *mut Self, reportenabled: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetClassificationReportEnabled: unsafe extern "system" fn(this: *mut *mut Self, reportenabled: i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ClassificationLastReportPathWithoutExtension: unsafe extern "system" fn(this: *mut *mut Self, lastreportpath: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ClassificationLastReportPathWithoutExtension: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ClassificationLastError: unsafe extern "system" fn(this: *mut *mut Self, lasterror: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ClassificationLastError: usize,
+    pub ClassificationRunningStatus: unsafe extern "system" fn(this: *mut *mut Self, runningstatus: *mut FsrmReportRunningStatus) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub EnumPropertyDefinitions: unsafe extern "system" fn(this: *mut *mut Self, options: FsrmEnumOptions, propertydefinitions: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    EnumPropertyDefinitions: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreatePropertyDefinition: unsafe extern "system" fn(this: *mut *mut Self, propertydefinition: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CreatePropertyDefinition: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub GetPropertyDefinition: unsafe extern "system" fn(this: *mut *mut Self, propertyname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, propertydefinition: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    GetPropertyDefinition: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub EnumRules: unsafe extern "system" fn(this: *mut *mut Self, ruletype: FsrmRuleType, options: FsrmEnumOptions, rules: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    EnumRules: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreateRule: unsafe extern "system" fn(this: *mut *mut Self, ruletype: FsrmRuleType, rule: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CreateRule: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub GetRule: unsafe extern "system" fn(this: *mut *mut Self, rulename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ruletype: FsrmRuleType, rule: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    GetRule: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub EnumModuleDefinitions: unsafe extern "system" fn(this: *mut *mut Self, moduletype: FsrmPipelineModuleType, options: FsrmEnumOptions, moduledefinitions: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    EnumModuleDefinitions: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreateModuleDefinition: unsafe extern "system" fn(this: *mut *mut Self, moduletype: FsrmPipelineModuleType, moduledefinition: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CreateModuleDefinition: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub GetModuleDefinition: unsafe extern "system" fn(this: *mut *mut Self, modulename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, moduletype: FsrmPipelineModuleType, moduledefinition: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    GetModuleDefinition: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RunClassification: unsafe extern "system" fn(this: *mut *mut Self, context: FsrmReportGenerationContext, reserved: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RunClassification: usize,
+    pub WaitForClassificationCompletion: unsafe extern "system" fn(this: *mut *mut Self, waitseconds: i32, completed: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub CancelClassification: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub EnumFileProperties: unsafe extern "system" fn(this: *mut *mut Self, filepath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, options: FsrmGetFilePropertyOptions, fileproperties: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    EnumFileProperties: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub GetFileProperty: unsafe extern "system" fn(this: *mut *mut Self, filepath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, propertyname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, options: FsrmGetFilePropertyOptions, property: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    GetFileProperty: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetFileProperty: unsafe extern "system" fn(this: *mut *mut Self, filepath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, propertyname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, propertyvalue: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetFileProperty: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ClearFileProperty: unsafe extern "system" fn(this: *mut *mut Self, filepath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, property: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ClearFileProperty: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFsrmClassificationManager2 {
+    pub base__: IFsrmClassificationManager,
+    #[cfg(feature = "Win32_System_Com")]
+    pub ClassifyFiles: unsafe extern "system" fn(this: *mut *mut Self, filepaths: *const super::super::System::Com::SAFEARRAY, propertynames: *const super::super::System::Com::SAFEARRAY, propertyvalues: *const super::super::System::Com::SAFEARRAY, options: FsrmGetFilePropertyOptions) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    ClassifyFiles: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFsrmClassificationRule {
+    pub base__: IFsrmRule,
+    pub ExecutionOption: unsafe extern "system" fn(this: *mut *mut Self, executionoption: *mut FsrmExecutionOption) -> ::windows_sys::core::HRESULT,
+    pub SetExecutionOption: unsafe extern "system" fn(this: *mut *mut Self, executionoption: FsrmExecutionOption) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub PropertyAffected: unsafe extern "system" fn(this: *mut *mut Self, property: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    PropertyAffected: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetPropertyAffected: unsafe extern "system" fn(this: *mut *mut Self, property: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetPropertyAffected: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Value: unsafe extern "system" fn(this: *mut *mut Self, value: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Value: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetValue: unsafe extern "system" fn(this: *mut *mut Self, value: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetValue: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFsrmClassifierModuleDefinition {
+    pub base__: IFsrmPipelineModuleDefinition,
+    #[cfg(feature = "Win32_System_Com")]
+    pub PropertiesAffected: unsafe extern "system" fn(this: *mut *mut Self, propertiesaffected: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    PropertiesAffected: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetPropertiesAffected: unsafe extern "system" fn(this: *mut *mut Self, propertiesaffected: *const super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetPropertiesAffected: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub PropertiesUsed: unsafe extern "system" fn(this: *mut *mut Self, propertiesused: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    PropertiesUsed: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetPropertiesUsed: unsafe extern "system" fn(this: *mut *mut Self, propertiesused: *const super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetPropertiesUsed: usize,
+    pub NeedsExplicitValue: unsafe extern "system" fn(this: *mut *mut Self, needsexplicitvalue: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetNeedsExplicitValue: unsafe extern "system" fn(this: *mut *mut Self, needsexplicitvalue: i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFsrmClassifierModuleImplementation {
+    pub base__: IFsrmPipelineModuleImplementation,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub LastModified: unsafe extern "system" fn(this: *mut *mut Self, lastmodified: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    LastModified: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub UseRulesAndDefinitions: unsafe extern "system" fn(this: *mut *mut Self, rules: *mut ::core::ffi::c_void, propertydefinitions: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    UseRulesAndDefinitions: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub OnBeginFile: unsafe extern "system" fn(this: *mut *mut Self, propertybag: *mut ::core::ffi::c_void, arrayruleids: *const super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    OnBeginFile: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DoesPropertyValueApply: unsafe extern "system" fn(this: *mut *mut Self, property: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, value: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, applyvalue: *mut i16, idrule: ::windows_sys::core::GUID, idpropdef: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DoesPropertyValueApply: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetPropertyValueToApply: unsafe extern "system" fn(this: *mut *mut Self, property: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, value: *mut super::super::Foundation::BSTR, idrule: ::windows_sys::core::GUID, idpropdef: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetPropertyValueToApply: usize,
+    pub OnEndFile: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFsrmCollection {
+    pub base__: super::super::System::Com::IDispatch,
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, unknown: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub get_Item: unsafe extern "system" fn(this: *mut *mut Self, index: i32, item: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    get_Item: usize,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, count: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub State: unsafe extern "system" fn(this: *mut *mut Self, state: *mut FsrmCollectionState) -> ::windows_sys::core::HRESULT,
+    pub Cancel: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub WaitForCompletion: unsafe extern "system" fn(this: *mut *mut Self, waitseconds: i32, completed: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetById: unsafe extern "system" fn(this: *mut *mut Self, id: ::windows_sys::core::GUID, entry: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetById: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFsrmCommittableCollection {
+    pub base__: IFsrmMutableCollection,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Commit: unsafe extern "system" fn(this: *mut *mut Self, options: FsrmCommitOptions, results: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Commit: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFsrmDerivedObjectsResult {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub DerivedObjects: unsafe extern "system" fn(this: *mut *mut Self, derivedobjects: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    DerivedObjects: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Results: unsafe extern "system" fn(this: *mut *mut Self, results: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Results: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFsrmExportImport {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub ExportFileGroups: unsafe extern "system" fn(this: *mut *mut Self, filepath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, filegroupnamessafearray: *const super::super::System::Com::VARIANT, remotehost: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    ExportFileGroups: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub ImportFileGroups: unsafe extern "system" fn(this: *mut *mut Self, filepath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, filegroupnamessafearray: *const super::super::System::Com::VARIANT, remotehost: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, filegroups: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    ImportFileGroups: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub ExportFileScreenTemplates: unsafe extern "system" fn(this: *mut *mut Self, filepath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, templatenamessafearray: *const super::super::System::Com::VARIANT, remotehost: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    ExportFileScreenTemplates: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub ImportFileScreenTemplates: unsafe extern "system" fn(this: *mut *mut Self, filepath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, templatenamessafearray: *const super::super::System::Com::VARIANT, remotehost: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, templates: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    ImportFileScreenTemplates: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub ExportQuotaTemplates: unsafe extern "system" fn(this: *mut *mut Self, filepath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, templatenamessafearray: *const super::super::System::Com::VARIANT, remotehost: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    ExportQuotaTemplates: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub ImportQuotaTemplates: unsafe extern "system" fn(this: *mut *mut Self, filepath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, templatenamessafearray: *const super::super::System::Com::VARIANT, remotehost: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, templates: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    ImportQuotaTemplates: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFsrmFileCondition {
+    pub base__: super::super::System::Com::IDispatch,
+    pub Type: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut FsrmFileConditionType) -> ::windows_sys::core::HRESULT,
+    pub Delete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFsrmFileConditionProperty {
+    pub base__: IFsrmFileCondition,
+    #[cfg(feature = "Win32_Foundation")]
+    pub PropertyName: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    PropertyName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetPropertyName: unsafe extern "system" fn(this: *mut *mut Self, newval: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetPropertyName: usize,
+    pub PropertyId: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut FsrmFileSystemPropertyId) -> ::windows_sys::core::HRESULT,
+    pub SetPropertyId: unsafe extern "system" fn(this: *mut *mut Self, newval: FsrmFileSystemPropertyId) -> ::windows_sys::core::HRESULT,
+    pub Operator: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut FsrmPropertyConditionType) -> ::windows_sys::core::HRESULT,
+    pub SetOperator: unsafe extern "system" fn(this: *mut *mut Self, newval: FsrmPropertyConditionType) -> ::windows_sys::core::HRESULT,
+    pub ValueType: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut FsrmPropertyValueType) -> ::windows_sys::core::HRESULT,
+    pub SetValueType: unsafe extern "system" fn(this: *mut *mut Self, newval: FsrmPropertyValueType) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Value: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Value: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetValue: unsafe extern "system" fn(this: *mut *mut Self, newval: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetValue: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFsrmFileGroup {
+    pub base__: IFsrmObject,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Name: unsafe extern "system" fn(this: *mut *mut Self, name: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Name: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetName: unsafe extern "system" fn(this: *mut *mut Self, name: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetName: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Members: unsafe extern "system" fn(this: *mut *mut Self, members: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Members: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetMembers: unsafe extern "system" fn(this: *mut *mut Self, members: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetMembers: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub NonMembers: unsafe extern "system" fn(this: *mut *mut Self, nonmembers: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    NonMembers: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetNonMembers: unsafe extern "system" fn(this: *mut *mut Self, nonmembers: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetNonMembers: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFsrmFileGroupImported {
+    pub base__: IFsrmFileGroup,
+    pub OverwriteOnCommit: unsafe extern "system" fn(this: *mut *mut Self, overwrite: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetOverwriteOnCommit: unsafe extern "system" fn(this: *mut *mut Self, overwrite: i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFsrmFileGroupManager {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreateFileGroup: unsafe extern "system" fn(this: *mut *mut Self, filegroup: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CreateFileGroup: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub GetFileGroup: unsafe extern "system" fn(this: *mut *mut Self, name: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, filegroup: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    GetFileGroup: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub EnumFileGroups: unsafe extern "system" fn(this: *mut *mut Self, options: FsrmEnumOptions, filegroups: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    EnumFileGroups: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub ExportFileGroups: unsafe extern "system" fn(this: *mut *mut Self, filegroupnamesarray: *const super::super::System::Com::VARIANT, serializedfilegroups: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    ExportFileGroups: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub ImportFileGroups: unsafe extern "system" fn(this: *mut *mut Self, serializedfilegroups: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, filegroupnamesarray: *const super::super::System::Com::VARIANT, filegroups: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    ImportFileGroups: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFsrmFileManagementJob {
+    pub base__: IFsrmObject,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Name: unsafe extern "system" fn(this: *mut *mut Self, name: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Name: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetName: unsafe extern "system" fn(this: *mut *mut Self, name: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetName: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub NamespaceRoots: unsafe extern "system" fn(this: *mut *mut Self, namespaceroots: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    NamespaceRoots: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetNamespaceRoots: unsafe extern "system" fn(this: *mut *mut Self, namespaceroots: *const super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetNamespaceRoots: usize,
+    pub Enabled: unsafe extern "system" fn(this: *mut *mut Self, enabled: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetEnabled: unsafe extern "system" fn(this: *mut *mut Self, enabled: i16) -> ::windows_sys::core::HRESULT,
+    pub OperationType: unsafe extern "system" fn(this: *mut *mut Self, operationtype: *mut FsrmFileManagementType) -> ::windows_sys::core::HRESULT,
+    pub SetOperationType: unsafe extern "system" fn(this: *mut *mut Self, operationtype: FsrmFileManagementType) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ExpirationDirectory: unsafe extern "system" fn(this: *mut *mut Self, expirationdirectory: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ExpirationDirectory: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetExpirationDirectory: unsafe extern "system" fn(this: *mut *mut Self, expirationdirectory: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetExpirationDirectory: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CustomAction: unsafe extern "system" fn(this: *mut *mut Self, action: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CustomAction: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Notifications: unsafe extern "system" fn(this: *mut *mut Self, notifications: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Notifications: usize,
+    pub Logging: unsafe extern "system" fn(this: *mut *mut Self, loggingflags: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetLogging: unsafe extern "system" fn(this: *mut *mut Self, loggingflags: i32) -> ::windows_sys::core::HRESULT,
+    pub ReportEnabled: unsafe extern "system" fn(this: *mut *mut Self, reportenabled: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetReportEnabled: unsafe extern "system" fn(this: *mut *mut Self, reportenabled: i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Formats: unsafe extern "system" fn(this: *mut *mut Self, formats: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Formats: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetFormats: unsafe extern "system" fn(this: *mut *mut Self, formats: *const super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetFormats: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MailTo: unsafe extern "system" fn(this: *mut *mut Self, mailto: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MailTo: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetMailTo: unsafe extern "system" fn(this: *mut *mut Self, mailto: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetMailTo: usize,
+    pub DaysSinceFileCreated: unsafe extern "system" fn(this: *mut *mut Self, dayssincecreation: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetDaysSinceFileCreated: unsafe extern "system" fn(this: *mut *mut Self, dayssincecreation: i32) -> ::windows_sys::core::HRESULT,
+    pub DaysSinceFileLastAccessed: unsafe extern "system" fn(this: *mut *mut Self, dayssinceaccess: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetDaysSinceFileLastAccessed: unsafe extern "system" fn(this: *mut *mut Self, dayssinceaccess: i32) -> ::windows_sys::core::HRESULT,
+    pub DaysSinceFileLastModified: unsafe extern "system" fn(this: *mut *mut Self, dayssincemodify: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetDaysSinceFileLastModified: unsafe extern "system" fn(this: *mut *mut Self, dayssincemodify: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub PropertyConditions: unsafe extern "system" fn(this: *mut *mut Self, propertyconditions: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    PropertyConditions: usize,
+    pub FromDate: unsafe extern "system" fn(this: *mut *mut Self, fromdate: *mut f64) -> ::windows_sys::core::HRESULT,
+    pub SetFromDate: unsafe extern "system" fn(this: *mut *mut Self, fromdate: f64) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Task: unsafe extern "system" fn(this: *mut *mut Self, taskname: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Task: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetTask: unsafe extern "system" fn(this: *mut *mut Self, taskname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetTask: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Parameters: unsafe extern "system" fn(this: *mut *mut Self, parameters: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Parameters: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetParameters: unsafe extern "system" fn(this: *mut *mut Self, parameters: *const super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetParameters: usize,
+    pub RunningStatus: unsafe extern "system" fn(this: *mut *mut Self, runningstatus: *mut FsrmReportRunningStatus) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub LastError: unsafe extern "system" fn(this: *mut *mut Self, lasterror: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    LastError: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub LastReportPathWithoutExtension: unsafe extern "system" fn(this: *mut *mut Self, path: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    LastReportPathWithoutExtension: usize,
+    pub LastRun: unsafe extern "system" fn(this: *mut *mut Self, lastrun: *mut f64) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub FileNamePattern: unsafe extern "system" fn(this: *mut *mut Self, filenamepattern: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    FileNamePattern: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetFileNamePattern: unsafe extern "system" fn(this: *mut *mut Self, filenamepattern: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetFileNamePattern: usize,
+    pub Run: unsafe extern "system" fn(this: *mut *mut Self, context: FsrmReportGenerationContext) -> ::windows_sys::core::HRESULT,
+    pub WaitForCompletion: unsafe extern "system" fn(this: *mut *mut Self, waitseconds: i32, completed: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub Cancel: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub AddNotification: unsafe extern "system" fn(this: *mut *mut Self, days: i32) -> ::windows_sys::core::HRESULT,
+    pub DeleteNotification: unsafe extern "system" fn(this: *mut *mut Self, days: i32) -> ::windows_sys::core::HRESULT,
+    pub ModifyNotification: unsafe extern "system" fn(this: *mut *mut Self, days: i32, newdays: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreateNotificationAction: unsafe extern "system" fn(this: *mut *mut Self, days: i32, actiontype: FsrmActionType, action: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CreateNotificationAction: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub EnumNotificationActions: unsafe extern "system" fn(this: *mut *mut Self, days: i32, actions: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    EnumNotificationActions: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub CreatePropertyCondition: unsafe extern "system" fn(this: *mut *mut Self, name: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, propertycondition: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    CreatePropertyCondition: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreateCustomAction: unsafe extern "system" fn(this: *mut *mut Self, customaction: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CreateCustomAction: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFsrmFileManagementJobManager {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub ActionVariables: unsafe extern "system" fn(this: *mut *mut Self, variables: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    ActionVariables: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub ActionVariableDescriptions: unsafe extern "system" fn(this: *mut *mut Self, descriptions: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    ActionVariableDescriptions: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub EnumFileManagementJobs: unsafe extern "system" fn(this: *mut *mut Self, options: FsrmEnumOptions, filemanagementjobs: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    EnumFileManagementJobs: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreateFileManagementJob: unsafe extern "system" fn(this: *mut *mut Self, filemanagementjob: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CreateFileManagementJob: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub GetFileManagementJob: unsafe extern "system" fn(this: *mut *mut Self, name: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, filemanagementjob: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    GetFileManagementJob: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFsrmFileScreen {
+    pub base__: IFsrmFileScreenBase,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Path: unsafe extern "system" fn(this: *mut *mut Self, path: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Path: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SourceTemplateName: unsafe extern "system" fn(this: *mut *mut Self, filescreentemplatename: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SourceTemplateName: usize,
+    pub MatchesSourceTemplate: unsafe extern "system" fn(this: *mut *mut Self, matches: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub UserSid: unsafe extern "system" fn(this: *mut *mut Self, usersid: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    UserSid: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub UserAccount: unsafe extern "system" fn(this: *mut *mut Self, useraccount: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    UserAccount: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ApplyTemplate: unsafe extern "system" fn(this: *mut *mut Self, filescreentemplatename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ApplyTemplate: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFsrmFileScreenBase {
+    pub base__: IFsrmObject,
+    #[cfg(feature = "Win32_System_Com")]
+    pub BlockedFileGroups: unsafe extern "system" fn(this: *mut *mut Self, blocklist: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    BlockedFileGroups: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetBlockedFileGroups: unsafe extern "system" fn(this: *mut *mut Self, blocklist: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetBlockedFileGroups: usize,
+    pub FileScreenFlags: unsafe extern "system" fn(this: *mut *mut Self, filescreenflags: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetFileScreenFlags: unsafe extern "system" fn(this: *mut *mut Self, filescreenflags: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreateAction: unsafe extern "system" fn(this: *mut *mut Self, actiontype: FsrmActionType, action: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CreateAction: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub EnumActions: unsafe extern "system" fn(this: *mut *mut Self, actions: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    EnumActions: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFsrmFileScreenException {
+    pub base__: IFsrmObject,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Path: unsafe extern "system" fn(this: *mut *mut Self, path: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Path: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub AllowedFileGroups: unsafe extern "system" fn(this: *mut *mut Self, allowlist: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    AllowedFileGroups: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetAllowedFileGroups: unsafe extern "system" fn(this: *mut *mut Self, allowlist: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetAllowedFileGroups: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFsrmFileScreenManager {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub ActionVariables: unsafe extern "system" fn(this: *mut *mut Self, variables: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    ActionVariables: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub ActionVariableDescriptions: unsafe extern "system" fn(this: *mut *mut Self, descriptions: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    ActionVariableDescriptions: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub CreateFileScreen: unsafe extern "system" fn(this: *mut *mut Self, path: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, filescreen: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    CreateFileScreen: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub GetFileScreen: unsafe extern "system" fn(this: *mut *mut Self, path: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, filescreen: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    GetFileScreen: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub EnumFileScreens: unsafe extern "system" fn(this: *mut *mut Self, path: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, options: FsrmEnumOptions, filescreens: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    EnumFileScreens: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub CreateFileScreenException: unsafe extern "system" fn(this: *mut *mut Self, path: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, filescreenexception: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    CreateFileScreenException: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub GetFileScreenException: unsafe extern "system" fn(this: *mut *mut Self, path: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, filescreenexception: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    GetFileScreenException: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub EnumFileScreenExceptions: unsafe extern "system" fn(this: *mut *mut Self, path: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, options: FsrmEnumOptions, filescreenexceptions: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    EnumFileScreenExceptions: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreateFileScreenCollection: unsafe extern "system" fn(this: *mut *mut Self, collection: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CreateFileScreenCollection: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFsrmFileScreenTemplate {
+    pub base__: IFsrmFileScreenBase,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Name: unsafe extern "system" fn(this: *mut *mut Self, name: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Name: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetName: unsafe extern "system" fn(this: *mut *mut Self, name: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CopyTemplate: unsafe extern "system" fn(this: *mut *mut Self, filescreentemplatename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CopyTemplate: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CommitAndUpdateDerived: unsafe extern "system" fn(this: *mut *mut Self, commitoptions: FsrmCommitOptions, applyoptions: FsrmTemplateApplyOptions, derivedobjectsresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CommitAndUpdateDerived: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFsrmFileScreenTemplateImported {
+    pub base__: IFsrmFileScreenTemplate,
+    pub OverwriteOnCommit: unsafe extern "system" fn(this: *mut *mut Self, overwrite: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetOverwriteOnCommit: unsafe extern "system" fn(this: *mut *mut Self, overwrite: i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFsrmFileScreenTemplateManager {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreateTemplate: unsafe extern "system" fn(this: *mut *mut Self, filescreentemplate: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CreateTemplate: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub GetTemplate: unsafe extern "system" fn(this: *mut *mut Self, name: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, filescreentemplate: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    GetTemplate: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub EnumTemplates: unsafe extern "system" fn(this: *mut *mut Self, options: FsrmEnumOptions, filescreentemplates: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    EnumTemplates: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub ExportTemplates: unsafe extern "system" fn(this: *mut *mut Self, filescreentemplatenamesarray: *const super::super::System::Com::VARIANT, serializedfilescreentemplates: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    ExportTemplates: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub ImportTemplates: unsafe extern "system" fn(this: *mut *mut Self, serializedfilescreentemplates: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, filescreentemplatenamesarray: *const super::super::System::Com::VARIANT, filescreentemplates: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    ImportTemplates: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFsrmMutableCollection {
+    pub base__: IFsrmCollection,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Add: unsafe extern "system" fn(this: *mut *mut Self, item: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Add: usize,
+    pub Remove: unsafe extern "system" fn(this: *mut *mut Self, index: i32) -> ::windows_sys::core::HRESULT,
+    pub RemoveById: unsafe extern "system" fn(this: *mut *mut Self, id: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, collection: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Clone: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFsrmObject {
+    pub base__: super::super::System::Com::IDispatch,
+    pub Id: unsafe extern "system" fn(this: *mut *mut Self, id: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Description: unsafe extern "system" fn(this: *mut *mut Self, description: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Description: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetDescription: unsafe extern "system" fn(this: *mut *mut Self, description: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetDescription: usize,
+    pub Delete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Commit: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFsrmPathMapper {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub GetSharePathsForLocalPath: unsafe extern "system" fn(this: *mut *mut Self, localpath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, sharepaths: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    GetSharePathsForLocalPath: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFsrmPipelineModuleConnector {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub ModuleImplementation: unsafe extern "system" fn(this: *mut *mut Self, pipelinemoduleimplementation: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    ModuleImplementation: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ModuleName: unsafe extern "system" fn(this: *mut *mut Self, username: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ModuleName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub HostingUserAccount: unsafe extern "system" fn(this: *mut *mut Self, useraccount: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    HostingUserAccount: usize,
+    pub HostingProcessPid: unsafe extern "system" fn(this: *mut *mut Self, pid: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Bind: unsafe extern "system" fn(this: *mut *mut Self, moduledefinition: *mut ::core::ffi::c_void, moduleimplementation: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Bind: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFsrmPipelineModuleDefinition {
+    pub base__: IFsrmObject,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ModuleClsid: unsafe extern "system" fn(this: *mut *mut Self, moduleclsid: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ModuleClsid: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetModuleClsid: unsafe extern "system" fn(this: *mut *mut Self, moduleclsid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetModuleClsid: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Name: unsafe extern "system" fn(this: *mut *mut Self, name: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Name: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetName: unsafe extern "system" fn(this: *mut *mut Self, name: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Company: unsafe extern "system" fn(this: *mut *mut Self, company: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Company: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetCompany: unsafe extern "system" fn(this: *mut *mut Self, company: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetCompany: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Version: unsafe extern "system" fn(this: *mut *mut Self, version: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Version: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetVersion: unsafe extern "system" fn(this: *mut *mut Self, version: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetVersion: usize,
+    pub ModuleType: unsafe extern "system" fn(this: *mut *mut Self, moduletype: *mut FsrmPipelineModuleType) -> ::windows_sys::core::HRESULT,
+    pub Enabled: unsafe extern "system" fn(this: *mut *mut Self, enabled: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetEnabled: unsafe extern "system" fn(this: *mut *mut Self, enabled: i16) -> ::windows_sys::core::HRESULT,
+    pub NeedsFileContent: unsafe extern "system" fn(this: *mut *mut Self, needsfilecontent: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetNeedsFileContent: unsafe extern "system" fn(this: *mut *mut Self, needsfilecontent: i16) -> ::windows_sys::core::HRESULT,
+    pub Account: unsafe extern "system" fn(this: *mut *mut Self, retrievalaccount: *mut FsrmAccountType) -> ::windows_sys::core::HRESULT,
+    pub SetAccount: unsafe extern "system" fn(this: *mut *mut Self, retrievalaccount: FsrmAccountType) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SupportedExtensions: unsafe extern "system" fn(this: *mut *mut Self, supportedextensions: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SupportedExtensions: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetSupportedExtensions: unsafe extern "system" fn(this: *mut *mut Self, supportedextensions: *const super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetSupportedExtensions: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Parameters: unsafe extern "system" fn(this: *mut *mut Self, parameters: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Parameters: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetParameters: unsafe extern "system" fn(this: *mut *mut Self, parameters: *const super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetParameters: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFsrmPipelineModuleImplementation {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub OnLoad: unsafe extern "system" fn(this: *mut *mut Self, moduledefinition: *mut ::core::ffi::c_void, moduleconnector: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    OnLoad: usize,
+    pub OnUnload: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFsrmProperty {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Name: unsafe extern "system" fn(this: *mut *mut Self, name: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Name: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Value: unsafe extern "system" fn(this: *mut *mut Self, value: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Value: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Sources: unsafe extern "system" fn(this: *mut *mut Self, sources: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Sources: usize,
+    pub PropertyFlags: unsafe extern "system" fn(this: *mut *mut Self, flags: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFsrmPropertyBag {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Name: unsafe extern "system" fn(this: *mut *mut Self, name: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Name: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RelativePath: unsafe extern "system" fn(this: *mut *mut Self, path: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RelativePath: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub VolumeName: unsafe extern "system" fn(this: *mut *mut Self, volumename: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    VolumeName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RelativeNamespaceRoot: unsafe extern "system" fn(this: *mut *mut Self, relativenamespaceroot: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RelativeNamespaceRoot: usize,
+    pub VolumeIndex: unsafe extern "system" fn(this: *mut *mut Self, volumeid: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub FileId: unsafe extern "system" fn(this: *mut *mut Self, fileid: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    FileId: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub ParentDirectoryId: unsafe extern "system" fn(this: *mut *mut Self, parentdirectoryid: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    ParentDirectoryId: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Size: unsafe extern "system" fn(this: *mut *mut Self, size: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Size: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SizeAllocated: unsafe extern "system" fn(this: *mut *mut Self, sizeallocated: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SizeAllocated: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub CreationTime: unsafe extern "system" fn(this: *mut *mut Self, creationtime: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    CreationTime: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub LastAccessTime: unsafe extern "system" fn(this: *mut *mut Self, lastaccesstime: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    LastAccessTime: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub LastModificationTime: unsafe extern "system" fn(this: *mut *mut Self, lastmodificationtime: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    LastModificationTime: usize,
+    pub Attributes: unsafe extern "system" fn(this: *mut *mut Self, attributes: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OwnerSid: unsafe extern "system" fn(this: *mut *mut Self, ownersid: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OwnerSid: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub FilePropertyNames: unsafe extern "system" fn(this: *mut *mut Self, filepropertynames: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    FilePropertyNames: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Messages: unsafe extern "system" fn(this: *mut *mut Self, messages: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Messages: usize,
+    pub PropertyBagFlags: unsafe extern "system" fn(this: *mut *mut Self, flags: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub GetFileProperty: unsafe extern "system" fn(this: *mut *mut Self, name: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, fileproperty: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    GetFileProperty: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetFileProperty: unsafe extern "system" fn(this: *mut *mut Self, name: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, value: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetFileProperty: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AddMessage: unsafe extern "system" fn(this: *mut *mut Self, message: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AddMessage: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetFileStreamInterface: unsafe extern "system" fn(this: *mut *mut Self, accessmode: FsrmFileStreamingMode, interfacetype: FsrmFileStreamingInterfaceType, pstreaminterface: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetFileStreamInterface: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFsrmPropertyBag2 {
+    pub base__: IFsrmPropertyBag,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetFieldValue: unsafe extern "system" fn(this: *mut *mut Self, field: FsrmPropertyBagField, value: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetFieldValue: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetUntrustedInFileProperties: unsafe extern "system" fn(this: *mut *mut Self, props: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetUntrustedInFileProperties: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFsrmPropertyCondition {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Name: unsafe extern "system" fn(this: *mut *mut Self, name: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Name: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetName: unsafe extern "system" fn(this: *mut *mut Self, name: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetName: usize,
+    pub Type: unsafe extern "system" fn(this: *mut *mut Self, r#type: *mut FsrmPropertyConditionType) -> ::windows_sys::core::HRESULT,
+    pub SetType: unsafe extern "system" fn(this: *mut *mut Self, r#type: FsrmPropertyConditionType) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Value: unsafe extern "system" fn(this: *mut *mut Self, value: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Value: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetValue: unsafe extern "system" fn(this: *mut *mut Self, value: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetValue: usize,
+    pub Delete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFsrmPropertyDefinition {
+    pub base__: IFsrmObject,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Name: unsafe extern "system" fn(this: *mut *mut Self, name: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Name: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetName: unsafe extern "system" fn(this: *mut *mut Self, name: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetName: usize,
+    pub Type: unsafe extern "system" fn(this: *mut *mut Self, r#type: *mut FsrmPropertyDefinitionType) -> ::windows_sys::core::HRESULT,
+    pub SetType: unsafe extern "system" fn(this: *mut *mut Self, r#type: FsrmPropertyDefinitionType) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub PossibleValues: unsafe extern "system" fn(this: *mut *mut Self, possiblevalues: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    PossibleValues: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetPossibleValues: unsafe extern "system" fn(this: *mut *mut Self, possiblevalues: *const super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetPossibleValues: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub ValueDescriptions: unsafe extern "system" fn(this: *mut *mut Self, valuedescriptions: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    ValueDescriptions: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetValueDescriptions: unsafe extern "system" fn(this: *mut *mut Self, valuedescriptions: *const super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetValueDescriptions: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Parameters: unsafe extern "system" fn(this: *mut *mut Self, parameters: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Parameters: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetParameters: unsafe extern "system" fn(this: *mut *mut Self, parameters: *const super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetParameters: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFsrmPropertyDefinition2 {
+    pub base__: IFsrmPropertyDefinition,
+    pub PropertyDefinitionFlags: unsafe extern "system" fn(this: *mut *mut Self, propertydefinitionflags: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DisplayName: unsafe extern "system" fn(this: *mut *mut Self, name: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DisplayName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetDisplayName: unsafe extern "system" fn(this: *mut *mut Self, name: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetDisplayName: usize,
+    pub AppliesTo: unsafe extern "system" fn(this: *mut *mut Self, appliesto: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub ValueDefinitions: unsafe extern "system" fn(this: *mut *mut Self, valuedefinitions: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    ValueDefinitions: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFsrmPropertyDefinitionValue {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Name: unsafe extern "system" fn(this: *mut *mut Self, name: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Name: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DisplayName: unsafe extern "system" fn(this: *mut *mut Self, displayname: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DisplayName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Description: unsafe extern "system" fn(this: *mut *mut Self, description: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Description: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub UniqueID: unsafe extern "system" fn(this: *mut *mut Self, uniqueid: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    UniqueID: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFsrmQuota {
+    pub base__: IFsrmQuotaObject,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub QuotaUsed: unsafe extern "system" fn(this: *mut *mut Self, used: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    QuotaUsed: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub QuotaPeakUsage: unsafe extern "system" fn(this: *mut *mut Self, peakusage: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    QuotaPeakUsage: usize,
+    pub QuotaPeakUsageTime: unsafe extern "system" fn(this: *mut *mut Self, peakusagedatetime: *mut f64) -> ::windows_sys::core::HRESULT,
+    pub ResetPeakUsage: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub RefreshUsageProperties: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFsrmQuotaBase {
+    pub base__: IFsrmObject,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub QuotaLimit: unsafe extern "system" fn(this: *mut *mut Self, quotalimit: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    QuotaLimit: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetQuotaLimit: unsafe extern "system" fn(this: *mut *mut Self, quotalimit: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetQuotaLimit: usize,
+    pub QuotaFlags: unsafe extern "system" fn(this: *mut *mut Self, quotaflags: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetQuotaFlags: unsafe extern "system" fn(this: *mut *mut Self, quotaflags: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Thresholds: unsafe extern "system" fn(this: *mut *mut Self, thresholds: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Thresholds: usize,
+    pub AddThreshold: unsafe extern "system" fn(this: *mut *mut Self, threshold: i32) -> ::windows_sys::core::HRESULT,
+    pub DeleteThreshold: unsafe extern "system" fn(this: *mut *mut Self, threshold: i32) -> ::windows_sys::core::HRESULT,
+    pub ModifyThreshold: unsafe extern "system" fn(this: *mut *mut Self, threshold: i32, newthreshold: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreateThresholdAction: unsafe extern "system" fn(this: *mut *mut Self, threshold: i32, actiontype: FsrmActionType, action: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CreateThresholdAction: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub EnumThresholdActions: unsafe extern "system" fn(this: *mut *mut Self, threshold: i32, actions: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    EnumThresholdActions: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFsrmQuotaManager {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub ActionVariables: unsafe extern "system" fn(this: *mut *mut Self, variables: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    ActionVariables: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub ActionVariableDescriptions: unsafe extern "system" fn(this: *mut *mut Self, descriptions: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    ActionVariableDescriptions: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub CreateQuota: unsafe extern "system" fn(this: *mut *mut Self, path: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, quota: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    CreateQuota: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub CreateAutoApplyQuota: unsafe extern "system" fn(this: *mut *mut Self, quotatemplatename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, path: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, quota: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    CreateAutoApplyQuota: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub GetQuota: unsafe extern "system" fn(this: *mut *mut Self, path: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, quota: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    GetQuota: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub GetAutoApplyQuota: unsafe extern "system" fn(this: *mut *mut Self, path: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, quota: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    GetAutoApplyQuota: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub GetRestrictiveQuota: unsafe extern "system" fn(this: *mut *mut Self, path: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, quota: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    GetRestrictiveQuota: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub EnumQuotas: unsafe extern "system" fn(this: *mut *mut Self, path: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, options: FsrmEnumOptions, quotas: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    EnumQuotas: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub EnumAutoApplyQuotas: unsafe extern "system" fn(this: *mut *mut Self, path: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, options: FsrmEnumOptions, quotas: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    EnumAutoApplyQuotas: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub EnumEffectiveQuotas: unsafe extern "system" fn(this: *mut *mut Self, path: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, options: FsrmEnumOptions, quotas: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    EnumEffectiveQuotas: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Scan: unsafe extern "system" fn(this: *mut *mut Self, strpath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Scan: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreateQuotaCollection: unsafe extern "system" fn(this: *mut *mut Self, collection: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CreateQuotaCollection: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFsrmQuotaManagerEx {
+    pub base__: IFsrmQuotaManager,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsAffectedByQuota: unsafe extern "system" fn(this: *mut *mut Self, path: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, options: FsrmEnumOptions, affected: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsAffectedByQuota: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFsrmQuotaObject {
+    pub base__: IFsrmQuotaBase,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Path: unsafe extern "system" fn(this: *mut *mut Self, path: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Path: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub UserSid: unsafe extern "system" fn(this: *mut *mut Self, usersid: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    UserSid: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub UserAccount: unsafe extern "system" fn(this: *mut *mut Self, useraccount: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    UserAccount: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SourceTemplateName: unsafe extern "system" fn(this: *mut *mut Self, quotatemplatename: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SourceTemplateName: usize,
+    pub MatchesSourceTemplate: unsafe extern "system" fn(this: *mut *mut Self, matches: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ApplyTemplate: unsafe extern "system" fn(this: *mut *mut Self, quotatemplatename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ApplyTemplate: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFsrmQuotaTemplate {
+    pub base__: IFsrmQuotaBase,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Name: unsafe extern "system" fn(this: *mut *mut Self, name: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Name: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetName: unsafe extern "system" fn(this: *mut *mut Self, name: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CopyTemplate: unsafe extern "system" fn(this: *mut *mut Self, quotatemplatename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CopyTemplate: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CommitAndUpdateDerived: unsafe extern "system" fn(this: *mut *mut Self, commitoptions: FsrmCommitOptions, applyoptions: FsrmTemplateApplyOptions, derivedobjectsresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CommitAndUpdateDerived: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFsrmQuotaTemplateImported {
+    pub base__: IFsrmQuotaTemplate,
+    pub OverwriteOnCommit: unsafe extern "system" fn(this: *mut *mut Self, overwrite: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetOverwriteOnCommit: unsafe extern "system" fn(this: *mut *mut Self, overwrite: i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFsrmQuotaTemplateManager {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreateTemplate: unsafe extern "system" fn(this: *mut *mut Self, quotatemplate: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CreateTemplate: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub GetTemplate: unsafe extern "system" fn(this: *mut *mut Self, name: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, quotatemplate: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    GetTemplate: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub EnumTemplates: unsafe extern "system" fn(this: *mut *mut Self, options: FsrmEnumOptions, quotatemplates: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    EnumTemplates: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub ExportTemplates: unsafe extern "system" fn(this: *mut *mut Self, quotatemplatenamesarray: *const super::super::System::Com::VARIANT, serializedquotatemplates: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    ExportTemplates: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub ImportTemplates: unsafe extern "system" fn(this: *mut *mut Self, serializedquotatemplates: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, quotatemplatenamesarray: *const super::super::System::Com::VARIANT, quotatemplates: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    ImportTemplates: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFsrmReport {
+    pub base__: super::super::System::Com::IDispatch,
+    pub Type: unsafe extern "system" fn(this: *mut *mut Self, reporttype: *mut FsrmReportType) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Name: unsafe extern "system" fn(this: *mut *mut Self, name: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Name: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetName: unsafe extern "system" fn(this: *mut *mut Self, name: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Description: unsafe extern "system" fn(this: *mut *mut Self, description: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Description: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetDescription: unsafe extern "system" fn(this: *mut *mut Self, description: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetDescription: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub LastGeneratedFileNamePrefix: unsafe extern "system" fn(this: *mut *mut Self, prefix: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    LastGeneratedFileNamePrefix: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetFilter: unsafe extern "system" fn(this: *mut *mut Self, filter: FsrmReportFilter, filtervalue: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetFilter: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetFilter: unsafe extern "system" fn(this: *mut *mut Self, filter: FsrmReportFilter, filtervalue: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetFilter: usize,
+    pub Delete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFsrmReportJob {
+    pub base__: IFsrmObject,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Task: unsafe extern "system" fn(this: *mut *mut Self, taskname: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Task: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetTask: unsafe extern "system" fn(this: *mut *mut Self, taskname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetTask: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub NamespaceRoots: unsafe extern "system" fn(this: *mut *mut Self, namespaceroots: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    NamespaceRoots: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetNamespaceRoots: unsafe extern "system" fn(this: *mut *mut Self, namespaceroots: *const super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetNamespaceRoots: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Formats: unsafe extern "system" fn(this: *mut *mut Self, formats: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Formats: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetFormats: unsafe extern "system" fn(this: *mut *mut Self, formats: *const super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetFormats: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MailTo: unsafe extern "system" fn(this: *mut *mut Self, mailto: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MailTo: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetMailTo: unsafe extern "system" fn(this: *mut *mut Self, mailto: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetMailTo: usize,
+    pub RunningStatus: unsafe extern "system" fn(this: *mut *mut Self, runningstatus: *mut FsrmReportRunningStatus) -> ::windows_sys::core::HRESULT,
+    pub LastRun: unsafe extern "system" fn(this: *mut *mut Self, lastrun: *mut f64) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub LastError: unsafe extern "system" fn(this: *mut *mut Self, lasterror: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    LastError: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub LastGeneratedInDirectory: unsafe extern "system" fn(this: *mut *mut Self, path: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    LastGeneratedInDirectory: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub EnumReports: unsafe extern "system" fn(this: *mut *mut Self, reports: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    EnumReports: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreateReport: unsafe extern "system" fn(this: *mut *mut Self, reporttype: FsrmReportType, report: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CreateReport: usize,
+    pub Run: unsafe extern "system" fn(this: *mut *mut Self, context: FsrmReportGenerationContext) -> ::windows_sys::core::HRESULT,
+    pub WaitForCompletion: unsafe extern "system" fn(this: *mut *mut Self, waitseconds: i32, completed: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub Cancel: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFsrmReportManager {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub EnumReportJobs: unsafe extern "system" fn(this: *mut *mut Self, options: FsrmEnumOptions, reportjobs: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    EnumReportJobs: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreateReportJob: unsafe extern "system" fn(this: *mut *mut Self, reportjob: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CreateReportJob: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub GetReportJob: unsafe extern "system" fn(this: *mut *mut Self, taskname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, reportjob: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    GetReportJob: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetOutputDirectory: unsafe extern "system" fn(this: *mut *mut Self, context: FsrmReportGenerationContext, path: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetOutputDirectory: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetOutputDirectory: unsafe extern "system" fn(this: *mut *mut Self, context: FsrmReportGenerationContext, path: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetOutputDirectory: usize,
+    pub IsFilterValidForReportType: unsafe extern "system" fn(this: *mut *mut Self, reporttype: FsrmReportType, filter: FsrmReportFilter, valid: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetDefaultFilter: unsafe extern "system" fn(this: *mut *mut Self, reporttype: FsrmReportType, filter: FsrmReportFilter, filtervalue: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetDefaultFilter: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetDefaultFilter: unsafe extern "system" fn(this: *mut *mut Self, reporttype: FsrmReportType, filter: FsrmReportFilter, filtervalue: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetDefaultFilter: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetReportSizeLimit: unsafe extern "system" fn(this: *mut *mut Self, limit: FsrmReportLimit, limitvalue: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetReportSizeLimit: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetReportSizeLimit: unsafe extern "system" fn(this: *mut *mut Self, limit: FsrmReportLimit, limitvalue: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetReportSizeLimit: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFsrmReportScheduler {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub VerifyNamespaces: unsafe extern "system" fn(this: *mut *mut Self, namespacessafearray: *const super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    VerifyNamespaces: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub CreateScheduleTask: unsafe extern "system" fn(this: *mut *mut Self, taskname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, namespacessafearray: *const super::super::System::Com::VARIANT, serializedtask: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    CreateScheduleTask: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub ModifyScheduleTask: unsafe extern "system" fn(this: *mut *mut Self, taskname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, namespacessafearray: *const super::super::System::Com::VARIANT, serializedtask: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    ModifyScheduleTask: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DeleteScheduleTask: unsafe extern "system" fn(this: *mut *mut Self, taskname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DeleteScheduleTask: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFsrmRule {
+    pub base__: IFsrmObject,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Name: unsafe extern "system" fn(this: *mut *mut Self, name: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Name: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetName: unsafe extern "system" fn(this: *mut *mut Self, name: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetName: usize,
+    pub RuleType: unsafe extern "system" fn(this: *mut *mut Self, ruletype: *mut FsrmRuleType) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ModuleDefinitionName: unsafe extern "system" fn(this: *mut *mut Self, moduledefinitionname: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ModuleDefinitionName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetModuleDefinitionName: unsafe extern "system" fn(this: *mut *mut Self, moduledefinitionname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetModuleDefinitionName: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub NamespaceRoots: unsafe extern "system" fn(this: *mut *mut Self, namespaceroots: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    NamespaceRoots: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetNamespaceRoots: unsafe extern "system" fn(this: *mut *mut Self, namespaceroots: *const super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetNamespaceRoots: usize,
+    pub RuleFlags: unsafe extern "system" fn(this: *mut *mut Self, ruleflags: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetRuleFlags: unsafe extern "system" fn(this: *mut *mut Self, ruleflags: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Parameters: unsafe extern "system" fn(this: *mut *mut Self, parameters: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Parameters: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetParameters: unsafe extern "system" fn(this: *mut *mut Self, parameters: *const super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetParameters: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub LastModified: unsafe extern "system" fn(this: *mut *mut Self, lastmodified: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    LastModified: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFsrmSetting {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SmtpServer: unsafe extern "system" fn(this: *mut *mut Self, smtpserver: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SmtpServer: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetSmtpServer: unsafe extern "system" fn(this: *mut *mut Self, smtpserver: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetSmtpServer: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MailFrom: unsafe extern "system" fn(this: *mut *mut Self, mailfrom: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MailFrom: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetMailFrom: unsafe extern "system" fn(this: *mut *mut Self, mailfrom: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetMailFrom: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AdminEmail: unsafe extern "system" fn(this: *mut *mut Self, adminemail: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AdminEmail: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetAdminEmail: unsafe extern "system" fn(this: *mut *mut Self, adminemail: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetAdminEmail: usize,
+    pub DisableCommandLine: unsafe extern "system" fn(this: *mut *mut Self, disablecommandline: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetDisableCommandLine: unsafe extern "system" fn(this: *mut *mut Self, disablecommandline: i16) -> ::windows_sys::core::HRESULT,
+    pub EnableScreeningAudit: unsafe extern "system" fn(this: *mut *mut Self, enablescreeningaudit: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetEnableScreeningAudit: unsafe extern "system" fn(this: *mut *mut Self, enablescreeningaudit: i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub EmailTest: unsafe extern "system" fn(this: *mut *mut Self, mailto: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    EmailTest: usize,
+    pub SetActionRunLimitInterval: unsafe extern "system" fn(this: *mut *mut Self, actiontype: FsrmActionType, delaytimeminutes: i32) -> ::windows_sys::core::HRESULT,
+    pub GetActionRunLimitInterval: unsafe extern "system" fn(this: *mut *mut Self, actiontype: FsrmActionType, delaytimeminutes: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFsrmStorageModuleDefinition {
+    pub base__: IFsrmPipelineModuleDefinition,
+    pub Capabilities: unsafe extern "system" fn(this: *mut *mut Self, capabilities: *mut FsrmStorageModuleCaps) -> ::windows_sys::core::HRESULT,
+    pub SetCapabilities: unsafe extern "system" fn(this: *mut *mut Self, capabilities: FsrmStorageModuleCaps) -> ::windows_sys::core::HRESULT,
+    pub StorageType: unsafe extern "system" fn(this: *mut *mut Self, storagetype: *mut FsrmStorageModuleType) -> ::windows_sys::core::HRESULT,
+    pub SetStorageType: unsafe extern "system" fn(this: *mut *mut Self, storagetype: FsrmStorageModuleType) -> ::windows_sys::core::HRESULT,
+    pub UpdatesFileContent: unsafe extern "system" fn(this: *mut *mut Self, updatesfilecontent: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetUpdatesFileContent: unsafe extern "system" fn(this: *mut *mut Self, updatesfilecontent: i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IFsrmStorageModuleImplementation {
+    pub base__: IFsrmPipelineModuleImplementation,
+    #[cfg(feature = "Win32_System_Com")]
+    pub UseDefinitions: unsafe extern "system" fn(this: *mut *mut Self, propertydefinitions: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    UseDefinitions: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub LoadProperties: unsafe extern "system" fn(this: *mut *mut Self, propertybag: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    LoadProperties: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SaveProperties: unsafe extern "system" fn(this: *mut *mut Self, propertybag: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SaveProperties: usize,
+}
 #[doc = "*Required features: `\"Win32_Storage_FileServerResourceManager\"`*"]
 pub const MessageSizeLimit: u32 = 4096u32;

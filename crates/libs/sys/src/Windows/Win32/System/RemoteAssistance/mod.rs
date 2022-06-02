@@ -6,9 +6,34 @@ pub const DISPID_EVENT_ON_SEND_ERROR: u32 = 8u32;
 pub const DISPID_EVENT_ON_STATE_CHANGED: u32 = 5u32;
 #[doc = "*Required features: `\"Win32_System_RemoteAssistance\"`*"]
 pub const DISPID_EVENT_ON_TERMINATION: u32 = 6u32;
-pub type DRendezvousSessionEvents = *mut ::core::ffi::c_void;
-pub type IRendezvousApplication = *mut ::core::ffi::c_void;
-pub type IRendezvousSession = *mut ::core::ffi::c_void;
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct DRendezvousSessionEvents {
+    pub base__: super::Com::IDispatch,
+}
+#[repr(C)]
+pub struct IRendezvousApplication {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetRendezvousSession: unsafe extern "system" fn(this: *mut *mut Self, prendezvoussession: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRendezvousSession {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub State: unsafe extern "system" fn(this: *mut *mut Self, psessionstate: *mut RENDEZVOUS_SESSION_STATE) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RemoteUser: unsafe extern "system" fn(this: *mut *mut Self, bstrusername: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RemoteUser: usize,
+    pub Flags: unsafe extern "system" fn(this: *mut *mut Self, pflags: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SendContextData: unsafe extern "system" fn(this: *mut *mut Self, bstrdata: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SendContextData: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Terminate: unsafe extern "system" fn(this: *mut *mut Self, hr: ::windows_sys::core::HRESULT, bstrappdata: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Terminate: usize,
+}
 #[doc = "*Required features: `\"Win32_System_RemoteAssistance\"`*"]
 pub type RENDEZVOUS_SESSION_FLAGS = i32;
 #[doc = "*Required features: `\"Win32_System_RemoteAssistance\"`*"]

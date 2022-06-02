@@ -12,41 +12,439 @@ extern "system" {
     #[doc = "*Required features: `\"Win32_Storage_OfflineFiles\"`*"]
     pub fn OfflineFilesStart() -> u32;
 }
-pub type IEnumOfflineFilesItems = *mut ::core::ffi::c_void;
-pub type IEnumOfflineFilesSettings = *mut ::core::ffi::c_void;
-pub type IOfflineFilesCache = *mut ::core::ffi::c_void;
-pub type IOfflineFilesCache2 = *mut ::core::ffi::c_void;
-pub type IOfflineFilesChangeInfo = *mut ::core::ffi::c_void;
-pub type IOfflineFilesConnectionInfo = *mut ::core::ffi::c_void;
-pub type IOfflineFilesDirectoryItem = *mut ::core::ffi::c_void;
-pub type IOfflineFilesDirtyInfo = *mut ::core::ffi::c_void;
-pub type IOfflineFilesErrorInfo = *mut ::core::ffi::c_void;
-pub type IOfflineFilesEvents = *mut ::core::ffi::c_void;
-pub type IOfflineFilesEvents2 = *mut ::core::ffi::c_void;
-pub type IOfflineFilesEvents3 = *mut ::core::ffi::c_void;
-pub type IOfflineFilesEvents4 = *mut ::core::ffi::c_void;
-pub type IOfflineFilesEventsFilter = *mut ::core::ffi::c_void;
-pub type IOfflineFilesFileItem = *mut ::core::ffi::c_void;
-pub type IOfflineFilesFileSysInfo = *mut ::core::ffi::c_void;
-pub type IOfflineFilesGhostInfo = *mut ::core::ffi::c_void;
-pub type IOfflineFilesItem = *mut ::core::ffi::c_void;
-pub type IOfflineFilesItemContainer = *mut ::core::ffi::c_void;
-pub type IOfflineFilesItemFilter = *mut ::core::ffi::c_void;
-pub type IOfflineFilesPinInfo = *mut ::core::ffi::c_void;
-pub type IOfflineFilesPinInfo2 = *mut ::core::ffi::c_void;
-pub type IOfflineFilesProgress = *mut ::core::ffi::c_void;
-pub type IOfflineFilesServerItem = *mut ::core::ffi::c_void;
-pub type IOfflineFilesSetting = *mut ::core::ffi::c_void;
-pub type IOfflineFilesShareInfo = *mut ::core::ffi::c_void;
-pub type IOfflineFilesShareItem = *mut ::core::ffi::c_void;
-pub type IOfflineFilesSimpleProgress = *mut ::core::ffi::c_void;
-pub type IOfflineFilesSuspend = *mut ::core::ffi::c_void;
-pub type IOfflineFilesSuspendInfo = *mut ::core::ffi::c_void;
-pub type IOfflineFilesSyncConflictHandler = *mut ::core::ffi::c_void;
-pub type IOfflineFilesSyncErrorInfo = *mut ::core::ffi::c_void;
-pub type IOfflineFilesSyncErrorItemInfo = *mut ::core::ffi::c_void;
-pub type IOfflineFilesSyncProgress = *mut ::core::ffi::c_void;
-pub type IOfflineFilesTransparentCacheInfo = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IEnumOfflineFilesItems {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, celt: u32, rgelt: *mut *mut ::core::ffi::c_void, pceltfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Skip: unsafe extern "system" fn(this: *mut *mut Self, celt: u32) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IEnumOfflineFilesSettings {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, celt: u32, rgelt: *mut *mut ::core::ffi::c_void, pceltfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Skip: unsafe extern "system" fn(this: *mut *mut Self, celt: u32) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IOfflineFilesCache {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Synchronize: unsafe extern "system" fn(this: *mut *mut Self, hwndparent: super::super::Foundation::HWND, rgpszpaths: *const ::windows_sys::core::PWSTR, cpaths: u32, basync: super::super::Foundation::BOOL, dwsynccontrol: u32, pisyncconflicthandler: *mut ::core::ffi::c_void, piprogress: *mut ::core::ffi::c_void, psyncid: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Synchronize: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DeleteItems: unsafe extern "system" fn(this: *mut *mut Self, rgpszpaths: *const ::windows_sys::core::PWSTR, cpaths: u32, dwflags: u32, basync: super::super::Foundation::BOOL, piprogress: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DeleteItems: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DeleteItemsForUser: unsafe extern "system" fn(this: *mut *mut Self, pszuser: ::windows_sys::core::PCWSTR, rgpszpaths: *const ::windows_sys::core::PWSTR, cpaths: u32, dwflags: u32, basync: super::super::Foundation::BOOL, piprogress: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DeleteItemsForUser: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Pin: unsafe extern "system" fn(this: *mut *mut Self, hwndparent: super::super::Foundation::HWND, rgpszpaths: *const ::windows_sys::core::PWSTR, cpaths: u32, bdeep: super::super::Foundation::BOOL, basync: super::super::Foundation::BOOL, dwpincontrolflags: u32, piprogress: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Pin: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Unpin: unsafe extern "system" fn(this: *mut *mut Self, hwndparent: super::super::Foundation::HWND, rgpszpaths: *const ::windows_sys::core::PWSTR, cpaths: u32, bdeep: super::super::Foundation::BOOL, basync: super::super::Foundation::BOOL, dwpincontrolflags: u32, piprogress: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Unpin: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetEncryptionStatus: unsafe extern "system" fn(this: *mut *mut Self, pbencrypted: *mut super::super::Foundation::BOOL, pbpartial: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetEncryptionStatus: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Encrypt: unsafe extern "system" fn(this: *mut *mut Self, hwndparent: super::super::Foundation::HWND, bencrypt: super::super::Foundation::BOOL, dwencryptioncontrolflags: u32, basync: super::super::Foundation::BOOL, piprogress: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Encrypt: usize,
+    pub FindItem: unsafe extern "system" fn(this: *mut *mut Self, pszpath: ::windows_sys::core::PCWSTR, dwqueryflags: u32, ppitem: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub FindItemEx: unsafe extern "system" fn(this: *mut *mut Self, pszpath: ::windows_sys::core::PCWSTR, pincludefilefilter: *mut ::core::ffi::c_void, pincludedirfilter: *mut ::core::ffi::c_void, pexcludefilefilter: *mut ::core::ffi::c_void, pexcludedirfilter: *mut ::core::ffi::c_void, dwqueryflags: u32, ppitem: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RenameItem: unsafe extern "system" fn(this: *mut *mut Self, pszpathoriginal: ::windows_sys::core::PCWSTR, pszpathnew: ::windows_sys::core::PCWSTR, breplaceifexists: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RenameItem: usize,
+    pub GetLocation: unsafe extern "system" fn(this: *mut *mut Self, ppszpath: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetDiskSpaceInformation: unsafe extern "system" fn(this: *mut *mut Self, pcbvolumetotal: *mut u64, pcblimit: *mut u64, pcbused: *mut u64, pcbunpinnedlimit: *mut u64, pcbunpinnedused: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub SetDiskSpaceLimits: unsafe extern "system" fn(this: *mut *mut Self, cblimit: u64, cbunpinnedlimit: u64) -> ::windows_sys::core::HRESULT,
+    pub ProcessAdminPinPolicy: unsafe extern "system" fn(this: *mut *mut Self, ppinprogress: *mut ::core::ffi::c_void, punpinprogress: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetSettingObject: unsafe extern "system" fn(this: *mut *mut Self, pszsettingname: ::windows_sys::core::PCWSTR, ppsetting: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EnumSettingObjects: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsPathCacheable: unsafe extern "system" fn(this: *mut *mut Self, pszpath: ::windows_sys::core::PCWSTR, pbcacheable: *mut super::super::Foundation::BOOL, psharecachingmode: *mut OFFLINEFILES_CACHING_MODE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsPathCacheable: usize,
+}
+#[repr(C)]
+pub struct IOfflineFilesCache2 {
+    pub base__: IOfflineFilesCache,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RenameItemEx: unsafe extern "system" fn(this: *mut *mut Self, pszpathoriginal: ::windows_sys::core::PCWSTR, pszpathnew: ::windows_sys::core::PCWSTR, breplaceifexists: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RenameItemEx: usize,
+}
+#[repr(C)]
+pub struct IOfflineFilesChangeInfo {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsDirty: unsafe extern "system" fn(this: *mut *mut Self, pbdirty: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsDirty: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsDeletedOffline: unsafe extern "system" fn(this: *mut *mut Self, pbdeletedoffline: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsDeletedOffline: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsCreatedOffline: unsafe extern "system" fn(this: *mut *mut Self, pbcreatedoffline: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsCreatedOffline: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsLocallyModifiedData: unsafe extern "system" fn(this: *mut *mut Self, pblocallymodifieddata: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsLocallyModifiedData: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsLocallyModifiedAttributes: unsafe extern "system" fn(this: *mut *mut Self, pblocallymodifiedattributes: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsLocallyModifiedAttributes: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsLocallyModifiedTime: unsafe extern "system" fn(this: *mut *mut Self, pblocallymodifiedtime: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsLocallyModifiedTime: usize,
+}
+#[repr(C)]
+pub struct IOfflineFilesConnectionInfo {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetConnectState: unsafe extern "system" fn(this: *mut *mut Self, pconnectstate: *mut OFFLINEFILES_CONNECT_STATE, pofflinereason: *mut OFFLINEFILES_OFFLINE_REASON) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetConnectState: unsafe extern "system" fn(this: *mut *mut Self, hwndparent: super::super::Foundation::HWND, dwflags: u32, connectstate: OFFLINEFILES_CONNECT_STATE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetConnectState: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub TransitionOnline: unsafe extern "system" fn(this: *mut *mut Self, hwndparent: super::super::Foundation::HWND, dwflags: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    TransitionOnline: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub TransitionOffline: unsafe extern "system" fn(this: *mut *mut Self, hwndparent: super::super::Foundation::HWND, dwflags: u32, bforceopenfilesclosed: super::super::Foundation::BOOL, pbopenfilespreventedtransition: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    TransitionOffline: usize,
+}
+#[repr(C)]
+pub struct IOfflineFilesDirectoryItem {
+    pub base__: IOfflineFilesItem,
+}
+#[repr(C)]
+pub struct IOfflineFilesDirtyInfo {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub LocalDirtyByteCount: unsafe extern "system" fn(this: *mut *mut Self, pdirtybytecount: *mut i64) -> ::windows_sys::core::HRESULT,
+    pub RemoteDirtyByteCount: unsafe extern "system" fn(this: *mut *mut Self, pdirtybytecount: *mut i64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IOfflineFilesErrorInfo {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetRawData: unsafe extern "system" fn(this: *mut *mut Self, ppblob: *mut *mut super::super::System::Com::BYTE_BLOB) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetRawData: usize,
+    pub GetDescription: unsafe extern "system" fn(this: *mut *mut Self, ppszdescription: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IOfflineFilesEvents {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub CacheMoved: unsafe extern "system" fn(this: *mut *mut Self, pszoldpath: ::windows_sys::core::PCWSTR, psznewpath: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub CacheIsFull: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub CacheIsCorrupted: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Enabled: unsafe extern "system" fn(this: *mut *mut Self, benabled: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Enabled: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub EncryptionChanged: unsafe extern "system" fn(this: *mut *mut Self, bwasencrypted: super::super::Foundation::BOOL, bwaspartial: super::super::Foundation::BOOL, bisencrypted: super::super::Foundation::BOOL, bispartial: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    EncryptionChanged: usize,
+    pub SyncBegin: unsafe extern "system" fn(this: *mut *mut Self, rsyncid: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub SyncFileResult: unsafe extern "system" fn(this: *mut *mut Self, rsyncid: *const ::windows_sys::core::GUID, pszfile: ::windows_sys::core::PCWSTR, hrresult: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SyncConflictRecAdded: unsafe extern "system" fn(this: *mut *mut Self, pszconflictpath: ::windows_sys::core::PCWSTR, pftconflictdatetime: *const super::super::Foundation::FILETIME, conflictsyncstate: OFFLINEFILES_SYNC_STATE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SyncConflictRecAdded: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SyncConflictRecUpdated: unsafe extern "system" fn(this: *mut *mut Self, pszconflictpath: ::windows_sys::core::PCWSTR, pftconflictdatetime: *const super::super::Foundation::FILETIME, conflictsyncstate: OFFLINEFILES_SYNC_STATE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SyncConflictRecUpdated: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SyncConflictRecRemoved: unsafe extern "system" fn(this: *mut *mut Self, pszconflictpath: ::windows_sys::core::PCWSTR, pftconflictdatetime: *const super::super::Foundation::FILETIME, conflictsyncstate: OFFLINEFILES_SYNC_STATE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SyncConflictRecRemoved: usize,
+    pub SyncEnd: unsafe extern "system" fn(this: *mut *mut Self, rsyncid: *const ::windows_sys::core::GUID, hrresult: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+    pub NetTransportArrived: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub NoNetTransports: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub ItemDisconnected: unsafe extern "system" fn(this: *mut *mut Self, pszpath: ::windows_sys::core::PCWSTR, itemtype: OFFLINEFILES_ITEM_TYPE) -> ::windows_sys::core::HRESULT,
+    pub ItemReconnected: unsafe extern "system" fn(this: *mut *mut Self, pszpath: ::windows_sys::core::PCWSTR, itemtype: OFFLINEFILES_ITEM_TYPE) -> ::windows_sys::core::HRESULT,
+    pub ItemAvailableOffline: unsafe extern "system" fn(this: *mut *mut Self, pszpath: ::windows_sys::core::PCWSTR, itemtype: OFFLINEFILES_ITEM_TYPE) -> ::windows_sys::core::HRESULT,
+    pub ItemNotAvailableOffline: unsafe extern "system" fn(this: *mut *mut Self, pszpath: ::windows_sys::core::PCWSTR, itemtype: OFFLINEFILES_ITEM_TYPE) -> ::windows_sys::core::HRESULT,
+    pub ItemPinned: unsafe extern "system" fn(this: *mut *mut Self, pszpath: ::windows_sys::core::PCWSTR, itemtype: OFFLINEFILES_ITEM_TYPE) -> ::windows_sys::core::HRESULT,
+    pub ItemNotPinned: unsafe extern "system" fn(this: *mut *mut Self, pszpath: ::windows_sys::core::PCWSTR, itemtype: OFFLINEFILES_ITEM_TYPE) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ItemModified: unsafe extern "system" fn(this: *mut *mut Self, pszpath: ::windows_sys::core::PCWSTR, itemtype: OFFLINEFILES_ITEM_TYPE, bmodifieddata: super::super::Foundation::BOOL, bmodifiedattributes: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ItemModified: usize,
+    pub ItemAddedToCache: unsafe extern "system" fn(this: *mut *mut Self, pszpath: ::windows_sys::core::PCWSTR, itemtype: OFFLINEFILES_ITEM_TYPE) -> ::windows_sys::core::HRESULT,
+    pub ItemDeletedFromCache: unsafe extern "system" fn(this: *mut *mut Self, pszpath: ::windows_sys::core::PCWSTR, itemtype: OFFLINEFILES_ITEM_TYPE) -> ::windows_sys::core::HRESULT,
+    pub ItemRenamed: unsafe extern "system" fn(this: *mut *mut Self, pszoldpath: ::windows_sys::core::PCWSTR, psznewpath: ::windows_sys::core::PCWSTR, itemtype: OFFLINEFILES_ITEM_TYPE) -> ::windows_sys::core::HRESULT,
+    pub DataLost: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Ping: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IOfflineFilesEvents2 {
+    pub base__: IOfflineFilesEvents,
+    pub ItemReconnectBegin: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub ItemReconnectEnd: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub CacheEvictBegin: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub CacheEvictEnd: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub BackgroundSyncBegin: unsafe extern "system" fn(this: *mut *mut Self, dwsynccontrolflags: u32) -> ::windows_sys::core::HRESULT,
+    pub BackgroundSyncEnd: unsafe extern "system" fn(this: *mut *mut Self, dwsynccontrolflags: u32) -> ::windows_sys::core::HRESULT,
+    pub PolicyChangeDetected: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub PreferenceChangeDetected: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub SettingsChangesApplied: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IOfflineFilesEvents3 {
+    pub base__: IOfflineFilesEvents2,
+    #[cfg(feature = "Win32_Foundation")]
+    pub TransparentCacheItemNotify: unsafe extern "system" fn(this: *mut *mut Self, pszpath: ::windows_sys::core::PCWSTR, eventtype: OFFLINEFILES_EVENTS, itemtype: OFFLINEFILES_ITEM_TYPE, bmodifieddata: super::super::Foundation::BOOL, bmodifiedattributes: super::super::Foundation::BOOL, pzsoldpath: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    TransparentCacheItemNotify: usize,
+    pub PrefetchFileBegin: unsafe extern "system" fn(this: *mut *mut Self, pszpath: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub PrefetchFileEnd: unsafe extern "system" fn(this: *mut *mut Self, pszpath: ::windows_sys::core::PCWSTR, hrresult: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IOfflineFilesEvents4 {
+    pub base__: IOfflineFilesEvents3,
+    pub PrefetchCloseHandleBegin: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub PrefetchCloseHandleEnd: unsafe extern "system" fn(this: *mut *mut Self, dwclosedhandlecount: u32, dwopenhandlecount: u32, hrresult: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IOfflineFilesEventsFilter {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetPathFilter: unsafe extern "system" fn(this: *mut *mut Self, ppszfilter: *mut ::windows_sys::core::PWSTR, pmatch: *mut OFFLINEFILES_PATHFILTER_MATCH) -> ::windows_sys::core::HRESULT,
+    pub GetIncludedEvents: unsafe extern "system" fn(this: *mut *mut Self, celements: u32, prgevents: *mut OFFLINEFILES_EVENTS, pcevents: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetExcludedEvents: unsafe extern "system" fn(this: *mut *mut Self, celements: u32, prgevents: *mut OFFLINEFILES_EVENTS, pcevents: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IOfflineFilesFileItem {
+    pub base__: IOfflineFilesItem,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsSparse: unsafe extern "system" fn(this: *mut *mut Self, pbissparse: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsSparse: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsEncrypted: unsafe extern "system" fn(this: *mut *mut Self, pbisencrypted: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsEncrypted: usize,
+}
+#[repr(C)]
+pub struct IOfflineFilesFileSysInfo {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetAttributes: unsafe extern "system" fn(this: *mut *mut Self, copy: OFFLINEFILES_ITEM_COPY, pdwattributes: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetTimes: unsafe extern "system" fn(this: *mut *mut Self, copy: OFFLINEFILES_ITEM_COPY, pftcreationtime: *mut super::super::Foundation::FILETIME, pftlastwritetime: *mut super::super::Foundation::FILETIME, pftchangetime: *mut super::super::Foundation::FILETIME, pftlastaccesstime: *mut super::super::Foundation::FILETIME) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetTimes: usize,
+    pub GetFileSize: unsafe extern "system" fn(this: *mut *mut Self, copy: OFFLINEFILES_ITEM_COPY, psize: *mut i64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IOfflineFilesGhostInfo {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsGhosted: unsafe extern "system" fn(this: *mut *mut Self, pbghosted: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsGhosted: usize,
+}
+#[repr(C)]
+pub struct IOfflineFilesItem {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetItemType: unsafe extern "system" fn(this: *mut *mut Self, pitemtype: *mut OFFLINEFILES_ITEM_TYPE) -> ::windows_sys::core::HRESULT,
+    pub GetPath: unsafe extern "system" fn(this: *mut *mut Self, ppszpath: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetParentItem: unsafe extern "system" fn(this: *mut *mut Self, ppitem: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Refresh: unsafe extern "system" fn(this: *mut *mut Self, dwqueryflags: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsMarkedForDeletion: unsafe extern "system" fn(this: *mut *mut Self, pbmarkedfordeletion: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsMarkedForDeletion: usize,
+}
+#[repr(C)]
+pub struct IOfflineFilesItemContainer {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub EnumItems: unsafe extern "system" fn(this: *mut *mut Self, dwqueryflags: u32, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EnumItemsEx: unsafe extern "system" fn(this: *mut *mut Self, pincludefilefilter: *mut ::core::ffi::c_void, pincludedirfilter: *mut ::core::ffi::c_void, pexcludefilefilter: *mut ::core::ffi::c_void, pexcludedirfilter: *mut ::core::ffi::c_void, dwenumflags: u32, dwqueryflags: u32, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IOfflineFilesItemFilter {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetFilterFlags: unsafe extern "system" fn(this: *mut *mut Self, pullflags: *mut u64, pullmask: *mut u64) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetTimeFilter: unsafe extern "system" fn(this: *mut *mut Self, pfttime: *mut super::super::Foundation::FILETIME, pbevaltimeofday: *mut super::super::Foundation::BOOL, ptimetype: *mut OFFLINEFILES_ITEM_TIME, pcompare: *mut OFFLINEFILES_COMPARE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetTimeFilter: usize,
+    pub GetPatternFilter: unsafe extern "system" fn(this: *mut *mut Self, pszpattern: ::windows_sys::core::PWSTR, cchpattern: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IOfflineFilesPinInfo {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsPinned: unsafe extern "system" fn(this: *mut *mut Self, pbpinned: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsPinned: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsPinnedForUser: unsafe extern "system" fn(this: *mut *mut Self, pbpinnedforuser: *mut super::super::Foundation::BOOL, pbinherit: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsPinnedForUser: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsPinnedForUserByPolicy: unsafe extern "system" fn(this: *mut *mut Self, pbpinnedforuser: *mut super::super::Foundation::BOOL, pbinherit: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsPinnedForUserByPolicy: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsPinnedForComputer: unsafe extern "system" fn(this: *mut *mut Self, pbpinnedforcomputer: *mut super::super::Foundation::BOOL, pbinherit: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsPinnedForComputer: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsPinnedForFolderRedirection: unsafe extern "system" fn(this: *mut *mut Self, pbpinnedforfolderredirection: *mut super::super::Foundation::BOOL, pbinherit: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsPinnedForFolderRedirection: usize,
+}
+#[repr(C)]
+pub struct IOfflineFilesPinInfo2 {
+    pub base__: IOfflineFilesPinInfo,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsPartlyPinned: unsafe extern "system" fn(this: *mut *mut Self, pbpartlypinned: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsPartlyPinned: usize,
+}
+#[repr(C)]
+pub struct IOfflineFilesProgress {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Begin: unsafe extern "system" fn(this: *mut *mut Self, pbabort: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Begin: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub QueryAbort: unsafe extern "system" fn(this: *mut *mut Self, pbabort: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    QueryAbort: usize,
+    pub End: unsafe extern "system" fn(this: *mut *mut Self, hrresult: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IOfflineFilesServerItem {
+    pub base__: IOfflineFilesItem,
+}
+#[repr(C)]
+pub struct IOfflineFilesSetting {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetName: unsafe extern "system" fn(this: *mut *mut Self, ppszname: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetValueType: unsafe extern "system" fn(this: *mut *mut Self, ptype: *mut OFFLINEFILES_SETTING_VALUE_TYPE) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetPreference: unsafe extern "system" fn(this: *mut *mut Self, pvarvalue: *mut super::super::System::Com::VARIANT, dwscope: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetPreference: usize,
+    pub GetPreferenceScope: unsafe extern "system" fn(this: *mut *mut Self, pdwscope: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetPreference: unsafe extern "system" fn(this: *mut *mut Self, pvarvalue: *const super::super::System::Com::VARIANT, dwscope: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetPreference: usize,
+    pub DeletePreference: unsafe extern "system" fn(this: *mut *mut Self, dwscope: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetPolicy: unsafe extern "system" fn(this: *mut *mut Self, pvarvalue: *mut super::super::System::Com::VARIANT, dwscope: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetPolicy: usize,
+    pub GetPolicyScope: unsafe extern "system" fn(this: *mut *mut Self, pdwscope: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetValue: unsafe extern "system" fn(this: *mut *mut Self, pvarvalue: *mut super::super::System::Com::VARIANT, pbsetbypolicy: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetValue: usize,
+}
+#[repr(C)]
+pub struct IOfflineFilesShareInfo {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetShareItem: unsafe extern "system" fn(this: *mut *mut Self, ppshareitem: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetShareCachingMode: unsafe extern "system" fn(this: *mut *mut Self, pcachingmode: *mut OFFLINEFILES_CACHING_MODE) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsShareDfsJunction: unsafe extern "system" fn(this: *mut *mut Self, pbisdfsjunction: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsShareDfsJunction: usize,
+}
+#[repr(C)]
+pub struct IOfflineFilesShareItem {
+    pub base__: IOfflineFilesItem,
+}
+#[repr(C)]
+pub struct IOfflineFilesSimpleProgress {
+    pub base__: IOfflineFilesProgress,
+    pub ItemBegin: unsafe extern "system" fn(this: *mut *mut Self, pszfile: ::windows_sys::core::PCWSTR, presponse: *mut OFFLINEFILES_OP_RESPONSE) -> ::windows_sys::core::HRESULT,
+    pub ItemResult: unsafe extern "system" fn(this: *mut *mut Self, pszfile: ::windows_sys::core::PCWSTR, hrresult: ::windows_sys::core::HRESULT, presponse: *mut OFFLINEFILES_OP_RESPONSE) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IOfflineFilesSuspend {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SuspendRoot: unsafe extern "system" fn(this: *mut *mut Self, bsuspend: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SuspendRoot: usize,
+}
+#[repr(C)]
+pub struct IOfflineFilesSuspendInfo {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsSuspended: unsafe extern "system" fn(this: *mut *mut Self, pbsuspended: *mut super::super::Foundation::BOOL, pbsuspendedroot: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsSuspended: usize,
+}
+#[repr(C)]
+pub struct IOfflineFilesSyncConflictHandler {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub ResolveConflict: unsafe extern "system" fn(this: *mut *mut Self, pszpath: ::windows_sys::core::PCWSTR, fstateknown: u32, state: OFFLINEFILES_SYNC_STATE, fchangedetails: u32, pconflictresolution: *mut OFFLINEFILES_SYNC_CONFLICT_RESOLVE, ppsznewname: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IOfflineFilesSyncErrorInfo {
+    pub base__: IOfflineFilesErrorInfo,
+    pub GetSyncOperation: unsafe extern "system" fn(this: *mut *mut Self, psyncop: *mut OFFLINEFILES_SYNC_OPERATION) -> ::windows_sys::core::HRESULT,
+    pub GetItemChangeFlags: unsafe extern "system" fn(this: *mut *mut Self, pdwitemchangeflags: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InfoEnumerated: unsafe extern "system" fn(this: *mut *mut Self, pblocalenumerated: *mut super::super::Foundation::BOOL, pbremoteenumerated: *mut super::super::Foundation::BOOL, pboriginalenumerated: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InfoEnumerated: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InfoAvailable: unsafe extern "system" fn(this: *mut *mut Self, pblocalinfo: *mut super::super::Foundation::BOOL, pbremoteinfo: *mut super::super::Foundation::BOOL, pboriginalinfo: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InfoAvailable: usize,
+    pub GetLocalInfo: unsafe extern "system" fn(this: *mut *mut Self, ppinfo: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetRemoteInfo: unsafe extern "system" fn(this: *mut *mut Self, ppinfo: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetOriginalInfo: unsafe extern "system" fn(this: *mut *mut Self, ppinfo: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IOfflineFilesSyncErrorItemInfo {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetFileAttributes: unsafe extern "system" fn(this: *mut *mut Self, pdwattributes: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetFileTimes: unsafe extern "system" fn(this: *mut *mut Self, pftlastwrite: *mut super::super::Foundation::FILETIME, pftchange: *mut super::super::Foundation::FILETIME) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetFileTimes: usize,
+    pub GetFileSize: unsafe extern "system" fn(this: *mut *mut Self, psize: *mut i64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IOfflineFilesSyncProgress {
+    pub base__: IOfflineFilesProgress,
+    pub SyncItemBegin: unsafe extern "system" fn(this: *mut *mut Self, pszfile: ::windows_sys::core::PCWSTR, presponse: *mut OFFLINEFILES_OP_RESPONSE) -> ::windows_sys::core::HRESULT,
+    pub SyncItemResult: unsafe extern "system" fn(this: *mut *mut Self, pszfile: ::windows_sys::core::PCWSTR, hrresult: ::windows_sys::core::HRESULT, perrorinfo: *mut ::core::ffi::c_void, presponse: *mut OFFLINEFILES_OP_RESPONSE) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IOfflineFilesTransparentCacheInfo {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsTransparentlyCached: unsafe extern "system" fn(this: *mut *mut Self, pbtransparentlycached: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsTransparentlyCached: usize,
+}
 #[doc = "*Required features: `\"Win32_Storage_OfflineFiles\"`*"]
 pub type OFFLINEFILES_CACHING_MODE = i32;
 #[doc = "*Required features: `\"Win32_Storage_OfflineFiles\"`*"]

@@ -1,5 +1,150 @@
 #[cfg(feature = "Devices_Lights_Effects")]
 pub mod Effects;
+#[repr(C)]
+pub struct ILamp {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub DeviceId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub IsEnabled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetIsEnabled: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+    pub BrightnessLevel: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f32) -> ::windows_sys::core::HRESULT,
+    pub SetBrightnessLevel: unsafe extern "system" fn(this: *mut *mut Self, value: f32) -> ::windows_sys::core::HRESULT,
+    pub IsColorSettable: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "UI")]
+    pub Color: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::UI::Color) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI"))]
+    Color: usize,
+    #[cfg(feature = "UI")]
+    pub SetColor: unsafe extern "system" fn(this: *mut *mut Self, value: super::super::UI::Color) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI"))]
+    SetColor: usize,
+    #[cfg(feature = "Foundation")]
+    pub AvailabilityChanged: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    AvailabilityChanged: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveAvailabilityChanged: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveAvailabilityChanged: usize,
+}
+#[repr(C)]
+pub struct ILampArray {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub DeviceId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub HardwareVendorId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub HardwareProductId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub HardwareVersion: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub LampArrayKind: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut LampArrayKind) -> ::windows_sys::core::HRESULT,
+    pub LampCount: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub MinUpdateInterval: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Foundation::TimeSpan) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    MinUpdateInterval: usize,
+    #[cfg(feature = "Foundation_Numerics")]
+    pub BoundingBox: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Foundation::Numerics::Vector3) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Numerics"))]
+    BoundingBox: usize,
+    pub IsEnabled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetIsEnabled: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+    pub BrightnessLevel: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f64) -> ::windows_sys::core::HRESULT,
+    pub SetBrightnessLevel: unsafe extern "system" fn(this: *mut *mut Self, value: f64) -> ::windows_sys::core::HRESULT,
+    pub IsConnected: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SupportsVirtualKeys: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub GetLampInfo: unsafe extern "system" fn(this: *mut *mut Self, lampindex: i32, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "System")]
+    pub GetIndicesForKey: unsafe extern "system" fn(this: *mut *mut Self, key: super::super::System::VirtualKey, result_size__: *mut u32, result__: *mut *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "System"))]
+    GetIndicesForKey: usize,
+    pub GetIndicesForPurposes: unsafe extern "system" fn(this: *mut *mut Self, purposes: LampPurposes, result_size__: *mut u32, result__: *mut *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "UI")]
+    pub SetColor: unsafe extern "system" fn(this: *mut *mut Self, desiredcolor: super::super::UI::Color) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI"))]
+    SetColor: usize,
+    #[cfg(feature = "UI")]
+    pub SetColorForIndex: unsafe extern "system" fn(this: *mut *mut Self, lampindex: i32, desiredcolor: super::super::UI::Color) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI"))]
+    SetColorForIndex: usize,
+    #[cfg(feature = "UI")]
+    pub SetSingleColorForIndices: unsafe extern "system" fn(this: *mut *mut Self, desiredcolor: super::super::UI::Color, lampIndexes_array_size: u32, lampindexes: *const i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI"))]
+    SetSingleColorForIndices: usize,
+    #[cfg(feature = "UI")]
+    pub SetColorsForIndices: unsafe extern "system" fn(this: *mut *mut Self, desiredColors_array_size: u32, desiredcolors: *const super::super::UI::Color, lampIndexes_array_size: u32, lampindexes: *const i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI"))]
+    SetColorsForIndices: usize,
+    #[cfg(all(feature = "System", feature = "UI"))]
+    pub SetColorsForKey: unsafe extern "system" fn(this: *mut *mut Self, desiredcolor: super::super::UI::Color, key: super::super::System::VirtualKey) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "System", feature = "UI")))]
+    SetColorsForKey: usize,
+    #[cfg(all(feature = "System", feature = "UI"))]
+    pub SetColorsForKeys: unsafe extern "system" fn(this: *mut *mut Self, desiredColors_array_size: u32, desiredcolors: *const super::super::UI::Color, keys_array_size: u32, keys: *const super::super::System::VirtualKey) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "System", feature = "UI")))]
+    SetColorsForKeys: usize,
+    #[cfg(feature = "UI")]
+    pub SetColorsForPurposes: unsafe extern "system" fn(this: *mut *mut Self, desiredcolor: super::super::UI::Color, purposes: LampPurposes) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI"))]
+    SetColorsForPurposes: usize,
+    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    pub SendMessageAsync: unsafe extern "system" fn(this: *mut *mut Self, messageid: i32, message: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    SendMessageAsync: usize,
+    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    pub RequestMessageAsync: unsafe extern "system" fn(this: *mut *mut Self, messageid: i32, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    RequestMessageAsync: usize,
+}
+#[repr(C)]
+pub struct ILampArrayStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub GetDeviceSelector: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub FromIdAsync: unsafe extern "system" fn(this: *mut *mut Self, deviceid: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    FromIdAsync: usize,
+}
+#[repr(C)]
+pub struct ILampAvailabilityChangedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub IsAvailable: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ILampInfo {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Index: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub Purposes: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut LampPurposes) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Numerics")]
+    pub Position: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Foundation::Numerics::Vector3) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Numerics"))]
+    Position: usize,
+    pub RedLevelCount: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub GreenLevelCount: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub BlueLevelCount: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub GainLevelCount: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Foundation", feature = "UI"))]
+    pub FixedColor: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation", feature = "UI")))]
+    FixedColor: usize,
+    #[cfg(feature = "UI")]
+    pub GetNearestSupportedColor: unsafe extern "system" fn(this: *mut *mut Self, desiredcolor: super::super::UI::Color, result__: *mut super::super::UI::Color) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI"))]
+    GetNearestSupportedColor: usize,
+    #[cfg(feature = "Foundation")]
+    pub UpdateLatency: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Foundation::TimeSpan) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    UpdateLatency: usize,
+}
+#[repr(C)]
+pub struct ILampStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub GetDeviceSelector: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub FromIdAsync: unsafe extern "system" fn(this: *mut *mut Self, deviceid: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    FromIdAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub GetDefaultAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    GetDefaultAsync: usize,
+}
 pub type Lamp = *mut ::core::ffi::c_void;
 pub type LampArray = *mut ::core::ffi::c_void;
 #[doc = "*Required features: `\"Devices_Lights\"`*"]

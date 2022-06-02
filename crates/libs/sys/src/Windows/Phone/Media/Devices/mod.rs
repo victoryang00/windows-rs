@@ -33,3 +33,23 @@ impl ::core::clone::Clone for AvailableAudioRoutingEndpoints {
         *self
     }
 }
+#[repr(C)]
+pub struct IAudioRoutingManager {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub GetAudioEndpoint: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut AudioRoutingEndpoint) -> ::windows_sys::core::HRESULT,
+    pub SetAudioEndpoint: unsafe extern "system" fn(this: *mut *mut Self, endpoint: AudioRoutingEndpoint) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub AudioEndpointChanged: unsafe extern "system" fn(this: *mut *mut Self, endpointchangehandler: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    AudioEndpointChanged: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveAudioEndpointChanged: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveAudioEndpointChanged: usize,
+    pub AvailableAudioEndpoints: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut AvailableAudioRoutingEndpoints) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAudioRoutingManagerStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub GetDefault: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}

@@ -4,7 +4,7 @@ extern "system" {
     pub fn DxcCreateInstance(rclsid: *const ::windows_sys::core::GUID, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Graphics_Direct3D_Dxc\"`, `\"Win32_System_Com\"`*"]
     #[cfg(feature = "Win32_System_Com")]
-    pub fn DxcCreateInstance2(pmalloc: super::super::super::System::Com::IMalloc, rclsid: *const ::windows_sys::core::GUID, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn DxcCreateInstance2(pmalloc: *mut *mut super::super::super::System::Com::IMalloc, rclsid: *const ::windows_sys::core::GUID, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
 }
 pub const CLSID_DxcAssembler: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3609779048, data2: 63747, data3: 20352, data4: [148, 205, 220, 207, 118, 236, 113, 81] };
 pub const CLSID_DxcCompiler: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1944202643, data2: 59086, data3: 18419, data4: [181, 191, 240, 102, 79, 57, 193, 176] };
@@ -122,7 +122,7 @@ impl ::core::clone::Clone for DxcBuffer {
 }
 #[doc = "*Required features: `\"Win32_Graphics_Direct3D_Dxc\"`, `\"Win32_System_Com\"`*"]
 #[cfg(feature = "Win32_System_Com")]
-pub type DxcCreateInstance2Proc = ::core::option::Option<unsafe extern "system" fn(pmalloc: super::super::super::System::Com::IMalloc, rclsid: *const ::windows_sys::core::GUID, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT>;
+pub type DxcCreateInstance2Proc = ::core::option::Option<unsafe extern "system" fn(pmalloc: *mut *mut super::super::super::System::Com::IMalloc, rclsid: *const ::windows_sys::core::GUID, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT>;
 #[doc = "*Required features: `\"Win32_Graphics_Direct3D_Dxc\"`*"]
 pub type DxcCreateInstanceProc = ::core::option::Option<unsafe extern "system" fn(rclsid: *const ::windows_sys::core::GUID, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT>;
 #[repr(C)]
@@ -165,29 +165,261 @@ pub const DxcVersionInfoFlags_Debug: u32 = 1u32;
 pub const DxcVersionInfoFlags_Internal: u32 = 2u32;
 #[doc = "*Required features: `\"Win32_Graphics_Direct3D_Dxc\"`*"]
 pub const DxcVersionInfoFlags_None: u32 = 0u32;
-pub type IDxcAssembler = *mut ::core::ffi::c_void;
-pub type IDxcBlob = *mut ::core::ffi::c_void;
-pub type IDxcBlobEncoding = *mut ::core::ffi::c_void;
-pub type IDxcBlobUtf16 = *mut ::core::ffi::c_void;
-pub type IDxcBlobUtf8 = *mut ::core::ffi::c_void;
-pub type IDxcCompiler = *mut ::core::ffi::c_void;
-pub type IDxcCompiler2 = *mut ::core::ffi::c_void;
-pub type IDxcCompiler3 = *mut ::core::ffi::c_void;
-pub type IDxcCompilerArgs = *mut ::core::ffi::c_void;
-pub type IDxcContainerBuilder = *mut ::core::ffi::c_void;
-pub type IDxcContainerReflection = *mut ::core::ffi::c_void;
-pub type IDxcExtraOutputs = *mut ::core::ffi::c_void;
-pub type IDxcIncludeHandler = *mut ::core::ffi::c_void;
-pub type IDxcLibrary = *mut ::core::ffi::c_void;
-pub type IDxcLinker = *mut ::core::ffi::c_void;
-pub type IDxcOperationResult = *mut ::core::ffi::c_void;
-pub type IDxcOptimizer = *mut ::core::ffi::c_void;
-pub type IDxcOptimizerPass = *mut ::core::ffi::c_void;
-pub type IDxcPdbUtils = *mut ::core::ffi::c_void;
-pub type IDxcResult = *mut ::core::ffi::c_void;
-pub type IDxcUtils = *mut ::core::ffi::c_void;
-pub type IDxcValidator = *mut ::core::ffi::c_void;
-pub type IDxcValidator2 = *mut ::core::ffi::c_void;
-pub type IDxcVersionInfo = *mut ::core::ffi::c_void;
-pub type IDxcVersionInfo2 = *mut ::core::ffi::c_void;
-pub type IDxcVersionInfo3 = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IDxcAssembler {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub AssembleToContainer: unsafe extern "system" fn(this: *mut *mut Self, pshader: *mut ::core::ffi::c_void, ppresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDxcBlob {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetBufferPointer: unsafe extern "system" fn(this: *mut *mut Self) -> *mut ::core::ffi::c_void,
+    pub GetBufferSize: unsafe extern "system" fn(this: *mut *mut Self) -> usize,
+}
+#[repr(C)]
+pub struct IDxcBlobEncoding {
+    pub base__: IDxcBlob,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetEncoding: unsafe extern "system" fn(this: *mut *mut Self, pknown: *mut super::super::super::Foundation::BOOL, pcodepage: *mut DXC_CP) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetEncoding: usize,
+}
+#[repr(C)]
+pub struct IDxcBlobUtf16 {
+    pub base__: IDxcBlobEncoding,
+    pub GetStringPointer: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::PWSTR,
+    pub GetStringLength: unsafe extern "system" fn(this: *mut *mut Self) -> usize,
+}
+#[repr(C)]
+pub struct IDxcBlobUtf8 {
+    pub base__: IDxcBlobEncoding,
+    pub GetStringPointer: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::PSTR,
+    pub GetStringLength: unsafe extern "system" fn(this: *mut *mut Self) -> usize,
+}
+#[repr(C)]
+pub struct IDxcCompiler {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Compile: unsafe extern "system" fn(this: *mut *mut Self, psource: *mut ::core::ffi::c_void, psourcename: ::windows_sys::core::PCWSTR, pentrypoint: ::windows_sys::core::PCWSTR, ptargetprofile: ::windows_sys::core::PCWSTR, parguments: *const ::windows_sys::core::PWSTR, argcount: u32, pdefines: *const DxcDefine, definecount: u32, pincludehandler: *mut ::core::ffi::c_void, ppresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Preprocess: unsafe extern "system" fn(this: *mut *mut Self, psource: *mut ::core::ffi::c_void, psourcename: ::windows_sys::core::PCWSTR, parguments: *const ::windows_sys::core::PWSTR, argcount: u32, pdefines: *const DxcDefine, definecount: u32, pincludehandler: *mut ::core::ffi::c_void, ppresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Disassemble: unsafe extern "system" fn(this: *mut *mut Self, psource: *mut ::core::ffi::c_void, ppdisassembly: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDxcCompiler2 {
+    pub base__: IDxcCompiler,
+    pub CompileWithDebug: unsafe extern "system" fn(this: *mut *mut Self, psource: *mut ::core::ffi::c_void, psourcename: ::windows_sys::core::PCWSTR, pentrypoint: ::windows_sys::core::PCWSTR, ptargetprofile: ::windows_sys::core::PCWSTR, parguments: *const ::windows_sys::core::PWSTR, argcount: u32, pdefines: *const DxcDefine, definecount: u32, pincludehandler: *mut ::core::ffi::c_void, ppresult: *mut *mut ::core::ffi::c_void, ppdebugblobname: *mut ::windows_sys::core::PWSTR, ppdebugblob: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDxcCompiler3 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Compile: unsafe extern "system" fn(this: *mut *mut Self, psource: *const DxcBuffer, parguments: *const ::windows_sys::core::PWSTR, argcount: u32, pincludehandler: *mut ::core::ffi::c_void, riid: *const ::windows_sys::core::GUID, ppresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Disassemble: unsafe extern "system" fn(this: *mut *mut Self, pobject: *const DxcBuffer, riid: *const ::windows_sys::core::GUID, ppresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDxcCompilerArgs {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetArguments: unsafe extern "system" fn(this: *mut *mut Self) -> *mut ::windows_sys::core::PWSTR,
+    pub GetCount: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
+    pub AddArguments: unsafe extern "system" fn(this: *mut *mut Self, parguments: *const ::windows_sys::core::PWSTR, argcount: u32) -> ::windows_sys::core::HRESULT,
+    pub AddArgumentsUTF8: unsafe extern "system" fn(this: *mut *mut Self, parguments: *const ::windows_sys::core::PSTR, argcount: u32) -> ::windows_sys::core::HRESULT,
+    pub AddDefines: unsafe extern "system" fn(this: *mut *mut Self, pdefines: *const DxcDefine, definecount: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDxcContainerBuilder {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Load: unsafe extern "system" fn(this: *mut *mut Self, pdxilcontainerheader: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AddPart: unsafe extern "system" fn(this: *mut *mut Self, fourcc: u32, psource: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RemovePart: unsafe extern "system" fn(this: *mut *mut Self, fourcc: u32) -> ::windows_sys::core::HRESULT,
+    pub SerializeContainer: unsafe extern "system" fn(this: *mut *mut Self, ppresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDxcContainerReflection {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Load: unsafe extern "system" fn(this: *mut *mut Self, pcontainer: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetPartCount: unsafe extern "system" fn(this: *mut *mut Self, presult: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetPartKind: unsafe extern "system" fn(this: *mut *mut Self, idx: u32, presult: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetPartContent: unsafe extern "system" fn(this: *mut *mut Self, idx: u32, ppresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub FindFirstPartKind: unsafe extern "system" fn(this: *mut *mut Self, kind: u32, presult: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetPartReflection: unsafe extern "system" fn(this: *mut *mut Self, idx: u32, iid: *const ::windows_sys::core::GUID, ppvobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDxcExtraOutputs {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetOutputCount: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
+    pub GetOutput: unsafe extern "system" fn(this: *mut *mut Self, uindex: u32, iid: *const ::windows_sys::core::GUID, ppvobject: *mut *mut ::core::ffi::c_void, ppoutputtype: *mut *mut ::core::ffi::c_void, ppoutputname: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDxcIncludeHandler {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub LoadSource: unsafe extern "system" fn(this: *mut *mut Self, pfilename: ::windows_sys::core::PCWSTR, ppincludesource: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDxcLibrary {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetMalloc: unsafe extern "system" fn(this: *mut *mut Self, pmalloc: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetMalloc: usize,
+    pub CreateBlobFromBlob: unsafe extern "system" fn(this: *mut *mut Self, pblob: *mut ::core::ffi::c_void, offset: u32, length: u32, ppresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateBlobFromFile: unsafe extern "system" fn(this: *mut *mut Self, pfilename: ::windows_sys::core::PCWSTR, codepage: *const DXC_CP, pblobencoding: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateBlobWithEncodingFromPinned: unsafe extern "system" fn(this: *mut *mut Self, ptext: *const ::core::ffi::c_void, size: u32, codepage: DXC_CP, pblobencoding: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateBlobWithEncodingOnHeapCopy: unsafe extern "system" fn(this: *mut *mut Self, ptext: *const ::core::ffi::c_void, size: u32, codepage: DXC_CP, pblobencoding: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreateBlobWithEncodingOnMalloc: unsafe extern "system" fn(this: *mut *mut Self, ptext: *const ::core::ffi::c_void, pimalloc: *mut ::core::ffi::c_void, size: u32, codepage: DXC_CP, pblobencoding: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CreateBlobWithEncodingOnMalloc: usize,
+    pub CreateIncludeHandler: unsafe extern "system" fn(this: *mut *mut Self, ppresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreateStreamFromBlobReadOnly: unsafe extern "system" fn(this: *mut *mut Self, pblob: *mut ::core::ffi::c_void, ppstream: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CreateStreamFromBlobReadOnly: usize,
+    pub GetBlobAsUtf8: unsafe extern "system" fn(this: *mut *mut Self, pblob: *mut ::core::ffi::c_void, pblobencoding: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetBlobAsUtf16: unsafe extern "system" fn(this: *mut *mut Self, pblob: *mut ::core::ffi::c_void, pblobencoding: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDxcLinker {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub RegisterLibrary: unsafe extern "system" fn(this: *mut *mut Self, plibname: ::windows_sys::core::PCWSTR, plib: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Link: unsafe extern "system" fn(this: *mut *mut Self, pentryname: ::windows_sys::core::PCWSTR, ptargetprofile: ::windows_sys::core::PCWSTR, plibnames: *const ::windows_sys::core::PWSTR, libcount: u32, parguments: *const ::windows_sys::core::PWSTR, argcount: u32, ppresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDxcOperationResult {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetStatus: unsafe extern "system" fn(this: *mut *mut Self, pstatus: *mut ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+    pub GetResult: unsafe extern "system" fn(this: *mut *mut Self, ppresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetErrorBuffer: unsafe extern "system" fn(this: *mut *mut Self, pperrors: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDxcOptimizer {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetAvailablePassCount: unsafe extern "system" fn(this: *mut *mut Self, pcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetAvailablePass: unsafe extern "system" fn(this: *mut *mut Self, index: u32, ppresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RunOptimizer: unsafe extern "system" fn(this: *mut *mut Self, pblob: *mut ::core::ffi::c_void, ppoptions: *const ::windows_sys::core::PWSTR, optioncount: u32, poutputmodule: *mut *mut ::core::ffi::c_void, ppoutputtext: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDxcOptimizerPass {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetOptionName: unsafe extern "system" fn(this: *mut *mut Self, ppresult: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetDescription: unsafe extern "system" fn(this: *mut *mut Self, ppresult: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetOptionArgCount: unsafe extern "system" fn(this: *mut *mut Self, pcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetOptionArgName: unsafe extern "system" fn(this: *mut *mut Self, argindex: u32, ppresult: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetOptionArgDescription: unsafe extern "system" fn(this: *mut *mut Self, argindex: u32, ppresult: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDxcPdbUtils {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Load: unsafe extern "system" fn(this: *mut *mut Self, ppdbordxil: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetSourceCount: unsafe extern "system" fn(this: *mut *mut Self, pcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSource: unsafe extern "system" fn(this: *mut *mut Self, uindex: u32, ppresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetSourceName: unsafe extern "system" fn(this: *mut *mut Self, uindex: u32, presult: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetSourceName: usize,
+    pub GetFlagCount: unsafe extern "system" fn(this: *mut *mut Self, pcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetFlag: unsafe extern "system" fn(this: *mut *mut Self, uindex: u32, presult: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetFlag: usize,
+    pub GetArgCount: unsafe extern "system" fn(this: *mut *mut Self, pcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetArg: unsafe extern "system" fn(this: *mut *mut Self, uindex: u32, presult: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetArg: usize,
+    pub GetArgPairCount: unsafe extern "system" fn(this: *mut *mut Self, pcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetArgPair: unsafe extern "system" fn(this: *mut *mut Self, uindex: u32, pname: *mut super::super::super::Foundation::BSTR, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetArgPair: usize,
+    pub GetDefineCount: unsafe extern "system" fn(this: *mut *mut Self, pcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetDefine: unsafe extern "system" fn(this: *mut *mut Self, uindex: u32, presult: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetDefine: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetTargetProfile: unsafe extern "system" fn(this: *mut *mut Self, presult: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetTargetProfile: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetEntryPoint: unsafe extern "system" fn(this: *mut *mut Self, presult: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetEntryPoint: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetMainFileName: unsafe extern "system" fn(this: *mut *mut Self, presult: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetMainFileName: usize,
+    pub GetHash: unsafe extern "system" fn(this: *mut *mut Self, ppresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetName: unsafe extern "system" fn(this: *mut *mut Self, presult: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsFullPDB: unsafe extern "system" fn(this: *mut *mut Self) -> super::super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsFullPDB: usize,
+    pub GetFullPDB: unsafe extern "system" fn(this: *mut *mut Self, ppfullpdb: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetVersionInfo: unsafe extern "system" fn(this: *mut *mut Self, ppversioninfo: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetCompiler: unsafe extern "system" fn(this: *mut *mut Self, pcompiler: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CompileForFullPDB: unsafe extern "system" fn(this: *mut *mut Self, ppresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub OverrideArgs: unsafe extern "system" fn(this: *mut *mut Self, pargpairs: *const DxcArgPair, unumargpairs: u32) -> ::windows_sys::core::HRESULT,
+    pub OverrideRootSignature: unsafe extern "system" fn(this: *mut *mut Self, prootsignature: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDxcResult {
+    pub base__: IDxcOperationResult,
+    #[cfg(feature = "Win32_Foundation")]
+    pub HasOutput: unsafe extern "system" fn(this: *mut *mut Self, dxcoutkind: DXC_OUT_KIND) -> super::super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    HasOutput: usize,
+    pub GetOutput: unsafe extern "system" fn(this: *mut *mut Self, dxcoutkind: DXC_OUT_KIND, iid: *const ::windows_sys::core::GUID, ppvobject: *mut *mut ::core::ffi::c_void, ppoutputname: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetNumOutputs: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
+    pub GetOutputByIndex: unsafe extern "system" fn(this: *mut *mut Self, index: u32) -> DXC_OUT_KIND,
+    pub PrimaryOutput: unsafe extern "system" fn(this: *mut *mut Self) -> DXC_OUT_KIND,
+}
+#[repr(C)]
+pub struct IDxcUtils {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub CreateBlobFromBlob: unsafe extern "system" fn(this: *mut *mut Self, pblob: *mut ::core::ffi::c_void, offset: u32, length: u32, ppresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateBlobFromPinned: unsafe extern "system" fn(this: *mut *mut Self, pdata: *const ::core::ffi::c_void, size: u32, codepage: DXC_CP, pblobencoding: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub MoveToBlob: unsafe extern "system" fn(this: *mut *mut Self, pdata: *const ::core::ffi::c_void, pimalloc: *mut ::core::ffi::c_void, size: u32, codepage: DXC_CP, pblobencoding: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    MoveToBlob: usize,
+    pub CreateBlob: unsafe extern "system" fn(this: *mut *mut Self, pdata: *const ::core::ffi::c_void, size: u32, codepage: DXC_CP, pblobencoding: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub LoadFile: unsafe extern "system" fn(this: *mut *mut Self, pfilename: ::windows_sys::core::PCWSTR, pcodepage: *const DXC_CP, pblobencoding: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreateReadOnlyStreamFromBlob: unsafe extern "system" fn(this: *mut *mut Self, pblob: *mut ::core::ffi::c_void, ppstream: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CreateReadOnlyStreamFromBlob: usize,
+    pub CreateDefaultIncludeHandler: unsafe extern "system" fn(this: *mut *mut Self, ppresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetBlobAsUtf8: unsafe extern "system" fn(this: *mut *mut Self, pblob: *mut ::core::ffi::c_void, pblobencoding: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetBlobAsUtf16: unsafe extern "system" fn(this: *mut *mut Self, pblob: *mut ::core::ffi::c_void, pblobencoding: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetDxilContainerPart: unsafe extern "system" fn(this: *mut *mut Self, pshader: *const DxcBuffer, dxcpart: u32, pppartdata: *mut *mut ::core::ffi::c_void, ppartsizeinbytes: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub CreateReflection: unsafe extern "system" fn(this: *mut *mut Self, pdata: *const DxcBuffer, iid: *const ::windows_sys::core::GUID, ppvreflection: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub BuildArguments: unsafe extern "system" fn(this: *mut *mut Self, psourcename: ::windows_sys::core::PCWSTR, pentrypoint: ::windows_sys::core::PCWSTR, ptargetprofile: ::windows_sys::core::PCWSTR, parguments: *const ::windows_sys::core::PWSTR, argcount: u32, pdefines: *const DxcDefine, definecount: u32, ppargs: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetPDBContents: unsafe extern "system" fn(this: *mut *mut Self, ppdbblob: *mut ::core::ffi::c_void, pphash: *mut *mut ::core::ffi::c_void, ppcontainer: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDxcValidator {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Validate: unsafe extern "system" fn(this: *mut *mut Self, pshader: *mut ::core::ffi::c_void, flags: u32, ppresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDxcValidator2 {
+    pub base__: IDxcValidator,
+    pub ValidateWithDebug: unsafe extern "system" fn(this: *mut *mut Self, pshader: *mut ::core::ffi::c_void, flags: u32, poptdebugbitcode: *const DxcBuffer, ppresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDxcVersionInfo {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetVersion: unsafe extern "system" fn(this: *mut *mut Self, pmajor: *mut u32, pminor: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetFlags: unsafe extern "system" fn(this: *mut *mut Self, pflags: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDxcVersionInfo2 {
+    pub base__: IDxcVersionInfo,
+    pub GetCommitInfo: unsafe extern "system" fn(this: *mut *mut Self, pcommitcount: *mut u32, pcommithash: *mut *mut i8) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDxcVersionInfo3 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCustomVersionString: unsafe extern "system" fn(this: *mut *mut Self, pversionstring: *mut *mut i8) -> ::windows_sys::core::HRESULT,
+}

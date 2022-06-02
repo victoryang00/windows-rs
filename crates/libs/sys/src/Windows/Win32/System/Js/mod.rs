@@ -25,11 +25,11 @@ extern "system" {
     #[doc = "*Required features: `\"Win32_System_Js\"`, `\"Win32_System_Diagnostics_Debug\"`*"]
     #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
     #[cfg(feature = "Win32_System_Diagnostics_Debug")]
-    pub fn JsCreateContext(runtime: *const ::core::ffi::c_void, debugapplication: super::Diagnostics::Debug::IDebugApplication64, newcontext: *mut *mut ::core::ffi::c_void) -> JsErrorCode;
+    pub fn JsCreateContext(runtime: *const ::core::ffi::c_void, debugapplication: *mut *mut super::Diagnostics::Debug::IDebugApplication64, newcontext: *mut *mut ::core::ffi::c_void) -> JsErrorCode;
     #[doc = "*Required features: `\"Win32_System_Js\"`, `\"Win32_System_Diagnostics_Debug\"`*"]
     #[cfg(target_arch = "x86")]
     #[cfg(feature = "Win32_System_Diagnostics_Debug")]
-    pub fn JsCreateContext(runtime: *const ::core::ffi::c_void, debugapplication: super::Diagnostics::Debug::IDebugApplication32, newcontext: *mut *mut ::core::ffi::c_void) -> JsErrorCode;
+    pub fn JsCreateContext(runtime: *const ::core::ffi::c_void, debugapplication: *mut *mut super::Diagnostics::Debug::IDebugApplication32, newcontext: *mut *mut ::core::ffi::c_void) -> JsErrorCode;
     #[doc = "*Required features: `\"Win32_System_Js\"`*"]
     pub fn JsCreateError(message: *const ::core::ffi::c_void, error: *mut *mut ::core::ffi::c_void) -> JsErrorCode;
     #[doc = "*Required features: `\"Win32_System_Js\"`*"]
@@ -66,7 +66,7 @@ extern "system" {
     pub fn JsEnableRuntimeExecution(runtime: *const ::core::ffi::c_void) -> JsErrorCode;
     #[doc = "*Required features: `\"Win32_System_Js\"`, `\"Win32_System_Diagnostics_Debug\"`*"]
     #[cfg(feature = "Win32_System_Diagnostics_Debug")]
-    pub fn JsEnumerateHeap(enumerator: *mut super::Diagnostics::Debug::IActiveScriptProfilerHeapEnum) -> JsErrorCode;
+    pub fn JsEnumerateHeap(enumerator: *mut *mut *mut super::Diagnostics::Debug::IActiveScriptProfilerHeapEnum) -> JsErrorCode;
     #[doc = "*Required features: `\"Win32_System_Js\"`*"]
     pub fn JsEquals(object1: *const ::core::ffi::c_void, object2: *const ::core::ffi::c_void, result: *mut bool) -> JsErrorCode;
     #[doc = "*Required features: `\"Win32_System_Js\"`*"]
@@ -166,14 +166,14 @@ extern "system" {
     #[doc = "*Required features: `\"Win32_System_Js\"`, `\"Win32_System_Diagnostics_Debug\"`*"]
     #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
     #[cfg(feature = "Win32_System_Diagnostics_Debug")]
-    pub fn JsStartDebugging(debugapplication: super::Diagnostics::Debug::IDebugApplication64) -> JsErrorCode;
+    pub fn JsStartDebugging(debugapplication: *mut *mut super::Diagnostics::Debug::IDebugApplication64) -> JsErrorCode;
     #[doc = "*Required features: `\"Win32_System_Js\"`, `\"Win32_System_Diagnostics_Debug\"`*"]
     #[cfg(target_arch = "x86")]
     #[cfg(feature = "Win32_System_Diagnostics_Debug")]
-    pub fn JsStartDebugging(debugapplication: super::Diagnostics::Debug::IDebugApplication32) -> JsErrorCode;
+    pub fn JsStartDebugging(debugapplication: *mut *mut super::Diagnostics::Debug::IDebugApplication32) -> JsErrorCode;
     #[doc = "*Required features: `\"Win32_System_Js\"`, `\"Win32_System_Diagnostics_Debug\"`*"]
     #[cfg(feature = "Win32_System_Diagnostics_Debug")]
-    pub fn JsStartProfiling(callback: super::Diagnostics::Debug::IActiveScriptProfilerCallback, eventmask: super::Diagnostics::Debug::PROFILER_EVENT_MASK, context: u32) -> JsErrorCode;
+    pub fn JsStartProfiling(callback: *mut *mut super::Diagnostics::Debug::IActiveScriptProfilerCallback, eventmask: super::Diagnostics::Debug::PROFILER_EVENT_MASK, context: u32) -> JsErrorCode;
     #[doc = "*Required features: `\"Win32_System_Js\"`*"]
     pub fn JsStopProfiling(reason: ::windows_sys::core::HRESULT) -> JsErrorCode;
     #[doc = "*Required features: `\"Win32_System_Js\"`*"]

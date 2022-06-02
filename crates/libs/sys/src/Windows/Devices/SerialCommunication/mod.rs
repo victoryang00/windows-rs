@@ -1,4 +1,92 @@
 pub type ErrorReceivedEventArgs = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IErrorReceivedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Error: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut SerialError) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPinChangedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub PinChange: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut SerialPinChange) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISerialDevice {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub BaudRate: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetBaudRate: unsafe extern "system" fn(this: *mut *mut Self, value: u32) -> ::windows_sys::core::HRESULT,
+    pub BreakSignalState: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetBreakSignalState: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+    pub BytesReceived: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub CarrierDetectState: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub ClearToSendState: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub DataBits: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub SetDataBits: unsafe extern "system" fn(this: *mut *mut Self, value: u16) -> ::windows_sys::core::HRESULT,
+    pub DataSetReadyState: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub Handshake: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut SerialHandshake) -> ::windows_sys::core::HRESULT,
+    pub SetHandshake: unsafe extern "system" fn(this: *mut *mut Self, value: SerialHandshake) -> ::windows_sys::core::HRESULT,
+    pub IsDataTerminalReadyEnabled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetIsDataTerminalReadyEnabled: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+    pub IsRequestToSendEnabled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetIsRequestToSendEnabled: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+    pub Parity: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut SerialParity) -> ::windows_sys::core::HRESULT,
+    pub SetParity: unsafe extern "system" fn(this: *mut *mut Self, value: SerialParity) -> ::windows_sys::core::HRESULT,
+    pub PortName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub ReadTimeout: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Foundation::TimeSpan) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    ReadTimeout: usize,
+    #[cfg(feature = "Foundation")]
+    pub SetReadTimeout: unsafe extern "system" fn(this: *mut *mut Self, value: super::super::Foundation::TimeSpan) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    SetReadTimeout: usize,
+    pub StopBits: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut SerialStopBitCount) -> ::windows_sys::core::HRESULT,
+    pub SetStopBits: unsafe extern "system" fn(this: *mut *mut Self, value: SerialStopBitCount) -> ::windows_sys::core::HRESULT,
+    pub UsbVendorId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub UsbProductId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub WriteTimeout: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Foundation::TimeSpan) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    WriteTimeout: usize,
+    #[cfg(feature = "Foundation")]
+    pub SetWriteTimeout: unsafe extern "system" fn(this: *mut *mut Self, value: super::super::Foundation::TimeSpan) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    SetWriteTimeout: usize,
+    #[cfg(feature = "Storage_Streams")]
+    pub InputStream: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Storage_Streams"))]
+    InputStream: usize,
+    #[cfg(feature = "Storage_Streams")]
+    pub OutputStream: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Storage_Streams"))]
+    OutputStream: usize,
+    #[cfg(feature = "Foundation")]
+    pub ErrorReceived: unsafe extern "system" fn(this: *mut *mut Self, reporthandler: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    ErrorReceived: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveErrorReceived: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveErrorReceived: usize,
+    #[cfg(feature = "Foundation")]
+    pub PinChanged: unsafe extern "system" fn(this: *mut *mut Self, reporthandler: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    PinChanged: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemovePinChanged: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemovePinChanged: usize,
+}
+#[repr(C)]
+pub struct ISerialDeviceStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub GetDeviceSelector: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub GetDeviceSelectorFromPortName: unsafe extern "system" fn(this: *mut *mut Self, portname: ::windows_sys::core::HSTRING, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub GetDeviceSelectorFromUsbVidPid: unsafe extern "system" fn(this: *mut *mut Self, vendorid: u16, productid: u16, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub FromIdAsync: unsafe extern "system" fn(this: *mut *mut Self, deviceid: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    FromIdAsync: usize,
+}
 pub type PinChangedEventArgs = *mut ::core::ffi::c_void;
 pub type SerialDevice = *mut ::core::ffi::c_void;
 #[doc = "*Required features: `\"Devices_SerialCommunication\"`*"]

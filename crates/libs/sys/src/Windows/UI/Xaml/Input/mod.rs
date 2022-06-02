@@ -51,7 +51,734 @@ impl ::core::clone::Clone for FocusNavigationDirection {
 pub type GettingFocusEventArgs = *mut ::core::ffi::c_void;
 pub type HoldingEventHandler = *mut ::core::ffi::c_void;
 pub type HoldingRoutedEventArgs = *mut ::core::ffi::c_void;
-pub type ICommand = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IAccessKeyDisplayDismissedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IAccessKeyDisplayRequestedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub PressedKeys: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAccessKeyInvokedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Handled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetHandled: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAccessKeyManager {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IAccessKeyManagerStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub IsDisplayModeEnabled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub IsDisplayModeEnabledChanged: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    IsDisplayModeEnabledChanged: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveIsDisplayModeEnabledChanged: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveIsDisplayModeEnabledChanged: usize,
+    pub ExitDisplayMode: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAccessKeyManagerStatics2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub AreKeyTipsEnabled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetAreKeyTipsEnabled: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ICanExecuteRequestedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Parameter: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CanExecute: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetCanExecute: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ICharacterReceivedRoutedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Character: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "UI_Core")]
+    pub KeyStatus: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Core::CorePhysicalKeyStatus) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Core"))]
+    KeyStatus: usize,
+    pub Handled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetHandled: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ICommand {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub CanExecuteChanged: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    CanExecuteChanged: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveCanExecuteChanged: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveCanExecuteChanged: usize,
+    pub CanExecute: unsafe extern "system" fn(this: *mut *mut Self, parameter: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub Execute: unsafe extern "system" fn(this: *mut *mut Self, parameter: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IContextRequestedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Handled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetHandled: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub TryGetPosition: unsafe extern "system" fn(this: *mut *mut Self, relativeto: *mut ::core::ffi::c_void, point: *mut super::super::super::Foundation::Point, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    TryGetPosition: usize,
+}
+#[repr(C)]
+pub struct IDoubleTappedRoutedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Devices_Input")]
+    pub PointerDeviceType: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::super::Devices::Input::PointerDeviceType) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Devices_Input"))]
+    PointerDeviceType: usize,
+    pub Handled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetHandled: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub GetPosition: unsafe extern "system" fn(this: *mut *mut Self, relativeto: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::Point) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    GetPosition: usize,
+}
+#[repr(C)]
+pub struct IExecuteRequestedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Parameter: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IFindNextElementOptions {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub SearchRoot: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetSearchRoot: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub ExclusionRect: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::super::Foundation::Rect) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    ExclusionRect: usize,
+    #[cfg(feature = "Foundation")]
+    pub SetExclusionRect: unsafe extern "system" fn(this: *mut *mut Self, value: super::super::super::Foundation::Rect) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    SetExclusionRect: usize,
+    #[cfg(feature = "Foundation")]
+    pub HintRect: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::super::Foundation::Rect) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    HintRect: usize,
+    #[cfg(feature = "Foundation")]
+    pub SetHintRect: unsafe extern "system" fn(this: *mut *mut Self, value: super::super::super::Foundation::Rect) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    SetHintRect: usize,
+    pub XYFocusNavigationStrategyOverride: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut XYFocusNavigationStrategyOverride) -> ::windows_sys::core::HRESULT,
+    pub SetXYFocusNavigationStrategyOverride: unsafe extern "system" fn(this: *mut *mut Self, value: XYFocusNavigationStrategyOverride) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IFocusManager {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IFocusManagerGotFocusEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub NewFocusedElement: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CorrelationId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IFocusManagerLostFocusEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub OldFocusedElement: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CorrelationId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IFocusManagerStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub GetFocusedElement: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IFocusManagerStatics2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub TryMoveFocus: unsafe extern "system" fn(this: *mut *mut Self, focusnavigationdirection: FocusNavigationDirection, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IFocusManagerStatics3 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub FindNextFocusableElement: unsafe extern "system" fn(this: *mut *mut Self, focusnavigationdirection: FocusNavigationDirection, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub FindNextFocusableElementWithHint: unsafe extern "system" fn(this: *mut *mut Self, focusnavigationdirection: FocusNavigationDirection, hintrect: super::super::super::Foundation::Rect, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    FindNextFocusableElementWithHint: usize,
+}
+#[repr(C)]
+pub struct IFocusManagerStatics4 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub TryMoveFocusWithOptions: unsafe extern "system" fn(this: *mut *mut Self, focusnavigationdirection: FocusNavigationDirection, focusnavigationoptions: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub FindNextElement: unsafe extern "system" fn(this: *mut *mut Self, focusnavigationdirection: FocusNavigationDirection, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub FindFirstFocusableElement: unsafe extern "system" fn(this: *mut *mut Self, searchscope: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub FindLastFocusableElement: unsafe extern "system" fn(this: *mut *mut Self, searchscope: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub FindNextElementWithOptions: unsafe extern "system" fn(this: *mut *mut Self, focusnavigationdirection: FocusNavigationDirection, focusnavigationoptions: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IFocusManagerStatics5 {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub TryFocusAsync: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, value: super::FocusState, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    TryFocusAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub TryMoveFocusAsync: unsafe extern "system" fn(this: *mut *mut Self, focusnavigationdirection: FocusNavigationDirection, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    TryMoveFocusAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub TryMoveFocusWithOptionsAsync: unsafe extern "system" fn(this: *mut *mut Self, focusnavigationdirection: FocusNavigationDirection, focusnavigationoptions: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    TryMoveFocusWithOptionsAsync: usize,
+}
+#[repr(C)]
+pub struct IFocusManagerStatics6 {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub GotFocus: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    GotFocus: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveGotFocus: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveGotFocus: usize,
+    #[cfg(feature = "Foundation")]
+    pub LostFocus: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    LostFocus: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveLostFocus: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveLostFocus: usize,
+    #[cfg(feature = "Foundation")]
+    pub GettingFocus: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    GettingFocus: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveGettingFocus: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveGettingFocus: usize,
+    #[cfg(feature = "Foundation")]
+    pub LosingFocus: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    LosingFocus: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveLosingFocus: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveLosingFocus: usize,
+}
+#[repr(C)]
+pub struct IFocusManagerStatics7 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub GetFocusedElement: unsafe extern "system" fn(this: *mut *mut Self, xamlroot: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IFocusMovementResult {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Succeeded: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IGettingFocusEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub OldFocusedElement: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub NewFocusedElement: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetNewFocusedElement: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub FocusState: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::FocusState) -> ::windows_sys::core::HRESULT,
+    pub Direction: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut FocusNavigationDirection) -> ::windows_sys::core::HRESULT,
+    pub Handled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetHandled: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+    pub InputDevice: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut FocusInputDeviceKind) -> ::windows_sys::core::HRESULT,
+    pub Cancel: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetCancel: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IGettingFocusEventArgs2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub TryCancel: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub TrySetNewFocusedElement: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IGettingFocusEventArgs3 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CorrelationId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IHoldingRoutedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Devices_Input")]
+    pub PointerDeviceType: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::super::Devices::Input::PointerDeviceType) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Devices_Input"))]
+    PointerDeviceType: usize,
+    #[cfg(feature = "UI_Input")]
+    pub HoldingState: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Input::HoldingState) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Input"))]
+    HoldingState: usize,
+    pub Handled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetHandled: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub GetPosition: unsafe extern "system" fn(this: *mut *mut Self, relativeto: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::Point) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    GetPosition: usize,
+}
+#[repr(C)]
+pub struct IInertiaExpansionBehavior {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub DesiredDeceleration: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f64) -> ::windows_sys::core::HRESULT,
+    pub SetDesiredDeceleration: unsafe extern "system" fn(this: *mut *mut Self, value: f64) -> ::windows_sys::core::HRESULT,
+    pub DesiredExpansion: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f64) -> ::windows_sys::core::HRESULT,
+    pub SetDesiredExpansion: unsafe extern "system" fn(this: *mut *mut Self, value: f64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IInertiaRotationBehavior {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub DesiredDeceleration: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f64) -> ::windows_sys::core::HRESULT,
+    pub SetDesiredDeceleration: unsafe extern "system" fn(this: *mut *mut Self, value: f64) -> ::windows_sys::core::HRESULT,
+    pub DesiredRotation: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f64) -> ::windows_sys::core::HRESULT,
+    pub SetDesiredRotation: unsafe extern "system" fn(this: *mut *mut Self, value: f64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IInertiaTranslationBehavior {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub DesiredDeceleration: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f64) -> ::windows_sys::core::HRESULT,
+    pub SetDesiredDeceleration: unsafe extern "system" fn(this: *mut *mut Self, value: f64) -> ::windows_sys::core::HRESULT,
+    pub DesiredDisplacement: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f64) -> ::windows_sys::core::HRESULT,
+    pub SetDesiredDisplacement: unsafe extern "system" fn(this: *mut *mut Self, value: f64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IInputScope {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation_Collections")]
+    pub Names: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    Names: usize,
+}
+#[repr(C)]
+pub struct IInputScopeName {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub NameValue: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut InputScopeNameValue) -> ::windows_sys::core::HRESULT,
+    pub SetNameValue: unsafe extern "system" fn(this: *mut *mut Self, value: InputScopeNameValue) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IInputScopeNameFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CreateInstance: unsafe extern "system" fn(this: *mut *mut Self, namevalue: InputScopeNameValue, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IKeyRoutedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "System")]
+    pub Key: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::super::System::VirtualKey) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "System"))]
+    Key: usize,
+    #[cfg(feature = "UI_Core")]
+    pub KeyStatus: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Core::CorePhysicalKeyStatus) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Core"))]
+    KeyStatus: usize,
+    pub Handled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetHandled: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IKeyRoutedEventArgs2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "System")]
+    pub OriginalKey: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::super::System::VirtualKey) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "System"))]
+    OriginalKey: usize,
+}
+#[repr(C)]
+pub struct IKeyRoutedEventArgs3 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub DeviceId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IKeyboardAccelerator {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "System")]
+    pub Key: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::super::System::VirtualKey) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "System"))]
+    Key: usize,
+    #[cfg(feature = "System")]
+    pub SetKey: unsafe extern "system" fn(this: *mut *mut Self, value: super::super::super::System::VirtualKey) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "System"))]
+    SetKey: usize,
+    #[cfg(feature = "System")]
+    pub Modifiers: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::super::System::VirtualKeyModifiers) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "System"))]
+    Modifiers: usize,
+    #[cfg(feature = "System")]
+    pub SetModifiers: unsafe extern "system" fn(this: *mut *mut Self, value: super::super::super::System::VirtualKeyModifiers) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "System"))]
+    SetModifiers: usize,
+    pub IsEnabled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetIsEnabled: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+    pub ScopeOwner: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetScopeOwner: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub Invoked: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    Invoked: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveInvoked: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveInvoked: usize,
+}
+#[repr(C)]
+pub struct IKeyboardAcceleratorFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CreateInstance: unsafe extern "system" fn(this: *mut *mut Self, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IKeyboardAcceleratorInvokedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Handled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetHandled: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+    pub Element: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IKeyboardAcceleratorInvokedEventArgs2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub KeyboardAccelerator: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IKeyboardAcceleratorStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub KeyProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ModifiersProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub IsEnabledProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ScopeOwnerProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ILosingFocusEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub OldFocusedElement: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub NewFocusedElement: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetNewFocusedElement: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub FocusState: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::FocusState) -> ::windows_sys::core::HRESULT,
+    pub Direction: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut FocusNavigationDirection) -> ::windows_sys::core::HRESULT,
+    pub Handled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetHandled: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+    pub InputDevice: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut FocusInputDeviceKind) -> ::windows_sys::core::HRESULT,
+    pub Cancel: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetCancel: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ILosingFocusEventArgs2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub TryCancel: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub TrySetNewFocusedElement: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ILosingFocusEventArgs3 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CorrelationId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IManipulationCompletedRoutedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Container: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub Position: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::super::Foundation::Point) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    Position: usize,
+    pub IsInertial: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Foundation", feature = "UI_Input"))]
+    pub Cumulative: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Input::ManipulationDelta) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation", feature = "UI_Input")))]
+    Cumulative: usize,
+    #[cfg(all(feature = "Foundation", feature = "UI_Input"))]
+    pub Velocities: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Input::ManipulationVelocities) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation", feature = "UI_Input")))]
+    Velocities: usize,
+    pub Handled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetHandled: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Devices_Input")]
+    pub PointerDeviceType: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::super::Devices::Input::PointerDeviceType) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Devices_Input"))]
+    PointerDeviceType: usize,
+}
+#[repr(C)]
+pub struct IManipulationDeltaRoutedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Container: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub Position: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::super::Foundation::Point) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    Position: usize,
+    pub IsInertial: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Foundation", feature = "UI_Input"))]
+    pub Delta: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Input::ManipulationDelta) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation", feature = "UI_Input")))]
+    Delta: usize,
+    #[cfg(all(feature = "Foundation", feature = "UI_Input"))]
+    pub Cumulative: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Input::ManipulationDelta) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation", feature = "UI_Input")))]
+    Cumulative: usize,
+    #[cfg(all(feature = "Foundation", feature = "UI_Input"))]
+    pub Velocities: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Input::ManipulationVelocities) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation", feature = "UI_Input")))]
+    Velocities: usize,
+    pub Handled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetHandled: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Devices_Input")]
+    pub PointerDeviceType: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::super::Devices::Input::PointerDeviceType) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Devices_Input"))]
+    PointerDeviceType: usize,
+    pub Complete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IManipulationInertiaStartingRoutedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Container: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ExpansionBehavior: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetExpansionBehavior: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RotationBehavior: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetRotationBehavior: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub TranslationBehavior: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetTranslationBehavior: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Handled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetHandled: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Devices_Input")]
+    pub PointerDeviceType: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::super::Devices::Input::PointerDeviceType) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Devices_Input"))]
+    PointerDeviceType: usize,
+    #[cfg(all(feature = "Foundation", feature = "UI_Input"))]
+    pub Delta: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Input::ManipulationDelta) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation", feature = "UI_Input")))]
+    Delta: usize,
+    #[cfg(all(feature = "Foundation", feature = "UI_Input"))]
+    pub Cumulative: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Input::ManipulationDelta) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation", feature = "UI_Input")))]
+    Cumulative: usize,
+    #[cfg(all(feature = "Foundation", feature = "UI_Input"))]
+    pub Velocities: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Input::ManipulationVelocities) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation", feature = "UI_Input")))]
+    Velocities: usize,
+}
+#[repr(C)]
+pub struct IManipulationPivot {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub Center: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::super::Foundation::Point) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    Center: usize,
+    #[cfg(feature = "Foundation")]
+    pub SetCenter: unsafe extern "system" fn(this: *mut *mut Self, value: super::super::super::Foundation::Point) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    SetCenter: usize,
+    pub Radius: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f64) -> ::windows_sys::core::HRESULT,
+    pub SetRadius: unsafe extern "system" fn(this: *mut *mut Self, value: f64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IManipulationPivotFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub CreateInstanceWithCenterAndRadius: unsafe extern "system" fn(this: *mut *mut Self, center: super::super::super::Foundation::Point, radius: f64, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    CreateInstanceWithCenterAndRadius: usize,
+}
+#[repr(C)]
+pub struct IManipulationStartedRoutedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Container: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub Position: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::super::Foundation::Point) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    Position: usize,
+    pub Handled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetHandled: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Devices_Input")]
+    pub PointerDeviceType: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::super::Devices::Input::PointerDeviceType) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Devices_Input"))]
+    PointerDeviceType: usize,
+    #[cfg(all(feature = "Foundation", feature = "UI_Input"))]
+    pub Cumulative: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Input::ManipulationDelta) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation", feature = "UI_Input")))]
+    Cumulative: usize,
+    pub Complete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IManipulationStartedRoutedEventArgsFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CreateInstance: unsafe extern "system" fn(this: *mut *mut Self, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IManipulationStartingRoutedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Mode: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ManipulationModes) -> ::windows_sys::core::HRESULT,
+    pub SetMode: unsafe extern "system" fn(this: *mut *mut Self, value: ManipulationModes) -> ::windows_sys::core::HRESULT,
+    pub Container: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetContainer: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Pivot: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetPivot: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Handled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetHandled: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct INoFocusCandidateFoundEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Direction: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut FocusNavigationDirection) -> ::windows_sys::core::HRESULT,
+    pub Handled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetHandled: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+    pub InputDevice: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut FocusInputDeviceKind) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPointer {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub PointerId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Devices_Input")]
+    pub PointerDeviceType: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::super::Devices::Input::PointerDeviceType) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Devices_Input"))]
+    PointerDeviceType: usize,
+    pub IsInContact: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub IsInRange: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPointerRoutedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Pointer: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "System")]
+    pub KeyModifiers: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::super::System::VirtualKeyModifiers) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "System"))]
+    KeyModifiers: usize,
+    pub Handled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetHandled: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "UI_Input")]
+    pub GetCurrentPoint: unsafe extern "system" fn(this: *mut *mut Self, relativeto: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Input"))]
+    GetCurrentPoint: usize,
+    #[cfg(all(feature = "Foundation_Collections", feature = "UI_Input"))]
+    pub GetIntermediatePoints: unsafe extern "system" fn(this: *mut *mut Self, relativeto: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation_Collections", feature = "UI_Input")))]
+    GetIntermediatePoints: usize,
+}
+#[repr(C)]
+pub struct IPointerRoutedEventArgs2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub IsGenerated: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IProcessKeyboardAcceleratorEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "System")]
+    pub Key: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::super::System::VirtualKey) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "System"))]
+    Key: usize,
+    #[cfg(feature = "System")]
+    pub Modifiers: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::super::System::VirtualKeyModifiers) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "System"))]
+    Modifiers: usize,
+    pub Handled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetHandled: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRightTappedRoutedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Devices_Input")]
+    pub PointerDeviceType: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::super::Devices::Input::PointerDeviceType) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Devices_Input"))]
+    PointerDeviceType: usize,
+    pub Handled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetHandled: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub GetPosition: unsafe extern "system" fn(this: *mut *mut Self, relativeto: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::Point) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    GetPosition: usize,
+}
+#[repr(C)]
+pub struct IStandardUICommand {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Kind: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut StandardUICommandKind) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IStandardUICommand2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub SetKind: unsafe extern "system" fn(this: *mut *mut Self, value: StandardUICommandKind) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IStandardUICommandFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CreateInstance: unsafe extern "system" fn(this: *mut *mut Self, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateInstanceWithKind: unsafe extern "system" fn(this: *mut *mut Self, kind: StandardUICommandKind, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IStandardUICommandStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub KindProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITappedRoutedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Devices_Input")]
+    pub PointerDeviceType: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::super::Devices::Input::PointerDeviceType) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Devices_Input"))]
+    PointerDeviceType: usize,
+    pub Handled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetHandled: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub GetPosition: unsafe extern "system" fn(this: *mut *mut Self, relativeto: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::Point) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    GetPosition: usize,
+}
+#[repr(C)]
+pub struct IXamlUICommand {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Label: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetLabel: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "UI_Xaml_Controls")]
+    pub IconSource: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    IconSource: usize,
+    #[cfg(feature = "UI_Xaml_Controls")]
+    pub SetIconSource: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    SetIconSource: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub KeyboardAccelerators: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    KeyboardAccelerators: usize,
+    pub AccessKey: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetAccessKey: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Description: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetDescription: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Command: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetCommand: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub ExecuteRequested: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    ExecuteRequested: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveExecuteRequested: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveExecuteRequested: usize,
+    #[cfg(feature = "Foundation")]
+    pub CanExecuteRequested: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    CanExecuteRequested: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveCanExecuteRequested: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveCanExecuteRequested: usize,
+    pub NotifyCanExecuteChanged: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IXamlUICommandFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CreateInstance: unsafe extern "system" fn(this: *mut *mut Self, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IXamlUICommandStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub LabelProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub IconSourceProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub KeyboardAcceleratorsProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AccessKeyProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub DescriptionProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CommandProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
 pub type InertiaExpansionBehavior = *mut ::core::ffi::c_void;
 pub type InertiaRotationBehavior = *mut ::core::ffi::c_void;
 pub type InertiaTranslationBehavior = *mut ::core::ffi::c_void;

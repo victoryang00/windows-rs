@@ -2,6 +2,53 @@
 pub mod Core;
 #[cfg(feature = "Security_Authentication_Web_Provider")]
 pub mod Provider;
+#[repr(C)]
+pub struct IWebAuthenticationBrokerStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub AuthenticateWithCallbackUriAsync: unsafe extern "system" fn(this: *mut *mut Self, options: WebAuthenticationOptions, requesturi: *mut ::core::ffi::c_void, callbackuri: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    AuthenticateWithCallbackUriAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub AuthenticateWithoutCallbackUriAsync: unsafe extern "system" fn(this: *mut *mut Self, options: WebAuthenticationOptions, requesturi: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    AuthenticateWithoutCallbackUriAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub GetCurrentApplicationCallbackUri: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    GetCurrentApplicationCallbackUri: usize,
+}
+#[repr(C)]
+pub struct IWebAuthenticationBrokerStatics2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub AuthenticateAndContinue: unsafe extern "system" fn(this: *mut *mut Self, requesturi: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    AuthenticateAndContinue: usize,
+    #[cfg(feature = "Foundation")]
+    pub AuthenticateWithCallbackUriAndContinue: unsafe extern "system" fn(this: *mut *mut Self, requesturi: *mut ::core::ffi::c_void, callbackuri: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    AuthenticateWithCallbackUriAndContinue: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub AuthenticateWithCallbackUriContinuationDataAndOptionsAndContinue: unsafe extern "system" fn(this: *mut *mut Self, requesturi: *mut ::core::ffi::c_void, callbackuri: *mut ::core::ffi::c_void, continuationdata: *mut ::core::ffi::c_void, options: WebAuthenticationOptions) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    AuthenticateWithCallbackUriContinuationDataAndOptionsAndContinue: usize,
+    #[cfg(feature = "Foundation")]
+    pub AuthenticateSilentlyAsync: unsafe extern "system" fn(this: *mut *mut Self, requesturi: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    AuthenticateSilentlyAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub AuthenticateSilentlyWithOptionsAsync: unsafe extern "system" fn(this: *mut *mut Self, requesturi: *mut ::core::ffi::c_void, options: WebAuthenticationOptions, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    AuthenticateSilentlyWithOptionsAsync: usize,
+}
+#[repr(C)]
+pub struct IWebAuthenticationResult {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub ResponseData: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub ResponseStatus: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut WebAuthenticationStatus) -> ::windows_sys::core::HRESULT,
+    pub ResponseErrorDetail: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+}
 #[doc = "*Required features: `\"Security_Authentication_Web\"`*"]
 #[repr(transparent)]
 pub struct TokenBindingKeyType(pub i32);

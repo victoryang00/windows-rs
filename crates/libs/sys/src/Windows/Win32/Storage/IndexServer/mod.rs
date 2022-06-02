@@ -2,12 +2,12 @@
 extern "system" {
     #[doc = "*Required features: `\"Win32_Storage_IndexServer\"`, `\"Win32_System_Com_StructuredStorage\"`*"]
     #[cfg(feature = "Win32_System_Com_StructuredStorage")]
-    pub fn BindIFilterFromStorage(pstg: super::super::System::Com::StructuredStorage::IStorage, punkouter: ::windows_sys::core::IUnknown, ppiunk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn BindIFilterFromStorage(pstg: *mut *mut super::super::System::Com::StructuredStorage::IStorage, punkouter: *mut *mut ::windows_sys::core::IUnknown, ppiunk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Storage_IndexServer\"`, `\"Win32_System_Com\"`*"]
     #[cfg(feature = "Win32_System_Com")]
-    pub fn BindIFilterFromStream(pstm: super::super::System::Com::IStream, punkouter: ::windows_sys::core::IUnknown, ppiunk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn BindIFilterFromStream(pstm: *mut *mut super::super::System::Com::IStream, punkouter: *mut *mut ::windows_sys::core::IUnknown, ppiunk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Storage_IndexServer\"`*"]
-    pub fn LoadIFilter(pwcspath: ::windows_sys::core::PCWSTR, punkouter: ::windows_sys::core::IUnknown, ppiunk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
+    pub fn LoadIFilter(pwcspath: ::windows_sys::core::PCWSTR, punkouter: *mut *mut ::windows_sys::core::IUnknown, ppiunk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Storage_IndexServer\"`*"]
     pub fn LoadIFilterEx(pwcspath: ::windows_sys::core::PCWSTR, dwflags: u32, riid: *const ::windows_sys::core::GUID, ppiunk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
 }
@@ -380,8 +380,30 @@ pub const IFILTER_INIT_FILTER_AGGRESSIVE_BREAK: IFILTER_INIT = 1024i32;
 pub const IFILTER_INIT_DISABLE_EMBEDDED: IFILTER_INIT = 2048i32;
 #[doc = "*Required features: `\"Win32_Storage_IndexServer\"`*"]
 pub const IFILTER_INIT_EMIT_FORMATTING: IFILTER_INIT = 4096i32;
-pub type IFilter = *mut ::core::ffi::c_void;
-pub type IPhraseSink = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IFilter {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    pub Init: unsafe extern "system" fn(this: *mut *mut Self, grfflags: u32, cattributes: u32, aattributes: *const FULLPROPSPEC, pflags: *mut u32) -> i32,
+    #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
+    Init: usize,
+    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    pub GetChunk: unsafe extern "system" fn(this: *mut *mut Self, pstat: *mut STAT_CHUNK) -> i32,
+    #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
+    GetChunk: usize,
+    pub GetText: unsafe extern "system" fn(this: *mut *mut Self, pcwcbuffer: *mut u32, awcbuffer: ::windows_sys::core::PWSTR) -> i32,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    pub GetValue: unsafe extern "system" fn(this: *mut *mut Self, pppropvalue: *mut *mut super::super::System::Com::StructuredStorage::PROPVARIANT) -> i32,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    GetValue: usize,
+    pub BindRegion: unsafe extern "system" fn(this: *mut *mut Self, origpos: FILTERREGION, riid: *const ::windows_sys::core::GUID, ppunk: *mut *mut ::core::ffi::c_void) -> i32,
+}
+#[repr(C)]
+pub struct IPhraseSink {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub PutSmallPhrase: unsafe extern "system" fn(this: *mut *mut Self, pwcnoun: ::windows_sys::core::PCWSTR, cwcnoun: u32, pwcmodifier: ::windows_sys::core::PCWSTR, cwcmodifier: u32, ulattachmenttype: u32) -> ::windows_sys::core::HRESULT,
+    pub PutPhrase: unsafe extern "system" fn(this: *mut *mut Self, pwcphrase: ::windows_sys::core::PCWSTR, cwcphrase: u32) -> ::windows_sys::core::HRESULT,
+}
 #[doc = "*Required features: `\"Win32_Storage_IndexServer\"`*"]
 pub const LIFF_FORCE_TEXT_FILTER_FALLBACK: u32 = 3u32;
 #[doc = "*Required features: `\"Win32_Storage_IndexServer\"`*"]

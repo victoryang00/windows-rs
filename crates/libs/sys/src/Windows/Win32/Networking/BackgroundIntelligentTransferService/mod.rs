@@ -1,4 +1,13 @@
-pub type AsyncIBackgroundCopyCallback = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct AsyncIBackgroundCopyCallback {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Begin_JobTransferred: unsafe extern "system" fn(this: *mut *mut Self, pjob: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Finish_JobTransferred: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Begin_JobError: unsafe extern "system" fn(this: *mut *mut Self, pjob: *mut ::core::ffi::c_void, perror: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Finish_JobError: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Begin_JobModification: unsafe extern "system" fn(this: *mut *mut Self, pjob: *mut ::core::ffi::c_void, dwreserved: u32) -> ::windows_sys::core::HRESULT,
+    pub Finish_JobModification: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Networking_BackgroundIntelligentTransferService\"`*"]
 pub struct BG_AUTH_CREDENTIALS {
@@ -710,42 +719,393 @@ pub const GROUPPROP_PROGRESSTIME: GROUPPROP = 10i32;
 pub const GROUPPROP_DISPLAYNAME: GROUPPROP = 11i32;
 #[doc = "*Required features: `\"Win32_Networking_BackgroundIntelligentTransferService\"`*"]
 pub const GROUPPROP_DESCRIPTION: GROUPPROP = 12i32;
-pub type IBITSExtensionSetup = *mut ::core::ffi::c_void;
-pub type IBITSExtensionSetupFactory = *mut ::core::ffi::c_void;
-pub type IBackgroundCopyCallback = *mut ::core::ffi::c_void;
-pub type IBackgroundCopyCallback1 = *mut ::core::ffi::c_void;
-pub type IBackgroundCopyCallback2 = *mut ::core::ffi::c_void;
-pub type IBackgroundCopyCallback3 = *mut ::core::ffi::c_void;
-pub type IBackgroundCopyError = *mut ::core::ffi::c_void;
-pub type IBackgroundCopyFile = *mut ::core::ffi::c_void;
-pub type IBackgroundCopyFile2 = *mut ::core::ffi::c_void;
-pub type IBackgroundCopyFile3 = *mut ::core::ffi::c_void;
-pub type IBackgroundCopyFile4 = *mut ::core::ffi::c_void;
-pub type IBackgroundCopyFile5 = *mut ::core::ffi::c_void;
-pub type IBackgroundCopyFile6 = *mut ::core::ffi::c_void;
-pub type IBackgroundCopyGroup = *mut ::core::ffi::c_void;
-pub type IBackgroundCopyJob = *mut ::core::ffi::c_void;
-pub type IBackgroundCopyJob1 = *mut ::core::ffi::c_void;
-pub type IBackgroundCopyJob2 = *mut ::core::ffi::c_void;
-pub type IBackgroundCopyJob3 = *mut ::core::ffi::c_void;
-pub type IBackgroundCopyJob4 = *mut ::core::ffi::c_void;
-pub type IBackgroundCopyJob5 = *mut ::core::ffi::c_void;
-pub type IBackgroundCopyJobHttpOptions = *mut ::core::ffi::c_void;
-pub type IBackgroundCopyJobHttpOptions2 = *mut ::core::ffi::c_void;
-pub type IBackgroundCopyJobHttpOptions3 = *mut ::core::ffi::c_void;
-pub type IBackgroundCopyManager = *mut ::core::ffi::c_void;
-pub type IBackgroundCopyQMgr = *mut ::core::ffi::c_void;
-pub type IBackgroundCopyServerCertificateValidationCallback = *mut ::core::ffi::c_void;
-pub type IBitsPeer = *mut ::core::ffi::c_void;
-pub type IBitsPeerCacheAdministration = *mut ::core::ffi::c_void;
-pub type IBitsPeerCacheRecord = *mut ::core::ffi::c_void;
-pub type IBitsTokenOptions = *mut ::core::ffi::c_void;
-pub type IEnumBackgroundCopyFiles = *mut ::core::ffi::c_void;
-pub type IEnumBackgroundCopyGroups = *mut ::core::ffi::c_void;
-pub type IEnumBackgroundCopyJobs = *mut ::core::ffi::c_void;
-pub type IEnumBackgroundCopyJobs1 = *mut ::core::ffi::c_void;
-pub type IEnumBitsPeerCacheRecords = *mut ::core::ffi::c_void;
-pub type IEnumBitsPeers = *mut ::core::ffi::c_void;
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IBITSExtensionSetup {
+    pub base__: super::super::System::Com::IDispatch,
+    pub EnableBITSUploads: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub DisableBITSUploads: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetCleanupTaskName: unsafe extern "system" fn(this: *mut *mut Self, ptaskname: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetCleanupTaskName: usize,
+    pub GetCleanupTask: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppunk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IBITSExtensionSetupFactory {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub GetObject: unsafe extern "system" fn(this: *mut *mut Self, path: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppextensionsetup: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    GetObject: usize,
+}
+#[repr(C)]
+pub struct IBackgroundCopyCallback {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub JobTransferred: unsafe extern "system" fn(this: *mut *mut Self, pjob: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub JobError: unsafe extern "system" fn(this: *mut *mut Self, pjob: *mut ::core::ffi::c_void, perror: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub JobModification: unsafe extern "system" fn(this: *mut *mut Self, pjob: *mut ::core::ffi::c_void, dwreserved: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IBackgroundCopyCallback1 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnStatus: unsafe extern "system" fn(this: *mut *mut Self, pgroup: *mut ::core::ffi::c_void, pjob: *mut ::core::ffi::c_void, dwfileindex: u32, dwstatus: u32, dwnumofretries: u32, dwwin32result: u32, dwtransportresult: u32) -> ::windows_sys::core::HRESULT,
+    pub OnProgress: unsafe extern "system" fn(this: *mut *mut Self, progresstype: u32, pgroup: *mut ::core::ffi::c_void, pjob: *mut ::core::ffi::c_void, dwfileindex: u32, dwprogressvalue: u32) -> ::windows_sys::core::HRESULT,
+    pub OnProgressEx: unsafe extern "system" fn(this: *mut *mut Self, progresstype: u32, pgroup: *mut ::core::ffi::c_void, pjob: *mut ::core::ffi::c_void, dwfileindex: u32, dwprogressvalue: u32, dwbytearraysize: u32, pbyte: *const u8) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IBackgroundCopyCallback2 {
+    pub base__: IBackgroundCopyCallback,
+    pub FileTransferred: unsafe extern "system" fn(this: *mut *mut Self, pjob: *mut ::core::ffi::c_void, pfile: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IBackgroundCopyCallback3 {
+    pub base__: IBackgroundCopyCallback2,
+    pub FileRangesTransferred: unsafe extern "system" fn(this: *mut *mut Self, job: *mut ::core::ffi::c_void, file: *mut ::core::ffi::c_void, rangecount: u32, ranges: *const BG_FILE_RANGE) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IBackgroundCopyError {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetError: unsafe extern "system" fn(this: *mut *mut Self, pcontext: *mut BG_ERROR_CONTEXT, pcode: *mut ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+    pub GetFile: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetErrorDescription: unsafe extern "system" fn(this: *mut *mut Self, languageid: u32, perrordescription: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetErrorContextDescription: unsafe extern "system" fn(this: *mut *mut Self, languageid: u32, pcontextdescription: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetProtocol: unsafe extern "system" fn(this: *mut *mut Self, pprotocol: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IBackgroundCopyFile {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetRemoteName: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetLocalName: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetProgress: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut BG_FILE_PROGRESS) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetProgress: usize,
+}
+#[repr(C)]
+pub struct IBackgroundCopyFile2 {
+    pub base__: IBackgroundCopyFile,
+    pub GetFileRanges: unsafe extern "system" fn(this: *mut *mut Self, rangecount: *mut u32, ranges: *mut *mut BG_FILE_RANGE) -> ::windows_sys::core::HRESULT,
+    pub SetRemoteName: unsafe extern "system" fn(this: *mut *mut Self, val: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IBackgroundCopyFile3 {
+    pub base__: IBackgroundCopyFile2,
+    pub GetTemporaryName: unsafe extern "system" fn(this: *mut *mut Self, pfilename: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetValidationState: unsafe extern "system" fn(this: *mut *mut Self, state: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetValidationState: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetValidationState: unsafe extern "system" fn(this: *mut *mut Self, pstate: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetValidationState: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsDownloadedFromPeer: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsDownloadedFromPeer: usize,
+}
+#[repr(C)]
+pub struct IBackgroundCopyFile4 {
+    pub base__: IBackgroundCopyFile3,
+    pub GetPeerDownloadStats: unsafe extern "system" fn(this: *mut *mut Self, pfromorigin: *mut u64, pfrompeers: *mut u64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IBackgroundCopyFile5 {
+    pub base__: IBackgroundCopyFile4,
+    pub SetProperty: unsafe extern "system" fn(this: *mut *mut Self, propertyid: BITS_FILE_PROPERTY_ID, propertyvalue: BITS_FILE_PROPERTY_VALUE) -> ::windows_sys::core::HRESULT,
+    pub GetProperty: unsafe extern "system" fn(this: *mut *mut Self, propertyid: BITS_FILE_PROPERTY_ID, propertyvalue: *mut BITS_FILE_PROPERTY_VALUE) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IBackgroundCopyFile6 {
+    pub base__: IBackgroundCopyFile5,
+    pub UpdateDownloadPosition: unsafe extern "system" fn(this: *mut *mut Self, offset: u64) -> ::windows_sys::core::HRESULT,
+    pub RequestFileRanges: unsafe extern "system" fn(this: *mut *mut Self, rangecount: u32, ranges: *const BG_FILE_RANGE) -> ::windows_sys::core::HRESULT,
+    pub GetFilledFileRanges: unsafe extern "system" fn(this: *mut *mut Self, rangecount: *mut u32, ranges: *mut *mut BG_FILE_RANGE) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IBackgroundCopyGroup {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetProp: unsafe extern "system" fn(this: *mut *mut Self, propid: GROUPPROP, pvarval: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetProp: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetProp: unsafe extern "system" fn(this: *mut *mut Self, propid: GROUPPROP, pvarval: *const super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetProp: usize,
+    pub GetProgress: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, pdwprogress: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetStatus: unsafe extern "system" fn(this: *mut *mut Self, pdwstatus: *mut u32, pdwjobindex: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetJob: unsafe extern "system" fn(this: *mut *mut Self, jobid: ::windows_sys::core::GUID, ppjob: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SuspendGroup: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub ResumeGroup: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub CancelGroup: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Size: unsafe extern "system" fn(this: *mut *mut Self, pdwsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GroupID: unsafe extern "system" fn(this: *mut *mut Self, pguidgroupid: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub CreateJob: unsafe extern "system" fn(this: *mut *mut Self, guidjobid: ::windows_sys::core::GUID, ppjob: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EnumJobs: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, ppenumjobs: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SwitchToForeground: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub QueryNewJobInterface: unsafe extern "system" fn(this: *mut *mut Self, iid: *const ::windows_sys::core::GUID, punk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetNotificationPointer: unsafe extern "system" fn(this: *mut *mut Self, iid: *const ::windows_sys::core::GUID, punk: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IBackgroundCopyJob {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub AddFileSet: unsafe extern "system" fn(this: *mut *mut Self, cfilecount: u32, pfileset: *const BG_FILE_INFO) -> ::windows_sys::core::HRESULT,
+    pub AddFile: unsafe extern "system" fn(this: *mut *mut Self, remoteurl: ::windows_sys::core::PCWSTR, localname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub EnumFiles: unsafe extern "system" fn(this: *mut *mut Self, penum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Suspend: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Resume: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Cancel: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Complete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetId: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub GetType: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut BG_JOB_TYPE) -> ::windows_sys::core::HRESULT,
+    pub GetProgress: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut BG_JOB_PROGRESS) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetTimes: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut BG_JOB_TIMES) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetTimes: usize,
+    pub GetState: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut BG_JOB_STATE) -> ::windows_sys::core::HRESULT,
+    pub GetError: unsafe extern "system" fn(this: *mut *mut Self, pperror: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetOwner: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetDisplayName: unsafe extern "system" fn(this: *mut *mut Self, val: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetDisplayName: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetDescription: unsafe extern "system" fn(this: *mut *mut Self, val: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetDescription: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetPriority: unsafe extern "system" fn(this: *mut *mut Self, val: BG_JOB_PRIORITY) -> ::windows_sys::core::HRESULT,
+    pub GetPriority: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut BG_JOB_PRIORITY) -> ::windows_sys::core::HRESULT,
+    pub SetNotifyFlags: unsafe extern "system" fn(this: *mut *mut Self, val: u32) -> ::windows_sys::core::HRESULT,
+    pub GetNotifyFlags: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetNotifyInterface: unsafe extern "system" fn(this: *mut *mut Self, val: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetNotifyInterface: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetMinimumRetryDelay: unsafe extern "system" fn(this: *mut *mut Self, seconds: u32) -> ::windows_sys::core::HRESULT,
+    pub GetMinimumRetryDelay: unsafe extern "system" fn(this: *mut *mut Self, seconds: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetNoProgressTimeout: unsafe extern "system" fn(this: *mut *mut Self, seconds: u32) -> ::windows_sys::core::HRESULT,
+    pub GetNoProgressTimeout: unsafe extern "system" fn(this: *mut *mut Self, seconds: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetErrorCount: unsafe extern "system" fn(this: *mut *mut Self, errors: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetProxySettings: unsafe extern "system" fn(this: *mut *mut Self, proxyusage: BG_JOB_PROXY_USAGE, proxylist: ::windows_sys::core::PCWSTR, proxybypasslist: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetProxySettings: unsafe extern "system" fn(this: *mut *mut Self, pproxyusage: *mut BG_JOB_PROXY_USAGE, pproxylist: *mut ::windows_sys::core::PWSTR, pproxybypasslist: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub TakeOwnership: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IBackgroundCopyJob1 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub CancelJob: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetProgress: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, pdwprogress: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetStatus: unsafe extern "system" fn(this: *mut *mut Self, pdwstatus: *mut u32, pdwwin32result: *mut u32, pdwtransportresult: *mut u32, pdwnumofretries: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AddFiles: unsafe extern "system" fn(this: *mut *mut Self, cfilecount: u32, ppfileset: *const *const FILESETINFO) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AddFiles: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetFile: unsafe extern "system" fn(this: *mut *mut Self, cfileindex: u32, pfileinfo: *mut FILESETINFO) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetFile: usize,
+    pub GetFileCount: unsafe extern "system" fn(this: *mut *mut Self, pdwfilecount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SwitchToForeground: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub JobID: unsafe extern "system" fn(this: *mut *mut Self, pguidjobid: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IBackgroundCopyJob2 {
+    pub base__: IBackgroundCopyJob,
+    pub SetNotifyCmdLine: unsafe extern "system" fn(this: *mut *mut Self, program: ::windows_sys::core::PCWSTR, parameters: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetNotifyCmdLine: unsafe extern "system" fn(this: *mut *mut Self, pprogram: *mut ::windows_sys::core::PWSTR, pparameters: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetReplyProgress: unsafe extern "system" fn(this: *mut *mut Self, pprogress: *mut BG_JOB_REPLY_PROGRESS) -> ::windows_sys::core::HRESULT,
+    pub GetReplyData: unsafe extern "system" fn(this: *mut *mut Self, ppbuffer: *mut *mut u8, plength: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub SetReplyFileName: unsafe extern "system" fn(this: *mut *mut Self, replyfilename: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetReplyFileName: unsafe extern "system" fn(this: *mut *mut Self, preplyfilename: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetCredentials: unsafe extern "system" fn(this: *mut *mut Self, credentials: *const BG_AUTH_CREDENTIALS) -> ::windows_sys::core::HRESULT,
+    pub RemoveCredentials: unsafe extern "system" fn(this: *mut *mut Self, target: BG_AUTH_TARGET, scheme: BG_AUTH_SCHEME) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IBackgroundCopyJob3 {
+    pub base__: IBackgroundCopyJob2,
+    pub ReplaceRemotePrefix: unsafe extern "system" fn(this: *mut *mut Self, oldprefix: ::windows_sys::core::PCWSTR, newprefix: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub AddFileWithRanges: unsafe extern "system" fn(this: *mut *mut Self, remoteurl: ::windows_sys::core::PCWSTR, localname: ::windows_sys::core::PCWSTR, rangecount: u32, ranges: *const BG_FILE_RANGE) -> ::windows_sys::core::HRESULT,
+    pub SetFileACLFlags: unsafe extern "system" fn(this: *mut *mut Self, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetFileACLFlags: unsafe extern "system" fn(this: *mut *mut Self, flags: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IBackgroundCopyJob4 {
+    pub base__: IBackgroundCopyJob3,
+    pub SetPeerCachingFlags: unsafe extern "system" fn(this: *mut *mut Self, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetPeerCachingFlags: unsafe extern "system" fn(this: *mut *mut Self, pflags: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetOwnerIntegrityLevel: unsafe extern "system" fn(this: *mut *mut Self, plevel: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetOwnerElevationState: unsafe extern "system" fn(this: *mut *mut Self, pelevated: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetOwnerElevationState: usize,
+    pub SetMaximumDownloadTime: unsafe extern "system" fn(this: *mut *mut Self, timeout: u32) -> ::windows_sys::core::HRESULT,
+    pub GetMaximumDownloadTime: unsafe extern "system" fn(this: *mut *mut Self, ptimeout: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IBackgroundCopyJob5 {
+    pub base__: IBackgroundCopyJob4,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetProperty: unsafe extern "system" fn(this: *mut *mut Self, propertyid: BITS_JOB_PROPERTY_ID, propertyvalue: BITS_JOB_PROPERTY_VALUE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetProperty: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetProperty: unsafe extern "system" fn(this: *mut *mut Self, propertyid: BITS_JOB_PROPERTY_ID, propertyvalue: *mut BITS_JOB_PROPERTY_VALUE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetProperty: usize,
+}
+#[repr(C)]
+pub struct IBackgroundCopyJobHttpOptions {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetClientCertificateByID: unsafe extern "system" fn(this: *mut *mut Self, storelocation: BG_CERT_STORE_LOCATION, storename: ::windows_sys::core::PCWSTR, pcerthashblob: *const u8) -> ::windows_sys::core::HRESULT,
+    pub SetClientCertificateByName: unsafe extern "system" fn(this: *mut *mut Self, storelocation: BG_CERT_STORE_LOCATION, storename: ::windows_sys::core::PCWSTR, subjectname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub RemoveClientCertificate: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetClientCertificate: unsafe extern "system" fn(this: *mut *mut Self, pstorelocation: *mut BG_CERT_STORE_LOCATION, pstorename: *mut ::windows_sys::core::PWSTR, ppcerthashblob: *mut *mut u8, psubjectname: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetCustomHeaders: unsafe extern "system" fn(this: *mut *mut Self, requestheaders: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetCustomHeaders: unsafe extern "system" fn(this: *mut *mut Self, prequestheaders: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetSecurityFlags: unsafe extern "system" fn(this: *mut *mut Self, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetSecurityFlags: unsafe extern "system" fn(this: *mut *mut Self, pflags: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IBackgroundCopyJobHttpOptions2 {
+    pub base__: IBackgroundCopyJobHttpOptions,
+    pub SetHttpMethod: unsafe extern "system" fn(this: *mut *mut Self, method: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetHttpMethod: unsafe extern "system" fn(this: *mut *mut Self, method: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IBackgroundCopyJobHttpOptions3 {
+    pub base__: IBackgroundCopyJobHttpOptions2,
+    pub SetServerCertificateValidationInterface: unsafe extern "system" fn(this: *mut *mut Self, certvalidationcallback: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub MakeCustomHeadersWriteOnly: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IBackgroundCopyManager {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub CreateJob: unsafe extern "system" fn(this: *mut *mut Self, displayname: ::windows_sys::core::PCWSTR, r#type: BG_JOB_TYPE, pjobid: *mut ::windows_sys::core::GUID, ppjob: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetJob: unsafe extern "system" fn(this: *mut *mut Self, jobid: *const ::windows_sys::core::GUID, ppjob: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EnumJobs: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetErrorDescription: unsafe extern "system" fn(this: *mut *mut Self, hresult: ::windows_sys::core::HRESULT, languageid: u32, perrordescription: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IBackgroundCopyQMgr {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub CreateGroup: unsafe extern "system" fn(this: *mut *mut Self, guidgroupid: ::windows_sys::core::GUID, ppgroup: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetGroup: unsafe extern "system" fn(this: *mut *mut Self, groupid: ::windows_sys::core::GUID, ppgroup: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EnumGroups: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, ppenumgroups: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IBackgroundCopyServerCertificateValidationCallback {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub ValidateServerCertificate: unsafe extern "system" fn(this: *mut *mut Self, job: *mut ::core::ffi::c_void, file: *mut ::core::ffi::c_void, certlength: u32, certdata: *const u8, certencodingtype: u32, certstorelength: u32, certstoredata: *const u8) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IBitsPeer {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetPeerName: unsafe extern "system" fn(this: *mut *mut Self, pname: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsAuthenticated: unsafe extern "system" fn(this: *mut *mut Self, pauth: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsAuthenticated: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsAvailable: unsafe extern "system" fn(this: *mut *mut Self, ponline: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsAvailable: usize,
+}
+#[repr(C)]
+pub struct IBitsPeerCacheAdministration {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetMaximumCacheSize: unsafe extern "system" fn(this: *mut *mut Self, pbytes: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetMaximumCacheSize: unsafe extern "system" fn(this: *mut *mut Self, bytes: u32) -> ::windows_sys::core::HRESULT,
+    pub GetMaximumContentAge: unsafe extern "system" fn(this: *mut *mut Self, pseconds: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetMaximumContentAge: unsafe extern "system" fn(this: *mut *mut Self, seconds: u32) -> ::windows_sys::core::HRESULT,
+    pub GetConfigurationFlags: unsafe extern "system" fn(this: *mut *mut Self, pflags: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetConfigurationFlags: unsafe extern "system" fn(this: *mut *mut Self, flags: u32) -> ::windows_sys::core::HRESULT,
+    pub EnumRecords: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetRecord: unsafe extern "system" fn(this: *mut *mut Self, id: *const ::windows_sys::core::GUID, pprecord: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ClearRecords: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub DeleteRecord: unsafe extern "system" fn(this: *mut *mut Self, id: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub DeleteUrl: unsafe extern "system" fn(this: *mut *mut Self, url: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub EnumPeers: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ClearPeers: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub DiscoverPeers: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IBitsPeerCacheRecord {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetId: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub GetOriginUrl: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetFileSize: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut u64) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetFileModificationTime: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::FILETIME) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetFileModificationTime: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetLastAccessTime: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::FILETIME) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetLastAccessTime: usize,
+    pub IsFileValidated: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetFileRanges: unsafe extern "system" fn(this: *mut *mut Self, prangecount: *mut u32, ppranges: *mut *mut BG_FILE_RANGE) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IBitsTokenOptions {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetHelperTokenFlags: unsafe extern "system" fn(this: *mut *mut Self, usageflags: BG_TOKEN) -> ::windows_sys::core::HRESULT,
+    pub GetHelperTokenFlags: unsafe extern "system" fn(this: *mut *mut Self, pflags: *mut BG_TOKEN) -> ::windows_sys::core::HRESULT,
+    pub SetHelperToken: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub ClearHelperToken: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetHelperTokenSid: unsafe extern "system" fn(this: *mut *mut Self, psid: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IEnumBackgroundCopyFiles {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, celt: u32, rgelt: *mut *mut ::core::ffi::c_void, pceltfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Skip: unsafe extern "system" fn(this: *mut *mut Self, celt: u32) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, pucount: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IEnumBackgroundCopyGroups {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, celt: u32, rgelt: *mut ::windows_sys::core::GUID, pceltfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Skip: unsafe extern "system" fn(this: *mut *mut Self, celt: u32) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, pucount: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IEnumBackgroundCopyJobs {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, celt: u32, rgelt: *mut *mut ::core::ffi::c_void, pceltfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Skip: unsafe extern "system" fn(this: *mut *mut Self, celt: u32) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, pucount: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IEnumBackgroundCopyJobs1 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, celt: u32, rgelt: *mut ::windows_sys::core::GUID, pceltfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Skip: unsafe extern "system" fn(this: *mut *mut Self, celt: u32) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, pucount: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IEnumBitsPeerCacheRecords {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, celt: u32, rgelt: *mut *mut ::core::ffi::c_void, pceltfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Skip: unsafe extern "system" fn(this: *mut *mut Self, celt: u32) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, pucount: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IEnumBitsPeers {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, celt: u32, rgelt: *mut *mut ::core::ffi::c_void, pceltfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Skip: unsafe extern "system" fn(this: *mut *mut Self, celt: u32) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, pucount: *mut u32) -> ::windows_sys::core::HRESULT,
+}
 #[doc = "*Required features: `\"Win32_Networking_BackgroundIntelligentTransferService\"`*"]
 pub const QM_E_DOWNLOADER_UNAVAILABLE: u32 = 2164264963u32;
 #[doc = "*Required features: `\"Win32_Networking_BackgroundIntelligentTransferService\"`*"]

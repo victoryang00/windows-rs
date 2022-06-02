@@ -30,16 +30,137 @@ pub type ICS_TARGETTYPE = i32;
 pub const ICSTT_NAME: ICS_TARGETTYPE = 0i32;
 #[doc = "*Required features: `\"Win32_NetworkManagement_WindowsFirewall\"`*"]
 pub const ICSTT_IPADDRESS: ICS_TARGETTYPE = 1i32;
-pub type IDynamicPortMapping = *mut ::core::ffi::c_void;
-pub type IDynamicPortMappingCollection = *mut ::core::ffi::c_void;
-pub type IEnumNetConnection = *mut ::core::ffi::c_void;
-pub type IEnumNetSharingEveryConnection = *mut ::core::ffi::c_void;
-pub type IEnumNetSharingPortMapping = *mut ::core::ffi::c_void;
-pub type IEnumNetSharingPrivateConnection = *mut ::core::ffi::c_void;
-pub type IEnumNetSharingPublicConnection = *mut ::core::ffi::c_void;
-pub type INATEventManager = *mut ::core::ffi::c_void;
-pub type INATExternalIPAddressCallback = *mut ::core::ffi::c_void;
-pub type INATNumberOfEntriesCallback = *mut ::core::ffi::c_void;
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IDynamicPortMapping {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ExternalIPAddress: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ExternalIPAddress: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RemoteHost: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RemoteHost: usize,
+    pub ExternalPort: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Protocol: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Protocol: usize,
+    pub InternalPort: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InternalClient: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InternalClient: usize,
+    pub Enabled: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Description: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Description: usize,
+    pub LeaseDuration: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub RenewLease: unsafe extern "system" fn(this: *mut *mut Self, lleasedurationdesired: i32, pleasedurationreturned: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub EditInternalClient: unsafe extern "system" fn(this: *mut *mut Self, bstrinternalclient: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    EditInternalClient: usize,
+    pub Enable: unsafe extern "system" fn(this: *mut *mut Self, vb: i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub EditDescription: unsafe extern "system" fn(this: *mut *mut Self, bstrdescription: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    EditDescription: usize,
+    pub EditInternalPort: unsafe extern "system" fn(this: *mut *mut Self, linternalport: i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IDynamicPortMappingCollection {
+    pub base__: super::super::System::Com::IDispatch,
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub get_Item: unsafe extern "system" fn(this: *mut *mut Self, bstrremotehost: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, lexternalport: i32, bstrprotocol: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppdpm: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    get_Item: usize,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Remove: unsafe extern "system" fn(this: *mut *mut Self, bstrremotehost: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, lexternalport: i32, bstrprotocol: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Remove: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub Add: unsafe extern "system" fn(this: *mut *mut Self, bstrremotehost: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, lexternalport: i32, bstrprotocol: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, linternalport: i32, bstrinternalclient: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, benabled: i16, bstrdescription: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, lleaseduration: i32, ppdpm: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    Add: usize,
+}
+#[repr(C)]
+pub struct IEnumNetConnection {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, celt: u32, rgelt: *mut *mut ::core::ffi::c_void, pceltfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Skip: unsafe extern "system" fn(this: *mut *mut Self, celt: u32) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IEnumNetSharingEveryConnection {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, celt: u32, rgvar: *mut super::super::System::Com::VARIANT, pceltfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Next: usize,
+    pub Skip: unsafe extern "system" fn(this: *mut *mut Self, celt: u32) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IEnumNetSharingPortMapping {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, celt: u32, rgvar: *mut super::super::System::Com::VARIANT, pceltfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Next: usize,
+    pub Skip: unsafe extern "system" fn(this: *mut *mut Self, celt: u32) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IEnumNetSharingPrivateConnection {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, celt: u32, rgvar: *mut super::super::System::Com::VARIANT, pceltfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Next: usize,
+    pub Skip: unsafe extern "system" fn(this: *mut *mut Self, celt: u32) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IEnumNetSharingPublicConnection {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, celt: u32, rgvar: *mut super::super::System::Com::VARIANT, pceltfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Next: usize,
+    pub Skip: unsafe extern "system" fn(this: *mut *mut Self, celt: u32) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct INATEventManager {
+    pub base__: super::super::System::Com::IDispatch,
+    pub SetExternalIPAddressCallback: unsafe extern "system" fn(this: *mut *mut Self, punk: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetNumberOfEntriesCallback: unsafe extern "system" fn(this: *mut *mut Self, punk: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct INATExternalIPAddressCallback {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub NewExternalIPAddress: unsafe extern "system" fn(this: *mut *mut Self, bstrnewexternalipaddress: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    NewExternalIPAddress: usize,
+}
+#[repr(C)]
+pub struct INATNumberOfEntriesCallback {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub NewNumberOfEntries: unsafe extern "system" fn(this: *mut *mut Self, lnewnumberofentries: i32) -> ::windows_sys::core::HRESULT,
+}
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_WindowsFirewall\"`*"]
 pub struct INET_FIREWALL_AC_BINARIES {
@@ -143,40 +264,780 @@ impl ::core::clone::Clone for INET_FIREWALL_APP_CONTAINER {
         *self
     }
 }
-pub type INetConnection = *mut ::core::ffi::c_void;
-pub type INetConnectionConnectUi = *mut ::core::ffi::c_void;
-pub type INetConnectionManager = *mut ::core::ffi::c_void;
-pub type INetConnectionProps = *mut ::core::ffi::c_void;
-pub type INetFwAuthorizedApplication = *mut ::core::ffi::c_void;
-pub type INetFwAuthorizedApplications = *mut ::core::ffi::c_void;
-pub type INetFwIcmpSettings = *mut ::core::ffi::c_void;
-pub type INetFwMgr = *mut ::core::ffi::c_void;
-pub type INetFwOpenPort = *mut ::core::ffi::c_void;
-pub type INetFwOpenPorts = *mut ::core::ffi::c_void;
-pub type INetFwPolicy = *mut ::core::ffi::c_void;
-pub type INetFwPolicy2 = *mut ::core::ffi::c_void;
-pub type INetFwProduct = *mut ::core::ffi::c_void;
-pub type INetFwProducts = *mut ::core::ffi::c_void;
-pub type INetFwProfile = *mut ::core::ffi::c_void;
-pub type INetFwRemoteAdminSettings = *mut ::core::ffi::c_void;
-pub type INetFwRule = *mut ::core::ffi::c_void;
-pub type INetFwRule2 = *mut ::core::ffi::c_void;
-pub type INetFwRule3 = *mut ::core::ffi::c_void;
-pub type INetFwRules = *mut ::core::ffi::c_void;
-pub type INetFwService = *mut ::core::ffi::c_void;
-pub type INetFwServiceRestriction = *mut ::core::ffi::c_void;
-pub type INetFwServices = *mut ::core::ffi::c_void;
-pub type INetSharingConfiguration = *mut ::core::ffi::c_void;
-pub type INetSharingEveryConnectionCollection = *mut ::core::ffi::c_void;
-pub type INetSharingManager = *mut ::core::ffi::c_void;
-pub type INetSharingPortMapping = *mut ::core::ffi::c_void;
-pub type INetSharingPortMappingCollection = *mut ::core::ffi::c_void;
-pub type INetSharingPortMappingProps = *mut ::core::ffi::c_void;
-pub type INetSharingPrivateConnectionCollection = *mut ::core::ffi::c_void;
-pub type INetSharingPublicConnectionCollection = *mut ::core::ffi::c_void;
-pub type IStaticPortMapping = *mut ::core::ffi::c_void;
-pub type IStaticPortMappingCollection = *mut ::core::ffi::c_void;
-pub type IUPnPNAT = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct INetConnection {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Connect: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Disconnect: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Delete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Duplicate: unsafe extern "system" fn(this: *mut *mut Self, pszwduplicatename: ::windows_sys::core::PCWSTR, ppcon: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetProperties: unsafe extern "system" fn(this: *mut *mut Self, ppprops: *mut *mut NETCON_PROPERTIES) -> ::windows_sys::core::HRESULT,
+    pub GetUiObjectClassId: unsafe extern "system" fn(this: *mut *mut Self, pclsid: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub Rename: unsafe extern "system" fn(this: *mut *mut Self, pszwnewname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct INetConnectionConnectUi {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetConnection: unsafe extern "system" fn(this: *mut *mut Self, pcon: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Connect: unsafe extern "system" fn(this: *mut *mut Self, hwndparent: super::super::Foundation::HWND, dwflags: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Connect: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Disconnect: unsafe extern "system" fn(this: *mut *mut Self, hwndparent: super::super::Foundation::HWND, dwflags: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Disconnect: usize,
+}
+#[repr(C)]
+pub struct INetConnectionManager {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub EnumConnections: unsafe extern "system" fn(this: *mut *mut Self, flags: NETCONMGR_ENUM_FLAGS, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct INetConnectionProps {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Guid: unsafe extern "system" fn(this: *mut *mut Self, pbstrguid: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Guid: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Name: unsafe extern "system" fn(this: *mut *mut Self, pbstrname: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Name: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DeviceName: unsafe extern "system" fn(this: *mut *mut Self, pbstrdevicename: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DeviceName: usize,
+    pub Status: unsafe extern "system" fn(this: *mut *mut Self, pstatus: *mut NETCON_STATUS) -> ::windows_sys::core::HRESULT,
+    pub MediaType: unsafe extern "system" fn(this: *mut *mut Self, pmediatype: *mut NETCON_MEDIATYPE) -> ::windows_sys::core::HRESULT,
+    pub Characteristics: unsafe extern "system" fn(this: *mut *mut Self, pdwflags: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct INetFwAuthorizedApplication {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Name: unsafe extern "system" fn(this: *mut *mut Self, name: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Name: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetName: unsafe extern "system" fn(this: *mut *mut Self, name: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ProcessImageFileName: unsafe extern "system" fn(this: *mut *mut Self, imagefilename: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ProcessImageFileName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetProcessImageFileName: unsafe extern "system" fn(this: *mut *mut Self, imagefilename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetProcessImageFileName: usize,
+    pub IpVersion: unsafe extern "system" fn(this: *mut *mut Self, ipversion: *mut NET_FW_IP_VERSION) -> ::windows_sys::core::HRESULT,
+    pub SetIpVersion: unsafe extern "system" fn(this: *mut *mut Self, ipversion: NET_FW_IP_VERSION) -> ::windows_sys::core::HRESULT,
+    pub Scope: unsafe extern "system" fn(this: *mut *mut Self, scope: *mut NET_FW_SCOPE) -> ::windows_sys::core::HRESULT,
+    pub SetScope: unsafe extern "system" fn(this: *mut *mut Self, scope: NET_FW_SCOPE) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RemoteAddresses: unsafe extern "system" fn(this: *mut *mut Self, remoteaddrs: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RemoteAddresses: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetRemoteAddresses: unsafe extern "system" fn(this: *mut *mut Self, remoteaddrs: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetRemoteAddresses: usize,
+    pub Enabled: unsafe extern "system" fn(this: *mut *mut Self, enabled: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetEnabled: unsafe extern "system" fn(this: *mut *mut Self, enabled: i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct INetFwAuthorizedApplications {
+    pub base__: super::super::System::Com::IDispatch,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, count: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Add: unsafe extern "system" fn(this: *mut *mut Self, app: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Add: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Remove: unsafe extern "system" fn(this: *mut *mut Self, imagefilename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Remove: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub Item: unsafe extern "system" fn(this: *mut *mut Self, imagefilename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, app: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    Item: usize,
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, newenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct INetFwIcmpSettings {
+    pub base__: super::super::System::Com::IDispatch,
+    pub AllowOutboundDestinationUnreachable: unsafe extern "system" fn(this: *mut *mut Self, allow: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetAllowOutboundDestinationUnreachable: unsafe extern "system" fn(this: *mut *mut Self, allow: i16) -> ::windows_sys::core::HRESULT,
+    pub AllowRedirect: unsafe extern "system" fn(this: *mut *mut Self, allow: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetAllowRedirect: unsafe extern "system" fn(this: *mut *mut Self, allow: i16) -> ::windows_sys::core::HRESULT,
+    pub AllowInboundEchoRequest: unsafe extern "system" fn(this: *mut *mut Self, allow: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetAllowInboundEchoRequest: unsafe extern "system" fn(this: *mut *mut Self, allow: i16) -> ::windows_sys::core::HRESULT,
+    pub AllowOutboundTimeExceeded: unsafe extern "system" fn(this: *mut *mut Self, allow: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetAllowOutboundTimeExceeded: unsafe extern "system" fn(this: *mut *mut Self, allow: i16) -> ::windows_sys::core::HRESULT,
+    pub AllowOutboundParameterProblem: unsafe extern "system" fn(this: *mut *mut Self, allow: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetAllowOutboundParameterProblem: unsafe extern "system" fn(this: *mut *mut Self, allow: i16) -> ::windows_sys::core::HRESULT,
+    pub AllowOutboundSourceQuench: unsafe extern "system" fn(this: *mut *mut Self, allow: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetAllowOutboundSourceQuench: unsafe extern "system" fn(this: *mut *mut Self, allow: i16) -> ::windows_sys::core::HRESULT,
+    pub AllowInboundRouterRequest: unsafe extern "system" fn(this: *mut *mut Self, allow: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetAllowInboundRouterRequest: unsafe extern "system" fn(this: *mut *mut Self, allow: i16) -> ::windows_sys::core::HRESULT,
+    pub AllowInboundTimestampRequest: unsafe extern "system" fn(this: *mut *mut Self, allow: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetAllowInboundTimestampRequest: unsafe extern "system" fn(this: *mut *mut Self, allow: i16) -> ::windows_sys::core::HRESULT,
+    pub AllowInboundMaskRequest: unsafe extern "system" fn(this: *mut *mut Self, allow: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetAllowInboundMaskRequest: unsafe extern "system" fn(this: *mut *mut Self, allow: i16) -> ::windows_sys::core::HRESULT,
+    pub AllowOutboundPacketTooBig: unsafe extern "system" fn(this: *mut *mut Self, allow: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetAllowOutboundPacketTooBig: unsafe extern "system" fn(this: *mut *mut Self, allow: i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct INetFwMgr {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub LocalPolicy: unsafe extern "system" fn(this: *mut *mut Self, localpolicy: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    LocalPolicy: usize,
+    pub CurrentProfileType: unsafe extern "system" fn(this: *mut *mut Self, profiletype: *mut NET_FW_PROFILE_TYPE) -> ::windows_sys::core::HRESULT,
+    pub RestoreDefaults: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub IsPortAllowed: unsafe extern "system" fn(this: *mut *mut Self, imagefilename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ipversion: NET_FW_IP_VERSION, portnumber: i32, localaddress: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ipprotocol: NET_FW_IP_PROTOCOL, allowed: *mut super::super::System::Com::VARIANT, restricted: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    IsPortAllowed: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub IsIcmpTypeAllowed: unsafe extern "system" fn(this: *mut *mut Self, ipversion: NET_FW_IP_VERSION, localaddress: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, r#type: u8, allowed: *mut super::super::System::Com::VARIANT, restricted: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    IsIcmpTypeAllowed: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct INetFwOpenPort {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Name: unsafe extern "system" fn(this: *mut *mut Self, name: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Name: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetName: unsafe extern "system" fn(this: *mut *mut Self, name: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetName: usize,
+    pub IpVersion: unsafe extern "system" fn(this: *mut *mut Self, ipversion: *mut NET_FW_IP_VERSION) -> ::windows_sys::core::HRESULT,
+    pub SetIpVersion: unsafe extern "system" fn(this: *mut *mut Self, ipversion: NET_FW_IP_VERSION) -> ::windows_sys::core::HRESULT,
+    pub Protocol: unsafe extern "system" fn(this: *mut *mut Self, ipprotocol: *mut NET_FW_IP_PROTOCOL) -> ::windows_sys::core::HRESULT,
+    pub SetProtocol: unsafe extern "system" fn(this: *mut *mut Self, ipprotocol: NET_FW_IP_PROTOCOL) -> ::windows_sys::core::HRESULT,
+    pub Port: unsafe extern "system" fn(this: *mut *mut Self, portnumber: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetPort: unsafe extern "system" fn(this: *mut *mut Self, portnumber: i32) -> ::windows_sys::core::HRESULT,
+    pub Scope: unsafe extern "system" fn(this: *mut *mut Self, scope: *mut NET_FW_SCOPE) -> ::windows_sys::core::HRESULT,
+    pub SetScope: unsafe extern "system" fn(this: *mut *mut Self, scope: NET_FW_SCOPE) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RemoteAddresses: unsafe extern "system" fn(this: *mut *mut Self, remoteaddrs: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RemoteAddresses: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetRemoteAddresses: unsafe extern "system" fn(this: *mut *mut Self, remoteaddrs: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetRemoteAddresses: usize,
+    pub Enabled: unsafe extern "system" fn(this: *mut *mut Self, enabled: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetEnabled: unsafe extern "system" fn(this: *mut *mut Self, enabled: i16) -> ::windows_sys::core::HRESULT,
+    pub BuiltIn: unsafe extern "system" fn(this: *mut *mut Self, builtin: *mut i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct INetFwOpenPorts {
+    pub base__: super::super::System::Com::IDispatch,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, count: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Add: unsafe extern "system" fn(this: *mut *mut Self, port: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Add: usize,
+    pub Remove: unsafe extern "system" fn(this: *mut *mut Self, portnumber: i32, ipprotocol: NET_FW_IP_PROTOCOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Item: unsafe extern "system" fn(this: *mut *mut Self, portnumber: i32, ipprotocol: NET_FW_IP_PROTOCOL, openport: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Item: usize,
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, newenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct INetFwPolicy {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CurrentProfile: unsafe extern "system" fn(this: *mut *mut Self, profile: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CurrentProfile: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetProfileByType: unsafe extern "system" fn(this: *mut *mut Self, profiletype: NET_FW_PROFILE_TYPE, profile: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetProfileByType: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct INetFwPolicy2 {
+    pub base__: super::super::System::Com::IDispatch,
+    pub CurrentProfileTypes: unsafe extern "system" fn(this: *mut *mut Self, profiletypesbitmask: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub get_FirewallEnabled: unsafe extern "system" fn(this: *mut *mut Self, profiletype: NET_FW_PROFILE_TYPE2, enabled: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub put_FirewallEnabled: unsafe extern "system" fn(this: *mut *mut Self, profiletype: NET_FW_PROFILE_TYPE2, enabled: i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub get_ExcludedInterfaces: unsafe extern "system" fn(this: *mut *mut Self, profiletype: NET_FW_PROFILE_TYPE2, interfaces: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    get_ExcludedInterfaces: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub put_ExcludedInterfaces: unsafe extern "system" fn(this: *mut *mut Self, profiletype: NET_FW_PROFILE_TYPE2, interfaces: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    put_ExcludedInterfaces: usize,
+    pub get_BlockAllInboundTraffic: unsafe extern "system" fn(this: *mut *mut Self, profiletype: NET_FW_PROFILE_TYPE2, block: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub put_BlockAllInboundTraffic: unsafe extern "system" fn(this: *mut *mut Self, profiletype: NET_FW_PROFILE_TYPE2, block: i16) -> ::windows_sys::core::HRESULT,
+    pub get_NotificationsDisabled: unsafe extern "system" fn(this: *mut *mut Self, profiletype: NET_FW_PROFILE_TYPE2, disabled: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub put_NotificationsDisabled: unsafe extern "system" fn(this: *mut *mut Self, profiletype: NET_FW_PROFILE_TYPE2, disabled: i16) -> ::windows_sys::core::HRESULT,
+    pub get_UnicastResponsesToMulticastBroadcastDisabled: unsafe extern "system" fn(this: *mut *mut Self, profiletype: NET_FW_PROFILE_TYPE2, disabled: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub put_UnicastResponsesToMulticastBroadcastDisabled: unsafe extern "system" fn(this: *mut *mut Self, profiletype: NET_FW_PROFILE_TYPE2, disabled: i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Rules: unsafe extern "system" fn(this: *mut *mut Self, rules: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Rules: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub ServiceRestriction: unsafe extern "system" fn(this: *mut *mut Self, servicerestriction: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    ServiceRestriction: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub EnableRuleGroup: unsafe extern "system" fn(this: *mut *mut Self, profiletypesbitmask: i32, group: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, enable: i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    EnableRuleGroup: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsRuleGroupEnabled: unsafe extern "system" fn(this: *mut *mut Self, profiletypesbitmask: i32, group: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, enabled: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsRuleGroupEnabled: usize,
+    pub RestoreLocalFirewallDefaults: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub get_DefaultInboundAction: unsafe extern "system" fn(this: *mut *mut Self, profiletype: NET_FW_PROFILE_TYPE2, action: *mut NET_FW_ACTION) -> ::windows_sys::core::HRESULT,
+    pub put_DefaultInboundAction: unsafe extern "system" fn(this: *mut *mut Self, profiletype: NET_FW_PROFILE_TYPE2, action: NET_FW_ACTION) -> ::windows_sys::core::HRESULT,
+    pub get_DefaultOutboundAction: unsafe extern "system" fn(this: *mut *mut Self, profiletype: NET_FW_PROFILE_TYPE2, action: *mut NET_FW_ACTION) -> ::windows_sys::core::HRESULT,
+    pub put_DefaultOutboundAction: unsafe extern "system" fn(this: *mut *mut Self, profiletype: NET_FW_PROFILE_TYPE2, action: NET_FW_ACTION) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub get_IsRuleGroupCurrentlyEnabled: unsafe extern "system" fn(this: *mut *mut Self, group: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, enabled: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    get_IsRuleGroupCurrentlyEnabled: usize,
+    pub LocalPolicyModifyState: unsafe extern "system" fn(this: *mut *mut Self, modifystate: *mut NET_FW_MODIFY_STATE) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct INetFwProduct {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub RuleCategories: unsafe extern "system" fn(this: *mut *mut Self, rulecategories: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    RuleCategories: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetRuleCategories: unsafe extern "system" fn(this: *mut *mut Self, rulecategories: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetRuleCategories: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DisplayName: unsafe extern "system" fn(this: *mut *mut Self, displayname: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DisplayName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetDisplayName: unsafe extern "system" fn(this: *mut *mut Self, displayname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetDisplayName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub PathToSignedProductExe: unsafe extern "system" fn(this: *mut *mut Self, path: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    PathToSignedProductExe: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct INetFwProducts {
+    pub base__: super::super::System::Com::IDispatch,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, count: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Register: unsafe extern "system" fn(this: *mut *mut Self, product: *mut ::core::ffi::c_void, registration: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Register: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Item: unsafe extern "system" fn(this: *mut *mut Self, index: i32, product: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Item: usize,
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, newenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct INetFwProfile {
+    pub base__: super::super::System::Com::IDispatch,
+    pub Type: unsafe extern "system" fn(this: *mut *mut Self, r#type: *mut NET_FW_PROFILE_TYPE) -> ::windows_sys::core::HRESULT,
+    pub FirewallEnabled: unsafe extern "system" fn(this: *mut *mut Self, enabled: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetFirewallEnabled: unsafe extern "system" fn(this: *mut *mut Self, enabled: i16) -> ::windows_sys::core::HRESULT,
+    pub ExceptionsNotAllowed: unsafe extern "system" fn(this: *mut *mut Self, notallowed: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetExceptionsNotAllowed: unsafe extern "system" fn(this: *mut *mut Self, notallowed: i16) -> ::windows_sys::core::HRESULT,
+    pub NotificationsDisabled: unsafe extern "system" fn(this: *mut *mut Self, disabled: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetNotificationsDisabled: unsafe extern "system" fn(this: *mut *mut Self, disabled: i16) -> ::windows_sys::core::HRESULT,
+    pub UnicastResponsesToMulticastBroadcastDisabled: unsafe extern "system" fn(this: *mut *mut Self, disabled: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetUnicastResponsesToMulticastBroadcastDisabled: unsafe extern "system" fn(this: *mut *mut Self, disabled: i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub RemoteAdminSettings: unsafe extern "system" fn(this: *mut *mut Self, remoteadminsettings: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    RemoteAdminSettings: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub IcmpSettings: unsafe extern "system" fn(this: *mut *mut Self, icmpsettings: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    IcmpSettings: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GloballyOpenPorts: unsafe extern "system" fn(this: *mut *mut Self, openports: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GloballyOpenPorts: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Services: unsafe extern "system" fn(this: *mut *mut Self, services: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Services: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub AuthorizedApplications: unsafe extern "system" fn(this: *mut *mut Self, apps: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    AuthorizedApplications: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct INetFwRemoteAdminSettings {
+    pub base__: super::super::System::Com::IDispatch,
+    pub IpVersion: unsafe extern "system" fn(this: *mut *mut Self, ipversion: *mut NET_FW_IP_VERSION) -> ::windows_sys::core::HRESULT,
+    pub SetIpVersion: unsafe extern "system" fn(this: *mut *mut Self, ipversion: NET_FW_IP_VERSION) -> ::windows_sys::core::HRESULT,
+    pub Scope: unsafe extern "system" fn(this: *mut *mut Self, scope: *mut NET_FW_SCOPE) -> ::windows_sys::core::HRESULT,
+    pub SetScope: unsafe extern "system" fn(this: *mut *mut Self, scope: NET_FW_SCOPE) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RemoteAddresses: unsafe extern "system" fn(this: *mut *mut Self, remoteaddrs: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RemoteAddresses: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetRemoteAddresses: unsafe extern "system" fn(this: *mut *mut Self, remoteaddrs: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetRemoteAddresses: usize,
+    pub Enabled: unsafe extern "system" fn(this: *mut *mut Self, enabled: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetEnabled: unsafe extern "system" fn(this: *mut *mut Self, enabled: i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct INetFwRule {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Name: unsafe extern "system" fn(this: *mut *mut Self, name: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Name: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetName: unsafe extern "system" fn(this: *mut *mut Self, name: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Description: unsafe extern "system" fn(this: *mut *mut Self, desc: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Description: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetDescription: unsafe extern "system" fn(this: *mut *mut Self, desc: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetDescription: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ApplicationName: unsafe extern "system" fn(this: *mut *mut Self, imagefilename: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ApplicationName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetApplicationName: unsafe extern "system" fn(this: *mut *mut Self, imagefilename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetApplicationName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ServiceName: unsafe extern "system" fn(this: *mut *mut Self, servicename: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ServiceName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetServiceName: unsafe extern "system" fn(this: *mut *mut Self, servicename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetServiceName: usize,
+    pub Protocol: unsafe extern "system" fn(this: *mut *mut Self, protocol: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetProtocol: unsafe extern "system" fn(this: *mut *mut Self, protocol: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub LocalPorts: unsafe extern "system" fn(this: *mut *mut Self, portnumbers: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    LocalPorts: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetLocalPorts: unsafe extern "system" fn(this: *mut *mut Self, portnumbers: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetLocalPorts: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RemotePorts: unsafe extern "system" fn(this: *mut *mut Self, portnumbers: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RemotePorts: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetRemotePorts: unsafe extern "system" fn(this: *mut *mut Self, portnumbers: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetRemotePorts: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub LocalAddresses: unsafe extern "system" fn(this: *mut *mut Self, localaddrs: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    LocalAddresses: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetLocalAddresses: unsafe extern "system" fn(this: *mut *mut Self, localaddrs: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetLocalAddresses: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RemoteAddresses: unsafe extern "system" fn(this: *mut *mut Self, remoteaddrs: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RemoteAddresses: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetRemoteAddresses: unsafe extern "system" fn(this: *mut *mut Self, remoteaddrs: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetRemoteAddresses: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IcmpTypesAndCodes: unsafe extern "system" fn(this: *mut *mut Self, icmptypesandcodes: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IcmpTypesAndCodes: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetIcmpTypesAndCodes: unsafe extern "system" fn(this: *mut *mut Self, icmptypesandcodes: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetIcmpTypesAndCodes: usize,
+    pub Direction: unsafe extern "system" fn(this: *mut *mut Self, dir: *mut NET_FW_RULE_DIRECTION) -> ::windows_sys::core::HRESULT,
+    pub SetDirection: unsafe extern "system" fn(this: *mut *mut Self, dir: NET_FW_RULE_DIRECTION) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Interfaces: unsafe extern "system" fn(this: *mut *mut Self, interfaces: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Interfaces: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetInterfaces: unsafe extern "system" fn(this: *mut *mut Self, interfaces: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetInterfaces: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InterfaceTypes: unsafe extern "system" fn(this: *mut *mut Self, interfacetypes: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InterfaceTypes: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetInterfaceTypes: unsafe extern "system" fn(this: *mut *mut Self, interfacetypes: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetInterfaceTypes: usize,
+    pub Enabled: unsafe extern "system" fn(this: *mut *mut Self, enabled: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetEnabled: unsafe extern "system" fn(this: *mut *mut Self, enabled: i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Grouping: unsafe extern "system" fn(this: *mut *mut Self, context: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Grouping: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetGrouping: unsafe extern "system" fn(this: *mut *mut Self, context: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetGrouping: usize,
+    pub Profiles: unsafe extern "system" fn(this: *mut *mut Self, profiletypesbitmask: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetProfiles: unsafe extern "system" fn(this: *mut *mut Self, profiletypesbitmask: i32) -> ::windows_sys::core::HRESULT,
+    pub EdgeTraversal: unsafe extern "system" fn(this: *mut *mut Self, enabled: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetEdgeTraversal: unsafe extern "system" fn(this: *mut *mut Self, enabled: i16) -> ::windows_sys::core::HRESULT,
+    pub Action: unsafe extern "system" fn(this: *mut *mut Self, action: *mut NET_FW_ACTION) -> ::windows_sys::core::HRESULT,
+    pub SetAction: unsafe extern "system" fn(this: *mut *mut Self, action: NET_FW_ACTION) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct INetFwRule2 {
+    pub base__: INetFwRule,
+    pub EdgeTraversalOptions: unsafe extern "system" fn(this: *mut *mut Self, loptions: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetEdgeTraversalOptions: unsafe extern "system" fn(this: *mut *mut Self, loptions: i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct INetFwRule3 {
+    pub base__: INetFwRule2,
+    #[cfg(feature = "Win32_Foundation")]
+    pub LocalAppPackageId: unsafe extern "system" fn(this: *mut *mut Self, wszpackageid: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    LocalAppPackageId: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetLocalAppPackageId: unsafe extern "system" fn(this: *mut *mut Self, wszpackageid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetLocalAppPackageId: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub LocalUserOwner: unsafe extern "system" fn(this: *mut *mut Self, wszuserowner: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    LocalUserOwner: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetLocalUserOwner: unsafe extern "system" fn(this: *mut *mut Self, wszuserowner: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetLocalUserOwner: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub LocalUserAuthorizedList: unsafe extern "system" fn(this: *mut *mut Self, wszuserauthlist: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    LocalUserAuthorizedList: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetLocalUserAuthorizedList: unsafe extern "system" fn(this: *mut *mut Self, wszuserauthlist: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetLocalUserAuthorizedList: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RemoteUserAuthorizedList: unsafe extern "system" fn(this: *mut *mut Self, wszuserauthlist: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RemoteUserAuthorizedList: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetRemoteUserAuthorizedList: unsafe extern "system" fn(this: *mut *mut Self, wszuserauthlist: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetRemoteUserAuthorizedList: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RemoteMachineAuthorizedList: unsafe extern "system" fn(this: *mut *mut Self, wszuserauthlist: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RemoteMachineAuthorizedList: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetRemoteMachineAuthorizedList: unsafe extern "system" fn(this: *mut *mut Self, wszuserauthlist: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetRemoteMachineAuthorizedList: usize,
+    pub SecureFlags: unsafe extern "system" fn(this: *mut *mut Self, loptions: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetSecureFlags: unsafe extern "system" fn(this: *mut *mut Self, loptions: i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct INetFwRules {
+    pub base__: super::super::System::Com::IDispatch,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, count: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Add: unsafe extern "system" fn(this: *mut *mut Self, rule: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Add: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Remove: unsafe extern "system" fn(this: *mut *mut Self, name: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Remove: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub Item: unsafe extern "system" fn(this: *mut *mut Self, name: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, rule: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    Item: usize,
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, newenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct INetFwService {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Name: unsafe extern "system" fn(this: *mut *mut Self, name: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Name: usize,
+    pub Type: unsafe extern "system" fn(this: *mut *mut Self, r#type: *mut NET_FW_SERVICE_TYPE) -> ::windows_sys::core::HRESULT,
+    pub Customized: unsafe extern "system" fn(this: *mut *mut Self, customized: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub IpVersion: unsafe extern "system" fn(this: *mut *mut Self, ipversion: *mut NET_FW_IP_VERSION) -> ::windows_sys::core::HRESULT,
+    pub SetIpVersion: unsafe extern "system" fn(this: *mut *mut Self, ipversion: NET_FW_IP_VERSION) -> ::windows_sys::core::HRESULT,
+    pub Scope: unsafe extern "system" fn(this: *mut *mut Self, scope: *mut NET_FW_SCOPE) -> ::windows_sys::core::HRESULT,
+    pub SetScope: unsafe extern "system" fn(this: *mut *mut Self, scope: NET_FW_SCOPE) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RemoteAddresses: unsafe extern "system" fn(this: *mut *mut Self, remoteaddrs: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RemoteAddresses: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetRemoteAddresses: unsafe extern "system" fn(this: *mut *mut Self, remoteaddrs: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetRemoteAddresses: usize,
+    pub Enabled: unsafe extern "system" fn(this: *mut *mut Self, enabled: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetEnabled: unsafe extern "system" fn(this: *mut *mut Self, enabled: i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GloballyOpenPorts: unsafe extern "system" fn(this: *mut *mut Self, openports: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GloballyOpenPorts: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct INetFwServiceRestriction {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RestrictService: unsafe extern "system" fn(this: *mut *mut Self, servicename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, appname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, restrictservice: i16, servicesidrestricted: i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RestrictService: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ServiceRestricted: unsafe extern "system" fn(this: *mut *mut Self, servicename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, appname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, servicerestricted: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ServiceRestricted: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Rules: unsafe extern "system" fn(this: *mut *mut Self, rules: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Rules: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct INetFwServices {
+    pub base__: super::super::System::Com::IDispatch,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, count: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Item: unsafe extern "system" fn(this: *mut *mut Self, svctype: NET_FW_SERVICE_TYPE, service: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Item: usize,
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, newenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct INetSharingConfiguration {
+    pub base__: super::super::System::Com::IDispatch,
+    pub SharingEnabled: unsafe extern "system" fn(this: *mut *mut Self, pbenabled: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SharingConnectionType: unsafe extern "system" fn(this: *mut *mut Self, ptype: *mut SHARINGCONNECTIONTYPE) -> ::windows_sys::core::HRESULT,
+    pub DisableSharing: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub EnableSharing: unsafe extern "system" fn(this: *mut *mut Self, r#type: SHARINGCONNECTIONTYPE) -> ::windows_sys::core::HRESULT,
+    pub InternetFirewallEnabled: unsafe extern "system" fn(this: *mut *mut Self, pbenabled: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub DisableInternetFirewall: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub EnableInternetFirewall: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub get_EnumPortMappings: unsafe extern "system" fn(this: *mut *mut Self, flags: SHARINGCONNECTION_ENUM_FLAGS, ppcoll: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    get_EnumPortMappings: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub AddPortMapping: unsafe extern "system" fn(this: *mut *mut Self, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ucipprotocol: u8, usexternalport: u16, usinternalport: u16, dwoptions: u32, bstrtargetnameoripaddress: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, etargettype: ICS_TARGETTYPE, ppmapping: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    AddPortMapping: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub RemovePortMapping: unsafe extern "system" fn(this: *mut *mut Self, pmapping: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    RemovePortMapping: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct INetSharingEveryConnectionCollection {
+    pub base__: super::super::System::Com::IDispatch,
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct INetSharingManager {
+    pub base__: super::super::System::Com::IDispatch,
+    pub SharingInstalled: unsafe extern "system" fn(this: *mut *mut Self, pbinstalled: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub get_EnumPublicConnections: unsafe extern "system" fn(this: *mut *mut Self, flags: SHARINGCONNECTION_ENUM_FLAGS, ppcoll: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    get_EnumPublicConnections: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub get_EnumPrivateConnections: unsafe extern "system" fn(this: *mut *mut Self, flags: SHARINGCONNECTION_ENUM_FLAGS, ppcoll: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    get_EnumPrivateConnections: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub get_INetSharingConfigurationForINetConnection: unsafe extern "system" fn(this: *mut *mut Self, pnetconnection: *mut ::core::ffi::c_void, ppnetsharingconfiguration: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    get_INetSharingConfigurationForINetConnection: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub EnumEveryConnection: unsafe extern "system" fn(this: *mut *mut Self, ppcoll: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    EnumEveryConnection: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub get_NetConnectionProps: unsafe extern "system" fn(this: *mut *mut Self, pnetconnection: *mut ::core::ffi::c_void, ppprops: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    get_NetConnectionProps: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct INetSharingPortMapping {
+    pub base__: super::super::System::Com::IDispatch,
+    pub Disable: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Enable: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Properties: unsafe extern "system" fn(this: *mut *mut Self, ppnspmp: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Properties: usize,
+    pub Delete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct INetSharingPortMappingCollection {
+    pub base__: super::super::System::Com::IDispatch,
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct INetSharingPortMappingProps {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Name: unsafe extern "system" fn(this: *mut *mut Self, pbstrname: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Name: usize,
+    pub IPProtocol: unsafe extern "system" fn(this: *mut *mut Self, pucipprot: *mut u8) -> ::windows_sys::core::HRESULT,
+    pub ExternalPort: unsafe extern "system" fn(this: *mut *mut Self, pusport: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub InternalPort: unsafe extern "system" fn(this: *mut *mut Self, pusport: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub Options: unsafe extern "system" fn(this: *mut *mut Self, pdwoptions: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub TargetName: unsafe extern "system" fn(this: *mut *mut Self, pbstrtargetname: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    TargetName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub TargetIPAddress: unsafe extern "system" fn(this: *mut *mut Self, pbstrtargetipaddress: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    TargetIPAddress: usize,
+    pub Enabled: unsafe extern "system" fn(this: *mut *mut Self, pbool: *mut i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct INetSharingPrivateConnectionCollection {
+    pub base__: super::super::System::Com::IDispatch,
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct INetSharingPublicConnectionCollection {
+    pub base__: super::super::System::Com::IDispatch,
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IStaticPortMapping {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ExternalIPAddress: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ExternalIPAddress: usize,
+    pub ExternalPort: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub InternalPort: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Protocol: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Protocol: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InternalClient: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InternalClient: usize,
+    pub Enabled: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Description: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Description: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub EditInternalClient: unsafe extern "system" fn(this: *mut *mut Self, bstrinternalclient: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    EditInternalClient: usize,
+    pub Enable: unsafe extern "system" fn(this: *mut *mut Self, vb: i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub EditDescription: unsafe extern "system" fn(this: *mut *mut Self, bstrdescription: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    EditDescription: usize,
+    pub EditInternalPort: unsafe extern "system" fn(this: *mut *mut Self, linternalport: i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IStaticPortMappingCollection {
+    pub base__: super::super::System::Com::IDispatch,
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub get_Item: unsafe extern "system" fn(this: *mut *mut Self, lexternalport: i32, bstrprotocol: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppspm: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    get_Item: usize,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Remove: unsafe extern "system" fn(this: *mut *mut Self, lexternalport: i32, bstrprotocol: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Remove: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub Add: unsafe extern "system" fn(this: *mut *mut Self, lexternalport: i32, bstrprotocol: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, linternalport: i32, bstrinternalclient: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, benabled: i16, bstrdescription: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppspm: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    Add: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IUPnPNAT {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub StaticPortMappingCollection: unsafe extern "system" fn(this: *mut *mut Self, ppspms: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    StaticPortMappingCollection: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub DynamicPortMappingCollection: unsafe extern "system" fn(this: *mut *mut Self, ppdpms: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    DynamicPortMappingCollection: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub NATEventManager: unsafe extern "system" fn(this: *mut *mut Self, ppnem: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    NATEventManager: usize,
+}
 #[doc = "*Required features: `\"Win32_NetworkManagement_WindowsFirewall\"`*"]
 pub type NETCONMGR_ENUM_FLAGS = i32;
 #[doc = "*Required features: `\"Win32_NetworkManagement_WindowsFirewall\"`*"]

@@ -251,8 +251,293 @@ impl ::core::clone::Clone for GamepadVibration {
     }
 }
 pub type Headset = *mut ::core::ffi::c_void;
-pub type IGameController = *mut ::core::ffi::c_void;
-pub type IGameControllerBatteryInfo = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IArcadeStick {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub GetButtonLabel: unsafe extern "system" fn(this: *mut *mut Self, button: ArcadeStickButtons, result__: *mut GameControllerButtonLabel) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentReading: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ArcadeStickReading) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IArcadeStickStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub ArcadeStickAdded: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    ArcadeStickAdded: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveArcadeStickAdded: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveArcadeStickAdded: usize,
+    #[cfg(feature = "Foundation")]
+    pub ArcadeStickRemoved: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    ArcadeStickRemoved: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveArcadeStickRemoved: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveArcadeStickRemoved: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub ArcadeSticks: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    ArcadeSticks: usize,
+}
+#[repr(C)]
+pub struct IArcadeStickStatics2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub FromGameController: unsafe extern "system" fn(this: *mut *mut Self, gamecontroller: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IFlightStick {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub HatSwitchKind: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut GameControllerSwitchKind) -> ::windows_sys::core::HRESULT,
+    pub GetButtonLabel: unsafe extern "system" fn(this: *mut *mut Self, button: FlightStickButtons, result__: *mut GameControllerButtonLabel) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentReading: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut FlightStickReading) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IFlightStickStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub FlightStickAdded: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    FlightStickAdded: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveFlightStickAdded: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveFlightStickAdded: usize,
+    #[cfg(feature = "Foundation")]
+    pub FlightStickRemoved: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    FlightStickRemoved: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveFlightStickRemoved: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveFlightStickRemoved: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub FlightSticks: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    FlightSticks: usize,
+    pub FromGameController: unsafe extern "system" fn(this: *mut *mut Self, gamecontroller: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IGameController {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub HeadsetConnected: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    HeadsetConnected: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveHeadsetConnected: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveHeadsetConnected: usize,
+    #[cfg(feature = "Foundation")]
+    pub HeadsetDisconnected: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    HeadsetDisconnected: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveHeadsetDisconnected: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveHeadsetDisconnected: usize,
+    #[cfg(all(feature = "Foundation", feature = "System"))]
+    pub UserChanged: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation", feature = "System")))]
+    UserChanged: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveUserChanged: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveUserChanged: usize,
+    pub Headset: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub IsWireless: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "System")]
+    pub User: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "System"))]
+    User: usize,
+}
+#[repr(C)]
+pub struct IGameControllerBatteryInfo {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Devices_Power")]
+    pub TryGetBatteryReport: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Devices_Power"))]
+    TryGetBatteryReport: usize,
+}
+#[repr(C)]
+pub struct IGamepad {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Vibration: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut GamepadVibration) -> ::windows_sys::core::HRESULT,
+    pub SetVibration: unsafe extern "system" fn(this: *mut *mut Self, value: GamepadVibration) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentReading: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut GamepadReading) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IGamepad2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub GetButtonLabel: unsafe extern "system" fn(this: *mut *mut Self, button: GamepadButtons, result__: *mut GameControllerButtonLabel) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IGamepadStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub GamepadAdded: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    GamepadAdded: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveGamepadAdded: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveGamepadAdded: usize,
+    #[cfg(feature = "Foundation")]
+    pub GamepadRemoved: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    GamepadRemoved: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveGamepadRemoved: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveGamepadRemoved: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub Gamepads: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    Gamepads: usize,
+}
+#[repr(C)]
+pub struct IGamepadStatics2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub FromGameController: unsafe extern "system" fn(this: *mut *mut Self, gamecontroller: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IHeadset {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CaptureDeviceId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub RenderDeviceId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRacingWheel {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub HasClutch: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub HasHandbrake: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub HasPatternShifter: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub MaxPatternShifterGear: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub MaxWheelAngle: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f64) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Gaming_Input_ForceFeedback")]
+    pub WheelMotor: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Gaming_Input_ForceFeedback"))]
+    WheelMotor: usize,
+    pub GetButtonLabel: unsafe extern "system" fn(this: *mut *mut Self, button: RacingWheelButtons, result__: *mut GameControllerButtonLabel) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentReading: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut RacingWheelReading) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRacingWheelStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub RacingWheelAdded: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RacingWheelAdded: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveRacingWheelAdded: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveRacingWheelAdded: usize,
+    #[cfg(feature = "Foundation")]
+    pub RacingWheelRemoved: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RacingWheelRemoved: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveRacingWheelRemoved: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveRacingWheelRemoved: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub RacingWheels: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    RacingWheels: usize,
+}
+#[repr(C)]
+pub struct IRacingWheelStatics2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub FromGameController: unsafe extern "system" fn(this: *mut *mut Self, gamecontroller: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRawGameController {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub AxisCount: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub ButtonCount: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Foundation_Collections", feature = "Gaming_Input_ForceFeedback"))]
+    pub ForceFeedbackMotors: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation_Collections", feature = "Gaming_Input_ForceFeedback")))]
+    ForceFeedbackMotors: usize,
+    pub HardwareProductId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub HardwareVendorId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub SwitchCount: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub GetButtonLabel: unsafe extern "system" fn(this: *mut *mut Self, buttonindex: i32, result__: *mut GameControllerButtonLabel) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentReading: unsafe extern "system" fn(this: *mut *mut Self, buttonArray_array_size: u32, buttonarray: *mut bool, switchArray_array_size: u32, switcharray: *mut GameControllerSwitchPosition, axisArray_array_size: u32, axisarray: *mut f64, result__: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetSwitchKind: unsafe extern "system" fn(this: *mut *mut Self, switchindex: i32, result__: *mut GameControllerSwitchKind) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRawGameController2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(all(feature = "Devices_Haptics", feature = "Foundation_Collections"))]
+    pub SimpleHapticsControllers: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Devices_Haptics", feature = "Foundation_Collections")))]
+    SimpleHapticsControllers: usize,
+    pub NonRoamableId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub DisplayName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRawGameControllerStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub RawGameControllerAdded: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RawGameControllerAdded: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveRawGameControllerAdded: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveRawGameControllerAdded: usize,
+    #[cfg(feature = "Foundation")]
+    pub RawGameControllerRemoved: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RawGameControllerRemoved: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveRawGameControllerRemoved: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveRawGameControllerRemoved: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub RawGameControllers: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    RawGameControllers: usize,
+    pub FromGameController: unsafe extern "system" fn(this: *mut *mut Self, gamecontroller: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IUINavigationController {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub GetCurrentReading: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut UINavigationReading) -> ::windows_sys::core::HRESULT,
+    pub GetOptionalButtonLabel: unsafe extern "system" fn(this: *mut *mut Self, button: OptionalUINavigationButtons, result__: *mut GameControllerButtonLabel) -> ::windows_sys::core::HRESULT,
+    pub GetRequiredButtonLabel: unsafe extern "system" fn(this: *mut *mut Self, button: RequiredUINavigationButtons, result__: *mut GameControllerButtonLabel) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IUINavigationControllerStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub UINavigationControllerAdded: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    UINavigationControllerAdded: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveUINavigationControllerAdded: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveUINavigationControllerAdded: usize,
+    #[cfg(feature = "Foundation")]
+    pub UINavigationControllerRemoved: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    UINavigationControllerRemoved: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveUINavigationControllerRemoved: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveUINavigationControllerRemoved: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub UINavigationControllers: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    UINavigationControllers: usize,
+}
+#[repr(C)]
+pub struct IUINavigationControllerStatics2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub FromGameController: unsafe extern "system" fn(this: *mut *mut Self, gamecontroller: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
 #[doc = "*Required features: `\"Gaming_Input\"`*"]
 #[repr(transparent)]
 pub struct OptionalUINavigationButtons(pub u32);

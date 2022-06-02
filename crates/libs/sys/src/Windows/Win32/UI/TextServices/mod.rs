@@ -116,32 +116,261 @@ pub const GXFPF_NEAREST: u32 = 2u32;
 #[doc = "*Required features: `\"Win32_UI_TextServices\"`*"]
 pub const GXFPF_ROUND_NEAREST: u32 = 1u32;
 pub type HKL = isize;
-pub type IAccClientDocMgr = *mut ::core::ffi::c_void;
-pub type IAccDictionary = *mut ::core::ffi::c_void;
-pub type IAccServerDocMgr = *mut ::core::ffi::c_void;
-pub type IAccStore = *mut ::core::ffi::c_void;
-pub type IAnchor = *mut ::core::ffi::c_void;
-pub type IClonableWrapper = *mut ::core::ffi::c_void;
-pub type ICoCreateLocally = *mut ::core::ffi::c_void;
-pub type ICoCreatedLocally = *mut ::core::ffi::c_void;
-pub type IDocWrap = *mut ::core::ffi::c_void;
-pub type IEnumITfCompositionView = *mut ::core::ffi::c_void;
-pub type IEnumSpeechCommands = *mut ::core::ffi::c_void;
-pub type IEnumTfCandidates = *mut ::core::ffi::c_void;
-pub type IEnumTfContextViews = *mut ::core::ffi::c_void;
-pub type IEnumTfContexts = *mut ::core::ffi::c_void;
-pub type IEnumTfDisplayAttributeInfo = *mut ::core::ffi::c_void;
-pub type IEnumTfDocumentMgrs = *mut ::core::ffi::c_void;
-pub type IEnumTfFunctionProviders = *mut ::core::ffi::c_void;
-pub type IEnumTfInputProcessorProfiles = *mut ::core::ffi::c_void;
-pub type IEnumTfLangBarItems = *mut ::core::ffi::c_void;
-pub type IEnumTfLanguageProfiles = *mut ::core::ffi::c_void;
-pub type IEnumTfLatticeElements = *mut ::core::ffi::c_void;
-pub type IEnumTfProperties = *mut ::core::ffi::c_void;
-pub type IEnumTfPropertyValue = *mut ::core::ffi::c_void;
-pub type IEnumTfRanges = *mut ::core::ffi::c_void;
-pub type IEnumTfUIElements = *mut ::core::ffi::c_void;
-pub type IInternalDocWrap = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IAccClientDocMgr {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetDocuments: unsafe extern "system" fn(this: *mut *mut Self, enumunknown: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetDocuments: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub LookupByHWND: unsafe extern "system" fn(this: *mut *mut Self, hwnd: super::super::Foundation::HWND, riid: *const ::windows_sys::core::GUID, ppunk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    LookupByHWND: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub LookupByPoint: unsafe extern "system" fn(this: *mut *mut Self, pt: super::super::Foundation::POINT, riid: *const ::windows_sys::core::GUID, ppunk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    LookupByPoint: usize,
+    pub GetFocused: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppunk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAccDictionary {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetLocalizedString: unsafe extern "system" fn(this: *mut *mut Self, term: *const ::windows_sys::core::GUID, lcid: u32, presult: *mut super::super::Foundation::BSTR, plcid: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetLocalizedString: usize,
+    pub GetParentTerm: unsafe extern "system" fn(this: *mut *mut Self, term: *const ::windows_sys::core::GUID, pparentterm: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetMnemonicString: unsafe extern "system" fn(this: *mut *mut Self, term: *const ::windows_sys::core::GUID, presult: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetMnemonicString: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub LookupMnemonicTerm: unsafe extern "system" fn(this: *mut *mut Self, bstrmnemonic: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pterm: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    LookupMnemonicTerm: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub ConvertValueToString: unsafe extern "system" fn(this: *mut *mut Self, term: *const ::windows_sys::core::GUID, lcid: u32, varvalue: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>, pbstrresult: *mut super::super::Foundation::BSTR, plcid: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    ConvertValueToString: usize,
+}
+#[repr(C)]
+pub struct IAccServerDocMgr {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub NewDocument: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, punk: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RevokeDocument: unsafe extern "system" fn(this: *mut *mut Self, punk: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub OnDocumentFocus: unsafe extern "system" fn(this: *mut *mut Self, punk: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAccStore {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Register: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, punk: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Unregister: unsafe extern "system" fn(this: *mut *mut Self, punk: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetDocuments: unsafe extern "system" fn(this: *mut *mut Self, enumunknown: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetDocuments: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub LookupByHWND: unsafe extern "system" fn(this: *mut *mut Self, hwnd: super::super::Foundation::HWND, riid: *const ::windows_sys::core::GUID, ppunk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    LookupByHWND: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub LookupByPoint: unsafe extern "system" fn(this: *mut *mut Self, pt: super::super::Foundation::POINT, riid: *const ::windows_sys::core::GUID, ppunk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    LookupByPoint: usize,
+    pub OnDocumentFocus: unsafe extern "system" fn(this: *mut *mut Self, punk: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetFocused: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppunk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAnchor {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetGravity: unsafe extern "system" fn(this: *mut *mut Self, gravity: TsGravity) -> ::windows_sys::core::HRESULT,
+    pub GetGravity: unsafe extern "system" fn(this: *mut *mut Self, pgravity: *mut TsGravity) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsEqual: unsafe extern "system" fn(this: *mut *mut Self, pawith: *mut ::core::ffi::c_void, pfequal: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsEqual: usize,
+    pub Compare: unsafe extern "system" fn(this: *mut *mut Self, pawith: *mut ::core::ffi::c_void, plresult: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub Shift: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, cchreq: i32, pcch: *mut i32, pahaltanchor: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ShiftTo: unsafe extern "system" fn(this: *mut *mut Self, pasite: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ShiftRegion: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, dir: TsShiftDir, pfnoregion: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ShiftRegion: usize,
+    pub SetChangeHistoryMask: unsafe extern "system" fn(this: *mut *mut Self, dwmask: u32) -> ::windows_sys::core::HRESULT,
+    pub GetChangeHistory: unsafe extern "system" fn(this: *mut *mut Self, pdwhistory: *mut ANCHOR_CHANGE_HISTORY_FLAGS) -> ::windows_sys::core::HRESULT,
+    pub ClearChangeHistory: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppaclone: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IClonableWrapper {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub CloneNewWrapper: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ICoCreateLocally {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub CoCreateLocally: unsafe extern "system" fn(this: *mut *mut Self, rclsid: *const ::windows_sys::core::GUID, dwclscontext: u32, riid: *const ::windows_sys::core::GUID, punk: *mut *mut ::core::ffi::c_void, riidparam: *const ::windows_sys::core::GUID, punkparam: *mut ::core::ffi::c_void, varparam: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    CoCreateLocally: usize,
+}
+#[repr(C)]
+pub struct ICoCreatedLocally {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub LocalInit: unsafe extern "system" fn(this: *mut *mut Self, punklocalobject: *mut ::core::ffi::c_void, riidparam: *const ::windows_sys::core::GUID, punkparam: *mut ::core::ffi::c_void, varparam: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    LocalInit: usize,
+}
+#[repr(C)]
+pub struct IDocWrap {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetDoc: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, punk: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetWrappedDoc: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppunk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IEnumITfCompositionView {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, ulcount: u32, rgcompositionview: *mut *mut ::core::ffi::c_void, pcfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Skip: unsafe extern "system" fn(this: *mut *mut Self, ulcount: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IEnumSpeechCommands {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, ulcount: u32, pspcmds: *mut *mut u16, pcfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Skip: unsafe extern "system" fn(this: *mut *mut Self, ulcount: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IEnumTfCandidates {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, ulcount: u32, ppcand: *mut *mut ::core::ffi::c_void, pcfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Skip: unsafe extern "system" fn(this: *mut *mut Self, ulcount: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IEnumTfContextViews {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, ulcount: u32, rgviews: *mut *mut ::core::ffi::c_void, pcfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Skip: unsafe extern "system" fn(this: *mut *mut Self, ulcount: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IEnumTfContexts {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, ulcount: u32, rgcontext: *mut *mut ::core::ffi::c_void, pcfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Skip: unsafe extern "system" fn(this: *mut *mut Self, ulcount: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IEnumTfDisplayAttributeInfo {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, ulcount: u32, rginfo: *mut *mut ::core::ffi::c_void, pcfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Skip: unsafe extern "system" fn(this: *mut *mut Self, ulcount: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IEnumTfDocumentMgrs {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, ulcount: u32, rgdocumentmgr: *mut *mut ::core::ffi::c_void, pcfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Skip: unsafe extern "system" fn(this: *mut *mut Self, ulcount: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IEnumTfFunctionProviders {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, ulcount: u32, ppcmdobj: *mut *mut ::core::ffi::c_void, pcfetch: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Skip: unsafe extern "system" fn(this: *mut *mut Self, ulcount: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IEnumTfInputProcessorProfiles {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, ulcount: u32, pprofile: *mut TF_INPUTPROCESSORPROFILE, pcfetch: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Skip: unsafe extern "system" fn(this: *mut *mut Self, ulcount: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IEnumTfLangBarItems {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, ulcount: u32, ppitem: *mut *mut ::core::ffi::c_void, pcfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Skip: unsafe extern "system" fn(this: *mut *mut Self, ulcount: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IEnumTfLanguageProfiles {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, ulcount: u32, pprofile: *mut TF_LANGUAGEPROFILE, pcfetch: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Next: usize,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Skip: unsafe extern "system" fn(this: *mut *mut Self, ulcount: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IEnumTfLatticeElements {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, ulcount: u32, rgselements: *mut TF_LMLATTELEMENT, pcfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Next: usize,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Skip: unsafe extern "system" fn(this: *mut *mut Self, ulcount: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IEnumTfProperties {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, ulcount: u32, ppprop: *mut *mut ::core::ffi::c_void, pcfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Skip: unsafe extern "system" fn(this: *mut *mut Self, ulcount: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IEnumTfPropertyValue {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, ulcount: u32, rgvalues: *mut TF_PROPERTYVAL, pcfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Next: usize,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Skip: unsafe extern "system" fn(this: *mut *mut Self, ulcount: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IEnumTfRanges {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, ulcount: u32, pprange: *mut *mut ::core::ffi::c_void, pcfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Skip: unsafe extern "system" fn(this: *mut *mut Self, ulcount: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IEnumTfUIElements {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, ulcount: u32, ppelement: *mut *mut ::core::ffi::c_void, pcfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Skip: unsafe extern "system" fn(this: *mut *mut Self, ulcount: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IInternalDocWrap {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub NotifyRevoke: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
 #[doc = "*Required features: `\"Win32_UI_TextServices\"`*"]
 pub const ILMCM_CHECKLAYOUTANDTIPENABLED: u32 = 1u32;
 #[doc = "*Required features: `\"Win32_UI_TextServices\"`*"]
@@ -154,136 +383,1606 @@ pub const TF_IAS_NOQUERY: INSERT_TEXT_AT_SELECTION_FLAGS = 1u32;
 pub const TF_IAS_QUERYONLY: INSERT_TEXT_AT_SELECTION_FLAGS = 2u32;
 #[doc = "*Required features: `\"Win32_UI_TextServices\"`*"]
 pub const TF_IAS_NO_DEFAULT_COMPOSITION: INSERT_TEXT_AT_SELECTION_FLAGS = 2147483648u32;
-pub type ISpeechCommandProvider = *mut ::core::ffi::c_void;
-pub type ITextStoreACP = *mut ::core::ffi::c_void;
-pub type ITextStoreACP2 = *mut ::core::ffi::c_void;
-pub type ITextStoreACPEx = *mut ::core::ffi::c_void;
-pub type ITextStoreACPServices = *mut ::core::ffi::c_void;
-pub type ITextStoreACPSink = *mut ::core::ffi::c_void;
-pub type ITextStoreACPSinkEx = *mut ::core::ffi::c_void;
-pub type ITextStoreAnchor = *mut ::core::ffi::c_void;
-pub type ITextStoreAnchorEx = *mut ::core::ffi::c_void;
-pub type ITextStoreAnchorSink = *mut ::core::ffi::c_void;
-pub type ITextStoreSinkAnchorEx = *mut ::core::ffi::c_void;
-pub type ITfActiveLanguageProfileNotifySink = *mut ::core::ffi::c_void;
-pub type ITfCandidateList = *mut ::core::ffi::c_void;
-pub type ITfCandidateListUIElement = *mut ::core::ffi::c_void;
-pub type ITfCandidateListUIElementBehavior = *mut ::core::ffi::c_void;
-pub type ITfCandidateString = *mut ::core::ffi::c_void;
-pub type ITfCategoryMgr = *mut ::core::ffi::c_void;
-pub type ITfCleanupContextDurationSink = *mut ::core::ffi::c_void;
-pub type ITfCleanupContextSink = *mut ::core::ffi::c_void;
-pub type ITfClientId = *mut ::core::ffi::c_void;
-pub type ITfCompartment = *mut ::core::ffi::c_void;
-pub type ITfCompartmentEventSink = *mut ::core::ffi::c_void;
-pub type ITfCompartmentMgr = *mut ::core::ffi::c_void;
-pub type ITfComposition = *mut ::core::ffi::c_void;
-pub type ITfCompositionSink = *mut ::core::ffi::c_void;
-pub type ITfCompositionView = *mut ::core::ffi::c_void;
-pub type ITfConfigureSystemKeystrokeFeed = *mut ::core::ffi::c_void;
-pub type ITfContext = *mut ::core::ffi::c_void;
-pub type ITfContextComposition = *mut ::core::ffi::c_void;
-pub type ITfContextKeyEventSink = *mut ::core::ffi::c_void;
-pub type ITfContextOwner = *mut ::core::ffi::c_void;
-pub type ITfContextOwnerCompositionServices = *mut ::core::ffi::c_void;
-pub type ITfContextOwnerCompositionSink = *mut ::core::ffi::c_void;
-pub type ITfContextOwnerServices = *mut ::core::ffi::c_void;
-pub type ITfContextView = *mut ::core::ffi::c_void;
-pub type ITfCreatePropertyStore = *mut ::core::ffi::c_void;
-pub type ITfDisplayAttributeInfo = *mut ::core::ffi::c_void;
-pub type ITfDisplayAttributeMgr = *mut ::core::ffi::c_void;
-pub type ITfDisplayAttributeNotifySink = *mut ::core::ffi::c_void;
-pub type ITfDisplayAttributeProvider = *mut ::core::ffi::c_void;
-pub type ITfDocumentMgr = *mut ::core::ffi::c_void;
-pub type ITfEditRecord = *mut ::core::ffi::c_void;
-pub type ITfEditSession = *mut ::core::ffi::c_void;
-pub type ITfEditTransactionSink = *mut ::core::ffi::c_void;
-pub type ITfFnAdviseText = *mut ::core::ffi::c_void;
-pub type ITfFnBalloon = *mut ::core::ffi::c_void;
-pub type ITfFnConfigure = *mut ::core::ffi::c_void;
-pub type ITfFnConfigureRegisterEudc = *mut ::core::ffi::c_void;
-pub type ITfFnConfigureRegisterWord = *mut ::core::ffi::c_void;
-pub type ITfFnCustomSpeechCommand = *mut ::core::ffi::c_void;
-pub type ITfFnGetLinguisticAlternates = *mut ::core::ffi::c_void;
-pub type ITfFnGetPreferredTouchKeyboardLayout = *mut ::core::ffi::c_void;
-pub type ITfFnGetSAPIObject = *mut ::core::ffi::c_void;
-pub type ITfFnLMInternal = *mut ::core::ffi::c_void;
-pub type ITfFnLMProcessor = *mut ::core::ffi::c_void;
-pub type ITfFnLangProfileUtil = *mut ::core::ffi::c_void;
-pub type ITfFnPlayBack = *mut ::core::ffi::c_void;
-pub type ITfFnPropertyUIStatus = *mut ::core::ffi::c_void;
-pub type ITfFnReconversion = *mut ::core::ffi::c_void;
-pub type ITfFnSearchCandidateProvider = *mut ::core::ffi::c_void;
-pub type ITfFnShowHelp = *mut ::core::ffi::c_void;
-pub type ITfFunction = *mut ::core::ffi::c_void;
-pub type ITfFunctionProvider = *mut ::core::ffi::c_void;
-pub type ITfInputProcessorProfileActivationSink = *mut ::core::ffi::c_void;
-pub type ITfInputProcessorProfileMgr = *mut ::core::ffi::c_void;
-pub type ITfInputProcessorProfileSubstituteLayout = *mut ::core::ffi::c_void;
-pub type ITfInputProcessorProfiles = *mut ::core::ffi::c_void;
-pub type ITfInputProcessorProfilesEx = *mut ::core::ffi::c_void;
-pub type ITfInputScope = *mut ::core::ffi::c_void;
-pub type ITfInputScope2 = *mut ::core::ffi::c_void;
-pub type ITfInsertAtSelection = *mut ::core::ffi::c_void;
-pub type ITfIntegratableCandidateListUIElement = *mut ::core::ffi::c_void;
-pub type ITfKeyEventSink = *mut ::core::ffi::c_void;
-pub type ITfKeyTraceEventSink = *mut ::core::ffi::c_void;
-pub type ITfKeystrokeMgr = *mut ::core::ffi::c_void;
-pub type ITfLMLattice = *mut ::core::ffi::c_void;
-pub type ITfLangBarEventSink = *mut ::core::ffi::c_void;
-pub type ITfLangBarItem = *mut ::core::ffi::c_void;
-pub type ITfLangBarItemBalloon = *mut ::core::ffi::c_void;
-pub type ITfLangBarItemBitmap = *mut ::core::ffi::c_void;
-pub type ITfLangBarItemBitmapButton = *mut ::core::ffi::c_void;
-pub type ITfLangBarItemButton = *mut ::core::ffi::c_void;
-pub type ITfLangBarItemMgr = *mut ::core::ffi::c_void;
-pub type ITfLangBarItemSink = *mut ::core::ffi::c_void;
-pub type ITfLangBarMgr = *mut ::core::ffi::c_void;
-pub type ITfLanguageProfileNotifySink = *mut ::core::ffi::c_void;
-pub type ITfMSAAControl = *mut ::core::ffi::c_void;
-pub type ITfMenu = *mut ::core::ffi::c_void;
-pub type ITfMessagePump = *mut ::core::ffi::c_void;
-pub type ITfMouseSink = *mut ::core::ffi::c_void;
-pub type ITfMouseTracker = *mut ::core::ffi::c_void;
-pub type ITfMouseTrackerACP = *mut ::core::ffi::c_void;
-pub type ITfPersistentPropertyLoaderACP = *mut ::core::ffi::c_void;
-pub type ITfPreservedKeyNotifySink = *mut ::core::ffi::c_void;
-pub type ITfProperty = *mut ::core::ffi::c_void;
-pub type ITfPropertyStore = *mut ::core::ffi::c_void;
-pub type ITfQueryEmbedded = *mut ::core::ffi::c_void;
-pub type ITfRange = *mut ::core::ffi::c_void;
-pub type ITfRangeACP = *mut ::core::ffi::c_void;
-pub type ITfRangeBackup = *mut ::core::ffi::c_void;
-pub type ITfReadOnlyProperty = *mut ::core::ffi::c_void;
-pub type ITfReadingInformationUIElement = *mut ::core::ffi::c_void;
-pub type ITfReverseConversion = *mut ::core::ffi::c_void;
-pub type ITfReverseConversionList = *mut ::core::ffi::c_void;
-pub type ITfReverseConversionMgr = *mut ::core::ffi::c_void;
-pub type ITfSource = *mut ::core::ffi::c_void;
-pub type ITfSourceSingle = *mut ::core::ffi::c_void;
-pub type ITfSpeechUIServer = *mut ::core::ffi::c_void;
-pub type ITfStatusSink = *mut ::core::ffi::c_void;
-pub type ITfSystemDeviceTypeLangBarItem = *mut ::core::ffi::c_void;
-pub type ITfSystemLangBarItem = *mut ::core::ffi::c_void;
-pub type ITfSystemLangBarItemSink = *mut ::core::ffi::c_void;
-pub type ITfSystemLangBarItemText = *mut ::core::ffi::c_void;
-pub type ITfTextEditSink = *mut ::core::ffi::c_void;
-pub type ITfTextInputProcessor = *mut ::core::ffi::c_void;
-pub type ITfTextInputProcessorEx = *mut ::core::ffi::c_void;
-pub type ITfTextLayoutSink = *mut ::core::ffi::c_void;
-pub type ITfThreadFocusSink = *mut ::core::ffi::c_void;
-pub type ITfThreadMgr = *mut ::core::ffi::c_void;
-pub type ITfThreadMgr2 = *mut ::core::ffi::c_void;
-pub type ITfThreadMgrEventSink = *mut ::core::ffi::c_void;
-pub type ITfThreadMgrEx = *mut ::core::ffi::c_void;
-pub type ITfToolTipUIElement = *mut ::core::ffi::c_void;
-pub type ITfTransitoryExtensionSink = *mut ::core::ffi::c_void;
-pub type ITfTransitoryExtensionUIElement = *mut ::core::ffi::c_void;
-pub type ITfUIElement = *mut ::core::ffi::c_void;
-pub type ITfUIElementMgr = *mut ::core::ffi::c_void;
-pub type ITfUIElementSink = *mut ::core::ffi::c_void;
-pub type IUIManagerEventSink = *mut ::core::ffi::c_void;
-pub type IVersionInfo = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct ISpeechCommandProvider {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub EnumSpeechCommands: unsafe extern "system" fn(this: *mut *mut Self, langid: u16, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ProcessCommand: unsafe extern "system" fn(this: *mut *mut Self, pszcommand: ::windows_sys::core::PCWSTR, cch: u32, langid: u16) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITextStoreACP {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub AdviseSink: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, punk: *mut ::core::ffi::c_void, dwmask: u32) -> ::windows_sys::core::HRESULT,
+    pub UnadviseSink: unsafe extern "system" fn(this: *mut *mut Self, punk: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RequestLock: unsafe extern "system" fn(this: *mut *mut Self, dwlockflags: u32, phrsession: *mut ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+    pub GetStatus: unsafe extern "system" fn(this: *mut *mut Self, pdcs: *mut TS_STATUS) -> ::windows_sys::core::HRESULT,
+    pub QueryInsert: unsafe extern "system" fn(this: *mut *mut Self, acpteststart: i32, acptestend: i32, cch: u32, pacpresultstart: *mut i32, pacpresultend: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetSelection: unsafe extern "system" fn(this: *mut *mut Self, ulindex: u32, ulcount: u32, pselection: *mut TS_SELECTION_ACP, pcfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetSelection: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetSelection: unsafe extern "system" fn(this: *mut *mut Self, ulcount: u32, pselection: *const TS_SELECTION_ACP) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetSelection: usize,
+    pub GetText: unsafe extern "system" fn(this: *mut *mut Self, acpstart: i32, acpend: i32, pchplain: ::windows_sys::core::PWSTR, cchplainreq: u32, pcchplainret: *mut u32, prgruninfo: *mut TS_RUNINFO, cruninforeq: u32, pcruninforet: *mut u32, pacpnext: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetText: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, acpstart: i32, acpend: i32, pchtext: ::windows_sys::core::PCWSTR, cch: u32, pchange: *mut TS_TEXTCHANGE) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetFormattedText: unsafe extern "system" fn(this: *mut *mut Self, acpstart: i32, acpend: i32, ppdataobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetFormattedText: usize,
+    pub GetEmbedded: unsafe extern "system" fn(this: *mut *mut Self, acppos: i32, rguidservice: *const ::windows_sys::core::GUID, riid: *const ::windows_sys::core::GUID, ppunk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub QueryInsertEmbedded: unsafe extern "system" fn(this: *mut *mut Self, pguidservice: *const ::windows_sys::core::GUID, pformatetc: *const super::super::System::Com::FORMATETC, pfinsertable: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    QueryInsertEmbedded: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub InsertEmbedded: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, acpstart: i32, acpend: i32, pdataobject: *mut ::core::ffi::c_void, pchange: *mut TS_TEXTCHANGE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    InsertEmbedded: usize,
+    pub InsertTextAtSelection: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, pchtext: ::windows_sys::core::PCWSTR, cch: u32, pacpstart: *mut i32, pacpend: *mut i32, pchange: *mut TS_TEXTCHANGE) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub InsertEmbeddedAtSelection: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, pdataobject: *mut ::core::ffi::c_void, pacpstart: *mut i32, pacpend: *mut i32, pchange: *mut TS_TEXTCHANGE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    InsertEmbeddedAtSelection: usize,
+    pub RequestSupportedAttrs: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, cfilterattrs: u32, pafilterattrs: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub RequestAttrsAtPosition: unsafe extern "system" fn(this: *mut *mut Self, acppos: i32, cfilterattrs: u32, pafilterattrs: *const ::windows_sys::core::GUID, dwflags: u32) -> ::windows_sys::core::HRESULT,
+    pub RequestAttrsTransitioningAtPosition: unsafe extern "system" fn(this: *mut *mut Self, acppos: i32, cfilterattrs: u32, pafilterattrs: *const ::windows_sys::core::GUID, dwflags: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub FindNextAttrTransition: unsafe extern "system" fn(this: *mut *mut Self, acpstart: i32, acphalt: i32, cfilterattrs: u32, pafilterattrs: *const ::windows_sys::core::GUID, dwflags: u32, pacpnext: *mut i32, pffound: *mut super::super::Foundation::BOOL, plfoundoffset: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    FindNextAttrTransition: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub RetrieveRequestedAttrs: unsafe extern "system" fn(this: *mut *mut Self, ulcount: u32, paattrvals: *mut TS_ATTRVAL, pcfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    RetrieveRequestedAttrs: usize,
+    pub GetEndACP: unsafe extern "system" fn(this: *mut *mut Self, pacp: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub GetActiveView: unsafe extern "system" fn(this: *mut *mut Self, pvcview: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetACPFromPoint: unsafe extern "system" fn(this: *mut *mut Self, vcview: u32, ptscreen: *const super::super::Foundation::POINT, dwflags: u32, pacp: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetACPFromPoint: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetTextExt: unsafe extern "system" fn(this: *mut *mut Self, vcview: u32, acpstart: i32, acpend: i32, prc: *mut super::super::Foundation::RECT, pfclipped: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetTextExt: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetScreenExt: unsafe extern "system" fn(this: *mut *mut Self, vcview: u32, prc: *mut super::super::Foundation::RECT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetScreenExt: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetWnd: unsafe extern "system" fn(this: *mut *mut Self, vcview: u32, phwnd: *mut super::super::Foundation::HWND) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetWnd: usize,
+}
+#[repr(C)]
+pub struct ITextStoreACP2 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub AdviseSink: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, punk: *mut ::core::ffi::c_void, dwmask: u32) -> ::windows_sys::core::HRESULT,
+    pub UnadviseSink: unsafe extern "system" fn(this: *mut *mut Self, punk: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RequestLock: unsafe extern "system" fn(this: *mut *mut Self, dwlockflags: u32, phrsession: *mut ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+    pub GetStatus: unsafe extern "system" fn(this: *mut *mut Self, pdcs: *mut TS_STATUS) -> ::windows_sys::core::HRESULT,
+    pub QueryInsert: unsafe extern "system" fn(this: *mut *mut Self, acpteststart: i32, acptestend: i32, cch: u32, pacpresultstart: *mut i32, pacpresultend: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetSelection: unsafe extern "system" fn(this: *mut *mut Self, ulindex: u32, ulcount: u32, pselection: *mut TS_SELECTION_ACP, pcfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetSelection: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetSelection: unsafe extern "system" fn(this: *mut *mut Self, ulcount: u32, pselection: *const TS_SELECTION_ACP) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetSelection: usize,
+    pub GetText: unsafe extern "system" fn(this: *mut *mut Self, acpstart: i32, acpend: i32, pchplain: ::windows_sys::core::PWSTR, cchplainreq: u32, pcchplainret: *mut u32, prgruninfo: *mut TS_RUNINFO, cruninforeq: u32, pcruninforet: *mut u32, pacpnext: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetText: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, acpstart: i32, acpend: i32, pchtext: ::windows_sys::core::PCWSTR, cch: u32, pchange: *mut TS_TEXTCHANGE) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetFormattedText: unsafe extern "system" fn(this: *mut *mut Self, acpstart: i32, acpend: i32, ppdataobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetFormattedText: usize,
+    pub GetEmbedded: unsafe extern "system" fn(this: *mut *mut Self, acppos: i32, rguidservice: *const ::windows_sys::core::GUID, riid: *const ::windows_sys::core::GUID, ppunk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub QueryInsertEmbedded: unsafe extern "system" fn(this: *mut *mut Self, pguidservice: *const ::windows_sys::core::GUID, pformatetc: *const super::super::System::Com::FORMATETC, pfinsertable: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    QueryInsertEmbedded: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub InsertEmbedded: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, acpstart: i32, acpend: i32, pdataobject: *mut ::core::ffi::c_void, pchange: *mut TS_TEXTCHANGE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    InsertEmbedded: usize,
+    pub InsertTextAtSelection: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, pchtext: ::windows_sys::core::PCWSTR, cch: u32, pacpstart: *mut i32, pacpend: *mut i32, pchange: *mut TS_TEXTCHANGE) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub InsertEmbeddedAtSelection: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, pdataobject: *mut ::core::ffi::c_void, pacpstart: *mut i32, pacpend: *mut i32, pchange: *mut TS_TEXTCHANGE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    InsertEmbeddedAtSelection: usize,
+    pub RequestSupportedAttrs: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, cfilterattrs: u32, pafilterattrs: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub RequestAttrsAtPosition: unsafe extern "system" fn(this: *mut *mut Self, acppos: i32, cfilterattrs: u32, pafilterattrs: *const ::windows_sys::core::GUID, dwflags: u32) -> ::windows_sys::core::HRESULT,
+    pub RequestAttrsTransitioningAtPosition: unsafe extern "system" fn(this: *mut *mut Self, acppos: i32, cfilterattrs: u32, pafilterattrs: *const ::windows_sys::core::GUID, dwflags: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub FindNextAttrTransition: unsafe extern "system" fn(this: *mut *mut Self, acpstart: i32, acphalt: i32, cfilterattrs: u32, pafilterattrs: *const ::windows_sys::core::GUID, dwflags: u32, pacpnext: *mut i32, pffound: *mut super::super::Foundation::BOOL, plfoundoffset: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    FindNextAttrTransition: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub RetrieveRequestedAttrs: unsafe extern "system" fn(this: *mut *mut Self, ulcount: u32, paattrvals: *mut TS_ATTRVAL, pcfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    RetrieveRequestedAttrs: usize,
+    pub GetEndACP: unsafe extern "system" fn(this: *mut *mut Self, pacp: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub GetActiveView: unsafe extern "system" fn(this: *mut *mut Self, pvcview: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetACPFromPoint: unsafe extern "system" fn(this: *mut *mut Self, vcview: u32, ptscreen: *const super::super::Foundation::POINT, dwflags: u32, pacp: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetACPFromPoint: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetTextExt: unsafe extern "system" fn(this: *mut *mut Self, vcview: u32, acpstart: i32, acpend: i32, prc: *mut super::super::Foundation::RECT, pfclipped: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetTextExt: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetScreenExt: unsafe extern "system" fn(this: *mut *mut Self, vcview: u32, prc: *mut super::super::Foundation::RECT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetScreenExt: usize,
+}
+#[repr(C)]
+pub struct ITextStoreACPEx {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ScrollToRect: unsafe extern "system" fn(this: *mut *mut Self, acpstart: i32, acpend: i32, rc: super::super::Foundation::RECT, dwposition: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ScrollToRect: usize,
+}
+#[repr(C)]
+pub struct ITextStoreACPServices {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Serialize: unsafe extern "system" fn(this: *mut *mut Self, pprop: *mut ::core::ffi::c_void, prange: *mut ::core::ffi::c_void, phdr: *mut TF_PERSISTENT_PROPERTY_HEADER_ACP, pstream: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Serialize: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Unserialize: unsafe extern "system" fn(this: *mut *mut Self, pprop: *mut ::core::ffi::c_void, phdr: *const TF_PERSISTENT_PROPERTY_HEADER_ACP, pstream: *mut ::core::ffi::c_void, ploader: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Unserialize: usize,
+    pub ForceLoadProperty: unsafe extern "system" fn(this: *mut *mut Self, pprop: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateRange: unsafe extern "system" fn(this: *mut *mut Self, acpstart: i32, acpend: i32, pprange: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITextStoreACPSink {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnTextChange: unsafe extern "system" fn(this: *mut *mut Self, dwflags: TEXT_STORE_TEXT_CHANGE_FLAGS, pchange: *const TS_TEXTCHANGE) -> ::windows_sys::core::HRESULT,
+    pub OnSelectionChange: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub OnLayoutChange: unsafe extern "system" fn(this: *mut *mut Self, lcode: TsLayoutCode, vcview: u32) -> ::windows_sys::core::HRESULT,
+    pub OnStatusChange: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32) -> ::windows_sys::core::HRESULT,
+    pub OnAttrsChange: unsafe extern "system" fn(this: *mut *mut Self, acpstart: i32, acpend: i32, cattrs: u32, paattrs: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub OnLockGranted: unsafe extern "system" fn(this: *mut *mut Self, dwlockflags: TEXT_STORE_LOCK_FLAGS) -> ::windows_sys::core::HRESULT,
+    pub OnStartEditTransaction: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub OnEndEditTransaction: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITextStoreACPSinkEx {
+    pub base__: ITextStoreACPSink,
+    pub OnDisconnect: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITextStoreAnchor {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub AdviseSink: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, punk: *mut ::core::ffi::c_void, dwmask: u32) -> ::windows_sys::core::HRESULT,
+    pub UnadviseSink: unsafe extern "system" fn(this: *mut *mut Self, punk: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RequestLock: unsafe extern "system" fn(this: *mut *mut Self, dwlockflags: u32, phrsession: *mut ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+    pub GetStatus: unsafe extern "system" fn(this: *mut *mut Self, pdcs: *mut TS_STATUS) -> ::windows_sys::core::HRESULT,
+    pub QueryInsert: unsafe extern "system" fn(this: *mut *mut Self, pateststart: *mut ::core::ffi::c_void, patestend: *mut ::core::ffi::c_void, cch: u32, pparesultstart: *mut *mut ::core::ffi::c_void, pparesultend: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetSelection: unsafe extern "system" fn(this: *mut *mut Self, ulindex: u32, ulcount: u32, pselection: *mut TS_SELECTION_ANCHOR, pcfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetSelection: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetSelection: unsafe extern "system" fn(this: *mut *mut Self, ulcount: u32, pselection: *const TS_SELECTION_ANCHOR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetSelection: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetText: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, pastart: *mut ::core::ffi::c_void, paend: *mut ::core::ffi::c_void, pchtext: ::windows_sys::core::PWSTR, cchreq: u32, pcch: *mut u32, fupdateanchor: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetText: usize,
+    pub SetText: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, pastart: *mut ::core::ffi::c_void, paend: *mut ::core::ffi::c_void, pchtext: ::windows_sys::core::PCWSTR, cch: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetFormattedText: unsafe extern "system" fn(this: *mut *mut Self, pastart: *mut ::core::ffi::c_void, paend: *mut ::core::ffi::c_void, ppdataobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetFormattedText: usize,
+    pub GetEmbedded: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, papos: *mut ::core::ffi::c_void, rguidservice: *const ::windows_sys::core::GUID, riid: *const ::windows_sys::core::GUID, ppunk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub InsertEmbedded: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, pastart: *mut ::core::ffi::c_void, paend: *mut ::core::ffi::c_void, pdataobject: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    InsertEmbedded: usize,
+    pub RequestSupportedAttrs: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, cfilterattrs: u32, pafilterattrs: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub RequestAttrsAtPosition: unsafe extern "system" fn(this: *mut *mut Self, papos: *mut ::core::ffi::c_void, cfilterattrs: u32, pafilterattrs: *const ::windows_sys::core::GUID, dwflags: u32) -> ::windows_sys::core::HRESULT,
+    pub RequestAttrsTransitioningAtPosition: unsafe extern "system" fn(this: *mut *mut Self, papos: *mut ::core::ffi::c_void, cfilterattrs: u32, pafilterattrs: *const ::windows_sys::core::GUID, dwflags: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub FindNextAttrTransition: unsafe extern "system" fn(this: *mut *mut Self, pastart: *mut ::core::ffi::c_void, pahalt: *mut ::core::ffi::c_void, cfilterattrs: u32, pafilterattrs: *const ::windows_sys::core::GUID, dwflags: u32, pffound: *mut super::super::Foundation::BOOL, plfoundoffset: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    FindNextAttrTransition: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub RetrieveRequestedAttrs: unsafe extern "system" fn(this: *mut *mut Self, ulcount: u32, paattrvals: *mut TS_ATTRVAL, pcfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    RetrieveRequestedAttrs: usize,
+    pub GetStart: unsafe extern "system" fn(this: *mut *mut Self, ppastart: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetEnd: unsafe extern "system" fn(this: *mut *mut Self, ppaend: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetActiveView: unsafe extern "system" fn(this: *mut *mut Self, pvcview: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetAnchorFromPoint: unsafe extern "system" fn(this: *mut *mut Self, vcview: u32, ptscreen: *const super::super::Foundation::POINT, dwflags: u32, ppasite: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetAnchorFromPoint: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetTextExt: unsafe extern "system" fn(this: *mut *mut Self, vcview: u32, pastart: *mut ::core::ffi::c_void, paend: *mut ::core::ffi::c_void, prc: *mut super::super::Foundation::RECT, pfclipped: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetTextExt: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetScreenExt: unsafe extern "system" fn(this: *mut *mut Self, vcview: u32, prc: *mut super::super::Foundation::RECT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetScreenExt: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetWnd: unsafe extern "system" fn(this: *mut *mut Self, vcview: u32, phwnd: *mut super::super::Foundation::HWND) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetWnd: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub QueryInsertEmbedded: unsafe extern "system" fn(this: *mut *mut Self, pguidservice: *const ::windows_sys::core::GUID, pformatetc: *const super::super::System::Com::FORMATETC, pfinsertable: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    QueryInsertEmbedded: usize,
+    pub InsertTextAtSelection: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, pchtext: ::windows_sys::core::PCWSTR, cch: u32, ppastart: *mut *mut ::core::ffi::c_void, ppaend: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub InsertEmbeddedAtSelection: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, pdataobject: *mut ::core::ffi::c_void, ppastart: *mut *mut ::core::ffi::c_void, ppaend: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    InsertEmbeddedAtSelection: usize,
+}
+#[repr(C)]
+pub struct ITextStoreAnchorEx {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ScrollToRect: unsafe extern "system" fn(this: *mut *mut Self, pstart: *mut ::core::ffi::c_void, pend: *mut ::core::ffi::c_void, rc: super::super::Foundation::RECT, dwposition: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ScrollToRect: usize,
+}
+#[repr(C)]
+pub struct ITextStoreAnchorSink {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnTextChange: unsafe extern "system" fn(this: *mut *mut Self, dwflags: TEXT_STORE_CHANGE_FLAGS, pastart: *mut ::core::ffi::c_void, paend: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub OnSelectionChange: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub OnLayoutChange: unsafe extern "system" fn(this: *mut *mut Self, lcode: TsLayoutCode, vcview: u32) -> ::windows_sys::core::HRESULT,
+    pub OnStatusChange: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32) -> ::windows_sys::core::HRESULT,
+    pub OnAttrsChange: unsafe extern "system" fn(this: *mut *mut Self, pastart: *mut ::core::ffi::c_void, paend: *mut ::core::ffi::c_void, cattrs: u32, paattrs: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub OnLockGranted: unsafe extern "system" fn(this: *mut *mut Self, dwlockflags: TEXT_STORE_LOCK_FLAGS) -> ::windows_sys::core::HRESULT,
+    pub OnStartEditTransaction: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub OnEndEditTransaction: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITextStoreSinkAnchorEx {
+    pub base__: ITextStoreAnchorSink,
+    pub OnDisconnect: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfActiveLanguageProfileNotifySink {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OnActivated: unsafe extern "system" fn(this: *mut *mut Self, clsid: *const ::windows_sys::core::GUID, guidprofile: *const ::windows_sys::core::GUID, factivated: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OnActivated: usize,
+}
+#[repr(C)]
+pub struct ITfCandidateList {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub EnumCandidates: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetCandidate: unsafe extern "system" fn(this: *mut *mut Self, nindex: u32, ppcand: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetCandidateNum: unsafe extern "system" fn(this: *mut *mut Self, pncnt: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetResult: unsafe extern "system" fn(this: *mut *mut Self, nindex: u32, imcr: TfCandidateResult) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfCandidateListUIElement {
+    pub base__: ITfUIElement,
+    pub GetUpdatedFlags: unsafe extern "system" fn(this: *mut *mut Self, pdwflags: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetDocumentMgr: unsafe extern "system" fn(this: *mut *mut Self, ppdim: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, pucount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSelection: unsafe extern "system" fn(this: *mut *mut Self, puindex: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetString: unsafe extern "system" fn(this: *mut *mut Self, uindex: u32, pstr: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetString: usize,
+    pub GetPageIndex: unsafe extern "system" fn(this: *mut *mut Self, pindex: *mut u32, usize: u32, pupagecnt: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetPageIndex: unsafe extern "system" fn(this: *mut *mut Self, pindex: *const u32, upagecnt: u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentPage: unsafe extern "system" fn(this: *mut *mut Self, pupage: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfCandidateListUIElementBehavior {
+    pub base__: ITfCandidateListUIElement,
+    pub SetSelection: unsafe extern "system" fn(this: *mut *mut Self, nindex: u32) -> ::windows_sys::core::HRESULT,
+    pub Finalize: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Abort: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfCandidateString {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetString: unsafe extern "system" fn(this: *mut *mut Self, pbstr: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetString: usize,
+    pub GetIndex: unsafe extern "system" fn(this: *mut *mut Self, pnindex: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfCategoryMgr {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub RegisterCategory: unsafe extern "system" fn(this: *mut *mut Self, rclsid: *const ::windows_sys::core::GUID, rcatid: *const ::windows_sys::core::GUID, rguid: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub UnregisterCategory: unsafe extern "system" fn(this: *mut *mut Self, rclsid: *const ::windows_sys::core::GUID, rcatid: *const ::windows_sys::core::GUID, rguid: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub EnumCategoriesInItem: unsafe extern "system" fn(this: *mut *mut Self, rguid: *const ::windows_sys::core::GUID, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    EnumCategoriesInItem: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub EnumItemsInCategory: unsafe extern "system" fn(this: *mut *mut Self, rcatid: *const ::windows_sys::core::GUID, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    EnumItemsInCategory: usize,
+    pub FindClosestCategory: unsafe extern "system" fn(this: *mut *mut Self, rguid: *const ::windows_sys::core::GUID, pcatid: *mut ::windows_sys::core::GUID, ppcatidlist: *const *const ::windows_sys::core::GUID, ulcount: u32) -> ::windows_sys::core::HRESULT,
+    pub RegisterGUIDDescription: unsafe extern "system" fn(this: *mut *mut Self, rclsid: *const ::windows_sys::core::GUID, rguid: *const ::windows_sys::core::GUID, pchdesc: ::windows_sys::core::PCWSTR, cch: u32) -> ::windows_sys::core::HRESULT,
+    pub UnregisterGUIDDescription: unsafe extern "system" fn(this: *mut *mut Self, rclsid: *const ::windows_sys::core::GUID, rguid: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetGUIDDescription: unsafe extern "system" fn(this: *mut *mut Self, rguid: *const ::windows_sys::core::GUID, pbstrdesc: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetGUIDDescription: usize,
+    pub RegisterGUIDDWORD: unsafe extern "system" fn(this: *mut *mut Self, rclsid: *const ::windows_sys::core::GUID, rguid: *const ::windows_sys::core::GUID, dw: u32) -> ::windows_sys::core::HRESULT,
+    pub UnregisterGUIDDWORD: unsafe extern "system" fn(this: *mut *mut Self, rclsid: *const ::windows_sys::core::GUID, rguid: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub GetGUIDDWORD: unsafe extern "system" fn(this: *mut *mut Self, rguid: *const ::windows_sys::core::GUID, pdw: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub RegisterGUID: unsafe extern "system" fn(this: *mut *mut Self, rguid: *const ::windows_sys::core::GUID, pguidatom: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetGUID: unsafe extern "system" fn(this: *mut *mut Self, guidatom: u32, pguid: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsEqualTfGuidAtom: unsafe extern "system" fn(this: *mut *mut Self, guidatom: u32, rguid: *const ::windows_sys::core::GUID, pfequal: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsEqualTfGuidAtom: usize,
+}
+#[repr(C)]
+pub struct ITfCleanupContextDurationSink {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnStartCleanupContext: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub OnEndCleanupContext: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfCleanupContextSink {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnCleanupContext: unsafe extern "system" fn(this: *mut *mut Self, ecwrite: u32, pic: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfClientId {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetClientId: unsafe extern "system" fn(this: *mut *mut Self, rclsid: *const ::windows_sys::core::GUID, ptid: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfCompartment {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetValue: unsafe extern "system" fn(this: *mut *mut Self, tid: u32, pvarvalue: *const super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetValue: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetValue: unsafe extern "system" fn(this: *mut *mut Self, pvarvalue: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetValue: usize,
+}
+#[repr(C)]
+pub struct ITfCompartmentEventSink {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnChange: unsafe extern "system" fn(this: *mut *mut Self, rguid: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfCompartmentMgr {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCompartment: unsafe extern "system" fn(this: *mut *mut Self, rguid: *const ::windows_sys::core::GUID, ppcomp: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ClearCompartment: unsafe extern "system" fn(this: *mut *mut Self, tid: u32, rguid: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub EnumCompartments: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    EnumCompartments: usize,
+}
+#[repr(C)]
+pub struct ITfComposition {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetRange: unsafe extern "system" fn(this: *mut *mut Self, pprange: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ShiftStart: unsafe extern "system" fn(this: *mut *mut Self, ecwrite: u32, pnewstart: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ShiftEnd: unsafe extern "system" fn(this: *mut *mut Self, ecwrite: u32, pnewend: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EndComposition: unsafe extern "system" fn(this: *mut *mut Self, ecwrite: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfCompositionSink {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnCompositionTerminated: unsafe extern "system" fn(this: *mut *mut Self, ecwrite: u32, pcomposition: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfCompositionView {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetOwnerClsid: unsafe extern "system" fn(this: *mut *mut Self, pclsid: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub GetRange: unsafe extern "system" fn(this: *mut *mut Self, pprange: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfConfigureSystemKeystrokeFeed {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub DisableSystemKeystrokeFeed: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub EnableSystemKeystrokeFeed: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfContext {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub RequestEditSession: unsafe extern "system" fn(this: *mut *mut Self, tid: u32, pes: *mut ::core::ffi::c_void, dwflags: TF_CONTEXT_EDIT_CONTEXT_FLAGS, phrsession: *mut ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InWriteSession: unsafe extern "system" fn(this: *mut *mut Self, tid: u32, pfwritesession: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InWriteSession: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetSelection: unsafe extern "system" fn(this: *mut *mut Self, ec: u32, ulindex: u32, ulcount: u32, pselection: *mut TF_SELECTION, pcfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetSelection: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetSelection: unsafe extern "system" fn(this: *mut *mut Self, ec: u32, ulcount: u32, pselection: *const TF_SELECTION) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetSelection: usize,
+    pub GetStart: unsafe extern "system" fn(this: *mut *mut Self, ec: u32, ppstart: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetEnd: unsafe extern "system" fn(this: *mut *mut Self, ec: u32, ppend: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetActiveView: unsafe extern "system" fn(this: *mut *mut Self, ppview: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EnumViews: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetStatus: unsafe extern "system" fn(this: *mut *mut Self, pdcs: *mut TS_STATUS) -> ::windows_sys::core::HRESULT,
+    pub GetProperty: unsafe extern "system" fn(this: *mut *mut Self, guidprop: *const ::windows_sys::core::GUID, ppprop: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetAppProperty: unsafe extern "system" fn(this: *mut *mut Self, guidprop: *const ::windows_sys::core::GUID, ppprop: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub TrackProperties: unsafe extern "system" fn(this: *mut *mut Self, prgprop: *const *const ::windows_sys::core::GUID, cprop: u32, prgappprop: *const *const ::windows_sys::core::GUID, cappprop: u32, ppproperty: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EnumProperties: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetDocumentMgr: unsafe extern "system" fn(this: *mut *mut Self, ppdm: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateRangeBackup: unsafe extern "system" fn(this: *mut *mut Self, ec: u32, prange: *mut ::core::ffi::c_void, ppbackup: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfContextComposition {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub StartComposition: unsafe extern "system" fn(this: *mut *mut Self, ecwrite: u32, pcompositionrange: *mut ::core::ffi::c_void, psink: *mut ::core::ffi::c_void, ppcomposition: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EnumCompositions: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub FindComposition: unsafe extern "system" fn(this: *mut *mut Self, ecread: u32, ptestrange: *mut ::core::ffi::c_void, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub TakeOwnership: unsafe extern "system" fn(this: *mut *mut Self, ecwrite: u32, pcomposition: *mut ::core::ffi::c_void, psink: *mut ::core::ffi::c_void, ppcomposition: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfContextKeyEventSink {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OnKeyDown: unsafe extern "system" fn(this: *mut *mut Self, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM, pfeaten: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OnKeyDown: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OnKeyUp: unsafe extern "system" fn(this: *mut *mut Self, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM, pfeaten: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OnKeyUp: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OnTestKeyDown: unsafe extern "system" fn(this: *mut *mut Self, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM, pfeaten: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OnTestKeyDown: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OnTestKeyUp: unsafe extern "system" fn(this: *mut *mut Self, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM, pfeaten: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OnTestKeyUp: usize,
+}
+#[repr(C)]
+pub struct ITfContextOwner {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetACPFromPoint: unsafe extern "system" fn(this: *mut *mut Self, ptscreen: *const super::super::Foundation::POINT, dwflags: u32, pacp: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetACPFromPoint: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetTextExt: unsafe extern "system" fn(this: *mut *mut Self, acpstart: i32, acpend: i32, prc: *mut super::super::Foundation::RECT, pfclipped: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetTextExt: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetScreenExt: unsafe extern "system" fn(this: *mut *mut Self, prc: *mut super::super::Foundation::RECT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetScreenExt: usize,
+    pub GetStatus: unsafe extern "system" fn(this: *mut *mut Self, pdcs: *mut TS_STATUS) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetWnd: unsafe extern "system" fn(this: *mut *mut Self, phwnd: *mut super::super::Foundation::HWND) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetWnd: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetAttribute: unsafe extern "system" fn(this: *mut *mut Self, rguidattribute: *const ::windows_sys::core::GUID, pvarvalue: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetAttribute: usize,
+}
+#[repr(C)]
+pub struct ITfContextOwnerCompositionServices {
+    pub base__: ITfContextComposition,
+    pub TerminateComposition: unsafe extern "system" fn(this: *mut *mut Self, pcomposition: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfContextOwnerCompositionSink {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OnStartComposition: unsafe extern "system" fn(this: *mut *mut Self, pcomposition: *mut ::core::ffi::c_void, pfok: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OnStartComposition: usize,
+    pub OnUpdateComposition: unsafe extern "system" fn(this: *mut *mut Self, pcomposition: *mut ::core::ffi::c_void, prangenew: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub OnEndComposition: unsafe extern "system" fn(this: *mut *mut Self, pcomposition: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfContextOwnerServices {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnLayoutChange: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub OnStatusChange: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32) -> ::windows_sys::core::HRESULT,
+    pub OnAttributeChange: unsafe extern "system" fn(this: *mut *mut Self, rguidattribute: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Serialize: unsafe extern "system" fn(this: *mut *mut Self, pprop: *mut ::core::ffi::c_void, prange: *mut ::core::ffi::c_void, phdr: *mut TF_PERSISTENT_PROPERTY_HEADER_ACP, pstream: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Serialize: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Unserialize: unsafe extern "system" fn(this: *mut *mut Self, pprop: *mut ::core::ffi::c_void, phdr: *const TF_PERSISTENT_PROPERTY_HEADER_ACP, pstream: *mut ::core::ffi::c_void, ploader: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Unserialize: usize,
+    pub ForceLoadProperty: unsafe extern "system" fn(this: *mut *mut Self, pprop: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateRange: unsafe extern "system" fn(this: *mut *mut Self, acpstart: i32, acpend: i32, pprange: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfContextView {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetRangeFromPoint: unsafe extern "system" fn(this: *mut *mut Self, ec: u32, ppt: *const super::super::Foundation::POINT, dwflags: u32, pprange: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetRangeFromPoint: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetTextExt: unsafe extern "system" fn(this: *mut *mut Self, ec: u32, prange: *mut ::core::ffi::c_void, prc: *mut super::super::Foundation::RECT, pfclipped: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetTextExt: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetScreenExt: unsafe extern "system" fn(this: *mut *mut Self, prc: *mut super::super::Foundation::RECT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetScreenExt: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetWnd: unsafe extern "system" fn(this: *mut *mut Self, phwnd: *mut super::super::Foundation::HWND) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetWnd: usize,
+}
+#[repr(C)]
+pub struct ITfCreatePropertyStore {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsStoreSerializable: unsafe extern "system" fn(this: *mut *mut Self, guidprop: *const ::windows_sys::core::GUID, prange: *mut ::core::ffi::c_void, ppropstore: *mut ::core::ffi::c_void, pfserializable: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsStoreSerializable: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreatePropertyStore: unsafe extern "system" fn(this: *mut *mut Self, guidprop: *const ::windows_sys::core::GUID, prange: *mut ::core::ffi::c_void, cb: u32, pstream: *mut ::core::ffi::c_void, ppstore: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CreatePropertyStore: usize,
+}
+#[repr(C)]
+pub struct ITfDisplayAttributeInfo {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetGUID: unsafe extern "system" fn(this: *mut *mut Self, pguid: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetDescription: unsafe extern "system" fn(this: *mut *mut Self, pbstrdesc: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetDescription: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetAttributeInfo: unsafe extern "system" fn(this: *mut *mut Self, pda: *mut TF_DISPLAYATTRIBUTE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetAttributeInfo: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetAttributeInfo: unsafe extern "system" fn(this: *mut *mut Self, pda: *const TF_DISPLAYATTRIBUTE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetAttributeInfo: usize,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfDisplayAttributeMgr {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnUpdateInfo: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub EnumDisplayAttributeInfo: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetDisplayAttributeInfo: unsafe extern "system" fn(this: *mut *mut Self, guid: *const ::windows_sys::core::GUID, ppinfo: *mut *mut ::core::ffi::c_void, pclsidowner: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfDisplayAttributeNotifySink {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnUpdateInfo: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfDisplayAttributeProvider {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub EnumDisplayAttributeInfo: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetDisplayAttributeInfo: unsafe extern "system" fn(this: *mut *mut Self, guid: *const ::windows_sys::core::GUID, ppinfo: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfDocumentMgr {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub CreateContext: unsafe extern "system" fn(this: *mut *mut Self, tidowner: u32, dwflags: u32, punk: *mut ::core::ffi::c_void, ppic: *mut *mut ::core::ffi::c_void, pectextstore: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Push: unsafe extern "system" fn(this: *mut *mut Self, pic: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Pop: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetTop: unsafe extern "system" fn(this: *mut *mut Self, ppic: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetBase: unsafe extern "system" fn(this: *mut *mut Self, ppic: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EnumContexts: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfEditRecord {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetSelectionStatus: unsafe extern "system" fn(this: *mut *mut Self, pfchanged: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetSelectionStatus: usize,
+    pub GetTextAndPropertyUpdates: unsafe extern "system" fn(this: *mut *mut Self, dwflags: GET_TEXT_AND_PROPERTY_UPDATES_FLAGS, prgproperties: *const *const ::windows_sys::core::GUID, cproperties: u32, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfEditSession {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub DoEditSession: unsafe extern "system" fn(this: *mut *mut Self, ec: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfEditTransactionSink {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnStartEditTransaction: unsafe extern "system" fn(this: *mut *mut Self, pic: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub OnEndEditTransaction: unsafe extern "system" fn(this: *mut *mut Self, pic: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfFnAdviseText {
+    pub base__: ITfFunction,
+    pub OnTextUpdate: unsafe extern "system" fn(this: *mut *mut Self, prange: *mut ::core::ffi::c_void, pchtext: ::windows_sys::core::PCWSTR, cch: i32) -> ::windows_sys::core::HRESULT,
+    pub OnLatticeUpdate: unsafe extern "system" fn(this: *mut *mut Self, prange: *mut ::core::ffi::c_void, plattice: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfFnBalloon {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub UpdateBalloon: unsafe extern "system" fn(this: *mut *mut Self, style: TfLBBalloonStyle, pch: ::windows_sys::core::PCWSTR, cch: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfFnConfigure {
+    pub base__: ITfFunction,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Show: unsafe extern "system" fn(this: *mut *mut Self, hwndparent: super::super::Foundation::HWND, langid: u16, rguidprofile: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Show: usize,
+}
+#[repr(C)]
+pub struct ITfFnConfigureRegisterEudc {
+    pub base__: ITfFunction,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Show: unsafe extern "system" fn(this: *mut *mut Self, hwndparent: super::super::Foundation::HWND, langid: u16, rguidprofile: *const ::windows_sys::core::GUID, bstrregistered: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Show: usize,
+}
+#[repr(C)]
+pub struct ITfFnConfigureRegisterWord {
+    pub base__: ITfFunction,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Show: unsafe extern "system" fn(this: *mut *mut Self, hwndparent: super::super::Foundation::HWND, langid: u16, rguidprofile: *const ::windows_sys::core::GUID, bstrregistered: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Show: usize,
+}
+#[repr(C)]
+pub struct ITfFnCustomSpeechCommand {
+    pub base__: ITfFunction,
+    pub SetSpeechCommandProvider: unsafe extern "system" fn(this: *mut *mut Self, pspcmdprovider: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfFnGetLinguisticAlternates {
+    pub base__: ITfFunction,
+    pub GetAlternates: unsafe extern "system" fn(this: *mut *mut Self, prange: *mut ::core::ffi::c_void, ppcandidatelist: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfFnGetPreferredTouchKeyboardLayout {
+    pub base__: ITfFunction,
+    pub GetLayout: unsafe extern "system" fn(this: *mut *mut Self, ptkblayouttype: *mut TKBLayoutType, pwpreferredlayoutid: *const u16) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfFnGetSAPIObject {
+    pub base__: ITfFunction,
+    pub Get: unsafe extern "system" fn(this: *mut *mut Self, sobj: TfSapiObject, ppunk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfFnLMInternal {
+    pub base__: ITfFnLMProcessor,
+    pub ProcessLattice: unsafe extern "system" fn(this: *mut *mut Self, prange: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfFnLMProcessor {
+    pub base__: ITfFunction,
+    #[cfg(feature = "Win32_Foundation")]
+    pub QueryRange: unsafe extern "system" fn(this: *mut *mut Self, prange: *mut ::core::ffi::c_void, ppnewrange: *mut *mut ::core::ffi::c_void, pfaccepted: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    QueryRange: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub QueryLangID: unsafe extern "system" fn(this: *mut *mut Self, langid: u16, pfaccepted: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    QueryLangID: usize,
+    pub GetReconversion: unsafe extern "system" fn(this: *mut *mut Self, prange: *mut ::core::ffi::c_void, ppcandlist: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Reconvert: unsafe extern "system" fn(this: *mut *mut Self, prange: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub QueryKey: unsafe extern "system" fn(this: *mut *mut Self, fup: super::super::Foundation::BOOL, vkey: super::super::Foundation::WPARAM, lparamkeydata: super::super::Foundation::LPARAM, pfinterested: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    QueryKey: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InvokeKey: unsafe extern "system" fn(this: *mut *mut Self, fup: super::super::Foundation::BOOL, vkey: super::super::Foundation::WPARAM, lparamkeydata: super::super::Foundation::LPARAM) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InvokeKey: usize,
+    pub InvokeFunc: unsafe extern "system" fn(this: *mut *mut Self, pic: *mut ::core::ffi::c_void, refguidfunc: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfFnLangProfileUtil {
+    pub base__: ITfFunction,
+    pub RegisterActiveProfiles: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsProfileAvailableForLang: unsafe extern "system" fn(this: *mut *mut Self, langid: u16, pfavailable: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsProfileAvailableForLang: usize,
+}
+#[repr(C)]
+pub struct ITfFnPlayBack {
+    pub base__: ITfFunction,
+    #[cfg(feature = "Win32_Foundation")]
+    pub QueryRange: unsafe extern "system" fn(this: *mut *mut Self, prange: *mut ::core::ffi::c_void, ppnewrange: *mut *mut ::core::ffi::c_void, pfplayable: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    QueryRange: usize,
+    pub Play: unsafe extern "system" fn(this: *mut *mut Self, prange: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfFnPropertyUIStatus {
+    pub base__: ITfFunction,
+    pub GetStatus: unsafe extern "system" fn(this: *mut *mut Self, refguidprop: *const ::windows_sys::core::GUID, pdw: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetStatus: unsafe extern "system" fn(this: *mut *mut Self, refguidprop: *const ::windows_sys::core::GUID, dw: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfFnReconversion {
+    pub base__: ITfFunction,
+    #[cfg(feature = "Win32_Foundation")]
+    pub QueryRange: unsafe extern "system" fn(this: *mut *mut Self, prange: *mut ::core::ffi::c_void, ppnewrange: *mut *mut ::core::ffi::c_void, pfconvertable: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    QueryRange: usize,
+    pub GetReconversion: unsafe extern "system" fn(this: *mut *mut Self, prange: *mut ::core::ffi::c_void, ppcandlist: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Reconvert: unsafe extern "system" fn(this: *mut *mut Self, prange: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfFnSearchCandidateProvider {
+    pub base__: ITfFunction,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetSearchCandidates: unsafe extern "system" fn(this: *mut *mut Self, bstrquery: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrapplicationid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pplist: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetSearchCandidates: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetResult: unsafe extern "system" fn(this: *mut *mut Self, bstrquery: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrapplicationid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrresult: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetResult: usize,
+}
+#[repr(C)]
+pub struct ITfFnShowHelp {
+    pub base__: ITfFunction,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Show: unsafe extern "system" fn(this: *mut *mut Self, hwndparent: super::super::Foundation::HWND) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Show: usize,
+}
+#[repr(C)]
+pub struct ITfFunction {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetDisplayName: unsafe extern "system" fn(this: *mut *mut Self, pbstrname: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetDisplayName: usize,
+}
+#[repr(C)]
+pub struct ITfFunctionProvider {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetType: unsafe extern "system" fn(this: *mut *mut Self, pguid: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetDescription: unsafe extern "system" fn(this: *mut *mut Self, pbstrdesc: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetDescription: usize,
+    pub GetFunction: unsafe extern "system" fn(this: *mut *mut Self, rguid: *const ::windows_sys::core::GUID, riid: *const ::windows_sys::core::GUID, ppunk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfInputProcessorProfileActivationSink {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnActivated: unsafe extern "system" fn(this: *mut *mut Self, dwprofiletype: u32, langid: u16, clsid: *const ::windows_sys::core::GUID, catid: *const ::windows_sys::core::GUID, guidprofile: *const ::windows_sys::core::GUID, hkl: HKL, dwflags: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfInputProcessorProfileMgr {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub ActivateProfile: unsafe extern "system" fn(this: *mut *mut Self, dwprofiletype: u32, langid: u16, clsid: *const ::windows_sys::core::GUID, guidprofile: *const ::windows_sys::core::GUID, hkl: HKL, dwflags: u32) -> ::windows_sys::core::HRESULT,
+    pub DeactivateProfile: unsafe extern "system" fn(this: *mut *mut Self, dwprofiletype: u32, langid: u16, clsid: *const ::windows_sys::core::GUID, guidprofile: *const ::windows_sys::core::GUID, hkl: HKL, dwflags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetProfile: unsafe extern "system" fn(this: *mut *mut Self, dwprofiletype: u32, langid: u16, clsid: *const ::windows_sys::core::GUID, guidprofile: *const ::windows_sys::core::GUID, hkl: HKL, pprofile: *mut TF_INPUTPROCESSORPROFILE) -> ::windows_sys::core::HRESULT,
+    pub EnumProfiles: unsafe extern "system" fn(this: *mut *mut Self, langid: u16, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ReleaseInputProcessor: unsafe extern "system" fn(this: *mut *mut Self, rclsid: *const ::windows_sys::core::GUID, dwflags: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RegisterProfile: unsafe extern "system" fn(this: *mut *mut Self, rclsid: *const ::windows_sys::core::GUID, langid: u16, guidprofile: *const ::windows_sys::core::GUID, pchdesc: ::windows_sys::core::PCWSTR, cchdesc: u32, pchiconfile: ::windows_sys::core::PCWSTR, cchfile: u32, uiconindex: u32, hklsubstitute: HKL, dwpreferredlayout: u32, benabledbydefault: super::super::Foundation::BOOL, dwflags: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RegisterProfile: usize,
+    pub UnregisterProfile: unsafe extern "system" fn(this: *mut *mut Self, rclsid: *const ::windows_sys::core::GUID, langid: u16, guidprofile: *const ::windows_sys::core::GUID, dwflags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetActiveProfile: unsafe extern "system" fn(this: *mut *mut Self, catid: *const ::windows_sys::core::GUID, pprofile: *mut TF_INPUTPROCESSORPROFILE) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfInputProcessorProfileSubstituteLayout {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetSubstituteKeyboardLayout: unsafe extern "system" fn(this: *mut *mut Self, rclsid: *const ::windows_sys::core::GUID, langid: u16, guidprofile: *const ::windows_sys::core::GUID, phkl: *mut HKL) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfInputProcessorProfiles {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Register: unsafe extern "system" fn(this: *mut *mut Self, rclsid: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub Unregister: unsafe extern "system" fn(this: *mut *mut Self, rclsid: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub AddLanguageProfile: unsafe extern "system" fn(this: *mut *mut Self, rclsid: *const ::windows_sys::core::GUID, langid: u16, guidprofile: *const ::windows_sys::core::GUID, pchdesc: ::windows_sys::core::PCWSTR, cchdesc: u32, pchiconfile: ::windows_sys::core::PCWSTR, cchfile: u32, uiconindex: u32) -> ::windows_sys::core::HRESULT,
+    pub RemoveLanguageProfile: unsafe extern "system" fn(this: *mut *mut Self, rclsid: *const ::windows_sys::core::GUID, langid: u16, guidprofile: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub EnumInputProcessorInfo: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    EnumInputProcessorInfo: usize,
+    pub GetDefaultLanguageProfile: unsafe extern "system" fn(this: *mut *mut Self, langid: u16, catid: *const ::windows_sys::core::GUID, pclsid: *mut ::windows_sys::core::GUID, pguidprofile: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub SetDefaultLanguageProfile: unsafe extern "system" fn(this: *mut *mut Self, langid: u16, rclsid: *const ::windows_sys::core::GUID, guidprofiles: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub ActivateLanguageProfile: unsafe extern "system" fn(this: *mut *mut Self, rclsid: *const ::windows_sys::core::GUID, langid: u16, guidprofiles: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub GetActiveLanguageProfile: unsafe extern "system" fn(this: *mut *mut Self, rclsid: *const ::windows_sys::core::GUID, plangid: *mut u16, pguidprofile: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetLanguageProfileDescription: unsafe extern "system" fn(this: *mut *mut Self, rclsid: *const ::windows_sys::core::GUID, langid: u16, guidprofile: *const ::windows_sys::core::GUID, pbstrprofile: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetLanguageProfileDescription: usize,
+    pub GetCurrentLanguage: unsafe extern "system" fn(this: *mut *mut Self, plangid: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub ChangeCurrentLanguage: unsafe extern "system" fn(this: *mut *mut Self, langid: u16) -> ::windows_sys::core::HRESULT,
+    pub GetLanguageList: unsafe extern "system" fn(this: *mut *mut Self, pplangid: *mut *mut u16, pulcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub EnumLanguageProfiles: unsafe extern "system" fn(this: *mut *mut Self, langid: u16, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub EnableLanguageProfile: unsafe extern "system" fn(this: *mut *mut Self, rclsid: *const ::windows_sys::core::GUID, langid: u16, guidprofile: *const ::windows_sys::core::GUID, fenable: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    EnableLanguageProfile: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsEnabledLanguageProfile: unsafe extern "system" fn(this: *mut *mut Self, rclsid: *const ::windows_sys::core::GUID, langid: u16, guidprofile: *const ::windows_sys::core::GUID, pfenable: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsEnabledLanguageProfile: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub EnableLanguageProfileByDefault: unsafe extern "system" fn(this: *mut *mut Self, rclsid: *const ::windows_sys::core::GUID, langid: u16, guidprofile: *const ::windows_sys::core::GUID, fenable: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    EnableLanguageProfileByDefault: usize,
+    pub SubstituteKeyboardLayout: unsafe extern "system" fn(this: *mut *mut Self, rclsid: *const ::windows_sys::core::GUID, langid: u16, guidprofile: *const ::windows_sys::core::GUID, hkl: HKL) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfInputProcessorProfilesEx {
+    pub base__: ITfInputProcessorProfiles,
+    pub SetLanguageProfileDisplayName: unsafe extern "system" fn(this: *mut *mut Self, rclsid: *const ::windows_sys::core::GUID, langid: u16, guidprofile: *const ::windows_sys::core::GUID, pchfile: ::windows_sys::core::PCWSTR, cchfile: u32, uresid: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfInputScope {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetInputScopes: unsafe extern "system" fn(this: *mut *mut Self, pprginputscopes: *mut *mut InputScope, pccount: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetPhrase: unsafe extern "system" fn(this: *mut *mut Self, ppbstrphrases: *mut *mut super::super::Foundation::BSTR, pccount: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetPhrase: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetRegularExpression: unsafe extern "system" fn(this: *mut *mut Self, pbstrregexp: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetRegularExpression: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetSRGS: unsafe extern "system" fn(this: *mut *mut Self, pbstrsrgs: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetSRGS: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetXML: unsafe extern "system" fn(this: *mut *mut Self, pbstrxml: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetXML: usize,
+}
+#[repr(C)]
+pub struct ITfInputScope2 {
+    pub base__: ITfInputScope,
+    #[cfg(feature = "Win32_System_Com")]
+    pub EnumWordList: unsafe extern "system" fn(this: *mut *mut Self, ppenumstring: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    EnumWordList: usize,
+}
+#[repr(C)]
+pub struct ITfInsertAtSelection {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub InsertTextAtSelection: unsafe extern "system" fn(this: *mut *mut Self, ec: u32, dwflags: INSERT_TEXT_AT_SELECTION_FLAGS, pchtext: ::windows_sys::core::PCWSTR, cch: i32, pprange: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub InsertEmbeddedAtSelection: unsafe extern "system" fn(this: *mut *mut Self, ec: u32, dwflags: u32, pdataobject: *mut ::core::ffi::c_void, pprange: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    InsertEmbeddedAtSelection: usize,
+}
+#[repr(C)]
+pub struct ITfIntegratableCandidateListUIElement {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetIntegrationStyle: unsafe extern "system" fn(this: *mut *mut Self, guidintegrationstyle: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub GetSelectionStyle: unsafe extern "system" fn(this: *mut *mut Self, ptfselectionstyle: *mut TfIntegratableCandidateListSelectionStyle) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OnKeyDown: unsafe extern "system" fn(this: *mut *mut Self, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM, pfeaten: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OnKeyDown: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ShowCandidateNumbers: unsafe extern "system" fn(this: *mut *mut Self, pfshow: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ShowCandidateNumbers: usize,
+    pub FinalizeExactCompositionString: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfKeyEventSink {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OnSetFocus: unsafe extern "system" fn(this: *mut *mut Self, fforeground: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OnSetFocus: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OnTestKeyDown: unsafe extern "system" fn(this: *mut *mut Self, pic: *mut ::core::ffi::c_void, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM, pfeaten: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OnTestKeyDown: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OnTestKeyUp: unsafe extern "system" fn(this: *mut *mut Self, pic: *mut ::core::ffi::c_void, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM, pfeaten: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OnTestKeyUp: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OnKeyDown: unsafe extern "system" fn(this: *mut *mut Self, pic: *mut ::core::ffi::c_void, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM, pfeaten: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OnKeyDown: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OnKeyUp: unsafe extern "system" fn(this: *mut *mut Self, pic: *mut ::core::ffi::c_void, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM, pfeaten: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OnKeyUp: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OnPreservedKey: unsafe extern "system" fn(this: *mut *mut Self, pic: *mut ::core::ffi::c_void, rguid: *const ::windows_sys::core::GUID, pfeaten: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OnPreservedKey: usize,
+}
+#[repr(C)]
+pub struct ITfKeyTraceEventSink {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OnKeyTraceDown: unsafe extern "system" fn(this: *mut *mut Self, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OnKeyTraceDown: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OnKeyTraceUp: unsafe extern "system" fn(this: *mut *mut Self, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OnKeyTraceUp: usize,
+}
+#[repr(C)]
+pub struct ITfKeystrokeMgr {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AdviseKeyEventSink: unsafe extern "system" fn(this: *mut *mut Self, tid: u32, psink: *mut ::core::ffi::c_void, fforeground: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AdviseKeyEventSink: usize,
+    pub UnadviseKeyEventSink: unsafe extern "system" fn(this: *mut *mut Self, tid: u32) -> ::windows_sys::core::HRESULT,
+    pub GetForeground: unsafe extern "system" fn(this: *mut *mut Self, pclsid: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub TestKeyDown: unsafe extern "system" fn(this: *mut *mut Self, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM, pfeaten: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    TestKeyDown: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub TestKeyUp: unsafe extern "system" fn(this: *mut *mut Self, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM, pfeaten: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    TestKeyUp: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub KeyDown: unsafe extern "system" fn(this: *mut *mut Self, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM, pfeaten: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    KeyDown: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub KeyUp: unsafe extern "system" fn(this: *mut *mut Self, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM, pfeaten: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    KeyUp: usize,
+    pub GetPreservedKey: unsafe extern "system" fn(this: *mut *mut Self, pic: *mut ::core::ffi::c_void, pprekey: *const TF_PRESERVEDKEY, pguid: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsPreservedKey: unsafe extern "system" fn(this: *mut *mut Self, rguid: *const ::windows_sys::core::GUID, pprekey: *const TF_PRESERVEDKEY, pfregistered: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsPreservedKey: usize,
+    pub PreserveKey: unsafe extern "system" fn(this: *mut *mut Self, tid: u32, rguid: *const ::windows_sys::core::GUID, prekey: *const TF_PRESERVEDKEY, pchdesc: ::windows_sys::core::PCWSTR, cchdesc: u32) -> ::windows_sys::core::HRESULT,
+    pub UnpreserveKey: unsafe extern "system" fn(this: *mut *mut Self, rguid: *const ::windows_sys::core::GUID, pprekey: *const TF_PRESERVEDKEY) -> ::windows_sys::core::HRESULT,
+    pub SetPreservedKeyDescription: unsafe extern "system" fn(this: *mut *mut Self, rguid: *const ::windows_sys::core::GUID, pchdesc: ::windows_sys::core::PCWSTR, cchdesc: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetPreservedKeyDescription: unsafe extern "system" fn(this: *mut *mut Self, rguid: *const ::windows_sys::core::GUID, pbstrdesc: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetPreservedKeyDescription: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SimulatePreservedKey: unsafe extern "system" fn(this: *mut *mut Self, pic: *mut ::core::ffi::c_void, rguid: *const ::windows_sys::core::GUID, pfeaten: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SimulatePreservedKey: usize,
+}
+#[repr(C)]
+pub struct ITfLMLattice {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub QueryType: unsafe extern "system" fn(this: *mut *mut Self, rguidtype: *const ::windows_sys::core::GUID, pfsupported: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    QueryType: usize,
+    pub EnumLatticeElements: unsafe extern "system" fn(this: *mut *mut Self, dwframestart: u32, rguidtype: *const ::windows_sys::core::GUID, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfLangBarEventSink {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnSetFocus: unsafe extern "system" fn(this: *mut *mut Self, dwthreadid: u32) -> ::windows_sys::core::HRESULT,
+    pub OnThreadTerminate: unsafe extern "system" fn(this: *mut *mut Self, dwthreadid: u32) -> ::windows_sys::core::HRESULT,
+    pub OnThreadItemChange: unsafe extern "system" fn(this: *mut *mut Self, dwthreadid: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OnModalInput: unsafe extern "system" fn(this: *mut *mut Self, dwthreadid: u32, umsg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OnModalInput: usize,
+    pub ShowFloating: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetItemFloatingRect: unsafe extern "system" fn(this: *mut *mut Self, dwthreadid: u32, rguid: *const ::windows_sys::core::GUID, prc: *mut super::super::Foundation::RECT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetItemFloatingRect: usize,
+}
+#[repr(C)]
+pub struct ITfLangBarItem {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetInfo: unsafe extern "system" fn(this: *mut *mut Self, pinfo: *mut TF_LANGBARITEMINFO) -> ::windows_sys::core::HRESULT,
+    pub GetStatus: unsafe extern "system" fn(this: *mut *mut Self, pdwstatus: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Show: unsafe extern "system" fn(this: *mut *mut Self, fshow: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Show: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetTooltipString: unsafe extern "system" fn(this: *mut *mut Self, pbstrtooltip: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetTooltipString: usize,
+}
+#[repr(C)]
+pub struct ITfLangBarItemBalloon {
+    pub base__: ITfLangBarItem,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OnClick: unsafe extern "system" fn(this: *mut *mut Self, click: TfLBIClick, pt: super::super::Foundation::POINT, prcarea: *const super::super::Foundation::RECT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OnClick: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetPreferredSize: unsafe extern "system" fn(this: *mut *mut Self, pszdefault: *const super::super::Foundation::SIZE, psz: *mut super::super::Foundation::SIZE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetPreferredSize: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetBalloonInfo: unsafe extern "system" fn(this: *mut *mut Self, pinfo: *mut TF_LBBALLOONINFO) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetBalloonInfo: usize,
+}
+#[repr(C)]
+pub struct ITfLangBarItemBitmap {
+    pub base__: ITfLangBarItem,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OnClick: unsafe extern "system" fn(this: *mut *mut Self, click: TfLBIClick, pt: super::super::Foundation::POINT, prcarea: *const super::super::Foundation::RECT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OnClick: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetPreferredSize: unsafe extern "system" fn(this: *mut *mut Self, pszdefault: *const super::super::Foundation::SIZE, psz: *mut super::super::Foundation::SIZE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetPreferredSize: usize,
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub DrawBitmap: unsafe extern "system" fn(this: *mut *mut Self, bmwidth: i32, bmheight: i32, dwflags: u32, phbmp: *mut super::super::Graphics::Gdi::HBITMAP, phbmpmask: *mut super::super::Graphics::Gdi::HBITMAP) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Gdi"))]
+    DrawBitmap: usize,
+}
+#[repr(C)]
+pub struct ITfLangBarItemBitmapButton {
+    pub base__: ITfLangBarItem,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OnClick: unsafe extern "system" fn(this: *mut *mut Self, click: TfLBIClick, pt: super::super::Foundation::POINT, prcarea: *const super::super::Foundation::RECT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OnClick: usize,
+    pub InitMenu: unsafe extern "system" fn(this: *mut *mut Self, pmenu: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub OnMenuSelect: unsafe extern "system" fn(this: *mut *mut Self, wid: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetPreferredSize: unsafe extern "system" fn(this: *mut *mut Self, pszdefault: *const super::super::Foundation::SIZE, psz: *mut super::super::Foundation::SIZE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetPreferredSize: usize,
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub DrawBitmap: unsafe extern "system" fn(this: *mut *mut Self, bmwidth: i32, bmheight: i32, dwflags: u32, phbmp: *mut super::super::Graphics::Gdi::HBITMAP, phbmpmask: *mut super::super::Graphics::Gdi::HBITMAP) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Gdi"))]
+    DrawBitmap: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetText: unsafe extern "system" fn(this: *mut *mut Self, pbstrtext: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetText: usize,
+}
+#[repr(C)]
+pub struct ITfLangBarItemButton {
+    pub base__: ITfLangBarItem,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OnClick: unsafe extern "system" fn(this: *mut *mut Self, click: TfLBIClick, pt: super::super::Foundation::POINT, prcarea: *const super::super::Foundation::RECT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OnClick: usize,
+    pub InitMenu: unsafe extern "system" fn(this: *mut *mut Self, pmenu: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub OnMenuSelect: unsafe extern "system" fn(this: *mut *mut Self, wid: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    pub GetIcon: unsafe extern "system" fn(this: *mut *mut Self, phicon: *mut super::WindowsAndMessaging::HICON) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_WindowsAndMessaging"))]
+    GetIcon: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetText: unsafe extern "system" fn(this: *mut *mut Self, pbstrtext: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetText: usize,
+}
+#[repr(C)]
+pub struct ITfLangBarItemMgr {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub EnumItems: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetItem: unsafe extern "system" fn(this: *mut *mut Self, rguid: *const ::windows_sys::core::GUID, ppitem: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AddItem: unsafe extern "system" fn(this: *mut *mut Self, punk: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RemoveItem: unsafe extern "system" fn(this: *mut *mut Self, punk: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AdviseItemSink: unsafe extern "system" fn(this: *mut *mut Self, punk: *mut ::core::ffi::c_void, pdwcookie: *mut u32, rguiditem: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub UnadviseItemSink: unsafe extern "system" fn(this: *mut *mut Self, dwcookie: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetItemFloatingRect: unsafe extern "system" fn(this: *mut *mut Self, dwthreadid: u32, rguid: *const ::windows_sys::core::GUID, prc: *mut super::super::Foundation::RECT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetItemFloatingRect: usize,
+    pub GetItemsStatus: unsafe extern "system" fn(this: *mut *mut Self, ulcount: u32, prgguid: *const ::windows_sys::core::GUID, pdwstatus: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetItemNum: unsafe extern "system" fn(this: *mut *mut Self, pulcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetItems: unsafe extern "system" fn(this: *mut *mut Self, ulcount: u32, ppitem: *mut *mut ::core::ffi::c_void, pinfo: *mut TF_LANGBARITEMINFO, pdwstatus: *mut u32, pcfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub AdviseItemsSink: unsafe extern "system" fn(this: *mut *mut Self, ulcount: u32, ppunk: *const *mut ::core::ffi::c_void, pguiditem: *const ::windows_sys::core::GUID, pdwcookie: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub UnadviseItemsSink: unsafe extern "system" fn(this: *mut *mut Self, ulcount: u32, pdwcookie: *const u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfLangBarItemSink {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnUpdate: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfLangBarMgr {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AdviseEventSink: unsafe extern "system" fn(this: *mut *mut Self, psink: *mut ::core::ffi::c_void, hwnd: super::super::Foundation::HWND, dwflags: u32, pdwcookie: *const u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AdviseEventSink: usize,
+    pub UnadviseEventSink: unsafe extern "system" fn(this: *mut *mut Self, dwcookie: u32) -> ::windows_sys::core::HRESULT,
+    pub GetThreadMarshalInterface: unsafe extern "system" fn(this: *mut *mut Self, dwthreadid: u32, dwtype: u32, riid: *const ::windows_sys::core::GUID, ppunk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetThreadLangBarItemMgr: unsafe extern "system" fn(this: *mut *mut Self, dwthreadid: u32, pplbi: *mut *mut ::core::ffi::c_void, pdwthreadid: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetInputProcessorProfiles: unsafe extern "system" fn(this: *mut *mut Self, dwthreadid: u32, ppaip: *mut *mut ::core::ffi::c_void, pdwthreadid: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RestoreLastFocus: unsafe extern "system" fn(this: *mut *mut Self, pdwthreadid: *mut u32, fprev: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RestoreLastFocus: usize,
+    pub SetModalInput: unsafe extern "system" fn(this: *mut *mut Self, psink: *mut ::core::ffi::c_void, dwthreadid: u32, dwflags: u32) -> ::windows_sys::core::HRESULT,
+    pub ShowFloating: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetShowFloatingStatus: unsafe extern "system" fn(this: *mut *mut Self, pdwflags: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfLanguageProfileNotifySink {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OnLanguageChange: unsafe extern "system" fn(this: *mut *mut Self, langid: u16, pfaccept: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OnLanguageChange: usize,
+    pub OnLanguageChanged: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfMSAAControl {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SystemEnableMSAA: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub SystemDisableMSAA: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfMenu {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub AddMenuItem: unsafe extern "system" fn(this: *mut *mut Self, uid: u32, dwflags: u32, hbmp: super::super::Graphics::Gdi::HBITMAP, hbmpmask: super::super::Graphics::Gdi::HBITMAP, pch: ::windows_sys::core::PCWSTR, cch: u32, ppmenu: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Gdi"))]
+    AddMenuItem: usize,
+}
+#[repr(C)]
+pub struct ITfMessagePump {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+    pub PeekMessageA: unsafe extern "system" fn(this: *mut *mut Self, pmsg: *mut super::WindowsAndMessaging::MSG, hwnd: super::super::Foundation::HWND, wmsgfiltermin: u32, wmsgfiltermax: u32, wremovemsg: u32, pfresult: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging")))]
+    PeekMessageA: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+    pub GetMessageA: unsafe extern "system" fn(this: *mut *mut Self, pmsg: *mut super::WindowsAndMessaging::MSG, hwnd: super::super::Foundation::HWND, wmsgfiltermin: u32, wmsgfiltermax: u32, pfresult: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging")))]
+    GetMessageA: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+    pub PeekMessageW: unsafe extern "system" fn(this: *mut *mut Self, pmsg: *mut super::WindowsAndMessaging::MSG, hwnd: super::super::Foundation::HWND, wmsgfiltermin: u32, wmsgfiltermax: u32, wremovemsg: u32, pfresult: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging")))]
+    PeekMessageW: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+    pub GetMessageW: unsafe extern "system" fn(this: *mut *mut Self, pmsg: *mut super::WindowsAndMessaging::MSG, hwnd: super::super::Foundation::HWND, wmsgfiltermin: u32, wmsgfiltermax: u32, pfresult: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging")))]
+    GetMessageW: usize,
+}
+#[repr(C)]
+pub struct ITfMouseSink {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OnMouseEvent: unsafe extern "system" fn(this: *mut *mut Self, uedge: u32, uquadrant: u32, dwbtnstatus: u32, pfeaten: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OnMouseEvent: usize,
+}
+#[repr(C)]
+pub struct ITfMouseTracker {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub AdviseMouseSink: unsafe extern "system" fn(this: *mut *mut Self, range: *mut ::core::ffi::c_void, psink: *mut ::core::ffi::c_void, pdwcookie: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub UnadviseMouseSink: unsafe extern "system" fn(this: *mut *mut Self, dwcookie: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfMouseTrackerACP {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub AdviseMouseSink: unsafe extern "system" fn(this: *mut *mut Self, range: *mut ::core::ffi::c_void, psink: *mut ::core::ffi::c_void, pdwcookie: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub UnadviseMouseSink: unsafe extern "system" fn(this: *mut *mut Self, dwcookie: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfPersistentPropertyLoaderACP {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com")]
+    pub LoadProperty: unsafe extern "system" fn(this: *mut *mut Self, phdr: *const TF_PERSISTENT_PROPERTY_HEADER_ACP, ppstream: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    LoadProperty: usize,
+}
+#[repr(C)]
+pub struct ITfPreservedKeyNotifySink {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnUpdated: unsafe extern "system" fn(this: *mut *mut Self, pprekey: *const TF_PRESERVEDKEY) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfProperty {
+    pub base__: ITfReadOnlyProperty,
+    pub FindRange: unsafe extern "system" fn(this: *mut *mut Self, ec: u32, prange: *mut ::core::ffi::c_void, pprange: *mut *mut ::core::ffi::c_void, apos: TfAnchor) -> ::windows_sys::core::HRESULT,
+    pub SetValueStore: unsafe extern "system" fn(this: *mut *mut Self, ec: u32, prange: *mut ::core::ffi::c_void, ppropstore: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetValue: unsafe extern "system" fn(this: *mut *mut Self, ec: u32, prange: *mut ::core::ffi::c_void, pvarvalue: *const super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetValue: usize,
+    pub Clear: unsafe extern "system" fn(this: *mut *mut Self, ec: u32, prange: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfPropertyStore {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetType: unsafe extern "system" fn(this: *mut *mut Self, pguid: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub GetDataType: unsafe extern "system" fn(this: *mut *mut Self, pdwreserved: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetData: unsafe extern "system" fn(this: *mut *mut Self, pvarvalue: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetData: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OnTextUpdated: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, prangenew: *mut ::core::ffi::c_void, pfaccept: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OnTextUpdated: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Shrink: unsafe extern "system" fn(this: *mut *mut Self, prangenew: *mut ::core::ffi::c_void, pffree: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Shrink: usize,
+    pub Divide: unsafe extern "system" fn(this: *mut *mut Self, prangethis: *mut ::core::ffi::c_void, prangenew: *mut ::core::ffi::c_void, pppropstore: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppropstore: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetPropertyRangeCreator: unsafe extern "system" fn(this: *mut *mut Self, pclsid: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Serialize: unsafe extern "system" fn(this: *mut *mut Self, pstream: *mut ::core::ffi::c_void, pcb: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Serialize: usize,
+}
+#[repr(C)]
+pub struct ITfQueryEmbedded {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub QueryInsertEmbedded: unsafe extern "system" fn(this: *mut *mut Self, pguidservice: *const ::windows_sys::core::GUID, pformatetc: *const super::super::System::Com::FORMATETC, pfinsertable: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    QueryInsertEmbedded: usize,
+}
+#[repr(C)]
+pub struct ITfRange {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetText: unsafe extern "system" fn(this: *mut *mut Self, ec: u32, dwflags: u32, pchtext: ::windows_sys::core::PWSTR, cchmax: u32, pcch: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetText: unsafe extern "system" fn(this: *mut *mut Self, ec: u32, dwflags: u32, pchtext: ::windows_sys::core::PCWSTR, cch: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetFormattedText: unsafe extern "system" fn(this: *mut *mut Self, ec: u32, ppdataobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetFormattedText: usize,
+    pub GetEmbedded: unsafe extern "system" fn(this: *mut *mut Self, ec: u32, rguidservice: *const ::windows_sys::core::GUID, riid: *const ::windows_sys::core::GUID, ppunk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub InsertEmbedded: unsafe extern "system" fn(this: *mut *mut Self, ec: u32, dwflags: u32, pdataobject: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    InsertEmbedded: usize,
+    pub ShiftStart: unsafe extern "system" fn(this: *mut *mut Self, ec: u32, cchreq: i32, pcch: *mut i32, phalt: *const TF_HALTCOND) -> ::windows_sys::core::HRESULT,
+    pub ShiftEnd: unsafe extern "system" fn(this: *mut *mut Self, ec: u32, cchreq: i32, pcch: *mut i32, phalt: *const TF_HALTCOND) -> ::windows_sys::core::HRESULT,
+    pub ShiftStartToRange: unsafe extern "system" fn(this: *mut *mut Self, ec: u32, prange: *mut ::core::ffi::c_void, apos: TfAnchor) -> ::windows_sys::core::HRESULT,
+    pub ShiftEndToRange: unsafe extern "system" fn(this: *mut *mut Self, ec: u32, prange: *mut ::core::ffi::c_void, apos: TfAnchor) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ShiftStartRegion: unsafe extern "system" fn(this: *mut *mut Self, ec: u32, dir: TfShiftDir, pfnoregion: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ShiftStartRegion: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ShiftEndRegion: unsafe extern "system" fn(this: *mut *mut Self, ec: u32, dir: TfShiftDir, pfnoregion: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ShiftEndRegion: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsEmpty: unsafe extern "system" fn(this: *mut *mut Self, ec: u32, pfempty: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsEmpty: usize,
+    pub Collapse: unsafe extern "system" fn(this: *mut *mut Self, ec: u32, apos: TfAnchor) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsEqualStart: unsafe extern "system" fn(this: *mut *mut Self, ec: u32, pwith: *mut ::core::ffi::c_void, apos: TfAnchor, pfequal: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsEqualStart: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsEqualEnd: unsafe extern "system" fn(this: *mut *mut Self, ec: u32, pwith: *mut ::core::ffi::c_void, apos: TfAnchor, pfequal: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsEqualEnd: usize,
+    pub CompareStart: unsafe extern "system" fn(this: *mut *mut Self, ec: u32, pwith: *mut ::core::ffi::c_void, apos: TfAnchor, plresult: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub CompareEnd: unsafe extern "system" fn(this: *mut *mut Self, ec: u32, pwith: *mut ::core::ffi::c_void, apos: TfAnchor, plresult: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AdjustForInsert: unsafe extern "system" fn(this: *mut *mut Self, ec: u32, cchinsert: u32, pfinsertok: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AdjustForInsert: usize,
+    pub GetGravity: unsafe extern "system" fn(this: *mut *mut Self, pgstart: *mut TfGravity, pgend: *mut TfGravity) -> ::windows_sys::core::HRESULT,
+    pub SetGravity: unsafe extern "system" fn(this: *mut *mut Self, ec: u32, gstart: TfGravity, gend: TfGravity) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppclone: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetContext: unsafe extern "system" fn(this: *mut *mut Self, ppcontext: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfRangeACP {
+    pub base__: ITfRange,
+    pub GetExtent: unsafe extern "system" fn(this: *mut *mut Self, pacpanchor: *mut i32, pcch: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetExtent: unsafe extern "system" fn(this: *mut *mut Self, acpanchor: i32, cch: i32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfRangeBackup {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Restore: unsafe extern "system" fn(this: *mut *mut Self, ec: u32, prange: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfReadOnlyProperty {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetType: unsafe extern "system" fn(this: *mut *mut Self, pguid: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub EnumRanges: unsafe extern "system" fn(this: *mut *mut Self, ec: u32, ppenum: *mut *mut ::core::ffi::c_void, ptargetrange: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetValue: unsafe extern "system" fn(this: *mut *mut Self, ec: u32, prange: *mut ::core::ffi::c_void, pvarvalue: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetValue: usize,
+    pub GetContext: unsafe extern "system" fn(this: *mut *mut Self, ppcontext: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfReadingInformationUIElement {
+    pub base__: ITfUIElement,
+    pub GetUpdatedFlags: unsafe extern "system" fn(this: *mut *mut Self, pdwflags: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetContext: unsafe extern "system" fn(this: *mut *mut Self, ppic: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetString: unsafe extern "system" fn(this: *mut *mut Self, pstr: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetString: usize,
+    pub GetMaxReadingStringLength: unsafe extern "system" fn(this: *mut *mut Self, pcchmax: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetErrorIndex: unsafe extern "system" fn(this: *mut *mut Self, perrorindex: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsVerticalOrderPreferred: unsafe extern "system" fn(this: *mut *mut Self, pfvertical: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsVerticalOrderPreferred: usize,
+}
+#[repr(C)]
+pub struct ITfReverseConversion {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub DoReverseConversion: unsafe extern "system" fn(this: *mut *mut Self, lpstr: ::windows_sys::core::PCWSTR, pplist: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfReverseConversionList {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetLength: unsafe extern "system" fn(this: *mut *mut Self, puindex: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetString: unsafe extern "system" fn(this: *mut *mut Self, uindex: u32, pbstr: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetString: usize,
+}
+#[repr(C)]
+pub struct ITfReverseConversionMgr {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetReverseConversion: unsafe extern "system" fn(this: *mut *mut Self, langid: u16, guidprofile: *const ::windows_sys::core::GUID, dwflag: u32, ppreverseconversion: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfSource {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub AdviseSink: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, punk: *mut ::core::ffi::c_void, pdwcookie: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub UnadviseSink: unsafe extern "system" fn(this: *mut *mut Self, dwcookie: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfSourceSingle {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub AdviseSingleSink: unsafe extern "system" fn(this: *mut *mut Self, tid: u32, riid: *const ::windows_sys::core::GUID, punk: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub UnadviseSingleSink: unsafe extern "system" fn(this: *mut *mut Self, tid: u32, riid: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfSpeechUIServer {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ShowUI: unsafe extern "system" fn(this: *mut *mut Self, fshow: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ShowUI: usize,
+    pub UpdateBalloon: unsafe extern "system" fn(this: *mut *mut Self, style: TfLBBalloonStyle, pch: ::windows_sys::core::PCWSTR, cch: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfStatusSink {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnStatusChange: unsafe extern "system" fn(this: *mut *mut Self, pic: *mut ::core::ffi::c_void, dwflags: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfSystemDeviceTypeLangBarItem {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetIconMode: unsafe extern "system" fn(this: *mut *mut Self, dwflags: LANG_BAR_ITEM_ICON_MODE_FLAGS) -> ::windows_sys::core::HRESULT,
+    pub GetIconMode: unsafe extern "system" fn(this: *mut *mut Self, pdwflags: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfSystemLangBarItem {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    pub SetIcon: unsafe extern "system" fn(this: *mut *mut Self, hicon: super::WindowsAndMessaging::HICON) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_WindowsAndMessaging"))]
+    SetIcon: usize,
+    pub SetTooltipString: unsafe extern "system" fn(this: *mut *mut Self, pchtooltip: ::windows_sys::core::PCWSTR, cch: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfSystemLangBarItemSink {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub InitMenu: unsafe extern "system" fn(this: *mut *mut Self, pmenu: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub OnMenuSelect: unsafe extern "system" fn(this: *mut *mut Self, wid: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfSystemLangBarItemText {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetItemText: unsafe extern "system" fn(this: *mut *mut Self, pch: ::windows_sys::core::PCWSTR, cch: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetItemText: unsafe extern "system" fn(this: *mut *mut Self, pbstrtext: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetItemText: usize,
+}
+#[repr(C)]
+pub struct ITfTextEditSink {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnEndEdit: unsafe extern "system" fn(this: *mut *mut Self, pic: *mut ::core::ffi::c_void, ecreadonly: u32, peditrecord: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfTextInputProcessor {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Activate: unsafe extern "system" fn(this: *mut *mut Self, ptim: *mut ::core::ffi::c_void, tid: u32) -> ::windows_sys::core::HRESULT,
+    pub Deactivate: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfTextInputProcessorEx {
+    pub base__: ITfTextInputProcessor,
+    pub ActivateEx: unsafe extern "system" fn(this: *mut *mut Self, ptim: *mut ::core::ffi::c_void, tid: u32, dwflags: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfTextLayoutSink {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnLayoutChange: unsafe extern "system" fn(this: *mut *mut Self, pic: *mut ::core::ffi::c_void, lcode: TfLayoutCode, pview: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfThreadFocusSink {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnSetThreadFocus: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub OnKillThreadFocus: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfThreadMgr {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Activate: unsafe extern "system" fn(this: *mut *mut Self, ptid: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Deactivate: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub CreateDocumentMgr: unsafe extern "system" fn(this: *mut *mut Self, ppdim: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EnumDocumentMgrs: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetFocus: unsafe extern "system" fn(this: *mut *mut Self, ppdimfocus: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetFocus: unsafe extern "system" fn(this: *mut *mut Self, pdimfocus: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AssociateFocus: unsafe extern "system" fn(this: *mut *mut Self, hwnd: super::super::Foundation::HWND, pdimnew: *mut ::core::ffi::c_void, ppdimprev: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AssociateFocus: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsThreadFocus: unsafe extern "system" fn(this: *mut *mut Self, pfthreadfocus: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsThreadFocus: usize,
+    pub GetFunctionProvider: unsafe extern "system" fn(this: *mut *mut Self, clsid: *const ::windows_sys::core::GUID, ppfuncprov: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EnumFunctionProviders: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetGlobalCompartment: unsafe extern "system" fn(this: *mut *mut Self, ppcompmgr: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfThreadMgr2 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Activate: unsafe extern "system" fn(this: *mut *mut Self, ptid: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Deactivate: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub CreateDocumentMgr: unsafe extern "system" fn(this: *mut *mut Self, ppdim: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EnumDocumentMgrs: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetFocus: unsafe extern "system" fn(this: *mut *mut Self, ppdimfocus: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetFocus: unsafe extern "system" fn(this: *mut *mut Self, pdimfocus: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsThreadFocus: unsafe extern "system" fn(this: *mut *mut Self, pfthreadfocus: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsThreadFocus: usize,
+    pub GetFunctionProvider: unsafe extern "system" fn(this: *mut *mut Self, clsid: *const ::windows_sys::core::GUID, ppfuncprov: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EnumFunctionProviders: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetGlobalCompartment: unsafe extern "system" fn(this: *mut *mut Self, ppcompmgr: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ActivateEx: unsafe extern "system" fn(this: *mut *mut Self, ptid: *mut u32, dwflags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetActiveFlags: unsafe extern "system" fn(this: *mut *mut Self, lpdwflags: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SuspendKeystrokeHandling: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub ResumeKeystrokeHandling: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfThreadMgrEventSink {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnInitDocumentMgr: unsafe extern "system" fn(this: *mut *mut Self, pdim: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub OnUninitDocumentMgr: unsafe extern "system" fn(this: *mut *mut Self, pdim: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub OnSetFocus: unsafe extern "system" fn(this: *mut *mut Self, pdimfocus: *mut ::core::ffi::c_void, pdimprevfocus: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub OnPushContext: unsafe extern "system" fn(this: *mut *mut Self, pic: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub OnPopContext: unsafe extern "system" fn(this: *mut *mut Self, pic: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfThreadMgrEx {
+    pub base__: ITfThreadMgr,
+    pub ActivateEx: unsafe extern "system" fn(this: *mut *mut Self, ptid: *mut u32, dwflags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetActiveFlags: unsafe extern "system" fn(this: *mut *mut Self, lpdwflags: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfToolTipUIElement {
+    pub base__: ITfUIElement,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetString: unsafe extern "system" fn(this: *mut *mut Self, pstr: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetString: usize,
+}
+#[repr(C)]
+pub struct ITfTransitoryExtensionSink {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OnTransitoryExtensionUpdated: unsafe extern "system" fn(this: *mut *mut Self, pic: *mut ::core::ffi::c_void, ecreadonly: u32, presultrange: *mut ::core::ffi::c_void, pcompositionrange: *mut ::core::ffi::c_void, pfdeleteresultrange: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OnTransitoryExtensionUpdated: usize,
+}
+#[repr(C)]
+pub struct ITfTransitoryExtensionUIElement {
+    pub base__: ITfUIElement,
+    pub GetDocumentMgr: unsafe extern "system" fn(this: *mut *mut Self, ppdim: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfUIElement {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetDescription: unsafe extern "system" fn(this: *mut *mut Self, pbstrdescription: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetDescription: usize,
+    pub GetGUID: unsafe extern "system" fn(this: *mut *mut Self, pguid: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Show: unsafe extern "system" fn(this: *mut *mut Self, bshow: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Show: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsShown: unsafe extern "system" fn(this: *mut *mut Self, pbshow: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsShown: usize,
+}
+#[repr(C)]
+pub struct ITfUIElementMgr {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub BeginUIElement: unsafe extern "system" fn(this: *mut *mut Self, pelement: *mut ::core::ffi::c_void, pbshow: *mut super::super::Foundation::BOOL, pdwuielementid: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    BeginUIElement: usize,
+    pub UpdateUIElement: unsafe extern "system" fn(this: *mut *mut Self, dwuielementid: u32) -> ::windows_sys::core::HRESULT,
+    pub EndUIElement: unsafe extern "system" fn(this: *mut *mut Self, dwuielementid: u32) -> ::windows_sys::core::HRESULT,
+    pub GetUIElement: unsafe extern "system" fn(this: *mut *mut Self, dwuielementid: u32, ppelement: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EnumUIElements: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITfUIElementSink {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub BeginUIElement: unsafe extern "system" fn(this: *mut *mut Self, dwuielementid: u32, pbshow: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    BeginUIElement: usize,
+    pub UpdateUIElement: unsafe extern "system" fn(this: *mut *mut Self, dwuielementid: u32) -> ::windows_sys::core::HRESULT,
+    pub EndUIElement: unsafe extern "system" fn(this: *mut *mut Self, dwuielementid: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IUIManagerEventSink {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OnWindowOpening: unsafe extern "system" fn(this: *mut *mut Self, prcbounds: *const super::super::Foundation::RECT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OnWindowOpening: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OnWindowOpened: unsafe extern "system" fn(this: *mut *mut Self, prcbounds: *const super::super::Foundation::RECT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OnWindowOpened: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OnWindowUpdating: unsafe extern "system" fn(this: *mut *mut Self, prcupdatedbounds: *const super::super::Foundation::RECT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OnWindowUpdating: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OnWindowUpdated: unsafe extern "system" fn(this: *mut *mut Self, prcupdatedbounds: *const super::super::Foundation::RECT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OnWindowUpdated: usize,
+    pub OnWindowClosing: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub OnWindowClosed: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IVersionInfo {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetSubcomponentCount: unsafe extern "system" fn(this: *mut *mut Self, ulsub: u32, ulcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetImplementationID: unsafe extern "system" fn(this: *mut *mut Self, ulsub: u32, implid: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub GetBuildVersion: unsafe extern "system" fn(this: *mut *mut Self, ulsub: u32, pdwmajor: *mut u32, pdwminor: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetComponentDescription: unsafe extern "system" fn(this: *mut *mut Self, ulsub: u32, pimplstr: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetComponentDescription: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetInstanceDescription: unsafe extern "system" fn(this: *mut *mut Self, ulsub: u32, pimplstr: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetInstanceDescription: usize,
+}
 #[doc = "*Required features: `\"Win32_UI_TextServices\"`*"]
 pub type InputScope = i32;
 #[doc = "*Required features: `\"Win32_UI_TextServices\"`*"]
@@ -658,7 +2357,7 @@ pub const TF_FLOATINGLANGBAR_WNDTITLEW: &str = "TF_FloatingLangBar_WndTitle";
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_UI_TextServices\"`*"]
 pub struct TF_HALTCOND {
-    pub pHaltRange: ITfRange,
+    pub pHaltRange: *mut *mut *mut *mut ITfRange,
     pub aHaltPos: TfAnchor,
     pub dwFlags: u32,
 }
@@ -988,7 +2687,7 @@ pub const TF_SD_READONLY: u32 = 1u32;
 #[doc = "*Required features: `\"Win32_UI_TextServices\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 pub struct TF_SELECTION {
-    pub range: ITfRange,
+    pub range: *mut *mut *mut *mut ITfRange,
     pub style: TF_SELECTIONSTYLE,
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -1379,8 +3078,8 @@ impl ::core::clone::Clone for TS_SELECTION_ACP {
 #[doc = "*Required features: `\"Win32_UI_TextServices\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 pub struct TS_SELECTION_ANCHOR {
-    pub paStart: IAnchor,
-    pub paEnd: IAnchor,
+    pub paStart: *mut *mut *mut *mut IAnchor,
+    pub paEnd: *mut *mut *mut *mut IAnchor,
     pub style: TS_SELECTIONSTYLE,
 }
 #[cfg(feature = "Win32_Foundation")]

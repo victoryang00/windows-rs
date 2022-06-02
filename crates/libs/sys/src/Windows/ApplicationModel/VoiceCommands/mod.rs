@@ -1,3 +1,168 @@
+#[repr(C)]
+pub struct IVoiceCommand {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CommandName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub Properties: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    Properties: usize,
+    #[cfg(feature = "Media_SpeechRecognition")]
+    pub SpeechRecognitionResult: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Media_SpeechRecognition"))]
+    SpeechRecognitionResult: usize,
+}
+#[repr(C)]
+pub struct IVoiceCommandCompletedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Reason: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut VoiceCommandCompletionReason) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IVoiceCommandConfirmationResult {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Confirmed: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IVoiceCommandContentTile {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Title: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetTitle: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub TextLine1: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetTextLine1: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub TextLine2: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetTextLine2: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub TextLine3: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetTextLine3: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Storage")]
+    pub Image: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Storage"))]
+    Image: usize,
+    #[cfg(feature = "Storage")]
+    pub SetImage: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Storage"))]
+    SetImage: usize,
+    pub AppContext: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetAppContext: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AppLaunchArgument: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetAppLaunchArgument: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub ContentTileType: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut VoiceCommandContentTileType) -> ::windows_sys::core::HRESULT,
+    pub SetContentTileType: unsafe extern "system" fn(this: *mut *mut Self, value: VoiceCommandContentTileType) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IVoiceCommandDefinition {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Language: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Name: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub SetPhraseListAsync: unsafe extern "system" fn(this: *mut *mut Self, phraselistname: ::windows_sys::core::HSTRING, phraselist: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    SetPhraseListAsync: usize,
+}
+#[repr(C)]
+pub struct IVoiceCommandDefinitionManagerStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(all(feature = "Foundation", feature = "Storage"))]
+    pub InstallCommandDefinitionsFromStorageFileAsync: unsafe extern "system" fn(this: *mut *mut Self, file: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation", feature = "Storage")))]
+    InstallCommandDefinitionsFromStorageFileAsync: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub InstalledCommandDefinitions: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    InstalledCommandDefinitions: usize,
+}
+#[repr(C)]
+pub struct IVoiceCommandDisambiguationResult {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub SelectedItem: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IVoiceCommandResponse {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Message: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetMessage: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RepeatMessage: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetRepeatMessage: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AppLaunchArgument: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetAppLaunchArgument: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub VoiceCommandContentTiles: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    VoiceCommandContentTiles: usize,
+}
+#[repr(C)]
+pub struct IVoiceCommandResponseStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub MaxSupportedVoiceCommandContentTiles: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub CreateResponse: unsafe extern "system" fn(this: *mut *mut Self, usermessage: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub CreateResponseWithTiles: unsafe extern "system" fn(this: *mut *mut Self, message: *mut ::core::ffi::c_void, contenttiles: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    CreateResponseWithTiles: usize,
+    pub CreateResponseForPrompt: unsafe extern "system" fn(this: *mut *mut Self, message: *mut ::core::ffi::c_void, repeatmessage: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub CreateResponseForPromptWithTiles: unsafe extern "system" fn(this: *mut *mut Self, message: *mut ::core::ffi::c_void, repeatmessage: *mut ::core::ffi::c_void, contenttiles: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    CreateResponseForPromptWithTiles: usize,
+}
+#[repr(C)]
+pub struct IVoiceCommandServiceConnection {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub GetVoiceCommandAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    GetVoiceCommandAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub RequestConfirmationAsync: unsafe extern "system" fn(this: *mut *mut Self, response: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RequestConfirmationAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub RequestDisambiguationAsync: unsafe extern "system" fn(this: *mut *mut Self, response: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RequestDisambiguationAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub ReportProgressAsync: unsafe extern "system" fn(this: *mut *mut Self, response: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    ReportProgressAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub ReportSuccessAsync: unsafe extern "system" fn(this: *mut *mut Self, response: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    ReportSuccessAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub ReportFailureAsync: unsafe extern "system" fn(this: *mut *mut Self, response: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    ReportFailureAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub RequestAppLaunchAsync: unsafe extern "system" fn(this: *mut *mut Self, response: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RequestAppLaunchAsync: usize,
+    #[cfg(feature = "Globalization")]
+    pub Language: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Globalization"))]
+    Language: usize,
+    #[cfg(feature = "Foundation")]
+    pub VoiceCommandCompleted: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    VoiceCommandCompleted: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveVoiceCommandCompleted: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveVoiceCommandCompleted: usize,
+}
+#[repr(C)]
+pub struct IVoiceCommandServiceConnectionStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "ApplicationModel_AppService")]
+    pub FromAppServiceTriggerDetails: unsafe extern "system" fn(this: *mut *mut Self, triggerdetails: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "ApplicationModel_AppService"))]
+    FromAppServiceTriggerDetails: usize,
+}
+#[repr(C)]
+pub struct IVoiceCommandUserMessage {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub DisplayMessage: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetDisplayMessage: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SpokenMessage: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetSpokenMessage: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
 pub type VoiceCommand = *mut ::core::ffi::c_void;
 pub type VoiceCommandCompletedEventArgs = *mut ::core::ffi::c_void;
 #[doc = "*Required features: `\"ApplicationModel_VoiceCommands\"`*"]

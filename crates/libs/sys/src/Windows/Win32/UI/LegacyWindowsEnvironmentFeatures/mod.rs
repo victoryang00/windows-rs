@@ -18,14 +18,77 @@ pub const EVCF_SETTINGSMODE: u32 = 32u32;
 pub const EVCF_SYSTEMAUTORUN: u32 = 256u32;
 #[doc = "*Required features: `\"Win32_UI_LegacyWindowsEnvironmentFeatures\"`*"]
 pub const EVCF_USERCONSENTOBTAINED: u32 = 128u32;
-pub type IADesktopP2 = *mut ::core::ffi::c_void;
-pub type IActiveDesktopP = *mut ::core::ffi::c_void;
-pub type IBriefcaseInitiator = *mut ::core::ffi::c_void;
-pub type IEmptyVolumeCache = *mut ::core::ffi::c_void;
-pub type IEmptyVolumeCache2 = *mut ::core::ffi::c_void;
-pub type IEmptyVolumeCacheCallBack = *mut ::core::ffi::c_void;
-pub type IReconcilableObject = *mut ::core::ffi::c_void;
-pub type IReconcileInitiator = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IADesktopP2 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub ReReadWallpaper: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetADObjectFlags: unsafe extern "system" fn(this: *mut *mut Self, pdwflags: *mut u32, dwmask: u32) -> ::windows_sys::core::HRESULT,
+    pub UpdateAllDesktopSubscriptions: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Ole")]
+    pub MakeDynamicChanges: unsafe extern "system" fn(this: *mut *mut Self, poleobj: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Ole"))]
+    MakeDynamicChanges: usize,
+}
+#[repr(C)]
+pub struct IActiveDesktopP {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetSafeMode: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32) -> ::windows_sys::core::HRESULT,
+    pub EnsureUpdateHTML: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub SetScheme: unsafe extern "system" fn(this: *mut *mut Self, pwszschemename: ::windows_sys::core::PCWSTR, dwflags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetScheme: unsafe extern "system" fn(this: *mut *mut Self, pwszschemename: ::windows_sys::core::PWSTR, pdwcchbuffer: *mut u32, dwflags: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IBriefcaseInitiator {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com")]
+    pub IsMonikerInBriefcase: unsafe extern "system" fn(this: *mut *mut Self, pmk: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    IsMonikerInBriefcase: usize,
+}
+#[repr(C)]
+pub struct IEmptyVolumeCache {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Registry")]
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, hkregkey: super::super::System::Registry::HKEY, pcwszvolume: ::windows_sys::core::PCWSTR, ppwszdisplayname: *mut ::windows_sys::core::PWSTR, ppwszdescription: *mut ::windows_sys::core::PWSTR, pdwflags: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Registry"))]
+    Initialize: usize,
+    pub GetSpaceUsed: unsafe extern "system" fn(this: *mut *mut Self, pdwlspaceused: *mut u64, picb: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Purge: unsafe extern "system" fn(this: *mut *mut Self, dwlspacetofree: u64, picb: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ShowProperties: unsafe extern "system" fn(this: *mut *mut Self, hwnd: super::super::Foundation::HWND) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ShowProperties: usize,
+    pub Deactivate: unsafe extern "system" fn(this: *mut *mut Self, pdwflags: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IEmptyVolumeCache2 {
+    pub base__: IEmptyVolumeCache,
+    #[cfg(feature = "Win32_System_Registry")]
+    pub InitializeEx: unsafe extern "system" fn(this: *mut *mut Self, hkregkey: super::super::System::Registry::HKEY, pcwszvolume: ::windows_sys::core::PCWSTR, pcwszkeyname: ::windows_sys::core::PCWSTR, ppwszdisplayname: *mut ::windows_sys::core::PWSTR, ppwszdescription: *mut ::windows_sys::core::PWSTR, ppwszbtntext: *mut ::windows_sys::core::PWSTR, pdwflags: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Registry"))]
+    InitializeEx: usize,
+}
+#[repr(C)]
+pub struct IEmptyVolumeCacheCallBack {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub ScanProgress: unsafe extern "system" fn(this: *mut *mut Self, dwlspaceused: u64, dwflags: u32, pcwszstatus: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub PurgeProgress: unsafe extern "system" fn(this: *mut *mut Self, dwlspacefreed: u64, dwlspacetofree: u64, dwflags: u32, pcwszstatus: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IReconcilableObject {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    pub Reconcile: unsafe extern "system" fn(this: *mut *mut Self, pinitiator: *mut ::core::ffi::c_void, dwflags: u32, hwndowner: super::super::Foundation::HWND, hwndprogressfeedback: super::super::Foundation::HWND, ulcinput: u32, rgpmkotherinput: *mut *mut ::core::ffi::c_void, ploutindex: *mut i32, pstgnewresidues: *mut ::core::ffi::c_void, pvreserved: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    Reconcile: usize,
+    pub GetProgressFeedbackMaxEstimate: unsafe extern "system" fn(this: *mut *mut Self, pulprogressmax: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IReconcileInitiator {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetAbortCallback: unsafe extern "system" fn(this: *mut *mut Self, punkforabort: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetProgressFeedback: unsafe extern "system" fn(this: *mut *mut Self, ulprogress: u32, ulprogressmax: u32) -> ::windows_sys::core::HRESULT,
+}
 #[doc = "*Required features: `\"Win32_UI_LegacyWindowsEnvironmentFeatures\"`*"]
 pub const REC_E_ABORTED: ::windows_sys::core::HRESULT = -2147217408i32;
 #[doc = "*Required features: `\"Win32_UI_LegacyWindowsEnvironmentFeatures\"`*"]

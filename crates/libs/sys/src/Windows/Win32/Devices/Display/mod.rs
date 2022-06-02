@@ -227,13 +227,13 @@ extern "system" {
     pub fn GetNumberOfPhysicalMonitorsFromHMONITOR(hmonitor: super::super::Graphics::Gdi::HMONITOR, pdwnumberofphysicalmonitors: *mut u32) -> i32;
     #[doc = "*Required features: `\"Win32_Devices_Display\"`, `\"Win32_Graphics_Direct3D9\"`*"]
     #[cfg(feature = "Win32_Graphics_Direct3D9")]
-    pub fn GetNumberOfPhysicalMonitorsFromIDirect3DDevice9(pdirect3ddevice9: super::super::Graphics::Direct3D9::IDirect3DDevice9, pdwnumberofphysicalmonitors: *mut u32) -> ::windows_sys::core::HRESULT;
+    pub fn GetNumberOfPhysicalMonitorsFromIDirect3DDevice9(pdirect3ddevice9: *mut *mut super::super::Graphics::Direct3D9::IDirect3DDevice9, pdwnumberofphysicalmonitors: *mut u32) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Devices_Display\"`, `\"Win32_Foundation\"`, `\"Win32_Graphics_Gdi\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
     pub fn GetPhysicalMonitorsFromHMONITOR(hmonitor: super::super::Graphics::Gdi::HMONITOR, dwphysicalmonitorarraysize: u32, pphysicalmonitorarray: *mut PHYSICAL_MONITOR) -> i32;
     #[doc = "*Required features: `\"Win32_Devices_Display\"`, `\"Win32_Foundation\"`, `\"Win32_Graphics_Direct3D9\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct3D9"))]
-    pub fn GetPhysicalMonitorsFromIDirect3DDevice9(pdirect3ddevice9: super::super::Graphics::Direct3D9::IDirect3DDevice9, dwphysicalmonitorarraysize: u32, pphysicalmonitorarray: *mut PHYSICAL_MONITOR) -> ::windows_sys::core::HRESULT;
+    pub fn GetPhysicalMonitorsFromIDirect3DDevice9(pdirect3ddevice9: *mut *mut super::super::Graphics::Direct3D9::IDirect3DDevice9, dwphysicalmonitorarraysize: u32, pphysicalmonitorarray: *mut PHYSICAL_MONITOR) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Devices_Display\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
     pub fn GetTimingReport(hmonitor: super::super::Foundation::HANDLE, pmtrmonitortimingreport: *mut MC_TIMING_REPORT) -> i32;
@@ -3195,7 +3195,17 @@ pub const HT_USERPAT_CX_MIN: u32 = 4u32;
 pub const HT_USERPAT_CY_MAX: u32 = 256u32;
 #[doc = "*Required features: `\"Win32_Devices_Display\"`*"]
 pub const HT_USERPAT_CY_MIN: u32 = 4u32;
-pub type ICloneViewHelper = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct ICloneViewHelper {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetConnectedIDs: unsafe extern "system" fn(this: *mut *mut Self, wszadaptorname: ::windows_sys::core::PCWSTR, pulcount: *mut u32, pulid: *mut u32, ulflags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetActiveTopology: unsafe extern "system" fn(this: *mut *mut Self, wszadaptorname: ::windows_sys::core::PCWSTR, ulsourceid: u32, pulcount: *mut u32, pultargetid: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetActiveTopology: unsafe extern "system" fn(this: *mut *mut Self, wszadaptorname: ::windows_sys::core::PCWSTR, ulsourceid: u32, ulcount: u32, pultargetid: *const u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Commit: unsafe extern "system" fn(this: *mut *mut Self, ffinalcall: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Commit: usize,
+}
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Devices_Display\"`*"]
 pub struct IFIEXTRA {
@@ -3732,7 +3742,19 @@ pub const IOCTL_VIDEO_UNSHARE_VIDEO_MEMORY: u32 = 2294904u32;
 pub const IOCTL_VIDEO_USE_DEVICE_IN_SESSION: u32 = 2293800u32;
 #[doc = "*Required features: `\"Win32_Devices_Display\"`*"]
 pub const IOCTL_VIDEO_VALIDATE_CHILD_STATE_CONFIGURATION: u32 = 2294916u32;
-pub type IViewHelper = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IViewHelper {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetConnectedIDs: unsafe extern "system" fn(this: *mut *mut Self, wszadaptorname: ::windows_sys::core::PCWSTR, pulcount: *mut u32, pulid: *mut u32, ulflags: u32) -> ::windows_sys::core::HRESULT,
+    pub GetActiveTopology: unsafe extern "system" fn(this: *mut *mut Self, wszadaptorname: ::windows_sys::core::PCWSTR, ulsourceid: u32, pulcount: *mut u32, pultargetid: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetActiveTopology: unsafe extern "system" fn(this: *mut *mut Self, wszadaptorname: ::windows_sys::core::PCWSTR, ulsourceid: u32, ulcount: u32, pultargetid: *const u32) -> ::windows_sys::core::HRESULT,
+    pub Commit: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetConfiguration: unsafe extern "system" fn(this: *mut *mut Self, pistream: *mut ::core::ffi::c_void, pulstatus: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetConfiguration: usize,
+    pub GetProceedOnNewConfiguration: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
 #[doc = "*Required features: `\"Win32_Devices_Display\"`*"]
 pub const JOIN_BEVEL: i32 = 1i32;
 #[doc = "*Required features: `\"Win32_Devices_Display\"`*"]

@@ -504,12 +504,63 @@ pub const FLAGSTATUS_FOLLOWUP: i32 = 2i32;
 #[doc = "*Required features: `\"Win32_Storage_EnhancedStorage\"`*"]
 pub const FLAGSTATUS_NOTFLAGGED: i32 = 0i32;
 pub const GUID_DEVINTERFACE_ENHANCED_STORAGE_SILO: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 949483172, data2: 64821, data3: 19400, data4: [160, 183, 93, 187, 163, 106, 218, 250] };
-pub type IEnhancedStorageACT = *mut ::core::ffi::c_void;
-pub type IEnhancedStorageACT2 = *mut ::core::ffi::c_void;
-pub type IEnhancedStorageACT3 = *mut ::core::ffi::c_void;
-pub type IEnhancedStorageSilo = *mut ::core::ffi::c_void;
-pub type IEnhancedStorageSiloAction = *mut ::core::ffi::c_void;
-pub type IEnumEnhancedStorageACT = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IEnhancedStorageACT {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Authorize: unsafe extern "system" fn(this: *mut *mut Self, hwndparent: u32, dwflags: u32) -> ::windows_sys::core::HRESULT,
+    pub Unauthorize: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetAuthorizationState: unsafe extern "system" fn(this: *mut *mut Self, pstate: *mut ACT_AUTHORIZATION_STATE) -> ::windows_sys::core::HRESULT,
+    pub GetMatchingVolume: unsafe extern "system" fn(this: *mut *mut Self, ppwszvolume: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetUniqueIdentity: unsafe extern "system" fn(this: *mut *mut Self, ppwszidentity: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetSilos: unsafe extern "system" fn(this: *mut *mut Self, pppienhancedstoragesilos: *mut *mut *mut ::core::ffi::c_void, pcenhancedstoragesilos: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IEnhancedStorageACT2 {
+    pub base__: IEnhancedStorageACT,
+    pub GetDeviceName: unsafe extern "system" fn(this: *mut *mut Self, ppwszdevicename: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsDeviceRemovable: unsafe extern "system" fn(this: *mut *mut Self, pisdeviceremovable: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsDeviceRemovable: usize,
+}
+#[repr(C)]
+pub struct IEnhancedStorageACT3 {
+    pub base__: IEnhancedStorageACT2,
+    pub UnauthorizeEx: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsQueueFrozen: unsafe extern "system" fn(this: *mut *mut Self, pisqueuefrozen: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsQueueFrozen: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetShellExtSupport: unsafe extern "system" fn(this: *mut *mut Self, pshellextsupport: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetShellExtSupport: usize,
+}
+#[repr(C)]
+pub struct IEnhancedStorageSilo {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetInfo: unsafe extern "system" fn(this: *mut *mut Self, psiloinfo: *mut SILO_INFO) -> ::windows_sys::core::HRESULT,
+    pub GetActions: unsafe extern "system" fn(this: *mut *mut Self, pppienhancedstoragesiloactions: *mut *mut *mut ::core::ffi::c_void, pcenhancedstoragesiloactions: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SendCommand: unsafe extern "system" fn(this: *mut *mut Self, command: u8, pbcommandbuffer: *const u8, cbcommandbuffer: u32, pbresponsebuffer: *mut u8, pcbresponsebuffer: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Devices_PortableDevices")]
+    pub GetPortableDevice: unsafe extern "system" fn(this: *mut *mut Self, ppiportabledevice: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Devices_PortableDevices"))]
+    GetPortableDevice: usize,
+    pub GetDevicePath: unsafe extern "system" fn(this: *mut *mut Self, ppwszsilodevicepath: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IEnhancedStorageSiloAction {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetName: unsafe extern "system" fn(this: *mut *mut Self, ppwszactionname: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetDescription: unsafe extern "system" fn(this: *mut *mut Self, ppwszactiondescription: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub Invoke: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IEnumEnhancedStorageACT {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetACTs: unsafe extern "system" fn(this: *mut *mut Self, pppienhancedstorageacts: *mut *mut *mut ::core::ffi::c_void, pcenhancedstorageacts: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetMatchingACT: unsafe extern "system" fn(this: *mut *mut Self, szvolume: ::windows_sys::core::PCWSTR, ppienhancedstorageact: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
 #[doc = "*Required features: `\"Win32_Storage_EnhancedStorage\"`*"]
 pub const IMPORTANCE_HIGH_MAX: i32 = 5i32;
 #[doc = "*Required features: `\"Win32_Storage_EnhancedStorage\"`*"]

@@ -103,82 +103,1265 @@ pub const dpNormal: DownloadPriority = 2i32;
 pub const dpHigh: DownloadPriority = 3i32;
 #[doc = "*Required features: `\"Win32_System_UpdateAgent\"`*"]
 pub const dpExtraHigh: DownloadPriority = 4i32;
-pub type IAutomaticUpdates = *mut ::core::ffi::c_void;
-pub type IAutomaticUpdates2 = *mut ::core::ffi::c_void;
-pub type IAutomaticUpdatesResults = *mut ::core::ffi::c_void;
-pub type IAutomaticUpdatesSettings = *mut ::core::ffi::c_void;
-pub type IAutomaticUpdatesSettings2 = *mut ::core::ffi::c_void;
-pub type IAutomaticUpdatesSettings3 = *mut ::core::ffi::c_void;
-pub type ICategory = *mut ::core::ffi::c_void;
-pub type ICategoryCollection = *mut ::core::ffi::c_void;
-pub type IDownloadCompletedCallback = *mut ::core::ffi::c_void;
-pub type IDownloadCompletedCallbackArgs = *mut ::core::ffi::c_void;
-pub type IDownloadJob = *mut ::core::ffi::c_void;
-pub type IDownloadProgress = *mut ::core::ffi::c_void;
-pub type IDownloadProgressChangedCallback = *mut ::core::ffi::c_void;
-pub type IDownloadProgressChangedCallbackArgs = *mut ::core::ffi::c_void;
-pub type IDownloadResult = *mut ::core::ffi::c_void;
-pub type IImageInformation = *mut ::core::ffi::c_void;
-pub type IInstallationAgent = *mut ::core::ffi::c_void;
-pub type IInstallationBehavior = *mut ::core::ffi::c_void;
-pub type IInstallationCompletedCallback = *mut ::core::ffi::c_void;
-pub type IInstallationCompletedCallbackArgs = *mut ::core::ffi::c_void;
-pub type IInstallationJob = *mut ::core::ffi::c_void;
-pub type IInstallationProgress = *mut ::core::ffi::c_void;
-pub type IInstallationProgressChangedCallback = *mut ::core::ffi::c_void;
-pub type IInstallationProgressChangedCallbackArgs = *mut ::core::ffi::c_void;
-pub type IInstallationResult = *mut ::core::ffi::c_void;
-pub type IInvalidProductLicenseException = *mut ::core::ffi::c_void;
-pub type ISearchCompletedCallback = *mut ::core::ffi::c_void;
-pub type ISearchCompletedCallbackArgs = *mut ::core::ffi::c_void;
-pub type ISearchJob = *mut ::core::ffi::c_void;
-pub type ISearchResult = *mut ::core::ffi::c_void;
-pub type IStringCollection = *mut ::core::ffi::c_void;
-pub type ISystemInformation = *mut ::core::ffi::c_void;
-pub type IUpdate = *mut ::core::ffi::c_void;
-pub type IUpdate2 = *mut ::core::ffi::c_void;
-pub type IUpdate3 = *mut ::core::ffi::c_void;
-pub type IUpdate4 = *mut ::core::ffi::c_void;
-pub type IUpdate5 = *mut ::core::ffi::c_void;
-pub type IUpdateCollection = *mut ::core::ffi::c_void;
-pub type IUpdateDownloadContent = *mut ::core::ffi::c_void;
-pub type IUpdateDownloadContent2 = *mut ::core::ffi::c_void;
-pub type IUpdateDownloadContentCollection = *mut ::core::ffi::c_void;
-pub type IUpdateDownloadResult = *mut ::core::ffi::c_void;
-pub type IUpdateDownloader = *mut ::core::ffi::c_void;
-pub type IUpdateException = *mut ::core::ffi::c_void;
-pub type IUpdateExceptionCollection = *mut ::core::ffi::c_void;
-pub type IUpdateHistoryEntry = *mut ::core::ffi::c_void;
-pub type IUpdateHistoryEntry2 = *mut ::core::ffi::c_void;
-pub type IUpdateHistoryEntryCollection = *mut ::core::ffi::c_void;
-pub type IUpdateIdentity = *mut ::core::ffi::c_void;
-pub type IUpdateInstallationResult = *mut ::core::ffi::c_void;
-pub type IUpdateInstaller = *mut ::core::ffi::c_void;
-pub type IUpdateInstaller2 = *mut ::core::ffi::c_void;
-pub type IUpdateInstaller3 = *mut ::core::ffi::c_void;
-pub type IUpdateInstaller4 = *mut ::core::ffi::c_void;
-pub type IUpdateLockdown = *mut ::core::ffi::c_void;
-pub type IUpdateSearcher = *mut ::core::ffi::c_void;
-pub type IUpdateSearcher2 = *mut ::core::ffi::c_void;
-pub type IUpdateSearcher3 = *mut ::core::ffi::c_void;
-pub type IUpdateService = *mut ::core::ffi::c_void;
-pub type IUpdateService2 = *mut ::core::ffi::c_void;
-pub type IUpdateServiceCollection = *mut ::core::ffi::c_void;
-pub type IUpdateServiceManager = *mut ::core::ffi::c_void;
-pub type IUpdateServiceManager2 = *mut ::core::ffi::c_void;
-pub type IUpdateServiceRegistration = *mut ::core::ffi::c_void;
-pub type IUpdateSession = *mut ::core::ffi::c_void;
-pub type IUpdateSession2 = *mut ::core::ffi::c_void;
-pub type IUpdateSession3 = *mut ::core::ffi::c_void;
-pub type IWebProxy = *mut ::core::ffi::c_void;
-pub type IWindowsDriverUpdate = *mut ::core::ffi::c_void;
-pub type IWindowsDriverUpdate2 = *mut ::core::ffi::c_void;
-pub type IWindowsDriverUpdate3 = *mut ::core::ffi::c_void;
-pub type IWindowsDriverUpdate4 = *mut ::core::ffi::c_void;
-pub type IWindowsDriverUpdate5 = *mut ::core::ffi::c_void;
-pub type IWindowsDriverUpdateEntry = *mut ::core::ffi::c_void;
-pub type IWindowsDriverUpdateEntryCollection = *mut ::core::ffi::c_void;
-pub type IWindowsUpdateAgentInfo = *mut ::core::ffi::c_void;
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IAutomaticUpdates {
+    pub base__: super::Com::IDispatch,
+    pub DetectNow: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Pause: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Resume: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub ShowSettingsDialog: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Settings: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Settings: usize,
+    pub ServiceEnabled: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub EnableService: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IAutomaticUpdates2 {
+    pub base__: IAutomaticUpdates,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Results: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Results: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IAutomaticUpdatesResults {
+    pub base__: super::Com::IDispatch,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub LastSearchSuccessDate: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    LastSearchSuccessDate: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub LastInstallationSuccessDate: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    LastInstallationSuccessDate: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IAutomaticUpdatesSettings {
+    pub base__: super::Com::IDispatch,
+    pub NotificationLevel: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut AutomaticUpdatesNotificationLevel) -> ::windows_sys::core::HRESULT,
+    pub SetNotificationLevel: unsafe extern "system" fn(this: *mut *mut Self, value: AutomaticUpdatesNotificationLevel) -> ::windows_sys::core::HRESULT,
+    pub ReadOnly: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub Required: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub ScheduledInstallationDay: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut AutomaticUpdatesScheduledInstallationDay) -> ::windows_sys::core::HRESULT,
+    pub SetScheduledInstallationDay: unsafe extern "system" fn(this: *mut *mut Self, value: AutomaticUpdatesScheduledInstallationDay) -> ::windows_sys::core::HRESULT,
+    pub ScheduledInstallationTime: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetScheduledInstallationTime: unsafe extern "system" fn(this: *mut *mut Self, value: i32) -> ::windows_sys::core::HRESULT,
+    pub Refresh: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Save: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IAutomaticUpdatesSettings2 {
+    pub base__: IAutomaticUpdatesSettings,
+    pub IncludeRecommendedUpdates: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetIncludeRecommendedUpdates: unsafe extern "system" fn(this: *mut *mut Self, value: i16) -> ::windows_sys::core::HRESULT,
+    pub CheckPermission: unsafe extern "system" fn(this: *mut *mut Self, usertype: AutomaticUpdatesUserType, permissiontype: AutomaticUpdatesPermissionType, userhaspermission: *mut i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IAutomaticUpdatesSettings3 {
+    pub base__: IAutomaticUpdatesSettings2,
+    pub NonAdministratorsElevated: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetNonAdministratorsElevated: unsafe extern "system" fn(this: *mut *mut Self, value: i16) -> ::windows_sys::core::HRESULT,
+    pub FeaturedUpdatesEnabled: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetFeaturedUpdatesEnabled: unsafe extern "system" fn(this: *mut *mut Self, value: i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ICategory {
+    pub base__: super::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Name: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Name: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CategoryID: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CategoryID: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Children: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Children: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Description: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Description: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Image: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Image: usize,
+    pub Order: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Parent: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Parent: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Type: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Type: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Updates: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Updates: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ICategoryCollection {
+    pub base__: super::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub get_Item: unsafe extern "system" fn(this: *mut *mut Self, index: i32, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    get_Item: usize,
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDownloadCompletedCallback {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Invoke: unsafe extern "system" fn(this: *mut *mut Self, downloadjob: *mut ::core::ffi::c_void, callbackargs: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Invoke: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IDownloadCompletedCallbackArgs {
+    pub base__: super::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IDownloadJob {
+    pub base__: super::Com::IDispatch,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub AsyncState: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    AsyncState: usize,
+    pub IsCompleted: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Updates: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Updates: usize,
+    pub CleanUp: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetProgress: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetProgress: usize,
+    pub RequestAbort: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IDownloadProgress {
+    pub base__: super::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CurrentUpdateBytesDownloaded: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut super::super::Foundation::DECIMAL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CurrentUpdateBytesDownloaded: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CurrentUpdateBytesToDownload: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut super::super::Foundation::DECIMAL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CurrentUpdateBytesToDownload: usize,
+    pub CurrentUpdateIndex: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub PercentComplete: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub TotalBytesDownloaded: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut super::super::Foundation::DECIMAL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    TotalBytesDownloaded: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub TotalBytesToDownload: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut super::super::Foundation::DECIMAL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    TotalBytesToDownload: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetUpdateResult: unsafe extern "system" fn(this: *mut *mut Self, updateindex: i32, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetUpdateResult: usize,
+    pub CurrentUpdateDownloadPhase: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut DownloadPhase) -> ::windows_sys::core::HRESULT,
+    pub CurrentUpdatePercentComplete: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDownloadProgressChangedCallback {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Invoke: unsafe extern "system" fn(this: *mut *mut Self, downloadjob: *mut ::core::ffi::c_void, callbackargs: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Invoke: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IDownloadProgressChangedCallbackArgs {
+    pub base__: super::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Progress: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Progress: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IDownloadResult {
+    pub base__: super::Com::IDispatch,
+    pub HResult: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub ResultCode: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut OperationResultCode) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetUpdateResult: unsafe extern "system" fn(this: *mut *mut Self, updateindex: i32, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetUpdateResult: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IImageInformation {
+    pub base__: super::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AltText: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AltText: usize,
+    pub Height: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Source: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Source: usize,
+    pub Width: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IInstallationAgent {
+    pub base__: super::Com::IDispatch,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub RecordInstallationResult: unsafe extern "system" fn(this: *mut *mut Self, installationresultcookie: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, hresult: i32, extendedreportingdata: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    RecordInstallationResult: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IInstallationBehavior {
+    pub base__: super::Com::IDispatch,
+    pub CanRequestUserInput: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub Impact: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut InstallationImpact) -> ::windows_sys::core::HRESULT,
+    pub RebootBehavior: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut InstallationRebootBehavior) -> ::windows_sys::core::HRESULT,
+    pub RequiresNetworkConnectivity: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IInstallationCompletedCallback {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Invoke: unsafe extern "system" fn(this: *mut *mut Self, installationjob: *mut ::core::ffi::c_void, callbackargs: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Invoke: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IInstallationCompletedCallbackArgs {
+    pub base__: super::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IInstallationJob {
+    pub base__: super::Com::IDispatch,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub AsyncState: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    AsyncState: usize,
+    pub IsCompleted: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Updates: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Updates: usize,
+    pub CleanUp: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetProgress: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetProgress: usize,
+    pub RequestAbort: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IInstallationProgress {
+    pub base__: super::Com::IDispatch,
+    pub CurrentUpdateIndex: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub CurrentUpdatePercentComplete: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub PercentComplete: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetUpdateResult: unsafe extern "system" fn(this: *mut *mut Self, updateindex: i32, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetUpdateResult: usize,
+}
+#[repr(C)]
+pub struct IInstallationProgressChangedCallback {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Invoke: unsafe extern "system" fn(this: *mut *mut Self, installationjob: *mut ::core::ffi::c_void, callbackargs: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Invoke: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IInstallationProgressChangedCallbackArgs {
+    pub base__: super::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Progress: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Progress: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IInstallationResult {
+    pub base__: super::Com::IDispatch,
+    pub HResult: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub RebootRequired: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub ResultCode: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut OperationResultCode) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetUpdateResult: unsafe extern "system" fn(this: *mut *mut Self, updateindex: i32, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetUpdateResult: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IInvalidProductLicenseException {
+    pub base__: IUpdateException,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Product: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Product: usize,
+}
+#[repr(C)]
+pub struct ISearchCompletedCallback {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Invoke: unsafe extern "system" fn(this: *mut *mut Self, searchjob: *mut ::core::ffi::c_void, callbackargs: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Invoke: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISearchCompletedCallbackArgs {
+    pub base__: super::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISearchJob {
+    pub base__: super::Com::IDispatch,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub AsyncState: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    AsyncState: usize,
+    pub IsCompleted: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub CleanUp: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub RequestAbort: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISearchResult {
+    pub base__: super::Com::IDispatch,
+    pub ResultCode: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut OperationResultCode) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub RootCategories: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    RootCategories: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Updates: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Updates: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Warnings: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Warnings: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IStringCollection {
+    pub base__: super::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub get_Item: unsafe extern "system" fn(this: *mut *mut Self, index: i32, retval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    get_Item: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub put_Item: unsafe extern "system" fn(this: *mut *mut Self, index: i32, value: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    put_Item: usize,
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub ReadOnly: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Add: unsafe extern "system" fn(this: *mut *mut Self, value: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, retval: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Add: usize,
+    pub Clear: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Copy: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Copy: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Insert: unsafe extern "system" fn(this: *mut *mut Self, index: i32, value: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Insert: usize,
+    pub RemoveAt: unsafe extern "system" fn(this: *mut *mut Self, index: i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISystemInformation {
+    pub base__: super::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OemHardwareSupportLink: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OemHardwareSupportLink: usize,
+    pub RebootRequired: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IUpdate {
+    pub base__: super::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Title: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Title: usize,
+    pub AutoSelectOnWebSites: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub BundledUpdates: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    BundledUpdates: usize,
+    pub CanRequireSource: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Categories: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Categories: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Deadline: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Deadline: usize,
+    pub DeltaCompressedContentAvailable: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub DeltaCompressedContentPreferred: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Description: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Description: usize,
+    pub EulaAccepted: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub EulaText: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    EulaText: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub HandlerID: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    HandlerID: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Identity: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Identity: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Image: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Image: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub InstallationBehavior: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    InstallationBehavior: usize,
+    pub IsBeta: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub IsDownloaded: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub IsHidden: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetIsHidden: unsafe extern "system" fn(this: *mut *mut Self, value: i16) -> ::windows_sys::core::HRESULT,
+    pub IsInstalled: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub IsMandatory: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub IsUninstallable: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Languages: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Languages: usize,
+    pub LastDeploymentChangeTime: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut f64) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MaxDownloadSize: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut super::super::Foundation::DECIMAL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MaxDownloadSize: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MinDownloadSize: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut super::super::Foundation::DECIMAL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MinDownloadSize: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub MoreInfoUrls: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    MoreInfoUrls: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MsrcSeverity: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MsrcSeverity: usize,
+    pub RecommendedCpuSpeed: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub RecommendedHardDiskSpace: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub RecommendedMemory: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ReleaseNotes: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ReleaseNotes: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SecurityBulletinIDs: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SecurityBulletinIDs: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SupersededUpdateIDs: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SupersededUpdateIDs: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SupportUrl: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SupportUrl: usize,
+    pub Type: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut UpdateType) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub UninstallationNotes: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    UninstallationNotes: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub UninstallationBehavior: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    UninstallationBehavior: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub UninstallationSteps: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    UninstallationSteps: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub KBArticleIDs: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    KBArticleIDs: usize,
+    pub AcceptEula: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub DeploymentAction: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut DeploymentAction) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CopyFromCache: unsafe extern "system" fn(this: *mut *mut Self, path: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, toextractcabfiles: i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CopyFromCache: usize,
+    pub DownloadPriority: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut DownloadPriority) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub DownloadContents: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    DownloadContents: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IUpdate2 {
+    pub base__: IUpdate,
+    pub RebootRequired: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub IsPresent: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CveIDs: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CveIDs: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CopyToCache: unsafe extern "system" fn(this: *mut *mut Self, pfiles: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CopyToCache: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IUpdate3 {
+    pub base__: IUpdate2,
+    pub BrowseOnly: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IUpdate4 {
+    pub base__: IUpdate3,
+    pub PerUser: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IUpdate5 {
+    pub base__: IUpdate4,
+    pub AutoSelection: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut AutoSelectionMode) -> ::windows_sys::core::HRESULT,
+    pub AutoDownload: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut AutoDownloadMode) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IUpdateCollection {
+    pub base__: super::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub get_Item: unsafe extern "system" fn(this: *mut *mut Self, index: i32, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    get_Item: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub put_Item: unsafe extern "system" fn(this: *mut *mut Self, index: i32, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    put_Item: usize,
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub ReadOnly: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Add: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void, retval: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Add: usize,
+    pub Clear: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Copy: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Copy: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Insert: unsafe extern "system" fn(this: *mut *mut Self, index: i32, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Insert: usize,
+    pub RemoveAt: unsafe extern "system" fn(this: *mut *mut Self, index: i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IUpdateDownloadContent {
+    pub base__: super::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DownloadUrl: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DownloadUrl: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IUpdateDownloadContent2 {
+    pub base__: IUpdateDownloadContent,
+    pub IsDeltaCompressedContent: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IUpdateDownloadContentCollection {
+    pub base__: super::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub get_Item: unsafe extern "system" fn(this: *mut *mut Self, index: i32, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    get_Item: usize,
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IUpdateDownloadResult {
+    pub base__: super::Com::IDispatch,
+    pub HResult: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub ResultCode: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut OperationResultCode) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IUpdateDownloader {
+    pub base__: super::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ClientApplicationID: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ClientApplicationID: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetClientApplicationID: unsafe extern "system" fn(this: *mut *mut Self, value: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetClientApplicationID: usize,
+    pub IsForced: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetIsForced: unsafe extern "system" fn(this: *mut *mut Self, value: i16) -> ::windows_sys::core::HRESULT,
+    pub Priority: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut DownloadPriority) -> ::windows_sys::core::HRESULT,
+    pub SetPriority: unsafe extern "system" fn(this: *mut *mut Self, value: DownloadPriority) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Updates: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Updates: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetUpdates: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetUpdates: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub BeginDownload: unsafe extern "system" fn(this: *mut *mut Self, onprogresschanged: *mut ::core::ffi::c_void, oncompleted: *mut ::core::ffi::c_void, state: ::core::mem::ManuallyDrop<super::Com::VARIANT>, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    BeginDownload: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Download: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Download: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub EndDownload: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    EndDownload: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IUpdateException {
+    pub base__: super::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Message: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Message: usize,
+    pub HResult: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub Context: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut UpdateExceptionContext) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IUpdateExceptionCollection {
+    pub base__: super::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub get_Item: unsafe extern "system" fn(this: *mut *mut Self, index: i32, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    get_Item: usize,
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IUpdateHistoryEntry {
+    pub base__: super::Com::IDispatch,
+    pub Operation: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut UpdateOperation) -> ::windows_sys::core::HRESULT,
+    pub ResultCode: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut OperationResultCode) -> ::windows_sys::core::HRESULT,
+    pub HResult: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub Date: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut f64) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub UpdateIdentity: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    UpdateIdentity: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Title: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Title: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Description: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Description: usize,
+    pub UnmappedResultCode: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ClientApplicationID: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ClientApplicationID: usize,
+    pub ServerSelection: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut ServerSelection) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ServiceID: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ServiceID: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub UninstallationSteps: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    UninstallationSteps: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub UninstallationNotes: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    UninstallationNotes: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SupportUrl: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SupportUrl: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IUpdateHistoryEntry2 {
+    pub base__: IUpdateHistoryEntry,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Categories: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Categories: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IUpdateHistoryEntryCollection {
+    pub base__: super::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub get_Item: unsafe extern "system" fn(this: *mut *mut Self, index: i32, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    get_Item: usize,
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IUpdateIdentity {
+    pub base__: super::Com::IDispatch,
+    pub RevisionNumber: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub UpdateID: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    UpdateID: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IUpdateInstallationResult {
+    pub base__: super::Com::IDispatch,
+    pub HResult: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub RebootRequired: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub ResultCode: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut OperationResultCode) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IUpdateInstaller {
+    pub base__: super::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ClientApplicationID: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ClientApplicationID: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetClientApplicationID: unsafe extern "system" fn(this: *mut *mut Self, value: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetClientApplicationID: usize,
+    pub IsForced: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetIsForced: unsafe extern "system" fn(this: *mut *mut Self, value: i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ParentHwnd: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut super::super::Foundation::HWND) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ParentHwnd: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetParentHwnd: unsafe extern "system" fn(this: *mut *mut Self, value: super::super::Foundation::HWND) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetParentHwnd: usize,
+    pub SetParentWindow: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ParentWindow: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Updates: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Updates: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetUpdates: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetUpdates: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub BeginInstall: unsafe extern "system" fn(this: *mut *mut Self, onprogresschanged: *mut ::core::ffi::c_void, oncompleted: *mut ::core::ffi::c_void, state: ::core::mem::ManuallyDrop<super::Com::VARIANT>, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    BeginInstall: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub BeginUninstall: unsafe extern "system" fn(this: *mut *mut Self, onprogresschanged: *mut ::core::ffi::c_void, oncompleted: *mut ::core::ffi::c_void, state: ::core::mem::ManuallyDrop<super::Com::VARIANT>, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    BeginUninstall: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub EndInstall: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    EndInstall: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub EndUninstall: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    EndUninstall: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Install: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Install: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub RunWizard: unsafe extern "system" fn(this: *mut *mut Self, dialogtitle: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    RunWizard: usize,
+    pub IsBusy: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Uninstall: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Uninstall: usize,
+    pub AllowSourcePrompts: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetAllowSourcePrompts: unsafe extern "system" fn(this: *mut *mut Self, value: i16) -> ::windows_sys::core::HRESULT,
+    pub RebootRequiredBeforeInstallation: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IUpdateInstaller2 {
+    pub base__: IUpdateInstaller,
+    pub ForceQuiet: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetForceQuiet: unsafe extern "system" fn(this: *mut *mut Self, value: i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IUpdateInstaller3 {
+    pub base__: IUpdateInstaller2,
+    pub AttemptCloseAppsIfNecessary: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetAttemptCloseAppsIfNecessary: unsafe extern "system" fn(this: *mut *mut Self, value: i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IUpdateInstaller4 {
+    pub base__: IUpdateInstaller3,
+    pub Commit: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IUpdateLockdown {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub LockDown: unsafe extern "system" fn(this: *mut *mut Self, flags: i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IUpdateSearcher {
+    pub base__: super::Com::IDispatch,
+    pub CanAutomaticallyUpgradeService: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetCanAutomaticallyUpgradeService: unsafe extern "system" fn(this: *mut *mut Self, value: i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ClientApplicationID: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ClientApplicationID: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetClientApplicationID: unsafe extern "system" fn(this: *mut *mut Self, value: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetClientApplicationID: usize,
+    pub IncludePotentiallySupersededUpdates: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetIncludePotentiallySupersededUpdates: unsafe extern "system" fn(this: *mut *mut Self, value: i16) -> ::windows_sys::core::HRESULT,
+    pub ServerSelection: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut ServerSelection) -> ::windows_sys::core::HRESULT,
+    pub SetServerSelection: unsafe extern "system" fn(this: *mut *mut Self, value: ServerSelection) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub BeginSearch: unsafe extern "system" fn(this: *mut *mut Self, criteria: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, oncompleted: *mut ::core::ffi::c_void, state: ::core::mem::ManuallyDrop<super::Com::VARIANT>, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    BeginSearch: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub EndSearch: unsafe extern "system" fn(this: *mut *mut Self, searchjob: *mut ::core::ffi::c_void, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    EndSearch: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub EscapeString: unsafe extern "system" fn(this: *mut *mut Self, unescaped: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, retval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    EscapeString: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub QueryHistory: unsafe extern "system" fn(this: *mut *mut Self, startindex: i32, count: i32, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    QueryHistory: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub Search: unsafe extern "system" fn(this: *mut *mut Self, criteria: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    Search: usize,
+    pub Online: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetOnline: unsafe extern "system" fn(this: *mut *mut Self, value: i16) -> ::windows_sys::core::HRESULT,
+    pub GetTotalHistoryCount: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ServiceID: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ServiceID: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetServiceID: unsafe extern "system" fn(this: *mut *mut Self, value: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetServiceID: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IUpdateSearcher2 {
+    pub base__: IUpdateSearcher,
+    pub IgnoreDownloadPriority: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetIgnoreDownloadPriority: unsafe extern "system" fn(this: *mut *mut Self, value: i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IUpdateSearcher3 {
+    pub base__: IUpdateSearcher2,
+    pub SearchScope: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut SearchScope) -> ::windows_sys::core::HRESULT,
+    pub SetSearchScope: unsafe extern "system" fn(this: *mut *mut Self, value: SearchScope) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IUpdateService {
+    pub base__: super::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Name: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Name: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub ContentValidationCert: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    ContentValidationCert: usize,
+    pub ExpirationDate: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut f64) -> ::windows_sys::core::HRESULT,
+    pub IsManaged: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub IsRegisteredWithAU: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub IssueDate: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut f64) -> ::windows_sys::core::HRESULT,
+    pub OffersWindowsUpdates: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub RedirectUrls: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    RedirectUrls: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ServiceID: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ServiceID: usize,
+    pub IsScanPackageService: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub CanRegisterWithAU: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ServiceUrl: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ServiceUrl: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetupPrefix: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetupPrefix: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IUpdateService2 {
+    pub base__: IUpdateService,
+    pub IsDefaultAUService: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IUpdateServiceCollection {
+    pub base__: super::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub get_Item: unsafe extern "system" fn(this: *mut *mut Self, index: i32, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    get_Item: usize,
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IUpdateServiceManager {
+    pub base__: super::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Services: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Services: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub AddService: unsafe extern "system" fn(this: *mut *mut Self, serviceid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, authorizationcabpath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    AddService: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RegisterServiceWithAU: unsafe extern "system" fn(this: *mut *mut Self, serviceid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RegisterServiceWithAU: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RemoveService: unsafe extern "system" fn(this: *mut *mut Self, serviceid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RemoveService: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub UnregisterServiceWithAU: unsafe extern "system" fn(this: *mut *mut Self, serviceid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    UnregisterServiceWithAU: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub AddScanPackageService: unsafe extern "system" fn(this: *mut *mut Self, servicename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, scanfilelocation: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, flags: i32, ppservice: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    AddScanPackageService: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetOption: unsafe extern "system" fn(this: *mut *mut Self, optionname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, optionvalue: ::core::mem::ManuallyDrop<super::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetOption: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IUpdateServiceManager2 {
+    pub base__: IUpdateServiceManager,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ClientApplicationID: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ClientApplicationID: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetClientApplicationID: unsafe extern "system" fn(this: *mut *mut Self, value: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetClientApplicationID: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub QueryServiceRegistration: unsafe extern "system" fn(this: *mut *mut Self, serviceid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    QueryServiceRegistration: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub AddService2: unsafe extern "system" fn(this: *mut *mut Self, serviceid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, flags: i32, authorizationcabpath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    AddService2: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IUpdateServiceRegistration {
+    pub base__: super::Com::IDispatch,
+    pub RegistrationState: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut UpdateServiceRegistrationState) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ServiceID: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ServiceID: usize,
+    pub IsPendingRegistrationWithAU: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Service: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Service: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IUpdateSession {
+    pub base__: super::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ClientApplicationID: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ClientApplicationID: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetClientApplicationID: unsafe extern "system" fn(this: *mut *mut Self, value: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetClientApplicationID: usize,
+    pub ReadOnly: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub WebProxy: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    WebProxy: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetWebProxy: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetWebProxy: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreateUpdateSearcher: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CreateUpdateSearcher: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreateUpdateDownloader: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CreateUpdateDownloader: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreateUpdateInstaller: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CreateUpdateInstaller: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IUpdateSession2 {
+    pub base__: IUpdateSession,
+    pub UserLocale: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetUserLocale: unsafe extern "system" fn(this: *mut *mut Self, lcid: u32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IUpdateSession3 {
+    pub base__: IUpdateSession2,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreateUpdateServiceManager: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CreateUpdateServiceManager: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub QueryHistory: unsafe extern "system" fn(this: *mut *mut Self, criteria: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, startindex: i32, count: i32, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    QueryHistory: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IWebProxy {
+    pub base__: super::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Address: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Address: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetAddress: unsafe extern "system" fn(this: *mut *mut Self, value: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetAddress: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub BypassList: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    BypassList: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetBypassList: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetBypassList: usize,
+    pub BypassProxyOnLocal: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetBypassProxyOnLocal: unsafe extern "system" fn(this: *mut *mut Self, value: i16) -> ::windows_sys::core::HRESULT,
+    pub ReadOnly: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub UserName: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    UserName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetUserName: unsafe extern "system" fn(this: *mut *mut Self, value: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetUserName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetPassword: unsafe extern "system" fn(this: *mut *mut Self, value: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetPassword: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub PromptForCredentials: unsafe extern "system" fn(this: *mut *mut Self, parentwindow: *mut ::core::ffi::c_void, title: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    PromptForCredentials: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub PromptForCredentialsFromHwnd: unsafe extern "system" fn(this: *mut *mut Self, parentwindow: super::super::Foundation::HWND, title: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    PromptForCredentialsFromHwnd: usize,
+    pub AutoDetect: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetAutoDetect: unsafe extern "system" fn(this: *mut *mut Self, value: i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IWindowsDriverUpdate {
+    pub base__: IUpdate,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DriverClass: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DriverClass: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DriverHardwareID: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DriverHardwareID: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DriverManufacturer: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DriverManufacturer: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DriverModel: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DriverModel: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DriverProvider: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DriverProvider: usize,
+    pub DriverVerDate: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut f64) -> ::windows_sys::core::HRESULT,
+    pub DeviceProblemNumber: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub DeviceStatus: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IWindowsDriverUpdate2 {
+    pub base__: IWindowsDriverUpdate,
+    pub RebootRequired: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub IsPresent: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CveIDs: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CveIDs: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CopyToCache: unsafe extern "system" fn(this: *mut *mut Self, pfiles: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CopyToCache: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IWindowsDriverUpdate3 {
+    pub base__: IWindowsDriverUpdate2,
+    pub BrowseOnly: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IWindowsDriverUpdate4 {
+    pub base__: IWindowsDriverUpdate3,
+    #[cfg(feature = "Win32_System_Com")]
+    pub WindowsDriverUpdateEntries: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    WindowsDriverUpdateEntries: usize,
+    pub PerUser: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IWindowsDriverUpdate5 {
+    pub base__: IWindowsDriverUpdate4,
+    pub AutoSelection: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut AutoSelectionMode) -> ::windows_sys::core::HRESULT,
+    pub AutoDownload: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut AutoDownloadMode) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IWindowsDriverUpdateEntry {
+    pub base__: super::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DriverClass: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DriverClass: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DriverHardwareID: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DriverHardwareID: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DriverManufacturer: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DriverManufacturer: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DriverModel: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DriverModel: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DriverProvider: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DriverProvider: usize,
+    pub DriverVerDate: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut f64) -> ::windows_sys::core::HRESULT,
+    pub DeviceProblemNumber: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub DeviceStatus: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IWindowsDriverUpdateEntryCollection {
+    pub base__: super::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub get_Item: unsafe extern "system" fn(this: *mut *mut Self, index: i32, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    get_Item: usize,
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IWindowsUpdateAgentInfo {
+    pub base__: super::Com::IDispatch,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetInfo: unsafe extern "system" fn(this: *mut *mut Self, varinfoidentifier: ::core::mem::ManuallyDrop<super::Com::VARIANT>, retval: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetInfo: usize,
+}
 pub const InstallationAgent: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 830378748, data2: 5753, data3: 18173, data4: [160, 181, 240, 137, 20, 221, 134, 35] };
 #[doc = "*Required features: `\"Win32_System_UpdateAgent\"`*"]
 pub type InstallationImpact = i32;

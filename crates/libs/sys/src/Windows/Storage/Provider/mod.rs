@@ -47,11 +47,296 @@ impl ::core::clone::Clone for FileUpdateStatus {
         *self
     }
 }
-pub type IStorageProviderHandlerFactory = *mut ::core::ffi::c_void;
-pub type IStorageProviderItemPropertySource = *mut ::core::ffi::c_void;
-pub type IStorageProviderPropertyCapabilities = *mut ::core::ffi::c_void;
-pub type IStorageProviderStatusSource = *mut ::core::ffi::c_void;
-pub type IStorageProviderUriSource = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct ICachedFileUpdaterStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub SetUpdateInformation: unsafe extern "system" fn(this: *mut *mut Self, file: *mut ::core::ffi::c_void, contentid: ::windows_sys::core::HSTRING, readmode: ReadActivationMode, writemode: WriteActivationMode, options: CachedFileOptions) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ICachedFileUpdaterUI {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Title: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetTitle: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub UpdateTarget: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut CachedFileTarget) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub FileUpdateRequested: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    FileUpdateRequested: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveFileUpdateRequested: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveFileUpdateRequested: usize,
+    #[cfg(feature = "Foundation")]
+    pub UIRequested: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    UIRequested: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveUIRequested: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveUIRequested: usize,
+    pub UIStatus: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut UIStatus) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ICachedFileUpdaterUI2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub UpdateRequest: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetDeferral: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IFileUpdateRequest {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub ContentId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub File: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Status: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut FileUpdateStatus) -> ::windows_sys::core::HRESULT,
+    pub SetStatus: unsafe extern "system" fn(this: *mut *mut Self, value: FileUpdateStatus) -> ::windows_sys::core::HRESULT,
+    pub GetDeferral: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub UpdateLocalFile: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IFileUpdateRequest2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub UserInputNeededMessage: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetUserInputNeededMessage: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IFileUpdateRequestDeferral {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Complete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IFileUpdateRequestedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Request: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IStorageProviderError {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Id: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Title: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Message: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub FilePath: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetFilePath: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub PrimaryAction: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetPrimaryAction: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SecondaryAction: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetSecondaryAction: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub InformationalLink: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetInformationalLink: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IStorageProviderErrorCommand {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Label: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub ActionUri: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    ActionUri: usize,
+}
+#[repr(C)]
+pub struct IStorageProviderErrorCommandFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub CreateInstance: unsafe extern "system" fn(this: *mut *mut Self, label: ::windows_sys::core::HSTRING, actionuri: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    CreateInstance: usize,
+}
+#[repr(C)]
+pub struct IStorageProviderErrorFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CreateInstance: unsafe extern "system" fn(this: *mut *mut Self, id: ::windows_sys::core::HSTRING, title: ::windows_sys::core::HSTRING, message: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IStorageProviderFileTypeInfo {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub FileExtension: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub IconResource: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IStorageProviderFileTypeInfoFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CreateInstance: unsafe extern "system" fn(this: *mut *mut Self, fileextension: ::windows_sys::core::HSTRING, iconresource: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IStorageProviderGetContentInfoForPathResult {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Status: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut StorageProviderUriSourceStatus) -> ::windows_sys::core::HRESULT,
+    pub SetStatus: unsafe extern "system" fn(this: *mut *mut Self, value: StorageProviderUriSourceStatus) -> ::windows_sys::core::HRESULT,
+    pub ContentUri: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetContentUri: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub ContentId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetContentId: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IStorageProviderGetPathForContentUriResult {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Status: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut StorageProviderUriSourceStatus) -> ::windows_sys::core::HRESULT,
+    pub SetStatus: unsafe extern "system" fn(this: *mut *mut Self, value: StorageProviderUriSourceStatus) -> ::windows_sys::core::HRESULT,
+    pub Path: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetPath: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IStorageProviderHandlerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub GetStatusSource: unsafe extern "system" fn(this: *mut *mut Self, syncrootid: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IStorageProviderItemPropertiesStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation_Collections")]
+    pub SetAsync: unsafe extern "system" fn(this: *mut *mut Self, item: *mut ::core::ffi::c_void, itemproperties: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    SetAsync: usize,
+}
+#[repr(C)]
+pub struct IStorageProviderItemProperty {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub SetId: unsafe extern "system" fn(this: *mut *mut Self, value: i32) -> ::windows_sys::core::HRESULT,
+    pub Id: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetValue: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Value: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetIconResource: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub IconResource: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IStorageProviderItemPropertyDefinition {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Id: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetId: unsafe extern "system" fn(this: *mut *mut Self, value: i32) -> ::windows_sys::core::HRESULT,
+    pub DisplayNameResource: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetDisplayNameResource: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IStorageProviderItemPropertySource {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation_Collections")]
+    pub GetItemProperties: unsafe extern "system" fn(this: *mut *mut Self, itempath: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    GetItemProperties: usize,
+}
+#[repr(C)]
+pub struct IStorageProviderPropertyCapabilities {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub IsPropertySupported: unsafe extern "system" fn(this: *mut *mut Self, propertycanonicalname: ::windows_sys::core::HSTRING, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IStorageProviderStatus {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Message: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub State: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut StorageProviderState) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub ErrorMessages: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    ErrorMessages: usize,
+}
+#[repr(C)]
+pub struct IStorageProviderStatusFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CreateInstance: unsafe extern "system" fn(this: *mut *mut Self, state: StorageProviderState, message: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub CreateInstance2: unsafe extern "system" fn(this: *mut *mut Self, state: StorageProviderState, message: ::windows_sys::core::HSTRING, errormessages: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    CreateInstance2: usize,
+}
+#[repr(C)]
+pub struct IStorageProviderStatusSource {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub GetStatus: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub Changed: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    Changed: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveChanged: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveChanged: usize,
+}
+#[repr(C)]
+pub struct IStorageProviderSyncRootInfo {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Id: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetId: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Storage_Streams")]
+    pub Context: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Storage_Streams"))]
+    Context: usize,
+    #[cfg(feature = "Storage_Streams")]
+    pub SetContext: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Storage_Streams"))]
+    SetContext: usize,
+    pub Path: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetPath: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub DisplayNameResource: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetDisplayNameResource: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub IconResource: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetIconResource: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub HydrationPolicy: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut StorageProviderHydrationPolicy) -> ::windows_sys::core::HRESULT,
+    pub SetHydrationPolicy: unsafe extern "system" fn(this: *mut *mut Self, value: StorageProviderHydrationPolicy) -> ::windows_sys::core::HRESULT,
+    pub HydrationPolicyModifier: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut StorageProviderHydrationPolicyModifier) -> ::windows_sys::core::HRESULT,
+    pub SetHydrationPolicyModifier: unsafe extern "system" fn(this: *mut *mut Self, value: StorageProviderHydrationPolicyModifier) -> ::windows_sys::core::HRESULT,
+    pub PopulationPolicy: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut StorageProviderPopulationPolicy) -> ::windows_sys::core::HRESULT,
+    pub SetPopulationPolicy: unsafe extern "system" fn(this: *mut *mut Self, value: StorageProviderPopulationPolicy) -> ::windows_sys::core::HRESULT,
+    pub InSyncPolicy: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut StorageProviderInSyncPolicy) -> ::windows_sys::core::HRESULT,
+    pub SetInSyncPolicy: unsafe extern "system" fn(this: *mut *mut Self, value: StorageProviderInSyncPolicy) -> ::windows_sys::core::HRESULT,
+    pub HardlinkPolicy: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut StorageProviderHardlinkPolicy) -> ::windows_sys::core::HRESULT,
+    pub SetHardlinkPolicy: unsafe extern "system" fn(this: *mut *mut Self, value: StorageProviderHardlinkPolicy) -> ::windows_sys::core::HRESULT,
+    pub ShowSiblingsAsGroup: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetShowSiblingsAsGroup: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+    pub Version: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetVersion: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub ProtectionMode: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut StorageProviderProtectionMode) -> ::windows_sys::core::HRESULT,
+    pub SetProtectionMode: unsafe extern "system" fn(this: *mut *mut Self, value: StorageProviderProtectionMode) -> ::windows_sys::core::HRESULT,
+    pub AllowPinning: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetAllowPinning: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub StorageProviderItemPropertyDefinitions: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    StorageProviderItemPropertyDefinitions: usize,
+    #[cfg(feature = "Foundation")]
+    pub RecycleBinUri: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RecycleBinUri: usize,
+    #[cfg(feature = "Foundation")]
+    pub SetRecycleBinUri: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    SetRecycleBinUri: usize,
+}
+#[repr(C)]
+pub struct IStorageProviderSyncRootInfo2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub ProviderId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub SetProviderId: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IStorageProviderSyncRootInfo3 {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation_Collections")]
+    pub FallbackFileTypeInfo: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    FallbackFileTypeInfo: usize,
+}
+#[repr(C)]
+pub struct IStorageProviderSyncRootManagerStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Register: unsafe extern "system" fn(this: *mut *mut Self, syncrootinformation: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Unregister: unsafe extern "system" fn(this: *mut *mut Self, id: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub GetSyncRootInformationForFolder: unsafe extern "system" fn(this: *mut *mut Self, folder: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetSyncRootInformationForId: unsafe extern "system" fn(this: *mut *mut Self, id: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub GetCurrentSyncRoots: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    GetCurrentSyncRoots: usize,
+}
+#[repr(C)]
+pub struct IStorageProviderSyncRootManagerStatics2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub IsSupported: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IStorageProviderUriSource {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub GetPathForContentUri: unsafe extern "system" fn(this: *mut *mut Self, contenturi: ::windows_sys::core::HSTRING, result: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetContentInfoForPath: unsafe extern "system" fn(this: *mut *mut Self, path: ::windows_sys::core::HSTRING, result: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
 #[doc = "*Required features: `\"Storage_Provider\"`*"]
 #[repr(transparent)]
 pub struct ReadActivationMode(pub i32);

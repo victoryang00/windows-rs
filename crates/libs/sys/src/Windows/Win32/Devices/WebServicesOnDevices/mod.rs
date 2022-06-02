@@ -5,41 +5,41 @@ extern "system" {
     #[doc = "*Required features: `\"Win32_Devices_WebServicesOnDevices\"`*"]
     pub fn WSDAttachLinkedMemory(pparent: *mut ::core::ffi::c_void, pchild: *mut ::core::ffi::c_void);
     #[doc = "*Required features: `\"Win32_Devices_WebServicesOnDevices\"`*"]
-    pub fn WSDCreateDeviceHost(pszlocalid: ::windows_sys::core::PCWSTR, pcontext: IWSDXMLContext, ppdevicehost: *mut IWSDDeviceHost) -> ::windows_sys::core::HRESULT;
+    pub fn WSDCreateDeviceHost(pszlocalid: ::windows_sys::core::PCWSTR, pcontext: *mut *mut IWSDXMLContext, ppdevicehost: *mut *mut *mut IWSDDeviceHost) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Devices_WebServicesOnDevices\"`*"]
-    pub fn WSDCreateDeviceHost2(pszlocalid: ::windows_sys::core::PCWSTR, pcontext: IWSDXMLContext, pconfigparams: *const WSD_CONFIG_PARAM, dwconfigparamcount: u32, ppdevicehost: *mut IWSDDeviceHost) -> ::windows_sys::core::HRESULT;
+    pub fn WSDCreateDeviceHost2(pszlocalid: ::windows_sys::core::PCWSTR, pcontext: *mut *mut IWSDXMLContext, pconfigparams: *const WSD_CONFIG_PARAM, dwconfigparamcount: u32, ppdevicehost: *mut *mut *mut IWSDDeviceHost) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Devices_WebServicesOnDevices\"`*"]
-    pub fn WSDCreateDeviceHostAdvanced(pszlocalid: ::windows_sys::core::PCWSTR, pcontext: IWSDXMLContext, pphostaddresses: *const IWSDAddress, dwhostaddresscount: u32, ppdevicehost: *mut IWSDDeviceHost) -> ::windows_sys::core::HRESULT;
+    pub fn WSDCreateDeviceHostAdvanced(pszlocalid: ::windows_sys::core::PCWSTR, pcontext: *mut *mut IWSDXMLContext, pphostaddresses: *const *mut *mut IWSDAddress, dwhostaddresscount: u32, ppdevicehost: *mut *mut *mut IWSDDeviceHost) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Devices_WebServicesOnDevices\"`*"]
-    pub fn WSDCreateDeviceProxy(pszdeviceid: ::windows_sys::core::PCWSTR, pszlocalid: ::windows_sys::core::PCWSTR, pcontext: IWSDXMLContext, ppdeviceproxy: *mut IWSDDeviceProxy) -> ::windows_sys::core::HRESULT;
+    pub fn WSDCreateDeviceProxy(pszdeviceid: ::windows_sys::core::PCWSTR, pszlocalid: ::windows_sys::core::PCWSTR, pcontext: *mut *mut IWSDXMLContext, ppdeviceproxy: *mut *mut *mut IWSDDeviceProxy) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Devices_WebServicesOnDevices\"`*"]
-    pub fn WSDCreateDeviceProxy2(pszdeviceid: ::windows_sys::core::PCWSTR, pszlocalid: ::windows_sys::core::PCWSTR, pcontext: IWSDXMLContext, pconfigparams: *const WSD_CONFIG_PARAM, dwconfigparamcount: u32, ppdeviceproxy: *mut IWSDDeviceProxy) -> ::windows_sys::core::HRESULT;
+    pub fn WSDCreateDeviceProxy2(pszdeviceid: ::windows_sys::core::PCWSTR, pszlocalid: ::windows_sys::core::PCWSTR, pcontext: *mut *mut IWSDXMLContext, pconfigparams: *const WSD_CONFIG_PARAM, dwconfigparamcount: u32, ppdeviceproxy: *mut *mut *mut IWSDDeviceProxy) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Devices_WebServicesOnDevices\"`*"]
-    pub fn WSDCreateDeviceProxyAdvanced(pszdeviceid: ::windows_sys::core::PCWSTR, pdeviceaddress: IWSDAddress, pszlocalid: ::windows_sys::core::PCWSTR, pcontext: IWSDXMLContext, ppdeviceproxy: *mut IWSDDeviceProxy) -> ::windows_sys::core::HRESULT;
+    pub fn WSDCreateDeviceProxyAdvanced(pszdeviceid: ::windows_sys::core::PCWSTR, pdeviceaddress: *mut *mut IWSDAddress, pszlocalid: ::windows_sys::core::PCWSTR, pcontext: *mut *mut IWSDXMLContext, ppdeviceproxy: *mut *mut *mut IWSDDeviceProxy) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Devices_WebServicesOnDevices\"`*"]
-    pub fn WSDCreateDiscoveryProvider(pcontext: IWSDXMLContext, ppprovider: *mut IWSDiscoveryProvider) -> ::windows_sys::core::HRESULT;
+    pub fn WSDCreateDiscoveryProvider(pcontext: *mut *mut IWSDXMLContext, ppprovider: *mut *mut *mut IWSDiscoveryProvider) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Devices_WebServicesOnDevices\"`*"]
-    pub fn WSDCreateDiscoveryProvider2(pcontext: IWSDXMLContext, pconfigparams: *const WSD_CONFIG_PARAM, dwconfigparamcount: u32, ppprovider: *mut IWSDiscoveryProvider) -> ::windows_sys::core::HRESULT;
+    pub fn WSDCreateDiscoveryProvider2(pcontext: *mut *mut IWSDXMLContext, pconfigparams: *const WSD_CONFIG_PARAM, dwconfigparamcount: u32, ppprovider: *mut *mut *mut IWSDiscoveryProvider) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Devices_WebServicesOnDevices\"`*"]
-    pub fn WSDCreateDiscoveryPublisher(pcontext: IWSDXMLContext, pppublisher: *mut IWSDiscoveryPublisher) -> ::windows_sys::core::HRESULT;
+    pub fn WSDCreateDiscoveryPublisher(pcontext: *mut *mut IWSDXMLContext, pppublisher: *mut *mut *mut IWSDiscoveryPublisher) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Devices_WebServicesOnDevices\"`*"]
-    pub fn WSDCreateDiscoveryPublisher2(pcontext: IWSDXMLContext, pconfigparams: *const WSD_CONFIG_PARAM, dwconfigparamcount: u32, pppublisher: *mut IWSDiscoveryPublisher) -> ::windows_sys::core::HRESULT;
+    pub fn WSDCreateDiscoveryPublisher2(pcontext: *mut *mut IWSDXMLContext, pconfigparams: *const WSD_CONFIG_PARAM, dwconfigparamcount: u32, pppublisher: *mut *mut *mut IWSDiscoveryPublisher) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Devices_WebServicesOnDevices\"`*"]
-    pub fn WSDCreateHttpAddress(ppaddress: *mut IWSDHttpAddress) -> ::windows_sys::core::HRESULT;
+    pub fn WSDCreateHttpAddress(ppaddress: *mut *mut *mut IWSDHttpAddress) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Devices_WebServicesOnDevices\"`*"]
-    pub fn WSDCreateHttpMessageParameters(pptxparams: *mut IWSDHttpMessageParameters) -> ::windows_sys::core::HRESULT;
+    pub fn WSDCreateHttpMessageParameters(pptxparams: *mut *mut *mut IWSDHttpMessageParameters) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Devices_WebServicesOnDevices\"`*"]
-    pub fn WSDCreateOutboundAttachment(ppattachment: *mut IWSDOutboundAttachment) -> ::windows_sys::core::HRESULT;
+    pub fn WSDCreateOutboundAttachment(ppattachment: *mut *mut *mut IWSDOutboundAttachment) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Devices_WebServicesOnDevices\"`*"]
-    pub fn WSDCreateUdpAddress(ppaddress: *mut IWSDUdpAddress) -> ::windows_sys::core::HRESULT;
+    pub fn WSDCreateUdpAddress(ppaddress: *mut *mut *mut IWSDUdpAddress) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Devices_WebServicesOnDevices\"`*"]
-    pub fn WSDCreateUdpMessageParameters(pptxparams: *mut IWSDUdpMessageParameters) -> ::windows_sys::core::HRESULT;
+    pub fn WSDCreateUdpMessageParameters(pptxparams: *mut *mut *mut IWSDUdpMessageParameters) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Devices_WebServicesOnDevices\"`*"]
     pub fn WSDDetachLinkedMemory(pvoid: *mut ::core::ffi::c_void);
     #[doc = "*Required features: `\"Win32_Devices_WebServicesOnDevices\"`*"]
     pub fn WSDFreeLinkedMemory(pvoid: *mut ::core::ffi::c_void);
     #[doc = "*Required features: `\"Win32_Devices_WebServicesOnDevices\"`*"]
-    pub fn WSDGenerateFault(pszcode: ::windows_sys::core::PCWSTR, pszsubcode: ::windows_sys::core::PCWSTR, pszreason: ::windows_sys::core::PCWSTR, pszdetail: ::windows_sys::core::PCWSTR, pcontext: IWSDXMLContext, ppfault: *mut *mut WSD_SOAP_FAULT) -> ::windows_sys::core::HRESULT;
+    pub fn WSDGenerateFault(pszcode: ::windows_sys::core::PCWSTR, pszsubcode: ::windows_sys::core::PCWSTR, pszreason: ::windows_sys::core::PCWSTR, pszdetail: ::windows_sys::core::PCWSTR, pcontext: *mut *mut IWSDXMLContext, ppfault: *mut *mut WSD_SOAP_FAULT) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Devices_WebServicesOnDevices\"`*"]
     pub fn WSDGenerateFaultEx(pcode: *const WSDXML_NAME, psubcode: *const WSDXML_NAME, preasons: *const WSD_LOCALIZED_STRING_LIST, pszdetail: ::windows_sys::core::PCWSTR, ppfault: *mut *mut WSD_SOAP_FAULT) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Devices_WebServicesOnDevices\"`*"]
@@ -59,7 +59,7 @@ extern "system" {
     #[doc = "*Required features: `\"Win32_Devices_WebServicesOnDevices\"`*"]
     pub fn WSDXMLCleanupElement(pany: *mut WSDXML_ELEMENT) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Devices_WebServicesOnDevices\"`*"]
-    pub fn WSDXMLCreateContext(ppcontext: *mut IWSDXMLContext) -> ::windows_sys::core::HRESULT;
+    pub fn WSDXMLCreateContext(ppcontext: *mut *mut *mut IWSDXMLContext) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Devices_WebServicesOnDevices\"`*"]
     pub fn WSDXMLGetNameFromBuiltinNamespace(psznamespace: ::windows_sys::core::PCWSTR, pszname: ::windows_sys::core::PCWSTR, ppname: *mut *mut WSDXML_NAME) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Devices_WebServicesOnDevices\"`*"]
@@ -73,39 +73,358 @@ pub const MulticastDiscovery: DeviceDiscoveryMechanism = 0i32;
 pub const DirectedDiscovery: DeviceDiscoveryMechanism = 1i32;
 #[doc = "*Required features: `\"Win32_Devices_WebServicesOnDevices\"`*"]
 pub const SecureDirectedDiscovery: DeviceDiscoveryMechanism = 2i32;
-pub type IWSDAddress = *mut ::core::ffi::c_void;
-pub type IWSDAsyncCallback = *mut ::core::ffi::c_void;
-pub type IWSDAsyncResult = *mut ::core::ffi::c_void;
-pub type IWSDAttachment = *mut ::core::ffi::c_void;
-pub type IWSDDeviceHost = *mut ::core::ffi::c_void;
-pub type IWSDDeviceHostNotify = *mut ::core::ffi::c_void;
-pub type IWSDDeviceProxy = *mut ::core::ffi::c_void;
-pub type IWSDEndpointProxy = *mut ::core::ffi::c_void;
-pub type IWSDEventingStatus = *mut ::core::ffi::c_void;
-pub type IWSDHttpAddress = *mut ::core::ffi::c_void;
-pub type IWSDHttpAuthParameters = *mut ::core::ffi::c_void;
-pub type IWSDHttpMessageParameters = *mut ::core::ffi::c_void;
-pub type IWSDInboundAttachment = *mut ::core::ffi::c_void;
-pub type IWSDMessageParameters = *mut ::core::ffi::c_void;
-pub type IWSDMetadataExchange = *mut ::core::ffi::c_void;
-pub type IWSDOutboundAttachment = *mut ::core::ffi::c_void;
-pub type IWSDSSLClientCertificate = *mut ::core::ffi::c_void;
-pub type IWSDScopeMatchingRule = *mut ::core::ffi::c_void;
-pub type IWSDServiceMessaging = *mut ::core::ffi::c_void;
-pub type IWSDServiceProxy = *mut ::core::ffi::c_void;
-pub type IWSDServiceProxyEventing = *mut ::core::ffi::c_void;
-pub type IWSDSignatureProperty = *mut ::core::ffi::c_void;
-pub type IWSDTransportAddress = *mut ::core::ffi::c_void;
-pub type IWSDUdpAddress = *mut ::core::ffi::c_void;
-pub type IWSDUdpMessageParameters = *mut ::core::ffi::c_void;
-pub type IWSDXMLContext = *mut ::core::ffi::c_void;
-pub type IWSDiscoveredService = *mut ::core::ffi::c_void;
-pub type IWSDiscoveryProvider = *mut ::core::ffi::c_void;
-pub type IWSDiscoveryProviderNotify = *mut ::core::ffi::c_void;
-pub type IWSDiscoveryPublisher = *mut ::core::ffi::c_void;
-pub type IWSDiscoveryPublisherNotify = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IWSDAddress {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Serialize: unsafe extern "system" fn(this: *mut *mut Self, pszbuffer: ::windows_sys::core::PWSTR, cchlength: u32, fsafe: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Serialize: usize,
+    pub Deserialize: unsafe extern "system" fn(this: *mut *mut Self, pszbuffer: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWSDAsyncCallback {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub AsyncOperationComplete: unsafe extern "system" fn(this: *mut *mut Self, pasyncresult: *mut ::core::ffi::c_void, pasyncstate: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWSDAsyncResult {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetCallback: unsafe extern "system" fn(this: *mut *mut Self, pcallback: *mut ::core::ffi::c_void, pasyncstate: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetWaitHandle: unsafe extern "system" fn(this: *mut *mut Self, hwaithandle: super::super::Foundation::HANDLE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetWaitHandle: usize,
+    pub HasCompleted: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetAsyncState: unsafe extern "system" fn(this: *mut *mut Self, ppasyncstate: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Abort: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetEvent: unsafe extern "system" fn(this: *mut *mut Self, pevent: *mut WSD_EVENT) -> ::windows_sys::core::HRESULT,
+    pub GetEndpointProxy: unsafe extern "system" fn(this: *mut *mut Self, ppendpoint: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWSDAttachment {
+    pub base__: ::windows_sys::core::IUnknown,
+}
+#[repr(C)]
+pub struct IWSDDeviceHost {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Init: unsafe extern "system" fn(this: *mut *mut Self, pszlocalid: ::windows_sys::core::PCWSTR, pcontext: *mut ::core::ffi::c_void, pphostaddresses: *const *mut ::core::ffi::c_void, dwhostaddresscount: u32) -> ::windows_sys::core::HRESULT,
+    pub Start: unsafe extern "system" fn(this: *mut *mut Self, ullinstanceid: u64, pscopelist: *const WSD_URI_LIST, pnotificationsink: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Stop: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Terminate: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub RegisterPortType: unsafe extern "system" fn(this: *mut *mut Self, pporttype: *const WSD_PORT_TYPE) -> ::windows_sys::core::HRESULT,
+    pub SetMetadata: unsafe extern "system" fn(this: *mut *mut Self, pthismodelmetadata: *const WSD_THIS_MODEL_METADATA, pthisdevicemetadata: *const WSD_THIS_DEVICE_METADATA, phostmetadata: *const WSD_HOST_METADATA, pcustommetadata: *const WSD_METADATA_SECTION_LIST) -> ::windows_sys::core::HRESULT,
+    pub RegisterService: unsafe extern "system" fn(this: *mut *mut Self, pszserviceid: ::windows_sys::core::PCWSTR, pservice: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RetireService: unsafe extern "system" fn(this: *mut *mut Self, pszserviceid: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub AddDynamicService: unsafe extern "system" fn(this: *mut *mut Self, pszserviceid: ::windows_sys::core::PCWSTR, pszendpointaddress: ::windows_sys::core::PCWSTR, pporttype: *const WSD_PORT_TYPE, pportname: *const WSDXML_NAME, pany: *const WSDXML_ELEMENT, pservice: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RemoveDynamicService: unsafe extern "system" fn(this: *mut *mut Self, pszserviceid: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetServiceDiscoverable: unsafe extern "system" fn(this: *mut *mut Self, pszserviceid: ::windows_sys::core::PCWSTR, fdiscoverable: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetServiceDiscoverable: usize,
+    pub SignalEvent: unsafe extern "system" fn(this: *mut *mut Self, pszserviceid: ::windows_sys::core::PCWSTR, pbody: *const ::core::ffi::c_void, poperation: *const WSD_OPERATION) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWSDDeviceHostNotify {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetService: unsafe extern "system" fn(this: *mut *mut Self, pszserviceid: ::windows_sys::core::PCWSTR, ppservice: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWSDDeviceProxy {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Init: unsafe extern "system" fn(this: *mut *mut Self, pszdeviceid: ::windows_sys::core::PCWSTR, pdeviceaddress: *mut ::core::ffi::c_void, pszlocalid: ::windows_sys::core::PCWSTR, pcontext: *mut ::core::ffi::c_void, psponsor: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub BeginGetMetadata: unsafe extern "system" fn(this: *mut *mut Self, ppresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EndGetMetadata: unsafe extern "system" fn(this: *mut *mut Self, presult: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetHostMetadata: unsafe extern "system" fn(this: *mut *mut Self, pphostmetadata: *mut *mut WSD_HOST_METADATA) -> ::windows_sys::core::HRESULT,
+    pub GetThisModelMetadata: unsafe extern "system" fn(this: *mut *mut Self, ppmanufacturermetadata: *mut *mut WSD_THIS_MODEL_METADATA) -> ::windows_sys::core::HRESULT,
+    pub GetThisDeviceMetadata: unsafe extern "system" fn(this: *mut *mut Self, ppthisdevicemetadata: *mut *mut WSD_THIS_DEVICE_METADATA) -> ::windows_sys::core::HRESULT,
+    pub GetAllMetadata: unsafe extern "system" fn(this: *mut *mut Self, ppmetadata: *mut *mut WSD_METADATA_SECTION_LIST) -> ::windows_sys::core::HRESULT,
+    pub GetServiceProxyById: unsafe extern "system" fn(this: *mut *mut Self, pszserviceid: ::windows_sys::core::PCWSTR, ppserviceproxy: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetServiceProxyByType: unsafe extern "system" fn(this: *mut *mut Self, ptype: *const WSDXML_NAME, ppserviceproxy: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetEndpointProxy: unsafe extern "system" fn(this: *mut *mut Self, ppproxy: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWSDEndpointProxy {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SendOneWayRequest: unsafe extern "system" fn(this: *mut *mut Self, pbody: *const ::core::ffi::c_void, poperation: *const WSD_OPERATION) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SendTwoWayRequest: unsafe extern "system" fn(this: *mut *mut Self, pbody: *const ::core::ffi::c_void, poperation: *const WSD_OPERATION, presponsecontext: *const WSD_SYNCHRONOUS_RESPONSE_CONTEXT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SendTwoWayRequest: usize,
+    pub SendTwoWayRequestAsync: unsafe extern "system" fn(this: *mut *mut Self, pbody: *const ::core::ffi::c_void, poperation: *const WSD_OPERATION, pasyncstate: *mut ::core::ffi::c_void, pcallback: *mut ::core::ffi::c_void, presult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AbortAsyncOperation: unsafe extern "system" fn(this: *mut *mut Self, pasyncresult: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ProcessFault: unsafe extern "system" fn(this: *mut *mut Self, pfault: *const WSD_SOAP_FAULT) -> ::windows_sys::core::HRESULT,
+    pub GetErrorInfo: unsafe extern "system" fn(this: *mut *mut Self, ppszerrorinfo: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetFaultInfo: unsafe extern "system" fn(this: *mut *mut Self, ppfault: *mut *mut WSD_SOAP_FAULT) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWSDEventingStatus {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SubscriptionRenewed: unsafe extern "system" fn(this: *mut *mut Self, pszsubscriptionaction: ::windows_sys::core::PCWSTR),
+    pub SubscriptionRenewalFailed: unsafe extern "system" fn(this: *mut *mut Self, pszsubscriptionaction: ::windows_sys::core::PCWSTR, hr: ::windows_sys::core::HRESULT),
+    pub SubscriptionEnded: unsafe extern "system" fn(this: *mut *mut Self, pszsubscriptionaction: ::windows_sys::core::PCWSTR),
+}
+#[repr(C)]
+pub struct IWSDHttpAddress {
+    pub base__: IWSDTransportAddress,
+    pub GetSecure: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetSecure: unsafe extern "system" fn(this: *mut *mut Self, fsecure: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetSecure: usize,
+    pub GetPath: unsafe extern "system" fn(this: *mut *mut Self, ppszpath: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetPath: unsafe extern "system" fn(this: *mut *mut Self, pszpath: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWSDHttpAuthParameters {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetClientAccessToken: unsafe extern "system" fn(this: *mut *mut Self, phtoken: *mut super::super::Foundation::HANDLE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetClientAccessToken: usize,
+    pub GetAuthType: unsafe extern "system" fn(this: *mut *mut Self, pauthtype: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWSDHttpMessageParameters {
+    pub base__: IWSDMessageParameters,
+    pub SetInboundHttpHeaders: unsafe extern "system" fn(this: *mut *mut Self, pszheaders: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetInboundHttpHeaders: unsafe extern "system" fn(this: *mut *mut Self, ppszheaders: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetOutboundHttpHeaders: unsafe extern "system" fn(this: *mut *mut Self, pszheaders: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetOutboundHttpHeaders: unsafe extern "system" fn(this: *mut *mut Self, ppszheaders: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetID: unsafe extern "system" fn(this: *mut *mut Self, pszid: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetID: unsafe extern "system" fn(this: *mut *mut Self, ppszid: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetContext: unsafe extern "system" fn(this: *mut *mut Self, pcontext: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetContext: unsafe extern "system" fn(this: *mut *mut Self, ppcontext: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Clear: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWSDInboundAttachment {
+    pub base__: IWSDAttachment,
+    pub Read: unsafe extern "system" fn(this: *mut *mut Self, pbuffer: *mut u8, dwbytestoread: u32, pdwnumberofbytesread: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWSDMessageParameters {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetLocalAddress: unsafe extern "system" fn(this: *mut *mut Self, ppaddress: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetLocalAddress: unsafe extern "system" fn(this: *mut *mut Self, paddress: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetRemoteAddress: unsafe extern "system" fn(this: *mut *mut Self, ppaddress: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetRemoteAddress: unsafe extern "system" fn(this: *mut *mut Self, paddress: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetLowerParameters: unsafe extern "system" fn(this: *mut *mut Self, pptxparams: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWSDMetadataExchange {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetMetadata: unsafe extern "system" fn(this: *mut *mut Self, metadataout: *mut *mut WSD_METADATA_SECTION_LIST) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWSDOutboundAttachment {
+    pub base__: IWSDAttachment,
+    pub Write: unsafe extern "system" fn(this: *mut *mut Self, pbuffer: *const u8, dwbytestowrite: u32, pdwnumberofbyteswritten: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Abort: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWSDSSLClientCertificate {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+    pub GetClientCertificate: unsafe extern "system" fn(this: *mut *mut Self, ppcertcontext: *mut *mut super::super::Security::Cryptography::CERT_CONTEXT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography")))]
+    GetClientCertificate: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetMappedAccessToken: unsafe extern "system" fn(this: *mut *mut Self, phtoken: *mut super::super::Foundation::HANDLE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetMappedAccessToken: usize,
+}
+#[repr(C)]
+pub struct IWSDScopeMatchingRule {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetScopeRule: unsafe extern "system" fn(this: *mut *mut Self, ppszscopematchingrule: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MatchScopes: unsafe extern "system" fn(this: *mut *mut Self, pszscope1: ::windows_sys::core::PCWSTR, pszscope2: ::windows_sys::core::PCWSTR, pfmatch: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MatchScopes: usize,
+}
+#[repr(C)]
+pub struct IWSDServiceMessaging {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SendResponse: unsafe extern "system" fn(this: *mut *mut Self, pbody: *const ::core::ffi::c_void, poperation: *const WSD_OPERATION, pmessageparameters: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub FaultRequest: unsafe extern "system" fn(this: *mut *mut Self, prequestheader: *const WSD_SOAP_HEADER, pmessageparameters: *mut ::core::ffi::c_void, pfault: *const WSD_SOAP_FAULT) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWSDServiceProxy {
+    pub base__: IWSDMetadataExchange,
+    pub BeginGetMetadata: unsafe extern "system" fn(this: *mut *mut Self, ppresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EndGetMetadata: unsafe extern "system" fn(this: *mut *mut Self, presult: *mut ::core::ffi::c_void, ppmetadata: *mut *mut WSD_METADATA_SECTION_LIST) -> ::windows_sys::core::HRESULT,
+    pub GetServiceMetadata: unsafe extern "system" fn(this: *mut *mut Self, ppservicemetadata: *mut *mut WSD_SERVICE_METADATA) -> ::windows_sys::core::HRESULT,
+    pub SubscribeToOperation: unsafe extern "system" fn(this: *mut *mut Self, poperation: *const WSD_OPERATION, punknown: *mut ::core::ffi::c_void, pany: *const WSDXML_ELEMENT, ppany: *mut *mut WSDXML_ELEMENT) -> ::windows_sys::core::HRESULT,
+    pub UnsubscribeToOperation: unsafe extern "system" fn(this: *mut *mut Self, poperation: *const WSD_OPERATION) -> ::windows_sys::core::HRESULT,
+    pub SetEventingStatusCallback: unsafe extern "system" fn(this: *mut *mut Self, pstatus: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetEndpointProxy: unsafe extern "system" fn(this: *mut *mut Self, ppproxy: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWSDServiceProxyEventing {
+    pub base__: IWSDServiceProxy,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SubscribeToMultipleOperations: unsafe extern "system" fn(this: *mut *mut Self, poperations: *const WSD_OPERATION, dwoperationcount: u32, punknown: *mut ::core::ffi::c_void, pexpires: *const WSD_EVENTING_EXPIRES, pany: *const WSDXML_ELEMENT, ppexpires: *mut *mut WSD_EVENTING_EXPIRES, ppany: *mut *mut WSDXML_ELEMENT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SubscribeToMultipleOperations: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub BeginSubscribeToMultipleOperations: unsafe extern "system" fn(this: *mut *mut Self, poperations: *const WSD_OPERATION, dwoperationcount: u32, punknown: *mut ::core::ffi::c_void, pexpires: *const WSD_EVENTING_EXPIRES, pany: *const WSDXML_ELEMENT, pasyncstate: *mut ::core::ffi::c_void, pasynccallback: *mut ::core::ffi::c_void, ppresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    BeginSubscribeToMultipleOperations: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub EndSubscribeToMultipleOperations: unsafe extern "system" fn(this: *mut *mut Self, poperations: *const WSD_OPERATION, dwoperationcount: u32, presult: *mut ::core::ffi::c_void, ppexpires: *mut *mut WSD_EVENTING_EXPIRES, ppany: *mut *mut WSDXML_ELEMENT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    EndSubscribeToMultipleOperations: usize,
+    pub UnsubscribeToMultipleOperations: unsafe extern "system" fn(this: *mut *mut Self, poperations: *const WSD_OPERATION, dwoperationcount: u32, pany: *const WSDXML_ELEMENT) -> ::windows_sys::core::HRESULT,
+    pub BeginUnsubscribeToMultipleOperations: unsafe extern "system" fn(this: *mut *mut Self, poperations: *const WSD_OPERATION, dwoperationcount: u32, pany: *const WSDXML_ELEMENT, pasyncstate: *mut ::core::ffi::c_void, pasynccallback: *mut ::core::ffi::c_void, ppresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EndUnsubscribeToMultipleOperations: unsafe extern "system" fn(this: *mut *mut Self, poperations: *const WSD_OPERATION, dwoperationcount: u32, presult: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RenewMultipleOperations: unsafe extern "system" fn(this: *mut *mut Self, poperations: *const WSD_OPERATION, dwoperationcount: u32, pexpires: *const WSD_EVENTING_EXPIRES, pany: *const WSDXML_ELEMENT, ppexpires: *mut *mut WSD_EVENTING_EXPIRES, ppany: *mut *mut WSDXML_ELEMENT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RenewMultipleOperations: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub BeginRenewMultipleOperations: unsafe extern "system" fn(this: *mut *mut Self, poperations: *const WSD_OPERATION, dwoperationcount: u32, pexpires: *const WSD_EVENTING_EXPIRES, pany: *const WSDXML_ELEMENT, pasyncstate: *mut ::core::ffi::c_void, pasynccallback: *mut ::core::ffi::c_void, ppresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    BeginRenewMultipleOperations: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub EndRenewMultipleOperations: unsafe extern "system" fn(this: *mut *mut Self, poperations: *const WSD_OPERATION, dwoperationcount: u32, presult: *mut ::core::ffi::c_void, ppexpires: *mut *mut WSD_EVENTING_EXPIRES, ppany: *mut *mut WSDXML_ELEMENT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    EndRenewMultipleOperations: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetStatusForMultipleOperations: unsafe extern "system" fn(this: *mut *mut Self, poperations: *const WSD_OPERATION, dwoperationcount: u32, pany: *const WSDXML_ELEMENT, ppexpires: *mut *mut WSD_EVENTING_EXPIRES, ppany: *mut *mut WSDXML_ELEMENT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetStatusForMultipleOperations: usize,
+    pub BeginGetStatusForMultipleOperations: unsafe extern "system" fn(this: *mut *mut Self, poperations: *const WSD_OPERATION, dwoperationcount: u32, pany: *const WSDXML_ELEMENT, pasyncstate: *mut ::core::ffi::c_void, pasynccallback: *mut ::core::ffi::c_void, ppresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub EndGetStatusForMultipleOperations: unsafe extern "system" fn(this: *mut *mut Self, poperations: *const WSD_OPERATION, dwoperationcount: u32, presult: *mut ::core::ffi::c_void, ppexpires: *mut *mut WSD_EVENTING_EXPIRES, ppany: *mut *mut WSDXML_ELEMENT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    EndGetStatusForMultipleOperations: usize,
+}
+#[repr(C)]
+pub struct IWSDSignatureProperty {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsMessageSigned: unsafe extern "system" fn(this: *mut *mut Self, pbsigned: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsMessageSigned: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsMessageSignatureTrusted: unsafe extern "system" fn(this: *mut *mut Self, pbsignaturetrusted: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsMessageSignatureTrusted: usize,
+    pub GetKeyInfo: unsafe extern "system" fn(this: *mut *mut Self, pbkeyinfo: *mut u8, pdwkeyinfosize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSignature: unsafe extern "system" fn(this: *mut *mut Self, pbsignature: *mut u8, pdwsignaturesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSignedInfoHash: unsafe extern "system" fn(this: *mut *mut Self, pbsignedinfohash: *mut u8, pdwhashsize: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWSDTransportAddress {
+    pub base__: IWSDAddress,
+    pub GetPort: unsafe extern "system" fn(this: *mut *mut Self, pwport: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub SetPort: unsafe extern "system" fn(this: *mut *mut Self, wport: u16) -> ::windows_sys::core::HRESULT,
+    pub GetTransportAddress: unsafe extern "system" fn(this: *mut *mut Self, ppszaddress: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetTransportAddressEx: unsafe extern "system" fn(this: *mut *mut Self, fsafe: super::super::Foundation::BOOL, ppszaddress: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetTransportAddressEx: usize,
+    pub SetTransportAddress: unsafe extern "system" fn(this: *mut *mut Self, pszaddress: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWSDUdpAddress {
+    pub base__: IWSDTransportAddress,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+    pub SetSockaddr: unsafe extern "system" fn(this: *mut *mut Self, psockaddr: *const super::super::Networking::WinSock::SOCKADDR_STORAGE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock")))]
+    SetSockaddr: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+    pub GetSockaddr: unsafe extern "system" fn(this: *mut *mut Self, psockaddr: *mut super::super::Networking::WinSock::SOCKADDR_STORAGE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock")))]
+    GetSockaddr: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetExclusive: unsafe extern "system" fn(this: *mut *mut Self, fexclusive: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetExclusive: usize,
+    pub GetExclusive: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub SetMessageType: unsafe extern "system" fn(this: *mut *mut Self, messagetype: WSDUdpMessageType) -> ::windows_sys::core::HRESULT,
+    pub GetMessageType: unsafe extern "system" fn(this: *mut *mut Self, pmessagetype: *mut WSDUdpMessageType) -> ::windows_sys::core::HRESULT,
+    pub SetTTL: unsafe extern "system" fn(this: *mut *mut Self, dwttl: u32) -> ::windows_sys::core::HRESULT,
+    pub GetTTL: unsafe extern "system" fn(this: *mut *mut Self, pdwttl: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetAlias: unsafe extern "system" fn(this: *mut *mut Self, palias: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub GetAlias: unsafe extern "system" fn(this: *mut *mut Self, palias: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWSDUdpMessageParameters {
+    pub base__: IWSDMessageParameters,
+    pub SetRetransmitParams: unsafe extern "system" fn(this: *mut *mut Self, pparams: *const WSDUdpRetransmitParams) -> ::windows_sys::core::HRESULT,
+    pub GetRetransmitParams: unsafe extern "system" fn(this: *mut *mut Self, pparams: *mut WSDUdpRetransmitParams) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWSDXMLContext {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub AddNamespace: unsafe extern "system" fn(this: *mut *mut Self, pszuri: ::windows_sys::core::PCWSTR, pszsuggestedprefix: ::windows_sys::core::PCWSTR, ppnamespace: *mut *mut WSDXML_NAMESPACE) -> ::windows_sys::core::HRESULT,
+    pub AddNameToNamespace: unsafe extern "system" fn(this: *mut *mut Self, pszuri: ::windows_sys::core::PCWSTR, pszname: ::windows_sys::core::PCWSTR, ppname: *mut *mut WSDXML_NAME) -> ::windows_sys::core::HRESULT,
+    pub SetNamespaces: unsafe extern "system" fn(this: *mut *mut Self, pnamespaces: *const *const WSDXML_NAMESPACE, wnamespacescount: u16, blayernumber: u8) -> ::windows_sys::core::HRESULT,
+    pub SetTypes: unsafe extern "system" fn(this: *mut *mut Self, ptypes: *const *const WSDXML_TYPE, dwtypescount: u32, blayernumber: u8) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWSDiscoveredService {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetEndpointReference: unsafe extern "system" fn(this: *mut *mut Self, ppendpointreference: *mut *mut WSD_ENDPOINT_REFERENCE) -> ::windows_sys::core::HRESULT,
+    pub GetTypes: unsafe extern "system" fn(this: *mut *mut Self, pptypeslist: *mut *mut WSD_NAME_LIST) -> ::windows_sys::core::HRESULT,
+    pub GetScopes: unsafe extern "system" fn(this: *mut *mut Self, ppscopeslist: *mut *mut WSD_URI_LIST) -> ::windows_sys::core::HRESULT,
+    pub GetXAddrs: unsafe extern "system" fn(this: *mut *mut Self, ppxaddrslist: *mut *mut WSD_URI_LIST) -> ::windows_sys::core::HRESULT,
+    pub GetMetadataVersion: unsafe extern "system" fn(this: *mut *mut Self, pullmetadataversion: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetExtendedDiscoXML: unsafe extern "system" fn(this: *mut *mut Self, ppheaderany: *mut *mut WSDXML_ELEMENT, ppbodyany: *mut *mut WSDXML_ELEMENT) -> ::windows_sys::core::HRESULT,
+    pub GetProbeResolveTag: unsafe extern "system" fn(this: *mut *mut Self, ppsztag: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetRemoteTransportAddress: unsafe extern "system" fn(this: *mut *mut Self, ppszremotetransportaddress: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetLocalTransportAddress: unsafe extern "system" fn(this: *mut *mut Self, ppszlocaltransportaddress: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetLocalInterfaceGUID: unsafe extern "system" fn(this: *mut *mut Self, pguid: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub GetInstanceId: unsafe extern "system" fn(this: *mut *mut Self, pullinstanceid: *mut u64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWSDiscoveryProvider {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetAddressFamily: unsafe extern "system" fn(this: *mut *mut Self, dwaddressfamily: u32) -> ::windows_sys::core::HRESULT,
+    pub Attach: unsafe extern "system" fn(this: *mut *mut Self, psink: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Detach: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub SearchById: unsafe extern "system" fn(this: *mut *mut Self, pszid: ::windows_sys::core::PCWSTR, psztag: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub SearchByAddress: unsafe extern "system" fn(this: *mut *mut Self, pszaddress: ::windows_sys::core::PCWSTR, psztag: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub SearchByType: unsafe extern "system" fn(this: *mut *mut Self, ptypeslist: *const WSD_NAME_LIST, pscopeslist: *const WSD_URI_LIST, pszmatchby: ::windows_sys::core::PCWSTR, psztag: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetXMLContext: unsafe extern "system" fn(this: *mut *mut Self, ppcontext: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWSDiscoveryProviderNotify {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Add: unsafe extern "system" fn(this: *mut *mut Self, pservice: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Remove: unsafe extern "system" fn(this: *mut *mut Self, pservice: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SearchFailed: unsafe extern "system" fn(this: *mut *mut Self, hr: ::windows_sys::core::HRESULT, psztag: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub SearchComplete: unsafe extern "system" fn(this: *mut *mut Self, psztag: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWSDiscoveryPublisher {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetAddressFamily: unsafe extern "system" fn(this: *mut *mut Self, dwaddressfamily: u32) -> ::windows_sys::core::HRESULT,
+    pub RegisterNotificationSink: unsafe extern "system" fn(this: *mut *mut Self, psink: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub UnRegisterNotificationSink: unsafe extern "system" fn(this: *mut *mut Self, psink: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Publish: unsafe extern "system" fn(this: *mut *mut Self, pszid: ::windows_sys::core::PCWSTR, ullmetadataversion: u64, ullinstanceid: u64, ullmessagenumber: u64, pszsessionid: ::windows_sys::core::PCWSTR, ptypeslist: *const WSD_NAME_LIST, pscopeslist: *const WSD_URI_LIST, pxaddrslist: *const WSD_URI_LIST) -> ::windows_sys::core::HRESULT,
+    pub UnPublish: unsafe extern "system" fn(this: *mut *mut Self, pszid: ::windows_sys::core::PCWSTR, ullinstanceid: u64, ullmessagenumber: u64, pszsessionid: ::windows_sys::core::PCWSTR, pany: *const WSDXML_ELEMENT) -> ::windows_sys::core::HRESULT,
+    pub MatchProbe: unsafe extern "system" fn(this: *mut *mut Self, pprobemessage: *const WSD_SOAP_MESSAGE, pmessageparameters: *mut ::core::ffi::c_void, pszid: ::windows_sys::core::PCWSTR, ullmetadataversion: u64, ullinstanceid: u64, ullmessagenumber: u64, pszsessionid: ::windows_sys::core::PCWSTR, ptypeslist: *const WSD_NAME_LIST, pscopeslist: *const WSD_URI_LIST, pxaddrslist: *const WSD_URI_LIST) -> ::windows_sys::core::HRESULT,
+    pub MatchResolve: unsafe extern "system" fn(this: *mut *mut Self, presolvemessage: *const WSD_SOAP_MESSAGE, pmessageparameters: *mut ::core::ffi::c_void, pszid: ::windows_sys::core::PCWSTR, ullmetadataversion: u64, ullinstanceid: u64, ullmessagenumber: u64, pszsessionid: ::windows_sys::core::PCWSTR, ptypeslist: *const WSD_NAME_LIST, pscopeslist: *const WSD_URI_LIST, pxaddrslist: *const WSD_URI_LIST) -> ::windows_sys::core::HRESULT,
+    pub PublishEx: unsafe extern "system" fn(this: *mut *mut Self, pszid: ::windows_sys::core::PCWSTR, ullmetadataversion: u64, ullinstanceid: u64, ullmessagenumber: u64, pszsessionid: ::windows_sys::core::PCWSTR, ptypeslist: *const WSD_NAME_LIST, pscopeslist: *const WSD_URI_LIST, pxaddrslist: *const WSD_URI_LIST, pheaderany: *const WSDXML_ELEMENT, preferenceparameterany: *const WSDXML_ELEMENT, ppolicyany: *const WSDXML_ELEMENT, pendpointreferenceany: *const WSDXML_ELEMENT, pany: *const WSDXML_ELEMENT) -> ::windows_sys::core::HRESULT,
+    pub MatchProbeEx: unsafe extern "system" fn(this: *mut *mut Self, pprobemessage: *const WSD_SOAP_MESSAGE, pmessageparameters: *mut ::core::ffi::c_void, pszid: ::windows_sys::core::PCWSTR, ullmetadataversion: u64, ullinstanceid: u64, ullmessagenumber: u64, pszsessionid: ::windows_sys::core::PCWSTR, ptypeslist: *const WSD_NAME_LIST, pscopeslist: *const WSD_URI_LIST, pxaddrslist: *const WSD_URI_LIST, pheaderany: *const WSDXML_ELEMENT, preferenceparameterany: *const WSDXML_ELEMENT, ppolicyany: *const WSDXML_ELEMENT, pendpointreferenceany: *const WSDXML_ELEMENT, pany: *const WSDXML_ELEMENT) -> ::windows_sys::core::HRESULT,
+    pub MatchResolveEx: unsafe extern "system" fn(this: *mut *mut Self, presolvemessage: *const WSD_SOAP_MESSAGE, pmessageparameters: *mut ::core::ffi::c_void, pszid: ::windows_sys::core::PCWSTR, ullmetadataversion: u64, ullinstanceid: u64, ullmessagenumber: u64, pszsessionid: ::windows_sys::core::PCWSTR, ptypeslist: *const WSD_NAME_LIST, pscopeslist: *const WSD_URI_LIST, pxaddrslist: *const WSD_URI_LIST, pheaderany: *const WSDXML_ELEMENT, preferenceparameterany: *const WSDXML_ELEMENT, ppolicyany: *const WSDXML_ELEMENT, pendpointreferenceany: *const WSDXML_ELEMENT, pany: *const WSDXML_ELEMENT) -> ::windows_sys::core::HRESULT,
+    pub RegisterScopeMatchingRule: unsafe extern "system" fn(this: *mut *mut Self, pscopematchingrule: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub UnRegisterScopeMatchingRule: unsafe extern "system" fn(this: *mut *mut Self, pscopematchingrule: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetXMLContext: unsafe extern "system" fn(this: *mut *mut Self, ppcontext: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWSDiscoveryPublisherNotify {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub ProbeHandler: unsafe extern "system" fn(this: *mut *mut Self, psoap: *const WSD_SOAP_MESSAGE, pmessageparameters: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ResolveHandler: unsafe extern "system" fn(this: *mut *mut Self, psoap: *const WSD_SOAP_MESSAGE, pmessageparameters: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
 #[doc = "*Required features: `\"Win32_Devices_WebServicesOnDevices\"`*"]
-pub type PWSD_SOAP_MESSAGE_HANDLER = ::core::option::Option<unsafe extern "system" fn(thisunknown: ::windows_sys::core::IUnknown, event: *mut WSD_EVENT) -> ::windows_sys::core::HRESULT>;
+pub type PWSD_SOAP_MESSAGE_HANDLER = ::core::option::Option<unsafe extern "system" fn(thisunknown: *mut *mut ::windows_sys::core::IUnknown, event: *mut WSD_EVENT) -> ::windows_sys::core::HRESULT>;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Devices_WebServicesOnDevices\"`*"]
 pub struct REQUESTBODY_GetStatus {
@@ -536,7 +855,7 @@ impl ::core::clone::Clone for WSD_BYE {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Devices_WebServicesOnDevices\"`*"]
 pub struct WSD_CONFIG_ADDRESSES {
-    pub addresses: *mut IWSDAddress,
+    pub addresses: *mut *mut *mut IWSDAddress,
     pub dwAddressCount: u32,
 }
 impl ::core::marker::Copy for WSD_CONFIG_ADDRESSES {}
@@ -675,7 +994,7 @@ pub struct WSD_EVENT {
     pub HandlerContext: WSD_HANDLER_CONTEXT,
     pub Soap: *mut WSD_SOAP_MESSAGE,
     pub Operation: *mut WSD_OPERATION,
-    pub MessageParameters: IWSDMessageParameters,
+    pub MessageParameters: *mut *mut *mut *mut IWSDMessageParameters,
 }
 impl ::core::marker::Copy for WSD_EVENT {}
 impl ::core::clone::Clone for WSD_EVENT {
@@ -751,7 +1070,7 @@ impl ::core::clone::Clone for WSD_EVENTING_FILTER_ACTION {
 pub struct WSD_HANDLER_CONTEXT {
     pub Handler: PWSD_SOAP_MESSAGE_HANDLER,
     pub PVoid: *mut ::core::ffi::c_void,
-    pub Unknown: ::windows_sys::core::IUnknown,
+    pub Unknown: *mut *mut *mut *mut ::windows_sys::core::IUnknown,
 }
 impl ::core::marker::Copy for WSD_HANDLER_CONTEXT {}
 impl ::core::clone::Clone for WSD_HANDLER_CONTEXT {
@@ -1211,14 +1530,14 @@ impl ::core::clone::Clone for WSD_SOAP_MESSAGE {
     }
 }
 #[doc = "*Required features: `\"Win32_Devices_WebServicesOnDevices\"`*"]
-pub type WSD_STUB_FUNCTION = ::core::option::Option<unsafe extern "system" fn(server: ::windows_sys::core::IUnknown, session: IWSDServiceMessaging, event: *mut WSD_EVENT) -> ::windows_sys::core::HRESULT>;
+pub type WSD_STUB_FUNCTION = ::core::option::Option<unsafe extern "system" fn(server: *mut *mut ::windows_sys::core::IUnknown, session: *mut *mut IWSDServiceMessaging, event: *mut WSD_EVENT) -> ::windows_sys::core::HRESULT>;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Devices_WebServicesOnDevices\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 pub struct WSD_SYNCHRONOUS_RESPONSE_CONTEXT {
     pub hr: ::windows_sys::core::HRESULT,
     pub eventHandle: super::super::Foundation::HANDLE,
-    pub messageParameters: IWSDMessageParameters,
+    pub messageParameters: *mut *mut *mut *mut IWSDMessageParameters,
     pub results: *mut ::core::ffi::c_void,
 }
 #[cfg(feature = "Win32_Foundation")]

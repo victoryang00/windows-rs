@@ -2,8 +2,24 @@
 pub const CCF_SCESVC_ATTACHMENT: &str = "CCF_SCESVC_ATTACHMENT";
 #[doc = "*Required features: `\"Win32_Security_ConfigurationSnapin\"`*"]
 pub const CCF_SCESVC_ATTACHMENT_DATA: &str = "CCF_SCESVC_ATTACHMENT_DATA";
-pub type ISceSvcAttachmentData = *mut ::core::ffi::c_void;
-pub type ISceSvcAttachmentPersistInfo = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct ISceSvcAttachmentData {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetData: unsafe extern "system" fn(this: *mut *mut Self, scesvchandle: *mut ::core::ffi::c_void, scetype: SCESVC_INFO_TYPE, ppvdata: *mut *mut ::core::ffi::c_void, psceenumhandle: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, lpservicename: *mut i8, lptemplatename: *mut i8, lpscesvcpersistinfo: *mut ::core::ffi::c_void, pscesvchandle: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub FreeBuffer: unsafe extern "system" fn(this: *mut *mut Self, pvdata: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CloseHandle: unsafe extern "system" fn(this: *mut *mut Self, scesvchandle: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISceSvcAttachmentPersistInfo {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Save: unsafe extern "system" fn(this: *mut *mut Self, lptemplatename: *mut i8, scesvchandle: *mut *mut ::core::ffi::c_void, ppvdata: *mut *mut ::core::ffi::c_void, pboverwriteall: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Save: usize,
+    pub IsDirty: unsafe extern "system" fn(this: *mut *mut Self, lptemplatename: *mut i8) -> ::windows_sys::core::HRESULT,
+    pub FreeBuffer: unsafe extern "system" fn(this: *mut *mut Self, pvdata: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
 #[doc = "*Required features: `\"Win32_Security_ConfigurationSnapin\"`*"]
 pub type PFSCE_FREE_INFO = ::core::option::Option<unsafe extern "system" fn(pvserviceinfo: *mut ::core::ffi::c_void) -> u32>;
 #[doc = "*Required features: `\"Win32_Security_ConfigurationSnapin\"`*"]

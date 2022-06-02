@@ -60,6 +60,47 @@ pub mod Usb;
 pub mod WiFi;
 #[cfg(feature = "Devices_WiFiDirect")]
 pub mod WiFiDirect;
-pub type ILowLevelDevicesAggregateProvider = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct ILowLevelDevicesAggregateProvider {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Devices_Adc_Provider")]
+    pub AdcControllerProvider: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Devices_Adc_Provider"))]
+    AdcControllerProvider: usize,
+    #[cfg(feature = "Devices_Pwm_Provider")]
+    pub PwmControllerProvider: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Devices_Pwm_Provider"))]
+    PwmControllerProvider: usize,
+    #[cfg(feature = "Devices_Gpio_Provider")]
+    pub GpioControllerProvider: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Devices_Gpio_Provider"))]
+    GpioControllerProvider: usize,
+    #[cfg(feature = "Devices_I2c_Provider")]
+    pub I2cControllerProvider: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Devices_I2c_Provider"))]
+    I2cControllerProvider: usize,
+    #[cfg(feature = "Devices_Spi_Provider")]
+    pub SpiControllerProvider: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Devices_Spi_Provider"))]
+    SpiControllerProvider: usize,
+}
+#[repr(C)]
+pub struct ILowLevelDevicesAggregateProviderFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(all(feature = "Devices_Adc_Provider", feature = "Devices_Gpio_Provider", feature = "Devices_I2c_Provider", feature = "Devices_Pwm_Provider", feature = "Devices_Spi_Provider"))]
+    pub Create: unsafe extern "system" fn(this: *mut *mut Self, adc: *mut ::core::ffi::c_void, pwm: *mut ::core::ffi::c_void, gpio: *mut ::core::ffi::c_void, i2c: *mut ::core::ffi::c_void, spi: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Devices_Adc_Provider", feature = "Devices_Gpio_Provider", feature = "Devices_I2c_Provider", feature = "Devices_Pwm_Provider", feature = "Devices_Spi_Provider")))]
+    Create: usize,
+}
+#[repr(C)]
+pub struct ILowLevelDevicesController {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct ILowLevelDevicesControllerStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub DefaultProvider: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetDefaultProvider: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
 pub type LowLevelDevicesAggregateProvider = *mut ::core::ffi::c_void;
 pub type LowLevelDevicesController = *mut ::core::ffi::c_void;

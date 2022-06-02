@@ -2,6 +2,396 @@
 pub mod Preview;
 #[cfg(feature = "Perception_Spatial_Surfaces")]
 pub mod Surfaces;
+#[repr(C)]
+pub struct ISpatialAnchor {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CoordinateSystem: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RawCoordinateSystem: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub RawCoordinateSystemAdjusted: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RawCoordinateSystemAdjusted: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveRawCoordinateSystemAdjusted: unsafe extern "system" fn(this: *mut *mut Self, cookie: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveRawCoordinateSystemAdjusted: usize,
+}
+#[repr(C)]
+pub struct ISpatialAnchor2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub RemovedByUser: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISpatialAnchorExportSufficiency {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub IsMinimallySufficient: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SufficiencyLevel: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f64) -> ::windows_sys::core::HRESULT,
+    pub RecommendedSufficiencyLevel: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISpatialAnchorExporter {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub GetAnchorExportSufficiencyAsync: unsafe extern "system" fn(this: *mut *mut Self, anchor: *mut ::core::ffi::c_void, purpose: SpatialAnchorExportPurpose, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    GetAnchorExportSufficiencyAsync: usize,
+    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    pub TryExportAnchorAsync: unsafe extern "system" fn(this: *mut *mut Self, anchor: *mut ::core::ffi::c_void, purpose: SpatialAnchorExportPurpose, stream: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    TryExportAnchorAsync: usize,
+}
+#[repr(C)]
+pub struct ISpatialAnchorExporterStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub GetDefault: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub RequestAccessAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RequestAccessAsync: usize,
+}
+#[repr(C)]
+pub struct ISpatialAnchorManagerStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub RequestStoreAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RequestStoreAsync: usize,
+}
+#[repr(C)]
+pub struct ISpatialAnchorRawCoordinateSystemAdjustedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation_Numerics")]
+    pub OldRawCoordinateSystemToNewRawCoordinateSystemTransform: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Foundation::Numerics::Matrix4x4) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Numerics"))]
+    OldRawCoordinateSystemToNewRawCoordinateSystemTransform: usize,
+}
+#[repr(C)]
+pub struct ISpatialAnchorStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub TryCreateRelativeTo: unsafe extern "system" fn(this: *mut *mut Self, coordinatesystem: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Numerics")]
+    pub TryCreateWithPositionRelativeTo: unsafe extern "system" fn(this: *mut *mut Self, coordinatesystem: *mut ::core::ffi::c_void, position: super::super::Foundation::Numerics::Vector3, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Numerics"))]
+    TryCreateWithPositionRelativeTo: usize,
+    #[cfg(feature = "Foundation_Numerics")]
+    pub TryCreateWithPositionAndOrientationRelativeTo: unsafe extern "system" fn(this: *mut *mut Self, coordinatesystem: *mut ::core::ffi::c_void, position: super::super::Foundation::Numerics::Vector3, orientation: super::super::Foundation::Numerics::Quaternion, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Numerics"))]
+    TryCreateWithPositionAndOrientationRelativeTo: usize,
+}
+#[repr(C)]
+pub struct ISpatialAnchorStore {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation_Collections")]
+    pub GetAllSavedAnchors: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    GetAllSavedAnchors: usize,
+    pub TrySave: unsafe extern "system" fn(this: *mut *mut Self, id: ::windows_sys::core::HSTRING, anchor: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub Remove: unsafe extern "system" fn(this: *mut *mut Self, id: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Clear: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "deprecated")]
+#[repr(C)]
+pub struct ISpatialAnchorTransferManagerStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(all(feature = "Foundation_Collections", feature = "Storage_Streams", feature = "deprecated"))]
+    pub TryImportAnchorsAsync: unsafe extern "system" fn(this: *mut *mut Self, stream: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation_Collections", feature = "Storage_Streams", feature = "deprecated")))]
+    TryImportAnchorsAsync: usize,
+    #[cfg(all(feature = "Foundation_Collections", feature = "Storage_Streams", feature = "deprecated"))]
+    pub TryExportAnchorsAsync: unsafe extern "system" fn(this: *mut *mut Self, anchors: *mut ::core::ffi::c_void, stream: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation_Collections", feature = "Storage_Streams", feature = "deprecated")))]
+    TryExportAnchorsAsync: usize,
+    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
+    pub RequestAccessAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    RequestAccessAsync: usize,
+}
+#[repr(C)]
+pub struct ISpatialBoundingVolume {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct ISpatialBoundingVolumeStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation_Numerics")]
+    pub FromBox: unsafe extern "system" fn(this: *mut *mut Self, coordinatesystem: *mut ::core::ffi::c_void, r#box: SpatialBoundingBox, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Numerics"))]
+    FromBox: usize,
+    #[cfg(feature = "Foundation_Numerics")]
+    pub FromOrientedBox: unsafe extern "system" fn(this: *mut *mut Self, coordinatesystem: *mut ::core::ffi::c_void, r#box: SpatialBoundingOrientedBox, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Numerics"))]
+    FromOrientedBox: usize,
+    #[cfg(feature = "Foundation_Numerics")]
+    pub FromSphere: unsafe extern "system" fn(this: *mut *mut Self, coordinatesystem: *mut ::core::ffi::c_void, sphere: SpatialBoundingSphere, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Numerics"))]
+    FromSphere: usize,
+    #[cfg(feature = "Foundation_Numerics")]
+    pub FromFrustum: unsafe extern "system" fn(this: *mut *mut Self, coordinatesystem: *mut ::core::ffi::c_void, frustum: SpatialBoundingFrustum, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Numerics"))]
+    FromFrustum: usize,
+}
+#[repr(C)]
+pub struct ISpatialCoordinateSystem {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation_Numerics")]
+    pub TryGetTransformTo: unsafe extern "system" fn(this: *mut *mut Self, target: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Numerics"))]
+    TryGetTransformTo: usize,
+}
+#[repr(C)]
+pub struct ISpatialEntity {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Id: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Anchor: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub Properties: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    Properties: usize,
+}
+#[repr(C)]
+pub struct ISpatialEntityAddedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Entity: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISpatialEntityFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CreateWithSpatialAnchor: unsafe extern "system" fn(this: *mut *mut Self, spatialanchor: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub CreateWithSpatialAnchorAndProperties: unsafe extern "system" fn(this: *mut *mut Self, spatialanchor: *mut ::core::ffi::c_void, propertyset: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    CreateWithSpatialAnchorAndProperties: usize,
+}
+#[repr(C)]
+pub struct ISpatialEntityRemovedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Entity: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISpatialEntityStore {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub SaveAsync: unsafe extern "system" fn(this: *mut *mut Self, entity: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    SaveAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveAsync: unsafe extern "system" fn(this: *mut *mut Self, entity: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveAsync: usize,
+    pub CreateEntityWatcher: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISpatialEntityStoreStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub IsSupported: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "System_RemoteSystems")]
+    pub TryGetForRemoteSystemSession: unsafe extern "system" fn(this: *mut *mut Self, session: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "System_RemoteSystems"))]
+    TryGetForRemoteSystemSession: usize,
+}
+#[repr(C)]
+pub struct ISpatialEntityUpdatedEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Entity: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISpatialEntityWatcher {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Status: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut SpatialEntityWatcherStatus) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub Added: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    Added: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveAdded: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveAdded: usize,
+    #[cfg(feature = "Foundation")]
+    pub Updated: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    Updated: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveUpdated: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveUpdated: usize,
+    #[cfg(feature = "Foundation")]
+    pub Removed: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    Removed: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveRemoved: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveRemoved: usize,
+    #[cfg(feature = "Foundation")]
+    pub EnumerationCompleted: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    EnumerationCompleted: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveEnumerationCompleted: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveEnumerationCompleted: usize,
+    pub Start: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Stop: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISpatialLocation {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation_Numerics")]
+    pub Position: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Foundation::Numerics::Vector3) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Numerics"))]
+    Position: usize,
+    #[cfg(feature = "Foundation_Numerics")]
+    pub Orientation: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Foundation::Numerics::Quaternion) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Numerics"))]
+    Orientation: usize,
+    #[cfg(feature = "Foundation_Numerics")]
+    pub AbsoluteLinearVelocity: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Foundation::Numerics::Vector3) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Numerics"))]
+    AbsoluteLinearVelocity: usize,
+    #[cfg(feature = "Foundation_Numerics")]
+    pub AbsoluteLinearAcceleration: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Foundation::Numerics::Vector3) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Numerics"))]
+    AbsoluteLinearAcceleration: usize,
+    #[cfg(all(feature = "Foundation_Numerics", feature = "deprecated"))]
+    pub AbsoluteAngularVelocity: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Foundation::Numerics::Quaternion) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation_Numerics", feature = "deprecated")))]
+    AbsoluteAngularVelocity: usize,
+    #[cfg(all(feature = "Foundation_Numerics", feature = "deprecated"))]
+    pub AbsoluteAngularAcceleration: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Foundation::Numerics::Quaternion) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation_Numerics", feature = "deprecated")))]
+    AbsoluteAngularAcceleration: usize,
+}
+#[repr(C)]
+pub struct ISpatialLocation2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation_Numerics")]
+    pub AbsoluteAngularVelocityAxisAngle: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Foundation::Numerics::Vector3) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Numerics"))]
+    AbsoluteAngularVelocityAxisAngle: usize,
+    #[cfg(feature = "Foundation_Numerics")]
+    pub AbsoluteAngularAccelerationAxisAngle: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Foundation::Numerics::Vector3) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Numerics"))]
+    AbsoluteAngularAccelerationAxisAngle: usize,
+}
+#[repr(C)]
+pub struct ISpatialLocator {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Locatability: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut SpatialLocatability) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub LocatabilityChanged: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    LocatabilityChanged: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveLocatabilityChanged: unsafe extern "system" fn(this: *mut *mut Self, cookie: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveLocatabilityChanged: usize,
+    #[cfg(feature = "Foundation")]
+    pub PositionalTrackingDeactivating: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    PositionalTrackingDeactivating: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemovePositionalTrackingDeactivating: unsafe extern "system" fn(this: *mut *mut Self, cookie: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemovePositionalTrackingDeactivating: usize,
+    pub TryLocateAtTimestamp: unsafe extern "system" fn(this: *mut *mut Self, timestamp: *mut ::core::ffi::c_void, coordinatesystem: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateAttachedFrameOfReferenceAtCurrentHeading: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Numerics")]
+    pub CreateAttachedFrameOfReferenceAtCurrentHeadingWithPosition: unsafe extern "system" fn(this: *mut *mut Self, relativeposition: super::super::Foundation::Numerics::Vector3, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Numerics"))]
+    CreateAttachedFrameOfReferenceAtCurrentHeadingWithPosition: usize,
+    #[cfg(feature = "Foundation_Numerics")]
+    pub CreateAttachedFrameOfReferenceAtCurrentHeadingWithPositionAndOrientation: unsafe extern "system" fn(this: *mut *mut Self, relativeposition: super::super::Foundation::Numerics::Vector3, relativeorientation: super::super::Foundation::Numerics::Quaternion, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Numerics"))]
+    CreateAttachedFrameOfReferenceAtCurrentHeadingWithPositionAndOrientation: usize,
+    #[cfg(feature = "Foundation_Numerics")]
+    pub CreateAttachedFrameOfReferenceAtCurrentHeadingWithPositionAndOrientationAndRelativeHeading: unsafe extern "system" fn(this: *mut *mut Self, relativeposition: super::super::Foundation::Numerics::Vector3, relativeorientation: super::super::Foundation::Numerics::Quaternion, relativeheadinginradians: f64, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Numerics"))]
+    CreateAttachedFrameOfReferenceAtCurrentHeadingWithPositionAndOrientationAndRelativeHeading: usize,
+    pub CreateStationaryFrameOfReferenceAtCurrentLocation: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Numerics")]
+    pub CreateStationaryFrameOfReferenceAtCurrentLocationWithPosition: unsafe extern "system" fn(this: *mut *mut Self, relativeposition: super::super::Foundation::Numerics::Vector3, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Numerics"))]
+    CreateStationaryFrameOfReferenceAtCurrentLocationWithPosition: usize,
+    #[cfg(feature = "Foundation_Numerics")]
+    pub CreateStationaryFrameOfReferenceAtCurrentLocationWithPositionAndOrientation: unsafe extern "system" fn(this: *mut *mut Self, relativeposition: super::super::Foundation::Numerics::Vector3, relativeorientation: super::super::Foundation::Numerics::Quaternion, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Numerics"))]
+    CreateStationaryFrameOfReferenceAtCurrentLocationWithPositionAndOrientation: usize,
+    #[cfg(feature = "Foundation_Numerics")]
+    pub CreateStationaryFrameOfReferenceAtCurrentLocationWithPositionAndOrientationAndRelativeHeading: unsafe extern "system" fn(this: *mut *mut Self, relativeposition: super::super::Foundation::Numerics::Vector3, relativeorientation: super::super::Foundation::Numerics::Quaternion, relativeheadinginradians: f64, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Numerics"))]
+    CreateStationaryFrameOfReferenceAtCurrentLocationWithPositionAndOrientationAndRelativeHeading: usize,
+}
+#[repr(C)]
+pub struct ISpatialLocatorAttachedFrameOfReference {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation_Numerics")]
+    pub RelativePosition: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Foundation::Numerics::Vector3) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Numerics"))]
+    RelativePosition: usize,
+    #[cfg(feature = "Foundation_Numerics")]
+    pub SetRelativePosition: unsafe extern "system" fn(this: *mut *mut Self, value: super::super::Foundation::Numerics::Vector3) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Numerics"))]
+    SetRelativePosition: usize,
+    #[cfg(feature = "Foundation_Numerics")]
+    pub RelativeOrientation: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Foundation::Numerics::Quaternion) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Numerics"))]
+    RelativeOrientation: usize,
+    #[cfg(feature = "Foundation_Numerics")]
+    pub SetRelativeOrientation: unsafe extern "system" fn(this: *mut *mut Self, value: super::super::Foundation::Numerics::Quaternion) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Numerics"))]
+    SetRelativeOrientation: usize,
+    pub AdjustHeading: unsafe extern "system" fn(this: *mut *mut Self, headingoffsetinradians: f64) -> ::windows_sys::core::HRESULT,
+    pub GetStationaryCoordinateSystemAtTimestamp: unsafe extern "system" fn(this: *mut *mut Self, timestamp: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub TryGetRelativeHeadingAtTimestamp: unsafe extern "system" fn(this: *mut *mut Self, timestamp: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    TryGetRelativeHeadingAtTimestamp: usize,
+}
+#[repr(C)]
+pub struct ISpatialLocatorPositionalTrackingDeactivatingEventArgs {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Canceled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetCanceled: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISpatialLocatorStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub GetDefault: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISpatialStageFrameOfReference {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CoordinateSystem: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub MovementRange: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut SpatialMovementRange) -> ::windows_sys::core::HRESULT,
+    pub LookDirectionRange: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut SpatialLookDirectionRange) -> ::windows_sys::core::HRESULT,
+    pub GetCoordinateSystemAtCurrentLocation: unsafe extern "system" fn(this: *mut *mut Self, locator: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Numerics")]
+    pub TryGetMovementBounds: unsafe extern "system" fn(this: *mut *mut Self, coordinatesystem: *mut ::core::ffi::c_void, result_size__: *mut u32, result__: *mut *mut super::super::Foundation::Numerics::Vector3) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Numerics"))]
+    TryGetMovementBounds: usize,
+}
+#[repr(C)]
+pub struct ISpatialStageFrameOfReferenceStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Current: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub CurrentChanged: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    CurrentChanged: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveCurrentChanged: unsafe extern "system" fn(this: *mut *mut Self, cookie: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveCurrentChanged: usize,
+    #[cfg(feature = "Foundation")]
+    pub RequestNewStageAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RequestNewStageAsync: usize,
+}
+#[repr(C)]
+pub struct ISpatialStationaryFrameOfReference {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CoordinateSystem: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
 pub type SpatialAnchor = *mut ::core::ffi::c_void;
 #[doc = "*Required features: `\"Perception_Spatial\"`*"]
 #[repr(transparent)]

@@ -267,6 +267,1255 @@ pub type GroupItemAutomationPeer = *mut ::core::ffi::c_void;
 pub type HubAutomationPeer = *mut ::core::ffi::c_void;
 pub type HubSectionAutomationPeer = *mut ::core::ffi::c_void;
 pub type HyperlinkButtonAutomationPeer = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IAppBarAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IAppBarAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct IAppBarButtonAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IAppBarButtonAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct IAppBarToggleButtonAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IAppBarToggleButtonAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct IAutoSuggestBoxAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IAutoSuggestBoxAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct IAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub EventsSource: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetEventsSource: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetPattern: unsafe extern "system" fn(this: *mut *mut Self, patterninterface: PatternInterface, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RaiseAutomationEvent: unsafe extern "system" fn(this: *mut *mut Self, eventid: AutomationEvents) -> ::windows_sys::core::HRESULT,
+    pub RaisePropertyChangedEvent: unsafe extern "system" fn(this: *mut *mut Self, automationproperty: *mut ::core::ffi::c_void, oldvalue: *mut ::core::ffi::c_void, newvalue: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetAcceleratorKey: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub GetAccessKey: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub GetAutomationControlType: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut AutomationControlType) -> ::windows_sys::core::HRESULT,
+    pub GetAutomationId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub GetBoundingRectangle: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::super::super::Foundation::Rect) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    GetBoundingRectangle: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub GetChildren: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    GetChildren: usize,
+    pub GetClassName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub GetClickablePoint: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::super::super::Foundation::Point) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    GetClickablePoint: usize,
+    pub GetHelpText: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub GetItemStatus: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub GetItemType: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub GetLabeledBy: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetLocalizedControlType: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub GetName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub GetOrientation: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut AutomationOrientation) -> ::windows_sys::core::HRESULT,
+    pub HasKeyboardFocus: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub IsContentElement: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub IsControlElement: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub IsEnabled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub IsKeyboardFocusable: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub IsOffscreen: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub IsPassword: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub IsRequiredForForm: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetFocus: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "deprecated")]
+    pub GetParent: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "deprecated"))]
+    GetParent: usize,
+    pub InvalidatePeer: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
+    pub GetPeerFromPoint: unsafe extern "system" fn(this: *mut *mut Self, point: super::super::super::super::Foundation::Point, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    GetPeerFromPoint: usize,
+    pub GetLiveSetting: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut AutomationLiveSetting) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAutomationPeer2 {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IAutomationPeer3 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Navigate: unsafe extern "system" fn(this: *mut *mut Self, direction: AutomationNavigationDirection, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub GetElementFromPoint: unsafe extern "system" fn(this: *mut *mut Self, pointinwindowcoordinates: super::super::super::super::Foundation::Point, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    GetElementFromPoint: usize,
+    pub GetFocusedElement: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ShowContextMenu: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub GetControlledPeers: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    GetControlledPeers: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub GetAnnotations: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    GetAnnotations: usize,
+    pub SetParent: unsafe extern "system" fn(this: *mut *mut Self, peer: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub RaiseTextEditTextChangedEvent: unsafe extern "system" fn(this: *mut *mut Self, automationtexteditchangetype: super::AutomationTextEditChangeType, changeddata: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    RaiseTextEditTextChangedEvent: usize,
+    pub GetPositionInSet: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub GetSizeOfSet: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub GetLevel: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub RaiseStructureChangedEvent: unsafe extern "system" fn(this: *mut *mut Self, structurechangetype: AutomationStructureChangeType, child: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAutomationPeer4 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub GetLandmarkType: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut AutomationLandmarkType) -> ::windows_sys::core::HRESULT,
+    pub GetLocalizedLandmarkType: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAutomationPeer5 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub IsPeripheral: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub IsDataValidForForm: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub GetFullDescription: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAutomationPeer6 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub GetCulture: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAutomationPeer7 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub RaiseNotificationEvent: unsafe extern "system" fn(this: *mut *mut Self, notificationkind: AutomationNotificationKind, notificationprocessing: AutomationNotificationProcessing, displaystring: ::windows_sys::core::HSTRING, activityid: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAutomationPeer8 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub GetHeadingLevel: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut AutomationHeadingLevel) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAutomationPeer9 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub IsDialog: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAutomationPeerAnnotation {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Type: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::AnnotationType) -> ::windows_sys::core::HRESULT,
+    pub SetType: unsafe extern "system" fn(this: *mut *mut Self, value: super::AnnotationType) -> ::windows_sys::core::HRESULT,
+    pub Peer: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetPeer: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAutomationPeerAnnotationFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CreateInstance: unsafe extern "system" fn(this: *mut *mut Self, r#type: super::AnnotationType, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateWithPeerParameter: unsafe extern "system" fn(this: *mut *mut Self, r#type: super::AnnotationType, peer: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAutomationPeerAnnotationStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub TypeProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub PeerProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CreateInstance: unsafe extern "system" fn(this: *mut *mut Self, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAutomationPeerOverrides {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub GetPatternCore: unsafe extern "system" fn(this: *mut *mut Self, patterninterface: PatternInterface, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetAcceleratorKeyCore: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub GetAccessKeyCore: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub GetAutomationControlTypeCore: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut AutomationControlType) -> ::windows_sys::core::HRESULT,
+    pub GetAutomationIdCore: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub GetBoundingRectangleCore: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::super::super::Foundation::Rect) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    GetBoundingRectangleCore: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub GetChildrenCore: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    GetChildrenCore: usize,
+    pub GetClassNameCore: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub GetClickablePointCore: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::super::super::Foundation::Point) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    GetClickablePointCore: usize,
+    pub GetHelpTextCore: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub GetItemStatusCore: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub GetItemTypeCore: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub GetLabeledByCore: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetLocalizedControlTypeCore: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub GetNameCore: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub GetOrientationCore: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut AutomationOrientation) -> ::windows_sys::core::HRESULT,
+    pub HasKeyboardFocusCore: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub IsContentElementCore: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub IsControlElementCore: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub IsEnabledCore: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub IsKeyboardFocusableCore: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub IsOffscreenCore: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub IsPasswordCore: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub IsRequiredForFormCore: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetFocusCore: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub GetPeerFromPointCore: unsafe extern "system" fn(this: *mut *mut Self, point: super::super::super::super::Foundation::Point, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    GetPeerFromPointCore: usize,
+    pub GetLiveSettingCore: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut AutomationLiveSetting) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAutomationPeerOverrides2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub ShowContextMenuCore: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub GetControlledPeersCore: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    GetControlledPeersCore: usize,
+}
+#[repr(C)]
+pub struct IAutomationPeerOverrides3 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub NavigateCore: unsafe extern "system" fn(this: *mut *mut Self, direction: AutomationNavigationDirection, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub GetElementFromPointCore: unsafe extern "system" fn(this: *mut *mut Self, pointinwindowcoordinates: super::super::super::super::Foundation::Point, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    GetElementFromPointCore: usize,
+    pub GetFocusedElementCore: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub GetAnnotationsCore: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    GetAnnotationsCore: usize,
+    pub GetPositionInSetCore: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub GetSizeOfSetCore: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub GetLevelCore: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAutomationPeerOverrides4 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub GetLandmarkTypeCore: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut AutomationLandmarkType) -> ::windows_sys::core::HRESULT,
+    pub GetLocalizedLandmarkTypeCore: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAutomationPeerOverrides5 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub IsPeripheralCore: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub IsDataValidForFormCore: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub GetFullDescriptionCore: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub GetDescribedByCore: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    GetDescribedByCore: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub GetFlowsToCore: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    GetFlowsToCore: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub GetFlowsFromCore: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    GetFlowsFromCore: usize,
+}
+#[repr(C)]
+pub struct IAutomationPeerOverrides6 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub GetCultureCore: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAutomationPeerOverrides8 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub GetHeadingLevelCore: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut AutomationHeadingLevel) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAutomationPeerOverrides9 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub IsDialogCore: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAutomationPeerProtected {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    pub PeerFromProvider: unsafe extern "system" fn(this: *mut *mut Self, provider: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Automation_Provider"))]
+    PeerFromProvider: usize,
+    #[cfg(feature = "UI_Xaml_Automation_Provider")]
+    pub ProviderFromPeer: unsafe extern "system" fn(this: *mut *mut Self, peer: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Automation_Provider"))]
+    ProviderFromPeer: usize,
+}
+#[repr(C)]
+pub struct IAutomationPeerStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub ListenerExists: unsafe extern "system" fn(this: *mut *mut Self, eventid: AutomationEvents, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAutomationPeerStatics3 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub GenerateRawElementProviderRuntimeId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut RawElementProviderRuntimeId) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IButtonAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IButtonAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct IButtonBaseAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IButtonBaseAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls_Primitives")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls_Primitives"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct ICalendarDatePickerAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct ICalendarDatePickerAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct ICaptureElementAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct ICaptureElementAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct ICheckBoxAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct ICheckBoxAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct IColorPickerSliderAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IColorPickerSliderAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls_Primitives")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls_Primitives"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct IColorSpectrumAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IColorSpectrumAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls_Primitives")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls_Primitives"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct IComboBoxAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IComboBoxAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct IComboBoxItemAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IComboBoxItemAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct IComboBoxItemDataAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IComboBoxItemDataAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CreateInstanceWithParentAndItem: unsafe extern "system" fn(this: *mut *mut Self, item: *mut ::core::ffi::c_void, parent: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDatePickerAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IDatePickerAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct IDatePickerFlyoutPresenterAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IFlipViewAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IFlipViewAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct IFlipViewItemAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IFlipViewItemAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct IFlipViewItemDataAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IFlipViewItemDataAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CreateInstanceWithParentAndItem: unsafe extern "system" fn(this: *mut *mut Self, item: *mut ::core::ffi::c_void, parent: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IFlyoutPresenterAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IFlyoutPresenterAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct IFrameworkElementAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Owner: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IFrameworkElementAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IFrameworkElementAutomationPeerStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub FromElement: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreatePeerForElement: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IGridViewAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IGridViewAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct IGridViewHeaderItemAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IGridViewHeaderItemAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct IGridViewItemAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IGridViewItemAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct IGridViewItemDataAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IGridViewItemDataAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CreateInstanceWithParentAndItem: unsafe extern "system" fn(this: *mut *mut Self, item: *mut ::core::ffi::c_void, parent: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IGroupItemAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IGroupItemAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct IHubAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IHubAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct IHubSectionAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IHubSectionAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct IHyperlinkButtonAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IHyperlinkButtonAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct IImageAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IImageAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct IInkToolbarAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IItemAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Item: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ItemsControlAutomationPeer: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IItemAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CreateInstanceWithParentAndItem: unsafe extern "system" fn(this: *mut *mut Self, item: *mut ::core::ffi::c_void, parent: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IItemsControlAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IItemsControlAutomationPeer2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CreateItemAutomationPeer: unsafe extern "system" fn(this: *mut *mut Self, item: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IItemsControlAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct IItemsControlAutomationPeerOverrides2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub OnCreateItemAutomationPeer: unsafe extern "system" fn(this: *mut *mut Self, item: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IListBoxAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IListBoxAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct IListBoxItemAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IListBoxItemAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct IListBoxItemDataAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IListBoxItemDataAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CreateInstanceWithParentAndItem: unsafe extern "system" fn(this: *mut *mut Self, item: *mut ::core::ffi::c_void, parent: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IListPickerFlyoutPresenterAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IListViewAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IListViewAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct IListViewBaseAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IListViewBaseAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct IListViewBaseHeaderItemAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IListViewBaseHeaderItemAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct IListViewHeaderItemAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IListViewHeaderItemAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct IListViewItemAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IListViewItemAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct IListViewItemDataAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IListViewItemDataAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CreateInstanceWithParentAndItem: unsafe extern "system" fn(this: *mut *mut Self, item: *mut ::core::ffi::c_void, parent: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ILoopingSelectorAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct ILoopingSelectorItemAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct ILoopingSelectorItemDataAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IMapControlAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IMediaElementAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IMediaElementAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct IMediaPlayerElementAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IMediaPlayerElementAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct IMediaTransportControlsAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IMediaTransportControlsAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct IMenuBarAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IMenuBarAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls")]
+    pub CreateInstance: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    CreateInstance: usize,
+}
+#[repr(C)]
+pub struct IMenuBarItemAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IMenuBarItemAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls")]
+    pub CreateInstance: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    CreateInstance: usize,
+}
+#[repr(C)]
+pub struct IMenuFlyoutItemAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IMenuFlyoutItemAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct IMenuFlyoutPresenterAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IMenuFlyoutPresenterAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct INavigationViewItemAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct INavigationViewItemAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct IPasswordBoxAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IPasswordBoxAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct IPersonPictureAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IPersonPictureAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct IPickerFlyoutPresenterAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IPivotAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IPivotAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct IPivotItemAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IPivotItemAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct IPivotItemDataAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IPivotItemDataAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CreateInstanceWithParentAndItem: unsafe extern "system" fn(this: *mut *mut Self, item: *mut ::core::ffi::c_void, parent: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IProgressBarAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IProgressBarAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct IProgressRingAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IProgressRingAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct IRadioButtonAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IRadioButtonAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct IRangeBaseAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IRangeBaseAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls_Primitives")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls_Primitives"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct IRatingControlAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IRatingControlAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct IRepeatButtonAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IRepeatButtonAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls_Primitives")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls_Primitives"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct IRichEditBoxAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IRichEditBoxAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct IRichTextBlockAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IRichTextBlockAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct IRichTextBlockOverflowAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IRichTextBlockOverflowAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct IScrollBarAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IScrollBarAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls_Primitives")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls_Primitives"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct IScrollViewerAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IScrollViewerAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct ISearchBoxAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct ISearchBoxAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct ISelectorAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct ISelectorAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls_Primitives")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls_Primitives"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct ISelectorItemAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct ISelectorItemAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CreateInstanceWithParentAndItem: unsafe extern "system" fn(this: *mut *mut Self, item: *mut ::core::ffi::c_void, parent: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISemanticZoomAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct ISemanticZoomAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct ISettingsFlyoutAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct ISettingsFlyoutAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct ISliderAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct ISliderAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct ITextBlockAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct ITextBlockAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct ITextBoxAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct ITextBoxAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct IThumbAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IThumbAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls_Primitives")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls_Primitives"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct ITimePickerAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct ITimePickerAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct ITimePickerFlyoutPresenterAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IToggleButtonAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IToggleButtonAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls_Primitives")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls_Primitives"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct IToggleMenuFlyoutItemAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IToggleMenuFlyoutItemAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct IToggleSwitchAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IToggleSwitchAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct ITreeViewItemAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct ITreeViewItemAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    CreateInstanceWithOwner: usize,
+}
+#[repr(C)]
+pub struct ITreeViewListAutomationPeer {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct ITreeViewListAutomationPeerFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "UI_Xaml_Controls")]
+    pub CreateInstanceWithOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut ::core::ffi::c_void, baseinterface: *mut ::core::ffi::c_void, innerinterface: *mut *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls"))]
+    CreateInstanceWithOwner: usize,
+}
 pub type ImageAutomationPeer = *mut ::core::ffi::c_void;
 pub type InkToolbarAutomationPeer = *mut ::core::ffi::c_void;
 pub type ItemAutomationPeer = *mut ::core::ffi::c_void;

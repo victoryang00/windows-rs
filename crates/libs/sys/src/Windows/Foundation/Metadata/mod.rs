@@ -77,6 +77,20 @@ impl ::core::clone::Clone for GCPressureAmount {
         *self
     }
 }
+#[repr(C)]
+pub struct IApiInformationStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub IsTypePresent: unsafe extern "system" fn(this: *mut *mut Self, typename: ::windows_sys::core::HSTRING, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub IsMethodPresent: unsafe extern "system" fn(this: *mut *mut Self, typename: ::windows_sys::core::HSTRING, methodname: ::windows_sys::core::HSTRING, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub IsMethodPresentWithArity: unsafe extern "system" fn(this: *mut *mut Self, typename: ::windows_sys::core::HSTRING, methodname: ::windows_sys::core::HSTRING, inputparametercount: u32, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub IsEventPresent: unsafe extern "system" fn(this: *mut *mut Self, typename: ::windows_sys::core::HSTRING, eventname: ::windows_sys::core::HSTRING, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub IsPropertyPresent: unsafe extern "system" fn(this: *mut *mut Self, typename: ::windows_sys::core::HSTRING, propertyname: ::windows_sys::core::HSTRING, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub IsReadOnlyPropertyPresent: unsafe extern "system" fn(this: *mut *mut Self, typename: ::windows_sys::core::HSTRING, propertyname: ::windows_sys::core::HSTRING, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub IsWriteablePropertyPresent: unsafe extern "system" fn(this: *mut *mut Self, typename: ::windows_sys::core::HSTRING, propertyname: ::windows_sys::core::HSTRING, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub IsEnumNamedValuePresent: unsafe extern "system" fn(this: *mut *mut Self, enumtypename: ::windows_sys::core::HSTRING, valuename: ::windows_sys::core::HSTRING, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub IsApiContractPresentByMajor: unsafe extern "system" fn(this: *mut *mut Self, contractname: ::windows_sys::core::HSTRING, majorversion: u16, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub IsApiContractPresentByMajorAndMinor: unsafe extern "system" fn(this: *mut *mut Self, contractname: ::windows_sys::core::HSTRING, majorversion: u16, minorversion: u16, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
 #[doc = "*Required features: `\"Foundation_Metadata\"`*"]
 #[repr(transparent)]
 pub struct MarshalingType(pub i32);

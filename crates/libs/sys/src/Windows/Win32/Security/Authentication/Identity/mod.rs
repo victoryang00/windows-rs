@@ -1036,7 +1036,11 @@ pub type FREE_CONTEXT_BUFFER_FN = ::core::option::Option<unsafe extern "system" 
 #[doc = "*Required features: `\"Win32_Security_Authentication_Identity\"`, `\"Win32_Security_Credentials\"`*"]
 #[cfg(feature = "Win32_Security_Credentials")]
 pub type FREE_CREDENTIALS_HANDLE_FN = ::core::option::Option<unsafe extern "system" fn(param0: *mut super::super::Credentials::SecHandle) -> ::windows_sys::core::HRESULT>;
-pub type ICcgDomainAuthCredentials = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct ICcgDomainAuthCredentials {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetPasswordCredentials: unsafe extern "system" fn(this: *mut *mut Self, plugininput: ::windows_sys::core::PCWSTR, domainname: *mut ::windows_sys::core::PWSTR, username: *mut ::windows_sys::core::PWSTR, password: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
 #[doc = "*Required features: `\"Win32_Security_Authentication_Identity\"`*"]
 pub const ID_CAP_SLAPI: &str = "slapiQueryLicenseValue";
 #[doc = "*Required features: `\"Win32_Security_Authentication_Identity\"`, `\"Win32_Security_Credentials\"`*"]

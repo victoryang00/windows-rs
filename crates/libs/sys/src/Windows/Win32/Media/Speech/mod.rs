@@ -786,102 +786,1881 @@ pub type DISPID_SpeechXMLRecoResult = i32;
 pub const DISPID_SRRGetXMLResult: DISPID_SpeechXMLRecoResult = 10i32;
 #[doc = "*Required features: `\"Win32_Media_Speech\"`*"]
 pub const DISPID_SRRGetXMLErrorInfo: DISPID_SpeechXMLRecoResult = 11i32;
-pub type IEnumSpObjectTokens = *mut ::core::ffi::c_void;
-pub type ISpAudio = *mut ::core::ffi::c_void;
-pub type ISpContainerLexicon = *mut ::core::ffi::c_void;
-pub type ISpDataKey = *mut ::core::ffi::c_void;
-pub type ISpDisplayAlternates = *mut ::core::ffi::c_void;
-pub type ISpEnginePronunciation = *mut ::core::ffi::c_void;
-pub type ISpEventSink = *mut ::core::ffi::c_void;
-pub type ISpEventSource = *mut ::core::ffi::c_void;
-pub type ISpEventSource2 = *mut ::core::ffi::c_void;
-pub type ISpGrammarBuilder = *mut ::core::ffi::c_void;
-pub type ISpGrammarBuilder2 = *mut ::core::ffi::c_void;
-pub type ISpLexicon = *mut ::core::ffi::c_void;
-pub type ISpMMSysAudio = *mut ::core::ffi::c_void;
-pub type ISpNotifyCallback = *mut ::core::ffi::c_void;
-pub type ISpNotifySink = *mut ::core::ffi::c_void;
-pub type ISpNotifySource = *mut ::core::ffi::c_void;
-pub type ISpNotifyTranslator = *mut ::core::ffi::c_void;
-pub type ISpObjectToken = *mut ::core::ffi::c_void;
-pub type ISpObjectTokenCategory = *mut ::core::ffi::c_void;
-pub type ISpObjectTokenInit = *mut ::core::ffi::c_void;
-pub type ISpObjectWithToken = *mut ::core::ffi::c_void;
-pub type ISpPhoneConverter = *mut ::core::ffi::c_void;
-pub type ISpPhoneticAlphabetConverter = *mut ::core::ffi::c_void;
-pub type ISpPhoneticAlphabetSelection = *mut ::core::ffi::c_void;
-pub type ISpPhrase = *mut ::core::ffi::c_void;
-pub type ISpPhrase2 = *mut ::core::ffi::c_void;
-pub type ISpPhraseAlt = *mut ::core::ffi::c_void;
-pub type ISpProperties = *mut ::core::ffi::c_void;
-pub type ISpRecoContext = *mut ::core::ffi::c_void;
-pub type ISpRecoContext2 = *mut ::core::ffi::c_void;
-pub type ISpRecoGrammar = *mut ::core::ffi::c_void;
-pub type ISpRecoGrammar2 = *mut ::core::ffi::c_void;
-pub type ISpRecoResult = *mut ::core::ffi::c_void;
-pub type ISpRecoResult2 = *mut ::core::ffi::c_void;
-pub type ISpRecognizer = *mut ::core::ffi::c_void;
-pub type ISpRecognizer2 = *mut ::core::ffi::c_void;
-pub type ISpRegDataKey = *mut ::core::ffi::c_void;
-pub type ISpResourceManager = *mut ::core::ffi::c_void;
-pub type ISpSerializeState = *mut ::core::ffi::c_void;
-pub type ISpShortcut = *mut ::core::ffi::c_void;
-pub type ISpStream = *mut ::core::ffi::c_void;
-pub type ISpStreamFormat = *mut ::core::ffi::c_void;
-pub type ISpStreamFormatConverter = *mut ::core::ffi::c_void;
-pub type ISpTranscript = *mut ::core::ffi::c_void;
-pub type ISpVoice = *mut ::core::ffi::c_void;
-pub type ISpXMLRecoResult = *mut ::core::ffi::c_void;
-pub type ISpeechAudio = *mut ::core::ffi::c_void;
-pub type ISpeechAudioBufferInfo = *mut ::core::ffi::c_void;
-pub type ISpeechAudioFormat = *mut ::core::ffi::c_void;
-pub type ISpeechAudioStatus = *mut ::core::ffi::c_void;
-pub type ISpeechBaseStream = *mut ::core::ffi::c_void;
-pub type ISpeechCustomStream = *mut ::core::ffi::c_void;
-pub type ISpeechDataKey = *mut ::core::ffi::c_void;
-pub type ISpeechFileStream = *mut ::core::ffi::c_void;
-pub type ISpeechGrammarRule = *mut ::core::ffi::c_void;
-pub type ISpeechGrammarRuleState = *mut ::core::ffi::c_void;
-pub type ISpeechGrammarRuleStateTransition = *mut ::core::ffi::c_void;
-pub type ISpeechGrammarRuleStateTransitions = *mut ::core::ffi::c_void;
-pub type ISpeechGrammarRules = *mut ::core::ffi::c_void;
-pub type ISpeechLexicon = *mut ::core::ffi::c_void;
-pub type ISpeechLexiconPronunciation = *mut ::core::ffi::c_void;
-pub type ISpeechLexiconPronunciations = *mut ::core::ffi::c_void;
-pub type ISpeechLexiconWord = *mut ::core::ffi::c_void;
-pub type ISpeechLexiconWords = *mut ::core::ffi::c_void;
-pub type ISpeechMMSysAudio = *mut ::core::ffi::c_void;
-pub type ISpeechMemoryStream = *mut ::core::ffi::c_void;
-pub type ISpeechObjectToken = *mut ::core::ffi::c_void;
-pub type ISpeechObjectTokenCategory = *mut ::core::ffi::c_void;
-pub type ISpeechObjectTokens = *mut ::core::ffi::c_void;
-pub type ISpeechPhoneConverter = *mut ::core::ffi::c_void;
-pub type ISpeechPhraseAlternate = *mut ::core::ffi::c_void;
-pub type ISpeechPhraseAlternates = *mut ::core::ffi::c_void;
-pub type ISpeechPhraseElement = *mut ::core::ffi::c_void;
-pub type ISpeechPhraseElements = *mut ::core::ffi::c_void;
-pub type ISpeechPhraseInfo = *mut ::core::ffi::c_void;
-pub type ISpeechPhraseInfoBuilder = *mut ::core::ffi::c_void;
-pub type ISpeechPhraseProperties = *mut ::core::ffi::c_void;
-pub type ISpeechPhraseProperty = *mut ::core::ffi::c_void;
-pub type ISpeechPhraseReplacement = *mut ::core::ffi::c_void;
-pub type ISpeechPhraseReplacements = *mut ::core::ffi::c_void;
-pub type ISpeechPhraseRule = *mut ::core::ffi::c_void;
-pub type ISpeechPhraseRules = *mut ::core::ffi::c_void;
-pub type ISpeechRecoContext = *mut ::core::ffi::c_void;
-pub type ISpeechRecoGrammar = *mut ::core::ffi::c_void;
-pub type ISpeechRecoResult = *mut ::core::ffi::c_void;
-pub type ISpeechRecoResult2 = *mut ::core::ffi::c_void;
-pub type ISpeechRecoResultDispatch = *mut ::core::ffi::c_void;
-pub type ISpeechRecoResultTimes = *mut ::core::ffi::c_void;
-pub type ISpeechRecognizer = *mut ::core::ffi::c_void;
-pub type ISpeechRecognizerStatus = *mut ::core::ffi::c_void;
-pub type ISpeechResourceLoader = *mut ::core::ffi::c_void;
-pub type ISpeechTextSelectionInformation = *mut ::core::ffi::c_void;
-pub type ISpeechVoice = *mut ::core::ffi::c_void;
-pub type ISpeechVoiceStatus = *mut ::core::ffi::c_void;
-pub type ISpeechWaveFormatEx = *mut ::core::ffi::c_void;
-pub type ISpeechXMLRecoResult = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IEnumSpObjectTokens {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, celt: u32, pelt: *mut *mut ::core::ffi::c_void, pceltfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Skip: unsafe extern "system" fn(this: *mut *mut Self, celt: u32) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Item: unsafe extern "system" fn(this: *mut *mut Self, index: u32, pptoken: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, pcount: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISpAudio {
+    pub base__: ISpStreamFormat,
+    pub SetState: unsafe extern "system" fn(this: *mut *mut Self, newstate: SPAUDIOSTATE, ullreserved: u64) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Media_Audio")]
+    pub SetFormat: unsafe extern "system" fn(this: *mut *mut Self, rguidfmtid: *const ::windows_sys::core::GUID, pwaveformatex: *const super::Audio::WAVEFORMATEX) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Media_Audio"))]
+    SetFormat: usize,
+    pub GetStatus: unsafe extern "system" fn(this: *mut *mut Self, pstatus: *mut SPAUDIOSTATUS) -> ::windows_sys::core::HRESULT,
+    pub SetBufferInfo: unsafe extern "system" fn(this: *mut *mut Self, pbuffinfo: *const SPAUDIOBUFFERINFO) -> ::windows_sys::core::HRESULT,
+    pub GetBufferInfo: unsafe extern "system" fn(this: *mut *mut Self, pbuffinfo: *mut SPAUDIOBUFFERINFO) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Media_Audio")]
+    pub GetDefaultFormat: unsafe extern "system" fn(this: *mut *mut Self, pformatid: *mut ::windows_sys::core::GUID, ppcomemwaveformatex: *mut *mut super::Audio::WAVEFORMATEX) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Media_Audio"))]
+    GetDefaultFormat: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub EventHandle: unsafe extern "system" fn(this: *mut *mut Self) -> super::super::Foundation::HANDLE,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    EventHandle: usize,
+    pub GetVolumeLevel: unsafe extern "system" fn(this: *mut *mut Self, plevel: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetVolumeLevel: unsafe extern "system" fn(this: *mut *mut Self, level: u32) -> ::windows_sys::core::HRESULT,
+    pub GetBufferNotifySize: unsafe extern "system" fn(this: *mut *mut Self, pcbsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetBufferNotifySize: unsafe extern "system" fn(this: *mut *mut Self, cbsize: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISpContainerLexicon {
+    pub base__: ISpLexicon,
+    pub AddLexicon: unsafe extern "system" fn(this: *mut *mut Self, paddlexicon: *mut ::core::ffi::c_void, dwflags: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISpDataKey {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetData: unsafe extern "system" fn(this: *mut *mut Self, pszvaluename: ::windows_sys::core::PCWSTR, cbdata: u32, pdata: *const u8) -> ::windows_sys::core::HRESULT,
+    pub GetData: unsafe extern "system" fn(this: *mut *mut Self, pszvaluename: ::windows_sys::core::PCWSTR, pcbdata: *mut u32, pdata: *mut u8) -> ::windows_sys::core::HRESULT,
+    pub SetStringValue: unsafe extern "system" fn(this: *mut *mut Self, pszvaluename: ::windows_sys::core::PCWSTR, pszvalue: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetStringValue: unsafe extern "system" fn(this: *mut *mut Self, pszvaluename: ::windows_sys::core::PCWSTR, ppszvalue: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetDWORD: unsafe extern "system" fn(this: *mut *mut Self, pszvaluename: ::windows_sys::core::PCWSTR, dwvalue: u32) -> ::windows_sys::core::HRESULT,
+    pub GetDWORD: unsafe extern "system" fn(this: *mut *mut Self, pszvaluename: ::windows_sys::core::PCWSTR, pdwvalue: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub OpenKey: unsafe extern "system" fn(this: *mut *mut Self, pszsubkeyname: ::windows_sys::core::PCWSTR, ppsubkey: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateKey: unsafe extern "system" fn(this: *mut *mut Self, pszsubkey: ::windows_sys::core::PCWSTR, ppsubkey: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub DeleteKey: unsafe extern "system" fn(this: *mut *mut Self, pszsubkey: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub DeleteValue: unsafe extern "system" fn(this: *mut *mut Self, pszvaluename: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub EnumKeys: unsafe extern "system" fn(this: *mut *mut Self, index: u32, ppszsubkeyname: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub EnumValues: unsafe extern "system" fn(this: *mut *mut Self, index: u32, ppszvaluename: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISpDisplayAlternates {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetDisplayAlternates: unsafe extern "system" fn(this: *mut *mut Self, pphrase: *const SPDISPLAYPHRASE, crequestcount: u32, ppcomemphrases: *mut *mut SPDISPLAYPHRASE, pcphrasesreturned: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetFullStopTrailSpace: unsafe extern "system" fn(this: *mut *mut Self, ultrailspace: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISpEnginePronunciation {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Normalize: unsafe extern "system" fn(this: *mut *mut Self, pszword: ::windows_sys::core::PCWSTR, pszleftcontext: ::windows_sys::core::PCWSTR, pszrightcontext: ::windows_sys::core::PCWSTR, langid: u16, pnormalizationlist: *mut SPNORMALIZATIONLIST) -> ::windows_sys::core::HRESULT,
+    pub GetPronunciations: unsafe extern "system" fn(this: *mut *mut Self, pszword: ::windows_sys::core::PCWSTR, pszleftcontext: ::windows_sys::core::PCWSTR, pszrightcontext: ::windows_sys::core::PCWSTR, langid: u16, penginepronunciationlist: *mut SPWORDPRONUNCIATIONLIST) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISpEventSink {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AddEvents: unsafe extern "system" fn(this: *mut *mut Self, peventarray: *const SPEVENT, ulcount: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AddEvents: usize,
+    pub GetEventInterest: unsafe extern "system" fn(this: *mut *mut Self, pulleventinterest: *mut u64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISpEventSource {
+    pub base__: ISpNotifySource,
+    pub SetInterest: unsafe extern "system" fn(this: *mut *mut Self, ulleventinterest: u64, ullqueuedinterest: u64) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetEvents: unsafe extern "system" fn(this: *mut *mut Self, ulcount: u32, peventarray: *mut SPEVENT, pulfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetEvents: usize,
+    pub GetInfo: unsafe extern "system" fn(this: *mut *mut Self, pinfo: *mut SPEVENTSOURCEINFO) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISpEventSource2 {
+    pub base__: ISpEventSource,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetEventsEx: unsafe extern "system" fn(this: *mut *mut Self, ulcount: u32, peventarray: *mut SPEVENTEX, pulfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetEventsEx: usize,
+}
+#[repr(C)]
+pub struct ISpGrammarBuilder {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub ResetGrammar: unsafe extern "system" fn(this: *mut *mut Self, newlanguage: u16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetRule: unsafe extern "system" fn(this: *mut *mut Self, pszrulename: ::windows_sys::core::PCWSTR, dwruleid: u32, dwattributes: u32, fcreateifnotexist: super::super::Foundation::BOOL, phinitialstate: *mut *mut SPSTATEHANDLE__) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetRule: usize,
+    pub ClearRule: unsafe extern "system" fn(this: *mut *mut Self, hstate: *mut SPSTATEHANDLE__) -> ::windows_sys::core::HRESULT,
+    pub CreateNewState: unsafe extern "system" fn(this: *mut *mut Self, hstate: *mut SPSTATEHANDLE__, phstate: *mut *mut SPSTATEHANDLE__) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub AddWordTransition: unsafe extern "system" fn(this: *mut *mut Self, hfromstate: *mut SPSTATEHANDLE__, htostate: *mut SPSTATEHANDLE__, psz: ::windows_sys::core::PCWSTR, pszseparators: ::windows_sys::core::PCWSTR, ewordtype: SPGRAMMARWORDTYPE, weight: f32, ppropinfo: *const SPPROPERTYINFO) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    AddWordTransition: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub AddRuleTransition: unsafe extern "system" fn(this: *mut *mut Self, hfromstate: *mut SPSTATEHANDLE__, htostate: *mut SPSTATEHANDLE__, hrule: *mut SPSTATEHANDLE__, weight: f32, ppropinfo: *const SPPROPERTYINFO) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    AddRuleTransition: usize,
+    pub AddResource: unsafe extern "system" fn(this: *mut *mut Self, hrulestate: *mut SPSTATEHANDLE__, pszresourcename: ::windows_sys::core::PCWSTR, pszresourcevalue: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub Commit: unsafe extern "system" fn(this: *mut *mut Self, dwreserved: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISpGrammarBuilder2 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub AddTextSubset: unsafe extern "system" fn(this: *mut *mut Self, hfromstate: *mut SPSTATEHANDLE__, htostate: *mut SPSTATEHANDLE__, psz: ::windows_sys::core::PCWSTR, ematchmode: SPMATCHINGMODE) -> ::windows_sys::core::HRESULT,
+    pub SetPhoneticAlphabet: unsafe extern "system" fn(this: *mut *mut Self, phoneticalphabet: PHONETICALPHABET) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISpLexicon {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetPronunciations: unsafe extern "system" fn(this: *mut *mut Self, pszword: ::windows_sys::core::PCWSTR, langid: u16, dwflags: u32, pwordpronunciationlist: *mut SPWORDPRONUNCIATIONLIST) -> ::windows_sys::core::HRESULT,
+    pub AddPronunciation: unsafe extern "system" fn(this: *mut *mut Self, pszword: ::windows_sys::core::PCWSTR, langid: u16, epartofspeech: SPPARTOFSPEECH, pszpronunciation: *const u16) -> ::windows_sys::core::HRESULT,
+    pub RemovePronunciation: unsafe extern "system" fn(this: *mut *mut Self, pszword: ::windows_sys::core::PCWSTR, langid: u16, epartofspeech: SPPARTOFSPEECH, pszpronunciation: *const u16) -> ::windows_sys::core::HRESULT,
+    pub GetGeneration: unsafe extern "system" fn(this: *mut *mut Self, pdwgeneration: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetGenerationChange: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, pdwgeneration: *mut u32, pwordlist: *mut SPWORDLIST) -> ::windows_sys::core::HRESULT,
+    pub GetWords: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, pdwgeneration: *mut u32, pdwcookie: *mut u32, pwordlist: *mut SPWORDLIST) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISpMMSysAudio {
+    pub base__: ISpAudio,
+    pub GetDeviceId: unsafe extern "system" fn(this: *mut *mut Self, pudeviceid: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetDeviceId: unsafe extern "system" fn(this: *mut *mut Self, udeviceid: u32) -> ::windows_sys::core::HRESULT,
+    pub GetMMHandle: unsafe extern "system" fn(this: *mut *mut Self, phandle: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetLineId: unsafe extern "system" fn(this: *mut *mut Self, pulineid: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetLineId: unsafe extern "system" fn(this: *mut *mut Self, ulineid: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISpNotifyCallback {
+    #[cfg(feature = "Win32_Foundation")]
+    pub NotifyCallback: unsafe extern "system" fn(this: *mut *mut Self, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    NotifyCallback: usize,
+}
+#[repr(C)]
+pub struct ISpNotifySink {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Notify: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISpNotifySource {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetNotifySink: unsafe extern "system" fn(this: *mut *mut Self, pnotifysink: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetNotifyWindowMessage: unsafe extern "system" fn(this: *mut *mut Self, hwnd: super::super::Foundation::HWND, msg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetNotifyWindowMessage: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetNotifyCallbackFunction: unsafe extern "system" fn(this: *mut *mut Self, pfncallback: *mut *mut ::core::ffi::c_void, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetNotifyCallbackFunction: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetNotifyCallbackInterface: unsafe extern "system" fn(this: *mut *mut Self, pspcallback: *mut ::core::ffi::c_void, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetNotifyCallbackInterface: usize,
+    pub SetNotifyWin32Event: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub WaitForNotifyEvent: unsafe extern "system" fn(this: *mut *mut Self, dwmilliseconds: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetNotifyEventHandle: unsafe extern "system" fn(this: *mut *mut Self) -> super::super::Foundation::HANDLE,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetNotifyEventHandle: usize,
+}
+#[repr(C)]
+pub struct ISpNotifyTranslator {
+    pub base__: ISpNotifySink,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InitWindowMessage: unsafe extern "system" fn(this: *mut *mut Self, hwnd: super::super::Foundation::HWND, msg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InitWindowMessage: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InitCallback: unsafe extern "system" fn(this: *mut *mut Self, pfncallback: *mut *mut ::core::ffi::c_void, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InitCallback: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InitSpNotifyCallback: unsafe extern "system" fn(this: *mut *mut Self, pspcallback: *mut ::core::ffi::c_void, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InitSpNotifyCallback: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InitWin32Event: unsafe extern "system" fn(this: *mut *mut Self, hevent: super::super::Foundation::HANDLE, fclosehandleonrelease: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InitWin32Event: usize,
+    pub Wait: unsafe extern "system" fn(this: *mut *mut Self, dwmilliseconds: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetEventHandle: unsafe extern "system" fn(this: *mut *mut Self) -> super::super::Foundation::HANDLE,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetEventHandle: usize,
+}
+#[repr(C)]
+pub struct ISpObjectToken {
+    pub base__: ISpDataKey,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetId: unsafe extern "system" fn(this: *mut *mut Self, pszcategoryid: ::windows_sys::core::PCWSTR, psztokenid: ::windows_sys::core::PCWSTR, fcreateifnotexist: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetId: usize,
+    pub GetId: unsafe extern "system" fn(this: *mut *mut Self, ppszcomemtokenid: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetCategory: unsafe extern "system" fn(this: *mut *mut Self, pptokencategory: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateInstance: unsafe extern "system" fn(this: *mut *mut Self, punkouter: *mut ::core::ffi::c_void, dwclscontext: u32, riid: *const ::windows_sys::core::GUID, ppvobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetStorageFileName: unsafe extern "system" fn(this: *mut *mut Self, clsidcaller: *const ::windows_sys::core::GUID, pszvaluename: ::windows_sys::core::PCWSTR, pszfilenamespecifier: ::windows_sys::core::PCWSTR, nfolder: u32, ppszfilepath: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RemoveStorageFileName: unsafe extern "system" fn(this: *mut *mut Self, clsidcaller: *const ::windows_sys::core::GUID, pszkeyname: ::windows_sys::core::PCWSTR, fdeletefile: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RemoveStorageFileName: usize,
+    pub Remove: unsafe extern "system" fn(this: *mut *mut Self, pclsidcaller: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsUISupported: unsafe extern "system" fn(this: *mut *mut Self, psztypeofui: ::windows_sys::core::PCWSTR, pvextradata: *mut ::core::ffi::c_void, cbextradata: u32, punkobject: *mut ::core::ffi::c_void, pfsupported: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsUISupported: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DisplayUI: unsafe extern "system" fn(this: *mut *mut Self, hwndparent: super::super::Foundation::HWND, psztitle: ::windows_sys::core::PCWSTR, psztypeofui: ::windows_sys::core::PCWSTR, pvextradata: *mut ::core::ffi::c_void, cbextradata: u32, punkobject: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DisplayUI: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MatchesAttributes: unsafe extern "system" fn(this: *mut *mut Self, pszattributes: ::windows_sys::core::PCWSTR, pfmatches: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MatchesAttributes: usize,
+}
+#[repr(C)]
+pub struct ISpObjectTokenCategory {
+    pub base__: ISpDataKey,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetId: unsafe extern "system" fn(this: *mut *mut Self, pszcategoryid: ::windows_sys::core::PCWSTR, fcreateifnotexist: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetId: usize,
+    pub GetId: unsafe extern "system" fn(this: *mut *mut Self, ppszcomemcategoryid: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetDataKey: unsafe extern "system" fn(this: *mut *mut Self, spdkl: SPDATAKEYLOCATION, ppdatakey: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EnumTokens: unsafe extern "system" fn(this: *mut *mut Self, pzsreqattribs: ::windows_sys::core::PCWSTR, pszoptattribs: ::windows_sys::core::PCWSTR, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetDefaultTokenId: unsafe extern "system" fn(this: *mut *mut Self, psztokenid: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetDefaultTokenId: unsafe extern "system" fn(this: *mut *mut Self, ppszcomemtokenid: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISpObjectTokenInit {
+    pub base__: ISpObjectToken,
+    pub InitFromDataKey: unsafe extern "system" fn(this: *mut *mut Self, pszcategoryid: ::windows_sys::core::PCWSTR, psztokenid: ::windows_sys::core::PCWSTR, pdatakey: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISpObjectWithToken {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetObjectToken: unsafe extern "system" fn(this: *mut *mut Self, ptoken: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetObjectToken: unsafe extern "system" fn(this: *mut *mut Self, pptoken: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISpPhoneConverter {
+    pub base__: ISpObjectWithToken,
+    pub PhoneToId: unsafe extern "system" fn(this: *mut *mut Self, pszphone: ::windows_sys::core::PCWSTR, pid: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub IdToPhone: unsafe extern "system" fn(this: *mut *mut Self, pid: *const u16, pszphone: ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISpPhoneticAlphabetConverter {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetLangId: unsafe extern "system" fn(this: *mut *mut Self, plangid: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub SetLangId: unsafe extern "system" fn(this: *mut *mut Self, langid: u16) -> ::windows_sys::core::HRESULT,
+    pub SAPI2UPS: unsafe extern "system" fn(this: *mut *mut Self, pszsapiid: *const u16, pszupsid: *mut u16, cmaxlength: u32) -> ::windows_sys::core::HRESULT,
+    pub UPS2SAPI: unsafe extern "system" fn(this: *mut *mut Self, pszupsid: *const u16, pszsapiid: *mut u16, cmaxlength: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetMaxConvertLength: unsafe extern "system" fn(this: *mut *mut Self, csrclength: u32, bsapi2ups: super::super::Foundation::BOOL, pcmaxdestlength: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetMaxConvertLength: usize,
+}
+#[repr(C)]
+pub struct ISpPhoneticAlphabetSelection {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsAlphabetUPS: unsafe extern "system" fn(this: *mut *mut Self, pfisups: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsAlphabetUPS: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetAlphabetToUPS: unsafe extern "system" fn(this: *mut *mut Self, fforceups: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetAlphabetToUPS: usize,
+}
+#[repr(C)]
+pub struct ISpPhrase {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetPhrase: unsafe extern "system" fn(this: *mut *mut Self, ppcomemphrase: *mut *mut SPPHRASE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetPhrase: usize,
+    pub GetSerializedPhrase: unsafe extern "system" fn(this: *mut *mut Self, ppcomemphrase: *mut *mut SPSERIALIZEDPHRASE) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetText: unsafe extern "system" fn(this: *mut *mut Self, ulstart: u32, ulcount: u32, fusetextreplacements: super::super::Foundation::BOOL, ppszcomemtext: *mut ::windows_sys::core::PWSTR, pbdisplayattributes: *mut u8) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetText: usize,
+    pub Discard: unsafe extern "system" fn(this: *mut *mut Self, dwvaluetypes: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISpPhrase2 {
+    pub base__: ISpPhrase,
+    pub GetXMLResult: unsafe extern "system" fn(this: *mut *mut Self, ppszcomemxmlresult: *mut ::windows_sys::core::PWSTR, options: SPXMLRESULTOPTIONS) -> ::windows_sys::core::HRESULT,
+    pub GetXMLErrorInfo: unsafe extern "system" fn(this: *mut *mut Self, psemanticerrorinfo: *mut SPSEMANTICERRORINFO) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetAudio: unsafe extern "system" fn(this: *mut *mut Self, ulstartelement: u32, celements: u32, ppstream: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetAudio: usize,
+}
+#[repr(C)]
+pub struct ISpPhraseAlt {
+    pub base__: ISpPhrase,
+    pub GetAltInfo: unsafe extern "system" fn(this: *mut *mut Self, ppparent: *mut *mut ::core::ffi::c_void, pulstartelementinparent: *mut u32, pcelementsinparent: *mut u32, pcelementsinalt: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Commit: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISpProperties {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetPropertyNum: unsafe extern "system" fn(this: *mut *mut Self, pname: ::windows_sys::core::PCWSTR, lvalue: i32) -> ::windows_sys::core::HRESULT,
+    pub GetPropertyNum: unsafe extern "system" fn(this: *mut *mut Self, pname: ::windows_sys::core::PCWSTR, plvalue: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetPropertyString: unsafe extern "system" fn(this: *mut *mut Self, pname: ::windows_sys::core::PCWSTR, pvalue: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetPropertyString: unsafe extern "system" fn(this: *mut *mut Self, pname: ::windows_sys::core::PCWSTR, ppcomemvalue: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISpRecoContext {
+    pub base__: ISpEventSource,
+    pub GetRecognizer: unsafe extern "system" fn(this: *mut *mut Self, pprecognizer: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateGrammar: unsafe extern "system" fn(this: *mut *mut Self, ullgrammarid: u64, ppgrammar: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetStatus: unsafe extern "system" fn(this: *mut *mut Self, pstatus: *mut SPRECOCONTEXTSTATUS) -> ::windows_sys::core::HRESULT,
+    pub GetMaxAlternates: unsafe extern "system" fn(this: *mut *mut Self, pcalternates: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetMaxAlternates: unsafe extern "system" fn(this: *mut *mut Self, calternates: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Media_Audio")]
+    pub SetAudioOptions: unsafe extern "system" fn(this: *mut *mut Self, options: SPAUDIOOPTIONS, paudioformatid: *const ::windows_sys::core::GUID, pwaveformatex: *const super::Audio::WAVEFORMATEX) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Media_Audio"))]
+    SetAudioOptions: usize,
+    #[cfg(feature = "Win32_Media_Audio")]
+    pub GetAudioOptions: unsafe extern "system" fn(this: *mut *mut Self, poptions: *mut SPAUDIOOPTIONS, paudioformatid: *mut ::windows_sys::core::GUID, ppcomemwfex: *mut *mut super::Audio::WAVEFORMATEX) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Media_Audio"))]
+    GetAudioOptions: usize,
+    pub DeserializeResult: unsafe extern "system" fn(this: *mut *mut Self, pserializedresult: *const SPSERIALIZEDRESULT, ppresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Bookmark: unsafe extern "system" fn(this: *mut *mut Self, options: SPBOOKMARKOPTIONS, ullstreamposition: u64, lparamevent: super::super::Foundation::LPARAM) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Bookmark: usize,
+    pub SetAdaptationData: unsafe extern "system" fn(this: *mut *mut Self, padaptationdata: ::windows_sys::core::PCWSTR, cch: u32) -> ::windows_sys::core::HRESULT,
+    pub Pause: unsafe extern "system" fn(this: *mut *mut Self, dwreserved: u32) -> ::windows_sys::core::HRESULT,
+    pub Resume: unsafe extern "system" fn(this: *mut *mut Self, dwreserved: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetVoice: unsafe extern "system" fn(this: *mut *mut Self, pvoice: *mut ::core::ffi::c_void, fallowformatchanges: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetVoice: usize,
+    pub GetVoice: unsafe extern "system" fn(this: *mut *mut Self, ppvoice: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetVoicePurgeEvent: unsafe extern "system" fn(this: *mut *mut Self, ulleventinterest: u64) -> ::windows_sys::core::HRESULT,
+    pub GetVoicePurgeEvent: unsafe extern "system" fn(this: *mut *mut Self, pulleventinterest: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub SetContextState: unsafe extern "system" fn(this: *mut *mut Self, econtextstate: SPCONTEXTSTATE) -> ::windows_sys::core::HRESULT,
+    pub GetContextState: unsafe extern "system" fn(this: *mut *mut Self, pecontextstate: *mut SPCONTEXTSTATE) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISpRecoContext2 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetGrammarOptions: unsafe extern "system" fn(this: *mut *mut Self, egrammaroptions: u32) -> ::windows_sys::core::HRESULT,
+    pub GetGrammarOptions: unsafe extern "system" fn(this: *mut *mut Self, pegrammaroptions: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetAdaptationData2: unsafe extern "system" fn(this: *mut *mut Self, padaptationdata: ::windows_sys::core::PCWSTR, cch: u32, ptopicname: ::windows_sys::core::PCWSTR, eadaptationsettings: u32, erelevance: SPADAPTATIONRELEVANCE) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISpRecoGrammar {
+    pub base__: ISpGrammarBuilder,
+    pub GetGrammarId: unsafe extern "system" fn(this: *mut *mut Self, pullgrammarid: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetRecoContext: unsafe extern "system" fn(this: *mut *mut Self, pprecoctxt: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub LoadCmdFromFile: unsafe extern "system" fn(this: *mut *mut Self, pszfilename: ::windows_sys::core::PCWSTR, options: SPLOADOPTIONS) -> ::windows_sys::core::HRESULT,
+    pub LoadCmdFromObject: unsafe extern "system" fn(this: *mut *mut Self, rcid: *const ::windows_sys::core::GUID, pszgrammarname: ::windows_sys::core::PCWSTR, options: SPLOADOPTIONS) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub LoadCmdFromResource: unsafe extern "system" fn(this: *mut *mut Self, hmodule: super::super::Foundation::HINSTANCE, pszresourcename: ::windows_sys::core::PCWSTR, pszresourcetype: ::windows_sys::core::PCWSTR, wlanguage: u16, options: SPLOADOPTIONS) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    LoadCmdFromResource: usize,
+    pub LoadCmdFromMemory: unsafe extern "system" fn(this: *mut *mut Self, pgrammar: *const SPBINARYGRAMMAR, options: SPLOADOPTIONS) -> ::windows_sys::core::HRESULT,
+    pub LoadCmdFromProprietaryGrammar: unsafe extern "system" fn(this: *mut *mut Self, rguidparam: *const ::windows_sys::core::GUID, pszstringparam: ::windows_sys::core::PCWSTR, pvdataprarm: *const ::core::ffi::c_void, cbdatasize: u32, options: SPLOADOPTIONS) -> ::windows_sys::core::HRESULT,
+    pub SetRuleState: unsafe extern "system" fn(this: *mut *mut Self, pszname: ::windows_sys::core::PCWSTR, preserved: *mut ::core::ffi::c_void, newstate: SPRULESTATE) -> ::windows_sys::core::HRESULT,
+    pub SetRuleIdState: unsafe extern "system" fn(this: *mut *mut Self, ulruleid: u32, newstate: SPRULESTATE) -> ::windows_sys::core::HRESULT,
+    pub LoadDictation: unsafe extern "system" fn(this: *mut *mut Self, psztopicname: ::windows_sys::core::PCWSTR, options: SPLOADOPTIONS) -> ::windows_sys::core::HRESULT,
+    pub UnloadDictation: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub SetDictationState: unsafe extern "system" fn(this: *mut *mut Self, newstate: SPRULESTATE) -> ::windows_sys::core::HRESULT,
+    pub SetWordSequenceData: unsafe extern "system" fn(this: *mut *mut Self, ptext: ::windows_sys::core::PCWSTR, cchtext: u32, pinfo: *const SPTEXTSELECTIONINFO) -> ::windows_sys::core::HRESULT,
+    pub SetTextSelection: unsafe extern "system" fn(this: *mut *mut Self, pinfo: *const SPTEXTSELECTIONINFO) -> ::windows_sys::core::HRESULT,
+    pub IsPronounceable: unsafe extern "system" fn(this: *mut *mut Self, pszword: ::windows_sys::core::PCWSTR, pwordpronounceable: *mut SPWORDPRONOUNCEABLE) -> ::windows_sys::core::HRESULT,
+    pub SetGrammarState: unsafe extern "system" fn(this: *mut *mut Self, egrammarstate: SPGRAMMARSTATE) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SaveCmd: unsafe extern "system" fn(this: *mut *mut Self, pstream: *mut ::core::ffi::c_void, ppszcomemerrortext: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SaveCmd: usize,
+    pub GetGrammarState: unsafe extern "system" fn(this: *mut *mut Self, pegrammarstate: *mut SPGRAMMARSTATE) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISpRecoGrammar2 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetRules: unsafe extern "system" fn(this: *mut *mut Self, ppcomemrules: *mut *mut SPRULE, punumrules: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub LoadCmdFromFile2: unsafe extern "system" fn(this: *mut *mut Self, pszfilename: ::windows_sys::core::PCWSTR, options: SPLOADOPTIONS, pszsharinguri: ::windows_sys::core::PCWSTR, pszbaseuri: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub LoadCmdFromMemory2: unsafe extern "system" fn(this: *mut *mut Self, pgrammar: *const SPBINARYGRAMMAR, options: SPLOADOPTIONS, pszsharinguri: ::windows_sys::core::PCWSTR, pszbaseuri: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetRulePriority: unsafe extern "system" fn(this: *mut *mut Self, pszrulename: ::windows_sys::core::PCWSTR, ulruleid: u32, nrulepriority: i32) -> ::windows_sys::core::HRESULT,
+    pub SetRuleWeight: unsafe extern "system" fn(this: *mut *mut Self, pszrulename: ::windows_sys::core::PCWSTR, ulruleid: u32, flweight: f32) -> ::windows_sys::core::HRESULT,
+    pub SetDictationWeight: unsafe extern "system" fn(this: *mut *mut Self, flweight: f32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetGrammarLoader: unsafe extern "system" fn(this: *mut *mut Self, ploader: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetGrammarLoader: usize,
+    #[cfg(feature = "Win32_System_Com_Urlmon")]
+    pub SetSMLSecurityManager: unsafe extern "system" fn(this: *mut *mut Self, psmlsecuritymanager: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com_Urlmon"))]
+    SetSMLSecurityManager: usize,
+}
+#[repr(C)]
+pub struct ISpRecoResult {
+    pub base__: ISpPhrase,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetResultTimes: unsafe extern "system" fn(this: *mut *mut Self, ptimes: *mut SPRECORESULTTIMES) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetResultTimes: usize,
+    pub GetAlternates: unsafe extern "system" fn(this: *mut *mut Self, ulstartelement: u32, celements: u32, ulrequestcount: u32, ppphrases: *mut *mut ::core::ffi::c_void, pcphrasesreturned: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetAudio: unsafe extern "system" fn(this: *mut *mut Self, ulstartelement: u32, celements: u32, ppstream: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetAudio: usize,
+    pub SpeakAudio: unsafe extern "system" fn(this: *mut *mut Self, ulstartelement: u32, celements: u32, dwflags: u32, pulstreamnumber: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Serialize: unsafe extern "system" fn(this: *mut *mut Self, ppcomemserializedresult: *mut *mut SPSERIALIZEDRESULT) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Media_Audio")]
+    pub ScaleAudio: unsafe extern "system" fn(this: *mut *mut Self, paudioformatid: *const ::windows_sys::core::GUID, pwaveformatex: *const super::Audio::WAVEFORMATEX) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Media_Audio"))]
+    ScaleAudio: usize,
+    pub GetRecoContext: unsafe extern "system" fn(this: *mut *mut Self, pprecocontext: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISpRecoResult2 {
+    pub base__: ISpRecoResult,
+    pub CommitAlternate: unsafe extern "system" fn(this: *mut *mut Self, pphrasealt: *mut ::core::ffi::c_void, ppnewresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CommitText: unsafe extern "system" fn(this: *mut *mut Self, ulstartelement: u32, celements: u32, pszcorrecteddata: ::windows_sys::core::PCWSTR, ecommitflags: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetTextFeedback: unsafe extern "system" fn(this: *mut *mut Self, pszfeedback: ::windows_sys::core::PCWSTR, fsuccessful: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetTextFeedback: usize,
+}
+#[repr(C)]
+pub struct ISpRecognizer {
+    pub base__: ISpProperties,
+    pub SetRecognizer: unsafe extern "system" fn(this: *mut *mut Self, precognizer: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetRecognizer: unsafe extern "system" fn(this: *mut *mut Self, pprecognizer: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetInput: unsafe extern "system" fn(this: *mut *mut Self, punkinput: *mut ::core::ffi::c_void, fallowformatchanges: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetInput: usize,
+    pub GetInputObjectToken: unsafe extern "system" fn(this: *mut *mut Self, pptoken: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetInputStream: unsafe extern "system" fn(this: *mut *mut Self, ppstream: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetInputStream: usize,
+    pub CreateRecoContext: unsafe extern "system" fn(this: *mut *mut Self, ppnewctxt: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetRecoProfile: unsafe extern "system" fn(this: *mut *mut Self, pptoken: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetRecoProfile: unsafe extern "system" fn(this: *mut *mut Self, ptoken: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub IsSharedInstance: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetRecoState: unsafe extern "system" fn(this: *mut *mut Self, pstate: *mut SPRECOSTATE) -> ::windows_sys::core::HRESULT,
+    pub SetRecoState: unsafe extern "system" fn(this: *mut *mut Self, newstate: SPRECOSTATE) -> ::windows_sys::core::HRESULT,
+    pub GetStatus: unsafe extern "system" fn(this: *mut *mut Self, pstatus: *mut SPRECOGNIZERSTATUS) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Media_Audio")]
+    pub GetFormat: unsafe extern "system" fn(this: *mut *mut Self, waveformattype: SPWAVEFORMATTYPE, pformatid: *mut ::windows_sys::core::GUID, ppcomemwfex: *mut *mut super::Audio::WAVEFORMATEX) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Media_Audio"))]
+    GetFormat: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsUISupported: unsafe extern "system" fn(this: *mut *mut Self, psztypeofui: ::windows_sys::core::PCWSTR, pvextradata: *mut ::core::ffi::c_void, cbextradata: u32, pfsupported: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsUISupported: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DisplayUI: unsafe extern "system" fn(this: *mut *mut Self, hwndparent: super::super::Foundation::HWND, psztitle: ::windows_sys::core::PCWSTR, psztypeofui: ::windows_sys::core::PCWSTR, pvextradata: *mut ::core::ffi::c_void, cbextradata: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DisplayUI: usize,
+    pub EmulateRecognition: unsafe extern "system" fn(this: *mut *mut Self, pphrase: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISpRecognizer2 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub EmulateRecognitionEx: unsafe extern "system" fn(this: *mut *mut Self, pphrase: *mut ::core::ffi::c_void, dwcompareflags: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetTrainingState: unsafe extern "system" fn(this: *mut *mut Self, fdoingtraining: super::super::Foundation::BOOL, fadaptfromtrainingdata: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetTrainingState: usize,
+    pub ResetAcousticModelAdaptation: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISpRegDataKey {
+    pub base__: ISpDataKey,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
+    pub SetKey: unsafe extern "system" fn(this: *mut *mut Self, hkey: super::super::System::Registry::HKEY, freadonly: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Registry")))]
+    SetKey: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISpResourceManager {
+    pub base__: super::super::System::Com::IServiceProvider,
+    pub SetObject: unsafe extern "system" fn(this: *mut *mut Self, guidserviceid: *const ::windows_sys::core::GUID, punkobject: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetObject: unsafe extern "system" fn(this: *mut *mut Self, guidserviceid: *const ::windows_sys::core::GUID, objectclsid: *const ::windows_sys::core::GUID, objectiid: *const ::windows_sys::core::GUID, freleasewhenlastexternalrefreleased: super::super::Foundation::BOOL, ppobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetObject: usize,
+}
+#[repr(C)]
+pub struct ISpSerializeState {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetSerializedState: unsafe extern "system" fn(this: *mut *mut Self, ppbdata: *mut *mut u8, pulsize: *mut u32, dwreserved: u32) -> ::windows_sys::core::HRESULT,
+    pub SetSerializedState: unsafe extern "system" fn(this: *mut *mut Self, pbdata: *const u8, ulsize: u32, dwreserved: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISpShortcut {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub AddShortcut: unsafe extern "system" fn(this: *mut *mut Self, pszdisplay: ::windows_sys::core::PCWSTR, langid: u16, pszspoken: ::windows_sys::core::PCWSTR, shtype: SPSHORTCUTTYPE) -> ::windows_sys::core::HRESULT,
+    pub RemoveShortcut: unsafe extern "system" fn(this: *mut *mut Self, pszdisplay: ::windows_sys::core::PCWSTR, langid: u16, pszspoken: ::windows_sys::core::PCWSTR, shtype: SPSHORTCUTTYPE) -> ::windows_sys::core::HRESULT,
+    pub GetShortcuts: unsafe extern "system" fn(this: *mut *mut Self, langid: u16, pshortcutpairlist: *mut SPSHORTCUTPAIRLIST) -> ::windows_sys::core::HRESULT,
+    pub GetGeneration: unsafe extern "system" fn(this: *mut *mut Self, pdwgeneration: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetWordsFromGenerationChange: unsafe extern "system" fn(this: *mut *mut Self, pdwgeneration: *mut u32, pwordlist: *mut SPWORDLIST) -> ::windows_sys::core::HRESULT,
+    pub GetWords: unsafe extern "system" fn(this: *mut *mut Self, pdwgeneration: *mut u32, pdwcookie: *mut u32, pwordlist: *mut SPWORDLIST) -> ::windows_sys::core::HRESULT,
+    pub GetShortcutsForGeneration: unsafe extern "system" fn(this: *mut *mut Self, pdwgeneration: *mut u32, pdwcookie: *mut u32, pshortcutpairlist: *mut SPSHORTCUTPAIRLIST) -> ::windows_sys::core::HRESULT,
+    pub GetGenerationChange: unsafe extern "system" fn(this: *mut *mut Self, pdwgeneration: *mut u32, pshortcutpairlist: *mut SPSHORTCUTPAIRLIST) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISpStream {
+    pub base__: ISpStreamFormat,
+    #[cfg(all(feature = "Win32_Media_Audio", feature = "Win32_System_Com"))]
+    pub SetBaseStream: unsafe extern "system" fn(this: *mut *mut Self, pstream: *mut ::core::ffi::c_void, rguidformat: *const ::windows_sys::core::GUID, pwaveformatex: *const super::Audio::WAVEFORMATEX) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Media_Audio", feature = "Win32_System_Com")))]
+    SetBaseStream: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetBaseStream: unsafe extern "system" fn(this: *mut *mut Self, ppstream: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetBaseStream: usize,
+    #[cfg(feature = "Win32_Media_Audio")]
+    pub BindToFile: unsafe extern "system" fn(this: *mut *mut Self, pszfilename: ::windows_sys::core::PCWSTR, emode: SPFILEMODE, pformatid: *const ::windows_sys::core::GUID, pwaveformatex: *const super::Audio::WAVEFORMATEX, ulleventinterest: u64) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Media_Audio"))]
+    BindToFile: usize,
+    pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISpStreamFormat {
+    pub base__: super::super::System::Com::IStream,
+    #[cfg(feature = "Win32_Media_Audio")]
+    pub GetFormat: unsafe extern "system" fn(this: *mut *mut Self, pguidformatid: *const ::windows_sys::core::GUID, ppcomemwaveformatex: *mut *mut super::Audio::WAVEFORMATEX) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Media_Audio"))]
+    GetFormat: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISpStreamFormatConverter {
+    pub base__: ISpStreamFormat,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub SetBaseStream: unsafe extern "system" fn(this: *mut *mut Self, pstream: *mut ::core::ffi::c_void, fsetformattobasestreamformat: super::super::Foundation::BOOL, fwritetobasestream: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    SetBaseStream: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetBaseStream: unsafe extern "system" fn(this: *mut *mut Self, ppstream: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetBaseStream: usize,
+    #[cfg(feature = "Win32_Media_Audio")]
+    pub SetFormat: unsafe extern "system" fn(this: *mut *mut Self, rguidformatidofconvertedstream: *const ::windows_sys::core::GUID, pwaveformatexofconvertedstream: *const super::Audio::WAVEFORMATEX) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Media_Audio"))]
+    SetFormat: usize,
+    pub ResetSeekPosition: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub ScaleConvertedToBaseOffset: unsafe extern "system" fn(this: *mut *mut Self, ulloffsetconvertedstream: u64, pulloffsetbasestream: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub ScaleBaseToConvertedOffset: unsafe extern "system" fn(this: *mut *mut Self, ulloffsetbasestream: u64, pulloffsetconvertedstream: *mut u64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISpTranscript {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetTranscript: unsafe extern "system" fn(this: *mut *mut Self, ppsztranscript: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub AppendTranscript: unsafe extern "system" fn(this: *mut *mut Self, psztranscript: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISpVoice {
+    pub base__: ISpEventSource,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetOutput: unsafe extern "system" fn(this: *mut *mut Self, punkoutput: *mut ::core::ffi::c_void, fallowformatchanges: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetOutput: usize,
+    pub GetOutputObjectToken: unsafe extern "system" fn(this: *mut *mut Self, ppobjecttoken: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetOutputStream: unsafe extern "system" fn(this: *mut *mut Self, ppstream: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetOutputStream: usize,
+    pub Pause: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Resume: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub SetVoice: unsafe extern "system" fn(this: *mut *mut Self, ptoken: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetVoice: unsafe extern "system" fn(this: *mut *mut Self, pptoken: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Speak: unsafe extern "system" fn(this: *mut *mut Self, pwcs: ::windows_sys::core::PCWSTR, dwflags: u32, pulstreamnumber: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SpeakStream: unsafe extern "system" fn(this: *mut *mut Self, pstream: *mut ::core::ffi::c_void, dwflags: u32, pulstreamnumber: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SpeakStream: usize,
+    pub GetStatus: unsafe extern "system" fn(this: *mut *mut Self, pstatus: *mut SPVOICESTATUS, ppszlastbookmark: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub Skip: unsafe extern "system" fn(this: *mut *mut Self, pitemtype: ::windows_sys::core::PCWSTR, lnumitems: i32, pulnumskipped: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetPriority: unsafe extern "system" fn(this: *mut *mut Self, epriority: SPVPRIORITY) -> ::windows_sys::core::HRESULT,
+    pub GetPriority: unsafe extern "system" fn(this: *mut *mut Self, pepriority: *mut SPVPRIORITY) -> ::windows_sys::core::HRESULT,
+    pub SetAlertBoundary: unsafe extern "system" fn(this: *mut *mut Self, eboundary: SPEVENTENUM) -> ::windows_sys::core::HRESULT,
+    pub GetAlertBoundary: unsafe extern "system" fn(this: *mut *mut Self, peboundary: *mut SPEVENTENUM) -> ::windows_sys::core::HRESULT,
+    pub SetRate: unsafe extern "system" fn(this: *mut *mut Self, rateadjust: i32) -> ::windows_sys::core::HRESULT,
+    pub GetRate: unsafe extern "system" fn(this: *mut *mut Self, prateadjust: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetVolume: unsafe extern "system" fn(this: *mut *mut Self, usvolume: u16) -> ::windows_sys::core::HRESULT,
+    pub GetVolume: unsafe extern "system" fn(this: *mut *mut Self, pusvolume: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub WaitUntilDone: unsafe extern "system" fn(this: *mut *mut Self, mstimeout: u32) -> ::windows_sys::core::HRESULT,
+    pub SetSyncSpeakTimeout: unsafe extern "system" fn(this: *mut *mut Self, mstimeout: u32) -> ::windows_sys::core::HRESULT,
+    pub GetSyncSpeakTimeout: unsafe extern "system" fn(this: *mut *mut Self, pmstimeout: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SpeakCompleteEvent: unsafe extern "system" fn(this: *mut *mut Self) -> super::super::Foundation::HANDLE,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SpeakCompleteEvent: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsUISupported: unsafe extern "system" fn(this: *mut *mut Self, psztypeofui: ::windows_sys::core::PCWSTR, pvextradata: *mut ::core::ffi::c_void, cbextradata: u32, pfsupported: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsUISupported: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DisplayUI: unsafe extern "system" fn(this: *mut *mut Self, hwndparent: super::super::Foundation::HWND, psztitle: ::windows_sys::core::PCWSTR, psztypeofui: ::windows_sys::core::PCWSTR, pvextradata: *mut ::core::ffi::c_void, cbextradata: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DisplayUI: usize,
+}
+#[repr(C)]
+pub struct ISpXMLRecoResult {
+    pub base__: ISpRecoResult,
+    pub GetXMLResult: unsafe extern "system" fn(this: *mut *mut Self, ppszcomemxmlresult: *mut ::windows_sys::core::PWSTR, options: SPXMLRESULTOPTIONS) -> ::windows_sys::core::HRESULT,
+    pub GetXMLErrorInfo: unsafe extern "system" fn(this: *mut *mut Self, psemanticerrorinfo: *mut SPSEMANTICERRORINFO) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISpeechAudio {
+    pub base__: ISpeechBaseStream,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Status: unsafe extern "system" fn(this: *mut *mut Self, status: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Status: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub BufferInfo: unsafe extern "system" fn(this: *mut *mut Self, bufferinfo: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    BufferInfo: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub DefaultFormat: unsafe extern "system" fn(this: *mut *mut Self, streamformat: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    DefaultFormat: usize,
+    pub Volume: unsafe extern "system" fn(this: *mut *mut Self, volume: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetVolume: unsafe extern "system" fn(this: *mut *mut Self, volume: i32) -> ::windows_sys::core::HRESULT,
+    pub BufferNotifySize: unsafe extern "system" fn(this: *mut *mut Self, buffernotifysize: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetBufferNotifySize: unsafe extern "system" fn(this: *mut *mut Self, buffernotifysize: i32) -> ::windows_sys::core::HRESULT,
+    pub EventHandle: unsafe extern "system" fn(this: *mut *mut Self, eventhandle: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetState: unsafe extern "system" fn(this: *mut *mut Self, state: SpeechAudioState) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISpeechAudioBufferInfo {
+    pub base__: super::super::System::Com::IDispatch,
+    pub MinNotification: unsafe extern "system" fn(this: *mut *mut Self, minnotification: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetMinNotification: unsafe extern "system" fn(this: *mut *mut Self, minnotification: i32) -> ::windows_sys::core::HRESULT,
+    pub BufferSize: unsafe extern "system" fn(this: *mut *mut Self, buffersize: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetBufferSize: unsafe extern "system" fn(this: *mut *mut Self, buffersize: i32) -> ::windows_sys::core::HRESULT,
+    pub EventBias: unsafe extern "system" fn(this: *mut *mut Self, eventbias: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetEventBias: unsafe extern "system" fn(this: *mut *mut Self, eventbias: i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISpeechAudioFormat {
+    pub base__: super::super::System::Com::IDispatch,
+    pub Type: unsafe extern "system" fn(this: *mut *mut Self, audioformat: *mut SpeechAudioFormatType) -> ::windows_sys::core::HRESULT,
+    pub SetType: unsafe extern "system" fn(this: *mut *mut Self, audioformat: SpeechAudioFormatType) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Guid: unsafe extern "system" fn(this: *mut *mut Self, guid: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Guid: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetGuid: unsafe extern "system" fn(this: *mut *mut Self, guid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetGuid: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetWaveFormatEx: unsafe extern "system" fn(this: *mut *mut Self, speechwaveformatex: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetWaveFormatEx: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetWaveFormatEx: unsafe extern "system" fn(this: *mut *mut Self, speechwaveformatex: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetWaveFormatEx: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISpeechAudioStatus {
+    pub base__: super::super::System::Com::IDispatch,
+    pub FreeBufferSpace: unsafe extern "system" fn(this: *mut *mut Self, freebufferspace: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub NonBlockingIO: unsafe extern "system" fn(this: *mut *mut Self, nonblockingio: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub State: unsafe extern "system" fn(this: *mut *mut Self, state: *mut SpeechAudioState) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub CurrentSeekPosition: unsafe extern "system" fn(this: *mut *mut Self, currentseekposition: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    CurrentSeekPosition: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub CurrentDevicePosition: unsafe extern "system" fn(this: *mut *mut Self, currentdeviceposition: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    CurrentDevicePosition: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISpeechBaseStream {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Format: unsafe extern "system" fn(this: *mut *mut Self, audioformat: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Format: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub putref_Format: unsafe extern "system" fn(this: *mut *mut Self, audioformat: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    putref_Format: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Read: unsafe extern "system" fn(this: *mut *mut Self, buffer: *mut super::super::System::Com::VARIANT, numberofbytes: i32, bytesread: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Read: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Write: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>, byteswritten: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Write: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Seek: unsafe extern "system" fn(this: *mut *mut Self, position: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>, origin: SpeechStreamSeekPositionType, newposition: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Seek: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISpeechCustomStream {
+    pub base__: ISpeechBaseStream,
+    pub BaseStream: unsafe extern "system" fn(this: *mut *mut Self, ppunkstream: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub putref_BaseStream: unsafe extern "system" fn(this: *mut *mut Self, punkstream: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISpeechDataKey {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetBinaryValue: unsafe extern "system" fn(this: *mut *mut Self, valuename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, value: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetBinaryValue: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetBinaryValue: unsafe extern "system" fn(this: *mut *mut Self, valuename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, value: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetBinaryValue: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetStringValue: unsafe extern "system" fn(this: *mut *mut Self, valuename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, value: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetStringValue: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetStringValue: unsafe extern "system" fn(this: *mut *mut Self, valuename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, value: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetStringValue: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetLongValue: unsafe extern "system" fn(this: *mut *mut Self, valuename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, value: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetLongValue: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetLongValue: unsafe extern "system" fn(this: *mut *mut Self, valuename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, value: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetLongValue: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub OpenKey: unsafe extern "system" fn(this: *mut *mut Self, subkeyname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, subkey: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    OpenKey: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub CreateKey: unsafe extern "system" fn(this: *mut *mut Self, subkeyname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, subkey: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    CreateKey: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DeleteKey: unsafe extern "system" fn(this: *mut *mut Self, subkeyname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DeleteKey: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DeleteValue: unsafe extern "system" fn(this: *mut *mut Self, valuename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DeleteValue: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub EnumKeys: unsafe extern "system" fn(this: *mut *mut Self, index: i32, subkeyname: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    EnumKeys: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub EnumValues: unsafe extern "system" fn(this: *mut *mut Self, index: i32, valuename: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    EnumValues: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISpeechFileStream {
+    pub base__: ISpeechBaseStream,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Open: unsafe extern "system" fn(this: *mut *mut Self, filename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, filemode: SpeechStreamFileMode, doevents: i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Open: usize,
+    pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISpeechGrammarRule {
+    pub base__: super::super::System::Com::IDispatch,
+    pub Attributes: unsafe extern "system" fn(this: *mut *mut Self, attributes: *mut SpeechRuleAttributes) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub InitialState: unsafe extern "system" fn(this: *mut *mut Self, state: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    InitialState: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Name: unsafe extern "system" fn(this: *mut *mut Self, name: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Name: usize,
+    pub Id: unsafe extern "system" fn(this: *mut *mut Self, id: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub Clear: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AddResource: unsafe extern "system" fn(this: *mut *mut Self, resourcename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, resourcevalue: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AddResource: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub AddState: unsafe extern "system" fn(this: *mut *mut Self, state: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    AddState: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISpeechGrammarRuleState {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Rule: unsafe extern "system" fn(this: *mut *mut Self, rule: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Rule: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Transitions: unsafe extern "system" fn(this: *mut *mut Self, transitions: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Transitions: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub AddWordTransition: unsafe extern "system" fn(this: *mut *mut Self, deststate: *mut ::core::ffi::c_void, words: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, separators: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, r#type: SpeechGrammarWordType, propertyname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, propertyid: i32, propertyvalue: *const super::super::System::Com::VARIANT, weight: f32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    AddWordTransition: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub AddRuleTransition: unsafe extern "system" fn(this: *mut *mut Self, destinationstate: *mut ::core::ffi::c_void, rule: *mut ::core::ffi::c_void, propertyname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, propertyid: i32, propertyvalue: *const super::super::System::Com::VARIANT, weight: f32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    AddRuleTransition: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub AddSpecialTransition: unsafe extern "system" fn(this: *mut *mut Self, destinationstate: *mut ::core::ffi::c_void, r#type: SpeechSpecialTransitionType, propertyname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, propertyid: i32, propertyvalue: *const super::super::System::Com::VARIANT, weight: f32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    AddSpecialTransition: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISpeechGrammarRuleStateTransition {
+    pub base__: super::super::System::Com::IDispatch,
+    pub Type: unsafe extern "system" fn(this: *mut *mut Self, r#type: *mut SpeechGrammarRuleStateTransitionType) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Text: unsafe extern "system" fn(this: *mut *mut Self, text: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Text: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Rule: unsafe extern "system" fn(this: *mut *mut Self, rule: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Rule: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Weight: unsafe extern "system" fn(this: *mut *mut Self, weight: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Weight: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub PropertyName: unsafe extern "system" fn(this: *mut *mut Self, propertyname: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    PropertyName: usize,
+    pub PropertyId: unsafe extern "system" fn(this: *mut *mut Self, propertyid: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub PropertyValue: unsafe extern "system" fn(this: *mut *mut Self, propertyvalue: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    PropertyValue: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub NextState: unsafe extern "system" fn(this: *mut *mut Self, nextstate: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    NextState: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISpeechGrammarRuleStateTransitions {
+    pub base__: super::super::System::Com::IDispatch,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, count: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Item: unsafe extern "system" fn(this: *mut *mut Self, index: i32, transition: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Item: usize,
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, enumvariant: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISpeechGrammarRules {
+    pub base__: super::super::System::Com::IDispatch,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, count: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub FindRule: unsafe extern "system" fn(this: *mut *mut Self, rulenameorid: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>, rule: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    FindRule: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Item: unsafe extern "system" fn(this: *mut *mut Self, index: i32, rule: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Item: usize,
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, enumvariant: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Dynamic: unsafe extern "system" fn(this: *mut *mut Self, dynamic: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub Add: unsafe extern "system" fn(this: *mut *mut Self, rulename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, attributes: SpeechRuleAttributes, ruleid: i32, rule: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    Add: usize,
+    pub Commit: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub CommitAndSave: unsafe extern "system" fn(this: *mut *mut Self, errortext: *mut super::super::Foundation::BSTR, savestream: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    CommitAndSave: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISpeechLexicon {
+    pub base__: super::super::System::Com::IDispatch,
+    pub GenerationId: unsafe extern "system" fn(this: *mut *mut Self, generationid: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetWords: unsafe extern "system" fn(this: *mut *mut Self, flags: SpeechLexiconType, generationid: *mut i32, words: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetWords: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AddPronunciation: unsafe extern "system" fn(this: *mut *mut Self, bstrword: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, langid: i32, partofspeech: SpeechPartOfSpeech, bstrpronunciation: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AddPronunciation: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub AddPronunciationByPhoneIds: unsafe extern "system" fn(this: *mut *mut Self, bstrword: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, langid: i32, partofspeech: SpeechPartOfSpeech, phoneids: *const super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    AddPronunciationByPhoneIds: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RemovePronunciation: unsafe extern "system" fn(this: *mut *mut Self, bstrword: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, langid: i32, partofspeech: SpeechPartOfSpeech, bstrpronunciation: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RemovePronunciation: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub RemovePronunciationByPhoneIds: unsafe extern "system" fn(this: *mut *mut Self, bstrword: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, langid: i32, partofspeech: SpeechPartOfSpeech, phoneids: *const super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    RemovePronunciationByPhoneIds: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub GetPronunciations: unsafe extern "system" fn(this: *mut *mut Self, bstrword: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, langid: i32, typeflags: SpeechLexiconType, pppronunciations: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    GetPronunciations: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetGenerationChange: unsafe extern "system" fn(this: *mut *mut Self, generationid: *mut i32, ppwords: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetGenerationChange: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISpeechLexiconPronunciation {
+    pub base__: super::super::System::Com::IDispatch,
+    pub Type: unsafe extern "system" fn(this: *mut *mut Self, lexicontype: *mut SpeechLexiconType) -> ::windows_sys::core::HRESULT,
+    pub LangId: unsafe extern "system" fn(this: *mut *mut Self, langid: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub PartOfSpeech: unsafe extern "system" fn(this: *mut *mut Self, partofspeech: *mut SpeechPartOfSpeech) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub PhoneIds: unsafe extern "system" fn(this: *mut *mut Self, phoneids: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    PhoneIds: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Symbolic: unsafe extern "system" fn(this: *mut *mut Self, symbolic: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Symbolic: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISpeechLexiconPronunciations {
+    pub base__: super::super::System::Com::IDispatch,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, count: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Item: unsafe extern "system" fn(this: *mut *mut Self, index: i32, pronunciation: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Item: usize,
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, enumvariant: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISpeechLexiconWord {
+    pub base__: super::super::System::Com::IDispatch,
+    pub LangId: unsafe extern "system" fn(this: *mut *mut Self, langid: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub Type: unsafe extern "system" fn(this: *mut *mut Self, wordtype: *mut SpeechWordType) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Word: unsafe extern "system" fn(this: *mut *mut Self, word: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Word: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Pronunciations: unsafe extern "system" fn(this: *mut *mut Self, pronunciations: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Pronunciations: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISpeechLexiconWords {
+    pub base__: super::super::System::Com::IDispatch,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, count: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Item: unsafe extern "system" fn(this: *mut *mut Self, index: i32, word: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Item: usize,
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, enumvariant: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISpeechMMSysAudio {
+    pub base__: ISpeechAudio,
+    pub DeviceId: unsafe extern "system" fn(this: *mut *mut Self, deviceid: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetDeviceId: unsafe extern "system" fn(this: *mut *mut Self, deviceid: i32) -> ::windows_sys::core::HRESULT,
+    pub LineId: unsafe extern "system" fn(this: *mut *mut Self, lineid: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetLineId: unsafe extern "system" fn(this: *mut *mut Self, lineid: i32) -> ::windows_sys::core::HRESULT,
+    pub MMHandle: unsafe extern "system" fn(this: *mut *mut Self, handle: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISpeechMemoryStream {
+    pub base__: ISpeechBaseStream,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetData: unsafe extern "system" fn(this: *mut *mut Self, data: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetData: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetData: unsafe extern "system" fn(this: *mut *mut Self, pdata: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetData: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISpeechObjectToken {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Id: unsafe extern "system" fn(this: *mut *mut Self, objectid: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Id: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub DataKey: unsafe extern "system" fn(this: *mut *mut Self, datakey: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    DataKey: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Category: unsafe extern "system" fn(this: *mut *mut Self, category: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Category: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetDescription: unsafe extern "system" fn(this: *mut *mut Self, locale: i32, description: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetDescription: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetId: unsafe extern "system" fn(this: *mut *mut Self, id: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, categoryid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, createifnotexist: i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetId: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetAttribute: unsafe extern "system" fn(this: *mut *mut Self, attributename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, attributevalue: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetAttribute: usize,
+    pub CreateInstance: unsafe extern "system" fn(this: *mut *mut Self, punkouter: *mut ::core::ffi::c_void, clscontext: SpeechTokenContext, object: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Remove: unsafe extern "system" fn(this: *mut *mut Self, objectstorageclsid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Remove: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetStorageFileName: unsafe extern "system" fn(this: *mut *mut Self, objectstorageclsid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, keyname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, filename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, folder: SpeechTokenShellFolder, filepath: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetStorageFileName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RemoveStorageFileName: unsafe extern "system" fn(this: *mut *mut Self, objectstorageclsid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, keyname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, deletefilea: i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RemoveStorageFileName: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub IsUISupported: unsafe extern "system" fn(this: *mut *mut Self, typeofui: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, extradata: *const super::super::System::Com::VARIANT, object: *mut ::core::ffi::c_void, supported: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    IsUISupported: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub DisplayUI: unsafe extern "system" fn(this: *mut *mut Self, hwnd: i32, title: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, typeofui: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, extradata: *const super::super::System::Com::VARIANT, object: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    DisplayUI: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MatchesAttributes: unsafe extern "system" fn(this: *mut *mut Self, attributes: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, matches: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MatchesAttributes: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISpeechObjectTokenCategory {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Id: unsafe extern "system" fn(this: *mut *mut Self, id: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Id: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetDefault: unsafe extern "system" fn(this: *mut *mut Self, tokenid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetDefault: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Default: unsafe extern "system" fn(this: *mut *mut Self, tokenid: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Default: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetId: unsafe extern "system" fn(this: *mut *mut Self, id: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, createifnotexist: i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetId: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetDataKey: unsafe extern "system" fn(this: *mut *mut Self, location: SpeechDataKeyLocation, datakey: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetDataKey: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub EnumerateTokens: unsafe extern "system" fn(this: *mut *mut Self, requiredattributes: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, optionalattributes: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, tokens: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    EnumerateTokens: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISpeechObjectTokens {
+    pub base__: super::super::System::Com::IDispatch,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, count: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Item: unsafe extern "system" fn(this: *mut *mut Self, index: i32, token: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Item: usize,
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, ppenumvariant: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISpeechPhoneConverter {
+    pub base__: super::super::System::Com::IDispatch,
+    pub LanguageId: unsafe extern "system" fn(this: *mut *mut Self, languageid: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetLanguageId: unsafe extern "system" fn(this: *mut *mut Self, languageid: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub PhoneToId: unsafe extern "system" fn(this: *mut *mut Self, phonemes: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, idarray: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    PhoneToId: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub IdToPhone: unsafe extern "system" fn(this: *mut *mut Self, idarray: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>, phonemes: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    IdToPhone: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISpeechPhraseAlternate {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub RecoResult: unsafe extern "system" fn(this: *mut *mut Self, recoresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    RecoResult: usize,
+    pub StartElementInResult: unsafe extern "system" fn(this: *mut *mut Self, startelement: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub NumberOfElementsInResult: unsafe extern "system" fn(this: *mut *mut Self, numberofelements: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub PhraseInfo: unsafe extern "system" fn(this: *mut *mut Self, phraseinfo: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    PhraseInfo: usize,
+    pub Commit: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISpeechPhraseAlternates {
+    pub base__: super::super::System::Com::IDispatch,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, count: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Item: unsafe extern "system" fn(this: *mut *mut Self, index: i32, phrasealternate: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Item: usize,
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, enumvariant: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISpeechPhraseElement {
+    pub base__: super::super::System::Com::IDispatch,
+    pub AudioTimeOffset: unsafe extern "system" fn(this: *mut *mut Self, audiotimeoffset: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub AudioSizeTime: unsafe extern "system" fn(this: *mut *mut Self, audiosizetime: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub AudioStreamOffset: unsafe extern "system" fn(this: *mut *mut Self, audiostreamoffset: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub AudioSizeBytes: unsafe extern "system" fn(this: *mut *mut Self, audiosizebytes: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub RetainedStreamOffset: unsafe extern "system" fn(this: *mut *mut Self, retainedstreamoffset: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub RetainedSizeBytes: unsafe extern "system" fn(this: *mut *mut Self, retainedsizebytes: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DisplayText: unsafe extern "system" fn(this: *mut *mut Self, displaytext: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DisplayText: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub LexicalForm: unsafe extern "system" fn(this: *mut *mut Self, lexicalform: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    LexicalForm: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Pronunciation: unsafe extern "system" fn(this: *mut *mut Self, pronunciation: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Pronunciation: usize,
+    pub DisplayAttributes: unsafe extern "system" fn(this: *mut *mut Self, displayattributes: *mut SpeechDisplayAttributes) -> ::windows_sys::core::HRESULT,
+    pub RequiredConfidence: unsafe extern "system" fn(this: *mut *mut Self, requiredconfidence: *mut SpeechEngineConfidence) -> ::windows_sys::core::HRESULT,
+    pub ActualConfidence: unsafe extern "system" fn(this: *mut *mut Self, actualconfidence: *mut SpeechEngineConfidence) -> ::windows_sys::core::HRESULT,
+    pub EngineConfidence: unsafe extern "system" fn(this: *mut *mut Self, engineconfidence: *mut f32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISpeechPhraseElements {
+    pub base__: super::super::System::Com::IDispatch,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, count: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Item: unsafe extern "system" fn(this: *mut *mut Self, index: i32, element: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Item: usize,
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, enumvariant: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISpeechPhraseInfo {
+    pub base__: super::super::System::Com::IDispatch,
+    pub LanguageId: unsafe extern "system" fn(this: *mut *mut Self, languageid: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GrammarId: unsafe extern "system" fn(this: *mut *mut Self, grammarid: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GrammarId: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub StartTime: unsafe extern "system" fn(this: *mut *mut Self, starttime: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    StartTime: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub AudioStreamPosition: unsafe extern "system" fn(this: *mut *mut Self, audiostreamposition: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    AudioStreamPosition: usize,
+    pub AudioSizeBytes: unsafe extern "system" fn(this: *mut *mut Self, paudiosizebytes: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub RetainedSizeBytes: unsafe extern "system" fn(this: *mut *mut Self, retainedsizebytes: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub AudioSizeTime: unsafe extern "system" fn(this: *mut *mut Self, audiosizetime: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Rule: unsafe extern "system" fn(this: *mut *mut Self, rule: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Rule: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Properties: unsafe extern "system" fn(this: *mut *mut Self, properties: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Properties: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Elements: unsafe extern "system" fn(this: *mut *mut Self, elements: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Elements: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Replacements: unsafe extern "system" fn(this: *mut *mut Self, replacements: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Replacements: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub EngineId: unsafe extern "system" fn(this: *mut *mut Self, engineidguid: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    EngineId: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub EnginePrivateData: unsafe extern "system" fn(this: *mut *mut Self, privatedata: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    EnginePrivateData: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SaveToMemory: unsafe extern "system" fn(this: *mut *mut Self, phraseblock: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SaveToMemory: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetText: unsafe extern "system" fn(this: *mut *mut Self, startelement: i32, elements: i32, usereplacements: i16, text: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetText: usize,
+    pub GetDisplayAttributes: unsafe extern "system" fn(this: *mut *mut Self, startelement: i32, elements: i32, usereplacements: i16, displayattributes: *mut SpeechDisplayAttributes) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISpeechPhraseInfoBuilder {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub RestorePhraseFromMemory: unsafe extern "system" fn(this: *mut *mut Self, phraseinmemory: *const super::super::System::Com::VARIANT, phraseinfo: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    RestorePhraseFromMemory: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISpeechPhraseProperties {
+    pub base__: super::super::System::Com::IDispatch,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, count: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Item: unsafe extern "system" fn(this: *mut *mut Self, index: i32, property: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Item: usize,
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, enumvariant: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISpeechPhraseProperty {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Name: unsafe extern "system" fn(this: *mut *mut Self, name: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Name: usize,
+    pub Id: unsafe extern "system" fn(this: *mut *mut Self, id: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Value: unsafe extern "system" fn(this: *mut *mut Self, value: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Value: usize,
+    pub FirstElement: unsafe extern "system" fn(this: *mut *mut Self, firstelement: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub NumberOfElements: unsafe extern "system" fn(this: *mut *mut Self, numberofelements: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub EngineConfidence: unsafe extern "system" fn(this: *mut *mut Self, confidence: *mut f32) -> ::windows_sys::core::HRESULT,
+    pub Confidence: unsafe extern "system" fn(this: *mut *mut Self, confidence: *mut SpeechEngineConfidence) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Parent: unsafe extern "system" fn(this: *mut *mut Self, parentproperty: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Parent: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Children: unsafe extern "system" fn(this: *mut *mut Self, children: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Children: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISpeechPhraseReplacement {
+    pub base__: super::super::System::Com::IDispatch,
+    pub DisplayAttributes: unsafe extern "system" fn(this: *mut *mut Self, displayattributes: *mut SpeechDisplayAttributes) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Text: unsafe extern "system" fn(this: *mut *mut Self, text: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Text: usize,
+    pub FirstElement: unsafe extern "system" fn(this: *mut *mut Self, firstelement: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub NumberOfElements: unsafe extern "system" fn(this: *mut *mut Self, numberofelements: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISpeechPhraseReplacements {
+    pub base__: super::super::System::Com::IDispatch,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, count: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Item: unsafe extern "system" fn(this: *mut *mut Self, index: i32, reps: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Item: usize,
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, enumvariant: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISpeechPhraseRule {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Name: unsafe extern "system" fn(this: *mut *mut Self, name: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Name: usize,
+    pub Id: unsafe extern "system" fn(this: *mut *mut Self, id: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub FirstElement: unsafe extern "system" fn(this: *mut *mut Self, firstelement: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub NumberOfElements: unsafe extern "system" fn(this: *mut *mut Self, numberofelements: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Parent: unsafe extern "system" fn(this: *mut *mut Self, parent: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Parent: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Children: unsafe extern "system" fn(this: *mut *mut Self, children: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Children: usize,
+    pub Confidence: unsafe extern "system" fn(this: *mut *mut Self, actualconfidence: *mut SpeechEngineConfidence) -> ::windows_sys::core::HRESULT,
+    pub EngineConfidence: unsafe extern "system" fn(this: *mut *mut Self, engineconfidence: *mut f32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISpeechPhraseRules {
+    pub base__: super::super::System::Com::IDispatch,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, count: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Item: unsafe extern "system" fn(this: *mut *mut Self, index: i32, rule: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Item: usize,
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, enumvariant: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISpeechRecoContext {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Recognizer: unsafe extern "system" fn(this: *mut *mut Self, recognizer: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Recognizer: usize,
+    pub AudioInputInterferenceStatus: unsafe extern "system" fn(this: *mut *mut Self, interference: *mut SpeechInterference) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RequestedUIType: unsafe extern "system" fn(this: *mut *mut Self, uitype: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RequestedUIType: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub putref_Voice: unsafe extern "system" fn(this: *mut *mut Self, voice: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    putref_Voice: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Voice: unsafe extern "system" fn(this: *mut *mut Self, voice: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Voice: usize,
+    pub SetAllowVoiceFormatMatchingOnNextSet: unsafe extern "system" fn(this: *mut *mut Self, allow: i16) -> ::windows_sys::core::HRESULT,
+    pub AllowVoiceFormatMatchingOnNextSet: unsafe extern "system" fn(this: *mut *mut Self, pallow: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetVoicePurgeEvent: unsafe extern "system" fn(this: *mut *mut Self, eventinterest: SpeechRecoEvents) -> ::windows_sys::core::HRESULT,
+    pub VoicePurgeEvent: unsafe extern "system" fn(this: *mut *mut Self, eventinterest: *mut SpeechRecoEvents) -> ::windows_sys::core::HRESULT,
+    pub SetEventInterests: unsafe extern "system" fn(this: *mut *mut Self, eventinterest: SpeechRecoEvents) -> ::windows_sys::core::HRESULT,
+    pub EventInterests: unsafe extern "system" fn(this: *mut *mut Self, eventinterest: *mut SpeechRecoEvents) -> ::windows_sys::core::HRESULT,
+    pub SetCmdMaxAlternates: unsafe extern "system" fn(this: *mut *mut Self, maxalternates: i32) -> ::windows_sys::core::HRESULT,
+    pub CmdMaxAlternates: unsafe extern "system" fn(this: *mut *mut Self, maxalternates: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetState: unsafe extern "system" fn(this: *mut *mut Self, state: SpeechRecoContextState) -> ::windows_sys::core::HRESULT,
+    pub State: unsafe extern "system" fn(this: *mut *mut Self, state: *mut SpeechRecoContextState) -> ::windows_sys::core::HRESULT,
+    pub SetRetainedAudio: unsafe extern "system" fn(this: *mut *mut Self, option: SpeechRetainedAudioOptions) -> ::windows_sys::core::HRESULT,
+    pub RetainedAudio: unsafe extern "system" fn(this: *mut *mut Self, option: *mut SpeechRetainedAudioOptions) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub putref_RetainedAudioFormat: unsafe extern "system" fn(this: *mut *mut Self, format: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    putref_RetainedAudioFormat: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub RetainedAudioFormat: unsafe extern "system" fn(this: *mut *mut Self, format: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    RetainedAudioFormat: usize,
+    pub Pause: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Resume: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub CreateGrammar: unsafe extern "system" fn(this: *mut *mut Self, grammarid: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>, grammar: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    CreateGrammar: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub CreateResultFromMemory: unsafe extern "system" fn(this: *mut *mut Self, resultblock: *const super::super::System::Com::VARIANT, result: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    CreateResultFromMemory: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Bookmark: unsafe extern "system" fn(this: *mut *mut Self, options: SpeechBookmarkOptions, streampos: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>, bookmarkid: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Bookmark: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetAdaptationData: unsafe extern "system" fn(this: *mut *mut Self, adaptationstring: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetAdaptationData: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISpeechRecoGrammar {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Id: unsafe extern "system" fn(this: *mut *mut Self, id: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Id: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub RecoContext: unsafe extern "system" fn(this: *mut *mut Self, recocontext: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    RecoContext: usize,
+    pub SetState: unsafe extern "system" fn(this: *mut *mut Self, state: SpeechGrammarState) -> ::windows_sys::core::HRESULT,
+    pub State: unsafe extern "system" fn(this: *mut *mut Self, state: *mut SpeechGrammarState) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Rules: unsafe extern "system" fn(this: *mut *mut Self, rules: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Rules: usize,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self, newlanguage: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CmdLoadFromFile: unsafe extern "system" fn(this: *mut *mut Self, filename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, loadoption: SpeechLoadOption) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CmdLoadFromFile: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CmdLoadFromObject: unsafe extern "system" fn(this: *mut *mut Self, classid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, grammarname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, loadoption: SpeechLoadOption) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CmdLoadFromObject: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub CmdLoadFromResource: unsafe extern "system" fn(this: *mut *mut Self, hmodule: i32, resourcename: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>, resourcetype: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>, languageid: i32, loadoption: SpeechLoadOption) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    CmdLoadFromResource: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub CmdLoadFromMemory: unsafe extern "system" fn(this: *mut *mut Self, grammardata: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>, loadoption: SpeechLoadOption) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    CmdLoadFromMemory: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub CmdLoadFromProprietaryGrammar: unsafe extern "system" fn(this: *mut *mut Self, proprietaryguid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, proprietarystring: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, proprietarydata: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>, loadoption: SpeechLoadOption) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    CmdLoadFromProprietaryGrammar: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CmdSetRuleState: unsafe extern "system" fn(this: *mut *mut Self, name: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, state: SpeechRuleState) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CmdSetRuleState: usize,
+    pub CmdSetRuleIdState: unsafe extern "system" fn(this: *mut *mut Self, ruleid: i32, state: SpeechRuleState) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DictationLoad: unsafe extern "system" fn(this: *mut *mut Self, topicname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, loadoption: SpeechLoadOption) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DictationLoad: usize,
+    pub DictationUnload: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub DictationSetState: unsafe extern "system" fn(this: *mut *mut Self, state: SpeechRuleState) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub SetWordSequenceData: unsafe extern "system" fn(this: *mut *mut Self, text: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, textlength: i32, info: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    SetWordSequenceData: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetTextSelection: unsafe extern "system" fn(this: *mut *mut Self, info: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetTextSelection: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsPronounceable: unsafe extern "system" fn(this: *mut *mut Self, word: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, wordpronounceable: *mut SpeechWordPronounceable) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsPronounceable: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISpeechRecoResult {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub RecoContext: unsafe extern "system" fn(this: *mut *mut Self, recocontext: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    RecoContext: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Times: unsafe extern "system" fn(this: *mut *mut Self, times: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Times: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub putref_AudioFormat: unsafe extern "system" fn(this: *mut *mut Self, format: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    putref_AudioFormat: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub AudioFormat: unsafe extern "system" fn(this: *mut *mut Self, format: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    AudioFormat: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub PhraseInfo: unsafe extern "system" fn(this: *mut *mut Self, phraseinfo: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    PhraseInfo: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Alternates: unsafe extern "system" fn(this: *mut *mut Self, requestcount: i32, startelement: i32, elements: i32, alternates: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Alternates: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Audio: unsafe extern "system" fn(this: *mut *mut Self, startelement: i32, elements: i32, stream: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Audio: usize,
+    pub SpeakAudio: unsafe extern "system" fn(this: *mut *mut Self, startelement: i32, elements: i32, flags: SpeechVoiceSpeakFlags, streamnumber: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SaveToMemory: unsafe extern "system" fn(this: *mut *mut Self, resultblock: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SaveToMemory: usize,
+    pub DiscardResultInfo: unsafe extern "system" fn(this: *mut *mut Self, valuetypes: SpeechDiscardType) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISpeechRecoResult2 {
+    pub base__: ISpeechRecoResult,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetTextFeedback: unsafe extern "system" fn(this: *mut *mut Self, feedback: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, wassuccessful: i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetTextFeedback: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISpeechRecoResultDispatch {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub RecoContext: unsafe extern "system" fn(this: *mut *mut Self, recocontext: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    RecoContext: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Times: unsafe extern "system" fn(this: *mut *mut Self, times: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Times: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub putref_AudioFormat: unsafe extern "system" fn(this: *mut *mut Self, format: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    putref_AudioFormat: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub AudioFormat: unsafe extern "system" fn(this: *mut *mut Self, format: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    AudioFormat: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub PhraseInfo: unsafe extern "system" fn(this: *mut *mut Self, phraseinfo: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    PhraseInfo: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Alternates: unsafe extern "system" fn(this: *mut *mut Self, requestcount: i32, startelement: i32, elements: i32, alternates: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Alternates: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Audio: unsafe extern "system" fn(this: *mut *mut Self, startelement: i32, elements: i32, stream: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Audio: usize,
+    pub SpeakAudio: unsafe extern "system" fn(this: *mut *mut Self, startelement: i32, elements: i32, flags: SpeechVoiceSpeakFlags, streamnumber: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SaveToMemory: unsafe extern "system" fn(this: *mut *mut Self, resultblock: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SaveToMemory: usize,
+    pub DiscardResultInfo: unsafe extern "system" fn(this: *mut *mut Self, valuetypes: SpeechDiscardType) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetXMLResult: unsafe extern "system" fn(this: *mut *mut Self, options: SPXMLRESULTOPTIONS, presult: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetXMLResult: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetXMLErrorInfo: unsafe extern "system" fn(this: *mut *mut Self, linenumber: *mut i32, scriptline: *mut super::super::Foundation::BSTR, source: *mut super::super::Foundation::BSTR, description: *mut super::super::Foundation::BSTR, resultcode: *mut ::windows_sys::core::HRESULT, iserror: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetXMLErrorInfo: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetTextFeedback: unsafe extern "system" fn(this: *mut *mut Self, feedback: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, wassuccessful: i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetTextFeedback: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISpeechRecoResultTimes {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub StreamTime: unsafe extern "system" fn(this: *mut *mut Self, time: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    StreamTime: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Length: unsafe extern "system" fn(this: *mut *mut Self, length: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Length: usize,
+    pub TickCount: unsafe extern "system" fn(this: *mut *mut Self, tickcount: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub OffsetFromStart: unsafe extern "system" fn(this: *mut *mut Self, offsetfromstart: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    OffsetFromStart: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISpeechRecognizer {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub putref_Recognizer: unsafe extern "system" fn(this: *mut *mut Self, recognizer: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    putref_Recognizer: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Recognizer: unsafe extern "system" fn(this: *mut *mut Self, recognizer: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Recognizer: usize,
+    pub SetAllowAudioInputFormatChangesOnNextSet: unsafe extern "system" fn(this: *mut *mut Self, allow: i16) -> ::windows_sys::core::HRESULT,
+    pub AllowAudioInputFormatChangesOnNextSet: unsafe extern "system" fn(this: *mut *mut Self, allow: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub putref_AudioInput: unsafe extern "system" fn(this: *mut *mut Self, audioinput: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    putref_AudioInput: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub AudioInput: unsafe extern "system" fn(this: *mut *mut Self, audioinput: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    AudioInput: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub putref_AudioInputStream: unsafe extern "system" fn(this: *mut *mut Self, audioinputstream: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    putref_AudioInputStream: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub AudioInputStream: unsafe extern "system" fn(this: *mut *mut Self, audioinputstream: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    AudioInputStream: usize,
+    pub IsShared: unsafe extern "system" fn(this: *mut *mut Self, shared: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetState: unsafe extern "system" fn(this: *mut *mut Self, state: SpeechRecognizerState) -> ::windows_sys::core::HRESULT,
+    pub State: unsafe extern "system" fn(this: *mut *mut Self, state: *mut SpeechRecognizerState) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Status: unsafe extern "system" fn(this: *mut *mut Self, status: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Status: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub putref_Profile: unsafe extern "system" fn(this: *mut *mut Self, profile: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    putref_Profile: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Profile: unsafe extern "system" fn(this: *mut *mut Self, profile: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Profile: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub EmulateRecognition: unsafe extern "system" fn(this: *mut *mut Self, textelements: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>, elementdisplayattributes: *const super::super::System::Com::VARIANT, languageid: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    EmulateRecognition: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreateRecoContext: unsafe extern "system" fn(this: *mut *mut Self, newcontext: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CreateRecoContext: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetFormat: unsafe extern "system" fn(this: *mut *mut Self, r#type: SpeechFormatType, format: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetFormat: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetPropertyNumber: unsafe extern "system" fn(this: *mut *mut Self, name: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, value: i32, supported: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetPropertyNumber: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetPropertyNumber: unsafe extern "system" fn(this: *mut *mut Self, name: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, value: *mut i32, supported: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetPropertyNumber: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetPropertyString: unsafe extern "system" fn(this: *mut *mut Self, name: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, value: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, supported: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetPropertyString: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetPropertyString: unsafe extern "system" fn(this: *mut *mut Self, name: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, value: *mut super::super::Foundation::BSTR, supported: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetPropertyString: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub IsUISupported: unsafe extern "system" fn(this: *mut *mut Self, typeofui: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, extradata: *const super::super::System::Com::VARIANT, supported: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    IsUISupported: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub DisplayUI: unsafe extern "system" fn(this: *mut *mut Self, hwndparent: i32, title: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, typeofui: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, extradata: *const super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    DisplayUI: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub GetRecognizers: unsafe extern "system" fn(this: *mut *mut Self, requiredattributes: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, optionalattributes: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, objecttokens: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    GetRecognizers: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub GetAudioInputs: unsafe extern "system" fn(this: *mut *mut Self, requiredattributes: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, optionalattributes: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, objecttokens: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    GetAudioInputs: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub GetProfiles: unsafe extern "system" fn(this: *mut *mut Self, requiredattributes: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, optionalattributes: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, objecttokens: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    GetProfiles: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISpeechRecognizerStatus {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub AudioStatus: unsafe extern "system" fn(this: *mut *mut Self, audiostatus: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    AudioStatus: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub CurrentStreamPosition: unsafe extern "system" fn(this: *mut *mut Self, pcurrentstreampos: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    CurrentStreamPosition: usize,
+    pub CurrentStreamNumber: unsafe extern "system" fn(this: *mut *mut Self, streamnumber: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub NumberOfActiveRules: unsafe extern "system" fn(this: *mut *mut Self, numberofactiverules: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ClsidEngine: unsafe extern "system" fn(this: *mut *mut Self, clsidengine: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ClsidEngine: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SupportedLanguages: unsafe extern "system" fn(this: *mut *mut Self, supportedlanguages: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SupportedLanguages: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISpeechResourceLoader {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub LoadResource: unsafe extern "system" fn(this: *mut *mut Self, bstrresourceuri: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, falwaysreload: i16, pstream: *mut *mut ::core::ffi::c_void, pbstrmimetype: *mut super::super::Foundation::BSTR, pfmodified: *mut i16, pbstrredirecturl: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    LoadResource: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetLocalCopy: unsafe extern "system" fn(this: *mut *mut Self, bstrresourceuri: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pbstrlocalpath: *mut super::super::Foundation::BSTR, pbstrmimetype: *mut super::super::Foundation::BSTR, pbstrredirecturl: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetLocalCopy: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ReleaseLocalCopy: unsafe extern "system" fn(this: *mut *mut Self, pbstrlocalpath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ReleaseLocalCopy: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISpeechTextSelectionInformation {
+    pub base__: super::super::System::Com::IDispatch,
+    pub SetActiveOffset: unsafe extern "system" fn(this: *mut *mut Self, activeoffset: i32) -> ::windows_sys::core::HRESULT,
+    pub ActiveOffset: unsafe extern "system" fn(this: *mut *mut Self, activeoffset: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetActiveLength: unsafe extern "system" fn(this: *mut *mut Self, activelength: i32) -> ::windows_sys::core::HRESULT,
+    pub ActiveLength: unsafe extern "system" fn(this: *mut *mut Self, activelength: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetSelectionOffset: unsafe extern "system" fn(this: *mut *mut Self, selectionoffset: i32) -> ::windows_sys::core::HRESULT,
+    pub SelectionOffset: unsafe extern "system" fn(this: *mut *mut Self, selectionoffset: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetSelectionLength: unsafe extern "system" fn(this: *mut *mut Self, selectionlength: i32) -> ::windows_sys::core::HRESULT,
+    pub SelectionLength: unsafe extern "system" fn(this: *mut *mut Self, selectionlength: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISpeechVoice {
+    pub base__: super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Status: unsafe extern "system" fn(this: *mut *mut Self, status: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Status: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Voice: unsafe extern "system" fn(this: *mut *mut Self, voice: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Voice: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub putref_Voice: unsafe extern "system" fn(this: *mut *mut Self, voice: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    putref_Voice: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub AudioOutput: unsafe extern "system" fn(this: *mut *mut Self, audiooutput: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    AudioOutput: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub putref_AudioOutput: unsafe extern "system" fn(this: *mut *mut Self, audiooutput: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    putref_AudioOutput: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub AudioOutputStream: unsafe extern "system" fn(this: *mut *mut Self, audiooutputstream: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    AudioOutputStream: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub putref_AudioOutputStream: unsafe extern "system" fn(this: *mut *mut Self, audiooutputstream: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    putref_AudioOutputStream: usize,
+    pub Rate: unsafe extern "system" fn(this: *mut *mut Self, rate: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetRate: unsafe extern "system" fn(this: *mut *mut Self, rate: i32) -> ::windows_sys::core::HRESULT,
+    pub Volume: unsafe extern "system" fn(this: *mut *mut Self, volume: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetVolume: unsafe extern "system" fn(this: *mut *mut Self, volume: i32) -> ::windows_sys::core::HRESULT,
+    pub SetAllowAudioOutputFormatChangesOnNextSet: unsafe extern "system" fn(this: *mut *mut Self, allow: i16) -> ::windows_sys::core::HRESULT,
+    pub AllowAudioOutputFormatChangesOnNextSet: unsafe extern "system" fn(this: *mut *mut Self, allow: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub EventInterests: unsafe extern "system" fn(this: *mut *mut Self, eventinterestflags: *mut SpeechVoiceEvents) -> ::windows_sys::core::HRESULT,
+    pub SetEventInterests: unsafe extern "system" fn(this: *mut *mut Self, eventinterestflags: SpeechVoiceEvents) -> ::windows_sys::core::HRESULT,
+    pub SetPriority: unsafe extern "system" fn(this: *mut *mut Self, priority: SpeechVoicePriority) -> ::windows_sys::core::HRESULT,
+    pub Priority: unsafe extern "system" fn(this: *mut *mut Self, priority: *mut SpeechVoicePriority) -> ::windows_sys::core::HRESULT,
+    pub SetAlertBoundary: unsafe extern "system" fn(this: *mut *mut Self, boundary: SpeechVoiceEvents) -> ::windows_sys::core::HRESULT,
+    pub AlertBoundary: unsafe extern "system" fn(this: *mut *mut Self, boundary: *mut SpeechVoiceEvents) -> ::windows_sys::core::HRESULT,
+    pub SetSynchronousSpeakTimeout: unsafe extern "system" fn(this: *mut *mut Self, mstimeout: i32) -> ::windows_sys::core::HRESULT,
+    pub SynchronousSpeakTimeout: unsafe extern "system" fn(this: *mut *mut Self, mstimeout: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Speak: unsafe extern "system" fn(this: *mut *mut Self, text: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, flags: SpeechVoiceSpeakFlags, streamnumber: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Speak: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SpeakStream: unsafe extern "system" fn(this: *mut *mut Self, stream: *mut ::core::ffi::c_void, flags: SpeechVoiceSpeakFlags, streamnumber: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SpeakStream: usize,
+    pub Pause: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Resume: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Skip: unsafe extern "system" fn(this: *mut *mut Self, r#type: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, numitems: i32, numskipped: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Skip: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub GetVoices: unsafe extern "system" fn(this: *mut *mut Self, requiredattributes: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, optionalattributes: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, objecttokens: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    GetVoices: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub GetAudioOutputs: unsafe extern "system" fn(this: *mut *mut Self, requiredattributes: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, optionalattributes: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, objecttokens: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    GetAudioOutputs: usize,
+    pub WaitUntilDone: unsafe extern "system" fn(this: *mut *mut Self, mstimeout: i32, done: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SpeakCompleteEvent: unsafe extern "system" fn(this: *mut *mut Self, handle: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub IsUISupported: unsafe extern "system" fn(this: *mut *mut Self, typeofui: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, extradata: *const super::super::System::Com::VARIANT, supported: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    IsUISupported: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub DisplayUI: unsafe extern "system" fn(this: *mut *mut Self, hwndparent: i32, title: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, typeofui: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, extradata: *const super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    DisplayUI: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISpeechVoiceStatus {
+    pub base__: super::super::System::Com::IDispatch,
+    pub CurrentStreamNumber: unsafe extern "system" fn(this: *mut *mut Self, streamnumber: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub LastStreamNumberQueued: unsafe extern "system" fn(this: *mut *mut Self, streamnumber: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub LastHResult: unsafe extern "system" fn(this: *mut *mut Self, hresult: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub RunningState: unsafe extern "system" fn(this: *mut *mut Self, state: *mut SpeechRunState) -> ::windows_sys::core::HRESULT,
+    pub InputWordPosition: unsafe extern "system" fn(this: *mut *mut Self, position: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub InputWordLength: unsafe extern "system" fn(this: *mut *mut Self, length: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub InputSentencePosition: unsafe extern "system" fn(this: *mut *mut Self, position: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub InputSentenceLength: unsafe extern "system" fn(this: *mut *mut Self, length: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub LastBookmark: unsafe extern "system" fn(this: *mut *mut Self, bookmark: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    LastBookmark: usize,
+    pub LastBookmarkId: unsafe extern "system" fn(this: *mut *mut Self, bookmarkid: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub PhonemeId: unsafe extern "system" fn(this: *mut *mut Self, phoneid: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub VisemeId: unsafe extern "system" fn(this: *mut *mut Self, visemeid: *mut i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISpeechWaveFormatEx {
+    pub base__: super::super::System::Com::IDispatch,
+    pub FormatTag: unsafe extern "system" fn(this: *mut *mut Self, formattag: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetFormatTag: unsafe extern "system" fn(this: *mut *mut Self, formattag: i16) -> ::windows_sys::core::HRESULT,
+    pub Channels: unsafe extern "system" fn(this: *mut *mut Self, channels: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetChannels: unsafe extern "system" fn(this: *mut *mut Self, channels: i16) -> ::windows_sys::core::HRESULT,
+    pub SamplesPerSec: unsafe extern "system" fn(this: *mut *mut Self, samplespersec: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetSamplesPerSec: unsafe extern "system" fn(this: *mut *mut Self, samplespersec: i32) -> ::windows_sys::core::HRESULT,
+    pub AvgBytesPerSec: unsafe extern "system" fn(this: *mut *mut Self, avgbytespersec: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetAvgBytesPerSec: unsafe extern "system" fn(this: *mut *mut Self, avgbytespersec: i32) -> ::windows_sys::core::HRESULT,
+    pub BlockAlign: unsafe extern "system" fn(this: *mut *mut Self, blockalign: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetBlockAlign: unsafe extern "system" fn(this: *mut *mut Self, blockalign: i16) -> ::windows_sys::core::HRESULT,
+    pub BitsPerSample: unsafe extern "system" fn(this: *mut *mut Self, bitspersample: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetBitsPerSample: unsafe extern "system" fn(this: *mut *mut Self, bitspersample: i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub ExtraData: unsafe extern "system" fn(this: *mut *mut Self, extradata: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    ExtraData: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetExtraData: unsafe extern "system" fn(this: *mut *mut Self, extradata: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetExtraData: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISpeechXMLRecoResult {
+    pub base__: ISpeechRecoResult,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetXMLResult: unsafe extern "system" fn(this: *mut *mut Self, options: SPXMLRESULTOPTIONS, presult: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetXMLResult: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetXMLErrorInfo: unsafe extern "system" fn(this: *mut *mut Self, linenumber: *mut i32, scriptline: *mut super::super::Foundation::BSTR, source: *mut super::super::Foundation::BSTR, description: *mut super::super::Foundation::BSTR, resultcode: *mut i32, iserror: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetXMLErrorInfo: usize,
+}
 #[doc = "*Required features: `\"Win32_Media_Speech\"`*"]
 pub type PHONETICALPHABET = i32;
 #[doc = "*Required features: `\"Win32_Media_Speech\"`*"]
@@ -3051,5 +4830,13 @@ pub const Speech_Max_Word_Length: i32 = 128i32;
 pub const Speech_StreamPos_Asap: i32 = 0i32;
 #[doc = "*Required features: `\"Win32_Media_Speech\"`*"]
 pub const Speech_StreamPos_RealTime: i32 = -1i32;
-pub type _ISpeechRecoContextEvents = *mut ::core::ffi::c_void;
-pub type _ISpeechVoiceEvents = *mut ::core::ffi::c_void;
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct _ISpeechRecoContextEvents {
+    pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct _ISpeechVoiceEvents {
+    pub base__: super::super::System::Com::IDispatch,
+}

@@ -1,3 +1,130 @@
+#[repr(C)]
+pub struct IInjectedInputGamepadInfo {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Gaming_Input")]
+    pub Buttons: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::super::super::Gaming::Input::GamepadButtons) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Gaming_Input"))]
+    Buttons: usize,
+    #[cfg(feature = "Gaming_Input")]
+    pub SetButtons: unsafe extern "system" fn(this: *mut *mut Self, value: super::super::super::super::Gaming::Input::GamepadButtons) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Gaming_Input"))]
+    SetButtons: usize,
+    pub LeftThumbstickX: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f64) -> ::windows_sys::core::HRESULT,
+    pub SetLeftThumbstickX: unsafe extern "system" fn(this: *mut *mut Self, value: f64) -> ::windows_sys::core::HRESULT,
+    pub LeftThumbstickY: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f64) -> ::windows_sys::core::HRESULT,
+    pub SetLeftThumbstickY: unsafe extern "system" fn(this: *mut *mut Self, value: f64) -> ::windows_sys::core::HRESULT,
+    pub LeftTrigger: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f64) -> ::windows_sys::core::HRESULT,
+    pub SetLeftTrigger: unsafe extern "system" fn(this: *mut *mut Self, value: f64) -> ::windows_sys::core::HRESULT,
+    pub RightThumbstickX: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f64) -> ::windows_sys::core::HRESULT,
+    pub SetRightThumbstickX: unsafe extern "system" fn(this: *mut *mut Self, value: f64) -> ::windows_sys::core::HRESULT,
+    pub RightThumbstickY: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f64) -> ::windows_sys::core::HRESULT,
+    pub SetRightThumbstickY: unsafe extern "system" fn(this: *mut *mut Self, value: f64) -> ::windows_sys::core::HRESULT,
+    pub RightTrigger: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f64) -> ::windows_sys::core::HRESULT,
+    pub SetRightTrigger: unsafe extern "system" fn(this: *mut *mut Self, value: f64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IInjectedInputGamepadInfoFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Gaming_Input")]
+    pub CreateInstanceFromGamepadReading: unsafe extern "system" fn(this: *mut *mut Self, reading: super::super::super::super::Gaming::Input::GamepadReading, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Gaming_Input"))]
+    CreateInstanceFromGamepadReading: usize,
+}
+#[repr(C)]
+pub struct IInjectedInputKeyboardInfo {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub KeyOptions: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut InjectedInputKeyOptions) -> ::windows_sys::core::HRESULT,
+    pub SetKeyOptions: unsafe extern "system" fn(this: *mut *mut Self, value: InjectedInputKeyOptions) -> ::windows_sys::core::HRESULT,
+    pub ScanCode: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub SetScanCode: unsafe extern "system" fn(this: *mut *mut Self, value: u16) -> ::windows_sys::core::HRESULT,
+    pub VirtualKey: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub SetVirtualKey: unsafe extern "system" fn(this: *mut *mut Self, value: u16) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IInjectedInputMouseInfo {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub MouseOptions: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut InjectedInputMouseOptions) -> ::windows_sys::core::HRESULT,
+    pub SetMouseOptions: unsafe extern "system" fn(this: *mut *mut Self, value: InjectedInputMouseOptions) -> ::windows_sys::core::HRESULT,
+    pub MouseData: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetMouseData: unsafe extern "system" fn(this: *mut *mut Self, value: u32) -> ::windows_sys::core::HRESULT,
+    pub DeltaY: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetDeltaY: unsafe extern "system" fn(this: *mut *mut Self, value: i32) -> ::windows_sys::core::HRESULT,
+    pub DeltaX: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetDeltaX: unsafe extern "system" fn(this: *mut *mut Self, value: i32) -> ::windows_sys::core::HRESULT,
+    pub TimeOffsetInMilliseconds: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetTimeOffsetInMilliseconds: unsafe extern "system" fn(this: *mut *mut Self, value: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IInjectedInputPenInfo {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub PointerInfo: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut InjectedInputPointerInfo) -> ::windows_sys::core::HRESULT,
+    pub SetPointerInfo: unsafe extern "system" fn(this: *mut *mut Self, value: InjectedInputPointerInfo) -> ::windows_sys::core::HRESULT,
+    pub PenButtons: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut InjectedInputPenButtons) -> ::windows_sys::core::HRESULT,
+    pub SetPenButtons: unsafe extern "system" fn(this: *mut *mut Self, value: InjectedInputPenButtons) -> ::windows_sys::core::HRESULT,
+    pub PenParameters: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut InjectedInputPenParameters) -> ::windows_sys::core::HRESULT,
+    pub SetPenParameters: unsafe extern "system" fn(this: *mut *mut Self, value: InjectedInputPenParameters) -> ::windows_sys::core::HRESULT,
+    pub Pressure: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f64) -> ::windows_sys::core::HRESULT,
+    pub SetPressure: unsafe extern "system" fn(this: *mut *mut Self, value: f64) -> ::windows_sys::core::HRESULT,
+    pub Rotation: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f64) -> ::windows_sys::core::HRESULT,
+    pub SetRotation: unsafe extern "system" fn(this: *mut *mut Self, value: f64) -> ::windows_sys::core::HRESULT,
+    pub TiltX: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetTiltX: unsafe extern "system" fn(this: *mut *mut Self, value: i32) -> ::windows_sys::core::HRESULT,
+    pub TiltY: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetTiltY: unsafe extern "system" fn(this: *mut *mut Self, value: i32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IInjectedInputTouchInfo {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Contact: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut InjectedInputRectangle) -> ::windows_sys::core::HRESULT,
+    pub SetContact: unsafe extern "system" fn(this: *mut *mut Self, value: InjectedInputRectangle) -> ::windows_sys::core::HRESULT,
+    pub Orientation: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetOrientation: unsafe extern "system" fn(this: *mut *mut Self, value: i32) -> ::windows_sys::core::HRESULT,
+    pub PointerInfo: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut InjectedInputPointerInfo) -> ::windows_sys::core::HRESULT,
+    pub SetPointerInfo: unsafe extern "system" fn(this: *mut *mut Self, value: InjectedInputPointerInfo) -> ::windows_sys::core::HRESULT,
+    pub Pressure: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f64) -> ::windows_sys::core::HRESULT,
+    pub SetPressure: unsafe extern "system" fn(this: *mut *mut Self, value: f64) -> ::windows_sys::core::HRESULT,
+    pub TouchParameters: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut InjectedInputTouchParameters) -> ::windows_sys::core::HRESULT,
+    pub SetTouchParameters: unsafe extern "system" fn(this: *mut *mut Self, value: InjectedInputTouchParameters) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IInputInjector {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation_Collections")]
+    pub InjectKeyboardInput: unsafe extern "system" fn(this: *mut *mut Self, input: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    InjectKeyboardInput: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub InjectMouseInput: unsafe extern "system" fn(this: *mut *mut Self, input: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    InjectMouseInput: usize,
+    pub InitializeTouchInjection: unsafe extern "system" fn(this: *mut *mut Self, visualmode: InjectedInputVisualizationMode) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub InjectTouchInput: unsafe extern "system" fn(this: *mut *mut Self, input: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    InjectTouchInput: usize,
+    pub UninitializeTouchInjection: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub InitializePenInjection: unsafe extern "system" fn(this: *mut *mut Self, visualmode: InjectedInputVisualizationMode) -> ::windows_sys::core::HRESULT,
+    pub InjectPenInput: unsafe extern "system" fn(this: *mut *mut Self, input: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub UninitializePenInjection: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub InjectShortcut: unsafe extern "system" fn(this: *mut *mut Self, shortcut: InjectedInputShortcut) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IInputInjector2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub InitializeGamepadInjection: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub InjectGamepadInput: unsafe extern "system" fn(this: *mut *mut Self, input: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub UninitializeGamepadInjection: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IInputInjectorStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub TryCreate: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IInputInjectorStatics2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub TryCreateForAppBroadcastOnly: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
 #[doc = "*Required features: `\"UI_Input_Preview_Injection\"`*"]
 #[repr(transparent)]
 pub struct InjectedInputButtonChangeKind(pub i32);

@@ -89,13 +89,98 @@ impl ::core::clone::Clone for EnumType {
         *self
     }
 }
-pub type IBitmapData = *mut ::core::ffi::c_void;
-pub type IVisualTreeService = *mut ::core::ffi::c_void;
-pub type IVisualTreeService2 = *mut ::core::ffi::c_void;
-pub type IVisualTreeService3 = *mut ::core::ffi::c_void;
-pub type IVisualTreeServiceCallback = *mut ::core::ffi::c_void;
-pub type IVisualTreeServiceCallback2 = *mut ::core::ffi::c_void;
-pub type IXamlDiagnostics = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IBitmapData {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub CopyBytesTo: unsafe extern "system" fn(this: *mut *mut Self, sourceoffsetinbytes: u32, maxbytestocopy: u32, pvbytes: *mut u8, numberofbytescopied: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetStride: unsafe extern "system" fn(this: *mut *mut Self, pstride: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+    pub GetBitmapDescription: unsafe extern "system" fn(this: *mut *mut Self, pbitmapdescription: *mut BitmapDescription) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Dxgi_Common"))]
+    GetBitmapDescription: usize,
+    #[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+    pub GetSourceBitmapDescription: unsafe extern "system" fn(this: *mut *mut Self, pbitmapdescription: *mut BitmapDescription) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Dxgi_Common"))]
+    GetSourceBitmapDescription: usize,
+}
+#[repr(C)]
+pub struct IVisualTreeService {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub AdviseVisualTreeChange: unsafe extern "system" fn(this: *mut *mut Self, pcallback: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub UnadviseVisualTreeChange: unsafe extern "system" fn(this: *mut *mut Self, pcallback: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub GetEnums: unsafe extern "system" fn(this: *mut *mut Self, pcount: *mut u32, ppenums: *mut *mut EnumType) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    GetEnums: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CreateInstance: unsafe extern "system" fn(this: *mut *mut Self, typename: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, value: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, pinstancehandle: *mut u64) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CreateInstance: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetPropertyValuesChain: unsafe extern "system" fn(this: *mut *mut Self, instancehandle: u64, psourcecount: *mut u32, pppropertysources: *mut *mut PropertyChainSource, ppropertycount: *mut u32, pppropertyvalues: *mut *mut PropertyChainValue) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetPropertyValuesChain: usize,
+    pub SetProperty: unsafe extern "system" fn(this: *mut *mut Self, instancehandle: u64, value: u64, propertyindex: u32) -> ::windows_sys::core::HRESULT,
+    pub ClearProperty: unsafe extern "system" fn(this: *mut *mut Self, instancehandle: u64, propertyindex: u32) -> ::windows_sys::core::HRESULT,
+    pub GetCollectionCount: unsafe extern "system" fn(this: *mut *mut Self, instancehandle: u64, pcollectionsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetCollectionElements: unsafe extern "system" fn(this: *mut *mut Self, instancehandle: u64, startindex: u32, pelementcount: *mut u32, ppelementvalues: *mut *mut CollectionElementValue) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetCollectionElements: usize,
+    pub AddChild: unsafe extern "system" fn(this: *mut *mut Self, parent: u64, child: u64, index: u32) -> ::windows_sys::core::HRESULT,
+    pub RemoveChild: unsafe extern "system" fn(this: *mut *mut Self, parent: u64, index: u32) -> ::windows_sys::core::HRESULT,
+    pub ClearChildren: unsafe extern "system" fn(this: *mut *mut Self, parent: u64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IVisualTreeService2 {
+    pub base__: IVisualTreeService,
+    pub GetPropertyIndex: unsafe extern "system" fn(this: *mut *mut Self, object: u64, propertyname: ::windows_sys::core::PCWSTR, ppropertyindex: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetProperty: unsafe extern "system" fn(this: *mut *mut Self, object: u64, propertyindex: u32, pvalue: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub ReplaceResource: unsafe extern "system" fn(this: *mut *mut Self, resourcedictionary: u64, key: u64, newvalue: u64) -> ::windows_sys::core::HRESULT,
+    pub RenderTargetBitmap: unsafe extern "system" fn(this: *mut *mut Self, handle: u64, options: RenderTargetBitmapOptions, maxpixelwidth: u32, maxpixelheight: u32, ppbitmapdata: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IVisualTreeService3 {
+    pub base__: IVisualTreeService2,
+    pub ResolveResource: unsafe extern "system" fn(this: *mut *mut Self, resourcecontext: u64, resourcename: ::windows_sys::core::PCWSTR, resourcetype: ResourceType, propertyindex: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetDictionaryItem: unsafe extern "system" fn(this: *mut *mut Self, dictionaryhandle: u64, resourcename: ::windows_sys::core::PCWSTR, resourceisimplicitstyle: super::super::super::Foundation::BOOL, resourcehandle: *mut u64) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetDictionaryItem: usize,
+    pub AddDictionaryItem: unsafe extern "system" fn(this: *mut *mut Self, dictionaryhandle: u64, resourcekey: u64, resourcehandle: u64) -> ::windows_sys::core::HRESULT,
+    pub RemoveDictionaryItem: unsafe extern "system" fn(this: *mut *mut Self, dictionaryhandle: u64, resourcekey: u64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IVisualTreeServiceCallback {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OnVisualTreeChange: unsafe extern "system" fn(this: *mut *mut Self, relation: ParentChildRelation, element: ::core::mem::ManuallyDrop<VisualElement>, mutationtype: VisualMutationType) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OnVisualTreeChange: usize,
+}
+#[repr(C)]
+pub struct IVisualTreeServiceCallback2 {
+    pub base__: IVisualTreeServiceCallback,
+    pub OnElementStateChanged: unsafe extern "system" fn(this: *mut *mut Self, element: u64, elementstate: VisualElementState, context: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IXamlDiagnostics {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetDispatcher: unsafe extern "system" fn(this: *mut *mut Self, ppdispatcher: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetUiLayer: unsafe extern "system" fn(this: *mut *mut Self, pplayer: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetApplication: unsafe extern "system" fn(this: *mut *mut Self, ppapplication: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetIInspectableFromHandle: unsafe extern "system" fn(this: *mut *mut Self, instancehandle: u64, ppinstance: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetHandleFromIInspectable: unsafe extern "system" fn(this: *mut *mut Self, pinstance: *mut ::core::ffi::c_void, phandle: *mut u64) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub HitTest: unsafe extern "system" fn(this: *mut *mut Self, rect: super::super::super::Foundation::RECT, pcount: *mut u32, ppinstancehandles: *mut *mut u64) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    HitTest: usize,
+    pub RegisterInstance: unsafe extern "system" fn(this: *mut *mut Self, pinstance: *mut ::core::ffi::c_void, pinstancehandle: *mut u64) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetInitializationData: unsafe extern "system" fn(this: *mut *mut Self, pinitializationdata: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetInitializationData: usize,
+}
 #[doc = "*Required features: `\"Win32_UI_Xaml_Diagnostics\"`*"]
 #[repr(transparent)]
 pub struct MetadataBit(pub i32);

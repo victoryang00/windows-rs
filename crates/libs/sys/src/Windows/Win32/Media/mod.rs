@@ -42,9 +42,30 @@ extern "system" {
     pub fn timeSetEvent(udelay: u32, uresolution: u32, fptc: LPTIMECALLBACK, dwuser: usize, fuevent: u32) -> u32;
 }
 pub type HTASK = isize;
-pub type IReferenceClock = *mut ::core::ffi::c_void;
-pub type IReferenceClock2 = *mut ::core::ffi::c_void;
-pub type IReferenceClockTimerControl = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IReferenceClock {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetTime: unsafe extern "system" fn(this: *mut *mut Self, ptime: *mut i64) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AdviseTime: unsafe extern "system" fn(this: *mut *mut Self, basetime: i64, streamtime: i64, hevent: super::Foundation::HANDLE, pdwadvisecookie: *mut usize) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AdviseTime: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AdvisePeriodic: unsafe extern "system" fn(this: *mut *mut Self, starttime: i64, periodtime: i64, hsemaphore: super::Foundation::HANDLE, pdwadvisecookie: *mut usize) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AdvisePeriodic: usize,
+    pub Unadvise: unsafe extern "system" fn(this: *mut *mut Self, dwadvisecookie: usize) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IReferenceClock2 {
+    pub base__: IReferenceClock,
+}
+#[repr(C)]
+pub struct IReferenceClockTimerControl {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetDefaultTimerResolution: unsafe extern "system" fn(this: *mut *mut Self, timerresolution: i64) -> ::windows_sys::core::HRESULT,
+    pub GetDefaultTimerResolution: unsafe extern "system" fn(this: *mut *mut Self, ptimerresolution: *mut i64) -> ::windows_sys::core::HRESULT,
+}
 #[doc = "*Required features: `\"Win32_Media\"`*"]
 pub const JOYERR_BASE: u32 = 160u32;
 #[doc = "*Required features: `\"Win32_Media\"`, `\"Win32_Media_Multimedia\"`*"]

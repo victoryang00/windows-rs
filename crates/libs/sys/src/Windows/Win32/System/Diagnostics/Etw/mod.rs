@@ -2068,9 +2068,54 @@ pub const GLOBAL_LOGGER_NAME: &str = "GlobalLogger";
 pub const GLOBAL_LOGGER_NAMEA: &str = "GlobalLogger";
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
 pub const GLOBAL_LOGGER_NAMEW: &str = "GlobalLogger";
-pub type ITraceEvent = *mut ::core::ffi::c_void;
-pub type ITraceEventCallback = *mut ::core::ffi::c_void;
-pub type ITraceRelogger = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct ITraceEvent {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, newevent: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetUserContext: unsafe extern "system" fn(this: *mut *mut Self, usercontext: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetEventRecord: unsafe extern "system" fn(this: *mut *mut Self, eventrecord: *mut *mut EVENT_RECORD) -> ::windows_sys::core::HRESULT,
+    pub SetPayload: unsafe extern "system" fn(this: *mut *mut Self, payload: *const u8, payloadsize: u32) -> ::windows_sys::core::HRESULT,
+    pub SetEventDescriptor: unsafe extern "system" fn(this: *mut *mut Self, eventdescriptor: *const EVENT_DESCRIPTOR) -> ::windows_sys::core::HRESULT,
+    pub SetProcessId: unsafe extern "system" fn(this: *mut *mut Self, processid: u32) -> ::windows_sys::core::HRESULT,
+    pub SetProcessorIndex: unsafe extern "system" fn(this: *mut *mut Self, processorindex: u32) -> ::windows_sys::core::HRESULT,
+    pub SetThreadId: unsafe extern "system" fn(this: *mut *mut Self, threadid: u32) -> ::windows_sys::core::HRESULT,
+    pub SetThreadTimes: unsafe extern "system" fn(this: *mut *mut Self, kerneltime: u32, usertime: u32) -> ::windows_sys::core::HRESULT,
+    pub SetActivityId: unsafe extern "system" fn(this: *mut *mut Self, activityid: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub SetTimeStamp: unsafe extern "system" fn(this: *mut *mut Self, timestamp: *const i64) -> ::windows_sys::core::HRESULT,
+    pub SetProviderId: unsafe extern "system" fn(this: *mut *mut Self, providerid: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITraceEventCallback {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnBeginProcessTrace: unsafe extern "system" fn(this: *mut *mut Self, headerevent: *mut ::core::ffi::c_void, relogger: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub OnFinalizeProcessTrace: unsafe extern "system" fn(this: *mut *mut Self, relogger: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub OnEvent: unsafe extern "system" fn(this: *mut *mut Self, event: *mut ::core::ffi::c_void, relogger: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITraceRelogger {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AddLogfileTraceStream: unsafe extern "system" fn(this: *mut *mut Self, logfilename: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, usercontext: *const ::core::ffi::c_void, tracehandle: *mut u64) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AddLogfileTraceStream: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AddRealtimeTraceStream: unsafe extern "system" fn(this: *mut *mut Self, loggername: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, usercontext: *const ::core::ffi::c_void, tracehandle: *mut u64) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AddRealtimeTraceStream: usize,
+    pub RegisterCallback: unsafe extern "system" fn(this: *mut *mut Self, callback: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Inject: unsafe extern "system" fn(this: *mut *mut Self, event: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateEventInstance: unsafe extern "system" fn(this: *mut *mut Self, tracehandle: u64, flags: u32, event: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ProcessTrace: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetOutputFilename: unsafe extern "system" fn(this: *mut *mut Self, logfilename: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetOutputFilename: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetCompressionMode: unsafe extern "system" fn(this: *mut *mut Self, compressionmode: super::super::super::Foundation::BOOLEAN) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetCompressionMode: usize,
+    pub Cancel: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
 pub const KERNEL_LOGGER_NAME: &str = "NT Kernel Logger";
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]

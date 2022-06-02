@@ -198,21 +198,189 @@ pub const DirectManipulationPrimaryContent: ::windows_sys::core::GUID = ::window
 pub const DirectManipulationSharedManager: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2574856838, data2: 30668, data3: 19287, data4: [150, 219, 59, 53, 79, 111, 159, 181] };
 pub const DirectManipulationUpdateManager: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2680274901, data2: 6197, data3: 17434, data4: [179, 177, 182, 204, 116, 183, 39, 208] };
 pub const DirectManipulationViewport: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 887230902, data2: 13904, data3: 20341, data4: [131, 52, 250, 53, 149, 152, 225, 197] };
-pub type IDirectManipulationAutoScrollBehavior = *mut ::core::ffi::c_void;
-pub type IDirectManipulationCompositor = *mut ::core::ffi::c_void;
-pub type IDirectManipulationCompositor2 = *mut ::core::ffi::c_void;
-pub type IDirectManipulationContent = *mut ::core::ffi::c_void;
-pub type IDirectManipulationDeferContactService = *mut ::core::ffi::c_void;
-pub type IDirectManipulationDragDropBehavior = *mut ::core::ffi::c_void;
-pub type IDirectManipulationDragDropEventHandler = *mut ::core::ffi::c_void;
-pub type IDirectManipulationFrameInfoProvider = *mut ::core::ffi::c_void;
-pub type IDirectManipulationInteractionEventHandler = *mut ::core::ffi::c_void;
-pub type IDirectManipulationManager = *mut ::core::ffi::c_void;
-pub type IDirectManipulationManager2 = *mut ::core::ffi::c_void;
-pub type IDirectManipulationManager3 = *mut ::core::ffi::c_void;
-pub type IDirectManipulationPrimaryContent = *mut ::core::ffi::c_void;
-pub type IDirectManipulationUpdateHandler = *mut ::core::ffi::c_void;
-pub type IDirectManipulationUpdateManager = *mut ::core::ffi::c_void;
-pub type IDirectManipulationViewport = *mut ::core::ffi::c_void;
-pub type IDirectManipulationViewport2 = *mut ::core::ffi::c_void;
-pub type IDirectManipulationViewportEventHandler = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IDirectManipulationAutoScrollBehavior {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetConfiguration: unsafe extern "system" fn(this: *mut *mut Self, motiontypes: DIRECTMANIPULATION_MOTION_TYPES, scrollmotion: DIRECTMANIPULATION_AUTOSCROLL_CONFIGURATION) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDirectManipulationCompositor {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub AddContent: unsafe extern "system" fn(this: *mut *mut Self, content: *mut ::core::ffi::c_void, device: *mut ::core::ffi::c_void, parentvisual: *mut ::core::ffi::c_void, childvisual: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RemoveContent: unsafe extern "system" fn(this: *mut *mut Self, content: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetUpdateManager: unsafe extern "system" fn(this: *mut *mut Self, updatemanager: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Flush: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDirectManipulationCompositor2 {
+    pub base__: IDirectManipulationCompositor,
+    pub AddContentWithCrossProcessChaining: unsafe extern "system" fn(this: *mut *mut Self, content: *mut ::core::ffi::c_void, device: *mut ::core::ffi::c_void, parentvisual: *mut ::core::ffi::c_void, childvisual: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDirectManipulationContent {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetContentRect: unsafe extern "system" fn(this: *mut *mut Self, contentsize: *mut super::super::Foundation::RECT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetContentRect: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetContentRect: unsafe extern "system" fn(this: *mut *mut Self, contentsize: *const super::super::Foundation::RECT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetContentRect: usize,
+    pub GetViewport: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, object: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetTag: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, object: *mut *mut ::core::ffi::c_void, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetTag: unsafe extern "system" fn(this: *mut *mut Self, object: *mut ::core::ffi::c_void, id: u32) -> ::windows_sys::core::HRESULT,
+    pub GetOutputTransform: unsafe extern "system" fn(this: *mut *mut Self, matrix: *mut f32, pointcount: u32) -> ::windows_sys::core::HRESULT,
+    pub GetContentTransform: unsafe extern "system" fn(this: *mut *mut Self, matrix: *mut f32, pointcount: u32) -> ::windows_sys::core::HRESULT,
+    pub SyncContentTransform: unsafe extern "system" fn(this: *mut *mut Self, matrix: *const f32, pointcount: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDirectManipulationDeferContactService {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub DeferContact: unsafe extern "system" fn(this: *mut *mut Self, pointerid: u32, timeout: u32) -> ::windows_sys::core::HRESULT,
+    pub CancelContact: unsafe extern "system" fn(this: *mut *mut Self, pointerid: u32) -> ::windows_sys::core::HRESULT,
+    pub CancelDeferral: unsafe extern "system" fn(this: *mut *mut Self, pointerid: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDirectManipulationDragDropBehavior {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetConfiguration: unsafe extern "system" fn(this: *mut *mut Self, configuration: DIRECTMANIPULATION_DRAG_DROP_CONFIGURATION) -> ::windows_sys::core::HRESULT,
+    pub GetStatus: unsafe extern "system" fn(this: *mut *mut Self, status: *mut DIRECTMANIPULATION_DRAG_DROP_STATUS) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDirectManipulationDragDropEventHandler {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnDragDropStatusChange: unsafe extern "system" fn(this: *mut *mut Self, viewport: *mut ::core::ffi::c_void, current: DIRECTMANIPULATION_DRAG_DROP_STATUS, previous: DIRECTMANIPULATION_DRAG_DROP_STATUS) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDirectManipulationFrameInfoProvider {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetNextFrameInfo: unsafe extern "system" fn(this: *mut *mut Self, time: *mut u64, processtime: *mut u64, compositiontime: *mut u64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDirectManipulationInteractionEventHandler {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnInteraction: unsafe extern "system" fn(this: *mut *mut Self, viewport: *mut ::core::ffi::c_void, interaction: DIRECTMANIPULATION_INTERACTION_TYPE) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDirectManipulationManager {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Activate: unsafe extern "system" fn(this: *mut *mut Self, window: super::super::Foundation::HWND) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Activate: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Deactivate: unsafe extern "system" fn(this: *mut *mut Self, window: super::super::Foundation::HWND) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Deactivate: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RegisterHitTestTarget: unsafe extern "system" fn(this: *mut *mut Self, window: super::super::Foundation::HWND, hittestwindow: super::super::Foundation::HWND, r#type: DIRECTMANIPULATION_HITTEST_TYPE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RegisterHitTestTarget: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+    pub ProcessInput: unsafe extern "system" fn(this: *mut *mut Self, message: *const super::super::UI::WindowsAndMessaging::MSG, handled: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging")))]
+    ProcessInput: usize,
+    pub GetUpdateManager: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, object: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CreateViewport: unsafe extern "system" fn(this: *mut *mut Self, frameinfo: *mut ::core::ffi::c_void, window: super::super::Foundation::HWND, riid: *const ::windows_sys::core::GUID, object: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CreateViewport: usize,
+    pub CreateContent: unsafe extern "system" fn(this: *mut *mut Self, frameinfo: *mut ::core::ffi::c_void, clsid: *const ::windows_sys::core::GUID, riid: *const ::windows_sys::core::GUID, object: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDirectManipulationManager2 {
+    pub base__: IDirectManipulationManager,
+    pub CreateBehavior: unsafe extern "system" fn(this: *mut *mut Self, clsid: *const ::windows_sys::core::GUID, riid: *const ::windows_sys::core::GUID, object: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDirectManipulationManager3 {
+    pub base__: IDirectManipulationManager2,
+    pub GetService: unsafe extern "system" fn(this: *mut *mut Self, clsid: *const ::windows_sys::core::GUID, riid: *const ::windows_sys::core::GUID, object: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDirectManipulationPrimaryContent {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetSnapInterval: unsafe extern "system" fn(this: *mut *mut Self, motion: DIRECTMANIPULATION_MOTION_TYPES, interval: f32, offset: f32) -> ::windows_sys::core::HRESULT,
+    pub SetSnapPoints: unsafe extern "system" fn(this: *mut *mut Self, motion: DIRECTMANIPULATION_MOTION_TYPES, points: *const f32, pointcount: u32) -> ::windows_sys::core::HRESULT,
+    pub SetSnapType: unsafe extern "system" fn(this: *mut *mut Self, motion: DIRECTMANIPULATION_MOTION_TYPES, r#type: DIRECTMANIPULATION_SNAPPOINT_TYPE) -> ::windows_sys::core::HRESULT,
+    pub SetSnapCoordinate: unsafe extern "system" fn(this: *mut *mut Self, motion: DIRECTMANIPULATION_MOTION_TYPES, coordinate: DIRECTMANIPULATION_SNAPPOINT_COORDINATE, origin: f32) -> ::windows_sys::core::HRESULT,
+    pub SetZoomBoundaries: unsafe extern "system" fn(this: *mut *mut Self, zoomminimum: f32, zoommaximum: f32) -> ::windows_sys::core::HRESULT,
+    pub SetHorizontalAlignment: unsafe extern "system" fn(this: *mut *mut Self, alignment: DIRECTMANIPULATION_HORIZONTALALIGNMENT) -> ::windows_sys::core::HRESULT,
+    pub SetVerticalAlignment: unsafe extern "system" fn(this: *mut *mut Self, alignment: DIRECTMANIPULATION_VERTICALALIGNMENT) -> ::windows_sys::core::HRESULT,
+    pub GetInertiaEndTransform: unsafe extern "system" fn(this: *mut *mut Self, matrix: *mut f32, pointcount: u32) -> ::windows_sys::core::HRESULT,
+    pub GetCenterPoint: unsafe extern "system" fn(this: *mut *mut Self, centerx: *mut f32, centery: *mut f32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDirectManipulationUpdateHandler {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Update: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDirectManipulationUpdateManager {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RegisterWaitHandleCallback: unsafe extern "system" fn(this: *mut *mut Self, handle: super::super::Foundation::HANDLE, eventhandler: *mut ::core::ffi::c_void, cookie: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RegisterWaitHandleCallback: usize,
+    pub UnregisterWaitHandleCallback: unsafe extern "system" fn(this: *mut *mut Self, cookie: u32) -> ::windows_sys::core::HRESULT,
+    pub Update: unsafe extern "system" fn(this: *mut *mut Self, frameinfo: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDirectManipulationViewport {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Enable: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Disable: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub SetContact: unsafe extern "system" fn(this: *mut *mut Self, pointerid: u32) -> ::windows_sys::core::HRESULT,
+    pub ReleaseContact: unsafe extern "system" fn(this: *mut *mut Self, pointerid: u32) -> ::windows_sys::core::HRESULT,
+    pub ReleaseAllContacts: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetStatus: unsafe extern "system" fn(this: *mut *mut Self, status: *mut DIRECTMANIPULATION_STATUS) -> ::windows_sys::core::HRESULT,
+    pub GetTag: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, object: *mut *mut ::core::ffi::c_void, id: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetTag: unsafe extern "system" fn(this: *mut *mut Self, object: *mut ::core::ffi::c_void, id: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetViewportRect: unsafe extern "system" fn(this: *mut *mut Self, viewport: *mut super::super::Foundation::RECT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetViewportRect: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetViewportRect: unsafe extern "system" fn(this: *mut *mut Self, viewport: *const super::super::Foundation::RECT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetViewportRect: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ZoomToRect: unsafe extern "system" fn(this: *mut *mut Self, left: f32, top: f32, right: f32, bottom: f32, animate: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ZoomToRect: usize,
+    pub SetViewportTransform: unsafe extern "system" fn(this: *mut *mut Self, matrix: *const f32, pointcount: u32) -> ::windows_sys::core::HRESULT,
+    pub SyncDisplayTransform: unsafe extern "system" fn(this: *mut *mut Self, matrix: *const f32, pointcount: u32) -> ::windows_sys::core::HRESULT,
+    pub GetPrimaryContent: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, object: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AddContent: unsafe extern "system" fn(this: *mut *mut Self, content: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RemoveContent: unsafe extern "system" fn(this: *mut *mut Self, content: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetViewportOptions: unsafe extern "system" fn(this: *mut *mut Self, options: DIRECTMANIPULATION_VIEWPORT_OPTIONS) -> ::windows_sys::core::HRESULT,
+    pub AddConfiguration: unsafe extern "system" fn(this: *mut *mut Self, configuration: DIRECTMANIPULATION_CONFIGURATION) -> ::windows_sys::core::HRESULT,
+    pub RemoveConfiguration: unsafe extern "system" fn(this: *mut *mut Self, configuration: DIRECTMANIPULATION_CONFIGURATION) -> ::windows_sys::core::HRESULT,
+    pub ActivateConfiguration: unsafe extern "system" fn(this: *mut *mut Self, configuration: DIRECTMANIPULATION_CONFIGURATION) -> ::windows_sys::core::HRESULT,
+    pub SetManualGesture: unsafe extern "system" fn(this: *mut *mut Self, configuration: DIRECTMANIPULATION_GESTURE_CONFIGURATION) -> ::windows_sys::core::HRESULT,
+    pub SetChaining: unsafe extern "system" fn(this: *mut *mut Self, enabledtypes: DIRECTMANIPULATION_MOTION_TYPES) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AddEventHandler: unsafe extern "system" fn(this: *mut *mut Self, window: super::super::Foundation::HWND, eventhandler: *mut ::core::ffi::c_void, cookie: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AddEventHandler: usize,
+    pub RemoveEventHandler: unsafe extern "system" fn(this: *mut *mut Self, cookie: u32) -> ::windows_sys::core::HRESULT,
+    pub SetInputMode: unsafe extern "system" fn(this: *mut *mut Self, mode: DIRECTMANIPULATION_INPUT_MODE) -> ::windows_sys::core::HRESULT,
+    pub SetUpdateMode: unsafe extern "system" fn(this: *mut *mut Self, mode: DIRECTMANIPULATION_INPUT_MODE) -> ::windows_sys::core::HRESULT,
+    pub Stop: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Abandon: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDirectManipulationViewport2 {
+    pub base__: IDirectManipulationViewport,
+    pub AddBehavior: unsafe extern "system" fn(this: *mut *mut Self, behavior: *mut ::core::ffi::c_void, cookie: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub RemoveBehavior: unsafe extern "system" fn(this: *mut *mut Self, cookie: u32) -> ::windows_sys::core::HRESULT,
+    pub RemoveAllBehaviors: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDirectManipulationViewportEventHandler {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnViewportStatusChanged: unsafe extern "system" fn(this: *mut *mut Self, viewport: *mut ::core::ffi::c_void, current: DIRECTMANIPULATION_STATUS, previous: DIRECTMANIPULATION_STATUS) -> ::windows_sys::core::HRESULT,
+    pub OnViewportUpdated: unsafe extern "system" fn(this: *mut *mut Self, viewport: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub OnContentUpdated: unsafe extern "system" fn(this: *mut *mut Self, viewport: *mut ::core::ffi::c_void, content: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}

@@ -1354,9 +1354,23 @@ pub const D3D11_TESSELLATOR_PARTITIONING_FRACTIONAL_ODD: D3D_TESSELLATOR_PARTITI
 pub const D3D11_TESSELLATOR_PARTITIONING_FRACTIONAL_EVEN: D3D_TESSELLATOR_PARTITIONING = 4i32;
 pub const D3D_TEXTURE_LAYOUT_64KB_STANDARD_SWIZZLE: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1276062179, data2: 16223, data3: 19765, data4: [132, 201, 188, 9, 131, 182, 44, 40] };
 pub const D3D_TEXTURE_LAYOUT_ROW_MAJOR: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3051103055, data2: 29371, data3: 19436, data4: [151, 5, 140, 242, 88, 223, 107, 108] };
-pub type ID3DBlob = *mut ::core::ffi::c_void;
-pub type ID3DDestructionNotifier = *mut ::core::ffi::c_void;
-pub type ID3DInclude = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct ID3DBlob {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetBufferPointer: unsafe extern "system" fn(this: *mut *mut Self) -> *mut ::core::ffi::c_void,
+    pub GetBufferSize: unsafe extern "system" fn(this: *mut *mut Self) -> usize,
+}
+#[repr(C)]
+pub struct ID3DDestructionNotifier {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub RegisterDestructionCallback: unsafe extern "system" fn(this: *mut *mut Self, callbackfn: *mut ::core::ffi::c_void, pdata: *const ::core::ffi::c_void, pcallbackid: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub UnregisterDestructionCallback: unsafe extern "system" fn(this: *mut *mut Self, callbackid: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ID3DInclude {
+    pub Open: unsafe extern "system" fn(this: *mut *mut Self, includetype: D3D_INCLUDE_TYPE, pfilename: ::windows_sys::core::PCSTR, pparentdata: *const ::core::ffi::c_void, ppdata: *mut *mut ::core::ffi::c_void, pbytes: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Close: unsafe extern "system" fn(this: *mut *mut Self, pdata: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
 #[doc = "*Required features: `\"Win32_Graphics_Direct3D\"`*"]
 pub type PFN_DESTRUCTION_CALLBACK = ::core::option::Option<unsafe extern "system" fn(pdata: *mut ::core::ffi::c_void)>;
 pub const WKPDID_CommentStringW: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3491012032, data2: 37096, data3: 20168, data4: [129, 68, 233, 0, 173, 38, 107, 178] };

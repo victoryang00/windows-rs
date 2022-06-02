@@ -180,3 +180,74 @@ impl ::core::clone::Clone for EasRequireEncryptionResult {
         *self
     }
 }
+#[repr(C)]
+pub struct IEasClientDeviceInformation {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Id: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub OperatingSystem: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub FriendlyName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SystemManufacturer: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SystemProductName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SystemSku: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IEasClientDeviceInformation2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub SystemHardwareVersion: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SystemFirmwareVersion: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IEasClientSecurityPolicy {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub RequireEncryption: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetRequireEncryption: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+    pub MinPasswordLength: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u8) -> ::windows_sys::core::HRESULT,
+    pub SetMinPasswordLength: unsafe extern "system" fn(this: *mut *mut Self, value: u8) -> ::windows_sys::core::HRESULT,
+    pub DisallowConvenienceLogon: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetDisallowConvenienceLogon: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+    pub MinPasswordComplexCharacters: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u8) -> ::windows_sys::core::HRESULT,
+    pub SetMinPasswordComplexCharacters: unsafe extern "system" fn(this: *mut *mut Self, value: u8) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub PasswordExpiration: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Foundation::TimeSpan) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    PasswordExpiration: usize,
+    #[cfg(feature = "Foundation")]
+    pub SetPasswordExpiration: unsafe extern "system" fn(this: *mut *mut Self, value: super::super::Foundation::TimeSpan) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    SetPasswordExpiration: usize,
+    pub PasswordHistory: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetPasswordHistory: unsafe extern "system" fn(this: *mut *mut Self, value: u32) -> ::windows_sys::core::HRESULT,
+    pub MaxPasswordFailedAttempts: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u8) -> ::windows_sys::core::HRESULT,
+    pub SetMaxPasswordFailedAttempts: unsafe extern "system" fn(this: *mut *mut Self, value: u8) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub MaxInactivityTimeLock: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Foundation::TimeSpan) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    MaxInactivityTimeLock: usize,
+    #[cfg(feature = "Foundation")]
+    pub SetMaxInactivityTimeLock: unsafe extern "system" fn(this: *mut *mut Self, value: super::super::Foundation::TimeSpan) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    SetMaxInactivityTimeLock: usize,
+    pub CheckCompliance: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub ApplyAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    ApplyAsync: usize,
+}
+#[repr(C)]
+pub struct IEasComplianceResults {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Compliant: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub RequireEncryptionResult: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut EasRequireEncryptionResult) -> ::windows_sys::core::HRESULT,
+    pub MinPasswordLengthResult: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut EasMinPasswordLengthResult) -> ::windows_sys::core::HRESULT,
+    pub DisallowConvenienceLogonResult: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut EasDisallowConvenienceLogonResult) -> ::windows_sys::core::HRESULT,
+    pub MinPasswordComplexCharactersResult: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut EasMinPasswordComplexCharactersResult) -> ::windows_sys::core::HRESULT,
+    pub PasswordExpirationResult: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut EasPasswordExpirationResult) -> ::windows_sys::core::HRESULT,
+    pub PasswordHistoryResult: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut EasPasswordHistoryResult) -> ::windows_sys::core::HRESULT,
+    pub MaxPasswordFailedAttemptsResult: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut EasMaxPasswordFailedAttemptsResult) -> ::windows_sys::core::HRESULT,
+    pub MaxInactivityTimeLockResult: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut EasMaxInactivityTimeLockResult) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IEasComplianceResults2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub EncryptionProviderType: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut EasEncryptionProviderType) -> ::windows_sys::core::HRESULT,
+}

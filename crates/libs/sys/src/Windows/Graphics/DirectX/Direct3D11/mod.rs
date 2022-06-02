@@ -60,5 +60,13 @@ impl ::core::clone::Clone for Direct3DUsage {
         *self
     }
 }
-pub type IDirect3DDevice = *mut ::core::ffi::c_void;
-pub type IDirect3DSurface = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IDirect3DDevice {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Trim: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDirect3DSurface {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Description: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut Direct3DSurfaceDescription) -> ::windows_sys::core::HRESULT,
+}

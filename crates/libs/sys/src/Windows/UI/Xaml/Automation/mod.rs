@@ -261,6 +261,509 @@ impl ::core::clone::Clone for ExpandCollapseState {
 }
 pub type GridItemPatternIdentifiers = *mut ::core::ffi::c_void;
 pub type GridPatternIdentifiers = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IAnnotationPatternIdentifiers {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IAnnotationPatternIdentifiersStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub AnnotationTypeIdProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AnnotationTypeNameProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AuthorProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub DateTimeProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub TargetProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAutomationAnnotation {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Type: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut AnnotationType) -> ::windows_sys::core::HRESULT,
+    pub SetType: unsafe extern "system" fn(this: *mut *mut Self, value: AnnotationType) -> ::windows_sys::core::HRESULT,
+    pub Element: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetElement: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAutomationAnnotationFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CreateInstance: unsafe extern "system" fn(this: *mut *mut Self, r#type: AnnotationType, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateWithElementParameter: unsafe extern "system" fn(this: *mut *mut Self, r#type: AnnotationType, element: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAutomationAnnotationStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub TypeProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ElementProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAutomationElementIdentifiers {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IAutomationElementIdentifiersStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub AcceleratorKeyProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AccessKeyProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AutomationIdProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub BoundingRectangleProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ClassNameProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ClickablePointProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ControlTypeProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub HasKeyboardFocusProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub HelpTextProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub IsContentElementProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub IsControlElementProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub IsEnabledProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub IsKeyboardFocusableProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub IsOffscreenProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub IsPasswordProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub IsRequiredForFormProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ItemStatusProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ItemTypeProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub LabeledByProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub LocalizedControlTypeProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub NameProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub OrientationProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub LiveSettingProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAutomationElementIdentifiersStatics2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub ControlledPeersProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAutomationElementIdentifiersStatics3 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub PositionInSetProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SizeOfSetProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub LevelProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AnnotationsProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAutomationElementIdentifiersStatics4 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub LandmarkTypeProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub LocalizedLandmarkTypeProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAutomationElementIdentifiersStatics5 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub IsPeripheralProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub IsDataValidForFormProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub FullDescriptionProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub DescribedByProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub FlowsToProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub FlowsFromProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAutomationElementIdentifiersStatics6 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CultureProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAutomationElementIdentifiersStatics7 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub HeadingLevelProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAutomationElementIdentifiersStatics8 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub IsDialogProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAutomationProperties {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IAutomationPropertiesStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub AcceleratorKeyProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetAcceleratorKey: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetAcceleratorKey: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub AccessKeyProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetAccessKey: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetAccessKey: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub AutomationIdProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetAutomationId: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetAutomationId: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub HelpTextProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetHelpText: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetHelpText: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub IsRequiredForFormProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetIsRequiredForForm: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetIsRequiredForForm: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, value: bool) -> ::windows_sys::core::HRESULT,
+    pub ItemStatusProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetItemStatus: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetItemStatus: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub ItemTypeProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetItemType: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetItemType: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub LabeledByProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetLabeledBy: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetLabeledBy: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub NameProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetName: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetName: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub LiveSettingProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "UI_Xaml_Automation_Peers")]
+    pub GetLiveSetting: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, result__: *mut Peers::AutomationLiveSetting) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Automation_Peers"))]
+    GetLiveSetting: usize,
+    #[cfg(feature = "UI_Xaml_Automation_Peers")]
+    pub SetLiveSetting: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, value: Peers::AutomationLiveSetting) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Automation_Peers"))]
+    SetLiveSetting: usize,
+}
+#[repr(C)]
+pub struct IAutomationPropertiesStatics2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub AccessibilityViewProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "UI_Xaml_Automation_Peers")]
+    pub GetAccessibilityView: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, result__: *mut Peers::AccessibilityView) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Automation_Peers"))]
+    GetAccessibilityView: usize,
+    #[cfg(feature = "UI_Xaml_Automation_Peers")]
+    pub SetAccessibilityView: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, value: Peers::AccessibilityView) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Automation_Peers"))]
+    SetAccessibilityView: usize,
+    pub ControlledPeersProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub GetControlledPeers: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    GetControlledPeers: usize,
+}
+#[repr(C)]
+pub struct IAutomationPropertiesStatics3 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub PositionInSetProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetPositionInSet: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetPositionInSet: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, value: i32) -> ::windows_sys::core::HRESULT,
+    pub SizeOfSetProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetSizeOfSet: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetSizeOfSet: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, value: i32) -> ::windows_sys::core::HRESULT,
+    pub LevelProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetLevel: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetLevel: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, value: i32) -> ::windows_sys::core::HRESULT,
+    pub AnnotationsProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub GetAnnotations: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    GetAnnotations: usize,
+}
+#[repr(C)]
+pub struct IAutomationPropertiesStatics4 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub LandmarkTypeProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "UI_Xaml_Automation_Peers")]
+    pub GetLandmarkType: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, result__: *mut Peers::AutomationLandmarkType) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Automation_Peers"))]
+    GetLandmarkType: usize,
+    #[cfg(feature = "UI_Xaml_Automation_Peers")]
+    pub SetLandmarkType: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, value: Peers::AutomationLandmarkType) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Automation_Peers"))]
+    SetLandmarkType: usize,
+    pub LocalizedLandmarkTypeProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetLocalizedLandmarkType: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetLocalizedLandmarkType: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAutomationPropertiesStatics5 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub IsPeripheralProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetIsPeripheral: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetIsPeripheral: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, value: bool) -> ::windows_sys::core::HRESULT,
+    pub IsDataValidForFormProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetIsDataValidForForm: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetIsDataValidForForm: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, value: bool) -> ::windows_sys::core::HRESULT,
+    pub FullDescriptionProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetFullDescription: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetFullDescription: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub LocalizedControlTypeProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetLocalizedControlType: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetLocalizedControlType: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub DescribedByProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub GetDescribedBy: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    GetDescribedBy: usize,
+    pub FlowsToProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub GetFlowsTo: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    GetFlowsTo: usize,
+    pub FlowsFromProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub GetFlowsFrom: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    GetFlowsFrom: usize,
+}
+#[repr(C)]
+pub struct IAutomationPropertiesStatics6 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CultureProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetCulture: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetCulture: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, value: i32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAutomationPropertiesStatics7 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub HeadingLevelProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "UI_Xaml_Automation_Peers")]
+    pub GetHeadingLevel: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, result__: *mut Peers::AutomationHeadingLevel) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Automation_Peers"))]
+    GetHeadingLevel: usize,
+    #[cfg(feature = "UI_Xaml_Automation_Peers")]
+    pub SetHeadingLevel: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, value: Peers::AutomationHeadingLevel) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Automation_Peers"))]
+    SetHeadingLevel: usize,
+}
+#[repr(C)]
+pub struct IAutomationPropertiesStatics8 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub IsDialogProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetIsDialog: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub SetIsDialog: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, value: bool) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAutomationPropertiesStatics9 {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub AutomationControlTypeProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "UI_Xaml_Automation_Peers")]
+    pub GetAutomationControlType: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, result__: *mut Peers::AutomationControlType) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Automation_Peers"))]
+    GetAutomationControlType: usize,
+    #[cfg(feature = "UI_Xaml_Automation_Peers")]
+    pub SetAutomationControlType: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, value: Peers::AutomationControlType) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Automation_Peers"))]
+    SetAutomationControlType: usize,
+}
+#[repr(C)]
+pub struct IAutomationProperty {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IDockPatternIdentifiers {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IDockPatternIdentifiersStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub DockPositionProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDragPatternIdentifiers {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IDragPatternIdentifiersStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub DropEffectProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub DropEffectsProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GrabbedItemsProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub IsGrabbedProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDropTargetPatternIdentifiers {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IDropTargetPatternIdentifiersStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub DropTargetEffectProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub DropTargetEffectsProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IExpandCollapsePatternIdentifiers {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IExpandCollapsePatternIdentifiersStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub ExpandCollapseStateProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IGridItemPatternIdentifiers {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IGridItemPatternIdentifiersStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub ColumnProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ColumnSpanProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ContainingGridProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RowProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RowSpanProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IGridPatternIdentifiers {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IGridPatternIdentifiersStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub ColumnCountProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RowCountProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMultipleViewPatternIdentifiers {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IMultipleViewPatternIdentifiersStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CurrentViewProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SupportedViewsProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRangeValuePatternIdentifiers {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IRangeValuePatternIdentifiersStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub IsReadOnlyProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub LargeChangeProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub MaximumProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub MinimumProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SmallChangeProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ValueProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IScrollPatternIdentifiers {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IScrollPatternIdentifiersStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub HorizontallyScrollableProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub HorizontalScrollPercentProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub HorizontalViewSizeProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub NoScroll: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f64) -> ::windows_sys::core::HRESULT,
+    pub VerticallyScrollableProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub VerticalScrollPercentProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub VerticalViewSizeProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISelectionItemPatternIdentifiers {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct ISelectionItemPatternIdentifiersStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub IsSelectedProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SelectionContainerProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISelectionPatternIdentifiers {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct ISelectionPatternIdentifiersStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CanSelectMultipleProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub IsSelectionRequiredProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SelectionProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISpreadsheetItemPatternIdentifiers {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct ISpreadsheetItemPatternIdentifiersStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub FormulaProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IStylesPatternIdentifiers {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IStylesPatternIdentifiersStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub ExtendedPropertiesProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub FillColorProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub FillPatternColorProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub FillPatternStyleProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ShapeProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub StyleIdProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub StyleNameProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITableItemPatternIdentifiers {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct ITableItemPatternIdentifiersStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub ColumnHeaderItemsProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RowHeaderItemsProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITablePatternIdentifiers {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct ITablePatternIdentifiersStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub ColumnHeadersProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RowHeadersProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RowOrColumnMajorProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITogglePatternIdentifiers {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct ITogglePatternIdentifiersStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub ToggleStateProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITransformPattern2Identifiers {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct ITransformPattern2IdentifiersStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CanZoomProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ZoomLevelProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub MaxZoomProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub MinZoomProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITransformPatternIdentifiers {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct ITransformPatternIdentifiersStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CanMoveProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CanResizeProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CanRotateProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IValuePatternIdentifiers {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IValuePatternIdentifiersStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub IsReadOnlyProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ValueProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWindowPatternIdentifiers {
+    pub base__: ::windows_sys::core::IInspectable,
+}
+#[repr(C)]
+pub struct IWindowPatternIdentifiersStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub CanMaximizeProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CanMinimizeProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub IsModalProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub IsTopmostProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub WindowInteractionStateProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub WindowVisualStateProperty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
 pub type MultipleViewPatternIdentifiers = *mut ::core::ffi::c_void;
 pub type RangeValuePatternIdentifiers = *mut ::core::ffi::c_void;
 #[doc = "*Required features: `\"UI_Xaml_Automation\"`*"]

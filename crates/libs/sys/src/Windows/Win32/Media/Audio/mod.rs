@@ -12,25 +12,25 @@ pub mod XAudio2;
 extern "system" {
     #[doc = "*Required features: `\"Win32_Media_Audio\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com_StructuredStorage\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
-    pub fn ActivateAudioInterfaceAsync(deviceinterfacepath: ::windows_sys::core::PCWSTR, riid: *const ::windows_sys::core::GUID, activationparams: *const super::super::System::Com::StructuredStorage::PROPVARIANT, completionhandler: IActivateAudioInterfaceCompletionHandler, activationoperation: *mut IActivateAudioInterfaceAsyncOperation) -> ::windows_sys::core::HRESULT;
+    pub fn ActivateAudioInterfaceAsync(deviceinterfacepath: ::windows_sys::core::PCWSTR, riid: *const ::windows_sys::core::GUID, activationparams: *const super::super::System::Com::StructuredStorage::PROPVARIANT, completionhandler: *mut *mut IActivateAudioInterfaceCompletionHandler, activationoperation: *mut *mut *mut IActivateAudioInterfaceAsyncOperation) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_Audio\"`*"]
-    pub fn CoRegisterMessageFilter(lpmessagefilter: IMessageFilter, lplpmessagefilter: *mut IMessageFilter) -> ::windows_sys::core::HRESULT;
+    pub fn CoRegisterMessageFilter(lpmessagefilter: *mut *mut IMessageFilter, lplpmessagefilter: *mut *mut *mut IMessageFilter) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_Audio\"`*"]
-    pub fn CreateCaptureAudioStateMonitor(audiostatemonitor: *mut IAudioStateMonitor) -> ::windows_sys::core::HRESULT;
+    pub fn CreateCaptureAudioStateMonitor(audiostatemonitor: *mut *mut *mut IAudioStateMonitor) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_Audio\"`*"]
-    pub fn CreateCaptureAudioStateMonitorForCategory(category: AUDIO_STREAM_CATEGORY, audiostatemonitor: *mut IAudioStateMonitor) -> ::windows_sys::core::HRESULT;
+    pub fn CreateCaptureAudioStateMonitorForCategory(category: AUDIO_STREAM_CATEGORY, audiostatemonitor: *mut *mut *mut IAudioStateMonitor) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_Audio\"`*"]
-    pub fn CreateCaptureAudioStateMonitorForCategoryAndDeviceId(category: AUDIO_STREAM_CATEGORY, deviceid: ::windows_sys::core::PCWSTR, audiostatemonitor: *mut IAudioStateMonitor) -> ::windows_sys::core::HRESULT;
+    pub fn CreateCaptureAudioStateMonitorForCategoryAndDeviceId(category: AUDIO_STREAM_CATEGORY, deviceid: ::windows_sys::core::PCWSTR, audiostatemonitor: *mut *mut *mut IAudioStateMonitor) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_Audio\"`*"]
-    pub fn CreateCaptureAudioStateMonitorForCategoryAndDeviceRole(category: AUDIO_STREAM_CATEGORY, role: ERole, audiostatemonitor: *mut IAudioStateMonitor) -> ::windows_sys::core::HRESULT;
+    pub fn CreateCaptureAudioStateMonitorForCategoryAndDeviceRole(category: AUDIO_STREAM_CATEGORY, role: ERole, audiostatemonitor: *mut *mut *mut IAudioStateMonitor) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_Audio\"`*"]
-    pub fn CreateRenderAudioStateMonitor(audiostatemonitor: *mut IAudioStateMonitor) -> ::windows_sys::core::HRESULT;
+    pub fn CreateRenderAudioStateMonitor(audiostatemonitor: *mut *mut *mut IAudioStateMonitor) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_Audio\"`*"]
-    pub fn CreateRenderAudioStateMonitorForCategory(category: AUDIO_STREAM_CATEGORY, audiostatemonitor: *mut IAudioStateMonitor) -> ::windows_sys::core::HRESULT;
+    pub fn CreateRenderAudioStateMonitorForCategory(category: AUDIO_STREAM_CATEGORY, audiostatemonitor: *mut *mut *mut IAudioStateMonitor) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_Audio\"`*"]
-    pub fn CreateRenderAudioStateMonitorForCategoryAndDeviceId(category: AUDIO_STREAM_CATEGORY, deviceid: ::windows_sys::core::PCWSTR, audiostatemonitor: *mut IAudioStateMonitor) -> ::windows_sys::core::HRESULT;
+    pub fn CreateRenderAudioStateMonitorForCategoryAndDeviceId(category: AUDIO_STREAM_CATEGORY, deviceid: ::windows_sys::core::PCWSTR, audiostatemonitor: *mut *mut *mut IAudioStateMonitor) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_Audio\"`*"]
-    pub fn CreateRenderAudioStateMonitorForCategoryAndDeviceRole(category: AUDIO_STREAM_CATEGORY, role: ERole, audiostatemonitor: *mut IAudioStateMonitor) -> ::windows_sys::core::HRESULT;
+    pub fn CreateRenderAudioStateMonitorForCategoryAndDeviceRole(category: AUDIO_STREAM_CATEGORY, role: ERole, audiostatemonitor: *mut *mut *mut IAudioStateMonitor) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_Media_Audio\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
     pub fn PlaySoundA(pszsound: ::windows_sys::core::PCSTR, hmod: super::super::Foundation::HINSTANCE, fdwsound: u32) -> super::super::Foundation::BOOL;
@@ -1503,9 +1503,9 @@ impl ::core::clone::Clone for AudioClientProperties {
 #[cfg(feature = "Win32_Foundation")]
 pub struct AudioExtensionParams {
     pub AddPageParam: super::super::Foundation::LPARAM,
-    pub pEndpoint: IMMDevice,
-    pub pPnpInterface: IMMDevice,
-    pub pPnpDevnode: IMMDevice,
+    pub pEndpoint: *mut *mut *mut *mut IMMDevice,
+    pub pPnpInterface: *mut *mut *mut *mut IMMDevice,
+    pub pPnpDevnode: *mut *mut *mut *mut IMMDevice,
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for AudioExtensionParams {}
@@ -1745,80 +1745,639 @@ pub type HMIXEROBJ = isize;
 pub type HWAVE = isize;
 pub type HWAVEIN = isize;
 pub type HWAVEOUT = isize;
-pub type IActivateAudioInterfaceAsyncOperation = *mut ::core::ffi::c_void;
-pub type IActivateAudioInterfaceCompletionHandler = *mut ::core::ffi::c_void;
-pub type IAudioAmbisonicsControl = *mut ::core::ffi::c_void;
-pub type IAudioAutoGainControl = *mut ::core::ffi::c_void;
-pub type IAudioBass = *mut ::core::ffi::c_void;
-pub type IAudioCaptureClient = *mut ::core::ffi::c_void;
-pub type IAudioChannelConfig = *mut ::core::ffi::c_void;
-pub type IAudioClient = *mut ::core::ffi::c_void;
-pub type IAudioClient2 = *mut ::core::ffi::c_void;
-pub type IAudioClient3 = *mut ::core::ffi::c_void;
-pub type IAudioClientDuckingControl = *mut ::core::ffi::c_void;
-pub type IAudioClock = *mut ::core::ffi::c_void;
-pub type IAudioClock2 = *mut ::core::ffi::c_void;
-pub type IAudioClockAdjustment = *mut ::core::ffi::c_void;
-pub type IAudioEffectsChangedNotificationClient = *mut ::core::ffi::c_void;
-pub type IAudioEffectsManager = *mut ::core::ffi::c_void;
-pub type IAudioFormatEnumerator = *mut ::core::ffi::c_void;
-pub type IAudioInputSelector = *mut ::core::ffi::c_void;
-pub type IAudioLoudness = *mut ::core::ffi::c_void;
-pub type IAudioMidrange = *mut ::core::ffi::c_void;
-pub type IAudioMute = *mut ::core::ffi::c_void;
-pub type IAudioOutputSelector = *mut ::core::ffi::c_void;
-pub type IAudioPeakMeter = *mut ::core::ffi::c_void;
-pub type IAudioRenderClient = *mut ::core::ffi::c_void;
-pub type IAudioSessionControl = *mut ::core::ffi::c_void;
-pub type IAudioSessionControl2 = *mut ::core::ffi::c_void;
-pub type IAudioSessionEnumerator = *mut ::core::ffi::c_void;
-pub type IAudioSessionEvents = *mut ::core::ffi::c_void;
-pub type IAudioSessionManager = *mut ::core::ffi::c_void;
-pub type IAudioSessionManager2 = *mut ::core::ffi::c_void;
-pub type IAudioSessionNotification = *mut ::core::ffi::c_void;
-pub type IAudioStateMonitor = *mut ::core::ffi::c_void;
-pub type IAudioStreamVolume = *mut ::core::ffi::c_void;
-pub type IAudioSystemEffectsPropertyChangeNotificationClient = *mut ::core::ffi::c_void;
-pub type IAudioSystemEffectsPropertyStore = *mut ::core::ffi::c_void;
-pub type IAudioTreble = *mut ::core::ffi::c_void;
-pub type IAudioVolumeDuckNotification = *mut ::core::ffi::c_void;
-pub type IAudioVolumeLevel = *mut ::core::ffi::c_void;
-pub type IChannelAudioVolume = *mut ::core::ffi::c_void;
-pub type IConnector = *mut ::core::ffi::c_void;
-pub type IControlChangeNotify = *mut ::core::ffi::c_void;
-pub type IControlInterface = *mut ::core::ffi::c_void;
-pub type IDeviceSpecificProperty = *mut ::core::ffi::c_void;
-pub type IDeviceTopology = *mut ::core::ffi::c_void;
-pub type IMMDevice = *mut ::core::ffi::c_void;
-pub type IMMDeviceActivator = *mut ::core::ffi::c_void;
-pub type IMMDeviceCollection = *mut ::core::ffi::c_void;
-pub type IMMDeviceEnumerator = *mut ::core::ffi::c_void;
-pub type IMMEndpoint = *mut ::core::ffi::c_void;
-pub type IMMNotificationClient = *mut ::core::ffi::c_void;
-pub type IMessageFilter = *mut ::core::ffi::c_void;
-pub type IPart = *mut ::core::ffi::c_void;
-pub type IPartsList = *mut ::core::ffi::c_void;
-pub type IPerChannelDbLevel = *mut ::core::ffi::c_void;
-pub type ISimpleAudioVolume = *mut ::core::ffi::c_void;
-pub type ISpatialAudioClient = *mut ::core::ffi::c_void;
-pub type ISpatialAudioClient2 = *mut ::core::ffi::c_void;
-pub type ISpatialAudioMetadataClient = *mut ::core::ffi::c_void;
-pub type ISpatialAudioMetadataCopier = *mut ::core::ffi::c_void;
-pub type ISpatialAudioMetadataItems = *mut ::core::ffi::c_void;
-pub type ISpatialAudioMetadataItemsBuffer = *mut ::core::ffi::c_void;
-pub type ISpatialAudioMetadataReader = *mut ::core::ffi::c_void;
-pub type ISpatialAudioMetadataWriter = *mut ::core::ffi::c_void;
-pub type ISpatialAudioObject = *mut ::core::ffi::c_void;
-pub type ISpatialAudioObjectBase = *mut ::core::ffi::c_void;
-pub type ISpatialAudioObjectForHrtf = *mut ::core::ffi::c_void;
-pub type ISpatialAudioObjectForMetadataCommands = *mut ::core::ffi::c_void;
-pub type ISpatialAudioObjectForMetadataItems = *mut ::core::ffi::c_void;
-pub type ISpatialAudioObjectRenderStream = *mut ::core::ffi::c_void;
-pub type ISpatialAudioObjectRenderStreamBase = *mut ::core::ffi::c_void;
-pub type ISpatialAudioObjectRenderStreamForHrtf = *mut ::core::ffi::c_void;
-pub type ISpatialAudioObjectRenderStreamForMetadata = *mut ::core::ffi::c_void;
-pub type ISpatialAudioObjectRenderStreamNotify = *mut ::core::ffi::c_void;
-pub type ISubunit = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IActivateAudioInterfaceAsyncOperation {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetActivateResult: unsafe extern "system" fn(this: *mut *mut Self, activateresult: *mut ::windows_sys::core::HRESULT, activatedinterface: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IActivateAudioInterfaceCompletionHandler {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub ActivateCompleted: unsafe extern "system" fn(this: *mut *mut Self, activateoperation: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAudioAmbisonicsControl {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetData: unsafe extern "system" fn(this: *mut *mut Self, pambisonicsparams: *const AMBISONICS_PARAMS, cbambisonicsparams: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetHeadTracking: unsafe extern "system" fn(this: *mut *mut Self, benableheadtracking: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetHeadTracking: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetHeadTracking: unsafe extern "system" fn(this: *mut *mut Self, pbenableheadtracking: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetHeadTracking: usize,
+    pub SetRotation: unsafe extern "system" fn(this: *mut *mut Self, x: f32, y: f32, z: f32, w: f32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAudioAutoGainControl {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetEnabled: unsafe extern "system" fn(this: *mut *mut Self, pbenabled: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetEnabled: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetEnabled: unsafe extern "system" fn(this: *mut *mut Self, benable: super::super::Foundation::BOOL, pguideventcontext: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetEnabled: usize,
+}
+#[repr(C)]
+pub struct IAudioBass {
+    pub base__: IPerChannelDbLevel,
+}
+#[repr(C)]
+pub struct IAudioCaptureClient {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetBuffer: unsafe extern "system" fn(this: *mut *mut Self, ppdata: *mut *mut u8, pnumframestoread: *mut u32, pdwflags: *mut u32, pu64deviceposition: *mut u64, pu64qpcposition: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub ReleaseBuffer: unsafe extern "system" fn(this: *mut *mut Self, numframesread: u32) -> ::windows_sys::core::HRESULT,
+    pub GetNextPacketSize: unsafe extern "system" fn(this: *mut *mut Self, pnumframesinnextpacket: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAudioChannelConfig {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetChannelConfig: unsafe extern "system" fn(this: *mut *mut Self, dwconfig: u32, pguideventcontext: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub GetChannelConfig: unsafe extern "system" fn(this: *mut *mut Self, pdwconfig: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAudioClient {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, sharemode: AUDCLNT_SHAREMODE, streamflags: u32, hnsbufferduration: i64, hnsperiodicity: i64, pformat: *const WAVEFORMATEX, audiosessionguid: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub GetBufferSize: unsafe extern "system" fn(this: *mut *mut Self, pnumbufferframes: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetStreamLatency: unsafe extern "system" fn(this: *mut *mut Self, phnslatency: *mut i64) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentPadding: unsafe extern "system" fn(this: *mut *mut Self, pnumpaddingframes: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub IsFormatSupported: unsafe extern "system" fn(this: *mut *mut Self, sharemode: AUDCLNT_SHAREMODE, pformat: *const WAVEFORMATEX, ppclosestmatch: *mut *mut WAVEFORMATEX) -> ::windows_sys::core::HRESULT,
+    pub GetMixFormat: unsafe extern "system" fn(this: *mut *mut Self, ppdeviceformat: *mut *mut WAVEFORMATEX) -> ::windows_sys::core::HRESULT,
+    pub GetDevicePeriod: unsafe extern "system" fn(this: *mut *mut Self, phnsdefaultdeviceperiod: *mut i64, phnsminimumdeviceperiod: *mut i64) -> ::windows_sys::core::HRESULT,
+    pub Start: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Stop: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetEventHandle: unsafe extern "system" fn(this: *mut *mut Self, eventhandle: super::super::Foundation::HANDLE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetEventHandle: usize,
+    pub GetService: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAudioClient2 {
+    pub base__: IAudioClient,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsOffloadCapable: unsafe extern "system" fn(this: *mut *mut Self, category: AUDIO_STREAM_CATEGORY, pboffloadcapable: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsOffloadCapable: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetClientProperties: unsafe extern "system" fn(this: *mut *mut Self, pproperties: *const AudioClientProperties) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetClientProperties: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetBufferSizeLimits: unsafe extern "system" fn(this: *mut *mut Self, pformat: *const WAVEFORMATEX, beventdriven: super::super::Foundation::BOOL, phnsminbufferduration: *mut i64, phnsmaxbufferduration: *mut i64) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetBufferSizeLimits: usize,
+}
+#[repr(C)]
+pub struct IAudioClient3 {
+    pub base__: IAudioClient2,
+    pub GetSharedModeEnginePeriod: unsafe extern "system" fn(this: *mut *mut Self, pformat: *const WAVEFORMATEX, pdefaultperiodinframes: *mut u32, pfundamentalperiodinframes: *mut u32, pminperiodinframes: *mut u32, pmaxperiodinframes: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentSharedModeEnginePeriod: unsafe extern "system" fn(this: *mut *mut Self, ppformat: *mut *mut WAVEFORMATEX, pcurrentperiodinframes: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub InitializeSharedAudioStream: unsafe extern "system" fn(this: *mut *mut Self, streamflags: u32, periodinframes: u32, pformat: *const WAVEFORMATEX, audiosessionguid: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAudioClientDuckingControl {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetDuckingOptionsForCurrentStream: unsafe extern "system" fn(this: *mut *mut Self, options: AUDIO_DUCKING_OPTIONS) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAudioClock {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetFrequency: unsafe extern "system" fn(this: *mut *mut Self, pu64frequency: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetPosition: unsafe extern "system" fn(this: *mut *mut Self, pu64position: *mut u64, pu64qpcposition: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetCharacteristics: unsafe extern "system" fn(this: *mut *mut Self, pdwcharacteristics: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAudioClock2 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetDevicePosition: unsafe extern "system" fn(this: *mut *mut Self, deviceposition: *mut u64, qpcposition: *mut u64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAudioClockAdjustment {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetSampleRate: unsafe extern "system" fn(this: *mut *mut Self, flsamplerate: f32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAudioEffectsChangedNotificationClient {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnAudioEffectsChanged: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAudioEffectsManager {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub RegisterAudioEffectsChangedNotificationCallback: unsafe extern "system" fn(this: *mut *mut Self, client: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub UnregisterAudioEffectsChangedNotificationCallback: unsafe extern "system" fn(this: *mut *mut Self, client: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetAudioEffects: unsafe extern "system" fn(this: *mut *mut Self, effects: *mut *mut AUDIO_EFFECT, numeffects: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetAudioEffects: usize,
+    pub SetAudioEffectState: unsafe extern "system" fn(this: *mut *mut Self, effectid: ::windows_sys::core::GUID, state: AUDIO_EFFECT_STATE) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAudioFormatEnumerator {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, count: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetFormat: unsafe extern "system" fn(this: *mut *mut Self, index: u32, format: *mut *mut WAVEFORMATEX) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAudioInputSelector {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetSelection: unsafe extern "system" fn(this: *mut *mut Self, pnidselected: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetSelection: unsafe extern "system" fn(this: *mut *mut Self, nidselect: u32, pguideventcontext: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAudioLoudness {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetEnabled: unsafe extern "system" fn(this: *mut *mut Self, pbenabled: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetEnabled: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetEnabled: unsafe extern "system" fn(this: *mut *mut Self, benable: super::super::Foundation::BOOL, pguideventcontext: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetEnabled: usize,
+}
+#[repr(C)]
+pub struct IAudioMidrange {
+    pub base__: IPerChannelDbLevel,
+}
+#[repr(C)]
+pub struct IAudioMute {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetMute: unsafe extern "system" fn(this: *mut *mut Self, bmuted: super::super::Foundation::BOOL, pguideventcontext: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetMute: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetMute: unsafe extern "system" fn(this: *mut *mut Self, pbmuted: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetMute: usize,
+}
+#[repr(C)]
+pub struct IAudioOutputSelector {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetSelection: unsafe extern "system" fn(this: *mut *mut Self, pnidselected: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetSelection: unsafe extern "system" fn(this: *mut *mut Self, nidselect: u32, pguideventcontext: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAudioPeakMeter {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetChannelCount: unsafe extern "system" fn(this: *mut *mut Self, pcchannels: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetLevel: unsafe extern "system" fn(this: *mut *mut Self, nchannel: u32, pflevel: *mut f32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAudioRenderClient {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetBuffer: unsafe extern "system" fn(this: *mut *mut Self, numframesrequested: u32, ppdata: *mut *mut u8) -> ::windows_sys::core::HRESULT,
+    pub ReleaseBuffer: unsafe extern "system" fn(this: *mut *mut Self, numframeswritten: u32, dwflags: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAudioSessionControl {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetState: unsafe extern "system" fn(this: *mut *mut Self, pretval: *mut AudioSessionState) -> ::windows_sys::core::HRESULT,
+    pub GetDisplayName: unsafe extern "system" fn(this: *mut *mut Self, pretval: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetDisplayName: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::PCWSTR, eventcontext: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub GetIconPath: unsafe extern "system" fn(this: *mut *mut Self, pretval: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetIconPath: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::PCWSTR, eventcontext: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub GetGroupingParam: unsafe extern "system" fn(this: *mut *mut Self, pretval: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub SetGroupingParam: unsafe extern "system" fn(this: *mut *mut Self, r#override: *const ::windows_sys::core::GUID, eventcontext: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub RegisterAudioSessionNotification: unsafe extern "system" fn(this: *mut *mut Self, newnotifications: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub UnregisterAudioSessionNotification: unsafe extern "system" fn(this: *mut *mut Self, newnotifications: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAudioSessionControl2 {
+    pub base__: IAudioSessionControl,
+    pub GetSessionIdentifier: unsafe extern "system" fn(this: *mut *mut Self, pretval: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetSessionInstanceIdentifier: unsafe extern "system" fn(this: *mut *mut Self, pretval: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetProcessId: unsafe extern "system" fn(this: *mut *mut Self, pretval: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub IsSystemSoundsSession: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetDuckingPreference: unsafe extern "system" fn(this: *mut *mut Self, optout: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetDuckingPreference: usize,
+}
+#[repr(C)]
+pub struct IAudioSessionEnumerator {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, sessioncount: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub GetSession: unsafe extern "system" fn(this: *mut *mut Self, sessioncount: i32, session: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAudioSessionEvents {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnDisplayNameChanged: unsafe extern "system" fn(this: *mut *mut Self, newdisplayname: ::windows_sys::core::PCWSTR, eventcontext: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub OnIconPathChanged: unsafe extern "system" fn(this: *mut *mut Self, newiconpath: ::windows_sys::core::PCWSTR, eventcontext: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OnSimpleVolumeChanged: unsafe extern "system" fn(this: *mut *mut Self, newvolume: f32, newmute: super::super::Foundation::BOOL, eventcontext: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OnSimpleVolumeChanged: usize,
+    pub OnChannelVolumeChanged: unsafe extern "system" fn(this: *mut *mut Self, channelcount: u32, newchannelvolumearray: *const f32, changedchannel: u32, eventcontext: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub OnGroupingParamChanged: unsafe extern "system" fn(this: *mut *mut Self, newgroupingparam: *const ::windows_sys::core::GUID, eventcontext: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub OnStateChanged: unsafe extern "system" fn(this: *mut *mut Self, newstate: AudioSessionState) -> ::windows_sys::core::HRESULT,
+    pub OnSessionDisconnected: unsafe extern "system" fn(this: *mut *mut Self, disconnectreason: AudioSessionDisconnectReason) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAudioSessionManager {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetAudioSessionControl: unsafe extern "system" fn(this: *mut *mut Self, audiosessionguid: *const ::windows_sys::core::GUID, streamflags: u32, sessioncontrol: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetSimpleAudioVolume: unsafe extern "system" fn(this: *mut *mut Self, audiosessionguid: *const ::windows_sys::core::GUID, streamflags: u32, audiovolume: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAudioSessionManager2 {
+    pub base__: IAudioSessionManager,
+    pub GetSessionEnumerator: unsafe extern "system" fn(this: *mut *mut Self, sessionenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RegisterSessionNotification: unsafe extern "system" fn(this: *mut *mut Self, sessionnotification: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub UnregisterSessionNotification: unsafe extern "system" fn(this: *mut *mut Self, sessionnotification: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RegisterDuckNotification: unsafe extern "system" fn(this: *mut *mut Self, sessionid: ::windows_sys::core::PCWSTR, ducknotification: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub UnregisterDuckNotification: unsafe extern "system" fn(this: *mut *mut Self, ducknotification: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAudioSessionNotification {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnSessionCreated: unsafe extern "system" fn(this: *mut *mut Self, newsession: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAudioStateMonitor {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub RegisterCallback: unsafe extern "system" fn(this: *mut *mut Self, callback: *mut ::core::ffi::c_void, context: *const ::core::ffi::c_void, registration: *mut i64) -> ::windows_sys::core::HRESULT,
+    pub UnregisterCallback: unsafe extern "system" fn(this: *mut *mut Self, registration: i64),
+    pub GetSoundLevel: unsafe extern "system" fn(this: *mut *mut Self) -> AudioStateMonitorSoundLevel,
+}
+#[repr(C)]
+pub struct IAudioStreamVolume {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetChannelCount: unsafe extern "system" fn(this: *mut *mut Self, pdwcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetChannelVolume: unsafe extern "system" fn(this: *mut *mut Self, dwindex: u32, flevel: f32) -> ::windows_sys::core::HRESULT,
+    pub GetChannelVolume: unsafe extern "system" fn(this: *mut *mut Self, dwindex: u32, pflevel: *mut f32) -> ::windows_sys::core::HRESULT,
+    pub SetAllVolumes: unsafe extern "system" fn(this: *mut *mut Self, dwcount: u32, pfvolumes: *const f32) -> ::windows_sys::core::HRESULT,
+    pub GetAllVolumes: unsafe extern "system" fn(this: *mut *mut Self, dwcount: u32, pfvolumes: *mut f32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAudioSystemEffectsPropertyChangeNotificationClient {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub OnPropertyChanged: unsafe extern "system" fn(this: *mut *mut Self, r#type: __MIDL___MIDL_itf_mmdeviceapi_0000_0008_0002, key: super::super::UI::Shell::PropertiesSystem::PROPERTYKEY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    OnPropertyChanged: usize,
+}
+#[repr(C)]
+pub struct IAudioSystemEffectsPropertyStore {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub OpenDefaultPropertyStore: unsafe extern "system" fn(this: *mut *mut Self, stgmaccess: u32, propstore: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    OpenDefaultPropertyStore: usize,
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub OpenUserPropertyStore: unsafe extern "system" fn(this: *mut *mut Self, stgmaccess: u32, propstore: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    OpenUserPropertyStore: usize,
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub OpenVolatilePropertyStore: unsafe extern "system" fn(this: *mut *mut Self, stgmaccess: u32, propstore: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    OpenVolatilePropertyStore: usize,
+    pub ResetUserPropertyStore: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub ResetVolatilePropertyStore: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub RegisterPropertyChangeNotification: unsafe extern "system" fn(this: *mut *mut Self, callback: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub UnregisterPropertyChangeNotification: unsafe extern "system" fn(this: *mut *mut Self, callback: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAudioTreble {
+    pub base__: IPerChannelDbLevel,
+}
+#[repr(C)]
+pub struct IAudioVolumeDuckNotification {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnVolumeDuckNotification: unsafe extern "system" fn(this: *mut *mut Self, sessionid: ::windows_sys::core::PCWSTR, countcommunicationsessions: u32) -> ::windows_sys::core::HRESULT,
+    pub OnVolumeUnduckNotification: unsafe extern "system" fn(this: *mut *mut Self, sessionid: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAudioVolumeLevel {
+    pub base__: IPerChannelDbLevel,
+}
+#[repr(C)]
+pub struct IChannelAudioVolume {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetChannelCount: unsafe extern "system" fn(this: *mut *mut Self, pdwcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetChannelVolume: unsafe extern "system" fn(this: *mut *mut Self, dwindex: u32, flevel: f32, eventcontext: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub GetChannelVolume: unsafe extern "system" fn(this: *mut *mut Self, dwindex: u32, pflevel: *mut f32) -> ::windows_sys::core::HRESULT,
+    pub SetAllVolumes: unsafe extern "system" fn(this: *mut *mut Self, dwcount: u32, pfvolumes: *const f32, eventcontext: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub GetAllVolumes: unsafe extern "system" fn(this: *mut *mut Self, dwcount: u32, pfvolumes: *mut f32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IConnector {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetType: unsafe extern "system" fn(this: *mut *mut Self, ptype: *mut ConnectorType) -> ::windows_sys::core::HRESULT,
+    pub GetDataFlow: unsafe extern "system" fn(this: *mut *mut Self, pflow: *mut DataFlow) -> ::windows_sys::core::HRESULT,
+    pub ConnectTo: unsafe extern "system" fn(this: *mut *mut Self, pconnectto: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Disconnect: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsConnected: unsafe extern "system" fn(this: *mut *mut Self, pbconnected: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsConnected: usize,
+    pub GetConnectedTo: unsafe extern "system" fn(this: *mut *mut Self, ppconto: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetConnectorIdConnectedTo: unsafe extern "system" fn(this: *mut *mut Self, ppwstrconnectorid: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetDeviceIdConnectedTo: unsafe extern "system" fn(this: *mut *mut Self, ppwstrdeviceid: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IControlChangeNotify {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnNotify: unsafe extern "system" fn(this: *mut *mut Self, dwsenderprocessid: u32, pguideventcontext: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IControlInterface {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetName: unsafe extern "system" fn(this: *mut *mut Self, ppwstrname: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetIID: unsafe extern "system" fn(this: *mut *mut Self, piid: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDeviceSpecificProperty {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetType: unsafe extern "system" fn(this: *mut *mut Self, pvtype: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub GetValue: unsafe extern "system" fn(this: *mut *mut Self, pvvalue: *mut ::core::ffi::c_void, pcbvalue: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetValue: unsafe extern "system" fn(this: *mut *mut Self, pvvalue: *const ::core::ffi::c_void, cbvalue: u32, pguideventcontext: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub Get4BRange: unsafe extern "system" fn(this: *mut *mut Self, plmin: *mut i32, plmax: *mut i32, plstepping: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDeviceTopology {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetConnectorCount: unsafe extern "system" fn(this: *mut *mut Self, pcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetConnector: unsafe extern "system" fn(this: *mut *mut Self, nindex: u32, ppconnector: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetSubunitCount: unsafe extern "system" fn(this: *mut *mut Self, pcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSubunit: unsafe extern "system" fn(this: *mut *mut Self, nindex: u32, ppsubunit: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetPartById: unsafe extern "system" fn(this: *mut *mut Self, nid: u32, pppart: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetDeviceId: unsafe extern "system" fn(this: *mut *mut Self, ppwstrdeviceid: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetSignalPath: unsafe extern "system" fn(this: *mut *mut Self, pipartfrom: *mut ::core::ffi::c_void, pipartto: *mut ::core::ffi::c_void, brejectmixedpaths: super::super::Foundation::BOOL, ppparts: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetSignalPath: usize,
+}
+#[repr(C)]
+pub struct IMMDevice {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    pub Activate: unsafe extern "system" fn(this: *mut *mut Self, iid: *const ::windows_sys::core::GUID, dwclsctx: super::super::System::Com::CLSCTX, pactivationparams: *const super::super::System::Com::StructuredStorage::PROPVARIANT, ppinterface: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    Activate: usize,
+    #[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+    pub OpenPropertyStore: unsafe extern "system" fn(this: *mut *mut Self, stgmaccess: super::super::System::Com::StructuredStorage::STGM, ppproperties: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem")))]
+    OpenPropertyStore: usize,
+    pub GetId: unsafe extern "system" fn(this: *mut *mut Self, ppstrid: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetState: unsafe extern "system" fn(this: *mut *mut Self, pdwstate: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMMDeviceActivator {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    pub Activate: unsafe extern "system" fn(this: *mut *mut Self, iid: *const ::windows_sys::core::GUID, pdevice: *mut ::core::ffi::c_void, pactivationparams: *const super::super::System::Com::StructuredStorage::PROPVARIANT, ppinterface: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    Activate: usize,
+}
+#[repr(C)]
+pub struct IMMDeviceCollection {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, pcdevices: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Item: unsafe extern "system" fn(this: *mut *mut Self, ndevice: u32, ppdevice: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMMDeviceEnumerator {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub EnumAudioEndpoints: unsafe extern "system" fn(this: *mut *mut Self, dataflow: EDataFlow, dwstatemask: u32, ppdevices: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetDefaultAudioEndpoint: unsafe extern "system" fn(this: *mut *mut Self, dataflow: EDataFlow, role: ERole, ppendpoint: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetDevice: unsafe extern "system" fn(this: *mut *mut Self, pwstrid: ::windows_sys::core::PCWSTR, ppdevice: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RegisterEndpointNotificationCallback: unsafe extern "system" fn(this: *mut *mut Self, pclient: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub UnregisterEndpointNotificationCallback: unsafe extern "system" fn(this: *mut *mut Self, pclient: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMMEndpoint {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetDataFlow: unsafe extern "system" fn(this: *mut *mut Self, pdataflow: *mut EDataFlow) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMMNotificationClient {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnDeviceStateChanged: unsafe extern "system" fn(this: *mut *mut Self, pwstrdeviceid: ::windows_sys::core::PCWSTR, dwnewstate: u32) -> ::windows_sys::core::HRESULT,
+    pub OnDeviceAdded: unsafe extern "system" fn(this: *mut *mut Self, pwstrdeviceid: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub OnDeviceRemoved: unsafe extern "system" fn(this: *mut *mut Self, pwstrdeviceid: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub OnDefaultDeviceChanged: unsafe extern "system" fn(this: *mut *mut Self, flow: EDataFlow, role: ERole, pwstrdefaultdeviceid: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub OnPropertyValueChanged: unsafe extern "system" fn(this: *mut *mut Self, pwstrdeviceid: ::windows_sys::core::PCWSTR, key: super::super::UI::Shell::PropertiesSystem::PROPERTYKEY) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
+    OnPropertyValueChanged: usize,
+}
+#[repr(C)]
+pub struct IMessageFilter {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com")]
+    pub HandleInComingCall: unsafe extern "system" fn(this: *mut *mut Self, dwcalltype: u32, htaskcaller: super::HTASK, dwtickcount: u32, lpinterfaceinfo: *const super::super::System::Com::INTERFACEINFO) -> u32,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    HandleInComingCall: usize,
+    pub RetryRejectedCall: unsafe extern "system" fn(this: *mut *mut Self, htaskcallee: super::HTASK, dwtickcount: u32, dwrejecttype: u32) -> u32,
+    pub MessagePending: unsafe extern "system" fn(this: *mut *mut Self, htaskcallee: super::HTASK, dwtickcount: u32, dwpendingtype: u32) -> u32,
+}
+#[repr(C)]
+pub struct IPart {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetName: unsafe extern "system" fn(this: *mut *mut Self, ppwstrname: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetLocalId: unsafe extern "system" fn(this: *mut *mut Self, pnid: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetGlobalId: unsafe extern "system" fn(this: *mut *mut Self, ppwstrglobalid: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetPartType: unsafe extern "system" fn(this: *mut *mut Self, pparttype: *mut PartType) -> ::windows_sys::core::HRESULT,
+    pub GetSubType: unsafe extern "system" fn(this: *mut *mut Self, psubtype: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub GetControlInterfaceCount: unsafe extern "system" fn(this: *mut *mut Self, pcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetControlInterface: unsafe extern "system" fn(this: *mut *mut Self, nindex: u32, ppinterfacedesc: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EnumPartsIncoming: unsafe extern "system" fn(this: *mut *mut Self, ppparts: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub EnumPartsOutgoing: unsafe extern "system" fn(this: *mut *mut Self, ppparts: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetTopologyObject: unsafe extern "system" fn(this: *mut *mut Self, pptopology: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Activate: unsafe extern "system" fn(this: *mut *mut Self, dwclscontext: u32, refiid: *const ::windows_sys::core::GUID, ppvobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RegisterControlChangeCallback: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, pnotify: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub UnregisterControlChangeCallback: unsafe extern "system" fn(this: *mut *mut Self, pnotify: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPartsList {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, pcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetPart: unsafe extern "system" fn(this: *mut *mut Self, nindex: u32, pppart: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IPerChannelDbLevel {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetChannelCount: unsafe extern "system" fn(this: *mut *mut Self, pcchannels: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetLevelRange: unsafe extern "system" fn(this: *mut *mut Self, nchannel: u32, pfminleveldb: *mut f32, pfmaxleveldb: *mut f32, pfstepping: *mut f32) -> ::windows_sys::core::HRESULT,
+    pub GetLevel: unsafe extern "system" fn(this: *mut *mut Self, nchannel: u32, pfleveldb: *mut f32) -> ::windows_sys::core::HRESULT,
+    pub SetLevel: unsafe extern "system" fn(this: *mut *mut Self, nchannel: u32, fleveldb: f32, pguideventcontext: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub SetLevelUniform: unsafe extern "system" fn(this: *mut *mut Self, fleveldb: f32, pguideventcontext: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub SetLevelAllChannels: unsafe extern "system" fn(this: *mut *mut Self, alevelsdb: *const f32, cchannels: u32, pguideventcontext: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISimpleAudioVolume {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetMasterVolume: unsafe extern "system" fn(this: *mut *mut Self, flevel: f32, eventcontext: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub GetMasterVolume: unsafe extern "system" fn(this: *mut *mut Self, pflevel: *mut f32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetMute: unsafe extern "system" fn(this: *mut *mut Self, bmute: super::super::Foundation::BOOL, eventcontext: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetMute: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetMute: unsafe extern "system" fn(this: *mut *mut Self, pbmute: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetMute: usize,
+}
+#[repr(C)]
+pub struct ISpatialAudioClient {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetStaticObjectPosition: unsafe extern "system" fn(this: *mut *mut Self, r#type: AudioObjectType, x: *mut f32, y: *mut f32, z: *mut f32) -> ::windows_sys::core::HRESULT,
+    pub GetNativeStaticObjectTypeMask: unsafe extern "system" fn(this: *mut *mut Self, mask: *mut AudioObjectType) -> ::windows_sys::core::HRESULT,
+    pub GetMaxDynamicObjectCount: unsafe extern "system" fn(this: *mut *mut Self, value: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSupportedAudioObjectFormatEnumerator: unsafe extern "system" fn(this: *mut *mut Self, enumerator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetMaxFrameCount: unsafe extern "system" fn(this: *mut *mut Self, objectformat: *const WAVEFORMATEX, framecountperbuffer: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub IsAudioObjectFormatSupported: unsafe extern "system" fn(this: *mut *mut Self, objectformat: *const WAVEFORMATEX) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    pub IsSpatialAudioStreamAvailable: unsafe extern "system" fn(this: *mut *mut Self, streamuuid: *const ::windows_sys::core::GUID, auxiliaryinfo: *const super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    IsSpatialAudioStreamAvailable: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    pub ActivateSpatialAudioStream: unsafe extern "system" fn(this: *mut *mut Self, activationparams: *const super::super::System::Com::StructuredStorage::PROPVARIANT, riid: *const ::windows_sys::core::GUID, stream: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    ActivateSpatialAudioStream: usize,
+}
+#[repr(C)]
+pub struct ISpatialAudioClient2 {
+    pub base__: ISpatialAudioClient,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsOffloadCapable: unsafe extern "system" fn(this: *mut *mut Self, category: AUDIO_STREAM_CATEGORY, isoffloadcapable: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsOffloadCapable: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetMaxFrameCountForCategory: unsafe extern "system" fn(this: *mut *mut Self, category: AUDIO_STREAM_CATEGORY, offloadenabled: super::super::Foundation::BOOL, objectformat: *const WAVEFORMATEX, framecountperbuffer: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetMaxFrameCountForCategory: usize,
+}
+#[repr(C)]
+pub struct ISpatialAudioMetadataClient {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub ActivateSpatialAudioMetadataItems: unsafe extern "system" fn(this: *mut *mut Self, maxitemcount: u16, framecount: u16, metadataitemsbuffer: *mut *mut ::core::ffi::c_void, metadataitems: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetSpatialAudioMetadataItemsBufferLength: unsafe extern "system" fn(this: *mut *mut Self, maxitemcount: u16, bufferlength: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub ActivateSpatialAudioMetadataWriter: unsafe extern "system" fn(this: *mut *mut Self, overflowmode: SpatialAudioMetadataWriterOverflowMode, metadatawriter: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ActivateSpatialAudioMetadataCopier: unsafe extern "system" fn(this: *mut *mut Self, metadatacopier: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ActivateSpatialAudioMetadataReader: unsafe extern "system" fn(this: *mut *mut Self, metadatareader: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISpatialAudioMetadataCopier {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Open: unsafe extern "system" fn(this: *mut *mut Self, metadataitems: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CopyMetadataForFrames: unsafe extern "system" fn(this: *mut *mut Self, copyframecount: u16, copymode: SpatialAudioMetadataCopyMode, dstmetadataitems: *mut ::core::ffi::c_void, itemscopied: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISpatialAudioMetadataItems {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetFrameCount: unsafe extern "system" fn(this: *mut *mut Self, framecount: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub GetItemCount: unsafe extern "system" fn(this: *mut *mut Self, itemcount: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub GetMaxItemCount: unsafe extern "system" fn(this: *mut *mut Self, maxitemcount: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub GetMaxValueBufferLength: unsafe extern "system" fn(this: *mut *mut Self, maxvaluebufferlength: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetInfo: unsafe extern "system" fn(this: *mut *mut Self, info: *mut SpatialAudioMetadataItemsInfo) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISpatialAudioMetadataItemsBuffer {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub AttachToBuffer: unsafe extern "system" fn(this: *mut *mut Self, buffer: *mut u8, bufferlength: u32) -> ::windows_sys::core::HRESULT,
+    pub AttachToPopulatedBuffer: unsafe extern "system" fn(this: *mut *mut Self, buffer: *mut u8, bufferlength: u32) -> ::windows_sys::core::HRESULT,
+    pub DetachBuffer: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISpatialAudioMetadataReader {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Open: unsafe extern "system" fn(this: *mut *mut Self, metadataitems: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ReadNextItem: unsafe extern "system" fn(this: *mut *mut Self, commandcount: *mut u8, frameoffset: *mut u16) -> ::windows_sys::core::HRESULT,
+    pub ReadNextItemCommand: unsafe extern "system" fn(this: *mut *mut Self, commandid: *mut u8, valuebuffer: *mut ::core::ffi::c_void, maxvaluebufferlength: u32, valuebufferlength: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISpatialAudioMetadataWriter {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Open: unsafe extern "system" fn(this: *mut *mut Self, metadataitems: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub WriteNextItem: unsafe extern "system" fn(this: *mut *mut Self, frameoffset: u16) -> ::windows_sys::core::HRESULT,
+    pub WriteNextItemCommand: unsafe extern "system" fn(this: *mut *mut Self, commandid: u8, valuebuffer: *const ::core::ffi::c_void, valuebufferlength: u32) -> ::windows_sys::core::HRESULT,
+    pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISpatialAudioObject {
+    pub base__: ISpatialAudioObjectBase,
+    pub SetPosition: unsafe extern "system" fn(this: *mut *mut Self, x: f32, y: f32, z: f32) -> ::windows_sys::core::HRESULT,
+    pub SetVolume: unsafe extern "system" fn(this: *mut *mut Self, volume: f32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISpatialAudioObjectBase {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetBuffer: unsafe extern "system" fn(this: *mut *mut Self, buffer: *mut *mut u8, bufferlength: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetEndOfStream: unsafe extern "system" fn(this: *mut *mut Self, framecount: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsActive: unsafe extern "system" fn(this: *mut *mut Self, isactive: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsActive: usize,
+    pub GetAudioObjectType: unsafe extern "system" fn(this: *mut *mut Self, audioobjecttype: *mut AudioObjectType) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISpatialAudioObjectForHrtf {
+    pub base__: ISpatialAudioObjectBase,
+    pub SetPosition: unsafe extern "system" fn(this: *mut *mut Self, x: f32, y: f32, z: f32) -> ::windows_sys::core::HRESULT,
+    pub SetGain: unsafe extern "system" fn(this: *mut *mut Self, gain: f32) -> ::windows_sys::core::HRESULT,
+    pub SetOrientation: unsafe extern "system" fn(this: *mut *mut Self, orientation: *const *const f32) -> ::windows_sys::core::HRESULT,
+    pub SetEnvironment: unsafe extern "system" fn(this: *mut *mut Self, environment: SpatialAudioHrtfEnvironmentType) -> ::windows_sys::core::HRESULT,
+    pub SetDistanceDecay: unsafe extern "system" fn(this: *mut *mut Self, distancedecay: *const SpatialAudioHrtfDistanceDecay) -> ::windows_sys::core::HRESULT,
+    pub SetDirectivity: unsafe extern "system" fn(this: *mut *mut Self, directivity: *const SpatialAudioHrtfDirectivityUnion) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISpatialAudioObjectForMetadataCommands {
+    pub base__: ISpatialAudioObjectBase,
+    pub WriteNextMetadataCommand: unsafe extern "system" fn(this: *mut *mut Self, commandid: u8, valuebuffer: *const ::core::ffi::c_void, valuebufferlength: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISpatialAudioObjectForMetadataItems {
+    pub base__: ISpatialAudioObjectBase,
+    pub GetSpatialAudioMetadataItems: unsafe extern "system" fn(this: *mut *mut Self, metadataitems: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISpatialAudioObjectRenderStream {
+    pub base__: ISpatialAudioObjectRenderStreamBase,
+    pub ActivateSpatialAudioObject: unsafe extern "system" fn(this: *mut *mut Self, r#type: AudioObjectType, audioobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISpatialAudioObjectRenderStreamBase {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetAvailableDynamicObjectCount: unsafe extern "system" fn(this: *mut *mut Self, value: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetService: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, service: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Start: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Stop: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub BeginUpdatingAudioObjects: unsafe extern "system" fn(this: *mut *mut Self, availabledynamicobjectcount: *mut u32, framecountperbuffer: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub EndUpdatingAudioObjects: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISpatialAudioObjectRenderStreamForHrtf {
+    pub base__: ISpatialAudioObjectRenderStreamBase,
+    pub ActivateSpatialAudioObjectForHrtf: unsafe extern "system" fn(this: *mut *mut Self, r#type: AudioObjectType, audioobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISpatialAudioObjectRenderStreamForMetadata {
+    pub base__: ISpatialAudioObjectRenderStreamBase,
+    pub ActivateSpatialAudioObjectForMetadataCommands: unsafe extern "system" fn(this: *mut *mut Self, r#type: AudioObjectType, audioobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ActivateSpatialAudioObjectForMetadataItems: unsafe extern "system" fn(this: *mut *mut Self, r#type: AudioObjectType, audioobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISpatialAudioObjectRenderStreamNotify {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnAvailableDynamicObjectCountChange: unsafe extern "system" fn(this: *mut *mut Self, sender: *mut ::core::ffi::c_void, hnscompliancedeadlinetime: i64, availabledynamicobjectcountchange: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISubunit {
+    pub base__: ::windows_sys::core::IUnknown,
+}
 #[doc = "*Required features: `\"Win32_Media_Audio\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 pub type LPACMDRIVERPROC = ::core::option::Option<unsafe extern "system" fn(param0: usize, param1: HACMDRIVERID, param2: u32, param3: super::super::Foundation::LPARAM, param4: super::super::Foundation::LPARAM) -> super::super::Foundation::LRESULT>;
@@ -2881,7 +3440,7 @@ pub const MOD_SYNTH: u32 = 2u32;
 #[doc = "*Required features: `\"Win32_Media_Audio\"`*"]
 pub const MOD_WAVETABLE: u32 = 6u32;
 #[doc = "*Required features: `\"Win32_Media_Audio\"`*"]
-pub type PAudioStateMonitorCallback = ::core::option::Option<unsafe extern "system" fn(audiostatemonitor: IAudioStateMonitor, context: *const ::core::ffi::c_void)>;
+pub type PAudioStateMonitorCallback = ::core::option::Option<unsafe extern "system" fn(audiostatemonitor: *mut *mut IAudioStateMonitor, context: *const ::core::ffi::c_void)>;
 #[repr(C, packed(1))]
 #[doc = "*Required features: `\"Win32_Media_Audio\"`*"]
 pub struct PCMWAVEFORMAT {
@@ -3102,7 +3661,7 @@ pub struct SpatialAudioHrtfActivationParams {
     pub MaxDynamicObjectCount: u32,
     pub Category: AUDIO_STREAM_CATEGORY,
     pub EventHandle: super::super::Foundation::HANDLE,
-    pub NotifyObject: ISpatialAudioObjectRenderStreamNotify,
+    pub NotifyObject: *mut *mut *mut *mut ISpatialAudioObjectRenderStreamNotify,
     pub DistanceDecay: *mut SpatialAudioHrtfDistanceDecay,
     pub Directivity: *mut SpatialAudioHrtfDirectivityUnion,
     pub Environment: *mut SpatialAudioHrtfEnvironmentType,
@@ -3126,7 +3685,7 @@ pub struct SpatialAudioHrtfActivationParams2 {
     pub MaxDynamicObjectCount: u32,
     pub Category: AUDIO_STREAM_CATEGORY,
     pub EventHandle: super::super::Foundation::HANDLE,
-    pub NotifyObject: ISpatialAudioObjectRenderStreamNotify,
+    pub NotifyObject: *mut *mut *mut *mut ISpatialAudioObjectRenderStreamNotify,
     pub DistanceDecay: *mut SpatialAudioHrtfDistanceDecay,
     pub Directivity: *mut SpatialAudioHrtfDirectivityUnion,
     pub Environment: *mut SpatialAudioHrtfEnvironmentType,
@@ -3274,7 +3833,7 @@ pub struct SpatialAudioObjectRenderStreamActivationParams {
     pub MaxDynamicObjectCount: u32,
     pub Category: AUDIO_STREAM_CATEGORY,
     pub EventHandle: super::super::Foundation::HANDLE,
-    pub NotifyObject: ISpatialAudioObjectRenderStreamNotify,
+    pub NotifyObject: *mut *mut *mut *mut ISpatialAudioObjectRenderStreamNotify,
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SpatialAudioObjectRenderStreamActivationParams {}
@@ -3294,7 +3853,7 @@ pub struct SpatialAudioObjectRenderStreamActivationParams2 {
     pub MaxDynamicObjectCount: u32,
     pub Category: AUDIO_STREAM_CATEGORY,
     pub EventHandle: super::super::Foundation::HANDLE,
-    pub NotifyObject: ISpatialAudioObjectRenderStreamNotify,
+    pub NotifyObject: *mut *mut *mut *mut ISpatialAudioObjectRenderStreamNotify,
     pub Options: SPATIAL_AUDIO_STREAM_OPTIONS,
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -3318,7 +3877,7 @@ pub struct SpatialAudioObjectRenderStreamForMetadataActivationParams {
     pub MetadataFormatId: ::windows_sys::core::GUID,
     pub MaxMetadataItemCount: u16,
     pub MetadataActivationParams: *const super::super::System::Com::StructuredStorage::PROPVARIANT,
-    pub NotifyObject: ISpatialAudioObjectRenderStreamNotify,
+    pub NotifyObject: *mut *mut *mut *mut ISpatialAudioObjectRenderStreamNotify,
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
 impl ::core::marker::Copy for SpatialAudioObjectRenderStreamForMetadataActivationParams {}
@@ -3341,7 +3900,7 @@ pub struct SpatialAudioObjectRenderStreamForMetadataActivationParams2 {
     pub MetadataFormatId: ::windows_sys::core::GUID,
     pub MaxMetadataItemCount: u32,
     pub MetadataActivationParams: *const super::super::System::Com::StructuredStorage::PROPVARIANT,
-    pub NotifyObject: ISpatialAudioObjectRenderStreamNotify,
+    pub NotifyObject: *mut *mut *mut *mut ISpatialAudioObjectRenderStreamNotify,
     pub Options: SPATIAL_AUDIO_STREAM_OPTIONS,
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]

@@ -1,4 +1,37 @@
-pub type IUserDataAccountProviderOperation = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IUserDataAccountPartnerAccountInfo {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub DisplayName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Priority: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub AccountKind: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut UserDataAccountProviderPartnerAccountKind) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IUserDataAccountProviderAddAccountOperation {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub ContentKinds: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::UserDataAccountContentKinds) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub PartnerAccountInfos: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    PartnerAccountInfos: usize,
+    pub ReportCompleted: unsafe extern "system" fn(this: *mut *mut Self, userdataaccountid: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IUserDataAccountProviderOperation {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Kind: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut UserDataAccountProviderOperationKind) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IUserDataAccountProviderResolveErrorsOperation {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub UserDataAccountId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub ReportCompleted: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IUserDataAccountProviderSettingsOperation {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub UserDataAccountId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub ReportCompleted: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
 pub type UserDataAccountPartnerAccountInfo = *mut ::core::ffi::c_void;
 pub type UserDataAccountProviderAddAccountOperation = *mut ::core::ffi::c_void;
 #[doc = "*Required features: `\"ApplicationModel_UserDataAccounts_Provider\"`*"]

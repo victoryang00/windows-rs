@@ -2474,84 +2474,1937 @@ pub const FR_PROP_CAEXCHANGECERTIFICATECRLCHAIN: FULL_RESPONSE_PROPERTY_ID = 19u
 pub const FR_PROP_ATTESTATIONCHALLENGE: FULL_RESPONSE_PROPERTY_ID = 20u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
 pub const FR_PROP_ATTESTATIONPROVIDERNAME: FULL_RESPONSE_PROPERTY_ID = 21u32;
-pub type IAlternativeName = *mut ::core::ffi::c_void;
-pub type IAlternativeNames = *mut ::core::ffi::c_void;
-pub type IBinaryConverter = *mut ::core::ffi::c_void;
-pub type IBinaryConverter2 = *mut ::core::ffi::c_void;
-pub type ICEnroll = *mut ::core::ffi::c_void;
-pub type ICEnroll2 = *mut ::core::ffi::c_void;
-pub type ICEnroll3 = *mut ::core::ffi::c_void;
-pub type ICEnroll4 = *mut ::core::ffi::c_void;
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IAlternativeName {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InitializeFromString: unsafe extern "system" fn(this: *mut *mut Self, r#type: AlternativeNameType, strvalue: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InitializeFromString: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InitializeFromRawData: unsafe extern "system" fn(this: *mut *mut Self, r#type: AlternativeNameType, encoding: EncodingType, strrawdata: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InitializeFromRawData: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub InitializeFromOtherName: unsafe extern "system" fn(this: *mut *mut Self, pobjectid: *mut ::core::ffi::c_void, encoding: EncodingType, strrawdata: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, tobewrapped: i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    InitializeFromOtherName: usize,
+    pub Type: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut AlternativeNameType) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub StrValue: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    StrValue: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub ObjectId: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    ObjectId: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub get_RawData: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    get_RawData: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IAlternativeNames {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub get_ItemByIndex: unsafe extern "system" fn(this: *mut *mut Self, index: i32, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    get_ItemByIndex: usize,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Add: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Add: usize,
+    pub Remove: unsafe extern "system" fn(this: *mut *mut Self, index: i32) -> ::windows_sys::core::HRESULT,
+    pub Clear: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IBinaryConverter {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub StringToString: unsafe extern "system" fn(this: *mut *mut Self, strencodedin: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, encodingin: EncodingType, encoding: EncodingType, pstrencoded: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    StringToString: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub VariantByteArrayToString: unsafe extern "system" fn(this: *mut *mut Self, pvarbytearray: *const super::super::super::System::Com::VARIANT, encoding: EncodingType, pstrencoded: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    VariantByteArrayToString: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub StringToVariantByteArray: unsafe extern "system" fn(this: *mut *mut Self, strencoded: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, encoding: EncodingType, pvarbytearray: *mut super::super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    StringToVariantByteArray: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IBinaryConverter2 {
+    pub base__: IBinaryConverter,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub StringArrayToVariantArray: unsafe extern "system" fn(this: *mut *mut Self, pvarstringarray: *const super::super::super::System::Com::VARIANT, pvarvariantarray: *mut super::super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    StringArrayToVariantArray: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub VariantArrayToStringArray: unsafe extern "system" fn(this: *mut *mut Self, pvarvariantarray: *const super::super::super::System::Com::VARIANT, pvarstringarray: *mut super::super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    VariantArrayToStringArray: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ICEnroll {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub createFilePKCS10: unsafe extern "system" fn(this: *mut *mut Self, dnname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, usage: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, wszpkcs10filename: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    createFilePKCS10: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub acceptFilePKCS7: unsafe extern "system" fn(this: *mut *mut Self, wszpkcs7filename: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    acceptFilePKCS7: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub createPKCS10: unsafe extern "system" fn(this: *mut *mut Self, dnname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, usage: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, ppkcs10: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    createPKCS10: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub acceptPKCS7: unsafe extern "system" fn(this: *mut *mut Self, pkcs7: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    acceptPKCS7: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub getCertFromPKCS7: unsafe extern "system" fn(this: *mut *mut Self, wszpkcs7: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, pbstrcert: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    getCertFromPKCS7: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub enumProviders: unsafe extern "system" fn(this: *mut *mut Self, dwindex: i32, dwflags: i32, pbstrprovname: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    enumProviders: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub enumContainers: unsafe extern "system" fn(this: *mut *mut Self, dwindex: i32, pbstr: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    enumContainers: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub freeRequestInfo: unsafe extern "system" fn(this: *mut *mut Self, pkcs7orpkcs10: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    freeRequestInfo: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MyStoreName: unsafe extern "system" fn(this: *mut *mut Self, pbstrname: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MyStoreName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetMyStoreName: unsafe extern "system" fn(this: *mut *mut Self, bstrname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetMyStoreName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MyStoreType: unsafe extern "system" fn(this: *mut *mut Self, pbstrtype: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MyStoreType: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetMyStoreType: unsafe extern "system" fn(this: *mut *mut Self, bstrtype: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetMyStoreType: usize,
+    pub MyStoreFlags: unsafe extern "system" fn(this: *mut *mut Self, pdwflags: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetMyStoreFlags: unsafe extern "system" fn(this: *mut *mut Self, dwflags: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CAStoreName: unsafe extern "system" fn(this: *mut *mut Self, pbstrname: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CAStoreName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetCAStoreName: unsafe extern "system" fn(this: *mut *mut Self, bstrname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetCAStoreName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CAStoreType: unsafe extern "system" fn(this: *mut *mut Self, pbstrtype: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CAStoreType: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetCAStoreType: unsafe extern "system" fn(this: *mut *mut Self, bstrtype: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetCAStoreType: usize,
+    pub CAStoreFlags: unsafe extern "system" fn(this: *mut *mut Self, pdwflags: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetCAStoreFlags: unsafe extern "system" fn(this: *mut *mut Self, dwflags: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RootStoreName: unsafe extern "system" fn(this: *mut *mut Self, pbstrname: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RootStoreName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetRootStoreName: unsafe extern "system" fn(this: *mut *mut Self, bstrname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetRootStoreName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RootStoreType: unsafe extern "system" fn(this: *mut *mut Self, pbstrtype: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RootStoreType: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetRootStoreType: unsafe extern "system" fn(this: *mut *mut Self, bstrtype: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetRootStoreType: usize,
+    pub RootStoreFlags: unsafe extern "system" fn(this: *mut *mut Self, pdwflags: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetRootStoreFlags: unsafe extern "system" fn(this: *mut *mut Self, dwflags: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RequestStoreName: unsafe extern "system" fn(this: *mut *mut Self, pbstrname: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RequestStoreName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetRequestStoreName: unsafe extern "system" fn(this: *mut *mut Self, bstrname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetRequestStoreName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RequestStoreType: unsafe extern "system" fn(this: *mut *mut Self, pbstrtype: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RequestStoreType: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetRequestStoreType: unsafe extern "system" fn(this: *mut *mut Self, bstrtype: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetRequestStoreType: usize,
+    pub RequestStoreFlags: unsafe extern "system" fn(this: *mut *mut Self, pdwflags: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetRequestStoreFlags: unsafe extern "system" fn(this: *mut *mut Self, dwflags: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ContainerName: unsafe extern "system" fn(this: *mut *mut Self, pbstrcontainer: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ContainerName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetContainerName: unsafe extern "system" fn(this: *mut *mut Self, bstrcontainer: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetContainerName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ProviderName: unsafe extern "system" fn(this: *mut *mut Self, pbstrprovider: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ProviderName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetProviderName: unsafe extern "system" fn(this: *mut *mut Self, bstrprovider: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetProviderName: usize,
+    pub ProviderType: unsafe extern "system" fn(this: *mut *mut Self, pdwtype: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetProviderType: unsafe extern "system" fn(this: *mut *mut Self, dwtype: i32) -> ::windows_sys::core::HRESULT,
+    pub KeySpec: unsafe extern "system" fn(this: *mut *mut Self, pdw: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetKeySpec: unsafe extern "system" fn(this: *mut *mut Self, dw: i32) -> ::windows_sys::core::HRESULT,
+    pub ProviderFlags: unsafe extern "system" fn(this: *mut *mut Self, pdwflags: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetProviderFlags: unsafe extern "system" fn(this: *mut *mut Self, dwflags: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub UseExistingKeySet: unsafe extern "system" fn(this: *mut *mut Self, fuseexistingkeys: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    UseExistingKeySet: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetUseExistingKeySet: unsafe extern "system" fn(this: *mut *mut Self, fuseexistingkeys: super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetUseExistingKeySet: usize,
+    pub GenKeyFlags: unsafe extern "system" fn(this: *mut *mut Self, pdwflags: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetGenKeyFlags: unsafe extern "system" fn(this: *mut *mut Self, dwflags: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DeleteRequestCert: unsafe extern "system" fn(this: *mut *mut Self, fdelete: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DeleteRequestCert: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetDeleteRequestCert: unsafe extern "system" fn(this: *mut *mut Self, fdelete: super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetDeleteRequestCert: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub WriteCertToCSP: unsafe extern "system" fn(this: *mut *mut Self, fbool: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    WriteCertToCSP: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetWriteCertToCSP: unsafe extern "system" fn(this: *mut *mut Self, fbool: super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetWriteCertToCSP: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SPCFileName: unsafe extern "system" fn(this: *mut *mut Self, pbstr: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SPCFileName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetSPCFileName: unsafe extern "system" fn(this: *mut *mut Self, bstr: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetSPCFileName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub PVKFileName: unsafe extern "system" fn(this: *mut *mut Self, pbstr: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    PVKFileName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetPVKFileName: unsafe extern "system" fn(this: *mut *mut Self, bstr: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetPVKFileName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub HashAlgorithm: unsafe extern "system" fn(this: *mut *mut Self, pbstr: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    HashAlgorithm: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetHashAlgorithm: unsafe extern "system" fn(this: *mut *mut Self, bstr: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetHashAlgorithm: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ICEnroll2 {
+    pub base__: ICEnroll,
+    #[cfg(feature = "Win32_Foundation")]
+    pub addCertTypeToRequest: unsafe extern "system" fn(this: *mut *mut Self, certtype: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    addCertTypeToRequest: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub addNameValuePairToSignature: unsafe extern "system" fn(this: *mut *mut Self, name: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, value: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    addNameValuePairToSignature: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub WriteCertToUserDS: unsafe extern "system" fn(this: *mut *mut Self, fbool: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    WriteCertToUserDS: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetWriteCertToUserDS: unsafe extern "system" fn(this: *mut *mut Self, fbool: super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetWriteCertToUserDS: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub EnableT61DNEncoding: unsafe extern "system" fn(this: *mut *mut Self, fbool: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    EnableT61DNEncoding: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetEnableT61DNEncoding: unsafe extern "system" fn(this: *mut *mut Self, fbool: super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetEnableT61DNEncoding: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ICEnroll3 {
+    pub base__: ICEnroll2,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InstallPKCS7: unsafe extern "system" fn(this: *mut *mut Self, pkcs7: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InstallPKCS7: usize,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetSupportedKeySpec: unsafe extern "system" fn(this: *mut *mut Self, pdwkeyspec: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetKeyLen: unsafe extern "system" fn(this: *mut *mut Self, fmin: super::super::super::Foundation::BOOL, fexchange: super::super::super::Foundation::BOOL, pdwkeysize: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetKeyLen: usize,
+    pub EnumAlgs: unsafe extern "system" fn(this: *mut *mut Self, dwindex: i32, algclass: i32, pdwalgid: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetAlgName: unsafe extern "system" fn(this: *mut *mut Self, algid: i32, pbstr: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetAlgName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetReuseHardwareKeyIfUnableToGenNew: unsafe extern "system" fn(this: *mut *mut Self, freusehardwarekeyifunabletogennew: super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetReuseHardwareKeyIfUnableToGenNew: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ReuseHardwareKeyIfUnableToGenNew: unsafe extern "system" fn(this: *mut *mut Self, freusehardwarekeyifunabletogennew: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ReuseHardwareKeyIfUnableToGenNew: usize,
+    pub SetHashAlgID: unsafe extern "system" fn(this: *mut *mut Self, hashalgid: i32) -> ::windows_sys::core::HRESULT,
+    pub HashAlgID: unsafe extern "system" fn(this: *mut *mut Self, hashalgid: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetLimitExchangeKeyToEncipherment: unsafe extern "system" fn(this: *mut *mut Self, flimitexchangekeytoencipherment: super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetLimitExchangeKeyToEncipherment: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub LimitExchangeKeyToEncipherment: unsafe extern "system" fn(this: *mut *mut Self, flimitexchangekeytoencipherment: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    LimitExchangeKeyToEncipherment: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetEnableSMIMECapabilities: unsafe extern "system" fn(this: *mut *mut Self, fenablesmimecapabilities: super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetEnableSMIMECapabilities: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub EnableSMIMECapabilities: unsafe extern "system" fn(this: *mut *mut Self, fenablesmimecapabilities: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    EnableSMIMECapabilities: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ICEnroll4 {
+    pub base__: ICEnroll3,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetPrivateKeyArchiveCertificate: unsafe extern "system" fn(this: *mut *mut Self, bstrcert: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetPrivateKeyArchiveCertificate: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub PrivateKeyArchiveCertificate: unsafe extern "system" fn(this: *mut *mut Self, pbstrcert: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    PrivateKeyArchiveCertificate: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetThumbPrint: unsafe extern "system" fn(this: *mut *mut Self, bstrthumbprint: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetThumbPrint: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ThumbPrint: unsafe extern "system" fn(this: *mut *mut Self, pbstrthumbprint: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ThumbPrint: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub binaryToString: unsafe extern "system" fn(this: *mut *mut Self, flags: i32, strbinary: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, pstrencoded: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    binaryToString: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub stringToBinary: unsafe extern "system" fn(this: *mut *mut Self, flags: i32, strencoded: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, pstrbinary: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    stringToBinary: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub addExtensionToRequest: unsafe extern "system" fn(this: *mut *mut Self, flags: i32, strname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, strvalue: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    addExtensionToRequest: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub addAttributeToRequest: unsafe extern "system" fn(this: *mut *mut Self, flags: i32, strname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, strvalue: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    addAttributeToRequest: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub addNameValuePairToRequest: unsafe extern "system" fn(this: *mut *mut Self, flags: i32, strname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, strvalue: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    addNameValuePairToRequest: usize,
+    pub resetExtensions: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub resetAttributes: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub createRequest: unsafe extern "system" fn(this: *mut *mut Self, flags: CERT_CREATE_REQUEST_FLAGS, strdnname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, usage: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, pstrrequest: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    createRequest: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub createFileRequest: unsafe extern "system" fn(this: *mut *mut Self, flags: CERT_CREATE_REQUEST_FLAGS, strdnname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, strusage: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, strrequestfilename: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    createFileRequest: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub acceptResponse: unsafe extern "system" fn(this: *mut *mut Self, strresponse: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    acceptResponse: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub acceptFileResponse: unsafe extern "system" fn(this: *mut *mut Self, strresponsefilename: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    acceptFileResponse: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub getCertFromResponse: unsafe extern "system" fn(this: *mut *mut Self, strresponse: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, pstrcert: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    getCertFromResponse: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub getCertFromFileResponse: unsafe extern "system" fn(this: *mut *mut Self, strresponsefilename: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, pstrcert: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    getCertFromFileResponse: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub createPFX: unsafe extern "system" fn(this: *mut *mut Self, strpassword: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, pstrpfx: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    createPFX: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub createFilePFX: unsafe extern "system" fn(this: *mut *mut Self, strpassword: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, strpfxfilename: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    createFilePFX: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub setPendingRequestInfo: unsafe extern "system" fn(this: *mut *mut Self, lrequestid: i32, strcadns: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, strcaname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, strfriendlyname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    setPendingRequestInfo: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub enumPendingRequest: unsafe extern "system" fn(this: *mut *mut Self, lindex: i32, ldesiredproperty: PENDING_REQUEST_DESIRED_PROPERTY, pvarproperty: *mut super::super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    enumPendingRequest: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub removePendingRequest: unsafe extern "system" fn(this: *mut *mut Self, strthumbprint: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    removePendingRequest: usize,
+    pub GetKeyLenEx: unsafe extern "system" fn(this: *mut *mut Self, lsizespec: XEKL_KEYSIZE, lkeyspec: XEKL_KEYSPEC, pdwkeysize: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InstallPKCS7Ex: unsafe extern "system" fn(this: *mut *mut Self, pkcs7: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, plcertinstalled: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InstallPKCS7Ex: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub addCertTypeToRequestEx: unsafe extern "system" fn(this: *mut *mut Self, ltype: ADDED_CERT_TYPE, bstroidorname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, lmajorversion: i32, fminorversion: super::super::super::Foundation::BOOL, lminorversion: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    addCertTypeToRequestEx: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub getProviderType: unsafe extern "system" fn(this: *mut *mut Self, strprovname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, plprovtype: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    getProviderType: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetSignerCertificate: unsafe extern "system" fn(this: *mut *mut Self, bstrcert: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetSignerCertificate: usize,
+    pub SetClientId: unsafe extern "system" fn(this: *mut *mut Self, lclientid: i32) -> ::windows_sys::core::HRESULT,
+    pub ClientId: unsafe extern "system" fn(this: *mut *mut Self, plclientid: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub addBlobPropertyToCertificate: unsafe extern "system" fn(this: *mut *mut Self, lpropertyid: i32, lreserved: i32, bstrproperty: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    addBlobPropertyToCertificate: usize,
+    pub resetBlobProperties: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetIncludeSubjectKeyID: unsafe extern "system" fn(this: *mut *mut Self, finclude: super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetIncludeSubjectKeyID: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IncludeSubjectKeyID: unsafe extern "system" fn(this: *mut *mut Self, pfinclude: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IncludeSubjectKeyID: usize,
+}
 #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
 pub const ICF_ALLOWFOREIGN: u32 = 65536u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
 pub const ICF_EXISTINGROW: u32 = 131072u32;
-pub type ICertAdmin = *mut ::core::ffi::c_void;
-pub type ICertAdmin2 = *mut ::core::ffi::c_void;
-pub type ICertConfig = *mut ::core::ffi::c_void;
-pub type ICertConfig2 = *mut ::core::ffi::c_void;
-pub type ICertEncodeAltName = *mut ::core::ffi::c_void;
-pub type ICertEncodeAltName2 = *mut ::core::ffi::c_void;
-pub type ICertEncodeBitString = *mut ::core::ffi::c_void;
-pub type ICertEncodeBitString2 = *mut ::core::ffi::c_void;
-pub type ICertEncodeCRLDistInfo = *mut ::core::ffi::c_void;
-pub type ICertEncodeCRLDistInfo2 = *mut ::core::ffi::c_void;
-pub type ICertEncodeDateArray = *mut ::core::ffi::c_void;
-pub type ICertEncodeDateArray2 = *mut ::core::ffi::c_void;
-pub type ICertEncodeLongArray = *mut ::core::ffi::c_void;
-pub type ICertEncodeLongArray2 = *mut ::core::ffi::c_void;
-pub type ICertEncodeStringArray = *mut ::core::ffi::c_void;
-pub type ICertEncodeStringArray2 = *mut ::core::ffi::c_void;
-pub type ICertExit = *mut ::core::ffi::c_void;
-pub type ICertExit2 = *mut ::core::ffi::c_void;
-pub type ICertGetConfig = *mut ::core::ffi::c_void;
-pub type ICertManageModule = *mut ::core::ffi::c_void;
-pub type ICertPolicy = *mut ::core::ffi::c_void;
-pub type ICertPolicy2 = *mut ::core::ffi::c_void;
-pub type ICertProperties = *mut ::core::ffi::c_void;
-pub type ICertProperty = *mut ::core::ffi::c_void;
-pub type ICertPropertyArchived = *mut ::core::ffi::c_void;
-pub type ICertPropertyArchivedKeyHash = *mut ::core::ffi::c_void;
-pub type ICertPropertyAutoEnroll = *mut ::core::ffi::c_void;
-pub type ICertPropertyBackedUp = *mut ::core::ffi::c_void;
-pub type ICertPropertyDescription = *mut ::core::ffi::c_void;
-pub type ICertPropertyEnrollment = *mut ::core::ffi::c_void;
-pub type ICertPropertyEnrollmentPolicyServer = *mut ::core::ffi::c_void;
-pub type ICertPropertyFriendlyName = *mut ::core::ffi::c_void;
-pub type ICertPropertyKeyProvInfo = *mut ::core::ffi::c_void;
-pub type ICertPropertyRenewal = *mut ::core::ffi::c_void;
-pub type ICertPropertyRequestOriginator = *mut ::core::ffi::c_void;
-pub type ICertPropertySHA1Hash = *mut ::core::ffi::c_void;
-pub type ICertRequest = *mut ::core::ffi::c_void;
-pub type ICertRequest2 = *mut ::core::ffi::c_void;
-pub type ICertRequest3 = *mut ::core::ffi::c_void;
-pub type ICertRequestD = *mut ::core::ffi::c_void;
-pub type ICertRequestD2 = *mut ::core::ffi::c_void;
-pub type ICertServerExit = *mut ::core::ffi::c_void;
-pub type ICertServerPolicy = *mut ::core::ffi::c_void;
-pub type ICertView = *mut ::core::ffi::c_void;
-pub type ICertView2 = *mut ::core::ffi::c_void;
-pub type ICertificateAttestationChallenge = *mut ::core::ffi::c_void;
-pub type ICertificateAttestationChallenge2 = *mut ::core::ffi::c_void;
-pub type ICertificatePolicies = *mut ::core::ffi::c_void;
-pub type ICertificatePolicy = *mut ::core::ffi::c_void;
-pub type ICertificationAuthorities = *mut ::core::ffi::c_void;
-pub type ICertificationAuthority = *mut ::core::ffi::c_void;
-pub type ICryptAttribute = *mut ::core::ffi::c_void;
-pub type ICryptAttributes = *mut ::core::ffi::c_void;
-pub type ICspAlgorithm = *mut ::core::ffi::c_void;
-pub type ICspAlgorithms = *mut ::core::ffi::c_void;
-pub type ICspInformation = *mut ::core::ffi::c_void;
-pub type ICspInformations = *mut ::core::ffi::c_void;
-pub type ICspStatus = *mut ::core::ffi::c_void;
-pub type ICspStatuses = *mut ::core::ffi::c_void;
-pub type IEnroll = *mut ::core::ffi::c_void;
-pub type IEnroll2 = *mut ::core::ffi::c_void;
-pub type IEnroll4 = *mut ::core::ffi::c_void;
-pub type IEnumCERTVIEWATTRIBUTE = *mut ::core::ffi::c_void;
-pub type IEnumCERTVIEWCOLUMN = *mut ::core::ffi::c_void;
-pub type IEnumCERTVIEWEXTENSION = *mut ::core::ffi::c_void;
-pub type IEnumCERTVIEWROW = *mut ::core::ffi::c_void;
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ICertAdmin {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsValidCertificate: unsafe extern "system" fn(this: *mut *mut Self, strconfig: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, strserialnumber: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, pdisposition: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsValidCertificate: usize,
+    pub GetRevocationReason: unsafe extern "system" fn(this: *mut *mut Self, preason: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RevokeCertificate: unsafe extern "system" fn(this: *mut *mut Self, strconfig: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, strserialnumber: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, reason: i32, date: f64) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RevokeCertificate: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetRequestAttributes: unsafe extern "system" fn(this: *mut *mut Self, strconfig: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, requestid: i32, strattributes: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetRequestAttributes: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetCertificateExtension: unsafe extern "system" fn(this: *mut *mut Self, strconfig: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, requestid: i32, strextensionname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, r#type: CERT_PROPERTY_TYPE, flags: i32, pvarvalue: *const super::super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetCertificateExtension: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DenyRequest: unsafe extern "system" fn(this: *mut *mut Self, strconfig: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, requestid: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DenyRequest: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ResubmitRequest: unsafe extern "system" fn(this: *mut *mut Self, strconfig: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, requestid: i32, pdisposition: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ResubmitRequest: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub PublishCRL: unsafe extern "system" fn(this: *mut *mut Self, strconfig: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, date: f64) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    PublishCRL: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetCRL: unsafe extern "system" fn(this: *mut *mut Self, strconfig: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, flags: i32, pstrcrl: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetCRL: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ImportCertificate: unsafe extern "system" fn(this: *mut *mut Self, strconfig: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, strcertificate: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, flags: CERT_IMPORT_FLAGS, prequestid: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ImportCertificate: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ICertAdmin2 {
+    pub base__: ICertAdmin,
+    #[cfg(feature = "Win32_Foundation")]
+    pub PublishCRLs: unsafe extern "system" fn(this: *mut *mut Self, strconfig: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, date: f64, crlflags: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    PublishCRLs: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetCAProperty: unsafe extern "system" fn(this: *mut *mut Self, strconfig: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, propid: i32, propindex: i32, proptype: i32, flags: i32, pvarpropertyvalue: *mut super::super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetCAProperty: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetCAProperty: unsafe extern "system" fn(this: *mut *mut Self, strconfig: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, propid: i32, propindex: i32, proptype: CERT_PROPERTY_TYPE, pvarpropertyvalue: *const super::super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetCAProperty: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetCAPropertyFlags: unsafe extern "system" fn(this: *mut *mut Self, strconfig: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, propid: i32, ppropflags: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetCAPropertyFlags: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetCAPropertyDisplayName: unsafe extern "system" fn(this: *mut *mut Self, strconfig: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, propid: i32, pstrdisplayname: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetCAPropertyDisplayName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetArchivedKey: unsafe extern "system" fn(this: *mut *mut Self, strconfig: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, requestid: i32, flags: i32, pstrarchivedkey: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetArchivedKey: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetConfigEntry: unsafe extern "system" fn(this: *mut *mut Self, strconfig: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, strnodepath: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, strentryname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, pvarentry: *mut super::super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetConfigEntry: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetConfigEntry: unsafe extern "system" fn(this: *mut *mut Self, strconfig: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, strnodepath: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, strentryname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, pvarentry: *const super::super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetConfigEntry: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ImportKey: unsafe extern "system" fn(this: *mut *mut Self, strconfig: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, requestid: i32, strcerthash: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, flags: CERT_IMPORT_FLAGS, strkey: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ImportKey: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetMyRoles: unsafe extern "system" fn(this: *mut *mut Self, strconfig: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, proles: *mut CERTADMIN_GET_ROLES_FLAGS) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetMyRoles: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DeleteRow: unsafe extern "system" fn(this: *mut *mut Self, strconfig: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, flags: CERT_DELETE_ROW_FLAGS, date: f64, table: CVRC_TABLE, rowid: i32, pcdeleted: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DeleteRow: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ICertConfig {
+    pub base__: super::super::super::System::Com::IDispatch,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self, index: i32, pcount: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, pindex: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetField: unsafe extern "system" fn(this: *mut *mut Self, strfieldname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, pstrout: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetField: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetConfig: unsafe extern "system" fn(this: *mut *mut Self, flags: i32, pstrout: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetConfig: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ICertConfig2 {
+    pub base__: ICertConfig,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetSharedFolder: unsafe extern "system" fn(this: *mut *mut Self, strsharedfolder: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetSharedFolder: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ICertEncodeAltName {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Decode: unsafe extern "system" fn(this: *mut *mut Self, strbinary: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Decode: usize,
+    pub GetNameCount: unsafe extern "system" fn(this: *mut *mut Self, pnamecount: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub GetNameChoice: unsafe extern "system" fn(this: *mut *mut Self, nameindex: i32, pnamechoice: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetName: unsafe extern "system" fn(this: *mut *mut Self, nameindex: i32, pstrname: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetName: usize,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self, namecount: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetNameEntry: unsafe extern "system" fn(this: *mut *mut Self, nameindex: i32, namechoice: CERT_ALT_NAME, strname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetNameEntry: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Encode: unsafe extern "system" fn(this: *mut *mut Self, pstrbinary: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Encode: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ICertEncodeAltName2 {
+    pub base__: ICertEncodeAltName,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DecodeBlob: unsafe extern "system" fn(this: *mut *mut Self, strencodeddata: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, encoding: EncodingType) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DecodeBlob: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub EncodeBlob: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, pstrencodeddata: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    EncodeBlob: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetNameBlob: unsafe extern "system" fn(this: *mut *mut Self, nameindex: i32, encoding: EncodingType, pstrname: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetNameBlob: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetNameEntryBlob: unsafe extern "system" fn(this: *mut *mut Self, nameindex: i32, namechoice: i32, strname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, encoding: EncodingType) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetNameEntryBlob: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ICertEncodeBitString {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Decode: unsafe extern "system" fn(this: *mut *mut Self, strbinary: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Decode: usize,
+    pub GetBitCount: unsafe extern "system" fn(this: *mut *mut Self, pbitcount: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetBitString: unsafe extern "system" fn(this: *mut *mut Self, pstrbitstring: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetBitString: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Encode: unsafe extern "system" fn(this: *mut *mut Self, bitcount: i32, strbitstring: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, pstrbinary: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Encode: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ICertEncodeBitString2 {
+    pub base__: ICertEncodeBitString,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DecodeBlob: unsafe extern "system" fn(this: *mut *mut Self, strencodeddata: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, encoding: EncodingType) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DecodeBlob: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub EncodeBlob: unsafe extern "system" fn(this: *mut *mut Self, bitcount: i32, strbitstring: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, encodingin: EncodingType, encoding: EncodingType, pstrencodeddata: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    EncodeBlob: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetBitStringBlob: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, pstrbitstring: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetBitStringBlob: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ICertEncodeCRLDistInfo {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Decode: unsafe extern "system" fn(this: *mut *mut Self, strbinary: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Decode: usize,
+    pub GetDistPointCount: unsafe extern "system" fn(this: *mut *mut Self, pdistpointcount: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub GetNameCount: unsafe extern "system" fn(this: *mut *mut Self, distpointindex: i32, pnamecount: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub GetNameChoice: unsafe extern "system" fn(this: *mut *mut Self, distpointindex: i32, nameindex: i32, pnamechoice: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetName: unsafe extern "system" fn(this: *mut *mut Self, distpointindex: i32, nameindex: i32, pstrname: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetName: usize,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self, distpointcount: i32) -> ::windows_sys::core::HRESULT,
+    pub SetNameCount: unsafe extern "system" fn(this: *mut *mut Self, distpointindex: i32, namecount: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetNameEntry: unsafe extern "system" fn(this: *mut *mut Self, distpointindex: i32, nameindex: i32, namechoice: CERT_ALT_NAME, strname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetNameEntry: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Encode: unsafe extern "system" fn(this: *mut *mut Self, pstrbinary: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Encode: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ICertEncodeCRLDistInfo2 {
+    pub base__: ICertEncodeCRLDistInfo,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DecodeBlob: unsafe extern "system" fn(this: *mut *mut Self, strencodeddata: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, encoding: EncodingType) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DecodeBlob: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub EncodeBlob: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, pstrencodeddata: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    EncodeBlob: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ICertEncodeDateArray {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Decode: unsafe extern "system" fn(this: *mut *mut Self, strbinary: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Decode: usize,
+    pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, pcount: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub GetValue: unsafe extern "system" fn(this: *mut *mut Self, index: i32, pvalue: *mut f64) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self, count: i32) -> ::windows_sys::core::HRESULT,
+    pub SetValue: unsafe extern "system" fn(this: *mut *mut Self, index: i32, value: f64) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Encode: unsafe extern "system" fn(this: *mut *mut Self, pstrbinary: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Encode: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ICertEncodeDateArray2 {
+    pub base__: ICertEncodeDateArray,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DecodeBlob: unsafe extern "system" fn(this: *mut *mut Self, strencodeddata: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, encoding: EncodingType) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DecodeBlob: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub EncodeBlob: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, pstrencodeddata: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    EncodeBlob: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ICertEncodeLongArray {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Decode: unsafe extern "system" fn(this: *mut *mut Self, strbinary: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Decode: usize,
+    pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, pcount: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub GetValue: unsafe extern "system" fn(this: *mut *mut Self, index: i32, pvalue: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self, count: i32) -> ::windows_sys::core::HRESULT,
+    pub SetValue: unsafe extern "system" fn(this: *mut *mut Self, index: i32, value: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Encode: unsafe extern "system" fn(this: *mut *mut Self, pstrbinary: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Encode: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ICertEncodeLongArray2 {
+    pub base__: ICertEncodeLongArray,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DecodeBlob: unsafe extern "system" fn(this: *mut *mut Self, strencodeddata: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, encoding: EncodingType) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DecodeBlob: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub EncodeBlob: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, pstrencodeddata: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    EncodeBlob: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ICertEncodeStringArray {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Decode: unsafe extern "system" fn(this: *mut *mut Self, strbinary: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Decode: usize,
+    pub GetStringType: unsafe extern "system" fn(this: *mut *mut Self, pstringtype: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, pcount: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetValue: unsafe extern "system" fn(this: *mut *mut Self, index: i32, pstr: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetValue: usize,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self, count: i32, stringtype: super::CERT_RDN_ATTR_VALUE_TYPE) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetValue: unsafe extern "system" fn(this: *mut *mut Self, index: i32, str: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetValue: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Encode: unsafe extern "system" fn(this: *mut *mut Self, pstrbinary: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Encode: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ICertEncodeStringArray2 {
+    pub base__: ICertEncodeStringArray,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DecodeBlob: unsafe extern "system" fn(this: *mut *mut Self, strencodeddata: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, encoding: EncodingType) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DecodeBlob: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub EncodeBlob: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, pstrencodeddata: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    EncodeBlob: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ICertExit {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, strconfig: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, peventmask: *mut CERT_EXIT_EVENT_MASK) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Initialize: usize,
+    pub Notify: unsafe extern "system" fn(this: *mut *mut Self, exitevent: i32, context: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetDescription: unsafe extern "system" fn(this: *mut *mut Self, pstrdescription: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetDescription: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ICertExit2 {
+    pub base__: ICertExit,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetManageModule: unsafe extern "system" fn(this: *mut *mut Self, ppmanagemodule: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetManageModule: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ICertGetConfig {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetConfig: unsafe extern "system" fn(this: *mut *mut Self, flags: CERT_GET_CONFIG_FLAGS, pstrout: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetConfig: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ICertManageModule {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetProperty: unsafe extern "system" fn(this: *mut *mut Self, strconfig: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, strstoragelocation: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, strpropertyname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, flags: i32, pvarproperty: *mut super::super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetProperty: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetProperty: unsafe extern "system" fn(this: *mut *mut Self, strconfig: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, strstoragelocation: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, strpropertyname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, flags: i32, pvarproperty: *const super::super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetProperty: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Configure: unsafe extern "system" fn(this: *mut *mut Self, strconfig: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, strstoragelocation: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, flags: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Configure: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ICertPolicy {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, strconfig: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Initialize: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub VerifyRequest: unsafe extern "system" fn(this: *mut *mut Self, strconfig: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, context: i32, bnewrequest: i32, flags: i32, pdisposition: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    VerifyRequest: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetDescription: unsafe extern "system" fn(this: *mut *mut Self, pstrdescription: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetDescription: usize,
+    pub ShutDown: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ICertPolicy2 {
+    pub base__: ICertPolicy,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetManageModule: unsafe extern "system" fn(this: *mut *mut Self, ppmanagemodule: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetManageModule: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ICertProperties {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub get_ItemByIndex: unsafe extern "system" fn(this: *mut *mut Self, index: i32, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    get_ItemByIndex: usize,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Add: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Add: usize,
+    pub Remove: unsafe extern "system" fn(this: *mut *mut Self, index: i32) -> ::windows_sys::core::HRESULT,
+    pub Clear: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InitializeFromCertificate: unsafe extern "system" fn(this: *mut *mut Self, machinecontext: i16, encoding: EncodingType, strcertificate: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InitializeFromCertificate: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ICertProperty {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InitializeFromCertificate: unsafe extern "system" fn(this: *mut *mut Self, machinecontext: i16, encoding: EncodingType, strcertificate: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InitializeFromCertificate: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InitializeDecode: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, strencodeddata: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InitializeDecode: usize,
+    pub PropertyId: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut CERTENROLL_PROPERTYID) -> ::windows_sys::core::HRESULT,
+    pub SetPropertyId: unsafe extern "system" fn(this: *mut *mut Self, value: CERTENROLL_PROPERTYID) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub get_RawData: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    get_RawData: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RemoveFromCertificate: unsafe extern "system" fn(this: *mut *mut Self, machinecontext: i16, encoding: EncodingType, strcertificate: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RemoveFromCertificate: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetValueOnCertificate: unsafe extern "system" fn(this: *mut *mut Self, machinecontext: i16, encoding: EncodingType, strcertificate: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetValueOnCertificate: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ICertPropertyArchived {
+    pub base__: ICertProperty,
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, archivedvalue: i16) -> ::windows_sys::core::HRESULT,
+    pub Archived: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ICertPropertyArchivedKeyHash {
+    pub base__: ICertProperty,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, strarchivedkeyhashvalue: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Initialize: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub get_ArchivedKeyHash: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    get_ArchivedKeyHash: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ICertPropertyAutoEnroll {
+    pub base__: ICertProperty,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, strtemplatename: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Initialize: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub TemplateName: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    TemplateName: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ICertPropertyBackedUp {
+    pub base__: ICertProperty,
+    pub InitializeFromCurrentTime: unsafe extern "system" fn(this: *mut *mut Self, backedupvalue: i16) -> ::windows_sys::core::HRESULT,
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, backedupvalue: i16, date: f64) -> ::windows_sys::core::HRESULT,
+    pub BackedUpValue: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub BackedUpTime: unsafe extern "system" fn(this: *mut *mut Self, pdate: *mut f64) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ICertPropertyDescription {
+    pub base__: ICertProperty,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, strdescription: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Initialize: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Description: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Description: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ICertPropertyEnrollment {
+    pub base__: ICertProperty,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, requestid: i32, strcadnsname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, strcaname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, strfriendlyname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Initialize: usize,
+    pub RequestId: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CADnsName: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CADnsName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CAName: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CAName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub FriendlyName: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    FriendlyName: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ICertPropertyEnrollmentPolicyServer {
+    pub base__: ICertProperty,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, propertyflags: EnrollmentPolicyServerPropertyFlags, authflags: X509EnrollmentAuthFlags, enrollmentserverauthflags: X509EnrollmentAuthFlags, urlflags: PolicyServerUrlFlags, strrequestid: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, strurl: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, strid: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, strenrollmentserverurl: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Initialize: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetPolicyServerUrl: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetPolicyServerUrl: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetPolicyServerId: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetPolicyServerId: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetEnrollmentServerUrl: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetEnrollmentServerUrl: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetRequestIdString: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetRequestIdString: usize,
+    pub GetPropertyFlags: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut EnrollmentPolicyServerPropertyFlags) -> ::windows_sys::core::HRESULT,
+    pub GetUrlFlags: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut PolicyServerUrlFlags) -> ::windows_sys::core::HRESULT,
+    pub GetAuthentication: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut X509EnrollmentAuthFlags) -> ::windows_sys::core::HRESULT,
+    pub GetEnrollmentServerAuthentication: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut X509EnrollmentAuthFlags) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ICertPropertyFriendlyName {
+    pub base__: ICertProperty,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, strfriendlyname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Initialize: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub FriendlyName: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    FriendlyName: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ICertPropertyKeyProvInfo {
+    pub base__: ICertProperty,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Initialize: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub PrivateKey: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    PrivateKey: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ICertPropertyRenewal {
+    pub base__: ICertProperty,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, strrenewalvalue: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Initialize: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InitializeFromCertificateHash: unsafe extern "system" fn(this: *mut *mut Self, machinecontext: i16, encoding: EncodingType, strcertificate: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InitializeFromCertificateHash: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub get_Renewal: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    get_Renewal: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ICertPropertyRequestOriginator {
+    pub base__: ICertProperty,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, strrequestoriginator: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Initialize: usize,
+    pub InitializeFromLocalRequestOriginator: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RequestOriginator: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RequestOriginator: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ICertPropertySHA1Hash {
+    pub base__: ICertProperty,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, strrenewalvalue: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Initialize: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub get_SHA1Hash: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    get_SHA1Hash: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ICertRequest {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Submit: unsafe extern "system" fn(this: *mut *mut Self, flags: i32, strrequest: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, strattributes: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, strconfig: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, pdisposition: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Submit: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RetrievePending: unsafe extern "system" fn(this: *mut *mut Self, requestid: i32, strconfig: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, pdisposition: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RetrievePending: usize,
+    pub GetLastStatus: unsafe extern "system" fn(this: *mut *mut Self, pstatus: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub GetRequestId: unsafe extern "system" fn(this: *mut *mut Self, prequestid: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetDispositionMessage: unsafe extern "system" fn(this: *mut *mut Self, pstrdispositionmessage: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetDispositionMessage: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetCACertificate: unsafe extern "system" fn(this: *mut *mut Self, fexchangecertificate: i32, strconfig: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, flags: i32, pstrcertificate: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetCACertificate: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetCertificate: unsafe extern "system" fn(this: *mut *mut Self, flags: i32, pstrcertificate: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetCertificate: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ICertRequest2 {
+    pub base__: ICertRequest,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetIssuedCertificate: unsafe extern "system" fn(this: *mut *mut Self, strconfig: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, requestid: i32, strserialnumber: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, pdisposition: *mut CR_DISP) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetIssuedCertificate: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetErrorMessageText: unsafe extern "system" fn(this: *mut *mut Self, hrmessage: i32, flags: i32, pstrerrormessagetext: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetErrorMessageText: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetCAProperty: unsafe extern "system" fn(this: *mut *mut Self, strconfig: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, propid: i32, propindex: i32, proptype: i32, flags: i32, pvarpropertyvalue: *mut super::super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetCAProperty: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetCAPropertyFlags: unsafe extern "system" fn(this: *mut *mut Self, strconfig: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, propid: i32, ppropflags: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetCAPropertyFlags: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetCAPropertyDisplayName: unsafe extern "system" fn(this: *mut *mut Self, strconfig: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, propid: i32, pstrdisplayname: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetCAPropertyDisplayName: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetFullResponseProperty: unsafe extern "system" fn(this: *mut *mut Self, propid: FULL_RESPONSE_PROPERTY_ID, propindex: i32, proptype: CERT_PROPERTY_TYPE, flags: CERT_REQUEST_OUT_TYPE, pvarpropertyvalue: *mut super::super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetFullResponseProperty: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ICertRequest3 {
+    pub base__: ICertRequest2,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetCredential: unsafe extern "system" fn(this: *mut *mut Self, hwnd: i32, authtype: X509EnrollmentAuthFlags, strcredential: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, strpassword: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetCredential: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetRequestIdString: unsafe extern "system" fn(this: *mut *mut Self, pstrrequestid: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetRequestIdString: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetIssuedCertificate2: unsafe extern "system" fn(this: *mut *mut Self, strconfig: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, strrequestid: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, strserialnumber: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, pdisposition: *mut CR_DISP) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetIssuedCertificate2: usize,
+    pub GetRefreshPolicy: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i16) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ICertRequestD {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Request: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, pwszauthority: ::windows_sys::core::PCWSTR, pdwrequestid: *mut u32, pdwdisposition: *mut u32, pwszattributes: ::windows_sys::core::PCWSTR, pctbrequest: *const CERTTRANSBLOB, pctbcertchain: *mut CERTTRANSBLOB, pctbencodedcert: *mut CERTTRANSBLOB, pctbdispositionmessage: *mut CERTTRANSBLOB) -> ::windows_sys::core::HRESULT,
+    pub GetCACert: unsafe extern "system" fn(this: *mut *mut Self, fchain: u32, pwszauthority: ::windows_sys::core::PCWSTR, pctbout: *mut CERTTRANSBLOB) -> ::windows_sys::core::HRESULT,
+    pub Ping: unsafe extern "system" fn(this: *mut *mut Self, pwszauthority: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ICertRequestD2 {
+    pub base__: ICertRequestD,
+    pub Request2: unsafe extern "system" fn(this: *mut *mut Self, pwszauthority: ::windows_sys::core::PCWSTR, dwflags: u32, pwszserialnumber: ::windows_sys::core::PCWSTR, pdwrequestid: *mut u32, pdwdisposition: *mut u32, pwszattributes: ::windows_sys::core::PCWSTR, pctbrequest: *const CERTTRANSBLOB, pctbfullresponse: *mut CERTTRANSBLOB, pctbencodedcert: *mut CERTTRANSBLOB, pctbdispositionmessage: *mut CERTTRANSBLOB) -> ::windows_sys::core::HRESULT,
+    pub GetCAProperty: unsafe extern "system" fn(this: *mut *mut Self, pwszauthority: ::windows_sys::core::PCWSTR, propid: i32, propindex: i32, proptype: i32, pctbpropertyvalue: *mut CERTTRANSBLOB) -> ::windows_sys::core::HRESULT,
+    pub GetCAPropertyInfo: unsafe extern "system" fn(this: *mut *mut Self, pwszauthority: ::windows_sys::core::PCWSTR, pcproperty: *mut i32, pctbpropinfo: *mut CERTTRANSBLOB) -> ::windows_sys::core::HRESULT,
+    pub Ping2: unsafe extern "system" fn(this: *mut *mut Self, pwszauthority: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ICertServerExit {
+    pub base__: super::super::super::System::Com::IDispatch,
+    pub SetContext: unsafe extern "system" fn(this: *mut *mut Self, context: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetRequestProperty: unsafe extern "system" fn(this: *mut *mut Self, strpropertyname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, propertytype: i32, pvarpropertyvalue: *mut super::super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetRequestProperty: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetRequestAttribute: unsafe extern "system" fn(this: *mut *mut Self, strattributename: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, pstrattributevalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetRequestAttribute: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetCertificateProperty: unsafe extern "system" fn(this: *mut *mut Self, strpropertyname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, propertytype: i32, pvarpropertyvalue: *mut super::super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetCertificateProperty: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetCertificateExtension: unsafe extern "system" fn(this: *mut *mut Self, strextensionname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, r#type: i32, pvarvalue: *mut super::super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetCertificateExtension: usize,
+    pub GetCertificateExtensionFlags: unsafe extern "system" fn(this: *mut *mut Self, pextflags: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub EnumerateExtensionsSetup: unsafe extern "system" fn(this: *mut *mut Self, flags: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub EnumerateExtensions: unsafe extern "system" fn(this: *mut *mut Self, pstrextensionname: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    EnumerateExtensions: usize,
+    pub EnumerateExtensionsClose: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub EnumerateAttributesSetup: unsafe extern "system" fn(this: *mut *mut Self, flags: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub EnumerateAttributes: unsafe extern "system" fn(this: *mut *mut Self, pstrattributename: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    EnumerateAttributes: usize,
+    pub EnumerateAttributesClose: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ICertServerPolicy {
+    pub base__: super::super::super::System::Com::IDispatch,
+    pub SetContext: unsafe extern "system" fn(this: *mut *mut Self, context: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetRequestProperty: unsafe extern "system" fn(this: *mut *mut Self, strpropertyname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, propertytype: i32, pvarpropertyvalue: *mut super::super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetRequestProperty: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetRequestAttribute: unsafe extern "system" fn(this: *mut *mut Self, strattributename: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, pstrattributevalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetRequestAttribute: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetCertificateProperty: unsafe extern "system" fn(this: *mut *mut Self, strpropertyname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, propertytype: CERT_PROPERTY_TYPE, pvarpropertyvalue: *mut super::super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetCertificateProperty: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetCertificateProperty: unsafe extern "system" fn(this: *mut *mut Self, strpropertyname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, propertytype: i32, pvarpropertyvalue: *const super::super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetCertificateProperty: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetCertificateExtension: unsafe extern "system" fn(this: *mut *mut Self, strextensionname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, r#type: CERT_PROPERTY_TYPE, pvarvalue: *mut super::super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetCertificateExtension: usize,
+    pub GetCertificateExtensionFlags: unsafe extern "system" fn(this: *mut *mut Self, pextflags: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetCertificateExtension: unsafe extern "system" fn(this: *mut *mut Self, strextensionname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, r#type: i32, extflags: i32, pvarvalue: *const super::super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetCertificateExtension: usize,
+    pub EnumerateExtensionsSetup: unsafe extern "system" fn(this: *mut *mut Self, flags: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub EnumerateExtensions: unsafe extern "system" fn(this: *mut *mut Self, pstrextensionname: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    EnumerateExtensions: usize,
+    pub EnumerateExtensionsClose: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub EnumerateAttributesSetup: unsafe extern "system" fn(this: *mut *mut Self, flags: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub EnumerateAttributes: unsafe extern "system" fn(this: *mut *mut Self, pstrattributename: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    EnumerateAttributes: usize,
+    pub EnumerateAttributesClose: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ICertView {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OpenConnection: unsafe extern "system" fn(this: *mut *mut Self, strconfig: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OpenConnection: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub EnumCertViewColumn: unsafe extern "system" fn(this: *mut *mut Self, fresultcolumn: CVRC_COLUMN, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    EnumCertViewColumn: usize,
+    pub GetColumnCount: unsafe extern "system" fn(this: *mut *mut Self, fresultcolumn: CVRC_COLUMN, pccolumn: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetColumnIndex: unsafe extern "system" fn(this: *mut *mut Self, fresultcolumn: CVRC_COLUMN, strcolumnname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, pcolumnindex: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetColumnIndex: usize,
+    pub SetResultColumnCount: unsafe extern "system" fn(this: *mut *mut Self, cresultcolumn: i32) -> ::windows_sys::core::HRESULT,
+    pub SetResultColumn: unsafe extern "system" fn(this: *mut *mut Self, columnindex: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetRestriction: unsafe extern "system" fn(this: *mut *mut Self, columnindex: CERT_VIEW_COLUMN_INDEX, seekoperator: CERT_VIEW_SEEK_OPERATOR_FLAGS, sortorder: i32, pvarvalue: *const super::super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetRestriction: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub OpenView: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    OpenView: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ICertView2 {
+    pub base__: ICertView,
+    pub SetTable: unsafe extern "system" fn(this: *mut *mut Self, table: CVRC_TABLE) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ICertificateAttestationChallenge {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, strpendingfullcmcresponsewithchallenge: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Initialize: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DecryptChallenge: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, pstrenvelopedpkcs7reencryptedtoca: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DecryptChallenge: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RequestID: unsafe extern "system" fn(this: *mut *mut Self, pstrrequestid: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RequestID: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ICertificateAttestationChallenge2 {
+    pub base__: ICertificateAttestationChallenge,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetKeyContainerName: unsafe extern "system" fn(this: *mut *mut Self, value: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetKeyContainerName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub put_KeyBlob: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, value: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    put_KeyBlob: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ICertificatePolicies {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub get_ItemByIndex: unsafe extern "system" fn(this: *mut *mut Self, index: i32, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    get_ItemByIndex: usize,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Add: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Add: usize,
+    pub Remove: unsafe extern "system" fn(this: *mut *mut Self, index: i32) -> ::windows_sys::core::HRESULT,
+    pub Clear: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ICertificatePolicy {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Initialize: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub ObjectId: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    ObjectId: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub PolicyQualifiers: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    PolicyQualifiers: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ICertificationAuthorities {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub get_ItemByIndex: unsafe extern "system" fn(this: *mut *mut Self, index: i32, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    get_ItemByIndex: usize,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Add: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Add: usize,
+    pub Remove: unsafe extern "system" fn(this: *mut *mut Self, index: i32) -> ::windows_sys::core::HRESULT,
+    pub Clear: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub ComputeSiteCosts: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub get_ItemByName: unsafe extern "system" fn(this: *mut *mut Self, strname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    get_ItemByName: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ICertificationAuthority {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub get_Property: unsafe extern "system" fn(this: *mut *mut Self, property: EnrollmentCAProperty, pvalue: *mut super::super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    get_Property: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ICryptAttribute {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub InitializeFromObjectId: unsafe extern "system" fn(this: *mut *mut Self, pobjectid: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    InitializeFromObjectId: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub InitializeFromValues: unsafe extern "system" fn(this: *mut *mut Self, pattributes: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    InitializeFromValues: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub ObjectId: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    ObjectId: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Values: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Values: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ICryptAttributes {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub get_ItemByIndex: unsafe extern "system" fn(this: *mut *mut Self, index: i32, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    get_ItemByIndex: usize,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Add: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Add: usize,
+    pub Remove: unsafe extern "system" fn(this: *mut *mut Self, index: i32) -> ::windows_sys::core::HRESULT,
+    pub Clear: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub get_IndexByObjectId: unsafe extern "system" fn(this: *mut *mut Self, pobjectid: *mut ::core::ffi::c_void, pindex: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    get_IndexByObjectId: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub AddRange: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    AddRange: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ICspAlgorithm {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetAlgorithmOid: unsafe extern "system" fn(this: *mut *mut Self, length: i32, algflags: AlgorithmFlags, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetAlgorithmOid: usize,
+    pub DefaultLength: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub IncrementLength: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub LongName: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    LongName: usize,
+    pub Valid: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub MaxLength: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub MinLength: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Name: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Name: usize,
+    pub Type: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut AlgorithmType) -> ::windows_sys::core::HRESULT,
+    pub Operations: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut AlgorithmOperationFlags) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ICspAlgorithms {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub get_ItemByIndex: unsafe extern "system" fn(this: *mut *mut Self, index: i32, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    get_ItemByIndex: usize,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Add: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Add: usize,
+    pub Remove: unsafe extern "system" fn(this: *mut *mut Self, index: i32) -> ::windows_sys::core::HRESULT,
+    pub Clear: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub get_ItemByName: unsafe extern "system" fn(this: *mut *mut Self, strname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    get_ItemByName: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub get_IndexByObjectId: unsafe extern "system" fn(this: *mut *mut Self, pobjectid: *mut ::core::ffi::c_void, pindex: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    get_IndexByObjectId: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ICspInformation {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InitializeFromName: unsafe extern "system" fn(this: *mut *mut Self, strname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InitializeFromName: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub InitializeFromType: unsafe extern "system" fn(this: *mut *mut Self, r#type: X509ProviderType, palgorithm: *mut ::core::ffi::c_void, machinecontext: i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    InitializeFromType: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CspAlgorithms: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CspAlgorithms: usize,
+    pub HasHardwareRandomNumberGenerator: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub IsHardwareDevice: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub IsRemovable: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub IsSoftwareDevice: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub Valid: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub MaxKeyContainerNameLength: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Name: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Name: usize,
+    pub Type: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut X509ProviderType) -> ::windows_sys::core::HRESULT,
+    pub Version: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub KeySpec: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut X509KeySpec) -> ::windows_sys::core::HRESULT,
+    pub IsSmartCard: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetDefaultSecurityDescriptor: unsafe extern "system" fn(this: *mut *mut Self, machinecontext: i16, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetDefaultSecurityDescriptor: usize,
+    pub LegacyCsp: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetCspStatusFromOperations: unsafe extern "system" fn(this: *mut *mut Self, palgorithm: *mut ::core::ffi::c_void, operations: AlgorithmOperationFlags, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetCspStatusFromOperations: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ICspInformations {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub get_ItemByIndex: unsafe extern "system" fn(this: *mut *mut Self, index: i32, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    get_ItemByIndex: usize,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Add: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Add: usize,
+    pub Remove: unsafe extern "system" fn(this: *mut *mut Self, index: i32) -> ::windows_sys::core::HRESULT,
+    pub Clear: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub AddAvailableCsps: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub get_ItemByName: unsafe extern "system" fn(this: *mut *mut Self, strname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, ppcspinformation: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    get_ItemByName: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub GetCspStatusFromProviderName: unsafe extern "system" fn(this: *mut *mut Self, strprovidername: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, legacykeyspec: X509KeySpec, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    GetCspStatusFromProviderName: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetCspStatusesFromOperations: unsafe extern "system" fn(this: *mut *mut Self, operations: AlgorithmOperationFlags, pcspinformation: *mut ::core::ffi::c_void, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetCspStatusesFromOperations: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetEncryptionCspAlgorithms: unsafe extern "system" fn(this: *mut *mut Self, pcspinformation: *mut ::core::ffi::c_void, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetEncryptionCspAlgorithms: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetHashAlgorithms: unsafe extern "system" fn(this: *mut *mut Self, pcspinformation: *mut ::core::ffi::c_void, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetHashAlgorithms: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ICspStatus {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, pcsp: *mut ::core::ffi::c_void, palgorithm: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Initialize: usize,
+    pub Ordinal: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetOrdinal: unsafe extern "system" fn(this: *mut *mut Self, value: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CspAlgorithm: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CspAlgorithm: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CspInformation: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CspInformation: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub EnrollmentStatus: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    EnrollmentStatus: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DisplayName: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DisplayName: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ICspStatuses {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub get_ItemByIndex: unsafe extern "system" fn(this: *mut *mut Self, index: i32, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    get_ItemByIndex: usize,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Add: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Add: usize,
+    pub Remove: unsafe extern "system" fn(this: *mut *mut Self, index: i32) -> ::windows_sys::core::HRESULT,
+    pub Clear: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub get_ItemByName: unsafe extern "system" fn(this: *mut *mut Self, strcspname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, stralgorithmname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    get_ItemByName: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub get_ItemByOrdinal: unsafe extern "system" fn(this: *mut *mut Self, ordinal: i32, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    get_ItemByOrdinal: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub get_ItemByOperations: unsafe extern "system" fn(this: *mut *mut Self, strcspname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, stralgorithmname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, operations: AlgorithmOperationFlags, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    get_ItemByOperations: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub get_ItemByProvider: unsafe extern "system" fn(this: *mut *mut Self, pcspstatus: *mut ::core::ffi::c_void, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    get_ItemByProvider: usize,
+}
+#[repr(C)]
+pub struct IEnroll {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub createFilePKCS10WStr: unsafe extern "system" fn(this: *mut *mut Self, dnname: ::windows_sys::core::PCWSTR, usage: ::windows_sys::core::PCWSTR, wszpkcs10filename: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub acceptFilePKCS7WStr: unsafe extern "system" fn(this: *mut *mut Self, wszpkcs7filename: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub createPKCS10WStr: unsafe extern "system" fn(this: *mut *mut Self, dnname: ::windows_sys::core::PCWSTR, usage: ::windows_sys::core::PCWSTR, ppkcs10blob: *mut super::CRYPTOAPI_BLOB) -> ::windows_sys::core::HRESULT,
+    pub acceptPKCS7Blob: unsafe extern "system" fn(this: *mut *mut Self, pblobpkcs7: *mut super::CRYPTOAPI_BLOB) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub getCertContextFromPKCS7: unsafe extern "system" fn(this: *mut *mut Self, pblobpkcs7: *mut super::CRYPTOAPI_BLOB) -> *mut super::CERT_CONTEXT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    getCertContextFromPKCS7: usize,
+    pub getMyStore: unsafe extern "system" fn(this: *mut *mut Self) -> super::HCERTSTORE,
+    pub getCAStore: unsafe extern "system" fn(this: *mut *mut Self) -> super::HCERTSTORE,
+    pub getROOTHStore: unsafe extern "system" fn(this: *mut *mut Self) -> super::HCERTSTORE,
+    pub enumProvidersWStr: unsafe extern "system" fn(this: *mut *mut Self, dwindex: i32, dwflags: i32, pbstrprovname: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub enumContainersWStr: unsafe extern "system" fn(this: *mut *mut Self, dwindex: i32, pbstr: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub freeRequestInfoBlob: unsafe extern "system" fn(this: *mut *mut Self, pkcs7orpkcs10: super::CRYPTOAPI_BLOB) -> ::windows_sys::core::HRESULT,
+    pub MyStoreNameWStr: unsafe extern "system" fn(this: *mut *mut Self, szwname: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetMyStoreNameWStr: unsafe extern "system" fn(this: *mut *mut Self, szwname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub MyStoreTypeWStr: unsafe extern "system" fn(this: *mut *mut Self, szwtype: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetMyStoreTypeWStr: unsafe extern "system" fn(this: *mut *mut Self, szwtype: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub MyStoreFlags: unsafe extern "system" fn(this: *mut *mut Self, pdwflags: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetMyStoreFlags: unsafe extern "system" fn(this: *mut *mut Self, dwflags: i32) -> ::windows_sys::core::HRESULT,
+    pub CAStoreNameWStr: unsafe extern "system" fn(this: *mut *mut Self, szwname: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetCAStoreNameWStr: unsafe extern "system" fn(this: *mut *mut Self, szwname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub CAStoreTypeWStr: unsafe extern "system" fn(this: *mut *mut Self, szwtype: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetCAStoreTypeWStr: unsafe extern "system" fn(this: *mut *mut Self, szwtype: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub CAStoreFlags: unsafe extern "system" fn(this: *mut *mut Self, pdwflags: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetCAStoreFlags: unsafe extern "system" fn(this: *mut *mut Self, dwflags: i32) -> ::windows_sys::core::HRESULT,
+    pub RootStoreNameWStr: unsafe extern "system" fn(this: *mut *mut Self, szwname: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetRootStoreNameWStr: unsafe extern "system" fn(this: *mut *mut Self, szwname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub RootStoreTypeWStr: unsafe extern "system" fn(this: *mut *mut Self, szwtype: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetRootStoreTypeWStr: unsafe extern "system" fn(this: *mut *mut Self, szwtype: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub RootStoreFlags: unsafe extern "system" fn(this: *mut *mut Self, pdwflags: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetRootStoreFlags: unsafe extern "system" fn(this: *mut *mut Self, dwflags: i32) -> ::windows_sys::core::HRESULT,
+    pub RequestStoreNameWStr: unsafe extern "system" fn(this: *mut *mut Self, szwname: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetRequestStoreNameWStr: unsafe extern "system" fn(this: *mut *mut Self, szwname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub RequestStoreTypeWStr: unsafe extern "system" fn(this: *mut *mut Self, szwtype: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetRequestStoreTypeWStr: unsafe extern "system" fn(this: *mut *mut Self, szwtype: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub RequestStoreFlags: unsafe extern "system" fn(this: *mut *mut Self, pdwflags: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetRequestStoreFlags: unsafe extern "system" fn(this: *mut *mut Self, dwflags: i32) -> ::windows_sys::core::HRESULT,
+    pub ContainerNameWStr: unsafe extern "system" fn(this: *mut *mut Self, szwcontainer: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetContainerNameWStr: unsafe extern "system" fn(this: *mut *mut Self, szwcontainer: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub ProviderNameWStr: unsafe extern "system" fn(this: *mut *mut Self, szwprovider: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetProviderNameWStr: unsafe extern "system" fn(this: *mut *mut Self, szwprovider: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub ProviderType: unsafe extern "system" fn(this: *mut *mut Self, pdwtype: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetProviderType: unsafe extern "system" fn(this: *mut *mut Self, dwtype: i32) -> ::windows_sys::core::HRESULT,
+    pub KeySpec: unsafe extern "system" fn(this: *mut *mut Self, pdw: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetKeySpec: unsafe extern "system" fn(this: *mut *mut Self, dw: i32) -> ::windows_sys::core::HRESULT,
+    pub ProviderFlags: unsafe extern "system" fn(this: *mut *mut Self, pdwflags: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetProviderFlags: unsafe extern "system" fn(this: *mut *mut Self, dwflags: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub UseExistingKeySet: unsafe extern "system" fn(this: *mut *mut Self, fuseexistingkeys: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    UseExistingKeySet: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetUseExistingKeySet: unsafe extern "system" fn(this: *mut *mut Self, fuseexistingkeys: super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetUseExistingKeySet: usize,
+    pub GenKeyFlags: unsafe extern "system" fn(this: *mut *mut Self, pdwflags: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetGenKeyFlags: unsafe extern "system" fn(this: *mut *mut Self, dwflags: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DeleteRequestCert: unsafe extern "system" fn(this: *mut *mut Self, fdelete: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DeleteRequestCert: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetDeleteRequestCert: unsafe extern "system" fn(this: *mut *mut Self, fdelete: super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetDeleteRequestCert: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub WriteCertToUserDS: unsafe extern "system" fn(this: *mut *mut Self, fbool: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    WriteCertToUserDS: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetWriteCertToUserDS: unsafe extern "system" fn(this: *mut *mut Self, fbool: super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetWriteCertToUserDS: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub EnableT61DNEncoding: unsafe extern "system" fn(this: *mut *mut Self, fbool: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    EnableT61DNEncoding: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetEnableT61DNEncoding: unsafe extern "system" fn(this: *mut *mut Self, fbool: super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetEnableT61DNEncoding: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub WriteCertToCSP: unsafe extern "system" fn(this: *mut *mut Self, fbool: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    WriteCertToCSP: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetWriteCertToCSP: unsafe extern "system" fn(this: *mut *mut Self, fbool: super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetWriteCertToCSP: usize,
+    pub SPCFileNameWStr: unsafe extern "system" fn(this: *mut *mut Self, szw: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetSPCFileNameWStr: unsafe extern "system" fn(this: *mut *mut Self, szw: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub PVKFileNameWStr: unsafe extern "system" fn(this: *mut *mut Self, szw: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetPVKFileNameWStr: unsafe extern "system" fn(this: *mut *mut Self, szw: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub HashAlgorithmWStr: unsafe extern "system" fn(this: *mut *mut Self, szw: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetHashAlgorithmWStr: unsafe extern "system" fn(this: *mut *mut Self, szw: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RenewalCertificate: unsafe extern "system" fn(this: *mut *mut Self, ppcertcontext: *mut *mut super::CERT_CONTEXT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RenewalCertificate: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetRenewalCertificate: unsafe extern "system" fn(this: *mut *mut Self, pcertcontext: *const super::CERT_CONTEXT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetRenewalCertificate: usize,
+    pub AddCertTypeToRequestWStr: unsafe extern "system" fn(this: *mut *mut Self, szw: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub AddNameValuePairToSignatureWStr: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::PCWSTR, value: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AddExtensionsToRequest: unsafe extern "system" fn(this: *mut *mut Self, pcertextensions: *mut super::CERT_EXTENSIONS) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AddExtensionsToRequest: usize,
+    pub AddAuthenticatedAttributesToPKCS7Request: unsafe extern "system" fn(this: *mut *mut Self, pattributes: *mut super::CRYPT_ATTRIBUTES) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CreatePKCS7RequestFromRequest: unsafe extern "system" fn(this: *mut *mut Self, prequest: *mut super::CRYPTOAPI_BLOB, psigningcertcontext: *const super::CERT_CONTEXT, ppkcs7blob: *mut super::CRYPTOAPI_BLOB) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CreatePKCS7RequestFromRequest: usize,
+}
+#[repr(C)]
+pub struct IEnroll2 {
+    pub base__: IEnroll,
+    pub InstallPKCS7Blob: unsafe extern "system" fn(this: *mut *mut Self, pblobpkcs7: *mut super::CRYPTOAPI_BLOB) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetSupportedKeySpec: unsafe extern "system" fn(this: *mut *mut Self, pdwkeyspec: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetKeyLen: unsafe extern "system" fn(this: *mut *mut Self, fmin: super::super::super::Foundation::BOOL, fexchange: super::super::super::Foundation::BOOL, pdwkeysize: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetKeyLen: usize,
+    pub EnumAlgs: unsafe extern "system" fn(this: *mut *mut Self, dwindex: i32, algclass: i32, pdwalgid: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub GetAlgNameWStr: unsafe extern "system" fn(this: *mut *mut Self, algid: i32, ppwsz: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetReuseHardwareKeyIfUnableToGenNew: unsafe extern "system" fn(this: *mut *mut Self, freusehardwarekeyifunabletogennew: super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetReuseHardwareKeyIfUnableToGenNew: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ReuseHardwareKeyIfUnableToGenNew: unsafe extern "system" fn(this: *mut *mut Self, freusehardwarekeyifunabletogennew: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ReuseHardwareKeyIfUnableToGenNew: usize,
+    pub SetHashAlgID: unsafe extern "system" fn(this: *mut *mut Self, hashalgid: i32) -> ::windows_sys::core::HRESULT,
+    pub HashAlgID: unsafe extern "system" fn(this: *mut *mut Self, hashalgid: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetHStoreMy: unsafe extern "system" fn(this: *mut *mut Self, hstore: super::HCERTSTORE) -> ::windows_sys::core::HRESULT,
+    pub SetHStoreCA: unsafe extern "system" fn(this: *mut *mut Self, hstore: super::HCERTSTORE) -> ::windows_sys::core::HRESULT,
+    pub SetHStoreROOT: unsafe extern "system" fn(this: *mut *mut Self, hstore: super::HCERTSTORE) -> ::windows_sys::core::HRESULT,
+    pub SetHStoreRequest: unsafe extern "system" fn(this: *mut *mut Self, hstore: super::HCERTSTORE) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetLimitExchangeKeyToEncipherment: unsafe extern "system" fn(this: *mut *mut Self, flimitexchangekeytoencipherment: super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetLimitExchangeKeyToEncipherment: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub LimitExchangeKeyToEncipherment: unsafe extern "system" fn(this: *mut *mut Self, flimitexchangekeytoencipherment: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    LimitExchangeKeyToEncipherment: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetEnableSMIMECapabilities: unsafe extern "system" fn(this: *mut *mut Self, fenablesmimecapabilities: super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetEnableSMIMECapabilities: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub EnableSMIMECapabilities: unsafe extern "system" fn(this: *mut *mut Self, fenablesmimecapabilities: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    EnableSMIMECapabilities: usize,
+}
+#[repr(C)]
+pub struct IEnroll4 {
+    pub base__: IEnroll2,
+    pub SetThumbPrintWStr: unsafe extern "system" fn(this: *mut *mut Self, thumbprintblob: super::CRYPTOAPI_BLOB) -> ::windows_sys::core::HRESULT,
+    pub ThumbPrintWStr: unsafe extern "system" fn(this: *mut *mut Self, thumbprintblob: *mut super::CRYPTOAPI_BLOB) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetPrivateKeyArchiveCertificate: unsafe extern "system" fn(this: *mut *mut Self, pprivatekeyarchivecert: *const super::CERT_CONTEXT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetPrivateKeyArchiveCertificate: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetPrivateKeyArchiveCertificate: unsafe extern "system" fn(this: *mut *mut Self) -> *mut super::CERT_CONTEXT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetPrivateKeyArchiveCertificate: usize,
+    pub binaryBlobToString: unsafe extern "system" fn(this: *mut *mut Self, flags: i32, pblobbinary: *mut super::CRYPTOAPI_BLOB, ppwszstring: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub stringToBinaryBlob: unsafe extern "system" fn(this: *mut *mut Self, flags: i32, pwszstring: ::windows_sys::core::PCWSTR, pblobbinary: *mut super::CRYPTOAPI_BLOB, pdwskip: *mut i32, pdwflags: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub addExtensionToRequestWStr: unsafe extern "system" fn(this: *mut *mut Self, flags: i32, pwszname: ::windows_sys::core::PCWSTR, pblobvalue: *mut super::CRYPTOAPI_BLOB) -> ::windows_sys::core::HRESULT,
+    pub addAttributeToRequestWStr: unsafe extern "system" fn(this: *mut *mut Self, flags: i32, pwszname: ::windows_sys::core::PCWSTR, pblobvalue: *mut super::CRYPTOAPI_BLOB) -> ::windows_sys::core::HRESULT,
+    pub addNameValuePairToRequestWStr: unsafe extern "system" fn(this: *mut *mut Self, flags: i32, pwszname: ::windows_sys::core::PCWSTR, pwszvalue: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub resetExtensions: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub resetAttributes: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub createRequestWStr: unsafe extern "system" fn(this: *mut *mut Self, flags: CERT_CREATE_REQUEST_FLAGS, pwszdnname: ::windows_sys::core::PCWSTR, pwszusage: ::windows_sys::core::PCWSTR, pblobrequest: *mut super::CRYPTOAPI_BLOB) -> ::windows_sys::core::HRESULT,
+    pub createFileRequestWStr: unsafe extern "system" fn(this: *mut *mut Self, flags: CERT_CREATE_REQUEST_FLAGS, pwszdnname: ::windows_sys::core::PCWSTR, pwszusage: ::windows_sys::core::PCWSTR, pwszrequestfilename: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub acceptResponseBlob: unsafe extern "system" fn(this: *mut *mut Self, pblobresponse: *mut super::CRYPTOAPI_BLOB) -> ::windows_sys::core::HRESULT,
+    pub acceptFileResponseWStr: unsafe extern "system" fn(this: *mut *mut Self, pwszresponsefilename: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub getCertContextFromResponseBlob: unsafe extern "system" fn(this: *mut *mut Self, pblobresponse: *mut super::CRYPTOAPI_BLOB, ppcertcontext: *mut *mut super::CERT_CONTEXT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    getCertContextFromResponseBlob: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub getCertContextFromFileResponseWStr: unsafe extern "system" fn(this: *mut *mut Self, pwszresponsefilename: ::windows_sys::core::PCWSTR, ppcertcontext: *mut *mut super::CERT_CONTEXT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    getCertContextFromFileResponseWStr: usize,
+    pub createPFXWStr: unsafe extern "system" fn(this: *mut *mut Self, pwszpassword: ::windows_sys::core::PCWSTR, pblobpfx: *mut super::CRYPTOAPI_BLOB) -> ::windows_sys::core::HRESULT,
+    pub createFilePFXWStr: unsafe extern "system" fn(this: *mut *mut Self, pwszpassword: ::windows_sys::core::PCWSTR, pwszpfxfilename: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub setPendingRequestInfoWStr: unsafe extern "system" fn(this: *mut *mut Self, lrequestid: i32, pwszcadns: ::windows_sys::core::PCWSTR, pwszcaname: ::windows_sys::core::PCWSTR, pwszfriendlyname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub enumPendingRequestWStr: unsafe extern "system" fn(this: *mut *mut Self, lindex: i32, ldesiredproperty: PENDING_REQUEST_DESIRED_PROPERTY, ppproperty: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub removePendingRequestWStr: unsafe extern "system" fn(this: *mut *mut Self, thumbprintblob: super::CRYPTOAPI_BLOB) -> ::windows_sys::core::HRESULT,
+    pub GetKeyLenEx: unsafe extern "system" fn(this: *mut *mut Self, lsizespec: XEKL_KEYSIZE, lkeyspec: XEKL_KEYSPEC, pdwkeysize: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub InstallPKCS7BlobEx: unsafe extern "system" fn(this: *mut *mut Self, pblobpkcs7: *mut super::CRYPTOAPI_BLOB, plcertinstalled: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AddCertTypeToRequestWStrEx: unsafe extern "system" fn(this: *mut *mut Self, ltype: ADDED_CERT_TYPE, pwszoidorname: ::windows_sys::core::PCWSTR, lmajorversion: i32, fminorversion: super::super::super::Foundation::BOOL, lminorversion: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AddCertTypeToRequestWStrEx: usize,
+    pub getProviderTypeWStr: unsafe extern "system" fn(this: *mut *mut Self, pwszprovname: ::windows_sys::core::PCWSTR, plprovtype: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub addBlobPropertyToCertificateWStr: unsafe extern "system" fn(this: *mut *mut Self, lpropertyid: i32, lreserved: i32, pblobproperty: *mut super::CRYPTOAPI_BLOB) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetSignerCertificate: unsafe extern "system" fn(this: *mut *mut Self, psignercert: *const super::CERT_CONTEXT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetSignerCertificate: usize,
+    pub SetClientId: unsafe extern "system" fn(this: *mut *mut Self, lclientid: i32) -> ::windows_sys::core::HRESULT,
+    pub ClientId: unsafe extern "system" fn(this: *mut *mut Self, plclientid: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetIncludeSubjectKeyID: unsafe extern "system" fn(this: *mut *mut Self, finclude: super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetIncludeSubjectKeyID: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IncludeSubjectKeyID: unsafe extern "system" fn(this: *mut *mut Self, pfinclude: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IncludeSubjectKeyID: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IEnumCERTVIEWATTRIBUTE {
+    pub base__: super::super::super::System::Com::IDispatch,
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, pindex: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetName: unsafe extern "system" fn(this: *mut *mut Self, pstrout: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetValue: unsafe extern "system" fn(this: *mut *mut Self, pstrout: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetValue: usize,
+    pub Skip: unsafe extern "system" fn(this: *mut *mut Self, celt: i32) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Clone: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IEnumCERTVIEWCOLUMN {
+    pub base__: super::super::super::System::Com::IDispatch,
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, pindex: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetName: unsafe extern "system" fn(this: *mut *mut Self, pstrout: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetDisplayName: unsafe extern "system" fn(this: *mut *mut Self, pstrout: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetDisplayName: usize,
+    pub GetType: unsafe extern "system" fn(this: *mut *mut Self, ptype: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub IsIndexed: unsafe extern "system" fn(this: *mut *mut Self, pindexed: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub GetMaxLength: unsafe extern "system" fn(this: *mut *mut Self, pmaxlength: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetValue: unsafe extern "system" fn(this: *mut *mut Self, flags: ENUM_CERT_COLUMN_VALUE_FLAGS, pvarvalue: *mut super::super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetValue: usize,
+    pub Skip: unsafe extern "system" fn(this: *mut *mut Self, celt: i32) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Clone: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IEnumCERTVIEWEXTENSION {
+    pub base__: super::super::super::System::Com::IDispatch,
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, pindex: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetName: unsafe extern "system" fn(this: *mut *mut Self, pstrout: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetName: usize,
+    pub GetFlags: unsafe extern "system" fn(this: *mut *mut Self, pflags: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetValue: unsafe extern "system" fn(this: *mut *mut Self, r#type: CERT_PROPERTY_TYPE, flags: ENUM_CERT_COLUMN_VALUE_FLAGS, pvarvalue: *mut super::super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetValue: usize,
+    pub Skip: unsafe extern "system" fn(this: *mut *mut Self, celt: i32) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Clone: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IEnumCERTVIEWROW {
+    pub base__: super::super::super::System::Com::IDispatch,
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, pindex: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub EnumCertViewColumn: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    EnumCertViewColumn: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub EnumCertViewAttribute: unsafe extern "system" fn(this: *mut *mut Self, flags: i32, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    EnumCertViewAttribute: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub EnumCertViewExtension: unsafe extern "system" fn(this: *mut *mut Self, flags: i32, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    EnumCertViewExtension: usize,
+    pub Skip: unsafe extern "system" fn(this: *mut *mut Self, celt: i32) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Clone: usize,
+    pub GetMaxIndex: unsafe extern "system" fn(this: *mut *mut Self, pindex: *mut i32) -> ::windows_sys::core::HRESULT,
+}
 #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
 pub const IF_ENABLEADMINASAUDITOR: u32 = 4096u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
@@ -2580,16 +4433,306 @@ pub const IF_NORPCICERTREQUEST: u32 = 8u32;
 pub const IF_NOSNAPSHOTBACKUP: u32 = 256u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
 pub const IKF_OVERWRITE: u32 = 65536u32;
-pub type INDESPolicy = *mut ::core::ffi::c_void;
-pub type IOCSPAdmin = *mut ::core::ffi::c_void;
-pub type IOCSPCAConfiguration = *mut ::core::ffi::c_void;
-pub type IOCSPCAConfigurationCollection = *mut ::core::ffi::c_void;
-pub type IOCSPProperty = *mut ::core::ffi::c_void;
-pub type IOCSPPropertyCollection = *mut ::core::ffi::c_void;
-pub type IObjectId = *mut ::core::ffi::c_void;
-pub type IObjectIds = *mut ::core::ffi::c_void;
-pub type IPolicyQualifier = *mut ::core::ffi::c_void;
-pub type IPolicyQualifiers = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct INDESPolicy {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Uninitialize: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GenerateChallenge: unsafe extern "system" fn(this: *mut *mut Self, pwsztemplate: ::windows_sys::core::PCWSTR, pwszparams: ::windows_sys::core::PCWSTR, ppwszresponse: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub VerifyRequest: unsafe extern "system" fn(this: *mut *mut Self, pctbrequest: *mut CERTTRANSBLOB, pctbsigningcertencoded: *mut CERTTRANSBLOB, pwsztemplate: ::windows_sys::core::PCWSTR, pwsztransactionid: ::windows_sys::core::PCWSTR, pfverified: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    VerifyRequest: usize,
+    pub Notify: unsafe extern "system" fn(this: *mut *mut Self, pwszchallenge: ::windows_sys::core::PCWSTR, pwsztransactionid: ::windows_sys::core::PCWSTR, disposition: X509SCEPDisposition, lasthresult: i32, pctbissuedcertencoded: *mut CERTTRANSBLOB) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IOCSPAdmin {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub OCSPServiceProperties: unsafe extern "system" fn(this: *mut *mut Self, ppval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    OCSPServiceProperties: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub OCSPCAConfigurationCollection: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    OCSPCAConfigurationCollection: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetConfiguration: unsafe extern "system" fn(this: *mut *mut Self, bstrservername: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, bforce: i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetConfiguration: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetConfiguration: unsafe extern "system" fn(this: *mut *mut Self, bstrservername: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, bforce: i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetConfiguration: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetMyRoles: unsafe extern "system" fn(this: *mut *mut Self, bstrservername: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, proles: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetMyRoles: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Ping: unsafe extern "system" fn(this: *mut *mut Self, bstrservername: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Ping: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetSecurity: unsafe extern "system" fn(this: *mut *mut Self, bstrservername: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, bstrval: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetSecurity: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetSecurity: unsafe extern "system" fn(this: *mut *mut Self, bstrservername: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, pval: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetSecurity: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetSigningCertificates: unsafe extern "system" fn(this: *mut *mut Self, bstrservername: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, pcacertvar: *const super::super::super::System::Com::VARIANT, pval: *mut super::super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetSigningCertificates: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetHashAlgorithms: unsafe extern "system" fn(this: *mut *mut Self, bstrservername: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, bstrcaid: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, pval: *mut super::super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetHashAlgorithms: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IOCSPCAConfiguration {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Identifier: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Identifier: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub CACertificate: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    CACertificate: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub HashAlgorithm: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    HashAlgorithm: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetHashAlgorithm: unsafe extern "system" fn(this: *mut *mut Self, newval: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetHashAlgorithm: usize,
+    pub SigningFlags: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetSigningFlags: unsafe extern "system" fn(this: *mut *mut Self, newval: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SigningCertificate: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SigningCertificate: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetSigningCertificate: unsafe extern "system" fn(this: *mut *mut Self, newval: ::core::mem::ManuallyDrop<super::super::super::System::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetSigningCertificate: usize,
+    pub ReminderDuration: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetReminderDuration: unsafe extern "system" fn(this: *mut *mut Self, newval: u32) -> ::windows_sys::core::HRESULT,
+    pub ErrorCode: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CSPName: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CSPName: usize,
+    pub KeySpec: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ProviderCLSID: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ProviderCLSID: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetProviderCLSID: unsafe extern "system" fn(this: *mut *mut Self, newval: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetProviderCLSID: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub ProviderProperties: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    ProviderProperties: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetProviderProperties: unsafe extern "system" fn(this: *mut *mut Self, newval: ::core::mem::ManuallyDrop<super::super::super::System::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetProviderProperties: usize,
+    pub Modified: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub LocalRevocationInformation: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    LocalRevocationInformation: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetLocalRevocationInformation: unsafe extern "system" fn(this: *mut *mut Self, newval: ::core::mem::ManuallyDrop<super::super::super::System::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetLocalRevocationInformation: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SigningCertificateTemplate: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SigningCertificateTemplate: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetSigningCertificateTemplate: unsafe extern "system" fn(this: *mut *mut Self, newval: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetSigningCertificateTemplate: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CAConfig: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CAConfig: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetCAConfig: unsafe extern "system" fn(this: *mut *mut Self, newval: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetCAConfig: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IOCSPCAConfigurationCollection {
+    pub base__: super::super::super::System::Com::IDispatch,
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub get_Item: unsafe extern "system" fn(this: *mut *mut Self, index: i32, pval: *mut super::super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    get_Item: usize,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub get_ItemByName: unsafe extern "system" fn(this: *mut *mut Self, bstridentifier: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, pval: *mut super::super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    get_ItemByName: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub CreateCAConfiguration: unsafe extern "system" fn(this: *mut *mut Self, bstridentifier: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, varcacert: ::core::mem::ManuallyDrop<super::super::super::System::Com::VARIANT>, ppval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    CreateCAConfiguration: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DeleteCAConfiguration: unsafe extern "system" fn(this: *mut *mut Self, bstridentifier: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DeleteCAConfiguration: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IOCSPProperty {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Name: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Name: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Value: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut super::super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Value: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetValue: unsafe extern "system" fn(this: *mut *mut Self, newval: ::core::mem::ManuallyDrop<super::super::super::System::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetValue: usize,
+    pub Modified: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IOCSPPropertyCollection {
+    pub base__: super::super::super::System::Com::IDispatch,
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, ppval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub get_Item: unsafe extern "system" fn(this: *mut *mut Self, index: i32, pval: *mut super::super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    get_Item: usize,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub get_ItemByName: unsafe extern "system" fn(this: *mut *mut Self, bstrpropname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, pval: *mut super::super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    get_ItemByName: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub CreateProperty: unsafe extern "system" fn(this: *mut *mut Self, bstrpropname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, pvarpropvalue: *const super::super::super::System::Com::VARIANT, ppval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    CreateProperty: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DeleteProperty: unsafe extern "system" fn(this: *mut *mut Self, bstrpropname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DeleteProperty: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub InitializeFromProperties: unsafe extern "system" fn(this: *mut *mut Self, pvarproperties: *const super::super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    InitializeFromProperties: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetAllProperties: unsafe extern "system" fn(this: *mut *mut Self, pvarproperties: *mut super::super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetAllProperties: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IObjectId {
+    pub base__: super::super::super::System::Com::IDispatch,
+    pub InitializeFromName: unsafe extern "system" fn(this: *mut *mut Self, name: CERTENROLL_OBJECTID) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InitializeFromValue: unsafe extern "system" fn(this: *mut *mut Self, strvalue: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InitializeFromValue: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InitializeFromAlgorithmName: unsafe extern "system" fn(this: *mut *mut Self, groupid: ObjectIdGroupId, keyflags: ObjectIdPublicKeyFlags, algflags: AlgorithmFlags, stralgorithmname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InitializeFromAlgorithmName: usize,
+    pub Name: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut CERTENROLL_OBJECTID) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub FriendlyName: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    FriendlyName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetFriendlyName: unsafe extern "system" fn(this: *mut *mut Self, value: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetFriendlyName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Value: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Value: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetAlgorithmName: unsafe extern "system" fn(this: *mut *mut Self, groupid: ObjectIdGroupId, keyflags: ObjectIdPublicKeyFlags, pstralgorithmname: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetAlgorithmName: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IObjectIds {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub get_ItemByIndex: unsafe extern "system" fn(this: *mut *mut Self, index: i32, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    get_ItemByIndex: usize,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Add: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Add: usize,
+    pub Remove: unsafe extern "system" fn(this: *mut *mut Self, index: i32) -> ::windows_sys::core::HRESULT,
+    pub Clear: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub AddRange: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    AddRange: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IPolicyQualifier {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InitializeEncode: unsafe extern "system" fn(this: *mut *mut Self, strqualifier: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, r#type: PolicyQualifierType) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InitializeEncode: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub ObjectId: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    ObjectId: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Qualifier: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Qualifier: usize,
+    pub Type: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut PolicyQualifierType) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub get_RawData: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    get_RawData: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IPolicyQualifiers {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub get_ItemByIndex: unsafe extern "system" fn(this: *mut *mut Self, index: i32, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    get_ItemByIndex: usize,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Add: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Add: usize,
+    pub Remove: unsafe extern "system" fn(this: *mut *mut Self, index: i32) -> ::windows_sys::core::HRESULT,
+    pub Clear: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
 #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
 pub const ISSCERT_DEFAULT_DS: u32 = 256u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
@@ -2606,69 +4749,1883 @@ pub const ISSCERT_HTTPURL_OLD: u32 = 2u32;
 pub const ISSCERT_LDAPURL_OLD: u32 = 1u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
 pub const ISSCERT_URLMASK_OLD: u32 = 255u32;
-pub type ISignerCertificate = *mut ::core::ffi::c_void;
-pub type ISignerCertificates = *mut ::core::ffi::c_void;
-pub type ISmimeCapabilities = *mut ::core::ffi::c_void;
-pub type ISmimeCapability = *mut ::core::ffi::c_void;
-pub type IX500DistinguishedName = *mut ::core::ffi::c_void;
-pub type IX509Attribute = *mut ::core::ffi::c_void;
-pub type IX509AttributeArchiveKey = *mut ::core::ffi::c_void;
-pub type IX509AttributeArchiveKeyHash = *mut ::core::ffi::c_void;
-pub type IX509AttributeClientId = *mut ::core::ffi::c_void;
-pub type IX509AttributeCspProvider = *mut ::core::ffi::c_void;
-pub type IX509AttributeExtensions = *mut ::core::ffi::c_void;
-pub type IX509AttributeOSVersion = *mut ::core::ffi::c_void;
-pub type IX509AttributeRenewalCertificate = *mut ::core::ffi::c_void;
-pub type IX509Attributes = *mut ::core::ffi::c_void;
-pub type IX509CertificateRequest = *mut ::core::ffi::c_void;
-pub type IX509CertificateRequestCertificate = *mut ::core::ffi::c_void;
-pub type IX509CertificateRequestCertificate2 = *mut ::core::ffi::c_void;
-pub type IX509CertificateRequestCmc = *mut ::core::ffi::c_void;
-pub type IX509CertificateRequestCmc2 = *mut ::core::ffi::c_void;
-pub type IX509CertificateRequestPkcs10 = *mut ::core::ffi::c_void;
-pub type IX509CertificateRequestPkcs10V2 = *mut ::core::ffi::c_void;
-pub type IX509CertificateRequestPkcs10V3 = *mut ::core::ffi::c_void;
-pub type IX509CertificateRequestPkcs10V4 = *mut ::core::ffi::c_void;
-pub type IX509CertificateRequestPkcs7 = *mut ::core::ffi::c_void;
-pub type IX509CertificateRequestPkcs7V2 = *mut ::core::ffi::c_void;
-pub type IX509CertificateRevocationList = *mut ::core::ffi::c_void;
-pub type IX509CertificateRevocationListEntries = *mut ::core::ffi::c_void;
-pub type IX509CertificateRevocationListEntry = *mut ::core::ffi::c_void;
-pub type IX509CertificateTemplate = *mut ::core::ffi::c_void;
-pub type IX509CertificateTemplateWritable = *mut ::core::ffi::c_void;
-pub type IX509CertificateTemplates = *mut ::core::ffi::c_void;
-pub type IX509EndorsementKey = *mut ::core::ffi::c_void;
-pub type IX509Enrollment = *mut ::core::ffi::c_void;
-pub type IX509Enrollment2 = *mut ::core::ffi::c_void;
-pub type IX509EnrollmentHelper = *mut ::core::ffi::c_void;
-pub type IX509EnrollmentPolicyServer = *mut ::core::ffi::c_void;
-pub type IX509EnrollmentStatus = *mut ::core::ffi::c_void;
-pub type IX509EnrollmentWebClassFactory = *mut ::core::ffi::c_void;
-pub type IX509Extension = *mut ::core::ffi::c_void;
-pub type IX509ExtensionAlternativeNames = *mut ::core::ffi::c_void;
-pub type IX509ExtensionAuthorityKeyIdentifier = *mut ::core::ffi::c_void;
-pub type IX509ExtensionBasicConstraints = *mut ::core::ffi::c_void;
-pub type IX509ExtensionCertificatePolicies = *mut ::core::ffi::c_void;
-pub type IX509ExtensionEnhancedKeyUsage = *mut ::core::ffi::c_void;
-pub type IX509ExtensionKeyUsage = *mut ::core::ffi::c_void;
-pub type IX509ExtensionMSApplicationPolicies = *mut ::core::ffi::c_void;
-pub type IX509ExtensionSmimeCapabilities = *mut ::core::ffi::c_void;
-pub type IX509ExtensionSubjectKeyIdentifier = *mut ::core::ffi::c_void;
-pub type IX509ExtensionTemplate = *mut ::core::ffi::c_void;
-pub type IX509ExtensionTemplateName = *mut ::core::ffi::c_void;
-pub type IX509Extensions = *mut ::core::ffi::c_void;
-pub type IX509MachineEnrollmentFactory = *mut ::core::ffi::c_void;
-pub type IX509NameValuePair = *mut ::core::ffi::c_void;
-pub type IX509NameValuePairs = *mut ::core::ffi::c_void;
-pub type IX509PolicyServerListManager = *mut ::core::ffi::c_void;
-pub type IX509PolicyServerUrl = *mut ::core::ffi::c_void;
-pub type IX509PrivateKey = *mut ::core::ffi::c_void;
-pub type IX509PrivateKey2 = *mut ::core::ffi::c_void;
-pub type IX509PublicKey = *mut ::core::ffi::c_void;
-pub type IX509SCEPEnrollment = *mut ::core::ffi::c_void;
-pub type IX509SCEPEnrollment2 = *mut ::core::ffi::c_void;
-pub type IX509SCEPEnrollmentHelper = *mut ::core::ffi::c_void;
-pub type IX509SignatureInformation = *mut ::core::ffi::c_void;
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISignerCertificate {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, machinecontext: i16, verifytype: X509PrivateKeyVerify, encoding: EncodingType, strcertificate: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Initialize: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub get_Certificate: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    get_Certificate: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub PrivateKey: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    PrivateKey: usize,
+    pub Silent: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetSilent: unsafe extern "system" fn(this: *mut *mut Self, value: i16) -> ::windows_sys::core::HRESULT,
+    pub ParentWindow: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetParentWindow: unsafe extern "system" fn(this: *mut *mut Self, value: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub UIContextMessage: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    UIContextMessage: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetUIContextMessage: unsafe extern "system" fn(this: *mut *mut Self, value: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetUIContextMessage: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetPin: unsafe extern "system" fn(this: *mut *mut Self, value: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetPin: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SignatureInformation: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SignatureInformation: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISignerCertificates {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub get_ItemByIndex: unsafe extern "system" fn(this: *mut *mut Self, index: i32, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    get_ItemByIndex: usize,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Add: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Add: usize,
+    pub Remove: unsafe extern "system" fn(this: *mut *mut Self, index: i32) -> ::windows_sys::core::HRESULT,
+    pub Clear: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Find: unsafe extern "system" fn(this: *mut *mut Self, psignercert: *mut ::core::ffi::c_void, pisignercert: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Find: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISmimeCapabilities {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub get_ItemByIndex: unsafe extern "system" fn(this: *mut *mut Self, index: i32, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    get_ItemByIndex: usize,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Add: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Add: usize,
+    pub Remove: unsafe extern "system" fn(this: *mut *mut Self, index: i32) -> ::windows_sys::core::HRESULT,
+    pub Clear: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub AddFromCsp: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    AddFromCsp: usize,
+    pub AddAvailableSmimeCapabilities: unsafe extern "system" fn(this: *mut *mut Self, machinecontext: i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ISmimeCapability {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, pobjectid: *mut ::core::ffi::c_void, bitcount: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Initialize: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub ObjectId: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    ObjectId: usize,
+    pub BitCount: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IX500DistinguishedName {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Decode: unsafe extern "system" fn(this: *mut *mut Self, strencodedname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, encoding: EncodingType, nameflags: X500NameFlags) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Decode: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Encode: unsafe extern "system" fn(this: *mut *mut Self, strname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, nameflags: X500NameFlags) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Encode: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Name: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Name: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub get_EncodedName: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    get_EncodedName: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IX509Attribute {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, pobjectid: *mut ::core::ffi::c_void, encoding: EncodingType, strencodeddata: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    Initialize: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub ObjectId: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    ObjectId: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub get_RawData: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    get_RawData: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IX509AttributeArchiveKey {
+    pub base__: IX509Attribute,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub InitializeEncode: unsafe extern "system" fn(this: *mut *mut Self, pkey: *mut ::core::ffi::c_void, encoding: EncodingType, strcaxcert: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, palgorithm: *mut ::core::ffi::c_void, encryptionstrength: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    InitializeEncode: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InitializeDecode: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, strencodeddata: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InitializeDecode: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub get_EncryptedKeyBlob: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    get_EncryptedKeyBlob: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub EncryptionAlgorithm: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    EncryptionAlgorithm: usize,
+    pub EncryptionStrength: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IX509AttributeArchiveKeyHash {
+    pub base__: IX509Attribute,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InitializeEncodeFromEncryptedKeyBlob: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, strencryptedkeyblob: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InitializeEncodeFromEncryptedKeyBlob: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InitializeDecode: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, strencodeddata: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InitializeDecode: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub get_EncryptedKeyHashBlob: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    get_EncryptedKeyHashBlob: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IX509AttributeClientId {
+    pub base__: IX509Attribute,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InitializeEncode: unsafe extern "system" fn(this: *mut *mut Self, clientid: RequestClientInfoClientId, strmachinednsname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, strusersamname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, strprocessname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InitializeEncode: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InitializeDecode: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, strencodeddata: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InitializeDecode: usize,
+    pub ClientId: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut RequestClientInfoClientId) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MachineDnsName: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MachineDnsName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub UserSamName: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    UserSamName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ProcessName: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ProcessName: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IX509AttributeCspProvider {
+    pub base__: IX509Attribute,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InitializeEncode: unsafe extern "system" fn(this: *mut *mut Self, keyspec: X509KeySpec, strprovidername: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, encoding: EncodingType, strsignature: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InitializeEncode: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InitializeDecode: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, strencodeddata: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InitializeDecode: usize,
+    pub KeySpec: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut X509KeySpec) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ProviderName: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ProviderName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub get_Signature: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    get_Signature: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IX509AttributeExtensions {
+    pub base__: IX509Attribute,
+    #[cfg(feature = "Win32_System_Com")]
+    pub InitializeEncode: unsafe extern "system" fn(this: *mut *mut Self, pextensions: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    InitializeEncode: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InitializeDecode: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, strencodeddata: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InitializeDecode: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub X509Extensions: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    X509Extensions: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IX509AttributeOSVersion {
+    pub base__: IX509Attribute,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InitializeEncode: unsafe extern "system" fn(this: *mut *mut Self, strosversion: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InitializeEncode: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InitializeDecode: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, strencodeddata: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InitializeDecode: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OSVersion: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OSVersion: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IX509AttributeRenewalCertificate {
+    pub base__: IX509Attribute,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InitializeEncode: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, strcert: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InitializeEncode: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InitializeDecode: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, strencodeddata: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InitializeDecode: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub get_RenewalCertificate: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    get_RenewalCertificate: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IX509Attributes {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub get_ItemByIndex: unsafe extern "system" fn(this: *mut *mut Self, index: i32, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    get_ItemByIndex: usize,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Add: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Add: usize,
+    pub Remove: unsafe extern "system" fn(this: *mut *mut Self, index: i32) -> ::windows_sys::core::HRESULT,
+    pub Clear: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IX509CertificateRequest {
+    pub base__: super::super::super::System::Com::IDispatch,
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, context: X509CertificateEnrollmentContext) -> ::windows_sys::core::HRESULT,
+    pub Encode: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub ResetForEncode: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetInnerRequest: unsafe extern "system" fn(this: *mut *mut Self, level: InnerRequestLevel, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetInnerRequest: usize,
+    pub Type: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut X509RequestType) -> ::windows_sys::core::HRESULT,
+    pub EnrollmentContext: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut X509CertificateEnrollmentContext) -> ::windows_sys::core::HRESULT,
+    pub Silent: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetSilent: unsafe extern "system" fn(this: *mut *mut Self, value: i16) -> ::windows_sys::core::HRESULT,
+    pub ParentWindow: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetParentWindow: unsafe extern "system" fn(this: *mut *mut Self, value: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub UIContextMessage: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    UIContextMessage: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetUIContextMessage: unsafe extern "system" fn(this: *mut *mut Self, value: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetUIContextMessage: usize,
+    pub SuppressDefaults: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetSuppressDefaults: unsafe extern "system" fn(this: *mut *mut Self, value: i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub get_RenewalCertificate: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    get_RenewalCertificate: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub put_RenewalCertificate: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, value: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    put_RenewalCertificate: usize,
+    pub ClientId: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut RequestClientInfoClientId) -> ::windows_sys::core::HRESULT,
+    pub SetClientId: unsafe extern "system" fn(this: *mut *mut Self, value: RequestClientInfoClientId) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CspInformations: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CspInformations: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetCspInformations: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetCspInformations: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub HashAlgorithm: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    HashAlgorithm: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetHashAlgorithm: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetHashAlgorithm: usize,
+    pub AlternateSignatureAlgorithm: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetAlternateSignatureAlgorithm: unsafe extern "system" fn(this: *mut *mut Self, value: i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub get_RawData: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    get_RawData: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IX509CertificateRequestCertificate {
+    pub base__: IX509CertificateRequestPkcs10,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CheckPublicKeySignature: unsafe extern "system" fn(this: *mut *mut Self, ppublickey: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CheckPublicKeySignature: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Issuer: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Issuer: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetIssuer: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetIssuer: usize,
+    pub NotBefore: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut f64) -> ::windows_sys::core::HRESULT,
+    pub SetNotBefore: unsafe extern "system" fn(this: *mut *mut Self, value: f64) -> ::windows_sys::core::HRESULT,
+    pub NotAfter: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut f64) -> ::windows_sys::core::HRESULT,
+    pub SetNotAfter: unsafe extern "system" fn(this: *mut *mut Self, value: f64) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub get_SerialNumber: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    get_SerialNumber: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub put_SerialNumber: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, value: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    put_SerialNumber: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SignerCertificate: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SignerCertificate: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetSignerCertificate: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetSignerCertificate: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IX509CertificateRequestCertificate2 {
+    pub base__: IX509CertificateRequestCertificate,
+    #[cfg(feature = "Win32_System_Com")]
+    pub InitializeFromTemplate: unsafe extern "system" fn(this: *mut *mut Self, context: X509CertificateEnrollmentContext, ppolicyserver: *mut ::core::ffi::c_void, ptemplate: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    InitializeFromTemplate: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub InitializeFromPrivateKeyTemplate: unsafe extern "system" fn(this: *mut *mut Self, context: X509CertificateEnrollmentContext, pprivatekey: *mut ::core::ffi::c_void, ppolicyserver: *mut ::core::ffi::c_void, ptemplate: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    InitializeFromPrivateKeyTemplate: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub PolicyServer: unsafe extern "system" fn(this: *mut *mut Self, pppolicyserver: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    PolicyServer: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Template: unsafe extern "system" fn(this: *mut *mut Self, pptemplate: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Template: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IX509CertificateRequestCmc {
+    pub base__: IX509CertificateRequestPkcs7,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub InitializeFromInnerRequestTemplateName: unsafe extern "system" fn(this: *mut *mut Self, pinnerrequest: *mut ::core::ffi::c_void, strtemplatename: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    InitializeFromInnerRequestTemplateName: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub TemplateObjectId: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    TemplateObjectId: usize,
+    pub NullSigned: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CryptAttributes: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CryptAttributes: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub NameValuePairs: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    NameValuePairs: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub X509Extensions: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    X509Extensions: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CriticalExtensions: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CriticalExtensions: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SuppressOids: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SuppressOids: usize,
+    pub TransactionId: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetTransactionId: unsafe extern "system" fn(this: *mut *mut Self, value: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub get_SenderNonce: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    get_SenderNonce: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub put_SenderNonce: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, value: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    put_SenderNonce: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SignatureInformation: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SignatureInformation: usize,
+    pub ArchivePrivateKey: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetArchivePrivateKey: unsafe extern "system" fn(this: *mut *mut Self, value: i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub get_KeyArchivalCertificate: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    get_KeyArchivalCertificate: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub put_KeyArchivalCertificate: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, value: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    put_KeyArchivalCertificate: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub EncryptionAlgorithm: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    EncryptionAlgorithm: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetEncryptionAlgorithm: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetEncryptionAlgorithm: usize,
+    pub EncryptionStrength: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetEncryptionStrength: unsafe extern "system" fn(this: *mut *mut Self, value: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub get_EncryptedKeyHash: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    get_EncryptedKeyHash: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SignerCertificates: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SignerCertificates: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IX509CertificateRequestCmc2 {
+    pub base__: IX509CertificateRequestCmc,
+    #[cfg(feature = "Win32_System_Com")]
+    pub InitializeFromTemplate: unsafe extern "system" fn(this: *mut *mut Self, context: X509CertificateEnrollmentContext, ppolicyserver: *mut ::core::ffi::c_void, ptemplate: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    InitializeFromTemplate: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub InitializeFromInnerRequestTemplate: unsafe extern "system" fn(this: *mut *mut Self, pinnerrequest: *mut ::core::ffi::c_void, ppolicyserver: *mut ::core::ffi::c_void, ptemplate: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    InitializeFromInnerRequestTemplate: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub PolicyServer: unsafe extern "system" fn(this: *mut *mut Self, pppolicyserver: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    PolicyServer: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Template: unsafe extern "system" fn(this: *mut *mut Self, pptemplate: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Template: usize,
+    pub CheckSignature: unsafe extern "system" fn(this: *mut *mut Self, allowedsignaturetypes: Pkcs10AllowedSignatureTypes) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CheckCertificateSignature: unsafe extern "system" fn(this: *mut *mut Self, psignercertificate: *mut ::core::ffi::c_void, validatecertificatechain: i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CheckCertificateSignature: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IX509CertificateRequestPkcs10 {
+    pub base__: IX509CertificateRequest,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InitializeFromTemplateName: unsafe extern "system" fn(this: *mut *mut Self, context: X509CertificateEnrollmentContext, strtemplatename: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InitializeFromTemplateName: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub InitializeFromPrivateKey: unsafe extern "system" fn(this: *mut *mut Self, context: X509CertificateEnrollmentContext, pprivatekey: *mut ::core::ffi::c_void, strtemplatename: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    InitializeFromPrivateKey: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub InitializeFromPublicKey: unsafe extern "system" fn(this: *mut *mut Self, context: X509CertificateEnrollmentContext, ppublickey: *mut ::core::ffi::c_void, strtemplatename: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    InitializeFromPublicKey: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InitializeFromCertificate: unsafe extern "system" fn(this: *mut *mut Self, context: X509CertificateEnrollmentContext, strcertificate: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, encoding: EncodingType, inheritoptions: X509RequestInheritOptions) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InitializeFromCertificate: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InitializeDecode: unsafe extern "system" fn(this: *mut *mut Self, strencodeddata: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, encoding: EncodingType) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InitializeDecode: usize,
+    pub CheckSignature: unsafe extern "system" fn(this: *mut *mut Self, allowedsignaturetypes: Pkcs10AllowedSignatureTypes) -> ::windows_sys::core::HRESULT,
+    pub IsSmartCard: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub TemplateObjectId: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    TemplateObjectId: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub PublicKey: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    PublicKey: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub PrivateKey: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    PrivateKey: usize,
+    pub NullSigned: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub ReuseKey: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub get_OldCertificate: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    get_OldCertificate: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Subject: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Subject: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetSubject: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetSubject: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CspStatuses: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CspStatuses: usize,
+    pub SmimeCapabilities: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetSmimeCapabilities: unsafe extern "system" fn(this: *mut *mut Self, value: i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SignatureInformation: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SignatureInformation: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub KeyContainerNamePrefix: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    KeyContainerNamePrefix: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetKeyContainerNamePrefix: unsafe extern "system" fn(this: *mut *mut Self, value: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetKeyContainerNamePrefix: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CryptAttributes: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CryptAttributes: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub X509Extensions: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    X509Extensions: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CriticalExtensions: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CriticalExtensions: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SuppressOids: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SuppressOids: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub get_RawDataToBeSigned: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    get_RawDataToBeSigned: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub get_Signature: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    get_Signature: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetCspStatuses: unsafe extern "system" fn(this: *mut *mut Self, keyspec: X509KeySpec, ppcspstatuses: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetCspStatuses: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IX509CertificateRequestPkcs10V2 {
+    pub base__: IX509CertificateRequestPkcs10,
+    #[cfg(feature = "Win32_System_Com")]
+    pub InitializeFromTemplate: unsafe extern "system" fn(this: *mut *mut Self, context: X509CertificateEnrollmentContext, ppolicyserver: *mut ::core::ffi::c_void, ptemplate: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    InitializeFromTemplate: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub InitializeFromPrivateKeyTemplate: unsafe extern "system" fn(this: *mut *mut Self, context: X509CertificateEnrollmentContext, pprivatekey: *mut ::core::ffi::c_void, ppolicyserver: *mut ::core::ffi::c_void, ptemplate: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    InitializeFromPrivateKeyTemplate: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub InitializeFromPublicKeyTemplate: unsafe extern "system" fn(this: *mut *mut Self, context: X509CertificateEnrollmentContext, ppublickey: *mut ::core::ffi::c_void, ppolicyserver: *mut ::core::ffi::c_void, ptemplate: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    InitializeFromPublicKeyTemplate: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub PolicyServer: unsafe extern "system" fn(this: *mut *mut Self, pppolicyserver: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    PolicyServer: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Template: unsafe extern "system" fn(this: *mut *mut Self, pptemplate: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Template: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IX509CertificateRequestPkcs10V3 {
+    pub base__: IX509CertificateRequestPkcs10V2,
+    pub AttestPrivateKey: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetAttestPrivateKey: unsafe extern "system" fn(this: *mut *mut Self, value: i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub get_AttestationEncryptionCertificate: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    get_AttestationEncryptionCertificate: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub put_AttestationEncryptionCertificate: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, value: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    put_AttestationEncryptionCertificate: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub EncryptionAlgorithm: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    EncryptionAlgorithm: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetEncryptionAlgorithm: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetEncryptionAlgorithm: usize,
+    pub EncryptionStrength: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetEncryptionStrength: unsafe extern "system" fn(this: *mut *mut Self, value: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ChallengePassword: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ChallengePassword: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetChallengePassword: unsafe extern "system" fn(this: *mut *mut Self, value: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetChallengePassword: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub NameValuePairs: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    NameValuePairs: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IX509CertificateRequestPkcs10V4 {
+    pub base__: IX509CertificateRequestPkcs10V3,
+    pub ClaimType: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut KeyAttestationClaimType) -> ::windows_sys::core::HRESULT,
+    pub SetClaimType: unsafe extern "system" fn(this: *mut *mut Self, value: KeyAttestationClaimType) -> ::windows_sys::core::HRESULT,
+    pub AttestPrivateKeyPreferred: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetAttestPrivateKeyPreferred: unsafe extern "system" fn(this: *mut *mut Self, value: i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IX509CertificateRequestPkcs7 {
+    pub base__: IX509CertificateRequest,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InitializeFromTemplateName: unsafe extern "system" fn(this: *mut *mut Self, context: X509CertificateEnrollmentContext, strtemplatename: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InitializeFromTemplateName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InitializeFromCertificate: unsafe extern "system" fn(this: *mut *mut Self, context: X509CertificateEnrollmentContext, renewalrequest: i16, strcertificate: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, encoding: EncodingType, inheritoptions: X509RequestInheritOptions) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InitializeFromCertificate: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub InitializeFromInnerRequest: unsafe extern "system" fn(this: *mut *mut Self, pinnerrequest: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    InitializeFromInnerRequest: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InitializeDecode: unsafe extern "system" fn(this: *mut *mut Self, strencodeddata: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, encoding: EncodingType) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InitializeDecode: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RequesterName: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RequesterName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetRequesterName: unsafe extern "system" fn(this: *mut *mut Self, value: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetRequesterName: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SignerCertificate: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SignerCertificate: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetSignerCertificate: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetSignerCertificate: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IX509CertificateRequestPkcs7V2 {
+    pub base__: IX509CertificateRequestPkcs7,
+    #[cfg(feature = "Win32_System_Com")]
+    pub InitializeFromTemplate: unsafe extern "system" fn(this: *mut *mut Self, context: X509CertificateEnrollmentContext, ppolicyserver: *mut ::core::ffi::c_void, ptemplate: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    InitializeFromTemplate: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub PolicyServer: unsafe extern "system" fn(this: *mut *mut Self, pppolicyserver: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    PolicyServer: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Template: unsafe extern "system" fn(this: *mut *mut Self, pptemplate: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Template: usize,
+    pub CheckCertificateSignature: unsafe extern "system" fn(this: *mut *mut Self, validatecertificatechain: i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IX509CertificateRevocationList {
+    pub base__: super::super::super::System::Com::IDispatch,
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InitializeDecode: unsafe extern "system" fn(this: *mut *mut Self, strencodeddata: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, encoding: EncodingType) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InitializeDecode: usize,
+    pub Encode: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub ResetForEncode: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CheckPublicKeySignature: unsafe extern "system" fn(this: *mut *mut Self, ppublickey: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CheckPublicKeySignature: usize,
+    pub CheckSignature: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Issuer: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Issuer: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetIssuer: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetIssuer: usize,
+    pub ThisUpdate: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut f64) -> ::windows_sys::core::HRESULT,
+    pub SetThisUpdate: unsafe extern "system" fn(this: *mut *mut Self, value: f64) -> ::windows_sys::core::HRESULT,
+    pub NextUpdate: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut f64) -> ::windows_sys::core::HRESULT,
+    pub SetNextUpdate: unsafe extern "system" fn(this: *mut *mut Self, value: f64) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub X509CRLEntries: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    X509CRLEntries: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub X509Extensions: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    X509Extensions: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CriticalExtensions: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CriticalExtensions: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SignerCertificate: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SignerCertificate: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetSignerCertificate: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetSignerCertificate: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub get_CRLNumber: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    get_CRLNumber: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub put_CRLNumber: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, value: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    put_CRLNumber: usize,
+    pub CAVersion: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetCAVersion: unsafe extern "system" fn(this: *mut *mut Self, pvalue: i32) -> ::windows_sys::core::HRESULT,
+    pub BaseCRL: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub NullSigned: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub HashAlgorithm: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    HashAlgorithm: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetHashAlgorithm: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetHashAlgorithm: usize,
+    pub AlternateSignatureAlgorithm: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetAlternateSignatureAlgorithm: unsafe extern "system" fn(this: *mut *mut Self, value: i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SignatureInformation: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SignatureInformation: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub get_RawData: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    get_RawData: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub get_RawDataToBeSigned: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    get_RawDataToBeSigned: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub get_Signature: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    get_Signature: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IX509CertificateRevocationListEntries {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub get_ItemByIndex: unsafe extern "system" fn(this: *mut *mut Self, index: i32, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    get_ItemByIndex: usize,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Add: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Add: usize,
+    pub Remove: unsafe extern "system" fn(this: *mut *mut Self, index: i32) -> ::windows_sys::core::HRESULT,
+    pub Clear: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub get_IndexBySerialNumber: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, serialnumber: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, pindex: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    get_IndexBySerialNumber: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub AddRange: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    AddRange: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IX509CertificateRevocationListEntry {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, serialnumber: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, revocationdate: f64) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Initialize: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub get_SerialNumber: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    get_SerialNumber: usize,
+    pub RevocationDate: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut f64) -> ::windows_sys::core::HRESULT,
+    pub RevocationReason: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut CRLRevocationReason) -> ::windows_sys::core::HRESULT,
+    pub SetRevocationReason: unsafe extern "system" fn(this: *mut *mut Self, value: CRLRevocationReason) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub X509Extensions: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    X509Extensions: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CriticalExtensions: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CriticalExtensions: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IX509CertificateTemplate {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub get_Property: unsafe extern "system" fn(this: *mut *mut Self, property: EnrollmentTemplateProperty, pvalue: *mut super::super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    get_Property: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IX509CertificateTemplateWritable {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Initialize: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Commit: unsafe extern "system" fn(this: *mut *mut Self, commitflags: CommitTemplateFlags, strservercontext: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Commit: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub get_Property: unsafe extern "system" fn(this: *mut *mut Self, property: EnrollmentTemplateProperty, pvalue: *mut super::super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    get_Property: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub put_Property: unsafe extern "system" fn(this: *mut *mut Self, property: EnrollmentTemplateProperty, value: ::core::mem::ManuallyDrop<super::super::super::System::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    put_Property: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Template: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Template: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IX509CertificateTemplates {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub get_ItemByIndex: unsafe extern "system" fn(this: *mut *mut Self, index: i32, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    get_ItemByIndex: usize,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Add: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Add: usize,
+    pub Remove: unsafe extern "system" fn(this: *mut *mut Self, index: i32) -> ::windows_sys::core::HRESULT,
+    pub Clear: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub get_ItemByName: unsafe extern "system" fn(this: *mut *mut Self, bstrname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    get_ItemByName: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub get_ItemByOid: unsafe extern "system" fn(this: *mut *mut Self, poid: *mut ::core::ffi::c_void, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    get_ItemByOid: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IX509EndorsementKey {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ProviderName: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ProviderName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetProviderName: unsafe extern "system" fn(this: *mut *mut Self, value: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetProviderName: usize,
+    pub Length: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub Opened: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AddCertificate: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, strcertificate: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AddCertificate: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RemoveCertificate: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, strcertificate: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RemoveCertificate: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetCertificateByIndex: unsafe extern "system" fn(this: *mut *mut Self, manufactureronly: i16, dwindex: i32, encoding: EncodingType, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetCertificateByIndex: usize,
+    pub GetCertificateCount: unsafe extern "system" fn(this: *mut *mut Self, manufactureronly: i16, pcount: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub ExportPublicKey: unsafe extern "system" fn(this: *mut *mut Self, pppublickey: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    ExportPublicKey: usize,
+    pub Open: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IX509Enrollment {
+    pub base__: super::super::super::System::Com::IDispatch,
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, context: X509CertificateEnrollmentContext) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InitializeFromTemplateName: unsafe extern "system" fn(this: *mut *mut Self, context: X509CertificateEnrollmentContext, strtemplatename: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InitializeFromTemplateName: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub InitializeFromRequest: unsafe extern "system" fn(this: *mut *mut Self, prequest: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    InitializeFromRequest: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CreateRequest: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CreateRequest: usize,
+    pub Enroll: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InstallResponse: unsafe extern "system" fn(this: *mut *mut Self, restrictions: InstallResponseRestrictionFlags, strresponse: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, encoding: EncodingType, strpassword: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InstallResponse: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CreatePFX: unsafe extern "system" fn(this: *mut *mut Self, strpassword: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, exportoptions: PFXExportOptions, encoding: EncodingType, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CreatePFX: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Request: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Request: usize,
+    pub Silent: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetSilent: unsafe extern "system" fn(this: *mut *mut Self, value: i16) -> ::windows_sys::core::HRESULT,
+    pub ParentWindow: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetParentWindow: unsafe extern "system" fn(this: *mut *mut Self, value: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub NameValuePairs: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    NameValuePairs: usize,
+    pub EnrollmentContext: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut X509CertificateEnrollmentContext) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Status: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Status: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub get_Certificate: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    get_Certificate: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub get_Response: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    get_Response: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CertificateFriendlyName: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CertificateFriendlyName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetCertificateFriendlyName: unsafe extern "system" fn(this: *mut *mut Self, strvalue: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetCertificateFriendlyName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CertificateDescription: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CertificateDescription: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetCertificateDescription: unsafe extern "system" fn(this: *mut *mut Self, strvalue: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetCertificateDescription: usize,
+    pub RequestId: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CAConfigString: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CAConfigString: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IX509Enrollment2 {
+    pub base__: IX509Enrollment,
+    #[cfg(feature = "Win32_System_Com")]
+    pub InitializeFromTemplate: unsafe extern "system" fn(this: *mut *mut Self, context: X509CertificateEnrollmentContext, ppolicyserver: *mut ::core::ffi::c_void, ptemplate: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    InitializeFromTemplate: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InstallResponse2: unsafe extern "system" fn(this: *mut *mut Self, restrictions: InstallResponseRestrictionFlags, strresponse: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, encoding: EncodingType, strpassword: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, strenrollmentpolicyserverurl: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, strenrollmentpolicyserverid: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, enrollmentpolicyserverflags: PolicyServerUrlFlags, authflags: X509EnrollmentAuthFlags) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InstallResponse2: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub PolicyServer: unsafe extern "system" fn(this: *mut *mut Self, pppolicyserver: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    PolicyServer: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Template: unsafe extern "system" fn(this: *mut *mut Self, pptemplate: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Template: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RequestIdString: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RequestIdString: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IX509EnrollmentHelper {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AddPolicyServer: unsafe extern "system" fn(this: *mut *mut Self, strenrollmentpolicyserveruri: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, strenrollmentpolicyid: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, enrollmentpolicyserverflags: PolicyServerUrlFlags, authflags: X509EnrollmentAuthFlags, strcredential: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, strpassword: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AddPolicyServer: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AddEnrollmentServer: unsafe extern "system" fn(this: *mut *mut Self, strenrollmentserveruri: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, authflags: X509EnrollmentAuthFlags, strcredential: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, strpassword: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AddEnrollmentServer: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Enroll: unsafe extern "system" fn(this: *mut *mut Self, strenrollmentpolicyserveruri: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, strtemplatename: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, encoding: EncodingType, enrollflags: WebEnrollmentFlags, pstrcertificate: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Enroll: usize,
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, context: X509CertificateEnrollmentContext) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IX509EnrollmentPolicyServer {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, bstrpolicyserverurl: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, bstrpolicyserverid: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, authflags: X509EnrollmentAuthFlags, fisuntrusted: i16, context: X509CertificateEnrollmentContext) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Initialize: usize,
+    pub LoadPolicy: unsafe extern "system" fn(this: *mut *mut Self, option: X509EnrollmentPolicyLoadOption) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetTemplates: unsafe extern "system" fn(this: *mut *mut Self, ptemplates: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetTemplates: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetCAsForTemplate: unsafe extern "system" fn(this: *mut *mut Self, ptemplate: *mut ::core::ffi::c_void, ppcas: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetCAsForTemplate: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetCAs: unsafe extern "system" fn(this: *mut *mut Self, ppcas: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetCAs: usize,
+    pub Validate: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetCustomOids: unsafe extern "system" fn(this: *mut *mut Self, ppobjectids: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetCustomOids: usize,
+    pub GetNextUpdateTime: unsafe extern "system" fn(this: *mut *mut Self, pdate: *mut f64) -> ::windows_sys::core::HRESULT,
+    pub GetLastUpdateTime: unsafe extern "system" fn(this: *mut *mut Self, pdate: *mut f64) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetPolicyServerUrl: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetPolicyServerUrl: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetPolicyServerId: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetPolicyServerId: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetFriendlyName: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetFriendlyName: usize,
+    pub GetIsDefaultCEP: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub GetUseClientId: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub GetAllowUnTrustedCA: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetCachePath: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetCachePath: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetCacheDir: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetCacheDir: usize,
+    pub GetAuthFlags: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut X509EnrollmentAuthFlags) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetCredential: unsafe extern "system" fn(this: *mut *mut Self, hwndparent: i32, flag: X509EnrollmentAuthFlags, strcredential: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, strpassword: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetCredential: usize,
+    pub QueryChanges: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub InitializeImport: unsafe extern "system" fn(this: *mut *mut Self, val: ::core::mem::ManuallyDrop<super::super::super::System::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    InitializeImport: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Export: unsafe extern "system" fn(this: *mut *mut Self, exportflags: X509EnrollmentPolicyExportFlags, pval: *mut super::super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Export: usize,
+    pub Cost: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetCost: unsafe extern "system" fn(this: *mut *mut Self, value: u32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IX509EnrollmentStatus {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AppendText: unsafe extern "system" fn(this: *mut *mut Self, strtext: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AppendText: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Text: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Text: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetText: unsafe extern "system" fn(this: *mut *mut Self, value: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetText: usize,
+    pub Selected: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut EnrollmentSelectionStatus) -> ::windows_sys::core::HRESULT,
+    pub SetSelected: unsafe extern "system" fn(this: *mut *mut Self, value: EnrollmentSelectionStatus) -> ::windows_sys::core::HRESULT,
+    pub Display: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut EnrollmentDisplayStatus) -> ::windows_sys::core::HRESULT,
+    pub SetDisplay: unsafe extern "system" fn(this: *mut *mut Self, value: EnrollmentDisplayStatus) -> ::windows_sys::core::HRESULT,
+    pub Status: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut EnrollmentEnrollStatus) -> ::windows_sys::core::HRESULT,
+    pub SetStatus: unsafe extern "system" fn(this: *mut *mut Self, value: EnrollmentEnrollStatus) -> ::windows_sys::core::HRESULT,
+    pub Error: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+    pub SetError: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ErrorText: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ErrorText: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IX509EnrollmentWebClassFactory {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CreateObject: unsafe extern "system" fn(this: *mut *mut Self, strprogid: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, ppiunknown: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CreateObject: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IX509Extension {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, pobjectid: *mut ::core::ffi::c_void, encoding: EncodingType, strencodeddata: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    Initialize: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub ObjectId: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    ObjectId: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub get_RawData: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    get_RawData: usize,
+    pub Critical: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetCritical: unsafe extern "system" fn(this: *mut *mut Self, value: i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IX509ExtensionAlternativeNames {
+    pub base__: IX509Extension,
+    #[cfg(feature = "Win32_System_Com")]
+    pub InitializeEncode: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    InitializeEncode: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InitializeDecode: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, strencodeddata: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InitializeDecode: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub AlternativeNames: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    AlternativeNames: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IX509ExtensionAuthorityKeyIdentifier {
+    pub base__: IX509Extension,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InitializeEncode: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, strkeyidentifier: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InitializeEncode: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InitializeDecode: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, strencodeddata: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InitializeDecode: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub get_AuthorityKeyIdentifier: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    get_AuthorityKeyIdentifier: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IX509ExtensionBasicConstraints {
+    pub base__: IX509Extension,
+    pub InitializeEncode: unsafe extern "system" fn(this: *mut *mut Self, isca: i16, pathlenconstraint: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InitializeDecode: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, strencodeddata: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InitializeDecode: usize,
+    pub IsCA: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub PathLenConstraint: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IX509ExtensionCertificatePolicies {
+    pub base__: IX509Extension,
+    #[cfg(feature = "Win32_System_Com")]
+    pub InitializeEncode: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    InitializeEncode: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InitializeDecode: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, strencodeddata: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InitializeDecode: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Policies: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Policies: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IX509ExtensionEnhancedKeyUsage {
+    pub base__: IX509Extension,
+    #[cfg(feature = "Win32_System_Com")]
+    pub InitializeEncode: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    InitializeEncode: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InitializeDecode: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, strencodeddata: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InitializeDecode: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub EnhancedKeyUsage: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    EnhancedKeyUsage: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IX509ExtensionKeyUsage {
+    pub base__: IX509Extension,
+    pub InitializeEncode: unsafe extern "system" fn(this: *mut *mut Self, usageflags: X509KeyUsageFlags) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InitializeDecode: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, strencodeddata: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InitializeDecode: usize,
+    pub KeyUsage: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut X509KeyUsageFlags) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IX509ExtensionMSApplicationPolicies {
+    pub base__: IX509Extension,
+    #[cfg(feature = "Win32_System_Com")]
+    pub InitializeEncode: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    InitializeEncode: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InitializeDecode: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, strencodeddata: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InitializeDecode: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Policies: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Policies: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IX509ExtensionSmimeCapabilities {
+    pub base__: IX509Extension,
+    #[cfg(feature = "Win32_System_Com")]
+    pub InitializeEncode: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    InitializeEncode: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InitializeDecode: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, strencodeddata: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InitializeDecode: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SmimeCapabilities: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SmimeCapabilities: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IX509ExtensionSubjectKeyIdentifier {
+    pub base__: IX509Extension,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InitializeEncode: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, strkeyidentifier: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InitializeEncode: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InitializeDecode: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, strencodeddata: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InitializeDecode: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub get_SubjectKeyIdentifier: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    get_SubjectKeyIdentifier: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IX509ExtensionTemplate {
+    pub base__: IX509Extension,
+    #[cfg(feature = "Win32_System_Com")]
+    pub InitializeEncode: unsafe extern "system" fn(this: *mut *mut Self, ptemplateoid: *mut ::core::ffi::c_void, majorversion: i32, minorversion: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    InitializeEncode: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InitializeDecode: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, strencodeddata: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InitializeDecode: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub TemplateOid: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    TemplateOid: usize,
+    pub MajorVersion: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub MinorVersion: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IX509ExtensionTemplateName {
+    pub base__: IX509Extension,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InitializeEncode: unsafe extern "system" fn(this: *mut *mut Self, strtemplatename: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InitializeEncode: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InitializeDecode: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, strencodeddata: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InitializeDecode: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub TemplateName: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    TemplateName: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IX509Extensions {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub get_ItemByIndex: unsafe extern "system" fn(this: *mut *mut Self, index: i32, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    get_ItemByIndex: usize,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Add: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Add: usize,
+    pub Remove: unsafe extern "system" fn(this: *mut *mut Self, index: i32) -> ::windows_sys::core::HRESULT,
+    pub Clear: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub get_IndexByObjectId: unsafe extern "system" fn(this: *mut *mut Self, pobjectid: *mut ::core::ffi::c_void, pindex: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    get_IndexByObjectId: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub AddRange: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    AddRange: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IX509MachineEnrollmentFactory {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub CreateObject: unsafe extern "system" fn(this: *mut *mut Self, strprogid: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, ppihelper: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    CreateObject: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IX509NameValuePair {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, strname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, strvalue: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Initialize: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Value: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Value: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Name: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Name: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IX509NameValuePairs {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub get_ItemByIndex: unsafe extern "system" fn(this: *mut *mut Self, index: i32, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    get_ItemByIndex: usize,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Add: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Add: usize,
+    pub Remove: unsafe extern "system" fn(this: *mut *mut Self, index: i32) -> ::windows_sys::core::HRESULT,
+    pub Clear: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IX509PolicyServerListManager {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub get_ItemByIndex: unsafe extern "system" fn(this: *mut *mut Self, index: i32, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    get_ItemByIndex: usize,
+    pub Count: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Add: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Add: usize,
+    pub Remove: unsafe extern "system" fn(this: *mut *mut Self, index: i32) -> ::windows_sys::core::HRESULT,
+    pub Clear: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, context: X509CertificateEnrollmentContext, flags: PolicyServerUrlFlags) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IX509PolicyServerUrl {
+    pub base__: super::super::super::System::Com::IDispatch,
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, context: X509CertificateEnrollmentContext) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Url: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Url: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetUrl: unsafe extern "system" fn(this: *mut *mut Self, pvalue: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetUrl: usize,
+    pub Default: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetDefault: unsafe extern "system" fn(this: *mut *mut Self, value: i16) -> ::windows_sys::core::HRESULT,
+    pub Flags: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut PolicyServerUrlFlags) -> ::windows_sys::core::HRESULT,
+    pub SetFlags: unsafe extern "system" fn(this: *mut *mut Self, flags: PolicyServerUrlFlags) -> ::windows_sys::core::HRESULT,
+    pub AuthFlags: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut X509EnrollmentAuthFlags) -> ::windows_sys::core::HRESULT,
+    pub SetAuthFlags: unsafe extern "system" fn(this: *mut *mut Self, flags: X509EnrollmentAuthFlags) -> ::windows_sys::core::HRESULT,
+    pub Cost: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetCost: unsafe extern "system" fn(this: *mut *mut Self, value: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetStringProperty: unsafe extern "system" fn(this: *mut *mut Self, propertyid: PolicyServerUrlPropertyID, ppvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetStringProperty: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetStringProperty: unsafe extern "system" fn(this: *mut *mut Self, propertyid: PolicyServerUrlPropertyID, pvalue: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetStringProperty: usize,
+    pub UpdateRegistry: unsafe extern "system" fn(this: *mut *mut Self, context: X509CertificateEnrollmentContext) -> ::windows_sys::core::HRESULT,
+    pub RemoveFromRegistry: unsafe extern "system" fn(this: *mut *mut Self, context: X509CertificateEnrollmentContext) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IX509PrivateKey {
+    pub base__: super::super::super::System::Com::IDispatch,
+    pub Open: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Create: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Delete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Verify: unsafe extern "system" fn(this: *mut *mut Self, verifytype: X509PrivateKeyVerify) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Import: unsafe extern "system" fn(this: *mut *mut Self, strexporttype: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, strencodedkey: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, encoding: EncodingType) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Import: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Export: unsafe extern "system" fn(this: *mut *mut Self, strexporttype: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, encoding: EncodingType, pstrencodedkey: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Export: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub ExportPublicKey: unsafe extern "system" fn(this: *mut *mut Self, pppublickey: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    ExportPublicKey: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ContainerName: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ContainerName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetContainerName: unsafe extern "system" fn(this: *mut *mut Self, value: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetContainerName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ContainerNamePrefix: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ContainerNamePrefix: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetContainerNamePrefix: unsafe extern "system" fn(this: *mut *mut Self, value: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetContainerNamePrefix: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ReaderName: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ReaderName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetReaderName: unsafe extern "system" fn(this: *mut *mut Self, value: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetReaderName: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CspInformations: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CspInformations: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetCspInformations: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetCspInformations: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CspStatus: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CspStatus: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetCspStatus: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetCspStatus: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ProviderName: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ProviderName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetProviderName: unsafe extern "system" fn(this: *mut *mut Self, value: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetProviderName: usize,
+    pub ProviderType: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut X509ProviderType) -> ::windows_sys::core::HRESULT,
+    pub SetProviderType: unsafe extern "system" fn(this: *mut *mut Self, value: X509ProviderType) -> ::windows_sys::core::HRESULT,
+    pub LegacyCsp: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetLegacyCsp: unsafe extern "system" fn(this: *mut *mut Self, value: i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Algorithm: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Algorithm: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetAlgorithm: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetAlgorithm: usize,
+    pub KeySpec: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut X509KeySpec) -> ::windows_sys::core::HRESULT,
+    pub SetKeySpec: unsafe extern "system" fn(this: *mut *mut Self, value: X509KeySpec) -> ::windows_sys::core::HRESULT,
+    pub Length: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetLength: unsafe extern "system" fn(this: *mut *mut Self, value: i32) -> ::windows_sys::core::HRESULT,
+    pub ExportPolicy: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut X509PrivateKeyExportFlags) -> ::windows_sys::core::HRESULT,
+    pub SetExportPolicy: unsafe extern "system" fn(this: *mut *mut Self, value: X509PrivateKeyExportFlags) -> ::windows_sys::core::HRESULT,
+    pub KeyUsage: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut X509PrivateKeyUsageFlags) -> ::windows_sys::core::HRESULT,
+    pub SetKeyUsage: unsafe extern "system" fn(this: *mut *mut Self, value: X509PrivateKeyUsageFlags) -> ::windows_sys::core::HRESULT,
+    pub KeyProtection: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut X509PrivateKeyProtection) -> ::windows_sys::core::HRESULT,
+    pub SetKeyProtection: unsafe extern "system" fn(this: *mut *mut Self, value: X509PrivateKeyProtection) -> ::windows_sys::core::HRESULT,
+    pub MachineContext: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetMachineContext: unsafe extern "system" fn(this: *mut *mut Self, value: i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SecurityDescriptor: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SecurityDescriptor: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetSecurityDescriptor: unsafe extern "system" fn(this: *mut *mut Self, value: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetSecurityDescriptor: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub get_Certificate: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    get_Certificate: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub put_Certificate: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, value: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    put_Certificate: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub UniqueContainerName: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    UniqueContainerName: usize,
+    pub Opened: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub DefaultContainer: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub Existing: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetExisting: unsafe extern "system" fn(this: *mut *mut Self, value: i16) -> ::windows_sys::core::HRESULT,
+    pub Silent: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetSilent: unsafe extern "system" fn(this: *mut *mut Self, value: i16) -> ::windows_sys::core::HRESULT,
+    pub ParentWindow: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub SetParentWindow: unsafe extern "system" fn(this: *mut *mut Self, value: i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub UIContextMessage: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    UIContextMessage: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetUIContextMessage: unsafe extern "system" fn(this: *mut *mut Self, value: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetUIContextMessage: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetPin: unsafe extern "system" fn(this: *mut *mut Self, value: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetPin: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub FriendlyName: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    FriendlyName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetFriendlyName: unsafe extern "system" fn(this: *mut *mut Self, value: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetFriendlyName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Description: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Description: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetDescription: unsafe extern "system" fn(this: *mut *mut Self, value: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetDescription: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IX509PrivateKey2 {
+    pub base__: IX509PrivateKey,
+    pub HardwareKeyUsage: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut X509HardwareKeyUsageFlags) -> ::windows_sys::core::HRESULT,
+    pub SetHardwareKeyUsage: unsafe extern "system" fn(this: *mut *mut Self, value: X509HardwareKeyUsageFlags) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AlternateStorageLocation: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AlternateStorageLocation: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetAlternateStorageLocation: unsafe extern "system" fn(this: *mut *mut Self, value: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetAlternateStorageLocation: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AlgorithmName: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AlgorithmName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetAlgorithmName: unsafe extern "system" fn(this: *mut *mut Self, value: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetAlgorithmName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub get_AlgorithmParameters: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    get_AlgorithmParameters: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub put_AlgorithmParameters: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, value: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    put_AlgorithmParameters: usize,
+    pub ParametersExportType: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut X509KeyParametersExportType) -> ::windows_sys::core::HRESULT,
+    pub SetParametersExportType: unsafe extern "system" fn(this: *mut *mut Self, value: X509KeyParametersExportType) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IX509PublicKey {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, pobjectid: *mut ::core::ffi::c_void, strencodedkey: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, strencodedparameters: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, encoding: EncodingType) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    Initialize: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InitializeFromEncodedPublicKeyInfo: unsafe extern "system" fn(this: *mut *mut Self, strencodedpublickeyinfo: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, encoding: EncodingType) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InitializeFromEncodedPublicKeyInfo: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Algorithm: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Algorithm: usize,
+    pub Length: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub get_EncodedKey: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    get_EncodedKey: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub get_EncodedParameters: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    get_EncodedParameters: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ComputeKeyIdentifier: unsafe extern "system" fn(this: *mut *mut Self, algorithm: KeyIdentifierHashAlgorithm, encoding: EncodingType, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ComputeKeyIdentifier: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IX509SCEPEnrollment {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, prequest: *mut ::core::ffi::c_void, strthumbprint: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, thumprintencoding: EncodingType, strservercertificates: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, encoding: EncodingType) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    Initialize: usize,
+    pub InitializeForPending: unsafe extern "system" fn(this: *mut *mut Self, context: X509CertificateEnrollmentContext) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CreateRequestMessage: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CreateRequestMessage: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CreateRetrievePendingMessage: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CreateRetrievePendingMessage: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CreateRetrieveCertificateMessage: unsafe extern "system" fn(this: *mut *mut Self, context: X509CertificateEnrollmentContext, strissuer: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, issuerencoding: EncodingType, strserialnumber: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, serialnumberencoding: EncodingType, encoding: EncodingType, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CreateRetrieveCertificateMessage: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ProcessResponseMessage: unsafe extern "system" fn(this: *mut *mut Self, strresponse: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, encoding: EncodingType, pdisposition: *mut X509SCEPDisposition) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ProcessResponseMessage: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetServerCapabilities: unsafe extern "system" fn(this: *mut *mut Self, value: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetServerCapabilities: usize,
+    pub FailInfo: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut X509SCEPFailInfo) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SignerCertificate: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SignerCertificate: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetSignerCertificate: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetSignerCertificate: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub OldCertificate: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    OldCertificate: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetOldCertificate: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetOldCertificate: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub get_TransactionId: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    get_TransactionId: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub put_TransactionId: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, value: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    put_TransactionId: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Request: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Request: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CertificateFriendlyName: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CertificateFriendlyName: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetCertificateFriendlyName: unsafe extern "system" fn(this: *mut *mut Self, value: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetCertificateFriendlyName: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Status: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Status: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub get_Certificate: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    get_Certificate: usize,
+    pub Silent: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetSilent: unsafe extern "system" fn(this: *mut *mut Self, value: i16) -> ::windows_sys::core::HRESULT,
+    pub DeleteRequest: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IX509SCEPEnrollment2 {
+    pub base__: IX509SCEPEnrollment,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CreateChallengeAnswerMessage: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CreateChallengeAnswerMessage: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ProcessResponseMessage2: unsafe extern "system" fn(this: *mut *mut Self, flags: X509SCEPProcessMessageFlags, strresponse: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, encoding: EncodingType, pdisposition: *mut X509SCEPDisposition) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ProcessResponseMessage2: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ResultMessageText: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ResultMessageText: usize,
+    pub DelayRetry: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut DelayRetryAction) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ActivityId: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ActivityId: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetActivityId: unsafe extern "system" fn(this: *mut *mut Self, value: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetActivityId: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IX509SCEPEnrollmentHelper {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, strserverurl: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, strrequestheaders: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, prequest: *mut ::core::ffi::c_void, strcacertificatethumbprint: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    Initialize: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InitializeForPending: unsafe extern "system" fn(this: *mut *mut Self, strserverurl: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, strrequestheaders: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, context: X509CertificateEnrollmentContext, strtransactionid: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InitializeForPending: usize,
+    pub Enroll: unsafe extern "system" fn(this: *mut *mut Self, processflags: X509SCEPProcessMessageFlags, pdisposition: *mut X509SCEPDisposition) -> ::windows_sys::core::HRESULT,
+    pub FetchPending: unsafe extern "system" fn(this: *mut *mut Self, processflags: X509SCEPProcessMessageFlags, pdisposition: *mut X509SCEPDisposition) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub X509SCEPEnrollment: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    X509SCEPEnrollment: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ResultMessageText: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ResultMessageText: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IX509SignatureInformation {
+    pub base__: super::super::super::System::Com::IDispatch,
+    #[cfg(feature = "Win32_System_Com")]
+    pub HashAlgorithm: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    HashAlgorithm: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetHashAlgorithm: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetHashAlgorithm: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub PublicKeyAlgorithm: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    PublicKeyAlgorithm: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetPublicKeyAlgorithm: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    SetPublicKeyAlgorithm: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub get_Parameters: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    get_Parameters: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub put_Parameters: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, value: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    put_Parameters: usize,
+    pub AlternateSignatureAlgorithm: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetAlternateSignatureAlgorithm: unsafe extern "system" fn(this: *mut *mut Self, value: i16) -> ::windows_sys::core::HRESULT,
+    pub AlternateSignatureAlgorithmSet: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub NullSigned: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i16) -> ::windows_sys::core::HRESULT,
+    pub SetNullSigned: unsafe extern "system" fn(this: *mut *mut Self, value: i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetSignatureAlgorithm: unsafe extern "system" fn(this: *mut *mut Self, pkcs7signature: i16, signaturekey: i16, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetSignatureAlgorithm: usize,
+    pub SetDefaultValues: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
 #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
 pub type ImportPFXFlags = i32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]

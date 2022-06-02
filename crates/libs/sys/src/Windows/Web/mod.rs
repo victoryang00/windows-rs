@@ -6,7 +6,19 @@ pub mod Http;
 pub mod Syndication;
 #[cfg(feature = "Web_UI")]
 pub mod UI;
-pub type IUriToStreamResolver = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IUriToStreamResolver {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    pub UriToStreamAsync: unsafe extern "system" fn(this: *mut *mut Self, uri: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    UriToStreamAsync: usize,
+}
+#[repr(C)]
+pub struct IWebErrorStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub GetStatus: unsafe extern "system" fn(this: *mut *mut Self, hresult: i32, result__: *mut WebErrorStatus) -> ::windows_sys::core::HRESULT,
+}
 #[doc = "*Required features: `\"Web\"`*"]
 #[repr(transparent)]
 pub struct WebErrorStatus(pub i32);

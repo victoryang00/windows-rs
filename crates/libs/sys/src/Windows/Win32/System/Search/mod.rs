@@ -1123,7 +1123,7 @@ pub struct DBBINDING {
     pub obValue: usize,
     pub obLength: usize,
     pub obStatus: usize,
-    pub pTypeInfo: super::Com::ITypeInfo,
+    pub pTypeInfo: *mut *mut *mut *mut super::Com::ITypeInfo,
     pub pObject: *mut DBOBJECT,
     pub pBindExt: *mut DBBINDEXT,
     pub dwPart: u32,
@@ -1154,7 +1154,7 @@ pub struct DBBINDING {
     pub obValue: usize,
     pub obLength: usize,
     pub obStatus: usize,
-    pub pTypeInfo: super::Com::ITypeInfo,
+    pub pTypeInfo: *mut *mut *mut *mut super::Com::ITypeInfo,
     pub pObject: *mut DBOBJECT,
     pub pBindExt: *mut DBBINDEXT,
     pub dwPart: u32,
@@ -1302,7 +1302,7 @@ impl ::core::clone::Clone for DBCOLUMNACCESS {
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
 pub struct DBCOLUMNDESC {
     pub pwszTypeName: ::windows_sys::core::PWSTR,
-    pub pTypeInfo: super::Com::ITypeInfo,
+    pub pTypeInfo: *mut *mut *mut *mut super::Com::ITypeInfo,
     pub rgPropertySets: *mut DBPROPSET,
     pub pclsid: *mut ::windows_sys::core::GUID,
     pub cPropertySets: u32,
@@ -1328,7 +1328,7 @@ impl ::core::clone::Clone for DBCOLUMNDESC {
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
 pub struct DBCOLUMNDESC {
     pub pwszTypeName: ::windows_sys::core::PWSTR,
-    pub pTypeInfo: super::Com::ITypeInfo,
+    pub pTypeInfo: *mut *mut *mut *mut super::Com::ITypeInfo,
     pub rgPropertySets: *mut DBPROPSET,
     pub pclsid: *mut ::windows_sys::core::GUID,
     pub cPropertySets: u32,
@@ -1426,7 +1426,7 @@ pub const DBCOLUMNFLAGS_ROWSPECIFICCOLUMN: DBCOLUMNFLAGSENUM26 = 4194304i32;
 #[cfg(all(feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com"))]
 pub struct DBCOLUMNINFO {
     pub pwszName: ::windows_sys::core::PWSTR,
-    pub pTypeInfo: super::Com::ITypeInfo,
+    pub pTypeInfo: *mut *mut *mut *mut super::Com::ITypeInfo,
     pub iOrdinal: usize,
     pub dwFlags: u32,
     pub ulColumnSize: usize,
@@ -1451,7 +1451,7 @@ impl ::core::clone::Clone for DBCOLUMNINFO {
 #[cfg(all(feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com"))]
 pub struct DBCOLUMNINFO {
     pub pwszName: ::windows_sys::core::PWSTR,
-    pub pTypeInfo: super::Com::ITypeInfo,
+    pub pTypeInfo: *mut *mut *mut *mut super::Com::ITypeInfo,
     pub iOrdinal: usize,
     pub dwFlags: u32,
     pub ulColumnSize: usize,
@@ -1791,9 +1791,9 @@ pub const DBGUID_XPATH: ::windows_sys::core::GUID = ::windows_sys::core::GUID { 
 #[doc = "*Required features: `\"Win32_System_Search\"`*"]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 pub struct DBIMPLICITSESSION {
-    pub pUnkOuter: ::windows_sys::core::IUnknown,
+    pub pUnkOuter: *mut *mut *mut *mut ::windows_sys::core::IUnknown,
     pub piid: *mut ::windows_sys::core::GUID,
-    pub pSession: ::windows_sys::core::IUnknown,
+    pub pSession: *mut *mut *mut *mut ::windows_sys::core::IUnknown,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 impl ::core::marker::Copy for DBIMPLICITSESSION {}
@@ -1807,9 +1807,9 @@ impl ::core::clone::Clone for DBIMPLICITSESSION {
 #[doc = "*Required features: `\"Win32_System_Search\"`*"]
 #[cfg(target_arch = "x86")]
 pub struct DBIMPLICITSESSION {
-    pub pUnkOuter: ::windows_sys::core::IUnknown,
+    pub pUnkOuter: *mut *mut *mut *mut ::windows_sys::core::IUnknown,
     pub piid: *mut ::windows_sys::core::GUID,
-    pub pSession: ::windows_sys::core::IUnknown,
+    pub pSession: *mut *mut *mut *mut ::windows_sys::core::IUnknown,
 }
 #[cfg(target_arch = "x86")]
 impl ::core::marker::Copy for DBIMPLICITSESSION {}
@@ -2093,7 +2093,7 @@ pub struct DBPARAMINFO {
     pub dwFlags: u32,
     pub iOrdinal: usize,
     pub pwszName: ::windows_sys::core::PWSTR,
-    pub pTypeInfo: super::Com::ITypeInfo,
+    pub pTypeInfo: *mut *mut *mut *mut super::Com::ITypeInfo,
     pub ulParamSize: usize,
     pub wType: u16,
     pub bPrecision: u8,
@@ -2117,7 +2117,7 @@ pub struct DBPARAMINFO {
     pub dwFlags: u32,
     pub iOrdinal: usize,
     pub pwszName: ::windows_sys::core::PWSTR,
-    pub pTypeInfo: super::Com::ITypeInfo,
+    pub pTypeInfo: *mut *mut *mut *mut super::Com::ITypeInfo,
     pub ulParamSize: usize,
     pub wType: u16,
     pub bPrecision: u8,
@@ -4496,9 +4496,27 @@ pub const DS_E_UNKNOWNREQUEST: i32 = -2147220476i32;
 #[doc = "*Required features: `\"Win32_System_Search\"`*"]
 pub const DS_E_VALUETOOLARGE: i32 = -2147220451i32;
 pub const DataLinks: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 570871218, data2: 6593, data3: 4561, data4: [137, 224, 0, 192, 79, 215, 168, 41] };
-pub type DataSource = *mut ::core::ffi::c_void;
-pub type DataSourceListener = *mut ::core::ffi::c_void;
-pub type DataSourceObject = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct DataSource {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub getDataMember: unsafe extern "system" fn(this: *mut *mut Self, bstrdm: *const u16, riid: *const ::windows_sys::core::GUID, ppunk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub getDataMemberName: unsafe extern "system" fn(this: *mut *mut Self, lindex: i32, pbstrdm: *mut *mut u16) -> ::windows_sys::core::HRESULT,
+    pub getDataMemberCount: unsafe extern "system" fn(this: *mut *mut Self, plcount: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub addDataSourceListener: unsafe extern "system" fn(this: *mut *mut Self, pdsl: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub removeDataSourceListener: unsafe extern "system" fn(this: *mut *mut Self, pdsl: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct DataSourceListener {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub dataMemberChanged: unsafe extern "system" fn(this: *mut *mut Self, bstrdm: *const u16) -> ::windows_sys::core::HRESULT,
+    pub dataMemberAdded: unsafe extern "system" fn(this: *mut *mut Self, bstrdm: *const u16) -> ::windows_sys::core::HRESULT,
+    pub dataMemberRemoved: unsafe extern "system" fn(this: *mut *mut Self, bstrdm: *const u16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct DataSourceObject {
+    pub base__: super::Com::IDispatch,
+}
 #[doc = "*Required features: `\"Win32_System_Search\"`*"]
 pub type EBindInfoOptions = i32;
 #[doc = "*Required features: `\"Win32_System_Search\"`*"]
@@ -5500,45 +5518,424 @@ impl ::core::clone::Clone for HITRANGE {
         *self
     }
 }
-pub type IAccessor = *mut ::core::ffi::c_void;
-pub type IAlterIndex = *mut ::core::ffi::c_void;
-pub type IAlterTable = *mut ::core::ffi::c_void;
-pub type IBindResource = *mut ::core::ffi::c_void;
-pub type IChapteredRowset = *mut ::core::ffi::c_void;
-pub type IColumnMapper = *mut ::core::ffi::c_void;
-pub type IColumnMapperCreator = *mut ::core::ffi::c_void;
-pub type IColumnsInfo = *mut ::core::ffi::c_void;
-pub type IColumnsInfo2 = *mut ::core::ffi::c_void;
-pub type IColumnsRowset = *mut ::core::ffi::c_void;
-pub type ICommand = *mut ::core::ffi::c_void;
-pub type ICommandCost = *mut ::core::ffi::c_void;
-pub type ICommandPersist = *mut ::core::ffi::c_void;
-pub type ICommandPrepare = *mut ::core::ffi::c_void;
-pub type ICommandProperties = *mut ::core::ffi::c_void;
-pub type ICommandStream = *mut ::core::ffi::c_void;
-pub type ICommandText = *mut ::core::ffi::c_void;
-pub type ICommandValidate = *mut ::core::ffi::c_void;
-pub type ICommandWithParameters = *mut ::core::ffi::c_void;
-pub type ICondition = *mut ::core::ffi::c_void;
-pub type ICondition2 = *mut ::core::ffi::c_void;
-pub type IConditionFactory = *mut ::core::ffi::c_void;
-pub type IConditionFactory2 = *mut ::core::ffi::c_void;
-pub type IConditionGenerator = *mut ::core::ffi::c_void;
-pub type IConvertType = *mut ::core::ffi::c_void;
-pub type ICreateRow = *mut ::core::ffi::c_void;
-pub type IDBAsynchNotify = *mut ::core::ffi::c_void;
-pub type IDBAsynchStatus = *mut ::core::ffi::c_void;
-pub type IDBBinderProperties = *mut ::core::ffi::c_void;
-pub type IDBCreateCommand = *mut ::core::ffi::c_void;
-pub type IDBCreateSession = *mut ::core::ffi::c_void;
-pub type IDBDataSourceAdmin = *mut ::core::ffi::c_void;
-pub type IDBInfo = *mut ::core::ffi::c_void;
-pub type IDBInitialize = *mut ::core::ffi::c_void;
-pub type IDBPromptInitialize = *mut ::core::ffi::c_void;
-pub type IDBProperties = *mut ::core::ffi::c_void;
-pub type IDBSchemaCommand = *mut ::core::ffi::c_void;
-pub type IDBSchemaRowset = *mut ::core::ffi::c_void;
-pub type IDCInfo = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IAccessor {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub AddRefAccessor: unsafe extern "system" fn(this: *mut *mut Self, haccessor: usize, pcrefcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreateAccessor: unsafe extern "system" fn(this: *mut *mut Self, dwaccessorflags: u32, cbindings: usize, rgbindings: *const DBBINDING, cbrowsize: usize, phaccessor: *mut usize, rgstatus: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CreateAccessor: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetBindings: unsafe extern "system" fn(this: *mut *mut Self, haccessor: usize, pdwaccessorflags: *mut u32, pcbindings: *mut usize, prgbindings: *mut *mut DBBINDING) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetBindings: usize,
+    pub ReleaseAccessor: unsafe extern "system" fn(this: *mut *mut Self, haccessor: usize, pcrefcount: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAlterIndex {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub AlterIndex: unsafe extern "system" fn(this: *mut *mut Self, ptableid: *mut super::super::Storage::IndexServer::DBID, pindexid: *mut super::super::Storage::IndexServer::DBID, pnewindexid: *mut super::super::Storage::IndexServer::DBID, cpropertysets: u32, rgpropertysets: *mut DBPROPSET) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    AlterIndex: usize,
+}
+#[repr(C)]
+pub struct IAlterTable {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub AlterColumn: unsafe extern "system" fn(this: *mut *mut Self, ptableid: *mut super::super::Storage::IndexServer::DBID, pcolumnid: *mut super::super::Storage::IndexServer::DBID, dwcolumndescflags: u32, pcolumndesc: *mut DBCOLUMNDESC) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    AlterColumn: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub AlterTable: unsafe extern "system" fn(this: *mut *mut Self, ptableid: *mut super::super::Storage::IndexServer::DBID, pnewtableid: *mut super::super::Storage::IndexServer::DBID, cpropertysets: u32, rgpropertysets: *mut DBPROPSET) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    AlterTable: usize,
+}
+#[repr(C)]
+pub struct IBindResource {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Bind: unsafe extern "system" fn(this: *mut *mut Self, punkouter: *mut ::core::ffi::c_void, pwszurl: ::windows_sys::core::PCWSTR, dwbindurlflags: u32, rguid: *const ::windows_sys::core::GUID, riid: *const ::windows_sys::core::GUID, pauthenticate: *mut ::core::ffi::c_void, pimplsession: *mut DBIMPLICITSESSION, pdwbindstatus: *mut u32, ppunk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Bind: usize,
+}
+#[repr(C)]
+pub struct IChapteredRowset {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub AddRefChapter: unsafe extern "system" fn(this: *mut *mut Self, hchapter: usize, pcrefcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub ReleaseChapter: unsafe extern "system" fn(this: *mut *mut Self, hchapter: usize, pcrefcount: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IColumnMapper {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Storage_IndexServer")]
+    pub GetPropInfoFromName: unsafe extern "system" fn(this: *mut *mut Self, wcspropname: ::windows_sys::core::PCWSTR, pppropid: *mut *mut super::super::Storage::IndexServer::DBID, pproptype: *mut u16, puiwidth: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Storage_IndexServer"))]
+    GetPropInfoFromName: usize,
+    #[cfg(feature = "Win32_Storage_IndexServer")]
+    pub GetPropInfoFromId: unsafe extern "system" fn(this: *mut *mut Self, ppropid: *const super::super::Storage::IndexServer::DBID, pwcsname: *mut *mut u16, pproptype: *mut u16, puiwidth: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Storage_IndexServer"))]
+    GetPropInfoFromId: usize,
+    #[cfg(feature = "Win32_Storage_IndexServer")]
+    pub EnumPropInfo: unsafe extern "system" fn(this: *mut *mut Self, ientry: u32, pwcsname: *const *const u16, pppropid: *mut *mut super::super::Storage::IndexServer::DBID, pproptype: *mut u16, puiwidth: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Storage_IndexServer"))]
+    EnumPropInfo: usize,
+    pub IsMapUpToDate: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IColumnMapperCreator {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetColumnMapper: unsafe extern "system" fn(this: *mut *mut Self, wcsmachinename: ::windows_sys::core::PCWSTR, wcscatalogname: ::windows_sys::core::PCWSTR, ppcolumnmapper: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IColumnsInfo {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com"))]
+    pub GetColumnInfo: unsafe extern "system" fn(this: *mut *mut Self, pccolumns: *mut usize, prginfo: *mut *mut DBCOLUMNINFO, ppstringsbuffer: *mut *mut u16) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com")))]
+    GetColumnInfo: usize,
+    #[cfg(feature = "Win32_Storage_IndexServer")]
+    pub MapColumnIDs: unsafe extern "system" fn(this: *mut *mut Self, ccolumnids: usize, rgcolumnids: *const super::super::Storage::IndexServer::DBID, rgcolumns: *mut usize) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Storage_IndexServer"))]
+    MapColumnIDs: usize,
+}
+#[repr(C)]
+pub struct IColumnsInfo2 {
+    pub base__: IColumnsInfo,
+    #[cfg(all(feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com"))]
+    pub GetRestrictedColumnInfo: unsafe extern "system" fn(this: *mut *mut Self, ccolumnidmasks: usize, rgcolumnidmasks: *const super::super::Storage::IndexServer::DBID, dwflags: u32, pccolumns: *mut usize, prgcolumnids: *mut *mut super::super::Storage::IndexServer::DBID, prgcolumninfo: *mut *mut DBCOLUMNINFO, ppstringsbuffer: *mut *mut u16) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com")))]
+    GetRestrictedColumnInfo: usize,
+}
+#[repr(C)]
+pub struct IColumnsRowset {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Storage_IndexServer")]
+    pub GetAvailableColumns: unsafe extern "system" fn(this: *mut *mut Self, pcoptcolumns: *mut usize, prgoptcolumns: *mut *mut super::super::Storage::IndexServer::DBID) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Storage_IndexServer"))]
+    GetAvailableColumns: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetColumnsRowset: unsafe extern "system" fn(this: *mut *mut Self, punkouter: *mut ::core::ffi::c_void, coptcolumns: usize, rgoptcolumns: *const super::super::Storage::IndexServer::DBID, riid: *const ::windows_sys::core::GUID, cpropertysets: u32, rgpropertysets: *mut DBPROPSET, ppcolrowset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetColumnsRowset: usize,
+}
+#[repr(C)]
+pub struct ICommand {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Cancel: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Execute: unsafe extern "system" fn(this: *mut *mut Self, punkouter: *mut ::core::ffi::c_void, riid: *const ::windows_sys::core::GUID, pparams: *mut DBPARAMS, pcrowsaffected: *mut isize, pprowset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetDBSession: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppsession: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ICommandCost {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetAccumulatedCost: unsafe extern "system" fn(this: *mut *mut Self, pwszrowsetname: ::windows_sys::core::PCWSTR, pccostlimits: *mut u32, prgcostlimits: *mut *mut DBCOST) -> ::windows_sys::core::HRESULT,
+    pub GetCostEstimate: unsafe extern "system" fn(this: *mut *mut Self, pwszrowsetname: ::windows_sys::core::PCWSTR, pccostestimates: *mut u32, prgcostestimates: *mut DBCOST) -> ::windows_sys::core::HRESULT,
+    pub GetCostGoals: unsafe extern "system" fn(this: *mut *mut Self, pwszrowsetname: ::windows_sys::core::PCWSTR, pccostgoals: *mut u32, prgcostgoals: *mut DBCOST) -> ::windows_sys::core::HRESULT,
+    pub GetCostLimits: unsafe extern "system" fn(this: *mut *mut Self, pwszrowsetname: ::windows_sys::core::PCWSTR, pccostlimits: *mut u32, prgcostlimits: *mut DBCOST) -> ::windows_sys::core::HRESULT,
+    pub SetCostGoals: unsafe extern "system" fn(this: *mut *mut Self, pwszrowsetname: ::windows_sys::core::PCWSTR, ccostgoals: u32, rgcostgoals: *const DBCOST) -> ::windows_sys::core::HRESULT,
+    pub SetCostLimits: unsafe extern "system" fn(this: *mut *mut Self, pwszrowsetname: ::windows_sys::core::PCWSTR, ccostlimits: u32, prgcostlimits: *mut DBCOST, dwexecutionflags: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ICommandPersist {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Storage_IndexServer")]
+    pub DeleteCommand: unsafe extern "system" fn(this: *mut *mut Self, pcommandid: *mut super::super::Storage::IndexServer::DBID) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Storage_IndexServer"))]
+    DeleteCommand: usize,
+    #[cfg(feature = "Win32_Storage_IndexServer")]
+    pub GetCurrentCommand: unsafe extern "system" fn(this: *mut *mut Self, ppcommandid: *mut *mut super::super::Storage::IndexServer::DBID) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Storage_IndexServer"))]
+    GetCurrentCommand: usize,
+    #[cfg(feature = "Win32_Storage_IndexServer")]
+    pub LoadCommand: unsafe extern "system" fn(this: *mut *mut Self, pcommandid: *mut super::super::Storage::IndexServer::DBID, dwflags: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Storage_IndexServer"))]
+    LoadCommand: usize,
+    #[cfg(feature = "Win32_Storage_IndexServer")]
+    pub SaveCommand: unsafe extern "system" fn(this: *mut *mut Self, pcommandid: *mut super::super::Storage::IndexServer::DBID, dwflags: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Storage_IndexServer"))]
+    SaveCommand: usize,
+}
+#[repr(C)]
+pub struct ICommandPrepare {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Prepare: unsafe extern "system" fn(this: *mut *mut Self, cexpectedruns: u32) -> ::windows_sys::core::HRESULT,
+    pub Unprepare: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ICommandProperties {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetProperties: unsafe extern "system" fn(this: *mut *mut Self, cpropertyidsets: u32, rgpropertyidsets: *const DBPROPIDSET, pcpropertysets: *mut u32, prgpropertysets: *mut *mut DBPROPSET) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetProperties: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetProperties: unsafe extern "system" fn(this: *mut *mut Self, cpropertysets: u32, rgpropertysets: *const DBPROPSET) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetProperties: usize,
+}
+#[repr(C)]
+pub struct ICommandStream {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCommandStream: unsafe extern "system" fn(this: *mut *mut Self, piid: *mut ::windows_sys::core::GUID, pguiddialect: *mut ::windows_sys::core::GUID, ppcommandstream: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetCommandStream: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, rguiddialect: *const ::windows_sys::core::GUID, pcommandstream: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ICommandText {
+    pub base__: ICommand,
+    pub GetCommandText: unsafe extern "system" fn(this: *mut *mut Self, pguiddialect: *mut ::windows_sys::core::GUID, ppwszcommand: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetCommandText: unsafe extern "system" fn(this: *mut *mut Self, rguiddialect: *const ::windows_sys::core::GUID, pwszcommand: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ICommandValidate {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub ValidateCompletely: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub ValidateSyntax: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ICommandWithParameters {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetParameterInfo: unsafe extern "system" fn(this: *mut *mut Self, pcparams: *mut usize, prgparaminfo: *mut *mut DBPARAMINFO, ppnamesbuffer: *mut *mut u16) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetParameterInfo: usize,
+    pub MapParameterNames: unsafe extern "system" fn(this: *mut *mut Self, cparamnames: usize, rgparamnames: *const ::windows_sys::core::PWSTR, rgparamordinals: *mut isize) -> ::windows_sys::core::HRESULT,
+    pub SetParameterInfo: unsafe extern "system" fn(this: *mut *mut Self, cparams: usize, rgparamordinals: *const usize, rgparambindinfo: *const DBPARAMBINDINFO) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ICondition {
+    pub base__: super::Com::IPersistStream,
+    #[cfg(feature = "Win32_System_Search_Common")]
+    pub GetConditionType: unsafe extern "system" fn(this: *mut *mut Self, pnodetype: *mut Common::CONDITION_TYPE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Search_Common"))]
+    GetConditionType: usize,
+    pub GetSubConditions: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage", feature = "Win32_System_Search_Common"))]
+    pub GetComparisonInfo: unsafe extern "system" fn(this: *mut *mut Self, ppszpropertyname: *mut ::windows_sys::core::PWSTR, pcop: *mut Common::CONDITION_OPERATION, ppropvar: *mut super::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage", feature = "Win32_System_Search_Common")))]
+    GetComparisonInfo: usize,
+    pub GetValueType: unsafe extern "system" fn(this: *mut *mut Self, ppszvaluetypename: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetValueNormalization: unsafe extern "system" fn(this: *mut *mut Self, ppsznormalization: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetInputTerms: unsafe extern "system" fn(this: *mut *mut Self, pppropertyterm: *mut *mut ::core::ffi::c_void, ppoperationterm: *mut *mut ::core::ffi::c_void, ppvalueterm: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppc: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Clone: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct ICondition2 {
+    pub base__: ICondition,
+    pub GetLocale: unsafe extern "system" fn(this: *mut *mut Self, ppszlocalename: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage", feature = "Win32_System_Search_Common", feature = "Win32_UI_Shell_PropertiesSystem"))]
+    pub GetLeafConditionInfo: unsafe extern "system" fn(this: *mut *mut Self, ppropkey: *mut super::super::UI::Shell::PropertiesSystem::PROPERTYKEY, pcop: *mut Common::CONDITION_OPERATION, ppropvar: *mut super::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage", feature = "Win32_System_Search_Common", feature = "Win32_UI_Shell_PropertiesSystem")))]
+    GetLeafConditionInfo: usize,
+}
+#[repr(C)]
+pub struct IConditionFactory {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub MakeNot: unsafe extern "system" fn(this: *mut *mut Self, pcsub: *mut ::core::ffi::c_void, fsimplify: super::super::Foundation::BOOL, ppcresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    MakeNot: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Search_Common"))]
+    pub MakeAndOr: unsafe extern "system" fn(this: *mut *mut Self, ct: Common::CONDITION_TYPE, peusubs: *mut ::core::ffi::c_void, fsimplify: super::super::Foundation::BOOL, ppcresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Search_Common")))]
+    MakeAndOr: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage", feature = "Win32_System_Search_Common"))]
+    pub MakeLeaf: unsafe extern "system" fn(this: *mut *mut Self, pszpropertyname: ::windows_sys::core::PCWSTR, cop: Common::CONDITION_OPERATION, pszvaluetype: ::windows_sys::core::PCWSTR, ppropvar: *const super::Com::StructuredStorage::PROPVARIANT, ppropertynameterm: *mut ::core::ffi::c_void, poperationterm: *mut ::core::ffi::c_void, pvalueterm: *mut ::core::ffi::c_void, fexpand: super::super::Foundation::BOOL, ppcresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage", feature = "Win32_System_Search_Common")))]
+    MakeLeaf: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub Resolve: unsafe extern "system" fn(this: *mut *mut Self, pc: *mut ::core::ffi::c_void, sqro: STRUCTURED_QUERY_RESOLVE_OPTION, pstreferencetime: *const super::super::Foundation::SYSTEMTIME, ppcresolved: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    Resolve: usize,
+}
+#[repr(C)]
+pub struct IConditionFactory2 {
+    pub base__: IConditionFactory,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CreateTrueFalse: unsafe extern "system" fn(this: *mut *mut Self, fval: super::super::Foundation::BOOL, cco: CONDITION_CREATION_OPTIONS, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CreateTrueFalse: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreateNegation: unsafe extern "system" fn(this: *mut *mut Self, pcsub: *mut ::core::ffi::c_void, cco: CONDITION_CREATION_OPTIONS, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CreateNegation: usize,
+    #[cfg(all(feature = "Win32_System_Search_Common", feature = "Win32_UI_Shell_Common"))]
+    pub CreateCompoundFromObjectArray: unsafe extern "system" fn(this: *mut *mut Self, ct: Common::CONDITION_TYPE, poasubs: *mut ::core::ffi::c_void, cco: CONDITION_CREATION_OPTIONS, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_System_Search_Common", feature = "Win32_UI_Shell_Common")))]
+    CreateCompoundFromObjectArray: usize,
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Search_Common"))]
+    pub CreateCompoundFromArray: unsafe extern "system" fn(this: *mut *mut Self, ct: Common::CONDITION_TYPE, ppcondsubs: *const *mut ::core::ffi::c_void, csubs: u32, cco: CONDITION_CREATION_OPTIONS, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Search_Common")))]
+    CreateCompoundFromArray: usize,
+    #[cfg(all(feature = "Win32_System_Search_Common", feature = "Win32_UI_Shell_PropertiesSystem"))]
+    pub CreateStringLeaf: unsafe extern "system" fn(this: *mut *mut Self, propkey: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY, cop: Common::CONDITION_OPERATION, pszvalue: ::windows_sys::core::PCWSTR, pszlocalename: ::windows_sys::core::PCWSTR, cco: CONDITION_CREATION_OPTIONS, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_System_Search_Common", feature = "Win32_UI_Shell_PropertiesSystem")))]
+    CreateStringLeaf: usize,
+    #[cfg(all(feature = "Win32_System_Search_Common", feature = "Win32_UI_Shell_PropertiesSystem"))]
+    pub CreateIntegerLeaf: unsafe extern "system" fn(this: *mut *mut Self, propkey: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY, cop: Common::CONDITION_OPERATION, lvalue: i32, cco: CONDITION_CREATION_OPTIONS, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_System_Search_Common", feature = "Win32_UI_Shell_PropertiesSystem")))]
+    CreateIntegerLeaf: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Search_Common", feature = "Win32_UI_Shell_PropertiesSystem"))]
+    pub CreateBooleanLeaf: unsafe extern "system" fn(this: *mut *mut Self, propkey: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY, cop: Common::CONDITION_OPERATION, fvalue: super::super::Foundation::BOOL, cco: CONDITION_CREATION_OPTIONS, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Search_Common", feature = "Win32_UI_Shell_PropertiesSystem")))]
+    CreateBooleanLeaf: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage", feature = "Win32_System_Search_Common", feature = "Win32_UI_Shell_PropertiesSystem"))]
+    pub CreateLeaf: unsafe extern "system" fn(this: *mut *mut Self, propkey: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY, cop: Common::CONDITION_OPERATION, propvar: *const super::Com::StructuredStorage::PROPVARIANT, pszsemantictype: ::windows_sys::core::PCWSTR, pszlocalename: ::windows_sys::core::PCWSTR, ppropertynameterm: *mut ::core::ffi::c_void, poperationterm: *mut ::core::ffi::c_void, pvalueterm: *mut ::core::ffi::c_void, cco: CONDITION_CREATION_OPTIONS, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage", feature = "Win32_System_Search_Common", feature = "Win32_UI_Shell_PropertiesSystem")))]
+    CreateLeaf: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub ResolveCondition: unsafe extern "system" fn(this: *mut *mut Self, pc: *mut ::core::ffi::c_void, sqro: STRUCTURED_QUERY_RESOLVE_OPTION, pstreferencetime: *const super::super::Foundation::SYSTEMTIME, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    ResolveCondition: usize,
+}
+#[repr(C)]
+pub struct IConditionGenerator {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, pschemaprovider: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RecognizeNamedEntities: unsafe extern "system" fn(this: *mut *mut Self, pszinputstring: ::windows_sys::core::PCWSTR, lciduserlocale: u32, ptokencollection: *mut ::core::ffi::c_void, pnamedentities: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Search_Common"))]
+    pub GenerateForLeaf: unsafe extern "system" fn(this: *mut *mut Self, pconditionfactory: *mut ::core::ffi::c_void, pszpropertyname: ::windows_sys::core::PCWSTR, cop: Common::CONDITION_OPERATION, pszvaluetype: ::windows_sys::core::PCWSTR, pszvalue: ::windows_sys::core::PCWSTR, pszvalue2: ::windows_sys::core::PCWSTR, ppropertynameterm: *mut ::core::ffi::c_void, poperationterm: *mut ::core::ffi::c_void, pvalueterm: *mut ::core::ffi::c_void, automaticwildcard: super::super::Foundation::BOOL, pnostringquery: *mut super::super::Foundation::BOOL, ppqueryexpression: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Search_Common")))]
+    GenerateForLeaf: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    pub DefaultPhrase: unsafe extern "system" fn(this: *mut *mut Self, pszvaluetype: ::windows_sys::core::PCWSTR, ppropvar: *const super::Com::StructuredStorage::PROPVARIANT, fuseenglish: super::super::Foundation::BOOL, ppszphrase: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    DefaultPhrase: usize,
+}
+#[repr(C)]
+pub struct IConvertType {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub CanConvert: unsafe extern "system" fn(this: *mut *mut Self, wfromtype: u16, wtotype: u16, dwconvertflags: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ICreateRow {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreateRow: unsafe extern "system" fn(this: *mut *mut Self, punkouter: *mut ::core::ffi::c_void, pwszurl: ::windows_sys::core::PCWSTR, dwbindurlflags: u32, rguid: *const ::windows_sys::core::GUID, riid: *const ::windows_sys::core::GUID, pauthenticate: *mut ::core::ffi::c_void, pimplsession: *mut DBIMPLICITSESSION, pdwbindstatus: *mut u32, ppwsznewurl: *mut ::windows_sys::core::PWSTR, ppunk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CreateRow: usize,
+}
+#[repr(C)]
+pub struct IDBAsynchNotify {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnLowResource: unsafe extern "system" fn(this: *mut *mut Self, dwreserved: usize) -> ::windows_sys::core::HRESULT,
+    pub OnProgress: unsafe extern "system" fn(this: *mut *mut Self, hchapter: usize, eoperation: u32, ulprogress: usize, ulprogressmax: usize, easynchphase: u32, pwszstatustext: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub OnStop: unsafe extern "system" fn(this: *mut *mut Self, hchapter: usize, eoperation: u32, hrstatus: ::windows_sys::core::HRESULT, pwszstatustext: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDBAsynchStatus {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Abort: unsafe extern "system" fn(this: *mut *mut Self, hchapter: usize, eoperation: u32) -> ::windows_sys::core::HRESULT,
+    pub GetStatus: unsafe extern "system" fn(this: *mut *mut Self, hchapter: usize, eoperation: u32, pulprogress: *mut usize, pulprogressmax: *mut usize, peasynchphase: *mut u32, ppwszstatustext: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDBBinderProperties {
+    pub base__: IDBProperties,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDBCreateCommand {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub CreateCommand: unsafe extern "system" fn(this: *mut *mut Self, punkouter: *mut ::core::ffi::c_void, riid: *const ::windows_sys::core::GUID, ppcommand: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDBCreateSession {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub CreateSession: unsafe extern "system" fn(this: *mut *mut Self, punkouter: *mut ::core::ffi::c_void, riid: *const ::windows_sys::core::GUID, ppdbsession: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDBDataSourceAdmin {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub CreateDataSource: unsafe extern "system" fn(this: *mut *mut Self, cpropertysets: u32, rgpropertysets: *mut DBPROPSET, punkouter: *mut ::core::ffi::c_void, riid: *const ::windows_sys::core::GUID, ppdbsession: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    CreateDataSource: usize,
+    pub DestroyDataSource: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetCreationProperties: unsafe extern "system" fn(this: *mut *mut Self, cpropertyidsets: u32, rgpropertyidsets: *const DBPROPIDSET, pcpropertyinfosets: *mut u32, prgpropertyinfosets: *mut *mut DBPROPINFOSET, ppdescbuffer: *mut *mut u16) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetCreationProperties: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub ModifyDataSource: unsafe extern "system" fn(this: *mut *mut Self, cpropertysets: u32, rgpropertysets: *mut DBPROPSET) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    ModifyDataSource: usize,
+}
+#[repr(C)]
+pub struct IDBInfo {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetKeywords: unsafe extern "system" fn(this: *mut *mut Self, ppwszkeywords: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetLiteralInfo: unsafe extern "system" fn(this: *mut *mut Self, cliterals: u32, rgliterals: *const u32, pcliteralinfo: *mut u32, prgliteralinfo: *mut *mut DBLITERALINFO, ppcharbuffer: *mut *mut u16) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetLiteralInfo: usize,
+}
+#[repr(C)]
+pub struct IDBInitialize {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Uninitialize: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDBPromptInitialize {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub PromptDataSource: unsafe extern "system" fn(this: *mut *mut Self, punkouter: *mut ::core::ffi::c_void, hwndparent: super::super::Foundation::HWND, dwpromptoptions: u32, csourcetypefilter: u32, rgsourcetypefilter: *const u32, pwszszzproviderfilter: ::windows_sys::core::PCWSTR, riid: *const ::windows_sys::core::GUID, ppdatasource: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    PromptDataSource: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub PromptFileName: unsafe extern "system" fn(this: *mut *mut Self, hwndparent: super::super::Foundation::HWND, dwpromptoptions: u32, pwszinitialdirectory: ::windows_sys::core::PCWSTR, pwszinitialfile: ::windows_sys::core::PCWSTR, ppwszselectedfile: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    PromptFileName: usize,
+}
+#[repr(C)]
+pub struct IDBProperties {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetProperties: unsafe extern "system" fn(this: *mut *mut Self, cpropertyidsets: u32, rgpropertyidsets: *const DBPROPIDSET, pcpropertysets: *mut u32, prgpropertysets: *mut *mut DBPROPSET) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetProperties: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetPropertyInfo: unsafe extern "system" fn(this: *mut *mut Self, cpropertyidsets: u32, rgpropertyidsets: *const DBPROPIDSET, pcpropertyinfosets: *mut u32, prgpropertyinfosets: *mut *mut DBPROPINFOSET, ppdescbuffer: *mut *mut u16) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetPropertyInfo: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetProperties: unsafe extern "system" fn(this: *mut *mut Self, cpropertysets: u32, rgpropertysets: *mut DBPROPSET) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetProperties: usize,
+}
+#[repr(C)]
+pub struct IDBSchemaCommand {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCommand: unsafe extern "system" fn(this: *mut *mut Self, punkouter: *mut ::core::ffi::c_void, rguidschema: *const ::windows_sys::core::GUID, ppcommand: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetSchemas: unsafe extern "system" fn(this: *mut *mut Self, pcschemas: *mut u32, prgschemas: *mut *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDBSchemaRowset {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetRowset: unsafe extern "system" fn(this: *mut *mut Self, punkouter: *mut ::core::ffi::c_void, rguidschema: *const ::windows_sys::core::GUID, crestrictions: u32, rgrestrictions: *const super::Com::VARIANT, riid: *const ::windows_sys::core::GUID, cpropertysets: u32, rgpropertysets: *mut DBPROPSET, pprowset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetRowset: usize,
+    pub GetSchemas: unsafe extern "system" fn(this: *mut *mut Self, pcschemas: *mut u32, prgschemas: *mut *mut ::windows_sys::core::GUID, prgrestrictionsupport: *mut *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDCInfo {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetInfo: unsafe extern "system" fn(this: *mut *mut Self, cinfo: u32, rgeinfotype: *const u32, prginfo: *mut *mut DCINFO) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetInfo: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetInfo: unsafe extern "system" fn(this: *mut *mut Self, cinfo: u32, rginfo: *const DCINFO) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetInfo: usize,
+}
 #[doc = "*Required features: `\"Win32_System_Search\"`*"]
 pub const IDENTIFIER_SDK_ERROR: u32 = 268435456u32;
 #[doc = "*Required features: `\"Win32_System_Search\"`*"]
@@ -5655,29 +6052,223 @@ pub const IDX_S_NO_BUILD_IN_PROGRESS: i32 = 266516i32;
 pub const IDX_S_SEARCH_SERVER_ALREADY_EXISTS: i32 = 266517i32;
 #[doc = "*Required features: `\"Win32_System_Search\"`*"]
 pub const IDX_S_SEARCH_SERVER_DOES_NOT_EXIST: i32 = 266518i32;
-pub type IDataConvert = *mut ::core::ffi::c_void;
-pub type IDataInitialize = *mut ::core::ffi::c_void;
-pub type IDataSourceLocator = *mut ::core::ffi::c_void;
-pub type IEntity = *mut ::core::ffi::c_void;
-pub type IEnumItemProperties = *mut ::core::ffi::c_void;
-pub type IEnumSearchRoots = *mut ::core::ffi::c_void;
-pub type IEnumSearchScopeRules = *mut ::core::ffi::c_void;
-pub type IEnumSubscription = *mut ::core::ffi::c_void;
-pub type IErrorLookup = *mut ::core::ffi::c_void;
-pub type IErrorRecords = *mut ::core::ffi::c_void;
-pub type IGetDataSource = *mut ::core::ffi::c_void;
-pub type IGetRow = *mut ::core::ffi::c_void;
-pub type IGetSession = *mut ::core::ffi::c_void;
-pub type IGetSourceRow = *mut ::core::ffi::c_void;
-pub type IIndexDefinition = *mut ::core::ffi::c_void;
-pub type IInterval = *mut ::core::ffi::c_void;
-pub type ILoadFilter = *mut ::core::ffi::c_void;
-pub type ILoadFilterWithPrivateComActivation = *mut ::core::ffi::c_void;
-pub type IMDDataset = *mut ::core::ffi::c_void;
-pub type IMDFind = *mut ::core::ffi::c_void;
-pub type IMDRangeRowset = *mut ::core::ffi::c_void;
-pub type IMetaData = *mut ::core::ffi::c_void;
-pub type IMultipleResults = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IDataConvert {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub DataConvert: unsafe extern "system" fn(this: *mut *mut Self, wsrctype: u16, wdsttype: u16, cbsrclength: usize, pcbdstlength: *mut usize, psrc: *const ::core::ffi::c_void, pdst: *mut ::core::ffi::c_void, cbdstmaxlength: usize, dbssrcstatus: u32, pdbsstatus: *mut u32, bprecision: u8, bscale: u8, dwflags: u32) -> ::windows_sys::core::HRESULT,
+    pub CanConvert: unsafe extern "system" fn(this: *mut *mut Self, wsrctype: u16, wdsttype: u16) -> ::windows_sys::core::HRESULT,
+    pub GetConversionSize: unsafe extern "system" fn(this: *mut *mut Self, wsrctype: u16, wdsttype: u16, pcbsrclength: *const usize, pcbdstlength: *mut usize, psrc: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IDataInitialize {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetDataSource: unsafe extern "system" fn(this: *mut *mut Self, punkouter: *mut ::core::ffi::c_void, dwclsctx: u32, pwszinitializationstring: ::windows_sys::core::PCWSTR, riid: *const ::windows_sys::core::GUID, ppdatasource: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetInitializationString: unsafe extern "system" fn(this: *mut *mut Self, pdatasource: *mut ::core::ffi::c_void, fincludepassword: u8, ppwszinitstring: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub CreateDBInstance: unsafe extern "system" fn(this: *mut *mut Self, clsidprovider: *const ::windows_sys::core::GUID, punkouter: *mut ::core::ffi::c_void, dwclsctx: u32, pwszreserved: ::windows_sys::core::PCWSTR, riid: *const ::windows_sys::core::GUID, ppdatasource: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreateDBInstanceEx: unsafe extern "system" fn(this: *mut *mut Self, clsidprovider: *const ::windows_sys::core::GUID, punkouter: *mut ::core::ffi::c_void, dwclsctx: u32, pwszreserved: ::windows_sys::core::PCWSTR, pserverinfo: *const super::Com::COSERVERINFO, cmq: u32, rgmqresults: *mut super::Com::MULTI_QI) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CreateDBInstanceEx: usize,
+    pub LoadStringFromStorage: unsafe extern "system" fn(this: *mut *mut Self, pwszfilename: ::windows_sys::core::PCWSTR, ppwszinitializationstring: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub WriteStringToStorage: unsafe extern "system" fn(this: *mut *mut Self, pwszfilename: ::windows_sys::core::PCWSTR, pwszinitializationstring: ::windows_sys::core::PCWSTR, dwcreationdisposition: u32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+#[repr(C)]
+pub struct IDataSourceLocator {
+    pub base__: super::Com::IDispatch,
+    pub hWnd: unsafe extern "system" fn(this: *mut *mut Self, phwndparent: *mut i64) -> ::windows_sys::core::HRESULT,
+    pub SethWnd: unsafe extern "system" fn(this: *mut *mut Self, hwndparent: i64) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub PromptNew: unsafe extern "system" fn(this: *mut *mut Self, ppadoconnection: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    PromptNew: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub PromptEdit: unsafe extern "system" fn(this: *mut *mut Self, ppadoconnection: *mut *mut ::core::ffi::c_void, pbsuccess: *mut i16) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    PromptEdit: usize,
+}
+#[repr(C)]
+pub struct IEntity {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Name: unsafe extern "system" fn(this: *mut *mut Self, ppszname: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub Base: unsafe extern "system" fn(this: *mut *mut Self, pbaseentity: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Relationships: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, prelationships: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetRelationship: unsafe extern "system" fn(this: *mut *mut Self, pszrelationname: ::windows_sys::core::PCWSTR, prelationship: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub MetaData: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, pmetadata: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub NamedEntities: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, pnamedentities: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetNamedEntity: unsafe extern "system" fn(this: *mut *mut Self, pszvalue: ::windows_sys::core::PCWSTR, ppnamedentity: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub DefaultPhrase: unsafe extern "system" fn(this: *mut *mut Self, ppszphrase: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IEnumItemProperties {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, celt: u32, rgelt: *mut ITEMPROP, pceltfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    Next: usize,
+    pub Skip: unsafe extern "system" fn(this: *mut *mut Self, celt: u32) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, pncount: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IEnumSearchRoots {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, celt: u32, rgelt: *mut *mut ::core::ffi::c_void, pceltfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Skip: unsafe extern "system" fn(this: *mut *mut Self, celt: u32) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IEnumSearchScopeRules {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, celt: u32, pprgelt: *mut *mut ::core::ffi::c_void, pceltfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Skip: unsafe extern "system" fn(this: *mut *mut Self, celt: u32) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IEnumSubscription {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Next: unsafe extern "system" fn(this: *mut *mut Self, celt: u32, rgelt: *mut ::windows_sys::core::GUID, pceltfetched: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Skip: unsafe extern "system" fn(this: *mut *mut Self, celt: u32) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, pncount: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IErrorLookup {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetErrorDescription: unsafe extern "system" fn(this: *mut *mut Self, hrerror: ::windows_sys::core::HRESULT, dwlookupid: u32, pdispparams: *const super::Com::DISPPARAMS, lcid: u32, pbstrsource: *mut super::super::Foundation::BSTR, pbstrdescription: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetErrorDescription: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetHelpInfo: unsafe extern "system" fn(this: *mut *mut Self, hrerror: ::windows_sys::core::HRESULT, dwlookupid: u32, lcid: u32, pbstrhelpfile: *mut super::super::Foundation::BSTR, pdwhelpcontext: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetHelpInfo: usize,
+    pub ReleaseErrors: unsafe extern "system" fn(this: *mut *mut Self, dwdynamicerrorid: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IErrorRecords {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub AddErrorRecord: unsafe extern "system" fn(this: *mut *mut Self, perrorinfo: *const ERRORINFO, dwlookupid: u32, pdispparams: *const super::Com::DISPPARAMS, punkcustomerror: *mut ::core::ffi::c_void, dwdynamicerrorid: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    AddErrorRecord: usize,
+    pub GetBasicErrorInfo: unsafe extern "system" fn(this: *mut *mut Self, ulrecordnum: u32, perrorinfo: *mut ERRORINFO) -> ::windows_sys::core::HRESULT,
+    pub GetCustomErrorObject: unsafe extern "system" fn(this: *mut *mut Self, ulrecordnum: u32, riid: *const ::windows_sys::core::GUID, ppobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetErrorInfo: unsafe extern "system" fn(this: *mut *mut Self, ulrecordnum: u32, lcid: u32, pperrorinfo: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetErrorInfo: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetErrorParameters: unsafe extern "system" fn(this: *mut *mut Self, ulrecordnum: u32, pdispparams: *mut super::Com::DISPPARAMS) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetErrorParameters: usize,
+    pub GetRecordCount: unsafe extern "system" fn(this: *mut *mut Self, pcrecords: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IGetDataSource {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetDataSource: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppdatasource: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IGetRow {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetRowFromHROW: unsafe extern "system" fn(this: *mut *mut Self, punkouter: *mut ::core::ffi::c_void, hrow: usize, riid: *const ::windows_sys::core::GUID, ppunk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetURLFromHROW: unsafe extern "system" fn(this: *mut *mut Self, hrow: usize, ppwszurl: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IGetSession {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetSession: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppsession: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IGetSourceRow {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetSourceRow: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, pprow: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IIndexDefinition {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub CreateIndex: unsafe extern "system" fn(this: *mut *mut Self, ptableid: *const super::super::Storage::IndexServer::DBID, pindexid: *const super::super::Storage::IndexServer::DBID, cindexcolumndescs: usize, rgindexcolumndescs: *const DBINDEXCOLUMNDESC, cpropertysets: u32, rgpropertysets: *mut DBPROPSET, ppindexid: *mut *mut super::super::Storage::IndexServer::DBID) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    CreateIndex: usize,
+    #[cfg(feature = "Win32_Storage_IndexServer")]
+    pub DropIndex: unsafe extern "system" fn(this: *mut *mut Self, ptableid: *const super::super::Storage::IndexServer::DBID, pindexid: *const super::super::Storage::IndexServer::DBID) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Storage_IndexServer"))]
+    DropIndex: usize,
+}
+#[repr(C)]
+pub struct IInterval {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    pub GetLimits: unsafe extern "system" fn(this: *mut *mut Self, pilklower: *mut INTERVAL_LIMIT_KIND, ppropvarlower: *mut super::Com::StructuredStorage::PROPVARIANT, pilkupper: *mut INTERVAL_LIMIT_KIND, ppropvarupper: *mut super::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    GetLimits: usize,
+}
+#[repr(C)]
+pub struct ILoadFilter {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer"))]
+    pub LoadIFilter: unsafe extern "system" fn(this: *mut *mut Self, pwcspath: ::windows_sys::core::PCWSTR, pfilteredsources: *const FILTERED_DATA_SOURCES, punkouter: *mut ::core::ffi::c_void, fusedefault: super::super::Foundation::BOOL, pfilterclsid: *mut ::windows_sys::core::GUID, searchdecsize: *mut i32, pwcssearchdesc: *mut *mut u16, ppifilt: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer")))]
+    LoadIFilter: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com_StructuredStorage"))]
+    pub LoadIFilterFromStorage: unsafe extern "system" fn(this: *mut *mut Self, pstg: *mut ::core::ffi::c_void, punkouter: *mut ::core::ffi::c_void, pwcsoverride: ::windows_sys::core::PCWSTR, fusedefault: super::super::Foundation::BOOL, pfilterclsid: *mut ::windows_sys::core::GUID, searchdecsize: *mut i32, pwcssearchdesc: *mut *mut u16, ppifilt: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com_StructuredStorage")))]
+    LoadIFilterFromStorage: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com"))]
+    pub LoadIFilterFromStream: unsafe extern "system" fn(this: *mut *mut Self, pstm: *mut ::core::ffi::c_void, pfilteredsources: *const FILTERED_DATA_SOURCES, punkouter: *mut ::core::ffi::c_void, fusedefault: super::super::Foundation::BOOL, pfilterclsid: *mut ::windows_sys::core::GUID, searchdecsize: *mut i32, pwcssearchdesc: *mut *mut u16, ppifilt: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com")))]
+    LoadIFilterFromStream: usize,
+}
+#[repr(C)]
+pub struct ILoadFilterWithPrivateComActivation {
+    pub base__: ILoadFilter,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer"))]
+    pub LoadIFilterWithPrivateComActivation: unsafe extern "system" fn(this: *mut *mut Self, filteredsources: *const FILTERED_DATA_SOURCES, usedefault: super::super::Foundation::BOOL, filterclsid: *mut ::windows_sys::core::GUID, isfilterprivatecomactivated: *mut super::super::Foundation::BOOL, filterobj: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer")))]
+    LoadIFilterWithPrivateComActivation: usize,
+}
+#[repr(C)]
+pub struct IMDDataset {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub FreeAxisInfo: unsafe extern "system" fn(this: *mut *mut Self, caxes: usize, rgaxisinfo: *mut MDAXISINFO) -> ::windows_sys::core::HRESULT,
+    pub GetAxisInfo: unsafe extern "system" fn(this: *mut *mut Self, pcaxes: *mut usize, prgaxisinfo: *mut *mut MDAXISINFO) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetAxisRowset: unsafe extern "system" fn(this: *mut *mut Self, punkouter: *mut ::core::ffi::c_void, iaxis: usize, riid: *const ::windows_sys::core::GUID, cpropertysets: u32, rgpropertysets: *mut DBPROPSET, pprowset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetAxisRowset: usize,
+    pub GetCellData: unsafe extern "system" fn(this: *mut *mut Self, haccessor: usize, ulstartcell: usize, ulendcell: usize, pdata: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetSpecification: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppspecification: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMDFind {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub FindCell: unsafe extern "system" fn(this: *mut *mut Self, ulstartingordinal: usize, cmembers: usize, rgpwszmember: *mut ::windows_sys::core::PWSTR, pulcellordinal: *mut usize) -> ::windows_sys::core::HRESULT,
+    pub FindTuple: unsafe extern "system" fn(this: *mut *mut Self, ulaxisidentifier: u32, ulstartingordinal: usize, cmembers: usize, rgpwszmember: *mut ::windows_sys::core::PWSTR, pultupleordinal: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMDRangeRowset {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetRangeRowset: unsafe extern "system" fn(this: *mut *mut Self, punkouter: *mut ::core::ffi::c_void, ulstartcell: usize, ulendcell: usize, riid: *const ::windows_sys::core::GUID, cpropertysets: u32, rgpropertysets: *mut DBPROPSET, pprowset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetRangeRowset: usize,
+}
+#[repr(C)]
+pub struct IMetaData {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetData: unsafe extern "system" fn(this: *mut *mut Self, ppszkey: *mut ::windows_sys::core::PWSTR, ppszvalue: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMultipleResults {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetResult: unsafe extern "system" fn(this: *mut *mut Self, punkouter: *mut ::core::ffi::c_void, lresultflag: isize, riid: *const ::windows_sys::core::GUID, pcrowsaffected: *mut isize, pprowset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Search\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
@@ -5723,93 +6314,964 @@ pub const ILK_EXPLICIT_EXCLUDED: INTERVAL_LIMIT_KIND = 1i32;
 pub const ILK_NEGATIVE_INFINITY: INTERVAL_LIMIT_KIND = 2i32;
 #[doc = "*Required features: `\"Win32_System_Search\"`*"]
 pub const ILK_POSITIVE_INFINITY: INTERVAL_LIMIT_KIND = 3i32;
-pub type INamedEntity = *mut ::core::ffi::c_void;
-pub type INamedEntityCollector = *mut ::core::ffi::c_void;
-pub type IObjectAccessControl = *mut ::core::ffi::c_void;
-pub type IOpLockStatus = *mut ::core::ffi::c_void;
-pub type IOpenRowset = *mut ::core::ffi::c_void;
-pub type IParentRowset = *mut ::core::ffi::c_void;
-pub type IProtocolHandlerSite = *mut ::core::ffi::c_void;
-pub type IProvideMoniker = *mut ::core::ffi::c_void;
-pub type IQueryParser = *mut ::core::ffi::c_void;
-pub type IQueryParserManager = *mut ::core::ffi::c_void;
-pub type IQuerySolution = *mut ::core::ffi::c_void;
-pub type IReadData = *mut ::core::ffi::c_void;
-pub type IRegisterProvider = *mut ::core::ffi::c_void;
-pub type IRelationship = *mut ::core::ffi::c_void;
-pub type IRichChunk = *mut ::core::ffi::c_void;
-pub type IRow = *mut ::core::ffi::c_void;
-pub type IRowChange = *mut ::core::ffi::c_void;
-pub type IRowPosition = *mut ::core::ffi::c_void;
-pub type IRowPositionChange = *mut ::core::ffi::c_void;
-pub type IRowSchemaChange = *mut ::core::ffi::c_void;
-pub type IRowset = *mut ::core::ffi::c_void;
-pub type IRowsetAsynch = *mut ::core::ffi::c_void;
-pub type IRowsetBookmark = *mut ::core::ffi::c_void;
-pub type IRowsetChange = *mut ::core::ffi::c_void;
-pub type IRowsetChangeExtInfo = *mut ::core::ffi::c_void;
-pub type IRowsetChapterMember = *mut ::core::ffi::c_void;
-pub type IRowsetCopyRows = *mut ::core::ffi::c_void;
-pub type IRowsetCurrentIndex = *mut ::core::ffi::c_void;
-pub type IRowsetEvents = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct INamedEntity {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetValue: unsafe extern "system" fn(this: *mut *mut Self, ppszvalue: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub DefaultPhrase: unsafe extern "system" fn(this: *mut *mut Self, ppszphrase: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct INamedEntityCollector {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Add: unsafe extern "system" fn(this: *mut *mut Self, beginspan: u32, endspan: u32, beginactual: u32, endactual: u32, ptype: *mut ::core::ffi::c_void, pszvalue: ::windows_sys::core::PCWSTR, certainty: NAMED_ENTITY_CERTAINTY) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IObjectAccessControl {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Security_Authorization", feature = "Win32_Storage_IndexServer"))]
+    pub GetObjectAccessRights: unsafe extern "system" fn(this: *mut *mut Self, pobject: *mut SEC_OBJECT, pcaccessentries: *mut u32, prgaccessentries: *mut *mut super::super::Security::Authorization::EXPLICIT_ACCESS_W) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Security_Authorization", feature = "Win32_Storage_IndexServer")))]
+    GetObjectAccessRights: usize,
+    #[cfg(all(feature = "Win32_Security_Authorization", feature = "Win32_Storage_IndexServer"))]
+    pub GetObjectOwner: unsafe extern "system" fn(this: *mut *mut Self, pobject: *mut SEC_OBJECT, ppowner: *mut *mut super::super::Security::Authorization::TRUSTEE_W) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Security_Authorization", feature = "Win32_Storage_IndexServer")))]
+    GetObjectOwner: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Authorization", feature = "Win32_Storage_IndexServer"))]
+    pub IsObjectAccessAllowed: unsafe extern "system" fn(this: *mut *mut Self, pobject: *mut SEC_OBJECT, paccessentry: *mut super::super::Security::Authorization::EXPLICIT_ACCESS_W, pfresult: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Security_Authorization", feature = "Win32_Storage_IndexServer")))]
+    IsObjectAccessAllowed: usize,
+    #[cfg(all(feature = "Win32_Security_Authorization", feature = "Win32_Storage_IndexServer"))]
+    pub SetObjectAccessRights: unsafe extern "system" fn(this: *mut *mut Self, pobject: *mut SEC_OBJECT, caccessentries: u32, prgaccessentries: *mut super::super::Security::Authorization::EXPLICIT_ACCESS_W) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Security_Authorization", feature = "Win32_Storage_IndexServer")))]
+    SetObjectAccessRights: usize,
+    #[cfg(all(feature = "Win32_Security_Authorization", feature = "Win32_Storage_IndexServer"))]
+    pub SetObjectOwner: unsafe extern "system" fn(this: *mut *mut Self, pobject: *mut SEC_OBJECT, powner: *mut super::super::Security::Authorization::TRUSTEE_W) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Security_Authorization", feature = "Win32_Storage_IndexServer")))]
+    SetObjectOwner: usize,
+}
+#[repr(C)]
+pub struct IOpLockStatus {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsOplockValid: unsafe extern "system" fn(this: *mut *mut Self, pfisoplockvalid: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsOplockValid: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsOplockBroken: unsafe extern "system" fn(this: *mut *mut Self, pfisoplockbroken: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsOplockBroken: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetOplockEventHandle: unsafe extern "system" fn(this: *mut *mut Self, phoplockev: *mut super::super::Foundation::HANDLE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetOplockEventHandle: usize,
+}
+#[repr(C)]
+pub struct IOpenRowset {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub OpenRowset: unsafe extern "system" fn(this: *mut *mut Self, punkouter: *mut ::core::ffi::c_void, ptableid: *const super::super::Storage::IndexServer::DBID, pindexid: *const super::super::Storage::IndexServer::DBID, riid: *const ::windows_sys::core::GUID, cpropertysets: u32, rgpropertysets: *mut DBPROPSET, pprowset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    OpenRowset: usize,
+}
+#[repr(C)]
+pub struct IParentRowset {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetChildRowset: unsafe extern "system" fn(this: *mut *mut Self, punkouter: *mut ::core::ffi::c_void, iordinal: usize, riid: *const ::windows_sys::core::GUID, pprowset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IProtocolHandlerSite {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Storage_IndexServer")]
+    pub GetFilter: unsafe extern "system" fn(this: *mut *mut Self, pclsidobj: *mut ::windows_sys::core::GUID, pcwszcontenttype: ::windows_sys::core::PCWSTR, pcwszextension: ::windows_sys::core::PCWSTR, ppfilter: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Storage_IndexServer"))]
+    GetFilter: usize,
+}
+#[repr(C)]
+pub struct IProvideMoniker {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetMoniker: unsafe extern "system" fn(this: *mut *mut Self, ppimoniker: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetMoniker: usize,
+}
+#[repr(C)]
+pub struct IQueryParser {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Parse: unsafe extern "system" fn(this: *mut *mut Self, pszinputstring: ::windows_sys::core::PCWSTR, pcustomproperties: *mut ::core::ffi::c_void, ppsolution: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Parse: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    pub SetOption: unsafe extern "system" fn(this: *mut *mut Self, option: STRUCTURED_QUERY_SINGLE_OPTION, poptionvalue: *const super::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    SetOption: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    pub GetOption: unsafe extern "system" fn(this: *mut *mut Self, option: STRUCTURED_QUERY_SINGLE_OPTION, poptionvalue: *mut super::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    GetOption: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    pub SetMultiOption: unsafe extern "system" fn(this: *mut *mut Self, option: STRUCTURED_QUERY_MULTIOPTION, pszoptionkey: ::windows_sys::core::PCWSTR, poptionvalue: *const super::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    SetMultiOption: usize,
+    pub GetSchemaProvider: unsafe extern "system" fn(this: *mut *mut Self, ppschemaprovider: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub RestateToString: unsafe extern "system" fn(this: *mut *mut Self, pcondition: *mut ::core::ffi::c_void, fuseenglish: super::super::Foundation::BOOL, ppszquerystring: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    RestateToString: usize,
+    pub ParsePropertyValue: unsafe extern "system" fn(this: *mut *mut Self, pszpropertyname: ::windows_sys::core::PCWSTR, pszinputstring: ::windows_sys::core::PCWSTR, ppsolution: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub RestatePropertyValueToString: unsafe extern "system" fn(this: *mut *mut Self, pcondition: *mut ::core::ffi::c_void, fuseenglish: super::super::Foundation::BOOL, ppszpropertyname: *mut ::windows_sys::core::PWSTR, ppszquerystring: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    RestatePropertyValueToString: usize,
+}
+#[repr(C)]
+pub struct IQueryParserManager {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub CreateLoadedParser: unsafe extern "system" fn(this: *mut *mut Self, pszcatalog: ::windows_sys::core::PCWSTR, langidforkeywords: u16, riid: *const ::windows_sys::core::GUID, ppqueryparser: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub InitializeOptions: unsafe extern "system" fn(this: *mut *mut Self, funderstandnqs: super::super::Foundation::BOOL, fautowildcard: super::super::Foundation::BOOL, pqueryparser: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    InitializeOptions: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    pub SetOption: unsafe extern "system" fn(this: *mut *mut Self, option: QUERY_PARSER_MANAGER_OPTION, poptionvalue: *const super::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    SetOption: usize,
+}
+#[repr(C)]
+pub struct IQuerySolution {
+    pub base__: IConditionFactory,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetQuery: unsafe extern "system" fn(this: *mut *mut Self, ppquerynode: *mut *mut ::core::ffi::c_void, ppmaintype: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetQuery: usize,
+    pub GetErrors: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppparseerrors: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetLexicalData: unsafe extern "system" fn(this: *mut *mut Self, ppszinputstring: *mut ::windows_sys::core::PWSTR, pptokens: *mut *mut ::core::ffi::c_void, plcid: *mut u32, ppwordbreaker: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IReadData {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub ReadData: unsafe extern "system" fn(this: *mut *mut Self, hchapter: usize, cbbookmark: usize, pbookmark: *const u8, lrowsoffset: isize, haccessor: usize, crows: isize, pcrowsobtained: *mut usize, ppfixeddata: *mut *mut u8, pcbvariabletotal: *mut usize, ppvariabledata: *mut *mut u8) -> ::windows_sys::core::HRESULT,
+    pub ReleaseChapter: unsafe extern "system" fn(this: *mut *mut Self, hchapter: usize) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRegisterProvider {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetURLMapping: unsafe extern "system" fn(this: *mut *mut Self, pwszurl: ::windows_sys::core::PCWSTR, dwreserved: usize, pclsidprovider: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub SetURLMapping: unsafe extern "system" fn(this: *mut *mut Self, pwszurl: ::windows_sys::core::PCWSTR, dwreserved: usize, rclsidprovider: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub UnregisterProvider: unsafe extern "system" fn(this: *mut *mut Self, pwszurl: ::windows_sys::core::PCWSTR, dwreserved: usize, rclsidprovider: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRelationship {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Name: unsafe extern "system" fn(this: *mut *mut Self, ppszname: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsReal: unsafe extern "system" fn(this: *mut *mut Self, pisreal: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsReal: usize,
+    pub Destination: unsafe extern "system" fn(this: *mut *mut Self, pdestinationentity: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub MetaData: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, pmetadata: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub DefaultPhrase: unsafe extern "system" fn(this: *mut *mut Self, ppszphrase: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRichChunk {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    pub GetData: unsafe extern "system" fn(this: *mut *mut Self, pfirstpos: *mut u32, plength: *mut u32, ppsz: *mut ::windows_sys::core::PWSTR, pvalue: *mut super::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    GetData: usize,
+}
+#[repr(C)]
+pub struct IRow {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Storage_IndexServer")]
+    pub GetColumns: unsafe extern "system" fn(this: *mut *mut Self, ccolumns: usize, rgcolumns: *mut DBCOLUMNACCESS) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Storage_IndexServer"))]
+    GetColumns: usize,
+    pub GetSourceRowset: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, pprowset: *mut *mut ::core::ffi::c_void, phrow: *mut usize) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Storage_IndexServer")]
+    pub Open: unsafe extern "system" fn(this: *mut *mut Self, punkouter: *mut ::core::ffi::c_void, pcolumnid: *const super::super::Storage::IndexServer::DBID, rguidcolumntype: *const ::windows_sys::core::GUID, dwbindflags: u32, riid: *const ::windows_sys::core::GUID, ppunk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Storage_IndexServer"))]
+    Open: usize,
+}
+#[repr(C)]
+pub struct IRowChange {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Storage_IndexServer")]
+    pub SetColumns: unsafe extern "system" fn(this: *mut *mut Self, ccolumns: usize, rgcolumns: *const DBCOLUMNACCESS) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Storage_IndexServer"))]
+    SetColumns: usize,
+}
+#[repr(C)]
+pub struct IRowPosition {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub ClearRowPosition: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetRowPosition: unsafe extern "system" fn(this: *mut *mut Self, phchapter: *mut usize, phrow: *mut usize, pdwpositionflags: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetRowset: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, pprowset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, prowset: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetRowPosition: unsafe extern "system" fn(this: *mut *mut Self, hchapter: usize, hrow: usize, dwpositionflags: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRowPositionChange {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OnRowPositionChange: unsafe extern "system" fn(this: *mut *mut Self, ereason: u32, ephase: u32, fcantdeny: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OnRowPositionChange: usize,
+}
+#[repr(C)]
+pub struct IRowSchemaChange {
+    pub base__: IRowChange,
+    #[cfg(feature = "Win32_Storage_IndexServer")]
+    pub DeleteColumns: unsafe extern "system" fn(this: *mut *mut Self, ccolumns: usize, rgcolumnids: *const super::super::Storage::IndexServer::DBID, rgdwstatus: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Storage_IndexServer"))]
+    DeleteColumns: usize,
+    #[cfg(all(feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com"))]
+    pub AddColumns: unsafe extern "system" fn(this: *mut *mut Self, ccolumns: usize, rgnewcolumninfo: *const DBCOLUMNINFO, rgcolumns: *mut DBCOLUMNACCESS) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com")))]
+    AddColumns: usize,
+}
+#[repr(C)]
+pub struct IRowset {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub AddRefRows: unsafe extern "system" fn(this: *mut *mut Self, crows: usize, rghrows: *const usize, rgrefcounts: *mut u32, rgrowstatus: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetData: unsafe extern "system" fn(this: *mut *mut Self, hrow: usize, haccessor: usize, pdata: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetNextRows: unsafe extern "system" fn(this: *mut *mut Self, hreserved: usize, lrowsoffset: isize, crows: isize, pcrowsobtained: *mut usize, prghrows: *mut *mut usize) -> ::windows_sys::core::HRESULT,
+    pub ReleaseRows: unsafe extern "system" fn(this: *mut *mut Self, crows: usize, rghrows: *const usize, rgrowoptions: *mut u32, rgrefcounts: *mut u32, rgrowstatus: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub RestartPosition: unsafe extern "system" fn(this: *mut *mut Self, hreserved: usize) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRowsetAsynch {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RatioFinished: unsafe extern "system" fn(this: *mut *mut Self, puldenominator: *mut usize, pulnumerator: *mut usize, pcrows: *mut usize, pfnewrows: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RatioFinished: usize,
+    pub Stop: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRowsetBookmark {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub PositionOnBookmark: unsafe extern "system" fn(this: *mut *mut Self, hchapter: usize, cbbookmark: usize, pbookmark: *const u8) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRowsetChange {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub DeleteRows: unsafe extern "system" fn(this: *mut *mut Self, hreserved: usize, crows: usize, rghrows: *const usize, rgrowstatus: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetData: unsafe extern "system" fn(this: *mut *mut Self, hrow: usize, haccessor: usize, pdata: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub InsertRow: unsafe extern "system" fn(this: *mut *mut Self, hreserved: usize, haccessor: usize, pdata: *mut ::core::ffi::c_void, phrow: *mut usize) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRowsetChangeExtInfo {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetOriginalRow: unsafe extern "system" fn(this: *mut *mut Self, hreserved: usize, hrow: usize, phroworiginal: *mut usize) -> ::windows_sys::core::HRESULT,
+    pub GetPendingColumns: unsafe extern "system" fn(this: *mut *mut Self, hreserved: usize, hrow: usize, ccolumnordinals: u32, rgiordinals: *const u32, rgcolumnstatus: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRowsetChapterMember {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub IsRowInChapter: unsafe extern "system" fn(this: *mut *mut Self, hchapter: usize, hrow: usize) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRowsetCopyRows {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub CloseSource: unsafe extern "system" fn(this: *mut *mut Self, hsourceid: u16) -> ::windows_sys::core::HRESULT,
+    pub CopyByHROWS: unsafe extern "system" fn(this: *mut *mut Self, hsourceid: u16, hreserved: usize, crows: isize, rghrows: *const usize, bflags: u32) -> ::windows_sys::core::HRESULT,
+    pub CopyRows: unsafe extern "system" fn(this: *mut *mut Self, hsourceid: u16, hreserved: usize, crows: isize, bflags: u32, pcrowscopied: *mut usize) -> ::windows_sys::core::HRESULT,
+    pub DefineSource: unsafe extern "system" fn(this: *mut *mut Self, prowsetsource: *mut ::core::ffi::c_void, ccolids: usize, rgsourcecolumns: *const isize, rgtargetcolumns: *const isize, phsourceid: *mut u16) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRowsetCurrentIndex {
+    pub base__: IRowsetIndex,
+    #[cfg(feature = "Win32_Storage_IndexServer")]
+    pub GetIndex: unsafe extern "system" fn(this: *mut *mut Self, ppindexid: *mut *mut super::super::Storage::IndexServer::DBID) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Storage_IndexServer"))]
+    GetIndex: usize,
+    #[cfg(feature = "Win32_Storage_IndexServer")]
+    pub SetIndex: unsafe extern "system" fn(this: *mut *mut Self, pindexid: *mut super::super::Storage::IndexServer::DBID) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Storage_IndexServer"))]
+    SetIndex: usize,
+}
+#[repr(C)]
+pub struct IRowsetEvents {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    pub OnNewItem: unsafe extern "system" fn(this: *mut *mut Self, itemid: *const super::Com::StructuredStorage::PROPVARIANT, newitemstate: ROWSETEVENT_ITEMSTATE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    OnNewItem: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    pub OnChangedItem: unsafe extern "system" fn(this: *mut *mut Self, itemid: *const super::Com::StructuredStorage::PROPVARIANT, rowsetitemstate: ROWSETEVENT_ITEMSTATE, changeditemstate: ROWSETEVENT_ITEMSTATE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    OnChangedItem: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    pub OnDeletedItem: unsafe extern "system" fn(this: *mut *mut Self, itemid: *const super::Com::StructuredStorage::PROPVARIANT, deleteditemstate: ROWSETEVENT_ITEMSTATE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    OnDeletedItem: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    pub OnRowsetEvent: unsafe extern "system" fn(this: *mut *mut Self, eventtype: ROWSETEVENT_TYPE, eventdata: *const super::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    OnRowsetEvent: usize,
+}
 #[repr(C)]
 pub struct IRowsetExactScroll(pub u8);
-pub type IRowsetFastLoad = *mut ::core::ffi::c_void;
-pub type IRowsetFind = *mut ::core::ffi::c_void;
-pub type IRowsetIdentity = *mut ::core::ffi::c_void;
-pub type IRowsetIndex = *mut ::core::ffi::c_void;
-pub type IRowsetInfo = *mut ::core::ffi::c_void;
-pub type IRowsetKeys = *mut ::core::ffi::c_void;
-pub type IRowsetLocate = *mut ::core::ffi::c_void;
-pub type IRowsetNewRowAfter = *mut ::core::ffi::c_void;
-pub type IRowsetNextRowset = *mut ::core::ffi::c_void;
-pub type IRowsetNotify = *mut ::core::ffi::c_void;
-pub type IRowsetPrioritization = *mut ::core::ffi::c_void;
-pub type IRowsetQueryStatus = *mut ::core::ffi::c_void;
-pub type IRowsetRefresh = *mut ::core::ffi::c_void;
-pub type IRowsetResynch = *mut ::core::ffi::c_void;
-pub type IRowsetScroll = *mut ::core::ffi::c_void;
-pub type IRowsetUpdate = *mut ::core::ffi::c_void;
-pub type IRowsetView = *mut ::core::ffi::c_void;
-pub type IRowsetWatchAll = *mut ::core::ffi::c_void;
-pub type IRowsetWatchNotify = *mut ::core::ffi::c_void;
-pub type IRowsetWatchRegion = *mut ::core::ffi::c_void;
-pub type IRowsetWithParameters = *mut ::core::ffi::c_void;
-pub type ISQLErrorInfo = *mut ::core::ffi::c_void;
-pub type ISQLGetDiagField = *mut ::core::ffi::c_void;
-pub type ISQLRequestDiagFields = *mut ::core::ffi::c_void;
-pub type ISQLServerErrorInfo = *mut ::core::ffi::c_void;
-pub type ISchemaLocalizerSupport = *mut ::core::ffi::c_void;
-pub type ISchemaLock = *mut ::core::ffi::c_void;
-pub type ISchemaProvider = *mut ::core::ffi::c_void;
-pub type IScopedOperations = *mut ::core::ffi::c_void;
-pub type ISearchCatalogManager = *mut ::core::ffi::c_void;
-pub type ISearchCatalogManager2 = *mut ::core::ffi::c_void;
-pub type ISearchCrawlScopeManager = *mut ::core::ffi::c_void;
-pub type ISearchCrawlScopeManager2 = *mut ::core::ffi::c_void;
-pub type ISearchItemsChangedSink = *mut ::core::ffi::c_void;
-pub type ISearchLanguageSupport = *mut ::core::ffi::c_void;
-pub type ISearchManager = *mut ::core::ffi::c_void;
-pub type ISearchManager2 = *mut ::core::ffi::c_void;
-pub type ISearchNotifyInlineSite = *mut ::core::ffi::c_void;
-pub type ISearchPersistentItemsChangedSink = *mut ::core::ffi::c_void;
-pub type ISearchProtocol = *mut ::core::ffi::c_void;
-pub type ISearchProtocol2 = *mut ::core::ffi::c_void;
-pub type ISearchProtocolThreadContext = *mut ::core::ffi::c_void;
-pub type ISearchQueryHelper = *mut ::core::ffi::c_void;
-pub type ISearchQueryHits = *mut ::core::ffi::c_void;
-pub type ISearchRoot = *mut ::core::ffi::c_void;
-pub type ISearchScopeRule = *mut ::core::ffi::c_void;
-pub type ISearchViewChangedSink = *mut ::core::ffi::c_void;
-pub type ISecurityInfo = *mut ::core::ffi::c_void;
-pub type IService = *mut ::core::ffi::c_void;
-pub type ISessionProperties = *mut ::core::ffi::c_void;
-pub type ISimpleCommandCreator = *mut ::core::ffi::c_void;
-pub type ISourcesRowset = *mut ::core::ffi::c_void;
-pub type IStemmer = *mut ::core::ffi::c_void;
-pub type ISubscriptionItem = *mut ::core::ffi::c_void;
-pub type ISubscriptionMgr = *mut ::core::ffi::c_void;
-pub type ISubscriptionMgr2 = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IRowsetFastLoad {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub InsertRow: unsafe extern "system" fn(this: *mut *mut Self, haccessor: usize, pdata: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Commit: unsafe extern "system" fn(this: *mut *mut Self, fdone: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Commit: usize,
+}
+#[repr(C)]
+pub struct IRowsetFind {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub FindNextRow: unsafe extern "system" fn(this: *mut *mut Self, hchapter: usize, haccessor: usize, pfindvalue: *mut ::core::ffi::c_void, compareop: u32, cbbookmark: usize, pbookmark: *const u8, lrowsoffset: isize, crows: isize, pcrowsobtained: *mut usize, prghrows: *mut *mut usize) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRowsetIdentity {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub IsSameRow: unsafe extern "system" fn(this: *mut *mut Self, hthisrow: usize, hthatrow: usize) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRowsetIndex {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetIndexInfo: unsafe extern "system" fn(this: *mut *mut Self, pckeycolumns: *mut usize, prgindexcolumndesc: *mut *mut DBINDEXCOLUMNDESC, pcindexpropertysets: *mut u32, prgindexpropertysets: *mut *mut DBPROPSET) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetIndexInfo: usize,
+    pub Seek: unsafe extern "system" fn(this: *mut *mut Self, haccessor: usize, ckeyvalues: usize, pdata: *mut ::core::ffi::c_void, dwseekoptions: u32) -> ::windows_sys::core::HRESULT,
+    pub SetRange: unsafe extern "system" fn(this: *mut *mut Self, haccessor: usize, cstartkeycolumns: usize, pstartdata: *mut ::core::ffi::c_void, cendkeycolumns: usize, penddata: *mut ::core::ffi::c_void, dwrangeoptions: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRowsetInfo {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetProperties: unsafe extern "system" fn(this: *mut *mut Self, cpropertyidsets: u32, rgpropertyidsets: *const DBPROPIDSET, pcpropertysets: *mut u32, prgpropertysets: *mut *mut DBPROPSET) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetProperties: usize,
+    pub GetReferencedRowset: unsafe extern "system" fn(this: *mut *mut Self, iordinal: usize, riid: *const ::windows_sys::core::GUID, ppreferencedrowset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetSpecification: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppspecification: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRowsetKeys {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub ListKeys: unsafe extern "system" fn(this: *mut *mut Self, pccolumns: *mut usize, prgcolumns: *mut *mut usize) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRowsetLocate {
+    pub base__: IRowset,
+    pub Compare: unsafe extern "system" fn(this: *mut *mut Self, hreserved: usize, cbbookmark1: usize, pbookmark1: *const u8, cbbookmark2: usize, pbookmark2: *const u8, pcomparison: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetRowsAt: unsafe extern "system" fn(this: *mut *mut Self, hreserved1: usize, hreserved2: usize, cbbookmark: usize, pbookmark: *const u8, lrowsoffset: isize, crows: isize, pcrowsobtained: *mut usize, prghrows: *mut *mut usize) -> ::windows_sys::core::HRESULT,
+    pub GetRowsByBookmark: unsafe extern "system" fn(this: *mut *mut Self, hreserved: usize, crows: usize, rgcbbookmarks: *const usize, rgpbookmarks: *const *const u8, rghrows: *mut usize, rgrowstatus: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Hash: unsafe extern "system" fn(this: *mut *mut Self, hreserved: usize, cbookmarks: usize, rgcbbookmarks: *const usize, rgpbookmarks: *const *const u8, rghashedvalues: *mut usize, rgbookmarkstatus: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRowsetNewRowAfter {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetNewDataAfter: unsafe extern "system" fn(this: *mut *mut Self, hchapter: usize, cbbmprevious: u32, pbmprevious: *const u8, haccessor: usize, pdata: *mut u8, phrow: *mut usize) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRowsetNextRowset {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetNextRowset: unsafe extern "system" fn(this: *mut *mut Self, punkouter: *mut ::core::ffi::c_void, riid: *const ::windows_sys::core::GUID, ppnextrowset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRowsetNotify {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OnFieldChange: unsafe extern "system" fn(this: *mut *mut Self, prowset: *mut ::core::ffi::c_void, hrow: usize, ccolumns: usize, rgcolumns: *const usize, ereason: u32, ephase: u32, fcantdeny: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OnFieldChange: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OnRowChange: unsafe extern "system" fn(this: *mut *mut Self, prowset: *mut ::core::ffi::c_void, crows: usize, rghrows: *const usize, ereason: u32, ephase: u32, fcantdeny: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OnRowChange: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub OnRowsetChange: unsafe extern "system" fn(this: *mut *mut Self, prowset: *mut ::core::ffi::c_void, ereason: u32, ephase: u32, fcantdeny: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    OnRowsetChange: usize,
+}
+#[repr(C)]
+pub struct IRowsetPrioritization {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetScopePriority: unsafe extern "system" fn(this: *mut *mut Self, priority: PRIORITY_LEVEL, scopestatisticseventfrequency: u32) -> ::windows_sys::core::HRESULT,
+    pub GetScopePriority: unsafe extern "system" fn(this: *mut *mut Self, priority: *mut PRIORITY_LEVEL, scopestatisticseventfrequency: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetScopeStatistics: unsafe extern "system" fn(this: *mut *mut Self, indexeddocumentcount: *mut u32, oustandingaddcount: *mut u32, oustandingmodifycount: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRowsetQueryStatus {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetStatus: unsafe extern "system" fn(this: *mut *mut Self, pdwstatus: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetStatusEx: unsafe extern "system" fn(this: *mut *mut Self, pdwstatus: *mut u32, pcfiltereddocuments: *mut u32, pcdocumentstofilter: *mut u32, pdwratiofinisheddenominator: *mut usize, pdwratiofinishednumerator: *mut usize, cbbmk: usize, pbmk: *const u8, pirowbmk: *mut usize, pcrowstotal: *mut usize) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRowsetRefresh {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RefreshVisibleData: unsafe extern "system" fn(this: *mut *mut Self, hchapter: usize, crows: usize, rghrows: *const usize, foverwrite: super::super::Foundation::BOOL, pcrowsrefreshed: *mut usize, prghrowsrefreshed: *mut *mut usize, prgrowstatus: *mut *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RefreshVisibleData: usize,
+    pub GetLastVisibleData: unsafe extern "system" fn(this: *mut *mut Self, hrow: usize, haccessor: usize, pdata: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRowsetResynch {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetVisibleData: unsafe extern "system" fn(this: *mut *mut Self, hrow: usize, haccessor: usize, pdata: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ResynchRows: unsafe extern "system" fn(this: *mut *mut Self, crows: usize, rghrows: *const usize, pcrowsresynched: *mut usize, prghrowsresynched: *mut *mut usize, prgrowstatus: *mut *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRowsetScroll {
+    pub base__: IRowsetLocate,
+    pub GetApproximatePosition: unsafe extern "system" fn(this: *mut *mut Self, hreserved: usize, cbbookmark: usize, pbookmark: *const u8, pulposition: *mut usize, pcrows: *mut usize) -> ::windows_sys::core::HRESULT,
+    pub GetRowsAtRatio: unsafe extern "system" fn(this: *mut *mut Self, hreserved1: usize, hreserved2: usize, ulnumerator: usize, uldenominator: usize, crows: isize, pcrowsobtained: *mut usize, prghrows: *mut *mut usize) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRowsetUpdate {
+    pub base__: IRowsetChange,
+    pub GetOriginalData: unsafe extern "system" fn(this: *mut *mut Self, hrow: usize, haccessor: usize, pdata: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetPendingRows: unsafe extern "system" fn(this: *mut *mut Self, hreserved: usize, dwrowstatus: u32, pcpendingrows: *mut usize, prgpendingrows: *mut *mut usize, prgpendingstatus: *mut *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetRowStatus: unsafe extern "system" fn(this: *mut *mut Self, hreserved: usize, crows: usize, rghrows: *const usize, rgpendingstatus: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Undo: unsafe extern "system" fn(this: *mut *mut Self, hreserved: usize, crows: usize, rghrows: *const usize, pcrowsundone: *mut usize, prgrowsundone: *mut *mut usize, prgrowstatus: *mut *mut u32) -> ::windows_sys::core::HRESULT,
+    pub Update: unsafe extern "system" fn(this: *mut *mut Self, hreserved: usize, crows: usize, rghrows: *const usize, pcrows: *mut usize, prgrows: *mut *mut usize, prgrowstatus: *mut *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRowsetView {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub CreateView: unsafe extern "system" fn(this: *mut *mut Self, punkouter: *mut ::core::ffi::c_void, riid: *const ::windows_sys::core::GUID, ppview: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetView: unsafe extern "system" fn(this: *mut *mut Self, hchapter: usize, riid: *const ::windows_sys::core::GUID, phchaptersource: *mut usize, ppview: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRowsetWatchAll {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Acknowledge: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Start: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub StopWatching: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRowsetWatchNotify {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnChange: unsafe extern "system" fn(this: *mut *mut Self, prowset: *mut ::core::ffi::c_void, echangereason: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRowsetWatchRegion {
+    pub base__: IRowsetWatchAll,
+    pub CreateWatchRegion: unsafe extern "system" fn(this: *mut *mut Self, dwwatchmode: u32, phregion: *mut usize) -> ::windows_sys::core::HRESULT,
+    pub ChangeWatchMode: unsafe extern "system" fn(this: *mut *mut Self, hregion: usize, dwwatchmode: u32) -> ::windows_sys::core::HRESULT,
+    pub DeleteWatchRegion: unsafe extern "system" fn(this: *mut *mut Self, hregion: usize) -> ::windows_sys::core::HRESULT,
+    pub GetWatchRegionInfo: unsafe extern "system" fn(this: *mut *mut Self, hregion: usize, pdwwatchmode: *mut u32, phchapter: *mut usize, pcbbookmark: *mut usize, ppbookmark: *mut *mut u8, pcrows: *mut isize) -> ::windows_sys::core::HRESULT,
+    pub Refresh: unsafe extern "system" fn(this: *mut *mut Self, pcchangesobtained: *mut usize, prgchanges: *mut *mut tagDBROWWATCHRANGE) -> ::windows_sys::core::HRESULT,
+    pub ShrinkWatchRegion: unsafe extern "system" fn(this: *mut *mut Self, hregion: usize, hchapter: usize, cbbookmark: usize, pbookmark: *mut u8, crows: isize) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IRowsetWithParameters {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetParameterInfo: unsafe extern "system" fn(this: *mut *mut Self, pcparams: *mut usize, prgparaminfo: *mut *mut DBPARAMINFO, ppnamesbuffer: *mut *mut u16) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetParameterInfo: usize,
+    pub Requery: unsafe extern "system" fn(this: *mut *mut Self, pparams: *mut DBPARAMS, pulerrorparam: *mut u32, phreserved: *mut usize) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISQLErrorInfo {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetSQLInfo: unsafe extern "system" fn(this: *mut *mut Self, pbstrsqlstate: *mut super::super::Foundation::BSTR, plnativeerror: *mut i32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetSQLInfo: usize,
+}
+#[repr(C)]
+pub struct ISQLGetDiagField {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetDiagField: unsafe extern "system" fn(this: *mut *mut Self, pdiaginfo: *mut KAGGETDIAG) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetDiagField: usize,
+}
+#[repr(C)]
+pub struct ISQLRequestDiagFields {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub RequestDiagFields: unsafe extern "system" fn(this: *mut *mut Self, cdiagfields: u32, rgdiagfields: *const KAGREQDIAG) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISQLServerErrorInfo {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetErrorInfo: unsafe extern "system" fn(this: *mut *mut Self, pperrorinfo: *mut *mut tagSSErrorInfo, ppstringsbuffer: *mut *mut u16) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISchemaLocalizerSupport {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Localize: unsafe extern "system" fn(this: *mut *mut Self, pszglobalstring: ::windows_sys::core::PCWSTR, ppszlocalstring: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISchemaLock {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer"))]
+    pub GetSchemaLock: unsafe extern "system" fn(this: *mut *mut Self, ptableid: *mut super::super::Storage::IndexServer::DBID, lmmode: u32, phlockhandle: *mut super::super::Foundation::HANDLE, ptableversion: *mut u64) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer")))]
+    GetSchemaLock: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ReleaseSchemaLock: unsafe extern "system" fn(this: *mut *mut Self, hlockhandle: super::super::Foundation::HANDLE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ReleaseSchemaLock: usize,
+}
+#[repr(C)]
+pub struct ISchemaProvider {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Entities: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, pentities: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RootEntity: unsafe extern "system" fn(this: *mut *mut Self, prootentity: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetEntity: unsafe extern "system" fn(this: *mut *mut Self, pszentityname: ::windows_sys::core::PCWSTR, pentity: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub MetaData: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, pmetadata: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub Localize: unsafe extern "system" fn(this: *mut *mut Self, lcid: u32, pschemalocalizersupport: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SaveBinary: unsafe extern "system" fn(this: *mut *mut Self, pszschemabinarypath: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub LookupAuthoredNamedEntity: unsafe extern "system" fn(this: *mut *mut Self, pentity: *mut ::core::ffi::c_void, pszinputstring: ::windows_sys::core::PCWSTR, ptokencollection: *mut ::core::ffi::c_void, ctokensbegin: u32, pctokenslength: *mut u32, ppszvalue: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IScopedOperations {
+    pub base__: IBindResource,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Copy: unsafe extern "system" fn(this: *mut *mut Self, crows: usize, rgpwszsourceurls: *const ::windows_sys::core::PWSTR, rgpwszdesturls: *const ::windows_sys::core::PWSTR, dwcopyflags: u32, pauthenticate: *mut ::core::ffi::c_void, rgdwstatus: *mut u32, rgpwsznewurls: *mut ::windows_sys::core::PWSTR, ppstringsbuffer: *mut *mut u16) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Copy: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Move: unsafe extern "system" fn(this: *mut *mut Self, crows: usize, rgpwszsourceurls: *const ::windows_sys::core::PWSTR, rgpwszdesturls: *const ::windows_sys::core::PWSTR, dwmoveflags: u32, pauthenticate: *mut ::core::ffi::c_void, rgdwstatus: *mut u32, rgpwsznewurls: *mut ::windows_sys::core::PWSTR, ppstringsbuffer: *mut *mut u16) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Move: usize,
+    pub Delete: unsafe extern "system" fn(this: *mut *mut Self, crows: usize, rgpwszurls: *const ::windows_sys::core::PWSTR, dwdeleteflags: u32, rgdwstatus: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub OpenRowset: unsafe extern "system" fn(this: *mut *mut Self, punkouter: *mut ::core::ffi::c_void, ptableid: *const super::super::Storage::IndexServer::DBID, pindexid: *const super::super::Storage::IndexServer::DBID, riid: *const ::windows_sys::core::GUID, cpropertysets: u32, rgpropertysets: *mut DBPROPSET, pprowset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    OpenRowset: usize,
+}
+#[repr(C)]
+pub struct ISearchCatalogManager {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Name: unsafe extern "system" fn(this: *mut *mut Self, pszname: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    pub GetParameter: unsafe extern "system" fn(this: *mut *mut Self, pszname: ::windows_sys::core::PCWSTR, ppvalue: *mut *mut super::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    GetParameter: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    pub SetParameter: unsafe extern "system" fn(this: *mut *mut Self, pszname: ::windows_sys::core::PCWSTR, pvalue: *const super::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    SetParameter: usize,
+    pub GetCatalogStatus: unsafe extern "system" fn(this: *mut *mut Self, pstatus: *mut CatalogStatus, ppausedreason: *mut CatalogPausedReason) -> ::windows_sys::core::HRESULT,
+    pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Reindex: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub ReindexMatchingURLs: unsafe extern "system" fn(this: *mut *mut Self, pszpattern: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub ReindexSearchRoot: unsafe extern "system" fn(this: *mut *mut Self, pszrooturl: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetConnectTimeout: unsafe extern "system" fn(this: *mut *mut Self, dwconnecttimeout: u32) -> ::windows_sys::core::HRESULT,
+    pub ConnectTimeout: unsafe extern "system" fn(this: *mut *mut Self, pdwconnecttimeout: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetDataTimeout: unsafe extern "system" fn(this: *mut *mut Self, dwdatatimeout: u32) -> ::windows_sys::core::HRESULT,
+    pub DataTimeout: unsafe extern "system" fn(this: *mut *mut Self, pdwdatatimeout: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub NumberOfItems: unsafe extern "system" fn(this: *mut *mut Self, plcount: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub NumberOfItemsToIndex: unsafe extern "system" fn(this: *mut *mut Self, plincrementalcount: *mut i32, plnotificationqueue: *mut i32, plhighpriorityqueue: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub URLBeingIndexed: unsafe extern "system" fn(this: *mut *mut Self, pszurl: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetURLIndexingState: unsafe extern "system" fn(this: *mut *mut Self, pszurl: ::windows_sys::core::PCWSTR, pdwstate: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetPersistentItemsChangedSink: unsafe extern "system" fn(this: *mut *mut Self, ppisearchpersistentitemschangedsink: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RegisterViewForNotification: unsafe extern "system" fn(this: *mut *mut Self, pszview: ::windows_sys::core::PCWSTR, pviewchangedsink: *mut ::core::ffi::c_void, pdwcookie: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetItemsChangedSink: unsafe extern "system" fn(this: *mut *mut Self, pisearchnotifyinlinesite: *mut ::core::ffi::c_void, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void, pguidcatalogresetsignature: *mut ::windows_sys::core::GUID, pguidcheckpointsignature: *mut ::windows_sys::core::GUID, pdwlastcheckpointnumber: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub UnregisterViewForNotification: unsafe extern "system" fn(this: *mut *mut Self, dwcookie: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetExtensionClusion: unsafe extern "system" fn(this: *mut *mut Self, pszextension: ::windows_sys::core::PCWSTR, fexclude: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetExtensionClusion: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub EnumerateExcludedExtensions: unsafe extern "system" fn(this: *mut *mut Self, ppextensions: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    EnumerateExcludedExtensions: usize,
+    pub GetQueryHelper: unsafe extern "system" fn(this: *mut *mut Self, ppsearchqueryhelper: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetDiacriticSensitivity: unsafe extern "system" fn(this: *mut *mut Self, fdiacriticsensitive: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetDiacriticSensitivity: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DiacriticSensitivity: unsafe extern "system" fn(this: *mut *mut Self, pfdiacriticsensitive: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DiacriticSensitivity: usize,
+    pub GetCrawlScopeManager: unsafe extern "system" fn(this: *mut *mut Self, ppcrawlscopemanager: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISearchCatalogManager2 {
+    pub base__: ISearchCatalogManager,
+    pub PrioritizeMatchingURLs: unsafe extern "system" fn(this: *mut *mut Self, pszpattern: ::windows_sys::core::PCWSTR, dwprioritizeflags: PRIORITIZE_FLAGS) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISearchCrawlScopeManager {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AddDefaultScopeRule: unsafe extern "system" fn(this: *mut *mut Self, pszurl: ::windows_sys::core::PCWSTR, finclude: super::super::Foundation::BOOL, ffollowflags: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AddDefaultScopeRule: usize,
+    pub AddRoot: unsafe extern "system" fn(this: *mut *mut Self, psearchroot: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RemoveRoot: unsafe extern "system" fn(this: *mut *mut Self, pszurl: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub EnumerateRoots: unsafe extern "system" fn(this: *mut *mut Self, ppsearchroots: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AddHierarchicalScope: unsafe extern "system" fn(this: *mut *mut Self, pszurl: ::windows_sys::core::PCWSTR, finclude: super::super::Foundation::BOOL, fdefault: super::super::Foundation::BOOL, foverridechildren: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AddHierarchicalScope: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub AddUserScopeRule: unsafe extern "system" fn(this: *mut *mut Self, pszurl: ::windows_sys::core::PCWSTR, finclude: super::super::Foundation::BOOL, foverridechildren: super::super::Foundation::BOOL, ffollowflags: u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    AddUserScopeRule: usize,
+    pub RemoveScopeRule: unsafe extern "system" fn(this: *mut *mut Self, pszrule: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub EnumerateScopeRules: unsafe extern "system" fn(this: *mut *mut Self, ppsearchscoperules: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub HasParentScopeRule: unsafe extern "system" fn(this: *mut *mut Self, pszurl: ::windows_sys::core::PCWSTR, pfhasparentrule: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    HasParentScopeRule: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub HasChildScopeRule: unsafe extern "system" fn(this: *mut *mut Self, pszurl: ::windows_sys::core::PCWSTR, pfhaschildrule: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    HasChildScopeRule: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IncludedInCrawlScope: unsafe extern "system" fn(this: *mut *mut Self, pszurl: ::windows_sys::core::PCWSTR, pfisincluded: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IncludedInCrawlScope: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IncludedInCrawlScopeEx: unsafe extern "system" fn(this: *mut *mut Self, pszurl: ::windows_sys::core::PCWSTR, pfisincluded: *mut super::super::Foundation::BOOL, preason: *mut CLUSION_REASON) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IncludedInCrawlScopeEx: usize,
+    pub RevertToDefaultScopes: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub SaveAll: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetParentScopeVersionId: unsafe extern "system" fn(this: *mut *mut Self, pszurl: ::windows_sys::core::PCWSTR, plscopeid: *mut i32) -> ::windows_sys::core::HRESULT,
+    pub RemoveDefaultScopeRule: unsafe extern "system" fn(this: *mut *mut Self, pszurl: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISearchCrawlScopeManager2 {
+    pub base__: ISearchCrawlScopeManager,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetVersion: unsafe extern "system" fn(this: *mut *mut Self, plversion: *mut *mut i32, phfilemapping: *mut super::super::Foundation::HANDLE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetVersion: usize,
+}
+#[repr(C)]
+pub struct ISearchItemsChangedSink {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub StartedMonitoringScope: unsafe extern "system" fn(this: *mut *mut Self, pszurl: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub StoppedMonitoringScope: unsafe extern "system" fn(this: *mut *mut Self, pszurl: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub OnItemsChanged: unsafe extern "system" fn(this: *mut *mut Self, dwnumberofchanges: u32, rgdatachangeentries: *const SEARCH_ITEM_CHANGE, rgdwdocids: *mut u32, rghrcompletioncodes: *mut ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    OnItemsChanged: usize,
+}
+#[repr(C)]
+pub struct ISearchLanguageSupport {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetDiacriticSensitivity: unsafe extern "system" fn(this: *mut *mut Self, fdiacriticsensitive: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetDiacriticSensitivity: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetDiacriticSensitivity: unsafe extern "system" fn(this: *mut *mut Self, pfdiacriticsensitive: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetDiacriticSensitivity: usize,
+    pub LoadWordBreaker: unsafe extern "system" fn(this: *mut *mut Self, lcid: u32, riid: *const ::windows_sys::core::GUID, ppwordbreaker: *mut *mut ::core::ffi::c_void, plcidused: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub LoadStemmer: unsafe extern "system" fn(this: *mut *mut Self, lcid: u32, riid: *const ::windows_sys::core::GUID, ppstemmer: *mut *mut ::core::ffi::c_void, plcidused: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub IsPrefixNormalized: unsafe extern "system" fn(this: *mut *mut Self, pwcsquerytoken: ::windows_sys::core::PCWSTR, cwcquerytoken: u32, pwcsdocumenttoken: ::windows_sys::core::PCWSTR, cwcdocumenttoken: u32, pulprefixlength: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISearchManager {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetIndexerVersionStr: unsafe extern "system" fn(this: *mut *mut Self, ppszversionstring: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetIndexerVersion: unsafe extern "system" fn(this: *mut *mut Self, pdwmajor: *mut u32, pdwminor: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    pub GetParameter: unsafe extern "system" fn(this: *mut *mut Self, pszname: ::windows_sys::core::PCWSTR, ppvalue: *mut *mut super::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    GetParameter: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    pub SetParameter: unsafe extern "system" fn(this: *mut *mut Self, pszname: ::windows_sys::core::PCWSTR, pvalue: *const super::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    SetParameter: usize,
+    pub ProxyName: unsafe extern "system" fn(this: *mut *mut Self, ppszproxyname: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub BypassList: unsafe extern "system" fn(this: *mut *mut Self, ppszbypasslist: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetProxy: unsafe extern "system" fn(this: *mut *mut Self, suseproxy: PROXY_ACCESS, flocalbypassproxy: super::super::Foundation::BOOL, dwportnumber: u32, pszproxyname: ::windows_sys::core::PCWSTR, pszbypasslist: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetProxy: usize,
+    pub GetCatalog: unsafe extern "system" fn(this: *mut *mut Self, pszcatalog: ::windows_sys::core::PCWSTR, ppcatalogmanager: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub UserAgent: unsafe extern "system" fn(this: *mut *mut Self, ppszuseragent: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetUserAgent: unsafe extern "system" fn(this: *mut *mut Self, pszuseragent: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub UseProxy: unsafe extern "system" fn(this: *mut *mut Self, puseproxy: *mut PROXY_ACCESS) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub LocalBypass: unsafe extern "system" fn(this: *mut *mut Self, pflocalbypass: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    LocalBypass: usize,
+    pub PortNumber: unsafe extern "system" fn(this: *mut *mut Self, pdwportnumber: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISearchManager2 {
+    pub base__: ISearchManager,
+    pub CreateCatalog: unsafe extern "system" fn(this: *mut *mut Self, pszcatalog: ::windows_sys::core::PCWSTR, ppcatalogmanager: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub DeleteCatalog: unsafe extern "system" fn(this: *mut *mut Self, pszcatalog: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISearchNotifyInlineSite {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnItemIndexedStatusChange: unsafe extern "system" fn(this: *mut *mut Self, sipstatus: SEARCH_INDEXING_PHASE, dwnumentries: u32, rgitemstatusentries: *const SEARCH_ITEM_INDEXING_STATUS) -> ::windows_sys::core::HRESULT,
+    pub OnCatalogStatusChange: unsafe extern "system" fn(this: *mut *mut Self, guidcatalogresetsignature: *const ::windows_sys::core::GUID, guidcheckpointsignature: *const ::windows_sys::core::GUID, dwlastcheckpointnumber: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISearchPersistentItemsChangedSink {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub StartedMonitoringScope: unsafe extern "system" fn(this: *mut *mut Self, pszurl: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub StoppedMonitoringScope: unsafe extern "system" fn(this: *mut *mut Self, pszurl: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub OnItemsChanged: unsafe extern "system" fn(this: *mut *mut Self, dwnumberofchanges: u32, datachangeentries: *const SEARCH_ITEM_PERSISTENT_CHANGE, hrcompletioncodes: *mut ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISearchProtocol {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Init: unsafe extern "system" fn(this: *mut *mut Self, ptimeoutinfo: *mut TIMEOUT_INFO, pprotocolhandlersite: *mut ::core::ffi::c_void, pproxyinfo: *mut PROXY_INFO) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Init: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CreateAccessor: unsafe extern "system" fn(this: *mut *mut Self, pcwszurl: ::windows_sys::core::PCWSTR, pauthenticationinfo: *mut AUTHENTICATION_INFO, pincrementalaccessinfo: *mut INCREMENTAL_ACCESS_INFO, piteminfo: *mut ITEM_INFO, ppaccessor: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CreateAccessor: usize,
+    pub CloseAccessor: unsafe extern "system" fn(this: *mut *mut Self, paccessor: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ShutDown: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISearchProtocol2 {
+    pub base__: ISearchProtocol,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub CreateAccessorEx: unsafe extern "system" fn(this: *mut *mut Self, pcwszurl: ::windows_sys::core::PCWSTR, pauthenticationinfo: *mut AUTHENTICATION_INFO, pincrementalaccessinfo: *mut INCREMENTAL_ACCESS_INFO, piteminfo: *mut ITEM_INFO, puserdata: *const super::Com::BLOB, ppaccessor: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    CreateAccessorEx: usize,
+}
+#[repr(C)]
+pub struct ISearchProtocolThreadContext {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub ThreadInit: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub ThreadShutdown: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub ThreadIdle: unsafe extern "system" fn(this: *mut *mut Self, dwtimeelaspedsincelastcallinms: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISearchQueryHelper {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub ConnectionString: unsafe extern "system" fn(this: *mut *mut Self, pszconnectionstring: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetQueryContentLocale: unsafe extern "system" fn(this: *mut *mut Self, lcid: u32) -> ::windows_sys::core::HRESULT,
+    pub QueryContentLocale: unsafe extern "system" fn(this: *mut *mut Self, plcid: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetQueryKeywordLocale: unsafe extern "system" fn(this: *mut *mut Self, lcid: u32) -> ::windows_sys::core::HRESULT,
+    pub QueryKeywordLocale: unsafe extern "system" fn(this: *mut *mut Self, plcid: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetQueryTermExpansion: unsafe extern "system" fn(this: *mut *mut Self, expandterms: SEARCH_TERM_EXPANSION) -> ::windows_sys::core::HRESULT,
+    pub QueryTermExpansion: unsafe extern "system" fn(this: *mut *mut Self, pexpandterms: *mut SEARCH_TERM_EXPANSION) -> ::windows_sys::core::HRESULT,
+    pub SetQuerySyntax: unsafe extern "system" fn(this: *mut *mut Self, querysyntax: SEARCH_QUERY_SYNTAX) -> ::windows_sys::core::HRESULT,
+    pub QuerySyntax: unsafe extern "system" fn(this: *mut *mut Self, pquerysyntax: *mut SEARCH_QUERY_SYNTAX) -> ::windows_sys::core::HRESULT,
+    pub SetQueryContentProperties: unsafe extern "system" fn(this: *mut *mut Self, pszcontentproperties: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub QueryContentProperties: unsafe extern "system" fn(this: *mut *mut Self, ppszcontentproperties: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetQuerySelectColumns: unsafe extern "system" fn(this: *mut *mut Self, pszselectcolumns: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub QuerySelectColumns: unsafe extern "system" fn(this: *mut *mut Self, ppszselectcolumns: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetQueryWhereRestrictions: unsafe extern "system" fn(this: *mut *mut Self, pszrestrictions: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub QueryWhereRestrictions: unsafe extern "system" fn(this: *mut *mut Self, ppszrestrictions: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetQuerySorting: unsafe extern "system" fn(this: *mut *mut Self, pszsorting: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub QuerySorting: unsafe extern "system" fn(this: *mut *mut Self, ppszsorting: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GenerateSQLFromUserQuery: unsafe extern "system" fn(this: *mut *mut Self, pszquery: ::windows_sys::core::PCWSTR, ppszsql: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+    pub WriteProperties: unsafe extern "system" fn(this: *mut *mut Self, itemid: i32, dwnumberofcolumns: u32, pcolumns: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY, pvalues: *const SEARCH_COLUMN_PROPERTIES, pftgathermodifiedtime: *const super::super::Foundation::FILETIME) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem")))]
+    WriteProperties: usize,
+    pub SetQueryMaxResults: unsafe extern "system" fn(this: *mut *mut Self, cmaxresults: i32) -> ::windows_sys::core::HRESULT,
+    pub QueryMaxResults: unsafe extern "system" fn(this: *mut *mut Self, pcmaxresults: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISearchQueryHits {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Storage_IndexServer")]
+    pub Init: unsafe extern "system" fn(this: *mut *mut Self, pflt: *mut ::core::ffi::c_void, ulflags: u32) -> i32,
+    #[cfg(not(feature = "Win32_Storage_IndexServer"))]
+    Init: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub NextHitMoniker: unsafe extern "system" fn(this: *mut *mut Self, pcmnk: *mut u32, papmnk: *mut *mut *mut ::core::ffi::c_void) -> i32,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    NextHitMoniker: usize,
+    #[cfg(feature = "Win32_Storage_IndexServer")]
+    pub NextHitOffset: unsafe extern "system" fn(this: *mut *mut Self, pcregion: *mut u32, paregion: *mut *mut super::super::Storage::IndexServer::FILTERREGION) -> i32,
+    #[cfg(not(feature = "Win32_Storage_IndexServer"))]
+    NextHitOffset: usize,
+}
+#[repr(C)]
+pub struct ISearchRoot {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetSchedule: unsafe extern "system" fn(this: *mut *mut Self, psztaskarg: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub Schedule: unsafe extern "system" fn(this: *mut *mut Self, ppsztaskarg: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetRootURL: unsafe extern "system" fn(this: *mut *mut Self, pszurl: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub RootURL: unsafe extern "system" fn(this: *mut *mut Self, ppszurl: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetIsHierarchical: unsafe extern "system" fn(this: *mut *mut Self, fishierarchical: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetIsHierarchical: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsHierarchical: unsafe extern "system" fn(this: *mut *mut Self, pfishierarchical: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsHierarchical: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetProvidesNotifications: unsafe extern "system" fn(this: *mut *mut Self, fprovidesnotifications: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetProvidesNotifications: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ProvidesNotifications: unsafe extern "system" fn(this: *mut *mut Self, pfprovidesnotifications: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ProvidesNotifications: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetUseNotificationsOnly: unsafe extern "system" fn(this: *mut *mut Self, fusenotificationsonly: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetUseNotificationsOnly: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub UseNotificationsOnly: unsafe extern "system" fn(this: *mut *mut Self, pfusenotificationsonly: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    UseNotificationsOnly: usize,
+    pub SetEnumerationDepth: unsafe extern "system" fn(this: *mut *mut Self, dwdepth: u32) -> ::windows_sys::core::HRESULT,
+    pub EnumerationDepth: unsafe extern "system" fn(this: *mut *mut Self, pdwdepth: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetHostDepth: unsafe extern "system" fn(this: *mut *mut Self, dwdepth: u32) -> ::windows_sys::core::HRESULT,
+    pub HostDepth: unsafe extern "system" fn(this: *mut *mut Self, pdwdepth: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub SetFollowDirectories: unsafe extern "system" fn(this: *mut *mut Self, ffollowdirectories: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SetFollowDirectories: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub FollowDirectories: unsafe extern "system" fn(this: *mut *mut Self, pffollowdirectories: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    FollowDirectories: usize,
+    pub SetAuthenticationType: unsafe extern "system" fn(this: *mut *mut Self, authtype: AUTH_TYPE) -> ::windows_sys::core::HRESULT,
+    pub AuthenticationType: unsafe extern "system" fn(this: *mut *mut Self, pauthtype: *mut AUTH_TYPE) -> ::windows_sys::core::HRESULT,
+    pub SetUser: unsafe extern "system" fn(this: *mut *mut Self, pszuser: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub User: unsafe extern "system" fn(this: *mut *mut Self, ppszuser: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub SetPassword: unsafe extern "system" fn(this: *mut *mut Self, pszpassword: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub Password: unsafe extern "system" fn(this: *mut *mut Self, ppszpassword: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISearchScopeRule {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub PatternOrURL: unsafe extern "system" fn(this: *mut *mut Self, ppszpatternorurl: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsIncluded: unsafe extern "system" fn(this: *mut *mut Self, pfisincluded: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsIncluded: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsDefault: unsafe extern "system" fn(this: *mut *mut Self, pfisdefault: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsDefault: usize,
+    pub FollowFlags: unsafe extern "system" fn(this: *mut *mut Self, pfollowflags: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISearchViewChangedSink {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub OnChange: unsafe extern "system" fn(this: *mut *mut Self, pdwdocid: *const i32, pchange: *const SEARCH_ITEM_CHANGE, pfinview: *const super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    OnChange: usize,
+}
+#[repr(C)]
+pub struct ISecurityInfo {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Security_Authorization")]
+    pub GetCurrentTrustee: unsafe extern "system" fn(this: *mut *mut Self, pptrustee: *mut *mut super::super::Security::Authorization::TRUSTEE_W) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Security_Authorization"))]
+    GetCurrentTrustee: usize,
+    pub GetObjectTypes: unsafe extern "system" fn(this: *mut *mut Self, cobjecttypes: *mut u32, rgobjecttypes: *mut *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub GetPermissions: unsafe extern "system" fn(this: *mut *mut Self, objecttype: ::windows_sys::core::GUID, ppermissions: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IService {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub InvokeService: unsafe extern "system" fn(this: *mut *mut Self, punkinner: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISessionProperties {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetProperties: unsafe extern "system" fn(this: *mut *mut Self, cpropertyidsets: u32, rgpropertyidsets: *const DBPROPIDSET, pcpropertysets: *mut u32, prgpropertysets: *mut *mut DBPROPSET) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetProperties: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetProperties: unsafe extern "system" fn(this: *mut *mut Self, cpropertysets: u32, rgpropertysets: *mut DBPROPSET) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetProperties: usize,
+}
+#[repr(C)]
+pub struct ISimpleCommandCreator {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub CreateICommand: unsafe extern "system" fn(this: *mut *mut Self, ppiunknown: *mut *mut ::core::ffi::c_void, pouterunk: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub VerifyCatalog: unsafe extern "system" fn(this: *mut *mut Self, pwszmachine: ::windows_sys::core::PCWSTR, pwszcatalogname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetDefaultCatalog: unsafe extern "system" fn(this: *mut *mut Self, pwszcatalogname: ::windows_sys::core::PCWSTR, cwcin: u32, pcwcout: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISourcesRowset {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetSourcesRowset: unsafe extern "system" fn(this: *mut *mut Self, punkouter: *mut ::core::ffi::c_void, riid: *const ::windows_sys::core::GUID, cpropertysets: u32, rgproperties: *mut DBPROPSET, ppsourcesrowset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetSourcesRowset: usize,
+}
+#[repr(C)]
+pub struct IStemmer {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Init: unsafe extern "system" fn(this: *mut *mut Self, ulmaxtokensize: u32, pflicense: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Init: usize,
+    pub GenerateWordForms: unsafe extern "system" fn(this: *mut *mut Self, pwcinbuf: ::windows_sys::core::PCWSTR, cwc: u32, pstemsink: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetLicenseToUse: unsafe extern "system" fn(this: *mut *mut Self, ppwcslicense: *const *const u16) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISubscriptionItem {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCookie: unsafe extern "system" fn(this: *mut *mut Self, pcookie: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub GetSubscriptionItemInfo: unsafe extern "system" fn(this: *mut *mut Self, psubscriptioniteminfo: *mut SUBSCRIPTIONITEMINFO) -> ::windows_sys::core::HRESULT,
+    pub SetSubscriptionItemInfo: unsafe extern "system" fn(this: *mut *mut Self, psubscriptioniteminfo: *const SUBSCRIPTIONITEMINFO) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub ReadProperties: unsafe extern "system" fn(this: *mut *mut Self, ncount: u32, rgwszname: *const ::windows_sys::core::PWSTR, rgvalue: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    ReadProperties: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub WriteProperties: unsafe extern "system" fn(this: *mut *mut Self, ncount: u32, rgwszname: *const ::windows_sys::core::PWSTR, rgvalue: *const super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    WriteProperties: usize,
+    pub EnumProperties: unsafe extern "system" fn(this: *mut *mut Self, ppenumitemproperties: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub NotifyChanged: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ISubscriptionMgr {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub DeleteSubscription: unsafe extern "system" fn(this: *mut *mut Self, pwszurl: ::windows_sys::core::PCWSTR, hwnd: super::super::Foundation::HWND) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    DeleteSubscription: usize,
+    pub UpdateSubscription: unsafe extern "system" fn(this: *mut *mut Self, pwszurl: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub UpdateAll: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsSubscribed: unsafe extern "system" fn(this: *mut *mut Self, pwszurl: ::windows_sys::core::PCWSTR, pfsubscribed: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsSubscribed: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetSubscriptionInfo: unsafe extern "system" fn(this: *mut *mut Self, pwszurl: ::windows_sys::core::PCWSTR, pinfo: *mut SUBSCRIPTIONINFO) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetSubscriptionInfo: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetDefaultInfo: unsafe extern "system" fn(this: *mut *mut Self, subtype: SUBSCRIPTIONTYPE, pinfo: *mut SUBSCRIPTIONINFO) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetDefaultInfo: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ShowSubscriptionProperties: unsafe extern "system" fn(this: *mut *mut Self, pwszurl: ::windows_sys::core::PCWSTR, hwnd: super::super::Foundation::HWND) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ShowSubscriptionProperties: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub CreateSubscription: unsafe extern "system" fn(this: *mut *mut Self, hwnd: super::super::Foundation::HWND, pwszurl: ::windows_sys::core::PCWSTR, pwszfriendlyname: ::windows_sys::core::PCWSTR, dwflags: u32, substype: SUBSCRIPTIONTYPE, pinfo: *mut SUBSCRIPTIONINFO) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    CreateSubscription: usize,
+}
+#[repr(C)]
+pub struct ISubscriptionMgr2 {
+    pub base__: ISubscriptionMgr,
+    pub GetItemFromURL: unsafe extern "system" fn(this: *mut *mut Self, pwszurl: ::windows_sys::core::PCWSTR, ppsubscriptionitem: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetItemFromCookie: unsafe extern "system" fn(this: *mut *mut Self, psubscriptioncookie: *const ::windows_sys::core::GUID, ppsubscriptionitem: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetSubscriptionRunState: unsafe extern "system" fn(this: *mut *mut Self, dwnumcookies: u32, pcookies: *const ::windows_sys::core::GUID, pdwrunstate: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub EnumSubscriptions: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, ppenumsubscriptions: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub UpdateItems: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, dwnumcookies: u32, pcookies: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub AbortItems: unsafe extern "system" fn(this: *mut *mut Self, dwnumcookies: u32, pcookies: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub AbortAll: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Search\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com\"`, `\"Win32_System_Ole\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
@@ -5840,29 +7302,281 @@ impl ::core::clone::Clone for ITEM_INFO {
         *self
     }
 }
-pub type ITableCreation = *mut ::core::ffi::c_void;
-pub type ITableDefinition = *mut ::core::ffi::c_void;
-pub type ITableDefinitionWithConstraints = *mut ::core::ffi::c_void;
-pub type ITableRename = *mut ::core::ffi::c_void;
-pub type ITokenCollection = *mut ::core::ffi::c_void;
-pub type ITransactionJoin = *mut ::core::ffi::c_void;
-pub type ITransactionLocal = *mut ::core::ffi::c_void;
-pub type ITransactionObject = *mut ::core::ffi::c_void;
-pub type ITrusteeAdmin = *mut ::core::ffi::c_void;
-pub type ITrusteeGroupAdmin = *mut ::core::ffi::c_void;
-pub type IUMS = *mut ::core::ffi::c_void;
-pub type IUMSInitialize = *mut ::core::ffi::c_void;
-pub type IUrlAccessor = *mut ::core::ffi::c_void;
-pub type IUrlAccessor2 = *mut ::core::ffi::c_void;
-pub type IUrlAccessor3 = *mut ::core::ffi::c_void;
-pub type IUrlAccessor4 = *mut ::core::ffi::c_void;
-pub type IViewChapter = *mut ::core::ffi::c_void;
-pub type IViewFilter = *mut ::core::ffi::c_void;
-pub type IViewRowset = *mut ::core::ffi::c_void;
-pub type IViewSort = *mut ::core::ffi::c_void;
-pub type IWordBreaker = *mut ::core::ffi::c_void;
-pub type IWordFormSink = *mut ::core::ffi::c_void;
-pub type IWordSink = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct ITableCreation {
+    pub base__: ITableDefinition,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetTableDefinition: unsafe extern "system" fn(this: *mut *mut Self, ptableid: *const super::super::Storage::IndexServer::DBID, pccolumndescs: *mut usize, prgcolumndescs: *mut *mut DBCOLUMNDESC, pcpropertysets: *mut u32, prgpropertysets: *mut *mut DBPROPSET, pcconstraintdescs: *mut u32, prgconstraintdescs: *mut *mut DBCONSTRAINTDESC, ppwszstringbuffer: *mut *mut u16) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetTableDefinition: usize,
+}
+#[repr(C)]
+pub struct ITableDefinition {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub CreateTable: unsafe extern "system" fn(this: *mut *mut Self, punkouter: *mut ::core::ffi::c_void, ptableid: *const super::super::Storage::IndexServer::DBID, ccolumndescs: usize, rgcolumndescs: *const DBCOLUMNDESC, riid: *const ::windows_sys::core::GUID, cpropertysets: u32, rgpropertysets: *mut DBPROPSET, pptableid: *mut *mut super::super::Storage::IndexServer::DBID, pprowset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    CreateTable: usize,
+    #[cfg(feature = "Win32_Storage_IndexServer")]
+    pub DropTable: unsafe extern "system" fn(this: *mut *mut Self, ptableid: *const super::super::Storage::IndexServer::DBID) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Storage_IndexServer"))]
+    DropTable: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub AddColumn: unsafe extern "system" fn(this: *mut *mut Self, ptableid: *const super::super::Storage::IndexServer::DBID, pcolumndesc: *const DBCOLUMNDESC, ppcolumnid: *mut *mut super::super::Storage::IndexServer::DBID) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    AddColumn: usize,
+    #[cfg(feature = "Win32_Storage_IndexServer")]
+    pub DropColumn: unsafe extern "system" fn(this: *mut *mut Self, ptableid: *const super::super::Storage::IndexServer::DBID, pcolumnid: *const super::super::Storage::IndexServer::DBID) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Storage_IndexServer"))]
+    DropColumn: usize,
+}
+#[repr(C)]
+pub struct ITableDefinitionWithConstraints {
+    pub base__: ITableCreation,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub AddConstraint: unsafe extern "system" fn(this: *mut *mut Self, ptableid: *mut super::super::Storage::IndexServer::DBID, pconstraintdesc: *mut DBCONSTRAINTDESC) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    AddConstraint: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub CreateTableWithConstraints: unsafe extern "system" fn(this: *mut *mut Self, punkouter: *mut ::core::ffi::c_void, ptableid: *mut super::super::Storage::IndexServer::DBID, ccolumndescs: usize, rgcolumndescs: *mut DBCOLUMNDESC, cconstraintdescs: u32, rgconstraintdescs: *mut DBCONSTRAINTDESC, riid: *const ::windows_sys::core::GUID, cpropertysets: u32, rgpropertysets: *mut DBPROPSET, pptableid: *mut *mut super::super::Storage::IndexServer::DBID, pprowset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    CreateTableWithConstraints: usize,
+    #[cfg(feature = "Win32_Storage_IndexServer")]
+    pub DropConstraint: unsafe extern "system" fn(this: *mut *mut Self, ptableid: *mut super::super::Storage::IndexServer::DBID, pconstraintid: *mut super::super::Storage::IndexServer::DBID) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Storage_IndexServer"))]
+    DropConstraint: usize,
+}
+#[repr(C)]
+pub struct ITableRename {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Storage_IndexServer")]
+    pub RenameColumn: unsafe extern "system" fn(this: *mut *mut Self, ptableid: *mut super::super::Storage::IndexServer::DBID, poldcolumnid: *mut super::super::Storage::IndexServer::DBID, pnewcolumnid: *mut super::super::Storage::IndexServer::DBID) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Storage_IndexServer"))]
+    RenameColumn: usize,
+    #[cfg(feature = "Win32_Storage_IndexServer")]
+    pub RenameTable: unsafe extern "system" fn(this: *mut *mut Self, poldtableid: *mut super::super::Storage::IndexServer::DBID, poldindexid: *mut super::super::Storage::IndexServer::DBID, pnewtableid: *mut super::super::Storage::IndexServer::DBID, pnewindexid: *mut super::super::Storage::IndexServer::DBID) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Storage_IndexServer"))]
+    RenameTable: usize,
+}
+#[repr(C)]
+pub struct ITokenCollection {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub NumberOfTokens: unsafe extern "system" fn(this: *mut *mut Self, pcount: *const u32) -> ::windows_sys::core::HRESULT,
+    pub GetToken: unsafe extern "system" fn(this: *mut *mut Self, i: u32, pbegin: *mut u32, plength: *mut u32, ppsz: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct ITransactionJoin {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_DistributedTransactionCoordinator")]
+    pub GetOptionsObject: unsafe extern "system" fn(this: *mut *mut Self, ppoptions: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_DistributedTransactionCoordinator"))]
+    GetOptionsObject: usize,
+    #[cfg(feature = "Win32_System_DistributedTransactionCoordinator")]
+    pub JoinTransaction: unsafe extern "system" fn(this: *mut *mut Self, punktransactioncoord: *mut ::core::ffi::c_void, isolevel: i32, isoflags: u32, potheroptions: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_DistributedTransactionCoordinator"))]
+    JoinTransaction: usize,
+}
+#[cfg(feature = "Win32_System_DistributedTransactionCoordinator")]
+#[repr(C)]
+pub struct ITransactionLocal {
+    pub base__: super::DistributedTransactionCoordinator::ITransaction,
+    #[cfg(feature = "Win32_System_DistributedTransactionCoordinator")]
+    pub GetOptionsObject: unsafe extern "system" fn(this: *mut *mut Self, ppoptions: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_DistributedTransactionCoordinator"))]
+    GetOptionsObject: usize,
+    #[cfg(feature = "Win32_System_DistributedTransactionCoordinator")]
+    pub StartTransaction: unsafe extern "system" fn(this: *mut *mut Self, isolevel: i32, isoflags: u32, potheroptions: *mut ::core::ffi::c_void, pultransactionlevel: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_DistributedTransactionCoordinator"))]
+    StartTransaction: usize,
+}
+#[repr(C)]
+pub struct ITransactionObject {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_DistributedTransactionCoordinator")]
+    pub GetTransactionObject: unsafe extern "system" fn(this: *mut *mut Self, ultransactionlevel: u32, pptransactionobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_DistributedTransactionCoordinator"))]
+    GetTransactionObject: usize,
+}
+#[repr(C)]
+pub struct ITrusteeAdmin {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Security_Authorization")]
+    pub CompareTrustees: unsafe extern "system" fn(this: *mut *mut Self, ptrustee1: *mut super::super::Security::Authorization::TRUSTEE_W, ptrustee2: *mut super::super::Security::Authorization::TRUSTEE_W) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Security_Authorization"))]
+    CompareTrustees: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Authorization", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub CreateTrustee: unsafe extern "system" fn(this: *mut *mut Self, ptrustee: *mut super::super::Security::Authorization::TRUSTEE_W, cpropertysets: u32, rgpropertysets: *mut DBPROPSET) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Security_Authorization", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    CreateTrustee: usize,
+    #[cfg(feature = "Win32_Security_Authorization")]
+    pub DeleteTrustee: unsafe extern "system" fn(this: *mut *mut Self, ptrustee: *mut super::super::Security::Authorization::TRUSTEE_W) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Security_Authorization"))]
+    DeleteTrustee: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Authorization", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetTrusteeProperties: unsafe extern "system" fn(this: *mut *mut Self, ptrustee: *mut super::super::Security::Authorization::TRUSTEE_W, cpropertysets: u32, rgpropertysets: *mut DBPROPSET) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Security_Authorization", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    SetTrusteeProperties: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Authorization", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetTrusteeProperties: unsafe extern "system" fn(this: *mut *mut Self, ptrustee: *mut super::super::Security::Authorization::TRUSTEE_W, cpropertyidsets: u32, rgpropertyidsets: *const DBPROPIDSET, pcpropertysets: *mut u32, prgpropertysets: *mut *mut DBPROPSET) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Security_Authorization", feature = "Win32_Storage_IndexServer", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    GetTrusteeProperties: usize,
+}
+#[repr(C)]
+pub struct ITrusteeGroupAdmin {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Security_Authorization")]
+    pub AddMember: unsafe extern "system" fn(this: *mut *mut Self, pmembershiptrustee: *mut super::super::Security::Authorization::TRUSTEE_W, pmembertrustee: *mut super::super::Security::Authorization::TRUSTEE_W) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Security_Authorization"))]
+    AddMember: usize,
+    #[cfg(feature = "Win32_Security_Authorization")]
+    pub DeleteMember: unsafe extern "system" fn(this: *mut *mut Self, pmembershiptrustee: *mut super::super::Security::Authorization::TRUSTEE_W, pmembertrustee: *mut super::super::Security::Authorization::TRUSTEE_W) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Security_Authorization"))]
+    DeleteMember: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Authorization"))]
+    pub IsMember: unsafe extern "system" fn(this: *mut *mut Self, pmembershiptrustee: *mut super::super::Security::Authorization::TRUSTEE_W, pmembertrustee: *mut super::super::Security::Authorization::TRUSTEE_W, pfstatus: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Security_Authorization")))]
+    IsMember: usize,
+    #[cfg(feature = "Win32_Security_Authorization")]
+    pub GetMembers: unsafe extern "system" fn(this: *mut *mut Self, pmembershiptrustee: *mut super::super::Security::Authorization::TRUSTEE_W, pcmembers: *mut u32, prgmembers: *mut *mut super::super::Security::Authorization::TRUSTEE_W) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Security_Authorization"))]
+    GetMembers: usize,
+    #[cfg(feature = "Win32_Security_Authorization")]
+    pub GetMemberships: unsafe extern "system" fn(this: *mut *mut Self, ptrustee: *mut super::super::Security::Authorization::TRUSTEE_W, pcmemberships: *mut u32, prgmemberships: *mut *mut super::super::Security::Authorization::TRUSTEE_W) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Security_Authorization"))]
+    GetMemberships: usize,
+}
+#[repr(C)]
+pub struct IUMS {
+    pub SqlUmsSuspend: unsafe extern "system" fn(this: *mut *mut Self, ticks: u32),
+    pub SqlUmsYield: unsafe extern "system" fn(this: *mut *mut Self, ticks: u32),
+    pub SqlUmsSwitchPremptive: unsafe extern "system" fn(this: *mut *mut Self),
+    pub SqlUmsSwitchNonPremptive: unsafe extern "system" fn(this: *mut *mut Self),
+    #[cfg(feature = "Win32_Foundation")]
+    pub SqlUmsFIsPremptive: unsafe extern "system" fn(this: *mut *mut Self) -> super::super::Foundation::BOOL,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    SqlUmsFIsPremptive: usize,
+}
+#[repr(C)]
+pub struct IUMSInitialize {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, pums: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IUrlAccessor {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    pub AddRequestParameter: unsafe extern "system" fn(this: *mut *mut Self, pspec: *const super::Com::StructuredStorage::PROPSPEC, pvar: *const super::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    AddRequestParameter: usize,
+    pub GetDocFormat: unsafe extern "system" fn(this: *mut *mut Self, wszdocformat: ::windows_sys::core::PWSTR, dwsize: u32, pdwlength: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCLSID: unsafe extern "system" fn(this: *mut *mut Self, pclsid: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    pub GetHost: unsafe extern "system" fn(this: *mut *mut Self, wszhost: ::windows_sys::core::PWSTR, dwsize: u32, pdwlength: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub IsDirectory: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetSize: unsafe extern "system" fn(this: *mut *mut Self, pllsize: *mut u64) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetLastModified: unsafe extern "system" fn(this: *mut *mut Self, pftlastmodified: *mut super::super::Foundation::FILETIME) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetLastModified: usize,
+    pub GetFileName: unsafe extern "system" fn(this: *mut *mut Self, wszfilename: ::windows_sys::core::PWSTR, dwsize: u32, pdwlength: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSecurityDescriptor: unsafe extern "system" fn(this: *mut *mut Self, psd: *mut u8, dwsize: u32, pdwlength: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetRedirectedURL: unsafe extern "system" fn(this: *mut *mut Self, wszredirectedurl: ::windows_sys::core::PWSTR, dwsize: u32, pdwlength: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetSecurityProvider: unsafe extern "system" fn(this: *mut *mut Self, pspclsid: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub BindToStream: unsafe extern "system" fn(this: *mut *mut Self, ppstream: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    BindToStream: usize,
+    #[cfg(feature = "Win32_Storage_IndexServer")]
+    pub BindToFilter: unsafe extern "system" fn(this: *mut *mut Self, ppfilter: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Storage_IndexServer"))]
+    BindToFilter: usize,
+}
+#[repr(C)]
+pub struct IUrlAccessor2 {
+    pub base__: IUrlAccessor,
+    pub GetDisplayUrl: unsafe extern "system" fn(this: *mut *mut Self, wszdocurl: ::windows_sys::core::PWSTR, dwsize: u32, pdwlength: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub IsDocument: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub GetCodePage: unsafe extern "system" fn(this: *mut *mut Self, wszcodepage: ::windows_sys::core::PWSTR, dwsize: u32, pdwlength: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IUrlAccessor3 {
+    pub base__: IUrlAccessor2,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetImpersonationSidBlobs: unsafe extern "system" fn(this: *mut *mut Self, pcwszurl: ::windows_sys::core::PCWSTR, pcsidcount: *mut u32, ppsidblobs: *mut *mut super::Com::BLOB) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetImpersonationSidBlobs: usize,
+}
+#[repr(C)]
+pub struct IUrlAccessor4 {
+    pub base__: IUrlAccessor3,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ShouldIndexItemContent: unsafe extern "system" fn(this: *mut *mut Self, pfindexcontent: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ShouldIndexItemContent: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_PropertiesSystem"))]
+    pub ShouldIndexProperty: unsafe extern "system" fn(this: *mut *mut Self, key: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY, pfindexproperty: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_PropertiesSystem")))]
+    ShouldIndexProperty: usize,
+}
+#[repr(C)]
+pub struct IViewChapter {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetSpecification: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, pprowset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub OpenViewChapter: unsafe extern "system" fn(this: *mut *mut Self, hsource: usize, phviewchapter: *mut usize) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IViewFilter {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetFilter: unsafe extern "system" fn(this: *mut *mut Self, haccessor: usize, pcrows: *mut usize, pcompareops: *mut *mut u32, pcriteriadata: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetFilterBindings: unsafe extern "system" fn(this: *mut *mut Self, pcbindings: *mut usize, prgbindings: *mut *mut DBBINDING) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetFilterBindings: usize,
+    pub SetFilter: unsafe extern "system" fn(this: *mut *mut Self, haccessor: usize, crows: usize, compareops: *const u32, pcriteriadata: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IViewRowset {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetSpecification: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub OpenViewRowset: unsafe extern "system" fn(this: *mut *mut Self, punkouter: *mut ::core::ffi::c_void, riid: *const ::windows_sys::core::GUID, pprowset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IViewSort {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetSortOrder: unsafe extern "system" fn(this: *mut *mut Self, pcvalues: *mut usize, prgcolumns: *mut *mut usize, prgorders: *mut *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetSortOrder: unsafe extern "system" fn(this: *mut *mut Self, cvalues: usize, rgcolumns: *const usize, rgorders: *const u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWordBreaker {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Init: unsafe extern "system" fn(this: *mut *mut Self, fquery: super::super::Foundation::BOOL, ulmaxtokensize: u32, pflicense: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Init: usize,
+    #[cfg(feature = "Win32_Storage_IndexServer")]
+    pub BreakText: unsafe extern "system" fn(this: *mut *mut Self, ptextsource: *mut TEXT_SOURCE, pwordsink: *mut ::core::ffi::c_void, pphrasesink: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Storage_IndexServer"))]
+    BreakText: usize,
+    pub ComposePhrase: unsafe extern "system" fn(this: *mut *mut Self, pwcnoun: ::windows_sys::core::PCWSTR, cwcnoun: u32, pwcmodifier: ::windows_sys::core::PCWSTR, cwcmodifier: u32, ulattachmenttype: u32, pwcphrase: ::windows_sys::core::PCWSTR, pcwcphrase: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetLicenseToUse: unsafe extern "system" fn(this: *mut *mut Self, ppwcslicense: *const *const u16) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWordFormSink {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub PutAltWord: unsafe extern "system" fn(this: *mut *mut Self, pwcinbuf: ::windows_sys::core::PCWSTR, cwc: u32) -> ::windows_sys::core::HRESULT,
+    pub PutWord: unsafe extern "system" fn(this: *mut *mut Self, pwcinbuf: ::windows_sys::core::PCWSTR, cwc: u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWordSink {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub PutWord: unsafe extern "system" fn(this: *mut *mut Self, cwc: u32, pwcinbuf: ::windows_sys::core::PCWSTR, cwcsrclen: u32, cwcsrcpos: u32) -> ::windows_sys::core::HRESULT,
+    pub PutAltWord: unsafe extern "system" fn(this: *mut *mut Self, cwc: u32, pwcinbuf: ::windows_sys::core::PCWSTR, cwcsrclen: u32, cwcsrcpos: u32) -> ::windows_sys::core::HRESULT,
+    pub StartAltPhrase: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub EndAltPhrase: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Storage_IndexServer")]
+    pub PutBreak: unsafe extern "system" fn(this: *mut *mut Self, breaktype: super::super::Storage::IndexServer::WORDREP_BREAK_TYPE) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Storage_IndexServer"))]
+    PutBreak: usize,
+}
 pub const Interval: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3646363423, data2: 19449, data3: 19938, data4: [188, 213, 199, 10, 124, 165, 88, 54] };
 #[doc = "*Required features: `\"Win32_System_Search\"`*"]
 pub const JET_GET_PROP_STORE_ERROR: i32 = -1073732822i32;
@@ -6657,8 +8371,51 @@ pub const ODBC_VS_FLAG_STOP: i32 = 8i32;
 pub const ODBC_VS_FLAG_UNICODE_ARG: i32 = 1i32;
 #[doc = "*Required features: `\"Win32_System_Search\"`*"]
 pub const ODBC_VS_FLAG_UNICODE_COR: i32 = 2i32;
-pub type OLEDBSimpleProvider = *mut ::core::ffi::c_void;
-pub type OLEDBSimpleProviderListener = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct OLEDBSimpleProvider {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub getRowCount: unsafe extern "system" fn(this: *mut *mut Self, pcrows: *mut isize) -> ::windows_sys::core::HRESULT,
+    pub getColumnCount: unsafe extern "system" fn(this: *mut *mut Self, pccolumns: *mut isize) -> ::windows_sys::core::HRESULT,
+    pub getRWStatus: unsafe extern "system" fn(this: *mut *mut Self, irow: isize, icolumn: isize, prwstatus: *mut OSPRW) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub getVariant: unsafe extern "system" fn(this: *mut *mut Self, irow: isize, icolumn: isize, format: OSPFORMAT, pvar: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    getVariant: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub setVariant: unsafe extern "system" fn(this: *mut *mut Self, irow: isize, icolumn: isize, format: OSPFORMAT, var: ::core::mem::ManuallyDrop<super::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    setVariant: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub getLocale: unsafe extern "system" fn(this: *mut *mut Self, pbstrlocale: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    getLocale: usize,
+    pub deleteRows: unsafe extern "system" fn(this: *mut *mut Self, irow: isize, crows: isize, pcrowsdeleted: *mut isize) -> ::windows_sys::core::HRESULT,
+    pub insertRows: unsafe extern "system" fn(this: *mut *mut Self, irow: isize, crows: isize, pcrowsinserted: *mut isize) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub find: unsafe extern "system" fn(this: *mut *mut Self, irowstart: isize, icolumn: isize, val: ::core::mem::ManuallyDrop<super::Com::VARIANT>, findflags: OSPFIND, comptype: OSPCOMP, pirowfound: *mut isize) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    find: usize,
+    pub addOLEDBSimpleProviderListener: unsafe extern "system" fn(this: *mut *mut Self, pospilistener: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub removeOLEDBSimpleProviderListener: unsafe extern "system" fn(this: *mut *mut Self, pospilistener: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub isAsync: unsafe extern "system" fn(this: *mut *mut Self, pbasynch: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    isAsync: usize,
+    pub getEstimatedRows: unsafe extern "system" fn(this: *mut *mut Self, pirows: *mut isize) -> ::windows_sys::core::HRESULT,
+    pub stopTransfer: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct OLEDBSimpleProviderListener {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub aboutToChangeCell: unsafe extern "system" fn(this: *mut *mut Self, irow: isize, icolumn: isize) -> ::windows_sys::core::HRESULT,
+    pub cellChanged: unsafe extern "system" fn(this: *mut *mut Self, irow: isize, icolumn: isize) -> ::windows_sys::core::HRESULT,
+    pub aboutToDeleteRows: unsafe extern "system" fn(this: *mut *mut Self, irow: isize, crows: isize) -> ::windows_sys::core::HRESULT,
+    pub deletedRows: unsafe extern "system" fn(this: *mut *mut Self, irow: isize, crows: isize) -> ::windows_sys::core::HRESULT,
+    pub aboutToInsertRows: unsafe extern "system" fn(this: *mut *mut Self, irow: isize, crows: isize) -> ::windows_sys::core::HRESULT,
+    pub insertedRows: unsafe extern "system" fn(this: *mut *mut Self, irow: isize, crows: isize) -> ::windows_sys::core::HRESULT,
+    pub rowsAvailable: unsafe extern "system" fn(this: *mut *mut Self, irow: isize, crows: isize) -> ::windows_sys::core::HRESULT,
+    pub transferComplete: unsafe extern "system" fn(this: *mut *mut Self, xfer: OSPXFER) -> ::windows_sys::core::HRESULT,
+}
 #[doc = "*Required features: `\"Win32_System_Search\"`*"]
 pub const OLEDBVER: u32 = 624u32;
 #[doc = "*Required features: `\"Win32_System_Search\"`*"]
@@ -7071,16 +8828,16 @@ pub const REXSPH_S_REDIRECTED: i32 = 275713i32;
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage", feature = "Win32_System_Ole"))]
 pub struct RMTPACK {
-    pub pISeqStream: super::Com::ISequentialStream,
+    pub pISeqStream: *mut *mut *mut *mut super::Com::ISequentialStream,
     pub cbData: u32,
     pub cBSTR: u32,
     pub rgBSTR: *mut super::super::Foundation::BSTR,
     pub cVARIANT: u32,
     pub rgVARIANT: *mut super::Com::VARIANT,
     pub cIDISPATCH: u32,
-    pub rgIDISPATCH: *mut super::Com::IDispatch,
+    pub rgIDISPATCH: *mut *mut *mut super::Com::IDispatch,
     pub cIUNKNOWN: u32,
-    pub rgIUNKNOWN: *mut ::windows_sys::core::IUnknown,
+    pub rgIUNKNOWN: *mut *mut *mut ::windows_sys::core::IUnknown,
     pub cPROPVARIANT: u32,
     pub rgPROPVARIANT: *mut super::Com::StructuredStorage::PROPVARIANT,
     pub cArray: u32,
@@ -7101,16 +8858,16 @@ impl ::core::clone::Clone for RMTPACK {
 #[cfg(target_arch = "x86")]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage", feature = "Win32_System_Ole"))]
 pub struct RMTPACK {
-    pub pISeqStream: super::Com::ISequentialStream,
+    pub pISeqStream: *mut *mut *mut *mut super::Com::ISequentialStream,
     pub cbData: u32,
     pub cBSTR: u32,
     pub rgBSTR: *mut super::super::Foundation::BSTR,
     pub cVARIANT: u32,
     pub rgVARIANT: *mut super::Com::VARIANT,
     pub cIDISPATCH: u32,
-    pub rgIDISPATCH: *mut super::Com::IDispatch,
+    pub rgIDISPATCH: *mut *mut *mut super::Com::IDispatch,
     pub cIUNKNOWN: u32,
-    pub rgIUNKNOWN: *mut ::windows_sys::core::IUnknown,
+    pub rgIUNKNOWN: *mut *mut *mut ::windows_sys::core::IUnknown,
     pub cPROPVARIANT: u32,
     pub rgPROPVARIANT: *mut super::Com::StructuredStorage::PROPVARIANT,
     pub cArray: u32,
@@ -10998,7 +12755,7 @@ impl ::core::clone::Clone for SSVARIANT_0 {
 #[cfg(feature = "Win32_System_Com")]
 pub struct SSVARIANT_0_0 {
     pub dbobj: DBOBJECT,
-    pub pUnk: ::windows_sys::core::IUnknown,
+    pub pUnk: *mut *mut *mut *mut ::windows_sys::core::IUnknown,
 }
 #[cfg(feature = "Win32_System_Com")]
 impl ::core::marker::Copy for SSVARIANT_0_0 {}

@@ -70,9 +70,70 @@ impl ::core::clone::Clone for HTHREAD_NETWORK_CONTEXT {
         *self
     }
 }
-pub type IProtectionPolicyManagerInterop = *mut ::core::ffi::c_void;
-pub type IProtectionPolicyManagerInterop2 = *mut ::core::ffi::c_void;
-pub type IProtectionPolicyManagerInterop3 = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IProtectionPolicyManagerInterop {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RequestAccessForWindowAsync: unsafe extern "system" fn(this: *mut *mut Self, appwindow: super::super::Foundation::HWND, sourceidentity: ::windows_sys::core::HSTRING, targetidentity: ::windows_sys::core::HSTRING, riid: *const ::windows_sys::core::GUID, asyncoperation: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RequestAccessForWindowAsync: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetForWindow: unsafe extern "system" fn(this: *mut *mut Self, appwindow: super::super::Foundation::HWND, riid: *const ::windows_sys::core::GUID, result: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetForWindow: usize,
+}
+#[repr(C)]
+pub struct IProtectionPolicyManagerInterop2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RequestAccessForAppWithWindowAsync: unsafe extern "system" fn(this: *mut *mut Self, appwindow: super::super::Foundation::HWND, sourceidentity: ::windows_sys::core::HSTRING, apppackagefamilyname: ::windows_sys::core::HSTRING, riid: *const ::windows_sys::core::GUID, asyncoperation: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RequestAccessForAppWithWindowAsync: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RequestAccessWithAuditingInfoForWindowAsync: unsafe extern "system" fn(this: *mut *mut Self, appwindow: super::super::Foundation::HWND, sourceidentity: ::windows_sys::core::HSTRING, targetidentity: ::windows_sys::core::HSTRING, auditinfounk: *mut ::core::ffi::c_void, riid: *const ::windows_sys::core::GUID, asyncoperation: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RequestAccessWithAuditingInfoForWindowAsync: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RequestAccessWithMessageForWindowAsync: unsafe extern "system" fn(this: *mut *mut Self, appwindow: super::super::Foundation::HWND, sourceidentity: ::windows_sys::core::HSTRING, targetidentity: ::windows_sys::core::HSTRING, auditinfounk: *mut ::core::ffi::c_void, messagefromapp: ::windows_sys::core::HSTRING, riid: *const ::windows_sys::core::GUID, asyncoperation: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RequestAccessWithMessageForWindowAsync: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RequestAccessForAppWithAuditingInfoForWindowAsync: unsafe extern "system" fn(this: *mut *mut Self, appwindow: super::super::Foundation::HWND, sourceidentity: ::windows_sys::core::HSTRING, apppackagefamilyname: ::windows_sys::core::HSTRING, auditinfounk: *mut ::core::ffi::c_void, riid: *const ::windows_sys::core::GUID, asyncoperation: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RequestAccessForAppWithAuditingInfoForWindowAsync: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RequestAccessForAppWithMessageForWindowAsync: unsafe extern "system" fn(this: *mut *mut Self, appwindow: super::super::Foundation::HWND, sourceidentity: ::windows_sys::core::HSTRING, apppackagefamilyname: ::windows_sys::core::HSTRING, auditinfounk: *mut ::core::ffi::c_void, messagefromapp: ::windows_sys::core::HSTRING, riid: *const ::windows_sys::core::GUID, asyncoperation: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RequestAccessForAppWithMessageForWindowAsync: usize,
+}
+#[repr(C)]
+pub struct IProtectionPolicyManagerInterop3 {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RequestAccessWithBehaviorForWindowAsync: unsafe extern "system" fn(this: *mut *mut Self, appwindow: super::super::Foundation::HWND, sourceidentity: ::windows_sys::core::HSTRING, targetidentity: ::windows_sys::core::HSTRING, auditinfounk: *mut ::core::ffi::c_void, messagefromapp: ::windows_sys::core::HSTRING, behavior: u32, riid: *const ::windows_sys::core::GUID, asyncoperation: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RequestAccessWithBehaviorForWindowAsync: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RequestAccessForAppWithBehaviorForWindowAsync: unsafe extern "system" fn(this: *mut *mut Self, appwindow: super::super::Foundation::HWND, sourceidentity: ::windows_sys::core::HSTRING, apppackagefamilyname: ::windows_sys::core::HSTRING, auditinfounk: *mut ::core::ffi::c_void, messagefromapp: ::windows_sys::core::HSTRING, behavior: u32, riid: *const ::windows_sys::core::GUID, asyncoperation: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RequestAccessForAppWithBehaviorForWindowAsync: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RequestAccessToFilesForAppForWindowAsync: unsafe extern "system" fn(this: *mut *mut Self, appwindow: super::super::Foundation::HWND, sourceitemlistunk: *mut ::core::ffi::c_void, apppackagefamilyname: ::windows_sys::core::HSTRING, auditinfounk: *mut ::core::ffi::c_void, riid: *const ::windows_sys::core::GUID, asyncoperation: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RequestAccessToFilesForAppForWindowAsync: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RequestAccessToFilesForAppWithMessageAndBehaviorForWindowAsync: unsafe extern "system" fn(this: *mut *mut Self, appwindow: super::super::Foundation::HWND, sourceitemlistunk: *mut ::core::ffi::c_void, apppackagefamilyname: ::windows_sys::core::HSTRING, auditinfounk: *mut ::core::ffi::c_void, messagefromapp: ::windows_sys::core::HSTRING, behavior: u32, riid: *const ::windows_sys::core::GUID, asyncoperation: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RequestAccessToFilesForAppWithMessageAndBehaviorForWindowAsync: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RequestAccessToFilesForProcessForWindowAsync: unsafe extern "system" fn(this: *mut *mut Self, appwindow: super::super::Foundation::HWND, sourceitemlistunk: *mut ::core::ffi::c_void, processid: u32, auditinfounk: *mut ::core::ffi::c_void, riid: *const ::windows_sys::core::GUID, asyncoperation: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RequestAccessToFilesForProcessForWindowAsync: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RequestAccessToFilesForProcessWithMessageAndBehaviorForWindowAsync: unsafe extern "system" fn(this: *mut *mut Self, appwindow: super::super::Foundation::HWND, sourceitemlistunk: *mut ::core::ffi::c_void, processid: u32, auditinfounk: *mut ::core::ffi::c_void, messagefromapp: ::windows_sys::core::HSTRING, behavior: u32, riid: *const ::windows_sys::core::GUID, asyncoperation: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RequestAccessToFilesForProcessWithMessageAndBehaviorForWindowAsync: usize,
+}
 #[doc = "*Required features: `\"Win32_Security_EnterpriseData\"`*"]
 pub type SRPHOSTING_TYPE = i32;
 #[doc = "*Required features: `\"Win32_Security_EnterpriseData\"`*"]

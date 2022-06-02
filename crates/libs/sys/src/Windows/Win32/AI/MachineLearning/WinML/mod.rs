@@ -1,26 +1,150 @@
 #[link(name = "windows")]
 extern "system" {
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_WinML\"`*"]
-    pub fn MLCreateOperatorRegistry(registry: *mut IMLOperatorRegistry) -> ::windows_sys::core::HRESULT;
+    pub fn MLCreateOperatorRegistry(registry: *mut *mut *mut IMLOperatorRegistry) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_AI_MachineLearning_WinML\"`*"]
-    pub fn WinMLCreateRuntime(runtime: *mut IWinMLRuntime) -> ::windows_sys::core::HRESULT;
+    pub fn WinMLCreateRuntime(runtime: *mut *mut *mut IWinMLRuntime) -> ::windows_sys::core::HRESULT;
 }
-pub type IMLOperatorAttributes = *mut ::core::ffi::c_void;
-pub type IMLOperatorKernel = *mut ::core::ffi::c_void;
-pub type IMLOperatorKernelContext = *mut ::core::ffi::c_void;
-pub type IMLOperatorKernelCreationContext = *mut ::core::ffi::c_void;
-pub type IMLOperatorKernelFactory = *mut ::core::ffi::c_void;
-pub type IMLOperatorRegistry = *mut ::core::ffi::c_void;
-pub type IMLOperatorShapeInferenceContext = *mut ::core::ffi::c_void;
-pub type IMLOperatorShapeInferrer = *mut ::core::ffi::c_void;
-pub type IMLOperatorTensor = *mut ::core::ffi::c_void;
-pub type IMLOperatorTensorShapeDescription = *mut ::core::ffi::c_void;
-pub type IMLOperatorTypeInferenceContext = *mut ::core::ffi::c_void;
-pub type IMLOperatorTypeInferrer = *mut ::core::ffi::c_void;
-pub type IWinMLEvaluationContext = *mut ::core::ffi::c_void;
-pub type IWinMLModel = *mut ::core::ffi::c_void;
-pub type IWinMLRuntime = *mut ::core::ffi::c_void;
-pub type IWinMLRuntimeFactory = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IMLOperatorAttributes {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetAttributeElementCount: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::PCSTR, r#type: MLOperatorAttributeType, elementcount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetAttribute: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::PCSTR, r#type: MLOperatorAttributeType, elementcount: u32, elementbytesize: usize, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetStringAttributeElementLength: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::PCSTR, elementindex: u32, attributeelementbytesize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetStringAttributeElement: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::PCSTR, elementindex: u32, attributeelementbytesize: u32, attributeelement: ::windows_sys::core::PSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMLOperatorKernel {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Compute: unsafe extern "system" fn(this: *mut *mut Self, context: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMLOperatorKernelContext {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetInputTensor: unsafe extern "system" fn(this: *mut *mut Self, inputindex: u32, tensor: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetOutputTensor: unsafe extern "system" fn(this: *mut *mut Self, outputindex: u32, dimensioncount: u32, dimensionsizes: *const u32, tensor: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetOutputTensor2: unsafe extern "system" fn(this: *mut *mut Self, outputindex: u32, tensor: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub AllocateTemporaryData: unsafe extern "system" fn(this: *mut *mut Self, size: usize, data: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetExecutionInterface: unsafe extern "system" fn(this: *mut *mut Self, executionobject: *mut *mut ::core::ffi::c_void),
+}
+#[repr(C)]
+pub struct IMLOperatorKernelCreationContext {
+    pub base__: IMLOperatorAttributes,
+    pub GetInputCount: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
+    pub GetOutputCount: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
+    pub IsInputValid: unsafe extern "system" fn(this: *mut *mut Self, inputindex: u32) -> bool,
+    pub IsOutputValid: unsafe extern "system" fn(this: *mut *mut Self, outputindex: u32) -> bool,
+    pub GetInputEdgeDescription: unsafe extern "system" fn(this: *mut *mut Self, inputindex: u32, edgedescription: *mut MLOperatorEdgeDescription) -> ::windows_sys::core::HRESULT,
+    pub GetOutputEdgeDescription: unsafe extern "system" fn(this: *mut *mut Self, outputindex: u32, edgedescription: *mut MLOperatorEdgeDescription) -> ::windows_sys::core::HRESULT,
+    pub HasTensorShapeDescription: unsafe extern "system" fn(this: *mut *mut Self) -> bool,
+    pub GetTensorShapeDescription: unsafe extern "system" fn(this: *mut *mut Self, shapedescription: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetExecutionInterface: unsafe extern "system" fn(this: *mut *mut Self, executionobject: *mut *mut ::core::ffi::c_void),
+}
+#[repr(C)]
+pub struct IMLOperatorKernelFactory {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub CreateKernel: unsafe extern "system" fn(this: *mut *mut Self, context: *mut ::core::ffi::c_void, kernel: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMLOperatorRegistry {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub RegisterOperatorSetSchema: unsafe extern "system" fn(this: *mut *mut Self, operatorsetid: *const MLOperatorSetId, baselineversion: i32, schema: *const *const MLOperatorSchemaDescription, schemacount: u32, typeinferrer: *mut ::core::ffi::c_void, shapeinferrer: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub RegisterOperatorKernel: unsafe extern "system" fn(this: *mut *mut Self, operatorkernel: *const MLOperatorKernelDescription, operatorkernelfactory: *mut ::core::ffi::c_void, shapeinferrer: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMLOperatorShapeInferenceContext {
+    pub base__: IMLOperatorAttributes,
+    pub GetInputCount: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
+    pub GetOutputCount: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
+    pub IsInputValid: unsafe extern "system" fn(this: *mut *mut Self, inputindex: u32) -> bool,
+    pub IsOutputValid: unsafe extern "system" fn(this: *mut *mut Self, outputindex: u32) -> bool,
+    pub GetInputEdgeDescription: unsafe extern "system" fn(this: *mut *mut Self, inputindex: u32, edgedescription: *mut MLOperatorEdgeDescription) -> ::windows_sys::core::HRESULT,
+    pub GetInputTensorDimensionCount: unsafe extern "system" fn(this: *mut *mut Self, inputindex: u32, dimensioncount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetInputTensorShape: unsafe extern "system" fn(this: *mut *mut Self, inputindex: u32, dimensioncount: u32, dimensions: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub SetOutputTensorShape: unsafe extern "system" fn(this: *mut *mut Self, outputindex: u32, dimensioncount: u32, dimensions: *const u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMLOperatorShapeInferrer {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub InferOutputShapes: unsafe extern "system" fn(this: *mut *mut Self, context: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMLOperatorTensor {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetDimensionCount: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
+    pub GetShape: unsafe extern "system" fn(this: *mut *mut Self, dimensioncount: u32, dimensions: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetTensorDataType: unsafe extern "system" fn(this: *mut *mut Self) -> MLOperatorTensorDataType,
+    pub IsCpuData: unsafe extern "system" fn(this: *mut *mut Self) -> bool,
+    pub IsDataInterface: unsafe extern "system" fn(this: *mut *mut Self) -> bool,
+    pub GetData: unsafe extern "system" fn(this: *mut *mut Self) -> *mut ::core::ffi::c_void,
+    pub GetDataInterface: unsafe extern "system" fn(this: *mut *mut Self, datainterface: *mut *mut ::core::ffi::c_void),
+}
+#[repr(C)]
+pub struct IMLOperatorTensorShapeDescription {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetInputTensorDimensionCount: unsafe extern "system" fn(this: *mut *mut Self, inputindex: u32, dimensioncount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetInputTensorShape: unsafe extern "system" fn(this: *mut *mut Self, inputindex: u32, dimensioncount: u32, dimensions: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub HasOutputShapeDescription: unsafe extern "system" fn(this: *mut *mut Self) -> bool,
+    pub GetOutputTensorDimensionCount: unsafe extern "system" fn(this: *mut *mut Self, outputindex: u32, dimensioncount: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetOutputTensorShape: unsafe extern "system" fn(this: *mut *mut Self, outputindex: u32, dimensioncount: u32, dimensions: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMLOperatorTypeInferenceContext {
+    pub base__: IMLOperatorAttributes,
+    pub GetInputCount: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
+    pub GetOutputCount: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
+    pub IsInputValid: unsafe extern "system" fn(this: *mut *mut Self, inputindex: u32) -> bool,
+    pub IsOutputValid: unsafe extern "system" fn(this: *mut *mut Self, outputindex: u32) -> bool,
+    pub GetInputEdgeDescription: unsafe extern "system" fn(this: *mut *mut Self, inputindex: u32, edgedescription: *mut MLOperatorEdgeDescription) -> ::windows_sys::core::HRESULT,
+    pub SetOutputEdgeDescription: unsafe extern "system" fn(this: *mut *mut Self, outputindex: u32, edgedescription: *const MLOperatorEdgeDescription) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IMLOperatorTypeInferrer {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub InferOutputTypes: unsafe extern "system" fn(this: *mut *mut Self, context: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWinMLEvaluationContext {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Graphics_Direct3D12")]
+    pub BindValue: unsafe extern "system" fn(this: *mut *mut Self, pdescriptor: *const WINML_BINDING_DESC) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Direct3D12"))]
+    BindValue: usize,
+    #[cfg(feature = "Win32_Graphics_Direct3D12")]
+    pub GetValueByName: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::PCWSTR, pdescriptor: *mut *mut WINML_BINDING_DESC) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Direct3D12"))]
+    GetValueByName: usize,
+    pub Clear: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWinMLModel {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetDescription: unsafe extern "system" fn(this: *mut *mut Self, ppdescription: *mut *mut WINML_MODEL_DESC) -> ::windows_sys::core::HRESULT,
+    pub EnumerateMetadata: unsafe extern "system" fn(this: *mut *mut Self, index: u32, pkey: *mut ::windows_sys::core::PWSTR, pvalue: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub EnumerateModelInputs: unsafe extern "system" fn(this: *mut *mut Self, index: u32, ppinputdescriptor: *mut *mut WINML_VARIABLE_DESC) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    EnumerateModelInputs: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub EnumerateModelOutputs: unsafe extern "system" fn(this: *mut *mut Self, index: u32, ppoutputdescriptor: *mut *mut WINML_VARIABLE_DESC) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    EnumerateModelOutputs: usize,
+}
+#[repr(C)]
+pub struct IWinMLRuntime {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub LoadModel: unsafe extern "system" fn(this: *mut *mut Self, path: ::windows_sys::core::PCWSTR, ppmodel: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Graphics_Direct3D12")]
+    pub CreateEvaluationContext: unsafe extern "system" fn(this: *mut *mut Self, device: *mut ::core::ffi::c_void, ppcontext: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Direct3D12"))]
+    CreateEvaluationContext: usize,
+    pub EvaluateModel: unsafe extern "system" fn(this: *mut *mut Self, pcontext: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWinMLRuntimeFactory {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub CreateRuntime: unsafe extern "system" fn(this: *mut *mut Self, runtimetype: WINML_RUNTIME_TYPE, ppruntime: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_AI_MachineLearning_WinML\"`*"]
 pub struct MLOperatorAttribute {
@@ -454,7 +578,7 @@ pub struct WINML_RESOURCE_BINDING_DESC {
     pub ElementType: WINML_TENSOR_DATA_TYPE,
     pub NumDimensions: u32,
     pub pShape: *mut i64,
-    pub pResource: super::super::super::Graphics::Direct3D12::ID3D12Resource,
+    pub pResource: *mut *mut *mut *mut super::super::super::Graphics::Direct3D12::ID3D12Resource,
 }
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
 impl ::core::marker::Copy for WINML_RESOURCE_BINDING_DESC {}

@@ -86,3 +86,28 @@ impl ::core::clone::Clone for ClosedCaptionStyle {
         *self
     }
 }
+#[repr(C)]
+pub struct IClosedCaptionPropertiesStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub FontColor: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ClosedCaptionColor) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "UI")]
+    pub ComputedFontColor: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::UI::Color) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI"))]
+    ComputedFontColor: usize,
+    pub FontOpacity: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ClosedCaptionOpacity) -> ::windows_sys::core::HRESULT,
+    pub FontSize: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ClosedCaptionSize) -> ::windows_sys::core::HRESULT,
+    pub FontStyle: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ClosedCaptionStyle) -> ::windows_sys::core::HRESULT,
+    pub FontEffect: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ClosedCaptionEdgeEffect) -> ::windows_sys::core::HRESULT,
+    pub BackgroundColor: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ClosedCaptionColor) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "UI")]
+    pub ComputedBackgroundColor: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::UI::Color) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI"))]
+    ComputedBackgroundColor: usize,
+    pub BackgroundOpacity: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ClosedCaptionOpacity) -> ::windows_sys::core::HRESULT,
+    pub RegionColor: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ClosedCaptionColor) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "UI")]
+    pub ComputedRegionColor: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::UI::Color) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "UI"))]
+    ComputedRegionColor: usize,
+    pub RegionOpacity: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ClosedCaptionOpacity) -> ::windows_sys::core::HRESULT,
+}

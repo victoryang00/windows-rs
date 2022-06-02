@@ -1,9 +1,42 @@
-pub type IInkCommitRequestHandler = *mut ::core::ffi::c_void;
-pub type IInkD2DRenderer = *mut ::core::ffi::c_void;
-pub type IInkD2DRenderer2 = *mut ::core::ffi::c_void;
-pub type IInkDesktopHost = *mut ::core::ffi::c_void;
-pub type IInkHostWorkItem = *mut ::core::ffi::c_void;
-pub type IInkPresenterDesktop = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IInkCommitRequestHandler {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub OnCommitRequested: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IInkD2DRenderer {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Draw: unsafe extern "system" fn(this: *mut *mut Self, pd2d1devicecontext: *mut ::core::ffi::c_void, pinkstrokeiterable: *mut ::core::ffi::c_void, fhighcontrast: super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Draw: usize,
+}
+#[repr(C)]
+pub struct IInkD2DRenderer2 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Draw: unsafe extern "system" fn(this: *mut *mut Self, pd2d1devicecontext: *mut ::core::ffi::c_void, pinkstrokeiterable: *mut ::core::ffi::c_void, highcontrastadjustment: INK_HIGH_CONTRAST_ADJUSTMENT) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IInkDesktopHost {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub QueueWorkItem: unsafe extern "system" fn(this: *mut *mut Self, workitem: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateInkPresenter: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateAndInitializeInkPresenter: unsafe extern "system" fn(this: *mut *mut Self, rootvisual: *mut ::core::ffi::c_void, width: f32, height: f32, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IInkHostWorkItem {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Invoke: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IInkPresenterDesktop {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetRootVisual: unsafe extern "system" fn(this: *mut *mut Self, rootvisual: *mut ::core::ffi::c_void, device: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetCommitRequestHandler: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetSize: unsafe extern "system" fn(this: *mut *mut Self, width: *mut f32, height: *mut f32) -> ::windows_sys::core::HRESULT,
+    pub SetSize: unsafe extern "system" fn(this: *mut *mut Self, width: f32, height: f32) -> ::windows_sys::core::HRESULT,
+    pub OnHighContrastChanged: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
 #[doc = "*Required features: `\"Win32_UI_Input_Ink\"`*"]
 pub type INK_HIGH_CONTRAST_ADJUSTMENT = i32;
 #[doc = "*Required features: `\"Win32_UI_Input_Ink\"`*"]

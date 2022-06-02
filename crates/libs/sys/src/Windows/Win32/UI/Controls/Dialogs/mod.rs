@@ -747,8 +747,26 @@ pub const HELPMSGSTRING: &str = "commdlg_help";
 pub const HELPMSGSTRINGA: &str = "commdlg_help";
 #[doc = "*Required features: `\"Win32_UI_Controls_Dialogs\"`*"]
 pub const HELPMSGSTRINGW: &str = "commdlg_help";
-pub type IPrintDialogCallback = *mut ::core::ffi::c_void;
-pub type IPrintDialogServices = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IPrintDialogCallback {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub InitDone: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub SelectionChange: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub HandleMessage: unsafe extern "system" fn(this: *mut *mut Self, hdlg: super::super::super::Foundation::HWND, umsg: u32, wparam: super::super::super::Foundation::WPARAM, lparam: super::super::super::Foundation::LPARAM, presult: *mut super::super::super::Foundation::LRESULT) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    HandleMessage: usize,
+}
+#[repr(C)]
+pub struct IPrintDialogServices {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+    pub GetCurrentDevMode: unsafe extern "system" fn(this: *mut *mut Self, pdevmode: *mut super::super::super::Graphics::Gdi::DEVMODEA, pcbsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi")))]
+    GetCurrentDevMode: usize,
+    pub GetCurrentPrinterName: unsafe extern "system" fn(this: *mut *mut Self, pprintername: ::windows_sys::core::PWSTR, pcchsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetCurrentPortName: unsafe extern "system" fn(this: *mut *mut Self, pportname: ::windows_sys::core::PWSTR, pcchsize: *mut u32) -> ::windows_sys::core::HRESULT,
+}
 #[doc = "*Required features: `\"Win32_UI_Controls_Dialogs\"`*"]
 pub const LBSELCHSTRING: &str = "commdlg_LBSelChangedNotify";
 #[doc = "*Required features: `\"Win32_UI_Controls_Dialogs\"`*"]
@@ -1562,7 +1580,7 @@ pub struct PRINTDLGEXA {
     pub nCopies: u32,
     pub hInstance: super::super::super::Foundation::HINSTANCE,
     pub lpPrintTemplateName: ::windows_sys::core::PCSTR,
-    pub lpCallback: ::windows_sys::core::IUnknown,
+    pub lpCallback: *mut *mut *mut *mut ::windows_sys::core::IUnknown,
     pub nPropertyPages: u32,
     pub lphPropertyPages: *mut super::HPROPSHEETPAGE,
     pub nStartPage: u32,
@@ -1599,7 +1617,7 @@ pub struct PRINTDLGEXA {
     pub nCopies: u32,
     pub hInstance: super::super::super::Foundation::HINSTANCE,
     pub lpPrintTemplateName: ::windows_sys::core::PCSTR,
-    pub lpCallback: ::windows_sys::core::IUnknown,
+    pub lpCallback: *mut *mut *mut *mut ::windows_sys::core::IUnknown,
     pub nPropertyPages: u32,
     pub lphPropertyPages: *mut super::HPROPSHEETPAGE,
     pub nStartPage: u32,
@@ -1636,7 +1654,7 @@ pub struct PRINTDLGEXW {
     pub nCopies: u32,
     pub hInstance: super::super::super::Foundation::HINSTANCE,
     pub lpPrintTemplateName: ::windows_sys::core::PCWSTR,
-    pub lpCallback: ::windows_sys::core::IUnknown,
+    pub lpCallback: *mut *mut *mut *mut ::windows_sys::core::IUnknown,
     pub nPropertyPages: u32,
     pub lphPropertyPages: *mut super::HPROPSHEETPAGE,
     pub nStartPage: u32,
@@ -1673,7 +1691,7 @@ pub struct PRINTDLGEXW {
     pub nCopies: u32,
     pub hInstance: super::super::super::Foundation::HINSTANCE,
     pub lpPrintTemplateName: ::windows_sys::core::PCWSTR,
-    pub lpCallback: ::windows_sys::core::IUnknown,
+    pub lpCallback: *mut *mut *mut *mut ::windows_sys::core::IUnknown,
     pub nPropertyPages: u32,
     pub lphPropertyPages: *mut super::HPROPSHEETPAGE,
     pub nStartPage: u32,

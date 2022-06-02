@@ -2,14 +2,73 @@
 pub const ARRAY_SEP_CHAR: u32 = 9u32;
 #[doc = "*Required features: `\"Win32_System_ParentalControls\"`*"]
 pub const FACILITY_WPC: u32 = 2457u32;
-pub type IWPCGamesSettings = *mut ::core::ffi::c_void;
-pub type IWPCProviderConfig = *mut ::core::ffi::c_void;
-pub type IWPCProviderState = *mut ::core::ffi::c_void;
-pub type IWPCProviderSupport = *mut ::core::ffi::c_void;
-pub type IWPCSettings = *mut ::core::ffi::c_void;
-pub type IWPCWebSettings = *mut ::core::ffi::c_void;
-pub type IWindowsParentalControls = *mut ::core::ffi::c_void;
-pub type IWindowsParentalControlsCore = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IWPCGamesSettings {
+    pub base__: IWPCSettings,
+    pub IsBlocked: unsafe extern "system" fn(this: *mut *mut Self, guidappid: ::windows_sys::core::GUID, pdwreasons: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWPCProviderConfig {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetUserSummary: unsafe extern "system" fn(this: *mut *mut Self, bstrsid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pbstrusersummary: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetUserSummary: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub Configure: unsafe extern "system" fn(this: *mut *mut Self, hwnd: super::super::Foundation::HWND, bstrsid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    Configure: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RequestOverride: unsafe extern "system" fn(this: *mut *mut Self, hwnd: super::super::Foundation::HWND, bstrpath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, dwflags: WPCFLAG_RESTRICTION) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RequestOverride: usize,
+}
+#[repr(C)]
+pub struct IWPCProviderState {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub Enable: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+    pub Disable: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWPCProviderSupport {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCurrent: unsafe extern "system" fn(this: *mut *mut Self, pguidprovider: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWPCSettings {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub IsLoggingRequired: unsafe extern "system" fn(this: *mut *mut Self, pfrequired: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    IsLoggingRequired: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetLastSettingsChangeTime: unsafe extern "system" fn(this: *mut *mut Self, ptime: *mut super::super::Foundation::SYSTEMTIME) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetLastSettingsChangeTime: usize,
+    pub GetRestrictions: unsafe extern "system" fn(this: *mut *mut Self, pdwrestrictions: *mut WPCFLAG_RESTRICTION) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWPCWebSettings {
+    pub base__: IWPCSettings,
+    pub GetSettings: unsafe extern "system" fn(this: *mut *mut Self, pdwsettings: *mut WPCFLAG_WEB_SETTING) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub RequestURLOverride: unsafe extern "system" fn(this: *mut *mut Self, hwnd: super::super::Foundation::HWND, pcszurl: ::windows_sys::core::PCWSTR, curls: u32, ppcszsuburls: *const ::windows_sys::core::PWSTR, pfchanged: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    RequestURLOverride: usize,
+}
+#[repr(C)]
+pub struct IWindowsParentalControls {
+    pub base__: IWindowsParentalControlsCore,
+    pub GetGamesSettings: unsafe extern "system" fn(this: *mut *mut Self, pcszsid: ::windows_sys::core::PCWSTR, ppsettings: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IWindowsParentalControlsCore {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetVisibility: unsafe extern "system" fn(this: *mut *mut Self, pevisibility: *mut WPCFLAG_VISIBILITY) -> ::windows_sys::core::HRESULT,
+    pub GetUserSettings: unsafe extern "system" fn(this: *mut *mut Self, pcszsid: ::windows_sys::core::PCWSTR, ppsettings: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetWebSettings: unsafe extern "system" fn(this: *mut *mut Self, pcszsid: ::windows_sys::core::PCWSTR, ppsettings: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetWebFilterInfo: unsafe extern "system" fn(this: *mut *mut Self, pguidid: *mut ::windows_sys::core::GUID, ppszname: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
 #[doc = "*Required features: `\"Win32_System_ParentalControls\"`*"]
 pub const MSG_Event_AppBlocked: i32 = -1342177264i32;
 #[doc = "*Required features: `\"Win32_System_ParentalControls\"`*"]

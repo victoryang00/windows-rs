@@ -68,9 +68,290 @@ impl ::core::clone::Clone for FolderDepth {
         *self
     }
 }
-pub type IIndexableContent = *mut ::core::ffi::c_void;
-pub type IStorageFolderQueryOperations = *mut ::core::ffi::c_void;
-pub type IStorageQueryResultBase = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IContentIndexer {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub AddAsync: unsafe extern "system" fn(this: *mut *mut Self, indexablecontent: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    AddAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub UpdateAsync: unsafe extern "system" fn(this: *mut *mut Self, indexablecontent: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    UpdateAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub DeleteAsync: unsafe extern "system" fn(this: *mut *mut Self, contentid: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    DeleteAsync: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub DeleteMultipleAsync: unsafe extern "system" fn(this: *mut *mut Self, contentids: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    DeleteMultipleAsync: usize,
+    #[cfg(feature = "Foundation")]
+    pub DeleteAllAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    DeleteAllAsync: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub RetrievePropertiesAsync: unsafe extern "system" fn(this: *mut *mut Self, contentid: ::windows_sys::core::HSTRING, propertiestoretrieve: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    RetrievePropertiesAsync: usize,
+    pub Revision: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IContentIndexerQuery {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub GetCountAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    GetCountAsync: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub GetPropertiesAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    GetPropertiesAsync: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub GetPropertiesRangeAsync: unsafe extern "system" fn(this: *mut *mut Self, startindex: u32, maxitems: u32, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    GetPropertiesRangeAsync: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub GetAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    GetAsync: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub GetRangeAsync: unsafe extern "system" fn(this: *mut *mut Self, startindex: u32, maxitems: u32, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    GetRangeAsync: usize,
+    pub QueryFolder: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IContentIndexerQueryOperations {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation_Collections")]
+    pub CreateQueryWithSortOrderAndLanguage: unsafe extern "system" fn(this: *mut *mut Self, searchfilter: ::windows_sys::core::HSTRING, propertiestoretrieve: *mut ::core::ffi::c_void, sortorder: *mut ::core::ffi::c_void, searchfilterlanguage: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    CreateQueryWithSortOrderAndLanguage: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub CreateQueryWithSortOrder: unsafe extern "system" fn(this: *mut *mut Self, searchfilter: ::windows_sys::core::HSTRING, propertiestoretrieve: *mut ::core::ffi::c_void, sortorder: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    CreateQueryWithSortOrder: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub CreateQuery: unsafe extern "system" fn(this: *mut *mut Self, searchfilter: ::windows_sys::core::HSTRING, propertiestoretrieve: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    CreateQuery: usize,
+}
+#[repr(C)]
+pub struct IContentIndexerStatics {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub GetIndexerWithName: unsafe extern "system" fn(this: *mut *mut Self, indexname: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetIndexer: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IIndexableContent {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Id: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetId: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub Properties: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    Properties: usize,
+    #[cfg(feature = "Storage_Streams")]
+    pub Stream: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Storage_Streams"))]
+    Stream: usize,
+    #[cfg(feature = "Storage_Streams")]
+    pub SetStream: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Storage_Streams"))]
+    SetStream: usize,
+    pub StreamContentType: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetStreamContentType: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IQueryOptions {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation_Collections")]
+    pub FileTypeFilter: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    FileTypeFilter: usize,
+    pub FolderDepth: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut FolderDepth) -> ::windows_sys::core::HRESULT,
+    pub SetFolderDepth: unsafe extern "system" fn(this: *mut *mut Self, value: FolderDepth) -> ::windows_sys::core::HRESULT,
+    pub ApplicationSearchFilter: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetApplicationSearchFilter: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub UserSearchFilter: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetUserSearchFilter: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Language: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetLanguage: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub IndexerOption: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut IndexerOption) -> ::windows_sys::core::HRESULT,
+    pub SetIndexerOption: unsafe extern "system" fn(this: *mut *mut Self, value: IndexerOption) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub SortOrder: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    SortOrder: usize,
+    pub GroupPropertyName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub DateStackOption: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut DateStackOption) -> ::windows_sys::core::HRESULT,
+    pub SaveToString: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub LoadFromString: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Storage_FileProperties")]
+    pub SetThumbnailPrefetch: unsafe extern "system" fn(this: *mut *mut Self, mode: super::FileProperties::ThumbnailMode, requestedsize: u32, options: super::FileProperties::ThumbnailOptions) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Storage_FileProperties"))]
+    SetThumbnailPrefetch: usize,
+    #[cfg(all(feature = "Foundation_Collections", feature = "Storage_FileProperties"))]
+    pub SetPropertyPrefetch: unsafe extern "system" fn(this: *mut *mut Self, options: super::FileProperties::PropertyPrefetchOptions, propertiestoretrieve: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Foundation_Collections", feature = "Storage_FileProperties")))]
+    SetPropertyPrefetch: usize,
+}
+#[repr(C)]
+pub struct IQueryOptionsFactory {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation_Collections")]
+    pub CreateCommonFileQuery: unsafe extern "system" fn(this: *mut *mut Self, query: CommonFileQuery, filetypefilter: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    CreateCommonFileQuery: usize,
+    pub CreateCommonFolderQuery: unsafe extern "system" fn(this: *mut *mut Self, query: CommonFolderQuery, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IQueryOptionsWithProviderFilter {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation_Collections")]
+    pub StorageProviderIdFilter: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    StorageProviderIdFilter: usize,
+}
+#[repr(C)]
+pub struct IStorageFileQueryResult {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation_Collections")]
+    pub GetFilesAsync: unsafe extern "system" fn(this: *mut *mut Self, startindex: u32, maxnumberofitems: u32, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    GetFilesAsync: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub GetFilesAsyncDefaultStartAndCount: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    GetFilesAsyncDefaultStartAndCount: usize,
+}
+#[repr(C)]
+pub struct IStorageFileQueryResult2 {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(all(feature = "Data_Text", feature = "Foundation_Collections"))]
+    pub GetMatchingPropertiesWithRanges: unsafe extern "system" fn(this: *mut *mut Self, file: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Data_Text", feature = "Foundation_Collections")))]
+    GetMatchingPropertiesWithRanges: usize,
+}
+#[repr(C)]
+pub struct IStorageFolderQueryOperations {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub GetIndexedStateAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    GetIndexedStateAsync: usize,
+    pub CreateFileQueryOverloadDefault: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateFileQuery: unsafe extern "system" fn(this: *mut *mut Self, query: CommonFileQuery, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateFileQueryWithOptions: unsafe extern "system" fn(this: *mut *mut Self, queryoptions: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateFolderQueryOverloadDefault: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateFolderQuery: unsafe extern "system" fn(this: *mut *mut Self, query: CommonFolderQuery, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateFolderQueryWithOptions: unsafe extern "system" fn(this: *mut *mut Self, queryoptions: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateItemQuery: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub CreateItemQueryWithOptions: unsafe extern "system" fn(this: *mut *mut Self, queryoptions: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation_Collections")]
+    pub GetFilesAsync: unsafe extern "system" fn(this: *mut *mut Self, query: CommonFileQuery, startindex: u32, maxitemstoretrieve: u32, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    GetFilesAsync: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub GetFilesAsyncOverloadDefaultStartAndCount: unsafe extern "system" fn(this: *mut *mut Self, query: CommonFileQuery, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    GetFilesAsyncOverloadDefaultStartAndCount: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub GetFoldersAsync: unsafe extern "system" fn(this: *mut *mut Self, query: CommonFolderQuery, startindex: u32, maxitemstoretrieve: u32, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    GetFoldersAsync: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub GetFoldersAsyncOverloadDefaultStartAndCount: unsafe extern "system" fn(this: *mut *mut Self, query: CommonFolderQuery, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    GetFoldersAsyncOverloadDefaultStartAndCount: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub GetItemsAsync: unsafe extern "system" fn(this: *mut *mut Self, startindex: u32, maxitemstoretrieve: u32, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    GetItemsAsync: usize,
+    pub AreQueryOptionsSupported: unsafe extern "system" fn(this: *mut *mut Self, queryoptions: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub IsCommonFolderQuerySupported: unsafe extern "system" fn(this: *mut *mut Self, query: CommonFolderQuery, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+    pub IsCommonFileQuerySupported: unsafe extern "system" fn(this: *mut *mut Self, query: CommonFileQuery, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IStorageFolderQueryResult {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation_Collections")]
+    pub GetFoldersAsync: unsafe extern "system" fn(this: *mut *mut Self, startindex: u32, maxnumberofitems: u32, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    GetFoldersAsync: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub GetFoldersAsyncDefaultStartAndCount: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    GetFoldersAsyncDefaultStartAndCount: usize,
+}
+#[repr(C)]
+pub struct IStorageItemQueryResult {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation_Collections")]
+    pub GetItemsAsync: unsafe extern "system" fn(this: *mut *mut Self, startindex: u32, maxnumberofitems: u32, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    GetItemsAsync: usize,
+    #[cfg(feature = "Foundation_Collections")]
+    pub GetItemsAsyncDefaultStartAndCount: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation_Collections"))]
+    GetItemsAsyncDefaultStartAndCount: usize,
+}
+#[repr(C)]
+pub struct IStorageLibraryChangeTrackerTriggerDetails {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Folder: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ChangeTracker: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IStorageLibraryContentChangedTriggerDetails {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Folder: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub CreateModifiedSinceQuery: unsafe extern "system" fn(this: *mut *mut Self, lastquerytime: super::super::Foundation::DateTime, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    CreateModifiedSinceQuery: usize,
+}
+#[repr(C)]
+pub struct IStorageQueryResultBase {
+    pub base__: ::windows_sys::core::IInspectable,
+    #[cfg(feature = "Foundation")]
+    pub GetItemCountAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    GetItemCountAsync: usize,
+    pub Folder: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Foundation")]
+    pub ContentsChanged: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    ContentsChanged: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveContentsChanged: unsafe extern "system" fn(this: *mut *mut Self, eventcookie: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveContentsChanged: usize,
+    #[cfg(feature = "Foundation")]
+    pub OptionsChanged: unsafe extern "system" fn(this: *mut *mut Self, changedhandler: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    OptionsChanged: usize,
+    #[cfg(feature = "Foundation")]
+    pub RemoveOptionsChanged: unsafe extern "system" fn(this: *mut *mut Self, eventcookie: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    RemoveOptionsChanged: usize,
+    #[cfg(feature = "Foundation")]
+    pub FindStartIndexAsync: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Foundation"))]
+    FindStartIndexAsync: usize,
+    pub GetCurrentQueryOptions: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub ApplyNewQueryOptions: unsafe extern "system" fn(this: *mut *mut Self, newqueryoptions: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IValueAndLanguage {
+    pub base__: ::windows_sys::core::IInspectable,
+    pub Language: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub SetLanguage: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+    pub Value: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub SetValue: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
 pub type IndexableContent = *mut ::core::ffi::c_void;
 #[doc = "*Required features: `\"Storage_Search\"`*"]
 #[repr(transparent)]

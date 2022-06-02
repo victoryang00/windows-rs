@@ -276,7 +276,7 @@ pub struct APPX_ENCRYPTED_PACKAGE_SETTINGS {
     pub keyLength: u32,
     pub encryptionAlgorithm: ::windows_sys::core::PCWSTR,
     pub useDiffusion: super::super::super::Foundation::BOOL,
-    pub blockMapHashAlgorithm: super::super::super::System::Com::IUri,
+    pub blockMapHashAlgorithm: *mut *mut *mut *mut super::super::super::System::Com::IUri,
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
 impl ::core::marker::Copy for APPX_ENCRYPTED_PACKAGE_SETTINGS {}
@@ -292,7 +292,7 @@ impl ::core::clone::Clone for APPX_ENCRYPTED_PACKAGE_SETTINGS {
 pub struct APPX_ENCRYPTED_PACKAGE_SETTINGS2 {
     pub keyLength: u32,
     pub encryptionAlgorithm: ::windows_sys::core::PCWSTR,
-    pub blockMapHashAlgorithm: super::super::super::System::Com::IUri,
+    pub blockMapHashAlgorithm: *mut *mut *mut *mut super::super::super::System::Com::IUri,
     pub options: u32,
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -374,7 +374,7 @@ pub const APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION_APPEND_DELTA: APPX_PACKAGE_E
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
 pub struct APPX_PACKAGE_SETTINGS {
     pub forceZip32: super::super::super::Foundation::BOOL,
-    pub hashMethod: super::super::super::System::Com::IUri,
+    pub hashMethod: *mut *mut *mut *mut super::super::super::System::Com::IUri,
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
 impl ::core::marker::Copy for APPX_PACKAGE_SETTINGS {}
@@ -388,7 +388,7 @@ impl ::core::clone::Clone for APPX_PACKAGE_SETTINGS {
 #[doc = "*Required features: `\"Win32_Storage_Packaging_Appx\"`, `\"Win32_System_Com\"`*"]
 #[cfg(feature = "Win32_System_Com")]
 pub struct APPX_PACKAGE_WRITER_PAYLOAD_STREAM {
-    pub inputStream: super::super::super::System::Com::IStream,
+    pub inputStream: *mut *mut *mut *mut super::super::super::System::Com::IStream,
     pub fileName: ::windows_sys::core::PCWSTR,
     pub contentType: ::windows_sys::core::PCWSTR,
     pub compressionOption: APPX_COMPRESSION_OPTION,
@@ -496,87 +496,848 @@ pub const DX_FEATURE_LEVEL_9: DX_FEATURE_LEVEL = 1i32;
 pub const DX_FEATURE_LEVEL_10: DX_FEATURE_LEVEL = 2i32;
 #[doc = "*Required features: `\"Win32_Storage_Packaging_Appx\"`*"]
 pub const DX_FEATURE_LEVEL_11: DX_FEATURE_LEVEL = 3i32;
-pub type IAppxBlockMapBlock = *mut ::core::ffi::c_void;
-pub type IAppxBlockMapBlocksEnumerator = *mut ::core::ffi::c_void;
-pub type IAppxBlockMapFile = *mut ::core::ffi::c_void;
-pub type IAppxBlockMapFilesEnumerator = *mut ::core::ffi::c_void;
-pub type IAppxBlockMapReader = *mut ::core::ffi::c_void;
-pub type IAppxBundleFactory = *mut ::core::ffi::c_void;
-pub type IAppxBundleManifestOptionalBundleInfo = *mut ::core::ffi::c_void;
-pub type IAppxBundleManifestOptionalBundleInfoEnumerator = *mut ::core::ffi::c_void;
-pub type IAppxBundleManifestPackageInfo = *mut ::core::ffi::c_void;
-pub type IAppxBundleManifestPackageInfo2 = *mut ::core::ffi::c_void;
-pub type IAppxBundleManifestPackageInfo3 = *mut ::core::ffi::c_void;
-pub type IAppxBundleManifestPackageInfo4 = *mut ::core::ffi::c_void;
-pub type IAppxBundleManifestPackageInfoEnumerator = *mut ::core::ffi::c_void;
-pub type IAppxBundleManifestReader = *mut ::core::ffi::c_void;
-pub type IAppxBundleManifestReader2 = *mut ::core::ffi::c_void;
-pub type IAppxBundleReader = *mut ::core::ffi::c_void;
-pub type IAppxBundleWriter = *mut ::core::ffi::c_void;
-pub type IAppxBundleWriter2 = *mut ::core::ffi::c_void;
-pub type IAppxBundleWriter3 = *mut ::core::ffi::c_void;
-pub type IAppxBundleWriter4 = *mut ::core::ffi::c_void;
-pub type IAppxContentGroup = *mut ::core::ffi::c_void;
-pub type IAppxContentGroupFilesEnumerator = *mut ::core::ffi::c_void;
-pub type IAppxContentGroupMapReader = *mut ::core::ffi::c_void;
-pub type IAppxContentGroupMapWriter = *mut ::core::ffi::c_void;
-pub type IAppxContentGroupsEnumerator = *mut ::core::ffi::c_void;
-pub type IAppxEncryptedBundleWriter = *mut ::core::ffi::c_void;
-pub type IAppxEncryptedBundleWriter2 = *mut ::core::ffi::c_void;
-pub type IAppxEncryptedBundleWriter3 = *mut ::core::ffi::c_void;
-pub type IAppxEncryptedPackageWriter = *mut ::core::ffi::c_void;
-pub type IAppxEncryptedPackageWriter2 = *mut ::core::ffi::c_void;
-pub type IAppxEncryptionFactory = *mut ::core::ffi::c_void;
-pub type IAppxEncryptionFactory2 = *mut ::core::ffi::c_void;
-pub type IAppxEncryptionFactory3 = *mut ::core::ffi::c_void;
-pub type IAppxEncryptionFactory4 = *mut ::core::ffi::c_void;
-pub type IAppxFactory = *mut ::core::ffi::c_void;
-pub type IAppxFactory2 = *mut ::core::ffi::c_void;
-pub type IAppxFile = *mut ::core::ffi::c_void;
-pub type IAppxFilesEnumerator = *mut ::core::ffi::c_void;
-pub type IAppxManifestApplication = *mut ::core::ffi::c_void;
-pub type IAppxManifestApplicationsEnumerator = *mut ::core::ffi::c_void;
-pub type IAppxManifestCapabilitiesEnumerator = *mut ::core::ffi::c_void;
-pub type IAppxManifestDeviceCapabilitiesEnumerator = *mut ::core::ffi::c_void;
-pub type IAppxManifestDriverConstraint = *mut ::core::ffi::c_void;
-pub type IAppxManifestDriverConstraintsEnumerator = *mut ::core::ffi::c_void;
-pub type IAppxManifestDriverDependenciesEnumerator = *mut ::core::ffi::c_void;
-pub type IAppxManifestDriverDependency = *mut ::core::ffi::c_void;
-pub type IAppxManifestHostRuntimeDependenciesEnumerator = *mut ::core::ffi::c_void;
-pub type IAppxManifestHostRuntimeDependency = *mut ::core::ffi::c_void;
-pub type IAppxManifestHostRuntimeDependency2 = *mut ::core::ffi::c_void;
-pub type IAppxManifestMainPackageDependenciesEnumerator = *mut ::core::ffi::c_void;
-pub type IAppxManifestMainPackageDependency = *mut ::core::ffi::c_void;
-pub type IAppxManifestOSPackageDependenciesEnumerator = *mut ::core::ffi::c_void;
-pub type IAppxManifestOSPackageDependency = *mut ::core::ffi::c_void;
-pub type IAppxManifestOptionalPackageInfo = *mut ::core::ffi::c_void;
-pub type IAppxManifestPackageDependenciesEnumerator = *mut ::core::ffi::c_void;
-pub type IAppxManifestPackageDependency = *mut ::core::ffi::c_void;
-pub type IAppxManifestPackageDependency2 = *mut ::core::ffi::c_void;
-pub type IAppxManifestPackageDependency3 = *mut ::core::ffi::c_void;
-pub type IAppxManifestPackageId = *mut ::core::ffi::c_void;
-pub type IAppxManifestPackageId2 = *mut ::core::ffi::c_void;
-pub type IAppxManifestProperties = *mut ::core::ffi::c_void;
-pub type IAppxManifestQualifiedResource = *mut ::core::ffi::c_void;
-pub type IAppxManifestQualifiedResourcesEnumerator = *mut ::core::ffi::c_void;
-pub type IAppxManifestReader = *mut ::core::ffi::c_void;
-pub type IAppxManifestReader2 = *mut ::core::ffi::c_void;
-pub type IAppxManifestReader3 = *mut ::core::ffi::c_void;
-pub type IAppxManifestReader4 = *mut ::core::ffi::c_void;
-pub type IAppxManifestReader5 = *mut ::core::ffi::c_void;
-pub type IAppxManifestReader6 = *mut ::core::ffi::c_void;
-pub type IAppxManifestReader7 = *mut ::core::ffi::c_void;
-pub type IAppxManifestResourcesEnumerator = *mut ::core::ffi::c_void;
-pub type IAppxManifestTargetDeviceFamiliesEnumerator = *mut ::core::ffi::c_void;
-pub type IAppxManifestTargetDeviceFamily = *mut ::core::ffi::c_void;
-pub type IAppxPackageEditor = *mut ::core::ffi::c_void;
-pub type IAppxPackageReader = *mut ::core::ffi::c_void;
-pub type IAppxPackageWriter = *mut ::core::ffi::c_void;
-pub type IAppxPackageWriter2 = *mut ::core::ffi::c_void;
-pub type IAppxPackageWriter3 = *mut ::core::ffi::c_void;
-pub type IAppxPackagingDiagnosticEventSink = *mut ::core::ffi::c_void;
-pub type IAppxPackagingDiagnosticEventSinkManager = *mut ::core::ffi::c_void;
-pub type IAppxSourceContentGroupMapReader = *mut ::core::ffi::c_void;
+#[repr(C)]
+pub struct IAppxBlockMapBlock {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetHash: unsafe extern "system" fn(this: *mut *mut Self, buffersize: *mut u32, buffer: *mut *mut u8) -> ::windows_sys::core::HRESULT,
+    pub GetCompressedSize: unsafe extern "system" fn(this: *mut *mut Self, size: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAppxBlockMapBlocksEnumerator {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCurrent: unsafe extern "system" fn(this: *mut *mut Self, block: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetHasCurrent: unsafe extern "system" fn(this: *mut *mut Self, hascurrent: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetHasCurrent: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MoveNext: unsafe extern "system" fn(this: *mut *mut Self, hasnext: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MoveNext: usize,
+}
+#[repr(C)]
+pub struct IAppxBlockMapFile {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetBlocks: unsafe extern "system" fn(this: *mut *mut Self, blocks: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetLocalFileHeaderSize: unsafe extern "system" fn(this: *mut *mut Self, lfhsize: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetName: unsafe extern "system" fn(this: *mut *mut Self, name: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetUncompressedSize: unsafe extern "system" fn(this: *mut *mut Self, size: *mut u64) -> ::windows_sys::core::HRESULT,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub ValidateFileHash: unsafe extern "system" fn(this: *mut *mut Self, filestream: *mut ::core::ffi::c_void, isvalid: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    ValidateFileHash: usize,
+}
+#[repr(C)]
+pub struct IAppxBlockMapFilesEnumerator {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCurrent: unsafe extern "system" fn(this: *mut *mut Self, file: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetHasCurrent: unsafe extern "system" fn(this: *mut *mut Self, hascurrent: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetHasCurrent: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MoveNext: unsafe extern "system" fn(this: *mut *mut Self, hascurrent: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MoveNext: usize,
+}
+#[repr(C)]
+pub struct IAppxBlockMapReader {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetFile: unsafe extern "system" fn(this: *mut *mut Self, filename: ::windows_sys::core::PCWSTR, file: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetFiles: unsafe extern "system" fn(this: *mut *mut Self, enumerator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetHashMethod: unsafe extern "system" fn(this: *mut *mut Self, hashmethod: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetHashMethod: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetStream: unsafe extern "system" fn(this: *mut *mut Self, blockmapstream: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetStream: usize,
+}
+#[repr(C)]
+pub struct IAppxBundleFactory {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreateBundleWriter: unsafe extern "system" fn(this: *mut *mut Self, outputstream: *mut ::core::ffi::c_void, bundleversion: u64, bundlewriter: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CreateBundleWriter: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreateBundleReader: unsafe extern "system" fn(this: *mut *mut Self, inputstream: *mut ::core::ffi::c_void, bundlereader: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CreateBundleReader: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreateBundleManifestReader: unsafe extern "system" fn(this: *mut *mut Self, inputstream: *mut ::core::ffi::c_void, manifestreader: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CreateBundleManifestReader: usize,
+}
+#[repr(C)]
+pub struct IAppxBundleManifestOptionalBundleInfo {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetPackageId: unsafe extern "system" fn(this: *mut *mut Self, packageid: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetFileName: unsafe extern "system" fn(this: *mut *mut Self, filename: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetPackageInfoItems: unsafe extern "system" fn(this: *mut *mut Self, packageinfoitems: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAppxBundleManifestOptionalBundleInfoEnumerator {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCurrent: unsafe extern "system" fn(this: *mut *mut Self, optionalbundle: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetHasCurrent: unsafe extern "system" fn(this: *mut *mut Self, hascurrent: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetHasCurrent: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MoveNext: unsafe extern "system" fn(this: *mut *mut Self, hasnext: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MoveNext: usize,
+}
+#[repr(C)]
+pub struct IAppxBundleManifestPackageInfo {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetPackageType: unsafe extern "system" fn(this: *mut *mut Self, packagetype: *mut APPX_BUNDLE_PAYLOAD_PACKAGE_TYPE) -> ::windows_sys::core::HRESULT,
+    pub GetPackageId: unsafe extern "system" fn(this: *mut *mut Self, packageid: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetFileName: unsafe extern "system" fn(this: *mut *mut Self, filename: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetSize: unsafe extern "system" fn(this: *mut *mut Self, size: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetResources: unsafe extern "system" fn(this: *mut *mut Self, resources: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAppxBundleManifestPackageInfo2 {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetIsPackageReference: unsafe extern "system" fn(this: *mut *mut Self, ispackagereference: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetIsPackageReference: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetIsNonQualifiedResourcePackage: unsafe extern "system" fn(this: *mut *mut Self, isnonqualifiedresourcepackage: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetIsNonQualifiedResourcePackage: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetIsDefaultApplicablePackage: unsafe extern "system" fn(this: *mut *mut Self, isdefaultapplicablepackage: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetIsDefaultApplicablePackage: usize,
+}
+#[repr(C)]
+pub struct IAppxBundleManifestPackageInfo3 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetTargetDeviceFamilies: unsafe extern "system" fn(this: *mut *mut Self, targetdevicefamilies: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAppxBundleManifestPackageInfo4 {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetIsStub: unsafe extern "system" fn(this: *mut *mut Self, isstub: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetIsStub: usize,
+}
+#[repr(C)]
+pub struct IAppxBundleManifestPackageInfoEnumerator {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCurrent: unsafe extern "system" fn(this: *mut *mut Self, packageinfo: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetHasCurrent: unsafe extern "system" fn(this: *mut *mut Self, hascurrent: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetHasCurrent: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MoveNext: unsafe extern "system" fn(this: *mut *mut Self, hasnext: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MoveNext: usize,
+}
+#[repr(C)]
+pub struct IAppxBundleManifestReader {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetPackageId: unsafe extern "system" fn(this: *mut *mut Self, packageid: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetPackageInfoItems: unsafe extern "system" fn(this: *mut *mut Self, packageinfoitems: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetStream: unsafe extern "system" fn(this: *mut *mut Self, manifeststream: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetStream: usize,
+}
+#[repr(C)]
+pub struct IAppxBundleManifestReader2 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetOptionalBundles: unsafe extern "system" fn(this: *mut *mut Self, optionalbundles: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAppxBundleReader {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetFootprintFile: unsafe extern "system" fn(this: *mut *mut Self, filetype: APPX_BUNDLE_FOOTPRINT_FILE_TYPE, footprintfile: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetBlockMap: unsafe extern "system" fn(this: *mut *mut Self, blockmapreader: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetManifest: unsafe extern "system" fn(this: *mut *mut Self, manifestreader: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetPayloadPackages: unsafe extern "system" fn(this: *mut *mut Self, payloadpackages: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetPayloadPackage: unsafe extern "system" fn(this: *mut *mut Self, filename: ::windows_sys::core::PCWSTR, payloadpackage: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAppxBundleWriter {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com")]
+    pub AddPayloadPackage: unsafe extern "system" fn(this: *mut *mut Self, filename: ::windows_sys::core::PCWSTR, packagestream: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    AddPayloadPackage: usize,
+    pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAppxBundleWriter2 {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com")]
+    pub AddExternalPackageReference: unsafe extern "system" fn(this: *mut *mut Self, filename: ::windows_sys::core::PCWSTR, inputstream: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    AddExternalPackageReference: usize,
+}
+#[repr(C)]
+pub struct IAppxBundleWriter3 {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com")]
+    pub AddPackageReference: unsafe extern "system" fn(this: *mut *mut Self, filename: ::windows_sys::core::PCWSTR, inputstream: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    AddPackageReference: usize,
+    pub Close: unsafe extern "system" fn(this: *mut *mut Self, hashmethodstring: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAppxBundleWriter4 {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub AddPayloadPackage: unsafe extern "system" fn(this: *mut *mut Self, filename: ::windows_sys::core::PCWSTR, packagestream: *mut ::core::ffi::c_void, isdefaultapplicablepackage: super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    AddPayloadPackage: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub AddPackageReference: unsafe extern "system" fn(this: *mut *mut Self, filename: ::windows_sys::core::PCWSTR, inputstream: *mut ::core::ffi::c_void, isdefaultapplicablepackage: super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    AddPackageReference: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub AddExternalPackageReference: unsafe extern "system" fn(this: *mut *mut Self, filename: ::windows_sys::core::PCWSTR, inputstream: *mut ::core::ffi::c_void, isdefaultapplicablepackage: super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    AddExternalPackageReference: usize,
+}
+#[repr(C)]
+pub struct IAppxContentGroup {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetName: unsafe extern "system" fn(this: *mut *mut Self, groupname: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetFiles: unsafe extern "system" fn(this: *mut *mut Self, enumerator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAppxContentGroupFilesEnumerator {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCurrent: unsafe extern "system" fn(this: *mut *mut Self, file: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetHasCurrent: unsafe extern "system" fn(this: *mut *mut Self, hascurrent: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetHasCurrent: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MoveNext: unsafe extern "system" fn(this: *mut *mut Self, hasnext: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MoveNext: usize,
+}
+#[repr(C)]
+pub struct IAppxContentGroupMapReader {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetRequiredGroup: unsafe extern "system" fn(this: *mut *mut Self, requiredgroup: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetAutomaticGroups: unsafe extern "system" fn(this: *mut *mut Self, automaticgroupsenumerator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAppxContentGroupMapWriter {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub AddAutomaticGroup: unsafe extern "system" fn(this: *mut *mut Self, groupname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub AddAutomaticFile: unsafe extern "system" fn(this: *mut *mut Self, filename: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAppxContentGroupsEnumerator {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCurrent: unsafe extern "system" fn(this: *mut *mut Self, stream: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetHasCurrent: unsafe extern "system" fn(this: *mut *mut Self, hascurrent: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetHasCurrent: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MoveNext: unsafe extern "system" fn(this: *mut *mut Self, hasnext: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MoveNext: usize,
+}
+#[repr(C)]
+pub struct IAppxEncryptedBundleWriter {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com")]
+    pub AddPayloadPackageEncrypted: unsafe extern "system" fn(this: *mut *mut Self, filename: ::windows_sys::core::PCWSTR, packagestream: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    AddPayloadPackageEncrypted: usize,
+    pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAppxEncryptedBundleWriter2 {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com")]
+    pub AddExternalPackageReference: unsafe extern "system" fn(this: *mut *mut Self, filename: ::windows_sys::core::PCWSTR, inputstream: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    AddExternalPackageReference: usize,
+}
+#[repr(C)]
+pub struct IAppxEncryptedBundleWriter3 {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub AddPayloadPackageEncrypted: unsafe extern "system" fn(this: *mut *mut Self, filename: ::windows_sys::core::PCWSTR, packagestream: *mut ::core::ffi::c_void, isdefaultapplicablepackage: super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    AddPayloadPackageEncrypted: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub AddExternalPackageReference: unsafe extern "system" fn(this: *mut *mut Self, filename: ::windows_sys::core::PCWSTR, inputstream: *mut ::core::ffi::c_void, isdefaultapplicablepackage: super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    AddExternalPackageReference: usize,
+}
+#[repr(C)]
+pub struct IAppxEncryptedPackageWriter {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com")]
+    pub AddPayloadFileEncrypted: unsafe extern "system" fn(this: *mut *mut Self, filename: ::windows_sys::core::PCWSTR, compressionoption: APPX_COMPRESSION_OPTION, inputstream: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    AddPayloadFileEncrypted: usize,
+    pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAppxEncryptedPackageWriter2 {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com")]
+    pub AddPayloadFilesEncrypted: unsafe extern "system" fn(this: *mut *mut Self, filecount: u32, payloadfiles: *const APPX_PACKAGE_WRITER_PAYLOAD_STREAM, memorylimit: u64) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    AddPayloadFilesEncrypted: usize,
+}
+#[repr(C)]
+pub struct IAppxEncryptionFactory {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub EncryptPackage: unsafe extern "system" fn(this: *mut *mut Self, inputstream: *mut ::core::ffi::c_void, outputstream: *mut ::core::ffi::c_void, settings: *const APPX_ENCRYPTED_PACKAGE_SETTINGS, keyinfo: *const APPX_KEY_INFO, exemptedfiles: *const APPX_ENCRYPTED_EXEMPTIONS) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    EncryptPackage: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub DecryptPackage: unsafe extern "system" fn(this: *mut *mut Self, inputstream: *mut ::core::ffi::c_void, outputstream: *mut ::core::ffi::c_void, keyinfo: *const APPX_KEY_INFO) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    DecryptPackage: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub CreateEncryptedPackageWriter: unsafe extern "system" fn(this: *mut *mut Self, outputstream: *mut ::core::ffi::c_void, manifeststream: *mut ::core::ffi::c_void, settings: *const APPX_ENCRYPTED_PACKAGE_SETTINGS, keyinfo: *const APPX_KEY_INFO, exemptedfiles: *const APPX_ENCRYPTED_EXEMPTIONS, packagewriter: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    CreateEncryptedPackageWriter: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreateEncryptedPackageReader: unsafe extern "system" fn(this: *mut *mut Self, inputstream: *mut ::core::ffi::c_void, keyinfo: *const APPX_KEY_INFO, packagereader: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CreateEncryptedPackageReader: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub EncryptBundle: unsafe extern "system" fn(this: *mut *mut Self, inputstream: *mut ::core::ffi::c_void, outputstream: *mut ::core::ffi::c_void, settings: *const APPX_ENCRYPTED_PACKAGE_SETTINGS, keyinfo: *const APPX_KEY_INFO, exemptedfiles: *const APPX_ENCRYPTED_EXEMPTIONS) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    EncryptBundle: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub DecryptBundle: unsafe extern "system" fn(this: *mut *mut Self, inputstream: *mut ::core::ffi::c_void, outputstream: *mut ::core::ffi::c_void, keyinfo: *const APPX_KEY_INFO) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    DecryptBundle: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub CreateEncryptedBundleWriter: unsafe extern "system" fn(this: *mut *mut Self, outputstream: *mut ::core::ffi::c_void, bundleversion: u64, settings: *const APPX_ENCRYPTED_PACKAGE_SETTINGS, keyinfo: *const APPX_KEY_INFO, exemptedfiles: *const APPX_ENCRYPTED_EXEMPTIONS, bundlewriter: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    CreateEncryptedBundleWriter: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreateEncryptedBundleReader: unsafe extern "system" fn(this: *mut *mut Self, inputstream: *mut ::core::ffi::c_void, keyinfo: *const APPX_KEY_INFO, bundlereader: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CreateEncryptedBundleReader: usize,
+}
+#[repr(C)]
+pub struct IAppxEncryptionFactory2 {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub CreateEncryptedPackageWriter: unsafe extern "system" fn(this: *mut *mut Self, outputstream: *mut ::core::ffi::c_void, manifeststream: *mut ::core::ffi::c_void, contentgroupmapstream: *mut ::core::ffi::c_void, settings: *const APPX_ENCRYPTED_PACKAGE_SETTINGS, keyinfo: *const APPX_KEY_INFO, exemptedfiles: *const APPX_ENCRYPTED_EXEMPTIONS, packagewriter: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    CreateEncryptedPackageWriter: usize,
+}
+#[repr(C)]
+pub struct IAppxEncryptionFactory3 {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com")]
+    pub EncryptPackage: unsafe extern "system" fn(this: *mut *mut Self, inputstream: *mut ::core::ffi::c_void, outputstream: *mut ::core::ffi::c_void, settings: *const APPX_ENCRYPTED_PACKAGE_SETTINGS2, keyinfo: *const APPX_KEY_INFO, exemptedfiles: *const APPX_ENCRYPTED_EXEMPTIONS) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    EncryptPackage: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreateEncryptedPackageWriter: unsafe extern "system" fn(this: *mut *mut Self, outputstream: *mut ::core::ffi::c_void, manifeststream: *mut ::core::ffi::c_void, contentgroupmapstream: *mut ::core::ffi::c_void, settings: *const APPX_ENCRYPTED_PACKAGE_SETTINGS2, keyinfo: *const APPX_KEY_INFO, exemptedfiles: *const APPX_ENCRYPTED_EXEMPTIONS, packagewriter: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CreateEncryptedPackageWriter: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub EncryptBundle: unsafe extern "system" fn(this: *mut *mut Self, inputstream: *mut ::core::ffi::c_void, outputstream: *mut ::core::ffi::c_void, settings: *const APPX_ENCRYPTED_PACKAGE_SETTINGS2, keyinfo: *const APPX_KEY_INFO, exemptedfiles: *const APPX_ENCRYPTED_EXEMPTIONS) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    EncryptBundle: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreateEncryptedBundleWriter: unsafe extern "system" fn(this: *mut *mut Self, outputstream: *mut ::core::ffi::c_void, bundleversion: u64, settings: *const APPX_ENCRYPTED_PACKAGE_SETTINGS2, keyinfo: *const APPX_KEY_INFO, exemptedfiles: *const APPX_ENCRYPTED_EXEMPTIONS, bundlewriter: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CreateEncryptedBundleWriter: usize,
+}
+#[repr(C)]
+pub struct IAppxEncryptionFactory4 {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com")]
+    pub EncryptPackage: unsafe extern "system" fn(this: *mut *mut Self, inputstream: *mut ::core::ffi::c_void, outputstream: *mut ::core::ffi::c_void, settings: *const APPX_ENCRYPTED_PACKAGE_SETTINGS2, keyinfo: *const APPX_KEY_INFO, exemptedfiles: *const APPX_ENCRYPTED_EXEMPTIONS, memorylimit: u64) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    EncryptPackage: usize,
+}
+#[repr(C)]
+pub struct IAppxFactory {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub CreatePackageWriter: unsafe extern "system" fn(this: *mut *mut Self, outputstream: *mut ::core::ffi::c_void, settings: *const APPX_PACKAGE_SETTINGS, packagewriter: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    CreatePackageWriter: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreatePackageReader: unsafe extern "system" fn(this: *mut *mut Self, inputstream: *mut ::core::ffi::c_void, packagereader: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CreatePackageReader: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreateManifestReader: unsafe extern "system" fn(this: *mut *mut Self, inputstream: *mut ::core::ffi::c_void, manifestreader: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CreateManifestReader: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreateBlockMapReader: unsafe extern "system" fn(this: *mut *mut Self, inputstream: *mut ::core::ffi::c_void, blockmapreader: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CreateBlockMapReader: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreateValidatedBlockMapReader: unsafe extern "system" fn(this: *mut *mut Self, blockmapstream: *mut ::core::ffi::c_void, signaturefilename: ::windows_sys::core::PCWSTR, blockmapreader: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CreateValidatedBlockMapReader: usize,
+}
+#[repr(C)]
+pub struct IAppxFactory2 {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreateContentGroupMapReader: unsafe extern "system" fn(this: *mut *mut Self, inputstream: *mut ::core::ffi::c_void, contentgroupmapreader: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CreateContentGroupMapReader: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreateSourceContentGroupMapReader: unsafe extern "system" fn(this: *mut *mut Self, inputstream: *mut ::core::ffi::c_void, reader: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CreateSourceContentGroupMapReader: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreateContentGroupMapWriter: unsafe extern "system" fn(this: *mut *mut Self, stream: *mut ::core::ffi::c_void, contentgroupmapwriter: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CreateContentGroupMapWriter: usize,
+}
+#[repr(C)]
+pub struct IAppxFile {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCompressionOption: unsafe extern "system" fn(this: *mut *mut Self, compressionoption: *mut APPX_COMPRESSION_OPTION) -> ::windows_sys::core::HRESULT,
+    pub GetContentType: unsafe extern "system" fn(this: *mut *mut Self, contenttype: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetName: unsafe extern "system" fn(this: *mut *mut Self, filename: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetSize: unsafe extern "system" fn(this: *mut *mut Self, size: *mut u64) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetStream: unsafe extern "system" fn(this: *mut *mut Self, stream: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetStream: usize,
+}
+#[repr(C)]
+pub struct IAppxFilesEnumerator {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCurrent: unsafe extern "system" fn(this: *mut *mut Self, file: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetHasCurrent: unsafe extern "system" fn(this: *mut *mut Self, hascurrent: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetHasCurrent: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MoveNext: unsafe extern "system" fn(this: *mut *mut Self, hasnext: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MoveNext: usize,
+}
+#[repr(C)]
+pub struct IAppxManifestApplication {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetStringValue: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::PCWSTR, value: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetAppUserModelId: unsafe extern "system" fn(this: *mut *mut Self, appusermodelid: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAppxManifestApplicationsEnumerator {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCurrent: unsafe extern "system" fn(this: *mut *mut Self, application: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetHasCurrent: unsafe extern "system" fn(this: *mut *mut Self, hascurrent: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetHasCurrent: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MoveNext: unsafe extern "system" fn(this: *mut *mut Self, hasnext: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MoveNext: usize,
+}
+#[repr(C)]
+pub struct IAppxManifestCapabilitiesEnumerator {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCurrent: unsafe extern "system" fn(this: *mut *mut Self, capability: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetHasCurrent: unsafe extern "system" fn(this: *mut *mut Self, hascurrent: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetHasCurrent: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MoveNext: unsafe extern "system" fn(this: *mut *mut Self, hasnext: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MoveNext: usize,
+}
+#[repr(C)]
+pub struct IAppxManifestDeviceCapabilitiesEnumerator {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCurrent: unsafe extern "system" fn(this: *mut *mut Self, devicecapability: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetHasCurrent: unsafe extern "system" fn(this: *mut *mut Self, hascurrent: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetHasCurrent: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MoveNext: unsafe extern "system" fn(this: *mut *mut Self, hasnext: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MoveNext: usize,
+}
+#[repr(C)]
+pub struct IAppxManifestDriverConstraint {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetName: unsafe extern "system" fn(this: *mut *mut Self, name: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetMinVersion: unsafe extern "system" fn(this: *mut *mut Self, minversion: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetMinDate: unsafe extern "system" fn(this: *mut *mut Self, mindate: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAppxManifestDriverConstraintsEnumerator {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCurrent: unsafe extern "system" fn(this: *mut *mut Self, driverconstraint: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetHasCurrent: unsafe extern "system" fn(this: *mut *mut Self, hascurrent: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetHasCurrent: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MoveNext: unsafe extern "system" fn(this: *mut *mut Self, hasnext: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MoveNext: usize,
+}
+#[repr(C)]
+pub struct IAppxManifestDriverDependenciesEnumerator {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCurrent: unsafe extern "system" fn(this: *mut *mut Self, driverdependency: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetHasCurrent: unsafe extern "system" fn(this: *mut *mut Self, hascurrent: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetHasCurrent: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MoveNext: unsafe extern "system" fn(this: *mut *mut Self, hasnext: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MoveNext: usize,
+}
+#[repr(C)]
+pub struct IAppxManifestDriverDependency {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetDriverConstraints: unsafe extern "system" fn(this: *mut *mut Self, driverconstraints: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAppxManifestHostRuntimeDependenciesEnumerator {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCurrent: unsafe extern "system" fn(this: *mut *mut Self, hostruntimedependency: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetHasCurrent: unsafe extern "system" fn(this: *mut *mut Self, hascurrent: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetHasCurrent: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MoveNext: unsafe extern "system" fn(this: *mut *mut Self, hasnext: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MoveNext: usize,
+}
+#[repr(C)]
+pub struct IAppxManifestHostRuntimeDependency {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetName: unsafe extern "system" fn(this: *mut *mut Self, name: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetPublisher: unsafe extern "system" fn(this: *mut *mut Self, publisher: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetMinVersion: unsafe extern "system" fn(this: *mut *mut Self, minversion: *mut u64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAppxManifestHostRuntimeDependency2 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetPackageFamilyName: unsafe extern "system" fn(this: *mut *mut Self, packagefamilyname: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAppxManifestMainPackageDependenciesEnumerator {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCurrent: unsafe extern "system" fn(this: *mut *mut Self, mainpackagedependency: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetHasCurrent: unsafe extern "system" fn(this: *mut *mut Self, hascurrent: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetHasCurrent: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MoveNext: unsafe extern "system" fn(this: *mut *mut Self, hasnext: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MoveNext: usize,
+}
+#[repr(C)]
+pub struct IAppxManifestMainPackageDependency {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetName: unsafe extern "system" fn(this: *mut *mut Self, name: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetPublisher: unsafe extern "system" fn(this: *mut *mut Self, publisher: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetPackageFamilyName: unsafe extern "system" fn(this: *mut *mut Self, packagefamilyname: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAppxManifestOSPackageDependenciesEnumerator {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCurrent: unsafe extern "system" fn(this: *mut *mut Self, ospackagedependency: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetHasCurrent: unsafe extern "system" fn(this: *mut *mut Self, hascurrent: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetHasCurrent: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MoveNext: unsafe extern "system" fn(this: *mut *mut Self, hasnext: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MoveNext: usize,
+}
+#[repr(C)]
+pub struct IAppxManifestOSPackageDependency {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetName: unsafe extern "system" fn(this: *mut *mut Self, name: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetVersion: unsafe extern "system" fn(this: *mut *mut Self, version: *mut u64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAppxManifestOptionalPackageInfo {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetIsOptionalPackage: unsafe extern "system" fn(this: *mut *mut Self, isoptionalpackage: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetIsOptionalPackage: usize,
+    pub GetMainPackageName: unsafe extern "system" fn(this: *mut *mut Self, mainpackagename: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAppxManifestPackageDependenciesEnumerator {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCurrent: unsafe extern "system" fn(this: *mut *mut Self, dependency: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetHasCurrent: unsafe extern "system" fn(this: *mut *mut Self, hascurrent: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetHasCurrent: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MoveNext: unsafe extern "system" fn(this: *mut *mut Self, hasnext: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MoveNext: usize,
+}
+#[repr(C)]
+pub struct IAppxManifestPackageDependency {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetName: unsafe extern "system" fn(this: *mut *mut Self, name: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetPublisher: unsafe extern "system" fn(this: *mut *mut Self, publisher: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetMinVersion: unsafe extern "system" fn(this: *mut *mut Self, minversion: *mut u64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAppxManifestPackageDependency2 {
+    pub base__: IAppxManifestPackageDependency,
+    pub GetMaxMajorVersionTested: unsafe extern "system" fn(this: *mut *mut Self, maxmajorversiontested: *mut u16) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAppxManifestPackageDependency3 {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetIsOptional: unsafe extern "system" fn(this: *mut *mut Self, isoptional: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetIsOptional: usize,
+}
+#[repr(C)]
+pub struct IAppxManifestPackageId {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetName: unsafe extern "system" fn(this: *mut *mut Self, name: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetArchitecture: unsafe extern "system" fn(this: *mut *mut Self, architecture: *mut APPX_PACKAGE_ARCHITECTURE) -> ::windows_sys::core::HRESULT,
+    pub GetPublisher: unsafe extern "system" fn(this: *mut *mut Self, publisher: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetVersion: unsafe extern "system" fn(this: *mut *mut Self, packageversion: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetResourceId: unsafe extern "system" fn(this: *mut *mut Self, resourceid: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub ComparePublisher: unsafe extern "system" fn(this: *mut *mut Self, other: ::windows_sys::core::PCWSTR, issame: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    ComparePublisher: usize,
+    pub GetPackageFullName: unsafe extern "system" fn(this: *mut *mut Self, packagefullname: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetPackageFamilyName: unsafe extern "system" fn(this: *mut *mut Self, packagefamilyname: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAppxManifestPackageId2 {
+    pub base__: IAppxManifestPackageId,
+    pub GetArchitecture2: unsafe extern "system" fn(this: *mut *mut Self, architecture: *mut APPX_PACKAGE_ARCHITECTURE2) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAppxManifestProperties {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetBoolValue: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::PCWSTR, value: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetBoolValue: usize,
+    pub GetStringValue: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::PCWSTR, value: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAppxManifestQualifiedResource {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetLanguage: unsafe extern "system" fn(this: *mut *mut Self, language: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetScale: unsafe extern "system" fn(this: *mut *mut Self, scale: *mut u32) -> ::windows_sys::core::HRESULT,
+    pub GetDXFeatureLevel: unsafe extern "system" fn(this: *mut *mut Self, dxfeaturelevel: *mut DX_FEATURE_LEVEL) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAppxManifestQualifiedResourcesEnumerator {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCurrent: unsafe extern "system" fn(this: *mut *mut Self, resource: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetHasCurrent: unsafe extern "system" fn(this: *mut *mut Self, hascurrent: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetHasCurrent: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MoveNext: unsafe extern "system" fn(this: *mut *mut Self, hasnext: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MoveNext: usize,
+}
+#[repr(C)]
+pub struct IAppxManifestReader {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetPackageId: unsafe extern "system" fn(this: *mut *mut Self, packageid: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetProperties: unsafe extern "system" fn(this: *mut *mut Self, packageproperties: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetPackageDependencies: unsafe extern "system" fn(this: *mut *mut Self, dependencies: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetCapabilities: unsafe extern "system" fn(this: *mut *mut Self, capabilities: *mut APPX_CAPABILITIES) -> ::windows_sys::core::HRESULT,
+    pub GetResources: unsafe extern "system" fn(this: *mut *mut Self, resources: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetDeviceCapabilities: unsafe extern "system" fn(this: *mut *mut Self, devicecapabilities: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetPrerequisite: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::PCWSTR, value: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetApplications: unsafe extern "system" fn(this: *mut *mut Self, applications: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetStream: unsafe extern "system" fn(this: *mut *mut Self, manifeststream: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    GetStream: usize,
+}
+#[repr(C)]
+pub struct IAppxManifestReader2 {
+    pub base__: IAppxManifestReader,
+    pub GetQualifiedResources: unsafe extern "system" fn(this: *mut *mut Self, resources: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAppxManifestReader3 {
+    pub base__: IAppxManifestReader2,
+    pub GetCapabilitiesByCapabilityClass: unsafe extern "system" fn(this: *mut *mut Self, capabilityclass: APPX_CAPABILITY_CLASS_TYPE, capabilities: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetTargetDeviceFamilies: unsafe extern "system" fn(this: *mut *mut Self, targetdevicefamilies: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAppxManifestReader4 {
+    pub base__: IAppxManifestReader3,
+    pub GetOptionalPackageInfo: unsafe extern "system" fn(this: *mut *mut Self, optionalpackageinfo: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAppxManifestReader5 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetMainPackageDependencies: unsafe extern "system" fn(this: *mut *mut Self, mainpackagedependencies: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAppxManifestReader6 {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetIsNonQualifiedResourcePackage: unsafe extern "system" fn(this: *mut *mut Self, isnonqualifiedresourcepackage: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetIsNonQualifiedResourcePackage: usize,
+}
+#[repr(C)]
+pub struct IAppxManifestReader7 {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetDriverDependencies: unsafe extern "system" fn(this: *mut *mut Self, driverdependencies: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetOSPackageDependencies: unsafe extern "system" fn(this: *mut *mut Self, ospackagedependencies: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetHostRuntimeDependencies: unsafe extern "system" fn(this: *mut *mut Self, hostruntimedependencies: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAppxManifestResourcesEnumerator {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCurrent: unsafe extern "system" fn(this: *mut *mut Self, resource: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetHasCurrent: unsafe extern "system" fn(this: *mut *mut Self, hascurrent: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetHasCurrent: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MoveNext: unsafe extern "system" fn(this: *mut *mut Self, hasnext: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MoveNext: usize,
+}
+#[repr(C)]
+pub struct IAppxManifestTargetDeviceFamiliesEnumerator {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetCurrent: unsafe extern "system" fn(this: *mut *mut Self, targetdevicefamily: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_Foundation")]
+    pub GetHasCurrent: unsafe extern "system" fn(this: *mut *mut Self, hascurrent: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    GetHasCurrent: usize,
+    #[cfg(feature = "Win32_Foundation")]
+    pub MoveNext: unsafe extern "system" fn(this: *mut *mut Self, hasnext: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_Foundation"))]
+    MoveNext: usize,
+}
+#[repr(C)]
+pub struct IAppxManifestTargetDeviceFamily {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetName: unsafe extern "system" fn(this: *mut *mut Self, name: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+    pub GetMinVersion: unsafe extern "system" fn(this: *mut *mut Self, minversion: *mut u64) -> ::windows_sys::core::HRESULT,
+    pub GetMaxVersionTested: unsafe extern "system" fn(this: *mut *mut Self, maxversiontested: *mut u64) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAppxPackageEditor {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetWorkingDirectory: unsafe extern "system" fn(this: *mut *mut Self, workingdirectory: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreateDeltaPackage: unsafe extern "system" fn(this: *mut *mut Self, updatedpackagestream: *mut ::core::ffi::c_void, baselinepackagestream: *mut ::core::ffi::c_void, deltapackagestream: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CreateDeltaPackage: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreateDeltaPackageUsingBaselineBlockMap: unsafe extern "system" fn(this: *mut *mut Self, updatedpackagestream: *mut ::core::ffi::c_void, baselineblockmapstream: *mut ::core::ffi::c_void, baselinepackagefullname: ::windows_sys::core::PCWSTR, deltapackagestream: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    CreateDeltaPackageUsingBaselineBlockMap: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub UpdatePackage: unsafe extern "system" fn(this: *mut *mut Self, baselinepackagestream: *mut ::core::ffi::c_void, deltapackagestream: *mut ::core::ffi::c_void, updateoption: APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    UpdatePackage: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub UpdateEncryptedPackage: unsafe extern "system" fn(this: *mut *mut Self, baselineencryptedpackagestream: *mut ::core::ffi::c_void, deltapackagestream: *mut ::core::ffi::c_void, updateoption: APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION, settings: *const APPX_ENCRYPTED_PACKAGE_SETTINGS2, keyinfo: *const APPX_KEY_INFO) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    UpdateEncryptedPackage: usize,
+    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+    pub UpdatePackageManifest: unsafe extern "system" fn(this: *mut *mut Self, packagestream: *mut ::core::ffi::c_void, updatedmanifeststream: *mut ::core::ffi::c_void, ispackageencrypted: super::super::super::Foundation::BOOL, options: APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_MANIFEST_OPTIONS) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    UpdatePackageManifest: usize,
+}
+#[repr(C)]
+pub struct IAppxPackageReader {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetBlockMap: unsafe extern "system" fn(this: *mut *mut Self, blockmapreader: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetFootprintFile: unsafe extern "system" fn(this: *mut *mut Self, r#type: APPX_FOOTPRINT_FILE_TYPE, file: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetPayloadFile: unsafe extern "system" fn(this: *mut *mut Self, filename: ::windows_sys::core::PCWSTR, file: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetPayloadFiles: unsafe extern "system" fn(this: *mut *mut Self, filesenumerator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetManifest: unsafe extern "system" fn(this: *mut *mut Self, manifestreader: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAppxPackageWriter {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com")]
+    pub AddPayloadFile: unsafe extern "system" fn(this: *mut *mut Self, filename: ::windows_sys::core::PCWSTR, contenttype: ::windows_sys::core::PCWSTR, compressionoption: APPX_COMPRESSION_OPTION, inputstream: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    AddPayloadFile: usize,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Close: unsafe extern "system" fn(this: *mut *mut Self, manifest: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Close: usize,
+}
+#[repr(C)]
+pub struct IAppxPackageWriter2 {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Close: unsafe extern "system" fn(this: *mut *mut Self, manifest: *mut ::core::ffi::c_void, contentgroupmap: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    Close: usize,
+}
+#[repr(C)]
+pub struct IAppxPackageWriter3 {
+    pub base__: ::windows_sys::core::IUnknown,
+    #[cfg(feature = "Win32_System_Com")]
+    pub AddPayloadFiles: unsafe extern "system" fn(this: *mut *mut Self, filecount: u32, payloadfiles: *const APPX_PACKAGE_WRITER_PAYLOAD_STREAM, memorylimit: u64) -> ::windows_sys::core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
+    AddPayloadFiles: usize,
+}
+#[repr(C)]
+pub struct IAppxPackagingDiagnosticEventSink {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub ReportContextChange: unsafe extern "system" fn(this: *mut *mut Self, changetype: APPX_PACKAGING_CONTEXT_CHANGE_TYPE, contextid: i32, contextname: ::windows_sys::core::PCSTR, contextmessage: ::windows_sys::core::PCWSTR, detailsmessage: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+    pub ReportError: unsafe extern "system" fn(this: *mut *mut Self, errormessage: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAppxPackagingDiagnosticEventSinkManager {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub SetSinkForProcess: unsafe extern "system" fn(this: *mut *mut Self, sink: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[repr(C)]
+pub struct IAppxSourceContentGroupMapReader {
+    pub base__: ::windows_sys::core::IUnknown,
+    pub GetRequiredGroup: unsafe extern "system" fn(this: *mut *mut Self, requiredgroup: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+    pub GetAutomaticGroups: unsafe extern "system" fn(this: *mut *mut Self, automaticgroupsenumerator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Storage_Packaging_Appx\"`*"]
 pub struct PACKAGEDEPENDENCY_CONTEXT__ {
