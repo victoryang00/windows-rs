@@ -1,4 +1,5 @@
 // TODO: make windows::core's HRESULT and GUID type aliases for windows_sys::core so that they can share basic COM support?
+// - windows:core should just provide Into traits for these.
 
 #[repr(C)]
 pub struct GUID {
