@@ -440,8 +440,8 @@ impl<'a> Gen<'a> {
     }
     fn scoped_name(&self, def: TypeDef) -> String {
         if let Some(enclosing_type) = self.reader.type_def_enclosing_type(def) {
-            for (index, nested_type) in self.reader.nested_types(enclosing_type).iter().enumerate() {
-                if self.reader.type_def_name(*nested_type) == self.reader.type_def_name(def) {
+            for (index, nested_type) in self.reader.nested_types(enclosing_type).enumerate() {
+                if self.reader.type_def_name(nested_type) == self.reader.type_def_name(def) {
                     return format!("{}_{}", &self.scoped_name(enclosing_type), index);
                 }
             }
@@ -770,8 +770,8 @@ impl<'a> Gen<'a> {
             }
             let name = method_names.add(self, method);
             let signature = self.reader.method_def_signature(method, generics);
+            let mut cfg = self.reader.signature_cfg(&signature);
             let signature = self.vtbl_signature(def, generics, &signature);
-            let mut cfg = self.reader.method_def_cfg(method);
             cfg.add_feature(self.reader.type_def_namespace(def));
             let cfg_all = self.cfg_features(&cfg);
             let cfg_not = self.cfg_not_features(&cfg);

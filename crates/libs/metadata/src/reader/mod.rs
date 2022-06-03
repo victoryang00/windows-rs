@@ -189,8 +189,6 @@ impl Cfg {
     }
 }
 
-const EXCLUDE_NAMESPACES: [&str; 2] = ["", "Windows.Win32.Interop"];
-
 pub struct Reader<'a> {
     files: &'a [File],
     types: HashMap<&'a str, BTreeMap<&'a str, Vec<TypeDef>>>,
@@ -218,41 +216,33 @@ impl<'a> Reader<'a> {
         }
         Self { files, types, nested }
     }
-    pub fn tree(&self, root: &str) -> Option<Tree> {
+    pub fn tree(&'a self, root: &'a str, exclude: &[&str]) -> Option<Tree> {
         let mut tree = Tree::from_namespace("");
         for ns in self.types.keys() {
-            if !EXCLUDE_NAMESPACES.iter().any(|x| x == ns) {
+            if !exclude.iter().any(|x| ns.starts_with(x)) {
                 tree.insert_namespace(ns, 0);
             }
         }
-        tree.nested.remove(root)
+        tree.seek(root)
     }
 
     //
     // Hash functions for fast type lookup
     //
 
-    // TODO: do this same Option trick for other iterators below.
-    pub fn namespace_types(&self, namespace: &str) -> Option<impl Iterator<Item = TypeDef> + '_> {
-        if let Some(types) = self.types.get(namespace) {
-            return Some(types.values().flatten().copied());
-        }
-        None
+    pub fn namespace_types(&self, namespace: &str) -> impl Iterator<Item = TypeDef> + '_ {
+        self.types.get(namespace).map(|types| types.values().flatten().copied()).into_iter().flatten()
     }
-    pub fn nested_types(&'a self, type_def: TypeDef) -> Vec<TypeDef> {
-        // TODO: shouldn't have to collect, like we do in the `get` function below...
-        self.nested.get(&type_def).iter().flat_map(|map| map.values()).copied().collect()
+    pub fn nested_types(&self, type_def: TypeDef) -> impl Iterator<Item = TypeDef> + '_ {
+        self.nested.get(&type_def).map(|map| map.values().copied()).into_iter().flatten()
     }
     pub fn get(&self, type_name: TypeName) -> impl Iterator<Item = TypeDef> + '_ {
         if let Some(types) = self.types.get(type_name.namespace) {
             if let Some(definitions) = types.get(type_name.name) {
-                return definitions.iter().copied();
+                return Some(definitions.iter().copied()).into_iter().flatten();
             }
         }
-        [].iter().copied()
-    }
-    pub fn get_nested(&self, outer: TypeDef, name: &str) -> TypeDef {
-        self.nested[&outer][name]
+        None.into_iter().flatten()
     }
 
     //
@@ -615,16 +605,6 @@ impl<'a> Reader<'a> {
         }
 
         Signature { def: row, params, return_type }
-    }
-    pub fn method_def_cfg(&self, row: MethodDef) -> Cfg {
-        let mut cfg = Cfg::default();
-        self.method_def_cfg_combine(row, &mut cfg);
-        self.cfg_add_attributes(&mut cfg, self.method_def_attributes(row));
-        cfg
-    }
-    // TODO: maybe inline this at the callsite to avoid recalculating the method signature
-    fn method_def_cfg_combine(&self, row: MethodDef, cfg: &mut Cfg) {
-        self.signature_cfg_combine(&self.method_def_signature(row, &[]), cfg);
     }
     pub fn method_def_size(&self, method: MethodDef) -> usize {
         fn type_size(reader: &Reader, ty: &Type) -> usize {
@@ -1063,7 +1043,7 @@ impl<'a> Reader<'a> {
             reader.type_def_cfg_combine(def, generics, cfg);
 
             for method in reader.type_def_methods(def) {
-                reader.method_def_cfg_combine(method, cfg);
+                reader.signature_cfg_combine(&reader.method_def_signature(method, generics), cfg);
             }
         }
 
@@ -1118,7 +1098,7 @@ impl<'a> Reader<'a> {
                         }
                     }
                 }
-                TypeKind::Delegate => self.method_def_cfg_combine(self.type_def_invoke_method(row), cfg),
+                TypeKind::Delegate => self.signature_cfg_combine(&self.method_def_signature(self.type_def_invoke_method(row), generics), cfg),
                 _ => {}
             }
         }
@@ -1180,6 +1160,12 @@ impl<'a> Reader<'a> {
     // Signature queries
     //
 
+    pub fn signature_cfg(&self, signature: &Signature) -> Cfg {
+        let mut cfg = Cfg::default();
+        self.signature_cfg_combine(signature, &mut cfg);
+        self.cfg_add_attributes(&mut cfg, self.method_def_attributes(signature.def));
+        cfg
+    }
     fn signature_cfg_combine(&self, signature: &Signature, cfg: &mut Cfg) {
         signature.return_type.iter().for_each(|ty| self.type_cfg_combine(ty, cfg));
         signature.params.iter().for_each(|param| self.type_cfg_combine(&param.ty, cfg));
@@ -1433,7 +1419,7 @@ impl<'a> Reader<'a> {
 
         if let Some(outer) = enclosing {
             if full_name.namespace.is_empty() {
-                return Type::TypeDef((self.get_nested(outer, full_name.name), Vec::new()));
+                return Type::TypeDef((self.nested[&outer][full_name.name], Vec::new()));
             }
         }
 
