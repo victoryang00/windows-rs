@@ -8,14 +8,14 @@ impl<T> ComPtr<T> {
         self.0.is_null()
     }
     pub fn get(&self) -> &T {
-        *(*self.0)
+        unsafe { std::mem::transmute(*self.0) }
     }
     pub fn this(&self) -> *mut *mut T {
-        self.0
+        unsafe { std::mem::transmute(self.0) }
     }
     pub fn put(&mut self) -> &mut *mut *mut T {
         self.release();
-        &mut self.0
+        unsafe { std::mem::transmute(&mut self.0)} 
     }
     pub fn release(&mut self) {
         if !self.0.is_null() {
@@ -44,17 +44,15 @@ impl<T> Drop for ComPtr<T> {
     }
 }
 
-// TODO: not sure ComPtr needs equality
+impl<T> PartialEq for ComPtr<T> {
+    fn eq(&self, other: &Self) -> bool {
+        // Since COM objects may implement multiple interfaces, COM identity can only
+        // be determined by querying for `IUnknown` explicitly and then comparing the
+        // pointer values. This works since `QueryInterface` is required to return
+        // the same pointer value for queries for `IUnknown`.
+        // self.cast::<IUnknown>().unwrap().0 == other.cast::<IUnknown>().unwrap().0
+        todo!()
+    }
+}
 
-// impl<T> PartialEq for ComPtr<T> {
-//     fn eq(&self, other: &Self) -> bool {
-//         // Since COM objects may implement multiple interfaces, COM identity can only
-//         // be determined by querying for `IUnknown` explicitly and then comparing the
-//         // pointer values. This works since `QueryInterface` is required to return
-//         // the same pointer value for queries for `IUnknown`.
-//         // self.cast::<IUnknown>().unwrap().0 == other.cast::<IUnknown>().unwrap().0
-//         todo!()
-//     }
-// }
-
-// impl<T> Eq for ComPtr<T> {}
+impl<T> Eq for ComPtr<T> {}

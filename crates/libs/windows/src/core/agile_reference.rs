@@ -14,9 +14,14 @@ impl<T: Interface> AgileReference<T> {
         //let unknown: &IUnknown = unsafe { std::mem::transmute(object) };
         //unsafe { RoGetAgileReference(AGILEREFERENCE_DEFAULT, &T::IID, unknown).map(|reference| Self(reference, Default::default())) }
         unsafe {
-            let mut reference = ComPtr::<T>::null();
-            let result = RoGetAgileReference(AGILEREFERENCE_DEFAULT,  &T::IID, std::mem::transmute(object), reference.put());
-            panic!()
+            let mut reference = ComPtr::<IAgileReference>::null();
+            let code = RoGetAgileReference(AGILEREFERENCE_DEFAULT,  (&T::IID).into(), std::mem::transmute(object), reference.put()).into();
+            if reference.is_null() {
+                Err(Error{code, info: None })
+            }   
+             else {
+                 Ok(Self(reference, Default::default()))
+             }
         }
     }
 

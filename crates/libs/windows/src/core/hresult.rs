@@ -115,6 +115,12 @@ impl<T> core::convert::From<Result<T>> for HRESULT {
     }
 }
 
+impl core::convert::From<windows_sys::core::HRESULT> for HRESULT {
+    fn from(result: windows_sys::core::HRESULT) -> Self {
+        Self(result)
+    }
+}
+
 impl core::fmt::Debug for HRESULT {
     fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
         f.write_fmt(format_args!("HRESULT(0x{:08X})", self.0))

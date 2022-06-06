@@ -114,6 +114,18 @@ impl core::convert::From<GUID> for u128 {
     }
 }
 
+impl core::convert::From<&GUID> for &windows_sys::core::GUID {
+    fn from(value: &GUID) -> Self {
+        unsafe { std::mem::transmute(value) }
+    }
+}
+
+impl core::convert::From<&GUID> for *const windows_sys::core::GUID {
+    fn from(value: &GUID) -> Self {
+        unsafe { std::mem::transmute(value) }
+    }
+}
+
 trait HexReader {
     fn next_u8(&mut self) -> u8;
     fn next_u16(&mut self) -> u16;
