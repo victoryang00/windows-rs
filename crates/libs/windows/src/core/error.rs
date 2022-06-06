@@ -1,16 +1,18 @@
 use super::*;
-use bindings::*;
+use windows_sys::Win32::System::Com::*;
+use windows_sys::Win32::System::WinRT::*;
+use windows_sys::Win32::Foundation::*;
 
 /// An error object consists of both an error code as well as detailed error information for debugging.
 #[derive(Clone, PartialEq)]
 pub struct Error {
     pub(crate) code: HRESULT,
-    pub(crate) info: Option<IRestrictedErrorInfo>,
+    pub(crate) info: ComPtr<IRestrictedErrorInfo>,
 }
 
 impl Error {
     /// An error object without any failure information.
-    pub const OK: Self = Self { code: S_OK, info: None };
+    pub const OK: Self = Self { code: HRESULT(S_OK), info: ComPtr::null() };
 
     /// This creates a new WinRT error object, capturing the stack and other information about the
     /// point of failure.

@@ -1507,7 +1507,7 @@ impl WIN32_ERROR {
         if self.is_ok() {
             Ok(())
         } else {
-            Err(::windows::core::Error { code: self.to_hresult(), info: None })
+            Err(::windows::core::Error { code: self.to_hresult(), info: super::ComPtr::null() })
         }
     }
 }
@@ -1518,7 +1518,7 @@ impl ::core::convert::From<WIN32_ERROR> for ::windows::core::HRESULT {
 }
 impl ::core::convert::From<WIN32_ERROR> for ::windows::core::Error {
     fn from(value: WIN32_ERROR) -> Self {
-        Self { code: value.to_hresult(), info: None }
+        Self { code: value.to_hresult(), info: super::ComPtr::null() }
     }
 }
 #[repr(C)]

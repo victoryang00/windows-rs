@@ -13,7 +13,7 @@ impl<T: Interface> AgileReference<T> {
         let mut reference = ComPtr::<IAgileReference>::null();
         let code = unsafe { RoGetAgileReference(AGILEREFERENCE_DEFAULT, (&T::IID).into(), object.as_raw() as _, reference.put()).into() };
         if reference.is_null() {
-            Err(Error { code, info: None })
+            Err(Error { code, info: ComPtr::null() })
         } else {
             Ok(Self(reference, Default::default()))
         }
@@ -23,7 +23,7 @@ impl<T: Interface> AgileReference<T> {
     pub fn resolve(&self) -> Result<T> {
         let mut value = Option::<T>::None;
         let code = unsafe { (self.0.get().Resolve)(self.0.this(), (&T::IID).into(), &mut value as *mut _ as _).into() };
-        value.ok_or_else(|| Error { code, info: None })
+        value.ok_or_else(|| Error { code, info: ComPtr::null() })
     }
 }
 
