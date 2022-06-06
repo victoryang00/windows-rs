@@ -3,6 +3,7 @@ mod agile_reference;
 mod array;
 mod as_impl;
 pub(crate) mod bindings;
+mod com_ptr;
 mod compose;
 mod delay_load;
 mod error;
@@ -29,7 +30,6 @@ mod unknown;
 mod waiter;
 mod weak;
 mod weak_ref_count;
-mod com_ptr;
 
 #[doc(hidden)]
 pub use abi::*;
@@ -37,6 +37,7 @@ pub use agile_reference::*;
 pub use array::*;
 #[doc(hidden)]
 pub use as_impl::*;
+pub(crate) use com_ptr::*;
 #[doc(hidden)]
 pub use compose::*;
 pub(crate) use delay_load::*;
@@ -74,7 +75,6 @@ pub use waiter::*;
 pub use weak::*;
 #[doc(hidden)]
 pub use weak_ref_count::*;
-pub(crate) use com_ptr::*;
 
 /// A specialized [`Result`] type that provides Windows error information.
 pub type Result<T> = core::result::Result<T, Error>;

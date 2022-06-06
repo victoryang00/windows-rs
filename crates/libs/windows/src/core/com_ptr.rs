@@ -15,7 +15,7 @@ impl<T> ComPtr<T> {
     }
     pub fn put(&mut self) -> &mut *mut *mut T {
         self.release();
-        unsafe { std::mem::transmute(&mut self.0)} 
+        unsafe { std::mem::transmute(&mut self.0) }
     }
     pub fn release(&mut self) {
         if !self.0.is_null() {
