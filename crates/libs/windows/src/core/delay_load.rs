@@ -1,5 +1,5 @@
 use super::*;
-use bindings::*;
+use windows_sys::Win32::System::LibraryLoader::*;
 
 /// Load a function from a given library.
 ///
@@ -9,7 +9,7 @@ use bindings::*;
 ///
 /// * Both the library and function names must be valid PCSTR representations
 pub unsafe fn delay_load(library: &[u8], function: &[u8]) -> Result<*mut core::ffi::c_void> {
-    let library = LoadLibraryA(PCSTR(library.as_ptr()))?;
+    let library = LoadLibraryA(library.as_ptr())?;
 
     if let Some(address) = GetProcAddress(library, PCSTR(function.as_ptr())) {
         Ok(address as _)
