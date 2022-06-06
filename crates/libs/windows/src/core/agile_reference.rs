@@ -11,11 +11,8 @@ pub struct AgileReference<T>(ComPtr<IAgileReference>, PhantomData<T>);
 impl<T: Interface> AgileReference<T> {
     /// Creates an agile reference to the object.
     pub fn new(object: &T) -> Result<Self> {
-        //let unknown: &IUnknown = unsafe { std::mem::transmute(object) };
-        //unsafe { RoGetAgileReference(AGILEREFERENCE_DEFAULT, &T::IID, unknown).map(|reference| Self(reference, Default::default())) }
-        unsafe {
             let mut reference = ComPtr::<IAgileReference>::null();
-            let code = RoGetAgileReference(AGILEREFERENCE_DEFAULT,  (&T::IID).into(), std::mem::transmute(object), reference.put()).into();
+            let code = unsafe { RoGetAgileReference(AGILEREFERENCE_DEFAULT,  (&T::IID).into(), object.as_raw() as _, reference.put()).into() };
             if reference.is_null() {
                 Err(Error{code, info: None })
             }   
@@ -23,12 +20,12 @@ impl<T: Interface> AgileReference<T> {
                  Ok(Self(reference, Default::default()))
              }
         }
-    }
 
     /// Retrieves a proxy to the target of the `AgileReference` object that may safely be used within any thread context in which get is called.
     pub fn resolve(&self) -> Result<T> {
-       //unsafe { self.0.Resolve(self.0) }
-       todo!()
+        let mut value = Option::<T>::None;
+        let code = unsafe { (self.0.get().Resolve)(self.0.this(), (&T::IID).into(), &mut value as *mut _ as _).into() };
+        value.ok_or_else(|| Error{code, info: None })
     }
 }
 
