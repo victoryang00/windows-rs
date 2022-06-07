@@ -2,7 +2,7 @@ use super::*;
 use windows_sys::core::Interface;
 use windows_sys::Win32::System::Com::{GetErrorInfo,IErrorInfo, SetErrorInfo};
 use windows_sys::Win32::System::WinRT::{ILanguageExceptionErrorInfo2, IRestrictedErrorInfo};
-use windows_sys::Win32::Foundation::{GetLastError, S_OK, SysFreeString, BOOL};
+use windows_sys::Win32::Foundation::{GetLastError, S_OK, SysFreeString, BOOL, SysStringLen};
 
 /// An error object consists of both an error code as well as detailed error information for debugging.
 #[derive(Clone, PartialEq)]
@@ -36,8 +36,8 @@ impl Error {
 
     pub fn from_win32() -> Self {
         let win32_error = GetLastError();
-        let code = if win32_error == 0 { HRESULT(S_OK) } else { HRESULT((win32_error & 0x0000_FFFF) | (7 << 16) | 0x8000_0000 };
-        unsafe { Self { code, info: None } }
+        let code = if win32_error == 0 { HRESULT(S_OK) } else { HRESULT(((win32_error & 0x0000_FFFF) | (7 << 16) | 0x8000_0000) as _) };
+        unsafe { Self { code, info: ComPtr::null() } }
     }
 
     /// The error code describing the error.
@@ -46,21 +46,21 @@ impl Error {
     }
 
     /// The error information describing the error.
-    pub const fn info(&self) -> &Option<IRestrictedErrorInfo> {
-        &self.info
+    pub const fn info(&self) -> &Option<IUnknown> {
+        std::mem::transmute(&self.info)
     }
 
     /// The error message describing the error.
     pub fn message(&self) -> HSTRING {
         // First attempt to retrieve the restricted error information.
-        if let Some(info) = &self.info {
+        if !self.info.is_null(){
             let mut fallback = BSTR::new();
             let mut message = BSTR::new();
             let mut unused = BSTR::new();
             let mut code = HRESULT(0);
 
             unsafe {
-                let _ = info.GetErrorDetails(&mut fallback, &mut code, &mut message, &mut unused);
+                (self.info.get().GetErrorDetails)(self.info.this(), fallback.put(), &mut code.0, message.put(), unused.put());
             }
 
             if self.code == code {
@@ -151,6 +151,27 @@ struct BSTR(*mut u16);
 impl BSTR {
     pub fn new() -> Self {
         Self(std::ptr::null_mut())
+    }
+    pub unsafe fn put(&mut self) -> *mut *mut u16 {
+        debug_assert!(self.0.is_null());
+        &mut self
+    }
+    pub fn is_empty(&self) -> bool {
+        self.len() == 0
+    }
+    pub fn len(&self) -> usize {
+        if self.0.is_null() {
+            0
+        } else {
+            unsafe { SysStringLen(self) as usize }
+        }
+    }
+    pub fn as_wide(&self) -> &[u16] {
+        if self.0.is_null() {
+            return &[];
+        }
+
+        unsafe { std::slice::from_raw_parts(self.0, self.len()) }
     }
 }
 

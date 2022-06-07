@@ -1,3 +1,4 @@
+#[repr(transparent)]
 pub struct ComPtr<T>(*mut *mut ::windows_sys::core::IUnknown, core::marker::PhantomData<T>);
 
 impl<T> ComPtr<T> {
@@ -13,12 +14,12 @@ impl<T> ComPtr<T> {
     pub fn this(&self) -> *mut *mut T {
         unsafe { std::mem::transmute(self.0) }
     }
-    pub fn put(&mut self) -> &mut *mut *mut T {
-        self.release();
+    pub unsafe fn put(&mut self) -> &mut *mut *mut T {
+        debug_assert!(self.is_null());
         unsafe { std::mem::transmute(&mut self.0) }
     }
-    pub fn put_void(&mut self) -> *mut *mut core::ffi::c_void {
-        self.release();
+    pub unsafe fn put_void(&mut self) -> *mut *mut core::ffi::c_void {
+        debug_assert!(self.is_null());
         unsafe { std::mem::transmute(&mut self.0) }
     }
     pub fn release(&mut self) {
