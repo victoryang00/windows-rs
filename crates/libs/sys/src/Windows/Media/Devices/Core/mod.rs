@@ -64,6 +64,9 @@ pub struct ICameraIntrinsics {
     #[cfg(not(feature = "Foundation_Numerics"))]
     UnprojectPixelsAtUnitDepth: usize,
 }
+impl ::windows_sys::core::Interface for ICameraIntrinsics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 178711858, data2: 25993, data3: 18906, data4: [175, 222, 89, 66, 112, 202, 10, 172] };
+}
 #[repr(C)]
 pub struct ICameraIntrinsics2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -88,6 +91,9 @@ pub struct ICameraIntrinsics2 {
     #[cfg(not(feature = "Foundation"))]
     UndistortPoints: usize,
 }
+impl ::windows_sys::core::Interface for ICameraIntrinsics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 215655495, data2: 1944, data3: 19277, data4: [131, 159, 197, 236, 65, 77, 178, 122] };
+}
 #[repr(C)]
 pub struct ICameraIntrinsicsFactory {
     pub base__: ::windows_sys::core::IInspectable,
@@ -95,6 +101,9 @@ pub struct ICameraIntrinsicsFactory {
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, focallength: super::super::super::Foundation::Numerics::Vector2, principalpoint: super::super::super::Foundation::Numerics::Vector2, radialdistortion: super::super::super::Foundation::Numerics::Vector3, tangentialdistortion: super::super::super::Foundation::Numerics::Vector2, imagewidth: u32, imageheight: u32, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Numerics"))]
     Create: usize,
+}
+impl ::windows_sys::core::Interface for ICameraIntrinsicsFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3235759238, data2: 8498, data3: 18996, data4: [166, 89, 155, 254, 42, 5, 87, 18] };
 }
 #[repr(C)]
 pub struct IDepthCorrelatedCoordinateMapper {
@@ -116,6 +125,9 @@ pub struct IDepthCorrelatedCoordinateMapper {
     #[cfg(not(all(feature = "Foundation", feature = "Perception_Spatial")))]
     MapPoints: usize,
 }
+impl ::windows_sys::core::Interface for IDepthCorrelatedCoordinateMapper {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4183656955, data2: 35568, data3: 19632, data4: [146, 109, 105, 104, 102, 229, 4, 106] };
+}
 #[repr(C)]
 pub struct IFrameControlCapabilities {
     pub base__: ::windows_sys::core::IInspectable,
@@ -125,10 +137,16 @@ pub struct IFrameControlCapabilities {
     pub Focus: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub PhotoConfirmationSupported: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IFrameControlCapabilities {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2835328608, data2: 20126, data3: 17271, data4: [167, 137, 226, 76, 74, 231, 229, 68] };
+}
 #[repr(C)]
 pub struct IFrameControlCapabilities2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub Flash: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IFrameControlCapabilities2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3466265700, data2: 18224, data3: 17423, data4: [189, 62, 239, 232, 168, 242, 48, 168] };
 }
 #[repr(C)]
 pub struct IFrameController {
@@ -146,10 +164,16 @@ pub struct IFrameController {
     #[cfg(not(feature = "Foundation"))]
     SetPhotoConfirmationEnabled: usize,
 }
+impl ::windows_sys::core::Interface for IFrameController {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3244579289, data2: 47855, data3: 16466, data4: [145, 119, 72, 175, 242, 175, 117, 34] };
+}
 #[repr(C)]
 pub struct IFrameController2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub FlashControl: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IFrameController2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 13876341, data2: 55420, data3: 18523, data4: [138, 9, 92, 53, 133, 104, 180, 39] };
 }
 #[repr(C)]
 pub struct IFrameExposureCapabilities {
@@ -168,6 +192,9 @@ pub struct IFrameExposureCapabilities {
     #[cfg(not(feature = "Foundation"))]
     Step: usize,
 }
+impl ::windows_sys::core::Interface for IFrameExposureCapabilities {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3183385827, data2: 14725, data3: 20082, data4: [151, 194, 5, 144, 214, 19, 7, 161] };
+}
 #[repr(C)]
 pub struct IFrameExposureCompensationCapabilities {
     pub base__: ::windows_sys::core::IInspectable,
@@ -175,6 +202,9 @@ pub struct IFrameExposureCompensationCapabilities {
     pub Min: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f32) -> ::windows_sys::core::HRESULT,
     pub Max: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f32) -> ::windows_sys::core::HRESULT,
     pub Step: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IFrameExposureCompensationCapabilities {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3112740899, data2: 32869, data3: 16878, data4: [176, 79, 114, 34, 101, 149, 69, 0] };
 }
 #[repr(C)]
 pub struct IFrameExposureCompensationControl {
@@ -187,6 +217,9 @@ pub struct IFrameExposureCompensationControl {
     pub SetValue: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     SetValue: usize,
+}
+impl ::windows_sys::core::Interface for IFrameExposureCompensationControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3914897097, data2: 63481, data3: 18634, data4: [133, 145, 162, 101, 49, 203, 21, 120] };
 }
 #[repr(C)]
 pub struct IFrameExposureControl {
@@ -202,12 +235,18 @@ pub struct IFrameExposureControl {
     #[cfg(not(feature = "Foundation"))]
     SetValue: usize,
 }
+impl ::windows_sys::core::Interface for IFrameExposureControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2975881825, data2: 65455, data3: 18258, data4: [182, 33, 245, 182, 241, 23, 244, 50] };
+}
 #[repr(C)]
 pub struct IFrameFlashCapabilities {
     pub base__: ::windows_sys::core::IInspectable,
     pub Supported: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub RedEyeReductionSupported: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub PowerSupported: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IFrameFlashCapabilities {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3146989986, data2: 24254, data3: 20322, data4: [130, 35, 14, 43, 5, 191, 187, 208] };
 }
 #[repr(C)]
 pub struct IFrameFlashControl {
@@ -221,6 +260,9 @@ pub struct IFrameFlashControl {
     pub PowerPercent: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f32) -> ::windows_sys::core::HRESULT,
     pub SetPowerPercent: unsafe extern "system" fn(this: *mut *mut Self, value: f32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IFrameFlashControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1976956615, data2: 48453, data3: 20395, data4: [147, 117, 69, 172, 4, 179, 50, 194] };
+}
 #[repr(C)]
 pub struct IFrameFocusCapabilities {
     pub base__: ::windows_sys::core::IInspectable,
@@ -228,6 +270,9 @@ pub struct IFrameFocusCapabilities {
     pub Min: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
     pub Max: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
     pub Step: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IFrameFocusCapabilities {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2066074968, data2: 448, data3: 16485, data4: [156, 64, 193, 167, 33, 66, 92, 26] };
 }
 #[repr(C)]
 pub struct IFrameFocusControl {
@@ -241,6 +286,9 @@ pub struct IFrameFocusControl {
     #[cfg(not(feature = "Foundation"))]
     SetValue: usize,
 }
+impl ::windows_sys::core::Interface for IFrameFocusControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 657322448, data2: 55570, data3: 16916, data4: [166, 123, 227, 138, 141, 72, 216, 198] };
+}
 #[repr(C)]
 pub struct IFrameIsoSpeedCapabilities {
     pub base__: ::windows_sys::core::IInspectable,
@@ -248,6 +296,9 @@ pub struct IFrameIsoSpeedCapabilities {
     pub Min: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
     pub Max: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
     pub Step: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IFrameIsoSpeedCapabilities {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 381550433, data2: 28150, data3: 19145, data4: [185, 42, 159, 110, 205, 26, 210, 250] };
 }
 #[repr(C)]
 pub struct IFrameIsoSpeedControl {
@@ -262,6 +313,9 @@ pub struct IFrameIsoSpeedControl {
     pub SetValue: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     SetValue: usize,
+}
+impl ::windows_sys::core::Interface for IFrameIsoSpeedControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 436465645, data2: 30826, data3: 19573, data4: [165, 87, 122, 185, 168, 95, 88, 140] };
 }
 #[repr(C)]
 pub struct IVariablePhotoSequenceController {
@@ -283,5 +337,8 @@ pub struct IVariablePhotoSequenceController {
     pub DesiredFrameControllers: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     DesiredFrameControllers: usize,
+}
+impl ::windows_sys::core::Interface for IVariablePhotoSequenceController {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2143287424, data2: 60812, data3: 17405, data4: [167, 195, 179, 88, 9, 228, 34, 154] };
 }
 pub type VariablePhotoSequenceController = *mut ::core::ffi::c_void;

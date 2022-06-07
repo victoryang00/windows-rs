@@ -74,6 +74,9 @@ pub struct IContactAddress {
     pub StreetAddress: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub SetStreetAddress: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IContactAddress {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1596258599, data2: 38057, data3: 17570, data4: [161, 85, 45, 11, 55, 209, 220, 205] };
+}
 #[repr(C)]
 pub struct IContactChangeRecord {
     pub base__: ::windows_sys::core::IInspectable,
@@ -81,6 +84,9 @@ pub struct IContactChangeRecord {
     pub RevisionNumber: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u64) -> ::windows_sys::core::HRESULT,
     pub Id: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub RemoteId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IContactChangeRecord {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3117676431, data2: 20795, data3: 18242, data4: [190, 0, 204, 92, 92, 35, 107, 4] };
 }
 #[repr(C)]
 pub struct IContactInformation {
@@ -120,6 +126,9 @@ pub struct IContactInformation {
     #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
     ToVcardWithOptionsAsync: usize,
 }
+impl ::windows_sys::core::Interface for IContactInformation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3803521020, data2: 59282, data3: 19127, data4: [177, 91, 242, 224, 120, 102, 77, 234] };
+}
 #[repr(C)]
 pub struct IContactInformation2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -132,6 +141,9 @@ pub struct IContactInformation2 {
     #[cfg(not(feature = "Foundation"))]
     SetDisplayPictureDate: usize,
 }
+impl ::windows_sys::core::Interface for IContactInformation2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 832090636, data2: 25118, data3: 18024, data4: [172, 56, 214, 103, 184, 125, 6, 213] };
+}
 #[repr(C)]
 pub struct IContactInformationStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -139,6 +151,9 @@ pub struct IContactInformationStatics {
     pub ParseVcardAsync: unsafe extern "system" fn(this: *mut *mut Self, vcard: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
     ParseVcardAsync: usize,
+}
+impl ::windows_sys::core::Interface for IContactInformationStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 258456361, data2: 976, data3: 19430, data4: [178, 165, 251, 19, 133, 159, 18, 2] };
 }
 #[repr(C)]
 pub struct IContactQueryOptions {
@@ -149,6 +164,9 @@ pub struct IContactQueryOptions {
     DesiredFields: usize,
     pub OrderBy: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ContactQueryResultOrdering) -> ::windows_sys::core::HRESULT,
     pub SetOrderBy: unsafe extern "system" fn(this: *mut *mut Self, value: ContactQueryResultOrdering) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IContactQueryOptions {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1477225334, data2: 16177, data3: 18113, data4: [154, 80, 66, 74, 83, 218, 202, 227] };
 }
 #[repr(C)]
 pub struct IContactQueryResult {
@@ -166,6 +184,9 @@ pub struct IContactQueryResult {
     #[cfg(not(feature = "Foundation_Collections"))]
     GetContactsAsyncInRange: usize,
     pub GetCurrentQueryOptions: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IContactQueryResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3225270050, data2: 60635, data3: 18176, data4: [133, 126, 62, 120, 100, 38, 176, 75] };
 }
 #[repr(C)]
 pub struct IContactStore {
@@ -202,6 +223,9 @@ pub struct IContactStore {
     #[cfg(not(feature = "Foundation_Collections"))]
     SaveExtendedPropertiesAsync: usize,
 }
+impl ::windows_sys::core::Interface for IContactStore {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2999807983, data2: 11261, data3: 20397, data4: [133, 82, 78, 105, 128, 151, 232, 235] };
+}
 #[repr(C)]
 pub struct IContactStore2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -209,6 +233,9 @@ pub struct IContactStore2 {
     pub CreateMeContactAsync: unsafe extern "system" fn(this: *mut *mut Self, id: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     CreateMeContactAsync: usize,
+}
+impl ::windows_sys::core::Interface for IContactStore2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1710339663, data2: 54867, data3: 17319, data4: [178, 54, 179, 12, 15, 77, 114, 105] };
 }
 #[repr(C)]
 pub struct IContactStoreStatics {
@@ -221,6 +248,9 @@ pub struct IContactStoreStatics {
     pub CreateOrOpenWithOptionsAsync: unsafe extern "system" fn(this: *mut *mut Self, access: ContactStoreSystemAccessMode, sharing: ContactStoreApplicationAccessMode, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     CreateOrOpenWithOptionsAsync: usize,
+}
+impl ::windows_sys::core::Interface for IContactStoreStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2818899490, data2: 19435, data3: 17612, data4: [165, 114, 103, 165, 185, 46, 133, 103] };
 }
 #[repr(C)]
 pub struct IKnownContactPropertiesStatics {
@@ -261,6 +291,9 @@ pub struct IKnownContactPropertiesStatics {
     pub AlternateMobileTelephone: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub AlternateWorkTelephone: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IKnownContactPropertiesStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3582012161, data2: 11501, data3: 20198, data4: [177, 214, 9, 75, 248, 142, 240, 182] };
+}
 #[repr(C)]
 pub struct IStoredContact {
     pub base__: ::windows_sys::core::IInspectable,
@@ -281,11 +314,17 @@ pub struct IStoredContact {
     #[cfg(not(feature = "Foundation"))]
     ReplaceExistingContactAsync: usize,
 }
+impl ::windows_sys::core::Interface for IStoredContact {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2960177073, data2: 9789, data3: 20081, data4: [171, 231, 89, 29, 36, 102, 87, 14] };
+}
 #[repr(C)]
 pub struct IStoredContactFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub CreateStoredContact: unsafe extern "system" fn(this: *mut *mut Self, store: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub CreateStoredContactFromInformation: unsafe extern "system" fn(this: *mut *mut Self, store: *mut ::core::ffi::c_void, contact: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IStoredContactFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1240328481, data2: 49701, data3: 20441, data4: [137, 197, 206, 204, 44, 138, 75, 121] };
 }
 pub type StoredContact = *mut ::core::ffi::c_void;
 #[doc = "*Required features: `\"Phone_PersonalInformation\"`*"]

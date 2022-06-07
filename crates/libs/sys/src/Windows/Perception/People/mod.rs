@@ -65,6 +65,9 @@ pub struct IEyesPose {
     Gaze: usize,
     pub UpdateTimestamp: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEyesPose {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1747622691, data2: 35358, data3: 23430, data4: [160, 96, 144, 111, 250, 203, 98, 164] };
+}
 #[repr(C)]
 pub struct IEyesPoseStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -73,6 +76,9 @@ pub struct IEyesPoseStatics {
     pub RequestAccessAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Foundation", feature = "UI_Input")))]
     RequestAccessAsync: usize,
+}
+impl ::windows_sys::core::Interface for IEyesPoseStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 486503443, data2: 45599, data3: 21696, data4: [128, 193, 230, 13, 153, 76, 165, 140] };
 }
 #[repr(C)]
 pub struct IHandMeshObserver {
@@ -89,6 +95,9 @@ pub struct IHandMeshObserver {
     pub NeutralPoseVersion: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i32) -> ::windows_sys::core::HRESULT,
     pub ModelId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IHandMeshObserver {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2242785483, data2: 28611, data3: 21956, data4: [167, 180, 41, 227, 56, 150, 202, 105] };
+}
 #[repr(C)]
 pub struct IHandMeshVertexState {
     pub base__: ::windows_sys::core::IInspectable,
@@ -101,6 +110,9 @@ pub struct IHandMeshVertexState {
     #[cfg(not(feature = "Foundation_Numerics"))]
     GetVertices: usize,
     pub UpdateTimestamp: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IHandMeshVertexState {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 74211311, data2: 7563, data3: 21982, data4: [171, 44, 28, 212, 36, 136, 109, 143] };
 }
 #[repr(C)]
 pub struct IHandPose {
@@ -122,6 +134,9 @@ pub struct IHandPose {
     #[cfg(not(feature = "Foundation_Numerics"))]
     GetRelativeJoints: usize,
 }
+impl ::windows_sys::core::Interface for IHandPose {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1301866394, data2: 47880, data3: 23817, data4: [145, 222, 223, 13, 211, 250, 228, 108] };
+}
 #[repr(C)]
 pub struct IHeadPose {
     pub base__: ::windows_sys::core::IInspectable,
@@ -137,6 +152,9 @@ pub struct IHeadPose {
     pub UpDirection: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Foundation::Numerics::Vector3) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Numerics"))]
     UpDirection: usize,
+}
+impl ::windows_sys::core::Interface for IHeadPose {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2136655269, data2: 18907, data3: 14239, data4: [148, 41, 50, 162, 250, 243, 79, 166] };
 }
 #[repr(C)]
 #[doc = "*Required features: `\"Perception_People\"`, `\"Foundation_Numerics\"`*"]

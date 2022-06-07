@@ -242,6 +242,9 @@ pub struct IContact {
     pub GetPath: unsafe extern "system" fn(this: *mut *mut Self, pszpath: ::windows_sys::core::PWSTR, cchpath: u32, pdwcchpathrequired: *mut u32) -> ::windows_sys::core::HRESULT,
     pub CommitChanges: unsafe extern "system" fn(this: *mut *mut Self, dwcommitflags: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IContact {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4181833329, data2: 48551, data3: 20343, data4: [136, 74, 244, 100, 98, 242, 38, 167] };
+}
 #[repr(C)]
 pub struct IContactAggregationAggregate {
     pub base__: ::windows_sys::core::IUnknown,
@@ -255,6 +258,9 @@ pub struct IContactAggregationAggregate {
     pub SetFavoriteOrder: unsafe extern "system" fn(this: *mut *mut Self, favoriteorder: u32) -> ::windows_sys::core::HRESULT,
     pub Id: unsafe extern "system" fn(this: *mut *mut Self, ppitemid: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IContactAggregationAggregate {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2127677460, data2: 52528, data3: 17352, data4: [155, 141, 46, 72, 158, 83, 213, 75] };
+}
 #[repr(C)]
 pub struct IContactAggregationAggregateCollection {
     pub base__: ::windows_sys::core::IUnknown,
@@ -262,6 +268,9 @@ pub struct IContactAggregationAggregateCollection {
     pub FindFirstByAntiLinkId: unsafe extern "system" fn(this: *mut *mut Self, pantilinkid: ::windows_sys::core::PCWSTR, ppaggregate: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub FindNext: unsafe extern "system" fn(this: *mut *mut Self, ppaggregate: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Count: unsafe extern "system" fn(this: *mut *mut Self, pcount: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IContactAggregationAggregateCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 593097638, data2: 14952, data3: 16559, data4: [152, 219, 15, 158, 177, 67, 195, 187] };
 }
 #[repr(C)]
 pub struct IContactAggregationContact {
@@ -291,6 +300,9 @@ pub struct IContactAggregationContact {
     pub SyncIdentityHash: unsafe extern "system" fn(this: *mut *mut Self, ppsyncidentityhash: *mut *mut CONTACT_AGGREGATION_BLOB) -> ::windows_sys::core::HRESULT,
     pub SetSyncIdentityHash: unsafe extern "system" fn(this: *mut *mut Self, psyncidentityhash: *const CONTACT_AGGREGATION_BLOB) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IContactAggregationContact {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 514993798, data2: 19590, data3: 16880, data4: [159, 159, 194, 81, 233, 253, 166, 195] };
+}
 #[repr(C)]
 pub struct IContactAggregationContactCollection {
     pub base__: ::windows_sys::core::IUnknown,
@@ -299,6 +311,9 @@ pub struct IContactAggregationContactCollection {
     pub FindFirstByIdentityHash: unsafe extern "system" fn(this: *mut *mut Self, psourcetype: ::windows_sys::core::PCWSTR, paccountid: ::windows_sys::core::PCWSTR, pidentityhash: *const CONTACT_AGGREGATION_BLOB, ppitem: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Count: unsafe extern "system" fn(this: *mut *mut Self, pcount: *mut i32) -> ::windows_sys::core::HRESULT,
     pub FindFirstByRemoteId: unsafe extern "system" fn(this: *mut *mut Self, psourcetype: ::windows_sys::core::PCWSTR, paccountid: ::windows_sys::core::PCWSTR, premoteobjectid: *const CONTACT_AGGREGATION_BLOB, ppitem: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IContactAggregationContactCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2188273402, data2: 33246, data3: 17354, data4: [166, 251, 140, 120, 92, 217, 150, 198] };
 }
 #[repr(C)]
 pub struct IContactAggregationGroup {
@@ -314,6 +329,9 @@ pub struct IContactAggregationGroup {
     pub Name: unsafe extern "system" fn(this: *mut *mut Self, ppname: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
     pub SetName: unsafe extern "system" fn(this: *mut *mut Self, pname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IContactAggregationGroup {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3376174175, data2: 4740, data3: 18843, data4: [150, 175, 7, 55, 42, 244, 115, 224] };
+}
 #[repr(C)]
 pub struct IContactAggregationGroupCollection {
     pub base__: ::windows_sys::core::IUnknown,
@@ -321,6 +339,9 @@ pub struct IContactAggregationGroupCollection {
     pub FindFirstByGlobalObjectId: unsafe extern "system" fn(this: *mut *mut Self, pglobalobjectid: *const ::windows_sys::core::GUID, ppgroup: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub FindNext: unsafe extern "system" fn(this: *mut *mut Self, ppgroup: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Count: unsafe extern "system" fn(this: *mut *mut Self, pcount: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IContactAggregationGroupCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 547461788, data2: 54003, data3: 19331, data4: [145, 67, 190, 255, 210, 204, 34, 109] };
 }
 #[repr(C)]
 pub struct IContactAggregationLink {
@@ -349,6 +370,9 @@ pub struct IContactAggregationLink {
     pub SyncIdentityHash: unsafe extern "system" fn(this: *mut *mut Self, ppsyncidentityhash: *mut *mut CONTACT_AGGREGATION_BLOB) -> ::windows_sys::core::HRESULT,
     pub SetSyncIdentityHash: unsafe extern "system" fn(this: *mut *mut Self, psyncidentityhash: *const CONTACT_AGGREGATION_BLOB) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IContactAggregationLink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3061920547, data2: 41347, data3: 18004, data4: [134, 39, 121, 179, 13, 227, 160, 236] };
+}
 #[repr(C)]
 pub struct IContactAggregationLinkCollection {
     pub base__: ::windows_sys::core::IUnknown,
@@ -356,6 +380,9 @@ pub struct IContactAggregationLinkCollection {
     pub FindFirstByRemoteId: unsafe extern "system" fn(this: *mut *mut Self, psourcetype: ::windows_sys::core::PCWSTR, paccountid: ::windows_sys::core::PCWSTR, premoteid: *const CONTACT_AGGREGATION_BLOB, ppservercontactlink: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub FindNext: unsafe extern "system" fn(this: *mut *mut Self, ppservercontactlink: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Count: unsafe extern "system" fn(this: *mut *mut Self, pcount: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IContactAggregationLinkCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4173074067, data2: 64341, data3: 20264, data4: [185, 250, 177, 194, 116, 21, 50, 146] };
 }
 #[repr(C)]
 pub struct IContactAggregationManager {
@@ -378,6 +405,9 @@ pub struct IContactAggregationManager {
     pub get_Groups: unsafe extern "system" fn(this: *mut *mut Self, options: CONTACT_AGGREGATION_COLLECTION_OPTIONS, ppgroups: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub ServerPersons: unsafe extern "system" fn(this: *mut *mut Self, ppserverpersoncollection: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub get_ServerContactLinks: unsafe extern "system" fn(this: *mut *mut Self, ppersonitemid: ::windows_sys::core::PCWSTR, ppservercontactlinkcollection: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IContactAggregationManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 495344009, data2: 19231, data3: 19296, data4: [143, 52, 194, 173, 70, 139, 43, 80] };
 }
 #[repr(C)]
 pub struct IContactAggregationServerPerson {
@@ -412,6 +442,9 @@ pub struct IContactAggregationServerPerson {
     pub ObjectId: unsafe extern "system" fn(this: *mut *mut Self, ppobjectid: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
     pub SetObjectId: unsafe extern "system" fn(this: *mut *mut Self, pobjectid: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IContactAggregationServerPerson {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2145140043, data2: 7042, data3: 17204, data4: [133, 197, 37, 24, 78, 229, 165, 242] };
+}
 #[repr(C)]
 pub struct IContactAggregationServerPersonCollection {
     pub base__: ::windows_sys::core::IUnknown,
@@ -422,12 +455,18 @@ pub struct IContactAggregationServerPersonCollection {
     pub FindNext: unsafe extern "system" fn(this: *mut *mut Self, ppserverperson: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Count: unsafe extern "system" fn(this: *mut *mut Self, pcount: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IContactAggregationServerPersonCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1332939338, data2: 26116, data3: 18358, data4: [169, 135, 102, 158, 207, 30, 87, 81] };
+}
 #[repr(C)]
 pub struct IContactCollection {
     pub base__: ::windows_sys::core::IUnknown,
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Next: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub GetCurrent: unsafe extern "system" fn(this: *mut *mut Self, ppcontact: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IContactCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3064963896, data2: 55161, data3: 4569, data4: [139, 222, 246, 107, 173, 30, 63, 58] };
 }
 #[repr(C)]
 pub struct IContactManager {
@@ -438,6 +477,9 @@ pub struct IContactManager {
     pub GetMeContact: unsafe extern "system" fn(this: *mut *mut Self, ppmecontact: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetMeContact: unsafe extern "system" fn(this: *mut *mut Self, pmecontact: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetContactCollection: unsafe extern "system" fn(this: *mut *mut Self, ppcontactcollection: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IContactManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2908044696, data2: 57009, data3: 18250, data4: [142, 23, 252, 12, 32, 117, 183, 56] };
 }
 #[repr(C)]
 pub struct IContactProperties {
@@ -474,6 +516,9 @@ pub struct IContactProperties {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetPropertyCollection: usize,
 }
+impl ::windows_sys::core::Interface for IContactProperties {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1893541853, data2: 23741, data3: 18152, data4: [190, 240, 35, 182, 179, 70, 40, 143] };
+}
 #[repr(C)]
 pub struct IContactPropertyCollection {
     pub base__: ::windows_sys::core::IUnknown,
@@ -487,4 +532,7 @@ pub struct IContactPropertyCollection {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetPropertyModificationDate: usize,
     pub GetPropertyArrayElementID: unsafe extern "system" fn(this: *mut *mut Self, pszarrayelementid: ::windows_sys::core::PWSTR, ccharrayelementid: u32, pdwccharrayelementidrequired: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IContactPropertyCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4292062712, data2: 64100, data3: 17192, data4: [177, 182, 46, 13, 181, 9, 203, 60] };
 }

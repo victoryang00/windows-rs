@@ -17,10 +17,16 @@ pub struct IWebViewControlAcceleratorKeyPressedEventArgs {
     pub Handled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub SetHandled: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWebViewControlAcceleratorKeyPressedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2007147838, data2: 31860, data3: 17277, data4: [162, 144, 58, 192, 216, 205, 86, 85] };
+}
 #[repr(C)]
 pub struct IWebViewControlMoveFocusRequestedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub Reason: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut WebViewControlMoveFocusReason) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWebViewControlMoveFocusRequestedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1797927949, data2: 19408, data3: 16478, data4: [183, 193, 30, 114, 164, 146, 244, 70] };
 }
 #[repr(C)]
 pub struct IWebViewControlProcess {
@@ -46,10 +52,16 @@ pub struct IWebViewControlProcess {
     #[cfg(not(feature = "Foundation"))]
     RemoveProcessExited: usize,
 }
+impl ::windows_sys::core::Interface for IWebViewControlProcess {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 46605292, data2: 39126, data3: 16970, data4: [182, 62, 198, 19, 108, 54, 160, 242] };
+}
 #[repr(C)]
 pub struct IWebViewControlProcessFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub CreateWithOptions: unsafe extern "system" fn(this: *mut *mut Self, processoptions: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWebViewControlProcessFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1203133689, data2: 41682, data3: 17724, data4: [176, 151, 246, 119, 157, 75, 142, 2] };
 }
 #[repr(C)]
 pub struct IWebViewControlProcessOptions {
@@ -58,6 +70,9 @@ pub struct IWebViewControlProcessOptions {
     pub EnterpriseId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub SetPrivateNetworkClientServerCapability: unsafe extern "system" fn(this: *mut *mut Self, value: WebViewControlProcessCapabilityState) -> ::windows_sys::core::HRESULT,
     pub PrivateNetworkClientServerCapability: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut WebViewControlProcessCapabilityState) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWebViewControlProcessOptions {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 483029671, data2: 15318, data3: 18470, data4: [130, 97, 108, 129, 137, 80, 93, 137] };
 }
 #[repr(C)]
 pub struct IWebViewControlSite {
@@ -94,6 +109,9 @@ pub struct IWebViewControlSite {
     #[cfg(not(feature = "Foundation"))]
     RemoveAcceleratorKeyPressed: usize,
 }
+impl ::windows_sys::core::Interface for IWebViewControlSite {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 322914246, data2: 4828, data3: 18584, data4: [189, 71, 4, 150, 125, 230, 72, 186] };
+}
 #[repr(C)]
 pub struct IWebViewControlSite2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -113,6 +131,9 @@ pub struct IWebViewControlSite2 {
     pub RemoveLostFocus: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     RemoveLostFocus: usize,
+}
+impl ::windows_sys::core::Interface for IWebViewControlSite2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3510316607, data2: 18670, data3: 18224, data4: [130, 67, 210, 237, 12, 5, 96, 106] };
 }
 pub type WebViewControl = *mut ::core::ffi::c_void;
 pub type WebViewControlAcceleratorKeyPressedEventArgs = *mut ::core::ffi::c_void;

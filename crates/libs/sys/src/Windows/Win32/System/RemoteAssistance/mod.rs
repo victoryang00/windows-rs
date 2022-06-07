@@ -11,10 +11,17 @@ pub const DISPID_EVENT_ON_TERMINATION: u32 = 6u32;
 pub struct DRendezvousSessionEvents {
     pub base__: super::Com::IDispatch,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DRendezvousSessionEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1067556088, data2: 25796, data3: 20307, data4: [174, 96, 99, 91, 56, 6, 236, 166] };
+}
 #[repr(C)]
 pub struct IRendezvousApplication {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetRendezvousSession: unsafe extern "system" fn(this: *mut *mut Self, prendezvoussession: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IRendezvousApplication {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1330448139, data2: 41589, data3: 18939, data4: [177, 13, 142, 194, 99, 135, 181, 13] };
 }
 #[repr(C)]
 pub struct IRendezvousSession {
@@ -33,6 +40,9 @@ pub struct IRendezvousSession {
     pub Terminate: unsafe extern "system" fn(this: *mut *mut Self, hr: ::windows_sys::core::HRESULT, bstrappdata: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     Terminate: usize,
+}
+impl ::windows_sys::core::Interface for IRendezvousSession {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2611261917, data2: 35596, data3: 18615, data4: [158, 124, 47, 37, 133, 124, 141, 245] };
 }
 #[doc = "*Required features: `\"Win32_System_RemoteAssistance\"`*"]
 pub type RENDEZVOUS_SESSION_FLAGS = i32;

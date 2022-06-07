@@ -114,6 +114,9 @@ pub struct IDeviceAccountConfiguration {
     pub OutgoingServerUsername: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub SetOutgoingServerUsername: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDeviceAccountConfiguration {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2902533027, data2: 64476, data3: 19739, data4: [190, 67, 90, 39, 234, 74, 27, 99] };
+}
 #[repr(C)]
 pub struct IDeviceAccountConfiguration2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -198,6 +201,9 @@ pub struct IDeviceAccountConfiguration2 {
     pub IsSyncScheduleManagedBySystem: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub SetIsSyncScheduleManagedBySystem: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDeviceAccountConfiguration2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4071810470, data2: 29325, data3: 19018, data4: [137, 69, 43, 248, 88, 1, 54, 222] };
+}
 #[repr(C)]
 pub struct IUserDataAccountSystemAccessManagerStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -205,6 +211,9 @@ pub struct IUserDataAccountSystemAccessManagerStatics {
     pub AddAndShowDeviceAccountsAsync: unsafe extern "system" fn(this: *mut *mut Self, accounts: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     AddAndShowDeviceAccountsAsync: usize,
+}
+impl ::windows_sys::core::Interface for IUserDataAccountSystemAccessManagerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2641039801, data2: 52197, data3: 17909, data4: [130, 43, 194, 103, 184, 29, 189, 182] };
 }
 #[repr(C)]
 pub struct IUserDataAccountSystemAccessManagerStatics2 {
@@ -225,4 +234,7 @@ pub struct IUserDataAccountSystemAccessManagerStatics2 {
     pub GetDeviceAccountConfigurationAsync: unsafe extern "system" fn(this: *mut *mut Self, accountid: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     GetDeviceAccountConfigurationAsync: usize,
+}
+impl ::windows_sys::core::Interface for IUserDataAccountSystemAccessManagerStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2487190861, data2: 19278, data3: 17311, data4: [131, 211, 151, 155, 39, 192, 90, 199] };
 }

@@ -16,6 +16,9 @@ pub struct IPdfRendererNative {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct2D_Common")))]
     RenderPageToDeviceContext: usize,
 }
+impl ::windows_sys::core::Interface for IPdfRendererNative {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2107493777, data2: 53879, data3: 18759, data4: [133, 39, 7, 160, 218, 237, 169, 74] };
+}
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_WinRT_Pdf\"`, `\"Win32_Foundation\"`, `\"Win32_Graphics_Direct2D_Common\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct2D_Common"))]

@@ -62,9 +62,15 @@ pub struct IClipboardContentOptions {
     #[cfg(not(feature = "Foundation_Collections"))]
     HistoryFormats: usize,
 }
+impl ::windows_sys::core::Interface for IClipboardContentOptions {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3901270412, data2: 44363, data3: 21575, data4: [160, 86, 171, 53, 86, 39, 109, 43] };
+}
 #[repr(C)]
 pub struct IClipboardHistoryChangedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
+}
+impl ::windows_sys::core::Interface for IClipboardHistoryChangedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3233695039, data2: 36514, data3: 21454, data4: [154, 186, 141, 34, 18, 87, 52, 82] };
 }
 #[repr(C)]
 pub struct IClipboardHistoryItem {
@@ -76,6 +82,9 @@ pub struct IClipboardHistoryItem {
     Timestamp: usize,
     pub Content: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IClipboardHistoryItem {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 24362378, data2: 45055, data3: 23632, data4: [171, 146, 61, 25, 244, 129, 236, 88] };
+}
 #[repr(C)]
 pub struct IClipboardHistoryItemsResult {
     pub base__: ::windows_sys::core::IInspectable,
@@ -84,6 +93,9 @@ pub struct IClipboardHistoryItemsResult {
     pub Items: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     Items: usize,
+}
+impl ::windows_sys::core::Interface for IClipboardHistoryItemsResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3873431270, data2: 3810, data3: 21219, data4: [133, 43, 242, 149, 219, 101, 147, 154] };
 }
 #[repr(C)]
 pub struct IClipboardStatics {
@@ -100,6 +112,9 @@ pub struct IClipboardStatics {
     pub RemoveContentChanged: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     RemoveContentChanged: usize,
+}
+impl ::windows_sys::core::Interface for IClipboardStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3324502673, data2: 13538, data3: 18787, data4: [142, 237, 147, 203, 176, 234, 61, 112] };
 }
 #[repr(C)]
 pub struct IClipboardStatics2 {
@@ -138,6 +153,9 @@ pub struct IClipboardStatics2 {
     pub RemoveHistoryEnabledChanged: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     RemoveHistoryEnabledChanged: usize,
+}
+impl ::windows_sys::core::Interface for IClipboardStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3534494570, data2: 53919, data3: 21835, data4: [179, 3, 240, 69, 35, 69, 254, 2] };
 }
 #[repr(C)]
 pub struct IDataPackage {
@@ -188,6 +206,9 @@ pub struct IDataPackage {
     #[cfg(not(all(feature = "Foundation_Collections", feature = "Storage")))]
     SetStorageItems: usize,
 }
+impl ::windows_sys::core::Interface for IDataPackage {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1642853831, data2: 61418, data3: 17222, data4: [149, 84, 152, 29, 126, 25, 143, 254] };
+}
 #[repr(C)]
 pub struct IDataPackage2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -199,6 +220,9 @@ pub struct IDataPackage2 {
     pub SetWebLink: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     SetWebLink: usize,
+}
+impl ::windows_sys::core::Interface for IDataPackage2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 68952041, data2: 9225, data3: 17889, data4: [165, 56, 76, 83, 238, 238, 4, 167] };
 }
 #[repr(C)]
 pub struct IDataPackage3 {
@@ -212,6 +236,9 @@ pub struct IDataPackage3 {
     #[cfg(not(feature = "Foundation"))]
     RemoveShareCompleted: usize,
 }
+impl ::windows_sys::core::Interface for IDataPackage3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2297634653, data2: 30843, data3: 19762, data4: [150, 90, 169, 131, 129, 5, 160, 86] };
+}
 #[repr(C)]
 pub struct IDataPackage4 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -223,6 +250,9 @@ pub struct IDataPackage4 {
     pub RemoveShareCanceled: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     RemoveShareCanceled: usize,
+}
+impl ::windows_sys::core::Interface for IDataPackage4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 329404104, data2: 37762, data3: 21359, data4: [133, 42, 48, 69, 225, 178, 154, 59] };
 }
 #[repr(C)]
 pub struct IDataPackagePropertySet {
@@ -253,6 +283,9 @@ pub struct IDataPackagePropertySet {
     pub SetApplicationListingUri: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     SetApplicationListingUri: usize,
+}
+impl ::windows_sys::core::Interface for IDataPackagePropertySet {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3441202155, data2: 19532, data3: 17466, data4: [168, 211, 245, 194, 65, 233, 22, 137] };
 }
 #[repr(C)]
 pub struct IDataPackagePropertySet2 {
@@ -292,17 +325,26 @@ pub struct IDataPackagePropertySet2 {
     #[cfg(not(feature = "UI"))]
     SetLogoBackgroundColor: usize,
 }
+impl ::windows_sys::core::Interface for IDataPackagePropertySet2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3947912522, data2: 38912, data3: 18090, data4: [177, 129, 123, 111, 15, 43, 145, 154] };
+}
 #[repr(C)]
 pub struct IDataPackagePropertySet3 {
     pub base__: ::windows_sys::core::IInspectable,
     pub EnterpriseId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub SetEnterpriseId: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDataPackagePropertySet3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2659712411, data2: 20997, data3: 16411, data4: [135, 74, 69, 86, 83, 189, 57, 232] };
+}
 #[repr(C)]
 pub struct IDataPackagePropertySet4 {
     pub base__: ::windows_sys::core::IInspectable,
     pub ContentSourceUserActivityJson: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub SetContentSourceUserActivityJson: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDataPackagePropertySet4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1670441973, data2: 5945, data3: 19572, data4: [178, 47, 134, 95, 171, 94, 133, 69] };
 }
 #[repr(C)]
 pub struct IDataPackagePropertySetView {
@@ -322,6 +364,9 @@ pub struct IDataPackagePropertySetView {
     pub ApplicationListingUri: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     ApplicationListingUri: usize,
+}
+impl ::windows_sys::core::Interface for IDataPackagePropertySetView {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3108826113, data2: 3098, data3: 19543, data4: [190, 85, 117, 208, 18, 137, 115, 93] };
 }
 #[repr(C)]
 pub struct IDataPackagePropertySetView2 {
@@ -344,20 +389,32 @@ pub struct IDataPackagePropertySetView2 {
     #[cfg(not(feature = "UI"))]
     LogoBackgroundColor: usize,
 }
+impl ::windows_sys::core::Interface for IDataPackagePropertySetView2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1616138395, data2: 36542, data3: 20459, data4: [156, 30, 117, 230, 157, 229, 75, 132] };
+}
 #[repr(C)]
 pub struct IDataPackagePropertySetView3 {
     pub base__: ::windows_sys::core::IInspectable,
     pub EnterpriseId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDataPackagePropertySetView3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3681963237, data2: 53620, data3: 18780, data4: [132, 252, 26, 81, 246, 171, 69, 215] };
 }
 #[repr(C)]
 pub struct IDataPackagePropertySetView4 {
     pub base__: ::windows_sys::core::IInspectable,
     pub ContentSourceUserActivityJson: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDataPackagePropertySetView4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1148504077, data2: 53615, data3: 16558, data4: [149, 128, 111, 133, 98, 185, 66, 53] };
+}
 #[repr(C)]
 pub struct IDataPackagePropertySetView5 {
     pub base__: ::windows_sys::core::IInspectable,
     pub IsFromRoamingClipboard: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDataPackagePropertySetView5 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1862964293, data2: 14176, data3: 20667, data4: [133, 35, 196, 32, 45, 237, 125, 120] };
 }
 #[repr(C)]
 pub struct IDataPackageView {
@@ -407,6 +464,9 @@ pub struct IDataPackageView {
     #[cfg(not(all(feature = "Foundation_Collections", feature = "Storage")))]
     GetStorageItemsAsync: usize,
 }
+impl ::windows_sys::core::Interface for IDataPackageView {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2072249457, data2: 22784, data3: 19845, data4: [169, 11, 16, 203, 133, 254, 53, 82] };
+}
 #[repr(C)]
 pub struct IDataPackageView2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -418,6 +478,9 @@ pub struct IDataPackageView2 {
     pub GetWebLinkAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     GetWebLinkAsync: usize,
+}
+impl ::windows_sys::core::Interface for IDataPackageView2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1089256085, data2: 9296, data3: 19485, data4: [182, 180, 237, 69, 70, 61, 238, 156] };
 }
 #[repr(C)]
 pub struct IDataPackageView3 {
@@ -435,15 +498,24 @@ pub struct IDataPackageView3 {
     #[cfg(not(feature = "Security_EnterpriseData"))]
     UnlockAndAssumeEnterpriseIdentity: usize,
 }
+impl ::windows_sys::core::Interface for IDataPackageView3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3547820456, data2: 56749, data3: 17032, data4: [132, 40, 209, 202, 227, 148, 18, 139] };
+}
 #[repr(C)]
 pub struct IDataPackageView4 {
     pub base__: ::windows_sys::core::IInspectable,
     pub SetAcceptedFormatId: unsafe extern "system" fn(this: *mut *mut Self, formatid: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDataPackageView4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3756617503, data2: 57410, data3: 17459, data4: [160, 159, 38, 214, 255, 218, 139, 133] };
+}
 #[repr(C)]
 pub struct IDataProviderDeferral {
     pub base__: ::windows_sys::core::IInspectable,
     pub Complete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDataProviderDeferral {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3268354931, data2: 11558, data3: 17369, data4: [182, 157, 220, 184, 109, 3, 246, 218] };
 }
 #[repr(C)]
 pub struct IDataProviderRequest {
@@ -455,6 +527,9 @@ pub struct IDataProviderRequest {
     Deadline: usize,
     pub GetDeferral: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetData: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDataProviderRequest {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3954995543, data2: 54216, data3: 18394, data4: [172, 222, 248, 35, 136, 213, 247, 22] };
 }
 #[repr(C)]
 pub struct IDataRequest {
@@ -468,15 +543,24 @@ pub struct IDataRequest {
     pub FailWithDisplayText: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub GetDeferral: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDataRequest {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1128377915, data2: 64530, data3: 20051, data4: [140, 2, 172, 113, 76, 65, 90, 39] };
+}
 #[repr(C)]
 pub struct IDataRequestDeferral {
     pub base__: ::windows_sys::core::IInspectable,
     pub Complete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDataRequestDeferral {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1841608863, data2: 902, data3: 16995, data4: [135, 193, 237, 125, 206, 48, 137, 14] };
+}
 #[repr(C)]
 pub struct IDataRequestedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub Request: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDataRequestedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3414927367, data2: 27333, data3: 17353, data4: [138, 197, 155, 162, 50, 22, 49, 130] };
 }
 #[repr(C)]
 pub struct IDataTransferManager {
@@ -498,6 +582,9 @@ pub struct IDataTransferManager {
     #[cfg(not(feature = "Foundation"))]
     RemoveTargetApplicationChosen: usize,
 }
+impl ::windows_sys::core::Interface for IDataTransferManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2781539995, data2: 34568, data3: 18897, data4: [141, 54, 103, 210, 90, 141, 160, 12] };
+}
 #[repr(C)]
 pub struct IDataTransferManager2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -510,21 +597,33 @@ pub struct IDataTransferManager2 {
     #[cfg(not(feature = "Foundation"))]
     RemoveShareProvidersRequested: usize,
 }
+impl ::windows_sys::core::Interface for IDataTransferManager2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 816741745, data2: 35752, data3: 19458, data4: [142, 63, 221, 178, 59, 56, 135, 21] };
+}
 #[repr(C)]
 pub struct IDataTransferManagerStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub ShowShareUI: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub GetForCurrentView: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDataTransferManagerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2849636778, data2: 57358, data3: 19710, data4: [170, 68, 45, 217, 50, 220, 163, 216] };
+}
 #[repr(C)]
 pub struct IDataTransferManagerStatics2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub IsSupported: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDataTransferManagerStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3310273260, data2: 40855, data3: 19811, data4: [152, 104, 57, 94, 39, 26, 216, 245] };
+}
 #[repr(C)]
 pub struct IDataTransferManagerStatics3 {
     pub base__: ::windows_sys::core::IInspectable,
     pub ShowShareUIWithOptions: unsafe extern "system" fn(this: *mut *mut Self, options: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDataTransferManagerStatics3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 92558451, data2: 27778, data3: 20316, data4: [172, 35, 98, 228, 88, 54, 31, 172] };
 }
 #[repr(C)]
 pub struct IHtmlFormatHelperStatics {
@@ -532,20 +631,32 @@ pub struct IHtmlFormatHelperStatics {
     pub GetStaticFragment: unsafe extern "system" fn(this: *mut *mut Self, htmlformat: ::windows_sys::core::HSTRING, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub CreateHtmlFormat: unsafe extern "system" fn(this: *mut *mut Self, htmlfragment: ::windows_sys::core::HSTRING, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IHtmlFormatHelperStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3794696009, data2: 56688, data3: 17519, data4: [174, 252, 97, 206, 229, 159, 101, 94] };
+}
 #[repr(C)]
 pub struct IOperationCompletedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub Operation: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut DataPackageOperation) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IOperationCompletedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3887018653, data2: 1309, data3: 20395, data4: [177, 169, 71, 253, 119, 247, 10, 65] };
 }
 #[repr(C)]
 pub struct IOperationCompletedEventArgs2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub AcceptedFormatId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IOperationCompletedEventArgs2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2240782451, data2: 7705, data3: 16645, data4: [178, 247, 200, 71, 136, 8, 213, 98] };
+}
 #[repr(C)]
 pub struct IShareCompletedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub ShareTarget: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IShareCompletedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1165280322, data2: 63763, data3: 20320, data4: [157, 247, 204, 64, 96, 171, 25, 22] };
 }
 #[repr(C)]
 pub struct IShareProvider {
@@ -562,6 +673,9 @@ pub struct IShareProvider {
     pub Tag: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetTag: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IShareProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 799793190, data2: 17470, data3: 19674, data4: [175, 37, 141, 129, 7, 14, 253, 128] };
+}
 #[repr(C)]
 pub struct IShareProviderFactory {
     pub base__: ::windows_sys::core::IInspectable,
@@ -570,12 +684,18 @@ pub struct IShareProviderFactory {
     #[cfg(not(all(feature = "Storage_Streams", feature = "UI")))]
     Create: usize,
 }
+impl ::windows_sys::core::Interface for IShareProviderFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 388634444, data2: 59294, data3: 20333, data4: [176, 125, 18, 143, 70, 158, 2, 150] };
+}
 #[repr(C)]
 pub struct IShareProviderOperation {
     pub base__: ::windows_sys::core::IInspectable,
     pub Data: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Provider: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub ReportCompleted: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IShareProviderOperation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 432994615, data2: 54325, data3: 16761, data4: [182, 175, 20, 224, 73, 43, 105, 246] };
 }
 #[repr(C)]
 pub struct IShareProvidersRequestedEventArgs {
@@ -590,11 +710,17 @@ pub struct IShareProvidersRequestedEventArgs {
     #[cfg(not(feature = "Foundation"))]
     GetDeferral: usize,
 }
+impl ::windows_sys::core::Interface for IShareProvidersRequestedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4169724758, data2: 41976, data3: 20430, data4: [133, 228, 136, 38, 230, 59, 231, 153] };
+}
 #[repr(C)]
 pub struct IShareTargetInfo {
     pub base__: ::windows_sys::core::IInspectable,
     pub AppUserModelId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub ShareProvider: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IShareTargetInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 945546759, data2: 50920, data3: 16660, data4: [178, 148, 40, 243, 187, 111, 153, 4] };
 }
 #[repr(C)]
 pub struct IShareUIOptions {
@@ -610,6 +736,9 @@ pub struct IShareUIOptions {
     #[cfg(not(feature = "Foundation"))]
     SetSelectionRect: usize,
 }
+impl ::windows_sys::core::Interface for IShareUIOptions {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1929022080, data2: 13359, data3: 19856, data4: [149, 81, 42, 224, 78, 55, 104, 12] };
+}
 #[repr(C)]
 pub struct ISharedStorageAccessManagerStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -622,6 +751,9 @@ pub struct ISharedStorageAccessManagerStatics {
     #[cfg(not(all(feature = "Foundation", feature = "Storage")))]
     RedeemTokenForFileAsync: usize,
     pub RemoveFile: unsafe extern "system" fn(this: *mut *mut Self, token: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISharedStorageAccessManagerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3323144922, data2: 13489, data3: 18505, data4: [189, 95, 208, 159, 238, 49, 88, 197] };
 }
 #[repr(C)]
 pub struct IStandardDataFormatsStatics {
@@ -636,21 +768,33 @@ pub struct IStandardDataFormatsStatics {
     pub Bitmap: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub StorageItems: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IStandardDataFormatsStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2127987105, data2: 43136, data3: 16585, data4: [180, 237, 11, 238, 30, 21, 245, 73] };
+}
 #[repr(C)]
 pub struct IStandardDataFormatsStatics2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub WebLink: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub ApplicationLink: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IStandardDataFormatsStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1117934836, data2: 40310, data3: 17128, data4: [134, 27, 71, 194, 93, 208, 207, 113] };
+}
 #[repr(C)]
 pub struct IStandardDataFormatsStatics3 {
     pub base__: ::windows_sys::core::IInspectable,
     pub UserActivityJsonArray: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IStandardDataFormatsStatics3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 995602537, data2: 468, data3: 18252, data4: [139, 95, 188, 142, 39, 243, 139, 33] };
+}
 #[repr(C)]
 pub struct ITargetApplicationChosenEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub ApplicationName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ITargetApplicationChosenEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3396319404, data2: 10631, data3: 20195, data4: [156, 84, 216, 175, 188, 184, 108, 29] };
 }
 pub type OperationCompletedEventArgs = *mut ::core::ffi::c_void;
 #[doc = "*Required features: `\"ApplicationModel_DataTransfer\"`*"]

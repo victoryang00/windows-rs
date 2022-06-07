@@ -514,6 +514,9 @@ pub struct IEnhancedStorageACT {
     pub GetUniqueIdentity: unsafe extern "system" fn(this: *mut *mut Self, ppwszidentity: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
     pub GetSilos: unsafe extern "system" fn(this: *mut *mut Self, pppienhancedstoragesilos: *mut *mut *mut ::core::ffi::c_void, pcenhancedstoragesilos: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEnhancedStorageACT {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1853325812, data2: 57586, data3: 16953, data4: [185, 118, 160, 26, 186, 181, 41, 48] };
+}
 #[repr(C)]
 pub struct IEnhancedStorageACT2 {
     pub base__: IEnhancedStorageACT,
@@ -522,6 +525,9 @@ pub struct IEnhancedStorageACT2 {
     pub IsDeviceRemovable: unsafe extern "system" fn(this: *mut *mut Self, pisdeviceremovable: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     IsDeviceRemovable: usize,
+}
+impl ::windows_sys::core::Interface for IEnhancedStorageACT2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1302691118, data2: 36531, data3: 16886, data4: [160, 126, 152, 181, 43, 136, 36, 43] };
 }
 #[repr(C)]
 pub struct IEnhancedStorageACT3 {
@@ -536,6 +542,9 @@ pub struct IEnhancedStorageACT3 {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetShellExtSupport: usize,
 }
+impl ::windows_sys::core::Interface for IEnhancedStorageACT3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 35737761, data2: 4413, data3: 4575, data4: [187, 97, 0, 26, 160, 27, 188, 88] };
+}
 #[repr(C)]
 pub struct IEnhancedStorageSilo {
     pub base__: ::windows_sys::core::IUnknown,
@@ -548,6 +557,9 @@ pub struct IEnhancedStorageSilo {
     GetPortableDevice: usize,
     pub GetDevicePath: unsafe extern "system" fn(this: *mut *mut Self, ppwszsilodevicepath: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEnhancedStorageSilo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1525643462, data2: 8770, data3: 18179, data4: [191, 73, 68, 178, 147, 87, 163, 89] };
+}
 #[repr(C)]
 pub struct IEnhancedStorageSiloAction {
     pub base__: ::windows_sys::core::IUnknown,
@@ -555,11 +567,17 @@ pub struct IEnhancedStorageSiloAction {
     pub GetDescription: unsafe extern "system" fn(this: *mut *mut Self, ppwszactiondescription: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
     pub Invoke: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEnhancedStorageSiloAction {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3069702929, data2: 8303, data3: 20472, data4: [156, 75, 39, 239, 238, 119, 168, 111] };
+}
 #[repr(C)]
 pub struct IEnumEnhancedStorageACT {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetACTs: unsafe extern "system" fn(this: *mut *mut Self, pppienhancedstorageacts: *mut *mut *mut ::core::ffi::c_void, pcenhancedstorageacts: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetMatchingACT: unsafe extern "system" fn(this: *mut *mut Self, szvolume: ::windows_sys::core::PCWSTR, ppienhancedstorageact: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IEnumEnhancedStorageACT {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 162669757, data2: 4917, data3: 17969, data4: [167, 255, 207, 211, 169, 38, 70, 215] };
 }
 #[doc = "*Required features: `\"Win32_Storage_EnhancedStorage\"`*"]
 pub const IMPORTANCE_HIGH_MAX: i32 = 5i32;

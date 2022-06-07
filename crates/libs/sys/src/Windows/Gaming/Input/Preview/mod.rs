@@ -10,3 +10,6 @@ pub struct IGameControllerProviderInfoStatics {
     #[cfg(not(feature = "Gaming_Input_Custom"))]
     GetProviderId: usize,
 }
+impl ::windows_sys::core::Interface for IGameControllerProviderInfoStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 199354053, data2: 55741, data3: 17646, data4: [131, 98, 72, 139, 46, 70, 75, 251] };
+}

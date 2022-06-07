@@ -12,3 +12,6 @@ pub struct IXMLGraphBuilder {
     SaveToXML: usize,
     pub BuildFromXMLFile: unsafe extern "system" fn(this: *mut *mut Self, pgraph: *mut ::core::ffi::c_void, wszfilename: ::windows_sys::core::PCWSTR, wszbaseurl: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IXMLGraphBuilder {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 464542048, data2: 24511, data3: 4562, data4: [165, 33, 68, 223, 7, 193, 0, 0] };
+}

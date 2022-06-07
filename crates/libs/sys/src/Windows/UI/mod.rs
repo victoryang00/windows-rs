@@ -46,19 +46,31 @@ pub type Colors = *mut ::core::ffi::c_void;
 pub struct IColorHelper {
     pub base__: ::windows_sys::core::IInspectable,
 }
+impl ::windows_sys::core::Interface for IColorHelper {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 423427047, data2: 26055, data3: 17728, data4: [173, 8, 98, 131, 186, 118, 135, 154] };
+}
 #[repr(C)]
 pub struct IColorHelperStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub FromArgb: unsafe extern "system" fn(this: *mut *mut Self, a: u8, r: u8, g: u8, b: u8, result__: *mut Color) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IColorHelperStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2231688170, data2: 64362, data3: 16708, data4: [166, 194, 51, 73, 156, 146, 132, 245] };
 }
 #[repr(C)]
 pub struct IColorHelperStatics2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub ToDisplayName: unsafe extern "system" fn(this: *mut *mut Self, color: Color, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IColorHelperStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 618245890, data2: 28336, data3: 19348, data4: [133, 92, 252, 240, 129, 141, 154, 22] };
+}
 #[repr(C)]
 pub struct IColors {
     pub base__: ::windows_sys::core::IInspectable,
+}
+impl ::windows_sys::core::Interface for IColors {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2609681190, data2: 19622, data3: 19685, data4: [137, 148, 158, 255, 101, 202, 189, 204] };
 }
 #[repr(C)]
 pub struct IColorsStatics {
@@ -205,14 +217,23 @@ pub struct IColorsStatics {
     pub Yellow: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut Color) -> ::windows_sys::core::HRESULT,
     pub YellowGreen: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut Color) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IColorsStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3488951812, data2: 52390, data3: 17940, data4: [161, 126, 117, 73, 16, 200, 74, 153] };
+}
 #[repr(C)]
 pub struct IUIContentRoot {
     pub base__: ::windows_sys::core::IInspectable,
     pub UIContext: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IUIContentRoot {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 503102150, data2: 45931, data3: 23737, data4: [155, 197, 43, 122, 14, 221, 195, 120] };
+}
 #[repr(C)]
 pub struct IUIContext {
     pub base__: ::windows_sys::core::IInspectable,
+}
+impl ::windows_sys::core::Interface for IUIContext {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3143432909, data2: 23512, data3: 22992, data4: [165, 158, 28, 23, 164, 214, 210, 67] };
 }
 pub type UIContentRoot = *mut ::core::ffi::c_void;
 pub type UIContext = *mut ::core::ffi::c_void;

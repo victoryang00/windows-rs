@@ -190,6 +190,10 @@ pub struct IAllJoynAboutData {
     SetAppId: usize,
 }
 #[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for IAllJoynAboutData {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3853106944, data2: 8098, data3: 18489, data4: [147, 239, 249, 223, 64, 72, 144, 247] };
+}
+#[cfg(feature = "deprecated")]
 #[repr(C)]
 pub struct IAllJoynAboutDataView {
     pub base__: ::windows_sys::core::IInspectable,
@@ -259,6 +263,10 @@ pub struct IAllJoynAboutDataView {
     Manufacturer: usize,
 }
 #[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for IAllJoynAboutDataView {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1747128607, data2: 25106, data3: 18740, data4: [156, 72, 225, 156, 164, 152, 66, 136] };
+}
+#[cfg(feature = "deprecated")]
 #[repr(C)]
 pub struct IAllJoynAboutDataViewStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -272,6 +280,10 @@ pub struct IAllJoynAboutDataViewStatics {
     GetDataBySessionPortWithLanguageAsync: usize,
 }
 #[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for IAllJoynAboutDataViewStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1475196552, data2: 3166, data3: 16750, data4: [136, 181, 57, 179, 45, 37, 196, 125] };
+}
+#[cfg(feature = "deprecated")]
 #[repr(C)]
 pub struct IAllJoynAcceptSessionJoiner {
     pub base__: ::windows_sys::core::IInspectable,
@@ -279,6 +291,10 @@ pub struct IAllJoynAcceptSessionJoiner {
     pub Accept: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "deprecated"))]
     Accept: usize,
+}
+#[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for IAllJoynAcceptSessionJoiner {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1302861778, data2: 52509, data3: 16419, data4: [167, 196, 22, 222, 248, 156, 40, 223] };
 }
 #[cfg(feature = "deprecated")]
 #[repr(C)]
@@ -310,6 +326,10 @@ pub struct IAllJoynAcceptSessionJoinerEventArgs {
     Accept: usize,
 }
 #[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for IAllJoynAcceptSessionJoinerEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1325093733, data2: 16010, data3: 16983, data4: [143, 16, 83, 156, 224, 213, 108, 15] };
+}
+#[cfg(feature = "deprecated")]
 #[repr(C)]
 pub struct IAllJoynAcceptSessionJoinerEventArgsFactory {
     pub base__: ::windows_sys::core::IInspectable,
@@ -317,6 +337,10 @@ pub struct IAllJoynAcceptSessionJoinerEventArgsFactory {
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, uniquename: ::windows_sys::core::HSTRING, sessionport: u16, traffictype: AllJoynTrafficType, proximity: u8, acceptsessionjoiner: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "deprecated"))]
     Create: usize,
+}
+#[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for IAllJoynAcceptSessionJoinerEventArgsFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3024313280, data2: 24901, data3: 17054, data4: [132, 219, 213, 191, 231, 114, 177, 79] };
 }
 #[cfg(feature = "deprecated")]
 #[repr(C)]
@@ -334,6 +358,10 @@ pub struct IAllJoynAuthenticationCompleteEventArgs {
     pub Succeeded: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "deprecated"))]
     Succeeded: usize,
+}
+#[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for IAllJoynAuthenticationCompleteEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2545184796, data2: 5596, data3: 19283, data4: [182, 164, 125, 19, 67, 0, 215, 191] };
 }
 #[cfg(feature = "deprecated")]
 #[repr(C)]
@@ -405,6 +433,10 @@ pub struct IAllJoynBusAttachment {
     RemoveAuthenticationComplete: usize,
 }
 #[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for IAllJoynBusAttachment {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4077515091, data2: 7917, data3: 17091, data4: [162, 14, 67, 109, 65, 254, 98, 246] };
+}
+#[cfg(feature = "deprecated")]
 #[repr(C)]
 pub struct IAllJoynBusAttachment2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -434,6 +466,10 @@ pub struct IAllJoynBusAttachment2 {
     RemoveSessionJoined: usize,
 }
 #[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for IAllJoynBusAttachment2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 880069406, data2: 9064, data3: 17330, data4: [180, 62, 106, 58, 193, 39, 141, 152] };
+}
+#[cfg(feature = "deprecated")]
 #[repr(C)]
 pub struct IAllJoynBusAttachmentFactory {
     pub base__: ::windows_sys::core::IInspectable,
@@ -441,6 +477,10 @@ pub struct IAllJoynBusAttachmentFactory {
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, connectionspecification: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "deprecated"))]
     Create: usize,
+}
+#[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for IAllJoynBusAttachmentFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1680798116, data2: 44421, data3: 19935, data4: [144, 174, 96, 68, 82, 178, 34, 136] };
 }
 #[cfg(feature = "deprecated")]
 #[repr(C)]
@@ -456,6 +496,10 @@ pub struct IAllJoynBusAttachmentStateChangedEventArgs {
     Status: usize,
 }
 #[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for IAllJoynBusAttachmentStateChangedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3626923508, data2: 49194, data3: 16876, data4: [168, 213, 234, 177, 85, 137, 83, 170] };
+}
+#[cfg(feature = "deprecated")]
 #[repr(C)]
 pub struct IAllJoynBusAttachmentStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -467,6 +511,10 @@ pub struct IAllJoynBusAttachmentStatics {
     pub GetWatcher: unsafe extern "system" fn(this: *mut *mut Self, requiredinterfaces: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Devices_Enumeration", feature = "Foundation_Collections", feature = "deprecated")))]
     GetWatcher: usize,
+}
+#[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for IAllJoynBusAttachmentStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2208124221, data2: 4177, data3: 16599, data4: [135, 42, 141, 1, 65, 17, 91, 31] };
 }
 #[cfg(feature = "deprecated")]
 #[repr(C)]
@@ -502,6 +550,10 @@ pub struct IAllJoynBusObject {
     RemoveStopped: usize,
 }
 #[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for IAllJoynBusObject {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3908928094, data2: 63290, data3: 18700, data4: [136, 4, 4, 224, 38, 100, 48, 71] };
+}
+#[cfg(feature = "deprecated")]
 #[repr(C)]
 pub struct IAllJoynBusObjectFactory {
     pub base__: ::windows_sys::core::IInspectable,
@@ -515,6 +567,10 @@ pub struct IAllJoynBusObjectFactory {
     CreateWithBusAttachment: usize,
 }
 #[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for IAllJoynBusObjectFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 741318411, data2: 36354, data3: 20380, data4: [172, 39, 234, 109, 173, 93, 59, 80] };
+}
+#[cfg(feature = "deprecated")]
 #[repr(C)]
 pub struct IAllJoynBusObjectStoppedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
@@ -524,6 +580,10 @@ pub struct IAllJoynBusObjectStoppedEventArgs {
     Status: usize,
 }
 #[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for IAllJoynBusObjectStoppedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3725598997, data2: 61326, data3: 19778, data4: [185, 59, 162, 174, 116, 81, 151, 102] };
+}
+#[cfg(feature = "deprecated")]
 #[repr(C)]
 pub struct IAllJoynBusObjectStoppedEventArgsFactory {
     pub base__: ::windows_sys::core::IInspectable,
@@ -531,6 +591,10 @@ pub struct IAllJoynBusObjectStoppedEventArgsFactory {
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, status: i32, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "deprecated"))]
     Create: usize,
+}
+#[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for IAllJoynBusObjectStoppedEventArgsFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1797455176, data2: 53411, data3: 16981, data4: [149, 58, 71, 114, 180, 2, 128, 115] };
 }
 #[cfg(feature = "deprecated")]
 #[repr(C)]
@@ -566,6 +630,10 @@ pub struct IAllJoynCredentials {
     SetTimeout: usize,
 }
 #[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for IAllJoynCredentials {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2185646322, data2: 41360, data3: 16561, data4: [171, 171, 52, 158, 194, 68, 223, 170] };
+}
+#[cfg(feature = "deprecated")]
 #[repr(C)]
 pub struct IAllJoynCredentialsRequestedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
@@ -589,6 +657,10 @@ pub struct IAllJoynCredentialsRequestedEventArgs {
     pub GetDeferral: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
     GetDeferral: usize,
+}
+#[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for IAllJoynCredentialsRequestedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1787290446, data2: 45161, data3: 19328, data4: [158, 26, 65, 188, 131, 124, 101, 210] };
 }
 #[cfg(feature = "deprecated")]
 #[repr(C)]
@@ -628,6 +700,10 @@ pub struct IAllJoynCredentialsVerificationRequestedEventArgs {
     GetDeferral: usize,
 }
 #[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for IAllJoynCredentialsVerificationRequestedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2148169234, data2: 47109, data3: 17583, data4: [162, 225, 121, 42, 182, 85, 162, 208] };
+}
+#[cfg(feature = "deprecated")]
 #[repr(C)]
 pub struct IAllJoynMessageInfo {
     pub base__: ::windows_sys::core::IInspectable,
@@ -635,6 +711,10 @@ pub struct IAllJoynMessageInfo {
     pub SenderUniqueName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "deprecated"))]
     SenderUniqueName: usize,
+}
+#[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for IAllJoynMessageInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4281008423, data2: 11282, data3: 18521, data4: [170, 58, 199, 68, 97, 238, 129, 76] };
 }
 #[cfg(feature = "deprecated")]
 #[repr(C)]
@@ -646,6 +726,10 @@ pub struct IAllJoynMessageInfoFactory {
     Create: usize,
 }
 #[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for IAllJoynMessageInfoFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 879119402, data2: 33417, data3: 17364, data4: [180, 168, 63, 77, 227, 89, 240, 67] };
+}
+#[cfg(feature = "deprecated")]
 #[repr(C)]
 pub struct IAllJoynProducer {
     pub base__: ::windows_sys::core::IInspectable,
@@ -653,6 +737,10 @@ pub struct IAllJoynProducer {
     pub SetBusObject: unsafe extern "system" fn(this: *mut *mut Self, busobject: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "deprecated"))]
     SetBusObject: usize,
+}
+#[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for IAllJoynProducer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2634565241, data2: 18075, data3: 18778, data4: [167, 16, 172, 80, 241, 35, 6, 159] };
 }
 #[cfg(feature = "deprecated")]
 #[repr(C)]
@@ -664,6 +752,10 @@ pub struct IAllJoynProducerStoppedEventArgs {
     Status: usize,
 }
 #[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for IAllJoynProducerStoppedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1362138992, data2: 18743, data3: 18733, data4: [128, 128, 35, 100, 57, 152, 124, 235] };
+}
+#[cfg(feature = "deprecated")]
 #[repr(C)]
 pub struct IAllJoynProducerStoppedEventArgsFactory {
     pub base__: ::windows_sys::core::IInspectable,
@@ -671,6 +763,10 @@ pub struct IAllJoynProducerStoppedEventArgsFactory {
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, status: i32, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "deprecated"))]
     Create: usize,
+}
+#[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for IAllJoynProducerStoppedEventArgsFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1448253793, data2: 45593, data3: 19822, data4: [159, 120, 250, 63, 153, 250, 143, 229] };
 }
 #[cfg(feature = "deprecated")]
 #[repr(C)]
@@ -690,6 +786,10 @@ pub struct IAllJoynServiceInfo {
     SessionPort: usize,
 }
 #[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for IAllJoynServiceInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1287553545, data2: 47422, data3: 16770, data4: [153, 155, 221, 208, 0, 249, 197, 117] };
+}
+#[cfg(feature = "deprecated")]
 #[repr(C)]
 pub struct IAllJoynServiceInfoFactory {
     pub base__: ::windows_sys::core::IInspectable,
@@ -697,6 +797,10 @@ pub struct IAllJoynServiceInfoFactory {
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, uniquename: ::windows_sys::core::HSTRING, objectpath: ::windows_sys::core::HSTRING, sessionport: u16, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "deprecated"))]
     Create: usize,
+}
+#[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for IAllJoynServiceInfoFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1971444413, data2: 65027, data3: 20299, data4: [148, 164, 240, 47, 220, 189, 17, 184] };
 }
 #[cfg(feature = "deprecated")]
 #[repr(C)]
@@ -708,6 +812,10 @@ pub struct IAllJoynServiceInfoRemovedEventArgs {
     UniqueName: usize,
 }
 #[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for IAllJoynServiceInfoRemovedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811051359, data2: 7487, data3: 16883, data4: [137, 105, 227, 39, 146, 98, 115, 150] };
+}
+#[cfg(feature = "deprecated")]
 #[repr(C)]
 pub struct IAllJoynServiceInfoRemovedEventArgsFactory {
     pub base__: ::windows_sys::core::IInspectable,
@@ -717,6 +825,10 @@ pub struct IAllJoynServiceInfoRemovedEventArgsFactory {
     Create: usize,
 }
 #[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for IAllJoynServiceInfoRemovedEventArgsFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 230655527, data2: 39679, data3: 18773, data4: [146, 39, 105, 83, 186, 244, 21, 105] };
+}
+#[cfg(feature = "deprecated")]
 #[repr(C)]
 pub struct IAllJoynServiceInfoStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -724,6 +836,10 @@ pub struct IAllJoynServiceInfoStatics {
     pub FromIdAsync: unsafe extern "system" fn(this: *mut *mut Self, deviceid: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
     FromIdAsync: usize,
+}
+#[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for IAllJoynServiceInfoStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1450727178, data2: 24634, data3: 18940, data4: [183, 80, 14, 241, 54, 9, 33, 60] };
 }
 #[cfg(feature = "deprecated")]
 #[repr(C)]
@@ -767,6 +883,10 @@ pub struct IAllJoynSession {
     RemoveLost: usize,
 }
 #[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for IAllJoynSession {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3906018060, data2: 49364, data3: 16492, data4: [136, 169, 169, 62, 250, 133, 212, 177] };
+}
+#[cfg(feature = "deprecated")]
 #[repr(C)]
 pub struct IAllJoynSessionJoinedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
@@ -774,6 +894,10 @@ pub struct IAllJoynSessionJoinedEventArgs {
     pub Session: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "deprecated"))]
     Session: usize,
+}
+#[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for IAllJoynSessionJoinedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2661243856, data2: 46551, data3: 18373, data4: [141, 171, 176, 64, 204, 25, 40, 113] };
 }
 #[cfg(feature = "deprecated")]
 #[repr(C)]
@@ -785,6 +909,10 @@ pub struct IAllJoynSessionJoinedEventArgsFactory {
     Create: usize,
 }
 #[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for IAllJoynSessionJoinedEventArgsFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1747244681, data2: 54987, data3: 19870, data4: [160, 158, 53, 128, 104, 112, 177, 127] };
+}
+#[cfg(feature = "deprecated")]
 #[repr(C)]
 pub struct IAllJoynSessionLostEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
@@ -792,6 +920,10 @@ pub struct IAllJoynSessionLostEventArgs {
     pub Reason: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut AllJoynSessionLostReason) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "deprecated"))]
     Reason: usize,
+}
+#[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for IAllJoynSessionLostEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3882263690, data2: 35768, data3: 18772, data4: [174, 103, 210, 250, 67, 209, 249, 107] };
 }
 #[cfg(feature = "deprecated")]
 #[repr(C)]
@@ -803,6 +935,10 @@ pub struct IAllJoynSessionLostEventArgsFactory {
     Create: usize,
 }
 #[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for IAllJoynSessionLostEventArgsFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 331087154, data2: 54004, data3: 18889, data4: [152, 14, 40, 5, 225, 53, 134, 177] };
+}
+#[cfg(feature = "deprecated")]
 #[repr(C)]
 pub struct IAllJoynSessionMemberAddedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
@@ -810,6 +946,10 @@ pub struct IAllJoynSessionMemberAddedEventArgs {
     pub UniqueName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "deprecated"))]
     UniqueName: usize,
+}
+#[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for IAllJoynSessionMemberAddedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1235384714, data2: 3537, data3: 18113, data4: [156, 214, 39, 25, 14, 80, 58, 94] };
 }
 #[cfg(feature = "deprecated")]
 #[repr(C)]
@@ -821,6 +961,10 @@ pub struct IAllJoynSessionMemberAddedEventArgsFactory {
     Create: usize,
 }
 #[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for IAllJoynSessionMemberAddedEventArgsFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 874373970, data2: 7475, data3: 16545, data4: [161, 211, 229, 119, 112, 32, 225, 241] };
+}
+#[cfg(feature = "deprecated")]
 #[repr(C)]
 pub struct IAllJoynSessionMemberRemovedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
@@ -830,6 +974,10 @@ pub struct IAllJoynSessionMemberRemovedEventArgs {
     UniqueName: usize,
 }
 #[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for IAllJoynSessionMemberRemovedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1083842975, data2: 43594, data3: 18579, data4: [180, 48, 186, 161, 182, 60, 98, 25] };
+}
+#[cfg(feature = "deprecated")]
 #[repr(C)]
 pub struct IAllJoynSessionMemberRemovedEventArgsFactory {
     pub base__: ::windows_sys::core::IInspectable,
@@ -837,6 +985,10 @@ pub struct IAllJoynSessionMemberRemovedEventArgsFactory {
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, uniquename: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "deprecated"))]
     Create: usize,
+}
+#[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for IAllJoynSessionMemberRemovedEventArgsFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3302184424, data2: 17080, data3: 19303, data4: [183, 87, 208, 207, 202, 213, 146, 128] };
 }
 #[cfg(feature = "deprecated")]
 #[repr(C)]
@@ -850,6 +1002,10 @@ pub struct IAllJoynSessionStatics {
     pub GetFromServiceInfoAndBusAttachmentAsync: unsafe extern "system" fn(this: *mut *mut Self, serviceinfo: *mut ::core::ffi::c_void, busattachment: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
     GetFromServiceInfoAndBusAttachmentAsync: usize,
+}
+#[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for IAllJoynSessionStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2651182596, data2: 41068, data3: 18132, data4: [180, 108, 11, 11, 84, 16, 91, 68] };
 }
 #[cfg(feature = "deprecated")]
 #[repr(C)]
@@ -929,6 +1085,10 @@ pub struct IAllJoynStatusStatics {
     InvalidArgument8: usize,
 }
 #[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for IAllJoynStatusStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3501695358, data2: 3369, data3: 19881, data4: [138, 198, 84, 197, 84, 190, 219, 197] };
+}
+#[cfg(feature = "deprecated")]
 #[repr(C)]
 pub struct IAllJoynWatcherStoppedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
@@ -938,6 +1098,10 @@ pub struct IAllJoynWatcherStoppedEventArgs {
     Status: usize,
 }
 #[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for IAllJoynWatcherStoppedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3388776507, data2: 28701, data3: 19112, data4: [151, 221, 162, 187, 10, 143, 95, 163] };
+}
+#[cfg(feature = "deprecated")]
 #[repr(C)]
 pub struct IAllJoynWatcherStoppedEventArgsFactory {
     pub base__: ::windows_sys::core::IInspectable,
@@ -945,4 +1109,8 @@ pub struct IAllJoynWatcherStoppedEventArgsFactory {
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, status: i32, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "deprecated"))]
     Create: usize,
+}
+#[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for IAllJoynWatcherStoppedEventArgsFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2274338216, data2: 11600, data3: 18401, data4: [144, 74, 32, 191, 13, 72, 199, 130] };
 }

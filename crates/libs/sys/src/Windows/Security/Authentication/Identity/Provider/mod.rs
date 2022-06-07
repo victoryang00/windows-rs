@@ -28,6 +28,10 @@ pub struct ISecondaryAuthenticationFactorAuthentication {
     AbortAuthenticationAsync: usize,
 }
 #[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for ISecondaryAuthenticationFactorAuthentication {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 34215653, data2: 27173, data3: 16547, data4: [140, 0, 80, 160, 35, 246, 25, 209] };
+}
+#[cfg(feature = "deprecated")]
 #[repr(C)]
 pub struct ISecondaryAuthenticationFactorAuthenticationResult {
     pub base__: ::windows_sys::core::IInspectable,
@@ -41,6 +45,10 @@ pub struct ISecondaryAuthenticationFactorAuthenticationResult {
     Authentication: usize,
 }
 #[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for ISecondaryAuthenticationFactorAuthenticationResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2629523847, data2: 61293, data3: 19394, data4: [191, 73, 70, 23, 81, 90, 15, 154] };
+}
+#[cfg(feature = "deprecated")]
 #[repr(C)]
 pub struct ISecondaryAuthenticationFactorAuthenticationStageChangedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
@@ -48,6 +56,10 @@ pub struct ISecondaryAuthenticationFactorAuthenticationStageChangedEventArgs {
     pub StageInfo: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "deprecated"))]
     StageInfo: usize,
+}
+#[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for ISecondaryAuthenticationFactorAuthenticationStageChangedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3567644246, data2: 29329, data3: 16499, data4: [188, 31, 204, 184, 245, 175, 223, 150] };
 }
 #[cfg(feature = "deprecated")]
 #[repr(C)]
@@ -65,6 +77,10 @@ pub struct ISecondaryAuthenticationFactorAuthenticationStageInfo {
     pub DeviceId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "deprecated"))]
     DeviceId: usize,
+}
+#[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for ISecondaryAuthenticationFactorAuthenticationStageInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1459536523, data2: 59562, data3: 19471, data4: [142, 76, 165, 89, 231, 58, 221, 136] };
 }
 #[cfg(feature = "deprecated")]
 #[repr(C)]
@@ -92,6 +108,10 @@ pub struct ISecondaryAuthenticationFactorAuthenticationStatics {
     GetAuthenticationStageInfoAsync: usize,
 }
 #[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for ISecondaryAuthenticationFactorAuthenticationStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1062741590, data2: 10488, data3: 19983, data4: [174, 140, 88, 152, 185, 174, 36, 105] };
+}
+#[cfg(feature = "deprecated")]
 #[repr(C)]
 pub struct ISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -111,6 +131,10 @@ pub struct ISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationSta
     pub IsDevicePresenceMonitoringSupported: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "deprecated"))]
     IsDevicePresenceMonitoringSupported: usize,
+}
+#[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for ISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2420742681, data2: 32498, data3: 17699, data4: [149, 28, 164, 23, 162, 74, 207, 147] };
 }
 #[cfg(feature = "deprecated")]
 #[repr(C)]
@@ -134,6 +158,10 @@ pub struct ISecondaryAuthenticationFactorInfo {
     DeviceConfigurationData: usize,
 }
 #[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for ISecondaryAuthenticationFactorInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 506177633, data2: 34099, data3: 20430, data4: [131, 155, 236, 183, 36, 16, 172, 20] };
+}
+#[cfg(feature = "deprecated")]
 #[repr(C)]
 pub struct ISecondaryAuthenticationFactorInfo2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -151,6 +179,10 @@ pub struct ISecondaryAuthenticationFactorInfo2 {
     IsAuthenticationSupported: usize,
 }
 #[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for ISecondaryAuthenticationFactorInfo2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 349798819, data2: 64550, data3: 20471, data4: [171, 195, 72, 232, 42, 81, 42, 10] };
+}
+#[cfg(feature = "deprecated")]
 #[repr(C)]
 pub struct ISecondaryAuthenticationFactorRegistration {
     pub base__: ::windows_sys::core::IInspectable,
@@ -164,6 +196,10 @@ pub struct ISecondaryAuthenticationFactorRegistration {
     AbortRegisteringDeviceAsync: usize,
 }
 #[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for ISecondaryAuthenticationFactorRegistration {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2672606132, data2: 36026, data3: 18608, data4: [132, 13, 219, 178, 42, 84, 198, 120] };
+}
+#[cfg(feature = "deprecated")]
 #[repr(C)]
 pub struct ISecondaryAuthenticationFactorRegistrationResult {
     pub base__: ::windows_sys::core::IInspectable,
@@ -175,6 +211,10 @@ pub struct ISecondaryAuthenticationFactorRegistrationResult {
     pub Registration: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "deprecated"))]
     Registration: usize,
+}
+#[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for ISecondaryAuthenticationFactorRegistrationResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2768123376, data2: 44515, data3: 18817, data4: [175, 107, 236, 25, 89, 33, 104, 42] };
 }
 #[cfg(feature = "deprecated")]
 #[repr(C)]
@@ -196,6 +236,10 @@ pub struct ISecondaryAuthenticationFactorRegistrationStatics {
     pub UpdateDeviceConfigurationDataAsync: unsafe extern "system" fn(this: *mut *mut Self, deviceid: ::windows_sys::core::HSTRING, deviceconfigurationdata: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams", feature = "deprecated")))]
     UpdateDeviceConfigurationDataAsync: usize,
+}
+#[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for ISecondaryAuthenticationFactorRegistrationStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 450826085, data2: 58295, data3: 16725, data4: [153, 127, 183, 86, 239, 101, 190, 186] };
 }
 pub type SecondaryAuthenticationFactorAuthentication = *mut ::core::ffi::c_void;
 #[doc = "*Required features: `\"Security_Authentication_Identity_Provider\"`, `\"deprecated\"`*"]

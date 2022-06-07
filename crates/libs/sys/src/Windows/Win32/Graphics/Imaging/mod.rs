@@ -299,10 +299,16 @@ pub struct IWICBitmap {
     pub SetPalette: unsafe extern "system" fn(this: *mut *mut Self, pipalette: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetResolution: unsafe extern "system" fn(this: *mut *mut Self, dpix: f64, dpiy: f64) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWICBitmap {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 289, data2: 43250, data3: 18551, data4: [186, 10, 253, 43, 102, 69, 251, 148] };
+}
 #[repr(C)]
 pub struct IWICBitmapClipper {
     pub base__: IWICBitmapSource,
     pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, pisource: *mut ::core::ffi::c_void, prc: *const WICRect) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWICBitmapClipper {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3841707779, data2: 8765, data3: 20097, data4: [147, 51, 214, 53, 85, 109, 209, 181] };
 }
 #[repr(C)]
 pub struct IWICBitmapCodecInfo {
@@ -335,10 +341,16 @@ pub struct IWICBitmapCodecInfo {
     #[cfg(not(feature = "Win32_Foundation"))]
     MatchesMimeType: usize,
 }
+impl ::windows_sys::core::Interface for IWICBitmapCodecInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3900327108, data2: 46958, data3: 19527, data4: [139, 9, 41, 142, 177, 42, 39, 20] };
+}
 #[repr(C)]
 pub struct IWICBitmapCodecProgressNotification {
     pub base__: ::windows_sys::core::IUnknown,
     pub RegisterProgressNotification: unsafe extern "system" fn(this: *mut *mut Self, pfnprogressnotification: *mut ::core::ffi::c_void, pvdata: *const ::core::ffi::c_void, dwprogressflags: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWICBitmapCodecProgressNotification {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1690370638, data2: 50127, data3: 17506, data4: [128, 120, 136, 194, 177, 28, 70, 217] };
 }
 #[repr(C)]
 pub struct IWICBitmapDecoder {
@@ -361,6 +373,9 @@ pub struct IWICBitmapDecoder {
     pub GetFrameCount: unsafe extern "system" fn(this: *mut *mut Self, pcount: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetFrame: unsafe extern "system" fn(this: *mut *mut Self, index: u32, ppibitmapframe: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWICBitmapDecoder {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2665343463, data2: 36334, data3: 18410, data4: [153, 223, 230, 250, 242, 237, 68, 191] };
+}
 #[repr(C)]
 pub struct IWICBitmapDecoderInfo {
     pub base__: IWICBitmapCodecInfo,
@@ -373,6 +388,9 @@ pub struct IWICBitmapDecoderInfo {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     MatchesPattern: usize,
     pub CreateInstance: unsafe extern "system" fn(this: *mut *mut Self, ppibitmapdecoder: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWICBitmapDecoderInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3637313663, data2: 53391, data3: 16785, data4: [155, 252, 35, 110, 167, 240, 228, 181] };
 }
 #[repr(C)]
 pub struct IWICBitmapEncoder {
@@ -394,15 +412,24 @@ pub struct IWICBitmapEncoder {
     pub Commit: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub GetMetadataQueryWriter: unsafe extern "system" fn(this: *mut *mut Self, ppimetadataquerywriter: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWICBitmapEncoder {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 259, data2: 43250, data3: 18551, data4: [186, 10, 253, 43, 102, 69, 251, 148] };
+}
 #[repr(C)]
 pub struct IWICBitmapEncoderInfo {
     pub base__: IWICBitmapCodecInfo,
     pub CreateInstance: unsafe extern "system" fn(this: *mut *mut Self, ppibitmapencoder: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWICBitmapEncoderInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2496247022, data2: 41119, data3: 20370, data4: [138, 30, 74, 155, 206, 126, 118, 251] };
+}
 #[repr(C)]
 pub struct IWICBitmapFlipRotator {
     pub base__: IWICBitmapSource,
     pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, pisource: *mut ::core::ffi::c_void, options: WICBitmapTransformOptions) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWICBitmapFlipRotator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1342800719, data2: 11626, data3: 16846, data4: [158, 27, 23, 197, 175, 247, 167, 130] };
 }
 #[repr(C)]
 pub struct IWICBitmapFrameDecode {
@@ -410,6 +437,9 @@ pub struct IWICBitmapFrameDecode {
     pub GetMetadataQueryReader: unsafe extern "system" fn(this: *mut *mut Self, ppimetadataqueryreader: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetColorContexts: unsafe extern "system" fn(this: *mut *mut Self, ccount: u32, ppicolorcontexts: *mut *mut ::core::ffi::c_void, pcactualcount: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetThumbnail: unsafe extern "system" fn(this: *mut *mut Self, ppithumbnail: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWICBitmapFrameDecode {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 991330587, data2: 27203, data3: 20169, data4: [168, 19, 61, 147, 12, 19, 185, 64] };
 }
 #[repr(C)]
 pub struct IWICBitmapFrameEncode {
@@ -429,6 +459,9 @@ pub struct IWICBitmapFrameEncode {
     pub Commit: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub GetMetadataQueryWriter: unsafe extern "system" fn(this: *mut *mut Self, ppimetadataquerywriter: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWICBitmapFrameEncode {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 261, data2: 43250, data3: 18551, data4: [186, 10, 253, 43, 102, 69, 251, 148] };
+}
 #[repr(C)]
 pub struct IWICBitmapLock {
     pub base__: ::windows_sys::core::IUnknown,
@@ -437,10 +470,16 @@ pub struct IWICBitmapLock {
     pub GetDataPointer: unsafe extern "system" fn(this: *mut *mut Self, pcbbuffersize: *mut u32, ppbdata: *mut *mut u8) -> ::windows_sys::core::HRESULT,
     pub GetPixelFormat: unsafe extern "system" fn(this: *mut *mut Self, ppixelformat: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWICBitmapLock {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 291, data2: 43250, data3: 18551, data4: [186, 10, 253, 43, 102, 69, 251, 148] };
+}
 #[repr(C)]
 pub struct IWICBitmapScaler {
     pub base__: IWICBitmapSource,
     pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, pisource: *mut ::core::ffi::c_void, uiwidth: u32, uiheight: u32, mode: WICBitmapInterpolationMode) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWICBitmapScaler {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 770, data2: 43250, data3: 18551, data4: [186, 10, 253, 43, 102, 69, 251, 148] };
 }
 #[repr(C)]
 pub struct IWICBitmapSource {
@@ -450,6 +489,9 @@ pub struct IWICBitmapSource {
     pub GetResolution: unsafe extern "system" fn(this: *mut *mut Self, pdpix: *mut f64, pdpiy: *mut f64) -> ::windows_sys::core::HRESULT,
     pub CopyPalette: unsafe extern "system" fn(this: *mut *mut Self, pipalette: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub CopyPixels: unsafe extern "system" fn(this: *mut *mut Self, prc: *const WICRect, cbstride: u32, cbbuffersize: u32, pbbuffer: *mut u8) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWICBitmapSource {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 288, data2: 43250, data3: 18551, data4: [186, 10, 253, 43, 102, 69, 251, 148] };
 }
 #[repr(C)]
 pub struct IWICBitmapSourceTransform {
@@ -462,6 +504,9 @@ pub struct IWICBitmapSourceTransform {
     #[cfg(not(feature = "Win32_Foundation"))]
     DoesSupportTransform: usize,
 }
+impl ::windows_sys::core::Interface for IWICBitmapSourceTransform {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 991330587, data2: 27203, data3: 20169, data4: [183, 19, 61, 90, 12, 19, 185, 64] };
+}
 #[repr(C)]
 pub struct IWICColorContext {
     pub base__: ::windows_sys::core::IUnknown,
@@ -472,10 +517,16 @@ pub struct IWICColorContext {
     pub GetProfileBytes: unsafe extern "system" fn(this: *mut *mut Self, cbbuffer: u32, pbbuffer: *mut u8, pcbactual: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetExifColorSpace: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWICColorContext {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1013004802, data2: 13490, data3: 17642, data4: [154, 124, 69, 174, 169, 198, 253, 109] };
+}
 #[repr(C)]
 pub struct IWICColorTransform {
     pub base__: IWICBitmapSource,
     pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, pibitmapsource: *mut ::core::ffi::c_void, picontextsource: *mut ::core::ffi::c_void, picontextdest: *mut ::core::ffi::c_void, pixelfmtdest: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWICColorTransform {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3060728655, data2: 53474, data3: 16555, data4: [180, 54, 109, 227, 158, 50, 26, 148] };
 }
 #[repr(C)]
 pub struct IWICComponentFactory {
@@ -497,6 +548,9 @@ pub struct IWICComponentFactory {
     #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
     CreateEncoderPropertyBag: usize,
 }
+impl ::windows_sys::core::Interface for IWICComponentFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1093471290, data2: 38480, data3: 17658, data4: [175, 91, 221, 42, 6, 200, 232, 251] };
+}
 #[repr(C)]
 pub struct IWICComponentInfo {
     pub base__: ::windows_sys::core::IUnknown,
@@ -509,6 +563,9 @@ pub struct IWICComponentInfo {
     pub GetSpecVersion: unsafe extern "system" fn(this: *mut *mut Self, cchspecversion: u32, wzspecversion: ::windows_sys::core::PWSTR, pcchactual: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetFriendlyName: unsafe extern "system" fn(this: *mut *mut Self, cchfriendlyname: u32, wzfriendlyname: ::windows_sys::core::PWSTR, pcchactual: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWICComponentInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 599539466, data2: 27019, data3: 17239, data4: [136, 107, 242, 77, 80, 103, 19, 52] };
+}
 #[repr(C)]
 pub struct IWICDdsDecoder {
     pub base__: ::windows_sys::core::IUnknown,
@@ -517,6 +574,9 @@ pub struct IWICDdsDecoder {
     #[cfg(not(feature = "Win32_Graphics_Dxgi_Common"))]
     GetParameters: usize,
     pub GetFrame: unsafe extern "system" fn(this: *mut *mut Self, arrayindex: u32, miplevel: u32, sliceindex: u32, ppibitmapframe: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWICDdsDecoder {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1084020023, data2: 34098, data3: 16587, data4: [151, 116, 226, 254, 178, 223, 78, 156] };
 }
 #[repr(C)]
 pub struct IWICDdsEncoder {
@@ -531,6 +591,9 @@ pub struct IWICDdsEncoder {
     GetParameters: usize,
     pub CreateNewFrame: unsafe extern "system" fn(this: *mut *mut Self, ppiframeencode: *mut *mut ::core::ffi::c_void, parrayindex: *mut u32, pmiplevel: *mut u32, psliceindex: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWICDdsEncoder {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1554832204, data2: 16510, data3: 16819, data4: [185, 54, 208, 240, 16, 205, 103, 50] };
+}
 #[repr(C)]
 pub struct IWICDdsFrameDecode {
     pub base__: ::windows_sys::core::IUnknown,
@@ -540,6 +603,9 @@ pub struct IWICDdsFrameDecode {
     #[cfg(not(feature = "Win32_Graphics_Dxgi_Common"))]
     GetFormatInfo: usize,
     pub CopyBlocks: unsafe extern "system" fn(this: *mut *mut Self, prcboundsinblocks: *const WICRect, cbstride: u32, cbbuffersize: u32, pbbuffer: *mut u8) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWICDdsFrameDecode {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1028394081, data2: 6308, data3: 16868, data4: [189, 128, 72, 26, 79, 201, 244, 100] };
 }
 #[repr(C)]
 pub struct IWICDevelopRaw {
@@ -580,10 +646,16 @@ pub struct IWICDevelopRaw {
     pub GetRenderMode: unsafe extern "system" fn(this: *mut *mut Self, prendermode: *mut WICRawRenderMode) -> ::windows_sys::core::HRESULT,
     pub SetNotificationCallback: unsafe extern "system" fn(this: *mut *mut Self, pcallback: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWICDevelopRaw {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4226571844, data2: 63422, data3: 19301, data4: [183, 248, 192, 200, 31, 239, 2, 109] };
+}
 #[repr(C)]
 pub struct IWICDevelopRawNotificationCallback {
     pub base__: ::windows_sys::core::IUnknown,
     pub Notify: unsafe extern "system" fn(this: *mut *mut Self, notificationmask: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWICDevelopRawNotificationCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2512869998, data2: 16012, data3: 20162, data4: [133, 168, 174, 188, 197, 81, 229, 155] };
 }
 #[repr(C)]
 pub struct IWICEnumMetadataItem {
@@ -596,11 +668,17 @@ pub struct IWICEnumMetadataItem {
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppienummetadataitem: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWICEnumMetadataItem {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3693851757, data2: 16135, data3: 18462, data4: [134, 37, 34, 12, 74, 237, 187, 51] };
+}
 #[repr(C)]
 pub struct IWICFastMetadataEncoder {
     pub base__: ::windows_sys::core::IUnknown,
     pub Commit: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub GetMetadataQueryWriter: unsafe extern "system" fn(this: *mut *mut Self, ppimetadataquerywriter: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWICFastMetadataEncoder {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3092130825, data2: 30921, data3: 19140, data4: [139, 211, 82, 74, 225, 102, 58, 47] };
 }
 #[repr(C)]
 pub struct IWICFormatConverter {
@@ -611,11 +689,17 @@ pub struct IWICFormatConverter {
     #[cfg(not(feature = "Win32_Foundation"))]
     CanConvert: usize,
 }
+impl ::windows_sys::core::Interface for IWICFormatConverter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 769, data2: 43250, data3: 18551, data4: [186, 10, 253, 43, 102, 69, 251, 148] };
+}
 #[repr(C)]
 pub struct IWICFormatConverterInfo {
     pub base__: IWICComponentInfo,
     pub GetPixelFormats: unsafe extern "system" fn(this: *mut *mut Self, cformats: u32, ppixelformatguids: *mut ::windows_sys::core::GUID, pcactual: *mut u32) -> ::windows_sys::core::HRESULT,
     pub CreateInstance: unsafe extern "system" fn(this: *mut *mut Self, ppiconverter: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWICFormatConverterInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2671049573, data2: 5108, data3: 20245, data4: [188, 87, 55, 38, 181, 229, 61, 159] };
 }
 #[repr(C)]
 pub struct IWICImagingFactory {
@@ -661,6 +745,9 @@ pub struct IWICImagingFactory {
     pub CreateQueryWriter: unsafe extern "system" fn(this: *mut *mut Self, guidmetadataformat: *const ::windows_sys::core::GUID, pguidvendor: *const ::windows_sys::core::GUID, ppiquerywriter: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub CreateQueryWriterFromReader: unsafe extern "system" fn(this: *mut *mut Self, piqueryreader: *mut ::core::ffi::c_void, pguidvendor: *const ::windows_sys::core::GUID, ppiquerywriter: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWICImagingFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3965634729, data2: 50069, data3: 17172, data4: [156, 119, 84, 215, 169, 53, 255, 112] };
+}
 #[repr(C)]
 pub struct IWICJpegFrameDecode {
     pub base__: ::windows_sys::core::IUnknown,
@@ -687,6 +774,9 @@ pub struct IWICJpegFrameDecode {
     pub CopyScan: unsafe extern "system" fn(this: *mut *mut Self, scanindex: u32, scanoffset: u32, cbscandata: u32, pbscandata: *mut u8, pcbscandataactual: *mut u32) -> ::windows_sys::core::HRESULT,
     pub CopyMinimalStream: unsafe extern "system" fn(this: *mut *mut Self, streamoffset: u32, cbstreamdata: u32, pbstreamdata: *mut u8, pcbstreamdataactual: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWICJpegFrameDecode {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2302277230, data2: 50282, data3: 19489, data4: [169, 209, 152, 179, 39, 206, 22, 121] };
+}
 #[repr(C)]
 pub struct IWICJpegFrameEncode {
     pub base__: ::windows_sys::core::IUnknown,
@@ -704,6 +794,9 @@ pub struct IWICJpegFrameEncode {
     GetQuantizationTable: usize,
     pub WriteScan: unsafe extern "system" fn(this: *mut *mut Self, cbscandata: u32, pbscandata: *const u8) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWICJpegFrameEncode {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 789340191, data2: 53958, data3: 18060, data4: [171, 250, 73, 73, 93, 152, 62, 209] };
+}
 #[repr(C)]
 pub struct IWICMetadataBlockReader {
     pub base__: ::windows_sys::core::IUnknown,
@@ -715,6 +808,9 @@ pub struct IWICMetadataBlockReader {
     #[cfg(not(feature = "Win32_System_Com"))]
     GetEnumerator: usize,
 }
+impl ::windows_sys::core::Interface for IWICMetadataBlockReader {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4272564877, data2: 46067, data3: 17380, data4: [178, 92, 209, 222, 153, 10, 26, 225] };
+}
 #[repr(C)]
 pub struct IWICMetadataBlockWriter {
     pub base__: IWICMetadataBlockReader,
@@ -723,6 +819,9 @@ pub struct IWICMetadataBlockWriter {
     pub AddWriter: unsafe extern "system" fn(this: *mut *mut Self, pimetadatawriter: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetWriterByIndex: unsafe extern "system" fn(this: *mut *mut Self, nindex: u32, pimetadatawriter: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub RemoveWriterByIndex: unsafe extern "system" fn(this: *mut *mut Self, nindex: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWICMetadataBlockWriter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 150705782, data2: 46148, data3: 16872, data4: [141, 190, 106, 83, 165, 66, 191, 241] };
 }
 #[repr(C)]
 pub struct IWICMetadataHandlerInfo {
@@ -744,6 +843,9 @@ pub struct IWICMetadataHandlerInfo {
     #[cfg(not(feature = "Win32_Foundation"))]
     DoesRequireFixedSize: usize,
 }
+impl ::windows_sys::core::Interface for IWICMetadataHandlerInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2880002239, data2: 50802, data3: 17617, data4: [141, 97, 206, 109, 242, 230, 130, 194] };
+}
 #[repr(C)]
 pub struct IWICMetadataQueryReader {
     pub base__: ::windows_sys::core::IUnknown,
@@ -758,6 +860,9 @@ pub struct IWICMetadataQueryReader {
     #[cfg(not(feature = "Win32_System_Com"))]
     GetEnumerator: usize,
 }
+impl ::windows_sys::core::Interface for IWICMetadataQueryReader {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 815306344, data2: 57801, data3: 17815, data4: [179, 149, 69, 142, 237, 184, 8, 223] };
+}
 #[repr(C)]
 pub struct IWICMetadataQueryWriter {
     pub base__: IWICMetadataQueryReader,
@@ -766,6 +871,9 @@ pub struct IWICMetadataQueryWriter {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
     SetMetadataByName: usize,
     pub RemoveMetadataByName: unsafe extern "system" fn(this: *mut *mut Self, wzname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWICMetadataQueryWriter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2803988762, data2: 3567, data3: 19718, data4: [189, 145, 33, 24, 191, 29, 177, 11] };
 }
 #[repr(C)]
 pub struct IWICMetadataReader {
@@ -783,6 +891,9 @@ pub struct IWICMetadataReader {
     GetValue: usize,
     pub GetEnumerator: unsafe extern "system" fn(this: *mut *mut Self, ppienummetadata: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWICMetadataReader {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2449800857, data2: 55548, data3: 20437, data4: [160, 1, 149, 54, 176, 103, 168, 153] };
+}
 #[repr(C)]
 pub struct IWICMetadataReaderInfo {
     pub base__: IWICMetadataHandlerInfo,
@@ -792,6 +903,9 @@ pub struct IWICMetadataReaderInfo {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     MatchesPattern: usize,
     pub CreateInstance: unsafe extern "system" fn(this: *mut *mut Self, ppireader: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWICMetadataReaderInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4005502811, data2: 1985, data3: 17479, data4: [163, 171, 34, 172, 175, 120, 168, 4] };
 }
 #[repr(C)]
 pub struct IWICMetadataWriter {
@@ -810,11 +924,17 @@ pub struct IWICMetadataWriter {
     RemoveValue: usize,
     pub RemoveValueByIndex: unsafe extern "system" fn(this: *mut *mut Self, nindex: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWICMetadataWriter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4152585750, data2: 15328, data3: 18187, data4: [134, 187, 22, 13, 10, 236, 215, 222] };
+}
 #[repr(C)]
 pub struct IWICMetadataWriterInfo {
     pub base__: IWICMetadataHandlerInfo,
     pub GetHeader: unsafe extern "system" fn(this: *mut *mut Self, guidcontainerformat: *const ::windows_sys::core::GUID, cbsize: u32, pheader: *mut WICMetadataHeader, pcbactual: *mut u32) -> ::windows_sys::core::HRESULT,
     pub CreateInstance: unsafe extern "system" fn(this: *mut *mut Self, ppiwriter: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWICMetadataWriterInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2989375418, data2: 14629, data3: 17187, data4: [181, 193, 158, 191, 196, 48, 242, 54] };
 }
 #[repr(C)]
 pub struct IWICPalette {
@@ -845,6 +965,9 @@ pub struct IWICPalette {
     #[cfg(not(feature = "Win32_Foundation"))]
     HasAlpha: usize,
 }
+impl ::windows_sys::core::Interface for IWICPalette {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 64, data2: 43250, data3: 18551, data4: [186, 10, 253, 43, 102, 69, 251, 148] };
+}
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IWICPersistStream {
@@ -858,6 +981,10 @@ pub struct IWICPersistStream {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     SaveEx: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWICPersistStream {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 6770752, data2: 26888, data3: 17912, data4: [134, 163, 73, 199, 223, 214, 217, 173] };
+}
 #[repr(C)]
 pub struct IWICPixelFormatInfo {
     pub base__: IWICComponentInfo,
@@ -866,6 +993,9 @@ pub struct IWICPixelFormatInfo {
     pub GetBitsPerPixel: unsafe extern "system" fn(this: *mut *mut Self, puibitsperpixel: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetChannelCount: unsafe extern "system" fn(this: *mut *mut Self, puichannelcount: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetChannelMask: unsafe extern "system" fn(this: *mut *mut Self, uichannelindex: u32, cbmaskbuffer: u32, pbmaskbuffer: *mut u8, pcbactual: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWICPixelFormatInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3907888641, data2: 15688, data3: 17178, data4: [171, 68, 105, 5, 155, 232, 139, 190] };
 }
 #[repr(C)]
 pub struct IWICPixelFormatInfo2 {
@@ -876,11 +1006,17 @@ pub struct IWICPixelFormatInfo2 {
     SupportsTransparency: usize,
     pub GetNumericRepresentation: unsafe extern "system" fn(this: *mut *mut Self, pnumericrepresentation: *mut WICPixelFormatNumericRepresentation) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWICPixelFormatInfo2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2849715106, data2: 44895, data3: 17351, data4: [182, 121, 116, 245, 152, 75, 90, 164] };
+}
 #[repr(C)]
 pub struct IWICPlanarBitmapFrameEncode {
     pub base__: ::windows_sys::core::IUnknown,
     pub WritePixels: unsafe extern "system" fn(this: *mut *mut Self, linecount: u32, pplanes: *const WICBitmapPlane, cplanes: u32) -> ::windows_sys::core::HRESULT,
     pub WriteSource: unsafe extern "system" fn(this: *mut *mut Self, ppplanes: *const *mut ::core::ffi::c_void, cplanes: u32, prcsource: *const WICRect) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWICPlanarBitmapFrameEncode {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4180195256, data2: 8737, data3: 16577, data4: [183, 46, 126, 130, 241, 151, 77, 26] };
 }
 #[repr(C)]
 pub struct IWICPlanarBitmapSourceTransform {
@@ -891,6 +1027,9 @@ pub struct IWICPlanarBitmapSourceTransform {
     DoesSupportTransform: usize,
     pub CopyPixels: unsafe extern "system" fn(this: *mut *mut Self, prcsource: *const WICRect, uiwidth: u32, uiheight: u32, dsttransform: WICBitmapTransformOptions, dstplanaroptions: WICPlanarOptions, pdstplanes: *const WICBitmapPlane, cplanes: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWICPlanarBitmapSourceTransform {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 989830350, data2: 48789, data3: 17155, data4: [185, 39, 231, 209, 111, 244, 166, 19] };
+}
 #[repr(C)]
 pub struct IWICPlanarFormatConverter {
     pub base__: IWICBitmapSource,
@@ -900,10 +1039,16 @@ pub struct IWICPlanarFormatConverter {
     #[cfg(not(feature = "Win32_Foundation"))]
     CanConvert: usize,
 }
+impl ::windows_sys::core::Interface for IWICPlanarFormatConverter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3200182731, data2: 33712, data3: 19916, data4: [129, 50, 176, 170, 165, 94, 172, 150] };
+}
 #[repr(C)]
 pub struct IWICProgressCallback {
     pub base__: ::windows_sys::core::IUnknown,
     pub Notify: unsafe extern "system" fn(this: *mut *mut Self, uframenum: u32, operation: WICProgressOperation, dblprogress: f64) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWICProgressCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1198979533, data2: 38167, data3: 17914, data4: [191, 36, 232, 156, 94, 197, 198, 12] };
 }
 #[repr(C)]
 pub struct IWICProgressiveLevelControl {
@@ -911,6 +1056,9 @@ pub struct IWICProgressiveLevelControl {
     pub GetLevelCount: unsafe extern "system" fn(this: *mut *mut Self, pclevels: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetCurrentLevel: unsafe extern "system" fn(this: *mut *mut Self, pnlevel: *mut u32) -> ::windows_sys::core::HRESULT,
     pub SetCurrentLevel: unsafe extern "system" fn(this: *mut *mut Self, nlevel: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWICProgressiveLevelControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3668715887, data2: 31397, data3: 19903, data4: [141, 21, 34, 92, 89, 118, 248, 145] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -927,6 +1075,10 @@ pub struct IWICStream {
     #[cfg(not(feature = "Win32_System_Com"))]
     InitializeFromIStreamRegion: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWICStream {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 325056608, data2: 8887, data3: 19935, data4: [176, 246, 33, 143, 79, 41, 154, 67] };
+}
 #[repr(C)]
 pub struct IWICStreamProvider {
     pub base__: ::windows_sys::core::IUnknown,
@@ -937,6 +1089,9 @@ pub struct IWICStreamProvider {
     pub GetPersistOptions: unsafe extern "system" fn(this: *mut *mut Self, pdwpersistoptions: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetPreferredVendorGUID: unsafe extern "system" fn(this: *mut *mut Self, pguidpreferredvendor: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub RefreshStream: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWICStreamProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1150588092, data2: 46184, data3: 18727, data4: [150, 215, 186, 144, 211, 26, 181, 5] };
 }
 #[doc = "*Required features: `\"Win32_Graphics_Imaging\"`*"]
 pub type PFNProgressNotification = ::core::option::Option<unsafe extern "system" fn(pvdata: *const ::core::ffi::c_void, uframenum: u32, operation: WICProgressOperation, dblprogress: f64) -> ::windows_sys::core::HRESULT>;

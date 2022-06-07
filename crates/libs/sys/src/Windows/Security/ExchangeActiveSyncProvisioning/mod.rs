@@ -190,11 +190,17 @@ pub struct IEasClientDeviceInformation {
     pub SystemProductName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub SystemSku: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEasClientDeviceInformation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1423956353, data2: 6504, data3: 19619, data4: [185, 88, 229, 149, 209, 101, 5, 235] };
+}
 #[repr(C)]
 pub struct IEasClientDeviceInformation2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub SystemHardwareVersion: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub SystemFirmwareVersion: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IEasClientDeviceInformation2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4289943843, data2: 47910, data3: 19818, data4: [129, 188, 22, 90, 238, 10, 215, 84] };
 }
 #[repr(C)]
 pub struct IEasClientSecurityPolicy {
@@ -233,6 +239,9 @@ pub struct IEasClientSecurityPolicy {
     #[cfg(not(feature = "Foundation"))]
     ApplyAsync: usize,
 }
+impl ::windows_sys::core::Interface for IEasClientSecurityPolicy {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1169630050, data2: 57274, data3: 19099, data4: [172, 237, 111, 226, 173, 203, 100, 32] };
+}
 #[repr(C)]
 pub struct IEasComplianceResults {
     pub base__: ::windows_sys::core::IInspectable,
@@ -246,8 +255,14 @@ pub struct IEasComplianceResults {
     pub MaxPasswordFailedAttemptsResult: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut EasMaxPasswordFailedAttemptsResult) -> ::windows_sys::core::HRESULT,
     pub MaxInactivityTimeLockResult: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut EasMaxInactivityTimeLockResult) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEasComplianceResults {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1178347932, data2: 32537, data3: 19558, data4: [180, 3, 203, 69, 221, 87, 162, 179] };
+}
 #[repr(C)]
 pub struct IEasComplianceResults2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub EncryptionProviderType: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut EasEncryptionProviderType) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IEasComplianceResults2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 801005769, data2: 6824, data3: 18421, data4: [136, 187, 203, 62, 240, 191, 251, 21] };
 }

@@ -114,10 +114,16 @@ pub struct IBarcodeScanner {
     #[cfg(not(feature = "Foundation"))]
     RemoveStatusUpdated: usize,
 }
+impl ::windows_sys::core::Interface for IBarcodeScanner {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3198369286, data2: 45668, data3: 20227, data4: [169, 193, 69, 178, 15, 1, 19, 79] };
+}
 #[repr(C)]
 pub struct IBarcodeScanner2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub VideoDeviceId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IBarcodeScanner2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2300662119, data2: 36078, data3: 17261, data4: [137, 171, 141, 251, 67, 187, 66, 134] };
 }
 #[repr(C)]
 pub struct IBarcodeScannerCapabilities {
@@ -127,20 +133,32 @@ pub struct IBarcodeScannerCapabilities {
     pub IsStatisticsUpdatingSupported: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub IsImagePreviewSupported: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IBarcodeScannerCapabilities {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3322319332, data2: 62152, data3: 17440, data4: [163, 7, 177, 46, 246, 98, 40, 87] };
+}
 #[repr(C)]
 pub struct IBarcodeScannerCapabilities1 {
     pub base__: ::windows_sys::core::IInspectable,
     pub IsSoftwareTriggerSupported: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IBarcodeScannerCapabilities1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2388308969, data2: 3628, data3: 18223, data4: [161, 204, 238, 128, 84, 182, 166, 132] };
 }
 #[repr(C)]
 pub struct IBarcodeScannerCapabilities2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub IsVideoPreviewSupported: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IBarcodeScannerCapabilities2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4061253612, data2: 57761, data3: 20136, data4: [154, 188, 146, 177, 89, 98, 112, 171] };
+}
 #[repr(C)]
 pub struct IBarcodeScannerDataReceivedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub Report: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IBarcodeScannerDataReceivedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1110747106, data2: 60823, data3: 18045, data4: [173, 43, 1, 228, 67, 19, 169, 41] };
 }
 #[repr(C)]
 pub struct IBarcodeScannerErrorOccurredEventArgs {
@@ -149,6 +167,9 @@ pub struct IBarcodeScannerErrorOccurredEventArgs {
     pub IsRetriable: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub ErrorData: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IBarcodeScannerErrorOccurredEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 751984687, data2: 53050, data3: 16386, data4: [167, 90, 197, 236, 70, 143, 10, 32] };
+}
 #[repr(C)]
 pub struct IBarcodeScannerImagePreviewReceivedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
@@ -156,6 +177,9 @@ pub struct IBarcodeScannerImagePreviewReceivedEventArgs {
     pub Preview: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Storage_Streams"))]
     Preview: usize,
+}
+impl ::windows_sys::core::Interface for IBarcodeScannerImagePreviewReceivedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4088913541, data2: 28299, data3: 17230, data4: [159, 88, 6, 239, 38, 188, 75, 175] };
 }
 #[repr(C)]
 pub struct IBarcodeScannerReport {
@@ -170,6 +194,9 @@ pub struct IBarcodeScannerReport {
     #[cfg(not(feature = "Storage_Streams"))]
     ScanDataLabel: usize,
 }
+impl ::windows_sys::core::Interface for IBarcodeScannerReport {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1558501552, data2: 42121, data3: 19350, data4: [134, 196, 240, 191, 138, 55, 117, 61] };
+}
 #[repr(C)]
 pub struct IBarcodeScannerReportFactory {
     pub base__: ::windows_sys::core::IInspectable,
@@ -177,6 +204,9 @@ pub struct IBarcodeScannerReportFactory {
     pub CreateInstance: unsafe extern "system" fn(this: *mut *mut Self, scandatatype: u32, scandata: *mut ::core::ffi::c_void, scandatalabel: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Storage_Streams"))]
     CreateInstance: usize,
+}
+impl ::windows_sys::core::Interface for IBarcodeScannerReportFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2723443494, data2: 8211, data3: 17788, data4: [137, 99, 73, 193, 93, 202, 120, 206] };
 }
 #[repr(C)]
 pub struct IBarcodeScannerStatics {
@@ -191,16 +221,25 @@ pub struct IBarcodeScannerStatics {
     FromIdAsync: usize,
     pub GetDeviceSelector: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IBarcodeScannerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1561419631, data2: 55881, data3: 16872, data4: [140, 140, 240, 203, 98, 169, 196, 252] };
+}
 #[repr(C)]
 pub struct IBarcodeScannerStatics2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub GetDeviceSelectorWithConnectionTypes: unsafe extern "system" fn(this: *mut *mut Self, connectiontypes: PosConnectionTypes, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IBarcodeScannerStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3093636211, data2: 41839, data3: 16391, data4: [177, 208, 39, 158, 190, 146, 166, 86] };
 }
 #[repr(C)]
 pub struct IBarcodeScannerStatusUpdatedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub Status: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut BarcodeScannerStatus) -> ::windows_sys::core::HRESULT,
     pub ExtendedStatus: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IBarcodeScannerStatusUpdatedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 895321478, data2: 40003, data3: 17963, data4: [169, 26, 129, 109, 201, 127, 69, 44] };
 }
 #[repr(C)]
 pub struct IBarcodeSymbologiesStatics {
@@ -300,10 +339,16 @@ pub struct IBarcodeSymbologiesStatics {
     pub ExtendedBase: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetName: unsafe extern "system" fn(this: *mut *mut Self, scandatatype: u32, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IBarcodeSymbologiesStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3397732795, data2: 1746, data3: 17396, data4: [164, 75, 198, 32, 103, 159, 216, 208] };
+}
 #[repr(C)]
 pub struct IBarcodeSymbologiesStatics2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub Gs1DWCode: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IBarcodeSymbologiesStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2339707124, data2: 39376, data3: 16575, data4: [148, 36, 185, 29, 109, 212, 198, 224] };
 }
 #[repr(C)]
 pub struct IBarcodeSymbologyAttributes {
@@ -321,6 +366,9 @@ pub struct IBarcodeSymbologyAttributes {
     pub DecodeLengthKind: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut BarcodeSymbologyDecodeLengthKind) -> ::windows_sys::core::HRESULT,
     pub SetDecodeLengthKind: unsafe extern "system" fn(this: *mut *mut Self, value: BarcodeSymbologyDecodeLengthKind) -> ::windows_sys::core::HRESULT,
     pub IsDecodeLengthSupported: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IBarcodeSymbologyAttributes {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1715550840, data2: 43898, data3: 19162, data4: [142, 206, 147, 96, 20, 178, 234, 215] };
 }
 #[repr(C)]
 pub struct ICashDrawer {
@@ -351,6 +399,9 @@ pub struct ICashDrawer {
     #[cfg(not(feature = "Foundation"))]
     RemoveStatusUpdated: usize,
 }
+impl ::windows_sys::core::Interface for ICashDrawer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2676553160, data2: 56916, data3: 19182, data4: [168, 144, 146, 11, 203, 254, 48, 252] };
+}
 #[repr(C)]
 pub struct ICashDrawerCapabilities {
     pub base__: ::windows_sys::core::IInspectable,
@@ -360,6 +411,9 @@ pub struct ICashDrawerCapabilities {
     pub IsStatusReportingSupported: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub IsStatusMultiDrawerDetectSupported: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub IsDrawerOpenSensorAvailable: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ICashDrawerCapabilities {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 197582347, data2: 59623, data3: 19231, data4: [177, 209, 62, 80, 26, 208, 130, 71] };
 }
 #[repr(C)]
 pub struct ICashDrawerCloseAlarm {
@@ -403,6 +457,9 @@ pub struct ICashDrawerCloseAlarm {
     #[cfg(not(feature = "Foundation"))]
     StartAsync: usize,
 }
+impl ::windows_sys::core::Interface for ICashDrawerCloseAlarm {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1811451079, data2: 28515, data3: 17166, data4: [171, 59, 149, 215, 95, 251, 232, 127] };
+}
 #[repr(C)]
 pub struct ICashDrawerEventSource {
     pub base__: ::windows_sys::core::IInspectable,
@@ -423,10 +480,16 @@ pub struct ICashDrawerEventSource {
     #[cfg(not(feature = "Foundation"))]
     RemoveDrawerOpened: usize,
 }
+impl ::windows_sys::core::Interface for ICashDrawerEventSource {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3758548076, data2: 62201, data3: 17455, data4: [141, 214, 6, 193, 10, 66, 39, 186] };
+}
 #[repr(C)]
 pub struct ICashDrawerEventSourceEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub CashDrawer: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ICashDrawerEventSourceEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1774926785, data2: 5247, data3: 16924, data4: [156, 35, 9, 1, 35, 187, 120, 108] };
 }
 #[repr(C)]
 pub struct ICashDrawerStatics {
@@ -441,10 +504,16 @@ pub struct ICashDrawerStatics {
     FromIdAsync: usize,
     pub GetDeviceSelector: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ICashDrawerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3751843162, data2: 54327, data3: 20479, data4: [181, 71, 221, 169, 105, 164, 248, 131] };
+}
 #[repr(C)]
 pub struct ICashDrawerStatics2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub GetDeviceSelectorWithConnectionTypes: unsafe extern "system" fn(this: *mut *mut Self, connectiontypes: PosConnectionTypes, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ICashDrawerStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1048674593, data2: 35906, data3: 16616, data4: [156, 14, 64, 41, 112, 72, 16, 76] };
 }
 #[repr(C)]
 pub struct ICashDrawerStatus {
@@ -452,10 +521,16 @@ pub struct ICashDrawerStatus {
     pub StatusKind: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut CashDrawerStatusKind) -> ::windows_sys::core::HRESULT,
     pub ExtendedStatus: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ICashDrawerStatus {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1807579327, data2: 56481, data3: 19974, data4: [153, 235, 90, 246, 165, 174, 193, 8] };
+}
 #[repr(C)]
 pub struct ICashDrawerStatusUpdatedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub Status: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ICashDrawerStatusUpdatedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 816507274, data2: 3440, data3: 17820, data4: [149, 83, 135, 225, 36, 197, 36, 136] };
 }
 #[repr(C)]
 pub struct IClaimedBarcodeScanner {
@@ -540,6 +615,9 @@ pub struct IClaimedBarcodeScanner {
     #[cfg(not(feature = "Foundation"))]
     RemoveErrorOccurred: usize,
 }
+impl ::windows_sys::core::Interface for IClaimedBarcodeScanner {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1248048284, data2: 36772, data3: 17202, data4: [187, 38, 148, 93, 17, 216, 30, 15] };
+}
 #[repr(C)]
 pub struct IClaimedBarcodeScanner1 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -551,6 +629,9 @@ pub struct IClaimedBarcodeScanner1 {
     pub StopSoftwareTriggerAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     StopSoftwareTriggerAsync: usize,
+}
+impl ::windows_sys::core::Interface for IClaimedBarcodeScanner1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4128943372, data2: 34129, data3: 17076, data4: [153, 140, 151, 12, 32, 33, 10, 34] };
 }
 #[repr(C)]
 pub struct IClaimedBarcodeScanner2 {
@@ -564,6 +645,9 @@ pub struct IClaimedBarcodeScanner2 {
     #[cfg(not(feature = "Foundation"))]
     SetSymbologyAttributesAsync: usize,
 }
+impl ::windows_sys::core::Interface for IClaimedBarcodeScanner2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3820330636, data2: 11659, data3: 20336, data4: [138, 243, 52, 72, 190, 221, 95, 226] };
+}
 #[repr(C)]
 pub struct IClaimedBarcodeScanner3 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -574,6 +658,9 @@ pub struct IClaimedBarcodeScanner3 {
     pub HideVideoPreview: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub SetIsVideoPreviewShownOnEnable: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
     pub IsVideoPreviewShownOnEnable: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IClaimedBarcodeScanner3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3872306224, data2: 28974, data3: 17916, data4: [139, 134, 205, 85, 245, 174, 247, 157] };
 }
 #[repr(C)]
 pub struct IClaimedBarcodeScanner4 {
@@ -587,9 +674,15 @@ pub struct IClaimedBarcodeScanner4 {
     #[cfg(not(feature = "Foundation"))]
     RemoveClosed: usize,
 }
+impl ::windows_sys::core::Interface for IClaimedBarcodeScanner4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1565532055, data2: 14186, data3: 16808, data4: [162, 48, 47, 55, 193, 148, 157, 222] };
+}
 #[repr(C)]
 pub struct IClaimedBarcodeScannerClosedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
+}
+impl ::windows_sys::core::Interface for IClaimedBarcodeScannerClosedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3481097353, data2: 41516, data3: 19557, data4: [169, 1, 136, 215, 125, 131, 57, 84] };
 }
 #[repr(C)]
 pub struct IClaimedCashDrawer {
@@ -631,6 +724,9 @@ pub struct IClaimedCashDrawer {
     #[cfg(not(feature = "Foundation"))]
     RemoveReleaseDeviceRequested: usize,
 }
+impl ::windows_sys::core::Interface for IClaimedCashDrawer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3393165743, data2: 43960, data3: 17089, data4: [138, 132, 92, 102, 81, 47, 90, 117] };
+}
 #[repr(C)]
 pub struct IClaimedCashDrawer2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -643,14 +739,23 @@ pub struct IClaimedCashDrawer2 {
     #[cfg(not(feature = "Foundation"))]
     RemoveClosed: usize,
 }
+impl ::windows_sys::core::Interface for IClaimedCashDrawer2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2629481890, data2: 56898, data3: 19803, data4: [176, 193, 155, 87, 162, 186, 137, 195] };
+}
 #[repr(C)]
 pub struct IClaimedCashDrawerClosedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
+}
+impl ::windows_sys::core::Interface for IClaimedCashDrawerClosedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3428269875, data2: 16180, data3: 19548, data4: [186, 174, 222, 173, 241, 108, 215, 250] };
 }
 #[repr(C)]
 pub struct IClaimedJournalPrinter {
     pub base__: ::windows_sys::core::IInspectable,
     pub CreateJob: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IClaimedJournalPrinter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1743390256, data2: 20861, data3: 18559, data4: [159, 223, 210, 224, 160, 162, 100, 165] };
 }
 #[repr(C)]
 pub struct IClaimedLineDisplay {
@@ -672,6 +777,9 @@ pub struct IClaimedLineDisplay {
     pub RemoveReleaseDeviceRequested: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     RemoveReleaseDeviceRequested: usize,
+}
+impl ::windows_sys::core::Interface for IClaimedLineDisplay {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 302696816, data2: 39541, data3: 19151, data4: [170, 231, 9, 151, 43, 207, 135, 148] };
 }
 #[repr(C)]
 pub struct IClaimedLineDisplay2 {
@@ -739,6 +847,9 @@ pub struct IClaimedLineDisplay2 {
     #[cfg(not(all(feature = "Foundation", feature = "Storage")))]
     TryStoreStorageFileBitmapWithAlignmentAndWidthAsync: usize,
 }
+impl ::windows_sys::core::Interface for IClaimedLineDisplay2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2736551405, data2: 16885, data3: 20086, data4: [160, 116, 121, 94, 71, 164, 110, 151] };
+}
 #[repr(C)]
 pub struct IClaimedLineDisplay3 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -751,9 +862,15 @@ pub struct IClaimedLineDisplay3 {
     #[cfg(not(feature = "Foundation"))]
     RemoveClosed: usize,
 }
+impl ::windows_sys::core::Interface for IClaimedLineDisplay3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1680788882, data2: 59860, data3: 20172, data4: [175, 117, 50, 156, 39, 76, 209, 143] };
+}
 #[repr(C)]
 pub struct IClaimedLineDisplayClosedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
+}
+impl ::windows_sys::core::Interface for IClaimedLineDisplayClosedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4178965348, data2: 54229, data3: 20240, data4: [181, 17, 144, 147, 158, 223, 172, 216] };
 }
 #[repr(C)]
 pub struct IClaimedLineDisplayStatics {
@@ -764,6 +881,9 @@ pub struct IClaimedLineDisplayStatics {
     FromIdAsync: usize,
     pub GetDeviceSelector: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub GetDeviceSelectorWithConnectionTypes: unsafe extern "system" fn(this: *mut *mut Self, connectiontypes: PosConnectionTypes, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IClaimedLineDisplayStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2026543355, data2: 35691, data3: 18803, data4: [134, 240, 62, 87, 12, 53, 24, 37] };
 }
 #[repr(C)]
 pub struct IClaimedMagneticStripeReader {
@@ -856,6 +976,9 @@ pub struct IClaimedMagneticStripeReader {
     #[cfg(not(feature = "Foundation"))]
     RemoveErrorOccurred: usize,
 }
+impl ::windows_sys::core::Interface for IClaimedMagneticStripeReader {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1197254899, data2: 37911, data3: 18620, data4: [185, 215, 65, 99, 167, 132, 76, 2] };
+}
 #[repr(C)]
 pub struct IClaimedMagneticStripeReader2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -868,9 +991,15 @@ pub struct IClaimedMagneticStripeReader2 {
     #[cfg(not(feature = "Foundation"))]
     RemoveClosed: usize,
 }
+impl ::windows_sys::core::Interface for IClaimedMagneticStripeReader2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 594522079, data2: 58076, data3: 19837, data4: [156, 120, 6, 13, 242, 191, 41, 40] };
+}
 #[repr(C)]
 pub struct IClaimedMagneticStripeReaderClosedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
+}
+impl ::windows_sys::core::Interface for IClaimedMagneticStripeReaderClosedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 346925370, data2: 44493, data3: 19584, data4: [172, 218, 195, 234, 237, 38, 71, 225] };
 }
 #[repr(C)]
 pub struct IClaimedPosPrinter {
@@ -916,6 +1045,9 @@ pub struct IClaimedPosPrinter {
     #[cfg(not(feature = "Foundation"))]
     RemoveReleaseDeviceRequested: usize,
 }
+impl ::windows_sys::core::Interface for IClaimedPosPrinter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1835322892, data2: 57406, data3: 19220, data4: [163, 142, 194, 140, 52, 184, 99, 83] };
+}
 #[repr(C)]
 pub struct IClaimedPosPrinter2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -928,9 +1060,15 @@ pub struct IClaimedPosPrinter2 {
     #[cfg(not(feature = "Foundation"))]
     RemoveClosed: usize,
 }
+impl ::windows_sys::core::Interface for IClaimedPosPrinter2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1542955989, data2: 20888, data3: 17274, data4: [130, 223, 88, 153, 147, 250, 119, 225] };
+}
 #[repr(C)]
 pub struct IClaimedPosPrinterClosedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
+}
+impl ::windows_sys::core::Interface for IClaimedPosPrinterClosedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3803685499, data2: 19776, data3: 18205, data4: [146, 237, 99, 55, 91, 24, 199, 136] };
 }
 #[repr(C)]
 pub struct IClaimedReceiptPrinter {
@@ -947,6 +1085,9 @@ pub struct IClaimedReceiptPrinter {
     #[cfg(not(feature = "Foundation"))]
     PrintArea: usize,
     pub CreateJob: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IClaimedReceiptPrinter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2597485172, data2: 56673, data3: 20194, data4: [152, 55, 91, 93, 114, 213, 56, 185] };
 }
 #[repr(C)]
 pub struct IClaimedSlipPrinter {
@@ -977,6 +1118,9 @@ pub struct IClaimedSlipPrinter {
     pub ChangePrintSide: unsafe extern "system" fn(this: *mut *mut Self, printside: PosPrinterPrintSide) -> ::windows_sys::core::HRESULT,
     pub CreateJob: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IClaimedSlipPrinter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3177050098, data2: 44944, data3: 20106, data4: [183, 123, 227, 174, 156, 166, 58, 127] };
+}
 #[repr(C)]
 pub struct ICommonClaimedPosPrinterStation {
     pub base__: ::windows_sys::core::IInspectable,
@@ -1000,6 +1144,9 @@ pub struct ICommonClaimedPosPrinterStation {
     pub IsReadyToPrint: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub ValidateData: unsafe extern "system" fn(this: *mut *mut Self, data: ::windows_sys::core::HSTRING, result__: *mut bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ICommonClaimedPosPrinterStation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3085657768, data2: 65162, data3: 19707, data4: [139, 66, 227, 91, 40, 12, 178, 124] };
+}
 #[repr(C)]
 pub struct ICommonPosPrintStationCapabilities {
     pub base__: ::windows_sys::core::IInspectable,
@@ -1020,6 +1167,9 @@ pub struct ICommonPosPrintStationCapabilities {
     #[cfg(not(feature = "Foundation_Collections"))]
     SupportedCharactersPerLine: usize,
 }
+impl ::windows_sys::core::Interface for ICommonPosPrintStationCapabilities {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3730526922, data2: 57390, data3: 16617, data4: [158, 94, 27, 72, 142, 106, 172, 252] };
+}
 #[repr(C)]
 pub struct ICommonReceiptSlipCapabilities {
     pub base__: ::windows_sys::core::IInspectable,
@@ -1039,6 +1189,9 @@ pub struct ICommonReceiptSlipCapabilities {
     #[cfg(not(feature = "Foundation_Collections"))]
     SupportedBitmapRotations: usize,
 }
+impl ::windows_sys::core::Interface for ICommonReceiptSlipCapabilities {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 153643915, data2: 39027, data3: 19717, data4: [191, 190, 71, 39, 166, 3, 143, 105] };
+}
 #[repr(C)]
 pub struct IJournalPrintJob {
     pub base__: ::windows_sys::core::IInspectable,
@@ -1046,9 +1199,15 @@ pub struct IJournalPrintJob {
     pub FeedPaperByLine: unsafe extern "system" fn(this: *mut *mut Self, linecount: i32) -> ::windows_sys::core::HRESULT,
     pub FeedPaperByMapModeUnit: unsafe extern "system" fn(this: *mut *mut Self, distance: i32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IJournalPrintJob {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2672765028, data2: 62448, data3: 21968, data4: [140, 57, 116, 204, 145, 120, 62, 237] };
+}
 #[repr(C)]
 pub struct IJournalPrinterCapabilities {
     pub base__: ::windows_sys::core::IInspectable,
+}
+impl ::windows_sys::core::Interface for IJournalPrinterCapabilities {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 995937347, data2: 57415, data3: 17507, data4: [187, 88, 23, 181, 186, 29, 128, 86] };
 }
 #[repr(C)]
 pub struct IJournalPrinterCapabilities2 {
@@ -1059,6 +1218,9 @@ pub struct IJournalPrinterCapabilities2 {
     pub IsSubscriptSupported: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub IsReversePaperFeedByLineSupported: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub IsReversePaperFeedByMapModeUnitSupported: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IJournalPrinterCapabilities2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 61912645, data2: 13240, data3: 21307, data4: [186, 170, 164, 56, 146, 131, 171, 10] };
 }
 #[repr(C)]
 pub struct ILineDisplay {
@@ -1075,6 +1237,9 @@ pub struct ILineDisplay {
     #[cfg(not(feature = "Foundation"))]
     ClaimAsync: usize,
 }
+impl ::windows_sys::core::Interface for ILineDisplay {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 620093262, data2: 15513, data3: 17634, data4: [183, 63, 229, 27, 227, 99, 122, 140] };
+}
 #[repr(C)]
 pub struct ILineDisplay2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -1082,6 +1247,9 @@ pub struct ILineDisplay2 {
     pub CheckPowerStatusAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     CheckPowerStatusAsync: usize,
+}
+impl ::windows_sys::core::Interface for ILineDisplay2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3264652840, data2: 61252, data3: 16627, data4: [189, 28, 176, 76, 106, 92, 220, 125] };
 }
 #[repr(C)]
 pub struct ILineDisplayAttributes {
@@ -1113,6 +1281,9 @@ pub struct ILineDisplayAttributes {
     pub CurrentWindow: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetCurrentWindow: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ILineDisplayAttributes {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3246254492, data2: 8858, data3: 19476, data4: [166, 241, 180, 228, 177, 254, 173, 146] };
+}
 #[repr(C)]
 pub struct ILineDisplayCapabilities {
     pub base__: ::windows_sys::core::IInspectable,
@@ -1135,6 +1306,9 @@ pub struct ILineDisplayCapabilities {
     pub SupportedDescriptors: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
     pub SupportedWindows: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ILineDisplayCapabilities {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1511372241, data2: 36293, data3: 19356, data4: [145, 114, 48, 62, 71, 183, 12, 85] };
+}
 #[repr(C)]
 pub struct ILineDisplayCursor {
     pub base__: ::windows_sys::core::IInspectable,
@@ -1150,6 +1324,9 @@ pub struct ILineDisplayCursor {
     pub TryUpdateAttributesAsync: unsafe extern "system" fn(this: *mut *mut Self, attributes: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     TryUpdateAttributesAsync: usize,
+}
+impl ::windows_sys::core::Interface for ILineDisplayCursor {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3974102085, data2: 30026, data3: 20027, data4: [171, 43, 21, 17, 129, 8, 86, 5] };
 }
 #[repr(C)]
 pub struct ILineDisplayCursorAttributes {
@@ -1169,6 +1346,9 @@ pub struct ILineDisplayCursorAttributes {
     #[cfg(not(feature = "Foundation"))]
     SetPosition: usize,
 }
+impl ::windows_sys::core::Interface for ILineDisplayCursorAttributes {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1311593726, data2: 20477, data3: 16784, data4: [170, 225, 206, 40, 95, 32, 200, 150] };
+}
 #[repr(C)]
 pub struct ILineDisplayCustomGlyphs {
     pub base__: ::windows_sys::core::IInspectable,
@@ -1184,6 +1364,9 @@ pub struct ILineDisplayCustomGlyphs {
     pub TryRedefineAsync: unsafe extern "system" fn(this: *mut *mut Self, glyphcode: u32, glyphdata: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
     TryRedefineAsync: usize,
+}
+impl ::windows_sys::core::Interface for ILineDisplayCustomGlyphs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 576190012, data2: 62051, data3: 17649, data4: [161, 160, 231, 80, 166, 160, 236, 84] };
 }
 #[repr(C)]
 pub struct ILineDisplayMarquee {
@@ -1215,6 +1398,9 @@ pub struct ILineDisplayMarquee {
     #[cfg(not(feature = "Foundation"))]
     TryStopScrollingAsync: usize,
 }
+impl ::windows_sys::core::Interface for ILineDisplayMarquee {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2748530238, data2: 62570, data3: 19322, data4: [188, 33, 83, 235, 59, 87, 248, 180] };
+}
 #[repr(C)]
 pub struct ILineDisplayStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -1229,10 +1415,16 @@ pub struct ILineDisplayStatics {
     pub GetDeviceSelector: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub GetDeviceSelectorWithConnectionTypes: unsafe extern "system" fn(this: *mut *mut Self, connectiontypes: PosConnectionTypes, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ILineDisplayStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 36552886, data2: 4528, data3: 18064, data4: [149, 71, 11, 57, 197, 175, 33, 20] };
+}
 #[repr(C)]
 pub struct ILineDisplayStatics2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub StatisticsCategorySelector: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ILineDisplayStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1611415324, data2: 30635, data3: 18792, data4: [167, 222, 192, 47, 241, 105, 242, 204] };
 }
 #[repr(C)]
 pub struct ILineDisplayStatisticsCategorySelector {
@@ -1241,10 +1433,16 @@ pub struct ILineDisplayStatisticsCategorySelector {
     pub UnifiedPosStatistics: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub ManufacturerStatistics: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ILineDisplayStatisticsCategorySelector {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3038889067, data2: 37492, data3: 19748, data4: [148, 243, 182, 1, 123, 131, 36, 68] };
+}
 #[repr(C)]
 pub struct ILineDisplayStatusUpdatedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub Status: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut LineDisplayPowerStatus) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ILineDisplayStatusUpdatedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3721755674, data2: 34555, data3: 20154, data4: [147, 209, 111, 94, 218, 82, 183, 82] };
 }
 #[repr(C)]
 pub struct ILineDisplayStoredBitmap {
@@ -1254,6 +1452,9 @@ pub struct ILineDisplayStoredBitmap {
     pub TryDeleteAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     TryDeleteAsync: usize,
+}
+impl ::windows_sys::core::Interface for ILineDisplayStoredBitmap {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4129378651, data2: 55326, data3: 17338, data4: [191, 27, 188, 250, 60, 120, 91, 160] };
 }
 #[repr(C)]
 pub struct ILineDisplayWindow {
@@ -1295,6 +1496,9 @@ pub struct ILineDisplayWindow {
     #[cfg(not(feature = "Foundation"))]
     TryClearTextAsync: usize,
 }
+impl ::windows_sys::core::Interface for ILineDisplayWindow {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3525308148, data2: 9060, data3: 19429, data4: [190, 225, 133, 22, 128, 175, 73, 100] };
+}
 #[repr(C)]
 pub struct ILineDisplayWindow2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -1329,6 +1533,9 @@ pub struct ILineDisplayWindow2 {
     #[cfg(not(all(feature = "Foundation", feature = "Storage")))]
     TryDisplayStorageFileBitmapAtPointWithWidthAsync: usize,
 }
+impl ::windows_sys::core::Interface for ILineDisplayWindow2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2841436902, data2: 48600, data3: 17253, data4: [142, 17, 222, 148, 222, 141, 255, 2] };
+}
 #[repr(C)]
 pub struct IMagneticStripeReader {
     pub base__: ::windows_sys::core::IInspectable,
@@ -1358,6 +1565,9 @@ pub struct IMagneticStripeReader {
     #[cfg(not(feature = "Foundation"))]
     RemoveStatusUpdated: usize,
 }
+impl ::windows_sys::core::Interface for IMagneticStripeReader {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 445820949, data2: 18371, data3: 18058, data4: [147, 51, 12, 101, 23, 87, 72, 131] };
+}
 #[repr(C)]
 pub struct IMagneticStripeReaderAamvaCardDataReceivedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
@@ -1381,6 +1591,9 @@ pub struct IMagneticStripeReaderAamvaCardDataReceivedEventArgs {
     pub State: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub PostalCode: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMagneticStripeReaderAamvaCardDataReceivedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 172735825, data2: 49942, data3: 18704, data4: [135, 243, 122, 98, 186, 134, 45, 49] };
+}
 #[repr(C)]
 pub struct IMagneticStripeReaderBankCardDataReceivedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
@@ -1393,6 +1606,9 @@ pub struct IMagneticStripeReaderBankCardDataReceivedEventArgs {
     pub MiddleInitial: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub Surname: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub Suffix: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMagneticStripeReaderBankCardDataReceivedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 781551651, data2: 41754, data3: 18275, data4: [136, 44, 35, 114, 94, 57, 176, 142] };
 }
 #[repr(C)]
 pub struct IMagneticStripeReaderCapabilities {
@@ -1409,6 +1625,9 @@ pub struct IMagneticStripeReaderCapabilities {
     pub IsTrackDataMaskingSupported: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub IsTransmitSentinelsSupported: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMagneticStripeReaderCapabilities {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1898479772, data2: 50240, data3: 17570, data4: [164, 103, 70, 145, 117, 208, 40, 150] };
+}
 #[repr(C)]
 pub struct IMagneticStripeReaderCardTypesStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -1417,12 +1636,18 @@ pub struct IMagneticStripeReaderCardTypesStatics {
     pub Aamva: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
     pub ExtendedBase: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMagneticStripeReaderCardTypesStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1385114717, data2: 10630, data3: 18255, data4: [132, 84, 124, 205, 5, 146, 141, 95] };
+}
 #[repr(C)]
 pub struct IMagneticStripeReaderEncryptionAlgorithmsStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub None: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
     pub TripleDesDukpt: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
     pub ExtendedBase: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMagneticStripeReaderEncryptionAlgorithmsStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1404400464, data2: 50139, data3: 18260, data4: [156, 0, 65, 57, 35, 116, 161, 9] };
 }
 #[repr(C)]
 pub struct IMagneticStripeReaderErrorOccurredEventArgs {
@@ -1433,6 +1658,9 @@ pub struct IMagneticStripeReaderErrorOccurredEventArgs {
     pub Track4Status: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut MagneticStripeReaderTrackErrorType) -> ::windows_sys::core::HRESULT,
     pub ErrorData: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub PartialInputData: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMagneticStripeReaderErrorOccurredEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 535689565, data2: 11396, data3: 16813, data4: [183, 120, 242, 53, 106, 120, 154, 177] };
 }
 #[repr(C)]
 pub struct IMagneticStripeReaderReport {
@@ -1456,6 +1684,9 @@ pub struct IMagneticStripeReaderReport {
     #[cfg(not(feature = "Storage_Streams"))]
     AdditionalSecurityInformation: usize,
 }
+impl ::windows_sys::core::Interface for IMagneticStripeReaderReport {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1784373319, data2: 39344, data3: 16776, data4: [190, 241, 237, 223, 121, 247, 143, 230] };
+}
 #[repr(C)]
 pub struct IMagneticStripeReaderStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -1469,16 +1700,25 @@ pub struct IMagneticStripeReaderStatics {
     FromIdAsync: usize,
     pub GetDeviceSelector: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMagneticStripeReaderStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3294604106, data2: 61399, data3: 18272, data4: [165, 206, 21, 176, 228, 126, 148, 235] };
+}
 #[repr(C)]
 pub struct IMagneticStripeReaderStatics2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub GetDeviceSelectorWithConnectionTypes: unsafe extern "system" fn(this: *mut *mut Self, connectiontypes: PosConnectionTypes, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMagneticStripeReaderStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2360197986, data2: 54887, data3: 18682, data4: [134, 188, 245, 174, 17, 137, 38, 43] };
 }
 #[repr(C)]
 pub struct IMagneticStripeReaderStatusUpdatedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub Status: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut MagneticStripeReaderStatus) -> ::windows_sys::core::HRESULT,
     pub ExtendedStatus: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMagneticStripeReaderStatusUpdatedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 164391856, data2: 12898, data3: 16413, data4: [158, 138, 232, 13, 99, 88, 144, 107] };
 }
 #[repr(C)]
 pub struct IMagneticStripeReaderTrackData {
@@ -1496,10 +1736,16 @@ pub struct IMagneticStripeReaderTrackData {
     #[cfg(not(feature = "Storage_Streams"))]
     EncryptedData: usize,
 }
+impl ::windows_sys::core::Interface for IMagneticStripeReaderTrackData {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 273479281, data2: 19101, data3: 17518, data4: [171, 197, 32, 64, 35, 7, 186, 54] };
+}
 #[repr(C)]
 pub struct IMagneticStripeReaderVendorSpecificCardDataReceivedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub Report: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMagneticStripeReaderVendorSpecificCardDataReceivedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2936689940, data2: 22988, data3: 19040, data4: [153, 232, 153, 165, 61, 172, 229, 170] };
 }
 #[repr(C)]
 pub struct IPosPrinter {
@@ -1536,6 +1782,9 @@ pub struct IPosPrinter {
     #[cfg(not(feature = "Foundation"))]
     RemoveStatusUpdated: usize,
 }
+impl ::windows_sys::core::Interface for IPosPrinter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 704889102, data2: 39449, data3: 18945, data4: [153, 79, 18, 223, 173, 106, 220, 191] };
+}
 #[repr(C)]
 pub struct IPosPrinter2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -1544,6 +1793,9 @@ pub struct IPosPrinter2 {
     #[cfg(not(feature = "Foundation_Collections"))]
     SupportedBarcodeSymbologies: usize,
     pub GetFontProperty: unsafe extern "system" fn(this: *mut *mut Self, typeface: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPosPrinter2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 612660712, data2: 35736, data3: 21783, data4: [142, 72, 118, 14, 134, 246, 137, 135] };
 }
 #[repr(C)]
 pub struct IPosPrinterCapabilities {
@@ -1559,12 +1811,18 @@ pub struct IPosPrinterCapabilities {
     pub Slip: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Journal: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPosPrinterCapabilities {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3454621473, data2: 17280, data3: 18821, data4: [173, 197, 57, 219, 48, 205, 147, 188] };
+}
 #[repr(C)]
 pub struct IPosPrinterCharacterSetIdsStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub Utf16LE: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
     pub Ascii: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
     pub Ansi: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPosPrinterCharacterSetIdsStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1550884607, data2: 28826, data3: 20455, data4: [178, 21, 6, 167, 72, 163, 139, 57] };
 }
 #[repr(C)]
 pub struct IPosPrinterFontProperty {
@@ -1576,6 +1834,9 @@ pub struct IPosPrinterFontProperty {
     #[cfg(not(feature = "Foundation_Collections"))]
     CharacterSizes: usize,
 }
+impl ::windows_sys::core::Interface for IPosPrinterFontProperty {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2817845562, data2: 63660, data3: 24324, data4: [132, 210, 41, 177, 109, 138, 99, 60] };
+}
 #[repr(C)]
 pub struct IPosPrinterJob {
     pub base__: ::windows_sys::core::IInspectable,
@@ -1586,6 +1847,9 @@ pub struct IPosPrinterJob {
     pub ExecuteAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     ExecuteAsync: usize,
+}
+impl ::windows_sys::core::Interface for IPosPrinterJob {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2593390684, data2: 1557, data3: 17809, data4: [165, 143, 48, 248, 126, 223, 226, 228] };
 }
 #[repr(C)]
 pub struct IPosPrinterPrintOptions {
@@ -1617,9 +1881,15 @@ pub struct IPosPrinterPrintOptions {
     pub CharacterSet: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
     pub SetCharacterSet: unsafe extern "system" fn(this: *mut *mut Self, value: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPosPrinterPrintOptions {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 170792701, data2: 7426, data3: 23128, data4: [157, 89, 191, 205, 231, 111, 222, 134] };
+}
 #[repr(C)]
 pub struct IPosPrinterReleaseDeviceRequestedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
+}
+impl ::windows_sys::core::Interface for IPosPrinterReleaseDeviceRequestedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 734765913, data2: 7407, data3: 16562, data4: [158, 203, 249, 39, 248, 86, 174, 60] };
 }
 #[repr(C)]
 pub struct IPosPrinterStatics {
@@ -1634,10 +1904,16 @@ pub struct IPosPrinterStatics {
     FromIdAsync: usize,
     pub GetDeviceSelector: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPosPrinterStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2363544810, data2: 4911, data3: 19679, data4: [166, 74, 45, 13, 124, 150, 168, 91] };
+}
 #[repr(C)]
 pub struct IPosPrinterStatics2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub GetDeviceSelectorWithConnectionTypes: unsafe extern "system" fn(this: *mut *mut Self, connectiontypes: PosConnectionTypes, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPosPrinterStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4006423580, data2: 45264, data3: 17127, data4: [177, 55, 184, 155, 22, 36, 77, 65] };
 }
 #[repr(C)]
 pub struct IPosPrinterStatus {
@@ -1645,10 +1921,16 @@ pub struct IPosPrinterStatus {
     pub StatusKind: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut PosPrinterStatusKind) -> ::windows_sys::core::HRESULT,
     pub ExtendedStatus: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPosPrinterStatus {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3522217776, data2: 55872, data3: 17192, data4: [191, 118, 81, 86, 250, 51, 183, 71] };
+}
 #[repr(C)]
 pub struct IPosPrinterStatusUpdatedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub Status: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPosPrinterStatusUpdatedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 786139103, data2: 5030, data3: 17037, data4: [186, 129, 176, 231, 195, 229, 163, 205] };
 }
 #[repr(C)]
 pub struct IReceiptOrSlipJob {
@@ -1696,12 +1978,18 @@ pub struct IReceiptOrSlipJob {
     #[cfg(not(feature = "Graphics_Imaging"))]
     PrintBitmapCustomWidthCustomAlign: usize,
 }
+impl ::windows_sys::core::Interface for IReceiptOrSlipJob {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1394710974, data2: 51395, data3: 19906, data4: [137, 233, 92, 74, 55, 179, 77, 220] };
+}
 #[repr(C)]
 pub struct IReceiptPrintJob {
     pub base__: ::windows_sys::core::IInspectable,
     pub MarkFeed: unsafe extern "system" fn(this: *mut *mut Self, kind: PosPrinterMarkFeedKind) -> ::windows_sys::core::HRESULT,
     pub CutPaper: unsafe extern "system" fn(this: *mut *mut Self, percentage: f64) -> ::windows_sys::core::HRESULT,
     pub CutPaperDefault: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IReceiptPrintJob {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2861958766, data2: 44205, data3: 19321, data4: [157, 15, 192, 207, 192, 141, 199, 123] };
 }
 #[repr(C)]
 pub struct IReceiptPrintJob2 {
@@ -1711,12 +1999,18 @@ pub struct IReceiptPrintJob2 {
     pub FeedPaperByLine: unsafe extern "system" fn(this: *mut *mut Self, linecount: i32) -> ::windows_sys::core::HRESULT,
     pub FeedPaperByMapModeUnit: unsafe extern "system" fn(this: *mut *mut Self, distance: i32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IReceiptPrintJob2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 213652195, data2: 40489, data3: 20857, data4: [188, 216, 24, 17, 211, 185, 161, 14] };
+}
 #[repr(C)]
 pub struct IReceiptPrinterCapabilities {
     pub base__: ::windows_sys::core::IInspectable,
     pub CanCutPaper: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub IsStampSupported: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub MarkFeedCapabilities: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut PosPrinterMarkFeedCapabilities) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IReceiptPrinterCapabilities {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3102782863, data2: 20904, data3: 17404, data4: [155, 213, 141, 226, 114, 166, 65, 91] };
 }
 #[repr(C)]
 pub struct IReceiptPrinterCapabilities2 {
@@ -1728,6 +2022,9 @@ pub struct IReceiptPrinterCapabilities2 {
     pub IsReversePaperFeedByLineSupported: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub IsReversePaperFeedByMapModeUnitSupported: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IReceiptPrinterCapabilities2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 537069112, data2: 35372, data3: 21932, data4: [154, 123, 117, 118, 216, 134, 158, 153] };
+}
 #[repr(C)]
 pub struct ISlipPrintJob {
     pub base__: ::windows_sys::core::IInspectable,
@@ -1735,11 +2032,17 @@ pub struct ISlipPrintJob {
     pub FeedPaperByLine: unsafe extern "system" fn(this: *mut *mut Self, linecount: i32) -> ::windows_sys::core::HRESULT,
     pub FeedPaperByMapModeUnit: unsafe extern "system" fn(this: *mut *mut Self, distance: i32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISlipPrintJob {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1569257821, data2: 24881, data3: 23115, data4: [183, 213, 142, 242, 218, 123, 65, 101] };
+}
 #[repr(C)]
 pub struct ISlipPrinterCapabilities {
     pub base__: ::windows_sys::core::IInspectable,
     pub IsFullLengthSupported: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub IsBothSidesPrintingSupported: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISlipPrinterCapabilities {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2578539417, data2: 18572, data3: 16727, data4: [138, 194, 159, 87, 247, 8, 211, 219] };
 }
 #[repr(C)]
 pub struct ISlipPrinterCapabilities2 {
@@ -1751,6 +2054,9 @@ pub struct ISlipPrinterCapabilities2 {
     pub IsReversePaperFeedByLineSupported: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub IsReversePaperFeedByMapModeUnitSupported: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISlipPrinterCapabilities2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1878562417, data2: 11546, data3: 20480, data4: [135, 194, 176, 133, 27, 253, 240, 126] };
+}
 #[repr(C)]
 pub struct IUnifiedPosErrorData {
     pub base__: ::windows_sys::core::IInspectable,
@@ -1759,10 +2065,16 @@ pub struct IUnifiedPosErrorData {
     pub Reason: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut UnifiedPosErrorReason) -> ::windows_sys::core::HRESULT,
     pub ExtendedReason: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IUnifiedPosErrorData {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 731483194, data2: 21852, data3: 18569, data4: [142, 216, 197, 153, 187, 58, 113, 42] };
+}
 #[repr(C)]
 pub struct IUnifiedPosErrorDataFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub CreateInstance: unsafe extern "system" fn(this: *mut *mut Self, message: ::windows_sys::core::HSTRING, severity: UnifiedPosErrorSeverity, reason: UnifiedPosErrorReason, extendedreason: u32, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUnifiedPosErrorDataFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1268262225, data2: 8190, data3: 17691, data4: [163, 104, 99, 224, 206, 70, 95, 90] };
 }
 pub type JournalPrintJob = *mut ::core::ffi::c_void;
 pub type JournalPrinterCapabilities = *mut ::core::ffi::c_void;

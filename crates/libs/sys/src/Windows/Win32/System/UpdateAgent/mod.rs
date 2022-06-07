@@ -119,6 +119,10 @@ pub struct IAutomaticUpdates {
     pub EnableService: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IAutomaticUpdates {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1731470783, data2: 49282, data3: 19580, data4: [189, 253, 86, 148, 100, 184, 224, 206] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IAutomaticUpdates2 {
     pub base__: IAutomaticUpdates,
@@ -126,6 +130,10 @@ pub struct IAutomaticUpdates2 {
     pub Results: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     Results: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IAutomaticUpdates2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1244617777, data2: 53209, data3: 16654, data4: [183, 251, 41, 166, 83, 151, 58, 15] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -139,6 +147,10 @@ pub struct IAutomaticUpdatesResults {
     pub LastInstallationSuccessDate: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     LastInstallationSuccessDate: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IAutomaticUpdatesResults {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3886339636, data2: 31042, data3: 19929, data4: [161, 17, 130, 34, 139, 163, 57, 1] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -156,12 +168,20 @@ pub struct IAutomaticUpdatesSettings {
     pub Save: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IAutomaticUpdatesSettings {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 786730786, data2: 44860, data3: 16479, data4: [137, 112, 247, 27, 225, 46, 233, 162] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IAutomaticUpdatesSettings2 {
     pub base__: IAutomaticUpdatesSettings,
     pub IncludeRecommendedUpdates: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
     pub SetIncludeRecommendedUpdates: unsafe extern "system" fn(this: *mut *mut Self, value: i16) -> ::windows_sys::core::HRESULT,
     pub CheckPermission: unsafe extern "system" fn(this: *mut *mut Self, usertype: AutomaticUpdatesUserType, permissiontype: AutomaticUpdatesPermissionType, userhaspermission: *mut i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IAutomaticUpdatesSettings2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1790710634, data2: 50122, data3: 17284, data4: [129, 113, 203, 43, 30, 89, 184, 220] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -171,6 +191,10 @@ pub struct IAutomaticUpdatesSettings3 {
     pub SetNonAdministratorsElevated: unsafe extern "system" fn(this: *mut *mut Self, value: i16) -> ::windows_sys::core::HRESULT,
     pub FeaturedUpdatesEnabled: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
     pub SetFeaturedUpdatesEnabled: unsafe extern "system" fn(this: *mut *mut Self, value: i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IAutomaticUpdatesSettings3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3045586371, data2: 62846, data3: 18527, data4: [187, 245, 13, 24, 28, 92, 208, 220] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -211,6 +235,10 @@ pub struct ICategory {
     Updates: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICategory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2178793912, data2: 40245, data3: 18342, data4: [180, 113, 91, 128, 245, 25, 34, 59] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ICategoryCollection {
     pub base__: super::Com::IDispatch,
@@ -221,6 +249,10 @@ pub struct ICategoryCollection {
     pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Count: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i32) -> ::windows_sys::core::HRESULT,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICategoryCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 978763704, data2: 22380, data3: 17399, data4: [147, 53, 254, 72, 56, 253, 126, 55] };
+}
 #[repr(C)]
 pub struct IDownloadCompletedCallback {
     pub base__: ::windows_sys::core::IUnknown,
@@ -229,10 +261,17 @@ pub struct IDownloadCompletedCallback {
     #[cfg(not(feature = "Win32_System_Com"))]
     Invoke: usize,
 }
+impl ::windows_sys::core::Interface for IDownloadCompletedCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1998932070, data2: 40795, data3: 19598, data4: [185, 226, 199, 122, 133, 48, 214, 75] };
+}
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IDownloadCompletedCallbackArgs {
     pub base__: super::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IDownloadCompletedCallbackArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4199963427, data2: 18828, data3: 18336, data4: [151, 157, 231, 213, 177, 129, 51, 96] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -253,6 +292,10 @@ pub struct IDownloadJob {
     #[cfg(not(feature = "Win32_System_Com"))]
     GetProgress: usize,
     pub RequestAbort: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IDownloadJob {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3312770693, data2: 29528, data3: 17398, data4: [170, 232, 134, 151, 230, 45, 139, 167] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -283,6 +326,10 @@ pub struct IDownloadProgress {
     pub CurrentUpdateDownloadPhase: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut DownloadPhase) -> ::windows_sys::core::HRESULT,
     pub CurrentUpdatePercentComplete: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i32) -> ::windows_sys::core::HRESULT,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IDownloadProgress {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3541719980, data2: 63257, data3: 16760, data4: [157, 187, 94, 44, 180, 127, 209, 138] };
+}
 #[repr(C)]
 pub struct IDownloadProgressChangedCallback {
     pub base__: ::windows_sys::core::IUnknown,
@@ -290,6 +337,9 @@ pub struct IDownloadProgressChangedCallback {
     pub Invoke: unsafe extern "system" fn(this: *mut *mut Self, downloadjob: *mut ::core::ffi::c_void, callbackargs: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     Invoke: usize,
+}
+impl ::windows_sys::core::Interface for IDownloadProgressChangedCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2352946397, data2: 24947, data3: 17809, data4: [174, 189, 165, 106, 83, 202, 119, 193] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -301,6 +351,10 @@ pub struct IDownloadProgressChangedCallbackArgs {
     Progress: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IDownloadProgressChangedCallbackArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 844100294, data2: 18817, data3: 19204, data4: [148, 18, 87, 72, 23, 69, 171, 36] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IDownloadResult {
     pub base__: super::Com::IDispatch,
@@ -310,6 +364,10 @@ pub struct IDownloadResult {
     pub GetUpdateResult: unsafe extern "system" fn(this: *mut *mut Self, updateindex: i32, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     GetUpdateResult: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IDownloadResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3668245968, data2: 18215, data3: 19902, data4: [161, 231, 116, 93, 202, 49, 113, 68] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -327,6 +385,10 @@ pub struct IImageInformation {
     pub Width: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IImageInformation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2089842788, data2: 13420, data3: 19179, data4: [143, 63, 87, 218, 40, 159, 150, 159] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IInstallationAgent {
     pub base__: super::Com::IDispatch,
@@ -334,6 +396,10 @@ pub struct IInstallationAgent {
     pub RecordInstallationResult: unsafe extern "system" fn(this: *mut *mut Self, installationresultcookie: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, hresult: i32, extendedreportingdata: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     RecordInstallationResult: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IInstallationAgent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2455551000, data2: 41706, data3: 17992, data4: [191, 28, 236, 139, 173, 207, 226, 10] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -344,6 +410,10 @@ pub struct IInstallationBehavior {
     pub RebootBehavior: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut InstallationRebootBehavior) -> ::windows_sys::core::HRESULT,
     pub RequiresNetworkConnectivity: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IInstallationBehavior {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3651507001, data2: 57925, data3: 19901, data4: [150, 134, 77, 87, 99, 227, 150, 36] };
+}
 #[repr(C)]
 pub struct IInstallationCompletedCallback {
     pub base__: ::windows_sys::core::IUnknown,
@@ -352,10 +422,17 @@ pub struct IInstallationCompletedCallback {
     #[cfg(not(feature = "Win32_System_Com"))]
     Invoke: usize,
 }
+impl ::windows_sys::core::Interface for IInstallationCompletedCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1173681907, data2: 54786, data3: 20376, data4: [154, 138, 62, 250, 21, 42, 210, 211] };
+}
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IInstallationCompletedCallbackArgs {
     pub base__: super::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IInstallationCompletedCallbackArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 621682950, data2: 36603, data3: 18181, data4: [150, 83, 239, 19, 197, 129, 182, 161] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -378,6 +455,10 @@ pub struct IInstallationJob {
     pub RequestAbort: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IInstallationJob {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1545641739, data2: 47829, data3: 17194, data4: [149, 86, 70, 153, 190, 210, 99, 138] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IInstallationProgress {
     pub base__: super::Com::IDispatch,
@@ -389,6 +470,10 @@ pub struct IInstallationProgress {
     #[cfg(not(feature = "Win32_System_Com"))]
     GetUpdateResult: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IInstallationProgress {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 878477892, data2: 17315, data3: 20018, data4: [163, 104, 101, 240, 115, 183, 111, 54] };
+}
 #[repr(C)]
 pub struct IInstallationProgressChangedCallback {
     pub base__: ::windows_sys::core::IUnknown,
@@ -396,6 +481,9 @@ pub struct IInstallationProgressChangedCallback {
     pub Invoke: unsafe extern "system" fn(this: *mut *mut Self, installationjob: *mut ::core::ffi::c_void, callbackargs: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     Invoke: usize,
+}
+impl ::windows_sys::core::Interface for IInstallationProgressChangedCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3759407829, data2: 63706, data3: 17338, data4: [160, 18, 56, 137, 75, 208, 72, 241] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -405,6 +493,10 @@ pub struct IInstallationProgressChangedCallbackArgs {
     pub Progress: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     Progress: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IInstallationProgressChangedCallbackArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3841019422, data2: 26781, data3: 16920, data4: [160, 185, 188, 24, 156, 72, 74, 1] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -419,6 +511,10 @@ pub struct IInstallationResult {
     GetUpdateResult: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IInstallationResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2755417814, data2: 29777, data3: 18644, data4: [175, 150, 182, 205, 45, 13, 155, 122] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IInvalidProductLicenseException {
     pub base__: IUpdateException,
@@ -426,6 +522,10 @@ pub struct IInvalidProductLicenseException {
     pub Product: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     Product: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IInvalidProductLicenseException {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2742878453, data2: 31664, data3: 18771, data4: [180, 20, 249, 233, 131, 38, 242, 232] };
 }
 #[repr(C)]
 pub struct ISearchCompletedCallback {
@@ -435,10 +535,17 @@ pub struct ISearchCompletedCallback {
     #[cfg(not(feature = "Win32_System_Com"))]
     Invoke: usize,
 }
+impl ::windows_sys::core::Interface for ISearchCompletedCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2293162072, data2: 54448, data3: 18213, data4: [162, 241, 129, 74, 103, 174, 150, 76] };
+}
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISearchCompletedCallbackArgs {
     pub base__: super::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISearchCompletedCallbackArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2801837620, data2: 10320, data3: 19527, data4: [147, 138, 158, 75, 110, 90, 249, 166] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -451,6 +558,10 @@ pub struct ISearchJob {
     pub IsCompleted: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
     pub CleanUp: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub RequestAbort: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISearchJob {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1936124438, data2: 31258, data3: 20130, data4: [176, 66, 151, 61, 62, 156, 217, 155] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -469,6 +580,10 @@ pub struct ISearchResult {
     pub Warnings: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     Warnings: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISearchResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3557621602, data2: 57484, data3: 17560, data4: [148, 26, 1, 226, 95, 15, 211, 60] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -501,6 +616,10 @@ pub struct IStringCollection {
     pub RemoveAt: unsafe extern "system" fn(this: *mut *mut Self, index: i32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IStringCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4026074498, data2: 11740, data3: 18447, data4: [160, 109, 96, 243, 251, 195, 98, 195] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISystemInformation {
     pub base__: super::Com::IDispatch,
@@ -509,6 +628,10 @@ pub struct ISystemInformation {
     #[cfg(not(feature = "Win32_Foundation"))]
     OemHardwareSupportLink: usize,
     pub RebootRequired: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISystemInformation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2917694455, data2: 31574, data3: 17013, data4: [143, 171, 185, 176, 229, 145, 132, 75] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -636,6 +759,10 @@ pub struct IUpdate {
     DownloadContents: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IUpdate {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1787998330, data2: 55329, data3: 18050, data4: [180, 35, 92, 128, 80, 34, 204, 77] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IUpdate2 {
     pub base__: IUpdate,
@@ -651,10 +778,18 @@ pub struct IUpdate2 {
     CopyToCache: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IUpdate2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 340781488, data2: 53821, data3: 19083, data4: [134, 52, 251, 68, 87, 83, 59, 122] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IUpdate3 {
     pub base__: IUpdate2,
     pub BrowseOnly: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IUpdate3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 288283243, data2: 38323, data3: 18287, data4: [157, 144, 174, 232, 44, 107, 129, 129] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -663,11 +798,19 @@ pub struct IUpdate4 {
     pub PerUser: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IUpdate4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 669600525, data2: 20793, data3: 18850, data4: [154, 97, 147, 82, 45, 197, 70, 82] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IUpdate5 {
     pub base__: IUpdate4,
     pub AutoSelection: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut AutoSelectionMode) -> ::windows_sys::core::HRESULT,
     pub AutoDownload: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut AutoDownloadMode) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IUpdate5 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3250778650, data2: 54004, data3: 18690, data4: [181, 198, 138, 8, 28, 25, 168, 144] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -700,6 +843,10 @@ pub struct IUpdateCollection {
     pub RemoveAt: unsafe extern "system" fn(this: *mut *mut Self, index: i32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IUpdateCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 133645196, data2: 30473, data3: 19621, data4: [181, 24, 145, 39, 146, 136, 19, 78] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IUpdateDownloadContent {
     pub base__: super::Com::IDispatch,
@@ -709,10 +856,18 @@ pub struct IUpdateDownloadContent {
     DownloadUrl: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IUpdateDownloadContent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1419954989, data2: 39436, data3: 18614, data4: [138, 80, 154, 187, 105, 238, 45, 2] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IUpdateDownloadContent2 {
     pub base__: IUpdateDownloadContent,
     pub IsDeltaCompressedContent: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IUpdateDownloadContent2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3380269339, data2: 62039, data3: 16907, data4: [157, 159, 55, 127, 115, 63, 111, 104] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -726,11 +881,19 @@ pub struct IUpdateDownloadContentCollection {
     pub Count: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IUpdateDownloadContentCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3159692232, data2: 46008, data3: 19447, data4: [164, 212, 54, 28, 13, 140, 136, 186] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IUpdateDownloadResult {
     pub base__: super::Com::IDispatch,
     pub HResult: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i32) -> ::windows_sys::core::HRESULT,
     pub ResultCode: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut OperationResultCode) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IUpdateDownloadResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3214520182, data2: 46453, data3: 17069, data4: [138, 164, 51, 203, 181, 71, 122, 241] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -770,6 +933,10 @@ pub struct IUpdateDownloader {
     EndDownload: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IUpdateDownloader {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1760675577, data2: 32460, data3: 18022, data4: [164, 100, 36, 127, 225, 36, 150, 195] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IUpdateException {
     pub base__: super::Com::IDispatch,
@@ -781,6 +948,10 @@ pub struct IUpdateException {
     pub Context: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut UpdateExceptionContext) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IUpdateException {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2742476126, data2: 2516, data3: 17023, data4: [175, 124, 254, 213, 182, 225, 193, 214] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IUpdateExceptionCollection {
     pub base__: super::Com::IDispatch,
@@ -790,6 +961,10 @@ pub struct IUpdateExceptionCollection {
     get_Item: usize,
     pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Count: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IUpdateExceptionCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1345726115, data2: 36372, data3: 18217, data4: [147, 85, 15, 230, 100, 189, 35, 33] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -835,6 +1010,10 @@ pub struct IUpdateHistoryEntry {
     SupportUrl: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IUpdateHistoryEntry {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3193349700, data2: 44814, data3: 19982, data4: [163, 17, 193, 216, 230, 149, 203, 255] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IUpdateHistoryEntry2 {
     pub base__: IUpdateHistoryEntry,
@@ -842,6 +1021,10 @@ pub struct IUpdateHistoryEntry2 {
     pub Categories: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     Categories: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IUpdateHistoryEntry2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3267344256, data2: 17721, data3: 16690, data4: [171, 140, 10, 135, 114, 1, 58, 182] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -855,6 +1038,10 @@ pub struct IUpdateHistoryEntryCollection {
     pub Count: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IUpdateHistoryEntryCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2817543996, data2: 41616, data3: 17243, data4: [170, 223, 161, 22, 195, 53, 122, 92] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IUpdateIdentity {
     pub base__: super::Com::IDispatch,
@@ -865,12 +1052,20 @@ pub struct IUpdateIdentity {
     UpdateID: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IUpdateIdentity {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1177122851, data2: 39232, data3: 19465, data4: [174, 217, 205, 62, 166, 208, 89, 104] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IUpdateInstallationResult {
     pub base__: super::Com::IDispatch,
     pub HResult: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i32) -> ::windows_sys::core::HRESULT,
     pub RebootRequired: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
     pub ResultCode: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut OperationResultCode) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IUpdateInstallationResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3644911864, data2: 15547, data3: 20432, data4: [153, 63, 71, 30, 127, 35, 40, 173] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -938,11 +1133,19 @@ pub struct IUpdateInstaller {
     pub RebootRequiredBeforeInstallation: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IUpdateInstaller {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2073205864, data2: 52444, data3: 16934, data4: [150, 177, 135, 36, 96, 11, 84, 194] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IUpdateInstaller2 {
     pub base__: IUpdateInstaller,
     pub ForceQuiet: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
     pub SetForceQuiet: unsafe extern "system" fn(this: *mut *mut Self, value: i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IUpdateInstaller2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 876795134, data2: 8781, data3: 19694, data4: [152, 207, 48, 224, 196, 210, 41, 230] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -952,15 +1155,26 @@ pub struct IUpdateInstaller3 {
     pub SetAttemptCloseAppsIfNecessary: unsafe extern "system" fn(this: *mut *mut Self, value: i16) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IUpdateInstaller3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 382802997, data2: 2458, data3: 18640, data4: [131, 56, 95, 174, 100, 4, 127, 142] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IUpdateInstaller4 {
     pub base__: IUpdateInstaller3,
     pub Commit: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32) -> ::windows_sys::core::HRESULT,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IUpdateInstaller4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4018276586, data2: 8964, data3: 18733, data4: [145, 9, 35, 129, 59, 9, 88, 225] };
+}
 #[repr(C)]
 pub struct IUpdateLockdown {
     pub base__: ::windows_sys::core::IUnknown,
     pub LockDown: unsafe extern "system" fn(this: *mut *mut Self, flags: i32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUpdateLockdown {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2843132557, data2: 30113, data3: 17066, data4: [148, 174, 138, 248, 184, 114, 8, 154] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1013,6 +1227,10 @@ pub struct IUpdateSearcher {
     SetServiceID: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IUpdateSearcher {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2403707889, data2: 63918, data3: 19349, data4: [169, 51, 240, 246, 110, 80, 86, 234] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IUpdateSearcher2 {
     pub base__: IUpdateSearcher,
@@ -1020,11 +1238,19 @@ pub struct IUpdateSearcher2 {
     pub SetIgnoreDownloadPriority: unsafe extern "system" fn(this: *mut *mut Self, value: i16) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IUpdateSearcher2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1287506733, data2: 5513, data3: 19435, data4: [189, 28, 62, 88, 47, 240, 173, 208] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IUpdateSearcher3 {
     pub base__: IUpdateSearcher2,
     pub SearchScope: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut SearchScope) -> ::windows_sys::core::HRESULT,
     pub SetSearchScope: unsafe extern "system" fn(this: *mut *mut Self, value: SearchScope) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IUpdateSearcher3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 80120157, data2: 60146, data3: 16436, data4: [151, 243, 49, 29, 233, 190, 65, 58] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1063,10 +1289,18 @@ pub struct IUpdateService {
     SetupPrefix: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IUpdateService {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1991487870, data2: 44758, data3: 19877, data4: [133, 240, 131, 88, 127, 129, 171, 227] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IUpdateService2 {
     pub base__: IUpdateService,
     pub IsDefaultAUService: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IUpdateService2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 353940576, data2: 25880, data3: 16754, data4: [148, 15, 199, 88, 131, 178, 76, 235] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1078,6 +1312,10 @@ pub struct IUpdateServiceCollection {
     get_Item: usize,
     pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Count: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IUpdateServiceCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2600686506, data2: 3666, data3: 17663, data4: [184, 176, 31, 127, 160, 67, 127, 136] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1113,6 +1351,10 @@ pub struct IUpdateServiceManager {
     SetOption: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IUpdateServiceManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 595951164, data2: 698, data3: 17571, data4: [148, 35, 177, 201, 0, 128, 95, 55] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IUpdateServiceManager2 {
     pub base__: IUpdateServiceManager,
@@ -1134,6 +1376,10 @@ pub struct IUpdateServiceManager2 {
     AddService2: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IUpdateServiceManager2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 196629277, data2: 32397, data3: 16975, data4: [152, 108, 160, 184, 246, 10, 62, 123] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IUpdateServiceRegistration {
     pub base__: super::Com::IDispatch,
@@ -1147,6 +1393,10 @@ pub struct IUpdateServiceRegistration {
     pub Service: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     Service: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IUpdateServiceRegistration {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3722453632, data2: 4787, data3: 19979, data4: [147, 123, 103, 71, 246, 172, 178, 134] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1183,11 +1433,19 @@ pub struct IUpdateSession {
     CreateUpdateInstaller: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IUpdateSession {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2171099300, data2: 9741, data3: 16992, data4: [147, 58, 37, 133, 241, 171, 199, 107] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IUpdateSession2 {
     pub base__: IUpdateSession,
     pub UserLocale: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut u32) -> ::windows_sys::core::HRESULT,
     pub SetUserLocale: unsafe extern "system" fn(this: *mut *mut Self, lcid: u32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IUpdateSession2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2445998000, data2: 60195, data3: 18925, data4: [153, 55, 197, 45, 129, 127, 70, 247] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1201,6 +1459,10 @@ pub struct IUpdateSession3 {
     pub QueryHistory: unsafe extern "system" fn(this: *mut *mut Self, criteria: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, startindex: i32, count: i32, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     QueryHistory: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IUpdateSession3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2442067230, data2: 46552, data3: 19600, data4: [133, 64, 174, 185, 189, 197, 111, 157] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1249,6 +1511,10 @@ pub struct IWebProxy {
     pub SetAutoDetect: unsafe extern "system" fn(this: *mut *mut Self, value: i16) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWebProxy {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 390889982, data2: 44749, data3: 19886, data4: [184, 160, 44, 99, 24, 221, 134, 168] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IWindowsDriverUpdate {
     pub base__: IUpdate,
@@ -1277,6 +1543,10 @@ pub struct IWindowsDriverUpdate {
     pub DeviceStatus: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWindowsDriverUpdate {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3011759386, data2: 23785, data3: 17668, data4: [159, 99, 118, 75, 18, 54, 241, 145] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IWindowsDriverUpdate2 {
     pub base__: IWindowsDriverUpdate,
@@ -1292,10 +1562,18 @@ pub struct IWindowsDriverUpdate2 {
     CopyToCache: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWindowsDriverUpdate2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1633436265, data2: 31304, data3: 17341, data4: [150, 183, 191, 108, 162, 125, 108, 62] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IWindowsDriverUpdate3 {
     pub base__: IWindowsDriverUpdate2,
     pub BrowseOnly: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWindowsDriverUpdate3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1240192258, data2: 19094, data3: 16829, data4: [158, 62, 76, 80, 87, 244, 37, 12] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1308,11 +1586,19 @@ pub struct IWindowsDriverUpdate4 {
     pub PerUser: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i16) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWindowsDriverUpdate4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 5007915, data2: 3097, data3: 19561, data4: [159, 92, 162, 105, 178, 86, 13, 185] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IWindowsDriverUpdate5 {
     pub base__: IWindowsDriverUpdate4,
     pub AutoSelection: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut AutoSelectionMode) -> ::windows_sys::core::HRESULT,
     pub AutoDownload: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut AutoDownloadMode) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWindowsDriverUpdate5 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1892637826, data2: 34370, data3: 17083, data4: [157, 188, 12, 253, 38, 60, 108, 79] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1343,6 +1629,10 @@ pub struct IWindowsDriverUpdateEntry {
     pub DeviceStatus: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWindowsDriverUpdateEntry {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3985374784, data2: 42507, data3: 17130, data4: [150, 82, 129, 125, 252, 250, 35, 236] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IWindowsDriverUpdateEntryCollection {
     pub base__: super::Com::IDispatch,
@@ -1354,6 +1644,10 @@ pub struct IWindowsDriverUpdateEntryCollection {
     pub Count: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWindowsDriverUpdateEntryCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 223483648, data2: 41842, data3: 19439, data4: [130, 139, 61, 0, 193, 10, 222, 189] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IWindowsUpdateAgentInfo {
     pub base__: super::Com::IDispatch,
@@ -1361,6 +1655,10 @@ pub struct IWindowsUpdateAgentInfo {
     pub GetInfo: unsafe extern "system" fn(this: *mut *mut Self, varinfoidentifier: ::core::mem::ManuallyDrop<super::Com::VARIANT>, retval: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     GetInfo: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWindowsUpdateAgentInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2238791585, data2: 30614, data3: 20386, data4: [190, 59, 226, 214, 18, 77, 211, 115] };
 }
 pub const InstallationAgent: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 830378748, data2: 5753, data3: 18173, data4: [160, 181, 240, 137, 20, 221, 134, 35] };
 #[doc = "*Required features: `\"Win32_System_UpdateAgent\"`*"]

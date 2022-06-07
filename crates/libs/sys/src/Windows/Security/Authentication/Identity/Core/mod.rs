@@ -42,10 +42,16 @@ pub struct IMicrosoftAccountMultiFactorAuthenticationManager {
     #[cfg(not(feature = "Foundation"))]
     DenySessionAsync: usize,
 }
+impl ::windows_sys::core::Interface for IMicrosoftAccountMultiFactorAuthenticationManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 265502885, data2: 62836, data3: 17184, data4: [160, 142, 10, 25, 168, 35, 34, 170] };
+}
 #[repr(C)]
 pub struct IMicrosoftAccountMultiFactorAuthenticatorStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub Current: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMicrosoftAccountMultiFactorAuthenticatorStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3647259366, data2: 62534, data3: 19569, data4: [139, 121, 110, 164, 2, 74, 169, 184] };
 }
 #[repr(C)]
 pub struct IMicrosoftAccountMultiFactorGetSessionsResult {
@@ -55,6 +61,9 @@ pub struct IMicrosoftAccountMultiFactorGetSessionsResult {
     #[cfg(not(feature = "Foundation_Collections"))]
     Sessions: usize,
     pub ServiceResponse: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut MicrosoftAccountMultiFactorServiceResponse) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMicrosoftAccountMultiFactorGetSessionsResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1310960032, data2: 59898, data3: 18810, data4: [149, 222, 109, 87, 71, 191, 151, 76] };
 }
 #[repr(C)]
 pub struct IMicrosoftAccountMultiFactorOneTimeCodedInfo {
@@ -69,6 +78,9 @@ pub struct IMicrosoftAccountMultiFactorOneTimeCodedInfo {
     #[cfg(not(feature = "Foundation"))]
     TimeToLive: usize,
     pub ServiceResponse: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut MicrosoftAccountMultiFactorServiceResponse) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMicrosoftAccountMultiFactorOneTimeCodedInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2193237579, data2: 55420, data3: 18024, data4: [169, 118, 64, 207, 174, 84, 125, 8] };
 }
 #[repr(C)]
 pub struct IMicrosoftAccountMultiFactorSessionInfo {
@@ -87,6 +99,9 @@ pub struct IMicrosoftAccountMultiFactorSessionInfo {
     #[cfg(not(feature = "Foundation"))]
     ExpirationTime: usize,
 }
+impl ::windows_sys::core::Interface for IMicrosoftAccountMultiFactorSessionInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1602137012, data2: 41592, data3: 17973, data4: [183, 101, 180, 148, 235, 38, 10, 244] };
+}
 #[repr(C)]
 pub struct IMicrosoftAccountMultiFactorUnregisteredAccountsAndSessionInfo {
     pub base__: ::windows_sys::core::IInspectable,
@@ -99,6 +114,9 @@ pub struct IMicrosoftAccountMultiFactorUnregisteredAccountsAndSessionInfo {
     #[cfg(not(feature = "Foundation_Collections"))]
     UnregisteredAccounts: usize,
     pub ServiceResponse: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut MicrosoftAccountMultiFactorServiceResponse) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMicrosoftAccountMultiFactorUnregisteredAccountsAndSessionInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2860434939, data2: 55871, data3: 16520, data4: [162, 13, 86, 24, 175, 173, 178, 229] };
 }
 pub type MicrosoftAccountMultiFactorAuthenticationManager = *mut ::core::ffi::c_void;
 #[doc = "*Required features: `\"Security_Authentication_Identity_Core\"`*"]

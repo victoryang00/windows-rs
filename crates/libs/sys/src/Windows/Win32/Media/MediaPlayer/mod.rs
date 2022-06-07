@@ -1201,6 +1201,10 @@ pub struct IFeed {
     pub ItemCount: unsafe extern "system" fn(this: *mut *mut Self, count: *mut i32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFeed {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4160296408, data2: 11998, data3: 17084, data4: [152, 231, 165, 208, 80, 99, 167, 87] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFeed2 {
     pub base__: IFeed,
@@ -1222,6 +1226,10 @@ pub struct IFeed2 {
     #[cfg(not(feature = "Win32_Foundation"))]
     SetCredentials: usize,
     pub ClearCredentials: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFeed2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 871557641, data2: 5016, data3: 19129, data4: [182, 164, 249, 75, 73, 208, 164, 46] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1263,6 +1271,10 @@ pub struct IFeedEnclosure {
     SetFile: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFeedEnclosure {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 907814647, data2: 37028, data3: 20071, data4: [174, 9, 58, 54, 165, 70, 67, 106] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFeedEvents {
     pub base__: super::super::System::Com::IDispatch,
@@ -1295,6 +1307,10 @@ pub struct IFeedEvents {
     pub FeedItemCountChanged: unsafe extern "system" fn(this: *mut *mut Self, path: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, itemcounttype: i32) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     FeedItemCountChanged: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFeedEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2884852889, data2: 1665, data3: 18410, data4: [154, 140, 20, 54, 163, 117, 169, 158] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1360,6 +1376,10 @@ pub struct IFeedFolder {
     pub GetWatcher: unsafe extern "system" fn(this: *mut *mut Self, scope: FEEDS_EVENTS_SCOPE, mask: FEEDS_EVENTS_MASK, disp: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     GetWatcher: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFeedFolder {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2180008657, data2: 16788, data3: 19837, data4: [134, 214, 17, 129, 60, 236, 22, 60] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1428,6 +1448,10 @@ pub struct IFeedFolderEvents {
     FeedItemCountChanged: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFeedFolderEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 547725222, data2: 43076, data3: 17968, data4: [158, 152, 23, 95, 112, 180, 213, 91] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFeedItem {
     pub base__: super::super::System::Com::IDispatch,
@@ -1480,10 +1504,18 @@ pub struct IFeedItem {
     pub Modified: unsafe extern "system" fn(this: *mut *mut Self, modified: *mut f64) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFeedItem {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 169766061, data2: 2631, data3: 19874, data4: [161, 61, 91, 170, 165, 200, 189, 79] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFeedItem2 {
     pub base__: IFeedItem,
     pub EffectiveId: unsafe extern "system" fn(this: *mut *mut Self, effectiveid: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFeedItem2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2041356020, data2: 63937, data3: 19755, data4: [165, 11, 167, 255, 186, 77, 207, 55] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1498,6 +1530,10 @@ pub struct IFeedsEnum {
     pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, enumvar: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Ole"))]
     _NewEnum: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFeedsEnum {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3821862952, data2: 12013, data3: 19552, data4: [143, 174, 163, 34, 83, 9, 168, 54] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1550,6 +1586,10 @@ pub struct IFeedsManager {
     Normalize: usize,
     pub ItemCountLimit: unsafe extern "system" fn(this: *mut *mut Self, itemcountlimit: *mut i32) -> ::windows_sys::core::HRESULT,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFeedsManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2806000076, data2: 7962, data3: 18694, data4: [136, 240, 129, 6, 56, 216, 101, 145] };
+}
 #[doc = "*Required features: `\"Win32_Media_MediaPlayer\"`*"]
 pub const IOCTL_WMP_DEVICE_CAN_SYNC: u32 = 844123479u32;
 #[doc = "*Required features: `\"Win32_Media_MediaPlayer\"`*"]
@@ -1566,6 +1606,9 @@ pub struct IWMPAudioRenderConfig {
     #[cfg(not(feature = "Win32_Foundation"))]
     SetaudioOutputDevice: usize,
 }
+impl ::windows_sys::core::Interface for IWMPAudioRenderConfig {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3885785929, data2: 22935, data3: 19684, data4: [145, 124, 34, 163, 57, 30, 197, 100] };
+}
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IWMPCdrom {
@@ -1579,6 +1622,10 @@ pub struct IWMPCdrom {
     #[cfg(not(feature = "Win32_System_Com"))]
     playlist: usize,
     pub eject: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWMPCdrom {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3484118680, data2: 34608, data3: 4563, data4: [179, 136, 0, 192, 79, 104, 87, 75] };
 }
 #[repr(C)]
 pub struct IWMPCdromBurn {
@@ -1616,6 +1663,9 @@ pub struct IWMPCdromBurn {
     pub stopBurn: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub erase: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWMPCdromBurn {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3180649451, data2: 16767, data3: 18728, data4: [170, 6, 8, 125, 86, 237, 155, 89] };
+}
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IWMPCdromCollection {
@@ -1630,6 +1680,10 @@ pub struct IWMPCdromCollection {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     getByDriveSpecifier: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWMPCdromCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3997994978, data2: 13490, data3: 4563, data4: [163, 191, 0, 96, 151, 201, 179, 68] };
+}
 #[repr(C)]
 pub struct IWMPCdromRip {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1637,6 +1691,9 @@ pub struct IWMPCdromRip {
     pub ripProgress: unsafe extern "system" fn(this: *mut *mut Self, plprogress: *mut i32) -> ::windows_sys::core::HRESULT,
     pub startRip: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub stopRip: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWMPCdromRip {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1457662287, data2: 27117, data3: 17961, data4: [168, 105, 174, 167, 44, 13, 204, 44] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1676,6 +1733,10 @@ pub struct IWMPClosedCaption {
     SetcaptioningId: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWMPClosedCaption {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1328412020, data2: 50568, data3: 4563, data4: [158, 208, 0, 192, 79, 182, 233, 55] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IWMPClosedCaption2 {
     pub base__: IWMPClosedCaption,
@@ -1690,6 +1751,10 @@ pub struct IWMPClosedCaption2 {
     pub getSAMIStyleName: unsafe extern "system" fn(this: *mut *mut Self, nindex: i32, pbstrname: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     getSAMIStyleName: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWMPClosedCaption2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 889956235, data2: 27592, data3: 16659, data4: [165, 245, 49, 32, 86, 147, 78, 182] };
 }
 #[repr(C)]
 pub struct IWMPContentContainer {
@@ -1710,12 +1775,18 @@ pub struct IWMPContentContainer {
     GetContentPrice: usize,
     pub GetContentID: unsafe extern "system" fn(this: *mut *mut Self, idxcontent: u32, pcontentid: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWMPContentContainer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2910801308, data2: 6815, data3: 20178, data4: [152, 21, 236, 192, 181, 140, 182, 22] };
+}
 #[repr(C)]
 pub struct IWMPContentContainerList {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetTransactionType: unsafe extern "system" fn(this: *mut *mut Self, pwmptt: *mut WMPTransactionType) -> ::windows_sys::core::HRESULT,
     pub GetContainerCount: unsafe extern "system" fn(this: *mut *mut Self, pccontainer: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetContainer: unsafe extern "system" fn(this: *mut *mut Self, idxcontainer: u32, ppcontent: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWMPContentContainerList {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2845015928, data2: 2050, data3: 19192, data4: [139, 141, 227, 240, 69, 188, 138, 181] };
 }
 #[repr(C)]
 pub struct IWMPContentPartner {
@@ -1798,6 +1869,9 @@ pub struct IWMPContentPartner {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     VerifyPermission: usize,
 }
+impl ::windows_sys::core::Interface for IWMPContentPartner {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1430605939, data2: 16821, data3: 20085, data4: [135, 184, 241, 59, 219, 41, 29, 8] };
+}
 #[repr(C)]
 pub struct IWMPContentPartnerCallback {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1836,6 +1910,9 @@ pub struct IWMPContentPartnerCallback {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     VerifyPermissionComplete: usize,
 }
+impl ::windows_sys::core::Interface for IWMPContentPartnerCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2660203938, data2: 1685, data3: 16444, data4: [182, 151, 218, 16, 250, 250, 166, 118] };
+}
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IWMPControls {
@@ -1873,10 +1950,18 @@ pub struct IWMPControls {
     playItem: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWMPControls {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1958780418, data2: 63528, data3: 4562, data4: [167, 75, 0, 160, 201, 5, 243, 110] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IWMPControls2 {
     pub base__: IWMPControls,
     pub step: unsafe extern "system" fn(this: *mut *mut Self, lstep: i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWMPControls2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1862470949, data2: 2192, data3: 18447, data4: [151, 117, 31, 126, 64, 171, 91, 142] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1905,6 +1990,10 @@ pub struct IWMPControls3 {
     #[cfg(not(feature = "Win32_Foundation"))]
     SetcurrentPositionTimecode: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWMPControls3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2714833166, data2: 54597, data3: 18282, data4: [154, 120, 172, 62, 76, 177, 230, 189] };
+}
 #[repr(C)]
 pub struct IWMPConvert {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1916,6 +2005,9 @@ pub struct IWMPConvert {
     pub GetErrorURL: unsafe extern "system" fn(this: *mut *mut Self, pbstrurl: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetErrorURL: usize,
+}
+impl ::windows_sys::core::Interface for IWMPConvert {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3598915119, data2: 22484, data3: 16648, data4: [131, 115, 74, 150, 118, 209, 194, 233] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1995,6 +2087,10 @@ pub struct IWMPCore {
     status: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWMPCore {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3628911257, data2: 52450, data3: 4562, data4: [158, 204, 0, 0, 248, 8, 89, 129] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IWMPCore2 {
     pub base__: IWMPCore,
@@ -2002,6 +2098,10 @@ pub struct IWMPCore2 {
     pub dvd: unsafe extern "system" fn(this: *mut *mut Self, ppdvd: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     dvd: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWMPCore2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3155682743, data2: 30049, data3: 19480, data4: [187, 144, 23, 212, 133, 119, 86, 89] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2015,6 +2115,10 @@ pub struct IWMPCore3 {
     pub newMedia: unsafe extern "system" fn(this: *mut *mut Self, bstrurl: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppmedia: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     newMedia: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWMPCore3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1971832423, data2: 25231, data3: 18847, data4: [136, 231, 106, 111, 78, 136, 132, 100] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2034,6 +2138,10 @@ pub struct IWMPDVD {
     pub resume: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWMPDVD {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2376472198, data2: 18024, data3: 19036, data4: [174, 93, 128, 49, 147, 41, 61, 190] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IWMPDownloadCollection {
     pub base__: super::super::System::Com::IDispatch,
@@ -2049,6 +2157,10 @@ pub struct IWMPDownloadCollection {
     startDownload: usize,
     pub removeItem: unsafe extern "system" fn(this: *mut *mut Self, litem: i32) -> ::windows_sys::core::HRESULT,
     pub Clear: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWMPDownloadCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 171023487, data2: 34297, data3: 17260, data4: [184, 142, 130, 253, 136, 0, 14, 28] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2070,6 +2182,10 @@ pub struct IWMPDownloadItem {
     pub cancel: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWMPDownloadItem {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3376877198, data2: 16235, data3: 18089, data4: [160, 169, 69, 40, 21, 195, 66, 151] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IWMPDownloadItem2 {
     pub base__: IWMPDownloadItem,
@@ -2077,6 +2193,10 @@ pub struct IWMPDownloadItem2 {
     pub getItemInfo: unsafe extern "system" fn(this: *mut *mut Self, bstritemname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pbstrval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     getItemInfo: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWMPDownloadItem2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2679845686, data2: 28067, data3: 18333, data4: [184, 255, 103, 212, 110, 32, 169, 135] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2090,6 +2210,10 @@ pub struct IWMPDownloadManager {
     pub createDownloadCollection: unsafe extern "system" fn(this: *mut *mut Self, ppcollection: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     createDownloadCollection: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWMPDownloadManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3781073617, data2: 36640, data3: 19652, data4: [158, 199, 26, 50, 140, 168, 106, 13] };
 }
 #[repr(C)]
 pub struct IWMPEffects {
@@ -2124,6 +2248,9 @@ pub struct IWMPEffects {
     GoFullscreen: usize,
     pub RenderFullScreen: unsafe extern "system" fn(this: *mut *mut Self, plevels: *mut TimedLevel) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWMPEffects {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3549973523, data2: 50123, data3: 18658, data4: [139, 229, 81, 104, 52, 11, 79, 53] };
+}
 #[repr(C)]
 pub struct IWMPEffects2 {
     pub base__: IWMPEffects,
@@ -2149,6 +2276,9 @@ pub struct IWMPEffects2 {
     #[cfg(not(feature = "Win32_Foundation"))]
     RenderWindowed: usize,
 }
+impl ::windows_sys::core::Interface for IWMPEffects2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1767081708, data2: 43580, data3: 17944, data4: [165, 225, 221, 154, 139, 152, 118, 50] };
+}
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IWMPError {
@@ -2160,6 +2290,10 @@ pub struct IWMPError {
     #[cfg(not(feature = "Win32_System_Com"))]
     get_item: usize,
     pub webHelp: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWMPError {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2704134013, data2: 5291, data3: 19483, data4: [168, 205, 99, 144, 159, 6, 2, 91] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2181,10 +2315,18 @@ pub struct IWMPErrorItem {
     customUrl: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWMPErrorItem {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 907331142, data2: 15163, data3: 19943, data4: [168, 30, 147, 14, 63, 33, 39, 179] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IWMPErrorItem2 {
     pub base__: IWMPErrorItem,
     pub condition: unsafe extern "system" fn(this: *mut *mut Self, plcondition: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWMPErrorItem2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4150054592, data2: 50812, data3: 18268, data4: [147, 30, 135, 25, 135, 11, 238, 125] };
 }
 #[repr(C)]
 pub struct IWMPEvents {
@@ -2286,6 +2428,9 @@ pub struct IWMPEvents {
     pub MouseMove: unsafe extern "system" fn(this: *mut *mut Self, nbutton: i16, nshiftstate: i16, fx: i32, fy: i32),
     pub MouseUp: unsafe extern "system" fn(this: *mut *mut Self, nbutton: i16, nshiftstate: i16, fx: i32, fy: i32),
 }
+impl ::windows_sys::core::Interface for IWMPEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 430334587, data2: 55966, data3: 18369, data4: [187, 35, 0, 181, 230, 104, 35, 106] };
+}
 #[repr(C)]
 pub struct IWMPEvents2 {
     pub base__: IWMPEvents,
@@ -2298,6 +2443,9 @@ pub struct IWMPEvents2 {
     #[cfg(not(feature = "Win32_System_Com"))]
     DeviceSyncError: usize,
     pub CreatePartnershipComplete: unsafe extern "system" fn(this: *mut *mut Self, pdevice: *mut ::core::ffi::c_void, hrresult: ::windows_sys::core::HRESULT),
+}
+impl ::windows_sys::core::Interface for IWMPEvents2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 511050234, data2: 18410, data3: 16647, data4: [158, 169, 144, 4, 237, 150, 132, 255] };
 }
 #[repr(C)]
 pub struct IWMPEvents3 {
@@ -2329,10 +2477,16 @@ pub struct IWMPEvents3 {
     #[cfg(not(feature = "Win32_System_Com"))]
     MediaCollectionMediaRemoved: usize,
 }
+impl ::windows_sys::core::Interface for IWMPEvents3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 525353584, data2: 42603, data3: 16931, data4: [142, 150, 38, 160, 108, 99, 214, 159] };
+}
 #[repr(C)]
 pub struct IWMPEvents4 {
     pub base__: IWMPEvents3,
     pub DeviceEstimation: unsafe extern "system" fn(this: *mut *mut Self, pdevice: *mut ::core::ffi::c_void, hrresult: ::windows_sys::core::HRESULT, qwestimatedusedspace: i64, qwestimatedspace: i64),
+}
+impl ::windows_sys::core::Interface for IWMPEvents4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 651869434, data2: 12395, data3: 16461, data4: [154, 111, 99, 10, 132, 5, 4, 141] };
 }
 #[repr(C)]
 pub struct IWMPFolderMonitorServices {
@@ -2358,12 +2512,18 @@ pub struct IWMPFolderMonitorServices {
     pub startScan: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub stopScan: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWMPFolderMonitorServices {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2022475587, data2: 58751, data3: 17309, data4: [164, 104, 91, 199, 127, 46, 89, 198] };
+}
 #[repr(C)]
 pub struct IWMPGraphCreation {
     pub base__: ::windows_sys::core::IUnknown,
     pub GraphCreationPreRender: unsafe extern "system" fn(this: *mut *mut Self, pfiltergraph: *mut ::core::ffi::c_void, preserved: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GraphCreationPostRender: unsafe extern "system" fn(this: *mut *mut Self, pfiltergraph: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetGraphCreationFlags: unsafe extern "system" fn(this: *mut *mut Self, pdwflags: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWMPGraphCreation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3216209893, data2: 50580, data3: 17257, data4: [169, 112, 222, 137, 109, 94, 206, 116] };
 }
 #[repr(C)]
 pub struct IWMPLibrary {
@@ -2379,6 +2539,9 @@ pub struct IWMPLibrary {
     mediaCollection: usize,
     pub isIdentical: unsafe extern "system" fn(this: *mut *mut Self, piwmplibrary: *mut ::core::ffi::c_void, pvbool: *mut i16) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWMPLibrary {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1039431777, data2: 32241, data3: 19487, data4: [168, 27, 76, 38, 240, 247, 167, 198] };
+}
 #[repr(C)]
 pub struct IWMPLibrary2 {
     pub base__: IWMPLibrary,
@@ -2387,11 +2550,17 @@ pub struct IWMPLibrary2 {
     #[cfg(not(feature = "Win32_Foundation"))]
     getItemInfo: usize,
 }
+impl ::windows_sys::core::Interface for IWMPLibrary2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3713501774, data2: 31153, data3: 17004, data4: [191, 143, 58, 221, 144, 114, 80, 11] };
+}
 #[repr(C)]
 pub struct IWMPLibraryServices {
     pub base__: ::windows_sys::core::IUnknown,
     pub getCountByType: unsafe extern "system" fn(this: *mut *mut Self, wmplt: WMPLibraryType, plcount: *mut i32) -> ::windows_sys::core::HRESULT,
     pub getLibraryByType: unsafe extern "system" fn(this: *mut *mut Self, wmplt: WMPLibraryType, lindex: i32, ppiwmplibrary: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWMPLibraryServices {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 969078997, data2: 7410, data3: 19806, data4: [174, 9, 215, 52, 146, 207, 158, 170] };
 }
 #[repr(C)]
 pub struct IWMPLibrarySharingServices {
@@ -2399,6 +2568,9 @@ pub struct IWMPLibrarySharingServices {
     pub isLibraryShared: unsafe extern "system" fn(this: *mut *mut Self, pvbshared: *mut i16) -> ::windows_sys::core::HRESULT,
     pub isLibrarySharingEnabled: unsafe extern "system" fn(this: *mut *mut Self, pvbenabled: *mut i16) -> ::windows_sys::core::HRESULT,
     pub showLibrarySharing: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWMPLibrarySharingServices {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2194385003, data2: 40708, data3: 18251, data4: [163, 101, 214, 221, 20, 102, 229, 65] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2460,6 +2632,10 @@ pub struct IWMPMedia {
     isReadOnlyItem: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWMPMedia {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2497011349, data2: 16300, data3: 4563, data4: [177, 85, 0, 192, 79, 121, 250, 166] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IWMPMedia2 {
     pub base__: IWMPMedia,
@@ -2467,6 +2643,10 @@ pub struct IWMPMedia2 {
     pub error: unsafe extern "system" fn(this: *mut *mut Self, ppiwmperroritem: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     error: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWMPMedia2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2877065403, data2: 5182, data3: 20132, data4: [172, 195, 228, 53, 11, 33, 6, 195] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2480,6 +2660,10 @@ pub struct IWMPMedia3 {
     pub getItemInfoByType: unsafe extern "system" fn(this: *mut *mut Self, bstrtype: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrlanguage: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, lindex: i32, pvarvalue: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     getItemInfoByType: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWMPMedia3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4044943303, data2: 61498, data3: 20404, data4: [153, 201, 28, 2, 165, 193, 6, 91] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2535,6 +2719,10 @@ pub struct IWMPMediaCollection {
     isDeleted: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWMPMediaCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2204351522, data2: 46260, data3: 19225, data4: [152, 157, 28, 215, 101, 116, 157, 209] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IWMPMediaCollection2 {
     pub base__: IWMPMediaCollection,
@@ -2555,11 +2743,18 @@ pub struct IWMPMediaCollection2 {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     getByAttributeAndMediaType: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWMPMediaCollection2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2343131125, data2: 64908, data3: 18321, data4: [184, 45, 248, 64, 64, 30, 228, 116] };
+}
 #[repr(C)]
 pub struct IWMPMediaPluginRegistrar {
     pub base__: ::windows_sys::core::IUnknown,
     pub WMPRegisterPlayerPlugin: unsafe extern "system" fn(this: *mut *mut Self, pwszfriendlyname: ::windows_sys::core::PCWSTR, pwszdescription: ::windows_sys::core::PCWSTR, pwszuninstallstring: ::windows_sys::core::PCWSTR, dwpriority: u32, guidplugintype: ::windows_sys::core::GUID, clsid: ::windows_sys::core::GUID, cmediatypes: u32, pmediatypes: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub WMPUnRegisterPlayerPlugin: unsafe extern "system" fn(this: *mut *mut Self, guidplugintype: ::windows_sys::core::GUID, clsid: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWMPMediaPluginRegistrar {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1759670341, data2: 1469, data3: 16562, data4: [151, 32, 35, 8, 140, 120, 227, 144] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2583,6 +2778,10 @@ pub struct IWMPMetadataPicture {
     URL: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWMPMetadataPicture {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1546238944, data2: 63613, data3: 19525, data4: [170, 40, 167, 15, 2, 48, 255, 169] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IWMPMetadataText {
     pub base__: super::super::System::Com::IDispatch,
@@ -2594,6 +2793,10 @@ pub struct IWMPMetadataText {
     pub text: unsafe extern "system" fn(this: *mut *mut Self, pbstrtext: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     text: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWMPMetadataText {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1989833435, data2: 5074, data3: 17890, data4: [156, 72, 83, 202, 157, 91, 116, 80] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2661,6 +2864,10 @@ pub struct IWMPNetwork {
     pub encodedFrameRate: unsafe extern "system" fn(this: *mut *mut Self, plframerate: *mut i32) -> ::windows_sys::core::HRESULT,
     pub framesSkipped: unsafe extern "system" fn(this: *mut *mut Self, plframes: *mut i32) -> ::windows_sys::core::HRESULT,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWMPNetwork {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3961632633, data2: 60911, data3: 17965, data4: [187, 164, 173, 157, 222, 43, 41, 167] };
+}
 #[repr(C)]
 pub struct IWMPNodeRealEstate {
     pub base__: ::windows_sys::core::IUnknown,
@@ -2693,6 +2900,9 @@ pub struct IWMPNodeRealEstate {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetFullScreen: usize,
 }
+impl ::windows_sys::core::Interface for IWMPNodeRealEstate {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1114968472, data2: 23120, data3: 17504, data4: [188, 180, 112, 159, 139, 220, 142, 89] };
+}
 #[repr(C)]
 pub struct IWMPNodeRealEstateHost {
     pub base__: ::windows_sys::core::IUnknown,
@@ -2705,11 +2915,17 @@ pub struct IWMPNodeRealEstateHost {
     #[cfg(not(feature = "Win32_Foundation"))]
     OnFullScreenTransition: usize,
 }
+impl ::windows_sys::core::Interface for IWMPNodeRealEstateHost {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 345049213, data2: 11371, data3: 17608, data4: [176, 25, 179, 201, 41, 210, 173, 169] };
+}
 #[repr(C)]
 pub struct IWMPNodeWindowed {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetOwnerWindow: unsafe extern "system" fn(this: *mut *mut Self, hwnd: isize) -> ::windows_sys::core::HRESULT,
     pub GetOwnerWindow: unsafe extern "system" fn(this: *mut *mut Self, phwnd: *mut isize) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWMPNodeWindowed {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2524187642, data2: 50538, data3: 17873, data4: [163, 164, 118, 41, 20, 212, 173, 233] };
 }
 #[repr(C)]
 pub struct IWMPNodeWindowedHost {
@@ -2719,6 +2935,9 @@ pub struct IWMPNodeWindowedHost {
     #[cfg(not(feature = "Win32_Foundation"))]
     OnWindowMessageFromRenderer: usize,
 }
+impl ::windows_sys::core::Interface for IWMPNodeWindowedHost {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2734702938, data2: 21674, data3: 16513, data4: [173, 191, 59, 19, 97, 13, 137, 88] };
+}
 #[repr(C)]
 pub struct IWMPNodeWindowless {
     pub base__: IWMPWindowMessageSink,
@@ -2727,6 +2946,9 @@ pub struct IWMPNodeWindowless {
     #[cfg(not(feature = "Win32_Foundation"))]
     OnDraw: usize,
 }
+impl ::windows_sys::core::Interface for IWMPNodeWindowless {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2610010541, data2: 30732, data3: 20186, data4: [184, 22, 38, 30, 186, 93, 21, 117] };
+}
 #[repr(C)]
 pub struct IWMPNodeWindowlessHost {
     pub base__: ::windows_sys::core::IUnknown,
@@ -2734,6 +2956,9 @@ pub struct IWMPNodeWindowlessHost {
     pub InvalidateRect: unsafe extern "system" fn(this: *mut *mut Self, prc: *const super::super::Foundation::RECT, ferase: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     InvalidateRect: usize,
+}
+impl ::windows_sys::core::Interface for IWMPNodeWindowlessHost {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3195017158, data2: 52788, data3: 18689, data4: [129, 6, 119, 3, 129, 170, 110, 62] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2753,6 +2978,10 @@ pub struct IWMPPlayer {
     pub uiMode: unsafe extern "system" fn(this: *mut *mut Self, pbstrmode: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     uiMode: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWMPPlayer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1811229263, data2: 14666, data3: 4563, data4: [177, 83, 0, 192, 79, 121, 250, 166] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2778,6 +3007,10 @@ pub struct IWMPPlayer2 {
     pub SetwindowlessVideo: unsafe extern "system" fn(this: *mut *mut Self, benabled: i16) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWMPPlayer2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 241893841, data2: 54279, data3: 19589, data4: [191, 95, 28, 1, 246, 21, 2, 128] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IWMPPlayer3 {
     pub base__: IWMPCore2,
@@ -2799,6 +3032,10 @@ pub struct IWMPPlayer3 {
     pub SetstretchToFit: unsafe extern "system" fn(this: *mut *mut Self, benabled: i16) -> ::windows_sys::core::HRESULT,
     pub windowlessVideo: unsafe extern "system" fn(this: *mut *mut Self, pbenabled: *mut i16) -> ::windows_sys::core::HRESULT,
     pub SetwindowlessVideo: unsafe extern "system" fn(this: *mut *mut Self, benabled: i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWMPPlayer3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1409690472, data2: 1322, data3: 19493, data4: [163, 159, 139, 99, 52, 101, 17, 212] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2833,6 +3070,10 @@ pub struct IWMPPlayer4 {
     openPlayer: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWMPPlayer4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1816755554, data2: 35097, data3: 16700, data4: [130, 219, 233, 53, 251, 62, 197, 132] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IWMPPlayerApplication {
     pub base__: super::super::System::Com::IDispatch,
@@ -2840,6 +3081,10 @@ pub struct IWMPPlayerApplication {
     pub switchToControl: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub playerDocked: unsafe extern "system" fn(this: *mut *mut Self, pbplayerdocked: *mut i16) -> ::windows_sys::core::HRESULT,
     pub hasDisplay: unsafe extern "system" fn(this: *mut *mut Self, pbhasdisplay: *mut i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWMPPlayerApplication {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1082750820, data2: 52907, data3: 18366, data4: [173, 74, 142, 40, 83, 127, 155, 191] };
 }
 #[repr(C)]
 pub struct IWMPPlayerServices {
@@ -2857,6 +3102,9 @@ pub struct IWMPPlayerServices {
     #[cfg(not(feature = "Win32_Foundation"))]
     setTaskPaneURL: usize,
 }
+impl ::windows_sys::core::Interface for IWMPPlayerServices {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 486669275, data2: 44514, data3: 19597, data4: [152, 66, 193, 144, 185, 92, 51, 6] };
+}
 #[repr(C)]
 pub struct IWMPPlayerServices2 {
     pub base__: IWMPPlayerServices,
@@ -2864,6 +3112,9 @@ pub struct IWMPPlayerServices2 {
     pub setBackgroundProcessingPriority: unsafe extern "system" fn(this: *mut *mut Self, bstrpriority: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     setBackgroundProcessingPriority: usize,
+}
+impl ::windows_sys::core::Interface for IWMPPlayerServices2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 464607535, data2: 61504, data3: 16778, data4: [159, 113, 23, 199, 81, 43, 77, 112] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2915,6 +3166,10 @@ pub struct IWMPPlaylist {
     pub moveItem: unsafe extern "system" fn(this: *mut *mut Self, lindexold: i32, lindexnew: i32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWMPPlaylist {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3589338353, data2: 4876, data3: 4563, data4: [177, 78, 0, 192, 79, 121, 250, 166] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IWMPPlaylistArray {
     pub base__: super::super::System::Com::IDispatch,
@@ -2923,6 +3178,10 @@ pub struct IWMPPlaylistArray {
     pub item: unsafe extern "system" fn(this: *mut *mut Self, lindex: i32, ppitem: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     item: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWMPPlaylistArray {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1737755072, data2: 39415, data3: 4563, data4: [159, 183, 0, 16, 90, 166, 32, 187] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2957,6 +3216,10 @@ pub struct IWMPPlaylistCollection {
     #[cfg(not(feature = "Win32_System_Com"))]
     importPlaylist: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWMPPlaylistCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 278999575, data2: 9127, data3: 17307, data4: [177, 192, 216, 71, 199, 155, 119, 116] };
+}
 #[repr(C)]
 pub struct IWMPPlugin {
     pub base__: ::windows_sys::core::IUnknown,
@@ -2966,6 +3229,9 @@ pub struct IWMPPlugin {
     pub GetCaps: unsafe extern "system" fn(this: *mut *mut Self, pdwflags: *mut u32) -> ::windows_sys::core::HRESULT,
     pub AdviseWMPServices: unsafe extern "system" fn(this: *mut *mut Self, pwmpservices: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub UnAdviseWMPServices: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWMPPlugin {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4047055472, data2: 588, data3: 17083, data4: [169, 152, 115, 223, 223, 231, 213, 167] };
 }
 #[repr(C)]
 pub struct IWMPPluginEnable {
@@ -2978,6 +3244,9 @@ pub struct IWMPPluginEnable {
     pub GetEnable: unsafe extern "system" fn(this: *mut *mut Self, pfenable: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetEnable: usize,
+}
+impl ::windows_sys::core::Interface for IWMPPluginEnable {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1607091276, data2: 31441, data3: 18333, data4: [164, 239, 64, 86, 106, 83, 9, 214] };
 }
 #[repr(C)]
 pub struct IWMPPluginUI {
@@ -3008,6 +3277,9 @@ pub struct IWMPPluginUI {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging")))]
     TranslateAccelerator: usize,
 }
+impl ::windows_sys::core::Interface for IWMPPluginUI {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1281265567, data2: 44350, data3: 19449, data4: [151, 83, 252, 211, 13, 109, 56, 221] };
+}
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IWMPQuery {
@@ -3017,6 +3289,10 @@ pub struct IWMPQuery {
     #[cfg(not(feature = "Win32_Foundation"))]
     addCondition: usize,
     pub beginNextGroup: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWMPQuery {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2684950771, data2: 42672, data3: 19451, data4: [145, 137, 253, 131, 76, 123, 197, 165] };
 }
 #[repr(C)]
 pub struct IWMPRemoteMediaServices {
@@ -3038,6 +3314,9 @@ pub struct IWMPRemoteMediaServices {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetCustomUIMode: usize,
 }
+impl ::windows_sys::core::Interface for IWMPRemoteMediaServices {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3417909063, data2: 29727, data3: 17662, data4: [171, 91, 241, 164, 143, 59, 42, 89] };
+}
 #[repr(C)]
 pub struct IWMPRenderConfig {
     pub base__: ::windows_sys::core::IUnknown,
@@ -3050,11 +3329,17 @@ pub struct IWMPRenderConfig {
     #[cfg(not(feature = "Win32_Foundation"))]
     inProcOnly: usize,
 }
+impl ::windows_sys::core::Interface for IWMPRenderConfig {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2509571777, data2: 788, data3: 20165, data4: [158, 97, 133, 40, 219, 94, 84, 120] };
+}
 #[repr(C)]
 pub struct IWMPServices {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetStreamTime: unsafe extern "system" fn(this: *mut *mut Self, prt: *mut i64) -> ::windows_sys::core::HRESULT,
     pub GetStreamState: unsafe extern "system" fn(this: *mut *mut Self, pstate: *mut WMPServices_StreamState) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWMPServices {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2947987307, data2: 7712, data3: 16792, data4: [131, 179, 25, 29, 182, 224, 177, 73] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -3106,6 +3391,10 @@ pub struct IWMPSettings {
     pub SetenableErrorDialogs: unsafe extern "system" fn(this: *mut *mut Self, fenableerrordialogs: i16) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWMPSettings {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2433012139, data2: 32969, data3: 20461, data4: [171, 240, 46, 100, 23, 166, 223, 20] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IWMPSettings2 {
     pub base__: IWMPSettings,
@@ -3119,6 +3408,10 @@ pub struct IWMPSettings2 {
     #[cfg(not(feature = "Win32_Foundation"))]
     requestMediaAccessRights: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWMPSettings2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4255725476, data2: 61134, data3: 19877, data4: [160, 182, 57, 191, 137, 173, 226, 194] };
+}
 #[repr(C)]
 pub struct IWMPSkinManager {
     pub base__: ::windows_sys::core::IUnknown,
@@ -3126,6 +3419,9 @@ pub struct IWMPSkinManager {
     pub SetVisualStyle: unsafe extern "system" fn(this: *mut *mut Self, bstrpath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     SetVisualStyle: usize,
+}
+impl ::windows_sys::core::Interface for IWMPSkinManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 124727206, data2: 60720, data3: 17547, data4: [140, 197, 63, 62, 243, 82, 156, 122] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -3136,6 +3432,10 @@ pub struct IWMPStringCollection {
     pub item: unsafe extern "system" fn(this: *mut *mut Self, lindex: i32, pbstrstring: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     item: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWMPStringCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1251435160, data2: 35853, data3: 4563, data4: [179, 137, 0, 192, 79, 104, 87, 75] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -3158,6 +3458,10 @@ pub struct IWMPStringCollection2 {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     getItemInfoByType: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWMPStringCollection2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1185768589, data2: 21489, data3: 19060, data4: [146, 226, 42, 27, 104, 214, 63, 212] };
+}
 #[repr(C)]
 pub struct IWMPSubscriptionService {
     pub base__: ::windows_sys::core::IUnknown,
@@ -3178,6 +3482,9 @@ pub struct IWMPSubscriptionService {
     #[cfg(not(feature = "Win32_Foundation"))]
     startBackgroundProcessing: usize,
 }
+impl ::windows_sys::core::Interface for IWMPSubscriptionService {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 929060344, data2: 10841, data3: 19059, data4: [149, 1, 220, 165, 39, 58, 122, 16] };
+}
 #[repr(C)]
 pub struct IWMPSubscriptionService2 {
     pub base__: IWMPSubscriptionService,
@@ -3192,10 +3499,16 @@ pub struct IWMPSubscriptionService2 {
     #[cfg(not(feature = "Win32_Foundation"))]
     prepareForSync: usize,
 }
+impl ::windows_sys::core::Interface for IWMPSubscriptionService2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2840334862, data2: 54784, data3: 20166, data4: [176, 94, 236, 157, 86, 216, 77, 224] };
+}
 #[repr(C)]
 pub struct IWMPSubscriptionServiceCallback {
     pub base__: ::windows_sys::core::IUnknown,
     pub onComplete: unsafe extern "system" fn(this: *mut *mut Self, hrresult: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWMPSubscriptionServiceCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3707883815, data2: 11714, data3: 19514, data4: [135, 110, 99, 49, 32, 121, 249, 176] };
 }
 #[repr(C)]
 pub struct IWMPSyncDevice {
@@ -3232,6 +3545,9 @@ pub struct IWMPSyncDevice {
     pub showSettings: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub isIdentical: unsafe extern "system" fn(this: *mut *mut Self, pdevice: *mut ::core::ffi::c_void, pvbool: *mut i16) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWMPSyncDevice {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2191693932, data2: 659, data3: 20432, data4: [178, 121, 178, 27, 134, 192, 88, 190] };
+}
 #[repr(C)]
 pub struct IWMPSyncDevice2 {
     pub base__: IWMPSyncDevice,
@@ -3239,6 +3555,9 @@ pub struct IWMPSyncDevice2 {
     pub setItemInfo: unsafe extern "system" fn(this: *mut *mut Self, bstritemname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrval: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     setItemInfo: usize,
+}
+impl ::windows_sys::core::Interface for IWMPSyncDevice2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2293216434, data2: 5130, data3: 17618, data4: [145, 230, 69, 67, 218, 70, 124, 209] };
 }
 #[repr(C)]
 pub struct IWMPSyncDevice3 {
@@ -3249,21 +3568,33 @@ pub struct IWMPSyncDevice3 {
     estimateSyncSize: usize,
     pub cancelEstimation: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWMPSyncDevice3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2989262329, data2: 9788, data3: 17266, data4: [160, 218, 181, 24, 219, 155, 64, 152] };
+}
 #[repr(C)]
 pub struct IWMPSyncServices {
     pub base__: ::windows_sys::core::IUnknown,
     pub deviceCount: unsafe extern "system" fn(this: *mut *mut Self, plcount: *mut i32) -> ::windows_sys::core::HRESULT,
     pub getDevice: unsafe extern "system" fn(this: *mut *mut Self, lindex: i32, ppdevice: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWMPSyncServices {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2337296639, data2: 57508, data3: 18440, data4: [179, 168, 137, 58, 158, 30, 216, 148] };
+}
 #[repr(C)]
 pub struct IWMPTranscodePolicy {
     pub base__: ::windows_sys::core::IUnknown,
     pub allowTranscode: unsafe extern "system" fn(this: *mut *mut Self, pvballow: *mut i16) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWMPTranscodePolicy {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3058481859, data2: 16412, data3: 17191, data4: [163, 232, 185, 254, 179, 168, 194, 92] };
+}
 #[repr(C)]
 pub struct IWMPUserEventSink {
     pub base__: ::windows_sys::core::IUnknown,
     pub NotifyUserEvent: unsafe extern "system" fn(this: *mut *mut Self, eventcode: i32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWMPUserEventSink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3486317170, data2: 49987, data3: 18627, data4: [162, 222, 183, 164, 64, 46, 57, 242] };
 }
 #[repr(C)]
 pub struct IWMPVideoRenderConfig {
@@ -3273,6 +3604,9 @@ pub struct IWMPVideoRenderConfig {
     #[cfg(not(feature = "Win32_Media_MediaFoundation"))]
     SetpresenterActivate: usize,
 }
+impl ::windows_sys::core::Interface for IWMPVideoRenderConfig {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1835857923, data2: 7872, data3: 19597, data4: [179, 202, 241, 142, 39, 40, 32, 116] };
+}
 #[repr(C)]
 pub struct IWMPWindowMessageSink {
     pub base__: ::windows_sys::core::IUnknown,
@@ -3280,6 +3614,9 @@ pub struct IWMPWindowMessageSink {
     pub OnWindowMessage: unsafe extern "system" fn(this: *mut *mut Self, umsg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM, plret: *mut super::super::Foundation::LRESULT, pfhandled: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     OnWindowMessage: usize,
+}
+impl ::windows_sys::core::Interface for IWMPWindowMessageSink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 973974064, data2: 37005, data3: 18313, data4: [186, 135, 174, 216, 121, 181, 196, 155] };
 }
 #[repr(C)]
 pub struct IXFeed {
@@ -3356,6 +3693,9 @@ pub struct IXFeed {
     pub UnreadItemCount: unsafe extern "system" fn(this: *mut *mut Self, puiunreaditemcount: *mut u32) -> ::windows_sys::core::HRESULT,
     pub ItemCount: unsafe extern "system" fn(this: *mut *mut Self, puiitemcount: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IXFeed {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2755754404, data2: 57590, data3: 16443, data4: [175, 141, 208, 128, 244, 37, 164, 81] };
+}
 #[repr(C)]
 pub struct IXFeed2 {
     pub base__: IXFeed,
@@ -3368,6 +3708,9 @@ pub struct IXFeed2 {
     pub Password: unsafe extern "system" fn(this: *mut *mut Self, ppszpassword: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
     pub SetCredentials: unsafe extern "system" fn(this: *mut *mut Self, pszusername: ::windows_sys::core::PCWSTR, pszpassword: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
     pub ClearCredentials: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IXFeed2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3461516919, data2: 14102, data3: 20151, data4: [149, 109, 245, 227, 117, 2, 225, 42] };
 }
 #[repr(C)]
 pub struct IXFeedEnclosure {
@@ -3386,6 +3729,9 @@ pub struct IXFeedEnclosure {
     pub RemoveFile: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub SetFile: unsafe extern "system" fn(this: *mut *mut Self, pszdownloadurl: ::windows_sys::core::PCWSTR, pszdownloadfilepath: ::windows_sys::core::PCWSTR, pszdownloadmimetype: ::windows_sys::core::PCWSTR, pszenclosurefilename: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IXFeedEnclosure {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3217013075, data2: 25679, data3: 18322, data4: [182, 156, 223, 172, 164, 203, 248, 154] };
+}
 #[repr(C)]
 pub struct IXFeedEvents {
     pub base__: ::windows_sys::core::IUnknown,
@@ -3397,6 +3743,9 @@ pub struct IXFeedEvents {
     pub FeedDownloading: unsafe extern "system" fn(this: *mut *mut Self, pszpath: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
     pub FeedDownloadCompleted: unsafe extern "system" fn(this: *mut *mut Self, pszpath: ::windows_sys::core::PCWSTR, fde: FEEDS_DOWNLOAD_ERROR) -> ::windows_sys::core::HRESULT,
     pub FeedItemCountChanged: unsafe extern "system" fn(this: *mut *mut Self, pszpath: ::windows_sys::core::PCWSTR, feicfflags: i32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IXFeedEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 372278574, data2: 4707, data3: 18011, data4: [152, 229, 254, 96, 255, 236, 74, 194] };
 }
 #[repr(C)]
 pub struct IXFeedFolder {
@@ -3429,6 +3778,9 @@ pub struct IXFeedFolder {
     pub TotalUnreadItemCount: unsafe extern "system" fn(this: *mut *mut Self, puitotalunreaditemcount: *mut u32) -> ::windows_sys::core::HRESULT,
     pub TotalItemCount: unsafe extern "system" fn(this: *mut *mut Self, puitotalitemcount: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IXFeedFolder {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1284912760, data2: 14929, data3: 19336, data4: [133, 49, 152, 185, 11, 101, 8, 242] };
+}
 #[repr(C)]
 pub struct IXFeedFolderEvents {
     pub base__: ::windows_sys::core::IUnknown,
@@ -3448,6 +3800,9 @@ pub struct IXFeedFolderEvents {
     pub FeedDownloading: unsafe extern "system" fn(this: *mut *mut Self, pszpath: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
     pub FeedDownloadCompleted: unsafe extern "system" fn(this: *mut *mut Self, pszpath: ::windows_sys::core::PCWSTR, fde: FEEDS_DOWNLOAD_ERROR) -> ::windows_sys::core::HRESULT,
     pub FeedItemCountChanged: unsafe extern "system" fn(this: *mut *mut Self, pszpath: ::windows_sys::core::PCWSTR, feicfflags: i32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IXFeedFolderEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2036643689, data2: 9034, data3: 19377, data4: [165, 244, 144, 69, 76, 138, 208, 126] };
 }
 #[repr(C)]
 pub struct IXFeedItem {
@@ -3488,16 +3843,25 @@ pub struct IXFeedItem {
     #[cfg(not(feature = "Win32_Foundation"))]
     Modified: usize,
 }
+impl ::windows_sys::core::Interface for IXFeedItem {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3881284341, data2: 59198, data3: 17230, data4: [161, 191, 43, 215, 195, 230, 15, 203] };
+}
 #[repr(C)]
 pub struct IXFeedItem2 {
     pub base__: IXFeedItem,
     pub EffectiveId: unsafe extern "system" fn(this: *mut *mut Self, puieffectiveid: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IXFeedItem2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1826237895, data2: 36883, data3: 17698, data4: [153, 112, 42, 157, 217, 234, 213, 163] };
 }
 #[repr(C)]
 pub struct IXFeedsEnum {
     pub base__: ::windows_sys::core::IUnknown,
     pub Count: unsafe extern "system" fn(this: *mut *mut Self, puicount: *mut u32) -> ::windows_sys::core::HRESULT,
     pub Item: unsafe extern "system" fn(this: *mut *mut Self, uiindex: u32, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IXFeedsEnum {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3695421909, data2: 20501, data3: 17153, data4: [140, 150, 164, 116, 52, 180, 214, 88] };
 }
 #[repr(C)]
 pub struct IXFeedsManager {
@@ -3530,6 +3894,9 @@ pub struct IXFeedsManager {
     #[cfg(not(feature = "Win32_System_Com"))]
     Normalize: usize,
     pub ItemCountLimit: unsafe extern "system" fn(this: *mut *mut Self, puiitemcountlimit: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IXFeedsManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1398268472, data2: 64274, data3: 19146, data4: [169, 48, 202, 183, 131, 43, 132, 191] };
 }
 #[doc = "*Required features: `\"Win32_Media_MediaPlayer\"`*"]
 pub const PLUGIN_ALL_MEDIASENDTO: &str = "MediaSendTo";
@@ -4109,6 +4476,10 @@ pub const WindowsMediaPlayer: ::windows_sys::core::GUID = ::windows_sys::core::G
 #[repr(C)]
 pub struct _WMPOCXEvents {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for _WMPOCXEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1811229265, data2: 14666, data3: 4563, data4: [177, 83, 0, 192, 79, 121, 250, 166] };
 }
 #[doc = "*Required features: `\"Win32_Media_MediaPlayer\"`*"]
 pub const g_szAllAuthors: &str = "AllAuthors";

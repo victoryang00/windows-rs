@@ -1665,6 +1665,10 @@ pub struct IAzApplication {
     DeleteDelegatedPolicyUserName: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IAzApplication {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2558248903, data2: 47123, data3: 19751, data4: [190, 222, 107, 165, 174, 134, 126, 149] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IAzApplication2 {
     pub base__: IAzApplication,
@@ -1676,6 +1680,10 @@ pub struct IAzApplication2 {
     pub InitializeClientContext2: unsafe extern "system" fn(this: *mut *mut Self, identifyingstring: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, varreserved: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>, ppclientcontext: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     InitializeClientContext2: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IAzApplication2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 141191343, data2: 41545, data3: 17276, data4: [177, 141, 212, 216, 109, 106, 150, 96] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1731,6 +1739,10 @@ pub struct IAzApplication3 {
     DeleteRoleAssignment: usize,
     pub BizRulesEnabled: unsafe extern "system" fn(this: *mut *mut Self, pbenabled: *mut i16) -> ::windows_sys::core::HRESULT,
     pub SetBizRulesEnabled: unsafe extern "system" fn(this: *mut *mut Self, benabled: i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IAzApplication3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 404522078, data2: 29078, data3: 19069, data4: [172, 46, 2, 12, 11, 183, 163, 3] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1860,6 +1872,10 @@ pub struct IAzApplicationGroup {
     NonMembersName: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IAzApplicationGroup {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4055319757, data2: 22694, data3: 19974, data4: [159, 191, 54, 246, 215, 121, 226, 30] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IAzApplicationGroup2 {
     pub base__: IAzApplicationGroup,
@@ -1893,6 +1909,10 @@ pub struct IAzApplicationGroup2 {
     RoleAssignments: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IAzApplicationGroup2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1057362940, data2: 46874, data3: 17998, data4: [161, 29, 91, 136, 26, 86, 206, 250] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IAzApplicationGroups {
     pub base__: super::super::System::Com::IDispatch,
@@ -1904,6 +1924,10 @@ pub struct IAzApplicationGroups {
     pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, ppenumptr: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IAzApplicationGroups {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1290169045, data2: 40764, data3: 18077, data4: [169, 17, 185, 152, 135, 167, 230, 133] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IAzApplications {
     pub base__: super::super::System::Com::IDispatch,
@@ -1913,6 +1937,10 @@ pub struct IAzApplications {
     get_Item: usize,
     pub Count: unsafe extern "system" fn(this: *mut *mut Self, plcount: *mut i32) -> ::windows_sys::core::HRESULT,
     pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, ppenumptr: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IAzApplications {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2459636137, data2: 38341, data3: 19076, data4: [162, 154, 32, 173, 66, 194, 241, 108] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2106,6 +2134,10 @@ pub struct IAzAuthorizationStore {
     CloseApplication: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IAzAuthorizationStore {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3988626601, data2: 39810, data3: 20330, data4: [158, 139, 152, 48, 30, 69, 15, 20] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IAzAuthorizationStore2 {
     pub base__: IAzAuthorizationStore,
@@ -2119,6 +2151,10 @@ pub struct IAzAuthorizationStore2 {
     CreateApplication2: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IAzAuthorizationStore2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2971555204, data2: 54647, data3: 17011, data4: [182, 197, 9, 115, 224, 248, 232, 13] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IAzAuthorizationStore3 {
     pub base__: IAzAuthorizationStore2,
@@ -2127,6 +2163,10 @@ pub struct IAzAuthorizationStore3 {
     pub UpgradeStoresFunctionalLevel: unsafe extern "system" fn(this: *mut *mut Self, lfunctionallevel: i32) -> ::windows_sys::core::HRESULT,
     pub IsFunctionalLevelUpgradeSupported: unsafe extern "system" fn(this: *mut *mut Self, lfunctionallevel: i32, pbsupported: *mut i16) -> ::windows_sys::core::HRESULT,
     pub GetSchemaVersion: unsafe extern "system" fn(this: *mut *mut Self, plmajorversion: *mut i32, plminorversion: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IAzAuthorizationStore3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2881520677, data2: 3206, data3: 20384, data4: [155, 227, 113, 137, 149, 108, 146, 110] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2148,6 +2188,10 @@ pub struct IAzBizRuleContext {
     pub GetParameter: unsafe extern "system" fn(this: *mut *mut Self, bstrparametername: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pvarparametervalue: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     GetParameter: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IAzBizRuleContext {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3784503677, data2: 54687, data3: 17758, data4: [161, 82, 148, 3, 22, 205, 119, 178] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2173,6 +2217,10 @@ pub struct IAzBizRuleInterfaces {
     pub Count: unsafe extern "system" fn(this: *mut *mut Self, plcount: *mut u32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IAzBizRuleInterfaces {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3913361607, data2: 59866, data3: 17612, data4: [176, 189, 83, 3, 111, 58, 171, 61] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IAzBizRuleParameters {
     pub base__: super::super::System::Com::IDispatch,
@@ -2194,6 +2242,10 @@ pub struct IAzBizRuleParameters {
     Remove: usize,
     pub RemoveAll: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Count: unsafe extern "system" fn(this: *mut *mut Self, plcount: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IAzBizRuleParameters {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4229392479, data2: 57949, data3: 19917, data4: [186, 225, 39, 110, 201, 83, 60, 181] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2253,6 +2305,10 @@ pub struct IAzClientContext {
     SetRoleForAccessCheck: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IAzClientContext {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4025610251, data2: 18570, data3: 18029, data4: [175, 217, 164, 1, 197, 249, 238, 245] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IAzClientContext2 {
     pub base__: IAzClientContext,
@@ -2280,6 +2336,10 @@ pub struct IAzClientContext2 {
     pub LDAPQueryDN: unsafe extern "system" fn(this: *mut *mut Self, pbstrldapquerydn: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     LDAPQueryDN: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IAzClientContext2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 722244280, data2: 8330, data3: 18570, data4: [143, 129, 228, 237, 178, 33, 17, 205] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2319,6 +2379,10 @@ pub struct IAzClientContext3 {
     Sids: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IAzClientContext3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 294211550, data2: 7659, data3: 19275, data4: [137, 7, 109, 28, 218, 31, 93, 79] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IAzNameResolver {
     pub base__: super::super::System::Com::IDispatch,
@@ -2332,6 +2396,10 @@ pub struct IAzNameResolver {
     NamesFromSids: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IAzNameResolver {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1347227413, data2: 29666, data3: 17375, data4: [168, 112, 166, 79, 64, 113, 79, 83] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IAzObjectPicker {
     pub base__: super::super::System::Com::IDispatch,
@@ -2343,6 +2411,10 @@ pub struct IAzObjectPicker {
     pub Name: unsafe extern "system" fn(this: *mut *mut Self, pbstrname: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     Name: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IAzObjectPicker {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1662192200, data2: 27034, data3: 17112, data4: [191, 1, 198, 42, 195, 251, 121, 249] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2392,6 +2464,10 @@ pub struct IAzOperation {
     Submit: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IAzOperation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1582740047, data2: 59905, data3: 19809, data4: [190, 68, 196, 155, 94, 78, 175, 116] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IAzOperation2 {
     pub base__: IAzOperation,
@@ -2399,6 +2475,10 @@ pub struct IAzOperation2 {
     pub RoleAssignments: unsafe extern "system" fn(this: *mut *mut Self, bstrscopename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, brecursive: i16, pproleassignments: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     RoleAssignments: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IAzOperation2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 526295071, data2: 17570, data3: 16772, data4: [156, 72, 167, 91, 77, 204, 140, 204] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2412,6 +2492,10 @@ pub struct IAzOperations {
     pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, ppenumptr: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IAzOperations {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2431622151, data2: 38662, data3: 18905, data4: [175, 128, 4, 56, 165, 243, 236, 53] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IAzPrincipalLocator {
     pub base__: super::super::System::Com::IDispatch,
@@ -2423,6 +2507,10 @@ pub struct IAzPrincipalLocator {
     pub ObjectPicker: unsafe extern "system" fn(this: *mut *mut Self, ppobjectpicker: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     ObjectPicker: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IAzPrincipalLocator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3854782589, data2: 44394, data3: 18834, data4: [156, 127, 116, 171, 72, 11, 68, 204] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2538,6 +2626,10 @@ pub struct IAzRole {
     MembersName: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IAzRole {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2241727885, data2: 25303, data3: 16856, data4: [160, 52, 192, 205, 93, 67, 253, 250] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IAzRoleAssignment {
     pub base__: IAzRole,
@@ -2559,6 +2651,10 @@ pub struct IAzRoleAssignment {
     Scope: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IAzRoleAssignment {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1432649009, data2: 3418, data3: 20387, data4: [180, 172, 43, 95, 154, 213, 171, 118] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IAzRoleAssignments {
     pub base__: super::super::System::Com::IDispatch,
@@ -2568,6 +2664,10 @@ pub struct IAzRoleAssignments {
     get_Item: usize,
     pub Count: unsafe extern "system" fn(this: *mut *mut Self, plcount: *mut i32) -> ::windows_sys::core::HRESULT,
     pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, ppenumptr: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IAzRoleAssignments {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2625681664, data2: 64747, data3: 19827, data4: [160, 244, 200, 59, 11, 191, 36, 129] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2591,6 +2691,10 @@ pub struct IAzRoleDefinition {
     RoleDefinitions: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IAzRoleDefinition {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3649031841, data2: 9625, data3: 17649, data4: [159, 195, 88, 233, 251, 224, 148, 102] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IAzRoleDefinitions {
     pub base__: super::super::System::Com::IDispatch,
@@ -2602,6 +2706,10 @@ pub struct IAzRoleDefinitions {
     pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, ppenumptr: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IAzRoleDefinitions {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2283742629, data2: 55125, data3: 17744, data4: [149, 122, 213, 3, 163, 179, 64, 1] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IAzRoles {
     pub base__: super::super::System::Com::IDispatch,
@@ -2611,6 +2719,10 @@ pub struct IAzRoles {
     get_Item: usize,
     pub Count: unsafe extern "system" fn(this: *mut *mut Self, plcount: *mut i32) -> ::windows_sys::core::HRESULT,
     pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, ppenumptr: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IAzRoles {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2514546969, data2: 5044, data3: 19886, data4: [182, 95, 47, 125, 96, 216, 34, 228] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2770,6 +2882,10 @@ pub struct IAzScope {
     DeletePolicyReaderName: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IAzScope {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 15017095, data2: 57485, data3: 17684, data4: [182, 46, 135, 125, 86, 69, 245, 171] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IAzScope2 {
     pub base__: IAzScope,
@@ -2807,6 +2923,10 @@ pub struct IAzScope2 {
     DeleteRoleAssignment: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IAzScope2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4003457225, data2: 51699, data3: 16610, data4: [170, 18, 209, 216, 89, 151, 39, 253] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IAzScopes {
     pub base__: super::super::System::Com::IDispatch,
@@ -2816,6 +2936,10 @@ pub struct IAzScopes {
     get_Item: usize,
     pub Count: unsafe extern "system" fn(this: *mut *mut Self, plcount: *mut i32) -> ::windows_sys::core::HRESULT,
     pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, ppenumptr: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IAzScopes {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2028030035, data2: 40798, data3: 16493, data4: [155, 145, 107, 219, 166, 151, 53, 16] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2927,6 +3051,10 @@ pub struct IAzTask {
     Submit: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IAzTask {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3415532946, data2: 11790, data3: 19052, data4: [163, 54, 184, 154, 109, 193, 227, 136] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IAzTask2 {
     pub base__: IAzTask,
@@ -2934,6 +3062,10 @@ pub struct IAzTask2 {
     pub RoleAssignments: unsafe extern "system" fn(this: *mut *mut Self, bstrscopename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, brecursive: i16, pproleassignments: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     RoleAssignments: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IAzTask2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 61449710, data2: 18632, data3: 18482, data4: [144, 37, 170, 213, 3, 196, 101, 38] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2945,6 +3077,10 @@ pub struct IAzTasks {
     get_Item: usize,
     pub Count: unsafe extern "system" fn(this: *mut *mut Self, plcount: *mut i32) -> ::windows_sys::core::HRESULT,
     pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, ppenumptr: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IAzTasks {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3006844075, data2: 19589, data3: 17288, data4: [140, 10, 197, 133, 146, 186, 211, 152] };
 }
 #[doc = "*Required features: `\"Win32_Security_Authorization\"`*"]
 pub const INHERITED_ACCESS_ENTRY: u32 = 16u32;

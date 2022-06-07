@@ -29,6 +29,9 @@ pub struct IADesktopP2 {
     #[cfg(not(feature = "Win32_System_Ole"))]
     MakeDynamicChanges: usize,
 }
+impl ::windows_sys::core::Interface for IADesktopP2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2988922082, data2: 17780, data3: 4561, data4: [152, 136, 0, 96, 151, 222, 172, 249] };
+}
 #[repr(C)]
 pub struct IActiveDesktopP {
     pub base__: ::windows_sys::core::IUnknown,
@@ -37,6 +40,9 @@ pub struct IActiveDesktopP {
     pub SetScheme: unsafe extern "system" fn(this: *mut *mut Self, pwszschemename: ::windows_sys::core::PCWSTR, dwflags: u32) -> ::windows_sys::core::HRESULT,
     pub GetScheme: unsafe extern "system" fn(this: *mut *mut Self, pwszschemename: ::windows_sys::core::PWSTR, pdwcchbuffer: *mut u32, dwflags: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IActiveDesktopP {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1380986592, data2: 60544, data3: 4560, data4: [137, 171, 0, 192, 79, 194, 151, 45] };
+}
 #[repr(C)]
 pub struct IBriefcaseInitiator {
     pub base__: ::windows_sys::core::IUnknown,
@@ -44,6 +50,9 @@ pub struct IBriefcaseInitiator {
     pub IsMonikerInBriefcase: unsafe extern "system" fn(this: *mut *mut Self, pmk: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     IsMonikerInBriefcase: usize,
+}
+impl ::windows_sys::core::Interface for IBriefcaseInitiator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2568487268, data2: 55830, data3: 4122, data4: [147, 92, 68, 69, 83, 84, 0, 0] };
 }
 #[repr(C)]
 pub struct IEmptyVolumeCache {
@@ -60,6 +69,9 @@ pub struct IEmptyVolumeCache {
     ShowProperties: usize,
     pub Deactivate: unsafe extern "system" fn(this: *mut *mut Self, pdwflags: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEmptyVolumeCache {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2412663335, data2: 1242, data3: 4561, data4: [160, 4, 0, 128, 95, 138, 190, 6] };
+}
 #[repr(C)]
 pub struct IEmptyVolumeCache2 {
     pub base__: IEmptyVolumeCache,
@@ -68,11 +80,17 @@ pub struct IEmptyVolumeCache2 {
     #[cfg(not(feature = "Win32_System_Registry"))]
     InitializeEx: usize,
 }
+impl ::windows_sys::core::Interface for IEmptyVolumeCache2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 45605818, data2: 19891, data3: 4562, data4: [178, 217, 0, 192, 79, 142, 236, 140] };
+}
 #[repr(C)]
 pub struct IEmptyVolumeCacheCallBack {
     pub base__: ::windows_sys::core::IUnknown,
     pub ScanProgress: unsafe extern "system" fn(this: *mut *mut Self, dwlspaceused: u64, dwflags: u32, pcwszstatus: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
     pub PurgeProgress: unsafe extern "system" fn(this: *mut *mut Self, dwlspacefreed: u64, dwlspacetofree: u64, dwflags: u32, pcwszstatus: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IEmptyVolumeCacheCallBack {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1853436769, data2: 29638, data3: 4560, data4: [132, 105, 0, 170, 0, 68, 41, 1] };
 }
 #[repr(C)]
 pub struct IReconcilableObject {
@@ -83,11 +101,17 @@ pub struct IReconcilableObject {
     Reconcile: usize,
     pub GetProgressFeedbackMaxEstimate: unsafe extern "system" fn(this: *mut *mut Self, pulprogressmax: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IReconcilableObject {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2568487266, data2: 55830, data3: 4122, data4: [147, 92, 68, 69, 83, 84, 0, 0] };
+}
 #[repr(C)]
 pub struct IReconcileInitiator {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetAbortCallback: unsafe extern "system" fn(this: *mut *mut Self, punkforabort: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetProgressFeedback: unsafe extern "system" fn(this: *mut *mut Self, ulprogress: u32, ulprogressmax: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IReconcileInitiator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2568487265, data2: 55830, data3: 4122, data4: [147, 92, 68, 69, 83, 84, 0, 0] };
 }
 #[doc = "*Required features: `\"Win32_UI_LegacyWindowsEnvironmentFeatures\"`*"]
 pub const REC_E_ABORTED: ::windows_sys::core::HRESULT = -2147217408i32;

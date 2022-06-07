@@ -713,15 +713,24 @@ pub struct ICreateObject {
     pub base__: ::windows_sys::core::IUnknown,
     pub CreateObject: unsafe extern "system" fn(this: *mut *mut Self, clsid: *const ::windows_sys::core::GUID, punkouter: *mut ::core::ffi::c_void, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ICreateObject {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1964120402, data2: 57552, data3: 17381, data4: [147, 128, 29, 128, 72, 58, 207, 114] };
+}
 #[repr(C)]
 pub struct IDelayedPropertyStoreFactory {
     pub base__: IPropertyStoreFactory,
     pub GetDelayedPropertyStore: unsafe extern "system" fn(this: *mut *mut Self, flags: GETPROPERTYSTOREFLAGS, dwstoreid: u32, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDelayedPropertyStoreFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1087657855, data2: 57911, data3: 19419, data4: [189, 105, 88, 240, 137, 67, 27, 106] };
+}
 #[repr(C)]
 pub struct IInitializeWithFile {
     pub base__: ::windows_sys::core::IUnknown,
     pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, pszfilepath: ::windows_sys::core::PCWSTR, grfmode: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IInitializeWithFile {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3083945318, data2: 1289, data3: 19662, data4: [167, 31, 10, 85, 66, 51, 189, 155] };
 }
 #[repr(C)]
 pub struct IInitializeWithStream {
@@ -730,6 +739,9 @@ pub struct IInitializeWithStream {
     pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, pstream: *mut ::core::ffi::c_void, grfmode: u32) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     Initialize: usize,
+}
+impl ::windows_sys::core::Interface for IInitializeWithStream {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3089413277, data2: 8876, data3: 16737, data4: [172, 138, 153, 22, 232, 250, 63, 127] };
 }
 #[repr(C)]
 pub struct INamedPropertyStore {
@@ -748,11 +760,17 @@ pub struct INamedPropertyStore {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetNameAt: usize,
 }
+impl ::windows_sys::core::Interface for INamedPropertyStore {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1902136079, data2: 38832, data3: 18276, data4: [133, 119, 47, 19, 233, 138, 20, 34] };
+}
 #[repr(C)]
 pub struct IObjectWithPropertyKey {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetPropertyKey: unsafe extern "system" fn(this: *mut *mut Self, key: *const PROPERTYKEY) -> ::windows_sys::core::HRESULT,
     pub GetPropertyKey: unsafe extern "system" fn(this: *mut *mut Self, pkey: *mut PROPERTYKEY) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IObjectWithPropertyKey {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4228685991, data2: 49942, data3: 20434, data4: [144, 49, 62, 98, 142, 109, 79, 35] };
 }
 #[repr(C)]
 pub struct IPersistSerializedPropStorage {
@@ -761,11 +779,17 @@ pub struct IPersistSerializedPropStorage {
     pub SetPropertyStorage: unsafe extern "system" fn(this: *mut *mut Self, psps: *const SERIALIZEDPROPSTORAGE, cb: u32) -> ::windows_sys::core::HRESULT,
     pub GetPropertyStorage: unsafe extern "system" fn(this: *mut *mut Self, ppsps: *mut *mut SERIALIZEDPROPSTORAGE, pcb: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPersistSerializedPropStorage {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3810045271, data2: 2720, data3: 17679, data4: [172, 165, 111, 171, 113, 3, 217, 23] };
+}
 #[repr(C)]
 pub struct IPersistSerializedPropStorage2 {
     pub base__: IPersistSerializedPropStorage,
     pub GetPropertyStorageSize: unsafe extern "system" fn(this: *mut *mut Self, pcb: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetPropertyStorageBuffer: unsafe extern "system" fn(this: *mut *mut Self, psps: *mut SERIALIZEDPROPSTORAGE, cb: u32, pcbwritten: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPersistSerializedPropStorage2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2012215912, data2: 20376, data3: 17254, data4: [186, 114, 87, 59, 61, 136, 5, 113] };
 }
 #[repr(C)]
 pub struct IPropertyChange {
@@ -774,6 +798,9 @@ pub struct IPropertyChange {
     pub ApplyToPropVariant: unsafe extern "system" fn(this: *mut *mut Self, propvarin: *const super::super::super::System::Com::StructuredStorage::PROPVARIANT, ppropvarout: *mut super::super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
     ApplyToPropVariant: usize,
+}
+impl ::windows_sys::core::Interface for IPropertyChange {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4179082378, data2: 7098, data3: 17528, data4: [162, 69, 27, 222, 3, 235, 148, 49] };
 }
 #[repr(C)]
 pub struct IPropertyChangeArray {
@@ -785,6 +812,9 @@ pub struct IPropertyChangeArray {
     pub AppendOrReplace: unsafe extern "system" fn(this: *mut *mut Self, ppropchange: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub RemoveAt: unsafe extern "system" fn(this: *mut *mut Self, iindex: u32) -> ::windows_sys::core::HRESULT,
     pub IsKeyInArray: unsafe extern "system" fn(this: *mut *mut Self, key: *const PROPERTYKEY) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPropertyChangeArray {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 940530861, data2: 7006, data3: 17138, data4: [128, 93, 99, 127, 211, 146, 211, 30] };
 }
 #[repr(C)]
 pub struct IPropertyDescription {
@@ -829,6 +859,9 @@ pub struct IPropertyDescription {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
     IsValueCanonical: usize,
 }
+impl ::windows_sys::core::Interface for IPropertyDescription {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1870255448, data2: 16022, data3: 17737, data4: [161, 209, 125, 117, 210, 40, 136, 20] };
+}
 #[repr(C)]
 pub struct IPropertyDescription2 {
     pub base__: IPropertyDescription,
@@ -837,11 +870,17 @@ pub struct IPropertyDescription2 {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
     GetImageReferenceForValue: usize,
 }
+impl ::windows_sys::core::Interface for IPropertyDescription2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1473441261, data2: 20578, data3: 16398, data4: [177, 7, 93, 174, 121, 254, 87, 166] };
+}
 #[repr(C)]
 pub struct IPropertyDescriptionAliasInfo {
     pub base__: IPropertyDescription,
     pub GetSortByAlias: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetAdditionalSortByAliases: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPropertyDescriptionAliasInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4134601980, data2: 11001, data3: 18173, data4: [179, 45, 36, 60, 20, 4, 243, 209] };
 }
 #[repr(C)]
 pub struct IPropertyDescriptionList {
@@ -849,10 +888,16 @@ pub struct IPropertyDescriptionList {
     pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, pcelem: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetAt: unsafe extern "system" fn(this: *mut *mut Self, ielem: u32, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPropertyDescriptionList {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 530563536, data2: 50075, data3: 19238, data4: [129, 127, 1, 25, 103, 211, 68, 14] };
+}
 #[repr(C)]
 pub struct IPropertyDescriptionRelatedPropertyInfo {
     pub base__: IPropertyDescription,
     pub GetRelatedProperty: unsafe extern "system" fn(this: *mut *mut Self, pszrelationshipname: ::windows_sys::core::PCWSTR, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPropertyDescriptionRelatedPropertyInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1349751796, data2: 10813, data3: 19040, data4: [181, 158, 217, 199, 87, 22, 194, 221] };
 }
 #[repr(C)]
 pub struct IPropertyDescriptionSearchInfo {
@@ -861,6 +906,9 @@ pub struct IPropertyDescriptionSearchInfo {
     pub GetColumnIndexType: unsafe extern "system" fn(this: *mut *mut Self, ppdcitype: *mut PROPDESC_COLUMNINDEX_TYPE) -> ::windows_sys::core::HRESULT,
     pub GetProjectionString: unsafe extern "system" fn(this: *mut *mut Self, ppszprojection: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
     pub GetMaxSize: unsafe extern "system" fn(this: *mut *mut Self, pcbmaxsize: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPropertyDescriptionSearchInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 126849469, data2: 10658, data3: 17423, data4: [146, 78, 70, 162, 145, 82, 69, 32] };
 }
 #[repr(C)]
 pub struct IPropertyEnumType {
@@ -880,10 +928,16 @@ pub struct IPropertyEnumType {
     GetRangeSetValue: usize,
     pub GetDisplayText: unsafe extern "system" fn(this: *mut *mut Self, ppszdisplay: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPropertyEnumType {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 300022777, data2: 11606, data3: 19051, data4: [141, 179, 124, 209, 147, 164, 113, 242] };
+}
 #[repr(C)]
 pub struct IPropertyEnumType2 {
     pub base__: IPropertyEnumType,
     pub GetImageReference: unsafe extern "system" fn(this: *mut *mut Self, ppszimageres: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPropertyEnumType2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2607678748, data2: 24029, data3: 17185, data4: [144, 112, 254, 42, 203, 85, 231, 148] };
 }
 #[repr(C)]
 pub struct IPropertyEnumTypeList {
@@ -895,6 +949,9 @@ pub struct IPropertyEnumTypeList {
     pub FindMatchingIndex: unsafe extern "system" fn(this: *mut *mut Self, propvarcmp: *const super::super::super::System::Com::StructuredStorage::PROPVARIANT, pnindex: *mut u32) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
     FindMatchingIndex: usize,
+}
+impl ::windows_sys::core::Interface for IPropertyEnumTypeList {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2845049076, data2: 15748, data3: 17751, data4: [148, 186, 18, 66, 251, 44, 201, 166] };
 }
 #[repr(C)]
 pub struct IPropertyStore {
@@ -911,6 +968,9 @@ pub struct IPropertyStore {
     SetValue: usize,
     pub Commit: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPropertyStore {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2288881387, data2: 36082, data3: 17478, data4: [141, 2, 205, 186, 29, 189, 207, 153] };
+}
 #[repr(C)]
 pub struct IPropertyStoreCache {
     pub base__: IPropertyStore,
@@ -925,16 +985,25 @@ pub struct IPropertyStoreCache {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
     SetValueAndState: usize,
 }
+impl ::windows_sys::core::Interface for IPropertyStoreCache {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 806815085, data2: 39569, data3: 20112, data4: [147, 125, 116, 108, 114, 171, 191, 79] };
+}
 #[repr(C)]
 pub struct IPropertyStoreCapabilities {
     pub base__: ::windows_sys::core::IUnknown,
     pub IsPropertyWritable: unsafe extern "system" fn(this: *mut *mut Self, key: *const PROPERTYKEY) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPropertyStoreCapabilities {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3370308966, data2: 6254, data3: 19785, data4: [191, 65, 105, 9, 234, 213, 106, 204] };
 }
 #[repr(C)]
 pub struct IPropertyStoreFactory {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetPropertyStore: unsafe extern "system" fn(this: *mut *mut Self, flags: GETPROPERTYSTOREFLAGS, punkfactory: *mut ::core::ffi::c_void, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetPropertyStoreForKeys: unsafe extern "system" fn(this: *mut *mut Self, rgkeys: *const PROPERTYKEY, ckeys: u32, flags: GETPROPERTYSTOREFLAGS, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPropertyStoreFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3155233645, data2: 22504, data3: 16712, data4: [169, 198, 145, 1, 90, 178, 243, 165] };
 }
 #[repr(C)]
 pub struct IPropertySystem {
@@ -955,10 +1024,16 @@ pub struct IPropertySystem {
     pub UnregisterPropertySchema: unsafe extern "system" fn(this: *mut *mut Self, pszpath: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
     pub RefreshPropertySchema: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPropertySystem {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3396488842, data2: 50150, data3: 17451, data4: [136, 164, 111, 176, 219, 128, 53, 163] };
+}
 #[repr(C)]
 pub struct IPropertySystemChangeNotify {
     pub base__: ::windows_sys::core::IUnknown,
     pub SchemaRefreshed: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPropertySystemChangeNotify {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4204093401, data2: 14526, data3: 18553, data4: [166, 206, 130, 76, 245, 45, 96, 159] };
 }
 #[repr(C)]
 pub struct IPropertyUI {
@@ -974,6 +1049,9 @@ pub struct IPropertyUI {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
     FormatForDisplay: usize,
     pub GetHelpInfo: unsafe extern "system" fn(this: *mut *mut Self, fmtid: *const ::windows_sys::core::GUID, pid: u32, pwszhelpfile: ::windows_sys::core::PWSTR, cch: u32, puhelpid: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPropertyUI {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1970961823, data2: 37274, data3: 16664, data4: [153, 215, 219, 178, 8, 200, 204, 102] };
 }
 pub const InMemoryPropertyStore: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2583879698, data2: 25347, data3: 19998, data4: [185, 161, 99, 15, 128, 37, 146, 197] };
 pub const InMemoryPropertyStoreMarshalByValue: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3570011693, data2: 28071, data3: 19317, data4: [169, 124, 95, 48, 111, 14, 174, 220] };

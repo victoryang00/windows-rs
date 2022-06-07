@@ -3014,12 +3014,18 @@ pub struct IAsyncGetSendNotificationCookie {
     #[cfg(not(feature = "Win32_Foundation"))]
     FinishAsyncCallWithData: usize,
 }
+impl ::windows_sys::core::Interface for IAsyncGetSendNotificationCookie {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID::zeroed();
+}
 #[repr(C)]
 pub struct IAsyncGetSrvReferralCookie {
     pub base__: ::windows_sys::core::IUnknown,
     pub FinishAsyncCall: unsafe extern "system" fn(this: *mut *mut Self, param0: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
     pub CancelAsyncCall: unsafe extern "system" fn(this: *mut *mut Self, param0: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
     pub FinishAsyncCallWithData: unsafe extern "system" fn(this: *mut *mut Self, param0: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAsyncGetSrvReferralCookie {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID::zeroed();
 }
 #[repr(C)]
 pub struct IBidiAsyncNotifyChannel {
@@ -3030,6 +3036,9 @@ pub struct IBidiAsyncNotifyChannel {
     pub AsyncGetNotificationSendResponse: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut ::core::ffi::c_void, param1: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub AsyncCloseChannel: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut ::core::ffi::c_void, param1: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IBidiAsyncNotifyChannel {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1395136759, data2: 37403, data3: 20402, data4: [191, 248, 47, 79, 213, 46, 190, 191] };
+}
 #[repr(C)]
 pub struct IBidiRequest {
     pub base__: ::windows_sys::core::IUnknown,
@@ -3038,6 +3047,9 @@ pub struct IBidiRequest {
     pub GetResult: unsafe extern "system" fn(this: *mut *mut Self, phr: *mut ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
     pub GetOutputData: unsafe extern "system" fn(this: *mut *mut Self, dwindex: u32, ppszschema: *mut ::windows_sys::core::PWSTR, pdwtype: *mut u32, ppdata: *mut *mut u8, usize: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetEnumCount: unsafe extern "system" fn(this: *mut *mut Self, pdwtotal: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IBidiRequest {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2402585559, data2: 19271, data3: 18261, data4: [138, 157, 15, 66, 45, 243, 220, 137] };
 }
 #[repr(C)]
 pub struct IBidiRequestContainer {
@@ -3049,6 +3061,9 @@ pub struct IBidiRequestContainer {
     GetEnumObject: usize,
     pub GetRequestCount: unsafe extern "system" fn(this: *mut *mut Self, pucount: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IBidiRequestContainer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3612538560, data2: 38056, data3: 17013, data4: [167, 125, 143, 29, 26, 17, 33, 174] };
+}
 #[repr(C)]
 pub struct IBidiSpl {
     pub base__: ::windows_sys::core::IUnknown,
@@ -3056,6 +3071,9 @@ pub struct IBidiSpl {
     pub UnbindDevice: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub SendRecv: unsafe extern "system" fn(this: *mut *mut Self, pszaction: ::windows_sys::core::PCWSTR, prequest: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub MultiSendRecv: unsafe extern "system" fn(this: *mut *mut Self, pszaction: ::windows_sys::core::PCWSTR, prequestcontainer: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IBidiSpl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3581991950, data2: 56889, data3: 17993, data4: [186, 168, 191, 11, 133, 160, 58, 151] };
 }
 #[repr(C)]
 pub struct IBidiSpl2 {
@@ -3070,6 +3088,9 @@ pub struct IBidiSpl2 {
     pub SendRecvXMLStream: unsafe extern "system" fn(this: *mut *mut Self, psrequest: *mut ::core::ffi::c_void, ppsresponse: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     SendRecvXMLStream: usize,
+}
+impl ::windows_sys::core::Interface for IBidiSpl2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 244273592, data2: 33395, data3: 18694, data4: [142, 123, 190, 69, 63, 253, 46, 43] };
 }
 #[doc = "*Required features: `\"Win32_Graphics_Printing\"`*"]
 pub const IDI_CPSUI_ADVANCE: u32 = 64058u32;
@@ -3695,6 +3716,9 @@ pub struct IFixedDocument {
     pub GetPrintTicket: unsafe extern "system" fn(this: *mut *mut Self, ppprintticket: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetPrintTicket: unsafe extern "system" fn(this: *mut *mut Self, pprintticket: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IFixedDocument {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4062366367, data2: 39272, data3: 19897, data4: [129, 189, 171, 174, 191, 21, 249, 63] };
+}
 #[repr(C)]
 pub struct IFixedDocumentSequence {
     pub base__: ::windows_sys::core::IUnknown,
@@ -3704,6 +3728,9 @@ pub struct IFixedDocumentSequence {
     GetUri: usize,
     pub GetPrintTicket: unsafe extern "system" fn(this: *mut *mut Self, ppprintticket: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetPrintTicket: unsafe extern "system" fn(this: *mut *mut Self, pprintticket: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IFixedDocumentSequence {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2150158721, data2: 11314, data3: 16969, data4: [132, 147, 27, 251, 34, 4, 85, 116] };
 }
 #[repr(C)]
 pub struct IFixedPage {
@@ -3716,6 +3743,9 @@ pub struct IFixedPage {
     pub DeleteResource: unsafe extern "system" fn(this: *mut *mut Self, uri: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
     pub GetXpsPartIterator: unsafe extern "system" fn(this: *mut *mut Self, pxpspartit: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IFixedPage {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1033856072, data2: 32405, data3: 19637, data4: [148, 251, 1, 128, 194, 136, 58, 87] };
+}
 #[cfg(feature = "Win32_System_Ole")]
 #[repr(C)]
 pub struct IImgCreateErrorInfo {
@@ -3724,6 +3754,10 @@ pub struct IImgCreateErrorInfo {
     pub AttachToErrorInfo: unsafe extern "system" fn(this: *mut *mut Self, perrorinfo: *mut __MIDL___MIDL_itf_imgerror_0000_0000_0001) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     AttachToErrorInfo: usize,
+}
+#[cfg(feature = "Win32_System_Ole")]
+impl ::windows_sys::core::Interface for IImgCreateErrorInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 475375180, data2: 1997, data3: 20405, data4: [144, 247, 183, 83, 217, 31, 12, 158] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -3749,11 +3783,18 @@ pub struct IImgErrorInfo {
     #[cfg(not(feature = "Win32_Foundation"))]
     DetachErrorInfo: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IImgErrorInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 734940878, data2: 54030, data3: 17498, data4: [148, 35, 104, 41, 190, 148, 90, 216] };
+}
 #[repr(C)]
 pub struct IInterFilterCommunicator {
     pub base__: ::windows_sys::core::IUnknown,
     pub RequestReader: unsafe extern "system" fn(this: *mut *mut Self, ppireader: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub RequestWriter: unsafe extern "system" fn(this: *mut *mut Self, ppiwriter: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IInterFilterCommunicator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1303322217, data2: 33277, data3: 17965, data4: [148, 15, 140, 211, 221, 245, 111, 202] };
 }
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Graphics_Printing\"`*"]
@@ -3832,9 +3873,15 @@ pub struct IPartBase {
     pub GetPartCompression: unsafe extern "system" fn(this: *mut *mut Self, pcompression: *mut EXpsCompressionOptions) -> ::windows_sys::core::HRESULT,
     pub SetPartCompression: unsafe extern "system" fn(this: *mut *mut Self, compression: EXpsCompressionOptions) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPartBase {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 919936552, data2: 13982, data3: 17338, data4: [166, 102, 149, 64, 198, 44, 63, 88] };
+}
 #[repr(C)]
 pub struct IPartColorProfile {
     pub base__: IPartBase,
+}
+impl ::windows_sys::core::Interface for IPartColorProfile {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1674357083, data2: 32024, data3: 18274, data4: [177, 94, 152, 101, 134, 147, 210, 74] };
 }
 #[repr(C)]
 pub struct IPartDiscardControl {
@@ -3843,6 +3890,9 @@ pub struct IPartDiscardControl {
     pub GetDiscardProperties: unsafe extern "system" fn(this: *mut *mut Self, urisentinelpage: *mut super::super::Foundation::BSTR, uriparttodiscard: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetDiscardProperties: usize,
+}
+impl ::windows_sys::core::Interface for IPartDiscardControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3426028544, data2: 2395, data3: 17061, data4: [191, 15, 200, 120, 14, 218, 219, 60] };
 }
 #[repr(C)]
 pub struct IPartFont {
@@ -3854,10 +3904,16 @@ pub struct IPartFont {
     pub SetFontContent: unsafe extern "system" fn(this: *mut *mut Self, pcontenttype: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
     pub SetFontOptions: unsafe extern "system" fn(this: *mut *mut Self, options: EXpsFontOptions) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPartFont {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3766476971, data2: 4388, data3: 17360, data4: [168, 101, 232, 255, 182, 163, 234, 130] };
+}
 #[repr(C)]
 pub struct IPartFont2 {
     pub base__: IPartFont,
     pub GetFontRestriction: unsafe extern "system" fn(this: *mut *mut Self, prestriction: *mut EXpsFontRestriction) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPartFont2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1360921183, data2: 54987, data3: 17342, data4: [191, 101, 99, 254, 136, 81, 90, 57] };
 }
 #[repr(C)]
 pub struct IPartImage {
@@ -3868,13 +3924,22 @@ pub struct IPartImage {
     GetImageProperties: usize,
     pub SetImageContent: unsafe extern "system" fn(this: *mut *mut Self, pcontenttype: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPartImage {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1918840380, data2: 16410, data3: 18181, data4: [157, 224, 254, 111, 19, 83, 184, 127] };
+}
 #[repr(C)]
 pub struct IPartPrintTicket {
     pub base__: IPartBase,
 }
+impl ::windows_sys::core::Interface for IPartPrintTicket {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1242517750, data2: 63906, data3: 16880, data4: [153, 231, 90, 233, 85, 190, 142, 158] };
+}
 #[repr(C)]
 pub struct IPartResourceDictionary {
     pub base__: IPartBase,
+}
+impl ::windows_sys::core::Interface for IPartResourceDictionary {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 382717549, data2: 59204, data3: 20403, data4: [180, 116, 241, 213, 79, 2, 74, 1] };
 }
 #[repr(C)]
 pub struct IPartThumbnail {
@@ -3885,16 +3950,25 @@ pub struct IPartThumbnail {
     GetThumbnailProperties: usize,
     pub SetThumbnailContent: unsafe extern "system" fn(this: *mut *mut Self, pcontenttype: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPartThumbnail {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 41865673, data2: 47673, data3: 19653, data4: [170, 85, 126, 195, 160, 222, 23, 26] };
+}
 #[repr(C)]
 pub struct IPrintAsyncCookie {
     pub base__: ::windows_sys::core::IUnknown,
     pub FinishAsyncCall: unsafe extern "system" fn(this: *mut *mut Self, param0: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
     pub CancelAsyncCall: unsafe extern "system" fn(this: *mut *mut Self, param0: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPrintAsyncCookie {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID::zeroed();
+}
 #[repr(C)]
 pub struct IPrintAsyncNewChannelCookie {
     pub base__: IPrintAsyncCookie,
     pub FinishAsyncCallWithData: unsafe extern "system" fn(this: *mut *mut Self, param0: *const *mut ::core::ffi::c_void, param1: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPrintAsyncNewChannelCookie {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID::zeroed();
 }
 #[repr(C)]
 pub struct IPrintAsyncNotify {
@@ -3902,11 +3976,17 @@ pub struct IPrintAsyncNotify {
     pub CreatePrintAsyncNotifyChannel: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: *const ::windows_sys::core::GUID, param2: PrintAsyncNotifyUserFilter, param3: PrintAsyncNotifyConversationStyle, param4: *mut ::core::ffi::c_void, param5: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub CreatePrintAsyncNotifyRegistration: unsafe extern "system" fn(this: *mut *mut Self, param0: *const ::windows_sys::core::GUID, param1: PrintAsyncNotifyUserFilter, param2: PrintAsyncNotifyConversationStyle, param3: *mut ::core::ffi::c_void, param4: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPrintAsyncNotify {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1395136759, data2: 37403, data3: 20402, data4: [191, 248, 47, 79, 213, 46, 190, 191] };
+}
 #[repr(C)]
 pub struct IPrintAsyncNotifyCallback {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnEventNotify: unsafe extern "system" fn(this: *mut *mut Self, pchannel: *mut ::core::ffi::c_void, pdata: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub ChannelClosed: unsafe extern "system" fn(this: *mut *mut Self, pchannel: *mut ::core::ffi::c_void, pdata: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPrintAsyncNotifyCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2112828609, data2: 40338, data3: 19609, data4: [179, 179, 219, 148, 169, 212, 25, 27] };
 }
 #[repr(C)]
 pub struct IPrintAsyncNotifyChannel {
@@ -3914,17 +3994,26 @@ pub struct IPrintAsyncNotifyChannel {
     pub SendNotification: unsafe extern "system" fn(this: *mut *mut Self, pdata: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub CloseChannel: unsafe extern "system" fn(this: *mut *mut Self, pdata: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPrintAsyncNotifyChannel {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1246769585, data2: 7999, data3: 19888, data4: [164, 98, 69, 48, 237, 139, 4, 81] };
+}
 #[repr(C)]
 pub struct IPrintAsyncNotifyDataObject {
     pub base__: ::windows_sys::core::IUnknown,
     pub AcquireData: unsafe extern "system" fn(this: *mut *mut Self, ppnotificationdata: *mut *mut u8, psize: *mut u32, ppschema: *mut *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub ReleaseData: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPrintAsyncNotifyDataObject {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2010075454, data2: 23881, data3: 18313, data4: [159, 48, 208, 130, 43, 51, 92, 13] };
+}
 #[repr(C)]
 pub struct IPrintAsyncNotifyRegistration {
     pub base__: ::windows_sys::core::IUnknown,
     pub RegisterForNotifications: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub UnregisterForNotifications: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPrintAsyncNotifyRegistration {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 258942902, data2: 28550, data3: 17809, data4: [146, 3, 100, 195, 191, 173, 237, 254] };
 }
 #[repr(C)]
 pub struct IPrintAsyncNotifyServerReferral {
@@ -3933,15 +4022,24 @@ pub struct IPrintAsyncNotifyServerReferral {
     pub AsyncGetServerReferral: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetServerReferral: unsafe extern "system" fn(this: *mut *mut Self, prmtserverreferral: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPrintAsyncNotifyServerReferral {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID::zeroed();
+}
 #[repr(C)]
 pub struct IPrintBidiAsyncNotifyRegistration {
     pub base__: IPrintAsyncNotifyRegistration,
     pub AsyncGetNewChannel: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPrintBidiAsyncNotifyRegistration {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID::zeroed();
+}
 #[repr(C)]
 pub struct IPrintClassObjectFactory {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetPrintClassObject: unsafe extern "system" fn(this: *mut *mut Self, pszprintername: ::windows_sys::core::PCWSTR, riid: *const ::windows_sys::core::GUID, ppnewobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPrintClassObjectFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2599785437, data2: 39682, data3: 18600, data4: [155, 173, 105, 172, 228, 35, 248, 139] };
 }
 #[repr(C)]
 pub struct IPrintCoreHelper {
@@ -3968,12 +4066,18 @@ pub struct IPrintCoreHelper {
     pub SetFontSubstitution: unsafe extern "system" fn(this: *mut *mut Self, psztruetypefontname: ::windows_sys::core::PCWSTR, pszdevfontname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
     pub CreateInstanceOfMSXMLObject: unsafe extern "system" fn(this: *mut *mut Self, rclsid: *const ::windows_sys::core::GUID, punkouter: *mut ::core::ffi::c_void, dwclscontext: u32, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPrintCoreHelper {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2828977470, data2: 14597, data3: 18886, data4: [156, 26, 192, 168, 129, 23, 253, 182] };
+}
 #[repr(C)]
 pub struct IPrintCoreHelperPS {
     pub base__: IPrintCoreHelper,
     pub GetGlobalAttribute: unsafe extern "system" fn(this: *mut *mut Self, pszattribute: ::windows_sys::core::PCSTR, pdwdatatype: *mut u32, ppbdata: *mut *mut u8, pcbsize: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetFeatureAttribute: unsafe extern "system" fn(this: *mut *mut Self, pszfeaturekeyword: ::windows_sys::core::PCSTR, pszattribute: ::windows_sys::core::PCSTR, pdwdatatype: *mut u32, ppbdata: *mut *mut u8, pcbsize: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetOptionAttribute: unsafe extern "system" fn(this: *mut *mut Self, pszfeaturekeyword: ::windows_sys::core::PCSTR, pszoptionkeyword: ::windows_sys::core::PCSTR, pszattribute: ::windows_sys::core::PCSTR, pdwdatatype: *mut u32, ppbdata: *mut *mut u8, pcbsize: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPrintCoreHelperPS {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3267448687, data2: 38355, data3: 19811, data4: [150, 207, 107, 217, 230, 201, 7, 194] };
 }
 #[repr(C)]
 pub struct IPrintCoreHelperUni {
@@ -3987,6 +4091,9 @@ pub struct IPrintCoreHelperUni {
     #[cfg(not(feature = "Win32_System_Com"))]
     CreateDefaultGDLSnapshot: usize,
 }
+impl ::windows_sys::core::Interface for IPrintCoreHelperUni {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2123256278, data2: 58862, data3: 17446, data4: [129, 123, 149, 139, 148, 68, 235, 121] };
+}
 #[repr(C)]
 pub struct IPrintCoreHelperUni2 {
     pub base__: IPrintCoreHelperUni,
@@ -3994,6 +4101,9 @@ pub struct IPrintCoreHelperUni2 {
     pub GetNamedCommand: unsafe extern "system" fn(this: *mut *mut Self, pdevmode: *const super::Gdi::DEVMODEA, cbsize: u32, pszcommandname: ::windows_sys::core::PCWSTR, ppcommandbytes: *mut *mut u8, pcbcommandsize: *mut u32) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi")))]
     GetNamedCommand: usize,
+}
+impl ::windows_sys::core::Interface for IPrintCoreHelperUni2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1821048316, data2: 60112, data3: 19757, data4: [128, 113, 155, 240, 23, 90, 108, 58] };
 }
 #[repr(C)]
 pub struct IPrintCoreUI2 {
@@ -4039,6 +4149,9 @@ pub struct IPrintCoreUI2 {
     #[cfg(not(feature = "Win32_Foundation"))]
     QuerySimulationSupport: usize,
 }
+impl ::windows_sys::core::Interface for IPrintCoreUI2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 140300234, data2: 15071, data3: 19614, data4: [180, 145, 216, 81, 166, 237, 201, 151] };
+}
 #[repr(C)]
 pub struct IPrintJob {
     pub base__: ::windows_sys::core::IUnknown,
@@ -4053,6 +4166,9 @@ pub struct IPrintJob {
     pub SubmissionTime: unsafe extern "system" fn(this: *mut *mut Self, psubmissiontime: *mut f64) -> ::windows_sys::core::HRESULT,
     pub RequestCancel: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPrintJob {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3077692088, data2: 4738, data3: 16823, data4: [133, 140, 242, 6, 228, 210, 5, 119] };
+}
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IPrintJobCollection {
@@ -4060,6 +4176,10 @@ pub struct IPrintJobCollection {
     pub Count: unsafe extern "system" fn(this: *mut *mut Self, pulcount: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetAt: unsafe extern "system" fn(this: *mut *mut Self, ulindex: u32, ppjob: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, ppunk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IPrintJobCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1924672036, data2: 42392, data3: 20103, data4: [137, 95, 205, 178, 58, 73, 233, 220] };
 }
 #[repr(C)]
 pub struct IPrintOemCommon {
@@ -4070,6 +4190,9 @@ pub struct IPrintOemCommon {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi")))]
     DevMode: usize,
 }
+impl ::windows_sys::core::Interface for IPrintOemCommon {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2135042142, data2: 37333, data3: 4561, data4: [136, 32, 0, 192, 79, 185, 97, 236] };
+}
 #[repr(C)]
 pub struct IPrintOemDriverUI {
     pub base__: ::windows_sys::core::IUnknown,
@@ -4079,6 +4202,9 @@ pub struct IPrintOemDriverUI {
     #[cfg(not(feature = "Win32_Foundation"))]
     DrvUpgradeRegistrySetting: usize,
     pub DrvUpdateUISetting: unsafe extern "system" fn(this: *mut *mut Self, pci: *mut ::core::ffi::c_void, poptitem: *mut ::core::ffi::c_void, dwpreviousselection: u32, dwmode: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPrintOemDriverUI {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2461031760, data2: 30908, data3: 4561, data4: [148, 128, 0, 160, 201, 6, 64, 184] };
 }
 #[repr(C)]
 pub struct IPrintOemUI {
@@ -4126,6 +4252,9 @@ pub struct IPrintOemUI {
     #[cfg(not(feature = "Win32_Foundation"))]
     UpdateExternalFonts: usize,
 }
+impl ::windows_sys::core::Interface for IPrintOemUI {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3332876752, data2: 30540, data3: 4561, data4: [148, 127, 0, 160, 201, 6, 64, 184] };
+}
 #[repr(C)]
 pub struct IPrintOemUI2 {
     pub base__: IPrintOemUI,
@@ -4138,6 +4267,9 @@ pub struct IPrintOemUI2 {
     pub DocumentEvent: unsafe extern "system" fn(this: *mut *mut Self, hprinter: super::super::Foundation::HANDLE, hdc: super::Gdi::HDC, iesc: i32, cbin: u32, pvin: *mut ::core::ffi::c_void, cbout: u32, pvout: *mut ::core::ffi::c_void, piresult: *mut i32) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi")))]
     DocumentEvent: usize,
+}
+impl ::windows_sys::core::Interface for IPrintOemUI2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 690296313, data2: 46411, data3: 18587, data4: [146, 117, 186, 181, 104, 33, 57, 94] };
 }
 #[repr(C)]
 pub struct IPrintOemUIMXDC {
@@ -4155,12 +4287,18 @@ pub struct IPrintOemUIMXDC {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi")))]
     AdjustDPI: usize,
 }
+impl ::windows_sys::core::Interface for IPrintOemUIMXDC {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1934219045, data2: 58049, data3: 19914, data4: [175, 181, 193, 62, 145, 188, 147, 6] };
+}
 #[repr(C)]
 pub struct IPrintPipelineFilter {
     pub base__: ::windows_sys::core::IUnknown,
     pub InitializeFilter: unsafe extern "system" fn(this: *mut *mut Self, pinegotiation: *mut ::core::ffi::c_void, pipropertybag: *mut ::core::ffi::c_void, pipipelinecontrol: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub ShutdownOperation: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub StartOperation: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPrintPipelineFilter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3451269056, data2: 35821, data3: 17230, data4: [134, 251, 162, 202, 229, 95, 25, 234] };
 }
 #[repr(C)]
 pub struct IPrintPipelineManagerControl {
@@ -4171,10 +4309,16 @@ pub struct IPrintPipelineManagerControl {
     RequestShutdown: usize,
     pub FilterFinished: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPrintPipelineManagerControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2856208656, data2: 22665, data3: 18049, data4: [145, 239, 130, 58, 212, 237, 78, 68] };
+}
 #[repr(C)]
 pub struct IPrintPipelineProgressReport {
     pub base__: ::windows_sys::core::IUnknown,
     pub ReportProgress: unsafe extern "system" fn(this: *mut *mut Self, update: EXpsJobConsumption) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPrintPipelineProgressReport {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3988860028, data2: 60736, data3: 20133, data4: [150, 166, 94, 67, 151, 73, 122, 97] };
 }
 #[repr(C)]
 pub struct IPrintPipelinePropertyBag {
@@ -4192,6 +4336,9 @@ pub struct IPrintPipelinePropertyBag {
     #[cfg(not(feature = "Win32_Foundation"))]
     DeleteProperty: usize,
 }
+impl ::windows_sys::core::Interface for IPrintPipelinePropertyBag {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2341247452, data2: 30866, data3: 19093, data4: [138, 4, 87, 66, 46, 159, 187, 71] };
+}
 #[repr(C)]
 pub struct IPrintPreviewDxgiPackageTarget {
     pub base__: ::windows_sys::core::IUnknown,
@@ -4202,6 +4349,9 @@ pub struct IPrintPreviewDxgiPackageTarget {
     DrawPage: usize,
     pub InvalidatePreview: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPrintPreviewDxgiPackageTarget {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 443404461, data2: 7722, data3: 20121, data4: [165, 186, 145, 241, 120, 24, 41, 14] };
+}
 #[repr(C)]
 pub struct IPrintReadStream {
     pub base__: ::windows_sys::core::IUnknown,
@@ -4211,10 +4361,16 @@ pub struct IPrintReadStream {
     #[cfg(not(feature = "Win32_Foundation"))]
     ReadBytes: usize,
 }
+impl ::windows_sys::core::Interface for IPrintReadStream {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1296541308, data2: 26316, data3: 17456, data4: [133, 14, 218, 244, 102, 254, 91, 196] };
+}
 #[repr(C)]
 pub struct IPrintReadStreamFactory {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetStream: unsafe extern "system" fn(this: *mut *mut Self, ppstream: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPrintReadStreamFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2897834467, data2: 57229, data3: 20418, data4: [190, 230, 6, 9, 209, 95, 60, 249] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -4224,6 +4380,10 @@ pub struct IPrintSchemaAsyncOperation {
     pub Cancel: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IPrintSchemaAsyncOperation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 339512779, data2: 54143, data3: 18423, data4: [136, 232, 107, 29, 33, 242, 197, 247] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IPrintSchemaAsyncOperationEvent {
     pub base__: super::super::System::Com::IDispatch,
@@ -4231,6 +4391,10 @@ pub struct IPrintSchemaAsyncOperationEvent {
     pub Completed: unsafe extern "system" fn(this: *mut *mut Self, pticket: *mut ::core::ffi::c_void, hroperation: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     Completed: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IPrintSchemaAsyncOperationEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 598588182, data2: 307, data3: 18694, data4: [178, 154, 29, 206, 29, 2, 99, 121] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -4260,6 +4424,10 @@ pub struct IPrintSchemaCapabilities {
     GetOptions: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IPrintSchemaCapabilities {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1515681344, data2: 20509, data3: 18727, data4: [188, 208, 94, 245, 122, 126, 209, 117] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IPrintSchemaCapabilities2 {
     pub base__: IPrintSchemaCapabilities,
@@ -4269,6 +4437,10 @@ pub struct IPrintSchemaCapabilities2 {
     GetParameterDefinition: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IPrintSchemaCapabilities2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3045606900, data2: 39280, data3: 19847, data4: [166, 54, 22, 159, 184, 46, 214, 66] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IPrintSchemaDisplayableElement {
     pub base__: IPrintSchemaElement,
@@ -4276,6 +4448,10 @@ pub struct IPrintSchemaDisplayableElement {
     pub DisplayName: unsafe extern "system" fn(this: *mut *mut Self, pbstrdisplayname: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     DisplayName: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IPrintSchemaDisplayableElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2940579657, data2: 54954, data3: 16509, data4: [191, 135, 57, 18, 35, 110, 157, 148] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -4290,6 +4466,10 @@ pub struct IPrintSchemaElement {
     pub NamespaceUri: unsafe extern "system" fn(this: *mut *mut Self, pbstrnamespaceuri: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     NamespaceUri: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IPrintSchemaElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1917589062, data2: 58955, data3: 19391, data4: [142, 180, 212, 94, 79, 213, 128, 218] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -4314,10 +4494,18 @@ pub struct IPrintSchemaFeature {
     DisplayUI: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IPrintSchemaFeature {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4011365473, data2: 23906, data3: 17958, data4: [142, 87, 255, 131, 88, 60, 72, 38] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IPrintSchemaNUpOption {
     pub base__: IPrintSchemaOption,
     pub PagesPerSheet: unsafe extern "system" fn(this: *mut *mut Self, pulpagespersheet: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IPrintSchemaNUpOption {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 526598898, data2: 55368, data3: 17123, data4: [137, 149, 193, 10, 158, 249, 163, 186] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -4334,6 +4522,10 @@ pub struct IPrintSchemaOption {
     GetPropertyValue: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IPrintSchemaOption {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1723543377, data2: 22596, data3: 18839, data4: [141, 112, 75, 124, 194, 33, 207, 146] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IPrintSchemaOptionCollection {
     pub base__: super::super::System::Com::IDispatch,
@@ -4343,6 +4535,10 @@ pub struct IPrintSchemaOptionCollection {
     #[cfg(not(feature = "Win32_System_Com"))]
     GetAt: usize,
     pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, ppunk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IPrintSchemaOptionCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3136073917, data2: 43334, data3: 18289, data4: [188, 48, 232, 178, 79, 141, 69, 193] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -4356,11 +4552,19 @@ pub struct IPrintSchemaPageImageableSize {
     pub ExtentHeightInMicrons: unsafe extern "system" fn(this: *mut *mut Self, pulextentheight: *mut u32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IPrintSchemaPageImageableSize {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2089140062, data2: 56444, data3: 20321, data4: [131, 155, 65, 7, 225, 201, 182, 142] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IPrintSchemaPageMediaSizeOption {
     pub base__: IPrintSchemaOption,
     pub WidthInMicrons: unsafe extern "system" fn(this: *mut *mut Self, pulwidth: *mut u32) -> ::windows_sys::core::HRESULT,
     pub HeightInMicrons: unsafe extern "system" fn(this: *mut *mut Self, pulheight: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IPrintSchemaPageMediaSizeOption {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1752459049, data2: 62611, data3: 18480, data4: [161, 15, 105, 2, 135, 116, 96, 93] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -4379,6 +4583,10 @@ pub struct IPrintSchemaParameterDefinition {
     pub RangeMax: unsafe extern "system" fn(this: *mut *mut Self, prangemax: *mut i32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IPrintSchemaParameterDefinition {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3048073246, data2: 3681, data3: 20449, data4: [129, 198, 195, 51, 228, 255, 224, 241] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IPrintSchemaParameterInitializer {
     pub base__: IPrintSchemaElement,
@@ -4390,6 +4598,10 @@ pub struct IPrintSchemaParameterInitializer {
     pub SetValue: unsafe extern "system" fn(this: *mut *mut Self, pvar: *const super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     SetValue: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IPrintSchemaParameterInitializer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1375891586, data2: 2932, data3: 17992, data4: [149, 100, 130, 140, 198, 203, 101, 108] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -4420,6 +4632,10 @@ pub struct IPrintSchemaTicket {
     pub SetJobCopiesAllDocuments: unsafe extern "system" fn(this: *mut *mut Self, uljobcopiesalldocuments: u32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IPrintSchemaTicket {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3833641057, data2: 18184, data3: 20077, data4: [165, 180, 162, 180, 238, 185, 186, 164] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IPrintSchemaTicket2 {
     pub base__: IPrintSchemaTicket,
@@ -4427,6 +4643,10 @@ pub struct IPrintSchemaTicket2 {
     pub GetParameterInitializer: unsafe extern "system" fn(this: *mut *mut Self, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrnamespaceuri: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppparameterinitializer: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     GetParameterInitializer: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IPrintSchemaTicket2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 784463940, data2: 30314, data3: 18337, data4: [145, 244, 46, 235, 97, 144, 248, 12] };
 }
 #[repr(C)]
 pub struct IPrintTicketProvider {
@@ -4460,6 +4680,9 @@ pub struct IPrintTicketProvider {
     #[cfg(not(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_System_Com")))]
     ValidatePrintTicket: usize,
 }
+impl ::windows_sys::core::Interface for IPrintTicketProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3142653659, data2: 2595, data3: 19514, data4: [166, 182, 137, 229, 85, 141, 251, 93] };
+}
 #[repr(C)]
 pub struct IPrintTicketProvider2 {
     pub base__: IPrintTicketProvider,
@@ -4472,10 +4695,16 @@ pub struct IPrintTicketProvider2 {
     #[cfg(not(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_System_Com")))]
     GetPrintDeviceResources: usize,
 }
+impl ::windows_sys::core::Interface for IPrintTicketProvider2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3097954994, data2: 15868, data3: 20460, data4: [160, 116, 81, 27, 19, 198, 81, 203] };
+}
 #[repr(C)]
 pub struct IPrintUnidiAsyncNotifyRegistration {
     pub base__: IPrintAsyncNotifyRegistration,
     pub AsyncGetNotification: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPrintUnidiAsyncNotifyRegistration {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID::zeroed();
 }
 #[repr(C)]
 pub struct IPrintWriteStream {
@@ -4483,10 +4712,16 @@ pub struct IPrintWriteStream {
     pub WriteBytes: unsafe extern "system" fn(this: *mut *mut Self, pvbuffer: *const ::core::ffi::c_void, cbbuffer: u32, pcbwritten: *mut u32) -> ::windows_sys::core::HRESULT,
     pub Close: unsafe extern "system" fn(this: *mut *mut Self),
 }
+impl ::windows_sys::core::Interface for IPrintWriteStream {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1706786587, data2: 14110, data3: 17777, data4: [138, 199, 145, 47, 81, 12, 26, 56] };
+}
 #[repr(C)]
 pub struct IPrintWriteStreamFlush {
     pub base__: ::windows_sys::core::IUnknown,
     pub FlushData: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPrintWriteStreamFlush {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 131145720, data2: 5971, data3: 18547, data4: [183, 73, 108, 218, 240, 104, 228, 195] };
 }
 #[repr(C)]
 pub struct IPrinterBidiSetRequestCallback {
@@ -4496,10 +4731,16 @@ pub struct IPrinterBidiSetRequestCallback {
     #[cfg(not(feature = "Win32_Foundation"))]
     Completed: usize,
 }
+impl ::windows_sys::core::Interface for IPrinterBidiSetRequestCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3308073693, data2: 62132, data3: 16466, data4: [133, 2, 236, 67, 5, 236, 183, 31] };
+}
 #[repr(C)]
 pub struct IPrinterExtensionAsyncOperation {
     pub base__: ::windows_sys::core::IUnknown,
     pub Cancel: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPrinterExtensionAsyncOperation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 277703203, data2: 27211, data3: 17746, data4: [148, 72, 104, 180, 39, 24, 106, 205] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -4523,6 +4764,10 @@ pub struct IPrinterExtensionContext {
     UserProperties: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IPrinterExtensionContext {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 964967410, data2: 50386, data3: 16893, data4: [180, 178, 174, 219, 238, 94, 25, 0] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IPrinterExtensionContextCollection {
     pub base__: super::super::System::Com::IDispatch,
@@ -4532,6 +4777,10 @@ pub struct IPrinterExtensionContextCollection {
     #[cfg(not(feature = "Win32_System_Com"))]
     GetAt: usize,
     pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, ppunk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IPrinterExtensionContextCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4215761264, data2: 39851, data3: 18529, data4: [129, 30, 62, 152, 176, 197, 173, 223] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -4545,6 +4794,10 @@ pub struct IPrinterExtensionEvent {
     pub OnPrinterQueuesEnumerated: unsafe extern "system" fn(this: *mut *mut Self, pcontextcollection: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     OnPrinterQueuesEnumerated: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IPrinterExtensionEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3230911331, data2: 24309, data3: 17797, data4: [175, 142, 77, 86, 55, 72, 123, 87] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -4573,11 +4826,18 @@ pub struct IPrinterExtensionEventArgs {
     #[cfg(not(feature = "Win32_Foundation"))]
     WindowParent: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IPrinterExtensionEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 964967412, data2: 50386, data3: 16893, data4: [180, 178, 174, 219, 238, 94, 25, 0] };
+}
 #[repr(C)]
 pub struct IPrinterExtensionManager {
     pub base__: ::windows_sys::core::IUnknown,
     pub EnableEvents: unsafe extern "system" fn(this: *mut *mut Self, printerdriverid: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub DisableEvents: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPrinterExtensionManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2479287180, data2: 45057, data3: 17237, data4: [150, 41, 142, 138, 27, 63, 142, 119] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -4588,6 +4848,10 @@ pub struct IPrinterExtensionRequest {
     #[cfg(not(feature = "Win32_Foundation"))]
     Cancel: usize,
     pub Complete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IPrinterExtensionRequest {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 964967411, data2: 50386, data3: 16893, data4: [180, 178, 174, 219, 238, 94, 25, 0] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -4635,6 +4899,10 @@ pub struct IPrinterPropertyBag {
     GetWriteStream: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IPrinterPropertyBag {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4272386916, data2: 57237, data3: 18979, data4: [169, 5, 1, 155, 121, 168, 228, 129] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IPrinterQueue {
     pub base__: super::super::System::Com::IDispatch,
@@ -4656,6 +4924,10 @@ pub struct IPrinterQueue {
     GetProperties: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IPrinterQueue {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 897624104, data2: 2046, data3: 19348, data4: [172, 26, 117, 125, 157, 45, 48, 86] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IPrinterQueue2 {
     pub base__: IPrinterQueue,
@@ -4669,6 +4941,10 @@ pub struct IPrinterQueue2 {
     GetPrinterQueueView: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IPrinterQueue2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2362721512, data2: 51643, data3: 18867, data4: [142, 56, 224, 50, 9, 65, 97, 49] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IPrinterQueueEvent {
     pub base__: super::super::System::Com::IDispatch,
@@ -4678,10 +4954,18 @@ pub struct IPrinterQueueEvent {
     OnBidiResponseReceived: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IPrinterQueueEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 558269942, data2: 31608, data3: 18049, data4: [135, 224, 73, 95, 115, 146, 115, 209] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IPrinterQueueView {
     pub base__: super::super::System::Com::IDispatch,
     pub SetViewRange: unsafe extern "system" fn(this: *mut *mut Self, ulviewoffset: u32, ulviewsize: u32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IPrinterQueueView {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1198401897, data2: 15147, data3: 19263, data4: [130, 119, 207, 246, 5, 96, 66, 170] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -4691,6 +4975,10 @@ pub struct IPrinterQueueViewEvent {
     pub OnChanged: unsafe extern "system" fn(this: *mut *mut Self, pcollection: *mut ::core::ffi::c_void, ulviewoffset: u32, ulviewsize: u32, ulcountjobsinprintqueue: u32) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     OnChanged: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IPrinterQueueViewEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3317040171, data2: 64801, data3: 16458, data4: [160, 239, 226, 251, 181, 43, 144, 128] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -4708,6 +4996,10 @@ pub struct IPrinterScriptContext {
     pub UserProperties: unsafe extern "system" fn(this: *mut *mut Self, pppropertybag: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     UserProperties: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IPrinterScriptContext {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 107662282, data2: 34945, data3: 18889, data4: [187, 152, 250, 225, 107, 72, 137, 225] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -4755,6 +5047,10 @@ pub struct IPrinterScriptablePropertyBag {
     GetWriteStream: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IPrinterScriptablePropertyBag {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2445768287, data2: 60759, data3: 18861, data4: [139, 1, 220, 36, 129, 106, 82, 148] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IPrinterScriptablePropertyBag2 {
     pub base__: IPrinterScriptablePropertyBag,
@@ -4762,6 +5058,10 @@ pub struct IPrinterScriptablePropertyBag2 {
     pub GetReadStreamAsXML: unsafe extern "system" fn(this: *mut *mut Self, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppxmlnode: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetReadStreamAsXML: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IPrinterScriptablePropertyBag2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 706499524, data2: 34360, data3: 19262, data4: [181, 24, 39, 115, 201, 69, 86, 163] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -4777,6 +5077,10 @@ pub struct IPrinterScriptableSequentialStream {
     Write: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IPrinterScriptableSequentialStream {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 544375690, data2: 12655, data3: 18042, data4: [169, 73, 39, 246, 140, 68, 168, 84] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IPrinterScriptableStream {
     pub base__: IPrinterScriptableSequentialStream,
@@ -4787,11 +5091,18 @@ pub struct IPrinterScriptableStream {
     Seek: usize,
     pub SetSize: unsafe extern "system" fn(this: *mut *mut Self, lsize: i32) -> ::windows_sys::core::HRESULT,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IPrinterScriptableStream {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2128583314, data2: 18256, data3: 16805, data4: [161, 127, 135, 154, 111, 79, 125, 203] };
+}
 #[repr(C)]
 pub struct IXpsDocument {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetThumbnail: unsafe extern "system" fn(this: *mut *mut Self, ppthumbnail: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetThumbnail: unsafe extern "system" fn(this: *mut *mut Self, pthumbnail: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IXpsDocument {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3906537435, data2: 25257, data3: 19093, data4: [171, 231, 224, 23, 99, 221, 48, 248] };
 }
 #[repr(C)]
 pub struct IXpsDocumentConsumer {
@@ -4804,10 +5115,16 @@ pub struct IXpsDocumentConsumer {
     pub CloseSender: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub GetNewEmptyPart: unsafe extern "system" fn(this: *mut *mut Self, uri: ::windows_sys::core::PCWSTR, riid: *const ::windows_sys::core::GUID, ppnewobject: *mut *mut ::core::ffi::c_void, ppwritestream: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IXpsDocumentConsumer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1130944674, data2: 16769, data3: 19103, data4: [178, 149, 61, 154, 56, 187, 155, 160] };
+}
 #[repr(C)]
 pub struct IXpsDocumentProvider {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetXpsPart: unsafe extern "system" fn(this: *mut *mut Self, ppixpspart: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IXpsDocumentProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3100607792, data2: 21858, data3: 18372, data4: [171, 103, 177, 246, 158, 207, 150, 30] };
 }
 #[repr(C)]
 pub struct IXpsPartIterator {
@@ -4823,6 +5140,9 @@ pub struct IXpsPartIterator {
     IsDone: usize,
     pub Next: unsafe extern "system" fn(this: *mut *mut Self),
 }
+impl ::windows_sys::core::Interface for IXpsPartIterator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2216909, data2: 44911, data3: 17067, data4: [153, 153, 20, 188, 130, 166, 45, 46] };
+}
 #[repr(C)]
 pub struct IXpsRasterizationFactory {
     pub base__: ::windows_sys::core::IUnknown,
@@ -4830,6 +5150,9 @@ pub struct IXpsRasterizationFactory {
     pub CreateRasterizer: unsafe extern "system" fn(this: *mut *mut Self, xpspage: *mut ::core::ffi::c_void, dpi: f32, nontextrenderingmode: XPSRAS_RENDERING_MODE, textrenderingmode: XPSRAS_RENDERING_MODE, ppixpsrasterizer: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Storage_Xps"))]
     CreateRasterizer: usize,
+}
+impl ::windows_sys::core::Interface for IXpsRasterizationFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3767828618, data2: 9414, data3: 18475, data4: [163, 167, 194, 26, 201, 181, 95, 23] };
 }
 #[repr(C)]
 pub struct IXpsRasterizationFactory1 {
@@ -4839,6 +5162,9 @@ pub struct IXpsRasterizationFactory1 {
     #[cfg(not(feature = "Win32_Storage_Xps"))]
     CreateRasterizer: usize,
 }
+impl ::windows_sys::core::Interface for IXpsRasterizationFactory1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 762208119, data2: 25620, data3: 18974, data4: [168, 224, 212, 25, 76, 230, 162, 111] };
+}
 #[repr(C)]
 pub struct IXpsRasterizationFactory2 {
     pub base__: ::windows_sys::core::IUnknown,
@@ -4846,6 +5172,9 @@ pub struct IXpsRasterizationFactory2 {
     pub CreateRasterizer: unsafe extern "system" fn(this: *mut *mut Self, xpspage: *mut ::core::ffi::c_void, dpix: f32, dpiy: f32, nontextrenderingmode: XPSRAS_RENDERING_MODE, textrenderingmode: XPSRAS_RENDERING_MODE, pixelformat: XPSRAS_PIXEL_FORMAT, backgroundcolor: XPSRAS_BACKGROUND_COLOR, ppixpsrasterizer: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Storage_Xps"))]
     CreateRasterizer: usize,
+}
+impl ::windows_sys::core::Interface for IXpsRasterizationFactory2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2618740286, data2: 4341, data3: 16893, data4: [157, 220, 104, 38, 102, 156, 47, 246] };
 }
 #[repr(C)]
 pub struct IXpsRasterizer {
@@ -4856,10 +5185,16 @@ pub struct IXpsRasterizer {
     RasterizeRect: usize,
     pub SetMinimalLineWidth: unsafe extern "system" fn(this: *mut *mut Self, width: i32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IXpsRasterizer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1969737672, data2: 49494, data3: 18344, data4: [157, 172, 17, 162, 174, 91, 221, 107] };
+}
 #[repr(C)]
 pub struct IXpsRasterizerNotificationCallback {
     pub base__: ::windows_sys::core::IUnknown,
     pub Continue: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IXpsRasterizerNotificationCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2595814669, data2: 52116, data3: 18882, data4: [156, 176, 151, 236, 29, 84, 105, 210] };
 }
 #[doc = "*Required features: `\"Win32_Graphics_Printing\"`*"]
 pub const JOB_ACCESS_ADMINISTER: u32 = 16u32;

@@ -1041,6 +1041,9 @@ pub struct ICcgDomainAuthCredentials {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetPasswordCredentials: unsafe extern "system" fn(this: *mut *mut Self, plugininput: ::windows_sys::core::PCWSTR, domainname: *mut ::windows_sys::core::PWSTR, username: *mut ::windows_sys::core::PWSTR, password: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ICcgDomainAuthCredentials {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1858970904, data2: 8208, data3: 17463, data4: [139, 195, 70, 231, 82, 183, 177, 114] };
+}
 #[doc = "*Required features: `\"Win32_Security_Authentication_Identity\"`*"]
 pub const ID_CAP_SLAPI: &str = "slapiQueryLicenseValue";
 #[doc = "*Required features: `\"Win32_Security_Authentication_Identity\"`, `\"Win32_Security_Credentials\"`*"]

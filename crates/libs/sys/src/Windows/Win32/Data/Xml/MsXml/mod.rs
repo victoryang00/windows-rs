@@ -1174,6 +1174,10 @@ pub struct IMXAttributes {
     #[cfg(not(feature = "Win32_Foundation"))]
     setValue: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IMXAttributes {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4044171212, data2: 16064, data3: 16732, data4: [142, 216, 119, 171, 28, 94, 114, 98] };
+}
 #[repr(C)]
 pub struct IMXNamespaceManager {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1194,6 +1198,9 @@ pub struct IMXNamespaceManager {
     #[cfg(not(feature = "Win32_System_Com"))]
     getURI: usize,
 }
+impl ::windows_sys::core::Interface for IMXNamespaceManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3372438262, data2: 25660, data3: 20412, data4: [187, 35, 233, 150, 235, 45, 81, 253] };
+}
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IMXNamespacePrefixes {
@@ -1206,12 +1213,20 @@ pub struct IMXNamespacePrefixes {
     pub _newEnum: unsafe extern "system" fn(this: *mut *mut Self, ppunk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IMXNamespacePrefixes {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3372438260, data2: 25660, data3: 20412, data4: [187, 35, 233, 150, 235, 45, 81, 253] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IMXReaderControl {
     pub base__: super::super::super::System::Com::IDispatch,
     pub abort: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub resume: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub suspend: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IMXReaderControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2156875317, data2: 36186, data3: 20414, data4: [132, 102, 51, 164, 18, 121, 237, 48] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1221,6 +1236,10 @@ pub struct IMXSchemaDeclHandler {
     pub schemaElementDecl: unsafe extern "system" fn(this: *mut *mut Self, oschemaelement: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     schemaElementDecl: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IMXSchemaDeclHandler {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4199265164, data2: 64249, data3: 19658, data4: [147, 2, 209, 221, 15, 229, 32, 219] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1263,6 +1282,10 @@ pub struct IMXWriter {
     pub flush: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IMXWriter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1300231354, data2: 5477, data3: 20136, data4: [148, 225, 110, 114, 74, 70, 249, 141] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IMXXMLFilter {
     pub base__: super::super::super::System::Com::IDispatch,
@@ -1291,6 +1314,10 @@ pub struct IMXXMLFilter {
     pub errorHandler: unsafe extern "system" fn(this: *mut *mut Self, ohandler: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub putref_errorHandler: unsafe extern "system" fn(this: *mut *mut Self, ohandler: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IMXXMLFilter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3372438263, data2: 25660, data3: 20412, data4: [187, 35, 233, 150, 235, 45, 81, 253] };
+}
 #[repr(C)]
 pub struct ISAXAttributes {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1308,6 +1335,9 @@ pub struct ISAXAttributes {
     pub getValueFromName: unsafe extern "system" fn(this: *mut *mut Self, pwchuri: ::windows_sys::core::PCWSTR, cchuri: i32, pwchlocalname: ::windows_sys::core::PCWSTR, cchlocalname: i32, ppwchvalue: *mut *mut u16, pcchvalue: *mut i32) -> ::windows_sys::core::HRESULT,
     pub getValueFromQName: unsafe extern "system" fn(this: *mut *mut Self, pwchqname: ::windows_sys::core::PCWSTR, cchqname: i32, ppwchvalue: *mut *mut u16, pcchvalue: *mut i32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISAXAttributes {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4034440161, data2: 17874, data3: 18482, data4: [145, 234, 68, 102, 206, 47, 37, 201] };
+}
 #[repr(C)]
 pub struct ISAXContentHandler {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1323,11 +1353,17 @@ pub struct ISAXContentHandler {
     pub processingInstruction: unsafe extern "system" fn(this: *mut *mut Self, pwchtarget: ::windows_sys::core::PCWSTR, cchtarget: i32, pwchdata: ::windows_sys::core::PCWSTR, cchdata: i32) -> ::windows_sys::core::HRESULT,
     pub skippedEntity: unsafe extern "system" fn(this: *mut *mut Self, pwchname: ::windows_sys::core::PCWSTR, cchname: i32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISAXContentHandler {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 356896250, data2: 40526, data3: 17559, data4: [168, 164, 43, 247, 208, 17, 44, 68] };
+}
 #[repr(C)]
 pub struct ISAXDTDHandler {
     pub base__: ::windows_sys::core::IUnknown,
     pub notationDecl: unsafe extern "system" fn(this: *mut *mut Self, pwchname: ::windows_sys::core::PCWSTR, cchname: i32, pwchpublicid: ::windows_sys::core::PCWSTR, cchpublicid: i32, pwchsystemid: ::windows_sys::core::PCWSTR, cchsystemid: i32) -> ::windows_sys::core::HRESULT,
     pub unparsedEntityDecl: unsafe extern "system" fn(this: *mut *mut Self, pwchname: ::windows_sys::core::PCWSTR, cchname: i32, pwchpublicid: ::windows_sys::core::PCWSTR, cchpublicid: i32, pwchsystemid: ::windows_sys::core::PCWSTR, cchsystemid: i32, pwchnotationname: ::windows_sys::core::PCWSTR, cchnotationname: i32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISAXDTDHandler {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3780909999, data2: 44979, data3: 19808, data4: [140, 54, 25, 168, 196, 93, 239, 237] };
 }
 #[repr(C)]
 pub struct ISAXDeclHandler {
@@ -1337,6 +1373,9 @@ pub struct ISAXDeclHandler {
     pub internalEntityDecl: unsafe extern "system" fn(this: *mut *mut Self, pwchname: ::windows_sys::core::PCWSTR, cchname: i32, pwchvalue: ::windows_sys::core::PCWSTR, cchvalue: i32) -> ::windows_sys::core::HRESULT,
     pub externalEntityDecl: unsafe extern "system" fn(this: *mut *mut Self, pwchname: ::windows_sys::core::PCWSTR, cchname: i32, pwchpublicid: ::windows_sys::core::PCWSTR, cchpublicid: i32, pwchsystemid: ::windows_sys::core::PCWSTR, cchsystemid: i32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISAXDeclHandler {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2250647980, data2: 30490, data3: 18354, data4: [131, 55, 78, 104, 67, 193, 190, 144] };
+}
 #[repr(C)]
 pub struct ISAXEntityResolver {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1345,12 +1384,18 @@ pub struct ISAXEntityResolver {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     resolveEntity: usize,
 }
+impl ::windows_sys::core::Interface for ISAXEntityResolver {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2579277757, data2: 59588, data3: 19807, data4: [160, 207, 109, 144, 121, 1, 255, 7] };
+}
 #[repr(C)]
 pub struct ISAXErrorHandler {
     pub base__: ::windows_sys::core::IUnknown,
     pub error: unsafe extern "system" fn(this: *mut *mut Self, plocator: *mut ::core::ffi::c_void, pwcherrormessage: ::windows_sys::core::PCWSTR, hrerrorcode: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
     pub fatalError: unsafe extern "system" fn(this: *mut *mut Self, plocator: *mut ::core::ffi::c_void, pwcherrormessage: ::windows_sys::core::PCWSTR, hrerrorcode: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
     pub ignorableWarning: unsafe extern "system" fn(this: *mut *mut Self, plocator: *mut ::core::ffi::c_void, pwcherrormessage: ::windows_sys::core::PCWSTR, hrerrorcode: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISAXErrorHandler {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2785350084, data2: 52469, data3: 18334, data4: [152, 163, 220, 141, 197, 69, 183, 208] };
 }
 #[repr(C)]
 pub struct ISAXLexicalHandler {
@@ -1363,6 +1408,9 @@ pub struct ISAXLexicalHandler {
     pub endCDATA: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub comment: unsafe extern "system" fn(this: *mut *mut Self, pwchchars: ::windows_sys::core::PCWSTR, cchchars: i32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISAXLexicalHandler {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2139477493, data2: 18344, data3: 17559, data4: [189, 165, 132, 186, 4, 129, 158, 166] };
+}
 #[repr(C)]
 pub struct ISAXLocator {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1371,11 +1419,17 @@ pub struct ISAXLocator {
     pub getPublicId: unsafe extern "system" fn(this: *mut *mut Self, ppwchpublicid: *mut *mut u16) -> ::windows_sys::core::HRESULT,
     pub getSystemId: unsafe extern "system" fn(this: *mut *mut Self, ppwchsystemid: *mut *mut u16) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISAXLocator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2608744234, data2: 3556, data3: 17984, data4: [191, 243, 132, 211, 138, 5, 28, 49] };
+}
 #[repr(C)]
 pub struct ISAXXMLFilter {
     pub base__: ISAXXMLReader,
     pub getParent: unsafe extern "system" fn(this: *mut *mut Self, ppreader: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub putParent: unsafe extern "system" fn(this: *mut *mut Self, preader: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISAXXMLFilter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1883279906, data2: 51721, data3: 17525, data4: [172, 184, 64, 49, 47, 232, 209, 69] };
 }
 #[repr(C)]
 pub struct ISAXXMLReader {
@@ -1407,6 +1461,9 @@ pub struct ISAXXMLReader {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     parse: usize,
     pub parseURL: unsafe extern "system" fn(this: *mut *mut Self, pwchurl: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISAXXMLReader {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2767810256, data2: 63529, data3: 18286, data4: [129, 192, 205, 199, 189, 42, 8, 2] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1450,6 +1507,10 @@ pub struct ISchema {
     schemaLocations: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISchema {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1357514932, data2: 56603, data3: 18020, data4: [154, 80, 194, 244, 15, 75, 215, 154] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISchemaAny {
     pub base__: ISchemaParticle,
@@ -1458,6 +1519,10 @@ pub struct ISchemaAny {
     #[cfg(not(feature = "Win32_System_Com"))]
     namespaces: usize,
     pub processContents: unsafe extern "system" fn(this: *mut *mut Self, processcontents: *mut SCHEMAPROCESSCONTENTS) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISchemaAny {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1357514940, data2: 56603, data3: 18020, data4: [154, 80, 194, 244, 15, 75, 215, 154] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1483,6 +1548,10 @@ pub struct ISchemaAttribute {
     pub isReference: unsafe extern "system" fn(this: *mut *mut Self, reference: *mut i16) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISchemaAttribute {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1357514934, data2: 56603, data3: 18020, data4: [154, 80, 194, 244, 15, 75, 215, 154] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISchemaAttributeGroup {
     pub base__: ISchemaItem,
@@ -1494,6 +1563,10 @@ pub struct ISchemaAttributeGroup {
     pub attributes: unsafe extern "system" fn(this: *mut *mut Self, attributes: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     attributes: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISchemaAttributeGroup {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1357514938, data2: 56603, data3: 18020, data4: [154, 80, 194, 244, 15, 75, 215, 154] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1514,6 +1587,10 @@ pub struct ISchemaComplexType {
     #[cfg(not(feature = "Win32_System_Com"))]
     contentModel: usize,
     pub prohibitedSubstitutions: unsafe extern "system" fn(this: *mut *mut Self, prohibited: *mut SCHEMADERIVATIONMETHOD) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISchemaComplexType {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1357514937, data2: 56603, data3: 18020, data4: [154, 80, 194, 244, 15, 75, 215, 154] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1550,6 +1627,10 @@ pub struct ISchemaElement {
     pub isReference: unsafe extern "system" fn(this: *mut *mut Self, reference: *mut i16) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISchemaElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1357514935, data2: 56603, data3: 18020, data4: [154, 80, 194, 244, 15, 75, 215, 154] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISchemaIdentityConstraint {
     pub base__: ISchemaItem,
@@ -1565,6 +1646,10 @@ pub struct ISchemaIdentityConstraint {
     pub referencedKey: unsafe extern "system" fn(this: *mut *mut Self, key: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     referencedKey: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISchemaIdentityConstraint {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1357514941, data2: 56603, data3: 18020, data4: [154, 80, 194, 244, 15, 75, 215, 154] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1594,6 +1679,10 @@ pub struct ISchemaItem {
     pub writeAnnotation: unsafe extern "system" fn(this: *mut *mut Self, annotationsink: *mut ::core::ffi::c_void, iswritten: *mut i16) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISchemaItem {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1357514931, data2: 56603, data3: 18020, data4: [154, 80, 194, 244, 15, 75, 215, 154] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISchemaItemCollection {
     pub base__: super::super::super::System::Com::IDispatch,
@@ -1613,6 +1702,10 @@ pub struct ISchemaItemCollection {
     pub _newEnum: unsafe extern "system" fn(this: *mut *mut Self, ppunk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISchemaItemCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1357514930, data2: 56603, data3: 18020, data4: [154, 80, 194, 244, 15, 75, 215, 154] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISchemaModelGroup {
     pub base__: ISchemaParticle,
@@ -1620,6 +1713,10 @@ pub struct ISchemaModelGroup {
     pub particles: unsafe extern "system" fn(this: *mut *mut Self, particles: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     particles: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISchemaModelGroup {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1357514939, data2: 56603, data3: 18020, data4: [154, 80, 194, 244, 15, 75, 215, 154] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1635,6 +1732,10 @@ pub struct ISchemaNotation {
     publicIdentifier: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISchemaNotation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1357514942, data2: 56603, data3: 18020, data4: [154, 80, 194, 244, 15, 75, 215, 154] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISchemaParticle {
     pub base__: ISchemaItem,
@@ -1648,6 +1749,10 @@ pub struct ISchemaParticle {
     maxOccurs: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISchemaParticle {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1357514933, data2: 56603, data3: 18020, data4: [154, 80, 194, 244, 15, 75, 215, 154] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISchemaStringCollection {
     pub base__: super::super::super::System::Com::IDispatch,
@@ -1657,6 +1762,10 @@ pub struct ISchemaStringCollection {
     get_item: usize,
     pub length: unsafe extern "system" fn(this: *mut *mut Self, length: *mut i32) -> ::windows_sys::core::HRESULT,
     pub _newEnum: unsafe extern "system" fn(this: *mut *mut Self, ppunk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISchemaStringCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1357514929, data2: 56603, data3: 18020, data4: [154, 80, 194, 244, 15, 75, 215, 154] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1720,6 +1829,10 @@ pub struct ISchemaType {
     patterns: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISchemaType {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1357514936, data2: 56603, data3: 18020, data4: [154, 80, 194, 244, 15, 75, 215, 154] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IServerXMLHTTPRequest {
     pub base__: IXMLHTTPRequest,
@@ -1738,6 +1851,10 @@ pub struct IServerXMLHTTPRequest {
     setOption: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IServerXMLHTTPRequest {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 781293247, data2: 5050, data3: 19924, data4: [145, 202, 108, 87, 31, 40, 20, 149] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IServerXMLHTTPRequest2 {
     pub base__: IServerXMLHTTPRequest,
@@ -1749,6 +1866,10 @@ pub struct IServerXMLHTTPRequest2 {
     pub setProxyCredentials: unsafe extern "system" fn(this: *mut *mut Self, bstrusername: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, bstrpassword: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     setProxyCredentials: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IServerXMLHTTPRequest2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 771830043, data2: 49954, data3: 19210, data4: [189, 119, 185, 12, 253, 200, 220, 231] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1783,6 +1904,10 @@ pub struct IVBMXNamespaceManager {
     pub getURIFromNode: unsafe extern "system" fn(this: *mut *mut Self, strprefix: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, contextnode: *mut ::core::ffi::c_void, uri: *mut super::super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     getURIFromNode: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IVBMXNamespaceManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3372438261, data2: 25660, data3: 20412, data4: [187, 35, 233, 150, 235, 45, 81, 253] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1835,6 +1960,10 @@ pub struct IVBSAXAttributes {
     getValueFromQName: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IVBSAXAttributes {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 282854790, data2: 4907, data3: 19628, data4: [139, 179, 219, 0, 172, 139, 126, 224] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IVBSAXContentHandler {
     pub base__: super::super::super::System::Com::IDispatch,
@@ -1878,6 +2007,10 @@ pub struct IVBSAXContentHandler {
     skippedEntity: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IVBSAXContentHandler {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 785852682, data2: 19925, data3: 19270, data4: [187, 38, 78, 65, 85, 231, 127, 170] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IVBSAXDTDHandler {
     pub base__: super::super::super::System::Com::IDispatch,
@@ -1889,6 +2022,10 @@ pub struct IVBSAXDTDHandler {
     pub unparsedEntityDecl: unsafe extern "system" fn(this: *mut *mut Self, strname: *mut super::super::super::Foundation::BSTR, strpublicid: *mut super::super::super::Foundation::BSTR, strsystemid: *mut super::super::super::Foundation::BSTR, strnotationname: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     unparsedEntityDecl: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IVBSAXDTDHandler {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 620442263, data2: 12333, data3: 17952, data4: [186, 57, 58, 115, 45, 133, 5, 88] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1912,6 +2049,10 @@ pub struct IVBSAXDeclHandler {
     externalEntityDecl: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IVBSAXDeclHandler {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3901846112, data2: 30073, data3: 19425, data4: [181, 221, 122, 251, 250, 111, 7, 123] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IVBSAXEntityResolver {
     pub base__: super::super::super::System::Com::IDispatch,
@@ -1919,6 +2060,10 @@ pub struct IVBSAXEntityResolver {
     pub resolveEntity: unsafe extern "system" fn(this: *mut *mut Self, strpublicid: *mut super::super::super::Foundation::BSTR, strsystemid: *mut super::super::super::Foundation::BSTR, varinput: *mut super::super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     resolveEntity: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IVBSAXEntityResolver {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 201707670, data2: 62555, data3: 19146, data4: [173, 26, 170, 11, 194, 85, 24, 220] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1936,6 +2081,10 @@ pub struct IVBSAXErrorHandler {
     pub ignorableWarning: unsafe extern "system" fn(this: *mut *mut Self, olocator: *mut ::core::ffi::c_void, strerrormessage: *mut super::super::super::Foundation::BSTR, nerrorcode: i32) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     ignorableWarning: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IVBSAXErrorHandler {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3647198206, data2: 5948, data3: 18530, data4: [144, 149, 185, 47, 102, 153, 95, 82] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1962,6 +2111,10 @@ pub struct IVBSAXLexicalHandler {
     comment: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IVBSAXLexicalHandler {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 53128245, data2: 35854, data3: 19869, data4: [151, 159, 227, 183, 2, 147, 85, 118] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IVBSAXLocator {
     pub base__: super::super::super::System::Com::IDispatch,
@@ -1977,6 +2130,10 @@ pub struct IVBSAXLocator {
     systemId: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IVBSAXLocator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2037283525, data2: 23202, data3: 20223, data4: [172, 173, 63, 170, 240, 26, 50, 136] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IVBSAXXMLFilter {
     pub base__: super::super::super::System::Com::IDispatch,
@@ -1988,6 +2145,10 @@ pub struct IVBSAXXMLFilter {
     pub putref_parent: unsafe extern "system" fn(this: *mut *mut Self, oreader: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     putref_parent: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IVBSAXXMLFilter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 312077083, data2: 23432, data3: 17214, data4: [130, 222, 130, 202, 117, 173, 78, 4] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2067,6 +2228,10 @@ pub struct IVBSAXXMLReader {
     parseURL: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IVBSAXXMLReader {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2349022378, data2: 27862, data3: 20339, data4: [183, 40, 69, 49, 175, 116, 148, 95] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IXMLAttribute {
     pub base__: super::super::super::System::Com::IDispatch,
@@ -2078,6 +2243,10 @@ pub struct IXMLAttribute {
     pub value: unsafe extern "system" fn(this: *mut *mut Self, v: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     value: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IXMLAttribute {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3570704636, data2: 15219, data3: 4561, data4: [178, 180, 0, 192, 79, 185, 37, 150] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2097,9 +2266,17 @@ pub struct IXMLDOMAttribute {
     Setvalue: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IXMLDOMAttribute {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 691257221, data2: 31542, data3: 4562, data4: [178, 14, 0, 192, 79, 152, 62, 96] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IXMLDOMCDATASection {
     pub base__: IXMLDOMText,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IXMLDOMCDATASection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 691257226, data2: 31542, data3: 4562, data4: [178, 14, 0, 192, 79, 152, 62, 96] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2133,9 +2310,17 @@ pub struct IXMLDOMCharacterData {
     replaceData: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IXMLDOMCharacterData {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 691257220, data2: 31542, data3: 4562, data4: [178, 14, 0, 192, 79, 152, 62, 96] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IXMLDOMComment {
     pub base__: IXMLDOMCharacterData,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IXMLDOMComment {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 691257224, data2: 31542, data3: 4562, data4: [178, 14, 0, 192, 79, 152, 62, 96] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2245,6 +2430,10 @@ pub struct IXMLDOMDocument {
     Setontransformnode: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IXMLDOMDocument {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 691257217, data2: 31542, data3: 4562, data4: [178, 14, 0, 192, 79, 152, 62, 96] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IXMLDOMDocument2 {
     pub base__: IXMLDOMDocument,
@@ -2274,6 +2463,10 @@ pub struct IXMLDOMDocument2 {
     getProperty: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IXMLDOMDocument2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 691257237, data2: 31542, data3: 4562, data4: [178, 14, 0, 192, 79, 152, 62, 96] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IXMLDOMDocument3 {
     pub base__: IXMLDOMDocument2,
@@ -2287,9 +2480,17 @@ pub struct IXMLDOMDocument3 {
     importNode: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IXMLDOMDocument3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 691257238, data2: 31542, data3: 4562, data4: [178, 14, 0, 192, 79, 152, 62, 96] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IXMLDOMDocumentFragment {
     pub base__: IXMLDOMNode,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IXMLDOMDocumentFragment {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1056613395, data2: 10031, data3: 4562, data4: [131, 111, 0, 0, 248, 122, 119, 130] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2307,6 +2508,10 @@ pub struct IXMLDOMDocumentType {
     pub notations: unsafe extern "system" fn(this: *mut *mut Self, notationmap: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     notations: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IXMLDOMDocumentType {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 691257227, data2: 31542, data3: 4562, data4: [178, 14, 0, 192, 79, 152, 62, 96] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2347,6 +2552,10 @@ pub struct IXMLDOMElement {
     pub normalize: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IXMLDOMElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 691257222, data2: 31542, data3: 4562, data4: [178, 14, 0, 192, 79, 152, 62, 96] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IXMLDOMEntity {
     pub base__: IXMLDOMNode,
@@ -2364,9 +2573,17 @@ pub struct IXMLDOMEntity {
     notationName: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IXMLDOMEntity {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 691257229, data2: 31542, data3: 4562, data4: [178, 14, 0, 192, 79, 152, 62, 96] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IXMLDOMEntityReference {
     pub base__: IXMLDOMNode,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IXMLDOMEntityReference {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 691257230, data2: 31542, data3: 4562, data4: [178, 14, 0, 192, 79, 152, 62, 96] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2376,6 +2593,10 @@ pub struct IXMLDOMImplementation {
     pub hasFeature: unsafe extern "system" fn(this: *mut *mut Self, feature: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, version: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, hasfeature: *mut i16) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     hasFeature: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IXMLDOMImplementation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 691257231, data2: 31542, data3: 4562, data4: [178, 14, 0, 192, 79, 152, 62, 96] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2412,6 +2633,10 @@ pub struct IXMLDOMNamedNodeMap {
     nextNode: usize,
     pub reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub _newEnum: unsafe extern "system" fn(this: *mut *mut Self, ppunk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IXMLDOMNamedNodeMap {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 691257219, data2: 31542, data3: 4562, data4: [178, 14, 0, 192, 79, 152, 62, 96] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2551,6 +2776,10 @@ pub struct IXMLDOMNode {
     transformNodeToObject: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IXMLDOMNode {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 691257216, data2: 31542, data3: 4562, data4: [178, 14, 0, 192, 79, 152, 62, 96] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IXMLDOMNodeList {
     pub base__: super::super::super::System::Com::IDispatch,
@@ -2567,6 +2796,10 @@ pub struct IXMLDOMNodeList {
     pub _newEnum: unsafe extern "system" fn(this: *mut *mut Self, ppunk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IXMLDOMNodeList {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 691257218, data2: 31542, data3: 4562, data4: [178, 14, 0, 192, 79, 152, 62, 96] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IXMLDOMNotation {
     pub base__: IXMLDOMNode,
@@ -2578,6 +2811,10 @@ pub struct IXMLDOMNotation {
     pub systemId: unsafe extern "system" fn(this: *mut *mut Self, systemid: *mut super::super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     systemId: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IXMLDOMNotation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 691257228, data2: 31542, data3: 4562, data4: [178, 14, 0, 192, 79, 152, 62, 96] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2601,6 +2838,10 @@ pub struct IXMLDOMParseError {
     pub filepos: unsafe extern "system" fn(this: *mut *mut Self, fileposition: *mut i32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IXMLDOMParseError {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1056613414, data2: 10031, data3: 4562, data4: [131, 111, 0, 0, 248, 122, 119, 130] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IXMLDOMParseError2 {
     pub base__: IXMLDOMParseError,
@@ -2619,6 +2860,10 @@ pub struct IXMLDOMParseError2 {
     pub errorParametersCount: unsafe extern "system" fn(this: *mut *mut Self, count: *mut i32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IXMLDOMParseError2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1056613416, data2: 10031, data3: 4562, data4: [131, 111, 0, 0, 248, 122, 119, 130] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IXMLDOMParseErrorCollection {
     pub base__: super::super::super::System::Com::IDispatch,
@@ -2633,6 +2878,10 @@ pub struct IXMLDOMParseErrorCollection {
     next: usize,
     pub reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub _newEnum: unsafe extern "system" fn(this: *mut *mut Self, ppunk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IXMLDOMParseErrorCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1056613417, data2: 10031, data3: 4562, data4: [131, 111, 0, 0, 248, 122, 119, 130] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2650,6 +2899,10 @@ pub struct IXMLDOMProcessingInstruction {
     pub Setdata: unsafe extern "system" fn(this: *mut *mut Self, value: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     Setdata: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IXMLDOMProcessingInstruction {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 691257225, data2: 31542, data3: 4562, data4: [178, 14, 0, 192, 79, 152, 62, 96] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2679,6 +2932,10 @@ pub struct IXMLDOMSchemaCollection {
     pub _newEnum: unsafe extern "system" fn(this: *mut *mut Self, ppunk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IXMLDOMSchemaCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 926516424, data2: 47173, data3: 17563, data4: [145, 231, 69, 172, 131, 3, 106, 222] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IXMLDOMSchemaCollection2 {
     pub base__: IXMLDOMSchemaCollection,
@@ -2693,6 +2950,10 @@ pub struct IXMLDOMSchemaCollection2 {
     pub getDeclaration: unsafe extern "system" fn(this: *mut *mut Self, node: *mut ::core::ffi::c_void, item: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     getDeclaration: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IXMLDOMSchemaCollection2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1357514928, data2: 56603, data3: 18020, data4: [154, 80, 194, 244, 15, 75, 215, 154] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2741,6 +3002,10 @@ pub struct IXMLDOMSelection {
     setProperty: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IXMLDOMSelection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2858635207, data2: 22664, data3: 17575, data4: [162, 87, 58, 71, 21, 13, 58, 14] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IXMLDOMText {
     pub base__: IXMLDOMCharacterData,
@@ -2748,6 +3013,10 @@ pub struct IXMLDOMText {
     pub splitText: unsafe extern "system" fn(this: *mut *mut Self, offset: i32, righthandtextnode: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     splitText: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IXMLDOMText {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 691257223, data2: 31542, data3: 4562, data4: [178, 14, 0, 192, 79, 152, 62, 96] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2770,6 +3039,10 @@ pub struct IXMLDSOControl {
     #[cfg(not(feature = "Win32_Foundation"))]
     SetJavaDSOCompatible: usize,
     pub readyState: unsafe extern "system" fn(this: *mut *mut Self, state: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IXMLDSOControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 822803042, data2: 1397, data3: 4562, data4: [156, 169, 0, 96, 176, 236, 61, 57] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2828,6 +3101,10 @@ pub struct IXMLDocument {
     pub createElement: unsafe extern "system" fn(this: *mut *mut Self, vtype: ::core::mem::ManuallyDrop<super::super::super::System::Com::VARIANT>, var1: ::core::mem::ManuallyDrop<super::super::super::System::Com::VARIANT>, ppelem: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     createElement: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IXMLDocument {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4113443681, data2: 6305, data3: 4561, data4: [177, 5, 0, 128, 95, 73, 145, 107] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2890,6 +3167,10 @@ pub struct IXMLDocument2 {
     pub Setasync: unsafe extern "system" fn(this: *mut *mut Self, f: i16) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IXMLDocument2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 730718974, data2: 36141, data3: 4561, data4: [178, 252, 0, 192, 79, 217, 21, 169] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IXMLElement {
     pub base__: super::super::super::System::Com::IDispatch,
@@ -2938,6 +3219,10 @@ pub struct IXMLElement {
     pub removeChild: unsafe extern "system" fn(this: *mut *mut Self, pchildelem: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     removeChild: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IXMLElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1065300396, data2: 57695, data3: 4560, data4: [156, 37, 0, 192, 79, 201, 156, 142] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2994,6 +3279,10 @@ pub struct IXMLElement2 {
     attributes: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IXMLElement2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 730718975, data2: 36141, data3: 4561, data4: [178, 252, 0, 192, 79, 217, 21, 169] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IXMLElementCollection {
     pub base__: super::super::super::System::Com::IDispatch,
@@ -3005,6 +3294,10 @@ pub struct IXMLElementCollection {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     item: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IXMLElementCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1701991808, data2: 39773, data3: 4560, data4: [155, 254, 0, 192, 79, 201, 156, 142] };
+}
 #[repr(C)]
 pub struct IXMLError {
     pub base__: ::windows_sys::core::IUnknown,
@@ -3012,6 +3305,9 @@ pub struct IXMLError {
     pub GetErrorInfo: unsafe extern "system" fn(this: *mut *mut Self, perrorreturn: *mut XML_ERROR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetErrorInfo: usize,
+}
+impl ::windows_sys::core::Interface for IXMLError {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2492226259, data2: 50573, data3: 4560, data4: [156, 11, 0, 192, 79, 201, 156, 142] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -3065,6 +3361,10 @@ pub struct IXMLHTTPRequest {
     #[cfg(not(feature = "Win32_System_Com"))]
     Setonreadystatechange: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IXMLHTTPRequest {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3985379469, data2: 17225, data3: 4562, data4: [145, 164, 0, 192, 79, 121, 105, 232] };
+}
 #[repr(C)]
 pub struct IXMLHTTPRequest2 {
     pub base__: ::windows_sys::core::IUnknown,
@@ -3091,6 +3391,9 @@ pub struct IXMLHTTPRequest2 {
     GetCookie: usize,
     pub GetResponseHeader: unsafe extern "system" fn(this: *mut *mut Self, pwszheader: ::windows_sys::core::PCWSTR, ppwszvalue: *mut *mut u16) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IXMLHTTPRequest2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3855842752, data2: 21802, data3: 19794, data4: [156, 192, 161, 77, 84, 111, 189, 4] };
+}
 #[repr(C)]
 pub struct IXMLHTTPRequest2Callback {
     pub base__: ::windows_sys::core::IUnknown,
@@ -3106,16 +3409,25 @@ pub struct IXMLHTTPRequest2Callback {
     OnResponseReceived: usize,
     pub OnError: unsafe extern "system" fn(this: *mut *mut Self, pxhr: *mut ::core::ffi::c_void, hrerror: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IXMLHTTPRequest2Callback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2756350617, data2: 58145, data3: 16606, data4: [136, 102, 52, 27, 65, 102, 145, 98] };
+}
 #[repr(C)]
 pub struct IXMLHTTPRequest3 {
     pub base__: IXMLHTTPRequest2,
     pub SetClientCertificate: unsafe extern "system" fn(this: *mut *mut Self, cbclientcertificatehash: u32, pbclientcertificatehash: *const u8, pwszpin: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IXMLHTTPRequest3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2714369774, data2: 1559, data3: 20259, data4: [157, 88, 137, 97, 234, 67, 86, 124] };
 }
 #[repr(C)]
 pub struct IXMLHTTPRequest3Callback {
     pub base__: IXMLHTTPRequest2Callback,
     pub OnServerCertificateReceived: unsafe extern "system" fn(this: *mut *mut Self, pxhr: *mut ::core::ffi::c_void, dwcertificateerrors: u32, cservercertificatechain: u32, rgservercertificatechain: *const XHR_CERT) -> ::windows_sys::core::HRESULT,
     pub OnClientCertificateRequested: unsafe extern "system" fn(this: *mut *mut Self, pxhr: *mut ::core::ffi::c_void, cissuerlist: u32, rgpwszissuerlist: *const *const u16) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IXMLHTTPRequest3Callback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3118823472, data2: 35948, data3: 19055, data4: [156, 19, 71, 119, 43, 176, 71, 187] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -3170,6 +3482,10 @@ pub struct IXMLHttpRequest {
     Setonreadystatechange: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IXMLHttpRequest {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3985379469, data2: 17225, data3: 4562, data4: [145, 164, 0, 192, 79, 121, 105, 232] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IXSLProcessor {
     pub base__: super::super::super::System::Com::IDispatch,
@@ -3222,6 +3538,10 @@ pub struct IXSLProcessor {
     stylesheet: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IXSLProcessor {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 691257234, data2: 31542, data3: 4562, data4: [178, 14, 0, 192, 79, 152, 62, 96] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IXSLTemplate {
     pub base__: super::super::super::System::Com::IDispatch,
@@ -3237,6 +3557,10 @@ pub struct IXSLTemplate {
     pub createProcessor: unsafe extern "system" fn(this: *mut *mut Self, ppprocessor: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     createProcessor: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IXSLTemplate {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 691257235, data2: 31542, data3: 4562, data4: [178, 14, 0, 192, 79, 152, 62, 96] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -3278,6 +3602,10 @@ pub struct IXTLRuntime {
     pub formatTime: unsafe extern "system" fn(this: *mut *mut Self, vartime: ::core::mem::ManuallyDrop<super::super::super::System::Com::VARIANT>, bstrformat: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, vardestlocale: ::core::mem::ManuallyDrop<super::super::super::System::Com::VARIANT>, pbstrformattedstring: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     formatTime: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IXTLRuntime {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1056613413, data2: 10031, data3: 4562, data4: [131, 111, 0, 0, 248, 122, 119, 130] };
 }
 pub const MXHTMLWriter60: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2295949840, data2: 61842, data3: 4564, data4: [166, 95, 0, 64, 150, 50, 81, 229] };
 pub const MXNamespaceManager60: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2295949841, data2: 61842, data3: 4564, data4: [166, 95, 0, 64, 150, 50, 81, 229] };
@@ -3678,6 +4006,10 @@ pub const XHR_PROP_ONDATA_NEVER: u64 = 18446744073709551615u64;
 #[repr(C)]
 pub struct XMLDOMDocumentEvents {
     pub base__: super::super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for XMLDOMDocumentEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1056613415, data2: 10031, data3: 4562, data4: [131, 111, 0, 0, 248, 122, 119, 130] };
 }
 pub const XMLDSOControl: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1426971184, data2: 1345, data3: 4562, data4: [156, 169, 0, 96, 176, 236, 61, 57] };
 pub const XMLDocument: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3485702575, data2: 55414, data3: 4560, data4: [156, 16, 0, 192, 79, 201, 156, 142] };

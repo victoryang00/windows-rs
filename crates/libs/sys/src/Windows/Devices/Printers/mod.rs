@@ -10,6 +10,9 @@ pub struct IIppAttributeError {
     #[cfg(not(feature = "Foundation_Collections"))]
     GetUnsupportedValues: usize,
 }
+impl ::windows_sys::core::Interface for IIppAttributeError {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1963978145, data2: 40687, data3: 23609, data4: [147, 228, 70, 20, 155, 188, 239, 39] };
+}
 #[repr(C)]
 pub struct IIppAttributeValue {
     pub base__: ::windows_sys::core::IInspectable,
@@ -86,6 +89,9 @@ pub struct IIppAttributeValue {
     pub GetMimeMediaTypeArray: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     GetMimeMediaTypeArray: usize,
+}
+impl ::windows_sys::core::Interface for IIppAttributeValue {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2571141101, data2: 58043, data3: 22947, data4: [152, 139, 40, 169, 116, 5, 42, 38] };
 }
 #[repr(C)]
 pub struct IIppAttributeValueStatics {
@@ -196,16 +202,25 @@ pub struct IIppAttributeValueStatics {
     #[cfg(not(feature = "Foundation_Collections"))]
     CreateMimeMediaArray: usize,
 }
+impl ::windows_sys::core::Interface for IIppAttributeValueStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 282343746, data2: 56724, data3: 22936, data4: [178, 53, 175, 175, 182, 250, 121, 53] };
+}
 #[repr(C)]
 pub struct IIppIntegerRange {
     pub base__: ::windows_sys::core::IInspectable,
     pub Start: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i32) -> ::windows_sys::core::HRESULT,
     pub End: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IIppIntegerRange {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2458940230, data2: 50154, data3: 24278, data4: [189, 177, 55, 82, 198, 44, 111, 127] };
+}
 #[repr(C)]
 pub struct IIppIntegerRangeFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub CreateInstance: unsafe extern "system" fn(this: *mut *mut Self, start: i32, end: i32, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IIppIntegerRangeFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1976888494, data2: 63614, data3: 21677, data4: [181, 208, 70, 82, 4, 219, 117, 83] };
 }
 #[repr(C)]
 pub struct IIppPrintDevice {
@@ -232,6 +247,9 @@ pub struct IIppPrintDevice {
     #[cfg(not(feature = "Foundation_Collections"))]
     SetPrinterAttributes: usize,
 }
+impl ::windows_sys::core::Interface for IIppPrintDevice {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3611864150, data2: 30451, data3: 24006, data4: [175, 212, 194, 168, 104, 107, 147, 89] };
+}
 #[repr(C)]
 pub struct IIppResolution {
     pub base__: ::windows_sys::core::IInspectable,
@@ -239,10 +257,16 @@ pub struct IIppResolution {
     pub Height: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i32) -> ::windows_sys::core::HRESULT,
     pub Unit: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut IppResolutionUnit) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IIppResolution {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3410575238, data2: 27635, data3: 22261, data4: [134, 206, 38, 61, 8, 174, 173, 99] };
+}
 #[repr(C)]
 pub struct IIppResolutionFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub CreateInstance: unsafe extern "system" fn(this: *mut *mut Self, width: i32, height: i32, unit: IppResolutionUnit, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IIppResolutionFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3833709230, data2: 9498, data3: 21286, data4: [177, 115, 149, 84, 62, 217, 154, 53] };
 }
 #[repr(C)]
 pub struct IIppSetAttributesResult {
@@ -253,21 +277,33 @@ pub struct IIppSetAttributesResult {
     #[cfg(not(feature = "Foundation_Collections"))]
     AttributeErrors: usize,
 }
+impl ::windows_sys::core::Interface for IIppSetAttributesResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2099019605, data2: 43677, data3: 22691, data4: [144, 233, 23, 189, 197, 40, 31, 7] };
+}
 #[repr(C)]
 pub struct IIppTextWithLanguage {
     pub base__: ::windows_sys::core::IInspectable,
     pub Language: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub Value: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IIppTextWithLanguage {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 845432742, data2: 20809, data3: 22838, data4: [144, 232, 12, 115, 96, 54, 191, 119] };
+}
 #[repr(C)]
 pub struct IIppTextWithLanguageFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub CreateInstance: unsafe extern "system" fn(this: *mut *mut Self, language: ::windows_sys::core::HSTRING, text: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IIppTextWithLanguageFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3393855117, data2: 10600, data3: 22389, data4: [153, 124, 138, 70, 241, 165, 116, 237] };
+}
 #[repr(C)]
 pub struct IPrint3DDevice {
     pub base__: ::windows_sys::core::IInspectable,
     pub PrintSchema: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPrint3DDevice {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 68959513, data2: 38675, data3: 17058, data4: [152, 19, 125, 195, 51, 116, 40, 211] };
 }
 #[repr(C)]
 pub struct IPrint3DDeviceStatics {
@@ -277,6 +313,9 @@ pub struct IPrint3DDeviceStatics {
     #[cfg(not(feature = "Foundation"))]
     FromIdAsync: usize,
     pub GetDeviceSelector: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPrint3DDeviceStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4259537418, data2: 26573, data3: 16823, data4: [163, 68, 81, 80, 161, 253, 117, 181] };
 }
 #[repr(C)]
 pub struct IPrintSchema {
@@ -293,6 +332,9 @@ pub struct IPrintSchema {
     pub MergeAndValidateWithDefaultPrintTicketAsync: unsafe extern "system" fn(this: *mut *mut Self, deltaticket: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
     MergeAndValidateWithDefaultPrintTicketAsync: usize,
+}
+impl ::windows_sys::core::Interface for IPrintSchema {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3266937622, data2: 9912, data3: 19451, data4: [129, 56, 159, 150, 44, 34, 163, 91] };
 }
 pub type IppAttributeError = *mut ::core::ffi::c_void;
 #[doc = "*Required features: `\"Devices_Printers\"`*"]

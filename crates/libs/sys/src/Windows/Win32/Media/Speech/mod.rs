@@ -796,6 +796,9 @@ pub struct IEnumSpObjectTokens {
     pub Item: unsafe extern "system" fn(this: *mut *mut Self, index: u32, pptoken: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, pcount: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEnumSpObjectTokens {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 112611230, data2: 32730, data3: 4562, data4: [180, 242, 0, 192, 79, 121, 115, 150] };
+}
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISpAudio {
@@ -821,10 +824,17 @@ pub struct ISpAudio {
     pub GetBufferNotifySize: unsafe extern "system" fn(this: *mut *mut Self, pcbsize: *mut u32) -> ::windows_sys::core::HRESULT,
     pub SetBufferNotifySize: unsafe extern "system" fn(this: *mut *mut Self, cbsize: u32) -> ::windows_sys::core::HRESULT,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISpAudio {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3227285135, data2: 64232, data3: 20162, data4: [142, 7, 51, 131, 33, 193, 36, 82] };
+}
 #[repr(C)]
 pub struct ISpContainerLexicon {
     pub base__: ISpLexicon,
     pub AddLexicon: unsafe extern "system" fn(this: *mut *mut Self, paddlexicon: *mut ::core::ffi::c_void, dwflags: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISpContainerLexicon {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2238011183, data2: 49300, data3: 16844, data4: [181, 110, 16, 189, 156, 63, 240, 68] };
 }
 #[repr(C)]
 pub struct ISpDataKey {
@@ -842,17 +852,26 @@ pub struct ISpDataKey {
     pub EnumKeys: unsafe extern "system" fn(this: *mut *mut Self, index: u32, ppszsubkeyname: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
     pub EnumValues: unsafe extern "system" fn(this: *mut *mut Self, index: u32, ppszvaluename: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISpDataKey {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 335897985, data2: 57708, data3: 4562, data4: [187, 144, 0, 192, 79, 142, 230, 192] };
+}
 #[repr(C)]
 pub struct ISpDisplayAlternates {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetDisplayAlternates: unsafe extern "system" fn(this: *mut *mut Self, pphrase: *const SPDISPLAYPHRASE, crequestcount: u32, ppcomemphrases: *mut *mut SPDISPLAYPHRASE, pcphrasesreturned: *mut u32) -> ::windows_sys::core::HRESULT,
     pub SetFullStopTrailSpace: unsafe extern "system" fn(this: *mut *mut Self, ultrailspace: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISpDisplayAlternates {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3369584610, data2: 3550, data3: 17591, data4: [175, 227, 176, 201, 145, 251, 235, 94] };
+}
 #[repr(C)]
 pub struct ISpEnginePronunciation {
     pub base__: ::windows_sys::core::IUnknown,
     pub Normalize: unsafe extern "system" fn(this: *mut *mut Self, pszword: ::windows_sys::core::PCWSTR, pszleftcontext: ::windows_sys::core::PCWSTR, pszrightcontext: ::windows_sys::core::PCWSTR, langid: u16, pnormalizationlist: *mut SPNORMALIZATIONLIST) -> ::windows_sys::core::HRESULT,
     pub GetPronunciations: unsafe extern "system" fn(this: *mut *mut Self, pszword: ::windows_sys::core::PCWSTR, pszleftcontext: ::windows_sys::core::PCWSTR, pszrightcontext: ::windows_sys::core::PCWSTR, langid: u16, penginepronunciationlist: *mut SPWORDPRONUNCIATIONLIST) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISpEnginePronunciation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3277901387, data2: 30417, data3: 16916, data4: [173, 104, 82, 101, 125, 80, 131, 218] };
 }
 #[repr(C)]
 pub struct ISpEventSink {
@@ -862,6 +881,9 @@ pub struct ISpEventSink {
     #[cfg(not(feature = "Win32_Foundation"))]
     AddEvents: usize,
     pub GetEventInterest: unsafe extern "system" fn(this: *mut *mut Self, pulleventinterest: *mut u64) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISpEventSink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3195706569, data2: 24478, data3: 4562, data4: [150, 15, 0, 192, 79, 142, 230, 40] };
 }
 #[repr(C)]
 pub struct ISpEventSource {
@@ -873,6 +895,9 @@ pub struct ISpEventSource {
     GetEvents: usize,
     pub GetInfo: unsafe extern "system" fn(this: *mut *mut Self, pinfo: *mut SPEVENTSOURCEINFO) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISpEventSource {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3195706574, data2: 24478, data3: 4562, data4: [150, 15, 0, 192, 79, 142, 230, 40] };
+}
 #[repr(C)]
 pub struct ISpEventSource2 {
     pub base__: ISpEventSource,
@@ -880,6 +905,9 @@ pub struct ISpEventSource2 {
     pub GetEventsEx: unsafe extern "system" fn(this: *mut *mut Self, ulcount: u32, peventarray: *mut SPEVENTEX, pulfetched: *mut u32) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetEventsEx: usize,
+}
+impl ::windows_sys::core::Interface for ISpEventSource2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 594781237, data2: 27211, data3: 17054, data4: [166, 172, 212, 35, 26, 97, 151, 91] };
 }
 #[repr(C)]
 pub struct ISpGrammarBuilder {
@@ -902,11 +930,17 @@ pub struct ISpGrammarBuilder {
     pub AddResource: unsafe extern "system" fn(this: *mut *mut Self, hrulestate: *mut SPSTATEHANDLE__, pszresourcename: ::windows_sys::core::PCWSTR, pszresourcevalue: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
     pub Commit: unsafe extern "system" fn(this: *mut *mut Self, dwreserved: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISpGrammarBuilder {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2167898767, data2: 22810, data3: 19010, data4: [190, 88, 73, 234, 126, 186, 172, 104] };
+}
 #[repr(C)]
 pub struct ISpGrammarBuilder2 {
     pub base__: ::windows_sys::core::IUnknown,
     pub AddTextSubset: unsafe extern "system" fn(this: *mut *mut Self, hfromstate: *mut SPSTATEHANDLE__, htostate: *mut SPSTATEHANDLE__, psz: ::windows_sys::core::PCWSTR, ematchmode: SPMATCHINGMODE) -> ::windows_sys::core::HRESULT,
     pub SetPhoneticAlphabet: unsafe extern "system" fn(this: *mut *mut Self, phoneticalphabet: PHONETICALPHABET) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISpGrammarBuilder2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2326855718, data2: 8396, data3: 19232, data4: [140, 34, 164, 156, 155, 167, 143, 96] };
 }
 #[repr(C)]
 pub struct ISpLexicon {
@@ -918,6 +952,9 @@ pub struct ISpLexicon {
     pub GetGenerationChange: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, pdwgeneration: *mut u32, pwordlist: *mut SPWORDLIST) -> ::windows_sys::core::HRESULT,
     pub GetWords: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, pdwgeneration: *mut u32, pdwcookie: *mut u32, pwordlist: *mut SPWORDLIST) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISpLexicon {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3661735874, data2: 21379, data3: 19890, data4: [145, 107, 108, 23, 25, 227, 219, 88] };
+}
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISpMMSysAudio {
@@ -928,6 +965,10 @@ pub struct ISpMMSysAudio {
     pub GetLineId: unsafe extern "system" fn(this: *mut *mut Self, pulineid: *mut u32) -> ::windows_sys::core::HRESULT,
     pub SetLineId: unsafe extern "system" fn(this: *mut *mut Self, ulineid: u32) -> ::windows_sys::core::HRESULT,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISpMMSysAudio {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 360738670, data2: 7536, data3: 19272, data4: [152, 230, 59, 26, 0, 117, 9, 171] };
+}
 #[repr(C)]
 pub struct ISpNotifyCallback {
     #[cfg(feature = "Win32_Foundation")]
@@ -935,10 +976,16 @@ pub struct ISpNotifyCallback {
     #[cfg(not(feature = "Win32_Foundation"))]
     NotifyCallback: usize,
 }
+impl ::windows_sys::core::Interface for ISpNotifyCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID::zeroed();
+}
 #[repr(C)]
 pub struct ISpNotifySink {
     pub base__: ::windows_sys::core::IUnknown,
     pub Notify: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISpNotifySink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 630621404, data2: 14275, data3: 4562, data4: [150, 3, 0, 192, 79, 142, 230, 40] };
 }
 #[repr(C)]
 pub struct ISpNotifySource {
@@ -962,6 +1009,9 @@ pub struct ISpNotifySource {
     pub GetNotifyEventHandle: unsafe extern "system" fn(this: *mut *mut Self) -> super::super::Foundation::HANDLE,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetNotifyEventHandle: usize,
+}
+impl ::windows_sys::core::Interface for ISpNotifySource {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1593789167, data2: 33927, data3: 4562, data4: [150, 28, 0, 192, 79, 142, 230, 40] };
 }
 #[repr(C)]
 pub struct ISpNotifyTranslator {
@@ -987,6 +1037,9 @@ pub struct ISpNotifyTranslator {
     pub GetEventHandle: unsafe extern "system" fn(this: *mut *mut Self) -> super::super::Foundation::HANDLE,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetEventHandle: usize,
+}
+impl ::windows_sys::core::Interface for ISpNotifyTranslator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2896258580, data2: 23869, data3: 4562, data4: [150, 14, 0, 192, 79, 142, 230, 40] };
 }
 #[repr(C)]
 pub struct ISpObjectToken {
@@ -1017,6 +1070,9 @@ pub struct ISpObjectToken {
     #[cfg(not(feature = "Win32_Foundation"))]
     MatchesAttributes: usize,
 }
+impl ::windows_sys::core::Interface for ISpObjectToken {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 335897993, data2: 57708, data3: 4562, data4: [187, 144, 0, 192, 79, 142, 230, 192] };
+}
 #[repr(C)]
 pub struct ISpObjectTokenCategory {
     pub base__: ISpDataKey,
@@ -1030,10 +1086,16 @@ pub struct ISpObjectTokenCategory {
     pub SetDefaultTokenId: unsafe extern "system" fn(this: *mut *mut Self, psztokenid: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
     pub GetDefaultTokenId: unsafe extern "system" fn(this: *mut *mut Self, ppszcomemtokenid: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISpObjectTokenCategory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 758986821, data2: 14767, data3: 18512, data4: [187, 249, 64, 180, 151, 128, 1, 29] };
+}
 #[repr(C)]
 pub struct ISpObjectTokenInit {
     pub base__: ISpObjectToken,
     pub InitFromDataKey: unsafe extern "system" fn(this: *mut *mut Self, pszcategoryid: ::windows_sys::core::PCWSTR, psztokenid: ::windows_sys::core::PCWSTR, pdatakey: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISpObjectTokenInit {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3098194127, data2: 13423, data3: 18904, data4: [148, 153, 200, 176, 63, 22, 29, 81] };
 }
 #[repr(C)]
 pub struct ISpObjectWithToken {
@@ -1041,11 +1103,17 @@ pub struct ISpObjectWithToken {
     pub SetObjectToken: unsafe extern "system" fn(this: *mut *mut Self, ptoken: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetObjectToken: unsafe extern "system" fn(this: *mut *mut Self, pptoken: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISpObjectWithToken {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1532337984, data2: 59730, data3: 4562, data4: [187, 145, 0, 192, 79, 142, 230, 192] };
+}
 #[repr(C)]
 pub struct ISpPhoneConverter {
     pub base__: ISpObjectWithToken,
     pub PhoneToId: unsafe extern "system" fn(this: *mut *mut Self, pszphone: ::windows_sys::core::PCWSTR, pid: *mut u16) -> ::windows_sys::core::HRESULT,
     pub IdToPhone: unsafe extern "system" fn(this: *mut *mut Self, pid: *const u16, pszphone: ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISpPhoneConverter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2219165057, data2: 3244, data3: 19000, data4: [171, 254, 155, 44, 226, 130, 100, 85] };
 }
 #[repr(C)]
 pub struct ISpPhoneticAlphabetConverter {
@@ -1059,6 +1127,9 @@ pub struct ISpPhoneticAlphabetConverter {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetMaxConvertLength: usize,
 }
+impl ::windows_sys::core::Interface for ISpPhoneticAlphabetConverter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 322624724, data2: 6580, data3: 16416, data4: [159, 220, 132, 46, 120, 37, 59, 23] };
+}
 #[repr(C)]
 pub struct ISpPhoneticAlphabetSelection {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1070,6 +1141,9 @@ pub struct ISpPhoneticAlphabetSelection {
     pub SetAlphabetToUPS: unsafe extern "system" fn(this: *mut *mut Self, fforceups: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     SetAlphabetToUPS: usize,
+}
+impl ::windows_sys::core::Interface for ISpPhoneticAlphabetSelection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2993970941, data2: 17102, data3: 18634, data4: [129, 241, 169, 110, 2, 83, 138, 144] };
 }
 #[repr(C)]
 pub struct ISpPhrase {
@@ -1085,6 +1159,9 @@ pub struct ISpPhrase {
     GetText: usize,
     pub Discard: unsafe extern "system" fn(this: *mut *mut Self, dwvaluetypes: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISpPhrase {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 442237780, data2: 46625, data3: 19290, data4: [135, 145, 211, 6, 237, 55, 158, 83] };
+}
 #[repr(C)]
 pub struct ISpPhrase2 {
     pub base__: ISpPhrase,
@@ -1095,11 +1172,17 @@ pub struct ISpPhrase2 {
     #[cfg(not(feature = "Win32_System_Com"))]
     GetAudio: usize,
 }
+impl ::windows_sys::core::Interface for ISpPhrase2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4066695762, data2: 58455, data3: 18070, data4: [184, 86, 167, 55, 183, 23, 175, 121] };
+}
 #[repr(C)]
 pub struct ISpPhraseAlt {
     pub base__: ISpPhrase,
     pub GetAltInfo: unsafe extern "system" fn(this: *mut *mut Self, ppparent: *mut *mut ::core::ffi::c_void, pulstartelementinparent: *mut u32, pcelementsinparent: *mut u32, pcelementsinalt: *mut u32) -> ::windows_sys::core::HRESULT,
     pub Commit: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISpPhraseAlt {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2412690584, data2: 20041, data3: 16487, data4: [156, 108, 216, 106, 14, 9, 46, 61] };
 }
 #[repr(C)]
 pub struct ISpProperties {
@@ -1108,6 +1191,9 @@ pub struct ISpProperties {
     pub GetPropertyNum: unsafe extern "system" fn(this: *mut *mut Self, pname: ::windows_sys::core::PCWSTR, plvalue: *mut i32) -> ::windows_sys::core::HRESULT,
     pub SetPropertyString: unsafe extern "system" fn(this: *mut *mut Self, pname: ::windows_sys::core::PCWSTR, pvalue: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
     pub GetPropertyString: unsafe extern "system" fn(this: *mut *mut Self, pname: ::windows_sys::core::PCWSTR, ppcomemvalue: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISpProperties {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1531951473, data2: 45333, data3: 19937, data4: [173, 151, 228, 130, 227, 191, 110, 228] };
 }
 #[repr(C)]
 pub struct ISpRecoContext {
@@ -1143,12 +1229,18 @@ pub struct ISpRecoContext {
     pub SetContextState: unsafe extern "system" fn(this: *mut *mut Self, econtextstate: SPCONTEXTSTATE) -> ::windows_sys::core::HRESULT,
     pub GetContextState: unsafe extern "system" fn(this: *mut *mut Self, pecontextstate: *mut SPCONTEXTSTATE) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISpRecoContext {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4148209199, data2: 31765, data3: 18590, data4: [130, 52, 148, 10, 51, 217, 39, 45] };
+}
 #[repr(C)]
 pub struct ISpRecoContext2 {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetGrammarOptions: unsafe extern "system" fn(this: *mut *mut Self, egrammaroptions: u32) -> ::windows_sys::core::HRESULT,
     pub GetGrammarOptions: unsafe extern "system" fn(this: *mut *mut Self, pegrammaroptions: *mut u32) -> ::windows_sys::core::HRESULT,
     pub SetAdaptationData2: unsafe extern "system" fn(this: *mut *mut Self, padaptationdata: ::windows_sys::core::PCWSTR, cch: u32, ptopicname: ::windows_sys::core::PCWSTR, eadaptationsettings: u32, erelevance: SPADAPTATIONRELEVANCE) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISpRecoContext2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3199021340, data2: 21247, data3: 17279, data4: [148, 100, 107, 33, 5, 76, 167, 61] };
 }
 #[repr(C)]
 pub struct ISpRecoGrammar {
@@ -1178,6 +1270,9 @@ pub struct ISpRecoGrammar {
     SaveCmd: usize,
     pub GetGrammarState: unsafe extern "system" fn(this: *mut *mut Self, pegrammarstate: *mut SPGRAMMARSTATE) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISpRecoGrammar {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 561503017, data2: 32581, data3: 18384, data4: [133, 84, 6, 126, 145, 200, 5, 2] };
+}
 #[repr(C)]
 pub struct ISpRecoGrammar2 {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1195,6 +1290,9 @@ pub struct ISpRecoGrammar2 {
     pub SetSMLSecurityManager: unsafe extern "system" fn(this: *mut *mut Self, psmlsecuritymanager: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com_Urlmon"))]
     SetSMLSecurityManager: usize,
+}
+impl ::windows_sys::core::Interface for ISpRecoGrammar2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1261943966, data2: 40662, data3: 17571, data4: [147, 211, 24, 240, 34, 183, 158, 195] };
 }
 #[repr(C)]
 pub struct ISpRecoResult {
@@ -1216,6 +1314,9 @@ pub struct ISpRecoResult {
     ScaleAudio: usize,
     pub GetRecoContext: unsafe extern "system" fn(this: *mut *mut Self, pprecocontext: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISpRecoResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 548426686, data2: 57909, data3: 17357, data4: [154, 42, 141, 23, 164, 139, 120, 66] };
+}
 #[repr(C)]
 pub struct ISpRecoResult2 {
     pub base__: ISpRecoResult,
@@ -1225,6 +1326,9 @@ pub struct ISpRecoResult2 {
     pub SetTextFeedback: unsafe extern "system" fn(this: *mut *mut Self, pszfeedback: ::windows_sys::core::PCWSTR, fsuccessful: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     SetTextFeedback: usize,
+}
+impl ::windows_sys::core::Interface for ISpRecoResult2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 667600580, data2: 35058, data3: 16882, data4: [136, 23, 12, 149, 229, 159, 30, 110] };
 }
 #[repr(C)]
 pub struct ISpRecognizer {
@@ -1261,6 +1365,9 @@ pub struct ISpRecognizer {
     DisplayUI: usize,
     pub EmulateRecognition: unsafe extern "system" fn(this: *mut *mut Self, pphrase: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISpRecognizer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3266703937, data2: 55968, data3: 17671, data4: [158, 22, 90, 30, 170, 43, 122, 92] };
+}
 #[repr(C)]
 pub struct ISpRecognizer2 {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1271,6 +1378,9 @@ pub struct ISpRecognizer2 {
     SetTrainingState: usize,
     pub ResetAcousticModelAdaptation: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISpRecognizer2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2412173684, data2: 51230, data3: 16536, data4: [147, 197, 1, 71, 246, 30, 212, 211] };
+}
 #[repr(C)]
 pub struct ISpRegDataKey {
     pub base__: ISpDataKey,
@@ -1278,6 +1388,9 @@ pub struct ISpRegDataKey {
     pub SetKey: unsafe extern "system" fn(this: *mut *mut Self, hkey: super::super::System::Registry::HKEY, freadonly: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Registry")))]
     SetKey: usize,
+}
+impl ::windows_sys::core::Interface for ISpRegDataKey {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2460380715, data2: 51248, data3: 16713, data4: [131, 223, 111, 194, 186, 30, 122, 91] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1289,11 +1402,18 @@ pub struct ISpResourceManager {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetObject: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISpResourceManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2469940760, data2: 20500, data3: 17365, data4: [173, 187, 167, 142, 5, 89, 38, 189] };
+}
 #[repr(C)]
 pub struct ISpSerializeState {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetSerializedState: unsafe extern "system" fn(this: *mut *mut Self, ppbdata: *mut *mut u8, pulsize: *mut u32, dwreserved: u32) -> ::windows_sys::core::HRESULT,
     pub SetSerializedState: unsafe extern "system" fn(this: *mut *mut Self, pbdata: *const u8, ulsize: u32, dwreserved: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISpSerializeState {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 565510560, data2: 3783, data3: 18121, data4: [146, 195, 162, 188, 120, 76, 84, 185] };
 }
 #[repr(C)]
 pub struct ISpShortcut {
@@ -1306,6 +1426,9 @@ pub struct ISpShortcut {
     pub GetWords: unsafe extern "system" fn(this: *mut *mut Self, pdwgeneration: *mut u32, pdwcookie: *mut u32, pwordlist: *mut SPWORDLIST) -> ::windows_sys::core::HRESULT,
     pub GetShortcutsForGeneration: unsafe extern "system" fn(this: *mut *mut Self, pdwgeneration: *mut u32, pdwcookie: *mut u32, pshortcutpairlist: *mut SPSHORTCUTPAIRLIST) -> ::windows_sys::core::HRESULT,
     pub GetGenerationChange: unsafe extern "system" fn(this: *mut *mut Self, pdwgeneration: *mut u32, pshortcutpairlist: *mut SPSHORTCUTPAIRLIST) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISpShortcut {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1039565282, data2: 59990, data3: 4569, data4: [139, 222, 246, 107, 173, 30, 63, 58] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1326,6 +1449,10 @@ pub struct ISpStream {
     pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISpStream {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 316918953, data2: 29976, data3: 17605, data4: [165, 231, 186, 90, 121, 203, 146, 158] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISpStreamFormat {
     pub base__: super::super::System::Com::IStream,
@@ -1333,6 +1460,10 @@ pub struct ISpStreamFormat {
     pub GetFormat: unsafe extern "system" fn(this: *mut *mut Self, pguidformatid: *const ::windows_sys::core::GUID, ppcomemwaveformatex: *mut *mut super::Audio::WAVEFORMATEX) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Media_Audio"))]
     GetFormat: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISpStreamFormat {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3201642686, data2: 9734, data3: 20301, data4: [161, 192, 84, 197, 205, 165, 86, 111] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1354,11 +1485,18 @@ pub struct ISpStreamFormatConverter {
     pub ScaleConvertedToBaseOffset: unsafe extern "system" fn(this: *mut *mut Self, ulloffsetconvertedstream: u64, pulloffsetbasestream: *mut u64) -> ::windows_sys::core::HRESULT,
     pub ScaleBaseToConvertedOffset: unsafe extern "system" fn(this: *mut *mut Self, ulloffsetbasestream: u64, pulloffsetconvertedstream: *mut u64) -> ::windows_sys::core::HRESULT,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISpStreamFormatConverter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1737134892, data2: 60017, data3: 17478, data4: [155, 65, 120, 253, 166, 40, 10, 41] };
+}
 #[repr(C)]
 pub struct ISpTranscript {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetTranscript: unsafe extern "system" fn(this: *mut *mut Self, ppsztranscript: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
     pub AppendTranscript: unsafe extern "system" fn(this: *mut *mut Self, psztranscript: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISpTranscript {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 284572622, data2: 8218, data3: 4563, data4: [172, 112, 0, 192, 79, 142, 230, 192] };
 }
 #[repr(C)]
 pub struct ISpVoice {
@@ -1407,11 +1545,17 @@ pub struct ISpVoice {
     #[cfg(not(feature = "Win32_Foundation"))]
     DisplayUI: usize,
 }
+impl ::windows_sys::core::Interface for ISpVoice {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1816452980, data2: 29369, data3: 18834, data4: [161, 236, 239, 153, 110, 4, 34, 212] };
+}
 #[repr(C)]
 pub struct ISpXMLRecoResult {
     pub base__: ISpRecoResult,
     pub GetXMLResult: unsafe extern "system" fn(this: *mut *mut Self, ppszcomemxmlresult: *mut ::windows_sys::core::PWSTR, options: SPXMLRESULTOPTIONS) -> ::windows_sys::core::HRESULT,
     pub GetXMLErrorInfo: unsafe extern "system" fn(this: *mut *mut Self, psemanticerrorinfo: *mut SPSEMANTICERRORINFO) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISpXMLRecoResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2922985003, data2: 17832, data3: 16500, data4: [155, 158, 204, 244, 154, 162, 208, 182] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1437,6 +1581,10 @@ pub struct ISpeechAudio {
     pub SetState: unsafe extern "system" fn(this: *mut *mut Self, state: SpeechAudioState) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISpeechAudio {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3489194357, data2: 414, data3: 4563, data4: [160, 142, 0, 192, 79, 142, 249, 181] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISpeechAudioBufferInfo {
     pub base__: super::super::System::Com::IDispatch,
@@ -1446,6 +1594,10 @@ pub struct ISpeechAudioBufferInfo {
     pub SetBufferSize: unsafe extern "system" fn(this: *mut *mut Self, buffersize: i32) -> ::windows_sys::core::HRESULT,
     pub EventBias: unsafe extern "system" fn(this: *mut *mut Self, eventbias: *mut i32) -> ::windows_sys::core::HRESULT,
     pub SetEventBias: unsafe extern "system" fn(this: *mut *mut Self, eventbias: i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISpeechAudioBufferInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 296813528, data2: 4418, data3: 20191, data4: [160, 147, 130, 251, 57, 21, 248, 204] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1471,6 +1623,10 @@ pub struct ISpeechAudioFormat {
     SetWaveFormatEx: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISpeechAudioFormat {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3874080144, data2: 15896, data3: 16611, data4: [130, 153, 6, 31, 152, 189, 231, 199] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISpeechAudioStatus {
     pub base__: super::super::System::Com::IDispatch,
@@ -1485,6 +1641,10 @@ pub struct ISpeechAudioStatus {
     pub CurrentDevicePosition: unsafe extern "system" fn(this: *mut *mut Self, currentdeviceposition: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     CurrentDevicePosition: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISpeechAudioStatus {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3324877969, data2: 29784, data3: 18422, data4: [134, 45, 30, 248, 111, 176, 178, 120] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1512,11 +1672,19 @@ pub struct ISpeechBaseStream {
     Seek: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISpeechBaseStream {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1682977647, data2: 32073, data3: 19693, data4: [128, 151, 73, 214, 222, 227, 114, 148] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISpeechCustomStream {
     pub base__: ISpeechBaseStream,
     pub BaseStream: unsafe extern "system" fn(this: *mut *mut Self, ppunkstream: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub putref_BaseStream: unsafe extern "system" fn(this: *mut *mut Self, punkstream: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISpeechCustomStream {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 446603087, data2: 4175, data3: 19896, data4: [161, 21, 239, 215, 253, 12, 151, 174] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1572,6 +1740,10 @@ pub struct ISpeechDataKey {
     EnumValues: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISpeechDataKey {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3457663131, data2: 20218, data3: 17621, data4: [164, 201, 89, 217, 88, 90, 176, 205] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISpeechFileStream {
     pub base__: ISpeechBaseStream,
@@ -1580,6 +1752,10 @@ pub struct ISpeechFileStream {
     #[cfg(not(feature = "Win32_Foundation"))]
     Open: usize,
     pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISpeechFileStream {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2942824741, data2: 43833, data3: 20115, data4: [180, 162, 204, 46, 102, 225, 130, 167] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1606,6 +1782,10 @@ pub struct ISpeechGrammarRule {
     AddState: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISpeechGrammarRule {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2951158223, data2: 24017, data3: 17650, data4: [153, 156, 122, 57, 159, 28, 252, 204] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISpeechGrammarRuleState {
     pub base__: super::super::System::Com::IDispatch,
@@ -1629,6 +1809,10 @@ pub struct ISpeechGrammarRuleState {
     pub AddSpecialTransition: unsafe extern "system" fn(this: *mut *mut Self, destinationstate: *mut ::core::ffi::c_void, r#type: SpeechSpecialTransitionType, propertyname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, propertyid: i32, propertyvalue: *const super::super::System::Com::VARIANT, weight: f32) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     AddSpecialTransition: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISpeechGrammarRuleState {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3559419692, data2: 61031, data3: 17838, data4: [185, 40, 40, 214, 149, 54, 46, 218] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1662,6 +1846,10 @@ pub struct ISpeechGrammarRuleStateTransition {
     NextState: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISpeechGrammarRuleStateTransition {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3405585841, data2: 16849, data3: 18950, data4: [152, 99, 226, 232, 29, 161, 122, 154] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISpeechGrammarRuleStateTransitions {
     pub base__: super::super::System::Com::IDispatch,
@@ -1671,6 +1859,10 @@ pub struct ISpeechGrammarRuleStateTransitions {
     #[cfg(not(feature = "Win32_System_Com"))]
     Item: usize,
     pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, enumvariant: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISpeechGrammarRuleStateTransitions {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3938248279, data2: 30140, data3: 17570, data4: [170, 127, 197, 100, 118, 116, 41, 99] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1696,6 +1888,10 @@ pub struct ISpeechGrammarRules {
     pub CommitAndSave: unsafe extern "system" fn(this: *mut *mut Self, errortext: *mut super::super::Foundation::BSTR, savestream: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     CommitAndSave: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISpeechGrammarRules {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1878670148, data2: 64557, data3: 16593, data4: [138, 252, 50, 145, 28, 127, 26, 209] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1732,6 +1928,10 @@ pub struct ISpeechLexicon {
     GetGenerationChange: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISpeechLexicon {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1034379898, data2: 51118, data3: 19235, data4: [135, 8, 99, 140, 80, 54, 44, 37] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISpeechLexiconPronunciation {
     pub base__: super::super::System::Com::IDispatch,
@@ -1748,6 +1948,10 @@ pub struct ISpeechLexiconPronunciation {
     Symbolic: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISpeechLexiconPronunciation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2502241373, data2: 40515, data3: 20298, data4: [152, 153, 72, 238, 115, 53, 47, 159] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISpeechLexiconPronunciations {
     pub base__: super::super::System::Com::IDispatch,
@@ -1757,6 +1961,10 @@ pub struct ISpeechLexiconPronunciations {
     #[cfg(not(feature = "Win32_System_Com"))]
     Item: usize,
     pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, enumvariant: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISpeechLexiconPronunciations {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921159464, data2: 22146, data3: 18180, data4: [160, 212, 62, 43, 182, 242, 234, 211] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1774,6 +1982,10 @@ pub struct ISpeechLexiconWord {
     Pronunciations: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISpeechLexiconWord {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1314624316, data2: 51646, data3: 18669, data4: [136, 66, 30, 229, 27, 177, 212, 255] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISpeechLexiconWords {
     pub base__: super::super::System::Com::IDispatch,
@@ -1785,6 +1997,10 @@ pub struct ISpeechLexiconWords {
     pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, enumvariant: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISpeechLexiconWords {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2367264866, data2: 16734, data3: 18389, data4: [172, 79, 250, 166, 8, 180, 36, 230] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISpeechMMSysAudio {
     pub base__: ISpeechAudio,
@@ -1793,6 +2009,10 @@ pub struct ISpeechMMSysAudio {
     pub LineId: unsafe extern "system" fn(this: *mut *mut Self, lineid: *mut i32) -> ::windows_sys::core::HRESULT,
     pub SetLineId: unsafe extern "system" fn(this: *mut *mut Self, lineid: i32) -> ::windows_sys::core::HRESULT,
     pub MMHandle: unsafe extern "system" fn(this: *mut *mut Self, handle: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISpeechMMSysAudio {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1014411117, data2: 8151, data3: 18481, data4: [129, 209, 59, 113, 213, 161, 60, 68] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1806,6 +2026,10 @@ pub struct ISpeechMemoryStream {
     pub GetData: unsafe extern "system" fn(this: *mut *mut Self, pdata: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     GetData: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISpeechMemoryStream {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4004596584, data2: 32907, data3: 19134, data4: [165, 234, 181, 29, 167, 88, 128, 8] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1862,6 +2086,10 @@ pub struct ISpeechObjectToken {
     MatchesAttributes: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISpeechObjectToken {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3343530716, data2: 46887, data3: 17664, data4: [168, 74, 181, 38, 114, 28, 139, 140] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISpeechObjectTokenCategory {
     pub base__: super::super::System::Com::IDispatch,
@@ -1891,6 +2119,10 @@ pub struct ISpeechObjectTokenCategory {
     EnumerateTokens: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISpeechObjectTokenCategory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3397299280, data2: 11521, data3: 16709, data4: [134, 212, 90, 231, 215, 15, 68, 105] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISpeechObjectTokens {
     pub base__: super::super::System::Com::IDispatch,
@@ -1900,6 +2132,10 @@ pub struct ISpeechObjectTokens {
     #[cfg(not(feature = "Win32_System_Com"))]
     Item: usize,
     pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, ppenumvariant: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISpeechObjectTokens {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2458236790, data2: 11899, data3: 19392, data4: [181, 62, 88, 14, 182, 250, 150, 127] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1915,6 +2151,10 @@ pub struct ISpeechPhoneConverter {
     pub IdToPhone: unsafe extern "system" fn(this: *mut *mut Self, idarray: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>, phonemes: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     IdToPhone: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISpeechPhoneConverter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3286561619, data2: 17215, data3: 17366, data4: [137, 161, 106, 98, 167, 5, 76, 61] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1933,6 +2173,10 @@ pub struct ISpeechPhraseAlternate {
     pub Commit: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISpeechPhraseAlternate {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 663112234, data2: 11167, data3: 19640, data4: [146, 211, 13, 39, 34, 253, 30, 115] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISpeechPhraseAlternates {
     pub base__: super::super::System::Com::IDispatch,
@@ -1942,6 +2186,10 @@ pub struct ISpeechPhraseAlternates {
     #[cfg(not(feature = "Win32_System_Com"))]
     Item: usize,
     pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, enumvariant: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISpeechPhraseAlternates {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2990061269, data2: 62070, data3: 19517, data4: [166, 193, 41, 116, 128, 28, 60, 194] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1971,6 +2219,10 @@ pub struct ISpeechPhraseElement {
     pub EngineConfidence: unsafe extern "system" fn(this: *mut *mut Self, engineconfidence: *mut f32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISpeechPhraseElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3860295574, data2: 58227, data3: 18433, data4: [178, 35, 59, 98, 192, 104, 192, 180] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISpeechPhraseElements {
     pub base__: super::super::System::Com::IDispatch,
@@ -1980,6 +2232,10 @@ pub struct ISpeechPhraseElements {
     #[cfg(not(feature = "Win32_System_Com"))]
     Item: usize,
     pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, enumvariant: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISpeechPhraseElements {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 103199528, data2: 13432, data3: 18045, data4: [160, 179, 208, 133, 59, 147, 221, 163] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2036,6 +2292,10 @@ pub struct ISpeechPhraseInfo {
     pub GetDisplayAttributes: unsafe extern "system" fn(this: *mut *mut Self, startelement: i32, elements: i32, usereplacements: i16, displayattributes: *mut SpeechDisplayAttributes) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISpeechPhraseInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2517981647, data2: 20071, data3: 18018, data4: [139, 240, 217, 63, 31, 205, 97, 179] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISpeechPhraseInfoBuilder {
     pub base__: super::super::System::Com::IDispatch,
@@ -2043,6 +2303,10 @@ pub struct ISpeechPhraseInfoBuilder {
     pub RestorePhraseFromMemory: unsafe extern "system" fn(this: *mut *mut Self, phraseinmemory: *const super::super::System::Com::VARIANT, phraseinfo: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     RestorePhraseFromMemory: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISpeechPhraseInfoBuilder {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 991238198, data2: 57146, data3: 19978, data4: [132, 108, 210, 173, 201, 51, 67, 51] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2054,6 +2318,10 @@ pub struct ISpeechPhraseProperties {
     #[cfg(not(feature = "Win32_System_Com"))]
     Item: usize,
     pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, enumvariant: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISpeechPhraseProperties {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 135686983, data2: 4142, data3: 19235, data4: [165, 153, 189, 185, 141, 191, 209, 244] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2082,6 +2350,10 @@ pub struct ISpeechPhraseProperty {
     Children: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISpeechPhraseProperty {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3461758280, data2: 38430, data3: 18226, data4: [162, 225, 55, 138, 66, 180, 48, 190] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISpeechPhraseReplacement {
     pub base__: super::super::System::Com::IDispatch,
@@ -2094,6 +2366,10 @@ pub struct ISpeechPhraseReplacement {
     pub NumberOfElements: unsafe extern "system" fn(this: *mut *mut Self, numberofelements: *mut i32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISpeechPhraseReplacement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 680567824, data2: 21415, data3: 20405, data4: [148, 236, 6, 212, 153, 142, 61, 2] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISpeechPhraseReplacements {
     pub base__: super::super::System::Com::IDispatch,
@@ -2103,6 +2379,10 @@ pub struct ISpeechPhraseReplacements {
     #[cfg(not(feature = "Win32_System_Com"))]
     Item: usize,
     pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, enumvariant: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISpeechPhraseReplacements {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 951871023, data2: 8791, data3: 17701, data4: [149, 158, 32, 105, 210, 89, 108, 5] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2127,6 +2407,10 @@ pub struct ISpeechPhraseRule {
     pub EngineConfidence: unsafe extern "system" fn(this: *mut *mut Self, engineconfidence: *mut f32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISpeechPhraseRule {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2814370066, data2: 42144, data3: 18649, data4: [182, 2, 195, 19, 132, 63, 105, 100] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISpeechPhraseRules {
     pub base__: super::super::System::Com::IDispatch,
@@ -2136,6 +2420,10 @@ pub struct ISpeechPhraseRules {
     #[cfg(not(feature = "Win32_System_Com"))]
     Item: usize,
     pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, enumvariant: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISpeechPhraseRules {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2420626835, data2: 477, data3: 19314, data4: [129, 163, 228, 160, 202, 105, 244, 7] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2196,6 +2484,10 @@ pub struct ISpeechRecoContext {
     pub SetAdaptationData: unsafe extern "system" fn(this: *mut *mut Self, adaptationstring: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     SetAdaptationData: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISpeechRecoContext {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1477092509, data2: 32286, data3: 18441, data4: [184, 226, 87, 218, 128, 97, 4, 184] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2261,6 +2553,10 @@ pub struct ISpeechRecoGrammar {
     IsPronounceable: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISpeechRecoGrammar {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3067541407, data2: 8536, data3: 20048, data4: [181, 188, 154, 156, 205, 133, 42, 9] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISpeechRecoResult {
     pub base__: super::super::System::Com::IDispatch,
@@ -2300,6 +2596,10 @@ pub struct ISpeechRecoResult {
     pub DiscardResultInfo: unsafe extern "system" fn(this: *mut *mut Self, valuetypes: SpeechDiscardType) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISpeechRecoResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3978852815, data2: 52953, data3: 20198, data4: [165, 52, 222, 1, 145, 213, 70, 141] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISpeechRecoResult2 {
     pub base__: ISpeechRecoResult,
@@ -2307,6 +2607,10 @@ pub struct ISpeechRecoResult2 {
     pub SetTextFeedback: unsafe extern "system" fn(this: *mut *mut Self, feedback: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, wassuccessful: i16) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     SetTextFeedback: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISpeechRecoResult2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2383029357, data2: 54216, data3: 17886, data4: [134, 87, 4, 41, 12, 69, 140, 60] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2360,6 +2664,10 @@ pub struct ISpeechRecoResultDispatch {
     SetTextFeedback: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISpeechRecoResultDispatch {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1835068260, data2: 44269, data3: 16550, data4: [187, 243, 78, 85, 127, 113, 222, 226] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISpeechRecoResultTimes {
     pub base__: super::super::System::Com::IDispatch,
@@ -2376,6 +2684,10 @@ pub struct ISpeechRecoResultTimes {
     pub OffsetFromStart: unsafe extern "system" fn(this: *mut *mut Self, offsetfromstart: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     OffsetFromStart: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISpeechRecoResultTimes {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1655945467, data2: 63207, data3: 16830, data4: [189, 203, 5, 107, 28, 41, 239, 192] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2472,6 +2784,10 @@ pub struct ISpeechRecognizer {
     GetProfiles: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISpeechRecognizer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 761207820, data2: 48501, data3: 19208, data4: [148, 120, 59, 17, 254, 162, 88, 108] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISpeechRecognizerStatus {
     pub base__: super::super::System::Com::IDispatch,
@@ -2495,6 +2811,10 @@ pub struct ISpeechRecognizerStatus {
     SupportedLanguages: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISpeechRecognizerStatus {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3220825985, data2: 21484, data3: 18510, data4: [187, 138, 14, 27, 85, 81, 227, 92] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISpeechResourceLoader {
     pub base__: super::super::System::Com::IDispatch,
@@ -2512,6 +2832,10 @@ pub struct ISpeechResourceLoader {
     ReleaseLocalCopy: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISpeechResourceLoader {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3115079555, data2: 64720, data3: 19233, data4: [177, 25, 180, 248, 218, 143, 210, 195] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISpeechTextSelectionInformation {
     pub base__: super::super::System::Com::IDispatch,
@@ -2523,6 +2847,10 @@ pub struct ISpeechTextSelectionInformation {
     pub SelectionOffset: unsafe extern "system" fn(this: *mut *mut Self, selectionoffset: *mut i32) -> ::windows_sys::core::HRESULT,
     pub SetSelectionLength: unsafe extern "system" fn(this: *mut *mut Self, selectionlength: i32) -> ::windows_sys::core::HRESULT,
     pub SelectionLength: unsafe extern "system" fn(this: *mut *mut Self, selectionlength: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISpeechTextSelectionInformation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1000111738, data2: 28398, data3: 19949, data4: [144, 146, 17, 101, 114, 121, 173, 190] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2604,6 +2932,10 @@ pub struct ISpeechVoice {
     DisplayUI: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISpeechVoice {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 647173848, data2: 22461, data3: 4562, data4: [158, 238, 0, 192, 79, 121, 115, 150] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISpeechVoiceStatus {
     pub base__: super::super::System::Com::IDispatch,
@@ -2622,6 +2954,10 @@ pub struct ISpeechVoiceStatus {
     pub LastBookmarkId: unsafe extern "system" fn(this: *mut *mut Self, bookmarkid: *mut i32) -> ::windows_sys::core::HRESULT,
     pub PhonemeId: unsafe extern "system" fn(this: *mut *mut Self, phoneid: *mut i16) -> ::windows_sys::core::HRESULT,
     pub VisemeId: unsafe extern "system" fn(this: *mut *mut Self, visemeid: *mut i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISpeechVoiceStatus {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2347006727, data2: 22518, data3: 4562, data4: [158, 238, 0, 192, 79, 121, 115, 150] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2649,6 +2985,10 @@ pub struct ISpeechWaveFormatEx {
     SetExtraData: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISpeechWaveFormatEx {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2048848085, data2: 5505, data3: 18241, data4: [136, 228, 32, 154, 73, 241, 26, 16] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISpeechXMLRecoResult {
     pub base__: ISpeechRecoResult,
@@ -2660,6 +3000,10 @@ pub struct ISpeechXMLRecoResult {
     pub GetXMLErrorInfo: unsafe extern "system" fn(this: *mut *mut Self, linenumber: *mut i32, scriptline: *mut super::super::Foundation::BSTR, source: *mut super::super::Foundation::BSTR, description: *mut super::super::Foundation::BSTR, resultcode: *mut i32, iserror: *mut i16) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetXMLErrorInfo: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISpeechXMLRecoResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2867614895, data2: 36741, data3: 18724, data4: [148, 77, 183, 157, 57, 215, 46, 25] };
 }
 #[doc = "*Required features: `\"Win32_Media_Speech\"`*"]
 pub type PHONETICALPHABET = i32;
@@ -4836,7 +5180,15 @@ pub struct _ISpeechRecoContextEvents {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for _ISpeechRecoContextEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2073021250, data2: 3741, data3: 20224, data4: [160, 72, 123, 4, 214, 23, 157, 61] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct _ISpeechVoiceEvents {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for _ISpeechVoiceEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2742201553, data2: 15343, data3: 19389, data4: [143, 251, 203, 62, 43, 65, 106, 248] };
 }

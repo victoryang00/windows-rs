@@ -50,6 +50,9 @@ pub struct IWebUICommandBar {
     #[cfg(not(feature = "Foundation"))]
     RemoveSizeChanged: usize,
 }
+impl ::windows_sys::core::Interface for IWebUICommandBar {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2767978518, data2: 56293, data3: 16813, data4: [141, 123, 20, 105, 139, 214, 145, 29] };
+}
 #[repr(C)]
 pub struct IWebUICommandBarBitmapIcon {
     pub base__: ::windows_sys::core::IInspectable,
@@ -62,6 +65,9 @@ pub struct IWebUICommandBarBitmapIcon {
     #[cfg(not(feature = "Foundation"))]
     SetUri: usize,
 }
+impl ::windows_sys::core::Interface for IWebUICommandBarBitmapIcon {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2240761669, data2: 2264, data3: 19014, data4: [129, 236, 0, 1, 91, 11, 28, 108] };
+}
 #[repr(C)]
 pub struct IWebUICommandBarBitmapIconFactory {
     pub base__: ::windows_sys::core::IInspectable,
@@ -69,6 +75,9 @@ pub struct IWebUICommandBarBitmapIconFactory {
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, uri: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     Create: usize,
+}
+impl ::windows_sys::core::Interface for IWebUICommandBarBitmapIconFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4093106058, data2: 30323, data3: 17482, data4: [190, 98, 172, 18, 211, 28, 34, 49] };
 }
 #[repr(C)]
 pub struct IWebUICommandBarConfirmationButton {
@@ -84,13 +93,22 @@ pub struct IWebUICommandBarConfirmationButton {
     #[cfg(not(feature = "Foundation"))]
     RemoveItemInvoked: usize,
 }
+impl ::windows_sys::core::Interface for IWebUICommandBarConfirmationButton {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2263319114, data2: 58325, data3: 20150, data4: [178, 255, 143, 1, 138, 23, 33, 5] };
+}
 #[repr(C)]
 pub struct IWebUICommandBarElement {
     pub base__: ::windows_sys::core::IInspectable,
 }
+impl ::windows_sys::core::Interface for IWebUICommandBarElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3372654274, data2: 10314, data3: 17971, data4: [138, 173, 99, 122, 39, 226, 130, 195] };
+}
 #[repr(C)]
 pub struct IWebUICommandBarIcon {
     pub base__: ::windows_sys::core::IInspectable,
+}
+impl ::windows_sys::core::Interface for IWebUICommandBarIcon {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3582420317, data2: 8212, data3: 17086, data4: [150, 154, 125, 20, 202, 108, 138, 73] };
 }
 #[repr(C)]
 pub struct IWebUICommandBarIconButton {
@@ -114,10 +132,16 @@ pub struct IWebUICommandBarIconButton {
     #[cfg(not(feature = "Foundation"))]
     RemoveItemInvoked: usize,
 }
+impl ::windows_sys::core::Interface for IWebUICommandBarIconButton {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2400962874, data2: 14972, data3: 18498, data4: [160, 207, 175, 246, 234, 48, 133, 134] };
+}
 #[repr(C)]
 pub struct IWebUICommandBarItemInvokedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub IsPrimaryCommand: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWebUICommandBarItemInvokedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810474461, data2: 59201, data3: 16879, data4: [189, 196, 164, 92, 234, 42, 79, 112] };
 }
 #[repr(C)]
 pub struct IWebUICommandBarSizeChangedEventArgs {
@@ -127,10 +151,16 @@ pub struct IWebUICommandBarSizeChangedEventArgs {
     #[cfg(not(feature = "Foundation"))]
     Size: usize,
 }
+impl ::windows_sys::core::Interface for IWebUICommandBarSizeChangedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4226933494, data2: 12329, data3: 18201, data4: [131, 120, 146, 248, 43, 135, 175, 30] };
+}
 #[repr(C)]
 pub struct IWebUICommandBarStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub GetForCurrentView: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWebUICommandBarStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 340381113, data2: 42246, data3: 17854, data4: [143, 66, 178, 131, 126, 47, 224, 201] };
 }
 #[repr(C)]
 pub struct IWebUICommandBarSymbolIcon {
@@ -138,10 +168,16 @@ pub struct IWebUICommandBarSymbolIcon {
     pub Symbol: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub SetSymbol: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWebUICommandBarSymbolIcon {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3566425207, data2: 64806, data3: 18157, data4: [134, 88, 26, 63, 68, 0, 231, 179] };
+}
 #[repr(C)]
 pub struct IWebUICommandBarSymbolIconFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, symbol: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWebUICommandBarSymbolIconFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1371413023, data2: 14128, data3: 17054, data4: [182, 34, 20, 226, 183, 191, 106, 7] };
 }
 pub type MenuClosedEventHandler = *mut ::core::ffi::c_void;
 pub type MenuOpenedEventHandler = *mut ::core::ffi::c_void;

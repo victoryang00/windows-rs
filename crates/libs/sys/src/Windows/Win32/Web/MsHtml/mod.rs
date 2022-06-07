@@ -12300,9 +12300,17 @@ pub struct DWebBridgeEvents {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DWebBridgeEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2799212543, data2: 2709, data3: 4561, data4: [176, 186, 0, 96, 8, 22, 110, 17] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispApplicationCache {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispApplicationCache {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139300, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12310,9 +12318,17 @@ pub struct DispCEventObj {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispCEventObj {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612056, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispCPlugins {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispCPlugins {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612042, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12320,9 +12336,17 @@ pub struct DispCPrintManagerTemplatePrinter {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispCPrintManagerTemplatePrinter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139305, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispCanvasGradient {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispCanvasGradient {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139212, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12330,9 +12354,17 @@ pub struct DispCanvasImageData {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispCanvasImageData {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139215, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispCanvasPattern {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispCanvasPattern {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139213, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12340,9 +12372,17 @@ pub struct DispCanvasRenderingContext2D {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispCanvasRenderingContext2D {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139202, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispCanvasTextMetrics {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispCanvasTextMetrics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139214, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12350,9 +12390,17 @@ pub struct DispDOMBeforeUnloadEvent {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispDOMBeforeUnloadEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139240, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispDOMChildrenCollection {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispDOMChildrenCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612087, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12360,9 +12408,17 @@ pub struct DispDOMCloseEvent {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispDOMCloseEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139292, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispDOMCompositionEvent {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispDOMCompositionEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139192, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12370,9 +12426,17 @@ pub struct DispDOMCustomEvent {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispDOMCustomEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139196, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispDOMDocumentType {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispDOMDocumentType {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139224, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12380,9 +12444,17 @@ pub struct DispDOMDragEvent {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispDOMDragEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139239, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispDOMEvent {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispDOMEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612130, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12390,9 +12462,17 @@ pub struct DispDOMException {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispDOMException {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139220, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispDOMFocusEvent {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispDOMFocusEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139185, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12400,9 +12480,17 @@ pub struct DispDOMKeyboardEvent {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispDOMKeyboardEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139191, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispDOMMSAnimationEvent {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispDOMMSAnimationEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139260, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12410,9 +12498,17 @@ pub struct DispDOMMSManipulationEvent {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispDOMMSManipulationEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139297, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispDOMMSTransitionEvent {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispDOMMSTransitionEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139259, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12420,9 +12516,17 @@ pub struct DispDOMMessageEvent {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispDOMMessageEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139218, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispDOMMouseEvent {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispDOMMouseEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139187, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12430,9 +12534,17 @@ pub struct DispDOMMouseWheelEvent {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispDOMMouseWheelEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139188, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispDOMMutationEvent {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispDOMMutationEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139193, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12440,9 +12552,17 @@ pub struct DispDOMParser {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispDOMParser {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139246, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispDOMProcessingInstruction {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispDOMProcessingInstruction {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139227, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12450,9 +12570,17 @@ pub struct DispDOMProgressEvent {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispDOMProgressEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139217, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispDOMSiteModeEvent {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispDOMSiteModeEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139241, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12460,9 +12588,17 @@ pub struct DispDOMStorageEvent {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispDOMStorageEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139219, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispDOMTextEvent {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispDOMTextEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139190, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12470,9 +12606,17 @@ pub struct DispDOMUIEvent {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispDOMUIEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139186, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispDOMWheelEvent {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispDOMWheelEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139189, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12480,9 +12624,17 @@ pub struct DispEventException {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispEventException {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139225, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispHTCAttachBehavior {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTCAttachBehavior {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612099, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12490,9 +12642,17 @@ pub struct DispHTCDefaultDispatch {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTCDefaultDispatch {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612083, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispHTCDescBehavior {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTCDescBehavior {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612094, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12500,9 +12660,17 @@ pub struct DispHTCEventBehavior {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTCEventBehavior {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612084, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispHTCMethodBehavior {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTCMethodBehavior {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612103, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12510,9 +12678,17 @@ pub struct DispHTCPropertyBehavior {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTCPropertyBehavior {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612095, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispHTMLAnchorElement {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLAnchorElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611970, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12520,9 +12696,17 @@ pub struct DispHTMLAppBehavior {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLAppBehavior {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612092, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispHTMLAreaElement {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLAreaElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611971, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12530,9 +12714,17 @@ pub struct DispHTMLAreasCollection {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLAreasCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612074, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispHTMLAttributeCollection {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLAttributeCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612076, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12540,9 +12732,17 @@ pub struct DispHTMLAudioElement {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLAudioElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139210, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispHTMLBGsound {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLBGsound {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612028, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12550,9 +12750,17 @@ pub struct DispHTMLBRElement {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLBRElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612026, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispHTMLBaseElement {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLBaseElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611992, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12560,9 +12768,17 @@ pub struct DispHTMLBaseFontElement {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLBaseFontElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611972, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispHTMLBlockElement {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLBlockElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611974, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12570,9 +12786,17 @@ pub struct DispHTMLBody {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLBody {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611975, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispHTMLButtonElement {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLButtonElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611999, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12580,9 +12804,17 @@ pub struct DispHTMLCSSImportRule {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLCSSImportRule {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139198, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispHTMLCSSMediaList {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLCSSMediaList {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139223, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12590,9 +12822,17 @@ pub struct DispHTMLCSSMediaRule {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLCSSMediaRule {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139199, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispHTMLCSSNamespaceRule {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLCSSNamespaceRule {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139200, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12600,9 +12840,17 @@ pub struct DispHTMLCSSRule {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLCSSRule {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139197, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispHTMLCSSStyleDeclaration {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLCSSStyleDeclaration {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139226, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12610,9 +12858,17 @@ pub struct DispHTMLCanvasElement {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLCanvasElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139195, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispHTMLCommentElement {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLCommentElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611978, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12620,9 +12876,17 @@ pub struct DispHTMLCurrentStyle {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLCurrentStyle {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612055, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispHTMLDDElement {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLDDElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611979, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12630,9 +12894,17 @@ pub struct DispHTMLDListElement {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLDListElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612027, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispHTMLDOMAttribute {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLDOMAttribute {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612068, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12640,9 +12912,17 @@ pub struct DispHTMLDOMImplementation {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLDOMImplementation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612111, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispHTMLDOMRange {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLDOMRange {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612131, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12650,9 +12930,17 @@ pub struct DispHTMLDOMTextNode {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLDOMTextNode {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612069, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispHTMLDTElement {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLDTElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611981, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12660,9 +12948,17 @@ pub struct DispHTMLDefaults {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLDefaults {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612108, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispHTMLDivElement {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLDivElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611980, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12670,9 +12966,17 @@ pub struct DispHTMLDivPosition {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLDivPosition {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611983, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispHTMLDocument {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLDocument {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612063, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12680,9 +12984,17 @@ pub struct DispHTMLDocumentCompatibleInfo {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLDocumentCompatibleInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612030, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispHTMLDocumentCompatibleInfoCollection {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLDocumentCompatibleInfoCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612031, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12690,9 +13002,17 @@ pub struct DispHTMLElementCollection {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLElementCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612075, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispHTMLEmbed {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLEmbed {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612014, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12700,9 +13020,17 @@ pub struct DispHTMLFieldSetElement {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLFieldSetElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612037, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispHTMLFontElement {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLFontElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611986, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12710,9 +13038,17 @@ pub struct DispHTMLFormElement {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLFormElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611984, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispHTMLFrameBase {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLFrameBase {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612033, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12720,9 +13056,17 @@ pub struct DispHTMLFrameElement {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLFrameElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611987, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispHTMLFrameSetSite {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLFrameSetSite {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611988, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12730,9 +13074,17 @@ pub struct DispHTMLGenericElement {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLGenericElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612067, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispHTMLHRElement {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLHRElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612029, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12740,9 +13092,17 @@ pub struct DispHTMLHeadElement {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLHeadElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612065, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispHTMLHeaderElement {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLHeaderElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611989, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12750,9 +13110,17 @@ pub struct DispHTMLHistory {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLHistory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612041, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispHTMLHtmlElement {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLHtmlElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612064, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12760,9 +13128,17 @@ pub struct DispHTMLIFrame {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLIFrame {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611995, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispHTMLImg {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLImg {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611996, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12770,9 +13146,17 @@ pub struct DispHTMLInputElement {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLInputElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612093, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispHTMLIsIndexElement {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLIsIndexElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611993, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12780,9 +13164,17 @@ pub struct DispHTMLLIElement {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLLIElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612003, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispHTMLLabelElement {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLLabelElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612002, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12790,9 +13182,17 @@ pub struct DispHTMLLegendElement {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLLegendElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612038, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispHTMLLinkElement {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLLinkElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612004, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12800,9 +13200,17 @@ pub struct DispHTMLListElement {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLListElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612005, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispHTMLLocation {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLLocation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612046, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12810,9 +13218,17 @@ pub struct DispHTMLMSCSSKeyframeRule {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLMSCSSKeyframeRule {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139294, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispHTMLMSCSSKeyframesRule {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLMSCSSKeyframesRule {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139295, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12820,9 +13236,17 @@ pub struct DispHTMLMapElement {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLMapElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612006, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispHTMLMarqueeElement {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLMarqueeElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612007, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12830,9 +13254,17 @@ pub struct DispHTMLMediaElement {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLMediaElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139208, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispHTMLMediaError {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLMediaError {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139206, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12840,9 +13272,17 @@ pub struct DispHTMLMetaElement {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLMetaElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611991, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispHTMLNamespace {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLNamespace {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612047, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12850,9 +13290,17 @@ pub struct DispHTMLNamespaceCollection {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLNamespaceCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612048, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispHTMLNavigator {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLNavigator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612044, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12860,9 +13308,17 @@ pub struct DispHTMLNextIdElement {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLNextIdElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611994, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispHTMLNoShowElement {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLNoShowElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612008, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12870,9 +13326,17 @@ pub struct DispHTMLOListElement {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLOListElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612010, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispHTMLObjectElement {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLObjectElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612009, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12880,9 +13344,17 @@ pub struct DispHTMLOptionElement {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLOptionElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612011, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispHTMLParaElement {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLParaElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612012, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12890,9 +13362,17 @@ pub struct DispHTMLParamElement {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLParamElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612112, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispHTMLPerformance {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLPerformance {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139231, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12900,9 +13380,17 @@ pub struct DispHTMLPerformanceNavigation {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLPerformanceNavigation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139232, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispHTMLPerformanceTiming {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLPerformanceTiming {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139233, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12910,9 +13398,17 @@ pub struct DispHTMLPhraseElement {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLPhraseElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612013, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispHTMLPopup {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLPopup {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612105, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12920,9 +13416,17 @@ pub struct DispHTMLProgressElement {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLProgressElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139247, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispHTMLRenderStyle {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLRenderStyle {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612107, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12930,9 +13434,17 @@ pub struct DispHTMLRichtextElement {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLRichtextElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612045, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispHTMLRuleStyle {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLRuleStyle {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612060, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12940,9 +13452,17 @@ pub struct DispHTMLScreen {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLScreen {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612113, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispHTMLScriptElement {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLScriptElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612016, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12950,9 +13470,17 @@ pub struct DispHTMLSelectElement {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLSelectElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612017, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispHTMLSemanticElement {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLSemanticElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139258, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12960,9 +13488,17 @@ pub struct DispHTMLSourceElement {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLSourceElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139209, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispHTMLSpanElement {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLSpanElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612040, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12970,9 +13506,17 @@ pub struct DispHTMLSpanFlow {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLSpanFlow {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612036, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispHTMLStorage {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLStorage {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612125, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12980,9 +13524,17 @@ pub struct DispHTMLStyle {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLStyle {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612058, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispHTMLStyleElement {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLStyleElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611985, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -12990,9 +13542,17 @@ pub struct DispHTMLStyleFontFace {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLStyleFontFace {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139201, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispHTMLStyleMedia {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLStyleMedia {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139230, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -13000,9 +13560,17 @@ pub struct DispHTMLStyleSheet {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLStyleSheet {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612109, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispHTMLStyleSheetPage {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLStyleSheetPage {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612032, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -13010,9 +13578,17 @@ pub struct DispHTMLStyleSheetPagesCollection {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLStyleSheetPagesCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612035, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispHTMLStyleSheetRule {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLStyleSheetRule {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611982, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -13020,9 +13596,17 @@ pub struct DispHTMLStyleSheetRulesAppliedCollection {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLStyleSheetRulesAppliedCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612134, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispHTMLStyleSheetRulesCollection {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLStyleSheetRulesCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612015, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -13030,9 +13614,17 @@ pub struct DispHTMLStyleSheetsCollection {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLStyleSheetsCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612039, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispHTMLTable {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLTable {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612018, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -13040,9 +13632,17 @@ pub struct DispHTMLTableCaption {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLTableCaption {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611976, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispHTMLTableCell {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLTableCell {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612022, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -13050,9 +13650,17 @@ pub struct DispHTMLTableCol {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLTableCol {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612019, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispHTMLTableRow {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLTableRow {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612021, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -13060,9 +13668,17 @@ pub struct DispHTMLTableSection {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLTableSection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612020, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispHTMLTextAreaElement {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLTextAreaElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612001, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -13070,9 +13686,17 @@ pub struct DispHTMLTextElement {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLTextElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612023, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispHTMLTimeRanges {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLTimeRanges {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139207, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -13080,9 +13704,17 @@ pub struct DispHTMLTitleElement {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLTitleElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611990, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispHTMLUListElement {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLUListElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612024, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -13090,9 +13722,17 @@ pub struct DispHTMLUnknownElement {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLUnknownElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612025, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispHTMLUrnCollection {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLUrnCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612049, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -13100,9 +13740,17 @@ pub struct DispHTMLVideoElement {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLVideoElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139211, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispHTMLW3CComputedStyle {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLW3CComputedStyle {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139184, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -13110,9 +13758,17 @@ pub struct DispHTMLWindow2 {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLWindow2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612061, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispHTMLWindowProxy {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLWindowProxy {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612062, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -13120,9 +13776,17 @@ pub struct DispHTMLWndOptionElement {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLWndOptionElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612120, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispHTMLWndSelectElement {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLWndSelectElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612119, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -13130,9 +13794,17 @@ pub struct DispHTMLXMLHttpRequest {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispHTMLXMLHttpRequest {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612118, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispIHTMLInputButtonElement {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispIHTMLInputButtonElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611998, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -13140,9 +13812,17 @@ pub struct DispIHTMLInputFileElement {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispIHTMLInputFileElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612034, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispIHTMLInputImage {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispIHTMLInputImage {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611997, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -13150,9 +13830,17 @@ pub struct DispIHTMLInputTextElement {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispIHTMLInputTextElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612000, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispIHTMLOptionButtonElement {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispIHTMLOptionButtonElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611977, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -13160,9 +13848,17 @@ pub struct DispNodeIterator {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispNodeIterator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139228, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispRangeException {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispRangeException {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139221, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -13170,9 +13866,17 @@ pub struct DispRulesApplied {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispRulesApplied {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612133, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispRulesAppliedCollection {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispRulesAppliedCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612132, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -13180,9 +13884,17 @@ pub struct DispSVGAElement {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispSVGAElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139123, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispSVGCircleElement {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispSVGCircleElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139082, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -13190,9 +13902,17 @@ pub struct DispSVGClipPathElement {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispSVGClipPathElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139131, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispSVGDefsElement {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispSVGDefsElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139075, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -13200,9 +13920,17 @@ pub struct DispSVGDescElement {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispSVGDescElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139077, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispSVGElement {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispSVGElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139072, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -13210,9 +13938,17 @@ pub struct DispSVGElementInstance {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispSVGElementInstance {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139079, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispSVGElementInstanceList {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispSVGElementInstanceList {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139080, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -13220,9 +13956,17 @@ pub struct DispSVGEllipseElement {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispSVGEllipseElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139083, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispSVGException {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispSVGException {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139222, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -13230,9 +13974,17 @@ pub struct DispSVGGElement {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispSVGGElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139074, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispSVGGradientElement {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispSVGGradientElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139118, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -13240,9 +13992,17 @@ pub struct DispSVGImageElement {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispSVGImageElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139111, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispSVGLineElement {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispSVGLineElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139084, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -13250,9 +14010,17 @@ pub struct DispSVGLinearGradientElement {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispSVGLinearGradientElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139114, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispSVGMarkerElement {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispSVGMarkerElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139126, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -13260,9 +14028,17 @@ pub struct DispSVGMaskElement {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispSVGMaskElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139132, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispSVGMetadataElement {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispSVGMetadataElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139119, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -13270,9 +14046,17 @@ pub struct DispSVGPathElement {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispSVGPathElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139089, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispSVGPathSegArcAbs {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispSVGPathSegArcAbs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139091, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -13280,9 +14064,17 @@ pub struct DispSVGPathSegArcRel {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispSVGPathSegArcRel {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139092, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispSVGPathSegClosePath {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispSVGPathSegClosePath {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139093, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -13290,9 +14082,17 @@ pub struct DispSVGPathSegCurvetoCubicAbs {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispSVGPathSegCurvetoCubicAbs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139094, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispSVGPathSegCurvetoCubicRel {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispSVGPathSegCurvetoCubicRel {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139095, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -13300,9 +14100,17 @@ pub struct DispSVGPathSegCurvetoCubicSmoothAbs {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispSVGPathSegCurvetoCubicSmoothAbs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139096, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispSVGPathSegCurvetoCubicSmoothRel {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispSVGPathSegCurvetoCubicSmoothRel {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139097, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -13310,9 +14118,17 @@ pub struct DispSVGPathSegCurvetoQuadraticAbs {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispSVGPathSegCurvetoQuadraticAbs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139098, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispSVGPathSegCurvetoQuadraticRel {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispSVGPathSegCurvetoQuadraticRel {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139099, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -13320,9 +14136,17 @@ pub struct DispSVGPathSegCurvetoQuadraticSmoothAbs {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispSVGPathSegCurvetoQuadraticSmoothAbs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139100, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispSVGPathSegCurvetoQuadraticSmoothRel {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispSVGPathSegCurvetoQuadraticSmoothRel {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139101, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -13330,9 +14154,17 @@ pub struct DispSVGPathSegLinetoAbs {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispSVGPathSegLinetoAbs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139102, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispSVGPathSegLinetoHorizontalAbs {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispSVGPathSegLinetoHorizontalAbs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139103, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -13340,9 +14172,17 @@ pub struct DispSVGPathSegLinetoHorizontalRel {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispSVGPathSegLinetoHorizontalRel {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139104, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispSVGPathSegLinetoRel {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispSVGPathSegLinetoRel {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139105, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -13350,9 +14190,17 @@ pub struct DispSVGPathSegLinetoVerticalAbs {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispSVGPathSegLinetoVerticalAbs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139106, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispSVGPathSegLinetoVerticalRel {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispSVGPathSegLinetoVerticalRel {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139107, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -13360,9 +14208,17 @@ pub struct DispSVGPathSegMovetoAbs {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispSVGPathSegMovetoAbs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139108, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispSVGPathSegMovetoRel {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispSVGPathSegMovetoRel {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139109, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -13370,9 +14226,17 @@ pub struct DispSVGPatternElement {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispSVGPatternElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139116, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispSVGPolygonElement {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispSVGPolygonElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139085, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -13380,9 +14244,17 @@ pub struct DispSVGPolylineElement {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispSVGPolylineElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139086, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispSVGRadialGradientElement {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispSVGRadialGradientElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139115, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -13390,9 +14262,17 @@ pub struct DispSVGRectElement {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispSVGRectElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139081, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispSVGSVGElement {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispSVGSVGElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139073, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -13400,9 +14280,17 @@ pub struct DispSVGScriptElement {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispSVGScriptElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139129, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispSVGStopElement {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispSVGStopElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139117, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -13410,9 +14298,17 @@ pub struct DispSVGStyleElement {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispSVGStyleElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139113, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispSVGSwitchElement {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispSVGSwitchElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139120, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -13420,9 +14316,17 @@ pub struct DispSVGSymbolElement {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispSVGSymbolElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139076, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispSVGTSpanElement {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispSVGTSpanElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139130, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -13430,9 +14334,17 @@ pub struct DispSVGTextContentElement {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispSVGTextContentElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139125, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispSVGTextElement {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispSVGTextElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139127, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -13440,9 +14352,17 @@ pub struct DispSVGTextPathElement {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispSVGTextPathElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139133, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispSVGTextPositioningElement {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispSVGTextPositioningElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139128, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -13450,9 +14370,17 @@ pub struct DispSVGTitleElement {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispSVGTitleElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139078, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispSVGUseElement {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispSVGUseElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139088, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -13460,9 +14388,17 @@ pub struct DispSVGViewElement {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispSVGViewElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139124, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispSVGZoomEvent {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispSVGZoomEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139121, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -13470,9 +14406,17 @@ pub struct DispStaticNodeList {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispStaticNodeList {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612123, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispTreeWalker {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispTreeWalker {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139229, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -13480,9 +14424,17 @@ pub struct DispWebGeocoordinates {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispWebGeocoordinates {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139262, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispWebGeolocation {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispWebGeolocation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139261, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -13490,9 +14442,17 @@ pub struct DispWebGeoposition {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispWebGeoposition {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139265, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispWebGeopositionError {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispWebGeopositionError {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139263, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -13500,14 +14460,26 @@ pub struct DispXDomainRequest {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispXDomainRequest {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612121, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispXMLHttpRequestEventTarget {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispXMLHttpRequestEventTarget {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139303, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DispXMLSerializer {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DispXMLSerializer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811139245, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[doc = "*Required features: `\"Win32_Web_MsHtml\"`*"]
 pub type DomConstructor = i32;
@@ -14299,9 +15271,17 @@ pub struct HTMLAnchorEvents {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for HTMLAnchorEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611357, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct HTMLAnchorEvents2 {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for HTMLAnchorEvents2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612240, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 pub const HTMLAppBehavior: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612171, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 #[doc = "*Required features: `\"Win32_Web_MsHtml\"`*"]
@@ -14327,9 +15307,17 @@ pub struct HTMLAreaEvents {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for HTMLAreaEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611558, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct HTMLAreaEvents2 {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for HTMLAreaEvents2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612241, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 pub const HTMLAreasCollection: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611914, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 pub const HTMLAttributeCollection: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611916, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
@@ -14374,9 +15362,17 @@ pub struct HTMLButtonElementEvents {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for HTMLButtonElementEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611379, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct HTMLButtonElementEvents2 {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for HTMLButtonElementEvents2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612247, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 pub const HTMLCSSImportRule: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616560, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 pub const HTMLCSSMediaList: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616626, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
@@ -14400,9 +15396,17 @@ pub struct HTMLControlElementEvents {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for HTMLControlElementEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611946, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct HTMLControlElementEvents2 {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for HTMLControlElementEvents2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612242, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 pub const HTMLCurrentStyle: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611676, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 pub const HTMLDDElement: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611327, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
@@ -14492,9 +15496,17 @@ pub struct HTMLDocumentEvents {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for HTMLDocumentEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611296, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct HTMLDocumentEvents2 {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for HTMLDocumentEvents2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612243, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -14502,9 +15514,17 @@ pub struct HTMLDocumentEvents3 {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for HTMLDocumentEvents3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612128, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct HTMLDocumentEvents4 {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for HTMLDocumentEvents4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616631, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 pub const HTMLElementCollection: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611915, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 #[cfg(feature = "Win32_System_Com")]
@@ -14513,9 +15533,17 @@ pub struct HTMLElementEvents {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for HTMLElementEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611516, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct HTMLElementEvents2 {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for HTMLElementEvents2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612239, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -14523,9 +15551,17 @@ pub struct HTMLElementEvents3 {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for HTMLElementEvents3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612127, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct HTMLElementEvents4 {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for HTMLElementEvents4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616670, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 pub const HTMLEmbed: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611293, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 pub const HTMLFieldSetElement: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611688, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
@@ -14537,9 +15573,17 @@ pub struct HTMLFormElementEvents {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for HTMLFormElementEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611556, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct HTMLFormElementEvents2 {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for HTMLFormElementEvents2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612244, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 pub const HTMLFrameBase: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611474, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 pub const HTMLFrameElement: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611476, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
@@ -14550,9 +15594,17 @@ pub struct HTMLFrameSiteEvents {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for HTMLFrameSiteEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612736, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct HTMLFrameSiteEvents2 {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for HTMLFrameSiteEvents2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612735, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 pub const HTMLGenericElement: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611896, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 pub const HTMLHRElement: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611282, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
@@ -14569,9 +15621,17 @@ pub struct HTMLImgEvents {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for HTMLImgEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611291, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct HTMLImgEvents2 {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for HTMLImgEvents2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612246, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 pub const HTMLInputButtonElement: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611380, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 pub const HTMLInputElement: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612184, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
@@ -14582,9 +15642,17 @@ pub struct HTMLInputFileElementEvents {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for HTMLInputFileElementEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611375, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct HTMLInputFileElementEvents2 {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for HTMLInputFileElementEvents2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612250, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 pub const HTMLInputImage: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611396, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 #[cfg(feature = "Win32_System_Com")]
@@ -14593,9 +15661,17 @@ pub struct HTMLInputImageEvents {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for HTMLInputImageEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611395, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct HTMLInputImageEvents2 {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for HTMLInputImageEvents2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612251, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 pub const HTMLInputTextElement: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611371, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 #[cfg(feature = "Win32_System_Com")]
@@ -14604,9 +15680,17 @@ pub struct HTMLInputTextElementEvents {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for HTMLInputTextElementEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611367, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct HTMLInputTextElementEvents2 {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for HTMLInputTextElementEvents2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612248, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 pub const HTMLIsIndexElement: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611320, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 pub const HTMLLIElement: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611315, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
@@ -14617,9 +15701,17 @@ pub struct HTMLLabelEvents {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for HTMLLabelEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611497, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct HTMLLabelEvents2 {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for HTMLLabelEvents2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612252, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 pub const HTMLLegendElement: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611689, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 pub const HTMLLinkElement: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611319, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
@@ -14629,9 +15721,17 @@ pub struct HTMLLinkElementEvents {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for HTMLLinkElementEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611660, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct HTMLLinkElementEvents2 {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for HTMLLinkElementEvents2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612253, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 pub const HTMLListElement: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611314, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 pub const HTMLLocation: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 373010913, data2: 28160, data3: 4559, data4: [131, 122, 72, 220, 4, 193, 0, 0] };
@@ -14644,9 +15744,17 @@ pub struct HTMLMapEvents {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for HTMLMapEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611642, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct HTMLMapEvents2 {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for HTMLMapEvents2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612254, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 pub const HTMLMarqueeElement: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611385, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 #[cfg(feature = "Win32_System_Com")]
@@ -14655,9 +15763,17 @@ pub struct HTMLMarqueeElementEvents {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for HTMLMarqueeElementEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611384, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct HTMLMarqueeElementEvents2 {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for HTMLMarqueeElementEvents2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612255, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[doc = "*Required features: `\"Win32_Web_MsHtml\"`*"]
 pub type HTMLMaximizeFlag = i32;
@@ -14685,6 +15801,10 @@ pub const HTMLNamespaceCollection: ::windows_sys::core::GUID = ::windows_sys::co
 pub struct HTMLNamespaceEvents {
     pub base__: super::super::System::Com::IDispatch,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for HTMLNamespaceEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612413, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 pub const HTMLNavigator: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4274956966, data2: 33797, data3: 4559, data4: [139, 161, 0, 170, 0, 71, 109, 166] };
 pub const HTMLNextIdElement: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611321, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 pub const HTMLNoShowElement: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611595, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
@@ -14696,9 +15816,17 @@ pub struct HTMLObjectElementEvents {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for HTMLObjectElementEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611652, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct HTMLObjectElementEvents2 {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for HTMLObjectElementEvents2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612256, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 pub const HTMLOptionButtonElement: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611390, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 #[cfg(feature = "Win32_System_Com")]
@@ -14707,9 +15835,17 @@ pub struct HTMLOptionButtonElementEvents {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for HTMLOptionButtonElementEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611389, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct HTMLOptionButtonElementEvents2 {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for HTMLOptionButtonElementEvents2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612249, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 pub const HTMLOptionElement: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611277, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 pub const HTMLOptionElementFactory: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611597, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
@@ -14734,9 +15870,17 @@ pub struct HTMLScriptEvents {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for HTMLScriptEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611682, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct HTMLScriptEvents2 {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for HTMLScriptEvents2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612257, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 pub const HTMLSelectElement: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611269, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 #[cfg(feature = "Win32_System_Com")]
@@ -14745,9 +15889,17 @@ pub struct HTMLSelectElementEvents {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for HTMLSelectElementEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611458, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct HTMLSelectElementEvents2 {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for HTMLSelectElementEvents2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612258, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 pub const HTMLSemanticElement: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616752, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 pub const HTMLSourceElement: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616589, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
@@ -14762,9 +15914,17 @@ pub struct HTMLStyleElementEvents {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for HTMLStyleElementEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611659, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct HTMLStyleElementEvents2 {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for HTMLStyleElementEvents2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612245, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 pub const HTMLStyleFontFace: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611668, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 pub const HTMLStyleMedia: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616652, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
@@ -14793,9 +15953,17 @@ pub struct HTMLTableEvents {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for HTMLTableEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611719, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct HTMLTableEvents2 {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for HTMLTableEvents2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612259, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 pub const HTMLTableRow: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611309, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 pub const HTMLTableSection: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611433, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
@@ -14806,9 +15974,17 @@ pub struct HTMLTextContainerEvents {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for HTMLTextContainerEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 536259186, data2: 22594, data3: 4559, data4: [167, 7, 0, 170, 0, 192, 9, 141] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct HTMLTextContainerEvents2 {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for HTMLTextContainerEvents2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612260, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 pub const HTMLTextElement: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611306, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 pub const HTMLTimeRanges: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616587, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
@@ -14825,14 +16001,26 @@ pub struct HTMLWindowEvents {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for HTMLWindowEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2527110368, data2: 53346, data3: 4559, data4: [148, 182, 0, 170, 0, 96, 39, 92] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct HTMLWindowEvents2 {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for HTMLWindowEvents2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612261, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct HTMLWindowEvents3 {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for HTMLWindowEvents3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612129, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 pub const HTMLWindowProxy: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611601, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 #[doc = "*Required features: `\"Win32_Web_MsHtml\"`*"]
@@ -14852,6 +16040,10 @@ pub const HTMLXMLHttpRequest: ::windows_sys::core::GUID = ::windows_sys::core::G
 #[repr(C)]
 pub struct HTMLXMLHttpRequestEvents {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for HTMLXMLHttpRequestEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810615960, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 pub const HTMLXMLHttpRequestFactory: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810615821, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 #[doc = "*Required features: `\"Win32_Web_MsHtml\"`*"]
@@ -15011,11 +16203,17 @@ pub struct IActiveXUIHandlerSite {
     #[cfg(not(feature = "Win32_Foundation"))]
     PickFileAndGetResult: usize,
 }
+impl ::windows_sys::core::Interface for IActiveXUIHandlerSite {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616915, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[repr(C)]
 pub struct IActiveXUIHandlerSite2 {
     pub base__: ::windows_sys::core::IUnknown,
     pub AddSuspensionExemption: unsafe extern "system" fn(this: *mut *mut Self, pullcookie: *mut u64) -> ::windows_sys::core::HRESULT,
     pub RemoveSuspensionExemption: unsafe extern "system" fn(this: *mut *mut Self, ullcookie: u64) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IActiveXUIHandlerSite2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2117535666, data2: 53383, data3: 17730, data4: [172, 31, 160, 210, 252, 208, 128, 253] };
 }
 #[repr(C)]
 pub struct IActiveXUIHandlerSite3 {
@@ -15025,11 +16223,18 @@ pub struct IActiveXUIHandlerSite3 {
     #[cfg(not(feature = "Win32_Foundation"))]
     MessageBoxW: usize,
 }
+impl ::windows_sys::core::Interface for IActiveXUIHandlerSite3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2030305434, data2: 4664, data3: 18420, data4: [144, 28, 135, 19, 117, 195, 70, 8] };
+}
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IAnchorClick {
     pub base__: super::super::System::Com::IDispatch,
     pub ProcOnClick: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IAnchorClick {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 332742971, data2: 13241, data3: 4562, data4: [149, 167, 0, 192, 79, 142, 203, 2] };
 }
 #[repr(C)]
 pub struct IAudioSessionSite {
@@ -15038,11 +16243,17 @@ pub struct IAudioSessionSite {
     pub OnAudioStreamCreated: unsafe extern "system" fn(this: *mut *mut Self, endpointid: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
     pub OnAudioStreamDestroyed: unsafe extern "system" fn(this: *mut *mut Self, endpointid: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAudioSessionSite {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3621303940, data2: 53293, data3: 17687, data4: [182, 183, 25, 227, 223, 226, 156, 69] };
+}
 #[repr(C)]
 pub struct IBFCacheable {
     pub base__: ::windows_sys::core::IUnknown,
     pub EnterBFCache: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub ExitBFCache: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IBFCacheable {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616929, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -15055,11 +16266,18 @@ pub struct IBlockFormats {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     Item: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IBlockFormats {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612784, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[repr(C)]
 pub struct ICSSFilter {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetSite: unsafe extern "system" fn(this: *mut *mut Self, psink: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub OnAmbientPropertyChange: unsafe extern "system" fn(this: *mut *mut Self, dispid: i32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ICSSFilter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611692, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[repr(C)]
 pub struct ICSSFilterSite {
@@ -15070,6 +16288,9 @@ pub struct ICSSFilterSite {
     GetElement: usize,
     pub FireOnFilterChangeEvent: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ICSSFilterSite {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611693, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ICanvasGradient {
@@ -15078,6 +16299,10 @@ pub struct ICanvasGradient {
     pub addColorStop: unsafe extern "system" fn(this: *mut *mut Self, offset: f32, color: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     addColorStop: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICanvasGradient {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616596, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -15091,9 +16316,17 @@ pub struct ICanvasImageData {
     data: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICanvasImageData {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616602, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ICanvasPattern {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICanvasPattern {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616598, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -15101,10 +16334,17 @@ pub struct ICanvasPixelArray {
     pub base__: super::super::System::Com::IDispatch,
     pub length: unsafe extern "system" fn(this: *mut *mut Self, p: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICanvasPixelArray {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616604, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[repr(C)]
 pub struct ICanvasPixelArrayData {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetBufferPointer: unsafe extern "system" fn(this: *mut *mut Self, ppbuffer: *mut *mut u8, pbufferlength: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ICanvasPixelArrayData {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616825, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -15266,10 +16506,18 @@ pub struct ICanvasRenderingContext2D {
     putImageData: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICanvasRenderingContext2D {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616575, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ICanvasTextMetrics {
     pub base__: super::super::System::Com::IDispatch,
     pub width: unsafe extern "system" fn(this: *mut *mut Self, p: *mut f32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICanvasTextMetrics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616600, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[repr(C)]
 pub struct ICaretPositionProvider {
@@ -15279,11 +16527,18 @@ pub struct ICaretPositionProvider {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetCaretPosition: usize,
 }
+impl ::windows_sys::core::Interface for ICaretPositionProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1490699170, data2: 4238, data3: 19803, data4: [159, 117, 229, 247, 79, 147, 255, 245] };
+}
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IClassFactoryEx {
     pub base__: super::super::System::Com::IClassFactory,
     pub CreateInstanceWithContext: unsafe extern "system" fn(this: *mut *mut Self, punkcontext: *mut ::core::ffi::c_void, punkouter: *mut ::core::ffi::c_void, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IClassFactoryEx {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 875372192, data2: 44581, data3: 4561, data4: [137, 197, 0, 96, 8, 195, 251, 252] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -15338,10 +16593,17 @@ pub struct IClientCaps {
     pub doComponentRequest: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i16) -> ::windows_sys::core::HRESULT,
     pub clearComponentRequest: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IClientCaps {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2123088973, data2: 44799, data3: 4561, data4: [137, 194, 0, 192, 79, 182, 191, 196] };
+}
 #[repr(C)]
 pub struct ICustomDoc {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetUIHandler: unsafe extern "system" fn(this: *mut *mut Self, puihandler: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ICustomDoc {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611696, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[doc = "*Required features: `\"Win32_Web_MsHtml\"`*"]
 pub const IDM_1D: u32 = 2170u32;
@@ -16331,6 +17593,10 @@ pub struct IDOMBeforeUnloadEvent {
     returnValue: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IDOMBeforeUnloadEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616675, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IDOMCloseEvent {
     pub base__: super::super::System::Com::IDispatch,
@@ -16339,6 +17605,10 @@ pub struct IDOMCloseEvent {
     pub initCloseEvent: unsafe extern "system" fn(this: *mut *mut Self, eventtype: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, canbubble: i16, cancelable: i16, wasclean: i16, code: i32, reason: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     initCloseEvent: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IDOMCloseEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616831, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -16358,6 +17628,10 @@ pub struct IDOMCompositionEvent {
     locale: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IDOMCompositionEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616536, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IDOMCustomEvent {
     pub base__: super::super::System::Com::IDispatch,
@@ -16369,6 +17643,10 @@ pub struct IDOMCustomEvent {
     pub initCustomEvent: unsafe extern "system" fn(this: *mut *mut Self, eventtype: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, canbubble: i16, cancelable: i16, detail: *const super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     initCustomEvent: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IDOMCustomEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616542, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -16400,6 +17678,10 @@ pub struct IDOMDocumentType {
     internalSubset: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IDOMDocumentType {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616632, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IDOMDragEvent {
     pub base__: super::super::System::Com::IDispatch,
@@ -16411,6 +17693,10 @@ pub struct IDOMDragEvent {
     pub initDragEvent: unsafe extern "system" fn(this: *mut *mut Self, eventtype: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, canbubble: i16, cancelable: i16, viewarg: *mut ::core::ffi::c_void, detailarg: i32, screenxarg: i32, screenyarg: i32, clientxarg: i32, clientyarg: i32, ctrlkeyarg: i16, altkeyarg: i16, shiftkeyarg: i16, metakeyarg: i16, buttonarg: u16, relatedtargetarg: *mut ::core::ffi::c_void, datatransferarg: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     initDragEvent: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IDOMDragEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616673, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -16448,11 +17734,18 @@ pub struct IDOMEvent {
     #[cfg(not(feature = "Win32_System_Com"))]
     srcElement: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IDOMEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810615994, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[repr(C)]
 pub struct IDOMEventRegistrationCallback {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnDOMEventListenerAdded: unsafe extern "system" fn(this: *mut *mut Self, pszeventtype: ::windows_sys::core::PCWSTR, phandler: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub OnDOMEventListenerRemoved: unsafe extern "system" fn(this: *mut *mut Self, ullcookie: u64) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDOMEventRegistrationCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616891, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -16466,6 +17759,10 @@ pub struct IDOMException {
     message: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IDOMException {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616619, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IDOMFocusEvent {
     pub base__: super::super::System::Com::IDispatch,
@@ -16477,6 +17774,10 @@ pub struct IDOMFocusEvent {
     pub initFocusEvent: unsafe extern "system" fn(this: *mut *mut Self, eventtype: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, canbubble: i16, cancelable: i16, view: *mut ::core::ffi::c_void, detail: i32, relatedtargetarg: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     initFocusEvent: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IDOMFocusEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616524, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -16513,6 +17814,10 @@ pub struct IDOMKeyboardEvent {
     locale: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IDOMKeyboardEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616534, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IDOMMSAnimationEvent {
     pub base__: super::super::System::Com::IDispatch,
@@ -16527,6 +17832,10 @@ pub struct IDOMMSAnimationEvent {
     initMSAnimationEvent: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IDOMMSAnimationEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616759, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IDOMMSManipulationEvent {
     pub base__: super::super::System::Com::IDispatch,
@@ -16536,6 +17845,10 @@ pub struct IDOMMSManipulationEvent {
     pub initMSManipulationEvent: unsafe extern "system" fn(this: *mut *mut Self, eventtype: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, canbubble: i16, cancelable: i16, viewarg: *mut ::core::ffi::c_void, detailarg: i32, laststate: i32, currentstate: i32) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     initMSManipulationEvent: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IDOMMSManipulationEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616854, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -16550,6 +17863,10 @@ pub struct IDOMMSTransitionEvent {
     pub initMSTransitionEvent: unsafe extern "system" fn(this: *mut *mut Self, eventtype: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, canbubble: i16, cancelable: i16, propertyname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, elapsedtime: f32) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     initMSTransitionEvent: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IDOMMSTransitionEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616757, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -16571,6 +17888,10 @@ pub struct IDOMMessageEvent {
     pub initMessageEvent: unsafe extern "system" fn(this: *mut *mut Self, eventtype: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, canbubble: i16, cancelable: i16, data: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, origin: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, lasteventid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, source: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     initMessageEvent: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IDOMMessageEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616608, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -16617,6 +17938,10 @@ pub struct IDOMMouseEvent {
     pub which: unsafe extern "system" fn(this: *mut *mut Self, p: *mut u16) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IDOMMouseEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616526, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IDOMMouseWheelEvent {
     pub base__: super::super::System::Com::IDispatch,
@@ -16625,6 +17950,10 @@ pub struct IDOMMouseWheelEvent {
     pub initMouseWheelEvent: unsafe extern "system" fn(this: *mut *mut Self, eventtype: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, canbubble: i16, cancelable: i16, viewarg: *mut ::core::ffi::c_void, detailarg: i32, screenxarg: i32, screenyarg: i32, clientxarg: i32, clientyarg: i32, buttonarg: u16, relatedtargetarg: *mut ::core::ffi::c_void, modifierslistarg: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, wheeldeltaarg: i32) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     initMouseWheelEvent: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IDOMMouseWheelEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616528, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -16653,6 +17982,10 @@ pub struct IDOMMutationEvent {
     initMutationEvent: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IDOMMutationEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616538, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IDOMNodeIterator {
     pub base__: super::super::System::Com::IDispatch,
@@ -16677,6 +18010,10 @@ pub struct IDOMNodeIterator {
     pub detach: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IDOMNodeIterator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616646, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IDOMParser {
     pub base__: super::super::System::Com::IDispatch,
@@ -16686,6 +18023,10 @@ pub struct IDOMParser {
     parseFromString: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IDOMParser {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616705, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IDOMParserFactory {
     pub base__: super::super::System::Com::IDispatch,
@@ -16693,6 +18034,10 @@ pub struct IDOMParserFactory {
     pub create: unsafe extern "system" fn(this: *mut *mut Self, __midl__idomparserfactory0000: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     create: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IDOMParserFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616707, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -16712,6 +18057,10 @@ pub struct IDOMProcessingInstruction {
     data: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IDOMProcessingInstruction {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616642, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IDOMProgressEvent {
     pub base__: super::super::System::Com::IDispatch,
@@ -16724,6 +18073,10 @@ pub struct IDOMProgressEvent {
     initProgressEvent: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IDOMProgressEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616606, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IDOMSiteModeEvent {
     pub base__: super::super::System::Com::IDispatch,
@@ -16732,6 +18085,10 @@ pub struct IDOMSiteModeEvent {
     pub actionURL: unsafe extern "system" fn(this: *mut *mut Self, p: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     actionURL: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IDOMSiteModeEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616677, data2: 39094, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -16763,6 +18120,10 @@ pub struct IDOMStorageEvent {
     initStorageEvent: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IDOMStorageEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616610, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IDOMTextEvent {
     pub base__: super::super::System::Com::IDispatch,
@@ -16779,6 +18140,10 @@ pub struct IDOMTextEvent {
     pub locale: unsafe extern "system" fn(this: *mut *mut Self, p: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     locale: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IDOMTextEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616532, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -16832,6 +18197,10 @@ pub struct IDOMTreeWalker {
     nextNode: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IDOMTreeWalker {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616648, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IDOMUIEvent {
     pub base__: super::super::System::Com::IDispatch,
@@ -16844,6 +18213,10 @@ pub struct IDOMUIEvent {
     pub initUIEvent: unsafe extern "system" fn(this: *mut *mut Self, eventtype: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, canbubble: i16, cancelable: i16, view: *mut ::core::ffi::c_void, detail: i32) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     initUIEvent: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IDOMUIEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616522, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -16859,6 +18232,10 @@ pub struct IDOMWheelEvent {
     initWheelEvent: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IDOMWheelEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616530, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IDOMXmlSerializer {
     pub base__: super::super::System::Com::IDispatch,
@@ -16868,6 +18245,10 @@ pub struct IDOMXmlSerializer {
     serializeToString: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IDOMXmlSerializer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616701, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IDOMXmlSerializerFactory {
     pub base__: super::super::System::Com::IDispatch,
@@ -16875,6 +18256,10 @@ pub struct IDOMXmlSerializerFactory {
     pub create: unsafe extern "system" fn(this: *mut *mut Self, __midl__idomxmlserializerfactory0000: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     create: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IDOMXmlSerializerFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616703, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[repr(C)]
 pub struct IDebugCallbackNotificationHandler {
@@ -16893,6 +18278,9 @@ pub struct IDebugCallbackNotificationHandler {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     InvokeCallbackComplete: usize,
 }
+impl ::windows_sys::core::Interface for IDebugCallbackNotificationHandler {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616898, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[repr(C)]
 pub struct IDeveloperConsoleMessageReceiver {
     pub base__: ::windows_sys::core::IUnknown,
@@ -16901,10 +18289,17 @@ pub struct IDeveloperConsoleMessageReceiver {
     pub WriteWithUrlAndLine: unsafe extern "system" fn(this: *mut *mut Self, source: ::windows_sys::core::PCWSTR, level: DEV_CONSOLE_MESSAGE_LEVEL, messageid: i32, messagetext: ::windows_sys::core::PCWSTR, fileurl: ::windows_sys::core::PCWSTR, line: u32) -> ::windows_sys::core::HRESULT,
     pub WriteWithUrlLineAndColumn: unsafe extern "system" fn(this: *mut *mut Self, source: ::windows_sys::core::PCWSTR, level: DEV_CONSOLE_MESSAGE_LEVEL, messageid: i32, messagetext: ::windows_sys::core::PCWSTR, fileurl: ::windows_sys::core::PCWSTR, line: u32, column: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDeveloperConsoleMessageReceiver {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616840, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IDeviceRect {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IDeviceRect {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612437, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[repr(C)]
 pub struct IDiagnosticsScriptEngine {
@@ -16912,6 +18307,9 @@ pub struct IDiagnosticsScriptEngine {
     pub EvaluateScript: unsafe extern "system" fn(this: *mut *mut Self, pszscript: ::windows_sys::core::PCWSTR, pszscriptname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
     pub FireScriptMessageEvent: unsafe extern "system" fn(this: *mut *mut Self, psznames: *const ::windows_sys::core::PWSTR, pszvalues: *const ::windows_sys::core::PWSTR, ulpropertycount: u32) -> ::windows_sys::core::HRESULT,
     pub Detach: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDiagnosticsScriptEngine {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616921, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[repr(C)]
 pub struct IDiagnosticsScriptEngineProvider {
@@ -16921,6 +18319,9 @@ pub struct IDiagnosticsScriptEngineProvider {
     #[cfg(not(feature = "Win32_Foundation"))]
     CreateDiagnosticsScriptEngine: usize,
 }
+impl ::windows_sys::core::Interface for IDiagnosticsScriptEngineProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616922, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[repr(C)]
 pub struct IDiagnosticsScriptEngineSite {
     pub base__: ::windows_sys::core::IUnknown,
@@ -16929,6 +18330,9 @@ pub struct IDiagnosticsScriptEngineSite {
     pub OnScriptError: unsafe extern "system" fn(this: *mut *mut Self, pscripterror: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Diagnostics_Debug"))]
     OnScriptError: usize,
+}
+impl ::windows_sys::core::Interface for IDiagnosticsScriptEngineSite {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616920, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[repr(C)]
 pub struct IDisplayPointer {
@@ -16974,6 +18378,9 @@ pub struct IDisplayPointer {
     GetFlowElement: usize,
     pub QueryBreaks: unsafe extern "system" fn(this: *mut *mut Self, pdwbreaks: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDisplayPointer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612382, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[repr(C)]
 pub struct IDisplayServices {
     pub base__: ::windows_sys::core::IUnknown,
@@ -16997,6 +18404,9 @@ pub struct IDisplayServices {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     HasFlowLayout: usize,
 }
+impl ::windows_sys::core::Interface for IDisplayServices {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612381, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[repr(C)]
 pub struct IDithererImpl {
     pub base__: ::windows_sys::core::IUnknown,
@@ -17005,6 +18415,9 @@ pub struct IDithererImpl {
     #[cfg(not(feature = "Win32_Graphics_Gdi"))]
     SetDestColorTable: usize,
     pub SetEventSink: unsafe extern "system" fn(this: *mut *mut Self, peventsink: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDithererImpl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2085152832, data2: 14608, data3: 4560, data4: [134, 252, 0, 160, 201, 19, 247, 80] };
 }
 #[repr(C)]
 pub struct IDocHostShowUI {
@@ -17017,6 +18430,9 @@ pub struct IDocHostShowUI {
     pub ShowHelp: unsafe extern "system" fn(this: *mut *mut Self, hwnd: super::super::Foundation::HWND, pszhelpfile: ::windows_sys::core::PCWSTR, ucommand: u32, dwdata: u32, ptmouse: super::super::Foundation::POINT, pdispatchobjecthit: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     ShowHelp: usize,
+}
+impl ::windows_sys::core::Interface for IDocHostShowUI {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3302114480, data2: 54334, data3: 4559, data4: [137, 59, 0, 170, 0, 189, 206, 26] };
 }
 #[repr(C)]
 pub struct IDocHostUIHandler {
@@ -17067,10 +18483,16 @@ pub struct IDocHostUIHandler {
     #[cfg(not(feature = "Win32_System_Com"))]
     FilterDataObject: usize,
 }
+impl ::windows_sys::core::Interface for IDocHostUIHandler {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3175031744, data2: 54334, data3: 4559, data4: [137, 59, 0, 170, 0, 189, 206, 26] };
+}
 #[repr(C)]
 pub struct IDocHostUIHandler2 {
     pub base__: IDocHostUIHandler,
     pub GetOverrideKeyPath: unsafe extern "system" fn(this: *mut *mut Self, pchkey: *mut ::windows_sys::core::PWSTR, dw: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDocHostUIHandler2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612432, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[repr(C)]
 pub struct IDocObjectService {
@@ -17110,6 +18532,9 @@ pub struct IDocObjectService {
     #[cfg(not(feature = "Win32_Foundation"))]
     IsErrorUrl: usize,
 }
+impl ::windows_sys::core::Interface for IDocObjectService {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612737, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IDocumentEvent {
@@ -17120,6 +18545,10 @@ pub struct IDocumentEvent {
     createEvent: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IDocumentEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810615996, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IDocumentRange {
     pub base__: super::super::System::Com::IDispatch,
@@ -17127,6 +18556,10 @@ pub struct IDocumentRange {
     pub createRange: unsafe extern "system" fn(this: *mut *mut Self, ppihtmldomrange: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     createRange: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IDocumentRange {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810615983, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -17142,6 +18575,10 @@ pub struct IDocumentSelector {
     querySelectorAll: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IDocumentSelector {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810615906, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IDocumentTraversal {
     pub base__: super::super::System::Com::IDispatch,
@@ -17155,6 +18592,10 @@ pub struct IDocumentTraversal {
     createTreeWalker: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IDocumentTraversal {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616644, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IDownloadBehavior {
     pub base__: super::super::System::Com::IDispatch,
@@ -17163,6 +18604,10 @@ pub struct IDownloadBehavior {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     startDownload: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IDownloadBehavior {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612157, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[repr(C)]
 pub struct IDownloadManager {
     pub base__: ::windows_sys::core::IUnknown,
@@ -17170,6 +18615,9 @@ pub struct IDownloadManager {
     pub Download: unsafe extern "system" fn(this: *mut *mut Self, pmk: *mut ::core::ffi::c_void, pbc: *mut ::core::ffi::c_void, dwbindverb: u32, grfbindf: i32, pbindinfo: *const super::super::System::Com::BINDINFO, pszheaders: ::windows_sys::core::PCWSTR, pszredir: ::windows_sys::core::PCWSTR, uicp: u32) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security", feature = "Win32_System_Com_StructuredStorage")))]
     Download: usize,
+}
+impl ::windows_sys::core::Interface for IDownloadManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2559128740, data2: 1611, data3: 4563, data4: [187, 128, 0, 16, 75, 53, 231, 249] };
 }
 #[doc = "*Required features: `\"Win32_Web_MsHtml\"`*"]
 pub const IECMDID_ARG_CLEAR_FORMS_ALL: u32 = 0u32;
@@ -17252,10 +18700,16 @@ pub struct IElementBehavior {
     Notify: usize,
     pub Detach: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IElementBehavior {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611749, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[repr(C)]
 pub struct IElementBehaviorCategory {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetCategory: unsafe extern "system" fn(this: *mut *mut Self, ppchcategory: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IElementBehaviorCategory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611949, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[repr(C)]
 pub struct IElementBehaviorFactory {
@@ -17265,6 +18719,9 @@ pub struct IElementBehaviorFactory {
     #[cfg(not(feature = "Win32_Foundation"))]
     FindBehavior: usize,
 }
+impl ::windows_sys::core::Interface for IElementBehaviorFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611753, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[repr(C)]
 pub struct IElementBehaviorFocus {
     pub base__: ::windows_sys::core::IUnknown,
@@ -17272,6 +18729,9 @@ pub struct IElementBehaviorFocus {
     pub GetFocusRect: unsafe extern "system" fn(this: *mut *mut Self, prect: *const super::super::Foundation::RECT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetFocusRect: usize,
+}
+impl ::windows_sys::core::Interface for IElementBehaviorFocus {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612406, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[repr(C)]
 pub struct IElementBehaviorLayout {
@@ -17290,10 +18750,16 @@ pub struct IElementBehaviorLayout {
     #[cfg(not(feature = "Win32_Foundation"))]
     MapSize: usize,
 }
+impl ::windows_sys::core::Interface for IElementBehaviorLayout {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612410, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[repr(C)]
 pub struct IElementBehaviorLayout2 {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetTextDescent: unsafe extern "system" fn(this: *mut *mut Self, pldescent: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IElementBehaviorLayout2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612806, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[repr(C)]
 pub struct IElementBehaviorRender {
@@ -17308,6 +18774,9 @@ pub struct IElementBehaviorRender {
     #[cfg(not(feature = "Win32_Foundation"))]
     HitTestPoint: usize,
 }
+impl ::windows_sys::core::Interface for IElementBehaviorRender {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611882, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[repr(C)]
 pub struct IElementBehaviorSite {
     pub base__: ::windows_sys::core::IUnknown,
@@ -17317,6 +18786,9 @@ pub struct IElementBehaviorSite {
     GetElement: usize,
     pub RegisterNotification: unsafe extern "system" fn(this: *mut *mut Self, levent: i32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IElementBehaviorSite {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611751, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[repr(C)]
 pub struct IElementBehaviorSiteCategory {
     pub base__: ::windows_sys::core::IUnknown,
@@ -17324,6 +18796,9 @@ pub struct IElementBehaviorSiteCategory {
     pub GetRelatedBehaviors: unsafe extern "system" fn(this: *mut *mut Self, ldirection: i32, pchcategory: ::windows_sys::core::PCWSTR, ppenumerator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     GetRelatedBehaviors: usize,
+}
+impl ::windows_sys::core::Interface for IElementBehaviorSiteCategory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611950, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[repr(C)]
 pub struct IElementBehaviorSiteLayout {
@@ -17335,6 +18810,9 @@ pub struct IElementBehaviorSiteLayout {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetMediaResolution: usize,
 }
+impl ::windows_sys::core::Interface for IElementBehaviorSiteLayout {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612407, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[repr(C)]
 pub struct IElementBehaviorSiteLayout2 {
     pub base__: ::windows_sys::core::IUnknown,
@@ -17342,6 +18820,9 @@ pub struct IElementBehaviorSiteLayout2 {
     pub GetFontInfo: unsafe extern "system" fn(this: *mut *mut Self, plf: *mut super::super::Graphics::Gdi::LOGFONTW) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Graphics_Gdi"))]
     GetFontInfo: usize,
+}
+impl ::windows_sys::core::Interface for IElementBehaviorSiteLayout2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612807, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[repr(C)]
 pub struct IElementBehaviorSiteOM {
@@ -17359,6 +18840,9 @@ pub struct IElementBehaviorSiteOM {
     pub RegisterName: unsafe extern "system" fn(this: *mut *mut Self, pchname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
     pub RegisterUrn: unsafe extern "system" fn(this: *mut *mut Self, pchurn: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IElementBehaviorSiteOM {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611849, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[repr(C)]
 pub struct IElementBehaviorSiteOM2 {
     pub base__: IElementBehaviorSiteOM,
@@ -17366,6 +18850,9 @@ pub struct IElementBehaviorSiteOM2 {
     pub GetDefaults: unsafe extern "system" fn(this: *mut *mut Self, ppdefaults: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     GetDefaults: usize,
+}
+impl ::windows_sys::core::Interface for IElementBehaviorSiteOM2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612313, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[repr(C)]
 pub struct IElementBehaviorSiteRender {
@@ -17377,6 +18864,9 @@ pub struct IElementBehaviorSiteRender {
     pub InvalidateRenderInfo: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub InvalidateStyle: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IElementBehaviorSiteRender {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611879, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[repr(C)]
 pub struct IElementBehaviorSubmit {
     pub base__: ::windows_sys::core::IUnknown,
@@ -17386,6 +18876,9 @@ pub struct IElementBehaviorSubmit {
     GetSubmitInfo: usize,
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IElementBehaviorSubmit {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612294, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[repr(C)]
 pub struct IElementNamespace {
     pub base__: ::windows_sys::core::IUnknown,
@@ -17394,10 +18887,16 @@ pub struct IElementNamespace {
     #[cfg(not(feature = "Win32_Foundation"))]
     AddTag: usize,
 }
+impl ::windows_sys::core::Interface for IElementNamespace {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612337, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[repr(C)]
 pub struct IElementNamespaceFactory {
     pub base__: ::windows_sys::core::IUnknown,
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, pnamespace: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IElementNamespaceFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612338, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[repr(C)]
 pub struct IElementNamespaceFactory2 {
@@ -17407,6 +18906,9 @@ pub struct IElementNamespaceFactory2 {
     #[cfg(not(feature = "Win32_Foundation"))]
     CreateWithImplementation: usize,
 }
+impl ::windows_sys::core::Interface for IElementNamespaceFactory2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612741, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[repr(C)]
 pub struct IElementNamespaceFactoryCallback {
     pub base__: ::windows_sys::core::IUnknown,
@@ -17415,6 +18917,9 @@ pub struct IElementNamespaceFactoryCallback {
     #[cfg(not(feature = "Win32_Foundation"))]
     Resolve: usize,
 }
+impl ::windows_sys::core::Interface for IElementNamespaceFactoryCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612733, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[repr(C)]
 pub struct IElementNamespaceTable {
     pub base__: ::windows_sys::core::IUnknown,
@@ -17422,6 +18927,9 @@ pub struct IElementNamespaceTable {
     pub AddNamespace: unsafe extern "system" fn(this: *mut *mut Self, bstrnamespace: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrurn: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, lflags: i32, pvarfactory: *const super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     AddNamespace: usize,
+}
+impl ::windows_sys::core::Interface for IElementNamespaceTable {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612336, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[repr(C)]
 pub struct IElementSegment {
@@ -17439,6 +18947,9 @@ pub struct IElementSegment {
     #[cfg(not(feature = "Win32_Foundation"))]
     IsPrimary: usize,
 }
+impl ::windows_sys::core::Interface for IElementSegment {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612367, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IElementSelector {
@@ -17451,6 +18962,10 @@ pub struct IElementSelector {
     pub querySelectorAll: unsafe extern "system" fn(this: *mut *mut Self, v: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pel: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     querySelectorAll: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IElementSelector {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810615907, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -17474,6 +18989,10 @@ pub struct IElementTraversal {
     nextElementSibling: usize,
     pub childElementCount: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i32) -> ::windows_sys::core::HRESULT,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IElementTraversal {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616630, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[repr(C)]
 pub struct IEnumManagerFrames {
     pub base__: ::windows_sys::core::IUnknown,
@@ -17486,6 +19005,9 @@ pub struct IEnumManagerFrames {
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEnumManagerFrames {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1017807466, data2: 39711, data3: 19065, data4: [188, 129, 240, 67, 13, 237, 22, 72] };
+}
 #[repr(C)]
 pub struct IEnumOpenServiceActivity {
     pub base__: ::windows_sys::core::IUnknown,
@@ -17494,6 +19016,9 @@ pub struct IEnumOpenServiceActivity {
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEnumOpenServiceActivity {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2755057618, data2: 6083, data3: 20212, data4: [161, 232, 92, 134, 250, 255, 38, 192] };
+}
 #[repr(C)]
 pub struct IEnumOpenServiceActivityCategory {
     pub base__: ::windows_sys::core::IUnknown,
@@ -17501,6 +19026,9 @@ pub struct IEnumOpenServiceActivityCategory {
     pub Skip: unsafe extern "system" fn(this: *mut *mut Self, celt: u32) -> ::windows_sys::core::HRESULT,
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IEnumOpenServiceActivityCategory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 862091862, data2: 35994, data3: 17456, data4: [143, 209, 181, 245, 199, 113, 175, 182] };
 }
 #[repr(C)]
 pub struct IEnumPrivacyRecords {
@@ -17516,6 +19044,9 @@ pub struct IEnumPrivacyRecords {
     #[cfg(not(feature = "Win32_Foundation"))]
     Next: usize,
 }
+impl ::windows_sys::core::Interface for IEnumPrivacyRecords {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612804, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[repr(C)]
 pub struct IEnumSTATURL {
     pub base__: ::windows_sys::core::IUnknown,
@@ -17528,6 +19059,9 @@ pub struct IEnumSTATURL {
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetFilter: unsafe extern "system" fn(this: *mut *mut Self, poszfilter: ::windows_sys::core::PCWSTR, dwflags: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEnumSTATURL {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1010256450, data2: 47844, data3: 4559, data4: [191, 125, 0, 170, 0, 105, 70, 238] };
+}
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IEventException {
@@ -17538,6 +19072,10 @@ pub struct IEventException {
     pub message: unsafe extern "system" fn(this: *mut *mut Self, p: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     message: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IEventException {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616634, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -17556,6 +19094,10 @@ pub struct IEventTarget {
     #[cfg(not(feature = "Win32_System_Com"))]
     dispatchEvent: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IEventTarget {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810615993, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[repr(C)]
 pub struct IEventTarget2 {
     pub base__: ::windows_sys::core::IUnknown,
@@ -17570,6 +19112,9 @@ pub struct IEventTarget2 {
     pub RegisterForDOMEventListeners: unsafe extern "system" fn(this: *mut *mut Self, pcallback: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub UnregisterForDOMEventListeners: unsafe extern "system" fn(this: *mut *mut Self, pcallback: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEventTarget2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616889, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[repr(C)]
 pub struct IExtensionValidation {
     pub base__: ::windows_sys::core::IUnknown,
@@ -17578,6 +19123,9 @@ pub struct IExtensionValidation {
     #[cfg(not(feature = "Win32_System_Com"))]
     Validate: usize,
     pub DisplayName: unsafe extern "system" fn(this: *mut *mut Self, displayname: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IExtensionValidation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2100557629, data2: 34085, data3: 19983, data4: [135, 219, 131, 2, 136, 186, 255, 68] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -17591,6 +19139,10 @@ pub struct IFontNames {
     Item: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFontNames {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612793, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IGetSVGDocument {
     pub base__: super::super::System::Com::IDispatch,
@@ -17598,6 +19150,10 @@ pub struct IGetSVGDocument {
     pub getSVGDocument: unsafe extern "system" fn(this: *mut *mut Self, ppsvgdocument: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     getSVGDocument: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IGetSVGDocument {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616235, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -17610,6 +19166,10 @@ pub struct IHTCAttachBehavior {
     pub detachEvent: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTCAttachBehavior {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612212, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTCAttachBehavior2 {
     pub base__: super::super::System::Com::IDispatch,
@@ -17617,6 +19177,10 @@ pub struct IHTCAttachBehavior2 {
     pub fireEvent: unsafe extern "system" fn(this: *mut *mut Self, evt: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     fireEvent: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTCAttachBehavior2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612715, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -17640,6 +19204,10 @@ pub struct IHTCDefaultDispatch {
     document: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTCDefaultDispatch {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611965, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTCDescBehavior {
     pub base__: super::super::System::Com::IDispatch,
@@ -17653,6 +19221,10 @@ pub struct IHTCDescBehavior {
     name: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTCDescBehavior {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612188, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTCEventBehavior {
     pub base__: super::super::System::Com::IDispatch,
@@ -17662,9 +19234,17 @@ pub struct IHTCEventBehavior {
     fire: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTCEventBehavior {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611967, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTCMethodBehavior {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTCMethodBehavior {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612273, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -17679,6 +19259,10 @@ pub struct IHTCPropertyBehavior {
     pub value: unsafe extern "system" fn(this: *mut *mut Self, p: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     value: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTCPropertyBehavior {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612191, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -17838,6 +19422,10 @@ pub struct IHTMLAnchorElement {
     pub blur: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLAnchorElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611162, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLAnchorElement2 {
     pub base__: super::super::System::Com::IDispatch,
@@ -17883,6 +19471,10 @@ pub struct IHTMLAnchorElement2 {
     r#type: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLAnchorElement2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612773, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLAnchorElement3 {
     pub base__: super::super::System::Com::IDispatch,
@@ -17910,6 +19502,10 @@ pub struct IHTMLAnchorElement3 {
     pub href: unsafe extern "system" fn(this: *mut *mut Self, p: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     href: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLAnchorElement3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810615837, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -18017,6 +19613,10 @@ pub struct IHTMLAppBehavior {
     commandLine: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLAppBehavior {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612170, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLAppBehavior2 {
     pub base__: super::super::System::Com::IDispatch,
@@ -18062,6 +19662,10 @@ pub struct IHTMLAppBehavior2 {
     selection: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLAppBehavior2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612169, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLAppBehavior3 {
     pub base__: super::super::System::Com::IDispatch,
@@ -18073,6 +19677,10 @@ pub struct IHTMLAppBehavior3 {
     pub navigable: unsafe extern "system" fn(this: *mut *mut Self, p: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     navigable: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLAppBehavior3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612173, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -18146,6 +19754,10 @@ pub struct IHTMLApplicationCache {
     pub update: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub swapCache: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub abort: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLApplicationCache {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616872, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -18271,6 +19883,10 @@ pub struct IHTMLAreaElement {
     pub blur: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLAreaElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611301, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLAreaElement2 {
     pub base__: super::super::System::Com::IDispatch,
@@ -18300,6 +19916,10 @@ pub struct IHTMLAreaElement2 {
     href: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLAreaElement2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810615839, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLAreasCollection {
     pub base__: super::super::System::Com::IDispatch,
@@ -18321,6 +19941,10 @@ pub struct IHTMLAreasCollection {
     pub remove: unsafe extern "system" fn(this: *mut *mut Self, index: i32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLAreasCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611587, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLAreasCollection2 {
     pub base__: super::super::System::Com::IDispatch,
@@ -18330,6 +19954,10 @@ pub struct IHTMLAreasCollection2 {
     urns: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLAreasCollection2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612204, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLAreasCollection3 {
     pub base__: super::super::System::Com::IDispatch,
@@ -18337,6 +19965,10 @@ pub struct IHTMLAreasCollection3 {
     pub namedItem: unsafe extern "system" fn(this: *mut *mut Self, name: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pdisp: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     namedItem: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLAreasCollection3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612791, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -18353,6 +19985,10 @@ pub struct IHTMLAreasCollection4 {
     namedItem: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLAreasCollection4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810615954, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLAttributeCollection {
     pub base__: super::super::System::Com::IDispatch,
@@ -18362,6 +19998,10 @@ pub struct IHTMLAttributeCollection {
     pub item: unsafe extern "system" fn(this: *mut *mut Self, name: *const super::super::System::Com::VARIANT, pdisp: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     item: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLAttributeCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611907, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -18379,6 +20019,10 @@ pub struct IHTMLAttributeCollection2 {
     pub removeNamedItem: unsafe extern "system" fn(this: *mut *mut Self, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, newretnode: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     removeNamedItem: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLAttributeCollection2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612746, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -18401,6 +20045,10 @@ pub struct IHTMLAttributeCollection3 {
     #[cfg(not(feature = "Win32_System_Com"))]
     item: usize,
     pub length: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLAttributeCollection3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810615913, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -18437,9 +20085,17 @@ pub struct IHTMLAttributeCollection4 {
     pub length: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLAttributeCollection4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616570, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLAudioElement {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLAudioElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616584, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -18449,6 +20105,10 @@ pub struct IHTMLAudioElementFactory {
     pub create: unsafe extern "system" fn(this: *mut *mut Self, src: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>, __midl__ihtmlaudioelementfactory0000: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     create: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLAudioElementFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616811, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -18488,6 +20148,10 @@ pub struct IHTMLBGsound {
     balance: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLBGsound {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611561, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLBRElement {
     pub base__: super::super::System::Com::IDispatch,
@@ -18499,6 +20163,10 @@ pub struct IHTMLBRElement {
     pub clear: unsafe extern "system" fn(this: *mut *mut Self, p: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     clear: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLBRElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611184, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -18522,6 +20190,10 @@ pub struct IHTMLBaseElement {
     target: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLBaseElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611204, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLBaseElement2 {
     pub base__: super::super::System::Com::IDispatch,
@@ -18533,6 +20205,10 @@ pub struct IHTMLBaseElement2 {
     pub href: unsafe extern "system" fn(this: *mut *mut Self, p: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     href: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLBaseElement2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810615840, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -18558,6 +20234,10 @@ pub struct IHTMLBaseFontElement {
     pub size: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLBaseFontElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611202, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLBlockElement {
     pub base__: super::super::System::Com::IDispatch,
@@ -18569,6 +20249,10 @@ pub struct IHTMLBlockElement {
     pub clear: unsafe extern "system" fn(this: *mut *mut Self, p: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     clear: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLBlockElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611208, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -18592,6 +20276,10 @@ pub struct IHTMLBlockElement2 {
     width: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLBlockElement2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612771, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLBlockElement3 {
     pub base__: super::super::System::Com::IDispatch,
@@ -18603,6 +20291,10 @@ pub struct IHTMLBlockElement3 {
     pub cite: unsafe extern "system" fn(this: *mut *mut Self, p: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     cite: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLBlockElement3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810615956, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -18744,6 +20436,10 @@ pub struct IHTMLBodyElement {
     createTextRange: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLBodyElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611160, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLBodyElement2 {
     pub base__: super::super::System::Com::IDispatch,
@@ -18763,6 +20459,10 @@ pub struct IHTMLBodyElement2 {
     pub onafterprint: unsafe extern "system" fn(this: *mut *mut Self, p: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     onafterprint: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLBodyElement2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612165, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -18802,6 +20502,10 @@ pub struct IHTMLBodyElement3 {
     onhashchange: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLBodyElement3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810615842, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLBodyElement4 {
     pub base__: super::super::System::Com::IDispatch,
@@ -18823,6 +20527,10 @@ pub struct IHTMLBodyElement4 {
     onstorage: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLBodyElement4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616725, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLBodyElement5 {
     pub base__: super::super::System::Com::IDispatch,
@@ -18836,6 +20544,10 @@ pub struct IHTMLBodyElement5 {
     onpopstate: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLBodyElement5 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616866, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLBookmarkCollection {
     pub base__: super::super::System::Com::IDispatch,
@@ -18845,6 +20557,10 @@ pub struct IHTMLBookmarkCollection {
     pub item: unsafe extern "system" fn(this: *mut *mut Self, index: i32, pvarbookmark: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     item: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLBookmarkCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611918, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -18890,6 +20606,10 @@ pub struct IHTMLButtonElement {
     createTextRange: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLButtonElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611387, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLButtonElement2 {
     pub base__: super::super::System::Com::IDispatch,
@@ -18901,6 +20621,10 @@ pub struct IHTMLButtonElement2 {
     pub r#type: unsafe extern "system" fn(this: *mut *mut Self, p: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     r#type: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLButtonElement2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616563, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -18922,6 +20646,10 @@ pub struct IHTMLCSSImportRule {
     pub styleSheet: unsafe extern "system" fn(this: *mut *mut Self, p: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     styleSheet: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLCSSImportRule {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616554, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -18950,6 +20678,10 @@ pub struct IHTMLCSSMediaList {
     deleteMedium: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLCSSMediaList {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616625, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLCSSMediaRule {
     pub base__: super::super::System::Com::IDispatch,
@@ -18972,6 +20704,10 @@ pub struct IHTMLCSSMediaRule {
     pub deleteRule: unsafe extern "system" fn(this: *mut *mut Self, lindex: i32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLCSSMediaRule {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616555, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLCSSNamespaceRule {
     pub base__: super::super::System::Com::IDispatch,
@@ -18983,6 +20719,10 @@ pub struct IHTMLCSSNamespaceRule {
     pub prefix: unsafe extern "system" fn(this: *mut *mut Self, p: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     prefix: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLCSSNamespaceRule {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616558, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -19005,6 +20745,10 @@ pub struct IHTMLCSSRule {
     pub parentStyleSheet: unsafe extern "system" fn(this: *mut *mut Self, p: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     parentStyleSheet: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLCSSRule {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616553, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -20505,6 +22249,10 @@ pub struct IHTMLCSSStyleDeclaration {
     msTransformOrigin: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLCSSStyleDeclaration {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616640, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLCSSStyleDeclaration2 {
     pub base__: super::super::System::Com::IDispatch,
@@ -21422,6 +23170,10 @@ pub struct IHTMLCSSStyleDeclaration2 {
     animationFillMode: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLCSSStyleDeclaration2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616785, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLCSSStyleDeclaration3 {
     pub base__: super::super::System::Com::IDispatch,
@@ -21585,6 +23337,10 @@ pub struct IHTMLCSSStyleDeclaration3 {
     pub touchAction: unsafe extern "system" fn(this: *mut *mut Self, p: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     touchAction: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLCSSStyleDeclaration3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616924, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -21952,6 +23708,10 @@ pub struct IHTMLCSSStyleDeclaration4 {
     webkitAnimationFillMode: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLCSSStyleDeclaration4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3591376699, data2: 10184, data3: 16690, data4: [175, 234, 240, 228, 177, 224, 0, 96] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLCanvasElement {
     pub base__: super::super::System::Com::IDispatch,
@@ -21967,6 +23727,10 @@ pub struct IHTMLCanvasElement {
     pub toDataURL: unsafe extern "system" fn(this: *mut *mut Self, r#type: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, jpegquality: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>, purl: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     toDataURL: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLCanvasElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616548, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[repr(C)]
 pub struct IHTMLCaret {
@@ -21999,10 +23763,16 @@ pub struct IHTMLCaret {
     pub GetCaretDirection: unsafe extern "system" fn(this: *mut *mut Self, pedir: *mut CARET_DIRECTION) -> ::windows_sys::core::HRESULT,
     pub SetCaretDirection: unsafe extern "system" fn(this: *mut *mut Self, edir: CARET_DIRECTION) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IHTMLCaret {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612228, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[repr(C)]
 pub struct IHTMLChangeLog {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetNextChange: unsafe extern "system" fn(this: *mut *mut Self, pbbuffer: *const u8, nbuffersize: i32, pnrecordlength: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IHTMLChangeLog {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612297, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[repr(C)]
 pub struct IHTMLChangePlayback {
@@ -22012,10 +23782,16 @@ pub struct IHTMLChangePlayback {
     #[cfg(not(feature = "Win32_Foundation"))]
     ExecChange: usize,
 }
+impl ::windows_sys::core::Interface for IHTMLChangePlayback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612448, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[repr(C)]
 pub struct IHTMLChangeSink {
     pub base__: ::windows_sys::core::IUnknown,
     pub Notify: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IHTMLChangeSink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612298, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -22031,6 +23807,10 @@ pub struct IHTMLCommentElement {
     text: usize,
     pub Setatomic: unsafe extern "system" fn(this: *mut *mut Self, v: i32) -> ::windows_sys::core::HRESULT,
     pub atomic: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLCommentElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611212, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -22064,6 +23844,10 @@ pub struct IHTMLCommentElement2 {
     replaceData: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLCommentElement2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612755, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLCommentElement3 {
     pub base__: super::super::System::Com::IDispatch,
@@ -22080,6 +23864,10 @@ pub struct IHTMLCommentElement3 {
     pub replaceData: unsafe extern "system" fn(this: *mut *mut Self, offset: i32, count: i32, bstrstring: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     replaceData: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLCommentElement3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616639, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[repr(C)]
 pub struct IHTMLComputedStyle {
@@ -22103,6 +23891,9 @@ pub struct IHTMLComputedStyle {
     pub blockDirection: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i16) -> ::windows_sys::core::HRESULT,
     pub OL: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i16) -> ::windows_sys::core::HRESULT,
     pub IsEqual: unsafe extern "system" fn(this: *mut *mut Self, pcomputedstyle: *mut ::core::ffi::c_void, pfequal: *mut i16) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IHTMLComputedStyle {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612419, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -22150,6 +23941,10 @@ pub struct IHTMLControlElement {
     pub clientWidth: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i32) -> ::windows_sys::core::HRESULT,
     pub clientTop: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i32) -> ::windows_sys::core::HRESULT,
     pub clientLeft: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLControlElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611945, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -22208,6 +24003,10 @@ pub struct IHTMLControlRange {
     pub length: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLControlRange {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611356, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLControlRange2 {
     pub base__: super::super::System::Com::IDispatch,
@@ -22215,6 +24014,10 @@ pub struct IHTMLControlRange2 {
     pub addElement: unsafe extern "system" fn(this: *mut *mut Self, item: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     addElement: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLControlRange2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612318, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -22586,6 +24389,10 @@ pub struct IHTMLCurrentStyle {
     textTransform: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLCurrentStyle {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611675, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLCurrentStyle2 {
     pub base__: super::super::System::Com::IDispatch,
@@ -22657,6 +24464,10 @@ pub struct IHTMLCurrentStyle2 {
     pub isBlock: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i16) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLCurrentStyle2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612312, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLCurrentStyle3 {
     pub base__: super::super::System::Com::IDispatch,
@@ -22678,6 +24489,10 @@ pub struct IHTMLCurrentStyle3 {
     whiteSpace: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLCurrentStyle3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612760, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLCurrentStyle4 {
     pub base__: super::super::System::Com::IDispatch,
@@ -22697,6 +24512,10 @@ pub struct IHTMLCurrentStyle4 {
     pub maxWidth: unsafe extern "system" fn(this: *mut *mut Self, p: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     maxWidth: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLCurrentStyle4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611515, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -22756,6 +24575,10 @@ pub struct IHTMLCurrentStyle5 {
     quotes: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLCurrentStyle5 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810615937, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLDDElement {
     pub base__: super::super::System::Com::IDispatch,
@@ -22763,11 +24586,19 @@ pub struct IHTMLDDElement {
     pub noWrap: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i16) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLDDElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611186, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLDListElement {
     pub base__: super::super::System::Com::IDispatch,
     pub Setcompact: unsafe extern "system" fn(this: *mut *mut Self, v: i16) -> ::windows_sys::core::HRESULT,
     pub compact: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLDListElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611185, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -22786,6 +24617,10 @@ pub struct IHTMLDOMAttribute {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     nodeValue: usize,
     pub specified: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLDOMAttribute {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611888, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -22860,6 +24695,10 @@ pub struct IHTMLDOMAttribute2 {
     cloneNode: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLDOMAttribute2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612752, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLDOMAttribute3 {
     pub base__: super::super::System::Com::IDispatch,
@@ -22884,6 +24723,10 @@ pub struct IHTMLDOMAttribute3 {
     pub ownerElement: unsafe extern "system" fn(this: *mut *mut Self, p: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     ownerElement: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLDOMAttribute3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810615912, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -22931,6 +24774,10 @@ pub struct IHTMLDOMAttribute4 {
     pub specified: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i16) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLDOMAttribute4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616569, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLDOMChildrenCollection {
     pub base__: super::super::System::Com::IDispatch,
@@ -22942,6 +24789,10 @@ pub struct IHTMLDOMChildrenCollection {
     item: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLDOMChildrenCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612139, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLDOMChildrenCollection2 {
     pub base__: super::super::System::Com::IDispatch,
@@ -22949,6 +24800,10 @@ pub struct IHTMLDOMChildrenCollection2 {
     pub item: unsafe extern "system" fn(this: *mut *mut Self, index: i32, ppitem: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     item: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLDOMChildrenCollection2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616721, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -22974,6 +24829,10 @@ pub struct IHTMLDOMConstructor {
     pub DefineSetter: unsafe extern "system" fn(this: *mut *mut Self, propname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pdisphandler: *const super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     DefineSetter: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLDOMConstructor {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810615963, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -23405,6 +25264,10 @@ pub struct IHTMLDOMConstructorCollection {
     XMLHttpRequest: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLDOMConstructorCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810615964, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLDOMImplementation {
     pub base__: super::super::System::Com::IDispatch,
@@ -23412,6 +25275,10 @@ pub struct IHTMLDOMImplementation {
     pub hasFeature: unsafe extern "system" fn(this: *mut *mut Self, bstrfeature: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, version: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>, pfhasfeature: *mut i16) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     hasFeature: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLDOMImplementation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612749, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -23433,6 +25300,10 @@ pub struct IHTMLDOMImplementation2 {
     pub hasFeature: unsafe extern "system" fn(this: *mut *mut Self, bstrfeature: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, version: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>, pfhasfeature: *mut i16) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     hasFeature: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLDOMImplementation2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616636, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -23514,6 +25385,10 @@ pub struct IHTMLDOMNode {
     nextSibling: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLDOMNode {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612186, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLDOMNode2 {
     pub base__: super::super::System::Com::IDispatch,
@@ -23521,6 +25396,10 @@ pub struct IHTMLDOMNode2 {
     pub ownerDocument: unsafe extern "system" fn(this: *mut *mut Self, p: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     ownerDocument: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLDOMNode2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612747, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -23594,6 +25473,10 @@ pub struct IHTMLDOMNode3 {
     pub isSupported: unsafe extern "system" fn(this: *mut *mut Self, feature: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, version: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>, pfissupported: *mut i16) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     isSupported: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLDOMNode3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616544, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -23687,6 +25570,10 @@ pub struct IHTMLDOMRange {
     getBoundingClientRect: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLDOMRange {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810615982, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLDOMTextNode {
     pub base__: super::super::System::Com::IDispatch,
@@ -23709,6 +25596,10 @@ pub struct IHTMLDOMTextNode {
     splitText: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLDOMTextNode {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611889, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLDOMTextNode2 {
     pub base__: super::super::System::Com::IDispatch,
@@ -23729,6 +25620,10 @@ pub struct IHTMLDOMTextNode2 {
     pub replaceData: unsafe extern "system" fn(this: *mut *mut Self, offset: i32, count: i32, bstrstring: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     replaceData: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLDOMTextNode2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612745, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -23763,11 +25658,19 @@ pub struct IHTMLDOMTextNode3 {
     pub normalize: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLDOMTextNode3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616638, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLDTElement {
     pub base__: super::super::System::Com::IDispatch,
     pub SetnoWrap: unsafe extern "system" fn(this: *mut *mut Self, v: i16) -> ::windows_sys::core::HRESULT,
     pub noWrap: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLDTElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611187, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -23803,6 +25706,10 @@ pub struct IHTMLDataTransfer {
     effectAllowed: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLDataTransfer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611891, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLDatabinding {
     pub base__: super::super::System::Com::IDispatch,
@@ -23830,6 +25737,10 @@ pub struct IHTMLDatabinding {
     pub dataFormatAs: unsafe extern "system" fn(this: *mut *mut Self, p: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     dataFormatAs: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLDatabinding {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611698, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -23890,6 +25801,10 @@ pub struct IHTMLDialog {
     toString: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLDialog {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611222, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLDialog2 {
     pub base__: super::super::System::Com::IDispatch,
@@ -23909,6 +25824,10 @@ pub struct IHTMLDialog2 {
     pub resizable: unsafe extern "system" fn(this: *mut *mut Self, p: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     resizable: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLDialog2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612192, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -23932,6 +25851,10 @@ pub struct IHTMLDialog3 {
     dialogHide: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLDialog3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611592, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLDivElement {
     pub base__: super::super::System::Com::IDispatch,
@@ -23947,6 +25870,10 @@ pub struct IHTMLDivElement {
     pub noWrap: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i16) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLDivElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611200, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLDivPosition {
     pub base__: super::super::System::Com::IDispatch,
@@ -23960,6 +25887,10 @@ pub struct IHTMLDivPosition {
     align: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLDivPosition {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611218, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLDocument {
     pub base__: super::super::System::Com::IDispatch,
@@ -23967,6 +25898,10 @@ pub struct IHTMLDocument {
     pub Script: unsafe extern "system" fn(this: *mut *mut Self, p: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     Script: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLDocument {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1651492128, data2: 42014, data3: 4559, data4: [167, 49, 0, 160, 201, 8, 38, 55] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -24394,6 +26329,10 @@ pub struct IHTMLDocument2 {
     createStyleSheet: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLDocument2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 858539045, data2: 9931, data3: 4560, data4: [180, 131, 0, 192, 79, 217, 1, 25] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLDocument3 {
     pub base__: super::super::System::Com::IDispatch,
@@ -24545,6 +26484,10 @@ pub struct IHTMLDocument3 {
     getElementsByTagName: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLDocument3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611845, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLDocument4 {
     pub base__: super::super::System::Com::IDispatch,
@@ -24598,6 +26541,10 @@ pub struct IHTMLDocument4 {
     pub URLUnencoded: unsafe extern "system" fn(this: *mut *mut Self, p: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     URLUnencoded: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLDocument4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612378, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -24681,6 +26628,10 @@ pub struct IHTMLDocument5 {
     compatMode: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLDocument5 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612748, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLDocument6 {
     pub base__: super::super::System::Com::IDispatch,
@@ -24713,6 +26664,10 @@ pub struct IHTMLDocument6 {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     getElementById: usize,
     pub updateSettings: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLDocument6 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810615831, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -25124,6 +27079,10 @@ pub struct IHTMLDocument7 {
     head: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLDocument7 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810615992, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLDocument8 {
     pub base__: super::super::System::Com::IDispatch,
@@ -25267,6 +27226,10 @@ pub struct IHTMLDocument8 {
     pub msCapsLockWarningOff: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i16) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLDocument8 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616784, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLDocumentCompatibleInfo {
     pub base__: super::super::System::Com::IDispatch,
@@ -25280,6 +27243,10 @@ pub struct IHTMLDocumentCompatibleInfo {
     version: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLDocumentCompatibleInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810615834, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLDocumentCompatibleInfoCollection {
     pub base__: super::super::System::Com::IDispatch,
@@ -25288,6 +27255,10 @@ pub struct IHTMLDocumentCompatibleInfoCollection {
     pub item: unsafe extern "system" fn(this: *mut *mut Self, index: i32, compatibleinfo: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     item: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLDocumentCompatibleInfoCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810615832, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[repr(C)]
 pub struct IHTMLEditDesigner {
@@ -25309,6 +27280,9 @@ pub struct IHTMLEditDesigner {
     #[cfg(not(feature = "Win32_System_Com"))]
     PostEditorEventNotify: usize,
 }
+impl ::windows_sys::core::Interface for IHTMLEditDesigner {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612322, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[repr(C)]
 pub struct IHTMLEditHost {
     pub base__: ::windows_sys::core::IUnknown,
@@ -25317,10 +27291,16 @@ pub struct IHTMLEditHost {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     SnapRect: usize,
 }
+impl ::windows_sys::core::Interface for IHTMLEditHost {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612384, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[repr(C)]
 pub struct IHTMLEditHost2 {
     pub base__: IHTMLEditHost,
     pub PreDrag: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IHTMLEditHost2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612808, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 13] };
 }
 #[repr(C)]
 pub struct IHTMLEditServices {
@@ -25331,6 +27311,9 @@ pub struct IHTMLEditServices {
     pub MoveToSelectionAnchor: unsafe extern "system" fn(this: *mut *mut Self, pistartanchor: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub MoveToSelectionEnd: unsafe extern "system" fn(this: *mut *mut Self, piendanchor: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SelectRange: unsafe extern "system" fn(this: *mut *mut Self, pstart: *mut ::core::ffi::c_void, pend: *mut ::core::ffi::c_void, etype: SELECTION_TYPE) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IHTMLEditServices {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612323, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[repr(C)]
 pub struct IHTMLEditServices2 {
@@ -25345,6 +27328,9 @@ pub struct IHTMLEditServices2 {
     pub UnFreezeVirtualCaretPos: unsafe extern "system" fn(this: *mut *mut Self, freset: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     UnFreezeVirtualCaretPos: usize,
+}
+impl ::windows_sys::core::Interface for IHTMLEditServices2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612754, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -25679,6 +27665,10 @@ pub struct IHTMLElement {
     all: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611199, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLElement2 {
     pub base__: super::super::System::Com::IDispatch,
@@ -26010,6 +28000,10 @@ pub struct IHTMLElement2 {
     getElementsByTagName: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLElement2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611764, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLElement3 {
     pub base__: super::super::System::Com::IDispatch,
@@ -26148,6 +28142,10 @@ pub struct IHTMLElement3 {
     pub glyphMode: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLElement3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612339, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLElement4 {
     pub base__: super::super::System::Com::IDispatch,
@@ -26196,6 +28194,10 @@ pub struct IHTMLElement4 {
     pub onfocusout: unsafe extern "system" fn(this: *mut *mut Self, p: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     onfocusout: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLElement4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612751, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -26440,6 +28442,10 @@ pub struct IHTMLElement5 {
     pub ariaRelevant: unsafe extern "system" fn(this: *mut *mut Self, p: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     ariaRelevant: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLElement5 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810615901, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -26744,6 +28750,10 @@ pub struct IHTMLElement6 {
     pub hasAttributes: unsafe extern "system" fn(this: *mut *mut Self, pfhasattributes: *mut i16) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLElement6 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616568, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLElement7 {
     pub base__: super::super::System::Com::IDispatch,
@@ -26959,6 +28969,10 @@ pub struct IHTMLElement7 {
     oncuechange: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLElement7 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616746, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLElementAppliedStyles {
     pub base__: super::super::System::Com::IDispatch,
@@ -26970,6 +28984,10 @@ pub struct IHTMLElementAppliedStyles {
     pub msGetRulesAppliedWithAncestor: unsafe extern "system" fn(this: *mut *mut Self, varcontext: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>, pprulesappliedcollection: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     msGetRulesAppliedWithAncestor: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLElementAppliedStyles {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810615997, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -26992,6 +29010,10 @@ pub struct IHTMLElementCollection {
     tags: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLElementCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611231, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLElementCollection2 {
     pub base__: super::super::System::Com::IDispatch,
@@ -27001,6 +29023,10 @@ pub struct IHTMLElementCollection2 {
     urns: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLElementCollection2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612206, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLElementCollection3 {
     pub base__: super::super::System::Com::IDispatch,
@@ -27008,6 +29034,10 @@ pub struct IHTMLElementCollection3 {
     pub namedItem: unsafe extern "system" fn(this: *mut *mut Self, name: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pdisp: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     namedItem: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLElementCollection3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612789, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -27022,6 +29052,10 @@ pub struct IHTMLElementCollection4 {
     pub namedItem: unsafe extern "system" fn(this: *mut *mut Self, name: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pnode: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     namedItem: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLElementCollection4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810615845, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -27064,6 +29098,10 @@ pub struct IHTMLElementDefaults {
     pub Setfrozen: unsafe extern "system" fn(this: *mut *mut Self, v: i16) -> ::windows_sys::core::HRESULT,
     pub frozen: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i16) -> ::windows_sys::core::HRESULT,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLElementDefaults {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612425, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[repr(C)]
 pub struct IHTMLElementRender {
     pub base__: ::windows_sys::core::IUnknown,
@@ -27075,6 +29113,9 @@ pub struct IHTMLElementRender {
     pub SetDocumentPrinter: unsafe extern "system" fn(this: *mut *mut Self, bstrprintername: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, hdc: super::super::Graphics::Gdi::HDC) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi")))]
     SetDocumentPrinter: usize,
+}
+impl ::windows_sys::core::Interface for IHTMLElementRender {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612329, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -27138,6 +29179,10 @@ pub struct IHTMLEmbedElement {
     height: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLEmbedElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611295, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLEmbedElement2 {
     pub base__: super::super::System::Com::IDispatch,
@@ -27153,6 +29198,10 @@ pub struct IHTMLEmbedElement2 {
     pub pluginspage: unsafe extern "system" fn(this: *mut *mut Self, p: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     pluginspage: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLEmbedElement2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810615955, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -27207,6 +29256,10 @@ pub struct IHTMLEventObj {
     pub srcFilter: unsafe extern "system" fn(this: *mut *mut Self, p: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     srcFilter: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLEventObj {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611501, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -27354,6 +29407,10 @@ pub struct IHTMLEventObj2 {
     dataTransfer: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLEventObj2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611851, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLEventObj3 {
     pub base__: super::super::System::Com::IDispatch,
@@ -27378,10 +29435,18 @@ pub struct IHTMLEventObj3 {
     nextPage: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLEventObj3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612352, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLEventObj4 {
     pub base__: super::super::System::Com::IDispatch,
     pub wheelDelta: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLEventObj4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612756, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -27419,6 +29484,10 @@ pub struct IHTMLEventObj5 {
     pub issession: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i16) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLEventObj5 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810615928, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLEventObj6 {
     pub base__: super::super::System::Com::IDispatch,
@@ -27427,6 +29496,10 @@ pub struct IHTMLEventObj6 {
     #[cfg(not(feature = "Win32_Foundation"))]
     actionURL: usize,
     pub buttonID: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLEventObj6 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616628, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -27442,6 +29515,10 @@ pub struct IHTMLFieldSetElement {
     align: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLFieldSetElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611687, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLFieldSetElement2 {
     pub base__: super::super::System::Com::IDispatch,
@@ -27449,6 +29526,10 @@ pub struct IHTMLFieldSetElement2 {
     pub form: unsafe extern "system" fn(this: *mut *mut Self, p: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     form: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLFieldSetElement2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612787, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -27460,6 +29541,10 @@ pub struct IHTMLFiltersCollection {
     pub item: unsafe extern "system" fn(this: *mut *mut Self, pvarindex: *const super::super::System::Com::VARIANT, pvarresult: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     item: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLFiltersCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611694, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -27491,6 +29576,10 @@ pub struct IHTMLFontElement {
     size: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLFontElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611161, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLFontNamesCollection {
     pub base__: super::super::System::Com::IDispatch,
@@ -27500,6 +29589,10 @@ pub struct IHTMLFontNamesCollection {
     pub item: unsafe extern "system" fn(this: *mut *mut Self, index: i32, pbstr: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     item: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLFontNamesCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611574, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -27512,6 +29605,10 @@ pub struct IHTMLFontSizesCollection {
     #[cfg(not(feature = "Win32_Foundation"))]
     forFont: usize,
     pub item: unsafe extern "system" fn(this: *mut *mut Self, index: i32, plsize: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLFontSizesCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611575, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -27600,6 +29697,10 @@ pub struct IHTMLFormElement {
     tags: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLFormElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611191, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLFormElement2 {
     pub base__: super::super::System::Com::IDispatch,
@@ -27617,6 +29718,10 @@ pub struct IHTMLFormElement2 {
     urns: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLFormElement2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611958, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLFormElement3 {
     pub base__: super::super::System::Com::IDispatch,
@@ -27624,6 +29729,10 @@ pub struct IHTMLFormElement3 {
     pub namedItem: unsafe extern "system" fn(this: *mut *mut Self, name: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pdisp: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     namedItem: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLFormElement3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612790, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -27637,6 +29746,10 @@ pub struct IHTMLFormElement4 {
     pub action: unsafe extern "system" fn(this: *mut *mut Self, p: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     action: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLFormElement4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810615852, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -27710,6 +29823,10 @@ pub struct IHTMLFrameBase {
     scrolling: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLFrameBase {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611473, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLFrameBase2 {
     pub base__: super::super::System::Com::IDispatch,
@@ -27741,6 +29858,10 @@ pub struct IHTMLFrameBase2 {
     pub allowTransparency: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i16) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLFrameBase2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612443, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLFrameBase3 {
     pub base__: super::super::System::Com::IDispatch,
@@ -27754,6 +29875,10 @@ pub struct IHTMLFrameBase3 {
     longDesc: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLFrameBase3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612782, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLFrameElement {
     pub base__: super::super::System::Com::IDispatch,
@@ -27765,6 +29890,10 @@ pub struct IHTMLFrameElement {
     pub borderColor: unsafe extern "system" fn(this: *mut *mut Self, p: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     borderColor: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLFrameElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611475, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -27786,6 +29915,10 @@ pub struct IHTMLFrameElement2 {
     pub width: unsafe extern "system" fn(this: *mut *mut Self, p: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     width: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLFrameElement2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612725, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -27819,6 +29952,10 @@ pub struct IHTMLFrameElement3 {
     pub frameBorder: unsafe extern "system" fn(this: *mut *mut Self, p: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     frameBorder: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLFrameElement3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810615853, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -27906,6 +30043,10 @@ pub struct IHTMLFrameSetElement {
     onbeforeunload: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLFrameSetElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611481, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLFrameSetElement2 {
     pub base__: super::super::System::Com::IDispatch,
@@ -27925,6 +30066,10 @@ pub struct IHTMLFrameSetElement2 {
     pub onafterprint: unsafe extern "system" fn(this: *mut *mut Self, p: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     onafterprint: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLFrameSetElement2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612166, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -27972,6 +30117,10 @@ pub struct IHTMLFrameSetElement3 {
     onstorage: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLFrameSetElement3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616726, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLFramesCollection2 {
     pub base__: super::super::System::Com::IDispatch,
@@ -27980,6 +30129,10 @@ pub struct IHTMLFramesCollection2 {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     item: usize,
     pub length: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLFramesCollection2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 858539046, data2: 9931, data3: 4560, data4: [180, 131, 0, 192, 79, 217, 1, 25] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -27993,6 +30146,10 @@ pub struct IHTMLGenericElement {
     pub namedRecordset: unsafe extern "system" fn(this: *mut *mut Self, datamember: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, hierarchy: *const super::super::System::Com::VARIANT, pprecordset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     namedRecordset: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLGenericElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611895, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -28034,6 +30191,10 @@ pub struct IHTMLHRElement {
     size: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLHRElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611188, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLHeadElement {
     pub base__: super::super::System::Com::IDispatch,
@@ -28045,6 +30206,10 @@ pub struct IHTMLHeadElement {
     pub profile: unsafe extern "system" fn(this: *mut *mut Self, p: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     profile: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLHeadElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612765, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -28060,6 +30225,10 @@ pub struct IHTMLHeadElement2 {
     profile: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLHeadElement2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810615855, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLHeaderElement {
     pub base__: super::super::System::Com::IDispatch,
@@ -28073,6 +30242,10 @@ pub struct IHTMLHeaderElement {
     align: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLHeaderElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611190, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLHtmlElement {
     pub base__: super::super::System::Com::IDispatch,
@@ -28084,6 +30257,10 @@ pub struct IHTMLHtmlElement {
     pub version: unsafe extern "system" fn(this: *mut *mut Self, p: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     version: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLHtmlElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612764, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -28101,6 +30278,10 @@ pub struct IHTMLIFrameElement {
     pub align: unsafe extern "system" fn(this: *mut *mut Self, p: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     align: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLIFrameElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611477, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -28122,6 +30303,10 @@ pub struct IHTMLIFrameElement2 {
     pub width: unsafe extern "system" fn(this: *mut *mut Self, p: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     width: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLIFrameElement2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611942, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -28157,12 +30342,20 @@ pub struct IHTMLIFrameElement3 {
     frameBorder: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLIFrameElement3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810615859, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLIPrintCollection {
     pub base__: super::super::System::Com::IDispatch,
     pub length: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i32) -> ::windows_sys::core::HRESULT,
     pub _newEnum: unsafe extern "system" fn(this: *mut *mut Self, p: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub item: unsafe extern "system" fn(this: *mut *mut Self, index: i32, ppiprint: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLIPrintCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612405, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -28172,6 +30365,10 @@ pub struct IHTMLImageElementFactory {
     pub create: unsafe extern "system" fn(this: *mut *mut Self, width: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>, height: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>, __midl__ihtmlimageelementfactory0000: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     create: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLImageElementFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611598, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -28338,6 +30535,10 @@ pub struct IHTMLImgElement {
     start: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLImgElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611264, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLImgElement2 {
     pub base__: super::super::System::Com::IDispatch,
@@ -28349,6 +30550,10 @@ pub struct IHTMLImgElement2 {
     pub longDesc: unsafe extern "system" fn(this: *mut *mut Self, p: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     longDesc: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLImgElement2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612774, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -28388,11 +30593,19 @@ pub struct IHTMLImgElement3 {
     dynsrc: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLImgElement3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810615860, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLImgElement4 {
     pub base__: super::super::System::Com::IDispatch,
     pub naturalWidth: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i32) -> ::windows_sys::core::HRESULT,
     pub naturalHeight: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLImgElement4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616822, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -28436,6 +30649,10 @@ pub struct IHTMLInputButtonElement {
     pub createTextRange: unsafe extern "system" fn(this: *mut *mut Self, range: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     createTextRange: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLInputButtonElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611378, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -28625,6 +30842,10 @@ pub struct IHTMLInputElement {
     start: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLInputElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612178, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLInputElement2 {
     pub base__: super::super::System::Com::IDispatch,
@@ -28644,6 +30865,10 @@ pub struct IHTMLInputElement2 {
     pub useMap: unsafe extern "system" fn(this: *mut *mut Self, p: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     useMap: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLInputElement2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612769, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -28681,6 +30906,10 @@ pub struct IHTMLInputElement3 {
     pub dynsrc: unsafe extern "system" fn(this: *mut *mut Self, p: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     dynsrc: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLInputElement3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810615861, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -28743,6 +30972,10 @@ pub struct IHTMLInputFileElement {
     value: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLInputFileElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611373, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLInputHiddenElement {
     pub base__: super::super::System::Com::IDispatch,
@@ -28784,6 +31017,10 @@ pub struct IHTMLInputHiddenElement {
     pub createTextRange: unsafe extern "system" fn(this: *mut *mut Self, range: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     createTextRange: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLInputHiddenElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611364, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -28914,6 +31151,10 @@ pub struct IHTMLInputImage {
     start: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLInputImage {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611394, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLInputRangeElement {
     pub base__: super::super::System::Com::IDispatch,
@@ -28975,6 +31216,10 @@ pub struct IHTMLInputRangeElement {
     pub valueAsNumber: unsafe extern "system" fn(this: *mut *mut Self, p: *mut f64) -> ::windows_sys::core::HRESULT,
     pub stepUp: unsafe extern "system" fn(this: *mut *mut Self, n: i32) -> ::windows_sys::core::HRESULT,
     pub stepDown: unsafe extern "system" fn(this: *mut *mut Self, n: i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLInputRangeElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611412, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -29051,6 +31296,10 @@ pub struct IHTMLInputTextElement {
     createTextRange: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLInputTextElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611366, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLInputTextElement2 {
     pub base__: super::super::System::Com::IDispatch,
@@ -29059,6 +31308,10 @@ pub struct IHTMLInputTextElement2 {
     pub SetselectionEnd: unsafe extern "system" fn(this: *mut *mut Self, v: i32) -> ::windows_sys::core::HRESULT,
     pub selectionEnd: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i32) -> ::windows_sys::core::HRESULT,
     pub setSelectionRange: unsafe extern "system" fn(this: *mut *mut Self, start: i32, end: i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLInputTextElement2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611410, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -29082,6 +31335,10 @@ pub struct IHTMLIsIndexElement {
     action: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLIsIndexElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611206, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLIsIndexElement2 {
     pub base__: super::super::System::Com::IDispatch,
@@ -29089,6 +31346,10 @@ pub struct IHTMLIsIndexElement2 {
     pub form: unsafe extern "system" fn(this: *mut *mut Self, p: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     form: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLIsIndexElement2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612783, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -29104,6 +31365,10 @@ pub struct IHTMLLIElement {
     r#type: usize,
     pub Setvalue: unsafe extern "system" fn(this: *mut *mut Self, v: i32) -> ::windows_sys::core::HRESULT,
     pub value: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLLIElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611168, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -29127,6 +31392,10 @@ pub struct IHTMLLabelElement {
     accessKey: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLLabelElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611498, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLLabelElement2 {
     pub base__: super::super::System::Com::IDispatch,
@@ -29134,6 +31403,10 @@ pub struct IHTMLLabelElement2 {
     pub form: unsafe extern "system" fn(this: *mut *mut Self, p: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     form: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLLabelElement2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612786, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -29149,6 +31422,10 @@ pub struct IHTMLLegendElement {
     align: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLLegendElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611690, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLLegendElement2 {
     pub base__: super::super::System::Com::IDispatch,
@@ -29156,6 +31433,10 @@ pub struct IHTMLLegendElement2 {
     pub form: unsafe extern "system" fn(this: *mut *mut Self, p: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     form: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLLegendElement2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612788, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -29237,6 +31518,10 @@ pub struct IHTMLLinkElement {
     media: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLLinkElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611205, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLLinkElement2 {
     pub base__: super::super::System::Com::IDispatch,
@@ -29248,6 +31533,10 @@ pub struct IHTMLLinkElement2 {
     pub target: unsafe extern "system" fn(this: *mut *mut Self, p: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     target: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLLinkElement2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611941, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -29271,6 +31560,10 @@ pub struct IHTMLLinkElement3 {
     hreflang: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLLinkElement3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612766, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLLinkElement4 {
     pub base__: super::super::System::Com::IDispatch,
@@ -29284,6 +31577,10 @@ pub struct IHTMLLinkElement4 {
     href: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLLinkElement4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810615866, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLLinkElement5 {
     pub base__: super::super::System::Com::IDispatch,
@@ -29293,9 +31590,17 @@ pub struct IHTMLLinkElement5 {
     sheet: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLLinkElement5 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616614, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLListElement {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLListElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611214, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -29303,6 +31608,10 @@ pub struct IHTMLListElement2 {
     pub base__: super::super::System::Com::IDispatch,
     pub Setcompact: unsafe extern "system" fn(this: *mut *mut Self, v: i16) -> ::windows_sys::core::HRESULT,
     pub compact: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLListElement2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612770, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -29387,6 +31696,10 @@ pub struct IHTMLLocation {
     toString: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLLocation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 373010912, data2: 28160, data3: 4559, data4: [131, 122, 72, 220, 4, 193, 0, 0] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLMSCSSKeyframeRule {
     pub base__: super::super::System::Com::IDispatch,
@@ -29402,6 +31715,10 @@ pub struct IHTMLMSCSSKeyframeRule {
     pub style: unsafe extern "system" fn(this: *mut *mut Self, p: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     style: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLMSCSSKeyframeRule {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616844, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -29433,6 +31750,10 @@ pub struct IHTMLMSCSSKeyframesRule {
     findRule: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLMSCSSKeyframesRule {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616845, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLMSImgElement {
     pub base__: super::super::System::Com::IDispatch,
@@ -29442,6 +31763,10 @@ pub struct IHTMLMSImgElement {
     pub msPlayToPrimary: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i16) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLMSImgElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616723, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLMSMediaElement {
     pub base__: super::super::System::Com::IDispatch,
@@ -29449,6 +31774,10 @@ pub struct IHTMLMSMediaElement {
     pub msPlayToDisabled: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i16) -> ::windows_sys::core::HRESULT,
     pub SetmsPlayToPrimary: unsafe extern "system" fn(this: *mut *mut Self, v: i16) -> ::windows_sys::core::HRESULT,
     pub msPlayToPrimary: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLMSMediaElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616722, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -29466,6 +31795,10 @@ pub struct IHTMLMapElement {
     pub name: unsafe extern "system" fn(this: *mut *mut Self, p: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     name: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLMapElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611302, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -29551,6 +31884,10 @@ pub struct IHTMLMarqueeElement {
     pub stop: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLMarqueeElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611381, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLMediaElement {
     pub base__: super::super::System::Com::IDispatch,
@@ -29623,6 +31960,10 @@ pub struct IHTMLMediaElement {
     pub autobuffer: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i16) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLMediaElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616582, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLMediaElement2 {
     pub base__: super::super::System::Com::IDispatch,
@@ -29638,10 +31979,18 @@ pub struct IHTMLMediaElement2 {
     pub volumeDouble: unsafe extern "system" fn(this: *mut *mut Self, p: *mut f64) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLMediaElement2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616841, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLMediaError {
     pub base__: super::super::System::Com::IDispatch,
     pub code: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLMediaError {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616580, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -29689,6 +32038,10 @@ pub struct IHTMLMetaElement {
     charset: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLMetaElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611203, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLMetaElement2 {
     pub base__: super::super::System::Com::IDispatch,
@@ -29700,6 +32053,10 @@ pub struct IHTMLMetaElement2 {
     pub scheme: unsafe extern "system" fn(this: *mut *mut Self, p: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     scheme: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLMetaElement2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612767, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -29715,10 +32072,18 @@ pub struct IHTMLMetaElement3 {
     url: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLMetaElement3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810615957, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLMimeTypesCollection {
     pub base__: super::super::System::Com::IDispatch,
     pub length: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLMimeTypesCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611708, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -29734,6 +32099,10 @@ pub struct IHTMLModelessInit {
     optionString: usize,
     pub moniker: unsafe extern "system" fn(this: *mut *mut Self, p: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub document: unsafe extern "system" fn(this: *mut *mut Self, p: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLModelessInit {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612196, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -29777,6 +32146,10 @@ pub struct IHTMLNamespace {
     detachEvent: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLNamespace {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612411, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLNamespaceCollection {
     pub base__: super::super::System::Com::IDispatch,
@@ -29789,6 +32162,10 @@ pub struct IHTMLNamespaceCollection {
     pub add: unsafe extern "system" fn(this: *mut *mut Self, bstrnamespace: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrurn: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, implementationurl: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>, ppnamespace: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     add: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLNamespaceCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612408, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -29804,9 +32181,17 @@ pub struct IHTMLNextIdElement {
     n: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLNextIdElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611207, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLNoShowElement {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLNoShowElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611594, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -29825,6 +32210,10 @@ pub struct IHTMLOListElement {
     #[cfg(not(feature = "Win32_Foundation"))]
     r#type: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLOListElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611166, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[repr(C)]
 pub struct IHTMLOMWindowServices {
     pub base__: ::windows_sys::core::IUnknown,
@@ -29832,6 +32221,9 @@ pub struct IHTMLOMWindowServices {
     pub moveBy: unsafe extern "system" fn(this: *mut *mut Self, x: i32, y: i32) -> ::windows_sys::core::HRESULT,
     pub resizeTo: unsafe extern "system" fn(this: *mut *mut Self, x: i32, y: i32) -> ::windows_sys::core::HRESULT,
     pub resizeBy: unsafe extern "system" fn(this: *mut *mut Self, x: i32, y: i32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IHTMLOMWindowServices {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612220, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -29960,6 +32352,10 @@ pub struct IHTMLObjectElement {
     pub hspace: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLObjectElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611279, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLObjectElement2 {
     pub base__: super::super::System::Com::IDispatch,
@@ -29983,6 +32379,10 @@ pub struct IHTMLObjectElement2 {
     pub data: unsafe extern "system" fn(this: *mut *mut Self, p: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     data: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLObjectElement2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611917, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -30032,6 +32432,10 @@ pub struct IHTMLObjectElement3 {
     useMap: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLObjectElement3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612775, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLObjectElement4 {
     pub base__: super::super::System::Com::IDispatch,
@@ -30057,6 +32461,10 @@ pub struct IHTMLObjectElement4 {
     data: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLObjectElement4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810615870, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLObjectElement5 {
     pub base__: super::super::System::Com::IDispatch,
@@ -30068,6 +32476,10 @@ pub struct IHTMLObjectElement5 {
     pub object: unsafe extern "system" fn(this: *mut *mut Self, p: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     object: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLObjectElement5 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810615989, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -30100,6 +32512,10 @@ pub struct IHTMLOpsProfile {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     doReadRequest: usize,
     pub doWriteRequest: unsafe extern "system" fn(this: *mut *mut Self, success: *mut i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLOpsProfile {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611713, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -30149,6 +32565,10 @@ pub struct IHTMLOptionButtonElement {
     form: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLOptionButtonElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611388, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLOptionElement {
     pub base__: super::super::System::Com::IDispatch,
@@ -30180,6 +32600,10 @@ pub struct IHTMLOptionElement {
     form: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLOptionElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611217, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLOptionElement3 {
     pub base__: super::super::System::Com::IDispatch,
@@ -30191,6 +32615,10 @@ pub struct IHTMLOptionElement3 {
     pub label: unsafe extern "system" fn(this: *mut *mut Self, p: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     label: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLOptionElement3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612768, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -30206,6 +32634,10 @@ pub struct IHTMLOptionElement4 {
     value: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLOptionElement4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616756, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLOptionElementFactory {
     pub base__: super::super::System::Com::IDispatch,
@@ -30213,6 +32645,10 @@ pub struct IHTMLOptionElementFactory {
     pub create: unsafe extern "system" fn(this: *mut *mut Self, text: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>, value: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>, defaultselected: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>, selected: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>, __midl__ihtmloptionelementfactory0000: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     create: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLOptionElementFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611596, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -30294,6 +32730,10 @@ pub struct IHTMLOptionsHolder {
     #[cfg(not(feature = "Win32_Foundation"))]
     secureConnectionInfo: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLOptionsHolder {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611576, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[repr(C)]
 pub struct IHTMLPaintSite {
     pub base__: ::windows_sys::core::IUnknown,
@@ -30320,6 +32760,9 @@ pub struct IHTMLPaintSite {
     TransformLocalToGlobal: usize,
     pub GetHitTestCookie: unsafe extern "system" fn(this: *mut *mut Self, plcookie: *mut i32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IHTMLPaintSite {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612391, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[repr(C)]
 pub struct IHTMLPainter {
     pub base__: ::windows_sys::core::IUnknown,
@@ -30340,6 +32783,9 @@ pub struct IHTMLPainter {
     #[cfg(not(feature = "Win32_Foundation"))]
     HitTestPoint: usize,
 }
+impl ::windows_sys::core::Interface for IHTMLPainter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612390, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[repr(C)]
 pub struct IHTMLPainterEventInfo {
     pub base__: ::windows_sys::core::IUnknown,
@@ -30354,6 +32800,9 @@ pub struct IHTMLPainterEventInfo {
     #[cfg(not(feature = "Win32_Foundation"))]
     StringFromPartID: usize,
 }
+impl ::windows_sys::core::Interface for IHTMLPainterEventInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612447, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[repr(C)]
 pub struct IHTMLPainterOverlay {
     pub base__: ::windows_sys::core::IUnknown,
@@ -30361,6 +32810,9 @@ pub struct IHTMLPainterOverlay {
     pub OnMove: unsafe extern "system" fn(this: *mut *mut Self, rcdevice: super::super::Foundation::RECT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     OnMove: usize,
+}
+impl ::windows_sys::core::Interface for IHTMLPainterOverlay {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612707, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -30374,6 +32826,10 @@ pub struct IHTMLParaElement {
     pub align: unsafe extern "system" fn(this: *mut *mut Self, p: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     align: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLParaElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611189, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -30413,6 +32869,10 @@ pub struct IHTMLParamElement {
     valueType: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLParamElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612797, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLParamElement2 {
     pub base__: super::super::System::Com::IDispatch,
@@ -30450,6 +32910,10 @@ pub struct IHTMLParamElement2 {
     valueType: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLParamElement2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810615876, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLPerformance {
     pub base__: super::super::System::Com::IDispatch,
@@ -30471,6 +32935,10 @@ pub struct IHTMLPerformance {
     toJSON: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLPerformance {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616654, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLPerformanceNavigation {
     pub base__: super::super::System::Com::IDispatch,
@@ -30484,6 +32952,10 @@ pub struct IHTMLPerformanceNavigation {
     pub toJSON: unsafe extern "system" fn(this: *mut *mut Self, pvar: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     toJSON: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLPerformanceNavigation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616656, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -30519,12 +32991,19 @@ pub struct IHTMLPerformanceTiming {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     toJSON: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLPerformanceTiming {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616658, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[repr(C)]
 pub struct IHTMLPersistData {
     pub base__: ::windows_sys::core::IUnknown,
     pub save: unsafe extern "system" fn(this: *mut *mut Self, punk: *mut ::core::ffi::c_void, ltype: i32, fcontinuebroacast: *mut i16) -> ::windows_sys::core::HRESULT,
     pub load: unsafe extern "system" fn(this: *mut *mut Self, punk: *mut ::core::ffi::c_void, ltype: i32, fdodefault: *mut i16) -> ::windows_sys::core::HRESULT,
     pub queryType: unsafe extern "system" fn(this: *mut *mut Self, ltype: i32, pfsupportstype: *mut i16) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IHTMLPersistData {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611909, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -30548,9 +33027,17 @@ pub struct IHTMLPersistDataOM {
     removeAttribute: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLPersistDataOM {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611904, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLPhraseElement {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLPhraseElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611210, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -30574,6 +33061,10 @@ pub struct IHTMLPhraseElement2 {
     dateTime: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLPhraseElement2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612772, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLPhraseElement3 {
     pub base__: super::super::System::Com::IDispatch,
@@ -30587,11 +33078,19 @@ pub struct IHTMLPhraseElement3 {
     cite: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLPhraseElement3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810615869, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLPluginsCollection {
     pub base__: super::super::System::Com::IDispatch,
     pub length: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i32) -> ::windows_sys::core::HRESULT,
     pub refresh: unsafe extern "system" fn(this: *mut *mut Self, reload: i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLPluginsCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611709, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -30609,6 +33108,10 @@ pub struct IHTMLPopup {
     pub isOpen: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i16) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLPopup {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612326, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLProgressElement {
     pub base__: super::super::System::Com::IDispatch,
@@ -30621,6 +33124,10 @@ pub struct IHTMLProgressElement {
     pub form: unsafe extern "system" fn(this: *mut *mut Self, p: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     form: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLProgressElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611414, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -30636,11 +33143,19 @@ pub struct IHTMLRect {
     pub bottom: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLRect {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611875, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLRect2 {
     pub base__: super::super::System::Com::IDispatch,
     pub width: unsafe extern "system" fn(this: *mut *mut Self, p: *mut f32) -> ::windows_sys::core::HRESULT,
     pub height: unsafe extern "system" fn(this: *mut *mut Self, p: *mut f32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLRect2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616684, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -30652,6 +33167,10 @@ pub struct IHTMLRectCollection {
     pub item: unsafe extern "system" fn(this: *mut *mut Self, pvarindex: *const super::super::System::Com::VARIANT, pvarresult: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     item: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLRectCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611876, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -30723,6 +33242,10 @@ pub struct IHTMLRenderStyle {
     pub textDecoration: unsafe extern "system" fn(this: *mut *mut Self, p: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     textDecoration: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLRenderStyle {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612398, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -31348,6 +33871,10 @@ pub struct IHTMLRuleStyle {
     removeAttribute: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLRuleStyle {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611663, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLRuleStyle2 {
     pub base__: super::super::System::Com::IDispatch,
@@ -31569,6 +34096,10 @@ pub struct IHTMLRuleStyle2 {
     accelerator: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLRuleStyle2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611884, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLRuleStyle3 {
     pub base__: super::super::System::Com::IDispatch,
@@ -31694,6 +34225,10 @@ pub struct IHTMLRuleStyle3 {
     textKashidaSpace: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLRuleStyle3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612311, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLRuleStyle4 {
     pub base__: super::super::System::Com::IDispatch,
@@ -31713,6 +34248,10 @@ pub struct IHTMLRuleStyle4 {
     pub minHeight: unsafe extern "system" fn(this: *mut *mut Self, p: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     minHeight: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLRuleStyle4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612759, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -31750,6 +34289,10 @@ pub struct IHTMLRuleStyle5 {
     pub maxWidth: unsafe extern "system" fn(this: *mut *mut Self, p: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     maxWidth: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLRuleStyle5 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611509, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -31885,6 +34428,10 @@ pub struct IHTMLRuleStyle6 {
     quotes: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLRuleStyle6 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810615921, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLScreen {
     pub base__: super::super::System::Com::IDispatch,
@@ -31900,6 +34447,10 @@ pub struct IHTMLScreen {
     pub fontSmoothingEnabled: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i16) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLScreen {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611548, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLScreen2 {
     pub base__: super::super::System::Com::IDispatch,
@@ -31909,6 +34460,10 @@ pub struct IHTMLScreen2 {
     pub deviceYDPI: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLScreen2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612810, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLScreen3 {
     pub base__: super::super::System::Com::IDispatch,
@@ -31916,10 +34471,18 @@ pub struct IHTMLScreen3 {
     pub systemYDPI: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLScreen3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810615969, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLScreen4 {
     pub base__: super::super::System::Com::IDispatch,
     pub pixelDepth: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLScreen4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616683, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -31981,6 +34544,10 @@ pub struct IHTMLScriptElement {
     r#type: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLScriptElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611339, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLScriptElement2 {
     pub base__: super::super::System::Com::IDispatch,
@@ -31992,6 +34559,10 @@ pub struct IHTMLScriptElement2 {
     pub charset: unsafe extern "system" fn(this: *mut *mut Self, p: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     charset: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLScriptElement2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612776, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -32007,6 +34578,10 @@ pub struct IHTMLScriptElement3 {
     src: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLScriptElement3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810615879, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLScriptElement4 {
     pub base__: super::super::System::Com::IDispatch,
@@ -32014,6 +34589,10 @@ pub struct IHTMLScriptElement4 {
     pub usedCharset: unsafe extern "system" fn(this: *mut *mut Self, p: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     usedCharset: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLScriptElement4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616833, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -32081,6 +34660,10 @@ pub struct IHTMLSelectElement {
     tags: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLSelectElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611268, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLSelectElement2 {
     pub base__: super::super::System::Com::IDispatch,
@@ -32088,6 +34671,10 @@ pub struct IHTMLSelectElement2 {
     pub urns: unsafe extern "system" fn(this: *mut *mut Self, urn: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>, pdisp: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     urns: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLSelectElement2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612205, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -32099,6 +34686,10 @@ pub struct IHTMLSelectElement4 {
     namedItem: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLSelectElement4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612792, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLSelectElement5 {
     pub base__: super::super::System::Com::IDispatch,
@@ -32106,6 +34697,10 @@ pub struct IHTMLSelectElement5 {
     pub add: unsafe extern "system" fn(this: *mut *mut Self, pelem: *mut ::core::ffi::c_void, pvarbefore: *const super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     add: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLSelectElement5 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810615965, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -32124,6 +34719,10 @@ pub struct IHTMLSelectElement6 {
     #[cfg(not(feature = "Win32_Foundation"))]
     value: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLSelectElement6 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616672, data2: 39094, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[repr(C)]
 pub struct IHTMLSelectElementEx {
     pub base__: ::windows_sys::core::IUnknown,
@@ -32137,6 +34736,9 @@ pub struct IHTMLSelectElementEx {
     pub GetDropdownOpen: unsafe extern "system" fn(this: *mut *mut Self, pfopen: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetDropdownOpen: usize,
+}
+impl ::windows_sys::core::Interface for IHTMLSelectElementEx {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611409, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -32184,6 +34786,10 @@ pub struct IHTMLSelection {
     toString: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLSelection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810615990, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLSelectionObject {
     pub base__: super::super::System::Com::IDispatch,
@@ -32199,6 +34805,10 @@ pub struct IHTMLSelectionObject {
     r#type: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLSelectionObject {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611290, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLSelectionObject2 {
     pub base__: super::super::System::Com::IDispatch,
@@ -32210,6 +34820,10 @@ pub struct IHTMLSelectionObject2 {
     pub typeDetail: unsafe extern "system" fn(this: *mut *mut Self, p: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     typeDetail: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLSelectionObject2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612716, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -32241,9 +34855,17 @@ pub struct IHTMLSourceElement {
     media: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLSourceElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616583, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLSpanElement {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLSpanElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611699, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -32257,6 +34879,10 @@ pub struct IHTMLSpanFlow {
     pub align: unsafe extern "system" fn(this: *mut *mut Self, p: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     align: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLSpanFlow {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611685, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -32283,6 +34909,10 @@ pub struct IHTMLStorage {
     pub clear: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLStorage {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810615924, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLStorage2 {
     pub base__: super::super::System::Com::IDispatch,
@@ -32290,6 +34920,10 @@ pub struct IHTMLStorage2 {
     pub setItem: unsafe extern "system" fn(this: *mut *mut Self, bstrkey: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrvalue: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     setItem: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLStorage2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616729, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -32935,6 +35569,10 @@ pub struct IHTMLStyle {
     toString: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLStyle {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611294, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLStyle2 {
     pub base__: super::super::System::Com::IDispatch,
@@ -33168,6 +35806,10 @@ pub struct IHTMLStyle2 {
     accelerator: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLStyle2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611874, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLStyle3 {
     pub base__: super::super::System::Com::IDispatch,
@@ -33293,6 +35935,10 @@ pub struct IHTMLStyle3 {
     textKashidaSpace: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLStyle3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612310, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLStyle4 {
     pub base__: super::super::System::Com::IDispatch,
@@ -33312,6 +35958,10 @@ pub struct IHTMLStyle4 {
     pub minHeight: unsafe extern "system" fn(this: *mut *mut Self, p: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     minHeight: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLStyle4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612758, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -33349,6 +35999,10 @@ pub struct IHTMLStyle5 {
     pub maxWidth: unsafe extern "system" fn(this: *mut *mut Self, p: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     maxWidth: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLStyle5 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611514, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -33484,6 +36138,10 @@ pub struct IHTMLStyle6 {
     quotes: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLStyle6 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810615936, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLStyleElement {
     pub base__: super::super::System::Com::IDispatch,
@@ -33539,6 +36197,10 @@ pub struct IHTMLStyleElement {
     media: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLStyleElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611573, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLStyleElement2 {
     pub base__: super::super::System::Com::IDispatch,
@@ -33546,6 +36208,10 @@ pub struct IHTMLStyleElement2 {
     pub sheet: unsafe extern "system" fn(this: *mut *mut Self, p: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     sheet: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLStyleElement2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616618, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -33561,6 +36227,10 @@ pub struct IHTMLStyleEnabled {
     msPutPropertyEnabled: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLStyleEnabled {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616002, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLStyleFontFace {
     pub base__: super::super::System::Com::IDispatch,
@@ -33574,6 +36244,10 @@ pub struct IHTMLStyleFontFace {
     fontsrc: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLStyleFontFace {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611669, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLStyleFontFace2 {
     pub base__: super::super::System::Com::IDispatch,
@@ -33581,6 +36255,10 @@ pub struct IHTMLStyleFontFace2 {
     pub style: unsafe extern "system" fn(this: *mut *mut Self, p: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     style: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLStyleFontFace2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616556, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -33594,6 +36272,10 @@ pub struct IHTMLStyleMedia {
     pub matchMedium: unsafe extern "system" fn(this: *mut *mut Self, mediaquery: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, matches: *mut i16) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     matchMedium: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLStyleMedia {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616651, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -33670,6 +36352,10 @@ pub struct IHTMLStyleSheet {
     rules: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLStyleSheet {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611427, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLStyleSheet2 {
     pub base__: super::super::System::Com::IDispatch,
@@ -33681,6 +36367,10 @@ pub struct IHTMLStyleSheet2 {
     pub addPageRule: unsafe extern "system" fn(this: *mut *mut Self, bstrselector: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrstyle: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, lindex: i32, plnewindex: *mut i32) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     addPageRule: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLStyleSheet2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611665, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -33696,6 +36386,10 @@ pub struct IHTMLStyleSheet3 {
     href: usize,
     pub isAlternate: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i16) -> ::windows_sys::core::HRESULT,
     pub isPrefAlternate: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLStyleSheet3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810615958, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -33736,6 +36430,10 @@ pub struct IHTMLStyleSheet4 {
     pub deleteRule: unsafe extern "system" fn(this: *mut *mut Self, lindex: i32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLStyleSheet4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616564, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLStyleSheetPage {
     pub base__: super::super::System::Com::IDispatch,
@@ -33747,6 +36445,10 @@ pub struct IHTMLStyleSheetPage {
     pub pseudoClass: unsafe extern "system" fn(this: *mut *mut Self, p: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     pseudoClass: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLStyleSheetPage {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612718, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -33766,6 +36468,10 @@ pub struct IHTMLStyleSheetPage2 {
     style: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLStyleSheetPage2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616557, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLStyleSheetPagesCollection {
     pub base__: super::super::System::Com::IDispatch,
@@ -33774,6 +36480,10 @@ pub struct IHTMLStyleSheetPagesCollection {
     pub item: unsafe extern "system" fn(this: *mut *mut Self, index: i32, pphtmlstylesheetpage: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     item: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLStyleSheetPagesCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612720, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -33794,6 +36504,10 @@ pub struct IHTMLStyleSheetRule {
     pub readOnly: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i16) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLStyleSheetRule {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611543, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLStyleSheetRule2 {
     pub base__: super::super::System::Com::IDispatch,
@@ -33807,11 +36521,19 @@ pub struct IHTMLStyleSheetRule2 {
     selectorText: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLStyleSheetRule2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616573, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLStyleSheetRuleApplied {
     pub base__: super::super::System::Com::IDispatch,
     pub msSpecificity: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i32) -> ::windows_sys::core::HRESULT,
     pub msGetSpecificity: unsafe extern "system" fn(this: *mut *mut Self, index: i32, p: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLStyleSheetRuleApplied {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616001, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -33836,6 +36558,10 @@ pub struct IHTMLStyleSheetRulesAppliedCollection {
     propertyAppliedTraceLength: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLStyleSheetRulesAppliedCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616000, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLStyleSheetRulesCollection {
     pub base__: super::super::System::Com::IDispatch,
@@ -33846,6 +36572,10 @@ pub struct IHTMLStyleSheetRulesCollection {
     item: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLStyleSheetRulesCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611429, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLStyleSheetRulesCollection2 {
     pub base__: super::super::System::Com::IDispatch,
@@ -33854,6 +36584,10 @@ pub struct IHTMLStyleSheetRulesCollection2 {
     pub item: unsafe extern "system" fn(this: *mut *mut Self, index: i32, pphtmlcssrule: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     item: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLStyleSheetRulesCollection2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616552, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -33867,6 +36601,10 @@ pub struct IHTMLStyleSheetsCollection {
     item: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLStyleSheetsCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611582, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLStyleSheetsCollection2 {
     pub base__: super::super::System::Com::IDispatch,
@@ -33874,6 +36612,10 @@ pub struct IHTMLStyleSheetsCollection2 {
     pub item: unsafe extern "system" fn(this: *mut *mut Self, index: i32, pvarresult: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     item: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLStyleSheetsCollection2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616551, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -33888,6 +36630,10 @@ pub struct IHTMLSubmitData {
     #[cfg(not(feature = "Win32_Foundation"))]
     appendNameFilePair: usize,
     pub appendItemSeparator: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLSubmitData {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612293, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -34058,6 +36804,10 @@ pub struct IHTMLTable {
     onreadystatechange: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLTable {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611230, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLTable2 {
     pub base__: super::super::System::Com::IDispatch,
@@ -34073,6 +36823,10 @@ pub struct IHTMLTable2 {
     moveRow: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLTable2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611885, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLTable3 {
     pub base__: super::super::System::Com::IDispatch,
@@ -34084,6 +36838,10 @@ pub struct IHTMLTable3 {
     pub summary: unsafe extern "system" fn(this: *mut *mut Self, p: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     summary: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLTable3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612777, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -34124,6 +36882,10 @@ pub struct IHTMLTable4 {
     createTBody: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLTable4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616514, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLTableCaption {
     pub base__: super::super::System::Com::IDispatch,
@@ -34143,6 +36905,10 @@ pub struct IHTMLTableCaption {
     pub vAlign: unsafe extern "system" fn(this: *mut *mut Self, p: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     vAlign: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLTableCaption {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611435, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -34229,6 +36995,10 @@ pub struct IHTMLTableCell {
     pub cellIndex: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLTableCell {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611261, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLTableCell2 {
     pub base__: super::super::System::Com::IDispatch,
@@ -34282,6 +37052,10 @@ pub struct IHTMLTableCell2 {
     scope: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLTableCell2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612781, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLTableCell3 {
     pub base__: super::super::System::Com::IDispatch,
@@ -34301,6 +37075,10 @@ pub struct IHTMLTableCell3 {
     pub chOff: unsafe extern "system" fn(this: *mut *mut Self, p: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     chOff: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLTableCell3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616519, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -34334,6 +37112,10 @@ pub struct IHTMLTableCol {
     vAlign: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLTableCol {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611258, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLTableCol2 {
     pub base__: super::super::System::Com::IDispatch,
@@ -34355,6 +37137,10 @@ pub struct IHTMLTableCol2 {
     chOff: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLTableCol2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612778, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLTableCol3 {
     pub base__: super::super::System::Com::IDispatch,
@@ -34374,6 +37160,10 @@ pub struct IHTMLTableCol3 {
     pub chOff: unsafe extern "system" fn(this: *mut *mut Self, p: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     chOff: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLTableCol3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616516, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -34440,6 +37230,10 @@ pub struct IHTMLTableRow {
     pub deleteCell: unsafe extern "system" fn(this: *mut *mut Self, index: i32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLTableRow {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611260, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLTableRow2 {
     pub base__: super::super::System::Com::IDispatch,
@@ -34451,6 +37245,10 @@ pub struct IHTMLTableRow2 {
     pub height: unsafe extern "system" fn(this: *mut *mut Self, p: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     height: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLTableRow2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611873, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -34472,6 +37270,10 @@ pub struct IHTMLTableRow3 {
     pub chOff: unsafe extern "system" fn(this: *mut *mut Self, p: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     chOff: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLTableRow3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612780, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -34500,6 +37302,10 @@ pub struct IHTMLTableRow4 {
     pub deleteCell: unsafe extern "system" fn(this: *mut *mut Self, index: i32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLTableRow4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616518, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLTableRowMetrics {
     pub base__: super::super::System::Com::IDispatch,
@@ -34507,6 +37313,10 @@ pub struct IHTMLTableRowMetrics {
     pub clientWidth: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i32) -> ::windows_sys::core::HRESULT,
     pub clientTop: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i32) -> ::windows_sys::core::HRESULT,
     pub clientLeft: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLTableRowMetrics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611731, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -34547,6 +37357,10 @@ pub struct IHTMLTableSection {
     pub deleteRow: unsafe extern "system" fn(this: *mut *mut Self, index: i32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLTableSection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611259, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLTableSection2 {
     pub base__: super::super::System::Com::IDispatch,
@@ -34554,6 +37368,10 @@ pub struct IHTMLTableSection2 {
     pub moveRow: unsafe extern "system" fn(this: *mut *mut Self, indexfrom: i32, indexto: i32, row: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     moveRow: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLTableSection2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612167, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -34575,6 +37393,10 @@ pub struct IHTMLTableSection3 {
     pub chOff: unsafe extern "system" fn(this: *mut *mut Self, p: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     chOff: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLTableSection3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612779, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -34601,6 +37423,10 @@ pub struct IHTMLTableSection4 {
     #[cfg(not(feature = "Win32_System_Com"))]
     insertRow: usize,
     pub deleteRow: unsafe extern "system" fn(this: *mut *mut Self, index: i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLTableSection4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616517, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -34685,6 +37511,10 @@ pub struct IHTMLTextAreaElement {
     createTextRange: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLTextAreaElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611370, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLTextAreaElement2 {
     pub base__: super::super::System::Com::IDispatch,
@@ -34693,6 +37523,10 @@ pub struct IHTMLTextAreaElement2 {
     pub SetselectionEnd: unsafe extern "system" fn(this: *mut *mut Self, v: i32) -> ::windows_sys::core::HRESULT,
     pub selectionEnd: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i32) -> ::windows_sys::core::HRESULT,
     pub setSelectionRange: unsafe extern "system" fn(this: *mut *mut Self, start: i32, end: i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLTextAreaElement2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611411, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -34718,9 +37552,17 @@ pub struct IHTMLTextContainer {
     onscroll: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLTextContainer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611248, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLTextElement {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLTextElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611224, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -34732,6 +37574,10 @@ pub struct IHTMLTextRangeMetrics {
     pub boundingLeft: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i32) -> ::windows_sys::core::HRESULT,
     pub boundingWidth: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i32) -> ::windows_sys::core::HRESULT,
     pub boundingHeight: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLTextRangeMetrics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611723, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -34747,6 +37593,10 @@ pub struct IHTMLTextRangeMetrics2 {
     getBoundingClientRect: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLTextRangeMetrics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611878, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLTimeRanges {
     pub base__: super::super::System::Com::IDispatch,
@@ -34755,11 +37605,19 @@ pub struct IHTMLTimeRanges {
     pub end: unsafe extern "system" fn(this: *mut *mut Self, index: i32, endtime: *mut f32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLTimeRanges {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616581, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLTimeRanges2 {
     pub base__: super::super::System::Com::IDispatch,
     pub startDouble: unsafe extern "system" fn(this: *mut *mut Self, index: i32, starttime: *mut f64) -> ::windows_sys::core::HRESULT,
     pub endDouble: unsafe extern "system" fn(this: *mut *mut Self, index: i32, endtime: *mut f64) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLTimeRanges2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616843, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -34773,6 +37631,10 @@ pub struct IHTMLTitleElement {
     pub text: unsafe extern "system" fn(this: *mut *mut Self, p: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     text: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLTitleElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611490, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -34888,6 +37750,10 @@ pub struct IHTMLTxtRange {
     execCommandShowHelp: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLTxtRange {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611232, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLTxtRangeCollection {
     pub base__: super::super::System::Com::IDispatch,
@@ -34897,6 +37763,10 @@ pub struct IHTMLTxtRangeCollection {
     pub item: unsafe extern "system" fn(this: *mut *mut Self, pvarindex: *const super::super::System::Com::VARIANT, pvarresult: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     item: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLTxtRangeCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612717, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -34914,6 +37784,10 @@ pub struct IHTMLUListElement {
     r#type: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLUListElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611165, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLUniqueName {
     pub base__: super::super::System::Com::IDispatch,
@@ -34924,9 +37798,17 @@ pub struct IHTMLUniqueName {
     uniqueID: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLUniqueName {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611920, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLUnknownElement {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLUnknownElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611209, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -34937,6 +37819,10 @@ pub struct IHTMLUrnCollection {
     pub item: unsafe extern "system" fn(this: *mut *mut Self, index: i32, ppurn: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     item: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLUrnCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612194, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -34976,6 +37862,10 @@ pub struct IHTMLUserDataOM {
     expires: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLUserDataOM {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611855, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLVideoElement {
     pub base__: super::super::System::Com::IDispatch,
@@ -34993,6 +37883,10 @@ pub struct IHTMLVideoElement {
     pub poster: unsafe extern "system" fn(this: *mut *mut Self, p: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     poster: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLVideoElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616585, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -35230,6 +38124,10 @@ pub struct IHTMLWindow2 {
     external: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLWindow2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 858539047, data2: 9931, data3: 4560, data4: [180, 131, 0, 192, 79, 217, 1, 25] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLWindow3 {
     pub base__: super::super::System::Com::IDispatch,
@@ -35278,6 +38176,10 @@ pub struct IHTMLWindow3 {
     showModelessDialog: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLWindow3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611886, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLWindow4 {
     pub base__: super::super::System::Com::IDispatch,
@@ -35291,6 +38193,10 @@ pub struct IHTMLWindow4 {
     frameElement: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLWindow4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612431, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLWindow5 {
     pub base__: super::super::System::Com::IDispatch,
@@ -35302,6 +38208,10 @@ pub struct IHTMLWindow5 {
     pub XMLHttpRequest: unsafe extern "system" fn(this: *mut *mut Self, p: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     XMLHttpRequest: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLWindow5 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810615822, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -35352,6 +38262,10 @@ pub struct IHTMLWindow6 {
     pub msWriteProfilerMark: unsafe extern "system" fn(this: *mut *mut Self, bstrprofilermarkname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     msWriteProfilerMark: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLWindow6 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810615891, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -35811,6 +38725,10 @@ pub struct IHTMLWindow7 {
     onwaiting: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLWindow7 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810615991, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLWindow8 {
     pub base__: super::super::System::Com::IDispatch,
@@ -35940,6 +38858,10 @@ pub struct IHTMLWindow8 {
     onpopstate: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLWindow8 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616747, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLXDomainRequest {
     pub base__: super::super::System::Com::IDispatch,
@@ -35996,6 +38918,10 @@ pub struct IHTMLXDomainRequest {
     send: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLXDomainRequest {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810615892, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLXDomainRequestFactory {
     pub base__: super::super::System::Com::IDispatch,
@@ -36003,6 +38929,10 @@ pub struct IHTMLXDomainRequestFactory {
     pub create: unsafe extern "system" fn(this: *mut *mut Self, __midl__ihtmlxdomainrequestfactory0000: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     create: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLXDomainRequestFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810615894, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -36057,6 +38987,10 @@ pub struct IHTMLXMLHttpRequest {
     setRequestHeader: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLXMLHttpRequest {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810615818, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLXMLHttpRequest2 {
     pub base__: super::super::System::Com::IDispatch,
@@ -36072,6 +39006,10 @@ pub struct IHTMLXMLHttpRequest2 {
     ontimeout: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLXMLHttpRequest2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810615938, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHTMLXMLHttpRequestFactory {
     pub base__: super::super::System::Com::IDispatch,
@@ -36079,6 +39017,10 @@ pub struct IHTMLXMLHttpRequestFactory {
     pub create: unsafe extern "system" fn(this: *mut *mut Self, __midl__ihtmlxmlhttprequestfactory0000: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     create: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHTMLXMLHttpRequestFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810615820, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -36162,6 +39104,10 @@ pub struct IHeaderFooter {
     timeLong: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHeaderFooter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612430, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IHeaderFooter2 {
     pub base__: IHeaderFooter,
@@ -36174,6 +39120,10 @@ pub struct IHeaderFooter2 {
     #[cfg(not(feature = "Win32_Foundation"))]
     font: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHeaderFooter2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810615973, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[repr(C)]
 pub struct IHighlightRenderingServices {
     pub base__: ::windows_sys::core::IUnknown,
@@ -36184,9 +39134,15 @@ pub struct IHighlightRenderingServices {
     pub MoveSegmentToPointers: unsafe extern "system" fn(this: *mut *mut Self, pisegment: *mut ::core::ffi::c_void, pdisppointerstart: *mut ::core::ffi::c_void, pdisppointerend: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub RemoveSegment: unsafe extern "system" fn(this: *mut *mut Self, pisegment: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IHighlightRenderingServices {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612230, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[repr(C)]
 pub struct IHighlightSegment {
     pub base__: ISegment,
+}
+impl ::windows_sys::core::Interface for IHighlightSegment {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612368, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -36202,6 +39158,10 @@ pub struct IHomePage {
     #[cfg(not(feature = "Win32_Foundation"))]
     isHomePage: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHomePage {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1986785967, data2: 54864, data3: 4561, data4: [152, 17, 0, 192, 79, 195, 29, 46] };
+}
 #[repr(C)]
 pub struct IHomePageSetting {
     pub base__: ::windows_sys::core::IUnknown,
@@ -36215,10 +39175,16 @@ pub struct IHomePageSetting {
     IsHomePage: usize,
     pub SetHomePageToBrowserDefault: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IHomePageSetting {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4261160015, data2: 6394, data3: 20466, data4: [176, 142, 29, 97, 143, 63, 251, 228] };
+}
 #[repr(C)]
 pub struct IHostBehaviorInit {
     pub base__: ::windows_sys::core::IUnknown,
     pub PopulateNamespaceTable: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IHostBehaviorInit {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612802, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[repr(C)]
 pub struct IHostDialogHelper {
@@ -36227,6 +39193,9 @@ pub struct IHostDialogHelper {
     pub ShowHTMLDialog: unsafe extern "system" fn(this: *mut *mut Self, hwndparent: super::super::Foundation::HWND, pmk: *mut ::core::ffi::c_void, pvarargin: *mut super::super::System::Com::VARIANT, pchoptions: ::windows_sys::core::PCWSTR, pvarargout: *mut super::super::System::Com::VARIANT, punkhost: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     ShowHTMLDialog: usize,
+}
+impl ::windows_sys::core::Interface for IHostDialogHelper {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1407107384, data2: 42270, data3: 4562, data4: [134, 30, 0, 192, 79, 163, 92, 137] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -36250,9 +39219,17 @@ pub struct IHtmlDlgSafeHelper {
     BlockFormats: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IHtmlDlgSafeHelper {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612762, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IICCSVGColor {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IICCSVGColor {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616022, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
 #[repr(C)]
@@ -36260,15 +39237,27 @@ pub struct IIE70DispatchEx {
     pub base__: super::super::System::Ole::IDispatchEx,
 }
 #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+impl ::windows_sys::core::Interface for IIE70DispatchEx {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810615915, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
 #[repr(C)]
 pub struct IIE80DispatchEx {
     pub base__: super::super::System::Ole::IDispatchEx,
+}
+#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+impl ::windows_sys::core::Interface for IIE80DispatchEx {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810615916, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IIEWebDriverManager {
     pub base__: super::super::System::Com::IDispatch,
     pub ExecuteCommand: unsafe extern "system" fn(this: *mut *mut Self, command: ::windows_sys::core::PCWSTR, response: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IIEWebDriverManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3172845104, data2: 26000, data3: 19618, data4: [162, 147, 107, 199, 43, 36, 56, 216] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -36281,6 +39270,10 @@ pub struct IIEWebDriverSite {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     GetCapabilityValue: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IIEWebDriverSite {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4290266180, data2: 17725, data3: 20412, data4: [159, 157, 141, 181, 196, 113, 236, 117] };
+}
 #[repr(C)]
 pub struct IIMEServices {
     pub base__: ::windows_sys::core::IUnknown,
@@ -36288,6 +39281,9 @@ pub struct IIMEServices {
     pub GetActiveIMM: unsafe extern "system" fn(this: *mut *mut Self, ppactiveimm: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_UI_Input_Ime"))]
     GetActiveIMM: usize,
+}
+impl ::windows_sys::core::Interface for IIMEServices {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612426, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[repr(C)]
 pub struct IImageDecodeEventSink {
@@ -36302,6 +39298,9 @@ pub struct IImageDecodeEventSink {
     #[cfg(not(feature = "Win32_Foundation"))]
     OnProgress: usize,
 }
+impl ::windows_sys::core::Interface for IImageDecodeEventSink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3131261600, data2: 11757, data3: 4560, data4: [134, 244, 0, 160, 201, 19, 247, 80] };
+}
 #[repr(C)]
 pub struct IImageDecodeEventSink2 {
     pub base__: IImageDecodeEventSink,
@@ -36309,6 +39308,9 @@ pub struct IImageDecodeEventSink2 {
     pub IsAlphaPremultRequired: unsafe extern "system" fn(this: *mut *mut Self, pfpremultalpha: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     IsAlphaPremultRequired: usize,
+}
+impl ::windows_sys::core::Interface for IImageDecodeEventSink2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2394786391, data2: 35478, data3: 18633, data4: [132, 166, 150, 46, 45, 185, 201, 49] };
 }
 #[repr(C)]
 pub struct IImageDecodeFilter {
@@ -36320,6 +39322,9 @@ pub struct IImageDecodeFilter {
     Process: usize,
     pub Terminate: unsafe extern "system" fn(this: *mut *mut Self, hrstatus: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IImageDecodeFilter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2748116467, data2: 11746, data3: 4560, data4: [134, 244, 0, 160, 201, 19, 247, 80] };
+}
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IIntelliForms {
@@ -36327,15 +39332,25 @@ pub struct IIntelliForms {
     pub enabled: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i16) -> ::windows_sys::core::HRESULT,
     pub Setenabled: unsafe extern "system" fn(this: *mut *mut Self, bval: i16) -> ::windows_sys::core::HRESULT,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IIntelliForms {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2610915558, data2: 6826, data3: 4562, data4: [188, 165, 0, 192, 79, 217, 41, 219] };
+}
 #[repr(C)]
 pub struct IInternetExplorerManager {
     pub base__: ::windows_sys::core::IUnknown,
     pub CreateObject: unsafe extern "system" fn(this: *mut *mut Self, dwconfig: u32, pszurl: ::windows_sys::core::PCWSTR, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IInternetExplorerManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2898805585, data2: 1279, data3: 17657, data4: [178, 63, 101, 94, 209, 104, 198, 213] };
+}
 #[repr(C)]
 pub struct IInternetExplorerManager2 {
     pub base__: ::windows_sys::core::IUnknown,
     pub EnumFrameWindows: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IInternetExplorerManager2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3753595190, data2: 37465, data3: 18581, data4: [180, 167, 193, 147, 68, 41, 145, 154] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -36374,6 +39389,10 @@ pub struct ILayoutRect {
     #[cfg(not(feature = "Win32_System_Com"))]
     contentDocument: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ILayoutRect {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612325, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[repr(C)]
 pub struct ILineInfo {
     pub base__: ::windows_sys::core::IUnknown,
@@ -36382,6 +39401,9 @@ pub struct ILineInfo {
     pub textDescent: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i32) -> ::windows_sys::core::HRESULT,
     pub textHeight: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i32) -> ::windows_sys::core::HRESULT,
     pub lineDirection: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ILineInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612706, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[doc = "*Required features: `\"Win32_Web_MsHtml\"`*"]
 pub const IMGDECODE_EVENT_BEGINBITS: u32 = 4u32;
@@ -36409,6 +39431,9 @@ pub struct IMapMIMEToCLSID {
     pub MapMIMEToCLSID: unsafe extern "system" fn(this: *mut *mut Self, pszmimetype: ::windows_sys::core::PCWSTR, pclsid: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub SetMapping: unsafe extern "system" fn(this: *mut *mut Self, pszmimetype: ::windows_sys::core::PCWSTR, dwmapmode: u32, clsid: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMapMIMEToCLSID {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3655898368, data2: 12538, data3: 4560, data4: [183, 36, 0, 170, 0, 108, 26, 1] };
+}
 #[repr(C)]
 pub struct IMarkupContainer {
     pub base__: ::windows_sys::core::IUnknown,
@@ -36416,6 +39441,9 @@ pub struct IMarkupContainer {
     pub OwningDoc: unsafe extern "system" fn(this: *mut *mut Self, ppdoc: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     OwningDoc: usize,
+}
+impl ::windows_sys::core::Interface for IMarkupContainer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612217, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[repr(C)]
 pub struct IMarkupContainer2 {
@@ -36432,6 +39460,9 @@ pub struct IMarkupContainer2 {
     pub GetMasterElement: unsafe extern "system" fn(this: *mut *mut Self, ppelementmaster: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     GetMasterElement: usize,
+}
+impl ::windows_sys::core::Interface for IMarkupContainer2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612296, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[repr(C)]
 pub struct IMarkupPointer {
@@ -36500,6 +39531,9 @@ pub struct IMarkupPointer {
     pub MoveUnit: unsafe extern "system" fn(this: *mut *mut Self, muaction: MOVEUNIT_ACTION) -> ::windows_sys::core::HRESULT,
     pub FindText: unsafe extern "system" fn(this: *mut *mut Self, pchfindtext: ::windows_sys::core::PCWSTR, dwflags: u32, piendmatch: *mut ::core::ffi::c_void, piendsearch: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMarkupPointer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611871, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[repr(C)]
 pub struct IMarkupPointer2 {
     pub base__: IMarkupPointer,
@@ -36518,6 +39552,9 @@ pub struct IMarkupPointer2 {
     pub MoveToContent: unsafe extern "system" fn(this: *mut *mut Self, pielement: *mut ::core::ffi::c_void, fatstart: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     MoveToContent: usize,
+}
+impl ::windows_sys::core::Interface for IMarkupPointer2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612341, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[repr(C)]
 pub struct IMarkupServices {
@@ -36573,6 +39610,9 @@ pub struct IMarkupServices {
     pub BeginUndoUnit: unsafe extern "system" fn(this: *mut *mut Self, pchtitle: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
     pub EndUndoUnit: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMarkupServices {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611872, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[repr(C)]
 pub struct IMarkupServices2 {
     pub base__: IMarkupServices,
@@ -36582,6 +39622,9 @@ pub struct IMarkupServices2 {
     #[cfg(not(feature = "Win32_System_Com"))]
     ValidateElements: usize,
     pub SaveSegmentsToClipboard: unsafe extern "system" fn(this: *mut *mut Self, psegmentlist: *mut ::core::ffi::c_void, dwflags: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMarkupServices2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612354, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[repr(C)]
 pub struct IMarkupTextFrags {
@@ -36601,11 +39644,17 @@ pub struct IMarkupTextFrags {
     #[cfg(not(feature = "Win32_Foundation"))]
     FindTextFragFromMarkupPointer: usize,
 }
+impl ::windows_sys::core::Interface for IMarkupTextFrags {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612218, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[repr(C)]
 pub struct IMediaActivityNotifySite {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnMediaActivityStarted: unsafe extern "system" fn(this: *mut *mut Self, mediaactivitytype: MediaActivityNotifyType) -> ::windows_sys::core::HRESULT,
     pub OnMediaActivityStopped: unsafe extern "system" fn(this: *mut *mut Self, mediaactivitytype: MediaActivityNotifyType) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMediaActivityNotifySite {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2170933231, data2: 6045, data3: 18114, data4: [188, 113, 63, 167, 38, 220, 31, 141] };
 }
 #[doc = "*Required features: `\"Win32_Web_MsHtml\"`*"]
 pub type INTERNETEXPLORERCONFIGURATION = i32;
@@ -36625,6 +39674,10 @@ pub struct INavigatorDoNotTrack {
     msDoNotTrack: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for INavigatorDoNotTrack {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616836, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct INavigatorGeolocation {
     pub base__: super::super::System::Com::IDispatch,
@@ -36632,6 +39685,10 @@ pub struct INavigatorGeolocation {
     pub geolocation: unsafe extern "system" fn(this: *mut *mut Self, p: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     geolocation: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for INavigatorGeolocation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616783, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -36650,6 +39707,10 @@ pub struct IOmHistory {
     pub go: unsafe extern "system" fn(this: *mut *mut Self, pvargdistance: *const super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     go: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IOmHistory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4274956962, data2: 33797, data3: 4559, data4: [139, 161, 0, 170, 0, 71, 109, 166] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -36721,6 +39782,10 @@ pub struct IOmNavigator {
     #[cfg(not(feature = "Win32_System_Com"))]
     userProfile: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IOmNavigator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4274956965, data2: 33797, data3: 4559, data4: [139, 161, 0, 170, 0, 71, 109, 166] };
+}
 #[repr(C)]
 pub struct IOpenService {
     pub base__: ::windows_sys::core::IUnknown,
@@ -36736,6 +39801,9 @@ pub struct IOpenService {
     pub GetID: unsafe extern "system" fn(this: *mut *mut Self, pbstrid: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetID: usize,
+}
+impl ::windows_sys::core::Interface for IOpenService {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3264556753, data2: 27273, data3: 17926, data4: [146, 95, 30, 216, 180, 190, 6, 48] };
 }
 #[repr(C)]
 pub struct IOpenServiceActivity {
@@ -36807,6 +39875,9 @@ pub struct IOpenServiceActivity {
     #[cfg(not(feature = "Win32_Foundation"))]
     SetEnabled: usize,
 }
+impl ::windows_sys::core::Interface for IOpenServiceActivity {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 325344392, data2: 8730, data3: 18693, data4: [142, 209, 79, 81, 18, 207, 193, 8] };
+}
 #[repr(C)]
 pub struct IOpenServiceActivityCategory {
     pub base__: ::windows_sys::core::IUnknown,
@@ -36825,6 +39896,9 @@ pub struct IOpenServiceActivityCategory {
     GetName: usize,
     pub GetActivityEnumerator: unsafe extern "system" fn(this: *mut *mut Self, pinput: *mut ::core::ffi::c_void, poutput: *mut ::core::ffi::c_void, ppenumactivity: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IOpenServiceActivityCategory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2232089046, data2: 29449, data3: 16565, data4: [189, 184, 120, 108, 16, 107, 33, 83] };
+}
 #[repr(C)]
 pub struct IOpenServiceActivityInput {
     pub base__: ::windows_sys::core::IUnknown,
@@ -36838,6 +39912,9 @@ pub struct IOpenServiceActivityInput {
     HasVariable: usize,
     pub GetType: unsafe extern "system" fn(this: *mut *mut Self, ptype: *mut OpenServiceActivityContentType) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IOpenServiceActivityInput {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1976257977, data2: 28064, data3: 19875, data4: [131, 206, 66, 43, 106, 67, 51, 70] };
+}
 #[repr(C)]
 pub struct IOpenServiceActivityManager {
     pub base__: ::windows_sys::core::IUnknown,
@@ -36845,6 +39922,9 @@ pub struct IOpenServiceActivityManager {
     pub GetActivityByID: unsafe extern "system" fn(this: *mut *mut Self, pwzactivityid: ::windows_sys::core::PCWSTR, ppactivity: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetActivityByHomepageAndCategory: unsafe extern "system" fn(this: *mut *mut Self, pwzhomepage: ::windows_sys::core::PCWSTR, pwzcategory: ::windows_sys::core::PCWSTR, ppactivity: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetVersionCookie: unsafe extern "system" fn(this: *mut *mut Self, pdwversioncookie: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IOpenServiceActivityManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2318207645, data2: 59680, data3: 19420, data4: [162, 145, 211, 15, 101, 11, 196, 241] };
 }
 #[repr(C)]
 pub struct IOpenServiceActivityOutputContext {
@@ -36858,6 +39938,9 @@ pub struct IOpenServiceActivityOutputContext {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     CanNavigate: usize,
 }
+impl ::windows_sys::core::Interface for IOpenServiceActivityOutputContext {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3800686251, data2: 63241, data3: 18857, data4: [185, 158, 40, 35, 100, 7, 69, 113] };
+}
 #[repr(C)]
 pub struct IOpenServiceManager {
     pub base__: ::windows_sys::core::IUnknown,
@@ -36865,9 +39948,15 @@ pub struct IOpenServiceManager {
     pub UninstallService: unsafe extern "system" fn(this: *mut *mut Self, pservice: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetServiceByID: unsafe extern "system" fn(this: *mut *mut Self, pwzid: ::windows_sys::core::PCWSTR, ppservice: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IOpenServiceManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1449398879, data2: 19984, data3: 20112, data4: [152, 228, 228, 81, 61, 149, 90, 20] };
+}
 #[repr(C)]
 pub struct IPeerFactory {
     pub base__: ::windows_sys::core::IUnknown,
+}
+impl ::windows_sys::core::Interface for IPeerFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1717828051, data2: 46210, data3: 4561, data4: [137, 198, 0, 192, 79, 182, 191, 196] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -36883,6 +39972,10 @@ pub struct IPersistHistory {
     SaveHistory: usize,
     pub SetPositionCookie: unsafe extern "system" fn(this: *mut *mut Self, dwpositioncookie: u32) -> ::windows_sys::core::HRESULT,
     pub GetPositionCookie: unsafe extern "system" fn(this: *mut *mut Self, pdwpositioncookie: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IPersistHistory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2443535809, data2: 58255, data3: 4560, data4: [148, 191, 0, 160, 201, 5, 92, 191] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -36902,6 +39995,10 @@ pub struct IPrintManagerTemplatePrinter {
     pub endPrint: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IPrintManagerTemplatePrinter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4130586132, data2: 40703, data3: 19533, data4: [146, 158, 5, 113, 123, 33, 179, 230] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IPrintManagerTemplatePrinter2 {
     pub base__: IPrintManagerTemplatePrinter,
@@ -36909,15 +40006,25 @@ pub struct IPrintManagerTemplatePrinter2 {
     pub shrinkToFit: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i16) -> ::windows_sys::core::HRESULT,
     pub percentScale: unsafe extern "system" fn(this: *mut *mut Self, p: *mut f32) -> ::windows_sys::core::HRESULT,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IPrintManagerTemplatePrinter2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3326096535, data2: 29843, data3: 20233, data4: [128, 22, 84, 176, 62, 155, 218, 105] };
+}
 #[repr(C)]
 pub struct IPrintTaskRequestFactory {
     pub base__: ::windows_sys::core::IUnknown,
     pub CreatePrintTaskRequest: unsafe extern "system" fn(this: *mut *mut Self, pprinttaskrequesthandler: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPrintTaskRequestFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3142674245, data2: 35892, data3: 20363, data4: [150, 5, 104, 77, 203, 20, 75, 229] };
+}
 #[repr(C)]
 pub struct IPrintTaskRequestHandler {
     pub base__: ::windows_sys::core::IUnknown,
     pub HandlePrintTaskRequest: unsafe extern "system" fn(this: *mut *mut Self, pprinttaskrequest: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPrintTaskRequestHandler {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 421319488, data2: 53046, data3: 17663, data4: [189, 83, 209, 183, 1, 121, 157, 155] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -36929,6 +40036,10 @@ pub struct IRangeException {
     pub message: unsafe extern "system" fn(this: *mut *mut Self, p: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     message: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IRangeException {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616621, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -36955,6 +40066,10 @@ pub struct IRulesApplied {
     #[cfg(not(feature = "Win32_Foundation"))]
     propertyIsInheritable: usize,
     pub hasInheritableProperty: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IRulesApplied {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810615999, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -36988,6 +40103,10 @@ pub struct IRulesAppliedCollection {
     propertyInheritedTraceLength: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IRulesAppliedCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810615998, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISVGAElement {
     pub base__: super::super::System::Com::IDispatch,
@@ -36999,6 +40118,10 @@ pub struct ISVGAElement {
     pub target: unsafe extern "system" fn(this: *mut *mut Self, p: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     target: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGAElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616139, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -37022,6 +40145,10 @@ pub struct ISVGAngle {
     pub convertToSpecifiedUnits: unsafe extern "system" fn(this: *mut *mut Self, unittype: i16) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGAngle {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616019, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISVGAnimatedAngle {
     pub base__: super::super::System::Com::IDispatch,
@@ -37043,6 +40170,10 @@ pub struct ISVGAnimatedAngle {
     animVal: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGAnimatedAngle {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616020, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISVGAnimatedBoolean {
     pub base__: super::super::System::Com::IDispatch,
@@ -37050,6 +40181,10 @@ pub struct ISVGAnimatedBoolean {
     pub baseVal: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i16) -> ::windows_sys::core::HRESULT,
     pub SetanimVal: unsafe extern "system" fn(this: *mut *mut Self, v: i16) -> ::windows_sys::core::HRESULT,
     pub animVal: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGAnimatedBoolean {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616006, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -37061,6 +40196,10 @@ pub struct ISVGAnimatedEnumeration {
     pub animVal: unsafe extern "system" fn(this: *mut *mut Self, p: *mut u16) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGAnimatedEnumeration {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616009, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISVGAnimatedInteger {
     pub base__: super::super::System::Com::IDispatch,
@@ -37068,6 +40207,10 @@ pub struct ISVGAnimatedInteger {
     pub baseVal: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i32) -> ::windows_sys::core::HRESULT,
     pub SetanimVal: unsafe extern "system" fn(this: *mut *mut Self, v: i32) -> ::windows_sys::core::HRESULT,
     pub animVal: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGAnimatedInteger {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616010, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -37091,6 +40234,10 @@ pub struct ISVGAnimatedLength {
     animVal: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGAnimatedLength {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616016, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISVGAnimatedLengthList {
     pub base__: super::super::System::Com::IDispatch,
@@ -37112,6 +40259,10 @@ pub struct ISVGAnimatedLengthList {
     animVal: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGAnimatedLengthList {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616018, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISVGAnimatedNumber {
     pub base__: super::super::System::Com::IDispatch,
@@ -37119,6 +40270,10 @@ pub struct ISVGAnimatedNumber {
     pub baseVal: unsafe extern "system" fn(this: *mut *mut Self, p: *mut f32) -> ::windows_sys::core::HRESULT,
     pub SetanimVal: unsafe extern "system" fn(this: *mut *mut Self, v: f32) -> ::windows_sys::core::HRESULT,
     pub animVal: unsafe extern "system" fn(this: *mut *mut Self, p: *mut f32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGAnimatedNumber {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616012, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -37140,6 +40295,10 @@ pub struct ISVGAnimatedNumberList {
     pub animVal: unsafe extern "system" fn(this: *mut *mut Self, p: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     animVal: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGAnimatedNumberList {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616014, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -37179,6 +40338,10 @@ pub struct ISVGAnimatedPathData {
     animatedNormalizedPathSegList: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGAnimatedPathData {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616081, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISVGAnimatedPoints {
     pub base__: super::super::System::Com::IDispatch,
@@ -37198,6 +40361,10 @@ pub struct ISVGAnimatedPoints {
     pub animatedPoints: unsafe extern "system" fn(this: *mut *mut Self, p: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     animatedPoints: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGAnimatedPoints {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616087, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -37221,6 +40388,10 @@ pub struct ISVGAnimatedPreserveAspectRatio {
     animVal: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGAnimatedPreserveAspectRatio {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616059, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISVGAnimatedRect {
     pub base__: super::super::System::Com::IDispatch,
@@ -37242,6 +40413,10 @@ pub struct ISVGAnimatedRect {
     animVal: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGAnimatedRect {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616024, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISVGAnimatedString {
     pub base__: super::super::System::Com::IDispatch,
@@ -37257,6 +40432,10 @@ pub struct ISVGAnimatedString {
     pub animVal: unsafe extern "system" fn(this: *mut *mut Self, p: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     animVal: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGAnimatedString {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616007, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -37278,6 +40457,10 @@ pub struct ISVGAnimatedTransformList {
     pub animVal: unsafe extern "system" fn(this: *mut *mut Self, p: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     animVal: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGAnimatedTransformList {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616057, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -37309,6 +40492,10 @@ pub struct ISVGCircleElement {
     r: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGCircleElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616084, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISVGClipPathElement {
     pub base__: super::super::System::Com::IDispatch,
@@ -37322,14 +40509,26 @@ pub struct ISVGClipPathElement {
     clipPathUnits: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGClipPathElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616109, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISVGDefsElement {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGDefsElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616041, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISVGDescElement {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGDescElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616042, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -37339,6 +40538,10 @@ pub struct ISVGDocument {
     pub rootElement: unsafe extern "system" fn(this: *mut *mut Self, p: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     rootElement: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGDocument {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616038, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -37378,6 +40581,10 @@ pub struct ISVGElement {
     focusable: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616005, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISVGElementInstance {
     pub base__: super::super::System::Com::IDispatch,
@@ -37415,6 +40622,10 @@ pub struct ISVGElementInstance {
     nextSibling: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGElementInstance {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616046, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISVGElementInstanceList {
     pub base__: super::super::System::Com::IDispatch,
@@ -37423,6 +40634,10 @@ pub struct ISVGElementInstanceList {
     pub item: unsafe extern "system" fn(this: *mut *mut Self, index: i32, ppresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     item: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGElementInstanceList {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616047, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -37462,6 +40677,10 @@ pub struct ISVGEllipseElement {
     ry: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGEllipseElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616085, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISVGException {
     pub base__: super::super::System::Com::IDispatch,
@@ -37473,6 +40692,10 @@ pub struct ISVGException {
     message: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGException {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616623, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISVGExternalResourcesRequired {
     pub base__: super::super::System::Com::IDispatch,
@@ -37480,6 +40703,10 @@ pub struct ISVGExternalResourcesRequired {
     pub externalResourcesRequired: unsafe extern "system" fn(this: *mut *mut Self, p: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     externalResourcesRequired: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGExternalResourcesRequired {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616031, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -37499,9 +40726,17 @@ pub struct ISVGFitToViewBox {
     preserveAspectRatio: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGFitToViewBox {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616032, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISVGGElement {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGGElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616040, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -37531,6 +40766,10 @@ pub struct ISVGGradientElement {
     pub spreadMethod: unsafe extern "system" fn(this: *mut *mut Self, p: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     spreadMethod: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGGradientElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616104, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -37570,6 +40809,10 @@ pub struct ISVGImageElement {
     height: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGImageElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616048, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISVGLangSpace {
     pub base__: super::super::System::Com::IDispatch,
@@ -37591,6 +40834,10 @@ pub struct ISVGLangSpace {
     xmlspace: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGLangSpace {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616030, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISVGLength {
     pub base__: super::super::System::Com::IDispatch,
@@ -37610,6 +40857,10 @@ pub struct ISVGLength {
     valueAsString: usize,
     pub newValueSpecifiedUnits: unsafe extern "system" fn(this: *mut *mut Self, unittype: i16, valueinspecifiedunits: f32) -> ::windows_sys::core::HRESULT,
     pub convertToSpecifiedUnits: unsafe extern "system" fn(this: *mut *mut Self, unittype: i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGLength {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616015, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -37642,6 +40893,10 @@ pub struct ISVGLengthList {
     pub appendItem: unsafe extern "system" fn(this: *mut *mut Self, newitem: *mut ::core::ffi::c_void, ppresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     appendItem: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGLengthList {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616017, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -37681,6 +40936,10 @@ pub struct ISVGLineElement {
     y2: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGLineElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616086, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISVGLinearGradientElement {
     pub base__: super::super::System::Com::IDispatch,
@@ -37718,6 +40977,10 @@ pub struct ISVGLinearGradientElement {
     y2: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGLinearGradientElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616105, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISVGLocatable {
     pub base__: super::super::System::Com::IDispatch,
@@ -37745,6 +41008,10 @@ pub struct ISVGLocatable {
     pub getTransformToElement: unsafe extern "system" fn(this: *mut *mut Self, pelement: *mut ::core::ffi::c_void, ppresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     getTransformToElement: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGLocatable {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616027, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -37813,6 +41080,10 @@ pub struct ISVGMarkerElement {
     setOrientToAngle: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGMarkerElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616101, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISVGMaskElement {
     pub base__: super::super::System::Com::IDispatch,
@@ -37864,6 +41135,10 @@ pub struct ISVGMaskElement {
     pub height: unsafe extern "system" fn(this: *mut *mut Self, p: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     height: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGMaskElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616110, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -37927,9 +41202,17 @@ pub struct ISVGMatrix {
     skewY: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGMatrix {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616054, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISVGMetadataElement {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGMetadataElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616160, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -37937,6 +41220,10 @@ pub struct ISVGNumber {
     pub base__: super::super::System::Com::IDispatch,
     pub Setvalue: unsafe extern "system" fn(this: *mut *mut Self, v: f32) -> ::windows_sys::core::HRESULT,
     pub value: unsafe extern "system" fn(this: *mut *mut Self, p: *mut f32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGNumber {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616011, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -37971,9 +41258,17 @@ pub struct ISVGNumberList {
     appendItem: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGNumberList {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616013, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISVGPaint {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGPaint {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616100, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -38071,6 +41366,10 @@ pub struct ISVGPathElement {
     createSVGPathSegCurvetoQuadraticSmoothRel: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGPathElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616082, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISVGPathSeg {
     pub base__: super::super::System::Com::IDispatch,
@@ -38080,6 +41379,10 @@ pub struct ISVGPathSeg {
     pub pathSegTypeAsLetter: unsafe extern "system" fn(this: *mut *mut Self, p: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     pathSegTypeAsLetter: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGPathSeg {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616060, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -38101,6 +41404,10 @@ pub struct ISVGPathSegArcAbs {
     pub sweepFlag: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i16) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGPathSegArcAbs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616070, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISVGPathSegArcRel {
     pub base__: super::super::System::Com::IDispatch,
@@ -38120,9 +41427,17 @@ pub struct ISVGPathSegArcRel {
     pub sweepFlag: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i16) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGPathSegArcRel {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616071, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISVGPathSegClosePath {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGPathSegClosePath {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616061, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -38142,6 +41457,10 @@ pub struct ISVGPathSegCurvetoCubicAbs {
     pub y2: unsafe extern "system" fn(this: *mut *mut Self, p: *mut f32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGPathSegCurvetoCubicAbs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616066, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISVGPathSegCurvetoCubicRel {
     pub base__: super::super::System::Com::IDispatch,
@@ -38159,6 +41478,10 @@ pub struct ISVGPathSegCurvetoCubicRel {
     pub y2: unsafe extern "system" fn(this: *mut *mut Self, p: *mut f32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGPathSegCurvetoCubicRel {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616067, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISVGPathSegCurvetoCubicSmoothAbs {
     pub base__: super::super::System::Com::IDispatch,
@@ -38170,6 +41493,10 @@ pub struct ISVGPathSegCurvetoCubicSmoothAbs {
     pub x2: unsafe extern "system" fn(this: *mut *mut Self, p: *mut f32) -> ::windows_sys::core::HRESULT,
     pub Sety2: unsafe extern "system" fn(this: *mut *mut Self, v: f32) -> ::windows_sys::core::HRESULT,
     pub y2: unsafe extern "system" fn(this: *mut *mut Self, p: *mut f32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGPathSegCurvetoCubicSmoothAbs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616076, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -38185,6 +41512,10 @@ pub struct ISVGPathSegCurvetoCubicSmoothRel {
     pub y2: unsafe extern "system" fn(this: *mut *mut Self, p: *mut f32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGPathSegCurvetoCubicSmoothRel {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616077, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISVGPathSegCurvetoQuadraticAbs {
     pub base__: super::super::System::Com::IDispatch,
@@ -38196,6 +41527,10 @@ pub struct ISVGPathSegCurvetoQuadraticAbs {
     pub x1: unsafe extern "system" fn(this: *mut *mut Self, p: *mut f32) -> ::windows_sys::core::HRESULT,
     pub Sety1: unsafe extern "system" fn(this: *mut *mut Self, v: f32) -> ::windows_sys::core::HRESULT,
     pub y1: unsafe extern "system" fn(this: *mut *mut Self, p: *mut f32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGPathSegCurvetoQuadraticAbs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616068, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -38211,6 +41546,10 @@ pub struct ISVGPathSegCurvetoQuadraticRel {
     pub y1: unsafe extern "system" fn(this: *mut *mut Self, p: *mut f32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGPathSegCurvetoQuadraticRel {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616069, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISVGPathSegCurvetoQuadraticSmoothAbs {
     pub base__: super::super::System::Com::IDispatch,
@@ -38218,6 +41557,10 @@ pub struct ISVGPathSegCurvetoQuadraticSmoothAbs {
     pub x: unsafe extern "system" fn(this: *mut *mut Self, p: *mut f32) -> ::windows_sys::core::HRESULT,
     pub Sety: unsafe extern "system" fn(this: *mut *mut Self, v: f32) -> ::windows_sys::core::HRESULT,
     pub y: unsafe extern "system" fn(this: *mut *mut Self, p: *mut f32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGPathSegCurvetoQuadraticSmoothAbs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616078, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -38229,6 +41572,10 @@ pub struct ISVGPathSegCurvetoQuadraticSmoothRel {
     pub y: unsafe extern "system" fn(this: *mut *mut Self, p: *mut f32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGPathSegCurvetoQuadraticSmoothRel {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616079, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISVGPathSegLinetoAbs {
     pub base__: super::super::System::Com::IDispatch,
@@ -38238,6 +41585,10 @@ pub struct ISVGPathSegLinetoAbs {
     pub y: unsafe extern "system" fn(this: *mut *mut Self, p: *mut f32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGPathSegLinetoAbs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616064, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISVGPathSegLinetoHorizontalAbs {
     pub base__: super::super::System::Com::IDispatch,
@@ -38245,11 +41596,19 @@ pub struct ISVGPathSegLinetoHorizontalAbs {
     pub x: unsafe extern "system" fn(this: *mut *mut Self, p: *mut f32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGPathSegLinetoHorizontalAbs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616072, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISVGPathSegLinetoHorizontalRel {
     pub base__: super::super::System::Com::IDispatch,
     pub Setx: unsafe extern "system" fn(this: *mut *mut Self, v: f32) -> ::windows_sys::core::HRESULT,
     pub x: unsafe extern "system" fn(this: *mut *mut Self, p: *mut f32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGPathSegLinetoHorizontalRel {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616073, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -38261,6 +41620,10 @@ pub struct ISVGPathSegLinetoRel {
     pub y: unsafe extern "system" fn(this: *mut *mut Self, p: *mut f32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGPathSegLinetoRel {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616065, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISVGPathSegLinetoVerticalAbs {
     pub base__: super::super::System::Com::IDispatch,
@@ -38268,11 +41631,19 @@ pub struct ISVGPathSegLinetoVerticalAbs {
     pub y: unsafe extern "system" fn(this: *mut *mut Self, p: *mut f32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGPathSegLinetoVerticalAbs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616074, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISVGPathSegLinetoVerticalRel {
     pub base__: super::super::System::Com::IDispatch,
     pub Sety: unsafe extern "system" fn(this: *mut *mut Self, v: f32) -> ::windows_sys::core::HRESULT,
     pub y: unsafe extern "system" fn(this: *mut *mut Self, p: *mut f32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGPathSegLinetoVerticalRel {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616075, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -38307,6 +41678,10 @@ pub struct ISVGPathSegList {
     appendItem: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGPathSegList {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616080, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISVGPathSegMovetoAbs {
     pub base__: super::super::System::Com::IDispatch,
@@ -38316,6 +41691,10 @@ pub struct ISVGPathSegMovetoAbs {
     pub y: unsafe extern "system" fn(this: *mut *mut Self, p: *mut f32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGPathSegMovetoAbs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616062, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISVGPathSegMovetoRel {
     pub base__: super::super::System::Com::IDispatch,
@@ -38323,6 +41702,10 @@ pub struct ISVGPathSegMovetoRel {
     pub x: unsafe extern "system" fn(this: *mut *mut Self, p: *mut f32) -> ::windows_sys::core::HRESULT,
     pub Sety: unsafe extern "system" fn(this: *mut *mut Self, v: f32) -> ::windows_sys::core::HRESULT,
     pub y: unsafe extern "system" fn(this: *mut *mut Self, p: *mut f32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGPathSegMovetoRel {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616063, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -38386,6 +41769,10 @@ pub struct ISVGPatternElement {
     height: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGPatternElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616108, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISVGPoint {
     pub base__: super::super::System::Com::IDispatch,
@@ -38397,6 +41784,10 @@ pub struct ISVGPoint {
     pub matrixTransform: unsafe extern "system" fn(this: *mut *mut Self, pmatrix: *mut ::core::ffi::c_void, ppresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     matrixTransform: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGPoint {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616052, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -38431,14 +41822,26 @@ pub struct ISVGPointList {
     appendItem: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGPointList {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616053, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISVGPolygonElement {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGPolygonElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616089, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISVGPolylineElement {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGPolylineElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616088, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -38448,6 +41851,10 @@ pub struct ISVGPreserveAspectRatio {
     pub align: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i16) -> ::windows_sys::core::HRESULT,
     pub SetmeetOrSlice: unsafe extern "system" fn(this: *mut *mut Self, v: i16) -> ::windows_sys::core::HRESULT,
     pub meetOrSlice: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGPreserveAspectRatio {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616058, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -38495,6 +41902,10 @@ pub struct ISVGRadialGradientElement {
     fy: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGRadialGradientElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616106, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISVGRect {
     pub base__: super::super::System::Com::IDispatch,
@@ -38506,6 +41917,10 @@ pub struct ISVGRect {
     pub width: unsafe extern "system" fn(this: *mut *mut Self, p: *mut f32) -> ::windows_sys::core::HRESULT,
     pub Setheight: unsafe extern "system" fn(this: *mut *mut Self, v: f32) -> ::windows_sys::core::HRESULT,
     pub height: unsafe extern "system" fn(this: *mut *mut Self, p: *mut f32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGRect {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616023, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -38559,6 +41974,10 @@ pub struct ISVGRectElement {
     pub ry: unsafe extern "system" fn(this: *mut *mut Self, p: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     ry: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGRectElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616083, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -38712,6 +42131,10 @@ pub struct ISVGSVGElement {
     getElementById: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGSVGElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616039, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISVGScriptElement {
     pub base__: super::super::System::Com::IDispatch,
@@ -38725,6 +42148,10 @@ pub struct ISVGScriptElement {
     r#type: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGScriptElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616141, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISVGStopElement {
     pub base__: super::super::System::Com::IDispatch,
@@ -38736,6 +42163,10 @@ pub struct ISVGStopElement {
     pub offset: unsafe extern "system" fn(this: *mut *mut Self, p: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     offset: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGStopElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616107, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -38770,6 +42201,10 @@ pub struct ISVGStringList {
     appendItem: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGStringList {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616008, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISVGStylable {
     pub base__: super::super::System::Com::IDispatch,
@@ -38777,6 +42212,10 @@ pub struct ISVGStylable {
     pub className: unsafe extern "system" fn(this: *mut *mut Self, p: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     className: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGStylable {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616026, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -38800,9 +42239,17 @@ pub struct ISVGStyleElement {
     media: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGStyleElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616051, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISVGSwitchElement {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGSwitchElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616049, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -38810,9 +42257,17 @@ pub struct ISVGSymbolElement {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGSymbolElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616044, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISVGTSpanElement {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGTSpanElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616093, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -38834,6 +42289,10 @@ pub struct ISVGTests {
     pub hasExtension: unsafe extern "system" fn(this: *mut *mut Self, extension: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, presult: *mut i16) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     hasExtension: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGTests {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616029, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -38878,9 +42337,17 @@ pub struct ISVGTextContentElement {
     pub selectSubString: unsafe extern "system" fn(this: *mut *mut Self, charnum: i32, nchars: i32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGTextContentElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616090, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISVGTextElement {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGTextElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616092, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -38910,6 +42377,10 @@ pub struct ISVGTextPathElement {
     pub spacing: unsafe extern "system" fn(this: *mut *mut Self, p: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     spacing: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGTextPathElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616095, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -38957,9 +42428,17 @@ pub struct ISVGTextPositioningElement {
     rotate: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGTextPositioningElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616091, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISVGTitleElement {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGTitleElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616043, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -38986,6 +42465,10 @@ pub struct ISVGTransform {
     pub setRotate: unsafe extern "system" fn(this: *mut *mut Self, angle: f32, cx: f32, cy: f32) -> ::windows_sys::core::HRESULT,
     pub setSkewX: unsafe extern "system" fn(this: *mut *mut Self, angle: f32) -> ::windows_sys::core::HRESULT,
     pub setSkewY: unsafe extern "system" fn(this: *mut *mut Self, angle: f32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGTransform {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616055, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -39028,6 +42511,10 @@ pub struct ISVGTransformList {
     consolidate: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGTransformList {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616056, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISVGTransformable {
     pub base__: super::super::System::Com::IDispatch,
@@ -39037,6 +42524,10 @@ pub struct ISVGTransformable {
     transform: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGTransformable {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616028, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISVGURIReference {
     pub base__: super::super::System::Com::IDispatch,
@@ -39044,6 +42535,10 @@ pub struct ISVGURIReference {
     pub href: unsafe extern "system" fn(this: *mut *mut Self, p: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     href: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGURIReference {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616035, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -39099,6 +42594,10 @@ pub struct ISVGUseElement {
     animatedInstanceRoot: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGUseElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616045, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISVGViewElement {
     pub base__: super::super::System::Com::IDispatch,
@@ -39112,15 +42611,27 @@ pub struct ISVGViewElement {
     viewTarget: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGViewElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616140, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISVGViewSpec {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGViewSpec {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616034, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISVGZoomAndPan {
     pub base__: super::super::System::Com::IDispatch,
     pub zoomAndPan: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGZoomAndPan {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616033, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -39141,6 +42652,10 @@ pub struct ISVGZoomEvent {
     #[cfg(not(feature = "Win32_System_Com"))]
     newTranslate: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISVGZoomEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616142, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[repr(C)]
 pub struct IScriptEventHandler {
     pub base__: ::windows_sys::core::IUnknown,
@@ -39159,6 +42674,9 @@ pub struct IScriptEventHandler {
     UsesCapture: usize,
     pub Cookie: unsafe extern "system" fn(this: *mut *mut Self, pullcookie: *mut u64) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IScriptEventHandler {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616890, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[repr(C)]
 pub struct IScriptEventHandlerSourceInfo {
     pub base__: ::windows_sys::core::IUnknown,
@@ -39167,17 +42685,26 @@ pub struct IScriptEventHandlerSourceInfo {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetSourceInfo: usize,
 }
+impl ::windows_sys::core::Interface for IScriptEventHandlerSourceInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616897, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[repr(C)]
 pub struct IScrollableContextMenu {
     pub base__: ::windows_sys::core::IUnknown,
     pub AddItem: unsafe extern "system" fn(this: *mut *mut Self, itemtext: ::windows_sys::core::PCWSTR, cmdid: u32) -> ::windows_sys::core::HRESULT,
     pub ShowModal: unsafe extern "system" fn(this: *mut *mut Self, x: i32, y: i32, cmdid: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IScrollableContextMenu {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616916, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[repr(C)]
 pub struct IScrollableContextMenu2 {
     pub base__: IScrollableContextMenu,
     pub AddSeparator: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub SetPlacement: unsafe extern "system" fn(this: *mut *mut Self, scmp: SCROLLABLECONTEXTMENU_PLACEMENT) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IScrollableContextMenu2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4152266838, data2: 34420, data3: 18742, data4: [146, 76, 14, 74, 6, 250, 99, 74] };
 }
 #[repr(C)]
 pub struct ISecureUrlHost {
@@ -39187,10 +42714,16 @@ pub struct ISecureUrlHost {
     #[cfg(not(feature = "Win32_Foundation"))]
     ValidateSecureUrl: usize,
 }
+impl ::windows_sys::core::Interface for ISecureUrlHost {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3357115588, data2: 29896, data3: 4562, data4: [186, 169, 0, 192, 79, 194, 4, 14] };
+}
 #[repr(C)]
 pub struct ISegment {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetPointers: unsafe extern "system" fn(this: *mut *mut Self, pistart: *mut ::core::ffi::c_void, piend: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISegment {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612355, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[repr(C)]
 pub struct ISegmentList {
@@ -39202,6 +42735,9 @@ pub struct ISegmentList {
     #[cfg(not(feature = "Win32_Foundation"))]
     IsEmpty: usize,
 }
+impl ::windows_sys::core::Interface for ISegmentList {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612229, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[repr(C)]
 pub struct ISegmentListIterator {
     pub base__: ::windows_sys::core::IUnknown,
@@ -39209,6 +42745,9 @@ pub struct ISegmentListIterator {
     pub First: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub IsDone: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Advance: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISegmentListIterator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612370, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[repr(C)]
 pub struct ISelectionServices {
@@ -39223,6 +42762,9 @@ pub struct ISelectionServices {
     pub RemoveSegment: unsafe extern "system" fn(this: *mut *mut Self, pisegment: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetSelectionServicesListener: unsafe extern "system" fn(this: *mut *mut Self, ppiselectionserviceslistener: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISelectionServices {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612356, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[repr(C)]
 pub struct ISelectionServicesListener {
     pub base__: ::windows_sys::core::IUnknown,
@@ -39235,10 +42777,16 @@ pub struct ISelectionServicesListener {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetTypeDetail: usize,
 }
+impl ::windows_sys::core::Interface for ISelectionServicesListener {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612377, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[repr(C)]
 pub struct ISequenceNumber {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetSequenceNumber: unsafe extern "system" fn(this: *mut *mut Self, ncurrent: i32, pnnew: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISequenceNumber {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612417, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[repr(C)]
 pub struct ISniffStream {
@@ -39248,6 +42796,9 @@ pub struct ISniffStream {
     #[cfg(not(feature = "Win32_System_Com"))]
     Init: usize,
     pub Peek: unsafe extern "system" fn(this: *mut *mut Self, pbuffer: *mut ::core::ffi::c_void, nbytes: u32, pnbytesread: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISniffStream {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1324448064, data2: 12512, data3: 4560, data4: [183, 36, 0, 170, 0, 108, 26, 1] };
 }
 #[repr(C)]
 pub struct ISurfacePresenter {
@@ -39262,11 +42813,17 @@ pub struct ISurfacePresenter {
     #[cfg(not(feature = "Win32_Foundation"))]
     IsCurrent: usize,
 }
+impl ::windows_sys::core::Interface for ISurfacePresenter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616546, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[repr(C)]
 pub struct ISurfacePresenterFlip {
     pub base__: ::windows_sys::core::IUnknown,
     pub Present: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub GetBuffer: unsafe extern "system" fn(this: *mut *mut Self, backbufferindex: u32, riid: *const ::windows_sys::core::GUID, ppbuffer: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISurfacePresenterFlip {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616904, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[repr(C)]
 pub struct ISurfacePresenterFlip2 {
@@ -39276,11 +42833,17 @@ pub struct ISurfacePresenterFlip2 {
     #[cfg(not(feature = "Win32_Graphics_Dxgi_Common"))]
     SetRotation: usize,
 }
+impl ::windows_sys::core::Interface for ISurfacePresenterFlip2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616933, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[repr(C)]
 pub struct ISurfacePresenterFlipBuffer {
     pub base__: ::windows_sys::core::IUnknown,
     pub BeginDraw: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppbuffer: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub EndDraw: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISurfacePresenterFlipBuffer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3829352968, data2: 35772, data3: 18021, data4: [172, 146, 197, 92, 230, 31, 215, 231] };
 }
 #[repr(C)]
 pub struct ITargetContainer {
@@ -39291,10 +42854,16 @@ pub struct ITargetContainer {
     #[cfg(not(feature = "Win32_System_Ole"))]
     GetFramesContainer: usize,
 }
+impl ::windows_sys::core::Interface for ITargetContainer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2017979393, data2: 11244, data3: 4560, data4: [130, 180, 0, 160, 201, 12, 41, 197] };
+}
 #[repr(C)]
 pub struct ITargetEmbedding {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetTargetFrame: unsafe extern "system" fn(this: *mut *mut Self, pptargetframe: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ITargetEmbedding {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1418171328, data2: 40564, data3: 4559, data4: [150, 85, 0, 160, 201, 3, 73, 35] };
 }
 #[repr(C)]
 pub struct ITargetFrame {
@@ -39317,6 +42886,9 @@ pub struct ITargetFrame {
     pub OnChildFrameActivate: unsafe extern "system" fn(this: *mut *mut Self, punkchildframe: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub OnChildFrameDeactivate: unsafe extern "system" fn(this: *mut *mut Self, punkchildframe: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ITargetFrame {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3589770368, data2: 21074, data3: 4559, data4: [144, 250, 0, 170, 0, 66, 16, 110] };
+}
 #[repr(C)]
 pub struct ITargetFrame2 {
     pub base__: ::windows_sys::core::IUnknown,
@@ -39336,6 +42908,9 @@ pub struct ITargetFrame2 {
     pub FindFrame: unsafe extern "system" fn(this: *mut *mut Self, psztargetname: ::windows_sys::core::PCWSTR, dwflags: u32, ppunktargetframe: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetTargetAlias: unsafe extern "system" fn(this: *mut *mut Self, psztargetname: ::windows_sys::core::PCWSTR, ppsztargetalias: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ITargetFrame2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2262117905, data2: 38056, data3: 4560, data4: [130, 175, 0, 192, 79, 213, 174, 56] };
+}
 #[repr(C)]
 pub struct ITargetFramePriv {
     pub base__: ::windows_sys::core::IUnknown,
@@ -39349,6 +42924,9 @@ pub struct ITargetFramePriv {
     NavigateHack: usize,
     pub FindBrowserByIndex: unsafe extern "system" fn(this: *mut *mut Self, dwid: u32, ppunkbrowser: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ITargetFramePriv {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2450973729, data2: 11253, data3: 4560, data4: [130, 180, 0, 160, 201, 12, 41, 197] };
+}
 #[repr(C)]
 pub struct ITargetFramePriv2 {
     pub base__: ITargetFramePriv,
@@ -39357,11 +42935,17 @@ pub struct ITargetFramePriv2 {
     #[cfg(not(feature = "Win32_System_Com"))]
     AggregatedNavigation2: usize,
 }
+impl ::windows_sys::core::Interface for ITargetFramePriv2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2999478246, data2: 27094, data3: 18162, data4: [166, 17, 222, 217, 164, 189, 127, 239] };
+}
 #[repr(C)]
 pub struct ITargetNotify {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnCreate: unsafe extern "system" fn(this: *mut *mut Self, punkdestination: *mut ::core::ffi::c_void, cbcookie: u32) -> ::windows_sys::core::HRESULT,
     pub OnReuse: unsafe extern "system" fn(this: *mut *mut Self, punkdestination: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ITargetNotify {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2251987360, data2: 8636, data3: 4560, data4: [130, 180, 0, 160, 201, 12, 41, 197] };
 }
 #[repr(C)]
 pub struct ITargetNotify2 {
@@ -39370,6 +42954,9 @@ pub struct ITargetNotify2 {
     pub GetOptionString: unsafe extern "system" fn(this: *mut *mut Self, pbstroptions: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetOptionString: usize,
+}
+impl ::windows_sys::core::Interface for ITargetNotify2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612401, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -39450,6 +43037,10 @@ pub struct ITemplatePrinter {
     pub updatePageStatus: unsafe extern "system" fn(this: *mut *mut Self, p: *const i32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ITemplatePrinter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612404, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ITemplatePrinter2 {
     pub base__: ITemplatePrinter,
@@ -39471,6 +43062,10 @@ pub struct ITemplatePrinter2 {
     pub deviceSupports: unsafe extern "system" fn(this: *mut *mut Self, bstrproperty: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pvar: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     deviceSupports: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ITemplatePrinter2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810612799, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -39517,6 +43112,10 @@ pub struct ITemplatePrinter3 {
     #[cfg(not(feature = "Win32_System_Com"))]
     getPageMarginLeftImportant: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ITemplatePrinter3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810615971, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[repr(C)]
 pub struct ITimer {
     pub base__: ::windows_sys::core::IUnknown,
@@ -39534,10 +43133,16 @@ pub struct ITimer {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     GetTime: usize,
 }
+impl ::windows_sys::core::Interface for ITimer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611552, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[repr(C)]
 pub struct ITimerEx {
     pub base__: ITimer,
     pub SetMode: unsafe extern "system" fn(this: *mut *mut Self, dwmode: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ITimerEx {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810615828, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[repr(C)]
 pub struct ITimerService {
@@ -39546,6 +43151,9 @@ pub struct ITimerService {
     pub GetNamedTimer: unsafe extern "system" fn(this: *mut *mut Self, rguidname: *const ::windows_sys::core::GUID, pptimer: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetNamedTimerReference: unsafe extern "system" fn(this: *mut *mut Self, rguidname: *const ::windows_sys::core::GUID, preferencetimer: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ITimerService {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611551, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[repr(C)]
 pub struct ITimerSink {
     pub base__: ::windows_sys::core::IUnknown,
@@ -39553,6 +43161,9 @@ pub struct ITimerSink {
     pub OnTimer: unsafe extern "system" fn(this: *mut *mut Self, vtimeadvise: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     OnTimer: usize,
+}
+impl ::windows_sys::core::Interface for ITimerSink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810611553, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[repr(C)]
 pub struct ITrackingProtection {
@@ -39566,6 +43177,9 @@ pub struct ITrackingProtection {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetEnabled: usize,
 }
+impl ::windows_sys::core::Interface for ITrackingProtection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616835, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[repr(C)]
 pub struct ITridentTouchInput {
     pub base__: ::windows_sys::core::IUnknown,
@@ -39574,16 +43188,26 @@ pub struct ITridentTouchInput {
     #[cfg(not(feature = "Win32_Foundation"))]
     OnPointerMessage: usize,
 }
+impl ::windows_sys::core::Interface for ITridentTouchInput {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616912, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[repr(C)]
 pub struct ITridentTouchInputSite {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetManipulationMode: unsafe extern "system" fn(this: *mut *mut Self, mstouchaction: styleMsTouchAction) -> ::windows_sys::core::HRESULT,
     pub ZoomToPoint: unsafe extern "system" fn(this: *mut *mut Self, x: i32, y: i32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ITridentTouchInputSite {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616905, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[cfg(feature = "Win32_System_Ole")]
 #[repr(C)]
 pub struct IUrlHistoryNotify {
     pub base__: super::super::System::Ole::IOleCommandTarget,
+}
+#[cfg(feature = "Win32_System_Ole")]
+impl ::windows_sys::core::Interface for IUrlHistoryNotify {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3158359745, data2: 50323, data3: 4560, data4: [131, 27, 0, 192, 79, 213, 174, 56] };
 }
 #[repr(C)]
 pub struct IUrlHistoryStg {
@@ -39597,6 +43221,9 @@ pub struct IUrlHistoryStg {
     pub BindToObject: unsafe extern "system" fn(this: *mut *mut Self, pocsurl: ::windows_sys::core::PCWSTR, riid: *const ::windows_sys::core::GUID, ppvout: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub EnumUrls: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IUrlHistoryStg {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1010256449, data2: 47844, data3: 4559, data4: [191, 125, 0, 170, 0, 105, 70, 238] };
+}
 #[repr(C)]
 pub struct IUrlHistoryStg2 {
     pub base__: IUrlHistoryStg,
@@ -39605,6 +43232,9 @@ pub struct IUrlHistoryStg2 {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Ole")))]
     AddUrlAndNotify: usize,
     pub ClearHistory: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUrlHistoryStg2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2946554897, data2: 49939, data3: 4560, data4: [131, 26, 0, 192, 79, 213, 174, 56] };
 }
 #[repr(C)]
 pub struct IViewObjectPresentFlip {
@@ -39616,10 +43246,16 @@ pub struct IViewObjectPresentFlip {
     pub RenderObjectToBitmap: unsafe extern "system" fn(this: *mut *mut Self, pbitmap: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub RenderObjectToSharedBuffer: unsafe extern "system" fn(this: *mut *mut Self, pbuffer: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IViewObjectPresentFlip {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616903, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[repr(C)]
 pub struct IViewObjectPresentFlip2 {
     pub base__: ::windows_sys::core::IUnknown,
     pub NotifyLeavingView: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IViewObjectPresentFlip2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616918, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[repr(C)]
 pub struct IViewObjectPresentFlipSite {
@@ -39651,6 +43287,9 @@ pub struct IViewObjectPresentFlipSite {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetFullScreenSize: usize,
 }
+impl ::windows_sys::core::Interface for IViewObjectPresentFlipSite {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616902, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[repr(C)]
 pub struct IViewObjectPresentFlipSite2 {
     pub base__: ::windows_sys::core::IUnknown,
@@ -39659,15 +43298,24 @@ pub struct IViewObjectPresentFlipSite2 {
     #[cfg(not(feature = "Win32_Graphics_Dxgi_Common"))]
     GetRotationForCurrentOutput: usize,
 }
+impl ::windows_sys::core::Interface for IViewObjectPresentFlipSite2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2865810417, data2: 59389, data3: 20242, data4: [137, 2, 199, 129, 50, 168, 224, 29] };
+}
 #[repr(C)]
 pub struct IViewObjectPresentNotify {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnPreRender: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IViewObjectPresentNotify {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616824, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[repr(C)]
 pub struct IViewObjectPresentNotifySite {
     pub base__: IViewObjectPresentSite,
     pub RequestFrame: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IViewObjectPresentNotifySite {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616826, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[repr(C)]
 pub struct IViewObjectPresentSite {
@@ -39682,10 +43330,16 @@ pub struct IViewObjectPresentSite {
     IsHardwareComposition: usize,
     pub SetCompositionMode: unsafe extern "system" fn(this: *mut *mut Self, mode: VIEW_OBJECT_COMPOSITION_MODE) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IViewObjectPresentSite {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616545, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[repr(C)]
 pub struct IViewObjectPrint {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetPrintBitmap: unsafe extern "system" fn(this: *mut *mut Self, ppprintbitmap: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IViewObjectPrint {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616547, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -39719,6 +43373,10 @@ pub struct IWBScriptControl {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     onvisibilitychange: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWBScriptControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2769750128, data2: 3320, data3: 4561, data4: [139, 145, 0, 128, 199, 68, 243, 137] };
+}
 #[repr(C)]
 pub struct IWPCBlockedUrls {
     pub base__: ::windows_sys::core::IUnknown,
@@ -39727,6 +43385,9 @@ pub struct IWPCBlockedUrls {
     pub GetUrl: unsafe extern "system" fn(this: *mut *mut Self, dwidx: u32, pbstrurl: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetUrl: usize,
+}
+impl ::windows_sys::core::Interface for IWPCBlockedUrls {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810615827, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -39751,6 +43412,10 @@ pub struct IWebBridge {
     pub readyState: unsafe extern "system" fn(this: *mut *mut Self, p: *mut i32) -> ::windows_sys::core::HRESULT,
     pub AboutBox: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWebBridge {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2921659821, data2: 966, data3: 4561, data4: [139, 118, 0, 128, 199, 68, 243, 137] };
+}
 #[repr(C)]
 pub struct IWebBrowserEventsService {
     pub base__: ::windows_sys::core::IUnknown,
@@ -39760,6 +43425,9 @@ pub struct IWebBrowserEventsService {
     pub FireDownloadCompleteEvent: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub FireDocumentCompleteEvent: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWebBrowserEventsService {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1420358024, data2: 40637, data3: 18325, data4: [173, 22, 155, 73, 69, 17, 150, 54] };
+}
 #[repr(C)]
 pub struct IWebBrowserEventsUrlService {
     pub base__: ::windows_sys::core::IUnknown,
@@ -39767,6 +43435,9 @@ pub struct IWebBrowserEventsUrlService {
     pub GetUrlForEvents: unsafe extern "system" fn(this: *mut *mut Self, purl: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetUrlForEvents: usize,
+}
+impl ::windows_sys::core::Interface for IWebBrowserEventsUrlService {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2278317316, data2: 60154, data3: 18483, data4: [152, 32, 143, 152, 101, 48, 204, 0] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -39793,6 +43464,10 @@ pub struct IWebGeocoordinates {
     speed: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWebGeocoordinates {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616775, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IWebGeolocation {
     pub base__: super::super::System::Com::IDispatch,
@@ -39807,6 +43482,10 @@ pub struct IWebGeolocation {
     pub clearWatch: unsafe extern "system" fn(this: *mut *mut Self, watchid: i32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWebGeolocation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616773, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IWebGeoposition {
     pub base__: super::super::System::Com::IDispatch,
@@ -39815,6 +43494,10 @@ pub struct IWebGeoposition {
     #[cfg(not(feature = "Win32_System_Com"))]
     coords: usize,
     pub timestamp: unsafe extern "system" fn(this: *mut *mut Self, p: *mut u64) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWebGeoposition {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616781, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -39826,15 +43509,26 @@ pub struct IWebGeopositionError {
     #[cfg(not(feature = "Win32_Foundation"))]
     message: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWebGeopositionError {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616777, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
+}
 #[repr(C)]
 pub struct IXMLGenericParse {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetGenericParse: unsafe extern "system" fn(this: *mut *mut Self, fdogeneric: i16) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IXMLGenericParse {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3840028785, data2: 19719, data3: 4562, data4: [174, 118, 0, 128, 199, 59, 193, 153] };
+}
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IXMLHttpRequestEventTarget {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IXMLHttpRequestEventTarget {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810616880, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 }
 pub const IntelliForms: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1631238446, data2: 5823, data3: 4562, data4: [188, 165, 0, 192, 79, 217, 41, 219] };
 pub const InternetExplorerManager: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3746548788, data2: 1658, data3: 19978, data4: [131, 82, 74, 26, 80, 149, 52, 110] };
@@ -39854,6 +43548,10 @@ pub struct Iwfolders {
     pub navigateNoSite: unsafe extern "system" fn(this: *mut *mut Self, bstrurl: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrtargetframe: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, dwhwnd: u32, pwb: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     navigateNoSite: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for Iwfolders {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3135446936, data2: 7041, data3: 4562, data4: [169, 122, 0, 192, 79, 142, 203, 2] };
 }
 #[doc = "*Required features: `\"Win32_Web_MsHtml\"`*"]
 pub type LINE_DIRECTION = i32;

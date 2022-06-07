@@ -856,6 +856,9 @@ pub struct IAccIdentity {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetIdentityString: unsafe extern "system" fn(this: *mut *mut Self, dwidchild: u32, ppidstring: *mut *mut u8, pdwidstringlen: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAccIdentity {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2018686861, data2: 7421, data3: 16833, data4: [166, 21, 156, 12, 133, 150, 11, 95] };
+}
 #[repr(C)]
 pub struct IAccPropServer {
     pub base__: ::windows_sys::core::IUnknown,
@@ -863,6 +866,9 @@ pub struct IAccPropServer {
     pub GetPropValue: unsafe extern "system" fn(this: *mut *mut Self, pidstring: *const u8, dwidstringlen: u32, idprop: ::windows_sys::core::GUID, pvarvalue: *mut super::super::System::Com::VARIANT, pfhasprop: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     GetPropValue: usize,
+}
+impl ::windows_sys::core::Interface for IAccPropServer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1992350651, data2: 5600, data3: 20091, data4: [182, 27, 32, 238, 234, 32, 1, 224] };
 }
 #[repr(C)]
 pub struct IAccPropServices {
@@ -921,6 +927,9 @@ pub struct IAccPropServices {
     pub DecomposeHmenuIdentityString: unsafe extern "system" fn(this: *mut *mut Self, pidstring: *const u8, dwidstringlen: u32, phmenu: *mut super::WindowsAndMessaging::HMENU, pidchild: *mut u32) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_UI_WindowsAndMessaging"))]
     DecomposeHmenuIdentityString: usize,
+}
+impl ::windows_sys::core::Interface for IAccPropServices {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1848043382, data2: 1264, data3: 18781, data4: [128, 228, 51, 48, 53, 46, 49, 105] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1008,6 +1017,10 @@ pub struct IAccessible {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     put_accValue: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IAccessible {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1636251360, data2: 15421, data3: 4559, data4: [129, 12, 0, 170, 0, 56, 155, 113] };
+}
 #[repr(C)]
 pub struct IAccessibleEx {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1022,6 +1035,9 @@ pub struct IAccessibleEx {
     GetRuntimeId: usize,
     pub ConvertReturnedElement: unsafe extern "system" fn(this: *mut *mut Self, pin: *mut ::core::ffi::c_void, ppretvalout: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAccessibleEx {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4172810970, data2: 11332, data3: 18640, data4: [137, 190, 95, 242, 60, 156, 216, 117] };
+}
 #[repr(C)]
 pub struct IAccessibleHandler {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1029,6 +1045,9 @@ pub struct IAccessibleHandler {
     pub AccessibleObjectFromID: unsafe extern "system" fn(this: *mut *mut Self, hwnd: i32, lobjectid: i32, piaccessible: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     AccessibleObjectFromID: usize,
+}
+impl ::windows_sys::core::Interface for IAccessibleHandler {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 50471984, data2: 43972, data3: 4560, data4: [189, 226, 0, 170, 0, 26, 25, 83] };
 }
 #[repr(C)]
 pub struct IAccessibleHostingElementProviders {
@@ -1038,6 +1057,9 @@ pub struct IAccessibleHostingElementProviders {
     #[cfg(not(feature = "Win32_System_Com"))]
     GetEmbeddedFragmentRoots: usize,
     pub GetObjectIdForProvider: unsafe extern "system" fn(this: *mut *mut Self, pprovider: *mut ::core::ffi::c_void, pidobject: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAccessibleHostingElementProviders {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 866923291, data2: 37950, data3: 16416, data4: [178, 149, 219, 55, 120, 73, 116, 163] };
 }
 #[repr(C)]
 pub struct IAccessibleWindowlessSite {
@@ -1052,6 +1074,9 @@ pub struct IAccessibleWindowlessSite {
     pub GetParentAccessible: unsafe extern "system" fn(this: *mut *mut Self, ppparent: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     GetParentAccessible: usize,
+}
+impl ::windows_sys::core::Interface for IAccessibleWindowlessSite {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3208297884, data2: 30426, data3: 17289, data4: [158, 182, 20, 39, 210, 90, 186, 183] };
 }
 #[repr(C)]
 pub struct IAnnotationProvider {
@@ -1071,16 +1096,25 @@ pub struct IAnnotationProvider {
     DateTime: usize,
     pub Target: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAnnotationProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4183588480, data2: 48483, data3: 17921, data4: [151, 130, 68, 94, 191, 240, 17, 252] };
+}
 #[repr(C)]
 pub struct ICustomNavigationProvider {
     pub base__: ::windows_sys::core::IUnknown,
     pub Navigate: unsafe extern "system" fn(this: *mut *mut Self, direction: NavigateDirection, pretval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ICustomNavigationProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 543335050, data2: 35847, data3: 19348, data4: [142, 18, 112, 55, 198, 34, 174, 184] };
 }
 #[repr(C)]
 pub struct IDockProvider {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetDockPosition: unsafe extern "system" fn(this: *mut *mut Self, dockposition: DockPosition) -> ::windows_sys::core::HRESULT,
     pub DockPosition: unsafe extern "system" fn(this: *mut *mut Self, pretval: *mut DockPosition) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDockProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 362530604, data2: 19155, data3: 18526, data4: [150, 55, 215, 5, 46, 223, 1, 70] };
 }
 #[repr(C)]
 pub struct IDragProvider {
@@ -1102,6 +1136,9 @@ pub struct IDragProvider {
     #[cfg(not(feature = "Win32_System_Com"))]
     GetGrabbedItems: usize,
 }
+impl ::windows_sys::core::Interface for IDragProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1789377467, data2: 32761, data3: 18813, data4: [144, 79, 210, 11, 137, 121, 41, 216] };
+}
 #[repr(C)]
 pub struct IDropTargetProvider {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1114,12 +1151,18 @@ pub struct IDropTargetProvider {
     #[cfg(not(feature = "Win32_System_Com"))]
     DropTargetEffects: usize,
 }
+impl ::windows_sys::core::Interface for IDropTargetProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3135777789, data2: 13706, data3: 18460, data4: [133, 160, 216, 180, 217, 10, 93, 97] };
+}
 #[repr(C)]
 pub struct IExpandCollapseProvider {
     pub base__: ::windows_sys::core::IUnknown,
     pub Expand: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Collapse: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub ExpandCollapseState: unsafe extern "system" fn(this: *mut *mut Self, pretval: *mut ExpandCollapseState) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IExpandCollapseProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3628585893, data2: 51888, data3: 19096, data4: [140, 50, 236, 180, 92, 89, 173, 36] };
 }
 #[repr(C)]
 pub struct IGridItemProvider {
@@ -1130,12 +1173,18 @@ pub struct IGridItemProvider {
     pub ColumnSpan: unsafe extern "system" fn(this: *mut *mut Self, pretval: *mut i32) -> ::windows_sys::core::HRESULT,
     pub ContainingGrid: unsafe extern "system" fn(this: *mut *mut Self, pretval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IGridItemProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3492102641, data2: 64385, data3: 19812, data4: [174, 50, 245, 32, 248, 166, 219, 209] };
+}
 #[repr(C)]
 pub struct IGridProvider {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetItem: unsafe extern "system" fn(this: *mut *mut Self, row: i32, column: i32, pretval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub RowCount: unsafe extern "system" fn(this: *mut *mut Self, pretval: *mut i32) -> ::windows_sys::core::HRESULT,
     pub ColumnCount: unsafe extern "system" fn(this: *mut *mut Self, pretval: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IGridProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2977784199, data2: 2311, data3: 17995, data4: [161, 104, 14, 241, 122, 21, 114, 177] };
 }
 pub const IIS_ControlAccessible: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 952533670, data2: 38705, data3: 17394, data4: [159, 174, 233, 1, 230, 65, 177, 1] };
 pub const IIS_IsOleaccProxy: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2418448378, data2: 32996, data3: 17760, data4: [128, 42, 161, 63, 34, 166, 71, 9] };
@@ -1144,6 +1193,9 @@ pub struct IInvokeProvider {
     pub base__: ::windows_sys::core::IUnknown,
     pub Invoke: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IInvokeProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1425846859, data2: 57742, data3: 18338, data4: [180, 211, 236, 203, 231, 117, 153, 162] };
+}
 #[repr(C)]
 pub struct IItemContainerProvider {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1151,6 +1203,9 @@ pub struct IItemContainerProvider {
     pub FindItemByProperty: unsafe extern "system" fn(this: *mut *mut Self, pstartafter: *mut ::core::ffi::c_void, propertyid: i32, value: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>, pfound: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     FindItemByProperty: usize,
+}
+impl ::windows_sys::core::Interface for IItemContainerProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3880220427, data2: 14798, data3: 17282, data4: [171, 48, 216, 251, 63, 51, 111, 36] };
 }
 #[repr(C)]
 pub struct ILegacyIAccessibleProvider {
@@ -1194,6 +1249,9 @@ pub struct ILegacyIAccessibleProvider {
     #[cfg(not(feature = "Win32_Foundation"))]
     DefaultAction: usize,
 }
+impl ::windows_sys::core::Interface for ILegacyIAccessibleProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3830199654, data2: 37213, data3: 16496, data4: [153, 198, 4, 123, 255, 90, 8, 245] };
+}
 #[repr(C)]
 pub struct IMultipleViewProvider {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1208,10 +1266,16 @@ pub struct IMultipleViewProvider {
     #[cfg(not(feature = "Win32_System_Com"))]
     GetSupportedViews: usize,
 }
+impl ::windows_sys::core::Interface for IMultipleViewProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1652083377, data2: 46422, data3: 18970, data4: [180, 224, 65, 138, 204, 82, 50, 1] };
+}
 #[repr(C)]
 pub struct IObjectModelProvider {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetUnderlyingObjectModel: unsafe extern "system" fn(this: *mut *mut Self, ppunknown: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IObjectModelProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 987262653, data2: 62959, data3: 18493, data4: [187, 24, 177, 4, 42, 71, 93, 100] };
 }
 #[repr(C)]
 pub struct IProxyProviderWinEventHandler {
@@ -1220,6 +1284,9 @@ pub struct IProxyProviderWinEventHandler {
     pub RespondToWinEvent: unsafe extern "system" fn(this: *mut *mut Self, idwinevent: u32, hwnd: super::super::Foundation::HWND, idobject: i32, idchild: i32, psink: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     RespondToWinEvent: usize,
+}
+impl ::windows_sys::core::Interface for IProxyProviderWinEventHandler {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2304322260, data2: 62688, data3: 17365, data4: [163, 182, 186, 215, 225, 17, 180, 53] };
 }
 #[repr(C)]
 pub struct IProxyProviderWinEventSink {
@@ -1233,6 +1300,9 @@ pub struct IProxyProviderWinEventSink {
     pub AddStructureChangedEvent: unsafe extern "system" fn(this: *mut *mut Self, pprovider: *mut ::core::ffi::c_void, structurechangetype: StructureChangeType, runtimeid: *const super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     AddStructureChangedEvent: usize,
+}
+impl ::windows_sys::core::Interface for IProxyProviderWinEventSink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1339566968, data2: 42046, data3: 18092, data4: [152, 3, 10, 105, 105, 199, 193, 131] };
 }
 #[repr(C)]
 pub struct IRangeValueProvider {
@@ -1248,6 +1318,9 @@ pub struct IRangeValueProvider {
     pub LargeChange: unsafe extern "system" fn(this: *mut *mut Self, pretval: *mut f64) -> ::windows_sys::core::HRESULT,
     pub SmallChange: unsafe extern "system" fn(this: *mut *mut Self, pretval: *mut f64) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IRangeValueProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 920419055, data2: 13286, data3: 18065, data4: [175, 225, 43, 231, 39, 75, 61, 51] };
+}
 #[repr(C)]
 pub struct IRawElementProviderAdviseEvents {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1259,6 +1332,9 @@ pub struct IRawElementProviderAdviseEvents {
     pub AdviseEventRemoved: unsafe extern "system" fn(this: *mut *mut Self, eventid: i32, propertyids: *const super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     AdviseEventRemoved: usize,
+}
+impl ::windows_sys::core::Interface for IRawElementProviderAdviseEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2751967867, data2: 3949, data3: 17447, data4: [146, 146, 71, 60, 123, 249, 50, 88] };
 }
 #[repr(C)]
 pub struct IRawElementProviderFragment {
@@ -1276,11 +1352,17 @@ pub struct IRawElementProviderFragment {
     pub SetFocus: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub FragmentRoot: unsafe extern "system" fn(this: *mut *mut Self, pretval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IRawElementProviderFragment {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4144381352, data2: 33625, data3: 17308, data4: [146, 151, 187, 197, 41, 154, 125, 135] };
+}
 #[repr(C)]
 pub struct IRawElementProviderFragmentRoot {
     pub base__: ::windows_sys::core::IUnknown,
     pub ElementProviderFromPoint: unsafe extern "system" fn(this: *mut *mut Self, x: f64, y: f64, pretval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetFocus: unsafe extern "system" fn(this: *mut *mut Self, pretval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IRawElementProviderFragmentRoot {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1645011621, data2: 43919, data3: 16553, data4: [134, 203, 222, 60, 117, 89, 155, 88] };
 }
 #[repr(C)]
 pub struct IRawElementProviderHostingAccessibles {
@@ -1290,6 +1372,9 @@ pub struct IRawElementProviderHostingAccessibles {
     #[cfg(not(feature = "Win32_System_Com"))]
     GetEmbeddedAccessibles: usize,
 }
+impl ::windows_sys::core::Interface for IRawElementProviderHostingAccessibles {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 616434439, data2: 54141, data3: 18554, data4: [152, 207, 161, 62, 212, 101, 233, 179] };
+}
 #[repr(C)]
 pub struct IRawElementProviderHwndOverride {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1297,6 +1382,9 @@ pub struct IRawElementProviderHwndOverride {
     pub GetOverrideProviderForHwnd: unsafe extern "system" fn(this: *mut *mut Self, hwnd: super::super::Foundation::HWND, pretval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetOverrideProviderForHwnd: usize,
+}
+impl ::windows_sys::core::Interface for IRawElementProviderHwndOverride {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 492696188, data2: 35143, data3: 17445, data4: [184, 217, 121, 120, 123, 180, 96, 184] };
 }
 #[repr(C)]
 pub struct IRawElementProviderSimple {
@@ -1309,10 +1397,16 @@ pub struct IRawElementProviderSimple {
     GetPropertyValue: usize,
     pub HostRawElementProvider: unsafe extern "system" fn(this: *mut *mut Self, pretval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IRawElementProviderSimple {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3604834513, data2: 34557, data3: 17202, data4: [134, 102, 154, 190, 222, 162, 210, 76] };
+}
 #[repr(C)]
 pub struct IRawElementProviderSimple2 {
     pub base__: IRawElementProviderSimple,
     pub ShowContextMenu: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IRawElementProviderSimple2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2695379369, data2: 36257, data3: 19074, data4: [128, 106, 142, 13, 68, 231, 159, 86] };
 }
 #[repr(C)]
 pub struct IRawElementProviderSimple3 {
@@ -1321,6 +1415,9 @@ pub struct IRawElementProviderSimple3 {
     pub GetMetadataValue: unsafe extern "system" fn(this: *mut *mut Self, targetid: i32, metadataid: i32, returnval: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     GetMetadataValue: usize,
+}
+impl ::windows_sys::core::Interface for IRawElementProviderSimple3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4243970080, data2: 55276, data3: 17939, data4: [189, 246, 66, 168, 76, 231, 218, 175] };
 }
 #[repr(C)]
 pub struct IRawElementProviderWindowlessSite {
@@ -1331,21 +1428,33 @@ pub struct IRawElementProviderWindowlessSite {
     #[cfg(not(feature = "Win32_System_Com"))]
     GetRuntimeIdPrefix: usize,
 }
+impl ::windows_sys::core::Interface for IRawElementProviderWindowlessSite {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 170562508, data2: 49069, data3: 17068, data4: [155, 46, 9, 145, 251, 13, 62, 160] };
+}
 #[repr(C)]
 pub struct IRichEditUiaInformation {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetBoundaryRectangle: unsafe extern "system" fn(this: *mut *mut Self, puiarect: *mut UiaRect) -> ::windows_sys::core::HRESULT,
     pub IsVisible: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IRichEditUiaInformation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID::zeroed();
+}
 #[repr(C)]
 pub struct IRicheditWindowlessAccessibility {
     pub base__: ::windows_sys::core::IUnknown,
     pub CreateProvider: unsafe extern "system" fn(this: *mut *mut Self, psite: *mut ::core::ffi::c_void, ppprovider: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IRicheditWindowlessAccessibility {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID::zeroed();
+}
 #[repr(C)]
 pub struct IScrollItemProvider {
     pub base__: ::windows_sys::core::IUnknown,
     pub ScrollIntoView: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IScrollItemProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 593544980, data2: 19441, data3: 19238, data4: [186, 101, 155, 33, 49, 97, 39, 235] };
 }
 #[repr(C)]
 pub struct IScrollProvider {
@@ -1365,6 +1474,9 @@ pub struct IScrollProvider {
     #[cfg(not(feature = "Win32_Foundation"))]
     VerticallyScrollable: usize,
 }
+impl ::windows_sys::core::Interface for IScrollProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3012264055, data2: 8131, data3: 17061, data4: [140, 174, 212, 12, 34, 21, 5, 90] };
+}
 #[repr(C)]
 pub struct ISelectionItemProvider {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1376,6 +1488,9 @@ pub struct ISelectionItemProvider {
     #[cfg(not(feature = "Win32_Foundation"))]
     IsSelected: usize,
     pub SelectionContainer: unsafe extern "system" fn(this: *mut *mut Self, pretval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISelectionItemProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 717936648, data2: 45780, data3: 17709, data4: [164, 7, 145, 255, 26, 209, 103, 178] };
 }
 #[repr(C)]
 pub struct ISelectionProvider {
@@ -1393,6 +1508,9 @@ pub struct ISelectionProvider {
     #[cfg(not(feature = "Win32_Foundation"))]
     IsSelectionRequired: usize,
 }
+impl ::windows_sys::core::Interface for ISelectionProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4220191663, data2: 15327, data3: 18644, data4: [189, 54, 26, 101, 121, 59, 225, 104] };
+}
 #[repr(C)]
 pub struct ISelectionProvider2 {
     pub base__: ISelectionProvider,
@@ -1400,6 +1518,9 @@ pub struct ISelectionProvider2 {
     pub LastSelectedItem: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub CurrentSelectedItem: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub ItemCount: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISelectionProvider2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 351700085, data2: 60956, data3: 17654, data4: [168, 105, 210, 57, 56, 31, 15, 231] };
 }
 #[repr(C)]
 pub struct ISpreadsheetItemProvider {
@@ -1417,10 +1538,16 @@ pub struct ISpreadsheetItemProvider {
     #[cfg(not(feature = "Win32_System_Com"))]
     GetAnnotationTypes: usize,
 }
+impl ::windows_sys::core::Interface for ISpreadsheetItemProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3941418592, data2: 31549, data3: 18553, data4: [162, 230, 54, 92, 230, 3, 243, 208] };
+}
 #[repr(C)]
 pub struct ISpreadsheetProvider {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetItemByName: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::PCWSTR, pretval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISpreadsheetProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1869307189, data2: 21797, data3: 20352, data4: [183, 88, 133, 71, 56, 50, 255, 199] };
 }
 #[repr(C)]
 pub struct IStylesProvider {
@@ -1445,11 +1572,17 @@ pub struct IStylesProvider {
     #[cfg(not(feature = "Win32_Foundation"))]
     ExtendedProperties: usize,
 }
+impl ::windows_sys::core::Interface for IStylesProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 431404617, data2: 62935, data3: 19053, data4: [189, 203, 18, 146, 82, 190, 88, 138] };
+}
 #[repr(C)]
 pub struct ISynchronizedInputProvider {
     pub base__: ::windows_sys::core::IUnknown,
     pub StartListening: unsafe extern "system" fn(this: *mut *mut Self, inputtype: SynchronizedInputType) -> ::windows_sys::core::HRESULT,
     pub Cancel: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISynchronizedInputProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 702224902, data2: 718, data3: 19703, data4: [155, 66, 86, 93, 79, 171, 32, 238] };
 }
 #[repr(C)]
 pub struct ITableItemProvider {
@@ -1462,6 +1595,9 @@ pub struct ITableItemProvider {
     pub GetColumnHeaderItems: unsafe extern "system" fn(this: *mut *mut Self, pretval: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     GetColumnHeaderItems: usize,
+}
+impl ::windows_sys::core::Interface for ITableItemProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3111341990, data2: 30495, data3: 19832, data4: [156, 144, 37, 23, 153, 147, 73, 205] };
 }
 #[repr(C)]
 pub struct ITableProvider {
@@ -1476,17 +1612,26 @@ pub struct ITableProvider {
     GetColumnHeaders: usize,
     pub RowOrColumnMajor: unsafe extern "system" fn(this: *mut *mut Self, pretval: *mut RowOrColumnMajor) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ITableProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2626028437, data2: 38835, data3: 18698, data4: [181, 42, 133, 140, 194, 42, 241, 102] };
+}
 #[repr(C)]
 pub struct ITextChildProvider {
     pub base__: ::windows_sys::core::IUnknown,
     pub TextContainer: unsafe extern "system" fn(this: *mut *mut Self, pretval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub TextRange: unsafe extern "system" fn(this: *mut *mut Self, pretval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ITextChildProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1278075577, data2: 51343, data3: 20360, data4: [161, 17, 241, 211, 54, 183, 209, 169] };
+}
 #[repr(C)]
 pub struct ITextEditProvider {
     pub base__: ITextProvider,
     pub GetActiveComposition: unsafe extern "system" fn(this: *mut *mut Self, pretval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetConversionTarget: unsafe extern "system" fn(this: *mut *mut Self, pretval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ITextEditProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3929408948, data2: 14853, data3: 16398, data4: [181, 249, 78, 145, 180, 15, 97, 118] };
 }
 #[repr(C)]
 pub struct ITextProvider {
@@ -1504,6 +1649,9 @@ pub struct ITextProvider {
     pub DocumentRange: unsafe extern "system" fn(this: *mut *mut Self, pretval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SupportedTextSelection: unsafe extern "system" fn(this: *mut *mut Self, pretval: *mut SupportedTextSelection) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ITextProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 898222380, data2: 25587, data3: 17255, data4: [153, 187, 173, 166, 83, 183, 124, 242] };
+}
 #[repr(C)]
 pub struct ITextProvider2 {
     pub base__: ITextProvider,
@@ -1512,6 +1660,9 @@ pub struct ITextProvider2 {
     pub GetCaretRange: unsafe extern "system" fn(this: *mut *mut Self, isactive: *mut super::super::Foundation::BOOL, pretval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetCaretRange: usize,
+}
+impl ::windows_sys::core::Interface for ITextProvider2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 231073517, data2: 15894, data3: 19441, data4: [143, 154, 169, 121, 135, 139, 193, 149] };
 }
 #[repr(C)]
 pub struct ITextRangeProvider {
@@ -1559,16 +1710,25 @@ pub struct ITextRangeProvider {
     #[cfg(not(feature = "Win32_System_Com"))]
     GetChildren: usize,
 }
+impl ::windows_sys::core::Interface for ITextRangeProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1397206395, data2: 50005, data3: 18168, data4: [175, 245, 144, 144, 51, 88, 47, 99] };
+}
 #[repr(C)]
 pub struct ITextRangeProvider2 {
     pub base__: ITextRangeProvider,
     pub ShowContextMenu: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ITextRangeProvider2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2612847660, data2: 6433, data3: 20248, data4: [137, 202, 219, 161, 145, 10, 3, 134] };
 }
 #[repr(C)]
 pub struct IToggleProvider {
     pub base__: ::windows_sys::core::IUnknown,
     pub Toggle: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub ToggleState: unsafe extern "system" fn(this: *mut *mut Self, pretval: *mut ToggleState) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IToggleProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1456475088, data2: 50420, data3: 17212, data4: [168, 54, 26, 82, 165, 126, 8, 146] };
 }
 #[repr(C)]
 pub struct ITransformProvider {
@@ -1589,6 +1749,9 @@ pub struct ITransformProvider {
     #[cfg(not(feature = "Win32_Foundation"))]
     CanRotate: usize,
 }
+impl ::windows_sys::core::Interface for ITransformProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1747574212, data2: 20369, data3: 20474, data4: [184, 111, 189, 62, 41, 135, 203, 76] };
+}
 #[repr(C)]
 pub struct ITransformProvider2 {
     pub base__: ITransformProvider,
@@ -1601,6 +1764,9 @@ pub struct ITransformProvider2 {
     pub ZoomMinimum: unsafe extern "system" fn(this: *mut *mut Self, pretval: *mut f64) -> ::windows_sys::core::HRESULT,
     pub ZoomMaximum: unsafe extern "system" fn(this: *mut *mut Self, pretval: *mut f64) -> ::windows_sys::core::HRESULT,
     pub ZoomByUnit: unsafe extern "system" fn(this: *mut *mut Self, zoomunit: ZoomUnit) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ITransformProvider2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1196979247, data2: 31426, data3: 17932, data4: [188, 72, 9, 252, 9, 48, 138, 147] };
 }
 #[repr(C)]
 pub struct IUIAutomation {
@@ -1730,6 +1896,9 @@ pub struct IUIAutomation {
     #[cfg(not(feature = "Win32_System_Com"))]
     ElementFromIAccessibleBuildCache: usize,
 }
+impl ::windows_sys::core::Interface for IUIAutomation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 818668925, data2: 55760, data3: 17706, data4: [171, 19, 122, 197, 172, 72, 37, 238] };
+}
 #[repr(C)]
 pub struct IUIAutomation2 {
     pub base__: IUIAutomation,
@@ -1746,11 +1915,17 @@ pub struct IUIAutomation2 {
     pub TransactionTimeout: unsafe extern "system" fn(this: *mut *mut Self, timeout: *mut u32) -> ::windows_sys::core::HRESULT,
     pub SetTransactionTimeout: unsafe extern "system" fn(this: *mut *mut Self, timeout: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IUIAutomation2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 879901439, data2: 3229, data3: 18896, data4: [152, 150, 122, 181, 45, 248, 205, 138] };
+}
 #[repr(C)]
 pub struct IUIAutomation3 {
     pub base__: IUIAutomation2,
     pub AddTextEditTextChangedEventHandler: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, scope: TreeScope, texteditchangetype: TextEditChangeType, cacherequest: *mut ::core::ffi::c_void, handler: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub RemoveTextEditTextChangedEventHandler: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, handler: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUIAutomation3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1943496922, data2: 39761, data3: 19337, data4: [147, 110, 194, 9, 41, 9, 115, 231] };
 }
 #[repr(C)]
 pub struct IUIAutomation4 {
@@ -1758,11 +1933,17 @@ pub struct IUIAutomation4 {
     pub AddChangesEventHandler: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, scope: TreeScope, changetypes: *const i32, changescount: i32, pcacherequest: *mut ::core::ffi::c_void, handler: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub RemoveChangesEventHandler: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, handler: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IUIAutomation4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 294240298, data2: 1528, data3: 17177, data4: [142, 33, 232, 23, 227, 219, 40, 96] };
+}
 #[repr(C)]
 pub struct IUIAutomation5 {
     pub base__: IUIAutomation4,
     pub AddNotificationEventHandler: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, scope: TreeScope, cacherequest: *mut ::core::ffi::c_void, handler: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub RemoveNotificationEventHandler: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, handler: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUIAutomation5 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 636944584, data2: 55318, data3: 16471, data4: [169, 220, 60, 189, 238, 119, 226, 86] };
 }
 #[repr(C)]
 pub struct IUIAutomation6 {
@@ -1777,10 +1958,16 @@ pub struct IUIAutomation6 {
     pub AddActiveTextPositionChangedEventHandler: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, scope: TreeScope, cacherequest: *mut ::core::ffi::c_void, handler: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub RemoveActiveTextPositionChangedEventHandler: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, handler: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IUIAutomation6 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2866836186, data2: 10723, data3: 16701, data4: [135, 167, 25, 45, 191, 129, 237, 16] };
+}
 #[repr(C)]
 pub struct IUIAutomationActiveTextPositionChangedEventHandler {
     pub base__: ::windows_sys::core::IUnknown,
     pub HandleActiveTextPositionChangedEvent: unsafe extern "system" fn(this: *mut *mut Self, sender: *mut ::core::ffi::c_void, range: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUIAutomationActiveTextPositionChangedEventHandler {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4185469872, data2: 36270, data3: 17558, data4: [137, 151, 91, 160, 21, 254, 13, 130] };
 }
 #[repr(C)]
 pub struct IUIAutomationAndCondition {
@@ -1791,6 +1978,9 @@ pub struct IUIAutomationAndCondition {
     pub GetChildren: unsafe extern "system" fn(this: *mut *mut Self, childarray: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     GetChildren: usize,
+}
+impl ::windows_sys::core::Interface for IUIAutomationAndCondition {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2815471414, data2: 47378, data3: 17918, data4: [152, 85, 9, 29, 220, 23, 74, 236] };
 }
 #[repr(C)]
 pub struct IUIAutomationAnnotationPattern {
@@ -1824,6 +2014,9 @@ pub struct IUIAutomationAnnotationPattern {
     CachedDateTime: usize,
     pub CachedTarget: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IUIAutomationAnnotationPattern {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2585221921, data2: 13214, data3: 16817, data4: [142, 139, 98, 63, 107, 104, 16, 152] };
+}
 #[repr(C)]
 pub struct IUIAutomationBoolCondition {
     pub base__: IUIAutomationCondition,
@@ -1831,6 +2024,9 @@ pub struct IUIAutomationBoolCondition {
     pub BooleanValue: unsafe extern "system" fn(this: *mut *mut Self, boolval: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     BooleanValue: usize,
+}
+impl ::windows_sys::core::Interface for IUIAutomationBoolCondition {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 458104622, data2: 30187, data3: 19723, data4: [137, 82, 90, 105, 152, 142, 35, 7] };
 }
 #[repr(C)]
 pub struct IUIAutomationCacheRequest {
@@ -1845,6 +2041,9 @@ pub struct IUIAutomationCacheRequest {
     pub AutomationElementMode: unsafe extern "system" fn(this: *mut *mut Self, mode: *mut AutomationElementMode) -> ::windows_sys::core::HRESULT,
     pub SetAutomationElementMode: unsafe extern "system" fn(this: *mut *mut Self, mode: AutomationElementMode) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IUIAutomationCacheRequest {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3005911733, data2: 48165, data3: 16504, data4: [156, 8, 215, 238, 149, 196, 142, 3] };
+}
 #[repr(C)]
 pub struct IUIAutomationChangesEventHandler {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1853,14 +2052,23 @@ pub struct IUIAutomationChangesEventHandler {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     HandleChangesEvent: usize,
 }
+impl ::windows_sys::core::Interface for IUIAutomationChangesEventHandler {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1491978837, data2: 11326, data3: 18816, data4: [177, 185, 86, 193, 127, 39, 162, 160] };
+}
 #[repr(C)]
 pub struct IUIAutomationCondition {
     pub base__: ::windows_sys::core::IUnknown,
+}
+impl ::windows_sys::core::Interface for IUIAutomationCondition {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 892337064, data2: 2419, data3: 17276, data4: [166, 31, 246, 76, 175, 216, 29, 249] };
 }
 #[repr(C)]
 pub struct IUIAutomationCustomNavigationPattern {
     pub base__: ::windows_sys::core::IUnknown,
     pub Navigate: unsafe extern "system" fn(this: *mut *mut Self, direction: NavigateDirection, pretval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUIAutomationCustomNavigationPattern {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 32121210, data2: 5990, data3: 18413, data4: [166, 204, 172, 244, 146, 133, 75, 31] };
 }
 #[repr(C)]
 pub struct IUIAutomationDockPattern {
@@ -1868,6 +2076,9 @@ pub struct IUIAutomationDockPattern {
     pub SetDockPosition: unsafe extern "system" fn(this: *mut *mut Self, dockpos: DockPosition) -> ::windows_sys::core::HRESULT,
     pub CurrentDockPosition: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut DockPosition) -> ::windows_sys::core::HRESULT,
     pub CachedDockPosition: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut DockPosition) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUIAutomationDockPattern {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4259704727, data2: 5220, data3: 18678, data4: [144, 191, 67, 208, 148, 142, 134, 236] };
 }
 #[repr(C)]
 pub struct IUIAutomationDragPattern {
@@ -1899,6 +2110,9 @@ pub struct IUIAutomationDragPattern {
     pub GetCurrentGrabbedItems: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetCachedGrabbedItems: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IUIAutomationDragPattern {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 499627376, data2: 8020, data3: 19373, data4: [188, 218, 211, 106, 114, 47, 183, 189] };
+}
 #[repr(C)]
 pub struct IUIAutomationDropTargetPattern {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1918,6 +2132,9 @@ pub struct IUIAutomationDropTargetPattern {
     pub CachedDropTargetEffects: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     CachedDropTargetEffects: usize,
+}
+impl ::windows_sys::core::Interface for IUIAutomationDropTargetPattern {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1772131831, data2: 61156, data3: 17166, data4: [164, 107, 251, 115, 177, 174, 57, 165] };
 }
 #[repr(C)]
 pub struct IUIAutomationElement {
@@ -2167,6 +2384,9 @@ pub struct IUIAutomationElement {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetClickablePoint: usize,
 }
+impl ::windows_sys::core::Interface for IUIAutomationElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3525380266, data2: 35525, data3: 18853, data4: [131, 123, 55, 187, 179, 215, 89, 30] };
+}
 #[repr(C)]
 pub struct IUIAutomationElement2 {
     pub base__: IUIAutomationElement,
@@ -2183,6 +2403,9 @@ pub struct IUIAutomationElement2 {
     pub CurrentFlowsFrom: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub CachedFlowsFrom: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IUIAutomationElement2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1732888195, data2: 63245, data3: 17543, data4: [166, 152, 95, 121, 213, 82, 144, 214] };
+}
 #[repr(C)]
 pub struct IUIAutomationElement3 {
     pub base__: IUIAutomationElement2,
@@ -2195,6 +2418,9 @@ pub struct IUIAutomationElement3 {
     pub CachedIsPeripheral: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     CachedIsPeripheral: usize,
+}
+impl ::windows_sys::core::Interface for IUIAutomationElement3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2222055220, data2: 44768, data3: 18945, data4: [167, 222, 125, 185, 175, 18, 194, 150] };
 }
 #[repr(C)]
 pub struct IUIAutomationElement4 {
@@ -2216,6 +2442,9 @@ pub struct IUIAutomationElement4 {
     CachedAnnotationTypes: usize,
     pub CachedAnnotationObjects: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IUIAutomationElement4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 997073724, data2: 21243, data3: 16483, data4: [164, 201, 119, 192, 117, 194, 160, 107] };
+}
 #[repr(C)]
 pub struct IUIAutomationElement5 {
     pub base__: IUIAutomationElement4,
@@ -2230,6 +2459,9 @@ pub struct IUIAutomationElement5 {
     #[cfg(not(feature = "Win32_Foundation"))]
     CachedLocalizedLandmarkType: usize,
 }
+impl ::windows_sys::core::Interface for IUIAutomationElement5 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2551454749, data2: 3342, data3: 16757, data4: [187, 226, 107, 255, 69, 88, 66, 167] };
+}
 #[repr(C)]
 pub struct IUIAutomationElement6 {
     pub base__: IUIAutomationElement5,
@@ -2241,6 +2473,9 @@ pub struct IUIAutomationElement6 {
     pub CachedFullDescription: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     CachedFullDescription: usize,
+}
+impl ::windows_sys::core::Interface for IUIAutomationElement6 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1199625296, data2: 35786, data3: 18807, data4: [175, 165, 164, 165, 23, 245, 85, 227] };
 }
 #[repr(C)]
 pub struct IUIAutomationElement7 {
@@ -2254,11 +2489,17 @@ pub struct IUIAutomationElement7 {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     GetCurrentMetadataValue: usize,
 }
+impl ::windows_sys::core::Interface for IUIAutomationElement7 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 542016882, data2: 53187, data3: 19473, data4: [176, 200, 125, 167, 66, 7, 80, 183] };
+}
 #[repr(C)]
 pub struct IUIAutomationElement8 {
     pub base__: IUIAutomationElement7,
     pub CurrentHeadingLevel: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i32) -> ::windows_sys::core::HRESULT,
     pub CachedHeadingLevel: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUIAutomationElement8 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2355110269, data2: 21521, data3: 19678, data4: [188, 192, 28, 237, 162, 35, 131, 12] };
 }
 #[repr(C)]
 pub struct IUIAutomationElement9 {
@@ -2272,16 +2513,25 @@ pub struct IUIAutomationElement9 {
     #[cfg(not(feature = "Win32_Foundation"))]
     CachedIsDialog: usize,
 }
+impl ::windows_sys::core::Interface for IUIAutomationElement9 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 959602604, data2: 925, data3: 17422, data4: [163, 163, 94, 184, 26, 92, 236, 195] };
+}
 #[repr(C)]
 pub struct IUIAutomationElementArray {
     pub base__: ::windows_sys::core::IUnknown,
     pub Length: unsafe extern "system" fn(this: *mut *mut Self, length: *mut i32) -> ::windows_sys::core::HRESULT,
     pub GetElement: unsafe extern "system" fn(this: *mut *mut Self, index: i32, element: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IUIAutomationElementArray {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 338773397, data2: 46268, data3: 16469, data4: [149, 242, 88, 242, 228, 44, 152, 85] };
+}
 #[repr(C)]
 pub struct IUIAutomationEventHandler {
     pub base__: ::windows_sys::core::IUnknown,
     pub HandleAutomationEvent: unsafe extern "system" fn(this: *mut *mut Self, sender: *mut ::core::ffi::c_void, eventid: i32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUIAutomationEventHandler {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 342637591, data2: 61742, data3: 20002, data4: [140, 39, 248, 148, 185, 183, 156, 105] };
 }
 #[repr(C)]
 pub struct IUIAutomationEventHandlerGroup {
@@ -2294,6 +2544,9 @@ pub struct IUIAutomationEventHandlerGroup {
     pub AddStructureChangedEventHandler: unsafe extern "system" fn(this: *mut *mut Self, scope: TreeScope, cacherequest: *mut ::core::ffi::c_void, handler: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub AddTextEditTextChangedEventHandler: unsafe extern "system" fn(this: *mut *mut Self, scope: TreeScope, texteditchangetype: TextEditChangeType, cacherequest: *mut ::core::ffi::c_void, handler: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IUIAutomationEventHandlerGroup {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3387822834, data2: 49467, data3: 17416, data4: [153, 124, 99, 153, 20, 55, 127, 78] };
+}
 #[repr(C)]
 pub struct IUIAutomationExpandCollapsePattern {
     pub base__: ::windows_sys::core::IUnknown,
@@ -2302,10 +2555,16 @@ pub struct IUIAutomationExpandCollapsePattern {
     pub CurrentExpandCollapseState: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut ExpandCollapseState) -> ::windows_sys::core::HRESULT,
     pub CachedExpandCollapseState: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut ExpandCollapseState) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IUIAutomationExpandCollapsePattern {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1637605510, data2: 8014, data3: 20196, data4: [186, 250, 33, 1, 40, 115, 135, 48] };
+}
 #[repr(C)]
 pub struct IUIAutomationFocusChangedEventHandler {
     pub base__: ::windows_sys::core::IUnknown,
     pub HandleFocusChangedEvent: unsafe extern "system" fn(this: *mut *mut Self, sender: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUIAutomationFocusChangedEventHandler {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3262183093, data2: 23657, data3: 17040, data4: [151, 69, 122, 127, 151, 22, 148, 104] };
 }
 #[repr(C)]
 pub struct IUIAutomationGridItemPattern {
@@ -2321,6 +2580,9 @@ pub struct IUIAutomationGridItemPattern {
     pub CachedRowSpan: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i32) -> ::windows_sys::core::HRESULT,
     pub CachedColumnSpan: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IUIAutomationGridItemPattern {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2029580119, data2: 26307, data3: 19977, data4: [189, 124, 231, 155, 32, 4, 137, 77] };
+}
 #[repr(C)]
 pub struct IUIAutomationGridPattern {
     pub base__: ::windows_sys::core::IUnknown,
@@ -2330,10 +2592,16 @@ pub struct IUIAutomationGridPattern {
     pub CachedRowCount: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i32) -> ::windows_sys::core::HRESULT,
     pub CachedColumnCount: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IUIAutomationGridPattern {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1095515356, data2: 34155, data3: 20315, data4: [133, 56, 49, 49, 198, 48, 37, 80] };
+}
 #[repr(C)]
 pub struct IUIAutomationInvokePattern {
     pub base__: ::windows_sys::core::IUnknown,
     pub Invoke: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUIAutomationInvokePattern {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4214718398, data2: 36518, data3: 18133, data4: [156, 115, 100, 153, 100, 45, 48, 89] };
 }
 #[repr(C)]
 pub struct IUIAutomationItemContainerPattern {
@@ -2342,6 +2610,9 @@ pub struct IUIAutomationItemContainerPattern {
     pub FindItemByProperty: unsafe extern "system" fn(this: *mut *mut Self, pstartafter: *mut ::core::ffi::c_void, propertyid: i32, value: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>, pfound: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     FindItemByProperty: usize,
+}
+impl ::windows_sys::core::Interface for IUIAutomationItemContainerPattern {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3331390898, data2: 10152, data3: 16956, data4: [129, 45, 66, 151, 115, 201, 8, 78] };
 }
 #[repr(C)]
 pub struct IUIAutomationLegacyIAccessiblePattern {
@@ -2410,6 +2681,9 @@ pub struct IUIAutomationLegacyIAccessiblePattern {
     #[cfg(not(feature = "Win32_System_Com"))]
     GetIAccessible: usize,
 }
+impl ::windows_sys::core::Interface for IUIAutomationLegacyIAccessiblePattern {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2189448621, data2: 13659, data3: 17461, data4: [134, 213, 59, 81, 193, 74, 155, 27] };
+}
 #[repr(C)]
 pub struct IUIAutomationMultipleViewPattern {
     pub base__: ::windows_sys::core::IUnknown,
@@ -2429,10 +2703,16 @@ pub struct IUIAutomationMultipleViewPattern {
     #[cfg(not(feature = "Win32_System_Com"))]
     GetCachedSupportedViews: usize,
 }
+impl ::windows_sys::core::Interface for IUIAutomationMultipleViewPattern {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2368027793, data2: 7621, data3: 19381, data4: [177, 143, 173, 225, 111, 164, 149, 232] };
+}
 #[repr(C)]
 pub struct IUIAutomationNotCondition {
     pub base__: IUIAutomationCondition,
     pub GetChild: unsafe extern "system" fn(this: *mut *mut Self, condition: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUIAutomationNotCondition {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4113086039, data2: 33915, data3: 18828, data4: [136, 150, 213, 43, 86, 84, 7, 161] };
 }
 #[repr(C)]
 pub struct IUIAutomationNotificationEventHandler {
@@ -2442,10 +2722,16 @@ pub struct IUIAutomationNotificationEventHandler {
     #[cfg(not(feature = "Win32_Foundation"))]
     HandleNotificationEvent: usize,
 }
+impl ::windows_sys::core::Interface for IUIAutomationNotificationEventHandler {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3351979575, data2: 59074, data3: 19724, data4: [133, 222, 73, 72, 192, 33, 117, 199] };
+}
 #[repr(C)]
 pub struct IUIAutomationObjectModelPattern {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetUnderlyingObjectModel: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUIAutomationObjectModelPattern {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1908573363, data2: 49485, data3: 19732, data4: [152, 30, 25, 117, 27, 13, 117, 109] };
 }
 #[repr(C)]
 pub struct IUIAutomationOrCondition {
@@ -2457,11 +2743,17 @@ pub struct IUIAutomationOrCondition {
     #[cfg(not(feature = "Win32_System_Com"))]
     GetChildren: usize,
 }
+impl ::windows_sys::core::Interface for IUIAutomationOrCondition {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2270425138, data2: 15793, data3: 18357, data4: [161, 252, 110, 52, 162, 102, 199, 18] };
+}
 #[repr(C)]
 pub struct IUIAutomationPatternHandler {
     pub base__: ::windows_sys::core::IUnknown,
     pub CreateClientWrapper: unsafe extern "system" fn(this: *mut *mut Self, ppatterninstance: *mut ::core::ffi::c_void, pclientwrapper: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Dispatch: unsafe extern "system" fn(this: *mut *mut Self, ptarget: *mut ::core::ffi::c_void, index: u32, pparams: *const UIAutomationParameter, cparams: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUIAutomationPatternHandler {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3648004851, data2: 43335, data3: 18014, data4: [139, 42, 172, 67, 21, 250, 84, 232] };
 }
 #[repr(C)]
 pub struct IUIAutomationPatternInstance {
@@ -2472,6 +2764,9 @@ pub struct IUIAutomationPatternInstance {
     GetProperty: usize,
     pub CallMethod: unsafe extern "system" fn(this: *mut *mut Self, index: u32, pparams: *const UIAutomationParameter, cparams: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IUIAutomationPatternInstance {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3225059300, data2: 37937, data3: 16543, data4: [190, 216, 174, 124, 34, 153, 188, 141] };
+}
 #[repr(C)]
 pub struct IUIAutomationPropertyChangedEventHandler {
     pub base__: ::windows_sys::core::IUnknown,
@@ -2479,6 +2774,9 @@ pub struct IUIAutomationPropertyChangedEventHandler {
     pub HandlePropertyChangedEvent: unsafe extern "system" fn(this: *mut *mut Self, sender: *mut ::core::ffi::c_void, propertyid: i32, newvalue: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     HandlePropertyChangedEvent: usize,
+}
+impl ::windows_sys::core::Interface for IUIAutomationPropertyChangedEventHandler {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1087190996, data2: 51030, data3: 19212, data4: [140, 111, 189, 223, 238, 177, 59, 80] };
 }
 #[repr(C)]
 pub struct IUIAutomationPropertyCondition {
@@ -2489,6 +2787,9 @@ pub struct IUIAutomationPropertyCondition {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     PropertyValue: usize,
     pub PropertyConditionFlags: unsafe extern "system" fn(this: *mut *mut Self, flags: *mut PropertyConditionFlags) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUIAutomationPropertyCondition {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2582377163, data2: 21880, data3: 16999, data4: [154, 212, 175, 214, 234, 119, 233, 75] };
 }
 #[repr(C)]
 pub struct IUIAutomationProxyFactory {
@@ -2501,6 +2802,9 @@ pub struct IUIAutomationProxyFactory {
     pub ProxyFactoryId: unsafe extern "system" fn(this: *mut *mut Self, factoryid: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     ProxyFactoryId: usize,
+}
+impl ::windows_sys::core::Interface for IUIAutomationProxyFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2243514061, data2: 33949, data3: 17078, data4: [185, 77, 214, 219, 35, 253, 245, 164] };
 }
 #[repr(C)]
 pub struct IUIAutomationProxyFactoryEntry {
@@ -2549,6 +2853,9 @@ pub struct IUIAutomationProxyFactoryEntry {
     #[cfg(not(feature = "Win32_System_Com"))]
     GetWinEventsForAutomationEvent: usize,
 }
+impl ::windows_sys::core::Interface for IUIAutomationProxyFactoryEntry {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3574482734, data2: 46667, data3: 18700, data4: [188, 161, 211, 6, 150, 249, 242, 137] };
+}
 #[repr(C)]
 pub struct IUIAutomationProxyFactoryMapping {
     pub base__: ::windows_sys::core::IUnknown,
@@ -2570,6 +2877,9 @@ pub struct IUIAutomationProxyFactoryMapping {
     pub RemoveEntry: unsafe extern "system" fn(this: *mut *mut Self, index: u32) -> ::windows_sys::core::HRESULT,
     pub ClearTable: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub RestoreDefaultTable: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUIAutomationProxyFactoryMapping {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 165879320, data2: 34605, data3: 18547, data4: [147, 209, 30, 84, 30, 193, 51, 253] };
 }
 #[repr(C)]
 pub struct IUIAutomationRangeValuePattern {
@@ -2594,6 +2904,9 @@ pub struct IUIAutomationRangeValuePattern {
     pub CachedLargeChange: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut f64) -> ::windows_sys::core::HRESULT,
     pub CachedSmallChange: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut f64) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IUIAutomationRangeValuePattern {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1495351119, data2: 29510, data3: 18917, data4: [177, 32, 128, 85, 89, 135, 161, 72] };
+}
 #[repr(C)]
 pub struct IUIAutomationRegistrar {
     pub base__: ::windows_sys::core::IUnknown,
@@ -2604,10 +2917,16 @@ pub struct IUIAutomationRegistrar {
     #[cfg(not(feature = "Win32_Foundation"))]
     RegisterPattern: usize,
 }
+impl ::windows_sys::core::Interface for IUIAutomationRegistrar {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2248787180, data2: 18970, data3: 19848, data4: [163, 87, 90, 102, 224, 96, 225, 207] };
+}
 #[repr(C)]
 pub struct IUIAutomationScrollItemPattern {
     pub base__: ::windows_sys::core::IUnknown,
     pub ScrollIntoView: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUIAutomationScrollItemPattern {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3028824079, data2: 53269, data3: 20249, data4: [156, 41, 187, 89, 94, 54, 69, 239] };
 }
 #[repr(C)]
 pub struct IUIAutomationScrollPattern {
@@ -2639,6 +2958,9 @@ pub struct IUIAutomationScrollPattern {
     #[cfg(not(feature = "Win32_Foundation"))]
     CachedVerticallyScrollable: usize,
 }
+impl ::windows_sys::core::Interface for IUIAutomationScrollPattern {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2297746474, data2: 59521, data3: 17821, data4: [167, 124, 115, 187, 187, 126, 2, 220] };
+}
 #[repr(C)]
 pub struct IUIAutomationSelectionItemPattern {
     pub base__: ::windows_sys::core::IUnknown,
@@ -2655,6 +2977,9 @@ pub struct IUIAutomationSelectionItemPattern {
     #[cfg(not(feature = "Win32_Foundation"))]
     CachedIsSelected: usize,
     pub CachedSelectionContainer: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUIAutomationSelectionItemPattern {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2834277994, data2: 4058, data3: 16922, data4: [145, 148, 56, 2, 31, 53, 120, 234] };
 }
 #[repr(C)]
 pub struct IUIAutomationSelectionPattern {
@@ -2678,6 +3003,9 @@ pub struct IUIAutomationSelectionPattern {
     #[cfg(not(feature = "Win32_Foundation"))]
     CachedIsSelectionRequired: usize,
 }
+impl ::windows_sys::core::Interface for IUIAutomationSelectionPattern {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1591025710, data2: 45740, data3: 18342, data4: [182, 56, 75, 11, 241, 64, 215, 142] };
+}
 #[repr(C)]
 pub struct IUIAutomationSelectionPattern2 {
     pub base__: IUIAutomationSelectionPattern,
@@ -2689,6 +3017,9 @@ pub struct IUIAutomationSelectionPattern2 {
     pub CachedLastSelectedItem: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub CachedCurrentSelectedItem: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub CachedItemCount: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUIAutomationSelectionPattern2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 87211950, data2: 49169, data3: 20018, data4: [163, 67, 109, 100, 45, 121, 133, 85] };
 }
 #[repr(C)]
 pub struct IUIAutomationSpreadsheetItemPattern {
@@ -2712,6 +3043,9 @@ pub struct IUIAutomationSpreadsheetItemPattern {
     #[cfg(not(feature = "Win32_System_Com"))]
     GetCachedAnnotationTypes: usize,
 }
+impl ::windows_sys::core::Interface for IUIAutomationSpreadsheetItemPattern {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2102376556, data2: 36148, data3: 16609, data4: [142, 131, 98, 193, 82, 4, 227, 53] };
+}
 #[repr(C)]
 pub struct IUIAutomationSpreadsheetPattern {
     pub base__: ::windows_sys::core::IUnknown,
@@ -2720,6 +3054,9 @@ pub struct IUIAutomationSpreadsheetPattern {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetItemByName: usize,
 }
+impl ::windows_sys::core::Interface for IUIAutomationSpreadsheetPattern {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1964484552, data2: 64174, data3: 19945, data4: [159, 8, 41, 185, 30, 133, 149, 193] };
+}
 #[repr(C)]
 pub struct IUIAutomationStructureChangedEventHandler {
     pub base__: ::windows_sys::core::IUnknown,
@@ -2727,6 +3064,9 @@ pub struct IUIAutomationStructureChangedEventHandler {
     pub HandleStructureChangedEvent: unsafe extern "system" fn(this: *mut *mut Self, sender: *mut ::core::ffi::c_void, changetype: StructureChangeType, runtimeid: *const super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     HandleStructureChangedEvent: usize,
+}
+impl ::windows_sys::core::Interface for IUIAutomationStructureChangedEventHandler {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3894221646, data2: 4549, data3: 17144, data4: [151, 84, 231, 3, 108, 121, 240, 84] };
 }
 #[repr(C)]
 pub struct IUIAutomationStylesPattern {
@@ -2778,11 +3118,17 @@ pub struct IUIAutomationStylesPattern {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetCachedExtendedPropertiesAsArray: usize,
 }
+impl ::windows_sys::core::Interface for IUIAutomationStylesPattern {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2243293346, data2: 48505, data3: 18506, data4: [173, 43, 56, 140, 152, 56, 213, 251] };
+}
 #[repr(C)]
 pub struct IUIAutomationSynchronizedInputPattern {
     pub base__: ::windows_sys::core::IUnknown,
     pub StartListening: unsafe extern "system" fn(this: *mut *mut Self, inputtype: SynchronizedInputType) -> ::windows_sys::core::HRESULT,
     pub Cancel: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUIAutomationSynchronizedInputPattern {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 573816331, data2: 44983, data3: 17547, data4: [159, 218, 59, 55, 138, 165, 234, 225] };
 }
 #[repr(C)]
 pub struct IUIAutomationTableItemPattern {
@@ -2791,6 +3137,9 @@ pub struct IUIAutomationTableItemPattern {
     pub GetCurrentColumnHeaderItems: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetCachedRowHeaderItems: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetCachedColumnHeaderItems: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUIAutomationTableItemPattern {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 194399923, data2: 61230, data3: 17508, data4: [156, 121, 97, 214, 23, 55, 162, 126] };
 }
 #[repr(C)]
 pub struct IUIAutomationTablePattern {
@@ -2802,17 +3151,26 @@ pub struct IUIAutomationTablePattern {
     pub GetCachedColumnHeaders: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub CachedRowOrColumnMajor: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut RowOrColumnMajor) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IUIAutomationTablePattern {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1645111580, data2: 60054, data3: 18192, data4: [168, 80, 117, 75, 36, 206, 36, 23] };
+}
 #[repr(C)]
 pub struct IUIAutomationTextChildPattern {
     pub base__: ::windows_sys::core::IUnknown,
     pub TextContainer: unsafe extern "system" fn(this: *mut *mut Self, container: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub TextRange: unsafe extern "system" fn(this: *mut *mut Self, range: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IUIAutomationTextChildPattern {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1699917880, data2: 44549, data3: 16584, data4: [171, 253, 170, 8, 53, 42, 171, 134] };
+}
 #[repr(C)]
 pub struct IUIAutomationTextEditPattern {
     pub base__: IUIAutomationTextPattern,
     pub GetActiveComposition: unsafe extern "system" fn(this: *mut *mut Self, range: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetConversionTarget: unsafe extern "system" fn(this: *mut *mut Self, range: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUIAutomationTextEditPattern {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 400692598, data2: 39276, data3: 18544, data4: [153, 217, 191, 243, 35, 56, 12, 6] };
 }
 #[repr(C)]
 pub struct IUIAutomationTextEditTextChangedEventHandler {
@@ -2821,6 +3179,9 @@ pub struct IUIAutomationTextEditTextChangedEventHandler {
     pub HandleTextEditTextChangedEvent: unsafe extern "system" fn(this: *mut *mut Self, sender: *mut ::core::ffi::c_void, texteditchangetype: TextEditChangeType, eventstrings: *const super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     HandleTextEditTextChangedEvent: usize,
+}
+impl ::windows_sys::core::Interface for IUIAutomationTextEditTextChangedEventHandler {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2465900160, data2: 59140, data3: 16726, data4: [147, 26, 227, 45, 91, 179, 143, 63] };
 }
 #[repr(C)]
 pub struct IUIAutomationTextPattern {
@@ -2835,6 +3196,9 @@ pub struct IUIAutomationTextPattern {
     pub DocumentRange: unsafe extern "system" fn(this: *mut *mut Self, range: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SupportedTextSelection: unsafe extern "system" fn(this: *mut *mut Self, supportedtextselection: *mut SupportedTextSelection) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IUIAutomationTextPattern {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 854303369, data2: 13699, data3: 17097, data4: [156, 89, 59, 109, 154, 30, 155, 106] };
+}
 #[repr(C)]
 pub struct IUIAutomationTextPattern2 {
     pub base__: IUIAutomationTextPattern,
@@ -2843,6 +3207,9 @@ pub struct IUIAutomationTextPattern2 {
     pub GetCaretRange: unsafe extern "system" fn(this: *mut *mut Self, isactive: *mut super::super::Foundation::BOOL, range: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetCaretRange: usize,
+}
+impl ::windows_sys::core::Interface for IUIAutomationTextPattern2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1349161498, data2: 64713, data3: 16543, data4: [178, 59, 55, 235, 116, 16, 104, 114] };
 }
 #[repr(C)]
 pub struct IUIAutomationTextRange {
@@ -2887,10 +3254,16 @@ pub struct IUIAutomationTextRange {
     ScrollIntoView: usize,
     pub GetChildren: unsafe extern "system" fn(this: *mut *mut Self, children: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IUIAutomationTextRange {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2772683882, data2: 62638, data3: 18763, data4: [130, 57, 200, 20, 72, 17, 135, 168] };
+}
 #[repr(C)]
 pub struct IUIAutomationTextRange2 {
     pub base__: IUIAutomationTextRange,
     pub ShowContextMenu: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUIAutomationTextRange2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3147514080, data2: 24068, data3: 18109, data4: [155, 224, 75, 96, 27, 154, 250, 212] };
 }
 #[repr(C)]
 pub struct IUIAutomationTextRange3 {
@@ -2902,11 +3275,17 @@ pub struct IUIAutomationTextRange3 {
     #[cfg(not(feature = "Win32_System_Com"))]
     GetAttributeValues: usize,
 }
+impl ::windows_sys::core::Interface for IUIAutomationTextRange3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1781620073, data2: 21778, data3: 19502, data4: [133, 240, 83, 252, 230, 221, 75, 194] };
+}
 #[repr(C)]
 pub struct IUIAutomationTextRangeArray {
     pub base__: ::windows_sys::core::IUnknown,
     pub Length: unsafe extern "system" fn(this: *mut *mut Self, length: *mut i32) -> ::windows_sys::core::HRESULT,
     pub GetElement: unsafe extern "system" fn(this: *mut *mut Self, index: i32, element: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUIAutomationTextRangeArray {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3461015402, data2: 59159, data3: 19608, data4: [129, 234, 71, 55, 29, 2, 142, 182] };
 }
 #[repr(C)]
 pub struct IUIAutomationTogglePattern {
@@ -2914,6 +3293,9 @@ pub struct IUIAutomationTogglePattern {
     pub Toggle: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub CurrentToggleState: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut ToggleState) -> ::windows_sys::core::HRESULT,
     pub CachedToggleState: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut ToggleState) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUIAutomationTogglePattern {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2496626776, data2: 39821, data3: 19129, data4: [139, 253, 76, 208, 163, 60, 140, 112] };
 }
 #[repr(C)]
 pub struct IUIAutomationTransformPattern {
@@ -2946,6 +3328,9 @@ pub struct IUIAutomationTransformPattern {
     #[cfg(not(feature = "Win32_Foundation"))]
     CachedCanRotate: usize,
 }
+impl ::windows_sys::core::Interface for IUIAutomationTransformPattern {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2847234116, data2: 42333, data3: 20208, data4: [146, 109, 86, 156, 22, 255, 137, 187] };
+}
 #[repr(C)]
 pub struct IUIAutomationTransformPattern2 {
     pub base__: IUIAutomationTransformPattern,
@@ -2966,6 +3351,9 @@ pub struct IUIAutomationTransformPattern2 {
     pub CurrentZoomMaximum: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut f64) -> ::windows_sys::core::HRESULT,
     pub CachedZoomMaximum: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut f64) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IUIAutomationTransformPattern2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1836371991, data2: 28363, data3: 17281, data4: [179, 139, 60, 23, 164, 143, 241, 194] };
+}
 #[repr(C)]
 pub struct IUIAutomationTreeWalker {
     pub base__: ::windows_sys::core::IUnknown,
@@ -2982,6 +3370,9 @@ pub struct IUIAutomationTreeWalker {
     pub GetPreviousSiblingElementBuildCache: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, cacherequest: *mut ::core::ffi::c_void, previous: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub NormalizeElementBuildCache: unsafe extern "system" fn(this: *mut *mut Self, element: *mut ::core::ffi::c_void, cacherequest: *mut ::core::ffi::c_void, normalized: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Condition: unsafe extern "system" fn(this: *mut *mut Self, condition: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUIAutomationTreeWalker {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1078117924, data2: 14492, data3: 19196, data4: [166, 48, 157, 248, 84, 165, 65, 252] };
 }
 #[repr(C)]
 pub struct IUIAutomationValuePattern {
@@ -3007,10 +3398,16 @@ pub struct IUIAutomationValuePattern {
     #[cfg(not(feature = "Win32_Foundation"))]
     CachedIsReadOnly: usize,
 }
+impl ::windows_sys::core::Interface for IUIAutomationValuePattern {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2840385713, data2: 2116, data3: 19670, data4: [157, 45, 100, 5, 55, 171, 57, 233] };
+}
 #[repr(C)]
 pub struct IUIAutomationVirtualizedItemPattern {
     pub base__: ::windows_sys::core::IUnknown,
     pub Realize: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUIAutomationVirtualizedItemPattern {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1805899686, data2: 1231, data3: 20241, data4: [135, 147, 168, 209, 205, 233, 150, 159] };
 }
 #[repr(C)]
 pub struct IUIAutomationWindowPattern {
@@ -3058,6 +3455,9 @@ pub struct IUIAutomationWindowPattern {
     pub CachedWindowVisualState: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut WindowVisualState) -> ::windows_sys::core::HRESULT,
     pub CachedWindowInteractionState: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut WindowInteractionState) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IUIAutomationWindowPattern {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 263124051, data2: 37384, data3: 17391, data4: [187, 178, 59, 72, 81, 119, 134, 79] };
+}
 #[repr(C)]
 pub struct IValueProvider {
     pub base__: ::windows_sys::core::IUnknown,
@@ -3071,10 +3471,16 @@ pub struct IValueProvider {
     #[cfg(not(feature = "Win32_Foundation"))]
     IsReadOnly: usize,
 }
+impl ::windows_sys::core::Interface for IValueProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3348320640, data2: 28595, data3: 16897, data4: [177, 116, 125, 247, 58, 219, 246, 74] };
+}
 #[repr(C)]
 pub struct IVirtualizedItemProvider {
     pub base__: ::windows_sys::core::IUnknown,
     pub Realize: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IVirtualizedItemProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3415783013, data2: 11573, data3: 20396, data4: [173, 53, 243, 198, 13, 12, 11, 139] };
 }
 #[repr(C)]
 pub struct IWindowProvider {
@@ -3103,6 +3509,9 @@ pub struct IWindowProvider {
     pub IsTopmost: unsafe extern "system" fn(this: *mut *mut Self, pretval: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     IsTopmost: usize,
+}
+impl ::windows_sys::core::Interface for IWindowProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2558392187, data2: 56070, data3: 19831, data4: [143, 138, 134, 169, 195, 187, 144, 185] };
 }
 pub const Image_Control_GUID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 758593252, data2: 27414, data3: 19543, data4: [169, 98, 249, 50, 96, 167, 82, 67] };
 pub const InputDiscarded_Event_GUID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2134295399, data2: 31512, data3: 16764, data4: [151, 227, 157, 88, 221, 201, 68, 171] };

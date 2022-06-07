@@ -11,6 +11,9 @@ pub struct IItemEnumerator {
     MoveNext: usize,
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IItemEnumerator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2675801015, data2: 8371, data3: 4570, data4: [129, 165, 0, 48, 241, 100, 46, 60] };
+}
 #[repr(C)]
 pub struct ISettingsContext {
     pub base__: ::windows_sys::core::IUnknown,
@@ -27,6 +30,9 @@ pub struct ISettingsContext {
     pub GetNamespaces: unsafe extern "system" fn(this: *mut *mut Self, ppnamespaceids: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetStoredSettings: unsafe extern "system" fn(this: *mut *mut Self, pidentity: *mut ::core::ffi::c_void, ppaddedsettings: *mut *mut ::core::ffi::c_void, ppmodifiedsettings: *mut *mut ::core::ffi::c_void, ppdeletedsettings: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub RevertSetting: unsafe extern "system" fn(this: *mut *mut Self, pidentity: *mut ::core::ffi::c_void, pwzsetting: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISettingsContext {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2675801021, data2: 8371, data3: 4570, data4: [129, 165, 0, 48, 241, 100, 46, 60] };
 }
 #[repr(C)]
 pub struct ISettingsEngine {
@@ -57,6 +63,9 @@ pub struct ISettingsEngine {
     pub ApplySettingsContext: unsafe extern "system" fn(this: *mut *mut Self, settingscontext: *mut ::core::ffi::c_void, pppwzidentities: *mut *mut ::windows_sys::core::PWSTR, pcidentities: *mut usize) -> ::windows_sys::core::HRESULT,
     pub GetSettingsContext: unsafe extern "system" fn(this: *mut *mut Self, settingscontext: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISettingsEngine {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2675801017, data2: 8371, data3: 4570, data4: [129, 165, 0, 48, 241, 100, 46, 60] };
+}
 #[repr(C)]
 pub struct ISettingsIdentity {
     pub base__: ::windows_sys::core::IUnknown,
@@ -67,6 +76,9 @@ pub struct ISettingsIdentity {
     pub SetAttribute: unsafe extern "system" fn(this: *mut *mut Self, reserved: *const ::core::ffi::c_void, name: ::windows_sys::core::PCWSTR, value: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
     pub GetFlags: unsafe extern "system" fn(this: *mut *mut Self, flags: *mut u32) -> ::windows_sys::core::HRESULT,
     pub SetFlags: unsafe extern "system" fn(this: *mut *mut Self, flags: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISettingsIdentity {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2675801014, data2: 8371, data3: 4570, data4: [129, 165, 0, 48, 241, 100, 46, 60] };
 }
 #[repr(C)]
 pub struct ISettingsItem {
@@ -124,6 +136,9 @@ pub struct ISettingsItem {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     GetKeyValue: usize,
 }
+impl ::windows_sys::core::Interface for ISettingsItem {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2675801019, data2: 8371, data3: 4570, data4: [129, 165, 0, 48, 241, 100, 46, 60] };
+}
 #[repr(C)]
 pub struct ISettingsNamespace {
     pub base__: ::windows_sys::core::IUnknown,
@@ -140,6 +155,9 @@ pub struct ISettingsNamespace {
     pub GetAttribute: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::PCWSTR, value: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     GetAttribute: usize,
+}
+impl ::windows_sys::core::Interface for ISettingsNamespace {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2675801018, data2: 8371, data3: 4570, data4: [129, 165, 0, 48, 241, 100, 46, 60] };
 }
 #[repr(C)]
 pub struct ISettingsResult {
@@ -159,6 +177,9 @@ pub struct ISettingsResult {
     pub GetSource: unsafe extern "system" fn(this: *mut *mut Self, file: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetSource: usize,
+}
+impl ::windows_sys::core::Interface for ISettingsResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2675801020, data2: 8371, data3: 4570, data4: [129, 165, 0, 48, 241, 100, 46, 60] };
 }
 #[repr(C)]
 pub struct ITargetInfo {
@@ -217,6 +238,9 @@ pub struct ITargetInfo {
     pub GetSchemaHiveMountName: unsafe extern "system" fn(this: *mut *mut Self, pmountname: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetSchemaHiveMountName: usize,
+}
+impl ::windows_sys::core::Interface for ITargetInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2675801016, data2: 8371, data3: 4570, data4: [129, 165, 0, 48, 241, 100, 46, 60] };
 }
 #[doc = "*Required features: `\"Win32_System_SettingsManagementInfrastructure\"`*"]
 pub const LIMITED_VALIDATION_MODE: u32 = 1u32;

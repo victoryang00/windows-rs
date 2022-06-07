@@ -41,6 +41,9 @@ impl ::core::clone::Clone for DisplayId {
 pub struct IGeometrySource2D {
     pub base__: ::windows_sys::core::IInspectable,
 }
+impl ::windows_sys::core::Interface for IGeometrySource2D {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3405740290, data2: 26380, data3: 16769, data4: [166, 36, 218, 151, 114, 3, 184, 69] };
+}
 #[repr(C)]
 #[doc = "*Required features: `\"Graphics\"`*"]
 pub struct PointInt32 {

@@ -539,6 +539,9 @@ pub struct IGPEInformation {
     #[cfg(not(feature = "Win32_Foundation"))]
     PolicyChanged: usize,
 }
+impl ::windows_sys::core::Interface for IGPEInformation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2411771701, data2: 41185, data3: 4561, data4: [167, 211, 0, 0, 248, 117, 113, 227] };
+}
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IGPM {
@@ -593,6 +596,10 @@ pub struct IGPM {
     InitializeReporting: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IGPM {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4126861321, data2: 15318, data3: 19881, data4: [166, 94, 23, 102, 91, 65, 215, 99] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IGPM2 {
     pub base__: IGPM,
@@ -606,10 +613,18 @@ pub struct IGPM2 {
     InitializeReportingEx: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IGPM2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2330506, data2: 15750, data3: 16812, data4: [143, 94, 6, 166, 99, 138, 99, 74] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IGPMAsyncCancel {
     pub base__: super::Com::IDispatch,
     pub Cancel: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IGPMAsyncCancel {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3720771412, data2: 48743, data3: 17729, data4: [129, 102, 244, 129, 102, 134, 140, 156] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -619,6 +634,10 @@ pub struct IGPMAsyncProgress {
     pub Status: unsafe extern "system" fn(this: *mut *mut Self, lprogressnumerator: i32, lprogressdenominator: i32, hrstatus: ::windows_sys::core::HRESULT, presult: *const super::Com::VARIANT, ppigpmstatusmsgcollection: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     Status: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IGPMAsyncProgress {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1789667832, data2: 22856, data3: 17188, data4: [191, 112, 66, 56, 24, 148, 45, 188] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -660,6 +679,10 @@ pub struct IGPMBackup {
     GenerateReportToFile: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IGPMBackup {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3634457141, data2: 15117, data3: 16747, data4: [141, 2, 77, 246, 249, 90, 113, 25] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IGPMBackupCollection {
     pub base__: super::Com::IDispatch,
@@ -672,6 +695,10 @@ pub struct IGPMBackupCollection {
     pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, ppigpmbackup: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Ole"))]
     _NewEnum: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IGPMBackupCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3347512335, data2: 9944, data3: 19371, data4: [167, 69, 57, 202, 126, 128, 12, 172] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -689,6 +716,10 @@ pub struct IGPMBackupDir {
     pub SearchBackups: unsafe extern "system" fn(this: *mut *mut Self, pigpmsearchcriteria: *mut ::core::ffi::c_void, ppigpmbackupcollection: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     SearchBackups: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IGPMBackupDir {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2975239149, data2: 2707, data3: 19148, data4: [129, 15, 175, 231, 8, 16, 25, 185] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -709,6 +740,10 @@ pub struct IGPMBackupDirEx {
     SearchBackups: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IGPMBackupDirEx {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4175189485, data2: 15264, data3: 18532, data4: [170, 212, 211, 101, 24, 158, 225, 213] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IGPMCSECollection {
     pub base__: super::Com::IDispatch,
@@ -721,6 +756,10 @@ pub struct IGPMCSECollection {
     pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, ppigpmcses: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Ole"))]
     _NewEnum: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IGPMCSECollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 777169277, data2: 2634, data3: 19055, data4: [133, 219, 32, 22, 34, 69, 93, 160] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -736,6 +775,10 @@ pub struct IGPMClientSideExtension {
     DisplayName: usize,
     pub IsUserEnabled: unsafe extern "system" fn(this: *mut *mut Self, pvbenabled: *mut i16) -> ::windows_sys::core::HRESULT,
     pub IsComputerEnabled: unsafe extern "system" fn(this: *mut *mut Self, pvbenabled: *mut i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IGPMClientSideExtension {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1775924360, data2: 47323, data3: 16734, data4: [146, 102, 144, 27, 228, 212, 153, 40] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -803,6 +846,10 @@ pub struct IGPMConstants {
     pub RsopPlanningAssumeCompWQLFilterTrue: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IGPMConstants {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1357870054, data2: 54108, data3: 19597, data4: [190, 99, 126, 165, 210, 170, 197, 196] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IGPMConstants2 {
     pub base__: IGPMConstants,
@@ -821,6 +868,10 @@ pub struct IGPMConstants2 {
     pub PermStarterGPOCustom: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMPermissionType) -> ::windows_sys::core::HRESULT,
     pub ReportLegacy: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMReportingOptions) -> ::windows_sys::core::HRESULT,
     pub ReportComments: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut GPMReportingOptions) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IGPMConstants2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 95297968, data2: 44041, data3: 16434, data4: [162, 111, 158, 125, 167, 134, 220, 25] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -868,6 +919,10 @@ pub struct IGPMDomain {
     SearchWMIFilters: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IGPMDomain {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1797377044, data2: 23040, data3: 20292, data4: [167, 56, 254, 236, 138, 148, 199, 227] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IGPMDomain2 {
     pub base__: IGPMDomain,
@@ -897,6 +952,10 @@ pub struct IGPMDomain2 {
     RestoreStarterGPO: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IGPMDomain2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2091301771, data2: 61931, data3: 18698, data4: [147, 141, 60, 78, 81, 199, 104, 230] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IGPMDomain3 {
     pub base__: IGPMDomain2,
@@ -913,6 +972,10 @@ pub struct IGPMDomain3 {
     #[cfg(not(feature = "Win32_Foundation"))]
     SetInfrastructureDC: usize,
     pub SetInfrastructureFlags: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IGPMDomain3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 7863806, data2: 35015, data3: 19151, data4: [161, 29, 209, 10, 124, 49, 10, 3] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -997,6 +1060,10 @@ pub struct IGPMGPO {
     pub MakeACLConsistent: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IGPMGPO {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1489781586, data2: 7331, data3: 18661, data4: [152, 100, 29, 164, 214, 224, 214, 15] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IGPMGPO2 {
     pub base__: IGPMGPO,
@@ -1008,6 +1075,10 @@ pub struct IGPMGPO2 {
     pub SetDescription: unsafe extern "system" fn(this: *mut *mut Self, newval: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     SetDescription: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IGPMGPO2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2321981968, data2: 46987, data3: 19865, data4: [136, 226, 195, 6, 168, 23, 201, 37] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1024,6 +1095,10 @@ pub struct IGPMGPO3 {
     pub SetInfrastructureFlags: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IGPMGPO3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2096178081, data2: 63818, data3: 16658, data4: [191, 174, 106, 161, 219, 156, 178, 72] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IGPMGPOCollection {
     pub base__: super::Com::IDispatch,
@@ -1036,6 +1111,10 @@ pub struct IGPMGPOCollection {
     pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, ppigpmgpos: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Ole"))]
     _NewEnum: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IGPMGPOCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4042315215, data2: 28874, data3: 19513, data4: [158, 41, 182, 66, 248, 114, 108, 1] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1061,6 +1140,10 @@ pub struct IGPMGPOLink {
     pub Delete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IGPMGPOLink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1129028029, data2: 24039, data3: 18314, data4: [128, 156, 194, 81, 114, 29, 247, 12] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IGPMGPOLinksCollection {
     pub base__: super::Com::IDispatch,
@@ -1073,6 +1156,10 @@ pub struct IGPMGPOLinksCollection {
     pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, ppigpmlinks: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Ole"))]
     _NewEnum: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IGPMGPOLinksCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 412973928, data2: 5821, data3: 19725, data4: [162, 236, 46, 106, 162, 40, 140, 127] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1090,6 +1177,10 @@ pub struct IGPMMapEntry {
     pub EntryType: unsafe extern "system" fn(this: *mut *mut Self, pgpmentrytype: *mut GPMEntryType) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IGPMMapEntry {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2390338822, data2: 9089, data3: 17476, data4: [190, 76, 255, 105, 62, 110, 111, 43] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IGPMMapEntryCollection {
     pub base__: super::Com::IDispatch,
@@ -1102,6 +1193,10 @@ pub struct IGPMMapEntryCollection {
     pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Ole"))]
     _NewEnum: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IGPMMapEntryCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3138122907, data2: 58687, data3: 17471, data4: [184, 7, 139, 226, 43, 251, 109, 66] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1141,6 +1236,10 @@ pub struct IGPMMigrationTable {
     GetEntries: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IGPMMigrationTable {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1224221617, data2: 61359, data3: 18187, data4: [182, 237, 64, 209, 78, 225, 164, 236] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IGPMPermission {
     pub base__: super::Com::IDispatch,
@@ -1152,6 +1251,10 @@ pub struct IGPMPermission {
     pub Trustee: unsafe extern "system" fn(this: *mut *mut Self, ppigpmtrustee: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     Trustee: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IGPMPermission {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 904645184, data2: 57761, data3: 18946, data4: [137, 5, 215, 148, 22, 251, 70, 74] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1278,6 +1381,10 @@ pub struct IGPMRSOP {
     GenerateReportToFile: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IGPMRSOP {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1240299610, data2: 12855, data3: 20466, data4: [177, 240, 253, 245, 168, 213, 161, 238] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IGPMResult {
     pub base__: super::Com::IDispatch,
@@ -1290,6 +1397,10 @@ pub struct IGPMResult {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     Result: usize,
     pub OverallStatus: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IGPMResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2262824937, data2: 63343, data3: 17067, data4: [149, 112, 206, 188, 107, 232, 165, 45] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1328,6 +1439,10 @@ pub struct IGPMSOM {
     SetSecurityInfo: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IGPMSOM {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3232231582, data2: 1441, data3: 20236, data4: [129, 88, 158, 92, 51, 104, 79, 107] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IGPMSOMCollection {
     pub base__: super::Com::IDispatch,
@@ -1342,6 +1457,10 @@ pub struct IGPMSOMCollection {
     _NewEnum: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IGPMSOMCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2915133582, data2: 228, data3: 17557, data4: [171, 186, 190, 210, 0, 223, 12, 171] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IGPMSearchCriteria {
     pub base__: super::Com::IDispatch,
@@ -1349,6 +1468,10 @@ pub struct IGPMSearchCriteria {
     pub Add: unsafe extern "system" fn(this: *mut *mut Self, searchproperty: GPMSearchProperty, searchoperation: GPMSearchOperation, varvalue: ::core::mem::ManuallyDrop<super::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     Add: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IGPMSearchCriteria {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3606125634, data2: 33435, data3: 18644, data4: [131, 245, 54, 21, 182, 125, 252, 34] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1377,6 +1500,10 @@ pub struct IGPMSecurityInfo {
     RemoveTrustee: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IGPMSecurityInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3066240724, data2: 7315, data3: 19774, data4: [174, 132, 235, 109, 97, 22, 27, 96] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IGPMSitesContainer {
     pub base__: super::Com::IDispatch,
@@ -1400,6 +1527,10 @@ pub struct IGPMSitesContainer {
     pub SearchSites: unsafe extern "system" fn(this: *mut *mut Self, pigpmsearchcriteria: *mut ::core::ffi::c_void, ppigpmsomcollection: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     SearchSites: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IGPMSitesContainer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1193650329, data2: 10114, data3: 19751, data4: [166, 187, 212, 153, 36, 111, 253, 114] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1473,6 +1604,10 @@ pub struct IGPMStarterGPO {
     SetSecurityInfo: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IGPMStarterGPO {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3754161691, data2: 34944, data3: 17552, data4: [147, 55, 210, 156, 123, 168, 194, 240] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IGPMStarterGPOBackup {
     pub base__: super::Com::IDispatch,
@@ -1513,6 +1648,10 @@ pub struct IGPMStarterGPOBackup {
     GenerateReportToFile: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IGPMStarterGPOBackup {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1373212378, data2: 43134, data3: 17373, data4: [184, 10, 11, 102, 239, 25, 56, 214] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IGPMStarterGPOBackupCollection {
     pub base__: super::Com::IDispatch,
@@ -1527,6 +1666,10 @@ pub struct IGPMStarterGPOBackupCollection {
     _NewEnum: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IGPMStarterGPOBackupCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3382182685, data2: 44496, data3: 19381, data4: [141, 234, 41, 133, 5, 216, 66, 59] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IGPMStarterGPOCollection {
     pub base__: super::Com::IDispatch,
@@ -1539,6 +1682,10 @@ pub struct IGPMStarterGPOCollection {
     pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, ppigpmtemplates: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Ole"))]
     _NewEnum: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IGPMStarterGPOCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 777135913, data2: 8729, data3: 17581, data4: [147, 58, 100, 223, 214, 80, 196, 35] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1564,6 +1711,10 @@ pub struct IGPMStatusMessage {
     Message: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IGPMStatusMessage {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2224472623, data2: 62430, data3: 18975, data4: [143, 88, 96, 60, 170, 169, 61, 123] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IGPMStatusMsgCollection {
     pub base__: super::Com::IDispatch,
@@ -1576,6 +1727,10 @@ pub struct IGPMStatusMsgCollection {
     pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Ole"))]
     _NewEnum: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IGPMStatusMsgCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2607684336, data2: 6802, data3: 16627, data4: [165, 157, 243, 106, 193, 247, 40, 183] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1598,6 +1753,10 @@ pub struct IGPMTrustee {
     #[cfg(not(feature = "Win32_Foundation"))]
     TrusteeDSPath: usize,
     pub TrusteeType: unsafe extern "system" fn(this: *mut *mut Self, lval: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IGPMTrustee {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 994471336, data2: 49572, data3: 19242, data4: [153, 154, 190, 252, 221, 86, 206, 251] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1637,6 +1796,10 @@ pub struct IGPMWMIFilter {
     SetSecurityInfo: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IGPMWMIFilter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4012898740, data2: 15399, data3: 17818, data4: [185, 121, 3, 131, 5, 206, 199, 93] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IGPMWMIFilterCollection {
     pub base__: super::Com::IDispatch,
@@ -1649,6 +1812,10 @@ pub struct IGPMWMIFilterCollection {
     pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Ole"))]
     _NewEnum: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IGPMWMIFilterCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1468192130, data2: 6710, data3: 18017, data4: [138, 148, 195, 195, 37, 81, 148, 91] };
 }
 #[repr(C)]
 pub struct IGroupPolicyObject {
@@ -1680,6 +1847,9 @@ pub struct IGroupPolicyObject {
     pub GetPropertySheetPages: unsafe extern "system" fn(this: *mut *mut Self, hpages: *mut *mut super::super::UI::Controls::HPROPSHEETPAGE, upagecount: *mut u32) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_UI_Controls"))]
     GetPropertySheetPages: usize,
+}
+impl ::windows_sys::core::Interface for IGroupPolicyObject {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3931121443, data2: 41533, data3: 4561, data4: [167, 211, 0, 0, 248, 117, 113, 227] };
 }
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_GroupPolicy\"`*"]
@@ -1747,6 +1917,9 @@ pub struct IRSOPInformation {
     pub GetNamespace: unsafe extern "system" fn(this: *mut *mut Self, dwsection: u32, pszname: ::windows_sys::core::PWSTR, cchmaxlength: i32) -> ::windows_sys::core::HRESULT,
     pub GetFlags: unsafe extern "system" fn(this: *mut *mut Self, pdwflags: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetEventLogEntryText: unsafe extern "system" fn(this: *mut *mut Self, pszeventsource: ::windows_sys::core::PCWSTR, pszeventlogname: ::windows_sys::core::PCWSTR, pszeventtime: ::windows_sys::core::PCWSTR, dweventid: u32, ppsztext: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IRSOPInformation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2589622709, data2: 55751, data3: 18927, data4: [157, 17, 221, 245, 9, 104, 196, 141] };
 }
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_GroupPolicy\"`*"]

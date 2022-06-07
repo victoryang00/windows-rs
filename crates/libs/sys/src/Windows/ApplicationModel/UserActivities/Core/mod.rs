@@ -7,3 +7,6 @@ pub struct ICoreUserActivityManagerStatics {
     #[cfg(not(feature = "Foundation"))]
     DeleteUserActivitySessionsInTimeRangeAsync: usize,
 }
+impl ::windows_sys::core::Interface for ICoreUserActivityManagerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3392854786, data2: 42174, data3: 19789, data4: [191, 168, 103, 149, 244, 38, 78, 251] };
+}

@@ -8394,10 +8394,16 @@ pub struct ID3D12CommandAllocator {
     pub base__: ID3D12Pageable,
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ID3D12CommandAllocator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1627578084, data2: 44889, data3: 19209, data4: [185, 153, 180, 77, 115, 240, 155, 36] };
+}
 #[repr(C)]
 pub struct ID3D12CommandList {
     pub base__: ID3D12DeviceChild,
     pub GetType: unsafe extern "system" fn(this: *mut *mut Self) -> D3D12_COMMAND_LIST_TYPE,
+}
+impl ::windows_sys::core::Interface for ID3D12CommandList {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1897322780, data2: 59364, data3: 18382, data4: [184, 198, 236, 129, 104, 244, 55, 229] };
 }
 #[repr(C)]
 pub struct ID3D12CommandQueue {
@@ -8420,14 +8426,23 @@ pub struct ID3D12CommandQueue {
     pub GetClockCalibration: unsafe extern "system" fn(this: *mut *mut Self, pgputimestamp: *mut u64, pcputimestamp: *mut u64) -> ::windows_sys::core::HRESULT,
     pub GetDesc: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut D3D12_COMMAND_QUEUE_DESC),
 }
+impl ::windows_sys::core::Interface for ID3D12CommandQueue {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 248017062, data2: 23934, data3: 19490, data4: [140, 252, 91, 170, 224, 118, 22, 237] };
+}
 #[repr(C)]
 pub struct ID3D12CommandSignature {
     pub base__: ID3D12Pageable,
+}
+impl ::windows_sys::core::Interface for ID3D12CommandSignature {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3278535036, data2: 60544, data3: 20234, data4: [137, 133, 167, 178, 71, 80, 130, 209] };
 }
 #[repr(C)]
 pub struct ID3D12Debug {
     pub base__: ::windows_sys::core::IUnknown,
     pub EnableDebugLayer: unsafe extern "system" fn(this: *mut *mut Self),
+}
+impl ::windows_sys::core::Interface for ID3D12Debug {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 876906679, data2: 26694, data3: 18251, data4: [185, 137, 240, 39, 68, 130, 69, 224] };
 }
 #[repr(C)]
 pub struct ID3D12Debug1 {
@@ -8442,10 +8457,16 @@ pub struct ID3D12Debug1 {
     #[cfg(not(feature = "Win32_Foundation"))]
     SetEnableSynchronizedCommandQueueValidation: usize,
 }
+impl ::windows_sys::core::Interface for ID3D12Debug1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2952438986, data2: 25598, data3: 19854, data4: [184, 173, 21, 144, 0, 175, 67, 4] };
+}
 #[repr(C)]
 pub struct ID3D12Debug2 {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetGPUBasedValidationFlags: unsafe extern "system" fn(this: *mut *mut Self, flags: D3D12_GPU_BASED_VALIDATION_FLAGS),
+}
+impl ::windows_sys::core::Interface for ID3D12Debug2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2477155780, data2: 41906, data3: 20061, data4: [182, 146, 162, 106, 225, 78, 51, 116] };
 }
 #[repr(C)]
 pub struct ID3D12Debug3 {
@@ -8460,10 +8481,16 @@ pub struct ID3D12Debug3 {
     SetEnableSynchronizedCommandQueueValidation: usize,
     pub SetGPUBasedValidationFlags: unsafe extern "system" fn(this: *mut *mut Self, flags: D3D12_GPU_BASED_VALIDATION_FLAGS),
 }
+impl ::windows_sys::core::Interface for ID3D12Debug3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1559553423, data2: 63089, data3: 20465, data4: [165, 66, 54, 134, 227, 209, 83, 209] };
+}
 #[repr(C)]
 pub struct ID3D12Debug4 {
     pub base__: ID3D12Debug3,
     pub DisableDebugLayer: unsafe extern "system" fn(this: *mut *mut Self),
+}
+impl ::windows_sys::core::Interface for ID3D12Debug4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 21725550, data2: 40645, data3: 18991, data4: [168, 69, 255, 190, 68, 28, 225, 58] };
 }
 #[repr(C)]
 pub struct ID3D12Debug5 {
@@ -8472,6 +8499,9 @@ pub struct ID3D12Debug5 {
     pub SetEnableAutoName: unsafe extern "system" fn(this: *mut *mut Self, enable: super::super::Foundation::BOOL),
     #[cfg(not(feature = "Win32_Foundation"))]
     SetEnableAutoName: usize,
+}
+impl ::windows_sys::core::Interface for ID3D12Debug5 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1418554130, data2: 2554, data3: 16608, data4: [144, 105, 93, 205, 88, 154, 82, 201] };
 }
 #[repr(C)]
 pub struct ID3D12DebugCommandList {
@@ -8483,6 +8513,9 @@ pub struct ID3D12DebugCommandList {
     pub SetFeatureMask: unsafe extern "system" fn(this: *mut *mut Self, mask: D3D12_DEBUG_FEATURE) -> ::windows_sys::core::HRESULT,
     pub GetFeatureMask: unsafe extern "system" fn(this: *mut *mut Self) -> D3D12_DEBUG_FEATURE,
 }
+impl ::windows_sys::core::Interface for ID3D12DebugCommandList {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 165723958, data2: 21676, data3: 18511, data4: [136, 71, 75, 174, 234, 182, 5, 63] };
+}
 #[repr(C)]
 pub struct ID3D12DebugCommandList1 {
     pub base__: ::windows_sys::core::IUnknown,
@@ -8493,11 +8526,17 @@ pub struct ID3D12DebugCommandList1 {
     pub SetDebugParameter: unsafe extern "system" fn(this: *mut *mut Self, r#type: D3D12_DEBUG_COMMAND_LIST_PARAMETER_TYPE, pdata: *const ::core::ffi::c_void, datasize: u32) -> ::windows_sys::core::HRESULT,
     pub GetDebugParameter: unsafe extern "system" fn(this: *mut *mut Self, r#type: D3D12_DEBUG_COMMAND_LIST_PARAMETER_TYPE, pdata: *mut ::core::ffi::c_void, datasize: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ID3D12DebugCommandList1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 271362385, data2: 12571, data3: 19201, data4: [177, 31, 236, 184, 62, 6, 27, 55] };
+}
 #[repr(C)]
 pub struct ID3D12DebugCommandList2 {
     pub base__: ID3D12DebugCommandList,
     pub SetDebugParameter: unsafe extern "system" fn(this: *mut *mut Self, r#type: D3D12_DEBUG_COMMAND_LIST_PARAMETER_TYPE, pdata: *const ::core::ffi::c_void, datasize: u32) -> ::windows_sys::core::HRESULT,
     pub GetDebugParameter: unsafe extern "system" fn(this: *mut *mut Self, r#type: D3D12_DEBUG_COMMAND_LIST_PARAMETER_TYPE, pdata: *mut ::core::ffi::c_void, datasize: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ID3D12DebugCommandList2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2931127759, data2: 19974, data3: 18622, data4: [186, 59, 196, 80, 252, 150, 101, 46] };
 }
 #[repr(C)]
 pub struct ID3D12DebugCommandQueue {
@@ -8507,12 +8546,18 @@ pub struct ID3D12DebugCommandQueue {
     #[cfg(not(feature = "Win32_Foundation"))]
     AssertResourceState: usize,
 }
+impl ::windows_sys::core::Interface for ID3D12DebugCommandQueue {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 165723958, data2: 21676, data3: 18511, data4: [136, 71, 75, 174, 234, 182, 5, 58] };
+}
 #[repr(C)]
 pub struct ID3D12DebugDevice {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetFeatureMask: unsafe extern "system" fn(this: *mut *mut Self, mask: D3D12_DEBUG_FEATURE) -> ::windows_sys::core::HRESULT,
     pub GetFeatureMask: unsafe extern "system" fn(this: *mut *mut Self) -> D3D12_DEBUG_FEATURE,
     pub ReportLiveDeviceObjects: unsafe extern "system" fn(this: *mut *mut Self, flags: D3D12_RLDO_FLAGS) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ID3D12DebugDevice {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1072420573, data2: 18803, data3: 18311, data4: [129, 148, 228, 95, 158, 40, 146, 62] };
 }
 #[repr(C)]
 pub struct ID3D12DebugDevice1 {
@@ -8521,11 +8566,17 @@ pub struct ID3D12DebugDevice1 {
     pub GetDebugParameter: unsafe extern "system" fn(this: *mut *mut Self, r#type: D3D12_DEBUG_DEVICE_PARAMETER_TYPE, pdata: *mut ::core::ffi::c_void, datasize: u32) -> ::windows_sys::core::HRESULT,
     pub ReportLiveDeviceObjects: unsafe extern "system" fn(this: *mut *mut Self, flags: D3D12_RLDO_FLAGS) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ID3D12DebugDevice1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2847348592, data2: 53401, data3: 19045, data4: [166, 152, 61, 238, 16, 2, 15, 136] };
+}
 #[repr(C)]
 pub struct ID3D12DebugDevice2 {
     pub base__: ID3D12DebugDevice,
     pub SetDebugParameter: unsafe extern "system" fn(this: *mut *mut Self, r#type: D3D12_DEBUG_DEVICE_PARAMETER_TYPE, pdata: *const ::core::ffi::c_void, datasize: u32) -> ::windows_sys::core::HRESULT,
     pub GetDebugParameter: unsafe extern "system" fn(this: *mut *mut Self, r#type: D3D12_DEBUG_DEVICE_PARAMETER_TYPE, pdata: *mut ::core::ffi::c_void, datasize: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ID3D12DebugDevice2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1626131393, data2: 14221, data3: 19953, data4: [137, 76, 248, 172, 92, 228, 215, 221] };
 }
 #[repr(C)]
 pub struct ID3D12DescriptorHeap {
@@ -8533,6 +8584,9 @@ pub struct ID3D12DescriptorHeap {
     pub GetDesc: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut D3D12_DESCRIPTOR_HEAP_DESC),
     pub GetCPUDescriptorHandleForHeapStart: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut D3D12_CPU_DESCRIPTOR_HANDLE),
     pub GetGPUDescriptorHandleForHeapStart: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut D3D12_GPU_DESCRIPTOR_HANDLE),
+}
+impl ::windows_sys::core::Interface for ID3D12DescriptorHeap {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2398832413, data2: 24940, data3: 20297, data4: [144, 247, 18, 123, 183, 99, 250, 81] };
 }
 #[repr(C)]
 pub struct ID3D12Device {
@@ -8620,6 +8674,9 @@ pub struct ID3D12Device {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetAdapterLuid: usize,
 }
+impl ::windows_sys::core::Interface for ID3D12Device {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 412621297, data2: 7606, data3: 19287, data4: [190, 84, 24, 33, 51, 155, 133, 247] };
+}
 #[repr(C)]
 pub struct ID3D12Device1 {
     pub base__: ID3D12Device,
@@ -8630,10 +8687,16 @@ pub struct ID3D12Device1 {
     SetEventOnMultipleFenceCompletion: usize,
     pub SetResidencyPriority: unsafe extern "system" fn(this: *mut *mut Self, numobjects: u32, ppobjects: *const *mut ::core::ffi::c_void, ppriorities: *const D3D12_RESIDENCY_PRIORITY) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ID3D12Device1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2007813760, data2: 25486, data3: 20069, data4: [136, 149, 193, 242, 51, 134, 134, 62] };
+}
 #[repr(C)]
 pub struct ID3D12Device2 {
     pub base__: ID3D12Device1,
     pub CreatePipelineState: unsafe extern "system" fn(this: *mut *mut Self, pdesc: *const D3D12_PIPELINE_STATE_STREAM_DESC, riid: *const ::windows_sys::core::GUID, pppipelinestate: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ID3D12Device2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 817538078, data2: 45403, data3: 18268, data4: [160, 187, 26, 245, 197, 182, 67, 40] };
 }
 #[repr(C)]
 pub struct ID3D12Device3 {
@@ -8644,6 +8707,9 @@ pub struct ID3D12Device3 {
     #[cfg(not(feature = "Win32_Foundation"))]
     OpenExistingHeapFromFileMapping: usize,
     pub EnqueueMakeResident: unsafe extern "system" fn(this: *mut *mut Self, flags: D3D12_RESIDENCY_FLAGS, numobjects: u32, ppobjects: *const *mut ::core::ffi::c_void, pfencetosignal: *mut ::core::ffi::c_void, fencevaluetosignal: u64) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ID3D12Device3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2178604053, data2: 11181, data3: 17298, data4: [147, 197, 16, 19, 69, 196, 170, 152] };
 }
 #[repr(C)]
 pub struct ID3D12Device4 {
@@ -8664,6 +8730,9 @@ pub struct ID3D12Device4 {
     #[cfg(not(feature = "Win32_Graphics_Dxgi_Common"))]
     GetResourceAllocationInfo1: usize,
 }
+impl ::windows_sys::core::Interface for ID3D12Device4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3898990359, data2: 43502, data3: 18169, data4: [164, 99, 48, 152, 49, 90, 162, 229] };
+}
 #[repr(C)]
 pub struct ID3D12Device5 {
     pub base__: ID3D12Device4,
@@ -8679,6 +8748,9 @@ pub struct ID3D12Device5 {
     GetRaytracingAccelerationStructurePrebuildInfo: usize,
     pub CheckDriverMatchingIdentifier: unsafe extern "system" fn(this: *mut *mut Self, serializeddatatype: D3D12_SERIALIZED_DATA_TYPE, pidentifiertocheck: *const D3D12_SERIALIZED_DATA_DRIVER_MATCHING_IDENTIFIER) -> D3D12_DRIVER_MATCHING_IDENTIFIER_STATUS,
 }
+impl ::windows_sys::core::Interface for ID3D12Device5 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2337216315, data2: 12266, data3: 19328, data4: [143, 88, 67, 7, 25, 26, 185, 93] };
+}
 #[repr(C)]
 pub struct ID3D12Device6 {
     pub base__: ID3D12Device5,
@@ -8687,11 +8759,17 @@ pub struct ID3D12Device6 {
     #[cfg(not(feature = "Win32_Foundation"))]
     SetBackgroundProcessingMode: usize,
 }
+impl ::windows_sys::core::Interface for ID3D12Device6 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3339395611, data2: 16612, data3: 18967, data4: [137, 175, 2, 90, 7, 39, 166, 220] };
+}
 #[repr(C)]
 pub struct ID3D12Device7 {
     pub base__: ID3D12Device6,
     pub AddToStateObject: unsafe extern "system" fn(this: *mut *mut Self, paddition: *const D3D12_STATE_OBJECT_DESC, pstateobjecttogrowfrom: *mut ::core::ffi::c_void, riid: *const ::windows_sys::core::GUID, ppnewstateobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub CreateProtectedResourceSession1: unsafe extern "system" fn(this: *mut *mut Self, pdesc: *const D3D12_PROTECTED_RESOURCE_SESSION_DESC1, riid: *const ::windows_sys::core::GUID, ppsession: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ID3D12Device7 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1543588691, data2: 26785, data3: 19355, data4: [139, 209, 221, 96, 70, 185, 53, 139] };
 }
 #[repr(C)]
 pub struct ID3D12Device8 {
@@ -8714,6 +8792,9 @@ pub struct ID3D12Device8 {
     #[cfg(not(feature = "Win32_Graphics_Dxgi_Common"))]
     GetCopyableFootprints1: usize,
 }
+impl ::windows_sys::core::Interface for ID3D12Device8 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2451105467, data2: 63812, data3: 20350, data4: [167, 92, 177, 178, 199, 183, 1, 243] };
+}
 #[repr(C)]
 pub struct ID3D12Device9 {
     pub base__: ID3D12Device8,
@@ -8721,10 +8802,16 @@ pub struct ID3D12Device9 {
     pub ShaderCacheControl: unsafe extern "system" fn(this: *mut *mut Self, kinds: D3D12_SHADER_CACHE_KIND_FLAGS, control: D3D12_SHADER_CACHE_CONTROL_FLAGS) -> ::windows_sys::core::HRESULT,
     pub CreateCommandQueue1: unsafe extern "system" fn(this: *mut *mut Self, pdesc: *const D3D12_COMMAND_QUEUE_DESC, creatorid: *const ::windows_sys::core::GUID, riid: *const ::windows_sys::core::GUID, ppcommandqueue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ID3D12Device9 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1283516770, data2: 61490, data3: 20320, data4: [188, 158, 235, 194, 207, 161, 216, 60] };
+}
 #[repr(C)]
 pub struct ID3D12DeviceChild {
     pub base__: ID3D12Object,
     pub GetDevice: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppvdevice: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ID3D12DeviceChild {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2422061387, data2: 40972, data3: 16704, data4: [157, 245, 43, 100, 202, 158, 163, 87] };
 }
 #[repr(C)]
 pub struct ID3D12DeviceRemovedExtendedData {
@@ -8732,17 +8819,26 @@ pub struct ID3D12DeviceRemovedExtendedData {
     pub GetAutoBreadcrumbsOutput: unsafe extern "system" fn(this: *mut *mut Self, poutput: *mut D3D12_DRED_AUTO_BREADCRUMBS_OUTPUT) -> ::windows_sys::core::HRESULT,
     pub GetPageFaultAllocationOutput: unsafe extern "system" fn(this: *mut *mut Self, poutput: *mut D3D12_DRED_PAGE_FAULT_OUTPUT) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ID3D12DeviceRemovedExtendedData {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2559778099, data2: 23272, data3: 18321, data4: [170, 60, 26, 115, 162, 147, 78, 113] };
+}
 #[repr(C)]
 pub struct ID3D12DeviceRemovedExtendedData1 {
     pub base__: ID3D12DeviceRemovedExtendedData,
     pub GetAutoBreadcrumbsOutput1: unsafe extern "system" fn(this: *mut *mut Self, poutput: *mut D3D12_DRED_AUTO_BREADCRUMBS_OUTPUT1) -> ::windows_sys::core::HRESULT,
     pub GetPageFaultAllocationOutput1: unsafe extern "system" fn(this: *mut *mut Self, poutput: *mut D3D12_DRED_PAGE_FAULT_OUTPUT1) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ID3D12DeviceRemovedExtendedData1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2535956514, data2: 53021, data3: 19930, data4: [158, 186, 239, 250, 101, 63, 197, 6] };
+}
 #[repr(C)]
 pub struct ID3D12DeviceRemovedExtendedData2 {
     pub base__: ID3D12DeviceRemovedExtendedData1,
     pub GetPageFaultAllocationOutput2: unsafe extern "system" fn(this: *mut *mut Self, poutput: *mut D3D12_DRED_PAGE_FAULT_OUTPUT2) -> ::windows_sys::core::HRESULT,
     pub GetDeviceState: unsafe extern "system" fn(this: *mut *mut Self) -> D3D12_DRED_DEVICE_STATE,
+}
+impl ::windows_sys::core::Interface for ID3D12DeviceRemovedExtendedData2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1744590870, data2: 58570, data3: 18709, data4: [191, 24, 66, 84, 18, 114, 218, 84] };
 }
 #[repr(C)]
 pub struct ID3D12DeviceRemovedExtendedDataSettings {
@@ -8751,10 +8847,16 @@ pub struct ID3D12DeviceRemovedExtendedDataSettings {
     pub SetPageFaultEnablement: unsafe extern "system" fn(this: *mut *mut Self, enablement: D3D12_DRED_ENABLEMENT),
     pub SetWatsonDumpEnablement: unsafe extern "system" fn(this: *mut *mut Self, enablement: D3D12_DRED_ENABLEMENT),
 }
+impl ::windows_sys::core::Interface for ID3D12DeviceRemovedExtendedDataSettings {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2193377308, data2: 27547, data3: 16432, data4: [174, 219, 126, 227, 209, 223, 30, 99] };
+}
 #[repr(C)]
 pub struct ID3D12DeviceRemovedExtendedDataSettings1 {
     pub base__: ID3D12DeviceRemovedExtendedDataSettings,
     pub SetBreadcrumbContextEnablement: unsafe extern "system" fn(this: *mut *mut Self, enablement: D3D12_DRED_ENABLEMENT),
+}
+impl ::windows_sys::core::Interface for ID3D12DeviceRemovedExtendedDataSettings1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3688214097, data2: 13079, data3: 20234, data4: [173, 249, 29, 124, 237, 202, 174, 11] };
 }
 #[repr(C)]
 pub struct ID3D12Fence {
@@ -8766,10 +8868,16 @@ pub struct ID3D12Fence {
     SetEventOnCompletion: usize,
     pub Signal: unsafe extern "system" fn(this: *mut *mut Self, value: u64) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ID3D12Fence {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 175455695, data2: 50392, data3: 19345, data4: [173, 246, 190, 90, 96, 217, 90, 118] };
+}
 #[repr(C)]
 pub struct ID3D12Fence1 {
     pub base__: ID3D12Fence,
     pub GetCreationFlags: unsafe extern "system" fn(this: *mut *mut Self) -> D3D12_FENCE_FLAGS,
+}
+impl ::windows_sys::core::Interface for ID3D12Fence1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1127646718, data2: 57899, data3: 19616, data4: [168, 219, 181, 180, 244, 221, 14, 74] };
 }
 #[repr(C)]
 pub struct ID3D12FunctionParameterReflection {
@@ -8777,6 +8885,9 @@ pub struct ID3D12FunctionParameterReflection {
     pub GetDesc: unsafe extern "system" fn(this: *mut *mut Self, pdesc: *mut D3D12_PARAMETER_DESC) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Graphics_Direct3D"))]
     GetDesc: usize,
+}
+impl ::windows_sys::core::Interface for ID3D12FunctionParameterReflection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3961910317, data2: 28678, data3: 20267, data4: [179, 62, 2, 204, 51, 117, 115, 63] };
 }
 #[repr(C)]
 pub struct ID3D12FunctionReflection {
@@ -8796,6 +8907,9 @@ pub struct ID3D12FunctionReflection {
     #[cfg(not(feature = "Win32_Graphics_Direct3D"))]
     GetResourceBindingDescByName: usize,
     pub GetFunctionParameter: unsafe extern "system" fn(this: *mut *mut Self, parameterindex: i32) -> *mut *mut ID3D12FunctionParameterReflection,
+}
+impl ::windows_sys::core::Interface for ID3D12FunctionReflection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 285768028, data2: 10098, data3: 19369, data4: [178, 168, 212, 100, 220, 126, 39, 153] };
 }
 #[repr(C)]
 pub struct ID3D12GraphicsCommandList {
@@ -8888,6 +9002,9 @@ pub struct ID3D12GraphicsCommandList {
     pub EndEvent: unsafe extern "system" fn(this: *mut *mut Self),
     pub ExecuteIndirect: unsafe extern "system" fn(this: *mut *mut Self, pcommandsignature: *mut ::core::ffi::c_void, maxcommandcount: u32, pargumentbuffer: *mut ::core::ffi::c_void, argumentbufferoffset: u64, pcountbuffer: *mut ::core::ffi::c_void, countbufferoffset: u64),
 }
+impl ::windows_sys::core::Interface for ID3D12GraphicsCommandList {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1528171791, data2: 44059, data3: 16773, data4: [139, 168, 179, 174, 66, 165, 164, 85] };
+}
 #[repr(C)]
 pub struct ID3D12GraphicsCommandList1 {
     pub base__: ID3D12GraphicsCommandList,
@@ -8901,15 +9018,24 @@ pub struct ID3D12GraphicsCommandList1 {
     ResolveSubresourceRegion: usize,
     pub SetViewInstanceMask: unsafe extern "system" fn(this: *mut *mut Self, mask: u32),
 }
+impl ::windows_sys::core::Interface for ID3D12GraphicsCommandList1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1429275643, data2: 8167, data3: 17751, data4: [187, 56, 148, 109, 125, 14, 124, 167] };
+}
 #[repr(C)]
 pub struct ID3D12GraphicsCommandList2 {
     pub base__: ID3D12GraphicsCommandList1,
     pub WriteBufferImmediate: unsafe extern "system" fn(this: *mut *mut Self, count: u32, pparams: *const D3D12_WRITEBUFFERIMMEDIATE_PARAMETER, pmodes: *const D3D12_WRITEBUFFERIMMEDIATE_MODE),
 }
+impl ::windows_sys::core::Interface for ID3D12GraphicsCommandList2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 952362373, data2: 65303, data3: 16684, data4: [145, 80, 79, 198, 249, 215, 42, 40] };
+}
 #[repr(C)]
 pub struct ID3D12GraphicsCommandList3 {
     pub base__: ID3D12GraphicsCommandList2,
     pub SetProtectedResourceSession: unsafe extern "system" fn(this: *mut *mut Self, pprotectedresourcesession: *mut ::core::ffi::c_void),
+}
+impl ::windows_sys::core::Interface for ID3D12GraphicsCommandList3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1876591527, data2: 47180, data3: 20024, data4: [154, 200, 199, 189, 34, 1, 107, 61] };
 }
 #[repr(C)]
 pub struct ID3D12GraphicsCommandList4 {
@@ -8930,26 +9056,41 @@ pub struct ID3D12GraphicsCommandList4 {
     pub SetPipelineState1: unsafe extern "system" fn(this: *mut *mut Self, pstateobject: *mut ::core::ffi::c_void),
     pub DispatchRays: unsafe extern "system" fn(this: *mut *mut Self, pdesc: *const D3D12_DISPATCH_RAYS_DESC),
 }
+impl ::windows_sys::core::Interface for ID3D12GraphicsCommandList4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2270441870, data2: 54185, data3: 17729, data4: [152, 207, 100, 91, 80, 220, 72, 116] };
+}
 #[repr(C)]
 pub struct ID3D12GraphicsCommandList5 {
     pub base__: ID3D12GraphicsCommandList4,
     pub RSSetShadingRate: unsafe extern "system" fn(this: *mut *mut Self, baseshadingrate: D3D12_SHADING_RATE, combiners: *const D3D12_SHADING_RATE_COMBINER),
     pub RSSetShadingRateImage: unsafe extern "system" fn(this: *mut *mut Self, shadingrateimage: *mut ::core::ffi::c_void),
 }
+impl ::windows_sys::core::Interface for ID3D12GraphicsCommandList5 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1426393177, data2: 16420, data3: 18252, data4: [135, 245, 100, 114, 234, 238, 68, 234] };
+}
 #[repr(C)]
 pub struct ID3D12GraphicsCommandList6 {
     pub base__: ID3D12GraphicsCommandList5,
     pub DispatchMesh: unsafe extern "system" fn(this: *mut *mut Self, threadgroupcountx: u32, threadgroupcounty: u32, threadgroupcountz: u32),
+}
+impl ::windows_sys::core::Interface for ID3D12GraphicsCommandList6 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3280107664, data2: 58696, data3: 19706, data4: [150, 207, 86, 137, 169, 55, 15, 128] };
 }
 #[repr(C)]
 pub struct ID3D12Heap {
     pub base__: ID3D12Pageable,
     pub GetDesc: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut D3D12_HEAP_DESC),
 }
+impl ::windows_sys::core::Interface for ID3D12Heap {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1799038210, data2: 28241, data3: 17843, data4: [144, 238, 152, 132, 38, 94, 141, 243] };
+}
 #[repr(C)]
 pub struct ID3D12Heap1 {
     pub base__: ID3D12Heap,
     pub GetProtectedResourceSession: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppprotectedsession: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ID3D12Heap1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1462727561, data2: 8552, data3: 18915, data4: [150, 147, 214, 223, 88, 113, 191, 109] };
 }
 #[repr(C)]
 pub struct ID3D12InfoQueue {
@@ -9014,11 +9155,17 @@ pub struct ID3D12InfoQueue {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetMuteDebugOutput: usize,
 }
+impl ::windows_sys::core::Interface for ID3D12InfoQueue {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 121809163, data2: 50055, data3: 18495, data4: [185, 70, 48, 167, 228, 230, 20, 88] };
+}
 #[repr(C)]
 pub struct ID3D12InfoQueue1 {
     pub base__: ID3D12InfoQueue,
     pub RegisterMessageCallback: unsafe extern "system" fn(this: *mut *mut Self, callbackfunc: *mut ::core::ffi::c_void, callbackfilterflags: D3D12_MESSAGE_CALLBACK_FLAGS, pcontext: *const ::core::ffi::c_void, pcallbackcookie: *mut u32) -> ::windows_sys::core::HRESULT,
     pub UnregisterMessageCallback: unsafe extern "system" fn(this: *mut *mut Self, callbackcookie: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ID3D12InfoQueue1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 676519304, data2: 46212, data3: 19468, data4: [182, 177, 103, 22, 133, 0, 230, 0] };
 }
 #[repr(C)]
 pub struct ID3D12LibraryReflection {
@@ -9026,20 +9173,32 @@ pub struct ID3D12LibraryReflection {
     pub GetDesc: unsafe extern "system" fn(this: *mut *mut Self, pdesc: *mut D3D12_LIBRARY_DESC) -> ::windows_sys::core::HRESULT,
     pub GetFunctionByIndex: unsafe extern "system" fn(this: *mut *mut Self, functionindex: i32) -> *mut *mut ID3D12FunctionReflection,
 }
+impl ::windows_sys::core::Interface for ID3D12LibraryReflection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2385812761, data2: 21723, data3: 19030, data4: [157, 201, 17, 157, 135, 189, 184, 4] };
+}
 #[repr(C)]
 pub struct ID3D12LifetimeOwner {
     pub base__: ::windows_sys::core::IUnknown,
     pub LifetimeStateUpdated: unsafe extern "system" fn(this: *mut *mut Self, newstate: D3D12_LIFETIME_STATE),
+}
+impl ::windows_sys::core::Interface for ID3D12LifetimeOwner {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3865554847, data2: 52566, data3: 20294, data4: [131, 206, 3, 46, 89, 93, 112, 168] };
 }
 #[repr(C)]
 pub struct ID3D12LifetimeTracker {
     pub base__: ID3D12DeviceChild,
     pub DestroyOwnedObject: unsafe extern "system" fn(this: *mut *mut Self, pobject: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ID3D12LifetimeTracker {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1070611766, data2: 20145, data3: 16970, data4: [165, 130, 73, 78, 203, 139, 168, 19] };
+}
 #[repr(C)]
 pub struct ID3D12MetaCommand {
     pub base__: ID3D12Pageable,
     pub GetRequiredParameterResourceSize: unsafe extern "system" fn(this: *mut *mut Self, stage: D3D12_META_COMMAND_PARAMETER_STAGE, parameterindex: u32) -> u64,
+}
+impl ::windows_sys::core::Interface for ID3D12MetaCommand {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3686288423, data2: 14030, data3: 20425, data4: [184, 1, 240, 72, 196, 106, 197, 112] };
 }
 #[repr(C)]
 pub struct ID3D12Object {
@@ -9049,9 +9208,15 @@ pub struct ID3D12Object {
     pub SetPrivateDataInterface: unsafe extern "system" fn(this: *mut *mut Self, guid: *const ::windows_sys::core::GUID, pdata: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetName: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ID3D12Object {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3305030287, data2: 31078, data3: 20117, data4: [159, 148, 244, 49, 203, 86, 195, 184] };
+}
 #[repr(C)]
 pub struct ID3D12Pageable {
     pub base__: ID3D12DeviceChild,
+}
+impl ::windows_sys::core::Interface for ID3D12Pageable {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1676564731, data2: 4712, data3: 18485, data4: [134, 218, 240, 8, 206, 98, 240, 214] };
 }
 #[repr(C)]
 pub struct ID3D12PipelineLibrary {
@@ -9065,10 +9230,16 @@ pub struct ID3D12PipelineLibrary {
     pub GetSerializedSize: unsafe extern "system" fn(this: *mut *mut Self) -> usize,
     pub Serialize: unsafe extern "system" fn(this: *mut *mut Self, pdata: *mut ::core::ffi::c_void, datasizeinbytes: usize) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ID3D12PipelineLibrary {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3326224040, data2: 37377, data3: 18095, data4: [180, 204, 83, 251, 159, 247, 65, 79] };
+}
 #[repr(C)]
 pub struct ID3D12PipelineLibrary1 {
     pub base__: ID3D12PipelineLibrary,
     pub LoadPipeline: unsafe extern "system" fn(this: *mut *mut Self, pname: ::windows_sys::core::PCWSTR, pdesc: *const D3D12_PIPELINE_STATE_STREAM_DESC, riid: *const ::windows_sys::core::GUID, pppipelinestate: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ID3D12PipelineLibrary1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2162868034, data2: 9576, data3: 20062, data4: [189, 130, 195, 127, 134, 150, 29, 195] };
 }
 #[repr(C)]
 pub struct ID3D12PipelineState {
@@ -9078,15 +9249,24 @@ pub struct ID3D12PipelineState {
     #[cfg(not(feature = "Win32_Graphics_Direct3D"))]
     GetCachedBlob: usize,
 }
+impl ::windows_sys::core::Interface for ID3D12PipelineState {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1985622259, data2: 63012, data3: 19567, data4: [168, 40, 172, 233, 72, 98, 36, 69] };
+}
 #[repr(C)]
 pub struct ID3D12ProtectedResourceSession {
     pub base__: ID3D12ProtectedSession,
     pub GetDesc: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut D3D12_PROTECTED_RESOURCE_SESSION_DESC),
 }
+impl ::windows_sys::core::Interface for ID3D12ProtectedResourceSession {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1826002676, data2: 62089, data3: 16588, data4: [128, 145, 90, 108, 10, 9, 156, 61] };
+}
 #[repr(C)]
 pub struct ID3D12ProtectedResourceSession1 {
     pub base__: ID3D12ProtectedResourceSession,
     pub GetDesc1: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut D3D12_PROTECTED_RESOURCE_SESSION_DESC1),
+}
+impl ::windows_sys::core::Interface for ID3D12ProtectedResourceSession1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3606130134, data2: 30459, data3: 16494, data4: [137, 97, 66, 150, 238, 252, 4, 9] };
 }
 #[repr(C)]
 pub struct ID3D12ProtectedSession {
@@ -9094,9 +9274,15 @@ pub struct ID3D12ProtectedSession {
     pub GetStatusFence: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppfence: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetSessionStatus: unsafe extern "system" fn(this: *mut *mut Self) -> D3D12_PROTECTED_SESSION_STATUS,
 }
+impl ::windows_sys::core::Interface for ID3D12ProtectedSession {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2706586904, data2: 2753, data3: 16516, data4: [133, 185, 137, 169, 97, 22, 128, 107] };
+}
 #[repr(C)]
 pub struct ID3D12QueryHeap {
     pub base__: ID3D12Pageable,
+}
+impl ::windows_sys::core::Interface for ID3D12QueryHeap {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 227956910, data2: 60741, data3: 18078, data4: [166, 29, 151, 14, 197, 131, 202, 180] };
 }
 #[repr(C)]
 pub struct ID3D12Resource {
@@ -9112,10 +9298,16 @@ pub struct ID3D12Resource {
     pub ReadFromSubresource: unsafe extern "system" fn(this: *mut *mut Self, pdstdata: *mut ::core::ffi::c_void, dstrowpitch: u32, dstdepthpitch: u32, srcsubresource: u32, psrcbox: *const D3D12_BOX) -> ::windows_sys::core::HRESULT,
     pub GetHeapProperties: unsafe extern "system" fn(this: *mut *mut Self, pheapproperties: *mut D3D12_HEAP_PROPERTIES, pheapflags: *mut D3D12_HEAP_FLAGS) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ID3D12Resource {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1768178366, data2: 42798, data3: 16473, data4: [188, 121, 91, 92, 152, 4, 15, 173] };
+}
 #[repr(C)]
 pub struct ID3D12Resource1 {
     pub base__: ID3D12Resource,
     pub GetProtectedResourceSession: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppprotectedsession: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ID3D12Resource1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2640192122, data2: 17456, data3: 16737, data4: [136, 179, 62, 202, 107, 177, 110, 25] };
 }
 #[repr(C)]
 pub struct ID3D12Resource2 {
@@ -9125,19 +9317,31 @@ pub struct ID3D12Resource2 {
     #[cfg(not(feature = "Win32_Graphics_Dxgi_Common"))]
     GetDesc1: usize,
 }
+impl ::windows_sys::core::Interface for ID3D12Resource2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3191270459, data2: 60037, data3: 19179, data4: [164, 90, 233, 215, 100, 4, 164, 149] };
+}
 #[repr(C)]
 pub struct ID3D12RootSignature {
     pub base__: ID3D12DeviceChild,
+}
+impl ::windows_sys::core::Interface for ID3D12RootSignature {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3309988710, data2: 29407, data3: 20200, data4: [139, 229, 169, 70, 161, 66, 146, 20] };
 }
 #[repr(C)]
 pub struct ID3D12RootSignatureDeserializer {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetRootSignatureDesc: unsafe extern "system" fn(this: *mut *mut Self) -> *mut D3D12_ROOT_SIGNATURE_DESC,
 }
+impl ::windows_sys::core::Interface for ID3D12RootSignatureDeserializer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 883647611, data2: 15560, data3: 18092, data4: [132, 27, 192, 150, 86, 69, 192, 70] };
+}
 #[repr(C)]
 pub struct ID3D12SDKConfiguration {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetSDKVersion: unsafe extern "system" fn(this: *mut *mut Self, sdkversion: u32, sdkpath: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ID3D12SDKConfiguration {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3924513556, data2: 13226, data3: 17074, data4: [167, 24, 215, 127, 88, 177, 241, 199] };
 }
 #[repr(C)]
 pub struct ID3D12ShaderCacheSession {
@@ -9146,6 +9350,9 @@ pub struct ID3D12ShaderCacheSession {
     pub StoreValue: unsafe extern "system" fn(this: *mut *mut Self, pkey: *const ::core::ffi::c_void, keysize: u32, pvalue: *const ::core::ffi::c_void, valuesize: u32) -> ::windows_sys::core::HRESULT,
     pub SetDeleteOnDestroy: unsafe extern "system" fn(this: *mut *mut Self),
     pub GetDesc: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut D3D12_SHADER_CACHE_SESSION_DESC),
+}
+impl ::windows_sys::core::Interface for ID3D12ShaderCacheSession {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 685918557, data2: 3940, data3: 19172, data4: [166, 236, 18, 146, 85, 220, 73, 168] };
 }
 #[repr(C)]
 pub struct ID3D12ShaderReflection {
@@ -9197,6 +9404,9 @@ pub struct ID3D12ShaderReflection {
     pub GetThreadGroupSize: unsafe extern "system" fn(this: *mut *mut Self, psizex: *mut u32, psizey: *mut u32, psizez: *mut u32) -> u32,
     pub GetRequiresFlags: unsafe extern "system" fn(this: *mut *mut Self) -> u64,
 }
+impl ::windows_sys::core::Interface for ID3D12ShaderReflection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1515747709, data2: 42796, data3: 18317, data4: [139, 162, 239, 198, 176, 239, 232, 142] };
+}
 #[repr(C)]
 pub struct ID3D12ShaderReflectionConstantBuffer {
     #[cfg(feature = "Win32_Graphics_Direct3D")]
@@ -9205,6 +9415,9 @@ pub struct ID3D12ShaderReflectionConstantBuffer {
     GetDesc: usize,
     pub GetVariableByIndex: unsafe extern "system" fn(this: *mut *mut Self, index: u32) -> *mut *mut ID3D12ShaderReflectionVariable,
     pub GetVariableByName: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::PCSTR) -> *mut *mut ID3D12ShaderReflectionVariable,
+}
+impl ::windows_sys::core::Interface for ID3D12ShaderReflectionConstantBuffer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3314915508, data2: 18611, data3: 18537, data4: [185, 177, 177, 97, 139, 20, 168, 183] };
 }
 #[repr(C)]
 pub struct ID3D12ShaderReflectionType {
@@ -9223,12 +9436,18 @@ pub struct ID3D12ShaderReflectionType {
     pub IsOfType: unsafe extern "system" fn(this: *mut *mut Self, ptype: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub ImplementsInterface: unsafe extern "system" fn(this: *mut *mut Self, pbase: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ID3D12ShaderReflectionType {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3910386513, data2: 30781, data3: 18634, data4: [161, 209, 79, 48, 98, 132, 173, 86] };
+}
 #[repr(C)]
 pub struct ID3D12ShaderReflectionVariable {
     pub GetDesc: unsafe extern "system" fn(this: *mut *mut Self, pdesc: *mut D3D12_SHADER_VARIABLE_DESC) -> ::windows_sys::core::HRESULT,
     pub GetType: unsafe extern "system" fn(this: *mut *mut Self) -> *mut *mut ID3D12ShaderReflectionType,
     pub GetBuffer: unsafe extern "system" fn(this: *mut *mut Self) -> *mut *mut ID3D12ShaderReflectionConstantBuffer,
     pub GetInterfaceSlot: unsafe extern "system" fn(this: *mut *mut Self, uarrayindex: u32) -> u32,
+}
+impl ::windows_sys::core::Interface for ID3D12ShaderReflectionVariable {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2201462950, data2: 41494, data3: 17482, data4: [178, 244, 49, 71, 51, 167, 58, 234] };
 }
 #[repr(C)]
 pub struct ID3D12SharingContract {
@@ -9241,9 +9460,15 @@ pub struct ID3D12SharingContract {
     pub BeginCapturableWork: unsafe extern "system" fn(this: *mut *mut Self, guid: *const ::windows_sys::core::GUID),
     pub EndCapturableWork: unsafe extern "system" fn(this: *mut *mut Self, guid: *const ::windows_sys::core::GUID),
 }
+impl ::windows_sys::core::Interface for ID3D12SharingContract {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 182418770, data2: 37532, data3: 20065, data4: [173, 219, 255, 237, 48, 222, 102, 239] };
+}
 #[repr(C)]
 pub struct ID3D12StateObject {
     pub base__: ID3D12Pageable,
+}
+impl ::windows_sys::core::Interface for ID3D12StateObject {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1191274819, data2: 64680, data3: 17812, data4: [147, 234, 175, 37, 139, 85, 52, 109] };
 }
 #[repr(C)]
 pub struct ID3D12StateObjectProperties {
@@ -9252,6 +9477,9 @@ pub struct ID3D12StateObjectProperties {
     pub GetShaderStackSize: unsafe extern "system" fn(this: *mut *mut Self, pexportname: ::windows_sys::core::PCWSTR) -> u64,
     pub GetPipelineStackSize: unsafe extern "system" fn(this: *mut *mut Self) -> u64,
     pub SetPipelineStackSize: unsafe extern "system" fn(this: *mut *mut Self, pipelinestacksizeinbytes: u64),
+}
+impl ::windows_sys::core::Interface for ID3D12StateObjectProperties {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3730810919, data2: 39929, data3: 20262, data4: [137, 255, 215, 245, 111, 222, 56, 96] };
 }
 #[repr(C)]
 pub struct ID3D12SwapChainAssistant {
@@ -9263,6 +9491,9 @@ pub struct ID3D12SwapChainAssistant {
     pub GetSwapChainObject: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetCurrentResourceAndCommandQueue: unsafe extern "system" fn(this: *mut *mut Self, riidresource: *const ::windows_sys::core::GUID, ppvresource: *mut *mut ::core::ffi::c_void, riidqueue: *const ::windows_sys::core::GUID, ppvqueue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub InsertImplicitSync: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ID3D12SwapChainAssistant {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4057949366, data2: 22525, data3: 18893, data4: [136, 7, 192, 235, 136, 180, 92, 143] };
 }
 #[repr(C)]
 pub struct ID3D12Tools {
@@ -9276,11 +9507,17 @@ pub struct ID3D12Tools {
     #[cfg(not(feature = "Win32_Foundation"))]
     ShaderInstrumentationEnabled: usize,
 }
+impl ::windows_sys::core::Interface for ID3D12Tools {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1886511600, data2: 59467, data3: 19251, data4: [151, 79, 18, 250, 73, 222, 101, 197] };
+}
 #[repr(C)]
 pub struct ID3D12VersionedRootSignatureDeserializer {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetRootSignatureDescAtVersion: unsafe extern "system" fn(this: *mut *mut Self, converttoversion: D3D_ROOT_SIGNATURE_VERSION, ppdesc: *mut *mut D3D12_VERSIONED_ROOT_SIGNATURE_DESC) -> ::windows_sys::core::HRESULT,
     pub GetUnconvertedRootSignatureDesc: unsafe extern "system" fn(this: *mut *mut Self) -> *mut D3D12_VERSIONED_ROOT_SIGNATURE_DESC,
+}
+impl ::windows_sys::core::Interface for ID3D12VersionedRootSignatureDeserializer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2140261991, data2: 2316, data3: 19383, data4: [183, 142, 237, 143, 242, 227, 29, 160] };
 }
 #[doc = "*Required features: `\"Win32_Graphics_Direct3D12\"`*"]
 pub const LUID_DEFINED: u32 = 1u32;

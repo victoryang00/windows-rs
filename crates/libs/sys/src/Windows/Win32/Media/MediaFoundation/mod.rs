@@ -6667,26 +6667,41 @@ pub struct IAdvancedMediaCapture {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetAdvancedMediaCaptureSettings: unsafe extern "system" fn(this: *mut *mut Self, value: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAdvancedMediaCapture {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3497334149, data2: 53782, data3: 17220, data4: [181, 191, 70, 59, 104, 249, 119, 187] };
+}
 #[repr(C)]
 pub struct IAdvancedMediaCaptureInitializationSettings {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetDirectxDeviceManager: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAdvancedMediaCaptureInitializationSettings {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1038225929, data2: 35750, data3: 20266, data4: [165, 119, 40, 25, 181, 111, 241, 77] };
 }
 #[repr(C)]
 pub struct IAdvancedMediaCaptureSettings {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetDirectxDeviceManager: unsafe extern "system" fn(this: *mut *mut Self, value: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAdvancedMediaCaptureSettings {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 618678367, data2: 41790, data3: 19105, data4: [181, 100, 96, 25, 177, 209, 79, 101] };
+}
 #[repr(C)]
 pub struct IAudioSourceProvider {
     pub base__: ::windows_sys::core::IUnknown,
     pub ProvideInput: unsafe extern "system" fn(this: *mut *mut Self, dwsamplecount: u32, pdwchannelcount: *mut u32, pinterleavedaudiodata: *mut f32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAudioSourceProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3954897481, data2: 44994, data3: 17794, data4: [145, 198, 182, 13, 242, 232, 73, 84] };
 }
 #[repr(C)]
 pub struct IClusterDetector {
     pub base__: ::windows_sys::core::IUnknown,
     pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, wbaseentrylevel: u16, wclusterentrylevel: u16) -> ::windows_sys::core::HRESULT,
     pub Detect: unsafe extern "system" fn(this: *mut *mut Self, dwmaxnumclusters: u32, fminclusterduration: f32, fmaxclusterduration: f32, psrctoc: *mut ::core::ffi::c_void, ppdsttoc: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IClusterDetector {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1057486775, data2: 50816, data3: 16857, data4: [148, 35, 145, 81, 7, 236, 159, 249] };
 }
 #[repr(C)]
 pub struct ICodecAPI {
@@ -6733,6 +6748,9 @@ pub struct ICodecAPI {
     pub SetAllSettingsWithNotify: unsafe extern "system" fn(this: *mut *mut Self, __midl__icodecapi0002: *mut ::core::ffi::c_void, changedparam: *mut *mut ::windows_sys::core::GUID, changedparamcount: *mut u32) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     SetAllSettingsWithNotify: usize,
+}
+impl ::windows_sys::core::Interface for ICodecAPI {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2417865927, data2: 12750, data3: 16802, data4: [133, 220, 143, 160, 191, 65, 184, 218] };
 }
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
 #[repr(C)]
@@ -6781,6 +6799,10 @@ pub struct ID3D12VideoDecodeCommandList {
     WriteBufferImmediate: usize,
 }
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
+impl ::windows_sys::core::Interface for ID3D12VideoDecodeCommandList {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 996168558, data2: 44329, data3: 20068, data4: [162, 105, 248, 83, 131, 126, 94, 83] };
+}
+#[cfg(feature = "Win32_Graphics_Direct3D12")]
 #[repr(C)]
 pub struct ID3D12VideoDecodeCommandList1 {
     pub base__: ID3D12VideoDecodeCommandList,
@@ -6788,6 +6810,10 @@ pub struct ID3D12VideoDecodeCommandList1 {
     pub DecodeFrame1: unsafe extern "system" fn(this: *mut *mut Self, pdecoder: *mut ::core::ffi::c_void, poutputarguments: *const D3D12_VIDEO_DECODE_OUTPUT_STREAM_ARGUMENTS1, pinputarguments: *const D3D12_VIDEO_DECODE_INPUT_STREAM_ARGUMENTS),
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct3D12", feature = "Win32_Graphics_Dxgi_Common")))]
     DecodeFrame1: usize,
+}
+#[cfg(feature = "Win32_Graphics_Direct3D12")]
+impl ::windows_sys::core::Interface for ID3D12VideoDecodeCommandList1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3576627483, data2: 46446, data3: 17724, data4: [160, 90, 167, 243, 17, 200, 244, 114] };
 }
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
 #[repr(C)]
@@ -6807,16 +6833,28 @@ pub struct ID3D12VideoDecodeCommandList2 {
     ExecuteExtensionCommand: usize,
 }
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
+impl ::windows_sys::core::Interface for ID3D12VideoDecodeCommandList2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1846675584, data2: 49428, data3: 16723, data4: [128, 54, 210, 71, 5, 30, 23, 41] };
+}
+#[cfg(feature = "Win32_Graphics_Direct3D12")]
 #[repr(C)]
 pub struct ID3D12VideoDecoder {
     pub base__: super::super::Graphics::Direct3D12::ID3D12Pageable,
     pub GetDesc: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut D3D12_VIDEO_DECODER_DESC),
 }
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
+impl ::windows_sys::core::Interface for ID3D12VideoDecoder {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3315297244, data2: 30496, data3: 16500, data4: [161, 54, 23, 161, 86, 3, 116, 112] };
+}
+#[cfg(feature = "Win32_Graphics_Direct3D12")]
 #[repr(C)]
 pub struct ID3D12VideoDecoder1 {
     pub base__: ID3D12VideoDecoder,
     pub GetProtectedResourceSession: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppprotectedsession: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_Graphics_Direct3D12")]
+impl ::windows_sys::core::Interface for ID3D12VideoDecoder1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2040718843, data2: 52434, data3: 18074, data4: [159, 222, 25, 93, 16, 149, 31, 126] };
 }
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
 #[repr(C)]
@@ -6828,10 +6866,18 @@ pub struct ID3D12VideoDecoderHeap {
     GetDesc: usize,
 }
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
+impl ::windows_sys::core::Interface for ID3D12VideoDecoderHeap {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 155629513, data2: 60406, data3: 16455, data4: [187, 115, 134, 131, 226, 125, 187, 31] };
+}
+#[cfg(feature = "Win32_Graphics_Direct3D12")]
 #[repr(C)]
 pub struct ID3D12VideoDecoderHeap1 {
     pub base__: ID3D12VideoDecoderHeap,
     pub GetProtectedResourceSession: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppprotectedsession: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_Graphics_Direct3D12")]
+impl ::windows_sys::core::Interface for ID3D12VideoDecoderHeap1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3659372741, data2: 21407, data3: 16818, data4: [191, 107, 17, 152, 160, 59, 109, 38] };
 }
 #[repr(C)]
 pub struct ID3D12VideoDevice {
@@ -6847,6 +6893,9 @@ pub struct ID3D12VideoDevice {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common")))]
     CreateVideoProcessor: usize,
 }
+impl ::windows_sys::core::Interface for ID3D12VideoDevice {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 520431623, data2: 2886, data3: 19148, data4: [138, 137, 54, 79, 121, 55, 24, 164] };
+}
 #[repr(C)]
 pub struct ID3D12VideoDevice1 {
     pub base__: ID3D12VideoDevice,
@@ -6858,6 +6907,9 @@ pub struct ID3D12VideoDevice1 {
     pub CreateVideoMotionVectorHeap: unsafe extern "system" fn(this: *mut *mut Self, pdesc: *const D3D12_VIDEO_MOTION_VECTOR_HEAP_DESC, pprotectedresourcesession: *mut ::core::ffi::c_void, riid: *const ::windows_sys::core::GUID, ppvideomotionvectorheap: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Graphics_Direct3D12", feature = "Win32_Graphics_Dxgi_Common")))]
     CreateVideoMotionVectorHeap: usize,
+}
+impl ::windows_sys::core::Interface for ID3D12VideoDevice1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2551583149, data2: 41284, data3: 19587, data4: [152, 144, 243, 14, 38, 214, 88, 171] };
 }
 #[repr(C)]
 pub struct ID3D12VideoDevice2 {
@@ -6883,6 +6935,9 @@ pub struct ID3D12VideoDevice2 {
     #[cfg(not(feature = "Win32_Graphics_Direct3D12"))]
     ExecuteExtensionCommand: usize,
 }
+impl ::windows_sys::core::Interface for ID3D12VideoDevice2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4028214345, data2: 63544, data3: 19093, data4: [155, 23, 87, 148, 55, 200, 245, 19] };
+}
 #[repr(C)]
 pub struct ID3D12VideoDevice3 {
     pub base__: ID3D12VideoDevice2,
@@ -6891,6 +6946,9 @@ pub struct ID3D12VideoDevice3 {
     #[cfg(not(feature = "Win32_Graphics_Dxgi_Common"))]
     CreateVideoEncoder: usize,
     pub CreateVideoEncoderHeap: unsafe extern "system" fn(this: *mut *mut Self, pdesc: *const D3D12_VIDEO_ENCODER_HEAP_DESC, riid: *const ::windows_sys::core::GUID, ppvideoencoderheap: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ID3D12VideoDevice3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1111731636, data2: 14898, data3: 18022, data4: [151, 60, 12, 204, 86, 37, 220, 68] };
 }
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
 #[repr(C)]
@@ -6947,6 +7005,10 @@ pub struct ID3D12VideoEncodeCommandList {
     SetProtectedResourceSession: usize,
 }
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
+impl ::windows_sys::core::Interface for ID3D12VideoEncodeCommandList {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2220173626, data2: 3261, data3: 18481, data4: [155, 57, 251, 219, 171, 114, 71, 35] };
+}
+#[cfg(feature = "Win32_Graphics_Direct3D12")]
 #[repr(C)]
 pub struct ID3D12VideoEncodeCommandList1 {
     pub base__: ID3D12VideoEncodeCommandList,
@@ -6960,6 +7022,10 @@ pub struct ID3D12VideoEncodeCommandList1 {
     ExecuteExtensionCommand: usize,
 }
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
+impl ::windows_sys::core::Interface for ID3D12VideoEncodeCommandList1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2492931786, data2: 11227, data3: 18281, data4: [136, 207, 54, 117, 234, 117, 126, 188] };
+}
+#[cfg(feature = "Win32_Graphics_Direct3D12")]
 #[repr(C)]
 pub struct ID3D12VideoEncodeCommandList2 {
     pub base__: ID3D12VideoEncodeCommandList1,
@@ -6971,6 +7037,10 @@ pub struct ID3D12VideoEncodeCommandList2 {
     pub ResolveEncoderOutputMetadata: unsafe extern "system" fn(this: *mut *mut Self, pinputarguments: *const D3D12_VIDEO_ENCODER_RESOLVE_METADATA_INPUT_ARGUMENTS, poutputarguments: *const D3D12_VIDEO_ENCODER_RESOLVE_METADATA_OUTPUT_ARGUMENTS),
     #[cfg(not(all(feature = "Win32_Graphics_Direct3D12", feature = "Win32_Graphics_Dxgi_Common")))]
     ResolveEncoderOutputMetadata: usize,
+}
+#[cfg(feature = "Win32_Graphics_Direct3D12")]
+impl ::windows_sys::core::Interface for ID3D12VideoEncodeCommandList2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2304020962, data2: 59137, data3: 18089, data4: [154, 31, 141, 52, 128, 237, 134, 122] };
 }
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
 #[repr(C)]
@@ -6988,6 +7058,10 @@ pub struct ID3D12VideoEncoder {
     pub GetMaxMotionEstimationPrecision: unsafe extern "system" fn(this: *mut *mut Self) -> D3D12_VIDEO_ENCODER_MOTION_ESTIMATION_PRECISION_MODE,
 }
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
+impl ::windows_sys::core::Interface for ID3D12VideoEncoder {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 772612397, data2: 36345, data3: 17574, data4: [167, 112, 187, 40, 155, 24, 39, 55] };
+}
+#[cfg(feature = "Win32_Graphics_Direct3D12")]
 #[repr(C)]
 pub struct ID3D12VideoEncoderHeap {
     pub base__: super::super::Graphics::Direct3D12::ID3D12Pageable,
@@ -7000,11 +7074,19 @@ pub struct ID3D12VideoEncoderHeap {
     pub GetResolutionList: unsafe extern "system" fn(this: *mut *mut Self, resolutionslistcount: u32, presolutionlist: *mut D3D12_VIDEO_ENCODER_PICTURE_RESOLUTION_DESC) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
+impl ::windows_sys::core::Interface for ID3D12VideoEncoderHeap {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 582180246, data2: 34666, data3: 17600, data4: [178, 94, 251, 140, 156, 127, 28, 74] };
+}
+#[cfg(feature = "Win32_Graphics_Direct3D12")]
 #[repr(C)]
 pub struct ID3D12VideoExtensionCommand {
     pub base__: super::super::Graphics::Direct3D12::ID3D12Pageable,
     pub GetDesc: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut D3D12_VIDEO_EXTENSION_COMMAND_DESC),
     pub GetProtectedResourceSession: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppprotectedsession: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_Graphics_Direct3D12")]
+impl ::windows_sys::core::Interface for ID3D12VideoExtensionCommand {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1431192040, data2: 44686, data3: 19084, data4: [183, 210, 91, 79, 39, 74, 48, 228] };
 }
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
 #[repr(C)]
@@ -7017,6 +7099,10 @@ pub struct ID3D12VideoMotionEstimator {
     pub GetProtectedResourceSession: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppprotectedsession: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
+impl ::windows_sys::core::Interface for ID3D12VideoMotionEstimator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 872263182, data2: 2443, data3: 17039, data4: [135, 187, 52, 182, 149, 222, 8, 248] };
+}
+#[cfg(feature = "Win32_Graphics_Direct3D12")]
 #[repr(C)]
 pub struct ID3D12VideoMotionVectorHeap {
     pub base__: super::super::Graphics::Direct3D12::ID3D12Pageable,
@@ -7025,6 +7111,10 @@ pub struct ID3D12VideoMotionVectorHeap {
     #[cfg(not(feature = "Win32_Graphics_Dxgi_Common"))]
     GetDesc: usize,
     pub GetProtectedResourceSession: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppprotectedsession: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_Graphics_Direct3D12")]
+impl ::windows_sys::core::Interface for ID3D12VideoMotionVectorHeap {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1541503367, data2: 29754, data3: 16481, data4: [131, 75, 35, 210, 45, 174, 165, 5] };
 }
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
 #[repr(C)]
@@ -7073,6 +7163,10 @@ pub struct ID3D12VideoProcessCommandList {
     WriteBufferImmediate: usize,
 }
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
+impl ::windows_sys::core::Interface for ID3D12VideoProcessCommandList {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2930922554, data2: 5759, data3: 18050, data4: [172, 200, 209, 89, 237, 74, 98, 9] };
+}
+#[cfg(feature = "Win32_Graphics_Direct3D12")]
 #[repr(C)]
 pub struct ID3D12VideoProcessCommandList1 {
     pub base__: ID3D12VideoProcessCommandList,
@@ -7080,6 +7174,10 @@ pub struct ID3D12VideoProcessCommandList1 {
     pub ProcessFrames1: unsafe extern "system" fn(this: *mut *mut Self, pvideoprocessor: *mut ::core::ffi::c_void, poutputarguments: *const D3D12_VIDEO_PROCESS_OUTPUT_STREAM_ARGUMENTS, numinputstreams: u32, pinputarguments: *const D3D12_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS1),
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct3D12")))]
     ProcessFrames1: usize,
+}
+#[cfg(feature = "Win32_Graphics_Direct3D12")]
+impl ::windows_sys::core::Interface for ID3D12VideoProcessCommandList1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1412193357, data2: 30102, data3: 17231, data4: [140, 147, 78, 250, 103, 102, 242, 103] };
 }
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
 #[repr(C)]
@@ -7099,6 +7197,10 @@ pub struct ID3D12VideoProcessCommandList2 {
     ExecuteExtensionCommand: usize,
 }
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
+impl ::windows_sys::core::Interface for ID3D12VideoProcessCommandList2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3679607524, data2: 27350, data3: 18236, data4: [186, 167, 89, 178, 227, 112, 130, 228] };
+}
+#[cfg(feature = "Win32_Graphics_Direct3D12")]
 #[repr(C)]
 pub struct ID3D12VideoProcessor {
     pub base__: super::super::Graphics::Direct3D12::ID3D12Pageable,
@@ -7114,10 +7216,18 @@ pub struct ID3D12VideoProcessor {
     GetOutputStreamDesc: usize,
 }
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
+impl ::windows_sys::core::Interface for ID3D12VideoProcessor {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810539826, data2: 48862, data3: 16650, data4: [133, 69, 148, 58, 198, 164, 97, 56] };
+}
+#[cfg(feature = "Win32_Graphics_Direct3D12")]
 #[repr(C)]
 pub struct ID3D12VideoProcessor1 {
     pub base__: ID3D12VideoProcessor,
     pub GetProtectedResourceSession: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppprotectedsession: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_Graphics_Direct3D12")]
+impl ::windows_sys::core::Interface for ID3D12VideoProcessor1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4090488341, data2: 21823, data3: 16988, data4: [134, 216, 238, 140, 27, 31, 176, 28] };
 }
 #[repr(C)]
 pub struct IDXVAHD_Device {
@@ -7146,6 +7256,9 @@ pub struct IDXVAHD_Device {
     pub GetVideoProcessorFilterRange: unsafe extern "system" fn(this: *mut *mut Self, filter: DXVAHD_FILTER, prange: *mut DXVAHD_FILTER_RANGE_DATA) -> ::windows_sys::core::HRESULT,
     pub CreateVideoProcessor: unsafe extern "system" fn(this: *mut *mut Self, pvpguid: *const ::windows_sys::core::GUID, ppvideoprocessor: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDXVAHD_Device {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2515611133, data2: 55166, data3: 18878, data4: [129, 95, 87, 213, 121, 99, 77, 109] };
+}
 #[repr(C)]
 pub struct IDXVAHD_VideoProcessor {
     pub base__: ::windows_sys::core::IUnknown,
@@ -7158,6 +7271,9 @@ pub struct IDXVAHD_VideoProcessor {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct3D9")))]
     VideoProcessBltHD: usize,
 }
+impl ::windows_sys::core::Interface for IDXVAHD_VideoProcessor {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2515856884, data2: 28163, data3: 19671, data4: [190, 27, 48, 117, 214, 101, 170, 82] };
+}
 #[repr(C)]
 pub struct IDirect3D9ExOverlayExtension {
     pub base__: ::windows_sys::core::IUnknown,
@@ -7165,6 +7281,9 @@ pub struct IDirect3D9ExOverlayExtension {
     pub CheckDeviceOverlayType: unsafe extern "system" fn(this: *mut *mut Self, adapter: u32, devtype: super::super::Graphics::Direct3D9::D3DDEVTYPE, overlaywidth: u32, overlayheight: u32, overlayformat: super::super::Graphics::Direct3D9::D3DFORMAT, pdisplaymode: *mut super::super::Graphics::Direct3D9::D3DDISPLAYMODEEX, displayrotation: super::super::Graphics::Direct3D9::D3DDISPLAYROTATION, poverlaycaps: *mut D3DOVERLAYCAPS) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Graphics_Direct3D9"))]
     CheckDeviceOverlayType: usize,
+}
+impl ::windows_sys::core::Interface for IDirect3D9ExOverlayExtension {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 410708755, data2: 43765, data3: 19545, data4: [135, 109, 224, 89, 8, 140, 13, 248] };
 }
 #[repr(C)]
 pub struct IDirect3DAuthenticatedChannel9 {
@@ -7177,6 +7296,9 @@ pub struct IDirect3DAuthenticatedChannel9 {
     pub Configure: unsafe extern "system" fn(this: *mut *mut Self, inputsize: u32, pinput: *const ::core::ffi::c_void, poutput: *mut super::super::Graphics::Direct3D9::D3DAUTHENTICATEDCHANNEL_CONFIGURE_OUTPUT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct3D9")))]
     Configure: usize,
+}
+impl ::windows_sys::core::Interface for IDirect3DAuthenticatedChannel9 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4280598254, data2: 55841, data3: 19435, data4: [152, 181, 210, 248, 153, 249, 138, 249] };
 }
 #[repr(C)]
 pub struct IDirect3DCryptoSession9 {
@@ -7200,6 +7322,9 @@ pub struct IDirect3DCryptoSession9 {
     pub FinishSessionKeyRefresh: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub GetEncryptionBltKey: unsafe extern "system" fn(this: *mut *mut Self, preadbackkey: *mut ::core::ffi::c_void, keysize: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDirect3DCryptoSession9 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4195006361, data2: 31388, data3: 18634, data4: [140, 91, 35, 126, 113, 165, 68, 52] };
+}
 #[repr(C)]
 pub struct IDirect3DDevice9Video {
     pub base__: ::windows_sys::core::IUnknown,
@@ -7212,6 +7337,9 @@ pub struct IDirect3DDevice9Video {
     pub CreateCryptoSession: unsafe extern "system" fn(this: *mut *mut Self, pcryptotype: *const ::windows_sys::core::GUID, pdecodeprofile: *const ::windows_sys::core::GUID, ppcryptosession: *mut *mut ::core::ffi::c_void, pcryptohandle: *mut super::super::Foundation::HANDLE) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     CreateCryptoSession: usize,
+}
+impl ::windows_sys::core::Interface for IDirect3DDevice9Video {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 651969889, data2: 41454, data3: 19175, data4: [150, 218, 17, 138, 54, 192, 236, 149] };
 }
 #[repr(C)]
 pub struct IDirect3DDeviceManager9 {
@@ -7245,6 +7373,9 @@ pub struct IDirect3DDeviceManager9 {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetVideoService: usize,
 }
+impl ::windows_sys::core::Interface for IDirect3DDeviceManager9 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2697649679, data2: 1749, data3: 19700, data4: [161, 199, 243, 205, 215, 37, 170, 117] };
+}
 #[repr(C)]
 pub struct IDirectXVideoAccelerationService {
     pub base__: ::windows_sys::core::IUnknown,
@@ -7252,6 +7383,9 @@ pub struct IDirectXVideoAccelerationService {
     pub CreateSurface: unsafe extern "system" fn(this: *mut *mut Self, width: u32, height: u32, backbuffers: u32, format: super::super::Graphics::Direct3D9::D3DFORMAT, pool: super::super::Graphics::Direct3D9::D3DPOOL, usage: u32, dxvatype: DXVA2_VideoRenderTargetType, ppsurface: *mut *mut ::core::ffi::c_void, psharedhandle: *mut super::super::Foundation::HANDLE) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct3D9")))]
     CreateSurface: usize,
+}
+impl ::windows_sys::core::Interface for IDirectXVideoAccelerationService {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4233209168, data2: 54759, data3: 4569, data4: [175, 85, 0, 5, 78, 67, 255, 2] };
 }
 #[repr(C)]
 pub struct IDirectXVideoDecoder {
@@ -7273,6 +7407,9 @@ pub struct IDirectXVideoDecoder {
     EndFrame: usize,
     pub Execute: unsafe extern "system" fn(this: *mut *mut Self, pexecuteparams: *const DXVA2_DecodeExecuteParams) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDirectXVideoDecoder {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4071653642, data2: 64768, data3: 17353, data4: [145, 140, 223, 148, 226, 216, 239, 125] };
+}
 #[repr(C)]
 pub struct IDirectXVideoDecoderService {
     pub base__: IDirectXVideoAccelerationService,
@@ -7290,11 +7427,17 @@ pub struct IDirectXVideoDecoderService {
     #[cfg(not(feature = "Win32_Graphics_Direct3D9"))]
     CreateVideoDecoder: usize,
 }
+impl ::windows_sys::core::Interface for IDirectXVideoDecoderService {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4233209169, data2: 54759, data3: 4569, data4: [175, 85, 0, 5, 78, 67, 255, 2] };
+}
 #[repr(C)]
 pub struct IDirectXVideoMemoryConfiguration {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetAvailableSurfaceTypeByIndex: unsafe extern "system" fn(this: *mut *mut Self, dwtypeindex: u32, pdwtype: *mut DXVA2_SurfaceType) -> ::windows_sys::core::HRESULT,
     pub SetSurfaceType: unsafe extern "system" fn(this: *mut *mut Self, dwtype: DXVA2_SurfaceType) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDirectXVideoMemoryConfiguration {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3086554845, data2: 56123, data3: 18881, data4: [132, 215, 228, 94, 249, 158, 199, 38] };
 }
 #[repr(C)]
 pub struct IDirectXVideoProcessor {
@@ -7314,6 +7457,9 @@ pub struct IDirectXVideoProcessor {
     pub VideoProcessBlt: unsafe extern "system" fn(this: *mut *mut Self, prendertarget: *mut ::core::ffi::c_void, pbltparams: *const DXVA2_VideoProcessBltParams, psamples: *const DXVA2_VideoSample, numsamples: u32, phandlecomplete: *mut super::super::Foundation::HANDLE) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct3D9")))]
     VideoProcessBlt: usize,
+}
+impl ::windows_sys::core::Interface for IDirectXVideoProcessor {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2352626160, data2: 37230, data3: 18064, data4: [128, 79, 76, 128, 1, 53, 93, 37] };
 }
 #[repr(C)]
 pub struct IDirectXVideoProcessorService {
@@ -7348,17 +7494,26 @@ pub struct IDirectXVideoProcessorService {
     #[cfg(not(feature = "Win32_Graphics_Direct3D9"))]
     CreateVideoProcessor: usize,
 }
+impl ::windows_sys::core::Interface for IDirectXVideoProcessorService {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4233209170, data2: 54759, data3: 4569, data4: [175, 85, 0, 5, 78, 67, 255, 2] };
+}
 #[repr(C)]
 pub struct IEVRFilterConfig {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetNumberOfStreams: unsafe extern "system" fn(this: *mut *mut Self, dwmaxstreams: u32) -> ::windows_sys::core::HRESULT,
     pub GetNumberOfStreams: unsafe extern "system" fn(this: *mut *mut Self, pdwmaxstreams: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEVRFilterConfig {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2213092997, data2: 33473, data3: 20135, data4: [128, 29, 133, 220, 80, 183, 80, 134] };
+}
 #[repr(C)]
 pub struct IEVRFilterConfigEx {
     pub base__: IEVRFilterConfig,
     pub SetConfigPrefs: unsafe extern "system" fn(this: *mut *mut Self, dwconfigflags: u32) -> ::windows_sys::core::HRESULT,
     pub GetConfigPrefs: unsafe extern "system" fn(this: *mut *mut Self, pdwconfigflags: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IEVRFilterConfigEx {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2929942568, data2: 31085, data3: 17743, data4: [190, 238, 180, 128, 113, 226, 67, 4] };
 }
 #[repr(C)]
 pub struct IEVRTrustedVideoPlugin {
@@ -7377,6 +7532,9 @@ pub struct IEVRTrustedVideoPlugin {
     #[cfg(not(feature = "Win32_Foundation"))]
     DisableImageExport: usize,
 }
+impl ::windows_sys::core::Interface for IEVRTrustedVideoPlugin {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2208616000, data2: 30480, data3: 18763, data4: [168, 147, 164, 114, 4, 154, 246, 48] };
+}
 #[repr(C)]
 pub struct IEVRVideoStreamControl {
     pub base__: ::windows_sys::core::IUnknown,
@@ -7389,12 +7547,18 @@ pub struct IEVRVideoStreamControl {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetStreamActiveState: usize,
 }
+impl ::windows_sys::core::Interface for IEVRVideoStreamControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3503285131, data2: 37863, data3: 18290, data4: [137, 87, 4, 0, 196, 154, 68, 133] };
+}
 #[repr(C)]
 pub struct IFileClient {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetObjectDiskSize: unsafe extern "system" fn(this: *mut *mut Self, pqwsize: *mut u64) -> ::windows_sys::core::HRESULT,
     pub Write: unsafe extern "system" fn(this: *mut *mut Self, pfio: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Read: unsafe extern "system" fn(this: *mut *mut Self, pfio: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IFileClient {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3217871254, data2: 4676, data3: 18496, data4: [171, 68, 72, 9, 117, 196, 255, 228] };
 }
 #[repr(C)]
 pub struct IFileIo {
@@ -7413,6 +7577,9 @@ pub struct IFileIo {
     pub Seek: unsafe extern "system" fn(this: *mut *mut Self, eseekorigin: SEEK_ORIGIN, qwseekoffset: u64, dwseekflags: u32, pqwcurrentposition: *mut u64) -> ::windows_sys::core::HRESULT,
     pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IFileIo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 295252374, data2: 4676, data3: 18496, data4: [171, 68, 72, 9, 117, 196, 255, 228] };
+}
 #[repr(C)]
 pub struct IMF2DBuffer {
     pub base__: ::windows_sys::core::IUnknown,
@@ -7427,11 +7594,17 @@ pub struct IMF2DBuffer {
     pub ContiguousCopyTo: unsafe extern "system" fn(this: *mut *mut Self, pbdestbuffer: *mut u8, cbdestbuffer: u32) -> ::windows_sys::core::HRESULT,
     pub ContiguousCopyFrom: unsafe extern "system" fn(this: *mut *mut Self, pbsrcbuffer: *const u8, cbsrcbuffer: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMF2DBuffer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2110379513, data2: 40665, data3: 17644, data4: [155, 191, 6, 0, 187, 88, 159, 187] };
+}
 #[repr(C)]
 pub struct IMF2DBuffer2 {
     pub base__: IMF2DBuffer,
     pub Lock2DSize: unsafe extern "system" fn(this: *mut *mut Self, lockflags: MF2DBuffer_LockFlags, ppbscanline0: *mut *mut u8, plpitch: *mut i32, ppbbufferstart: *mut *mut u8, pcbbufferlength: *mut u32) -> ::windows_sys::core::HRESULT,
     pub Copy2DTo: unsafe extern "system" fn(this: *mut *mut Self, pdestbuffer: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMF2DBuffer2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 867065510, data2: 17174, data3: 17263, data4: [141, 221, 215, 61, 34, 248, 41, 236] };
 }
 #[repr(C)]
 pub struct IMFASFContentInfo {
@@ -7446,6 +7619,9 @@ pub struct IMFASFContentInfo {
     pub GetEncodingConfigurationPropertyStore: unsafe extern "system" fn(this: *mut *mut Self, wstreamnumber: u16, ppistore: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
     GetEncodingConfigurationPropertyStore: usize,
+}
+impl ::windows_sys::core::Interface for IMFASFContentInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2984027597, data2: 54746, data3: 17489, data4: [142, 158, 219, 92, 89, 145, 78, 173] };
 }
 #[repr(C)]
 pub struct IMFASFIndexer {
@@ -7473,6 +7649,9 @@ pub struct IMFASFIndexer {
     pub GetIndexWriteSpace: unsafe extern "system" fn(this: *mut *mut Self, pcbindexwritespace: *mut u64) -> ::windows_sys::core::HRESULT,
     pub GetCompletedIndex: unsafe extern "system" fn(this: *mut *mut Self, piindexbuffer: *mut ::core::ffi::c_void, cboffsetwithinindex: u64) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFASFIndexer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1398345544, data2: 56379, data3: 17047, data4: [129, 63, 120, 119, 97, 173, 123, 62] };
+}
 #[repr(C)]
 pub struct IMFASFMultiplexer {
     pub base__: ::windows_sys::core::IUnknown,
@@ -7486,6 +7665,9 @@ pub struct IMFASFMultiplexer {
     pub GetStatistics: unsafe extern "system" fn(this: *mut *mut Self, wstreamnumber: u16, pmuxstats: *mut ASF_MUX_STATISTICS) -> ::windows_sys::core::HRESULT,
     pub SetSyncTolerance: unsafe extern "system" fn(this: *mut *mut Self, mssynctolerance: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFASFMultiplexer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1472059402, data2: 39736, data3: 18488, data4: [183, 55, 197, 143, 103, 13, 125, 79] };
+}
 #[repr(C)]
 pub struct IMFASFMutualExclusion {
     pub base__: ::windows_sys::core::IUnknown,
@@ -7498,6 +7680,9 @@ pub struct IMFASFMutualExclusion {
     pub RemoveRecord: unsafe extern "system" fn(this: *mut *mut Self, dwrecordnumber: u32) -> ::windows_sys::core::HRESULT,
     pub AddRecord: unsafe extern "system" fn(this: *mut *mut Self, pdwrecordnumber: *mut u32) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppimutex: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFASFMutualExclusion {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 307593873, data2: 58265, data3: 4565, data4: [188, 42, 0, 176, 208, 243, 244, 171] };
 }
 #[repr(C)]
 pub struct IMFASFProfile {
@@ -7519,6 +7704,9 @@ pub struct IMFASFProfile {
     pub CreateStreamPrioritization: unsafe extern "system" fn(this: *mut *mut Self, ppistreamprioritization: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppiprofile: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFASFProfile {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3530014570, data2: 651, data3: 19981, data4: [144, 61, 67, 240, 239, 130, 208, 212] };
+}
 #[repr(C)]
 pub struct IMFASFSplitter {
     pub base__: ::windows_sys::core::IUnknown,
@@ -7531,6 +7719,9 @@ pub struct IMFASFSplitter {
     pub GetNextSample: unsafe extern "system" fn(this: *mut *mut Self, pdwstatusflags: *mut ASF_STATUSFLAGS, pwstreamnumber: *mut u16, ppisample: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Flush: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub GetLastSendTime: unsafe extern "system" fn(this: *mut *mut Self, pdwlastsendtime: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFASFSplitter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 307593877, data2: 58265, data3: 4565, data4: [188, 42, 0, 176, 208, 243, 244, 171] };
 }
 #[repr(C)]
 pub struct IMFASFStreamConfig {
@@ -7546,6 +7737,9 @@ pub struct IMFASFStreamConfig {
     pub RemoveAllPayloadExtensions: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppistreamconfig: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFASFStreamConfig {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2659903698, data2: 56253, data3: 16896, data4: [154, 202, 6, 230, 223, 72, 73, 19] };
+}
 #[repr(C)]
 pub struct IMFASFStreamPrioritization {
     pub base__: ::windows_sys::core::IUnknown,
@@ -7554,6 +7748,9 @@ pub struct IMFASFStreamPrioritization {
     pub AddStream: unsafe extern "system" fn(this: *mut *mut Self, wstreamnumber: u16, wstreamflags: u16) -> ::windows_sys::core::HRESULT,
     pub RemoveStream: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppistreamprioritization: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFASFStreamPrioritization {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1771822119, data2: 48047, data3: 18943, data4: [142, 56, 156, 57, 201, 181, 224, 136] };
 }
 #[repr(C)]
 pub struct IMFASFStreamSelector {
@@ -7573,6 +7770,9 @@ pub struct IMFASFStreamSelector {
     pub BitrateToStepNumber: unsafe extern "system" fn(this: *mut *mut Self, dwbitrate: u32, pdwstepnum: *mut u32) -> ::windows_sys::core::HRESULT,
     pub SetStreamSelectorFlags: unsafe extern "system" fn(this: *mut *mut Self, dwstreamselectorflags: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFASFStreamSelector {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3491474762, data2: 20384, data3: 19040, data4: [147, 73, 194, 126, 98, 218, 157, 65] };
+}
 #[repr(C)]
 pub struct IMFActivate {
     pub base__: IMFAttributes,
@@ -7580,17 +7780,26 @@ pub struct IMFActivate {
     pub ShutdownObject: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub DetachObject: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFActivate {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2146344602, data2: 19081, data3: 18342, data4: [137, 156, 182, 165, 58, 112, 251, 103] };
+}
 #[repr(C)]
 pub struct IMFAsyncCallback {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetParameters: unsafe extern "system" fn(this: *mut *mut Self, pdwflags: *mut u32, pdwqueue: *mut u32) -> ::windows_sys::core::HRESULT,
     pub Invoke: unsafe extern "system" fn(this: *mut *mut Self, pasyncresult: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFAsyncCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2725249999, data2: 9044, data3: 20266, data4: [141, 106, 171, 124, 255, 21, 67, 126] };
+}
 #[repr(C)]
 pub struct IMFAsyncCallbackLogging {
     pub base__: IMFAsyncCallback,
     pub GetObjectPointer: unsafe extern "system" fn(this: *mut *mut Self) -> *mut ::core::ffi::c_void,
     pub GetObjectTag: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
+}
+impl ::windows_sys::core::Interface for IMFAsyncCallbackLogging {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3349470369, data2: 62960, data3: 18358, data4: [185, 43, 191, 1, 6, 210, 87, 145] };
 }
 #[repr(C)]
 pub struct IMFAsyncResult {
@@ -7600,6 +7809,9 @@ pub struct IMFAsyncResult {
     pub SetStatus: unsafe extern "system" fn(this: *mut *mut Self, hrstatus: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
     pub GetObject: unsafe extern "system" fn(this: *mut *mut Self, ppobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetStateNoAddRef: unsafe extern "system" fn(this: *mut *mut Self) -> *mut *mut ::windows_sys::core::IUnknown,
+}
+impl ::windows_sys::core::Interface for IMFAsyncResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2892724361, data2: 1856, data3: 19793, data4: [134, 25, 144, 89, 148, 165, 92, 198] };
 }
 #[repr(C)]
 pub struct IMFAttributes {
@@ -7650,6 +7862,9 @@ pub struct IMFAttributes {
     GetItemByIndex: usize,
     pub CopyAllItems: unsafe extern "system" fn(this: *mut *mut Self, pdest: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFAttributes {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 752015649, data2: 50247, data3: 17575, data4: [161, 60, 74, 218, 191, 194, 71, 227] };
+}
 #[repr(C)]
 pub struct IMFAudioMediaType {
     pub base__: IMFMediaType,
@@ -7657,6 +7872,9 @@ pub struct IMFAudioMediaType {
     pub GetAudioFormat: unsafe extern "system" fn(this: *mut *mut Self) -> *mut super::Audio::WAVEFORMATEX,
     #[cfg(not(feature = "Win32_Media_Audio"))]
     GetAudioFormat: usize,
+}
+impl ::windows_sys::core::Interface for IMFAudioMediaType {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 648064451, data2: 52774, data3: 18034, data4: [147, 4, 105, 85, 46, 221, 63, 175] };
 }
 #[repr(C)]
 pub struct IMFAudioPolicy {
@@ -7668,6 +7886,9 @@ pub struct IMFAudioPolicy {
     pub SetIconPath: unsafe extern "system" fn(this: *mut *mut Self, pszpath: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
     pub GetIconPath: unsafe extern "system" fn(this: *mut *mut Self, pszpath: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFAudioPolicy {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2690878507, data2: 25701, data3: 17301, data4: [154, 231, 163, 33, 169, 253, 40, 86] };
+}
 #[repr(C)]
 pub struct IMFAudioStreamVolume {
     pub base__: ::windows_sys::core::IUnknown,
@@ -7677,11 +7898,17 @@ pub struct IMFAudioStreamVolume {
     pub SetAllVolumes: unsafe extern "system" fn(this: *mut *mut Self, dwcount: u32, pfvolumes: *const f32) -> ::windows_sys::core::HRESULT,
     pub GetAllVolumes: unsafe extern "system" fn(this: *mut *mut Self, dwcount: u32, pfvolumes: *mut f32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFAudioStreamVolume {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1991359451, data2: 20168, data3: 20278, data4: [177, 6, 112, 169, 49, 109, 245, 147] };
+}
 #[repr(C)]
 pub struct IMFBufferListNotify {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnAddSourceBuffer: unsafe extern "system" fn(this: *mut *mut Self),
     pub OnRemoveSourceBuffer: unsafe extern "system" fn(this: *mut *mut Self),
+}
+impl ::windows_sys::core::Interface for IMFBufferListNotify {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 617433079, data2: 33240, data3: 18309, data4: [173, 178, 175, 105, 122, 150, 60, 210] };
 }
 #[repr(C)]
 pub struct IMFByteStream {
@@ -7705,6 +7932,9 @@ pub struct IMFByteStream {
     pub Flush: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFByteStream {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2907446016, data2: 19447, data3: 16943, data4: [145, 117, 117, 102, 147, 217, 19, 13] };
+}
 #[repr(C)]
 pub struct IMFByteStreamBuffering {
     pub base__: ::windows_sys::core::IUnknown,
@@ -7715,10 +7945,16 @@ pub struct IMFByteStreamBuffering {
     EnableBuffering: usize,
     pub StopBuffering: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFByteStreamBuffering {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1835456386, data2: 7503, data3: 19895, data4: [140, 99, 203, 140, 119, 241, 239, 94] };
+}
 #[repr(C)]
 pub struct IMFByteStreamCacheControl {
     pub base__: ::windows_sys::core::IUnknown,
     pub StopBackgroundTransfer: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFByteStreamCacheControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4110692004, data2: 31382, data3: 19061, data4: [170, 123, 43, 225, 239, 127, 136, 213] };
 }
 #[repr(C)]
 pub struct IMFByteStreamCacheControl2 {
@@ -7729,6 +7965,9 @@ pub struct IMFByteStreamCacheControl2 {
     pub IsBackgroundTransferActive: unsafe extern "system" fn(this: *mut *mut Self, pfactive: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     IsBackgroundTransferActive: usize,
+}
+impl ::windows_sys::core::Interface for IMFByteStreamCacheControl2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1909343900, data2: 62283, data3: 18922, data4: [165, 107, 45, 42, 16, 229, 17, 73] };
 }
 #[repr(C)]
 pub struct IMFByteStreamHandler {
@@ -7741,10 +7980,16 @@ pub struct IMFByteStreamHandler {
     pub CancelObjectCreation: unsafe extern "system" fn(this: *mut *mut Self, piunknowncancelcookie: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetMaxNumberOfBytesRequiredForResolution: unsafe extern "system" fn(this: *mut *mut Self, pqwbytes: *mut u64) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFByteStreamHandler {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3141667492, data2: 30299, data3: 18975, data4: [145, 254, 214, 168, 161, 67, 146, 76] };
+}
 #[repr(C)]
 pub struct IMFByteStreamProxyClassFactory {
     pub base__: ::windows_sys::core::IUnknown,
     pub CreateByteStreamProxy: unsafe extern "system" fn(this: *mut *mut Self, pbytestream: *mut ::core::ffi::c_void, pattributes: *mut ::core::ffi::c_void, riid: *const ::windows_sys::core::GUID, ppvobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFByteStreamProxyClassFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2796830596, data2: 23562, data3: 17128, data4: [164, 77, 177, 133, 122, 118, 153, 47] };
 }
 #[repr(C)]
 pub struct IMFByteStreamTimeSeek {
@@ -7756,6 +8001,9 @@ pub struct IMFByteStreamTimeSeek {
     pub TimeSeek: unsafe extern "system" fn(this: *mut *mut Self, qwtimeposition: u64) -> ::windows_sys::core::HRESULT,
     pub GetTimeSeekResult: unsafe extern "system" fn(this: *mut *mut Self, pqwstarttime: *mut u64, pqwstoptime: *mut u64, pqwduration: *mut u64) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFByteStreamTimeSeek {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1687645178, data2: 64353, data3: 16449, data4: [144, 105, 140, 154, 95, 101, 155, 235] };
+}
 #[repr(C)]
 pub struct IMFCameraOcclusionStateMonitor {
     pub base__: ::windows_sys::core::IUnknown,
@@ -7763,21 +8011,33 @@ pub struct IMFCameraOcclusionStateMonitor {
     pub Stop: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub GetSupportedStates: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
 }
+impl ::windows_sys::core::Interface for IMFCameraOcclusionStateMonitor {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3429445446, data2: 50839, data3: 18402, data4: [167, 45, 123, 6, 70, 23, 116, 155] };
+}
 #[repr(C)]
 pub struct IMFCameraOcclusionStateReport {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetOcclusionState: unsafe extern "system" fn(this: *mut *mut Self, occlusionstate: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFCameraOcclusionStateReport {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 373338831, data2: 29914, data3: 17506, data4: [164, 59, 183, 109, 59, 220, 20, 52] };
 }
 #[repr(C)]
 pub struct IMFCameraOcclusionStateReportCallback {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnOcclusionStateReport: unsafe extern "system" fn(this: *mut *mut Self, occlusionstatereport: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFCameraOcclusionStateReportCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1851277767, data2: 14473, data3: 16409, data4: [144, 53, 120, 63, 177, 155, 89, 72] };
+}
 #[repr(C)]
 pub struct IMFCameraSyncObject {
     pub base__: ::windows_sys::core::IUnknown,
     pub WaitOnSignal: unsafe extern "system" fn(this: *mut *mut Self, timeoutinms: u32) -> ::windows_sys::core::HRESULT,
     pub Shutdown: unsafe extern "system" fn(this: *mut *mut Self),
+}
+impl ::windows_sys::core::Interface for IMFCameraSyncObject {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1664660026, data2: 12354, data3: 18898, data4: [163, 234, 236, 15, 237, 129, 84, 7] };
 }
 #[repr(C)]
 pub struct IMFCaptureEngine {
@@ -7794,25 +8054,40 @@ pub struct IMFCaptureEngine {
     pub GetSink: unsafe extern "system" fn(this: *mut *mut Self, mfcaptureenginesinktype: MF_CAPTURE_ENGINE_SINK_TYPE, ppsink: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetSource: unsafe extern "system" fn(this: *mut *mut Self, ppsource: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFCaptureEngine {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2797315123, data2: 5995, data3: 18610, data4: [179, 117, 83, 170, 3, 71, 50, 7] };
+}
 #[repr(C)]
 pub struct IMFCaptureEngineClassFactory {
     pub base__: ::windows_sys::core::IUnknown,
     pub CreateInstance: unsafe extern "system" fn(this: *mut *mut Self, clsid: *const ::windows_sys::core::GUID, riid: *const ::windows_sys::core::GUID, ppvobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFCaptureEngineClassFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2399326528, data2: 22268, data3: 17154, data4: [167, 5, 58, 151, 199, 139, 231, 121] };
 }
 #[repr(C)]
 pub struct IMFCaptureEngineOnEventCallback {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnEvent: unsafe extern "system" fn(this: *mut *mut Self, pevent: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFCaptureEngineOnEventCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2933543360, data2: 36901, data3: 18819, data4: [144, 18, 222, 89, 123, 136, 176, 137] };
+}
 #[repr(C)]
 pub struct IMFCaptureEngineOnSampleCallback {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnSample: unsafe extern "system" fn(this: *mut *mut Self, psample: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFCaptureEngineOnSampleCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1377110914, data2: 43833, data3: 17511, data4: [152, 15, 228, 139, 240, 130, 46, 205] };
+}
 #[repr(C)]
 pub struct IMFCaptureEngineOnSampleCallback2 {
     pub base__: IMFCaptureEngineOnSampleCallback,
     pub OnSynchronizedEvent: unsafe extern "system" fn(this: *mut *mut Self, pevent: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFCaptureEngineOnSampleCallback2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3816615639, data2: 13327, data3: 17684, data4: [159, 77, 156, 42, 224, 38, 16, 11] };
 }
 #[repr(C)]
 pub struct IMFCapturePhotoConfirmation {
@@ -7821,12 +8096,18 @@ pub struct IMFCapturePhotoConfirmation {
     pub SetPixelFormat: unsafe extern "system" fn(this: *mut *mut Self, subtype: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub GetPixelFormat: unsafe extern "system" fn(this: *mut *mut Self, subtype: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFCapturePhotoConfirmation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 435586377, data2: 51850, data3: 18182, data4: [164, 239, 72, 29, 188, 149, 225, 44] };
+}
 #[repr(C)]
 pub struct IMFCapturePhotoSink {
     pub base__: IMFCaptureSink,
     pub SetOutputFileName: unsafe extern "system" fn(this: *mut *mut Self, filename: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
     pub SetSampleCallback: unsafe extern "system" fn(this: *mut *mut Self, pcallback: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetOutputByteStream: unsafe extern "system" fn(this: *mut *mut Self, pbytestream: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFCapturePhotoSink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3537124552, data2: 18619, data3: 19111, data4: [149, 219, 16, 192, 105, 119, 231, 119] };
 }
 #[repr(C)]
 pub struct IMFCapturePreviewSink {
@@ -7853,6 +8134,9 @@ pub struct IMFCapturePreviewSink {
     pub SetRotation: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32, dwrotationvalue: u32) -> ::windows_sys::core::HRESULT,
     pub SetCustomSink: unsafe extern "system" fn(this: *mut *mut Self, pmediasink: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFCapturePreviewSink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1999924477, data2: 23369, data3: 19827, data4: [172, 224, 91, 82, 168, 89, 242, 224] };
+}
 #[repr(C)]
 pub struct IMFCaptureRecordSink {
     pub base__: IMFCaptureSink,
@@ -7863,6 +8147,9 @@ pub struct IMFCaptureRecordSink {
     pub GetRotation: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32, pdwrotationvalue: *mut u32) -> ::windows_sys::core::HRESULT,
     pub SetRotation: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32, dwrotationvalue: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFCaptureRecordSink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 857978202, data2: 63786, data3: 20450, data4: [142, 220, 233, 191, 192, 99, 77, 119] };
+}
 #[repr(C)]
 pub struct IMFCaptureSink {
     pub base__: ::windows_sys::core::IUnknown,
@@ -7872,10 +8159,16 @@ pub struct IMFCaptureSink {
     pub Prepare: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub RemoveAllStreams: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFCaptureSink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1926632283, data2: 13801, data3: 16684, data4: [185, 38, 253, 82, 101, 242, 168, 133] };
+}
 #[repr(C)]
 pub struct IMFCaptureSink2 {
     pub base__: IMFCaptureSink,
     pub SetOutputMediaType: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32, pmediatype: *mut ::core::ffi::c_void, pencodingattributes: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFCaptureSink2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4192477598, data2: 24983, data3: 19294, data4: [184, 136, 190, 227, 16, 171, 44, 89] };
 }
 #[repr(C)]
 pub struct IMFCaptureSource {
@@ -7901,11 +8194,17 @@ pub struct IMFCaptureSource {
     SetMirrorState: usize,
     pub GetStreamIndexFromFriendlyName: unsafe extern "system" fn(this: *mut *mut Self, uifriendlyname: u32, pdwactualstreamindex: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFCaptureSource {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1134183080, data2: 3372, data3: 17669, data4: [190, 131, 247, 155, 42, 5, 213, 196] };
+}
 #[repr(C)]
 pub struct IMFCdmSuspendNotify {
     pub base__: ::windows_sys::core::IUnknown,
     pub Begin: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub End: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFCdmSuspendNotify {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2052474322, data2: 17341, data3: 18429, data4: [135, 183, 220, 210, 76, 199, 214, 146] };
 }
 #[repr(C)]
 pub struct IMFClock {
@@ -7916,11 +8215,17 @@ pub struct IMFClock {
     pub GetState: unsafe extern "system" fn(this: *mut *mut Self, dwreserved: u32, peclockstate: *mut MFCLOCK_STATE) -> ::windows_sys::core::HRESULT,
     pub GetProperties: unsafe extern "system" fn(this: *mut *mut Self, pclockproperties: *mut MFCLOCK_PROPERTIES) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFClock {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 783411525, data2: 6328, data3: 16697, data4: [155, 26, 213, 213, 132, 129, 133, 48] };
+}
 #[repr(C)]
 pub struct IMFClockConsumer {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetPresentationClock: unsafe extern "system" fn(this: *mut *mut Self, ppresentationclock: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetPresentationClock: unsafe extern "system" fn(this: *mut *mut Self, pppresentationclock: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFClockConsumer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1861396066, data2: 18368, data3: 18022, data4: [177, 61, 203, 183, 23, 242, 250, 44] };
 }
 #[repr(C)]
 pub struct IMFClockStateSink {
@@ -7930,6 +8235,9 @@ pub struct IMFClockStateSink {
     pub OnClockPause: unsafe extern "system" fn(this: *mut *mut Self, hnssystemtime: i64) -> ::windows_sys::core::HRESULT,
     pub OnClockRestart: unsafe extern "system" fn(this: *mut *mut Self, hnssystemtime: i64) -> ::windows_sys::core::HRESULT,
     pub OnClockSetRate: unsafe extern "system" fn(this: *mut *mut Self, hnssystemtime: i64, flrate: f32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFClockStateSink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4134104706, data2: 29943, data3: 20285, data4: [161, 120, 138, 94, 9, 195, 101, 159] };
 }
 #[repr(C)]
 pub struct IMFCollection {
@@ -7941,6 +8249,9 @@ pub struct IMFCollection {
     pub InsertElementAt: unsafe extern "system" fn(this: *mut *mut Self, dwindex: u32, punknown: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub RemoveAllElements: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1539876715, data2: 34458, data3: 18083, data4: [155, 3, 250, 33, 138, 102, 174, 190] };
+}
 #[repr(C)]
 pub struct IMFContentDecryptionModule {
     pub base__: ::windows_sys::core::IUnknown,
@@ -7951,6 +8262,9 @@ pub struct IMFContentDecryptionModule {
     pub SetServerCertificate: unsafe extern "system" fn(this: *mut *mut Self, certificate: *const u8, certificatesize: u32) -> ::windows_sys::core::HRESULT,
     pub CreateTrustedInput: unsafe extern "system" fn(this: *mut *mut Self, contentinitdata: *const u8, contentinitdatasize: u32, trustedinput: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetProtectionSystemIds: unsafe extern "system" fn(this: *mut *mut Self, systemids: *mut *mut ::windows_sys::core::GUID, count: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFContentDecryptionModule {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2277415020, data2: 4286, data3: 18755, data4: [191, 72, 75, 84, 206, 25, 131, 162] };
 }
 #[repr(C)]
 pub struct IMFContentDecryptionModuleAccess {
@@ -7965,6 +8279,9 @@ pub struct IMFContentDecryptionModuleAccess {
     GetConfiguration: usize,
     pub GetKeySystem: unsafe extern "system" fn(this: *mut *mut Self, keysystem: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFContentDecryptionModuleAccess {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2824065524, data2: 58016, data3: 17155, data4: [158, 220, 241, 166, 142, 228, 49, 54] };
+}
 #[repr(C)]
 pub struct IMFContentDecryptionModuleFactory {
     pub base__: ::windows_sys::core::IUnknown,
@@ -7976,6 +8293,9 @@ pub struct IMFContentDecryptionModuleFactory {
     pub CreateContentDecryptionModuleAccess: unsafe extern "system" fn(this: *mut *mut Self, keysystem: ::windows_sys::core::PCWSTR, configurations: *const *mut ::core::ffi::c_void, numconfigurations: u32, contentdecryptionmoduleaccess: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
     CreateContentDecryptionModuleAccess: usize,
+}
+impl ::windows_sys::core::Interface for IMFContentDecryptionModuleFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2103099158, data2: 19643, data3: 19976, data4: [185, 119, 155, 165, 144, 73, 148, 62] };
 }
 #[repr(C)]
 pub struct IMFContentDecryptionModuleSession {
@@ -7992,16 +8312,25 @@ pub struct IMFContentDecryptionModuleSession {
     pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Remove: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFContentDecryptionModuleSession {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1310932733, data2: 7634, data3: 18920, data4: [181, 119, 214, 62, 238, 76, 13, 51] };
+}
 #[repr(C)]
 pub struct IMFContentDecryptionModuleSessionCallbacks {
     pub base__: ::windows_sys::core::IUnknown,
     pub KeyMessage: unsafe extern "system" fn(this: *mut *mut Self, messagetype: MF_MEDIAKEYSESSION_MESSAGETYPE, message: *const u8, messagesize: u32, destinationurl: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
     pub KeyStatusChanged: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFContentDecryptionModuleSessionCallbacks {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1066856000, data2: 44417, data3: 16534, data4: [132, 112, 89, 164, 183, 112, 248, 154] };
+}
 #[repr(C)]
 pub struct IMFContentDecryptorContext {
     pub base__: ::windows_sys::core::IUnknown,
     pub InitializeHardwareKey: unsafe extern "system" fn(this: *mut *mut Self, inputprivatedatabytecount: u32, inputprivatedata: *const ::core::ffi::c_void, outputprivatedata: *mut u64) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFContentDecryptorContext {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2126819773, data2: 17403, data3: 18275, data4: [133, 210, 100, 252, 181, 197, 244, 203] };
 }
 #[repr(C)]
 pub struct IMFContentEnabler {
@@ -8017,17 +8346,26 @@ pub struct IMFContentEnabler {
     pub MonitorEnable: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Cancel: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFContentEnabler {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3552898905, data2: 18894, data3: 17281, data4: [144, 113, 213, 188, 208, 68, 199, 112] };
+}
 #[repr(C)]
 pub struct IMFContentProtectionDevice {
     pub base__: ::windows_sys::core::IUnknown,
     pub InvokeFunction: unsafe extern "system" fn(this: *mut *mut Self, functionid: u32, inputbufferbytecount: u32, inputbuffer: *const u8, outputbufferbytecount: *mut u32, outputbuffer: *mut u8) -> ::windows_sys::core::HRESULT,
     pub GetPrivateDataByteCount: unsafe extern "system" fn(this: *mut *mut Self, privateinputbytecount: *mut u32, privateoutputbytecount: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFContentProtectionDevice {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3861213556, data2: 41056, data3: 19610, data4: [160, 136, 59, 27, 71, 28, 173, 40] };
+}
 #[repr(C)]
 pub struct IMFContentProtectionManager {
     pub base__: ::windows_sys::core::IUnknown,
     pub BeginEnableContent: unsafe extern "system" fn(this: *mut *mut Self, penableractivate: *mut ::core::ffi::c_void, ptopo: *mut ::core::ffi::c_void, pcallback: *mut ::core::ffi::c_void, punkstate: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub EndEnableContent: unsafe extern "system" fn(this: *mut *mut Self, presult: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFContentProtectionManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2902008921, data2: 27233, data3: 17085, data4: [181, 124, 180, 62, 81, 32, 60, 176] };
 }
 #[repr(C)]
 pub struct IMFD3D12SynchronizationObject {
@@ -8037,6 +8375,9 @@ pub struct IMFD3D12SynchronizationObject {
     #[cfg(not(feature = "Win32_Foundation"))]
     SignalEventOnFinalResourceRelease: usize,
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFD3D12SynchronizationObject {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2149778096, data2: 33502, data3: 17889, data4: [180, 33, 241, 158, 229, 189, 175, 35] };
 }
 #[repr(C)]
 pub struct IMFD3D12SynchronizationObjectCommands {
@@ -8058,6 +8399,9 @@ pub struct IMFD3D12SynchronizationObjectCommands {
     #[cfg(not(feature = "Win32_Graphics_Direct3D12"))]
     EnqueueResourceRelease: usize,
 }
+impl ::windows_sys::core::Interface for IMFD3D12SynchronizationObjectCommands {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 164689973, data2: 37631, data3: 20051, data4: [142, 250, 64, 250, 165, 81, 242, 51] };
+}
 #[repr(C)]
 pub struct IMFDLNASinkInit {
     pub base__: ::windows_sys::core::IUnknown,
@@ -8065,6 +8409,9 @@ pub struct IMFDLNASinkInit {
     pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, pbytestream: *mut ::core::ffi::c_void, fpal: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     Initialize: usize,
+}
+impl ::windows_sys::core::Interface for IMFDLNASinkInit {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 201402265, data2: 7009, data3: 19472, data4: [189, 169, 4, 68, 91, 229, 245, 97] };
 }
 #[repr(C)]
 pub struct IMFDRMNetHelper {
@@ -8075,6 +8422,9 @@ pub struct IMFDRMNetHelper {
     ProcessLicenseRequest: usize,
     pub GetChainedLicenseResponse: unsafe extern "system" fn(this: *mut *mut Self, pplicenseresponse: *mut *mut u8, pcblicenseresponse: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFDRMNetHelper {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1025503466, data2: 26522, data3: 16784, data4: [141, 70, 127, 166, 158, 140, 126, 21] };
+}
 #[repr(C)]
 pub struct IMFDXGIBuffer {
     pub base__: ::windows_sys::core::IUnknown,
@@ -8082,6 +8432,9 @@ pub struct IMFDXGIBuffer {
     pub GetSubresourceIndex: unsafe extern "system" fn(this: *mut *mut Self, pusubresource: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetUnknown: unsafe extern "system" fn(this: *mut *mut Self, guid: *const ::windows_sys::core::GUID, riid: *const ::windows_sys::core::GUID, ppvobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetUnknown: unsafe extern "system" fn(this: *mut *mut Self, guid: *const ::windows_sys::core::GUID, punkdata: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFDXGIBuffer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3877063930, data2: 7326, data3: 18609, data4: [136, 102, 98, 98, 38, 191, 194, 88] };
 }
 #[repr(C)]
 pub struct IMFDXGIDeviceManager {
@@ -8112,10 +8465,16 @@ pub struct IMFDXGIDeviceManager {
     #[cfg(not(feature = "Win32_Foundation"))]
     UnlockDevice: usize,
 }
+impl ::windows_sys::core::Interface for IMFDXGIDeviceManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3948100957, data2: 11702, data3: 16632, data4: [151, 169, 73, 70, 146, 1, 79, 7] };
+}
 #[repr(C)]
 pub struct IMFDXGIDeviceManagerSource {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetManager: unsafe extern "system" fn(this: *mut *mut Self, ppmanager: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFDXGIDeviceManagerSource {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 549193547, data2: 31373, data3: 17929, data4: [140, 59, 100, 160, 163, 181, 215, 206] };
 }
 #[repr(C)]
 pub struct IMFDesiredSample {
@@ -8123,6 +8482,9 @@ pub struct IMFDesiredSample {
     pub GetDesiredSampleTimeAndDuration: unsafe extern "system" fn(this: *mut *mut Self, phnssampletime: *mut i64, phnssampleduration: *mut i64) -> ::windows_sys::core::HRESULT,
     pub SetDesiredSampleTimeAndDuration: unsafe extern "system" fn(this: *mut *mut Self, hnssampletime: i64, hnssampleduration: i64),
     pub Clear: unsafe extern "system" fn(this: *mut *mut Self),
+}
+impl ::windows_sys::core::Interface for IMFDesiredSample {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1455592656, data2: 30014, data3: 16992, data4: [141, 97, 163, 216, 130, 11, 29, 84] };
 }
 #[repr(C)]
 pub struct IMFDeviceTransform {
@@ -8148,10 +8510,16 @@ pub struct IMFDeviceTransform {
     pub FlushInputStream: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32, dwflags: u32) -> ::windows_sys::core::HRESULT,
     pub FlushOutputStream: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32, dwflags: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFDeviceTransform {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3625515992, data2: 64582, data3: 17138, data4: [135, 172, 30, 162, 209, 249, 191, 50] };
+}
 #[repr(C)]
 pub struct IMFDeviceTransformCallback {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnBufferSent: unsafe extern "system" fn(this: *mut *mut Self, pcallbackattributes: *mut ::core::ffi::c_void, pinid: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFDeviceTransformCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1834792518, data2: 10732, data3: 16891, data4: [129, 121, 140, 76, 109, 117, 8, 17] };
 }
 #[repr(C)]
 pub struct IMFExtendedCameraControl {
@@ -8163,10 +8531,16 @@ pub struct IMFExtendedCameraControl {
     pub UnlockPayload: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub CommitSettings: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFExtendedCameraControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 954414368, data2: 64673, data3: 18501, data4: [162, 122, 104, 183, 198, 171, 55, 137] };
+}
 #[repr(C)]
 pub struct IMFExtendedCameraController {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetExtendedCameraControl: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32, ulpropertyid: u32, ppcontrol: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFExtendedCameraController {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3105800174, data2: 51715, data3: 19188, data4: [138, 130, 163, 23, 82, 244, 160, 252] };
 }
 #[repr(C)]
 pub struct IMFExtendedCameraIntrinsicModel {
@@ -8174,6 +8548,9 @@ pub struct IMFExtendedCameraIntrinsicModel {
     pub GetModel: unsafe extern "system" fn(this: *mut *mut Self, pintrinsicmodel: *mut MFExtendedCameraIntrinsic_IntrinsicModel) -> ::windows_sys::core::HRESULT,
     pub SetModel: unsafe extern "system" fn(this: *mut *mut Self, pintrinsicmodel: *const MFExtendedCameraIntrinsic_IntrinsicModel) -> ::windows_sys::core::HRESULT,
     pub GetDistortionModelType: unsafe extern "system" fn(this: *mut *mut Self, pdistortionmodeltype: *mut MFCameraIntrinsic_DistortionModelType) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFExtendedCameraIntrinsicModel {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1549360740, data2: 17968, data3: 16945, data4: [133, 90, 18, 132, 47, 115, 50, 69] };
 }
 #[repr(C)]
 pub struct IMFExtendedCameraIntrinsics {
@@ -8185,17 +8562,26 @@ pub struct IMFExtendedCameraIntrinsics {
     pub GetIntrinsicModelByIndex: unsafe extern "system" fn(this: *mut *mut Self, dwindex: u32, ppintrinsicmodel: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub AddIntrinsicModel: unsafe extern "system" fn(this: *mut *mut Self, pintrinsicmodel: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFExtendedCameraIntrinsics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1753181612, data2: 27015, data3: 18256, data4: [161, 106, 115, 77, 30, 122, 16, 254] };
+}
 #[repr(C)]
 pub struct IMFExtendedCameraIntrinsicsDistortionModel6KT {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetDistortionModel: unsafe extern "system" fn(this: *mut *mut Self, pdistortionmodel: *mut MFCameraIntrinsic_DistortionModel6KT) -> ::windows_sys::core::HRESULT,
     pub SetDistortionModel: unsafe extern "system" fn(this: *mut *mut Self, pdistortionmodel: *const MFCameraIntrinsic_DistortionModel6KT) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFExtendedCameraIntrinsicsDistortionModel6KT {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1958896955, data2: 24405, data3: 20145, data4: [159, 15, 24, 184, 246, 139, 125, 61] };
+}
 #[repr(C)]
 pub struct IMFExtendedCameraIntrinsicsDistortionModelArcTan {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetDistortionModel: unsafe extern "system" fn(this: *mut *mut Self, pdistortionmodel: *mut MFCameraIntrinsic_DistortionModelArcTan) -> ::windows_sys::core::HRESULT,
     pub SetDistortionModel: unsafe extern "system" fn(this: *mut *mut Self, pdistortionmodel: *const MFCameraIntrinsic_DistortionModelArcTan) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFExtendedCameraIntrinsicsDistortionModelArcTan {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2167234453, data2: 46450, data3: 17884, data4: [186, 252, 174, 36, 25, 157, 221, 168] };
 }
 #[repr(C)]
 pub struct IMFExtendedDRMTypeSupport {
@@ -8205,10 +8591,16 @@ pub struct IMFExtendedDRMTypeSupport {
     #[cfg(not(feature = "Win32_Foundation"))]
     IsTypeSupportedEx: usize,
 }
+impl ::windows_sys::core::Interface for IMFExtendedDRMTypeSupport {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 858703202, data2: 14168, data3: 18061, data4: [167, 132, 227, 143, 35, 85, 33, 40] };
+}
 #[repr(C)]
 pub struct IMFFieldOfUseMFTUnlock {
     pub base__: ::windows_sys::core::IUnknown,
     pub Unlock: unsafe extern "system" fn(this: *mut *mut Self, punkmft: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFFieldOfUseMFTUnlock {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1351512531, data2: 60518, data3: 20419, data4: [135, 117, 180, 185, 237, 107, 168, 71] };
 }
 #[repr(C)]
 pub struct IMFFinalizableMediaSink {
@@ -8216,10 +8608,16 @@ pub struct IMFFinalizableMediaSink {
     pub BeginFinalize: unsafe extern "system" fn(this: *mut *mut Self, pcallback: *mut ::core::ffi::c_void, punkstate: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub EndFinalize: unsafe extern "system" fn(this: *mut *mut Self, presult: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFFinalizableMediaSink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3941381962, data2: 39504, data3: 17102, data4: [149, 65, 106, 127, 87, 170, 74, 215] };
+}
 #[repr(C)]
 pub struct IMFGetService {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetService: unsafe extern "system" fn(this: *mut *mut Self, guidservice: *const ::windows_sys::core::GUID, riid: *const ::windows_sys::core::GUID, ppvobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFGetService {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4204345480, data2: 17283, data3: 16730, data4: [169, 48, 221, 71, 42, 140, 246, 247] };
 }
 #[repr(C)]
 pub struct IMFHDCPStatus {
@@ -8229,6 +8627,9 @@ pub struct IMFHDCPStatus {
     #[cfg(not(feature = "Win32_Foundation"))]
     Query: usize,
     pub Set: unsafe extern "system" fn(this: *mut *mut Self, status: MF_HDCP_STATUS) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFHDCPStatus {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3728740180, data2: 23537, data3: 16591, data4: [137, 100, 11, 234, 19, 107, 30, 61] };
 }
 #[repr(C)]
 pub struct IMFHttpDownloadRequest {
@@ -8256,6 +8657,9 @@ pub struct IMFHttpDownloadRequest {
     pub GetRangeEndOffset: unsafe extern "system" fn(this: *mut *mut Self, pqwrangeend: *mut u64) -> ::windows_sys::core::HRESULT,
     pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFHttpDownloadRequest {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4151967199, data2: 9959, data3: 17008, data4: [138, 139, 185, 131, 209, 133, 157, 224] };
+}
 #[repr(C)]
 pub struct IMFHttpDownloadSession {
     pub base__: ::windows_sys::core::IUnknown,
@@ -8266,10 +8670,16 @@ pub struct IMFHttpDownloadSession {
     CreateRequest: usize,
     pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFHttpDownloadSession {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1912248876, data2: 21454, data3: 18018, data4: [161, 50, 26, 126, 140, 191, 98, 219] };
+}
 #[repr(C)]
 pub struct IMFHttpDownloadSessionProvider {
     pub base__: ::windows_sys::core::IUnknown,
     pub CreateHttpDownloadSession: unsafe extern "system" fn(this: *mut *mut Self, wszscheme: ::windows_sys::core::PCWSTR, ppdownloadsession: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFHttpDownloadSessionProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 458028217, data2: 14870, data3: 16661, data4: [131, 157, 3, 204, 92, 153, 223, 1] };
 }
 #[repr(C)]
 pub struct IMFImageSharingEngine {
@@ -8281,6 +8691,9 @@ pub struct IMFImageSharingEngine {
     GetDevice: usize,
     pub Shutdown: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFImageSharingEngine {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3483414158, data2: 32284, data3: 17618, data4: [174, 104, 252, 76, 20, 138, 99, 84] };
+}
 #[repr(C)]
 pub struct IMFImageSharingEngineClassFactory {
     pub base__: ::windows_sys::core::IUnknown,
@@ -8288,6 +8701,9 @@ pub struct IMFImageSharingEngineClassFactory {
     pub CreateInstanceFromUDN: unsafe extern "system" fn(this: *mut *mut Self, puniquedevicename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppengine: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     CreateInstanceFromUDN: usize,
+}
+impl ::windows_sys::core::Interface for IMFImageSharingEngineClassFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 533026599, data2: 43003, data3: 20424, data4: [131, 174, 138, 240, 36, 153, 10, 241] };
 }
 #[repr(C)]
 pub struct IMFInputTrustAuthority {
@@ -8299,10 +8715,16 @@ pub struct IMFInputTrustAuthority {
     pub UpdateAccess: unsafe extern "system" fn(this: *mut *mut Self, pparam: *const MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS) -> ::windows_sys::core::HRESULT,
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFInputTrustAuthority {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3516894872, data2: 45350, data3: 17478, data4: [137, 12, 93, 203, 122, 215, 20, 83] };
+}
 #[repr(C)]
 pub struct IMFLocalMFTRegistration {
     pub base__: ::windows_sys::core::IUnknown,
     pub RegisterMFTs: unsafe extern "system" fn(this: *mut *mut Self, pmfts: *const MFT_REGISTRATION_INFO, cmfts: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFLocalMFTRegistration {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 345787763, data2: 46270, data3: 20365, data4: [139, 135, 7, 158, 146, 107, 106, 221] };
 }
 #[repr(C)]
 pub struct IMFMediaBuffer {
@@ -8312,6 +8734,9 @@ pub struct IMFMediaBuffer {
     pub GetCurrentLength: unsafe extern "system" fn(this: *mut *mut Self, pcbcurrentlength: *mut u32) -> ::windows_sys::core::HRESULT,
     pub SetCurrentLength: unsafe extern "system" fn(this: *mut *mut Self, cbcurrentlength: u32) -> ::windows_sys::core::HRESULT,
     pub GetMaxLength: unsafe extern "system" fn(this: *mut *mut Self, pcbmaxlength: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFMediaBuffer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 73377171, data2: 34713, data3: 17080, data4: [188, 141, 137, 104, 198, 69, 53, 7] };
 }
 #[repr(C)]
 pub struct IMFMediaEngine {
@@ -8404,11 +8829,17 @@ pub struct IMFMediaEngine {
     TransferVideoFrame: usize,
     pub OnVideoStreamTick: unsafe extern "system" fn(this: *mut *mut Self, ppts: *mut i64) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFMediaEngine {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2560733371, data2: 1003, data3: 18741, data4: [174, 124, 147, 193, 250, 14, 28, 147] };
+}
 #[repr(C)]
 pub struct IMFMediaEngineAudioEndpointId {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetAudioEndpointId: unsafe extern "system" fn(this: *mut *mut Self, pszendpointid: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
     pub GetAudioEndpointId: unsafe extern "system" fn(this: *mut *mut Self, ppszendpointid: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFMediaEngineAudioEndpointId {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2050731160, data2: 3702, data3: 18939, data4: [140, 32, 138, 134, 253, 152, 234, 242] };
 }
 #[repr(C)]
 pub struct IMFMediaEngineClassFactory {
@@ -8416,6 +8847,9 @@ pub struct IMFMediaEngineClassFactory {
     pub CreateInstance: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, pattr: *mut ::core::ffi::c_void, ppplayer: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub CreateTimeRange: unsafe extern "system" fn(this: *mut *mut Self, pptimerange: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub CreateError: unsafe extern "system" fn(this: *mut *mut Self, pperror: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFMediaEngineClassFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1298422478, data2: 9898, data3: 18056, data4: [155, 225, 223, 53, 22, 153, 11, 147] };
 }
 #[repr(C)]
 pub struct IMFMediaEngineClassFactory2 {
@@ -8425,6 +8859,9 @@ pub struct IMFMediaEngineClassFactory2 {
     #[cfg(not(feature = "Win32_Foundation"))]
     CreateMediaKeys2: usize,
 }
+impl ::windows_sys::core::Interface for IMFMediaEngineClassFactory2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 151534831, data2: 34431, data3: 19446, data4: [135, 118, 222, 227, 167, 180, 47, 202] };
+}
 #[repr(C)]
 pub struct IMFMediaEngineClassFactory3 {
     pub base__: ::windows_sys::core::IUnknown,
@@ -8433,10 +8870,16 @@ pub struct IMFMediaEngineClassFactory3 {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_PropertiesSystem")))]
     CreateMediaKeySystemAccess: usize,
 }
+impl ::windows_sys::core::Interface for IMFMediaEngineClassFactory3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 931619151, data2: 26103, data3: 16387, data4: [182, 115, 234, 216, 41, 58, 14, 96] };
+}
 #[repr(C)]
 pub struct IMFMediaEngineClassFactory4 {
     pub base__: ::windows_sys::core::IUnknown,
     pub CreateContentDecryptionModuleFactory: unsafe extern "system" fn(this: *mut *mut Self, keysystem: ::windows_sys::core::PCWSTR, riid: *const ::windows_sys::core::GUID, ppvobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFMediaEngineClassFactory4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4225914561, data2: 17359, data3: 19099, data4: [140, 184, 206, 134, 50, 163, 65, 134] };
 }
 #[repr(C)]
 pub struct IMFMediaEngineClassFactoryEx {
@@ -8451,11 +8894,17 @@ pub struct IMFMediaEngineClassFactoryEx {
     #[cfg(not(feature = "Win32_Foundation"))]
     IsTypeSupported: usize,
 }
+impl ::windows_sys::core::Interface for IMFMediaEngineClassFactoryEx {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3311490758, data2: 59995, data3: 18597, data4: [157, 248, 251, 224, 53, 208, 146, 158] };
+}
 #[repr(C)]
 pub struct IMFMediaEngineEME {
     pub base__: ::windows_sys::core::IUnknown,
     pub Keys: unsafe extern "system" fn(this: *mut *mut Self, keys: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetMediaKeys: unsafe extern "system" fn(this: *mut *mut Self, keys: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFMediaEngineEME {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1356633060, data2: 47695, data3: 17013, data4: [174, 102, 131, 232, 54, 229, 116, 105] };
 }
 #[repr(C)]
 pub struct IMFMediaEngineEMENotify {
@@ -8465,6 +8914,9 @@ pub struct IMFMediaEngineEMENotify {
     #[cfg(not(feature = "Win32_Foundation"))]
     Encrypted: usize,
     pub WaitingForKey: unsafe extern "system" fn(this: *mut *mut Self),
+}
+impl ::windows_sys::core::Interface for IMFMediaEngineEMENotify {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2652392725, data2: 52663, data3: 20358, data4: [180, 158, 86, 102, 137, 244, 166, 1] };
 }
 #[repr(C)]
 pub struct IMFMediaEngineEx {
@@ -8564,6 +9016,9 @@ pub struct IMFMediaEngineEx {
     #[cfg(not(feature = "Win32_Foundation"))]
     EnableTimeUpdateTimer: usize,
 }
+impl ::windows_sys::core::Interface for IMFMediaEngineEx {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2197905069, data2: 45542, data3: 16592, data4: [169, 138, 55, 20, 95, 254, 26, 209] };
+}
 #[repr(C)]
 pub struct IMFMediaEngineExtension {
     pub base__: ::windows_sys::core::IUnknown,
@@ -8578,15 +9033,24 @@ pub struct IMFMediaEngineExtension {
     pub CancelObjectCreation: unsafe extern "system" fn(this: *mut *mut Self, piunknowncancelcookie: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub EndCreateObject: unsafe extern "system" fn(this: *mut *mut Self, presult: *mut ::core::ffi::c_void, ppobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFMediaEngineExtension {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 795465250, data2: 8373, data3: 16873, data4: [175, 223, 137, 206, 209, 221, 160, 78] };
+}
 #[repr(C)]
 pub struct IMFMediaEngineNeedKeyNotify {
     pub base__: ::windows_sys::core::IUnknown,
     pub NeedKey: unsafe extern "system" fn(this: *mut *mut Self, initdata: *const u8, cb: u32),
 }
+impl ::windows_sys::core::Interface for IMFMediaEngineNeedKeyNotify {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1185088004, data2: 42646, data3: 19224, data4: [136, 4, 36, 107, 143, 3, 27, 177] };
+}
 #[repr(C)]
 pub struct IMFMediaEngineNotify {
     pub base__: ::windows_sys::core::IUnknown,
     pub EventNotify: unsafe extern "system" fn(this: *mut *mut Self, event: u32, param1: usize, param2: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFMediaEngineNotify {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4276601106, data2: 59254, data3: 17077, data4: [155, 191, 0, 72, 82, 78, 43, 213] };
 }
 #[repr(C)]
 pub struct IMFMediaEngineOPMInfo {
@@ -8595,6 +9059,9 @@ pub struct IMFMediaEngineOPMInfo {
     pub GetOPMInfo: unsafe extern "system" fn(this: *mut *mut Self, pstatus: *mut MF_MEDIA_ENGINE_OPM_STATUS, pconstricted: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetOPMInfo: usize,
+}
+impl ::windows_sys::core::Interface for IMFMediaEngineOPMInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1985438694, data2: 27649, data3: 19201, data4: [187, 15, 184, 41, 246, 14, 210, 140] };
 }
 #[repr(C)]
 pub struct IMFMediaEngineProtectedContent {
@@ -8611,6 +9078,9 @@ pub struct IMFMediaEngineProtectedContent {
     TransferVideoFrame: usize,
     pub SetContentProtectionManager: unsafe extern "system" fn(this: *mut *mut Self, pcpm: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetApplicationCertificate: unsafe extern "system" fn(this: *mut *mut Self, pbblob: *const u8, cbblob: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFMediaEngineProtectedContent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2675974632, data2: 40076, data3: 18558, data4: [187, 92, 121, 170, 71, 121, 147, 140] };
 }
 #[repr(C)]
 pub struct IMFMediaEngineSrcElements {
@@ -8634,6 +9104,9 @@ pub struct IMFMediaEngineSrcElements {
     AddElement: usize,
     pub RemoveAllElements: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFMediaEngineSrcElements {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2053002068, data2: 45332, data3: 19570, data4: [185, 145, 49, 49, 215, 80, 50, 234] };
+}
 #[repr(C)]
 pub struct IMFMediaEngineSrcElementsEx {
     pub base__: IMFMediaEngineSrcElements,
@@ -8646,6 +9119,9 @@ pub struct IMFMediaEngineSrcElementsEx {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetKeySystem: usize,
 }
+impl ::windows_sys::core::Interface for IMFMediaEngineSrcElementsEx {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1699376051, data2: 57763, data3: 16970, data4: [153, 8, 83, 164, 58, 13, 253, 160] };
+}
 #[repr(C)]
 pub struct IMFMediaEngineSupportsSourceTransfer {
     pub base__: ::windows_sys::core::IUnknown,
@@ -8656,10 +9132,16 @@ pub struct IMFMediaEngineSupportsSourceTransfer {
     pub DetachMediaSource: unsafe extern "system" fn(this: *mut *mut Self, ppbytestream: *mut *mut ::core::ffi::c_void, ppmediasource: *mut *mut ::core::ffi::c_void, ppmse: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub AttachMediaSource: unsafe extern "system" fn(this: *mut *mut Self, pbytestream: *mut ::core::ffi::c_void, pmediasource: *mut ::core::ffi::c_void, pmse: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFMediaEngineSupportsSourceTransfer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2804199510, data2: 6958, data3: 17986, data4: [166, 243, 219, 148, 32, 197, 41, 8] };
+}
 #[repr(C)]
 pub struct IMFMediaEngineTransferSource {
     pub base__: ::windows_sys::core::IUnknown,
     pub TransferSourceToMediaEngine: unsafe extern "system" fn(this: *mut *mut Self, destination: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFMediaEngineTransferSource {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 606274642, data2: 65108, data3: 16588, data4: [148, 243, 252, 195, 148, 195, 64, 214] };
 }
 #[repr(C)]
 pub struct IMFMediaEngineWebSupport {
@@ -8671,6 +9153,9 @@ pub struct IMFMediaEngineWebSupport {
     pub ConnectWebAudio: unsafe extern "system" fn(this: *mut *mut Self, dwsamplerate: u32, ppsourceprovider: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub DisconnectWebAudio: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFMediaEngineWebSupport {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3123135393, data2: 2016, data3: 18671, data4: [132, 182, 154, 46, 208, 35, 202, 108] };
+}
 #[repr(C)]
 pub struct IMFMediaError {
     pub base__: ::windows_sys::core::IUnknown,
@@ -8678,6 +9163,9 @@ pub struct IMFMediaError {
     pub GetExtendedErrorCode: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub SetErrorCode: unsafe extern "system" fn(this: *mut *mut Self, error: MF_MEDIA_ENGINE_ERR) -> ::windows_sys::core::HRESULT,
     pub SetExtendedErrorCode: unsafe extern "system" fn(this: *mut *mut Self, error: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFMediaError {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4228780242, data2: 43818, data3: 17665, data4: [169, 81, 6, 187, 16, 117, 24, 76] };
 }
 #[repr(C)]
 pub struct IMFMediaEvent {
@@ -8690,6 +9178,9 @@ pub struct IMFMediaEvent {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
     GetValue: usize,
 }
+impl ::windows_sys::core::Interface for IMFMediaEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3747186994, data2: 61708, data3: 20025, data4: [187, 162, 195, 8, 241, 1, 218, 163] };
+}
 #[repr(C)]
 pub struct IMFMediaEventGenerator {
     pub base__: ::windows_sys::core::IUnknown,
@@ -8700,6 +9191,9 @@ pub struct IMFMediaEventGenerator {
     pub QueueEvent: unsafe extern "system" fn(this: *mut *mut Self, met: u32, guidextendedtype: *const ::windows_sys::core::GUID, hrstatus: ::windows_sys::core::HRESULT, pvvalue: *const super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
     QueueEvent: usize,
+}
+impl ::windows_sys::core::Interface for IMFMediaEventGenerator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 751877458, data2: 48341, data3: 19337, data4: [182, 44, 234, 220, 12, 3, 30, 125] };
 }
 #[repr(C)]
 pub struct IMFMediaEventQueue {
@@ -8715,6 +9209,9 @@ pub struct IMFMediaEventQueue {
     pub QueueEventParamUnk: unsafe extern "system" fn(this: *mut *mut Self, met: u32, guidextendedtype: *const ::windows_sys::core::GUID, hrstatus: ::windows_sys::core::HRESULT, punk: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Shutdown: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFMediaEventQueue {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 922240764, data2: 8790, data3: 18614, data4: [181, 142, 226, 182, 56, 49, 101, 129] };
+}
 #[repr(C)]
 pub struct IMFMediaKeySession {
     pub base__: ::windows_sys::core::IUnknown,
@@ -8729,6 +9226,9 @@ pub struct IMFMediaKeySession {
     SessionId: usize,
     pub Update: unsafe extern "system" fn(this: *mut *mut Self, key: *const u8, cb: u32) -> ::windows_sys::core::HRESULT,
     pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFMediaKeySession {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 620390357, data2: 53712, data3: 19909, data4: [153, 92, 192, 239, 220, 25, 31, 181] };
 }
 #[repr(C)]
 pub struct IMFMediaKeySession2 {
@@ -8746,6 +9246,9 @@ pub struct IMFMediaKeySession2 {
     pub Remove: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Shutdown: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFMediaKeySession2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3916463621, data2: 27989, data3: 17974, data4: [177, 133, 61, 226, 18, 16, 189, 117] };
+}
 #[repr(C)]
 pub struct IMFMediaKeySessionNotify {
     pub base__: ::windows_sys::core::IUnknown,
@@ -8756,6 +9259,9 @@ pub struct IMFMediaKeySessionNotify {
     pub KeyAdded: unsafe extern "system" fn(this: *mut *mut Self),
     pub KeyError: unsafe extern "system" fn(this: *mut *mut Self, code: u16, systemcode: u32),
 }
+impl ::windows_sys::core::Interface for IMFMediaKeySessionNotify {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1778418681, data2: 35143, data3: 19485, data4: [156, 224, 205, 238, 34, 178, 49, 53] };
+}
 #[repr(C)]
 pub struct IMFMediaKeySessionNotify2 {
     pub base__: IMFMediaKeySessionNotify,
@@ -8764,6 +9270,9 @@ pub struct IMFMediaKeySessionNotify2 {
     #[cfg(not(feature = "Win32_Foundation"))]
     KeyMessage2: usize,
     pub KeyStatusChange: unsafe extern "system" fn(this: *mut *mut Self),
+}
+impl ::windows_sys::core::Interface for IMFMediaKeySessionNotify2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3282692394, data2: 55944, data3: 18096, data4: [161, 16, 108, 249, 83, 2, 108, 185] };
 }
 #[repr(C)]
 pub struct IMFMediaKeySystemAccess {
@@ -8781,6 +9290,9 @@ pub struct IMFMediaKeySystemAccess {
     #[cfg(not(feature = "Win32_Foundation"))]
     KeySystem: usize,
 }
+impl ::windows_sys::core::Interface for IMFMediaKeySystemAccess {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2932228058, data2: 31383, data3: 18756, data4: [179, 92, 108, 109, 248, 8, 92, 195] };
+}
 #[repr(C)]
 pub struct IMFMediaKeys {
     pub base__: ::windows_sys::core::IUnknown,
@@ -8795,12 +9307,18 @@ pub struct IMFMediaKeys {
     pub Shutdown: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub GetSuspendNotify: unsafe extern "system" fn(this: *mut *mut Self, notify: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFMediaKeys {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1555241989, data2: 25087, data3: 16783, data4: [175, 218, 202, 175, 65, 66, 26, 56] };
+}
 #[repr(C)]
 pub struct IMFMediaKeys2 {
     pub base__: IMFMediaKeys,
     pub CreateSession2: unsafe extern "system" fn(this: *mut *mut Self, esessiontype: MF_MEDIAKEYSESSION_TYPE, pmfmediakeysessionnotify2: *mut ::core::ffi::c_void, ppsession: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetServerCertificate: unsafe extern "system" fn(this: *mut *mut Self, pbservercertificate: *const u8, cb: u32) -> ::windows_sys::core::HRESULT,
     pub GetDOMException: unsafe extern "system" fn(this: *mut *mut Self, systemcode: ::windows_sys::core::HRESULT, code: *mut ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFMediaKeys2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1166615815, data2: 44390, data3: 19938, data4: [131, 162, 172, 187, 19, 205, 141, 67] };
 }
 #[repr(C)]
 pub struct IMFMediaSession {
@@ -8819,6 +9337,9 @@ pub struct IMFMediaSession {
     pub GetSessionCapabilities: unsafe extern "system" fn(this: *mut *mut Self, pdwcaps: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetFullTopology: unsafe extern "system" fn(this: *mut *mut Self, dwgetfulltopologyflags: u32, topoid: u64, ppfulltopology: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFMediaSession {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2419554356, data2: 8656, data3: 19950, data4: [130, 20, 186, 46, 62, 108, 17, 39] };
+}
 #[repr(C)]
 pub struct IMFMediaSharingEngine {
     pub base__: IMFMediaEngine,
@@ -8827,10 +9348,16 @@ pub struct IMFMediaSharingEngine {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetDevice: usize,
 }
+impl ::windows_sys::core::Interface for IMFMediaSharingEngine {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2369577407, data2: 9063, data3: 16608, data4: [158, 238, 64, 211, 119, 204, 27, 70] };
+}
 #[repr(C)]
 pub struct IMFMediaSharingEngineClassFactory {
     pub base__: ::windows_sys::core::IUnknown,
     pub CreateInstance: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, pattr: *mut ::core::ffi::c_void, ppengine: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFMediaSharingEngineClassFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1380789188, data2: 45745, data3: 20453, data4: [143, 172, 250, 78, 69, 18, 180, 224] };
 }
 #[repr(C)]
 pub struct IMFMediaSink {
@@ -8845,10 +9372,16 @@ pub struct IMFMediaSink {
     pub GetPresentationClock: unsafe extern "system" fn(this: *mut *mut Self, pppresentationclock: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Shutdown: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFMediaSink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1861396064, data2: 18368, data3: 18022, data4: [177, 61, 203, 183, 23, 242, 250, 44] };
+}
 #[repr(C)]
 pub struct IMFMediaSinkPreroll {
     pub base__: ::windows_sys::core::IUnknown,
     pub NotifyPreroll: unsafe extern "system" fn(this: *mut *mut Self, hnsupcomingstarttime: i64) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFMediaSinkPreroll {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1576880938, data2: 30324, data3: 16656, data4: [164, 230, 138, 104, 253, 95, 54, 136] };
 }
 #[repr(C)]
 pub struct IMFMediaSource {
@@ -8863,10 +9396,16 @@ pub struct IMFMediaSource {
     pub Pause: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Shutdown: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFMediaSource {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 664436877, data2: 44743, data3: 16584, data4: [156, 107, 166, 180, 146, 199, 138, 102] };
+}
 #[repr(C)]
 pub struct IMFMediaSource2 {
     pub base__: IMFMediaSourceEx,
     pub SetMediaType: unsafe extern "system" fn(this: *mut *mut Self, dwstreamid: u32, pmediatype: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFMediaSource2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4222628884, data2: 53563, data3: 18310, data4: [131, 25, 90, 197, 31, 192, 161, 54] };
 }
 #[repr(C)]
 pub struct IMFMediaSourceEx {
@@ -8874,6 +9413,9 @@ pub struct IMFMediaSourceEx {
     pub GetSourceAttributes: unsafe extern "system" fn(this: *mut *mut Self, ppattributes: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetStreamAttributes: unsafe extern "system" fn(this: *mut *mut Self, dwstreamidentifier: u32, ppattributes: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetD3DManager: unsafe extern "system" fn(this: *mut *mut Self, pmanager: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFMediaSourceEx {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1016803001, data2: 34517, data3: 17684, data4: [163, 148, 245, 102, 100, 249, 240, 216] };
 }
 #[repr(C)]
 pub struct IMFMediaSourceExtension {
@@ -8895,11 +9437,17 @@ pub struct IMFMediaSourceExtension {
     IsTypeSupported: usize,
     pub GetSourceBuffer: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32) -> *mut *mut IMFSourceBuffer,
 }
+impl ::windows_sys::core::Interface for IMFMediaSourceExtension {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3832002894, data2: 42771, data3: 17762, data4: [168, 2, 129, 106, 66, 233, 0, 138] };
+}
 #[repr(C)]
 pub struct IMFMediaSourceExtensionLiveSeekableRange {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetLiveSeekableRange: unsafe extern "system" fn(this: *mut *mut Self, start: f64, end: f64) -> ::windows_sys::core::HRESULT,
     pub ClearLiveSeekableRange: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFMediaSourceExtensionLiveSeekableRange {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1562034134, data2: 17674, data3: 19858, data4: [158, 252, 214, 182, 203, 193, 244, 218] };
 }
 #[repr(C)]
 pub struct IMFMediaSourceExtensionNotify {
@@ -8908,15 +9456,24 @@ pub struct IMFMediaSourceExtensionNotify {
     pub OnSourceEnded: unsafe extern "system" fn(this: *mut *mut Self),
     pub OnSourceClose: unsafe extern "system" fn(this: *mut *mut Self),
 }
+impl ::windows_sys::core::Interface for IMFMediaSourceExtensionNotify {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2811237159, data2: 1501, data3: 17513, data4: [167, 183, 14, 1, 151, 158, 54, 29] };
+}
 #[repr(C)]
 pub struct IMFMediaSourcePresentationProvider {
     pub base__: ::windows_sys::core::IUnknown,
     pub ForceEndOfPresentation: unsafe extern "system" fn(this: *mut *mut Self, ppresentationdescriptor: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFMediaSourcePresentationProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 236806154, data2: 51699, data3: 17453, data4: [140, 81, 164, 45, 45, 73, 69, 47] };
+}
 #[repr(C)]
 pub struct IMFMediaSourceTopologyProvider {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetMediaSourceTopology: unsafe extern "system" fn(this: *mut *mut Self, ppresentationdescriptor: *mut ::core::ffi::c_void, pptopology: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFMediaSourceTopologyProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 236806153, data2: 51699, data3: 17453, data4: [140, 81, 164, 45, 45, 73, 69, 47] };
 }
 #[repr(C)]
 pub struct IMFMediaStream {
@@ -8925,16 +9482,25 @@ pub struct IMFMediaStream {
     pub GetStreamDescriptor: unsafe extern "system" fn(this: *mut *mut Self, ppstreamdescriptor: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub RequestSample: unsafe extern "system" fn(this: *mut *mut Self, ptoken: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFMediaStream {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3514962063, data2: 20166, data3: 17471, data4: [170, 66, 167, 17, 6, 236, 130, 95] };
+}
 #[repr(C)]
 pub struct IMFMediaStream2 {
     pub base__: IMFMediaStream,
     pub SetStreamState: unsafe extern "system" fn(this: *mut *mut Self, value: MF_STREAM_STATE) -> ::windows_sys::core::HRESULT,
     pub GetStreamState: unsafe extern "system" fn(this: *mut *mut Self, value: *mut MF_STREAM_STATE) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFMediaStream2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3317446614, data2: 30151, data3: 18081, data4: [161, 50, 129, 181, 247, 35, 194, 15] };
+}
 #[repr(C)]
 pub struct IMFMediaStreamSourceSampleRequest {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetSample: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFMediaStreamSourceSampleRequest {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 940284665, data2: 43099, data3: 20088, data4: [162, 175, 234, 92, 230, 69, 198, 180] };
 }
 #[repr(C)]
 pub struct IMFMediaTimeRange {
@@ -8949,6 +9515,9 @@ pub struct IMFMediaTimeRange {
     pub AddRange: unsafe extern "system" fn(this: *mut *mut Self, starttime: f64, endtime: f64) -> ::windows_sys::core::HRESULT,
     pub Clear: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFMediaTimeRange {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3681657596, data2: 1930, data3: 16718, data4: [157, 249, 140, 37, 49, 176, 170, 108] };
+}
 #[repr(C)]
 pub struct IMFMediaType {
     pub base__: IMFAttributes,
@@ -8961,6 +9530,9 @@ pub struct IMFMediaType {
     pub GetRepresentation: unsafe extern "system" fn(this: *mut *mut Self, guidrepresentation: ::windows_sys::core::GUID, ppvrepresentation: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub FreeRepresentation: unsafe extern "system" fn(this: *mut *mut Self, guidrepresentation: ::windows_sys::core::GUID, pvrepresentation: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFMediaType {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1152257960, data2: 59953, data3: 16649, data4: [141, 46, 76, 174, 73, 151, 197, 85] };
+}
 #[repr(C)]
 pub struct IMFMediaTypeHandler {
     pub base__: ::windows_sys::core::IUnknown,
@@ -8970,6 +9542,9 @@ pub struct IMFMediaTypeHandler {
     pub SetCurrentMediaType: unsafe extern "system" fn(this: *mut *mut Self, pmediatype: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetCurrentMediaType: unsafe extern "system" fn(this: *mut *mut Self, ppmediatype: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetMajorType: unsafe extern "system" fn(this: *mut *mut Self, pguidmajortype: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFMediaTypeHandler {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3913142124, data2: 19207, data3: 19998, data4: [129, 35, 170, 22, 237, 110, 173, 245] };
 }
 #[repr(C)]
 pub struct IMFMetadata {
@@ -8994,16 +9569,25 @@ pub struct IMFMetadata {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
     GetAllPropertyNames: usize,
 }
+impl ::windows_sys::core::Interface for IMFMetadata {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4169989004, data2: 61206, data3: 18833, data4: [180, 80, 203, 140, 105, 229, 23, 4] };
+}
 #[repr(C)]
 pub struct IMFMetadataProvider {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetMFMetadata: unsafe extern "system" fn(this: *mut *mut Self, ppresentationdescriptor: *mut ::core::ffi::c_void, dwstreamidentifier: u32, dwflags: u32, ppmfmetadata: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFMetadataProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1444420909, data2: 57889, data3: 19163, data4: [177, 200, 60, 238, 106, 83, 247, 111] };
 }
 #[repr(C)]
 pub struct IMFMuxStreamAttributesManager {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetStreamCount: unsafe extern "system" fn(this: *mut *mut Self, pdwmuxstreamcount: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetAttributes: unsafe extern "system" fn(this: *mut *mut Self, dwmuxstreamindex: u32, ppstreamattributes: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFMuxStreamAttributesManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3465270646, data2: 58432, data3: 17331, data4: [190, 52, 30, 83, 245, 101, 247, 232] };
 }
 #[repr(C)]
 pub struct IMFMuxStreamMediaTypeManager {
@@ -9015,12 +9599,18 @@ pub struct IMFMuxStreamMediaTypeManager {
     pub RemoveStreamConfiguration: unsafe extern "system" fn(this: *mut *mut Self, ullstreammask: u64) -> ::windows_sys::core::HRESULT,
     pub GetStreamConfiguration: unsafe extern "system" fn(this: *mut *mut Self, ulindex: u32, pullstreammask: *mut u64) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFMuxStreamMediaTypeManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1348086898, data2: 17143, data3: 18064, data4: [174, 171, 143, 81, 61, 15, 253, 184] };
+}
 #[repr(C)]
 pub struct IMFMuxStreamSampleManager {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetStreamCount: unsafe extern "system" fn(this: *mut *mut Self, pdwmuxstreamcount: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetSample: unsafe extern "system" fn(this: *mut *mut Self, dwmuxstreamindex: u32, ppsample: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetStreamConfiguration: unsafe extern "system" fn(this: *mut *mut Self) -> u64,
+}
+impl ::windows_sys::core::Interface for IMFMuxStreamSampleManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1957411865, data2: 45516, data3: 20033, data4: [187, 139, 157, 155, 134, 168, 246, 202] };
 }
 #[repr(C)]
 pub struct IMFNetCredential {
@@ -9046,6 +9636,9 @@ pub struct IMFNetCredential {
     #[cfg(not(feature = "Win32_Foundation"))]
     LoggedOnUser: usize,
 }
+impl ::windows_sys::core::Interface for IMFNetCredential {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1535635306, data2: 32472, data3: 17231, data4: [186, 14, 24, 79, 172, 22, 40, 209] };
+}
 #[repr(C)]
 pub struct IMFNetCredentialCache {
     pub base__: ::windows_sys::core::IUnknown,
@@ -9055,6 +9648,9 @@ pub struct IMFNetCredentialCache {
     #[cfg(not(feature = "Win32_Foundation"))]
     SetGood: usize,
     pub SetUserOptions: unsafe extern "system" fn(this: *mut *mut Self, pcred: *mut ::core::ffi::c_void, dwoptionsflags: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFNetCredentialCache {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1535635308, data2: 32472, data3: 17231, data4: [186, 14, 24, 79, 172, 22, 40, 209] };
 }
 #[repr(C)]
 pub struct IMFNetCredentialManager {
@@ -9069,6 +9665,9 @@ pub struct IMFNetCredentialManager {
     #[cfg(not(feature = "Win32_Foundation"))]
     SetGood: usize,
 }
+impl ::windows_sys::core::Interface for IMFNetCredentialManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1535635307, data2: 32472, data3: 17231, data4: [186, 14, 24, 79, 172, 22, 40, 209] };
+}
 #[repr(C)]
 pub struct IMFNetCrossOriginSupport {
     pub base__: ::windows_sys::core::IUnknown,
@@ -9078,6 +9677,9 @@ pub struct IMFNetCrossOriginSupport {
     pub IsSameOrigin: unsafe extern "system" fn(this: *mut *mut Self, wszurl: ::windows_sys::core::PCWSTR, pfissameorigin: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     IsSameOrigin: usize,
+}
+impl ::windows_sys::core::Interface for IMFNetCrossOriginSupport {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3156966724, data2: 42797, data3: 18901, data4: [131, 118, 20, 128, 222, 229, 139, 34] };
 }
 #[repr(C)]
 pub struct IMFNetProxyLocator {
@@ -9091,16 +9693,25 @@ pub struct IMFNetProxyLocator {
     pub GetCurrentProxy: unsafe extern "system" fn(this: *mut *mut Self, pszstr: ::windows_sys::core::PWSTR, pcchstr: *mut u32) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppproxylocator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFNetProxyLocator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3922527107, data2: 41576, data3: 19380, data4: [130, 222, 101, 141, 83, 87, 77, 65] };
+}
 #[repr(C)]
 pub struct IMFNetProxyLocatorFactory {
     pub base__: ::windows_sys::core::IUnknown,
     pub CreateProxyLocator: unsafe extern "system" fn(this: *mut *mut Self, pszprotocol: ::windows_sys::core::PCWSTR, ppproxylocator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFNetProxyLocatorFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3922527108, data2: 41576, data3: 19380, data4: [130, 222, 101, 141, 83, 87, 77, 65] };
 }
 #[repr(C)]
 pub struct IMFNetResourceFilter {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnRedirect: unsafe extern "system" fn(this: *mut *mut Self, pszurl: ::windows_sys::core::PCWSTR, pvbcancel: *mut i16) -> ::windows_sys::core::HRESULT,
     pub OnSendingRequest: unsafe extern "system" fn(this: *mut *mut Self, pszurl: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFNetResourceFilter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 152598691, data2: 48913, data3: 19036, data4: [188, 159, 51, 153, 91, 6, 239, 45] };
 }
 #[repr(C)]
 pub struct IMFNetSchemeHandlerConfig {
@@ -9109,11 +9720,17 @@ pub struct IMFNetSchemeHandlerConfig {
     pub GetSupportedProtocolType: unsafe extern "system" fn(this: *mut *mut Self, nprotocolindex: u32, pnprotocoltype: *mut MFNETSOURCE_PROTOCOL_TYPE) -> ::windows_sys::core::HRESULT,
     pub ResetProtocolRolloverSettings: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFNetSchemeHandlerConfig {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2078383731, data2: 51647, data3: 18058, data4: [172, 90, 165, 232, 101, 59, 236, 135] };
+}
 #[repr(C)]
 pub struct IMFObjectReferenceStream {
     pub base__: ::windows_sys::core::IUnknown,
     pub SaveReference: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, punk: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub LoadReference: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFObjectReferenceStream {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 166681571, data2: 51367, data3: 18078, data4: [139, 112, 115, 191, 37, 187, 25, 63] };
 }
 #[repr(C)]
 pub struct IMFOutputPolicy {
@@ -9122,6 +9739,9 @@ pub struct IMFOutputPolicy {
     pub GetOriginatorID: unsafe extern "system" fn(this: *mut *mut Self, pguidoriginatorid: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub GetMinimumGRLVersion: unsafe extern "system" fn(this: *mut *mut Self, pdwminimumgrlversion: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFOutputPolicy {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2130768138, data2: 56045, data3: 16815, data4: [171, 38, 95, 223, 164, 223, 186, 60] };
+}
 #[repr(C)]
 pub struct IMFOutputSchema {
     pub base__: IMFAttributes,
@@ -9129,21 +9749,33 @@ pub struct IMFOutputSchema {
     pub GetConfigurationData: unsafe extern "system" fn(this: *mut *mut Self, pdwval: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetOriginatorID: unsafe extern "system" fn(this: *mut *mut Self, pguidoriginatorid: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFOutputSchema {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2078342235, data2: 43993, data3: 17659, data4: [165, 200, 245, 1, 54, 231, 21, 153] };
+}
 #[repr(C)]
 pub struct IMFOutputTrustAuthority {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetAction: unsafe extern "system" fn(this: *mut *mut Self, paction: *mut MFPOLICYMANAGER_ACTION) -> ::windows_sys::core::HRESULT,
     pub SetPolicy: unsafe extern "system" fn(this: *mut *mut Self, pppolicy: *const *mut ::core::ffi::c_void, npolicy: u32, ppbticket: *mut *mut u8, pcbticket: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFOutputTrustAuthority {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3516894868, data2: 45350, data3: 17478, data4: [137, 12, 93, 203, 122, 215, 20, 83] };
+}
 #[repr(C)]
 pub struct IMFPMPClient {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetPMPHost: unsafe extern "system" fn(this: *mut *mut Self, ppmphost: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFPMPClient {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1817077085, data2: 60120, data3: 17441, data4: [182, 185, 84, 220, 219, 189, 248, 32] };
+}
 #[repr(C)]
 pub struct IMFPMPClientApp {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetPMPHost: unsafe extern "system" fn(this: *mut *mut Self, ppmphost: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFPMPClientApp {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3221550662, data2: 48684, data3: 18675, data4: [147, 162, 160, 152, 62, 186, 17, 8] };
 }
 #[repr(C)]
 pub struct IMFPMPHost {
@@ -9155,6 +9787,9 @@ pub struct IMFPMPHost {
     #[cfg(not(feature = "Win32_System_Com"))]
     CreateObjectByCLSID: usize,
 }
+impl ::windows_sys::core::Interface for IMFPMPHost {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4144800169, data2: 64967, data3: 18306, data4: [185, 148, 173, 255, 177, 201, 134, 6] };
+}
 #[repr(C)]
 pub struct IMFPMPHostApp {
     pub base__: ::windows_sys::core::IUnknown,
@@ -9165,12 +9800,18 @@ pub struct IMFPMPHostApp {
     #[cfg(not(feature = "Win32_System_Com"))]
     ActivateClassById: usize,
 }
+impl ::windows_sys::core::Interface for IMFPMPHostApp {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2228356426, data2: 15009, data3: 18216, data4: [163, 176, 68, 10, 65, 140, 244, 156] };
+}
 #[repr(C)]
 pub struct IMFPMPServer {
     pub base__: ::windows_sys::core::IUnknown,
     pub LockProcess: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub UnlockProcess: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub CreateObjectByCLSID: unsafe extern "system" fn(this: *mut *mut Self, clsid: *const ::windows_sys::core::GUID, riid: *const ::windows_sys::core::GUID, ppobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFPMPServer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2572034991, data2: 7362, data3: 18748, data4: [185, 250, 70, 241, 203, 4, 15, 164] };
 }
 #[repr(C)]
 pub struct IMFPMediaItem {
@@ -9227,6 +9868,9 @@ pub struct IMFPMediaItem {
     pub GetMetadata: unsafe extern "system" fn(this: *mut *mut Self, ppmetadatastore: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
     GetMetadata: usize,
+}
+impl ::windows_sys::core::Interface for IMFPMediaItem {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2431336043, data2: 60607, data3: 17868, data4: [177, 218, 198, 254, 62, 167, 13, 87] };
 }
 #[repr(C)]
 pub struct IMFPMediaPlayer {
@@ -9304,6 +9948,9 @@ pub struct IMFPMediaPlayer {
     pub RemoveAllEffects: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Shutdown: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFPMediaPlayer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2803128586, data2: 22703, data3: 17162, data4: [133, 191, 68, 245, 236, 131, 141, 133] };
+}
 #[repr(C)]
 pub struct IMFPMediaPlayerCallback {
     pub base__: ::windows_sys::core::IUnknown,
@@ -9311,6 +9958,9 @@ pub struct IMFPMediaPlayerCallback {
     pub OnMediaPlayerEvent: unsafe extern "system" fn(this: *mut *mut Self, peventheader: *const MFP_EVENT_HEADER),
     #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
     OnMediaPlayerEvent: usize,
+}
+impl ::windows_sys::core::Interface for IMFPMediaPlayerCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1986826235, data2: 24539, data3: 20458, data4: [162, 141, 185, 18, 153, 111, 81, 189] };
 }
 #[repr(C)]
 pub struct IMFPluginControl {
@@ -9325,10 +9975,16 @@ pub struct IMFPluginControl {
     #[cfg(not(feature = "Win32_Foundation"))]
     SetDisabled: usize,
 }
+impl ::windows_sys::core::Interface for IMFPluginControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1550599359, data2: 7606, data3: 17243, data4: [146, 73, 232, 205, 16, 253, 236, 150] };
+}
 #[repr(C)]
 pub struct IMFPluginControl2 {
     pub base__: IMFPluginControl,
     pub SetPolicy: unsafe extern "system" fn(this: *mut *mut Self, policy: MF_PLUGIN_CONTROL_POLICY) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFPluginControl2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3331858563, data2: 15836, data3: 17867, data4: [175, 94, 15, 122, 140, 228, 222, 119] };
 }
 #[repr(C)]
 pub struct IMFPresentationClock {
@@ -9342,6 +9998,9 @@ pub struct IMFPresentationClock {
     pub Stop: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Pause: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFPresentationClock {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2257381468, data2: 36521, data3: 20309, data4: [171, 130, 176, 9, 169, 16, 168, 5] };
+}
 #[repr(C)]
 pub struct IMFPresentationDescriptor {
     pub base__: IMFAttributes,
@@ -9354,16 +10013,25 @@ pub struct IMFPresentationDescriptor {
     pub DeselectStream: unsafe extern "system" fn(this: *mut *mut Self, dwdescriptorindex: u32) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, pppresentationdescriptor: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFPresentationDescriptor {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 63645457, data2: 9431, data3: 19894, data4: [161, 127, 243, 167, 164, 121, 165, 54] };
+}
 #[repr(C)]
 pub struct IMFPresentationTimeSource {
     pub base__: IMFClock,
     pub GetUnderlyingClock: unsafe extern "system" fn(this: *mut *mut Self, ppclock: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFPresentationTimeSource {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2146512078, data2: 63343, data3: 16834, data4: [134, 59, 22, 102, 200, 229, 225, 57] };
 }
 #[repr(C)]
 pub struct IMFProtectedEnvironmentAccess {
     pub base__: ::windows_sys::core::IUnknown,
     pub Call: unsafe extern "system" fn(this: *mut *mut Self, inputlength: u32, input: *const u8, outputlength: u32, output: *mut u8) -> ::windows_sys::core::HRESULT,
     pub ReadGRL: unsafe extern "system" fn(this: *mut *mut Self, outputlength: *mut u32, output: *mut *mut u8) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFProtectedEnvironmentAccess {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4015900741, data2: 61657, data3: 20169, data4: [176, 12, 203, 81, 131, 211, 132, 52] };
 }
 #[repr(C)]
 pub struct IMFQualityAdvise {
@@ -9374,16 +10042,25 @@ pub struct IMFQualityAdvise {
     pub GetQualityLevel: unsafe extern "system" fn(this: *mut *mut Self, pequalitylevel: *mut MF_QUALITY_LEVEL) -> ::windows_sys::core::HRESULT,
     pub DropTime: unsafe extern "system" fn(this: *mut *mut Self, hnsamounttodrop: i64) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFQualityAdvise {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3960857321, data2: 58219, data3: 20348, data4: [135, 88, 119, 212, 82, 239, 76, 231] };
+}
 #[repr(C)]
 pub struct IMFQualityAdvise2 {
     pub base__: IMFQualityAdvise,
     pub NotifyQualityEvent: unsafe extern "system" fn(this: *mut *mut Self, pevent: *mut ::core::ffi::c_void, pdwflags: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFQualityAdvise2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4084231949, data2: 36514, data3: 18566, data4: [128, 0, 113, 85, 233, 236, 46, 174] };
 }
 #[repr(C)]
 pub struct IMFQualityAdviseLimits {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetMaximumDropMode: unsafe extern "system" fn(this: *mut *mut Self, pedropmode: *mut MF_QUALITY_DROP_MODE) -> ::windows_sys::core::HRESULT,
     pub GetMinimumQualityLevel: unsafe extern "system" fn(this: *mut *mut Self, pequalitylevel: *mut MF_QUALITY_LEVEL) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFQualityAdviseLimits {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3754790477, data2: 12469, data3: 17767, data4: [172, 170, 142, 181, 183, 133, 61, 201] };
 }
 #[repr(C)]
 pub struct IMFQualityManager {
@@ -9394,6 +10071,9 @@ pub struct IMFQualityManager {
     pub NotifyProcessOutput: unsafe extern "system" fn(this: *mut *mut Self, pnode: *mut ::core::ffi::c_void, loutputindex: i32, psample: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub NotifyQualityEvent: unsafe extern "system" fn(this: *mut *mut Self, pobject: *mut ::core::ffi::c_void, pevent: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Shutdown: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFQualityManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2365627782, data2: 23455, data3: 16661, data4: [177, 252, 159, 128, 213, 42, 184, 171] };
 }
 #[repr(C)]
 pub struct IMFRateControl {
@@ -9406,6 +10086,9 @@ pub struct IMFRateControl {
     pub GetRate: unsafe extern "system" fn(this: *mut *mut Self, pfthin: *mut super::super::Foundation::BOOL, pflrate: *mut f32) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetRate: usize,
+}
+impl ::windows_sys::core::Interface for IMFRateControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2296237345, data2: 963, data3: 17013, data4: [145, 237, 85, 238, 57, 41, 50, 143] };
 }
 #[repr(C)]
 pub struct IMFRateSupport {
@@ -9423,11 +10106,17 @@ pub struct IMFRateSupport {
     #[cfg(not(feature = "Win32_Foundation"))]
     IsRateSupported: usize,
 }
+impl ::windows_sys::core::Interface for IMFRateSupport {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 178048444, data2: 55191, data3: 17763, data4: [150, 103, 148, 236, 93, 121, 41, 45] };
+}
 #[repr(C)]
 pub struct IMFReadWriteClassFactory {
     pub base__: ::windows_sys::core::IUnknown,
     pub CreateInstanceFromURL: unsafe extern "system" fn(this: *mut *mut Self, clsid: *const ::windows_sys::core::GUID, pwszurl: ::windows_sys::core::PCWSTR, pattributes: *mut ::core::ffi::c_void, riid: *const ::windows_sys::core::GUID, ppvobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub CreateInstanceFromObject: unsafe extern "system" fn(this: *mut *mut Self, clsid: *const ::windows_sys::core::GUID, punkobject: *mut ::core::ffi::c_void, pattributes: *mut ::core::ffi::c_void, riid: *const ::windows_sys::core::GUID, ppvobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFReadWriteClassFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3892194834, data2: 26140, data3: 16602, data4: [146, 249, 79, 0, 42, 182, 118, 39] };
 }
 #[repr(C)]
 pub struct IMFRealTimeClient {
@@ -9436,6 +10125,9 @@ pub struct IMFRealTimeClient {
     pub UnregisterThreads: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub SetWorkQueue: unsafe extern "system" fn(this: *mut *mut Self, dwworkqueueid: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFRealTimeClient {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 591910411, data2: 16309, data3: 18444, data4: [136, 3, 141, 243, 173, 205, 62, 240] };
+}
 #[repr(C)]
 pub struct IMFRealTimeClientEx {
     pub base__: ::windows_sys::core::IUnknown,
@@ -9443,10 +10135,16 @@ pub struct IMFRealTimeClientEx {
     pub UnregisterThreads: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub SetWorkQueueEx: unsafe extern "system" fn(this: *mut *mut Self, dwmultithreadedworkqueueid: u32, lworkitembasepriority: i32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFRealTimeClientEx {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 59836488, data2: 43798, data3: 17937, data4: [177, 0, 23, 184, 138, 226, 242, 72] };
+}
 #[repr(C)]
 pub struct IMFRelativePanelReport {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetRelativePanel: unsafe extern "system" fn(this: *mut *mut Self, panel: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFRelativePanelReport {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4065551082, data2: 11278, data3: 17535, data4: [129, 226, 117, 89, 20, 205, 192, 195] };
 }
 #[repr(C)]
 pub struct IMFRelativePanelWatcher {
@@ -9455,21 +10153,33 @@ pub struct IMFRelativePanelWatcher {
     pub EndGetReport: unsafe extern "system" fn(this: *mut *mut Self, presult: *mut ::core::ffi::c_void, pprelativepanelreport: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetReport: unsafe extern "system" fn(this: *mut *mut Self, pprelativepanelreport: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFRelativePanelWatcher {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1109063670, data2: 22334, data3: 19152, data4: [143, 218, 46, 87, 206, 219, 24, 198] };
+}
 #[repr(C)]
 pub struct IMFRemoteAsyncCallback {
     pub base__: ::windows_sys::core::IUnknown,
     pub Invoke: unsafe extern "system" fn(this: *mut *mut Self, hr: ::windows_sys::core::HRESULT, premoteresult: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFRemoteAsyncCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2725250000, data2: 9044, data3: 20266, data4: [141, 106, 171, 124, 255, 21, 67, 126] };
 }
 #[repr(C)]
 pub struct IMFRemoteDesktopPlugin {
     pub base__: ::windows_sys::core::IUnknown,
     pub UpdateTopology: unsafe extern "system" fn(this: *mut *mut Self, ptopology: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFRemoteDesktopPlugin {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 484336393, data2: 51936, data3: 18752, data4: [144, 126, 193, 236, 156, 61, 29, 74] };
+}
 #[repr(C)]
 pub struct IMFRemoteProxy {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetRemoteObject: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetRemoteHost: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFRemoteProxy {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2572034989, data2: 7362, data3: 18748, data4: [185, 250, 70, 241, 203, 4, 15, 164] };
 }
 #[repr(C)]
 pub struct IMFSAMIStyle {
@@ -9481,6 +10191,9 @@ pub struct IMFSAMIStyle {
     GetStyles: usize,
     pub SetSelectedStyle: unsafe extern "system" fn(this: *mut *mut Self, pwszstyle: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
     pub GetSelectedStyle: unsafe extern "system" fn(this: *mut *mut Self, ppwszstyle: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFSAMIStyle {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2816484829, data2: 21251, data3: 19042, data4: [137, 214, 231, 71, 225, 239, 172, 115] };
 }
 #[repr(C)]
 pub struct IMFSSLCertificateManager {
@@ -9496,6 +10209,9 @@ pub struct IMFSSLCertificateManager {
     pub OnServerCertificate: unsafe extern "system" fn(this: *mut *mut Self, pszurl: ::windows_sys::core::PCWSTR, pbdata: *const u8, cbdata: u32, pfisgood: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     OnServerCertificate: usize,
+}
+impl ::windows_sys::core::Interface for IMFSSLCertificateManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1643632775, data2: 4656, data3: 19083, data4: [174, 186, 138, 212, 52, 209, 166, 77] };
 }
 #[repr(C)]
 pub struct IMFSample {
@@ -9515,11 +10231,17 @@ pub struct IMFSample {
     pub GetTotalLength: unsafe extern "system" fn(this: *mut *mut Self, pcbtotallength: *mut u32) -> ::windows_sys::core::HRESULT,
     pub CopyToBuffer: unsafe extern "system" fn(this: *mut *mut Self, pbuffer: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFSample {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3288989938, data2: 47418, data3: 19840, data4: [174, 140, 90, 28, 99, 79, 88, 228] };
+}
 #[repr(C)]
 pub struct IMFSampleAllocatorControl {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetDefaultAllocator: unsafe extern "system" fn(this: *mut *mut Self, dwoutputstreamid: u32, pallocator: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetAllocatorUsage: unsafe extern "system" fn(this: *mut *mut Self, dwoutputstreamid: u32, pdwinputstreamid: *mut u32, peusage: *mut MFSampleAllocatorUsage) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFSampleAllocatorControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3663903064, data2: 14904, data3: 19095, data4: [189, 39, 20, 156, 100, 12, 7, 113] };
 }
 #[repr(C)]
 pub struct IMFSampleGrabberSinkCallback {
@@ -9528,10 +10250,16 @@ pub struct IMFSampleGrabberSinkCallback {
     pub OnProcessSample: unsafe extern "system" fn(this: *mut *mut Self, guidmajormediatype: *const ::windows_sys::core::GUID, dwsampleflags: u32, llsampletime: i64, llsampleduration: i64, psamplebuffer: *const u8, dwsamplesize: u32) -> ::windows_sys::core::HRESULT,
     pub OnShutdown: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFSampleGrabberSinkCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2356904127, data2: 60994, data3: 19289, data4: [177, 223, 85, 102, 142, 27, 220, 168] };
+}
 #[repr(C)]
 pub struct IMFSampleGrabberSinkCallback2 {
     pub base__: IMFSampleGrabberSinkCallback,
     pub OnProcessSampleEx: unsafe extern "system" fn(this: *mut *mut Self, guidmajormediatype: *const ::windows_sys::core::GUID, dwsampleflags: u32, llsampletime: i64, llsampleduration: i64, psamplebuffer: *const u8, dwsamplesize: u32, pattributes: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFSampleGrabberSinkCallback2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3397823056, data2: 50286, data3: 17054, data4: [171, 39, 22, 214, 172, 104, 68, 203] };
 }
 #[repr(C)]
 pub struct IMFSampleOutputStream {
@@ -9539,6 +10267,9 @@ pub struct IMFSampleOutputStream {
     pub BeginWriteSample: unsafe extern "system" fn(this: *mut *mut Self, psample: *mut ::core::ffi::c_void, pcallback: *mut ::core::ffi::c_void, punkstate: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub EndWriteSample: unsafe extern "system" fn(this: *mut *mut Self, presult: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFSampleOutputStream {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2414793832, data2: 28542, data3: 17421, data4: [134, 154, 73, 189, 210, 131, 173, 13] };
 }
 #[repr(C)]
 pub struct IMFSampleProtection {
@@ -9549,6 +10280,9 @@ pub struct IMFSampleProtection {
     pub InitOutputProtection: unsafe extern "system" fn(this: *mut *mut Self, dwversion: u32, dwoutputid: u32, pbcert: *const u8, cbcert: u32, ppbseed: *mut *mut u8, pcbseed: *mut u32) -> ::windows_sys::core::HRESULT,
     pub InitInputProtection: unsafe extern "system" fn(this: *mut *mut Self, dwversion: u32, dwinputid: u32, pbseed: *const u8, cbseed: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFSampleProtection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2385918303, data2: 51129, data3: 17348, data4: [165, 77, 81, 43, 74, 246, 60, 149] };
+}
 #[repr(C)]
 pub struct IMFSaveJob {
     pub base__: ::windows_sys::core::IUnknown,
@@ -9556,6 +10290,9 @@ pub struct IMFSaveJob {
     pub EndSave: unsafe extern "system" fn(this: *mut *mut Self, presult: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub CancelSave: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub GetProgress: unsafe extern "system" fn(this: *mut *mut Self, pdwpercentcomplete: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFSaveJob {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3918730851, data2: 32959, data3: 19566, data4: [152, 175, 93, 207, 88, 116, 125, 31] };
 }
 #[repr(C)]
 pub struct IMFSchemeHandler {
@@ -9567,16 +10304,25 @@ pub struct IMFSchemeHandler {
     pub EndCreateObject: unsafe extern "system" fn(this: *mut *mut Self, presult: *mut ::core::ffi::c_void, pobjecttype: *mut MF_OBJECT_TYPE, ppobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub CancelObjectCreation: unsafe extern "system" fn(this: *mut *mut Self, piunknowncancelcookie: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFSchemeHandler {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1833728884, data2: 21152, data3: 19383, data4: [176, 219, 85, 242, 159, 71, 166, 104] };
+}
 #[repr(C)]
 pub struct IMFSecureBuffer {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetIdentifier: unsafe extern "system" fn(this: *mut *mut Self, pguididentifier: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFSecureBuffer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3240139012, data2: 58756, data3: 18258, data4: [162, 214, 127, 33, 105, 63, 139, 33] };
 }
 #[repr(C)]
 pub struct IMFSecureChannel {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetCertificate: unsafe extern "system" fn(this: *mut *mut Self, ppcert: *mut *mut u8, pcbcert: *mut u32) -> ::windows_sys::core::HRESULT,
     pub SetupSession: unsafe extern "system" fn(this: *mut *mut Self, pbencryptedsessionkey: *const u8, cbsessionkey: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFSecureChannel {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3501086045, data2: 15122, data3: 19863, data4: [176, 96, 9, 144, 188, 90, 235, 103] };
 }
 #[repr(C)]
 pub struct IMFSeekInfo {
@@ -9586,6 +10332,9 @@ pub struct IMFSeekInfo {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
     GetNearestKeyFrames: usize,
 }
+impl ::windows_sys::core::Interface for IMFSeekInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 649062995, data2: 55789, data3: 17077, data4: [171, 128, 230, 79, 158, 227, 71, 121] };
+}
 #[repr(C)]
 pub struct IMFSensorActivitiesReport {
     pub base__: ::windows_sys::core::IUnknown,
@@ -9593,16 +10342,25 @@ pub struct IMFSensorActivitiesReport {
     pub GetActivityReport: unsafe extern "system" fn(this: *mut *mut Self, index: u32, sensoractivityreport: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetActivityReportByDeviceName: unsafe extern "system" fn(this: *mut *mut Self, symbolicname: ::windows_sys::core::PCWSTR, sensoractivityreport: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFSensorActivitiesReport {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1748990558, data2: 18969, data3: 17357, data4: [177, 169, 219, 244, 171, 63, 119, 119] };
+}
 #[repr(C)]
 pub struct IMFSensorActivitiesReportCallback {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnActivitiesReport: unsafe extern "system" fn(this: *mut *mut Self, sensoractivitiesreport: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFSensorActivitiesReportCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3729814254, data2: 56291, data3: 18140, data4: [138, 135, 182, 246, 49, 25, 71, 81] };
 }
 #[repr(C)]
 pub struct IMFSensorActivityMonitor {
     pub base__: ::windows_sys::core::IUnknown,
     pub Start: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Stop: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFSensorActivityMonitor {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3503223109, data2: 46068, data3: 17216, data4: [162, 229, 122, 80, 128, 202, 5, 203] };
 }
 #[repr(C)]
 pub struct IMFSensorActivityReport {
@@ -9611,6 +10369,9 @@ pub struct IMFSensorActivityReport {
     pub GetSymbolicLink: unsafe extern "system" fn(this: *mut *mut Self, symboliclink: ::windows_sys::core::PWSTR, cchsymboliclink: u32, pcchwritten: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetProcessCount: unsafe extern "system" fn(this: *mut *mut Self, pccount: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetProcessActivity: unsafe extern "system" fn(this: *mut *mut Self, index: u32, ppprocessactivity: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFSensorActivityReport {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1049381857, data2: 43202, data3: 17704, data4: [144, 222, 40, 81, 189, 229, 254, 173] };
 }
 #[repr(C)]
 pub struct IMFSensorDevice {
@@ -9625,6 +10386,9 @@ pub struct IMFSensorDevice {
     pub SetSensorDeviceMode: unsafe extern "system" fn(this: *mut *mut Self, emode: MFSensorDeviceMode) -> ::windows_sys::core::HRESULT,
     pub GetSensorDeviceMode: unsafe extern "system" fn(this: *mut *mut Self, pemode: *mut MFSensorDeviceMode) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFSensorDevice {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4221520114, data2: 10776, data3: 20008, data4: [151, 48, 120, 111, 48, 240, 77, 196] };
+}
 #[repr(C)]
 pub struct IMFSensorGroup {
     pub base__: ::windows_sys::core::IUnknown,
@@ -9636,6 +10400,9 @@ pub struct IMFSensorGroup {
     pub SetDefaultSensorDeviceIndex: unsafe extern "system" fn(this: *mut *mut Self, dwindex: u32) -> ::windows_sys::core::HRESULT,
     pub GetDefaultSensorDeviceIndex: unsafe extern "system" fn(this: *mut *mut Self, pdwindex: *mut u32) -> ::windows_sys::core::HRESULT,
     pub CreateMediaSource: unsafe extern "system" fn(this: *mut *mut Self, ppsource: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFSensorGroup {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1091576890, data2: 38743, data3: 17951, data4: [137, 241, 242, 35, 69, 188, 171, 78] };
 }
 #[repr(C)]
 pub struct IMFSensorProcessActivity {
@@ -9651,6 +10418,9 @@ pub struct IMFSensorProcessActivity {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetReportTime: usize,
 }
+impl ::windows_sys::core::Interface for IMFSensorProcessActivity {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 970751818, data2: 45377, data3: 18201, data4: [129, 60, 167, 244, 97, 98, 162, 184] };
+}
 #[repr(C)]
 pub struct IMFSensorProfile {
     pub base__: ::windows_sys::core::IUnknown,
@@ -9662,6 +10432,9 @@ pub struct IMFSensorProfile {
     IsMediaTypeSupported: usize,
     pub AddBlockedControl: unsafe extern "system" fn(this: *mut *mut Self, wzblockedcontrol: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFSensorProfile {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 586638801, data2: 36267, data3: 16647, data4: [132, 109, 86, 186, 247, 34, 21, 231] };
+}
 #[repr(C)]
 pub struct IMFSensorProfileCollection {
     pub base__: ::windows_sys::core::IUnknown,
@@ -9672,12 +10445,18 @@ pub struct IMFSensorProfileCollection {
     pub RemoveProfileByIndex: unsafe extern "system" fn(this: *mut *mut Self, index: u32),
     pub RemoveProfile: unsafe extern "system" fn(this: *mut *mut Self, profileid: *const SENSORPROFILEID),
 }
+impl ::windows_sys::core::Interface for IMFSensorProfileCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3378423131, data2: 391, data3: 18622, data4: [147, 83, 141, 37, 7, 102, 35, 81] };
+}
 #[repr(C)]
 pub struct IMFSensorStream {
     pub base__: IMFAttributes,
     pub GetMediaTypeCount: unsafe extern "system" fn(this: *mut *mut Self, pdwcount: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetMediaType: unsafe extern "system" fn(this: *mut *mut Self, dwindex: u32, ppmediatype: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub CloneSensorStream: unsafe extern "system" fn(this: *mut *mut Self, ppstream: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFSensorStream {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3919847793, data2: 50542, data3: 18826, data4: [139, 57, 237, 165, 160, 112, 183, 252] };
 }
 #[repr(C)]
 pub struct IMFSensorTransformFactory {
@@ -9688,6 +10467,9 @@ pub struct IMFSensorTransformFactory {
     pub GetTransformInformation: unsafe extern "system" fn(this: *mut *mut Self, transformindex: u32, pguidtransformid: *mut ::windows_sys::core::GUID, ppattributes: *mut *mut ::core::ffi::c_void, ppstreaminformation: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub CreateTransform: unsafe extern "system" fn(this: *mut *mut Self, guidsensortransformid: *const ::windows_sys::core::GUID, pattributes: *mut ::core::ffi::c_void, ppdevicemft: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFSensorTransformFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4007248622, data2: 26292, data3: 20248, data4: [166, 151, 172, 125, 57, 96, 33, 92] };
+}
 #[repr(C)]
 pub struct IMFSequencerSource {
     pub base__: ::windows_sys::core::IUnknown,
@@ -9697,10 +10479,16 @@ pub struct IMFSequencerSource {
     pub UpdateTopology: unsafe extern "system" fn(this: *mut *mut Self, dwid: u32, ptopology: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub UpdateTopologyFlags: unsafe extern "system" fn(this: *mut *mut Self, dwid: u32, dwflags: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFSequencerSource {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 427610649, data2: 6603, data3: 19937, data4: [166, 76, 172, 242, 237, 203, 229, 158] };
+}
 #[repr(C)]
 pub struct IMFSharingEngineClassFactory {
     pub base__: ::windows_sys::core::IUnknown,
     pub CreateInstance: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, pattr: *mut ::core::ffi::c_void, ppengine: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFSharingEngineClassFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 732307346, data2: 33541, data3: 16699, data4: [151, 51, 250, 241, 95, 37, 147, 132] };
 }
 #[repr(C)]
 pub struct IMFShutdown {
@@ -9708,10 +10496,16 @@ pub struct IMFShutdown {
     pub Shutdown: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub GetShutdownStatus: unsafe extern "system" fn(this: *mut *mut Self, pstatus: *mut MFSHUTDOWN_STATUS) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFShutdown {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2548838052, data2: 3650, data3: 18743, data4: [151, 172, 157, 109, 50, 136, 36, 225] };
+}
 #[repr(C)]
 pub struct IMFSignedLibrary {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetProcedureAddress: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::PCSTR, address: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFSignedLibrary {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1249004490, data2: 65386, data3: 19463, data4: [142, 13, 122, 53, 132, 33, 207, 6] };
 }
 #[repr(C)]
 pub struct IMFSimpleAudioVolume {
@@ -9726,6 +10520,9 @@ pub struct IMFSimpleAudioVolume {
     pub GetMute: unsafe extern "system" fn(this: *mut *mut Self, pbmute: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetMute: usize,
+}
+impl ::windows_sys::core::Interface for IMFSimpleAudioVolume {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 144629523, data2: 53105, data3: 17208, data4: [141, 19, 158, 86, 157, 189, 195, 25] };
 }
 #[repr(C)]
 pub struct IMFSinkWriter {
@@ -9742,11 +10539,17 @@ pub struct IMFSinkWriter {
     pub GetServiceForStream: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32, guidservice: *const ::windows_sys::core::GUID, riid: *const ::windows_sys::core::GUID, ppvobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetStatistics: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32, pstats: *mut MF_SINK_WRITER_STATISTICS) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFSinkWriter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 825749965, data2: 65118, data3: 18437, data4: [165, 216, 251, 71, 116, 72, 203, 61] };
+}
 #[repr(C)]
 pub struct IMFSinkWriterCallback {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnFinalize: unsafe extern "system" fn(this: *mut *mut Self, hrstatus: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
     pub OnMarker: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32, pvcontext: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFSinkWriterCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1718580958, data2: 13266, data3: 16825, data4: [164, 88, 41, 237, 10, 151, 44, 88] };
 }
 #[repr(C)]
 pub struct IMFSinkWriterCallback2 {
@@ -9754,16 +10557,25 @@ pub struct IMFSinkWriterCallback2 {
     pub OnTransformChange: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub OnStreamError: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32, hrstatus: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFSinkWriterCallback2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 609664344, data2: 49255, data3: 17683, data4: [132, 254, 141, 12, 136, 255, 220, 97] };
+}
 #[repr(C)]
 pub struct IMFSinkWriterEncoderConfig {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetTargetMediaType: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32, ptargetmediatype: *mut ::core::ffi::c_void, pencodingparameters: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub PlaceEncodingParameters: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32, pencodingparameters: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFSinkWriterEncoderConfig {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 398686110, data2: 15582, data3: 20190, data4: [140, 96, 56, 153, 245, 245, 58, 214] };
+}
 #[repr(C)]
 pub struct IMFSinkWriterEx {
     pub base__: IMFSinkWriter,
     pub GetTransformForStream: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32, dwtransformindex: u32, pguidcategory: *mut ::windows_sys::core::GUID, pptransform: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFSinkWriterEx {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1485664939, data2: 23489, data3: 18794, data4: [135, 20, 183, 6, 23, 20, 27, 37] };
 }
 #[repr(C)]
 pub struct IMFSourceBuffer {
@@ -9784,17 +10596,26 @@ pub struct IMFSourceBuffer {
     pub Abort: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Remove: unsafe extern "system" fn(this: *mut *mut Self, start: f64, end: f64) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFSourceBuffer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3805100619, data2: 44837, data3: 19773, data4: [145, 16, 218, 14, 111, 142, 232, 119] };
+}
 #[repr(C)]
 pub struct IMFSourceBufferAppendMode {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetAppendMode: unsafe extern "system" fn(this: *mut *mut Self) -> MF_MSE_APPEND_MODE,
     pub SetAppendMode: unsafe extern "system" fn(this: *mut *mut Self, mode: MF_MSE_APPEND_MODE) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFSourceBufferAppendMode {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 426143668, data2: 47806, data3: 19541, data4: [188, 3, 10, 7, 77, 163, 126, 42] };
+}
 #[repr(C)]
 pub struct IMFSourceBufferList {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetLength: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
     pub GetSourceBuffer: unsafe extern "system" fn(this: *mut *mut Self, index: u32) -> *mut *mut IMFSourceBuffer,
+}
+impl ::windows_sys::core::Interface for IMFSourceBufferList {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 614040056, data2: 33573, data3: 16883, data4: [184, 12, 59, 158, 58, 173, 12, 190] };
 }
 #[repr(C)]
 pub struct IMFSourceBufferNotify {
@@ -9805,10 +10626,16 @@ pub struct IMFSourceBufferNotify {
     pub OnUpdate: unsafe extern "system" fn(this: *mut *mut Self),
     pub OnUpdateEnd: unsafe extern "system" fn(this: *mut *mut Self),
 }
+impl ::windows_sys::core::Interface for IMFSourceBufferNotify {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2279896611, data2: 11499, data3: 17878, data4: [155, 136, 216, 82, 12, 77, 203, 188] };
+}
 #[repr(C)]
 pub struct IMFSourceOpenMonitor {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnSourceEvent: unsafe extern "system" fn(this: *mut *mut Self, pevent: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFSourceOpenMonitor {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 93344947, data2: 636, data3: 18764, data4: [162, 125, 145, 19, 41, 28, 248, 127] };
 }
 #[repr(C)]
 pub struct IMFSourceReader {
@@ -9836,6 +10663,9 @@ pub struct IMFSourceReader {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
     GetPresentationAttribute: usize,
 }
+impl ::windows_sys::core::Interface for IMFSourceReader {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1890477810, data2: 51209, data3: 20047, data4: [137, 21, 189, 203, 64, 107, 121, 147] };
+}
 #[repr(C)]
 pub struct IMFSourceReaderCallback {
     pub base__: ::windows_sys::core::IUnknown,
@@ -9843,11 +10673,17 @@ pub struct IMFSourceReaderCallback {
     pub OnFlush: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32) -> ::windows_sys::core::HRESULT,
     pub OnEvent: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32, pevent: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFSourceReaderCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3740044697, data2: 64029, data3: 19842, data4: [132, 194, 44, 137, 105, 148, 72, 103] };
+}
 #[repr(C)]
 pub struct IMFSourceReaderCallback2 {
     pub base__: IMFSourceReaderCallback,
     pub OnTransformChange: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub OnStreamError: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32, hrstatus: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFSourceReaderCallback2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3481509862, data2: 35882, data3: 19922, data4: [182, 234, 194, 45, 105, 97, 175, 5] };
 }
 #[repr(C)]
 pub struct IMFSourceReaderEx {
@@ -9856,6 +10692,9 @@ pub struct IMFSourceReaderEx {
     pub AddTransformForStream: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32, ptransformoractivate: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub RemoveAllTransformsForStream: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32) -> ::windows_sys::core::HRESULT,
     pub GetTransformForStream: unsafe extern "system" fn(this: *mut *mut Self, dwstreamindex: u32, dwtransformindex: u32, pguidcategory: *mut ::windows_sys::core::GUID, pptransform: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFSourceReaderEx {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2073566448, data2: 22030, data3: 16662, data4: [152, 117, 176, 153, 137, 95, 35, 215] };
 }
 #[repr(C)]
 pub struct IMFSourceResolver {
@@ -9880,6 +10719,9 @@ pub struct IMFSourceResolver {
     pub EndCreateObjectFromByteStream: unsafe extern "system" fn(this: *mut *mut Self, presult: *mut ::core::ffi::c_void, pobjecttype: *mut MF_OBJECT_TYPE, ppobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub CancelObjectCreation: unsafe extern "system" fn(this: *mut *mut Self, piunknowncancelcookie: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFSourceResolver {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4226130733, data2: 42135, data3: 19297, data4: [187, 133, 151, 177, 168, 72, 166, 227] };
+}
 #[repr(C)]
 pub struct IMFSpatialAudioObjectBuffer {
     pub base__: IMFMediaBuffer,
@@ -9898,6 +10740,9 @@ pub struct IMFSpatialAudioObjectBuffer {
     #[cfg(not(feature = "Win32_Media_Audio"))]
     GetMetadataItems: usize,
 }
+impl ::windows_sys::core::Interface for IMFSpatialAudioObjectBuffer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3549883532, data2: 24670, data3: 16969, data4: [151, 141, 114, 173, 28, 49, 40, 114] };
+}
 #[repr(C)]
 pub struct IMFSpatialAudioSample {
     pub base__: IMFSample,
@@ -9905,11 +10750,17 @@ pub struct IMFSpatialAudioSample {
     pub AddSpatialAudioObject: unsafe extern "system" fn(this: *mut *mut Self, paudioobjbuffer: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetSpatialAudioObjectByIndex: unsafe extern "system" fn(this: *mut *mut Self, dwindex: u32, ppaudioobjbuffer: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFSpatialAudioSample {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2884799131, data2: 13203, data3: 17040, data4: [186, 121, 95, 252, 70, 217, 134, 178] };
+}
 #[repr(C)]
 pub struct IMFStreamDescriptor {
     pub base__: IMFAttributes,
     pub GetStreamIdentifier: unsafe extern "system" fn(this: *mut *mut Self, pdwstreamidentifier: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetMediaTypeHandler: unsafe extern "system" fn(this: *mut *mut Self, ppmediatypehandler: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFStreamDescriptor {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1455439260, data2: 40379, data3: 17909, data4: [171, 75, 216, 15, 71, 192, 89, 56] };
 }
 #[repr(C)]
 pub struct IMFStreamSink {
@@ -9924,6 +10775,9 @@ pub struct IMFStreamSink {
     PlaceMarker: usize,
     pub Flush: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFStreamSink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 177714127, data2: 36476, data3: 19005, data4: [143, 140, 12, 132, 61, 194, 71, 251] };
+}
 #[repr(C)]
 pub struct IMFStreamingSinkConfig {
     pub base__: ::windows_sys::core::IUnknown,
@@ -9932,11 +10786,17 @@ pub struct IMFStreamingSinkConfig {
     #[cfg(not(feature = "Win32_Foundation"))]
     StartStreaming: usize,
 }
+impl ::windows_sys::core::Interface for IMFStreamingSinkConfig {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2646059585, data2: 15557, data3: 16596, data4: [133, 9, 85, 88, 4, 173, 52, 204] };
+}
 #[repr(C)]
 pub struct IMFSystemId {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetData: unsafe extern "system" fn(this: *mut *mut Self, size: *mut u32, data: *mut *mut u8) -> ::windows_sys::core::HRESULT,
     pub Setup: unsafe extern "system" fn(this: *mut *mut Self, stage: u32, cbin: u32, pbin: *const u8, pcbout: *mut u32, ppbout: *mut *mut u8) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFSystemId {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4294225722, data2: 8129, data3: 20217, data4: [162, 155, 210, 108, 73, 226, 243, 26] };
 }
 #[repr(C)]
 pub struct IMFTimecodeTranslate {
@@ -9951,6 +10811,9 @@ pub struct IMFTimecodeTranslate {
     pub EndConvertHNSToTimecode: unsafe extern "system" fn(this: *mut *mut Self, presult: *mut ::core::ffi::c_void, ppropvartimecode: *mut super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
     EndConvertHNSToTimecode: usize,
+}
+impl ::windows_sys::core::Interface for IMFTimecodeTranslate {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2879227489, data2: 63464, data3: 20212, data4: [152, 97, 137, 243, 52, 249, 78, 116] };
 }
 #[repr(C)]
 pub struct IMFTimedText {
@@ -9985,10 +10848,16 @@ pub struct IMFTimedText {
     #[cfg(not(feature = "Win32_Foundation"))]
     IsInBandEnabled: usize,
 }
+impl ::windows_sys::core::Interface for IMFTimedText {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 522884297, data2: 41951, data3: 17165, data4: [157, 15, 172, 216, 93, 220, 41, 175] };
+}
 #[repr(C)]
 pub struct IMFTimedTextBinary {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetData: unsafe extern "system" fn(this: *mut *mut Self, data: *mut *mut u8, length: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFTimedTextBinary {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1256432658, data2: 1349, data3: 17348, data4: [191, 111, 107, 151, 165, 198, 196, 50] };
 }
 #[repr(C)]
 pub struct IMFTimedTextBouten {
@@ -9996,6 +10865,9 @@ pub struct IMFTimedTextBouten {
     pub GetBoutenType: unsafe extern "system" fn(this: *mut *mut Self, value: *mut MF_TIMED_TEXT_BOUTEN_TYPE) -> ::windows_sys::core::HRESULT,
     pub GetBoutenColor: unsafe extern "system" fn(this: *mut *mut Self, value: *mut MFARGB) -> ::windows_sys::core::HRESULT,
     pub GetBoutenPosition: unsafe extern "system" fn(this: *mut *mut Self, value: *mut MF_TIMED_TEXT_BOUTEN_POSITION) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFTimedTextBouten {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1012874890, data2: 37056, data3: 17998, data4: [129, 54, 137, 141, 41, 117, 248, 71] };
 }
 #[repr(C)]
 pub struct IMFTimedTextCue {
@@ -10012,6 +10884,9 @@ pub struct IMFTimedTextCue {
     pub GetLineCount: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
     pub GetLine: unsafe extern "system" fn(this: *mut *mut Self, index: u32, line: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFTimedTextCue {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 508953671, data2: 39467, data3: 17377, data4: [169, 76, 176, 170, 171, 251, 251, 201] };
+}
 #[repr(C)]
 pub struct IMFTimedTextCueList {
     pub base__: ::windows_sys::core::IUnknown,
@@ -10023,12 +10898,18 @@ pub struct IMFTimedTextCueList {
     pub AddDataCue: unsafe extern "system" fn(this: *mut *mut Self, start: f64, duration: f64, data: *const u8, datasize: u32, cue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub RemoveCue: unsafe extern "system" fn(this: *mut *mut Self, cue: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFTimedTextCueList {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2903672645, data2: 8475, data3: 16544, data4: [153, 129, 254, 101, 241, 102, 208, 253] };
+}
 #[repr(C)]
 pub struct IMFTimedTextFormattedText {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetText: unsafe extern "system" fn(this: *mut *mut Self, text: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
     pub GetSubformattingCount: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
     pub GetSubformatting: unsafe extern "system" fn(this: *mut *mut Self, index: u32, firstchar: *mut u32, charlength: *mut u32, style: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFTimedTextFormattedText {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3778737089, data2: 19783, data3: 17236, data4: [177, 245, 232, 58, 224, 236, 174, 96] };
 }
 #[repr(C)]
 pub struct IMFTimedTextNotify {
@@ -10043,6 +10924,9 @@ pub struct IMFTimedTextNotify {
     pub Error: unsafe extern "system" fn(this: *mut *mut Self, errorcode: MF_TIMED_TEXT_ERROR_CODE, extendederrorcode: ::windows_sys::core::HRESULT, sourcetrackid: u32),
     pub Cue: unsafe extern "system" fn(this: *mut *mut Self, cueevent: MF_TIMED_TEXT_CUE_EVENT, currenttime: f64, cue: *mut ::core::ffi::c_void),
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self),
+}
+impl ::windows_sys::core::Interface for IMFTimedTextNotify {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3748366262, data2: 52754, data3: 17883, data4: [171, 167, 67, 47, 224, 84, 229, 125] };
 }
 #[repr(C)]
 pub struct IMFTimedTextRegion {
@@ -10066,6 +10950,9 @@ pub struct IMFTimedTextRegion {
     pub GetZIndex: unsafe extern "system" fn(this: *mut *mut Self, zindex: *mut i32) -> ::windows_sys::core::HRESULT,
     pub GetScrollMode: unsafe extern "system" fn(this: *mut *mut Self, scrollmode: *mut MF_TIMED_TEXT_SCROLL_MODE) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFTimedTextRegion {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3369216764, data2: 48199, data3: 19423, data4: [155, 4, 120, 126, 73, 206, 63, 88] };
+}
 #[repr(C)]
 pub struct IMFTimedTextRuby {
     pub base__: ::windows_sys::core::IUnknown,
@@ -10073,6 +10960,9 @@ pub struct IMFTimedTextRuby {
     pub GetRubyPosition: unsafe extern "system" fn(this: *mut *mut Self, value: *mut MF_TIMED_TEXT_RUBY_POSITION) -> ::windows_sys::core::HRESULT,
     pub GetRubyAlign: unsafe extern "system" fn(this: *mut *mut Self, value: *mut MF_TIMED_TEXT_RUBY_ALIGN) -> ::windows_sys::core::HRESULT,
     pub GetRubyReserve: unsafe extern "system" fn(this: *mut *mut Self, value: *mut MF_TIMED_TEXT_RUBY_RESERVE) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFTimedTextRuby {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1992730357, data2: 18773, data3: 19941, data4: [178, 123, 20, 183, 52, 204, 20, 180] };
 }
 #[repr(C)]
 pub struct IMFTimedTextStyle {
@@ -10103,6 +10993,9 @@ pub struct IMFTimedTextStyle {
     pub GetTextDecoration: unsafe extern "system" fn(this: *mut *mut Self, textdecoration: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetTextOutline: unsafe extern "system" fn(this: *mut *mut Self, color: *mut MFARGB, thickness: *mut f64, blurradius: *mut f64, unittype: *mut MF_TIMED_TEXT_UNIT_TYPE) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFTimedTextStyle {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 162678109, data2: 47156, data3: 20225, data4: [163, 71, 144, 82, 226, 28, 69, 14] };
+}
 #[repr(C)]
 pub struct IMFTimedTextStyle2 {
     pub base__: ::windows_sys::core::IUnknown,
@@ -10113,6 +11006,9 @@ pub struct IMFTimedTextStyle2 {
     #[cfg(not(feature = "Win32_Foundation"))]
     IsTextCombined: usize,
     pub GetFontAngleInDegrees: unsafe extern "system" fn(this: *mut *mut Self, value: *mut f64) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFTimedTextStyle2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3680735641, data2: 51209, data3: 19593, data4: [191, 202, 208, 187, 185, 114, 157, 110] };
 }
 #[repr(C)]
 pub struct IMFTimedTextTrack {
@@ -10137,6 +11033,9 @@ pub struct IMFTimedTextTrack {
     pub GetReadyState: unsafe extern "system" fn(this: *mut *mut Self) -> MF_TIMED_TEXT_TRACK_READY_STATE,
     pub GetCueList: unsafe extern "system" fn(this: *mut *mut Self, cues: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFTimedTextTrack {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2283979565, data2: 25934, data3: 16947, data4: [191, 33, 215, 242, 230, 125, 48, 212] };
+}
 #[repr(C)]
 pub struct IMFTimedTextTrackList {
     pub base__: ::windows_sys::core::IUnknown,
@@ -10144,16 +11043,25 @@ pub struct IMFTimedTextTrackList {
     pub GetTrack: unsafe extern "system" fn(this: *mut *mut Self, index: u32, track: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetTrackById: unsafe extern "system" fn(this: *mut *mut Self, trackid: u32, track: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFTimedTextTrackList {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 603927372, data2: 17452, data3: 17503, data4: [188, 204, 237, 196, 56, 170, 17, 226] };
+}
 #[repr(C)]
 pub struct IMFTimer {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetTimer: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, llclocktime: i64, pcallback: *mut ::core::ffi::c_void, punkstate: *mut ::core::ffi::c_void, ppunkkey: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub CancelTimer: unsafe extern "system" fn(this: *mut *mut Self, punkkey: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFTimer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3849211069, data2: 36720, data3: 18904, data4: [160, 248, 237, 179, 214, 171, 155, 242] };
+}
 #[repr(C)]
 pub struct IMFTopoLoader {
     pub base__: ::windows_sys::core::IUnknown,
     pub Load: unsafe extern "system" fn(this: *mut *mut Self, pinputtopo: *mut ::core::ffi::c_void, ppoutputtopo: *mut *mut ::core::ffi::c_void, pcurrenttopo: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFTopoLoader {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3734659415, data2: 63072, data3: 17987, data4: [181, 106, 223, 159, 121, 152, 199, 205] };
 }
 #[repr(C)]
 pub struct IMFTopology {
@@ -10168,6 +11076,9 @@ pub struct IMFTopology {
     pub GetNodeByID: unsafe extern "system" fn(this: *mut *mut Self, qwtoponodeid: u64, ppnode: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetSourceNodeCollection: unsafe extern "system" fn(this: *mut *mut Self, ppcollection: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetOutputNodeCollection: unsafe extern "system" fn(this: *mut *mut Self, ppcollection: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFTopology {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2211415866, data2: 63194, data3: 19400, data4: [130, 63, 186, 207, 213, 93, 196, 51] };
 }
 #[repr(C)]
 pub struct IMFTopologyNode {
@@ -10189,15 +11100,24 @@ pub struct IMFTopologyNode {
     pub GetInputPrefType: unsafe extern "system" fn(this: *mut *mut Self, dwinputindex: u32, pptype: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub CloneFrom: unsafe extern "system" fn(this: *mut *mut Self, pnode: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFTopologyNode {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2211415866, data2: 63194, data3: 19400, data4: [130, 63, 186, 207, 213, 93, 196, 48] };
+}
 #[repr(C)]
 pub struct IMFTopologyNodeAttributeEditor {
     pub base__: ::windows_sys::core::IUnknown,
     pub UpdateNodeAttributes: unsafe extern "system" fn(this: *mut *mut Self, topoid: u64, cupdates: u32, pupdates: *const MFTOPONODE_ATTRIBUTE_UPDATE) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFTopologyNodeAttributeEditor {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1735042781, data2: 9098, data3: 16653, data4: [187, 153, 101, 102, 141, 1, 96, 90] };
+}
 #[repr(C)]
 pub struct IMFTopologyServiceLookup {
     pub base__: ::windows_sys::core::IUnknown,
     pub LookupService: unsafe extern "system" fn(this: *mut *mut Self, r#type: MF_SERVICE_LOOKUP_TYPE, dwindex: u32, guidservice: *const ::windows_sys::core::GUID, riid: *const ::windows_sys::core::GUID, ppvobjects: *mut *mut ::core::ffi::c_void, pnobjects: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFTopologyServiceLookup {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4204345481, data2: 17283, data3: 16730, data4: [169, 48, 221, 71, 42, 140, 246, 247] };
 }
 #[repr(C)]
 pub struct IMFTopologyServiceLookupClient {
@@ -10205,10 +11125,16 @@ pub struct IMFTopologyServiceLookupClient {
     pub InitServicePointers: unsafe extern "system" fn(this: *mut *mut Self, plookup: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub ReleaseServicePointers: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFTopologyServiceLookupClient {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4204345482, data2: 17283, data3: 16730, data4: [169, 48, 221, 71, 42, 140, 246, 247] };
+}
 #[repr(C)]
 pub struct IMFTrackedSample {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetAllocator: unsafe extern "system" fn(this: *mut *mut Self, psampleallocator: *mut ::core::ffi::c_void, punkstate: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFTrackedSample {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 610007273, data2: 1877, data3: 16631, data4: [136, 165, 174, 15, 24, 213, 94, 23] };
 }
 #[repr(C)]
 pub struct IMFTranscodeProfile {
@@ -10220,6 +11146,9 @@ pub struct IMFTranscodeProfile {
     pub SetContainerAttributes: unsafe extern "system" fn(this: *mut *mut Self, pattrs: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetContainerAttributes: unsafe extern "system" fn(this: *mut *mut Self, ppattrs: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFTranscodeProfile {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1256184739, data2: 31408, data3: 18771, data4: [166, 43, 70, 30, 127, 243, 218, 30] };
+}
 #[repr(C)]
 pub struct IMFTranscodeSinkInfoProvider {
     pub base__: ::windows_sys::core::IUnknown,
@@ -10227,6 +11156,9 @@ pub struct IMFTranscodeSinkInfoProvider {
     pub SetOutputByteStream: unsafe extern "system" fn(this: *mut *mut Self, pbytestreamactivate: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetProfile: unsafe extern "system" fn(this: *mut *mut Self, pprofile: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetSinkInfo: unsafe extern "system" fn(this: *mut *mut Self, psinkinfo: *mut MF_TRANSCODE_SINK_INFO) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFTranscodeSinkInfoProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2365574446, data2: 23043, data3: 19002, data4: [175, 247, 237, 205, 16, 124, 98, 14] };
 }
 #[repr(C)]
 pub struct IMFTransform {
@@ -10255,10 +11187,16 @@ pub struct IMFTransform {
     pub ProcessInput: unsafe extern "system" fn(this: *mut *mut Self, dwinputstreamid: u32, psample: *mut ::core::ffi::c_void, dwflags: u32) -> ::windows_sys::core::HRESULT,
     pub ProcessOutput: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, coutputbuffercount: u32, poutputsamples: *mut MFT_OUTPUT_DATA_BUFFER, pdwstatus: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFTransform {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3214197025, data2: 23301, data3: 20079, data4: [128, 0, 186, 89, 137, 97, 65, 77] };
+}
 #[repr(C)]
 pub struct IMFTrustedInput {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetInputTrustAuthority: unsafe extern "system" fn(this: *mut *mut Self, dwstreamid: u32, riid: *const ::windows_sys::core::GUID, ppunkobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFTrustedInput {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1411781316, data2: 41400, data3: 17970, data4: [181, 33, 222, 17, 234, 100, 160, 176] };
 }
 #[repr(C)]
 pub struct IMFTrustedOutput {
@@ -10270,15 +11208,24 @@ pub struct IMFTrustedOutput {
     #[cfg(not(feature = "Win32_Foundation"))]
     IsFinal: usize,
 }
+impl ::windows_sys::core::Interface for IMFTrustedOutput {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3516894869, data2: 45350, data3: 17478, data4: [137, 12, 93, 203, 122, 215, 20, 83] };
+}
 #[repr(C)]
 pub struct IMFVideoCaptureSampleAllocator {
     pub base__: IMFVideoSampleAllocator,
     pub InitializeCaptureSampleAllocator: unsafe extern "system" fn(this: *mut *mut Self, cbsamplesize: u32, cbcapturemetadatasize: u32, cbalignment: u32, cminimumsamples: u32, pattributes: *mut ::core::ffi::c_void, pmediatype: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFVideoCaptureSampleAllocator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1918597063, data2: 51871, data3: 20453, data4: [157, 114, 153, 70, 191, 155, 60, 112] };
+}
 #[repr(C)]
 pub struct IMFVideoDeviceID {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetDeviceID: unsafe extern "system" fn(this: *mut *mut Self, pdeviceid: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFVideoDeviceID {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2743965031, data2: 23196, data3: 20284, data4: [178, 147, 142, 180, 21, 178, 121, 186] };
 }
 #[repr(C)]
 pub struct IMFVideoDisplayControl {
@@ -10327,6 +11274,9 @@ pub struct IMFVideoDisplayControl {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetFullscreen: usize,
 }
+impl ::windows_sys::core::Interface for IMFVideoDisplayControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2760946148, data2: 43908, data3: 19761, data4: [161, 178, 24, 30, 3, 177, 7, 122] };
+}
 #[repr(C)]
 pub struct IMFVideoMediaType {
     pub base__: IMFMediaType,
@@ -10335,6 +11285,9 @@ pub struct IMFVideoMediaType {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetVideoFormat: usize,
     pub GetVideoRepresentation: unsafe extern "system" fn(this: *mut *mut Self, guidrepresentation: ::windows_sys::core::GUID, ppvrepresentation: *mut *mut ::core::ffi::c_void, lstride: i32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFVideoMediaType {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3114219551, data2: 43257, data3: 18338, data4: [165, 175, 202, 58, 34, 90, 56, 144] };
 }
 #[repr(C)]
 pub struct IMFVideoMixerBitmap {
@@ -10353,6 +11306,9 @@ pub struct IMFVideoMixerBitmap {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetAlphaBitmapParameters: usize,
 }
+impl ::windows_sys::core::Interface for IMFVideoMixerBitmap {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2169273120, data2: 4059, data3: 20204, data4: [175, 143, 249, 87, 200, 246, 158, 220] };
+}
 #[repr(C)]
 pub struct IMFVideoMixerControl {
     pub base__: ::windows_sys::core::IUnknown,
@@ -10361,22 +11317,34 @@ pub struct IMFVideoMixerControl {
     pub SetStreamOutputRect: unsafe extern "system" fn(this: *mut *mut Self, dwstreamid: u32, pnrcoutput: *const MFVideoNormalizedRect) -> ::windows_sys::core::HRESULT,
     pub GetStreamOutputRect: unsafe extern "system" fn(this: *mut *mut Self, dwstreamid: u32, pnrcoutput: *mut MFVideoNormalizedRect) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFVideoMixerControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2781267263, data2: 49666, data3: 19109, data4: [150, 149, 23, 91, 168, 197, 8, 165] };
+}
 #[repr(C)]
 pub struct IMFVideoMixerControl2 {
     pub base__: IMFVideoMixerControl,
     pub SetMixingPrefs: unsafe extern "system" fn(this: *mut *mut Self, dwmixflags: u32) -> ::windows_sys::core::HRESULT,
     pub GetMixingPrefs: unsafe extern "system" fn(this: *mut *mut Self, pdwmixflags: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFVideoMixerControl2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2220450157, data2: 38510, data3: 18736, data4: [182, 88, 84, 250, 126, 90, 22, 211] };
+}
 #[repr(C)]
 pub struct IMFVideoPositionMapper {
     pub base__: ::windows_sys::core::IUnknown,
     pub MapOutputCoordinateToInputStream: unsafe extern "system" fn(this: *mut *mut Self, xout: f32, yout: f32, dwoutputstreamindex: u32, dwinputstreamindex: u32, pxin: *mut f32, pyin: *mut f32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFVideoPositionMapper {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 527081239, data2: 59147, data3: 20004, data4: [138, 228, 11, 44, 59, 167, 164, 174] };
 }
 #[repr(C)]
 pub struct IMFVideoPresenter {
     pub base__: IMFClockStateSink,
     pub ProcessMessage: unsafe extern "system" fn(this: *mut *mut Self, emessage: MFVP_MESSAGE_TYPE, ulparam: usize) -> ::windows_sys::core::HRESULT,
     pub GetCurrentMediaType: unsafe extern "system" fn(this: *mut *mut Self, ppmediatype: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFVideoPresenter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 699396224, data2: 6186, data3: 19037, data4: [175, 59, 68, 143, 58, 99, 70, 203] };
 }
 #[repr(C)]
 pub struct IMFVideoProcessor {
@@ -10397,6 +11365,9 @@ pub struct IMFVideoProcessor {
     pub GetBackgroundColor: unsafe extern "system" fn(this: *mut *mut Self, lpclrbkg: *mut u32) -> ::windows_sys::core::HRESULT,
     pub SetBackgroundColor: unsafe extern "system" fn(this: *mut *mut Self, clrbkg: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFVideoProcessor {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1789919244, data2: 65230, data3: 19743, data4: [162, 172, 169, 87, 53, 48, 101, 110] };
+}
 #[repr(C)]
 pub struct IMFVideoProcessorControl {
     pub base__: ::windows_sys::core::IUnknown,
@@ -10416,6 +11387,9 @@ pub struct IMFVideoProcessorControl {
     #[cfg(not(feature = "Win32_Foundation"))]
     SetConstrictionSize: usize,
 }
+impl ::windows_sys::core::Interface for IMFVideoProcessorControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2750838229, data2: 24857, data3: 20351, data4: [161, 0, 29, 139, 40, 15, 14, 251] };
+}
 #[repr(C)]
 pub struct IMFVideoProcessorControl2 {
     pub base__: IMFVideoProcessorControl,
@@ -10425,6 +11399,9 @@ pub struct IMFVideoProcessorControl2 {
     #[cfg(not(feature = "Win32_Foundation"))]
     EnableHardwareEffects: usize,
     pub GetSupportedHardwareEffects: unsafe extern "system" fn(this: *mut *mut Self, puisupport: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFVideoProcessorControl2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3185980371, data2: 57820, data3: 19071, data4: [166, 147, 187, 174, 57, 156, 74, 32] };
 }
 #[repr(C)]
 pub struct IMFVideoProcessorControl3 {
@@ -10437,15 +11414,24 @@ pub struct IMFVideoProcessorControl3 {
     pub SetSphericalVideoProperties: unsafe extern "system" fn(this: *mut *mut Self, x: f32, y: f32, z: f32, w: f32, fieldofview: f32) -> ::windows_sys::core::HRESULT,
     pub SetOutputDevice: unsafe extern "system" fn(this: *mut *mut Self, poutputdevice: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFVideoProcessorControl3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 606385138, data2: 60195, data3: 16625, data4: [145, 170, 116, 189, 222, 234, 8, 131] };
+}
 #[repr(C)]
 pub struct IMFVideoRenderer {
     pub base__: ::windows_sys::core::IUnknown,
     pub InitializeRenderer: unsafe extern "system" fn(this: *mut *mut Self, pvideomixer: *mut ::core::ffi::c_void, pvideopresenter: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFVideoRenderer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3755987351, data2: 43466, data3: 17368, data4: [179, 65, 106, 243, 80, 55, 146, 205] };
+}
 #[repr(C)]
 pub struct IMFVideoRendererEffectControl {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnAppServiceConnectionEstablished: unsafe extern "system" fn(this: *mut *mut Self, pappserviceconnection: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFVideoRendererEffectControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1615672279, data2: 53027, data3: 16853, data4: [130, 36, 91, 187, 177, 168, 116, 117] };
 }
 #[repr(C)]
 pub struct IMFVideoSampleAllocator {
@@ -10455,26 +11441,41 @@ pub struct IMFVideoSampleAllocator {
     pub InitializeSampleAllocator: unsafe extern "system" fn(this: *mut *mut Self, crequestedframes: u32, pmediatype: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub AllocateSample: unsafe extern "system" fn(this: *mut *mut Self, ppsample: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFVideoSampleAllocator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2261502224, data2: 58675, data3: 18257, data4: [142, 59, 241, 155, 91, 128, 106, 3] };
+}
 #[repr(C)]
 pub struct IMFVideoSampleAllocatorCallback {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetCallback: unsafe extern "system" fn(this: *mut *mut Self, pnotify: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetFreeSampleCount: unsafe extern "system" fn(this: *mut *mut Self, plsamples: *mut i32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFVideoSampleAllocatorCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2569242804, data2: 13170, data3: 20327, data4: [139, 111, 200, 76, 7, 31, 71, 81] };
+}
 #[repr(C)]
 pub struct IMFVideoSampleAllocatorEx {
     pub base__: IMFVideoSampleAllocator,
     pub InitializeSampleAllocatorEx: unsafe extern "system" fn(this: *mut *mut Self, cinitialsamples: u32, cmaximumsamples: u32, pattributes: *mut ::core::ffi::c_void, pmediatype: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFVideoSampleAllocatorEx {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1415264840, data2: 12931, data3: 20322, data4: [134, 111, 166, 45, 143, 89, 143, 159] };
 }
 #[repr(C)]
 pub struct IMFVideoSampleAllocatorNotify {
     pub base__: ::windows_sys::core::IUnknown,
     pub NotifyRelease: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFVideoSampleAllocatorNotify {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2811415998, data2: 50036, data3: 20105, data4: [131, 53, 39, 142, 123, 153, 86, 164] };
+}
 #[repr(C)]
 pub struct IMFVideoSampleAllocatorNotifyEx {
     pub base__: IMFVideoSampleAllocatorNotify,
     pub NotifyPrune: unsafe extern "system" fn(this: *mut *mut Self, __midl__imfvideosampleallocatornotifyex0000: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFVideoSampleAllocatorNotifyEx {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 964209178, data2: 27995, data3: 19327, data4: [163, 64, 144, 137, 145, 137, 174, 52] };
 }
 #[repr(C)]
 pub struct IMFVirtualCamera {
@@ -10500,6 +11501,9 @@ pub struct IMFVirtualCamera {
     CreateSyncSemaphore: usize,
     pub Shutdown: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFVirtualCamera {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 470329444, data2: 61292, data3: 19573, data4: [175, 89, 95, 45, 104, 218, 149, 99] };
+}
 #[repr(C)]
 pub struct IMFWorkQueueServices {
     pub base__: ::windows_sys::core::IUnknown,
@@ -10516,12 +11520,18 @@ pub struct IMFWorkQueueServices {
     pub GetPlaftormWorkQueueMMCSSClass: unsafe extern "system" fn(this: *mut *mut Self, dwplatformworkqueueid: u32, pwszclass: ::windows_sys::core::PWSTR, pcchclass: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetPlatformWorkQueueMMCSSTaskId: unsafe extern "system" fn(this: *mut *mut Self, dwplatformworkqueueid: u32, pdwtaskid: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMFWorkQueueServices {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 905845688, data2: 41897, data3: 16638, data4: [187, 236, 235, 86, 156, 156, 204, 163] };
+}
 #[repr(C)]
 pub struct IMFWorkQueueServicesEx {
     pub base__: IMFWorkQueueServices,
     pub GetTopologyWorkQueueMMCSSPriority: unsafe extern "system" fn(this: *mut *mut Self, dwtopologyworkqueueid: u32, plpriority: *mut i32) -> ::windows_sys::core::HRESULT,
     pub BeginRegisterPlatformWorkQueueWithMMCSSEx: unsafe extern "system" fn(this: *mut *mut Self, dwplatformworkqueue: u32, wszclass: ::windows_sys::core::PCWSTR, dwtaskid: u32, lpriority: i32, pcallback: *mut ::core::ffi::c_void, pstate: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetPlatformWorkQueueMMCSSPriority: unsafe extern "system" fn(this: *mut *mut Self, dwplatformworkqueueid: u32, plpriority: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMFWorkQueueServicesEx {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2529138203, data2: 16638, data3: 17137, data4: [186, 157, 50, 2, 56, 180, 151, 0] };
 }
 #[repr(C)]
 pub struct IOPMVideoOutput {
@@ -10532,21 +11542,33 @@ pub struct IOPMVideoOutput {
     pub COPPCompatibleGetInformation: unsafe extern "system" fn(this: *mut *mut Self, pparameters: *const OPM_COPP_COMPATIBLE_GET_INFO_PARAMETERS, prequestedinformation: *mut OPM_REQUESTED_INFORMATION) -> ::windows_sys::core::HRESULT,
     pub Configure: unsafe extern "system" fn(this: *mut *mut Self, pparameters: *const OPM_CONFIGURE_PARAMETERS, uladditionalparameterssize: u32, pbadditionalparameters: *const u8) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IOPMVideoOutput {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 169153949, data2: 16839, data3: 17494, data4: [147, 225, 40, 76, 214, 29, 78, 141] };
+}
 #[repr(C)]
 pub struct IPlayToControl {
     pub base__: ::windows_sys::core::IUnknown,
     pub Connect: unsafe extern "system" fn(this: *mut *mut Self, pfactory: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Disconnect: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPlayToControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1618310379, data2: 62646, data3: 17857, data4: [176, 140, 203, 113, 81, 34, 144, 29] };
+}
 #[repr(C)]
 pub struct IPlayToControlWithCapabilities {
     pub base__: IPlayToControl,
     pub GetCapabilities: unsafe extern "system" fn(this: *mut *mut Self, pcapabilities: *mut PLAYTO_SOURCE_CREATEFLAGS) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPlayToControlWithCapabilities {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2862471183, data2: 50442, data3: 16928, data4: [145, 193, 51, 34, 135, 248, 42, 52] };
+}
 #[repr(C)]
 pub struct IPlayToSourceClassFactory {
     pub base__: ::windows_sys::core::IUnknown,
     pub CreateInstance: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, pcontrol: *mut ::core::ffi::c_void, ppsource: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPlayToSourceClassFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2217423523, data2: 39835, data3: 19740, data4: [179, 243, 73, 25, 50, 72, 165, 84] };
 }
 #[repr(C)]
 pub struct IToc {
@@ -10563,6 +11585,9 @@ pub struct IToc {
     pub AddEntryListByIndex: unsafe extern "system" fn(this: *mut *mut Self, wentrylistindex: u16, pentrylist: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub RemoveEntryListByIndex: unsafe extern "system" fn(this: *mut *mut Self, wentrylistindex: u16) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IToc {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3606074433, data2: 43289, data3: 16955, data4: [145, 160, 137, 213, 180, 168, 171, 119] };
+}
 #[repr(C)]
 pub struct ITocCollection {
     pub base__: ::windows_sys::core::IUnknown,
@@ -10571,6 +11596,9 @@ pub struct ITocCollection {
     pub AddEntry: unsafe extern "system" fn(this: *mut *mut Self, ptoc: *mut ::core::ffi::c_void, pdwentryindex: *mut u32) -> ::windows_sys::core::HRESULT,
     pub AddEntryByIndex: unsafe extern "system" fn(this: *mut *mut Self, dwentryindex: u32, ptoc: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub RemoveEntryByIndex: unsafe extern "system" fn(this: *mut *mut Self, dwentryindex: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ITocCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 603908145, data2: 44694, data3: 17119, data4: [177, 112, 37, 160, 72, 71, 163, 202] };
 }
 #[repr(C)]
 pub struct ITocEntry {
@@ -10584,6 +11612,9 @@ pub struct ITocEntry {
     pub SetDescriptionData: unsafe extern "system" fn(this: *mut *mut Self, dwdescriptiondatasize: u32, pbtdescriptiondata: *mut u8, pguidtype: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub GetDescriptionData: unsafe extern "system" fn(this: *mut *mut Self, pdwdescriptiondatasize: *mut u32, pbtdescriptiondata: *mut u8, pguidtype: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ITocEntry {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4063190534, data2: 22620, data3: 19951, data4: [133, 35, 101, 85, 207, 188, 12, 179] };
+}
 #[repr(C)]
 pub struct ITocEntryList {
     pub base__: ::windows_sys::core::IUnknown,
@@ -10592,6 +11623,9 @@ pub struct ITocEntryList {
     pub AddEntry: unsafe extern "system" fn(this: *mut *mut Self, pentry: *mut ::core::ffi::c_void, pdwentryindex: *mut u32) -> ::windows_sys::core::HRESULT,
     pub AddEntryByIndex: unsafe extern "system" fn(this: *mut *mut Self, dwentryindex: u32, pentry: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub RemoveEntryByIndex: unsafe extern "system" fn(this: *mut *mut Self, dwentryindex: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ITocEntryList {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 982305981, data2: 3837, data3: 17315, data4: [184, 56, 243, 138, 85, 43, 162, 55] };
 }
 #[repr(C)]
 pub struct ITocParser {
@@ -10605,10 +11639,16 @@ pub struct ITocParser {
     pub RemoveTocByType: unsafe extern "system" fn(this: *mut *mut Self, enumtocpostype: TOC_POS_TYPE, guidtoctype: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub Commit: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ITocParser {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3975912021, data2: 37528, data3: 20297, data4: [136, 127, 11, 54, 32, 101, 153, 210] };
+}
 #[repr(C)]
 pub struct IValidateBinding {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetIdentifier: unsafe extern "system" fn(this: *mut *mut Self, guidlicensorid: ::windows_sys::core::GUID, pbephemeron: *const u8, cbephemeron: u32, ppbblobvalidationid: *mut *mut u8, pcbblobsize: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IValidateBinding {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 77953202, data2: 59256, data3: 16938, data4: [168, 5, 179, 238, 84, 217, 11, 217] };
 }
 #[repr(C)]
 pub struct IWMCodecLeakyBucket {
@@ -10618,10 +11658,16 @@ pub struct IWMCodecLeakyBucket {
     pub SetBufferFullnessBits: unsafe extern "system" fn(this: *mut *mut Self, ulbufferfullness: u32) -> ::windows_sys::core::HRESULT,
     pub GetBufferFullnessBits: unsafe extern "system" fn(this: *mut *mut Self, pulbufferfullness: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWMCodecLeakyBucket {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2820384327, data2: 25127, data3: 17335, data4: [178, 49, 199, 177, 81, 53, 221, 125] };
+}
 #[repr(C)]
 pub struct IWMCodecOutputTimestamp {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetNextOutputTime: unsafe extern "system" fn(this: *mut *mut Self, prttime: *mut i64) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWMCodecOutputTimestamp {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3073040277, data2: 31452, data3: 19058, data4: [188, 5, 87, 125, 142, 166, 191, 104] };
 }
 #[repr(C)]
 pub struct IWMCodecPrivateData {
@@ -10632,6 +11678,9 @@ pub struct IWMCodecPrivateData {
     SetPartialOutputType: usize,
     pub GetPrivateData: unsafe extern "system" fn(this: *mut *mut Self, pbdata: *mut u8, pcbdata: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWMCodecPrivateData {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1945157262, data2: 22519, data3: 20225, data4: [170, 102, 159, 87, 52, 12, 254, 14] };
+}
 #[repr(C)]
 pub struct IWMCodecProps {
     pub base__: ::windows_sys::core::IUnknown,
@@ -10640,6 +11689,9 @@ pub struct IWMCodecProps {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Media_DxMediaObjects")))]
     GetFormatProp: usize,
     pub GetCodecProp: unsafe extern "system" fn(this: *mut *mut Self, dwformat: u32, pszname: ::windows_sys::core::PCWSTR, ptype: *mut WMT_PROP_DATATYPE, pvalue: *mut u8, pdwsize: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWMCodecProps {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 628351258, data2: 61466, data3: 20445, data4: [169, 141, 99, 184, 224, 186, 149, 137] };
 }
 #[repr(C)]
 pub struct IWMCodecStrings {
@@ -10653,16 +11705,25 @@ pub struct IWMCodecStrings {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Media_DxMediaObjects")))]
     GetDescription: usize,
 }
+impl ::windows_sys::core::Interface for IWMCodecStrings {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2813481035, data2: 58762, data3: 18427, data4: [149, 139, 202, 199, 22, 90, 5, 125] };
+}
 #[repr(C)]
 pub struct IWMColorConvProps {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetMode: unsafe extern "system" fn(this: *mut *mut Self, lmode: i32) -> ::windows_sys::core::HRESULT,
     pub SetFullCroppingParam: unsafe extern "system" fn(this: *mut *mut Self, lsrccropleft: i32, lsrccroptop: i32, ldstcropleft: i32, ldstcroptop: i32, lcropwidth: i32, lcropheight: i32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWMColorConvProps {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3869548066, data2: 49305, data3: 16925, data4: [170, 211, 192, 97, 251, 74, 232, 91] };
+}
 #[repr(C)]
 pub struct IWMColorLegalizerProps {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetColorLegalizerQuality: unsafe extern "system" fn(this: *mut *mut Self, lquality: i32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWMColorLegalizerProps {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2003604403, data2: 46893, data3: 17672, data4: [182, 208, 32, 135, 133, 245, 83, 231] };
 }
 #[repr(C)]
 pub struct IWMFrameInterpProps {
@@ -10675,6 +11736,9 @@ pub struct IWMFrameInterpProps {
     SetFrameInterpEnabled: usize,
     pub SetComplexityLevel: unsafe extern "system" fn(this: *mut *mut Self, icomplexity: i32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWMFrameInterpProps {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1275509659, data2: 25196, data3: 17940, data4: [131, 41, 204, 106, 33, 185, 63, 160] };
+}
 #[repr(C)]
 pub struct IWMInterlaceProps {
     pub base__: ::windows_sys::core::IUnknown,
@@ -10682,11 +11746,17 @@ pub struct IWMInterlaceProps {
     pub SetInitInverseTeleCinePattern: unsafe extern "system" fn(this: *mut *mut Self, iinitpattern: i32) -> ::windows_sys::core::HRESULT,
     pub SetLastFrame: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWMInterlaceProps {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2064836049, data2: 48418, data3: 18666, data4: [188, 6, 152, 232, 147, 34, 28, 137] };
+}
 #[repr(C)]
 pub struct IWMResamplerProps {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetHalfFilterLength: unsafe extern "system" fn(this: *mut *mut Self, lhalffilterlen: i32) -> ::windows_sys::core::HRESULT,
     pub SetUserChannelMtx: unsafe extern "system" fn(this: *mut *mut Self, userchannelmtx: *mut f32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWMResamplerProps {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3890845775, data2: 61599, data3: 19876, data4: [144, 63, 110, 46, 14, 254, 86, 181] };
 }
 #[repr(C)]
 pub struct IWMResizerProps {
@@ -10697,6 +11767,9 @@ pub struct IWMResizerProps {
     pub SetFullCropRegion: unsafe extern "system" fn(this: *mut *mut Self, lcliporixsrc: i32, lcliporiysrc: i32, lclipwidthsrc: i32, lclipheightsrc: i32, lcliporixdst: i32, lcliporiydst: i32, lclipwidthdst: i32, lclipheightdst: i32) -> ::windows_sys::core::HRESULT,
     pub GetFullCropRegion: unsafe extern "system" fn(this: *mut *mut Self, lcliporixsrc: *mut i32, lcliporiysrc: *mut i32, lclipwidthsrc: *mut i32, lclipheightsrc: *mut i32, lcliporixdst: *mut i32, lcliporiydst: *mut i32, lclipwidthdst: *mut i32, lclipheightdst: *mut i32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWMResizerProps {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1466326348, data2: 1044, data3: 20394, data4: [144, 91, 16, 229, 70, 248, 28, 51] };
+}
 #[repr(C)]
 pub struct IWMSampleExtensionSupport {
     pub base__: ::windows_sys::core::IUnknown,
@@ -10705,16 +11778,25 @@ pub struct IWMSampleExtensionSupport {
     #[cfg(not(feature = "Win32_Foundation"))]
     SetUseSampleExtensions: usize,
 }
+impl ::windows_sys::core::Interface for IWMSampleExtensionSupport {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2613745796, data2: 1540, data3: 19498, data4: [135, 218, 121, 63, 244, 213, 134, 195] };
+}
 #[repr(C)]
 pub struct IWMValidate {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetIdentifier: unsafe extern "system" fn(this: *mut *mut Self, guidvalidationid: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWMValidate {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3471040242, data2: 14344, data3: 16717, data4: [190, 102, 250, 253, 71, 34, 16, 188] };
 }
 #[repr(C)]
 pub struct IWMVideoDecoderHurryup {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetHurryup: unsafe extern "system" fn(this: *mut *mut Self, lhurryup: i32) -> ::windows_sys::core::HRESULT,
     pub GetHurryup: unsafe extern "system" fn(this: *mut *mut Self, plhurryup: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWMVideoDecoderHurryup {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 892056509, data2: 11597, data3: 17187, data4: [158, 113, 220, 220, 251, 213, 60, 166] };
 }
 #[repr(C)]
 pub struct IWMVideoDecoderReconBuffer {
@@ -10729,10 +11811,16 @@ pub struct IWMVideoDecoderReconBuffer {
     #[cfg(not(feature = "Win32_Media_DxMediaObjects"))]
     SetReconstructedVideoFrame: usize,
 }
+impl ::windows_sys::core::Interface for IWMVideoDecoderReconBuffer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1170055852, data2: 35042, data3: 18723, data4: [152, 186, 57, 73, 8, 7, 17, 163] };
+}
 #[repr(C)]
 pub struct IWMVideoForceKeyFrame {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetKeyFrame: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWMVideoForceKeyFrame {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2676266686, data2: 23450, data3: 16825, data4: [169, 232, 242, 28, 216, 5, 150, 194] };
 }
 #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
 pub type KSMETHOD_OPMVIDEOOUTPUT = i32;
@@ -10948,6 +12036,9 @@ pub const MFASF_STREAMSELECTOR_USE_AVERAGE_BITRATE: MFASF_STREAMSELECTOR_FLAGS =
 #[repr(C)]
 pub struct MFASYNCRESULT {
     pub base__: IMFAsyncResult,
+}
+impl ::windows_sys::core::Interface for MFASYNCRESULT {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID::zeroed();
 }
 #[doc = "*Required features: `\"Win32_Media_MediaFoundation\"`*"]
 pub const MFASYNC_BLOCKING_CALLBACK: u32 = 4u32;

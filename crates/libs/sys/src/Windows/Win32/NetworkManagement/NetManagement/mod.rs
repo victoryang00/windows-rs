@@ -2440,6 +2440,9 @@ pub struct IEnumNetCfgBindingInterface {
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEnumNetCfgBindingInterface {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3236474512, data2: 12398, data3: 4561, data4: [170, 207, 0, 128, 95, 193, 39, 14] };
+}
 #[repr(C)]
 pub struct IEnumNetCfgBindingPath {
     pub base__: ::windows_sys::core::IUnknown,
@@ -2448,6 +2451,9 @@ pub struct IEnumNetCfgBindingPath {
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEnumNetCfgBindingPath {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3236474513, data2: 12398, data3: 4561, data4: [170, 207, 0, 128, 95, 193, 39, 14] };
+}
 #[repr(C)]
 pub struct IEnumNetCfgComponent {
     pub base__: ::windows_sys::core::IUnknown,
@@ -2455,6 +2461,9 @@ pub struct IEnumNetCfgComponent {
     pub Skip: unsafe extern "system" fn(this: *mut *mut Self, celt: u32) -> ::windows_sys::core::HRESULT,
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IEnumNetCfgComponent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3236474514, data2: 12398, data3: 4561, data4: [170, 207, 0, 128, 95, 193, 39, 14] };
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub const INTERFACE_INFO_REVISION_1: u32 = 1u32;
@@ -2471,12 +2480,18 @@ pub struct INetCfg {
     pub FindComponent: unsafe extern "system" fn(this: *mut *mut Self, pszwinfid: ::windows_sys::core::PCWSTR, pcomponent: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub QueryNetCfgClass: unsafe extern "system" fn(this: *mut *mut Self, pguidclass: *const ::windows_sys::core::GUID, riid: *const ::windows_sys::core::GUID, ppvobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for INetCfg {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3236474515, data2: 12398, data3: 4561, data4: [170, 207, 0, 128, 95, 193, 39, 14] };
+}
 #[repr(C)]
 pub struct INetCfgBindingInterface {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetName: unsafe extern "system" fn(this: *mut *mut Self, ppszwinterfacename: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
     pub GetUpperComponent: unsafe extern "system" fn(this: *mut *mut Self, ppnccitem: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetLowerComponent: unsafe extern "system" fn(this: *mut *mut Self, ppnccitem: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for INetCfgBindingInterface {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3236474516, data2: 12398, data3: 4561, data4: [170, 207, 0, 128, 95, 193, 39, 14] };
 }
 #[repr(C)]
 pub struct INetCfgBindingPath {
@@ -2493,11 +2508,17 @@ pub struct INetCfgBindingPath {
     pub GetDepth: unsafe extern "system" fn(this: *mut *mut Self, pcinterfaces: *mut u32) -> ::windows_sys::core::HRESULT,
     pub EnumBindingInterfaces: unsafe extern "system" fn(this: *mut *mut Self, ppenuminterface: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for INetCfgBindingPath {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3236474518, data2: 12398, data3: 4561, data4: [170, 207, 0, 128, 95, 193, 39, 14] };
+}
 #[repr(C)]
 pub struct INetCfgClass {
     pub base__: ::windows_sys::core::IUnknown,
     pub FindComponent: unsafe extern "system" fn(this: *mut *mut Self, pszwinfid: ::windows_sys::core::PCWSTR, ppnccitem: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub EnumComponents: unsafe extern "system" fn(this: *mut *mut Self, ppenumcomponent: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for INetCfgClass {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3236474519, data2: 12398, data3: 4561, data4: [170, 207, 0, 128, 95, 193, 39, 14] };
 }
 #[repr(C)]
 pub struct INetCfgClassSetup {
@@ -2515,10 +2536,16 @@ pub struct INetCfgClassSetup {
     #[cfg(not(feature = "Win32_Foundation"))]
     DeInstall: usize,
 }
+impl ::windows_sys::core::Interface for INetCfgClassSetup {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3236474525, data2: 12398, data3: 4561, data4: [170, 207, 0, 128, 95, 193, 39, 14] };
+}
 #[repr(C)]
 pub struct INetCfgClassSetup2 {
     pub base__: INetCfgClassSetup,
     pub UpdateNonEnumeratedComponent: unsafe extern "system" fn(this: *mut *mut Self, picomp: *mut ::core::ffi::c_void, dwsetupflags: u32, dwupgradefrombuildno: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for INetCfgClassSetup2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3236474528, data2: 12398, data3: 4561, data4: [170, 207, 0, 128, 95, 193, 39, 14] };
 }
 #[repr(C)]
 pub struct INetCfgComponent {
@@ -2542,6 +2569,9 @@ pub struct INetCfgComponent {
     #[cfg(not(feature = "Win32_Foundation"))]
     RaisePropertyUi: usize,
 }
+impl ::windows_sys::core::Interface for INetCfgComponent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3236474521, data2: 12398, data3: 4561, data4: [170, 207, 0, 128, 95, 193, 39, 14] };
+}
 #[repr(C)]
 pub struct INetCfgComponentBindings {
     pub base__: ::windows_sys::core::IUnknown,
@@ -2554,6 +2584,9 @@ pub struct INetCfgComponentBindings {
     pub MoveBefore: unsafe extern "system" fn(this: *mut *mut Self, pncbitemsrc: *mut ::core::ffi::c_void, pncbitemdest: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub MoveAfter: unsafe extern "system" fn(this: *mut *mut Self, pncbitemsrc: *mut ::core::ffi::c_void, pncbitemdest: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for INetCfgComponentBindings {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3236474526, data2: 12398, data3: 4561, data4: [170, 207, 0, 128, 95, 193, 39, 14] };
+}
 #[repr(C)]
 pub struct INetCfgComponentControl {
     pub base__: ::windows_sys::core::IUnknown,
@@ -2565,11 +2598,17 @@ pub struct INetCfgComponentControl {
     pub ApplyPnpChanges: unsafe extern "system" fn(this: *mut *mut Self, picallback: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub CancelChanges: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for INetCfgComponentControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2468493535, data2: 48801, data3: 4560, data4: [146, 152, 0, 192, 79, 201, 157, 207] };
+}
 #[repr(C)]
 pub struct INetCfgComponentNotifyBinding {
     pub base__: ::windows_sys::core::IUnknown,
     pub QueryBindingPath: unsafe extern "system" fn(this: *mut *mut Self, dwchangeflag: u32, pipath: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub NotifyBindingPath: unsafe extern "system" fn(this: *mut *mut Self, dwchangeflag: u32, pipath: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for INetCfgComponentNotifyBinding {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2468493537, data2: 48801, data3: 4560, data4: [146, 152, 0, 192, 79, 201, 157, 207] };
 }
 #[repr(C)]
 pub struct INetCfgComponentNotifyGlobal {
@@ -2578,6 +2617,9 @@ pub struct INetCfgComponentNotifyGlobal {
     pub SysQueryBindingPath: unsafe extern "system" fn(this: *mut *mut Self, dwchangeflag: u32, pipath: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SysNotifyBindingPath: unsafe extern "system" fn(this: *mut *mut Self, dwchangeflag: u32, pipath: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SysNotifyComponent: unsafe extern "system" fn(this: *mut *mut Self, dwchangeflag: u32, picomp: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for INetCfgComponentNotifyGlobal {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2468493538, data2: 48801, data3: 4560, data4: [146, 152, 0, 192, 79, 201, 157, 207] };
 }
 #[repr(C)]
 pub struct INetCfgComponentPropertyUi {
@@ -2595,6 +2637,9 @@ pub struct INetCfgComponentPropertyUi {
     pub ApplyProperties: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub CancelProperties: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for INetCfgComponentPropertyUi {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2468493536, data2: 48801, data3: 4560, data4: [146, 152, 0, 192, 79, 201, 157, 207] };
+}
 #[repr(C)]
 pub struct INetCfgComponentSetup {
     pub base__: ::windows_sys::core::IUnknown,
@@ -2603,11 +2648,17 @@ pub struct INetCfgComponentSetup {
     pub ReadAnswerFile: unsafe extern "system" fn(this: *mut *mut Self, pszwanswerfile: ::windows_sys::core::PCWSTR, pszwanswersections: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
     pub Removing: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for INetCfgComponentSetup {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2468493539, data2: 48801, data3: 4560, data4: [146, 152, 0, 192, 79, 201, 157, 207] };
+}
 #[repr(C)]
 pub struct INetCfgComponentSysPrep {
     pub base__: ::windows_sys::core::IUnknown,
     pub SaveAdapterParameters: unsafe extern "system" fn(this: *mut *mut Self, pncsp: *mut ::core::ffi::c_void, pszwanswersections: ::windows_sys::core::PCWSTR, padapterinstanceguid: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub RestoreAdapterParameters: unsafe extern "system" fn(this: *mut *mut Self, pszwanswerfile: ::windows_sys::core::PCWSTR, pszwanswersection: ::windows_sys::core::PCWSTR, padapterinstanceguid: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for INetCfgComponentSysPrep {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3236474522, data2: 12398, data3: 4561, data4: [170, 207, 0, 128, 95, 193, 39, 14] };
 }
 #[repr(C)]
 pub struct INetCfgComponentUpperEdge {
@@ -2616,6 +2667,9 @@ pub struct INetCfgComponentUpperEdge {
     pub AddInterfacesToAdapter: unsafe extern "system" fn(this: *mut *mut Self, padapter: *mut ::core::ffi::c_void, dwnuminterfaces: u32) -> ::windows_sys::core::HRESULT,
     pub RemoveInterfacesFromAdapter: unsafe extern "system" fn(this: *mut *mut Self, padapter: *mut ::core::ffi::c_void, dwnuminterfaces: u32, pguidinterfaceids: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for INetCfgComponentUpperEdge {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2468493540, data2: 48801, data3: 4560, data4: [146, 152, 0, 192, 79, 201, 157, 207] };
+}
 #[repr(C)]
 pub struct INetCfgLock {
     pub base__: ::windows_sys::core::IUnknown,
@@ -2623,10 +2677,16 @@ pub struct INetCfgLock {
     pub ReleaseWriteLock: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub IsWriteLocked: unsafe extern "system" fn(this: *mut *mut Self, ppszwclientdescription: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for INetCfgLock {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3236474527, data2: 12398, data3: 4561, data4: [170, 207, 0, 128, 95, 193, 39, 14] };
+}
 #[repr(C)]
 pub struct INetCfgPnpReconfigCallback {
     pub base__: ::windows_sys::core::IUnknown,
     pub SendPnpReconfig: unsafe extern "system" fn(this: *mut *mut Self, layer: NCPNP_RECONFIG_LAYER, pszwupper: ::windows_sys::core::PCWSTR, pszwlower: ::windows_sys::core::PCWSTR, pvdata: *const ::core::ffi::c_void, dwsizeofdata: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for INetCfgPnpReconfigCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2374286645, data2: 57895, data3: 4562, data4: [183, 0, 0, 160, 201, 138, 106, 133] };
 }
 #[repr(C)]
 pub struct INetCfgSysPrep {
@@ -2639,10 +2699,16 @@ pub struct INetCfgSysPrep {
     HrSetupSetFirstStringAsBool: usize,
     pub HrSetupSetFirstMultiSzField: unsafe extern "system" fn(this: *mut *mut Self, pwszsection: ::windows_sys::core::PCWSTR, pwszkey: ::windows_sys::core::PCWSTR, pmszvalue: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for INetCfgSysPrep {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3236474520, data2: 12398, data3: 4561, data4: [170, 207, 0, 128, 95, 193, 39, 14] };
+}
 #[repr(C)]
 pub struct INetLanConnectionUiInfo {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetDeviceGuid: unsafe extern "system" fn(this: *mut *mut Self, pguid: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for INetLanConnectionUiInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3230226086, data2: 7379, data3: 4561, data4: [177, 197, 0, 128, 95, 193, 39, 14] };
 }
 #[repr(C)]
 pub struct INetRasConnectionIpUiInfo {
@@ -2651,6 +2717,9 @@ pub struct INetRasConnectionIpUiInfo {
     pub GetUiInfo: unsafe extern "system" fn(this: *mut *mut Self, pinfo: *mut RASCON_IPUI) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetUiInfo: usize,
+}
+impl ::windows_sys::core::Interface for INetRasConnectionIpUiInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4209889112, data2: 12798, data3: 4561, data4: [170, 210, 0, 128, 95, 193, 39, 14] };
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub const IPX_PROTOCOL_BASE: u32 = 131071u32;
@@ -2665,6 +2734,9 @@ pub struct IProvisioningDomain {
     #[cfg(not(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_System_Com")))]
     Query: usize,
 }
+impl ::windows_sys::core::Interface for IProvisioningDomain {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3379543376, data2: 9437, data3: 4568, data4: [137, 251, 0, 144, 75, 46, 169, 198] };
+}
 #[repr(C)]
 pub struct IProvisioningProfileWireless {
     pub base__: ::windows_sys::core::IUnknown,
@@ -2672,6 +2744,9 @@ pub struct IProvisioningProfileWireless {
     pub CreateProfile: unsafe extern "system" fn(this: *mut *mut Self, bstrxmlwirelessconfigprofile: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrxmlconnectionconfigprofile: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, padapterinstanceguid: *const ::windows_sys::core::GUID, pulstatus: *mut u32) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     CreateProfile: usize,
+}
+impl ::windows_sys::core::Interface for IProvisioningProfileWireless {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3379543377, data2: 9437, data3: 4568, data4: [137, 251, 0, 144, 75, 46, 169, 198] };
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetManagement\"`*"]
 pub const IR_PROMISCUOUS: u32 = 0u32;

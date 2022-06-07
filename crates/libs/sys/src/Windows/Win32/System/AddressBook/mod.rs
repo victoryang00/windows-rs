@@ -707,6 +707,9 @@ pub struct IABContainer {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     ResolveNames: usize,
 }
+impl ::windows_sys::core::Interface for IABContainer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID::zeroed();
+}
 #[repr(C)]
 pub struct IAddrBook {
     pub base__: IMAPIProp,
@@ -750,9 +753,15 @@ pub struct IAddrBook {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     PrepareRecips: usize,
 }
+impl ::windows_sys::core::Interface for IAddrBook {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID::zeroed();
+}
 #[repr(C)]
 pub struct IAttach {
     pub base__: IMAPIProp,
+}
+impl ::windows_sys::core::Interface for IAttach {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID::zeroed();
 }
 #[repr(C)]
 pub struct IDistList {
@@ -765,6 +774,9 @@ pub struct IDistList {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     ResolveNames: usize,
 }
+impl ::windows_sys::core::Interface for IDistList {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID::zeroed();
+}
 #[repr(C)]
 pub struct IMAPIAdviseSink {
     pub base__: ::windows_sys::core::IUnknown,
@@ -772,6 +784,9 @@ pub struct IMAPIAdviseSink {
     pub OnNotify: unsafe extern "system" fn(this: *mut *mut Self, cnotif: u32, lpnotifications: *mut NOTIFICATION) -> u32,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     OnNotify: usize,
+}
+impl ::windows_sys::core::Interface for IMAPIAdviseSink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID::zeroed();
 }
 #[repr(C)]
 pub struct IMAPIContainer {
@@ -788,12 +803,18 @@ pub struct IMAPIContainer {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     GetSearchCriteria: usize,
 }
+impl ::windows_sys::core::Interface for IMAPIContainer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID::zeroed();
+}
 #[repr(C)]
 pub struct IMAPIControl {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetLastError: unsafe extern "system" fn(this: *mut *mut Self, hresult: ::windows_sys::core::HRESULT, ulflags: u32, lppmapierror: *mut *mut MAPIERROR) -> ::windows_sys::core::HRESULT,
     pub Activate: unsafe extern "system" fn(this: *mut *mut Self, ulflags: u32, uluiparam: usize) -> ::windows_sys::core::HRESULT,
     pub GetState: unsafe extern "system" fn(this: *mut *mut Self, ulflags: u32, lpulstate: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMAPIControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID::zeroed();
 }
 #[repr(C)]
 pub struct IMAPIFolder {
@@ -810,6 +831,9 @@ pub struct IMAPIFolder {
     pub SaveContentsSort: unsafe extern "system" fn(this: *mut *mut Self, lpsortcriteria: *const SSortOrderSet, ulflags: u32) -> ::windows_sys::core::HRESULT,
     pub EmptyFolder: unsafe extern "system" fn(this: *mut *mut Self, uluiparam: usize, lpprogress: *mut ::core::ffi::c_void, ulflags: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMAPIFolder {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID::zeroed();
+}
 #[repr(C)]
 pub struct IMAPIProgress {
     pub base__: ::windows_sys::core::IUnknown,
@@ -818,6 +842,9 @@ pub struct IMAPIProgress {
     pub GetMax: unsafe extern "system" fn(this: *mut *mut Self, lpulmax: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetMin: unsafe extern "system" fn(this: *mut *mut Self, lpulmin: *mut u32) -> ::windows_sys::core::HRESULT,
     pub SetLimits: unsafe extern "system" fn(this: *mut *mut Self, lpulmin: *mut u32, lpulmax: *mut u32, lpulflags: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMAPIProgress {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID::zeroed();
 }
 #[repr(C)]
 pub struct IMAPIProp {
@@ -840,6 +867,9 @@ pub struct IMAPIProp {
     pub GetNamesFromIDs: unsafe extern "system" fn(this: *mut *mut Self, lppproptags: *mut *mut SPropTagArray, lppropsetguid: *mut ::windows_sys::core::GUID, ulflags: u32, lpcpropnames: *mut u32, lppppropnames: *mut *mut *mut MAPINAMEID) -> ::windows_sys::core::HRESULT,
     pub GetIDsFromNames: unsafe extern "system" fn(this: *mut *mut Self, cpropnames: u32, lpppropnames: *mut *mut MAPINAMEID, ulflags: u32, lppproptags: *mut *mut SPropTagArray) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMAPIProp {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID::zeroed();
+}
 #[repr(C)]
 pub struct IMAPIStatus {
     pub base__: IMAPIProp,
@@ -847,6 +877,9 @@ pub struct IMAPIStatus {
     pub SettingsDialog: unsafe extern "system" fn(this: *mut *mut Self, uluiparam: usize, ulflags: u32) -> ::windows_sys::core::HRESULT,
     pub ChangePassword: unsafe extern "system" fn(this: *mut *mut Self, lpoldpass: *const i8, lpnewpass: *const i8, ulflags: u32) -> ::windows_sys::core::HRESULT,
     pub FlushQueues: unsafe extern "system" fn(this: *mut *mut Self, uluiparam: usize, cbtargettransport: u32, lptargettransport: *const ENTRYID, ulflags: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMAPIStatus {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID::zeroed();
 }
 #[repr(C)]
 pub struct IMAPITable {
@@ -886,6 +919,9 @@ pub struct IMAPITable {
     pub WaitForCompletion: unsafe extern "system" fn(this: *mut *mut Self, ulflags: u32, ultimeout: u32, lpultablestatus: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetCollapseState: unsafe extern "system" fn(this: *mut *mut Self, ulflags: u32, cbinstancekey: u32, lpbinstancekey: *mut u8, lpcbcollapsestate: *mut u32, lppbcollapsestate: *mut *mut u8) -> ::windows_sys::core::HRESULT,
     pub SetCollapseState: unsafe extern "system" fn(this: *mut *mut Self, ulflags: u32, cbcollapsestate: u32, pbcollapsestate: *mut u8, lpbklocation: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMAPITable {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID::zeroed();
 }
 #[doc = "*Required features: `\"Win32_System_AddressBook\"`*"]
 pub const IMAPI_E_BAD_MULTISESSION_PARAMETER: ::windows_sys::core::HRESULT = -1062555294i32;
@@ -1015,6 +1051,9 @@ pub const IMAPI_S_IMAGE_FEATURE_NOT_SUPPORTED: ::windows_sys::core::HRESULT = 11
 pub struct IMailUser {
     pub base__: IMAPIProp,
 }
+impl ::windows_sys::core::Interface for IMailUser {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID::zeroed();
+}
 #[repr(C)]
 pub struct IMessage {
     pub base__: IMAPIProp,
@@ -1029,6 +1068,9 @@ pub struct IMessage {
     ModifyRecipients: usize,
     pub SubmitMessage: unsafe extern "system" fn(this: *mut *mut Self, ulflags: u32) -> ::windows_sys::core::HRESULT,
     pub SetReadFlag: unsafe extern "system" fn(this: *mut *mut Self, ulflags: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMessage {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID::zeroed();
 }
 #[repr(C)]
 pub struct IMsgStore {
@@ -1050,9 +1092,15 @@ pub struct IMsgStore {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     NotifyNewMail: usize,
 }
+impl ::windows_sys::core::Interface for IMsgStore {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID::zeroed();
+}
 #[repr(C)]
 pub struct IProfSect {
     pub base__: IMAPIProp,
+}
+impl ::windows_sys::core::Interface for IProfSect {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID::zeroed();
 }
 #[repr(C)]
 pub struct IPropData {
@@ -1061,6 +1109,9 @@ pub struct IPropData {
     pub HrSetPropAccess: unsafe extern "system" fn(this: *mut *mut Self, lpproptagarray: *mut SPropTagArray, rgulaccess: *mut u32) -> ::windows_sys::core::HRESULT,
     pub HrGetPropAccess: unsafe extern "system" fn(this: *mut *mut Self, lppproptagarray: *mut *mut SPropTagArray, lprgulaccess: *mut *mut u32) -> ::windows_sys::core::HRESULT,
     pub HrAddObjProps: unsafe extern "system" fn(this: *mut *mut Self, lppproptagarray: *mut SPropTagArray, lprgulaccess: *mut *mut SPropProblemArray) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPropData {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID::zeroed();
 }
 #[repr(C)]
 pub struct IProviderAdmin {
@@ -1073,6 +1124,9 @@ pub struct IProviderAdmin {
     CreateProvider: usize,
     pub DeleteProvider: unsafe extern "system" fn(this: *mut *mut Self, lpuid: *const MAPIUID) -> ::windows_sys::core::HRESULT,
     pub OpenProfileSection: unsafe extern "system" fn(this: *mut *mut Self, lpuid: *const MAPIUID, lpinterface: *const ::windows_sys::core::GUID, ulflags: u32, lppprofsect: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IProviderAdmin {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID::zeroed();
 }
 #[repr(C)]
 pub struct ITableData {
@@ -1111,6 +1165,9 @@ pub struct ITableData {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     HrDeleteRows: usize,
 }
+impl ::windows_sys::core::Interface for ITableData {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID::zeroed();
+}
 #[repr(C)]
 pub struct IWABExtInit {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1118,6 +1175,9 @@ pub struct IWABExtInit {
     pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, lpwabextdisplay: *mut WABEXTDISPLAY) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     Initialize: usize,
+}
+impl ::windows_sys::core::Interface for IWABExtInit {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3928157168, data2: 34724, data3: 4561, data4: [154, 207, 0, 160, 201, 31, 156, 139] };
 }
 #[repr(C)]
 pub struct IWABOBJECT_ {
@@ -1152,6 +1212,9 @@ pub struct IWABOBJECT_ {
     pub SetMe: unsafe extern "system" fn(this: *mut *mut Self, lpiab: *mut ::core::ffi::c_void, ulflags: u32, sbeid: SBinary, hwnd: super::super::Foundation::HWND) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     SetMe: usize,
+}
+impl ::windows_sys::core::Interface for IWABOBJECT_ {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID::zeroed();
 }
 #[doc = "*Required features: `\"Win32_System_AddressBook\"`*"]
 pub type IWABOBJECT_AddRef_METHOD = ::core::option::Option<unsafe extern "system" fn() -> u32>;
@@ -1221,6 +1284,9 @@ pub struct IWABObject {
     pub SetMe: unsafe extern "system" fn(this: *mut *mut Self, lpiab: *mut ::core::ffi::c_void, ulflags: u32, sbeid: SBinary, hwnd: super::super::Foundation::HWND) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     SetMe: usize,
+}
+impl ::windows_sys::core::Interface for IWABObject {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID::zeroed();
 }
 #[doc = "*Required features: `\"Win32_System_AddressBook\"`*"]
 pub type LPALLOCATEBUFFER = ::core::option::Option<unsafe extern "system" fn(cbsize: u32, lppbuffer: *mut *mut ::core::ffi::c_void) -> i32>;

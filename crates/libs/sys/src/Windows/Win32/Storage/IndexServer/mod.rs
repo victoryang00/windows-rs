@@ -398,11 +398,17 @@ pub struct IFilter {
     GetValue: usize,
     pub BindRegion: unsafe extern "system" fn(this: *mut *mut Self, origpos: FILTERREGION, riid: *const ::windows_sys::core::GUID, ppunk: *mut *mut ::core::ffi::c_void) -> i32,
 }
+impl ::windows_sys::core::Interface for IFilter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2310846272, data2: 24857, data3: 4122, data4: [188, 183, 0, 221, 1, 6, 85, 175] };
+}
 #[repr(C)]
 pub struct IPhraseSink {
     pub base__: ::windows_sys::core::IUnknown,
     pub PutSmallPhrase: unsafe extern "system" fn(this: *mut *mut Self, pwcnoun: ::windows_sys::core::PCWSTR, cwcnoun: u32, pwcmodifier: ::windows_sys::core::PCWSTR, cwcmodifier: u32, ulattachmenttype: u32) -> ::windows_sys::core::HRESULT,
     pub PutPhrase: unsafe extern "system" fn(this: *mut *mut Self, pwcphrase: ::windows_sys::core::PCWSTR, cwcphrase: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPhraseSink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3432017904, data2: 49240, data3: 4122, data4: [181, 84, 8, 0, 43, 51, 176, 230] };
 }
 #[doc = "*Required features: `\"Win32_Storage_IndexServer\"`*"]
 pub const LIFF_FORCE_TEXT_FILTER_FALLBACK: u32 = 3u32;

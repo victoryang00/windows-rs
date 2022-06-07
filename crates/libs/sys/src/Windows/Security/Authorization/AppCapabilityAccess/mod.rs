@@ -38,9 +38,15 @@ pub struct IAppCapability {
     #[cfg(not(feature = "Foundation"))]
     RemoveAccessChanged: usize,
 }
+impl ::windows_sys::core::Interface for IAppCapability {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1279908117, data2: 35370, data3: 17045, data4: [148, 55, 45, 247, 195, 150, 175, 244] };
+}
 #[repr(C)]
 pub struct IAppCapabilityAccessChangedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
+}
+impl ::windows_sys::core::Interface for IAppCapabilityAccessChangedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 173509909, data2: 48599, data3: 17790, data4: [140, 202, 111, 83, 189, 46, 89, 68] };
 }
 #[repr(C)]
 pub struct IAppCapabilityStatics {
@@ -58,4 +64,7 @@ pub struct IAppCapabilityStatics {
     pub CreateWithProcessIdForUser: unsafe extern "system" fn(this: *mut *mut Self, user: *mut ::core::ffi::c_void, capabilityname: ::windows_sys::core::HSTRING, pid: u32, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "System"))]
     CreateWithProcessIdForUser: usize,
+}
+impl ::windows_sys::core::Interface for IAppCapabilityStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2083864106, data2: 18158, data3: 17637, data4: [175, 61, 106, 211, 252, 73, 189, 34] };
 }

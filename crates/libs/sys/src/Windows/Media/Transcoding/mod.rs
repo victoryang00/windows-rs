@@ -41,6 +41,9 @@ pub struct IMediaTranscoder {
     #[cfg(not(all(feature = "Foundation", feature = "Media_MediaProperties", feature = "Storage_Streams")))]
     PrepareStreamTranscodeAsync: usize,
 }
+impl ::windows_sys::core::Interface for IMediaTranscoder {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 420256210, data2: 41130, data3: 19764, data4: [134, 188, 238, 209, 177, 44, 47, 91] };
+}
 #[repr(C)]
 pub struct IMediaTranscoder2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -51,6 +54,9 @@ pub struct IMediaTranscoder2 {
     pub SetVideoProcessingAlgorithm: unsafe extern "system" fn(this: *mut *mut Self, value: MediaVideoProcessingAlgorithm) -> ::windows_sys::core::HRESULT,
     pub VideoProcessingAlgorithm: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut MediaVideoProcessingAlgorithm) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMediaTranscoder2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1079188852, data2: 13792, data3: 20228, data4: [133, 116, 202, 139, 196, 229, 160, 130] };
+}
 #[repr(C)]
 pub struct IPrepareTranscodeResult {
     pub base__: ::windows_sys::core::IInspectable,
@@ -60,6 +66,9 @@ pub struct IPrepareTranscodeResult {
     pub TranscodeAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     TranscodeAsync: usize,
+}
+impl ::windows_sys::core::Interface for IPrepareTranscodeResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 99769806, data2: 39247, data3: 18996, data4: [157, 104, 151, 204, 206, 23, 48, 214] };
 }
 pub type MediaTranscoder = *mut ::core::ffi::c_void;
 #[doc = "*Required features: `\"Media_Transcoding\"`*"]

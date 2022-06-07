@@ -15,6 +15,9 @@ pub struct IAccountsSettingsPane {
     #[cfg(not(feature = "Foundation"))]
     RemoveAccountCommandsRequested: usize,
 }
+impl ::windows_sys::core::Interface for IAccountsSettingsPane {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2179634220, data2: 20233, data3: 17414, data4: [165, 56, 131, 141, 155, 20, 183, 230] };
+}
 #[repr(C)]
 pub struct IAccountsSettingsPaneCommandsRequestedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
@@ -38,6 +41,9 @@ pub struct IAccountsSettingsPaneCommandsRequestedEventArgs {
     pub SetHeaderText: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub GetDeferral: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAccountsSettingsPaneCommandsRequestedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 996720793, data2: 56089, data3: 17872, data4: [154, 191, 149, 211, 119, 60, 147, 48] };
+}
 #[repr(C)]
 pub struct IAccountsSettingsPaneCommandsRequestedEventArgs2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -46,16 +52,25 @@ pub struct IAccountsSettingsPaneCommandsRequestedEventArgs2 {
     #[cfg(not(feature = "System"))]
     User: usize,
 }
+impl ::windows_sys::core::Interface for IAccountsSettingsPaneCommandsRequestedEventArgs2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 909081517, data2: 20023, data3: 18791, data4: [140, 64, 231, 142, 231, 161, 229, 187] };
+}
 #[repr(C)]
 pub struct IAccountsSettingsPaneEventDeferral {
     pub base__: ::windows_sys::core::IInspectable,
     pub Complete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAccountsSettingsPaneEventDeferral {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3421658431, data2: 58810, data3: 16623, data4: [147, 218, 101, 224, 150, 229, 251, 4] };
 }
 #[repr(C)]
 pub struct IAccountsSettingsPaneStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub GetForCurrentView: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Show: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAccountsSettingsPaneStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1444907872, data2: 45292, data3: 16720, data4: [168, 220, 32, 142, 228, 75, 6, 138] };
 }
 #[repr(C)]
 pub struct IAccountsSettingsPaneStatics2 {
@@ -69,6 +84,9 @@ pub struct IAccountsSettingsPaneStatics2 {
     #[cfg(not(feature = "Foundation"))]
     ShowAddAccountAsync: usize,
 }
+impl ::windows_sys::core::Interface for IAccountsSettingsPaneStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3525179330, data2: 52749, data3: 18511, data4: [184, 232, 232, 35, 194, 21, 118, 94] };
+}
 #[repr(C)]
 pub struct IAccountsSettingsPaneStatics3 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -81,6 +99,9 @@ pub struct IAccountsSettingsPaneStatics3 {
     #[cfg(not(all(feature = "Foundation", feature = "System")))]
     ShowAddAccountForUserAsync: usize,
 }
+impl ::windows_sys::core::Interface for IAccountsSettingsPaneStatics3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 138478680, data2: 41658, data3: 19567, data4: [180, 172, 72, 245, 20, 51, 18, 22] };
+}
 #[repr(C)]
 pub struct ICredentialCommand {
     pub base__: ::windows_sys::core::IInspectable,
@@ -89,6 +110,9 @@ pub struct ICredentialCommand {
     #[cfg(not(feature = "Security_Credentials"))]
     PasswordCredential: usize,
     pub CredentialDeleted: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ICredentialCommand {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2784388582, data2: 24899, data3: 19066, data4: [169, 113, 176, 23, 186, 151, 140, 226] };
 }
 #[repr(C)]
 pub struct ICredentialCommandFactory {
@@ -102,6 +126,9 @@ pub struct ICredentialCommandFactory {
     #[cfg(not(feature = "Security_Credentials"))]
     CreateCredentialCommandWithHandler: usize,
 }
+impl ::windows_sys::core::Interface for ICredentialCommandFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 669551639, data2: 48190, data3: 19328, data4: [148, 149, 78, 215, 32, 228, 138, 145] };
+}
 #[repr(C)]
 pub struct ISettingsCommandFactory {
     pub base__: ::windows_sys::core::IInspectable,
@@ -110,6 +137,9 @@ pub struct ISettingsCommandFactory {
     #[cfg(not(feature = "UI_Popups"))]
     CreateSettingsCommand: usize,
 }
+impl ::windows_sys::core::Interface for ISettingsCommandFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1759599411, data2: 7299, data3: 17210, data4: [170, 90, 206, 238, 165, 189, 71, 100] };
+}
 #[repr(C)]
 pub struct ISettingsCommandStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -117,6 +147,9 @@ pub struct ISettingsCommandStatics {
     pub AccountsCommand: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "UI_Popups"))]
     AccountsCommand: usize,
+}
+impl ::windows_sys::core::Interface for ISettingsCommandStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1956309332, data2: 12137, data3: 19223, data4: [138, 186, 208, 92, 229, 119, 142, 70] };
 }
 #[cfg(feature = "deprecated")]
 #[repr(C)]
@@ -132,6 +165,10 @@ pub struct ISettingsPane {
     RemoveCommandsRequested: usize,
 }
 #[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for ISettingsPane {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2983004466, data2: 17776, data3: 19561, data4: [141, 56, 137, 68, 101, 97, 172, 224] };
+}
+#[cfg(feature = "deprecated")]
 #[repr(C)]
 pub struct ISettingsPaneCommandsRequest {
     pub base__: ::windows_sys::core::IInspectable,
@@ -141,6 +178,10 @@ pub struct ISettingsPaneCommandsRequest {
     ApplicationCommands: usize,
 }
 #[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for ISettingsPaneCommandsRequest {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1155474350, data2: 23918, data3: 16488, data4: [161, 104, 244, 118, 67, 24, 33, 20] };
+}
+#[cfg(feature = "deprecated")]
 #[repr(C)]
 pub struct ISettingsPaneCommandsRequestedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
@@ -148,6 +189,10 @@ pub struct ISettingsPaneCommandsRequestedEventArgs {
     pub Request: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "deprecated"))]
     Request: usize,
+}
+#[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for ISettingsPaneCommandsRequestedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 543120676, data2: 6984, data3: 17961, data4: [166, 202, 47, 223, 237, 175, 183, 93] };
 }
 #[cfg(feature = "deprecated")]
 #[repr(C)]
@@ -166,6 +211,10 @@ pub struct ISettingsPaneStatics {
     #[cfg(not(feature = "deprecated"))]
     Edge: usize,
 }
+#[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for ISettingsPaneStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 476730053, data2: 65305, data3: 18203, data4: [186, 107, 248, 243, 86, 148, 173, 154] };
+}
 #[repr(C)]
 pub struct IWebAccountCommand {
     pub base__: ::windows_sys::core::IInspectable,
@@ -176,6 +225,9 @@ pub struct IWebAccountCommand {
     pub Invoked: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Actions: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut SupportedWebAccountActions) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWebAccountCommand {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3399717784, data2: 40186, data3: 16966, data4: [176, 196, 169, 19, 163, 137, 101, 65] };
+}
 #[repr(C)]
 pub struct IWebAccountCommandFactory {
     pub base__: ::windows_sys::core::IInspectable,
@@ -184,10 +236,16 @@ pub struct IWebAccountCommandFactory {
     #[cfg(not(feature = "Security_Credentials"))]
     CreateWebAccountCommand: usize,
 }
+impl ::windows_sys::core::Interface for IWebAccountCommandFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3215379967, data2: 12077, data3: 17141, data4: [129, 222, 29, 86, 186, 252, 73, 109] };
+}
 #[repr(C)]
 pub struct IWebAccountInvokedArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub Action: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut WebAccountAction) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWebAccountInvokedArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3886795840, data2: 41432, data3: 19549, data4: [154, 127, 29, 52, 178, 249, 10, 210] };
 }
 #[repr(C)]
 pub struct IWebAccountProviderCommand {
@@ -198,6 +256,9 @@ pub struct IWebAccountProviderCommand {
     WebAccountProvider: usize,
     pub Invoked: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWebAccountProviderCommand {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3600539034, data2: 41126, data3: 20123, data4: [136, 220, 199, 30, 117, 122, 53, 1] };
+}
 #[repr(C)]
 pub struct IWebAccountProviderCommandFactory {
     pub base__: ::windows_sys::core::IInspectable,
@@ -205,6 +266,9 @@ pub struct IWebAccountProviderCommandFactory {
     pub CreateWebAccountProviderCommand: unsafe extern "system" fn(this: *mut *mut Self, webaccountprovider: *mut ::core::ffi::c_void, invoked: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Security_Credentials"))]
     CreateWebAccountProviderCommand: usize,
+}
+impl ::windows_sys::core::Interface for IWebAccountProviderCommandFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3580201499, data2: 45430, data3: 18294, data4: [132, 105, 169, 211, 255, 11, 63, 89] };
 }
 pub type SettingsCommand = *mut ::core::ffi::c_void;
 #[doc = "*Required features: `\"UI_ApplicationSettings\"`, `\"deprecated\"`*"]

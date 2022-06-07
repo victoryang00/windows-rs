@@ -38,6 +38,9 @@ pub struct IDirect3DDevice9On12 {
     #[cfg(not(all(feature = "Win32_Graphics_Direct3D12", feature = "Win32_Graphics_Direct3D9")))]
     ReturnUnderlyingResource: usize,
 }
+impl ::windows_sys::core::Interface for IDirect3DDevice9On12 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3892159028, data2: 46473, data3: 16457, data4: [148, 13, 136, 120, 151, 117, 49, 200] };
+}
 #[doc = "*Required features: `\"Win32_Graphics_Direct3D9on12\"`*"]
 pub const MAX_D3D9ON12_QUEUES: u32 = 2u32;
 #[doc = "*Required features: `\"Win32_Graphics_Direct3D9on12\"`, `\"Win32_Foundation\"`, `\"Win32_Graphics_Direct3D9\"`*"]

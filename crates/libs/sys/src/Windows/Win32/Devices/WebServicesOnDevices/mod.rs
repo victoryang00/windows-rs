@@ -82,10 +82,16 @@ pub struct IWSDAddress {
     Serialize: usize,
     pub Deserialize: unsafe extern "system" fn(this: *mut *mut Self, pszbuffer: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWSDAddress {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3109506156, data2: 4774, data3: 20340, data4: [147, 161, 51, 24, 255, 96, 87, 89] };
+}
 #[repr(C)]
 pub struct IWSDAsyncCallback {
     pub base__: ::windows_sys::core::IUnknown,
     pub AsyncOperationComplete: unsafe extern "system" fn(this: *mut *mut Self, pasyncresult: *mut ::core::ffi::c_void, pasyncstate: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWSDAsyncCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2789085341, data2: 52850, data3: 18914, data4: [186, 152, 232, 69, 245, 238, 22, 102] };
 }
 #[repr(C)]
 pub struct IWSDAsyncResult {
@@ -101,9 +107,15 @@ pub struct IWSDAsyncResult {
     pub GetEvent: unsafe extern "system" fn(this: *mut *mut Self, pevent: *mut WSD_EVENT) -> ::windows_sys::core::HRESULT,
     pub GetEndpointProxy: unsafe extern "system" fn(this: *mut *mut Self, ppendpoint: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWSDAsyncResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 296322346, data2: 36312, data3: 16958, data4: [181, 55, 147, 86, 219, 79, 191, 184] };
+}
 #[repr(C)]
 pub struct IWSDAttachment {
     pub base__: ::windows_sys::core::IUnknown,
+}
+impl ::windows_sys::core::Interface for IWSDAttachment {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1565894166, data2: 40440, data3: 19209, data4: [177, 86, 155, 163, 81, 164, 139, 118] };
 }
 #[repr(C)]
 pub struct IWSDDeviceHost {
@@ -124,10 +136,16 @@ pub struct IWSDDeviceHost {
     SetServiceDiscoverable: usize,
     pub SignalEvent: unsafe extern "system" fn(this: *mut *mut Self, pszserviceid: ::windows_sys::core::PCWSTR, pbody: *const ::core::ffi::c_void, poperation: *const WSD_OPERATION) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWSDDeviceHost {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2441078929, data2: 15635, data3: 16696, data4: [152, 9, 147, 76, 138, 190, 177, 44] };
+}
 #[repr(C)]
 pub struct IWSDDeviceHostNotify {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetService: unsafe extern "system" fn(this: *mut *mut Self, pszserviceid: ::windows_sys::core::PCWSTR, ppservice: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWSDDeviceHostNotify {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3049187833, data2: 61146, data3: 16894, data4: [150, 247, 244, 94, 20, 153, 15, 176] };
 }
 #[repr(C)]
 pub struct IWSDDeviceProxy {
@@ -143,6 +161,9 @@ pub struct IWSDDeviceProxy {
     pub GetServiceProxyByType: unsafe extern "system" fn(this: *mut *mut Self, ptype: *const WSDXML_NAME, ppserviceproxy: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetEndpointProxy: unsafe extern "system" fn(this: *mut *mut Self, ppproxy: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWSDDeviceProxy {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4007706673, data2: 50552, data3: 19470, data4: [154, 59, 151, 60, 53, 244, 9, 219] };
+}
 #[repr(C)]
 pub struct IWSDEndpointProxy {
     pub base__: ::windows_sys::core::IUnknown,
@@ -157,12 +178,18 @@ pub struct IWSDEndpointProxy {
     pub GetErrorInfo: unsafe extern "system" fn(this: *mut *mut Self, ppszerrorinfo: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
     pub GetFaultInfo: unsafe extern "system" fn(this: *mut *mut Self, ppfault: *mut *mut WSD_SOAP_FAULT) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWSDEndpointProxy {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 408998960, data2: 45644, data3: 18805, data4: [159, 144, 219, 179, 155, 170, 36, 236] };
+}
 #[repr(C)]
 pub struct IWSDEventingStatus {
     pub base__: ::windows_sys::core::IUnknown,
     pub SubscriptionRenewed: unsafe extern "system" fn(this: *mut *mut Self, pszsubscriptionaction: ::windows_sys::core::PCWSTR),
     pub SubscriptionRenewalFailed: unsafe extern "system" fn(this: *mut *mut Self, pszsubscriptionaction: ::windows_sys::core::PCWSTR, hr: ::windows_sys::core::HRESULT),
     pub SubscriptionEnded: unsafe extern "system" fn(this: *mut *mut Self, pszsubscriptionaction: ::windows_sys::core::PCWSTR),
+}
+impl ::windows_sys::core::Interface for IWSDEventingStatus {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1236369234, data2: 25466, data3: 16506, data4: [174, 153, 251, 232, 42, 77, 56, 192] };
 }
 #[repr(C)]
 pub struct IWSDHttpAddress {
@@ -175,6 +202,9 @@ pub struct IWSDHttpAddress {
     pub GetPath: unsafe extern "system" fn(this: *mut *mut Self, ppszpath: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
     pub SetPath: unsafe extern "system" fn(this: *mut *mut Self, pszpath: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWSDHttpAddress {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3499804605, data2: 10814, data3: 19333, data4: [134, 5, 39, 55, 255, 62, 78, 160] };
+}
 #[repr(C)]
 pub struct IWSDHttpAuthParameters {
     pub base__: ::windows_sys::core::IUnknown,
@@ -183,6 +213,9 @@ pub struct IWSDHttpAuthParameters {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetClientAccessToken: usize,
     pub GetAuthType: unsafe extern "system" fn(this: *mut *mut Self, pauthtype: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWSDHttpAuthParameters {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 189230576, data2: 36268, data3: 18445, data4: [176, 92, 153, 120, 26, 88, 132, 170] };
 }
 #[repr(C)]
 pub struct IWSDHttpMessageParameters {
@@ -197,11 +230,17 @@ pub struct IWSDHttpMessageParameters {
     pub GetContext: unsafe extern "system" fn(this: *mut *mut Self, ppcontext: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Clear: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWSDHttpMessageParameters {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1410060578, data2: 23683, data3: 19948, data4: [179, 150, 234, 98, 162, 105, 127, 223] };
+}
 #[repr(C)]
 pub struct IWSDInboundAttachment {
     pub base__: IWSDAttachment,
     pub Read: unsafe extern "system" fn(this: *mut *mut Self, pbuffer: *mut u8, dwbytestoread: u32, pdwnumberofbytesread: *mut u32) -> ::windows_sys::core::HRESULT,
     pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWSDInboundAttachment {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1540803173, data2: 9020, data3: 20408, data4: [159, 122, 38, 65, 97, 150, 85, 201] };
 }
 #[repr(C)]
 pub struct IWSDMessageParameters {
@@ -212,10 +251,16 @@ pub struct IWSDMessageParameters {
     pub SetRemoteAddress: unsafe extern "system" fn(this: *mut *mut Self, paddress: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetLowerParameters: unsafe extern "system" fn(this: *mut *mut Self, pptxparams: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWSDMessageParameters {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 531622050, data2: 59132, data3: 19328, data4: [182, 207, 183, 212, 92, 65, 109, 124] };
+}
 #[repr(C)]
 pub struct IWSDMetadataExchange {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetMetadata: unsafe extern "system" fn(this: *mut *mut Self, metadataout: *mut *mut WSD_METADATA_SECTION_LIST) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWSDMetadataExchange {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 110718295, data2: 7527, data3: 18728, data4: [147, 7, 61, 120, 51, 253, 184, 70] };
 }
 #[repr(C)]
 pub struct IWSDOutboundAttachment {
@@ -223,6 +268,9 @@ pub struct IWSDOutboundAttachment {
     pub Write: unsafe extern "system" fn(this: *mut *mut Self, pbuffer: *const u8, dwbytestowrite: u32, pdwnumberofbyteswritten: *mut u32) -> ::windows_sys::core::HRESULT,
     pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Abort: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWSDOutboundAttachment {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2855284621, data2: 23074, data3: 19365, data4: [179, 146, 170, 132, 134, 244, 193, 93] };
 }
 #[repr(C)]
 pub struct IWSDSSLClientCertificate {
@@ -236,6 +284,9 @@ pub struct IWSDSSLClientCertificate {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetMappedAccessToken: usize,
 }
+impl ::windows_sys::core::Interface for IWSDSSLClientCertificate {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3725614727, data2: 41178, data3: 16782, data4: [152, 173, 39, 185, 238, 216, 123, 220] };
+}
 #[repr(C)]
 pub struct IWSDScopeMatchingRule {
     pub base__: ::windows_sys::core::IUnknown,
@@ -245,11 +296,17 @@ pub struct IWSDScopeMatchingRule {
     #[cfg(not(feature = "Win32_Foundation"))]
     MatchScopes: usize,
 }
+impl ::windows_sys::core::Interface for IWSDScopeMatchingRule {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4239385636, data2: 65269, data3: 18458, data4: [189, 159, 51, 206, 5, 116, 37, 111] };
+}
 #[repr(C)]
 pub struct IWSDServiceMessaging {
     pub base__: ::windows_sys::core::IUnknown,
     pub SendResponse: unsafe extern "system" fn(this: *mut *mut Self, pbody: *const ::core::ffi::c_void, poperation: *const WSD_OPERATION, pmessageparameters: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub FaultRequest: unsafe extern "system" fn(this: *mut *mut Self, prequestheader: *const WSD_SOAP_HEADER, pmessageparameters: *mut ::core::ffi::c_void, pfault: *const WSD_SOAP_FAULT) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWSDServiceMessaging {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2492943604, data2: 3243, data3: 17933, data4: [163, 246, 122, 10, 214, 35, 192, 230] };
 }
 #[repr(C)]
 pub struct IWSDServiceProxy {
@@ -261,6 +318,9 @@ pub struct IWSDServiceProxy {
     pub UnsubscribeToOperation: unsafe extern "system" fn(this: *mut *mut Self, poperation: *const WSD_OPERATION) -> ::windows_sys::core::HRESULT,
     pub SetEventingStatusCallback: unsafe extern "system" fn(this: *mut *mut Self, pstatus: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetEndpointProxy: unsafe extern "system" fn(this: *mut *mut Self, ppproxy: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWSDServiceProxy {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3569875868, data2: 939, data3: 16757, data4: [157, 103, 9, 79, 175, 235, 244, 135] };
 }
 #[repr(C)]
 pub struct IWSDServiceProxyEventing {
@@ -302,6 +362,9 @@ pub struct IWSDServiceProxyEventing {
     #[cfg(not(feature = "Win32_Foundation"))]
     EndGetStatusForMultipleOperations: usize,
 }
+impl ::windows_sys::core::Interface for IWSDServiceProxyEventing {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4180122989, data2: 4114, data3: 19092, data4: [184, 204, 253, 53, 210, 32, 43, 254] };
+}
 #[repr(C)]
 pub struct IWSDSignatureProperty {
     pub base__: ::windows_sys::core::IUnknown,
@@ -317,6 +380,9 @@ pub struct IWSDSignatureProperty {
     pub GetSignature: unsafe extern "system" fn(this: *mut *mut Self, pbsignature: *mut u8, pdwsignaturesize: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetSignedInfoHash: unsafe extern "system" fn(this: *mut *mut Self, pbsignedinfohash: *mut u8, pdwhashsize: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWSDSignatureProperty {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 63840426, data2: 29124, data3: 17890, data4: [179, 46, 55, 102, 198, 28, 121, 15] };
+}
 #[repr(C)]
 pub struct IWSDTransportAddress {
     pub base__: IWSDAddress,
@@ -328,6 +394,9 @@ pub struct IWSDTransportAddress {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetTransportAddressEx: usize,
     pub SetTransportAddress: unsafe extern "system" fn(this: *mut *mut Self, pszaddress: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWSDTransportAddress {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1892824216, data2: 20198, data3: 17216, data4: [163, 223, 216, 69, 210, 35, 84, 103] };
 }
 #[repr(C)]
 pub struct IWSDUdpAddress {
@@ -352,11 +421,17 @@ pub struct IWSDUdpAddress {
     pub SetAlias: unsafe extern "system" fn(this: *mut *mut Self, palias: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub GetAlias: unsafe extern "system" fn(this: *mut *mut Self, palias: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWSDUdpAddress {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1960186442, data2: 42049, data3: 20344, data4: [161, 235, 151, 168, 209, 153, 104, 147] };
+}
 #[repr(C)]
 pub struct IWSDUdpMessageParameters {
     pub base__: IWSDMessageParameters,
     pub SetRetransmitParams: unsafe extern "system" fn(this: *mut *mut Self, pparams: *const WSDUdpRetransmitParams) -> ::windows_sys::core::HRESULT,
     pub GetRetransmitParams: unsafe extern "system" fn(this: *mut *mut Self, pparams: *mut WSDUdpRetransmitParams) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWSDUdpMessageParameters {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2570327199, data2: 36620, data3: 17531, data4: [170, 11, 115, 18, 75, 12, 167, 240] };
 }
 #[repr(C)]
 pub struct IWSDXMLContext {
@@ -365,6 +440,9 @@ pub struct IWSDXMLContext {
     pub AddNameToNamespace: unsafe extern "system" fn(this: *mut *mut Self, pszuri: ::windows_sys::core::PCWSTR, pszname: ::windows_sys::core::PCWSTR, ppname: *mut *mut WSDXML_NAME) -> ::windows_sys::core::HRESULT,
     pub SetNamespaces: unsafe extern "system" fn(this: *mut *mut Self, pnamespaces: *const *const WSDXML_NAMESPACE, wnamespacescount: u16, blayernumber: u8) -> ::windows_sys::core::HRESULT,
     pub SetTypes: unsafe extern "system" fn(this: *mut *mut Self, ptypes: *const *const WSDXML_TYPE, dwtypescount: u32, blayernumber: u8) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWSDXMLContext {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1977152494, data2: 15962, data3: 17332, data4: [161, 90, 188, 246, 136, 116, 96, 192] };
 }
 #[repr(C)]
 pub struct IWSDiscoveredService {
@@ -381,6 +459,9 @@ pub struct IWSDiscoveredService {
     pub GetLocalInterfaceGUID: unsafe extern "system" fn(this: *mut *mut Self, pguid: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub GetInstanceId: unsafe extern "system" fn(this: *mut *mut Self, pullinstanceid: *mut u64) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWSDiscoveredService {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1269664315, data2: 45940, data3: 17440, data4: [150, 50, 170, 201, 69, 179, 116, 170] };
+}
 #[repr(C)]
 pub struct IWSDiscoveryProvider {
     pub base__: ::windows_sys::core::IUnknown,
@@ -392,6 +473,9 @@ pub struct IWSDiscoveryProvider {
     pub SearchByType: unsafe extern "system" fn(this: *mut *mut Self, ptypeslist: *const WSD_NAME_LIST, pscopeslist: *const WSD_URI_LIST, pszmatchby: ::windows_sys::core::PCWSTR, psztag: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
     pub GetXMLContext: unsafe extern "system" fn(this: *mut *mut Self, ppcontext: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWSDiscoveryProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2415693397, data2: 61675, data3: 18447, data4: [136, 183, 180, 53, 221, 40, 29, 69] };
+}
 #[repr(C)]
 pub struct IWSDiscoveryProviderNotify {
     pub base__: ::windows_sys::core::IUnknown,
@@ -399,6 +483,9 @@ pub struct IWSDiscoveryProviderNotify {
     pub Remove: unsafe extern "system" fn(this: *mut *mut Self, pservice: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SearchFailed: unsafe extern "system" fn(this: *mut *mut Self, hr: ::windows_sys::core::HRESULT, psztag: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
     pub SearchComplete: unsafe extern "system" fn(this: *mut *mut Self, psztag: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWSDiscoveryProviderNotify {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1944993005, data2: 46822, data3: 17193, data4: [165, 70, 62, 138, 212, 101, 99, 210] };
 }
 #[repr(C)]
 pub struct IWSDiscoveryPublisher {
@@ -417,11 +504,17 @@ pub struct IWSDiscoveryPublisher {
     pub UnRegisterScopeMatchingRule: unsafe extern "system" fn(this: *mut *mut Self, pscopematchingrule: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetXMLContext: unsafe extern "system" fn(this: *mut *mut Self, ppcontext: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWSDiscoveryPublisher {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2919358888, data2: 16377, data3: 16712, data4: [129, 22, 5, 124, 198, 22, 254, 19] };
+}
 #[repr(C)]
 pub struct IWSDiscoveryPublisherNotify {
     pub base__: ::windows_sys::core::IUnknown,
     pub ProbeHandler: unsafe extern "system" fn(this: *mut *mut Self, psoap: *const WSD_SOAP_MESSAGE, pmessageparameters: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub ResolveHandler: unsafe extern "system" fn(this: *mut *mut Self, psoap: *const WSD_SOAP_MESSAGE, pmessageparameters: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWSDiscoveryPublisherNotify {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3866513840, data2: 13178, data3: 19260, data4: [151, 88, 115, 51, 136, 86, 130, 81] };
 }
 #[doc = "*Required features: `\"Win32_Devices_WebServicesOnDevices\"`*"]
 pub type PWSD_SOAP_MESSAGE_HANDLER = ::core::option::Option<unsafe extern "system" fn(thisunknown: *mut *mut ::windows_sys::core::IUnknown, event: *mut WSD_EVENT) -> ::windows_sys::core::HRESULT>;

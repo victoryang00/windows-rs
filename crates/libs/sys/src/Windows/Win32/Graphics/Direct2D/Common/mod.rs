@@ -555,3 +555,6 @@ pub struct ID2D1SimplifiedGeometrySink {
     pub EndFigure: unsafe extern "system" fn(this: *mut *mut Self, figureend: D2D1_FIGURE_END),
     pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ID2D1SimplifiedGeometrySink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 752420510, data2: 4834, data3: 4572, data4: [159, 237, 0, 17, 67, 160, 85, 249] };
+}

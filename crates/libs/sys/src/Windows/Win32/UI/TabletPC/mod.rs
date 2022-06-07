@@ -1664,6 +1664,9 @@ pub struct IDynamicRenderer {
     #[cfg(not(feature = "Win32_Foundation"))]
     Draw: usize,
 }
+impl ::windows_sys::core::Interface for IDynamicRenderer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2692302478, data2: 29029, data3: 18169, data4: [183, 175, 152, 173, 1, 169, 48, 9] };
+}
 #[doc = "*Required features: `\"Win32_UI_TabletPC\"`*"]
 pub const IECN_GESTURE: u32 = 2050u32;
 #[doc = "*Required features: `\"Win32_UI_TabletPC\"`*"]
@@ -1738,6 +1741,9 @@ pub struct IGestureRecognizer {
     pub EnableGestures: unsafe extern "system" fn(this: *mut *mut Self, cgestures: u32, pgestures: *const i32) -> ::windows_sys::core::HRESULT,
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IGestureRecognizer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2929653867, data2: 28756, data3: 17891, data4: [174, 34, 49, 116, 220, 136, 17, 183] };
+}
 #[repr(C)]
 pub struct IHandwrittenTextInsertion {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1750,10 +1756,17 @@ pub struct IHandwrittenTextInsertion {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     InsertInkRecognitionResult: usize,
 }
+impl ::windows_sys::core::Interface for IHandwrittenTextInsertion {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1459481239, data2: 60630, data3: 17383, data4: [170, 58, 129, 107, 231, 120, 88, 96] };
+}
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IInk {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IInk {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 66643217, data2: 17313, data3: 4563, data4: [139, 182, 0, 128, 199, 214, 186, 213] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1849,6 +1862,10 @@ pub struct IInkCollector {
     pub SetEventInterest: unsafe extern "system" fn(this: *mut *mut Self, eventid: InkCollectorEventInterest, listen: i16) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IInkCollector {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4042285237, data2: 35615, data3: 19068, data4: [137, 236, 136, 6, 146, 88, 138, 79] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IInkCursor {
     pub base__: super::super::System::Com::IDispatch,
@@ -1876,6 +1893,10 @@ pub struct IInkCursor {
     Buttons: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IInkCursor {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2905654832, data2: 16581, data3: 17232, data4: [132, 5, 156, 113, 1, 47, 197, 88] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IInkCursorButton {
     pub base__: super::super::System::Com::IDispatch,
@@ -1890,6 +1911,10 @@ pub struct IInkCursorButton {
     pub State: unsafe extern "system" fn(this: *mut *mut Self, currentstate: *mut InkCursorButtonState) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IInkCursorButton {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2247070743, data2: 7513, data3: 18866, data4: [161, 60, 112, 44, 133, 67, 8, 148] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IInkCursorButtons {
     pub base__: super::super::System::Com::IDispatch,
@@ -1901,6 +1926,10 @@ pub struct IInkCursorButtons {
     Item: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IInkCursorButtons {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 913427520, data2: 46628, data3: 18033, data4: [159, 160, 219, 17, 157, 149, 45, 84] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IInkCursors {
     pub base__: super::super::System::Com::IDispatch,
@@ -1910,6 +1939,10 @@ pub struct IInkCursors {
     pub Item: unsafe extern "system" fn(this: *mut *mut Self, index: i32, cursor: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     Item: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IInkCursors {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2722677164, data2: 50840, data3: 19974, data4: [158, 92, 213, 127, 119, 199, 230, 71] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1930,6 +1963,10 @@ pub struct IInkCustomStrokes {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     Remove: usize,
     pub Clear: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IInkCustomStrokes {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2116266127, data2: 49934, data3: 16911, data4: [155, 219, 40, 144, 37, 67, 240, 193] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2031,6 +2068,10 @@ pub struct IInkDisp {
     ClipboardPaste: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IInkDisp {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2637795232, data2: 50402, data3: 20429, data4: [153, 115, 151, 92, 170, 244, 126, 166] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IInkDivider {
     pub base__: super::super::System::Com::IDispatch,
@@ -2058,6 +2099,10 @@ pub struct IInkDivider {
     Divide: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IInkDivider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1574962181, data2: 63908, data3: 18001, data4: [176, 197, 195, 23, 222, 253, 88, 185] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IInkDivisionResult {
     pub base__: super::super::System::Com::IDispatch,
@@ -2069,6 +2114,10 @@ pub struct IInkDivisionResult {
     pub ResultByType: unsafe extern "system" fn(this: *mut *mut Self, divisiontype: InkDivisionType, inkdivisionunits: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     ResultByType: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IInkDivisionResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 767475879, data2: 29895, data3: 19256, data4: [129, 235, 170, 142, 240, 194, 73, 0] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2089,6 +2138,10 @@ pub struct IInkDivisionUnit {
     RotationTransform: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IInkDivisionUnit {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2242831170, data2: 18608, data3: 16964, data4: [157, 213, 30, 212, 53, 65, 15, 171] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IInkDivisionUnits {
     pub base__: super::super::System::Com::IDispatch,
@@ -2098,6 +2151,10 @@ pub struct IInkDivisionUnits {
     pub Item: unsafe extern "system" fn(this: *mut *mut Self, index: i32, inkdivisionunit: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     Item: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IInkDivisionUnits {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 464903618, data2: 12748, data3: 16693, data4: [171, 130, 44, 102, 201, 240, 12, 65] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2129,6 +2186,10 @@ pub struct IInkDrawingAttributes {
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, drawingattributes: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     Clone: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IInkDrawingAttributes {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3209796469, data2: 2581, data3: 17955, data4: [173, 201, 192, 13, 67, 106, 128, 146] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2324,6 +2385,10 @@ pub struct IInkEdit {
     pub Refresh: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IInkEdit {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4061297177, data2: 64507, data3: 19181, data4: [132, 100, 63, 54, 215, 140, 254, 251] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IInkExtendedProperties {
     pub base__: super::super::System::Com::IDispatch,
@@ -2348,6 +2413,10 @@ pub struct IInkExtendedProperties {
     DoesPropertyExist: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IInkExtendedProperties {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2314381502, data2: 38313, data3: 17712, data4: [139, 143, 136, 233, 113, 227, 226, 95] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IInkExtendedProperty {
     pub base__: super::super::System::Com::IDispatch,
@@ -2365,12 +2434,20 @@ pub struct IInkExtendedProperty {
     SetData: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IInkExtendedProperty {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3678966281, data2: 47043, data3: 16669, data4: [144, 246, 21, 72, 207, 255, 39, 30] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IInkGesture {
     pub base__: super::super::System::Com::IDispatch,
     pub Confidence: unsafe extern "system" fn(this: *mut *mut Self, confidence: *mut InkRecognitionConfidence) -> ::windows_sys::core::HRESULT,
     pub Id: unsafe extern "system" fn(this: *mut *mut Self, id: *mut InkApplicationGesture) -> ::windows_sys::core::HRESULT,
     pub GetHotPoint: unsafe extern "system" fn(this: *mut *mut Self, x: *mut i32, y: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IInkGesture {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1004276375, data2: 1253, data3: 20006, data4: [184, 19, 24, 240, 82, 212, 29, 239] };
 }
 #[repr(C)]
 pub struct IInkLineInfo {
@@ -2381,6 +2458,9 @@ pub struct IInkLineInfo {
     pub GetCandidate: unsafe extern "system" fn(this: *mut *mut Self, ncandidatenum: u32, pwcrecogword: ::windows_sys::core::PCWSTR, pcwcrecogword: *const u32, dwflags: u32) -> ::windows_sys::core::HRESULT,
     pub SetCandidate: unsafe extern "system" fn(this: *mut *mut Self, ncandidatenum: u32, strrecogword: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
     pub Recognize: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IInkLineInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2619103958, data2: 61999, data3: 19940, data4: [180, 83, 162, 204, 72, 46, 124, 51] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2497,6 +2577,10 @@ pub struct IInkOverlay {
     SetSingleTabletIntegratedMode: usize,
     pub GetEventInterest: unsafe extern "system" fn(this: *mut *mut Self, eventid: InkCollectorEventInterest, listen: *mut i16) -> ::windows_sys::core::HRESULT,
     pub SetEventInterest: unsafe extern "system" fn(this: *mut *mut Self, eventid: InkCollectorEventInterest, listen: i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IInkOverlay {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3089778235, data2: 49605, data3: 17827, data4: [153, 124, 222, 171, 86, 81, 182, 122] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2626,6 +2710,10 @@ pub struct IInkPicture {
     pub SetEnabled: unsafe extern "system" fn(this: *mut *mut Self, vbool: i16) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IInkPicture {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3897975520, data2: 14234, data3: 16599, data4: [155, 92, 117, 125, 35, 63, 153, 35] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IInkRecognitionAlternate {
     pub base__: super::super::System::Com::IDispatch,
@@ -2685,6 +2773,10 @@ pub struct IInkRecognitionAlternate {
     GetPropertyValue: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IInkRecognitionAlternate {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3085328557, data2: 30692, data3: 17051, data4: [173, 218, 135, 55, 128, 209, 252, 74] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IInkRecognitionAlternates {
     pub base__: super::super::System::Com::IDispatch,
@@ -2698,6 +2790,10 @@ pub struct IInkRecognitionAlternates {
     pub Item: unsafe extern "system" fn(this: *mut *mut Self, index: i32, inkrecoalternate: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     Item: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IInkRecognitionAlternates {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 678041215, data2: 40729, data3: 19553, data4: [157, 83, 79, 7, 190, 98, 43, 132] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2725,6 +2821,10 @@ pub struct IInkRecognitionResult {
     #[cfg(not(feature = "Win32_System_Com"))]
     ModifyTopAlternate: usize,
     pub SetResultOnStrokes: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IInkRecognitionResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1002514856, data2: 34509, data3: 17837, data4: [189, 232, 224, 211, 45, 97, 193, 109] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2757,6 +2857,10 @@ pub struct IInkRecognizer {
     CreateRecognizerContext: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IInkRecognizer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2016147407, data2: 843, data3: 17302, data4: [138, 50, 58, 24, 51, 207, 107, 86] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IInkRecognizer2 {
     pub base__: super::super::System::Com::IDispatch,
@@ -2768,6 +2872,10 @@ pub struct IInkRecognizer2 {
     pub UnicodeRanges: unsafe extern "system" fn(this: *mut *mut Self, unicoderanges: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     UnicodeRanges: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IInkRecognizer2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1628443018, data2: 14965, data3: 19158, data4: [178, 170, 4, 178, 183, 43, 190, 101] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2853,6 +2961,10 @@ pub struct IInkRecognizerContext {
     IsStringSupported: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IInkRecognizerContext {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3331281657, data2: 12963, data3: 17957, data4: [144, 108, 68, 252, 35, 180, 9, 88] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IInkRecognizerContext2 {
     pub base__: super::super::System::Com::IDispatch,
@@ -2864,6 +2976,10 @@ pub struct IInkRecognizerContext2 {
     pub SetEnabledUnicodeRanges: unsafe extern "system" fn(this: *mut *mut Self, unicoderanges: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     SetEnabledUnicodeRanges: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IInkRecognizerContext2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3606111023, data2: 29656, data3: 16526, data4: [142, 159, 95, 234, 89, 44, 54, 63] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2901,6 +3017,10 @@ pub struct IInkRecognizerGuide {
     SetGuideData: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IInkRecognizerGuide {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3644112391, data2: 31620, data3: 16904, data4: [145, 54, 131, 194, 9, 148, 233, 5] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IInkRecognizers {
     pub base__: super::super::System::Com::IDispatch,
@@ -2914,6 +3034,10 @@ pub struct IInkRecognizers {
     pub Item: unsafe extern "system" fn(this: *mut *mut Self, index: i32, inkrecognizer: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     Item: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IInkRecognizers {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2630635282, data2: 45239, data3: 19083, data4: [191, 88, 74, 236, 164, 232, 206, 253] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2937,6 +3061,10 @@ pub struct IInkRectangle {
     SetData: usize,
     pub GetRectangle: unsafe extern "system" fn(this: *mut *mut Self, top: *mut i32, left: *mut i32, bottom: *mut i32, right: *mut i32) -> ::windows_sys::core::HRESULT,
     pub SetRectangle: unsafe extern "system" fn(this: *mut *mut Self, top: i32, left: i32, bottom: i32, right: i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IInkRectangle {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2543124354, data2: 24689, data3: 18199, data4: [138, 139, 106, 199, 198, 74, 104, 110] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2987,6 +3115,10 @@ pub struct IInkRenderer {
     pub Move: unsafe extern "system" fn(this: *mut *mut Self, horizontalcomponent: f32, verticalcomponent: f32) -> ::windows_sys::core::HRESULT,
     pub Rotate: unsafe extern "system" fn(this: *mut *mut Self, degrees: f32, x: f32, y: f32) -> ::windows_sys::core::HRESULT,
     pub ScaleTransform: unsafe extern "system" fn(this: *mut *mut Self, horizontalmultiplier: f32, verticalmultiplier: f32, applyonpenwidth: i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IInkRenderer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3861215900, data2: 46353, data3: 20300, data4: [168, 176, 167, 219, 201, 80, 107, 131] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -3096,6 +3228,10 @@ pub struct IInkStrokeDisp {
     pub ScaleTransform: unsafe extern "system" fn(this: *mut *mut Self, horizontalmultiplier: f32, verticalmultiplier: f32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IInkStrokeDisp {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1126445034, data2: 37329, data3: 19058, data4: [150, 62, 251, 185, 24, 41, 207, 162] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IInkStrokes {
     pub base__: super::super::System::Com::IDispatch,
@@ -3160,6 +3296,10 @@ pub struct IInkStrokes {
     pub RemoveRecognitionResult: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IInkStrokes {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4059351512, data2: 22794, data3: 18787, data4: [179, 174, 25, 53, 103, 27, 182, 243] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IInkTablet {
     pub base__: super::super::System::Com::IDispatch,
@@ -3186,10 +3326,18 @@ pub struct IInkTablet {
     GetPropertyMetrics: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IInkTablet {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 769810090, data2: 28408, data3: 17109, data4: [174, 233, 24, 91, 200, 27, 145, 45] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IInkTablet2 {
     pub base__: super::super::System::Com::IDispatch,
     pub DeviceKind: unsafe extern "system" fn(this: *mut *mut Self, kind: *mut TabletDeviceKind) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IInkTablet2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2429098706, data2: 64054, data3: 18902, data4: [149, 22, 206, 141, 87, 15, 111, 133] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -3197,6 +3345,10 @@ pub struct IInkTablet3 {
     pub base__: super::super::System::Com::IDispatch,
     pub IsMultiTouch: unsafe extern "system" fn(this: *mut *mut Self, pismultitouch: *mut i16) -> ::windows_sys::core::HRESULT,
     pub MaximumCursors: unsafe extern "system" fn(this: *mut *mut Self, pmaximumcursors: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IInkTablet3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2117155223, data2: 4903, data3: 16861, data4: [140, 169, 121, 242, 75, 225, 114, 80] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -3216,6 +3368,10 @@ pub struct IInkTablets {
     pub IsPacketPropertySupported: unsafe extern "system" fn(this: *mut *mut Self, packetpropertyname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, supported: *mut i16) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     IsPacketPropertySupported: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IInkTablets {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 287344345, data2: 30585, data3: 17717, data4: [166, 153, 134, 43, 67, 172, 24, 99] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -3251,6 +3407,10 @@ pub struct IInkTransform {
     SetData: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IInkTransform {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1633623363, data2: 34563, data3: 17765, data4: [136, 226, 130, 1, 210, 236, 215, 183] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IInkWordList {
     pub base__: super::super::System::Com::IDispatch,
@@ -3268,6 +3428,10 @@ pub struct IInkWordList {
     Merge: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IInkWordList {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1991914641, data2: 52015, data3: 16491, data4: [153, 97, 14, 12, 76, 218, 174, 242] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IInkWordList2 {
     pub base__: super::super::System::Com::IDispatch,
@@ -3276,6 +3440,10 @@ pub struct IInkWordList2 {
     #[cfg(not(feature = "Win32_Foundation"))]
     AddWords: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IInkWordList2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 341058950, data2: 4543, data3: 20319, data4: [182, 231, 73, 208, 116, 74, 171, 110] };
+}
 #[repr(C)]
 pub struct IInputPanelWindowHandle {
     pub base__: ::windows_sys::core::IUnknown,
@@ -3283,6 +3451,9 @@ pub struct IInputPanelWindowHandle {
     pub SetAttachedEditWindow32: unsafe extern "system" fn(this: *mut *mut Self, attachededitwindow: i32) -> ::windows_sys::core::HRESULT,
     pub AttachedEditWindow64: unsafe extern "system" fn(this: *mut *mut Self, attachededitwindow: *mut i64) -> ::windows_sys::core::HRESULT,
     pub SetAttachedEditWindow64: unsafe extern "system" fn(this: *mut *mut Self, attachededitwindow: i64) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IInputPanelWindowHandle {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1257773127, data2: 64964, data3: 20419, data4: [173, 11, 66, 36, 121, 193, 185, 53] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -3320,6 +3491,10 @@ pub struct IMathInputControl {
     pub GetHoverIcon: unsafe extern "system" fn(this: *mut *mut Self, hoverimage: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     GetHoverIcon: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IMathInputControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3953530282, data2: 64198, data3: 18232, data4: [186, 95, 255, 9, 233, 254, 71, 62] };
 }
 #[doc = "*Required features: `\"Win32_UI_TabletPC\"`*"]
 pub const INKEDIT_CLASS: &str = "INKEDIT";
@@ -3400,6 +3575,10 @@ pub struct IPenInputPanel {
     pub Refresh: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub EnableTsf: unsafe extern "system" fn(this: *mut *mut Self, enable: i16) -> ::windows_sys::core::HRESULT,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IPenInputPanel {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4202315907, data2: 22343, data3: 16448, data4: [161, 130, 11, 14, 159, 212, 250, 199] };
+}
 #[repr(C)]
 pub struct IRealTimeStylus {
     pub base__: ::windows_sys::core::IUnknown,
@@ -3474,6 +3653,9 @@ pub struct IRealTimeStylus {
     pub GetDesiredPacketDescription: unsafe extern "system" fn(this: *mut *mut Self, pcproperties: *mut u32, pppropertyguids: *mut *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub GetPacketDescriptionData: unsafe extern "system" fn(this: *mut *mut Self, tcid: u32, pfinktodevicescalex: *mut f32, pfinktodevicescaley: *mut f32, pcpacketproperties: *mut u32, pppacketproperties: *mut *mut PACKET_PROPERTY) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IRealTimeStylus {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2830851362, data2: 12612, data3: 19067, data4: [147, 205, 243, 74, 22, 190, 81, 58] };
+}
 #[repr(C)]
 pub struct IRealTimeStylus2 {
     pub base__: ::windows_sys::core::IUnknown,
@@ -3485,6 +3667,9 @@ pub struct IRealTimeStylus2 {
     pub SetFlicksEnabled: unsafe extern "system" fn(this: *mut *mut Self, fenable: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     SetFlicksEnabled: usize,
+}
+impl ::windows_sys::core::Interface for IRealTimeStylus2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3052578509, data2: 12665, data3: 19006, data4: [185, 196, 187, 88, 101, 150, 43, 226] };
 }
 #[repr(C)]
 pub struct IRealTimeStylus3 {
@@ -3498,16 +3683,26 @@ pub struct IRealTimeStylus3 {
     #[cfg(not(feature = "Win32_Foundation"))]
     SetMultiTouchEnabled: usize,
 }
+impl ::windows_sys::core::Interface for IRealTimeStylus3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3607244963, data2: 27014, data3: 16465, data4: [181, 122, 28, 246, 159, 77, 157, 181] };
+}
 #[repr(C)]
 pub struct IRealTimeStylusSynchronization {
     pub base__: ::windows_sys::core::IUnknown,
     pub AcquireLock: unsafe extern "system" fn(this: *mut *mut Self, lock: RealTimeStylusLockType) -> ::windows_sys::core::HRESULT,
     pub ReleaseLock: unsafe extern "system" fn(this: *mut *mut Self, lock: RealTimeStylusLockType) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IRealTimeStylusSynchronization {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2861034168, data2: 43850, data3: 19690, data4: [181, 203, 70, 216, 76, 106, 37, 9] };
+}
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISketchInk {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISketchInk {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3025548936, data2: 39147, data3: 17990, data4: [178, 121, 68, 218, 20, 212, 87, 72] };
 }
 #[repr(C)]
 pub struct IStrokeBuilder {
@@ -3534,9 +3729,15 @@ pub struct IStrokeBuilder {
     #[cfg(not(feature = "Win32_System_Com"))]
     putref_Ink: usize,
 }
+impl ::windows_sys::core::Interface for IStrokeBuilder {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2784841261, data2: 50251, data3: 16530, data4: [145, 119, 38, 9, 5, 235, 103, 43] };
+}
 #[repr(C)]
 pub struct IStylusAsyncPlugin {
     pub base__: IStylusPlugin,
+}
+impl ::windows_sys::core::Interface for IStylusAsyncPlugin {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2815207514, data2: 12732, data3: 19666, data4: [170, 220, 50, 137, 163, 175, 17, 200] };
 }
 #[repr(C)]
 pub struct IStylusPlugin {
@@ -3580,9 +3781,15 @@ pub struct IStylusPlugin {
     pub UpdateMapping: unsafe extern "system" fn(this: *mut *mut Self, pirtssrc: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub DataInterest: unsafe extern "system" fn(this: *mut *mut Self, pdatainterest: *mut RealTimeStylusDataInterest) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IStylusPlugin {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2819897048, data2: 18263, data3: 20433, data4: [161, 133, 19, 63, 151, 198, 197, 69] };
+}
 #[repr(C)]
 pub struct IStylusSyncPlugin {
     pub base__: IStylusPlugin,
+}
+impl ::windows_sys::core::Interface for IStylusSyncPlugin {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2706878836, data2: 18479, data3: 19825, data4: [163, 246, 58, 65, 221, 209, 27, 233] };
 }
 #[repr(C)]
 pub struct ITextInputPanel {
@@ -3637,6 +3844,9 @@ pub struct ITextInputPanel {
     pub Advise: unsafe extern "system" fn(this: *mut *mut Self, eventsink: *mut ::core::ffi::c_void, eventmask: u32) -> ::windows_sys::core::HRESULT,
     pub Unadvise: unsafe extern "system" fn(this: *mut *mut Self, eventsink: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ITextInputPanel {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1802134949, data2: 27379, data3: 18114, data4: [182, 234, 86, 205, 31, 128, 223, 113] };
+}
 #[repr(C)]
 pub struct ITextInputPanelEventSink {
     pub base__: ::windows_sys::core::IUnknown,
@@ -3671,6 +3881,9 @@ pub struct ITextInputPanelEventSink {
     #[cfg(not(feature = "Win32_System_Com"))]
     TextInserted: usize,
 }
+impl ::windows_sys::core::Interface for ITextInputPanelEventSink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 659948552, data2: 36452, data3: 20449, data4: [128, 78, 66, 18, 1, 88, 75, 49] };
+}
 #[repr(C)]
 pub struct ITextInputPanelRunInfo {
     pub base__: ::windows_sys::core::IUnknown,
@@ -3678,6 +3891,9 @@ pub struct ITextInputPanelRunInfo {
     pub IsTipRunning: unsafe extern "system" fn(this: *mut *mut Self, pfrunning: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     IsTipRunning: usize,
+}
+impl ::windows_sys::core::Interface for ITextInputPanelRunInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2671920488, data2: 6432, data3: 18636, data4: [152, 17, 169, 147, 203, 245, 173, 186] };
 }
 #[repr(C)]
 pub struct ITipAutoCompleteClient {
@@ -3700,6 +3916,9 @@ pub struct ITipAutoCompleteClient {
     #[cfg(not(feature = "Win32_Foundation"))]
     RequestShowUI: usize,
 }
+impl ::windows_sys::core::Interface for ITipAutoCompleteClient {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1577553411, data2: 33381, data3: 19390, data4: [148, 135, 210, 66, 237, 190, 249, 16] };
+}
 #[repr(C)]
 pub struct ITipAutoCompleteProvider {
     pub base__: ::windows_sys::core::IUnknown,
@@ -3711,6 +3930,9 @@ pub struct ITipAutoCompleteProvider {
     pub Show: unsafe extern "system" fn(this: *mut *mut Self, fshow: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     Show: usize,
+}
+impl ::windows_sys::core::Interface for ITipAutoCompleteProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2087515245, data2: 33796, data3: 18105, data4: [173, 51, 245, 182, 3, 109, 64, 7] };
 }
 #[doc = "*Required features: `\"Win32_UI_TabletPC\"`*"]
 pub type InPlaceDirection = i32;
@@ -4985,9 +5207,17 @@ pub struct _IInkCollectorEvents {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for _IInkCollectorEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 296059890, data2: 28973, data3: 20458, data4: [171, 207, 171, 74, 243, 142, 160, 107] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct _IInkEditEvents {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for _IInkEditEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3820009367, data2: 42798, data3: 18139, data4: [160, 215, 108, 158, 186, 142, 155, 188] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -4995,9 +5225,17 @@ pub struct _IInkEvents {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for _IInkEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1115363429, data2: 51775, data3: 18330, data4: [131, 169, 15, 66, 15, 42, 0, 115] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct _IInkOverlayEvents {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for _IInkOverlayEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 823630697, data2: 58723, data3: 18590, data4: [177, 111, 113, 47, 30, 138, 6, 81] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -5005,9 +5243,17 @@ pub struct _IInkPictureEvents {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for _IInkPictureEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1627344878, data2: 8959, data3: 17540, data4: [172, 193, 211, 8, 217, 205, 126, 163] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct _IInkRecognitionEvents {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for _IInkRecognitionEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 398256431, data2: 11809, data3: 18429, data4: [157, 51, 60, 106, 251, 253, 140, 89] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -5015,14 +5261,26 @@ pub struct _IInkStrokesEvents {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for _IInkStrokesEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4080030700, data2: 23845, data3: 17162, data4: [146, 143, 118, 166, 73, 29, 222, 21] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct _IMathInputControlEvents {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for _IMathInputControlEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1748186805, data2: 42109, data3: 17240, data4: [150, 249, 135, 90, 71, 42, 231, 10] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct _IPenInputPanelEvents {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for _IPenInputPanelEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3085208026, data2: 14105, data3: 17311, data4: [132, 143, 231, 172, 189, 130, 15, 23] };
 }
 #[doc = "*Required features: `\"Win32_UI_TabletPC\"`*"]
 pub type enumGetCandidateFlags = i32;

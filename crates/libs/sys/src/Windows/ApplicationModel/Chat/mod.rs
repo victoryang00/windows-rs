@@ -236,6 +236,9 @@ pub struct IChatCapabilities {
     pub IsGeoLocationPushCapable: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub IsIntegratedMessagingCapable: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IChatCapabilities {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 989820860, data2: 14793, data3: 19921, data4: [173, 45, 57, 100, 221, 157, 64, 63] };
+}
 #[repr(C)]
 pub struct IChatCapabilitiesManagerStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -248,6 +251,9 @@ pub struct IChatCapabilitiesManagerStatics {
     #[cfg(not(feature = "Foundation"))]
     GetCapabilitiesFromNetworkAsync: usize,
 }
+impl ::windows_sys::core::Interface for IChatCapabilitiesManagerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3044683568, data2: 28737, data3: 17806, data4: [176, 207, 124, 13, 159, 234, 51, 58] };
+}
 #[repr(C)]
 pub struct IChatCapabilitiesManagerStatics2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -259,6 +265,9 @@ pub struct IChatCapabilitiesManagerStatics2 {
     pub GetCapabilitiesFromNetworkForTransportAsync: unsafe extern "system" fn(this: *mut *mut Self, address: ::windows_sys::core::HSTRING, transportid: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     GetCapabilitiesFromNetworkForTransportAsync: usize,
+}
+impl ::windows_sys::core::Interface for IChatCapabilitiesManagerStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3809297012, data2: 54721, data3: 19145, data4: [159, 252, 64, 230, 145, 132, 254, 200] };
 }
 #[repr(C)]
 pub struct IChatConversation {
@@ -303,11 +312,17 @@ pub struct IChatConversation {
     #[cfg(not(feature = "Foundation"))]
     RemoveRemoteParticipantComposingChanged: usize,
 }
+impl ::windows_sys::core::Interface for IChatConversation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2777417741, data2: 6767, data3: 18140, data4: [143, 61, 245, 2, 134, 96, 182, 238] };
+}
 #[repr(C)]
 pub struct IChatConversation2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub CanModifyParticipants: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub SetCanModifyParticipants: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IChatConversation2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 167972049, data2: 38970, data3: 18346, data4: [154, 144, 238, 72, 238, 153, 123, 89] };
 }
 #[repr(C)]
 pub struct IChatConversationReader {
@@ -320,6 +335,9 @@ pub struct IChatConversationReader {
     pub ReadBatchWithCountAsync: unsafe extern "system" fn(this: *mut *mut Self, count: i32, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     ReadBatchWithCountAsync: usize,
+}
+impl ::windows_sys::core::Interface for IChatConversationReader {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 89208530, data2: 56882, data3: 19015, data4: [169, 58, 179, 220, 8, 51, 133, 43] };
 }
 #[repr(C)]
 pub struct IChatConversationThreadingInfo {
@@ -337,10 +355,16 @@ pub struct IChatConversationThreadingInfo {
     pub Kind: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ChatConversationThreadingKind) -> ::windows_sys::core::HRESULT,
     pub SetKind: unsafe extern "system" fn(this: *mut *mut Self, value: ChatConversationThreadingKind) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IChatConversationThreadingInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 857481692, data2: 31239, data3: 17442, data4: [163, 44, 36, 190, 124, 109, 171, 36] };
+}
 #[repr(C)]
 pub struct IChatItem {
     pub base__: ::windows_sys::core::IInspectable,
     pub ItemKind: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ChatItemKind) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IChatItem {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2270285824, data2: 52913, data3: 16963, data4: [184, 3, 21, 212, 90, 29, 212, 40] };
 }
 #[repr(C)]
 pub struct IChatMessage {
@@ -377,6 +401,9 @@ pub struct IChatMessage {
     pub TransportFriendlyName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub TransportId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub SetTransportId: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IChatMessage {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1262028074, data2: 4418, data3: 20617, data4: [118, 218, 242, 219, 61, 23, 205, 5] };
 }
 #[repr(C)]
 pub struct IChatMessage2 {
@@ -419,16 +446,25 @@ pub struct IChatMessage2 {
     #[cfg(not(feature = "Foundation_Collections"))]
     RecipientsDeliveryInfos: usize,
 }
+impl ::windows_sys::core::Interface for IChatMessage2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2254865202, data2: 21567, data3: 18933, data4: [172, 113, 108, 42, 252, 101, 101, 253] };
+}
 #[repr(C)]
 pub struct IChatMessage3 {
     pub base__: ::windows_sys::core::IInspectable,
     pub RemoteId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IChatMessage3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1961570224, data2: 15271, data3: 17823, data4: [142, 11, 232, 175, 15, 235, 217, 173] };
 }
 #[repr(C)]
 pub struct IChatMessage4 {
     pub base__: ::windows_sys::core::IInspectable,
     pub SyncId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub SetSyncId: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IChatMessage4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 756304655, data2: 53951, data3: 17932, data4: [170, 104, 109, 63, 132, 131, 201, 191] };
 }
 #[repr(C)]
 pub struct IChatMessageAttachment {
@@ -448,6 +484,9 @@ pub struct IChatMessageAttachment {
     pub Text: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub SetText: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IChatMessageAttachment {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3351575924, data2: 48995, data3: 22763, data4: [80, 140, 139, 134, 63, 241, 107, 103] };
+}
 #[repr(C)]
 pub struct IChatMessageAttachment2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -464,6 +503,9 @@ pub struct IChatMessageAttachment2 {
     pub OriginalFileName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub SetOriginalFileName: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IChatMessageAttachment2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1591317104, data2: 32209, data3: 19079, data4: [168, 206, 172, 221, 135, 216, 13, 200] };
+}
 #[repr(C)]
 pub struct IChatMessageAttachmentFactory {
     pub base__: ::windows_sys::core::IInspectable,
@@ -471,6 +513,9 @@ pub struct IChatMessageAttachmentFactory {
     pub CreateChatMessageAttachment: unsafe extern "system" fn(this: *mut *mut Self, mimetype: ::windows_sys::core::HSTRING, datastreamreference: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Storage_Streams"))]
     CreateChatMessageAttachment: usize,
+}
+impl ::windows_sys::core::Interface for IChatMessageAttachmentFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 542659234, data2: 41814, data3: 23409, data4: [108, 169, 102, 201, 133, 183, 208, 213] };
 }
 #[repr(C)]
 pub struct IChatMessageBlockingStatic {
@@ -480,11 +525,17 @@ pub struct IChatMessageBlockingStatic {
     #[cfg(not(feature = "Foundation"))]
     MarkMessageAsBlockedAsync: usize,
 }
+impl ::windows_sys::core::Interface for IChatMessageBlockingStatic {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4139361152, data2: 52714, data3: 4580, data4: [136, 48, 8, 0, 32, 12, 154, 102] };
+}
 #[repr(C)]
 pub struct IChatMessageChange {
     pub base__: ::windows_sys::core::IInspectable,
     pub ChangeType: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ChatMessageChangeType) -> ::windows_sys::core::HRESULT,
     pub Message: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IChatMessageChange {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 471384917, data2: 16926, data3: 21688, data4: [109, 56, 107, 58, 108, 130, 252, 204] };
 }
 #[repr(C)]
 pub struct IChatMessageChangeReader {
@@ -496,6 +547,9 @@ pub struct IChatMessageChangeReader {
     #[cfg(not(feature = "Foundation_Collections"))]
     ReadBatchAsync: usize,
 }
+impl ::windows_sys::core::Interface for IChatMessageChangeReader {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 338063392, data2: 10446, data3: 24358, data4: [123, 5, 154, 92, 124, 206, 135, 202] };
+}
 #[repr(C)]
 pub struct IChatMessageChangeTracker {
     pub base__: ::windows_sys::core::IInspectable,
@@ -503,15 +557,24 @@ pub struct IChatMessageChangeTracker {
     pub GetChangeReader: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IChatMessageChangeTracker {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1622667366, data2: 28832, data3: 21028, data4: [80, 140, 36, 46, 247, 193, 208, 111] };
+}
 #[repr(C)]
 pub struct IChatMessageChangedDeferral {
     pub base__: ::windows_sys::core::IInspectable,
     pub Complete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IChatMessageChangedDeferral {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4224103180, data2: 30860, data3: 19916, data4: [172, 231, 98, 130, 56, 41, 104, 207] };
+}
 #[repr(C)]
 pub struct IChatMessageChangedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub GetDeferral: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IChatMessageChangedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3065462317, data2: 26908, data3: 20191, data4: [134, 96, 110, 185, 137, 104, 146, 227] };
 }
 #[repr(C)]
 pub struct IChatMessageManager2Statics {
@@ -524,6 +587,9 @@ pub struct IChatMessageManager2Statics {
     pub GetTransportAsync: unsafe extern "system" fn(this: *mut *mut Self, transportid: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     GetTransportAsync: usize,
+}
+impl ::windows_sys::core::Interface for IChatMessageManager2Statics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 491075855, data2: 40783, data3: 20021, data4: [150, 78, 27, 156, 166, 26, 192, 68] };
 }
 #[repr(C)]
 pub struct IChatMessageManagerStatic {
@@ -542,6 +608,9 @@ pub struct IChatMessageManagerStatic {
     ShowComposeSmsMessageAsync: usize,
     pub ShowSmsSettings: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IChatMessageManagerStatic {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4049363191, data2: 54760, data3: 24210, data4: [85, 109, 224, 59, 96, 37, 49, 4] };
+}
 #[repr(C)]
 pub struct IChatMessageManagerStatics3 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -550,10 +619,16 @@ pub struct IChatMessageManagerStatics3 {
     #[cfg(not(feature = "Foundation"))]
     RequestSyncManagerAsync: usize,
 }
+impl ::windows_sys::core::Interface for IChatMessageManagerStatics3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 546013965, data2: 26453, data3: 18636, data4: [154, 179, 253, 3, 196, 99, 252, 146] };
+}
 #[repr(C)]
 pub struct IChatMessageNotificationTriggerDetails {
     pub base__: ::windows_sys::core::IInspectable,
     pub ChatMessage: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IChatMessageNotificationTriggerDetails {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4248063483, data2: 12387, data3: 19991, data4: [133, 134, 198, 192, 130, 98, 230, 192] };
 }
 #[repr(C)]
 pub struct IChatMessageNotificationTriggerDetails2 {
@@ -563,6 +638,9 @@ pub struct IChatMessageNotificationTriggerDetails2 {
     pub ShouldUpdateBadge: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub ShouldUpdateActionCenter: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IChatMessageNotificationTriggerDetails2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1807033056, data2: 43527, data3: 20433, data4: [148, 113, 119, 147, 79, 183, 94, 230] };
+}
 #[repr(C)]
 pub struct IChatMessageReader {
     pub base__: ::windows_sys::core::IInspectable,
@@ -571,6 +649,9 @@ pub struct IChatMessageReader {
     #[cfg(not(feature = "Foundation_Collections"))]
     ReadBatchAsync: usize,
 }
+impl ::windows_sys::core::Interface for IChatMessageReader {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3068819662, data2: 17545, data3: 22265, data4: [118, 170, 226, 4, 104, 37, 20, 207] };
+}
 #[repr(C)]
 pub struct IChatMessageReader2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -578,6 +659,9 @@ pub struct IChatMessageReader2 {
     pub ReadBatchWithCountAsync: unsafe extern "system" fn(this: *mut *mut Self, count: i32, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     ReadBatchWithCountAsync: usize,
+}
+impl ::windows_sys::core::Interface for IChatMessageReader2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2305046147, data2: 25787, data3: 18189, data4: [157, 244, 13, 232, 190, 26, 5, 191] };
 }
 #[repr(C)]
 pub struct IChatMessageStore {
@@ -621,6 +705,9 @@ pub struct IChatMessageStore {
     pub RemoveMessageChanged: unsafe extern "system" fn(this: *mut *mut Self, value: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     RemoveMessageChanged: usize,
+}
+impl ::windows_sys::core::Interface for IChatMessageStore {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 838008065, data2: 52470, data3: 22539, data4: [73, 118, 10, 7, 221, 93, 59, 71] };
 }
 #[repr(C)]
 pub struct IChatMessageStore2 {
@@ -688,6 +775,9 @@ pub struct IChatMessageStore2 {
     #[cfg(not(feature = "Foundation"))]
     RemoveStoreChanged: usize,
 }
+impl ::windows_sys::core::Interface for IChatMessageStore2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2907555054, data2: 15060, data3: 18715, data4: [179, 17, 171, 223, 155, 178, 39, 104] };
+}
 #[repr(C)]
 pub struct IChatMessageStore3 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -696,11 +786,17 @@ pub struct IChatMessageStore3 {
     #[cfg(not(feature = "Foundation"))]
     GetMessageBySyncIdAsync: usize,
 }
+impl ::windows_sys::core::Interface for IChatMessageStore3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2598091529, data2: 17221, data3: 20161, data4: [139, 116, 183, 51, 130, 67, 113, 156] };
+}
 #[repr(C)]
 pub struct IChatMessageStoreChangedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub Id: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub Kind: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ChatStoreChangedEventKind) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IChatMessageStoreChangedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1707503532, data2: 65164, data3: 18132, data4: [145, 25, 87, 184, 65, 3, 17, 213] };
 }
 #[repr(C)]
 pub struct IChatMessageTransport {
@@ -714,11 +810,17 @@ pub struct IChatMessageTransport {
     #[cfg(not(feature = "Foundation"))]
     RequestSetAsNotificationProviderAsync: usize,
 }
+impl ::windows_sys::core::Interface for IChatMessageTransport {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1672076280, data2: 59059, data3: 23706, data4: [95, 133, 212, 121, 37, 185, 189, 24] };
+}
 #[repr(C)]
 pub struct IChatMessageTransport2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub Configuration: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub TransportKind: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ChatMessageTransportKind) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IChatMessageTransport2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2426885666, data2: 55370, data3: 19490, data4: [169, 77, 84, 68, 68, 237, 200, 161] };
 }
 #[repr(C)]
 pub struct IChatMessageTransportConfiguration {
@@ -734,6 +836,9 @@ pub struct IChatMessageTransportConfiguration {
     pub ExtendedProperties: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     ExtendedProperties: usize,
+}
+impl ::windows_sys::core::Interface for IChatMessageTransportConfiguration {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2275407653, data2: 6664, data3: 19146, data4: [160, 117, 51, 85, 18, 99, 18, 230] };
 }
 #[repr(C)]
 pub struct IChatMessageValidationResult {
@@ -752,11 +857,17 @@ pub struct IChatMessageValidationResult {
     RemainingCharacterCountInPart: usize,
     pub Status: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ChatMessageValidationStatus) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IChatMessageValidationResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 636041731, data2: 10476, data3: 22665, data4: [86, 155, 126, 72, 107, 18, 111, 24] };
+}
 #[repr(C)]
 pub struct IChatQueryOptions {
     pub base__: ::windows_sys::core::IInspectable,
     pub SearchString: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub SetSearchString: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IChatQueryOptions {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 802383014, data2: 48950, data3: 17143, data4: [183, 231, 146, 60, 10, 171, 254, 22] };
 }
 #[repr(C)]
 pub struct IChatRecipientDeliveryInfo {
@@ -785,6 +896,9 @@ pub struct IChatRecipientDeliveryInfo {
     pub IsErrorPermanent: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub Status: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ChatMessageStatus) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IChatRecipientDeliveryInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4291277474, data2: 10300, data3: 19466, data4: [138, 14, 140, 51, 189, 191, 5, 69] };
+}
 #[repr(C)]
 pub struct IChatSearchReader {
     pub base__: ::windows_sys::core::IInspectable,
@@ -797,6 +911,9 @@ pub struct IChatSearchReader {
     #[cfg(not(feature = "Foundation_Collections"))]
     ReadBatchWithCountAsync: usize,
 }
+impl ::windows_sys::core::Interface for IChatSearchReader {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1181089353, data2: 36896, data3: 18258, data4: [152, 13, 57, 97, 35, 37, 245, 137] };
+}
 #[repr(C)]
 pub struct IChatSyncConfiguration {
     pub base__: ::windows_sys::core::IInspectable,
@@ -804,6 +921,9 @@ pub struct IChatSyncConfiguration {
     pub SetIsSyncEnabled: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
     pub RestoreHistorySpan: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ChatRestoreHistorySpan) -> ::windows_sys::core::HRESULT,
     pub SetRestoreHistorySpan: unsafe extern "system" fn(this: *mut *mut Self, value: ChatRestoreHistorySpan) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IChatSyncConfiguration {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 167274930, data2: 27124, data3: 19199, data4: [130, 182, 6, 153, 47, 244, 2, 210] };
 }
 #[repr(C)]
 pub struct IChatSyncManager {
@@ -827,6 +947,9 @@ pub struct IChatSyncManager {
     #[cfg(not(feature = "Foundation"))]
     SetConfigurationAsync: usize,
 }
+impl ::windows_sys::core::Interface for IChatSyncManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2074422371, data2: 9808, data3: 18543, data4: [180, 180, 107, 217, 211, 214, 60, 132] };
+}
 #[repr(C)]
 pub struct IRcsEndUserMessage {
     pub base__: ::windows_sys::core::IInspectable,
@@ -847,10 +970,16 @@ pub struct IRcsEndUserMessage {
     #[cfg(not(feature = "Foundation"))]
     SendResponseWithPinAsync: usize,
 }
+impl ::windows_sys::core::Interface for IRcsEndUserMessage {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3620578795, data2: 52183, data3: 20283, data4: [133, 38, 181, 6, 222, 195, 92, 83] };
+}
 #[repr(C)]
 pub struct IRcsEndUserMessageAction {
     pub base__: ::windows_sys::core::IInspectable,
     pub Label: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IRcsEndUserMessageAction {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2453112631, data2: 39746, data3: 18131, data4: [157, 94, 60, 27, 45, 174, 124, 184] };
 }
 #[repr(C)]
 pub struct IRcsEndUserMessageAvailableEventArgs {
@@ -858,11 +987,17 @@ pub struct IRcsEndUserMessageAvailableEventArgs {
     pub IsMessageAvailable: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub Message: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IRcsEndUserMessageAvailableEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 759541249, data2: 16265, data3: 16874, data4: [151, 2, 158, 158, 212, 17, 170, 152] };
+}
 #[repr(C)]
 pub struct IRcsEndUserMessageAvailableTriggerDetails {
     pub base__: ::windows_sys::core::IInspectable,
     pub Title: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub Text: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IRcsEndUserMessageAvailableTriggerDetails {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1536652333, data2: 13599, data3: 18066, data4: [180, 30, 27, 3, 93, 193, 137, 134] };
 }
 #[repr(C)]
 pub struct IRcsEndUserMessageManager {
@@ -875,6 +1010,9 @@ pub struct IRcsEndUserMessageManager {
     pub RemoveMessageAvailableChanged: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     RemoveMessageAvailableChanged: usize,
+}
+impl ::windows_sys::core::Interface for IRcsEndUserMessageManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810856026, data2: 19743, data3: 19289, data4: [148, 51, 18, 108, 115, 78, 134, 166] };
 }
 #[repr(C)]
 pub struct IRcsManagerStatics {
@@ -893,6 +1031,9 @@ pub struct IRcsManagerStatics {
     #[cfg(not(feature = "Foundation"))]
     LeaveConversationAsync: usize,
 }
+impl ::windows_sys::core::Interface for IRcsManagerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2099710661, data2: 2749, data3: 20273, data4: [155, 153, 165, 158, 113, 167, 183, 49] };
+}
 #[repr(C)]
 pub struct IRcsManagerStatics2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -905,10 +1046,16 @@ pub struct IRcsManagerStatics2 {
     #[cfg(not(feature = "Foundation"))]
     RemoveTransportListChanged: usize,
 }
+impl ::windows_sys::core::Interface for IRcsManagerStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3444157720, data2: 44426, data3: 17066, data4: [142, 235, 167, 152, 168, 128, 137, 89] };
+}
 #[repr(C)]
 pub struct IRcsServiceKindSupportedChangedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub ServiceKind: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut RcsServiceKind) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IRcsServiceKindSupportedChangedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4101939780, data2: 59267, data3: 18534, data4: [179, 167, 78, 92, 207, 2, 48, 112] };
 }
 #[repr(C)]
 pub struct IRcsTransport {
@@ -932,6 +1079,9 @@ pub struct IRcsTransport {
     #[cfg(not(feature = "Foundation"))]
     RemoveServiceKindSupportedChanged: usize,
 }
+impl ::windows_sys::core::Interface for IRcsTransport {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4272113497, data2: 62332, data3: 17177, data4: [133, 70, 236, 132, 210, 29, 48, 255] };
+}
 #[repr(C)]
 pub struct IRcsTransportConfiguration {
     pub base__: ::windows_sys::core::IInspectable,
@@ -942,12 +1092,18 @@ pub struct IRcsTransportConfiguration {
     pub MaxFileSizeInKilobytes: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i32) -> ::windows_sys::core::HRESULT,
     pub WarningFileSizeInKilobytes: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IRcsTransportConfiguration {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 533508354, data2: 9330, data3: 19385, data4: [153, 136, 193, 33, 28, 131, 232, 169] };
+}
 #[repr(C)]
 pub struct IRemoteParticipantComposingChangedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub TransportId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub ParticipantAddress: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub IsComposing: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IRemoteParticipantComposingChangedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 515917223, data2: 53193, data3: 17865, data4: [152, 118, 68, 159, 43, 193, 128, 245] };
 }
 pub type RcsEndUserMessage = *mut ::core::ffi::c_void;
 pub type RcsEndUserMessageAction = *mut ::core::ffi::c_void;

@@ -63,3 +63,6 @@ pub struct ICryptographicBufferStatics {
     #[cfg(not(feature = "Storage_Streams"))]
     ConvertBinaryToString: usize,
 }
+impl ::windows_sys::core::Interface for ICryptographicBufferStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 839613986, data2: 15536, data3: 19679, data4: [134, 99, 29, 40, 145, 0, 101, 235] };
+}

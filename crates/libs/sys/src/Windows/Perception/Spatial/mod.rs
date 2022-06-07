@@ -16,10 +16,16 @@ pub struct ISpatialAnchor {
     #[cfg(not(feature = "Foundation"))]
     RemoveRawCoordinateSystemAdjusted: usize,
 }
+impl ::windows_sys::core::Interface for ISpatialAnchor {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 86631886, data2: 7476, data3: 14082, data4: [188, 236, 234, 191, 245, 120, 168, 105] };
+}
 #[repr(C)]
 pub struct ISpatialAnchor2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub RemovedByUser: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISpatialAnchor2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3977758984, data2: 42645, data3: 19702, data4: [146, 253, 151, 38, 59, 167, 16, 71] };
 }
 #[repr(C)]
 pub struct ISpatialAnchorExportSufficiency {
@@ -27,6 +33,9 @@ pub struct ISpatialAnchorExportSufficiency {
     pub IsMinimallySufficient: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub SufficiencyLevel: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f64) -> ::windows_sys::core::HRESULT,
     pub RecommendedSufficiencyLevel: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f64) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISpatialAnchorExportSufficiency {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2009226027, data2: 13321, data3: 16520, data4: [185, 27, 253, 253, 5, 209, 100, 143] };
 }
 #[repr(C)]
 pub struct ISpatialAnchorExporter {
@@ -40,6 +49,9 @@ pub struct ISpatialAnchorExporter {
     #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
     TryExportAnchorAsync: usize,
 }
+impl ::windows_sys::core::Interface for ISpatialAnchorExporter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2586460984, data2: 9467, data3: 17001, data4: [137, 197, 136, 48, 74, 238, 242, 15] };
+}
 #[repr(C)]
 pub struct ISpatialAnchorExporterStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -49,6 +61,9 @@ pub struct ISpatialAnchorExporterStatics {
     #[cfg(not(feature = "Foundation"))]
     RequestAccessAsync: usize,
 }
+impl ::windows_sys::core::Interface for ISpatialAnchorExporterStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3978627000, data2: 9333, data3: 17308, data4: [133, 255, 127, 237, 52, 31, 220, 136] };
+}
 #[repr(C)]
 pub struct ISpatialAnchorManagerStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -57,6 +72,9 @@ pub struct ISpatialAnchorManagerStatics {
     #[cfg(not(feature = "Foundation"))]
     RequestStoreAsync: usize,
 }
+impl ::windows_sys::core::Interface for ISpatialAnchorManagerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2296581803, data2: 62391, data3: 16907, data4: [176, 134, 138, 128, 192, 125, 145, 13] };
+}
 #[repr(C)]
 pub struct ISpatialAnchorRawCoordinateSystemAdjustedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
@@ -64,6 +82,9 @@ pub struct ISpatialAnchorRawCoordinateSystemAdjustedEventArgs {
     pub OldRawCoordinateSystemToNewRawCoordinateSystemTransform: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Foundation::Numerics::Matrix4x4) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Numerics"))]
     OldRawCoordinateSystemToNewRawCoordinateSystemTransform: usize,
+}
+impl ::windows_sys::core::Interface for ISpatialAnchorRawCoordinateSystemAdjustedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2716343992, data2: 22215, data3: 12567, data4: [162, 228, 129, 224, 252, 242, 142, 0] };
 }
 #[repr(C)]
 pub struct ISpatialAnchorStatics {
@@ -78,6 +99,9 @@ pub struct ISpatialAnchorStatics {
     #[cfg(not(feature = "Foundation_Numerics"))]
     TryCreateWithPositionAndOrientationRelativeTo: usize,
 }
+impl ::windows_sys::core::Interface for ISpatialAnchorStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2844952130, data2: 372, data3: 12572, data4: [174, 121, 14, 81, 7, 102, 159, 22] };
+}
 #[repr(C)]
 pub struct ISpatialAnchorStore {
     pub base__: ::windows_sys::core::IInspectable,
@@ -88,6 +112,9 @@ pub struct ISpatialAnchorStore {
     pub TrySave: unsafe extern "system" fn(this: *mut *mut Self, id: ::windows_sys::core::HSTRING, anchor: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub Remove: unsafe extern "system" fn(this: *mut *mut Self, id: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub Clear: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISpatialAnchorStore {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2965124662, data2: 18538, data3: 15536, data4: [158, 111, 18, 69, 22, 92, 77, 182] };
 }
 #[cfg(feature = "deprecated")]
 #[repr(C)]
@@ -106,9 +133,16 @@ pub struct ISpatialAnchorTransferManagerStatics {
     #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
     RequestAccessAsync: usize,
 }
+#[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for ISpatialAnchorTransferManagerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 62650809, data2: 4824, data3: 19406, data4: [136, 53, 197, 223, 58, 192, 173, 171] };
+}
 #[repr(C)]
 pub struct ISpatialBoundingVolume {
     pub base__: ::windows_sys::core::IInspectable,
+}
+impl ::windows_sys::core::Interface for ISpatialBoundingVolume {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4213204442, data2: 26819, data3: 13279, data4: [183, 175, 76, 120, 114, 7, 153, 156] };
 }
 #[repr(C)]
 pub struct ISpatialBoundingVolumeStatics {
@@ -130,6 +164,9 @@ pub struct ISpatialBoundingVolumeStatics {
     #[cfg(not(feature = "Foundation_Numerics"))]
     FromFrustum: usize,
 }
+impl ::windows_sys::core::Interface for ISpatialBoundingVolumeStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 92836119, data2: 46049, data3: 14040, data4: [176, 23, 86, 97, 129, 165, 177, 150] };
+}
 #[repr(C)]
 pub struct ISpatialCoordinateSystem {
     pub base__: ::windows_sys::core::IInspectable,
@@ -137,6 +174,9 @@ pub struct ISpatialCoordinateSystem {
     pub TryGetTransformTo: unsafe extern "system" fn(this: *mut *mut Self, target: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Numerics"))]
     TryGetTransformTo: usize,
+}
+impl ::windows_sys::core::Interface for ISpatialCoordinateSystem {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1777060427, data2: 24739, data3: 13702, data4: [166, 83, 89, 167, 189, 103, 109, 7] };
 }
 #[repr(C)]
 pub struct ISpatialEntity {
@@ -148,10 +188,16 @@ pub struct ISpatialEntity {
     #[cfg(not(feature = "Foundation_Collections"))]
     Properties: usize,
 }
+impl ::windows_sys::core::Interface for ISpatialEntity {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 376301909, data2: 57835, data3: 17740, data4: [186, 8, 230, 192, 102, 141, 220, 101] };
+}
 #[repr(C)]
 pub struct ISpatialEntityAddedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub Entity: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISpatialEntityAddedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2744644763, data2: 5482, data3: 18183, data4: [172, 44, 211, 29, 87, 14, 211, 153] };
 }
 #[repr(C)]
 pub struct ISpatialEntityFactory {
@@ -162,10 +208,16 @@ pub struct ISpatialEntityFactory {
     #[cfg(not(feature = "Foundation_Collections"))]
     CreateWithSpatialAnchorAndProperties: usize,
 }
+impl ::windows_sys::core::Interface for ISpatialEntityFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3790725925, data2: 13471, data3: 16933, data4: [162, 243, 75, 1, 193, 95, 224, 86] };
+}
 #[repr(C)]
 pub struct ISpatialEntityRemovedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub Entity: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISpatialEntityRemovedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2440304640, data2: 21357, data3: 20127, data4: [171, 246, 65, 91, 84, 68, 214, 81] };
 }
 #[repr(C)]
 pub struct ISpatialEntityStore {
@@ -180,6 +232,9 @@ pub struct ISpatialEntityStore {
     RemoveAsync: usize,
     pub CreateEntityWatcher: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISpatialEntityStore {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 848791738, data2: 58643, data3: 20230, data4: [136, 157, 27, 227, 14, 207, 67, 230] };
+}
 #[repr(C)]
 pub struct ISpatialEntityStoreStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -189,10 +244,16 @@ pub struct ISpatialEntityStoreStatics {
     #[cfg(not(feature = "System_RemoteSystems"))]
     TryGetForRemoteSystemSession: usize,
 }
+impl ::windows_sys::core::Interface for ISpatialEntityStoreStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1800091806, data2: 31824, data3: 20114, data4: [138, 98, 77, 29, 75, 124, 205, 62] };
+}
 #[repr(C)]
 pub struct ISpatialEntityUpdatedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub Entity: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISpatialEntityUpdatedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3848738662, data2: 25211, data3: 17355, data4: [164, 159, 179, 190, 109, 71, 222, 237] };
 }
 #[repr(C)]
 pub struct ISpatialEntityWatcher {
@@ -233,6 +294,9 @@ pub struct ISpatialEntityWatcher {
     pub Start: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Stop: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISpatialEntityWatcher {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3015204768, data2: 27998, data3: 19388, data4: [128, 93, 95, 229, 185, 186, 25, 89] };
+}
 #[repr(C)]
 pub struct ISpatialLocation {
     pub base__: ::windows_sys::core::IInspectable,
@@ -261,6 +325,9 @@ pub struct ISpatialLocation {
     #[cfg(not(all(feature = "Foundation_Numerics", feature = "deprecated")))]
     AbsoluteAngularAcceleration: usize,
 }
+impl ::windows_sys::core::Interface for ISpatialLocation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 495047325, data2: 9377, data3: 14293, data4: [143, 161, 57, 180, 249, 173, 103, 226] };
+}
 #[repr(C)]
 pub struct ISpatialLocation2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -272,6 +339,9 @@ pub struct ISpatialLocation2 {
     pub AbsoluteAngularAccelerationAxisAngle: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Foundation::Numerics::Vector3) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Numerics"))]
     AbsoluteAngularAccelerationAxisAngle: usize,
+}
+impl ::windows_sys::core::Interface for ISpatialLocation2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 293544982, data2: 14503, data3: 18968, data4: [180, 4, 171, 143, 171, 225, 215, 139] };
 }
 #[repr(C)]
 pub struct ISpatialLocator {
@@ -321,6 +391,9 @@ pub struct ISpatialLocator {
     #[cfg(not(feature = "Foundation_Numerics"))]
     CreateStationaryFrameOfReferenceAtCurrentLocationWithPositionAndOrientationAndRelativeHeading: usize,
 }
+impl ::windows_sys::core::Interface for ISpatialLocator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4131883301, data2: 40460, data3: 15286, data4: [153, 126, 182, 78, 204, 162, 76, 244] };
+}
 #[repr(C)]
 pub struct ISpatialLocatorAttachedFrameOfReference {
     pub base__: ::windows_sys::core::IInspectable,
@@ -347,16 +420,25 @@ pub struct ISpatialLocatorAttachedFrameOfReference {
     #[cfg(not(feature = "Foundation"))]
     TryGetRelativeHeadingAtTimestamp: usize,
 }
+impl ::windows_sys::core::Interface for ISpatialLocatorAttachedFrameOfReference {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3782692598, data2: 8015, data3: 18844, data4: [150, 37, 239, 94, 110, 215, 160, 72] };
+}
 #[repr(C)]
 pub struct ISpatialLocatorPositionalTrackingDeactivatingEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub Canceled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub SetCanceled: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISpatialLocatorPositionalTrackingDeactivatingEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3098034275, data2: 58356, data3: 13963, data4: [144, 97, 158, 169, 209, 214, 204, 22] };
+}
 #[repr(C)]
 pub struct ISpatialLocatorStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub GetDefault: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISpatialLocatorStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3077452608, data2: 42946, data3: 13851, data4: [187, 130, 86, 233, 59, 137, 177, 187] };
 }
 #[repr(C)]
 pub struct ISpatialStageFrameOfReference {
@@ -369,6 +451,9 @@ pub struct ISpatialStageFrameOfReference {
     pub TryGetMovementBounds: unsafe extern "system" fn(this: *mut *mut Self, coordinatesystem: *mut ::core::ffi::c_void, result_size__: *mut u32, result__: *mut *mut super::super::Foundation::Numerics::Vector3) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Numerics"))]
     TryGetMovementBounds: usize,
+}
+impl ::windows_sys::core::Interface for ISpatialStageFrameOfReference {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2055877732, data2: 44301, data3: 17808, data4: [171, 134, 51, 6, 43, 103, 73, 38] };
 }
 #[repr(C)]
 pub struct ISpatialStageFrameOfReferenceStatics {
@@ -387,10 +472,16 @@ pub struct ISpatialStageFrameOfReferenceStatics {
     #[cfg(not(feature = "Foundation"))]
     RequestNewStageAsync: usize,
 }
+impl ::windows_sys::core::Interface for ISpatialStageFrameOfReferenceStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4153236557, data2: 41124, data3: 18844, data4: [141, 145, 168, 201, 101, 212, 6, 84] };
+}
 #[repr(C)]
 pub struct ISpatialStationaryFrameOfReference {
     pub base__: ::windows_sys::core::IInspectable,
     pub CoordinateSystem: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISpatialStationaryFrameOfReference {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 165399737, data2: 48376, data3: 15999, data4: [190, 126, 126, 220, 203, 177, 120, 168] };
 }
 pub type SpatialAnchor = *mut ::core::ffi::c_void;
 #[doc = "*Required features: `\"Perception_Spatial\"`*"]

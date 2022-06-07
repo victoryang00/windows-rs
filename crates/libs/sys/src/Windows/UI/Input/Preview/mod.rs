@@ -8,3 +8,6 @@ pub struct IInputActivationListenerPreviewStatics {
     #[cfg(not(feature = "UI_WindowManagement"))]
     CreateForApplicationWindow: usize,
 }
+impl ::windows_sys::core::Interface for IInputActivationListenerPreviewStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4032109797, data2: 3558, data3: 23520, data4: [165, 137, 247, 55, 32, 26, 69, 130] };
+}

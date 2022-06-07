@@ -57,6 +57,9 @@ pub struct IGameService {
     #[cfg(not(feature = "Storage_Streams"))]
     PostResult: usize,
 }
+impl ::windows_sys::core::Interface for IGameService {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 774721688, data2: 18601, data3: 20220, data4: [175, 214, 142, 109, 160, 144, 3, 251] };
+}
 #[repr(C)]
 pub struct IGameService2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -66,6 +69,9 @@ pub struct IGameService2 {
     NotifyPartnerTokenExpired: usize,
     pub GetAuthenticationStatus: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IGameService2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3526774518, data2: 59927, data3: 19429, data4: [141, 138, 200, 96, 136, 94, 5, 31] };
+}
 #[repr(C)]
 pub struct IGameServicePropertyCollection {
     pub base__: ::windows_sys::core::IInspectable,
@@ -73,4 +79,7 @@ pub struct IGameServicePropertyCollection {
     pub GetPropertyAsync: unsafe extern "system" fn(this: *mut *mut Self, propertyname: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     GetPropertyAsync: usize,
+}
+impl ::windows_sys::core::Interface for IGameServicePropertyCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 132480968, data2: 57019, data3: 17929, data4: [156, 200, 82, 157, 22, 188, 43, 217] };
 }

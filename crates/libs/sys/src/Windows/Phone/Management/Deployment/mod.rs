@@ -45,6 +45,9 @@ pub struct IEnterprise {
     EnrollmentValidTo: usize,
     pub Status: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut EnterpriseStatus) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEnterprise {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2522427277, data2: 34156, data3: 17446, data4: [169, 71, 176, 99, 7, 113, 128, 120] };
+}
 #[repr(C)]
 pub struct IEnterpriseEnrollmentManager {
     pub base__: ::windows_sys::core::IInspectable,
@@ -66,11 +69,17 @@ pub struct IEnterpriseEnrollmentManager {
     #[cfg(not(feature = "Foundation"))]
     RequestUnenrollmentAsync: usize,
 }
+impl ::windows_sys::core::Interface for IEnterpriseEnrollmentManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 553251728, data2: 11369, data3: 16856, data4: [136, 230, 228, 179, 136, 64, 38, 203] };
+}
 #[repr(C)]
 pub struct IEnterpriseEnrollmentResult {
     pub base__: ::windows_sys::core::IInspectable,
     pub EnrolledEnterprise: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Status: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut EnterpriseEnrollmentStatus) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IEnterpriseEnrollmentResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2683772134, data2: 37083, data3: 17218, data4: [179, 38, 23, 41, 170, 145, 48, 28] };
 }
 #[repr(C)]
 pub struct IInstallationManagerStatics {
@@ -96,6 +105,9 @@ pub struct IInstallationManagerStatics {
     #[cfg(not(all(feature = "ApplicationModel", feature = "Foundation_Collections")))]
     FindPackages: usize,
 }
+impl ::windows_sys::core::Interface for IInstallationManagerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2459608888, data2: 36169, data3: 17068, data4: [128, 201, 180, 173, 121, 60, 67, 242] };
+}
 #[repr(C)]
 pub struct IInstallationManagerStatics2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -112,6 +124,9 @@ pub struct IInstallationManagerStatics2 {
     #[cfg(not(all(feature = "ApplicationModel", feature = "Foundation_Collections")))]
     FindPackagesByNamePublisher: usize,
 }
+impl ::windows_sys::core::Interface for IInstallationManagerStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2087464125, data2: 64074, data3: 19598, data4: [171, 151, 217, 89, 69, 47, 25, 229] };
+}
 #[repr(C)]
 pub struct IPackageInstallResult {
     pub base__: ::windows_sys::core::IInspectable,
@@ -121,9 +136,15 @@ pub struct IPackageInstallResult {
     #[cfg(not(feature = "Management_Deployment"))]
     InstallState: usize,
 }
+impl ::windows_sys::core::Interface for IPackageInstallResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 870903509, data2: 3966, data3: 17523, data4: [150, 124, 125, 110, 28, 14, 125, 225] };
+}
 #[repr(C)]
 pub struct IPackageInstallResult2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub ErrorText: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPackageInstallResult2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1900665097, data2: 16377, data3: 16877, data4: [167, 23, 43, 198, 95, 252, 97, 210] };
 }
 pub type PackageInstallResult = *mut ::core::ffi::c_void;

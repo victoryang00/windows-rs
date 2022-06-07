@@ -10,6 +10,9 @@ pub struct IPrint3DManager {
     #[cfg(not(feature = "Foundation"))]
     RemoveTaskRequested: usize,
 }
+impl ::windows_sys::core::Interface for IPrint3DManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1294977802, data2: 29542, data3: 18801, data4: [139, 213, 23, 196, 227, 232, 198, 192] };
+}
 #[repr(C)]
 pub struct IPrint3DManagerStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -18,6 +21,9 @@ pub struct IPrint3DManagerStatics {
     pub ShowPrintUIAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     ShowPrintUIAsync: usize,
+}
+impl ::windows_sys::core::Interface for IPrint3DManagerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 250727166, data2: 43437, data3: 19464, data4: [169, 23, 29, 31, 134, 62, 171, 203] };
 }
 #[repr(C)]
 pub struct IPrint3DTask {
@@ -48,31 +54,49 @@ pub struct IPrint3DTask {
     #[cfg(not(feature = "Foundation"))]
     RemoveSourceChanged: usize,
 }
+impl ::windows_sys::core::Interface for IPrint3DTask {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2363740288, data2: 8472, data3: 19496, data4: [128, 222, 244, 38, 215, 1, 145, 174] };
+}
 #[repr(C)]
 pub struct IPrint3DTaskCompletedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub Completion: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut Print3DTaskCompletion) -> ::windows_sys::core::HRESULT,
     pub ExtendedStatus: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut Print3DTaskDetail) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPrint3DTaskCompletedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3424195759, data2: 9748, data3: 20253, data4: [172, 204, 214, 252, 79, 218, 84, 85] };
+}
 #[repr(C)]
 pub struct IPrint3DTaskRequest {
     pub base__: ::windows_sys::core::IInspectable,
     pub CreateTask: unsafe extern "system" fn(this: *mut *mut Self, title: ::windows_sys::core::HSTRING, printerid: ::windows_sys::core::HSTRING, handler: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPrint3DTaskRequest {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 630572143, data2: 8773, data3: 19546, data4: [135, 49, 13, 96, 77, 198, 188, 60] };
 }
 #[repr(C)]
 pub struct IPrint3DTaskRequestedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub Request: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPrint3DTaskRequestedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 353154943, data2: 6341, data3: 16599, data4: [159, 64, 250, 179, 9, 110, 5, 169] };
+}
 #[repr(C)]
 pub struct IPrint3DTaskSourceChangedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub Source: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPrint3DTaskSourceChangedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1540175023, data2: 9449, data3: 19472, data4: [141, 7, 20, 195, 70, 186, 63, 207] };
+}
 #[repr(C)]
 pub struct IPrint3DTaskSourceRequestedArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub SetSource: unsafe extern "system" fn(this: *mut *mut Self, source: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPrint3DTaskSourceRequestedArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3346832058, data2: 9391, data3: 16973, data4: [163, 191, 146, 37, 12, 53, 86, 2] };
 }
 #[repr(C)]
 pub struct IPrinting3D3MFPackage {
@@ -112,11 +136,17 @@ pub struct IPrinting3D3MFPackage {
     #[cfg(not(feature = "Foundation"))]
     SaveModelToPackageAsync: usize,
 }
+impl ::windows_sys::core::Interface for IPrinting3D3MFPackage {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4132296136, data2: 10935, data3: 17833, data4: [161, 183, 38, 126, 148, 141, 91, 24] };
+}
 #[repr(C)]
 pub struct IPrinting3D3MFPackage2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub Compression: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut Printing3DPackageCompression) -> ::windows_sys::core::HRESULT,
     pub SetCompression: unsafe extern "system" fn(this: *mut *mut Self, value: Printing3DPackageCompression) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPrinting3D3MFPackage2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2522643140, data2: 37835, data3: 17456, data4: [146, 184, 120, 156, 212, 84, 248, 131] };
 }
 #[repr(C)]
 pub struct IPrinting3D3MFPackageStatics {
@@ -126,6 +156,9 @@ pub struct IPrinting3D3MFPackageStatics {
     #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
     LoadAsync: usize,
 }
+impl ::windows_sys::core::Interface for IPrinting3D3MFPackageStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1884871087, data2: 31386, data3: 18311, data4: [184, 23, 246, 244, 89, 33, 72, 35] };
+}
 #[repr(C)]
 pub struct IPrinting3DBaseMaterial {
     pub base__: ::windows_sys::core::IInspectable,
@@ -133,6 +166,9 @@ pub struct IPrinting3DBaseMaterial {
     pub SetName: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub Color: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetColor: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPrinting3DBaseMaterial {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3505448771, data2: 50444, data3: 19403, data4: [157, 4, 252, 22, 173, 206, 162, 201] };
 }
 #[repr(C)]
 pub struct IPrinting3DBaseMaterialGroup {
@@ -143,10 +179,16 @@ pub struct IPrinting3DBaseMaterialGroup {
     Bases: usize,
     pub MaterialGroupId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPrinting3DBaseMaterialGroup {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2498785464, data2: 9493, data3: 19085, data4: [161, 240, 208, 252, 19, 208, 96, 33] };
+}
 #[repr(C)]
 pub struct IPrinting3DBaseMaterialGroupFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, materialgroupid: u32, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPrinting3DBaseMaterialGroupFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1544898268, data2: 34455, data3: 16787, data4: [151, 107, 132, 187, 65, 22, 229, 191] };
 }
 #[repr(C)]
 pub struct IPrinting3DBaseMaterialStatics {
@@ -154,11 +196,17 @@ pub struct IPrinting3DBaseMaterialStatics {
     pub Abs: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub Pla: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPrinting3DBaseMaterialStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2170177468, data2: 14154, data3: 18285, data4: [190, 146, 62, 207, 209, 203, 151, 118] };
+}
 #[repr(C)]
 pub struct IPrinting3DColorMaterial {
     pub base__: ::windows_sys::core::IInspectable,
     pub Value: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
     pub SetValue: unsafe extern "system" fn(this: *mut *mut Self, value: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPrinting3DColorMaterial {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3783891240, data2: 31975, data3: 17029, data4: [163, 93, 241, 69, 201, 81, 12, 123] };
 }
 #[repr(C)]
 pub struct IPrinting3DColorMaterial2 {
@@ -172,6 +220,9 @@ pub struct IPrinting3DColorMaterial2 {
     #[cfg(not(feature = "UI"))]
     SetColor: usize,
 }
+impl ::windows_sys::core::Interface for IPrinting3DColorMaterial2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4205897810, data2: 2799, data3: 17641, data4: [157, 221, 54, 238, 234, 90, 205, 68] };
+}
 #[repr(C)]
 pub struct IPrinting3DColorMaterialGroup {
     pub base__: ::windows_sys::core::IInspectable,
@@ -181,10 +232,16 @@ pub struct IPrinting3DColorMaterialGroup {
     Colors: usize,
     pub MaterialGroupId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPrinting3DColorMaterialGroup {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1731536, data2: 43743, data3: 16934, data4: [175, 233, 243, 105, 160, 180, 80, 4] };
+}
 #[repr(C)]
 pub struct IPrinting3DColorMaterialGroupFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, materialgroupid: u32, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPrinting3DColorMaterialGroupFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1909689709, data2: 45546, data3: 19035, data4: [188, 84, 25, 198, 95, 61, 240, 68] };
 }
 #[repr(C)]
 pub struct IPrinting3DComponent {
@@ -204,6 +261,9 @@ pub struct IPrinting3DComponent {
     pub PartNumber: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub SetPartNumber: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPrinting3DComponent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2116581445, data2: 49023, data3: 19675, data4: [162, 127, 48, 160, 20, 55, 254, 222] };
+}
 #[repr(C)]
 pub struct IPrinting3DComponentWithMatrix {
     pub base__: ::windows_sys::core::IInspectable,
@@ -218,6 +278,9 @@ pub struct IPrinting3DComponentWithMatrix {
     #[cfg(not(feature = "Foundation_Numerics"))]
     SetMatrix: usize,
 }
+impl ::windows_sys::core::Interface for IPrinting3DComponentWithMatrix {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 846852917, data2: 3824, data3: 17771, data4: [154, 33, 73, 190, 190, 139, 81, 194] };
+}
 #[repr(C)]
 pub struct IPrinting3DCompositeMaterial {
     pub base__: ::windows_sys::core::IInspectable,
@@ -225,6 +288,9 @@ pub struct IPrinting3DCompositeMaterial {
     pub Values: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     Values: usize,
+}
+impl ::windows_sys::core::Interface for IPrinting3DCompositeMaterial {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1176647901, data2: 22062, data3: 20332, data4: [136, 45, 244, 216, 65, 253, 99, 199] };
 }
 #[repr(C)]
 pub struct IPrinting3DCompositeMaterialGroup {
@@ -239,16 +305,25 @@ pub struct IPrinting3DCompositeMaterialGroup {
     #[cfg(not(feature = "Foundation_Collections"))]
     MaterialIndices: usize,
 }
+impl ::windows_sys::core::Interface for IPrinting3DCompositeMaterialGroup {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2375314011, data2: 16625, data3: 18797, data4: [165, 251, 52, 10, 90, 103, 142, 48] };
+}
 #[repr(C)]
 pub struct IPrinting3DCompositeMaterialGroup2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub BaseMaterialGroup: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetBaseMaterialGroup: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPrinting3DCompositeMaterialGroup2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 115895650, data2: 32059, data3: 16865, data4: [148, 76, 186, 253, 228, 85, 84, 131] };
+}
 #[repr(C)]
 pub struct IPrinting3DCompositeMaterialGroupFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, materialgroupid: u32, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPrinting3DCompositeMaterialGroupFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3499019539, data2: 37631, data3: 17322, data4: [166, 39, 141, 67, 194, 44, 129, 126] };
 }
 #[repr(C)]
 pub struct IPrinting3DFaceReductionOptions {
@@ -259,6 +334,9 @@ pub struct IPrinting3DFaceReductionOptions {
     pub SetTargetTriangleCount: unsafe extern "system" fn(this: *mut *mut Self, value: u32) -> ::windows_sys::core::HRESULT,
     pub MaxEdgeLength: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f64) -> ::windows_sys::core::HRESULT,
     pub SetMaxEdgeLength: unsafe extern "system" fn(this: *mut *mut Self, value: f64) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPrinting3DFaceReductionOptions {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3154039703, data2: 11636, data3: 18167, data4: [190, 133, 153, 166, 123, 187, 102, 41] };
 }
 #[repr(C)]
 pub struct IPrinting3DMaterial {
@@ -283,6 +361,9 @@ pub struct IPrinting3DMaterial {
     pub MultiplePropertyGroups: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     MultiplePropertyGroups: usize,
+}
+impl ::windows_sys::core::Interface for IPrinting3DMaterial {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 932033110, data2: 60770, data3: 18770, data4: [184, 91, 3, 86, 125, 124, 70, 94] };
 }
 #[repr(C)]
 pub struct IPrinting3DMesh {
@@ -332,6 +413,9 @@ pub struct IPrinting3DMesh {
     #[cfg(not(feature = "Foundation"))]
     VerifyAsync: usize,
 }
+impl ::windows_sys::core::Interface for IPrinting3DMesh {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 422482140, data2: 552, data3: 11777, data4: [188, 32, 197, 41, 12, 191, 50, 196] };
+}
 #[repr(C)]
 pub struct IPrinting3DMeshVerificationResult {
     pub base__: ::windows_sys::core::IInspectable,
@@ -344,6 +428,9 @@ pub struct IPrinting3DMeshVerificationResult {
     pub ReversedNormalTriangles: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     ReversedNormalTriangles: usize,
+}
+impl ::windows_sys::core::Interface for IPrinting3DMeshVerificationResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 425095610, data2: 59706, data3: 20106, data4: [164, 111, 222, 168, 232, 82, 25, 126] };
 }
 #[repr(C)]
 pub struct IPrinting3DModel {
@@ -382,6 +469,9 @@ pub struct IPrinting3DModel {
     RepairAsync: usize,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPrinting3DModel {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 755052272, data2: 21243, data3: 37274, data4: [119, 176, 75, 26, 59, 128, 50, 79] };
+}
 #[repr(C)]
 pub struct IPrinting3DModel2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -410,6 +500,9 @@ pub struct IPrinting3DModel2 {
     #[cfg(not(feature = "Foundation"))]
     RepairWithProgressAsync: usize,
 }
+impl ::windows_sys::core::Interface for IPrinting3DModel2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3374344647, data2: 51265, data3: 18419, data4: [168, 78, 161, 73, 253, 8, 182, 87] };
+}
 #[repr(C)]
 pub struct IPrinting3DModelTexture {
     pub base__: ::windows_sys::core::IInspectable,
@@ -420,6 +513,9 @@ pub struct IPrinting3DModelTexture {
     pub TileStyleV: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut Printing3DTextureEdgeBehavior) -> ::windows_sys::core::HRESULT,
     pub SetTileStyleV: unsafe extern "system" fn(this: *mut *mut Self, value: Printing3DTextureEdgeBehavior) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPrinting3DModelTexture {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1571802881, data2: 46493, data3: 18492, data4: [151, 187, 164, 213, 70, 209, 199, 92] };
+}
 #[repr(C)]
 pub struct IPrinting3DMultiplePropertyMaterial {
     pub base__: ::windows_sys::core::IInspectable,
@@ -427,6 +523,9 @@ pub struct IPrinting3DMultiplePropertyMaterial {
     pub MaterialIndices: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     MaterialIndices: usize,
+}
+impl ::windows_sys::core::Interface for IPrinting3DMultiplePropertyMaterial {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 631645515, data2: 50921, data3: 18509, data4: [162, 20, 162, 94, 87, 118, 186, 98] };
 }
 #[repr(C)]
 pub struct IPrinting3DMultiplePropertyMaterialGroup {
@@ -441,10 +540,16 @@ pub struct IPrinting3DMultiplePropertyMaterialGroup {
     MaterialGroupIndices: usize,
     pub MaterialGroupId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPrinting3DMultiplePropertyMaterialGroup {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4036298009, data2: 44729, data3: 17685, data4: [163, 155, 160, 136, 251, 187, 39, 124] };
+}
 #[repr(C)]
 pub struct IPrinting3DMultiplePropertyMaterialGroupFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, materialgroupid: u32, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPrinting3DMultiplePropertyMaterialGroupFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 842930542, data2: 54470, data3: 17694, data4: [168, 20, 77, 120, 162, 16, 254, 83] };
 }
 #[repr(C)]
 pub struct IPrinting3DTexture2CoordMaterial {
@@ -456,6 +561,9 @@ pub struct IPrinting3DTexture2CoordMaterial {
     pub V: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f64) -> ::windows_sys::core::HRESULT,
     pub SetV: unsafe extern "system" fn(this: *mut *mut Self, value: f64) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPrinting3DTexture2CoordMaterial {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2374257659, data2: 2025, data3: 18822, data4: [152, 51, 141, 211, 212, 140, 104, 89] };
+}
 #[repr(C)]
 pub struct IPrinting3DTexture2CoordMaterialGroup {
     pub base__: ::windows_sys::core::IInspectable,
@@ -465,16 +573,25 @@ pub struct IPrinting3DTexture2CoordMaterialGroup {
     Texture2Coords: usize,
     pub MaterialGroupId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPrinting3DTexture2CoordMaterialGroup {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1652391079, data2: 28048, data3: 20409, data4: [159, 196, 159, 239, 243, 223, 168, 146] };
+}
 #[repr(C)]
 pub struct IPrinting3DTexture2CoordMaterialGroup2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub Texture: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetTexture: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPrinting3DTexture2CoordMaterialGroup2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1778113466, data2: 45358, data3: 17051, data4: [131, 134, 223, 82, 132, 246, 232, 15] };
+}
 #[repr(C)]
 pub struct IPrinting3DTexture2CoordMaterialGroupFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, materialgroupid: u32, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPrinting3DTexture2CoordMaterialGroupFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3417328048, data2: 18058, data3: 19567, data4: [178, 162, 142, 184, 186, 141, 234, 72] };
 }
 #[repr(C)]
 pub struct IPrinting3DTextureResource {
@@ -489,6 +606,9 @@ pub struct IPrinting3DTextureResource {
     SetTextureData: usize,
     pub Name: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub SetName: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPrinting3DTextureResource {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2802709293, data2: 27313, data3: 17582, data4: [188, 69, 162, 115, 130, 192, 211, 140] };
 }
 pub type Print3DManager = *mut ::core::ffi::c_void;
 pub type Print3DTask = *mut ::core::ffi::c_void;

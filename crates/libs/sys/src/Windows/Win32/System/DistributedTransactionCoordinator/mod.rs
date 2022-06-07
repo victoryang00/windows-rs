@@ -80,24 +80,39 @@ pub struct IDtcLuConfigure {
     pub Add: unsafe extern "system" fn(this: *mut *mut Self, puclupair: *const u8, cblupair: u32) -> ::windows_sys::core::HRESULT,
     pub Delete: unsafe extern "system" fn(this: *mut *mut Self, puclupair: *const u8, cblupair: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDtcLuConfigure {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1093789536, data2: 6890, data3: 4560, data4: [148, 75, 0, 160, 201, 5, 65, 110] };
+}
 #[repr(C)]
 pub struct IDtcLuRecovery {
     pub base__: ::windows_sys::core::IUnknown,
+}
+impl ::windows_sys::core::Interface for IDtcLuRecovery {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2888534738, data2: 55024, data3: 4560, data4: [179, 134, 0, 160, 201, 8, 51, 101] };
 }
 #[repr(C)]
 pub struct IDtcLuRecoveryFactory {
     pub base__: ::windows_sys::core::IUnknown,
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, puclupair: *const u8, cblupair: u32, pprecovery: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDtcLuRecoveryFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1093789538, data2: 6890, data3: 4560, data4: [148, 75, 0, 160, 201, 5, 65, 110] };
+}
 #[repr(C)]
 pub struct IDtcLuRecoveryInitiatedByDtc {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetWork: unsafe extern "system" fn(this: *mut *mut Self, pwork: *mut _DtcLu_LocalRecovery_Work, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDtcLuRecoveryInitiatedByDtc {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1093789540, data2: 6890, data3: 4560, data4: [148, 75, 0, 160, 201, 5, 65, 110] };
+}
 #[repr(C)]
 pub struct IDtcLuRecoveryInitiatedByDtcStatusWork {
     pub base__: ::windows_sys::core::IUnknown,
     pub HandleCheckLuStatus: unsafe extern "system" fn(this: *mut *mut Self, lrecoveryseqnum: i32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDtcLuRecoveryInitiatedByDtcStatusWork {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1093789542, data2: 6890, data3: 4560, data4: [148, 75, 0, 160, 201, 5, 65, 110] };
 }
 #[repr(C)]
 pub struct IDtcLuRecoveryInitiatedByDtcTransWork {
@@ -119,10 +134,16 @@ pub struct IDtcLuRecoveryInitiatedByDtcTransWork {
     pub GetRecoverySeqNum: unsafe extern "system" fn(this: *mut *mut Self, plrecoveryseqnum: *mut i32) -> ::windows_sys::core::HRESULT,
     pub ObsoleteRecoverySeqNum: unsafe extern "system" fn(this: *mut *mut Self, lnewrecoveryseqnum: i32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDtcLuRecoveryInitiatedByDtcTransWork {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1093789541, data2: 6890, data3: 4560, data4: [148, 75, 0, 160, 201, 5, 65, 110] };
+}
 #[repr(C)]
 pub struct IDtcLuRecoveryInitiatedByLu {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetObjectToHandleWorkFromLu: unsafe extern "system" fn(this: *mut *mut Self, ppwork: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDtcLuRecoveryInitiatedByLu {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1093789544, data2: 6890, data3: 4560, data4: [148, 75, 0, 160, 201, 5, 65, 110] };
 }
 #[repr(C)]
 pub struct IDtcLuRecoveryInitiatedByLuWork {
@@ -135,6 +156,9 @@ pub struct IDtcLuRecoveryInitiatedByLuWork {
     pub HandleConfirmationOfOurCompareStates: unsafe extern "system" fn(this: *mut *mut Self, confirmation: _DtcLu_CompareStates_Confirmation) -> ::windows_sys::core::HRESULT,
     pub HandleErrorFromOurCompareStates: unsafe extern "system" fn(this: *mut *mut Self, error: _DtcLu_CompareStates_Error) -> ::windows_sys::core::HRESULT,
     pub ConversationLost: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDtcLuRecoveryInitiatedByLuWork {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2888534737, data2: 55024, data3: 4560, data4: [179, 134, 0, 160, 201, 8, 51, 101] };
 }
 #[repr(C)]
 pub struct IDtcLuRmEnlistment {
@@ -149,10 +173,16 @@ pub struct IDtcLuRmEnlistment {
     pub Forget: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub RequestCommit: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDtcLuRmEnlistment {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1093789545, data2: 6890, data3: 4560, data4: [148, 75, 0, 160, 201, 5, 65, 110] };
+}
 #[repr(C)]
 pub struct IDtcLuRmEnlistmentFactory {
     pub base__: ::windows_sys::core::IUnknown,
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, puclupair: *mut u8, cblupair: u32, pitransaction: *mut ::core::ffi::c_void, ptransid: *mut u8, cbtransid: u32, prmenlistmentsink: *mut ::core::ffi::c_void, pprmenlistment: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDtcLuRmEnlistmentFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1093789553, data2: 6890, data3: 4560, data4: [148, 75, 0, 160, 201, 5, 65, 110] };
 }
 #[repr(C)]
 pub struct IDtcLuRmEnlistmentSink {
@@ -166,6 +196,9 @@ pub struct IDtcLuRmEnlistmentSink {
     pub Forget: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Prepare: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub RequestCommit: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDtcLuRmEnlistmentSink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1093789552, data2: 6890, data3: 4560, data4: [148, 75, 0, 160, 201, 5, 65, 110] };
 }
 #[repr(C)]
 pub struct IDtcLuSubordinateDtc {
@@ -181,10 +214,16 @@ pub struct IDtcLuSubordinateDtc {
     pub Prepare: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub RequestCommit: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDtcLuSubordinateDtc {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1093789555, data2: 6890, data3: 4560, data4: [148, 75, 0, 160, 201, 5, 65, 110] };
+}
 #[repr(C)]
 pub struct IDtcLuSubordinateDtcFactory {
     pub base__: ::windows_sys::core::IUnknown,
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, puclupair: *mut u8, cblupair: u32, punktransactionouter: *mut ::core::ffi::c_void, isolevel: i32, isoflags: u32, poptions: *mut ::core::ffi::c_void, pptransaction: *mut *mut ::core::ffi::c_void, ptransid: *mut u8, cbtransid: u32, psubordinatedtcsink: *mut ::core::ffi::c_void, ppsubordinatedtc: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDtcLuSubordinateDtcFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1093789557, data2: 6890, data3: 4560, data4: [148, 75, 0, 160, 201, 5, 65, 110] };
 }
 #[repr(C)]
 pub struct IDtcLuSubordinateDtcSink {
@@ -197,6 +236,9 @@ pub struct IDtcLuSubordinateDtcSink {
     pub Committed: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Forget: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub RequestCommit: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDtcLuSubordinateDtcSink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1093789556, data2: 6890, data3: 4560, data4: [148, 75, 0, 160, 201, 5, 65, 110] };
 }
 #[repr(C)]
 pub struct IDtcNetworkAccessConfig {
@@ -251,6 +293,9 @@ pub struct IDtcNetworkAccessConfig {
     SetXAAccess: usize,
     pub RestartDtcService: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDtcNetworkAccessConfig {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2543305053, data2: 42024, data3: 17041, data4: [135, 182, 9, 149, 3, 26, 103, 141] };
+}
 #[repr(C)]
 pub struct IDtcNetworkAccessConfig2 {
     pub base__: IDtcNetworkAccessConfig,
@@ -273,6 +318,9 @@ pub struct IDtcNetworkAccessConfig2 {
     pub GetAuthenticationLevel: unsafe extern "system" fn(this: *mut *mut Self, pauthlevel: *mut AUTHENTICATION_LEVEL) -> ::windows_sys::core::HRESULT,
     pub SetAuthenticationLevel: unsafe extern "system" fn(this: *mut *mut Self, authlevel: AUTHENTICATION_LEVEL) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDtcNetworkAccessConfig2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2812936507, data2: 60285, data3: 20290, data4: [180, 28, 178, 222, 192, 154, 224, 52] };
+}
 #[repr(C)]
 pub struct IDtcNetworkAccessConfig3 {
     pub base__: IDtcNetworkAccessConfig2,
@@ -284,6 +332,9 @@ pub struct IDtcNetworkAccessConfig3 {
     pub SetLUAccess: unsafe extern "system" fn(this: *mut *mut Self, bluaccess: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     SetLUAccess: usize,
+}
+impl ::windows_sys::core::Interface for IDtcNetworkAccessConfig3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1994700019, data2: 11429, data3: 18027, data4: [137, 213, 253, 33, 142, 231, 91, 73] };
 }
 #[repr(C)]
 pub struct IDtcToXaHelper {
@@ -297,10 +348,16 @@ pub struct IDtcToXaHelper {
     #[cfg(not(feature = "Win32_Foundation"))]
     TranslateTridToXid: usize,
 }
+impl ::windows_sys::core::Interface for IDtcToXaHelper {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2844136977, data2: 12362, data3: 4561, data4: [152, 19, 0, 160, 201, 5, 65, 110] };
+}
 #[repr(C)]
 pub struct IDtcToXaHelperFactory {
     pub base__: ::windows_sys::core::IUnknown,
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, pszdsn: ::windows_sys::core::PCSTR, pszclientdllname: ::windows_sys::core::PCSTR, pguidrm: *mut ::windows_sys::core::GUID, ppxahelper: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDtcToXaHelperFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2844136976, data2: 12362, data3: 4561, data4: [152, 19, 0, 160, 201, 5, 65, 110] };
 }
 #[repr(C)]
 pub struct IDtcToXaHelperSinglePipe {
@@ -316,6 +373,9 @@ pub struct IDtcToXaHelperSinglePipe {
     #[cfg(not(feature = "Win32_Foundation"))]
     ReleaseRMCookie: usize,
 }
+impl ::windows_sys::core::Interface for IDtcToXaHelperSinglePipe {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1206733169, data2: 21427, data3: 4561, data4: [187, 185, 0, 192, 79, 214, 88, 246] };
+}
 #[repr(C)]
 pub struct IDtcToXaMapper {
     pub base__: ::windows_sys::core::IUnknown,
@@ -327,10 +387,16 @@ pub struct IDtcToXaMapper {
     pub EnlistResourceManager: unsafe extern "system" fn(this: *mut *mut Self, dwrmcookie: u32, pdwitransaction: *const u32) -> ::windows_sys::core::HRESULT,
     pub ReleaseResourceManager: unsafe extern "system" fn(this: *mut *mut Self, dwrmcookie: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDtcToXaMapper {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1694477280, data2: 31977, data3: 4560, data4: [140, 230, 0, 192, 79, 220, 135, 126] };
+}
 #[repr(C)]
 pub struct IGetDispenser {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetDispenser: unsafe extern "system" fn(this: *mut *mut Self, iid: *const ::windows_sys::core::GUID, ppvobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IGetDispenser {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3258762096, data2: 34799, data3: 4558, data4: [128, 129, 0, 128, 199, 88, 82, 126] };
 }
 #[repr(C)]
 pub struct IKernelTransaction {
@@ -340,11 +406,17 @@ pub struct IKernelTransaction {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetHandle: usize,
 }
+impl ::windows_sys::core::Interface for IKernelTransaction {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2034399787, data2: 63637, data3: 16608, data4: [190, 121, 181, 125, 200, 46, 210, 49] };
+}
 #[repr(C)]
 pub struct ILastResourceManager {
     pub base__: ::windows_sys::core::IUnknown,
     pub TransactionCommitted: unsafe extern "system" fn(this: *mut *mut Self, pprepinfo: *const u8, cbprepinfo: u32) -> ::windows_sys::core::HRESULT,
     pub RecoveryDone: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ILastResourceManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1301695188, data2: 23347, data3: 4563, data4: [138, 145, 0, 192, 79, 121, 235, 109] };
 }
 #[repr(C)]
 pub struct IPrepareInfo {
@@ -352,11 +424,17 @@ pub struct IPrepareInfo {
     pub GetPrepareInfoSize: unsafe extern "system" fn(this: *mut *mut Self, pcbprepinfo: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetPrepareInfo: unsafe extern "system" fn(this: *mut *mut Self, pprepinfo: *mut u8) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPrepareInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2160574416, data2: 34798, data3: 4558, data4: [128, 129, 0, 128, 199, 88, 82, 126] };
+}
 #[repr(C)]
 pub struct IPrepareInfo2 {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetPrepareInfoSize: unsafe extern "system" fn(this: *mut *mut Self, pcbprepinfo: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetPrepareInfo: unsafe extern "system" fn(this: *mut *mut Self, cbprepareinfo: u32, pprepinfo: *mut u8) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPrepareInfo2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1605051719, data2: 38777, data3: 4561, data4: [184, 134, 0, 192, 79, 185, 97, 138] };
 }
 #[repr(C)]
 pub struct IRMHelper {
@@ -367,6 +445,9 @@ pub struct IRMHelper {
     #[cfg(not(feature = "Win32_Foundation"))]
     RMInfo: usize,
 }
+impl ::windows_sys::core::Interface for IRMHelper {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3885233873, data2: 62781, data3: 4559, data4: [166, 13, 0, 160, 201, 5, 65, 110] };
+}
 #[repr(C)]
 pub struct IResourceManager {
     pub base__: ::windows_sys::core::IUnknown,
@@ -374,6 +455,9 @@ pub struct IResourceManager {
     pub Reenlist: unsafe extern "system" fn(this: *mut *mut Self, pprepinfo: *const u8, cbprepinfo: u32, ltimeout: u32, pxactstat: *mut XACTSTAT) -> ::windows_sys::core::HRESULT,
     pub ReenlistmentComplete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub GetDistributedTransactionManager: unsafe extern "system" fn(this: *mut *mut Self, iid: *const ::windows_sys::core::GUID, ppvobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IResourceManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 326376737, data2: 34795, data3: 4558, data4: [128, 129, 0, 128, 199, 88, 82, 126] };
 }
 #[repr(C)]
 pub struct IResourceManager2 {
@@ -387,25 +471,40 @@ pub struct IResourceManager2 {
     #[cfg(not(feature = "Win32_Foundation"))]
     Reenlist2: usize,
 }
+impl ::windows_sys::core::Interface for IResourceManager2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3510027930, data2: 63305, data3: 4561, data4: [143, 71, 0, 192, 79, 142, 229, 125] };
+}
 #[repr(C)]
 pub struct IResourceManagerFactory {
     pub base__: ::windows_sys::core::IUnknown,
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, pguidrm: *const ::windows_sys::core::GUID, pszrmname: ::windows_sys::core::PCSTR, piresmgrsink: *mut ::core::ffi::c_void, ppresmgr: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IResourceManagerFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 326376736, data2: 34795, data3: 4558, data4: [128, 129, 0, 128, 199, 88, 82, 126] };
 }
 #[repr(C)]
 pub struct IResourceManagerFactory2 {
     pub base__: IResourceManagerFactory,
     pub CreateEx: unsafe extern "system" fn(this: *mut *mut Self, pguidrm: *const ::windows_sys::core::GUID, pszrmname: ::windows_sys::core::PCSTR, piresmgrsink: *mut ::core::ffi::c_void, riidrequested: *const ::windows_sys::core::GUID, ppvresmgr: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IResourceManagerFactory2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1798741025, data2: 64466, data3: 4561, data4: [143, 71, 0, 192, 79, 142, 229, 125] };
+}
 #[repr(C)]
 pub struct IResourceManagerRejoinable {
     pub base__: IResourceManager2,
     pub Rejoin: unsafe extern "system" fn(this: *mut *mut Self, pprepinfo: *const u8, cbprepinfo: u32, ltimeout: u32, pxactstat: *mut XACTSTAT) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IResourceManagerRejoinable {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1869473312, data2: 46559, data3: 20286, data4: [156, 250, 200, 174, 189, 5, 23, 43] };
+}
 #[repr(C)]
 pub struct IResourceManagerSink {
     pub base__: ::windows_sys::core::IUnknown,
     pub TMDown: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IResourceManagerSink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 223752577, data2: 57083, data3: 4558, data4: [174, 209, 0, 170, 0, 81, 226, 196] };
 }
 #[doc = "*Required features: `\"Win32_System_DistributedTransactionCoordinator\"`*"]
 pub type ISOFLAG = i32;
@@ -458,10 +557,16 @@ pub struct ITipHelper {
     pub PullAsync: unsafe extern "system" fn(this: *mut *mut Self, i_psztxurl: *const u8, i_ptippullsink: *mut ::core::ffi::c_void, o_ppitransaction: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetLocalTmUrl: unsafe extern "system" fn(this: *mut *mut Self, o_ppszlocaltmurl: *mut *mut u8) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ITipHelper {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 399471313, data2: 47813, data3: 4561, data4: [177, 191, 0, 192, 79, 194, 243, 239] };
+}
 #[repr(C)]
 pub struct ITipPullSink {
     pub base__: ::windows_sys::core::IUnknown,
     pub PullComplete: unsafe extern "system" fn(this: *mut *mut Self, i_hrpull: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ITipPullSink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 399471314, data2: 47813, data3: 4561, data4: [177, 191, 0, 192, 79, 194, 243, 239] };
 }
 #[repr(C)]
 pub struct ITipTransaction {
@@ -469,11 +574,17 @@ pub struct ITipTransaction {
     pub Push: unsafe extern "system" fn(this: *mut *mut Self, i_pszremotetmurl: *const u8, o_ppszremotetxurl: *mut ::windows_sys::core::PSTR) -> ::windows_sys::core::HRESULT,
     pub GetTransactionUrl: unsafe extern "system" fn(this: *mut *mut Self, o_ppszlocaltxurl: *mut ::windows_sys::core::PSTR) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ITipTransaction {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 399471312, data2: 47813, data3: 4561, data4: [177, 191, 0, 192, 79, 194, 243, 239] };
+}
 #[repr(C)]
 pub struct ITmNodeName {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetNodeNameSize: unsafe extern "system" fn(this: *mut *mut Self, pcbnodenamesize: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetNodeName: unsafe extern "system" fn(this: *mut *mut Self, cbnodenamebuffersize: u32, pnodenamebuffer: ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ITmNodeName {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 807882632, data2: 28388, data3: 18254, data4: [155, 149, 120, 7, 188, 158, 248, 207] };
 }
 #[repr(C)]
 pub struct ITransaction {
@@ -488,21 +599,33 @@ pub struct ITransaction {
     Abort: usize,
     pub GetTransactionInfo: unsafe extern "system" fn(this: *mut *mut Self, pinfo: *mut XACTTRANSINFO) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ITransaction {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 263278724, data2: 44865, data3: 4558, data4: [189, 43, 32, 76, 79, 79, 80, 32] };
+}
 #[repr(C)]
 pub struct ITransaction2 {
     pub base__: ITransactionCloner,
     pub GetTransactionInfo2: unsafe extern "system" fn(this: *mut *mut Self, pinfo: *mut XACTTRANSINFO) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ITransaction2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 872551752, data2: 101, data3: 4563, data4: [186, 193, 0, 192, 79, 121, 123, 226] };
 }
 #[repr(C)]
 pub struct ITransactionCloner {
     pub base__: ITransaction,
     pub CloneWithCommitDisabled: unsafe extern "system" fn(this: *mut *mut Self, ppitransaction: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ITransactionCloner {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 40200528, data2: 8530, data3: 4560, data4: [148, 76, 0, 160, 201, 5, 65, 110] };
+}
 #[repr(C)]
 pub struct ITransactionDispenser {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetOptionsObject: unsafe extern "system" fn(this: *mut *mut Self, ppoptions: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub BeginTransaction: unsafe extern "system" fn(this: *mut *mut Self, punkouter: *mut ::core::ffi::c_void, isolevel: i32, isoflags: u32, poptions: *mut ::core::ffi::c_void, pptransaction: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ITransactionDispenser {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 980081121, data2: 9145, data3: 4559, data4: [173, 96, 0, 170, 0, 167, 76, 205] };
 }
 #[repr(C)]
 pub struct ITransactionEnlistmentAsync {
@@ -514,11 +637,17 @@ pub struct ITransactionEnlistmentAsync {
     pub CommitRequestDone: unsafe extern "system" fn(this: *mut *mut Self, hr: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
     pub AbortRequestDone: unsafe extern "system" fn(this: *mut *mut Self, hr: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ITransactionEnlistmentAsync {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 263278721, data2: 44865, data3: 4558, data4: [189, 43, 32, 76, 79, 79, 80, 32] };
+}
 #[repr(C)]
 pub struct ITransactionExport {
     pub base__: ::windows_sys::core::IUnknown,
     pub Export: unsafe extern "system" fn(this: *mut *mut Self, punktransaction: *mut ::core::ffi::c_void, pcbtransactioncookie: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetTransactionCookie: unsafe extern "system" fn(this: *mut *mut Self, punktransaction: *mut ::core::ffi::c_void, cbtransactioncookie: u32, rgbtransactioncookie: *mut u8, pcbused: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ITransactionExport {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 21101989, data2: 36800, data3: 4558, data4: [189, 24, 32, 76, 79, 79, 80, 32] };
 }
 #[repr(C)]
 pub struct ITransactionExportFactory {
@@ -526,10 +655,16 @@ pub struct ITransactionExportFactory {
     pub GetRemoteClassId: unsafe extern "system" fn(this: *mut *mut Self, pclsid: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, cbwhereabouts: u32, rgbwhereabouts: *const u8, ppexport: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ITransactionExportFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3788479315, data2: 34629, data3: 4558, data4: [169, 186, 0, 170, 0, 108, 55, 6] };
+}
 #[repr(C)]
 pub struct ITransactionImport {
     pub base__: ::windows_sys::core::IUnknown,
     pub Import: unsafe extern "system" fn(this: *mut *mut Self, cbtransactioncookie: u32, rgbtransactioncookie: *const u8, piid: *const ::windows_sys::core::GUID, ppvtransaction: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ITransactionImport {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3788479322, data2: 34629, data3: 4558, data4: [169, 186, 0, 170, 0, 108, 55, 6] };
 }
 #[repr(C)]
 pub struct ITransactionImportWhereabouts {
@@ -537,10 +672,16 @@ pub struct ITransactionImportWhereabouts {
     pub GetWhereaboutsSize: unsafe extern "system" fn(this: *mut *mut Self, pcbwhereabouts: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetWhereabouts: unsafe extern "system" fn(this: *mut *mut Self, cbwhereabouts: u32, rgbwhereabouts: *mut u8, pcbused: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ITransactionImportWhereabouts {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 21101988, data2: 36800, data3: 4558, data4: [189, 24, 32, 76, 79, 79, 80, 32] };
+}
 #[repr(C)]
 pub struct ITransactionLastEnlistmentAsync {
     pub base__: ::windows_sys::core::IUnknown,
     pub TransactionOutcome: unsafe extern "system" fn(this: *mut *mut Self, xactstat: XACTSTAT, pboidreason: *const BOID) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ITransactionLastEnlistmentAsync {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3358315827, data2: 23344, data3: 4563, data4: [138, 145, 0, 192, 79, 121, 235, 109] };
 }
 #[repr(C)]
 pub struct ITransactionLastResourceAsync {
@@ -548,11 +689,17 @@ pub struct ITransactionLastResourceAsync {
     pub DelegateCommit: unsafe extern "system" fn(this: *mut *mut Self, grfrm: u32) -> ::windows_sys::core::HRESULT,
     pub ForgetRequest: unsafe extern "system" fn(this: *mut *mut Self, pnewuow: *const BOID) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ITransactionLastResourceAsync {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3358315826, data2: 23344, data3: 4563, data4: [138, 145, 0, 192, 79, 121, 235, 109] };
+}
 #[repr(C)]
 pub struct ITransactionOptions {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetOptions: unsafe extern "system" fn(this: *mut *mut Self, poptions: *const XACTOPT) -> ::windows_sys::core::HRESULT,
     pub GetOptions: unsafe extern "system" fn(this: *mut *mut Self, poptions: *mut XACTOPT) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ITransactionOptions {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 980081120, data2: 9145, data3: 4559, data4: [173, 96, 0, 170, 0, 167, 76, 205] };
 }
 #[repr(C)]
 pub struct ITransactionOutcomeEvents {
@@ -568,6 +715,9 @@ pub struct ITransactionOutcomeEvents {
     pub HeuristicDecision: unsafe extern "system" fn(this: *mut *mut Self, dwdecision: u32, pboidreason: *const BOID, hr: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
     pub Indoubt: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ITransactionOutcomeEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 980081122, data2: 9145, data3: 4559, data4: [173, 96, 0, 170, 0, 167, 76, 205] };
+}
 #[repr(C)]
 pub struct ITransactionPhase0EnlistmentAsync {
     pub base__: ::windows_sys::core::IUnknown,
@@ -577,10 +727,16 @@ pub struct ITransactionPhase0EnlistmentAsync {
     pub Unenlist: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub GetTransaction: unsafe extern "system" fn(this: *mut *mut Self, ppitransaction: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ITransactionPhase0EnlistmentAsync {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2195491041, data2: 43348, data3: 4561, data4: [143, 136, 0, 96, 8, 149, 231, 213] };
+}
 #[repr(C)]
 pub struct ITransactionPhase0Factory {
     pub base__: ::windows_sys::core::IUnknown,
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, pphase0notify: *mut ::core::ffi::c_void, ppphase0enlistment: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ITransactionPhase0Factory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2195491040, data2: 43348, data3: 4561, data4: [143, 136, 0, 96, 8, 149, 231, 213] };
 }
 #[repr(C)]
 pub struct ITransactionPhase0NotifyAsync {
@@ -591,6 +747,9 @@ pub struct ITransactionPhase0NotifyAsync {
     Phase0Request: usize,
     pub EnlistCompleted: unsafe extern "system" fn(this: *mut *mut Self, status: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ITransactionPhase0NotifyAsync {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4010285065, data2: 3190, data3: 4562, data4: [135, 166, 0, 192, 79, 153, 15, 52] };
+}
 #[repr(C)]
 pub struct ITransactionReceiver {
     pub base__: ::windows_sys::core::IUnknown,
@@ -599,10 +758,16 @@ pub struct ITransactionReceiver {
     pub MarshalReturnToken: unsafe extern "system" fn(this: *mut *mut Self, cbreturntoken: u32, rgbreturntoken: *mut u8, pcbused: *mut u32) -> ::windows_sys::core::HRESULT,
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ITransactionReceiver {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1496399363, data2: 45932, data3: 4559, data4: [165, 57, 0, 170, 0, 104, 135, 195] };
+}
 #[repr(C)]
 pub struct ITransactionReceiverFactory {
     pub base__: ::windows_sys::core::IUnknown,
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, ppreceiver: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ITransactionReceiverFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1496399362, data2: 45932, data3: 4559, data4: [165, 57, 0, 170, 0, 104, 135, 195] };
 }
 #[repr(C)]
 pub struct ITransactionResource {
@@ -618,6 +783,9 @@ pub struct ITransactionResource {
     AbortRequest: usize,
     pub TMDown: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ITransactionResource {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3999266739, data2: 17778, data3: 4560, data4: [148, 82, 0, 160, 201, 5, 65, 110] };
+}
 #[repr(C)]
 pub struct ITransactionResourceAsync {
     pub base__: ::windows_sys::core::IUnknown,
@@ -632,6 +800,9 @@ pub struct ITransactionResourceAsync {
     AbortRequest: usize,
     pub TMDown: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ITransactionResourceAsync {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1776906736, data2: 9166, data3: 4559, data4: [173, 96, 0, 170, 0, 167, 76, 205] };
+}
 #[repr(C)]
 pub struct ITransactionTransmitter {
     pub base__: ::windows_sys::core::IUnknown,
@@ -641,25 +812,40 @@ pub struct ITransactionTransmitter {
     pub UnmarshalReturnToken: unsafe extern "system" fn(this: *mut *mut Self, cbreturntoken: u32, rgbreturntoken: *const u8) -> ::windows_sys::core::HRESULT,
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ITransactionTransmitter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1496399361, data2: 45932, data3: 4559, data4: [165, 57, 0, 170, 0, 104, 135, 195] };
+}
 #[repr(C)]
 pub struct ITransactionTransmitterFactory {
     pub base__: ::windows_sys::core::IUnknown,
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, pptransmitter: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ITransactionTransmitterFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1496399360, data2: 45932, data3: 4559, data4: [165, 57, 0, 170, 0, 104, 135, 195] };
 }
 #[repr(C)]
 pub struct ITransactionVoterBallotAsync2 {
     pub base__: ::windows_sys::core::IUnknown,
     pub VoteRequestDone: unsafe extern "system" fn(this: *mut *mut Self, hr: ::windows_sys::core::HRESULT, pboidreason: *const BOID) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ITransactionVoterBallotAsync2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1412642668, data2: 16717, data3: 4563, data4: [178, 6, 0, 192, 79, 194, 243, 239] };
+}
 #[repr(C)]
 pub struct ITransactionVoterFactory2 {
     pub base__: ::windows_sys::core::IUnknown,
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, ptransaction: *mut ::core::ffi::c_void, pvoternotify: *mut ::core::ffi::c_void, ppvoterballot: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ITransactionVoterFactory2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1412642666, data2: 16717, data3: 4563, data4: [178, 6, 0, 192, 79, 194, 243, 239] };
+}
 #[repr(C)]
 pub struct ITransactionVoterNotifyAsync2 {
     pub base__: ITransactionOutcomeEvents,
     pub VoteRequest: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ITransactionVoterNotifyAsync2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1412642667, data2: 16717, data3: 4563, data4: [178, 6, 0, 192, 79, 194, 243, 239] };
 }
 #[repr(C)]
 pub struct IXAConfig {
@@ -667,15 +853,24 @@ pub struct IXAConfig {
     pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, clsidhelperdll: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub Terminate: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IXAConfig {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3366380449, data2: 39564, data3: 4559, data4: [163, 8, 0, 160, 201, 5, 65, 110] };
+}
 #[repr(C)]
 pub struct IXAObtainRMInfo {
     pub base__: ::windows_sys::core::IUnknown,
     pub ObtainRMInfo: unsafe extern "system" fn(this: *mut *mut Self, pirmhelper: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IXAObtainRMInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3885233874, data2: 62781, data3: 4559, data4: [166, 13, 0, 160, 201, 5, 65, 110] };
+}
 #[repr(C)]
 pub struct IXATransLookup {
     pub base__: ::windows_sys::core::IUnknown,
     pub Lookup: unsafe extern "system" fn(this: *mut *mut Self, pptransaction: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IXATransLookup {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4088525105, data2: 61146, data3: 4558, data4: [174, 212, 0, 170, 0, 81, 226, 196] };
 }
 #[repr(C)]
 pub struct IXATransLookup2 {
@@ -684,6 +879,9 @@ pub struct IXATransLookup2 {
     pub Lookup: unsafe extern "system" fn(this: *mut *mut Self, pxid: *const xid_t, pptransaction: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     Lookup: usize,
+}
+impl ::windows_sys::core::Interface for IXATransLookup2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3206102149, data2: 3354, data3: 17040, data4: [184, 143, 210, 203, 136, 115, 209, 231] };
 }
 #[doc = "*Required features: `\"Win32_System_DistributedTransactionCoordinator\"`*"]
 pub const MAXBQUALSIZE: u32 = 64u32;

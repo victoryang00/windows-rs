@@ -114,6 +114,9 @@ pub struct IDMOQualityControl {
     pub SetStatus: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32) -> ::windows_sys::core::HRESULT,
     pub GetStatus: unsafe extern "system" fn(this: *mut *mut Self, pdwflags: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDMOQualityControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1705765526, data2: 53046, data3: 17727, data4: [175, 138, 112, 94, 152, 241, 98, 96] };
+}
 #[repr(C)]
 pub struct IDMOVideoOutputOptimizations {
     pub base__: ::windows_sys::core::IUnknown,
@@ -121,6 +124,9 @@ pub struct IDMOVideoOutputOptimizations {
     pub SetOperationMode: unsafe extern "system" fn(this: *mut *mut Self, uloutputstreamindex: u32, dwenabledfeatures: u32) -> ::windows_sys::core::HRESULT,
     pub GetCurrentOperationMode: unsafe extern "system" fn(this: *mut *mut Self, uloutputstreamindex: u32, pdwenabledfeatures: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetCurrentSampleRequirements: unsafe extern "system" fn(this: *mut *mut Self, uloutputstreamindex: u32, pdwrequestedfeatures: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDMOVideoOutputOptimizations {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3197062990, data2: 23318, data3: 19753, data4: [179, 80, 127, 107, 93, 146, 152, 172] };
 }
 #[repr(C)]
 pub struct IEnumDMO {
@@ -130,12 +136,18 @@ pub struct IEnumDMO {
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEnumDMO {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 742185354, data2: 11258, data3: 19027, data4: [156, 39, 82, 73, 186, 100, 186, 15] };
+}
 #[repr(C)]
 pub struct IMediaBuffer {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetLength: unsafe extern "system" fn(this: *mut *mut Self, cblength: u32) -> ::windows_sys::core::HRESULT,
     pub GetMaxLength: unsafe extern "system" fn(this: *mut *mut Self, pcbmaxlength: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetBufferAndLength: unsafe extern "system" fn(this: *mut *mut Self, ppbuffer: *mut *mut u8, pcblength: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMediaBuffer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1508899001, data2: 37772, data3: 18982, data4: [130, 242, 149, 203, 132, 205, 200, 55] };
 }
 #[repr(C)]
 pub struct IMediaObject {
@@ -180,12 +192,18 @@ pub struct IMediaObject {
     pub ProcessOutput: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, coutputbuffercount: u32, poutputbuffers: *mut DMO_OUTPUT_DATA_BUFFER, pdwstatus: *mut u32) -> ::windows_sys::core::HRESULT,
     pub Lock: unsafe extern "system" fn(this: *mut *mut Self, block: i32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMediaObject {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3635220312, data2: 21652, data3: 16642, data4: [151, 197, 236, 121, 142, 89, 188, 244] };
+}
 #[repr(C)]
 pub struct IMediaObjectInPlace {
     pub base__: ::windows_sys::core::IUnknown,
     pub Process: unsafe extern "system" fn(this: *mut *mut Self, ulsize: u32, pdata: *mut u8, reftimestart: i64, dwflags: u32) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppmediaobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetLatency: unsafe extern "system" fn(this: *mut *mut Self, platencytime: *mut i64) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMediaObjectInPlace {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1696307920, data2: 4039, data3: 19113, data4: [149, 56, 216, 153, 49, 1, 7, 65] };
 }
 #[doc = "*Required features: `\"Win32_Media_DxMediaObjects\"`*"]
 pub type _DMO_INPLACE_PROCESS_FLAGS = i32;

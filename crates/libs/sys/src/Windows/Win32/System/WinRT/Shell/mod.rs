@@ -14,3 +14,6 @@ pub struct IDDEInitializer {
     #[cfg(not(feature = "Win32_UI_Shell"))]
     Initialize: usize,
 }
+impl ::windows_sys::core::Interface for IDDEInitializer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 819761951, data2: 13308, data3: 20477, data4: [161, 104, 148, 34, 88, 207, 60, 164] };
+}

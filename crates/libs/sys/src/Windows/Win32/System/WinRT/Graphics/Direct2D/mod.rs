@@ -34,6 +34,9 @@ pub struct IGeometrySource2DInterop {
     #[cfg(not(feature = "Win32_Graphics_Direct2D"))]
     TryGetGeometryUsingFactory: usize,
 }
+impl ::windows_sys::core::Interface for IGeometrySource2DInterop {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 106409843, data2: 21501, data3: 18383, data4: [132, 255, 200, 73, 45, 42, 128, 163] };
+}
 #[repr(C)]
 pub struct IGraphicsEffectD2D1Interop {
     pub base__: ::windows_sys::core::IUnknown,
@@ -49,4 +52,7 @@ pub struct IGraphicsEffectD2D1Interop {
     #[cfg(not(feature = "Graphics_Effects"))]
     GetSource: usize,
     pub GetSourceCount: unsafe extern "system" fn(this: *mut *mut Self, count: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IGraphicsEffectD2D1Interop {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 801469316, data2: 41064, data3: 17623, data4: [163, 49, 48, 152, 47, 207, 113, 119] };
 }

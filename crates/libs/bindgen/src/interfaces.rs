@@ -15,7 +15,9 @@ fn gen_sys_interface(gen: &Gen, def: TypeDef) -> TokenStream {
     let cfg = gen.reader.type_def_cfg(def, &[]);
     let features = gen.cfg_features(&cfg);
 
-    gen.interface_vtbl(def, generics, &ident, &constraints, &features)
+    let mut tokens = gen.interface_vtbl(def, generics, &ident, &constraints, &features);
+    tokens.combine(&gen.interface_sys_trait(def, &ident, &constraints, &features));
+    tokens
 }
 
 fn gen_win_interface(gen: &Gen, def: TypeDef) -> TokenStream {

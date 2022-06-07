@@ -1572,6 +1572,9 @@ pub struct IAVIEditStream {
     #[cfg(not(feature = "Win32_Foundation"))]
     SetInfo: usize,
 }
+impl ::windows_sys::core::Interface for IAVIEditStream {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 131108, data2: 0, data3: 0, data4: [192, 0, 0, 0, 0, 0, 0, 70] };
+}
 #[repr(C)]
 pub struct IAVIFile {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1586,11 +1589,18 @@ pub struct IAVIFile {
     pub EndRecord: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub DeleteStream: unsafe extern "system" fn(this: *mut *mut Self, fcctype: u32, lparam: i32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAVIFile {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 131104, data2: 0, data3: 0, data4: [192, 0, 0, 0, 0, 0, 0, 70] };
+}
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IAVIPersistFile {
     pub base__: super::super::System::Com::IPersistFile,
     pub Reserved1: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IAVIPersistFile {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 131109, data2: 0, data3: 0, data4: [192, 0, 0, 0, 0, 0, 0, 70] };
 }
 #[repr(C)]
 pub struct IAVIStream {
@@ -1616,11 +1626,17 @@ pub struct IAVIStream {
     #[cfg(not(feature = "Win32_Foundation"))]
     SetInfo: usize,
 }
+impl ::windows_sys::core::Interface for IAVIStream {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 131105, data2: 0, data3: 0, data4: [192, 0, 0, 0, 0, 0, 0, 70] };
+}
 #[repr(C)]
 pub struct IAVIStreaming {
     pub base__: ::windows_sys::core::IUnknown,
     pub Begin: unsafe extern "system" fn(this: *mut *mut Self, lstart: i32, lend: i32, lrate: i32) -> ::windows_sys::core::HRESULT,
     pub End: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAVIStreaming {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 131106, data2: 0, data3: 0, data4: [192, 0, 0, 0, 0, 0, 0, 70] };
 }
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Media_Multimedia\"`, `\"Win32_Graphics_Gdi\"`*"]
@@ -2264,6 +2280,9 @@ pub struct IGetFrame {
     pub SetFormat: unsafe extern "system" fn(this: *mut *mut Self, lpbi: *const super::super::Graphics::Gdi::BITMAPINFOHEADER, lpbits: *const ::core::ffi::c_void, x: i32, y: i32, dx: i32, dy: i32) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Graphics_Gdi"))]
     SetFormat: usize,
+}
+impl ::windows_sys::core::Interface for IGetFrame {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 131107, data2: 0, data3: 0, data4: [192, 0, 0, 0, 0, 0, 0, 70] };
 }
 #[repr(C, packed(1))]
 #[doc = "*Required features: `\"Win32_Media_Multimedia\"`, `\"Win32_Media_Audio\"`*"]

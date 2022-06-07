@@ -4,10 +4,16 @@ pub struct IErrorReceivedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub Error: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut SerialError) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IErrorReceivedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4240883545, data2: 4739, data3: 19850, data4: [191, 223, 86, 107, 51, 221, 178, 143] };
+}
 #[repr(C)]
 pub struct IPinChangedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub PinChange: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut SerialPinChange) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPinChangedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2730433968, data2: 64668, data3: 17927, data4: [147, 208, 250, 94, 131, 67, 238, 34] };
 }
 #[repr(C)]
 pub struct ISerialDevice {
@@ -76,6 +82,9 @@ pub struct ISerialDevice {
     #[cfg(not(feature = "Foundation"))]
     RemovePinChanged: usize,
 }
+impl ::windows_sys::core::Interface for ISerialDevice {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3783773382, data2: 8720, data3: 16719, data4: [182, 90, 245, 85, 58, 3, 55, 42] };
+}
 #[repr(C)]
 pub struct ISerialDeviceStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -86,6 +95,9 @@ pub struct ISerialDeviceStatics {
     pub FromIdAsync: unsafe extern "system" fn(this: *mut *mut Self, deviceid: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     FromIdAsync: usize,
+}
+impl ::windows_sys::core::Interface for ISerialDeviceStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 93080176, data2: 2102, data3: 18835, data4: [174, 26, 182, 26, 227, 190, 5, 107] };
 }
 pub type PinChangedEventArgs = *mut ::core::ffi::c_void;
 pub type SerialDevice = *mut ::core::ffi::c_void;

@@ -1281,6 +1281,9 @@ pub struct IRichEditOle {
     #[cfg(not(feature = "Win32_System_Com"))]
     ImportDataObject: usize,
 }
+impl ::windows_sys::core::Interface for IRichEditOle {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 134400, data2: 0, data3: 0, data4: [192, 0, 0, 0, 0, 0, 0, 70] };
+}
 #[repr(C)]
 pub struct IRichEditOleCallback {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1325,6 +1328,9 @@ pub struct IRichEditOleCallback {
     #[cfg(not(all(feature = "Win32_System_Ole", feature = "Win32_UI_WindowsAndMessaging")))]
     GetContextMenu: usize,
 }
+impl ::windows_sys::core::Interface for IRichEditOleCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 134403, data2: 0, data3: 0, data4: [192, 0, 0, 0, 0, 0, 0, 70] };
+}
 #[repr(C)]
 pub struct IRicheditUiaOverrides {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1333,10 +1339,17 @@ pub struct IRicheditUiaOverrides {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     GetPropertyOverrideValue: usize,
 }
+impl ::windows_sys::core::Interface for IRicheditUiaOverrides {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID::zeroed();
+}
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ITextDisplays {
     pub base__: super::super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ITextDisplays {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3259102706, data2: 29190, data3: 4568, data4: [162, 199, 0, 160, 209, 214, 198, 179] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1382,6 +1395,10 @@ pub struct ITextDocument {
     pub RangeFromPoint: unsafe extern "system" fn(this: *mut *mut Self, x: i32, y: i32, pprange: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     RangeFromPoint: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ITextDocument {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2361694144, data2: 41439, data3: 4558, data4: [128, 152, 0, 170, 0, 71, 190, 93] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1469,6 +1486,10 @@ pub struct ITextDocument2 {
     pub GetStory: unsafe extern "system" fn(this: *mut *mut Self, index: i32, ppstory: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ITextDocument2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3259102688, data2: 29190, data3: 4568, data4: [162, 199, 0, 160, 209, 214, 198, 179] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ITextDocument2Old {
     pub base__: ITextDocument,
@@ -1508,6 +1529,10 @@ pub struct ITextDocument2Old {
     GetDocumentPara: usize,
     pub GetCallManager: unsafe extern "system" fn(this: *mut *mut Self, ppvoid: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub ReleaseCallManager: unsafe extern "system" fn(this: *mut *mut Self, pvoid: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ITextDocument2Old {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 29512960, data2: 17000, data3: 4561, data4: [136, 58, 60, 139, 0, 193, 0, 0] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1585,6 +1610,10 @@ pub struct ITextFont {
     pub SetWeight: unsafe extern "system" fn(this: *mut *mut Self, value: i32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ITextFont {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2361694147, data2: 41439, data3: 4558, data4: [128, 152, 0, 170, 0, 71, 190, 93] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ITextFont2 {
     pub base__: ITextFont,
@@ -1643,6 +1672,10 @@ pub struct ITextFont2 {
     pub SetEffects: unsafe extern "system" fn(this: *mut *mut Self, value: i32, mask: i32) -> ::windows_sys::core::HRESULT,
     pub SetEffects2: unsafe extern "system" fn(this: *mut *mut Self, value: i32, mask: i32) -> ::windows_sys::core::HRESULT,
     pub SetProperty: unsafe extern "system" fn(this: *mut *mut Self, r#type: i32, value: i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ITextFont2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3259102691, data2: 29190, data3: 4568, data4: [162, 199, 0, 160, 209, 214, 198, 179] };
 }
 #[repr(C)]
 pub struct ITextHost {
@@ -1753,6 +1786,9 @@ pub struct ITextHost {
     TxImmReleaseContext: usize,
     pub TxGetSelectionBarWidth: unsafe extern "system" fn(this: *mut *mut Self, lselbarwidth: *mut i32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ITextHost {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID::zeroed();
+}
 #[repr(C)]
 pub struct ITextHost2 {
     pub base__: ITextHost,
@@ -1783,6 +1819,9 @@ pub struct ITextHost2 {
     TxShowDropCaret: usize,
     pub TxDestroyCaret: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub TxGetHorzExtent: unsafe extern "system" fn(this: *mut *mut Self, plhorzextent: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ITextHost2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID::zeroed();
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1847,6 +1886,10 @@ pub struct ITextPara {
     pub GetTab: unsafe extern "system" fn(this: *mut *mut Self, itab: i32, ptbpos: *mut f32, ptbalign: *mut i32, ptbleader: *mut i32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ITextPara {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2361694148, data2: 41439, data3: 4558, data4: [128, 152, 0, 170, 0, 71, 190, 93] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ITextPara2 {
     pub base__: ITextPara,
@@ -1875,6 +1918,10 @@ pub struct ITextPara2 {
     IsEqual2: usize,
     pub SetEffects: unsafe extern "system" fn(this: *mut *mut Self, value: i32, mask: i32) -> ::windows_sys::core::HRESULT,
     pub SetProperty: unsafe extern "system" fn(this: *mut *mut Self, r#type: i32, value: i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ITextPara2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3259102692, data2: 29190, data3: 4568, data4: [162, 199, 0, 160, 209, 214, 198, 179] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2008,6 +2055,10 @@ pub struct ITextRange {
     pub GetEmbeddedObject: unsafe extern "system" fn(this: *mut *mut Self, ppobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ITextRange {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2361694146, data2: 41439, data3: 4558, data4: [128, 152, 0, 170, 0, 71, 190, 93] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ITextRange2 {
     pub base__: ITextSelection,
@@ -2098,6 +2149,10 @@ pub struct ITextRange2 {
     InsertImage: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ITextRange2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3259102690, data2: 29190, data3: 4568, data4: [162, 199, 0, 160, 209, 214, 198, 179] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ITextRow {
     pub base__: super::super::super::System::Com::IDispatch,
@@ -2152,6 +2207,10 @@ pub struct ITextRow {
     pub SetProperty: unsafe extern "system" fn(this: *mut *mut Self, r#type: i32, value: i32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ITextRow {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3259102703, data2: 29190, data3: 4568, data4: [162, 199, 0, 160, 209, 214, 198, 179] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ITextSelection {
     pub base__: ITextRange,
@@ -2170,9 +2229,17 @@ pub struct ITextSelection {
     TypeText: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ITextSelection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2361694145, data2: 41439, data3: 4558, data4: [128, 152, 0, 170, 0, 71, 190, 93] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ITextSelection2 {
     pub base__: ITextRange2,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ITextSelection2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3259102689, data2: 29190, data3: 4568, data4: [162, 199, 0, 160, 209, 214, 198, 179] };
 }
 #[repr(C)]
 pub struct ITextServices {
@@ -2226,6 +2293,9 @@ pub struct ITextServices {
     pub OnTxPropertyBitsChange: unsafe extern "system" fn(this: *mut *mut Self, dwmask: u32, dwbits: u32) -> ::windows_sys::core::HRESULT,
     pub TxGetCachedSize: unsafe extern "system" fn(this: *mut *mut Self, pdwwidth: *mut u32, pdwheight: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ITextServices {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID::zeroed();
+}
 #[repr(C)]
 pub struct ITextServices2 {
     pub base__: ITextServices,
@@ -2237,6 +2307,9 @@ pub struct ITextServices2 {
     pub TxDrawD2D: unsafe extern "system" fn(this: *mut *mut Self, prendertarget: *mut ::core::ffi::c_void, lprcbounds: *mut super::super::super::Foundation::RECTL, lprcupdate: *mut super::super::super::Foundation::RECT, lviewid: i32) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct2D")))]
     TxDrawD2D: usize,
+}
+impl ::windows_sys::core::Interface for ITextServices2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID::zeroed();
 }
 #[repr(C)]
 pub struct ITextStory {
@@ -2263,6 +2336,9 @@ pub struct ITextStory {
     #[cfg(not(feature = "Win32_Foundation"))]
     SetText: usize,
 }
+impl ::windows_sys::core::Interface for ITextStory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3259102707, data2: 29190, data3: 4568, data4: [162, 199, 0, 160, 209, 214, 198, 179] };
+}
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ITextStoryRanges {
@@ -2275,6 +2351,10 @@ pub struct ITextStoryRanges {
     pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, pcount: *mut i32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ITextStoryRanges {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2361694149, data2: 41439, data3: 4558, data4: [128, 152, 0, 170, 0, 71, 190, 93] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ITextStoryRanges2 {
     pub base__: ITextStoryRanges,
@@ -2282,6 +2362,10 @@ pub struct ITextStoryRanges2 {
     pub Item2: unsafe extern "system" fn(this: *mut *mut Self, index: i32, pprange: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     Item2: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ITextStoryRanges2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3259102693, data2: 29190, data3: 4568, data4: [162, 199, 0, 160, 209, 214, 198, 179] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2331,6 +2415,10 @@ pub struct ITextStrings {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     SuffixTop: usize,
     pub Swap: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ITextStrings {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3259102695, data2: 29190, data3: 4568, data4: [162, 199, 0, 160, 209, 214, 198, 179] };
 }
 #[doc = "*Required features: `\"Win32_UI_Controls_RichEdit\"`*"]
 pub type KHYPH = i32;

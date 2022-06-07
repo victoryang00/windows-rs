@@ -4,6 +4,9 @@ pub struct IServiceDeviceStatics {
     pub GetDeviceSelector: unsafe extern "system" fn(this: *mut *mut Self, servicetype: ServiceDeviceType, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub GetDeviceSelectorFromServiceId: unsafe extern "system" fn(this: *mut *mut Self, serviceid: ::windows_sys::core::GUID, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IServiceDeviceStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2827097313, data2: 22983, data3: 18976, data4: [171, 166, 159, 103, 7, 147, 114, 48] };
+}
 #[repr(C)]
 pub struct IStorageDeviceStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -12,6 +15,9 @@ pub struct IStorageDeviceStatics {
     #[cfg(not(feature = "Storage"))]
     FromId: usize,
     pub GetDeviceSelector: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IStorageDeviceStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1590576366, data2: 6947, data3: 19922, data4: [134, 82, 188, 22, 79, 0, 49, 40] };
 }
 #[doc = "*Required features: `\"Devices_Portable\"`*"]
 #[repr(transparent)]

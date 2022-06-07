@@ -6,6 +6,9 @@ pub struct IConnectionRequestedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub PeerInformation: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IConnectionRequestedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3949498798, data2: 20254, data3: 19558, data4: [189, 13, 70, 146, 74, 148, 46, 8] };
+}
 #[repr(C)]
 pub struct IPeerFinderStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -50,6 +53,9 @@ pub struct IPeerFinderStatics {
     #[cfg(not(all(feature = "Foundation", feature = "Networking_Sockets")))]
     ConnectAsync: usize,
 }
+impl ::windows_sys::core::Interface for IPeerFinderStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2437626721, data2: 63201, data3: 18372, data4: [161, 76, 20, 138, 25, 3, 208, 198] };
+}
 #[repr(C)]
 pub struct IPeerFinderStatics2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -65,10 +71,16 @@ pub struct IPeerFinderStatics2 {
     SetDiscoveryData: usize,
     pub CreateWatcher: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPeerFinderStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3605478501, data2: 64976, data3: 19211, data4: [147, 18, 134, 100, 8, 147, 93, 130] };
+}
 #[repr(C)]
 pub struct IPeerInformation {
     pub base__: ::windows_sys::core::IInspectable,
     pub DisplayName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPeerInformation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 537022216, data2: 40959, data3: 17908, data4: [182, 233, 64, 139, 46, 190, 243, 115] };
 }
 #[repr(C)]
 pub struct IPeerInformation3 {
@@ -79,11 +91,17 @@ pub struct IPeerInformation3 {
     #[cfg(not(feature = "Storage_Streams"))]
     DiscoveryData: usize,
 }
+impl ::windows_sys::core::Interface for IPeerInformation3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2987352362, data2: 56272, data3: 16632, data4: [149, 189, 45, 66, 9, 199, 131, 111] };
+}
 #[repr(C)]
 pub struct IPeerInformationWithHostAndService {
     pub base__: ::windows_sys::core::IInspectable,
     pub HostName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub ServiceName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPeerInformationWithHostAndService {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3972517037, data2: 7024, data3: 20107, data4: [146, 219, 187, 231, 129, 65, 147, 8] };
 }
 #[repr(C)]
 pub struct IPeerWatcher {
@@ -132,6 +150,9 @@ pub struct IPeerWatcher {
     pub Start: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Stop: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPeerWatcher {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1022239224, data2: 12198, data3: 18041, data4: [150, 145, 3, 201, 74, 66, 15, 52] };
+}
 #[repr(C)]
 pub struct IProximityDevice {
     pub base__: ::windows_sys::core::IInspectable,
@@ -176,12 +197,18 @@ pub struct IProximityDevice {
     pub BitsPerSecond: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u64) -> ::windows_sys::core::HRESULT,
     pub DeviceId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IProximityDevice {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4020806994, data2: 63201, data3: 17193, data4: [160, 252, 171, 107, 15, 210, 130, 98] };
+}
 #[repr(C)]
 pub struct IProximityDeviceStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub GetDeviceSelector: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub GetDefault: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub FromId: unsafe extern "system" fn(this: *mut *mut Self, deviceid: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IProximityDeviceStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2437652509, data2: 63201, data3: 18372, data4: [161, 76, 20, 138, 25, 3, 208, 198] };
 }
 #[repr(C)]
 pub struct IProximityMessage {
@@ -194,6 +221,9 @@ pub struct IProximityMessage {
     Data: usize,
     pub DataAsString: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IProximityMessage {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4020963202, data2: 63201, data3: 18037, data4: [160, 69, 216, 227, 32, 194, 72, 8] };
+}
 #[repr(C)]
 pub struct ITriggeredConnectionStateChangedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
@@ -203,6 +233,9 @@ pub struct ITriggeredConnectionStateChangedEventArgs {
     pub Socket: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Networking_Sockets"))]
     Socket: usize,
+}
+impl ::windows_sys::core::Interface for ITriggeredConnectionStateChangedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3332866221, data2: 63201, data3: 19796, data4: [150, 226, 51, 246, 32, 188, 168, 138] };
 }
 pub type MessageReceivedHandler = *mut ::core::ffi::c_void;
 pub type MessageTransmittedHandler = *mut ::core::ffi::c_void;

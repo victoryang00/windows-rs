@@ -8,6 +8,9 @@ pub struct AsyncIBackgroundCopyCallback {
     pub Begin_JobModification: unsafe extern "system" fn(this: *mut *mut Self, pjob: *mut ::core::ffi::c_void, dwreserved: u32) -> ::windows_sys::core::HRESULT,
     pub Finish_JobModification: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for AsyncIBackgroundCopyCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3391738449, data2: 46267, data3: 18041, data4: [163, 217, 174, 128, 6, 17, 157, 84] };
+}
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Networking_BackgroundIntelligentTransferService\"`*"]
 pub struct BG_AUTH_CREDENTIALS {
@@ -732,6 +735,10 @@ pub struct IBITSExtensionSetup {
     pub GetCleanupTask: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppunk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IBITSExtensionSetup {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 701479927, data2: 2532, data3: 19351, data4: [176, 188, 242, 40, 126, 61, 142, 179] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IBITSExtensionSetupFactory {
     pub base__: super::super::System::Com::IDispatch,
@@ -740,12 +747,19 @@ pub struct IBITSExtensionSetupFactory {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     GetObject: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IBITSExtensionSetupFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3587364162, data2: 21763, data3: 20068, data4: [139, 72, 114, 239, 145, 163, 46, 225] };
+}
 #[repr(C)]
 pub struct IBackgroundCopyCallback {
     pub base__: ::windows_sys::core::IUnknown,
     pub JobTransferred: unsafe extern "system" fn(this: *mut *mut Self, pjob: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub JobError: unsafe extern "system" fn(this: *mut *mut Self, pjob: *mut ::core::ffi::c_void, perror: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub JobModification: unsafe extern "system" fn(this: *mut *mut Self, pjob: *mut ::core::ffi::c_void, dwreserved: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IBackgroundCopyCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2548734407, data2: 390, data3: 19156, data4: [141, 249, 197, 180, 224, 237, 107, 34] };
 }
 #[repr(C)]
 pub struct IBackgroundCopyCallback1 {
@@ -754,15 +768,24 @@ pub struct IBackgroundCopyCallback1 {
     pub OnProgress: unsafe extern "system" fn(this: *mut *mut Self, progresstype: u32, pgroup: *mut ::core::ffi::c_void, pjob: *mut ::core::ffi::c_void, dwfileindex: u32, dwprogressvalue: u32) -> ::windows_sys::core::HRESULT,
     pub OnProgressEx: unsafe extern "system" fn(this: *mut *mut Self, progresstype: u32, pgroup: *mut ::core::ffi::c_void, pjob: *mut ::core::ffi::c_void, dwfileindex: u32, dwprogressvalue: u32, dwbytearraysize: u32, pbyte: *const u8) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IBackgroundCopyCallback1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 139421075, data2: 14336, data3: 19976, data4: [155, 89, 153, 250, 89, 173, 223, 130] };
+}
 #[repr(C)]
 pub struct IBackgroundCopyCallback2 {
     pub base__: IBackgroundCopyCallback,
     pub FileTransferred: unsafe extern "system" fn(this: *mut *mut Self, pjob: *mut ::core::ffi::c_void, pfile: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IBackgroundCopyCallback2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1704779436, data2: 18590, data3: 4569, data4: [169, 205, 0, 13, 86, 150, 82, 81] };
+}
 #[repr(C)]
 pub struct IBackgroundCopyCallback3 {
     pub base__: IBackgroundCopyCallback2,
     pub FileRangesTransferred: unsafe extern "system" fn(this: *mut *mut Self, job: *mut ::core::ffi::c_void, file: *mut ::core::ffi::c_void, rangecount: u32, ranges: *const BG_FILE_RANGE) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IBackgroundCopyCallback3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2563341266, data2: 58155, data3: 19160, data4: [165, 40, 149, 253, 139, 22, 189, 66] };
 }
 #[repr(C)]
 pub struct IBackgroundCopyError {
@@ -772,6 +795,9 @@ pub struct IBackgroundCopyError {
     pub GetErrorDescription: unsafe extern "system" fn(this: *mut *mut Self, languageid: u32, perrordescription: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
     pub GetErrorContextDescription: unsafe extern "system" fn(this: *mut *mut Self, languageid: u32, pcontextdescription: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
     pub GetProtocol: unsafe extern "system" fn(this: *mut *mut Self, pprotocol: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IBackgroundCopyError {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 432411552, data2: 64696, data3: 20264, data4: [129, 174, 137, 124, 61, 7, 143, 129] };
 }
 #[repr(C)]
 pub struct IBackgroundCopyFile {
@@ -783,11 +809,17 @@ pub struct IBackgroundCopyFile {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetProgress: usize,
 }
+impl ::windows_sys::core::Interface for IBackgroundCopyFile {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 28818723, data2: 64392, data3: 19063, data4: [132, 144, 88, 145, 211, 228, 101, 58] };
+}
 #[repr(C)]
 pub struct IBackgroundCopyFile2 {
     pub base__: IBackgroundCopyFile,
     pub GetFileRanges: unsafe extern "system" fn(this: *mut *mut Self, rangecount: *mut u32, ranges: *mut *mut BG_FILE_RANGE) -> ::windows_sys::core::HRESULT,
     pub SetRemoteName: unsafe extern "system" fn(this: *mut *mut Self, val: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IBackgroundCopyFile2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2213026707, data2: 2163, data3: 18253, data4: [138, 140, 242, 1, 139, 26, 147, 156] };
 }
 #[repr(C)]
 pub struct IBackgroundCopyFile3 {
@@ -806,10 +838,16 @@ pub struct IBackgroundCopyFile3 {
     #[cfg(not(feature = "Win32_Foundation"))]
     IsDownloadedFromPeer: usize,
 }
+impl ::windows_sys::core::Interface for IBackgroundCopyFile3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1704779434, data2: 18590, data3: 4569, data4: [169, 205, 0, 13, 86, 150, 82, 81] };
+}
 #[repr(C)]
 pub struct IBackgroundCopyFile4 {
     pub base__: IBackgroundCopyFile3,
     pub GetPeerDownloadStats: unsafe extern "system" fn(this: *mut *mut Self, pfromorigin: *mut u64, pfrompeers: *mut u64) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IBackgroundCopyFile4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4018013781, data2: 30856, data3: 18784, data4: [176, 229, 115, 8, 70, 224, 52, 146] };
 }
 #[repr(C)]
 pub struct IBackgroundCopyFile5 {
@@ -817,12 +855,18 @@ pub struct IBackgroundCopyFile5 {
     pub SetProperty: unsafe extern "system" fn(this: *mut *mut Self, propertyid: BITS_FILE_PROPERTY_ID, propertyvalue: BITS_FILE_PROPERTY_VALUE) -> ::windows_sys::core::HRESULT,
     pub GetProperty: unsafe extern "system" fn(this: *mut *mut Self, propertyid: BITS_FILE_PROPERTY_ID, propertyvalue: *mut BITS_FILE_PROPERTY_VALUE) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IBackgroundCopyFile5 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2244044159, data2: 56060, data3: 16616, data4: [136, 52, 223, 24, 234, 37, 113, 126] };
+}
 #[repr(C)]
 pub struct IBackgroundCopyFile6 {
     pub base__: IBackgroundCopyFile5,
     pub UpdateDownloadPosition: unsafe extern "system" fn(this: *mut *mut Self, offset: u64) -> ::windows_sys::core::HRESULT,
     pub RequestFileRanges: unsafe extern "system" fn(this: *mut *mut Self, rangecount: u32, ranges: *const BG_FILE_RANGE) -> ::windows_sys::core::HRESULT,
     pub GetFilledFileRanges: unsafe extern "system" fn(this: *mut *mut Self, rangecount: *mut u32, ranges: *mut *mut BG_FILE_RANGE) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IBackgroundCopyFile6 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3479667959, data2: 54903, data3: 18941, data4: [147, 104, 203, 71, 174, 233, 209, 173] };
 }
 #[repr(C)]
 pub struct IBackgroundCopyGroup {
@@ -848,6 +892,9 @@ pub struct IBackgroundCopyGroup {
     pub SwitchToForeground: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub QueryNewJobInterface: unsafe extern "system" fn(this: *mut *mut Self, iid: *const ::windows_sys::core::GUID, punk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetNotificationPointer: unsafe extern "system" fn(this: *mut *mut Self, iid: *const ::windows_sys::core::GUID, punk: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IBackgroundCopyGroup {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 502104231, data2: 21482, data3: 16975, data4: [138, 4, 23, 254, 169, 173, 196, 245] };
 }
 #[repr(C)]
 pub struct IBackgroundCopyJob {
@@ -888,6 +935,9 @@ pub struct IBackgroundCopyJob {
     pub GetProxySettings: unsafe extern "system" fn(this: *mut *mut Self, pproxyusage: *mut BG_JOB_PROXY_USAGE, pproxylist: *mut ::windows_sys::core::PWSTR, pproxybypasslist: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
     pub TakeOwnership: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IBackgroundCopyJob {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 929467703, data2: 20606, data3: 16736, data4: [147, 22, 38, 48, 109, 21, 11, 18] };
+}
 #[repr(C)]
 pub struct IBackgroundCopyJob1 {
     pub base__: ::windows_sys::core::IUnknown,
@@ -906,6 +956,9 @@ pub struct IBackgroundCopyJob1 {
     pub SwitchToForeground: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub JobID: unsafe extern "system" fn(this: *mut *mut Self, pguidjobid: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IBackgroundCopyJob1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1509250364, data2: 8241, data3: 17961, data4: [187, 24, 38, 69, 166, 151, 9, 71] };
+}
 #[repr(C)]
 pub struct IBackgroundCopyJob2 {
     pub base__: IBackgroundCopyJob,
@@ -918,6 +971,9 @@ pub struct IBackgroundCopyJob2 {
     pub SetCredentials: unsafe extern "system" fn(this: *mut *mut Self, credentials: *const BG_AUTH_CREDENTIALS) -> ::windows_sys::core::HRESULT,
     pub RemoveCredentials: unsafe extern "system" fn(this: *mut *mut Self, target: BG_AUTH_TARGET, scheme: BG_AUTH_SCHEME) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IBackgroundCopyJob2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1421150009, data2: 26735, data3: 17899, data4: [157, 255, 214, 169, 160, 250, 169, 175] };
+}
 #[repr(C)]
 pub struct IBackgroundCopyJob3 {
     pub base__: IBackgroundCopyJob2,
@@ -925,6 +981,9 @@ pub struct IBackgroundCopyJob3 {
     pub AddFileWithRanges: unsafe extern "system" fn(this: *mut *mut Self, remoteurl: ::windows_sys::core::PCWSTR, localname: ::windows_sys::core::PCWSTR, rangecount: u32, ranges: *const BG_FILE_RANGE) -> ::windows_sys::core::HRESULT,
     pub SetFileACLFlags: unsafe extern "system" fn(this: *mut *mut Self, flags: u32) -> ::windows_sys::core::HRESULT,
     pub GetFileACLFlags: unsafe extern "system" fn(this: *mut *mut Self, flags: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IBackgroundCopyJob3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1144817972, data2: 37119, data3: 18669, data4: [188, 222, 38, 245, 199, 69, 0, 66] };
 }
 #[repr(C)]
 pub struct IBackgroundCopyJob4 {
@@ -939,6 +998,9 @@ pub struct IBackgroundCopyJob4 {
     pub SetMaximumDownloadTime: unsafe extern "system" fn(this: *mut *mut Self, timeout: u32) -> ::windows_sys::core::HRESULT,
     pub GetMaximumDownloadTime: unsafe extern "system" fn(this: *mut *mut Self, ptimeout: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IBackgroundCopyJob4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1704779438, data2: 18590, data3: 4569, data4: [169, 205, 0, 13, 86, 150, 82, 81] };
+}
 #[repr(C)]
 pub struct IBackgroundCopyJob5 {
     pub base__: IBackgroundCopyJob4,
@@ -950,6 +1012,9 @@ pub struct IBackgroundCopyJob5 {
     pub GetProperty: unsafe extern "system" fn(this: *mut *mut Self, propertyid: BITS_JOB_PROPERTY_ID, propertyvalue: *mut BITS_JOB_PROPERTY_VALUE) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetProperty: usize,
+}
+impl ::windows_sys::core::Interface for IBackgroundCopyJob5 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3896967948, data2: 48058, data3: 18007, data4: [175, 109, 72, 74, 164, 43, 241, 254] };
 }
 #[repr(C)]
 pub struct IBackgroundCopyJobHttpOptions {
@@ -963,17 +1028,26 @@ pub struct IBackgroundCopyJobHttpOptions {
     pub SetSecurityFlags: unsafe extern "system" fn(this: *mut *mut Self, flags: u32) -> ::windows_sys::core::HRESULT,
     pub GetSecurityFlags: unsafe extern "system" fn(this: *mut *mut Self, pflags: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IBackgroundCopyJobHttpOptions {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4055699577, data2: 40705, data3: 19420, data4: [128, 54, 240, 155, 112, 9, 80, 102] };
+}
 #[repr(C)]
 pub struct IBackgroundCopyJobHttpOptions2 {
     pub base__: IBackgroundCopyJobHttpOptions,
     pub SetHttpMethod: unsafe extern "system" fn(this: *mut *mut Self, method: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
     pub GetHttpMethod: unsafe extern "system" fn(this: *mut *mut Self, method: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IBackgroundCopyJobHttpOptions2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3046220178, data2: 41989, data3: 20419, data4: [131, 35, 76, 92, 84, 37, 120, 252] };
+}
 #[repr(C)]
 pub struct IBackgroundCopyJobHttpOptions3 {
     pub base__: IBackgroundCopyJobHttpOptions2,
     pub SetServerCertificateValidationInterface: unsafe extern "system" fn(this: *mut *mut Self, certvalidationcallback: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub MakeCustomHeadersWriteOnly: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IBackgroundCopyJobHttpOptions3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2324849619, data2: 64844, data3: 20186, data4: [155, 40, 48, 19, 42, 77, 78, 60] };
 }
 #[repr(C)]
 pub struct IBackgroundCopyManager {
@@ -983,6 +1057,9 @@ pub struct IBackgroundCopyManager {
     pub EnumJobs: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetErrorDescription: unsafe extern "system" fn(this: *mut *mut Self, hresult: ::windows_sys::core::HRESULT, languageid: u32, perrordescription: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IBackgroundCopyManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1558400013, data2: 3529, data3: 19487, data4: [137, 124, 218, 161, 183, 140, 238, 124] };
+}
 #[repr(C)]
 pub struct IBackgroundCopyQMgr {
     pub base__: ::windows_sys::core::IUnknown,
@@ -990,10 +1067,16 @@ pub struct IBackgroundCopyQMgr {
     pub GetGroup: unsafe extern "system" fn(this: *mut *mut Self, groupid: ::windows_sys::core::GUID, ppgroup: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub EnumGroups: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, ppenumgroups: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IBackgroundCopyQMgr {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 385096809, data2: 2549, data3: 16850, data4: [140, 216, 60, 8, 196, 123, 200, 168] };
+}
 #[repr(C)]
 pub struct IBackgroundCopyServerCertificateValidationCallback {
     pub base__: ::windows_sys::core::IUnknown,
     pub ValidateServerCertificate: unsafe extern "system" fn(this: *mut *mut Self, job: *mut ::core::ffi::c_void, file: *mut ::core::ffi::c_void, certlength: u32, certdata: *const u8, certencodingtype: u32, certstorelength: u32, certstoredata: *const u8) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IBackgroundCopyServerCertificateValidationCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1290538242, data2: 57079, data3: 16728, data4: [129, 58, 195, 42, 70, 148, 95, 247] };
 }
 #[repr(C)]
 pub struct IBitsPeer {
@@ -1007,6 +1090,9 @@ pub struct IBitsPeer {
     pub IsAvailable: unsafe extern "system" fn(this: *mut *mut Self, ponline: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     IsAvailable: usize,
+}
+impl ::windows_sys::core::Interface for IBitsPeer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1704779426, data2: 18590, data3: 4569, data4: [169, 205, 0, 13, 86, 150, 82, 81] };
 }
 #[repr(C)]
 pub struct IBitsPeerCacheAdministration {
@@ -1026,6 +1112,9 @@ pub struct IBitsPeerCacheAdministration {
     pub ClearPeers: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub DiscoverPeers: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IBitsPeerCacheAdministration {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1704779437, data2: 18590, data3: 4569, data4: [169, 205, 0, 13, 86, 150, 82, 81] };
+}
 #[repr(C)]
 pub struct IBitsPeerCacheRecord {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1043,6 +1132,9 @@ pub struct IBitsPeerCacheRecord {
     pub IsFileValidated: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub GetFileRanges: unsafe extern "system" fn(this: *mut *mut Self, prangecount: *mut u32, ppranges: *mut *mut BG_FILE_RANGE) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IBitsPeerCacheRecord {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1704779439, data2: 18590, data3: 4569, data4: [169, 205, 0, 13, 86, 150, 82, 81] };
+}
 #[repr(C)]
 pub struct IBitsTokenOptions {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1051,6 +1143,9 @@ pub struct IBitsTokenOptions {
     pub SetHelperToken: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub ClearHelperToken: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub GetHelperTokenSid: unsafe extern "system" fn(this: *mut *mut Self, psid: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IBitsTokenOptions {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2586150083, data2: 63442, data3: 17786, data4: [154, 94, 34, 182, 123, 255, 199, 210] };
 }
 #[repr(C)]
 pub struct IEnumBackgroundCopyFiles {
@@ -1061,6 +1156,9 @@ pub struct IEnumBackgroundCopyFiles {
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, pucount: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEnumBackgroundCopyFiles {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3394363749, data2: 50021, data3: 16972, data4: [141, 65, 36, 170, 164, 255, 60, 64] };
+}
 #[repr(C)]
 pub struct IEnumBackgroundCopyGroups {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1069,6 +1167,9 @@ pub struct IEnumBackgroundCopyGroups {
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, pucount: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IEnumBackgroundCopyGroups {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3650348547, data2: 19108, data3: 18373, data4: [134, 101, 194, 13, 57, 194, 186, 79] };
 }
 #[repr(C)]
 pub struct IEnumBackgroundCopyJobs {
@@ -1079,6 +1180,9 @@ pub struct IEnumBackgroundCopyJobs {
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, pucount: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEnumBackgroundCopyJobs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 452261394, data2: 15217, data3: 18031, data4: [143, 88, 123, 111, 115, 172, 87, 173] };
+}
 #[repr(C)]
 pub struct IEnumBackgroundCopyJobs1 {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1087,6 +1191,9 @@ pub struct IEnumBackgroundCopyJobs1 {
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, pucount: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IEnumBackgroundCopyJobs1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2343484061, data2: 36636, data3: 17092, data4: [184, 44, 9, 174, 121, 152, 13, 37] };
 }
 #[repr(C)]
 pub struct IEnumBitsPeerCacheRecords {
@@ -1097,6 +1204,9 @@ pub struct IEnumBitsPeerCacheRecords {
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, pucount: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEnumBitsPeerCacheRecords {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1704779428, data2: 18590, data3: 4569, data4: [169, 205, 0, 13, 86, 150, 82, 81] };
+}
 #[repr(C)]
 pub struct IEnumBitsPeers {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1105,6 +1215,9 @@ pub struct IEnumBitsPeers {
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, pucount: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IEnumBitsPeers {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1704779429, data2: 18590, data3: 4569, data4: [169, 205, 0, 13, 86, 150, 82, 81] };
 }
 #[doc = "*Required features: `\"Win32_Networking_BackgroundIntelligentTransferService\"`*"]
 pub const QM_E_DOWNLOADER_UNAVAILABLE: u32 = 2164264963u32;

@@ -65,8 +65,14 @@ pub struct IDirect3DDevice {
     pub base__: ::windows_sys::core::IInspectable,
     pub Trim: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDirect3DDevice {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2742428843, data2: 36191, data3: 18000, data4: [157, 62, 158, 174, 61, 155, 198, 112] };
+}
 #[repr(C)]
 pub struct IDirect3DSurface {
     pub base__: ::windows_sys::core::IInspectable,
     pub Description: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut Direct3DSurfaceDescription) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDirect3DSurface {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 200581446, data2: 5057, data3: 18068, data4: [190, 227, 122, 191, 21, 234, 245, 134] };
 }

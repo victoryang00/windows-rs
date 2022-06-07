@@ -37,6 +37,9 @@ pub struct IIsolatedAppLauncher {
     #[cfg(not(feature = "Win32_Foundation"))]
     Launch: usize,
 }
+impl ::windows_sys::core::Interface for IIsolatedAppLauncher {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4136011663, data2: 31554, data3: 19652, data4: [150, 251, 244, 243, 182, 227, 210, 77] };
+}
 pub const IsolatedAppLauncher: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3162580016, data2: 59230, data3: 20433, data4: [150, 65, 31, 159, 30, 45, 154, 31] };
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Isolation\"`, `\"Win32_Foundation\"`*"]

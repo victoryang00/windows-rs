@@ -1624,6 +1624,9 @@ pub struct IDXGIAdapter {
     GetDesc: usize,
     pub CheckInterfaceSupport: unsafe extern "system" fn(this: *mut *mut Self, interfacename: *const ::windows_sys::core::GUID, pumdversion: *mut i64) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDXGIAdapter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 605153249, data2: 4780, data3: 19663, data4: [189, 20, 151, 152, 232, 83, 77, 192] };
+}
 #[repr(C)]
 pub struct IDXGIAdapter1 {
     pub base__: IDXGIAdapter,
@@ -1632,6 +1635,9 @@ pub struct IDXGIAdapter1 {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetDesc1: usize,
 }
+impl ::windows_sys::core::Interface for IDXGIAdapter1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 688099169, data2: 14393, data3: 17958, data4: [145, 253, 8, 104, 121, 1, 26, 5] };
+}
 #[repr(C)]
 pub struct IDXGIAdapter2 {
     pub base__: IDXGIAdapter1,
@@ -1639,6 +1645,9 @@ pub struct IDXGIAdapter2 {
     pub GetDesc2: unsafe extern "system" fn(this: *mut *mut Self, pdesc: *mut DXGI_ADAPTER_DESC2) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetDesc2: usize,
+}
+impl ::windows_sys::core::Interface for IDXGIAdapter2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 178368010, data2: 64014, data3: 19332, data4: [134, 68, 224, 95, 248, 229, 172, 181] };
 }
 #[repr(C)]
 pub struct IDXGIAdapter3 {
@@ -1656,6 +1665,9 @@ pub struct IDXGIAdapter3 {
     RegisterVideoMemoryBudgetChangeNotificationEvent: usize,
     pub UnregisterVideoMemoryBudgetChangeNotification: unsafe extern "system" fn(this: *mut *mut Self, dwcookie: u32),
 }
+impl ::windows_sys::core::Interface for IDXGIAdapter3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1683580836, data2: 5010, data3: 17168, data4: [167, 152, 128, 83, 206, 62, 147, 253] };
+}
 #[repr(C)]
 pub struct IDXGIAdapter4 {
     pub base__: IDXGIAdapter3,
@@ -1664,10 +1676,16 @@ pub struct IDXGIAdapter4 {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetDesc3: usize,
 }
+impl ::windows_sys::core::Interface for IDXGIAdapter4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1015912913, data2: 20415, data3: 16769, data4: [168, 44, 175, 102, 191, 123, 210, 78] };
+}
 #[repr(C)]
 pub struct IDXGIDebug {
     pub base__: ::windows_sys::core::IUnknown,
     pub ReportLiveObjects: unsafe extern "system" fn(this: *mut *mut Self, apiid: ::windows_sys::core::GUID, flags: DXGI_DEBUG_RLO_FLAGS) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDXGIDebug {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 295597138, data2: 56990, data3: 16638, data4: [136, 6, 136, 249, 12, 18, 180, 65] };
 }
 #[repr(C)]
 pub struct IDXGIDebug1 {
@@ -1678,6 +1696,9 @@ pub struct IDXGIDebug1 {
     pub IsLeakTrackingEnabledForThread: unsafe extern "system" fn(this: *mut *mut Self) -> super::super::Foundation::BOOL,
     #[cfg(not(feature = "Win32_Foundation"))]
     IsLeakTrackingEnabledForThread: usize,
+}
+impl ::windows_sys::core::Interface for IDXGIDebug1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3315621644, data2: 5874, data3: 19167, data4: [159, 77, 168, 196, 213, 138, 197, 80] };
 }
 #[repr(C)]
 pub struct IDXGIDecodeSwapChain {
@@ -1704,6 +1725,9 @@ pub struct IDXGIDecodeSwapChain {
     pub SetColorSpace: unsafe extern "system" fn(this: *mut *mut Self, colorspace: DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS) -> ::windows_sys::core::HRESULT,
     pub GetColorSpace: unsafe extern "system" fn(this: *mut *mut Self) -> DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS,
 }
+impl ::windows_sys::core::Interface for IDXGIDecodeSwapChain {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 640878187, data2: 17684, data3: 19578, data4: [143, 216, 18, 234, 152, 5, 157, 24] };
+}
 #[repr(C)]
 pub struct IDXGIDevice {
     pub base__: IDXGIObject,
@@ -1716,11 +1740,17 @@ pub struct IDXGIDevice {
     pub SetGPUThreadPriority: unsafe extern "system" fn(this: *mut *mut Self, priority: i32) -> ::windows_sys::core::HRESULT,
     pub GetGPUThreadPriority: unsafe extern "system" fn(this: *mut *mut Self, ppriority: *mut i32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDXGIDevice {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1424783354, data2: 4983, data3: 17638, data4: [140, 50, 136, 253, 95, 68, 200, 76] };
+}
 #[repr(C)]
 pub struct IDXGIDevice1 {
     pub base__: IDXGIDevice,
     pub SetMaximumFrameLatency: unsafe extern "system" fn(this: *mut *mut Self, maxlatency: u32) -> ::windows_sys::core::HRESULT,
     pub GetMaximumFrameLatency: unsafe extern "system" fn(this: *mut *mut Self, pmaxlatency: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDXGIDevice1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2010879759, data2: 25206, data3: 18618, data4: [186, 40, 7, 1, 67, 180, 57, 44] };
 }
 #[repr(C)]
 pub struct IDXGIDevice2 {
@@ -1735,10 +1765,16 @@ pub struct IDXGIDevice2 {
     #[cfg(not(feature = "Win32_Foundation"))]
     EnqueueSetEvent: usize,
 }
+impl ::windows_sys::core::Interface for IDXGIDevice2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 83920407, data2: 64509, data3: 16465, data4: [167, 144, 20, 72, 132, 180, 246, 169] };
+}
 #[repr(C)]
 pub struct IDXGIDevice3 {
     pub base__: IDXGIDevice2,
     pub Trim: unsafe extern "system" fn(this: *mut *mut Self),
+}
+impl ::windows_sys::core::Interface for IDXGIDevice3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1611106668, data2: 12868, data3: 19197, data4: [191, 24, 166, 211, 190, 218, 80, 35] };
 }
 #[repr(C)]
 pub struct IDXGIDevice4 {
@@ -1746,10 +1782,16 @@ pub struct IDXGIDevice4 {
     pub OfferResources1: unsafe extern "system" fn(this: *mut *mut Self, numresources: u32, ppresources: *const *mut ::core::ffi::c_void, priority: DXGI_OFFER_RESOURCE_PRIORITY, flags: u32) -> ::windows_sys::core::HRESULT,
     pub ReclaimResources1: unsafe extern "system" fn(this: *mut *mut Self, numresources: u32, ppresources: *const *mut ::core::ffi::c_void, presults: *mut DXGI_RECLAIM_RESOURCE_RESULTS) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDXGIDevice4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2511665503, data2: 55514, data3: 19620, data4: [158, 230, 59, 118, 213, 150, 138, 16] };
+}
 #[repr(C)]
 pub struct IDXGIDeviceSubObject {
     pub base__: IDXGIObject,
     pub GetDevice: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppdevice: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDXGIDeviceSubObject {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1027474297, data2: 63966, data3: 19800, data4: [187, 108, 24, 214, 41, 146, 241, 166] };
 }
 #[repr(C)]
 pub struct IDXGIDisplayControl {
@@ -1762,6 +1804,9 @@ pub struct IDXGIDisplayControl {
     pub SetStereoEnabled: unsafe extern "system" fn(this: *mut *mut Self, enabled: super::super::Foundation::BOOL),
     #[cfg(not(feature = "Win32_Foundation"))]
     SetStereoEnabled: usize,
+}
+impl ::windows_sys::core::Interface for IDXGIDisplayControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3936206618, data2: 51342, data3: 17542, data4: [133, 74, 152, 170, 1, 56, 243, 12] };
 }
 #[repr(C)]
 pub struct IDXGIFactory {
@@ -1784,6 +1829,9 @@ pub struct IDXGIFactory {
     #[cfg(not(feature = "Win32_Foundation"))]
     CreateSoftwareAdapter: usize,
 }
+impl ::windows_sys::core::Interface for IDXGIFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2071029484, data2: 8647, data3: 17582, data4: [178, 26, 201, 174, 50, 26, 227, 105] };
+}
 #[repr(C)]
 pub struct IDXGIFactory1 {
     pub base__: IDXGIFactory,
@@ -1792,6 +1840,9 @@ pub struct IDXGIFactory1 {
     pub IsCurrent: unsafe extern "system" fn(this: *mut *mut Self) -> super::super::Foundation::BOOL,
     #[cfg(not(feature = "Win32_Foundation"))]
     IsCurrent: usize,
+}
+impl ::windows_sys::core::Interface for IDXGIFactory1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1997188728, data2: 62063, data3: 19898, data4: [168, 41, 37, 60, 131, 209, 179, 135] };
 }
 #[repr(C)]
 pub struct IDXGIFactory2 {
@@ -1835,10 +1886,16 @@ pub struct IDXGIFactory2 {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common")))]
     CreateSwapChainForComposition: usize,
 }
+impl ::windows_sys::core::Interface for IDXGIFactory2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1355299356, data2: 57458, data3: 19528, data4: [135, 176, 54, 48, 250, 54, 166, 208] };
+}
 #[repr(C)]
 pub struct IDXGIFactory3 {
     pub base__: IDXGIFactory2,
     pub GetCreationFlags: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
+}
+impl ::windows_sys::core::Interface for IDXGIFactory3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 625489955, data2: 52550, data3: 19581, data4: [134, 202, 71, 170, 149, 184, 55, 189] };
 }
 #[repr(C)]
 pub struct IDXGIFactory4 {
@@ -1849,15 +1906,24 @@ pub struct IDXGIFactory4 {
     EnumAdapterByLuid: usize,
     pub EnumWarpAdapter: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppvadapter: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDXGIFactory4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 466020866, data2: 61238, data3: 17999, data4: [191, 12, 33, 202, 57, 229, 22, 138] };
+}
 #[repr(C)]
 pub struct IDXGIFactory5 {
     pub base__: IDXGIFactory4,
     pub CheckFeatureSupport: unsafe extern "system" fn(this: *mut *mut Self, feature: DXGI_FEATURE, pfeaturesupportdata: *mut ::core::ffi::c_void, featuresupportdatasize: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDXGIFactory5 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1983046133, data2: 61029, data3: 19914, data4: [135, 253, 132, 205, 117, 248, 131, 141] };
+}
 #[repr(C)]
 pub struct IDXGIFactory6 {
     pub base__: IDXGIFactory5,
     pub EnumAdapterByGpuPreference: unsafe extern "system" fn(this: *mut *mut Self, adapter: u32, gpupreference: DXGI_GPU_PREFERENCE, riid: *const ::windows_sys::core::GUID, ppvadapter: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDXGIFactory6 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3249957199, data2: 65289, data3: 17577, data4: [176, 60, 119, 144, 10, 10, 29, 23] };
 }
 #[repr(C)]
 pub struct IDXGIFactory7 {
@@ -1867,6 +1933,9 @@ pub struct IDXGIFactory7 {
     #[cfg(not(feature = "Win32_Foundation"))]
     RegisterAdaptersChangedEvent: usize,
     pub UnregisterAdaptersChangedEvent: unsafe extern "system" fn(this: *mut *mut Self, dwcookie: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDXGIFactory7 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2761322221, data2: 30427, data3: 17626, data4: [132, 193, 238, 154, 122, 251, 32, 168] };
 }
 #[repr(C)]
 pub struct IDXGIFactoryMedia {
@@ -1879,6 +1948,9 @@ pub struct IDXGIFactoryMedia {
     pub CreateDecodeSwapChainForCompositionSurfaceHandle: unsafe extern "system" fn(this: *mut *mut Self, pdevice: *mut ::core::ffi::c_void, hsurface: super::super::Foundation::HANDLE, pdesc: *const DXGI_DECODE_SWAP_CHAIN_DESC, pyuvdecodebuffers: *mut ::core::ffi::c_void, prestricttooutput: *mut ::core::ffi::c_void, ppswapchain: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     CreateDecodeSwapChainForCompositionSurfaceHandle: usize,
+}
+impl ::windows_sys::core::Interface for IDXGIFactoryMedia {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1105711602, data2: 42385, data3: 20347, data4: [162, 229, 250, 156, 132, 62, 28, 18] };
 }
 #[repr(C)]
 pub struct IDXGIInfoQueue {
@@ -1945,11 +2017,17 @@ pub struct IDXGIInfoQueue {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetMuteDebugOutput: usize,
 }
+impl ::windows_sys::core::Interface for IDXGIInfoQueue {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3597943239, data2: 26410, data3: 18287, data4: [158, 130, 205, 85, 180, 73, 73, 206] };
+}
 #[repr(C)]
 pub struct IDXGIKeyedMutex {
     pub base__: IDXGIDeviceSubObject,
     pub AcquireSync: unsafe extern "system" fn(this: *mut *mut Self, key: u64, dwmilliseconds: u32) -> ::windows_sys::core::HRESULT,
     pub ReleaseSync: unsafe extern "system" fn(this: *mut *mut Self, key: u64) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDXGIKeyedMutex {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2643333769, data2: 55219, data3: 18015, data4: [129, 38, 37, 14, 52, 154, 248, 93] };
 }
 #[repr(C)]
 pub struct IDXGIObject {
@@ -1958,6 +2036,9 @@ pub struct IDXGIObject {
     pub SetPrivateDataInterface: unsafe extern "system" fn(this: *mut *mut Self, name: *const ::windows_sys::core::GUID, punknown: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetPrivateData: unsafe extern "system" fn(this: *mut *mut Self, name: *const ::windows_sys::core::GUID, pdatasize: *mut u32, pdata: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetParent: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppparent: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDXGIObject {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2931961784, data2: 30451, data3: 17977, data4: [155, 224, 40, 235, 67, 166, 122, 46] };
 }
 #[repr(C)]
 pub struct IDXGIOutput {
@@ -1996,6 +2077,9 @@ pub struct IDXGIOutput {
     pub GetDisplaySurfaceData: unsafe extern "system" fn(this: *mut *mut Self, pdestination: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetFrameStatistics: unsafe extern "system" fn(this: *mut *mut Self, pstats: *mut DXGI_FRAME_STATISTICS) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDXGIOutput {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2919427803, data2: 50997, data3: 18064, data4: [141, 82, 90, 141, 194, 2, 19, 170] };
+}
 #[repr(C)]
 pub struct IDXGIOutput1 {
     pub base__: IDXGIOutput,
@@ -2010,6 +2094,9 @@ pub struct IDXGIOutput1 {
     pub GetDisplaySurfaceData1: unsafe extern "system" fn(this: *mut *mut Self, pdestination: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub DuplicateOutput: unsafe extern "system" fn(this: *mut *mut Self, pdevice: *mut ::core::ffi::c_void, ppoutputduplication: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDXGIOutput1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 13491880, data2: 37787, data3: 19331, data4: [163, 64, 166, 133, 34, 102, 102, 204] };
+}
 #[repr(C)]
 pub struct IDXGIOutput2 {
     pub base__: IDXGIOutput1,
@@ -2017,6 +2104,9 @@ pub struct IDXGIOutput2 {
     pub SupportsOverlays: unsafe extern "system" fn(this: *mut *mut Self) -> super::super::Foundation::BOOL,
     #[cfg(not(feature = "Win32_Foundation"))]
     SupportsOverlays: usize,
+}
+impl ::windows_sys::core::Interface for IDXGIOutput2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1499347409, data2: 10020, data3: 18019, data4: [153, 177, 218, 150, 157, 226, 131, 100] };
 }
 #[repr(C)]
 pub struct IDXGIOutput3 {
@@ -2026,6 +2116,9 @@ pub struct IDXGIOutput3 {
     #[cfg(not(feature = "Win32_Graphics_Dxgi_Common"))]
     CheckOverlaySupport: usize,
 }
+impl ::windows_sys::core::Interface for IDXGIOutput3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2322313985, data2: 32382, data3: 16884, data4: [168, 224, 91, 50, 247, 249, 155, 24] };
+}
 #[repr(C)]
 pub struct IDXGIOutput4 {
     pub base__: IDXGIOutput3,
@@ -2033,6 +2126,9 @@ pub struct IDXGIOutput4 {
     pub CheckOverlayColorSpaceSupport: unsafe extern "system" fn(this: *mut *mut Self, format: Common::DXGI_FORMAT, colorspace: Common::DXGI_COLOR_SPACE_TYPE, pconcerneddevice: *mut ::core::ffi::c_void, pflags: *mut u32) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Graphics_Dxgi_Common"))]
     CheckOverlayColorSpaceSupport: usize,
+}
+impl ::windows_sys::core::Interface for IDXGIOutput4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3699231285, data2: 8598, data3: 16717, data4: [159, 83, 97, 120, 132, 3, 42, 96] };
 }
 #[repr(C)]
 pub struct IDXGIOutput5 {
@@ -2042,6 +2138,9 @@ pub struct IDXGIOutput5 {
     #[cfg(not(feature = "Win32_Graphics_Dxgi_Common"))]
     DuplicateOutput1: usize,
 }
+impl ::windows_sys::core::Interface for IDXGIOutput5 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2157999140, data2: 43858, data3: 17131, data4: [131, 60, 12, 66, 253, 40, 45, 152] };
+}
 #[repr(C)]
 pub struct IDXGIOutput6 {
     pub base__: IDXGIOutput5,
@@ -2050,6 +2149,9 @@ pub struct IDXGIOutput6 {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common", feature = "Win32_Graphics_Gdi")))]
     GetDesc1: usize,
     pub CheckHardwareCompositionSupport: unsafe extern "system" fn(this: *mut *mut Self, pflags: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDXGIOutput6 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 109266664, data2: 43756, data3: 19332, data4: [173, 215, 19, 127, 81, 63, 119, 161] };
 }
 #[repr(C)]
 pub struct IDXGIOutputDuplication {
@@ -2078,6 +2180,9 @@ pub struct IDXGIOutputDuplication {
     pub UnMapDesktopSurface: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub ReleaseFrame: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDXGIOutputDuplication {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 421329603, data2: 41793, data3: 18189, data4: [178, 110, 168, 100, 244, 40, 49, 156] };
+}
 #[repr(C)]
 pub struct IDXGIResource {
     pub base__: IDXGIDeviceSubObject,
@@ -2089,6 +2194,9 @@ pub struct IDXGIResource {
     pub SetEvictionPriority: unsafe extern "system" fn(this: *mut *mut Self, evictionpriority: DXGI_RESOURCE_PRIORITY) -> ::windows_sys::core::HRESULT,
     pub GetEvictionPriority: unsafe extern "system" fn(this: *mut *mut Self, pevictionpriority: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDXGIResource {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 56572596, data2: 18478, data3: 20048, data4: [180, 31, 138, 127, 139, 216, 150, 11] };
+}
 #[repr(C)]
 pub struct IDXGIResource1 {
     pub base__: IDXGIResource,
@@ -2097,6 +2205,9 @@ pub struct IDXGIResource1 {
     pub CreateSharedHandle: unsafe extern "system" fn(this: *mut *mut Self, pattributes: *const super::super::Security::SECURITY_ATTRIBUTES, dwaccess: u32, lpname: ::windows_sys::core::PCWSTR, phandle: *mut super::super::Foundation::HANDLE) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Security")))]
     CreateSharedHandle: usize,
+}
+impl ::windows_sys::core::Interface for IDXGIResource1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 815141753, data2: 17929, data3: 19009, data4: [153, 142, 84, 254, 86, 126, 224, 193] };
 }
 #[repr(C)]
 pub struct IDXGISurface {
@@ -2107,6 +2218,9 @@ pub struct IDXGISurface {
     GetDesc: usize,
     pub Map: unsafe extern "system" fn(this: *mut *mut Self, plockedrect: *mut DXGI_MAPPED_RECT, mapflags: u32) -> ::windows_sys::core::HRESULT,
     pub Unmap: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDXGISurface {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3405559148, data2: 27331, data3: 18569, data4: [191, 71, 158, 35, 187, 210, 96, 236] };
 }
 #[repr(C)]
 pub struct IDXGISurface1 {
@@ -2120,10 +2234,16 @@ pub struct IDXGISurface1 {
     #[cfg(not(feature = "Win32_Foundation"))]
     ReleaseDC: usize,
 }
+impl ::windows_sys::core::Interface for IDXGISurface1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1256599698, data2: 25383, data3: 19483, data4: [128, 174, 191, 225, 46, 163, 43, 134] };
+}
 #[repr(C)]
 pub struct IDXGISurface2 {
     pub base__: IDXGISurface1,
     pub GetResource: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppparentresource: *mut *mut ::core::ffi::c_void, psubresourceindex: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDXGISurface2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2879690461, data2: 46615, data3: 19640, data4: [168, 102, 188, 68, 215, 235, 31, 162] };
 }
 #[repr(C)]
 pub struct IDXGISwapChain {
@@ -2153,6 +2273,9 @@ pub struct IDXGISwapChain {
     pub GetContainingOutput: unsafe extern "system" fn(this: *mut *mut Self, ppoutput: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetFrameStatistics: unsafe extern "system" fn(this: *mut *mut Self, pstats: *mut DXGI_FRAME_STATISTICS) -> ::windows_sys::core::HRESULT,
     pub GetLastPresentCount: unsafe extern "system" fn(this: *mut *mut Self, plastpresentcount: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDXGISwapChain {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 822949536, data2: 53991, data3: 19466, data4: [170, 4, 106, 157, 35, 184, 136, 106] };
 }
 #[repr(C)]
 pub struct IDXGISwapChain1 {
@@ -2190,6 +2313,9 @@ pub struct IDXGISwapChain1 {
     #[cfg(not(feature = "Win32_Graphics_Dxgi_Common"))]
     GetRotation: usize,
 }
+impl ::windows_sys::core::Interface for IDXGISwapChain1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2030716407, data2: 3394, data3: 18550, data4: [152, 58, 10, 85, 207, 230, 244, 170] };
+}
 #[repr(C)]
 pub struct IDXGISwapChain2 {
     pub base__: IDXGISwapChain1,
@@ -2203,6 +2329,9 @@ pub struct IDXGISwapChain2 {
     GetFrameLatencyWaitableObject: usize,
     pub SetMatrixTransform: unsafe extern "system" fn(this: *mut *mut Self, pmatrix: *const DXGI_MATRIX_3X2_F) -> ::windows_sys::core::HRESULT,
     pub GetMatrixTransform: unsafe extern "system" fn(this: *mut *mut Self, pmatrix: *mut DXGI_MATRIX_3X2_F) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDXGISwapChain2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2831035076, data2: 6559, data3: 18758, data4: [179, 49, 121, 89, 159, 185, 141, 231] };
 }
 #[repr(C)]
 pub struct IDXGISwapChain3 {
@@ -2221,10 +2350,16 @@ pub struct IDXGISwapChain3 {
     #[cfg(not(feature = "Win32_Graphics_Dxgi_Common"))]
     ResizeBuffers1: usize,
 }
+impl ::windows_sys::core::Interface for IDXGISwapChain3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2497289179, data2: 61944, data3: 19120, data4: [178, 54, 125, 160, 23, 14, 218, 177] };
+}
 #[repr(C)]
 pub struct IDXGISwapChain4 {
     pub base__: IDXGISwapChain3,
     pub SetHDRMetaData: unsafe extern "system" fn(this: *mut *mut Self, r#type: DXGI_HDR_METADATA_TYPE, size: u32, pmetadata: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDXGISwapChain4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1029201242, data2: 48458, data3: 18590, data4: [177, 244, 61, 188, 182, 69, 47, 251] };
 }
 #[repr(C)]
 pub struct IDXGISwapChainMedia {
@@ -2233,9 +2368,15 @@ pub struct IDXGISwapChainMedia {
     pub SetPresentDuration: unsafe extern "system" fn(this: *mut *mut Self, duration: u32) -> ::windows_sys::core::HRESULT,
     pub CheckPresentDurationSupport: unsafe extern "system" fn(this: *mut *mut Self, desiredpresentduration: u32, pclosestsmallerpresentduration: *mut u32, pclosestlargerpresentduration: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDXGISwapChainMedia {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3717576971, data2: 61535, data3: 20330, data4: [189, 101, 37, 191, 178, 100, 189, 132] };
+}
 #[repr(C)]
 pub struct IDXGraphicsAnalysis {
     pub base__: ::windows_sys::core::IUnknown,
     pub BeginCapture: unsafe extern "system" fn(this: *mut *mut Self),
     pub EndCapture: unsafe extern "system" fn(this: *mut *mut Self),
+}
+impl ::windows_sys::core::Interface for IDXGraphicsAnalysis {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2670007572, data2: 40269, data3: 18690, data4: [157, 96, 24, 152, 138, 183, 212, 181] };
 }

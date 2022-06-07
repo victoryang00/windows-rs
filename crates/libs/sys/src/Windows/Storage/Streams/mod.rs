@@ -42,10 +42,16 @@ pub struct IBuffer {
     pub Length: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
     pub SetLength: unsafe extern "system" fn(this: *mut *mut Self, value: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IBuffer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2421821408, data2: 48211, data3: 4575, data4: [140, 73, 0, 30, 79, 198, 134, 218] };
+}
 #[repr(C)]
 pub struct IBufferFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, capacity: u32, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IBufferFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1907331405, data2: 49423, data3: 18507, data4: [188, 80, 20, 188, 98, 59, 58, 39] };
 }
 #[repr(C)]
 pub struct IBufferStatics {
@@ -59,10 +65,16 @@ pub struct IBufferStatics {
     #[cfg(not(feature = "Foundation"))]
     CreateMemoryBufferOverIBuffer: usize,
 }
+impl ::windows_sys::core::Interface for IBufferStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3909215835, data2: 55062, data3: 18266, data4: [169, 10, 175, 114, 41, 177, 231, 65] };
+}
 #[repr(C)]
 pub struct IContentTypeProvider {
     pub base__: ::windows_sys::core::IInspectable,
     pub ContentType: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IContentTypeProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2547030181, data2: 15257, data3: 19945, data4: [136, 165, 225, 29, 47, 80, 199, 149] };
 }
 #[repr(C)]
 pub struct IDataReader {
@@ -103,15 +115,24 @@ pub struct IDataReader {
     pub DetachBuffer: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub DetachStream: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDataReader {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3803512873, data2: 46273, data3: 17172, data4: [164, 184, 251, 129, 58, 47, 39, 94] };
+}
 #[repr(C)]
 pub struct IDataReaderFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub CreateDataReader: unsafe extern "system" fn(this: *mut *mut Self, inputstream: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDataReaderFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3612506183, data2: 22490, data3: 19989, data4: [145, 76, 6, 128, 102, 153, 160, 152] };
+}
 #[repr(C)]
 pub struct IDataReaderStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub FromBuffer: unsafe extern "system" fn(this: *mut *mut Self, buffer: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDataReaderStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 301776840, data2: 63802, data3: 18203, data4: [177, 33, 243, 121, 227, 73, 49, 60] };
 }
 #[repr(C)]
 pub struct IDataWriter {
@@ -156,10 +177,16 @@ pub struct IDataWriter {
     pub DetachBuffer: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub DetachStream: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDataWriter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1689817701, data2: 54081, data3: 18722, data4: [179, 138, 221, 74, 248, 128, 140, 78] };
+}
 #[repr(C)]
 pub struct IDataWriterFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub CreateDataWriter: unsafe extern "system" fn(this: *mut *mut Self, outputstream: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDataWriterFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 864839618, data2: 35716, data3: 19499, data4: [156, 80, 123, 135, 103, 132, 122, 31] };
 }
 #[repr(C)]
 pub struct IFileRandomAccessStreamStatics {
@@ -197,6 +224,9 @@ pub struct IFileRandomAccessStreamStatics {
     #[cfg(not(all(feature = "Foundation", feature = "System")))]
     OpenTransactedWriteForUserWithOptionsAsync: usize,
 }
+impl ::windows_sys::core::Interface for IFileRandomAccessStreamStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1934950663, data2: 15191, data3: 19293, data4: [131, 69, 85, 77, 47, 198, 33, 240] };
+}
 #[repr(C)]
 pub struct IInputStream {
     pub base__: ::windows_sys::core::IInspectable,
@@ -205,6 +235,9 @@ pub struct IInputStream {
     #[cfg(not(feature = "Foundation"))]
     ReadAsync: usize,
 }
+impl ::windows_sys::core::Interface for IInputStream {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2421821410, data2: 48211, data3: 4575, data4: [140, 73, 0, 30, 79, 198, 134, 218] };
+}
 #[repr(C)]
 pub struct IInputStreamReference {
     pub base__: ::windows_sys::core::IInspectable,
@@ -212,6 +245,9 @@ pub struct IInputStreamReference {
     pub OpenSequentialReadAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     OpenSequentialReadAsync: usize,
+}
+impl ::windows_sys::core::Interface for IInputStreamReference {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1133681944, data2: 24265, data3: 19290, data4: [145, 156, 66, 5, 176, 200, 4, 182] };
 }
 #[repr(C)]
 pub struct IOutputStream {
@@ -225,6 +261,9 @@ pub struct IOutputStream {
     #[cfg(not(feature = "Foundation"))]
     FlushAsync: usize,
 }
+impl ::windows_sys::core::Interface for IOutputStream {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2421821414, data2: 48211, data3: 4575, data4: [140, 73, 0, 30, 79, 198, 134, 218] };
+}
 #[repr(C)]
 pub struct IPropertySetSerializer {
     pub base__: ::windows_sys::core::IInspectable,
@@ -236,6 +275,9 @@ pub struct IPropertySetSerializer {
     pub Deserialize: unsafe extern "system" fn(this: *mut *mut Self, propertyset: *mut ::core::ffi::c_void, buffer: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     Deserialize: usize,
+}
+impl ::windows_sys::core::Interface for IPropertySetSerializer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1854848796, data2: 61245, data3: 17270, data4: [178, 14, 91, 230, 56, 174, 172, 119] };
 }
 #[repr(C)]
 pub struct IRandomAccessStream {
@@ -250,6 +292,9 @@ pub struct IRandomAccessStream {
     pub CanRead: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub CanWrite: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IRandomAccessStream {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2421821409, data2: 48211, data3: 4575, data4: [140, 73, 0, 30, 79, 198, 134, 218] };
+}
 #[repr(C)]
 pub struct IRandomAccessStreamReference {
     pub base__: ::windows_sys::core::IInspectable,
@@ -257,6 +302,9 @@ pub struct IRandomAccessStreamReference {
     pub OpenReadAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     OpenReadAsync: usize,
+}
+impl ::windows_sys::core::Interface for IRandomAccessStreamReference {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 871248180, data2: 7638, data3: 20026, data4: [128, 103, 209, 193, 98, 232, 100, 43] };
 }
 #[repr(C)]
 pub struct IRandomAccessStreamReferenceStatics {
@@ -267,6 +315,9 @@ pub struct IRandomAccessStreamReferenceStatics {
     #[cfg(not(feature = "Foundation"))]
     CreateFromUri: usize,
     pub CreateFromStream: unsafe extern "system" fn(this: *mut *mut Self, stream: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IRandomAccessStreamReferenceStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2238908892, data2: 16319, data3: 20093, data4: [152, 111, 239, 59, 26, 7, 169, 100] };
 }
 #[repr(C)]
 pub struct IRandomAccessStreamStatics {
@@ -284,9 +335,15 @@ pub struct IRandomAccessStreamStatics {
     #[cfg(not(feature = "Foundation"))]
     CopyAndCloseAsync: usize,
 }
+impl ::windows_sys::core::Interface for IRandomAccessStreamStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1380773327, data2: 28201, data3: 19685, data4: [149, 115, 107, 117, 61, 182, 108, 58] };
+}
 #[repr(C)]
 pub struct IRandomAccessStreamWithContentType {
     pub base__: ::windows_sys::core::IInspectable,
+}
+impl ::windows_sys::core::Interface for IRandomAccessStreamWithContentType {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3424995367, data2: 19261, data3: 17295, data4: [146, 50, 16, 199, 107, 199, 224, 56] };
 }
 pub type InMemoryRandomAccessStream = *mut ::core::ffi::c_void;
 #[doc = "*Required features: `\"Storage_Streams\"`*"]

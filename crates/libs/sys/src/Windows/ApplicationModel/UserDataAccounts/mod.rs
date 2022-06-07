@@ -41,11 +41,17 @@ pub struct IUserDataAccount {
     #[cfg(not(all(feature = "ApplicationModel_Contacts", feature = "Foundation_Collections")))]
     FindContactAnnotationListsAsync: usize,
 }
+impl ::windows_sys::core::Interface for IUserDataAccount {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3116643966, data2: 45896, data3: 18704, data4: [190, 148, 74, 212, 187, 166, 222, 167] };
+}
 #[repr(C)]
 pub struct IUserDataAccount2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub EnterpriseId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub IsProtectedUnderLock: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUserDataAccount2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 126671007, data2: 56962, data3: 16459, data4: [129, 149, 200, 163, 172, 25, 143, 96] };
 }
 #[repr(C)]
 pub struct IUserDataAccount3 {
@@ -56,6 +62,9 @@ pub struct IUserDataAccount3 {
     ExplictReadAccessPackageFamilyNames: usize,
     pub DisplayName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub SetDisplayName: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUserDataAccount3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 22231109, data2: 27715, data3: 17030, data4: [157, 105, 62, 23, 9, 161, 242, 102] };
 }
 #[repr(C)]
 pub struct IUserDataAccount4 {
@@ -84,6 +93,9 @@ pub struct IUserDataAccount4 {
     #[cfg(not(feature = "Storage_Streams"))]
     SetIcon: usize,
 }
+impl ::windows_sys::core::Interface for IUserDataAccount4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3291566608, data2: 60133, data3: 20234, data4: [168, 178, 28, 202, 17, 94, 0, 143] };
+}
 #[repr(C)]
 pub struct IUserDataAccountManagerForUser {
     pub base__: ::windows_sys::core::IInspectable,
@@ -95,6 +107,9 @@ pub struct IUserDataAccountManagerForUser {
     pub User: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "System"))]
     User: usize,
+}
+impl ::windows_sys::core::Interface for IUserDataAccountManagerForUser {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1453779163, data2: 56207, data3: 16811, data4: [166, 95, 140, 89, 113, 170, 201, 130] };
 }
 #[repr(C)]
 pub struct IUserDataAccountManagerStatics {
@@ -116,6 +131,9 @@ pub struct IUserDataAccountManagerStatics {
     #[cfg(not(feature = "Foundation"))]
     ShowAccountErrorResolverAsync: usize,
 }
+impl ::windows_sys::core::Interface for IUserDataAccountManagerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 228297194, data2: 6440, data3: 18976, data4: [134, 213, 60, 115, 127, 125, 195, 176] };
+}
 #[repr(C)]
 pub struct IUserDataAccountManagerStatics2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -123,6 +141,9 @@ pub struct IUserDataAccountManagerStatics2 {
     pub GetForUser: unsafe extern "system" fn(this: *mut *mut Self, user: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "System"))]
     GetForUser: usize,
+}
+impl ::windows_sys::core::Interface for IUserDataAccountManagerStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1782443400, data2: 12651, data3: 17246, data4: [181, 52, 247, 212, 180, 183, 219, 166] };
 }
 #[repr(C)]
 pub struct IUserDataAccountStore {
@@ -140,6 +161,9 @@ pub struct IUserDataAccountStore {
     #[cfg(not(feature = "Foundation"))]
     CreateAccountAsync: usize,
 }
+impl ::windows_sys::core::Interface for IUserDataAccountStore {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 544452781, data2: 32010, data3: 20086, data4: [191, 69, 35, 104, 249, 120, 165, 154] };
+}
 #[repr(C)]
 pub struct IUserDataAccountStore2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -156,6 +180,9 @@ pub struct IUserDataAccountStore2 {
     #[cfg(not(feature = "Foundation"))]
     RemoveStoreChanged: usize,
 }
+impl ::windows_sys::core::Interface for IUserDataAccountStore2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2984292087, data2: 38240, data3: 17969, data4: [138, 240, 6, 29, 48, 22, 20, 105] };
+}
 #[repr(C)]
 pub struct IUserDataAccountStore3 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -164,6 +191,9 @@ pub struct IUserDataAccountStore3 {
     #[cfg(not(feature = "Foundation"))]
     CreateAccountWithPackageRelativeAppIdAndEnterpriseIdAsync: usize,
 }
+impl ::windows_sys::core::Interface for IUserDataAccountStore3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2168635540, data2: 62409, data3: 18315, data4: [177, 23, 101, 133, 190, 187, 103, 137] };
+}
 #[repr(C)]
 pub struct IUserDataAccountStoreChangedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
@@ -171,6 +201,9 @@ pub struct IUserDataAccountStoreChangedEventArgs {
     pub GetDeferral: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     GetDeferral: usize,
+}
+impl ::windows_sys::core::Interface for IUserDataAccountStoreChangedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2229527269, data2: 34848, data3: 17682, data4: [177, 246, 46, 3, 91, 225, 7, 44] };
 }
 pub type UserDataAccount = *mut ::core::ffi::c_void;
 #[doc = "*Required features: `\"ApplicationModel_UserDataAccounts\"`*"]

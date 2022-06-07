@@ -1750,10 +1750,16 @@ pub struct IActivateAudioInterfaceAsyncOperation {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetActivateResult: unsafe extern "system" fn(this: *mut *mut Self, activateresult: *mut ::windows_sys::core::HRESULT, activatedinterface: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IActivateAudioInterfaceAsyncOperation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1923231096, data2: 52708, data3: 17181, data4: [184, 204, 132, 58, 113, 25, 155, 109] };
+}
 #[repr(C)]
 pub struct IActivateAudioInterfaceCompletionHandler {
     pub base__: ::windows_sys::core::IUnknown,
     pub ActivateCompleted: unsafe extern "system" fn(this: *mut *mut Self, activateoperation: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IActivateAudioInterfaceCompletionHandler {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1104759211, data2: 39010, data3: 17482, data4: [128, 246, 194, 97, 51, 77, 165, 235] };
 }
 #[repr(C)]
 pub struct IAudioAmbisonicsControl {
@@ -1769,6 +1775,9 @@ pub struct IAudioAmbisonicsControl {
     GetHeadTracking: usize,
     pub SetRotation: unsafe extern "system" fn(this: *mut *mut Self, x: f32, y: f32, z: f32, w: f32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAudioAmbisonicsControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 678579345, data2: 57141, data3: 18518, data4: [159, 118, 214, 162, 100, 19, 243, 223] };
+}
 #[repr(C)]
 pub struct IAudioAutoGainControl {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1781,9 +1790,15 @@ pub struct IAudioAutoGainControl {
     #[cfg(not(feature = "Win32_Foundation"))]
     SetEnabled: usize,
 }
+impl ::windows_sys::core::Interface for IAudioAutoGainControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2235572180, data2: 28132, data3: 19357, data4: [152, 105, 45, 103, 83, 168, 47, 60] };
+}
 #[repr(C)]
 pub struct IAudioBass {
     pub base__: IPerChannelDbLevel,
+}
+impl ::windows_sys::core::Interface for IAudioBass {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2729550297, data2: 19891, data3: 16989, data4: [162, 178, 189, 51, 92, 179, 226, 229] };
 }
 #[repr(C)]
 pub struct IAudioCaptureClient {
@@ -1792,11 +1807,17 @@ pub struct IAudioCaptureClient {
     pub ReleaseBuffer: unsafe extern "system" fn(this: *mut *mut Self, numframesread: u32) -> ::windows_sys::core::HRESULT,
     pub GetNextPacketSize: unsafe extern "system" fn(this: *mut *mut Self, pnumframesinnextpacket: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAudioCaptureClient {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3366829412, data2: 59166, data3: 18592, data4: [164, 222, 24, 92, 57, 92, 211, 23] };
+}
 #[repr(C)]
 pub struct IAudioChannelConfig {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetChannelConfig: unsafe extern "system" fn(this: *mut *mut Self, dwconfig: u32, pguideventcontext: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub GetChannelConfig: unsafe extern "system" fn(this: *mut *mut Self, pdwconfig: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAudioChannelConfig {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3138503791, data2: 60456, data3: 18748, data4: [184, 138, 93, 184, 128, 98, 206, 152] };
 }
 #[repr(C)]
 pub struct IAudioClient {
@@ -1817,6 +1838,9 @@ pub struct IAudioClient {
     SetEventHandle: usize,
     pub GetService: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAudioClient {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 481930572, data2: 56314, data3: 19506, data4: [177, 120, 194, 245, 104, 167, 3, 178] };
+}
 #[repr(C)]
 pub struct IAudioClient2 {
     pub base__: IAudioClient,
@@ -1833,6 +1857,9 @@ pub struct IAudioClient2 {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetBufferSizeLimits: usize,
 }
+impl ::windows_sys::core::Interface for IAudioClient2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1919383757, data2: 62986, data3: 20186, data4: [130, 222, 228, 118, 16, 205, 120, 170] };
+}
 #[repr(C)]
 pub struct IAudioClient3 {
     pub base__: IAudioClient2,
@@ -1840,10 +1867,16 @@ pub struct IAudioClient3 {
     pub GetCurrentSharedModeEnginePeriod: unsafe extern "system" fn(this: *mut *mut Self, ppformat: *mut *mut WAVEFORMATEX, pcurrentperiodinframes: *mut u32) -> ::windows_sys::core::HRESULT,
     pub InitializeSharedAudioStream: unsafe extern "system" fn(this: *mut *mut Self, streamflags: u32, periodinframes: u32, pformat: *const WAVEFORMATEX, audiosessionguid: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAudioClient3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2127883783, data2: 36455, data3: 19668, data4: [140, 26, 43, 122, 89, 135, 173, 66] };
+}
 #[repr(C)]
 pub struct IAudioClientDuckingControl {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetDuckingOptionsForCurrentStream: unsafe extern "system" fn(this: *mut *mut Self, options: AUDIO_DUCKING_OPTIONS) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAudioClientDuckingControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3347698561, data2: 41612, data3: 16744, data4: [178, 143, 211, 168, 55, 146, 77, 195] };
 }
 #[repr(C)]
 pub struct IAudioClock {
@@ -1852,20 +1885,32 @@ pub struct IAudioClock {
     pub GetPosition: unsafe extern "system" fn(this: *mut *mut Self, pu64position: *mut u64, pu64qpcposition: *mut u64) -> ::windows_sys::core::HRESULT,
     pub GetCharacteristics: unsafe extern "system" fn(this: *mut *mut Self, pdwcharacteristics: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAudioClock {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3445829967, data2: 16314, data3: 18971, data4: [129, 44, 239, 150, 53, 135, 40, 231] };
+}
 #[repr(C)]
 pub struct IAudioClock2 {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetDevicePosition: unsafe extern "system" fn(this: *mut *mut Self, deviceposition: *mut u64, qpcposition: *mut u64) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAudioClock2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1867120499, data2: 26407, data3: 18860, data4: [160, 8, 217, 140, 245, 231, 0, 72] };
 }
 #[repr(C)]
 pub struct IAudioClockAdjustment {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetSampleRate: unsafe extern "system" fn(this: *mut *mut Self, flsamplerate: f32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAudioClockAdjustment {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4142186656, data2: 18137, data3: 20408, data4: [190, 33, 87, 163, 239, 43, 98, 108] };
+}
 #[repr(C)]
 pub struct IAudioEffectsChangedNotificationClient {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnAudioEffectsChanged: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAudioEffectsChangedNotificationClient {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2782843983, data2: 15453, data3: 19243, data4: [189, 30, 93, 193, 238, 32, 187, 246] };
 }
 #[repr(C)]
 pub struct IAudioEffectsManager {
@@ -1878,17 +1923,26 @@ pub struct IAudioEffectsManager {
     GetAudioEffects: usize,
     pub SetAudioEffectState: unsafe extern "system" fn(this: *mut *mut Self, effectid: ::windows_sys::core::GUID, state: AUDIO_EFFECT_STATE) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAudioEffectsManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1147188142, data2: 19268, data3: 17703, data4: [134, 118, 117, 72, 168, 172, 210, 96] };
+}
 #[repr(C)]
 pub struct IAudioFormatEnumerator {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, count: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetFormat: unsafe extern "system" fn(this: *mut *mut Self, index: u32, format: *mut *mut WAVEFORMATEX) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAudioFormatEnumerator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3705317464, data2: 35162, data3: 18978, data4: [165, 235, 103, 189, 165, 6, 9, 109] };
+}
 #[repr(C)]
 pub struct IAudioInputSelector {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetSelection: unsafe extern "system" fn(this: *mut *mut Self, pnidselected: *mut u32) -> ::windows_sys::core::HRESULT,
     pub SetSelection: unsafe extern "system" fn(this: *mut *mut Self, nidselect: u32, pguideventcontext: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAudioInputSelector {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1325652994, data2: 24174, data3: 18003, data4: [143, 114, 160, 48, 193, 35, 213, 152] };
 }
 #[repr(C)]
 pub struct IAudioLoudness {
@@ -1902,9 +1956,15 @@ pub struct IAudioLoudness {
     #[cfg(not(feature = "Win32_Foundation"))]
     SetEnabled: usize,
 }
+impl ::windows_sys::core::Interface for IAudioLoudness {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2106266679, data2: 56659, data3: 17232, data4: [156, 27, 30, 226, 137, 11, 217, 56] };
+}
 #[repr(C)]
 pub struct IAudioMidrange {
     pub base__: IPerChannelDbLevel,
+}
+impl ::windows_sys::core::Interface for IAudioMidrange {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1582610135, data2: 46155, data3: 16601, data4: [154, 158, 230, 145, 217, 206, 110, 223] };
 }
 #[repr(C)]
 pub struct IAudioMute {
@@ -1918,11 +1978,17 @@ pub struct IAudioMute {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetMute: usize,
 }
+impl ::windows_sys::core::Interface for IAudioMute {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3745885930, data2: 46922, data3: 19307, data4: [175, 173, 35, 102, 182, 170, 1, 46] };
+}
 #[repr(C)]
 pub struct IAudioOutputSelector {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetSelection: unsafe extern "system" fn(this: *mut *mut Self, pnidselected: *mut u32) -> ::windows_sys::core::HRESULT,
     pub SetSelection: unsafe extern "system" fn(this: *mut *mut Self, nidselect: u32, pguideventcontext: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAudioOutputSelector {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3142672233, data2: 38055, data3: 17054, data4: [139, 156, 39, 27, 63, 17, 163, 171] };
 }
 #[repr(C)]
 pub struct IAudioPeakMeter {
@@ -1930,11 +1996,17 @@ pub struct IAudioPeakMeter {
     pub GetChannelCount: unsafe extern "system" fn(this: *mut *mut Self, pcchannels: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetLevel: unsafe extern "system" fn(this: *mut *mut Self, nchannel: u32, pflevel: *mut f32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAudioPeakMeter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3715732028, data2: 1433, data3: 17888, data4: [184, 182, 200, 223, 125, 182, 231, 150] };
+}
 #[repr(C)]
 pub struct IAudioRenderClient {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetBuffer: unsafe extern "system" fn(this: *mut *mut Self, numframesrequested: u32, ppdata: *mut *mut u8) -> ::windows_sys::core::HRESULT,
     pub ReleaseBuffer: unsafe extern "system" fn(this: *mut *mut Self, numframeswritten: u32, dwflags: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAudioRenderClient {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4069829884, data2: 12614, data3: 17539, data4: [167, 191, 173, 220, 167, 194, 96, 226] };
 }
 #[repr(C)]
 pub struct IAudioSessionControl {
@@ -1949,6 +2021,9 @@ pub struct IAudioSessionControl {
     pub RegisterAudioSessionNotification: unsafe extern "system" fn(this: *mut *mut Self, newnotifications: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub UnregisterAudioSessionNotification: unsafe extern "system" fn(this: *mut *mut Self, newnotifications: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAudioSessionControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4105282969, data2: 29286, data3: 17177, data4: [168, 202, 231, 10, 203, 17, 232, 205] };
+}
 #[repr(C)]
 pub struct IAudioSessionControl2 {
     pub base__: IAudioSessionControl,
@@ -1961,11 +2036,17 @@ pub struct IAudioSessionControl2 {
     #[cfg(not(feature = "Win32_Foundation"))]
     SetDuckingPreference: usize,
 }
+impl ::windows_sys::core::Interface for IAudioSessionControl2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3216506760, data2: 29241, data3: 20425, data4: [143, 162, 7, 201, 80, 190, 156, 109] };
+}
 #[repr(C)]
 pub struct IAudioSessionEnumerator {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, sessioncount: *mut i32) -> ::windows_sys::core::HRESULT,
     pub GetSession: unsafe extern "system" fn(this: *mut *mut Self, sessioncount: i32, session: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAudioSessionEnumerator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3807755025, data2: 1392, data3: 16586, data4: [172, 221, 58, 160, 18, 119, 222, 232] };
 }
 #[repr(C)]
 pub struct IAudioSessionEvents {
@@ -1981,11 +2062,17 @@ pub struct IAudioSessionEvents {
     pub OnStateChanged: unsafe extern "system" fn(this: *mut *mut Self, newstate: AudioSessionState) -> ::windows_sys::core::HRESULT,
     pub OnSessionDisconnected: unsafe extern "system" fn(this: *mut *mut Self, disconnectreason: AudioSessionDisconnectReason) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAudioSessionEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 613518028, data2: 25779, data3: 14273, data4: [140, 169, 116, 166, 110, 153, 87, 168] };
+}
 #[repr(C)]
 pub struct IAudioSessionManager {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetAudioSessionControl: unsafe extern "system" fn(this: *mut *mut Self, audiosessionguid: *const ::windows_sys::core::GUID, streamflags: u32, sessioncontrol: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetSimpleAudioVolume: unsafe extern "system" fn(this: *mut *mut Self, audiosessionguid: *const ::windows_sys::core::GUID, streamflags: u32, audiovolume: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAudioSessionManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3215553009, data2: 19806, data3: 16571, data4: [147, 94, 150, 112, 57, 191, 190, 228] };
 }
 #[repr(C)]
 pub struct IAudioSessionManager2 {
@@ -1996,10 +2083,16 @@ pub struct IAudioSessionManager2 {
     pub RegisterDuckNotification: unsafe extern "system" fn(this: *mut *mut Self, sessionid: ::windows_sys::core::PCWSTR, ducknotification: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub UnregisterDuckNotification: unsafe extern "system" fn(this: *mut *mut Self, ducknotification: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAudioSessionManager2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2007669152, data2: 7126, data3: 18511, data4: [139, 199, 44, 101, 76, 154, 155, 111] };
+}
 #[repr(C)]
 pub struct IAudioSessionNotification {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnSessionCreated: unsafe extern "system" fn(this: *mut *mut Self, newsession: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAudioSessionNotification {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1679675915, data2: 19777, data3: 18892, data4: [171, 163, 23, 75, 148, 119, 187, 8] };
 }
 #[repr(C)]
 pub struct IAudioStateMonitor {
@@ -2007,6 +2100,9 @@ pub struct IAudioStateMonitor {
     pub RegisterCallback: unsafe extern "system" fn(this: *mut *mut Self, callback: *mut ::core::ffi::c_void, context: *const ::core::ffi::c_void, registration: *mut i64) -> ::windows_sys::core::HRESULT,
     pub UnregisterCallback: unsafe extern "system" fn(this: *mut *mut Self, registration: i64),
     pub GetSoundLevel: unsafe extern "system" fn(this: *mut *mut Self) -> AudioStateMonitorSoundLevel,
+}
+impl ::windows_sys::core::Interface for IAudioStateMonitor {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1673365304, data2: 58125, data3: 19575, data4: [191, 92, 131, 78, 135, 198, 87, 226] };
 }
 #[repr(C)]
 pub struct IAudioStreamVolume {
@@ -2017,6 +2113,9 @@ pub struct IAudioStreamVolume {
     pub SetAllVolumes: unsafe extern "system" fn(this: *mut *mut Self, dwcount: u32, pfvolumes: *const f32) -> ::windows_sys::core::HRESULT,
     pub GetAllVolumes: unsafe extern "system" fn(this: *mut *mut Self, dwcount: u32, pfvolumes: *mut f32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAudioStreamVolume {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2466334855, data2: 9261, data3: 16488, data4: [138, 21, 207, 94, 147, 185, 15, 227] };
+}
 #[repr(C)]
 pub struct IAudioSystemEffectsPropertyChangeNotificationClient {
     pub base__: ::windows_sys::core::IUnknown,
@@ -2024,6 +2123,9 @@ pub struct IAudioSystemEffectsPropertyChangeNotificationClient {
     pub OnPropertyChanged: unsafe extern "system" fn(this: *mut *mut Self, r#type: __MIDL___MIDL_itf_mmdeviceapi_0000_0008_0002, key: super::super::UI::Shell::PropertiesSystem::PROPERTYKEY) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
     OnPropertyChanged: usize,
+}
+impl ::windows_sys::core::Interface for IAudioSystemEffectsPropertyChangeNotificationClient {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 537173312, data2: 22229, data3: 16398, data4: [162, 239, 56, 85, 153, 254, 237, 73] };
 }
 #[repr(C)]
 pub struct IAudioSystemEffectsPropertyStore {
@@ -2045,9 +2147,15 @@ pub struct IAudioSystemEffectsPropertyStore {
     pub RegisterPropertyChangeNotification: unsafe extern "system" fn(this: *mut *mut Self, callback: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub UnregisterPropertyChangeNotification: unsafe extern "system" fn(this: *mut *mut Self, callback: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAudioSystemEffectsPropertyStore {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 808118265, data2: 55264, data3: 17380, data4: [151, 27, 31, 130, 147, 97, 61, 42] };
+}
 #[repr(C)]
 pub struct IAudioTreble {
     pub base__: IPerChannelDbLevel,
+}
+impl ::windows_sys::core::Interface for IAudioTreble {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 175208466, data2: 26958, data3: 18695, data4: [183, 75, 186, 250, 92, 253, 202, 123] };
 }
 #[repr(C)]
 pub struct IAudioVolumeDuckNotification {
@@ -2055,9 +2163,15 @@ pub struct IAudioVolumeDuckNotification {
     pub OnVolumeDuckNotification: unsafe extern "system" fn(this: *mut *mut Self, sessionid: ::windows_sys::core::PCWSTR, countcommunicationsessions: u32) -> ::windows_sys::core::HRESULT,
     pub OnVolumeUnduckNotification: unsafe extern "system" fn(this: *mut *mut Self, sessionid: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAudioVolumeDuckNotification {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3283256532, data2: 27961, data3: 17241, data4: [179, 207, 181, 109, 219, 59, 179, 156] };
+}
 #[repr(C)]
 pub struct IAudioVolumeLevel {
     pub base__: IPerChannelDbLevel,
+}
+impl ::windows_sys::core::Interface for IAudioVolumeLevel {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2142745743, data2: 21277, data3: 17570, data4: [188, 179, 90, 213, 161, 52, 179, 220] };
 }
 #[repr(C)]
 pub struct IChannelAudioVolume {
@@ -2067,6 +2181,9 @@ pub struct IChannelAudioVolume {
     pub GetChannelVolume: unsafe extern "system" fn(this: *mut *mut Self, dwindex: u32, pflevel: *mut f32) -> ::windows_sys::core::HRESULT,
     pub SetAllVolumes: unsafe extern "system" fn(this: *mut *mut Self, dwcount: u32, pfvolumes: *const f32, eventcontext: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub GetAllVolumes: unsafe extern "system" fn(this: *mut *mut Self, dwcount: u32, pfvolumes: *mut f32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IChannelAudioVolume {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 471173217, data2: 46387, data3: 19248, data4: [177, 207, 232, 83, 229, 28, 89, 184] };
 }
 #[repr(C)]
 pub struct IConnector {
@@ -2083,16 +2200,25 @@ pub struct IConnector {
     pub GetConnectorIdConnectedTo: unsafe extern "system" fn(this: *mut *mut Self, ppwstrconnectorid: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
     pub GetDeviceIdConnectedTo: unsafe extern "system" fn(this: *mut *mut Self, ppwstrdeviceid: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IConnector {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2620145752, data2: 9205, data3: 16862, data4: [135, 122, 223, 58, 242, 54, 160, 158] };
+}
 #[repr(C)]
 pub struct IControlChangeNotify {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnNotify: unsafe extern "system" fn(this: *mut *mut Self, dwsenderprocessid: u32, pguideventcontext: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IControlChangeNotify {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2694124525, data2: 50953, data3: 19745, data4: [189, 123, 95, 52, 196, 127, 57, 71] };
 }
 #[repr(C)]
 pub struct IControlInterface {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetName: unsafe extern "system" fn(this: *mut *mut Self, ppwstrname: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
     pub GetIID: unsafe extern "system" fn(this: *mut *mut Self, piid: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IControlInterface {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1171487807, data2: 20800, data3: 17482, data4: [174, 36, 64, 7, 137, 243, 203, 243] };
 }
 #[repr(C)]
 pub struct IDeviceSpecificProperty {
@@ -2101,6 +2227,9 @@ pub struct IDeviceSpecificProperty {
     pub GetValue: unsafe extern "system" fn(this: *mut *mut Self, pvvalue: *mut ::core::ffi::c_void, pcbvalue: *mut u32) -> ::windows_sys::core::HRESULT,
     pub SetValue: unsafe extern "system" fn(this: *mut *mut Self, pvvalue: *const ::core::ffi::c_void, cbvalue: u32, pguideventcontext: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub Get4BRange: unsafe extern "system" fn(this: *mut *mut Self, plmin: *mut i32, plmax: *mut i32, plstepping: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDeviceSpecificProperty {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 992132287, data2: 9606, data3: 19184, data4: [133, 131, 32, 93, 57, 27, 128, 124] };
 }
 #[repr(C)]
 pub struct IDeviceTopology {
@@ -2116,6 +2245,9 @@ pub struct IDeviceTopology {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetSignalPath: usize,
 }
+impl ::windows_sys::core::Interface for IDeviceTopology {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 705118334, data2: 25751, data3: 18968, data4: [151, 135, 50, 247, 155, 208, 217, 143] };
+}
 #[repr(C)]
 pub struct IMMDevice {
     pub base__: ::windows_sys::core::IUnknown,
@@ -2130,6 +2262,9 @@ pub struct IMMDevice {
     pub GetId: unsafe extern "system" fn(this: *mut *mut Self, ppstrid: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
     pub GetState: unsafe extern "system" fn(this: *mut *mut Self, pdwstate: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMMDevice {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3597010495, data2: 5511, data3: 20035, data4: [129, 241, 185, 72, 232, 7, 54, 63] };
+}
 #[repr(C)]
 pub struct IMMDeviceActivator {
     pub base__: ::windows_sys::core::IUnknown,
@@ -2138,11 +2273,17 @@ pub struct IMMDeviceActivator {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
     Activate: usize,
 }
+impl ::windows_sys::core::Interface for IMMDeviceActivator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 990711460, data2: 53417, data3: 19214, data4: [147, 91, 9, 81, 103, 70, 250, 192] };
+}
 #[repr(C)]
 pub struct IMMDeviceCollection {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, pcdevices: *mut u32) -> ::windows_sys::core::HRESULT,
     pub Item: unsafe extern "system" fn(this: *mut *mut Self, ndevice: u32, ppdevice: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMMDeviceCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 198681022, data2: 31258, data3: 17627, data4: [131, 151, 204, 83, 146, 56, 123, 94] };
 }
 #[repr(C)]
 pub struct IMMDeviceEnumerator {
@@ -2153,10 +2294,16 @@ pub struct IMMDeviceEnumerator {
     pub RegisterEndpointNotificationCallback: unsafe extern "system" fn(this: *mut *mut Self, pclient: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub UnregisterEndpointNotificationCallback: unsafe extern "system" fn(this: *mut *mut Self, pclient: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMMDeviceEnumerator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2841011410, data2: 38420, data3: 20277, data4: [167, 70, 222, 141, 182, 54, 23, 230] };
+}
 #[repr(C)]
 pub struct IMMEndpoint {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetDataFlow: unsafe extern "system" fn(this: *mut *mut Self, pdataflow: *mut EDataFlow) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMMEndpoint {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 467703688, data2: 26772, data3: 16521, data4: [133, 134, 154, 42, 108, 38, 90, 197] };
 }
 #[repr(C)]
 pub struct IMMNotificationClient {
@@ -2170,6 +2317,9 @@ pub struct IMMNotificationClient {
     #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
     OnPropertyValueChanged: usize,
 }
+impl ::windows_sys::core::Interface for IMMNotificationClient {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2039606985, data2: 32393, data3: 19845, data4: [131, 144, 108, 112, 60, 236, 96, 192] };
+}
 #[repr(C)]
 pub struct IMessageFilter {
     pub base__: ::windows_sys::core::IUnknown,
@@ -2179,6 +2329,9 @@ pub struct IMessageFilter {
     HandleInComingCall: usize,
     pub RetryRejectedCall: unsafe extern "system" fn(this: *mut *mut Self, htaskcallee: super::HTASK, dwtickcount: u32, dwrejecttype: u32) -> u32,
     pub MessagePending: unsafe extern "system" fn(this: *mut *mut Self, htaskcallee: super::HTASK, dwtickcount: u32, dwpendingtype: u32) -> u32,
+}
+impl ::windows_sys::core::Interface for IMessageFilter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 22, data2: 0, data3: 0, data4: [192, 0, 0, 0, 0, 0, 0, 70] };
 }
 #[repr(C)]
 pub struct IPart {
@@ -2197,11 +2350,17 @@ pub struct IPart {
     pub RegisterControlChangeCallback: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, pnotify: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub UnregisterControlChangeCallback: unsafe extern "system" fn(this: *mut *mut Self, pnotify: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPart {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2922242276, data2: 23498, data3: 20269, data4: [170, 70, 93, 19, 248, 253, 179, 169] };
+}
 #[repr(C)]
 pub struct IPartsList {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, pcount: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetPart: unsafe extern "system" fn(this: *mut *mut Self, nindex: u32, pppart: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPartsList {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1839891596, data2: 24240, data3: 17868, data4: [174, 165, 153, 138, 44, 218, 31, 251] };
 }
 #[repr(C)]
 pub struct IPerChannelDbLevel {
@@ -2212,6 +2371,9 @@ pub struct IPerChannelDbLevel {
     pub SetLevel: unsafe extern "system" fn(this: *mut *mut Self, nchannel: u32, fleveldb: f32, pguideventcontext: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub SetLevelUniform: unsafe extern "system" fn(this: *mut *mut Self, fleveldb: f32, pguideventcontext: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub SetLevelAllChannels: unsafe extern "system" fn(this: *mut *mut Self, alevelsdb: *const f32, cchannels: u32, pguideventcontext: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPerChannelDbLevel {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3271090177, data2: 61957, data3: 19401, data4: [153, 188, 193, 59, 30, 4, 140, 203] };
 }
 #[repr(C)]
 pub struct ISimpleAudioVolume {
@@ -2226,6 +2388,9 @@ pub struct ISimpleAudioVolume {
     pub GetMute: unsafe extern "system" fn(this: *mut *mut Self, pbmute: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetMute: usize,
+}
+impl ::windows_sys::core::Interface for ISimpleAudioVolume {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2278446232, data2: 26838, data3: 17637, data4: [146, 21, 109, 164, 126, 248, 131, 216] };
 }
 #[repr(C)]
 pub struct ISpatialAudioClient {
@@ -2245,6 +2410,9 @@ pub struct ISpatialAudioClient {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
     ActivateSpatialAudioStream: usize,
 }
+impl ::windows_sys::core::Interface for ISpatialAudioClient {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3153649766, data2: 43690, data3: 18878, data4: [154, 77, 253, 42, 133, 142, 162, 127] };
+}
 #[repr(C)]
 pub struct ISpatialAudioClient2 {
     pub base__: ISpatialAudioClient,
@@ -2257,6 +2425,9 @@ pub struct ISpatialAudioClient2 {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetMaxFrameCountForCategory: usize,
 }
+impl ::windows_sys::core::Interface for ISpatialAudioClient2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3400262738, data2: 42602, data3: 19438, data4: [169, 62, 227, 32, 70, 63, 106, 83] };
+}
 #[repr(C)]
 pub struct ISpatialAudioMetadataClient {
     pub base__: ::windows_sys::core::IUnknown,
@@ -2266,12 +2437,18 @@ pub struct ISpatialAudioMetadataClient {
     pub ActivateSpatialAudioMetadataCopier: unsafe extern "system" fn(this: *mut *mut Self, metadatacopier: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub ActivateSpatialAudioMetadataReader: unsafe extern "system" fn(this: *mut *mut Self, metadatareader: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISpatialAudioMetadataClient {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2004699707, data2: 63231, data3: 18982, data4: [133, 220, 104, 215, 205, 237, 161, 212] };
+}
 #[repr(C)]
 pub struct ISpatialAudioMetadataCopier {
     pub base__: ::windows_sys::core::IUnknown,
     pub Open: unsafe extern "system" fn(this: *mut *mut Self, metadataitems: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub CopyMetadataForFrames: unsafe extern "system" fn(this: *mut *mut Self, copyframecount: u16, copymode: SpatialAudioMetadataCopyMode, dstmetadataitems: *mut ::core::ffi::c_void, itemscopied: *mut u16) -> ::windows_sys::core::HRESULT,
     pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISpatialAudioMetadataCopier {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3525620275, data2: 57937, data3: 20432, data4: [156, 162, 213, 236, 249, 166, 132, 4] };
 }
 #[repr(C)]
 pub struct ISpatialAudioMetadataItems {
@@ -2282,12 +2459,18 @@ pub struct ISpatialAudioMetadataItems {
     pub GetMaxValueBufferLength: unsafe extern "system" fn(this: *mut *mut Self, maxvaluebufferlength: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetInfo: unsafe extern "system" fn(this: *mut *mut Self, info: *mut SpatialAudioMetadataItemsInfo) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISpatialAudioMetadataItems {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3168257935, data2: 12440, data3: 20258, data4: [181, 71, 162, 242, 90, 56, 18, 105] };
+}
 #[repr(C)]
 pub struct ISpatialAudioMetadataItemsBuffer {
     pub base__: ::windows_sys::core::IUnknown,
     pub AttachToBuffer: unsafe extern "system" fn(this: *mut *mut Self, buffer: *mut u8, bufferlength: u32) -> ::windows_sys::core::HRESULT,
     pub AttachToPopulatedBuffer: unsafe extern "system" fn(this: *mut *mut Self, buffer: *mut u8, bufferlength: u32) -> ::windows_sys::core::HRESULT,
     pub DetachBuffer: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISpatialAudioMetadataItemsBuffer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1113852438, data2: 57789, data3: 17113, data4: [159, 246, 3, 26, 183, 26, 45, 186] };
 }
 #[repr(C)]
 pub struct ISpatialAudioMetadataReader {
@@ -2297,6 +2480,9 @@ pub struct ISpatialAudioMetadataReader {
     pub ReadNextItemCommand: unsafe extern "system" fn(this: *mut *mut Self, commandid: *mut u8, valuebuffer: *mut ::core::ffi::c_void, maxvaluebufferlength: u32, valuebufferlength: *mut u32) -> ::windows_sys::core::HRESULT,
     pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISpatialAudioMetadataReader {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3079571106, data2: 12761, data3: 19506, data4: [148, 210, 125, 244, 15, 199, 235, 236] };
+}
 #[repr(C)]
 pub struct ISpatialAudioMetadataWriter {
     pub base__: ::windows_sys::core::IUnknown,
@@ -2305,11 +2491,17 @@ pub struct ISpatialAudioMetadataWriter {
     pub WriteNextItemCommand: unsafe extern "system" fn(this: *mut *mut Self, commandid: u8, valuebuffer: *const ::core::ffi::c_void, valuebufferlength: u32) -> ::windows_sys::core::HRESULT,
     pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISpatialAudioMetadataWriter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 454543873, data2: 10581, data3: 17485, data4: [164, 48, 83, 125, 197, 137, 168, 68] };
+}
 #[repr(C)]
 pub struct ISpatialAudioObject {
     pub base__: ISpatialAudioObjectBase,
     pub SetPosition: unsafe extern "system" fn(this: *mut *mut Self, x: f32, y: f32, z: f32) -> ::windows_sys::core::HRESULT,
     pub SetVolume: unsafe extern "system" fn(this: *mut *mut Self, volume: f32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISpatialAudioObject {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3722611047, data2: 21019, data3: 18149, data4: [143, 0, 189, 111, 43, 200, 171, 29] };
 }
 #[repr(C)]
 pub struct ISpatialAudioObjectBase {
@@ -2322,6 +2514,9 @@ pub struct ISpatialAudioObjectBase {
     IsActive: usize,
     pub GetAudioObjectType: unsafe extern "system" fn(this: *mut *mut Self, audioobjecttype: *mut AudioObjectType) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISpatialAudioObjectBase {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3437279474, data2: 36173, data3: 20219, data4: [168, 207, 61, 110, 207, 28, 48, 224] };
+}
 #[repr(C)]
 pub struct ISpatialAudioObjectForHrtf {
     pub base__: ISpatialAudioObjectBase,
@@ -2332,20 +2527,32 @@ pub struct ISpatialAudioObjectForHrtf {
     pub SetDistanceDecay: unsafe extern "system" fn(this: *mut *mut Self, distancedecay: *const SpatialAudioHrtfDistanceDecay) -> ::windows_sys::core::HRESULT,
     pub SetDirectivity: unsafe extern "system" fn(this: *mut *mut Self, directivity: *const SpatialAudioHrtfDirectivityUnion) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISpatialAudioObjectForHrtf {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3611519710, data2: 6520, data3: 19988, data4: [171, 160, 85, 91, 216, 235, 131, 180] };
+}
 #[repr(C)]
 pub struct ISpatialAudioObjectForMetadataCommands {
     pub base__: ISpatialAudioObjectBase,
     pub WriteNextMetadataCommand: unsafe extern "system" fn(this: *mut *mut Self, commandid: u8, valuebuffer: *const ::core::ffi::c_void, valuebufferlength: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISpatialAudioObjectForMetadataCommands {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 234015051, data2: 62969, data3: 18221, data4: [175, 107, 196, 110, 10, 201, 205, 5] };
 }
 #[repr(C)]
 pub struct ISpatialAudioObjectForMetadataItems {
     pub base__: ISpatialAudioObjectBase,
     pub GetSpatialAudioMetadataItems: unsafe extern "system" fn(this: *mut *mut Self, metadataitems: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISpatialAudioObjectForMetadataItems {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3723119103, data2: 15296, data3: 17271, data4: [138, 173, 159, 188, 253, 128, 133, 102] };
+}
 #[repr(C)]
 pub struct ISpatialAudioObjectRenderStream {
     pub base__: ISpatialAudioObjectRenderStreamBase,
     pub ActivateSpatialAudioObject: unsafe extern "system" fn(this: *mut *mut Self, r#type: AudioObjectType, audioobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISpatialAudioObjectRenderStream {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3132486771, data2: 46115, data3: 18299, data4: [133, 245, 181, 163, 50, 160, 65, 83] };
 }
 #[repr(C)]
 pub struct ISpatialAudioObjectRenderStreamBase {
@@ -2358,10 +2565,16 @@ pub struct ISpatialAudioObjectRenderStreamBase {
     pub BeginUpdatingAudioObjects: unsafe extern "system" fn(this: *mut *mut Self, availabledynamicobjectcount: *mut u32, framecountperbuffer: *mut u32) -> ::windows_sys::core::HRESULT,
     pub EndUpdatingAudioObjects: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISpatialAudioObjectRenderStreamBase {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4272616451, data2: 49624, data3: 17677, data4: [170, 5, 224, 204, 238, 117, 2, 168] };
+}
 #[repr(C)]
 pub struct ISpatialAudioObjectRenderStreamForHrtf {
     pub base__: ISpatialAudioObjectRenderStreamBase,
     pub ActivateSpatialAudioObjectForHrtf: unsafe extern "system" fn(this: *mut *mut Self, r#type: AudioObjectType, audioobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISpatialAudioObjectRenderStreamForHrtf {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3767398137, data2: 21347, data3: 16494, data4: [159, 220, 8, 14, 226, 71, 187, 224] };
 }
 #[repr(C)]
 pub struct ISpatialAudioObjectRenderStreamForMetadata {
@@ -2369,14 +2582,23 @@ pub struct ISpatialAudioObjectRenderStreamForMetadata {
     pub ActivateSpatialAudioObjectForMetadataCommands: unsafe extern "system" fn(this: *mut *mut Self, r#type: AudioObjectType, audioobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub ActivateSpatialAudioObjectForMetadataItems: unsafe extern "system" fn(this: *mut *mut Self, r#type: AudioObjectType, audioobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISpatialAudioObjectRenderStreamForMetadata {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3150563591, data2: 18645, data3: 18990, data4: [160, 199, 247, 240, 214, 124, 31, 177] };
+}
 #[repr(C)]
 pub struct ISpatialAudioObjectRenderStreamNotify {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnAvailableDynamicObjectCountChange: unsafe extern "system" fn(this: *mut *mut Self, sender: *mut ::core::ffi::c_void, hnscompliancedeadlinetime: i64, availabledynamicobjectcountchange: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISpatialAudioObjectRenderStreamNotify {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3722413030, data2: 26839, data3: 19568, data4: [136, 63, 161, 131, 106, 251, 74, 80] };
+}
 #[repr(C)]
 pub struct ISubunit {
     pub base__: ::windows_sys::core::IUnknown,
+}
+impl ::windows_sys::core::Interface for ISubunit {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2182388357, data2: 56230, data3: 17543, data4: [134, 187, 234, 143, 127, 239, 204, 113] };
 }
 #[doc = "*Required features: `\"Win32_Media_Audio\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]

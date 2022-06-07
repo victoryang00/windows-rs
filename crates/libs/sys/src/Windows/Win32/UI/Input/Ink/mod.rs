@@ -3,6 +3,9 @@ pub struct IInkCommitRequestHandler {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnCommitRequested: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IInkCommitRequestHandler {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4206797820, data2: 45320, data3: 17846, data4: [169, 252, 141, 8, 250, 159, 133, 207] };
+}
 #[repr(C)]
 pub struct IInkD2DRenderer {
     pub base__: ::windows_sys::core::IUnknown,
@@ -11,10 +14,16 @@ pub struct IInkD2DRenderer {
     #[cfg(not(feature = "Win32_Foundation"))]
     Draw: usize,
 }
+impl ::windows_sys::core::Interface for IInkD2DRenderer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1082110430, data2: 63578, data3: 16720, data4: [151, 207, 183, 251, 39, 79, 180, 248] };
+}
 #[repr(C)]
 pub struct IInkD2DRenderer2 {
     pub base__: ::windows_sys::core::IUnknown,
     pub Draw: unsafe extern "system" fn(this: *mut *mut Self, pd2d1devicecontext: *mut ::core::ffi::c_void, pinkstrokeiterable: *mut ::core::ffi::c_void, highcontrastadjustment: INK_HIGH_CONTRAST_ADJUSTMENT) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IInkD2DRenderer2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 177593561, data2: 17784, data3: 19313, data4: [178, 11, 191, 102, 77, 75, 254, 238] };
 }
 #[repr(C)]
 pub struct IInkDesktopHost {
@@ -23,10 +32,16 @@ pub struct IInkDesktopHost {
     pub CreateInkPresenter: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub CreateAndInitializeInkPresenter: unsafe extern "system" fn(this: *mut *mut Self, rootvisual: *mut ::core::ffi::c_void, width: f32, height: f32, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IInkDesktopHost {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1290262645, data2: 43393, data3: 16704, data4: [161, 255, 173, 147, 37, 142, 141, 89] };
+}
 #[repr(C)]
 pub struct IInkHostWorkItem {
     pub base__: ::windows_sys::core::IUnknown,
     pub Invoke: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IInkHostWorkItem {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3436841626, data2: 7032, data3: 17970, data4: [187, 150, 151, 128, 6, 98, 226, 108] };
 }
 #[repr(C)]
 pub struct IInkPresenterDesktop {
@@ -36,6 +51,9 @@ pub struct IInkPresenterDesktop {
     pub GetSize: unsafe extern "system" fn(this: *mut *mut Self, width: *mut f32, height: *mut f32) -> ::windows_sys::core::HRESULT,
     pub SetSize: unsafe extern "system" fn(this: *mut *mut Self, width: f32, height: f32) -> ::windows_sys::core::HRESULT,
     pub OnHighContrastChanged: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IInkPresenterDesktop {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1945354457, data2: 11915, data3: 18675, data4: [137, 94, 32, 203, 210, 123, 114, 59] };
 }
 #[doc = "*Required features: `\"Win32_UI_Input_Ink\"`*"]
 pub type INK_HIGH_CONTRAST_ADJUSTMENT = i32;

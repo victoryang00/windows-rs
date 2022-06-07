@@ -16,8 +16,14 @@ pub struct IBattery {
     #[cfg(not(feature = "Foundation"))]
     RemoveRemainingChargePercentChanged: usize,
 }
+impl ::windows_sys::core::Interface for IBattery {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2536168413, data2: 26400, data3: 18178, data4: [164, 118, 185, 211, 138, 0, 112, 227] };
+}
 #[repr(C)]
 pub struct IBatteryStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub GetDefault: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IBatteryStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4210408560, data2: 25449, data3: 4577, data4: [184, 108, 8, 0, 32, 12, 154, 102] };
 }

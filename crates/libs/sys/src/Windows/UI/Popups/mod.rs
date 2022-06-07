@@ -20,11 +20,17 @@ pub struct IMessageDialog {
     pub Options: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut MessageDialogOptions) -> ::windows_sys::core::HRESULT,
     pub SetOptions: unsafe extern "system" fn(this: *mut *mut Self, value: MessageDialogOptions) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMessageDialog {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 871734017, data2: 21285, data3: 17323, data4: [154, 179, 189, 174, 68, 14, 65, 33] };
+}
 #[repr(C)]
 pub struct IMessageDialogFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, content: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub CreateWithTitle: unsafe extern "system" fn(this: *mut *mut Self, content: ::windows_sys::core::HSTRING, title: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMessageDialogFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 756422519, data2: 42607, data3: 20133, data4: [187, 135, 121, 63, 250, 73, 65, 242] };
 }
 #[repr(C)]
 pub struct IPopupMenu {
@@ -46,6 +52,9 @@ pub struct IPopupMenu {
     #[cfg(not(feature = "Foundation"))]
     ShowAsyncWithRectAndPlacement: usize,
 }
+impl ::windows_sys::core::Interface for IPopupMenu {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1318831836, data2: 34829, data3: 18428, data4: [160, 161, 114, 182, 57, 230, 37, 89] };
+}
 #[repr(C)]
 pub struct IUICommand {
     pub base__: ::windows_sys::core::IInspectable,
@@ -56,12 +65,18 @@ pub struct IUICommand {
     pub Id: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetId: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IUICommand {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1341733493, data2: 16709, data3: 18431, data4: [172, 127, 223, 241, 193, 250, 91, 15] };
+}
 #[repr(C)]
 pub struct IUICommandFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, label: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub CreateWithHandler: unsafe extern "system" fn(this: *mut *mut Self, label: ::windows_sys::core::HSTRING, action: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub CreateWithHandlerAndId: unsafe extern "system" fn(this: *mut *mut Self, label: ::windows_sys::core::HSTRING, action: *mut ::core::ffi::c_void, commandid: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUICommandFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2719646089, data2: 9904, data3: 18038, data4: [174, 148, 84, 4, 27, 193, 37, 232] };
 }
 pub type MessageDialog = *mut ::core::ffi::c_void;
 #[doc = "*Required features: `\"UI_Popups\"`*"]

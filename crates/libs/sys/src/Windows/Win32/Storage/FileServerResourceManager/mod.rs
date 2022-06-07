@@ -40,6 +40,10 @@ pub const AdrEmailFlags_GenerateEventLog: AdrEmailFlags = 16i32;
 pub struct DIFsrmClassificationEvents {
     pub base__: super::super::System::Com::IDispatch,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DIFsrmClassificationEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 647245232, data2: 55999, data3: 16856, data4: [187, 221, 177, 41, 169, 247, 4, 36] };
+}
 #[doc = "*Required features: `\"Win32_Storage_FileServerResourceManager\"`*"]
 pub const FSRM_DISPID_FEATURE_CLASSIFICATION: u32 = 83886080u32;
 #[doc = "*Required features: `\"Win32_Storage_FileServerResourceManager\"`*"]
@@ -828,6 +832,10 @@ pub struct IFsrmAccessDeniedRemediationClient {
     Show: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFsrmAccessDeniedRemediationClient {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1073750804, data2: 22795, data3: 17829, data4: [142, 27, 140, 5, 218, 82, 126, 82] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFsrmAction {
     pub base__: super::super::System::Com::IDispatch,
@@ -836,6 +844,10 @@ pub struct IFsrmAction {
     pub RunLimitInterval: unsafe extern "system" fn(this: *mut *mut Self, minutes: *mut i32) -> ::windows_sys::core::HRESULT,
     pub SetRunLimitInterval: unsafe extern "system" fn(this: *mut *mut Self, minutes: i32) -> ::windows_sys::core::HRESULT,
     pub Delete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFsrmAction {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1825980554, data2: 44640, data3: 17979, data4: [158, 241, 225, 23, 83, 77, 105, 220] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -873,6 +885,10 @@ pub struct IFsrmActionCommand {
     pub SetKillTimeOut: unsafe extern "system" fn(this: *mut *mut Self, minutes: i32) -> ::windows_sys::core::HRESULT,
     pub LogResult: unsafe extern "system" fn(this: *mut *mut Self, logresults: *mut i16) -> ::windows_sys::core::HRESULT,
     pub SetLogResult: unsafe extern "system" fn(this: *mut *mut Self, logresults: i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFsrmActionCommand {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 311654281, data2: 57927, data3: 18711, data4: [156, 32, 243, 238, 156, 126, 231, 131] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -936,11 +952,19 @@ pub struct IFsrmActionEmail {
     SetMessageText: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFsrmActionEmail {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3594933885, data2: 9902, data3: 19626, data4: [159, 132, 78, 10, 173, 32, 127, 202] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFsrmActionEmail2 {
     pub base__: IFsrmActionEmail,
     pub AttachmentFileListSize: unsafe extern "system" fn(this: *mut *mut Self, attachmentfilelistsize: *mut i32) -> ::windows_sys::core::HRESULT,
     pub SetAttachmentFileListSize: unsafe extern "system" fn(this: *mut *mut Self, attachmentfilelistsize: i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFsrmActionEmail2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2188800047, data2: 9522, data3: 18489, data4: [137, 191, 72, 114, 96, 154, 46, 164] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -956,6 +980,10 @@ pub struct IFsrmActionEventLog {
     pub SetMessageText: unsafe extern "system" fn(this: *mut *mut Self, messagetext: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     SetMessageText: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFsrmActionEventLog {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1284478659, data2: 23956, data3: 20279, data4: [164, 244, 245, 106, 180, 99, 84, 111] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -979,6 +1007,10 @@ pub struct IFsrmActionReport {
     SetMailTo: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFsrmActionReport {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 767452100, data2: 45888, data3: 18592, data4: [165, 176, 21, 142, 7, 252, 86, 126] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFsrmAutoApplyQuota {
     pub base__: IFsrmQuotaObject,
@@ -994,6 +1026,10 @@ pub struct IFsrmAutoApplyQuota {
     pub CommitAndUpdateDerived: unsafe extern "system" fn(this: *mut *mut Self, commitoptions: FsrmCommitOptions, applyoptions: FsrmTemplateApplyOptions, derivedobjectsresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     CommitAndUpdateDerived: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFsrmAutoApplyQuota {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4163786537, data2: 27322, data3: 18240, data4: [191, 199, 199, 245, 143, 117, 251, 123] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1088,6 +1124,10 @@ pub struct IFsrmClassificationManager {
     ClearFileProperty: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFsrmClassificationManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3537668570, data2: 61073, data3: 18592, data4: [133, 216, 204, 114, 165, 111, 125, 4] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFsrmClassificationManager2 {
     pub base__: IFsrmClassificationManager,
@@ -1095,6 +1135,10 @@ pub struct IFsrmClassificationManager2 {
     pub ClassifyFiles: unsafe extern "system" fn(this: *mut *mut Self, filepaths: *const super::super::System::Com::SAFEARRAY, propertynames: *const super::super::System::Com::SAFEARRAY, propertyvalues: *const super::super::System::Com::SAFEARRAY, options: FsrmGetFilePropertyOptions) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     ClassifyFiles: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFsrmClassificationManager2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 311753, data2: 4734, data3: 18277, data4: [186, 7, 106, 49, 71, 188, 161, 18] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1120,6 +1164,10 @@ pub struct IFsrmClassificationRule {
     SetValue: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFsrmClassificationRule {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2948616898, data2: 21269, data3: 17835, data4: [132, 27, 198, 219, 14, 18, 1, 72] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFsrmClassifierModuleDefinition {
     pub base__: IFsrmPipelineModuleDefinition,
@@ -1141,6 +1189,10 @@ pub struct IFsrmClassifierModuleDefinition {
     SetPropertiesUsed: usize,
     pub NeedsExplicitValue: unsafe extern "system" fn(this: *mut *mut Self, needsexplicitvalue: *mut i16) -> ::windows_sys::core::HRESULT,
     pub SetNeedsExplicitValue: unsafe extern "system" fn(this: *mut *mut Self, needsexplicitvalue: i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFsrmClassifierModuleDefinition {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3140938278, data2: 25368, data3: 19340, data4: [133, 146, 247, 45, 214, 2, 231, 165] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1169,6 +1221,10 @@ pub struct IFsrmClassifierModuleImplementation {
     pub OnEndFile: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFsrmClassifierModuleImplementation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1284935622, data2: 28379, data3: 16465, data4: [156, 24, 115, 183, 41, 26, 225, 6] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFsrmCollection {
     pub base__: super::super::System::Com::IDispatch,
@@ -1187,6 +1243,10 @@ pub struct IFsrmCollection {
     GetById: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFsrmCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4151295803, data2: 36317, data3: 19266, data4: [176, 90, 203, 28, 63, 241, 254, 232] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFsrmCommittableCollection {
     pub base__: IFsrmMutableCollection,
@@ -1194,6 +1254,10 @@ pub struct IFsrmCommittableCollection {
     pub Commit: unsafe extern "system" fn(this: *mut *mut Self, options: FsrmCommitOptions, results: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     Commit: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFsrmCommittableCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2531177397, data2: 35729, data3: 18986, data4: [157, 147, 128, 163, 93, 138, 168, 71] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1207,6 +1271,10 @@ pub struct IFsrmDerivedObjectsResult {
     pub Results: unsafe extern "system" fn(this: *mut *mut Self, results: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     Results: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFsrmDerivedObjectsResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 959588909, data2: 14574, data3: 19725, data4: [128, 149, 66, 26, 128, 132, 154, 130] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1238,11 +1306,19 @@ pub struct IFsrmExportImport {
     ImportQuotaTemplates: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFsrmExportImport {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4023061169, data2: 5828, data3: 19065, data4: [129, 44, 114, 86, 20, 195, 48, 107] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFsrmFileCondition {
     pub base__: super::super::System::Com::IDispatch,
     pub Type: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut FsrmFileConditionType) -> ::windows_sys::core::HRESULT,
     pub Delete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFsrmFileCondition {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1885884412, data2: 26906, data3: 18970, data4: [185, 34, 151, 117, 46, 19, 140, 193] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1270,6 +1346,10 @@ pub struct IFsrmFileConditionProperty {
     pub SetValue: unsafe extern "system" fn(this: *mut *mut Self, newval: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     SetValue: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFsrmFileConditionProperty {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2173855605, data2: 47489, data3: 17529, data4: [152, 143, 218, 23, 29, 98, 115, 96] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1301,11 +1381,19 @@ pub struct IFsrmFileGroup {
     SetNonMembers: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFsrmFileGroup {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2379237641, data2: 3636, data3: 19797, data4: [175, 170, 137, 225, 241, 161, 187, 185] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFsrmFileGroupImported {
     pub base__: IFsrmFileGroup,
     pub OverwriteOnCommit: unsafe extern "system" fn(this: *mut *mut Self, overwrite: *mut i16) -> ::windows_sys::core::HRESULT,
     pub SetOverwriteOnCommit: unsafe extern "system" fn(this: *mut *mut Self, overwrite: i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFsrmFileGroupImported {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2908090635, data2: 24337, data3: 19431, data4: [148, 239, 217, 238, 46, 71, 13, 237] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1331,6 +1419,10 @@ pub struct IFsrmFileGroupManager {
     pub ImportFileGroups: unsafe extern "system" fn(this: *mut *mut Self, serializedfilegroups: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, filegroupnamesarray: *const super::super::System::Com::VARIANT, filegroups: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     ImportFileGroups: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFsrmFileGroupManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1114011605, data2: 396, data3: 18524, data4: [138, 81, 32, 184, 109, 0, 189, 196] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1462,6 +1554,10 @@ pub struct IFsrmFileManagementJob {
     CreateCustomAction: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFsrmFileManagementJob {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 124807294, data2: 40758, data3: 19823, data4: [135, 120, 89, 157, 24, 132, 97, 201] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFsrmFileManagementJobManager {
     pub base__: super::super::System::Com::IDispatch,
@@ -1485,6 +1581,10 @@ pub struct IFsrmFileManagementJobManager {
     pub GetFileManagementJob: unsafe extern "system" fn(this: *mut *mut Self, name: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, filemanagementjob: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     GetFileManagementJob: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFsrmFileManagementJobManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3996262091, data2: 55646, data3: 18665, data4: [144, 124, 199, 104, 90, 1, 50, 53] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1513,6 +1613,10 @@ pub struct IFsrmFileScreen {
     ApplyTemplate: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFsrmFileScreen {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1600333267, data2: 52872, data3: 18227, data4: [132, 193, 45, 106, 239, 197, 234, 7] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFsrmFileScreenBase {
     pub base__: IFsrmObject,
@@ -1536,6 +1640,10 @@ pub struct IFsrmFileScreenBase {
     EnumActions: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFsrmFileScreenBase {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4083383936, data2: 23330, data3: 18987, data4: [166, 55, 187, 182, 66, 180, 28, 252] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFsrmFileScreenException {
     pub base__: IFsrmObject,
@@ -1551,6 +1659,10 @@ pub struct IFsrmFileScreenException {
     pub SetAllowedFileGroups: unsafe extern "system" fn(this: *mut *mut Self, allowlist: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     SetAllowedFileGroups: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFsrmFileScreenException {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3202862594, data2: 57207, data3: 17685, data4: [147, 137, 120, 240, 28, 90, 252, 26] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1594,6 +1706,10 @@ pub struct IFsrmFileScreenManager {
     CreateFileScreenCollection: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFsrmFileScreenManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4283408462, data2: 23188, data3: 19418, data4: [163, 160, 213, 180, 211, 197, 46, 186] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFsrmFileScreenTemplate {
     pub base__: IFsrmFileScreenBase,
@@ -1615,11 +1731,19 @@ pub struct IFsrmFileScreenTemplate {
     CommitAndUpdateDerived: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFsrmFileScreenTemplate {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 542895096, data2: 56723, data3: 17706, data4: [149, 166, 50, 181, 102, 179, 88, 40] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFsrmFileScreenTemplateImported {
     pub base__: IFsrmFileScreenTemplate,
     pub OverwriteOnCommit: unsafe extern "system" fn(this: *mut *mut Self, overwrite: *mut i16) -> ::windows_sys::core::HRESULT,
     pub SetOverwriteOnCommit: unsafe extern "system" fn(this: *mut *mut Self, overwrite: i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFsrmFileScreenTemplateImported {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3774939993, data2: 15965, data3: 20173, data4: [159, 228, 239, 72, 98, 47, 223, 48] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1647,6 +1771,10 @@ pub struct IFsrmFileScreenTemplateManager {
     ImportTemplates: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFsrmFileScreenTemplateManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3487788218, data2: 6473, data3: 20084, data4: [161, 79, 241, 213, 128, 206, 175, 19] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFsrmMutableCollection {
     pub base__: IFsrmCollection,
@@ -1660,6 +1788,10 @@ pub struct IFsrmMutableCollection {
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, collection: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     Clone: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFsrmMutableCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 464918456, data2: 14470, data3: 18908, data4: [175, 130, 166, 201, 15, 163, 93, 218] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1678,6 +1810,10 @@ pub struct IFsrmObject {
     pub Commit: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFsrmObject {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 582807443, data2: 19007, data3: 16771, data4: [137, 249, 47, 139, 138, 98, 138, 238] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFsrmPathMapper {
     pub base__: super::super::System::Com::IDispatch,
@@ -1685,6 +1821,10 @@ pub struct IFsrmPathMapper {
     pub GetSharePathsForLocalPath: unsafe extern "system" fn(this: *mut *mut Self, localpath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, sharepaths: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     GetSharePathsForLocalPath: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFsrmPathMapper {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1867366399, data2: 26912, data3: 18465, data4: [166, 195, 183, 233, 76, 31, 214, 12] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1707,6 +1847,10 @@ pub struct IFsrmPipelineModuleConnector {
     pub Bind: unsafe extern "system" fn(this: *mut *mut Self, moduledefinition: *mut ::core::ffi::c_void, moduleimplementation: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     Bind: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFsrmPipelineModuleConnector {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3244299507, data2: 39585, data3: 18099, data4: [176, 167, 171, 20, 110, 178, 5, 242] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1769,6 +1913,10 @@ pub struct IFsrmPipelineModuleDefinition {
     SetParameters: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFsrmPipelineModuleDefinition {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1364988535, data2: 11393, data3: 17422, data4: [143, 207, 54, 121, 33, 237, 79, 89] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFsrmPipelineModuleImplementation {
     pub base__: super::super::System::Com::IDispatch,
@@ -1777,6 +1925,10 @@ pub struct IFsrmPipelineModuleImplementation {
     #[cfg(not(feature = "Win32_System_Com"))]
     OnLoad: usize,
     pub OnUnload: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFsrmPipelineModuleImplementation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3079698694, data2: 11010, data3: 19637, data4: [132, 169, 253, 245, 70, 19, 214, 205] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1795,6 +1947,10 @@ pub struct IFsrmProperty {
     #[cfg(not(feature = "Win32_System_Com"))]
     Sources: usize,
     pub PropertyFlags: unsafe extern "system" fn(this: *mut *mut Self, flags: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFsrmProperty {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1249115876, data2: 16642, data3: 20428, data4: [159, 251, 56, 97, 79, 158, 231, 104] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1877,6 +2033,10 @@ pub struct IFsrmPropertyBag {
     GetFileStreamInterface: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFsrmPropertyBag {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2001045969, data2: 54016, data3: 20346, data4: [154, 36, 247, 183, 102, 128, 2, 80] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFsrmPropertyBag2 {
     pub base__: IFsrmPropertyBag,
@@ -1888,6 +2048,10 @@ pub struct IFsrmPropertyBag2 {
     pub GetUntrustedInFileProperties: unsafe extern "system" fn(this: *mut *mut Self, props: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     GetUntrustedInFileProperties: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFsrmPropertyBag2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 239517117, data2: 9218, data3: 20461, data4: [156, 48, 146, 102, 230, 235, 44, 201] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1912,6 +2076,10 @@ pub struct IFsrmPropertyCondition {
     #[cfg(not(feature = "Win32_Foundation"))]
     SetValue: usize,
     pub Delete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFsrmPropertyCondition {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 845870703, data2: 10944, data3: 20328, data4: [191, 140, 71, 89, 240, 84, 250, 41] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1953,6 +2121,10 @@ pub struct IFsrmPropertyDefinition {
     SetParameters: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFsrmPropertyDefinition {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3990885647, data2: 59811, data3: 16796, data4: [135, 124, 1, 254, 93, 36, 197, 211] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFsrmPropertyDefinition2 {
     pub base__: IFsrmPropertyDefinition,
@@ -1970,6 +2142,10 @@ pub struct IFsrmPropertyDefinition2 {
     pub ValueDefinitions: unsafe extern "system" fn(this: *mut *mut Self, valuedefinitions: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     ValueDefinitions: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFsrmPropertyDefinition2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1199055186, data2: 53612, data3: 16937, data4: [180, 225, 13, 223, 227, 8, 185, 246] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1993,6 +2169,10 @@ pub struct IFsrmPropertyDefinitionValue {
     UniqueID: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFsrmPropertyDefinitionValue {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3913732424, data2: 48487, data3: 16760, data4: [142, 34, 28, 68, 146, 94, 215, 16] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFsrmQuota {
     pub base__: IFsrmQuotaObject,
@@ -2007,6 +2187,10 @@ pub struct IFsrmQuota {
     pub QuotaPeakUsageTime: unsafe extern "system" fn(this: *mut *mut Self, peakusagedatetime: *mut f64) -> ::windows_sys::core::HRESULT,
     pub ResetPeakUsage: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub RefreshUsageProperties: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFsrmQuota {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 931099549, data2: 38471, data3: 19342, data4: [151, 210, 95, 252, 230, 215, 89, 205] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2037,6 +2221,10 @@ pub struct IFsrmQuotaBase {
     pub EnumThresholdActions: unsafe extern "system" fn(this: *mut *mut Self, threshold: i32, actions: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     EnumThresholdActions: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFsrmQuotaBase {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 359180181, data2: 14628, data3: 16664, data4: [183, 75, 104, 216, 240, 250, 93, 175] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2092,6 +2280,10 @@ pub struct IFsrmQuotaManager {
     CreateQuotaCollection: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFsrmQuotaManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2343996541, data2: 6616, data3: 20475, data4: [128, 158, 190, 79, 193, 115, 64, 20] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFsrmQuotaManagerEx {
     pub base__: IFsrmQuotaManager,
@@ -2099,6 +2291,10 @@ pub struct IFsrmQuotaManagerEx {
     pub IsAffectedByQuota: unsafe extern "system" fn(this: *mut *mut Self, path: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, options: FsrmEnumOptions, affected: *mut i16) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     IsAffectedByQuota: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFsrmQuotaManagerEx {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1212599041, data2: 54320, data3: 18767, data4: [171, 180, 177, 5, 73, 153, 251, 9] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2127,6 +2323,10 @@ pub struct IFsrmQuotaObject {
     ApplyTemplate: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFsrmQuotaObject {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1121727761, data2: 25045, data3: 18606, data4: [182, 220, 89, 252, 0, 192, 168, 214] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFsrmQuotaTemplate {
     pub base__: IFsrmQuotaBase,
@@ -2148,11 +2348,19 @@ pub struct IFsrmQuotaTemplate {
     CommitAndUpdateDerived: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFsrmQuotaTemplate {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2733615921, data2: 10590, data3: 18107, data4: [185, 118, 232, 109, 88, 181, 46, 139] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFsrmQuotaTemplateImported {
     pub base__: IFsrmQuotaTemplate,
     pub OverwriteOnCommit: unsafe extern "system" fn(this: *mut *mut Self, overwrite: *mut i16) -> ::windows_sys::core::HRESULT,
     pub SetOverwriteOnCommit: unsafe extern "system" fn(this: *mut *mut Self, overwrite: i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFsrmQuotaTemplateImported {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2586571027, data2: 41769, data3: 17612, data4: [128, 154, 92, 0, 252, 232, 218, 64] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2178,6 +2386,10 @@ pub struct IFsrmQuotaTemplateManager {
     pub ImportTemplates: unsafe extern "system" fn(this: *mut *mut Self, serializedquotatemplates: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, quotatemplatenamesarray: *const super::super::System::Com::VARIANT, quotatemplates: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     ImportTemplates: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFsrmQuotaTemplateManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1098099777, data2: 5933, data3: 19794, data4: [150, 60, 253, 199, 228, 21, 247, 23] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2213,6 +2425,10 @@ pub struct IFsrmReport {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     SetFilter: usize,
     pub Delete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFsrmReport {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3637281241, data2: 18104, data3: 20388, data4: [191, 165, 74, 169, 222, 201, 182, 56] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2273,6 +2489,10 @@ pub struct IFsrmReportJob {
     pub Cancel: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFsrmReportJob {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 954757760, data2: 29020, data3: 19581, data4: [162, 128, 234, 22, 81, 161, 159, 239] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFsrmReportManager {
     pub base__: super::super::System::Com::IDispatch,
@@ -2315,6 +2535,10 @@ pub struct IFsrmReportManager {
     SetReportSizeLimit: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFsrmReportManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 666409470, data2: 28666, data3: 17537, data4: [161, 132, 211, 218, 173, 232, 160, 43] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFsrmReportScheduler {
     pub base__: super::super::System::Com::IDispatch,
@@ -2334,6 +2558,10 @@ pub struct IFsrmReportScheduler {
     pub DeleteScheduleTask: unsafe extern "system" fn(this: *mut *mut Self, taskname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     DeleteScheduleTask: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFsrmReportScheduler {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1752812281, data2: 26135, data3: 17540, data4: [135, 25, 113, 195, 216, 100, 95, 148] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2380,6 +2608,10 @@ pub struct IFsrmRule {
     LastModified: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFsrmRule {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3406690656, data2: 5877, data3: 17557, data4: [144, 121, 63, 147, 96, 216, 49, 223] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFsrmSetting {
     pub base__: super::super::System::Com::IDispatch,
@@ -2419,6 +2651,10 @@ pub struct IFsrmSetting {
     pub GetActionRunLimitInterval: unsafe extern "system" fn(this: *mut *mut Self, actiontype: FsrmActionType, delaytimeminutes: *mut i32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFsrmSetting {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4094809341, data2: 5310, data3: 16992, data4: [140, 64, 3, 183, 201, 94, 96, 138] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFsrmStorageModuleDefinition {
     pub base__: IFsrmPipelineModuleDefinition,
@@ -2428,6 +2664,10 @@ pub struct IFsrmStorageModuleDefinition {
     pub SetStorageType: unsafe extern "system" fn(this: *mut *mut Self, storagetype: FsrmStorageModuleType) -> ::windows_sys::core::HRESULT,
     pub UpdatesFileContent: unsafe extern "system" fn(this: *mut *mut Self, updatesfilecontent: *mut i16) -> ::windows_sys::core::HRESULT,
     pub SetUpdatesFileContent: unsafe extern "system" fn(this: *mut *mut Self, updatesfilecontent: i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFsrmStorageModuleDefinition {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 363336528, data2: 18813, data3: 19130, data4: [128, 233, 212, 219, 204, 85, 33, 254] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2445,6 +2685,10 @@ pub struct IFsrmStorageModuleImplementation {
     pub SaveProperties: unsafe extern "system" fn(this: *mut *mut Self, propertybag: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     SaveProperties: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFsrmStorageModuleImplementation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 183804122, data2: 35162, data3: 20048, data4: [135, 18, 169, 103, 36, 188, 236, 100] };
 }
 #[doc = "*Required features: `\"Win32_Storage_FileServerResourceManager\"`*"]
 pub const MessageSizeLimit: u32 = 4096u32;

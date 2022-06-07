@@ -140,10 +140,16 @@ pub struct IGpioChangeCounter {
     #[cfg(not(feature = "Foundation"))]
     Reset: usize,
 }
+impl ::windows_sys::core::Interface for IGpioChangeCounter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3411984606, data2: 26625, data3: 17407, data4: [128, 61, 69, 118, 98, 138, 139, 38] };
+}
 #[repr(C)]
 pub struct IGpioChangeCounterFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, pin: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IGpioChangeCounterFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 343774390, data2: 2718, data3: 16652, data4: [180, 250, 248, 159, 64, 82, 8, 77] };
 }
 #[repr(C)]
 pub struct IGpioChangeReader {
@@ -175,11 +181,17 @@ pub struct IGpioChangeReader {
     #[cfg(not(feature = "Foundation"))]
     WaitForItemsAsync: usize,
 }
+impl ::windows_sys::core::Interface for IGpioChangeReader {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 180127839, data2: 57393, data3: 18664, data4: [133, 144, 112, 222, 120, 54, 60, 109] };
+}
 #[repr(C)]
 pub struct IGpioChangeReaderFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, pin: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub CreateWithCapacity: unsafe extern "system" fn(this: *mut *mut Self, pin: *mut ::core::ffi::c_void, mincapacity: i32, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IGpioChangeReaderFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2841218803, data2: 14606, data3: 17434, data4: [157, 28, 232, 222, 11, 45, 240, 223] };
 }
 #[repr(C)]
 pub struct IGpioController {
@@ -189,10 +201,16 @@ pub struct IGpioController {
     pub OpenPinWithSharingMode: unsafe extern "system" fn(this: *mut *mut Self, pinnumber: i32, sharingmode: GpioSharingMode, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub TryOpenPin: unsafe extern "system" fn(this: *mut *mut Self, pinnumber: i32, sharingmode: GpioSharingMode, pin: *mut *mut ::core::ffi::c_void, openstatus: *mut GpioOpenStatus, result__: *mut bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IGpioController {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 675287779, data2: 29793, data3: 18076, data4: [168, 188, 97, 214, 157, 8, 165, 60] };
+}
 #[repr(C)]
 pub struct IGpioControllerStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub GetDefault: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IGpioControllerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 785839150, data2: 31479, data3: 16662, data4: [149, 51, 196, 61, 153, 161, 251, 100] };
 }
 #[repr(C)]
 pub struct IGpioControllerStatics2 {
@@ -205,6 +223,9 @@ pub struct IGpioControllerStatics2 {
     pub GetDefaultAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     GetDefaultAsync: usize,
+}
+impl ::windows_sys::core::Interface for IGpioControllerStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2435546400, data2: 27812, data3: 16646, data4: [163, 115, 255, 253, 52, 107, 14, 91] };
 }
 #[repr(C)]
 pub struct IGpioPin {
@@ -233,8 +254,14 @@ pub struct IGpioPin {
     pub Write: unsafe extern "system" fn(this: *mut *mut Self, value: GpioPinValue) -> ::windows_sys::core::HRESULT,
     pub Read: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut GpioPinValue) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IGpioPin {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 299479175, data2: 44974, data3: 18320, data4: [158, 233, 224, 234, 201, 66, 210, 1] };
+}
 #[repr(C)]
 pub struct IGpioPinValueChangedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub Edge: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut GpioPinEdge) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IGpioPinValueChangedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 825731809, data2: 28733, data3: 16473, data4: [189, 36, 181, 178, 93, 255, 184, 78] };
 }

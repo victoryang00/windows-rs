@@ -10,16 +10,25 @@ pub struct IEnumVdsObject {
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEnumVdsObject {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 293998775, data2: 36244, data3: 16432, data4: [181, 184, 80, 8, 137, 120, 142, 78] };
+}
 #[repr(C)]
 pub struct IVdsAdmin {
     pub base__: ::windows_sys::core::IUnknown,
     pub RegisterProvider: unsafe extern "system" fn(this: *mut *mut Self, providerid: ::windows_sys::core::GUID, providerclsid: ::windows_sys::core::GUID, pwszname: ::windows_sys::core::PCWSTR, r#type: VDS_PROVIDER_TYPE, pwszmachinename: ::windows_sys::core::PCWSTR, pwszversion: ::windows_sys::core::PCWSTR, guidversionid: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub UnregisterProvider: unsafe extern "system" fn(this: *mut *mut Self, providerid: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IVdsAdmin {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3515410813, data2: 34218, data3: 19763, data4: [171, 198, 38, 41, 154, 16, 255, 193] };
+}
 #[repr(C)]
 pub struct IVdsAdviseSink {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnNotify: unsafe extern "system" fn(this: *mut *mut Self, lnumberofnotifications: i32, pnotificationarray: *const VDS_NOTIFICATION) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IVdsAdviseSink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2200358173, data2: 53081, data3: 18742, data4: [183, 134, 94, 252, 8, 121, 142, 37] };
 }
 #[repr(C)]
 pub struct IVdsAsync {
@@ -27,6 +36,9 @@ pub struct IVdsAsync {
     pub Cancel: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Wait: unsafe extern "system" fn(this: *mut *mut Self, phrresult: *mut ::windows_sys::core::HRESULT, pasyncout: *mut VDS_ASYNC_OUTPUT) -> ::windows_sys::core::HRESULT,
     pub QueryStatus: unsafe extern "system" fn(this: *mut *mut Self, phrresult: *mut ::windows_sys::core::HRESULT, pulpercentcompleted: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IVdsAsync {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3587324781, data2: 23125, data3: 17554, data4: [152, 137, 57, 122, 60, 45, 45, 188] };
 }
 #[repr(C)]
 pub struct IVdsController {
@@ -40,10 +52,16 @@ pub struct IVdsController {
     pub QueryAssociatedLuns: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetStatus: unsafe extern "system" fn(this: *mut *mut Self, status: VDS_CONTROLLER_STATUS) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IVdsController {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3411269998, data2: 57339, data3: 18250, data4: [160, 120, 121, 13, 30, 43, 192, 130] };
+}
 #[repr(C)]
 pub struct IVdsControllerControllerPort {
     pub base__: ::windows_sys::core::IUnknown,
     pub QueryControllerPorts: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IVdsControllerControllerPort {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3395122015, data2: 27566, data3: 17088, data4: [179, 14, 242, 102, 96, 69, 206, 113] };
 }
 #[repr(C)]
 pub struct IVdsControllerPort {
@@ -53,6 +71,9 @@ pub struct IVdsControllerPort {
     pub QueryAssociatedLuns: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub SetStatus: unsafe extern "system" fn(this: *mut *mut Self, status: VDS_PORT_STATUS) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IVdsControllerPort {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 409541901, data2: 20095, data3: 17384, data4: [146, 228, 207, 68, 190, 238, 209, 28] };
 }
 #[repr(C)]
 pub struct IVdsDrive {
@@ -67,10 +88,16 @@ pub struct IVdsDrive {
     pub ClearFlags: unsafe extern "system" fn(this: *mut *mut Self, ulflags: u32) -> ::windows_sys::core::HRESULT,
     pub SetStatus: unsafe extern "system" fn(this: *mut *mut Self, status: VDS_DRIVE_STATUS) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IVdsDrive {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4280610724, data2: 43742, data3: 19307, data4: [137, 139, 234, 166, 162, 8, 135, 199] };
+}
 #[repr(C)]
 pub struct IVdsDrive2 {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetProperties2: unsafe extern "system" fn(this: *mut *mut Self, pdriveprop2: *mut VDS_DRIVE_PROP2) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IVdsDrive2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1622517552, data2: 44511, data3: 17462, data4: [140, 167, 87, 105, 226, 209, 255, 164] };
 }
 #[repr(C)]
 pub struct IVdsHwProvider {
@@ -78,6 +105,9 @@ pub struct IVdsHwProvider {
     pub QuerySubSystems: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Reenumerate: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Refresh: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IVdsHwProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3650869934, data2: 45370, data3: 16760, data4: [159, 219, 226, 127, 22, 180, 96, 62] };
 }
 #[repr(C)]
 pub struct IVdsHwProviderPrivate {
@@ -87,10 +117,16 @@ pub struct IVdsHwProviderPrivate {
     #[cfg(not(feature = "Win32_Foundation"))]
     QueryIfCreatedLun: usize,
 }
+impl ::windows_sys::core::Interface for IVdsHwProviderPrivate {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2565962739, data2: 40755, data3: 20242, data4: [135, 20, 139, 64, 117, 9, 44, 46] };
+}
 #[repr(C)]
 pub struct IVdsHwProviderPrivateMpio {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetAllPathStatusesFromHbaPort: unsafe extern "system" fn(this: *mut *mut Self, hbaportprop: VDS_HBAPORT_PROP, status: VDS_PATH_STATUS) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IVdsHwProviderPrivateMpio {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 822769429, data2: 44075, data3: 19567, data4: [152, 39, 61, 116, 47, 53, 22, 118] };
 }
 #[repr(C)]
 pub struct IVdsHwProviderStoragePools {
@@ -108,15 +144,24 @@ pub struct IVdsHwProviderStoragePools {
     #[cfg(not(feature = "Win32_Foundation"))]
     QueryMaxLunCreateSizeInStoragePool: usize,
 }
+impl ::windows_sys::core::Interface for IVdsHwProviderStoragePools {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3585446778, data2: 61832, data3: 19577, data4: [184, 108, 17, 201, 32, 173, 17, 184] };
+}
 #[repr(C)]
 pub struct IVdsHwProviderType {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetProviderType: unsafe extern "system" fn(this: *mut *mut Self, ptype: *mut VDS_HWPROVIDER_TYPE) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IVdsHwProviderType {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1041191270, data2: 21549, data3: 20422, data4: [148, 122, 1, 33, 116, 36, 11, 126] };
+}
 #[repr(C)]
 pub struct IVdsHwProviderType2 {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetProviderType2: unsafe extern "system" fn(this: *mut *mut Self, ptype: *mut VDS_HWPROVIDER_TYPE) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IVdsHwProviderType2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2173707119, data2: 50384, data3: 20097, data4: [128, 17, 214, 149, 18, 252, 201, 132] };
 }
 #[repr(C)]
 pub struct IVdsIscsiPortal {
@@ -129,6 +174,9 @@ pub struct IVdsIscsiPortal {
     pub GetIpsecSecurity: unsafe extern "system" fn(this: *mut *mut Self, pinitiatorportaladdress: *const VDS_IPADDRESS, pullsecurityflags: *mut u64) -> ::windows_sys::core::HRESULT,
     pub SetIpsecSecurity: unsafe extern "system" fn(this: *mut *mut Self, pinitiatorportaladdress: *const VDS_IPADDRESS, ullsecurityflags: u64, pipseckey: *const VDS_ISCSI_IPSEC_KEY) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IVdsIscsiPortal {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2141276573, data2: 60549, data3: 19082, data4: [164, 123, 255, 105, 32, 31, 205, 52] };
+}
 #[repr(C)]
 pub struct IVdsIscsiPortalGroup {
     pub base__: ::windows_sys::core::IUnknown,
@@ -138,6 +186,9 @@ pub struct IVdsIscsiPortalGroup {
     pub AddPortal: unsafe extern "system" fn(this: *mut *mut Self, portalid: ::windows_sys::core::GUID, ppasync: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub RemovePortal: unsafe extern "system" fn(this: *mut *mut Self, portalid: ::windows_sys::core::GUID, ppasync: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Delete: unsafe extern "system" fn(this: *mut *mut Self, ppasync: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IVdsIscsiPortalGroup {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4277532829, data2: 41949, data3: 19254, data4: [191, 40, 231, 221, 224, 69, 197, 147] };
 }
 #[repr(C)]
 pub struct IVdsIscsiTarget {
@@ -155,6 +206,9 @@ pub struct IVdsIscsiTarget {
     pub SetSharedSecret: unsafe extern "system" fn(this: *mut *mut Self, ptargetsharedsecret: *const VDS_ISCSI_SHARED_SECRET, pwszinitiatorname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
     pub RememberInitiatorSharedSecret: unsafe extern "system" fn(this: *mut *mut Self, pwszinitiatorname: ::windows_sys::core::PCWSTR, pinitiatorsharedsecret: *const VDS_ISCSI_SHARED_SECRET) -> ::windows_sys::core::HRESULT,
     pub GetConnectedInitiators: unsafe extern "system" fn(this: *mut *mut Self, pppwszinitiatorlist: *mut *mut ::windows_sys::core::PWSTR, plnumberofinitiators: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IVdsIscsiTarget {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2861518933, data2: 33765, data3: 19404, data4: [170, 115, 25, 133, 26, 54, 168, 73] };
 }
 #[repr(C)]
 pub struct IVdsLun {
@@ -186,6 +240,9 @@ pub struct IVdsLun {
     pub SetStatus: unsafe extern "system" fn(this: *mut *mut Self, status: VDS_LUN_STATUS) -> ::windows_sys::core::HRESULT,
     pub QueryMaxLunExtendSize: unsafe extern "system" fn(this: *mut *mut Self, pdriveidarray: *const ::windows_sys::core::GUID, lnumberofdrives: i32, pullmaxbytestobeadded: *mut u64) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IVdsLun {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 893430215, data2: 58895, data3: 16657, data4: [168, 64, 139, 186, 108, 44, 131, 216] };
+}
 #[repr(C)]
 pub struct IVdsLun2 {
     pub base__: ::windows_sys::core::IUnknown,
@@ -198,17 +255,26 @@ pub struct IVdsLun2 {
     #[cfg(not(feature = "Win32_Foundation"))]
     ApplyHints2: usize,
 }
+impl ::windows_sys::core::Interface for IVdsLun2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3853756213, data2: 40699, data3: 18842, data4: [128, 113, 67, 148, 217, 238, 111, 203] };
+}
 #[repr(C)]
 pub struct IVdsLunControllerPorts {
     pub base__: ::windows_sys::core::IUnknown,
     pub AssociateControllerPorts: unsafe extern "system" fn(this: *mut *mut Self, pactivecontrollerportidarray: *const ::windows_sys::core::GUID, lnumberofactivecontrollerports: i32, pinactivecontrollerportidarray: *const ::windows_sys::core::GUID, lnumberofinactivecontrollerports: i32) -> ::windows_sys::core::HRESULT,
     pub QueryActiveControllerPorts: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IVdsLunControllerPorts {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1159717478, data2: 55917, data3: 16490, data4: [187, 96, 130, 229, 52, 248, 90, 235] };
+}
 #[repr(C)]
 pub struct IVdsLunIscsi {
     pub base__: ::windows_sys::core::IUnknown,
     pub AssociateTargets: unsafe extern "system" fn(this: *mut *mut Self, ptargetidarray: *const ::windows_sys::core::GUID, lnumberoftargets: i32) -> ::windows_sys::core::HRESULT,
     pub QueryAssociatedTargets: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IVdsLunIscsi {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 226238052, data2: 46491, data3: 17838, data4: [184, 106, 44, 44, 198, 164, 32, 103] };
 }
 #[repr(C)]
 pub struct IVdsLunMpio {
@@ -224,15 +290,24 @@ pub struct IVdsLunMpio {
     SetLoadBalancePolicy: usize,
     pub GetSupportedLbPolicies: unsafe extern "system" fn(this: *mut *mut Self, pullbflags: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IVdsLunMpio {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2086648547, data2: 13114, data3: 18593, data4: [169, 130, 51, 193, 87, 136, 205, 227] };
+}
 #[repr(C)]
 pub struct IVdsLunNaming {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetFriendlyName: unsafe extern "system" fn(this: *mut *mut Self, pwszfriendlyname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IVdsLunNaming {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2423588043, data2: 27470, data3: 19848, data4: [163, 77, 23, 186, 102, 31, 187, 6] };
+}
 #[repr(C)]
 pub struct IVdsLunNumber {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetLunNumber: unsafe extern "system" fn(this: *mut *mut Self, pullunnumber: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IVdsLunNumber {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3556335174, data2: 21683, data3: 16889, data4: [182, 120, 15, 24, 113, 68, 58, 8] };
 }
 #[repr(C)]
 pub struct IVdsLunPlex {
@@ -252,6 +327,9 @@ pub struct IVdsLunPlex {
     #[cfg(not(feature = "Win32_Foundation"))]
     ApplyHints: usize,
 }
+impl ::windows_sys::core::Interface for IVdsLunPlex {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 249669520, data2: 23854, data3: 19131, data4: [140, 153, 196, 129, 232, 190, 33, 56] };
+}
 #[repr(C)]
 pub struct IVdsMaintenance {
     pub base__: ::windows_sys::core::IUnknown,
@@ -259,10 +337,16 @@ pub struct IVdsMaintenance {
     pub StopMaintenance: unsafe extern "system" fn(this: *mut *mut Self, operation: VDS_MAINTENANCE_OPERATION) -> ::windows_sys::core::HRESULT,
     pub PulseMaintenance: unsafe extern "system" fn(this: *mut *mut Self, operation: VDS_MAINTENANCE_OPERATION, ulcount: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IVdsMaintenance {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3672895219, data2: 34083, data3: 18413, data4: [162, 185, 5, 206, 204, 226, 161, 174] };
+}
 #[repr(C)]
 pub struct IVdsProvider {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetProperties: unsafe extern "system" fn(this: *mut *mut Self, pproviderprop: *mut VDS_PROVIDER_PROP) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IVdsProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 281404789, data2: 31108, data3: 20097, data4: [165, 107, 67, 31, 95, 146, 174, 66] };
 }
 #[repr(C)]
 pub struct IVdsProviderPrivate {
@@ -274,10 +358,16 @@ pub struct IVdsProviderPrivate {
     #[cfg(not(feature = "Win32_Foundation"))]
     OnUnload: usize,
 }
+impl ::windows_sys::core::Interface for IVdsProviderPrivate {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 301190465, data2: 47080, data3: 18687, data4: [148, 114, 157, 255, 1, 138, 162, 146] };
+}
 #[repr(C)]
 pub struct IVdsProviderSupport {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetVersionSupport: unsafe extern "system" fn(this: *mut *mut Self, ulversionsupport: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IVdsProviderSupport {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 389201427, data2: 59641, data3: 18947, data4: [191, 188, 95, 97, 106, 166, 108, 225] };
 }
 #[repr(C)]
 pub struct IVdsStoragePool {
@@ -294,6 +384,9 @@ pub struct IVdsStoragePool {
     QueryDriveExtents: usize,
     pub QueryAllocatedLuns: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub QueryAllocatedStoragePools: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IVdsStoragePool {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2469177551, data2: 3763, data3: 19368, data4: [150, 32, 34, 102, 93, 127, 132, 80] };
 }
 #[repr(C)]
 pub struct IVdsSubSystem {
@@ -317,6 +410,9 @@ pub struct IVdsSubSystem {
     #[cfg(not(feature = "Win32_Foundation"))]
     QueryMaxLunCreateSize: usize,
 }
+impl ::windows_sys::core::Interface for IVdsSubSystem {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1875829459, data2: 28048, data3: 20369, data4: [128, 226, 165, 199, 202, 172, 169, 216] };
+}
 #[repr(C)]
 pub struct IVdsSubSystem2 {
     pub base__: ::windows_sys::core::IUnknown,
@@ -331,10 +427,16 @@ pub struct IVdsSubSystem2 {
     #[cfg(not(feature = "Win32_Foundation"))]
     QueryMaxLunCreateSize2: usize,
 }
+impl ::windows_sys::core::Interface for IVdsSubSystem2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3194382133, data2: 30720, data3: 19063, data4: [157, 156, 64, 248, 91, 135, 226, 146] };
+}
 #[repr(C)]
 pub struct IVdsSubSystemInterconnect {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetSupportedInterconnects: unsafe extern "system" fn(this: *mut *mut Self, pulsupportedinterconnectsflag: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IVdsSubSystemInterconnect {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2658116960, data2: 49473, data3: 18299, data4: [131, 186, 11, 108, 56, 247, 254, 191] };
 }
 #[repr(C)]
 pub struct IVdsSubSystemIscsi {
@@ -344,10 +446,16 @@ pub struct IVdsSubSystemIscsi {
     pub CreateTarget: unsafe extern "system" fn(this: *mut *mut Self, pwsziscsiname: ::windows_sys::core::PCWSTR, pwszfriendlyname: ::windows_sys::core::PCWSTR, ppasync: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetIpsecGroupPresharedKey: unsafe extern "system" fn(this: *mut *mut Self, pipseckey: *const VDS_ISCSI_IPSEC_KEY) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IVdsSubSystemIscsi {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2569327, data2: 16592, data3: 19269, data4: [140, 236, 89, 6, 220, 3, 128, 200] };
+}
 #[repr(C)]
 pub struct IVdsSubSystemNaming {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetFriendlyName: unsafe extern "system" fn(this: *mut *mut Self, pwszfriendlyname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IVdsSubSystemNaming {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 225508003, data2: 40148, data3: 18688, data4: [170, 32, 105, 129, 182, 170, 252, 117] };
 }
 #[doc = "*Required features: `\"Win32_Storage_VirtualDiskService\"`*"]
 pub const MAX_FS_ALLOWED_CLUSTER_SIZES_SIZE: u32 = 32u32;

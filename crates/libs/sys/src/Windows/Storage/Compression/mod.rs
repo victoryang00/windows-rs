@@ -29,6 +29,9 @@ pub struct ICompressor {
     #[cfg(not(feature = "Storage_Streams"))]
     DetachStream: usize,
 }
+impl ::windows_sys::core::Interface for ICompressor {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 180577370, data2: 22444, data3: 20193, data4: [183, 2, 132, 211, 157, 84, 36, 224] };
+}
 #[repr(C)]
 pub struct ICompressorFactory {
     pub base__: ::windows_sys::core::IInspectable,
@@ -41,6 +44,9 @@ pub struct ICompressorFactory {
     #[cfg(not(feature = "Storage_Streams"))]
     CreateCompressorEx: usize,
 }
+impl ::windows_sys::core::Interface for ICompressorFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1597871780, data2: 11515, data3: 17452, data4: [168, 186, 215, 209, 27, 3, 157, 160] };
+}
 #[repr(C)]
 pub struct IDecompressor {
     pub base__: ::windows_sys::core::IInspectable,
@@ -49,6 +55,9 @@ pub struct IDecompressor {
     #[cfg(not(feature = "Storage_Streams"))]
     DetachStream: usize,
 }
+impl ::windows_sys::core::Interface for IDecompressor {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3095658054, data2: 54922, data3: 19595, data4: [173, 160, 78, 232, 19, 252, 82, 131] };
+}
 #[repr(C)]
 pub struct IDecompressorFactory {
     pub base__: ::windows_sys::core::IInspectable,
@@ -56,4 +65,7 @@ pub struct IDecompressorFactory {
     pub CreateDecompressor: unsafe extern "system" fn(this: *mut *mut Self, underlyingstream: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Storage_Streams"))]
     CreateDecompressor: usize,
+}
+impl ::windows_sys::core::Interface for IDecompressorFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1396171346, data2: 7586, data3: 17121, data4: [136, 52, 3, 121, 210, 141, 116, 47] };
 }

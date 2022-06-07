@@ -313,30 +313,48 @@ pub struct IAccountsSettingsPaneInterop {
     #[cfg(not(feature = "Win32_Foundation"))]
     ShowAddAccountForWindowAsync: usize,
 }
+impl ::windows_sys::core::Interface for IAccountsSettingsPaneInterop {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3555594925, data2: 14437, data3: 17250, data4: [151, 70, 183, 90, 104, 45, 240, 230] };
+}
 #[repr(C)]
 pub struct IActivationFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub ActivateInstance: unsafe extern "system" fn(this: *mut *mut Self, instance: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IActivationFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 53, data2: 0, data3: 0, data4: [192, 0, 0, 0, 0, 0, 0, 70] };
 }
 #[repr(C)]
 pub struct IAgileReference {
     pub base__: ::windows_sys::core::IUnknown,
     pub Resolve: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppvobjectreference: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAgileReference {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3225381443, data2: 26020, data3: 38936, data4: [152, 126, 224, 184, 16, 210, 166, 242] };
+}
 #[repr(C)]
 pub struct IApartmentShutdown {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnUninitialize: unsafe extern "system" fn(this: *mut *mut Self, ui64apartmentidentifier: u64),
+}
+impl ::windows_sys::core::Interface for IApartmentShutdown {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2733660681, data2: 10146, data3: 17077, data4: [188, 14, 172, 22, 62, 244, 157, 155] };
 }
 #[repr(C)]
 pub struct IAppServiceConnectionExtendedExecution {
     pub base__: ::windows_sys::core::IUnknown,
     pub OpenForExtendedExecutionAsync: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, operation: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAppServiceConnectionExtendedExecution {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1696699780, data2: 63947, data3: 19171, data4: [129, 249, 162, 138, 108, 164, 80, 217] };
+}
 #[repr(C)]
 pub struct IBufferByteAccess {
     pub base__: ::windows_sys::core::IUnknown,
     pub Buffer: unsafe extern "system" fn(this: *mut *mut Self, value: *mut *mut u8) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IBufferByteAccess {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2421821423, data2: 48211, data3: 4575, data4: [140, 73, 0, 30, 79, 198, 134, 218] };
 }
 #[repr(C)]
 pub struct ICastingController {
@@ -347,11 +365,17 @@ pub struct ICastingController {
     pub Advise: unsafe extern "system" fn(this: *mut *mut Self, eventhandler: *mut ::core::ffi::c_void, cookie: *mut u32) -> ::windows_sys::core::HRESULT,
     pub UnAdvise: unsafe extern "system" fn(this: *mut *mut Self, cookie: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ICastingController {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4037370915, data2: 42596, data3: 20413, data4: [139, 67, 64, 154, 69, 232, 217, 161] };
+}
 #[repr(C)]
 pub struct ICastingEventHandler {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnStateChanged: unsafe extern "system" fn(this: *mut *mut Self, newstate: CASTING_CONNECTION_STATE) -> ::windows_sys::core::HRESULT,
     pub OnError: unsafe extern "system" fn(this: *mut *mut Self, errorstatus: CASTING_CONNECTION_ERROR_STATUS, errormessage: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ICastingEventHandler {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3348786359, data2: 48829, data3: 18342, data4: [162, 173, 77, 69, 173, 121, 199, 188] };
 }
 #[repr(C)]
 pub struct ICastingSourceInfo {
@@ -362,11 +386,17 @@ pub struct ICastingSourceInfo {
     #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
     GetProperties: usize,
 }
+impl ::windows_sys::core::Interface for ICastingSourceInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1158683319, data2: 31802, data3: 19406, data4: [149, 0, 18, 192, 144, 36, 178, 152] };
+}
 #[repr(C)]
 pub struct ICoreInputInterop {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetInputSource: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetMessageHandled: unsafe extern "system" fn(this: *mut *mut Self, value: u8) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ICoreInputInterop {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1086317539, data2: 46938, data3: 17529, data4: [172, 150, 71, 83, 101, 116, 155, 184] };
 }
 #[repr(C)]
 pub struct ICoreWindowAdapterInterop {
@@ -380,6 +410,9 @@ pub struct ICoreWindowAdapterInterop {
     pub TitleBarClientAdapter: unsafe extern "system" fn(this: *mut *mut Self, value: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetWindowClientAdapter: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ICoreWindowAdapterInterop {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2052812753, data2: 52595, data3: 19308, data4: [156, 244, 46, 134, 158, 175, 71, 10] };
+}
 #[repr(C)]
 pub struct ICoreWindowComponentInterop {
     pub base__: ::windows_sys::core::IUnknown,
@@ -388,6 +421,9 @@ pub struct ICoreWindowComponentInterop {
     #[cfg(not(feature = "Win32_Foundation"))]
     ConfigureComponentInput: usize,
     pub GetViewInstanceId: unsafe extern "system" fn(this: *mut *mut Self, componentviewinstanceid: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ICoreWindowComponentInterop {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 91663153, data2: 41744, data3: 19520, data4: [186, 49, 253, 55, 224, 41, 141, 250] };
 }
 #[repr(C)]
 pub struct ICoreWindowInterop {
@@ -398,6 +434,9 @@ pub struct ICoreWindowInterop {
     WindowHandle: usize,
     pub SetMessageHandled: unsafe extern "system" fn(this: *mut *mut Self, value: u8) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ICoreWindowInterop {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1171671593, data2: 42558, data3: 19638, data4: [180, 152, 87, 129, 210, 152, 203, 79] };
+}
 #[repr(C)]
 pub struct ICorrelationVectorInformation {
     pub base__: ::windows_sys::core::IInspectable,
@@ -405,10 +444,16 @@ pub struct ICorrelationVectorInformation {
     pub NextCorrelationVectorForThread: unsafe extern "system" fn(this: *mut *mut Self, cv: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub SetNextCorrelationVectorForThread: unsafe extern "system" fn(this: *mut *mut Self, cv: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ICorrelationVectorInformation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2210892604, data2: 55435, data3: 18768, data4: [170, 110, 34, 184, 210, 42, 171, 211] };
+}
 #[repr(C)]
 pub struct ICorrelationVectorSource {
     pub base__: ::windows_sys::core::IUnknown,
     pub CorrelationVector: unsafe extern "system" fn(this: *mut *mut Self, cv: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ICorrelationVectorSource {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 355174971, data2: 47545, data3: 18053, data4: [181, 110, 151, 72, 71, 188, 117, 69] };
 }
 #[repr(C)]
 pub struct IDragDropManagerInterop {
@@ -418,6 +463,9 @@ pub struct IDragDropManagerInterop {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetForWindow: usize,
 }
+impl ::windows_sys::core::Interface for IDragDropManagerInterop {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1524157351, data2: 19457, data3: 19884, data4: [144, 116, 130, 120, 148, 41, 45, 99] };
+}
 #[repr(C)]
 pub struct IHolographicSpaceInterop {
     pub base__: ::windows_sys::core::IInspectable,
@@ -425,6 +473,9 @@ pub struct IHolographicSpaceInterop {
     pub CreateForWindow: unsafe extern "system" fn(this: *mut *mut Self, window: super::super::Foundation::HWND, riid: *const ::windows_sys::core::GUID, holographicspace: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     CreateForWindow: usize,
+}
+impl ::windows_sys::core::Interface for IHolographicSpaceInterop {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1548674358, data2: 27288, data3: 19334, data4: [161, 112, 88, 112, 19, 214, 253, 75] };
 }
 #[repr(C)]
 pub struct IInputPaneInterop {
@@ -434,10 +485,16 @@ pub struct IInputPaneInterop {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetForWindow: usize,
 }
+impl ::windows_sys::core::Interface for IInputPaneInterop {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1976511575, data2: 37269, data3: 18737, data4: [131, 50, 240, 180, 9, 233, 22, 175] };
+}
 #[repr(C)]
 pub struct ILanguageExceptionErrorInfo {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetLanguageException: unsafe extern "system" fn(this: *mut *mut Self, languageexception: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ILanguageExceptionErrorInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 77782003, data2: 57219, data3: 4460, data4: [9, 70, 8, 18, 171, 246, 224, 125] };
 }
 #[repr(C)]
 pub struct ILanguageExceptionErrorInfo2 {
@@ -446,25 +503,40 @@ pub struct ILanguageExceptionErrorInfo2 {
     pub CapturePropagationContext: unsafe extern "system" fn(this: *mut *mut Self, languageexception: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetPropagationContextHead: unsafe extern "system" fn(this: *mut *mut Self, propagatedlanguageexceptionerrorinfohead: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ILanguageExceptionErrorInfo2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1464264132, data2: 23447, data3: 16972, data4: [182, 32, 40, 34, 145, 87, 52, 221] };
+}
 #[repr(C)]
 pub struct ILanguageExceptionStackBackTrace {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetStackBackTrace: unsafe extern "system" fn(this: *mut *mut Self, maxframestocapture: u32, stackbacktrace: *mut usize, framescaptured: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ILanguageExceptionStackBackTrace {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3420798901, data2: 63847, data3: 16984, data4: [141, 52, 66, 245, 226, 88, 51, 222] };
 }
 #[repr(C)]
 pub struct ILanguageExceptionTransform {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetTransformedRestrictedErrorInfo: unsafe extern "system" fn(this: *mut *mut Self, restrictederrorinfo: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ILanguageExceptionTransform {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4273316465, data2: 42701, data3: 17870, data4: [136, 10, 105, 103, 6, 186, 220, 101] };
+}
 #[repr(C)]
 pub struct IMemoryBufferByteAccess {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetBuffer: unsafe extern "system" fn(this: *mut *mut Self, value: *mut *mut u8, capacity: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMemoryBufferByteAccess {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1527591477, data2: 19898, data3: 19780, data4: [134, 94, 143, 29, 14, 79, 208, 77] };
+}
 #[repr(C)]
 pub struct IMessageDispatcher {
     pub base__: ::windows_sys::core::IInspectable,
     pub PumpMessages: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMessageDispatcher {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4126690447, data2: 53200, data3: 19670, data4: [182, 107, 197, 210, 111, 241, 104, 157] };
 }
 #[repr(C)]
 pub struct IPlayToManagerInterop {
@@ -478,6 +550,9 @@ pub struct IPlayToManagerInterop {
     #[cfg(not(feature = "Win32_Foundation"))]
     ShowPlayToUIForWindow: usize,
 }
+impl ::windows_sys::core::Interface for IPlayToManagerInterop {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 607733401, data2: 7980, data3: 20147, data4: [140, 215, 14, 193, 218, 66, 165, 64] };
+}
 #[repr(C)]
 pub struct IRestrictedErrorInfo {
     pub base__: ::windows_sys::core::IUnknown,
@@ -490,9 +565,15 @@ pub struct IRestrictedErrorInfo {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetReference: usize,
 }
+impl ::windows_sys::core::Interface for IRestrictedErrorInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2193256594, data2: 19592, data3: 17021, data4: [167, 188, 22, 221, 147, 254, 182, 126] };
+}
 #[repr(C)]
 pub struct IRoMetaDataLocator {
     pub Locate: unsafe extern "system" fn(this: *mut *mut Self, nameelement: ::windows_sys::core::PCWSTR, metadatadestination: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IRoMetaDataLocator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID::zeroed();
 }
 #[repr(C)]
 pub struct IRoSimpleMetaDataBuilder {
@@ -507,6 +588,9 @@ pub struct IRoSimpleMetaDataBuilder {
     pub SetParameterizedInterface: unsafe extern "system" fn(this: *mut *mut Self, piid: ::windows_sys::core::GUID, numargs: u32) -> ::windows_sys::core::HRESULT,
     pub SetParameterizedDelegate: unsafe extern "system" fn(this: *mut *mut Self, piid: ::windows_sys::core::GUID, numargs: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IRoSimpleMetaDataBuilder {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID::zeroed();
+}
 #[repr(C)]
 pub struct IShareWindowCommandEventArgsInterop {
     pub base__: ::windows_sys::core::IUnknown,
@@ -514,6 +598,9 @@ pub struct IShareWindowCommandEventArgsInterop {
     pub GetWindow: unsafe extern "system" fn(this: *mut *mut Self, value: *mut super::super::Foundation::HWND) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetWindow: usize,
+}
+impl ::windows_sys::core::Interface for IShareWindowCommandEventArgsInterop {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1701947169, data2: 25661, data3: 17364, data4: [172, 164, 107, 111, 95, 48, 241, 173] };
 }
 #[repr(C)]
 pub struct IShareWindowCommandSourceInterop {
@@ -523,6 +610,9 @@ pub struct IShareWindowCommandSourceInterop {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetForWindow: usize,
 }
+impl ::windows_sys::core::Interface for IShareWindowCommandSourceInterop {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1176115487, data2: 33828, data3: 17318, data4: [160, 250, 52, 81, 162, 47, 86, 171] };
+}
 #[repr(C)]
 pub struct ISpatialInteractionManagerInterop {
     pub base__: ::windows_sys::core::IInspectable,
@@ -530,6 +620,9 @@ pub struct ISpatialInteractionManagerInterop {
     pub GetForWindow: unsafe extern "system" fn(this: *mut *mut Self, window: super::super::Foundation::HWND, riid: *const ::windows_sys::core::GUID, spatialinteractionmanager: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetForWindow: usize,
+}
+impl ::windows_sys::core::Interface for ISpatialInteractionManagerInterop {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1548674358, data2: 27288, data3: 19334, data4: [161, 112, 88, 112, 19, 214, 253, 75] };
 }
 #[repr(C)]
 pub struct ISystemMediaTransportControlsInterop {
@@ -539,6 +632,9 @@ pub struct ISystemMediaTransportControlsInterop {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetForWindow: usize,
 }
+impl ::windows_sys::core::Interface for ISystemMediaTransportControlsInterop {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3719317293, data2: 51473, data3: 18975, data4: [134, 217, 220, 61, 113, 169, 95, 90] };
+}
 #[repr(C)]
 pub struct IUIViewSettingsInterop {
     pub base__: ::windows_sys::core::IInspectable,
@@ -546,6 +642,9 @@ pub struct IUIViewSettingsInterop {
     pub GetForWindow: unsafe extern "system" fn(this: *mut *mut Self, hwnd: super::super::Foundation::HWND, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetForWindow: usize,
+}
+impl ::windows_sys::core::Interface for IUIViewSettingsInterop {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 915725305, data2: 36712, data3: 17598, data4: [143, 245, 25, 92, 152, 237, 232, 166] };
 }
 #[repr(C)]
 pub struct IUserActivityInterop {
@@ -555,6 +654,9 @@ pub struct IUserActivityInterop {
     #[cfg(not(feature = "Win32_Foundation"))]
     CreateSessionForWindow: usize,
 }
+impl ::windows_sys::core::Interface for IUserActivityInterop {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 450769229, data2: 3594, data3: 16601, data4: [130, 76, 154, 8, 138, 80, 5, 159] };
+}
 #[repr(C)]
 pub struct IUserActivityRequestManagerInterop {
     pub base__: ::windows_sys::core::IInspectable,
@@ -563,10 +665,16 @@ pub struct IUserActivityRequestManagerInterop {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetForWindow: usize,
 }
+impl ::windows_sys::core::Interface for IUserActivityRequestManagerInterop {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3714709622, data2: 38553, data3: 18197, data4: [144, 149, 227, 126, 163, 13, 250, 27] };
+}
 #[repr(C)]
 pub struct IUserActivitySourceHostInterop {
     pub base__: ::windows_sys::core::IInspectable,
     pub SetActivitySourceHost: unsafe extern "system" fn(this: *mut *mut Self, activitysourcehost: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUserActivitySourceHostInterop {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3244161212, data2: 34884, data3: 18554, data4: [184, 91, 117, 120, 224, 246, 20, 25] };
 }
 #[repr(C)]
 pub struct IUserConsentVerifierInterop {
@@ -576,15 +684,24 @@ pub struct IUserConsentVerifierInterop {
     #[cfg(not(feature = "Win32_Foundation"))]
     RequestVerificationForWindowAsync: usize,
 }
+impl ::windows_sys::core::Interface for IUserConsentVerifierInterop {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 971002051, data2: 20084, data3: 17434, data4: [141, 192, 184, 17, 4, 223, 148, 156] };
+}
 #[repr(C)]
 pub struct IWeakReference {
     pub base__: ::windows_sys::core::IUnknown,
     pub Resolve: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, objectreference: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWeakReference {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 55, data2: 0, data3: 0, data4: [192, 0, 0, 0, 0, 0, 0, 70] };
+}
 #[repr(C)]
 pub struct IWeakReferenceSource {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetWeakReference: unsafe extern "system" fn(this: *mut *mut Self, weakreference: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWeakReferenceSource {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 56, data2: 0, data3: 0, data4: [192, 0, 0, 0, 0, 0, 0, 70] };
 }
 #[repr(C)]
 pub struct IWebAuthenticationCoreManagerInterop {
@@ -597,6 +714,9 @@ pub struct IWebAuthenticationCoreManagerInterop {
     pub RequestTokenWithWebAccountForWindowAsync: unsafe extern "system" fn(this: *mut *mut Self, appwindow: super::super::Foundation::HWND, request: *mut ::core::ffi::c_void, webaccount: *mut ::core::ffi::c_void, riid: *const ::windows_sys::core::GUID, asyncinfo: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     RequestTokenWithWebAccountForWindowAsync: usize,
+}
+impl ::windows_sys::core::Interface for IWebAuthenticationCoreManagerInterop {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4105758724, data2: 33054, data3: 17462, data4: [182, 156, 68, 203, 103, 183, 32, 132] };
 }
 #[doc = "*Required features: `\"Win32_System_WinRT\"`*"]
 pub const MAX_ERROR_MESSAGE_CHARS: u32 = 512u32;

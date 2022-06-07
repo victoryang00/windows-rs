@@ -234,6 +234,9 @@ pub struct IGattCharacteristic {
     #[cfg(not(feature = "Foundation"))]
     RemoveValueChanged: usize,
 }
+impl ::windows_sys::core::Interface for IGattCharacteristic {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1506496705, data2: 22836, data3: 20328, data4: [161, 152, 235, 134, 79, 164, 78, 107] };
+}
 #[repr(C)]
 pub struct IGattCharacteristic2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -242,6 +245,9 @@ pub struct IGattCharacteristic2 {
     pub GetAllDescriptors: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Foundation_Collections", feature = "deprecated")))]
     GetAllDescriptors: usize,
+}
+impl ::windows_sys::core::Interface for IGattCharacteristic2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2920985976, data2: 60422, data3: 18276, data4: [183, 128, 152, 53, 161, 211, 93, 110] };
 }
 #[repr(C)]
 pub struct IGattCharacteristic3 {
@@ -275,6 +281,9 @@ pub struct IGattCharacteristic3 {
     #[cfg(not(feature = "Foundation"))]
     WriteClientCharacteristicConfigurationDescriptorWithResultAsync: usize,
 }
+impl ::windows_sys::core::Interface for IGattCharacteristic3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1060922942, data2: 37844, data3: 16491, data4: [184, 23, 219, 129, 248, 237, 83, 179] };
+}
 #[repr(C)]
 pub struct IGattCharacteristicStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -282,6 +291,9 @@ pub struct IGattCharacteristicStatics {
     pub ConvertShortIdToUuid: unsafe extern "system" fn(this: *mut *mut Self, shortid: u16, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "deprecated"))]
     ConvertShortIdToUuid: usize,
+}
+impl ::windows_sys::core::Interface for IGattCharacteristicStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1506496707, data2: 22836, data3: 20328, data4: [161, 152, 235, 134, 79, 164, 78, 107] };
 }
 #[repr(C)]
 pub struct IGattCharacteristicUuidsStatics {
@@ -307,6 +319,9 @@ pub struct IGattCharacteristicUuidsStatics {
     pub SensorLocation: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub TemperatureMeasurement: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub TemperatureType: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IGattCharacteristicUuidsStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1492796806, data2: 45534, data3: 18188, data4: [183, 222, 13, 17, 255, 68, 244, 183] };
 }
 #[repr(C)]
 pub struct IGattCharacteristicUuidsStatics2 {
@@ -372,6 +387,9 @@ pub struct IGattCharacteristicUuidsStatics2 {
     pub TxPowerLevel: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub UnreadAlertStatus: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IGattCharacteristicUuidsStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 408269861, data2: 54382, data3: 18988, data4: [156, 63, 237, 109, 234, 41, 231, 190] };
+}
 #[repr(C)]
 pub struct IGattCharacteristicsResult {
     pub base__: ::windows_sys::core::IInspectable,
@@ -385,6 +403,9 @@ pub struct IGattCharacteristicsResult {
     #[cfg(not(feature = "Foundation_Collections"))]
     Characteristics: usize,
 }
+impl ::windows_sys::core::Interface for IGattCharacteristicsResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 294949980, data2: 45655, data3: 20286, data4: [157, 183, 246, 139, 201, 169, 174, 242] };
+}
 #[repr(C)]
 pub struct IGattClientNotificationResult {
     pub base__: ::windows_sys::core::IInspectable,
@@ -395,10 +416,16 @@ pub struct IGattClientNotificationResult {
     #[cfg(not(feature = "Foundation"))]
     ProtocolError: usize,
 }
+impl ::windows_sys::core::Interface for IGattClientNotificationResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1349342617, data2: 274, data3: 16794, data4: [142, 59, 174, 33, 175, 171, 210, 194] };
+}
 #[repr(C)]
 pub struct IGattClientNotificationResult2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub BytesSent: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u16) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IGattClientNotificationResult2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2410595479, data2: 17888, data3: 18814, data4: [149, 130, 41, 161, 254, 40, 26, 213] };
 }
 #[repr(C)]
 pub struct IGattDescriptor {
@@ -420,6 +447,9 @@ pub struct IGattDescriptor {
     #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
     WriteValueAsync: usize,
 }
+impl ::windows_sys::core::Interface for IGattDescriptor {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2449825579, data2: 32900, data3: 17220, data4: [180, 194, 40, 77, 225, 154, 133, 6] };
+}
 #[repr(C)]
 pub struct IGattDescriptor2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -428,6 +458,9 @@ pub struct IGattDescriptor2 {
     #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
     WriteValueWithResultAsync: usize,
 }
+impl ::windows_sys::core::Interface for IGattDescriptor2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2404793657, data2: 54832, data3: 16492, data4: [186, 17, 16, 205, 209, 107, 14, 94] };
+}
 #[repr(C)]
 pub struct IGattDescriptorStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -435,6 +468,9 @@ pub struct IGattDescriptorStatics {
     pub ConvertShortIdToUuid: unsafe extern "system" fn(this: *mut *mut Self, shortid: u16, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "deprecated"))]
     ConvertShortIdToUuid: usize,
+}
+impl ::windows_sys::core::Interface for IGattDescriptorStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2449825581, data2: 32900, data3: 17220, data4: [180, 194, 40, 77, 225, 154, 133, 6] };
 }
 #[repr(C)]
 pub struct IGattDescriptorUuidsStatics {
@@ -445,6 +481,9 @@ pub struct IGattDescriptorUuidsStatics {
     pub CharacteristicUserDescription: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub ClientCharacteristicConfiguration: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub ServerCharacteristicConfiguration: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IGattDescriptorUuidsStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2801296078, data2: 40188, data3: 17137, data4: [145, 133, 255, 55, 183, 81, 129, 211] };
 }
 #[repr(C)]
 pub struct IGattDescriptorsResult {
@@ -458,6 +497,9 @@ pub struct IGattDescriptorsResult {
     pub Descriptors: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     Descriptors: usize,
+}
+impl ::windows_sys::core::Interface for IGattDescriptorsResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2613088755, data2: 38375, data3: 17545, data4: [141, 37, 255, 129, 149, 90, 87, 185] };
 }
 #[repr(C)]
 pub struct IGattDeviceService {
@@ -473,6 +515,9 @@ pub struct IGattDeviceService {
     pub DeviceId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub Uuid: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub AttributeHandle: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u16) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IGattDeviceService {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2893773829, data2: 45884, data3: 18383, data4: [153, 15, 107, 143, 85, 119, 223, 113] };
 }
 #[repr(C)]
 pub struct IGattDeviceService2 {
@@ -493,6 +538,9 @@ pub struct IGattDeviceService2 {
     pub GetAllIncludedServices: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Foundation_Collections", feature = "deprecated")))]
     GetAllIncludedServices: usize,
+}
+impl ::windows_sys::core::Interface for IGattDeviceService2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4233384459, data2: 2829, data3: 18184, data4: [186, 224, 159, 253, 148, 137, 188, 89] };
 }
 #[repr(C)]
 pub struct IGattDeviceService3 {
@@ -544,6 +592,9 @@ pub struct IGattDeviceService3 {
     #[cfg(not(feature = "Foundation"))]
     GetIncludedServicesForUuidWithCacheModeAsync: usize,
 }
+impl ::windows_sys::core::Interface for IGattDeviceService3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2996021584, data2: 3155, data3: 17276, data4: [169, 179, 92, 50, 16, 198, 229, 105] };
+}
 #[repr(C)]
 pub struct IGattDeviceServiceStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -561,6 +612,9 @@ pub struct IGattDeviceServiceStatics {
     #[cfg(not(feature = "deprecated"))]
     ConvertShortIdToUuid: usize,
 }
+impl ::windows_sys::core::Interface for IGattDeviceServiceStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 426573858, data2: 64173, data3: 17884, data4: [174, 91, 42, 195, 24, 78, 132, 219] };
+}
 #[repr(C)]
 pub struct IGattDeviceServiceStatics2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -572,6 +626,9 @@ pub struct IGattDeviceServiceStatics2 {
     pub GetDeviceSelectorForBluetoothDeviceIdWithCacheMode: unsafe extern "system" fn(this: *mut *mut Self, bluetoothdeviceid: *mut ::core::ffi::c_void, cachemode: super::BluetoothCacheMode, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub GetDeviceSelectorForBluetoothDeviceIdAndUuid: unsafe extern "system" fn(this: *mut *mut Self, bluetoothdeviceid: *mut ::core::ffi::c_void, serviceuuid: ::windows_sys::core::GUID, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub GetDeviceSelectorForBluetoothDeviceIdAndUuidWithCacheMode: unsafe extern "system" fn(this: *mut *mut Self, bluetoothdeviceid: *mut ::core::ffi::c_void, serviceuuid: ::windows_sys::core::GUID, cachemode: super::BluetoothCacheMode, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IGattDeviceServiceStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 100931694, data2: 9382, data3: 19213, data4: [162, 242, 48, 204, 1, 84, 93, 37] };
 }
 #[repr(C)]
 pub struct IGattDeviceServicesResult {
@@ -585,6 +642,9 @@ pub struct IGattDeviceServicesResult {
     pub Services: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     Services: usize,
+}
+impl ::windows_sys::core::Interface for IGattDeviceServicesResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 387830766, data2: 365, data3: 16797, data4: [131, 138, 87, 108, 244, 117, 163, 216] };
 }
 #[repr(C)]
 pub struct IGattLocalCharacteristic {
@@ -647,6 +707,9 @@ pub struct IGattLocalCharacteristic {
     #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
     NotifyValueForSubscribedClientAsync: usize,
 }
+impl ::windows_sys::core::Interface for IGattLocalCharacteristic {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2933798765, data2: 21522, data3: 19828, data4: [146, 168, 141, 235, 133, 38, 130, 156] };
+}
 #[repr(C)]
 pub struct IGattLocalCharacteristicParameters {
     pub base__: ::windows_sys::core::IInspectable,
@@ -671,11 +734,17 @@ pub struct IGattLocalCharacteristicParameters {
     #[cfg(not(feature = "Foundation_Collections"))]
     PresentationFormats: usize,
 }
+impl ::windows_sys::core::Interface for IGattLocalCharacteristicParameters {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4210507188, data2: 19711, data3: 17607, data4: [132, 69, 4, 14, 110, 173, 0, 99] };
+}
 #[repr(C)]
 pub struct IGattLocalCharacteristicResult {
     pub base__: ::windows_sys::core::IInspectable,
     pub Characteristic: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Error: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::BluetoothError) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IGattLocalCharacteristicResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2037767835, data2: 368, data3: 17303, data4: [150, 102, 146, 248, 99, 241, 46, 230] };
 }
 #[repr(C)]
 pub struct IGattLocalDescriptor {
@@ -704,6 +773,9 @@ pub struct IGattLocalDescriptor {
     #[cfg(not(feature = "Foundation"))]
     RemoveWriteRequested: usize,
 }
+impl ::windows_sys::core::Interface for IGattLocalDescriptor {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4102995462, data2: 30877, data3: 19019, data4: [134, 82, 189, 1, 123, 93, 47, 198] };
+}
 #[repr(C)]
 pub struct IGattLocalDescriptorParameters {
     pub base__: ::windows_sys::core::IInspectable,
@@ -720,11 +792,17 @@ pub struct IGattLocalDescriptorParameters {
     pub SetWriteProtectionLevel: unsafe extern "system" fn(this: *mut *mut Self, value: GattProtectionLevel) -> ::windows_sys::core::HRESULT,
     pub WriteProtectionLevel: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut GattProtectionLevel) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IGattLocalDescriptorParameters {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1608441450, data2: 62401, data3: 19302, data4: [140, 75, 227, 210, 41, 59, 64, 233] };
+}
 #[repr(C)]
 pub struct IGattLocalDescriptorResult {
     pub base__: ::windows_sys::core::IInspectable,
     pub Descriptor: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Error: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::BluetoothError) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IGattLocalDescriptorResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 928485822, data2: 12831, data3: 17254, data4: [191, 193, 59, 198, 184, 44, 121, 248] };
 }
 #[repr(C)]
 pub struct IGattLocalService {
@@ -739,6 +817,9 @@ pub struct IGattLocalService {
     #[cfg(not(feature = "Foundation_Collections"))]
     Characteristics: usize,
 }
+impl ::windows_sys::core::Interface for IGattLocalService {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4111721048, data2: 63479, data3: 18690, data4: [184, 3, 87, 252, 199, 214, 254, 131] };
+}
 #[repr(C)]
 pub struct IGattPresentationFormat {
     pub base__: ::windows_sys::core::IInspectable,
@@ -748,15 +829,24 @@ pub struct IGattPresentationFormat {
     pub Namespace: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u8) -> ::windows_sys::core::HRESULT,
     pub Description: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u16) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IGattPresentationFormat {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 426573857, data2: 64173, data3: 17884, data4: [174, 91, 42, 195, 24, 78, 132, 219] };
+}
 #[repr(C)]
 pub struct IGattPresentationFormatStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub BluetoothSigAssignedNumbers: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u8) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IGattPresentationFormatStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 426573856, data2: 64173, data3: 17884, data4: [174, 91, 42, 195, 24, 78, 132, 219] };
+}
 #[repr(C)]
 pub struct IGattPresentationFormatStatics2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub FromParts: unsafe extern "system" fn(this: *mut *mut Self, formattype: u8, exponent: i32, unit: u16, namespaceid: u8, description: u16, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IGattPresentationFormatStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2848069395, data2: 47151, data3: 17246, data4: [182, 52, 33, 253, 133, 164, 60, 7] };
 }
 #[repr(C)]
 pub struct IGattPresentationFormatTypesStatics {
@@ -789,6 +879,9 @@ pub struct IGattPresentationFormatTypesStatics {
     pub Utf16: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u8) -> ::windows_sys::core::HRESULT,
     pub Struct: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u8) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IGattPresentationFormatTypesStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4210145802, data2: 12474, data3: 16540, data4: [190, 247, 207, 251, 109, 3, 184, 251] };
+}
 #[repr(C)]
 pub struct IGattProtocolErrorStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -810,11 +903,17 @@ pub struct IGattProtocolErrorStatics {
     pub UnsupportedGroupType: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u8) -> ::windows_sys::core::HRESULT,
     pub InsufficientResources: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u8) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IGattProtocolErrorStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3393635781, data2: 3788, data3: 18441, data4: [190, 163, 207, 121, 188, 153, 30, 55] };
+}
 #[repr(C)]
 pub struct IGattReadClientCharacteristicConfigurationDescriptorResult {
     pub base__: ::windows_sys::core::IInspectable,
     pub Status: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut GattCommunicationStatus) -> ::windows_sys::core::HRESULT,
     pub ClientCharacteristicConfigurationDescriptor: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut GattClientCharacteristicConfigurationDescriptorValue) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IGattReadClientCharacteristicConfigurationDescriptorResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1671851785, data2: 6890, data3: 19532, data4: [165, 15, 151, 186, 228, 116, 179, 72] };
 }
 #[repr(C)]
 pub struct IGattReadClientCharacteristicConfigurationDescriptorResult2 {
@@ -823,6 +922,9 @@ pub struct IGattReadClientCharacteristicConfigurationDescriptorResult2 {
     pub ProtocolError: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     ProtocolError: usize,
+}
+impl ::windows_sys::core::Interface for IGattReadClientCharacteristicConfigurationDescriptorResult2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 468821405, data2: 47693, data3: 17954, data4: [134, 81, 244, 238, 21, 13, 10, 93] };
 }
 #[repr(C)]
 pub struct IGattReadRequest {
@@ -844,6 +946,9 @@ pub struct IGattReadRequest {
     RespondWithValue: usize,
     pub RespondWithProtocolError: unsafe extern "system" fn(this: *mut *mut Self, protocolerror: u8) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IGattReadRequest {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4057818421, data2: 27341, data3: 17062, data4: [164, 187, 215, 137, 218, 224, 4, 62] };
+}
 #[repr(C)]
 pub struct IGattReadRequestedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
@@ -857,6 +962,9 @@ pub struct IGattReadRequestedEventArgs {
     #[cfg(not(feature = "Foundation"))]
     GetRequestAsync: usize,
 }
+impl ::windows_sys::core::Interface for IGattReadRequestedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2471064131, data2: 62364, data3: 18507, data4: [138, 182, 153, 107, 164, 134, 207, 163] };
+}
 #[repr(C)]
 pub struct IGattReadResult {
     pub base__: ::windows_sys::core::IInspectable,
@@ -866,6 +974,9 @@ pub struct IGattReadResult {
     #[cfg(not(feature = "Storage_Streams"))]
     Value: usize,
 }
+impl ::windows_sys::core::Interface for IGattReadResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1671851784, data2: 6890, data3: 19532, data4: [165, 15, 151, 186, 228, 116, 179, 72] };
+}
 #[repr(C)]
 pub struct IGattReadResult2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -873,6 +984,9 @@ pub struct IGattReadResult2 {
     pub ProtocolError: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     ProtocolError: usize,
+}
+impl ::windows_sys::core::Interface for IGattReadResult2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2702135456, data2: 64323, data3: 18607, data4: [186, 170, 99, 138, 92, 99, 41, 254] };
 }
 #[repr(C)]
 pub struct IGattReliableWriteTransaction {
@@ -886,6 +1000,9 @@ pub struct IGattReliableWriteTransaction {
     #[cfg(not(feature = "Foundation"))]
     CommitAsync: usize,
 }
+impl ::windows_sys::core::Interface for IGattReliableWriteTransaction {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1671851783, data2: 6890, data3: 19532, data4: [165, 15, 151, 186, 228, 116, 179, 72] };
+}
 #[repr(C)]
 pub struct IGattReliableWriteTransaction2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -894,11 +1011,17 @@ pub struct IGattReliableWriteTransaction2 {
     #[cfg(not(feature = "Foundation"))]
     CommitWithResultAsync: usize,
 }
+impl ::windows_sys::core::Interface for IGattReliableWriteTransaction2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1360083335, data2: 61202, data3: 17967, data4: [159, 178, 161, 164, 58, 103, 148, 22] };
+}
 #[repr(C)]
 pub struct IGattRequestStateChangedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub State: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut GattRequestState) -> ::windows_sys::core::HRESULT,
     pub Error: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::BluetoothError) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IGattRequestStateChangedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3895777580, data2: 10174, data3: 17587, data4: [157, 13, 79, 198, 232, 8, 221, 63] };
 }
 #[repr(C)]
 pub struct IGattServiceProvider {
@@ -917,11 +1040,17 @@ pub struct IGattServiceProvider {
     pub StartAdvertisingWithParameters: unsafe extern "system" fn(this: *mut *mut Self, parameters: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub StopAdvertising: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IGattServiceProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2015540173, data2: 10377, data3: 20358, data4: [160, 81, 63, 10, 237, 28, 39, 96] };
+}
 #[repr(C)]
 pub struct IGattServiceProviderAdvertisementStatusChangedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub Error: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::BluetoothError) -> ::windows_sys::core::HRESULT,
     pub Status: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut GattServiceProviderAdvertisementStatus) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IGattServiceProviderAdvertisementStatusChangedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1504029285, data2: 64033, data3: 20476, data4: [177, 85, 4, 217, 40, 1, 38, 134] };
 }
 #[repr(C)]
 pub struct IGattServiceProviderAdvertisingParameters {
@@ -930,6 +1059,9 @@ pub struct IGattServiceProviderAdvertisingParameters {
     pub IsConnectable: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub SetIsDiscoverable: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
     pub IsDiscoverable: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IGattServiceProviderAdvertisingParameters {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3805163947, data2: 25365, data3: 19490, data4: [155, 215, 120, 29, 188, 61, 141, 130] };
 }
 #[repr(C)]
 pub struct IGattServiceProviderAdvertisingParameters2 {
@@ -943,11 +1075,17 @@ pub struct IGattServiceProviderAdvertisingParameters2 {
     #[cfg(not(feature = "Storage_Streams"))]
     ServiceData: usize,
 }
+impl ::windows_sys::core::Interface for IGattServiceProviderAdvertisingParameters2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4285023885, data2: 51858, data3: 17460, data4: [151, 67, 14, 144, 152, 138, 216, 121] };
+}
 #[repr(C)]
 pub struct IGattServiceProviderResult {
     pub base__: ::windows_sys::core::IInspectable,
     pub Error: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::BluetoothError) -> ::windows_sys::core::HRESULT,
     pub ServiceProvider: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IGattServiceProviderResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1984337624, data2: 50494, data3: 17036, data4: [138, 72, 103, 175, 224, 44, 58, 230] };
 }
 #[repr(C)]
 pub struct IGattServiceProviderStatics {
@@ -956,6 +1094,9 @@ pub struct IGattServiceProviderStatics {
     pub CreateAsync: unsafe extern "system" fn(this: *mut *mut Self, serviceuuid: ::windows_sys::core::GUID, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     CreateAsync: usize,
+}
+impl ::windows_sys::core::Interface for IGattServiceProviderStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 830029923, data2: 21078, data3: 16468, data4: [164, 244, 123, 190, 119, 85, 165, 126] };
 }
 #[repr(C)]
 pub struct IGattServiceUuidsStatics {
@@ -969,6 +1110,9 @@ pub struct IGattServiceUuidsStatics {
     pub HealthThermometer: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub HeartRate: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub RunningSpeedAndCadence: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IGattServiceUuidsStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1841655896, data2: 39610, data3: 17431, data4: [184, 242, 220, 224, 22, 211, 78, 226] };
 }
 #[repr(C)]
 pub struct IGattServiceUuidsStatics2 {
@@ -986,6 +1130,9 @@ pub struct IGattServiceUuidsStatics2 {
     pub ReferenceTimeUpdate: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub ScanParameters: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub TxPower: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IGattServiceUuidsStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3534656757, data2: 15637, data3: 20345, data4: [156, 12, 234, 175, 166, 117, 21, 92] };
 }
 #[repr(C)]
 pub struct IGattSession {
@@ -1013,6 +1160,9 @@ pub struct IGattSession {
     #[cfg(not(feature = "Foundation"))]
     RemoveSessionStatusChanged: usize,
 }
+impl ::windows_sys::core::Interface for IGattSession {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3527102787, data2: 57422, data3: 19492, data4: [153, 156, 156, 37, 111, 152, 86, 177] };
+}
 #[repr(C)]
 pub struct IGattSessionStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -1021,11 +1171,17 @@ pub struct IGattSessionStatics {
     #[cfg(not(feature = "Foundation"))]
     FromDeviceIdAsync: usize,
 }
+impl ::windows_sys::core::Interface for IGattSessionStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 778418524, data2: 21407, data3: 19895, data4: [130, 168, 115, 189, 187, 247, 62, 191] };
+}
 #[repr(C)]
 pub struct IGattSessionStatusChangedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub Error: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::BluetoothError) -> ::windows_sys::core::HRESULT,
     pub Status: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut GattSessionStatus) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IGattSessionStatusChangedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1980086062, data2: 33663, data3: 16460, data4: [171, 52, 49, 99, 243, 157, 223, 50] };
 }
 #[repr(C)]
 pub struct IGattSubscribedClient {
@@ -1041,6 +1197,9 @@ pub struct IGattSubscribedClient {
     #[cfg(not(feature = "Foundation"))]
     RemoveMaxNotificationSizeChanged: usize,
 }
+impl ::windows_sys::core::Interface for IGattSubscribedClient {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1936625665, data2: 5540, data3: 20162, data4: [146, 72, 227, 242, 13, 70, 59, 233] };
+}
 #[repr(C)]
 pub struct IGattValueChangedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
@@ -1052,6 +1211,9 @@ pub struct IGattValueChangedEventArgs {
     pub Timestamp: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::super::Foundation::DateTime) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     Timestamp: usize,
+}
+impl ::windows_sys::core::Interface for IGattValueChangedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3525040980, data2: 1763, data3: 20184, data4: [162, 99, 172, 250, 200, 186, 115, 19] };
 }
 #[repr(C)]
 pub struct IGattWriteRequest {
@@ -1074,6 +1236,9 @@ pub struct IGattWriteRequest {
     pub Respond: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub RespondWithProtocolError: unsafe extern "system" fn(this: *mut *mut Self, protocolerror: u8) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IGattWriteRequest {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2931206637, data2: 56879, data3: 20418, data4: [169, 168, 148, 234, 120, 68, 241, 61] };
+}
 #[repr(C)]
 pub struct IGattWriteRequestedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
@@ -1087,6 +1252,9 @@ pub struct IGattWriteRequestedEventArgs {
     #[cfg(not(feature = "Foundation"))]
     GetRequestAsync: usize,
 }
+impl ::windows_sys::core::Interface for IGattWriteRequestedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 770476990, data2: 42810, data3: 18202, data4: [148, 213, 3, 125, 234, 221, 8, 6] };
+}
 #[repr(C)]
 pub struct IGattWriteResult {
     pub base__: ::windows_sys::core::IInspectable,
@@ -1095,4 +1263,7 @@ pub struct IGattWriteResult {
     pub ProtocolError: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     ProtocolError: usize,
+}
+impl ::windows_sys::core::Interface for IGattWriteResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1234296241, data2: 52011, data3: 17655, data4: [153, 252, 210, 154, 40, 113, 220, 155] };
 }

@@ -7,6 +7,9 @@ pub struct IKnownSimpleHapticsControllerWaveformsStatics {
     pub Press: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u16) -> ::windows_sys::core::HRESULT,
     pub Release: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u16) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IKnownSimpleHapticsControllerWaveformsStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1029144311, data2: 19694, data3: 4582, data4: [181, 53, 0, 27, 220, 6, 171, 59] };
+}
 #[repr(C)]
 pub struct IKnownSimpleHapticsControllerWaveformsStatics2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -20,6 +23,9 @@ pub struct IKnownSimpleHapticsControllerWaveformsStatics2 {
     pub MarkerContinuous: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u16) -> ::windows_sys::core::HRESULT,
     pub PencilContinuous: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u16) -> ::windows_sys::core::HRESULT,
     pub Success: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u16) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IKnownSimpleHapticsControllerWaveformsStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2815577127, data2: 47005, data3: 20746, data4: [191, 121, 255, 109, 73, 23, 62, 29] };
 }
 #[repr(C)]
 pub struct ISimpleHapticsController {
@@ -45,6 +51,9 @@ pub struct ISimpleHapticsController {
     #[cfg(not(feature = "Foundation"))]
     SendHapticFeedbackForPlayCount: usize,
 }
+impl ::windows_sys::core::Interface for ISimpleHapticsController {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1029144313, data2: 19694, data3: 4582, data4: [181, 53, 0, 27, 220, 6, 171, 59] };
+}
 #[repr(C)]
 pub struct ISimpleHapticsControllerFeedback {
     pub base__: ::windows_sys::core::IInspectable,
@@ -54,11 +63,17 @@ pub struct ISimpleHapticsControllerFeedback {
     #[cfg(not(feature = "Foundation"))]
     Duration: usize,
 }
+impl ::windows_sys::core::Interface for ISimpleHapticsControllerFeedback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1029144312, data2: 19694, data3: 4582, data4: [181, 53, 0, 27, 220, 6, 171, 59] };
+}
 #[repr(C)]
 pub struct IVibrationDevice {
     pub base__: ::windows_sys::core::IInspectable,
     pub Id: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub SimpleHapticsController: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IVibrationDevice {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1089608254, data2: 34884, data3: 18431, data4: [179, 18, 6, 24, 90, 56, 68, 218] };
 }
 #[repr(C)]
 pub struct IVibrationDeviceStatics {
@@ -80,6 +95,9 @@ pub struct IVibrationDeviceStatics {
     pub FindAllAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     FindAllAsync: usize,
+}
+impl ::windows_sys::core::Interface for IVibrationDeviceStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1407380973, data2: 8848, data3: 19145, data4: [142, 179, 26, 132, 18, 46, 183, 28] };
 }
 pub type SimpleHapticsController = *mut ::core::ffi::c_void;
 pub type SimpleHapticsControllerFeedback = *mut ::core::ffi::c_void;

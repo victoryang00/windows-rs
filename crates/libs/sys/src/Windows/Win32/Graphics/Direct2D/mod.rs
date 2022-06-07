@@ -2903,6 +2903,9 @@ pub struct ID2D1AnalysisTransform {
     pub base__: ::windows_sys::core::IUnknown,
     pub ProcessAnalysisResults: unsafe extern "system" fn(this: *mut *mut Self, analysisdata: *const u8, analysisdatacount: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ID2D1AnalysisTransform {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 56220720, data2: 38374, data3: 17768, data4: [144, 85, 39, 114, 13, 19, 14, 147] };
+}
 #[repr(C)]
 pub struct ID2D1Bitmap {
     pub base__: ID2D1Image,
@@ -2932,6 +2935,9 @@ pub struct ID2D1Bitmap {
     #[cfg(not(feature = "Win32_Graphics_Direct2D_Common"))]
     CopyFromMemory: usize,
 }
+impl ::windows_sys::core::Interface for ID2D1Bitmap {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2720620631, data2: 59970, data3: 16537, data4: [152, 59, 83, 159, 182, 80, 84, 38] };
+}
 #[repr(C)]
 pub struct ID2D1Bitmap1 {
     pub base__: ID2D1Bitmap,
@@ -2943,6 +2949,9 @@ pub struct ID2D1Bitmap1 {
     GetSurface: usize,
     pub Map: unsafe extern "system" fn(this: *mut *mut Self, options: D2D1_MAP_OPTIONS, mappedrect: *mut D2D1_MAPPED_RECT) -> ::windows_sys::core::HRESULT,
     pub Unmap: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ID2D1Bitmap1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2828576844, data2: 14451, data3: 17800, data4: [176, 139, 235, 191, 151, 141, 240, 65] };
 }
 #[repr(C)]
 pub struct ID2D1BitmapBrush {
@@ -2956,22 +2965,34 @@ pub struct ID2D1BitmapBrush {
     pub GetInterpolationMode: unsafe extern "system" fn(this: *mut *mut Self) -> D2D1_BITMAP_INTERPOLATION_MODE,
     pub GetBitmap: unsafe extern "system" fn(this: *mut *mut Self, bitmap: *mut *mut ::core::ffi::c_void),
 }
+impl ::windows_sys::core::Interface for ID2D1BitmapBrush {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 752420522, data2: 4834, data3: 4572, data4: [159, 237, 0, 17, 67, 160, 85, 249] };
+}
 #[repr(C)]
 pub struct ID2D1BitmapBrush1 {
     pub base__: ID2D1BitmapBrush,
     pub SetInterpolationMode1: unsafe extern "system" fn(this: *mut *mut Self, interpolationmode: D2D1_INTERPOLATION_MODE),
     pub GetInterpolationMode1: unsafe extern "system" fn(this: *mut *mut Self) -> D2D1_INTERPOLATION_MODE,
 }
+impl ::windows_sys::core::Interface for ID2D1BitmapBrush1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1093941843, data2: 58394, data3: 18850, data4: [145, 205, 33, 121, 59, 187, 98, 229] };
+}
 #[repr(C)]
 pub struct ID2D1BitmapRenderTarget {
     pub base__: ID2D1RenderTarget,
     pub GetBitmap: unsafe extern "system" fn(this: *mut *mut Self, bitmap: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ID2D1BitmapRenderTarget {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 752420501, data2: 4834, data3: 4572, data4: [159, 237, 0, 17, 67, 160, 85, 249] };
 }
 #[repr(C)]
 pub struct ID2D1BlendTransform {
     pub base__: ID2D1ConcreteTransform,
     pub SetDescription: unsafe extern "system" fn(this: *mut *mut Self, description: *const D2D1_BLEND_DESCRIPTION),
     pub GetDescription: unsafe extern "system" fn(this: *mut *mut Self, description: *mut D2D1_BLEND_DESCRIPTION),
+}
+impl ::windows_sys::core::Interface for ID2D1BlendTransform {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1672219442, data2: 47684, data3: 17679, data4: [136, 6, 127, 76, 161, 255, 47, 27] };
 }
 #[repr(C)]
 pub struct ID2D1BorderTransform {
@@ -2980,6 +3001,9 @@ pub struct ID2D1BorderTransform {
     pub SetExtendModeY: unsafe extern "system" fn(this: *mut *mut Self, extendmode: D2D1_EXTEND_MODE),
     pub GetExtendModeX: unsafe extern "system" fn(this: *mut *mut Self) -> D2D1_EXTEND_MODE,
     pub GetExtendModeY: unsafe extern "system" fn(this: *mut *mut Self) -> D2D1_EXTEND_MODE,
+}
+impl ::windows_sys::core::Interface for ID2D1BorderTransform {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1234727772, data2: 14873, data3: 18236, data4: [151, 129, 101, 104, 71, 227, 163, 71] };
 }
 #[repr(C)]
 pub struct ID2D1BoundsAdjustmentTransform {
@@ -2992,6 +3016,9 @@ pub struct ID2D1BoundsAdjustmentTransform {
     pub GetOutputBounds: unsafe extern "system" fn(this: *mut *mut Self, outputbounds: *mut super::super::Foundation::RECT),
     #[cfg(not(feature = "Win32_Foundation"))]
     GetOutputBounds: usize,
+}
+impl ::windows_sys::core::Interface for ID2D1BoundsAdjustmentTransform {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2432119522, data2: 20626, data3: 17926, data4: [168, 25, 134, 81, 151, 11, 172, 205] };
 }
 #[repr(C)]
 pub struct ID2D1Brush {
@@ -3007,12 +3034,18 @@ pub struct ID2D1Brush {
     #[cfg(not(feature = "Foundation_Numerics"))]
     GetTransform: usize,
 }
+impl ::windows_sys::core::Interface for ID2D1Brush {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 752420520, data2: 4834, data3: 4572, data4: [159, 237, 0, 17, 67, 160, 85, 249] };
+}
 #[repr(C)]
 pub struct ID2D1ColorContext {
     pub base__: ID2D1Resource,
     pub GetColorSpace: unsafe extern "system" fn(this: *mut *mut Self) -> D2D1_COLOR_SPACE,
     pub GetProfileSize: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
     pub GetProfile: unsafe extern "system" fn(this: *mut *mut Self, profile: *mut u8, profilesize: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ID2D1ColorContext {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 474489019, data2: 22385, data3: 17688, data4: [165, 129, 47, 228, 221, 14, 198, 87] };
 }
 #[repr(C)]
 pub struct ID2D1ColorContext1 {
@@ -3027,11 +3060,17 @@ pub struct ID2D1ColorContext1 {
     #[cfg(not(feature = "Win32_Graphics_Direct2D_Common"))]
     GetSimpleColorProfile: usize,
 }
+impl ::windows_sys::core::Interface for ID2D1ColorContext1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 448014453, data2: 50559, data3: 19433, data4: [189, 133, 156, 215, 141, 111, 85, 238] };
+}
 #[repr(C)]
 pub struct ID2D1CommandList {
     pub base__: ID2D1Image,
     pub Stream: unsafe extern "system" fn(this: *mut *mut Self, sink: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ID2D1CommandList {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3035843097, data2: 9091, data3: 19830, data4: [148, 246, 236, 52, 54, 87, 195, 220] };
 }
 #[repr(C)]
 pub struct ID2D1CommandSink {
@@ -3101,10 +3140,16 @@ pub struct ID2D1CommandSink {
     pub PopAxisAlignedClip: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub PopLayer: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ID2D1CommandSink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1423411594, data2: 41057, data3: 16551, data4: [190, 199, 228, 101, 188, 186, 44, 79] };
+}
 #[repr(C)]
 pub struct ID2D1CommandSink1 {
     pub base__: ID2D1CommandSink,
     pub SetPrimitiveBlend1: unsafe extern "system" fn(this: *mut *mut Self, primitiveblend: D2D1_PRIMITIVE_BLEND) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ID2D1CommandSink1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2662819837, data2: 17001, data3: 17511, data4: [184, 194, 235, 48, 203, 48, 87, 67] };
 }
 #[repr(C)]
 pub struct ID2D1CommandSink2 {
@@ -3116,15 +3161,24 @@ pub struct ID2D1CommandSink2 {
     #[cfg(not(feature = "Win32_Graphics_Direct2D_Common"))]
     DrawGdiMetafile2: usize,
 }
+impl ::windows_sys::core::Interface for ID2D1CommandSink2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1001079822, data2: 16766, data3: 18399, data4: [162, 226, 188, 11, 230, 160, 9, 22] };
+}
 #[repr(C)]
 pub struct ID2D1CommandSink3 {
     pub base__: ID2D1CommandSink2,
     pub DrawSpriteBatch: unsafe extern "system" fn(this: *mut *mut Self, spritebatch: *mut ::core::ffi::c_void, startindex: u32, spritecount: u32, bitmap: *mut ::core::ffi::c_void, interpolationmode: D2D1_BITMAP_INTERPOLATION_MODE, spriteoptions: D2D1_SPRITE_OPTIONS) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ID2D1CommandSink3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 403149109, data2: 19699, data3: 18536, data4: [188, 142, 6, 6, 126, 109, 36, 45] };
+}
 #[repr(C)]
 pub struct ID2D1CommandSink4 {
     pub base__: ID2D1CommandSink3,
     pub SetPrimitiveBlend2: unsafe extern "system" fn(this: *mut *mut Self, primitiveblend: D2D1_PRIMITIVE_BLEND) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ID2D1CommandSink4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3347735833, data2: 16598, data3: 16920, data4: [178, 222, 190, 238, 183, 68, 187, 62] };
 }
 #[repr(C)]
 pub struct ID2D1CommandSink5 {
@@ -3134,12 +3188,18 @@ pub struct ID2D1CommandSink5 {
     #[cfg(not(feature = "Win32_Graphics_Direct2D_Common"))]
     BlendImage: usize,
 }
+impl ::windows_sys::core::Interface for ID2D1CommandSink5 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1883757862, data2: 45543, data3: 17575, data4: [149, 154, 131, 73, 226, 20, 79, 168] };
+}
 #[repr(C)]
 pub struct ID2D1ComputeInfo {
     pub base__: ID2D1RenderInfo,
     pub SetComputeShaderConstantBuffer: unsafe extern "system" fn(this: *mut *mut Self, buffer: *const u8, buffercount: u32) -> ::windows_sys::core::HRESULT,
     pub SetComputeShader: unsafe extern "system" fn(this: *mut *mut Self, shaderid: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub SetResourceTexture: unsafe extern "system" fn(this: *mut *mut Self, textureindex: u32, resourcetexture: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ID2D1ComputeInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1436070219, data2: 40919, data3: 18615, data4: [155, 219, 143, 9, 100, 235, 56, 188] };
 }
 #[repr(C)]
 pub struct ID2D1ComputeTransform {
@@ -3150,6 +3210,9 @@ pub struct ID2D1ComputeTransform {
     #[cfg(not(feature = "Win32_Foundation"))]
     CalculateThreadgroups: usize,
 }
+impl ::windows_sys::core::Interface for ID2D1ComputeTransform {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 226842428, data2: 483, data3: 20349, data4: [191, 217, 13, 96, 96, 139, 243, 195] };
+}
 #[repr(C)]
 pub struct ID2D1ConcreteTransform {
     pub base__: ID2D1TransformNode,
@@ -3159,6 +3222,9 @@ pub struct ID2D1ConcreteTransform {
     #[cfg(not(feature = "Win32_Foundation"))]
     SetCached: usize,
 }
+impl ::windows_sys::core::Interface for ID2D1ConcreteTransform {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 444177802, data2: 27127, data3: 20044, data4: [159, 237, 67, 124, 204, 102, 132, 204] };
+}
 #[repr(C)]
 pub struct ID2D1DCRenderTarget {
     pub base__: ID2D1RenderTarget,
@@ -3166,6 +3232,9 @@ pub struct ID2D1DCRenderTarget {
     pub BindDC: unsafe extern "system" fn(this: *mut *mut Self, hdc: super::Gdi::HDC, psubrect: *const super::super::Foundation::RECT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi")))]
     BindDC: usize,
+}
+impl ::windows_sys::core::Interface for ID2D1DCRenderTarget {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 475118692, data2: 56929, data3: 18173, data4: [152, 153, 99, 165, 216, 240, 57, 80] };
 }
 #[repr(C)]
 pub struct ID2D1Device {
@@ -3179,12 +3248,18 @@ pub struct ID2D1Device {
     pub GetMaximumTextureMemory: unsafe extern "system" fn(this: *mut *mut Self) -> u64,
     pub ClearResources: unsafe extern "system" fn(this: *mut *mut Self, millisecondssinceuse: u32),
 }
+impl ::windows_sys::core::Interface for ID2D1Device {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1205688157, data2: 44037, data3: 19677, data4: [128, 73, 155, 2, 205, 22, 244, 76] };
+}
 #[repr(C)]
 pub struct ID2D1Device1 {
     pub base__: ID2D1Device,
     pub GetRenderingPriority: unsafe extern "system" fn(this: *mut *mut Self) -> D2D1_RENDERING_PRIORITY,
     pub SetRenderingPriority: unsafe extern "system" fn(this: *mut *mut Self, renderingpriority: D2D1_RENDERING_PRIORITY),
     pub CreateDeviceContext2: unsafe extern "system" fn(this: *mut *mut Self, options: D2D1_DEVICE_CONTEXT_OPTIONS, devicecontext1: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ID2D1Device1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3524749537, data2: 9124, data3: 18467, data4: [161, 75, 124, 62, 186, 133, 214, 88] };
 }
 #[repr(C)]
 pub struct ID2D1Device2 {
@@ -3196,10 +3271,16 @@ pub struct ID2D1Device2 {
     #[cfg(not(feature = "Win32_Graphics_Dxgi"))]
     GetDxgiDevice: usize,
 }
+impl ::windows_sys::core::Interface for ID2D1Device2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2755949281, data2: 36347, data3: 20064, data4: [132, 146, 110, 40, 97, 201, 202, 139] };
+}
 #[repr(C)]
 pub struct ID2D1Device3 {
     pub base__: ID2D1Device2,
     pub CreateDeviceContext4: unsafe extern "system" fn(this: *mut *mut Self, options: D2D1_DEVICE_CONTEXT_OPTIONS, devicecontext3: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ID2D1Device3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2234458247, data2: 32812, data3: 16439, data4: [171, 96, 255, 46, 126, 230, 252, 1] };
 }
 #[repr(C)]
 pub struct ID2D1Device4 {
@@ -3208,15 +3289,24 @@ pub struct ID2D1Device4 {
     pub SetMaximumColorGlyphCacheMemory: unsafe extern "system" fn(this: *mut *mut Self, maximuminbytes: u64),
     pub GetMaximumColorGlyphCacheMemory: unsafe extern "system" fn(this: *mut *mut Self) -> u64,
 }
+impl ::windows_sys::core::Interface for ID2D1Device4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3619533145, data2: 22147, data3: 19014, data4: [188, 156, 114, 220, 114, 11, 133, 139] };
+}
 #[repr(C)]
 pub struct ID2D1Device5 {
     pub base__: ID2D1Device4,
     pub CreateDeviceContext6: unsafe extern "system" fn(this: *mut *mut Self, options: D2D1_DEVICE_CONTEXT_OPTIONS, devicecontext5: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ID2D1Device5 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3579551908, data2: 25605, data3: 18068, data4: [174, 245, 8, 238, 26, 67, 88, 180] };
+}
 #[repr(C)]
 pub struct ID2D1Device6 {
     pub base__: ID2D1Device5,
     pub CreateDeviceContext7: unsafe extern "system" fn(this: *mut *mut Self, options: D2D1_DEVICE_CONTEXT_OPTIONS, devicecontext6: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ID2D1Device6 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2080307476, data2: 11637, data3: 19373, data4: [190, 135, 225, 141, 219, 7, 123, 109] };
 }
 #[repr(C)]
 pub struct ID2D1DeviceContext {
@@ -3326,12 +3416,18 @@ pub struct ID2D1DeviceContext {
     #[cfg(not(feature = "Win32_Graphics_Direct2D_Common"))]
     FillOpacityMask2: usize,
 }
+impl ::windows_sys::core::Interface for ID2D1DeviceContext {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3908566650, data2: 6428, data3: 18029, data4: [173, 149, 151, 86, 120, 189, 169, 152] };
+}
 #[repr(C)]
 pub struct ID2D1DeviceContext1 {
     pub base__: ID2D1DeviceContext,
     pub CreateFilledGeometryRealization: unsafe extern "system" fn(this: *mut *mut Self, geometry: *mut ::core::ffi::c_void, flatteningtolerance: f32, geometryrealization: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub CreateStrokedGeometryRealization: unsafe extern "system" fn(this: *mut *mut Self, geometry: *mut ::core::ffi::c_void, flatteningtolerance: f32, strokewidth: f32, strokestyle: *mut ::core::ffi::c_void, geometryrealization: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub DrawGeometryRealization: unsafe extern "system" fn(this: *mut *mut Self, geometryrealization: *mut ::core::ffi::c_void, brush: *mut ::core::ffi::c_void),
+}
+impl ::windows_sys::core::Interface for ID2D1DeviceContext1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3548338148, data2: 26888, data3: 17823, data4: [161, 153, 231, 47, 36, 247, 153, 135] };
 }
 #[repr(C)]
 pub struct ID2D1DeviceContext2 {
@@ -3366,11 +3462,17 @@ pub struct ID2D1DeviceContext2 {
     DrawGdiMetafile2: usize,
     pub CreateTransformedImageSource: unsafe extern "system" fn(this: *mut *mut Self, imagesource: *mut ::core::ffi::c_void, properties: *const D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES, transformedimagesource: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ID2D1DeviceContext2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 961455779, data2: 3124, data3: 17185, data4: [149, 11, 108, 162, 15, 11, 230, 199] };
+}
 #[repr(C)]
 pub struct ID2D1DeviceContext3 {
     pub base__: ID2D1DeviceContext2,
     pub CreateSpriteBatch: unsafe extern "system" fn(this: *mut *mut Self, spritebatch: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub DrawSpriteBatch: unsafe extern "system" fn(this: *mut *mut Self, spritebatch: *mut ::core::ffi::c_void, startindex: u32, spritecount: u32, bitmap: *mut ::core::ffi::c_void, interpolationmode: D2D1_BITMAP_INTERPOLATION_MODE, spriteoptions: D2D1_SPRITE_OPTIONS),
+}
+impl ::windows_sys::core::Interface for ID2D1DeviceContext3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 593130646, data2: 33617, data3: 16716, data4: [188, 212, 102, 114, 171, 45, 142, 0] };
 }
 #[repr(C)]
 pub struct ID2D1DeviceContext4 {
@@ -3401,6 +3503,9 @@ pub struct ID2D1DeviceContext4 {
     #[cfg(not(all(feature = "Foundation_Numerics", feature = "Win32_Foundation", feature = "Win32_Graphics_Direct2D_Common", feature = "Win32_Graphics_DirectWrite")))]
     GetSvgGlyphImage: usize,
 }
+impl ::windows_sys::core::Interface for ID2D1DeviceContext4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2353166385, data2: 15760, data3: 17526, data4: [182, 71, 196, 250, 227, 73, 228, 219] };
+}
 #[repr(C)]
 pub struct ID2D1DeviceContext5 {
     pub base__: ID2D1DeviceContext4,
@@ -3418,6 +3523,9 @@ pub struct ID2D1DeviceContext5 {
     #[cfg(not(feature = "Win32_Graphics_Direct2D_Common"))]
     CreateColorContextFromSimpleColorProfile: usize,
 }
+impl ::windows_sys::core::Interface for ID2D1DeviceContext5 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2016858696, data2: 26828, data3: 19958, data4: [185, 232, 222, 153, 27, 246, 46, 183] };
+}
 #[repr(C)]
 pub struct ID2D1DeviceContext6 {
     pub base__: ID2D1DeviceContext5,
@@ -3425,6 +3533,9 @@ pub struct ID2D1DeviceContext6 {
     pub BlendImage: unsafe extern "system" fn(this: *mut *mut Self, image: *mut ::core::ffi::c_void, blendmode: Common::D2D1_BLEND_MODE, targetoffset: *const Common::D2D_POINT_2F, imagerectangle: *const Common::D2D_RECT_F, interpolationmode: D2D1_INTERPOLATION_MODE),
     #[cfg(not(feature = "Win32_Graphics_Direct2D_Common"))]
     BlendImage: usize,
+}
+impl ::windows_sys::core::Interface for ID2D1DeviceContext6 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2556395063, data2: 20176, data3: 18969, data4: [152, 163, 21, 176, 237, 253, 227, 6] };
 }
 #[repr(C)]
 pub struct ID2D1DrawInfo {
@@ -3435,10 +3546,16 @@ pub struct ID2D1DrawInfo {
     pub SetPixelShader: unsafe extern "system" fn(this: *mut *mut Self, shaderid: *const ::windows_sys::core::GUID, pixeloptions: D2D1_PIXEL_OPTIONS) -> ::windows_sys::core::HRESULT,
     pub SetVertexProcessing: unsafe extern "system" fn(this: *mut *mut Self, vertexbuffer: *mut ::core::ffi::c_void, vertexoptions: D2D1_VERTEX_OPTIONS, blenddescription: *const D2D1_BLEND_DESCRIPTION, vertexrange: *const D2D1_VERTEX_RANGE, vertexshader: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ID2D1DrawInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1765598770, data2: 32559, data3: 17886, data4: [147, 254, 24, 216, 139, 55, 170, 33] };
+}
 #[repr(C)]
 pub struct ID2D1DrawTransform {
     pub base__: ID2D1Transform,
     pub SetDrawInfo: unsafe extern "system" fn(this: *mut *mut Self, drawinfo: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ID2D1DrawTransform {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 918543542, data2: 38713, data3: 17245, data4: [163, 13, 166, 83, 190, 255, 106, 111] };
 }
 #[repr(C)]
 pub struct ID2D1DrawingStateBlock {
@@ -3460,6 +3577,9 @@ pub struct ID2D1DrawingStateBlock {
     #[cfg(not(feature = "Win32_Graphics_DirectWrite"))]
     GetTextRenderingParams: usize,
 }
+impl ::windows_sys::core::Interface for ID2D1DrawingStateBlock {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 676359737, data2: 60406, data3: 18081, data4: [187, 71, 253, 133, 86, 90, 185, 87] };
+}
 #[repr(C)]
 pub struct ID2D1DrawingStateBlock1 {
     pub base__: ID2D1DrawingStateBlock,
@@ -3472,6 +3592,9 @@ pub struct ID2D1DrawingStateBlock1 {
     #[cfg(not(feature = "Foundation_Numerics"))]
     SetDescription2: usize,
 }
+impl ::windows_sys::core::Interface for ID2D1DrawingStateBlock1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1755258757, data2: 50990, data3: 20019, data4: [143, 25, 133, 117, 78, 253, 90, 206] };
+}
 #[repr(C)]
 pub struct ID2D1Effect {
     pub base__: ID2D1Properties,
@@ -3483,6 +3606,9 @@ pub struct ID2D1Effect {
     pub GetInput: unsafe extern "system" fn(this: *mut *mut Self, index: u32, input: *mut *mut ::core::ffi::c_void),
     pub GetInputCount: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
     pub GetOutput: unsafe extern "system" fn(this: *mut *mut Self, outputimage: *mut *mut ::core::ffi::c_void),
+}
+impl ::windows_sys::core::Interface for ID2D1Effect {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 673258051, data2: 32137, data3: 18287, data4: [129, 129, 45, 97, 89, 178, 32, 173] };
 }
 #[repr(C)]
 pub struct ID2D1EffectContext {
@@ -3530,10 +3656,16 @@ pub struct ID2D1EffectContext {
     #[cfg(not(feature = "Win32_Foundation"))]
     IsBufferPrecisionSupported: usize,
 }
+impl ::windows_sys::core::Interface for ID2D1EffectContext {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1033867627, data2: 10204, data3: 19159, data4: [180, 241, 100, 148, 83, 64, 245, 99] };
+}
 #[repr(C)]
 pub struct ID2D1EffectContext1 {
     pub base__: ID2D1EffectContext,
     pub CreateLookupTable3D: unsafe extern "system" fn(this: *mut *mut Self, precision: D2D1_BUFFER_PRECISION, extents: *const u32, data: *const u8, datacount: u32, strides: *const u32, lookuptable: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ID2D1EffectContext1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2225822042, data2: 64641, data3: 17734, data4: [186, 205, 232, 239, 77, 138, 190, 122] };
 }
 #[repr(C)]
 pub struct ID2D1EffectContext2 {
@@ -3547,12 +3679,18 @@ pub struct ID2D1EffectContext2 {
     #[cfg(not(feature = "Win32_Graphics_Direct2D_Common"))]
     CreateColorContextFromSimpleColorProfile: usize,
 }
+impl ::windows_sys::core::Interface for ID2D1EffectContext2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1467667104, data2: 40903, data3: 19930, data4: [139, 24, 218, 184, 16, 20, 0, 82] };
+}
 #[repr(C)]
 pub struct ID2D1EffectImpl {
     pub base__: ::windows_sys::core::IUnknown,
     pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, effectcontext: *mut ::core::ffi::c_void, transformgraph: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub PrepareForRender: unsafe extern "system" fn(this: *mut *mut Self, changetype: D2D1_CHANGE_TYPE) -> ::windows_sys::core::HRESULT,
     pub SetGraph: unsafe extern "system" fn(this: *mut *mut Self, transformgraph: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ID2D1EffectImpl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2722692415, data2: 15980, data3: 20067, data4: [159, 3, 127, 104, 236, 201, 29, 185] };
 }
 #[repr(C)]
 pub struct ID2D1EllipseGeometry {
@@ -3561,6 +3699,9 @@ pub struct ID2D1EllipseGeometry {
     pub GetEllipse: unsafe extern "system" fn(this: *mut *mut Self, ellipse: *mut D2D1_ELLIPSE),
     #[cfg(not(feature = "Win32_Graphics_Direct2D_Common"))]
     GetEllipse: usize,
+}
+impl ::windows_sys::core::Interface for ID2D1EllipseGeometry {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 752420516, data2: 4834, data3: 4572, data4: [159, 237, 0, 17, 67, 160, 85, 249] };
 }
 #[repr(C)]
 pub struct ID2D1Factory {
@@ -3610,6 +3751,9 @@ pub struct ID2D1Factory {
     #[cfg(not(all(feature = "Win32_Graphics_Direct2D_Common", feature = "Win32_Graphics_Dxgi_Common")))]
     CreateDCRenderTarget: usize,
 }
+impl ::windows_sys::core::Interface for ID2D1Factory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 102048327, data2: 28496, data3: 18010, data4: [146, 69, 17, 139, 253, 59, 96, 7] };
+}
 #[repr(C)]
 pub struct ID2D1Factory1 {
     pub base__: ID2D1Factory,
@@ -3636,6 +3780,9 @@ pub struct ID2D1Factory1 {
     pub GetRegisteredEffects: unsafe extern "system" fn(this: *mut *mut Self, effects: *mut ::windows_sys::core::GUID, effectscount: u32, effectsreturned: *mut u32, effectsregistered: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetEffectProperties: unsafe extern "system" fn(this: *mut *mut Self, effectid: *const ::windows_sys::core::GUID, properties: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ID2D1Factory1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3138573154, data2: 56046, data3: 19354, data4: [170, 29, 20, 186, 64, 28, 250, 31] };
+}
 #[repr(C)]
 pub struct ID2D1Factory2 {
     pub base__: ID2D1Factory1,
@@ -3643,6 +3790,9 @@ pub struct ID2D1Factory2 {
     pub CreateDevice2: unsafe extern "system" fn(this: *mut *mut Self, dxgidevice: *mut ::core::ffi::c_void, d2ddevice1: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Graphics_Dxgi"))]
     CreateDevice2: usize,
+}
+impl ::windows_sys::core::Interface for ID2D1Factory2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2499287667, data2: 37394, data3: 17270, data4: [156, 88, 177, 106, 58, 13, 57, 146] };
 }
 #[repr(C)]
 pub struct ID2D1Factory3 {
@@ -3652,6 +3802,9 @@ pub struct ID2D1Factory3 {
     #[cfg(not(feature = "Win32_Graphics_Dxgi"))]
     CreateDevice3: usize,
 }
+impl ::windows_sys::core::Interface for ID2D1Factory3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 141129119, data2: 20224, data3: 16703, data4: [176, 62, 43, 218, 69, 64, 77, 15] };
+}
 #[repr(C)]
 pub struct ID2D1Factory4 {
     pub base__: ID2D1Factory3,
@@ -3659,6 +3812,9 @@ pub struct ID2D1Factory4 {
     pub CreateDevice4: unsafe extern "system" fn(this: *mut *mut Self, dxgidevice: *mut ::core::ffi::c_void, d2ddevice3: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Graphics_Dxgi"))]
     CreateDevice4: usize,
+}
+impl ::windows_sys::core::Interface for ID2D1Factory4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3176055506, data2: 1634, data3: 19438, data4: [186, 142, 111, 41, 240, 50, 224, 150] };
 }
 #[repr(C)]
 pub struct ID2D1Factory5 {
@@ -3668,6 +3824,9 @@ pub struct ID2D1Factory5 {
     #[cfg(not(feature = "Win32_Graphics_Dxgi"))]
     CreateDevice5: usize,
 }
+impl ::windows_sys::core::Interface for ID2D1Factory5 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3291781524, data2: 33678, data3: 19215, data4: [140, 171, 68, 153, 125, 158, 234, 204] };
+}
 #[repr(C)]
 pub struct ID2D1Factory6 {
     pub base__: ID2D1Factory5,
@@ -3676,6 +3835,9 @@ pub struct ID2D1Factory6 {
     #[cfg(not(feature = "Win32_Graphics_Dxgi"))]
     CreateDevice6: usize,
 }
+impl ::windows_sys::core::Interface for ID2D1Factory6 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4187451206, data2: 63042, data3: 17601, data4: [151, 202, 218, 50, 234, 42, 38, 53] };
+}
 #[repr(C)]
 pub struct ID2D1Factory7 {
     pub base__: ID2D1Factory6,
@@ -3683,6 +3845,9 @@ pub struct ID2D1Factory7 {
     pub CreateDevice7: unsafe extern "system" fn(this: *mut *mut Self, dxgidevice: *mut ::core::ffi::c_void, d2ddevice6: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Graphics_Dxgi"))]
     CreateDevice7: usize,
+}
+impl ::windows_sys::core::Interface for ID2D1Factory7 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3183656403, data2: 47468, data3: 19942, data4: [189, 247, 153, 212, 116, 84, 84, 222] };
 }
 #[repr(C)]
 pub struct ID2D1GdiInteropRenderTarget {
@@ -3696,6 +3861,9 @@ pub struct ID2D1GdiInteropRenderTarget {
     #[cfg(not(feature = "Win32_Foundation"))]
     ReleaseDC: usize,
 }
+impl ::windows_sys::core::Interface for ID2D1GdiInteropRenderTarget {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3772469699, data2: 28535, data3: 19374, data4: [179, 213, 228, 117, 9, 179, 88, 56] };
+}
 #[repr(C)]
 pub struct ID2D1GdiMetafile {
     pub base__: ID2D1Resource,
@@ -3704,6 +3872,9 @@ pub struct ID2D1GdiMetafile {
     pub GetBounds: unsafe extern "system" fn(this: *mut *mut Self, bounds: *mut Common::D2D_RECT_F) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Graphics_Direct2D_Common"))]
     GetBounds: usize,
+}
+impl ::windows_sys::core::Interface for ID2D1GdiMetafile {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 794049987, data2: 53185, data3: 16913, data4: [134, 79, 207, 217, 28, 111, 51, 149] };
 }
 #[repr(C)]
 pub struct ID2D1GdiMetafile1 {
@@ -3714,15 +3885,24 @@ pub struct ID2D1GdiMetafile1 {
     #[cfg(not(feature = "Win32_Graphics_Direct2D_Common"))]
     GetSourceBounds: usize,
 }
+impl ::windows_sys::core::Interface for ID2D1GdiMetafile1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 778697192, data2: 56639, data3: 19449, data4: [149, 186, 192, 79, 73, 215, 136, 223] };
+}
 #[repr(C)]
 pub struct ID2D1GdiMetafileSink {
     pub base__: ::windows_sys::core::IUnknown,
     pub ProcessRecord: unsafe extern "system" fn(this: *mut *mut Self, recordtype: u32, recorddata: *const ::core::ffi::c_void, recorddatasize: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ID2D1GdiMetafileSink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2183361318, data2: 33041, data3: 20348, data4: [188, 244, 181, 193, 23, 85, 100, 254] };
+}
 #[repr(C)]
 pub struct ID2D1GdiMetafileSink1 {
     pub base__: ID2D1GdiMetafileSink,
     pub ProcessRecord2: unsafe extern "system" fn(this: *mut *mut Self, recordtype: u32, recorddata: *const ::core::ffi::c_void, recorddatasize: u32, flags: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ID2D1GdiMetafileSink1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4245605227, data2: 37350, data3: 16670, data4: [134, 85, 57, 94, 118, 15, 145, 180] };
 }
 #[repr(C)]
 pub struct ID2D1Geometry {
@@ -3780,6 +3960,9 @@ pub struct ID2D1Geometry {
     #[cfg(not(all(feature = "Foundation_Numerics", feature = "Win32_Graphics_Direct2D_Common")))]
     Widen: usize,
 }
+impl ::windows_sys::core::Interface for ID2D1Geometry {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 752420513, data2: 4834, data3: 4572, data4: [159, 237, 0, 17, 67, 160, 85, 249] };
+}
 #[repr(C)]
 pub struct ID2D1GeometryGroup {
     pub base__: ID2D1Geometry,
@@ -3790,9 +3973,15 @@ pub struct ID2D1GeometryGroup {
     pub GetSourceGeometryCount: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
     pub GetSourceGeometries: unsafe extern "system" fn(this: *mut *mut Self, geometries: *mut *mut ::core::ffi::c_void, geometriescount: u32),
 }
+impl ::windows_sys::core::Interface for ID2D1GeometryGroup {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 752420518, data2: 4834, data3: 4572, data4: [159, 237, 0, 17, 67, 160, 85, 249] };
+}
 #[repr(C)]
 pub struct ID2D1GeometryRealization {
     pub base__: ID2D1Resource,
+}
+impl ::windows_sys::core::Interface for ID2D1GeometryRealization {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2708015063, data2: 48130, data3: 18433, data4: [153, 232, 140, 247, 244, 133, 247, 116] };
 }
 #[cfg(feature = "Win32_Graphics_Direct2D_Common")]
 #[repr(C)]
@@ -3819,6 +4008,10 @@ pub struct ID2D1GeometrySink {
     #[cfg(not(feature = "Win32_Graphics_Direct2D_Common"))]
     AddArc: usize,
 }
+#[cfg(feature = "Win32_Graphics_Direct2D_Common")]
+impl ::windows_sys::core::Interface for ID2D1GeometrySink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 752420511, data2: 4834, data3: 4572, data4: [159, 237, 0, 17, 67, 160, 85, 249] };
+}
 #[repr(C)]
 pub struct ID2D1GradientMesh {
     pub base__: ID2D1Resource,
@@ -3827,6 +4020,9 @@ pub struct ID2D1GradientMesh {
     pub GetPatches: unsafe extern "system" fn(this: *mut *mut Self, startindex: u32, patches: *mut D2D1_GRADIENT_MESH_PATCH, patchescount: u32) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Graphics_Direct2D_Common"))]
     GetPatches: usize,
+}
+impl ::windows_sys::core::Interface for ID2D1GradientMesh {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4069712897, data2: 49232, data3: 19678, data4: [131, 215, 4, 150, 45, 59, 35, 194] };
 }
 #[repr(C)]
 pub struct ID2D1GradientStopCollection {
@@ -3839,6 +4035,9 @@ pub struct ID2D1GradientStopCollection {
     pub GetColorInterpolationGamma: unsafe extern "system" fn(this: *mut *mut Self) -> D2D1_GAMMA,
     pub GetExtendMode: unsafe extern "system" fn(this: *mut *mut Self) -> D2D1_EXTEND_MODE,
 }
+impl ::windows_sys::core::Interface for ID2D1GradientStopCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 752420519, data2: 4834, data3: 4572, data4: [159, 237, 0, 17, 67, 160, 85, 249] };
+}
 #[repr(C)]
 pub struct ID2D1GradientStopCollection1 {
     pub base__: ID2D1GradientStopCollection,
@@ -3850,6 +4049,9 @@ pub struct ID2D1GradientStopCollection1 {
     pub GetPostInterpolationSpace: unsafe extern "system" fn(this: *mut *mut Self) -> D2D1_COLOR_SPACE,
     pub GetBufferPrecision: unsafe extern "system" fn(this: *mut *mut Self) -> D2D1_BUFFER_PRECISION,
     pub GetColorInterpolationMode: unsafe extern "system" fn(this: *mut *mut Self) -> D2D1_COLOR_INTERPOLATION_MODE,
+}
+impl ::windows_sys::core::Interface for ID2D1GradientStopCollection1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2920641268, data2: 24016, data3: 18295, data4: [153, 139, 146, 121, 71, 42, 230, 59] };
 }
 #[repr(C)]
 pub struct ID2D1HwndRenderTarget {
@@ -3864,9 +4066,15 @@ pub struct ID2D1HwndRenderTarget {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetHwnd: usize,
 }
+impl ::windows_sys::core::Interface for ID2D1HwndRenderTarget {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 752420504, data2: 4834, data3: 4572, data4: [159, 237, 0, 17, 67, 160, 85, 249] };
+}
 #[repr(C)]
 pub struct ID2D1Image {
     pub base__: ID2D1Resource,
+}
+impl ::windows_sys::core::Interface for ID2D1Image {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1694605173, data2: 36258, data3: 18812, data4: [179, 44, 223, 163, 78, 72, 237, 230] };
 }
 #[repr(C)]
 pub struct ID2D1ImageBrush {
@@ -3888,6 +4096,9 @@ pub struct ID2D1ImageBrush {
     #[cfg(not(feature = "Win32_Graphics_Direct2D_Common"))]
     GetSourceRectangle: usize,
 }
+impl ::windows_sys::core::Interface for ID2D1ImageBrush {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4271806541, data2: 16277, data3: 16508, data4: [181, 219, 203, 148, 212, 232, 248, 124] };
+}
 #[repr(C)]
 pub struct ID2D1ImageSource {
     pub base__: ID2D1Image,
@@ -3896,6 +4107,9 @@ pub struct ID2D1ImageSource {
     pub TryReclaimResources: unsafe extern "system" fn(this: *mut *mut Self, resourcesdiscarded: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     TryReclaimResources: usize,
+}
+impl ::windows_sys::core::Interface for ID2D1ImageSource {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3384173797, data2: 29857, data3: 17272, data4: [154, 194, 238, 252, 55, 163, 244, 216] };
 }
 #[repr(C)]
 pub struct ID2D1ImageSourceFromWic {
@@ -3912,6 +4126,9 @@ pub struct ID2D1ImageSourceFromWic {
     pub GetSource: unsafe extern "system" fn(this: *mut *mut Self, wicbitmapsource: *mut *mut ::core::ffi::c_void),
     #[cfg(not(feature = "Win32_Graphics_Imaging"))]
     GetSource: usize,
+}
+impl ::windows_sys::core::Interface for ID2D1ImageSourceFromWic {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2000245825, data2: 7311, data3: 17749, data4: [134, 131, 245, 13, 171, 15, 231, 146] };
 }
 #[repr(C)]
 pub struct ID2D1Ink {
@@ -3933,6 +4150,9 @@ pub struct ID2D1Ink {
     #[cfg(not(all(feature = "Foundation_Numerics", feature = "Win32_Graphics_Direct2D_Common")))]
     GetBounds: usize,
 }
+impl ::windows_sys::core::Interface for ID2D1Ink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3029963323, data2: 28713, data3: 18319, data4: [168, 179, 67, 44, 124, 95, 83, 18] };
+}
 #[repr(C)]
 pub struct ID2D1InkStyle {
     pub base__: ID2D1Resource,
@@ -3947,6 +4167,9 @@ pub struct ID2D1InkStyle {
     pub SetNibShape: unsafe extern "system" fn(this: *mut *mut Self, nibshape: D2D1_INK_NIB_SHAPE),
     pub GetNibShape: unsafe extern "system" fn(this: *mut *mut Self) -> D2D1_INK_NIB_SHAPE,
 }
+impl ::windows_sys::core::Interface for ID2D1InkStyle {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3135812420, data2: 9212, data3: 16497, data4: [140, 181, 208, 93, 111, 7, 56, 72] };
+}
 #[repr(C)]
 pub struct ID2D1Layer {
     pub base__: ID2D1Resource,
@@ -3954,6 +4177,9 @@ pub struct ID2D1Layer {
     pub GetSize: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut Common::D2D_SIZE_F),
     #[cfg(not(feature = "Win32_Graphics_Direct2D_Common"))]
     GetSize: usize,
+}
+impl ::windows_sys::core::Interface for ID2D1Layer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 752420507, data2: 4834, data3: 4572, data4: [159, 237, 0, 17, 67, 160, 85, 249] };
 }
 #[repr(C)]
 pub struct ID2D1LinearGradientBrush {
@@ -3976,14 +4202,23 @@ pub struct ID2D1LinearGradientBrush {
     GetEndPoint: usize,
     pub GetGradientStopCollection: unsafe extern "system" fn(this: *mut *mut Self, gradientstopcollection: *mut *mut ::core::ffi::c_void),
 }
+impl ::windows_sys::core::Interface for ID2D1LinearGradientBrush {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 752420523, data2: 4834, data3: 4572, data4: [159, 237, 0, 17, 67, 160, 85, 249] };
+}
 #[repr(C)]
 pub struct ID2D1LookupTable3D {
     pub base__: ID2D1Resource,
+}
+impl ::windows_sys::core::Interface for ID2D1LookupTable3D {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1407031381, data2: 41904, data3: 19803, data4: [130, 225, 38, 226, 92, 94, 87, 151] };
 }
 #[repr(C)]
 pub struct ID2D1Mesh {
     pub base__: ID2D1Resource,
     pub Open: unsafe extern "system" fn(this: *mut *mut Self, tessellationsink: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ID2D1Mesh {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 752420546, data2: 4834, data3: 4572, data4: [159, 237, 0, 17, 67, 160, 85, 249] };
 }
 #[repr(C)]
 pub struct ID2D1Multithread {
@@ -3994,6 +4229,9 @@ pub struct ID2D1Multithread {
     GetMultithreadProtected: usize,
     pub Enter: unsafe extern "system" fn(this: *mut *mut Self),
     pub Leave: unsafe extern "system" fn(this: *mut *mut Self),
+}
+impl ::windows_sys::core::Interface for ID2D1Multithread {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 837216188, data2: 57599, data3: 19782, data4: [140, 100, 160, 168, 196, 28, 21, 211] };
 }
 #[repr(C)]
 pub struct ID2D1OffsetTransform {
@@ -4006,6 +4244,9 @@ pub struct ID2D1OffsetTransform {
     pub GetOffset: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Foundation::POINT),
     #[cfg(not(feature = "Win32_Foundation"))]
     GetOffset: usize,
+}
+impl ::windows_sys::core::Interface for ID2D1OffsetTransform {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1072082410, data2: 30275, data3: 20307, data4: [189, 20, 160, 206, 99, 242, 64, 66] };
 }
 #[repr(C)]
 pub struct ID2D1PathGeometry {
@@ -4021,6 +4262,9 @@ pub struct ID2D1PathGeometry {
     pub GetSegmentCount: unsafe extern "system" fn(this: *mut *mut Self, count: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetFigureCount: unsafe extern "system" fn(this: *mut *mut Self, count: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ID2D1PathGeometry {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 752420517, data2: 4834, data3: 4572, data4: [159, 237, 0, 17, 67, 160, 85, 249] };
+}
 #[repr(C)]
 pub struct ID2D1PathGeometry1 {
     pub base__: ID2D1PathGeometry,
@@ -4028,6 +4272,9 @@ pub struct ID2D1PathGeometry1 {
     pub ComputePointAndSegmentAtLength: unsafe extern "system" fn(this: *mut *mut Self, length: f32, startsegment: u32, worldtransform: *const super::super::super::Foundation::Numerics::Matrix3x2, flatteningtolerance: f32, pointdescription: *mut D2D1_POINT_DESCRIPTION) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Foundation_Numerics", feature = "Win32_Graphics_Direct2D_Common")))]
     ComputePointAndSegmentAtLength: usize,
+}
+impl ::windows_sys::core::Interface for ID2D1PathGeometry1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1656398546, data2: 43860, data3: 16823, data4: [184, 114, 120, 126, 1, 6, 164, 33] };
 }
 #[repr(C)]
 pub struct ID2D1PrintControl {
@@ -4037,6 +4284,9 @@ pub struct ID2D1PrintControl {
     #[cfg(not(all(feature = "Win32_Graphics_Direct2D_Common", feature = "Win32_System_Com")))]
     AddPage: usize,
     pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ID2D1PrintControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 740132477, data2: 49808, data3: 16840, data4: [174, 126, 52, 169, 135, 2, 233, 165] };
 }
 #[repr(C)]
 pub struct ID2D1Properties {
@@ -4052,6 +4302,9 @@ pub struct ID2D1Properties {
     pub GetValue: unsafe extern "system" fn(this: *mut *mut Self, index: u32, r#type: D2D1_PROPERTY_TYPE, data: *mut u8, datasize: u32) -> ::windows_sys::core::HRESULT,
     pub GetValueSize: unsafe extern "system" fn(this: *mut *mut Self, index: u32) -> u32,
     pub GetSubProperties: unsafe extern "system" fn(this: *mut *mut Self, index: u32, subproperties: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ID2D1Properties {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1211397079, data2: 52550, data3: 20381, data4: [157, 58, 49, 18, 170, 128, 21, 157] };
 }
 #[repr(C)]
 pub struct ID2D1RadialGradientBrush {
@@ -4078,6 +4331,9 @@ pub struct ID2D1RadialGradientBrush {
     pub GetRadiusY: unsafe extern "system" fn(this: *mut *mut Self) -> f32,
     pub GetGradientStopCollection: unsafe extern "system" fn(this: *mut *mut Self, gradientstopcollection: *mut *mut ::core::ffi::c_void),
 }
+impl ::windows_sys::core::Interface for ID2D1RadialGradientBrush {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 752420524, data2: 4834, data3: 4572, data4: [159, 237, 0, 17, 67, 160, 85, 249] };
+}
 #[repr(C)]
 pub struct ID2D1RectangleGeometry {
     pub base__: ID2D1Geometry,
@@ -4085,6 +4341,9 @@ pub struct ID2D1RectangleGeometry {
     pub GetRect: unsafe extern "system" fn(this: *mut *mut Self, rect: *mut Common::D2D_RECT_F),
     #[cfg(not(feature = "Win32_Graphics_Direct2D_Common"))]
     GetRect: usize,
+}
+impl ::windows_sys::core::Interface for ID2D1RectangleGeometry {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 752420514, data2: 4834, data3: 4572, data4: [159, 237, 0, 17, 67, 160, 85, 249] };
 }
 #[repr(C)]
 pub struct ID2D1RenderInfo {
@@ -4096,6 +4355,9 @@ pub struct ID2D1RenderInfo {
     #[cfg(not(feature = "Win32_Foundation"))]
     SetCached: usize,
     pub SetInstructionCountHint: unsafe extern "system" fn(this: *mut *mut Self, instructioncount: u32),
+}
+impl ::windows_sys::core::Interface for ID2D1RenderInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1369104829, data2: 53658, data3: 16909, data4: [184, 73, 54, 79, 89, 71, 118, 183] };
 }
 #[repr(C)]
 pub struct ID2D1RenderTarget {
@@ -4253,15 +4515,24 @@ pub struct ID2D1RenderTarget {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct2D_Common", feature = "Win32_Graphics_Dxgi_Common")))]
     IsSupported: usize,
 }
+impl ::windows_sys::core::Interface for ID2D1RenderTarget {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 752420500, data2: 4834, data3: 4572, data4: [159, 237, 0, 17, 67, 160, 85, 249] };
+}
 #[repr(C)]
 pub struct ID2D1Resource {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetFactory: unsafe extern "system" fn(this: *mut *mut Self, factory: *mut *mut ::core::ffi::c_void),
 }
+impl ::windows_sys::core::Interface for ID2D1Resource {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 752420497, data2: 4834, data3: 4572, data4: [159, 237, 0, 17, 67, 160, 85, 249] };
+}
 #[repr(C)]
 pub struct ID2D1ResourceTexture {
     pub base__: ::windows_sys::core::IUnknown,
     pub Update: unsafe extern "system" fn(this: *mut *mut Self, minimumextents: *const u32, maximimumextents: *const u32, strides: *const u32, dimensions: u32, data: *const u8, datacount: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ID2D1ResourceTexture {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1754076611, data2: 688, data3: 17293, data4: [177, 58, 209, 180, 76, 50, 195, 154] };
 }
 #[repr(C)]
 pub struct ID2D1RoundedRectangleGeometry {
@@ -4270,6 +4541,9 @@ pub struct ID2D1RoundedRectangleGeometry {
     pub GetRoundedRect: unsafe extern "system" fn(this: *mut *mut Self, roundedrect: *mut D2D1_ROUNDED_RECT),
     #[cfg(not(feature = "Win32_Graphics_Direct2D_Common"))]
     GetRoundedRect: usize,
+}
+impl ::windows_sys::core::Interface for ID2D1RoundedRectangleGeometry {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 752420515, data2: 4834, data3: 4572, data4: [159, 237, 0, 17, 67, 160, 85, 249] };
 }
 #[repr(C)]
 pub struct ID2D1SolidColorBrush {
@@ -4283,6 +4557,9 @@ pub struct ID2D1SolidColorBrush {
     #[cfg(not(feature = "Win32_Graphics_Direct2D_Common"))]
     GetColor: usize,
 }
+impl ::windows_sys::core::Interface for ID2D1SolidColorBrush {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 752420521, data2: 4834, data3: 4572, data4: [159, 237, 0, 17, 67, 160, 85, 249] };
+}
 #[repr(C)]
 pub struct ID2D1SourceTransform {
     pub base__: ID2D1Transform,
@@ -4291,6 +4568,9 @@ pub struct ID2D1SourceTransform {
     pub Draw: unsafe extern "system" fn(this: *mut *mut Self, target: *mut ::core::ffi::c_void, drawrect: *const super::super::Foundation::RECT, targetorigin: Common::D2D_POINT_2U) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct2D_Common")))]
     Draw: usize,
+}
+impl ::windows_sys::core::Interface for ID2D1SourceTransform {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3675783389, data2: 3124, data3: 19705, data4: [190, 144, 49, 204, 10, 86, 83, 225] };
 }
 #[repr(C)]
 pub struct ID2D1SpriteBatch {
@@ -4310,6 +4590,9 @@ pub struct ID2D1SpriteBatch {
     pub GetSpriteCount: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
     pub Clear: unsafe extern "system" fn(this: *mut *mut Self),
 }
+impl ::windows_sys::core::Interface for ID2D1SpriteBatch {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1304789951, data2: 14864, data3: 17290, data4: [135, 34, 233, 118, 82, 36, 241, 241] };
+}
 #[repr(C)]
 pub struct ID2D1StrokeStyle {
     pub base__: ID2D1Resource,
@@ -4323,16 +4606,25 @@ pub struct ID2D1StrokeStyle {
     pub GetDashesCount: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
     pub GetDashes: unsafe extern "system" fn(this: *mut *mut Self, dashes: *mut f32, dashescount: u32),
 }
+impl ::windows_sys::core::Interface for ID2D1StrokeStyle {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 752420509, data2: 4834, data3: 4572, data4: [159, 237, 0, 17, 67, 160, 85, 249] };
+}
 #[repr(C)]
 pub struct ID2D1StrokeStyle1 {
     pub base__: ID2D1StrokeStyle,
     pub GetStrokeTransformType: unsafe extern "system" fn(this: *mut *mut Self) -> D2D1_STROKE_TRANSFORM_TYPE,
+}
+impl ::windows_sys::core::Interface for ID2D1StrokeStyle1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 279390822, data2: 59676, data3: 17396, data4: [153, 63, 221, 244, 184, 43, 11, 74] };
 }
 #[repr(C)]
 pub struct ID2D1SvgAttribute {
     pub base__: ID2D1Resource,
     pub GetElement: unsafe extern "system" fn(this: *mut *mut Self, element: *mut *mut ::core::ffi::c_void),
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, attribute: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ID2D1SvgAttribute {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3385700573, data2: 63689, data3: 20080, data4: [183, 194, 48, 28, 128, 41, 44, 94] };
 }
 #[repr(C)]
 pub struct ID2D1SvgDocument {
@@ -4366,6 +4658,9 @@ pub struct ID2D1SvgDocument {
     #[cfg(not(feature = "Win32_Graphics_Direct2D_Common"))]
     CreatePointCollection: usize,
     pub CreatePathData: unsafe extern "system" fn(this: *mut *mut Self, segmentdata: *const f32, segmentdatacount: u32, commands: *const D2D1_SVG_PATH_COMMAND, commandscount: u32, pathdata: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ID2D1SvgDocument {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2260241997, data2: 44964, data3: 19835, data4: [136, 228, 104, 165, 28, 74, 10, 236] };
 }
 #[repr(C)]
 pub struct ID2D1SvgElement {
@@ -4416,6 +4711,9 @@ pub struct ID2D1SvgElement {
     pub GetAttributeValue3: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::PCWSTR, r#type: D2D1_SVG_ATTRIBUTE_STRING_TYPE, value: ::windows_sys::core::PWSTR, valuecount: u32) -> ::windows_sys::core::HRESULT,
     pub GetAttributeValueLength: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::PCWSTR, r#type: D2D1_SVG_ATTRIBUTE_STRING_TYPE, valuelength: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ID2D1SvgElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2893768614, data2: 6206, data3: 18881, data4: [168, 35, 14, 190, 64, 176, 219, 41] };
+}
 #[repr(C)]
 pub struct ID2D1SvgGlyphStyle {
     pub base__: ID2D1Resource,
@@ -4424,6 +4722,9 @@ pub struct ID2D1SvgGlyphStyle {
     pub SetStroke: unsafe extern "system" fn(this: *mut *mut Self, brush: *mut ::core::ffi::c_void, strokewidth: f32, dashes: *const f32, dashescount: u32, dashoffset: f32) -> ::windows_sys::core::HRESULT,
     pub GetStrokeDashesCount: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
     pub GetStroke: unsafe extern "system" fn(this: *mut *mut Self, brush: *mut *mut ::core::ffi::c_void, strokewidth: *mut f32, dashes: *mut f32, dashescount: u32, dashoffset: *mut f32),
+}
+impl ::windows_sys::core::Interface for ID2D1SvgGlyphStyle {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2942768969, data2: 53825, data3: 19896, data4: [142, 65, 220, 194, 229, 193, 164, 56] };
 }
 #[repr(C)]
 pub struct ID2D1SvgPaint {
@@ -4442,6 +4743,9 @@ pub struct ID2D1SvgPaint {
     pub GetId: unsafe extern "system" fn(this: *mut *mut Self, id: ::windows_sys::core::PWSTR, idcount: u32) -> ::windows_sys::core::HRESULT,
     pub GetIdLength: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
 }
+impl ::windows_sys::core::Interface for ID2D1SvgPaint {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3583748874, data2: 26786, data3: 17755, data4: [165, 220, 158, 178, 133, 78, 36, 144] };
+}
 #[repr(C)]
 pub struct ID2D1SvgPathData {
     pub base__: ID2D1SvgAttribute,
@@ -4458,6 +4762,9 @@ pub struct ID2D1SvgPathData {
     #[cfg(not(feature = "Win32_Graphics_Direct2D_Common"))]
     CreatePathGeometry: usize,
 }
+impl ::windows_sys::core::Interface for ID2D1SvgPathData {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3231048948, data2: 48024, data3: 17366, data4: [151, 69, 77, 27, 132, 236, 152, 136] };
+}
 #[repr(C)]
 pub struct ID2D1SvgPointCollection {
     pub base__: ID2D1SvgAttribute,
@@ -4472,6 +4779,9 @@ pub struct ID2D1SvgPointCollection {
     GetPoints: usize,
     pub GetPointsCount: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
 }
+impl ::windows_sys::core::Interface for ID2D1SvgPointCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2646494221, data2: 13682, data3: 19929, data4: [152, 37, 85, 48, 129, 59, 183, 18] };
+}
 #[repr(C)]
 pub struct ID2D1SvgStrokeDashArray {
     pub base__: ID2D1SvgAttribute,
@@ -4482,6 +4792,9 @@ pub struct ID2D1SvgStrokeDashArray {
     pub GetDashes2: unsafe extern "system" fn(this: *mut *mut Self, dashes: *mut f32, dashescount: u32, startindex: u32) -> ::windows_sys::core::HRESULT,
     pub GetDashesCount: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
 }
+impl ::windows_sys::core::Interface for ID2D1SvgStrokeDashArray {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4055943762, data2: 37539, data3: 20224, data4: [180, 206, 243, 86, 145, 239, 217, 217] };
+}
 #[repr(C)]
 pub struct ID2D1TessellationSink {
     pub base__: ::windows_sys::core::IUnknown,
@@ -4490,6 +4803,9 @@ pub struct ID2D1TessellationSink {
     #[cfg(not(feature = "Win32_Graphics_Direct2D_Common"))]
     AddTriangles: usize,
     pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ID2D1TessellationSink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 752420545, data2: 4834, data3: 4572, data4: [159, 237, 0, 17, 67, 160, 85, 249] };
 }
 #[repr(C)]
 pub struct ID2D1Transform {
@@ -4507,6 +4823,9 @@ pub struct ID2D1Transform {
     #[cfg(not(feature = "Win32_Foundation"))]
     MapInvalidRect: usize,
 }
+impl ::windows_sys::core::Interface for ID2D1Transform {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4011468925, data2: 13354, data3: 20342, data4: [143, 219, 218, 13, 110, 169, 249, 43] };
+}
 #[repr(C)]
 pub struct ID2D1TransformGraph {
     pub base__: ::windows_sys::core::IUnknown,
@@ -4520,10 +4839,16 @@ pub struct ID2D1TransformGraph {
     pub Clear: unsafe extern "system" fn(this: *mut *mut Self),
     pub SetPassthroughGraph: unsafe extern "system" fn(this: *mut *mut Self, effectinputindex: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ID2D1TransformGraph {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 332566584, data2: 50150, data3: 16436, data4: [144, 129, 19, 181, 58, 65, 121, 146] };
+}
 #[repr(C)]
 pub struct ID2D1TransformNode {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetInputCount: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
+}
+impl ::windows_sys::core::Interface for ID2D1TransformNode {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3002065383, data2: 29343, data3: 16642, data4: [148, 159, 80, 95, 162, 27, 246, 102] };
 }
 #[repr(C)]
 pub struct ID2D1TransformedGeometry {
@@ -4534,17 +4859,26 @@ pub struct ID2D1TransformedGeometry {
     #[cfg(not(feature = "Foundation_Numerics"))]
     GetTransform: usize,
 }
+impl ::windows_sys::core::Interface for ID2D1TransformedGeometry {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 752420539, data2: 4834, data3: 4572, data4: [159, 237, 0, 17, 67, 160, 85, 249] };
+}
 #[repr(C)]
 pub struct ID2D1TransformedImageSource {
     pub base__: ID2D1Image,
     pub GetSource: unsafe extern "system" fn(this: *mut *mut Self, imagesource: *mut *mut ::core::ffi::c_void),
     pub GetProperties: unsafe extern "system" fn(this: *mut *mut Self, properties: *mut D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES),
 }
+impl ::windows_sys::core::Interface for ID2D1TransformedImageSource {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2132769253, data2: 10134, data3: 16748, data4: [143, 85, 112, 15, 145, 20, 69, 229] };
+}
 #[repr(C)]
 pub struct ID2D1VertexBuffer {
     pub base__: ::windows_sys::core::IUnknown,
     pub Map: unsafe extern "system" fn(this: *mut *mut Self, data: *mut *mut u8, buffersize: u32) -> ::windows_sys::core::HRESULT,
     pub Unmap: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ID2D1VertexBuffer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2609582902, data2: 165, data3: 18024, data4: [146, 183, 206, 213, 216, 191, 155, 123] };
 }
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Graphics_Direct2D\"`, `\"Win32_Graphics_Direct2D_Common\"`*"]

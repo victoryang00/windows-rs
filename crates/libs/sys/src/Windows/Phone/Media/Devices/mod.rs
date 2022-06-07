@@ -48,8 +48,14 @@ pub struct IAudioRoutingManager {
     RemoveAudioEndpointChanged: usize,
     pub AvailableAudioEndpoints: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut AvailableAudioRoutingEndpoints) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAudioRoutingManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2033454368, data2: 29132, data3: 17702, data4: [159, 41, 252, 141, 36, 134, 65, 139] };
+}
 #[repr(C)]
 pub struct IAudioRoutingManagerStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub GetDefault: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAudioRoutingManagerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2541728420, data2: 21904, data3: 19055, data4: [173, 222, 106, 61, 10, 213, 130, 80] };
 }

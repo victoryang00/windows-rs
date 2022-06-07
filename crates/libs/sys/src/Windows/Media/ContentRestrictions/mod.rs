@@ -27,6 +27,9 @@ pub struct IContentRestrictionsBrowsePolicy {
     #[cfg(not(feature = "Foundation"))]
     PreferredAgeRating: usize,
 }
+impl ::windows_sys::core::Interface for IContentRestrictionsBrowsePolicy {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2348888996, data2: 17454, data3: 17946, data4: [135, 87, 250, 210, 245, 189, 55, 228] };
+}
 #[repr(C)]
 pub struct IRatedContentDescription {
     pub base__: ::windows_sys::core::IInspectable,
@@ -53,10 +56,16 @@ pub struct IRatedContentDescription {
     #[cfg(not(feature = "Foundation_Collections"))]
     SetRatings: usize,
 }
+impl ::windows_sys::core::Interface for IRatedContentDescription {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1766352607, data2: 26290, data3: 19907, data4: [150, 177, 240, 144, 238, 222, 226, 85] };
+}
 #[repr(C)]
 pub struct IRatedContentDescriptionFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, id: ::windows_sys::core::HSTRING, title: ::windows_sys::core::HSTRING, category: RatedContentCategory, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IRatedContentDescriptionFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 775479138, data2: 39824, data3: 20390, data4: [137, 193, 75, 141, 47, 251, 53, 115] };
 }
 #[repr(C)]
 pub struct IRatedContentRestrictions {
@@ -82,10 +91,16 @@ pub struct IRatedContentRestrictions {
     #[cfg(not(feature = "Foundation"))]
     RemoveRestrictionsChanged: usize,
 }
+impl ::windows_sys::core::Interface for IRatedContentRestrictions {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1065296843, data2: 47623, data3: 17409, data4: [164, 157, 139, 146, 34, 32, 87, 35] };
+}
 #[repr(C)]
 pub struct IRatedContentRestrictionsFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub CreateWithMaxAgeRating: unsafe extern "system" fn(this: *mut *mut Self, maxagerating: u32, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IRatedContentRestrictionsFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4216007062, data2: 50109, data3: 18704, data4: [150, 25, 151, 207, 208, 105, 77, 86] };
 }
 #[doc = "*Required features: `\"Media_ContentRestrictions\"`*"]
 #[repr(transparent)]

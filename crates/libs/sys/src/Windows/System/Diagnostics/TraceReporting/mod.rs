@@ -19,6 +19,9 @@ pub struct IPlatformDiagnosticActionsStatics {
     #[cfg(not(feature = "Foundation_Collections"))]
     GetKnownTraceList: usize,
 }
+impl ::windows_sys::core::Interface for IPlatformDiagnosticActionsStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3239337210, data2: 37522, data3: 16999, data4: [137, 10, 158, 163, 237, 7, 35, 18] };
+}
 #[repr(C)]
 pub struct IPlatformDiagnosticTraceInfo {
     pub base__: ::windows_sys::core::IInspectable,
@@ -29,11 +32,17 @@ pub struct IPlatformDiagnosticTraceInfo {
     pub MaxTraceDurationFileTime: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i64) -> ::windows_sys::core::HRESULT,
     pub Priority: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut PlatformDiagnosticTracePriority) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPlatformDiagnosticTraceInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4168150423, data2: 54679, data3: 19447, data4: [136, 220, 207, 92, 125, 194, 161, 210] };
+}
 #[repr(C)]
 pub struct IPlatformDiagnosticTraceRuntimeInfo {
     pub base__: ::windows_sys::core::IInspectable,
     pub RuntimeFileTime: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i64) -> ::windows_sys::core::HRESULT,
     pub EtwRuntimeFileTime: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i64) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPlatformDiagnosticTraceRuntimeInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1028480557, data2: 472, data3: 18280, data4: [133, 84, 30, 177, 202, 97, 9, 134] };
 }
 #[doc = "*Required features: `\"System_Diagnostics_TraceReporting\"`*"]
 #[repr(transparent)]

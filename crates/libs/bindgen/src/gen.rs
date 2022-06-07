@@ -699,6 +699,23 @@ impl<'a> Gen<'a> {
         }
     }
 
+    pub fn interface_sys_trait(&self, def: TypeDef, ident: &TokenStream, constraints: &TokenStream, features: &TokenStream) -> TokenStream {
+        let guid =
+            match self.reader.type_def_guid(def) {
+                Some(guid) => self.guid(&guid),
+                None => {
+                    quote! {
+                        ::windows_sys::core::GUID::zeroed()
+                    }
+                }
+            };
+        quote! {
+            #features
+            impl<#constraints> ::windows_sys::core::Interface for #ident {
+                const IID: ::windows_sys::core::GUID = #guid;
+            }
+        }
+    }
     pub fn interface_trait(&self, def: TypeDef, generics: &[Type], ident: &TokenStream, constraints: &TokenStream, features: &TokenStream) -> TokenStream {
         if let Some(default) = self.reader.type_def_default_interface(def) {
             let default_name = self.type_name(&default);

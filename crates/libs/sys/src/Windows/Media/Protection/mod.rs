@@ -55,6 +55,9 @@ pub struct IComponentLoadFailedEventArgs {
     pub Information: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Completion: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IComponentLoadFailedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2509713043, data2: 30534, data3: 16766, data4: [132, 149, 240, 49, 187, 197, 134, 44] };
+}
 #[repr(C)]
 pub struct IComponentRenewalStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -62,6 +65,9 @@ pub struct IComponentRenewalStatics {
     pub RenewSystemComponentsAsync: unsafe extern "system" fn(this: *mut *mut Self, information: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     RenewSystemComponentsAsync: usize,
+}
+impl ::windows_sys::core::Interface for IComponentRenewalStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1878773095, data2: 46997, data3: 18629, data4: [139, 123, 167, 196, 239, 226, 2, 227] };
 }
 #[repr(C)]
 pub struct IHdcpSession {
@@ -83,6 +89,9 @@ pub struct IHdcpSession {
     pub RemoveProtectionChanged: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     RemoveProtectionChanged: usize,
+}
+impl ::windows_sys::core::Interface for IHdcpSession {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1904756201, data2: 25815, data3: 17005, data4: [128, 155, 27, 228, 97, 148, 26, 42] };
 }
 #[repr(C)]
 pub struct IMediaProtectionManager {
@@ -116,6 +125,9 @@ pub struct IMediaProtectionManager {
     #[cfg(not(feature = "Foundation_Collections"))]
     Properties: usize,
 }
+impl ::windows_sys::core::Interface for IMediaProtectionManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1164527943, data2: 51009, data3: 17227, data4: [167, 158, 71, 76, 18, 217, 61, 47] };
+}
 #[repr(C)]
 pub struct IMediaProtectionPMPServer {
     pub base__: ::windows_sys::core::IInspectable,
@@ -123,6 +135,9 @@ pub struct IMediaProtectionPMPServer {
     pub Properties: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     Properties: usize,
+}
+impl ::windows_sys::core::Interface for IMediaProtectionPMPServer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 202445350, data2: 31526, data3: 19761, data4: [149, 187, 156, 27, 8, 239, 127, 192] };
 }
 #[repr(C)]
 pub struct IMediaProtectionPMPServerFactory {
@@ -132,10 +147,16 @@ pub struct IMediaProtectionPMPServerFactory {
     #[cfg(not(feature = "Foundation_Collections"))]
     CreatePMPServer: usize,
 }
+impl ::windows_sys::core::Interface for IMediaProtectionPMPServerFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1613532766, data2: 63442, data3: 18558, data4: [175, 145, 219, 196, 37, 43, 33, 130] };
+}
 #[repr(C)]
 pub struct IMediaProtectionServiceCompletion {
     pub base__: ::windows_sys::core::IInspectable,
     pub Complete: unsafe extern "system" fn(this: *mut *mut Self, success: bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMediaProtectionServiceCompletion {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2338114072, data2: 53205, data3: 17646, data4: [162, 237, 223, 118, 1, 12, 20, 181] };
 }
 #[repr(C)]
 pub struct IMediaProtectionServiceRequest {
@@ -143,10 +164,16 @@ pub struct IMediaProtectionServiceRequest {
     pub ProtectionSystem: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub Type: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMediaProtectionServiceRequest {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2984119974, data2: 8340, data3: 18317, data4: [135, 164, 139, 149, 32, 15, 133, 198] };
+}
 #[repr(C)]
 pub struct IProtectionCapabilities {
     pub base__: ::windows_sys::core::IInspectable,
     pub IsTypeSupported: unsafe extern "system" fn(this: *mut *mut Self, r#type: ::windows_sys::core::HSTRING, keysystem: ::windows_sys::core::HSTRING, result__: *mut ProtectionCapabilityResult) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IProtectionCapabilities {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3349962110, data2: 29824, data3: 19753, data4: [164, 100, 123, 205, 145, 61, 216, 228] };
 }
 #[repr(C)]
 pub struct IRevocationAndRenewalInformation {
@@ -155,6 +182,9 @@ pub struct IRevocationAndRenewalInformation {
     pub Items: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     Items: usize,
+}
+impl ::windows_sys::core::Interface for IRevocationAndRenewalInformation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4087452539, data2: 9473, data3: 17310, data4: [166, 231, 111, 201, 94, 23, 95, 207] };
 }
 #[repr(C)]
 pub struct IRevocationAndRenewalItem {
@@ -165,11 +195,17 @@ pub struct IRevocationAndRenewalItem {
     pub Name: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub RenewalId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IRevocationAndRenewalItem {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 815383052, data2: 15600, data3: 18922, data4: [144, 45, 202, 243, 45, 45, 222, 44] };
+}
 #[repr(C)]
 pub struct IServiceRequestedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub Request: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Completion: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IServiceRequestedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 875051951, data2: 43956, data3: 20417, data4: [189, 137, 147, 241, 6, 87, 58, 73] };
 }
 #[repr(C)]
 pub struct IServiceRequestedEventArgs2 {
@@ -178,6 +214,9 @@ pub struct IServiceRequestedEventArgs2 {
     pub MediaPlaybackItem: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Media_Playback"))]
     MediaPlaybackItem: usize,
+}
+impl ::windows_sys::core::Interface for IServiceRequestedEventArgs2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1430022614, data2: 64254, data3: 16680, data4: [141, 250, 19, 14, 57, 138, 19, 167] };
 }
 pub type MediaProtectionManager = *mut ::core::ffi::c_void;
 pub type MediaProtectionPMPServer = *mut ::core::ffi::c_void;

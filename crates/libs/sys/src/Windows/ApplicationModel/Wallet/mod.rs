@@ -10,6 +10,9 @@ pub struct IWalletBarcode {
     #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
     GetImageAsync: usize,
 }
+impl ::windows_sys::core::Interface for IWalletBarcode {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1334147881, data2: 56960, data3: 20132, data4: [161, 205, 129, 205, 8, 77, 172, 39] };
+}
 #[repr(C)]
 pub struct IWalletBarcodeFactory {
     pub base__: ::windows_sys::core::IInspectable,
@@ -18,6 +21,9 @@ pub struct IWalletBarcodeFactory {
     pub CreateCustomWalletBarcode: unsafe extern "system" fn(this: *mut *mut Self, streamtobarcodeimage: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Storage_Streams"))]
     CreateCustomWalletBarcode: usize,
+}
+impl ::windows_sys::core::Interface for IWalletBarcodeFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 806449505, data2: 60828, data3: 18078, data4: [187, 253, 48, 108, 149, 234, 113, 8] };
 }
 #[repr(C)]
 pub struct IWalletItem {
@@ -171,6 +177,9 @@ pub struct IWalletItem {
     #[cfg(not(feature = "Foundation_Collections"))]
     Verbs: usize,
 }
+impl ::windows_sys::core::Interface for IWalletItem {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 548752360, data2: 4493, data3: 20164, data4: [153, 108, 185, 99, 231, 189, 62, 116] };
+}
 #[repr(C)]
 pub struct IWalletItemCustomProperty {
     pub base__: ::windows_sys::core::IInspectable,
@@ -185,15 +194,24 @@ pub struct IWalletItemCustomProperty {
     pub SummaryViewPosition: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut WalletSummaryViewPosition) -> ::windows_sys::core::HRESULT,
     pub SetSummaryViewPosition: unsafe extern "system" fn(this: *mut *mut Self, value: WalletSummaryViewPosition) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWalletItemCustomProperty {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3108716787, data2: 64000, data3: 16637, data4: [152, 220, 157, 228, 102, 151, 241, 231] };
+}
 #[repr(C)]
 pub struct IWalletItemCustomPropertyFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub CreateWalletItemCustomProperty: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::HSTRING, value: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWalletItemCustomPropertyFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3489950276, data2: 24993, data3: 16810, data4: [178, 89, 165, 97, 10, 181, 213, 117] };
+}
 #[repr(C)]
 pub struct IWalletItemFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub CreateWalletItem: unsafe extern "system" fn(this: *mut *mut Self, kind: WalletItemKind, displayname: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWalletItemFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1407349872, data2: 20235, data3: 19006, data4: [153, 229, 11, 187, 30, 171, 56, 212] };
 }
 #[repr(C)]
 pub struct IWalletItemStore {
@@ -239,6 +257,9 @@ pub struct IWalletItemStore {
     #[cfg(not(feature = "Foundation"))]
     UpdateAsync: usize,
 }
+impl ::windows_sys::core::Interface for IWalletItemStore {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1902135371, data2: 27977, data3: 18680, data4: [145, 169, 64, 161, 208, 241, 62, 244] };
+}
 #[repr(C)]
 pub struct IWalletItemStore2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -251,6 +272,9 @@ pub struct IWalletItemStore2 {
     #[cfg(not(feature = "Foundation"))]
     RemoveItemsChanged: usize,
 }
+impl ::windows_sys::core::Interface for IWalletItemStore2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1709605616, data2: 28681, data3: 18965, data4: [189, 84, 79, 255, 55, 155, 255, 226] };
+}
 #[repr(C)]
 pub struct IWalletManagerStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -258,6 +282,9 @@ pub struct IWalletManagerStatics {
     pub RequestStoreAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     RequestStoreAsync: usize,
+}
+impl ::windows_sys::core::Interface for IWalletManagerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1360123576, data2: 51620, data3: 19556, data4: [180, 221, 225, 229, 72, 0, 28, 13] };
 }
 #[repr(C)]
 pub struct IWalletRelevantLocation {
@@ -272,6 +299,9 @@ pub struct IWalletRelevantLocation {
     SetPosition: usize,
     pub DisplayMessage: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub SetDisplayMessage: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWalletRelevantLocation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2681763882, data2: 58361, data3: 19937, data4: [186, 179, 187, 25, 46, 70, 179, 243] };
 }
 #[repr(C)]
 pub struct IWalletTransaction {
@@ -295,16 +325,25 @@ pub struct IWalletTransaction {
     pub IsLaunchable: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub SetIsLaunchable: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWalletTransaction {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1088547136, data2: 9734, data3: 17689, data4: [129, 203, 191, 241, 198, 13, 31, 121] };
+}
 #[repr(C)]
 pub struct IWalletVerb {
     pub base__: ::windows_sys::core::IInspectable,
     pub Name: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub SetName: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWalletVerb {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 397944534, data2: 58305, data3: 19572, data4: [138, 148, 33, 122, 173, 188, 72, 132] };
+}
 #[repr(C)]
 pub struct IWalletVerbFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub CreateWalletVerb: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWalletVerbFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1979787121, data2: 48728, data3: 19806, data4: [131, 237, 88, 177, 102, 156, 122, 217] };
 }
 #[doc = "*Required features: `\"ApplicationModel_Wallet\"`*"]
 #[repr(transparent)]

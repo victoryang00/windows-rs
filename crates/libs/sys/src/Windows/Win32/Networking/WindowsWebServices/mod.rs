@@ -459,6 +459,9 @@ pub struct IContentPrefetcherTaskTrigger {
     pub TriggerContentPrefetcherTask: unsafe extern "system" fn(this: *mut *mut Self, packagefullname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
     pub IsRegisteredForContentPrefetch: unsafe extern "system" fn(this: *mut *mut Self, packagefullname: ::windows_sys::core::PCWSTR, isregistered: *mut u8) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IContentPrefetcherTaskTrigger {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 456499530, data2: 24724, data3: 18329, data4: [166, 14, 228, 116, 225, 93, 77, 201] };
+}
 #[doc = "*Required features: `\"Win32_Networking_WindowsWebServices\"`*"]
 pub const WEBAUTHN_API_CURRENT_VERSION: u32 = 3u32;
 #[doc = "*Required features: `\"Win32_Networking_WindowsWebServices\"`*"]

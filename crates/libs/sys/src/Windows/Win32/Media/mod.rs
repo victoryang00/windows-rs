@@ -56,15 +56,24 @@ pub struct IReferenceClock {
     AdvisePeriodic: usize,
     pub Unadvise: unsafe extern "system" fn(this: *mut *mut Self, dwadvisecookie: usize) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IReferenceClock {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1453877399, data2: 2772, data3: 4558, data4: [176, 58, 0, 32, 175, 11, 167, 112] };
+}
 #[repr(C)]
 pub struct IReferenceClock2 {
     pub base__: IReferenceClock,
+}
+impl ::windows_sys::core::Interface for IReferenceClock2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 917977221, data2: 49864, data3: 4559, data4: [139, 70, 0, 128, 95, 108, 239, 96] };
 }
 #[repr(C)]
 pub struct IReferenceClockTimerControl {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetDefaultTimerResolution: unsafe extern "system" fn(this: *mut *mut Self, timerresolution: i64) -> ::windows_sys::core::HRESULT,
     pub GetDefaultTimerResolution: unsafe extern "system" fn(this: *mut *mut Self, ptimerresolution: *mut i64) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IReferenceClockTimerControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3958130076, data2: 11978, data3: 19778, data4: [168, 175, 48, 223, 85, 118, 20, 184] };
 }
 #[doc = "*Required features: `\"Win32_Media\"`*"]
 pub const JOYERR_BASE: u32 = 160u32;

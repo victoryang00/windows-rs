@@ -6283,20 +6283,32 @@ pub struct IDirectInput2A {
     pub base__: IDirectInputA,
     pub FindDevice: unsafe extern "system" fn(this: *mut *mut Self, param0: *const ::windows_sys::core::GUID, param1: ::windows_sys::core::PCSTR, param2: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDirectInput2A {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1497687650, data2: 43658, data3: 4559, data4: [191, 199, 68, 69, 83, 84, 0, 0] };
+}
 #[repr(C)]
 pub struct IDirectInput2W {
     pub base__: IDirectInputW,
     pub FindDevice: unsafe extern "system" fn(this: *mut *mut Self, param0: *const ::windows_sys::core::GUID, param1: ::windows_sys::core::PCWSTR, param2: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDirectInput2W {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1497687651, data2: 43658, data3: 4559, data4: [191, 199, 68, 69, 83, 84, 0, 0] };
 }
 #[repr(C)]
 pub struct IDirectInput7A {
     pub base__: IDirectInput2A,
     pub CreateDeviceEx: unsafe extern "system" fn(this: *mut *mut Self, param0: *const ::windows_sys::core::GUID, param1: *const ::windows_sys::core::GUID, param2: *mut *mut ::core::ffi::c_void, param3: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDirectInput7A {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2588718724, data2: 9069, data3: 4563, data4: [142, 157, 0, 192, 79, 104, 68, 174] };
+}
 #[repr(C)]
 pub struct IDirectInput7W {
     pub base__: IDirectInput2W,
     pub CreateDeviceEx: unsafe extern "system" fn(this: *mut *mut Self, param0: *const ::windows_sys::core::GUID, param1: *const ::windows_sys::core::GUID, param2: *mut *mut ::core::ffi::c_void, param3: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDirectInput7W {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2588718725, data2: 9069, data3: 4563, data4: [142, 157, 0, 192, 79, 104, 68, 174] };
 }
 #[repr(C)]
 pub struct IDirectInput8A {
@@ -6325,6 +6337,9 @@ pub struct IDirectInput8A {
     #[cfg(not(feature = "Win32_Foundation"))]
     ConfigureDevices: usize,
 }
+impl ::windows_sys::core::Interface for IDirectInput8A {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3212410928, data2: 18490, data3: 19874, data4: [170, 153, 93, 100, 237, 54, 151, 0] };
+}
 #[repr(C)]
 pub struct IDirectInput8W {
     pub base__: ::windows_sys::core::IUnknown,
@@ -6352,6 +6367,9 @@ pub struct IDirectInput8W {
     #[cfg(not(feature = "Win32_Foundation"))]
     ConfigureDevices: usize,
 }
+impl ::windows_sys::core::Interface for IDirectInput8W {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3212410929, data2: 18490, data3: 19874, data4: [170, 153, 93, 100, 237, 54, 151, 0] };
+}
 #[repr(C)]
 pub struct IDirectInputA {
     pub base__: ::windows_sys::core::IUnknown,
@@ -6369,6 +6387,9 @@ pub struct IDirectInputA {
     pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, param0: super::super::Foundation::HINSTANCE, param1: u32) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     Initialize: usize,
+}
+impl ::windows_sys::core::Interface for IDirectInputA {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2303857504, data2: 43658, data3: 4559, data4: [191, 199, 68, 69, 83, 84, 0, 0] };
 }
 #[repr(C)]
 pub struct IDirectInputDevice2A {
@@ -6392,6 +6413,9 @@ pub struct IDirectInputDevice2A {
     pub Poll: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub SendDeviceData: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: *mut DIDEVICEOBJECTDATA, param2: *mut u32, param3: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDirectInputDevice2A {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1497687682, data2: 51502, data3: 4559, data4: [191, 199, 68, 69, 83, 84, 0, 0] };
+}
 #[repr(C)]
 pub struct IDirectInputDevice2W {
     pub base__: IDirectInputDeviceW,
@@ -6411,6 +6435,9 @@ pub struct IDirectInputDevice2W {
     pub Poll: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub SendDeviceData: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: *mut DIDEVICEOBJECTDATA, param2: *mut u32, param3: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDirectInputDevice2W {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1497687683, data2: 51502, data3: 4559, data4: [191, 199, 68, 69, 83, 84, 0, 0] };
+}
 #[repr(C)]
 pub struct IDirectInputDevice7A {
     pub base__: IDirectInputDevice2A,
@@ -6423,6 +6450,9 @@ pub struct IDirectInputDevice7A {
     #[cfg(not(feature = "Win32_Foundation"))]
     WriteEffectToFile: usize,
 }
+impl ::windows_sys::core::Interface for IDirectInputDevice7A {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1473758908, data2: 9046, data3: 4563, data4: [142, 157, 0, 192, 79, 104, 68, 174] };
+}
 #[repr(C)]
 pub struct IDirectInputDevice7W {
     pub base__: IDirectInputDevice2W,
@@ -6434,6 +6464,9 @@ pub struct IDirectInputDevice7W {
     pub WriteEffectToFile: unsafe extern "system" fn(this: *mut *mut Self, param0: ::windows_sys::core::PCWSTR, param1: u32, param2: *mut DIFILEEFFECT, param3: u32) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     WriteEffectToFile: usize,
+}
+impl ::windows_sys::core::Interface for IDirectInputDevice7W {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1473758909, data2: 9046, data3: 4563, data4: [142, 157, 0, 192, 79, 104, 68, 174] };
 }
 #[repr(C)]
 pub struct IDirectInputDevice8A {
@@ -6513,6 +6546,9 @@ pub struct IDirectInputDevice8A {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetImageInfo: usize,
 }
+impl ::windows_sys::core::Interface for IDirectInputDevice8A {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1423184000, data2: 56341, data3: 18483, data4: [164, 27, 116, 143, 115, 163, 129, 121] };
+}
 #[repr(C)]
 pub struct IDirectInputDevice8W {
     pub base__: ::windows_sys::core::IUnknown,
@@ -6582,6 +6618,9 @@ pub struct IDirectInputDevice8W {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetImageInfo: usize,
 }
+impl ::windows_sys::core::Interface for IDirectInputDevice8W {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1423184001, data2: 56341, data3: 18483, data4: [164, 27, 116, 143, 115, 163, 129, 121] };
+}
 #[repr(C)]
 pub struct IDirectInputDeviceA {
     pub base__: ::windows_sys::core::IUnknown,
@@ -6622,6 +6661,9 @@ pub struct IDirectInputDeviceA {
     #[cfg(not(feature = "Win32_Foundation"))]
     Initialize: usize,
 }
+impl ::windows_sys::core::Interface for IDirectInputDeviceA {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1497687680, data2: 51502, data3: 4559, data4: [191, 199, 68, 69, 83, 84, 0, 0] };
+}
 #[repr(C)]
 pub struct IDirectInputDeviceW {
     pub base__: ::windows_sys::core::IUnknown,
@@ -6656,6 +6698,9 @@ pub struct IDirectInputDeviceW {
     #[cfg(not(feature = "Win32_Foundation"))]
     Initialize: usize,
 }
+impl ::windows_sys::core::Interface for IDirectInputDeviceW {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1497687681, data2: 51502, data3: 4559, data4: [191, 199, 68, 69, 83, 84, 0, 0] };
+}
 #[repr(C)]
 pub struct IDirectInputEffect {
     pub base__: ::windows_sys::core::IUnknown,
@@ -6673,6 +6718,9 @@ pub struct IDirectInputEffect {
     pub Unload: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Escape: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut DIEFFESCAPE) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDirectInputEffect {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3890345920, data2: 35026, data3: 4560, data4: [154, 208, 0, 160, 201, 160, 110, 53] };
+}
 #[repr(C)]
 pub struct IDirectInputEffectDriver {
     pub base__: ::windows_sys::core::IUnknown,
@@ -6687,6 +6735,9 @@ pub struct IDirectInputEffectDriver {
     pub StartEffect: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: u32, param2: u32, param3: u32) -> ::windows_sys::core::HRESULT,
     pub StopEffect: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: u32) -> ::windows_sys::core::HRESULT,
     pub GetEffectStatus: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: u32, param2: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDirectInputEffectDriver {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 39026992, data2: 35215, data3: 4560, data4: [154, 208, 0, 160, 201, 160, 110, 53] };
 }
 #[repr(C)]
 pub struct IDirectInputJoyConfig {
@@ -6723,6 +6774,9 @@ pub struct IDirectInputJoyConfig {
     #[cfg(not(feature = "Win32_System_Registry"))]
     OpenConfigKey: usize,
 }
+impl ::windows_sys::core::Interface for IDirectInputJoyConfig {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 501295793, data2: 51701, data3: 4559, data4: [191, 199, 68, 69, 83, 84, 0, 0] };
+}
 #[repr(C)]
 pub struct IDirectInputJoyConfig8 {
     pub base__: ::windows_sys::core::IUnknown,
@@ -6758,6 +6812,9 @@ pub struct IDirectInputJoyConfig8 {
     #[cfg(not(feature = "Win32_System_Registry"))]
     OpenAppStatusKey: usize,
 }
+impl ::windows_sys::core::Interface for IDirectInputJoyConfig8 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3943529978, data2: 6544, data3: 20263, data4: [180, 214, 237, 242, 238, 196, 164, 76] };
+}
 #[repr(C)]
 pub struct IDirectInputW {
     pub base__: ::windows_sys::core::IUnknown,
@@ -6775,6 +6832,9 @@ pub struct IDirectInputW {
     pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, param0: super::super::Foundation::HINSTANCE, param1: u32) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     Initialize: usize,
+}
+impl ::windows_sys::core::Interface for IDirectInputW {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2303857505, data2: 43658, data3: 4559, data4: [191, 199, 68, 69, 83, 84, 0, 0] };
 }
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Devices_HumanInterfaceDevice\"`*"]

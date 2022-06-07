@@ -26,6 +26,10 @@ pub struct IAction {
     pub Type: unsafe extern "system" fn(this: *mut *mut Self, ptype: *mut TASK_ACTION_TYPE) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IAction {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3135588759, data2: 18609, data3: 19646, data4: [153, 101, 214, 190, 38, 62, 190, 164] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IActionCollection {
     pub base__: super::Com::IDispatch,
@@ -62,6 +66,10 @@ pub struct IActionCollection {
     SetContext: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IActionCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 42077721, data2: 31640, data3: 20178, data4: [178, 232, 253, 204, 206, 255, 97, 155] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IBootTrigger {
     pub base__: ITrigger,
@@ -73,6 +81,10 @@ pub struct IBootTrigger {
     pub SetDelay: unsafe extern "system" fn(this: *mut *mut Self, delay: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     SetDelay: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IBootTrigger {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 714880474, data2: 54103, data3: 16884, data4: [187, 193, 32, 122, 193, 177, 243, 203] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -96,6 +108,10 @@ pub struct IComHandlerAction {
     SetData: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IComHandlerAction {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1831850578, data2: 30149, data3: 20326, data4: [144, 186, 42, 125, 140, 195, 3, 159] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IDailyTrigger {
     pub base__: ITrigger,
@@ -109,6 +125,10 @@ pub struct IDailyTrigger {
     pub SetRandomDelay: unsafe extern "system" fn(this: *mut *mut Self, randomdelay: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     SetRandomDelay: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IDailyTrigger {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 309091544, data2: 45704, data3: 16853, data4: [141, 191, 228, 145, 68, 106, 220, 92] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -195,6 +215,10 @@ pub struct IEmailAction {
     #[cfg(not(feature = "Win32_System_Com"))]
     SetAttachments: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IEmailAction {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 284568676, data2: 32278, data3: 17172, data4: [160, 194, 12, 54, 131, 249, 157, 64] };
+}
 #[repr(C)]
 pub struct IEnumWorkItems {
     pub base__: ::windows_sys::core::IUnknown,
@@ -202,6 +226,9 @@ pub struct IEnumWorkItems {
     pub Skip: unsafe extern "system" fn(this: *mut *mut Self, celt: u32) -> ::windows_sys::core::HRESULT,
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenumworkitems: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IEnumWorkItems {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 344708392, data2: 41643, data3: 4558, data4: [177, 31, 0, 170, 0, 83, 5, 3] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -233,6 +260,10 @@ pub struct IEventTrigger {
     SetValueQueries: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IEventTrigger {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3562733927, data2: 38483, data3: 20207, data4: [185, 79, 7, 50, 202, 122, 242, 81] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IExecAction {
     pub base__: IAction,
@@ -262,11 +293,19 @@ pub struct IExecAction {
     SetWorkingDirectory: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IExecAction {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1279091277, data2: 64875, data3: 18851, data4: [185, 183, 9, 203, 60, 211, 240, 71] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IExecAction2 {
     pub base__: IExecAction,
     pub HideAppWindow: unsafe extern "system" fn(this: *mut *mut Self, phideappwindow: *mut i16) -> ::windows_sys::core::HRESULT,
     pub SetHideAppWindow: unsafe extern "system" fn(this: *mut *mut Self, hideappwindow: i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IExecAction2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4071105858, data2: 48549, data3: 20075, data4: [145, 67, 226, 191, 79, 137, 135, 182] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -294,9 +333,17 @@ pub struct IIdleSettings {
     pub SetRestartOnIdle: unsafe extern "system" fn(this: *mut *mut Self, restart: i16) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IIdleSettings {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2220442721, data2: 83, data3: 17218, data4: [168, 253, 8, 143, 171, 241, 31, 50] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IIdleTrigger {
     pub base__: ITrigger,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IIdleTrigger {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3577205424, data2: 40883, data3: 19764, data4: [151, 57, 31, 245, 206, 123, 30, 243] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -318,6 +365,10 @@ pub struct ILogonTrigger {
     pub SetUserId: unsafe extern "system" fn(this: *mut *mut Self, user: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     SetUserId: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ILogonTrigger {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1926946360, data2: 64228, data3: 19262, data4: [186, 244, 93, 0, 154, 240, 43, 28] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -343,6 +394,10 @@ pub struct IMaintenanceSettings {
     pub Exclusive: unsafe extern "system" fn(this: *mut *mut Self, target: *mut i16) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IMaintenanceSettings {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2785169320, data2: 38482, data3: 19163, data4: [166, 191, 92, 252, 216, 119, 167, 186] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IMonthlyDOWTrigger {
     pub base__: ITrigger,
@@ -364,6 +419,10 @@ pub struct IMonthlyDOWTrigger {
     SetRandomDelay: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IMonthlyDOWTrigger {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2010129827, data2: 37114, data3: 17322, data4: [181, 46, 205, 165, 73, 155, 148, 106] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IMonthlyTrigger {
     pub base__: ITrigger,
@@ -381,6 +440,10 @@ pub struct IMonthlyTrigger {
     pub SetRandomDelay: unsafe extern "system" fn(this: *mut *mut Self, randomdelay: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     SetRandomDelay: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IMonthlyTrigger {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2546228977, data2: 27394, data3: 18970, data4: [156, 14, 30, 191, 186, 21, 0, 172] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -402,6 +465,10 @@ pub struct INetworkSettings {
     pub SetId: unsafe extern "system" fn(this: *mut *mut Self, id: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     SetId: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for INetworkSettings {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2675829380, data2: 49931, data3: 16965, data4: [128, 182, 0, 233, 246, 70, 241, 180] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -445,6 +512,10 @@ pub struct IPrincipal {
     pub SetRunLevel: unsafe extern "system" fn(this: *mut *mut Self, runlevel: TASK_RUNLEVEL_TYPE) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IPrincipal {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3649917413, data2: 51636, data3: 18794, data4: [169, 193, 24, 152, 2, 97, 207, 15] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IPrincipal2 {
     pub base__: super::Com::IDispatch,
@@ -460,6 +531,10 @@ pub struct IPrincipal2 {
     #[cfg(not(feature = "Win32_Foundation"))]
     AddRequiredPrivilege: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IPrincipal2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 612964782, data2: 58181, data3: 19053, data4: [138, 235, 224, 211, 22, 92, 144, 78] };
+}
 #[repr(C)]
 pub struct IProvideTaskPage {
     pub base__: ::windows_sys::core::IUnknown,
@@ -467,6 +542,9 @@ pub struct IProvideTaskPage {
     pub GetPage: unsafe extern "system" fn(this: *mut *mut Self, tptype: TASKPAGE, fpersistchanges: super::super::Foundation::BOOL, phpage: *mut super::super::UI::Controls::HPROPSHEETPAGE) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls")))]
     GetPage: usize,
+}
+impl ::windows_sys::core::Interface for IProvideTaskPage {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1082549642, data2: 52155, data3: 4559, data4: [182, 4, 0, 192, 79, 216, 213, 101] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -522,6 +600,10 @@ pub struct IRegisteredTask {
     GetRunTimes: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IRegisteredTask {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2626089760, data2: 57059, data3: 19921, data4: [185, 114, 163, 3, 242, 107, 6, 30] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IRegisteredTaskCollection {
     pub base__: super::Com::IDispatch,
@@ -531,6 +613,10 @@ pub struct IRegisteredTaskCollection {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     get_Item: usize,
     pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IRegisteredTaskCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2254601908, data2: 17063, data3: 16868, data4: [164, 217, 172, 51, 167, 47, 45, 82] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -610,6 +696,10 @@ pub struct IRegistrationInfo {
     SetSource: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IRegistrationInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1097698163, data2: 52033, data3: 20129, data4: [128, 92, 155, 233, 165, 172, 74, 116] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IRegistrationTrigger {
     pub base__: ITrigger,
@@ -621,6 +711,10 @@ pub struct IRegistrationTrigger {
     pub SetDelay: unsafe extern "system" fn(this: *mut *mut Self, delay: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     SetDelay: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IRegistrationTrigger {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1284500538, data2: 49688, data3: 19980, data4: [178, 61, 98, 144, 36, 219, 145, 162] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -644,6 +738,10 @@ pub struct IRepetitionPattern {
     SetDuration: usize,
     pub StopAtDurationEnd: unsafe extern "system" fn(this: *mut *mut Self, pstop: *mut i16) -> ::windows_sys::core::HRESULT,
     pub SetStopAtDurationEnd: unsafe extern "system" fn(this: *mut *mut Self, stop: i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IRepetitionPattern {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2142874865, data2: 9918, data3: 16398, data4: [133, 181, 41, 75, 156, 117, 223, 214] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -671,6 +769,10 @@ pub struct IRunningTask {
     pub EnginePID: unsafe extern "system" fn(this: *mut *mut Self, ppid: *mut u32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IRunningTask {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1698126075, data2: 31642, data3: 20254, data4: [164, 113, 190, 235, 142, 155, 131, 78] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IRunningTaskCollection {
     pub base__: super::Com::IDispatch,
@@ -680,6 +782,10 @@ pub struct IRunningTaskCollection {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     get_Item: usize,
     pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IRunningTaskCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1785160011, data2: 26664, data3: 20460, data4: [170, 84, 109, 82, 232, 241, 242, 219] };
 }
 #[repr(C)]
 pub struct IScheduledWorkItem {
@@ -726,6 +832,9 @@ pub struct IScheduledWorkItem {
     pub SetAccountInformation: unsafe extern "system" fn(this: *mut *mut Self, pwszaccountname: ::windows_sys::core::PCWSTR, pwszpassword: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
     pub GetAccountInformation: unsafe extern "system" fn(this: *mut *mut Self, ppwszaccountname: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IScheduledWorkItem {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2797163248, data2: 42161, data3: 4560, data4: [153, 125, 0, 170, 0, 104, 135, 236] };
+}
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISessionStateChangeTrigger {
@@ -750,6 +859,10 @@ pub struct ISessionStateChangeTrigger {
     pub SetStateChange: unsafe extern "system" fn(this: *mut *mut Self, r#type: TASK_SESSION_STATE_CHANGE_TYPE) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISessionStateChangeTrigger {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1968023323, data2: 17285, data3: 17525, data4: [157, 217, 89, 130, 148, 250, 54, 65] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IShowMessageAction {
     pub base__: IAction,
@@ -770,6 +883,10 @@ pub struct IShowMessageAction {
     #[cfg(not(feature = "Win32_Foundation"))]
     SetMessageBody: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IShowMessageAction {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1348378216, data2: 44937, data3: 18104, data4: [163, 15, 86, 22, 42, 131, 213, 55] };
+}
 #[repr(C)]
 pub struct ITask {
     pub base__: IScheduledWorkItem,
@@ -785,6 +902,9 @@ pub struct ITask {
     pub GetTaskFlags: unsafe extern "system" fn(this: *mut *mut Self, pdwflags: *mut u32) -> ::windows_sys::core::HRESULT,
     pub SetMaxRunTime: unsafe extern "system" fn(this: *mut *mut Self, dwmaxruntimems: u32) -> ::windows_sys::core::HRESULT,
     pub GetMaxRunTime: unsafe extern "system" fn(this: *mut *mut Self, pdwmaxruntimems: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ITask {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 344708388, data2: 41643, data3: 4558, data4: [177, 31, 0, 170, 0, 83, 5, 3] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -848,6 +968,10 @@ pub struct ITaskDefinition {
     SetXmlText: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ITaskDefinition {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4122775493, data2: 21357, data3: 20343, data4: [184, 82, 251, 193, 53, 111, 222, 182] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ITaskFolder {
     pub base__: super::Com::IDispatch,
@@ -905,6 +1029,10 @@ pub struct ITaskFolder {
     SetSecurityDescriptor: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ITaskFolder {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2365243490, data2: 41088, data3: 19477, data4: [154, 136, 170, 124, 42, 248, 13, 252] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ITaskFolderCollection {
     pub base__: super::Com::IDispatch,
@@ -914,6 +1042,10 @@ pub struct ITaskFolderCollection {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     get_Item: usize,
     pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ITaskFolderCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2031635046, data2: 34404, data3: 16959, data4: [151, 241, 99, 115, 86, 165, 216, 18] };
 }
 #[repr(C)]
 pub struct ITaskHandler {
@@ -926,6 +1058,9 @@ pub struct ITaskHandler {
     pub Pause: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Resume: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ITaskHandler {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2208135010, data2: 20769, data3: 16393, data4: [146, 52, 79, 13, 25, 57, 79, 4] };
+}
 #[repr(C)]
 pub struct ITaskHandlerStatus {
     pub base__: ::windows_sys::core::IUnknown,
@@ -934,6 +1069,9 @@ pub struct ITaskHandlerStatus {
     #[cfg(not(feature = "Win32_Foundation"))]
     UpdateStatus: usize,
     pub TaskCompleted: unsafe extern "system" fn(this: *mut *mut Self, taskerrcode: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ITaskHandlerStatus {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3941366415, data2: 10144, data3: 19932, data4: [134, 117, 20, 114, 106, 1, 163, 138] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -951,6 +1089,10 @@ pub struct ITaskNamedValueCollection {
     Create: usize,
     pub Remove: unsafe extern "system" fn(this: *mut *mut Self, index: i32) -> ::windows_sys::core::HRESULT,
     pub Clear: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ITaskNamedValueCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3035595371, data2: 25539, data3: 18148, data4: [165, 4, 239, 105, 228, 247, 234, 77] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -973,6 +1115,10 @@ pub struct ITaskNamedValuePair {
     #[cfg(not(feature = "Win32_Foundation"))]
     SetValue: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ITaskNamedValuePair {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 956530792, data2: 11078, data3: 19197, data4: [134, 98, 123, 182, 248, 104, 210, 33] };
+}
 #[repr(C)]
 pub struct ITaskScheduler {
     pub base__: ::windows_sys::core::IUnknown,
@@ -984,6 +1130,9 @@ pub struct ITaskScheduler {
     pub NewWorkItem: unsafe extern "system" fn(this: *mut *mut Self, pwsztaskname: ::windows_sys::core::PCWSTR, rclsid: *const ::windows_sys::core::GUID, riid: *const ::windows_sys::core::GUID, ppunk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub AddWorkItem: unsafe extern "system" fn(this: *mut *mut Self, pwsztaskname: ::windows_sys::core::PCWSTR, pworkitem: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub IsOfType: unsafe extern "system" fn(this: *mut *mut Self, pwszname: ::windows_sys::core::PCWSTR, riid: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ITaskScheduler {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 344708391, data2: 41643, data3: 4558, data4: [177, 31, 0, 170, 0, 83, 5, 3] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1019,6 +1168,10 @@ pub struct ITaskService {
     #[cfg(not(feature = "Win32_Foundation"))]
     ConnectedDomain: usize,
     pub HighestVersion: unsafe extern "system" fn(this: *mut *mut Self, pversion: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ITaskService {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 799777991, data2: 19881, data3: 16403, data4: [150, 151, 32, 204, 63, 212, 15, 133] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1102,6 +1255,10 @@ pub struct ITaskSettings {
     SetNetworkSettings: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ITaskSettings {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2413064477, data2: 11522, data3: 19596, data4: [135, 227, 239, 246, 153, 222, 18, 126] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ITaskSettings2 {
     pub base__: super::Com::IDispatch,
@@ -1109,6 +1266,10 @@ pub struct ITaskSettings2 {
     pub SetDisallowStartOnRemoteAppSession: unsafe extern "system" fn(this: *mut *mut Self, disallowstart: i16) -> ::windows_sys::core::HRESULT,
     pub UseUnifiedSchedulingEngine: unsafe extern "system" fn(this: *mut *mut Self, puseunifiedengine: *mut i16) -> ::windows_sys::core::HRESULT,
     pub SetUseUnifiedSchedulingEngine: unsafe extern "system" fn(this: *mut *mut Self, useunifiedengine: i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ITaskSettings2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 738575344, data2: 28397, data3: 19461, data4: [161, 95, 237, 125, 122, 152, 163, 105] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1133,12 +1294,19 @@ pub struct ITaskSettings3 {
     pub Volatile: unsafe extern "system" fn(this: *mut *mut Self, pvolatile: *mut i16) -> ::windows_sys::core::HRESULT,
     pub SetVolatile: unsafe extern "system" fn(this: *mut *mut Self, volatile: i16) -> ::windows_sys::core::HRESULT,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ITaskSettings3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 182046935, data2: 3199, data3: 20155, data4: [154, 95, 209, 198, 72, 220, 165, 40] };
+}
 #[repr(C)]
 pub struct ITaskTrigger {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetTrigger: unsafe extern "system" fn(this: *mut *mut Self, ptrigger: *const TASK_TRIGGER) -> ::windows_sys::core::HRESULT,
     pub GetTrigger: unsafe extern "system" fn(this: *mut *mut Self, ptrigger: *mut TASK_TRIGGER) -> ::windows_sys::core::HRESULT,
     pub GetTriggerString: unsafe extern "system" fn(this: *mut *mut Self, ppwsztrigger: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ITaskTrigger {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 344708395, data2: 41643, data3: 4558, data4: [177, 31, 0, 170, 0, 83, 5, 3] };
 }
 #[repr(C)]
 pub struct ITaskVariables {
@@ -1156,6 +1324,9 @@ pub struct ITaskVariables {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetContext: usize,
 }
+impl ::windows_sys::core::Interface for ITaskVariables {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1045205841, data2: 55654, data3: 19339, data4: [187, 135, 206, 186, 104, 187, 1, 7] };
+}
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ITimeTrigger {
@@ -1168,6 +1339,10 @@ pub struct ITimeTrigger {
     pub SetRandomDelay: unsafe extern "system" fn(this: *mut *mut Self, randomdelay: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     SetRandomDelay: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ITimeTrigger {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3025618912, data2: 60327, data3: 17014, data4: [159, 41, 133, 197, 187, 48, 0, 6] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1218,6 +1393,10 @@ pub struct ITrigger {
     pub SetEnabled: unsafe extern "system" fn(this: *mut *mut Self, enabled: i16) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ITrigger {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 160700437, data2: 60041, data3: 19291, data4: [137, 224, 42, 119, 56, 1, 250, 195] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ITriggerCollection {
     pub base__: super::Com::IDispatch,
@@ -1238,6 +1417,10 @@ pub struct ITriggerCollection {
     pub Clear: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ITriggerCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2246004865, data2: 6948, data3: 20274, data4: [135, 138, 217, 209, 77, 244, 203, 119] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IWeeklyTrigger {
     pub base__: ITrigger,
@@ -1253,6 +1436,10 @@ pub struct IWeeklyTrigger {
     pub SetRandomDelay: unsafe extern "system" fn(this: *mut *mut Self, randomdelay: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     SetRandomDelay: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWeeklyTrigger {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1345911960, data2: 33535, data3: 17261, data4: [135, 40, 165, 18, 165, 124, 157, 193] };
 }
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_TaskScheduler\"`*"]

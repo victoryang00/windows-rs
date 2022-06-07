@@ -138,6 +138,9 @@ pub struct IGameExplorer {
     #[cfg(not(feature = "Win32_Foundation"))]
     VerifyAccess: usize,
 }
+impl ::windows_sys::core::Interface for IGameExplorer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3887266674, data2: 55080, data3: 18867, data4: [165, 242, 24, 235, 245, 241, 52, 158] };
+}
 #[repr(C)]
 pub struct IGameExplorer2 {
     pub base__: ::windows_sys::core::IUnknown,
@@ -147,6 +150,9 @@ pub struct IGameExplorer2 {
     pub CheckAccess: unsafe extern "system" fn(this: *mut *mut Self, binarygdfpath: ::windows_sys::core::PCWSTR, phasaccess: *mut super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     CheckAccess: usize,
+}
+impl ::windows_sys::core::Interface for IGameExplorer2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2257013415, data2: 41453, data3: 17677, data4: [167, 235, 184, 158, 32, 178, 255, 243] };
 }
 #[repr(C)]
 pub struct IGameStatistics {
@@ -167,11 +173,17 @@ pub struct IGameStatistics {
     pub SetLastPlayedCategory: unsafe extern "system" fn(this: *mut *mut Self, categoryindex: u32) -> ::windows_sys::core::HRESULT,
     pub GetLastPlayedCategory: unsafe extern "system" fn(this: *mut *mut Self, pcategoryindex: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IGameStatistics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 948423114, data2: 1184, data3: 17070, data4: [188, 76, 95, 166, 199, 114, 17, 69] };
+}
 #[repr(C)]
 pub struct IGameStatisticsMgr {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetGameStatistics: unsafe extern "system" fn(this: *mut *mut Self, gdfbinarypath: ::windows_sys::core::PCWSTR, opentype: GAMESTATS_OPEN_TYPE, popenresult: *mut GAMESTATS_OPEN_RESULT, ppistats: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub RemoveGameStatistics: unsafe extern "system" fn(this: *mut *mut Self, gdfbinarypath: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IGameStatisticsMgr {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2951997969, data2: 59150, data3: 16509, data4: [149, 221, 53, 230, 18, 196, 28, 226] };
 }
 #[repr(C)]
 pub struct IXblIdpAuthManager {
@@ -185,6 +197,9 @@ pub struct IXblIdpAuthManager {
     pub GetTokenAndSignatureWithTokenResult: unsafe extern "system" fn(this: *mut *mut Self, msaaccountid: ::windows_sys::core::PCWSTR, appsid: ::windows_sys::core::PCWSTR, msatarget: ::windows_sys::core::PCWSTR, msapolicy: ::windows_sys::core::PCWSTR, httpmethod: ::windows_sys::core::PCWSTR, uri: ::windows_sys::core::PCWSTR, headers: ::windows_sys::core::PCWSTR, body: *const u8, bodysize: u32, forcerefresh: super::Foundation::BOOL, result: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetTokenAndSignatureWithTokenResult: usize,
+}
+impl ::windows_sys::core::Interface for IXblIdpAuthManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3948796680, data2: 35775, data3: 17563, data4: [172, 33, 176, 45, 222, 179, 177, 54] };
 }
 #[repr(C)]
 pub struct IXblIdpAuthTokenResult {
@@ -210,12 +225,18 @@ pub struct IXblIdpAuthTokenResult {
     pub GetRestrictions: unsafe extern "system" fn(this: *mut *mut Self, restrictions: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
     pub GetTitleRestrictions: unsafe extern "system" fn(this: *mut *mut Self, titlerestrictions: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IXblIdpAuthTokenResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1187906085, data2: 62055, data3: 19816, data4: [178, 153, 178, 118, 37, 82, 222, 193] };
+}
 #[repr(C)]
 pub struct IXblIdpAuthTokenResult2 {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetModernGamertag: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
     pub GetModernGamertagSuffix: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
     pub GetUniqueModernGamertag: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IXblIdpAuthTokenResult2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1977049264, data2: 24761, data3: 16685, data4: [153, 79, 38, 178, 205, 95, 120, 18] };
 }
 #[doc = "*Required features: `\"Win32_Gaming\"`*"]
 pub type KnownGamingPrivileges = i32;

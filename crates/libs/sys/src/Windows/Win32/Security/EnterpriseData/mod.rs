@@ -82,6 +82,9 @@ pub struct IProtectionPolicyManagerInterop {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetForWindow: usize,
 }
+impl ::windows_sys::core::Interface for IProtectionPolicyManagerInterop {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1179804957, data2: 49662, data3: 19361, data4: [159, 10, 192, 245, 101, 150, 247, 33] };
+}
 #[repr(C)]
 pub struct IProtectionPolicyManagerInterop2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -105,6 +108,9 @@ pub struct IProtectionPolicyManagerInterop2 {
     pub RequestAccessForAppWithMessageForWindowAsync: unsafe extern "system" fn(this: *mut *mut Self, appwindow: super::super::Foundation::HWND, sourceidentity: ::windows_sys::core::HSTRING, apppackagefamilyname: ::windows_sys::core::HSTRING, auditinfounk: *mut ::core::ffi::c_void, messagefromapp: ::windows_sys::core::HSTRING, riid: *const ::windows_sys::core::GUID, asyncoperation: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     RequestAccessForAppWithMessageForWindowAsync: usize,
+}
+impl ::windows_sys::core::Interface for IProtectionPolicyManagerInterop2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 360512484, data2: 42893, data3: 16726, data4: [179, 132, 97, 253, 172, 65, 230, 134] };
 }
 #[repr(C)]
 pub struct IProtectionPolicyManagerInterop3 {
@@ -133,6 +139,9 @@ pub struct IProtectionPolicyManagerInterop3 {
     pub RequestAccessToFilesForProcessWithMessageAndBehaviorForWindowAsync: unsafe extern "system" fn(this: *mut *mut Self, appwindow: super::super::Foundation::HWND, sourceitemlistunk: *mut ::core::ffi::c_void, processid: u32, auditinfounk: *mut ::core::ffi::c_void, messagefromapp: ::windows_sys::core::HSTRING, behavior: u32, riid: *const ::windows_sys::core::GUID, asyncoperation: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     RequestAccessToFilesForProcessWithMessageAndBehaviorForWindowAsync: usize,
+}
+impl ::windows_sys::core::Interface for IProtectionPolicyManagerInterop3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3250600243, data2: 45976, data3: 19859, data4: [176, 253, 41, 114, 173, 248, 2, 194] };
 }
 #[doc = "*Required features: `\"Win32_Security_EnterpriseData\"`*"]
 pub type SRPHOSTING_TYPE = i32;

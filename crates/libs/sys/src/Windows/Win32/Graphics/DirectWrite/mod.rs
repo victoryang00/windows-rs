@@ -2007,6 +2007,9 @@ pub struct IDWriteAsyncResult {
     GetWaitHandle: usize,
     pub GetResult: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDWriteAsyncResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3458595069, data2: 34363, data3: 19731, data4: [150, 81, 193, 248, 141, 199, 63, 226] };
+}
 #[repr(C)]
 pub struct IDWriteBitmapRenderTarget {
     pub base__: ::windows_sys::core::IUnknown,
@@ -2028,11 +2031,17 @@ pub struct IDWriteBitmapRenderTarget {
     GetSize: usize,
     pub Resize: unsafe extern "system" fn(this: *mut *mut Self, width: u32, height: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDWriteBitmapRenderTarget {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1582969507, data2: 36351, data3: 18291, data4: [159, 246, 6, 150, 234, 183, 114, 103] };
+}
 #[repr(C)]
 pub struct IDWriteBitmapRenderTarget1 {
     pub base__: IDWriteBitmapRenderTarget,
     pub GetTextAntialiasMode: unsafe extern "system" fn(this: *mut *mut Self) -> DWRITE_TEXT_ANTIALIAS_MODE,
     pub SetTextAntialiasMode: unsafe extern "system" fn(this: *mut *mut Self, antialiasmode: DWRITE_TEXT_ANTIALIAS_MODE) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDWriteBitmapRenderTarget1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2032042648, data2: 16115, data3: 16944, data4: [152, 128, 201, 189, 236, 196, 32, 100] };
 }
 #[repr(C)]
 pub struct IDWriteColorGlyphRunEnumerator {
@@ -2046,6 +2055,9 @@ pub struct IDWriteColorGlyphRunEnumerator {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetCurrentRun: usize,
 }
+impl ::windows_sys::core::Interface for IDWriteColorGlyphRunEnumerator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3542072855, data2: 61783, data3: 16802, data4: [141, 36, 203, 119, 158, 5, 96, 232] };
+}
 #[repr(C)]
 pub struct IDWriteColorGlyphRunEnumerator1 {
     pub base__: IDWriteColorGlyphRunEnumerator,
@@ -2053,6 +2065,9 @@ pub struct IDWriteColorGlyphRunEnumerator1 {
     pub GetCurrentRun2: unsafe extern "system" fn(this: *mut *mut Self, colorglyphrun: *mut *mut DWRITE_COLOR_GLYPH_RUN1) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetCurrentRun2: usize,
+}
+impl ::windows_sys::core::Interface for IDWriteColorGlyphRunEnumerator1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2086635226, data2: 51105, data3: 20229, data4: [184, 225, 85, 161, 121, 254, 90, 53] };
 }
 #[repr(C)]
 pub struct IDWriteFactory {
@@ -2097,6 +2112,9 @@ pub struct IDWriteFactory {
     #[cfg(not(feature = "Win32_Foundation"))]
     CreateGlyphRunAnalysis: usize,
 }
+impl ::windows_sys::core::Interface for IDWriteFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3092901466, data2: 55352, data3: 19291, data4: [162, 232, 26, 220, 125, 147, 219, 72] };
+}
 #[repr(C)]
 pub struct IDWriteFactory1 {
     pub base__: IDWriteFactory,
@@ -2105,6 +2123,9 @@ pub struct IDWriteFactory1 {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetEudcFontCollection: usize,
     pub CreateCustomRenderingParams2: unsafe extern "system" fn(this: *mut *mut Self, gamma: f32, enhancedcontrast: f32, enhancedcontrastgrayscale: f32, cleartypelevel: f32, pixelgeometry: DWRITE_PIXEL_GEOMETRY, renderingmode: DWRITE_RENDERING_MODE, renderingparams: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDWriteFactory1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811020185, data2: 56006, data3: 16859, data4: [161, 110, 4, 134, 48, 126, 96, 106] };
 }
 #[repr(C)]
 pub struct IDWriteFactory2 {
@@ -2120,6 +2141,9 @@ pub struct IDWriteFactory2 {
     pub CreateGlyphRunAnalysis2: unsafe extern "system" fn(this: *mut *mut Self, glyphrun: *const DWRITE_GLYPH_RUN, transform: *const DWRITE_MATRIX, renderingmode: DWRITE_RENDERING_MODE, measuringmode: DWRITE_MEASURING_MODE, gridfitmode: DWRITE_GRID_FIT_MODE, antialiasmode: DWRITE_TEXT_ANTIALIAS_MODE, baselineoriginx: f32, baselineoriginy: f32, glyphrunanalysis: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     CreateGlyphRunAnalysis2: usize,
+}
+impl ::windows_sys::core::Interface for IDWriteFactory2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 70909024, data2: 51780, data3: 18836, data4: [141, 238, 58, 154, 247, 183, 50, 236] };
 }
 #[repr(C)]
 pub struct IDWriteFactory3 {
@@ -2143,6 +2167,9 @@ pub struct IDWriteFactory3 {
     GetSystemFontCollection2: usize,
     pub GetFontDownloadQueue: unsafe extern "system" fn(this: *mut *mut Self, fontdownloadqueue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDWriteFactory3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2585477571, data2: 54203, data3: 18026, data4: [135, 252, 254, 103, 85, 106, 59, 101] };
+}
 #[repr(C)]
 pub struct IDWriteFactory4 {
     pub base__: IDWriteFactory3,
@@ -2159,6 +2186,9 @@ pub struct IDWriteFactory4 {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct2D_Common")))]
     ComputeGlyphOrigins2: usize,
 }
+impl ::windows_sys::core::Interface for IDWriteFactory4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1259035603, data2: 1943, data3: 17737, data4: [138, 197, 254, 145, 92, 197, 56, 86] };
+}
 #[repr(C)]
 pub struct IDWriteFactory5 {
     pub base__: IDWriteFactory4,
@@ -2167,6 +2197,9 @@ pub struct IDWriteFactory5 {
     pub CreateHttpFontFileLoader: unsafe extern "system" fn(this: *mut *mut Self, referrerurl: ::windows_sys::core::PCWSTR, extraheaders: ::windows_sys::core::PCWSTR, newloader: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub AnalyzeContainerType: unsafe extern "system" fn(this: *mut *mut Self, filedata: *const ::core::ffi::c_void, filedatasize: u32) -> DWRITE_CONTAINER_TYPE,
     pub UnpackFontFile: unsafe extern "system" fn(this: *mut *mut Self, containertype: DWRITE_CONTAINER_TYPE, filedata: *const ::core::ffi::c_void, filedatasize: u32, unpackedfontstream: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDWriteFactory5 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2509093274, data2: 48682, data3: 20233, data4: [175, 125, 101, 24, 152, 3, 209, 211] };
 }
 #[repr(C)]
 pub struct IDWriteFactory6 {
@@ -2185,6 +2218,9 @@ pub struct IDWriteFactory6 {
     pub CreateFontSetBuilder3: unsafe extern "system" fn(this: *mut *mut Self, fontsetbuilder: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub CreateTextFormat2: unsafe extern "system" fn(this: *mut *mut Self, fontfamilyname: ::windows_sys::core::PCWSTR, fontcollection: *mut ::core::ffi::c_void, fontaxisvalues: *const DWRITE_FONT_AXIS_VALUE, fontaxisvaluecount: u32, fontsize: f32, localename: ::windows_sys::core::PCWSTR, textformat: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDWriteFactory6 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4084485504, data2: 8695, data3: 17131, data4: [179, 93, 153, 91, 199, 47, 194, 35] };
+}
 #[repr(C)]
 pub struct IDWriteFactory7 {
     pub base__: IDWriteFactory6,
@@ -2196,6 +2232,9 @@ pub struct IDWriteFactory7 {
     pub GetSystemFontCollection4: unsafe extern "system" fn(this: *mut *mut Self, includedownloadablefonts: super::super::Foundation::BOOL, fontfamilymodel: DWRITE_FONT_FAMILY_MODEL, fontcollection: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetSystemFontCollection4: usize,
+}
+impl ::windows_sys::core::Interface for IDWriteFactory7 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 902881459, data2: 36982, data3: 19758, data4: [160, 22, 169, 27, 86, 138, 6, 180] };
 }
 #[repr(C)]
 pub struct IDWriteFont {
@@ -2221,6 +2260,9 @@ pub struct IDWriteFont {
     HasCharacter: usize,
     pub CreateFontFace: unsafe extern "system" fn(this: *mut *mut Self, fontface: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDWriteFont {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2899404438, data2: 35860, data3: 20317, data4: [135, 126, 254, 63, 193, 211, 39, 55] };
+}
 #[repr(C)]
 pub struct IDWriteFont1 {
     pub base__: IDWriteFont,
@@ -2235,6 +2277,9 @@ pub struct IDWriteFont1 {
     #[cfg(not(feature = "Win32_Foundation"))]
     IsMonospacedFont: usize,
 }
+impl ::windows_sys::core::Interface for IDWriteFont1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2899404438, data2: 35860, data3: 20317, data4: [135, 126, 254, 63, 193, 211, 39, 56] };
+}
 #[repr(C)]
 pub struct IDWriteFont2 {
     pub base__: IDWriteFont1,
@@ -2242,6 +2287,9 @@ pub struct IDWriteFont2 {
     pub IsColorFont: unsafe extern "system" fn(this: *mut *mut Self) -> super::super::Foundation::BOOL,
     #[cfg(not(feature = "Win32_Foundation"))]
     IsColorFont: usize,
+}
+impl ::windows_sys::core::Interface for IDWriteFont2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 695504598, data2: 35996, data3: 19050, data4: [190, 11, 217, 18, 232, 83, 137, 68] };
 }
 #[repr(C)]
 pub struct IDWriteFont3 {
@@ -2258,6 +2306,9 @@ pub struct IDWriteFont3 {
     HasCharacter2: usize,
     pub GetLocality: unsafe extern "system" fn(this: *mut *mut Self) -> DWRITE_LOCALITY,
 }
+impl ::windows_sys::core::Interface for IDWriteFont3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 695504598, data2: 35996, data3: 19050, data4: [190, 11, 217, 18, 232, 83, 137, 68] };
+}
 #[repr(C)]
 pub struct IDWriteFontCollection {
     pub base__: ::windows_sys::core::IUnknown,
@@ -2269,11 +2320,17 @@ pub struct IDWriteFontCollection {
     FindFamilyName: usize,
     pub GetFontFromFontFace: unsafe extern "system" fn(this: *mut *mut Self, fontface: *mut ::core::ffi::c_void, font: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDWriteFontCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2823613954, data2: 16106, data3: 20206, data4: [168, 39, 135, 193, 160, 42, 15, 204] };
+}
 #[repr(C)]
 pub struct IDWriteFontCollection1 {
     pub base__: IDWriteFontCollection,
     pub GetFontSet: unsafe extern "system" fn(this: *mut *mut Self, fontset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetFontFamily2: unsafe extern "system" fn(this: *mut *mut Self, index: u32, fontfamily: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDWriteFontCollection1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1398296897, data2: 55800, data3: 16533, data4: [131, 33, 215, 60, 246, 189, 17, 108] };
 }
 #[repr(C)]
 pub struct IDWriteFontCollection2 {
@@ -2283,6 +2340,9 @@ pub struct IDWriteFontCollection2 {
     pub GetFontFamilyModel: unsafe extern "system" fn(this: *mut *mut Self) -> DWRITE_FONT_FAMILY_MODEL,
     pub GetFontSet2: unsafe extern "system" fn(this: *mut *mut Self, fontset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDWriteFontCollection2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1363163590, data2: 17943, data3: 16484, data4: [191, 139, 146, 234, 131, 229, 6, 224] };
+}
 #[repr(C)]
 pub struct IDWriteFontCollection3 {
     pub base__: IDWriteFontCollection2,
@@ -2291,15 +2351,24 @@ pub struct IDWriteFontCollection3 {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetExpirationEvent: usize,
 }
+impl ::windows_sys::core::Interface for IDWriteFontCollection3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2765116838, data2: 63971, data3: 20005, data4: [147, 183, 158, 48, 159, 58, 248, 233] };
+}
 #[repr(C)]
 pub struct IDWriteFontCollectionLoader {
     pub base__: ::windows_sys::core::IUnknown,
     pub CreateEnumeratorFromKey: unsafe extern "system" fn(this: *mut *mut Self, factory: *mut ::core::ffi::c_void, collectionkey: *const ::core::ffi::c_void, collectionkeysize: u32, fontfileenumerator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDWriteFontCollectionLoader {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3433636068, data2: 21232, data3: 18731, data4: [191, 168, 41, 199, 46, 224, 164, 104] };
+}
 #[repr(C)]
 pub struct IDWriteFontDownloadListener {
     pub base__: ::windows_sys::core::IUnknown,
     pub DownloadCompleted: unsafe extern "system" fn(this: *mut *mut Self, downloadqueue: *mut ::core::ffi::c_void, context: *mut ::core::ffi::c_void, downloadresult: ::windows_sys::core::HRESULT),
+}
+impl ::windows_sys::core::Interface for IDWriteFontDownloadListener {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2960123321, data2: 17388, data3: 17299, data4: [136, 27, 219, 228, 220, 114, 253, 167] };
 }
 #[repr(C)]
 pub struct IDWriteFontDownloadQueue {
@@ -2313,6 +2382,9 @@ pub struct IDWriteFontDownloadQueue {
     pub BeginDownload: unsafe extern "system" fn(this: *mut *mut Self, context: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub CancelDownload: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub GetGenerationCount: unsafe extern "system" fn(this: *mut *mut Self) -> u64,
+}
+impl ::windows_sys::core::Interface for IDWriteFontDownloadQueue {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3072221266, data2: 23274, data3: 20387, data4: [131, 46, 246, 13, 67, 31, 126, 145] };
 }
 #[repr(C)]
 pub struct IDWriteFontFace {
@@ -2347,6 +2419,9 @@ pub struct IDWriteFontFace {
     pub GetGdiCompatibleGlyphMetrics: unsafe extern "system" fn(this: *mut *mut Self, emsize: f32, pixelsperdip: f32, transform: *const DWRITE_MATRIX, usegdinatural: super::super::Foundation::BOOL, glyphindices: *const u16, glyphcount: u32, glyphmetrics: *mut DWRITE_GLYPH_METRICS, issideways: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetGdiCompatibleGlyphMetrics: usize,
+}
+impl ::windows_sys::core::Interface for IDWriteFontFace {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1598652493, data2: 28708, data3: 19779, data4: [191, 169, 210, 89, 132, 245, 56, 73] };
 }
 #[repr(C)]
 pub struct IDWriteFontFace1 {
@@ -2388,6 +2463,9 @@ pub struct IDWriteFontFace1 {
     #[cfg(not(feature = "Win32_Foundation"))]
     HasVerticalGlyphVariants: usize,
 }
+impl ::windows_sys::core::Interface for IDWriteFontFace1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2803826100, data2: 40923, data3: 18488, data4: [173, 144, 207, 195, 190, 140, 61, 175] };
+}
 #[repr(C)]
 pub struct IDWriteFontFace2 {
     pub base__: IDWriteFontFace1,
@@ -2402,6 +2480,9 @@ pub struct IDWriteFontFace2 {
     pub GetRecommendedRenderingMode3: unsafe extern "system" fn(this: *mut *mut Self, fontemsize: f32, dpix: f32, dpiy: f32, transform: *const DWRITE_MATRIX, issideways: super::super::Foundation::BOOL, outlinethreshold: DWRITE_OUTLINE_THRESHOLD, measuringmode: DWRITE_MEASURING_MODE, renderingparams: *mut ::core::ffi::c_void, renderingmode: *mut DWRITE_RENDERING_MODE, gridfitmode: *mut DWRITE_GRID_FIT_MODE) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetRecommendedRenderingMode3: usize,
+}
+impl ::windows_sys::core::Interface for IDWriteFontFace2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3635898623, data2: 25788, data3: 20070, data4: [152, 43, 236, 142, 135, 246, 147, 247] };
 }
 #[repr(C)]
 pub struct IDWriteFontFace3 {
@@ -2442,6 +2523,9 @@ pub struct IDWriteFontFace3 {
     #[cfg(not(feature = "Win32_Foundation"))]
     AreGlyphsLocal: usize,
 }
+impl ::windows_sys::core::Interface for IDWriteFontFace3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3548214680, data2: 2494, data3: 16930, data4: [162, 54, 32, 129, 52, 28, 193, 242] };
+}
 #[repr(C)]
 pub struct IDWriteFontFace4 {
     pub base__: IDWriteFontFace3,
@@ -2452,6 +2536,9 @@ pub struct IDWriteFontFace4 {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct2D_Common")))]
     GetGlyphImageData: usize,
     pub ReleaseGlyphImageData: unsafe extern "system" fn(this: *mut *mut Self, glyphdatacontext: *mut ::core::ffi::c_void),
+}
+impl ::windows_sys::core::Interface for IDWriteFontFace4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 670214404, data2: 20152, data3: 17437, data4: [150, 120, 5, 99, 245, 62, 62, 47] };
 }
 #[repr(C)]
 pub struct IDWriteFontFace5 {
@@ -2468,11 +2555,17 @@ pub struct IDWriteFontFace5 {
     #[cfg(not(feature = "Win32_Foundation"))]
     Equals: usize,
 }
+impl ::windows_sys::core::Interface for IDWriteFontFace5 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2565862309, data2: 46695, data3: 18330, data4: [177, 69, 226, 250, 91, 159, 220, 41] };
+}
 #[repr(C)]
 pub struct IDWriteFontFace6 {
     pub base__: IDWriteFontFace5,
     pub GetFamilyNames2: unsafe extern "system" fn(this: *mut *mut Self, fontfamilymodel: DWRITE_FONT_FAMILY_MODEL, names: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetFaceNames2: unsafe extern "system" fn(this: *mut *mut Self, fontfamilymodel: DWRITE_FONT_FAMILY_MODEL, names: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDWriteFontFace6 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3299999259, data2: 28292, data3: 18389, data4: [181, 76, 165, 151, 152, 27, 6, 173] };
 }
 #[repr(C)]
 pub struct IDWriteFontFaceReference {
@@ -2498,6 +2591,9 @@ pub struct IDWriteFontFaceReference {
     pub EnqueueGlyphDownloadRequest: unsafe extern "system" fn(this: *mut *mut Self, glyphindices: *const u16, glyphcount: u32) -> ::windows_sys::core::HRESULT,
     pub EnqueueFileFragmentDownloadRequest: unsafe extern "system" fn(this: *mut *mut Self, fileoffset: u64, fragmentsize: u64) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDWriteFontFaceReference {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1585424330, data2: 56803, data3: 16972, data4: [137, 240, 159, 205, 111, 237, 88, 205] };
+}
 #[repr(C)]
 pub struct IDWriteFontFaceReference1 {
     pub base__: IDWriteFontFaceReference,
@@ -2505,15 +2601,24 @@ pub struct IDWriteFontFaceReference1 {
     pub GetFontAxisValueCount: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
     pub GetFontAxisValues: unsafe extern "system" fn(this: *mut *mut Self, fontaxisvalues: *mut DWRITE_FONT_AXIS_VALUE, fontaxisvaluecount: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDWriteFontFaceReference1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3229744759, data2: 12241, data3: 16812, data4: [165, 163, 52, 152, 60, 75, 166, 26] };
+}
 #[repr(C)]
 pub struct IDWriteFontFallback {
     pub base__: ::windows_sys::core::IUnknown,
     pub MapCharacters: unsafe extern "system" fn(this: *mut *mut Self, analysissource: *mut ::core::ffi::c_void, textposition: u32, textlength: u32, basefontcollection: *mut ::core::ffi::c_void, basefamilyname: ::windows_sys::core::PCWSTR, baseweight: DWRITE_FONT_WEIGHT, basestyle: DWRITE_FONT_STYLE, basestretch: DWRITE_FONT_STRETCH, mappedlength: *mut u32, mappedfont: *mut *mut ::core::ffi::c_void, scale: *mut f32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDWriteFontFallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4020242681, data2: 63393, data3: 18623, data4: [176, 92, 242, 36, 113, 60, 192, 255] };
+}
 #[repr(C)]
 pub struct IDWriteFontFallback1 {
     pub base__: IDWriteFontFallback,
     pub MapCharacters2: unsafe extern "system" fn(this: *mut *mut Self, analysissource: *mut ::core::ffi::c_void, textposition: u32, textlength: u32, basefontcollection: *mut ::core::ffi::c_void, basefamilyname: ::windows_sys::core::PCWSTR, fontaxisvalues: *const DWRITE_FONT_AXIS_VALUE, fontaxisvaluecount: u32, mappedlength: *mut u32, scale: *mut f32, mappedfontface: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDWriteFontFallback1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 597121437, data2: 56589, data3: 18049, data4: [189, 106, 244, 243, 30, 170, 222, 119] };
 }
 #[repr(C)]
 pub struct IDWriteFontFallbackBuilder {
@@ -2522,12 +2627,18 @@ pub struct IDWriteFontFallbackBuilder {
     pub AddMappings: unsafe extern "system" fn(this: *mut *mut Self, fontfallback: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub CreateFontFallback: unsafe extern "system" fn(this: *mut *mut Self, fontfallback: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDWriteFontFallbackBuilder {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4253560070, data2: 35514, data3: 20408, data4: [184, 73, 139, 232, 183, 62, 20, 222] };
+}
 #[repr(C)]
 pub struct IDWriteFontFamily {
     pub base__: IDWriteFontList,
     pub GetFamilyNames: unsafe extern "system" fn(this: *mut *mut Self, names: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetFirstMatchingFont: unsafe extern "system" fn(this: *mut *mut Self, weight: DWRITE_FONT_WEIGHT, stretch: DWRITE_FONT_STRETCH, style: DWRITE_FONT_STYLE, matchingfont: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetMatchingFonts: unsafe extern "system" fn(this: *mut *mut Self, weight: DWRITE_FONT_WEIGHT, stretch: DWRITE_FONT_STRETCH, style: DWRITE_FONT_STYLE, matchingfonts: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDWriteFontFamily {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3659585775, data2: 33066, data3: 19523, data4: [152, 2, 98, 236, 74, 189, 122, 221] };
 }
 #[repr(C)]
 pub struct IDWriteFontFamily1 {
@@ -2536,11 +2647,17 @@ pub struct IDWriteFontFamily1 {
     pub GetFont2: unsafe extern "system" fn(this: *mut *mut Self, listindex: u32, font: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetFontFaceReference: unsafe extern "system" fn(this: *mut *mut Self, listindex: u32, fontfacereference: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDWriteFontFamily1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3659585775, data2: 33066, data3: 19523, data4: [152, 2, 98, 236, 74, 189, 122, 223] };
+}
 #[repr(C)]
 pub struct IDWriteFontFamily2 {
     pub base__: IDWriteFontFamily1,
     pub GetMatchingFonts2: unsafe extern "system" fn(this: *mut *mut Self, fontaxisvalues: *const DWRITE_FONT_AXIS_VALUE, fontaxisvaluecount: u32, matchingfonts: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetFontSet: unsafe extern "system" fn(this: *mut *mut Self, fontset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDWriteFontFamily2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1054121591, data2: 41880, data3: 16993, data4: [185, 207, 193, 38, 194, 19, 30, 243] };
 }
 #[repr(C)]
 pub struct IDWriteFontFile {
@@ -2552,6 +2669,9 @@ pub struct IDWriteFontFile {
     #[cfg(not(feature = "Win32_Foundation"))]
     Analyze: usize,
 }
+impl ::windows_sys::core::Interface for IDWriteFontFile {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1939703914, data2: 52981, data3: 18396, data4: [135, 105, 26, 139, 65, 190, 187, 176] };
+}
 #[repr(C)]
 pub struct IDWriteFontFileEnumerator {
     pub base__: ::windows_sys::core::IUnknown,
@@ -2561,10 +2681,16 @@ pub struct IDWriteFontFileEnumerator {
     MoveNext: usize,
     pub GetCurrentFontFile: unsafe extern "system" fn(this: *mut *mut Self, fontfile: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDWriteFontFileEnumerator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1920290889, data2: 24567, data3: 17245, data4: [131, 72, 75, 233, 124, 250, 108, 124] };
+}
 #[repr(C)]
 pub struct IDWriteFontFileLoader {
     pub base__: ::windows_sys::core::IUnknown,
     pub CreateStreamFromKey: unsafe extern "system" fn(this: *mut *mut Self, fontfilereferencekey: *const ::core::ffi::c_void, fontfilereferencekeysize: u32, fontfilestream: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDWriteFontFileLoader {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1920773454, data2: 54959, data3: 19614, data4: [138, 8, 214, 149, 177, 28, 170, 73] };
 }
 #[repr(C)]
 pub struct IDWriteFontFileStream {
@@ -2574,12 +2700,18 @@ pub struct IDWriteFontFileStream {
     pub GetFileSize: unsafe extern "system" fn(this: *mut *mut Self, filesize: *mut u64) -> ::windows_sys::core::HRESULT,
     pub GetLastWriteTime: unsafe extern "system" fn(this: *mut *mut Self, lastwritetime: *mut u64) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDWriteFontFileStream {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1833461246, data2: 2744, data3: 19857, data4: [143, 98, 93, 214, 190, 52, 163, 224] };
+}
 #[repr(C)]
 pub struct IDWriteFontList {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetFontCollection: unsafe extern "system" fn(this: *mut *mut Self, fontcollection: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetFontCount: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
     pub GetFont: unsafe extern "system" fn(this: *mut *mut Self, index: u32, font: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDWriteFontList {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 437093432, data2: 7575, data3: 20161, data4: [174, 249, 162, 251, 134, 237, 106, 203] };
 }
 #[repr(C)]
 pub struct IDWriteFontList1 {
@@ -2588,10 +2720,16 @@ pub struct IDWriteFontList1 {
     pub GetFont2: unsafe extern "system" fn(this: *mut *mut Self, listindex: u32, font: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetFontFaceReference: unsafe extern "system" fn(this: *mut *mut Self, listindex: u32, fontfacereference: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDWriteFontList1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3659585775, data2: 33066, data3: 19523, data4: [152, 2, 98, 236, 74, 189, 122, 222] };
+}
 #[repr(C)]
 pub struct IDWriteFontList2 {
     pub base__: IDWriteFontList1,
     pub GetFontSet: unsafe extern "system" fn(this: *mut *mut Self, fontset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDWriteFontList2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3228973620, data2: 30639, data3: 17498, data4: [183, 53, 8, 195, 123, 10, 91, 245] };
 }
 #[repr(C)]
 pub struct IDWriteFontResource {
@@ -2611,6 +2749,9 @@ pub struct IDWriteFontResource {
     HasVariations: usize,
     pub CreateFontFace: unsafe extern "system" fn(this: *mut *mut Self, fontsimulations: DWRITE_FONT_SIMULATIONS, fontaxisvalues: *const DWRITE_FONT_AXIS_VALUE, fontaxisvaluecount: u32, fontface: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub CreateFontFaceReference: unsafe extern "system" fn(this: *mut *mut Self, fontsimulations: DWRITE_FONT_SIMULATIONS, fontaxisvalues: *const DWRITE_FONT_AXIS_VALUE, fontaxisvaluecount: u32, fontfacereference: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDWriteFontResource {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 528497270, data2: 26737, data3: 18664, data4: [152, 127, 185, 117, 85, 28, 80, 242] };
 }
 #[repr(C)]
 pub struct IDWriteFontSet {
@@ -2634,6 +2775,9 @@ pub struct IDWriteFontSet {
     pub GetPropertyOccurrenceCount: unsafe extern "system" fn(this: *mut *mut Self, property: *const DWRITE_FONT_PROPERTY, propertyoccurrencecount: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetMatchingFonts: unsafe extern "system" fn(this: *mut *mut Self, familyname: ::windows_sys::core::PCWSTR, fontweight: DWRITE_FONT_WEIGHT, fontstretch: DWRITE_FONT_STRETCH, fontstyle: DWRITE_FONT_STYLE, filteredset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetMatchingFonts2: unsafe extern "system" fn(this: *mut *mut Self, properties: *const DWRITE_FONT_PROPERTY, propertycount: u32, filteredset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDWriteFontSet {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1398296897, data2: 55800, data3: 16533, data4: [131, 33, 215, 60, 246, 189, 17, 107] };
 }
 #[repr(C)]
 pub struct IDWriteFontSet1 {
@@ -2664,6 +2808,9 @@ pub struct IDWriteFontSet1 {
     pub CreateFontFace: unsafe extern "system" fn(this: *mut *mut Self, listindex: u32, fontface: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetFontLocality: unsafe extern "system" fn(this: *mut *mut Self, listindex: u32) -> DWRITE_LOCALITY,
 }
+impl ::windows_sys::core::Interface for IDWriteFontSet1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2124405381, data2: 27794, data3: 16467, data4: [188, 71, 122, 227, 83, 13, 180, 211] };
+}
 #[repr(C)]
 pub struct IDWriteFontSet2 {
     pub base__: IDWriteFontSet1,
@@ -2672,12 +2819,18 @@ pub struct IDWriteFontSet2 {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetExpirationEvent: usize,
 }
+impl ::windows_sys::core::Interface for IDWriteFontSet2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3699289369, data2: 58700, data3: 17327, data4: [178, 218, 78, 43, 121, 186, 63, 127] };
+}
 #[repr(C)]
 pub struct IDWriteFontSet3 {
     pub base__: IDWriteFontSet2,
     pub GetFontSourceType: unsafe extern "system" fn(this: *mut *mut Self, fontindex: u32) -> DWRITE_FONT_SOURCE_TYPE,
     pub GetFontSourceNameLength: unsafe extern "system" fn(this: *mut *mut Self, listindex: u32) -> u32,
     pub GetFontSourceName: unsafe extern "system" fn(this: *mut *mut Self, listindex: u32, stringbuffer: ::windows_sys::core::PWSTR, stringbuffersize: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDWriteFontSet3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2080849650, data2: 42996, data3: 16453, data4: [140, 50, 138, 184, 174, 100, 15, 144] };
 }
 #[repr(C)]
 pub struct IDWriteFontSetBuilder {
@@ -2687,16 +2840,25 @@ pub struct IDWriteFontSetBuilder {
     pub AddFontSet: unsafe extern "system" fn(this: *mut *mut Self, fontset: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub CreateFontSet: unsafe extern "system" fn(this: *mut *mut Self, fontset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDWriteFontSetBuilder {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 795093758, data2: 40040, data3: 20288, data4: [184, 190, 69, 116, 1, 175, 203, 61] };
+}
 #[repr(C)]
 pub struct IDWriteFontSetBuilder1 {
     pub base__: IDWriteFontSetBuilder,
     pub AddFontFile: unsafe extern "system" fn(this: *mut *mut Self, fontfile: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDWriteFontSetBuilder1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1073181023, data2: 15580, data3: 19910, data4: [155, 114, 236, 86, 33, 220, 202, 253] };
 }
 #[repr(C)]
 pub struct IDWriteFontSetBuilder2 {
     pub base__: IDWriteFontSetBuilder1,
     pub AddFont: unsafe extern "system" fn(this: *mut *mut Self, fontfile: *mut ::core::ffi::c_void, fontfaceindex: u32, fontsimulations: DWRITE_FONT_SIMULATIONS, fontaxisvalues: *const DWRITE_FONT_AXIS_VALUE, fontaxisvaluecount: u32, fontaxisranges: *const DWRITE_FONT_AXIS_RANGE, fontaxisrangecount: u32, properties: *const DWRITE_FONT_PROPERTY, propertycount: u32) -> ::windows_sys::core::HRESULT,
     pub AddFontFile2: unsafe extern "system" fn(this: *mut *mut Self, filepath: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDWriteFontSetBuilder2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3998983698, data2: 45361, data3: 17980, data4: [143, 79, 49, 137, 185, 64, 30, 69] };
 }
 #[repr(C)]
 pub struct IDWriteGdiInterop {
@@ -2722,6 +2884,9 @@ pub struct IDWriteGdiInterop {
     #[cfg(not(feature = "Win32_Graphics_Gdi"))]
     CreateBitmapRenderTarget: usize,
 }
+impl ::windows_sys::core::Interface for IDWriteGdiInterop {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 517837969, data2: 38995, data3: 17049, data4: [137, 143, 100, 50, 152, 59, 111, 58] };
+}
 #[repr(C)]
 pub struct IDWriteGdiInterop1 {
     pub base__: IDWriteGdiInterop,
@@ -2742,6 +2907,9 @@ pub struct IDWriteGdiInterop1 {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi")))]
     GetMatchingFontsByLOGFONT: usize,
 }
+impl ::windows_sys::core::Interface for IDWriteGdiInterop1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1163312752, data2: 15037, data3: 20336, data4: [144, 190, 66, 23, 128, 166, 245, 21] };
+}
 #[repr(C)]
 pub struct IDWriteGlyphRunAnalysis {
     pub base__: ::windows_sys::core::IUnknown,
@@ -2755,11 +2923,17 @@ pub struct IDWriteGlyphRunAnalysis {
     CreateAlphaTexture: usize,
     pub GetAlphaBlendParams: unsafe extern "system" fn(this: *mut *mut Self, renderingparams: *mut ::core::ffi::c_void, blendgamma: *mut f32, blendenhancedcontrast: *mut f32, blendcleartypelevel: *mut f32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDWriteGlyphRunAnalysis {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2107104247, data2: 57477, data3: 17108, data4: [129, 227, 106, 136, 59, 222, 209, 24] };
+}
 #[repr(C)]
 pub struct IDWriteInMemoryFontFileLoader {
     pub base__: IDWriteFontFileLoader,
     pub CreateInMemoryFontFileReference: unsafe extern "system" fn(this: *mut *mut Self, factory: *mut ::core::ffi::c_void, fontdata: *const ::core::ffi::c_void, fontdatasize: u32, ownerobject: *mut ::core::ffi::c_void, fontfile: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetFileCount: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
+}
+impl ::windows_sys::core::Interface for IDWriteInMemoryFontFileLoader {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3692048199, data2: 41261, data3: 19228, data4: [130, 45, 158, 17, 126, 51, 4, 63] };
 }
 #[repr(C)]
 pub struct IDWriteInlineObject {
@@ -2775,6 +2949,9 @@ pub struct IDWriteInlineObject {
     pub GetOverhangMetrics: unsafe extern "system" fn(this: *mut *mut Self, overhangs: *mut DWRITE_OVERHANG_METRICS) -> ::windows_sys::core::HRESULT,
     pub GetBreakConditions: unsafe extern "system" fn(this: *mut *mut Self, breakconditionbefore: *mut DWRITE_BREAK_CONDITION, breakconditionafter: *mut DWRITE_BREAK_CONDITION) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDWriteInlineObject {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2201615843, data2: 4207, data3: 18347, data4: [131, 115, 28, 98, 149, 235, 16, 179] };
+}
 #[repr(C)]
 pub struct IDWriteLocalFontFileLoader {
     pub base__: IDWriteFontFileLoader,
@@ -2784,6 +2961,9 @@ pub struct IDWriteLocalFontFileLoader {
     pub GetLastWriteTimeFromKey: unsafe extern "system" fn(this: *mut *mut Self, fontfilereferencekey: *const ::core::ffi::c_void, fontfilereferencekeysize: u32, lastwritetime: *mut super::super::Foundation::FILETIME) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetLastWriteTimeFromKey: usize,
+}
+impl ::windows_sys::core::Interface for IDWriteLocalFontFileLoader {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3000628204, data2: 51710, data3: 18961, data4: [162, 236, 216, 98, 8, 247, 192, 162] };
 }
 #[repr(C)]
 pub struct IDWriteLocalizedStrings {
@@ -2798,9 +2978,15 @@ pub struct IDWriteLocalizedStrings {
     pub GetStringLength: unsafe extern "system" fn(this: *mut *mut Self, index: u32, length: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetString: unsafe extern "system" fn(this: *mut *mut Self, index: u32, stringbuffer: ::windows_sys::core::PWSTR, size: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDWriteLocalizedStrings {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 136667657, data2: 2458, data3: 19252, data4: [184, 109, 194, 43, 17, 14, 119, 113] };
+}
 #[repr(C)]
 pub struct IDWriteNumberSubstitution {
     pub base__: ::windows_sys::core::IUnknown,
+}
+impl ::windows_sys::core::Interface for IDWriteNumberSubstitution {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 344480969, data2: 47792, data3: 20368, data4: [182, 237, 92, 54, 106, 44, 208, 61] };
 }
 #[repr(C)]
 pub struct IDWritePixelSnapping {
@@ -2812,12 +2998,18 @@ pub struct IDWritePixelSnapping {
     pub GetCurrentTransform: unsafe extern "system" fn(this: *mut *mut Self, clientdrawingcontext: *const ::core::ffi::c_void, transform: *mut DWRITE_MATRIX) -> ::windows_sys::core::HRESULT,
     pub GetPixelsPerDip: unsafe extern "system" fn(this: *mut *mut Self, clientdrawingcontext: *const ::core::ffi::c_void, pixelsperdip: *mut f32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDWritePixelSnapping {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3941835482, data2: 60660, data3: 19748, data4: [182, 68, 179, 79, 104, 66, 2, 75] };
+}
 #[repr(C)]
 pub struct IDWriteRemoteFontFileLoader {
     pub base__: IDWriteFontFileLoader,
     pub CreateRemoteStreamFromKey: unsafe extern "system" fn(this: *mut *mut Self, fontfilereferencekey: *const ::core::ffi::c_void, fontfilereferencekeysize: u32, fontfilestream: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetLocalityFromKey: unsafe extern "system" fn(this: *mut *mut Self, fontfilereferencekey: *const ::core::ffi::c_void, fontfilereferencekeysize: u32, locality: *mut DWRITE_LOCALITY) -> ::windows_sys::core::HRESULT,
     pub CreateFontFileReferenceFromUrl: unsafe extern "system" fn(this: *mut *mut Self, factory: *mut ::core::ffi::c_void, baseurl: ::windows_sys::core::PCWSTR, fontfileurl: ::windows_sys::core::PCWSTR, fontfile: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDWriteRemoteFontFileLoader {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1751420035, data2: 28382, data3: 18112, data4: [171, 70, 32, 8, 58, 136, 127, 222] };
 }
 #[repr(C)]
 pub struct IDWriteRemoteFontFileStream {
@@ -2830,6 +3022,9 @@ pub struct IDWriteRemoteFontFileStream {
     pub GetLocality: unsafe extern "system" fn(this: *mut *mut Self) -> DWRITE_LOCALITY,
     pub BeginDownload: unsafe extern "system" fn(this: *mut *mut Self, downloadoperationid: *const ::windows_sys::core::GUID, filefragments: *const DWRITE_FILE_FRAGMENT, fragmentcount: u32, asyncresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDWriteRemoteFontFileStream {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1303606650, data2: 11378, data3: 20185, data4: [178, 182, 26, 186, 190, 26, 255, 156] };
+}
 #[repr(C)]
 pub struct IDWriteRenderingParams {
     pub base__: ::windows_sys::core::IUnknown,
@@ -2839,20 +3034,32 @@ pub struct IDWriteRenderingParams {
     pub GetPixelGeometry: unsafe extern "system" fn(this: *mut *mut Self) -> DWRITE_PIXEL_GEOMETRY,
     pub GetRenderingMode: unsafe extern "system" fn(this: *mut *mut Self) -> DWRITE_RENDERING_MODE,
 }
+impl ::windows_sys::core::Interface for IDWriteRenderingParams {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 789423418, data2: 10973, data3: 18381, data4: [130, 238, 217, 236, 52, 104, 142, 117] };
+}
 #[repr(C)]
 pub struct IDWriteRenderingParams1 {
     pub base__: IDWriteRenderingParams,
     pub GetGrayscaleEnhancedContrast: unsafe extern "system" fn(this: *mut *mut Self) -> f32,
+}
+impl ::windows_sys::core::Interface for IDWriteRenderingParams1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2487303412, data2: 42748, data3: 16968, data4: [139, 80, 102, 116, 52, 143, 202, 211] };
 }
 #[repr(C)]
 pub struct IDWriteRenderingParams2 {
     pub base__: IDWriteRenderingParams1,
     pub GetGridFitMode: unsafe extern "system" fn(this: *mut *mut Self) -> DWRITE_GRID_FIT_MODE,
 }
+impl ::windows_sys::core::Interface for IDWriteRenderingParams2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4191621571, data2: 38775, data3: 16558, data4: [135, 232, 62, 90, 249, 191, 9, 72] };
+}
 #[repr(C)]
 pub struct IDWriteRenderingParams3 {
     pub base__: IDWriteRenderingParams2,
     pub GetRenderingMode1: unsafe extern "system" fn(this: *mut *mut Self) -> DWRITE_RENDERING_MODE1,
+}
+impl ::windows_sys::core::Interface for IDWriteRenderingParams3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3079818154, data2: 14619, data3: 16682, data4: [140, 92, 228, 76, 194, 216, 103, 220] };
 }
 #[repr(C)]
 pub struct IDWriteStringList {
@@ -2863,6 +3070,9 @@ pub struct IDWriteStringList {
     pub GetStringLength: unsafe extern "system" fn(this: *mut *mut Self, listindex: u32, length: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetString: unsafe extern "system" fn(this: *mut *mut Self, listindex: u32, stringbuffer: ::windows_sys::core::PWSTR, stringbuffersize: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDWriteStringList {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3488493888, data2: 4439, data3: 18378, data4: [139, 133, 49, 191, 207, 63, 45, 14] };
+}
 #[repr(C)]
 pub struct IDWriteTextAnalysisSink {
     pub base__: ::windows_sys::core::IUnknown,
@@ -2871,6 +3081,9 @@ pub struct IDWriteTextAnalysisSink {
     pub SetBidiLevel: unsafe extern "system" fn(this: *mut *mut Self, textposition: u32, textlength: u32, explicitlevel: u8, resolvedlevel: u8) -> ::windows_sys::core::HRESULT,
     pub SetNumberSubstitution: unsafe extern "system" fn(this: *mut *mut Self, textposition: u32, textlength: u32, numbersubstitution: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDWriteTextAnalysisSink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1477496132, data2: 3232, data3: 18177, data4: [179, 250, 190, 197, 24, 42, 228, 246] };
+}
 #[repr(C)]
 pub struct IDWriteTextAnalysisSink1 {
     pub base__: IDWriteTextAnalysisSink,
@@ -2878,6 +3091,9 @@ pub struct IDWriteTextAnalysisSink1 {
     pub SetGlyphOrientation: unsafe extern "system" fn(this: *mut *mut Self, textposition: u32, textlength: u32, glyphorientationangle: DWRITE_GLYPH_ORIENTATION_ANGLE, adjustedbidilevel: u8, issideways: super::super::Foundation::BOOL, isrighttoleft: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     SetGlyphOrientation: usize,
+}
+impl ::windows_sys::core::Interface for IDWriteTextAnalysisSink1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2967028128, data2: 34279, data3: 19851, data4: [159, 211, 92, 237, 153, 52, 72, 42] };
 }
 #[repr(C)]
 pub struct IDWriteTextAnalysisSource {
@@ -2888,10 +3104,16 @@ pub struct IDWriteTextAnalysisSource {
     pub GetLocaleName: unsafe extern "system" fn(this: *mut *mut Self, textposition: u32, textlength: *mut u32, localename: *mut *mut u16) -> ::windows_sys::core::HRESULT,
     pub GetNumberSubstitution: unsafe extern "system" fn(this: *mut *mut Self, textposition: u32, textlength: *mut u32, numbersubstitution: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDWriteTextAnalysisSource {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1754143320, data2: 20628, data3: 18376, data4: [173, 200, 251, 206, 166, 10, 233, 43] };
+}
 #[repr(C)]
 pub struct IDWriteTextAnalysisSource1 {
     pub base__: IDWriteTextAnalysisSource,
     pub GetVerticalGlyphOrientation: unsafe extern "system" fn(this: *mut *mut Self, textposition: u32, textlength: *mut u32, glyphorientation: *mut DWRITE_VERTICAL_GLYPH_ORIENTATION, bidilevel: *mut u8) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDWriteTextAnalysisSource1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1671232216, data2: 4020, data3: 19233, data4: [165, 138, 6, 121, 32, 18, 0, 9] };
 }
 #[repr(C)]
 pub struct IDWriteTextAnalyzer {
@@ -2936,6 +3158,9 @@ pub struct IDWriteTextAnalyzer {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetGdiCompatibleGlyphPlacements: usize,
 }
+impl ::windows_sys::core::Interface for IDWriteTextAnalyzer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3085309502, data2: 32582, data3: 17332, data4: [132, 179, 228, 230, 36, 156, 54, 93] };
+}
 #[repr(C)]
 pub struct IDWriteTextAnalyzer1 {
     pub base__: IDWriteTextAnalyzer,
@@ -2958,6 +3183,9 @@ pub struct IDWriteTextAnalyzer1 {
     pub JustifyGlyphAdvances: unsafe extern "system" fn(this: *mut *mut Self, linewidth: f32, glyphcount: u32, justificationopportunities: *const DWRITE_JUSTIFICATION_OPPORTUNITY, glyphadvances: *const f32, glyphoffsets: *const DWRITE_GLYPH_OFFSET, justifiedglyphadvances: *mut f32, justifiedglyphoffsets: *mut DWRITE_GLYPH_OFFSET) -> ::windows_sys::core::HRESULT,
     pub GetJustifiedGlyphs: unsafe extern "system" fn(this: *mut *mut Self, fontface: *mut ::core::ffi::c_void, fontemsize: f32, scriptanalysis: DWRITE_SCRIPT_ANALYSIS, textlength: u32, glyphcount: u32, maxglyphcount: u32, clustermap: *const u16, glyphindices: *const u16, glyphadvances: *const f32, justifiedglyphadvances: *const f32, justifiedglyphoffsets: *const DWRITE_GLYPH_OFFSET, glyphproperties: *const DWRITE_SHAPING_GLYPH_PROPERTIES, actualglyphcount: *mut u32, modifiedclustermap: *mut u16, modifiedglyphindices: *mut u16, modifiedglyphadvances: *mut f32, modifiedglyphoffsets: *mut DWRITE_GLYPH_OFFSET) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDWriteTextAnalyzer1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2161825792, data2: 57887, data3: 20099, data4: [150, 206, 191, 204, 229, 0, 219, 124] };
+}
 #[repr(C)]
 pub struct IDWriteTextAnalyzer2 {
     pub base__: IDWriteTextAnalyzer1,
@@ -2967,6 +3195,9 @@ pub struct IDWriteTextAnalyzer2 {
     GetGlyphOrientationTransform2: usize,
     pub GetTypographicFeatures: unsafe extern "system" fn(this: *mut *mut Self, fontface: *mut ::core::ffi::c_void, scriptanalysis: DWRITE_SCRIPT_ANALYSIS, localename: ::windows_sys::core::PCWSTR, maxtagcount: u32, actualtagcount: *mut u32, tags: *mut DWRITE_FONT_FEATURE_TAG) -> ::windows_sys::core::HRESULT,
     pub CheckTypographicFeature: unsafe extern "system" fn(this: *mut *mut Self, fontface: *mut ::core::ffi::c_void, scriptanalysis: DWRITE_SCRIPT_ANALYSIS, localename: ::windows_sys::core::PCWSTR, featuretag: DWRITE_FONT_FEATURE_TAG, glyphcount: u32, glyphindices: *const u16, featureapplies: *mut u8) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDWriteTextAnalyzer2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1429905395, data2: 22163, data3: 19959, data4: [181, 43, 116, 128, 111, 127, 46, 185] };
 }
 #[repr(C)]
 pub struct IDWriteTextFormat {
@@ -2997,6 +3228,9 @@ pub struct IDWriteTextFormat {
     pub GetLocaleNameLength: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
     pub GetLocaleName: unsafe extern "system" fn(this: *mut *mut Self, localename: ::windows_sys::core::PWSTR, namesize: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDWriteTextFormat {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2626709528, data2: 12759, data3: 20435, data4: [161, 81, 124, 94, 34, 93, 181, 90] };
+}
 #[repr(C)]
 pub struct IDWriteTextFormat1 {
     pub base__: IDWriteTextFormat,
@@ -3015,11 +3249,17 @@ pub struct IDWriteTextFormat1 {
     pub SetFontFallback: unsafe extern "system" fn(this: *mut *mut Self, fontfallback: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetFontFallback: unsafe extern "system" fn(this: *mut *mut Self, fontfallback: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDWriteTextFormat1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1595362121, data2: 3467, data3: 19707, data4: [139, 202, 241, 204, 233, 208, 108, 103] };
+}
 #[repr(C)]
 pub struct IDWriteTextFormat2 {
     pub base__: IDWriteTextFormat1,
     pub SetLineSpacing2: unsafe extern "system" fn(this: *mut *mut Self, linespacingoptions: *const DWRITE_LINE_SPACING) -> ::windows_sys::core::HRESULT,
     pub GetLineSpacing2: unsafe extern "system" fn(this: *mut *mut Self, linespacingoptions: *mut DWRITE_LINE_SPACING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDWriteTextFormat2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4135456477, data2: 40509, data3: 20172, data4: [140, 50, 65, 131, 37, 61, 254, 112] };
 }
 #[repr(C)]
 pub struct IDWriteTextFormat3 {
@@ -3029,6 +3269,9 @@ pub struct IDWriteTextFormat3 {
     pub GetFontAxisValues: unsafe extern "system" fn(this: *mut *mut Self, fontaxisvalues: *mut DWRITE_FONT_AXIS_VALUE, fontaxisvaluecount: u32) -> ::windows_sys::core::HRESULT,
     pub GetAutomaticFontAxes: unsafe extern "system" fn(this: *mut *mut Self) -> DWRITE_AUTOMATIC_FONT_AXES,
     pub SetAutomaticFontAxes: unsafe extern "system" fn(this: *mut *mut Self, automaticfontaxes: DWRITE_AUTOMATIC_FONT_AXES) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDWriteTextFormat3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1832605249, data2: 58704, data3: 17165, data4: [168, 91, 183, 191, 72, 169, 52, 39] };
 }
 #[repr(C)]
 pub struct IDWriteTextLayout {
@@ -3097,6 +3340,9 @@ pub struct IDWriteTextLayout {
     #[cfg(not(feature = "Win32_Foundation"))]
     HitTestTextRange: usize,
 }
+impl ::windows_sys::core::Interface for IDWriteTextLayout {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1400074295, data2: 27924, data3: 16651, data4: [155, 254, 11, 24, 43, 183, 9, 97] };
+}
 #[repr(C)]
 pub struct IDWriteTextLayout1 {
     pub base__: IDWriteTextLayout,
@@ -3110,6 +3356,9 @@ pub struct IDWriteTextLayout1 {
     GetPairKerning: usize,
     pub SetCharacterSpacing: unsafe extern "system" fn(this: *mut *mut Self, leadingspacing: f32, trailingspacing: f32, minimumadvancewidth: f32, textrange: DWRITE_TEXT_RANGE) -> ::windows_sys::core::HRESULT,
     pub GetCharacterSpacing: unsafe extern "system" fn(this: *mut *mut Self, currentposition: u32, leadingspacing: *mut f32, trailingspacing: *mut f32, minimumadvancewidth: *mut f32, textrange: *mut DWRITE_TEXT_RANGE) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDWriteTextLayout1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2422528034, data2: 32935, data3: 18012, data4: [169, 134, 223, 101, 247, 139, 143, 235] };
 }
 #[repr(C)]
 pub struct IDWriteTextLayout2 {
@@ -3130,6 +3379,9 @@ pub struct IDWriteTextLayout2 {
     pub SetFontFallback: unsafe extern "system" fn(this: *mut *mut Self, fontfallback: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetFontFallback: unsafe extern "system" fn(this: *mut *mut Self, fontfallback: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDWriteTextLayout2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 278118799, data2: 36190, data3: 17392, data4: [176, 100, 9, 23, 49, 27, 82, 94] };
+}
 #[repr(C)]
 pub struct IDWriteTextLayout3 {
     pub base__: IDWriteTextLayout2,
@@ -3141,6 +3393,9 @@ pub struct IDWriteTextLayout3 {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetLineMetrics2: usize,
 }
+impl ::windows_sys::core::Interface for IDWriteTextLayout3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 131976530, data2: 526, data3: 19944, data4: [172, 51, 108, 149, 61, 131, 249, 45] };
+}
 #[repr(C)]
 pub struct IDWriteTextLayout4 {
     pub base__: IDWriteTextLayout3,
@@ -3149,6 +3404,9 @@ pub struct IDWriteTextLayout4 {
     pub GetFontAxisValues: unsafe extern "system" fn(this: *mut *mut Self, currentposition: u32, fontaxisvalues: *mut DWRITE_FONT_AXIS_VALUE, fontaxisvaluecount: u32, textrange: *mut DWRITE_TEXT_RANGE) -> ::windows_sys::core::HRESULT,
     pub GetAutomaticFontAxes: unsafe extern "system" fn(this: *mut *mut Self) -> DWRITE_AUTOMATIC_FONT_AXES,
     pub SetAutomaticFontAxes: unsafe extern "system" fn(this: *mut *mut Self, automaticfontaxes: DWRITE_AUTOMATIC_FONT_AXES) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDWriteTextLayout4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 95010626, data2: 8767, data3: 17473, data4: [181, 251, 130, 99, 104, 95, 85, 233] };
 }
 #[repr(C)]
 pub struct IDWriteTextRenderer {
@@ -3164,6 +3422,9 @@ pub struct IDWriteTextRenderer {
     #[cfg(not(feature = "Win32_Foundation"))]
     DrawInlineObject: usize,
 }
+impl ::windows_sys::core::Interface for IDWriteTextRenderer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4018831669, data2: 23750, data3: 17918, data4: [136, 37, 197, 160, 114, 78, 184, 25] };
+}
 #[repr(C)]
 pub struct IDWriteTextRenderer1 {
     pub base__: IDWriteTextRenderer,
@@ -3178,10 +3439,16 @@ pub struct IDWriteTextRenderer1 {
     #[cfg(not(feature = "Win32_Foundation"))]
     DrawInlineObject2: usize,
 }
+impl ::windows_sys::core::Interface for IDWriteTextRenderer1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3554732340, data2: 8864, data3: 17022, data4: [170, 228, 125, 149, 116, 181, 157, 177] };
+}
 #[repr(C)]
 pub struct IDWriteTypography {
     pub base__: ::windows_sys::core::IUnknown,
     pub AddFontFeature: unsafe extern "system" fn(this: *mut *mut Self, fontfeature: DWRITE_FONT_FEATURE) -> ::windows_sys::core::HRESULT,
     pub GetFontFeatureCount: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
     pub GetFontFeature: unsafe extern "system" fn(this: *mut *mut Self, fontfeatureindex: u32, fontfeature: *mut DWRITE_FONT_FEATURE) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDWriteTypography {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1441861931, data2: 7618, data3: 19260, data4: [149, 65, 244, 104, 148, 237, 133, 182] };
 }

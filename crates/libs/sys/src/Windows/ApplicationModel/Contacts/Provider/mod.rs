@@ -37,6 +37,9 @@ pub struct IContactPickerUI {
     #[cfg(not(feature = "Foundation"))]
     RemoveContactRemoved: usize,
 }
+impl ::windows_sys::core::Interface for IContactPickerUI {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3805025126, data2: 53094, data3: 17348, data4: [169, 106, 165, 161, 18, 219, 71, 70] };
+}
 #[repr(C)]
 pub struct IContactPickerUI2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -46,8 +49,14 @@ pub struct IContactPickerUI2 {
     #[cfg(not(feature = "Foundation_Collections"))]
     DesiredFieldsWithContactFieldType: usize,
 }
+impl ::windows_sys::core::Interface for IContactPickerUI2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1849990696, data2: 31525, data3: 18841, data4: [155, 11, 135, 84, 0, 161, 232, 200] };
+}
 #[repr(C)]
 pub struct IContactRemovedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub Id: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IContactRemovedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1865761592, data2: 13058, data3: 19731, data4: [173, 141, 173, 204, 15, 249, 228, 124] };
 }

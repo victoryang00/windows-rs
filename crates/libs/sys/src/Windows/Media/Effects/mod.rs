@@ -50,10 +50,16 @@ pub struct IAudioCaptureEffectsManager {
     #[cfg(not(feature = "Foundation_Collections"))]
     GetAudioCaptureEffects: usize,
 }
+impl ::windows_sys::core::Interface for IAudioCaptureEffectsManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2407907953, data2: 909, data3: 17299, data4: [130, 152, 84, 1, 16, 96, 142, 239] };
+}
 #[repr(C)]
 pub struct IAudioEffect {
     pub base__: ::windows_sys::core::IInspectable,
     pub AudioEffectType: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut AudioEffectType) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAudioEffect {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 883620433, data2: 37383, data3: 16469, data4: [190, 147, 110, 87, 52, 168, 106, 228] };
 }
 #[repr(C)]
 pub struct IAudioEffectDefinition {
@@ -64,6 +70,9 @@ pub struct IAudioEffectDefinition {
     #[cfg(not(feature = "Foundation_Collections"))]
     Properties: usize,
 }
+impl ::windows_sys::core::Interface for IAudioEffectDefinition {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3839359348, data2: 32128, data3: 20339, data4: [144, 137, 227, 28, 157, 185, 194, 148] };
+}
 #[repr(C)]
 pub struct IAudioEffectDefinitionFactory {
     pub base__: ::windows_sys::core::IInspectable,
@@ -72,6 +81,9 @@ pub struct IAudioEffectDefinitionFactory {
     pub CreateWithProperties: unsafe extern "system" fn(this: *mut *mut Self, activatableclassid: ::windows_sys::core::HSTRING, props: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     CreateWithProperties: usize,
+}
+impl ::windows_sys::core::Interface for IAudioEffectDefinitionFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2384307782, data2: 59141, data3: 17901, data4: [138, 43, 252, 78, 79, 64, 90, 151] };
 }
 #[repr(C)]
 pub struct IAudioEffectsManagerStatics {
@@ -93,6 +105,9 @@ pub struct IAudioEffectsManagerStatics {
     #[cfg(not(feature = "Media_Capture"))]
     CreateAudioCaptureEffectsManagerWithMode: usize,
 }
+impl ::windows_sys::core::Interface for IAudioEffectsManagerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1715497988, data2: 34554, data3: 18380, data4: [163, 21, 244, 137, 216, 195, 254, 16] };
+}
 #[repr(C)]
 pub struct IAudioRenderEffectsManager {
     pub base__: ::windows_sys::core::IInspectable,
@@ -108,6 +123,9 @@ pub struct IAudioRenderEffectsManager {
     pub GetAudioRenderEffects: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     GetAudioRenderEffects: usize,
+}
+impl ::windows_sys::core::Interface for IAudioRenderEffectsManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1305053542, data2: 34641, data3: 17074, data4: [191, 203, 57, 202, 120, 100, 189, 71] };
 }
 #[cfg(feature = "deprecated")]
 #[repr(C)]
@@ -126,6 +144,10 @@ pub struct IAudioRenderEffectsManager2 {
     #[cfg(not(feature = "deprecated"))]
     ShowSettingsUI: usize,
 }
+#[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for IAudioRenderEffectsManager2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2823081225, data2: 24268, data3: 17587, data4: [187, 78, 29, 176, 114, 135, 19, 156] };
+}
 #[repr(C)]
 pub struct IBasicAudioEffect {
     pub base__: ::windows_sys::core::IInspectable,
@@ -141,6 +163,9 @@ pub struct IBasicAudioEffect {
     pub ProcessFrame: unsafe extern "system" fn(this: *mut *mut Self, context: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Close: unsafe extern "system" fn(this: *mut *mut Self, reason: MediaEffectClosedReason) -> ::windows_sys::core::HRESULT,
     pub DiscardQueuedFrames: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IBasicAudioEffect {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2349214803, data2: 27584, data3: 18616, data4: [169, 154, 75, 65, 85, 15, 19, 89] };
 }
 #[repr(C)]
 pub struct IBasicVideoEffect {
@@ -160,6 +185,9 @@ pub struct IBasicVideoEffect {
     pub Close: unsafe extern "system" fn(this: *mut *mut Self, reason: MediaEffectClosedReason) -> ::windows_sys::core::HRESULT,
     pub DiscardQueuedFrames: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IBasicVideoEffect {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2187511791, data2: 45920, data3: 16574, data4: [148, 155, 47, 244, 47, 243, 86, 147] };
+}
 #[repr(C)]
 pub struct ICompositeVideoFrameContext {
     pub base__: ::windows_sys::core::IInspectable,
@@ -174,11 +202,17 @@ pub struct ICompositeVideoFrameContext {
     #[cfg(not(all(feature = "Graphics_DirectX_Direct3D11", feature = "Media_Editing")))]
     GetOverlayForSurface: usize,
 }
+impl ::windows_sys::core::Interface for ICompositeVideoFrameContext {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1815085643, data2: 62740, data3: 17016, data4: [165, 247, 185, 24, 128, 73, 209, 16] };
+}
 #[repr(C)]
 pub struct IProcessAudioFrameContext {
     pub base__: ::windows_sys::core::IInspectable,
     pub InputFrame: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub OutputFrame: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IProcessAudioFrameContext {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1289300294, data2: 4642, data3: 18983, data4: [165, 134, 251, 62, 32, 39, 50, 85] };
 }
 #[repr(C)]
 pub struct IProcessVideoFrameContext {
@@ -186,11 +220,17 @@ pub struct IProcessVideoFrameContext {
     pub InputFrame: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub OutputFrame: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IProcessVideoFrameContext {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 661589547, data2: 25697, data3: 16414, data4: [186, 120, 15, 218, 214, 17, 78, 236] };
+}
 #[repr(C)]
 pub struct ISlowMotionEffectDefinition {
     pub base__: ::windows_sys::core::IInspectable,
     pub TimeStretchRate: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f64) -> ::windows_sys::core::HRESULT,
     pub SetTimeStretchRate: unsafe extern "system" fn(this: *mut *mut Self, value: f64) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISlowMotionEffectDefinition {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 889535696, data2: 5996, data3: 18275, data4: [130, 196, 27, 2, 219, 227, 23, 55] };
 }
 #[repr(C)]
 pub struct IVideoCompositor {
@@ -204,6 +244,9 @@ pub struct IVideoCompositor {
     pub Close: unsafe extern "system" fn(this: *mut *mut Self, reason: MediaEffectClosedReason) -> ::windows_sys::core::HRESULT,
     pub DiscardQueuedFrames: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IVideoCompositor {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2232464446, data2: 16908, data3: 16911, data4: [150, 199, 124, 152, 187, 161, 252, 85] };
+}
 #[repr(C)]
 pub struct IVideoCompositorDefinition {
     pub base__: ::windows_sys::core::IInspectable,
@@ -212,6 +255,9 @@ pub struct IVideoCompositorDefinition {
     pub Properties: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     Properties: usize,
+}
+impl ::windows_sys::core::Interface for IVideoCompositorDefinition {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2034677968, data2: 8208, data3: 19171, data4: [154, 178, 44, 239, 66, 237, 212, 210] };
 }
 #[repr(C)]
 pub struct IVideoCompositorDefinitionFactory {
@@ -222,6 +268,9 @@ pub struct IVideoCompositorDefinitionFactory {
     #[cfg(not(feature = "Foundation_Collections"))]
     CreateWithProperties: usize,
 }
+impl ::windows_sys::core::Interface for IVideoCompositorDefinitionFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1130822928, data2: 26808, data3: 19794, data4: [137, 182, 2, 169, 104, 204, 168, 153] };
+}
 #[repr(C)]
 pub struct IVideoEffectDefinition {
     pub base__: ::windows_sys::core::IInspectable,
@@ -231,6 +280,9 @@ pub struct IVideoEffectDefinition {
     #[cfg(not(feature = "Foundation_Collections"))]
     Properties: usize,
 }
+impl ::windows_sys::core::Interface for IVideoEffectDefinition {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 972262640, data2: 36111, data3: 20286, data4: [132, 252, 45, 70, 165, 41, 121, 67] };
+}
 #[repr(C)]
 pub struct IVideoEffectDefinitionFactory {
     pub base__: ::windows_sys::core::IInspectable,
@@ -239,6 +291,9 @@ pub struct IVideoEffectDefinitionFactory {
     pub CreateWithProperties: unsafe extern "system" fn(this: *mut *mut Self, activatableclassid: ::windows_sys::core::HSTRING, props: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     CreateWithProperties: usize,
+}
+impl ::windows_sys::core::Interface for IVideoEffectDefinitionFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2168691534, data2: 28211, data3: 17039, data4: [157, 33, 181, 170, 254, 247, 97, 124] };
 }
 #[repr(C)]
 pub struct IVideoTransformEffectDefinition {
@@ -292,10 +347,16 @@ pub struct IVideoTransformEffectDefinition {
     #[cfg(not(feature = "Media_Transcoding"))]
     ProcessingAlgorithm: usize,
 }
+impl ::windows_sys::core::Interface for IVideoTransformEffectDefinition {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2523183978, data2: 7846, data3: 19110, data4: [128, 116, 171, 232, 133, 30, 202, 226] };
+}
 #[repr(C)]
 pub struct IVideoTransformEffectDefinition2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub SphericalProjection: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IVideoTransformEffectDefinition2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4037544095, data2: 26312, data3: 18068, data4: [159, 217, 17, 54, 171, 247, 68, 74] };
 }
 #[repr(C)]
 pub struct IVideoTransformSphericalProjection {
@@ -328,6 +389,9 @@ pub struct IVideoTransformSphericalProjection {
     pub SetViewOrientation: unsafe extern "system" fn(this: *mut *mut Self, value: super::super::Foundation::Numerics::Quaternion) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Numerics"))]
     SetViewOrientation: usize,
+}
+impl ::windows_sys::core::Interface for IVideoTransformSphericalProjection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3477340656, data2: 39922, data3: 19513, data4: [159, 65, 224, 34, 81, 74, 132, 104] };
 }
 #[doc = "*Required features: `\"Media_Effects\"`*"]
 #[repr(transparent)]

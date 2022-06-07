@@ -38,10 +38,16 @@ pub struct ILampArrayBitmapEffect {
     #[cfg(not(feature = "Foundation"))]
     RemoveBitmapRequested: usize,
 }
+impl ::windows_sys::core::Interface for ILampArrayBitmapEffect {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 842588261, data2: 55415, data3: 17959, data4: [137, 229, 42, 136, 247, 5, 47, 166] };
+}
 #[repr(C)]
 pub struct ILampArrayBitmapEffectFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub CreateInstance: unsafe extern "system" fn(this: *mut *mut Self, lamparray: *mut ::core::ffi::c_void, lampIndexes_array_size: u32, lampindexes: *const i32, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ILampArrayBitmapEffectFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 325091472, data2: 58166, data3: 19599, data4: [144, 83, 169, 36, 7, 202, 123, 29] };
 }
 #[repr(C)]
 pub struct ILampArrayBitmapRequestedEventArgs {
@@ -54,6 +60,9 @@ pub struct ILampArrayBitmapRequestedEventArgs {
     pub UpdateBitmap: unsafe extern "system" fn(this: *mut *mut Self, bitmap: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Graphics_Imaging"))]
     UpdateBitmap: usize,
+}
+impl ::windows_sys::core::Interface for ILampArrayBitmapRequestedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3367284638, data2: 65123, data3: 19793, data4: [186, 189, 97, 157, 239, 180, 84, 186] };
 }
 #[repr(C)]
 pub struct ILampArrayBlinkEffect {
@@ -111,10 +120,16 @@ pub struct ILampArrayBlinkEffect {
     pub RepetitionMode: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut LampArrayRepetitionMode) -> ::windows_sys::core::HRESULT,
     pub SetRepetitionMode: unsafe extern "system" fn(this: *mut *mut Self, value: LampArrayRepetitionMode) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ILampArrayBlinkEffect {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3955176950, data2: 12229, data3: 19379, data4: [179, 195, 98, 33, 167, 104, 13, 19] };
+}
 #[repr(C)]
 pub struct ILampArrayBlinkEffectFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub CreateInstance: unsafe extern "system" fn(this: *mut *mut Self, lamparray: *mut ::core::ffi::c_void, lampIndexes_array_size: u32, lampindexes: *const i32, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ILampArrayBlinkEffectFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2275351959, data2: 40784, data3: 18866, data4: [165, 111, 1, 58, 160, 141, 85, 224] };
 }
 #[repr(C)]
 pub struct ILampArrayColorRampEffect {
@@ -146,10 +161,16 @@ pub struct ILampArrayColorRampEffect {
     pub CompletionBehavior: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut LampArrayEffectCompletionBehavior) -> ::windows_sys::core::HRESULT,
     pub SetCompletionBehavior: unsafe extern "system" fn(this: *mut *mut Self, value: LampArrayEffectCompletionBehavior) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ILampArrayColorRampEffect {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 721437751, data2: 16551, data3: 17198, data4: [160, 185, 13, 87, 12, 33, 83, 255] };
+}
 #[repr(C)]
 pub struct ILampArrayColorRampEffectFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub CreateInstance: unsafe extern "system" fn(this: *mut *mut Self, lamparray: *mut ::core::ffi::c_void, lampIndexes_array_size: u32, lampindexes: *const i32, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ILampArrayColorRampEffectFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1376506163, data2: 3188, data3: 19957, data4: [190, 167, 72, 153, 224, 38, 107, 15] };
 }
 #[repr(C)]
 pub struct ILampArrayCustomEffect {
@@ -179,16 +200,25 @@ pub struct ILampArrayCustomEffect {
     #[cfg(not(feature = "Foundation"))]
     RemoveUpdateRequested: usize,
 }
+impl ::windows_sys::core::Interface for ILampArrayCustomEffect {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3965161840, data2: 15412, data3: 18550, data4: [129, 139, 87, 101, 247, 139, 14, 228] };
+}
 #[repr(C)]
 pub struct ILampArrayCustomEffectFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub CreateInstance: unsafe extern "system" fn(this: *mut *mut Self, lamparray: *mut ::core::ffi::c_void, lampIndexes_array_size: u32, lampindexes: *const i32, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ILampArrayCustomEffectFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1756657485, data2: 25573, data3: 19184, data4: [165, 139, 62, 83, 91, 148, 232, 201] };
 }
 #[repr(C)]
 pub struct ILampArrayEffect {
     pub base__: ::windows_sys::core::IInspectable,
     pub ZIndex: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i32) -> ::windows_sys::core::HRESULT,
     pub SetZIndex: unsafe extern "system" fn(this: *mut *mut Self, value: i32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ILampArrayEffect {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 299128208, data2: 22523, data3: 17734, data4: [177, 206, 134, 49, 7, 247, 64, 223] };
 }
 #[repr(C)]
 pub struct ILampArrayEffectPlaylist {
@@ -205,6 +235,9 @@ pub struct ILampArrayEffectPlaylist {
     pub RepetitionMode: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut LampArrayRepetitionMode) -> ::windows_sys::core::HRESULT,
     pub SetRepetitionMode: unsafe extern "system" fn(this: *mut *mut Self, value: LampArrayRepetitionMode) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ILampArrayEffectPlaylist {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2112195582, data2: 28513, data3: 16643, data4: [152, 199, 214, 99, 47, 123, 145, 105] };
+}
 #[repr(C)]
 pub struct ILampArrayEffectPlaylistStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -220,6 +253,9 @@ pub struct ILampArrayEffectPlaylistStatics {
     pub PauseAll: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     PauseAll: usize,
+}
+impl ::windows_sys::core::Interface for ILampArrayEffectPlaylistStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4212466524, data2: 59957, data3: 19583, data4: [160, 22, 243, 191, 198, 166, 196, 125] };
 }
 #[repr(C)]
 pub struct ILampArraySolidEffect {
@@ -251,10 +287,16 @@ pub struct ILampArraySolidEffect {
     pub CompletionBehavior: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut LampArrayEffectCompletionBehavior) -> ::windows_sys::core::HRESULT,
     pub SetCompletionBehavior: unsafe extern "system" fn(this: *mut *mut Self, value: LampArrayEffectCompletionBehavior) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ILampArraySolidEffect {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1142915603, data2: 17356, data3: 19251, data4: [128, 235, 198, 221, 222, 125, 200, 237] };
+}
 #[repr(C)]
 pub struct ILampArraySolidEffectFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub CreateInstance: unsafe extern "system" fn(this: *mut *mut Self, lamparray: *mut ::core::ffi::c_void, lampIndexes_array_size: u32, lampindexes: *const i32, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ILampArraySolidEffectFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4167213868, data2: 21878, data3: 17217, data4: [150, 27, 174, 225, 241, 60, 249, 221] };
 }
 #[repr(C)]
 pub struct ILampArrayUpdateRequestedEventArgs {
@@ -279,6 +321,9 @@ pub struct ILampArrayUpdateRequestedEventArgs {
     pub SetColorsForIndices: unsafe extern "system" fn(this: *mut *mut Self, desiredColors_array_size: u32, desiredcolors: *const super::super::super::UI::Color, lampIndexes_array_size: u32, lampindexes: *const i32) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "UI"))]
     SetColorsForIndices: usize,
+}
+impl ::windows_sys::core::Interface for ILampArrayUpdateRequestedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1935019370, data2: 22378, data3: 18607, data4: [133, 57, 103, 255, 160, 171, 53, 22] };
 }
 pub type LampArrayBitmapEffect = *mut ::core::ffi::c_void;
 pub type LampArrayBitmapRequestedEventArgs = *mut ::core::ffi::c_void;

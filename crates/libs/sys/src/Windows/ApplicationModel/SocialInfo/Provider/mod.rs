@@ -40,6 +40,10 @@ pub struct ISocialDashboardItemUpdater {
     SetTargetUri: usize,
 }
 #[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for ISocialDashboardItemUpdater {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1021222345, data2: 18432, data3: 18125, data4: [134, 155, 25, 115, 236, 104, 91, 222] };
+}
+#[cfg(feature = "deprecated")]
 #[repr(C)]
 pub struct ISocialFeedUpdater {
     pub base__: ::windows_sys::core::IInspectable,
@@ -59,6 +63,10 @@ pub struct ISocialFeedUpdater {
     pub CommitAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
     CommitAsync: usize,
+}
+#[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for ISocialFeedUpdater {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2047609511, data2: 60809, data3: 19413, data4: [168, 217, 21, 244, 217, 134, 28, 16] };
 }
 #[cfg(feature = "deprecated")]
 #[repr(C)]
@@ -88,6 +96,10 @@ pub struct ISocialInfoProviderManagerStatics {
     pub DeprovisionAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
     DeprovisionAsync: usize,
+}
+#[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for ISocialInfoProviderManagerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 461956395, data2: 30599, data3: 18646, data4: [170, 18, 216, 232, 244, 122, 184, 90] };
 }
 pub type SocialDashboardItemUpdater = *mut ::core::ffi::c_void;
 pub type SocialFeedUpdater = *mut ::core::ffi::c_void;

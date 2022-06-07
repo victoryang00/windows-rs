@@ -13,15 +13,24 @@ pub struct IActivatedDeferral {
     pub base__: ::windows_sys::core::IInspectable,
     pub Complete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IActivatedDeferral {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3283949944, data2: 42033, data3: 18904, data4: [167, 106, 57, 90, 78, 3, 220, 243] };
+}
 #[repr(C)]
 pub struct IActivatedEventArgsDeferral {
     pub base__: ::windows_sys::core::IInspectable,
     pub ActivatedOperation: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IActivatedEventArgsDeferral {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3396165492, data2: 25538, data3: 17574, data4: [185, 123, 217, 160, 60, 32, 188, 155] };
+}
 #[repr(C)]
 pub struct IActivatedOperation {
     pub base__: ::windows_sys::core::IInspectable,
     pub GetDeferral: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IActivatedOperation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3063985340, data2: 50890, data3: 17149, data4: [152, 24, 113, 144, 78, 69, 254, 215] };
 }
 #[repr(C)]
 pub struct IHtmlPrintDocumentSource {
@@ -45,6 +54,9 @@ pub struct IHtmlPrintDocumentSource {
     pub PageRange: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub TrySetPageRange: unsafe extern "system" fn(this: *mut *mut Self, strpagerange: ::windows_sys::core::HSTRING, result__: *mut bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IHtmlPrintDocumentSource {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3467003546, data2: 3589, data3: 18042, data4: [171, 201, 54, 236, 29, 76, 220, 182] };
+}
 #[repr(C)]
 pub struct INewWebUIViewCreatedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
@@ -58,6 +70,9 @@ pub struct INewWebUIViewCreatedEventArgs {
     pub GetDeferral: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     GetDeferral: usize,
+}
+impl ::windows_sys::core::Interface for INewWebUIViewCreatedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3907105302, data2: 48683, data3: 19614, data4: [133, 231, 8, 49, 67, 236, 75, 231] };
 }
 #[repr(C)]
 pub struct IWebUIActivationStatics {
@@ -95,6 +110,9 @@ pub struct IWebUIActivationStatics {
     #[cfg(not(feature = "Foundation"))]
     RemoveNavigated: usize,
 }
+impl ::windows_sys::core::Interface for IWebUIActivationStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 890996413, data2: 17331, data3: 18475, data4: [133, 219, 53, 216, 123, 81, 122, 217] };
+}
 #[repr(C)]
 pub struct IWebUIActivationStatics2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -116,6 +134,9 @@ pub struct IWebUIActivationStatics2 {
     RemoveEnteredBackground: usize,
     pub EnablePrelaunch: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWebUIActivationStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3370682006, data2: 19832, data3: 19108, data4: [143, 6, 42, 158, 173, 198, 196, 10] };
+}
 #[repr(C)]
 pub struct IWebUIActivationStatics3 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -127,6 +148,9 @@ pub struct IWebUIActivationStatics3 {
     pub RequestRestartForUserAsync: unsafe extern "system" fn(this: *mut *mut Self, user: *mut ::core::ffi::c_void, launcharguments: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "ApplicationModel_Core", feature = "Foundation", feature = "System")))]
     RequestRestartForUserAsync: usize,
+}
+impl ::windows_sys::core::Interface for IWebUIActivationStatics3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2443949702, data2: 6901, data3: 17477, data4: [180, 159, 148, 89, 244, 15, 200, 222] };
 }
 #[repr(C)]
 pub struct IWebUIActivationStatics4 {
@@ -148,31 +172,49 @@ pub struct IWebUIActivationStatics4 {
     #[cfg(not(feature = "Foundation"))]
     RemoveBackgroundActivated: usize,
 }
+impl ::windows_sys::core::Interface for IWebUIActivationStatics4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1580799017, data2: 6207, data3: 18317, data4: [138, 37, 103, 248, 13, 3, 147, 91] };
+}
 #[repr(C)]
 pub struct IWebUIBackgroundTaskInstance {
     pub base__: ::windows_sys::core::IInspectable,
     pub Succeeded: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub SetSucceeded: unsafe extern "system" fn(this: *mut *mut Self, succeeded: bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWebUIBackgroundTaskInstance {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 603008037, data2: 58103, data3: 18241, data4: [188, 156, 57, 69, 149, 222, 36, 220] };
+}
 #[repr(C)]
 pub struct IWebUIBackgroundTaskInstanceStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub Current: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWebUIBackgroundTaskInstanceStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2625262225, data2: 6574, data3: 19619, data4: [185, 75, 254, 78, 199, 68, 167, 64] };
 }
 #[repr(C)]
 pub struct IWebUINavigatedDeferral {
     pub base__: ::windows_sys::core::IInspectable,
     pub Complete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWebUINavigatedDeferral {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3624149069, data2: 33567, data3: 18146, data4: [180, 50, 58, 252, 226, 17, 249, 98] };
+}
 #[repr(C)]
 pub struct IWebUINavigatedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub NavigatedOperation: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWebUINavigatedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2807579064, data2: 9369, data3: 16432, data4: [166, 157, 21, 210, 217, 207, 229, 36] };
+}
 #[repr(C)]
 pub struct IWebUINavigatedOperation {
     pub base__: ::windows_sys::core::IInspectable,
     pub GetDeferral: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWebUINavigatedOperation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2056675080, data2: 33154, data3: 19081, data4: [171, 103, 132, 146, 232, 117, 13, 75] };
 }
 #[repr(C)]
 pub struct IWebUIView {
@@ -197,6 +239,9 @@ pub struct IWebUIView {
     pub IgnoreApplicationContentUriRulesNavigationRestrictions: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub SetIgnoreApplicationContentUriRulesNavigationRestrictions: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWebUIView {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1736701519, data2: 21210, data3: 20439, data4: [190, 105, 142, 246, 40, 75, 66, 60] };
+}
 #[repr(C)]
 pub struct IWebUIViewStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -208,6 +253,9 @@ pub struct IWebUIViewStatics {
     pub CreateWithUriAsync: unsafe extern "system" fn(this: *mut *mut Self, uri: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     CreateWithUriAsync: usize,
+}
+impl ::windows_sys::core::Interface for IWebUIViewStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3046237800, data2: 36441, data3: 17657, data4: [136, 3, 27, 36, 201, 20, 157, 48] };
 }
 pub type LeavingBackgroundEventArgs = *mut ::core::ffi::c_void;
 pub type LeavingBackgroundEventHandler = *mut ::core::ffi::c_void;

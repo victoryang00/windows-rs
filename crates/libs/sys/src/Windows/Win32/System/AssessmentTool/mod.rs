@@ -10,6 +10,10 @@ pub struct IAccessibleWinSAT {
     pub base__: super::super::UI::Accessibility::IAccessible,
     pub SetAccessiblityData: unsafe extern "system" fn(this: *mut *mut Self, wsname: ::windows_sys::core::PCWSTR, wsvalue: ::windows_sys::core::PCWSTR, wsdesc: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
 }
+#[cfg(all(feature = "Win32_System_Com", feature = "Win32_UI_Accessibility"))]
+impl ::windows_sys::core::Interface for IAccessibleWinSAT {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 820380042, data2: 38056, data3: 20472, data4: [166, 154, 113, 182, 116, 19, 240, 123] };
+}
 #[repr(C)]
 pub struct IInitiateWinSATAssessment {
     pub base__: ::windows_sys::core::IUnknown,
@@ -22,6 +26,9 @@ pub struct IInitiateWinSATAssessment {
     #[cfg(not(feature = "Win32_Foundation"))]
     InitiateFormalAssessment: usize,
     pub CancelAssessment: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IInitiateWinSATAssessment {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3649305680, data2: 62911, data3: 18901, data4: [181, 237, 204, 203, 24, 170, 127, 193] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -36,6 +43,10 @@ pub struct IProvideWinSATAssessmentInfo {
     pub Description: unsafe extern "system" fn(this: *mut *mut Self, description: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     Description: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IProvideWinSATAssessmentInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 215073664, data2: 21203, data3: 18040, data4: [172, 111, 233, 41, 228, 128, 190, 158] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -56,6 +67,10 @@ pub struct IProvideWinSATResultsInfo {
     #[cfg(not(feature = "Win32_Foundation"))]
     RatingStateDesc: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IProvideWinSATResultsInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4164111709, data2: 22158, data3: 16501, data4: [135, 95, 157, 243, 65, 80, 102, 64] };
+}
 #[repr(C)]
 pub struct IProvideWinSATVisuals {
     pub base__: ::windows_sys::core::IUnknown,
@@ -63,6 +78,9 @@ pub struct IProvideWinSATVisuals {
     pub get_Bitmap: unsafe extern "system" fn(this: *mut *mut Self, bitmapsize: WINSAT_BITMAP_SIZE, state: WINSAT_ASSESSMENT_STATE, rating: f32, pbitmap: *mut super::super::Graphics::Gdi::HBITMAP) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Graphics_Gdi"))]
     get_Bitmap: usize,
+}
+impl ::windows_sys::core::Interface for IProvideWinSATVisuals {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2851384800, data2: 34586, data3: 17059, data4: [184, 19, 48, 120, 210, 81, 98, 201] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -73,10 +91,17 @@ pub struct IQueryAllWinSATAssessments {
     #[cfg(not(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     get_AllXML: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IQueryAllWinSATAssessments {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 193588509, data2: 25496, data3: 20458, data4: [135, 252, 86, 125, 141, 25, 23, 111] };
+}
 #[repr(C)]
 pub struct IQueryOEMWinSATCustomization {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetOEMPrePopulationInfo: unsafe extern "system" fn(this: *mut *mut Self, state: *mut WINSAT_OEM_DATA_TYPE) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IQueryOEMWinSATCustomization {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3164236447, data2: 44366, data3: 16910, data4: [153, 83, 179, 70, 113, 233, 223, 34] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -91,11 +116,18 @@ pub struct IQueryRecentWinSATAssessment {
     #[cfg(not(feature = "Win32_System_Com"))]
     Info: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IQueryRecentWinSATAssessment {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4172111135, data2: 15175, data3: 19420, data4: [147, 117, 124, 107, 29, 164, 236, 167] };
+}
 #[repr(C)]
 pub struct IWinSATInitiateEvents {
     pub base__: ::windows_sys::core::IUnknown,
     pub WinSATComplete: unsafe extern "system" fn(this: *mut *mut Self, hresult: ::windows_sys::core::HRESULT, strdescription: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
     pub WinSATUpdate: unsafe extern "system" fn(this: *mut *mut Self, ucurrenttick: u32, uticktotal: u32, strcurrentstate: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWinSATInitiateEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 640293144, data2: 47629, data3: 16853, data4: [146, 194, 250, 180, 99, 62, 231, 79] };
 }
 #[doc = "*Required features: `\"Win32_System_AssessmentTool\"`*"]
 pub type WINSAT_ASSESSMENT_STATE = i32;

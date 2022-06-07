@@ -60,6 +60,10 @@ pub struct INDClient {
     Close: usize,
 }
 #[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for INDClient {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1003911195, data2: 25016, data3: 18146, data4: [153, 165, 138, 188, 182, 185, 247, 214] };
+}
+#[cfg(feature = "deprecated")]
 #[repr(C)]
 pub struct INDClientFactory {
     pub base__: ::windows_sys::core::IInspectable,
@@ -67,6 +71,10 @@ pub struct INDClientFactory {
     pub CreateInstance: unsafe extern "system" fn(this: *mut *mut Self, downloadengine: *mut ::core::ffi::c_void, streamparser: *mut ::core::ffi::c_void, pmessenger: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "deprecated"))]
     CreateInstance: usize,
+}
+#[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for INDClientFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1045683554, data2: 65256, data3: 17695, data4: [176, 212, 247, 6, 204, 163, 224, 55] };
 }
 #[cfg(feature = "deprecated")]
 #[repr(C)]
@@ -86,6 +94,10 @@ pub struct INDClosedCaptionDataReceivedEventArgs {
     ClosedCaptionData: usize,
 }
 #[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for INDClosedCaptionDataReceivedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1194906271, data2: 49989, data3: 17993, data4: [132, 104, 184, 197, 252, 53, 113, 144] };
+}
+#[cfg(feature = "deprecated")]
 #[repr(C)]
 pub struct INDCustomData {
     pub base__: ::windows_sys::core::IInspectable,
@@ -99,6 +111,10 @@ pub struct INDCustomData {
     CustomData: usize,
 }
 #[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for INDCustomData {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4123725788, data2: 11529, data3: 20249, data4: [181, 225, 118, 160, 179, 238, 146, 103] };
+}
+#[cfg(feature = "deprecated")]
 #[repr(C)]
 pub struct INDCustomDataFactory {
     pub base__: ::windows_sys::core::IInspectable,
@@ -106,6 +122,10 @@ pub struct INDCustomDataFactory {
     pub CreateInstance: unsafe extern "system" fn(this: *mut *mut Self, customDataTypeIDBytes_array_size: u32, customdatatypeidbytes: *const u8, customDataBytes_array_size: u32, customdatabytes: *const u8, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "deprecated"))]
     CreateInstance: usize,
+}
+#[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for INDCustomDataFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3595830699, data2: 13348, data3: 18483, data4: [140, 154, 175, 95, 222, 178, 40, 114] };
 }
 #[cfg(feature = "deprecated")]
 #[repr(C)]
@@ -149,6 +169,10 @@ pub struct INDDownloadEngine {
     Notifier: usize,
 }
 #[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for INDDownloadEngine {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 757218661, data2: 50358, data3: 17464, data4: [141, 70, 185, 110, 109, 15, 178, 31] };
+}
+#[cfg(feature = "deprecated")]
 #[repr(C)]
 pub struct INDDownloadEngineNotifier {
     pub base__: ::windows_sys::core::IInspectable,
@@ -178,6 +202,10 @@ pub struct INDDownloadEngineNotifier {
     OnNetworkError: usize,
 }
 #[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for INDDownloadEngineNotifier {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3609244884, data2: 62648, data3: 17712, data4: [168, 9, 145, 147, 165, 113, 231, 252] };
+}
+#[cfg(feature = "deprecated")]
 #[repr(C)]
 pub struct INDLicenseFetchCompletedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
@@ -185,6 +213,10 @@ pub struct INDLicenseFetchCompletedEventArgs {
     pub ResponseCustomData: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "deprecated"))]
     ResponseCustomData: usize,
+}
+#[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for INDLicenseFetchCompletedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 518195738, data2: 4530, data3: 17752, data4: [136, 101, 227, 165, 22, 146, 37, 23] };
 }
 #[cfg(feature = "deprecated")]
 #[repr(C)]
@@ -208,6 +240,10 @@ pub struct INDLicenseFetchDescriptor {
     SetLicenseFetchChallengeCustomData: usize,
 }
 #[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for INDLicenseFetchDescriptor {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1419301690, data2: 59014, data3: 18741, data4: [165, 103, 124, 167, 122, 210, 15, 164] };
+}
+#[cfg(feature = "deprecated")]
 #[repr(C)]
 pub struct INDLicenseFetchDescriptorFactory {
     pub base__: ::windows_sys::core::IInspectable,
@@ -217,6 +253,10 @@ pub struct INDLicenseFetchDescriptorFactory {
     CreateInstance: usize,
 }
 #[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for INDLicenseFetchDescriptorFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3489862146, data2: 53164, data3: 20224, data4: [174, 106, 151, 175, 128, 184, 72, 242] };
+}
+#[cfg(feature = "deprecated")]
 #[repr(C)]
 pub struct INDLicenseFetchResult {
     pub base__: ::windows_sys::core::IInspectable,
@@ -224,6 +264,10 @@ pub struct INDLicenseFetchResult {
     pub ResponseCustomData: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "deprecated"))]
     ResponseCustomData: usize,
+}
+#[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for INDLicenseFetchResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 567514776, data2: 43618, data3: 17919, data4: [165, 255, 128, 55, 229, 67, 56, 37] };
 }
 #[cfg(feature = "deprecated")]
 #[repr(C)]
@@ -247,6 +291,10 @@ pub struct INDMessenger {
     SendLicenseFetchRequestAsync: usize,
 }
 #[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for INDMessenger {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3559782749, data2: 42843, data3: 18367, data4: [130, 73, 188, 131, 130, 13, 163, 138] };
+}
+#[cfg(feature = "deprecated")]
 #[repr(C)]
 pub struct INDProximityDetectionCompletedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
@@ -254,6 +302,10 @@ pub struct INDProximityDetectionCompletedEventArgs {
     pub ProximityDetectionRetryCount: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "deprecated"))]
     ProximityDetectionRetryCount: usize,
+}
+#[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for INDProximityDetectionCompletedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 712008488, data2: 55845, data3: 20364, data4: [158, 183, 93, 15, 195, 101, 139, 202] };
 }
 #[cfg(feature = "deprecated")]
 #[repr(C)]
@@ -277,6 +329,10 @@ pub struct INDRegistrationCompletedEventArgs {
     SetTransmitterCertificateAccepted: usize,
 }
 #[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for INDRegistrationCompletedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2654582349, data2: 43867, data3: 18693, data4: [172, 220, 120, 122, 119, 198, 55, 77] };
+}
+#[cfg(feature = "deprecated")]
 #[repr(C)]
 pub struct INDSendResult {
     pub base__: ::windows_sys::core::IInspectable,
@@ -284,6 +340,10 @@ pub struct INDSendResult {
     pub Response: unsafe extern "system" fn(this: *mut *mut Self, result_size__: *mut u32, result__: *mut *mut u8) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "deprecated"))]
     Response: usize,
+}
+#[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for INDSendResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3815265559, data2: 42372, data3: 18333, data4: [144, 183, 214, 137, 199, 191, 124, 128] };
 }
 #[cfg(feature = "deprecated")]
 #[repr(C)]
@@ -295,6 +355,10 @@ pub struct INDStartResult {
     MediaStreamSource: usize,
 }
 #[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for INDStartResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2046224750, data2: 62735, data3: 16405, data4: [139, 164, 194, 188, 52, 78, 189, 78] };
+}
+#[cfg(feature = "deprecated")]
 #[repr(C)]
 pub struct INDStorageFileHelper {
     pub base__: ::windows_sys::core::IInspectable,
@@ -302,6 +366,10 @@ pub struct INDStorageFileHelper {
     pub GetFileURLs: unsafe extern "system" fn(this: *mut *mut Self, file: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Foundation_Collections", feature = "Storage", feature = "deprecated")))]
     GetFileURLs: usize,
+}
+#[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for INDStorageFileHelper {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3639656184, data2: 37330, data3: 19783, data4: [163, 249, 234, 255, 78, 219, 114, 159] };
 }
 #[cfg(feature = "deprecated")]
 #[repr(C)]
@@ -329,6 +397,10 @@ pub struct INDStreamParser {
     Notifier: usize,
 }
 #[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for INDStreamParser {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3770327448, data2: 38806, data3: 16841, data4: [134, 149, 89, 67, 126, 103, 230, 106] };
+}
+#[cfg(feature = "deprecated")]
 #[repr(C)]
 pub struct INDStreamParserNotifier {
     pub base__: ::windows_sys::core::IInspectable,
@@ -350,6 +422,10 @@ pub struct INDStreamParserNotifier {
     OnBeginSetupDecryptor: usize,
 }
 #[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for INDStreamParserNotifier {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3244797136, data2: 11494, data3: 17004, data4: [172, 229, 94, 146, 117, 254, 167, 21] };
+}
+#[cfg(feature = "deprecated")]
 #[repr(C)]
 pub struct INDTCPMessengerFactory {
     pub base__: ::windows_sys::core::IInspectable,
@@ -357,6 +433,10 @@ pub struct INDTCPMessengerFactory {
     pub CreateInstance: unsafe extern "system" fn(this: *mut *mut Self, remotehostname: ::windows_sys::core::HSTRING, remotehostport: u32, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "deprecated"))]
     CreateInstance: usize,
+}
+#[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for INDTCPMessengerFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2111331582, data2: 7065, data3: 20328, data4: [143, 130, 129, 119, 247, 206, 223, 43] };
 }
 #[cfg(feature = "deprecated")]
 #[repr(C)]
@@ -407,6 +487,10 @@ pub struct INDTransmitterProperties {
     #[cfg(not(feature = "deprecated"))]
     ModelNumber: usize,
 }
+#[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for INDTransmitterProperties {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3845566243, data2: 44111, data3: 19164, data4: [140, 102, 79, 247, 194, 112, 45, 214] };
+}
 #[repr(C)]
 pub struct IPlayReadyContentHeader {
     pub base__: ::windows_sys::core::IInspectable,
@@ -427,11 +511,17 @@ pub struct IPlayReadyContentHeader {
     pub GetSerializedHeader: unsafe extern "system" fn(this: *mut *mut Self, result_size__: *mut u32, result__: *mut *mut u8) -> ::windows_sys::core::HRESULT,
     pub HeaderWithEmbeddedUpdates: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPlayReadyContentHeader {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2588117610, data2: 32588, data3: 17710, data4: [136, 189, 1, 72, 198, 56, 122, 44] };
+}
 #[repr(C)]
 pub struct IPlayReadyContentHeader2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub KeyIds: unsafe extern "system" fn(this: *mut *mut Self, result_size__: *mut u32, result__: *mut *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub KeyIdStrings: unsafe extern "system" fn(this: *mut *mut Self, result_size__: *mut u32, result__: *mut *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPlayReadyContentHeader2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 899447284, data2: 8576, data3: 18828, data4: [150, 91, 231, 84, 216, 117, 234, 178] };
 }
 #[repr(C)]
 pub struct IPlayReadyContentHeaderFactory {
@@ -446,6 +536,9 @@ pub struct IPlayReadyContentHeaderFactory {
     CreateInstanceFromComponents: usize,
     pub CreateInstanceFromPlayReadyHeader: unsafe extern "system" fn(this: *mut *mut Self, headerBytes_array_size: u32, headerbytes: *const u8, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPlayReadyContentHeaderFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3415722239, data2: 46936, data3: 18294, data4: [191, 1, 33, 122, 139, 81, 11, 44] };
+}
 #[repr(C)]
 pub struct IPlayReadyContentHeaderFactory2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -454,10 +547,16 @@ pub struct IPlayReadyContentHeaderFactory2 {
     #[cfg(not(feature = "Foundation"))]
     CreateInstanceFromComponents2: usize,
 }
+impl ::windows_sys::core::Interface for IPlayReadyContentHeaderFactory2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3508772085, data2: 44653, data3: 18296, data4: [151, 253, 110, 58, 46, 234, 219, 235] };
+}
 #[repr(C)]
 pub struct IPlayReadyContentResolver {
     pub base__: ::windows_sys::core::IInspectable,
     pub ServiceRequest: unsafe extern "system" fn(this: *mut *mut Self, contentheader: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPlayReadyContentResolver {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4227671331, data2: 36973, data3: 18818, data4: [166, 184, 104, 73, 86, 90, 124, 232] };
 }
 #[repr(C)]
 pub struct IPlayReadyDomain {
@@ -471,6 +570,9 @@ pub struct IPlayReadyDomain {
     #[cfg(not(feature = "Foundation"))]
     DomainJoinUrl: usize,
 }
+impl ::windows_sys::core::Interface for IPlayReadyDomain {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2915865516, data2: 38886, data3: 17391, data4: [149, 228, 215, 134, 143, 59, 22, 169] };
+}
 #[repr(C)]
 pub struct IPlayReadyDomainIterableFactory {
     pub base__: ::windows_sys::core::IInspectable,
@@ -478,6 +580,9 @@ pub struct IPlayReadyDomainIterableFactory {
     pub CreateInstance: unsafe extern "system" fn(this: *mut *mut Self, domainaccountid: ::windows_sys::core::GUID, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     CreateInstance: usize,
+}
+impl ::windows_sys::core::Interface for IPlayReadyDomainIterableFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1307804910, data2: 12577, data3: 19955, data4: [165, 232, 208, 194, 76, 5, 0, 252] };
 }
 #[repr(C)]
 pub struct IPlayReadyDomainJoinServiceRequest {
@@ -489,6 +594,9 @@ pub struct IPlayReadyDomainJoinServiceRequest {
     pub DomainServiceId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub SetDomainServiceId: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPlayReadyDomainJoinServiceRequest {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 387664474, data2: 16479, data3: 18233, data4: [176, 64, 103, 185, 240, 195, 135, 88] };
+}
 #[repr(C)]
 pub struct IPlayReadyDomainLeaveServiceRequest {
     pub base__: ::windows_sys::core::IInspectable,
@@ -496,6 +604,9 @@ pub struct IPlayReadyDomainLeaveServiceRequest {
     pub SetDomainAccountId: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub DomainServiceId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub SetDomainServiceId: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPlayReadyDomainLeaveServiceRequest {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 103635134, data2: 38829, data3: 18711, data4: [170, 3, 70, 212, 194, 82, 212, 100] };
 }
 #[repr(C)]
 pub struct IPlayReadyITADataGenerator {
@@ -505,9 +616,15 @@ pub struct IPlayReadyITADataGenerator {
     #[cfg(not(feature = "Foundation_Collections"))]
     GenerateData: usize,
 }
+impl ::windows_sys::core::Interface for IPlayReadyITADataGenerator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 608463758, data2: 4281, data3: 17712, data4: [178, 91, 144, 26, 128, 41, 169, 178] };
+}
 #[repr(C)]
 pub struct IPlayReadyIndividualizationServiceRequest {
     pub base__: ::windows_sys::core::IInspectable,
+}
+impl ::windows_sys::core::Interface for IPlayReadyIndividualizationServiceRequest {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 569747563, data2: 140, data3: 17937, data4: [171, 47, 170, 166, 198, 159, 14, 36] };
 }
 #[repr(C)]
 pub struct IPlayReadyLicense {
@@ -523,6 +640,9 @@ pub struct IPlayReadyLicense {
     pub ChainDepth: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetKIDAtChainDepth: unsafe extern "system" fn(this: *mut *mut Self, chaindepth: u32, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPlayReadyLicense {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3997649998, data2: 64060, data3: 16717, data4: [169, 242, 63, 252, 30, 248, 50, 212] };
+}
 #[repr(C)]
 pub struct IPlayReadyLicense2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -530,6 +650,9 @@ pub struct IPlayReadyLicense2 {
     pub SecurityLevel: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
     pub InMemoryOnly: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub ExpiresInRealTime: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPlayReadyLicense2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 821356455, data2: 55523, data3: 18592, data4: [188, 218, 255, 159, 64, 83, 4, 54] };
 }
 #[repr(C)]
 pub struct IPlayReadyLicenseAcquisitionServiceRequest {
@@ -539,10 +662,16 @@ pub struct IPlayReadyLicenseAcquisitionServiceRequest {
     pub DomainServiceId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub SetDomainServiceId: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPlayReadyLicenseAcquisitionServiceRequest {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1569062725, data2: 16031, data3: 20296, data4: [147, 225, 149, 48, 200, 213, 140, 62] };
+}
 #[repr(C)]
 pub struct IPlayReadyLicenseAcquisitionServiceRequest2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub SessionId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPlayReadyLicenseAcquisitionServiceRequest2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3086638773, data2: 65036, data3: 45605, data4: [188, 96, 90, 158, 221, 50, 206, 181] };
 }
 #[repr(C)]
 pub struct IPlayReadyLicenseAcquisitionServiceRequest3 {
@@ -552,6 +681,9 @@ pub struct IPlayReadyLicenseAcquisitionServiceRequest3 {
     #[cfg(not(feature = "Foundation_Collections"))]
     CreateLicenseIterable: usize,
 }
+impl ::windows_sys::core::Interface for IPlayReadyLicenseAcquisitionServiceRequest3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 961437517, data2: 32629, data3: 17165, data4: [178, 231, 127, 117, 243, 75, 45, 117] };
+}
 #[repr(C)]
 pub struct IPlayReadyLicenseIterableFactory {
     pub base__: ::windows_sys::core::IInspectable,
@@ -559,6 +691,9 @@ pub struct IPlayReadyLicenseIterableFactory {
     pub CreateInstance: unsafe extern "system" fn(this: *mut *mut Self, contentheader: *mut ::core::ffi::c_void, fullyevaluated: bool, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     CreateInstance: usize,
+}
+impl ::windows_sys::core::Interface for IPlayReadyLicenseIterableFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3558317832, data2: 2103, data3: 18808, data4: [142, 104, 190, 66, 147, 200, 215, 166] };
 }
 #[repr(C)]
 pub struct IPlayReadyLicenseManagement {
@@ -568,11 +703,17 @@ pub struct IPlayReadyLicenseManagement {
     #[cfg(not(feature = "Foundation"))]
     DeleteLicenses: usize,
 }
+impl ::windows_sys::core::Interface for IPlayReadyLicenseManagement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2867536193, data2: 2391, data3: 17413, data4: [184, 146, 139, 243, 236, 93, 173, 217] };
+}
 #[repr(C)]
 pub struct IPlayReadyLicenseSession {
     pub base__: ::windows_sys::core::IInspectable,
     pub CreateLAServiceRequest: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub ConfigureMediaProtectionManager: unsafe extern "system" fn(this: *mut *mut Self, mpm: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPlayReadyLicenseSession {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2708617785, data2: 34810, data3: 20445, data4: [171, 187, 169, 114, 14, 132, 82, 89] };
 }
 #[repr(C)]
 pub struct IPlayReadyLicenseSession2 {
@@ -582,6 +723,9 @@ pub struct IPlayReadyLicenseSession2 {
     #[cfg(not(feature = "Foundation_Collections"))]
     CreateLicenseIterable: usize,
 }
+impl ::windows_sys::core::Interface for IPlayReadyLicenseSession2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1225375290, data2: 15085, data3: 18006, data4: [138, 215, 238, 15, 215, 121, 149, 16] };
+}
 #[repr(C)]
 pub struct IPlayReadyLicenseSessionFactory {
     pub base__: ::windows_sys::core::IInspectable,
@@ -590,15 +734,24 @@ pub struct IPlayReadyLicenseSessionFactory {
     #[cfg(not(feature = "Foundation_Collections"))]
     CreateInstance: usize,
 }
+impl ::windows_sys::core::Interface for IPlayReadyLicenseSessionFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1648961177, data2: 25895, data3: 17054, data4: [152, 190, 72, 215, 152, 172, 39, 57] };
+}
 #[repr(C)]
 pub struct IPlayReadyMeteringReportServiceRequest {
     pub base__: ::windows_sys::core::IInspectable,
     pub MeteringCertificate: unsafe extern "system" fn(this: *mut *mut Self, result_size__: *mut u32, result__: *mut *mut u8) -> ::windows_sys::core::HRESULT,
     pub SetMeteringCertificate: unsafe extern "system" fn(this: *mut *mut Self, meteringCertBytes_array_size: u32, meteringcertbytes: *const u8) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPlayReadyMeteringReportServiceRequest {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3240829724, data2: 3789, data3: 20241, data4: [161, 133, 30, 36, 164, 166, 127, 183] };
+}
 #[repr(C)]
 pub struct IPlayReadyRevocationServiceRequest {
     pub base__: ::windows_sys::core::IInspectable,
+}
+impl ::windows_sys::core::Interface for IPlayReadyRevocationServiceRequest {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1413310124, data2: 64240, data3: 17760, data4: [132, 165, 14, 74, 206, 201, 57, 228] };
 }
 #[repr(C)]
 pub struct IPlayReadySecureStopIterableFactory {
@@ -607,6 +760,9 @@ pub struct IPlayReadySecureStopIterableFactory {
     pub CreateInstance: unsafe extern "system" fn(this: *mut *mut Self, publisherCertBytes_array_size: u32, publishercertbytes: *const u8, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     CreateInstance: usize,
+}
+impl ::windows_sys::core::Interface for IPlayReadySecureStopIterableFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1595867493, data2: 16916, data3: 19870, data4: [129, 235, 232, 159, 157, 41, 74, 238] };
 }
 #[repr(C)]
 pub struct IPlayReadySecureStopServiceRequest {
@@ -623,11 +779,17 @@ pub struct IPlayReadySecureStopServiceRequest {
     pub Stopped: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub PublisherCertificate: unsafe extern "system" fn(this: *mut *mut Self, result_size__: *mut u32, result__: *mut *mut u8) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPlayReadySecureStopServiceRequest {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3041926885, data2: 447, data3: 17409, data4: [150, 119, 5, 99, 10, 106, 76, 200] };
+}
 #[repr(C)]
 pub struct IPlayReadySecureStopServiceRequestFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub CreateInstance: unsafe extern "system" fn(this: *mut *mut Self, publisherCertBytes_array_size: u32, publishercertbytes: *const u8, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub CreateInstanceFromSessionID: unsafe extern "system" fn(this: *mut *mut Self, sessionid: ::windows_sys::core::GUID, publisherCertBytes_array_size: u32, publishercertbytes: *const u8, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPlayReadySecureStopServiceRequestFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 239373001, data2: 59006, data3: 18766, data4: [159, 73, 98, 133, 67, 140, 118, 207] };
 }
 #[repr(C)]
 pub struct IPlayReadyServiceRequest {
@@ -651,6 +813,9 @@ pub struct IPlayReadyServiceRequest {
     pub GenerateManualEnablingChallenge: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub ProcessManualEnablingResponse: unsafe extern "system" fn(this: *mut *mut Self, responseBytes_array_size: u32, responsebytes: *const u8, result__: *mut ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPlayReadyServiceRequest {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2343381046, data2: 42755, data3: 17830, data4: [161, 128, 118, 243, 86, 90, 167, 37] };
+}
 #[repr(C)]
 pub struct IPlayReadySoapMessage {
     pub base__: ::windows_sys::core::IInspectable,
@@ -664,6 +829,9 @@ pub struct IPlayReadySoapMessage {
     #[cfg(not(feature = "Foundation"))]
     Uri: usize,
 }
+impl ::windows_sys::core::Interface for IPlayReadySoapMessage {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3059350709, data2: 52801, data3: 16826, data4: [138, 13, 97, 223, 95, 255, 161, 57] };
+}
 #[repr(C)]
 pub struct IPlayReadyStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -676,10 +844,16 @@ pub struct IPlayReadyStatics {
     pub MediaProtectionSystemId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub PlayReadySecurityVersion: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPlayReadyStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1583988749, data2: 9340, data3: 18074, data4: [143, 49, 92, 26, 21, 113, 217, 198] };
+}
 #[repr(C)]
 pub struct IPlayReadyStatics2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub PlayReadyCertificateSecurityLevel: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPlayReadyStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 529361554, data2: 24474, data3: 16958, data4: [148, 102, 179, 57, 105, 175, 122, 61] };
 }
 #[repr(C)]
 pub struct IPlayReadyStatics3 {
@@ -687,11 +861,17 @@ pub struct IPlayReadyStatics3 {
     pub SecureStopServiceRequestType: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub CheckSupportedHardware: unsafe extern "system" fn(this: *mut *mut Self, hwdrmfeature: PlayReadyHardwareDRMFeatures, result__: *mut bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPlayReadyStatics3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1067663217, data2: 11731, data3: 19437, data4: [174, 73, 247, 20, 142, 99, 231, 16] };
+}
 #[repr(C)]
 pub struct IPlayReadyStatics4 {
     pub base__: ::windows_sys::core::IInspectable,
     pub InputTrustAuthorityToCreate: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub ProtectionSystemId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPlayReadyStatics4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1353257728, data2: 55332, data3: 16945, data4: [157, 94, 120, 239, 136, 68, 199, 215] };
 }
 #[repr(C)]
 pub struct IPlayReadyStatics5 {
@@ -705,6 +885,9 @@ pub struct IPlayReadyStatics5 {
     #[cfg(not(feature = "Foundation"))]
     HardwareDRMDisabledUntilTime: usize,
     pub ResetHardwareDRMDisabled: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPlayReadyStatics5 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 587886709, data2: 57248, data3: 20366, data4: [167, 121, 206, 254, 169, 198, 130, 75] };
 }
 #[doc = "*Required features: `\"Media_Protection_PlayReady\"`, `\"deprecated\"`*"]
 #[cfg(feature = "deprecated")]

@@ -210,6 +210,9 @@ pub struct IDCompositionAffineTransform2DEffect {
     pub SetSharpness: unsafe extern "system" fn(this: *mut *mut Self, animation: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetSharpness2: unsafe extern "system" fn(this: *mut *mut Self, sharpness: f32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDCompositionAffineTransform2DEffect {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 192199144, data2: 52694, data3: 18735, data4: [187, 188, 94, 211, 33, 87, 2, 109] };
+}
 #[repr(C)]
 pub struct IDCompositionAnimation {
     pub base__: ::windows_sys::core::IUnknown,
@@ -219,6 +222,9 @@ pub struct IDCompositionAnimation {
     pub AddSinusoidal: unsafe extern "system" fn(this: *mut *mut Self, beginoffset: f64, bias: f32, amplitude: f32, frequency: f32, phase: f32) -> ::windows_sys::core::HRESULT,
     pub AddRepeat: unsafe extern "system" fn(this: *mut *mut Self, beginoffset: f64, durationtorepeat: f64) -> ::windows_sys::core::HRESULT,
     pub End: unsafe extern "system" fn(this: *mut *mut Self, endoffset: f64, endvalue: f32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDCompositionAnimation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3422392793, data2: 20914, data3: 17892, data4: [179, 222, 209, 156, 207, 184, 99, 197] };
 }
 #[repr(C)]
 pub struct IDCompositionArithmeticCompositeEffect {
@@ -240,6 +246,9 @@ pub struct IDCompositionArithmeticCompositeEffect {
     pub SetCoefficient4: unsafe extern "system" fn(this: *mut *mut Self, animation: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetCoefficient42: unsafe extern "system" fn(this: *mut *mut Self, coefficient4: f32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDCompositionArithmeticCompositeEffect {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 996663208, data2: 58333, data3: 20065, data4: [182, 64, 70, 194, 243, 215, 57, 220] };
+}
 #[repr(C)]
 pub struct IDCompositionBlendEffect {
     pub base__: IDCompositionFilterEffect,
@@ -247,6 +256,9 @@ pub struct IDCompositionBlendEffect {
     pub SetMode: unsafe extern "system" fn(this: *mut *mut Self, mode: super::Direct2D::Common::D2D1_BLEND_MODE) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Graphics_Direct2D_Common"))]
     SetMode: usize,
+}
+impl ::windows_sys::core::Interface for IDCompositionBlendEffect {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 871160842, data2: 22410, data3: 18961, data4: [156, 20, 12, 185, 5, 23, 249, 197] };
 }
 #[repr(C)]
 pub struct IDCompositionBrightnessEffect {
@@ -268,9 +280,15 @@ pub struct IDCompositionBrightnessEffect {
     pub SetBlackPointY: unsafe extern "system" fn(this: *mut *mut Self, animation: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetBlackPointY2: unsafe extern "system" fn(this: *mut *mut Self, blackpointy: f32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDCompositionBrightnessEffect {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1613187438, data2: 52026, data3: 18859, data4: [147, 79, 215, 152, 218, 79, 125, 166] };
+}
 #[repr(C)]
 pub struct IDCompositionClip {
     pub base__: ::windows_sys::core::IUnknown,
+}
+impl ::windows_sys::core::Interface for IDCompositionClip {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1689007875, data2: 40255, data3: 17900, data4: [161, 9, 124, 172, 14, 122, 19, 167] };
 }
 #[repr(C)]
 pub struct IDCompositionColorMatrixEffect {
@@ -290,6 +308,9 @@ pub struct IDCompositionColorMatrixEffect {
     #[cfg(not(feature = "Win32_Foundation"))]
     SetClampOutput: usize,
 }
+impl ::windows_sys::core::Interface for IDCompositionColorMatrixEffect {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3239512610, data2: 15586, data3: 18790, data4: [144, 212, 85, 64, 139, 252, 132, 196] };
+}
 #[repr(C)]
 pub struct IDCompositionCompositeEffect {
     pub base__: IDCompositionFilterEffect,
@@ -297,6 +318,9 @@ pub struct IDCompositionCompositeEffect {
     pub SetMode: unsafe extern "system" fn(this: *mut *mut Self, mode: super::Direct2D::Common::D2D1_COMPOSITE_MODE) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Graphics_Direct2D_Common"))]
     SetMode: usize,
+}
+impl ::windows_sys::core::Interface for IDCompositionCompositeEffect {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1466308288, data2: 41521, data3: 18765, data4: [163, 141, 0, 253, 94, 196, 219, 70] };
 }
 #[repr(C)]
 pub struct IDCompositionDelegatedInkTrail {
@@ -308,6 +332,9 @@ pub struct IDCompositionDelegatedInkTrail {
     pub StartNewTrail: unsafe extern "system" fn(this: *mut *mut Self, color: *const super::Direct2D::Common::D2D1_COLOR_F) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Graphics_Direct2D_Common"))]
     StartNewTrail: usize,
+}
+impl ::windows_sys::core::Interface for IDCompositionDelegatedInkTrail {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3259272859, data2: 21629, data3: 16471, data4: [140, 245, 129, 68, 237, 225, 194, 218] };
 }
 #[repr(C)]
 pub struct IDCompositionDesktopDevice {
@@ -324,6 +351,9 @@ pub struct IDCompositionDesktopDevice {
     pub CreateSurfaceFromHwnd: unsafe extern "system" fn(this: *mut *mut Self, hwnd: super::super::Foundation::HWND, surface: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     CreateSurfaceFromHwnd: usize,
+}
+impl ::windows_sys::core::Interface for IDCompositionDesktopDevice {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1598436350, data2: 7688, data3: 19640, data4: [140, 117, 206, 36, 51, 63, 86, 2] };
 }
 #[repr(C)]
 pub struct IDCompositionDevice {
@@ -374,6 +404,9 @@ pub struct IDCompositionDevice {
     #[cfg(not(feature = "Win32_Foundation"))]
     CheckDeviceState: usize,
 }
+impl ::windows_sys::core::Interface for IDCompositionDevice {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3279857978, data2: 59306, data3: 17677, data4: [177, 111, 151, 70, 203, 4, 7, 243] };
+}
 #[repr(C)]
 pub struct IDCompositionDevice2 {
     pub base__: ::windows_sys::core::IUnknown,
@@ -408,6 +441,9 @@ pub struct IDCompositionDevice2 {
     pub CreateRectangleClip: unsafe extern "system" fn(this: *mut *mut Self, clip: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub CreateAnimation: unsafe extern "system" fn(this: *mut *mut Self, animation: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDCompositionDevice2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1979074189, data2: 7054, data3: 17532, data4: [155, 198, 117, 254, 168, 11, 91, 37] };
+}
 #[repr(C)]
 pub struct IDCompositionDevice3 {
     pub base__: IDCompositionDevice2,
@@ -425,15 +461,24 @@ pub struct IDCompositionDevice3 {
     pub CreateArithmeticCompositeEffect: unsafe extern "system" fn(this: *mut *mut Self, arithmeticcompositeeffect: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub CreateAffineTransform2DEffect: unsafe extern "system" fn(this: *mut *mut Self, affinetransform2deffect: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDCompositionDevice3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 159894278, data2: 63766, data3: 18623, data4: [141, 53, 206, 118, 65, 120, 27, 217] };
+}
 #[repr(C)]
 pub struct IDCompositionDeviceDebug {
     pub base__: ::windows_sys::core::IUnknown,
     pub EnableDebugCounters: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub DisableDebugCounters: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDCompositionDeviceDebug {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2711864906, data2: 8783, data3: 19073, data4: [151, 115, 79, 3, 168, 157, 60, 108] };
+}
 #[repr(C)]
 pub struct IDCompositionEffect {
     pub base__: ::windows_sys::core::IUnknown,
+}
+impl ::windows_sys::core::Interface for IDCompositionEffect {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3967922319, data2: 49099, data3: 20109, data4: [177, 147, 169, 21, 88, 121, 153, 232] };
 }
 #[repr(C)]
 pub struct IDCompositionEffectGroup {
@@ -442,10 +487,16 @@ pub struct IDCompositionEffectGroup {
     pub SetOpacity2: unsafe extern "system" fn(this: *mut *mut Self, opacity: f32) -> ::windows_sys::core::HRESULT,
     pub SetTransform3D: unsafe extern "system" fn(this: *mut *mut Self, transform3d: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDCompositionEffectGroup {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2811402868, data2: 59058, data3: 19414, data4: [139, 149, 64, 64, 17, 156, 163, 77] };
+}
 #[repr(C)]
 pub struct IDCompositionFilterEffect {
     pub base__: IDCompositionEffect,
     pub SetInput: unsafe extern "system" fn(this: *mut *mut Self, index: u32, input: *mut ::core::ffi::c_void, flags: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDCompositionFilterEffect {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 818160085, data2: 36018, data3: 20127, data4: [177, 51, 55, 190, 39, 13, 74, 194] };
 }
 #[repr(C)]
 pub struct IDCompositionGaussianBlurEffect {
@@ -457,17 +508,26 @@ pub struct IDCompositionGaussianBlurEffect {
     #[cfg(not(feature = "Win32_Graphics_Direct2D_Common"))]
     SetBorderMode: usize,
 }
+impl ::windows_sys::core::Interface for IDCompositionGaussianBlurEffect {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1171574967, data2: 7124, data3: 17742, data4: [136, 148, 43, 250, 104, 68, 48, 51] };
+}
 #[repr(C)]
 pub struct IDCompositionHueRotationEffect {
     pub base__: IDCompositionFilterEffect,
     pub SetAngle: unsafe extern "system" fn(this: *mut *mut Self, animation: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetAngle2: unsafe extern "system" fn(this: *mut *mut Self, amountdegrees: f32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDCompositionHueRotationEffect {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1840904480, data2: 1904, data3: 18305, data4: [176, 198, 56, 25, 18, 249, 209, 103] };
+}
 #[repr(C)]
 pub struct IDCompositionInkTrailDevice {
     pub base__: ::windows_sys::core::IUnknown,
     pub CreateDelegatedInkTrail: unsafe extern "system" fn(this: *mut *mut Self, inktrail: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub CreateDelegatedInkTrailForSwapChain: unsafe extern "system" fn(this: *mut *mut Self, swapchain: *mut ::core::ffi::c_void, inktrail: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDCompositionInkTrailDevice {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3742137580, data2: 52715, data3: 19786, data4: [185, 28, 114, 27, 242, 47, 78, 108] };
 }
 #[repr(C)]
 pub struct IDCompositionLinearTransferEffect {
@@ -509,6 +569,9 @@ pub struct IDCompositionLinearTransferEffect {
     #[cfg(not(feature = "Win32_Foundation"))]
     SetClampOutput: usize,
 }
+impl ::windows_sys::core::Interface for IDCompositionLinearTransferEffect {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1124462171, data2: 50336, data3: 19592, data4: [147, 133, 103, 18, 78, 1, 118, 131] };
+}
 #[repr(C)]
 pub struct IDCompositionMatrixTransform {
     pub base__: IDCompositionTransform,
@@ -519,6 +582,9 @@ pub struct IDCompositionMatrixTransform {
     pub SetMatrixElement: unsafe extern "system" fn(this: *mut *mut Self, row: i32, column: i32, animation: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetMatrixElement2: unsafe extern "system" fn(this: *mut *mut Self, row: i32, column: i32, value: f32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDCompositionMatrixTransform {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 382598919, data2: 50435, data3: 16796, data4: [131, 242, 9, 101, 199, 175, 31, 166] };
+}
 #[repr(C)]
 pub struct IDCompositionMatrixTransform3D {
     pub base__: IDCompositionTransform3D,
@@ -528,6 +594,9 @@ pub struct IDCompositionMatrixTransform3D {
     SetMatrix: usize,
     pub SetMatrixElement: unsafe extern "system" fn(this: *mut *mut Self, row: i32, column: i32, animation: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetMatrixElement2: unsafe extern "system" fn(this: *mut *mut Self, row: i32, column: i32, value: f32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDCompositionMatrixTransform3D {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1261659120, data2: 25659, data3: 16823, data4: [182, 224, 204, 242, 45, 52, 70, 124] };
 }
 #[repr(C)]
 pub struct IDCompositionRectangleClip {
@@ -557,6 +626,9 @@ pub struct IDCompositionRectangleClip {
     pub SetBottomRightRadiusY: unsafe extern "system" fn(this: *mut *mut Self, animation: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetBottomRightRadiusY2: unsafe extern "system" fn(this: *mut *mut Self, radius: f32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDCompositionRectangleClip {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2554506621, data2: 55759, data3: 18696, data4: [174, 215, 72, 181, 29, 165, 231, 194] };
+}
 #[repr(C)]
 pub struct IDCompositionRotateTransform {
     pub base__: IDCompositionTransform,
@@ -566,6 +638,9 @@ pub struct IDCompositionRotateTransform {
     pub SetCenterX2: unsafe extern "system" fn(this: *mut *mut Self, centerx: f32) -> ::windows_sys::core::HRESULT,
     pub SetCenterY: unsafe extern "system" fn(this: *mut *mut Self, animation: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetCenterY2: unsafe extern "system" fn(this: *mut *mut Self, centery: f32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDCompositionRotateTransform {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1679743036, data2: 44694, data3: 18117, data4: [144, 220, 50, 119, 76, 197, 198, 213] };
 }
 #[repr(C)]
 pub struct IDCompositionRotateTransform3D {
@@ -585,11 +660,17 @@ pub struct IDCompositionRotateTransform3D {
     pub SetCenterZ: unsafe extern "system" fn(this: *mut *mut Self, animation: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetCenterZ2: unsafe extern "system" fn(this: *mut *mut Self, centerz: f32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDCompositionRotateTransform3D {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3639980607, data2: 54313, data3: 19089, data4: [181, 90, 210, 244, 95, 215, 91, 24] };
+}
 #[repr(C)]
 pub struct IDCompositionSaturationEffect {
     pub base__: IDCompositionFilterEffect,
     pub SetSaturation: unsafe extern "system" fn(this: *mut *mut Self, animation: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetSaturation2: unsafe extern "system" fn(this: *mut *mut Self, ratio: f32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDCompositionSaturationEffect {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2693655514, data2: 12888, data3: 20388, data4: [159, 22, 145, 116, 211, 254, 147, 177] };
 }
 #[repr(C)]
 pub struct IDCompositionScaleTransform {
@@ -602,6 +683,9 @@ pub struct IDCompositionScaleTransform {
     pub SetCenterX2: unsafe extern "system" fn(this: *mut *mut Self, centerx: f32) -> ::windows_sys::core::HRESULT,
     pub SetCenterY: unsafe extern "system" fn(this: *mut *mut Self, animation: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetCenterY2: unsafe extern "system" fn(this: *mut *mut Self, centery: f32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDCompositionScaleTransform {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1912465684, data2: 16623, data3: 17903, data4: [189, 81, 104, 176, 55, 195, 57, 249] };
 }
 #[repr(C)]
 pub struct IDCompositionScaleTransform3D {
@@ -618,6 +702,9 @@ pub struct IDCompositionScaleTransform3D {
     pub SetCenterY2: unsafe extern "system" fn(this: *mut *mut Self, centery: f32) -> ::windows_sys::core::HRESULT,
     pub SetCenterZ: unsafe extern "system" fn(this: *mut *mut Self, animation: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetCenterZ2: unsafe extern "system" fn(this: *mut *mut Self, centerz: f32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDCompositionScaleTransform3D {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 715038381, data2: 13899, data3: 19221, data4: [167, 196, 161, 153, 127, 120, 179, 137] };
 }
 #[repr(C)]
 pub struct IDCompositionShadowEffect {
@@ -637,6 +724,9 @@ pub struct IDCompositionShadowEffect {
     pub SetAlpha: unsafe extern "system" fn(this: *mut *mut Self, animation: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetAlpha2: unsafe extern "system" fn(this: *mut *mut Self, amount: f32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDCompositionShadowEffect {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1255246528, data2: 53202, data3: 19503, data4: [187, 98, 150, 229, 79, 219, 104, 121] };
+}
 #[repr(C)]
 pub struct IDCompositionSkewTransform {
     pub base__: IDCompositionTransform,
@@ -648,6 +738,9 @@ pub struct IDCompositionSkewTransform {
     pub SetCenterX2: unsafe extern "system" fn(this: *mut *mut Self, centerx: f32) -> ::windows_sys::core::HRESULT,
     pub SetCenterY: unsafe extern "system" fn(this: *mut *mut Self, animation: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetCenterY2: unsafe extern "system" fn(this: *mut *mut Self, centery: f32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDCompositionSkewTransform {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3850020661, data2: 56539, data3: 19570, data4: [156, 97, 5, 145, 245, 136, 137, 238] };
 }
 #[repr(C)]
 pub struct IDCompositionSurface {
@@ -664,6 +757,9 @@ pub struct IDCompositionSurface {
     #[cfg(not(feature = "Win32_Foundation"))]
     Scroll: usize,
 }
+impl ::windows_sys::core::Interface for IDCompositionSurface {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3146402131, data2: 11417, data3: 20314, data4: [150, 245, 72, 25, 2, 127, 163, 172] };
+}
 #[repr(C)]
 pub struct IDCompositionSurfaceFactory {
     pub base__: ::windows_sys::core::IUnknown,
@@ -675,6 +771,9 @@ pub struct IDCompositionSurfaceFactory {
     pub CreateVirtualSurface: unsafe extern "system" fn(this: *mut *mut Self, initialwidth: u32, initialheight: u32, pixelformat: super::Dxgi::Common::DXGI_FORMAT, alphamode: super::Dxgi::Common::DXGI_ALPHA_MODE, virtualsurface: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Graphics_Dxgi_Common"))]
     CreateVirtualSurface: usize,
+}
+impl ::windows_sys::core::Interface for IDCompositionSurfaceFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3811884050, data2: 14647, data3: 19970, data4: [133, 235, 252, 244, 235, 48, 210, 200] };
 }
 #[repr(C)]
 pub struct IDCompositionTableTransferEffect {
@@ -712,18 +811,30 @@ pub struct IDCompositionTableTransferEffect {
     pub SetAlphaTableValue: unsafe extern "system" fn(this: *mut *mut Self, index: u32, animation: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetAlphaTableValue2: unsafe extern "system" fn(this: *mut *mut Self, index: u32, value: f32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDCompositionTableTransferEffect {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2608759522, data2: 27077, data3: 20148, data4: [165, 245, 167, 3, 63, 81, 50, 205] };
+}
 #[repr(C)]
 pub struct IDCompositionTarget {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetRoot: unsafe extern "system" fn(this: *mut *mut Self, visual: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDCompositionTarget {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3939356748, data2: 4478, data3: 19991, data4: [136, 244, 209, 177, 43, 14, 61, 137] };
+}
 #[repr(C)]
 pub struct IDCompositionTransform {
     pub base__: IDCompositionTransform3D,
 }
+impl ::windows_sys::core::Interface for IDCompositionTransform {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4250270375, data2: 14304, data3: 19488, data4: [149, 210, 155, 228, 91, 195, 63, 85] };
+}
 #[repr(C)]
 pub struct IDCompositionTransform3D {
     pub base__: IDCompositionEffect,
+}
+impl ::windows_sys::core::Interface for IDCompositionTransform3D {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1897420578, data2: 9323, data3: 16882, data4: [170, 209, 4, 67, 247, 244, 191, 194] };
 }
 #[repr(C)]
 pub struct IDCompositionTranslateTransform {
@@ -732,6 +843,9 @@ pub struct IDCompositionTranslateTransform {
     pub SetOffsetX2: unsafe extern "system" fn(this: *mut *mut Self, offsetx: f32) -> ::windows_sys::core::HRESULT,
     pub SetOffsetY: unsafe extern "system" fn(this: *mut *mut Self, animation: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetOffsetY2: unsafe extern "system" fn(this: *mut *mut Self, offsety: f32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDCompositionTranslateTransform {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 108597538, data2: 50928, data3: 16765, data4: [131, 35, 38, 158, 152, 127, 89, 84] };
 }
 #[repr(C)]
 pub struct IDCompositionTranslateTransform3D {
@@ -742,6 +856,9 @@ pub struct IDCompositionTranslateTransform3D {
     pub SetOffsetY2: unsafe extern "system" fn(this: *mut *mut Self, offsety: f32) -> ::windows_sys::core::HRESULT,
     pub SetOffsetZ: unsafe extern "system" fn(this: *mut *mut Self, animation: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetOffsetZ2: unsafe extern "system" fn(this: *mut *mut Self, offsetz: f32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDCompositionTranslateTransform3D {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2439212363, data2: 39841, data3: 17714, data4: [170, 247, 227, 52, 73, 148, 215, 136] };
 }
 #[repr(C)]
 pub struct IDCompositionTurbulenceEffect {
@@ -769,6 +886,9 @@ pub struct IDCompositionTurbulenceEffect {
     #[cfg(not(feature = "Win32_Foundation"))]
     SetStitchable: usize,
 }
+impl ::windows_sys::core::Interface for IDCompositionTurbulenceEffect {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2795854810, data2: 49308, data3: 18931, data4: [145, 147, 164, 25, 34, 200, 151, 21] };
+}
 #[repr(C)]
 pub struct IDCompositionVirtualSurface {
     pub base__: IDCompositionSurface,
@@ -777,6 +897,9 @@ pub struct IDCompositionVirtualSurface {
     pub Trim: unsafe extern "system" fn(this: *mut *mut Self, rectangles: *const super::super::Foundation::RECT, count: u32) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     Trim: usize,
+}
+impl ::windows_sys::core::Interface for IDCompositionVirtualSurface {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2923895889, data2: 24403, data3: 18980, data4: [141, 62, 208, 195, 156, 48, 179, 240] };
 }
 #[repr(C)]
 pub struct IDCompositionVisual {
@@ -808,11 +931,17 @@ pub struct IDCompositionVisual {
     pub RemoveAllVisuals: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub SetCompositeMode: unsafe extern "system" fn(this: *mut *mut Self, compositemode: DCOMPOSITION_COMPOSITE_MODE) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDCompositionVisual {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1301480861, data2: 2427, data3: 18001, data4: [154, 96, 240, 242, 81, 22, 226, 243] };
+}
 #[repr(C)]
 pub struct IDCompositionVisual2 {
     pub base__: IDCompositionVisual,
     pub SetOpacityMode: unsafe extern "system" fn(this: *mut *mut Self, mode: DCOMPOSITION_OPACITY_MODE) -> ::windows_sys::core::HRESULT,
     pub SetBackFaceVisibility: unsafe extern "system" fn(this: *mut *mut Self, visibility: DCOMPOSITION_BACKFACE_VISIBILITY) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDCompositionVisual2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3906868793, data2: 17201, data3: 19238, data4: [188, 95, 106, 50, 29, 52, 122, 133] };
 }
 #[repr(C)]
 pub struct IDCompositionVisual3 {
@@ -832,6 +961,9 @@ pub struct IDCompositionVisual3 {
     #[cfg(not(feature = "Win32_Foundation"))]
     SetVisible: usize,
 }
+impl ::windows_sys::core::Interface for IDCompositionVisual3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 662041698, data2: 46785, data3: 16405, data4: [176, 190, 179, 231, 214, 164, 151, 109] };
+}
 #[repr(C)]
 pub struct IDCompositionVisualDebug {
     pub base__: IDCompositionVisual2,
@@ -842,4 +974,7 @@ pub struct IDCompositionVisualDebug {
     pub DisableHeatMap: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub EnableRedrawRegions: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub DisableRedrawRegions: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDCompositionVisualDebug {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4275222536, data2: 24244, data3: 17312, data4: [174, 163, 53, 246, 82, 128, 249, 27] };
 }

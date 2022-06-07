@@ -32,6 +32,9 @@ pub struct IWiFiAdapter {
     ConnectWithPasswordCredentialAndSsidAsync: usize,
     pub Disconnect: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWiFiAdapter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2797921315, data2: 15733, data3: 17316, data4: [185, 222, 17, 226, 107, 114, 217, 176] };
+}
 #[repr(C)]
 pub struct IWiFiAdapter2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -43,6 +46,9 @@ pub struct IWiFiAdapter2 {
     pub ConnectWithPasswordCredentialAndSsidAndConnectionMethodAsync: unsafe extern "system" fn(this: *mut *mut Self, availablenetwork: *mut ::core::ffi::c_void, reconnectionkind: WiFiReconnectionKind, passwordcredential: *mut ::core::ffi::c_void, ssid: ::windows_sys::core::HSTRING, connectionmethod: WiFiConnectionMethod, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Foundation", feature = "Security_Credentials")))]
     ConnectWithPasswordCredentialAndSsidAndConnectionMethodAsync: usize,
+}
+impl ::windows_sys::core::Interface for IWiFiAdapter2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1539592221, data2: 33252, data3: 17725, data4: [148, 48, 31, 202, 251, 173, 214, 182] };
 }
 #[repr(C)]
 pub struct IWiFiAdapterStatics {
@@ -60,6 +66,9 @@ pub struct IWiFiAdapterStatics {
     pub RequestAccessAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     RequestAccessAsync: usize,
+}
+impl ::windows_sys::core::Interface for IWiFiAdapterStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3659922909, data2: 53836, data3: 17379, data4: [170, 189, 196, 101, 159, 115, 15, 153] };
 }
 #[repr(C)]
 pub struct IWiFiAvailableNetwork {
@@ -85,10 +94,16 @@ pub struct IWiFiAvailableNetwork {
     BeaconInterval: usize,
     pub IsWiFiDirect: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWiFiAvailableNetwork {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 652829254, data2: 6206, data3: 18180, data4: [152, 38, 113, 180, 162, 240, 246, 104] };
+}
 #[repr(C)]
 pub struct IWiFiConnectionResult {
     pub base__: ::windows_sys::core::IInspectable,
     pub ConnectionStatus: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut WiFiConnectionStatus) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWiFiConnectionResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 339468249, data2: 50045, data3: 16574, data4: [165, 200, 133, 123, 206, 133, 169, 49] };
 }
 #[repr(C)]
 pub struct IWiFiNetworkReport {
@@ -102,6 +117,9 @@ pub struct IWiFiNetworkReport {
     #[cfg(not(feature = "Foundation_Collections"))]
     AvailableNetworks: usize,
 }
+impl ::windows_sys::core::Interface for IWiFiNetworkReport {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2502221522, data2: 22801, data3: 17502, data4: [129, 148, 190, 79, 26, 112, 72, 149] };
+}
 #[repr(C)]
 pub struct IWiFiWpsConfigurationResult {
     pub base__: ::windows_sys::core::IInspectable,
@@ -110,6 +128,9 @@ pub struct IWiFiWpsConfigurationResult {
     pub SupportedWpsKinds: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     SupportedWpsKinds: usize,
+}
+impl ::windows_sys::core::Interface for IWiFiWpsConfigurationResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1739888753, data2: 6126, data3: 17105, data4: [177, 79, 90, 17, 241, 34, 111, 181] };
 }
 #[doc = "*Required features: `\"Devices_WiFi\"`*"]
 #[repr(transparent)]

@@ -5770,25 +5770,40 @@ pub struct IGetClusterDataInfo {
     pub GetClusterHandle: unsafe extern "system" fn(this: *mut *mut Self) -> *mut _HCLUSTER,
     pub GetObjectCount: unsafe extern "system" fn(this: *mut *mut Self) -> i32,
 }
+impl ::windows_sys::core::Interface for IGetClusterDataInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2547965521, data2: 64619, data3: 4559, data4: [181, 245, 0, 160, 201, 10, 181, 5] };
+}
 #[repr(C)]
 pub struct IGetClusterGroupInfo {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetGroupHandle: unsafe extern "system" fn(this: *mut *mut Self, lobjindex: i32) -> *mut _HGROUP,
+}
+impl ::windows_sys::core::Interface for IGetClusterGroupInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2547965524, data2: 64619, data3: 4559, data4: [181, 245, 0, 160, 201, 10, 181, 5] };
 }
 #[repr(C)]
 pub struct IGetClusterNetInterfaceInfo {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetNetInterfaceHandle: unsafe extern "system" fn(this: *mut *mut Self, lobjindex: i32) -> *mut _HNETINTERFACE,
 }
+impl ::windows_sys::core::Interface for IGetClusterNetInterfaceInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2547965527, data2: 64619, data3: 4559, data4: [181, 245, 0, 160, 201, 10, 181, 5] };
+}
 #[repr(C)]
 pub struct IGetClusterNetworkInfo {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetNetworkHandle: unsafe extern "system" fn(this: *mut *mut Self, lobjindex: i32) -> *mut _HNETWORK,
 }
+impl ::windows_sys::core::Interface for IGetClusterNetworkInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2547965526, data2: 64619, data3: 4559, data4: [181, 245, 0, 160, 201, 10, 181, 5] };
+}
 #[repr(C)]
 pub struct IGetClusterNodeInfo {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetNodeHandle: unsafe extern "system" fn(this: *mut *mut Self, lobjindex: i32) -> *mut _HNODE,
+}
+impl ::windows_sys::core::Interface for IGetClusterNodeInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2547965523, data2: 64619, data3: 4559, data4: [181, 245, 0, 160, 201, 10, 181, 5] };
 }
 #[repr(C)]
 pub struct IGetClusterObjectInfo {
@@ -5798,6 +5813,9 @@ pub struct IGetClusterObjectInfo {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetObjectName: usize,
     pub GetObjectType: unsafe extern "system" fn(this: *mut *mut Self, lobjindex: i32) -> CLUADMEX_OBJECT_TYPE,
+}
+impl ::windows_sys::core::Interface for IGetClusterObjectInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2547965522, data2: 64619, data3: 4559, data4: [181, 245, 0, 160, 201, 10, 181, 5] };
 }
 #[repr(C)]
 pub struct IGetClusterResourceInfo {
@@ -5811,6 +5829,9 @@ pub struct IGetClusterResourceInfo {
     pub GetResourceNetworkName: unsafe extern "system" fn(this: *mut *mut Self, lobjindex: i32, lpsznetname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pcchnetname: *mut u32) -> super::super::Foundation::BOOL,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetResourceNetworkName: usize,
+}
+impl ::windows_sys::core::Interface for IGetClusterResourceInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2547965525, data2: 64619, data3: 4559, data4: [181, 245, 0, 160, 201, 10, 181, 5] };
 }
 #[repr(C)]
 pub struct IGetClusterUIInfo {
@@ -5829,6 +5850,9 @@ pub struct IGetClusterUIInfo {
     #[cfg(not(feature = "Win32_UI_WindowsAndMessaging"))]
     GetIcon: usize,
 }
+impl ::windows_sys::core::Interface for IGetClusterUIInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2547965520, data2: 64619, data3: 4559, data4: [181, 245, 0, 160, 201, 10, 181, 5] };
+}
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISClusApplication {
@@ -5845,6 +5869,10 @@ pub struct ISClusApplication {
     pub OpenCluster: unsafe extern "system" fn(this: *mut *mut Self, bstrclustername: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pcluster: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     OpenCluster: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISClusApplication {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4075161318, data2: 9777, data3: 4561, data4: [137, 241, 0, 160, 201, 13, 6, 30] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -5867,6 +5895,10 @@ pub struct ISClusCryptoKeys {
     RemoveItem: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISClusCryptoKeys {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4075161388, data2: 9777, data3: 4561, data4: [137, 241, 0, 160, 201, 13, 6, 30] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISClusDisk {
     pub base__: super::super::System::Com::IDispatch,
@@ -5882,6 +5914,10 @@ pub struct ISClusDisk {
     Partitions: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISClusDisk {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4075161380, data2: 9777, data3: 4561, data4: [137, 241, 0, 160, 201, 13, 6, 30] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISClusDisks {
     pub base__: super::super::System::Com::IDispatch,
@@ -5891,6 +5927,10 @@ pub struct ISClusDisks {
     pub get_Item: unsafe extern "system" fn(this: *mut *mut Self, varindex: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>, ppdisk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     get_Item: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISClusDisks {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4075161382, data2: 9777, data3: 4561, data4: [137, 241, 0, 160, 201, 13, 6, 30] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -5924,6 +5964,10 @@ pub struct ISClusNetInterface {
     Cluster: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISClusNetInterface {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4075161326, data2: 9777, data3: 4561, data4: [137, 241, 0, 160, 201, 13, 6, 30] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISClusNetInterfaces {
     pub base__: super::super::System::Com::IDispatch,
@@ -5934,6 +5978,10 @@ pub struct ISClusNetInterfaces {
     pub get_Item: unsafe extern "system" fn(this: *mut *mut Self, varindex: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>, ppclusnetinterface: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     get_Item: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISClusNetInterfaces {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4075161328, data2: 9777, data3: 4561, data4: [137, 241, 0, 160, 201, 13, 6, 30] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -5979,6 +6027,10 @@ pub struct ISClusNetwork {
     Cluster: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISClusNetwork {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4075161330, data2: 9777, data3: 4561, data4: [137, 241, 0, 160, 201, 13, 6, 30] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISClusNetworkNetInterfaces {
     pub base__: super::super::System::Com::IDispatch,
@@ -5991,6 +6043,10 @@ pub struct ISClusNetworkNetInterfaces {
     get_Item: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISClusNetworkNetInterfaces {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4075161334, data2: 9777, data3: 4561, data4: [137, 241, 0, 160, 201, 13, 6, 30] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISClusNetworks {
     pub base__: super::super::System::Com::IDispatch,
@@ -6001,6 +6057,10 @@ pub struct ISClusNetworks {
     pub get_Item: unsafe extern "system" fn(this: *mut *mut Self, varindex: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>, ppclusnetwork: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     get_Item: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISClusNetworks {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4075161332, data2: 9777, data3: 4561, data4: [137, 241, 0, 160, 201, 13, 6, 30] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -6049,6 +6109,10 @@ pub struct ISClusNode {
     NetInterfaces: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISClusNode {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4075161336, data2: 9777, data3: 4561, data4: [137, 241, 0, 160, 201, 13, 6, 30] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISClusNodeNetInterfaces {
     pub base__: super::super::System::Com::IDispatch,
@@ -6061,6 +6125,10 @@ pub struct ISClusNodeNetInterfaces {
     get_Item: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISClusNodeNetInterfaces {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4075161340, data2: 9777, data3: 4561, data4: [137, 241, 0, 160, 201, 13, 6, 30] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISClusNodes {
     pub base__: super::super::System::Com::IDispatch,
@@ -6071,6 +6139,10 @@ pub struct ISClusNodes {
     pub get_Item: unsafe extern "system" fn(this: *mut *mut Self, varindex: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>, ppnode: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     get_Item: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISClusNodes {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4075161338, data2: 9777, data3: 4561, data4: [137, 241, 0, 160, 201, 13, 6, 30] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -6094,6 +6166,10 @@ pub struct ISClusPartition {
     FileSystem: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISClusPartition {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4075161376, data2: 9777, data3: 4561, data4: [137, 241, 0, 160, 201, 13, 6, 30] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISClusPartitionEx {
     pub base__: ISClusPartition,
@@ -6107,6 +6183,10 @@ pub struct ISClusPartitionEx {
     VolumeGuid: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISClusPartitionEx {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2281886974, data2: 45870, data3: 19153, data4: [157, 189, 100, 241, 142, 17, 102, 206] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISClusPartitions {
     pub base__: super::super::System::Com::IDispatch,
@@ -6116,6 +6196,10 @@ pub struct ISClusPartitions {
     pub get_Item: unsafe extern "system" fn(this: *mut *mut Self, varindex: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>, pppartition: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     get_Item: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISClusPartitions {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4075161378, data2: 9777, data3: 4561, data4: [137, 241, 0, 160, 201, 13, 6, 30] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -6156,6 +6240,10 @@ pub struct ISClusProperties {
     pub Modified: unsafe extern "system" fn(this: *mut *mut Self, pvarmodified: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     Modified: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISClusProperties {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4075161344, data2: 9777, data3: 4561, data4: [137, 241, 0, 160, 201, 13, 6, 30] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -6202,6 +6290,10 @@ pub struct ISClusProperty {
     pub UseDefaultValue: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISClusProperty {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4075161342, data2: 9777, data3: 4561, data4: [137, 241, 0, 160, 201, 13, 6, 30] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISClusPropertyValue {
     pub base__: super::super::System::Com::IDispatch,
@@ -6225,6 +6317,10 @@ pub struct ISClusPropertyValue {
     Data: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISClusPropertyValue {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4075161370, data2: 9777, data3: 4561, data4: [137, 241, 0, 160, 201, 13, 6, 30] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISClusPropertyValueData {
     pub base__: super::super::System::Com::IDispatch,
@@ -6242,6 +6338,10 @@ pub struct ISClusPropertyValueData {
     pub RemoveItem: unsafe extern "system" fn(this: *mut *mut Self, varindex: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     RemoveItem: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISClusPropertyValueData {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4075161374, data2: 9777, data3: 4561, data4: [137, 241, 0, 160, 201, 13, 6, 30] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -6263,10 +6363,18 @@ pub struct ISClusPropertyValues {
     RemoveItem: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISClusPropertyValues {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4075161372, data2: 9777, data3: 4561, data4: [137, 241, 0, 160, 201, 13, 6, 30] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISClusRefObject {
     pub base__: super::super::System::Com::IDispatch,
     pub Handle: unsafe extern "system" fn(this: *mut *mut Self, phandle: *mut usize) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISClusRefObject {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4075161346, data2: 9777, data3: 4561, data4: [137, 241, 0, 160, 201, 13, 6, 30] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -6287,6 +6395,10 @@ pub struct ISClusRegistryKeys {
     pub RemoveItem: unsafe extern "system" fn(this: *mut *mut Self, varindex: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     RemoveItem: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISClusRegistryKeys {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4075161386, data2: 9777, data3: 4561, data4: [137, 241, 0, 160, 201, 13, 6, 30] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -6317,6 +6429,10 @@ pub struct ISClusResDependencies {
     RemoveItem: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISClusResDependencies {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4075161348, data2: 9777, data3: 4561, data4: [137, 241, 0, 160, 201, 13, 6, 30] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISClusResDependents {
     pub base__: super::super::System::Com::IDispatch,
@@ -6343,6 +6459,10 @@ pub struct ISClusResDependents {
     pub RemoveItem: unsafe extern "system" fn(this: *mut *mut Self, varindex: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     RemoveItem: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISClusResDependents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4075161390, data2: 9777, data3: 4561, data4: [137, 241, 0, 160, 201, 13, 6, 30] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -6405,6 +6525,10 @@ pub struct ISClusResGroup {
     Cluster: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISClusResGroup {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4075161350, data2: 9777, data3: 4561, data4: [137, 241, 0, 160, 201, 13, 6, 30] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISClusResGroupPreferredOwnerNodes {
     pub base__: super::super::System::Com::IDispatch,
@@ -6434,6 +6558,10 @@ pub struct ISClusResGroupPreferredOwnerNodes {
     AddItem: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISClusResGroupPreferredOwnerNodes {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4075161320, data2: 9777, data3: 4561, data4: [137, 241, 0, 160, 201, 13, 6, 30] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISClusResGroupResources {
     pub base__: super::super::System::Com::IDispatch,
@@ -6454,6 +6582,10 @@ pub struct ISClusResGroupResources {
     DeleteItem: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISClusResGroupResources {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4075161322, data2: 9777, data3: 4561, data4: [137, 241, 0, 160, 201, 13, 6, 30] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISClusResGroups {
     pub base__: super::super::System::Com::IDispatch,
@@ -6472,6 +6604,10 @@ pub struct ISClusResGroups {
     pub DeleteItem: unsafe extern "system" fn(this: *mut *mut Self, varindex: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     DeleteItem: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISClusResGroups {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4075161352, data2: 9777, data3: 4561, data4: [137, 241, 0, 160, 201, 13, 6, 30] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -6496,6 +6632,10 @@ pub struct ISClusResPossibleOwnerNodes {
     pub Modified: unsafe extern "system" fn(this: *mut *mut Self, pvarmodified: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     Modified: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISClusResPossibleOwnerNodes {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4075161358, data2: 9777, data3: 4561, data4: [137, 241, 0, 160, 201, 13, 6, 30] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -6540,6 +6680,10 @@ pub struct ISClusResType {
     AvailableDisks: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISClusResType {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4075161360, data2: 9777, data3: 4561, data4: [137, 241, 0, 160, 201, 13, 6, 30] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISClusResTypePossibleOwnerNodes {
     pub base__: super::super::System::Com::IDispatch,
@@ -6550,6 +6694,10 @@ pub struct ISClusResTypePossibleOwnerNodes {
     pub get_Item: unsafe extern "system" fn(this: *mut *mut Self, varindex: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>, ppnode: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     get_Item: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISClusResTypePossibleOwnerNodes {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4075161368, data2: 9777, data3: 4561, data4: [137, 241, 0, 160, 201, 13, 6, 30] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -6572,6 +6720,10 @@ pub struct ISClusResTypeResources {
     DeleteItem: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISClusResTypeResources {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4075161364, data2: 9777, data3: 4561, data4: [137, 241, 0, 160, 201, 13, 6, 30] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISClusResTypes {
     pub base__: super::super::System::Com::IDispatch,
@@ -6590,6 +6742,10 @@ pub struct ISClusResTypes {
     pub DeleteItem: unsafe extern "system" fn(this: *mut *mut Self, varindex: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     DeleteItem: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISClusResTypes {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4075161362, data2: 9777, data3: 4561, data4: [137, 241, 0, 160, 201, 13, 6, 30] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -6707,6 +6863,10 @@ pub struct ISClusResource {
     SetMaintenanceMode: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISClusResource {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4075161354, data2: 9777, data3: 4561, data4: [137, 241, 0, 160, 201, 13, 6, 30] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISClusResources {
     pub base__: super::super::System::Com::IDispatch,
@@ -6725,6 +6885,10 @@ pub struct ISClusResources {
     pub DeleteItem: unsafe extern "system" fn(this: *mut *mut Self, varindex: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     DeleteItem: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISClusResources {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4075161356, data2: 9777, data3: 4561, data4: [137, 241, 0, 160, 201, 13, 6, 30] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -6746,6 +6910,10 @@ pub struct ISClusScsiAddress {
     pub Lun: unsafe extern "system" fn(this: *mut *mut Self, pvarlun: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     Lun: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISClusScsiAddress {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4075161384, data2: 9777, data3: 4561, data4: [137, 241, 0, 160, 201, 13, 6, 30] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -6773,6 +6941,10 @@ pub struct ISClusVersion {
     pub MixedVersion: unsafe extern "system" fn(this: *mut *mut Self, pvarmixedversion: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     MixedVersion: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISClusVersion {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4075161366, data2: 9777, data3: 4561, data4: [137, 241, 0, 160, 201, 13, 6, 30] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -6855,6 +7027,10 @@ pub struct ISCluster {
     NetInterfaces: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISCluster {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4075161316, data2: 9777, data3: 4561, data4: [137, 241, 0, 160, 201, 13, 6, 30] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISClusterNames {
     pub base__: super::super::System::Com::IDispatch,
@@ -6871,6 +7047,10 @@ pub struct ISClusterNames {
     DomainName: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISClusterNames {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4075161324, data2: 9777, data3: 4561, data4: [137, 241, 0, 160, 201, 13, 6, 30] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISDomainNames {
     pub base__: super::super::System::Com::IDispatch,
@@ -6882,6 +7062,10 @@ pub struct ISDomainNames {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     get_Item: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISDomainNames {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4075161314, data2: 9777, data3: 4561, data4: [137, 241, 0, 160, 201, 13, 6, 30] };
+}
 #[repr(C)]
 pub struct IWCContextMenuCallback {
     pub base__: ::windows_sys::core::IUnknown,
@@ -6890,10 +7074,16 @@ pub struct IWCContextMenuCallback {
     #[cfg(not(feature = "Win32_Foundation"))]
     AddExtensionMenuItem: usize,
 }
+impl ::windows_sys::core::Interface for IWCContextMenuCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2547965540, data2: 64619, data3: 4559, data4: [181, 245, 0, 160, 201, 10, 181, 5] };
+}
 #[repr(C)]
 pub struct IWCPropertySheetCallback {
     pub base__: ::windows_sys::core::IUnknown,
     pub AddPropertySheetPage: unsafe extern "system" fn(this: *mut *mut Self, hpage: *const i32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWCPropertySheetCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2547965536, data2: 64619, data3: 4559, data4: [181, 245, 0, 160, 201, 10, 181, 5] };
 }
 #[repr(C)]
 pub struct IWCWizard97Callback {
@@ -6904,6 +7094,9 @@ pub struct IWCWizard97Callback {
     #[cfg(not(feature = "Win32_Foundation"))]
     EnableNext: usize,
 }
+impl ::windows_sys::core::Interface for IWCWizard97Callback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2547965543, data2: 64619, data3: 4559, data4: [181, 245, 0, 160, 201, 10, 181, 5] };
+}
 #[repr(C)]
 pub struct IWCWizardCallback {
     pub base__: ::windows_sys::core::IUnknown,
@@ -6913,30 +7106,48 @@ pub struct IWCWizardCallback {
     #[cfg(not(feature = "Win32_Foundation"))]
     EnableNext: usize,
 }
+impl ::windows_sys::core::Interface for IWCWizardCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2547965538, data2: 64619, data3: 4559, data4: [181, 245, 0, 160, 201, 10, 181, 5] };
+}
 #[repr(C)]
 pub struct IWEExtendContextMenu {
     pub base__: ::windows_sys::core::IUnknown,
     pub AddContextMenuItems: unsafe extern "system" fn(this: *mut *mut Self, pidata: *mut ::core::ffi::c_void, picallback: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWEExtendContextMenu {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2547965541, data2: 64619, data3: 4559, data4: [181, 245, 0, 160, 201, 10, 181, 5] };
 }
 #[repr(C)]
 pub struct IWEExtendPropertySheet {
     pub base__: ::windows_sys::core::IUnknown,
     pub CreatePropertySheetPages: unsafe extern "system" fn(this: *mut *mut Self, pidata: *mut ::core::ffi::c_void, picallback: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWEExtendPropertySheet {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2547965537, data2: 64619, data3: 4559, data4: [181, 245, 0, 160, 201, 10, 181, 5] };
+}
 #[repr(C)]
 pub struct IWEExtendWizard {
     pub base__: ::windows_sys::core::IUnknown,
     pub CreateWizardPages: unsafe extern "system" fn(this: *mut *mut Self, pidata: *mut ::core::ffi::c_void, picallback: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWEExtendWizard {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2547965539, data2: 64619, data3: 4559, data4: [181, 245, 0, 160, 201, 10, 181, 5] };
 }
 #[repr(C)]
 pub struct IWEExtendWizard97 {
     pub base__: ::windows_sys::core::IUnknown,
     pub CreateWizard97Pages: unsafe extern "system" fn(this: *mut *mut Self, pidata: *mut ::core::ffi::c_void, picallback: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWEExtendWizard97 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2547965544, data2: 64619, data3: 4559, data4: [181, 245, 0, 160, 201, 10, 181, 5] };
+}
 #[repr(C)]
 pub struct IWEInvokeCommand {
     pub base__: ::windows_sys::core::IUnknown,
     pub InvokeCommand: unsafe extern "system" fn(this: *mut *mut Self, ncommandid: u32, pidata: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWEInvokeCommand {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2547965542, data2: 64619, data3: 4559, data4: [181, 245, 0, 160, 201, 10, 181, 5] };
 }
 #[doc = "*Required features: `\"Win32_Networking_Clustering\"`*"]
 pub const LOCKED_MODE_FLAGS_DONT_REMOVE_FROM_MOVE_QUEUE: u32 = 1u32;

@@ -163,6 +163,9 @@ pub struct IInertiaProcessor {
     pub Complete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub CompleteTime: unsafe extern "system" fn(this: *mut *mut Self, timestamp: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IInertiaProcessor {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 414190701, data2: 50670, data3: 16817, data4: [144, 169, 157, 74, 146, 144, 149, 173] };
+}
 #[repr(C)]
 pub struct IManipulationProcessor {
     pub base__: ::windows_sys::core::IUnknown,
@@ -187,6 +190,9 @@ pub struct IManipulationProcessor {
     pub GetAngularVelocity: unsafe extern "system" fn(this: *mut *mut Self, angularvelocity: *mut f32) -> ::windows_sys::core::HRESULT,
     pub MinimumScaleRotateRadius: unsafe extern "system" fn(this: *mut *mut Self, minradius: *mut f32) -> ::windows_sys::core::HRESULT,
     pub SetMinimumScaleRotateRadius: unsafe extern "system" fn(this: *mut *mut Self, minradius: f32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IManipulationProcessor {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2720711961, data2: 33536, data3: 18592, data4: [190, 244, 241, 190, 135, 55, 219, 164] };
 }
 pub const InertiaProcessor: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2880598151, data2: 19680, data3: 20056, data4: [160, 203, 226, 77, 249, 104, 20, 190] };
 #[doc = "*Required features: `\"Win32_UI_Input_Touch\"`*"]
@@ -265,4 +271,7 @@ pub struct _IManipulationEvents {
     pub ManipulationStarted: unsafe extern "system" fn(this: *mut *mut Self, x: f32, y: f32) -> ::windows_sys::core::HRESULT,
     pub ManipulationDelta: unsafe extern "system" fn(this: *mut *mut Self, x: f32, y: f32, translationdeltax: f32, translationdeltay: f32, scaledelta: f32, expansiondelta: f32, rotationdelta: f32, cumulativetranslationx: f32, cumulativetranslationy: f32, cumulativescale: f32, cumulativeexpansion: f32, cumulativerotation: f32) -> ::windows_sys::core::HRESULT,
     pub ManipulationCompleted: unsafe extern "system" fn(this: *mut *mut Self, x: f32, y: f32, cumulativetranslationx: f32, cumulativetranslationy: f32, cumulativescale: f32, cumulativeexpansion: f32, cumulativerotation: f32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for _IManipulationEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1331874010, data2: 40019, data3: 19234, data4: [147, 223, 146, 122, 134, 43, 187, 3] };
 }

@@ -16,6 +16,9 @@ pub struct IThreadPoolStatics {
     #[cfg(not(feature = "Foundation"))]
     RunWithPriorityAndOptionsAsync: usize,
 }
+impl ::windows_sys::core::Interface for IThreadPoolStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3065997277, data2: 33981, data3: 17656, data4: [172, 28, 147, 235, 203, 157, 186, 145] };
+}
 #[repr(C)]
 pub struct IThreadPoolTimer {
     pub base__: ::windows_sys::core::IInspectable,
@@ -28,6 +31,9 @@ pub struct IThreadPoolTimer {
     #[cfg(not(feature = "Foundation"))]
     Delay: usize,
     pub Cancel: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IThreadPoolTimer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1498332792, data2: 21994, data3: 19080, data4: [165, 13, 52, 2, 174, 31, 156, 242] };
 }
 #[repr(C)]
 pub struct IThreadPoolTimerStatics {
@@ -48,6 +54,9 @@ pub struct IThreadPoolTimerStatics {
     pub CreateTimerWithCompletion: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, delay: super::super::Foundation::TimeSpan, destroyed: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     CreateTimerWithCompletion: usize,
+}
+impl ::windows_sys::core::Interface for IThreadPoolTimerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 445291778, data2: 58498, data3: 17947, data4: [184, 199, 142, 250, 209, 204, 229, 144] };
 }
 pub type ThreadPoolTimer = *mut ::core::ffi::c_void;
 pub type TimerDestroyedHandler = *mut ::core::ffi::c_void;

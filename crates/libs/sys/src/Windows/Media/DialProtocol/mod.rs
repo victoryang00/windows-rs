@@ -85,17 +85,26 @@ pub struct IDialApp {
     #[cfg(not(feature = "Foundation"))]
     GetAppStateAsync: usize,
 }
+impl ::windows_sys::core::Interface for IDialApp {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1432353747, data2: 17847, data3: 18931, data4: [187, 215, 48, 45, 182, 8, 70, 70] };
+}
 #[repr(C)]
 pub struct IDialAppStateDetails {
     pub base__: ::windows_sys::core::IInspectable,
     pub State: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut DialAppState) -> ::windows_sys::core::HRESULT,
     pub FullXml: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDialAppStateDetails {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3720651937, data2: 62942, data3: 16397, data4: [190, 164, 140, 132, 102, 187, 41, 97] };
+}
 #[repr(C)]
 pub struct IDialDevice {
     pub base__: ::windows_sys::core::IInspectable,
     pub Id: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub GetDialApp: unsafe extern "system" fn(this: *mut *mut Self, appname: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDialDevice {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4293979567, data2: 30111, data3: 16850, data4: [162, 10, 127, 41, 206, 11, 55, 132] };
 }
 #[repr(C)]
 pub struct IDialDevice2 {
@@ -105,6 +114,9 @@ pub struct IDialDevice2 {
     pub Thumbnail: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Storage_Streams"))]
     Thumbnail: usize,
+}
+impl ::windows_sys::core::Interface for IDialDevice2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3132617685, data2: 23547, data3: 20154, data4: [139, 50, 181, 124, 92, 94, 229, 201] };
 }
 #[repr(C)]
 pub struct IDialDevicePicker {
@@ -157,6 +169,9 @@ pub struct IDialDevicePicker {
     pub Hide: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub SetDisplayStatus: unsafe extern "system" fn(this: *mut *mut Self, device: *mut ::core::ffi::c_void, status: DialDeviceDisplayStatus) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDialDevicePicker {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3128840714, data2: 65369, data3: 20299, data4: [189, 172, 216, 159, 73, 90, 214, 225] };
+}
 #[repr(C)]
 pub struct IDialDevicePickerFilter {
     pub base__: ::windows_sys::core::IInspectable,
@@ -165,10 +180,16 @@ pub struct IDialDevicePickerFilter {
     #[cfg(not(feature = "Foundation_Collections"))]
     SupportedAppNames: usize,
 }
+impl ::windows_sys::core::Interface for IDialDevicePickerFilter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3246166970, data2: 34496, data3: 18525, data4: [184, 214, 15, 154, 143, 100, 21, 144] };
+}
 #[repr(C)]
 pub struct IDialDeviceSelectedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub SelectedDialDevice: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDialDeviceSelectedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1208717997, data2: 44150, data3: 18411, data4: [156, 6, 161, 147, 4, 218, 2, 71] };
 }
 #[repr(C)]
 pub struct IDialDeviceStatics {
@@ -183,10 +204,16 @@ pub struct IDialDeviceStatics {
     #[cfg(not(all(feature = "Devices_Enumeration", feature = "Foundation")))]
     DeviceInfoSupportsDialAsync: usize,
 }
+impl ::windows_sys::core::Interface for IDialDeviceStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2859060373, data2: 504, data3: 18264, data4: [132, 97, 43, 189, 28, 220, 60, 243] };
+}
 #[repr(C)]
 pub struct IDialDisconnectButtonClickedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub Device: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDialDisconnectButtonClickedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1383485778, data2: 40065, data3: 20053, data4: [173, 194, 14, 190, 153, 205, 227, 182] };
 }
 #[repr(C)]
 pub struct IDialReceiverApp {
@@ -200,6 +227,9 @@ pub struct IDialReceiverApp {
     #[cfg(not(feature = "Foundation_Collections"))]
     SetAdditionalDataAsync: usize,
 }
+impl ::windows_sys::core::Interface for IDialReceiverApp {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4248730711, data2: 20549, data3: 18190, data4: [179, 4, 77, 217, 177, 62, 125, 17] };
+}
 #[repr(C)]
 pub struct IDialReceiverApp2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -208,8 +238,14 @@ pub struct IDialReceiverApp2 {
     #[cfg(not(feature = "Foundation"))]
     GetUniqueDeviceNameAsync: usize,
 }
+impl ::windows_sys::core::Interface for IDialReceiverApp2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1393317893, data2: 37168, data3: 17068, data4: [165, 4, 25, 119, 220, 178, 234, 138] };
+}
 #[repr(C)]
 pub struct IDialReceiverAppStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub Current: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDialReceiverAppStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1394096700, data2: 19510, data3: 19714, data4: [178, 138, 242, 169, 218, 56, 236, 82] };
 }

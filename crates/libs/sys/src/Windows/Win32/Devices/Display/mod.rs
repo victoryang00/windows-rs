@@ -3206,6 +3206,9 @@ pub struct ICloneViewHelper {
     #[cfg(not(feature = "Win32_Foundation"))]
     Commit: usize,
 }
+impl ::windows_sys::core::Interface for ICloneViewHelper {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4137931972, data2: 22066, data3: 19843, data4: [176, 161, 251, 136, 113, 43, 30, 183] };
+}
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Devices_Display\"`*"]
 pub struct IFIEXTRA {
@@ -3754,6 +3757,9 @@ pub struct IViewHelper {
     #[cfg(not(feature = "Win32_System_Com"))]
     SetConfiguration: usize,
     pub GetProceedOnNewConfiguration: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IViewHelper {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3898396405, data2: 43690, data3: 18416, data4: [181, 227, 97, 247, 174, 205, 196, 193] };
 }
 #[doc = "*Required features: `\"Win32_Devices_Display\"`*"]
 pub const JOIN_BEVEL: i32 = 1i32;

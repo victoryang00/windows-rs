@@ -10,6 +10,9 @@ pub struct ITpmVirtualSmartCardManager {
     #[cfg(not(feature = "Win32_Foundation"))]
     DestroyVirtualSmartCard: usize,
 }
+impl ::windows_sys::core::Interface for ITpmVirtualSmartCardManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 288038399, data2: 55772, data3: 16887, data4: [134, 159, 214, 127, 238, 124, 181, 145] };
+}
 #[repr(C)]
 pub struct ITpmVirtualSmartCardManager2 {
     pub base__: ITpmVirtualSmartCardManager,
@@ -17,6 +20,9 @@ pub struct ITpmVirtualSmartCardManager2 {
     pub CreateVirtualSmartCardWithPinPolicy: unsafe extern "system" fn(this: *mut *mut Self, pszfriendlyname: ::windows_sys::core::PCWSTR, badminalgid: u8, pbadminkey: *const u8, cbadminkey: u32, pbadminkcv: *const u8, cbadminkcv: u32, pbpuk: *const u8, cbpuk: u32, pbpin: *const u8, cbpin: u32, pbpinpolicy: *const u8, cbpinpolicy: u32, fgenerate: super::super::Foundation::BOOL, pstatuscallback: *mut ::core::ffi::c_void, ppszinstanceid: *mut ::windows_sys::core::PWSTR, pfneedreboot: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     CreateVirtualSmartCardWithPinPolicy: usize,
+}
+impl ::windows_sys::core::Interface for ITpmVirtualSmartCardManager2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4260930233, data2: 734, data3: 18420, data4: [188, 38, 170, 133, 171, 94, 82, 103] };
 }
 #[repr(C)]
 pub struct ITpmVirtualSmartCardManager3 {
@@ -26,11 +32,17 @@ pub struct ITpmVirtualSmartCardManager3 {
     #[cfg(not(feature = "Win32_Foundation"))]
     CreateVirtualSmartCardWithAttestation: usize,
 }
+impl ::windows_sys::core::Interface for ITpmVirtualSmartCardManager3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1014258327, data2: 62325, data3: 16720, data4: [190, 23, 89, 80, 246, 148, 198, 153] };
+}
 #[repr(C)]
 pub struct ITpmVirtualSmartCardManagerStatusCallback {
     pub base__: ::windows_sys::core::IUnknown,
     pub ReportProgress: unsafe extern "system" fn(this: *mut *mut Self, status: TPMVSCMGR_STATUS) -> ::windows_sys::core::HRESULT,
     pub ReportError: unsafe extern "system" fn(this: *mut *mut Self, error: TPMVSCMGR_ERROR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ITpmVirtualSmartCardManagerStatusCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 438023007, data2: 43960, data3: 17692, data4: [161, 174, 51, 217, 143, 27, 239, 74] };
 }
 pub const RemoteTpmVirtualSmartCardManager: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 355377832, data2: 28892, data3: 19545, data4: [139, 42, 50, 170, 60, 160, 220, 172] };
 #[doc = "*Required features: `\"Win32_Security_Tpm\"`*"]

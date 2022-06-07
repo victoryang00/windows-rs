@@ -16,6 +16,10 @@ pub struct IMSMQApplication {
     MachineIdOfMachineName: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IMSMQApplication {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3621183621, data2: 56525, data3: 4560, data4: [170, 75, 0, 96, 151, 13, 235, 174] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IMSMQApplication2 {
     pub base__: IMSMQApplication,
@@ -35,6 +39,10 @@ pub struct IMSMQApplication2 {
     pub Properties: unsafe extern "system" fn(this: *mut *mut Self, ppcolproperties: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     Properties: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IMSMQApplication2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 312674560, data2: 29440, data3: 4562, data4: [176, 230, 0, 224, 44, 7, 79, 107] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -70,6 +78,10 @@ pub struct IMSMQApplication3 {
     pub Tidy: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IMSMQApplication3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3953748767, data2: 8552, data3: 4563, data4: [137, 140, 0, 224, 44, 7, 79, 107] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IMSMQCollection {
     pub base__: super::Com::IDispatch,
@@ -81,6 +93,10 @@ pub struct IMSMQCollection {
     pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, ppunk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IMSMQCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 25734191, data2: 60595, data3: 16755, data4: [151, 121, 99, 92, 162, 3, 156, 114] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IMSMQCoordinatedTransactionDispenser {
     pub base__: super::Com::IDispatch,
@@ -88,6 +104,10 @@ pub struct IMSMQCoordinatedTransactionDispenser {
     pub BeginTransaction: unsafe extern "system" fn(this: *mut *mut Self, ptransaction: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     BeginTransaction: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IMSMQCoordinatedTransactionDispenser {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3621183617, data2: 56525, data3: 4560, data4: [170, 75, 0, 96, 151, 13, 235, 174] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -103,6 +123,10 @@ pub struct IMSMQCoordinatedTransactionDispenser2 {
     Properties: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IMSMQCoordinatedTransactionDispenser2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3953748752, data2: 8552, data3: 4563, data4: [137, 140, 0, 224, 44, 7, 79, 107] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IMSMQCoordinatedTransactionDispenser3 {
     pub base__: super::Com::IDispatch,
@@ -114,6 +138,10 @@ pub struct IMSMQCoordinatedTransactionDispenser3 {
     pub Properties: unsafe extern "system" fn(this: *mut *mut Self, ppcolproperties: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     Properties: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IMSMQCoordinatedTransactionDispenser3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3953748756, data2: 8552, data3: 4563, data4: [137, 140, 0, 224, 44, 7, 79, 107] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -168,9 +196,17 @@ pub struct IMSMQDestination {
     Properties: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IMSMQDestination {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3953748758, data2: 8552, data3: 4563, data4: [137, 140, 0, 224, 44, 7, 79, 107] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IMSMQEvent {
     pub base__: super::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IMSMQEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3621183607, data2: 56525, data3: 4560, data4: [170, 75, 0, 96, 151, 13, 235, 174] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -182,9 +218,17 @@ pub struct IMSMQEvent2 {
     Properties: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IMSMQEvent2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3953748754, data2: 8552, data3: 4563, data4: [137, 140, 0, 224, 44, 7, 79, 107] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IMSMQEvent3 {
     pub base__: IMSMQEvent2,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IMSMQEvent3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3953748764, data2: 8552, data3: 4563, data4: [137, 140, 0, 224, 44, 7, 79, 107] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -211,6 +255,10 @@ pub struct IMSMQManagement {
     pub BytesInQueue: unsafe extern "system" fn(this: *mut *mut Self, pvbytesinqueue: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     BytesInQueue: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IMSMQManagement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3193897537, data2: 58505, data3: 18775, data4: [140, 196, 164, 82, 252, 243, 226, 62] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -322,6 +370,10 @@ pub struct IMSMQMessage {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     Send: usize,
     pub AttachCurrentSecurityContext: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IMSMQMessage {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3621183604, data2: 56525, data3: 4560, data4: [170, 75, 0, 96, 151, 13, 235, 174] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -513,6 +565,10 @@ pub struct IMSMQMessage2 {
     #[cfg(not(feature = "Win32_System_Com"))]
     putref_AdminQueueInfo: usize,
     pub ReceivedAuthenticationLevel: unsafe extern "system" fn(this: *mut *mut Self, psreceivedauthenticationlevel: *mut i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IMSMQMessage2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3650304992, data2: 42343, data3: 4562, data4: [176, 243, 0, 224, 44, 7, 79, 107] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -758,6 +814,10 @@ pub struct IMSMQMessage3 {
     SetSoapBody: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IMSMQMessage3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3953748762, data2: 8552, data3: 4563, data4: [137, 140, 0, 224, 44, 7, 79, 107] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IMSMQMessage4 {
     pub base__: super::Com::IDispatch,
@@ -1001,6 +1061,10 @@ pub struct IMSMQMessage4 {
     SetSoapBody: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IMSMQMessage4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3953748771, data2: 8552, data3: 4563, data4: [137, 140, 0, 224, 44, 7, 79, 107] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IMSMQOutgoingQueueManagement {
     pub base__: IMSMQManagement,
@@ -1018,6 +1082,10 @@ pub struct IMSMQOutgoingQueueManagement {
     pub EodResend: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IMSMQOutgoingQueueManagement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1690597627, data2: 63920, data3: 18069, data4: [138, 127, 67, 154, 201, 67, 38, 211] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IMSMQPrivateDestination {
     pub base__: super::Com::IDispatch,
@@ -1029,6 +1097,10 @@ pub struct IMSMQPrivateDestination {
     pub SetHandle: unsafe extern "system" fn(this: *mut *mut Self, varhandle: ::core::mem::ManuallyDrop<super::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     SetHandle: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IMSMQPrivateDestination {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3953748759, data2: 8552, data3: 4563, data4: [137, 140, 0, 224, 44, 7, 79, 107] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1045,6 +1117,10 @@ pub struct IMSMQPrivateEvent {
     FireArrivedErrorEvent: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IMSMQPrivateEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3618321217, data2: 51667, data3: 4561, data4: [187, 71, 0, 128, 199, 197, 162, 192] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IMSMQQuery {
     pub base__: super::Com::IDispatch,
@@ -1052,6 +1128,10 @@ pub struct IMSMQQuery {
     pub LookupQueue: unsafe extern "system" fn(this: *mut *mut Self, queueguid: *const super::Com::VARIANT, servicetypeguid: *const super::Com::VARIANT, label: *const super::Com::VARIANT, createtime: *const super::Com::VARIANT, modifytime: *const super::Com::VARIANT, relservicetype: *const super::Com::VARIANT, rellabel: *const super::Com::VARIANT, relcreatetime: *const super::Com::VARIANT, relmodifytime: *const super::Com::VARIANT, ppqinfos: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     LookupQueue: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IMSMQQuery {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3621183602, data2: 56525, data3: 4560, data4: [170, 75, 0, 96, 151, 13, 235, 174] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1065,6 +1145,10 @@ pub struct IMSMQQuery2 {
     pub Properties: unsafe extern "system" fn(this: *mut *mut Self, ppcolproperties: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     Properties: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IMSMQQuery2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3953748750, data2: 8552, data3: 4563, data4: [137, 140, 0, 224, 44, 7, 79, 107] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1084,6 +1168,10 @@ pub struct IMSMQQuery3 {
     LookupQueue: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IMSMQQuery3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3953748761, data2: 8552, data3: 4563, data4: [137, 140, 0, 224, 44, 7, 79, 107] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IMSMQQuery4 {
     pub base__: super::Com::IDispatch,
@@ -1099,6 +1187,10 @@ pub struct IMSMQQuery4 {
     pub LookupQueue: unsafe extern "system" fn(this: *mut *mut Self, queueguid: *const super::Com::VARIANT, servicetypeguid: *const super::Com::VARIANT, label: *const super::Com::VARIANT, createtime: *const super::Com::VARIANT, modifytime: *const super::Com::VARIANT, relservicetype: *const super::Com::VARIANT, rellabel: *const super::Com::VARIANT, relcreatetime: *const super::Com::VARIANT, relmodifytime: *const super::Com::VARIANT, multicastaddress: *const super::Com::VARIANT, relmulticastaddress: *const super::Com::VARIANT, ppqinfos: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     LookupQueue: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IMSMQQuery4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3953748772, data2: 8552, data3: 4563, data4: [137, 140, 0, 224, 44, 7, 79, 107] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1138,6 +1230,10 @@ pub struct IMSMQQueue {
     pub PeekCurrent: unsafe extern "system" fn(this: *mut *mut Self, wantdestinationqueue: *const super::Com::VARIANT, wantbody: *const super::Com::VARIANT, receivetimeout: *const super::Com::VARIANT, ppmsg: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     PeekCurrent: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IMSMQQueue {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3621183606, data2: 56525, data3: 4560, data4: [170, 75, 0, 96, 151, 13, 235, 174] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1201,6 +1297,10 @@ pub struct IMSMQQueue2 {
     pub Properties: unsafe extern "system" fn(this: *mut *mut Self, ppcolproperties: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     Properties: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IMSMQQueue2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4010112224, data2: 1752, data3: 4563, data4: [177, 0, 0, 224, 44, 7, 79, 107] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1310,6 +1410,10 @@ pub struct IMSMQQueue3 {
     PeekLastByLookupId: usize,
     pub Purge: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub IsOpen2: unsafe extern "system" fn(this: *mut *mut Self, pisopen: *mut i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IMSMQQueue3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3953748763, data2: 8552, data3: 4563, data4: [137, 140, 0, 224, 44, 7, 79, 107] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1425,6 +1529,10 @@ pub struct IMSMQQueue4 {
     ReceiveByLookupIdAllowPeek: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IMSMQQueue4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3953748768, data2: 8552, data3: 4563, data4: [137, 140, 0, 224, 44, 7, 79, 107] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IMSMQQueueInfo {
     pub base__: super::Com::IDispatch,
@@ -1497,6 +1605,10 @@ pub struct IMSMQQueueInfo {
     Open: usize,
     pub Refresh: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Update: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IMSMQQueueInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3621183611, data2: 56525, data3: 4560, data4: [170, 75, 0, 96, 151, 13, 235, 174] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1587,6 +1699,10 @@ pub struct IMSMQQueueInfo2 {
     pub SetSecurity: unsafe extern "system" fn(this: *mut *mut Self, varsecurity: ::core::mem::ManuallyDrop<super::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     SetSecurity: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IMSMQQueueInfo2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4246162048, data2: 35279, data3: 4562, data4: [176, 242, 0, 224, 44, 7, 79, 107] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1693,6 +1809,10 @@ pub struct IMSMQQueueInfo3 {
     ADsPath: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IMSMQQueueInfo3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3953748765, data2: 8552, data3: 4563, data4: [137, 140, 0, 224, 44, 7, 79, 107] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IMSMQQueueInfo4 {
     pub base__: super::Com::IDispatch,
@@ -1797,6 +1917,10 @@ pub struct IMSMQQueueInfo4 {
     ADsPath: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IMSMQQueueInfo4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3953748769, data2: 8552, data3: 4563, data4: [137, 140, 0, 224, 44, 7, 79, 107] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IMSMQQueueInfos {
     pub base__: super::Com::IDispatch,
@@ -1805,6 +1929,10 @@ pub struct IMSMQQueueInfos {
     pub Next: unsafe extern "system" fn(this: *mut *mut Self, ppqinfonext: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     Next: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IMSMQQueueInfos {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3621183613, data2: 56525, data3: 4560, data4: [170, 75, 0, 96, 151, 13, 235, 174] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1821,6 +1949,10 @@ pub struct IMSMQQueueInfos2 {
     Properties: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IMSMQQueueInfos2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3953748751, data2: 8552, data3: 4563, data4: [137, 140, 0, 224, 44, 7, 79, 107] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IMSMQQueueInfos3 {
     pub base__: super::Com::IDispatch,
@@ -1833,6 +1965,10 @@ pub struct IMSMQQueueInfos3 {
     pub Properties: unsafe extern "system" fn(this: *mut *mut Self, ppcolproperties: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     Properties: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IMSMQQueueInfos3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3953748766, data2: 8552, data3: 4563, data4: [137, 140, 0, 224, 44, 7, 79, 107] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1849,6 +1985,10 @@ pub struct IMSMQQueueInfos4 {
     Properties: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IMSMQQueueInfos4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3953748770, data2: 8552, data3: 4563, data4: [137, 140, 0, 224, 44, 7, 79, 107] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IMSMQQueueManagement {
     pub base__: IMSMQManagement,
@@ -1861,6 +2001,10 @@ pub struct IMSMQQueueManagement {
     pub EodGetReceiveInfo: unsafe extern "system" fn(this: *mut *mut Self, pvcollection: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     EodGetReceiveInfo: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IMSMQQueueManagement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2143188825, data2: 22368, data3: 17485, data4: [184, 165, 94, 122, 185, 168, 76, 206] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1877,6 +2021,10 @@ pub struct IMSMQTransaction {
     Abort: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IMSMQTransaction {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3621183615, data2: 56525, data3: 4560, data4: [170, 75, 0, 96, 151, 13, 235, 174] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IMSMQTransaction2 {
     pub base__: IMSMQTransaction,
@@ -1890,6 +2038,10 @@ pub struct IMSMQTransaction2 {
     Properties: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IMSMQTransaction2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 752928176, data2: 28263, data3: 4562, data4: [176, 230, 0, 224, 44, 7, 79, 107] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IMSMQTransaction3 {
     pub base__: IMSMQTransaction2,
@@ -1899,6 +2051,10 @@ pub struct IMSMQTransaction3 {
     ITransaction: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IMSMQTransaction3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3953748755, data2: 8552, data3: 4563, data4: [137, 140, 0, 224, 44, 7, 79, 107] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IMSMQTransactionDispenser {
     pub base__: super::Com::IDispatch,
@@ -1906,6 +2062,10 @@ pub struct IMSMQTransactionDispenser {
     pub BeginTransaction: unsafe extern "system" fn(this: *mut *mut Self, ptransaction: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     BeginTransaction: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IMSMQTransactionDispenser {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3621183619, data2: 56525, data3: 4560, data4: [170, 75, 0, 96, 151, 13, 235, 174] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1921,6 +2081,10 @@ pub struct IMSMQTransactionDispenser2 {
     Properties: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IMSMQTransactionDispenser2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3953748753, data2: 8552, data3: 4563, data4: [137, 140, 0, 224, 44, 7, 79, 107] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IMSMQTransactionDispenser3 {
     pub base__: super::Com::IDispatch,
@@ -1932,6 +2096,10 @@ pub struct IMSMQTransactionDispenser3 {
     pub Properties: unsafe extern "system" fn(this: *mut *mut Self, ppcolproperties: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     Properties: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IMSMQTransactionDispenser3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3953748757, data2: 8552, data3: 4563, data4: [137, 140, 0, 224, 44, 7, 79, 107] };
 }
 #[doc = "*Required features: `\"Win32_System_MessageQueuing\"`*"]
 pub const LONG_LIVED: u32 = 4294967294u32;
@@ -3014,4 +3182,8 @@ pub const MQ_XACT_STATUS_UNKNOWN: XACT_STATUS = 2i32;
 #[repr(C)]
 pub struct _DMSMQEventEvents {
     pub base__: super::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for _DMSMQEventEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3621183608, data2: 56525, data3: 4560, data4: [170, 75, 0, 96, 151, 13, 235, 174] };
 }

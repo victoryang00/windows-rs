@@ -135,6 +135,9 @@ pub struct IAccessibilitySettings {
     #[cfg(not(feature = "Foundation"))]
     RemoveHighContrastChanged: usize,
 }
+impl ::windows_sys::core::Interface for IAccessibilitySettings {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4262363463, data2: 50368, data3: 17762, data4: [185, 98, 19, 39, 181, 42, 213, 185] };
+}
 #[repr(C)]
 pub struct IActivationViewSwitcher {
     pub base__: ::windows_sys::core::IInspectable,
@@ -147,6 +150,9 @@ pub struct IActivationViewSwitcher {
     #[cfg(not(feature = "Foundation"))]
     ShowAsStandaloneWithSizePreferenceAsync: usize,
     pub IsViewPresentedOnActivationVirtualDesktop: unsafe extern "system" fn(this: *mut *mut Self, viewid: i32, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IActivationViewSwitcher {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3701939126, data2: 29520, data3: 18731, data4: [170, 199, 200, 161, 61, 114, 36, 173] };
 }
 #[repr(C)]
 pub struct IApplicationView {
@@ -172,6 +178,9 @@ pub struct IApplicationView {
     pub RemoveConsolidated: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     RemoveConsolidated: usize,
+}
+impl ::windows_sys::core::Interface for IApplicationView {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3525498137, data2: 17249, data3: 17694, data4: [150, 196, 96, 244, 249, 116, 45, 176] };
 }
 #[repr(C)]
 pub struct IApplicationView2 {
@@ -199,6 +208,9 @@ pub struct IApplicationView2 {
     pub SetDesiredBoundsMode: unsafe extern "system" fn(this: *mut *mut Self, boundsmode: ApplicationViewBoundsMode, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub DesiredBoundsMode: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ApplicationViewBoundsMode) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IApplicationView2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3900092822, data2: 42309, data3: 16604, data4: [181, 148, 69, 12, 186, 104, 204, 0] };
+}
 #[repr(C)]
 pub struct IApplicationView3 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -218,6 +230,9 @@ pub struct IApplicationView3 {
     #[cfg(not(feature = "Foundation"))]
     SetPreferredMinSize: usize,
 }
+impl ::windows_sys::core::Interface for IApplicationView3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2419891429, data2: 31034, data3: 20447, data4: [162, 178, 175, 26, 194, 30, 49, 8] };
+}
 #[repr(C)]
 pub struct IApplicationView4 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -236,11 +251,17 @@ pub struct IApplicationView4 {
     #[cfg(not(feature = "Foundation"))]
     TryConsolidateAsync: usize,
 }
+impl ::windows_sys::core::Interface for IApplicationView4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 367381484, data2: 40463, data3: 18101, data4: [188, 63, 155, 246, 83, 231, 75, 94] };
+}
 #[repr(C)]
 pub struct IApplicationView7 {
     pub base__: ::windows_sys::core::IInspectable,
     pub PersistedStateId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub SetPersistedStateId: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IApplicationView7 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2687931975, data2: 24495, data3: 23206, data4: [156, 56, 190, 251, 177, 42, 7, 30] };
 }
 #[repr(C)]
 pub struct IApplicationView9 {
@@ -254,15 +275,24 @@ pub struct IApplicationView9 {
     #[cfg(not(all(feature = "Foundation_Collections", feature = "UI_WindowManagement")))]
     GetDisplayRegions: usize,
 }
+impl ::windows_sys::core::Interface for IApplicationView9 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2623870713, data2: 538, data3: 24321, data4: [147, 229, 155, 218, 210, 100, 117, 116] };
+}
 #[repr(C)]
 pub struct IApplicationViewConsolidatedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub IsUserInitiated: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IApplicationViewConsolidatedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1363429868, data2: 32418, data3: 19943, data4: [166, 166, 125, 251, 170, 235, 182, 251] };
+}
 #[repr(C)]
 pub struct IApplicationViewConsolidatedEventArgs2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub IsAppInitiated: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IApplicationViewConsolidatedEventArgs2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 471441100, data2: 28097, data3: 16628, data4: [175, 238, 7, 217, 234, 41, 100, 48] };
 }
 #[cfg(feature = "deprecated")]
 #[repr(C)]
@@ -273,6 +303,10 @@ pub struct IApplicationViewFullscreenStatics {
     #[cfg(not(feature = "deprecated"))]
     TryUnsnapToFullscreen: usize,
 }
+#[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for IApplicationViewFullscreenStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3162058429, data2: 25854, data3: 19301, data4: [160, 192, 144, 28, 226, 182, 134, 54] };
+}
 #[repr(C)]
 pub struct IApplicationViewInteropStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -281,15 +315,24 @@ pub struct IApplicationViewInteropStatics {
     #[cfg(not(feature = "UI_Core"))]
     GetApplicationViewIdForWindow: usize,
 }
+impl ::windows_sys::core::Interface for IApplicationViewInteropStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3292986205, data2: 18323, data3: 18582, data4: [168, 226, 190, 87, 168, 187, 15, 80] };
+}
 #[repr(C)]
 pub struct IApplicationViewScaling {
     pub base__: ::windows_sys::core::IInspectable,
+}
+impl ::windows_sys::core::Interface for IApplicationViewScaling {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 487447587, data2: 9203, data3: 19245, data4: [132, 254, 116, 191, 55, 180, 139, 102] };
 }
 #[repr(C)]
 pub struct IApplicationViewScalingStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub DisableLayoutScaling: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub TrySetDisableLayoutScaling: unsafe extern "system" fn(this: *mut *mut Self, disablelayoutscaling: bool, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IApplicationViewScalingStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2962222320, data2: 47430, data3: 17864, data4: [165, 227, 113, 245, 170, 120, 248, 97] };
 }
 #[cfg(feature = "deprecated")]
 #[repr(C)]
@@ -304,12 +347,19 @@ pub struct IApplicationViewStatics {
     #[cfg(not(feature = "deprecated"))]
     TryUnsnap: usize,
 }
+#[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for IApplicationViewStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 17457926, data2: 50227, data3: 17637, data4: [169, 242, 189, 132, 212, 3, 10, 149] };
+}
 #[repr(C)]
 pub struct IApplicationViewStatics2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub GetForCurrentView: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub TerminateAppOnFinalViewClose: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub SetTerminateAppOnFinalViewClose: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IApplicationViewStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2939390693, data2: 53092, data3: 16956, data4: [133, 229, 243, 231, 36, 72, 251, 35] };
 }
 #[repr(C)]
 pub struct IApplicationViewStatics3 {
@@ -325,11 +375,17 @@ pub struct IApplicationViewStatics3 {
     #[cfg(not(feature = "Foundation"))]
     SetPreferredLaunchViewSize: usize,
 }
+impl ::windows_sys::core::Interface for IApplicationViewStatics3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2727179668, data2: 35905, data3: 19987, data4: [151, 25, 81, 100, 121, 111, 228, 199] };
+}
 #[repr(C)]
 pub struct IApplicationViewStatics4 {
     pub base__: ::windows_sys::core::IInspectable,
     pub ClearAllPersistedState: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub ClearPersistedState: unsafe extern "system" fn(this: *mut *mut Self, key: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IApplicationViewStatics4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 150834483, data2: 9745, data3: 21302, data4: [163, 21, 217, 142, 99, 102, 201, 219] };
 }
 #[repr(C)]
 pub struct IApplicationViewSwitcherStatics {
@@ -364,10 +420,16 @@ pub struct IApplicationViewSwitcherStatics {
     #[cfg(not(feature = "Foundation"))]
     PrepareForCustomAnimatedSwitchAsync: usize,
 }
+impl ::windows_sys::core::Interface for IApplicationViewSwitcherStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2539597598, data2: 58966, data3: 19550, data4: [160, 161, 113, 124, 111, 250, 125, 100] };
+}
 #[repr(C)]
 pub struct IApplicationViewSwitcherStatics2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub DisableSystemViewActivationPolicy: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IApplicationViewSwitcherStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1625920973, data2: 20418, data3: 18628, data4: [184, 227, 57, 95, 43, 159, 15, 193] };
 }
 #[repr(C)]
 pub struct IApplicationViewSwitcherStatics3 {
@@ -380,6 +442,9 @@ pub struct IApplicationViewSwitcherStatics3 {
     pub TryShowAsViewModeWithPreferencesAsync: unsafe extern "system" fn(this: *mut *mut Self, viewid: i32, viewmode: ApplicationViewMode, viewmodepreferences: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     TryShowAsViewModeWithPreferencesAsync: usize,
+}
+impl ::windows_sys::core::Interface for IApplicationViewSwitcherStatics3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2449839136, data2: 32935, data3: 18541, data4: [178, 31, 199, 164, 162, 66, 163, 131] };
 }
 #[repr(C)]
 pub struct IApplicationViewTitleBar {
@@ -481,21 +546,33 @@ pub struct IApplicationViewTitleBar {
     #[cfg(not(feature = "Foundation"))]
     ButtonInactiveBackgroundColor: usize,
 }
+impl ::windows_sys::core::Interface for IApplicationViewTitleBar {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 9587392, data2: 37675, data3: 19051, data4: [156, 75, 220, 56, 200, 36, 120, 206] };
+}
 #[repr(C)]
 pub struct IApplicationViewTransferContext {
     pub base__: ::windows_sys::core::IInspectable,
     pub ViewId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i32) -> ::windows_sys::core::HRESULT,
     pub SetViewId: unsafe extern "system" fn(this: *mut *mut Self, value: i32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IApplicationViewTransferContext {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2239020131, data2: 15383, data3: 16526, data4: [148, 8, 138, 26, 158, 168, 27, 250] };
+}
 #[repr(C)]
 pub struct IApplicationViewTransferContextStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub DataPackageFormatId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IApplicationViewTransferContextStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 363371922, data2: 56697, data3: 19211, data4: [188, 71, 213, 241, 149, 241, 70, 97] };
+}
 #[repr(C)]
 pub struct IApplicationViewWithContext {
     pub base__: ::windows_sys::core::IInspectable,
     pub UIContext: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IApplicationViewWithContext {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3176518930, data2: 40385, data3: 17660, data4: [133, 1, 102, 102, 37, 223, 96, 220] };
 }
 #[repr(C)]
 pub struct IInputPane {
@@ -521,11 +598,17 @@ pub struct IInputPane {
     #[cfg(not(feature = "Foundation"))]
     OccludedRect: usize,
 }
+impl ::windows_sys::core::Interface for IInputPane {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1678432880, data2: 1779, data3: 19591, data4: [166, 120, 152, 41, 201, 18, 124, 40] };
+}
 #[repr(C)]
 pub struct IInputPane2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub TryShow: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub TryHide: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IInputPane2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2322284326, data2: 28816, data3: 18323, data4: [148, 76, 195, 242, 205, 226, 98, 118] };
 }
 #[repr(C)]
 pub struct IInputPaneControl {
@@ -533,15 +616,24 @@ pub struct IInputPaneControl {
     pub Visible: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub SetVisible: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IInputPaneControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 143372879, data2: 38447, data3: 18589, data4: [170, 110, 198, 190, 26, 10, 110, 82] };
+}
 #[repr(C)]
 pub struct IInputPaneStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub GetForCurrentView: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IInputPaneStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2515840826, data2: 61255, data3: 16970, data4: [151, 65, 253, 40, 21, 235, 162, 189] };
+}
 #[repr(C)]
 pub struct IInputPaneStatics2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub GetForUIContext: unsafe extern "system" fn(this: *mut *mut Self, context: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IInputPaneStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 459494043, data2: 55788, data3: 17713, data4: [132, 69, 113, 186, 185, 251, 130, 142] };
 }
 #[repr(C)]
 pub struct IInputPaneVisibilityEventArgs {
@@ -552,6 +644,9 @@ pub struct IInputPaneVisibilityEventArgs {
     OccludedRect: usize,
     pub SetEnsuredFocusedElementInView: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
     pub EnsuredFocusedElementInView: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IInputPaneVisibilityEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3527663638, data2: 55559, data3: 20428, data4: [187, 141, 247, 123, 170, 80, 40, 241] };
 }
 #[repr(C)]
 pub struct IProjectionManagerStatics {
@@ -578,6 +673,9 @@ pub struct IProjectionManagerStatics {
     #[cfg(not(feature = "Foundation"))]
     RemoveProjectionDisplayAvailableChanged: usize,
 }
+impl ::windows_sys::core::Interface for IProjectionManagerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3059716413, data2: 58096, data3: 20477, data4: [186, 149, 52, 36, 22, 71, 228, 92] };
+}
 #[repr(C)]
 pub struct IProjectionManagerStatics2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -594,6 +692,9 @@ pub struct IProjectionManagerStatics2 {
     #[cfg(not(all(feature = "Foundation", feature = "UI_Popups")))]
     RequestStartProjectingWithPlacementAsync: usize,
     pub GetDeviceSelector: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IProjectionManagerStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4080873283, data2: 10057, data3: 19678, data4: [185, 119, 192, 196, 30, 116, 21, 209] };
 }
 #[repr(C)]
 pub struct IStatusBar {
@@ -646,6 +747,9 @@ pub struct IStatusBar {
     #[cfg(not(feature = "Foundation"))]
     RemoveHiding: usize,
 }
+impl ::windows_sys::core::Interface for IStatusBar {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 268223935, data2: 39120, data3: 18532, data4: [177, 232, 179, 244, 2, 11, 232, 180] };
+}
 #[repr(C)]
 pub struct IStatusBarProgressIndicator {
     pub base__: ::windows_sys::core::IInspectable,
@@ -668,10 +772,16 @@ pub struct IStatusBarProgressIndicator {
     #[cfg(not(feature = "Foundation"))]
     SetProgressValue: usize,
 }
+impl ::windows_sys::core::Interface for IStatusBarProgressIndicator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1993025136, data2: 41943, data3: 18895, data4: [130, 0, 79, 62, 237, 202, 39, 187] };
+}
 #[repr(C)]
 pub struct IStatusBarStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub GetForCurrentView: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IStatusBarStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2336636895, data2: 16943, data3: 17761, data4: [136, 6, 251, 18, 137, 202, 223, 183] };
 }
 #[repr(C)]
 pub struct IUISettings {
@@ -702,6 +812,9 @@ pub struct IUISettings {
     pub MouseHoverTime: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
     pub UIElementColor: unsafe extern "system" fn(this: *mut *mut Self, desiredelement: UIElementType, result__: *mut super::Color) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IUISettings {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2234914304, data2: 7267, data3: 17959, data4: [188, 177, 58, 137, 224, 188, 156, 85] };
+}
 #[repr(C)]
 pub struct IUISettings2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -714,6 +827,9 @@ pub struct IUISettings2 {
     pub RemoveTextScaleFactorChanged: unsafe extern "system" fn(this: *mut *mut Self, cookie: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     RemoveTextScaleFactorChanged: usize,
+}
+impl ::windows_sys::core::Interface for IUISettings2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3134727169, data2: 10017, data3: 17657, data4: [187, 145, 43, 178, 40, 190, 68, 47] };
 }
 #[repr(C)]
 pub struct IUISettings3 {
@@ -728,6 +844,9 @@ pub struct IUISettings3 {
     #[cfg(not(feature = "Foundation"))]
     RemoveColorValuesChanged: usize,
 }
+impl ::windows_sys::core::Interface for IUISettings3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 50469860, data2: 21076, data3: 18305, data4: [129, 148, 81, 104, 247, 208, 109, 123] };
+}
 #[repr(C)]
 pub struct IUISettings4 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -741,6 +860,9 @@ pub struct IUISettings4 {
     #[cfg(not(feature = "Foundation"))]
     RemoveAdvancedEffectsEnabledChanged: usize,
 }
+impl ::windows_sys::core::Interface for IUISettings4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1387999234, data2: 37275, data3: 19819, data4: [155, 120, 141, 214, 111, 244, 185, 59] };
+}
 #[repr(C)]
 pub struct IUISettings5 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -753,6 +875,9 @@ pub struct IUISettings5 {
     pub RemoveAutoHideScrollBarsChanged: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     RemoveAutoHideScrollBarsChanged: usize,
+}
+impl ::windows_sys::core::Interface for IUISettings5 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1397347720, data2: 3253, data3: 24325, data4: [189, 52, 112, 107, 50, 49, 240, 189] };
 }
 #[repr(C)]
 pub struct IUISettings6 {
@@ -774,27 +899,45 @@ pub struct IUISettings6 {
     #[cfg(not(feature = "Foundation"))]
     RemoveMessageDurationChanged: usize,
 }
+impl ::windows_sys::core::Interface for IUISettings6 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2935069655, data2: 65073, data3: 23044, data4: [173, 164, 70, 154, 174, 198, 223, 169] };
+}
 #[repr(C)]
 pub struct IUISettingsAnimationsEnabledChangedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
+}
+impl ::windows_sys::core::Interface for IUISettingsAnimationsEnabledChangedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 209406781, data2: 11937, data3: 21310, data4: [137, 77, 65, 91, 197, 36, 60, 41] };
 }
 #[repr(C)]
 pub struct IUISettingsAutoHideScrollBarsChangedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
 }
+impl ::windows_sys::core::Interface for IUISettingsAutoHideScrollBarsChangedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2276447410, data2: 37190, data3: 24322, data4: [143, 107, 6, 212, 84, 23, 76, 15] };
+}
 #[repr(C)]
 pub struct IUISettingsMessageDurationChangedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
+}
+impl ::windows_sys::core::Interface for IUISettingsMessageDurationChangedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 864726354, data2: 19037, data3: 23385, data4: [128, 2, 217, 48, 246, 8, 253, 110] };
 }
 #[repr(C)]
 pub struct IUIViewSettings {
     pub base__: ::windows_sys::core::IInspectable,
     pub UserInteractionMode: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut UserInteractionMode) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IUIViewSettings {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3325450230, data2: 34896, data3: 18189, data4: [136, 248, 69, 94, 22, 234, 44, 38] };
+}
 #[repr(C)]
 pub struct IUIViewSettingsStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub GetForCurrentView: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUIViewSettingsStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1499240357, data2: 63734, data3: 16847, data4: [176, 251, 170, 205, 184, 31, 213, 246] };
 }
 #[repr(C)]
 pub struct IViewModePreferences {
@@ -810,10 +953,16 @@ pub struct IViewModePreferences {
     #[cfg(not(feature = "Foundation"))]
     SetCustomSize: usize,
 }
+impl ::windows_sys::core::Interface for IViewModePreferences {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2274348346, data2: 2969, data3: 17097, data4: [132, 208, 211, 241, 212, 3, 85, 75] };
+}
 #[repr(C)]
 pub struct IViewModePreferencesStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub CreateDefault: unsafe extern "system" fn(this: *mut *mut Self, mode: ApplicationViewMode, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IViewModePreferencesStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1773537893, data2: 24037, data3: 16600, data4: [131, 6, 56, 51, 223, 122, 34, 116] };
 }
 pub type InputPane = *mut ::core::ffi::c_void;
 pub type InputPaneVisibilityEventArgs = *mut ::core::ffi::c_void;

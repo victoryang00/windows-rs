@@ -42,11 +42,17 @@ pub struct AsyncIFtpAuthenticationProvider {
     #[cfg(not(feature = "Win32_Foundation"))]
     Finish_AuthenticateUser: usize,
 }
+impl ::windows_sys::core::Interface for AsyncIFtpAuthenticationProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3259956069, data2: 40766, data3: 18838, data4: [143, 177, 206, 22, 105, 22, 186, 181] };
+}
 #[repr(C)]
 pub struct AsyncIFtpAuthorizationProvider {
     pub base__: ::windows_sys::core::IUnknown,
     pub Begin_GetUserAccessPermission: unsafe extern "system" fn(this: *mut *mut Self, pszsessionid: ::windows_sys::core::PCWSTR, pszsitename: ::windows_sys::core::PCWSTR, pszvirtualpath: ::windows_sys::core::PCWSTR, pszusername: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
     pub Finish_GetUserAccessPermission: unsafe extern "system" fn(this: *mut *mut Self, pftpaccess: *mut FTP_ACCESS) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for AsyncIFtpAuthorizationProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2249048889, data2: 2021, data3: 19036, data4: [156, 97, 136, 32, 206, 160, 18, 188] };
 }
 #[repr(C)]
 pub struct AsyncIFtpHomeDirectoryProvider {
@@ -54,11 +60,17 @@ pub struct AsyncIFtpHomeDirectoryProvider {
     pub Begin_GetUserHomeDirectoryData: unsafe extern "system" fn(this: *mut *mut Self, pszsessionid: ::windows_sys::core::PCWSTR, pszsitename: ::windows_sys::core::PCWSTR, pszusername: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
     pub Finish_GetUserHomeDirectoryData: unsafe extern "system" fn(this: *mut *mut Self, ppszhomedirectorydata: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for AsyncIFtpHomeDirectoryProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1945638456, data2: 25237, data3: 17085, data4: [162, 190, 74, 101, 127, 124, 71, 156] };
+}
 #[repr(C)]
 pub struct AsyncIFtpLogProvider {
     pub base__: ::windows_sys::core::IUnknown,
     pub Begin_Log: unsafe extern "system" fn(this: *mut *mut Self, ploggingparameters: *const LOGGING_PARAMETERS) -> ::windows_sys::core::HRESULT,
     pub Finish_Log: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for AsyncIFtpLogProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 10530374, data2: 9368, data3: 18610, data4: [149, 230, 223, 103, 142, 215, 212, 159] };
 }
 #[repr(C)]
 pub struct AsyncIFtpPostprocessProvider {
@@ -69,6 +81,9 @@ pub struct AsyncIFtpPostprocessProvider {
     Begin_HandlePostprocess: usize,
     pub Finish_HandlePostprocess: unsafe extern "system" fn(this: *mut *mut Self, pftpprocessstatus: *mut FTP_PROCESS_STATUS) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for AsyncIFtpPostprocessProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2708153666, data2: 38548, data3: 20145, data4: [165, 100, 108, 46, 145, 253, 193, 51] };
+}
 #[repr(C)]
 pub struct AsyncIFtpPreprocessProvider {
     pub base__: ::windows_sys::core::IUnknown,
@@ -77,6 +92,9 @@ pub struct AsyncIFtpPreprocessProvider {
     #[cfg(not(feature = "Win32_Foundation"))]
     Begin_HandlePreprocess: usize,
     pub Finish_HandlePreprocess: unsafe extern "system" fn(this: *mut *mut Self, pftpprocessstatus: *mut FTP_PROCESS_STATUS) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for AsyncIFtpPreprocessProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1878392207, data2: 64910, data3: 18609, data4: [163, 224, 191, 112, 115, 219, 77, 181] };
 }
 #[repr(C)]
 pub struct AsyncIFtpRoleProvider {
@@ -87,6 +105,9 @@ pub struct AsyncIFtpRoleProvider {
     #[cfg(not(feature = "Win32_Foundation"))]
     Finish_IsUserInRole: usize,
 }
+impl ::windows_sys::core::Interface for AsyncIFtpRoleProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1048821657, data2: 28908, data3: 16842, data4: [132, 182, 172, 167, 199, 166, 44, 175] };
+}
 #[repr(C)]
 pub struct AsyncIMSAdminBaseSinkW {
     pub base__: ::windows_sys::core::IUnknown,
@@ -94,6 +115,9 @@ pub struct AsyncIMSAdminBaseSinkW {
     pub Finish_SinkNotify: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Begin_ShutdownNotify: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Finish_ShutdownNotify: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for AsyncIMSAdminBaseSinkW {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2850461203, data2: 47117, data3: 4560, data4: [185, 185, 0, 160, 201, 34, 231, 80] };
 }
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Iis\"`, `\"Win32_Foundation\"`, `\"Win32_Security_Cryptography\"`*"]
@@ -920,6 +944,9 @@ pub struct IADMEXT {
     pub EnumDcomCLSIDs: unsafe extern "system" fn(this: *mut *mut Self, pclsiddcom: *mut ::windows_sys::core::GUID, dwenumindex: u32) -> ::windows_sys::core::HRESULT,
     pub Terminate: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IADMEXT {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1373628784, data2: 63218, data3: 4560, data4: [185, 189, 0, 160, 201, 34, 231, 80] };
+}
 #[repr(C)]
 pub struct IFtpAuthenticationProvider {
     pub base__: ::windows_sys::core::IUnknown,
@@ -928,20 +955,32 @@ pub struct IFtpAuthenticationProvider {
     #[cfg(not(feature = "Win32_Foundation"))]
     AuthenticateUser: usize,
 }
+impl ::windows_sys::core::Interface for IFtpAuthenticationProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1180301660, data2: 54696, data3: 18183, data4: [178, 252, 111, 213, 121, 66, 70, 207] };
+}
 #[repr(C)]
 pub struct IFtpAuthorizationProvider {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetUserAccessPermission: unsafe extern "system" fn(this: *mut *mut Self, pszsessionid: ::windows_sys::core::PCWSTR, pszsitename: ::windows_sys::core::PCWSTR, pszvirtualpath: ::windows_sys::core::PCWSTR, pszusername: ::windows_sys::core::PCWSTR, pftpaccess: *mut FTP_ACCESS) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IFtpAuthorizationProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2768955297, data2: 41818, data3: 17076, data4: [164, 243, 244, 247, 5, 122, 5, 209] };
 }
 #[repr(C)]
 pub struct IFtpHomeDirectoryProvider {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetUserHomeDirectoryData: unsafe extern "system" fn(this: *mut *mut Self, pszsessionid: ::windows_sys::core::PCWSTR, pszsitename: ::windows_sys::core::PCWSTR, pszusername: ::windows_sys::core::PCWSTR, ppszhomedirectorydata: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IFtpHomeDirectoryProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 154383250, data2: 6365, data3: 16535, data4: [139, 156, 131, 50, 92, 53, 217, 166] };
+}
 #[repr(C)]
 pub struct IFtpLogProvider {
     pub base__: ::windows_sys::core::IUnknown,
     pub Log: unsafe extern "system" fn(this: *mut *mut Self, ploggingparameters: *const LOGGING_PARAMETERS) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IFtpLogProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2710213836, data2: 33433, data3: 17416, data4: [129, 108, 124, 59, 172, 161, 164, 14] };
 }
 #[repr(C)]
 pub struct IFtpPostprocessProvider {
@@ -951,6 +990,9 @@ pub struct IFtpPostprocessProvider {
     #[cfg(not(feature = "Win32_Foundation"))]
     HandlePostprocess: usize,
 }
+impl ::windows_sys::core::Interface for IFtpPostprocessProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1159908294, data2: 5837, data3: 18861, data4: [134, 83, 154, 44, 87, 158, 66, 128] };
+}
 #[repr(C)]
 pub struct IFtpPreprocessProvider {
     pub base__: ::windows_sys::core::IUnknown,
@@ -958,6 +1000,9 @@ pub struct IFtpPreprocessProvider {
     pub HandlePreprocess: unsafe extern "system" fn(this: *mut *mut Self, ppreprocessparameters: *const PRE_PROCESS_PARAMETERS, pftpprocessstatus: *mut FTP_PROCESS_STATUS) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     HandlePreprocess: usize,
+}
+impl ::windows_sys::core::Interface for IFtpPreprocessProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2747374432, data2: 23080, data3: 18202, data4: [143, 147, 171, 48, 65, 28, 238, 130] };
 }
 #[repr(C)]
 pub struct IFtpProviderConstruct {
@@ -967,6 +1012,9 @@ pub struct IFtpProviderConstruct {
     #[cfg(not(feature = "Win32_System_Com"))]
     Construct: usize,
 }
+impl ::windows_sys::core::Interface for IFtpProviderConstruct {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1293565819, data2: 16685, data3: 17532, data4: [177, 153, 100, 249, 103, 233, 162, 218] };
+}
 #[repr(C)]
 pub struct IFtpRoleProvider {
     pub base__: ::windows_sys::core::IUnknown,
@@ -974,6 +1022,9 @@ pub struct IFtpRoleProvider {
     pub IsUserInRole: unsafe extern "system" fn(this: *mut *mut Self, pszsessionid: ::windows_sys::core::PCWSTR, pszsitename: ::windows_sys::core::PCWSTR, pszusername: ::windows_sys::core::PCWSTR, pszrole: ::windows_sys::core::PCWSTR, pfisinrole: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     IsUserInRole: usize,
+}
+impl ::windows_sys::core::Interface for IFtpRoleProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2426176781, data2: 36000, data3: 18036, data4: [150, 184, 204, 41, 65, 83, 87, 37] };
 }
 #[doc = "*Required features: `\"Win32_System_Iis\"`*"]
 pub const IISADMIN_EXTENSIONS_CLSID_MD_KEY: &str = "LM/IISADMIN/EXTENSIONS/DCOMCLSIDS";
@@ -1174,16 +1225,25 @@ pub struct IMSAdminBase2W {
     #[cfg(not(feature = "Win32_Foundation"))]
     EnumHistory: usize,
 }
+impl ::windows_sys::core::Interface for IMSAdminBase2W {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2191053057, data2: 63890, data3: 17335, data4: [142, 202, 80, 82, 216, 133, 185, 149] };
+}
 #[repr(C)]
 pub struct IMSAdminBase3W {
     pub base__: IMSAdminBase2W,
     pub GetChildPaths: unsafe extern "system" fn(this: *mut *mut Self, hmdhandle: u32, pszmdpath: ::windows_sys::core::PCWSTR, cchmdbuffersize: u32, pszbuffer: ::windows_sys::core::PWSTR, pcchmdrequiredbuffersize: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMSAdminBase3W {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4128413005, data2: 15115, data3: 19542, data4: [149, 99, 34, 123, 123, 230, 36, 180] };
 }
 #[repr(C)]
 pub struct IMSAdminBaseSinkW {
     pub base__: ::windows_sys::core::IUnknown,
     pub SinkNotify: unsafe extern "system" fn(this: *mut *mut Self, dwmdnumelements: u32, pcochangelist: *const MD_CHANGE_OBJECT_W) -> ::windows_sys::core::HRESULT,
     pub ShutdownNotify: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMSAdminBaseSinkW {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2850461202, data2: 47117, data3: 4560, data4: [185, 185, 0, 160, 201, 34, 231, 80] };
 }
 #[repr(C)]
 pub struct IMSAdminBaseW {
@@ -1235,10 +1295,16 @@ pub struct IMSAdminBaseW {
     pub UnmarshalInterface: unsafe extern "system" fn(this: *mut *mut Self, piadmbwinterface: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetServerGuid: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMSAdminBaseW {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1890915376, data2: 46794, data3: 4560, data4: [185, 185, 0, 160, 201, 34, 231, 80] };
+}
 #[repr(C)]
 pub struct IMSImpExpHelpW {
     pub base__: ::windows_sys::core::IUnknown,
     pub EnumeratePathsInFile: unsafe extern "system" fn(this: *mut *mut Self, pszfilename: ::windows_sys::core::PCWSTR, pszkeytype: ::windows_sys::core::PCWSTR, dwmdbuffersize: u32, pszbuffer: ::windows_sys::core::PWSTR, pdwmdrequiredbuffersize: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMSImpExpHelpW {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 704604159, data2: 32848, data3: 18447, data4: [159, 48, 204, 65, 99, 95, 47, 157] };
 }
 pub const LIBID_ASPTypeLibrary: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3648679328, data2: 43100, data3: 4559, data4: [131, 174, 0, 160, 201, 12, 43, 216] };
 pub const LIBID_IISRSTALib: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3908797972, data2: 22671, data3: 4562, data4: [157, 97, 0, 192, 79, 121, 197, 254] };

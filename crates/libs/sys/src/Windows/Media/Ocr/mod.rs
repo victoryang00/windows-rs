@@ -10,6 +10,9 @@ pub struct IOcrEngine {
     #[cfg(not(feature = "Globalization"))]
     RecognizerLanguage: usize,
 }
+impl ::windows_sys::core::Interface for IOcrEngine {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1511308353, data2: 23414, data3: 12608, data4: [182, 128, 136, 37, 86, 38, 131, 172] };
+}
 #[repr(C)]
 pub struct IOcrEngineStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -28,6 +31,9 @@ pub struct IOcrEngineStatics {
     TryCreateFromLanguage: usize,
     pub TryCreateFromUserProfileLanguages: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IOcrEngineStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1543481434, data2: 13188, data3: 13632, data4: [153, 64, 105, 145, 32, 212, 40, 168] };
+}
 #[repr(C)]
 pub struct IOcrLine {
     pub base__: ::windows_sys::core::IInspectable,
@@ -36,6 +42,9 @@ pub struct IOcrLine {
     #[cfg(not(feature = "Foundation_Collections"))]
     Words: usize,
     pub Text: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IOcrLine {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4432239, data2: 58143, data3: 14884, data4: [137, 156, 212, 68, 189, 8, 129, 36] };
 }
 #[repr(C)]
 pub struct IOcrResult {
@@ -50,6 +59,9 @@ pub struct IOcrResult {
     TextAngle: usize,
     pub Text: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IOcrResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2614244786, data2: 5979, data3: 15722, data4: [146, 226, 56, 140, 32, 110, 47, 99] };
+}
 #[repr(C)]
 pub struct IOcrWord {
     pub base__: ::windows_sys::core::IInspectable,
@@ -58,6 +70,9 @@ pub struct IOcrWord {
     #[cfg(not(feature = "Foundation"))]
     BoundingRect: usize,
     pub Text: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IOcrWord {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1009403770, data2: 23769, data3: 13605, data4: [186, 42, 35, 209, 224, 166, 138, 29] };
 }
 pub type OcrEngine = *mut ::core::ffi::c_void;
 pub type OcrLine = *mut ::core::ffi::c_void;

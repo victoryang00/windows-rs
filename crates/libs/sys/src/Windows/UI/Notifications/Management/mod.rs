@@ -22,10 +22,16 @@ pub struct IUserNotificationListener {
     pub ClearNotifications: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub RemoveNotification: unsafe extern "system" fn(this: *mut *mut Self, notificationid: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IUserNotificationListener {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1649753665, data2: 35334, data3: 19695, data4: [130, 21, 96, 51, 165, 190, 75, 3] };
+}
 #[repr(C)]
 pub struct IUserNotificationListenerStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub Current: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUserNotificationListenerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4284556239, data2: 17286, data3: 19107, data4: [183, 61, 184, 4, 229, 182, 59, 35] };
 }
 pub type UserNotificationListener = *mut ::core::ffi::c_void;
 #[doc = "*Required features: `\"UI_Notifications_Management\"`*"]

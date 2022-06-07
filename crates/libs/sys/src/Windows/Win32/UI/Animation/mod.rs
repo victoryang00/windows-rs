@@ -9,6 +9,9 @@ pub struct IUIAnimationInterpolator {
     pub InterpolateVelocity: unsafe extern "system" fn(this: *mut *mut Self, offset: f64, velocity: *mut f64) -> ::windows_sys::core::HRESULT,
     pub GetDependencies: unsafe extern "system" fn(this: *mut *mut Self, initialvaluedependencies: *mut UI_ANIMATION_DEPENDENCIES, initialvelocitydependencies: *mut UI_ANIMATION_DEPENDENCIES, durationdependencies: *mut UI_ANIMATION_DEPENDENCIES) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IUIAnimationInterpolator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2014694330, data2: 56823, data3: 18316, data4: [164, 108, 123, 108, 115, 139, 121, 120] };
+}
 #[repr(C)]
 pub struct IUIAnimationInterpolator2 {
     pub base__: ::windows_sys::core::IUnknown,
@@ -22,10 +25,16 @@ pub struct IUIAnimationInterpolator2 {
     pub GetPrimitiveInterpolation: unsafe extern "system" fn(this: *mut *mut Self, interpolation: *mut ::core::ffi::c_void, cdimension: u32) -> ::windows_sys::core::HRESULT,
     pub GetDependencies: unsafe extern "system" fn(this: *mut *mut Self, initialvaluedependencies: *mut UI_ANIMATION_DEPENDENCIES, initialvelocitydependencies: *mut UI_ANIMATION_DEPENDENCIES, durationdependencies: *mut UI_ANIMATION_DEPENDENCIES) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IUIAnimationInterpolator2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3933646840, data2: 59938, data3: 18979, data4: [160, 239, 166, 169, 102, 112, 53, 24] };
+}
 #[repr(C)]
 pub struct IUIAnimationLoopIterationChangeHandler2 {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnLoopIterationChanged: unsafe extern "system" fn(this: *mut *mut Self, storyboard: *mut ::core::ffi::c_void, id: usize, newiterationcount: u32, olditerationcount: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUIAnimationLoopIterationChangeHandler2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 758846884, data2: 18274, data3: 18347, data4: [160, 48, 178, 50, 33, 223, 58, 224] };
 }
 #[repr(C)]
 pub struct IUIAnimationManager {
@@ -49,6 +58,9 @@ pub struct IUIAnimationManager {
     pub SetConcludePriorityComparison: unsafe extern "system" fn(this: *mut *mut Self, comparison: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetDefaultLongestAcceptableDelay: unsafe extern "system" fn(this: *mut *mut Self, delay: f64) -> ::windows_sys::core::HRESULT,
     pub Shutdown: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUIAnimationManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2439612780, data2: 44173, data3: 20093, data4: [148, 229, 103, 250, 77, 194, 242, 232] };
 }
 #[repr(C)]
 pub struct IUIAnimationManager2 {
@@ -78,15 +90,24 @@ pub struct IUIAnimationManager2 {
     pub SetDefaultLongestAcceptableDelay: unsafe extern "system" fn(this: *mut *mut Self, delay: f64) -> ::windows_sys::core::HRESULT,
     pub Shutdown: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IUIAnimationManager2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3635869652, data2: 16649, data3: 19775, data4: [172, 238, 135, 153, 38, 150, 140, 177] };
+}
 #[repr(C)]
 pub struct IUIAnimationManagerEventHandler {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnManagerStatusChanged: unsafe extern "system" fn(this: *mut *mut Self, newstatus: UI_ANIMATION_MANAGER_STATUS, previousstatus: UI_ANIMATION_MANAGER_STATUS) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IUIAnimationManagerEventHandler {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2016616941, data2: 30883, data3: 17254, data4: [181, 116, 106, 246, 7, 166, 71, 136] };
+}
 #[repr(C)]
 pub struct IUIAnimationManagerEventHandler2 {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnManagerStatusChanged: unsafe extern "system" fn(this: *mut *mut Self, newstatus: UI_ANIMATION_MANAGER_STATUS, previousstatus: UI_ANIMATION_MANAGER_STATUS) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUIAnimationManagerEventHandler2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4141884090, data2: 49139, data3: 17132, data4: [144, 51, 224, 115, 243, 62, 131, 195] };
 }
 #[repr(C)]
 pub struct IUIAnimationPrimitiveInterpolation {
@@ -94,15 +115,24 @@ pub struct IUIAnimationPrimitiveInterpolation {
     pub AddCubic: unsafe extern "system" fn(this: *mut *mut Self, dimension: u32, beginoffset: f64, constantcoefficient: f32, linearcoefficient: f32, quadraticcoefficient: f32, cubiccoefficient: f32) -> ::windows_sys::core::HRESULT,
     pub AddSinusoidal: unsafe extern "system" fn(this: *mut *mut Self, dimension: u32, beginoffset: f64, bias: f32, amplitude: f32, frequency: f32, phase: f32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IUIAnimationPrimitiveInterpolation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3132231011, data2: 17249, data3: 17882, data4: [162, 79, 171, 133, 8, 132, 107, 91] };
+}
 #[repr(C)]
 pub struct IUIAnimationPriorityComparison {
     pub base__: ::windows_sys::core::IUnknown,
     pub HasPriority: unsafe extern "system" fn(this: *mut *mut Self, scheduledstoryboard: *mut ::core::ffi::c_void, newstoryboard: *mut ::core::ffi::c_void, priorityeffect: UI_ANIMATION_PRIORITY_EFFECT) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IUIAnimationPriorityComparison {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2214239092, data2: 24454, data3: 17944, data4: [188, 106, 162, 250, 193, 155, 63, 68] };
+}
 #[repr(C)]
 pub struct IUIAnimationPriorityComparison2 {
     pub base__: ::windows_sys::core::IUnknown,
     pub HasPriority: unsafe extern "system" fn(this: *mut *mut Self, scheduledstoryboard: *mut ::core::ffi::c_void, newstoryboard: *mut ::core::ffi::c_void, priorityeffect: UI_ANIMATION_PRIORITY_EFFECT) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUIAnimationPriorityComparison2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1533901367, data2: 17953, data3: 18044, data4: [139, 5, 112, 19, 29, 230, 45, 219] };
 }
 #[repr(C)]
 pub struct IUIAnimationStoryboard {
@@ -124,6 +154,9 @@ pub struct IUIAnimationStoryboard {
     pub GetStatus: unsafe extern "system" fn(this: *mut *mut Self, status: *mut UI_ANIMATION_STORYBOARD_STATUS) -> ::windows_sys::core::HRESULT,
     pub GetElapsedTime: unsafe extern "system" fn(this: *mut *mut Self, elapsedtime: *mut f64) -> ::windows_sys::core::HRESULT,
     pub SetStoryboardEventHandler: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUIAnimationStoryboard {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2835288719, data2: 39929, data3: 19185, data4: [158, 103, 229, 228, 16, 222, 251, 132] };
 }
 #[repr(C)]
 pub struct IUIAnimationStoryboard2 {
@@ -153,17 +186,26 @@ pub struct IUIAnimationStoryboard2 {
     #[cfg(not(feature = "Win32_Foundation"))]
     SetStoryboardEventHandler: usize,
 }
+impl ::windows_sys::core::Interface for IUIAnimationStoryboard2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2921897170, data2: 4820, data3: 18757, data4: [148, 25, 158, 65, 190, 3, 77, 242] };
+}
 #[repr(C)]
 pub struct IUIAnimationStoryboardEventHandler {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnStoryboardStatusChanged: unsafe extern "system" fn(this: *mut *mut Self, storyboard: *mut ::core::ffi::c_void, newstatus: UI_ANIMATION_STORYBOARD_STATUS, previousstatus: UI_ANIMATION_STORYBOARD_STATUS) -> ::windows_sys::core::HRESULT,
     pub OnStoryboardUpdated: unsafe extern "system" fn(this: *mut *mut Self, storyboard: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IUIAnimationStoryboardEventHandler {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1029476360, data2: 60540, data3: 17252, data4: [159, 138, 154, 243, 197, 140, 186, 230] };
+}
 #[repr(C)]
 pub struct IUIAnimationStoryboardEventHandler2 {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnStoryboardStatusChanged: unsafe extern "system" fn(this: *mut *mut Self, storyboard: *mut ::core::ffi::c_void, newstatus: UI_ANIMATION_STORYBOARD_STATUS, previousstatus: UI_ANIMATION_STORYBOARD_STATUS) -> ::windows_sys::core::HRESULT,
     pub OnStoryboardUpdated: unsafe extern "system" fn(this: *mut *mut Self, storyboard: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUIAnimationStoryboardEventHandler2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3133535578, data2: 47740, data3: 16716, data4: [181, 153, 251, 248, 80, 245, 83, 198] };
 }
 #[repr(C)]
 pub struct IUIAnimationTimer {
@@ -176,10 +218,16 @@ pub struct IUIAnimationTimer {
     pub GetTime: unsafe extern "system" fn(this: *mut *mut Self, seconds: *mut f64) -> ::windows_sys::core::HRESULT,
     pub SetFrameRateThreshold: unsafe extern "system" fn(this: *mut *mut Self, framespersecond: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IUIAnimationTimer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1796143825, data2: 41043, data3: 16854, data4: [144, 133, 51, 166, 137, 20, 70, 101] };
+}
 #[repr(C)]
 pub struct IUIAnimationTimerClientEventHandler {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnTimerClientStatusChanged: unsafe extern "system" fn(this: *mut *mut Self, newstatus: UI_ANIMATION_TIMER_CLIENT_STATUS, previousstatus: UI_ANIMATION_TIMER_CLIENT_STATUS) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUIAnimationTimerClientEventHandler {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3202043318, data2: 38138, data3: 19451, data4: [164, 127, 239, 45, 158, 64, 140, 37] };
 }
 #[repr(C)]
 pub struct IUIAnimationTimerEventHandler {
@@ -188,12 +236,18 @@ pub struct IUIAnimationTimerEventHandler {
     pub OnPostUpdate: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub OnRenderingTooSlow: unsafe extern "system" fn(this: *mut *mut Self, framespersecond: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IUIAnimationTimerEventHandler {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 659193322, data2: 55153, data3: 16533, data4: [171, 189, 141, 247, 171, 210, 60, 227] };
+}
 #[repr(C)]
 pub struct IUIAnimationTimerUpdateHandler {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnUpdate: unsafe extern "system" fn(this: *mut *mut Self, timenow: f64, result: *mut UI_ANIMATION_UPDATE_RESULT) -> ::windows_sys::core::HRESULT,
     pub SetTimerClientEventHandler: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub ClearTimerClientEventHandler: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUIAnimationTimerUpdateHandler {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 425003447, data2: 23902, data3: 20030, data4: [178, 120, 238, 55, 89, 179, 103, 173] };
 }
 #[repr(C)]
 pub struct IUIAnimationTransition {
@@ -202,6 +256,9 @@ pub struct IUIAnimationTransition {
     pub SetInitialVelocity: unsafe extern "system" fn(this: *mut *mut Self, velocity: f64) -> ::windows_sys::core::HRESULT,
     pub IsDurationKnown: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub GetDuration: unsafe extern "system" fn(this: *mut *mut Self, duration: *mut f64) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUIAnimationTransition {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3698123346, data2: 63281, data3: 16847, data4: [182, 16, 97, 75, 108, 160, 73, 173] };
 }
 #[repr(C)]
 pub struct IUIAnimationTransition2 {
@@ -214,15 +271,24 @@ pub struct IUIAnimationTransition2 {
     pub IsDurationKnown: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub GetDuration: unsafe extern "system" fn(this: *mut *mut Self, duration: *mut f64) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IUIAnimationTransition2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1660916003, data2: 43098, data3: 20123, data4: [162, 24, 67, 90, 147, 226, 104, 253] };
+}
 #[repr(C)]
 pub struct IUIAnimationTransitionFactory {
     pub base__: ::windows_sys::core::IUnknown,
     pub CreateTransition: unsafe extern "system" fn(this: *mut *mut Self, interpolator: *mut ::core::ffi::c_void, transition: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IUIAnimationTransitionFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4242087427, data2: 15931, data3: 17837, data4: [187, 177, 109, 252, 129, 83, 116, 61] };
+}
 #[repr(C)]
 pub struct IUIAnimationTransitionFactory2 {
     pub base__: ::windows_sys::core::IUnknown,
     pub CreateTransition: unsafe extern "system" fn(this: *mut *mut Self, interpolator: *mut ::core::ffi::c_void, transition: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUIAnimationTransitionFactory2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2474461462, data2: 49574, data3: 17109, data4: [136, 216, 48, 52, 77, 110, 254, 49] };
 }
 #[repr(C)]
 pub struct IUIAnimationTransitionLibrary {
@@ -239,6 +305,9 @@ pub struct IUIAnimationTransitionLibrary {
     pub CreateCubicTransition: unsafe extern "system" fn(this: *mut *mut Self, duration: f64, finalvalue: f64, finalvelocity: f64, transition: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub CreateSmoothStopTransition: unsafe extern "system" fn(this: *mut *mut Self, maximumduration: f64, finalvalue: f64, transition: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub CreateParabolicTransitionFromAcceleration: unsafe extern "system" fn(this: *mut *mut Self, finalvalue: f64, finalvelocity: f64, acceleration: f64, transition: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUIAnimationTransitionLibrary {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3394901169, data2: 53839, data3: 18616, data4: [143, 228, 199, 129, 105, 186, 149, 78] };
 }
 #[repr(C)]
 pub struct IUIAnimationTransitionLibrary2 {
@@ -263,6 +332,9 @@ pub struct IUIAnimationTransitionLibrary2 {
     pub CreateCubicBezierLinearTransition: unsafe extern "system" fn(this: *mut *mut Self, duration: f64, finalvalue: f64, x1: f64, y1: f64, x2: f64, y2: f64, pptransition: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub CreateCubicBezierLinearVectorTransition: unsafe extern "system" fn(this: *mut *mut Self, duration: f64, finalvalue: *const f64, cdimension: u32, x1: f64, y1: f64, x2: f64, y2: f64, pptransition: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IUIAnimationTransitionLibrary2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 63942227, data2: 38272, data3: 20195, data4: [179, 99, 46, 206, 81, 180, 175, 106] };
+}
 #[repr(C)]
 pub struct IUIAnimationVariable {
     pub base__: ::windows_sys::core::IUnknown,
@@ -280,6 +352,9 @@ pub struct IUIAnimationVariable {
     pub GetTag: unsafe extern "system" fn(this: *mut *mut Self, object: *mut *mut ::core::ffi::c_void, id: *mut u32) -> ::windows_sys::core::HRESULT,
     pub SetVariableChangeHandler: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetVariableIntegerChangeHandler: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUIAnimationVariable {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2364453205, data2: 10313, data3: 19685, data4: [148, 72, 145, 255, 112, 225, 228, 217] };
 }
 #[repr(C)]
 pub struct IUIAnimationVariable2 {
@@ -323,30 +398,48 @@ pub struct IUIAnimationVariable2 {
     SetVariableIntegerChangeHandler: usize,
     pub SetVariableCurveChangeHandler: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IUIAnimationVariable2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1226093316, data2: 38571, data3: 17625, data4: [158, 119, 213, 16, 155, 126, 116, 102] };
+}
 #[repr(C)]
 pub struct IUIAnimationVariableChangeHandler {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnValueChanged: unsafe extern "system" fn(this: *mut *mut Self, storyboard: *mut ::core::ffi::c_void, variable: *mut ::core::ffi::c_void, newvalue: f64, previousvalue: f64) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUIAnimationVariableChangeHandler {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1666758586, data2: 34770, data3: 17109, data4: [191, 113, 130, 233, 25, 221, 88, 98] };
 }
 #[repr(C)]
 pub struct IUIAnimationVariableChangeHandler2 {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnValueChanged: unsafe extern "system" fn(this: *mut *mut Self, storyboard: *mut ::core::ffi::c_void, variable: *mut ::core::ffi::c_void, newvalue: *const f64, previousvalue: *const f64, cdimension: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IUIAnimationVariableChangeHandler2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1672267986, data2: 28334, data3: 19376, data4: [184, 121, 88, 109, 216, 207, 190, 66] };
+}
 #[repr(C)]
 pub struct IUIAnimationVariableCurveChangeHandler2 {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnCurveChanged: unsafe extern "system" fn(this: *mut *mut Self, variable: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUIAnimationVariableCurveChangeHandler2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921605265, data2: 325, data3: 19489, data4: [145, 146, 90, 171, 64, 237, 223, 128] };
 }
 #[repr(C)]
 pub struct IUIAnimationVariableIntegerChangeHandler {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnIntegerValueChanged: unsafe extern "system" fn(this: *mut *mut Self, storyboard: *mut ::core::ffi::c_void, variable: *mut ::core::ffi::c_void, newvalue: i32, previousvalue: i32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IUIAnimationVariableIntegerChangeHandler {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3141408080, data2: 13678, data3: 17584, data4: [153, 218, 133, 172, 96, 23, 134, 94] };
+}
 #[repr(C)]
 pub struct IUIAnimationVariableIntegerChangeHandler2 {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnIntegerValueChanged: unsafe extern "system" fn(this: *mut *mut Self, storyboard: *mut ::core::ffi::c_void, variable: *mut ::core::ffi::c_void, newvalue: *const i32, previousvalue: *const i32, cdimension: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUIAnimationVariableIntegerChangeHandler2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2191224049, data2: 20282, data3: 17426, data4: [174, 9, 178, 67, 235, 76, 107, 88] };
 }
 pub const UIAnimationManager: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1277150778, data2: 26972, data3: 18408, data4: [163, 57, 26, 25, 75, 227, 208, 184] };
 pub const UIAnimationManager2: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3529345090, data2: 34948, data3: 19018, data4: [179, 33, 9, 19, 20, 55, 155, 221] };

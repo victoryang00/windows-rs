@@ -71,6 +71,10 @@ pub struct IDynamicPortMapping {
     pub EditInternalPort: unsafe extern "system" fn(this: *mut *mut Self, linternalport: i32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IDynamicPortMapping {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1338507906, data2: 9142, data3: 17272, data4: [154, 39, 205, 143, 23, 201, 64, 12] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IDynamicPortMappingCollection {
     pub base__: super::super::System::Com::IDispatch,
@@ -89,6 +93,10 @@ pub struct IDynamicPortMappingCollection {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     Add: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IDynamicPortMappingCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3054362639, data2: 5486, data3: 20109, data4: [158, 193, 58, 35, 66, 193, 8, 153] };
+}
 #[repr(C)]
 pub struct IEnumNetConnection {
     pub base__: ::windows_sys::core::IUnknown,
@@ -96,6 +104,9 @@ pub struct IEnumNetConnection {
     pub Skip: unsafe extern "system" fn(this: *mut *mut Self, celt: u32) -> ::windows_sys::core::HRESULT,
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IEnumNetConnection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3230226080, data2: 7379, data3: 4561, data4: [177, 197, 0, 128, 95, 193, 39, 14] };
 }
 #[repr(C)]
 pub struct IEnumNetSharingEveryConnection {
@@ -108,6 +119,9 @@ pub struct IEnumNetSharingEveryConnection {
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEnumNetSharingEveryConnection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3230226104, data2: 7379, data3: 4561, data4: [177, 197, 0, 128, 95, 193, 39, 14] };
+}
 #[repr(C)]
 pub struct IEnumNetSharingPortMapping {
     pub base__: ::windows_sys::core::IUnknown,
@@ -118,6 +132,9 @@ pub struct IEnumNetSharingPortMapping {
     pub Skip: unsafe extern "system" fn(this: *mut *mut Self, celt: u32) -> ::windows_sys::core::HRESULT,
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IEnumNetSharingPortMapping {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3230226096, data2: 7379, data3: 4561, data4: [177, 197, 0, 128, 95, 193, 39, 14] };
 }
 #[repr(C)]
 pub struct IEnumNetSharingPrivateConnection {
@@ -130,6 +147,9 @@ pub struct IEnumNetSharingPrivateConnection {
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEnumNetSharingPrivateConnection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3230226101, data2: 7379, data3: 4561, data4: [177, 197, 0, 128, 95, 193, 39, 14] };
+}
 #[repr(C)]
 pub struct IEnumNetSharingPublicConnection {
     pub base__: ::windows_sys::core::IUnknown,
@@ -141,12 +161,19 @@ pub struct IEnumNetSharingPublicConnection {
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEnumNetSharingPublicConnection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3230226100, data2: 7379, data3: 4561, data4: [177, 197, 0, 128, 95, 193, 39, 14] };
+}
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct INATEventManager {
     pub base__: super::super::System::Com::IDispatch,
     pub SetExternalIPAddressCallback: unsafe extern "system" fn(this: *mut *mut Self, punk: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetNumberOfEntriesCallback: unsafe extern "system" fn(this: *mut *mut Self, punk: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for INATEventManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1649137032, data2: 36960, data3: 16649, data4: [176, 176, 26, 219, 188, 172, 50, 223] };
 }
 #[repr(C)]
 pub struct INATExternalIPAddressCallback {
@@ -156,10 +183,16 @@ pub struct INATExternalIPAddressCallback {
     #[cfg(not(feature = "Win32_Foundation"))]
     NewExternalIPAddress: usize,
 }
+impl ::windows_sys::core::Interface for INATExternalIPAddressCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2621531968, data2: 41806, data3: 17519, data4: [186, 6, 171, 208, 76, 49, 73, 174] };
+}
 #[repr(C)]
 pub struct INATNumberOfEntriesCallback {
     pub base__: ::windows_sys::core::IUnknown,
     pub NewNumberOfEntries: unsafe extern "system" fn(this: *mut *mut Self, lnewnumberofentries: i32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for INATNumberOfEntriesCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3359246964, data2: 37358, data3: 16822, data4: [182, 122, 103, 224, 240, 11, 189, 120] };
 }
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_WindowsFirewall\"`*"]
@@ -275,6 +308,9 @@ pub struct INetConnection {
     pub GetUiObjectClassId: unsafe extern "system" fn(this: *mut *mut Self, pclsid: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub Rename: unsafe extern "system" fn(this: *mut *mut Self, pszwnewname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for INetConnection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3230226081, data2: 7379, data3: 4561, data4: [177, 197, 0, 128, 95, 193, 39, 14] };
+}
 #[repr(C)]
 pub struct INetConnectionConnectUi {
     pub base__: ::windows_sys::core::IUnknown,
@@ -288,10 +324,16 @@ pub struct INetConnectionConnectUi {
     #[cfg(not(feature = "Win32_Foundation"))]
     Disconnect: usize,
 }
+impl ::windows_sys::core::Interface for INetConnectionConnectUi {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3230226083, data2: 7379, data3: 4561, data4: [177, 197, 0, 128, 95, 193, 39, 14] };
+}
 #[repr(C)]
 pub struct INetConnectionManager {
     pub base__: ::windows_sys::core::IUnknown,
     pub EnumConnections: unsafe extern "system" fn(this: *mut *mut Self, flags: NETCONMGR_ENUM_FLAGS, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for INetConnectionManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3230226082, data2: 7379, data3: 4561, data4: [177, 197, 0, 128, 95, 193, 39, 14] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -312,6 +354,10 @@ pub struct INetConnectionProps {
     pub Status: unsafe extern "system" fn(this: *mut *mut Self, pstatus: *mut NETCON_STATUS) -> ::windows_sys::core::HRESULT,
     pub MediaType: unsafe extern "system" fn(this: *mut *mut Self, pmediatype: *mut NETCON_MEDIATYPE) -> ::windows_sys::core::HRESULT,
     pub Characteristics: unsafe extern "system" fn(this: *mut *mut Self, pdwflags: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for INetConnectionProps {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4096228501, data2: 52827, data3: 17981, data4: [129, 103, 86, 98, 217, 188, 170, 114] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -349,6 +395,10 @@ pub struct INetFwAuthorizedApplication {
     pub SetEnabled: unsafe extern "system" fn(this: *mut *mut Self, enabled: i16) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for INetFwAuthorizedApplication {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3051769850, data2: 49861, data3: 17486, data4: [163, 1, 251, 94, 0, 1, 128, 80] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct INetFwAuthorizedApplications {
     pub base__: super::super::System::Com::IDispatch,
@@ -366,6 +416,10 @@ pub struct INetFwAuthorizedApplications {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     Item: usize,
     pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, newenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for INetFwAuthorizedApplications {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1682898258, data2: 52473, data3: 18540, data4: [151, 162, 57, 243, 82, 87, 11, 48] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -393,6 +447,10 @@ pub struct INetFwIcmpSettings {
     pub SetAllowOutboundPacketTooBig: unsafe extern "system" fn(this: *mut *mut Self, allow: i16) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for INetFwIcmpSettings {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2787146542, data2: 31965, data3: 17002, data4: [149, 30, 94, 28, 188, 90, 254, 173] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct INetFwMgr {
     pub base__: super::super::System::Com::IDispatch,
@@ -410,6 +468,10 @@ pub struct INetFwMgr {
     pub IsIcmpTypeAllowed: unsafe extern "system" fn(this: *mut *mut Self, ipversion: NET_FW_IP_VERSION, localaddress: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, r#type: u8, allowed: *mut super::super::System::Com::VARIANT, restricted: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     IsIcmpTypeAllowed: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for INetFwMgr {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4152986357, data2: 51908, data3: 17970, data4: [162, 236, 218, 6, 229, 17, 26, 242] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -444,6 +506,10 @@ pub struct INetFwOpenPort {
     pub BuiltIn: unsafe extern "system" fn(this: *mut *mut Self, builtin: *mut i16) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for INetFwOpenPort {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3762830240, data2: 18431, data3: 19868, data4: [166, 214, 119, 65, 208, 177, 149, 247] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct INetFwOpenPorts {
     pub base__: super::super::System::Com::IDispatch,
@@ -460,6 +526,10 @@ pub struct INetFwOpenPorts {
     pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, newenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for INetFwOpenPorts {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3236550650, data2: 57470, data3: 17162, data4: [177, 154, 9, 12, 232, 45, 146, 226] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct INetFwPolicy {
     pub base__: super::super::System::Com::IDispatch,
@@ -471,6 +541,10 @@ pub struct INetFwPolicy {
     pub GetProfileByType: unsafe extern "system" fn(this: *mut *mut Self, profiletype: NET_FW_PROFILE_TYPE, profile: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     GetProfileByType: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for INetFwPolicy {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3563922552, data2: 39625, data3: 16392, data4: [157, 199, 85, 99, 206, 85, 54, 204] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -521,6 +595,10 @@ pub struct INetFwPolicy2 {
     pub LocalPolicyModifyState: unsafe extern "system" fn(this: *mut *mut Self, modifystate: *mut NET_FW_MODIFY_STATE) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for INetFwPolicy2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2553434183, data2: 50801, data3: 16756, data4: [141, 129, 222, 252, 211, 240, 49, 134] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct INetFwProduct {
     pub base__: super::super::System::Com::IDispatch,
@@ -546,6 +624,10 @@ pub struct INetFwProduct {
     PathToSignedProductExe: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for INetFwProduct {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1904744089, data2: 6388, data3: 17803, data4: [184, 146, 63, 252, 229, 224, 127, 117] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct INetFwProducts {
     pub base__: super::super::System::Com::IDispatch,
@@ -559,6 +641,10 @@ pub struct INetFwProducts {
     #[cfg(not(feature = "Win32_System_Com"))]
     Item: usize,
     pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, newenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for INetFwProducts {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 971716320, data2: 8343, data3: 16573, data4: [138, 242, 99, 161, 59, 82, 83, 98] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -595,6 +681,10 @@ pub struct INetFwProfile {
     AuthorizedApplications: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for INetFwProfile {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 390729178, data2: 59897, data3: 17565, data4: [153, 59, 33, 171, 102, 124, 164, 86] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct INetFwRemoteAdminSettings {
     pub base__: super::super::System::Com::IDispatch,
@@ -612,6 +702,10 @@ pub struct INetFwRemoteAdminSettings {
     SetRemoteAddresses: usize,
     pub Enabled: unsafe extern "system" fn(this: *mut *mut Self, enabled: *mut i16) -> ::windows_sys::core::HRESULT,
     pub SetEnabled: unsafe extern "system" fn(this: *mut *mut Self, enabled: i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for INetFwRemoteAdminSettings {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3569274335, data2: 28531, data3: 19075, data4: [184, 50, 156, 102, 135, 76, 210, 14] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -727,11 +821,19 @@ pub struct INetFwRule {
     pub SetAction: unsafe extern "system" fn(this: *mut *mut Self, action: NET_FW_ACTION) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for INetFwRule {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2938309927, data2: 47802, data3: 20034, data4: [172, 237, 245, 36, 242, 44, 252, 226] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct INetFwRule2 {
     pub base__: INetFwRule,
     pub EdgeTraversalOptions: unsafe extern "system" fn(this: *mut *mut Self, loptions: *mut i32) -> ::windows_sys::core::HRESULT,
     pub SetEdgeTraversalOptions: unsafe extern "system" fn(this: *mut *mut Self, loptions: i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for INetFwRule2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2619853018, data2: 6299, data3: 19934, data4: [137, 247, 139, 57, 163, 22, 120, 44] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -781,6 +883,10 @@ pub struct INetFwRule3 {
     pub SetSecureFlags: unsafe extern "system" fn(this: *mut *mut Self, loptions: i32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for INetFwRule3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2987746303, data2: 54934, data3: 16930, data4: [171, 70, 78, 137, 183, 58, 179, 74] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct INetFwRules {
     pub base__: super::super::System::Com::IDispatch,
@@ -798,6 +904,10 @@ pub struct INetFwRules {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     Item: usize,
     pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, newenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for INetFwRules {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2622251639, data2: 20519, data3: 17438, data4: [175, 174, 202, 31, 84, 45, 160, 9] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -829,6 +939,10 @@ pub struct INetFwService {
     GloballyOpenPorts: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for INetFwService {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2046646216, data2: 37006, data3: 18998, data4: [152, 136, 213, 179, 240, 164, 68, 207] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct INetFwServiceRestriction {
     pub base__: super::super::System::Com::IDispatch,
@@ -846,6 +960,10 @@ pub struct INetFwServiceRestriction {
     Rules: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for INetFwServiceRestriction {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2187836387, data2: 63632, data3: 18716, data4: [183, 182, 45, 177, 239, 14, 93, 43] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct INetFwServices {
     pub base__: super::super::System::Com::IDispatch,
@@ -855,6 +973,10 @@ pub struct INetFwServices {
     #[cfg(not(feature = "Win32_System_Com"))]
     Item: usize,
     pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, newenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for INetFwServices {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2036636596, data2: 36926, data3: 16923, data4: [148, 201, 121, 132, 142, 121, 246, 238] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -881,11 +1003,19 @@ pub struct INetSharingConfiguration {
     RemovePortMapping: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for INetSharingConfiguration {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3230226102, data2: 7379, data3: 4561, data4: [177, 197, 0, 128, 95, 193, 39, 14] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct INetSharingEveryConnectionCollection {
     pub base__: super::super::System::Com::IDispatch,
     pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Count: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for INetSharingEveryConnectionCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 868508732, data2: 30737, data3: 18170, data4: [168, 154, 118, 133, 151, 189, 114, 35] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -914,6 +1044,10 @@ pub struct INetSharingManager {
     get_NetConnectionProps: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for INetSharingManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3230226103, data2: 7379, data3: 4561, data4: [177, 197, 0, 128, 95, 193, 39, 14] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct INetSharingPortMapping {
     pub base__: super::super::System::Com::IDispatch,
@@ -926,11 +1060,19 @@ pub struct INetSharingPortMapping {
     pub Delete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for INetSharingPortMapping {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3230226097, data2: 7379, data3: 4561, data4: [177, 197, 0, 128, 95, 193, 39, 14] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct INetSharingPortMappingCollection {
     pub base__: super::super::System::Com::IDispatch,
     pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Count: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for INetSharingPortMappingCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 48538334, data2: 55840, data3: 20020, data4: [137, 200, 172, 34, 39, 90, 1, 11] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -955,6 +1097,10 @@ pub struct INetSharingPortMappingProps {
     pub Enabled: unsafe extern "system" fn(this: *mut *mut Self, pbool: *mut i16) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for INetSharingPortMappingProps {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 616032693, data2: 58255, data3: 18053, data4: [133, 27, 0, 137, 44, 245, 249, 64] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct INetSharingPrivateConnectionCollection {
     pub base__: super::super::System::Com::IDispatch,
@@ -962,11 +1108,19 @@ pub struct INetSharingPrivateConnectionCollection {
     pub Count: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for INetSharingPrivateConnectionCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 950954464, data2: 17417, data3: 16426, data4: [162, 203, 233, 101, 199, 39, 248, 64] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct INetSharingPublicConnectionCollection {
     pub base__: super::super::System::Com::IDispatch,
     pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Count: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for INetSharingPublicConnectionCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2105172821, data2: 62322, data3: 18801, data4: [161, 73, 191, 201, 39, 190, 118, 42] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1003,6 +1157,10 @@ pub struct IStaticPortMapping {
     pub EditInternalPort: unsafe extern "system" fn(this: *mut *mut Self, linternalport: i32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IStaticPortMapping {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1863348511, data2: 29339, data3: 16869, data4: [147, 184, 242, 29, 15, 129, 141, 241] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IStaticPortMappingCollection {
     pub base__: super::super::System::Com::IDispatch,
@@ -1022,6 +1180,10 @@ pub struct IStaticPortMappingCollection {
     Add: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IStaticPortMappingCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3441376887, data2: 26326, data3: 18020, data4: [130, 199, 54, 219, 182, 65, 208, 241] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IUPnPNAT {
     pub base__: super::super::System::Com::IDispatch,
@@ -1037,6 +1199,10 @@ pub struct IUPnPNAT {
     pub NATEventManager: unsafe extern "system" fn(this: *mut *mut Self, ppnem: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     NATEventManager: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IUPnPNAT {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2977024018, data2: 52342, data3: 18522, data4: [148, 216, 182, 179, 162, 121, 78, 153] };
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_WindowsFirewall\"`*"]
 pub type NETCONMGR_ENUM_FLAGS = i32;

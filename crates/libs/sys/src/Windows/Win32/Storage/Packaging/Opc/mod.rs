@@ -15,6 +15,9 @@ pub struct IOpcCertificateEnumerator {
     GetCurrent: usize,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, copy: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IOpcCertificateEnumerator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2232621367, data2: 36644, data3: 16927, data4: [180, 57, 89, 171, 36, 209, 64, 184] };
+}
 #[repr(C)]
 pub struct IOpcCertificateSet {
     pub base__: ::windows_sys::core::IUnknown,
@@ -27,6 +30,9 @@ pub struct IOpcCertificateSet {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography")))]
     Remove: usize,
     pub GetEnumerator: unsafe extern "system" fn(this: *mut *mut Self, certificateenumerator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IOpcCertificateSet {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1458193189, data2: 36397, data3: 16743, data4: [177, 164, 228, 134, 210, 76, 143, 167] };
 }
 #[repr(C)]
 pub struct IOpcDigitalSignature {
@@ -50,6 +56,9 @@ pub struct IOpcDigitalSignature {
     pub GetCustomObjectEnumerator: unsafe extern "system" fn(this: *mut *mut Self, customobjectenumerator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetSignatureXml: unsafe extern "system" fn(this: *mut *mut Self, signaturexml: *mut *mut u8, count: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IOpcDigitalSignature {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1386947037, data2: 7376, data3: 18761, data4: [188, 128, 12, 18, 50, 208, 12, 180] };
+}
 #[repr(C)]
 pub struct IOpcDigitalSignatureEnumerator {
     pub base__: ::windows_sys::core::IUnknown,
@@ -63,6 +72,9 @@ pub struct IOpcDigitalSignatureEnumerator {
     MovePrevious: usize,
     pub GetCurrent: unsafe extern "system" fn(this: *mut *mut Self, digitalsignature: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, copy: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IOpcDigitalSignatureEnumerator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2524670082, data2: 2979, data3: 17240, data4: [185, 231, 182, 76, 117, 6, 60, 94] };
 }
 #[repr(C)]
 pub struct IOpcDigitalSignatureManager {
@@ -94,6 +106,9 @@ pub struct IOpcDigitalSignatureManager {
     #[cfg(not(feature = "Win32_System_Com"))]
     ReplaceSignatureXml: usize,
 }
+impl ::windows_sys::core::Interface for IOpcDigitalSignatureManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3588631051, data2: 26989, data3: 17967, data4: [148, 223, 114, 227, 60, 239, 38, 89] };
+}
 #[repr(C)]
 pub struct IOpcFactory {
     pub base__: ::windows_sys::core::IUnknown,
@@ -120,11 +135,17 @@ pub struct IOpcFactory {
     WritePackageToStream: usize,
     pub CreateDigitalSignatureManager: unsafe extern "system" fn(this: *mut *mut Self, package: *mut ::core::ffi::c_void, signaturemanager: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IOpcFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1829454918, data2: 52595, data3: 19123, data4: [148, 244, 140, 205, 246, 17, 97, 84] };
+}
 #[repr(C)]
 pub struct IOpcPackage {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetPartSet: unsafe extern "system" fn(this: *mut *mut Self, partset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetRelationshipSet: unsafe extern "system" fn(this: *mut *mut Self, relationshipset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IOpcPackage {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1108957513, data2: 15225, data3: 20424, data4: [137, 198, 252, 127, 185, 121, 238, 112] };
 }
 #[repr(C)]
 pub struct IOpcPart {
@@ -141,6 +162,9 @@ pub struct IOpcPart {
     pub GetContentType: unsafe extern "system" fn(this: *mut *mut Self, contenttype: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
     pub GetCompressionOptions: unsafe extern "system" fn(this: *mut *mut Self, compressionoptions: *mut OPC_COMPRESSION_OPTIONS) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IOpcPart {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1108957513, data2: 15225, data3: 20424, data4: [137, 198, 252, 127, 185, 121, 238, 113] };
+}
 #[repr(C)]
 pub struct IOpcPartEnumerator {
     pub base__: ::windows_sys::core::IUnknown,
@@ -154,6 +178,9 @@ pub struct IOpcPartEnumerator {
     MovePrevious: usize,
     pub GetCurrent: unsafe extern "system" fn(this: *mut *mut Self, part: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, copy: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IOpcPartEnumerator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1108957513, data2: 15225, data3: 20424, data4: [137, 198, 252, 127, 185, 121, 238, 117] };
 }
 #[repr(C)]
 pub struct IOpcPartSet {
@@ -176,6 +203,9 @@ pub struct IOpcPartSet {
     PartExists: usize,
     pub GetEnumerator: unsafe extern "system" fn(this: *mut *mut Self, partenumerator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IOpcPartSet {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1108957513, data2: 15225, data3: 20424, data4: [137, 198, 252, 127, 185, 121, 238, 115] };
+}
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IOpcPartUri {
@@ -193,6 +223,10 @@ pub struct IOpcPartUri {
     #[cfg(not(feature = "Win32_Foundation"))]
     IsRelationshipsPartUri: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IOpcPartUri {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2101062631, data2: 34994, data3: 18106, data4: [133, 203, 66, 3, 203, 1, 108, 135] };
+}
 #[repr(C)]
 pub struct IOpcRelationship {
     pub base__: ::windows_sys::core::IUnknown,
@@ -208,6 +242,9 @@ pub struct IOpcRelationship {
     GetTargetUri: usize,
     pub GetTargetMode: unsafe extern "system" fn(this: *mut *mut Self, targetmode: *mut OPC_URI_TARGET_MODE) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IOpcRelationship {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1108957513, data2: 15225, data3: 20424, data4: [137, 198, 252, 127, 185, 121, 238, 114] };
+}
 #[repr(C)]
 pub struct IOpcRelationshipEnumerator {
     pub base__: ::windows_sys::core::IUnknown,
@@ -222,11 +259,17 @@ pub struct IOpcRelationshipEnumerator {
     pub GetCurrent: unsafe extern "system" fn(this: *mut *mut Self, relationship: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, copy: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IOpcRelationshipEnumerator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1108957513, data2: 15225, data3: 20424, data4: [137, 198, 252, 127, 185, 121, 238, 118] };
+}
 #[repr(C)]
 pub struct IOpcRelationshipSelector {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetSelectorType: unsafe extern "system" fn(this: *mut *mut Self, selector: *mut OPC_RELATIONSHIP_SELECTOR) -> ::windows_sys::core::HRESULT,
     pub GetSelectionCriterion: unsafe extern "system" fn(this: *mut *mut Self, selectioncriterion: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IOpcRelationshipSelector {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4176637055, data2: 45711, data3: 18585, data4: [132, 200, 93, 86, 57, 237, 231, 95] };
 }
 #[repr(C)]
 pub struct IOpcRelationshipSelectorEnumerator {
@@ -242,12 +285,18 @@ pub struct IOpcRelationshipSelectorEnumerator {
     pub GetCurrent: unsafe extern "system" fn(this: *mut *mut Self, relationshipselector: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, copy: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IOpcRelationshipSelectorEnumerator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1582342529, data2: 43291, data3: 18604, data4: [136, 210, 188, 163, 216, 248, 192, 177] };
+}
 #[repr(C)]
 pub struct IOpcRelationshipSelectorSet {
     pub base__: ::windows_sys::core::IUnknown,
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, selector: OPC_RELATIONSHIP_SELECTOR, selectioncriterion: ::windows_sys::core::PCWSTR, relationshipselector: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Delete: unsafe extern "system" fn(this: *mut *mut Self, relationshipselector: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetEnumerator: unsafe extern "system" fn(this: *mut *mut Self, relationshipselectorenumerator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IOpcRelationshipSelectorSet {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1848951401, data2: 42195, data3: 18368, data4: [181, 196, 135, 255, 43, 59, 97, 54] };
 }
 #[repr(C)]
 pub struct IOpcRelationshipSet {
@@ -269,10 +318,16 @@ pub struct IOpcRelationshipSet {
     #[cfg(not(feature = "Win32_System_Com"))]
     GetRelationshipsContentStream: usize,
 }
+impl ::windows_sys::core::Interface for IOpcRelationshipSet {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1108957513, data2: 15225, data3: 20424, data4: [137, 198, 252, 127, 185, 121, 238, 116] };
+}
 #[repr(C)]
 pub struct IOpcSignatureCustomObject {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetXml: unsafe extern "system" fn(this: *mut *mut Self, xmlmarkup: *mut *mut u8, count: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IOpcSignatureCustomObject {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1568121246, data2: 25281, data3: 17639, data4: [190, 205, 69, 218, 90, 229, 26, 86] };
 }
 #[repr(C)]
 pub struct IOpcSignatureCustomObjectEnumerator {
@@ -288,12 +343,18 @@ pub struct IOpcSignatureCustomObjectEnumerator {
     pub GetCurrent: unsafe extern "system" fn(this: *mut *mut Self, customobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, copy: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IOpcSignatureCustomObjectEnumerator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1592065565, data2: 57776, data3: 18051, data4: [128, 121, 126, 160, 252, 248, 11, 76] };
+}
 #[repr(C)]
 pub struct IOpcSignatureCustomObjectSet {
     pub base__: ::windows_sys::core::IUnknown,
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, xmlmarkup: *const u8, count: u32, customobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Delete: unsafe extern "system" fn(this: *mut *mut Self, customobject: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetEnumerator: unsafe extern "system" fn(this: *mut *mut Self, customobjectenumerator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IOpcSignatureCustomObjectSet {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2407082693, data2: 31047, data3: 19985, data4: [188, 61, 38, 89, 255, 4, 106, 225] };
 }
 #[repr(C)]
 pub struct IOpcSignaturePartReference {
@@ -306,6 +367,9 @@ pub struct IOpcSignaturePartReference {
     pub GetDigestMethod: unsafe extern "system" fn(this: *mut *mut Self, digestmethod: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
     pub GetDigestValue: unsafe extern "system" fn(this: *mut *mut Self, digestvalue: *mut *mut u8, count: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetTransformMethod: unsafe extern "system" fn(this: *mut *mut Self, transformmethod: *mut OPC_CANONICALIZATION_METHOD) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IOpcSignaturePartReference {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3795988938, data2: 23028, data3: 18510, data4: [182, 75, 54, 238, 218, 54, 7, 44] };
 }
 #[repr(C)]
 pub struct IOpcSignaturePartReferenceEnumerator {
@@ -321,6 +385,9 @@ pub struct IOpcSignaturePartReferenceEnumerator {
     pub GetCurrent: unsafe extern "system" fn(this: *mut *mut Self, partreference: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, copy: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IOpcSignaturePartReferenceEnumerator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2162890081, data2: 35959, data3: 18895, data4: [130, 102, 69, 155, 53, 110, 233, 154] };
+}
 #[repr(C)]
 pub struct IOpcSignaturePartReferenceSet {
     pub base__: ::windows_sys::core::IUnknown,
@@ -330,6 +397,9 @@ pub struct IOpcSignaturePartReferenceSet {
     Create: usize,
     pub Delete: unsafe extern "system" fn(this: *mut *mut Self, partreference: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetEnumerator: unsafe extern "system" fn(this: *mut *mut Self, partreferenceenumerator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IOpcSignaturePartReferenceSet {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1822417548, data2: 60633, data3: 19234, data4: [157, 54, 127, 221, 230, 112, 254, 192] };
 }
 #[repr(C)]
 pub struct IOpcSignatureReference {
@@ -343,6 +413,9 @@ pub struct IOpcSignatureReference {
     pub GetTransformMethod: unsafe extern "system" fn(this: *mut *mut Self, transformmethod: *mut OPC_CANONICALIZATION_METHOD) -> ::windows_sys::core::HRESULT,
     pub GetDigestMethod: unsafe extern "system" fn(this: *mut *mut Self, digestmethod: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
     pub GetDigestValue: unsafe extern "system" fn(this: *mut *mut Self, digestvalue: *mut *mut u8, count: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IOpcSignatureReference {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 457637982, data2: 12305, data3: 20188, data4: [190, 111, 15, 101, 229, 171, 3, 66] };
 }
 #[repr(C)]
 pub struct IOpcSignatureReferenceEnumerator {
@@ -358,6 +431,9 @@ pub struct IOpcSignatureReferenceEnumerator {
     pub GetCurrent: unsafe extern "system" fn(this: *mut *mut Self, reference: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, copy: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IOpcSignatureReferenceEnumerator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3483736645, data2: 10417, data3: 18536, data4: [150, 158, 250, 128, 151, 253, 193, 42] };
+}
 #[repr(C)]
 pub struct IOpcSignatureReferenceSet {
     pub base__: ::windows_sys::core::IUnknown,
@@ -367,6 +443,9 @@ pub struct IOpcSignatureReferenceSet {
     Create: usize,
     pub Delete: unsafe extern "system" fn(this: *mut *mut Self, reference: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetEnumerator: unsafe extern "system" fn(this: *mut *mut Self, referenceenumerator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IOpcSignatureReferenceSet {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4088409393, data2: 43794, data3: 17117, data4: [158, 47, 43, 22, 118, 28, 60, 30] };
 }
 #[repr(C)]
 pub struct IOpcSignatureRelationshipReference {
@@ -380,6 +459,9 @@ pub struct IOpcSignatureRelationshipReference {
     pub GetTransformMethod: unsafe extern "system" fn(this: *mut *mut Self, transformmethod: *mut OPC_CANONICALIZATION_METHOD) -> ::windows_sys::core::HRESULT,
     pub GetRelationshipSigningOption: unsafe extern "system" fn(this: *mut *mut Self, relationshipsigningoption: *mut OPC_RELATIONSHIPS_SIGNING_OPTION) -> ::windows_sys::core::HRESULT,
     pub GetRelationshipSelectorEnumerator: unsafe extern "system" fn(this: *mut *mut Self, selectorenumerator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IOpcSignatureRelationshipReference {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1471855302, data2: 40266, data3: 20048, data4: [139, 134, 229, 212, 5, 30, 174, 124] };
 }
 #[repr(C)]
 pub struct IOpcSignatureRelationshipReferenceEnumerator {
@@ -395,6 +477,9 @@ pub struct IOpcSignatureRelationshipReferenceEnumerator {
     pub GetCurrent: unsafe extern "system" fn(this: *mut *mut Self, relationshipreference: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, copy: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IOpcSignatureRelationshipReferenceEnumerator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2000397284, data2: 61473, data3: 18660, data4: [170, 4, 152, 22, 219, 93, 52, 149] };
+}
 #[repr(C)]
 pub struct IOpcSignatureRelationshipReferenceSet {
     pub base__: ::windows_sys::core::IUnknown,
@@ -405,6 +490,9 @@ pub struct IOpcSignatureRelationshipReferenceSet {
     pub CreateRelationshipSelectorSet: unsafe extern "system" fn(this: *mut *mut Self, selectorset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Delete: unsafe extern "system" fn(this: *mut *mut Self, relationshipreference: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetEnumerator: unsafe extern "system" fn(this: *mut *mut Self, relationshipreferenceenumerator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IOpcSignatureRelationshipReferenceSet {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2676374693, data2: 13873, data3: 16460, data4: [130, 141, 128, 126, 7, 21, 6, 155] };
 }
 #[repr(C)]
 pub struct IOpcSigningOptions {
@@ -433,6 +521,9 @@ pub struct IOpcSigningOptions {
     #[cfg(not(feature = "Win32_System_Com"))]
     SetSignaturePartName: usize,
 }
+impl ::windows_sys::core::Interface for IOpcSigningOptions {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1355994789, data2: 31467, data3: 18112, data4: [178, 65, 67, 171, 14, 155, 64, 126] };
+}
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IOpcUri {
@@ -449,6 +540,10 @@ pub struct IOpcUri {
     pub CombinePartUri: unsafe extern "system" fn(this: *mut *mut Self, relativeuri: *mut ::core::ffi::c_void, combineduri: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     CombinePartUri: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IOpcUri {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3164347291, data2: 54828, data3: 18923, data4: [174, 240, 59, 78, 11, 40, 235, 237] };
 }
 #[doc = "*Required features: `\"Win32_Storage_Packaging_Opc\"`*"]
 pub type OPC_CANONICALIZATION_METHOD = i32;

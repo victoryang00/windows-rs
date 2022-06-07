@@ -35,6 +35,9 @@ pub const EventObjectChange2: ::windows_sys::core::GUID = ::windows_sys::core::G
 pub struct IDontSupportEventSubscription {
     pub base__: ::windows_sys::core::IUnknown,
 }
+impl ::windows_sys::core::Interface for IDontSupportEventSubscription {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2017534449, data2: 25254, data3: 19337, data4: [133, 95, 214, 95, 41, 109, 232, 58] };
+}
 #[repr(C)]
 pub struct IEnumEventObject {
     pub base__: ::windows_sys::core::IUnknown,
@@ -42,6 +45,9 @@ pub struct IEnumEventObject {
     pub Next: unsafe extern "system" fn(this: *mut *mut Self, creqelem: u32, ppinterface: *mut *mut ::core::ffi::c_void, cretelem: *mut u32) -> ::windows_sys::core::HRESULT,
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Skip: unsafe extern "system" fn(this: *mut *mut Self, cskipelem: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IEnumEventObject {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4104158563, data2: 11813, data3: 4561, data4: [153, 100, 0, 192, 79, 187, 179, 69] };
 }
 #[repr(C)]
 pub struct IEventClass {
@@ -103,6 +109,9 @@ pub struct IEventClass {
     #[cfg(not(feature = "Win32_Foundation"))]
     SetTypeLib: usize,
 }
+impl ::windows_sys::core::Interface for IEventClass {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4213928608, data2: 31336, data3: 4561, data4: [136, 249, 0, 128, 199, 215, 113, 191] };
+}
 #[repr(C)]
 pub struct IEventClass2 {
     pub base__: IEventClass,
@@ -139,6 +148,9 @@ pub struct IEventClass2 {
     #[cfg(not(feature = "Win32_Foundation"))]
     SetFireInParallel: usize,
 }
+impl ::windows_sys::core::Interface for IEventClass2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4213928609, data2: 31336, data3: 4561, data4: [136, 249, 0, 128, 199, 215, 113, 191] };
+}
 #[repr(C)]
 pub struct IEventControl {
     pub base__: super::IDispatch,
@@ -163,6 +175,9 @@ pub struct IEventControl {
     #[cfg(not(feature = "Win32_Foundation"))]
     SetDefaultQuery: usize,
 }
+impl ::windows_sys::core::Interface for IEventControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 54780660, data2: 34550, data3: 4561, data4: [183, 96, 0, 192, 79, 185, 38, 175] };
+}
 #[repr(C)]
 pub struct IEventObjectChange {
     pub base__: ::windows_sys::core::IUnknown,
@@ -179,6 +194,9 @@ pub struct IEventObjectChange {
     #[cfg(not(feature = "Win32_Foundation"))]
     ChangedPublisher: usize,
 }
+impl ::windows_sys::core::Interface for IEventObjectChange {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4104158576, data2: 11813, data3: 4561, data4: [153, 100, 0, 192, 79, 187, 179, 69] };
+}
 #[repr(C)]
 pub struct IEventObjectChange2 {
     pub base__: ::windows_sys::core::IUnknown,
@@ -190,6 +208,9 @@ pub struct IEventObjectChange2 {
     pub ChangedEventClass: unsafe extern "system" fn(this: *mut *mut Self, pinfo: *const COMEVENTSYSCHANGEINFO) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     ChangedEventClass: usize,
+}
+impl ::windows_sys::core::Interface for IEventObjectChange2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1996597699, data2: 48488, data3: 17295, data4: [131, 224, 103, 191, 79, 83, 164, 34] };
 }
 #[repr(C)]
 pub struct IEventObjectCollection {
@@ -210,6 +231,9 @@ pub struct IEventObjectCollection {
     #[cfg(not(feature = "Win32_Foundation"))]
     Remove: usize,
 }
+impl ::windows_sys::core::Interface for IEventObjectCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4170891888, data2: 54507, data3: 4561, data4: [182, 130, 0, 128, 95, 199, 146, 22] };
+}
 #[repr(C)]
 pub struct IEventProperty {
     pub base__: super::IDispatch,
@@ -229,6 +253,9 @@ pub struct IEventProperty {
     pub SetValue: unsafe extern "system" fn(this: *mut *mut Self, propertyvalue: *const super::VARIANT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Ole")))]
     SetValue: usize,
+}
+impl ::windows_sys::core::Interface for IEventProperty {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3662909154, data2: 62686, data3: 4561, data4: [182, 187, 0, 128, 95, 199, 146, 22] };
 }
 #[repr(C)]
 pub struct IEventPublisher {
@@ -286,6 +313,9 @@ pub struct IEventPublisher {
     #[cfg(not(feature = "Win32_Foundation"))]
     RemoveDefaultProperty: usize,
     pub GetDefaultPropertyCollection: unsafe extern "system" fn(this: *mut *mut Self, collection: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IEventPublisher {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3812708715, data2: 11826, data3: 4561, data4: [153, 100, 0, 192, 79, 187, 179, 69] };
 }
 #[repr(C)]
 pub struct IEventSubscription {
@@ -415,6 +445,9 @@ pub struct IEventSubscription {
     #[cfg(not(feature = "Win32_Foundation"))]
     SetInterfaceID: usize,
 }
+impl ::windows_sys::core::Interface for IEventSubscription {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1248529941, data2: 11832, data3: 4561, data4: [153, 101, 0, 192, 79, 187, 179, 69] };
+}
 #[repr(C)]
 pub struct IEventSystem {
     pub base__: super::IDispatch,
@@ -443,10 +476,16 @@ pub struct IEventSystem {
     #[cfg(not(feature = "Win32_Foundation"))]
     RemoveS: usize,
 }
+impl ::windows_sys::core::Interface for IEventSystem {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1309997983, data2: 11810, data3: 4561, data4: [153, 100, 0, 192, 79, 187, 179, 69] };
+}
 #[repr(C)]
 pub struct IFiringControl {
     pub base__: super::IDispatch,
     pub FireSubscription: unsafe extern "system" fn(this: *mut *mut Self, subscription: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IFiringControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3762916499, data2: 20222, data3: 4561, data4: [153, 113, 0, 192, 79, 187, 179, 69] };
 }
 #[repr(C)]
 pub struct IMultiInterfaceEventControl {
@@ -477,6 +516,9 @@ pub struct IMultiInterfaceEventControl {
     #[cfg(not(feature = "Win32_Foundation"))]
     SetFireInParallel: usize,
 }
+impl ::windows_sys::core::Interface for IMultiInterfaceEventControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 54780661, data2: 34550, data3: 4561, data4: [183, 96, 0, 192, 79, 185, 38, 175] };
+}
 #[repr(C)]
 pub struct IMultiInterfacePublisherFilter {
     pub base__: ::windows_sys::core::IUnknown,
@@ -485,6 +527,9 @@ pub struct IMultiInterfacePublisherFilter {
     pub PrepareToFire: unsafe extern "system" fn(this: *mut *mut Self, iid: *const ::windows_sys::core::GUID, methodname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, firingcontrol: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     PrepareToFire: usize,
+}
+impl ::windows_sys::core::Interface for IMultiInterfacePublisherFilter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1180589249, data2: 31526, data3: 4561, data4: [136, 251, 0, 128, 199, 215, 113, 191] };
 }
 #[repr(C)]
 pub struct IPublisherFilter {
@@ -497,4 +542,7 @@ pub struct IPublisherFilter {
     pub PrepareToFire: unsafe extern "system" fn(this: *mut *mut Self, methodname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, firingcontrol: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     PrepareToFire: usize,
+}
+impl ::windows_sys::core::Interface for IPublisherFilter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1180589248, data2: 31526, data3: 4561, data4: [136, 251, 0, 128, 199, 215, 113, 191] };
 }

@@ -1058,6 +1058,9 @@ pub struct IDirectSound {
     pub SetSpeakerConfig: unsafe extern "system" fn(this: *mut *mut Self, dwspeakerconfig: u32) -> ::windows_sys::core::HRESULT,
     pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, pcguiddevice: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDirectSound {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 664468099, data2: 18817, data3: 4558, data4: [165, 33, 0, 32, 175, 11, 229, 96] };
+}
 #[repr(C)]
 pub struct IDirectSound3DBuffer {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1095,6 +1098,9 @@ pub struct IDirectSound3DBuffer {
     pub SetPosition: unsafe extern "system" fn(this: *mut *mut Self, x: f32, y: f32, z: f32, dwapply: u32) -> ::windows_sys::core::HRESULT,
     pub SetVelocity: unsafe extern "system" fn(this: *mut *mut Self, x: f32, y: f32, z: f32, dwapply: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDirectSound3DBuffer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 664468102, data2: 18817, data3: 4558, data4: [165, 33, 0, 32, 175, 11, 229, 96] };
+}
 #[repr(C)]
 pub struct IDirectSound3DListener {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1129,10 +1135,16 @@ pub struct IDirectSound3DListener {
     pub SetVelocity: unsafe extern "system" fn(this: *mut *mut Self, x: f32, y: f32, z: f32, dwapply: u32) -> ::windows_sys::core::HRESULT,
     pub CommitDeferredSettings: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDirectSound3DListener {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 664468100, data2: 18817, data3: 4558, data4: [165, 33, 0, 32, 175, 11, 229, 96] };
+}
 #[repr(C)]
 pub struct IDirectSound8 {
     pub base__: IDirectSound,
     pub VerifyCertification: unsafe extern "system" fn(this: *mut *mut Self, pdwcertified: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDirectSound8 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3305799315, data2: 62357, data3: 18484, data4: [158, 246, 127, 169, 157, 229, 9, 102] };
 }
 #[repr(C)]
 pub struct IDirectSoundBuffer {
@@ -1156,6 +1168,9 @@ pub struct IDirectSoundBuffer {
     pub Unlock: unsafe extern "system" fn(this: *mut *mut Self, pvaudioptr1: *const ::core::ffi::c_void, dwaudiobytes1: u32, pvaudioptr2: *const ::core::ffi::c_void, dwaudiobytes2: u32) -> ::windows_sys::core::HRESULT,
     pub Restore: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDirectSoundBuffer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 664468101, data2: 18817, data3: 4558, data4: [165, 33, 0, 32, 175, 11, 229, 96] };
+}
 #[repr(C)]
 pub struct IDirectSoundBuffer8 {
     pub base__: IDirectSoundBuffer,
@@ -1163,12 +1178,18 @@ pub struct IDirectSoundBuffer8 {
     pub AcquireResources: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, dweffectscount: u32, pdwresultcodes: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetObjectInPath: unsafe extern "system" fn(this: *mut *mut Self, rguidobject: *const ::windows_sys::core::GUID, dwindex: u32, rguidinterface: *const ::windows_sys::core::GUID, ppobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDirectSoundBuffer8 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1747297353, data2: 29988, data3: 19842, data4: [146, 15, 80, 227, 106, 179, 171, 30] };
+}
 #[repr(C)]
 pub struct IDirectSoundCapture {
     pub base__: ::windows_sys::core::IUnknown,
     pub CreateCaptureBuffer: unsafe extern "system" fn(this: *mut *mut Self, pcdscbufferdesc: *const DSCBUFFERDESC, ppdscbuffer: *mut *mut ::core::ffi::c_void, punkouter: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetCaps: unsafe extern "system" fn(this: *mut *mut Self, pdsccaps: *mut DSCCAPS) -> ::windows_sys::core::HRESULT,
     pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, pcguiddevice: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDirectSoundCapture {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2954954625, data2: 35277, data3: 4560, data4: [175, 8, 0, 160, 201, 37, 205, 22] };
 }
 #[repr(C)]
 pub struct IDirectSoundCaptureBuffer {
@@ -1183,11 +1204,17 @@ pub struct IDirectSoundCaptureBuffer {
     pub Stop: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Unlock: unsafe extern "system" fn(this: *mut *mut Self, pvaudioptr1: *const ::core::ffi::c_void, dwaudiobytes1: u32, pvaudioptr2: *const ::core::ffi::c_void, dwaudiobytes2: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDirectSoundCaptureBuffer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2954954626, data2: 35277, data3: 4560, data4: [175, 8, 0, 160, 201, 37, 205, 22] };
+}
 #[repr(C)]
 pub struct IDirectSoundCaptureBuffer8 {
     pub base__: IDirectSoundCaptureBuffer,
     pub GetObjectInPath: unsafe extern "system" fn(this: *mut *mut Self, rguidobject: *const ::windows_sys::core::GUID, dwindex: u32, rguidinterface: *const ::windows_sys::core::GUID, ppobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetFXStatus: unsafe extern "system" fn(this: *mut *mut Self, dweffectscount: u32, pdwfxstatus: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDirectSoundCaptureBuffer8 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 10030580, data2: 3515, data3: 18546, data4: [131, 62, 109, 48, 62, 128, 174, 182] };
 }
 #[repr(C)]
 pub struct IDirectSoundCaptureFXAec {
@@ -1203,6 +1230,9 @@ pub struct IDirectSoundCaptureFXAec {
     pub GetStatus: unsafe extern "system" fn(this: *mut *mut Self, pdwstatus: *mut u32) -> ::windows_sys::core::HRESULT,
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDirectSoundCaptureFXAec {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2910065725, data2: 36925, data3: 19127, data4: [128, 102, 40, 211, 99, 3, 109, 101] };
+}
 #[repr(C)]
 pub struct IDirectSoundCaptureFXNoiseSuppress {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1216,11 +1246,17 @@ pub struct IDirectSoundCaptureFXNoiseSuppress {
     GetAllParameters: usize,
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDirectSoundCaptureFXNoiseSuppress {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3979419201, data2: 64430, data3: 16757, data4: [150, 37, 205, 8, 84, 246, 147, 202] };
+}
 #[repr(C)]
 pub struct IDirectSoundFXChorus {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetAllParameters: unsafe extern "system" fn(this: *mut *mut Self, pcdsfxchorus: *const DSFXChorus) -> ::windows_sys::core::HRESULT,
     pub GetAllParameters: unsafe extern "system" fn(this: *mut *mut Self, pdsfxchorus: *mut DSFXChorus) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDirectSoundFXChorus {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2282242787, data2: 5215, data3: 17382, data4: [169, 52, 167, 24, 6, 229, 5, 71] };
 }
 #[repr(C)]
 pub struct IDirectSoundFXCompressor {
@@ -1228,11 +1264,17 @@ pub struct IDirectSoundFXCompressor {
     pub SetAllParameters: unsafe extern "system" fn(this: *mut *mut Self, pcdsfxcompressor: *const DSFXCompressor) -> ::windows_sys::core::HRESULT,
     pub GetAllParameters: unsafe extern "system" fn(this: *mut *mut Self, pdsfxcompressor: *mut DSFXCompressor) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDirectSoundFXCompressor {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1270681940, data2: 25334, data3: 20012, data4: [161, 92, 211, 182, 196, 23, 247, 160] };
+}
 #[repr(C)]
 pub struct IDirectSoundFXDistortion {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetAllParameters: unsafe extern "system" fn(this: *mut *mut Self, pcdsfxdistortion: *const DSFXDistortion) -> ::windows_sys::core::HRESULT,
     pub GetAllParameters: unsafe extern "system" fn(this: *mut *mut Self, pdsfxdistortion: *mut DSFXDistortion) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDirectSoundFXDistortion {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2395947814, data2: 17759, data3: 19851, data4: [189, 169, 141, 93, 62, 158, 62, 11] };
 }
 #[repr(C)]
 pub struct IDirectSoundFXEcho {
@@ -1240,17 +1282,26 @@ pub struct IDirectSoundFXEcho {
     pub SetAllParameters: unsafe extern "system" fn(this: *mut *mut Self, pcdsfxecho: *const DSFXEcho) -> ::windows_sys::core::HRESULT,
     pub GetAllParameters: unsafe extern "system" fn(this: *mut *mut Self, pdsfxecho: *mut DSFXEcho) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDirectSoundFXEcho {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2345832159, data2: 20699, data3: 20114, data4: [162, 189, 68, 84, 136, 209, 237, 66] };
+}
 #[repr(C)]
 pub struct IDirectSoundFXFlanger {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetAllParameters: unsafe extern "system" fn(this: *mut *mut Self, pcdsfxflanger: *const DSFXFlanger) -> ::windows_sys::core::HRESULT,
     pub GetAllParameters: unsafe extern "system" fn(this: *mut *mut Self, pdsfxflanger: *mut DSFXFlanger) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDirectSoundFXFlanger {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2420021368, data2: 11410, data3: 16498, data4: [155, 44, 234, 104, 245, 57, 103, 131] };
+}
 #[repr(C)]
 pub struct IDirectSoundFXGargle {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetAllParameters: unsafe extern "system" fn(this: *mut *mut Self, pcdsfxgargle: *const DSFXGargle) -> ::windows_sys::core::HRESULT,
     pub GetAllParameters: unsafe extern "system" fn(this: *mut *mut Self, pdsfxgargle: *mut DSFXGargle) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDirectSoundFXGargle {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3591828306, data2: 54818, data3: 4558, data4: [170, 197, 0, 32, 175, 11, 153, 163] };
 }
 #[repr(C)]
 pub struct IDirectSoundFXI3DL2Reverb {
@@ -1262,17 +1313,26 @@ pub struct IDirectSoundFXI3DL2Reverb {
     pub SetQuality: unsafe extern "system" fn(this: *mut *mut Self, lquality: i32) -> ::windows_sys::core::HRESULT,
     pub GetQuality: unsafe extern "system" fn(this: *mut *mut Self, plquality: *mut i32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDirectSoundFXI3DL2Reverb {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1259760234, data2: 3430, data3: 17395, data4: [128, 227, 238, 98, 128, 222, 225, 164] };
+}
 #[repr(C)]
 pub struct IDirectSoundFXParamEq {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetAllParameters: unsafe extern "system" fn(this: *mut *mut Self, pcdsfxparameq: *const DSFXParamEq) -> ::windows_sys::core::HRESULT,
     pub GetAllParameters: unsafe extern "system" fn(this: *mut *mut Self, pdsfxparameq: *mut DSFXParamEq) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDirectSoundFXParamEq {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3225201150, data2: 65168, data3: 16900, data4: [128, 120, 130, 51, 76, 209, 119, 218] };
+}
 #[repr(C)]
 pub struct IDirectSoundFXWavesReverb {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetAllParameters: unsafe extern "system" fn(this: *mut *mut Self, pcdsfxwavesreverb: *const DSFXWavesReverb) -> ::windows_sys::core::HRESULT,
     pub GetAllParameters: unsafe extern "system" fn(this: *mut *mut Self, pdsfxwavesreverb: *mut DSFXWavesReverb) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDirectSoundFXWavesReverb {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1183157306, data2: 3526, data3: 17891, data4: [183, 96, 212, 238, 241, 108, 179, 37] };
 }
 #[repr(C)]
 pub struct IDirectSoundFullDuplex {
@@ -1282,6 +1342,9 @@ pub struct IDirectSoundFullDuplex {
     #[cfg(not(feature = "Win32_Foundation"))]
     Initialize: usize,
 }
+impl ::windows_sys::core::Interface for IDirectSoundFullDuplex {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3989523578, data2: 55979, data3: 16918, data4: [164, 46, 108, 80, 89, 109, 220, 29] };
+}
 #[repr(C)]
 pub struct IDirectSoundNotify {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1289,6 +1352,9 @@ pub struct IDirectSoundNotify {
     pub SetNotificationPositions: unsafe extern "system" fn(this: *mut *mut Self, dwpositionnotifies: u32, pcpositionnotifies: *const DSBPOSITIONNOTIFY) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     SetNotificationPositions: usize,
+}
+impl ::windows_sys::core::Interface for IDirectSoundNotify {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2954954627, data2: 35277, data3: 4560, data4: [175, 8, 0, 160, 201, 37, 205, 22] };
 }
 #[doc = "*Required features: `\"Win32_Media_Audio_DirectSound\"`*"]
 pub const KSPROPERTY_SUPPORT_GET: u32 = 1u32;

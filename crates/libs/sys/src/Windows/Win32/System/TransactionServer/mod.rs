@@ -18,6 +18,10 @@ pub struct ICatalog {
     pub MinorVersion: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICatalog {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1857169520, data2: 35353, data3: 4560, data4: [129, 182, 0, 160, 201, 35, 28, 41] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IComponentUtil {
     pub base__: super::Com::IDispatch,
@@ -39,6 +43,10 @@ pub struct IComponentUtil {
     GetCLSIDs: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IComponentUtil {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1857169523, data2: 35353, data3: 4560, data4: [129, 182, 0, 160, 201, 35, 28, 41] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IPackageUtil {
     pub base__: super::Com::IDispatch,
@@ -56,6 +64,10 @@ pub struct IPackageUtil {
     ShutdownPackage: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IPackageUtil {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1857169524, data2: 35353, data3: 4560, data4: [129, 182, 0, 160, 201, 35, 28, 41] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IRemoteComponentUtil {
     pub base__: super::Com::IDispatch,
@@ -69,6 +81,10 @@ pub struct IRemoteComponentUtil {
     InstallRemoteComponentByName: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IRemoteComponentUtil {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1857169525, data2: 35353, data3: 4560, data4: [129, 182, 0, 160, 201, 35, 28, 41] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IRoleAssociationUtil {
     pub base__: super::Com::IDispatch,
@@ -80,6 +96,10 @@ pub struct IRoleAssociationUtil {
     pub AssociateRoleByName: unsafe extern "system" fn(this: *mut *mut Self, bstrrolename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     AssociateRoleByName: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IRoleAssociationUtil {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1857169526, data2: 35353, data3: 4560, data4: [129, 182, 0, 160, 201, 35, 28, 41] };
 }
 pub const PackageUtil: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1857169541, data2: 35353, data3: 4560, data4: [129, 182, 0, 160, 201, 35, 28, 41] };
 pub const RemoteComponentUtil: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1857169542, data2: 35353, data3: 4560, data4: [129, 182, 0, 160, 201, 35, 28, 41] };

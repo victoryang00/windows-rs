@@ -799,6 +799,10 @@ pub struct ISdo {
     pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, ppenumvariant: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISdo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1455182814, data2: 38619, data3: 4561, data4: [191, 63, 0, 0, 0, 0, 0, 0] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISdoCollection {
     pub base__: super::super::System::Com::IDispatch,
@@ -824,6 +828,10 @@ pub struct ISdoCollection {
     pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, ppenumvariant: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISdoCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1455182818, data2: 38619, data3: 4561, data4: [191, 63, 0, 0, 0, 0, 0, 0] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISdoDictionaryOld {
     pub base__: super::super::System::Com::IDispatch,
@@ -847,6 +855,10 @@ pub struct ISdoDictionaryOld {
     pub GetAttributeID: unsafe extern "system" fn(this: *mut *mut Self, bstrattributename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pid: *mut ATTRIBUTEID) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetAttributeID: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISdoDictionaryOld {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3560105460, data2: 21464, data3: 4562, data4: [154, 58, 0, 192, 79, 185, 152, 172] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -875,6 +887,10 @@ pub struct ISdoMachine {
     pub GetSDOSchema: unsafe extern "system" fn(this: *mut *mut Self, ppsdoschema: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISdoMachine {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1201630837, data2: 18850, data3: 4562, data4: [142, 202, 0, 192, 79, 194, 245, 25] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISdoMachine2 {
     pub base__: ISdoMachine,
@@ -894,6 +910,10 @@ pub struct ISdoMachine2 {
     pub Reload: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISdoMachine2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1368285182, data2: 55502, data3: 20350, data4: [165, 219, 180, 10, 53, 65, 157, 59] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISdoServiceControl {
     pub base__: super::super::System::Com::IDispatch,
@@ -901,6 +921,10 @@ pub struct ISdoServiceControl {
     pub StopService: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub GetServiceStatus: unsafe extern "system" fn(this: *mut *mut Self, status: *mut i32) -> ::windows_sys::core::HRESULT,
     pub ResetService: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISdoServiceControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1201630836, data2: 18850, data3: 4562, data4: [142, 202, 0, 192, 79, 194, 245, 25] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -918,6 +942,10 @@ pub struct ITemplateSdo {
     pub AddToSdoAsProperty: unsafe extern "system" fn(this: *mut *mut Self, psdotarget: *mut ::core::ffi::c_void, id: i32) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     AddToSdoAsProperty: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ITemplateSdo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2326287106, data2: 53986, data3: 20000, data4: [139, 31, 165, 113, 228, 55, 214, 201] };
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetworkPolicyServer\"`*"]
 pub type NAMESPROPERTIES = i32;

@@ -12,15 +12,24 @@ pub struct IProviderSpiConnectionSettings {
     pub SharingMode: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ProviderSpiSharingMode) -> ::windows_sys::core::HRESULT,
     pub SetSharingMode: unsafe extern "system" fn(this: *mut *mut Self, value: ProviderSpiSharingMode) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IProviderSpiConnectionSettings {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4127409488, data2: 42306, data3: 20160, data4: [150, 1, 164, 221, 104, 248, 105, 123] };
+}
 #[repr(C)]
 pub struct IProviderSpiConnectionSettingsFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, chipselectline: i32, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IProviderSpiConnectionSettingsFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1715825498, data2: 3193, data3: 17379, data4: [159, 60, 229, 151, 128, 172, 24, 250] };
+}
 #[repr(C)]
 pub struct ISpiControllerProvider {
     pub base__: ::windows_sys::core::IInspectable,
     pub GetDeviceProvider: unsafe extern "system" fn(this: *mut *mut Self, settings: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISpiControllerProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3244844292, data2: 718, data3: 16934, data4: [163, 133, 79, 17, 251, 4, 180, 27] };
 }
 #[repr(C)]
 pub struct ISpiDeviceProvider {
@@ -32,6 +41,9 @@ pub struct ISpiDeviceProvider {
     pub TransferSequential: unsafe extern "system" fn(this: *mut *mut Self, writeBuffer_array_size: u32, writebuffer: *const u8, readBuffer_array_size: u32, readbuffer: *mut u8) -> ::windows_sys::core::HRESULT,
     pub TransferFullDuplex: unsafe extern "system" fn(this: *mut *mut Self, writeBuffer_array_size: u32, writebuffer: *const u8, readBuffer_array_size: u32, readbuffer: *mut u8) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISpiDeviceProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 219952195, data2: 12363, data3: 16476, data4: [180, 247, 245, 171, 16, 116, 70, 30] };
+}
 #[repr(C)]
 pub struct ISpiProvider {
     pub base__: ::windows_sys::core::IInspectable,
@@ -39,6 +51,9 @@ pub struct ISpiProvider {
     pub GetControllersAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     GetControllersAsync: usize,
+}
+impl ::windows_sys::core::Interface for ISpiProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2528403938, data2: 30676, data3: 18638, data4: [170, 160, 117, 113, 90, 131, 98, 207] };
 }
 pub type ProviderSpiConnectionSettings = *mut ::core::ffi::c_void;
 #[doc = "*Required features: `\"Devices_Spi_Provider\"`*"]

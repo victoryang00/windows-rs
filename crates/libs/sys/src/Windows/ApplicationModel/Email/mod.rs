@@ -515,6 +515,9 @@ pub struct IEmailAttachment {
     #[cfg(not(feature = "Storage_Streams"))]
     SetData: usize,
 }
+impl ::windows_sys::core::Interface for IEmailAttachment {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4082354937, data2: 22472, data3: 19163, data4: [185, 146, 96, 252, 235, 88, 79, 84] };
+}
 #[repr(C)]
 pub struct IEmailAttachment2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -533,6 +536,9 @@ pub struct IEmailAttachment2 {
     pub MimeType: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub SetMimeType: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEmailAttachment2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 576655472, data2: 45311, data3: 17777, data4: [157, 84, 167, 6, 196, 141, 85, 198] };
+}
 #[repr(C)]
 pub struct IEmailAttachmentFactory {
     pub base__: ::windows_sys::core::IInspectable,
@@ -541,6 +547,9 @@ pub struct IEmailAttachmentFactory {
     #[cfg(not(feature = "Storage_Streams"))]
     Create: usize,
 }
+impl ::windows_sys::core::Interface for IEmailAttachmentFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2037296198, data2: 60758, data3: 18809, data4: [135, 8, 171, 184, 188, 133, 75, 125] };
+}
 #[repr(C)]
 pub struct IEmailAttachmentFactory2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -548,6 +557,9 @@ pub struct IEmailAttachmentFactory2 {
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, filename: ::windows_sys::core::HSTRING, data: *mut ::core::ffi::c_void, mimetype: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Storage_Streams"))]
     Create: usize,
+}
+impl ::windows_sys::core::Interface for IEmailAttachmentFactory2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 589665333, data2: 20985, data3: 17021, data4: [173, 205, 36, 16, 35, 200, 207, 183] };
 }
 #[repr(C)]
 pub struct IEmailConversation {
@@ -577,6 +589,9 @@ pub struct IEmailConversation {
     #[cfg(not(feature = "Foundation_Collections"))]
     FindMessagesWithCountAsync: usize,
 }
+impl ::windows_sys::core::Interface for IEmailConversation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3659055688, data2: 41148, data3: 17225, data4: [144, 45, 144, 246, 99, 137, 245, 27] };
+}
 #[repr(C)]
 pub struct IEmailConversationBatch {
     pub base__: ::windows_sys::core::IInspectable,
@@ -586,6 +601,9 @@ pub struct IEmailConversationBatch {
     Conversations: usize,
     pub Status: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut EmailBatchStatus) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEmailConversationBatch {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3099700097, data2: 453, data3: 17194, data4: [157, 241, 254, 133, 217, 138, 39, 154] };
+}
 #[repr(C)]
 pub struct IEmailConversationReader {
     pub base__: ::windows_sys::core::IInspectable,
@@ -593,6 +611,9 @@ pub struct IEmailConversationReader {
     pub ReadBatchAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     ReadBatchAsync: usize,
+}
+impl ::windows_sys::core::Interface for IEmailConversationReader {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3026390914, data2: 10357, data3: 17608, data4: [155, 140, 133, 190, 179, 163, 198, 83] };
 }
 #[repr(C)]
 pub struct IEmailFolder {
@@ -656,6 +677,9 @@ pub struct IEmailFolder {
     #[cfg(not(feature = "Foundation"))]
     SaveMessageAsync: usize,
 }
+impl ::windows_sys::core::Interface for IEmailFolder {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2723116913, data2: 39276, data3: 18532, data4: [177, 186, 237, 18, 64, 229, 125, 17] };
+}
 #[repr(C)]
 pub struct IEmailIrmInfo {
     pub base__: ::windows_sys::core::IInspectable,
@@ -690,6 +714,9 @@ pub struct IEmailIrmInfo {
     pub Template: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetTemplate: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEmailIrmInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2431984019, data2: 45472, data3: 20157, data4: [166, 182, 221, 202, 85, 96, 110, 14] };
+}
 #[repr(C)]
 pub struct IEmailIrmInfoFactory {
     pub base__: ::windows_sys::core::IInspectable,
@@ -697,6 +724,9 @@ pub struct IEmailIrmInfoFactory {
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, expiration: super::super::Foundation::DateTime, irmtemplate: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     Create: usize,
+}
+impl ::windows_sys::core::Interface for IEmailIrmInfoFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 827044236, data2: 58342, data3: 19835, data4: [190, 141, 145, 169, 99, 17, 176, 27] };
 }
 #[repr(C)]
 pub struct IEmailIrmTemplate {
@@ -708,10 +738,16 @@ pub struct IEmailIrmTemplate {
     pub Name: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub SetName: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEmailIrmTemplate {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4079449485, data2: 21613, data3: 19434, data4: [169, 99, 84, 163, 139, 44, 192, 22] };
+}
 #[repr(C)]
 pub struct IEmailIrmTemplateFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, id: ::windows_sys::core::HSTRING, name: ::windows_sys::core::HSTRING, description: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IEmailIrmTemplateFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1034098806, data2: 34616, data3: 17432, data4: [185, 203, 71, 27, 147, 111, 231, 30] };
 }
 #[repr(C)]
 pub struct IEmailItemCounts {
@@ -720,6 +756,9 @@ pub struct IEmailItemCounts {
     pub Important: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
     pub Total: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
     pub Unread: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IEmailItemCounts {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1540436769, data2: 65224, data3: 19371, data4: [131, 186, 11, 175, 60, 31, 108, 189] };
 }
 #[repr(C)]
 pub struct IEmailMailbox {
@@ -862,12 +901,18 @@ pub struct IEmailMailbox {
     #[cfg(not(feature = "Foundation"))]
     TryGetAutoReplySettingsAsync: usize,
 }
+impl ::windows_sys::core::Interface for IEmailMailbox {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2826503753, data2: 53083, data3: 16667, data4: [128, 177, 74, 106, 20, 132, 206, 37] };
+}
 #[repr(C)]
 pub struct IEmailMailbox2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub LinkedMailboxId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub NetworkAccountId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub NetworkId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IEmailMailbox2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 351855620, data2: 27810, data3: 19122, data4: [146, 65, 121, 205, 123, 244, 99, 70] };
 }
 #[repr(C)]
 pub struct IEmailMailbox3 {
@@ -893,6 +938,9 @@ pub struct IEmailMailbox3 {
     #[cfg(not(feature = "Foundation"))]
     TryDeleteFolderAsync: usize,
 }
+impl ::windows_sys::core::Interface for IEmailMailbox3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1034258811, data2: 17803, data3: 16522, data4: [142, 55, 172, 139, 5, 216, 175, 86] };
+}
 #[repr(C)]
 pub struct IEmailMailbox4 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -901,16 +949,25 @@ pub struct IEmailMailbox4 {
     #[cfg(not(feature = "Foundation"))]
     RegisterSyncManagerAsync: usize,
 }
+impl ::windows_sys::core::Interface for IEmailMailbox4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1562325019, data2: 61986, data3: 18599, data4: [183, 182, 113, 99, 86, 205, 38, 161] };
+}
 #[repr(C)]
 pub struct IEmailMailbox5 {
     pub base__: ::windows_sys::core::IInspectable,
     pub GetChangeTracker: unsafe extern "system" fn(this: *mut *mut Self, identity: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IEmailMailbox5 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 966160519, data2: 146, data3: 18878, data4: [189, 14, 93, 77, 201, 217, 109, 144] };
 }
 #[repr(C)]
 pub struct IEmailMailboxAction {
     pub base__: ::windows_sys::core::IInspectable,
     pub Kind: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut EmailMailboxActionKind) -> ::windows_sys::core::HRESULT,
     pub ChangeNumber: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u64) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IEmailMailboxAction {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2895677946, data2: 8698, data3: 18727, data4: [146, 16, 212, 16, 88, 47, 223, 62] };
 }
 #[repr(C)]
 pub struct IEmailMailboxAutoReply {
@@ -919,6 +976,9 @@ pub struct IEmailMailboxAutoReply {
     pub SetIsEnabled: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
     pub Response: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub SetResponse: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IEmailMailboxAutoReply {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3793954124, data2: 35508, data3: 18523, data4: [179, 31, 4, 209, 84, 118, 189, 89] };
 }
 #[repr(C)]
 pub struct IEmailMailboxAutoReplySettings {
@@ -947,6 +1007,9 @@ pub struct IEmailMailboxAutoReplySettings {
     pub KnownExternalReply: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub UnknownExternalReply: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEmailMailboxAutoReplySettings {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2826608552, data2: 2758, data3: 19319, data4: [186, 119, 166, 185, 158, 154, 39, 184] };
+}
 #[repr(C)]
 pub struct IEmailMailboxCapabilities {
     pub base__: ::windows_sys::core::IInspectable,
@@ -959,6 +1022,9 @@ pub struct IEmailMailboxCapabilities {
     pub CanProposeNewTimeForMeetings: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub CanSmartSend: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEmailMailboxCapabilities {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4007576486, data2: 35291, data3: 17157, data4: [130, 196, 67, 158, 10, 51, 218, 17] };
+}
 #[repr(C)]
 pub struct IEmailMailboxCapabilities2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -968,6 +1034,9 @@ pub struct IEmailMailboxCapabilities2 {
     pub CanCreateFolder: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub CanDeleteFolder: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub CanMoveFolder: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IEmailMailboxCapabilities2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1769094884, data2: 12065, data3: 19644, data4: [136, 171, 46, 118, 2, 164, 128, 107] };
 }
 #[repr(C)]
 pub struct IEmailMailboxCapabilities3 {
@@ -987,6 +1056,9 @@ pub struct IEmailMailboxCapabilities3 {
     pub SetCanDeleteFolder: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
     pub SetCanMoveFolder: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEmailMailboxCapabilities3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4136692036, data2: 22258, data3: 17834, data4: [135, 44, 12, 233, 243, 219, 11, 92] };
+}
 #[repr(C)]
 pub struct IEmailMailboxChange {
     pub base__: ::windows_sys::core::IInspectable,
@@ -998,6 +1070,9 @@ pub struct IEmailMailboxChange {
     pub Message: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Folder: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEmailMailboxChange {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1642984779, data2: 4591, data3: 16396, data4: [173, 222, 140, 222, 101, 200, 94, 102] };
+}
 #[repr(C)]
 pub struct IEmailMailboxChangeReader {
     pub base__: ::windows_sys::core::IInspectable,
@@ -1008,6 +1083,9 @@ pub struct IEmailMailboxChangeReader {
     #[cfg(not(feature = "Foundation_Collections"))]
     ReadBatchAsync: usize,
 }
+impl ::windows_sys::core::Interface for IEmailMailboxChangeReader {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3183283899, data2: 50493, data3: 17201, data4: [151, 190, 190, 117, 162, 20, 106, 117] };
+}
 #[repr(C)]
 pub struct IEmailMailboxChangeTracker {
     pub base__: ::windows_sys::core::IInspectable,
@@ -1016,21 +1094,33 @@ pub struct IEmailMailboxChangeTracker {
     pub GetChangeReader: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEmailMailboxChangeTracker {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2061796920, data2: 20838, data3: 17079, data4: [136, 130, 253, 33, 201, 43, 221, 75] };
+}
 #[repr(C)]
 pub struct IEmailMailboxChangedDeferral {
     pub base__: ::windows_sys::core::IInspectable,
     pub Complete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IEmailMailboxChangedDeferral {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2006611137, data2: 38853, data3: 19284, data4: [179, 13, 48, 98, 50, 98, 62, 109] };
 }
 #[repr(C)]
 pub struct IEmailMailboxChangedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub GetDeferral: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEmailMailboxChangedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1023237998, data2: 468, data3: 20042, data4: [164, 76, 178, 45, 212, 46, 194, 7] };
+}
 #[repr(C)]
 pub struct IEmailMailboxCreateFolderResult {
     pub base__: ::windows_sys::core::IInspectable,
     pub Status: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut EmailMailboxCreateFolderStatus) -> ::windows_sys::core::HRESULT,
     pub Folder: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IEmailMailboxCreateFolderResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2988987775, data2: 10373, data3: 18840, data4: [181, 149, 138, 45, 55, 76, 233, 80] };
 }
 #[repr(C)]
 pub struct IEmailMailboxPolicies {
@@ -1046,11 +1136,17 @@ pub struct IEmailMailboxPolicies {
     #[cfg(not(feature = "Foundation"))]
     RequiredSmimeSigningAlgorithm: usize,
 }
+impl ::windows_sys::core::Interface for IEmailMailboxPolicies {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 523453893, data2: 7227, data3: 19911, data4: [180, 16, 99, 115, 120, 62, 84, 93] };
+}
 #[repr(C)]
 pub struct IEmailMailboxPolicies2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub MustEncryptSmimeMessages: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub MustSignSmimeMessages: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IEmailMailboxPolicies2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3132459771, data2: 41291, data3: 18812, data4: [168, 226, 85, 234, 194, 156, 196, 181] };
 }
 #[repr(C)]
 pub struct IEmailMailboxPolicies3 {
@@ -1067,6 +1163,9 @@ pub struct IEmailMailboxPolicies3 {
     SetRequiredSmimeSigningAlgorithm: usize,
     pub SetMustEncryptSmimeMessages: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
     pub SetMustSignSmimeMessages: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IEmailMailboxPolicies3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3184828447, data2: 18535, data3: 16714, data4: [129, 162, 128, 57, 25, 196, 65, 145] };
 }
 #[repr(C)]
 pub struct IEmailMailboxSyncManager {
@@ -1093,6 +1192,9 @@ pub struct IEmailMailboxSyncManager {
     #[cfg(not(feature = "Foundation"))]
     RemoveSyncStatusChanged: usize,
 }
+impl ::windows_sys::core::Interface for IEmailMailboxSyncManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1367000410, data2: 13713, data3: 19293, data4: [133, 188, 199, 29, 222, 134, 34, 99] };
+}
 #[repr(C)]
 pub struct IEmailMailboxSyncManager2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -1105,6 +1207,9 @@ pub struct IEmailMailboxSyncManager2 {
     pub SetLastAttemptedSyncTime: unsafe extern "system" fn(this: *mut *mut Self, value: super::super::Foundation::DateTime) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     SetLastAttemptedSyncTime: usize,
+}
+impl ::windows_sys::core::Interface for IEmailMailboxSyncManager2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3448621438, data2: 38337, data3: 20361, data4: [129, 183, 230, 174, 203, 102, 149, 252] };
 }
 #[repr(C)]
 pub struct IEmailManagerForUser {
@@ -1122,6 +1227,9 @@ pub struct IEmailManagerForUser {
     #[cfg(not(feature = "System"))]
     User: usize,
 }
+impl ::windows_sys::core::Interface for IEmailManagerForUser {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4151565983, data2: 15525, data3: 19215, data4: [144, 193, 21, 110, 64, 23, 76, 229] };
+}
 #[repr(C)]
 pub struct IEmailManagerStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -1129,6 +1237,9 @@ pub struct IEmailManagerStatics {
     pub ShowComposeNewEmailAsync: unsafe extern "system" fn(this: *mut *mut Self, message: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     ShowComposeNewEmailAsync: usize,
+}
+impl ::windows_sys::core::Interface for IEmailManagerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4111631956, data2: 21957, data3: 18576, data4: [168, 36, 33, 108, 38, 24, 206, 127] };
 }
 #[repr(C)]
 pub struct IEmailManagerStatics2 {
@@ -1138,6 +1249,9 @@ pub struct IEmailManagerStatics2 {
     #[cfg(not(feature = "Foundation"))]
     RequestStoreAsync: usize,
 }
+impl ::windows_sys::core::Interface for IEmailManagerStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2886020515, data2: 45460, data3: 16989, data4: [182, 217, 208, 240, 65, 53, 237, 162] };
+}
 #[repr(C)]
 pub struct IEmailManagerStatics3 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -1145,6 +1259,9 @@ pub struct IEmailManagerStatics3 {
     pub GetForUser: unsafe extern "system" fn(this: *mut *mut Self, user: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "System"))]
     GetForUser: usize,
+}
+impl ::windows_sys::core::Interface for IEmailManagerStatics3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1248994197, data2: 33854, data3: 18757, data4: [179, 170, 52, 158, 7, 163, 98, 197] };
 }
 #[repr(C)]
 pub struct IEmailMeetingInfo {
@@ -1218,10 +1335,16 @@ pub struct IEmailMeetingInfo {
     #[cfg(not(feature = "Foundation"))]
     SetStartTime: usize,
 }
+impl ::windows_sys::core::Interface for IEmailMeetingInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 834682793, data2: 31027, data3: 16735, data4: [162, 117, 209, 101, 186, 7, 2, 107] };
+}
 #[repr(C)]
 pub struct IEmailMeetingInfo2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub IsReportedOutOfDateByServer: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IEmailMeetingInfo2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2119776365, data2: 45273, data3: 20453, data4: [134, 124, 227, 30, 210, 181, 136, 184] };
 }
 #[repr(C)]
 pub struct IEmailMessage {
@@ -1246,6 +1369,9 @@ pub struct IEmailMessage {
     pub Attachments: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     Attachments: usize,
+}
+impl ::windows_sys::core::Interface for IEmailMessage {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1819120781, data2: 32949, data3: 18680, data4: [176, 177, 224, 78, 67, 15, 68, 229] };
 }
 #[repr(C)]
 pub struct IEmailMessage2 {
@@ -1308,6 +1434,9 @@ pub struct IEmailMessage2 {
     #[cfg(not(feature = "Storage_Streams"))]
     SetBodyStream: usize,
 }
+impl ::windows_sys::core::Interface for IEmailMessage2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4257752203, data2: 40730, data3: 17627, data4: [189, 60, 101, 195, 132, 119, 15, 134] };
+}
 #[repr(C)]
 pub struct IEmailMessage3 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -1322,6 +1451,9 @@ pub struct IEmailMessage3 {
     pub SmimeKind: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut EmailMessageSmimeKind) -> ::windows_sys::core::HRESULT,
     pub SetSmimeKind: unsafe extern "system" fn(this: *mut *mut Self, value: EmailMessageSmimeKind) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEmailMessage3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2716493660, data2: 58776, data3: 19753, data4: [160, 24, 252, 123, 126, 236, 224, 161] };
+}
 #[repr(C)]
 pub struct IEmailMessage4 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -1332,6 +1464,9 @@ pub struct IEmailMessage4 {
     pub SentRepresenting: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetSentRepresenting: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEmailMessage4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 830271873, data2: 15999, data3: 18949, data4: [131, 148, 62, 16, 51, 109, 212, 53] };
+}
 #[repr(C)]
 pub struct IEmailMessageBatch {
     pub base__: ::windows_sys::core::IInspectable,
@@ -1341,6 +1476,9 @@ pub struct IEmailMessageBatch {
     Messages: usize,
     pub Status: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut EmailBatchStatus) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEmailMessageBatch {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1616695439, data2: 9689, data3: 20251, data4: [158, 81, 5, 20, 192, 20, 150, 83] };
+}
 #[repr(C)]
 pub struct IEmailMessageReader {
     pub base__: ::windows_sys::core::IInspectable,
@@ -1348,6 +1486,9 @@ pub struct IEmailMessageReader {
     pub ReadBatchAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     ReadBatchAsync: usize,
+}
+impl ::windows_sys::core::Interface for IEmailMessageReader {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 793427615, data2: 25107, data3: 19077, data4: [163, 176, 249, 45, 26, 131, 157, 25] };
 }
 #[repr(C)]
 pub struct IEmailQueryOptions {
@@ -1364,11 +1505,17 @@ pub struct IEmailQueryOptions {
     #[cfg(not(feature = "Foundation_Collections"))]
     FolderIds: usize,
 }
+impl ::windows_sys::core::Interface for IEmailQueryOptions {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1162890139, data2: 15999, data3: 19794, data4: [182, 221, 214, 253, 78, 31, 189, 154] };
+}
 #[repr(C)]
 pub struct IEmailQueryOptionsFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub CreateWithText: unsafe extern "system" fn(this: *mut *mut Self, text: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub CreateWithTextAndFields: unsafe extern "system" fn(this: *mut *mut Self, text: ::windows_sys::core::HSTRING, fields: EmailQuerySearchFields, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IEmailQueryOptionsFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2297536952, data2: 30891, data3: 20200, data4: [180, 227, 4, 109, 110, 47, 229, 226] };
 }
 #[repr(C)]
 pub struct IEmailQueryTextSearch {
@@ -1380,6 +1527,9 @@ pub struct IEmailQueryTextSearch {
     pub Text: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub SetText: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEmailQueryTextSearch {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2678104712, data2: 15453, data3: 18085, data4: [166, 226, 49, 214, 253, 23, 229, 64] };
+}
 #[repr(C)]
 pub struct IEmailRecipient {
     pub base__: ::windows_sys::core::IInspectable,
@@ -1388,11 +1538,17 @@ pub struct IEmailRecipient {
     pub Address: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub SetAddress: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEmailRecipient {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3404211635, data2: 17528, data3: 18452, data4: [185, 0, 201, 2, 181, 225, 155, 83] };
+}
 #[repr(C)]
 pub struct IEmailRecipientFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, address: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub CreateWithName: unsafe extern "system" fn(this: *mut *mut Self, address: ::windows_sys::core::HSTRING, name: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IEmailRecipientFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1426110541, data2: 51098, data3: 20216, data4: [185, 9, 114, 46, 24, 227, 147, 93] };
 }
 #[repr(C)]
 pub struct IEmailRecipientResolutionResult {
@@ -1403,6 +1559,9 @@ pub struct IEmailRecipientResolutionResult {
     #[cfg(not(all(feature = "Foundation_Collections", feature = "Security_Cryptography_Certificates")))]
     PublicKeys: usize,
 }
+impl ::windows_sys::core::Interface for IEmailRecipientResolutionResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2441296122, data2: 36237, data3: 17779, data4: [128, 209, 7, 23, 42, 52, 185, 141] };
+}
 #[repr(C)]
 pub struct IEmailRecipientResolutionResult2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -1411,6 +1570,9 @@ pub struct IEmailRecipientResolutionResult2 {
     pub SetPublicKeys: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Foundation_Collections", feature = "Security_Cryptography_Certificates")))]
     SetPublicKeys: usize,
+}
+impl ::windows_sys::core::Interface for IEmailRecipientResolutionResult2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1581386678, data2: 52827, data3: 19422, data4: [185, 212, 225, 109, 160, 176, 159, 202] };
 }
 #[repr(C)]
 pub struct IEmailStore {
@@ -1448,7 +1610,13 @@ pub struct IEmailStore {
     #[cfg(not(feature = "Foundation"))]
     CreateMailboxInAccountAsync: usize,
 }
+impl ::windows_sys::core::Interface for IEmailStore {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4160954990, data2: 37175, data3: 20363, data4: [164, 112, 39, 154, 195, 5, 142, 182] };
+}
 #[repr(C)]
 pub struct IEmailStoreNotificationTriggerDetails {
     pub base__: ::windows_sys::core::IInspectable,
+}
+impl ::windows_sys::core::Interface for IEmailStoreNotificationTriggerDetails {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3457635900, data2: 18150, data3: 17353, data4: [150, 247, 250, 207, 125, 215, 16, 203] };
 }

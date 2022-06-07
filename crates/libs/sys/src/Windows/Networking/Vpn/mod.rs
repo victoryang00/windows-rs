@@ -6,10 +6,16 @@ pub struct IVpnAppId {
     pub Value: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub SetValue: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IVpnAppId {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2064033333, data2: 23640, data3: 16857, data4: [148, 167, 191, 188, 241, 216, 202, 84] };
+}
 #[repr(C)]
 pub struct IVpnAppIdFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, r#type: VpnAppIdType, value: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IVpnAppIdFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1185807658, data2: 2731, data3: 20443, data4: [130, 29, 211, 221, 201, 25, 120, 139] };
 }
 #[repr(C)]
 pub struct IVpnChannel {
@@ -45,6 +51,9 @@ pub struct IVpnChannel {
     RequestCustomPrompt: usize,
     pub SetErrorMessage: unsafe extern "system" fn(this: *mut *mut Self, message: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub SetAllowedSslTlsVersions: unsafe extern "system" fn(this: *mut *mut Self, tunneltransport: *mut ::core::ffi::c_void, usetls12: bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IVpnChannel {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1254591751, data2: 53672, data3: 17155, data4: [160, 145, 200, 210, 224, 145, 91, 195] };
 }
 #[repr(C)]
 pub struct IVpnChannel2 {
@@ -89,6 +98,9 @@ pub struct IVpnChannel2 {
     #[cfg(not(feature = "Foundation_Collections"))]
     StartWithTrafficFilter: usize,
 }
+impl ::windows_sys::core::Interface for IVpnChannel2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 576049509, data2: 39227, data3: 17961, data4: [173, 96, 241, 195, 243, 83, 127, 80] };
+}
 #[repr(C)]
 pub struct IVpnChannel4 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -105,6 +117,9 @@ pub struct IVpnChannel4 {
     GetSlotTypeForTransportContext: usize,
     pub CurrentRequestTransportContext: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IVpnChannel4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3609620190, data2: 10551, data3: 16797, data4: [149, 112, 72, 106, 235, 184, 24, 3] };
+}
 #[repr(C)]
 pub struct IVpnChannel5 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -112,6 +127,9 @@ pub struct IVpnChannel5 {
     pub AppendVpnSendPacketBuffer: unsafe extern "system" fn(this: *mut *mut Self, encapsulatedpacketbuffer: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub FlushVpnReceivePacketBuffers: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub FlushVpnSendPacketBuffers: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IVpnChannel5 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3732539794, data2: 33668, data3: 20412, data4: [136, 44, 31, 210, 49, 36, 205, 59] };
 }
 #[repr(C)]
 pub struct IVpnChannel6 {
@@ -121,15 +139,24 @@ pub struct IVpnChannel6 {
     #[cfg(not(feature = "Foundation_Collections"))]
     ActivateForeground: usize,
 }
+impl ::windows_sys::core::Interface for IVpnChannel6 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1434728086, data2: 48483, data3: 18885, data4: [171, 202, 93, 167, 120, 133, 85, 26] };
+}
 #[repr(C)]
 pub struct IVpnChannelActivityEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub Type: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut VpnChannelActivityEventType) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IVpnChannelActivityEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2741799154, data2: 45020, data3: 18293, data4: [133, 93, 212, 172, 10, 53, 252, 85] };
+}
 #[repr(C)]
 pub struct IVpnChannelActivityStateChangedArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub ActivityState: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut VpnChannelActivityEventType) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IVpnChannelActivityStateChangedArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1031079269, data2: 64960, data3: 19390, data4: [162, 59, 69, 255, 252, 109, 151, 161] };
 }
 #[repr(C)]
 pub struct IVpnChannelConfiguration {
@@ -141,6 +168,9 @@ pub struct IVpnChannelConfiguration {
     ServerHostNameList: usize,
     pub CustomField: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IVpnChannelConfiguration {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 237886626, data2: 8210, data3: 20452, data4: [177, 121, 140, 101, 44, 109, 16, 126] };
+}
 #[repr(C)]
 pub struct IVpnChannelConfiguration2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -149,10 +179,16 @@ pub struct IVpnChannelConfiguration2 {
     #[cfg(not(feature = "Foundation_Collections"))]
     ServerUris: usize,
 }
+impl ::windows_sys::core::Interface for IVpnChannelConfiguration2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4077606732, data2: 30756, data3: 18204, data4: [161, 24, 99, 219, 201, 58, 228, 199] };
+}
 #[repr(C)]
 pub struct IVpnChannelStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub ProcessEventAsync: unsafe extern "system" fn(this: *mut *mut Self, thirdpartyplugin: *mut ::core::ffi::c_void, event: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IVpnChannelStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2297103917, data2: 59416, data3: 20477, data4: [152, 166, 54, 62, 55, 54, 201, 93] };
 }
 #[repr(C)]
 pub struct IVpnCredential {
@@ -171,12 +207,18 @@ pub struct IVpnCredential {
     #[cfg(not(feature = "Security_Credentials"))]
     OldPasswordCredential: usize,
 }
+impl ::windows_sys::core::Interface for IVpnCredential {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3085404915, data2: 42093, data3: 16459, data4: [135, 41, 24, 50, 82, 40, 83, 172] };
+}
 #[repr(C)]
 pub struct IVpnCustomCheckBox {
     pub base__: ::windows_sys::core::IInspectable,
     pub SetInitialCheckState: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
     pub InitialCheckState: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub Checked: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IVpnCustomCheckBox {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1132955475, data2: 965, data3: 20065, data4: [147, 215, 169, 87, 113, 76, 66, 130] };
 }
 #[repr(C)]
 pub struct IVpnCustomComboBox {
@@ -191,6 +233,9 @@ pub struct IVpnCustomComboBox {
     OptionsText: usize,
     pub Selected: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IVpnCustomComboBox {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2586056078, data2: 56225, data3: 19567, data4: [130, 112, 220, 243, 201, 118, 28, 76] };
+}
 #[repr(C)]
 pub struct IVpnCustomEditBox {
     pub base__: ::windows_sys::core::IInspectable,
@@ -200,9 +245,15 @@ pub struct IVpnCustomEditBox {
     pub NoEcho: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub Text: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IVpnCustomEditBox {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 805493152, data2: 53183, data3: 19467, data4: [143, 60, 102, 245, 3, 194, 11, 57] };
+}
 #[repr(C)]
 pub struct IVpnCustomErrorBox {
     pub base__: ::windows_sys::core::IInspectable,
+}
+impl ::windows_sys::core::Interface for IVpnCustomErrorBox {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2663706546, data2: 51522, data3: 17071, data4: [178, 35, 88, 139, 72, 50, 135, 33] };
 }
 #[repr(C)]
 pub struct IVpnCustomPrompt {
@@ -214,12 +265,18 @@ pub struct IVpnCustomPrompt {
     pub SetBordered: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
     pub Bordered: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IVpnCustomPrompt {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2603531899, data2: 34773, data3: 17212, data4: [180, 246, 238, 230, 170, 104, 162, 68] };
+}
 #[repr(C)]
 pub struct IVpnCustomPromptBooleanInput {
     pub base__: ::windows_sys::core::IInspectable,
     pub SetInitialValue: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
     pub InitialValue: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub Value: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IVpnCustomPromptBooleanInput {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3301549726, data2: 65351, data3: 17703, data4: [159, 39, 164, 146, 146, 1, 153, 121] };
 }
 #[repr(C)]
 pub struct IVpnCustomPromptElement {
@@ -231,6 +288,9 @@ pub struct IVpnCustomPromptElement {
     pub SetEmphasized: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
     pub Emphasized: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IVpnCustomPromptElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1941788216, data2: 28420, data3: 16461, data4: [147, 221, 80, 164, 73, 36, 163, 139] };
+}
 #[repr(C)]
 pub struct IVpnCustomPromptOptionSelector {
     pub base__: ::windows_sys::core::IInspectable,
@@ -240,11 +300,17 @@ pub struct IVpnCustomPromptOptionSelector {
     Options: usize,
     pub SelectedIndex: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IVpnCustomPromptOptionSelector {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 999240921, data2: 36545, data3: 20117, data4: [154, 78, 123, 166, 77, 56, 243, 48] };
+}
 #[repr(C)]
 pub struct IVpnCustomPromptText {
     pub base__: ::windows_sys::core::IInspectable,
     pub SetText: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub Text: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IVpnCustomPromptText {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1003011566, data2: 14914, data3: 18851, data4: [171, 221, 7, 178, 237, 234, 117, 45] };
 }
 #[repr(C)]
 pub struct IVpnCustomPromptTextInput {
@@ -255,11 +321,17 @@ pub struct IVpnCustomPromptTextInput {
     pub IsTextHidden: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub Text: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IVpnCustomPromptTextInput {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3386547317, data2: 37180, data3: 18389, data4: [136, 186, 72, 252, 72, 147, 2, 53] };
+}
 #[repr(C)]
 pub struct IVpnCustomTextBox {
     pub base__: ::windows_sys::core::IInspectable,
     pub SetDisplayText: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub DisplayText: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IVpnCustomTextBox {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3668231114, data2: 36643, data3: 19766, data4: [145, 241, 118, 217, 55, 130, 121, 66] };
 }
 #[repr(C)]
 pub struct IVpnDomainNameAssignment {
@@ -277,6 +349,9 @@ pub struct IVpnDomainNameAssignment {
     #[cfg(not(feature = "Foundation"))]
     ProxyAutoConfigurationUri: usize,
 }
+impl ::windows_sys::core::Interface for IVpnDomainNameAssignment {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1094037825, data2: 52443, data3: 18869, data4: [148, 1, 3, 154, 138, 231, 103, 233] };
+}
 #[repr(C)]
 pub struct IVpnDomainNameInfo {
     pub base__: ::windows_sys::core::IInspectable,
@@ -293,6 +368,9 @@ pub struct IVpnDomainNameInfo {
     #[cfg(not(feature = "Foundation_Collections"))]
     WebProxyServers: usize,
 }
+impl ::windows_sys::core::Interface for IVpnDomainNameInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2905520175, data2: 60046, data3: 20346, data4: [132, 62, 26, 135, 227, 46, 27, 154] };
+}
 #[repr(C)]
 pub struct IVpnDomainNameInfo2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -301,6 +379,9 @@ pub struct IVpnDomainNameInfo2 {
     #[cfg(not(feature = "Foundation_Collections"))]
     WebProxyUris: usize,
 }
+impl ::windows_sys::core::Interface for IVpnDomainNameInfo2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2877755729, data2: 27731, data3: 18472, data4: [152, 131, 216, 134, 222, 16, 68, 7] };
+}
 #[repr(C)]
 pub struct IVpnDomainNameInfoFactory {
     pub base__: ::windows_sys::core::IInspectable,
@@ -308,6 +389,9 @@ pub struct IVpnDomainNameInfoFactory {
     pub CreateVpnDomainNameInfo: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::HSTRING, nametype: VpnDomainNameType, dnsserverlist: *mut ::core::ffi::c_void, proxyserverlist: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     CreateVpnDomainNameInfo: usize,
+}
+impl ::windows_sys::core::Interface for IVpnDomainNameInfoFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 621263733, data2: 655, data3: 18056, data4: [141, 58, 196, 83, 29, 243, 125, 168] };
 }
 #[repr(C)]
 pub struct IVpnForegroundActivatedEventArgs {
@@ -319,6 +403,9 @@ pub struct IVpnForegroundActivatedEventArgs {
     SharedContext: usize,
     pub ActivationOperation: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IVpnForegroundActivatedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2243192240, data2: 51931, data3: 19824, data4: [172, 146, 84, 58, 36, 220, 158, 188] };
+}
 #[repr(C)]
 pub struct IVpnForegroundActivationOperation {
     pub base__: ::windows_sys::core::IInspectable,
@@ -327,15 +414,24 @@ pub struct IVpnForegroundActivationOperation {
     #[cfg(not(feature = "Foundation_Collections"))]
     Complete: usize,
 }
+impl ::windows_sys::core::Interface for IVpnForegroundActivationOperation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2650869079, data2: 61818, data3: 19413, data4: [155, 109, 249, 132, 241, 41, 125, 60] };
+}
 #[repr(C)]
 pub struct IVpnInterfaceId {
     pub base__: ::windows_sys::core::IInspectable,
     pub GetAddressInfo: unsafe extern "system" fn(this: *mut *mut Self, id_array_size: *mut u32, id: *mut *mut u8) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IVpnInterfaceId {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2653805730, data2: 5906, data3: 19684, data4: [177, 121, 140, 101, 44, 109, 16, 17] };
+}
 #[repr(C)]
 pub struct IVpnInterfaceIdFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub CreateVpnInterfaceId: unsafe extern "system" fn(this: *mut *mut Self, address_array_size: u32, address: *const u8, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IVpnInterfaceIdFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2653805730, data2: 5906, data3: 19684, data4: [177, 121, 140, 101, 44, 109, 16, 0] };
 }
 #[repr(C)]
 pub struct IVpnManagementAgent {
@@ -377,6 +473,9 @@ pub struct IVpnManagementAgent {
     #[cfg(not(feature = "Foundation"))]
     DisconnectProfileAsync: usize,
 }
+impl ::windows_sys::core::Interface for IVpnManagementAgent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 423007949, data2: 42436, data3: 19134, data4: [133, 43, 120, 91, 228, 203, 62, 52] };
+}
 #[repr(C)]
 pub struct IVpnNamespaceAssignment {
     pub base__: ::windows_sys::core::IInspectable,
@@ -396,6 +495,9 @@ pub struct IVpnNamespaceAssignment {
     pub ProxyAutoConfigUri: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     ProxyAutoConfigUri: usize,
+}
+impl ::windows_sys::core::Interface for IVpnNamespaceAssignment {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3623344920, data2: 12413, data3: 19470, data4: [189, 98, 143, 162, 112, 187, 173, 214] };
 }
 #[repr(C)]
 pub struct IVpnNamespaceInfo {
@@ -419,6 +521,9 @@ pub struct IVpnNamespaceInfo {
     #[cfg(not(feature = "Foundation_Collections"))]
     WebProxyServers: usize,
 }
+impl ::windows_sys::core::Interface for IVpnNamespaceInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 820902723, data2: 17487, data3: 17605, data4: [129, 103, 163, 90, 145, 241, 175, 148] };
+}
 #[repr(C)]
 pub struct IVpnNamespaceInfoFactory {
     pub base__: ::windows_sys::core::IInspectable,
@@ -426,6 +531,9 @@ pub struct IVpnNamespaceInfoFactory {
     pub CreateVpnNamespaceInfo: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::HSTRING, dnsserverlist: *mut ::core::ffi::c_void, proxyserverlist: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     CreateVpnNamespaceInfo: usize,
+}
+impl ::windows_sys::core::Interface for IVpnNamespaceInfoFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3409876250, data2: 45262, data3: 17451, data4: [172, 187, 95, 153, 178, 2, 195, 28] };
 }
 #[repr(C)]
 pub struct IVpnNativeProfile {
@@ -445,12 +553,18 @@ pub struct IVpnNativeProfile {
     pub EapConfiguration: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub SetEapConfiguration: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IVpnNativeProfile {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2762924702, data2: 25623, data3: 17203, data4: [152, 66, 240, 166, 109, 182, 152, 2] };
+}
 #[repr(C)]
 pub struct IVpnNativeProfile2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub RequireVpnClientAppUI: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub SetRequireVpnClientAppUI: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
     pub ConnectionStatus: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut VpnManagementConnectionStatus) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IVpnNativeProfile2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 267134055, data2: 52661, data3: 19143, data4: [181, 163, 10, 251, 94, 196, 118, 130] };
 }
 #[repr(C)]
 pub struct IVpnPacketBuffer {
@@ -464,10 +578,16 @@ pub struct IVpnPacketBuffer {
     pub SetTransportAffinity: unsafe extern "system" fn(this: *mut *mut Self, value: u32) -> ::windows_sys::core::HRESULT,
     pub TransportAffinity: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IVpnPacketBuffer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3271070204, data2: 19804, data3: 19043, data4: [183, 13, 78, 48, 126, 172, 206, 85] };
+}
 #[repr(C)]
 pub struct IVpnPacketBuffer2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub AppId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IVpnPacketBuffer2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1717473776, data2: 34821, data3: 19445, data4: [166, 25, 46, 132, 136, 46, 107, 79] };
 }
 #[repr(C)]
 pub struct IVpnPacketBuffer3 {
@@ -475,10 +595,16 @@ pub struct IVpnPacketBuffer3 {
     pub SetTransportContext: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub TransportContext: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IVpnPacketBuffer3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3797288751, data2: 4219, data3: 19520, data4: [177, 39, 91, 197, 62, 10, 217, 96] };
+}
 #[repr(C)]
 pub struct IVpnPacketBufferFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub CreateVpnPacketBuffer: unsafe extern "system" fn(this: *mut *mut Self, parentbuffer: *mut ::core::ffi::c_void, offset: u32, length: u32, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IVpnPacketBufferFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2653805730, data2: 5906, data3: 19684, data4: [177, 121, 140, 101, 44, 109, 153, 153] };
 }
 #[repr(C)]
 pub struct IVpnPacketBufferList {
@@ -492,6 +618,9 @@ pub struct IVpnPacketBufferList {
     pub Status: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut VpnPacketBufferStatus) -> ::windows_sys::core::HRESULT,
     pub Size: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IVpnPacketBufferList {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3271070204, data2: 19804, data3: 19043, data4: [183, 13, 78, 48, 126, 172, 206, 119] };
+}
 #[repr(C)]
 pub struct IVpnPacketBufferList2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -499,6 +628,9 @@ pub struct IVpnPacketBufferList2 {
     pub RemoveLeadingPacket: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub AddTrailingPacket: unsafe extern "system" fn(this: *mut *mut Self, nextvpnpacketbuffer: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub RemoveTrailingPacket: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IVpnPacketBufferList2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1048236005, data2: 59934, data3: 18474, data4: [141, 152, 192, 101, 245, 125, 137, 234] };
 }
 #[repr(C)]
 pub struct IVpnPickedCredential {
@@ -513,6 +645,9 @@ pub struct IVpnPickedCredential {
     #[cfg(not(feature = "Security_Credentials"))]
     OldPasswordCredential: usize,
 }
+impl ::windows_sys::core::Interface for IVpnPickedCredential {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2591636167, data2: 34900, data3: 20050, data4: [173, 151, 36, 221, 154, 132, 43, 206] };
+}
 #[repr(C)]
 pub struct IVpnPlugIn {
     pub base__: ::windows_sys::core::IInspectable,
@@ -521,6 +656,9 @@ pub struct IVpnPlugIn {
     pub GetKeepAlivePayload: unsafe extern "system" fn(this: *mut *mut Self, channel: *mut ::core::ffi::c_void, keepalivepacket: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Encapsulate: unsafe extern "system" fn(this: *mut *mut Self, channel: *mut ::core::ffi::c_void, packets: *mut ::core::ffi::c_void, encapulatedpackets: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Decapsulate: unsafe extern "system" fn(this: *mut *mut Self, channel: *mut ::core::ffi::c_void, encapbuffer: *mut ::core::ffi::c_void, decapsulatedpackets: *mut ::core::ffi::c_void, controlpacketstosend: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IVpnPlugIn {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3468135687, data2: 53416, data3: 18179, data4: [160, 145, 200, 194, 192, 145, 91, 196] };
 }
 #[repr(C)]
 pub struct IVpnPlugInProfile {
@@ -534,12 +672,18 @@ pub struct IVpnPlugInProfile {
     pub VpnPluginPackageFamilyName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub SetVpnPluginPackageFamilyName: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IVpnPlugInProfile {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 249499044, data2: 20224, data3: 17801, data4: [141, 123, 75, 249, 136, 246, 84, 44] };
+}
 #[repr(C)]
 pub struct IVpnPlugInProfile2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub RequireVpnClientAppUI: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub SetRequireVpnClientAppUI: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
     pub ConnectionStatus: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut VpnManagementConnectionStatus) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IVpnPlugInProfile2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1629243538, data2: 53140, data3: 19158, data4: [186, 153, 0, 244, 255, 52, 86, 94] };
 }
 #[repr(C)]
 pub struct IVpnProfile {
@@ -567,6 +711,9 @@ pub struct IVpnProfile {
     pub AlwaysOn: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub SetAlwaysOn: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IVpnProfile {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2020980561, data2: 45271, data3: 17371, data4: [138, 147, 211, 254, 36, 121, 229, 106] };
+}
 #[repr(C)]
 pub struct IVpnRoute {
     pub base__: ::windows_sys::core::IInspectable,
@@ -574,6 +721,9 @@ pub struct IVpnRoute {
     pub Address: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetPrefixSize: unsafe extern "system" fn(this: *mut *mut Self, value: u8) -> ::windows_sys::core::HRESULT,
     pub PrefixSize: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u8) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IVpnRoute {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3044219779, data2: 2409, data3: 18073, data4: [147, 142, 119, 118, 219, 41, 207, 179] };
 }
 #[repr(C)]
 pub struct IVpnRouteAssignment {
@@ -613,10 +763,16 @@ pub struct IVpnRouteAssignment {
     pub SetExcludeLocalSubnets: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
     pub ExcludeLocalSubnets: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IVpnRouteAssignment {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3680820770, data2: 52793, data3: 19062, data4: [149, 80, 246, 16, 57, 248, 14, 72] };
+}
 #[repr(C)]
 pub struct IVpnRouteFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub CreateVpnRoute: unsafe extern "system" fn(this: *mut *mut Self, address: *mut ::core::ffi::c_void, prefixsize: u8, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IVpnRouteFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3186275839, data2: 17871, data3: 19353, data4: [131, 251, 219, 59, 194, 103, 43, 2] };
 }
 #[repr(C)]
 pub struct IVpnSystemHealth {
@@ -625,6 +781,9 @@ pub struct IVpnSystemHealth {
     pub StatementOfHealth: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Storage_Streams"))]
     StatementOfHealth: usize,
+}
+impl ::windows_sys::core::Interface for IVpnSystemHealth {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2577987759, data2: 49390, data3: 20085, data4: [129, 122, 242, 49, 174, 229, 18, 61] };
 }
 #[repr(C)]
 pub struct IVpnTrafficFilter {
@@ -656,6 +815,9 @@ pub struct IVpnTrafficFilter {
     pub RoutingPolicyType: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut VpnRoutingPolicyType) -> ::windows_sys::core::HRESULT,
     pub SetRoutingPolicyType: unsafe extern "system" fn(this: *mut *mut Self, value: VpnRoutingPolicyType) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IVpnTrafficFilter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 795417440, data2: 27807, data3: 18421, data4: [172, 54, 187, 27, 4, 46, 44, 80] };
+}
 #[repr(C)]
 pub struct IVpnTrafficFilterAssignment {
     pub base__: ::windows_sys::core::IInspectable,
@@ -668,10 +830,16 @@ pub struct IVpnTrafficFilterAssignment {
     pub AllowInbound: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub SetAllowInbound: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IVpnTrafficFilterAssignment {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1456264284, data2: 58980, data3: 18206, data4: [137, 205, 96, 22, 3, 185, 224, 243] };
+}
 #[repr(C)]
 pub struct IVpnTrafficFilterFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, appid: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IVpnTrafficFilterFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1208828373, data2: 32665, data3: 18252, data4: [134, 238, 150, 223, 22, 131, 24, 241] };
 }
 pub type VpnAppId = *mut ::core::ffi::c_void;
 #[doc = "*Required features: `\"Networking_Vpn\"`*"]

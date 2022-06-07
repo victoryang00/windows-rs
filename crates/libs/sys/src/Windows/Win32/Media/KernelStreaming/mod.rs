@@ -412,6 +412,9 @@ pub struct IKsAggregateControl {
     pub KsAddAggregate: unsafe extern "system" fn(this: *mut *mut Self, aggregateclass: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub KsRemoveAggregate: unsafe extern "system" fn(this: *mut *mut Self, aggregateclass: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IKsAggregateControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2134960832, data2: 14663, data3: 4562, data4: [135, 78, 0, 160, 201, 34, 49, 150] };
+}
 #[repr(C)]
 pub struct IKsAllocator(pub u8);
 #[repr(C)]
@@ -423,6 +426,9 @@ pub struct IKsControl {
     pub KsMethod: unsafe extern "system" fn(this: *mut *mut Self, method: *const KSIDENTIFIER, methodlength: u32, methoddata: *mut ::core::ffi::c_void, datalength: u32, bytesreturned: *mut u32) -> ::windows_sys::core::HRESULT,
     pub KsEvent: unsafe extern "system" fn(this: *mut *mut Self, event: *const KSIDENTIFIER, eventlength: u32, eventdata: *mut ::core::ffi::c_void, datalength: u32, bytesreturned: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IKsControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 687163013, data2: 1789, data3: 4562, data4: [178, 122, 0, 160, 201, 34, 49, 150] };
+}
 #[repr(C)]
 pub struct IKsFormatSupport {
     pub base__: ::windows_sys::core::IUnknown,
@@ -432,10 +438,16 @@ pub struct IKsFormatSupport {
     IsFormatSupported: usize,
     pub GetDevicePreferredFormat: unsafe extern "system" fn(this: *mut *mut Self, ppksformat: *mut *mut KSDATAFORMAT) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IKsFormatSupport {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1018472093, data2: 47983, data3: 19755, data4: [149, 183, 69, 45, 44, 21, 93, 181] };
+}
 #[repr(C)]
 pub struct IKsJackContainerId {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetJackContainerId: unsafe extern "system" fn(this: *mut *mut Self, pjackcontainerid: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IKsJackContainerId {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3382375523, data2: 54825, data3: 20164, data4: [140, 0, 229, 77, 104, 21, 66, 72] };
 }
 #[repr(C)]
 pub struct IKsJackDescription {
@@ -446,11 +458,17 @@ pub struct IKsJackDescription {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetJackDescription: usize,
 }
+impl ::windows_sys::core::Interface for IKsJackDescription {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1158281047, data2: 11590, data3: 17975, data4: [142, 98, 206, 125, 185, 68, 245, 123] };
+}
 #[repr(C)]
 pub struct IKsJackDescription2 {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetJackCount: unsafe extern "system" fn(this: *mut *mut Self, pcjacks: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetJackDescription2: unsafe extern "system" fn(this: *mut *mut Self, njack: u32, pdescription2: *mut KSJACK_DESCRIPTION2) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IKsJackDescription2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1200568987, data2: 57545, data3: 18471, data4: [146, 40, 111, 85, 5, 255, 231, 106] };
 }
 #[repr(C)]
 pub struct IKsJackSinkInformation {
@@ -459,6 +477,9 @@ pub struct IKsJackSinkInformation {
     pub GetJackSinkInformation: unsafe extern "system" fn(this: *mut *mut Self, pjacksinkinformation: *mut KSJACK_SINK_INFORMATION) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetJackSinkInformation: usize,
+}
+impl ::windows_sys::core::Interface for IKsJackSinkInformation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3653071597, data2: 10511, data3: 17793, data4: [159, 243, 97, 2, 122, 143, 229, 50] };
 }
 #[repr(C)]
 pub struct IKsPin(pub u8);
@@ -469,10 +490,16 @@ pub struct IKsPropertySet {
     pub Get: unsafe extern "system" fn(this: *mut *mut Self, propset: *const ::windows_sys::core::GUID, id: u32, instancedata: *const ::core::ffi::c_void, instancelength: u32, propertydata: *mut ::core::ffi::c_void, datalength: u32, bytesreturned: *mut u32) -> ::windows_sys::core::HRESULT,
     pub QuerySupported: unsafe extern "system" fn(this: *mut *mut Self, propset: *const ::windows_sys::core::GUID, id: u32, typesupport: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IKsPropertySet {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 837790768, data2: 20828, data3: 4560, data4: [169, 170, 0, 170, 0, 97, 190, 147] };
+}
 #[repr(C)]
 pub struct IKsTopology {
     pub base__: ::windows_sys::core::IUnknown,
     pub CreateNodeInstance: unsafe extern "system" fn(this: *mut *mut Self, nodeid: u32, flags: u32, desiredaccess: u32, unkouter: *mut ::core::ffi::c_void, interfaceid: *const ::windows_sys::core::GUID, interface: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IKsTopology {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 687163011, data2: 1789, data3: 4562, data4: [178, 122, 0, 160, 201, 34, 49, 150] };
 }
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Media_KernelStreaming\"`*"]

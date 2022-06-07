@@ -26,6 +26,9 @@ pub struct ILamp {
     #[cfg(not(feature = "Foundation"))]
     RemoveAvailabilityChanged: usize,
 }
+impl ::windows_sys::core::Interface for ILamp {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 75324314, data2: 59973, data3: 19243, data4: [177, 162, 20, 223, 240, 11, 222, 123] };
+}
 #[repr(C)]
 pub struct ILampArray {
     pub base__: ::windows_sys::core::IInspectable,
@@ -92,6 +95,9 @@ pub struct ILampArray {
     #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
     RequestMessageAsync: usize,
 }
+impl ::windows_sys::core::Interface for ILampArray {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2060359559, data2: 51360, data3: 20117, data4: [161, 224, 213, 134, 118, 83, 134, 73] };
+}
 #[repr(C)]
 pub struct ILampArrayStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -101,10 +107,16 @@ pub struct ILampArrayStatics {
     #[cfg(not(feature = "Foundation"))]
     FromIdAsync: usize,
 }
+impl ::windows_sys::core::Interface for ILampArrayStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2075707789, data2: 24513, data3: 17709, data4: [187, 31, 74, 212, 16, 211, 152, 255] };
+}
 #[repr(C)]
 pub struct ILampAvailabilityChangedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub IsAvailable: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ILampAvailabilityChangedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1332624877, data2: 1954, data3: 18845, data4: [146, 96, 103, 227, 4, 83, 43, 164] };
 }
 #[repr(C)]
 pub struct ILampInfo {
@@ -132,6 +144,9 @@ pub struct ILampInfo {
     #[cfg(not(feature = "Foundation"))]
     UpdateLatency: usize,
 }
+impl ::windows_sys::core::Interface for ILampInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 817582620, data2: 2767, data3: 18906, data4: [140, 16, 21, 11, 156, 246, 39, 19] };
+}
 #[repr(C)]
 pub struct ILampStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -144,6 +159,9 @@ pub struct ILampStatics {
     pub GetDefaultAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     GetDefaultAsync: usize,
+}
+impl ::windows_sys::core::Interface for ILampStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2820817260, data2: 34949, data3: 16414, data4: [184, 33, 142, 139, 56, 168, 232, 236] };
 }
 pub type Lamp = *mut ::core::ffi::c_void;
 pub type LampArray = *mut ::core::ffi::c_void;

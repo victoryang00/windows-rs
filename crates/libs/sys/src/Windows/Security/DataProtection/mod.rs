@@ -6,6 +6,9 @@ pub struct IUserDataAvailabilityStateChangedEventArgs {
     #[cfg(not(feature = "Foundation"))]
     GetDeferral: usize,
 }
+impl ::windows_sys::core::Interface for IUserDataAvailabilityStateChangedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2808447689, data2: 1698, data3: 17011, data4: [168, 3, 131, 76, 159, 135, 251, 235] };
+}
 #[repr(C)]
 pub struct IUserDataBufferUnprotectResult {
     pub base__: ::windows_sys::core::IInspectable,
@@ -14,6 +17,9 @@ pub struct IUserDataBufferUnprotectResult {
     pub UnprotectedBuffer: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Storage_Streams"))]
     UnprotectedBuffer: usize,
+}
+impl ::windows_sys::core::Interface for IUserDataBufferUnprotectResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2398949008, data2: 64154, data3: 18084, data4: [163, 119, 1, 206, 191, 30, 116, 216] };
 }
 #[repr(C)]
 pub struct IUserDataProtectionManager {
@@ -44,6 +50,9 @@ pub struct IUserDataProtectionManager {
     #[cfg(not(feature = "Foundation"))]
     RemoveDataAvailabilityStateChanged: usize,
 }
+impl ::windows_sys::core::Interface for IUserDataProtectionManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 521347965, data2: 46126, data3: 19080, data4: [148, 128, 15, 36, 9, 36, 200, 118] };
+}
 #[repr(C)]
 pub struct IUserDataProtectionManagerStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -53,10 +62,16 @@ pub struct IUserDataProtectionManagerStatics {
     #[cfg(not(feature = "System"))]
     TryGetForUser: usize,
 }
+impl ::windows_sys::core::Interface for IUserDataProtectionManagerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2541191400, data2: 28110, data3: 20398, data4: [175, 133, 120, 42, 194, 207, 69, 114] };
+}
 #[repr(C)]
 pub struct IUserDataStorageItemProtectionInfo {
     pub base__: ::windows_sys::core::IInspectable,
     pub Availability: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut UserDataAvailability) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUserDataStorageItemProtectionInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1533444342, data2: 59519, data3: 16545, data4: [177, 157, 166, 24, 122, 12, 102, 47] };
 }
 #[doc = "*Required features: `\"Security_DataProtection\"`*"]
 #[repr(transparent)]

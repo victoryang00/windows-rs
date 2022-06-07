@@ -36,11 +36,17 @@ pub struct IMiracastReceiver {
     pub ClearKnownTransmitters: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub RemoveKnownTransmitter: unsafe extern "system" fn(this: *mut *mut Self, transmitter: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMiracastReceiver {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2050052696, data2: 58436, data3: 20916, data4: [175, 247, 184, 141, 170, 18, 41, 224] };
+}
 #[repr(C)]
 pub struct IMiracastReceiverApplySettingsResult {
     pub base__: ::windows_sys::core::IInspectable,
     pub Status: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut MiracastReceiverApplySettingsStatus) -> ::windows_sys::core::HRESULT,
     pub ExtendedError: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMiracastReceiverApplySettingsResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3500827250, data2: 2509, data3: 22753, data4: [164, 242, 93, 81, 67, 211, 18, 249] };
 }
 #[repr(C)]
 pub struct IMiracastReceiverConnection {
@@ -62,6 +68,9 @@ pub struct IMiracastReceiverConnection {
     pub CursorImageChannel: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub StreamControl: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMiracastReceiverConnection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1883975478, data2: 53989, data3: 21791, data4: [168, 84, 248, 34, 183, 145, 125, 40] };
+}
 #[repr(C)]
 pub struct IMiracastReceiverConnectionCreatedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
@@ -71,6 +80,9 @@ pub struct IMiracastReceiverConnectionCreatedEventArgs {
     pub GetDeferral: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     GetDeferral: usize,
+}
+impl ::windows_sys::core::Interface for IMiracastReceiverConnectionCreatedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2106456633, data2: 12410, data3: 23567, data4: [148, 189, 208, 198, 157, 22, 153, 130] };
 }
 #[repr(C)]
 pub struct IMiracastReceiverCursorImageChannel {
@@ -105,6 +117,9 @@ pub struct IMiracastReceiverCursorImageChannel {
     #[cfg(not(feature = "Foundation"))]
     RemovePositionChanged: usize,
 }
+impl ::windows_sys::core::Interface for IMiracastReceiverCursorImageChannel {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3651941165, data2: 29242, data3: 23197, data4: [185, 10, 129, 21, 62, 250, 42, 15] };
+}
 #[repr(C)]
 pub struct IMiracastReceiverCursorImageChannelSettings {
     pub base__: ::windows_sys::core::IInspectable,
@@ -119,10 +134,16 @@ pub struct IMiracastReceiverCursorImageChannelSettings {
     #[cfg(not(feature = "Graphics"))]
     SetMaxImageSize: usize,
 }
+impl ::windows_sys::core::Interface for IMiracastReceiverCursorImageChannelSettings {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3436965375, data2: 48384, data3: 23452, data4: [142, 76, 0, 202, 207, 134, 182, 52] };
+}
 #[repr(C)]
 pub struct IMiracastReceiverDisconnectedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub Connection: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMiracastReceiverDisconnectedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3651231326, data2: 24558, data3: 22502, data4: [180, 176, 4, 114, 125, 185, 50, 41] };
 }
 #[repr(C)]
 pub struct IMiracastReceiverGameControllerDevice {
@@ -142,11 +163,17 @@ pub struct IMiracastReceiverGameControllerDevice {
     #[cfg(not(feature = "Foundation"))]
     RemoveChanged: usize,
 }
+impl ::windows_sys::core::Interface for IMiracastReceiverGameControllerDevice {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 762409448, data2: 48852, data3: 20760, data4: [160, 88, 226, 71, 126, 181, 136, 141] };
+}
 #[repr(C)]
 pub struct IMiracastReceiverInputDevices {
     pub base__: ::windows_sys::core::IInspectable,
     pub Keyboard: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GameController: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMiracastReceiverInputDevices {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3660954370, data2: 10410, data3: 24296, data4: [150, 245, 164, 41, 1, 198, 111, 0] };
 }
 #[repr(C)]
 pub struct IMiracastReceiverKeyboardDevice {
@@ -164,6 +191,9 @@ pub struct IMiracastReceiverKeyboardDevice {
     #[cfg(not(feature = "Foundation"))]
     RemoveChanged: usize,
 }
+impl ::windows_sys::core::Interface for IMiracastReceiverKeyboardDevice {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3199627890, data2: 1728, data3: 21759, data4: [172, 150, 33, 116, 100, 255, 37, 1] };
+}
 #[repr(C)]
 pub struct IMiracastReceiverMediaSourceCreatedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
@@ -177,6 +207,9 @@ pub struct IMiracastReceiverMediaSourceCreatedEventArgs {
     pub GetDeferral: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     GetDeferral: usize,
+}
+impl ::windows_sys::core::Interface for IMiracastReceiverMediaSourceCreatedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 399462814, data2: 4678, data3: 21277, data4: [148, 90, 107, 21, 142, 57, 195, 170] };
 }
 #[repr(C)]
 pub struct IMiracastReceiverSession {
@@ -215,11 +248,17 @@ pub struct IMiracastReceiverSession {
     #[cfg(not(feature = "Foundation"))]
     StartAsync: usize,
 }
+impl ::windows_sys::core::Interface for IMiracastReceiverSession {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 489409972, data2: 61323, data3: 21001, data4: [191, 201, 195, 33, 22, 80, 72, 3] };
+}
 #[repr(C)]
 pub struct IMiracastReceiverSessionStartResult {
     pub base__: ::windows_sys::core::IInspectable,
     pub Status: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut MiracastReceiverSessionStartStatus) -> ::windows_sys::core::HRESULT,
     pub ExtendedError: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMiracastReceiverSessionStartResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3083170798, data2: 16586, data3: 20991, data4: [149, 242, 201, 222, 52, 242, 233, 14] };
 }
 #[repr(C)]
 pub struct IMiracastReceiverSettings {
@@ -235,6 +274,9 @@ pub struct IMiracastReceiverSettings {
     pub RequireAuthorizationFromKnownTransmitters: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub SetRequireAuthorizationFromKnownTransmitters: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMiracastReceiverSettings {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1473064740, data2: 50522, data3: 24510, data4: [148, 100, 235, 5, 48, 119, 5, 221] };
+}
 #[repr(C)]
 pub struct IMiracastReceiverStatus {
     pub base__: ::windows_sys::core::IInspectable,
@@ -246,6 +288,9 @@ pub struct IMiracastReceiverStatus {
     pub KnownTransmitters: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     KnownTransmitters: usize,
+}
+impl ::windows_sys::core::Interface for IMiracastReceiverStatus {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3263845777, data2: 9131, data3: 20894, data4: [173, 9, 144, 191, 246, 220, 200, 126] };
 }
 #[repr(C)]
 pub struct IMiracastReceiverStreamControl {
@@ -263,6 +308,9 @@ pub struct IMiracastReceiverStreamControl {
     pub MuteAudio: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub SetMuteAudio: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMiracastReceiverStreamControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 954871179, data2: 10089, data3: 23255, data4: [138, 138, 37, 75, 157, 247, 186, 130] };
+}
 #[repr(C)]
 pub struct IMiracastReceiverVideoStreamSettings {
     pub base__: ::windows_sys::core::IInspectable,
@@ -276,6 +324,9 @@ pub struct IMiracastReceiverVideoStreamSettings {
     SetSize: usize,
     pub Bitrate: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i32) -> ::windows_sys::core::HRESULT,
     pub SetBitrate: unsafe extern "system" fn(this: *mut *mut Self, value: i32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMiracastReceiverVideoStreamSettings {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 379280923, data2: 5277, data3: 21200, data4: [177, 38, 111, 137, 116, 78, 79, 80] };
 }
 #[repr(C)]
 pub struct IMiracastTransmitter {
@@ -293,6 +344,9 @@ pub struct IMiracastTransmitter {
     pub LastConnectionTime: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Foundation::DateTime) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     LastConnectionTime: usize,
+}
+impl ::windows_sys::core::Interface for IMiracastTransmitter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 875395581, data2: 11876, data3: 21768, data4: [138, 48, 131, 61, 30, 172, 112, 208] };
 }
 pub type MiracastReceiver = *mut ::core::ffi::c_void;
 pub type MiracastReceiverApplySettingsResult = *mut ::core::ffi::c_void;

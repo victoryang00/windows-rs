@@ -170,11 +170,17 @@ pub struct IDxcAssembler {
     pub base__: ::windows_sys::core::IUnknown,
     pub AssembleToContainer: unsafe extern "system" fn(this: *mut *mut Self, pshader: *mut ::core::ffi::c_void, ppresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDxcAssembler {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 153057830, data2: 7199, data3: 18760, data4: [144, 75, 230, 227, 168, 167, 113, 213] };
+}
 #[repr(C)]
 pub struct IDxcBlob {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetBufferPointer: unsafe extern "system" fn(this: *mut *mut Self) -> *mut ::core::ffi::c_void,
     pub GetBufferSize: unsafe extern "system" fn(this: *mut *mut Self) -> usize,
+}
+impl ::windows_sys::core::Interface for IDxcBlob {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2342910728, data2: 20885, data3: 16610, data4: [172, 88, 13, 152, 156, 58, 1, 2] };
 }
 #[repr(C)]
 pub struct IDxcBlobEncoding {
@@ -184,17 +190,26 @@ pub struct IDxcBlobEncoding {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetEncoding: usize,
 }
+impl ::windows_sys::core::Interface for IDxcBlobEncoding {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1916916772, data2: 9798, data3: 16785, data4: [151, 192, 152, 233, 110, 66, 252, 104] };
+}
 #[repr(C)]
 pub struct IDxcBlobUtf16 {
     pub base__: IDxcBlobEncoding,
     pub GetStringPointer: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::PWSTR,
     pub GetStringLength: unsafe extern "system" fn(this: *mut *mut Self) -> usize,
 }
+impl ::windows_sys::core::Interface for IDxcBlobUtf16 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2750959275, data2: 4010, data3: 18814, data4: [163, 156, 238, 110, 214, 11, 45, 132] };
+}
 #[repr(C)]
 pub struct IDxcBlobUtf8 {
     pub base__: IDxcBlobEncoding,
     pub GetStringPointer: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::PSTR,
     pub GetStringLength: unsafe extern "system" fn(this: *mut *mut Self) -> usize,
+}
+impl ::windows_sys::core::Interface for IDxcBlobUtf8 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1034303177, data2: 47729, data3: 16420, data4: [163, 1, 48, 203, 241, 37, 48, 91] };
 }
 #[repr(C)]
 pub struct IDxcCompiler {
@@ -203,16 +218,25 @@ pub struct IDxcCompiler {
     pub Preprocess: unsafe extern "system" fn(this: *mut *mut Self, psource: *mut ::core::ffi::c_void, psourcename: ::windows_sys::core::PCWSTR, parguments: *const ::windows_sys::core::PWSTR, argcount: u32, pdefines: *const DxcDefine, definecount: u32, pincludehandler: *mut ::core::ffi::c_void, ppresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Disassemble: unsafe extern "system" fn(this: *mut *mut Self, psource: *mut ::core::ffi::c_void, ppdisassembly: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDxcCompiler {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2350975987, data2: 287, data3: 17442, data4: [141, 112, 111, 154, 203, 141, 182, 23] };
+}
 #[repr(C)]
 pub struct IDxcCompiler2 {
     pub base__: IDxcCompiler,
     pub CompileWithDebug: unsafe extern "system" fn(this: *mut *mut Self, psource: *mut ::core::ffi::c_void, psourcename: ::windows_sys::core::PCWSTR, pentrypoint: ::windows_sys::core::PCWSTR, ptargetprofile: ::windows_sys::core::PCWSTR, parguments: *const ::windows_sys::core::PWSTR, argcount: u32, pdefines: *const DxcDefine, definecount: u32, pincludehandler: *mut ::core::ffi::c_void, ppresult: *mut *mut ::core::ffi::c_void, ppdebugblobname: *mut ::windows_sys::core::PWSTR, ppdebugblob: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDxcCompiler2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2684725721, data2: 47291, data3: 17812, data4: [181, 201, 14, 99, 59, 236, 77, 55] };
 }
 #[repr(C)]
 pub struct IDxcCompiler3 {
     pub base__: ::windows_sys::core::IUnknown,
     pub Compile: unsafe extern "system" fn(this: *mut *mut Self, psource: *const DxcBuffer, parguments: *const ::windows_sys::core::PWSTR, argcount: u32, pincludehandler: *mut ::core::ffi::c_void, riid: *const ::windows_sys::core::GUID, ppresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Disassemble: unsafe extern "system" fn(this: *mut *mut Self, pobject: *const DxcBuffer, riid: *const ::windows_sys::core::GUID, ppresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDxcCompiler3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 579552903, data2: 23146, data3: 18224, data4: [144, 12, 151, 2, 178, 32, 63, 84] };
 }
 #[repr(C)]
 pub struct IDxcCompilerArgs {
@@ -223,6 +247,9 @@ pub struct IDxcCompilerArgs {
     pub AddArgumentsUTF8: unsafe extern "system" fn(this: *mut *mut Self, parguments: *const ::windows_sys::core::PSTR, argcount: u32) -> ::windows_sys::core::HRESULT,
     pub AddDefines: unsafe extern "system" fn(this: *mut *mut Self, pdefines: *const DxcDefine, definecount: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDxcCompilerArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1945108010, data2: 28892, data3: 17912, data4: [150, 144, 239, 246, 76, 2, 66, 157] };
+}
 #[repr(C)]
 pub struct IDxcContainerBuilder {
     pub base__: ::windows_sys::core::IUnknown,
@@ -230,6 +257,9 @@ pub struct IDxcContainerBuilder {
     pub AddPart: unsafe extern "system" fn(this: *mut *mut Self, fourcc: u32, psource: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub RemovePart: unsafe extern "system" fn(this: *mut *mut Self, fourcc: u32) -> ::windows_sys::core::HRESULT,
     pub SerializeContainer: unsafe extern "system" fn(this: *mut *mut Self, ppresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDxcContainerBuilder {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 860561232, data2: 8850, data3: 19253, data4: [153, 161, 37, 88, 141, 140, 23, 254] };
 }
 #[repr(C)]
 pub struct IDxcContainerReflection {
@@ -241,16 +271,25 @@ pub struct IDxcContainerReflection {
     pub FindFirstPartKind: unsafe extern "system" fn(this: *mut *mut Self, kind: u32, presult: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetPartReflection: unsafe extern "system" fn(this: *mut *mut Self, idx: u32, iid: *const ::windows_sys::core::GUID, ppvobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDxcContainerReflection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3535936294, data2: 33616, data3: 19420, data4: [151, 106, 51, 28, 230, 244, 197, 76] };
+}
 #[repr(C)]
 pub struct IDxcExtraOutputs {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetOutputCount: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
     pub GetOutput: unsafe extern "system" fn(this: *mut *mut Self, uindex: u32, iid: *const ::windows_sys::core::GUID, ppvobject: *mut *mut ::core::ffi::c_void, ppoutputtype: *mut *mut ::core::ffi::c_void, ppoutputname: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDxcExtraOutputs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 832255906, data2: 42434, data3: 18762, data4: [165, 222, 72, 1, 178, 250, 249, 137] };
+}
 #[repr(C)]
 pub struct IDxcIncludeHandler {
     pub base__: ::windows_sys::core::IUnknown,
     pub LoadSource: unsafe extern "system" fn(this: *mut *mut Self, pfilename: ::windows_sys::core::PCWSTR, ppincludesource: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDxcIncludeHandler {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2137128061, data2: 38157, data3: 18047, data4: [179, 227, 60, 2, 251, 73, 24, 124] };
 }
 #[repr(C)]
 pub struct IDxcLibrary {
@@ -275,11 +314,17 @@ pub struct IDxcLibrary {
     pub GetBlobAsUtf8: unsafe extern "system" fn(this: *mut *mut Self, pblob: *mut ::core::ffi::c_void, pblobencoding: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetBlobAsUtf16: unsafe extern "system" fn(this: *mut *mut Self, pblob: *mut ::core::ffi::c_void, pblobencoding: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDxcLibrary {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3844099527, data2: 53644, data3: 19516, data4: [189, 251, 133, 22, 115, 152, 15, 231] };
+}
 #[repr(C)]
 pub struct IDxcLinker {
     pub base__: ::windows_sys::core::IUnknown,
     pub RegisterLibrary: unsafe extern "system" fn(this: *mut *mut Self, plibname: ::windows_sys::core::PCWSTR, plib: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Link: unsafe extern "system" fn(this: *mut *mut Self, pentryname: ::windows_sys::core::PCWSTR, ptargetprofile: ::windows_sys::core::PCWSTR, plibnames: *const ::windows_sys::core::PWSTR, libcount: u32, parguments: *const ::windows_sys::core::PWSTR, argcount: u32, ppresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDxcLinker {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4055219754, data2: 25309, data3: 17191, data4: [161, 194, 66, 172, 30, 30, 120, 230] };
 }
 #[repr(C)]
 pub struct IDxcOperationResult {
@@ -288,12 +333,18 @@ pub struct IDxcOperationResult {
     pub GetResult: unsafe extern "system" fn(this: *mut *mut Self, ppresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetErrorBuffer: unsafe extern "system" fn(this: *mut *mut Self, pperrors: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDxcOperationResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3470477386, data2: 54505, data3: 17498, data4: [185, 145, 202, 33, 202, 21, 125, 194] };
+}
 #[repr(C)]
 pub struct IDxcOptimizer {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetAvailablePassCount: unsafe extern "system" fn(this: *mut *mut Self, pcount: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetAvailablePass: unsafe extern "system" fn(this: *mut *mut Self, index: u32, ppresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub RunOptimizer: unsafe extern "system" fn(this: *mut *mut Self, pblob: *mut ::core::ffi::c_void, ppoptions: *const ::windows_sys::core::PWSTR, optioncount: u32, poutputmodule: *mut *mut ::core::ffi::c_void, ppoutputtext: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDxcOptimizer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 628362798, data2: 40122, data3: 16411, data4: [145, 25, 79, 180, 47, 57, 242, 112] };
 }
 #[repr(C)]
 pub struct IDxcOptimizerPass {
@@ -303,6 +354,9 @@ pub struct IDxcOptimizerPass {
     pub GetOptionArgCount: unsafe extern "system" fn(this: *mut *mut Self, pcount: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetOptionArgName: unsafe extern "system" fn(this: *mut *mut Self, argindex: u32, ppresult: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
     pub GetOptionArgDescription: unsafe extern "system" fn(this: *mut *mut Self, argindex: u32, ppresult: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDxcOptimizerPass {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2922174367, data2: 52258, data3: 17727, data4: [155, 107, 177, 36, 231, 165, 32, 76] };
 }
 #[repr(C)]
 pub struct IDxcPdbUtils {
@@ -362,6 +416,9 @@ pub struct IDxcPdbUtils {
     pub OverrideArgs: unsafe extern "system" fn(this: *mut *mut Self, pargpairs: *const DxcArgPair, unumargpairs: u32) -> ::windows_sys::core::HRESULT,
     pub OverrideRootSignature: unsafe extern "system" fn(this: *mut *mut Self, prootsignature: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDxcPdbUtils {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3871958142, data2: 40298, data3: 19515, data4: [185, 76, 82, 75, 90, 108, 52, 61] };
+}
 #[repr(C)]
 pub struct IDxcResult {
     pub base__: IDxcOperationResult,
@@ -373,6 +430,9 @@ pub struct IDxcResult {
     pub GetNumOutputs: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
     pub GetOutputByIndex: unsafe extern "system" fn(this: *mut *mut Self, index: u32) -> DXC_OUT_KIND,
     pub PrimaryOutput: unsafe extern "system" fn(this: *mut *mut Self) -> DXC_OUT_KIND,
+}
+impl ::windows_sys::core::Interface for IDxcResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1479830746, data2: 56807, data3: 17559, data4: [148, 97, 111, 135, 175, 94, 6, 89] };
 }
 #[repr(C)]
 pub struct IDxcUtils {
@@ -397,15 +457,24 @@ pub struct IDxcUtils {
     pub BuildArguments: unsafe extern "system" fn(this: *mut *mut Self, psourcename: ::windows_sys::core::PCWSTR, pentrypoint: ::windows_sys::core::PCWSTR, ptargetprofile: ::windows_sys::core::PCWSTR, parguments: *const ::windows_sys::core::PWSTR, argcount: u32, pdefines: *const DxcDefine, definecount: u32, ppargs: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetPDBContents: unsafe extern "system" fn(this: *mut *mut Self, ppdbblob: *mut ::core::ffi::c_void, pphash: *mut *mut ::core::ffi::c_void, ppcontainer: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDxcUtils {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1174783179, data2: 8217, data3: 18730, data4: [173, 164, 101, 242, 11, 183, 214, 127] };
+}
 #[repr(C)]
 pub struct IDxcValidator {
     pub base__: ::windows_sys::core::IUnknown,
     pub Validate: unsafe extern "system" fn(this: *mut *mut Self, pshader: *mut ::core::ffi::c_void, flags: u32, ppresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDxcValidator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2800233426, data2: 8151, data3: 18470, data4: [152, 17, 40, 87, 231, 151, 244, 154] };
+}
 #[repr(C)]
 pub struct IDxcValidator2 {
     pub base__: IDxcValidator,
     pub ValidateWithDebug: unsafe extern "system" fn(this: *mut *mut Self, pshader: *mut ::core::ffi::c_void, flags: u32, poptdebugbitcode: *const DxcBuffer, ppresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDxcValidator2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1166942161, data2: 45490, data3: 18256, data4: [166, 225, 156, 16, 240, 59, 237, 146] };
 }
 #[repr(C)]
 pub struct IDxcVersionInfo {
@@ -413,13 +482,22 @@ pub struct IDxcVersionInfo {
     pub GetVersion: unsafe extern "system" fn(this: *mut *mut Self, pmajor: *mut u32, pminor: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetFlags: unsafe extern "system" fn(this: *mut *mut Self, pflags: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDxcVersionInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2957990736, data2: 8281, data3: 20242, data4: [168, 255, 161, 224, 205, 225, 204, 126] };
+}
 #[repr(C)]
 pub struct IDxcVersionInfo2 {
     pub base__: IDxcVersionInfo,
     pub GetCommitInfo: unsafe extern "system" fn(this: *mut *mut Self, pcommitcount: *mut u32, pcommithash: *mut *mut i8) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDxcVersionInfo2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4217963716, data2: 17136, data3: 19298, data4: [156, 70, 152, 58, 247, 218, 124, 131] };
+}
 #[repr(C)]
 pub struct IDxcVersionInfo3 {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetCustomVersionString: unsafe extern "system" fn(this: *mut *mut Self, pversionstring: *mut *mut i8) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDxcVersionInfo3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1578362947, data2: 40229, data3: 18236, data4: [154, 210, 3, 178, 208, 180, 75, 30] };
 }

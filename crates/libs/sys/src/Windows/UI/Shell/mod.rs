@@ -3,10 +3,16 @@ pub struct IAdaptiveCard {
     pub base__: ::windows_sys::core::IInspectable,
     pub ToJson: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAdaptiveCard {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1926256268, data2: 41588, data3: 16845, data4: [130, 168, 152, 157, 64, 185, 176, 94] };
+}
 #[repr(C)]
 pub struct IAdaptiveCardBuilderStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub CreateAdaptiveCardFromJson: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAdaptiveCardBuilderStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1986891528, data2: 54270, data3: 17223, data4: [160, 188, 185, 234, 154, 109, 194, 142] };
 }
 #[repr(C)]
 pub struct ISecurityAppManager {
@@ -21,12 +27,18 @@ pub struct ISecurityAppManager {
     #[cfg(not(feature = "Foundation"))]
     UpdateState: usize,
 }
+impl ::windows_sys::core::Interface for ISecurityAppManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2527875084, data2: 44756, data3: 22045, data4: [189, 232, 149, 53, 32, 52, 58, 45] };
+}
 #[repr(C)]
 pub struct IShareWindowCommandEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub WindowId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::WindowId) -> ::windows_sys::core::HRESULT,
     pub Command: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ShareWindowCommand) -> ::windows_sys::core::HRESULT,
     pub SetCommand: unsafe extern "system" fn(this: *mut *mut Self, value: ShareWindowCommand) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IShareWindowCommandEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1165548553, data2: 42275, data3: 22358, data4: [169, 149, 228, 254, 185, 145, 255, 240] };
 }
 #[repr(C)]
 pub struct IShareWindowCommandSource {
@@ -51,10 +63,16 @@ pub struct IShareWindowCommandSource {
     #[cfg(not(feature = "Foundation"))]
     RemoveCommandInvoked: usize,
 }
+impl ::windows_sys::core::Interface for IShareWindowCommandSource {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3409672931, data2: 27548, data3: 22046, data4: [188, 204, 97, 230, 142, 10, 191, 239] };
+}
 #[repr(C)]
 pub struct IShareWindowCommandSourceStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub GetForCurrentView: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IShareWindowCommandSourceStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2968217174, data2: 40108, data3: 20860, data4: [182, 199, 142, 247, 21, 8, 66, 149] };
 }
 #[repr(C)]
 pub struct ITaskbarManager {
@@ -78,6 +96,9 @@ pub struct ITaskbarManager {
     #[cfg(not(all(feature = "ApplicationModel_Core", feature = "Foundation")))]
     RequestPinAppListEntryAsync: usize,
 }
+impl ::windows_sys::core::Interface for ITaskbarManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2269710873, data2: 6873, data3: 18932, data4: [178, 232, 134, 115, 141, 197, 172, 64] };
+}
 #[repr(C)]
 pub struct ITaskbarManager2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -94,10 +115,16 @@ pub struct ITaskbarManager2 {
     #[cfg(not(feature = "Foundation"))]
     TryUnpinSecondaryTileAsync: usize,
 }
+impl ::windows_sys::core::Interface for ITaskbarManager2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2045812846, data2: 31490, data3: 18705, data4: [145, 140, 222, 224, 187, 210, 11, 164] };
+}
 #[repr(C)]
 pub struct ITaskbarManagerStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub GetDefault: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ITaskbarManagerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3677530996, data2: 56914, data3: 20454, data4: [183, 182, 149, 255, 159, 131, 149, 223] };
 }
 #[doc = "*Required features: `\"UI_Shell\"`*"]
 #[repr(transparent)]

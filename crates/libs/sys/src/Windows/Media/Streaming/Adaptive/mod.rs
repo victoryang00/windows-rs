@@ -172,10 +172,16 @@ pub struct IAdaptiveMediaSource {
     #[cfg(not(feature = "Foundation"))]
     RemoveDownloadFailed: usize,
 }
+impl ::windows_sys::core::Interface for IAdaptiveMediaSource {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1282618095, data2: 54175, data3: 17302, data4: [180, 217, 4, 57, 87, 167, 201, 100] };
+}
 #[repr(C)]
 pub struct IAdaptiveMediaSource2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub AdvancedSettings: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAdaptiveMediaSource2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 394855234, data2: 26464, data3: 19385, data4: [165, 138, 247, 170, 152, 176, 140, 14] };
 }
 #[repr(C)]
 pub struct IAdaptiveMediaSource3 {
@@ -199,6 +205,9 @@ pub struct IAdaptiveMediaSource3 {
     pub Diagnostics: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetCorrelatedTimes: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAdaptiveMediaSource3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3127911421, data2: 49972, data3: 17947, data4: [163, 110, 201, 159, 84, 247, 23, 74] };
+}
 #[repr(C)]
 pub struct IAdaptiveMediaSourceAdvancedSettings {
     pub base__: ::windows_sys::core::IInspectable,
@@ -221,6 +230,9 @@ pub struct IAdaptiveMediaSourceAdvancedSettings {
     #[cfg(not(feature = "Foundation"))]
     SetBitrateDowngradeTriggerRatio: usize,
 }
+impl ::windows_sys::core::Interface for IAdaptiveMediaSourceAdvancedSettings {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1440421504, data2: 6891, data3: 18396, data4: [170, 8, 154, 17, 97, 11, 164, 90] };
+}
 #[repr(C)]
 pub struct IAdaptiveMediaSourceCorrelatedTimes {
     pub base__: ::windows_sys::core::IInspectable,
@@ -237,6 +249,9 @@ pub struct IAdaptiveMediaSourceCorrelatedTimes {
     #[cfg(not(feature = "Foundation"))]
     ProgramDateTime: usize,
 }
+impl ::windows_sys::core::Interface for IAdaptiveMediaSourceCorrelatedTimes {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 84969351, data2: 57394, data3: 18657, data4: [171, 141, 0, 43, 11, 48, 81, 223] };
+}
 #[repr(C)]
 pub struct IAdaptiveMediaSourceCreationResult {
     pub base__: ::windows_sys::core::IInspectable,
@@ -247,10 +262,16 @@ pub struct IAdaptiveMediaSourceCreationResult {
     #[cfg(not(feature = "Web_Http"))]
     HttpResponseMessage: usize,
 }
+impl ::windows_sys::core::Interface for IAdaptiveMediaSourceCreationResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1183233714, data2: 32783, data3: 20017, data4: [144, 147, 118, 212, 120, 32, 19, 231] };
+}
 #[repr(C)]
 pub struct IAdaptiveMediaSourceCreationResult2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub ExtendedError: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAdaptiveMediaSourceCreationResult2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 473056191, data2: 7236, data3: 16459, data4: [162, 1, 223, 69, 172, 120, 152, 232] };
 }
 #[repr(C)]
 pub struct IAdaptiveMediaSourceDiagnosticAvailableEventArgs {
@@ -289,10 +310,16 @@ pub struct IAdaptiveMediaSourceDiagnosticAvailableEventArgs {
     #[cfg(not(feature = "Foundation"))]
     Bitrate: usize,
 }
+impl ::windows_sys::core::Interface for IAdaptiveMediaSourceDiagnosticAvailableEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 989220614, data2: 28060, data3: 18762, data4: [183, 169, 179, 165, 222, 230, 173, 104] };
+}
 #[repr(C)]
 pub struct IAdaptiveMediaSourceDiagnosticAvailableEventArgs2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub ExtendedError: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAdaptiveMediaSourceDiagnosticAvailableEventArgs2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2356009047, data2: 5797, data3: 19871, data4: [129, 14, 0, 189, 144, 27, 62, 249] };
 }
 #[repr(C)]
 pub struct IAdaptiveMediaSourceDiagnosticAvailableEventArgs3 {
@@ -302,6 +329,9 @@ pub struct IAdaptiveMediaSourceDiagnosticAvailableEventArgs3 {
     #[cfg(not(feature = "Foundation"))]
     ResourceDuration: usize,
     pub ResourceContentType: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAdaptiveMediaSourceDiagnosticAvailableEventArgs3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3278179541, data2: 56043, data3: 16643, data4: [132, 218, 104, 118, 154, 213, 19, 255] };
 }
 #[repr(C)]
 pub struct IAdaptiveMediaSourceDiagnostics {
@@ -315,16 +345,25 @@ pub struct IAdaptiveMediaSourceDiagnostics {
     #[cfg(not(feature = "Foundation"))]
     RemoveDiagnosticAvailable: usize,
 }
+impl ::windows_sys::core::Interface for IAdaptiveMediaSourceDiagnostics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2602888808, data2: 38446, data3: 17548, data4: [174, 191, 178, 155, 86, 9, 142, 35] };
+}
 #[repr(C)]
 pub struct IAdaptiveMediaSourceDownloadBitrateChangedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub OldValue: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
     pub NewValue: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAdaptiveMediaSourceDownloadBitrateChangedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1728842308, data2: 57422, data3: 20223, data4: [129, 106, 23, 57, 159, 120, 244, 186] };
+}
 #[repr(C)]
 pub struct IAdaptiveMediaSourceDownloadBitrateChangedEventArgs2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub Reason: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut AdaptiveMediaSourceDownloadBitrateChangedReason) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAdaptiveMediaSourceDownloadBitrateChangedEventArgs2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4092720196, data2: 38574, data3: 19936, data4: [181, 64, 43, 50, 70, 230, 150, 140] };
 }
 #[repr(C)]
 pub struct IAdaptiveMediaSourceDownloadCompletedEventArgs {
@@ -347,6 +386,9 @@ pub struct IAdaptiveMediaSourceDownloadCompletedEventArgs {
     #[cfg(not(feature = "Web_Http"))]
     HttpResponseMessage: usize,
 }
+impl ::windows_sys::core::Interface for IAdaptiveMediaSourceDownloadCompletedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 421793219, data2: 23351, data3: 18970, data4: [137, 112, 214, 33, 203, 108, 168, 59] };
+}
 #[repr(C)]
 pub struct IAdaptiveMediaSourceDownloadCompletedEventArgs2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -357,6 +399,9 @@ pub struct IAdaptiveMediaSourceDownloadCompletedEventArgs2 {
     #[cfg(not(feature = "Foundation"))]
     Position: usize,
 }
+impl ::windows_sys::core::Interface for IAdaptiveMediaSourceDownloadCompletedEventArgs2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1883718852, data2: 38474, data3: 16612, data4: [175, 149, 145, 119, 221, 109, 250, 0] };
+}
 #[repr(C)]
 pub struct IAdaptiveMediaSourceDownloadCompletedEventArgs3 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -365,6 +410,9 @@ pub struct IAdaptiveMediaSourceDownloadCompletedEventArgs3 {
     #[cfg(not(feature = "Foundation"))]
     ResourceDuration: usize,
     pub ResourceContentType: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAdaptiveMediaSourceDownloadCompletedEventArgs3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 260738001, data2: 37810, data3: 18374, data4: [186, 220, 139, 226, 200, 247, 246, 232] };
 }
 #[repr(C)]
 pub struct IAdaptiveMediaSourceDownloadFailedEventArgs {
@@ -387,6 +435,9 @@ pub struct IAdaptiveMediaSourceDownloadFailedEventArgs {
     #[cfg(not(feature = "Web_Http"))]
     HttpResponseMessage: usize,
 }
+impl ::windows_sys::core::Interface for IAdaptiveMediaSourceDownloadFailedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 930320456, data2: 62635, data3: 16548, data4: [177, 53, 198, 223, 216, 189, 127, 241] };
+}
 #[repr(C)]
 pub struct IAdaptiveMediaSourceDownloadFailedEventArgs2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -398,6 +449,9 @@ pub struct IAdaptiveMediaSourceDownloadFailedEventArgs2 {
     #[cfg(not(feature = "Foundation"))]
     Position: usize,
 }
+impl ::windows_sys::core::Interface for IAdaptiveMediaSourceDownloadFailedEventArgs2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1888589160, data2: 38524, data3: 18822, data4: [144, 197, 198, 252, 75, 49, 226, 216] };
+}
 #[repr(C)]
 pub struct IAdaptiveMediaSourceDownloadFailedEventArgs3 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -407,10 +461,16 @@ pub struct IAdaptiveMediaSourceDownloadFailedEventArgs3 {
     ResourceDuration: usize,
     pub ResourceContentType: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAdaptiveMediaSourceDownloadFailedEventArgs3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3493152073, data2: 4402, data3: 18960, data4: [145, 90, 194, 33, 27, 91, 148, 9] };
+}
 #[repr(C)]
 pub struct IAdaptiveMediaSourceDownloadRequestedDeferral {
     pub base__: ::windows_sys::core::IInspectable,
     pub Complete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAdaptiveMediaSourceDownloadRequestedDeferral {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 96898916, data2: 64032, data3: 19901, data4: [152, 33, 75, 244, 201, 191, 119, 171] };
 }
 #[repr(C)]
 pub struct IAdaptiveMediaSourceDownloadRequestedEventArgs {
@@ -431,6 +491,9 @@ pub struct IAdaptiveMediaSourceDownloadRequestedEventArgs {
     pub Result: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetDeferral: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAdaptiveMediaSourceDownloadRequestedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3359629309, data2: 17577, data3: 18338, data4: [191, 150, 3, 57, 139, 75, 250, 175] };
+}
 #[repr(C)]
 pub struct IAdaptiveMediaSourceDownloadRequestedEventArgs2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -440,6 +503,9 @@ pub struct IAdaptiveMediaSourceDownloadRequestedEventArgs2 {
     #[cfg(not(feature = "Foundation"))]
     Position: usize,
 }
+impl ::windows_sys::core::Interface for IAdaptiveMediaSourceDownloadRequestedEventArgs2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3011349502, data2: 43588, data3: 19842, data4: [130, 91, 97, 29, 227, 188, 254, 203] };
+}
 #[repr(C)]
 pub struct IAdaptiveMediaSourceDownloadRequestedEventArgs3 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -448,6 +514,9 @@ pub struct IAdaptiveMediaSourceDownloadRequestedEventArgs3 {
     #[cfg(not(feature = "Foundation"))]
     ResourceDuration: usize,
     pub ResourceContentType: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAdaptiveMediaSourceDownloadRequestedEventArgs3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 859590909, data2: 20322, data3: 17537, data4: [171, 68, 30, 71, 176, 87, 66, 37] };
 }
 #[repr(C)]
 pub struct IAdaptiveMediaSourceDownloadResult {
@@ -481,6 +550,9 @@ pub struct IAdaptiveMediaSourceDownloadResult {
     pub ExtendedStatus: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
     pub SetExtendedStatus: unsafe extern "system" fn(this: *mut *mut Self, value: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAdaptiveMediaSourceDownloadResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4105165939, data2: 48366, data3: 19050, data4: [159, 10, 254, 196, 30, 35, 57, 176] };
+}
 #[repr(C)]
 pub struct IAdaptiveMediaSourceDownloadResult2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -501,6 +573,9 @@ pub struct IAdaptiveMediaSourceDownloadResult2 {
     #[cfg(not(feature = "Foundation"))]
     SetResourceByteRangeLength: usize,
 }
+impl ::windows_sys::core::Interface for IAdaptiveMediaSourceDownloadResult2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 357903543, data2: 31616, data3: 19140, data4: [134, 96, 164, 185, 127, 124, 112, 240] };
+}
 #[repr(C)]
 pub struct IAdaptiveMediaSourceDownloadStatistics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -518,12 +593,18 @@ pub struct IAdaptiveMediaSourceDownloadStatistics {
     #[cfg(not(feature = "Foundation"))]
     TimeToLastByteReceived: usize,
 }
+impl ::windows_sys::core::Interface for IAdaptiveMediaSourceDownloadStatistics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2735132411, data2: 59754, data3: 19967, data4: [169, 184, 26, 224, 140, 1, 174, 152] };
+}
 #[repr(C)]
 pub struct IAdaptiveMediaSourcePlaybackBitrateChangedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub OldValue: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
     pub NewValue: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
     pub AudioOnly: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAdaptiveMediaSourcePlaybackBitrateChangedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 597860205, data2: 32218, data3: 19025, data4: [135, 169, 111, 168, 197, 178, 146, 190] };
 }
 #[repr(C)]
 pub struct IAdaptiveMediaSourceStatics {
@@ -545,4 +626,7 @@ pub struct IAdaptiveMediaSourceStatics {
     pub CreateFromStreamWithDownloaderAsync: unsafe extern "system" fn(this: *mut *mut Self, stream: *mut ::core::ffi::c_void, uri: *mut ::core::ffi::c_void, contenttype: ::windows_sys::core::HSTRING, httpclient: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams", feature = "Web_Http")))]
     CreateFromStreamWithDownloaderAsync: usize,
+}
+impl ::windows_sys::core::Interface for IAdaptiveMediaSourceStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1353104733, data2: 26351, data3: 19667, data4: [149, 121, 158, 102, 5, 7, 220, 63] };
 }

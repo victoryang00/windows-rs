@@ -148,6 +148,9 @@ pub struct INSNetSourceCreator {
     pub GetProtocolName: unsafe extern "system" fn(this: *mut *mut Self, dwprotocolnum: u32, pwszprotocolname: ::windows_sys::core::PWSTR, pcchprotocolname: *mut u16) -> ::windows_sys::core::HRESULT,
     pub Shutdown: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for INSNetSourceCreator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 202260608, data2: 36993, data3: 4562, data4: [190, 236, 0, 96, 8, 47, 32, 84] };
+}
 #[repr(C)]
 pub struct INSSBuffer {
     pub base__: ::windows_sys::core::IUnknown,
@@ -157,11 +160,17 @@ pub struct INSSBuffer {
     pub GetBuffer: unsafe extern "system" fn(this: *mut *mut Self, ppdwbuffer: *mut *mut u8) -> ::windows_sys::core::HRESULT,
     pub GetBufferAndLength: unsafe extern "system" fn(this: *mut *mut Self, ppdwbuffer: *mut *mut u8, pdwlength: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for INSSBuffer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3788322084, data2: 983, data3: 4562, data4: [158, 237, 0, 96, 151, 210, 215, 207] };
+}
 #[repr(C)]
 pub struct INSSBuffer2 {
     pub base__: INSSBuffer,
     pub GetSampleProperties: unsafe extern "system" fn(this: *mut *mut Self, cbproperties: u32, pbproperties: *mut u8) -> ::windows_sys::core::HRESULT,
     pub SetSampleProperties: unsafe extern "system" fn(this: *mut *mut Self, cbproperties: u32, pbproperties: *const u8) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for INSSBuffer2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1330808467, data2: 4149, data3: 17406, data4: [180, 40, 117, 117, 97, 173, 58, 104] };
 }
 #[repr(C)]
 pub struct INSSBuffer3 {
@@ -169,11 +178,17 @@ pub struct INSSBuffer3 {
     pub SetProperty: unsafe extern "system" fn(this: *mut *mut Self, guidbufferproperty: ::windows_sys::core::GUID, pvbufferproperty: *const ::core::ffi::c_void, dwbufferpropertysize: u32) -> ::windows_sys::core::HRESULT,
     pub GetProperty: unsafe extern "system" fn(this: *mut *mut Self, guidbufferproperty: ::windows_sys::core::GUID, pvbufferproperty: *mut ::core::ffi::c_void, pdwbufferpropertysize: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for INSSBuffer3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3363629743, data2: 30142, data3: 19396, data4: [132, 235, 172, 39, 152, 80, 118, 114] };
+}
 #[repr(C)]
 pub struct INSSBuffer4 {
     pub base__: INSSBuffer3,
     pub GetPropertyCount: unsafe extern "system" fn(this: *mut *mut Self, pcbufferproperties: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetPropertyByIndex: unsafe extern "system" fn(this: *mut *mut Self, dwbufferpropertyindex: u32, pguidbufferproperty: *mut ::windows_sys::core::GUID, pvbufferproperty: *mut ::core::ffi::c_void, pdwbufferpropertysize: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for INSSBuffer4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3065576794, data2: 13026, data3: 18900, data4: [169, 16, 194, 108, 200, 84, 101, 237] };
 }
 #[repr(C)]
 pub struct IWMAddressAccess {
@@ -182,6 +197,9 @@ pub struct IWMAddressAccess {
     pub GetAccessEntry: unsafe extern "system" fn(this: *mut *mut Self, aetype: WM_AETYPE, dwentrynum: u32, paddraccessentry: *mut WM_ADDRESS_ACCESSENTRY) -> ::windows_sys::core::HRESULT,
     pub AddAccessEntry: unsafe extern "system" fn(this: *mut *mut Self, aetype: WM_AETYPE, paddraccessentry: *const WM_ADDRESS_ACCESSENTRY) -> ::windows_sys::core::HRESULT,
     pub RemoveAccessEntry: unsafe extern "system" fn(this: *mut *mut Self, aetype: WM_AETYPE, dwentrynum: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWMAddressAccess {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3141297033, data2: 5683, data3: 20114, data4: [175, 20, 159, 49, 115, 186, 57, 208] };
 }
 #[repr(C)]
 pub struct IWMAddressAccess2 {
@@ -195,12 +213,18 @@ pub struct IWMAddressAccess2 {
     #[cfg(not(feature = "Win32_Foundation"))]
     AddAccessEntryEx: usize,
 }
+impl ::windows_sys::core::Interface for IWMAddressAccess2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1705525186, data2: 16024, data3: 19789, data4: [129, 181, 42, 116, 40, 134, 179, 61] };
+}
 #[repr(C)]
 pub struct IWMAuthorizer {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetCertCount: unsafe extern "system" fn(this: *mut *mut Self, pccerts: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetCert: unsafe extern "system" fn(this: *mut *mut Self, dwindex: u32, ppbcertdata: *mut *mut u8) -> ::windows_sys::core::HRESULT,
     pub GetSharedData: unsafe extern "system" fn(this: *mut *mut Self, dwcertindex: u32, pbshareddata: *const u8, pbcert: *const u8, ppbshareddata: *mut *mut u8) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWMAuthorizer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3652615478, data2: 43437, data3: 20148, data4: [186, 239, 219, 40, 78, 245, 80, 76] };
 }
 #[repr(C)]
 pub struct IWMBackupRestoreProps {
@@ -212,6 +236,9 @@ pub struct IWMBackupRestoreProps {
     pub RemoveProp: unsafe extern "system" fn(this: *mut *mut Self, pcwszname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
     pub RemoveAllProps: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWMBackupRestoreProps {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1015942566, data2: 39279, data3: 20467, data4: [161, 175, 72, 56, 249, 55, 126, 46] };
+}
 #[repr(C)]
 pub struct IWMBandwidthSharing {
     pub base__: IWMStreamList,
@@ -220,16 +247,25 @@ pub struct IWMBandwidthSharing {
     pub GetBandwidth: unsafe extern "system" fn(this: *mut *mut Self, pdwbitrate: *mut u32, pmsbufferwindow: *mut u32) -> ::windows_sys::core::HRESULT,
     pub SetBandwidth: unsafe extern "system" fn(this: *mut *mut Self, dwbitrate: u32, msbufferwindow: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWMBandwidthSharing {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2909358833, data2: 63705, data3: 17144, data4: [188, 71, 112, 49, 27, 12, 79, 158] };
+}
 #[repr(C)]
 pub struct IWMClientConnections {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetClientCount: unsafe extern "system" fn(this: *mut *mut Self, pcclients: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetClientProperties: unsafe extern "system" fn(this: *mut *mut Self, dwclientnum: u32, pclientproperties: *mut WM_CLIENT_PROPERTIES) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWMClientConnections {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1942380560, data2: 41625, data3: 16863, data4: [177, 240, 204, 240, 59, 9, 193, 198] };
+}
 #[repr(C)]
 pub struct IWMClientConnections2 {
     pub base__: IWMClientConnections,
     pub GetClientInfo: unsafe extern "system" fn(this: *mut *mut Self, dwclientnum: u32, pwsznetworkaddress: ::windows_sys::core::PWSTR, pcchnetworkaddress: *mut u32, pwszport: ::windows_sys::core::PWSTR, pcchport: *mut u32, pwszdnsname: ::windows_sys::core::PWSTR, pcchdnsname: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWMClientConnections2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1083266846, data2: 18177, data3: 17811, data4: [187, 61, 213, 245, 240, 199, 66, 70] };
 }
 #[repr(C)]
 pub struct IWMCodecInfo {
@@ -238,11 +274,17 @@ pub struct IWMCodecInfo {
     pub GetCodecFormatCount: unsafe extern "system" fn(this: *mut *mut Self, guidtype: *const ::windows_sys::core::GUID, dwcodecindex: u32, pcformat: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetCodecFormat: unsafe extern "system" fn(this: *mut *mut Self, guidtype: *const ::windows_sys::core::GUID, dwcodecindex: u32, dwformatindex: u32, ppistreamconfig: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWMCodecInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2842752030, data2: 13534, data3: 19096, data4: [179, 186, 228, 179, 202, 117, 40, 240] };
+}
 #[repr(C)]
 pub struct IWMCodecInfo2 {
     pub base__: IWMCodecInfo,
     pub GetCodecName: unsafe extern "system" fn(this: *mut *mut Self, guidtype: *const ::windows_sys::core::GUID, dwcodecindex: u32, wszname: ::windows_sys::core::PWSTR, pcchname: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetCodecFormatDesc: unsafe extern "system" fn(this: *mut *mut Self, guidtype: *const ::windows_sys::core::GUID, dwcodecindex: u32, dwformatindex: u32, ppistreamconfig: *mut *mut ::core::ffi::c_void, wszdesc: ::windows_sys::core::PWSTR, pcchdesc: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWMCodecInfo2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2858803827, data2: 46726, data3: 16470, data4: [145, 236, 221, 118, 141, 77, 247, 16] };
 }
 #[repr(C)]
 pub struct IWMCodecInfo3 {
@@ -252,15 +294,24 @@ pub struct IWMCodecInfo3 {
     pub SetCodecEnumerationSetting: unsafe extern "system" fn(this: *mut *mut Self, guidtype: *const ::windows_sys::core::GUID, dwcodecindex: u32, pszname: ::windows_sys::core::PCWSTR, r#type: WMT_ATTR_DATATYPE, pvalue: *const u8, dwsize: u32) -> ::windows_sys::core::HRESULT,
     pub GetCodecEnumerationSetting: unsafe extern "system" fn(this: *mut *mut Self, guidtype: *const ::windows_sys::core::GUID, dwcodecindex: u32, pszname: ::windows_sys::core::PCWSTR, ptype: *mut WMT_ATTR_DATATYPE, pvalue: *mut u8, pdwsize: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWMCodecInfo3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2119300231, data2: 19859, data3: 20376, data4: [138, 180, 39, 208, 86, 90, 220, 81] };
+}
 #[repr(C)]
 pub struct IWMCredentialCallback {
     pub base__: ::windows_sys::core::IUnknown,
     pub AcquireCredentials: unsafe extern "system" fn(this: *mut *mut Self, pwszrealm: ::windows_sys::core::PCWSTR, pwszsite: ::windows_sys::core::PCWSTR, pwszuser: ::windows_sys::core::PWSTR, cchuser: u32, pwszpassword: ::windows_sys::core::PWSTR, cchpassword: u32, hrstatus: ::windows_sys::core::HRESULT, pdwflags: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWMCredentialCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 875433655, data2: 58961, data3: 17676, data4: [151, 91, 42, 206, 44, 144, 196, 142] };
+}
 #[repr(C)]
 pub struct IWMDRMEditor {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetDRMProperty: unsafe extern "system" fn(this: *mut *mut Self, pwstrname: ::windows_sys::core::PCWSTR, pdwtype: *mut WMT_ATTR_DATATYPE, pvalue: *mut u8, pcblength: *mut u16) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWMDRMEditor {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4279439036, data2: 42691, data3: 17062, data4: [180, 1, 195, 56, 44, 62, 8, 179] };
 }
 #[repr(C)]
 pub struct IWMDRMMessageParser {
@@ -270,6 +321,9 @@ pub struct IWMDRMMessageParser {
     pub ParseLicenseRequestMsg: unsafe extern "system" fn(this: *mut *mut Self, pblicenserequestmsg: *const u8, cblicenserequestmsg: u32, ppdevicecert: *mut *mut ::core::ffi::c_void, pdeviceserialnumber: *mut DRM_VAL16, pbstraction: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     ParseLicenseRequestMsg: usize,
+}
+impl ::windows_sys::core::Interface for IWMDRMMessageParser {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2805596274, data2: 9632, data3: 19609, data4: [180, 165, 237, 232, 16, 26, 108, 57] };
 }
 #[repr(C)]
 pub struct IWMDRMReader {
@@ -283,6 +337,9 @@ pub struct IWMDRMReader {
     pub SetDRMProperty: unsafe extern "system" fn(this: *mut *mut Self, pwstrname: ::windows_sys::core::PCWSTR, dwtype: WMT_ATTR_DATATYPE, pvalue: *const u8, cblength: u16) -> ::windows_sys::core::HRESULT,
     pub GetDRMProperty: unsafe extern "system" fn(this: *mut *mut Self, pwstrname: ::windows_sys::core::PCWSTR, pdwtype: *mut WMT_ATTR_DATATYPE, pvalue: *mut u8, pcblength: *mut u16) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWMDRMReader {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3531765056, data2: 16103, data3: 17196, data4: [177, 76, 220, 23, 240, 133, 211, 179] };
+}
 #[repr(C)]
 pub struct IWMDRMReader2 {
     pub base__: IWMDRMReader,
@@ -294,15 +351,24 @@ pub struct IWMDRMReader2 {
     pub GetCopyOutputLevels: unsafe extern "system" fn(this: *mut *mut Self, pcopyopl: *mut DRM_COPY_OPL, pcblength: *mut u32, pdwminappcompliancelevel: *mut u32) -> ::windows_sys::core::HRESULT,
     pub TryNextLicense: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWMDRMReader2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3204348533, data2: 40733, data3: 16501, data4: [185, 217, 163, 195, 123, 218, 73, 160] };
+}
 #[repr(C)]
 pub struct IWMDRMReader3 {
     pub base__: IWMDRMReader2,
     pub GetInclusionList: unsafe extern "system" fn(this: *mut *mut Self, ppguids: *mut *mut ::windows_sys::core::GUID, pcguids: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWMDRMReader3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3766907614, data2: 61927, data3: 20468, data4: [160, 163, 252, 75, 8, 228, 202, 248] };
+}
 #[repr(C)]
 pub struct IWMDRMTranscryptionManager {
     pub base__: ::windows_sys::core::IUnknown,
     pub CreateTranscryptor: unsafe extern "system" fn(this: *mut *mut Self, pptranscryptor: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWMDRMTranscryptionManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2980612018, data2: 42224, data3: 16506, data4: [176, 46, 239, 189, 35, 187, 236, 223] };
 }
 #[repr(C)]
 pub struct IWMDRMTranscryptor {
@@ -314,6 +380,9 @@ pub struct IWMDRMTranscryptor {
     pub Seek: unsafe extern "system" fn(this: *mut *mut Self, hnstime: u64) -> ::windows_sys::core::HRESULT,
     pub Read: unsafe extern "system" fn(this: *mut *mut Self, pbdata: *const u8, pcbdata: *const u32) -> ::windows_sys::core::HRESULT,
     pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWMDRMTranscryptor {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1761974352, data2: 28271, data3: 19378, data4: [128, 111, 113, 134, 61, 223, 196, 113] };
 }
 #[repr(C)]
 pub struct IWMDRMTranscryptor2 {
@@ -329,6 +398,9 @@ pub struct IWMDRMTranscryptor2 {
     pub GetSeekStartTime: unsafe extern "system" fn(this: *mut *mut Self, pcnstime: *mut u64) -> ::windows_sys::core::HRESULT,
     pub GetDuration: unsafe extern "system" fn(this: *mut *mut Self, pcnsduration: *mut u64) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWMDRMTranscryptor2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3772400543, data2: 54065, data3: 18794, data4: [190, 206, 24, 229, 186, 197, 221, 35] };
+}
 #[repr(C)]
 pub struct IWMDRMWriter {
     pub base__: ::windows_sys::core::IUnknown,
@@ -336,6 +408,9 @@ pub struct IWMDRMWriter {
     pub GenerateKeyID: unsafe extern "system" fn(this: *mut *mut Self, pwszkeyid: ::windows_sys::core::PWSTR, pcwchlength: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GenerateSigningKeyPair: unsafe extern "system" fn(this: *mut *mut Self, pwszprivkey: ::windows_sys::core::PWSTR, pcwchprivkeylength: *mut u32, pwszpubkey: ::windows_sys::core::PWSTR, pcwchpubkeylength: *mut u32) -> ::windows_sys::core::HRESULT,
     pub SetDRMAttribute: unsafe extern "system" fn(this: *mut *mut Self, wstreamnum: u16, pszname: ::windows_sys::core::PCWSTR, r#type: WMT_ATTR_DATATYPE, pvalue: *const u8, cblength: u16) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWMDRMWriter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3605683664, data2: 4768, data3: 17396, data4: [144, 171, 163, 253, 69, 30, 106, 7] };
 }
 #[repr(C)]
 pub struct IWMDRMWriter2 {
@@ -345,10 +420,16 @@ pub struct IWMDRMWriter2 {
     #[cfg(not(feature = "Win32_Foundation"))]
     SetWMDRMNetEncryption: usize,
 }
+impl ::windows_sys::core::Interface for IWMDRMWriter2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 955153044, data2: 16610, data3: 19984, data4: [170, 63, 51, 253, 50, 16, 237, 91] };
+}
 #[repr(C)]
 pub struct IWMDRMWriter3 {
     pub base__: IWMDRMWriter2,
     pub SetProtectStreamSamples: unsafe extern "system" fn(this: *mut *mut Self, pimportinitstruct: *const WMDRM_IMPORT_INIT_STRUCT) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWMDRMWriter3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2803384450, data2: 42154, data3: 19934, data4: [172, 156, 231, 93, 189, 17, 23, 206] };
 }
 #[repr(C)]
 pub struct IWMDeviceRegistration {
@@ -360,10 +441,16 @@ pub struct IWMDeviceRegistration {
     pub GetNextRegisteredDevice: unsafe extern "system" fn(this: *mut *mut Self, ppdevice: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetRegisteredDeviceByID: unsafe extern "system" fn(this: *mut *mut Self, dwregistertype: u32, pbcertificate: *const u8, cbcertificate: u32, serialnumber: DRM_VAL16, ppdevice: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWMDeviceRegistration {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4129365763, data2: 36129, data3: 20116, data4: [147, 230, 133, 16, 128, 95, 45, 153] };
+}
 #[repr(C)]
 pub struct IWMGetSecureChannel {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetPeerSecureChannelInterface: unsafe extern "system" fn(this: *mut *mut Self, pppeer: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWMGetSecureChannel {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2495350168, data2: 50130, data3: 4563, data4: [190, 223, 0, 192, 79, 97, 41, 134] };
 }
 #[repr(C)]
 pub struct IWMHeaderInfo {
@@ -381,11 +468,17 @@ pub struct IWMHeaderInfo {
     pub AddScript: unsafe extern "system" fn(this: *mut *mut Self, pwsztype: ::windows_sys::core::PCWSTR, pwszcommand: ::windows_sys::core::PCWSTR, cnsscripttime: u64) -> ::windows_sys::core::HRESULT,
     pub RemoveScript: unsafe extern "system" fn(this: *mut *mut Self, windex: u16) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWMHeaderInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2520804314, data2: 11051, data3: 4563, data4: [179, 107, 0, 192, 79, 97, 8, 255] };
+}
 #[repr(C)]
 pub struct IWMHeaderInfo2 {
     pub base__: IWMHeaderInfo,
     pub GetCodecInfoCount: unsafe extern "system" fn(this: *mut *mut Self, pccodecinfos: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetCodecInfo: unsafe extern "system" fn(this: *mut *mut Self, windex: u32, pcchname: *mut u16, pwszname: ::windows_sys::core::PWSTR, pcchdescription: *mut u16, pwszdescription: ::windows_sys::core::PWSTR, pcodectype: *mut WMT_CODEC_INFO_TYPE, pcbcodecinfo: *mut u16, pbcodecinfo: *mut u8) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWMHeaderInfo2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 365926273, data2: 17742, data3: 18478, data4: [179, 147, 133, 250, 228, 135, 168, 16] };
 }
 #[repr(C)]
 pub struct IWMHeaderInfo3 {
@@ -398,10 +491,16 @@ pub struct IWMHeaderInfo3 {
     pub DeleteAttribute: unsafe extern "system" fn(this: *mut *mut Self, wstreamnum: u16, windex: u16) -> ::windows_sys::core::HRESULT,
     pub AddCodecInfo: unsafe extern "system" fn(this: *mut *mut Self, pwszname: ::windows_sys::core::PCWSTR, pwszdescription: ::windows_sys::core::PCWSTR, codectype: WMT_CODEC_INFO_TYPE, cbcodecinfo: u16, pbcodecinfo: *const u8) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWMHeaderInfo3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 365717731, data2: 10188, data3: 20173, data4: [178, 34, 63, 93, 2, 216, 11, 213] };
+}
 #[repr(C)]
 pub struct IWMIStreamProps {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetProperty: unsafe extern "system" fn(this: *mut *mut Self, pszname: ::windows_sys::core::PCWSTR, ptype: *mut WMT_ATTR_DATATYPE, pvalue: *mut u8, pdwsize: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWMIStreamProps {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1746328275, data2: 11083, data3: 19598, data4: [129, 73, 135, 76, 52, 131, 167, 83] };
 }
 #[repr(C)]
 pub struct IWMImageInfo {
@@ -409,22 +508,34 @@ pub struct IWMImageInfo {
     pub GetImageCount: unsafe extern "system" fn(this: *mut *mut Self, pcimages: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetImage: unsafe extern "system" fn(this: *mut *mut Self, windex: u32, pcchmimetype: *mut u16, pwszmimetype: ::windows_sys::core::PWSTR, pcchdescription: *mut u16, pwszdescription: ::windows_sys::core::PWSTR, pimagetype: *mut u16, pcbimagedata: *mut u32, pbimagedata: *mut u8) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWMImageInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2668274614, data2: 29287, data3: 19849, data4: [136, 242, 186, 145, 90, 165, 196, 198] };
+}
 #[repr(C)]
 pub struct IWMIndexer {
     pub base__: ::windows_sys::core::IUnknown,
     pub StartIndexing: unsafe extern "system" fn(this: *mut *mut Self, pwszurl: ::windows_sys::core::PCWSTR, pcallback: *mut ::core::ffi::c_void, pvcontext: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Cancel: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWMIndexer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1836899441, data2: 39048, data3: 4563, data4: [142, 220, 0, 192, 79, 97, 9, 207] };
+}
 #[repr(C)]
 pub struct IWMIndexer2 {
     pub base__: IWMIndexer,
     pub Configure: unsafe extern "system" fn(this: *mut *mut Self, wstreamnum: u16, nindexertype: WMT_INDEXER_TYPE, pvinterval: *const ::core::ffi::c_void, pvindextype: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWMIndexer2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3071221314, data2: 25173, data3: 19952, data4: [166, 185, 2, 178, 18, 217, 226, 187] };
 }
 #[repr(C)]
 pub struct IWMInputMediaProps {
     pub base__: IWMMediaProps,
     pub GetConnectionName: unsafe extern "system" fn(this: *mut *mut Self, pwszname: ::windows_sys::core::PWSTR, pcchname: *mut u16) -> ::windows_sys::core::HRESULT,
     pub GetGroupName: unsafe extern "system" fn(this: *mut *mut Self, pwszname: ::windows_sys::core::PWSTR, pcchname: *mut u16) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWMInputMediaProps {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2520804309, data2: 11051, data3: 4563, data4: [179, 107, 0, 192, 79, 97, 8, 255] };
 }
 #[repr(C)]
 pub struct IWMLanguageList {
@@ -433,11 +544,17 @@ pub struct IWMLanguageList {
     pub GetLanguageDetails: unsafe extern "system" fn(this: *mut *mut Self, windex: u16, pwszlanguagestring: ::windows_sys::core::PWSTR, pcchlanguagestringlength: *mut u16) -> ::windows_sys::core::HRESULT,
     pub AddLanguageByRFC1766String: unsafe extern "system" fn(this: *mut *mut Self, pwszlanguagestring: ::windows_sys::core::PCWSTR, pwindex: *mut u16) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWMLanguageList {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3748151040, data2: 11593, data3: 19854, data4: [146, 183, 251, 25, 246, 160, 220, 87] };
+}
 #[repr(C)]
 pub struct IWMLicenseBackup {
     pub base__: ::windows_sys::core::IUnknown,
     pub BackupLicenses: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, pcallback: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub CancelLicenseBackup: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWMLicenseBackup {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 98938015, data2: 16310, data3: 17672, data4: [187, 67, 164, 6, 123, 161, 235, 232] };
 }
 #[repr(C)]
 pub struct IWMLicenseRestore {
@@ -445,11 +562,17 @@ pub struct IWMLicenseRestore {
     pub RestoreLicenses: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, pcallback: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub CancelLicenseRestore: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWMLicenseRestore {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3339412276, data2: 41518, data3: 20219, data4: [162, 69, 21, 230, 90, 0, 74, 19] };
+}
 #[repr(C)]
 pub struct IWMLicenseRevocationAgent {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetLRBChallenge: unsafe extern "system" fn(this: *mut *mut Self, pmachineid: *const u8, dwmachineidlength: u32, pchallenge: *const u8, dwchallengelength: u32, pchallengeoutput: *mut u8, pdwchallengeoutputlength: *mut u32) -> ::windows_sys::core::HRESULT,
     pub ProcessLRB: unsafe extern "system" fn(this: *mut *mut Self, psignedlrb: *const u8, dwsignedlrblength: u32, psignedack: *mut u8, pdwsignedacklength: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWMLicenseRevocationAgent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1768420041, data2: 20006, data3: 19287, data4: [136, 148, 121, 152, 128, 247, 172, 123] };
 }
 #[repr(C)]
 pub struct IWMMediaProps {
@@ -464,6 +587,9 @@ pub struct IWMMediaProps {
     #[cfg(not(feature = "Win32_Foundation"))]
     SetMediaType: usize,
 }
+impl ::windows_sys::core::Interface for IWMMediaProps {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2520804302, data2: 11051, data3: 4563, data4: [179, 107, 0, 192, 79, 97, 8, 255] };
+}
 #[repr(C)]
 pub struct IWMMetadataEditor {
     pub base__: ::windows_sys::core::IUnknown,
@@ -471,16 +597,25 @@ pub struct IWMMetadataEditor {
     pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Flush: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWMMetadataEditor {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2520804313, data2: 11051, data3: 4563, data4: [179, 107, 0, 192, 79, 97, 8, 255] };
+}
 #[repr(C)]
 pub struct IWMMetadataEditor2 {
     pub base__: IWMMetadataEditor,
     pub OpenEx: unsafe extern "system" fn(this: *mut *mut Self, pwszfilename: ::windows_sys::core::PCWSTR, dwdesiredaccess: u32, dwsharemode: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWMMetadataEditor2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 540868579, data2: 11800, data3: 20447, data4: [181, 157, 110, 113, 83, 5, 52, 207] };
 }
 #[repr(C)]
 pub struct IWMMutualExclusion {
     pub base__: IWMStreamList,
     pub GetType: unsafe extern "system" fn(this: *mut *mut Self, pguidtype: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub SetType: unsafe extern "system" fn(this: *mut *mut Self, guidtype: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWMMutualExclusion {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2520804318, data2: 11051, data3: 4563, data4: [179, 107, 0, 192, 79, 97, 8, 255] };
 }
 #[repr(C)]
 pub struct IWMMutualExclusion2 {
@@ -496,11 +631,17 @@ pub struct IWMMutualExclusion2 {
     pub AddStreamForRecord: unsafe extern "system" fn(this: *mut *mut Self, wrecordnumber: u16, wstreamnumber: u16) -> ::windows_sys::core::HRESULT,
     pub RemoveStreamForRecord: unsafe extern "system" fn(this: *mut *mut Self, wrecordnumber: u16, wstreamnumber: u16) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWMMutualExclusion2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 50509181, data2: 35281, data3: 19362, data4: [133, 201, 22, 111, 44, 83, 235, 145] };
+}
 #[repr(C)]
 pub struct IWMOutputMediaProps {
     pub base__: IWMMediaProps,
     pub GetStreamGroupName: unsafe extern "system" fn(this: *mut *mut Self, pwszname: ::windows_sys::core::PWSTR, pcchname: *mut u16) -> ::windows_sys::core::HRESULT,
     pub GetConnectionName: unsafe extern "system" fn(this: *mut *mut Self, pwszname: ::windows_sys::core::PWSTR, pcchname: *mut u16) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWMOutputMediaProps {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2520804311, data2: 11051, data3: 4563, data4: [179, 107, 0, 192, 79, 97, 8, 255] };
 }
 #[repr(C)]
 pub struct IWMPacketSize {
@@ -508,21 +649,33 @@ pub struct IWMPacketSize {
     pub GetMaxPacketSize: unsafe extern "system" fn(this: *mut *mut Self, pdwmaxpacketsize: *mut u32) -> ::windows_sys::core::HRESULT,
     pub SetMaxPacketSize: unsafe extern "system" fn(this: *mut *mut Self, dwmaxpacketsize: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWMPacketSize {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3455817643, data2: 6287, data3: 16563, data4: [182, 67, 91, 121, 3, 151, 92, 89] };
+}
 #[repr(C)]
 pub struct IWMPacketSize2 {
     pub base__: IWMPacketSize,
     pub GetMinPacketSize: unsafe extern "system" fn(this: *mut *mut Self, pdwminpacketsize: *mut u32) -> ::windows_sys::core::HRESULT,
     pub SetMinPacketSize: unsafe extern "system" fn(this: *mut *mut Self, dwminpacketsize: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWMPacketSize2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2348559262, data2: 46662, data3: 16947, data4: [168, 119, 28, 106, 7, 150, 105, 220] };
+}
 #[repr(C)]
 pub struct IWMPlayerHook {
     pub base__: ::windows_sys::core::IUnknown,
     pub PreDecode: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWMPlayerHook {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3854027418, data2: 3868, data3: 20326, data4: [144, 2, 116, 236, 80, 216, 179, 4] };
+}
 #[repr(C)]
 pub struct IWMPlayerTimestampHook {
     pub base__: ::windows_sys::core::IUnknown,
     pub MapTimestamp: unsafe extern "system" fn(this: *mut *mut Self, rtin: i64, prtout: *mut i64) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWMPlayerTimestampHook {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 676859354, data2: 55694, data3: 18640, data4: [183, 174, 105, 228, 115, 160, 40, 37] };
 }
 #[repr(C)]
 pub struct IWMProfile {
@@ -546,10 +699,16 @@ pub struct IWMProfile {
     pub AddMutualExclusion: unsafe extern "system" fn(this: *mut *mut Self, pme: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub CreateNewMutualExclusion: unsafe extern "system" fn(this: *mut *mut Self, ppme: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWMProfile {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2520804315, data2: 11051, data3: 4563, data4: [179, 107, 0, 192, 79, 97, 8, 255] };
+}
 #[repr(C)]
 pub struct IWMProfile2 {
     pub base__: IWMProfile,
     pub GetProfileID: unsafe extern "system" fn(this: *mut *mut Self, pguidid: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWMProfile2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 132590899, data2: 55630, data3: 19431, data4: [136, 67, 96, 174, 95, 247, 229, 245] };
 }
 #[repr(C)]
 pub struct IWMProfile3 {
@@ -567,6 +726,9 @@ pub struct IWMProfile3 {
     pub CreateNewStreamPrioritization: unsafe extern "system" fn(this: *mut *mut Self, ppsp: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetExpectedPacketCount: unsafe extern "system" fn(this: *mut *mut Self, msduration: u64, pcpackets: *mut u64) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWMProfile3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 15701708, data2: 42081, data3: 17734, data4: [139, 205, 201, 162, 143, 14, 6, 245] };
+}
 #[repr(C)]
 pub struct IWMProfileManager {
     pub base__: ::windows_sys::core::IUnknown,
@@ -577,17 +739,26 @@ pub struct IWMProfileManager {
     pub GetSystemProfileCount: unsafe extern "system" fn(this: *mut *mut Self, pcprofiles: *mut u32) -> ::windows_sys::core::HRESULT,
     pub LoadSystemProfile: unsafe extern "system" fn(this: *mut *mut Self, dwprofileindex: u32, ppprofile: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWMProfileManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3513154034, data2: 27808, data3: 18221, data4: [141, 49, 47, 93, 85, 174, 225, 85] };
+}
 #[repr(C)]
 pub struct IWMProfileManager2 {
     pub base__: IWMProfileManager,
     pub GetSystemProfileVersion: unsafe extern "system" fn(this: *mut *mut Self, pdwversion: *mut WMT_VERSION) -> ::windows_sys::core::HRESULT,
     pub SetSystemProfileVersion: unsafe extern "system" fn(this: *mut *mut Self, dwversion: WMT_VERSION) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWMProfileManager2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2056408657, data2: 29633, data3: 18765, data4: [128, 25, 35, 211, 126, 217, 184, 154] };
+}
 #[repr(C)]
 pub struct IWMProfileManagerLanguage {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetUserLanguageID: unsafe extern "system" fn(this: *mut *mut Self, wlangid: *mut u16) -> ::windows_sys::core::HRESULT,
     pub SetUserLanguageID: unsafe extern "system" fn(this: *mut *mut Self, wlangid: u16) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWMProfileManagerLanguage {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3125660792, data2: 32480, data3: 19128, data4: [178, 122, 219, 206, 139, 197, 20, 84] };
 }
 #[repr(C)]
 pub struct IWMPropertyVault {
@@ -599,10 +770,16 @@ pub struct IWMPropertyVault {
     pub CopyPropertiesFrom: unsafe extern "system" fn(this: *mut *mut Self, piwmpropertyvault: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Clear: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWMPropertyVault {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1922652793, data2: 20624, data3: 17060, data4: [156, 140, 217, 208, 182, 211, 75, 229] };
+}
 #[repr(C)]
 pub struct IWMProximityDetection {
     pub base__: ::windows_sys::core::IUnknown,
     pub StartDetection: unsafe extern "system" fn(this: *mut *mut Self, pbregistrationmsg: *const u8, cbregistrationmsg: u32, pblocaladdress: *const u8, cblocaladdress: u32, dwextraportsallowed: u32, ppregistrationresponsemsg: *mut *mut ::core::ffi::c_void, pcallback: *mut ::core::ffi::c_void, pvcontext: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWMProximityDetection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1788860654, data2: 46673, data3: 19440, data4: [184, 73, 125, 78, 206, 121, 162, 177] };
 }
 #[repr(C)]
 pub struct IWMReader {
@@ -619,6 +796,9 @@ pub struct IWMReader {
     pub Pause: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Resume: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWMReader {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2520804310, data2: 11051, data3: 4563, data4: [179, 107, 0, 192, 79, 97, 8, 255] };
+}
 #[repr(C)]
 pub struct IWMReaderAccelerator {
     pub base__: ::windows_sys::core::IUnknown,
@@ -627,6 +807,9 @@ pub struct IWMReaderAccelerator {
     pub Notify: unsafe extern "system" fn(this: *mut *mut Self, dwoutputnum: u32, psubtype: *const WM_MEDIA_TYPE) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     Notify: usize,
+}
+impl ::windows_sys::core::Interface for IWMReaderAccelerator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3185331464, data2: 37965, data3: 19794, data4: [166, 18, 70, 195, 253, 160, 125, 212] };
 }
 #[repr(C)]
 pub struct IWMReaderAdvanced {
@@ -691,6 +874,9 @@ pub struct IWMReaderAdvanced {
     pub GetMaxStreamSampleSize: unsafe extern "system" fn(this: *mut *mut Self, wstream: u16, pcbmax: *mut u32) -> ::windows_sys::core::HRESULT,
     pub NotifyLateDelivery: unsafe extern "system" fn(this: *mut *mut Self, cnslateness: u64) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWMReaderAdvanced {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2520804330, data2: 11051, data3: 4563, data4: [179, 107, 0, 192, 79, 97, 8, 255] };
+}
 #[repr(C)]
 pub struct IWMReaderAdvanced2 {
     pub base__: IWMReaderAdvanced,
@@ -719,11 +905,17 @@ pub struct IWMReaderAdvanced2 {
     #[cfg(not(feature = "Win32_System_Com"))]
     OpenStream: usize,
 }
+impl ::windows_sys::core::Interface for IWMReaderAdvanced2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2920589637, data2: 47372, data3: 19725, data4: [145, 39, 128, 214, 101, 247, 215, 62] };
+}
 #[repr(C)]
 pub struct IWMReaderAdvanced3 {
     pub base__: IWMReaderAdvanced2,
     pub StopNetStreaming: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub StartAtPosition: unsafe extern "system" fn(this: *mut *mut Self, wstreamnum: u16, pvoffsetstart: *const ::core::ffi::c_void, pvduration: *const ::core::ffi::c_void, dwoffsetformat: WMT_OFFSET_FORMAT, frate: f32, pvcontext: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWMReaderAdvanced3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1572890443, data2: 61515, data3: 19022, data4: [159, 42, 177, 175, 222, 44, 129, 0] };
 }
 #[repr(C)]
 pub struct IWMReaderAdvanced4 {
@@ -744,15 +936,24 @@ pub struct IWMReaderAdvanced4 {
     pub CancelSaveFileAs: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub GetURL: unsafe extern "system" fn(this: *mut *mut Self, pwszurl: ::windows_sys::core::PWSTR, pcchurl: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWMReaderAdvanced4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2488956578, data2: 4782, data3: 19784, data4: [189, 60, 205, 29, 144, 57, 155, 133] };
+}
 #[repr(C)]
 pub struct IWMReaderAdvanced5 {
     pub base__: IWMReaderAdvanced4,
     pub SetPlayerHook: unsafe extern "system" fn(this: *mut *mut Self, dwoutputnum: u32, phook: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWMReaderAdvanced5 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 616844720, data2: 21969, data3: 18862, data4: [165, 204, 241, 56, 21, 227, 99, 99] };
+}
 #[repr(C)]
 pub struct IWMReaderAdvanced6 {
     pub base__: IWMReaderAdvanced5,
     pub SetProtectStreamSamples: unsafe extern "system" fn(this: *mut *mut Self, pbcertificate: *const u8, cbcertificate: u32, dwcertificatetype: u32, dwflags: u32, pbinitializationvector: *mut u8, pcbinitializationvector: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWMReaderAdvanced6 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 413329400, data2: 17039, data3: 19149, data4: [138, 0, 230, 70, 57, 188, 147, 222] };
 }
 #[repr(C)]
 pub struct IWMReaderAllocatorEx {
@@ -760,10 +961,16 @@ pub struct IWMReaderAllocatorEx {
     pub AllocateForStreamEx: unsafe extern "system" fn(this: *mut *mut Self, wstreamnum: u16, cbbuffer: u32, ppbuffer: *mut *mut ::core::ffi::c_void, dwflags: u32, cnssampletime: u64, cnssampleduration: u64, pvcontext: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub AllocateForOutputEx: unsafe extern "system" fn(this: *mut *mut Self, dwoutputnum: u32, cbbuffer: u32, ppbuffer: *mut *mut ::core::ffi::c_void, dwflags: u32, cnssampletime: u64, cnssampleduration: u64, pvcontext: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWMReaderAllocatorEx {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2675322791, data2: 41518, data3: 17037, data4: [147, 201, 172, 130, 243, 170, 254, 90] };
+}
 #[repr(C)]
 pub struct IWMReaderCallback {
     pub base__: IWMStatusCallback,
     pub OnSample: unsafe extern "system" fn(this: *mut *mut Self, dwoutputnum: u32, cnssampletime: u64, cnssampleduration: u64, dwflags: u32, psample: *mut ::core::ffi::c_void, pvcontext: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWMReaderCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2520804312, data2: 11051, data3: 4563, data4: [179, 107, 0, 192, 79, 97, 8, 255] };
 }
 #[repr(C)]
 pub struct IWMReaderCallbackAdvanced {
@@ -777,6 +984,9 @@ pub struct IWMReaderCallbackAdvanced {
     OnOutputPropsChanged: usize,
     pub AllocateForStream: unsafe extern "system" fn(this: *mut *mut Self, wstreamnum: u16, cbbuffer: u32, ppbuffer: *mut *mut ::core::ffi::c_void, pvcontext: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub AllocateForOutput: unsafe extern "system" fn(this: *mut *mut Self, dwoutputnum: u32, cbbuffer: u32, ppbuffer: *mut *mut ::core::ffi::c_void, pvcontext: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWMReaderCallbackAdvanced {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2520804331, data2: 11051, data3: 4563, data4: [179, 107, 0, 192, 79, 97, 8, 255] };
 }
 #[repr(C)]
 pub struct IWMReaderNetworkConfig {
@@ -851,6 +1061,9 @@ pub struct IWMReaderNetworkConfig {
     pub GetLoggingUrlCount: unsafe extern "system" fn(this: *mut *mut Self, pdwurlcount: *mut u32) -> ::windows_sys::core::HRESULT,
     pub ResetLoggingUrlList: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWMReaderNetworkConfig {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2520804332, data2: 11051, data3: 4563, data4: [179, 107, 0, 192, 79, 97, 8, 255] };
+}
 #[repr(C)]
 pub struct IWMReaderNetworkConfig2 {
     pub base__: IWMReaderNetworkConfig,
@@ -892,6 +1105,9 @@ pub struct IWMReaderNetworkConfig2 {
     SetEnableThinning: usize,
     pub GetMaxNetPacketSize: unsafe extern "system" fn(this: *mut *mut Self, pdwmaxnetpacketsize: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWMReaderNetworkConfig2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3648628819, data2: 1067, data3: 16464, data4: [131, 135, 201, 57, 219, 34, 1, 63] };
+}
 #[repr(C)]
 pub struct IWMReaderPlaylistBurn {
     pub base__: ::windows_sys::core::IUnknown,
@@ -900,6 +1116,9 @@ pub struct IWMReaderPlaylistBurn {
     pub Cancel: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub EndPlaylistBurn: unsafe extern "system" fn(this: *mut *mut Self, hrburnresult: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWMReaderPlaylistBurn {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4069262080, data2: 39850, data3: 17527, data4: [168, 70, 23, 68, 217, 203, 245, 51] };
+}
 #[repr(C)]
 pub struct IWMReaderStreamClock {
     pub base__: ::windows_sys::core::IUnknown,
@@ -907,22 +1126,34 @@ pub struct IWMReaderStreamClock {
     pub SetTimer: unsafe extern "system" fn(this: *mut *mut Self, cnswhen: u64, pvparam: *const ::core::ffi::c_void, pdwtimerid: *mut u32) -> ::windows_sys::core::HRESULT,
     pub KillTimer: unsafe extern "system" fn(this: *mut *mut Self, dwtimerid: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWMReaderStreamClock {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2520804333, data2: 11051, data3: 4563, data4: [179, 107, 0, 192, 79, 97, 8, 255] };
+}
 #[repr(C)]
 pub struct IWMReaderTimecode {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetTimecodeRangeCount: unsafe extern "system" fn(this: *mut *mut Self, wstreamnum: u16, pwrangecount: *mut u16) -> ::windows_sys::core::HRESULT,
     pub GetTimecodeRangeBounds: unsafe extern "system" fn(this: *mut *mut Self, wstreamnum: u16, wrangenum: u16, pstarttimecode: *mut u32, pendtimecode: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWMReaderTimecode {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4083802864, data2: 57473, data3: 20454, data4: [132, 80, 184, 16, 178, 244, 16, 209] };
+}
 #[repr(C)]
 pub struct IWMReaderTypeNegotiation {
     pub base__: ::windows_sys::core::IUnknown,
     pub TryOutputProps: unsafe extern "system" fn(this: *mut *mut Self, dwoutputnum: u32, poutput: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWMReaderTypeNegotiation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4257109394, data2: 33185, data3: 16874, data4: [147, 189, 115, 92, 173, 26, 220, 5] };
 }
 #[repr(C)]
 pub struct IWMRegisterCallback {
     pub base__: ::windows_sys::core::IUnknown,
     pub Advise: unsafe extern "system" fn(this: *mut *mut Self, pcallback: *mut ::core::ffi::c_void, pvcontext: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Unadvise: unsafe extern "system" fn(this: *mut *mut Self, pcallback: *mut ::core::ffi::c_void, pvcontext: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWMRegisterCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3477807001, data2: 19938, data3: 20041, data4: [163, 99, 37, 39, 64, 217, 155, 193] };
 }
 #[repr(C)]
 pub struct IWMRegisteredDevice {
@@ -966,11 +1197,17 @@ pub struct IWMRegisteredDevice {
     pub Open: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWMRegisteredDevice {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2756721644, data2: 21768, data3: 16712, data4: [151, 172, 191, 167, 87, 96, 167, 13] };
+}
 #[repr(C)]
 pub struct IWMSBufferAllocator {
     pub base__: ::windows_sys::core::IUnknown,
     pub AllocateBuffer: unsafe extern "system" fn(this: *mut *mut Self, dwmaxbuffersize: u32, ppbuffer: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub AllocatePageSizeBuffer: unsafe extern "system" fn(this: *mut *mut Self, dwmaxbuffersize: u32, ppbuffer: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWMSBufferAllocator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1628454052, data2: 8243, data3: 4562, data4: [158, 241, 0, 96, 151, 210, 215, 207] };
 }
 #[repr(C)]
 pub struct IWMSInternalAdminNetSource {
@@ -1005,6 +1242,9 @@ pub struct IWMSInternalAdminNetSource {
     #[cfg(not(feature = "Win32_Foundation"))]
     IsUsingIE: usize,
 }
+impl ::windows_sys::core::Interface for IWMSInternalAdminNetSource {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2343714399, data2: 53543, data3: 19195, data4: [141, 2, 174, 91, 102, 213, 76, 120] };
+}
 #[repr(C)]
 pub struct IWMSInternalAdminNetSource2 {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1024,6 +1264,9 @@ pub struct IWMSInternalAdminNetSource2 {
     pub FindProxyForURLEx: unsafe extern "system" fn(this: *mut *mut Self, bstrprotocol: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrhost: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrurl: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pfproxyenabled: *mut super::super::Foundation::BOOL, pbstrproxyserver: *mut super::super::Foundation::BSTR, pdwproxyport: *mut u32, pdwproxycontext: *mut u32) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     FindProxyForURLEx: usize,
+}
+impl ::windows_sys::core::Interface for IWMSInternalAdminNetSource2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3880605891, data2: 53111, data3: 19281, data4: [175, 23, 116, 70, 135, 196, 62, 174] };
 }
 #[repr(C)]
 pub struct IWMSInternalAdminNetSource3 {
@@ -1048,6 +1291,9 @@ pub struct IWMSInternalAdminNetSource3 {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetCredentialsEx2: usize,
 }
+impl ::windows_sys::core::Interface for IWMSInternalAdminNetSource3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1801703566, data2: 17808, data3: 17583, data4: [158, 179, 87, 255, 30, 115, 191, 128] };
+}
 #[repr(C)]
 pub struct IWMSecureChannel {
     pub base__: IWMAuthorizer,
@@ -1066,10 +1312,16 @@ pub struct IWMSecureChannel {
     pub WMSC_Unlock: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub WMSC_SetSharedData: unsafe extern "system" fn(this: *mut *mut Self, dwcertindex: u32, pbshareddata: *const u8) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWMSecureChannel {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 656431498, data2: 53490, data3: 16777, data4: [189, 16, 145, 196, 110, 240, 147, 111] };
+}
 #[repr(C)]
 pub struct IWMStatusCallback {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnStatus: unsafe extern "system" fn(this: *mut *mut Self, status: WMT_STATUS, hr: ::windows_sys::core::HRESULT, dwtype: WMT_ATTR_DATATYPE, pvalue: *const u8, pvcontext: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWMStatusCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1836899440, data2: 39048, data3: 4563, data4: [142, 220, 0, 192, 79, 97, 9, 207] };
 }
 #[repr(C)]
 pub struct IWMStreamConfig {
@@ -1086,6 +1338,9 @@ pub struct IWMStreamConfig {
     pub GetBufferWindow: unsafe extern "system" fn(this: *mut *mut Self, pmsbufferwindow: *mut u32) -> ::windows_sys::core::HRESULT,
     pub SetBufferWindow: unsafe extern "system" fn(this: *mut *mut Self, msbufferwindow: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWMStreamConfig {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2520804316, data2: 11051, data3: 4563, data4: [179, 107, 0, 192, 79, 97, 8, 255] };
+}
 #[repr(C)]
 pub struct IWMStreamConfig2 {
     pub base__: IWMStreamConfig,
@@ -1096,11 +1351,17 @@ pub struct IWMStreamConfig2 {
     pub GetDataUnitExtension: unsafe extern "system" fn(this: *mut *mut Self, wdataunitextensionnumber: u16, pguidextensionsystemid: *mut ::windows_sys::core::GUID, pcbextensiondatasize: *mut u16, pbextensionsysteminfo: *mut u8, pcbextensionsysteminfo: *mut u32) -> ::windows_sys::core::HRESULT,
     pub RemoveAllDataUnitExtensions: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWMStreamConfig2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1988679883, data2: 64525, data3: 17341, data4: [148, 89, 90, 141, 236, 32, 12, 250] };
+}
 #[repr(C)]
 pub struct IWMStreamConfig3 {
     pub base__: IWMStreamConfig2,
     pub GetLanguage: unsafe extern "system" fn(this: *mut *mut Self, pwszlanguagestring: ::windows_sys::core::PWSTR, pcchlanguagestringlength: *mut u16) -> ::windows_sys::core::HRESULT,
     pub SetLanguage: unsafe extern "system" fn(this: *mut *mut Self, pwszlanguagestring: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWMStreamConfig3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3407233284, data2: 15017, data3: 17831, data4: [154, 201, 77, 174, 225, 49, 214, 225] };
 }
 #[repr(C)]
 pub struct IWMStreamList {
@@ -1108,6 +1369,9 @@ pub struct IWMStreamList {
     pub GetStreams: unsafe extern "system" fn(this: *mut *mut Self, pwstreamnumarray: *mut u16, pcstreams: *mut u16) -> ::windows_sys::core::HRESULT,
     pub AddStream: unsafe extern "system" fn(this: *mut *mut Self, wstreamnum: u16) -> ::windows_sys::core::HRESULT,
     pub RemoveStream: unsafe extern "system" fn(this: *mut *mut Self, wstreamnum: u16) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWMStreamList {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2520804317, data2: 11051, data3: 4563, data4: [179, 107, 0, 192, 79, 97, 8, 255] };
 }
 #[repr(C)]
 pub struct IWMStreamPrioritization {
@@ -1120,6 +1384,9 @@ pub struct IWMStreamPrioritization {
     pub SetPriorityRecords: unsafe extern "system" fn(this: *mut *mut Self, precordarray: *const WM_STREAM_PRIORITY_RECORD, crecords: u16) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     SetPriorityRecords: usize,
+}
+impl ::windows_sys::core::Interface for IWMStreamPrioritization {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2350669968, data2: 63912, data3: 18248, data4: [142, 195, 221, 17, 8, 186, 30, 119] };
 }
 #[repr(C)]
 pub struct IWMSyncReader {
@@ -1155,6 +1422,9 @@ pub struct IWMSyncReader {
     #[cfg(not(feature = "Win32_System_Com"))]
     OpenStream: usize,
 }
+impl ::windows_sys::core::Interface for IWMSyncReader {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2476208417, data2: 30469, data3: 19913, data4: [176, 73, 152, 182, 152, 24, 132, 20] };
+}
 #[repr(C)]
 pub struct IWMSyncReader2 {
     pub base__: IWMSyncReader,
@@ -1165,6 +1435,9 @@ pub struct IWMSyncReader2 {
     pub SetAllocateForStream: unsafe extern "system" fn(this: *mut *mut Self, wstreamnum: u16, pallocator: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetAllocateForStream: unsafe extern "system" fn(this: *mut *mut Self, dwsreamnum: u16, ppallocator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWMSyncReader2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4209851681, data2: 7019, data3: 19191, data4: [140, 182, 62, 24, 155, 188, 24, 123] };
+}
 #[repr(C)]
 pub struct IWMVideoMediaProps {
     pub base__: IWMMediaProps,
@@ -1173,11 +1446,17 @@ pub struct IWMVideoMediaProps {
     pub GetQuality: unsafe extern "system" fn(this: *mut *mut Self, pdwquality: *mut u32) -> ::windows_sys::core::HRESULT,
     pub SetQuality: unsafe extern "system" fn(this: *mut *mut Self, dwquality: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWMVideoMediaProps {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2520804303, data2: 11051, data3: 4563, data4: [179, 107, 0, 192, 79, 97, 8, 255] };
+}
 #[repr(C)]
 pub struct IWMWatermarkInfo {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetWatermarkEntryCount: unsafe extern "system" fn(this: *mut *mut Self, wmettype: WMT_WATERMARK_ENTRY_TYPE, pdwcount: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetWatermarkEntry: unsafe extern "system" fn(this: *mut *mut Self, wmettype: WMT_WATERMARK_ENTRY_TYPE, dwentrynum: u32, pentry: *mut WMT_WATERMARK_ENTRY) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWMWatermarkInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1867083874, data2: 62178, data3: 17956, data4: [142, 167, 157, 212, 13, 129, 252, 141] };
 }
 #[repr(C)]
 pub struct IWMWriter {
@@ -1195,6 +1474,9 @@ pub struct IWMWriter {
     pub AllocateSample: unsafe extern "system" fn(this: *mut *mut Self, dwsamplesize: u32, ppsample: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub WriteSample: unsafe extern "system" fn(this: *mut *mut Self, dwinputnum: u32, cnssampletime: u64, dwflags: u32, psample: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Flush: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWMWriter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2520804308, data2: 11051, data3: 4563, data4: [179, 107, 0, 192, 79, 97, 8, 255] };
 }
 #[repr(C)]
 pub struct IWMWriterAdvanced {
@@ -1217,11 +1499,17 @@ pub struct IWMWriterAdvanced {
     pub SetSyncTolerance: unsafe extern "system" fn(this: *mut *mut Self, mswindow: u32) -> ::windows_sys::core::HRESULT,
     pub GetSyncTolerance: unsafe extern "system" fn(this: *mut *mut Self, pmswindow: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWMWriterAdvanced {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2520804323, data2: 11051, data3: 4563, data4: [179, 107, 0, 192, 79, 97, 8, 255] };
+}
 #[repr(C)]
 pub struct IWMWriterAdvanced2 {
     pub base__: IWMWriterAdvanced,
     pub GetInputSetting: unsafe extern "system" fn(this: *mut *mut Self, dwinputnum: u32, pszname: ::windows_sys::core::PCWSTR, ptype: *mut WMT_ATTR_DATATYPE, pvalue: *mut u8, pcblength: *mut u16) -> ::windows_sys::core::HRESULT,
     pub SetInputSetting: unsafe extern "system" fn(this: *mut *mut Self, dwinputnum: u32, pszname: ::windows_sys::core::PCWSTR, r#type: WMT_ATTR_DATATYPE, pvalue: *const u8, cblength: u16) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWMWriterAdvanced2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2519581164, data2: 49222, data3: 19896, data4: [156, 199, 38, 206, 174, 80, 8, 23] };
 }
 #[repr(C)]
 pub struct IWMWriterAdvanced3 {
@@ -1229,10 +1517,16 @@ pub struct IWMWriterAdvanced3 {
     pub GetStatisticsEx: unsafe extern "system" fn(this: *mut *mut Self, wstreamnum: u16, pstats: *mut WM_WRITER_STATISTICS_EX) -> ::windows_sys::core::HRESULT,
     pub SetNonBlocking: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWMWriterAdvanced3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 752240941, data2: 31799, data3: 20086, data4: [157, 59, 89, 38, 17, 131, 162, 46] };
+}
 #[repr(C)]
 pub struct IWMWriterFileSink {
     pub base__: IWMWriterSink,
     pub Open: unsafe extern "system" fn(this: *mut *mut Self, pwszfilename: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWMWriterFileSink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2520804325, data2: 11051, data3: 4563, data4: [179, 107, 0, 192, 79, 97, 8, 255] };
 }
 #[repr(C)]
 pub struct IWMWriterFileSink2 {
@@ -1250,6 +1544,9 @@ pub struct IWMWriterFileSink2 {
     pub IsClosed: unsafe extern "system" fn(this: *mut *mut Self, pfclosed: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     IsClosed: usize,
+}
+impl ::windows_sys::core::Interface for IWMWriterFileSink2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 338176935, data2: 19183, data3: 16901, data4: [140, 229, 194, 41, 3, 90, 5, 188] };
 }
 #[repr(C)]
 pub struct IWMWriterFileSink3 {
@@ -1278,6 +1575,9 @@ pub struct IWMWriterFileSink3 {
     GetUnbufferedIO: usize,
     pub CompleteOperations: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWMWriterFileSink3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1072320491, data2: 10565, data3: 18343, data4: [161, 221, 197, 58, 143, 196, 196, 92] };
+}
 #[repr(C)]
 pub struct IWMWriterNetworkSink {
     pub base__: IWMWriterSink,
@@ -1289,6 +1589,9 @@ pub struct IWMWriterNetworkSink {
     pub Open: unsafe extern "system" fn(this: *mut *mut Self, pdwportnum: *mut u32) -> ::windows_sys::core::HRESULT,
     pub Disconnect: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWMWriterNetworkSink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2520804327, data2: 11051, data3: 4563, data4: [179, 107, 0, 192, 79, 97, 8, 255] };
 }
 #[repr(C)]
 pub struct IWMWriterPostView {
@@ -1315,11 +1618,17 @@ pub struct IWMWriterPostView {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetAllocateForPostView: usize,
 }
+impl ::windows_sys::core::Interface for IWMWriterPostView {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2179075300, data2: 30191, data3: 18714, data4: [128, 4, 252, 83, 196, 91, 220, 62] };
+}
 #[repr(C)]
 pub struct IWMWriterPostViewCallback {
     pub base__: IWMStatusCallback,
     pub OnPostViewSample: unsafe extern "system" fn(this: *mut *mut Self, wstreamnumber: u16, cnssampletime: u64, cnssampleduration: u64, dwflags: u32, psample: *mut ::core::ffi::c_void, pvcontext: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub AllocateForPostView: unsafe extern "system" fn(this: *mut *mut Self, wstreamnum: u16, cbbuffer: u32, ppbuffer: *mut *mut ::core::ffi::c_void, pvcontext: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWMWriterPostViewCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3654702237, data2: 41363, data3: 20260, data4: [179, 8, 3, 18, 61, 155, 127, 141] };
 }
 #[repr(C)]
 pub struct IWMWriterPreprocess {
@@ -1330,6 +1639,9 @@ pub struct IWMWriterPreprocess {
     pub PreprocessSample: unsafe extern "system" fn(this: *mut *mut Self, dwinputnum: u32, cnssampletime: u64, dwflags: u32, psample: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub EndPreprocessingPass: unsafe extern "system" fn(this: *mut *mut Self, dwinputnum: u32, dwflags: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWMWriterPreprocess {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4233405061, data2: 14532, data3: 17845, data4: [170, 35, 133, 185, 247, 203, 66, 75] };
+}
 #[repr(C)]
 pub struct IWMWriterPushSink {
     pub base__: IWMWriterSink,
@@ -1339,6 +1651,9 @@ pub struct IWMWriterPushSink {
     Connect: usize,
     pub Disconnect: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub EndSession: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWMWriterPushSink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3692095141, data2: 1836, data3: 18045, data4: [191, 87, 99, 48, 169, 221, 225, 42] };
 }
 #[repr(C)]
 pub struct IWMWriterSink {
@@ -1351,6 +1666,9 @@ pub struct IWMWriterSink {
     pub AllocateDataUnit: unsafe extern "system" fn(this: *mut *mut Self, cbdataunit: u32, ppdataunit: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub OnDataUnit: unsafe extern "system" fn(this: *mut *mut Self, pdataunit: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub OnEndWriting: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWMWriterSink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2520804324, data2: 11051, data3: 4563, data4: [179, 107, 0, 192, 79, 97, 8, 255] };
 }
 #[doc = "*Required features: `\"Win32_Media_WindowsMediaFormat\"`*"]
 pub type NETSOURCE_URLCREDPOLICY_SETTINGS = i32;

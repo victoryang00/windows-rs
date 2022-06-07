@@ -5,6 +5,9 @@ pub struct IPdfDocument {
     pub PageCount: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
     pub IsPasswordProtected: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPdfDocument {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2893987549, data2: 33018, data3: 16521, data4: [132, 110, 129, 183, 127, 245, 168, 108] };
+}
 #[repr(C)]
 pub struct IPdfDocumentStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -24,6 +27,9 @@ pub struct IPdfDocumentStatics {
     pub LoadFromStreamWithPasswordAsync: unsafe extern "system" fn(this: *mut *mut Self, inputstream: *mut ::core::ffi::c_void, password: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
     LoadFromStreamWithPasswordAsync: usize,
+}
+impl ::windows_sys::core::Interface for IPdfDocumentStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1127877471, data2: 49159, data3: 18312, data4: [144, 242, 8, 20, 61, 146, 37, 153] };
 }
 #[repr(C)]
 pub struct IPdfPage {
@@ -49,6 +55,9 @@ pub struct IPdfPage {
     pub Rotation: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut PdfPageRotation) -> ::windows_sys::core::HRESULT,
     pub PreferredZoom: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPdfPage {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2645864648, data2: 21280, data3: 19708, data4: [173, 118, 73, 63, 218, 208, 229, 148] };
+}
 #[repr(C)]
 pub struct IPdfPageDimensions {
     pub base__: ::windows_sys::core::IInspectable,
@@ -72,6 +81,9 @@ pub struct IPdfPageDimensions {
     pub ArtBox: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Foundation::Rect) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     ArtBox: usize,
+}
+impl ::windows_sys::core::Interface for IPdfPageDimensions {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 571933809, data2: 12606, data3: 17640, data4: [131, 93, 99, 163, 231, 98, 74, 16] };
 }
 #[repr(C)]
 pub struct IPdfPageRenderOptions {
@@ -100,6 +112,9 @@ pub struct IPdfPageRenderOptions {
     pub SetIsIgnoringHighContrast: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
     pub BitmapEncoderId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub SetBitmapEncoderId: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPdfPageRenderOptions {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1016595823, data2: 47055, data3: 19497, data4: [154, 4, 82, 217, 2, 103, 244, 37] };
 }
 pub type PdfDocument = *mut ::core::ffi::c_void;
 pub type PdfPage = *mut ::core::ffi::c_void;

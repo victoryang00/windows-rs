@@ -22,6 +22,9 @@ pub struct IAdcChannel {
     pub ReadValue: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i32) -> ::windows_sys::core::HRESULT,
     pub ReadRatio: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f64) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAdcChannel {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 67892244, data2: 9608, data3: 19030, data4: [171, 239, 115, 162, 96, 172, 198, 10] };
+}
 #[repr(C)]
 pub struct IAdcController {
     pub base__: ::windows_sys::core::IInspectable,
@@ -34,6 +37,9 @@ pub struct IAdcController {
     pub IsChannelModeSupported: unsafe extern "system" fn(this: *mut *mut Self, channelmode: AdcChannelMode, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub OpenChannel: unsafe extern "system" fn(this: *mut *mut Self, channelnumber: i32, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAdcController {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 712434864, data2: 43158, data3: 16921, data4: [134, 182, 234, 140, 220, 233, 143, 86] };
+}
 #[repr(C)]
 pub struct IAdcControllerStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -42,6 +48,9 @@ pub struct IAdcControllerStatics {
     #[cfg(not(all(feature = "Devices_Adc_Provider", feature = "Foundation_Collections")))]
     GetControllersAsync: usize,
 }
+impl ::windows_sys::core::Interface for IAdcControllerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3437858316, data2: 504, data3: 18577, data4: [188, 59, 190, 83, 239, 39, 156, 164] };
+}
 #[repr(C)]
 pub struct IAdcControllerStatics2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -49,4 +58,7 @@ pub struct IAdcControllerStatics2 {
     pub GetDefaultAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     GetDefaultAsync: usize,
+}
+impl ::windows_sys::core::Interface for IAdcControllerStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2730048285, data2: 38779, data3: 20314, data4: [165, 254, 166, 171, 175, 254, 100, 132] };
 }

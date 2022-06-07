@@ -3363,6 +3363,9 @@ pub struct IComprehensiveSpellCheckProvider {
     pub base__: ::windows_sys::core::IUnknown,
     pub ComprehensiveCheck: unsafe extern "system" fn(this: *mut *mut Self, text: ::windows_sys::core::PCWSTR, value: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IComprehensiveSpellCheckProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 207157470, data2: 36500, data3: 18334, data4: [151, 23, 112, 196, 44, 74, 210, 195] };
+}
 #[doc = "*Required features: `\"Win32_Globalization\"`*"]
 pub const IDN_ALLOW_UNASSIGNED: u32 = 1u32;
 #[doc = "*Required features: `\"Win32_Globalization\"`*"]
@@ -3379,6 +3382,9 @@ pub struct IEnumCodePage {
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Skip: unsafe extern "system" fn(this: *mut *mut Self, celt: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEnumCodePage {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 660349923, data2: 14151, data3: 4560, data4: [159, 234, 0, 170, 0, 63, 134, 70] };
+}
 #[repr(C)]
 pub struct IEnumRfc1766 {
     pub base__: ::windows_sys::core::IUnknown,
@@ -3386,6 +3392,9 @@ pub struct IEnumRfc1766 {
     pub Next: unsafe extern "system" fn(this: *mut *mut Self, celt: u32, rgelt: *mut RFC1766INFO, pceltfetched: *mut u32) -> ::windows_sys::core::HRESULT,
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Skip: unsafe extern "system" fn(this: *mut *mut Self, celt: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IEnumRfc1766 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1036229917, data2: 49200, data3: 4560, data4: [184, 27, 0, 192, 79, 201, 179, 31] };
 }
 #[repr(C)]
 pub struct IEnumScript {
@@ -3395,10 +3404,16 @@ pub struct IEnumScript {
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Skip: unsafe extern "system" fn(this: *mut *mut Self, celt: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEnumScript {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2925466672, data2: 14475, data3: 4562, data4: [131, 128, 0, 192, 79, 143, 93, 161] };
+}
 #[repr(C)]
 pub struct IEnumSpellingError {
     pub base__: ::windows_sys::core::IUnknown,
     pub Next: unsafe extern "system" fn(this: *mut *mut Self, value: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IEnumSpellingError {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2151562196, data2: 10280, data3: 17424, data4: [130, 144, 65, 141, 29, 115, 199, 98] };
 }
 #[doc = "*Required features: `\"Win32_Globalization\"`*"]
 pub const IME_CMODE_ALPHANUMERIC: u32 = 0u32;
@@ -3432,6 +3447,9 @@ pub struct IMLangCodePages {
     pub CodePageToCodePages: unsafe extern "system" fn(this: *mut *mut Self, ucodepage: u32, pdwcodepages: *mut u32) -> ::windows_sys::core::HRESULT,
     pub CodePagesToCodePage: unsafe extern "system" fn(this: *mut *mut Self, dwcodepages: u32, udefaultcodepage: u32, pucodepage: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMLangCodePages {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 899626051, data2: 48458, data3: 4560, data4: [177, 136, 0, 170, 0, 56, 201, 105] };
+}
 #[repr(C)]
 pub struct IMLangConvertCharset {
     pub base__: ::windows_sys::core::IUnknown,
@@ -3442,6 +3460,9 @@ pub struct IMLangConvertCharset {
     pub DoConversion: unsafe extern "system" fn(this: *mut *mut Self, psrcstr: *const u8, pcsrcsize: *mut u32, pdststr: *mut u8, pcdstsize: *mut u32) -> ::windows_sys::core::HRESULT,
     pub DoConversionToUnicode: unsafe extern "system" fn(this: *mut *mut Self, psrcstr: ::windows_sys::core::PCSTR, pcsrcsize: *mut u32, pdststr: ::windows_sys::core::PWSTR, pcdstsize: *mut u32) -> ::windows_sys::core::HRESULT,
     pub DoConversionFromUnicode: unsafe extern "system" fn(this: *mut *mut Self, psrcstr: ::windows_sys::core::PCWSTR, pcsrcsize: *mut u32, pdststr: ::windows_sys::core::PSTR, pcdstsize: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMLangConvertCharset {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3597496216, data2: 52650, data3: 4560, data4: [184, 34, 0, 192, 79, 201, 179, 31] };
 }
 #[repr(C)]
 pub struct IMLangFontLink {
@@ -3459,6 +3480,9 @@ pub struct IMLangFontLink {
     #[cfg(not(feature = "Win32_Graphics_Gdi"))]
     ReleaseFont: usize,
     pub ResetFontMapping: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMLangFontLink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 899626049, data2: 48458, data3: 4560, data4: [177, 136, 0, 170, 0, 56, 201, 105] };
 }
 #[repr(C)]
 pub struct IMLangFontLink2 {
@@ -3483,12 +3507,18 @@ pub struct IMLangFontLink2 {
     pub GetScriptFontInfo: unsafe extern "system" fn(this: *mut *mut Self, sid: u8, dwflags: u32, puifonts: *mut u32, pscriptfont: *mut tagSCRIPFONTINFO) -> ::windows_sys::core::HRESULT,
     pub CodePageToScriptID: unsafe extern "system" fn(this: *mut *mut Self, uicodepage: u32, psid: *mut u8) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMLangFontLink2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3704602978, data2: 11064, data3: 4562, data4: [183, 236, 0, 192, 79, 143, 93, 154] };
+}
 #[repr(C)]
 pub struct IMLangLineBreakConsole {
     pub base__: ::windows_sys::core::IUnknown,
     pub BreakLineML: unsafe extern "system" fn(this: *mut *mut Self, psrcmlstr: *mut ::core::ffi::c_void, lsrcpos: i32, lsrclen: i32, cmincolumns: i32, cmaxcolumns: i32, pllinelen: *mut i32, plskiplen: *mut i32) -> ::windows_sys::core::HRESULT,
     pub BreakLineW: unsafe extern "system" fn(this: *mut *mut Self, locale: u32, pszsrc: ::windows_sys::core::PCWSTR, cchsrc: i32, cmaxcolumns: i32, pcchline: *mut i32, pcchskip: *mut i32) -> ::windows_sys::core::HRESULT,
     pub BreakLineA: unsafe extern "system" fn(this: *mut *mut Self, locale: u32, ucodepage: u32, pszsrc: ::windows_sys::core::PCSTR, cchsrc: i32, cmaxcolumns: i32, pcchline: *mut i32, pcchskip: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMLangLineBreakConsole {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4122881761, data2: 49111, data3: 4560, data4: [177, 136, 0, 170, 0, 56, 201, 105] };
 }
 #[repr(C)]
 pub struct IMLangString {
@@ -3500,6 +3530,9 @@ pub struct IMLangString {
     pub GetLength: unsafe extern "system" fn(this: *mut *mut Self, pllen: *mut i32) -> ::windows_sys::core::HRESULT,
     pub SetMLStr: unsafe extern "system" fn(this: *mut *mut Self, ldestpos: i32, ldestlen: i32, psrcmlstr: *mut ::core::ffi::c_void, lsrcpos: i32, lsrclen: i32) -> ::windows_sys::core::HRESULT,
     pub GetMLStr: unsafe extern "system" fn(this: *mut *mut Self, lsrcpos: i32, lsrclen: i32, punkouter: *mut ::core::ffi::c_void, dwclscontext: u32, piid: *const ::windows_sys::core::GUID, ppdestmlstr: *mut *mut ::core::ffi::c_void, pldestpos: *mut i32, pldestlen: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMLangString {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3226297806, data2: 46861, data3: 4560, data4: [177, 136, 0, 170, 0, 56, 201, 105] };
 }
 #[repr(C)]
 pub struct IMLangStringAStr {
@@ -3513,6 +3546,9 @@ pub struct IMLangStringAStr {
     pub SetLocale: unsafe extern "system" fn(this: *mut *mut Self, ldestpos: i32, ldestlen: i32, locale: u32) -> ::windows_sys::core::HRESULT,
     pub GetLocale: unsafe extern "system" fn(this: *mut *mut Self, lsrcpos: i32, lsrcmaxlen: i32, plocale: *mut u32, pllocalepos: *mut i32, pllocalelen: *mut i32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMLangStringAStr {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3226297810, data2: 46861, data3: 4560, data4: [177, 136, 0, 170, 0, 56, 201, 105] };
+}
 #[repr(C)]
 pub struct IMLangStringBufA {
     pub base__: ::windows_sys::core::IUnknown,
@@ -3525,6 +3561,9 @@ pub struct IMLangStringBufA {
     pub Insert: unsafe extern "system" fn(this: *mut *mut Self, cchoffset: i32, cchmaxinsert: i32, pcchactual: *mut i32) -> ::windows_sys::core::HRESULT,
     pub Delete: unsafe extern "system" fn(this: *mut *mut Self, cchoffset: i32, cchdelete: i32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMLangStringBufA {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3528117539, data2: 47730, data3: 4560, data4: [177, 136, 0, 170, 0, 56, 201, 105] };
+}
 #[repr(C)]
 pub struct IMLangStringBufW {
     pub base__: ::windows_sys::core::IUnknown,
@@ -3533,6 +3572,9 @@ pub struct IMLangStringBufW {
     pub UnlockBuf: unsafe extern "system" fn(this: *mut *mut Self, pszbuf: ::windows_sys::core::PCWSTR, cchoffset: i32, cchwrite: i32) -> ::windows_sys::core::HRESULT,
     pub Insert: unsafe extern "system" fn(this: *mut *mut Self, cchoffset: i32, cchmaxinsert: i32, pcchactual: *mut i32) -> ::windows_sys::core::HRESULT,
     pub Delete: unsafe extern "system" fn(this: *mut *mut Self, cchoffset: i32, cchdelete: i32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMLangStringBufW {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3528117537, data2: 47730, data3: 4560, data4: [177, 136, 0, 170, 0, 56, 201, 105] };
 }
 #[repr(C)]
 pub struct IMLangStringWStr {
@@ -3545,6 +3587,9 @@ pub struct IMLangStringWStr {
     pub UnlockWStr: unsafe extern "system" fn(this: *mut *mut Self, pszsrc: ::windows_sys::core::PCWSTR, cchsrc: i32, pcchactual: *mut i32, plactuallen: *mut i32) -> ::windows_sys::core::HRESULT,
     pub SetLocale: unsafe extern "system" fn(this: *mut *mut Self, ldestpos: i32, ldestlen: i32, locale: u32) -> ::windows_sys::core::HRESULT,
     pub GetLocale: unsafe extern "system" fn(this: *mut *mut Self, lsrcpos: i32, lsrcmaxlen: i32, plocale: *mut u32, pllocalepos: *mut i32, pllocalelen: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMLangStringWStr {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3226297808, data2: 46861, data3: 4560, data4: [177, 136, 0, 170, 0, 56, 201, 105] };
 }
 #[repr(C)]
 pub struct IMultiLanguage {
@@ -3573,6 +3618,9 @@ pub struct IMultiLanguage {
     pub EnumRfc1766: unsafe extern "system" fn(this: *mut *mut Self, ppenumrfc1766: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetRfc1766Info: unsafe extern "system" fn(this: *mut *mut Self, locale: u32, prfc1766info: *mut RFC1766INFO) -> ::windows_sys::core::HRESULT,
     pub CreateConvertCharset: unsafe extern "system" fn(this: *mut *mut Self, uisrccodepage: u32, uidstcodepage: u32, dwproperty: u32, ppmlangconvertcharset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMultiLanguage {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 660349921, data2: 14151, data3: 4560, data4: [159, 234, 0, 170, 0, 63, 134, 70] };
 }
 #[repr(C)]
 pub struct IMultiLanguage2 {
@@ -3626,6 +3674,9 @@ pub struct IMultiLanguage2 {
     #[cfg(not(feature = "Win32_Foundation"))]
     ValidateCodePageEx: usize,
 }
+impl ::windows_sys::core::Interface for IMultiLanguage2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3704602980, data2: 11064, data3: 4562, data4: [183, 236, 0, 192, 79, 143, 93, 154] };
+}
 #[repr(C)]
 pub struct IMultiLanguage3 {
     pub base__: IMultiLanguage2,
@@ -3634,6 +3685,9 @@ pub struct IMultiLanguage3 {
     pub DetectOutboundCodePageInIStream: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, pstrin: *mut ::core::ffi::c_void, puipreferredcodepages: *const u32, npreferredcodepages: u32, puidetectedcodepages: *mut u32, pndetectedcodepages: *mut u32, lpspecialchar: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     DetectOutboundCodePageInIStream: usize,
+}
+impl ::windows_sys::core::Interface for IMultiLanguage3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1314416811, data2: 45399, data3: 17955, data4: [154, 204, 106, 29, 156, 174, 190, 4] };
 }
 #[repr(C)]
 pub struct IOptionDescription {
@@ -3645,6 +3699,9 @@ pub struct IOptionDescription {
     pub Labels: unsafe extern "system" fn(this: *mut *mut Self, value: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     Labels: usize,
+}
+impl ::windows_sys::core::Interface for IOptionDescription {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1127112581, data2: 13775, data3: 17926, data4: [168, 1, 111, 112, 39, 126, 29, 122] };
 }
 #[doc = "*Required features: `\"Win32_Globalization\"`*"]
 pub type IS_TEXT_UNICODE_RESULT = u32;
@@ -3707,6 +3764,9 @@ pub struct ISpellCheckProvider {
     #[cfg(not(feature = "Win32_System_Com"))]
     InitializeWordlist: usize,
 }
+impl ::windows_sys::core::Interface for ISpellCheckProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1944680160, data2: 36564, data3: 20145, data4: [128, 215, 27, 224, 161, 107, 12, 56] };
+}
 #[repr(C)]
 pub struct ISpellCheckProviderFactory {
     pub base__: ::windows_sys::core::IUnknown,
@@ -3719,6 +3779,9 @@ pub struct ISpellCheckProviderFactory {
     #[cfg(not(feature = "Win32_Foundation"))]
     IsSupported: usize,
     pub CreateSpellCheckProvider: unsafe extern "system" fn(this: *mut *mut Self, languagetag: ::windows_sys::core::PCWSTR, value: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISpellCheckProviderFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2674335249, data2: 30678, data3: 19602, data4: [174, 251, 97, 82, 21, 227, 164, 190] };
 }
 #[repr(C)]
 pub struct ISpellChecker {
@@ -3744,15 +3807,24 @@ pub struct ISpellChecker {
     pub GetOptionDescription: unsafe extern "system" fn(this: *mut *mut Self, optionid: ::windows_sys::core::PCWSTR, value: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub ComprehensiveCheck: unsafe extern "system" fn(this: *mut *mut Self, text: ::windows_sys::core::PCWSTR, value: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISpellChecker {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3070036849, data2: 58044, data3: 18003, data4: [141, 5, 241, 151, 228, 18, 119, 11] };
+}
 #[repr(C)]
 pub struct ISpellChecker2 {
     pub base__: ISpellChecker,
     pub Remove: unsafe extern "system" fn(this: *mut *mut Self, word: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISpellChecker2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3891076209, data2: 34807, data3: 17272, data4: [168, 64, 201, 32, 13, 172, 238, 71] };
+}
 #[repr(C)]
 pub struct ISpellCheckerChangedEventHandler {
     pub base__: ::windows_sys::core::IUnknown,
     pub Invoke: unsafe extern "system" fn(this: *mut *mut Self, sender: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISpellCheckerChangedEventHandler {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 193177008, data2: 31023, data3: 20139, data4: [151, 153, 172, 245, 44, 94, 208, 138] };
 }
 #[repr(C)]
 pub struct ISpellCheckerFactory {
@@ -3767,6 +3839,9 @@ pub struct ISpellCheckerFactory {
     IsSupported: usize,
     pub CreateSpellChecker: unsafe extern "system" fn(this: *mut *mut Self, languagetag: ::windows_sys::core::PCWSTR, value: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISpellCheckerFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2382465693, data2: 9237, data3: 18039, data4: [191, 8, 121, 78, 166, 31, 148, 187] };
+}
 #[repr(C)]
 pub struct ISpellingError {
     pub base__: ::windows_sys::core::IUnknown,
@@ -3775,11 +3850,17 @@ pub struct ISpellingError {
     pub CorrectiveAction: unsafe extern "system" fn(this: *mut *mut Self, value: *mut CORRECTIVE_ACTION) -> ::windows_sys::core::HRESULT,
     pub Replacement: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISpellingError {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3083349345, data2: 64488, data3: 19271, data4: [155, 39, 108, 13, 46, 13, 224, 163] };
+}
 #[repr(C)]
 pub struct IUserDictionariesRegistrar {
     pub base__: ::windows_sys::core::IUnknown,
     pub RegisterUserDictionary: unsafe extern "system" fn(this: *mut *mut Self, dictionarypath: ::windows_sys::core::PCWSTR, languagetag: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
     pub UnregisterUserDictionary: unsafe extern "system" fn(this: *mut *mut Self, dictionarypath: ::windows_sys::core::PCWSTR, languagetag: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUserDictionariesRegistrar {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2853661573, data2: 3602, data3: 18500, data4: [142, 26, 238, 241, 218, 119, 245, 134] };
 }
 #[doc = "*Required features: `\"Win32_Globalization\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]

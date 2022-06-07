@@ -46,6 +46,9 @@ pub struct ICustomDevice {
     #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
     TrySendIOControlAsync: usize,
 }
+impl ::windows_sys::core::Interface for ICustomDevice {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3710919967, data2: 50315, data3: 17341, data4: [188, 177, 222, 200, 143, 21, 20, 62] };
+}
 #[repr(C)]
 pub struct ICustomDeviceStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -54,6 +57,9 @@ pub struct ICustomDeviceStatics {
     pub FromIdAsync: unsafe extern "system" fn(this: *mut *mut Self, deviceid: ::windows_sys::core::HSTRING, desiredaccess: DeviceAccessMode, sharingmode: DeviceSharingMode, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     FromIdAsync: usize,
+}
+impl ::windows_sys::core::Interface for ICustomDeviceStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3357672210, data2: 61260, data3: 18097, data4: [165, 142, 238, 179, 8, 220, 137, 23] };
 }
 #[repr(C)]
 pub struct IIOControlCode {
@@ -64,15 +70,24 @@ pub struct IIOControlCode {
     pub DeviceType: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u16) -> ::windows_sys::core::HRESULT,
     pub ControlCode: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IIOControlCode {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 244668903, data2: 24776, data3: 17269, data4: [167, 97, 127, 136, 8, 6, 108, 96] };
+}
 #[repr(C)]
 pub struct IIOControlCodeFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub CreateIOControlCode: unsafe extern "system" fn(this: *mut *mut Self, devicetype: u16, function: u16, accessmode: IOControlAccessMode, bufferingmethod: IOControlBufferingMethod, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IIOControlCodeFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2238348528, data2: 19473, data3: 17582, data4: [175, 198, 184, 212, 162, 18, 120, 143] };
+}
 #[repr(C)]
 pub struct IKnownDeviceTypesStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub Unknown: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u16) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IKnownDeviceTypesStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3998513602, data2: 21576, data3: 17882, data4: [173, 27, 36, 148, 140, 35, 144, 148] };
 }
 #[doc = "*Required features: `\"Devices_Custom\"`*"]
 #[repr(transparent)]

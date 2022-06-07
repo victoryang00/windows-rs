@@ -415,6 +415,9 @@ pub struct IDirectWriterLock {
     pub ReleaseWriteAccess: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub HaveWriteAccess: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDirectWriterLock {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 242044306, data2: 26424, data3: 4559, data4: [150, 8, 0, 170, 0, 104, 13, 180] };
+}
 #[repr(C)]
 pub struct IEnumSTATPROPSETSTG {
     pub base__: ::windows_sys::core::IUnknown,
@@ -426,6 +429,9 @@ pub struct IEnumSTATPROPSETSTG {
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEnumSTATPROPSETSTG {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 315, data2: 0, data3: 0, data4: [192, 0, 0, 0, 0, 0, 0, 70] };
+}
 #[repr(C)]
 pub struct IEnumSTATPROPSTG {
     pub base__: ::windows_sys::core::IUnknown,
@@ -433,6 +439,9 @@ pub struct IEnumSTATPROPSTG {
     pub Skip: unsafe extern "system" fn(this: *mut *mut Self, celt: u32) -> ::windows_sys::core::HRESULT,
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IEnumSTATPROPSTG {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 313, data2: 0, data3: 0, data4: [192, 0, 0, 0, 0, 0, 0, 70] };
 }
 #[repr(C)]
 pub struct IEnumSTATSTG {
@@ -445,6 +454,9 @@ pub struct IEnumSTATSTG {
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEnumSTATSTG {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 13, data2: 0, data3: 0, data4: [192, 0, 0, 0, 0, 0, 0, 70] };
+}
 #[repr(C)]
 pub struct IFillLockBytes {
     pub base__: ::windows_sys::core::IUnknown,
@@ -456,6 +468,9 @@ pub struct IFillLockBytes {
     #[cfg(not(feature = "Win32_Foundation"))]
     Terminate: usize,
 }
+impl ::windows_sys::core::Interface for IFillLockBytes {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2580213776, data2: 16734, data3: 4559, data4: [136, 20, 0, 170, 0, 181, 105, 245] };
+}
 #[repr(C)]
 pub struct ILayoutStorage {
     pub base__: ::windows_sys::core::IUnknown,
@@ -464,6 +479,9 @@ pub struct ILayoutStorage {
     pub EndMonitor: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub ReLayoutDocfile: unsafe extern "system" fn(this: *mut *mut Self, pwcsnewdfname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
     pub ReLayoutDocfileOnILockBytes: unsafe extern "system" fn(this: *mut *mut Self, pilockbytes: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ILayoutStorage {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 242044304, data2: 26424, data3: 4559, data4: [150, 8, 0, 170, 0, 104, 13, 180] };
 }
 #[repr(C)]
 pub struct ILockBytes {
@@ -479,6 +497,9 @@ pub struct ILockBytes {
     #[cfg(not(feature = "Win32_Foundation"))]
     Stat: usize,
 }
+impl ::windows_sys::core::Interface for ILockBytes {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 10, data2: 0, data3: 0, data4: [192, 0, 0, 0, 0, 0, 0, 70] };
+}
 #[repr(C)]
 pub struct IPersistStorage {
     pub base__: super::IPersist,
@@ -492,6 +513,9 @@ pub struct IPersistStorage {
     pub SaveCompleted: unsafe extern "system" fn(this: *mut *mut Self, pstgnew: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub HandsOffStorage: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPersistStorage {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 266, data2: 0, data3: 0, data4: [192, 0, 0, 0, 0, 0, 0, 70] };
+}
 #[repr(C)]
 pub struct IPropertyBag {
     pub base__: ::windows_sys::core::IUnknown,
@@ -503,6 +527,9 @@ pub struct IPropertyBag {
     pub Write: unsafe extern "system" fn(this: *mut *mut Self, pszpropname: ::windows_sys::core::PCWSTR, pvar: *const super::VARIANT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Ole")))]
     Write: usize,
+}
+impl ::windows_sys::core::Interface for IPropertyBag {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1428630016, data2: 17099, data3: 4558, data4: [129, 53, 0, 170, 0, 75, 184, 81] };
 }
 #[repr(C)]
 pub struct IPropertyBag2 {
@@ -519,6 +546,9 @@ pub struct IPropertyBag2 {
     pub GetPropertyInfo: unsafe extern "system" fn(this: *mut *mut Self, iproperty: u32, cproperties: u32, ppropbag: *mut PROPBAG2, pcproperties: *mut u32) -> ::windows_sys::core::HRESULT,
     pub LoadObject: unsafe extern "system" fn(this: *mut *mut Self, pstrname: ::windows_sys::core::PCWSTR, dwhint: u32, punkobject: *mut ::core::ffi::c_void, perrlog: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPropertyBag2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 586504322, data2: 10251, data3: 4560, data4: [168, 169, 0, 160, 201, 12, 32, 4] };
+}
 #[repr(C)]
 pub struct IPropertySetStorage {
     pub base__: ::windows_sys::core::IUnknown,
@@ -526,6 +556,9 @@ pub struct IPropertySetStorage {
     pub Open: unsafe extern "system" fn(this: *mut *mut Self, rfmtid: *const ::windows_sys::core::GUID, grfmode: u32, ppprstg: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Delete: unsafe extern "system" fn(this: *mut *mut Self, rfmtid: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub Enum: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPropertySetStorage {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 314, data2: 0, data3: 0, data4: [192, 0, 0, 0, 0, 0, 0, 70] };
 }
 #[repr(C)]
 pub struct IPropertyStorage {
@@ -555,10 +588,16 @@ pub struct IPropertyStorage {
     #[cfg(not(feature = "Win32_Foundation"))]
     Stat: usize,
 }
+impl ::windows_sys::core::Interface for IPropertyStorage {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 312, data2: 0, data3: 0, data4: [192, 0, 0, 0, 0, 0, 0, 70] };
+}
 #[repr(C)]
 pub struct IRootStorage {
     pub base__: ::windows_sys::core::IUnknown,
     pub SwitchToFile: unsafe extern "system" fn(this: *mut *mut Self, pszfile: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IRootStorage {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 18, data2: 0, data3: 0, data4: [192, 0, 0, 0, 0, 0, 0, 70] };
 }
 #[repr(C)]
 pub struct IStorage {
@@ -584,6 +623,9 @@ pub struct IStorage {
     pub Stat: unsafe extern "system" fn(this: *mut *mut Self, pstatstg: *mut super::STATSTG, grfstatflag: u32) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     Stat: usize,
+}
+impl ::windows_sys::core::Interface for IStorage {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 11, data2: 0, data3: 0, data4: [192, 0, 0, 0, 0, 0, 0, 70] };
 }
 #[doc = "*Required features: `\"Win32_System_Com_StructuredStorage\"`*"]
 pub type LOCKTYPE = i32;

@@ -4,6 +4,9 @@ pub struct IStoreAcquireLicenseResult {
     pub StorePackageLicense: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub ExtendedError: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IStoreAcquireLicenseResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4225209453, data2: 61504, data3: 19635, data4: [154, 57, 41, 188, 236, 219, 226, 45] };
+}
 #[repr(C)]
 pub struct IStoreAppLicense {
     pub base__: ::windows_sys::core::IInspectable,
@@ -26,10 +29,16 @@ pub struct IStoreAppLicense {
     pub IsTrialOwnedByThisUser: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub TrialUniqueId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IStoreAppLicense {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4085905886, data2: 29632, data3: 17870, data4: [155, 171, 178, 254, 62, 94, 175, 211] };
+}
 #[repr(C)]
 pub struct IStoreAppLicense2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub IsDiscLicense: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IStoreAppLicense2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3026611857, data2: 17475, data3: 16563, data4: [153, 63, 40, 144, 68, 53, 189, 198] };
 }
 #[repr(C)]
 pub struct IStoreAvailability {
@@ -50,12 +59,18 @@ pub struct IStoreAvailability {
     #[cfg(not(feature = "Foundation"))]
     RequestPurchaseWithPurchasePropertiesAsync: usize,
 }
+impl ::windows_sys::core::Interface for IStoreAvailability {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4194698021, data2: 4093, data3: 17555, data4: [173, 67, 241, 249, 145, 143, 105, 250] };
+}
 #[repr(C)]
 pub struct IStoreCanAcquireLicenseResult {
     pub base__: ::windows_sys::core::IInspectable,
     pub ExtendedError: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
     pub LicensableSku: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub Status: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut StoreCanLicenseStatus) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IStoreCanAcquireLicenseResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 979975603, data2: 136, data3: 18479, data4: [134, 213, 189, 70, 82, 38, 99, 173] };
 }
 #[repr(C)]
 pub struct IStoreCollectionData {
@@ -81,6 +96,9 @@ pub struct IStoreCollectionData {
     TrialTimeRemaining: usize,
     pub ExtendedJsonData: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IStoreCollectionData {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2326053811, data2: 23475, data3: 17434, data4: [42, 180, 77, 171, 115, 213, 206, 103] };
+}
 #[repr(C)]
 pub struct IStoreConsumableResult {
     pub base__: ::windows_sys::core::IInspectable,
@@ -88,6 +106,9 @@ pub struct IStoreConsumableResult {
     pub TrackingId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub BalanceRemaining: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
     pub ExtendedError: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IStoreConsumableResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3932007282, data2: 27136, data3: 16466, data4: [190, 91, 191, 218, 180, 67, 51, 82] };
 }
 #[repr(C)]
 pub struct IStoreContext {
@@ -177,6 +198,9 @@ pub struct IStoreContext {
     #[cfg(not(feature = "Foundation_Collections"))]
     RequestDownloadAndInstallStorePackagesAsync: usize,
 }
+impl ::windows_sys::core::Interface for IStoreContext {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2895689406, data2: 62717, data3: 18706, data4: [186, 189, 80, 53, 229, 232, 188, 171] };
+}
 #[repr(C)]
 pub struct IStoreContext2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -184,6 +208,9 @@ pub struct IStoreContext2 {
     pub FindStoreProductForPackageAsync: unsafe extern "system" fn(this: *mut *mut Self, productkinds: *mut ::core::ffi::c_void, package: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "ApplicationModel", feature = "Foundation_Collections")))]
     FindStoreProductForPackageAsync: usize,
+}
+impl ::windows_sys::core::Interface for IStoreContext2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 414995674, data2: 31705, data3: 17708, data4: [145, 22, 59, 189, 6, 255, 198, 58] };
 }
 #[repr(C)]
 pub struct IStoreContext3 {
@@ -242,6 +269,9 @@ pub struct IStoreContext3 {
     #[cfg(not(feature = "Foundation"))]
     UninstallStorePackageByStoreIdAsync: usize,
 }
+impl ::windows_sys::core::Interface for IStoreContext3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3798083274, data2: 6657, data3: 18224, data4: [133, 166, 236, 200, 150, 228, 174, 56] };
+}
 #[repr(C)]
 pub struct IStoreContext4 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -254,6 +284,9 @@ pub struct IStoreContext4 {
     #[cfg(not(feature = "Foundation_Collections"))]
     SetInstallOrderForAssociatedStoreQueueItemsAsync: usize,
 }
+impl ::windows_sys::core::Interface for IStoreContext4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2946264937, data2: 48801, data3: 19444, data4: [142, 116, 174, 3, 226, 6, 198, 176] };
+}
 #[repr(C)]
 pub struct IStoreContextStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -262,6 +295,9 @@ pub struct IStoreContextStatics {
     pub GetForUser: unsafe extern "system" fn(this: *mut *mut Self, user: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "System"))]
     GetForUser: usize,
+}
+impl ::windows_sys::core::Interface for IStoreContextStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2617699935, data2: 5568, data3: 20082, data4: [147, 48, 214, 25, 28, 235, 209, 156] };
 }
 #[repr(C)]
 pub struct IStoreImage {
@@ -275,6 +311,9 @@ pub struct IStoreImage {
     pub Height: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
     pub Caption: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IStoreImage {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 136303176, data2: 44468, data3: 19300, data4: [169, 147, 120, 71, 137, 146, 110, 213] };
+}
 #[repr(C)]
 pub struct IStoreLicense {
     pub base__: ::windows_sys::core::IInspectable,
@@ -287,11 +326,17 @@ pub struct IStoreLicense {
     pub ExtendedJsonData: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub InAppOfferToken: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IStoreLicense {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 651990393, data2: 19535, data3: 20272, data4: [188, 137, 100, 159, 96, 227, 96, 85] };
+}
 #[repr(C)]
 pub struct IStorePackageInstallOptions {
     pub base__: ::windows_sys::core::IInspectable,
     pub AllowForcedAppRestart: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub SetAllowForcedAppRestart: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IStorePackageInstallOptions {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 490562316, data2: 3277, data3: 17629, data4: [140, 89, 128, 129, 10, 114, 153, 115] };
 }
 #[repr(C)]
 pub struct IStorePackageLicense {
@@ -311,6 +356,9 @@ pub struct IStorePackageLicense {
     pub IsValid: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub ReleaseLicense: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IStorePackageLicense {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 205936404, data2: 5345, data3: 18803, data4: [189, 20, 247, 119, 36, 39, 30, 153] };
+}
 #[repr(C)]
 pub struct IStorePackageUpdate {
     pub base__: ::windows_sys::core::IInspectable,
@@ -319,6 +367,9 @@ pub struct IStorePackageUpdate {
     #[cfg(not(feature = "ApplicationModel"))]
     Package: usize,
     pub Mandatory: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IStorePackageUpdate {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 336568656, data2: 15551, data3: 18997, data4: [185, 31, 72, 39, 28, 49, 176, 114] };
 }
 #[repr(C)]
 pub struct IStorePackageUpdateResult {
@@ -329,6 +380,9 @@ pub struct IStorePackageUpdateResult {
     #[cfg(not(feature = "Foundation_Collections"))]
     StorePackageUpdateStatuses: usize,
 }
+impl ::windows_sys::core::Interface for IStorePackageUpdateResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3885056749, data2: 25081, data3: 18579, data4: [180, 254, 207, 25, 22, 3, 175, 123] };
+}
 #[repr(C)]
 pub struct IStorePackageUpdateResult2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -336,6 +390,9 @@ pub struct IStorePackageUpdateResult2 {
     pub StoreQueueItems: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     StoreQueueItems: usize,
+}
+impl ::windows_sys::core::Interface for IStorePackageUpdateResult2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 119341358, data2: 48226, data3: 20270, data4: [135, 234, 153, 216, 1, 174, 175, 152] };
 }
 #[repr(C)]
 pub struct IStorePrice {
@@ -349,6 +406,9 @@ pub struct IStorePrice {
     SaleEndDate: usize,
     pub CurrencyCode: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub FormattedRecurrencePrice: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IStorePrice {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1438291140, data2: 5617, data3: 16508, data4: [143, 6, 0, 99, 128, 244, 223, 11] };
 }
 #[repr(C)]
 pub struct IStoreProduct {
@@ -396,6 +456,9 @@ pub struct IStoreProduct {
     RequestPurchaseWithPurchasePropertiesAsync: usize,
     pub InAppOfferToken: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IStoreProduct {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 839789650, data2: 55136, data3: 17674, data4: [164, 43, 103, 209, 233, 1, 172, 144] };
+}
 #[repr(C)]
 pub struct IStoreProductOptions {
     pub base__: ::windows_sys::core::IInspectable,
@@ -403,6 +466,9 @@ pub struct IStoreProductOptions {
     pub ActionFilters: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     ActionFilters: usize,
+}
+impl ::windows_sys::core::Interface for IStoreProductOptions {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1530175737, data2: 41235, data3: 18449, data4: [131, 38, 22, 25, 156, 146, 127, 49] };
 }
 #[repr(C)]
 pub struct IStoreProductPagedQueryResult {
@@ -418,6 +484,9 @@ pub struct IStoreProductPagedQueryResult {
     #[cfg(not(feature = "Foundation"))]
     GetNextAsync: usize,
 }
+impl ::windows_sys::core::Interface for IStoreProductPagedQueryResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3374782661, data2: 19925, data3: 18537, data4: [164, 98, 236, 198, 135, 46, 67, 197] };
+}
 #[repr(C)]
 pub struct IStoreProductQueryResult {
     pub base__: ::windows_sys::core::IInspectable,
@@ -427,11 +496,17 @@ pub struct IStoreProductQueryResult {
     Products: usize,
     pub ExtendedError: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IStoreProductQueryResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3624265413, data2: 54358, data3: 20470, data4: [128, 73, 144, 118, 213, 22, 95, 115] };
+}
 #[repr(C)]
 pub struct IStoreProductResult {
     pub base__: ::windows_sys::core::IInspectable,
     pub Product: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub ExtendedError: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IStoreProductResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3077001075, data2: 15495, data3: 20193, data4: [130, 1, 244, 40, 53, 155, 211, 175] };
 }
 #[repr(C)]
 pub struct IStorePurchaseProperties {
@@ -441,16 +516,25 @@ pub struct IStorePurchaseProperties {
     pub ExtendedJsonData: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub SetExtendedJsonData: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IStorePurchaseProperties {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2204268787, data2: 65415, data3: 17252, data4: [165, 180, 253, 33, 83, 235, 228, 59] };
+}
 #[repr(C)]
 pub struct IStorePurchasePropertiesFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IStorePurchasePropertiesFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2808673694, data2: 65277, data3: 18591, data4: [154, 23, 34, 165, 147, 230, 139, 157] };
 }
 #[repr(C)]
 pub struct IStorePurchaseResult {
     pub base__: ::windows_sys::core::IInspectable,
     pub Status: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut StorePurchaseStatus) -> ::windows_sys::core::HRESULT,
     pub ExtendedError: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IStorePurchaseResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2916255058, data2: 63850, data3: 17981, data4: [167, 187, 194, 11, 79, 202, 105, 82] };
 }
 #[repr(C)]
 pub struct IStoreQueueItem {
@@ -476,6 +560,9 @@ pub struct IStoreQueueItem {
     #[cfg(not(feature = "Foundation"))]
     RemoveStatusChanged: usize,
 }
+impl ::windows_sys::core::Interface for IStoreQueueItem {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1456849707, data2: 63536, data3: 17043, data4: [145, 136, 202, 210, 220, 222, 115, 87] };
+}
 #[repr(C)]
 pub struct IStoreQueueItem2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -492,10 +579,16 @@ pub struct IStoreQueueItem2 {
     #[cfg(not(feature = "Foundation"))]
     ResumeInstallAsync: usize,
 }
+impl ::windows_sys::core::Interface for IStoreQueueItem2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1766399144, data2: 6868, data3: 17532, data4: [173, 140, 169, 80, 53, 246, 77, 130] };
+}
 #[repr(C)]
 pub struct IStoreQueueItemCompletedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub Status: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IStoreQueueItemCompletedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 306700140, data2: 46154, data3: 17307, data4: [187, 7, 29, 48, 3, 208, 5, 194] };
 }
 #[repr(C)]
 pub struct IStoreQueueItemStatus {
@@ -505,6 +598,9 @@ pub struct IStoreQueueItemStatus {
     pub UpdateStatus: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::core::mem::ManuallyDrop<StorePackageUpdateStatus>) -> ::windows_sys::core::HRESULT,
     pub ExtendedError: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IStoreQueueItemStatus {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2614524271, data2: 40131, data3: 20163, data4: [178, 239, 123, 228, 51, 179, 1, 116] };
+}
 #[repr(C)]
 pub struct IStoreRateAndReviewResult {
     pub base__: ::windows_sys::core::IInspectable,
@@ -512,6 +608,9 @@ pub struct IStoreRateAndReviewResult {
     pub ExtendedJsonData: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub WasUpdated: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub Status: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut StoreRateAndReviewStatus) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IStoreRateAndReviewResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2636160342, data2: 42677, data3: 16673, data4: [155, 97, 238, 109, 15, 189, 189, 187] };
 }
 #[repr(C)]
 pub struct IStoreRequestHelperStatics {
@@ -521,11 +620,17 @@ pub struct IStoreRequestHelperStatics {
     #[cfg(not(feature = "Foundation"))]
     SendRequestAsync: usize,
 }
+impl ::windows_sys::core::Interface for IStoreRequestHelperStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1827005945, data2: 41161, data3: 19244, data4: [150, 166, 161, 113, 198, 48, 3, 141] };
+}
 #[repr(C)]
 pub struct IStoreSendRequestResult {
     pub base__: ::windows_sys::core::IInspectable,
     pub Response: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub ExtendedError: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IStoreSendRequestResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3342515808, data2: 33394, data3: 17666, data4: [138, 105, 110, 117, 21, 58, 66, 153] };
 }
 #[repr(C)]
 pub struct IStoreSendRequestResult2 {
@@ -534,6 +639,9 @@ pub struct IStoreSendRequestResult2 {
     pub HttpStatusCode: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Web::Http::HttpStatusCode) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Web_Http"))]
     HttpStatusCode: usize,
+}
+impl ::windows_sys::core::Interface for IStoreSendRequestResult2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 687941999, data2: 49328, data3: 18896, data4: [142, 141, 170, 148, 10, 249, 193, 11] };
 }
 #[repr(C)]
 pub struct IStoreSku {
@@ -579,6 +687,9 @@ pub struct IStoreSku {
     pub IsSubscription: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub SubscriptionInfo: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IStoreSku {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 964587349, data2: 17472, data3: 20227, data4: [134, 60, 145, 243, 254, 200, 61, 121] };
+}
 #[repr(C)]
 pub struct IStoreSubscriptionInfo {
     pub base__: ::windows_sys::core::IInspectable,
@@ -588,11 +699,17 @@ pub struct IStoreSubscriptionInfo {
     pub TrialPeriod: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
     pub TrialPeriodUnit: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut StoreDurationUnit) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IStoreSubscriptionInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1099528042, data2: 1369, data3: 17324, data4: [169, 198, 58, 176, 1, 31, 184, 235] };
+}
 #[repr(C)]
 pub struct IStoreUninstallStorePackageResult {
     pub base__: ::windows_sys::core::IInspectable,
     pub ExtendedError: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
     pub Status: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut StoreUninstallStorePackageStatus) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IStoreUninstallStorePackageResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2680830461, data2: 4719, data3: 19674, data4: [184, 1, 19, 70, 184, 208, 162, 96] };
 }
 #[repr(C)]
 pub struct IStoreVideo {
@@ -606,6 +723,9 @@ pub struct IStoreVideo {
     pub Height: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
     pub Caption: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub PreviewImage: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IStoreVideo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4067209604, data2: 28510, data3: 19906, data4: [136, 108, 60, 99, 8, 60, 47, 148] };
 }
 pub type StoreAcquireLicenseResult = *mut ::core::ffi::c_void;
 pub type StoreAppLicense = *mut ::core::ffi::c_void;

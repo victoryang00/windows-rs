@@ -1126,6 +1126,10 @@ pub struct IWSMan {
     Error: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWSMan {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 420316727, data2: 23763, data3: 18797, data4: [173, 36, 105, 99, 107, 181, 163, 181] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IWSManConnectionOptions {
     pub base__: super::Com::IDispatch,
@@ -1143,6 +1147,10 @@ pub struct IWSManConnectionOptions {
     SetPassword: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWSManConnectionOptions {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4144293985, data2: 40530, data3: 17999, data4: [183, 134, 218, 94, 178, 50, 15, 221] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IWSManConnectionOptionsEx {
     pub base__: IWSManConnectionOptions,
@@ -1154,6 +1162,10 @@ pub struct IWSManConnectionOptionsEx {
     pub SetCertificateThumbprint: unsafe extern "system" fn(this: *mut *mut Self, thumbprint: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     SetCertificateThumbprint: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWSManConnectionOptionsEx {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4014206455, data2: 10824, data3: 19859, data4: [149, 38, 139, 214, 171, 109, 74, 107] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1172,6 +1184,10 @@ pub struct IWSManConnectionOptionsEx2 {
     pub ProxyAuthenticationUseDigest: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWSManConnectionOptionsEx2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4110469612, data2: 9454, data3: 18603, data4: [179, 141, 252, 154, 22, 76, 101, 142] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IWSManEnumerator {
     pub base__: super::Com::IDispatch,
@@ -1184,6 +1200,10 @@ pub struct IWSManEnumerator {
     pub Error: unsafe extern "system" fn(this: *mut *mut Self, value: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     Error: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWSManEnumerator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4081417385, data2: 43961, data3: 20389, data4: [184, 80, 144, 232, 202, 48, 14, 127] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1217,10 +1237,18 @@ pub struct IWSManEx {
     pub EnumerationFlagReturnObject: unsafe extern "system" fn(this: *mut *mut Self, flags: *mut i32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWSManEx {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 760462762, data2: 31118, data3: 18918, data4: [161, 170, 116, 208, 18, 86, 244, 17] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IWSManEx2 {
     pub base__: IWSManEx,
     pub SessionFlagUseClientCertificate: unsafe extern "system" fn(this: *mut *mut Self, flags: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWSManEx2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 488332000, data2: 17113, data3: 16417, data4: [130, 97, 57, 135, 97, 149, 18, 233] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1235,6 +1263,10 @@ pub struct IWSManEx3 {
     pub SessionFlagUseSsl: unsafe extern "system" fn(this: *mut *mut Self, flags: *mut i32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWSManEx3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1677781350, data2: 285, data3: 20140, data4: [132, 116, 4, 158, 8, 72, 175, 173] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IWSManInternal {
     pub base__: super::Com::IDispatch,
@@ -1242,6 +1274,10 @@ pub struct IWSManInternal {
     pub ConfigSDDL: unsafe extern "system" fn(this: *mut *mut Self, session: *mut ::core::ffi::c_void, resourceuri: ::core::mem::ManuallyDrop<super::Com::VARIANT>, flags: i32, resource: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     ConfigSDDL: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWSManInternal {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 78523165, data2: 39252, data3: 19865, data4: [148, 169, 169, 97, 231, 44, 58, 19] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1294,9 +1330,16 @@ pub struct IWSManResourceLocator {
     #[cfg(not(feature = "Win32_Foundation"))]
     Error: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWSManResourceLocator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2812394024, data2: 56897, data3: 18026, data4: [173, 10, 196, 5, 158, 173, 116, 40] };
+}
 #[repr(C)]
 pub struct IWSManResourceLocatorInternal {
     pub base__: ::windows_sys::core::IUnknown,
+}
+impl ::windows_sys::core::Interface for IWSManResourceLocatorInternal {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4026198743, data2: 32456, data3: 18198, data4: [185, 190, 242, 231, 233, 251, 74, 219] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1338,6 +1381,10 @@ pub struct IWSManSession {
     pub SetBatchItems: unsafe extern "system" fn(this: *mut *mut Self, value: i32) -> ::windows_sys::core::HRESULT,
     pub Timeout: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
     pub SetTimeout: unsafe extern "system" fn(this: *mut *mut Self, value: i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWSManSession {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4236573784, data2: 4742, data3: 16580, data4: [157, 160, 200, 239, 110, 194, 65, 224] };
 }
 #[repr(C)]
 pub struct WSMAN_API(pub u8);

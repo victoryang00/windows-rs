@@ -42,6 +42,9 @@ pub struct IAudioEndpointFormatControl {
     pub base__: ::windows_sys::core::IUnknown,
     pub ResetToDefault: unsafe extern "system" fn(this: *mut *mut Self, resetflags: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAudioEndpointFormatControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2018311488, data2: 40841, data3: 17774, data4: [161, 166, 135, 59, 0, 106, 102, 78] };
+}
 #[repr(C)]
 pub struct IAudioEndpointLastBufferControl {
     pub base__: ::windows_sys::core::IUnknown,
@@ -54,17 +57,26 @@ pub struct IAudioEndpointLastBufferControl {
     #[cfg(not(feature = "Win32_Media_Audio_Apo"))]
     ReleaseOutputDataPointerForLastBuffer: usize,
 }
+impl ::windows_sys::core::Interface for IAudioEndpointLastBufferControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4166127059, data2: 36765, data3: 17463, data4: [152, 97, 98, 245, 132, 195, 61, 214] };
+}
 #[repr(C)]
 pub struct IAudioEndpointOffloadStreamMeter {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetMeterChannelCount: unsafe extern "system" fn(this: *mut *mut Self, pu32channelcount: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetMeteringData: unsafe extern "system" fn(this: *mut *mut Self, u32channelcount: u32, pf32peakvalues: *mut f32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAudioEndpointOffloadStreamMeter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3780406734, data2: 40401, data3: 16779, data4: [154, 178, 52, 140, 237, 22, 28, 134] };
+}
 #[repr(C)]
 pub struct IAudioEndpointOffloadStreamMute {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetMute: unsafe extern "system" fn(this: *mut *mut Self, bmuted: u8) -> ::windows_sys::core::HRESULT,
     pub GetMute: unsafe extern "system" fn(this: *mut *mut Self, pbmuted: *mut u8) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAudioEndpointOffloadStreamMute {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3756135253, data2: 24258, data3: 16608, data4: [141, 107, 113, 10, 195, 192, 2, 73] };
 }
 #[repr(C)]
 pub struct IAudioEndpointOffloadStreamVolume {
@@ -75,6 +87,9 @@ pub struct IAudioEndpointOffloadStreamVolume {
     #[cfg(not(feature = "Win32_Media_KernelStreaming"))]
     SetChannelVolumes: usize,
     pub GetChannelVolumes: unsafe extern "system" fn(this: *mut *mut Self, u32channelcount: u32, pf32volumes: *mut f32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAudioEndpointOffloadStreamVolume {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1693572425, data2: 29130, data3: 17025, data4: [134, 114, 58, 158, 221, 209, 208, 182] };
 }
 #[repr(C)]
 pub struct IAudioEndpointVolume {
@@ -104,6 +119,9 @@ pub struct IAudioEndpointVolume {
     pub QueryHardwareSupport: unsafe extern "system" fn(this: *mut *mut Self, pdwhardwaresupportmask: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetVolumeRange: unsafe extern "system" fn(this: *mut *mut Self, pflvolumemindb: *mut f32, pflvolumemaxdb: *mut f32, pflvolumeincrementdb: *mut f32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAudioEndpointVolume {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1558129794, data2: 33822, data3: 17734, data4: [151, 34, 12, 247, 64, 120, 34, 154] };
+}
 #[repr(C)]
 pub struct IAudioEndpointVolumeCallback {
     pub base__: ::windows_sys::core::IUnknown,
@@ -112,10 +130,16 @@ pub struct IAudioEndpointVolumeCallback {
     #[cfg(not(feature = "Win32_Foundation"))]
     OnNotify: usize,
 }
+impl ::windows_sys::core::Interface for IAudioEndpointVolumeCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1702364410, data2: 54957, data3: 17558, data4: [138, 96, 53, 39, 82, 175, 79, 137] };
+}
 #[repr(C)]
 pub struct IAudioEndpointVolumeEx {
     pub base__: IAudioEndpointVolume,
     pub GetVolumeRangeChannel: unsafe extern "system" fn(this: *mut *mut Self, ichannel: u32, pflvolumemindb: *mut f32, pflvolumemaxdb: *mut f32, pflvolumeincrementdb: *mut f32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAudioEndpointVolumeEx {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1726027652, data2: 63125, data3: 20264, data4: [165, 5, 167, 8, 0, 129, 167, 143] };
 }
 #[repr(C)]
 pub struct IAudioLfxControl {
@@ -129,6 +153,9 @@ pub struct IAudioLfxControl {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetLocalEffectsState: usize,
 }
+impl ::windows_sys::core::Interface for IAudioLfxControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 124414242, data2: 55298, data3: 20355, data4: [186, 246, 64, 157, 156, 161, 27, 254] };
+}
 #[repr(C)]
 pub struct IAudioMeterInformation {
     pub base__: ::windows_sys::core::IUnknown,
@@ -136,6 +163,9 @@ pub struct IAudioMeterInformation {
     pub GetMeteringChannelCount: unsafe extern "system" fn(this: *mut *mut Self, pnchannelcount: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetChannelsPeakValues: unsafe extern "system" fn(this: *mut *mut Self, u32channelcount: u32, afpeakvalues: *mut f32) -> ::windows_sys::core::HRESULT,
     pub QueryHardwareSupport: unsafe extern "system" fn(this: *mut *mut Self, pdwhardwaresupportmask: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAudioMeterInformation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3223459574, data2: 35943, data3: 19291, data4: [157, 0, 208, 8, 231, 62, 0, 100] };
 }
 #[repr(C)]
 pub struct IHardwareAudioEngineBase {
@@ -154,4 +184,7 @@ pub struct IHardwareAudioEngineBase {
     pub GetGfxState: unsafe extern "system" fn(this: *mut *mut Self, pdevice: *mut ::core::ffi::c_void, _pbenable: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetGfxState: usize,
+}
+impl ::windows_sys::core::Interface for IHardwareAudioEngineBase {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3990676452, data2: 62401, data3: 17722, data4: [180, 97, 34, 53, 99, 203, 216, 134] };
 }

@@ -9,6 +9,9 @@ pub struct IDetectedFace {
     #[cfg(not(feature = "Graphics_Imaging"))]
     FaceBox: usize,
 }
+impl ::windows_sys::core::Interface for IDetectedFace {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2181092436, data2: 26300, data3: 13535, data4: [148, 16, 232, 148, 0, 25, 84, 20] };
+}
 #[repr(C)]
 pub struct IFaceDetector {
     pub base__: ::windows_sys::core::IInspectable,
@@ -37,6 +40,9 @@ pub struct IFaceDetector {
     #[cfg(not(feature = "Graphics_Imaging"))]
     SetMaxDetectableFaceSize: usize,
 }
+impl ::windows_sys::core::Interface for IFaceDetector {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 381055708, data2: 65135, data3: 12567, data4: [141, 149, 195, 240, 77, 81, 99, 12] };
+}
 #[repr(C)]
 pub struct IFaceDetectorStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -53,6 +59,9 @@ pub struct IFaceDetectorStatics {
     #[cfg(not(feature = "Graphics_Imaging"))]
     IsBitmapPixelFormatSupported: usize,
     pub IsSupported: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IFaceDetectorStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3154390375, data2: 36935, data3: 13302, data4: [136, 27, 103, 70, 193, 178, 24, 184] };
 }
 #[repr(C)]
 pub struct IFaceTracker {
@@ -78,6 +87,9 @@ pub struct IFaceTracker {
     #[cfg(not(feature = "Graphics_Imaging"))]
     SetMaxDetectableFaceSize: usize,
 }
+impl ::windows_sys::core::Interface for IFaceTracker {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1806073228, data2: 43073, data3: 17440, data4: [147, 230, 36, 32, 161, 136, 79, 207] };
+}
 #[repr(C)]
 pub struct IFaceTrackerStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -94,4 +106,7 @@ pub struct IFaceTrackerStatics {
     #[cfg(not(feature = "Graphics_Imaging"))]
     IsBitmapPixelFormatSupported: usize,
     pub IsSupported: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IFaceTrackerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3915551128, data2: 6145, data3: 16293, data4: [147, 46, 49, 215, 103, 175, 108, 77] };
 }

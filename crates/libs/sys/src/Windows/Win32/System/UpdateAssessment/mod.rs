@@ -6,6 +6,9 @@ pub struct IWaaSAssessor {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetOSUpdateAssessment: usize,
 }
+impl ::windows_sys::core::Interface for IWaaSAssessor {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 591903727, data2: 6715, data3: 17828, data4: [144, 45, 62, 9, 194, 105, 180, 94] };
+}
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_UpdateAssessment\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]

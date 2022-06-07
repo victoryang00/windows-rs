@@ -333,14 +333,23 @@ pub struct IMarshal {
     pub ReleaseMarshalData: unsafe extern "system" fn(this: *mut *mut Self, pstm: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub DisconnectObject: unsafe extern "system" fn(this: *mut *mut Self, dwreserved: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMarshal {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3, data2: 0, data3: 0, data4: [192, 0, 0, 0, 0, 0, 0, 70] };
+}
 #[repr(C)]
 pub struct IMarshal2 {
     pub base__: IMarshal,
+}
+impl ::windows_sys::core::Interface for IMarshal2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 463, data2: 0, data3: 0, data4: [192, 0, 0, 0, 0, 0, 0, 70] };
 }
 #[repr(C)]
 pub struct IMarshalingStream {
     pub base__: super::IStream,
     pub GetMarshalingContextAttribute: unsafe extern "system" fn(this: *mut *mut Self, attribute: super::CO_MARSHALING_CONTEXT_ATTRIBUTES, pattributevalue: *mut usize) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMarshalingStream {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3639801318, data2: 24834, data3: 18531, data4: [159, 38, 56, 154, 70, 118, 239, 222] };
 }
 #[doc = "*Required features: `\"Win32_System_Com_Marshal\"`*"]
 pub type STDMSHLFLAGS = i32;

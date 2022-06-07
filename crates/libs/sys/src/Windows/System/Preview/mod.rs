@@ -37,6 +37,10 @@ pub struct ITwoPanelHingedDevicePosturePreview {
     RemovePostureChanged: usize,
 }
 #[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for ITwoPanelHingedDevicePosturePreview {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1914985521, data2: 19257, data3: 17062, data4: [142, 115, 114, 53, 173, 225, 104, 83] };
+}
+#[cfg(feature = "deprecated")]
 #[repr(C)]
 pub struct ITwoPanelHingedDevicePosturePreviewReading {
     pub base__: ::windows_sys::core::IInspectable,
@@ -66,6 +70,10 @@ pub struct ITwoPanelHingedDevicePosturePreviewReading {
     Panel2Id: usize,
 }
 #[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for ITwoPanelHingedDevicePosturePreviewReading {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2686784594, data2: 19158, data3: 19256, data4: [132, 38, 197, 154, 21, 73, 58, 125] };
+}
+#[cfg(feature = "deprecated")]
 #[repr(C)]
 pub struct ITwoPanelHingedDevicePosturePreviewReadingChangedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
@@ -75,6 +83,10 @@ pub struct ITwoPanelHingedDevicePosturePreviewReadingChangedEventArgs {
     Reading: usize,
 }
 #[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for ITwoPanelHingedDevicePosturePreviewReadingChangedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 757930950, data2: 718, data3: 18250, data4: [165, 86, 167, 91, 28, 249, 58, 3] };
+}
+#[cfg(feature = "deprecated")]
 #[repr(C)]
 pub struct ITwoPanelHingedDevicePosturePreviewStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -82,6 +94,10 @@ pub struct ITwoPanelHingedDevicePosturePreviewStatics {
     pub GetDefaultAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
     GetDefaultAsync: usize,
+}
+#[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for ITwoPanelHingedDevicePosturePreviewStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 205992914, data2: 22496, data3: 16768, data4: [189, 94, 243, 26, 33, 56, 66, 62] };
 }
 pub type TwoPanelHingedDevicePosturePreview = *mut ::core::ffi::c_void;
 pub type TwoPanelHingedDevicePosturePreviewReading = *mut ::core::ffi::c_void;

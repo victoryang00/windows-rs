@@ -56,6 +56,9 @@ pub struct IGameBarStatics {
     pub Visible: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub IsInputRedirected: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IGameBarStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 498705042, data2: 52344, data3: 16755, data4: [190, 69, 182, 30, 103, 40, 62, 167] };
+}
 #[repr(C)]
 pub struct IGameChatMessageReceivedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
@@ -65,12 +68,18 @@ pub struct IGameChatMessageReceivedEventArgs {
     pub Message: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub Origin: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut GameChatMessageOrigin) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IGameChatMessageReceivedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2726429169, data2: 16313, data3: 20034, data4: [164, 3, 122, 252, 226, 2, 59, 30] };
+}
 #[repr(C)]
 pub struct IGameChatOverlay {
     pub base__: ::windows_sys::core::IInspectable,
     pub DesiredPosition: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut GameChatOverlayPosition) -> ::windows_sys::core::HRESULT,
     pub SetDesiredPosition: unsafe extern "system" fn(this: *mut *mut Self, value: GameChatOverlayPosition) -> ::windows_sys::core::HRESULT,
     pub AddMessage: unsafe extern "system" fn(this: *mut *mut Self, sender: ::windows_sys::core::HSTRING, message: ::windows_sys::core::HSTRING, origin: GameChatMessageOrigin) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IGameChatOverlay {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4224075877, data2: 63228, data3: 19016, data4: [174, 7, 3, 172, 110, 212, 55, 4] };
 }
 #[repr(C)]
 pub struct IGameChatOverlayMessageSource {
@@ -88,10 +97,16 @@ pub struct IGameChatOverlayMessageSource {
     #[cfg(not(feature = "Foundation"))]
     SetDelayBeforeClosingAfterMessageReceived: usize,
 }
+impl ::windows_sys::core::Interface for IGameChatOverlayMessageSource {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 504853399, data2: 23035, data3: 20303, data4: [142, 154, 128, 172, 248, 23, 116, 60] };
+}
 #[repr(C)]
 pub struct IGameChatOverlayStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub GetDefault: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IGameChatOverlayStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2309813780, data2: 30823, data3: 18935, data4: [150, 135, 37, 217, 219, 244, 68, 209] };
 }
 #[repr(C)]
 pub struct IGameUIProviderActivatedEventArgs {
@@ -104,4 +119,7 @@ pub struct IGameUIProviderActivatedEventArgs {
     pub ReportCompleted: unsafe extern "system" fn(this: *mut *mut Self, results: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     ReportCompleted: usize,
+}
+impl ::windows_sys::core::Interface for IGameUIProviderActivatedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2813534270, data2: 51959, data3: 19949, data4: [187, 210, 71, 222, 67, 187, 109, 213] };
 }

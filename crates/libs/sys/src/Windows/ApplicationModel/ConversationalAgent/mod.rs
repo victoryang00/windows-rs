@@ -315,6 +315,9 @@ pub struct IActivationSignalDetectionConfiguration {
     #[cfg(not(feature = "Foundation"))]
     ClearTrainingDataAsync: usize,
 }
+impl ::windows_sys::core::Interface for IActivationSignalDetectionConfiguration {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1087946262, data2: 21015, data3: 22556, data4: [154, 178, 206, 155, 47, 46, 142, 0] };
+}
 #[repr(C)]
 pub struct IActivationSignalDetectionConfiguration2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -333,11 +336,17 @@ pub struct IActivationSignalDetectionConfiguration2 {
     pub SetEnabledWithResult: unsafe extern "system" fn(this: *mut *mut Self, value: bool, result__: *mut ActivationSignalDetectionConfigurationStateChangeResult) -> ::windows_sys::core::HRESULT,
     pub TrainingStepCompletionMaxAllowedTime: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IActivationSignalDetectionConfiguration2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1910091810, data2: 22060, data3: 22478, data4: [167, 139, 139, 79, 240, 20, 91, 171] };
+}
 #[repr(C)]
 pub struct IActivationSignalDetectionConfigurationCreationResult {
     pub base__: ::windows_sys::core::IInspectable,
     pub Status: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ActivationSignalDetectionConfigurationCreationStatus) -> ::windows_sys::core::HRESULT,
     pub Configuration: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IActivationSignalDetectionConfigurationCreationResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1284095003, data2: 36114, data3: 24136, data4: [167, 28, 127, 107, 193, 205, 102, 224] };
 }
 #[repr(C)]
 pub struct IActivationSignalDetector {
@@ -389,6 +398,9 @@ pub struct IActivationSignalDetector {
     #[cfg(not(feature = "Foundation"))]
     RemoveConfigurationAsync: usize,
 }
+impl ::windows_sys::core::Interface for IActivationSignalDetector {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3049206879, data2: 42192, data3: 23339, data4: [142, 101, 179, 197, 94, 231, 86, 255] };
+}
 #[repr(C)]
 pub struct IActivationSignalDetector2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -412,6 +424,9 @@ pub struct IActivationSignalDetector2 {
     pub RemoveConfigurationWithResult: unsafe extern "system" fn(this: *mut *mut Self, signalid: ::windows_sys::core::HSTRING, modelid: ::windows_sys::core::HSTRING, result__: *mut ActivationSignalDetectionConfigurationRemovalResult) -> ::windows_sys::core::HRESULT,
     pub DetectorId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IActivationSignalDetector2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3353495818, data2: 47781, data3: 22994, data4: [133, 209, 186, 66, 247, 207, 120, 201] };
+}
 #[repr(C)]
 pub struct IConversationalAgentDetectorManager {
     pub base__: ::windows_sys::core::IInspectable,
@@ -432,6 +447,9 @@ pub struct IConversationalAgentDetectorManager {
     #[cfg(not(feature = "Foundation_Collections"))]
     GetActivationSignalDetectorsAsync: usize,
 }
+impl ::windows_sys::core::Interface for IConversationalAgentDetectorManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3734305712, data2: 22906, data3: 24056, data4: [140, 251, 157, 187, 88, 59, 163, 255] };
+}
 #[repr(C)]
 pub struct IConversationalAgentDetectorManager2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -441,10 +459,16 @@ pub struct IConversationalAgentDetectorManager2 {
     #[cfg(not(feature = "Foundation"))]
     GetActivationSignalDetectorFromIdAsync: usize,
 }
+impl ::windows_sys::core::Interface for IConversationalAgentDetectorManager2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2220953393, data2: 55283, data3: 21246, data4: [147, 17, 201, 235, 78, 62, 179, 10] };
+}
 #[repr(C)]
 pub struct IConversationalAgentDetectorManagerStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub Default: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IConversationalAgentDetectorManagerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 917033603, data2: 64014, data3: 22163, data4: [132, 137, 15, 178, 240, 171, 64, 211] };
 }
 #[repr(C)]
 pub struct IConversationalAgentSession {
@@ -538,6 +562,9 @@ pub struct IConversationalAgentSession {
     #[cfg(not(feature = "Foundation_Collections"))]
     GetSupportedSignalModelIds: usize,
 }
+impl ::windows_sys::core::Interface for IConversationalAgentSession {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3668631706, data2: 47034, data3: 22501, data4: [173, 19, 223, 82, 15, 155, 111, 167] };
+}
 #[repr(C)]
 pub struct IConversationalAgentSession2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -560,9 +587,15 @@ pub struct IConversationalAgentSession2 {
     #[cfg(not(feature = "Foundation_Collections"))]
     GetMissingPrerequisitesAsync: usize,
 }
+impl ::windows_sys::core::Interface for IConversationalAgentSession2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2812935161, data2: 44152, data3: 22527, data4: [149, 150, 172, 199, 161, 201, 166, 7] };
+}
 #[repr(C)]
 pub struct IConversationalAgentSessionInterruptedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
+}
+impl ::windows_sys::core::Interface for IConversationalAgentSessionInterruptedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2540067103, data2: 63037, data3: 23870, data4: [155, 242, 189, 7, 96, 85, 38, 134] };
 }
 #[repr(C)]
 pub struct IConversationalAgentSessionStatics {
@@ -572,6 +605,9 @@ pub struct IConversationalAgentSessionStatics {
     #[cfg(not(feature = "Foundation"))]
     GetCurrentSessionAsync: usize,
     pub GetCurrentSessionSync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IConversationalAgentSessionStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2684687982, data2: 59732, data3: 22382, data4: [190, 4, 17, 184, 237, 16, 243, 123] };
 }
 #[repr(C)]
 pub struct IConversationalAgentSignal {
@@ -601,25 +637,40 @@ pub struct IConversationalAgentSignal {
     #[cfg(not(feature = "Foundation"))]
     SetSignalEnd: usize,
 }
+impl ::windows_sys::core::Interface for IConversationalAgentSignal {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 552412663, data2: 45344, data3: 20978, data4: [134, 3, 38, 93, 106, 71, 242, 50] };
+}
 #[repr(C)]
 pub struct IConversationalAgentSignal2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub DetectorId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub DetectorKind: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ActivationSignalDetectorKind) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IConversationalAgentSignal2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3503061929, data2: 39547, data3: 23604, data4: [136, 14, 182, 20, 108, 144, 78, 203] };
+}
 #[repr(C)]
 pub struct IConversationalAgentSignalDetectedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
+}
+impl ::windows_sys::core::Interface for IConversationalAgentSignalDetectedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1297607567, data2: 63626, data3: 22939, data4: [145, 211, 214, 4, 135, 103, 8, 188] };
 }
 #[repr(C)]
 pub struct IConversationalAgentSystemStateChangedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub SystemStateChangeType: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ConversationalAgentSystemStateChangeType) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IConversationalAgentSystemStateChangedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 472673854, data2: 10117, data3: 22951, data4: [142, 113, 56, 173, 238, 247, 153, 40] };
+}
 #[repr(C)]
 pub struct IDetectionConfigurationAvailabilityChangedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub Kind: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut DetectionConfigurationAvailabilityChangeKind) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDetectionConfigurationAvailabilityChangedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1361693179, data2: 19432, data3: 24340, data4: [175, 43, 136, 214, 43, 27, 68, 98] };
 }
 #[repr(C)]
 pub struct IDetectionConfigurationAvailabilityInfo {
@@ -629,6 +680,9 @@ pub struct IDetectionConfigurationAvailabilityInfo {
     pub HasPermission: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub HasLockScreenPermission: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDetectionConfigurationAvailabilityInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3048210096, data2: 16624, data3: 21400, data4: [184, 56, 145, 151, 156, 44, 98, 8] };
+}
 #[repr(C)]
 pub struct IDetectionConfigurationAvailabilityInfo2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -636,6 +690,9 @@ pub struct IDetectionConfigurationAvailabilityInfo2 {
     pub UnavailableSystemResources: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     UnavailableSystemResources: usize,
+}
+impl ::windows_sys::core::Interface for IDetectionConfigurationAvailabilityInfo2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 820012083, data2: 14515, data3: 23627, data4: [132, 195, 98, 182, 230, 133, 178, 255] };
 }
 #[doc = "*Required features: `\"ApplicationModel_ConversationalAgent\"`*"]
 #[repr(transparent)]

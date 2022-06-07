@@ -169,6 +169,9 @@ pub struct IFunctionDiscovery {
     AddInstance: usize,
     pub RemoveInstance: unsafe extern "system" fn(this: *mut *mut Self, enumsystemvisibility: SystemVisibilityFlags, pszcategory: ::windows_sys::core::PCWSTR, pszsubcategory: ::windows_sys::core::PCWSTR, pszcategoryidentity: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IFunctionDiscovery {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1308203888, data2: 57672, data3: 17458, data4: [176, 4, 76, 158, 235, 83, 90, 94] };
+}
 #[repr(C)]
 pub struct IFunctionDiscoveryNotification {
     pub base__: ::windows_sys::core::IUnknown,
@@ -178,6 +181,9 @@ pub struct IFunctionDiscoveryNotification {
     OnUpdate: usize,
     pub OnError: unsafe extern "system" fn(this: *mut *mut Self, hr: ::windows_sys::core::HRESULT, fdqcquerycontext: u64, pszprovider: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
     pub OnEvent: unsafe extern "system" fn(this: *mut *mut Self, dweventid: u32, fdqcquerycontext: u64, pszprovider: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IFunctionDiscoveryNotification {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1600920488, data2: 21296, data3: 16942, data4: [163, 104, 87, 43, 36, 77, 63, 135] };
 }
 #[repr(C)]
 pub struct IFunctionDiscoveryProvider {
@@ -206,6 +212,9 @@ pub struct IFunctionDiscoveryProvider {
     #[cfg(not(feature = "Win32_System_Com"))]
     InstanceReleased: usize,
 }
+impl ::windows_sys::core::Interface for IFunctionDiscoveryProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3705551183, data2: 5240, data3: 18451, data4: [164, 2, 246, 251, 16, 101, 114, 34] };
+}
 #[repr(C)]
 pub struct IFunctionDiscoveryProviderFactory {
     pub base__: ::windows_sys::core::IUnknown,
@@ -218,6 +227,9 @@ pub struct IFunctionDiscoveryProviderFactory {
     #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_UI_Shell_PropertiesSystem")))]
     CreateInstance: usize,
     pub CreateFunctionInstanceCollection: unsafe extern "system" fn(this: *mut *mut Self, ppifunctioninstancecollection: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IFunctionDiscoveryProviderFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2252619760, data2: 6869, data3: 20072, data4: [164, 90, 64, 194, 195, 41, 222, 59] };
 }
 #[repr(C)]
 pub struct IFunctionDiscoveryProviderQuery {
@@ -233,6 +245,9 @@ pub struct IFunctionDiscoveryProviderQuery {
     pub GetQueryConstraints: unsafe extern "system" fn(this: *mut *mut Self, ppiproviderqueryconstraints: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetPropertyConstraints: unsafe extern "system" fn(this: *mut *mut Self, ppiproviderpropertyconstraints: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IFunctionDiscoveryProviderQuery {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1752623768, data2: 47852, data3: 18139, data4: [188, 32, 117, 167, 110, 38, 122, 58] };
+}
 #[repr(C)]
 pub struct IFunctionDiscoveryServiceProvider {
     pub base__: ::windows_sys::core::IUnknown,
@@ -240,6 +255,9 @@ pub struct IFunctionDiscoveryServiceProvider {
     pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, pifunctioninstance: *mut ::core::ffi::c_void, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     Initialize: usize,
+}
+impl ::windows_sys::core::Interface for IFunctionDiscoveryServiceProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1283583234, data2: 6916, data3: 17394, data4: [164, 81, 105, 150, 108, 188, 209, 194] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -252,6 +270,10 @@ pub struct IFunctionInstance {
     #[cfg(not(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem")))]
     OpenPropertyStore: usize,
     pub GetCategory: unsafe extern "system" fn(this: *mut *mut Self, ppszcomemcategory: *mut *mut u16, ppszcomemsubcategory: *mut *mut u16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFunctionInstance {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 861477904, data2: 3053, data3: 20226, data4: [176, 171, 21, 48, 213, 83, 62, 233] };
 }
 #[repr(C)]
 pub struct IFunctionInstanceCollection {
@@ -276,6 +298,9 @@ pub struct IFunctionInstanceCollection {
     pub Delete: unsafe extern "system" fn(this: *mut *mut Self, dwindex: u32) -> ::windows_sys::core::HRESULT,
     pub DeleteAll: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IFunctionInstanceCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4037269653, data2: 34140, data3: 17058, data4: [148, 141, 47, 151, 212, 80, 236, 177] };
+}
 #[repr(C)]
 pub struct IFunctionInstanceCollectionQuery {
     pub base__: ::windows_sys::core::IUnknown,
@@ -286,6 +311,9 @@ pub struct IFunctionInstanceCollectionQuery {
     AddPropertyConstraint: usize,
     pub Execute: unsafe extern "system" fn(this: *mut *mut Self, ppifunctioninstancecollection: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IFunctionInstanceCollectionQuery {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1473015762, data2: 49306, data3: 17033, data4: [187, 114, 37, 240, 65, 66, 5, 142] };
+}
 #[repr(C)]
 pub struct IFunctionInstanceQuery {
     pub base__: ::windows_sys::core::IUnknown,
@@ -294,6 +322,9 @@ pub struct IFunctionInstanceQuery {
     #[cfg(not(feature = "Win32_System_Com"))]
     Execute: usize,
 }
+impl ::windows_sys::core::Interface for IFunctionInstanceQuery {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1648540779, data2: 37100, data3: 19255, data4: [187, 70, 226, 41, 253, 132, 237, 149] };
+}
 #[repr(C)]
 pub struct IPNPXAssociation {
     pub base__: ::windows_sys::core::IUnknown,
@@ -301,12 +332,18 @@ pub struct IPNPXAssociation {
     pub Unassociate: unsafe extern "system" fn(this: *mut *mut Self, pszsubcategory: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
     pub Delete: unsafe extern "system" fn(this: *mut *mut Self, pszsubcategory: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPNPXAssociation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 198698273, data2: 19878, data3: 17109, data4: [129, 186, 25, 129, 182, 185, 64, 117] };
+}
 #[repr(C)]
 pub struct IPNPXDeviceAssociation {
     pub base__: ::windows_sys::core::IUnknown,
     pub Associate: unsafe extern "system" fn(this: *mut *mut Self, pszsubcategory: ::windows_sys::core::PCWSTR, pifunctiondiscoverynotification: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Unassociate: unsafe extern "system" fn(this: *mut *mut Self, pszsubcategory: ::windows_sys::core::PCWSTR, pifunctiondiscoverynotification: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Delete: unsafe extern "system" fn(this: *mut *mut Self, pszsubcategory: ::windows_sys::core::PCWSTR, pifunctiondiscoverynotification: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPNPXDeviceAssociation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4006831824, data2: 13752, data3: 20421, data4: [141, 32, 126, 91, 211, 31, 109, 237] };
 }
 #[repr(C)]
 pub struct IPropertyStoreCollection {
@@ -331,6 +368,9 @@ pub struct IPropertyStoreCollection {
     pub Delete: unsafe extern "system" fn(this: *mut *mut Self, dwindex: u32) -> ::windows_sys::core::HRESULT,
     pub DeleteAll: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPropertyStoreCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3511524400, data2: 4818, data3: 17112, data4: [188, 228, 198, 12, 43, 178, 38, 250] };
+}
 #[repr(C)]
 pub struct IProviderProperties {
     pub base__: ::windows_sys::core::IUnknown,
@@ -351,6 +391,9 @@ pub struct IProviderProperties {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem")))]
     SetValue: usize,
 }
+impl ::windows_sys::core::Interface for IProviderProperties {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3482873510, data2: 15199, data3: 19551, data4: [184, 138, 47, 139, 32, 206, 239, 23] };
+}
 #[repr(C)]
 pub struct IProviderPropertyConstraintCollection {
     pub base__: ::windows_sys::core::IUnknown,
@@ -370,6 +413,9 @@ pub struct IProviderPropertyConstraintCollection {
     pub Skip: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IProviderPropertyConstraintCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4110083119, data2: 22392, data3: 18963, data4: [133, 64, 181, 253, 140, 19, 152, 221] };
+}
 #[repr(C)]
 pub struct IProviderPublishing {
     pub base__: ::windows_sys::core::IUnknown,
@@ -378,6 +424,9 @@ pub struct IProviderPublishing {
     #[cfg(not(feature = "Win32_System_Com"))]
     CreateInstance: usize,
     pub RemoveInstance: unsafe extern "system" fn(this: *mut *mut Self, enumvisibilityflags: SystemVisibilityFlags, pszsubcategory: ::windows_sys::core::PCWSTR, pszproviderinstanceidentity: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IProviderPublishing {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3441138180, data2: 8300, data3: 18949, data4: [160, 200, 22, 53, 162, 26, 43, 124] };
 }
 #[repr(C)]
 pub struct IProviderQueryConstraintCollection {
@@ -388,6 +437,9 @@ pub struct IProviderQueryConstraintCollection {
     pub Next: unsafe extern "system" fn(this: *mut *mut Self, ppszconstraintname: *mut *mut u16, ppszconstraintvalue: *mut *mut u16) -> ::windows_sys::core::HRESULT,
     pub Skip: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IProviderQueryConstraintCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2619620881, data2: 12897, data3: 19405, data4: [185, 34, 132, 168, 115, 212, 96, 174] };
 }
 #[doc = "*Required features: `\"Win32_Devices_FunctionDiscovery\"`*"]
 pub const MAX_FDCONSTRAINTNAME_LENGTH: u32 = 100u32;

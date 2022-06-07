@@ -1360,16 +1360,25 @@ pub struct ID3DBlob {
     pub GetBufferPointer: unsafe extern "system" fn(this: *mut *mut Self) -> *mut ::core::ffi::c_void,
     pub GetBufferSize: unsafe extern "system" fn(this: *mut *mut Self) -> usize,
 }
+impl ::windows_sys::core::Interface for ID3DBlob {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2342910728, data2: 20885, data3: 16610, data4: [172, 88, 13, 152, 156, 58, 1, 2] };
+}
 #[repr(C)]
 pub struct ID3DDestructionNotifier {
     pub base__: ::windows_sys::core::IUnknown,
     pub RegisterDestructionCallback: unsafe extern "system" fn(this: *mut *mut Self, callbackfn: *mut ::core::ffi::c_void, pdata: *const ::core::ffi::c_void, pcallbackid: *mut u32) -> ::windows_sys::core::HRESULT,
     pub UnregisterDestructionCallback: unsafe extern "system" fn(this: *mut *mut Self, callbackid: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ID3DDestructionNotifier {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2691609498, data2: 20698, data3: 16987, data4: [140, 49, 78, 236, 214, 194, 112, 243] };
+}
 #[repr(C)]
 pub struct ID3DInclude {
     pub Open: unsafe extern "system" fn(this: *mut *mut Self, includetype: D3D_INCLUDE_TYPE, pfilename: ::windows_sys::core::PCSTR, pparentdata: *const ::core::ffi::c_void, ppdata: *mut *mut ::core::ffi::c_void, pbytes: *mut u32) -> ::windows_sys::core::HRESULT,
     pub Close: unsafe extern "system" fn(this: *mut *mut Self, pdata: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ID3DInclude {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID::zeroed();
 }
 #[doc = "*Required features: `\"Win32_Graphics_Direct3D\"`*"]
 pub type PFN_DESTRUCTION_CALLBACK = ::core::option::Option<unsafe extern "system" fn(pdata: *mut ::core::ffi::c_void)>;

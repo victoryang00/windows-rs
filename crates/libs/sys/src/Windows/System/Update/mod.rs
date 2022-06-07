@@ -10,12 +10,18 @@ pub struct ISystemUpdateItem {
     pub InstallProgress: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f64) -> ::windows_sys::core::HRESULT,
     pub ExtendedError: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISystemUpdateItem {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2006401259, data2: 22052, data3: 20894, data4: [168, 226, 9, 233, 23, 59, 63, 183] };
+}
 #[repr(C)]
 pub struct ISystemUpdateLastErrorInfo {
     pub base__: ::windows_sys::core::IInspectable,
     pub State: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut SystemUpdateManagerState) -> ::windows_sys::core::HRESULT,
     pub ExtendedError: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
     pub IsInteractive: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISystemUpdateLastErrorInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2129168375, data2: 35396, data3: 23406, data4: [189, 7, 122, 236, 228, 17, 110, 169] };
 }
 #[repr(C)]
 pub struct ISystemUpdateManagerStatics {
@@ -77,6 +83,9 @@ pub struct ISystemUpdateManagerStatics {
     pub StartInstall: unsafe extern "system" fn(this: *mut *mut Self, action: SystemUpdateStartInstallAction) -> ::windows_sys::core::HRESULT,
     pub RebootToCompleteInstall: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub StartCancelUpdates: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISystemUpdateManagerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3000237295, data2: 10609, data3: 20926, data4: [180, 26, 139, 215, 3, 187, 112, 26] };
 }
 #[doc = "*Required features: `\"System_Update\"`*"]
 #[repr(transparent)]

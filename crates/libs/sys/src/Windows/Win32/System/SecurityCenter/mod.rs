@@ -25,6 +25,10 @@ pub struct IWSCDefaultProduct {
     SetDefaultProduct: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWSCDefaultProduct {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 74897052, data2: 61978, data3: 4581, data4: [156, 233, 94, 85, 23, 80, 124, 102] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IWSCProductList {
     pub base__: super::Com::IDispatch,
@@ -34,6 +38,10 @@ pub struct IWSCProductList {
     pub get_Item: unsafe extern "system" fn(this: *mut *mut Self, index: u32, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     get_Item: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWSCProductList {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1915368332, data2: 28302, data3: 20082, data4: [172, 39, 20, 23, 251, 12, 129, 194] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -63,6 +71,10 @@ pub struct IWscProduct {
     ProductIsDefault: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWscProduct {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2352489262, data2: 14917, data3: 18983, data4: [146, 176, 26, 22, 169, 117, 246, 105] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IWscProduct2 {
     pub base__: IWscProduct,
@@ -74,10 +86,18 @@ pub struct IWscProduct2 {
     pub FirewallPublicProfileSubstatus: unsafe extern "system" fn(this: *mut *mut Self, pestatus: *mut WSC_SECURITY_PRODUCT_SUBSTATUS) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWscProduct2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4170631764, data2: 65033, data3: 17411, data4: [134, 212, 35, 203, 72, 141, 129, 216] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IWscProduct3 {
     pub base__: IWscProduct2,
     pub AntivirusDaysUntilExpired: unsafe extern "system" fn(this: *mut *mut Self, pdwdays: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWscProduct3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1431528740, data2: 53713, data3: 18214, data4: [140, 124, 4, 153, 106, 25, 4, 231] };
 }
 #[doc = "*Required features: `\"Win32_System_SecurityCenter\"`*"]
 pub type SECURITY_PRODUCT_TYPE = i32;

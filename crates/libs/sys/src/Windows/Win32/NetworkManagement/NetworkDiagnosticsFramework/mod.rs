@@ -211,6 +211,9 @@ pub struct INetDiagExtensibleHelper {
     #[cfg(not(feature = "Win32_Foundation"))]
     ResolveAttributes: usize,
 }
+impl ::windows_sys::core::Interface for INetDiagExtensibleHelper {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3232978760, data2: 60405, data3: 4568, data4: [187, 233, 80, 80, 84, 80, 48, 48] };
+}
 #[repr(C)]
 pub struct INetDiagHelper {
     pub base__: ::windows_sys::core::IUnknown,
@@ -263,6 +266,9 @@ pub struct INetDiagHelper {
     pub Cancel: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Cleanup: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for INetDiagHelper {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3232978758, data2: 60405, data3: 4568, data4: [187, 233, 80, 80, 84, 80, 48, 48] };
+}
 #[repr(C)]
 pub struct INetDiagHelperEx {
     pub base__: ::windows_sys::core::IUnknown,
@@ -273,15 +279,24 @@ pub struct INetDiagHelperEx {
     pub SetUtilities: unsafe extern "system" fn(this: *mut *mut Self, putilities: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub ReproduceFailure: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for INetDiagHelperEx {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2536352589, data2: 58595, data3: 20422, data4: [174, 84, 95, 101, 204, 222, 74, 21] };
+}
 #[repr(C)]
 pub struct INetDiagHelperInfo {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetAttributeInfo: unsafe extern "system" fn(this: *mut *mut Self, pcelt: *mut u32, pprgattributeinfos: *mut *mut HelperAttributeInfo) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for INetDiagHelperInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3232978759, data2: 60405, data3: 4568, data4: [187, 233, 80, 80, 84, 80, 48, 48] };
+}
 #[repr(C)]
 pub struct INetDiagHelperUtilFactory {
     pub base__: ::windows_sys::core::IUnknown,
     pub CreateUtilityInstance: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppvobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for INetDiagHelperUtilFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 273028091, data2: 48215, data3: 16760, data4: [149, 186, 136, 128, 150, 152, 53, 74] };
 }
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_NetworkDiagnosticsFramework\"`, `\"Win32_Foundation\"`*"]

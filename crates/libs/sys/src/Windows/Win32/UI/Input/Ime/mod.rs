@@ -693,6 +693,9 @@ pub struct IActiveIME {
     pub GetCodePageA: unsafe extern "system" fn(this: *mut *mut Self, ucodepage: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetLangId: unsafe extern "system" fn(this: *mut *mut Self, plid: *mut u16) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IActiveIME {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1877084514, data2: 53367, data3: 4560, data4: [143, 231, 0, 170, 0, 107, 204, 89] };
+}
 #[repr(C)]
 pub struct IActiveIME2 {
     pub base__: IActiveIME,
@@ -701,6 +704,9 @@ pub struct IActiveIME2 {
     pub Unsleep: unsafe extern "system" fn(this: *mut *mut Self, fdead: super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     Unsleep: usize,
+}
+impl ::windows_sys::core::Interface for IActiveIME2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3787767566, data2: 11603, data3: 4562, data4: [147, 225, 0, 96, 176, 103, 184, 110] };
 }
 #[repr(C)]
 pub struct IActiveIMMApp {
@@ -965,6 +971,9 @@ pub struct IActiveIMMApp {
     #[cfg(not(all(feature = "Win32_Globalization", feature = "Win32_Graphics_Gdi")))]
     GetImeMenuItemsW: usize,
     pub EnumInputContext: unsafe extern "system" fn(this: *mut *mut Self, idthread: u32, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IActiveIMMApp {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 146858048, data2: 25297, data3: 4561, data4: [147, 38, 0, 96, 176, 103, 184, 110] };
 }
 #[repr(C)]
 pub struct IActiveIMMIME {
@@ -1304,6 +1313,9 @@ pub struct IActiveIMMIME {
     SendIMCW: usize,
     pub IsSleeping: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IActiveIMMIME {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 146813969, data2: 63851, data3: 4560, data4: [164, 117, 0, 170, 0, 107, 204, 89] };
+}
 #[repr(C)]
 pub struct IActiveIMMMessagePumpOwner {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1316,11 +1328,17 @@ pub struct IActiveIMMMessagePumpOwner {
     pub Pause: unsafe extern "system" fn(this: *mut *mut Self, pdwcookie: *mut u32) -> ::windows_sys::core::HRESULT,
     pub Resume: unsafe extern "system" fn(this: *mut *mut Self, dwcookie: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IActiveIMMMessagePumpOwner {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3050253562, data2: 35563, data3: 4561, data4: [147, 100, 0, 96, 176, 103, 184, 110] };
+}
 #[repr(C)]
 pub struct IActiveIMMRegistrar {
     pub base__: ::windows_sys::core::IUnknown,
     pub RegisterIME: unsafe extern "system" fn(this: *mut *mut Self, rclsid: *const ::windows_sys::core::GUID, lgid: u16, psziconfile: ::windows_sys::core::PCWSTR, pszdesc: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
     pub UnregisterIME: unsafe extern "system" fn(this: *mut *mut Self, rclsid: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IActiveIMMRegistrar {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3007676546, data2: 48384, data3: 4561, data4: [147, 155, 0, 96, 176, 103, 184, 110] };
 }
 #[repr(C)]
 pub struct IEnumInputContext {
@@ -1333,6 +1351,9 @@ pub struct IEnumInputContext {
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Skip: unsafe extern "system" fn(this: *mut *mut Self, ulcount: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEnumInputContext {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 162917040, data2: 63895, data3: 4561, data4: [147, 212, 0, 96, 176, 103, 184, 110] };
+}
 #[repr(C)]
 pub struct IEnumRegisterWordA {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1340,6 +1361,9 @@ pub struct IEnumRegisterWordA {
     pub Next: unsafe extern "system" fn(this: *mut *mut Self, ulcount: u32, rgregisterword: *mut REGISTERWORDA, pcfetched: *mut u32) -> ::windows_sys::core::HRESULT,
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Skip: unsafe extern "system" fn(this: *mut *mut Self, ulcount: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IEnumRegisterWordA {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 146813970, data2: 63851, data3: 4560, data4: [164, 117, 0, 170, 0, 107, 204, 89] };
 }
 #[repr(C)]
 pub struct IEnumRegisterWordW {
@@ -1349,12 +1373,19 @@ pub struct IEnumRegisterWordW {
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Skip: unsafe extern "system" fn(this: *mut *mut Self, ulcount: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEnumRegisterWordW {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1230363953, data2: 45401, data3: 4560, data4: [143, 207, 0, 170, 0, 107, 204, 89] };
+}
 #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`*"]
 pub const IFEC_S_ALREADY_DEFAULT: ::windows_sys::core::HRESULT = 291840i32;
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFEClassFactory {
     pub base__: super::super::super::System::Com::IClassFactory,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFEClassFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID::zeroed();
 }
 #[repr(C)]
 pub struct IFECommon {
@@ -1369,6 +1400,9 @@ pub struct IFECommon {
     pub InvokeDictToolDialog: unsafe extern "system" fn(this: *mut *mut Self, pimedlg: *mut IMEDLG) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     InvokeDictToolDialog: usize,
+}
+impl ::windows_sys::core::Interface for IFECommon {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 27226449, data2: 59099, data3: 4560, data4: [131, 195, 0, 192, 79, 221, 184, 46] };
 }
 #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`*"]
 pub const IFED_E_INVALID_FORMAT: ::windows_sys::core::HRESULT = -2147192063i32;
@@ -1521,6 +1555,9 @@ pub struct IFEDictionary {
     ConvertFromOldMSIME: usize,
     pub ConvertFromUserToSys: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IFEDictionary {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 27226451, data2: 59099, data3: 4560, data4: [131, 195, 0, 192, 79, 221, 184, 46] };
+}
 #[repr(C)]
 pub struct IFELanguage {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1536,6 +1573,9 @@ pub struct IFELanguage {
     pub GetConversion: unsafe extern "system" fn(this: *mut *mut Self, string: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, start: i32, length: i32, result: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetConversion: usize,
+}
+impl ::windows_sys::core::Interface for IFELanguage {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 27226450, data2: 59099, data3: 4560, data4: [131, 195, 0, 192, 79, 221, 184, 46] };
 }
 #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`*"]
 pub const IGIMIF_RIGHTMENU: u32 = 1u32;
@@ -1561,6 +1601,9 @@ pub struct IImePad {
     #[cfg(not(feature = "Win32_Foundation"))]
     Request: usize,
 }
+impl ::windows_sys::core::Interface for IImePad {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1569612858, data2: 50089, data3: 4561, data4: [175, 239, 0, 128, 95, 12, 139, 109] };
+}
 #[repr(C)]
 pub struct IImePadApplet {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1579,6 +1622,9 @@ pub struct IImePadApplet {
     #[cfg(not(feature = "Win32_Foundation"))]
     Notify: usize,
 }
+impl ::windows_sys::core::Interface for IImePadApplet {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1569612859, data2: 50089, data3: 4561, data4: [175, 239, 0, 128, 95, 12, 139, 109] };
+}
 #[repr(C)]
 pub struct IImePlugInDictDictionaryList {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1591,10 +1637,16 @@ pub struct IImePlugInDictDictionaryList {
     #[cfg(not(feature = "Win32_Foundation"))]
     DeleteDictionary: usize,
 }
+impl ::windows_sys::core::Interface for IImePlugInDictDictionaryList {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2557815156, data2: 45222, data3: 18587, data4: [143, 111, 191, 243, 118, 156, 142, 235] };
+}
 #[repr(C)]
 pub struct IImeSpecifyApplets {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetAppletIIDList: unsafe extern "system" fn(this: *mut *mut Self, refiid: *const ::windows_sys::core::GUID, lpiidlist: *mut APPLETIDLIST) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IImeSpecifyApplets {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1569612860, data2: 50089, data3: 4561, data4: [175, 239, 0, 128, 95, 12, 139, 109] };
 }
 #[doc = "*Required features: `\"Win32_UI_Input_Ime\"`, `\"Win32_Foundation\"`, `\"Win32_Globalization\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Globalization"))]

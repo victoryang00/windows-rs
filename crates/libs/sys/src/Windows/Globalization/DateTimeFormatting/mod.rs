@@ -71,6 +71,9 @@ pub struct IDateTimeFormatter {
     pub ResolvedLanguage: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub ResolvedGeographicRegion: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDateTimeFormatter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2515454480, data2: 29664, data3: 20043, data4: [161, 131, 61, 106, 208, 186, 53, 236] };
+}
 #[repr(C)]
 pub struct IDateTimeFormatter2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -78,6 +81,9 @@ pub struct IDateTimeFormatter2 {
     pub FormatUsingTimeZone: unsafe extern "system" fn(this: *mut *mut Self, datetime: super::super::Foundation::DateTime, timezoneid: ::windows_sys::core::HSTRING, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     FormatUsingTimeZone: usize,
+}
+impl ::windows_sys::core::Interface for IDateTimeFormatter2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 667490950, data2: 48554, data3: 20432, data4: [158, 54, 103, 29, 90, 165, 238, 3] };
 }
 #[repr(C)]
 pub struct IDateTimeFormatterFactory {
@@ -102,6 +108,9 @@ pub struct IDateTimeFormatterFactory {
     #[cfg(not(feature = "Foundation_Collections"))]
     CreateDateTimeFormatterDateTimeContext: usize,
 }
+impl ::windows_sys::core::Interface for IDateTimeFormatterFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3968698963, data2: 6702, data3: 16685, data4: [136, 21, 59, 116, 95, 177, 162, 160] };
+}
 #[repr(C)]
 pub struct IDateTimeFormatterStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -109,6 +118,9 @@ pub struct IDateTimeFormatterStatics {
     pub LongTime: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub ShortDate: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub ShortTime: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDateTimeFormatterStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3217942464, data2: 57164, data3: 18990, data4: [144, 18, 244, 125, 175, 63, 18, 18] };
 }
 #[doc = "*Required features: `\"Globalization_DateTimeFormatting\"`*"]
 #[repr(transparent)]

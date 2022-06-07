@@ -171,6 +171,9 @@ pub struct IConnectionRequestCallback {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnComplete: unsafe extern "system" fn(this: *mut *mut Self, hrstatus: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IConnectionRequestCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 657234656, data2: 29025, data3: 19168, data4: [145, 189, 159, 68, 142, 233, 196, 39] };
+}
 #[repr(C)]
 pub struct IEnumPortableDeviceConnectors {
     pub base__: ::windows_sys::core::IUnknown,
@@ -178,6 +181,9 @@ pub struct IEnumPortableDeviceConnectors {
     pub Skip: unsafe extern "system" fn(this: *mut *mut Self, cconnectors: u32) -> ::windows_sys::core::HRESULT,
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IEnumPortableDeviceConnectors {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3219060041, data2: 37447, data3: 17743, data4: [189, 130, 6, 254, 128, 133, 63, 170] };
 }
 #[repr(C)]
 pub struct IEnumPortableDeviceObjectIDs {
@@ -188,11 +194,17 @@ pub struct IEnumPortableDeviceObjectIDs {
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Cancel: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEnumPortableDeviceObjectIDs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 283961685, data2: 53057, data3: 18216, data4: [191, 160, 65, 238, 223, 27, 191, 25] };
+}
 #[repr(C)]
 pub struct IMediaRadioManager {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetRadioInstances: unsafe extern "system" fn(this: *mut *mut Self, ppcollection: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub OnSystemRadioStateChange: unsafe extern "system" fn(this: *mut *mut Self, sysradiostate: SYSTEM_RADIO_STATE, utimeoutsec: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMediaRadioManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1828571829, data2: 64583, data3: 17061, data4: [146, 65, 7, 75, 88, 131, 14, 115] };
 }
 #[repr(C)]
 pub struct IMediaRadioManagerNotifySink {
@@ -206,6 +218,9 @@ pub struct IMediaRadioManagerNotifySink {
     pub OnInstanceRadioChange: unsafe extern "system" fn(this: *mut *mut Self, bstrradioinstanceid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, radiostate: DEVICE_RADIO_STATE) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     OnInstanceRadioChange: usize,
+}
+impl ::windows_sys::core::Interface for IMediaRadioManagerNotifySink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2312642399, data2: 49479, data3: 18925, data4: [161, 28, 119, 178, 12, 49, 231, 201] };
 }
 #[doc = "*Required features: `\"Win32_Devices_PortableDevices\"`*"]
 pub const IOCTL_WPD_MESSAGE_READWRITE_ACCESS: u32 = 4243720u32;
@@ -223,6 +238,9 @@ pub struct IPortableDevice {
     pub Advise: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, pcallback: *mut ::core::ffi::c_void, pparameters: *mut ::core::ffi::c_void, ppszcookie: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
     pub Unadvise: unsafe extern "system" fn(this: *mut *mut Self, pszcookie: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
     pub GetPnPDeviceID: unsafe extern "system" fn(this: *mut *mut Self, ppszpnpdeviceid: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPortableDevice {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1650339320, data2: 25490, data3: 19696, data4: [154, 209, 60, 250, 95, 23, 119, 92] };
 }
 #[repr(C)]
 pub struct IPortableDeviceCapabilities {
@@ -245,6 +263,9 @@ pub struct IPortableDeviceCapabilities {
     pub GetSupportedEvents: unsafe extern "system" fn(this: *mut *mut Self, ppevents: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetEventOptions: unsafe extern "system" fn(this: *mut *mut Self, event: *const ::windows_sys::core::GUID, ppoptions: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPortableDeviceCapabilities {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 747400639, data2: 58332, data3: 16481, data4: [190, 204, 133, 66, 232, 16, 209, 38] };
+}
 #[repr(C)]
 pub struct IPortableDeviceConnector {
     pub base__: ::windows_sys::core::IUnknown,
@@ -260,6 +281,9 @@ pub struct IPortableDeviceConnector {
     #[cfg(not(feature = "Win32_Devices_Properties"))]
     SetProperty: usize,
     pub GetPnPID: unsafe extern "system" fn(this: *mut *mut Self, ppwszpnpid: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPortableDeviceConnector {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1650339320, data2: 25490, data3: 19696, data4: [154, 209, 60, 250, 95, 23, 119, 92] };
 }
 #[repr(C)]
 pub struct IPortableDeviceContent {
@@ -278,6 +302,9 @@ pub struct IPortableDeviceContent {
     pub Move: unsafe extern "system" fn(this: *mut *mut Self, pobjectids: *mut ::core::ffi::c_void, pszdestinationfolderobjectid: ::windows_sys::core::PCWSTR, ppresults: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Copy: unsafe extern "system" fn(this: *mut *mut Self, pobjectids: *mut ::core::ffi::c_void, pszdestinationfolderobjectid: ::windows_sys::core::PCWSTR, ppresults: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPortableDeviceContent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1788276100, data2: 31859, data3: 17536, data4: [153, 56, 191, 90, 244, 119, 212, 38] };
+}
 #[repr(C)]
 pub struct IPortableDeviceContent2 {
     pub base__: IPortableDeviceContent,
@@ -286,12 +313,19 @@ pub struct IPortableDeviceContent2 {
     #[cfg(not(feature = "Win32_System_Com"))]
     UpdateObjectWithPropertiesAndData: usize,
 }
+impl ::windows_sys::core::Interface for IPortableDeviceContent2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2605374870, data2: 63167, data3: 16436, data4: [135, 8, 236, 167, 43, 241, 5, 84] };
+}
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IPortableDeviceDataStream {
     pub base__: super::super::System::Com::IStream,
     pub GetObjectID: unsafe extern "system" fn(this: *mut *mut Self, ppszobjectid: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
     pub Cancel: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IPortableDeviceDataStream {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2296401331, data2: 4114, data3: 19812, data4: [153, 150, 247, 3, 169, 80, 211, 244] };
 }
 #[repr(C)]
 pub struct IPortableDeviceDispatchFactory {
@@ -301,10 +335,16 @@ pub struct IPortableDeviceDispatchFactory {
     #[cfg(not(feature = "Win32_System_Com"))]
     GetDeviceDispatch: usize,
 }
+impl ::windows_sys::core::Interface for IPortableDeviceDispatchFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1579069379, data2: 58327, data3: 16690, data4: [150, 250, 117, 156, 15, 157, 30, 15] };
+}
 #[repr(C)]
 pub struct IPortableDeviceEventCallback {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnEvent: unsafe extern "system" fn(this: *mut *mut Self, peventparameters: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPortableDeviceEventCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2826512945, data2: 62341, data3: 18748, data4: [168, 147, 64, 246, 78, 180, 95, 110] };
 }
 #[repr(C)]
 pub struct IPortableDeviceKeyCollection {
@@ -321,6 +361,9 @@ pub struct IPortableDeviceKeyCollection {
     pub Clear: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub RemoveAt: unsafe extern "system" fn(this: *mut *mut Self, dwindex: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPortableDeviceKeyCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3671728983, data2: 57517, data3: 18734, data4: [152, 219, 221, 97, 197, 59, 163, 83] };
+}
 #[repr(C)]
 pub struct IPortableDeviceManager {
     pub base__: ::windows_sys::core::IUnknown,
@@ -331,6 +374,9 @@ pub struct IPortableDeviceManager {
     pub GetDeviceManufacturer: unsafe extern "system" fn(this: *mut *mut Self, pszpnpdeviceid: ::windows_sys::core::PCWSTR, pdevicemanufacturer: ::windows_sys::core::PWSTR, pcchdevicemanufacturer: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetDeviceProperty: unsafe extern "system" fn(this: *mut *mut Self, pszpnpdeviceid: ::windows_sys::core::PCWSTR, pszdevicepropertyname: ::windows_sys::core::PCWSTR, pdata: *mut u8, pcbdata: *mut u32, pdwtype: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetPrivateDevices: unsafe extern "system" fn(this: *mut *mut Self, ppnpdeviceids: *mut ::windows_sys::core::PWSTR, pcpnpdeviceids: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPortableDeviceManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2706797973, data2: 19503, data3: 17780, data4: [166, 250, 236, 239, 145, 123, 154, 64] };
 }
 #[repr(C)]
 pub struct IPortableDevicePropVariantCollection {
@@ -349,6 +395,9 @@ pub struct IPortableDevicePropVariantCollection {
     pub Clear: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub RemoveAt: unsafe extern "system" fn(this: *mut *mut Self, dwindex: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPortableDevicePropVariantCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2310202402, data2: 20251, data3: 17174, data4: [188, 239, 164, 74, 254, 168, 62, 179] };
+}
 #[repr(C)]
 pub struct IPortableDeviceProperties {
     pub base__: ::windows_sys::core::IUnknown,
@@ -362,6 +411,9 @@ pub struct IPortableDeviceProperties {
     pub Delete: unsafe extern "system" fn(this: *mut *mut Self, pszobjectid: ::windows_sys::core::PCWSTR, pkeys: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Cancel: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPortableDeviceProperties {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2137876828, data2: 991, data3: 17465, data4: [168, 9, 89, 38, 107, 238, 227, 166] };
+}
 #[repr(C)]
 pub struct IPortableDevicePropertiesBulk {
     pub base__: ::windows_sys::core::IUnknown,
@@ -371,12 +423,18 @@ pub struct IPortableDevicePropertiesBulk {
     pub Start: unsafe extern "system" fn(this: *mut *mut Self, pcontext: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub Cancel: unsafe extern "system" fn(this: *mut *mut Self, pcontext: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPortableDevicePropertiesBulk {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1210779072, data2: 16470, data3: 17645, data4: [158, 15, 94, 35, 176, 9, 218, 147] };
+}
 #[repr(C)]
 pub struct IPortableDevicePropertiesBulkCallback {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnStart: unsafe extern "system" fn(this: *mut *mut Self, pcontext: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub OnProgress: unsafe extern "system" fn(this: *mut *mut Self, pcontext: *const ::windows_sys::core::GUID, presults: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub OnEnd: unsafe extern "system" fn(this: *mut *mut Self, pcontext: *const ::windows_sys::core::GUID, hrstatus: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPortableDevicePropertiesBulkCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2649410432, data2: 4584, data3: 16611, data4: [169, 243, 245, 87, 152, 106, 120, 69] };
 }
 #[repr(C)]
 pub struct IPortableDeviceResources {
@@ -397,6 +455,9 @@ pub struct IPortableDeviceResources {
     #[cfg(not(feature = "Win32_System_Com"))]
     CreateResource: usize,
 }
+impl ::windows_sys::core::Interface for IPortableDeviceResources {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4253579436, data2: 55361, data3: 19735, data4: [137, 28, 230, 130, 156, 219, 105, 52] };
+}
 #[repr(C)]
 pub struct IPortableDeviceService {
     pub base__: ::windows_sys::core::IUnknown,
@@ -412,11 +473,17 @@ pub struct IPortableDeviceService {
     pub Unadvise: unsafe extern "system" fn(this: *mut *mut Self, pszcookie: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
     pub SendCommand: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, pparameters: *mut ::core::ffi::c_void, ppresults: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPortableDeviceService {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3552393796, data2: 55221, data3: 16553, data4: [152, 183, 47, 164, 208, 29, 236, 8] };
+}
 #[repr(C)]
 pub struct IPortableDeviceServiceActivation {
     pub base__: ::windows_sys::core::IUnknown,
     pub OpenAsync: unsafe extern "system" fn(this: *mut *mut Self, pszpnpserviceid: ::windows_sys::core::PCWSTR, pclientinfo: *mut ::core::ffi::c_void, pcallback: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub CancelOpenAsync: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPortableDeviceServiceActivation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3848996148, data2: 55737, data3: 16988, data4: [155, 153, 117, 249, 124, 179, 215, 200] };
 }
 #[repr(C)]
 pub struct IPortableDeviceServiceCapabilities {
@@ -450,16 +517,25 @@ pub struct IPortableDeviceServiceCapabilities {
     GetCommandOptions: usize,
     pub Cancel: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPortableDeviceServiceCapabilities {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 618387613, data2: 16702, data3: 17376, data4: [189, 91, 25, 127, 60, 86, 200, 134] };
+}
 #[repr(C)]
 pub struct IPortableDeviceServiceManager {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetDeviceServices: unsafe extern "system" fn(this: *mut *mut Self, pszpnpdeviceid: ::windows_sys::core::PCWSTR, guidservicecategory: *const ::windows_sys::core::GUID, pservices: *mut ::windows_sys::core::PWSTR, pcservices: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetDeviceForService: unsafe extern "system" fn(this: *mut *mut Self, pszpnpserviceid: ::windows_sys::core::PCWSTR, ppszpnpdeviceid: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPortableDeviceServiceManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2829829353, data2: 43082, data3: 18345, data4: [128, 179, 197, 217, 177, 114, 169, 97] };
+}
 #[repr(C)]
 pub struct IPortableDeviceServiceMethodCallback {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnComplete: unsafe extern "system" fn(this: *mut *mut Self, hrstatus: ::windows_sys::core::HRESULT, presults: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPortableDeviceServiceMethodCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3290702652, data2: 45006, data3: 18472, data4: [167, 86, 126, 215, 162, 53, 0, 131] };
 }
 #[repr(C)]
 pub struct IPortableDeviceServiceMethods {
@@ -468,16 +544,25 @@ pub struct IPortableDeviceServiceMethods {
     pub InvokeAsync: unsafe extern "system" fn(this: *mut *mut Self, method: *const ::windows_sys::core::GUID, pparameters: *mut ::core::ffi::c_void, pcallback: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Cancel: unsafe extern "system" fn(this: *mut *mut Self, pcallback: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPortableDeviceServiceMethods {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3791860681, data2: 64820, data3: 16685, data4: [163, 129, 204, 111, 45, 130, 13, 247] };
+}
 #[repr(C)]
 pub struct IPortableDeviceServiceOpenCallback {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnComplete: unsafe extern "system" fn(this: *mut *mut Self, hrstatus: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPortableDeviceServiceOpenCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3169667528, data2: 36606, data3: 16877, data4: [150, 11, 97, 49, 58, 189, 71, 169] };
 }
 #[repr(C)]
 pub struct IPortableDeviceUnitsStream {
     pub base__: ::windows_sys::core::IUnknown,
     pub SeekInUnits: unsafe extern "system" fn(this: *mut *mut Self, dlibmove: i64, units: WPD_STREAM_UNITS, dworigin: u32, plibnewposition: *mut u64) -> ::windows_sys::core::HRESULT,
     pub Cancel: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPortableDeviceUnitsStream {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1587020383, data2: 49092, data3: 18338, data4: [154, 95, 188, 144, 10, 80, 124, 103] };
 }
 #[repr(C)]
 pub struct IPortableDeviceValues {
@@ -637,6 +722,9 @@ pub struct IPortableDeviceValues {
     CopyValuesToPropertyStore: usize,
     pub Clear: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPortableDeviceValues {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1749612274, data2: 12629, data3: 20358, data4: [182, 245, 38, 62, 238, 171, 49, 67] };
+}
 #[repr(C)]
 pub struct IPortableDeviceValuesCollection {
     pub base__: ::windows_sys::core::IUnknown,
@@ -645,6 +733,9 @@ pub struct IPortableDeviceValuesCollection {
     pub Add: unsafe extern "system" fn(this: *mut *mut Self, pvalues: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Clear: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub RemoveAt: unsafe extern "system" fn(this: *mut *mut Self, dwindex: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPortableDeviceValuesCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1849634169, data2: 19975, data3: 18628, data4: [130, 8, 216, 194, 229, 175, 74, 153] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -658,6 +749,10 @@ pub struct IPortableDeviceWebControl {
     pub GetDeviceFromIdAsync: unsafe extern "system" fn(this: *mut *mut Self, deviceid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pcompletionhandler: *mut ::core::ffi::c_void, perrorhandler: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     GetDeviceFromIdAsync: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IPortableDeviceWebControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2499574099, data2: 23713, data3: 18490, data4: [138, 238, 223, 82, 231, 116, 125, 0] };
 }
 #[repr(C)]
 pub struct IRadioInstance {
@@ -682,11 +777,17 @@ pub struct IRadioInstance {
     #[cfg(not(feature = "Win32_Foundation"))]
     IsAssociatingDevice: usize,
 }
+impl ::windows_sys::core::Interface for IRadioInstance {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1890196638, data2: 62132, data3: 19553, data4: [134, 211, 107, 159, 183, 95, 209, 162] };
+}
 #[repr(C)]
 pub struct IRadioInstanceCollection {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, pcinstance: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetAt: unsafe extern "system" fn(this: *mut *mut Self, uindex: u32, ppradioinstance: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IRadioInstanceCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3849920430, data2: 22117, data3: 19980, data4: [149, 190, 95, 222, 49, 100, 65, 133] };
 }
 #[repr(C)]
 pub struct IWpdSerializer {
@@ -695,6 +796,9 @@ pub struct IWpdSerializer {
     pub WriteIPortableDeviceValuesToBuffer: unsafe extern "system" fn(this: *mut *mut Self, dwoutputbufferlength: u32, presults: *mut ::core::ffi::c_void, pbuffer: *mut u8, pdwbyteswritten: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetBufferFromIPortableDeviceValues: unsafe extern "system" fn(this: *mut *mut Self, psource: *mut ::core::ffi::c_void, ppbuffer: *mut *mut u8, pdwbuffersize: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetSerializedSize: unsafe extern "system" fn(this: *mut *mut Self, psource: *mut ::core::ffi::c_void, pdwsize: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWpdSerializer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3006218242, data2: 47911, data3: 17919, data4: [175, 79, 6, 99, 28, 30, 141, 173] };
 }
 #[doc = "*Required features: `\"Win32_Devices_PortableDevices\"`*"]
 pub const NAME_3GPP2File: &str = "3GPP2File";

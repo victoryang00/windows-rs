@@ -63,10 +63,16 @@ pub struct IXmlReader {
     #[cfg(not(feature = "Win32_Foundation"))]
     IsEOF: usize,
 }
+impl ::windows_sys::core::Interface for IXmlReader {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1920597121, data2: 28829, data3: 16533, data4: [182, 61, 105, 254, 75, 13, 144, 48] };
+}
 #[repr(C)]
 pub struct IXmlResolver {
     pub base__: ::windows_sys::core::IUnknown,
     pub ResolveUri: unsafe extern "system" fn(this: *mut *mut Self, pwszbaseuri: ::windows_sys::core::PCWSTR, pwszpublicidentifier: ::windows_sys::core::PCWSTR, pwszsystemidentifier: ::windows_sys::core::PCWSTR, ppresolvedinput: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IXmlResolver {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1920597122, data2: 28829, data3: 16533, data4: [182, 61, 105, 254, 75, 13, 144, 48] };
 }
 #[repr(C)]
 pub struct IXmlWriter {
@@ -110,6 +116,9 @@ pub struct IXmlWriter {
     pub WriteWhitespace: unsafe extern "system" fn(this: *mut *mut Self, pwszwhitespace: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
     pub Flush: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IXmlWriter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1920597128, data2: 28829, data3: 16533, data4: [182, 61, 105, 254, 75, 13, 144, 48] };
+}
 #[repr(C)]
 pub struct IXmlWriterLite {
     pub base__: ::windows_sys::core::IUnknown,
@@ -150,6 +159,9 @@ pub struct IXmlWriterLite {
     pub WriteSurrogateCharEntity: unsafe extern "system" fn(this: *mut *mut Self, wchlow: u16, wchhigh: u16) -> ::windows_sys::core::HRESULT,
     pub WriteWhitespace: unsafe extern "system" fn(this: *mut *mut Self, pwszwhitespace: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
     pub Flush: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IXmlWriterLite {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2250544326, data2: 4880, data3: 19117, data4: [179, 205, 45, 190, 235, 246, 112, 211] };
 }
 #[doc = "*Required features: `\"Win32_Data_Xml_XmlLite\"`*"]
 pub type XmlConformanceLevel = i32;

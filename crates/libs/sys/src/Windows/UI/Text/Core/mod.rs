@@ -184,11 +184,17 @@ pub struct ICoreTextCompositionCompletedEventArgs {
     #[cfg(not(feature = "Foundation"))]
     GetDeferral: usize,
 }
+impl ::windows_sys::core::Interface for ICoreTextCompositionCompletedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 523561910, data2: 47007, data3: 16673, data4: [165, 231, 253, 169, 184, 97, 110, 48] };
+}
 #[repr(C)]
 pub struct ICoreTextCompositionSegment {
     pub base__: ::windows_sys::core::IInspectable,
     pub PreconversionString: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub Range: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut CoreTextRange) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ICoreTextCompositionSegment {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2003594201, data2: 20141, data3: 19879, data4: [143, 71, 58, 136, 181, 35, 204, 52] };
 }
 #[repr(C)]
 pub struct ICoreTextCompositionStartedEventArgs {
@@ -198,6 +204,9 @@ pub struct ICoreTextCompositionStartedEventArgs {
     pub GetDeferral: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     GetDeferral: usize,
+}
+impl ::windows_sys::core::Interface for ICoreTextCompositionStartedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 661329577, data2: 25831, data3: 19120, data4: [188, 75, 160, 45, 115, 131, 91, 251] };
 }
 #[repr(C)]
 pub struct ICoreTextEditContext {
@@ -288,6 +297,9 @@ pub struct ICoreTextEditContext {
     pub NotifySelectionChanged: unsafe extern "system" fn(this: *mut *mut Self, selection: CoreTextRange) -> ::windows_sys::core::HRESULT,
     pub NotifyLayoutChanged: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ICoreTextEditContext {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3211135151, data2: 16449, data3: 18371, data4: [178, 99, 169, 24, 235, 94, 174, 242] };
+}
 #[repr(C)]
 pub struct ICoreTextEditContext2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -299,6 +311,9 @@ pub struct ICoreTextEditContext2 {
     pub RemoveNotifyFocusLeaveCompleted: unsafe extern "system" fn(this: *mut *mut Self, cookie: super::super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     RemoveNotifyFocusLeaveCompleted: usize,
+}
+impl ::windows_sys::core::Interface for ICoreTextEditContext2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2978381243, data2: 2107, data3: 18913, data4: [178, 129, 43, 53, 214, 43, 244, 102] };
 }
 #[repr(C)]
 pub struct ICoreTextFormatUpdatingEventArgs {
@@ -329,6 +344,9 @@ pub struct ICoreTextFormatUpdatingEventArgs {
     #[cfg(not(feature = "Foundation"))]
     GetDeferral: usize,
 }
+impl ::windows_sys::core::Interface for ICoreTextFormatUpdatingEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1930476851, data2: 46248, data3: 17329, data4: [179, 123, 7, 36, 212, 172, 167, 171] };
+}
 #[repr(C)]
 pub struct ICoreTextLayoutBounds {
     pub base__: ::windows_sys::core::IInspectable,
@@ -349,6 +367,9 @@ pub struct ICoreTextLayoutBounds {
     #[cfg(not(feature = "Foundation"))]
     SetControlBounds: usize,
 }
+impl ::windows_sys::core::Interface for ICoreTextLayoutBounds {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3916614004, data2: 17462, data3: 18711, data4: [128, 208, 165, 37, 228, 202, 103, 128] };
+}
 #[repr(C)]
 pub struct ICoreTextLayoutRequest {
     pub base__: ::windows_sys::core::IInspectable,
@@ -360,15 +381,24 @@ pub struct ICoreTextLayoutRequest {
     #[cfg(not(feature = "Foundation"))]
     GetDeferral: usize,
 }
+impl ::windows_sys::core::Interface for ICoreTextLayoutRequest {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 626370764, data2: 20989, data3: 20227, data4: [152, 191, 172, 120, 23, 77, 104, 224] };
+}
 #[repr(C)]
 pub struct ICoreTextLayoutRequest2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub LayoutBoundsVisualPixels: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ICoreTextLayoutRequest2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1735255588, data2: 52541, data3: 19405, data4: [191, 1, 127, 113, 16, 149, 69, 17] };
+}
 #[repr(C)]
 pub struct ICoreTextLayoutRequestedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub Request: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ICoreTextLayoutRequestedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2984012512, data2: 39547, data3: 20126, data4: [165, 102, 74, 107, 95, 138, 214, 118] };
 }
 #[repr(C)]
 pub struct ICoreTextSelectionRequest {
@@ -381,10 +411,16 @@ pub struct ICoreTextSelectionRequest {
     #[cfg(not(feature = "Foundation"))]
     GetDeferral: usize,
 }
+impl ::windows_sys::core::Interface for ICoreTextSelectionRequest {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4037477379, data2: 8331, data3: 17153, data4: [136, 60, 116, 202, 116, 133, 253, 141] };
+}
 #[repr(C)]
 pub struct ICoreTextSelectionRequestedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub Request: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ICoreTextSelectionRequestedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 331769899, data2: 62996, data3: 16922, data4: [143, 75, 158, 200, 165, 163, 127, 205] };
 }
 #[repr(C)]
 pub struct ICoreTextSelectionUpdatingEventArgs {
@@ -397,6 +433,9 @@ pub struct ICoreTextSelectionUpdatingEventArgs {
     pub GetDeferral: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     GetDeferral: usize,
+}
+impl ::windows_sys::core::Interface for ICoreTextSelectionUpdatingEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3561325471, data2: 65151, data3: 19413, data4: [138, 38, 9, 34, 193, 179, 230, 57] };
 }
 #[repr(C)]
 pub struct ICoreTextServicesManager {
@@ -415,15 +454,24 @@ pub struct ICoreTextServicesManager {
     RemoveInputLanguageChanged: usize,
     pub CreateEditContext: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ICoreTextServicesManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3260054915, data2: 28170, data3: 19082, data4: [189, 248, 25, 72, 135, 72, 84, 186] };
+}
 #[repr(C)]
 pub struct ICoreTextServicesManagerStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub GetForCurrentView: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ICoreTextServicesManagerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 354460552, data2: 58063, data3: 19813, data4: [174, 185, 179, 45, 134, 254, 57, 185] };
+}
 #[repr(C)]
 pub struct ICoreTextServicesStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub HiddenCharacter: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u16) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ICoreTextServicesStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2441452102, data2: 60623, data3: 18340, data4: [138, 231, 9, 138, 156, 111, 187, 21] };
 }
 #[repr(C)]
 pub struct ICoreTextTextRequest {
@@ -437,10 +485,16 @@ pub struct ICoreTextTextRequest {
     #[cfg(not(feature = "Foundation"))]
     GetDeferral: usize,
 }
+impl ::windows_sys::core::Interface for ICoreTextTextRequest {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1356419241, data2: 62750, data3: 19649, data4: [140, 161, 230, 52, 109, 26, 97, 190] };
+}
 #[repr(C)]
 pub struct ICoreTextTextRequestedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub Request: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ICoreTextTextRequestedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4036403920, data2: 16838, data3: 19458, data4: [139, 26, 217, 83, 176, 12, 171, 179] };
 }
 #[repr(C)]
 pub struct ICoreTextTextUpdatingEventArgs {
@@ -459,4 +513,7 @@ pub struct ICoreTextTextUpdatingEventArgs {
     pub GetDeferral: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     GetDeferral: usize,
+}
+impl ::windows_sys::core::Interface for ICoreTextTextUpdatingEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4003959181, data2: 52267, data3: 20227, data4: [143, 246, 2, 253, 33, 125, 180, 80] };
 }

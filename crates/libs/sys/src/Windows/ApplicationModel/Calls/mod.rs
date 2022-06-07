@@ -59,20 +59,32 @@ pub struct ICallAnswerEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub AcceptedMedia: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut VoipPhoneCallMedia) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ICallAnswerEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4252538391, data2: 11735, data3: 19596, data4: [178, 189, 149, 209, 122, 91, 183, 51] };
+}
 #[repr(C)]
 pub struct ICallRejectEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub RejectReason: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut VoipPhoneCallRejectReason) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ICallRejectEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3662150359, data2: 5076, data3: 19858, data4: [161, 194, 183, 120, 17, 238, 55, 236] };
 }
 #[repr(C)]
 pub struct ICallStateChangeEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub State: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut VoipPhoneCallState) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ICallStateChangeEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3937547422, data2: 26357, data3: 18425, data4: [159, 181, 69, 156, 81, 152, 199, 32] };
+}
 #[repr(C)]
 pub struct ILockScreenCallEndCallDeferral {
     pub base__: ::windows_sys::core::IInspectable,
     pub Complete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ILockScreenCallEndCallDeferral {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 769125645, data2: 39149, data3: 16449, data4: [150, 50, 80, 255, 129, 43, 119, 63] };
 }
 #[repr(C)]
 pub struct ILockScreenCallEndRequestedEventArgs {
@@ -82,6 +94,9 @@ pub struct ILockScreenCallEndRequestedEventArgs {
     pub Deadline: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Foundation::DateTime) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     Deadline: usize,
+}
+impl ::windows_sys::core::Interface for ILockScreenCallEndRequestedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2173739875, data2: 28455, data3: 18153, data4: [174, 182, 192, 174, 131, 228, 125, 199] };
 }
 #[repr(C)]
 pub struct ILockScreenCallUI {
@@ -106,10 +121,16 @@ pub struct ILockScreenCallUI {
     pub CallTitle: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub SetCallTitle: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ILockScreenCallUI {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3315006861, data2: 29641, data3: 18964, data4: [176, 33, 236, 28, 80, 163, 183, 39] };
+}
 #[repr(C)]
 pub struct IMuteChangeEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub Muted: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMuteChangeEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2240143705, data2: 3137, data3: 17196, data4: [129, 77, 197, 241, 253, 245, 48, 190] };
 }
 #[repr(C)]
 pub struct IPhoneCall {
@@ -193,6 +214,9 @@ pub struct IPhoneCall {
     #[cfg(not(feature = "Foundation"))]
     ChangeAudioDeviceAsync: usize,
 }
+impl ::windows_sys::core::Interface for IPhoneCall {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3243167992, data2: 49533, data3: 22994, data4: [150, 40, 102, 229, 69, 182, 205, 33] };
+}
 #[repr(C)]
 pub struct IPhoneCallBlockingStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -204,6 +228,9 @@ pub struct IPhoneCallBlockingStatics {
     pub SetCallBlockingListAsync: unsafe extern "system" fn(this: *mut *mut Self, phonenumberlist: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     SetCallBlockingListAsync: usize,
+}
+impl ::windows_sys::core::Interface for IPhoneCallBlockingStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 426012548, data2: 11129, data3: 9969, data4: [164, 111, 105, 75, 224, 67, 243, 19] };
 }
 #[repr(C)]
 pub struct IPhoneCallHistoryEntry {
@@ -255,6 +282,9 @@ pub struct IPhoneCallHistoryEntry {
     #[cfg(not(feature = "Foundation"))]
     SetStartTime: usize,
 }
+impl ::windows_sys::core::Interface for IPhoneCallHistoryEntry {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4205895977, data2: 12964, data3: 19333, data4: [131, 209, 249, 13, 140, 35, 168, 87] };
+}
 #[repr(C)]
 pub struct IPhoneCallHistoryEntryAddress {
     pub base__: ::windows_sys::core::IInspectable,
@@ -267,10 +297,16 @@ pub struct IPhoneCallHistoryEntryAddress {
     pub RawAddressKind: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut PhoneCallHistoryEntryRawAddressKind) -> ::windows_sys::core::HRESULT,
     pub SetRawAddressKind: unsafe extern "system" fn(this: *mut *mut Self, value: PhoneCallHistoryEntryRawAddressKind) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPhoneCallHistoryEntryAddress {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 821123546, data2: 14677, data3: 16450, data4: [132, 230, 102, 238, 191, 130, 230, 127] };
+}
 #[repr(C)]
 pub struct IPhoneCallHistoryEntryAddressFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, rawaddress: ::windows_sys::core::HSTRING, rawaddresskind: PhoneCallHistoryEntryRawAddressKind, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPhoneCallHistoryEntryAddressFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4212108730, data2: 51184, data3: 19382, data4: [159, 107, 186, 93, 115, 32, 154, 202] };
 }
 #[repr(C)]
 pub struct IPhoneCallHistoryEntryQueryOptions {
@@ -282,6 +318,9 @@ pub struct IPhoneCallHistoryEntryQueryOptions {
     #[cfg(not(feature = "Foundation_Collections"))]
     SourceIds: usize,
 }
+impl ::windows_sys::core::Interface for IPhoneCallHistoryEntryQueryOptions {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2623529308, data2: 35821, data3: 16586, data4: [176, 110, 196, 202, 142, 174, 92, 135] };
+}
 #[repr(C)]
 pub struct IPhoneCallHistoryEntryReader {
     pub base__: ::windows_sys::core::IInspectable,
@@ -289,6 +328,9 @@ pub struct IPhoneCallHistoryEntryReader {
     pub ReadBatchAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     ReadBatchAsync: usize,
+}
+impl ::windows_sys::core::Interface for IPhoneCallHistoryEntryReader {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1642915006, data2: 36230, data3: 18335, data4: [132, 4, 169, 132, 105, 32, 254, 230] };
 }
 #[repr(C)]
 pub struct IPhoneCallHistoryManagerForUser {
@@ -302,6 +344,9 @@ pub struct IPhoneCallHistoryManagerForUser {
     #[cfg(not(feature = "System"))]
     User: usize,
 }
+impl ::windows_sys::core::Interface for IPhoneCallHistoryManagerForUser {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3643131171, data2: 62815, data3: 17235, data4: [157, 180, 2, 5, 165, 38, 90, 85] };
+}
 #[repr(C)]
 pub struct IPhoneCallHistoryManagerStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -310,6 +355,9 @@ pub struct IPhoneCallHistoryManagerStatics {
     #[cfg(not(feature = "Foundation"))]
     RequestStoreAsync: usize,
 }
+impl ::windows_sys::core::Interface for IPhoneCallHistoryManagerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4121352761, data2: 45855, data3: 20293, data4: [172, 142, 27, 8, 137, 60, 27, 80] };
+}
 #[repr(C)]
 pub struct IPhoneCallHistoryManagerStatics2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -317,6 +365,9 @@ pub struct IPhoneCallHistoryManagerStatics2 {
     pub GetForUser: unsafe extern "system" fn(this: *mut *mut Self, user: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "System"))]
     GetForUser: usize,
+}
+impl ::windows_sys::core::Interface for IPhoneCallHistoryManagerStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4023678192, data2: 41691, data3: 16776, data4: [158, 146, 188, 60, 250, 104, 19, 207] };
 }
 #[repr(C)]
 pub struct IPhoneCallHistoryStore {
@@ -364,6 +415,9 @@ pub struct IPhoneCallHistoryStore {
     #[cfg(not(feature = "Foundation_Collections"))]
     MarkSourcesAsSeenAsync: usize,
 }
+impl ::windows_sys::core::Interface for IPhoneCallHistoryStore {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 797998520, data2: 46094, data3: 16939, data4: [133, 69, 203, 25, 16, 166, 28, 82] };
+}
 #[repr(C)]
 pub struct IPhoneCallInfo {
     pub base__: ::windows_sys::core::IInspectable,
@@ -377,10 +431,16 @@ pub struct IPhoneCallInfo {
     pub DisplayName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub CallDirection: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut PhoneCallDirection) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPhoneCallInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 582231415, data2: 15949, data3: 24006, data4: [137, 194, 70, 159, 229, 255, 193, 137] };
+}
 #[repr(C)]
 pub struct IPhoneCallManagerStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub ShowPhoneCallUI: unsafe extern "system" fn(this: *mut *mut Self, phonenumber: ::windows_sys::core::HSTRING, displayname: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPhoneCallManagerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1626188920, data2: 30886, data3: 18546, data4: [163, 239, 152, 50, 94, 200, 184, 67] };
 }
 #[repr(C)]
 pub struct IPhoneCallManagerStatics2 {
@@ -401,10 +461,16 @@ pub struct IPhoneCallManagerStatics2 {
     #[cfg(not(feature = "Foundation"))]
     RequestStoreAsync: usize,
 }
+impl ::windows_sys::core::Interface for IPhoneCallManagerStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3353594044, data2: 9072, data3: 17180, data4: [152, 253, 67, 190, 95, 3, 8, 109] };
+}
 #[repr(C)]
 pub struct IPhoneCallStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub GetFromId: unsafe extern "system" fn(this: *mut *mut Self, callid: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPhoneCallStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 572059307, data2: 62987, data3: 21479, data4: [186, 19, 90, 234, 251, 194, 41, 87] };
 }
 #[repr(C)]
 pub struct IPhoneCallStore {
@@ -419,10 +485,16 @@ pub struct IPhoneCallStore {
     GetDefaultLineAsync: usize,
     pub RequestLineWatcher: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPhoneCallStore {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1600194376, data2: 6310, data3: 16755, data4: [134, 209, 40, 190, 157, 198, 45, 186] };
+}
 #[repr(C)]
 pub struct IPhoneCallVideoCapabilities {
     pub base__: ::windows_sys::core::IInspectable,
     pub IsVideoCallingCapable: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPhoneCallVideoCapabilities {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 37234566, data2: 45418, data3: 20443, data4: [190, 59, 196, 36, 14, 19, 173, 13] };
 }
 #[repr(C)]
 pub struct IPhoneCallVideoCapabilitiesManagerStatics {
@@ -432,6 +504,9 @@ pub struct IPhoneCallVideoCapabilitiesManagerStatics {
     #[cfg(not(feature = "Foundation"))]
     GetCapabilitiesAsync: usize,
 }
+impl ::windows_sys::core::Interface for IPhoneCallVideoCapabilitiesManagerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4089858902, data2: 61451, data3: 18972, data4: [160, 198, 238, 25, 16, 116, 156, 231] };
+}
 #[repr(C)]
 pub struct IPhoneCallsResult {
     pub base__: ::windows_sys::core::IInspectable,
@@ -440,6 +515,9 @@ pub struct IPhoneCallsResult {
     pub AllActivePhoneCalls: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     AllActivePhoneCalls: usize,
+}
+impl ::windows_sys::core::Interface for IPhoneCallsResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 469422949, data2: 22479, data3: 22493, data4: [152, 109, 176, 87, 201, 30, 172, 51] };
 }
 #[repr(C)]
 pub struct IPhoneDialOptions {
@@ -468,6 +546,9 @@ pub struct IPhoneDialOptions {
     pub SetMedia: unsafe extern "system" fn(this: *mut *mut Self, value: PhoneCallMedia) -> ::windows_sys::core::HRESULT,
     pub AudioEndpoint: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut PhoneAudioRoutingEndpoint) -> ::windows_sys::core::HRESULT,
     pub SetAudioEndpoint: unsafe extern "system" fn(this: *mut *mut Self, value: PhoneAudioRoutingEndpoint) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPhoneDialOptions {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3057239224, data2: 61551, data3: 14027, data4: [168, 99, 130, 55, 66, 181, 242, 212] };
 }
 #[repr(C)]
 pub struct IPhoneLine {
@@ -502,11 +583,17 @@ pub struct IPhoneLine {
     pub Dial: unsafe extern "system" fn(this: *mut *mut Self, number: ::windows_sys::core::HSTRING, displayname: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub DialWithOptions: unsafe extern "system" fn(this: *mut *mut Self, options: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPhoneLine {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 667316016, data2: 27241, data3: 13514, data4: [162, 186, 101, 48, 37, 48, 195, 17] };
+}
 #[repr(C)]
 pub struct IPhoneLine2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub EnableTextReply: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
     pub TransportDeviceId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPhoneLine2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 23590250, data2: 21316, data3: 23908, data4: [138, 243, 163, 26, 149, 14, 145, 106] };
 }
 #[repr(C)]
 pub struct IPhoneLine3 {
@@ -522,6 +609,9 @@ pub struct IPhoneLine3 {
     #[cfg(not(feature = "Foundation"))]
     GetAllActivePhoneCallsAsync: usize,
 }
+impl ::windows_sys::core::Interface for IPhoneLine3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3806543095, data2: 9222, data3: 22515, data4: [130, 106, 229, 165, 244, 13, 111, 181] };
+}
 #[repr(C)]
 pub struct IPhoneLineCellularDetails {
     pub base__: ::windows_sys::core::IInspectable,
@@ -530,6 +620,9 @@ pub struct IPhoneLineCellularDetails {
     pub IsModemOn: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub RegistrationRejectCode: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i32) -> ::windows_sys::core::HRESULT,
     pub GetNetworkOperatorDisplayText: unsafe extern "system" fn(this: *mut *mut Self, location: PhoneLineNetworkOperatorDisplayTextLocation, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPhoneLineCellularDetails {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 421921237, data2: 5244, data3: 18281, data4: [182, 115, 152, 165, 236, 132, 38, 203] };
 }
 #[repr(C)]
 pub struct IPhoneLineConfiguration {
@@ -540,11 +633,17 @@ pub struct IPhoneLineConfiguration {
     #[cfg(not(feature = "Foundation_Collections"))]
     ExtendedProperties: usize,
 }
+impl ::windows_sys::core::Interface for IPhoneLineConfiguration {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4263925858, data2: 63055, data3: 17170, data4: [178, 168, 78, 37, 119, 33, 170, 149] };
+}
 #[repr(C)]
 pub struct IPhoneLineDialResult {
     pub base__: ::windows_sys::core::IInspectable,
     pub DialCallStatus: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut PhoneCallOperationStatus) -> ::windows_sys::core::HRESULT,
     pub DialedCall: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPhoneLineDialResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3894780682, data2: 23679, data3: 21615, data4: [185, 24, 58, 210, 254, 112, 251, 52] };
 }
 #[repr(C)]
 pub struct IPhoneLineStatics {
@@ -553,6 +652,9 @@ pub struct IPhoneLineStatics {
     pub FromIdAsync: unsafe extern "system" fn(this: *mut *mut Self, lineid: ::windows_sys::core::GUID, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     FromIdAsync: usize,
+}
+impl ::windows_sys::core::Interface for IPhoneLineStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4085997347, data2: 52912, data3: 16463, data4: [188, 242, 186, 159, 105, 125, 138, 223] };
 }
 #[repr(C)]
 pub struct IPhoneLineTransportDevice {
@@ -580,6 +682,9 @@ pub struct IPhoneLineTransportDevice {
     #[cfg(not(feature = "Foundation"))]
     ConnectAsync: usize,
 }
+impl ::windows_sys::core::Interface for IPhoneLineTransportDevice {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4020828297, data2: 53242, data3: 23028, data4: [151, 228, 116, 112, 91, 125, 196, 144] };
+}
 #[repr(C)]
 pub struct IPhoneLineTransportDevice2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -602,12 +707,18 @@ pub struct IPhoneLineTransportDevice2 {
     #[cfg(not(feature = "Foundation"))]
     RemoveInBandRingingEnabledChanged: usize,
 }
+impl ::windows_sys::core::Interface for IPhoneLineTransportDevice2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1690863090, data2: 60660, data3: 22369, data4: [140, 4, 60, 36, 140, 230, 22, 144] };
+}
 #[repr(C)]
 pub struct IPhoneLineTransportDeviceStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub FromId: unsafe extern "system" fn(this: *mut *mut Self, id: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetDeviceSelector: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub GetDeviceSelectorForPhoneLineTransport: unsafe extern "system" fn(this: *mut *mut Self, transport: PhoneLineTransport, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPhoneLineTransportDeviceStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 254878124, data2: 54793, data3: 20897, data4: [150, 243, 251, 0, 209, 129, 146, 82] };
 }
 #[repr(C)]
 pub struct IPhoneLineWatcher {
@@ -656,10 +767,16 @@ pub struct IPhoneLineWatcher {
     RemoveStopped: usize,
     pub Status: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut PhoneLineWatcherStatus) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPhoneLineWatcher {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2319830282, data2: 25379, data3: 17632, data4: [166, 246, 159, 33, 246, 77, 201, 10] };
+}
 #[repr(C)]
 pub struct IPhoneLineWatcherEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub LineId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPhoneLineWatcherEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3497817406, data2: 40466, data3: 18999, data4: [130, 183, 173, 83, 93, 173, 106, 103] };
 }
 #[repr(C)]
 pub struct IPhoneVoicemail {
@@ -671,6 +788,9 @@ pub struct IPhoneVoicemail {
     pub DialVoicemailAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     DialVoicemailAsync: usize,
+}
+impl ::windows_sys::core::Interface for IPhoneVoicemail {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3385751542, data2: 28319, data3: 14987, data4: [183, 39, 110, 12, 246, 153, 130, 36] };
 }
 #[repr(C)]
 pub struct IVoipCallCoordinator {
@@ -702,10 +822,16 @@ pub struct IVoipCallCoordinator {
     pub TerminateCellularCall: unsafe extern "system" fn(this: *mut *mut Self, callupgradeguid: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub CancelUpgrade: unsafe extern "system" fn(this: *mut *mut Self, callupgradeguid: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IVoipCallCoordinator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1326549967, data2: 59631, data3: 17460, data4: [156, 95, 168, 216, 147, 250, 254, 121] };
+}
 #[repr(C)]
 pub struct IVoipCallCoordinator2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub SetupNewAcceptedCall: unsafe extern "system" fn(this: *mut *mut Self, context: ::windows_sys::core::HSTRING, contactname: ::windows_sys::core::HSTRING, contactnumber: ::windows_sys::core::HSTRING, servicename: ::windows_sys::core::HSTRING, media: VoipPhoneCallMedia, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IVoipCallCoordinator2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3199511027, data2: 50948, data3: 16948, data4: [137, 206, 232, 140, 192, 210, 143, 190] };
 }
 #[repr(C)]
 pub struct IVoipCallCoordinator3 {
@@ -716,6 +842,9 @@ pub struct IVoipCallCoordinator3 {
     #[cfg(not(feature = "Foundation"))]
     RequestNewIncomingCallWithContactRemoteId: usize,
 }
+impl ::windows_sys::core::Interface for IVoipCallCoordinator3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 864881855, data2: 39765, data3: 16417, data4: [135, 202, 230, 75, 155, 214, 102, 199] };
+}
 #[repr(C)]
 pub struct IVoipCallCoordinator4 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -724,10 +853,16 @@ pub struct IVoipCallCoordinator4 {
     #[cfg(not(feature = "Foundation"))]
     ReserveOneProcessCallResourcesAsync: usize,
 }
+impl ::windows_sys::core::Interface for IVoipCallCoordinator4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2205381177, data2: 37649, data3: 18063, data4: [187, 73, 71, 224, 223, 181, 217, 62] };
+}
 #[repr(C)]
 pub struct IVoipCallCoordinatorStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub GetDefault: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IVoipCallCoordinatorStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2136809259, data2: 57418, data3: 19728, data4: [179, 26, 165, 92, 146, 44, 194, 251] };
 }
 #[repr(C)]
 pub struct IVoipPhoneCall {
@@ -789,15 +924,24 @@ pub struct IVoipPhoneCall {
     pub SetCallMedia: unsafe extern "system" fn(this: *mut *mut Self, value: VoipPhoneCallMedia) -> ::windows_sys::core::HRESULT,
     pub NotifyCallReady: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IVoipPhoneCall {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1827795354, data2: 30612, data3: 19034, data4: [140, 104, 174, 135, 148, 122, 105, 144] };
+}
 #[repr(C)]
 pub struct IVoipPhoneCall2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub TryShowAppUI: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IVoipPhoneCall2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1947944673, data2: 9311, data3: 16883, data4: [147, 153, 49, 65, 210, 91, 82, 227] };
+}
 #[repr(C)]
 pub struct IVoipPhoneCall3 {
     pub base__: ::windows_sys::core::IInspectable,
     pub NotifyCallAccepted: unsafe extern "system" fn(this: *mut *mut Self, media: VoipPhoneCallMedia) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IVoipPhoneCall3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 227087650, data2: 57944, data3: 19113, data4: [144, 122, 26, 164, 19, 194, 85, 35] };
 }
 pub type LockScreenCallEndCallDeferral = *mut ::core::ffi::c_void;
 pub type LockScreenCallEndRequestedEventArgs = *mut ::core::ffi::c_void;

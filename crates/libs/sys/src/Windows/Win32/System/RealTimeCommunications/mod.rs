@@ -16,11 +16,17 @@ pub struct INetworkTransportSettings {
     #[cfg(not(feature = "Win32_Networking_WinSock"))]
     QuerySetting: usize,
 }
+impl ::windows_sys::core::Interface for INetworkTransportSettings {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1585101612, data2: 62145, data3: 19041, data4: [189, 53, 222, 183, 160, 138, 176, 241] };
+}
 #[repr(C)]
 pub struct INotificationTransportSync {
     pub base__: ::windows_sys::core::IUnknown,
     pub CompleteDelivery: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Flush: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for INotificationTransportSync {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2045449218, data2: 2744, data3: 18880, data4: [158, 20, 161, 174, 75, 169, 48, 88] };
 }
 #[repr(C)]
 pub struct IRTCBuddy {
@@ -30,6 +36,9 @@ pub struct IRTCBuddy {
     pub Notes: unsafe extern "system" fn(this: *mut *mut Self, pbstrnotes: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     Notes: usize,
+}
+impl ::windows_sys::core::Interface for IRTCBuddy {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4239472328, data2: 31632, data3: 19980, data4: [190, 254, 86, 237, 240, 186, 111, 28] };
 }
 #[repr(C)]
 pub struct IRTCBuddy2 {
@@ -52,11 +61,18 @@ pub struct IRTCBuddy2 {
     PresenceDevices: usize,
     pub SubscriptionType: unsafe extern "system" fn(this: *mut *mut Self, pensubscriptiontype: *mut RTC_BUDDY_SUBSCRIPTION_TYPE) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IRTCBuddy2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 271553928, data2: 9191, data3: 16611, data4: [149, 77, 205, 122, 29, 92, 3, 97] };
+}
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IRTCBuddyEvent {
     pub base__: super::Com::IDispatch,
     pub Buddy: unsafe extern "system" fn(this: *mut *mut Self, ppbuddy: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IRTCBuddyEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4084036957, data2: 6118, data3: 16462, data4: [149, 79, 15, 192, 117, 116, 199, 141] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -68,6 +84,10 @@ pub struct IRTCBuddyEvent2 {
     pub StatusText: unsafe extern "system" fn(this: *mut *mut Self, pbstrstatustext: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     StatusText: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IRTCBuddyEvent2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1212841758, data2: 29680, data3: 18832, data4: [191, 194, 96, 188, 57, 120, 167, 32] };
 }
 #[repr(C)]
 pub struct IRTCBuddyGroup {
@@ -97,6 +117,9 @@ pub struct IRTCBuddyGroup {
     SetData: usize,
     pub Profile: unsafe extern "system" fn(this: *mut *mut Self, ppprofile: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IRTCBuddyGroup {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1614159464, data2: 37220, data3: 17289, data4: [164, 198, 208, 179, 146, 91, 218, 94] };
+}
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IRTCBuddyGroupEvent {
@@ -105,6 +128,10 @@ pub struct IRTCBuddyGroupEvent {
     pub Group: unsafe extern "system" fn(this: *mut *mut Self, ppgroup: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Buddy: unsafe extern "system" fn(this: *mut *mut Self, ppbuddy: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub StatusCode: unsafe extern "system" fn(this: *mut *mut Self, plstatuscode: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IRTCBuddyGroupEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 981066193, data2: 46902, data3: 17428, data4: [150, 248, 187, 199, 240, 136, 99, 228] };
 }
 #[repr(C)]
 pub struct IRTCClient {
@@ -185,6 +212,9 @@ pub struct IRTCClient {
     pub InvokeTuningWizard: unsafe extern "system" fn(this: *mut *mut Self, hwndparent: isize) -> ::windows_sys::core::HRESULT,
     pub IsTuned: unsafe extern "system" fn(this: *mut *mut Self, pftuned: *mut i16) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IRTCClient {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 126000709, data2: 39476, data3: 16526, data4: [160, 17, 189, 223, 19, 72, 124, 209] };
+}
 #[repr(C)]
 pub struct IRTCClient2 {
     pub base__: IRTCClient,
@@ -211,12 +241,19 @@ pub struct IRTCClient2 {
     pub put_AllowedPorts: unsafe extern "system" fn(this: *mut *mut Self, ltransport: i32, enlistenmode: RTC_LISTEN_MODE) -> ::windows_sys::core::HRESULT,
     pub get_AllowedPorts: unsafe extern "system" fn(this: *mut *mut Self, ltransport: i32, penlistenmode: *mut RTC_LISTEN_MODE) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IRTCClient2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 210884381, data2: 4196, data3: 17114, data4: [191, 165, 87, 43, 235, 142, 234, 132] };
+}
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IRTCClientEvent {
     pub base__: super::Com::IDispatch,
     pub EventType: unsafe extern "system" fn(this: *mut *mut Self, peneventtype: *mut RTC_CLIENT_EVENT_TYPE) -> ::windows_sys::core::HRESULT,
     pub Client: unsafe extern "system" fn(this: *mut *mut Self, ppclient: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IRTCClientEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 726219642, data2: 15546, data3: 16752, data4: [156, 139, 118, 169, 218, 205, 214, 68] };
 }
 #[repr(C)]
 pub struct IRTCClientPortManagement {
@@ -230,6 +267,9 @@ pub struct IRTCClientPortManagement {
     #[cfg(not(feature = "Win32_Foundation"))]
     StopListenAddressAndPort: usize,
     pub GetPortRange: unsafe extern "system" fn(this: *mut *mut Self, enporttype: RTC_PORT_TYPE, plminvalue: *mut i32, plmaxvalue: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IRTCClientPortManagement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3588177667, data2: 19422, data3: 17431, data4: [174, 254, 113, 23, 123, 218, 234, 102] };
 }
 #[repr(C)]
 pub struct IRTCClientPresence {
@@ -282,6 +322,9 @@ pub struct IRTCClientPresence {
     pub SetOfferWatcherMode: unsafe extern "system" fn(this: *mut *mut Self, enmode: RTC_OFFER_WATCHER_MODE) -> ::windows_sys::core::HRESULT,
     pub PrivacyMode: unsafe extern "system" fn(this: *mut *mut Self, penmode: *mut RTC_PRIVACY_MODE) -> ::windows_sys::core::HRESULT,
     pub SetPrivacyMode: unsafe extern "system" fn(this: *mut *mut Self, enmode: RTC_PRIVACY_MODE) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IRTCClientPresence {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 298044364, data2: 1860, data3: 17105, data4: [150, 138, 81, 170, 27, 178, 116, 198] };
 }
 #[repr(C)]
 pub struct IRTCClientPresence2 {
@@ -338,6 +381,9 @@ pub struct IRTCClientPresence2 {
     #[cfg(not(feature = "Win32_Foundation"))]
     AddBuddyEx: usize,
 }
+impl ::windows_sys::core::Interface for IRTCClientPresence2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2904033768, data2: 25335, data3: 18307, data4: [144, 154, 41, 201, 210, 203, 29, 52] };
+}
 #[repr(C)]
 pub struct IRTCClientProvisioning {
     pub base__: ::windows_sys::core::IUnknown,
@@ -358,10 +404,16 @@ pub struct IRTCClientProvisioning {
     GetProfile: usize,
     pub SessionCapabilities: unsafe extern "system" fn(this: *mut *mut Self, plsupportedsessions: *mut i32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IRTCClientProvisioning {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3119894278, data2: 26041, data3: 19072, data4: [160, 230, 115, 202, 227, 239, 56, 34] };
+}
 #[repr(C)]
 pub struct IRTCClientProvisioning2 {
     pub base__: IRTCClientProvisioning,
     pub EnableProfileEx: unsafe extern "system" fn(this: *mut *mut Self, pprofile: *mut ::core::ffi::c_void, lregisterflags: i32, lroamingflags: i32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IRTCClientProvisioning2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2802387381, data2: 62478, data3: 17799, data4: [187, 117, 230, 188, 8, 69, 2, 62] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -375,9 +427,17 @@ pub struct IRTCCollection {
     pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, ppnewenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IRTCCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3967582358, data2: 47384, data3: 16452, data4: [148, 241, 228, 251, 160, 54, 29, 92] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IRTCDispatchEventNotification {
     pub base__: super::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IRTCDispatchEventNotification {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 393076670, data2: 65216, data3: 19797, data4: [188, 135, 132, 207, 241, 239, 127, 145] };
 }
 #[repr(C)]
 pub struct IRTCEnumBuddies {
@@ -387,6 +447,9 @@ pub struct IRTCEnumBuddies {
     pub Skip: unsafe extern "system" fn(this: *mut *mut Self, celt: u32) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IRTCEnumBuddies {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4146686231, data2: 21865, data3: 19259, data4: [179, 175, 152, 209, 20, 75, 43, 135] };
+}
 #[repr(C)]
 pub struct IRTCEnumGroups {
     pub base__: ::windows_sys::core::IUnknown,
@@ -394,6 +457,9 @@ pub struct IRTCEnumGroups {
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Skip: unsafe extern "system" fn(this: *mut *mut Self, celt: u32) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IRTCEnumGroups {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1948481750, data2: 41281, data3: 17429, data4: [143, 39, 53, 217, 144, 118, 207, 93] };
 }
 #[repr(C)]
 pub struct IRTCEnumParticipants {
@@ -403,6 +469,9 @@ pub struct IRTCEnumParticipants {
     pub Skip: unsafe extern "system" fn(this: *mut *mut Self, celt: u32) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IRTCEnumParticipants {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4241846057, data2: 19023, data3: 16818, data4: [186, 92, 245, 188, 204, 6, 11, 246] };
+}
 #[repr(C)]
 pub struct IRTCEnumPresenceDevices {
     pub base__: ::windows_sys::core::IUnknown,
@@ -410,6 +479,9 @@ pub struct IRTCEnumPresenceDevices {
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Skip: unsafe extern "system" fn(this: *mut *mut Self, celt: u32) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IRTCEnumPresenceDevices {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1888234167, data2: 35832, data3: 17144, data4: [140, 125, 99, 81, 151, 173, 85, 57] };
 }
 #[repr(C)]
 pub struct IRTCEnumProfiles {
@@ -419,6 +491,9 @@ pub struct IRTCEnumProfiles {
     pub Skip: unsafe extern "system" fn(this: *mut *mut Self, celt: u32) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IRTCEnumProfiles {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 699909148, data2: 60802, data3: 19402, data4: [132, 173, 57, 213, 16, 27, 88, 227] };
+}
 #[repr(C)]
 pub struct IRTCEnumUserSearchResults {
     pub base__: ::windows_sys::core::IUnknown,
@@ -426,6 +501,9 @@ pub struct IRTCEnumUserSearchResults {
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Skip: unsafe extern "system" fn(this: *mut *mut Self, celt: u32) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IRTCEnumUserSearchResults {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2211764343, data2: 43613, data3: 19035, data4: [141, 14, 0, 42, 128, 103, 224, 232] };
 }
 #[repr(C)]
 pub struct IRTCEnumWatchers {
@@ -435,6 +513,9 @@ pub struct IRTCEnumWatchers {
     pub Skip: unsafe extern "system" fn(this: *mut *mut Self, celt: u32) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IRTCEnumWatchers {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2826786263, data2: 56180, data3: 20177, data4: [156, 164, 119, 160, 228, 27, 65, 62] };
+}
 #[repr(C)]
 pub struct IRTCEventNotification {
     pub base__: ::windows_sys::core::IUnknown,
@@ -442,6 +523,9 @@ pub struct IRTCEventNotification {
     pub Event: unsafe extern "system" fn(this: *mut *mut Self, rtcevent: RTC_EVENT, pevent: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     Event: usize,
+}
+impl ::windows_sys::core::Interface for IRTCEventNotification {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 335160519, data2: 22344, data3: 19233, data4: [145, 245, 115, 151, 96, 156, 231, 71] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -459,6 +543,10 @@ pub struct IRTCInfoEvent {
     InfoHeader: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IRTCInfoEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1310550190, data2: 6418, data3: 20297, data4: [178, 195, 89, 79, 173, 253, 66, 95] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IRTCIntensityEvent {
     pub base__: super::Com::IDispatch,
@@ -468,12 +556,20 @@ pub struct IRTCIntensityEvent {
     pub Direction: unsafe extern "system" fn(this: *mut *mut Self, pendirection: *mut RTC_AUDIO_DEVICE) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IRTCIntensityEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1277411153, data2: 14604, data3: 18834, data4: [164, 29, 65, 238, 192, 91, 42, 75] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IRTCMediaEvent {
     pub base__: super::Com::IDispatch,
     pub MediaType: unsafe extern "system" fn(this: *mut *mut Self, pmediatype: *mut i32) -> ::windows_sys::core::HRESULT,
     pub EventType: unsafe extern "system" fn(this: *mut *mut Self, peneventtype: *mut RTC_MEDIA_EVENT_TYPE) -> ::windows_sys::core::HRESULT,
     pub EventReason: unsafe extern "system" fn(this: *mut *mut Self, peneventreason: *mut RTC_MEDIA_EVENT_REASON) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IRTCMediaEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 161039611, data2: 48346, data3: 17726, data4: [140, 65, 225, 61, 162, 173, 247, 243] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -486,6 +582,10 @@ pub struct IRTCMediaRequestEvent {
     pub get_RemotePreferredSecurityLevel: unsafe extern "system" fn(this: *mut *mut Self, ensecuritytype: RTC_SECURITY_TYPE, pensecuritylevel: *mut RTC_SECURITY_LEVEL) -> ::windows_sys::core::HRESULT,
     pub Reject: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub State: unsafe extern "system" fn(this: *mut *mut Self, pstate: *mut RTC_REINVITE_STATE) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IRTCMediaRequestEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1381444885, data2: 5260, data3: 19863, data4: [163, 108, 45, 165, 92, 40, 157, 99] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -504,6 +604,10 @@ pub struct IRTCMessagingEvent {
     MessageHeader: usize,
     pub UserStatus: unsafe extern "system" fn(this: *mut *mut Self, penuserstatus: *mut RTC_MESSAGING_USER_STATUS) -> ::windows_sys::core::HRESULT,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IRTCMessagingEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3546322241, data2: 6953, data3: 19941, data4: [164, 173, 90, 235, 175, 49, 149, 18] };
+}
 #[repr(C)]
 pub struct IRTCParticipant {
     pub base__: ::windows_sys::core::IUnknown,
@@ -519,6 +623,9 @@ pub struct IRTCParticipant {
     pub State: unsafe extern "system" fn(this: *mut *mut Self, penstate: *mut RTC_PARTICIPANT_STATE) -> ::windows_sys::core::HRESULT,
     pub Session: unsafe extern "system" fn(this: *mut *mut Self, ppsession: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IRTCParticipant {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2928061909, data2: 9905, data3: 17428, data4: [175, 29, 185, 76, 217, 56, 215, 57] };
+}
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IRTCParticipantStateChangeEvent {
@@ -526,6 +633,10 @@ pub struct IRTCParticipantStateChangeEvent {
     pub Participant: unsafe extern "system" fn(this: *mut *mut Self, ppparticipant: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub State: unsafe extern "system" fn(this: *mut *mut Self, penstate: *mut RTC_PARTICIPANT_STATE) -> ::windows_sys::core::HRESULT,
     pub StatusCode: unsafe extern "system" fn(this: *mut *mut Self, plstatuscode: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IRTCParticipantStateChangeEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 163362199, data2: 61690, data3: 18681, data4: [180, 32, 70, 140, 234, 127, 222, 4] };
 }
 #[repr(C)]
 pub struct IRTCPortManager {
@@ -542,6 +653,9 @@ pub struct IRTCPortManager {
     pub ReleaseMapping: unsafe extern "system" fn(this: *mut *mut Self, bstrinternallocaladdress: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, linternallocalport: i32, bstrexternallocaladdress: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, lexternallocaladdress: i32) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     ReleaseMapping: usize,
+}
+impl ::windows_sys::core::Interface for IRTCPortManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3665281355, data2: 25096, data3: 17354, data4: [141, 223, 91, 96, 160, 166, 159, 172] };
 }
 #[repr(C)]
 pub struct IRTCPresenceContact {
@@ -573,6 +687,9 @@ pub struct IRTCPresenceContact {
     pub Persistent: unsafe extern "system" fn(this: *mut *mut Self, pfpersistent: *mut i16) -> ::windows_sys::core::HRESULT,
     pub SetPersistent: unsafe extern "system" fn(this: *mut *mut Self, fpersistent: i16) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IRTCPresenceContact {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2334325036, data2: 52624, data3: 17115, data4: [167, 51, 33, 34, 5, 195, 227, 223] };
+}
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IRTCPresenceDataEvent {
@@ -586,6 +703,10 @@ pub struct IRTCPresenceDataEvent {
     pub GetPresenceData: unsafe extern "system" fn(this: *mut *mut Self, pbstrnamespace: *mut super::super::Foundation::BSTR, pbstrdata: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetPresenceData: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IRTCPresenceDataEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 955312012, data2: 35719, data3: 19460, data4: [168, 45, 174, 221, 131, 201, 9, 187] };
 }
 #[repr(C)]
 pub struct IRTCPresenceDevice {
@@ -604,6 +725,9 @@ pub struct IRTCPresenceDevice {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetPresenceData: usize,
 }
+impl ::windows_sys::core::Interface for IRTCPresenceDevice {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3161100509, data2: 44442, data3: 18650, data4: [155, 12, 37, 21, 227, 133, 33, 173] };
+}
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IRTCPresencePropertyEvent {
@@ -620,6 +744,10 @@ pub struct IRTCPresencePropertyEvent {
     Value: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IRTCPresencePropertyEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4151833968, data2: 43040, data3: 18901, data4: [134, 189, 224, 153, 73, 63, 21, 24] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IRTCPresenceStatusEvent {
     pub base__: super::Com::IDispatch,
@@ -632,6 +760,10 @@ pub struct IRTCPresenceStatusEvent {
     pub GetLocalPresenceInfo: unsafe extern "system" fn(this: *mut *mut Self, penstatus: *mut RTC_PRESENCE_STATUS, pbstrnotes: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetLocalPresenceInfo: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IRTCPresenceStatusEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2020032306, data2: 18959, data3: 17964, data4: [137, 170, 238, 119, 6, 112, 118, 120] };
 }
 #[repr(C)]
 pub struct IRTCProfile {
@@ -700,6 +832,9 @@ pub struct IRTCProfile {
     pub SessionCapabilities: unsafe extern "system" fn(this: *mut *mut Self, plsupportedsessions: *mut i32) -> ::windows_sys::core::HRESULT,
     pub State: unsafe extern "system" fn(this: *mut *mut Self, penstate: *mut RTC_REGISTRATION_STATE) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IRTCProfile {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3497970334, data2: 16482, data3: 19924, data4: [158, 125, 114, 42, 73, 186, 115, 3] };
+}
 #[repr(C)]
 pub struct IRTCProfile2 {
     pub base__: IRTCProfile,
@@ -714,6 +849,9 @@ pub struct IRTCProfile2 {
     pub AllowedAuth: unsafe extern "system" fn(this: *mut *mut Self, plallowedauth: *mut i32) -> ::windows_sys::core::HRESULT,
     pub SetAllowedAuth: unsafe extern "system" fn(this: *mut *mut Self, lallowedauth: i32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IRTCProfile2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1266808910, data2: 48583, data3: 16772, data4: [145, 84, 60, 178, 221, 121, 23, 251] };
+}
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IRTCProfileEvent {
@@ -723,10 +861,18 @@ pub struct IRTCProfileEvent {
     pub StatusCode: unsafe extern "system" fn(this: *mut *mut Self, plstatuscode: *mut i32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IRTCProfileEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3604327227, data2: 30478, data3: 17384, data4: [128, 10, 121, 176, 98, 57, 95, 202] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IRTCProfileEvent2 {
     pub base__: IRTCProfileEvent,
     pub EventType: unsafe extern "system" fn(this: *mut *mut Self, peventtype: *mut RTC_PROFILE_EVENT_TYPE) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IRTCProfileEvent2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1659203292, data2: 1018, data3: 16673, data4: [148, 251, 35, 73, 63, 208, 174, 100] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -745,6 +891,10 @@ pub struct IRTCReInviteEvent {
     GetRemoteSessionDescription: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IRTCReInviteEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 290819460, data2: 8268, data3: 17383, data4: [153, 176, 32, 52, 233, 65, 127, 125] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IRTCRegistrationStateChangeEvent {
     pub base__: super::Com::IDispatch,
@@ -757,6 +907,10 @@ pub struct IRTCRegistrationStateChangeEvent {
     StatusText: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IRTCRegistrationStateChangeEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1657837851, data2: 20651, data3: 20226, data4: [185, 72, 202, 148, 242, 111, 143, 149] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IRTCRoamingEvent {
     pub base__: super::Com::IDispatch,
@@ -767,6 +921,10 @@ pub struct IRTCRoamingEvent {
     pub StatusText: unsafe extern "system" fn(this: *mut *mut Self, pbstrstatustext: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     StatusText: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IRTCRoamingEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2039876203, data2: 3249, data3: 19912, data4: [168, 5, 115, 24, 233, 153, 2, 232] };
 }
 #[repr(C)]
 pub struct IRTCSession {
@@ -813,6 +971,9 @@ pub struct IRTCSession {
     #[cfg(not(feature = "Win32_Foundation"))]
     put_EncryptionKey: usize,
 }
+impl ::windows_sys::core::Interface for IRTCSession {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 947683462, data2: 39358, data3: 17147, data4: [153, 115, 124, 15, 192, 202, 159, 168] };
+}
 #[repr(C)]
 pub struct IRTCSession2 {
     pub base__: IRTCSession,
@@ -831,6 +992,9 @@ pub struct IRTCSession2 {
     pub ReInviteWithSessionDescription: unsafe extern "system" fn(this: *mut *mut Self, bstrcontenttype: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrsessiondescription: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, lcookie: isize) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     ReInviteWithSessionDescription: usize,
+}
+impl ::windows_sys::core::Interface for IRTCSession2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 400018940, data2: 45063, data3: 18508, data4: [153, 210, 134, 168, 168, 32, 153, 29] };
 }
 #[repr(C)]
 pub struct IRTCSessionCallControl {
@@ -863,6 +1027,9 @@ pub struct IRTCSessionCallControl {
     ReferCookie: usize,
     pub IsReferred: unsafe extern "system" fn(this: *mut *mut Self, pfisreferred: *mut i16) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IRTCSessionCallControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3919908244, data2: 6411, data3: 20354, data4: [149, 48, 59, 142, 191, 96, 117, 138] };
+}
 #[repr(C)]
 pub struct IRTCSessionDescriptionManager {
     pub base__: ::windows_sys::core::IUnknown,
@@ -870,6 +1037,9 @@ pub struct IRTCSessionDescriptionManager {
     pub EvaluateSessionDescription: unsafe extern "system" fn(this: *mut *mut Self, bstrcontenttype: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrsessiondescription: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pfapplicationsession: *mut i16) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     EvaluateSessionDescription: usize,
+}
+impl ::windows_sys::core::Interface for IRTCSessionDescriptionManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3128906126, data2: 54070, data3: 16496, data4: [147, 166, 134, 83, 149, 200, 67, 249] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -884,6 +1054,10 @@ pub struct IRTCSessionOperationCompleteEvent {
     StatusText: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IRTCSessionOperationCompleteEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2797597888, data2: 63432, data3: 19772, data4: [154, 65, 53, 80, 247, 138, 149, 176] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IRTCSessionOperationCompleteEvent2 {
     pub base__: IRTCSessionOperationCompleteEvent,
@@ -893,10 +1067,17 @@ pub struct IRTCSessionOperationCompleteEvent2 {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetRemoteSessionDescription: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IRTCSessionOperationCompleteEvent2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4143721115, data2: 54716, data3: 16961, data4: [180, 54, 27, 132, 96, 193, 56, 50] };
+}
 #[repr(C)]
 pub struct IRTCSessionPortManagement {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetPortManager: unsafe extern "system" fn(this: *mut *mut Self, pportmanager: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IRTCSessionPortManagement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2691887574, data2: 646, data3: 19999, data4: [133, 242, 23, 162, 148, 132, 86, 236] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -909,6 +1090,10 @@ pub struct IRTCSessionReferStatusEvent {
     pub StatusText: unsafe extern "system" fn(this: *mut *mut Self, pbstrstatustext: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     StatusText: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IRTCSessionReferStatusEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1032831693, data2: 23926, data3: 17579, data4: [187, 104, 42, 128, 53, 59, 52, 162] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -932,6 +1117,10 @@ pub struct IRTCSessionReferredEvent {
     pub SetReferredSessionState: unsafe extern "system" fn(this: *mut *mut Self, enstate: RTC_SESSION_STATE) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IRTCSessionReferredEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 392849448, data2: 20428, data3: 20264, data4: [168, 98, 4, 89, 122, 108, 241, 196] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IRTCSessionStateChangeEvent {
     pub base__: super::Com::IDispatch,
@@ -942,6 +1131,10 @@ pub struct IRTCSessionStateChangeEvent {
     pub StatusText: unsafe extern "system" fn(this: *mut *mut Self, pbstrstatustext: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     StatusText: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IRTCSessionStateChangeEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3048920835, data2: 22866, data3: 18611, data4: [147, 33, 127, 69, 0, 82, 21, 6] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -955,11 +1148,18 @@ pub struct IRTCSessionStateChangeEvent2 {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetRemoteSessionDescription: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IRTCSessionStateChangeEvent2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1335046513, data2: 28565, data3: 18560, data4: [128, 217, 46, 200, 212, 149, 210, 97] };
+}
 #[repr(C)]
 pub struct IRTCUserSearch {
     pub base__: ::windows_sys::core::IUnknown,
     pub CreateQuery: unsafe extern "system" fn(this: *mut *mut Self, ppquery: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub ExecuteSearch: unsafe extern "system" fn(this: *mut *mut Self, pquery: *mut ::core::ffi::c_void, pprofile: *mut ::core::ffi::c_void, lcookie: isize) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IRTCUserSearch {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3055126571, data2: 34316, data3: 19892, data4: [190, 27, 105, 59, 101, 5, 187, 229] };
 }
 #[repr(C)]
 pub struct IRTCUserSearchQuery {
@@ -987,6 +1187,9 @@ pub struct IRTCUserSearchQuery {
     #[cfg(not(feature = "Win32_Foundation"))]
     SearchDomain: usize,
 }
+impl ::windows_sys::core::Interface for IRTCUserSearchQuery {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 679674101, data2: 53818, data3: 17253, data4: [154, 115, 153, 133, 201, 140, 40, 129] };
+}
 #[repr(C)]
 pub struct IRTCUserSearchResult {
     pub base__: ::windows_sys::core::IUnknown,
@@ -994,6 +1197,9 @@ pub struct IRTCUserSearchResult {
     pub get_Value: unsafe extern "system" fn(this: *mut *mut Self, encolumn: RTC_USER_SEARCH_COLUMN, pbstrvalue: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     get_Value: usize,
+}
+impl ::windows_sys::core::Interface for IRTCUserSearchResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2232580274, data2: 38290, data3: 18447, data4: [141, 181, 45, 232, 107, 38, 181, 77] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1010,17 +1216,27 @@ pub struct IRTCUserSearchResultsEvent {
     pub StatusCode: unsafe extern "system" fn(this: *mut *mut Self, plstatuscode: *mut i32) -> ::windows_sys::core::HRESULT,
     pub MoreAvailable: unsafe extern "system" fn(this: *mut *mut Self, pfmoreavailable: *mut i16) -> ::windows_sys::core::HRESULT,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IRTCUserSearchResultsEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3637035981, data2: 32684, data3: 16520, data4: [129, 197, 194, 76, 188, 9, 56, 227] };
+}
 #[repr(C)]
 pub struct IRTCWatcher {
     pub base__: IRTCPresenceContact,
     pub State: unsafe extern "system" fn(this: *mut *mut Self, penstate: *mut RTC_WATCHER_STATE) -> ::windows_sys::core::HRESULT,
     pub SetState: unsafe extern "system" fn(this: *mut *mut Self, enstate: RTC_WATCHER_STATE) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IRTCWatcher {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3352222424, data2: 13419, data3: 19739, data4: [172, 2, 162, 8, 141, 249, 190, 79] };
+}
 #[repr(C)]
 pub struct IRTCWatcher2 {
     pub base__: IRTCWatcher,
     pub Profile: unsafe extern "system" fn(this: *mut *mut Self, ppprofile: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Scope: unsafe extern "system" fn(this: *mut *mut Self, penscope: *mut RTC_ACE_SCOPE) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IRTCWatcher2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3571029631, data2: 53265, data3: 19229, data4: [145, 227, 171, 167, 143, 150, 57, 61] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1029,11 +1245,19 @@ pub struct IRTCWatcherEvent {
     pub Watcher: unsafe extern "system" fn(this: *mut *mut Self, ppwatcher: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IRTCWatcherEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4077744737, data2: 22650, data3: 16975, data4: [130, 44, 49, 39, 136, 244, 53, 72] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IRTCWatcherEvent2 {
     pub base__: IRTCWatcherEvent,
     pub EventType: unsafe extern "system" fn(this: *mut *mut Self, peventtype: *mut RTC_WATCHER_EVENT_TYPE) -> ::windows_sys::core::HRESULT,
     pub StatusCode: unsafe extern "system" fn(this: *mut *mut Self, plstatuscode: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IRTCWatcherEvent2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3844641256, data2: 6284, data3: 18863, data4: [176, 5, 152, 237, 19, 248, 63, 156] };
 }
 #[repr(C)]
 pub struct ITransportSettingsInternal {
@@ -1046,6 +1270,9 @@ pub struct ITransportSettingsInternal {
     pub QuerySetting: unsafe extern "system" fn(this: *mut *mut Self, setting: *mut TRANSPORT_SETTING) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Networking_WinSock"))]
     QuerySetting: usize,
+}
+impl ::windows_sys::core::Interface for ITransportSettingsInternal {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1361305718, data2: 10723, data3: 19453, data4: [132, 254, 1, 146, 212, 17, 227, 232] };
 }
 #[doc = "*Required features: `\"Win32_System_RealTimeCommunications\"`*"]
 pub const RTCAU_BASIC: u32 = 1u32;

@@ -53,6 +53,9 @@ pub struct IGameListEntry {
     #[cfg(not(feature = "Foundation"))]
     SetCategoryAsync: usize,
 }
+impl ::windows_sys::core::Interface for IGameListEntry {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1935221971, data2: 33055, data3: 17556, data4: [182, 156, 198, 65, 160, 198, 21, 67] };
+}
 #[repr(C)]
 pub struct IGameListEntry2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -76,6 +79,9 @@ pub struct IGameListEntry2 {
     #[cfg(not(feature = "Foundation"))]
     SetTitleIdAsync: usize,
     pub GameModeConfiguration: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IGameListEntry2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3628765067, data2: 34633, data3: 18981, data4: [144, 211, 246, 197, 164, 39, 136, 109] };
 }
 #[repr(C)]
 pub struct IGameListStatics {
@@ -113,6 +119,9 @@ pub struct IGameListStatics {
     #[cfg(not(feature = "Foundation"))]
     RemoveGameUpdated: usize,
 }
+impl ::windows_sys::core::Interface for IGameListStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 769462127, data2: 40038, data3: 19205, data4: [148, 92, 214, 237, 120, 73, 27, 140] };
+}
 #[repr(C)]
 pub struct IGameListStatics2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -124,6 +133,9 @@ pub struct IGameListStatics2 {
     pub UnmergeEntryAsync: unsafe extern "system" fn(this: *mut *mut Self, mergedentry: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     UnmergeEntryAsync: usize,
+}
+impl ::windows_sys::core::Interface for IGameListStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 962535576, data2: 59930, data3: 17834, data4: [146, 104, 168, 57, 5, 104, 111, 39] };
 }
 #[repr(C)]
 pub struct IGameModeConfiguration {
@@ -189,6 +201,9 @@ pub struct IGameModeConfiguration {
     #[cfg(not(feature = "Foundation"))]
     SaveAsync: usize,
 }
+impl ::windows_sys::core::Interface for IGameModeConfiguration {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2028310959, data2: 45378, data3: 20208, data4: [136, 48, 85, 188, 43, 228, 245, 234] };
+}
 #[repr(C)]
 pub struct IGameModeUserConfiguration {
     pub base__: ::windows_sys::core::IInspectable,
@@ -201,8 +216,14 @@ pub struct IGameModeUserConfiguration {
     #[cfg(not(feature = "Foundation"))]
     SaveAsync: usize,
 }
+impl ::windows_sys::core::Interface for IGameModeUserConfiguration {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1926449908, data2: 30059, data3: 18191, data4: [160, 194, 186, 98, 169, 7, 149, 219] };
+}
 #[repr(C)]
 pub struct IGameModeUserConfigurationStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub GetDefault: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IGameModeUserConfigurationStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1850792316, data2: 26346, data3: 18318, data4: [164, 161, 245, 124, 14, 141, 0, 231] };
 }

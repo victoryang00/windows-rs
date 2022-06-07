@@ -13,6 +13,9 @@ pub struct IBasicProperties {
     #[cfg(not(feature = "Foundation"))]
     ItemDate: usize,
 }
+impl ::windows_sys::core::Interface for IBasicProperties {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3495777755, data2: 30814, data3: 19046, data4: [190, 2, 155, 238, 197, 138, 234, 129] };
+}
 #[repr(C)]
 pub struct IDocumentProperties {
     pub base__: ::windows_sys::core::IInspectable,
@@ -29,6 +32,9 @@ pub struct IDocumentProperties {
     pub Comment: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub SetComment: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDocumentProperties {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2125142460, data2: 6177, data3: 18723, data4: [180, 169, 10, 234, 64, 77, 0, 112] };
+}
 #[repr(C)]
 pub struct IGeotagHelperStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -44,6 +50,9 @@ pub struct IGeotagHelperStatics {
     pub SetGeotagAsync: unsafe extern "system" fn(this: *mut *mut Self, file: *mut ::core::ffi::c_void, geopoint: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Devices_Geolocation", feature = "Foundation")))]
     SetGeotagAsync: usize,
+}
+impl ::windows_sys::core::Interface for IGeotagHelperStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1095316036, data2: 9508, data3: 18005, data4: [134, 166, 237, 22, 245, 252, 113, 107] };
 }
 #[repr(C)]
 pub struct IImageProperties {
@@ -83,6 +92,9 @@ pub struct IImageProperties {
     pub PeopleNames: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     PeopleNames: usize,
+}
+impl ::windows_sys::core::Interface for IImageProperties {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1379701796, data2: 64767, data3: 17013, data4: [175, 238, 236, 219, 154, 180, 121, 115] };
 }
 #[repr(C)]
 pub struct IMusicProperties {
@@ -131,6 +143,9 @@ pub struct IMusicProperties {
     pub Year: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
     pub SetYear: unsafe extern "system" fn(this: *mut *mut Self, value: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMusicProperties {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3163204450, data2: 26348, data3: 16794, data4: [188, 93, 202, 101, 164, 203, 70, 218] };
+}
 #[repr(C)]
 pub struct IStorageItemContentProperties {
     pub base__: ::windows_sys::core::IInspectable,
@@ -151,6 +166,9 @@ pub struct IStorageItemContentProperties {
     #[cfg(not(feature = "Foundation"))]
     GetDocumentPropertiesAsync: usize,
 }
+impl ::windows_sys::core::Interface for IStorageItemContentProperties {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 86592429, data2: 48184, data3: 18623, data4: [133, 215, 119, 14, 14, 42, 224, 186] };
+}
 #[repr(C)]
 pub struct IStorageItemExtraProperties {
     pub base__: ::windows_sys::core::IInspectable,
@@ -167,6 +185,9 @@ pub struct IStorageItemExtraProperties {
     #[cfg(not(feature = "Foundation"))]
     SavePropertiesAsyncOverloadDefault: usize,
 }
+impl ::windows_sys::core::Interface for IStorageItemExtraProperties {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3309527474, data2: 21709, data3: 17195, data4: [189, 188, 75, 25, 196, 180, 112, 215] };
+}
 #[repr(C)]
 pub struct IThumbnailProperties {
     pub base__: ::windows_sys::core::IInspectable,
@@ -174,6 +195,9 @@ pub struct IThumbnailProperties {
     pub OriginalHeight: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
     pub ReturnedSmallerCachedSize: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub Type: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ThumbnailType) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IThumbnailProperties {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1765659695, data2: 56295, data3: 18869, data4: [179, 179, 40, 147, 172, 93, 52, 35] };
 }
 #[repr(C)]
 pub struct IVideoProperties {
@@ -220,6 +244,9 @@ pub struct IVideoProperties {
     #[cfg(not(feature = "Foundation_Collections"))]
     Directors: usize,
     pub Orientation: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut VideoOrientation) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IVideoProperties {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1905976583, data2: 26846, data3: 19896, data4: [151, 222, 73, 153, 140, 5, 159, 47] };
 }
 pub type ImageProperties = *mut ::core::ffi::c_void;
 pub type MusicProperties = *mut ::core::ffi::c_void;

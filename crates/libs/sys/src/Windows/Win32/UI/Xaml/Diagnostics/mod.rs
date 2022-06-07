@@ -103,6 +103,9 @@ pub struct IBitmapData {
     #[cfg(not(feature = "Win32_Graphics_Dxgi_Common"))]
     GetSourceBitmapDescription: usize,
 }
+impl ::windows_sys::core::Interface for IBitmapData {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3517140722, data2: 51928, data3: 17973, data4: [163, 210, 252, 218, 141, 63, 60, 175] };
+}
 #[repr(C)]
 pub struct IVisualTreeService {
     pub base__: ::windows_sys::core::IUnknown,
@@ -131,6 +134,9 @@ pub struct IVisualTreeService {
     pub RemoveChild: unsafe extern "system" fn(this: *mut *mut Self, parent: u64, index: u32) -> ::windows_sys::core::HRESULT,
     pub ClearChildren: unsafe extern "system" fn(this: *mut *mut Self, parent: u64) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IVisualTreeService {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2777919770, data2: 53631, data3: 18619, data4: [143, 102, 131, 145, 7, 49, 200, 165] };
+}
 #[repr(C)]
 pub struct IVisualTreeService2 {
     pub base__: IVisualTreeService,
@@ -138,6 +144,9 @@ pub struct IVisualTreeService2 {
     pub GetProperty: unsafe extern "system" fn(this: *mut *mut Self, object: u64, propertyindex: u32, pvalue: *mut u64) -> ::windows_sys::core::HRESULT,
     pub ReplaceResource: unsafe extern "system" fn(this: *mut *mut Self, resourcedictionary: u64, key: u64, newvalue: u64) -> ::windows_sys::core::HRESULT,
     pub RenderTargetBitmap: unsafe extern "system" fn(this: *mut *mut Self, handle: u64, options: RenderTargetBitmapOptions, maxpixelwidth: u32, maxpixelheight: u32, ppbitmapdata: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IVisualTreeService2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 319770934, data2: 60483, data3: 20321, data4: [137, 199, 152, 1, 163, 109, 46, 149] };
 }
 #[repr(C)]
 pub struct IVisualTreeService3 {
@@ -150,6 +159,9 @@ pub struct IVisualTreeService3 {
     pub AddDictionaryItem: unsafe extern "system" fn(this: *mut *mut Self, dictionaryhandle: u64, resourcekey: u64, resourcehandle: u64) -> ::windows_sys::core::HRESULT,
     pub RemoveDictionaryItem: unsafe extern "system" fn(this: *mut *mut Self, dictionaryhandle: u64, resourcekey: u64) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IVisualTreeService3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 242861792, data2: 34208, data3: 19432, data4: [180, 26, 101, 92, 241, 253, 25, 189] };
+}
 #[repr(C)]
 pub struct IVisualTreeServiceCallback {
     pub base__: ::windows_sys::core::IUnknown,
@@ -158,10 +170,16 @@ pub struct IVisualTreeServiceCallback {
     #[cfg(not(feature = "Win32_Foundation"))]
     OnVisualTreeChange: usize,
 }
+impl ::windows_sys::core::Interface for IVisualTreeServiceCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2860157233, data2: 32996, data3: 20460, data4: [143, 59, 85, 63, 135, 180, 150, 110] };
+}
 #[repr(C)]
 pub struct IVisualTreeServiceCallback2 {
     pub base__: IVisualTreeServiceCallback,
     pub OnElementStateChanged: unsafe extern "system" fn(this: *mut *mut Self, element: u64, elementstate: VisualElementState, context: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IVisualTreeServiceCallback2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3134843784, data2: 44663, data3: 17303, data4: [185, 72, 95, 162, 219, 10, 25, 234] };
 }
 #[repr(C)]
 pub struct IXamlDiagnostics {
@@ -180,6 +198,9 @@ pub struct IXamlDiagnostics {
     pub GetInitializationData: unsafe extern "system" fn(this: *mut *mut Self, pinitializationdata: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetInitializationData: usize,
+}
+impl ::windows_sys::core::Interface for IXamlDiagnostics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 415883958, data2: 16195, data3: 16662, data4: [159, 43, 255, 147, 93, 119, 112, 210] };
 }
 #[doc = "*Required features: `\"Win32_UI_Xaml_Diagnostics\"`*"]
 #[repr(transparent)]

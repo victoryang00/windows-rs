@@ -7,6 +7,9 @@ pub struct IWPCGamesSettings {
     pub base__: IWPCSettings,
     pub IsBlocked: unsafe extern "system" fn(this: *mut *mut Self, guidappid: ::windows_sys::core::GUID, pdwreasons: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWPCGamesSettings {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2515040128, data2: 57688, data3: 18590, data4: [180, 82, 187, 184, 80, 121, 7, 21] };
+}
 #[repr(C)]
 pub struct IWPCProviderConfig {
     pub base__: ::windows_sys::core::IUnknown,
@@ -23,16 +26,25 @@ pub struct IWPCProviderConfig {
     #[cfg(not(feature = "Win32_Foundation"))]
     RequestOverride: usize,
 }
+impl ::windows_sys::core::Interface for IWPCProviderConfig {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3203744150, data2: 11522, data3: 18982, data4: [182, 229, 214, 90, 242, 149, 208, 241] };
+}
 #[repr(C)]
 pub struct IWPCProviderState {
     pub base__: ::windows_sys::core::IUnknown,
     pub Enable: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Disable: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWPCProviderState {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1354146407, data2: 50365, data3: 17675, data4: [173, 181, 117, 144, 115, 131, 124, 158] };
+}
 #[repr(C)]
 pub struct IWPCProviderSupport {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetCurrent: unsafe extern "system" fn(this: *mut *mut Self, pguidprovider: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWPCProviderSupport {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1105962354, data2: 9197, data3: 18297, data4: [190, 193, 141, 249, 98, 6, 196, 76] };
 }
 #[repr(C)]
 pub struct IWPCSettings {
@@ -47,6 +59,9 @@ pub struct IWPCSettings {
     GetLastSettingsChangeTime: usize,
     pub GetRestrictions: unsafe extern "system" fn(this: *mut *mut Self, pdwrestrictions: *mut WPCFLAG_RESTRICTION) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWPCSettings {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2413784225, data2: 393, data3: 18404, data4: [182, 112, 26, 138, 70, 54, 227, 64] };
+}
 #[repr(C)]
 pub struct IWPCWebSettings {
     pub base__: IWPCSettings,
@@ -56,10 +71,16 @@ pub struct IWPCWebSettings {
     #[cfg(not(feature = "Win32_Foundation"))]
     RequestURLOverride: usize,
 }
+impl ::windows_sys::core::Interface for IWPCWebSettings {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4291607992, data2: 2450, data3: 19504, data4: [176, 241, 28, 187, 9, 194, 64, 170] };
+}
 #[repr(C)]
 pub struct IWindowsParentalControls {
     pub base__: IWindowsParentalControlsCore,
     pub GetGamesSettings: unsafe extern "system" fn(this: *mut *mut Self, pcszsid: ::windows_sys::core::PCWSTR, ppsettings: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWindowsParentalControls {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 682940555, data2: 57458, data3: 18918, data4: [128, 77, 38, 237, 190, 33, 167, 185] };
 }
 #[repr(C)]
 pub struct IWindowsParentalControlsCore {
@@ -68,6 +89,9 @@ pub struct IWindowsParentalControlsCore {
     pub GetUserSettings: unsafe extern "system" fn(this: *mut *mut Self, pcszsid: ::windows_sys::core::PCWSTR, ppsettings: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetWebSettings: unsafe extern "system" fn(this: *mut *mut Self, pcszsid: ::windows_sys::core::PCWSTR, ppsettings: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetWebFilterInfo: unsafe extern "system" fn(this: *mut *mut Self, pguidid: *mut ::windows_sys::core::GUID, ppszname: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWindowsParentalControlsCore {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1341393423, data2: 16187, data3: 19836, data4: [164, 27, 79, 57, 215, 180, 77, 5] };
 }
 #[doc = "*Required features: `\"Win32_System_ParentalControls\"`*"]
 pub const MSG_Event_AppBlocked: i32 = -1342177264i32;

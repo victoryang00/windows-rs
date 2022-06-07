@@ -38,6 +38,9 @@ pub struct IAdaptiveNotificationContent {
     #[cfg(not(feature = "Foundation_Collections"))]
     Hints: usize,
 }
+impl ::windows_sys::core::Interface for IAdaptiveNotificationContent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3943546470, data2: 29768, data3: 17549, data4: [157, 184, 215, 138, 205, 42, 187, 169] };
+}
 #[repr(C)]
 pub struct IAdaptiveNotificationText {
     pub base__: ::windows_sys::core::IInspectable,
@@ -45,6 +48,9 @@ pub struct IAdaptiveNotificationText {
     pub SetText: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub Language: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub SetLanguage: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAdaptiveNotificationText {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1188340670, data2: 24730, data3: 17190, data4: [164, 11, 191, 222, 135, 32, 52, 163] };
 }
 #[repr(C)]
 pub struct IBadgeNotification {
@@ -62,6 +68,9 @@ pub struct IBadgeNotification {
     #[cfg(not(feature = "Foundation"))]
     ExpirationTime: usize,
 }
+impl ::windows_sys::core::Interface for IBadgeNotification {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 123516106, data2: 53386, data3: 20015, data4: [146, 51, 126, 40, 156, 31, 119, 34] };
+}
 #[repr(C)]
 pub struct IBadgeNotificationFactory {
     pub base__: ::windows_sys::core::IInspectable,
@@ -69,6 +78,9 @@ pub struct IBadgeNotificationFactory {
     pub CreateBadgeNotification: unsafe extern "system" fn(this: *mut *mut Self, content: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Data_Xml_Dom"))]
     CreateBadgeNotification: usize,
+}
+impl ::windows_sys::core::Interface for IBadgeNotificationFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3992081870, data2: 1560, data3: 19801, data4: [148, 138, 90, 97, 4, 12, 82, 249] };
 }
 #[repr(C)]
 pub struct IBadgeUpdateManagerForUser {
@@ -81,6 +93,9 @@ pub struct IBadgeUpdateManagerForUser {
     #[cfg(not(feature = "System"))]
     User: usize,
 }
+impl ::windows_sys::core::Interface for IBadgeUpdateManagerForUser {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2573935036, data2: 902, data3: 17637, data4: [186, 141, 12, 16, 119, 166, 46, 146] };
+}
 #[repr(C)]
 pub struct IBadgeUpdateManagerStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -92,6 +107,9 @@ pub struct IBadgeUpdateManagerStatics {
     #[cfg(not(feature = "Data_Xml_Dom"))]
     GetTemplateContent: usize,
 }
+impl ::windows_sys::core::Interface for IBadgeUpdateManagerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 859836330, data2: 28117, data3: 16645, data4: [174, 188, 155, 80, 252, 164, 146, 218] };
+}
 #[repr(C)]
 pub struct IBadgeUpdateManagerStatics2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -99,6 +117,9 @@ pub struct IBadgeUpdateManagerStatics2 {
     pub GetForUser: unsafe extern "system" fn(this: *mut *mut Self, user: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "System"))]
     GetForUser: usize,
+}
+impl ::windows_sys::core::Interface for IBadgeUpdateManagerStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2543465934, data2: 63808, data3: 18623, data4: [148, 232, 202, 36, 77, 64, 11, 65] };
 }
 #[repr(C)]
 pub struct IBadgeUpdater {
@@ -115,6 +136,9 @@ pub struct IBadgeUpdater {
     StartPeriodicUpdateAtTime: usize,
     pub StopPeriodicUpdate: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IBadgeUpdater {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3053068244, data2: 30050, data3: 20332, data4: [191, 163, 27, 110, 210, 229, 127, 47] };
+}
 #[repr(C)]
 pub struct IKnownAdaptiveNotificationHintsStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -124,6 +148,9 @@ pub struct IKnownAdaptiveNotificationHintsStatics {
     pub MinLines: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub TextStacking: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub Align: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IKnownAdaptiveNotificationHintsStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 102786456, data2: 54422, data3: 18813, data4: [134, 146, 79, 125, 124, 39, 112, 223] };
 }
 #[repr(C)]
 pub struct IKnownAdaptiveNotificationTextStylesStatics {
@@ -148,10 +175,16 @@ pub struct IKnownAdaptiveNotificationTextStylesStatics {
     pub HeaderSubtle: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub HeaderNumeralSubtle: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IKnownAdaptiveNotificationTextStylesStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 539071191, data2: 35222, data3: 17834, data4: [139, 161, 212, 97, 215, 44, 42, 27] };
+}
 #[repr(C)]
 pub struct IKnownNotificationBindingsStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub ToastGeneric: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IKnownNotificationBindingsStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2034400174, data2: 43191, data3: 19800, data4: [137, 234, 118, 167, 183, 188, 205, 237] };
 }
 #[repr(C)]
 pub struct INotification {
@@ -166,6 +199,9 @@ pub struct INotification {
     SetExpirationTime: usize,
     pub Visual: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetVisual: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for INotification {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 276838398, data2: 60278, data3: 20354, data4: [151, 188, 218, 7, 83, 10, 46, 32] };
 }
 #[repr(C)]
 pub struct INotificationBinding {
@@ -183,6 +219,9 @@ pub struct INotificationBinding {
     #[cfg(not(feature = "Foundation_Collections"))]
     GetTextElements: usize,
 }
+impl ::windows_sys::core::Interface for INotificationBinding {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4070460293, data2: 880, data3: 19155, data4: [180, 234, 218, 158, 53, 231, 234, 191] };
+}
 #[repr(C)]
 pub struct INotificationData {
     pub base__: ::windows_sys::core::IInspectable,
@@ -192,6 +231,9 @@ pub struct INotificationData {
     Values: usize,
     pub SequenceNumber: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
     pub SetSequenceNumber: unsafe extern "system" fn(this: *mut *mut Self, value: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for INotificationData {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2684166930, data2: 40298, data3: 19119, data4: [182, 172, 255, 23, 240, 193, 242, 128] };
 }
 #[repr(C)]
 pub struct INotificationDataFactory {
@@ -205,6 +247,9 @@ pub struct INotificationDataFactory {
     #[cfg(not(feature = "Foundation_Collections"))]
     CreateNotificationDataWithValues: usize,
 }
+impl ::windows_sys::core::Interface for INotificationDataFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 599909178, data2: 7184, data3: 18171, data4: [128, 64, 222, 195, 132, 98, 28, 248] };
+}
 #[repr(C)]
 pub struct INotificationVisual {
     pub base__: ::windows_sys::core::IInspectable,
@@ -215,6 +260,9 @@ pub struct INotificationVisual {
     #[cfg(not(feature = "Foundation_Collections"))]
     Bindings: usize,
     pub GetBinding: unsafe extern "system" fn(this: *mut *mut Self, templatename: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for INotificationVisual {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1753439118, data2: 43606, data3: 19985, data4: [134, 211, 95, 154, 105, 87, 188, 91] };
 }
 #[repr(C)]
 pub struct IScheduledTileNotification {
@@ -240,6 +288,9 @@ pub struct IScheduledTileNotification {
     pub SetId: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub Id: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IScheduledTileNotification {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 180135637, data2: 39388, data3: 19576, data4: [161, 28, 201, 231, 248, 109, 126, 247] };
+}
 #[repr(C)]
 pub struct IScheduledTileNotificationFactory {
     pub base__: ::windows_sys::core::IInspectable,
@@ -247,6 +298,9 @@ pub struct IScheduledTileNotificationFactory {
     pub CreateScheduledTileNotification: unsafe extern "system" fn(this: *mut *mut Self, content: *mut ::core::ffi::c_void, deliverytime: super::super::Foundation::DateTime, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Data_Xml_Dom", feature = "Foundation")))]
     CreateScheduledTileNotification: usize,
+}
+impl ::windows_sys::core::Interface for IScheduledTileNotificationFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 864228234, data2: 39104, data3: 19515, data4: [187, 214, 74, 99, 60, 124, 252, 41] };
 }
 #[repr(C)]
 pub struct IScheduledToastNotification {
@@ -267,6 +321,9 @@ pub struct IScheduledToastNotification {
     pub SetId: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub Id: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IScheduledToastNotification {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2046130168, data2: 3559, data3: 18637, data4: [151, 64, 155, 55, 4, 144, 200, 56] };
+}
 #[repr(C)]
 pub struct IScheduledToastNotification2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -277,6 +334,9 @@ pub struct IScheduledToastNotification2 {
     pub SetSuppressPopup: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
     pub SuppressPopup: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IScheduledToastNotification2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2792267932, data2: 12724, data3: 17328, data4: [181, 221, 122, 64, 232, 83, 99, 177] };
+}
 #[repr(C)]
 pub struct IScheduledToastNotification3 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -284,6 +344,9 @@ pub struct IScheduledToastNotification3 {
     pub SetNotificationMirroring: unsafe extern "system" fn(this: *mut *mut Self, value: NotificationMirroring) -> ::windows_sys::core::HRESULT,
     pub RemoteId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub SetRemoteId: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IScheduledToastNotification3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2554502795, data2: 48434, data3: 19003, data4: [157, 21, 34, 174, 164, 148, 98, 161] };
 }
 #[repr(C)]
 pub struct IScheduledToastNotification4 {
@@ -297,6 +360,9 @@ pub struct IScheduledToastNotification4 {
     #[cfg(not(feature = "Foundation"))]
     SetExpirationTime: usize,
 }
+impl ::windows_sys::core::Interface for IScheduledToastNotification4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 491217405, data2: 48623, data3: 20042, data4: [150, 190, 1, 1, 54, 155, 88, 210] };
+}
 #[repr(C)]
 pub struct IScheduledToastNotificationFactory {
     pub base__: ::windows_sys::core::IInspectable,
@@ -309,6 +375,9 @@ pub struct IScheduledToastNotificationFactory {
     #[cfg(not(all(feature = "Data_Xml_Dom", feature = "Foundation")))]
     CreateScheduledToastNotificationRecurring: usize,
 }
+impl ::windows_sys::core::Interface for IScheduledToastNotificationFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3888042385, data2: 3001, data3: 16777, data4: [131, 148, 49, 118, 27, 71, 111, 215] };
+}
 #[repr(C)]
 pub struct IScheduledToastNotificationShowingEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
@@ -320,10 +389,16 @@ pub struct IScheduledToastNotificationShowingEventArgs {
     #[cfg(not(feature = "Foundation"))]
     GetDeferral: usize,
 }
+impl ::windows_sys::core::Interface for IScheduledToastNotificationShowingEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1634989748, data2: 16682, data3: 24108, data4: [166, 237, 160, 32, 154, 239, 154, 9] };
+}
 #[repr(C)]
 pub struct IShownTileNotification {
     pub base__: ::windows_sys::core::IInspectable,
     pub Arguments: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IShownTileNotification {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 875399560, data2: 23282, data3: 18458, data4: [166, 163, 242, 253, 199, 141, 232, 142] };
 }
 #[repr(C)]
 pub struct ITileFlyoutNotification {
@@ -341,6 +416,9 @@ pub struct ITileFlyoutNotification {
     #[cfg(not(feature = "Foundation"))]
     ExpirationTime: usize,
 }
+impl ::windows_sys::core::Interface for ITileFlyoutNotification {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2589176417, data2: 50956, data3: 17086, data4: [178, 243, 244, 42, 169, 125, 52, 229] };
+}
 #[repr(C)]
 pub struct ITileFlyoutNotificationFactory {
     pub base__: ::windows_sys::core::IInspectable,
@@ -348,6 +426,9 @@ pub struct ITileFlyoutNotificationFactory {
     pub CreateTileFlyoutNotification: unsafe extern "system" fn(this: *mut *mut Self, content: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Data_Xml_Dom"))]
     CreateTileFlyoutNotification: usize,
+}
+impl ::windows_sys::core::Interface for ITileFlyoutNotificationFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4015353845, data2: 21030, data3: 20267, data4: [178, 120, 136, 163, 93, 254, 86, 159] };
 }
 #[repr(C)]
 pub struct ITileFlyoutUpdateManagerStatics {
@@ -359,6 +440,9 @@ pub struct ITileFlyoutUpdateManagerStatics {
     pub GetTemplateContent: unsafe extern "system" fn(this: *mut *mut Self, r#type: TileFlyoutTemplateType, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Data_Xml_Dom"))]
     GetTemplateContent: usize,
+}
+impl ::windows_sys::core::Interface for ITileFlyoutUpdateManagerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 70662923, data2: 6848, data3: 19353, data4: [136, 231, 173, 168, 62, 149, 61, 72] };
 }
 #[repr(C)]
 pub struct ITileFlyoutUpdater {
@@ -375,6 +459,9 @@ pub struct ITileFlyoutUpdater {
     StartPeriodicUpdateAtTime: usize,
     pub StopPeriodicUpdate: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Setting: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut NotificationSetting) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ITileFlyoutUpdater {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2369832810, data2: 50277, data3: 16466, data4: [167, 64, 92, 38, 84, 193, 160, 137] };
 }
 #[repr(C)]
 pub struct ITileNotification {
@@ -394,6 +481,9 @@ pub struct ITileNotification {
     pub SetTag: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub Tag: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ITileNotification {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3954100474, data2: 20716, data3: 19480, data4: [180, 208, 58, 240, 46, 85, 64, 171] };
+}
 #[repr(C)]
 pub struct ITileNotificationFactory {
     pub base__: ::windows_sys::core::IInspectable,
@@ -401,6 +491,9 @@ pub struct ITileNotificationFactory {
     pub CreateTileNotification: unsafe extern "system" fn(this: *mut *mut Self, content: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Data_Xml_Dom"))]
     CreateTileNotification: usize,
+}
+impl ::windows_sys::core::Interface for ITileNotificationFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3333152110, data2: 18728, data3: 18120, data4: [189, 191, 129, 160, 71, 222, 160, 212] };
 }
 #[repr(C)]
 pub struct ITileUpdateManagerForUser {
@@ -413,6 +506,9 @@ pub struct ITileUpdateManagerForUser {
     #[cfg(not(feature = "System"))]
     User: usize,
 }
+impl ::windows_sys::core::Interface for ITileUpdateManagerForUser {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1427379016, data2: 12002, data3: 20013, data4: [156, 193, 33, 106, 32, 222, 204, 159] };
+}
 #[repr(C)]
 pub struct ITileUpdateManagerStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -424,6 +520,9 @@ pub struct ITileUpdateManagerStatics {
     #[cfg(not(feature = "Data_Xml_Dom"))]
     GetTemplateContent: usize,
 }
+impl ::windows_sys::core::Interface for ITileUpdateManagerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3658849885, data2: 16041, data3: 18822, data4: [141, 132, 176, 157, 94, 18, 39, 109] };
+}
 #[repr(C)]
 pub struct ITileUpdateManagerStatics2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -431,6 +530,9 @@ pub struct ITileUpdateManagerStatics2 {
     pub GetForUser: unsafe extern "system" fn(this: *mut *mut Self, user: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "System"))]
     GetForUser: usize,
+}
+impl ::windows_sys::core::Interface for ITileUpdateManagerStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1931222492, data2: 36372, data3: 19324, data4: [163, 75, 157, 34, 222, 118, 200, 77] };
 }
 #[repr(C)]
 pub struct ITileUpdater {
@@ -463,6 +565,9 @@ pub struct ITileUpdater {
     #[cfg(not(feature = "Foundation_Collections"))]
     StartPeriodicUpdateBatchAtTime: usize,
 }
+impl ::windows_sys::core::Interface for ITileUpdater {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 155362443, data2: 7569, data3: 17644, data4: [146, 67, 193, 232, 33, 194, 154, 32] };
+}
 #[repr(C)]
 pub struct ITileUpdater2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -470,10 +575,16 @@ pub struct ITileUpdater2 {
     pub EnableNotificationQueueForWide310x150: unsafe extern "system" fn(this: *mut *mut Self, enable: bool) -> ::windows_sys::core::HRESULT,
     pub EnableNotificationQueueForSquare310x310: unsafe extern "system" fn(this: *mut *mut Self, enable: bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ITileUpdater2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2720427538, data2: 5614, data3: 17389, data4: [131, 245, 101, 179, 82, 187, 26, 132] };
+}
 #[repr(C)]
 pub struct IToastActivatedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub Arguments: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IToastActivatedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3820983027, data2: 49559, data3: 17263, data4: [130, 101, 6, 37, 130, 79, 141, 172] };
 }
 #[repr(C)]
 pub struct IToastActivatedEventArgs2 {
@@ -482,6 +593,9 @@ pub struct IToastActivatedEventArgs2 {
     pub UserInput: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     UserInput: usize,
+}
+impl ::windows_sys::core::Interface for IToastActivatedEventArgs2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2877138194, data2: 52321, data3: 22158, data4: [129, 190, 48, 74, 195, 16, 56, 250] };
 }
 #[repr(C)]
 pub struct IToastCollection {
@@ -500,6 +614,9 @@ pub struct IToastCollection {
     #[cfg(not(feature = "Foundation"))]
     SetIcon: usize,
 }
+impl ::windows_sys::core::Interface for IToastCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 176931760, data2: 57534, data3: 18520, data4: [188, 42, 137, 223, 224, 179, 40, 99] };
+}
 #[repr(C)]
 pub struct IToastCollectionFactory {
     pub base__: ::windows_sys::core::IInspectable,
@@ -507,6 +624,9 @@ pub struct IToastCollectionFactory {
     pub CreateInstance: unsafe extern "system" fn(this: *mut *mut Self, collectionid: ::windows_sys::core::HSTRING, displayname: ::windows_sys::core::HSTRING, launchargs: ::windows_sys::core::HSTRING, iconuri: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     CreateInstance: usize,
+}
+impl ::windows_sys::core::Interface for IToastCollectionFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 374199255, data2: 29636, data3: 17655, data4: [180, 255, 251, 109, 75, 241, 244, 198] };
 }
 #[repr(C)]
 pub struct IToastCollectionManager {
@@ -537,15 +657,24 @@ pub struct IToastCollectionManager {
     User: usize,
     pub AppId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IToastCollectionManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 706224638, data2: 6045, data3: 18876, data4: [183, 157, 165, 39, 146, 13, 54, 101] };
+}
 #[repr(C)]
 pub struct IToastDismissedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub Reason: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ToastDismissalReason) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IToastDismissedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1065998645, data2: 55755, data3: 17720, data4: [160, 240, 255, 231, 101, 153, 56, 248] };
+}
 #[repr(C)]
 pub struct IToastFailedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub ErrorCode: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IToastFailedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 890726498, data2: 53204, data3: 17656, data4: [173, 100, 245, 0, 253, 137, 108, 59] };
 }
 #[repr(C)]
 pub struct IToastNotification {
@@ -587,6 +716,9 @@ pub struct IToastNotification {
     #[cfg(not(feature = "Foundation"))]
     RemoveFailed: usize,
 }
+impl ::windows_sys::core::Interface for IToastNotification {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2575181429, data2: 1438, data3: 20064, data4: [139, 6, 23, 96, 145, 124, 139, 128] };
+}
 #[repr(C)]
 pub struct IToastNotification2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -597,6 +729,9 @@ pub struct IToastNotification2 {
     pub SetSuppressPopup: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
     pub SuppressPopup: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IToastNotification2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2650513361, data2: 5178, data3: 18702, data4: [144, 191, 185, 251, 167, 19, 45, 231] };
+}
 #[repr(C)]
 pub struct IToastNotification3 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -604,6 +739,9 @@ pub struct IToastNotification3 {
     pub SetNotificationMirroring: unsafe extern "system" fn(this: *mut *mut Self, value: NotificationMirroring) -> ::windows_sys::core::HRESULT,
     pub RemoteId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub SetRemoteId: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IToastNotification3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 837332696, data2: 33089, data3: 20377, data4: [188, 10, 196, 237, 33, 41, 125, 119] };
 }
 #[repr(C)]
 pub struct IToastNotification4 {
@@ -613,11 +751,17 @@ pub struct IToastNotification4 {
     pub Priority: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ToastNotificationPriority) -> ::windows_sys::core::HRESULT,
     pub SetPriority: unsafe extern "system" fn(this: *mut *mut Self, value: ToastNotificationPriority) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IToastNotification4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 353716533, data2: 10474, data3: 18215, data4: [136, 233, 197, 134, 128, 226, 209, 24] };
+}
 #[repr(C)]
 pub struct IToastNotification6 {
     pub base__: ::windows_sys::core::IInspectable,
     pub ExpiresOnReboot: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub SetExpiresOnReboot: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IToastNotification6 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1139539539, data2: 35246, data3: 23582, data4: [162, 121, 58, 236, 254, 155, 111, 84] };
 }
 #[repr(C)]
 pub struct IToastNotificationActionTriggerDetail {
@@ -628,6 +772,9 @@ pub struct IToastNotificationActionTriggerDetail {
     #[cfg(not(feature = "Foundation_Collections"))]
     UserInput: usize,
 }
+impl ::windows_sys::core::Interface for IToastNotificationActionTriggerDetail {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2487554906, data2: 14579, data3: 17142, data4: [150, 170, 121, 85, 176, 240, 61, 162] };
+}
 #[repr(C)]
 pub struct IToastNotificationFactory {
     pub base__: ::windows_sys::core::IInspectable,
@@ -635,6 +782,9 @@ pub struct IToastNotificationFactory {
     pub CreateToastNotification: unsafe extern "system" fn(this: *mut *mut Self, content: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Data_Xml_Dom"))]
     CreateToastNotification: usize,
+}
+impl ::windows_sys::core::Interface for IToastNotificationFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 68307744, data2: 33478, data3: 16937, data4: [177, 9, 253, 158, 212, 102, 43, 83] };
 }
 #[repr(C)]
 pub struct IToastNotificationHistory {
@@ -646,6 +796,9 @@ pub struct IToastNotificationHistory {
     pub Remove: unsafe extern "system" fn(this: *mut *mut Self, tag: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub Clear: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub ClearWithId: unsafe extern "system" fn(this: *mut *mut Self, applicationid: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IToastNotificationHistory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1554898019, data2: 467, data3: 19607, data4: [152, 111, 5, 51, 72, 63, 238, 20] };
 }
 #[repr(C)]
 pub struct IToastNotificationHistory2 {
@@ -659,15 +812,24 @@ pub struct IToastNotificationHistory2 {
     #[cfg(not(feature = "Foundation_Collections"))]
     GetHistoryWithId: usize,
 }
+impl ::windows_sys::core::Interface for IToastNotificationHistory2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1002689107, data2: 12081, data3: 16530, data4: [145, 41, 138, 213, 171, 240, 103, 218] };
+}
 #[repr(C)]
 pub struct IToastNotificationHistoryChangedTriggerDetail {
     pub base__: ::windows_sys::core::IInspectable,
     pub ChangeType: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ToastHistoryChangedType) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IToastNotificationHistoryChangedTriggerDetail {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3674439674, data2: 104, data3: 16684, data4: [156, 131, 38, 124, 55, 246, 86, 112] };
+}
 #[repr(C)]
 pub struct IToastNotificationHistoryChangedTriggerDetail2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub CollectionId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IToastNotificationHistoryChangedTriggerDetail2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 188148098, data2: 51313, data3: 18939, data4: [186, 187, 37, 189, 188, 76, 196, 91] };
 }
 #[repr(C)]
 pub struct IToastNotificationManagerForUser {
@@ -679,6 +841,9 @@ pub struct IToastNotificationManagerForUser {
     pub User: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "System"))]
     User: usize,
+}
+impl ::windows_sys::core::Interface for IToastNotificationManagerForUser {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2041272310, data2: 17406, data3: 18555, data4: [138, 127, 153, 86, 114, 0, 174, 148] };
 }
 #[repr(C)]
 pub struct IToastNotificationManagerForUser2 {
@@ -694,6 +859,9 @@ pub struct IToastNotificationManagerForUser2 {
     pub GetToastCollectionManager: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetToastCollectionManagerWithAppId: unsafe extern "system" fn(this: *mut *mut Self, appid: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IToastNotificationManagerForUser2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1738302647, data2: 33195, data3: 17090, data4: [136, 25, 201, 88, 118, 119, 83, 244] };
+}
 #[repr(C)]
 pub struct IToastNotificationManagerStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -704,10 +872,16 @@ pub struct IToastNotificationManagerStatics {
     #[cfg(not(feature = "Data_Xml_Dom"))]
     GetTemplateContent: usize,
 }
+impl ::windows_sys::core::Interface for IToastNotificationManagerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1353453631, data2: 53813, data3: 17816, data4: [187, 239, 152, 254, 77, 26, 58, 212] };
+}
 #[repr(C)]
 pub struct IToastNotificationManagerStatics2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub History: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IToastNotificationManagerStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2058959954, data2: 3656, data3: 18256, data4: [186, 157, 26, 65, 19, 152, 24, 71] };
 }
 #[repr(C)]
 pub struct IToastNotificationManagerStatics4 {
@@ -718,10 +892,16 @@ pub struct IToastNotificationManagerStatics4 {
     GetForUser: usize,
     pub ConfigureNotificationMirroring: unsafe extern "system" fn(this: *mut *mut Self, value: NotificationMirroring) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IToastNotificationManagerStatics4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2409185235, data2: 58646, data3: 17915, data4: [129, 48, 57, 142, 147, 250, 82, 195] };
+}
 #[repr(C)]
 pub struct IToastNotificationManagerStatics5 {
     pub base__: ::windows_sys::core::IInspectable,
     pub GetDefault: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IToastNotificationManagerStatics5 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3606443369, data2: 54285, data3: 16508, data4: [137, 137, 136, 202, 180, 44, 253, 20] };
 }
 #[repr(C)]
 pub struct IToastNotifier {
@@ -736,11 +916,17 @@ pub struct IToastNotifier {
     #[cfg(not(feature = "Foundation_Collections"))]
     GetScheduledToastNotifications: usize,
 }
+impl ::windows_sys::core::Interface for IToastNotifier {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1972534163, data2: 1011, data3: 16876, data4: [145, 211, 110, 91, 172, 27, 56, 231] };
+}
 #[repr(C)]
 pub struct IToastNotifier2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub UpdateWithTagAndGroup: unsafe extern "system" fn(this: *mut *mut Self, data: *mut ::core::ffi::c_void, tag: ::windows_sys::core::HSTRING, group: ::windows_sys::core::HSTRING, result__: *mut NotificationUpdateResult) -> ::windows_sys::core::HRESULT,
     pub UpdateWithTag: unsafe extern "system" fn(this: *mut *mut Self, data: *mut ::core::ffi::c_void, tag: ::windows_sys::core::HSTRING, result__: *mut NotificationUpdateResult) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IToastNotifier2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 893618630, data2: 31745, data3: 19413, data4: [156, 32, 96, 67, 64, 205, 43, 116] };
 }
 #[repr(C)]
 pub struct IToastNotifier3 {
@@ -753,6 +939,9 @@ pub struct IToastNotifier3 {
     pub RemoveScheduledToastNotificationShowing: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     RemoveScheduledToastNotificationShowing: usize,
+}
+impl ::windows_sys::core::Interface for IToastNotifier3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2926944330, data2: 15116, data3: 20909, data4: [183, 232, 176, 138, 182, 5, 37, 73] };
 }
 #[repr(C)]
 pub struct IUserNotification {
@@ -768,11 +957,17 @@ pub struct IUserNotification {
     #[cfg(not(feature = "Foundation"))]
     CreationTime: usize,
 }
+impl ::windows_sys::core::Interface for IUserNotification {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2918704431, data2: 20051, data3: 17109, data4: [156, 51, 235, 94, 165, 21, 178, 62] };
+}
 #[repr(C)]
 pub struct IUserNotificationChangedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub ChangeKind: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut UserNotificationChangedKind) -> ::windows_sys::core::HRESULT,
     pub UserNotificationId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUserNotificationChangedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3065866297, data2: 31183, data3: 19237, data4: [130, 192, 12, 225, 238, 248, 31, 140] };
 }
 pub type Notification = *mut ::core::ffi::c_void;
 pub type NotificationBinding = *mut ::core::ffi::c_void;

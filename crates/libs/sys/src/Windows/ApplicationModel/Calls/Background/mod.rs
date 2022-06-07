@@ -5,11 +5,17 @@ pub struct IPhoneCallBlockedTriggerDetails {
     pub LineId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub CallBlockedReason: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut PhoneCallBlockedReason) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPhoneCallBlockedTriggerDetails {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2762379426, data2: 58561, data3: 17023, data4: [134, 78, 228, 112, 71, 125, 219, 103] };
+}
 #[repr(C)]
 pub struct IPhoneCallOriginDataRequestTriggerDetails {
     pub base__: ::windows_sys::core::IInspectable,
     pub RequestId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub PhoneNumber: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPhoneCallOriginDataRequestTriggerDetails {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1855675199, data2: 50507, data3: 20098, data4: [76, 201, 227, 41, 164, 24, 69, 146] };
 }
 #[repr(C)]
 pub struct IPhoneIncomingCallDismissedTriggerDetails {
@@ -24,11 +30,17 @@ pub struct IPhoneIncomingCallDismissedTriggerDetails {
     pub TextReplyMessage: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub Reason: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut PhoneIncomingCallDismissedReason) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPhoneIncomingCallDismissedTriggerDetails {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3134390902, data2: 33718, data3: 22322, data4: [156, 56, 12, 32, 101, 70, 25, 106] };
+}
 #[repr(C)]
 pub struct IPhoneIncomingCallNotificationTriggerDetails {
     pub base__: ::windows_sys::core::IInspectable,
     pub LineId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub CallId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPhoneIncomingCallNotificationTriggerDetails {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 722362436, data2: 39730, data3: 23874, data4: [130, 34, 210, 129, 46, 57, 251, 33] };
 }
 #[repr(C)]
 pub struct IPhoneLineChangedTriggerDetails {
@@ -37,12 +49,18 @@ pub struct IPhoneLineChangedTriggerDetails {
     pub ChangeType: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut PhoneLineChangeKind) -> ::windows_sys::core::HRESULT,
     pub HasLinePropertyChanged: unsafe extern "system" fn(this: *mut *mut Self, lineproperty: PhoneLineProperties, result__: *mut bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPhoneLineChangedTriggerDetails {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3335725543, data2: 53533, data3: 16600, data4: [178, 183, 228, 10, 1, 214, 98, 73] };
+}
 #[repr(C)]
 pub struct IPhoneNewVoicemailMessageTriggerDetails {
     pub base__: ::windows_sys::core::IInspectable,
     pub LineId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub VoicemailCount: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i32) -> ::windows_sys::core::HRESULT,
     pub OperatorMessage: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPhoneNewVoicemailMessageTriggerDetails {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 329826331, data2: 47153, data3: 18643, data4: [139, 169, 141, 34, 166, 88, 13, 207] };
 }
 #[doc = "*Required features: `\"ApplicationModel_Calls_Background\"`*"]
 #[repr(transparent)]

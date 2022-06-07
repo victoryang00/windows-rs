@@ -42,3 +42,6 @@ pub struct IChannelCredentials {
     #[cfg(not(feature = "Win32_Foundation"))]
     SetIssuedToken: usize,
 }
+impl ::windows_sys::core::Interface for IChannelCredentials {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 404440204, data2: 49532, data3: 19223, data4: [172, 109, 6, 105, 155, 147, 25, 143] };
+}

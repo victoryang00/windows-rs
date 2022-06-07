@@ -111,3 +111,6 @@ pub struct IClosedCaptionPropertiesStatics {
     ComputedRegionColor: usize,
     pub RegionOpacity: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ClosedCaptionOpacity) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IClosedCaptionPropertiesStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 279584644, data2: 52272, data3: 16705, data4: [181, 3, 82, 114, 40, 158, 12, 32] };
+}

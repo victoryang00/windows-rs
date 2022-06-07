@@ -257,6 +257,9 @@ pub struct IArcadeStick {
     pub GetButtonLabel: unsafe extern "system" fn(this: *mut *mut Self, button: ArcadeStickButtons, result__: *mut GameControllerButtonLabel) -> ::windows_sys::core::HRESULT,
     pub GetCurrentReading: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ArcadeStickReading) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IArcadeStick {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2974438301, data2: 48891, data3: 19585, data4: [128, 81, 21, 236, 243, 177, 48, 54] };
+}
 #[repr(C)]
 pub struct IArcadeStickStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -281,10 +284,16 @@ pub struct IArcadeStickStatics {
     #[cfg(not(feature = "Foundation_Collections"))]
     ArcadeSticks: usize,
 }
+impl ::windows_sys::core::Interface for IArcadeStickStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1547155656, data2: 14257, data3: 19160, data4: [148, 88, 32, 15, 26, 48, 1, 142] };
+}
 #[repr(C)]
 pub struct IArcadeStickStatics2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub FromGameController: unsafe extern "system" fn(this: *mut *mut Self, gamecontroller: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IArcadeStickStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1387648836, data2: 48006, data3: 17498, data4: [181, 156, 89, 111, 14, 42, 73, 223] };
 }
 #[repr(C)]
 pub struct IFlightStick {
@@ -292,6 +301,9 @@ pub struct IFlightStick {
     pub HatSwitchKind: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut GameControllerSwitchKind) -> ::windows_sys::core::HRESULT,
     pub GetButtonLabel: unsafe extern "system" fn(this: *mut *mut Self, button: FlightStickButtons, result__: *mut GameControllerButtonLabel) -> ::windows_sys::core::HRESULT,
     pub GetCurrentReading: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut FlightStickReading) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IFlightStick {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3030564892, data2: 47163, data3: 17497, data4: [161, 169, 151, 176, 60, 51, 218, 124] };
 }
 #[repr(C)]
 pub struct IFlightStickStatics {
@@ -317,6 +329,9 @@ pub struct IFlightStickStatics {
     #[cfg(not(feature = "Foundation_Collections"))]
     FlightSticks: usize,
     pub FromGameController: unsafe extern "system" fn(this: *mut *mut Self, gamecontroller: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IFlightStickStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1427411530, data2: 65228, data3: 17246, data4: [131, 220, 92, 236, 138, 24, 165, 32] };
 }
 #[repr(C)]
 pub struct IGameController {
@@ -352,6 +367,9 @@ pub struct IGameController {
     #[cfg(not(feature = "System"))]
     User: usize,
 }
+impl ::windows_sys::core::Interface for IGameController {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 464479522, data2: 24420, data3: 17093, data4: [130, 103, 185, 254, 34, 21, 191, 189] };
+}
 #[repr(C)]
 pub struct IGameControllerBatteryInfo {
     pub base__: ::windows_sys::core::IInspectable,
@@ -360,6 +378,9 @@ pub struct IGameControllerBatteryInfo {
     #[cfg(not(feature = "Devices_Power"))]
     TryGetBatteryReport: usize,
 }
+impl ::windows_sys::core::Interface for IGameControllerBatteryInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3706504833, data2: 14691, data3: 19878, data4: [149, 93, 85, 63, 59, 111, 97, 97] };
+}
 #[repr(C)]
 pub struct IGamepad {
     pub base__: ::windows_sys::core::IInspectable,
@@ -367,10 +388,16 @@ pub struct IGamepad {
     pub SetVibration: unsafe extern "system" fn(this: *mut *mut Self, value: GamepadVibration) -> ::windows_sys::core::HRESULT,
     pub GetCurrentReading: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut GamepadReading) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IGamepad {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3162223676, data2: 2665, data3: 14595, data4: [158, 157, 165, 15, 134, 164, 93, 229] };
+}
 #[repr(C)]
 pub struct IGamepad2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub GetButtonLabel: unsafe extern "system" fn(this: *mut *mut Self, button: GamepadButtons, result__: *mut GameControllerButtonLabel) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IGamepad2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1008110013, data2: 22805, data3: 16965, data4: [176, 192, 200, 159, 174, 3, 8, 255] };
 }
 #[repr(C)]
 pub struct IGamepadStatics {
@@ -396,16 +423,25 @@ pub struct IGamepadStatics {
     #[cfg(not(feature = "Foundation_Collections"))]
     Gamepads: usize,
 }
+impl ::windows_sys::core::Interface for IGamepadStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2344412457, data2: 54428, data3: 14825, data4: [149, 96, 228, 125, 222, 150, 183, 200] };
+}
 #[repr(C)]
 pub struct IGamepadStatics2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub FromGameController: unsafe extern "system" fn(this: *mut *mut Self, gamecontroller: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IGamepadStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1114074565, data2: 2134, data3: 18372, data4: [146, 19, 179, 149, 80, 76, 58, 60] };
 }
 #[repr(C)]
 pub struct IHeadset {
     pub base__: ::windows_sys::core::IInspectable,
     pub CaptureDeviceId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub RenderDeviceId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IHeadset {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1070683887, data2: 26917, data3: 16296, data4: [145, 129, 2, 156, 82, 35, 174, 59] };
 }
 #[repr(C)]
 pub struct IRacingWheel {
@@ -421,6 +457,9 @@ pub struct IRacingWheel {
     WheelMotor: usize,
     pub GetButtonLabel: unsafe extern "system" fn(this: *mut *mut Self, button: RacingWheelButtons, result__: *mut GameControllerButtonLabel) -> ::windows_sys::core::HRESULT,
     pub GetCurrentReading: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut RacingWheelReading) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IRacingWheel {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4115031407, data2: 57606, data3: 19586, data4: [169, 15, 85, 64, 18, 144, 75, 133] };
 }
 #[repr(C)]
 pub struct IRacingWheelStatics {
@@ -446,10 +485,16 @@ pub struct IRacingWheelStatics {
     #[cfg(not(feature = "Foundation_Collections"))]
     RacingWheels: usize,
 }
+impl ::windows_sys::core::Interface for IRacingWheelStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 985738453, data2: 22555, data3: 18742, data4: [159, 148, 105, 241, 230, 81, 76, 125] };
+}
 #[repr(C)]
 pub struct IRacingWheelStatics2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub FromGameController: unsafe extern "system" fn(this: *mut *mut Self, gamecontroller: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IRacingWheelStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3865492650, data2: 60925, data3: 17187, data4: [169, 246, 60, 56, 64, 72, 209, 237] };
 }
 #[repr(C)]
 pub struct IRawGameController {
@@ -467,6 +512,9 @@ pub struct IRawGameController {
     pub GetCurrentReading: unsafe extern "system" fn(this: *mut *mut Self, buttonArray_array_size: u32, buttonarray: *mut bool, switchArray_array_size: u32, switcharray: *mut GameControllerSwitchPosition, axisArray_array_size: u32, axisarray: *mut f64, result__: *mut u64) -> ::windows_sys::core::HRESULT,
     pub GetSwitchKind: unsafe extern "system" fn(this: *mut *mut Self, switchindex: i32, result__: *mut GameControllerSwitchKind) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IRawGameController {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2091740561, data2: 42977, data3: 20337, data4: [154, 120, 51, 233, 197, 223, 234, 98] };
+}
 #[repr(C)]
 pub struct IRawGameController2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -476,6 +524,9 @@ pub struct IRawGameController2 {
     SimpleHapticsControllers: usize,
     pub NonRoamableId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub DisplayName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IRawGameController2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1136705589, data2: 47987, data3: 18262, data4: [167, 135, 62, 214, 190, 166, 23, 189] };
 }
 #[repr(C)]
 pub struct IRawGameControllerStatics {
@@ -502,12 +553,18 @@ pub struct IRawGameControllerStatics {
     RawGameControllers: usize,
     pub FromGameController: unsafe extern "system" fn(this: *mut *mut Self, gamecontroller: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IRawGameControllerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3951888274, data2: 59738, data3: 19225, data4: [175, 199, 10, 89, 248, 191, 117, 158] };
+}
 #[repr(C)]
 pub struct IUINavigationController {
     pub base__: ::windows_sys::core::IInspectable,
     pub GetCurrentReading: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut UINavigationReading) -> ::windows_sys::core::HRESULT,
     pub GetOptionalButtonLabel: unsafe extern "system" fn(this: *mut *mut Self, button: OptionalUINavigationButtons, result__: *mut GameControllerButtonLabel) -> ::windows_sys::core::HRESULT,
     pub GetRequiredButtonLabel: unsafe extern "system" fn(this: *mut *mut Self, button: RequiredUINavigationButtons, result__: *mut GameControllerButtonLabel) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUINavigationController {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3853447133, data2: 62734, data3: 19029, data4: [140, 220, 211, 50, 41, 84, 129, 117] };
 }
 #[repr(C)]
 pub struct IUINavigationControllerStatics {
@@ -533,10 +590,16 @@ pub struct IUINavigationControllerStatics {
     #[cfg(not(feature = "Foundation_Collections"))]
     UINavigationControllers: usize,
 }
+impl ::windows_sys::core::Interface for IUINavigationControllerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 789877514, data2: 63224, data3: 19016, data4: [141, 137, 148, 120, 108, 202, 12, 46] };
+}
 #[repr(C)]
 pub struct IUINavigationControllerStatics2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub FromGameController: unsafe extern "system" fn(this: *mut *mut Self, gamecontroller: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUINavigationControllerStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3771410659, data2: 45579, data3: 19211, data4: [158, 212, 243, 213, 60, 236, 13, 228] };
 }
 #[doc = "*Required features: `\"Gaming_Input\"`*"]
 #[repr(transparent)]

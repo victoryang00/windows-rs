@@ -8,10 +8,16 @@ pub struct ISyndicationAttribute {
     pub Value: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub SetValue: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISyndicationAttribute {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1911093609, data2: 21102, data3: 16385, data4: [154, 145, 232, 79, 131, 22, 26, 177] };
+}
 #[repr(C)]
 pub struct ISyndicationAttributeFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub CreateSyndicationAttribute: unsafe extern "system" fn(this: *mut *mut Self, attributename: ::windows_sys::core::HSTRING, attributenamespace: ::windows_sys::core::HSTRING, attributevalue: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISyndicationAttributeFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1649350041, data2: 60734, data3: 16911, data4: [190, 134, 100, 4, 20, 136, 110, 75] };
 }
 #[repr(C)]
 pub struct ISyndicationCategory {
@@ -23,11 +29,17 @@ pub struct ISyndicationCategory {
     pub Term: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub SetTerm: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISyndicationCategory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2266325615, data2: 3258, data3: 19071, data4: [137, 255, 236, 181, 40, 20, 35, 182] };
+}
 #[repr(C)]
 pub struct ISyndicationCategoryFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub CreateSyndicationCategory: unsafe extern "system" fn(this: *mut *mut Self, term: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub CreateSyndicationCategoryEx: unsafe extern "system" fn(this: *mut *mut Self, term: ::windows_sys::core::HSTRING, scheme: ::windows_sys::core::HSTRING, label: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISyndicationCategoryFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2873262127, data2: 18912, data3: 17701, data4: [138, 178, 171, 69, 192, 37, 40, 255] };
 }
 #[repr(C)]
 pub struct ISyndicationClient {
@@ -60,6 +72,9 @@ pub struct ISyndicationClient {
     #[cfg(not(feature = "Foundation"))]
     RetrieveFeedAsync: usize,
 }
+impl ::windows_sys::core::Interface for ISyndicationClient {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2652416439, data2: 29257, data3: 19269, data4: [178, 41, 125, 248, 149, 165, 161, 245] };
+}
 #[repr(C)]
 pub struct ISyndicationClientFactory {
     pub base__: ::windows_sys::core::IInspectable,
@@ -67,6 +82,9 @@ pub struct ISyndicationClientFactory {
     pub CreateSyndicationClient: unsafe extern "system" fn(this: *mut *mut Self, servercredential: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Security_Credentials"))]
     CreateSyndicationClient: usize,
+}
+impl ::windows_sys::core::Interface for ISyndicationClientFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 784642860, data2: 42907, data3: 16660, data4: [178, 154, 5, 223, 251, 175, 185, 164] };
 }
 #[repr(C)]
 pub struct ISyndicationContent {
@@ -80,6 +98,9 @@ pub struct ISyndicationContent {
     #[cfg(not(feature = "Foundation"))]
     SetSourceUri: usize,
 }
+impl ::windows_sys::core::Interface for ISyndicationContent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1178730238, data2: 3669, data3: 16592, data4: [184, 208, 106, 44, 203, 169, 252, 124] };
+}
 #[repr(C)]
 pub struct ISyndicationContentFactory {
     pub base__: ::windows_sys::core::IInspectable,
@@ -89,10 +110,16 @@ pub struct ISyndicationContentFactory {
     #[cfg(not(feature = "Foundation"))]
     CreateSyndicationContentWithSourceUri: usize,
 }
+impl ::windows_sys::core::Interface for ISyndicationContentFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1026538387, data2: 38176, data3: 16755, data4: [147, 136, 126, 45, 243, 36, 168, 160] };
+}
 #[repr(C)]
 pub struct ISyndicationErrorStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub GetStatus: unsafe extern "system" fn(this: *mut *mut Self, hresult: i32, result__: *mut SyndicationErrorStatus) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISyndicationErrorStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 532357985, data2: 17863, data3: 18483, data4: [138, 160, 190, 95, 59, 88, 167, 244] };
 }
 #[repr(C)]
 pub struct ISyndicationFeed {
@@ -174,6 +201,9 @@ pub struct ISyndicationFeed {
     #[cfg(not(feature = "Data_Xml_Dom"))]
     LoadFromXml: usize,
 }
+impl ::windows_sys::core::Interface for ISyndicationFeed {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2147368146, data2: 23398, data3: 19810, data4: [132, 3, 27, 193, 13, 145, 13, 107] };
+}
 #[repr(C)]
 pub struct ISyndicationFeedFactory {
     pub base__: ::windows_sys::core::IInspectable,
@@ -181,6 +211,9 @@ pub struct ISyndicationFeedFactory {
     pub CreateSyndicationFeed: unsafe extern "system" fn(this: *mut *mut Self, title: ::windows_sys::core::HSTRING, subtitle: ::windows_sys::core::HSTRING, uri: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     CreateSyndicationFeed: usize,
+}
+impl ::windows_sys::core::Interface for ISyndicationFeedFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 591864370, data2: 35817, data3: 18615, data4: [137, 52, 98, 5, 19, 29, 147, 87] };
 }
 #[repr(C)]
 pub struct ISyndicationGenerator {
@@ -198,10 +231,16 @@ pub struct ISyndicationGenerator {
     pub Version: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub SetVersion: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISyndicationGenerator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2540221305, data2: 64299, data3: 20333, data4: [180, 28, 8, 138, 88, 104, 130, 92] };
+}
 #[repr(C)]
 pub struct ISyndicationGeneratorFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub CreateSyndicationGenerator: unsafe extern "system" fn(this: *mut *mut Self, text: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISyndicationGeneratorFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2738914275, data2: 7718, data3: 19900, data4: [186, 157, 26, 184, 75, 239, 249, 123] };
 }
 #[repr(C)]
 pub struct ISyndicationItem {
@@ -277,6 +316,9 @@ pub struct ISyndicationItem {
     #[cfg(not(feature = "Data_Xml_Dom"))]
     LoadFromXml: usize,
 }
+impl ::windows_sys::core::Interface for ISyndicationItem {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1418573955, data2: 50052, data3: 17857, data4: [138, 232, 163, 120, 196, 236, 72, 108] };
+}
 #[repr(C)]
 pub struct ISyndicationItemFactory {
     pub base__: ::windows_sys::core::IInspectable,
@@ -284,6 +326,9 @@ pub struct ISyndicationItemFactory {
     pub CreateSyndicationItem: unsafe extern "system" fn(this: *mut *mut Self, title: ::windows_sys::core::HSTRING, content: *mut ::core::ffi::c_void, uri: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     CreateSyndicationItem: usize,
+}
+impl ::windows_sys::core::Interface for ISyndicationItemFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 622674767, data2: 32184, data3: 18554, data4: [133, 228, 16, 209, 145, 230, 110, 187] };
 }
 #[repr(C)]
 pub struct ISyndicationLink {
@@ -307,6 +352,9 @@ pub struct ISyndicationLink {
     pub ResourceLanguage: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub SetResourceLanguage: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISyndicationLink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 659897021, data2: 41230, data3: 16821, data4: [134, 189, 151, 89, 8, 110, 176, 197] };
+}
 #[repr(C)]
 pub struct ISyndicationLinkFactory {
     pub base__: ::windows_sys::core::IInspectable,
@@ -318,6 +366,9 @@ pub struct ISyndicationLinkFactory {
     pub CreateSyndicationLinkEx: unsafe extern "system" fn(this: *mut *mut Self, uri: *mut ::core::ffi::c_void, relationship: ::windows_sys::core::HSTRING, title: ::windows_sys::core::HSTRING, mediatype: ::windows_sys::core::HSTRING, length: u32, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     CreateSyndicationLinkEx: usize,
+}
+impl ::windows_sys::core::Interface for ISyndicationLinkFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1591239636, data2: 21813, data3: 18604, data4: [152, 212, 193, 144, 153, 80, 128, 179] };
 }
 #[repr(C)]
 pub struct ISyndicationNode {
@@ -351,10 +402,16 @@ pub struct ISyndicationNode {
     #[cfg(not(feature = "Data_Xml_Dom"))]
     GetXmlDocument: usize,
 }
+impl ::windows_sys::core::Interface for ISyndicationNode {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1966927736, data2: 20984, data3: 17856, data4: [169, 245, 241, 113, 157, 236, 63, 178] };
+}
 #[repr(C)]
 pub struct ISyndicationNodeFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub CreateSyndicationNode: unsafe extern "system" fn(this: *mut *mut Self, nodename: ::windows_sys::core::HSTRING, nodenamespace: ::windows_sys::core::HSTRING, nodevalue: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISyndicationNodeFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 311435656, data2: 19147, data3: 18856, data4: [183, 119, 165, 235, 146, 225, 138, 121] };
 }
 #[repr(C)]
 pub struct ISyndicationPerson {
@@ -372,6 +429,9 @@ pub struct ISyndicationPerson {
     #[cfg(not(feature = "Foundation"))]
     SetUri: usize,
 }
+impl ::windows_sys::core::Interface for ISyndicationPerson {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4196328922, data2: 42950, data3: 17687, data4: [160, 150, 1, 67, 250, 242, 147, 39] };
+}
 #[repr(C)]
 pub struct ISyndicationPersonFactory {
     pub base__: ::windows_sys::core::IInspectable,
@@ -380,6 +440,9 @@ pub struct ISyndicationPersonFactory {
     pub CreateSyndicationPersonEx: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::HSTRING, email: ::windows_sys::core::HSTRING, uri: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     CreateSyndicationPersonEx: usize,
+}
+impl ::windows_sys::core::Interface for ISyndicationPersonFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3707013229, data2: 8861, data3: 19288, data4: [164, 155, 243, 210, 240, 245, 201, 159] };
 }
 #[repr(C)]
 pub struct ISyndicationText {
@@ -397,11 +460,17 @@ pub struct ISyndicationText {
     #[cfg(not(feature = "Data_Xml_Dom"))]
     SetXml: usize,
 }
+impl ::windows_sys::core::Interface for ISyndicationText {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3117178496, data2: 12602, data3: 16529, data4: [162, 166, 36, 62, 14, 233, 35, 249] };
+}
 #[repr(C)]
 pub struct ISyndicationTextFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub CreateSyndicationText: unsafe extern "system" fn(this: *mut *mut Self, text: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub CreateSyndicationTextEx: unsafe extern "system" fn(this: *mut *mut Self, text: ::windows_sys::core::HSTRING, r#type: SyndicationTextType, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISyndicationTextFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4000531191, data2: 4550, data3: 19237, data4: [171, 98, 229, 150, 189, 22, 41, 70] };
 }
 #[repr(C)]
 #[doc = "*Required features: `\"Web_Syndication\"`*"]

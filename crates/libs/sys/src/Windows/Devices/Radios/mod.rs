@@ -17,6 +17,9 @@ pub struct IRadio {
     pub Name: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub Kind: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut RadioKind) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IRadio {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 622926047, data2: 45886, data3: 16746, data4: [135, 95, 28, 243, 138, 226, 216, 62] };
+}
 #[repr(C)]
 pub struct IRadioStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -33,6 +36,9 @@ pub struct IRadioStatics {
     pub RequestAccessAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     RequestAccessAsync: usize,
+}
+impl ::windows_sys::core::Interface for IRadioStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1605804334, data2: 26571, data3: 18094, data4: [170, 233, 101, 145, 159, 134, 239, 244] };
 }
 pub type Radio = *mut ::core::ffi::c_void;
 #[doc = "*Required features: `\"Devices_Radios\"`*"]

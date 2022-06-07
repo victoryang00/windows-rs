@@ -3062,6 +3062,9 @@ pub struct IDMLBindingTable {
     #[cfg(not(feature = "Win32_Graphics_Direct3D12"))]
     Reset: usize,
 }
+impl ::windows_sys::core::Interface for IDMLBindingTable {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 700876764, data2: 56948, data3: 20027, data4: [171, 0, 17, 104, 242, 252, 60, 252] };
+}
 #[repr(C)]
 pub struct IDMLCommandRecorder {
     pub base__: IDMLDeviceChild,
@@ -3070,9 +3073,15 @@ pub struct IDMLCommandRecorder {
     #[cfg(not(feature = "Win32_Graphics_Direct3D12"))]
     RecordDispatch: usize,
 }
+impl ::windows_sys::core::Interface for IDMLCommandRecorder {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3867507318, data2: 11838, data3: 20445, data4: [191, 244, 93, 43, 161, 15, 180, 83] };
+}
 #[repr(C)]
 pub struct IDMLCompiledOperator {
     pub base__: IDMLDispatchable,
+}
+impl ::windows_sys::core::Interface for IDMLCompiledOperator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1796597098, data2: 48988, data3: 18690, data4: [146, 216, 218, 58, 101, 10, 254, 164] };
 }
 #[repr(C)]
 pub struct IDMLDebugDevice {
@@ -3081,6 +3090,9 @@ pub struct IDMLDebugDevice {
     pub SetMuteDebugOutput: unsafe extern "system" fn(this: *mut *mut Self, mute: super::super::super::Foundation::BOOL),
     #[cfg(not(feature = "Win32_Foundation"))]
     SetMuteDebugOutput: usize,
+}
+impl ::windows_sys::core::Interface for IDMLDebugDevice {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2104441545, data2: 14666, data3: 19139, data4: [146, 167, 57, 12, 197, 122, 130, 23] };
 }
 #[repr(C)]
 pub struct IDMLDevice {
@@ -3099,20 +3111,32 @@ pub struct IDMLDevice {
     pub GetDeviceRemovedReason: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub GetParentDevice: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDMLDevice {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1841128503, data2: 38653, data3: 16959, data4: [169, 140, 174, 94, 124, 42, 87, 63] };
+}
 #[repr(C)]
 pub struct IDMLDevice1 {
     pub base__: IDMLDevice,
     pub CompileGraph: unsafe extern "system" fn(this: *mut *mut Self, desc: *const DML_GRAPH_DESC, flags: DML_EXECUTION_FLAGS, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDMLDevice1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2693287834, data2: 53950, data3: 17237, data4: [170, 93, 89, 1, 40, 26, 209, 210] };
 }
 #[repr(C)]
 pub struct IDMLDeviceChild {
     pub base__: IDMLObject,
     pub GetDevice: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDMLDeviceChild {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 669528386, data2: 33125, data3: 18915, data4: [151, 78, 47, 214, 110, 76, 182, 157] };
+}
 #[repr(C)]
 pub struct IDMLDispatchable {
     pub base__: IDMLPageable,
     pub GetBindingProperties: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut DML_BINDING_PROPERTIES),
+}
+impl ::windows_sys::core::Interface for IDMLDispatchable {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3703054760, data2: 4153, data3: 17438, data4: [159, 28, 177, 117, 156, 47, 60, 236] };
 }
 #[repr(C)]
 pub struct IDMLObject {
@@ -3122,16 +3146,28 @@ pub struct IDMLObject {
     pub SetPrivateDataInterface: unsafe extern "system" fn(this: *mut *mut Self, guid: *const ::windows_sys::core::GUID, data: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetName: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDMLObject {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3357948588, data2: 40460, data3: 18989, data4: [155, 142, 0, 117, 33, 163, 49, 124] };
+}
 #[repr(C)]
 pub struct IDMLOperator {
     pub base__: IDMLDeviceChild,
+}
+impl ::windows_sys::core::Interface for IDMLOperator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 650817146, data2: 12417, data3: 17971, data4: [149, 129, 34, 111, 190, 87, 105, 93] };
 }
 #[repr(C)]
 pub struct IDMLOperatorInitializer {
     pub base__: IDMLDispatchable,
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self, operatorcount: u32, operators: *const *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDMLOperatorInitializer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1115427091, data2: 17244, data3: 18076, data4: [134, 118, 77, 93, 208, 114, 248, 19] };
+}
 #[repr(C)]
 pub struct IDMLPageable {
     pub base__: IDMLDeviceChild,
+}
+impl ::windows_sys::core::Interface for IDMLPageable {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2980775973, data2: 17730, data3: 19019, data4: [134, 23, 109, 222, 110, 143, 98, 1] };
 }

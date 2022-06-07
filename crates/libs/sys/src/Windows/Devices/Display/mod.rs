@@ -107,10 +107,16 @@ pub struct IDisplayMonitor {
     pub MaxAverageFullFrameLuminanceInNits: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f32) -> ::windows_sys::core::HRESULT,
     pub GetDescriptor: unsafe extern "system" fn(this: *mut *mut Self, descriptorkind: DisplayMonitorDescriptorKind, result_size__: *mut u32, result__: *mut *mut u8) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDisplayMonitor {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 527111636, data2: 7425, data3: 19537, data4: [135, 226, 111, 149, 74, 119, 43, 89] };
+}
 #[repr(C)]
 pub struct IDisplayMonitor2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub IsDolbyVisionSupportedInHdrMode: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDisplayMonitor2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 36706534, data2: 52003, data3: 22576, data4: [150, 223, 167, 191, 110, 96, 37, 119] };
 }
 #[repr(C)]
 pub struct IDisplayMonitorStatics {
@@ -124,4 +130,7 @@ pub struct IDisplayMonitorStatics {
     pub FromInterfaceIdAsync: unsafe extern "system" fn(this: *mut *mut Self, deviceinterfaceid: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     FromInterfaceIdAsync: usize,
+}
+impl ::windows_sys::core::Interface for IDisplayMonitorStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1856924047, data2: 41512, data3: 19461, data4: [130, 29, 182, 149, 214, 103, 222, 142] };
 }

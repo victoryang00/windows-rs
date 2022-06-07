@@ -9,6 +9,9 @@ pub struct IPnpObject {
     Properties: usize,
     pub Update: unsafe extern "system" fn(this: *mut *mut Self, updateinfo: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPnpObject {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2512806488, data2: 29499, data3: 19087, data4: [147, 163, 219, 7, 138, 200, 112, 193] };
+}
 #[repr(C)]
 pub struct IPnpObjectStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -33,6 +36,9 @@ pub struct IPnpObjectStatics {
     #[cfg(not(feature = "Foundation_Collections"))]
     CreateWatcherAqsFilter: usize,
 }
+impl ::windows_sys::core::Interface for IPnpObjectStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3015911997, data2: 53608, data3: 18016, data4: [187, 243, 167, 51, 177, 75, 110, 1] };
+}
 #[repr(C)]
 pub struct IPnpObjectUpdate {
     pub base__: ::windows_sys::core::IInspectable,
@@ -42,6 +48,9 @@ pub struct IPnpObjectUpdate {
     pub Properties: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     Properties: usize,
+}
+impl ::windows_sys::core::Interface for IPnpObjectUpdate {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1868163090, data2: 30, data3: 18500, data4: [188, 198, 67, 40, 134, 133, 106, 23] };
 }
 #[repr(C)]
 pub struct IPnpObjectWatcher {
@@ -89,6 +98,9 @@ pub struct IPnpObjectWatcher {
     pub Status: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::DeviceWatcherStatus) -> ::windows_sys::core::HRESULT,
     pub Start: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Stop: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPnpObjectWatcher {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2211011752, data2: 18290, data3: 19066, data4: [172, 168, 228, 140, 66, 168, 156, 68] };
 }
 pub type PnpObject = *mut ::core::ffi::c_void;
 pub type PnpObjectCollection = *mut ::core::ffi::c_void;

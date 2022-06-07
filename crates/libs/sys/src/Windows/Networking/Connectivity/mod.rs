@@ -79,6 +79,9 @@ pub struct IAttributedNetworkUsage {
     #[cfg(not(feature = "Storage_Streams"))]
     AttributionThumbnail: usize,
 }
+impl ::windows_sys::core::Interface for IAttributedNetworkUsage {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4150898745, data2: 60578, data3: 17899, data4: [173, 225, 176, 54, 139, 117, 108, 73] };
+}
 #[repr(C)]
 pub struct ICellularApnContext {
     pub base__: ::windows_sys::core::IInspectable,
@@ -95,11 +98,17 @@ pub struct ICellularApnContext {
     pub AuthenticationType: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut CellularApnAuthenticationType) -> ::windows_sys::core::HRESULT,
     pub SetAuthenticationType: unsafe extern "system" fn(this: *mut *mut Self, value: CellularApnAuthenticationType) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ICellularApnContext {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1873095156, data2: 61437, data3: 17730, data4: [154, 178, 112, 91, 191, 148, 148, 58] };
+}
 #[repr(C)]
 pub struct ICellularApnContext2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub ProfileName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub SetProfileName: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ICellularApnContext2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1991306010, data2: 44105, data3: 17232, data4: [177, 229, 220, 71, 99, 188, 105, 199] };
 }
 #[repr(C)]
 pub struct IConnectionCost {
@@ -109,10 +118,16 @@ pub struct IConnectionCost {
     pub OverDataLimit: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub ApproachingDataLimit: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IConnectionCost {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3134707753, data2: 13334, data3: 19216, data4: [162, 2, 186, 192, 176, 117, 189, 174] };
+}
 #[repr(C)]
 pub struct IConnectionCost2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub BackgroundDataUsageRestricted: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IConnectionCost2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2383493637, data2: 57865, data3: 17737, data4: [187, 37, 94, 13, 182, 145, 203, 5] };
 }
 #[repr(C)]
 pub struct IConnectionProfile {
@@ -135,6 +150,9 @@ pub struct IConnectionProfile {
     #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
     GetLocalUsagePerRoamingStates: usize,
     pub NetworkSecuritySettings: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IConnectionProfile {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1908020284, data2: 22926, data3: 18896, data4: [132, 235, 143, 235, 174, 220, 193, 149] };
 }
 #[repr(C)]
 pub struct IConnectionProfile2 {
@@ -161,6 +179,9 @@ pub struct IConnectionProfile2 {
     #[cfg(not(feature = "Foundation_Collections"))]
     GetConnectivityIntervalsAsync: usize,
 }
+impl ::windows_sys::core::Interface for IConnectionProfile2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3791933765, data2: 19615, data3: 16396, data4: [145, 80, 126, 199, 214, 226, 136, 138] };
+}
 #[repr(C)]
 pub struct IConnectionProfile3 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -168,6 +189,9 @@ pub struct IConnectionProfile3 {
     pub GetAttributedNetworkUsageAsync: unsafe extern "system" fn(this: *mut *mut Self, starttime: super::super::Foundation::DateTime, endtime: super::super::Foundation::DateTime, states: NetworkUsageStates, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     GetAttributedNetworkUsageAsync: usize,
+}
+impl ::windows_sys::core::Interface for IConnectionProfile3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1468802344, data2: 19673, data3: 16737, data4: [128, 69, 32, 28, 253, 91, 17, 92] };
 }
 #[repr(C)]
 pub struct IConnectionProfile4 {
@@ -177,6 +201,9 @@ pub struct IConnectionProfile4 {
     #[cfg(not(feature = "Foundation_Collections"))]
     GetProviderNetworkUsageAsync: usize,
 }
+impl ::windows_sys::core::Interface for IConnectionProfile4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2049786573, data2: 33248, data3: 19174, data4: [171, 237, 171, 156, 161, 62, 183, 20] };
+}
 #[repr(C)]
 pub struct IConnectionProfile5 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -185,6 +212,9 @@ pub struct IConnectionProfile5 {
     pub TryDeleteAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     TryDeleteAsync: usize,
+}
+impl ::windows_sys::core::Interface for IConnectionProfile5 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2234916551, data2: 40051, data3: 19424, data4: [143, 20, 87, 142, 236, 113, 238, 14] };
 }
 #[repr(C)]
 pub struct IConnectionProfileFilter {
@@ -205,6 +235,9 @@ pub struct IConnectionProfileFilter {
     pub ServiceProviderGuid: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     ServiceProviderGuid: usize,
+}
+impl ::windows_sys::core::Interface for IConnectionProfileFilter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 541883592, data2: 48429, data3: 20109, data4: [164, 179, 69, 94, 195, 55, 56, 138] };
 }
 #[repr(C)]
 pub struct IConnectionProfileFilter2 {
@@ -238,6 +271,9 @@ pub struct IConnectionProfileFilter2 {
     #[cfg(not(feature = "Storage_Streams"))]
     RawData: usize,
 }
+impl ::windows_sys::core::Interface for IConnectionProfileFilter2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3439759073, data2: 50172, data3: 20397, data4: [157, 220, 89, 63, 170, 75, 120, 133] };
+}
 #[repr(C)]
 pub struct IConnectionProfileFilter3 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -250,10 +286,16 @@ pub struct IConnectionProfileFilter3 {
     #[cfg(not(feature = "Foundation"))]
     PurposeGuid: usize,
 }
+impl ::windows_sys::core::Interface for IConnectionProfileFilter3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 178915776, data2: 20500, data3: 17532, data4: [136, 9, 174, 228, 203, 10, 249, 74] };
+}
 #[repr(C)]
 pub struct IConnectionSession {
     pub base__: ::windows_sys::core::IInspectable,
     pub ConnectionProfile: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IConnectionSession {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4287651148, data2: 63547, data3: 16816, data4: [138, 12, 20, 98, 217, 197, 107, 115] };
 }
 #[repr(C)]
 pub struct IConnectivityInterval {
@@ -267,6 +309,9 @@ pub struct IConnectivityInterval {
     #[cfg(not(feature = "Foundation"))]
     ConnectionDuration: usize,
 }
+impl ::windows_sys::core::Interface for IConnectivityInterval {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1336557567, data2: 26438, data3: 18468, data4: [169, 100, 238, 216, 232, 127, 135, 9] };
+}
 #[repr(C)]
 pub struct IConnectivityManagerStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -276,6 +321,9 @@ pub struct IConnectivityManagerStatics {
     AcquireConnectionAsync: usize,
     pub AddHttpRoutePolicy: unsafe extern "system" fn(this: *mut *mut Self, routepolicy: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub RemoveHttpRoutePolicy: unsafe extern "system" fn(this: *mut *mut Self, routepolicy: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IConnectivityManagerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1361106097, data2: 20401, data3: 18608, data4: [175, 201, 66, 224, 9, 42, 129, 100] };
 }
 #[repr(C)]
 pub struct IDataPlanStatus {
@@ -302,6 +350,9 @@ pub struct IDataPlanStatus {
     #[cfg(not(feature = "Foundation"))]
     MaxTransferSizeInMegabytes: usize,
 }
+impl ::windows_sys::core::Interface for IDataPlanStatus {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2541390732, data2: 14469, data3: 16627, data4: [136, 81, 66, 205, 43, 213, 104, 187] };
+}
 #[repr(C)]
 pub struct IDataPlanUsage {
     pub base__: ::windows_sys::core::IInspectable,
@@ -310,6 +361,9 @@ pub struct IDataPlanUsage {
     pub LastSyncTime: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Foundation::DateTime) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     LastSyncTime: usize,
+}
+impl ::windows_sys::core::Interface for IDataPlanUsage {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3105966381, data2: 15172, data3: 18431, data4: [179, 97, 190, 89, 230, 158, 209, 176] };
 }
 #[cfg(feature = "deprecated")]
 #[repr(C)]
@@ -324,6 +378,10 @@ pub struct IDataUsage {
     #[cfg(not(feature = "deprecated"))]
     BytesReceived: usize,
 }
+#[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for IDataUsage {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3242401235, data2: 45382, data3: 19769, data4: [185, 89, 12, 105, 176, 150, 197, 18] };
+}
 #[repr(C)]
 pub struct IIPInformation {
     pub base__: ::windows_sys::core::IInspectable,
@@ -333,12 +391,18 @@ pub struct IIPInformation {
     #[cfg(not(feature = "Foundation"))]
     PrefixLength: usize,
 }
+impl ::windows_sys::core::Interface for IIPInformation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3629204960, data2: 5007, data3: 18391, data4: [155, 58, 54, 187, 72, 140, 239, 51] };
+}
 #[repr(C)]
 pub struct ILanIdentifier {
     pub base__: ::windows_sys::core::IInspectable,
     pub InfrastructureId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub PortId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub NetworkAdapterId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ILanIdentifier {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1219122090, data2: 4360, data3: 17734, data4: [166, 203, 154, 116, 218, 75, 123, 160] };
 }
 #[repr(C)]
 pub struct ILanIdentifierData {
@@ -348,6 +412,9 @@ pub struct ILanIdentifierData {
     pub Value: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     Value: usize,
+}
+impl ::windows_sys::core::Interface for ILanIdentifierData {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2806940611, data2: 54841, data3: 17854, data4: [163, 106, 196, 228, 174, 175, 109, 155] };
 }
 #[repr(C)]
 pub struct INetworkAdapter {
@@ -361,6 +428,9 @@ pub struct INetworkAdapter {
     pub GetConnectedProfileAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     GetConnectedProfileAsync: usize,
+}
+impl ::windows_sys::core::Interface for INetworkAdapter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 995372547, data2: 21384, data3: 18796, data4: [168, 163, 175, 253, 57, 174, 194, 230] };
 }
 #[repr(C)]
 pub struct INetworkInformationStatics {
@@ -395,6 +465,9 @@ pub struct INetworkInformationStatics {
     #[cfg(not(feature = "Foundation"))]
     RemoveNetworkStatusChanged: usize,
 }
+impl ::windows_sys::core::Interface for INetworkInformationStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1349843025, data2: 38157, data3: 16741, data4: [156, 21, 54, 86, 25, 72, 30, 234] };
+}
 #[repr(C)]
 pub struct INetworkInformationStatics2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -403,17 +476,26 @@ pub struct INetworkInformationStatics2 {
     #[cfg(not(feature = "Foundation_Collections"))]
     FindConnectionProfilesAsync: usize,
 }
+impl ::windows_sys::core::Interface for INetworkInformationStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1167912212, data2: 10290, data3: 18870, data4: [186, 110, 226, 101, 240, 71, 134, 168] };
+}
 #[repr(C)]
 pub struct INetworkItem {
     pub base__: ::windows_sys::core::IInspectable,
     pub NetworkId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub GetNetworkTypes: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut NetworkTypes) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for INetworkItem {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 29117753, data2: 62944, data3: 17767, data4: [162, 140, 66, 8, 12, 131, 27, 43] };
+}
 #[repr(C)]
 pub struct INetworkSecuritySettings {
     pub base__: ::windows_sys::core::IInspectable,
     pub NetworkAuthenticationType: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut NetworkAuthenticationType) -> ::windows_sys::core::HRESULT,
     pub NetworkEncryptionType: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut NetworkEncryptionType) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for INetworkSecuritySettings {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2090892941, data2: 37243, data3: 19295, data4: [184, 77, 40, 247, 165, 172, 84, 2] };
 }
 #[repr(C)]
 pub struct INetworkStateChangeEventDetails {
@@ -425,11 +507,17 @@ pub struct INetworkStateChangeEventDetails {
     pub HasNewHostNameList: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub HasNewWwanRegistrationState: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for INetworkStateChangeEventDetails {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 520942387, data2: 55206, data3: 17629, data4: [164, 233, 104, 124, 71, 107, 144, 61] };
+}
 #[repr(C)]
 pub struct INetworkStateChangeEventDetails2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub HasNewTetheringOperationalState: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub HasNewTetheringClientCount: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for INetworkStateChangeEventDetails2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3594764520, data2: 12499, data3: 20330, data4: [173, 71, 106, 24, 115, 206, 179, 193] };
 }
 #[repr(C)]
 pub struct INetworkUsage {
@@ -441,6 +529,9 @@ pub struct INetworkUsage {
     #[cfg(not(feature = "Foundation"))]
     ConnectionDuration: usize,
 }
+impl ::windows_sys::core::Interface for INetworkUsage {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1239060430, data2: 39301, data3: 18727, data4: [191, 91, 7, 43, 92, 101, 248, 217] };
+}
 pub type IPInformation = *mut ::core::ffi::c_void;
 #[repr(C)]
 pub struct IProviderNetworkUsage {
@@ -448,6 +539,9 @@ pub struct IProviderNetworkUsage {
     pub BytesSent: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u64) -> ::windows_sys::core::HRESULT,
     pub BytesReceived: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u64) -> ::windows_sys::core::HRESULT,
     pub ProviderId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IProviderNetworkUsage {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1590074884, data2: 31025, data3: 18632, data4: [184, 243, 70, 48, 15, 164, 39, 40] };
 }
 #[repr(C)]
 pub struct IProxyConfiguration {
@@ -458,6 +552,9 @@ pub struct IProxyConfiguration {
     ProxyUris: usize,
     pub CanConnectDirectly: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IProxyConfiguration {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4013580468, data2: 36868, data3: 19926, data4: [183, 216, 179, 229, 2, 244, 170, 208] };
+}
 #[repr(C)]
 pub struct IRoutePolicy {
     pub base__: ::windows_sys::core::IInspectable,
@@ -465,15 +562,24 @@ pub struct IRoutePolicy {
     pub HostName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub HostNameType: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::DomainNameType) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IRoutePolicy {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 296469676, data2: 4039, data3: 17124, data4: [135, 66, 86, 153, 35, 177, 202, 17] };
+}
 #[repr(C)]
 pub struct IRoutePolicyFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub CreateRoutePolicy: unsafe extern "system" fn(this: *mut *mut Self, connectionprofile: *mut ::core::ffi::c_void, hostname: *mut ::core::ffi::c_void, r#type: super::DomainNameType, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IRoutePolicyFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 906131763, data2: 41358, data3: 19893, data4: [166, 151, 245, 143, 167, 54, 78, 68] };
+}
 #[repr(C)]
 pub struct IWlanConnectionProfileDetails {
     pub base__: ::windows_sys::core::IInspectable,
     pub GetConnectedSsid: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWlanConnectionProfileDetails {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1444976843, data2: 45914, data3: 19441, data4: [168, 132, 183, 85, 126, 136, 255, 134] };
 }
 #[repr(C)]
 pub struct IWwanConnectionProfileDetails {
@@ -483,6 +589,9 @@ pub struct IWwanConnectionProfileDetails {
     pub GetNetworkRegistrationState: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut WwanNetworkRegistrationState) -> ::windows_sys::core::HRESULT,
     pub GetCurrentDataClass: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut WwanDataClass) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWwanConnectionProfileDetails {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 239970558, data2: 33631, data3: 19955, data4: [130, 253, 223, 85, 110, 188, 9, 239] };
+}
 #[repr(C)]
 pub struct IWwanConnectionProfileDetails2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -491,6 +600,9 @@ pub struct IWwanConnectionProfileDetails2 {
     pub PurposeGuids: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     PurposeGuids: usize,
+}
+impl ::windows_sys::core::Interface for IWwanConnectionProfileDetails2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2054508254, data2: 41453, data3: 18610, data4: [142, 146, 180, 96, 3, 61, 82, 226] };
 }
 pub type LanIdentifier = *mut ::core::ffi::c_void;
 pub type LanIdentifierData = *mut ::core::ffi::c_void;

@@ -52,12 +52,18 @@ pub struct IEnumWbemClassObject {
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Skip: unsafe extern "system" fn(this: *mut *mut Self, ltimeout: i32, ncount: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEnumWbemClassObject {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 41502689, data2: 55089, data3: 4558, data4: [163, 87, 0, 0, 0, 0, 0, 1] };
+}
 #[repr(C)]
 pub struct IMofCompiler {
     pub base__: ::windows_sys::core::IUnknown,
     pub CompileFile: unsafe extern "system" fn(this: *mut *mut Self, filename: ::windows_sys::core::PCWSTR, serverandnamespace: ::windows_sys::core::PCWSTR, user: ::windows_sys::core::PCWSTR, authority: ::windows_sys::core::PCWSTR, password: ::windows_sys::core::PCWSTR, loptionflags: i32, lclassflags: i32, linstanceflags: i32, pinfo: *mut WBEM_COMPILE_STATUS_INFO) -> ::windows_sys::core::HRESULT,
     pub CompileBuffer: unsafe extern "system" fn(this: *mut *mut Self, buffsize: i32, pbuffer: *const u8, serverandnamespace: ::windows_sys::core::PCWSTR, user: ::windows_sys::core::PCWSTR, authority: ::windows_sys::core::PCWSTR, password: ::windows_sys::core::PCWSTR, loptionflags: i32, lclassflags: i32, linstanceflags: i32, pinfo: *mut WBEM_COMPILE_STATUS_INFO) -> ::windows_sys::core::HRESULT,
     pub CreateBMOF: unsafe extern "system" fn(this: *mut *mut Self, textfilename: ::windows_sys::core::PCWSTR, bmoffilename: ::windows_sys::core::PCWSTR, serverandnamespace: ::windows_sys::core::PCWSTR, loptionflags: i32, lclassflags: i32, linstanceflags: i32, pinfo: *mut WBEM_COMPILE_STATUS_INFO) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMofCompiler {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1840224078, data2: 11831, data3: 4562, data4: [174, 201, 0, 192, 79, 182, 136, 32] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -117,6 +123,10 @@ pub struct ISWbemDateTime {
     SetFileTime: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISWbemDateTime {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1586972042, data2: 53111, data3: 4563, data4: [179, 143, 0, 16, 90, 31, 71, 58] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISWbemEventSource {
     pub base__: super::Com::IDispatch,
@@ -130,9 +140,17 @@ pub struct ISWbemEventSource {
     Security_: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISWbemEventSource {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 668290450, data2: 3774, data3: 4562, data4: [139, 34, 0, 96, 8, 6, 217, 182] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISWbemLastError {
     pub base__: ISWbemObject,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISWbemLastError {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3647134596, data2: 54459, data3: 4561, data4: [139, 9, 0, 96, 8, 6, 217, 182] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -146,6 +164,10 @@ pub struct ISWbemLocator {
     pub Security_: unsafe extern "system" fn(this: *mut *mut Self, objwbemsecurity: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     Security_: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISWbemLocator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1990607195, data2: 52033, data3: 4561, data4: [139, 2, 0, 96, 8, 6, 217, 182] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -173,6 +195,10 @@ pub struct ISWbemMethod {
     Qualifiers_: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISWbemMethod {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1110347408, data2: 55637, data3: 4561, data4: [139, 9, 0, 96, 8, 6, 217, 182] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISWbemMethodSet {
     pub base__: super::Com::IDispatch,
@@ -182,6 +208,10 @@ pub struct ISWbemMethodSet {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     Item: usize,
     pub Count: unsafe extern "system" fn(this: *mut *mut Self, icount: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISWbemMethodSet {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3376128658, data2: 55637, data3: 4561, data4: [139, 9, 0, 96, 8, 6, 217, 182] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -199,6 +229,10 @@ pub struct ISWbemNamedValue {
     pub Name: unsafe extern "system" fn(this: *mut *mut Self, strname: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     Name: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISWbemNamedValue {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1990607204, data2: 52033, data3: 4561, data4: [139, 2, 0, 96, 8, 6, 217, 182] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -223,6 +257,10 @@ pub struct ISWbemNamedValueSet {
     #[cfg(not(feature = "Win32_System_Com"))]
     Clone: usize,
     pub DeleteAll: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISWbemNamedValueSet {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3475207914, data2: 52876, data3: 4561, data4: [139, 5, 0, 96, 8, 6, 217, 182] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -330,6 +368,10 @@ pub struct ISWbemObject {
     Security_: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISWbemObject {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1990607194, data2: 52033, data3: 4561, data4: [139, 2, 0, 96, 8, 6, 217, 182] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISWbemObjectEx {
     pub base__: ISWbemObject,
@@ -349,6 +391,10 @@ pub struct ISWbemObjectEx {
     pub SetFromText_: unsafe extern "system" fn(this: *mut *mut Self, bstext: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, iobjecttextformat: WbemObjectTextFormatEnum, iflags: i32, objwbemnamedvalueset: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     SetFromText_: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISWbemObjectEx {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 647681386, data2: 35431, data3: 16681, data4: [188, 140, 5, 6, 220, 254, 152, 128] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -436,6 +482,10 @@ pub struct ISWbemObjectPath {
     SetAuthority: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISWbemObjectPath {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1469168679, data2: 52892, data3: 4561, data4: [151, 191, 0, 0, 248, 30, 132, 156] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISWbemObjectSet {
     pub base__: super::Com::IDispatch,
@@ -455,6 +505,10 @@ pub struct ISWbemObjectSet {
     ItemIndex: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISWbemObjectSet {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1990607199, data2: 52033, data3: 4561, data4: [139, 2, 0, 96, 8, 6, 217, 182] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISWbemPrivilege {
     pub base__: super::Com::IDispatch,
@@ -469,6 +523,10 @@ pub struct ISWbemPrivilege {
     #[cfg(not(feature = "Win32_Foundation"))]
     DisplayName: usize,
     pub Identifier: unsafe extern "system" fn(this: *mut *mut Self, iprivilege: *mut WbemPrivilegeEnum) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISWbemPrivilege {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 653158333, data2: 22532, data3: 4562, data4: [139, 74, 0, 96, 8, 6, 217, 182] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -490,6 +548,10 @@ pub struct ISWbemPrivilegeSet {
     pub AddAsString: unsafe extern "system" fn(this: *mut *mut Self, strprivilege: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bisenabled: i16, objwbemprivilege: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     AddAsString: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISWbemPrivilegeSet {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 653158335, data2: 22532, data3: 4562, data4: [139, 74, 0, 96, 8, 6, 217, 182] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -520,6 +582,10 @@ pub struct ISWbemProperty {
     pub IsArray: unsafe extern "system" fn(this: *mut *mut Self, bisarray: *mut i16) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISWbemProperty {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 439914392, data2: 54458, data3: 4561, data4: [139, 9, 0, 96, 8, 6, 217, 182] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISWbemPropertySet {
     pub base__: super::Com::IDispatch,
@@ -537,6 +603,10 @@ pub struct ISWbemPropertySet {
     pub Remove: unsafe extern "system" fn(this: *mut *mut Self, strname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, iflags: i32) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     Remove: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISWbemPropertySet {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3735070642, data2: 54458, data3: 4561, data4: [139, 9, 0, 96, 8, 6, 217, 182] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -564,6 +634,10 @@ pub struct ISWbemQualifier {
     pub IsAmended: unsafe extern "system" fn(this: *mut *mut Self, bisamended: *mut i16) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISWbemQualifier {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2041600306, data2: 54199, data3: 4561, data4: [139, 6, 0, 96, 8, 6, 217, 182] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISWbemQualifierSet {
     pub base__: super::Com::IDispatch,
@@ -581,6 +655,10 @@ pub struct ISWbemQualifierSet {
     pub Remove: unsafe extern "system" fn(this: *mut *mut Self, strname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, iflags: i32) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     Remove: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISWbemQualifierSet {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2601970966, data2: 54239, data3: 4561, data4: [139, 8, 0, 96, 8, 6, 217, 182] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -601,6 +679,10 @@ pub struct ISWbemRefreshableItem {
     #[cfg(not(feature = "Win32_System_Com"))]
     ObjectSet: usize,
     pub Remove: unsafe extern "system" fn(this: *mut *mut Self, iflags: i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISWbemRefreshableItem {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1523892114, data2: 55979, data3: 4563, data4: [179, 143, 0, 16, 90, 31, 71, 58] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -627,6 +709,10 @@ pub struct ISWbemRefresher {
     pub DeleteAll: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISWbemRefresher {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 349709582, data2: 55746, data3: 4563, data4: [179, 143, 0, 16, 90, 31, 71, 58] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISWbemSecurity {
     pub base__: super::Com::IDispatch,
@@ -638,6 +724,10 @@ pub struct ISWbemSecurity {
     pub Privileges: unsafe extern "system" fn(this: *mut *mut Self, objwbemprivilegeset: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     Privileges: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISWbemSecurity {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3041748710, data2: 8839, data3: 4562, data4: [139, 51, 0, 96, 8, 6, 217, 182] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -736,6 +826,10 @@ pub struct ISWbemServices {
     Security_: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISWbemServices {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1990607196, data2: 52033, data3: 4561, data4: [139, 2, 0, 96, 8, 6, 217, 182] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISWbemServicesEx {
     pub base__: ISWbemServices,
@@ -749,20 +843,35 @@ pub struct ISWbemServicesEx {
     PutAsync: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISWbemServicesEx {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3539371075, data2: 34268, data3: 17022, data4: [145, 216, 54, 101, 84, 204, 117, 76] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISWbemSink {
     pub base__: super::Com::IDispatch,
     pub Cancel: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISWbemSink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1970375839, data2: 61481, data3: 4561, data4: [161, 172, 0, 192, 79, 182, 194, 35] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISWbemSinkEvents {
     pub base__: super::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISWbemSinkEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1970375840, data2: 61481, data3: 4561, data4: [161, 172, 0, 192, 79, 182, 194, 35] };
 }
 #[repr(C)]
 pub struct IUnsecuredApartment {
     pub base__: ::windows_sys::core::IUnknown,
     pub CreateObjectStub: unsafe extern "system" fn(this: *mut *mut Self, pobject: *mut ::core::ffi::c_void, ppstub: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUnsecuredApartment {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 486193804, data2: 5411, data3: 4561, data4: [173, 121, 0, 192, 79, 216, 253, 255] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -781,10 +890,17 @@ pub struct IWMIExtension {
     #[cfg(not(feature = "Win32_System_Com"))]
     GetWMIServices: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWMIExtension {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2915168366, data2: 23678, data3: 4562, data4: [139, 116, 0, 16, 75, 42, 251, 65] };
+}
 #[repr(C)]
 pub struct IWbemAddressResolution {
     pub base__: ::windows_sys::core::IUnknown,
     pub Resolve: unsafe extern "system" fn(this: *mut *mut Self, wsznamespacepath: ::windows_sys::core::PCWSTR, wszaddresstype: ::windows_sys::core::PWSTR, pdwaddresslength: *mut u32, pabbinaryaddress: *mut *mut u8) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWbemAddressResolution {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4157484562, data2: 35984, data3: 4561, data4: [158, 123, 0, 192, 79, 195, 36, 168] };
 }
 #[repr(C)]
 pub struct IWbemBackupRestore {
@@ -792,11 +908,17 @@ pub struct IWbemBackupRestore {
     pub Backup: unsafe extern "system" fn(this: *mut *mut Self, strbackuptofile: ::windows_sys::core::PCWSTR, lflags: i32) -> ::windows_sys::core::HRESULT,
     pub Restore: unsafe extern "system" fn(this: *mut *mut Self, strrestorefromfile: ::windows_sys::core::PCWSTR, lflags: i32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWbemBackupRestore {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3298702023, data2: 48267, data3: 4562, data4: [133, 212, 0, 16, 90, 31, 131, 4] };
+}
 #[repr(C)]
 pub struct IWbemBackupRestoreEx {
     pub base__: IWbemBackupRestore,
     pub Pause: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Resume: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWbemBackupRestoreEx {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2740575941, data2: 59411, data3: 18484, data4: [138, 42, 186, 127, 29, 119, 125, 118] };
 }
 #[repr(C)]
 pub struct IWbemCallResult {
@@ -808,6 +930,9 @@ pub struct IWbemCallResult {
     GetResultString: usize,
     pub GetResultServices: unsafe extern "system" fn(this: *mut *mut Self, ltimeout: i32, ppservices: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetCallStatus: unsafe extern "system" fn(this: *mut *mut Self, ltimeout: i32, plstatus: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWbemCallResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1152165493, data2: 59644, data3: 4560, data4: [160, 124, 0, 192, 79, 182, 136, 32] };
 }
 #[repr(C)]
 pub struct IWbemClassObject {
@@ -861,6 +986,9 @@ pub struct IWbemClassObject {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetMethodOrigin: usize,
 }
+impl ::windows_sys::core::Interface for IWbemClassObject {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3692209793, data2: 29567, data3: 4559, data4: [136, 77, 0, 170, 0, 75, 46, 36] };
+}
 #[repr(C)]
 pub struct IWbemClientConnectionTransport {
     pub base__: ::windows_sys::core::IUnknown,
@@ -874,6 +1002,9 @@ pub struct IWbemClientConnectionTransport {
     OpenAsync: usize,
     pub Cancel: unsafe extern "system" fn(this: *mut *mut Self, lflags: i32, phandler: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWbemClientConnectionTransport {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2827601706, data2: 64705, data3: 19102, data4: [175, 97, 237, 7, 19, 51, 251, 91] };
+}
 #[repr(C)]
 pub struct IWbemClientTransport {
     pub base__: ::windows_sys::core::IUnknown,
@@ -881,6 +1012,9 @@ pub struct IWbemClientTransport {
     pub ConnectServer: unsafe extern "system" fn(this: *mut *mut Self, straddresstype: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, dwbinaryaddresslength: u32, abbinaryaddress: *const u8, strnetworkresource: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, struser: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, strpassword: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, strlocale: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, lsecurityflags: i32, strauthority: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pctx: *mut ::core::ffi::c_void, ppnamespace: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     ConnectServer: usize,
+}
+impl ::windows_sys::core::Interface for IWbemClientTransport {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4157484561, data2: 35984, data3: 4561, data4: [158, 123, 0, 192, 79, 195, 36, 168] };
 }
 #[repr(C)]
 pub struct IWbemConfigureRefresher {
@@ -891,10 +1025,16 @@ pub struct IWbemConfigureRefresher {
     pub Remove: unsafe extern "system" fn(this: *mut *mut Self, lid: i32, lflags: i32) -> ::windows_sys::core::HRESULT,
     pub AddEnum: unsafe extern "system" fn(this: *mut *mut Self, pnamespace: *mut ::core::ffi::c_void, wszclassname: ::windows_sys::core::PCWSTR, lflags: i32, pcontext: *mut ::core::ffi::c_void, ppenum: *mut *mut ::core::ffi::c_void, plid: *mut i32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWbemConfigureRefresher {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1228225682, data2: 20843, data3: 4561, data4: [174, 166, 0, 192, 79, 182, 136, 32] };
+}
 #[repr(C)]
 pub struct IWbemConnectorLogin {
     pub base__: ::windows_sys::core::IUnknown,
     pub ConnectorLogin: unsafe extern "system" fn(this: *mut *mut Self, wsznetworkresource: ::windows_sys::core::PCWSTR, wszpreferredlocale: ::windows_sys::core::PCWSTR, lflags: i32, pctx: *mut ::core::ffi::c_void, riid: *const ::windows_sys::core::GUID, pinterface: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWbemConnectorLogin {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3639385265, data2: 45365, data3: 20240, data4: [139, 27, 199, 24, 139, 176, 209, 134] };
 }
 #[repr(C)]
 pub struct IWbemConstructClassObject {
@@ -903,6 +1043,9 @@ pub struct IWbemConstructClassObject {
     pub SetPropertyOrigin: unsafe extern "system" fn(this: *mut *mut Self, wszpropertyname: ::windows_sys::core::PCWSTR, loriginindex: i32) -> ::windows_sys::core::HRESULT,
     pub SetMethodOrigin: unsafe extern "system" fn(this: *mut *mut Self, wszmethodname: ::windows_sys::core::PCWSTR, loriginindex: i32) -> ::windows_sys::core::HRESULT,
     pub SetServerNamespace: unsafe extern "system" fn(this: *mut *mut Self, wszserver: ::windows_sys::core::PCWSTR, wsznamespace: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWbemConstructClassObject {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2667012500, data2: 28885, data3: 4561, data4: [173, 144, 0, 192, 79, 216, 253, 255] };
 }
 #[repr(C)]
 pub struct IWbemContext {
@@ -929,11 +1072,17 @@ pub struct IWbemContext {
     pub DeleteValue: unsafe extern "system" fn(this: *mut *mut Self, wszname: ::windows_sys::core::PCWSTR, lflags: i32) -> ::windows_sys::core::HRESULT,
     pub DeleteAll: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWbemContext {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1152165492, data2: 59644, data3: 4560, data4: [160, 124, 0, 192, 79, 182, 136, 32] };
+}
 #[repr(C)]
 pub struct IWbemDecoupledBasicEventProvider {
     pub base__: IWbemDecoupledRegistrar,
     pub GetSink: unsafe extern "system" fn(this: *mut *mut Self, a_flags: i32, a_context: *mut ::core::ffi::c_void, a_sink: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetService: unsafe extern "system" fn(this: *mut *mut Self, a_flags: i32, a_context: *mut ::core::ffi::c_void, a_service: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWbemDecoupledBasicEventProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2251517216, data2: 51729, data3: 18310, data4: [158, 241, 188, 138, 148, 107, 66, 252] };
 }
 #[repr(C)]
 pub struct IWbemDecoupledRegistrar {
@@ -941,15 +1090,24 @@ pub struct IWbemDecoupledRegistrar {
     pub Register: unsafe extern "system" fn(this: *mut *mut Self, a_flags: i32, a_context: *mut ::core::ffi::c_void, a_user: ::windows_sys::core::PCWSTR, a_locale: ::windows_sys::core::PCWSTR, a_scope: ::windows_sys::core::PCWSTR, a_registration: ::windows_sys::core::PCWSTR, piunknown: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub UnRegister: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWbemDecoupledRegistrar {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 268815311, data2: 58959, data3: 17990, data4: [188, 211, 58, 8, 157, 138, 132, 180] };
+}
 #[repr(C)]
 pub struct IWbemEventConsumerProvider {
     pub base__: ::windows_sys::core::IUnknown,
     pub FindConsumer: unsafe extern "system" fn(this: *mut *mut Self, plogicalconsumer: *mut ::core::ffi::c_void, ppconsumer: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWbemEventConsumerProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3796242554, data2: 45166, data3: 4560, data4: [173, 97, 0, 192, 79, 216, 253, 255] };
+}
 #[repr(C)]
 pub struct IWbemEventProvider {
     pub base__: ::windows_sys::core::IUnknown,
     pub ProvideEvents: unsafe extern "system" fn(this: *mut *mut Self, psink: *mut ::core::ffi::c_void, lflags: i32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWbemEventProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3796176987, data2: 45166, data3: 4560, data4: [173, 97, 0, 192, 79, 216, 253, 255] };
 }
 #[repr(C)]
 pub struct IWbemEventProviderQuerySink {
@@ -957,10 +1115,16 @@ pub struct IWbemEventProviderQuerySink {
     pub NewQuery: unsafe extern "system" fn(this: *mut *mut Self, dwid: u32, wszquerylanguage: *const u16, wszquery: *const u16) -> ::windows_sys::core::HRESULT,
     pub CancelQuery: unsafe extern "system" fn(this: *mut *mut Self, dwid: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWbemEventProviderQuerySink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1477102328, data2: 64028, data3: 4560, data4: [173, 114, 0, 192, 79, 216, 253, 255] };
+}
 #[repr(C)]
 pub struct IWbemEventProviderSecurity {
     pub base__: ::windows_sys::core::IUnknown,
     pub AccessCheck: unsafe extern "system" fn(this: *mut *mut Self, wszquerylanguage: *const u16, wszquery: *const u16, lsidlength: i32, psid: *const u8) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWbemEventProviderSecurity {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1663008150, data2: 55699, data3: 4562, data4: [179, 57, 0, 16, 90, 31, 74, 175] };
 }
 #[repr(C)]
 pub struct IWbemEventSink {
@@ -970,6 +1134,9 @@ pub struct IWbemEventSink {
     pub GetRestrictedSink: unsafe extern "system" fn(this: *mut *mut Self, lnumqueries: i32, awszqueries: *const ::windows_sys::core::PWSTR, pcallback: *mut ::core::ffi::c_void, ppsink: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetBatchingParameters: unsafe extern "system" fn(this: *mut *mut Self, lflags: i32, dwmaxbuffersize: u32, dwmaxsendlatency: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWbemEventSink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 987760650, data2: 32314, data3: 17254, data4: [191, 137, 15, 238, 220, 147, 22, 89] };
+}
 #[repr(C)]
 pub struct IWbemHiPerfEnum {
     pub base__: ::windows_sys::core::IUnknown,
@@ -977,6 +1144,9 @@ pub struct IWbemHiPerfEnum {
     pub RemoveObjects: unsafe extern "system" fn(this: *mut *mut Self, lflags: i32, unumobjects: u32, apids: *const i32) -> ::windows_sys::core::HRESULT,
     pub GetObjects: unsafe extern "system" fn(this: *mut *mut Self, lflags: i32, unumobjects: u32, apobj: *mut *mut ::core::ffi::c_void, pureturned: *mut u32) -> ::windows_sys::core::HRESULT,
     pub RemoveAll: unsafe extern "system" fn(this: *mut *mut Self, lflags: i32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWbemHiPerfEnum {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 654688904, data2: 31150, data3: 4562, data4: [179, 72, 0, 16, 90, 31, 129, 119] };
 }
 #[repr(C)]
 pub struct IWbemHiPerfProvider {
@@ -988,6 +1158,9 @@ pub struct IWbemHiPerfProvider {
     pub CreateRefreshableEnum: unsafe extern "system" fn(this: *mut *mut Self, pnamespace: *mut ::core::ffi::c_void, wszclass: ::windows_sys::core::PCWSTR, prefresher: *mut ::core::ffi::c_void, lflags: i32, pcontext: *mut ::core::ffi::c_void, phiperfenum: *mut ::core::ffi::c_void, plid: *mut i32) -> ::windows_sys::core::HRESULT,
     pub GetObjects: unsafe extern "system" fn(this: *mut *mut Self, pnamespace: *mut ::core::ffi::c_void, lnumobjects: i32, apobj: *mut *mut ::core::ffi::c_void, lflags: i32, pcontext: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWbemHiPerfProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1228225683, data2: 20843, data3: 4561, data4: [174, 166, 0, 192, 79, 182, 136, 32] };
+}
 #[repr(C)]
 pub struct IWbemLevel1Login {
     pub base__: ::windows_sys::core::IUnknown,
@@ -996,6 +1169,9 @@ pub struct IWbemLevel1Login {
     pub WBEMLogin: unsafe extern "system" fn(this: *mut *mut Self, wszpreferredlocale: ::windows_sys::core::PCWSTR, accesstoken: *const u8, lflags: i32, pctx: *mut ::core::ffi::c_void, ppnamespace: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub NTLMLogin: unsafe extern "system" fn(this: *mut *mut Self, wsznetworkresource: ::windows_sys::core::PCWSTR, wszpreferredlocale: ::windows_sys::core::PCWSTR, lflags: i32, pctx: *mut ::core::ffi::c_void, ppnamespace: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWbemLevel1Login {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4077497624, data2: 55402, data3: 4560, data4: [160, 117, 0, 192, 79, 182, 136, 32] };
+}
 #[repr(C)]
 pub struct IWbemLocator {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1003,6 +1179,9 @@ pub struct IWbemLocator {
     pub ConnectServer: unsafe extern "system" fn(this: *mut *mut Self, strnetworkresource: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, struser: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, strpassword: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, strlocale: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, lsecurityflags: i32, strauthority: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pctx: *mut ::core::ffi::c_void, ppnamespace: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     ConnectServer: usize,
+}
+impl ::windows_sys::core::Interface for IWbemLocator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3692209799, data2: 29567, data3: 4559, data4: [136, 77, 0, 170, 0, 75, 46, 36] };
 }
 #[repr(C)]
 pub struct IWbemObjectAccess {
@@ -1021,6 +1200,9 @@ pub struct IWbemObjectAccess {
     pub Lock: unsafe extern "system" fn(this: *mut *mut Self, lflags: i32) -> ::windows_sys::core::HRESULT,
     pub Unlock: unsafe extern "system" fn(this: *mut *mut Self, lflags: i32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWbemObjectAccess {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1228225690, data2: 20843, data3: 4561, data4: [174, 166, 0, 192, 79, 182, 136, 32] };
+}
 #[repr(C)]
 pub struct IWbemObjectSink {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1029,6 +1211,9 @@ pub struct IWbemObjectSink {
     pub SetStatus: unsafe extern "system" fn(this: *mut *mut Self, lflags: i32, hresult: ::windows_sys::core::HRESULT, strparam: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pobjparam: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     SetStatus: usize,
+}
+impl ::windows_sys::core::Interface for IWbemObjectSink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2089121793, data2: 29569, data3: 4559, data4: [136, 77, 0, 170, 0, 75, 46, 36] };
 }
 #[repr(C)]
 pub struct IWbemObjectSinkEx {
@@ -1051,6 +1236,9 @@ pub struct IWbemObjectSinkEx {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     WriteStreamParameter: usize,
 }
+impl ::windows_sys::core::Interface for IWbemObjectSinkEx {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3889388794, data2: 13451, data3: 18526, data4: [181, 36, 37, 39, 37, 214, 151, 202] };
+}
 #[repr(C)]
 pub struct IWbemObjectTextSrc {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1062,6 +1250,9 @@ pub struct IWbemObjectTextSrc {
     pub CreateFromText: unsafe extern "system" fn(this: *mut *mut Self, lflags: i32, strtext: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, uobjtextformat: u32, pctx: *mut ::core::ffi::c_void, pnewobj: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     CreateFromText: usize,
+}
+impl ::windows_sys::core::Interface for IWbemObjectTextSrc {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3217000506, data2: 51927, data3: 4563, data4: [161, 27, 0, 16, 90, 31, 81, 90] };
 }
 #[repr(C)]
 pub struct IWbemPath {
@@ -1105,6 +1296,9 @@ pub struct IWbemPath {
     #[cfg(not(feature = "Win32_Foundation"))]
     IsSameClassName: usize,
 }
+impl ::windows_sys::core::Interface for IWbemPath {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1002527474, data2: 29548, data3: 18302, data4: [158, 81, 35, 138, 248, 102, 125, 204] };
+}
 #[repr(C)]
 pub struct IWbemPathKeyList {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1125,6 +1319,9 @@ pub struct IWbemPathKeyList {
     pub GetInfo: unsafe extern "system" fn(this: *mut *mut Self, urequestedinfo: u32, puresponse: *mut u64) -> ::windows_sys::core::HRESULT,
     pub GetText: unsafe extern "system" fn(this: *mut *mut Self, lflags: i32, pubufflength: *mut u32, psztext: ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWbemPathKeyList {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2598774903, data2: 30020, data3: 19376, data4: [170, 38, 161, 56, 36, 101, 158, 214] };
+}
 #[repr(C)]
 pub struct IWbemPropertyProvider {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1137,20 +1334,32 @@ pub struct IWbemPropertyProvider {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     PutProperty: usize,
 }
+impl ::windows_sys::core::Interface for IWbemPropertyProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3462522945, data2: 26044, data3: 4560, data4: [182, 189, 0, 170, 0, 50, 64, 199] };
+}
 #[repr(C)]
 pub struct IWbemProviderIdentity {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetRegistrationObject: unsafe extern "system" fn(this: *mut *mut Self, lflags: i32, pprovreg: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWbemProviderIdentity {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1663008151, data2: 55699, data3: 4562, data4: [179, 57, 0, 16, 90, 31, 74, 175] };
 }
 #[repr(C)]
 pub struct IWbemProviderInit {
     pub base__: ::windows_sys::core::IUnknown,
     pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, wszuser: ::windows_sys::core::PCWSTR, lflags: i32, wsznamespace: ::windows_sys::core::PCWSTR, wszlocale: ::windows_sys::core::PCWSTR, pnamespace: *mut ::core::ffi::c_void, pctx: *mut ::core::ffi::c_void, pinitsink: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWbemProviderInit {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 467932530, data2: 37341, data3: 4561, data4: [174, 178, 0, 192, 79, 182, 136, 32] };
+}
 #[repr(C)]
 pub struct IWbemProviderInitSink {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetStatus: unsafe extern "system" fn(this: *mut *mut Self, lstatus: i32, lflags: i32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWbemProviderInitSink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 467932529, data2: 37341, data3: 4561, data4: [174, 178, 0, 192, 79, 182, 136, 32] };
 }
 #[repr(C)]
 pub struct IWbemQualifierSet {
@@ -1175,6 +1384,9 @@ pub struct IWbemQualifierSet {
     Next: usize,
     pub EndEnumeration: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWbemQualifierSet {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3692209792, data2: 29567, data3: 4559, data4: [136, 77, 0, 170, 0, 75, 46, 36] };
+}
 #[repr(C)]
 pub struct IWbemQuery {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1186,10 +1398,16 @@ pub struct IWbemQuery {
     pub FreeMemory: unsafe extern "system" fn(this: *mut *mut Self, pmem: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetQueryInfo: unsafe extern "system" fn(this: *mut *mut Self, uanalysistype: u32, uinfoid: u32, ubufsize: u32, pdestbuf: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWbemQuery {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2165731160, data2: 56728, data3: 4563, data4: [161, 32, 0, 16, 90, 31, 81, 90] };
+}
 #[repr(C)]
 pub struct IWbemRefresher {
     pub base__: ::windows_sys::core::IUnknown,
     pub Refresh: unsafe extern "system" fn(this: *mut *mut Self, lflags: i32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWbemRefresher {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1228225689, data2: 20843, data3: 4561, data4: [174, 166, 0, 192, 79, 182, 136, 32] };
 }
 #[repr(C)]
 pub struct IWbemServices {
@@ -1269,10 +1487,16 @@ pub struct IWbemServices {
     #[cfg(not(feature = "Win32_Foundation"))]
     ExecMethodAsync: usize,
 }
+impl ::windows_sys::core::Interface for IWbemServices {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2505497753, data2: 33420, data3: 4559, data4: [163, 126, 0, 170, 0, 50, 64, 199] };
+}
 #[repr(C)]
 pub struct IWbemShutdown {
     pub base__: ::windows_sys::core::IUnknown,
     pub Shutdown: unsafe extern "system" fn(this: *mut *mut Self, ureason: i32, umaxmilliseconds: u32, pctx: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWbemShutdown {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3081969145, data2: 54549, data3: 4563, data4: [161, 28, 0, 16, 90, 31, 81, 90] };
 }
 #[repr(C)]
 pub struct IWbemStatusCodeText {
@@ -1286,20 +1510,32 @@ pub struct IWbemStatusCodeText {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetFacilityCodeText: usize,
 }
+impl ::windows_sys::core::Interface for IWbemStatusCodeText {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3951550908, data2: 12851, data3: 4562, data4: [174, 201, 0, 192, 79, 182, 136, 32] };
+}
 #[repr(C)]
 pub struct IWbemTransport {
     pub base__: ::windows_sys::core::IUnknown,
     pub Initialize: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWbemTransport {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1430250884, data2: 8534, data3: 4560, data4: [182, 174, 0, 170, 0, 50, 64, 199] };
 }
 #[repr(C)]
 pub struct IWbemUnboundObjectSink {
     pub base__: ::windows_sys::core::IUnknown,
     pub IndicateToConsumer: unsafe extern "system" fn(this: *mut *mut Self, plogicalconsumer: *mut ::core::ffi::c_void, lnumobjects: i32, apobjects: *const *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWbemUnboundObjectSink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3796242555, data2: 45166, data3: 4560, data4: [173, 97, 0, 192, 79, 216, 253, 255] };
+}
 #[repr(C)]
 pub struct IWbemUnsecuredApartment {
     pub base__: IUnsecuredApartment,
     pub CreateSinkStub: unsafe extern "system" fn(this: *mut *mut Self, psink: *mut ::core::ffi::c_void, dwflags: u32, wszreserved: ::windows_sys::core::PCWSTR, ppstub: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWbemUnsecuredApartment {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 829660420, data2: 13425, data3: 19700, data4: [154, 124, 87, 164, 74, 231, 25, 86] };
 }
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Wmi\"`*"]

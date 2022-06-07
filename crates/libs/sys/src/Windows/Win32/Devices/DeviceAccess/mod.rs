@@ -100,6 +100,9 @@ pub struct ICreateDeviceAccessAsync {
     pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub GetResult: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, deviceaccess: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ICreateDeviceAccessAsync {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 880042639, data2: 26685, data3: 17106, data4: [171, 203, 219, 1, 140, 101, 3, 188] };
+}
 #[repr(C)]
 pub struct IDeviceIoControl {
     pub base__: ::windows_sys::core::IUnknown,
@@ -107,8 +110,14 @@ pub struct IDeviceIoControl {
     pub DeviceIoControlAsync: unsafe extern "system" fn(this: *mut *mut Self, iocontrolcode: u32, inputbuffer: *const u8, inputbuffersize: u32, outputbuffer: *mut u8, outputbuffersize: u32, requestcompletioncallback: *mut ::core::ffi::c_void, cancelcontext: *mut usize) -> ::windows_sys::core::HRESULT,
     pub CancelOperation: unsafe extern "system" fn(this: *mut *mut Self, cancelcontext: usize) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDeviceIoControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2666520929, data2: 9131, data3: 20248, data4: [155, 73, 153, 27, 88, 106, 233, 112] };
+}
 #[repr(C)]
 pub struct IDeviceRequestCompletionCallback {
     pub base__: ::windows_sys::core::IUnknown,
     pub Invoke: unsafe extern "system" fn(this: *mut *mut Self, requestresult: ::windows_sys::core::HRESULT, bytesreturned: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDeviceRequestCompletionCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2577116452, data2: 39629, data3: 17851, data4: [134, 105, 42, 47, 192, 40, 139, 4] };
 }

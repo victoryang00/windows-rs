@@ -35,6 +35,9 @@ pub struct ICoreIncrementalInkStroke {
     #[cfg(not(feature = "Foundation"))]
     BoundingRect: usize,
 }
+impl ::windows_sys::core::Interface for ICoreIncrementalInkStroke {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4255126995, data2: 40294, data3: 20349, data4: [165, 127, 204, 112, 185, 207, 170, 118] };
+}
 #[repr(C)]
 pub struct ICoreIncrementalInkStrokeFactory {
     pub base__: ::windows_sys::core::IInspectable,
@@ -42,6 +45,9 @@ pub struct ICoreIncrementalInkStrokeFactory {
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, drawingattributes: *mut ::core::ffi::c_void, pointtransform: super::super::super::super::Foundation::Numerics::Matrix3x2, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Numerics"))]
     Create: usize,
+}
+impl ::windows_sys::core::Interface for ICoreIncrementalInkStrokeFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3620052806, data2: 36264, data3: 20336, data4: [151, 81, 229, 59, 182, 223, 69, 150] };
 }
 #[repr(C)]
 pub struct ICoreInkIndependentInputSource {
@@ -104,6 +110,9 @@ pub struct ICoreInkIndependentInputSource {
     RemovePointerLost: usize,
     pub InkPresenter: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ICoreInkIndependentInputSource {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 968068521, data2: 30265, data3: 17561, data4: [165, 181, 25, 29, 0, 227, 91, 22] };
+}
 #[repr(C)]
 pub struct ICoreInkIndependentInputSource2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -116,10 +125,16 @@ pub struct ICoreInkIndependentInputSource2 {
     #[cfg(not(feature = "UI_Core"))]
     SetPointerCursor: usize,
 }
+impl ::windows_sys::core::Interface for ICoreInkIndependentInputSource2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 675721234, data2: 2905, data3: 23481, data4: [163, 197, 190, 203, 124, 240, 58, 51] };
+}
 #[repr(C)]
 pub struct ICoreInkIndependentInputSourceStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, inkpresenter: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ICoreInkIndependentInputSourceStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1944453403, data2: 32960, data3: 19963, data4: [155, 102, 16, 186, 127, 63, 156, 132] };
 }
 #[repr(C)]
 pub struct ICoreInkPresenterHost {
@@ -134,6 +149,9 @@ pub struct ICoreInkPresenterHost {
     #[cfg(not(feature = "UI_Composition"))]
     SetRootVisual: usize,
 }
+impl ::windows_sys::core::Interface for ICoreInkPresenterHost {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 963545574, data2: 32085, data3: 17943, data4: [158, 88, 104, 199, 12, 145, 105, 185] };
+}
 #[repr(C)]
 pub struct ICoreWetStrokeUpdateEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
@@ -144,6 +162,9 @@ pub struct ICoreWetStrokeUpdateEventArgs {
     pub PointerId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
     pub Disposition: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut CoreWetStrokeDisposition) -> ::windows_sys::core::HRESULT,
     pub SetDisposition: unsafe extern "system" fn(this: *mut *mut Self, value: CoreWetStrokeDisposition) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ICoreWetStrokeUpdateEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4211593548, data2: 13184, data3: 17786, data4: [169, 135, 153, 19, 87, 137, 108, 27] };
 }
 #[repr(C)]
 pub struct ICoreWetStrokeUpdateSource {
@@ -190,8 +211,14 @@ pub struct ICoreWetStrokeUpdateSource {
     RemoveWetStrokeCanceled: usize,
     pub InkPresenter: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ICoreWetStrokeUpdateSource {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 527535650, data2: 61010, data3: 19968, data4: [130, 9, 76, 62, 91, 33, 163, 204] };
+}
 #[repr(C)]
 pub struct ICoreWetStrokeUpdateSourceStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, inkpresenter: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ICoreWetStrokeUpdateSourceStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1034788026, data2: 7485, data3: 18094, data4: [171, 157, 134, 71, 72, 108, 111, 144] };
 }

@@ -85,6 +85,9 @@ pub struct IAsyncCausalityTracerStatics {
     pub TracingStatusChanged: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
     pub RemoveTracingStatusChanged: unsafe extern "system" fn(this: *mut *mut Self, cookie: super::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAsyncCausalityTracerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1350896422, data2: 9854, data3: 17691, data4: [168, 144, 171, 106, 55, 2, 69, 238] };
+}
 #[repr(C)]
 pub struct IErrorDetails {
     pub base__: ::windows_sys::core::IInspectable,
@@ -92,16 +95,25 @@ pub struct IErrorDetails {
     pub LongDescription: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub HelpUri: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IErrorDetails {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 931969793, data2: 11465, data3: 17039, data4: [140, 85, 44, 153, 13, 70, 62, 143] };
+}
 #[repr(C)]
 pub struct IErrorDetailsStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub CreateFromHResultAsync: unsafe extern "system" fn(this: *mut *mut Self, errorcode: i32, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IErrorDetailsStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3077584720, data2: 2845, data3: 18120, data4: [170, 14, 75, 129, 120, 228, 252, 233] };
 }
 #[repr(C)]
 pub struct IErrorReportingSettings {
     pub base__: ::windows_sys::core::IInspectable,
     pub SetErrorOptions: unsafe extern "system" fn(this: *mut *mut Self, value: ErrorOptions) -> ::windows_sys::core::HRESULT,
     pub GetErrorOptions: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ErrorOptions) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IErrorReportingSettings {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 372676498, data2: 45118, data3: 19361, data4: [139, 184, 210, 143, 74, 180, 210, 192] };
 }
 #[repr(C)]
 pub struct IFileLoggingSession {
@@ -117,10 +129,16 @@ pub struct IFileLoggingSession {
     pub LogFileGenerated: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
     pub RemoveLogFileGenerated: unsafe extern "system" fn(this: *mut *mut Self, token: super::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IFileLoggingSession {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 617038358, data2: 65234, data3: 16460, data4: [137, 95, 31, 150, 153, 203, 2, 247] };
+}
 #[repr(C)]
 pub struct IFileLoggingSessionFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IFileLoggingSessionFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4003499470, data2: 33863, data3: 19882, data4: [145, 51, 18, 235, 70, 246, 151, 212] };
 }
 #[repr(C)]
 pub struct ILogFileGeneratedEventArgs {
@@ -130,11 +148,17 @@ pub struct ILogFileGeneratedEventArgs {
     #[cfg(not(feature = "Storage"))]
     File: usize,
 }
+impl ::windows_sys::core::Interface for ILogFileGeneratedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 647927663, data2: 3384, data3: 19482, data4: [181, 63, 179, 149, 216, 129, 223, 132] };
+}
 #[repr(C)]
 pub struct ILoggingActivity {
     pub base__: ::windows_sys::core::IInspectable,
     pub Name: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub Id: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ILoggingActivity {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3154323777, data2: 46950, data3: 19637, data4: [152, 72, 151, 172, 107, 166, 214, 12] };
 }
 #[repr(C)]
 pub struct ILoggingActivity2 {
@@ -144,11 +168,17 @@ pub struct ILoggingActivity2 {
     pub StopActivityWithFields: unsafe extern "system" fn(this: *mut *mut Self, stopeventname: ::windows_sys::core::HSTRING, fields: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub StopActivityWithFieldsAndOptions: unsafe extern "system" fn(this: *mut *mut Self, stopeventname: ::windows_sys::core::HSTRING, fields: *mut ::core::ffi::c_void, options: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ILoggingActivity2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 650287112, data2: 25378, data3: 17770, data4: [175, 130, 128, 200, 100, 47, 23, 139] };
+}
 #[repr(C)]
 pub struct ILoggingActivityFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub CreateLoggingActivity: unsafe extern "system" fn(this: *mut *mut Self, activityname: ::windows_sys::core::HSTRING, loggingchannel: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub CreateLoggingActivityWithLevel: unsafe extern "system" fn(this: *mut *mut Self, activityname: ::windows_sys::core::HSTRING, loggingchannel: *mut ::core::ffi::c_void, level: LoggingLevel, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ILoggingActivityFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1798550659, data2: 57610, data3: 19544, data4: [151, 213, 16, 251, 69, 16, 116, 251] };
 }
 #[repr(C)]
 pub struct ILoggingChannel {
@@ -163,10 +193,16 @@ pub struct ILoggingChannel {
     pub LoggingEnabled: unsafe extern "system" fn(this: *mut *mut Self, handler: *mut ::core::ffi::c_void, result__: *mut super::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
     pub RemoveLoggingEnabled: unsafe extern "system" fn(this: *mut *mut Self, token: super::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ILoggingChannel {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3919905603, data2: 4567, data3: 20225, data4: [181, 202, 207, 73, 82, 120, 192, 168] };
+}
 #[repr(C)]
 pub struct ILoggingChannel2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub Id: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ILoggingChannel2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2672573683, data2: 2988, data3: 17829, data4: [158, 51, 186, 243, 243, 162, 70, 165] };
 }
 #[repr(C)]
 pub struct ILoggingChannelFactory {
@@ -176,11 +212,17 @@ pub struct ILoggingChannelFactory {
     #[cfg(not(feature = "deprecated"))]
     Create: usize,
 }
+impl ::windows_sys::core::Interface for ILoggingChannelFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1323064220, data2: 44928, data3: 19099, data4: [176, 220, 57, 143, 154, 229, 32, 123] };
+}
 #[repr(C)]
 pub struct ILoggingChannelFactory2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub CreateWithOptions: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::HSTRING, options: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub CreateWithOptionsAndId: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::HSTRING, options: *mut ::core::ffi::c_void, id: ::windows_sys::core::GUID, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ILoggingChannelFactory2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1282340317, data2: 15143, data3: 19913, data4: [153, 240, 41, 156, 110, 70, 3, 161] };
 }
 #[repr(C)]
 pub struct ILoggingChannelOptions {
@@ -188,10 +230,16 @@ pub struct ILoggingChannelOptions {
     pub Group: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub SetGroup: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ILoggingChannelOptions {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3286779903, data2: 3771, data3: 19027, data4: [140, 84, 222, 194, 73, 38, 203, 44] };
+}
 #[repr(C)]
 pub struct ILoggingChannelOptionsFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, group: ::windows_sys::core::GUID, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ILoggingChannelOptionsFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2838581722, data2: 32687, data3: 16785, data4: [135, 85, 94, 134, 220, 101, 216, 150] };
 }
 #[repr(C)]
 pub struct ILoggingFields {
@@ -312,6 +360,9 @@ pub struct ILoggingFields {
     pub AddRectArrayWithFormat: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::HSTRING, value_array_size: u32, value: *const super::Rect, format: LoggingFieldFormat) -> ::windows_sys::core::HRESULT,
     pub AddRectArrayWithFormatAndTags: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::HSTRING, value_array_size: u32, value: *const super::Rect, format: LoggingFieldFormat, tags: i32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ILoggingFields {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3623270319, data2: 30253, data3: 17785, data4: [131, 189, 82, 194, 59, 195, 51, 188] };
+}
 #[repr(C)]
 pub struct ILoggingOptions {
     pub base__: ::windows_sys::core::IInspectable,
@@ -328,10 +379,16 @@ pub struct ILoggingOptions {
     pub RelatedActivityId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub SetRelatedActivityId: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ILoggingOptions {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2428270672, data2: 402, data3: 20317, data4: [172, 38, 0, 106, 218, 202, 18, 216] };
+}
 #[repr(C)]
 pub struct ILoggingOptionsFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub CreateWithKeywords: unsafe extern "system" fn(this: *mut *mut Self, keywords: i64, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ILoggingOptionsFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3608397515, data2: 39083, data3: 17995, data4: [159, 34, 163, 38, 132, 120, 54, 138] };
 }
 #[repr(C)]
 pub struct ILoggingSession {
@@ -345,10 +402,16 @@ pub struct ILoggingSession {
     pub AddLoggingChannelWithLevel: unsafe extern "system" fn(this: *mut *mut Self, loggingchannel: *mut ::core::ffi::c_void, maxlevel: LoggingLevel) -> ::windows_sys::core::HRESULT,
     pub RemoveLoggingChannel: unsafe extern "system" fn(this: *mut *mut Self, loggingchannel: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ILoggingSession {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1646392070, data2: 37760, data3: 19159, data4: [186, 245, 65, 234, 147, 16, 215, 104] };
+}
 #[repr(C)]
 pub struct ILoggingSessionFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ILoggingSessionFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1318289125, data2: 22781, data3: 17888, data4: [140, 47, 161, 50, 239, 249, 92, 30] };
 }
 #[repr(C)]
 pub struct ILoggingTarget {
@@ -365,11 +428,17 @@ pub struct ILoggingTarget {
     pub StartActivityWithFieldsAndLevel: unsafe extern "system" fn(this: *mut *mut Self, starteventname: ::windows_sys::core::HSTRING, fields: *mut ::core::ffi::c_void, level: LoggingLevel, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub StartActivityWithFieldsAndOptions: unsafe extern "system" fn(this: *mut *mut Self, starteventname: ::windows_sys::core::HSTRING, fields: *mut ::core::ffi::c_void, level: LoggingLevel, options: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ILoggingTarget {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1710320693, data2: 58248, data3: 20006, data4: [177, 122, 245, 28, 211, 168, 57, 22] };
+}
 #[repr(C)]
 pub struct ITracingStatusChangedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub Enabled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub TraceLevel: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut CausalityTraceLevel) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ITracingStatusChangedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1091270417, data2: 65339, data3: 18303, data4: [156, 154, 210, 239, 218, 48, 45, 195] };
 }
 pub type LogFileGeneratedEventArgs = *mut ::core::ffi::c_void;
 pub type LoggingActivity = *mut ::core::ffi::c_void;

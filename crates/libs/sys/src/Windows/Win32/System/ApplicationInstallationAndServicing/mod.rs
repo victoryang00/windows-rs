@@ -1568,6 +1568,9 @@ pub struct IAssemblyCache {
     pub Reserved: unsafe extern "system" fn(this: *mut *mut Self, ppunk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub InstallAssembly: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, pszmanifestfilepath: ::windows_sys::core::PCWSTR, prefdata: *mut FUSION_INSTALL_REFERENCE) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAssemblyCache {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3876052190, data2: 53709, data3: 4562, data4: [186, 185, 0, 192, 79, 142, 206, 174] };
+}
 #[repr(C)]
 pub struct IAssemblyCacheItem {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1577,6 +1580,9 @@ pub struct IAssemblyCacheItem {
     CreateStream: usize,
     pub Commit: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, puldisposition: *mut u32) -> ::windows_sys::core::HRESULT,
     pub AbortItem: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAssemblyCacheItem {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2654645940, data2: 53709, data3: 4562, data4: [186, 185, 0, 192, 79, 142, 206, 174] };
 }
 #[repr(C)]
 pub struct IAssemblyName {
@@ -1591,6 +1597,9 @@ pub struct IAssemblyName {
     pub IsEqual: unsafe extern "system" fn(this: *mut *mut Self, pname: *mut ::core::ffi::c_void, dwcmpflags: u32) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, pname: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAssemblyName {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3440982976, data2: 46268, data3: 4562, data4: [152, 51, 0, 192, 79, 195, 29, 46] };
+}
 #[repr(C)]
 pub struct IEnumMsmDependency {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1601,6 +1610,9 @@ pub struct IEnumMsmDependency {
     pub Skip: unsafe extern "system" fn(this: *mut *mut Self, cskip: u32) -> ::windows_sys::core::HRESULT,
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, pemsmdependencies: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IEnumMsmDependency {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 182298668, data2: 11302, data3: 4562, data4: [173, 101, 0, 160, 201, 175, 17, 166] };
 }
 #[repr(C)]
 pub struct IEnumMsmError {
@@ -1613,6 +1625,9 @@ pub struct IEnumMsmError {
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, pemsmerrors: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEnumMsmError {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 182298665, data2: 11302, data3: 4562, data4: [173, 101, 0, 160, 201, 175, 17, 166] };
+}
 #[repr(C)]
 pub struct IEnumMsmString {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1624,6 +1639,9 @@ pub struct IEnumMsmString {
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, pemsmstrings: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEnumMsmString {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 182298662, data2: 11302, data3: 4562, data4: [173, 101, 0, 160, 201, 175, 17, 166] };
+}
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IMsmDependencies {
@@ -1634,6 +1652,10 @@ pub struct IMsmDependencies {
     get_Item: usize,
     pub Count: unsafe extern "system" fn(this: *mut *mut Self, count: *mut i32) -> ::windows_sys::core::HRESULT,
     pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, newenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IMsmDependencies {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 182298669, data2: 11302, data3: 4562, data4: [173, 101, 0, 160, 201, 175, 17, 166] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1648,6 +1670,10 @@ pub struct IMsmDependency {
     pub Version: unsafe extern "system" fn(this: *mut *mut Self, version: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     Version: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IMsmDependency {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 182298667, data2: 11302, data3: 4562, data4: [173, 101, 0, 160, 201, 175, 17, 166] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1677,6 +1703,10 @@ pub struct IMsmError {
     ModuleKeys: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IMsmError {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 182298664, data2: 11302, data3: 4562, data4: [173, 101, 0, 160, 201, 175, 17, 166] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IMsmErrors {
     pub base__: super::Com::IDispatch,
@@ -1688,6 +1718,10 @@ pub struct IMsmErrors {
     pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, newenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IMsmErrors {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 182298666, data2: 11302, data3: 4562, data4: [173, 101, 0, 160, 201, 175, 17, 166] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IMsmGetFiles {
     pub base__: super::Com::IDispatch,
@@ -1695,6 +1729,10 @@ pub struct IMsmGetFiles {
     pub ModuleFiles: unsafe extern "system" fn(this: *mut *mut Self, files: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     ModuleFiles: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IMsmGetFiles {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1883352614, data2: 11640, data3: 4562, data4: [136, 138, 0, 160, 201, 129, 176, 21] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1745,6 +1783,10 @@ pub struct IMsmMerge {
     ExtractFiles: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IMsmMerge {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 182298670, data2: 11302, data3: 4562, data4: [173, 101, 0, 160, 201, 175, 17, 166] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IMsmStrings {
     pub base__: super::Com::IDispatch,
@@ -1754,6 +1796,10 @@ pub struct IMsmStrings {
     get_Item: usize,
     pub Count: unsafe extern "system" fn(this: *mut *mut Self, count: *mut i32) -> ::windows_sys::core::HRESULT,
     pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, newenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IMsmStrings {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 182298663, data2: 11302, data3: 4562, data4: [173, 101, 0, 160, 201, 175, 17, 166] };
 }
 #[doc = "*Required features: `\"Win32_System_ApplicationInstallationAndServicing\"`*"]
 pub const INFO_BASE: u32 = 3222229249u32;
@@ -2250,10 +2296,16 @@ pub struct IPMApplicationInfo {
     #[cfg(not(feature = "Win32_Foundation"))]
     set_Title: usize,
 }
+impl ::windows_sys::core::Interface for IPMApplicationInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1353692554, data2: 17292, data3: 16520, data4: [151, 137, 248, 196, 137, 152, 41, 199] };
+}
 #[repr(C)]
 pub struct IPMApplicationInfoEnumerator {
     pub base__: ::windows_sys::core::IUnknown,
     pub Next: unsafe extern "system" fn(this: *mut *mut Self, ppappinfo: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPMApplicationInfoEnumerator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 247736982, data2: 19782, data3: 19910, data4: [163, 217, 167, 172, 170, 192, 245, 250] };
 }
 #[repr(C)]
 pub struct IPMBackgroundServiceAgentInfo {
@@ -2309,10 +2361,16 @@ pub struct IPMBackgroundServiceAgentInfo {
     #[cfg(not(feature = "Win32_Foundation"))]
     set_IsScheduleAllowed: usize,
 }
+impl ::windows_sys::core::Interface for IPMBackgroundServiceAgentInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 982206170, data2: 37516, data3: 18553, data4: [153, 140, 9, 220, 150, 243, 212, 144] };
+}
 #[repr(C)]
 pub struct IPMBackgroundServiceAgentInfoEnumerator {
     pub base__: ::windows_sys::core::IUnknown,
     pub Next: unsafe extern "system" fn(this: *mut *mut Self, ppbsainfo: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPMBackgroundServiceAgentInfoEnumerator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 418062450, data2: 43862, data3: 17331, data4: [135, 44, 190, 175, 183, 166, 179, 145] };
 }
 #[repr(C)]
 pub struct IPMBackgroundWorkerInfo {
@@ -2333,10 +2391,16 @@ pub struct IPMBackgroundWorkerInfo {
     #[cfg(not(feature = "Win32_Foundation"))]
     IsBootWorker: usize,
 }
+impl ::windows_sys::core::Interface for IPMBackgroundWorkerInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2111066907, data2: 54207, data3: 19307, data4: [148, 243, 105, 192, 152, 177, 73, 125] };
+}
 #[repr(C)]
 pub struct IPMBackgroundWorkerInfoEnumerator {
     pub base__: ::windows_sys::core::IUnknown,
     pub Next: unsafe extern "system" fn(this: *mut *mut Self, ppbwinfo: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPMBackgroundWorkerInfoEnumerator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2280946168, data2: 37080, data3: 20167, data4: [146, 185, 114, 120, 126, 47, 99, 107] };
 }
 #[repr(C)]
 pub struct IPMDeploymentManager {
@@ -2419,6 +2483,9 @@ pub struct IPMDeploymentManager {
     pub AddLicenseForAppx: unsafe extern "system" fn(this: *mut *mut Self, productid: ::windows_sys::core::GUID, pblicense: *const u8, cblicense: u32, pbplayreadyheader: *const u8, cbplayreadyheader: u32) -> ::windows_sys::core::HRESULT,
     pub FixJunctionsForAppsOnSDCard: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPMDeploymentManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 905414138, data2: 6521, data3: 19083, data4: [188, 143, 253, 112, 235, 13, 21, 68] };
+}
 #[repr(C)]
 pub struct IPMEnumerationManager {
     pub base__: ::windows_sys::core::IUnknown,
@@ -2480,6 +2547,9 @@ pub struct IPMEnumerationManager {
     #[cfg(not(feature = "Win32_Foundation"))]
     get_StartAppEnumeratorBlob: usize,
 }
+impl ::windows_sys::core::Interface for IPMEnumerationManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1770870722, data2: 10541, data3: 19699, data4: [183, 60, 217, 90, 105, 34, 237, 154] };
+}
 #[repr(C)]
 pub struct IPMExtensionCachedFileUpdaterInfo {
     pub base__: ::windows_sys::core::IUnknown,
@@ -2488,6 +2558,9 @@ pub struct IPMExtensionCachedFileUpdaterInfo {
     #[cfg(not(feature = "Win32_Foundation"))]
     SupportsUpdates: usize,
 }
+impl ::windows_sys::core::Interface for IPMExtensionCachedFileUpdaterInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3805771017, data2: 20056, data3: 19369, data4: [175, 126, 182, 66, 227, 112, 225, 176] };
+}
 #[repr(C)]
 pub struct IPMExtensionContractInfo {
     pub base__: ::windows_sys::core::IUnknown,
@@ -2495,6 +2568,9 @@ pub struct IPMExtensionContractInfo {
     pub get_InvocationInfo: unsafe extern "system" fn(this: *mut *mut Self, paumid: *mut super::super::Foundation::BSTR, pargs: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     get_InvocationInfo: usize,
+}
+impl ::windows_sys::core::Interface for IPMExtensionContractInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3848692595, data2: 31649, data3: 18044, data4: [184, 25, 177, 117, 219, 28, 41, 91] };
 }
 #[repr(C)]
 pub struct IPMExtensionFileExtensionInfo {
@@ -2528,6 +2604,9 @@ pub struct IPMExtensionFileExtensionInfo {
     #[cfg(not(feature = "Win32_Foundation"))]
     get_AllFileTypes: usize,
 }
+impl ::windows_sys::core::Interface for IPMExtensionFileExtensionInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1804061548, data2: 2952, data3: 18825, data4: [164, 236, 3, 55, 20, 247, 16, 212] };
+}
 #[repr(C)]
 pub struct IPMExtensionFileOpenPickerInfo {
     pub base__: ::windows_sys::core::IUnknown,
@@ -2540,6 +2619,9 @@ pub struct IPMExtensionFileOpenPickerInfo {
     #[cfg(not(feature = "Win32_Foundation"))]
     SupportsAllFileTypes: usize,
 }
+impl ::windows_sys::core::Interface for IPMExtensionFileOpenPickerInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1841896741, data2: 38406, data3: 16908, data4: [154, 120, 224, 52, 163, 65, 131, 69] };
+}
 #[repr(C)]
 pub struct IPMExtensionFileSavePickerInfo {
     pub base__: ::windows_sys::core::IUnknown,
@@ -2551,6 +2633,9 @@ pub struct IPMExtensionFileSavePickerInfo {
     pub SupportsAllFileTypes: unsafe extern "system" fn(this: *mut *mut Self, psupportsalltypes: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     SupportsAllFileTypes: usize,
+}
+impl ::windows_sys::core::Interface for IPMExtensionFileSavePickerInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 939547834, data2: 63514, data3: 18750, data4: [160, 248, 146, 44, 134, 128, 218, 67] };
 }
 #[repr(C)]
 pub struct IPMExtensionInfo {
@@ -2577,10 +2662,16 @@ pub struct IPMExtensionInfo {
     #[cfg(not(feature = "Win32_Foundation"))]
     get_InvocationInfo: usize,
 }
+impl ::windows_sys::core::Interface for IPMExtensionInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1236065913, data2: 38792, data3: 19722, data4: [138, 160, 23, 70, 175, 219, 158, 157] };
+}
 #[repr(C)]
 pub struct IPMExtensionInfoEnumerator {
     pub base__: ::windows_sys::core::IUnknown,
     pub Next: unsafe extern "system" fn(this: *mut *mut Self, ppextensioninfo: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPMExtensionInfoEnumerator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1077649026, data2: 4465, data3: 17779, data4: [142, 111, 111, 51, 243, 155, 131, 221] };
 }
 #[repr(C)]
 pub struct IPMExtensionProtocolInfo {
@@ -2593,6 +2684,9 @@ pub struct IPMExtensionProtocolInfo {
     pub get_InvocationInfo: unsafe extern "system" fn(this: *mut *mut Self, pimageurn: *mut super::super::Foundation::BSTR, pparameters: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     get_InvocationInfo: usize,
+}
+impl ::windows_sys::core::Interface for IPMExtensionProtocolInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 507486262, data2: 20971, data3: 17491, data4: [186, 255, 184, 216, 228, 180, 108, 142] };
 }
 #[repr(C)]
 pub struct IPMExtensionShareTargetInfo {
@@ -2609,6 +2703,9 @@ pub struct IPMExtensionShareTargetInfo {
     pub SupportsAllFileTypes: unsafe extern "system" fn(this: *mut *mut Self, psupportsalltypes: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     SupportsAllFileTypes: usize,
+}
+impl ::windows_sys::core::Interface for IPMExtensionShareTargetInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1416754315, data2: 50780, data3: 18006, data4: [140, 112, 36, 46, 49, 25, 95, 234] };
 }
 #[repr(C)]
 pub struct IPMLiveTileJobInfo {
@@ -2659,10 +2756,16 @@ pub struct IPMLiveTileJobInfo {
     pub DownloadState: unsafe extern "system" fn(this: *mut *mut Self, pdownloadstate: *mut u32) -> ::windows_sys::core::HRESULT,
     pub set_DownloadState: unsafe extern "system" fn(this: *mut *mut Self, uldownloadstate: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPMLiveTileJobInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1611245599, data2: 18192, data3: 18071, data4: [181, 246, 34, 8, 246, 5, 123, 142] };
+}
 #[repr(C)]
 pub struct IPMLiveTileJobInfoEnumerator {
     pub base__: ::windows_sys::core::IUnknown,
     pub Next: unsafe extern "system" fn(this: *mut *mut Self, pplivetilejobinfo: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPMLiveTileJobInfoEnumerator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3154388354, data2: 37909, data3: 20278, data4: [159, 153, 6, 241, 4, 192, 124, 3] };
 }
 #[repr(C)]
 pub struct IPMTaskInfo {
@@ -2725,10 +2828,16 @@ pub struct IPMTaskInfo {
     #[cfg(not(feature = "Win32_Foundation"))]
     IsOptedForExtendedMem: usize,
 }
+impl ::windows_sys::core::Interface for IPMTaskInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3206384691, data2: 7157, data3: 20192, data4: [181, 73, 107, 157, 211, 131, 73, 66] };
+}
 #[repr(C)]
 pub struct IPMTaskInfoEnumerator {
     pub base__: ::windows_sys::core::IUnknown,
     pub Next: unsafe extern "system" fn(this: *mut *mut Self, pptaskinfo: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPMTaskInfoEnumerator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 103854328, data2: 3004, data3: 18465, data4: [190, 116, 199, 153, 81, 102, 237, 42] };
 }
 #[repr(C)]
 pub struct IPMTileInfo {
@@ -2803,15 +2912,24 @@ pub struct IPMTileInfo {
     #[cfg(not(feature = "Win32_Foundation"))]
     set_IsAutoRestoreDisabled: usize,
 }
+impl ::windows_sys::core::Interface for IPMTileInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3512748083, data2: 11016, data3: 16385, data4: [130, 205, 24, 58, 215, 52, 247, 82] };
+}
 #[repr(C)]
 pub struct IPMTileInfoEnumerator {
     pub base__: ::windows_sys::core::IUnknown,
     pub Next: unsafe extern "system" fn(this: *mut *mut Self, pptileinfo: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPMTileInfoEnumerator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3738710117, data2: 58466, data3: 19244, data4: [172, 181, 227, 156, 234, 97, 200, 116] };
+}
 #[repr(C)]
 pub struct IPMTilePropertyEnumerator {
     pub base__: ::windows_sys::core::IUnknown,
     pub Next: unsafe extern "system" fn(this: *mut *mut Self, pppropinfo: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPMTilePropertyEnumerator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3427587625, data2: 36935, data3: 16976, data4: [170, 200, 147, 14, 71, 129, 36, 33] };
 }
 #[repr(C)]
 pub struct IPMTilePropertyInfo {
@@ -2825,6 +2943,9 @@ pub struct IPMTilePropertyInfo {
     pub set_Property: unsafe extern "system" fn(this: *mut *mut Self, propvalue: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     set_Property: usize,
+}
+impl ::windows_sys::core::Interface for IPMTilePropertyInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1814790167, data2: 7930, data3: 17063, data4: [134, 192, 109, 75, 100, 11, 245, 40] };
 }
 #[doc = "*Required features: `\"Win32_System_ApplicationInstallationAndServicing\"`*"]
 pub const IPROPNAME_ACTION: &str = "ACTION";
@@ -3280,6 +3401,9 @@ pub struct IValidate {
     #[cfg(not(feature = "Win32_Foundation"))]
     SetStatus: usize,
     pub Validate: unsafe extern "system" fn(this: *mut *mut Self, wzices: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IValidate {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3833783750, data2: 58142, data3: 16707, data4: [162, 230, 219, 195, 216, 228, 184, 211] };
 }
 pub const LIBID_MsmMergeTypeLib: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 182298671, data2: 11302, data3: 4562, data4: [173, 101, 0, 160, 201, 175, 17, 166] };
 #[doc = "*Required features: `\"Win32_System_ApplicationInstallationAndServicing\"`*"]

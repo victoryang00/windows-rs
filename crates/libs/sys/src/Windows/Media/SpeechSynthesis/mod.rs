@@ -7,6 +7,9 @@ pub struct IInstalledVoicesStatic {
     AllVoices: usize,
     pub DefaultVoice: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IInstalledVoicesStatic {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2102554316, data2: 30003, data3: 19519, data4: [133, 190, 136, 140, 43, 174, 235, 220] };
+}
 #[repr(C)]
 pub struct IInstalledVoicesStatic2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -15,6 +18,9 @@ pub struct IInstalledVoicesStatic2 {
     #[cfg(not(feature = "Foundation"))]
     TrySetDefaultVoiceAsync: usize,
 }
+impl ::windows_sys::core::Interface for IInstalledVoicesStatic2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1680170798, data2: 13709, data3: 16472, data4: [190, 154, 253, 63, 203, 66, 53, 48] };
+}
 #[repr(C)]
 pub struct ISpeechSynthesisStream {
     pub base__: ::windows_sys::core::IInspectable,
@@ -22,6 +28,9 @@ pub struct ISpeechSynthesisStream {
     pub Markers: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     Markers: usize,
+}
+impl ::windows_sys::core::Interface for ISpeechSynthesisStream {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2212785811, data2: 9292, data3: 17954, data4: [186, 11, 98, 41, 196, 208, 214, 93] };
 }
 #[repr(C)]
 pub struct ISpeechSynthesizer {
@@ -37,10 +46,16 @@ pub struct ISpeechSynthesizer {
     pub SetVoice: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Voice: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISpeechSynthesizer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3466558582, data2: 38900, data3: 19693, data4: [173, 104, 213, 28, 69, 142, 69, 198] };
+}
 #[repr(C)]
 pub struct ISpeechSynthesizer2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub Options: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISpeechSynthesizer2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2814766258, data2: 17209, data3: 19818, data4: [187, 248, 199, 164, 241, 84, 76, 46] };
 }
 #[repr(C)]
 pub struct ISpeechSynthesizerOptions {
@@ -49,6 +64,9 @@ pub struct ISpeechSynthesizerOptions {
     pub SetIncludeWordBoundaryMetadata: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
     pub IncludeSentenceBoundaryMetadata: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub SetIncludeSentenceBoundaryMetadata: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISpeechSynthesizerOptions {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2699180145, data2: 52285, data3: 17353, data4: [145, 177, 238, 24, 83, 36, 216, 61] };
 }
 #[repr(C)]
 pub struct ISpeechSynthesizerOptions2 {
@@ -60,6 +78,9 @@ pub struct ISpeechSynthesizerOptions2 {
     pub AudioPitch: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f64) -> ::windows_sys::core::HRESULT,
     pub SetAudioPitch: unsafe extern "system" fn(this: *mut *mut Self, value: f64) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISpeechSynthesizerOptions2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 482276878, data2: 4508, data3: 19437, data4: [177, 24, 210, 80, 195, 162, 87, 147] };
+}
 #[repr(C)]
 pub struct ISpeechSynthesizerOptions3 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -67,6 +88,9 @@ pub struct ISpeechSynthesizerOptions3 {
     pub SetAppendedSilence: unsafe extern "system" fn(this: *mut *mut Self, value: SpeechAppendedSilence) -> ::windows_sys::core::HRESULT,
     pub PunctuationSilence: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut SpeechPunctuationSilence) -> ::windows_sys::core::HRESULT,
     pub SetPunctuationSilence: unsafe extern "system" fn(this: *mut *mut Self, value: SpeechPunctuationSilence) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISpeechSynthesizerOptions3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1075763319, data2: 36908, data3: 18452, data4: [165, 130, 165, 208, 192, 118, 159, 168] };
 }
 #[repr(C)]
 pub struct IVoiceInformation {
@@ -76,6 +100,9 @@ pub struct IVoiceInformation {
     pub Language: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub Description: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub Gender: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut VoiceGender) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IVoiceInformation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2972178084, data2: 4753, data3: 17924, data4: [170, 156, 131, 19, 64, 131, 53, 44] };
 }
 #[doc = "*Required features: `\"Media_SpeechSynthesis\"`*"]
 #[repr(transparent)]

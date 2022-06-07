@@ -47,6 +47,9 @@ pub struct IEffectivePermission {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetEffectivePermission: usize,
 }
+impl ::windows_sys::core::Interface for IEffectivePermission {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 945020022, data2: 40757, data3: 16508, data4: [136, 161, 209, 147, 68, 54, 95, 188] };
+}
 #[repr(C)]
 pub struct IEffectivePermission2 {
     pub base__: ::windows_sys::core::IUnknown,
@@ -71,6 +74,9 @@ pub struct IEffectivePermission2 {
     #[cfg(not(feature = "Win32_Foundation"))]
     ComputeEffectivePermissionWithSecondarySecurity: usize,
 }
+impl ::windows_sys::core::Interface for IEffectivePermission2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2485103562, data2: 56647, data3: 20426, data4: [144, 187, 176, 225, 2, 85, 242, 13] };
+}
 #[repr(C)]
 pub struct ISecurityInformation {
     pub base__: ::windows_sys::core::IUnknown,
@@ -91,6 +97,9 @@ pub struct ISecurityInformation {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls")))]
     PropertySheetPageCallback: usize,
 }
+impl ::windows_sys::core::Interface for ISecurityInformation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2522858336, data2: 5887, data3: 4560, data4: [145, 203, 0, 170, 0, 187, 183, 35] };
+}
 #[repr(C)]
 pub struct ISecurityInformation2 {
     pub base__: ::windows_sys::core::IUnknown,
@@ -103,6 +112,9 @@ pub struct ISecurityInformation2 {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     LookupSids: usize,
 }
+impl ::windows_sys::core::Interface for ISecurityInformation2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3284991412, data2: 28552, data3: 4562, data4: [163, 206, 0, 192, 79, 177, 120, 42] };
+}
 #[repr(C)]
 pub struct ISecurityInformation3 {
     pub base__: ::windows_sys::core::IUnknown,
@@ -112,6 +124,9 @@ pub struct ISecurityInformation3 {
     #[cfg(not(feature = "Win32_Foundation"))]
     OpenElevatedEditor: usize,
 }
+impl ::windows_sys::core::Interface for ISecurityInformation3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3805137356, data2: 12733, data3: 20367, data4: [140, 139, 182, 65, 175, 81, 106, 26] };
+}
 #[repr(C)]
 pub struct ISecurityInformation4 {
     pub base__: ::windows_sys::core::IUnknown,
@@ -120,10 +135,16 @@ pub struct ISecurityInformation4 {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetSecondarySecurity: usize,
 }
+impl ::windows_sys::core::Interface for ISecurityInformation4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3935703152, data2: 52500, data3: 17953, data4: [172, 228, 246, 60, 3, 229, 131, 228] };
+}
 #[repr(C)]
 pub struct ISecurityObjectTypeInfo {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetInheritSource: unsafe extern "system" fn(this: *mut *mut Self, si: u32, pacl: *mut super::super::ACL, ppinheritarray: *mut *mut super::INHERITED_FROMA) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISecurityObjectTypeInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4231030507, data2: 31215, data3: 17483, data4: [145, 17, 209, 138, 117, 235, 242, 250] };
 }
 #[doc = "*Required features: `\"Win32_Security_Authorization_UI\"`*"]
 pub type SECURITY_INFO_PAGE_FLAGS = u32;

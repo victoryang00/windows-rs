@@ -118,20 +118,32 @@ pub struct ISpatialGestureRecognizer {
     pub TrySetGestureSettings: unsafe extern "system" fn(this: *mut *mut Self, settings: SpatialGestureSettings, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub GestureSettings: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut SpatialGestureSettings) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISpatialGestureRecognizer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1902140364, data2: 3125, data3: 18035, data4: [173, 189, 204, 4, 202, 166, 239, 69] };
+}
 #[repr(C)]
 pub struct ISpatialGestureRecognizerFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, settings: SpatialGestureSettings, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISpatialGestureRecognizerFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1998668166, data2: 22457, data3: 12624, data4: [131, 130, 105, 139, 36, 226, 100, 208] };
 }
 #[repr(C)]
 pub struct ISpatialHoldCanceledEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub InteractionSourceKind: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut SpatialInteractionSourceKind) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISpatialHoldCanceledEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1576842855, data2: 19626, data3: 16531, data4: [140, 53, 182, 1, 168, 57, 243, 27] };
+}
 #[repr(C)]
 pub struct ISpatialHoldCompletedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub InteractionSourceKind: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut SpatialInteractionSourceKind) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISpatialHoldCompletedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1063536395, data2: 19709, data3: 17370, data4: [141, 196, 230, 69, 82, 23, 57, 113] };
 }
 #[repr(C)]
 pub struct ISpatialHoldStartedEventArgs {
@@ -142,10 +154,16 @@ pub struct ISpatialHoldStartedEventArgs {
     #[cfg(not(feature = "Perception_Spatial"))]
     TryGetPointerPose: usize,
 }
+impl ::windows_sys::core::Interface for ISpatialHoldStartedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2385788281, data2: 44214, data3: 16708, data4: [134, 21, 44, 251, 168, 163, 203, 63] };
+}
 #[repr(C)]
 pub struct ISpatialInteraction {
     pub base__: ::windows_sys::core::IInspectable,
     pub SourceState: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISpatialInteraction {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4237719097, data2: 35046, data3: 17990, data4: [145, 18, 67, 68, 170, 236, 157, 250] };
 }
 #[repr(C)]
 pub struct ISpatialInteractionController {
@@ -160,6 +178,9 @@ pub struct ISpatialInteractionController {
     pub ProductId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u16) -> ::windows_sys::core::HRESULT,
     pub Version: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u16) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISpatialInteractionController {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1594776483, data2: 2388, data3: 20119, data4: [134, 197, 231, 243, 11, 17, 77, 253] };
+}
 #[repr(C)]
 pub struct ISpatialInteractionController2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -168,6 +189,9 @@ pub struct ISpatialInteractionController2 {
     #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
     TryGetRenderableModelAsync: usize,
 }
+impl ::windows_sys::core::Interface for ISpatialInteractionController2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 901175588, data2: 51106, data3: 18871, data4: [183, 46, 84, 54, 178, 251, 143, 156] };
+}
 #[repr(C)]
 pub struct ISpatialInteractionController3 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -175,6 +199,9 @@ pub struct ISpatialInteractionController3 {
     pub TryGetBatteryReport: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Devices_Power"))]
     TryGetBatteryReport: usize,
+}
+impl ::windows_sys::core::Interface for ISpatialInteractionController3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1652844192, data2: 40337, data3: 18955, data4: [136, 141, 22, 94, 103, 10, 140, 213] };
 }
 #[repr(C)]
 pub struct ISpatialInteractionControllerProperties {
@@ -187,6 +214,9 @@ pub struct ISpatialInteractionControllerProperties {
     pub TouchpadX: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f64) -> ::windows_sys::core::HRESULT,
     pub TouchpadY: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f64) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISpatialInteractionControllerProperties {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1627746225, data2: 31657, data3: 20021, data4: [185, 63, 146, 114, 203, 169, 178, 139] };
+}
 #[repr(C)]
 pub struct ISpatialInteractionDetectedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
@@ -197,10 +227,16 @@ pub struct ISpatialInteractionDetectedEventArgs {
     TryGetPointerPose: usize,
     pub Interaction: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISpatialInteractionDetectedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 123238628, data2: 22881, data3: 15169, data4: [157, 251, 206, 165, 216, 156, 195, 138] };
+}
 #[repr(C)]
 pub struct ISpatialInteractionDetectedEventArgs2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub InteractionSource: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISpatialInteractionDetectedEventArgs2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2066103955, data2: 24339, data3: 16796, data4: [151, 213, 131, 70, 120, 38, 106, 166] };
 }
 #[repr(C)]
 pub struct ISpatialInteractionManager {
@@ -258,21 +294,33 @@ pub struct ISpatialInteractionManager {
     #[cfg(not(all(feature = "Foundation_Collections", feature = "Perception")))]
     GetDetectedSourcesAtTimestamp: usize,
 }
+impl ::windows_sys::core::Interface for ISpatialInteractionManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 849759912, data2: 41306, data3: 14741, data4: [184, 189, 128, 81, 60, 181, 173, 239] };
+}
 #[repr(C)]
 pub struct ISpatialInteractionManagerStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub GetForCurrentView: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISpatialInteractionManagerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 14884774, data2: 36002, data3: 12479, data4: [145, 254, 217, 203, 74, 0, 137, 144] };
 }
 #[repr(C)]
 pub struct ISpatialInteractionManagerStatics2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub IsSourceKindSupported: unsafe extern "system" fn(this: *mut *mut Self, kind: SpatialInteractionSourceKind, result__: *mut bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISpatialInteractionManagerStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2482072658, data2: 47242, data3: 22825, data4: [141, 124, 72, 203, 148, 139, 8, 28] };
+}
 #[repr(C)]
 pub struct ISpatialInteractionSource {
     pub base__: ::windows_sys::core::IInspectable,
     pub Id: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
     pub Kind: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut SpatialInteractionSourceKind) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISpatialInteractionSource {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4216599482, data2: 45235, data3: 12616, data4: [159, 59, 233, 245, 222, 86, 143, 93] };
 }
 #[repr(C)]
 pub struct ISpatialInteractionSource2 {
@@ -286,10 +334,16 @@ pub struct ISpatialInteractionSource2 {
     #[cfg(not(feature = "Perception"))]
     TryGetStateAtTimestamp: usize,
 }
+impl ::windows_sys::core::Interface for ISpatialInteractionSource2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3838162700, data2: 1136, data3: 16424, data4: [136, 192, 160, 235, 68, 211, 78, 254] };
+}
 #[repr(C)]
 pub struct ISpatialInteractionSource3 {
     pub base__: ::windows_sys::core::IInspectable,
     pub Handedness: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut SpatialInteractionSourceHandedness) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISpatialInteractionSource3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 67557881, data2: 39677, data3: 17657, data4: [133, 220, 112, 0, 35, 169, 98, 227] };
 }
 #[repr(C)]
 pub struct ISpatialInteractionSource4 {
@@ -303,15 +357,24 @@ pub struct ISpatialInteractionSource4 {
     #[cfg(not(all(feature = "Foundation", feature = "Perception_People")))]
     TryCreateHandMeshObserverAsync: usize,
 }
+impl ::windows_sys::core::Interface for ISpatialInteractionSource4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 7584845, data2: 57190, data3: 23185, data4: [162, 186, 206, 163, 229, 197, 138, 25] };
+}
 #[repr(C)]
 pub struct ISpatialInteractionSourceEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub State: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISpatialInteractionSourceEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 599230159, data2: 60451, data3: 14713, data4: [178, 124, 235, 14, 18, 254, 183, 199] };
+}
 #[repr(C)]
 pub struct ISpatialInteractionSourceEventArgs2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub PressKind: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut SpatialInteractionPressKind) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISpatialInteractionSourceEventArgs2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3635721319, data2: 58952, data3: 19794, data4: [171, 73, 224, 210, 39, 25, 159, 99] };
 }
 #[repr(C)]
 pub struct ISpatialInteractionSourceLocation {
@@ -325,6 +388,9 @@ pub struct ISpatialInteractionSourceLocation {
     #[cfg(not(feature = "Foundation_Numerics"))]
     Velocity: usize,
 }
+impl ::windows_sys::core::Interface for ISpatialInteractionSourceLocation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3930494660, data2: 32395, data3: 12490, data4: [188, 197, 199, 113, 137, 206, 163, 10] };
+}
 #[repr(C)]
 pub struct ISpatialInteractionSourceLocation2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -332,6 +398,9 @@ pub struct ISpatialInteractionSourceLocation2 {
     pub Orientation: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Numerics"))]
     Orientation: usize,
+}
+impl ::windows_sys::core::Interface for ISpatialInteractionSourceLocation2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1281822789, data2: 14615, data3: 16636, data4: [169, 172, 49, 201, 207, 95, 249, 27] };
 }
 #[repr(C)]
 pub struct ISpatialInteractionSourceLocation3 {
@@ -342,6 +411,9 @@ pub struct ISpatialInteractionSourceLocation3 {
     #[cfg(not(feature = "Foundation_Numerics"))]
     AngularVelocity: usize,
     pub SourcePointerPose: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISpatialInteractionSourceLocation3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1728243294, data2: 59669, data3: 19707, data4: [156, 27, 5, 56, 239, 200, 102, 135] };
 }
 #[repr(C)]
 pub struct ISpatialInteractionSourceProperties {
@@ -355,6 +427,9 @@ pub struct ISpatialInteractionSourceProperties {
     pub TryGetLocation: unsafe extern "system" fn(this: *mut *mut Self, coordinatesystem: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Perception_Spatial"))]
     TryGetLocation: usize,
+}
+impl ::windows_sys::core::Interface for ISpatialInteractionSourceProperties {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 90195266, data2: 16119, data3: 12834, data4: [159, 83, 99, 201, 203, 126, 59, 199] };
 }
 #[repr(C)]
 pub struct ISpatialInteractionSourceState {
@@ -371,6 +446,9 @@ pub struct ISpatialInteractionSourceState {
     #[cfg(not(feature = "Perception_Spatial"))]
     TryGetPointerPose: usize,
 }
+impl ::windows_sys::core::Interface for ISpatialInteractionSourceState {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3586422255, data2: 19299, data3: 14316, data4: [152, 185, 159, 198, 82, 185, 210, 242] };
+}
 #[repr(C)]
 pub struct ISpatialInteractionSourceState2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -380,6 +458,9 @@ pub struct ISpatialInteractionSourceState2 {
     pub SelectPressedValue: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f64) -> ::windows_sys::core::HRESULT,
     pub ControllerProperties: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISpatialInteractionSourceState2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1173803197, data2: 6003, data3: 18734, data4: [155, 163, 138, 193, 203, 231, 124, 8] };
+}
 #[repr(C)]
 pub struct ISpatialInteractionSourceState3 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -388,10 +469,16 @@ pub struct ISpatialInteractionSourceState3 {
     #[cfg(not(feature = "Perception_People"))]
     TryGetHandPose: usize,
 }
+impl ::windows_sys::core::Interface for ISpatialInteractionSourceState3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4075817922, data2: 48427, data3: 18945, data4: [168, 251, 50, 62, 1, 88, 82, 124] };
+}
 #[repr(C)]
 pub struct ISpatialManipulationCanceledEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub InteractionSourceKind: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut SpatialInteractionSourceKind) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISpatialManipulationCanceledEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 759222731, data2: 59354, data3: 16928, data4: [176, 191, 129, 147, 1, 103, 71, 128] };
 }
 #[repr(C)]
 pub struct ISpatialManipulationCompletedEventArgs {
@@ -402,6 +489,9 @@ pub struct ISpatialManipulationCompletedEventArgs {
     #[cfg(not(feature = "Perception_Spatial"))]
     TryGetCumulativeDelta: usize,
 }
+impl ::windows_sys::core::Interface for ISpatialManipulationCompletedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 84436994, data2: 62209, data3: 17219, data4: [146, 80, 47, 186, 165, 248, 122, 55] };
+}
 #[repr(C)]
 pub struct ISpatialManipulationDelta {
     pub base__: ::windows_sys::core::IInspectable,
@@ -409,6 +499,9 @@ pub struct ISpatialManipulationDelta {
     pub Translation: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::super::Foundation::Numerics::Vector3) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Numerics"))]
     Translation: usize,
+}
+impl ::windows_sys::core::Interface for ISpatialManipulationDelta {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2817300090, data2: 53539, data3: 14977, data4: [161, 91, 153, 41, 35, 220, 190, 145] };
 }
 #[repr(C)]
 pub struct ISpatialManipulationStartedEventArgs {
@@ -419,6 +512,9 @@ pub struct ISpatialManipulationStartedEventArgs {
     #[cfg(not(feature = "Perception_Spatial"))]
     TryGetPointerPose: usize,
 }
+impl ::windows_sys::core::Interface for ISpatialManipulationStartedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2715204558, data2: 17061, data3: 14203, data4: [173, 166, 210, 142, 61, 56, 71, 55] };
+}
 #[repr(C)]
 pub struct ISpatialManipulationUpdatedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
@@ -428,10 +524,16 @@ pub struct ISpatialManipulationUpdatedEventArgs {
     #[cfg(not(feature = "Perception_Spatial"))]
     TryGetCumulativeDelta: usize,
 }
+impl ::windows_sys::core::Interface for ISpatialManipulationUpdatedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1596132251, data2: 24774, data3: 19910, data4: [189, 201, 159, 74, 111, 21, 254, 73] };
+}
 #[repr(C)]
 pub struct ISpatialNavigationCanceledEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub InteractionSourceKind: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut SpatialInteractionSourceKind) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISpatialNavigationCanceledEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3461365468, data2: 59557, data3: 18160, data4: [146, 212, 60, 18, 43, 53, 17, 42] };
 }
 #[repr(C)]
 pub struct ISpatialNavigationCompletedEventArgs {
@@ -441,6 +543,9 @@ pub struct ISpatialNavigationCompletedEventArgs {
     pub NormalizedOffset: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::super::Foundation::Numerics::Vector3) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Numerics"))]
     NormalizedOffset: usize,
+}
+impl ::windows_sys::core::Interface for ISpatialNavigationCompletedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 19824823, data2: 44859, data3: 17090, data4: [158, 65, 186, 170, 14, 114, 31, 58] };
 }
 #[repr(C)]
 pub struct ISpatialNavigationStartedEventArgs {
@@ -454,6 +559,9 @@ pub struct ISpatialNavigationStartedEventArgs {
     pub IsNavigatingY: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub IsNavigatingZ: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISpatialNavigationStartedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1967797386, data2: 64356, data3: 18006, data4: [142, 189, 157, 238, 202, 175, 228, 117] };
+}
 #[repr(C)]
 pub struct ISpatialNavigationUpdatedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
@@ -462,6 +570,9 @@ pub struct ISpatialNavigationUpdatedEventArgs {
     pub NormalizedOffset: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::super::Foundation::Numerics::Vector3) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Numerics"))]
     NormalizedOffset: usize,
+}
+impl ::windows_sys::core::Interface for ISpatialNavigationUpdatedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2607890391, data2: 33693, data3: 19060, data4: [135, 50, 69, 70, 111, 192, 68, 181] };
 }
 #[repr(C)]
 pub struct ISpatialPointerInteractionSourcePose {
@@ -479,6 +590,9 @@ pub struct ISpatialPointerInteractionSourcePose {
     #[cfg(not(feature = "Foundation_Numerics"))]
     UpDirection: usize,
 }
+impl ::windows_sys::core::Interface for ISpatialPointerInteractionSourcePose {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2802860807, data2: 11307, data3: 19770, data4: [146, 167, 128, 206, 215, 196, 160, 208] };
+}
 #[repr(C)]
 pub struct ISpatialPointerInteractionSourcePose2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -487,6 +601,9 @@ pub struct ISpatialPointerInteractionSourcePose2 {
     #[cfg(not(feature = "Foundation_Numerics"))]
     Orientation: usize,
     pub PositionAccuracy: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut SpatialInteractionSourcePositionAccuracy) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISpatialPointerInteractionSourcePose2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3972892344, data2: 21211, data3: 18079, data4: [158, 63, 128, 196, 127, 116, 188, 233] };
 }
 #[repr(C)]
 pub struct ISpatialPointerPose {
@@ -500,10 +617,16 @@ pub struct ISpatialPointerPose {
     #[cfg(not(feature = "Perception_People"))]
     Head: usize,
 }
+impl ::windows_sys::core::Interface for ISpatialPointerPose {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1767089198, data2: 49534, data3: 13693, data4: [151, 161, 114, 105, 208, 237, 45, 16] };
+}
 #[repr(C)]
 pub struct ISpatialPointerPose2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub TryGetInteractionSourcePose: unsafe extern "system" fn(this: *mut *mut Self, source: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISpatialPointerPose2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2636131095, data2: 38222, data3: 19980, data4: [150, 209, 182, 121, 11, 111, 194, 253] };
 }
 #[repr(C)]
 pub struct ISpatialPointerPose3 {
@@ -514,6 +637,9 @@ pub struct ISpatialPointerPose3 {
     Eyes: usize,
     pub IsHeadCapturedBySystem: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISpatialPointerPose3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1665332208, data2: 60489, data3: 23371, data4: [184, 209, 209, 108, 187, 22, 190, 132] };
+}
 #[repr(C)]
 pub struct ISpatialPointerPoseStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -522,10 +648,16 @@ pub struct ISpatialPointerPoseStatics {
     #[cfg(not(feature = "Perception_Spatial"))]
     TryGetAtTimestamp: usize,
 }
+impl ::windows_sys::core::Interface for ISpatialPointerPoseStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2723516841, data2: 44193, data3: 16096, data4: [152, 22, 120, 92, 251, 46, 63, 184] };
+}
 #[repr(C)]
 pub struct ISpatialRecognitionEndedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub InteractionSourceKind: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut SpatialInteractionSourceKind) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISpatialRecognitionEndedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 238417355, data2: 16245, data3: 17395, data4: [172, 129, 209, 220, 45, 249, 177, 251] };
 }
 #[repr(C)]
 pub struct ISpatialRecognitionStartedEventArgs {
@@ -537,6 +669,9 @@ pub struct ISpatialRecognitionStartedEventArgs {
     TryGetPointerPose: usize,
     pub IsGesturePossible: unsafe extern "system" fn(this: *mut *mut Self, gesture: SpatialGestureSettings, result__: *mut bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISpatialRecognitionStartedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 618271375, data2: 8, data3: 19053, data4: [170, 80, 42, 118, 249, 207, 178, 100] };
+}
 #[repr(C)]
 pub struct ISpatialTappedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
@@ -546,6 +681,9 @@ pub struct ISpatialTappedEventArgs {
     #[cfg(not(feature = "Perception_Spatial"))]
     TryGetPointerPose: usize,
     pub TapCount: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISpatialTappedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 695043038, data2: 62532, data3: 19105, data4: [178, 191, 157, 200, 141, 86, 125, 166] };
 }
 pub type SpatialGestureRecognizer = *mut ::core::ffi::c_void;
 #[doc = "*Required features: `\"UI_Input_Spatial\"`*"]

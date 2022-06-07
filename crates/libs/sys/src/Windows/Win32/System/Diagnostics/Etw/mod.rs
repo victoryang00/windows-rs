@@ -2084,12 +2084,18 @@ pub struct ITraceEvent {
     pub SetTimeStamp: unsafe extern "system" fn(this: *mut *mut Self, timestamp: *const i64) -> ::windows_sys::core::HRESULT,
     pub SetProviderId: unsafe extern "system" fn(this: *mut *mut Self, providerid: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ITraceEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2362015552, data2: 36904, data3: 20467, data4: [155, 98, 125, 31, 121, 202, 123, 203] };
+}
 #[repr(C)]
 pub struct ITraceEventCallback {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnBeginProcessTrace: unsafe extern "system" fn(this: *mut *mut Self, headerevent: *mut ::core::ffi::c_void, relogger: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub OnFinalizeProcessTrace: unsafe extern "system" fn(this: *mut *mut Self, relogger: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub OnEvent: unsafe extern "system" fn(this: *mut *mut Self, event: *mut ::core::ffi::c_void, relogger: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ITraceEventCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1053971713, data2: 22847, data3: 17385, data4: [143, 56, 58, 180, 111, 90, 74, 82] };
 }
 #[repr(C)]
 pub struct ITraceRelogger {
@@ -2115,6 +2121,9 @@ pub struct ITraceRelogger {
     #[cfg(not(feature = "Win32_Foundation"))]
     SetCompressionMode: usize,
     pub Cancel: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ITraceRelogger {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4149521731, data2: 15308, data3: 17030, data4: [128, 9, 156, 93, 162, 20, 232, 78] };
 }
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`*"]
 pub const KERNEL_LOGGER_NAME: &str = "NT Kernel Logger";

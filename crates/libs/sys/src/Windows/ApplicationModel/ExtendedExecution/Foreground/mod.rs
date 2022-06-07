@@ -46,6 +46,9 @@ pub struct IExtendedExecutionForegroundRevokedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub Reason: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ExtendedExecutionForegroundRevokedReason) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IExtendedExecutionForegroundRevokedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2960972096, data2: 38231, data3: 44708, data4: [44, 153, 189, 213, 109, 155, 228, 97] };
+}
 #[repr(C)]
 pub struct IExtendedExecutionForegroundSession {
     pub base__: ::windows_sys::core::IInspectable,
@@ -65,4 +68,7 @@ pub struct IExtendedExecutionForegroundSession {
     RequestExtensionAsync: usize,
     pub Reason: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ExtendedExecutionForegroundReason) -> ::windows_sys::core::HRESULT,
     pub SetReason: unsafe extern "system" fn(this: *mut *mut Self, value: ExtendedExecutionForegroundReason) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IExtendedExecutionForegroundSession {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4227088609, data2: 40208, data3: 16897, data4: [176, 30, 200, 50, 117, 41, 111, 46] };
 }

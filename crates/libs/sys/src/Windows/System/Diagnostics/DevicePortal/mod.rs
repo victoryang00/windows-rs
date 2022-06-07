@@ -38,10 +38,16 @@ pub struct IDevicePortalConnection {
     #[cfg(not(feature = "Foundation"))]
     RemoveRequestReceived: usize,
 }
+impl ::windows_sys::core::Interface for IDevicePortalConnection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 256147281, data2: 4504, data3: 19873, data4: [141, 84, 189, 239, 57, 62, 9, 182] };
+}
 #[repr(C)]
 pub struct IDevicePortalConnectionClosedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub Reason: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut DevicePortalConnectionClosedReason) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDevicePortalConnectionClosedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4244049464, data2: 28722, data3: 17036, data4: [159, 80, 148, 92, 21, 169, 240, 203] };
 }
 #[repr(C)]
 pub struct IDevicePortalConnectionRequestReceivedEventArgs {
@@ -55,6 +61,9 @@ pub struct IDevicePortalConnectionRequestReceivedEventArgs {
     #[cfg(not(feature = "Web_Http"))]
     ResponseMessage: usize,
 }
+impl ::windows_sys::core::Interface for IDevicePortalConnectionRequestReceivedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1692065861, data2: 28634, data3: 17497, data4: [158, 189, 236, 206, 34, 227, 133, 89] };
+}
 #[repr(C)]
 pub struct IDevicePortalConnectionStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -62,6 +71,9 @@ pub struct IDevicePortalConnectionStatics {
     pub GetForAppServiceConnection: unsafe extern "system" fn(this: *mut *mut Self, appserviceconnection: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "ApplicationModel_AppService"))]
     GetForAppServiceConnection: usize,
+}
+impl ::windows_sys::core::Interface for IDevicePortalConnectionStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1270755815, data2: 59833, data3: 17989, data4: [143, 237, 165, 62, 234, 14, 219, 214] };
 }
 #[repr(C)]
 pub struct IDevicePortalWebSocketConnection {
@@ -87,6 +99,9 @@ pub struct IDevicePortalWebSocketConnection {
     #[cfg(not(all(feature = "Networking_Sockets", feature = "Web_Http")))]
     GetServerStreamWebSocketForRequest2: usize,
 }
+impl ::windows_sys::core::Interface for IDevicePortalWebSocketConnection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1734703392, data2: 54874, data3: 17136, data4: [174, 244, 120, 120, 8, 9, 139, 123] };
+}
 #[repr(C)]
 pub struct IDevicePortalWebSocketConnectionRequestReceivedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
@@ -99,4 +114,7 @@ pub struct IDevicePortalWebSocketConnectionRequestReceivedEventArgs {
     pub GetDeferral: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     GetDeferral: usize,
+}
+impl ::windows_sys::core::Interface for IDevicePortalWebSocketConnectionRequestReceivedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2046675642, data2: 5980, data3: 18233, data4: [159, 116, 221, 167, 151, 195, 91, 63] };
 }

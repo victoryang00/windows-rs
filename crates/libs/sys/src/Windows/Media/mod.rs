@@ -89,20 +89,32 @@ pub struct IAudioBuffer {
     pub Length: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
     pub SetLength: unsafe extern "system" fn(this: *mut *mut Self, value: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAudioBuffer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 890722343, data2: 29259, data3: 19562, data4: [177, 48, 246, 83, 127, 154, 224, 208] };
+}
 #[repr(C)]
 pub struct IAudioFrame {
     pub base__: ::windows_sys::core::IInspectable,
     pub LockBuffer: unsafe extern "system" fn(this: *mut *mut Self, mode: AudioBufferAccessMode, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAudioFrame {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3815424772, data2: 43698, data3: 17015, data4: [158, 208, 67, 206, 223, 142, 41, 198] };
 }
 #[repr(C)]
 pub struct IAudioFrameFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, capacity: u32, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAudioFrameFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2443774686, data2: 9250, data3: 16550, data4: [185, 173, 48, 208, 36, 4, 49, 125] };
+}
 #[repr(C)]
 pub struct IAutoRepeatModeChangeRequestedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub RequestedAutoRepeatMode: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut MediaPlaybackAutoRepeatMode) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAutoRepeatModeChangeRequestedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3927146234, data2: 55378, data3: 17294, data4: [136, 43, 201, 144, 16, 154, 120, 244] };
 }
 #[repr(C)]
 pub struct IImageDisplayProperties {
@@ -111,6 +123,9 @@ pub struct IImageDisplayProperties {
     pub SetTitle: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub Subtitle: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub SetSubtitle: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IImageDisplayProperties {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3440101359, data2: 21735, data3: 16671, data4: [153, 51, 240, 233, 139, 10, 150, 210] };
 }
 #[cfg(feature = "deprecated")]
 #[repr(C)]
@@ -249,6 +264,10 @@ pub struct IMediaControl {
     #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
     AlbumArt: usize,
 }
+#[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for IMediaControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2565995489, data2: 31373, data3: 17099, data4: [182, 254, 143, 230, 152, 38, 79, 19] };
+}
 #[repr(C)]
 pub struct IMediaExtension {
     pub base__: ::windows_sys::core::IInspectable,
@@ -256,6 +275,9 @@ pub struct IMediaExtension {
     pub SetProperties: unsafe extern "system" fn(this: *mut *mut Self, configuration: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     SetProperties: usize,
+}
+impl ::windows_sys::core::Interface for IMediaExtension {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 126963992, data2: 17887, data3: 17451, data4: [138, 63, 247, 130, 106, 99, 112, 171] };
 }
 #[repr(C)]
 pub struct IMediaExtensionManager {
@@ -291,6 +313,9 @@ pub struct IMediaExtensionManager {
     #[cfg(not(feature = "Foundation_Collections"))]
     RegisterVideoEncoderWithSettings: usize,
 }
+impl ::windows_sys::core::Interface for IMediaExtensionManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1243998965, data2: 9261, data3: 19963, data4: [151, 244, 105, 183, 196, 37, 118, 255] };
+}
 #[repr(C)]
 pub struct IMediaExtensionManager2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -298,6 +323,9 @@ pub struct IMediaExtensionManager2 {
     pub RegisterMediaExtensionForAppService: unsafe extern "system" fn(this: *mut *mut Self, extension: *mut ::core::ffi::c_void, connection: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "ApplicationModel_AppService"))]
     RegisterMediaExtensionForAppService: usize,
+}
+impl ::windows_sys::core::Interface for IMediaExtensionManager2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1540276039, data2: 16451, data3: 20461, data4: [172, 175, 84, 236, 41, 223, 177, 247] };
 }
 #[repr(C)]
 pub struct IMediaFrame {
@@ -335,6 +363,9 @@ pub struct IMediaFrame {
     #[cfg(not(feature = "Foundation_Collections"))]
     ExtendedProperties: usize,
 }
+impl ::windows_sys::core::Interface for IMediaFrame {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3216322444, data2: 22851, data3: 18392, data4: [142, 16, 5, 48, 138, 165, 251, 208] };
+}
 #[repr(C)]
 pub struct IMediaMarker {
     pub base__: ::windows_sys::core::IInspectable,
@@ -345,10 +376,16 @@ pub struct IMediaMarker {
     pub MediaMarkerType: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub Text: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMediaMarker {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 402906872, data2: 56485, data3: 19311, data4: [156, 32, 227, 211, 192, 100, 54, 37] };
+}
 #[repr(C)]
 pub struct IMediaMarkerTypesStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub Bookmark: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMediaMarkerTypesStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3139010624, data2: 18479, data3: 18243, data4: [136, 50, 69, 133, 56, 33, 236, 224] };
 }
 #[repr(C)]
 pub struct IMediaMarkers {
@@ -358,6 +395,9 @@ pub struct IMediaMarkers {
     #[cfg(not(feature = "Foundation_Collections"))]
     Markers: usize,
 }
+impl ::windows_sys::core::Interface for IMediaMarkers {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2951393673, data2: 63709, data3: 18030, data4: [170, 16, 146, 11, 82, 53, 63, 223] };
+}
 #[repr(C)]
 pub struct IMediaProcessingTriggerDetails {
     pub base__: ::windows_sys::core::IInspectable,
@@ -365,6 +405,9 @@ pub struct IMediaProcessingTriggerDetails {
     pub Arguments: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     Arguments: usize,
+}
+impl ::windows_sys::core::Interface for IMediaProcessingTriggerDetails {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3951387820, data2: 41809, data3: 20302, data4: [180, 240, 155, 242, 64, 137, 147, 219] };
 }
 #[repr(C)]
 pub struct IMediaTimelineController {
@@ -400,6 +443,9 @@ pub struct IMediaTimelineController {
     #[cfg(not(feature = "Foundation"))]
     RemoveStateChanged: usize,
 }
+impl ::windows_sys::core::Interface for IMediaTimelineController {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2396217843, data2: 2936, data3: 17248, data4: [191, 113, 12, 132, 25, 153, 234, 27] };
+}
 #[repr(C)]
 pub struct IMediaTimelineController2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -430,10 +476,16 @@ pub struct IMediaTimelineController2 {
     #[cfg(not(feature = "Foundation"))]
     RemoveEnded: usize,
 }
+impl ::windows_sys::core::Interface for IMediaTimelineController2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4017416760, data2: 40562, data3: 19961, data4: [131, 85, 110, 144, 200, 27, 186, 221] };
+}
 #[repr(C)]
 pub struct IMediaTimelineControllerFailedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub ExtendedError: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMediaTimelineControllerFailedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2283927581, data2: 15991, data3: 17403, data4: [190, 38, 79, 200, 122, 4, 72, 52] };
 }
 #[repr(C)]
 pub struct IMusicDisplayProperties {
@@ -444,6 +496,9 @@ pub struct IMusicDisplayProperties {
     pub SetAlbumArtist: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub Artist: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub SetArtist: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMusicDisplayProperties {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1807682649, data2: 53408, data3: 19750, data4: [146, 160, 249, 120, 225, 209, 142, 123] };
 }
 #[repr(C)]
 pub struct IMusicDisplayProperties2 {
@@ -457,11 +512,17 @@ pub struct IMusicDisplayProperties2 {
     #[cfg(not(feature = "Foundation_Collections"))]
     Genres: usize,
 }
+impl ::windows_sys::core::Interface for IMusicDisplayProperties2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3572834, data2: 38867, data3: 17593, data4: [176, 15, 0, 138, 252, 239, 175, 24] };
+}
 #[repr(C)]
 pub struct IMusicDisplayProperties3 {
     pub base__: ::windows_sys::core::IInspectable,
     pub AlbumTrackCount: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
     pub SetAlbumTrackCount: unsafe extern "system" fn(this: *mut *mut Self, value: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMusicDisplayProperties3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1303714497, data2: 1665, data3: 20108, data4: [148, 1, 184, 21, 157, 158, 239, 199] };
 }
 #[repr(C)]
 pub struct IPlaybackPositionChangeRequestedEventArgs {
@@ -471,15 +532,24 @@ pub struct IPlaybackPositionChangeRequestedEventArgs {
     #[cfg(not(feature = "Foundation"))]
     RequestedPlaybackPosition: usize,
 }
+impl ::windows_sys::core::Interface for IPlaybackPositionChangeRequestedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3024699272, data2: 60200, data3: 18785, data4: [156, 20, 51, 94, 68, 243, 225, 37] };
+}
 #[repr(C)]
 pub struct IPlaybackRateChangeRequestedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub RequestedPlaybackRate: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f64) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPlaybackRateChangeRequestedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 753058847, data2: 15574, data3: 20343, data4: [155, 167, 235, 39, 194, 106, 33, 64] };
+}
 #[repr(C)]
 pub struct IShuffleEnabledChangeRequestedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub RequestedShuffleEnabled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IShuffleEnabledChangeRequestedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1236636670, data2: 20432, data3: 18022, data4: [163, 20, 192, 224, 25, 64, 211, 2] };
 }
 #[repr(C)]
 pub struct ISystemMediaTransportControls {
@@ -527,6 +597,9 @@ pub struct ISystemMediaTransportControls {
     #[cfg(not(feature = "Foundation"))]
     RemovePropertyChanged: usize,
 }
+impl ::windows_sys::core::Interface for ISystemMediaTransportControls {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2583314420, data2: 5954, data3: 17062, data4: [144, 46, 8, 125, 65, 249, 101, 236] };
+}
 #[repr(C)]
 pub struct ISystemMediaTransportControls2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -570,10 +643,16 @@ pub struct ISystemMediaTransportControls2 {
     #[cfg(not(feature = "Foundation"))]
     RemoveAutoRepeatModeChangeRequested: usize,
 }
+impl ::windows_sys::core::Interface for ISystemMediaTransportControls2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3935884022, data2: 32572, data3: 19186, data4: [165, 134, 114, 136, 152, 8, 239, 177] };
+}
 #[repr(C)]
 pub struct ISystemMediaTransportControlsButtonPressedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub Button: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut SystemMediaTransportControlsButton) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISystemMediaTransportControlsButtonPressedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3086250262, data2: 42351, data3: 19912, data4: [158, 17, 146, 3, 31, 74, 135, 194] };
 }
 #[repr(C)]
 pub struct ISystemMediaTransportControlsDisplayUpdater {
@@ -600,15 +679,24 @@ pub struct ISystemMediaTransportControlsDisplayUpdater {
     pub ClearAll: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Update: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISystemMediaTransportControlsDisplayUpdater {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2327561534, data2: 64085, data3: 20175, data4: [173, 142, 201, 132, 229, 221, 21, 80] };
+}
 #[repr(C)]
 pub struct ISystemMediaTransportControlsPropertyChangedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub Property: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut SystemMediaTransportControlsProperty) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISystemMediaTransportControlsPropertyChangedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3502901558, data2: 13211, data3: 19635, data4: [142, 235, 115, 118, 7, 245, 110, 8] };
+}
 #[repr(C)]
 pub struct ISystemMediaTransportControlsStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub GetForCurrentView: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISystemMediaTransportControlsStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1136277514, data2: 60580, data3: 18482, data4: [145, 171, 212, 21, 250, 228, 132, 198] };
 }
 #[repr(C)]
 pub struct ISystemMediaTransportControlsTimelineProperties {
@@ -654,6 +742,9 @@ pub struct ISystemMediaTransportControlsTimelineProperties {
     #[cfg(not(feature = "Foundation"))]
     SetPosition: usize,
 }
+impl ::windows_sys::core::Interface for ISystemMediaTransportControlsTimelineProperties {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1361391978, data2: 50082, data3: 18267, data4: [133, 7, 147, 83, 77, 200, 143, 21] };
+}
 #[repr(C)]
 pub struct IVideoDisplayProperties {
     pub base__: ::windows_sys::core::IInspectable,
@@ -661,6 +752,9 @@ pub struct IVideoDisplayProperties {
     pub SetTitle: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub Subtitle: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub SetSubtitle: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IVideoDisplayProperties {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1443495345, data2: 23853, data3: 18546, data4: [129, 112, 69, 222, 229, 188, 47, 92] };
 }
 #[repr(C)]
 pub struct IVideoDisplayProperties2 {
@@ -670,10 +764,16 @@ pub struct IVideoDisplayProperties2 {
     #[cfg(not(feature = "Foundation_Collections"))]
     Genres: usize,
 }
+impl ::windows_sys::core::Interface for IVideoDisplayProperties2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3021005262, data2: 43858, data3: 16811, data4: [164, 134, 204, 16, 250, 177, 82, 249] };
+}
 #[repr(C)]
 pub struct IVideoEffectsStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub VideoStabilization: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IVideoEffectsStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 533571048, data2: 47857, data3: 17697, data4: [152, 12, 59, 206, 187, 68, 207, 56] };
 }
 #[repr(C)]
 pub struct IVideoFrame {
@@ -691,6 +791,9 @@ pub struct IVideoFrame {
     #[cfg(not(feature = "Graphics_DirectX_Direct3D11"))]
     Direct3DSurface: usize,
 }
+impl ::windows_sys::core::Interface for IVideoFrame {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 213935653, data2: 37116, data3: 19602, data4: [189, 149, 125, 237, 33, 129, 157, 28] };
+}
 #[repr(C)]
 pub struct IVideoFrame2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -698,6 +801,9 @@ pub struct IVideoFrame2 {
     pub CopyToWithBoundsAsync: unsafe extern "system" fn(this: *mut *mut Self, frame: *mut ::core::ffi::c_void, sourcebounds: *mut ::core::ffi::c_void, destinationbounds: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Foundation", feature = "Graphics_Imaging")))]
     CopyToWithBoundsAsync: usize,
+}
+impl ::windows_sys::core::Interface for IVideoFrame2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 943162381, data2: 13164, data3: 17254, data4: [141, 70, 6, 7, 152, 115, 108, 93] };
 }
 #[repr(C)]
 pub struct IVideoFrameFactory {
@@ -710,6 +816,9 @@ pub struct IVideoFrameFactory {
     pub CreateWithAlpha: unsafe extern "system" fn(this: *mut *mut Self, format: super::Graphics::Imaging::BitmapPixelFormat, width: i32, height: i32, alpha: super::Graphics::Imaging::BitmapAlphaMode, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Graphics_Imaging"))]
     CreateWithAlpha: usize,
+}
+impl ::windows_sys::core::Interface for IVideoFrameFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 21720425, data2: 8744, data3: 19602, data4: [146, 255, 80, 195, 128, 211, 231, 118] };
 }
 #[repr(C)]
 pub struct IVideoFrameStatics {
@@ -730,6 +839,9 @@ pub struct IVideoFrameStatics {
     pub CreateWithDirect3D11Surface: unsafe extern "system" fn(this: *mut *mut Self, surface: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Graphics_DirectX_Direct3D11"))]
     CreateWithDirect3D11Surface: usize,
+}
+impl ::windows_sys::core::Interface for IVideoFrameStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2871678319, data2: 24849, data3: 19251, data4: [142, 195, 43, 32, 154, 2, 225, 122] };
 }
 pub type ImageDisplayProperties = *mut ::core::ffi::c_void;
 pub type MediaExtensionManager = *mut ::core::ffi::c_void;

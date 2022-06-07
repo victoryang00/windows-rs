@@ -124,6 +124,9 @@ pub struct IAppDisplayInfo {
     #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
     GetLogo: usize,
 }
+impl ::windows_sys::core::Interface for IAppDisplayInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 451612931, data2: 58580, data3: 16810, data4: [164, 246, 196, 162, 118, 231, 158, 172] };
+}
 #[repr(C)]
 pub struct IAppInfo {
     pub base__: ::windows_sys::core::IInspectable,
@@ -132,20 +135,32 @@ pub struct IAppInfo {
     pub DisplayInfo: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub PackageFamilyName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAppInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3481229747, data2: 27145, data3: 19944, data4: [166, 192, 87, 146, 213, 104, 128, 209] };
+}
 #[repr(C)]
 pub struct IAppInfo2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub Package: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAppInfo2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3192594266, data2: 8344, data3: 17179, data4: [189, 37, 179, 8, 120, 116, 141, 71] };
 }
 #[repr(C)]
 pub struct IAppInfo3 {
     pub base__: ::windows_sys::core::IInspectable,
     pub ExecutionContext: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut AppExecutionContext) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAppInfo3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 161975878, data2: 37796, data3: 18142, data4: [147, 151, 8, 67, 181, 113, 21, 234] };
+}
 #[repr(C)]
 pub struct IAppInfo4 {
     pub base__: ::windows_sys::core::IInspectable,
     pub SupportedFileExtensions: unsafe extern "system" fn(this: *mut *mut Self, result_size__: *mut u32, result__: *mut *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAppInfo4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 791985643, data2: 5641, data3: 17748, data4: [159, 51, 18, 225, 232, 3, 224, 212] };
 }
 #[repr(C)]
 pub struct IAppInfoStatics {
@@ -157,6 +172,9 @@ pub struct IAppInfoStatics {
     #[cfg(not(feature = "System"))]
     GetFromAppUserModelIdForUser: usize,
 }
+impl ::windows_sys::core::Interface for IAppInfoStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3474946090, data2: 58507, data3: 20236, data4: [155, 11, 121, 195, 248, 149, 125, 215] };
+}
 #[repr(C)]
 pub struct IAppInstallerInfo {
     pub base__: ::windows_sys::core::IInspectable,
@@ -164,6 +182,9 @@ pub struct IAppInstallerInfo {
     pub Uri: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     Uri: usize,
+}
+impl ::windows_sys::core::Interface for IAppInstallerInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 699083456, data2: 54518, data3: 17059, data4: [173, 205, 214, 88, 60, 101, 149, 8] };
 }
 #[repr(C)]
 pub struct IAppInstallerInfo2 {
@@ -202,12 +223,18 @@ pub struct IAppInstallerInfo2 {
     OptionalPackageUris: usize,
     pub PolicySource: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut AppInstallerPolicySource) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAppInstallerInfo2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3524203400, data2: 33366, data3: 22908, data4: [133, 17, 200, 78, 197, 13, 94, 43] };
+}
 #[repr(C)]
 pub struct IAppInstance {
     pub base__: ::windows_sys::core::IInspectable,
     pub Key: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub IsCurrentInstance: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub RedirectActivationTo: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAppInstance {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1734290247, data2: 62047, data3: 17714, data4: [159, 214, 54, 51, 224, 99, 77, 1] };
 }
 #[repr(C)]
 pub struct IAppInstanceStatics {
@@ -224,20 +251,32 @@ pub struct IAppInstanceStatics {
     #[cfg(not(feature = "Foundation_Collections"))]
     GetInstances: usize,
 }
+impl ::windows_sys::core::Interface for IAppInstanceStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2635196287, data2: 40614, data3: 18351, data4: [166, 236, 70, 120, 76, 91, 162, 84] };
+}
 #[repr(C)]
 pub struct ICameraApplicationManagerStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub ShowInstalledApplicationsUI: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ICameraApplicationManagerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2509888974, data2: 39891, data3: 17244, data4: [128, 84, 193, 173, 213, 0, 40, 254] };
 }
 #[repr(C)]
 pub struct IDesignModeStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub DesignModeEnabled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDesignModeStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 741905356, data2: 63514, data3: 20090, data4: [184, 87, 118, 168, 8, 135, 225, 133] };
+}
 #[repr(C)]
 pub struct IDesignModeStatics2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub DesignMode2Enabled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDesignModeStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2161082679, data2: 45156, data3: 18520, data4: [190, 200, 62, 186, 34, 53, 117, 53] };
 }
 #[repr(C)]
 pub struct IEnteredBackgroundEventArgs {
@@ -247,11 +286,17 @@ pub struct IEnteredBackgroundEventArgs {
     #[cfg(not(feature = "Foundation"))]
     GetDeferral: usize,
 }
+impl ::windows_sys::core::Interface for IEnteredBackgroundEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4146257090, data2: 38951, data3: 16445, data4: [170, 237, 236, 202, 154, 193, 115, 152] };
+}
 #[repr(C)]
 pub struct IFullTrustProcessLaunchResult {
     pub base__: ::windows_sys::core::IInspectable,
     pub LaunchResult: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut FullTrustLaunchResult) -> ::windows_sys::core::HRESULT,
     pub ExtendedError: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IFullTrustProcessLaunchResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2300041352, data2: 60923, data3: 20831, data4: [142, 34, 94, 188, 235, 105, 223, 217] };
 }
 #[repr(C)]
 pub struct IFullTrustProcessLauncherStatics {
@@ -273,6 +318,9 @@ pub struct IFullTrustProcessLauncherStatics {
     #[cfg(not(feature = "Foundation"))]
     LaunchFullTrustProcessForAppWithParametersAsync: usize,
 }
+impl ::windows_sys::core::Interface for IFullTrustProcessLauncherStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3615785855, data2: 4352, data3: 15467, data4: [164, 85, 246, 38, 44, 195, 49, 182] };
+}
 #[repr(C)]
 pub struct IFullTrustProcessLauncherStatics2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -285,6 +333,9 @@ pub struct IFullTrustProcessLauncherStatics2 {
     #[cfg(not(feature = "Foundation"))]
     LaunchFullTrustProcessForAppWithArgumentsAsync: usize,
 }
+impl ::windows_sys::core::Interface for IFullTrustProcessLauncherStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2341394223, data2: 46684, data3: 22223, data4: [161, 167, 43, 247, 124, 188, 110, 168] };
+}
 #[repr(C)]
 pub struct ILeavingBackgroundEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
@@ -292,6 +343,9 @@ pub struct ILeavingBackgroundEventArgs {
     pub GetDeferral: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     GetDeferral: usize,
+}
+impl ::windows_sys::core::Interface for ILeavingBackgroundEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 969338010, data2: 44654, data3: 18169, data4: [160, 122, 207, 194, 63, 136, 115, 62] };
 }
 #[repr(C)]
 pub struct ILimitedAccessFeatureRequestResult {
@@ -303,10 +357,16 @@ pub struct ILimitedAccessFeatureRequestResult {
     #[cfg(not(feature = "Foundation"))]
     EstimatedRemovalDate: usize,
 }
+impl ::windows_sys::core::Interface for ILimitedAccessFeatureRequestResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3562100390, data2: 7716, data3: 24029, data4: [171, 180, 97, 136, 171, 164, 213, 191] };
+}
 #[repr(C)]
 pub struct ILimitedAccessFeaturesStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub TryUnlockFeature: unsafe extern "system" fn(this: *mut *mut Self, featureid: ::windows_sys::core::HSTRING, token: ::windows_sys::core::HSTRING, attestation: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ILimitedAccessFeaturesStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2347111124, data2: 12331, data3: 24511, data4: [166, 50, 26, 153, 228, 62, 137, 37] };
 }
 #[repr(C)]
 pub struct IPackage {
@@ -322,6 +382,9 @@ pub struct IPackage {
     #[cfg(not(feature = "Foundation_Collections"))]
     Dependencies: usize,
 }
+impl ::windows_sys::core::Interface for IPackage {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 373061935, data2: 48501, data3: 16700, data4: [191, 35, 177, 254, 123, 149, 216, 37] };
+}
 #[repr(C)]
 pub struct IPackage2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -336,6 +399,9 @@ pub struct IPackage2 {
     pub IsBundle: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub IsDevelopmentMode: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPackage2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2791387062, data2: 30344, data3: 19150, data4: [149, 251, 53, 149, 56, 231, 170, 1] };
+}
 #[repr(C)]
 pub struct IPackage3 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -349,6 +415,9 @@ pub struct IPackage3 {
     #[cfg(not(all(feature = "ApplicationModel_Core", feature = "Foundation_Collections")))]
     GetAppListEntriesAsync: usize,
 }
+impl ::windows_sys::core::Interface for IPackage3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1601407841, data2: 63594, data3: 18711, data4: [147, 209, 241, 238, 157, 59, 53, 217] };
+}
 #[repr(C)]
 pub struct IPackage4 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -358,6 +427,9 @@ pub struct IPackage4 {
     pub VerifyContentIntegrityAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     VerifyContentIntegrityAsync: usize,
+}
+impl ::windows_sys::core::Interface for IPackage4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1705955758, data2: 47451, data3: 17676, data4: [136, 43, 98, 85, 24, 127, 57, 126] };
 }
 #[repr(C)]
 pub struct IPackage5 {
@@ -383,6 +455,9 @@ pub struct IPackage5 {
     #[cfg(not(feature = "Foundation"))]
     SetInUseAsync: usize,
 }
+impl ::windows_sys::core::Interface for IPackage5 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 243543508, data2: 55724, data3: 17901, data4: [154, 30, 116, 206, 5, 107, 38, 53] };
+}
 #[repr(C)]
 pub struct IPackage6 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -391,6 +466,9 @@ pub struct IPackage6 {
     pub CheckUpdateAvailabilityAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     CheckUpdateAvailabilityAsync: usize,
+}
+impl ::windows_sys::core::Interface for IPackage6 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2333792578, data2: 4823, data3: 18260, data4: [174, 78, 99, 140, 188, 14, 58, 46] };
 }
 #[repr(C)]
 pub struct IPackage7 {
@@ -403,6 +481,9 @@ pub struct IPackage7 {
     pub EffectiveLocation: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Storage"))]
     EffectiveLocation: usize,
+}
+impl ::windows_sys::core::Interface for IPackage7 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2264894769, data2: 41700, data3: 17888, data4: [151, 50, 40, 58, 109, 136, 253, 225] };
 }
 #[repr(C)]
 pub struct IPackage8 {
@@ -434,6 +515,9 @@ pub struct IPackage8 {
     #[cfg(not(all(feature = "ApplicationModel_Core", feature = "Foundation_Collections")))]
     GetAppListEntries: usize,
     pub IsStub: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPackage8 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 743985019, data2: 52778, data3: 19430, data4: [160, 147, 119, 207, 187, 42, 126, 161] };
 }
 #[repr(C)]
 pub struct IPackageCatalog {
@@ -479,6 +563,9 @@ pub struct IPackageCatalog {
     #[cfg(not(feature = "Foundation"))]
     RemovePackageStatusChanged: usize,
 }
+impl ::windows_sys::core::Interface for IPackageCatalog {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 587872081, data2: 40419, data3: 17477, data4: [190, 116, 145, 251, 50, 90, 190, 254] };
+}
 #[repr(C)]
 pub struct IPackageCatalog2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -495,6 +582,9 @@ pub struct IPackageCatalog2 {
     #[cfg(not(feature = "Foundation"))]
     AddOptionalPackageAsync: usize,
 }
+impl ::windows_sys::core::Interface for IPackageCatalog2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2527464502, data2: 36855, data3: 17220, data4: [182, 191, 238, 100, 194, 32, 126, 210] };
+}
 #[repr(C)]
 pub struct IPackageCatalog3 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -502,6 +592,9 @@ pub struct IPackageCatalog3 {
     pub RemoveOptionalPackagesAsync: unsafe extern "system" fn(this: *mut *mut Self, optionalpackagefamilynames: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     RemoveOptionalPackagesAsync: usize,
+}
+impl ::windows_sys::core::Interface for IPackageCatalog3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2531089544, data2: 34871, data3: 17401, data4: [144, 21, 3, 52, 52, 186, 20, 243] };
 }
 #[repr(C)]
 pub struct IPackageCatalog4 {
@@ -515,11 +608,17 @@ pub struct IPackageCatalog4 {
     #[cfg(not(feature = "Foundation_Collections"))]
     RemoveResourcePackagesAsync: usize,
 }
+impl ::windows_sys::core::Interface for IPackageCatalog4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3279698331, data2: 17612, data3: 19323, data4: [139, 175, 121, 108, 4, 234, 211, 185] };
+}
 #[repr(C)]
 pub struct IPackageCatalogAddOptionalPackageResult {
     pub base__: ::windows_sys::core::IInspectable,
     pub Package: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub ExtendedError: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPackageCatalogAddOptionalPackageResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1005653204, data2: 46303, data3: 18355, data4: [169, 99, 226, 250, 131, 47, 125, 211] };
 }
 #[repr(C)]
 pub struct IPackageCatalogAddResourcePackageResult {
@@ -527,6 +626,9 @@ pub struct IPackageCatalogAddResourcePackageResult {
     pub Package: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub IsComplete: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub ExtendedError: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPackageCatalogAddResourcePackageResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2520174093, data2: 15895, data3: 18751, data4: [170, 8, 204, 236, 111, 222, 246, 153] };
 }
 #[repr(C)]
 pub struct IPackageCatalogRemoveOptionalPackagesResult {
@@ -537,6 +639,9 @@ pub struct IPackageCatalogRemoveOptionalPackagesResult {
     PackagesRemoved: usize,
     pub ExtendedError: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPackageCatalogRemoveOptionalPackagesResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 701692283, data2: 55668, data3: 20068, data4: [147, 89, 34, 202, 223, 215, 152, 40] };
+}
 #[repr(C)]
 pub struct IPackageCatalogRemoveResourcePackagesResult {
     pub base__: ::windows_sys::core::IInspectable,
@@ -546,11 +651,17 @@ pub struct IPackageCatalogRemoveResourcePackagesResult {
     PackagesRemoved: usize,
     pub ExtendedError: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPackageCatalogRemoveResourcePackagesResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2926679817, data2: 6738, data3: 17185, data4: [135, 179, 229, 161, 161, 121, 129, 167] };
+}
 #[repr(C)]
 pub struct IPackageCatalogStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub OpenForCurrentPackage: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub OpenForCurrentUser: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPackageCatalogStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2710345366, data2: 58971, data3: 17972, data4: [186, 33, 94, 99, 235, 114, 68, 167] };
 }
 #[repr(C)]
 pub struct IPackageContentGroup {
@@ -559,6 +670,9 @@ pub struct IPackageContentGroup {
     pub Name: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub State: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut PackageContentGroupState) -> ::windows_sys::core::HRESULT,
     pub IsRequired: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPackageContentGroup {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2405591389, data2: 4618, data3: 18328, data4: [181, 225, 88, 0, 221, 168, 242, 225] };
 }
 #[repr(C)]
 pub struct IPackageContentGroupStagingEventArgs {
@@ -571,10 +685,16 @@ pub struct IPackageContentGroupStagingEventArgs {
     pub ContentGroupName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub IsContentGroupRequired: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPackageContentGroupStagingEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1031520894, data2: 28455, data3: 17516, data4: [152, 110, 212, 115, 61, 77, 145, 19] };
+}
 #[repr(C)]
 pub struct IPackageContentGroupStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub RequiredGroupName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPackageContentGroupStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1894675993, data2: 24338, data3: 19346, data4: [185, 234, 108, 202, 218, 19, 188, 117] };
 }
 #[repr(C)]
 pub struct IPackageId {
@@ -591,11 +711,17 @@ pub struct IPackageId {
     pub FullName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub FamilyName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPackageId {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 450586206, data2: 14279, data3: 18320, data4: [153, 128, 221, 122, 231, 78, 139, 178] };
+}
 #[repr(C)]
 pub struct IPackageIdWithMetadata {
     pub base__: ::windows_sys::core::IInspectable,
     pub ProductId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub Author: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPackageIdWithMetadata {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1079474812, data2: 3230, data3: 17469, data4: [144, 116, 133, 95, 92, 224, 160, 141] };
 }
 #[repr(C)]
 pub struct IPackageInstallingEventArgs {
@@ -606,6 +732,9 @@ pub struct IPackageInstallingEventArgs {
     pub IsComplete: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub ErrorCode: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPackageInstallingEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2540969655, data2: 43898, data3: 16410, data4: [139, 97, 235, 14, 127, 175, 242, 55] };
+}
 #[repr(C)]
 pub struct IPackageStagingEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
@@ -615,10 +744,16 @@ pub struct IPackageStagingEventArgs {
     pub IsComplete: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub ErrorCode: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPackageStagingEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 272721965, data2: 21730, data3: 20305, data4: [184, 40, 158, 247, 4, 108, 33, 15] };
+}
 #[repr(C)]
 pub struct IPackageStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub Current: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPackageStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1314081759, data2: 10592, data3: 18552, data4: [151, 164, 150, 36, 222, 183, 47, 45] };
 }
 #[repr(C)]
 pub struct IPackageStatus {
@@ -636,15 +771,24 @@ pub struct IPackageStatus {
     pub Servicing: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub DeploymentInProgress: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPackageStatus {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1608994673, data2: 41829, data3: 19465, data4: [160, 45, 4, 109, 82, 94, 161, 218] };
+}
 #[repr(C)]
 pub struct IPackageStatus2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub IsPartiallyStaged: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPackageStatus2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4096326291, data2: 31830, data3: 18530, data4: [172, 250, 171, 174, 220, 192, 105, 77] };
+}
 #[repr(C)]
 pub struct IPackageStatusChangedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub Package: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPackageStatusChangedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1132294477, data2: 48512, data3: 19056, data4: [188, 80, 246, 231, 150, 80, 149, 117] };
 }
 #[repr(C)]
 pub struct IPackageUninstallingEventArgs {
@@ -655,11 +799,17 @@ pub struct IPackageUninstallingEventArgs {
     pub IsComplete: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub ErrorCode: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPackageUninstallingEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1145285202, data2: 43810, data3: 17613, data4: [130, 187, 78, 201, 184, 39, 54, 122] };
+}
 #[repr(C)]
 pub struct IPackageUpdateAvailabilityResult {
     pub base__: ::windows_sys::core::IInspectable,
     pub Availability: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut PackageUpdateAvailability) -> ::windows_sys::core::HRESULT,
     pub ExtendedError: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPackageUpdateAvailabilityResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 290344969, data2: 6554, data3: 18593, data4: [160, 121, 49, 60, 69, 99, 74, 113] };
 }
 #[repr(C)]
 pub struct IPackageUpdatingEventArgs {
@@ -670,6 +820,9 @@ pub struct IPackageUpdatingEventArgs {
     pub Progress: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f64) -> ::windows_sys::core::HRESULT,
     pub IsComplete: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub ErrorCode: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPackageUpdatingEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3447407144, data2: 64884, data3: 17470, data4: [177, 20, 35, 230, 119, 176, 232, 111] };
 }
 #[repr(C)]
 pub struct IPackageWithMetadata {
@@ -684,6 +837,9 @@ pub struct IPackageWithMetadata {
     #[cfg(not(feature = "deprecated"))]
     Launch: usize,
 }
+impl ::windows_sys::core::Interface for IPackageWithMetadata {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2509543296, data2: 7657, data3: 16626, data4: [180, 82, 13, 233, 241, 145, 0, 18] };
+}
 #[repr(C)]
 pub struct IStartupTask {
     pub base__: ::windows_sys::core::IInspectable,
@@ -694,6 +850,9 @@ pub struct IStartupTask {
     pub Disable: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub State: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut StartupTaskState) -> ::windows_sys::core::HRESULT,
     pub TaskId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IStartupTask {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4150010824, data2: 46578, data3: 20332, data4: [136, 221, 54, 203, 29, 89, 157, 23] };
 }
 #[repr(C)]
 pub struct IStartupTaskStatics {
@@ -707,15 +866,24 @@ pub struct IStartupTaskStatics {
     #[cfg(not(feature = "Foundation"))]
     GetAsync: usize,
 }
+impl ::windows_sys::core::Interface for IStartupTaskStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3998965949, data2: 41288, data3: 16807, data4: [178, 110, 232, 184, 138, 30, 98, 248] };
+}
 #[repr(C)]
 pub struct ISuspendingDeferral {
     pub base__: ::windows_sys::core::IInspectable,
     pub Complete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISuspendingDeferral {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1494484233, data2: 35785, data3: 20148, data4: [182, 54, 218, 189, 196, 244, 111, 102] };
+}
 #[repr(C)]
 pub struct ISuspendingEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub SuspendingOperation: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISuspendingEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2516982789, data2: 11706, data3: 19720, data4: [176, 189, 43, 48, 161, 49, 198, 170] };
 }
 #[repr(C)]
 pub struct ISuspendingOperation {
@@ -725,6 +893,9 @@ pub struct ISuspendingOperation {
     pub Deadline: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::Foundation::DateTime) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     Deadline: usize,
+}
+impl ::windows_sys::core::Interface for ISuspendingOperation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2644822593, data2: 8417, data3: 20123, data4: [159, 101, 169, 244, 53, 52, 12, 58] };
 }
 pub type LeavingBackgroundEventArgs = *mut ::core::ffi::c_void;
 pub type LimitedAccessFeatureRequestResult = *mut ::core::ffi::c_void;

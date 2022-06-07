@@ -1,7 +1,8 @@
 use super::*;
-use windows_sys::Win32::System::Com::*;
-use windows_sys::Win32::System::WinRT::*;
-use windows_sys::Win32::Foundation::*;
+use windows_sys::core::Interface;
+use windows_sys::Win32::System::Com::{GetErrorInfo,IErrorInfo, SetErrorInfo};
+use windows_sys::Win32::System::WinRT::{ILanguageExceptionErrorInfo2, IRestrictedErrorInfo};
+use windows_sys::Win32::Foundation::{GetLastError, S_OK, SysFreeString, BOOL};
 
 /// An error object consists of both an error code as well as detailed error information for debugging.
 #[derive(Clone, PartialEq)]
@@ -22,13 +23,21 @@ impl Error {
                 let function: RoOriginateError = core::mem::transmute(function);
                 function(code, core::mem::transmute_copy(&message));
             }
-            let info = GetErrorInfo(0).and_then(|e| e.cast()).ok();
+            let mut first = ComPtr::<IErrorInfo>::null();
+            GetErrorInfo(0, first.put());
+            let mut info = ComPtr::<IRestrictedErrorInfo>::null();
+            if !first.is_null() {
+                // TODO: wrap in ComPtr?
+                (first.get().base__.QueryInterface)(first.this() as _, &IRestrictedErrorInfo::IID, info.put_void() as _);
+            }
             Self { code, info }
         }
     }
 
     pub fn from_win32() -> Self {
-        unsafe { Self { code: GetLastError().into(), info: None } }
+        let win32_error = GetLastError();
+        let code = if win32_error == 0 { HRESULT(S_OK) } else { HRESULT((win32_error & 0x0000_FFFF) | (7 << 16) | 0x8000_0000 };
+        unsafe { Self { code, info: None } }
     }
 
     /// The error code describing the error.
@@ -45,9 +54,9 @@ impl Error {
     pub fn message(&self) -> HSTRING {
         // First attempt to retrieve the restricted error information.
         if let Some(info) = &self.info {
-            let mut fallback = BSTR::default();
-            let mut message = BSTR::default();
-            let mut unused = BSTR::default();
+            let mut fallback = BSTR::new();
+            let mut message = BSTR::new();
+            let mut unused = BSTR::new();
             let mut code = HRESULT(0);
 
             unsafe {
@@ -136,3 +145,19 @@ impl core::fmt::Display for Error {
 impl std::error::Error for Error {}
 
 type RoOriginateError = extern "system" fn(code: HRESULT, message: core::mem::ManuallyDrop<HSTRING>) -> BOOL;
+
+struct BSTR(*mut u16);
+
+impl BSTR {
+    pub fn new() -> Self {
+        Self(std::ptr::null_mut())
+    }
+}
+
+impl Drop for BSTR {
+    fn drop(&mut self) {
+        if !self.0.is_null() {
+            unsafe { SysFreeString(self as &Self) }
+        }
+    }
+}

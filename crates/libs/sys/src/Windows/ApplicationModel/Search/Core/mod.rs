@@ -2,6 +2,9 @@
 pub struct IRequestingFocusOnKeyboardInputEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
 }
+impl ::windows_sys::core::Interface for IRequestingFocusOnKeyboardInputEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2702794535, data2: 45479, data3: 16802, data4: [135, 157, 106, 104, 104, 126, 89, 133] };
+}
 #[repr(C)]
 pub struct ISearchSuggestion {
     pub base__: ::windows_sys::core::IInspectable,
@@ -14,6 +17,9 @@ pub struct ISearchSuggestion {
     #[cfg(not(feature = "Storage_Streams"))]
     Image: usize,
     pub ImageAlternateText: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISearchSuggestion {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1532318896, data2: 5415, data3: 17275, data4: [149, 197, 141, 24, 210, 184, 175, 85] };
 }
 #[repr(C)]
 pub struct ISearchSuggestionManager {
@@ -50,6 +56,9 @@ pub struct ISearchSuggestionManager {
     #[cfg(not(feature = "Foundation"))]
     RemoveRequestingFocusOnKeyboardInput: usize,
 }
+impl ::windows_sys::core::Interface for ISearchSuggestionManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1057771681, data2: 52125, data3: 18811, data4: [181, 0, 60, 4, 172, 149, 154, 210] };
+}
 #[repr(C)]
 pub struct ISearchSuggestionsRequestedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
@@ -57,6 +66,9 @@ pub struct ISearchSuggestionsRequestedEventArgs {
     pub Language: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub LinguisticDetails: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Request: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISearchSuggestionsRequestedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1876236773, data2: 40574, data3: 19124, data4: [139, 227, 199, 107, 27, 212, 52, 74] };
 }
 pub type RequestingFocusOnKeyboardInputEventArgs = *mut ::core::ffi::c_void;
 pub type SearchSuggestion = *mut ::core::ffi::c_void;

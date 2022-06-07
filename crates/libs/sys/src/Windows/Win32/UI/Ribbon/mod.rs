@@ -5,6 +5,9 @@ pub struct IUIApplication {
     pub OnCreateUICommand: unsafe extern "system" fn(this: *mut *mut Self, commandid: u32, typeid: UI_COMMANDTYPE, commandhandler: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub OnDestroyUICommand: unsafe extern "system" fn(this: *mut *mut Self, commandid: u32, typeid: UI_COMMANDTYPE, commandhandler: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IUIApplication {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3559428156, data2: 29338, data3: 18717, data4: [145, 13, 104, 42, 8, 255, 37, 34] };
+}
 #[repr(C)]
 pub struct IUICollection {
     pub base__: ::windows_sys::core::IUnknown,
@@ -16,10 +19,16 @@ pub struct IUICollection {
     pub Replace: unsafe extern "system" fn(this: *mut *mut Self, indexreplaced: u32, itemreplacewith: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Clear: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IUICollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3746514367, data2: 28573, data3: 19927, data4: [157, 104, 216, 249, 205, 24, 196, 219] };
+}
 #[repr(C)]
 pub struct IUICollectionChangedEvent {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnChanged: unsafe extern "system" fn(this: *mut *mut Self, action: UI_COLLECTIONCHANGE, oldindex: u32, olditem: *mut ::core::ffi::c_void, newindex: u32, newitem: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUICollectionChangedEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1694674577, data2: 41293, data3: 17589, data4: [187, 208, 98, 170, 204, 88, 29, 82] };
 }
 #[repr(C)]
 pub struct IUICommandHandler {
@@ -33,20 +42,32 @@ pub struct IUICommandHandler {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem")))]
     UpdateProperty: usize,
 }
+impl ::windows_sys::core::Interface for IUICommandHandler {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1974340141, data2: 56323, data3: 19615, data4: [136, 131, 6, 150, 96, 208, 190, 182] };
+}
 #[repr(C)]
 pub struct IUIContextualUI {
     pub base__: ::windows_sys::core::IUnknown,
     pub ShowAtLocation: unsafe extern "system" fn(this: *mut *mut Self, x: i32, y: i32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUIContextualUI {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4003536695, data2: 31814, data3: 17276, data4: [142, 85, 181, 33, 34, 178, 146, 147] };
 }
 #[repr(C)]
 pub struct IUIEventLogger {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnUIEvent: unsafe extern "system" fn(this: *mut *mut Self, peventparams: *const UI_EVENTPARAMS),
 }
+impl ::windows_sys::core::Interface for IUIEventLogger {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3963490356, data2: 56308, data3: 16801, data4: [149, 213, 3, 224, 241, 2, 110, 5] };
+}
 #[repr(C)]
 pub struct IUIEventingManager {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetEventLogger: unsafe extern "system" fn(this: *mut *mut Self, eventlogger: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUIEventingManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1004989055, data2: 39579, data3: 16792, data4: [147, 104, 155, 15, 146, 59, 213, 52] };
 }
 #[repr(C)]
 pub struct IUIFramework {
@@ -76,6 +97,9 @@ pub struct IUIFramework {
     pub FlushPendingInvalidations: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub SetModes: unsafe extern "system" fn(this: *mut *mut Self, imodes: i32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IUIFramework {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4109383773, data2: 26738, data3: 17320, data4: [173, 9, 76, 51, 156, 179, 245, 197] };
+}
 #[repr(C)]
 pub struct IUIImage {
     pub base__: ::windows_sys::core::IUnknown,
@@ -84,6 +108,9 @@ pub struct IUIImage {
     #[cfg(not(feature = "Win32_Graphics_Gdi"))]
     GetBitmap: usize,
 }
+impl ::windows_sys::core::Interface for IUIImage {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 600361016, data2: 19942, data3: 17259, data4: [171, 1, 85, 84, 187, 124, 48, 221] };
+}
 #[repr(C)]
 pub struct IUIImageFromBitmap {
     pub base__: ::windows_sys::core::IUnknown,
@@ -91,6 +118,9 @@ pub struct IUIImageFromBitmap {
     pub CreateImage: unsafe extern "system" fn(this: *mut *mut Self, bitmap: super::super::Graphics::Gdi::HBITMAP, options: UI_OWNERSHIP, image: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Graphics_Gdi"))]
     CreateImage: usize,
+}
+impl ::windows_sys::core::Interface for IUIImageFromBitmap {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 413902835, data2: 19484, data3: 19362, data4: [191, 108, 245, 195, 50, 111, 168, 22] };
 }
 #[repr(C)]
 pub struct IUIRibbon {
@@ -105,6 +135,9 @@ pub struct IUIRibbon {
     #[cfg(not(feature = "Win32_System_Com"))]
     SaveSettingsToStream: usize,
 }
+impl ::windows_sys::core::Interface for IUIRibbon {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2151252651, data2: 14090, data3: 20350, data4: [169, 231, 135, 132, 3, 106, 110, 38] };
+}
 #[repr(C)]
 pub struct IUISimplePropertySet {
     pub base__: ::windows_sys::core::IUnknown,
@@ -112,6 +145,9 @@ pub struct IUISimplePropertySet {
     pub GetValue: unsafe extern "system" fn(this: *mut *mut Self, key: *const super::Shell::PropertiesSystem::PROPERTYKEY, value: *mut super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem")))]
     GetValue: usize,
+}
+impl ::windows_sys::core::Interface for IUISimplePropertySet {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3255155528, data2: 23324, data3: 16921, data4: [161, 6, 21, 189, 10, 95, 36, 226] };
 }
 pub const LIBID_UIRibbon: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2486121922, data2: 59451, data3: 17903, data4: [176, 133, 172, 41, 93, 214, 61, 91] };
 pub const UIRibbonFramework: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2456242682, data2: 9749, data3: 18823, data4: [136, 69, 195, 62, 101, 242, 185, 87] };

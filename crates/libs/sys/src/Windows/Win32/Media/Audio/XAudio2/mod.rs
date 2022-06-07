@@ -302,6 +302,9 @@ pub struct IXAPO {
     pub CalcInputFrames: unsafe extern "system" fn(this: *mut *mut Self, outputframecount: u32) -> u32,
     pub CalcOutputFrames: unsafe extern "system" fn(this: *mut *mut Self, inputframecount: u32) -> u32,
 }
+impl ::windows_sys::core::Interface for IXAPO {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2752559492, data2: 38969, data3: 18457, data4: [160, 190, 40, 86, 174, 107, 58, 219] };
+}
 #[repr(C)]
 pub struct IXAPOHrtfParameters {
     pub base__: ::windows_sys::core::IUnknown,
@@ -310,11 +313,17 @@ pub struct IXAPOHrtfParameters {
     pub SetSourceGain: unsafe extern "system" fn(this: *mut *mut Self, gain: f32) -> ::windows_sys::core::HRESULT,
     pub SetEnvironment: unsafe extern "system" fn(this: *mut *mut Self, environment: HrtfEnvironment) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IXAPOHrtfParameters {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 364105062, data2: 59870, data3: 17508, data4: [182, 230, 43, 195, 207, 99, 212, 85] };
+}
 #[repr(C)]
 pub struct IXAPOParameters {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetParameters: unsafe extern "system" fn(this: *mut *mut Self, pparameters: *const ::core::ffi::c_void, parameterbytesize: u32),
     pub GetParameters: unsafe extern "system" fn(this: *mut *mut Self, pparameters: *mut ::core::ffi::c_void, parameterbytesize: u32),
+}
+impl ::windows_sys::core::Interface for IXAPOParameters {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 651779174, data2: 33010, data3: 18842, data4: [173, 84, 90, 231, 240, 28, 109, 152] };
 }
 #[repr(C)]
 pub struct IXAudio2 {
@@ -342,11 +351,17 @@ pub struct IXAudio2 {
     #[cfg(not(feature = "Win32_Foundation"))]
     SetDebugConfiguration: usize,
 }
+impl ::windows_sys::core::Interface for IXAudio2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 721609679, data2: 11787, data3: 20163, data4: [190, 69, 27, 42, 63, 231, 33, 13] };
+}
 #[repr(C)]
 pub struct IXAudio2EngineCallback {
     pub OnProcessingPassStart: unsafe extern "system" fn(this: *mut *mut Self),
     pub OnProcessingPassEnd: unsafe extern "system" fn(this: *mut *mut Self),
     pub OnCriticalError: unsafe extern "system" fn(this: *mut *mut Self, error: ::windows_sys::core::HRESULT),
+}
+impl ::windows_sys::core::Interface for IXAudio2EngineCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID::zeroed();
 }
 #[repr(C)]
 pub struct IXAudio2Extension {
@@ -354,10 +369,16 @@ pub struct IXAudio2Extension {
     pub GetProcessingQuantum: unsafe extern "system" fn(this: *mut *mut Self, quantumnumerator: *mut u32, quantumdenominator: *mut u32),
     pub GetProcessor: unsafe extern "system" fn(this: *mut *mut Self, processor: *mut u32),
 }
+impl ::windows_sys::core::Interface for IXAudio2Extension {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2225875387, data2: 54809, data3: 17618, data4: [177, 151, 228, 172, 247, 223, 62, 214] };
+}
 #[repr(C)]
 pub struct IXAudio2MasteringVoice {
     pub base__: IXAudio2Voice,
     pub GetChannelMask: unsafe extern "system" fn(this: *mut *mut Self, pchannelmask: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IXAudio2MasteringVoice {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID::zeroed();
 }
 #[repr(C)]
 pub struct IXAudio2SourceVoice {
@@ -373,9 +394,15 @@ pub struct IXAudio2SourceVoice {
     pub GetFrequencyRatio: unsafe extern "system" fn(this: *mut *mut Self, pratio: *mut f32),
     pub SetSourceSampleRate: unsafe extern "system" fn(this: *mut *mut Self, newsourcesamplerate: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IXAudio2SourceVoice {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID::zeroed();
+}
 #[repr(C)]
 pub struct IXAudio2SubmixVoice {
     pub base__: IXAudio2Voice,
+}
+impl ::windows_sys::core::Interface for IXAudio2SubmixVoice {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID::zeroed();
 }
 #[repr(C)]
 pub struct IXAudio2Voice {
@@ -405,6 +432,9 @@ pub struct IXAudio2Voice {
     pub GetOutputMatrix: unsafe extern "system" fn(this: *mut *mut Self, pdestinationvoice: *mut ::core::ffi::c_void, sourcechannels: u32, destinationchannels: u32, plevelmatrix: *mut f32),
     pub DestroyVoice: unsafe extern "system" fn(this: *mut *mut Self),
 }
+impl ::windows_sys::core::Interface for IXAudio2Voice {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID::zeroed();
+}
 #[repr(C)]
 pub struct IXAudio2VoiceCallback {
     pub OnVoiceProcessingPassStart: unsafe extern "system" fn(this: *mut *mut Self, bytesrequired: u32),
@@ -414,6 +444,9 @@ pub struct IXAudio2VoiceCallback {
     pub OnBufferEnd: unsafe extern "system" fn(this: *mut *mut Self, pbuffercontext: *mut ::core::ffi::c_void),
     pub OnLoopEnd: unsafe extern "system" fn(this: *mut *mut Self, pbuffercontext: *mut ::core::ffi::c_void),
     pub OnVoiceError: unsafe extern "system" fn(this: *mut *mut Self, pbuffercontext: *mut ::core::ffi::c_void, error: ::windows_sys::core::HRESULT),
+}
+impl ::windows_sys::core::Interface for IXAudio2VoiceCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID::zeroed();
 }
 #[doc = "*Required features: `\"Win32_Media_Audio_XAudio2\"`*"]
 pub const Processor1: u32 = 1u32;

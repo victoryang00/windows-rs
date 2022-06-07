@@ -185,6 +185,9 @@ pub struct IHttpBufferContentFactory {
     #[cfg(not(feature = "Storage_Streams"))]
     CreateFromBufferWithOffset: usize,
 }
+impl ::windows_sys::core::Interface for IHttpBufferContentFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3156263315, data2: 50207, data3: 20471, data4: [145, 35, 100, 53, 115, 110, 173, 194] };
+}
 #[repr(C)]
 pub struct IHttpClient {
     pub base__: ::windows_sys::core::IInspectable,
@@ -233,6 +236,9 @@ pub struct IHttpClient {
     #[cfg(not(feature = "Web_Http_Headers"))]
     DefaultRequestHeaders: usize,
 }
+impl ::windows_sys::core::Interface for IHttpClient {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2144997713, data2: 13684, data3: 18560, data4: [168, 186, 230, 177, 224, 6, 31, 61] };
+}
 #[repr(C)]
 pub struct IHttpClient2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -277,6 +283,9 @@ pub struct IHttpClient2 {
     #[cfg(not(feature = "Foundation"))]
     TrySendRequestAsync2: usize,
 }
+impl ::windows_sys::core::Interface for IHttpClient2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3453498184, data2: 59575, data3: 19692, data4: [177, 176, 220, 69, 95, 231, 44, 146] };
+}
 #[repr(C)]
 pub struct IHttpClientFactory {
     pub base__: ::windows_sys::core::IInspectable,
@@ -284,6 +293,9 @@ pub struct IHttpClientFactory {
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, filter: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Web_Http_Filters"))]
     Create: usize,
+}
+impl ::windows_sys::core::Interface for IHttpClientFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3272363722, data2: 58362, data3: 20377, data4: [175, 180, 99, 204, 101, 0, 148, 98] };
 }
 #[repr(C)]
 pub struct IHttpContent {
@@ -314,6 +326,9 @@ pub struct IHttpContent {
     #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
     WriteToStreamAsync: usize,
 }
+impl ::windows_sys::core::Interface for IHttpContent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1796514881, data2: 64423, data3: 19410, data4: [175, 10, 131, 157, 231, 194, 149, 218] };
+}
 #[repr(C)]
 pub struct IHttpCookie {
     pub base__: ::windows_sys::core::IInspectable,
@@ -335,10 +350,16 @@ pub struct IHttpCookie {
     pub Value: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub SetValue: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IHttpCookie {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 525633762, data2: 52269, data3: 18297, data4: [134, 167, 136, 241, 6, 135, 210, 73] };
+}
 #[repr(C)]
 pub struct IHttpCookieFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, name: ::windows_sys::core::HSTRING, domain: ::windows_sys::core::HSTRING, path: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IHttpCookieFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1778746793, data2: 37660, data3: 19665, data4: [169, 109, 194, 23, 1, 120, 92, 95] };
 }
 #[repr(C)]
 pub struct IHttpCookieManager {
@@ -351,6 +372,9 @@ pub struct IHttpCookieManager {
     #[cfg(not(feature = "Foundation_Collections"))]
     GetCookies: usize,
 }
+impl ::windows_sys::core::Interface for IHttpCookieManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2051217280, data2: 52559, data3: 20055, data4: [168, 74, 91, 10, 83, 214, 187, 150] };
+}
 #[repr(C)]
 pub struct IHttpFormUrlEncodedContentFactory {
     pub base__: ::windows_sys::core::IInspectable,
@@ -358,6 +382,9 @@ pub struct IHttpFormUrlEncodedContentFactory {
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, content: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     Create: usize,
+}
+impl ::windows_sys::core::Interface for IHttpFormUrlEncodedContentFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1139807116, data2: 12147, data3: 17154, data4: [181, 243, 234, 233, 35, 138, 94, 1] };
 }
 #[repr(C)]
 pub struct IHttpGetBufferResult {
@@ -371,6 +398,9 @@ pub struct IHttpGetBufferResult {
     #[cfg(not(feature = "Storage_Streams"))]
     Value: usize,
 }
+impl ::windows_sys::core::Interface for IHttpGetBufferResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1406176892, data2: 57865, data3: 16462, data4: [154, 73, 116, 45, 130, 54, 253, 58] };
+}
 #[repr(C)]
 pub struct IHttpGetInputStreamResult {
     pub base__: ::windows_sys::core::IInspectable,
@@ -383,6 +413,9 @@ pub struct IHttpGetInputStreamResult {
     #[cfg(not(feature = "Storage_Streams"))]
     Value: usize,
 }
+impl ::windows_sys::core::Interface for IHttpGetInputStreamResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3587585123, data2: 5034, data3: 20192, data4: [190, 149, 160, 195, 159, 233, 18, 3] };
+}
 #[repr(C)]
 pub struct IHttpGetStringResult {
     pub base__: ::windows_sys::core::IInspectable,
@@ -392,15 +425,24 @@ pub struct IHttpGetStringResult {
     pub Succeeded: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub Value: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IHttpGetStringResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2611758701, data2: 34057, data3: 18293, data4: [177, 109, 137, 83, 244, 122, 127, 95] };
+}
 #[repr(C)]
 pub struct IHttpMethod {
     pub base__: ::windows_sys::core::IInspectable,
     pub Method: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IHttpMethod {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921859618, data2: 28685, data3: 20448, data4: [175, 165, 64, 41, 156, 88, 219, 253] };
+}
 #[repr(C)]
 pub struct IHttpMethodFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, method: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IHttpMethodFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1011994893, data2: 14039, data3: 16632, data4: [168, 109, 231, 89, 202, 242, 248, 63] };
 }
 #[repr(C)]
 pub struct IHttpMethodStatics {
@@ -413,16 +455,25 @@ pub struct IHttpMethodStatics {
     pub Post: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Put: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IHttpMethodStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1691447792, data2: 55706, data3: 16723, data4: [141, 198, 214, 140, 196, 204, 227, 23] };
+}
 #[repr(C)]
 pub struct IHttpMultipartContent {
     pub base__: ::windows_sys::core::IInspectable,
     pub Add: unsafe extern "system" fn(this: *mut *mut Self, content: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IHttpMultipartContent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3750849279, data2: 39206, data3: 19145, data4: [170, 241, 224, 208, 78, 240, 155, 185] };
 }
 #[repr(C)]
 pub struct IHttpMultipartContentFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub CreateWithSubtype: unsafe extern "system" fn(this: *mut *mut Self, subtype: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub CreateWithSubtypeAndBoundary: unsafe extern "system" fn(this: *mut *mut Self, subtype: ::windows_sys::core::HSTRING, boundary: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IHttpMultipartContentFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2125737570, data2: 546, data3: 20256, data4: [179, 114, 71, 213, 219, 93, 51, 180] };
 }
 #[repr(C)]
 pub struct IHttpMultipartFormDataContent {
@@ -431,10 +482,16 @@ pub struct IHttpMultipartFormDataContent {
     pub AddWithName: unsafe extern "system" fn(this: *mut *mut Self, content: *mut ::core::ffi::c_void, name: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub AddWithNameAndFileName: unsafe extern "system" fn(this: *mut *mut Self, content: *mut ::core::ffi::c_void, name: ::windows_sys::core::HSTRING, filename: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IHttpMultipartFormDataContent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1691564002, data2: 59751, data3: 17956, data4: [182, 209, 207, 116, 96, 74, 74, 66] };
+}
 #[repr(C)]
 pub struct IHttpMultipartFormDataContentFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub CreateWithBoundary: unsafe extern "system" fn(this: *mut *mut Self, boundary: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IHttpMultipartFormDataContentFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2689430289, data2: 20503, data3: 17954, data4: [147, 168, 73, 178, 74, 79, 203, 252] };
 }
 #[repr(C)]
 pub struct IHttpRequestMessage {
@@ -461,6 +518,9 @@ pub struct IHttpRequestMessage {
     SetRequestUri: usize,
     pub TransportInformation: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IHttpRequestMessage {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4118162236, data2: 29908, data3: 18449, data4: [181, 220, 159, 139, 78, 47, 154, 191] };
+}
 #[repr(C)]
 pub struct IHttpRequestMessageFactory {
     pub base__: ::windows_sys::core::IInspectable,
@@ -469,6 +529,9 @@ pub struct IHttpRequestMessageFactory {
     #[cfg(not(feature = "Foundation"))]
     Create: usize,
 }
+impl ::windows_sys::core::Interface for IHttpRequestMessageFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1538038094, data2: 14470, data3: 16686, data4: [174, 195, 82, 236, 127, 37, 97, 111] };
+}
 #[repr(C)]
 pub struct IHttpRequestResult {
     pub base__: ::windows_sys::core::IInspectable,
@@ -476,6 +539,9 @@ pub struct IHttpRequestResult {
     pub RequestMessage: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub ResponseMessage: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Succeeded: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IHttpRequestResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1791970728, data2: 46571, data3: 18997, data4: [169, 2, 66, 23, 251, 232, 32, 197] };
 }
 #[repr(C)]
 pub struct IHttpResponseMessage {
@@ -499,10 +565,16 @@ pub struct IHttpResponseMessage {
     pub SetVersion: unsafe extern "system" fn(this: *mut *mut Self, value: HttpVersion) -> ::windows_sys::core::HRESULT,
     pub EnsureSuccessStatusCode: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IHttpResponseMessage {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4276224251, data2: 34404, data3: 17632, data4: [149, 217, 66, 105, 97, 153, 191, 252] };
+}
 #[repr(C)]
 pub struct IHttpResponseMessageFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, statuscode: HttpStatusCode, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IHttpResponseMessageFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1386786713, data2: 61589, data3: 17370, data4: [182, 15, 124, 252, 43, 199, 234, 47] };
 }
 #[repr(C)]
 pub struct IHttpStreamContentFactory {
@@ -511,6 +583,9 @@ pub struct IHttpStreamContentFactory {
     pub CreateFromInputStream: unsafe extern "system" fn(this: *mut *mut Self, content: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Storage_Streams"))]
     CreateFromInputStream: usize,
+}
+impl ::windows_sys::core::Interface for IHttpStreamContentFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4091956637, data2: 63269, data3: 16510, data4: [148, 47, 14, 218, 24, 152, 9, 244] };
 }
 #[repr(C)]
 pub struct IHttpStringContentFactory {
@@ -524,6 +599,9 @@ pub struct IHttpStringContentFactory {
     pub CreateFromStringWithEncodingAndMediaType: unsafe extern "system" fn(this: *mut *mut Self, content: ::windows_sys::core::HSTRING, encoding: super::super::Storage::Streams::UnicodeEncoding, mediatype: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Storage_Streams"))]
     CreateFromStringWithEncodingAndMediaType: usize,
+}
+impl ::windows_sys::core::Interface for IHttpStringContentFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1180999003, data2: 11923, data3: 18667, data4: [142, 97, 25, 103, 120, 120, 229, 127] };
 }
 #[repr(C)]
 pub struct IHttpTransportInformation {
@@ -544,4 +622,7 @@ pub struct IHttpTransportInformation {
     pub ServerIntermediateCertificates: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Foundation_Collections", feature = "Security_Cryptography_Certificates")))]
     ServerIntermediateCertificates: usize,
+}
+impl ::windows_sys::core::Interface for IHttpTransportInformation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1880256920, data2: 50855, data3: 20176, data4: [131, 58, 131, 253, 139, 143, 23, 141] };
 }

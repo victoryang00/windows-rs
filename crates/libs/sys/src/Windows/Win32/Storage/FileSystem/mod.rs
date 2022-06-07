@@ -3285,10 +3285,17 @@ pub struct IDiskQuotaControl {
     pub GiveUserNameResolutionPriority: unsafe extern "system" fn(this: *mut *mut Self, puser: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub ShutdownNameResolution: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IDiskQuotaControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2039002482, data2: 60553, data3: 4559, data4: [156, 0, 0, 170, 0, 161, 79, 86] };
+}
 #[repr(C)]
 pub struct IDiskQuotaEvents {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnUserNameChanged: unsafe extern "system" fn(this: *mut *mut Self, puser: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDiskQuotaEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2039002489, data2: 60553, data3: 4559, data4: [156, 0, 0, 170, 0, 161, 79, 86] };
 }
 #[repr(C)]
 pub struct IDiskQuotaUser {
@@ -3315,6 +3322,9 @@ pub struct IDiskQuotaUser {
     pub Invalidate: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub GetAccountStatus: unsafe extern "system" fn(this: *mut *mut Self, pdwstatus: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDiskQuotaUser {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2039002484, data2: 60553, data3: 4559, data4: [156, 0, 0, 170, 0, 161, 79, 86] };
+}
 #[repr(C)]
 pub struct IDiskQuotaUserBatch {
     pub base__: ::windows_sys::core::IUnknown,
@@ -3323,6 +3333,9 @@ pub struct IDiskQuotaUserBatch {
     pub RemoveAll: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub FlushToDisk: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDiskQuotaUserBatch {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2039002486, data2: 60553, data3: 4559, data4: [156, 0, 0, 170, 0, 161, 79, 86] };
+}
 #[repr(C)]
 pub struct IEnumDiskQuotaUsers {
     pub base__: ::windows_sys::core::IUnknown,
@@ -3330,6 +3343,9 @@ pub struct IEnumDiskQuotaUsers {
     pub Skip: unsafe extern "system" fn(this: *mut *mut Self, cusers: u32) -> ::windows_sys::core::HRESULT,
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IEnumDiskQuotaUsers {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2039002487, data2: 60553, data3: 4559, data4: [156, 0, 0, 170, 0, 161, 79, 86] };
 }
 #[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
 pub const INVALID_FILE_ATTRIBUTES: u32 = 4294967295u32;

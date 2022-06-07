@@ -5,6 +5,9 @@ pub struct IUsbBulkInEndpointDescriptor {
     pub EndpointNumber: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u8) -> ::windows_sys::core::HRESULT,
     pub Pipe: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IUsbBulkInEndpointDescriptor {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1013860422, data2: 1743, data3: 17065, data4: [157, 194, 151, 28, 27, 20, 182, 227] };
+}
 #[repr(C)]
 pub struct IUsbBulkInPipe {
     pub base__: ::windows_sys::core::IInspectable,
@@ -22,12 +25,18 @@ pub struct IUsbBulkInPipe {
     #[cfg(not(feature = "Storage_Streams"))]
     InputStream: usize,
 }
+impl ::windows_sys::core::Interface for IUsbBulkInPipe {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4028443963, data2: 17736, data3: 19792, data4: [179, 38, 216, 44, 218, 190, 18, 32] };
+}
 #[repr(C)]
 pub struct IUsbBulkOutEndpointDescriptor {
     pub base__: ::windows_sys::core::IInspectable,
     pub MaxPacketSize: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
     pub EndpointNumber: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u8) -> ::windows_sys::core::HRESULT,
     pub Pipe: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUsbBulkOutEndpointDescriptor {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 673219706, data2: 65518, data3: 20320, data4: [155, 225, 149, 108, 172, 62, 203, 101] };
 }
 #[repr(C)]
 pub struct IUsbBulkOutPipe {
@@ -44,6 +53,9 @@ pub struct IUsbBulkOutPipe {
     #[cfg(not(feature = "Storage_Streams"))]
     OutputStream: usize,
 }
+impl ::windows_sys::core::Interface for IUsbBulkOutPipe {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2833903214, data2: 277, data3: 17834, data4: [139, 33, 55, 178, 37, 188, 206, 231] };
+}
 #[repr(C)]
 pub struct IUsbConfiguration {
     pub base__: ::windows_sys::core::IInspectable,
@@ -57,6 +69,9 @@ pub struct IUsbConfiguration {
     #[cfg(not(feature = "Foundation_Collections"))]
     Descriptors: usize,
 }
+impl ::windows_sys::core::Interface for IUsbConfiguration {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1746367529, data2: 13993, data3: 18135, data4: [184, 115, 252, 104, 146, 81, 236, 48] };
+}
 #[repr(C)]
 pub struct IUsbConfigurationDescriptor {
     pub base__: ::windows_sys::core::IInspectable,
@@ -65,11 +80,17 @@ pub struct IUsbConfigurationDescriptor {
     pub SelfPowered: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub RemoteWakeup: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IUsbConfigurationDescriptor {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4061621650, data2: 46146, data3: 16506, data4: [130, 7, 125, 100, 108, 3, 133, 243] };
+}
 #[repr(C)]
 pub struct IUsbConfigurationDescriptorStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub TryParse: unsafe extern "system" fn(this: *mut *mut Self, descriptor: *mut ::core::ffi::c_void, parsed: *mut *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub Parse: unsafe extern "system" fn(this: *mut *mut Self, descriptor: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUsbConfigurationDescriptorStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1112337811, data2: 59200, data3: 16545, data4: [146, 189, 218, 18, 14, 160, 73, 20] };
 }
 #[repr(C)]
 pub struct IUsbControlRequestType {
@@ -83,6 +104,9 @@ pub struct IUsbControlRequestType {
     pub AsByte: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u8) -> ::windows_sys::core::HRESULT,
     pub SetAsByte: unsafe extern "system" fn(this: *mut *mut Self, value: u8) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IUsbControlRequestType {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2392090022, data2: 55101, data3: 18142, data4: [148, 190, 170, 231, 240, 124, 15, 92] };
+}
 #[repr(C)]
 pub struct IUsbDescriptor {
     pub base__: ::windows_sys::core::IInspectable,
@@ -92,6 +116,9 @@ pub struct IUsbDescriptor {
     pub ReadDescriptorBuffer: unsafe extern "system" fn(this: *mut *mut Self, buffer: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Storage_Streams"))]
     ReadDescriptorBuffer: usize,
+}
+impl ::windows_sys::core::Interface for IUsbDescriptor {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 176812566, data2: 24477, data3: 18548, data4: [137, 4, 218, 154, 211, 245, 82, 143] };
 }
 #[repr(C)]
 pub struct IUsbDevice {
@@ -116,6 +143,9 @@ pub struct IUsbDevice {
     pub DeviceDescriptor: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Configuration: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IUsbDevice {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1380563346, data2: 50262, data3: 17621, data4: [173, 94, 36, 245, 160, 137, 246, 59] };
+}
 #[repr(C)]
 pub struct IUsbDeviceClass {
     pub base__: ::windows_sys::core::IInspectable,
@@ -138,9 +168,15 @@ pub struct IUsbDeviceClass {
     #[cfg(not(feature = "Foundation"))]
     SetProtocolCode: usize,
 }
+impl ::windows_sys::core::Interface for IUsbDeviceClass {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 85541625, data2: 33886, data3: 18411, data4: [177, 42, 56, 242, 246, 23, 175, 231] };
+}
 #[repr(C)]
 pub struct IUsbDeviceClasses {
     pub base__: ::windows_sys::core::IInspectable,
+}
+impl ::windows_sys::core::Interface for IUsbDeviceClasses {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1752143197, data2: 39826, data3: 19248, data4: [151, 129, 194, 44, 85, 172, 53, 203] };
 }
 #[repr(C)]
 pub struct IUsbDeviceClassesStatics {
@@ -155,6 +191,9 @@ pub struct IUsbDeviceClassesStatics {
     pub Measurement: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub VendorSpecific: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IUsbDeviceClassesStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2987066663, data2: 50560, data3: 17817, data4: [161, 101, 152, 27, 79, 208, 50, 48] };
+}
 #[repr(C)]
 pub struct IUsbDeviceDescriptor {
     pub base__: ::windows_sys::core::IInspectable,
@@ -164,6 +203,9 @@ pub struct IUsbDeviceDescriptor {
     pub ProductId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
     pub BcdDeviceRevision: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
     pub NumberOfConfigurations: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u8) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUsbDeviceDescriptor {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 524866038, data2: 47767, data3: 17186, data4: [185, 44, 181, 177, 137, 33, 101, 136] };
 }
 #[repr(C)]
 pub struct IUsbDeviceStatics {
@@ -177,6 +219,9 @@ pub struct IUsbDeviceStatics {
     #[cfg(not(feature = "Foundation"))]
     FromIdAsync: usize,
 }
+impl ::windows_sys::core::Interface for IUsbDeviceStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 107709858, data2: 2487, data3: 17478, data4: [133, 2, 111, 230, 220, 170, 115, 9] };
+}
 #[repr(C)]
 pub struct IUsbEndpointDescriptor {
     pub base__: ::windows_sys::core::IInspectable,
@@ -188,11 +233,17 @@ pub struct IUsbEndpointDescriptor {
     pub AsBulkOutEndpointDescriptor: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub AsInterruptOutEndpointDescriptor: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IUsbEndpointDescriptor {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1799906009, data2: 36343, data3: 19264, data4: [172, 131, 87, 143, 19, 159, 5, 117] };
+}
 #[repr(C)]
 pub struct IUsbEndpointDescriptorStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub TryParse: unsafe extern "system" fn(this: *mut *mut Self, descriptor: *mut ::core::ffi::c_void, parsed: *mut *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub Parse: unsafe extern "system" fn(this: *mut *mut Self, descriptor: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUsbEndpointDescriptorStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3364925953, data2: 39530, data3: 18782, data4: [168, 44, 41, 91, 158, 112, 129, 6] };
 }
 #[repr(C)]
 pub struct IUsbInterface {
@@ -223,6 +274,9 @@ pub struct IUsbInterface {
     #[cfg(not(feature = "Foundation_Collections"))]
     Descriptors: usize,
 }
+impl ::windows_sys::core::Interface for IUsbInterface {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2687642517, data2: 32583, data3: 18603, data4: [167, 39, 103, 140, 37, 190, 33, 18] };
+}
 #[repr(C)]
 pub struct IUsbInterfaceDescriptor {
     pub base__: ::windows_sys::core::IInspectable,
@@ -232,11 +286,17 @@ pub struct IUsbInterfaceDescriptor {
     pub AlternateSettingNumber: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u8) -> ::windows_sys::core::HRESULT,
     pub InterfaceNumber: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u8) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IUsbInterfaceDescriptor {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 429289671, data2: 47086, data3: 20368, data4: [140, 213, 148, 162, 226, 87, 89, 138] };
+}
 #[repr(C)]
 pub struct IUsbInterfaceDescriptorStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub TryParse: unsafe extern "system" fn(this: *mut *mut Self, descriptor: *mut ::core::ffi::c_void, parsed: *mut *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub Parse: unsafe extern "system" fn(this: *mut *mut Self, descriptor: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUsbInterfaceDescriptorStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3813318645, data2: 30678, data3: 18614, data4: [176, 190, 22, 198, 66, 35, 22, 254] };
 }
 #[repr(C)]
 pub struct IUsbInterfaceSetting {
@@ -268,6 +328,9 @@ pub struct IUsbInterfaceSetting {
     #[cfg(not(feature = "Foundation_Collections"))]
     Descriptors: usize,
 }
+impl ::windows_sys::core::Interface for IUsbInterfaceSetting {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 405257127, data2: 36263, data3: 19191, data4: [143, 76, 127, 48, 50, 231, 129, 245] };
+}
 #[repr(C)]
 pub struct IUsbInterruptInEndpointDescriptor {
     pub base__: ::windows_sys::core::IInspectable,
@@ -279,6 +342,9 @@ pub struct IUsbInterruptInEndpointDescriptor {
     Interval: usize,
     pub Pipe: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IUsbInterruptInEndpointDescriptor {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3226634599, data2: 51473, data3: 19514, data4: [134, 178, 65, 156, 45, 168, 144, 57] };
+}
 #[repr(C)]
 pub struct IUsbInterruptInEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
@@ -286,6 +352,9 @@ pub struct IUsbInterruptInEventArgs {
     pub InterruptData: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Storage_Streams"))]
     InterruptData: usize,
+}
+impl ::windows_sys::core::Interface for IUsbInterruptInEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3081781394, data2: 5144, data3: 18742, data4: [130, 9, 41, 156, 245, 96, 85, 131] };
 }
 #[repr(C)]
 pub struct IUsbInterruptInPipe {
@@ -304,6 +373,9 @@ pub struct IUsbInterruptInPipe {
     #[cfg(not(feature = "Foundation"))]
     RemoveDataReceived: usize,
 }
+impl ::windows_sys::core::Interface for IUsbInterruptInPipe {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4194332950, data2: 34007, data3: 18631, data4: [138, 63, 76, 11, 35, 95, 46, 166] };
+}
 #[repr(C)]
 pub struct IUsbInterruptOutEndpointDescriptor {
     pub base__: ::windows_sys::core::IInspectable,
@@ -314,6 +386,9 @@ pub struct IUsbInterruptOutEndpointDescriptor {
     #[cfg(not(feature = "Foundation"))]
     Interval: usize,
     pub Pipe: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUsbInterruptOutEndpointDescriptor {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3433033089, data2: 4298, data3: 17715, data4: [149, 45, 158, 39, 131, 65, 232, 15] };
 }
 #[repr(C)]
 pub struct IUsbInterruptOutPipe {
@@ -330,6 +405,9 @@ pub struct IUsbInterruptOutPipe {
     #[cfg(not(feature = "Storage_Streams"))]
     OutputStream: usize,
 }
+impl ::windows_sys::core::Interface for IUsbInterruptOutPipe {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3917793449, data2: 43769, data3: 18896, data4: [185, 108, 246, 97, 171, 74, 127, 149] };
+}
 #[repr(C)]
 pub struct IUsbSetupPacket {
     pub base__: ::windows_sys::core::IInspectable,
@@ -344,6 +422,9 @@ pub struct IUsbSetupPacket {
     pub Length: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
     pub SetLength: unsafe extern "system" fn(this: *mut *mut Self, value: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IUsbSetupPacket {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 273391922, data2: 51087, data3: 19537, data4: [182, 84, 228, 157, 2, 242, 203, 3] };
+}
 #[repr(C)]
 pub struct IUsbSetupPacketFactory {
     pub base__: ::windows_sys::core::IInspectable,
@@ -351,6 +432,9 @@ pub struct IUsbSetupPacketFactory {
     pub CreateWithEightByteBuffer: unsafe extern "system" fn(this: *mut *mut Self, eightbytebuffer: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Storage_Streams"))]
     CreateWithEightByteBuffer: usize,
+}
+impl ::windows_sys::core::Interface for IUsbSetupPacketFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3374677328, data2: 6958, data3: 19009, data4: [162, 167, 51, 143, 12, 239, 60, 20] };
 }
 pub type UsbBulkInEndpointDescriptor = *mut ::core::ffi::c_void;
 pub type UsbBulkInPipe = *mut ::core::ffi::c_void;

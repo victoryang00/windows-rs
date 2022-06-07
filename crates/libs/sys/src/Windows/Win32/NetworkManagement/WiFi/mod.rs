@@ -5631,10 +5631,16 @@ pub struct IDot11AdHocInterface {
     pub GetIEnumDot11AdHocNetworks: unsafe extern "system" fn(this: *mut *mut Self, pfilterguid: *const ::windows_sys::core::GUID, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetStatus: unsafe extern "system" fn(this: *mut *mut Self, pstate: *mut DOT11_ADHOC_NETWORK_CONNECTION_STATUS) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDot11AdHocInterface {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2400242731, data2: 53005, data3: 17056, data4: [172, 190, 226, 222, 112, 7, 56, 77] };
+}
 #[repr(C)]
 pub struct IDot11AdHocInterfaceNotificationSink {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnConnectionStatusChange: unsafe extern "system" fn(this: *mut *mut Self, estatus: DOT11_ADHOC_NETWORK_CONNECTION_STATUS) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDot11AdHocInterfaceNotificationSink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2400242735, data2: 53005, data3: 17056, data4: [172, 190, 226, 222, 112, 7, 56, 77] };
 }
 #[repr(C)]
 pub struct IDot11AdHocManager {
@@ -5648,6 +5654,9 @@ pub struct IDot11AdHocManager {
     pub GetIEnumDot11AdHocInterfaces: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetNetwork: unsafe extern "system" fn(this: *mut *mut Self, networksignature: *const ::windows_sys::core::GUID, pnetwork: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDot11AdHocManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2400242726, data2: 53005, data3: 17056, data4: [172, 190, 226, 222, 112, 7, 56, 77] };
+}
 #[repr(C)]
 pub struct IDot11AdHocManagerNotificationSink {
     pub base__: ::windows_sys::core::IUnknown,
@@ -5655,6 +5664,9 @@ pub struct IDot11AdHocManagerNotificationSink {
     pub OnNetworkRemove: unsafe extern "system" fn(this: *mut *mut Self, signature: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub OnInterfaceAdd: unsafe extern "system" fn(this: *mut *mut Self, piadhocinterface: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub OnInterfaceRemove: unsafe extern "system" fn(this: *mut *mut Self, signature: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDot11AdHocManagerNotificationSink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2400242727, data2: 53005, data3: 17056, data4: [172, 190, 226, 222, 112, 7, 56, 77] };
 }
 #[repr(C)]
 pub struct IDot11AdHocNetwork {
@@ -5675,17 +5687,26 @@ pub struct IDot11AdHocNetwork {
     Connect: usize,
     pub Disconnect: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDot11AdHocNetwork {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2400242729, data2: 53005, data3: 17056, data4: [172, 190, 226, 222, 112, 7, 56, 77] };
+}
 #[repr(C)]
 pub struct IDot11AdHocNetworkNotificationSink {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnStatusChange: unsafe extern "system" fn(this: *mut *mut Self, estatus: DOT11_ADHOC_NETWORK_CONNECTION_STATUS) -> ::windows_sys::core::HRESULT,
     pub OnConnectFail: unsafe extern "system" fn(this: *mut *mut Self, efailreason: DOT11_ADHOC_CONNECT_FAIL_REASON) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDot11AdHocNetworkNotificationSink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2400242730, data2: 53005, data3: 17056, data4: [172, 190, 226, 222, 112, 7, 56, 77] };
+}
 #[repr(C)]
 pub struct IDot11AdHocSecuritySettings {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetDot11AuthAlgorithm: unsafe extern "system" fn(this: *mut *mut Self, pauth: *mut DOT11_ADHOC_AUTH_ALGORITHM) -> ::windows_sys::core::HRESULT,
     pub GetDot11CipherAlgorithm: unsafe extern "system" fn(this: *mut *mut Self, pcipher: *mut DOT11_ADHOC_CIPHER_ALGORITHM) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDot11AdHocSecuritySettings {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2400242734, data2: 53005, data3: 17056, data4: [172, 190, 226, 222, 112, 7, 56, 77] };
 }
 #[repr(C)]
 pub struct IEnumDot11AdHocInterfaces {
@@ -5695,6 +5716,9 @@ pub struct IEnumDot11AdHocInterfaces {
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEnumDot11AdHocInterfaces {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2400242732, data2: 53005, data3: 17056, data4: [172, 190, 226, 222, 112, 7, 56, 77] };
+}
 #[repr(C)]
 pub struct IEnumDot11AdHocNetworks {
     pub base__: ::windows_sys::core::IUnknown,
@@ -5703,6 +5727,9 @@ pub struct IEnumDot11AdHocNetworks {
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEnumDot11AdHocNetworks {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2400242728, data2: 53005, data3: 17056, data4: [172, 190, 226, 222, 112, 7, 56, 77] };
+}
 #[repr(C)]
 pub struct IEnumDot11AdHocSecuritySettings {
     pub base__: ::windows_sys::core::IUnknown,
@@ -5710,6 +5737,9 @@ pub struct IEnumDot11AdHocSecuritySettings {
     pub Skip: unsafe extern "system" fn(this: *mut *mut Self, celt: u32) -> ::windows_sys::core::HRESULT,
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IEnumDot11AdHocSecuritySettings {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2400242733, data2: 53005, data3: 17056, data4: [172, 190, 226, 222, 112, 7, 56, 77] };
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_WiFi\"`*"]
 pub const IHV_INIT_FUNCTION_NAME: &str = "Dot11ExtIhvInitService";

@@ -226,6 +226,9 @@ pub struct ILocationPermissions {
     GetGlobalLocationPermission: usize,
     pub CheckLocationCapability: unsafe extern "system" fn(this: *mut *mut Self, dwclientthreadid: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ILocationPermissions {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3589999231, data2: 59214, data3: 17653, data4: [142, 2, 72, 6, 134, 58, 39, 79] };
+}
 #[repr(C)]
 pub struct ISensor {
     pub base__: ::windows_sys::core::IUnknown,
@@ -263,6 +266,9 @@ pub struct ISensor {
     pub SetEventInterest: unsafe extern "system" fn(this: *mut *mut Self, pvalues: *const ::windows_sys::core::GUID, count: u32) -> ::windows_sys::core::HRESULT,
     pub SetEventSink: unsafe extern "system" fn(this: *mut *mut Self, pevents: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISensor {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1604358016, data2: 9815, data3: 17806, data4: [175, 117, 70, 247, 63, 166, 172, 92] };
+}
 #[repr(C)]
 pub struct ISensorCollection {
     pub base__: ::windows_sys::core::IUnknown,
@@ -272,6 +278,9 @@ pub struct ISensorCollection {
     pub Remove: unsafe extern "system" fn(this: *mut *mut Self, psensor: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub RemoveByID: unsafe extern "system" fn(this: *mut *mut Self, sensorid: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub Clear: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISensorCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 592911889, data2: 58693, data3: 19928, data4: [163, 55, 184, 155, 244, 75, 16, 223] };
 }
 #[repr(C)]
 pub struct ISensorDataReport {
@@ -289,6 +298,9 @@ pub struct ISensorDataReport {
     #[cfg(not(feature = "Win32_Devices_PortableDevices"))]
     GetSensorValues: usize,
 }
+impl ::windows_sys::core::Interface for ISensorDataReport {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 179953563, data2: 50357, data3: 18326, data4: [136, 152, 4, 112, 112, 106, 46, 29] };
+}
 #[repr(C)]
 pub struct ISensorEvents {
     pub base__: ::windows_sys::core::IUnknown,
@@ -299,6 +311,9 @@ pub struct ISensorEvents {
     #[cfg(not(feature = "Win32_Devices_PortableDevices"))]
     OnEvent: usize,
     pub OnLeave: unsafe extern "system" fn(this: *mut *mut Self, id: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISensorEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1569574033, data2: 17985, data3: 18407, data4: [183, 195, 183, 79, 72, 166, 195, 145] };
 }
 #[repr(C)]
 pub struct ISensorManager {
@@ -312,10 +327,16 @@ pub struct ISensorManager {
     #[cfg(not(feature = "Win32_Foundation"))]
     RequestPermissions: usize,
 }
+impl ::windows_sys::core::Interface for ISensorManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3178748775, data2: 17832, data3: 17116, data4: [141, 0, 109, 207, 21, 248, 55, 122] };
+}
 #[repr(C)]
 pub struct ISensorManagerEvents {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnSensorEnter: unsafe extern "system" fn(this: *mut *mut Self, psensor: *mut ::core::ffi::c_void, state: SensorState) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISensorManagerEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2604338054, data2: 9834, data3: 19117, data4: [178, 31, 253, 229, 80, 16, 1, 183] };
 }
 #[doc = "*Required features: `\"Win32_Devices_Sensors\"`*"]
 pub type LOCATION_DESIRED_ACCURACY = i32;

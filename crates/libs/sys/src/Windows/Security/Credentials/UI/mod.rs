@@ -62,6 +62,9 @@ pub struct ICredentialPickerOptions {
     pub SetCredentialSaveOption: unsafe extern "system" fn(this: *mut *mut Self, value: CredentialSaveOption) -> ::windows_sys::core::HRESULT,
     pub CredentialSaveOption: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut CredentialSaveOption) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ICredentialPickerOptions {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2522483532, data2: 38394, data3: 18047, data4: [153, 43, 11, 34, 229, 133, 155, 246] };
+}
 #[repr(C)]
 pub struct ICredentialPickerResults {
     pub base__: ::windows_sys::core::IInspectable,
@@ -75,6 +78,9 @@ pub struct ICredentialPickerResults {
     pub CredentialDomainName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub CredentialUserName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub CredentialPassword: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ICredentialPickerResults {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 424212890, data2: 52272, data3: 16652, data4: [156, 56, 204, 8, 132, 197, 179, 215] };
 }
 #[repr(C)]
 pub struct ICredentialPickerStatics {
@@ -92,6 +98,9 @@ pub struct ICredentialPickerStatics {
     #[cfg(not(feature = "Foundation"))]
     PickWithCaptionAsync: usize,
 }
+impl ::windows_sys::core::Interface for ICredentialPickerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2855951475, data2: 51690, data3: 18306, data4: [153, 251, 230, 215, 233, 56, 225, 45] };
+}
 #[repr(C)]
 pub struct IUserConsentVerifierStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -103,6 +112,9 @@ pub struct IUserConsentVerifierStatics {
     pub RequestVerificationAsync: unsafe extern "system" fn(this: *mut *mut Self, message: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     RequestVerificationAsync: usize,
+}
+impl ::windows_sys::core::Interface for IUserConsentVerifierStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2941206417, data2: 22092, data3: 19932, data4: [184, 181, 151, 52, 71, 98, 124, 101] };
 }
 #[doc = "*Required features: `\"Security_Credentials_UI\"`*"]
 #[repr(transparent)]

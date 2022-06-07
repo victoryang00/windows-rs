@@ -3927,6 +3927,10 @@ pub struct IADs {
     GetInfoEx: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IADs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4253177552, data2: 64789, data3: 4558, data4: [171, 196, 2, 96, 140, 158, 117, 83] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IADsADSystemInfo {
     pub base__: super::super::System::Com::IDispatch,
@@ -3978,6 +3982,10 @@ pub struct IADsADSystemInfo {
     GetTrees: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IADsADSystemInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1538332969, data2: 45009, data3: 4562, data4: [156, 185, 0, 0, 248, 122, 54, 158] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IADsAccessControlEntry {
     pub base__: super::super::System::Com::IDispatch,
@@ -4015,6 +4023,10 @@ pub struct IADsAccessControlEntry {
     SetTrustee: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IADsAccessControlEntry {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3035865420, data2: 39901, data3: 4560, data4: [133, 44, 0, 192, 79, 216, 213, 3] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IADsAccessControlList {
     pub base__: super::super::System::Com::IDispatch,
@@ -4035,6 +4047,10 @@ pub struct IADsAccessControlList {
     #[cfg(not(feature = "Win32_System_Com"))]
     CopyAccessList: usize,
     pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IADsAccessControlList {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3085865420, data2: 39901, data3: 4560, data4: [133, 44, 0, 192, 79, 216, 213, 3] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -4063,6 +4079,10 @@ pub struct IADsAcl {
     #[cfg(not(feature = "Win32_System_Com"))]
     CopyAcl: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IADsAcl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2220020651, data2: 2153, data3: 4561, data4: [163, 119, 0, 192, 79, 185, 80, 220] };
+}
 #[repr(C)]
 pub struct IADsAggregatee {
     pub base__: ::windows_sys::core::IUnknown,
@@ -4071,11 +4091,17 @@ pub struct IADsAggregatee {
     pub RelinquishInterface: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub RestoreInterface: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IADsAggregatee {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 323407500, data2: 36921, data3: 4560, data4: [133, 40, 0, 192, 79, 216, 213, 3] };
+}
 #[repr(C)]
 pub struct IADsAggregator {
     pub base__: ::windows_sys::core::IUnknown,
     pub ConnectAsAggregator: unsafe extern "system" fn(this: *mut *mut Self, paggregatee: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub DisconnectAsAggregator: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IADsAggregator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1390108592, data2: 37919, data3: 4560, data4: [133, 41, 0, 192, 79, 216, 213, 3] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -4093,6 +4119,10 @@ pub struct IADsBackLink {
     SetObjectName: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IADsBackLink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4245881533, data2: 16512, data3: 4561, data4: [163, 172, 0, 192, 79, 185, 80, 220] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IADsCaseIgnoreList {
     pub base__: super::super::System::Com::IDispatch,
@@ -4104,6 +4134,10 @@ pub struct IADsCaseIgnoreList {
     pub SetCaseIgnoreList: unsafe extern "system" fn(this: *mut *mut Self, vcaseignorelist: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     SetCaseIgnoreList: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IADsCaseIgnoreList {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2070328627, data2: 18048, data3: 4561, data4: [163, 180, 0, 192, 79, 185, 80, 220] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -4207,6 +4241,10 @@ pub struct IADsClass {
     Qualifiers: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IADsClass {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3371777488, data2: 19168, data3: 4559, data4: [158, 115, 0, 170, 0, 74, 86, 145] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IADsCollection {
     pub base__: super::super::System::Com::IDispatch,
@@ -4223,6 +4261,10 @@ pub struct IADsCollection {
     pub GetObject: unsafe extern "system" fn(this: *mut *mut Self, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pvitem: *mut super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     GetObject: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IADsCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1924744672, data2: 9531, data3: 4559, data4: [169, 136, 0, 170, 0, 107, 193, 73] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -4358,6 +4400,10 @@ pub struct IADsComputer {
     SetNetAddresses: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IADsComputer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4024683632, data2: 7583, data3: 4559, data4: [177, 243, 2, 96, 140, 158, 117, 83] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IADsComputerOperations {
     pub base__: IADs,
@@ -4366,6 +4412,10 @@ pub struct IADsComputerOperations {
     #[cfg(not(feature = "Win32_System_Com"))]
     Status: usize,
     pub Shutdown: unsafe extern "system" fn(this: *mut *mut Self, breboot: i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IADsComputerOperations {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4014569088, data2: 7583, data3: 4559, data4: [177, 243, 2, 96, 140, 158, 117, 83] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -4411,6 +4461,10 @@ pub struct IADsContainer {
     MoveHere: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IADsContainer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1472464, data2: 64790, data3: 4558, data4: [171, 196, 2, 96, 140, 158, 117, 83] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IADsDNWithBinary {
     pub base__: super::super::System::Com::IDispatch,
@@ -4430,6 +4484,10 @@ pub struct IADsDNWithBinary {
     pub SetDNString: unsafe extern "system" fn(this: *mut *mut Self, bstrdnstring: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     SetDNString: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IADsDNWithBinary {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2124005538, data2: 63797, data3: 4562, data4: [186, 150, 0, 192, 79, 182, 208, 209] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -4453,10 +4511,18 @@ pub struct IADsDNWithString {
     SetDNString: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IADsDNWithString {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 923660334, data2: 63796, data3: 4562, data4: [186, 150, 0, 192, 79, 182, 208, 209] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IADsDeleteOps {
     pub base__: super::super::System::Com::IDispatch,
     pub DeleteObject: unsafe extern "system" fn(this: *mut *mut Self, lnflags: i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IADsDeleteOps {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2998733058, data2: 34936, data3: 4561, data4: [140, 33, 0, 192, 79, 216, 213, 3] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -4481,6 +4547,10 @@ pub struct IADsDomain {
     pub SetLockoutObservationInterval: unsafe extern "system" fn(this: *mut *mut Self, lnlockoutobservationinterval: i32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IADsDomain {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 14991904, data2: 64790, data3: 4558, data4: [171, 196, 2, 96, 140, 158, 117, 83] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IADsEmail {
     pub base__: super::super::System::Com::IDispatch,
@@ -4495,6 +4565,10 @@ pub struct IADsEmail {
     #[cfg(not(feature = "Win32_Foundation"))]
     SetAddress: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IADsEmail {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2544828698, data2: 18318, data3: 4561, data4: [163, 180, 0, 192, 79, 185, 80, 220] };
+}
 #[repr(C)]
 pub struct IADsExtension {
     pub base__: ::windows_sys::core::IUnknown,
@@ -4507,6 +4581,9 @@ pub struct IADsExtension {
     pub PrivateInvoke: unsafe extern "system" fn(this: *mut *mut Self, dispidmember: i32, riid: *const ::windows_sys::core::GUID, lcid: u32, wflags: u16, pdispparams: *const super::super::System::Com::DISPPARAMS, pvarresult: *mut super::super::System::Com::VARIANT, pexcepinfo: *mut super::super::System::Com::EXCEPINFO, puargerr: *mut u32) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     PrivateInvoke: usize,
+}
+impl ::windows_sys::core::Interface for IADsExtension {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1026905404, data2: 53936, data3: 4561, data4: [177, 123, 0, 0, 248, 117, 147, 160] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -4530,6 +4607,10 @@ pub struct IADsFaxNumber {
     SetParameters: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IADsFaxNumber {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2836455081, data2: 18048, data3: 4561, data4: [163, 180, 0, 192, 79, 185, 80, 220] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IADsFileService {
     pub base__: IADsService,
@@ -4545,6 +4626,10 @@ pub struct IADsFileService {
     pub SetMaxUserCount: unsafe extern "system" fn(this: *mut *mut Self, lnmaxusercount: i32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IADsFileService {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2828867840, data2: 12746, data3: 4559, data4: [169, 138, 0, 170, 0, 107, 193, 73] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IADsFileServiceOperations {
     pub base__: IADsServiceOperations,
@@ -4556,6 +4641,10 @@ pub struct IADsFileServiceOperations {
     pub Resources: unsafe extern "system" fn(this: *mut *mut Self, ppresources: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     Resources: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IADsFileServiceOperations {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2687364368, data2: 12746, data3: 4559, data4: [169, 138, 0, 170, 0, 107, 193, 73] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -4590,6 +4679,10 @@ pub struct IADsFileShare {
     pub SetMaxUserCount: unsafe extern "system" fn(this: *mut *mut Self, lnmaxusercount: i32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IADsFileShare {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3949841136, data2: 19331, data3: 4559, data4: [169, 149, 0, 170, 0, 107, 193, 73] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IADsGroup {
     pub base__: IADs,
@@ -4619,6 +4712,10 @@ pub struct IADsGroup {
     Remove: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IADsGroup {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 660826880, data2: 16655, data3: 4559, data4: [177, 255, 2, 96, 140, 158, 117, 83] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IADsHold {
     pub base__: super::super::System::Com::IDispatch,
@@ -4634,6 +4731,10 @@ pub struct IADsHold {
     pub SetAmount: unsafe extern "system" fn(this: *mut *mut Self, lnamount: i32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IADsHold {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3018537783, data2: 16512, data3: 4561, data4: [163, 172, 0, 192, 79, 185, 80, 220] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IADsLargeInteger {
     pub base__: super::super::System::Com::IDispatch,
@@ -4641,6 +4742,10 @@ pub struct IADsLargeInteger {
     pub SetHighPart: unsafe extern "system" fn(this: *mut *mut Self, lnhighpart: i32) -> ::windows_sys::core::HRESULT,
     pub LowPart: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i32) -> ::windows_sys::core::HRESULT,
     pub SetLowPart: unsafe extern "system" fn(this: *mut *mut Self, lnlowpart: i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IADsLargeInteger {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2422744843, data2: 2361, data3: 4561, data4: [139, 225, 0, 192, 79, 216, 213, 3] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -4680,6 +4785,10 @@ pub struct IADsLocality {
     SetSeeAlso: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IADsLocality {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2690515874, data2: 61438, data3: 4559, data4: [138, 188, 0, 192, 79, 216, 213, 3] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IADsMembers {
     pub base__: super::super::System::Com::IDispatch,
@@ -4693,6 +4802,10 @@ pub struct IADsMembers {
     pub SetFilter: unsafe extern "system" fn(this: *mut *mut Self, pvfilter: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     SetFilter: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IADsMembers {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1159331888, data2: 29420, data3: 4559, data4: [176, 59, 0, 170, 0, 110, 9, 117] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -4725,6 +4838,10 @@ pub struct IADsNameTranslate {
     GetEx: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IADsNameTranslate {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2981261987, data2: 13861, data3: 4561, data4: [163, 164, 0, 192, 79, 185, 80, 220] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IADsNamespaces {
     pub base__: IADs,
@@ -4736,6 +4853,10 @@ pub struct IADsNamespaces {
     pub SetDefaultContainer: unsafe extern "system" fn(this: *mut *mut Self, bstrdefaultcontainer: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     SetDefaultContainer: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IADsNamespaces {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 683240352, data2: 45872, data3: 4559, data4: [169, 173, 0, 170, 0, 107, 193, 73] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -4751,6 +4872,10 @@ pub struct IADsNetAddress {
     pub SetAddress: unsafe extern "system" fn(this: *mut *mut Self, vaddress: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     SetAddress: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IADsNetAddress {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2988069033, data2: 16512, data3: 4561, data4: [163, 172, 0, 192, 79, 185, 80, 220] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -4804,6 +4929,10 @@ pub struct IADsO {
     pub SetSeeAlso: unsafe extern "system" fn(this: *mut *mut Self, vseealso: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     SetSeeAlso: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IADsO {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2714578374, data2: 61438, data3: 4559, data4: [138, 188, 0, 192, 79, 216, 213, 3] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -4867,6 +4996,10 @@ pub struct IADsOU {
     SetBusinessCategory: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IADsOU {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2734109624, data2: 61438, data3: 4559, data4: [138, 188, 0, 192, 79, 216, 213, 3] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IADsObjectOptions {
     pub base__: super::super::System::Com::IDispatch,
@@ -4878,6 +5011,10 @@ pub struct IADsObjectOptions {
     pub SetOption: unsafe extern "system" fn(this: *mut *mut Self, lnoption: i32, vvalue: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     SetOption: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IADsObjectOptions {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1190219738, data2: 9003, data3: 4561, data4: [168, 8, 0, 192, 79, 216, 213, 168] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -4893,6 +5030,10 @@ pub struct IADsOctetList {
     SetOctetList: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IADsOctetList {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2066266127, data2: 18048, data3: 4561, data4: [163, 180, 0, 192, 79, 185, 80, 220] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IADsOpenDSObject {
     pub base__: super::super::System::Com::IDispatch,
@@ -4900,6 +5041,10 @@ pub struct IADsOpenDSObject {
     pub OpenDSObject: unsafe extern "system" fn(this: *mut *mut Self, lpszdnname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, lpszusername: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, lpszpassword: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, lnreserved: i32, ppoledsobj: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     OpenDSObject: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IADsOpenDSObject {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3723659550, data2: 3996, data3: 4560, data4: [138, 212, 0, 192, 79, 216, 213, 3] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -4923,6 +5068,10 @@ pub struct IADsPath {
     pub SetPath: unsafe extern "system" fn(this: *mut *mut Self, bstrpath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     SetPath: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IADsPath {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2995256533, data2: 16512, data3: 4561, data4: [163, 172, 0, 192, 79, 185, 80, 220] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -4959,6 +5108,10 @@ pub struct IADsPathname {
     pub SetEscapedMode: unsafe extern "system" fn(this: *mut *mut Self, lnescapedmode: i32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IADsPathname {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3583160020, data2: 62496, data3: 4560, data4: [163, 110, 0, 192, 79, 185, 80, 220] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IADsPostalAddress {
     pub base__: super::super::System::Com::IDispatch,
@@ -4970,6 +5123,10 @@ pub struct IADsPostalAddress {
     pub SetPostalAddress: unsafe extern "system" fn(this: *mut *mut Self, vpostaladdress: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     SetPostalAddress: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IADsPostalAddress {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2061422377, data2: 18048, data3: 4561, data4: [163, 180, 0, 192, 79, 185, 80, 220] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -5022,6 +5179,10 @@ pub struct IADsPrintJob {
     SetNotifyPath: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IADsPrintJob {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 855336832, data2: 7888, data3: 4559, data4: [169, 136, 0, 170, 0, 107, 193, 73] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IADsPrintJobOperations {
     pub base__: IADs,
@@ -5032,6 +5193,10 @@ pub struct IADsPrintJobOperations {
     pub SetPosition: unsafe extern "system" fn(this: *mut *mut Self, lnposition: i32) -> ::windows_sys::core::HRESULT,
     pub Pause: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Resume: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IADsPrintJobOperations {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2589121328, data2: 7887, data3: 4559, data4: [169, 136, 0, 170, 0, 107, 193, 73] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -5119,6 +5284,10 @@ pub struct IADsPrintQueue {
     SetNetAddresses: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IADsPrintQueue {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2974900432, data2: 4646, data3: 4559, data4: [169, 133, 0, 170, 0, 107, 193, 73] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IADsPrintQueueOperations {
     pub base__: IADs,
@@ -5130,6 +5299,10 @@ pub struct IADsPrintQueueOperations {
     pub Pause: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Resume: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Purge: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IADsPrintQueueOperations {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 306963904, data2: 5486, data3: 4559, data4: [169, 134, 0, 170, 0, 107, 193, 73] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -5163,6 +5336,10 @@ pub struct IADsProperty {
     Qualifiers: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IADsProperty {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3371777491, data2: 19168, data3: 4559, data4: [158, 115, 0, 170, 0, 74, 86, 145] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IADsPropertyEntry {
     pub base__: super::super::System::Com::IDispatch,
@@ -5187,6 +5364,10 @@ pub struct IADsPropertyEntry {
     pub SetValues: unsafe extern "system" fn(this: *mut *mut Self, vvalues: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     SetValues: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IADsPropertyEntry {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 91827342, data2: 37919, data3: 4560, data4: [133, 41, 0, 192, 79, 216, 213, 3] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -5216,6 +5397,10 @@ pub struct IADsPropertyList {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     ResetPropertyItem: usize,
     pub PurgePropertyList: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IADsPropertyList {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3338011318, data2: 36713, data3: 4560, data4: [133, 40, 0, 192, 79, 216, 213, 3] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -5296,6 +5481,10 @@ pub struct IADsPropertyValue {
     pub SetUTCTime: unsafe extern "system" fn(this: *mut *mut Self, dautctime: f64) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IADsPropertyValue {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2046466768, data2: 43388, data3: 4560, data4: [133, 52, 0, 192, 79, 216, 213, 3] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IADsPropertyValue2 {
     pub base__: super::super::System::Com::IDispatch,
@@ -5307,6 +5496,10 @@ pub struct IADsPropertyValue2 {
     pub PutObjectProperty: unsafe extern "system" fn(this: *mut *mut Self, lnadstype: i32, vprop: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     PutObjectProperty: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IADsPropertyValue2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 812548892, data2: 23495, data3: 4561, data4: [163, 184, 0, 192, 79, 185, 80, 220] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -5336,6 +5529,10 @@ pub struct IADsReplicaPointer {
     SetReplicaAddressHints: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IADsReplicaPointer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4128225283, data2: 16512, data3: 4561, data4: [163, 172, 0, 192, 79, 185, 80, 220] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IADsResource {
     pub base__: IADs,
@@ -5352,6 +5549,10 @@ pub struct IADsResource {
     #[cfg(not(feature = "Win32_Foundation"))]
     Path: usize,
     pub LockCount: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IADsResource {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 882924320, data2: 19115, data3: 4559, data4: [174, 44, 0, 170, 0, 110, 191, 185] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -5407,6 +5608,10 @@ pub struct IADsSecurityDescriptor {
     CopySecurityDescriptor: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IADsSecurityDescriptor {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3100084170, data2: 39901, data3: 4560, data4: [133, 44, 0, 192, 79, 216, 213, 3] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IADsSecurityUtility {
     pub base__: super::super::System::Com::IDispatch,
@@ -5424,6 +5629,10 @@ pub struct IADsSecurityUtility {
     ConvertSecurityDescriptor: usize,
     pub SecurityMask: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i32) -> ::windows_sys::core::HRESULT,
     pub SetSecurityMask: unsafe extern "system" fn(this: *mut *mut Self, lnsecuritymask: i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IADsSecurityUtility {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2788315570, data2: 24353, data3: 18251, data4: [171, 82, 74, 142, 250, 209, 8, 149] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -5509,6 +5718,10 @@ pub struct IADsService {
     SetDependencies: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IADsService {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1756325600, data2: 12746, data3: 4559, data4: [169, 138, 0, 170, 0, 107, 193, 73] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IADsServiceOperations {
     pub base__: IADs,
@@ -5521,6 +5734,10 @@ pub struct IADsServiceOperations {
     pub SetPassword: unsafe extern "system" fn(this: *mut *mut Self, bstrnewpassword: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     SetPassword: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IADsServiceOperations {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1568355312, data2: 12746, data3: 4559, data4: [169, 138, 0, 170, 0, 107, 193, 73] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -5546,11 +5763,19 @@ pub struct IADsSession {
     pub IdleTime: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IADsSession {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 965442976, data2: 19115, data3: 4559, data4: [174, 44, 0, 170, 0, 110, 191, 185] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IADsSyntax {
     pub base__: IADs,
     pub OleAutoDataType: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i32) -> ::windows_sys::core::HRESULT,
     pub SetOleAutoDataType: unsafe extern "system" fn(this: *mut *mut Self, lnoleautodatatype: i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IADsSyntax {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3371777490, data2: 19168, data3: 4559, data4: [158, 115, 0, 170, 0, 74, 86, 145] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -5560,6 +5785,10 @@ pub struct IADsTimestamp {
     pub SetWholeSeconds: unsafe extern "system" fn(this: *mut *mut Self, lnwholeseconds: i32) -> ::windows_sys::core::HRESULT,
     pub EventID: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i32) -> ::windows_sys::core::HRESULT,
     pub SetEventID: unsafe extern "system" fn(this: *mut *mut Self, lneventid: i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IADsTimestamp {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3002444033, data2: 16512, data3: 4561, data4: [163, 172, 0, 192, 79, 185, 80, 220] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -5577,6 +5806,10 @@ pub struct IADsTypedName {
     pub SetLevel: unsafe extern "system" fn(this: *mut *mut Self, lnlevel: i32) -> ::windows_sys::core::HRESULT,
     pub Interval: unsafe extern "system" fn(this: *mut *mut Self, retval: *mut i32) -> ::windows_sys::core::HRESULT,
     pub SetInterval: unsafe extern "system" fn(this: *mut *mut Self, lninterval: i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IADsTypedName {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3010569033, data2: 16512, data3: 4561, data4: [163, 172, 0, 192, 79, 185, 80, 220] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -5867,6 +6100,10 @@ pub struct IADsUser {
     ChangePassword: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IADsUser {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1043850016, data2: 6114, data3: 4559, data4: [171, 196, 2, 96, 140, 158, 117, 83] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IADsWinNTSystemInfo {
     pub base__: super::super::System::Com::IDispatch,
@@ -5887,6 +6124,10 @@ pub struct IADsWinNTSystemInfo {
     #[cfg(not(feature = "Win32_Foundation"))]
     PDC: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IADsWinNTSystemInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1819108828, data2: 45009, data3: 4562, data4: [156, 185, 0, 0, 248, 122, 54, 158] };
+}
 #[repr(C)]
 pub struct ICommonQuery {
     pub base__: ::windows_sys::core::IUnknown,
@@ -5894,6 +6135,9 @@ pub struct ICommonQuery {
     pub OpenQueryWindow: unsafe extern "system" fn(this: *mut *mut Self, hwndparent: super::super::Foundation::HWND, pquerywnd: *mut OPENQUERYWINDOW, ppdataobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
     OpenQueryWindow: usize,
+}
+impl ::windows_sys::core::Interface for ICommonQuery {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2874203840, data2: 28445, data3: 4560, data4: [161, 196, 0, 170, 0, 193, 110, 101] };
 }
 #[repr(C)]
 pub struct IDirectoryObject {
@@ -5912,6 +6156,9 @@ pub struct IDirectoryObject {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     CreateDSObject: usize,
     pub DeleteDSObject: unsafe extern "system" fn(this: *mut *mut Self, pszrdnname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDirectoryObject {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3885555244, data2: 8932, data3: 4560, data4: [132, 254, 0, 192, 79, 216, 213, 3] };
 }
 #[repr(C)]
 pub struct IDirectorySchemaMgmt {
@@ -5943,6 +6190,9 @@ pub struct IDirectorySchemaMgmt {
     CreateClassDefinition: usize,
     pub DeleteClassDefinition: unsafe extern "system" fn(this: *mut *mut Self, pszclassname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDirectorySchemaMgmt {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1977301916, data2: 42200, data3: 4560, data4: [167, 156, 0, 192, 79, 216, 213, 168] };
+}
 #[repr(C)]
 pub struct IDirectorySearch {
     pub base__: ::windows_sys::core::IUnknown,
@@ -5966,6 +6216,9 @@ pub struct IDirectorySearch {
     FreeColumn: usize,
     pub CloseSearchHandle: unsafe extern "system" fn(this: *mut *mut Self, hsearchresult: isize) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDirectorySearch {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 278636780, data2: 37616, data3: 4560, data4: [167, 144, 0, 192, 79, 216, 213, 168] };
+}
 #[repr(C)]
 pub struct IDsAdminCreateObj {
     pub base__: ::windows_sys::core::IUnknown,
@@ -5978,6 +6231,9 @@ pub struct IDsAdminCreateObj {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     CreateModal: usize,
 }
+impl ::windows_sys::core::Interface for IDsAdminCreateObj {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1398098488, data2: 63746, data3: 4562, data4: [130, 185, 0, 192, 79, 104, 146, 139] };
+}
 #[repr(C)]
 pub struct IDsAdminNewObj {
     pub base__: ::windows_sys::core::IUnknown,
@@ -5986,6 +6242,9 @@ pub struct IDsAdminNewObj {
     #[cfg(not(feature = "Win32_Foundation"))]
     SetButtons: usize,
     pub GetPageCounts: unsafe extern "system" fn(this: *mut *mut Self, pntotal: *mut i32, pnstartindex: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDsAdminNewObj {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4065801607, data2: 59132, data3: 4562, data4: [130, 175, 0, 192, 79, 104, 146, 139] };
 }
 #[repr(C)]
 pub struct IDsAdminNewObjExt {
@@ -6015,11 +6274,17 @@ pub struct IDsAdminNewObjExt {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetSummaryInfo: usize,
 }
+impl ::windows_sys::core::Interface for IDsAdminNewObjExt {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1619585762, data2: 59327, data3: 4562, data4: [130, 175, 0, 192, 79, 104, 146, 139] };
+}
 #[repr(C)]
 pub struct IDsAdminNewObjPrimarySite {
     pub base__: ::windows_sys::core::IUnknown,
     pub CreateNew: unsafe extern "system" fn(this: *mut *mut Self, pszname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
     pub Commit: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDsAdminNewObjPrimarySite {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3190507646, data2: 63748, data3: 4562, data4: [130, 185, 0, 192, 79, 104, 146, 139] };
 }
 #[repr(C)]
 pub struct IDsAdminNotifyHandler {
@@ -6034,6 +6299,9 @@ pub struct IDsAdminNotifyHandler {
     Begin: usize,
     pub Notify: unsafe extern "system" fn(this: *mut *mut Self, nitem: u32, uflags: u32) -> ::windows_sys::core::HRESULT,
     pub End: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDsAdminNotifyHandler {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3835869363, data2: 23064, data3: 4562, data4: [151, 193, 0, 160, 201, 160, 109, 45] };
 }
 #[repr(C)]
 pub struct IDsBrowseDomainTree {
@@ -6052,6 +6320,9 @@ pub struct IDsBrowseDomainTree {
     FreeDomains: usize,
     pub FlushCachedDomains: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub SetComputer: unsafe extern "system" fn(this: *mut *mut Self, pszcomputername: ::windows_sys::core::PCWSTR, pszusername: ::windows_sys::core::PCWSTR, pszpassword: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDsBrowseDomainTree {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2091634462, data2: 30965, data3: 4562, data4: [150, 12, 0, 192, 79, 163, 26, 134] };
 }
 #[repr(C)]
 pub struct IDsDisplaySpecifier {
@@ -6077,6 +6348,9 @@ pub struct IDsDisplaySpecifier {
     EnumClassAttributes: usize,
     pub GetAttributeADsType: unsafe extern "system" fn(this: *mut *mut Self, pszattributename: ::windows_sys::core::PCWSTR) -> ADSTYPEENUM,
 }
+impl ::windows_sys::core::Interface for IDsDisplaySpecifier {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 448047296, data2: 27147, data3: 4562, data4: [173, 73, 0, 192, 79, 163, 26, 134] };
+}
 #[repr(C)]
 pub struct IDsObjectPicker {
     pub base__: ::windows_sys::core::IUnknown,
@@ -6086,10 +6360,16 @@ pub struct IDsObjectPicker {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     InvokeDialog: usize,
 }
+impl ::windows_sys::core::Interface for IDsObjectPicker {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 210232910, data2: 15226, data3: 4562, data4: [185, 224, 0, 192, 79, 216, 219, 247] };
+}
 #[repr(C)]
 pub struct IDsObjectPickerCredentials {
     pub base__: IDsObjectPicker,
     pub SetCredentials: unsafe extern "system" fn(this: *mut *mut Self, szusername: ::windows_sys::core::PCWSTR, szpassword: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDsObjectPickerCredentials {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3805539483, data2: 53313, data3: 17498, data4: [143, 22, 71, 72, 222, 143, 177, 207] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -6102,6 +6382,10 @@ pub struct IPersistQuery {
     pub WriteStruct: unsafe extern "system" fn(this: *mut *mut Self, psection: ::windows_sys::core::PCWSTR, pvaluename: ::windows_sys::core::PCWSTR, pstruct: *mut ::core::ffi::c_void, cbstruct: u32) -> ::windows_sys::core::HRESULT,
     pub ReadStruct: unsafe extern "system" fn(this: *mut *mut Self, psection: ::windows_sys::core::PCWSTR, pvaluename: ::windows_sys::core::PCWSTR, pstruct: *mut ::core::ffi::c_void, cbstruct: u32) -> ::windows_sys::core::HRESULT,
     pub Clear: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IPersistQuery {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 439424184, data2: 42542, data3: 4560, data4: [166, 197, 0, 160, 201, 6, 175, 69] };
 }
 #[repr(C)]
 pub struct IPrivateDispatch {
@@ -6118,6 +6402,9 @@ pub struct IPrivateDispatch {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     ADSIInvoke: usize,
 }
+impl ::windows_sys::core::Interface for IPrivateDispatch {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2259372990, data2: 26102, data3: 4561, data4: [140, 19, 0, 192, 79, 216, 213, 3] };
+}
 #[repr(C)]
 pub struct IPrivateUnknown {
     pub base__: ::windows_sys::core::IUnknown,
@@ -6126,6 +6413,9 @@ pub struct IPrivateUnknown {
     #[cfg(not(feature = "Win32_Foundation"))]
     ADSIInitializeObject: usize,
     pub ADSIReleaseObject: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPrivateUnknown {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2299685803, data2: 28333, data3: 4561, data4: [140, 24, 0, 192, 79, 216, 213, 3] };
 }
 #[repr(C)]
 pub struct IQueryForm {
@@ -6142,6 +6432,9 @@ pub struct IQueryForm {
     pub AddPages: unsafe extern "system" fn(this: *mut *mut Self, paddpagesproc: *mut ::core::ffi::c_void, lparam: super::super::Foundation::LPARAM) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging")))]
     AddPages: usize,
+}
+impl ::windows_sys::core::Interface for IQueryForm {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2365386288, data2: 14781, data3: 4560, data4: [184, 209, 0, 160, 36, 171, 45, 187] };
 }
 #[doc = "*Required features: `\"Win32_Networking_ActiveDirectory\"`, `\"Win32_Foundation\"`, `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]

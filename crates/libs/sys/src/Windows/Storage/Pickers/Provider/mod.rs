@@ -61,6 +61,9 @@ pub struct IFileOpenPickerUI {
     #[cfg(not(feature = "Foundation"))]
     RemoveClosing: usize,
 }
+impl ::windows_sys::core::Interface for IFileOpenPickerUI {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3718535696, data2: 63956, data3: 16580, data4: [138, 245, 197, 182, 181, 166, 29, 29] };
+}
 #[cfg(feature = "deprecated")]
 #[repr(C)]
 pub struct IFileRemovedEventArgs {
@@ -69,6 +72,10 @@ pub struct IFileRemovedEventArgs {
     pub Id: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "deprecated"))]
     Id: usize,
+}
+#[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for IFileRemovedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 319045031, data2: 32714, data3: 19499, data4: [158, 202, 104, 144, 249, 240, 1, 133] };
 }
 #[repr(C)]
 pub struct IFileSavePickerUI {
@@ -99,16 +106,25 @@ pub struct IFileSavePickerUI {
     #[cfg(not(feature = "Foundation"))]
     RemoveTargetFileRequested: usize,
 }
+impl ::windows_sys::core::Interface for IFileSavePickerUI {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2522268135, data2: 15958, data3: 17356, data4: [138, 57, 51, 199, 61, 157, 84, 43] };
+}
 #[repr(C)]
 pub struct IPickerClosingDeferral {
     pub base__: ::windows_sys::core::IInspectable,
     pub Complete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPickerClosingDeferral {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2063071006, data2: 6759, data3: 18993, data4: [174, 128, 233, 7, 112, 138, 97, 155] };
 }
 #[repr(C)]
 pub struct IPickerClosingEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub ClosingOperation: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub IsCanceled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPickerClosingEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2119823908, data2: 45874, data3: 20242, data4: [139, 159, 168, 194, 240, 107, 50, 205] };
 }
 #[repr(C)]
 pub struct IPickerClosingOperation {
@@ -119,6 +135,9 @@ pub struct IPickerClosingOperation {
     #[cfg(not(feature = "Foundation"))]
     Deadline: usize,
 }
+impl ::windows_sys::core::Interface for IPickerClosingOperation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1290402692, data2: 48878, data3: 20025, data4: [167, 115, 252, 95, 14, 174, 50, 141] };
+}
 #[repr(C)]
 pub struct ITargetFileRequest {
     pub base__: ::windows_sys::core::IInspectable,
@@ -126,15 +145,24 @@ pub struct ITargetFileRequest {
     pub SetTargetFile: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetDeferral: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ITargetFileRequest {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1119695701, data2: 32648, data3: 18315, data4: [142, 129, 105, 11, 32, 52, 6, 120] };
+}
 #[repr(C)]
 pub struct ITargetFileRequestDeferral {
     pub base__: ::windows_sys::core::IInspectable,
     pub Complete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ITargetFileRequestDeferral {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1257151889, data2: 48917, data3: 19881, data4: [149, 246, 246, 183, 213, 88, 34, 91] };
+}
 #[repr(C)]
 pub struct ITargetFileRequestedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub Request: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ITargetFileRequestedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2976111553, data2: 6993, data3: 19593, data4: [165, 145, 15, 212, 11, 60, 87, 201] };
 }
 pub type PickerClosingDeferral = *mut ::core::ffi::c_void;
 pub type PickerClosingEventArgs = *mut ::core::ffi::c_void;

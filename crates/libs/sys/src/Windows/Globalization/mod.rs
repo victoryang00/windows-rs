@@ -43,6 +43,9 @@ pub struct IApplicationLanguagesStatics {
     #[cfg(not(feature = "Foundation_Collections"))]
     ManifestLanguages: usize,
 }
+impl ::windows_sys::core::Interface for IApplicationLanguagesStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1974732871, data2: 2636, data3: 19090, data4: [149, 101, 253, 99, 201, 95, 122, 237] };
+}
 #[repr(C)]
 pub struct IApplicationLanguagesStatics2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -50,6 +53,9 @@ pub struct IApplicationLanguagesStatics2 {
     pub GetLanguagesForUser: unsafe extern "system" fn(this: *mut *mut Self, user: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Foundation_Collections", feature = "System")))]
     GetLanguagesForUser: usize,
+}
+impl ::windows_sys::core::Interface for IApplicationLanguagesStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 502324815, data2: 1835, data3: 19835, data4: [143, 6, 203, 45, 180, 15, 43, 181] };
 }
 #[repr(C)]
 pub struct ICalendar {
@@ -165,6 +171,9 @@ pub struct ICalendar {
     pub ResolvedLanguage: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub IsDaylightSavingTime: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ICalendar {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3392152093, data2: 34521, data3: 16635, data4: [162, 107, 212, 78, 183, 207, 8, 234] };
+}
 #[repr(C)]
 pub struct ICalendarFactory {
     pub base__: ::windows_sys::core::IInspectable,
@@ -177,6 +186,9 @@ pub struct ICalendarFactory {
     #[cfg(not(feature = "Foundation_Collections"))]
     CreateCalendar: usize,
 }
+impl ::windows_sys::core::Interface for ICalendarFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2213905426, data2: 58731, data3: 19573, data4: [166, 110, 15, 99, 213, 119, 88, 166] };
+}
 #[repr(C)]
 pub struct ICalendarFactory2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -184,6 +196,9 @@ pub struct ICalendarFactory2 {
     pub CreateCalendarWithTimeZone: unsafe extern "system" fn(this: *mut *mut Self, languages: *mut ::core::ffi::c_void, calendar: ::windows_sys::core::HSTRING, clock: ::windows_sys::core::HSTRING, timezoneid: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     CreateCalendarWithTimeZone: usize,
+}
+impl ::windows_sys::core::Interface for ICalendarFactory2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3024828300, data2: 51838, data3: 17808, data4: [158, 114, 234, 43, 236, 26, 81, 21] };
 }
 #[repr(C)]
 pub struct ICalendarIdentifiersStatics {
@@ -198,10 +213,16 @@ pub struct ICalendarIdentifiersStatics {
     pub Thai: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub UmAlQura: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ICalendarIdentifiersStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2154119016, data2: 11442, data3: 19487, data4: [181, 144, 240, 245, 43, 244, 253, 26] };
+}
 #[repr(C)]
 pub struct ICalendarIdentifiersStatics2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub Persian: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ICalendarIdentifiersStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2113197192, data2: 24528, data3: 17063, data4: [149, 181, 125, 152, 216, 35, 7, 95] };
 }
 #[repr(C)]
 pub struct ICalendarIdentifiersStatics3 {
@@ -212,11 +233,17 @@ pub struct ICalendarIdentifiersStatics3 {
     pub TaiwanLunar: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub VietnameseLunar: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ICalendarIdentifiersStatics3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 740447267, data2: 8109, data3: 16576, data4: [147, 52, 168, 235, 144, 219, 4, 245] };
+}
 #[repr(C)]
 pub struct IClockIdentifiersStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub TwelveHour: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub TwentyFourHour: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IClockIdentifiersStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1379403195, data2: 4844, data3: 20355, data4: [188, 49, 177, 180, 55, 107, 8, 8] };
 }
 #[repr(C)]
 pub struct ICurrencyAmount {
@@ -224,10 +251,16 @@ pub struct ICurrencyAmount {
     pub Amount: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub Currency: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ICurrencyAmount {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1957992770, data2: 60277, data3: 17466, data4: [149, 179, 125, 114, 63, 86, 249, 60] };
+}
 #[repr(C)]
 pub struct ICurrencyAmountFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, amount: ::windows_sys::core::HSTRING, currency: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ICurrencyAmountFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1222055567, data2: 61243, data3: 19182, data4: [166, 161, 75, 3, 111, 224, 63, 240] };
 }
 #[repr(C)]
 pub struct ICurrencyIdentifiersStatics {
@@ -390,10 +423,16 @@ pub struct ICurrencyIdentifiersStatics {
     pub ZMW: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub ZWL: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ICurrencyIdentifiersStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2669480219, data2: 54662, data3: 18707, data4: [155, 106, 169, 189, 45, 193, 40, 116] };
+}
 #[repr(C)]
 pub struct ICurrencyIdentifiersStatics2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub BYN: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ICurrencyIdentifiersStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 403995007, data2: 50098, data3: 19507, data4: [149, 145, 152, 0, 17, 149, 13, 55] };
 }
 #[repr(C)]
 pub struct ICurrencyIdentifiersStatics3 {
@@ -402,6 +441,9 @@ pub struct ICurrencyIdentifiersStatics3 {
     pub SSP: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub STN: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub VES: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ICurrencyIdentifiersStatics3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1337080826, data2: 60709, data3: 20301, data4: [133, 127, 35, 127, 23, 72, 194, 28] };
 }
 #[repr(C)]
 pub struct IGeographicRegion {
@@ -417,15 +459,24 @@ pub struct IGeographicRegion {
     #[cfg(not(feature = "Foundation_Collections"))]
     CurrenciesInUse: usize,
 }
+impl ::windows_sys::core::Interface for IGeographicRegion {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 32089633, data2: 19044, data3: 20185, data4: [149, 79, 158, 222, 176, 123, 217, 3] };
+}
 #[repr(C)]
 pub struct IGeographicRegionFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub CreateGeographicRegion: unsafe extern "system" fn(this: *mut *mut Self, geographicregioncode: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IGeographicRegionFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1396855408, data2: 30644, data3: 17003, data4: [133, 159, 129, 225, 157, 81, 37, 70] };
+}
 #[repr(C)]
 pub struct IGeographicRegionStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub IsSupported: unsafe extern "system" fn(this: *mut *mut Self, geographicregioncode: ::windows_sys::core::HSTRING, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IGeographicRegionStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 702712180, data2: 31449, data3: 20212, data4: [135, 153, 179, 180, 79, 173, 236, 8] };
 }
 #[repr(C)]
 pub struct IJapanesePhoneme {
@@ -433,6 +484,9 @@ pub struct IJapanesePhoneme {
     pub DisplayText: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub YomiText: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub IsPhraseStart: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IJapanesePhoneme {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 795513600, data2: 59483, data3: 17382, data4: [137, 125, 93, 130, 248, 98, 223, 33] };
 }
 #[repr(C)]
 pub struct IJapanesePhoneticAnalyzerStatics {
@@ -446,6 +500,9 @@ pub struct IJapanesePhoneticAnalyzerStatics {
     #[cfg(not(feature = "Foundation_Collections"))]
     GetWordsWithMonoRubyOption: usize,
 }
+impl ::windows_sys::core::Interface for IJapanesePhoneticAnalyzerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2292948624, data2: 37854, data3: 16818, data4: [180, 213, 142, 219, 34, 127, 209, 194] };
+}
 #[repr(C)]
 pub struct ILanguage {
     pub base__: ::windows_sys::core::IInspectable,
@@ -454,15 +511,24 @@ pub struct ILanguage {
     pub NativeName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub Script: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ILanguage {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3933841234, data2: 63426, data3: 16997, data4: [177, 189, 196, 222, 196, 228, 240, 128] };
+}
 #[repr(C)]
 pub struct ILanguage2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub LayoutDirection: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut LanguageLayoutDirection) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ILanguage2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1783096757, data2: 55629, data3: 18566, data4: [164, 4, 165, 165, 185, 213, 180, 148] };
+}
 #[repr(C)]
 pub struct ILanguage3 {
     pub base__: ::windows_sys::core::IInspectable,
     pub AbbreviatedName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ILanguage3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3333373200, data2: 25626, data3: 23460, data4: [187, 67, 94, 18, 174, 215, 89, 84] };
 }
 #[repr(C)]
 pub struct ILanguageExtensionSubtags {
@@ -472,10 +538,16 @@ pub struct ILanguageExtensionSubtags {
     #[cfg(not(feature = "Foundation_Collections"))]
     GetExtensionSubtags: usize,
 }
+impl ::windows_sys::core::Interface for ILanguageExtensionSubtags {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2105388869, data2: 13965, data3: 17252, data4: [133, 43, 222, 201, 39, 3, 123, 133] };
+}
 #[repr(C)]
 pub struct ILanguageFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub CreateLanguage: unsafe extern "system" fn(this: *mut *mut Self, languagetag: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ILanguageFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2600620716, data2: 3111, data3: 17656, data4: [183, 146, 151, 147, 251, 102, 198, 62] };
 }
 #[repr(C)]
 pub struct ILanguageStatics {
@@ -483,10 +555,16 @@ pub struct ILanguageStatics {
     pub IsWellFormed: unsafe extern "system" fn(this: *mut *mut Self, languagetag: ::windows_sys::core::HSTRING, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub CurrentInputMethodLanguageTag: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ILanguageStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2990331223, data2: 2149, data3: 18132, data4: [137, 184, 213, 155, 232, 153, 15, 13] };
+}
 #[repr(C)]
 pub struct ILanguageStatics2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub TrySetInputMethodLanguageTag: unsafe extern "system" fn(this: *mut *mut Self, languagetag: ::windows_sys::core::HSTRING, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ILanguageStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 806985582, data2: 37195, data3: 19242, data4: [157, 110, 227, 176, 226, 125, 190, 79] };
 }
 #[repr(C)]
 pub struct ILanguageStatics3 {
@@ -495,6 +573,9 @@ pub struct ILanguageStatics3 {
     pub GetMuiCompatibleLanguageListFromLanguageTags: unsafe extern "system" fn(this: *mut *mut Self, languagetags: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     GetMuiCompatibleLanguageListFromLanguageTags: usize,
+}
+impl ::windows_sys::core::Interface for ILanguageStatics3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3512650586, data2: 29150, data3: 22354, data4: [149, 66, 250, 197, 180, 242, 114, 97] };
 }
 #[repr(C)]
 pub struct INumeralSystemIdentifiersStatics {
@@ -536,6 +617,9 @@ pub struct INumeralSystemIdentifiersStatics {
     pub Tibt: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub Vaii: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for INumeralSystemIdentifiersStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2781242051, data2: 26825, data3: 19773, data4: [183, 101, 151, 32, 41, 226, 29, 236] };
+}
 #[repr(C)]
 pub struct INumeralSystemIdentifiersStatics2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -552,6 +636,9 @@ pub struct INumeralSystemIdentifiersStatics2 {
     pub ZmthSanb: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub ZmthMono: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for INumeralSystemIdentifiersStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2130719272, data2: 40411, data3: 18996, data4: [145, 4, 2, 96, 192, 145, 167, 199] };
+}
 #[repr(C)]
 pub struct ITimeZoneOnCalendar {
     pub base__: ::windows_sys::core::IInspectable,
@@ -559,6 +646,9 @@ pub struct ITimeZoneOnCalendar {
     pub ChangeTimeZone: unsafe extern "system" fn(this: *mut *mut Self, timezoneid: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub TimeZoneAsFullString: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub TimeZoneAsString: unsafe extern "system" fn(this: *mut *mut Self, ideallength: i32, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ITimeZoneOnCalendar {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3141281253, data2: 18127, data3: 17175, data4: [163, 245, 2, 98, 26, 213, 68, 120] };
 }
 pub type JapanesePhoneme = *mut ::core::ffi::c_void;
 pub type Language = *mut ::core::ffi::c_void;

@@ -164,11 +164,17 @@ pub struct IGuidanceAudioNotificationRequestedEventArgs {
     AudioFilePaths: usize,
     pub AudioText: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IGuidanceAudioNotificationRequestedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3391791690, data2: 51138, data3: 19788, data4: [157, 124, 73, 149, 118, 188, 237, 219] };
+}
 #[repr(C)]
 pub struct IGuidanceLaneInfo {
     pub base__: ::windows_sys::core::IInspectable,
     pub LaneMarkers: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut GuidanceLaneMarkers) -> ::windows_sys::core::HRESULT,
     pub IsOnRoute: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IGuidanceLaneInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2214908180, data2: 25985, data3: 17335, data4: [172, 21, 201, 7, 155, 249, 13, 241] };
 }
 #[repr(C)]
 pub struct IGuidanceManeuver {
@@ -189,6 +195,9 @@ pub struct IGuidanceManeuver {
     pub RoadSignpost: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub InstructionText: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IGuidanceManeuver {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4228461164, data2: 60617, data3: 18728, data4: [162, 161, 114, 50, 185, 155, 148, 161] };
+}
 #[repr(C)]
 pub struct IGuidanceMapMatchedCoordinate {
     pub base__: ::windows_sys::core::IInspectable,
@@ -200,6 +209,9 @@ pub struct IGuidanceMapMatchedCoordinate {
     pub CurrentSpeed: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f64) -> ::windows_sys::core::HRESULT,
     pub IsOnStreet: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub Road: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IGuidanceMapMatchedCoordinate {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3081548136, data2: 10514, data3: 19097, data4: [175, 241, 121, 134, 9, 185, 129, 254] };
 }
 #[repr(C)]
 pub struct IGuidanceNavigator {
@@ -281,6 +293,9 @@ pub struct IGuidanceNavigator {
     #[cfg(not(feature = "Devices_Geolocation"))]
     UpdateUserLocationWithPositionOverride: usize,
 }
+impl ::windows_sys::core::Interface for IGuidanceNavigator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 150044407, data2: 36415, data3: 19866, data4: [190, 138, 16, 143, 154, 1, 44, 103] };
+}
 #[repr(C)]
 pub struct IGuidanceNavigator2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -295,20 +310,32 @@ pub struct IGuidanceNavigator2 {
     pub IsGuidanceAudioMuted: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub SetIsGuidanceAudioMuted: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IGuidanceNavigator2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1826377937, data2: 1052, data3: 19443, data4: [182, 51, 161, 1, 252, 47, 107, 87] };
+}
 #[repr(C)]
 pub struct IGuidanceNavigatorStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub GetCurrent: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IGuidanceNavigatorStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 16618771, data2: 17494, data3: 20070, data4: [161, 67, 58, 221, 107, 224, 132, 38] };
 }
 #[repr(C)]
 pub struct IGuidanceNavigatorStatics2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub UseAppProvidedVoice: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IGuidanceNavigatorStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1422246882, data2: 30596, data3: 19589, data4: [140, 149, 208, 198, 239, 180, 57, 101] };
+}
 #[repr(C)]
 pub struct IGuidanceReroutedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub Route: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IGuidanceReroutedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 291323912, data2: 54568, data3: 17742, data4: [187, 148, 165, 3, 65, 210, 201, 241] };
 }
 #[repr(C)]
 pub struct IGuidanceRoadSegment {
@@ -329,10 +356,16 @@ pub struct IGuidanceRoadSegment {
     pub IsTunnel: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub IsTollRoad: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IGuidanceRoadSegment {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3005700262, data2: 48760, data3: 19555, data4: [175, 231, 108, 41, 87, 71, 155, 62] };
+}
 #[repr(C)]
 pub struct IGuidanceRoadSegment2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub IsScenic: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IGuidanceRoadSegment2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 611624477, data2: 5923, data3: 18929, data4: [137, 91, 71, 162, 196, 170, 156, 85] };
 }
 #[repr(C)]
 pub struct IGuidanceRoadSignpost {
@@ -351,6 +384,9 @@ pub struct IGuidanceRoadSignpost {
     pub ExitDirections: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     ExitDirections: usize,
+}
+impl ::windows_sys::core::Interface for IGuidanceRoadSignpost {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4054263990, data2: 63354, data3: 18242, data4: [131, 18, 83, 48, 15, 152, 69, 240] };
 }
 #[repr(C)]
 pub struct IGuidanceRoute {
@@ -378,11 +414,17 @@ pub struct IGuidanceRoute {
     RoadSegments: usize,
     pub ConvertToMapRoute: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IGuidanceRoute {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 974410845, data2: 32794, data3: 16573, data4: [162, 134, 175, 178, 1, 12, 206, 108] };
+}
 #[repr(C)]
 pub struct IGuidanceRouteStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub CanCreateFromMapRoute: unsafe extern "system" fn(this: *mut *mut Self, maproute: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub TryCreateFromMapRoute: unsafe extern "system" fn(this: *mut *mut Self, maproute: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IGuidanceRouteStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4117598826, data2: 21997, data3: 18881, data4: [176, 156, 75, 130, 35, 181, 13, 179] };
 }
 #[repr(C)]
 pub struct IGuidanceTelemetryCollector {
@@ -395,10 +437,16 @@ pub struct IGuidanceTelemetryCollector {
     pub UploadFrequency: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i32) -> ::windows_sys::core::HRESULT,
     pub SetUploadFrequency: unsafe extern "system" fn(this: *mut *mut Self, value: i32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IGuidanceTelemetryCollector {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3676278181, data2: 47224, data3: 19858, data4: [152, 221, 52, 125, 35, 211, 130, 98] };
+}
 #[repr(C)]
 pub struct IGuidanceTelemetryCollectorStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub GetCurrent: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IGuidanceTelemetryCollectorStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 911417415, data2: 61792, data3: 17659, data4: [181, 120, 148, 87, 124, 160, 89, 144] };
 }
 #[repr(C)]
 pub struct IGuidanceUpdatedEventArgs {
@@ -426,4 +474,7 @@ pub struct IGuidanceUpdatedEventArgs {
     pub LaneInfo: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     LaneInfo: usize,
+}
+impl ::windows_sys::core::Interface for IGuidanceUpdatedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4255913483, data2: 40589, data3: 19939, data4: [169, 250, 176, 99, 33, 209, 141, 185] };
 }

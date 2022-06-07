@@ -323,6 +323,10 @@ pub struct IWdsTransportCacheable {
     pub Commit: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWdsTransportCacheable {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1185777995, data2: 2987, data3: 18396, data4: [132, 178, 123, 85, 63, 29, 143, 128] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IWdsTransportClient {
     pub base__: super::Com::IDispatch,
@@ -355,6 +359,10 @@ pub struct IWdsTransportClient {
     pub Disconnect: unsafe extern "system" fn(this: *mut *mut Self, disconnectiontype: WDSTRANSPORT_DISCONNECT_TYPE) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWdsTransportClient {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3051079994, data2: 51902, data3: 18122, data4: [131, 127, 62, 68, 233, 60, 101, 69] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IWdsTransportCollection {
     pub base__: super::Com::IDispatch,
@@ -364,6 +372,10 @@ pub struct IWdsTransportCollection {
     #[cfg(not(feature = "Win32_System_Com"))]
     get_Item: usize,
     pub _NewEnum: unsafe extern "system" fn(this: *mut *mut Self, ppval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWdsTransportCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3099216666, data2: 12276, data3: 17323, data4: [153, 108, 178, 177, 10, 145, 166, 235] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -386,6 +398,10 @@ pub struct IWdsTransportConfigurationManager {
     pub NotifyWdsTransportServices: unsafe extern "system" fn(this: *mut *mut Self, servicenotification: WDSTRANSPORT_SERVICE_NOTIFICATION) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWdsTransportConfigurationManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2227980153, data2: 17117, data3: 18322, data4: [137, 30, 19, 33, 214, 215, 75, 68] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IWdsTransportConfigurationManager2 {
     pub base__: IWdsTransportConfigurationManager,
@@ -393,6 +409,10 @@ pub struct IWdsTransportConfigurationManager2 {
     pub MulticastSessionPolicy: unsafe extern "system" fn(this: *mut *mut Self, ppwdstransportmulticastsessionpolicy: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     MulticastSessionPolicy: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWdsTransportConfigurationManager2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3503840431, data2: 41299, data3: 20253, data4: [169, 221, 150, 244, 49, 197, 7, 23] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -412,6 +432,10 @@ pub struct IWdsTransportContent {
     #[cfg(not(feature = "Win32_System_Com"))]
     RetrieveSessions: usize,
     pub Terminate: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWdsTransportContent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3557152529, data2: 662, data3: 19124, data4: [168, 96, 172, 125, 50, 230, 87, 152] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -435,6 +459,10 @@ pub struct IWdsTransportContentProvider {
     InitializationRoutine: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWdsTransportContentProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3108544292, data2: 61977, data3: 19151, data4: [170, 215, 38, 92, 124, 8, 166, 174] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IWdsTransportDiagnosticsPolicy {
     pub base__: IWdsTransportCacheable,
@@ -444,6 +472,10 @@ pub struct IWdsTransportDiagnosticsPolicy {
     pub SetComponents: unsafe extern "system" fn(this: *mut *mut Self, ulcomponents: u32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWdsTransportDiagnosticsPolicy {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 330514172, data2: 30806, data3: 20321, data4: [154, 89, 141, 230, 123, 107, 135, 182] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IWdsTransportManager {
     pub base__: super::Com::IDispatch,
@@ -451,6 +483,10 @@ pub struct IWdsTransportManager {
     pub GetWdsTransportServer: unsafe extern "system" fn(this: *mut *mut Self, bszservername: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppwdstransportserver: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     GetWdsTransportServer: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWdsTransportManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1527592437, data2: 6931, data3: 19197, data4: [184, 120, 101, 38, 220, 52, 11, 93] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -464,6 +500,10 @@ pub struct IWdsTransportMulticastSessionPolicy {
     pub SetMultistreamStreamCount: unsafe extern "system" fn(this: *mut *mut Self, ulstreamcount: u32) -> ::windows_sys::core::HRESULT,
     pub SlowClientFallback: unsafe extern "system" fn(this: *mut *mut Self, pbclientfallback: *mut i16) -> ::windows_sys::core::HRESULT,
     pub SetSlowClientFallback: unsafe extern "system" fn(this: *mut *mut Self, bclientfallback: i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWdsTransportMulticastSessionPolicy {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1314345935, data2: 26860, data3: 17668, data4: [169, 81, 74, 0, 50, 102, 96, 107] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -528,9 +568,17 @@ pub struct IWdsTransportNamespace {
     RetrieveContents: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWdsTransportNamespace {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4199948119, data2: 64495, data3: 20179, data4: [176, 86, 18, 124, 177, 179, 59, 132] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IWdsTransportNamespaceAutoCast {
     pub base__: IWdsTransportNamespace,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWdsTransportNamespaceAutoCast {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2912098930, data2: 50365, data3: 19521, data4: [143, 188, 89, 201, 199, 72, 223, 158] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -550,10 +598,18 @@ pub struct IWdsTransportNamespaceManager {
     RetrieveNamespaces: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWdsTransportNamespaceManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1042471414, data2: 14199, data3: 19864, data4: [131, 225, 249, 134, 150, 113, 123, 163] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IWdsTransportNamespaceScheduledCast {
     pub base__: IWdsTransportNamespace,
     pub StartTransmission: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWdsTransportNamespaceScheduledCast {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 943771343, data2: 55148, data3: 16750, data4: [164, 204, 49, 199, 65, 210, 135, 75] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -565,9 +621,17 @@ pub struct IWdsTransportNamespaceScheduledCastAutoStart {
     pub SetStartTime: unsafe extern "system" fn(this: *mut *mut Self, starttime: f64) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWdsTransportNamespaceScheduledCastAutoStart {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3590762301, data2: 60060, data3: 16921, data4: [150, 30, 116, 145, 214, 24, 217, 185] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IWdsTransportNamespaceScheduledCastManualStart {
     pub base__: IWdsTransportNamespaceScheduledCast,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWdsTransportNamespaceScheduledCastManualStart {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 20868684, data2: 59047, data3: 20405, data4: [183, 255, 217, 245, 218, 128, 92, 49] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -592,6 +656,10 @@ pub struct IWdsTransportServer {
     pub DisconnectClient: unsafe extern "system" fn(this: *mut *mut Self, ulclientid: u32, disconnectiontype: WDSTRANSPORT_DISCONNECT_TYPE) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWdsTransportServer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 164417683, data2: 33549, data3: 17220, data4: [163, 10, 115, 174, 142, 143, 202, 144] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IWdsTransportServer2 {
     pub base__: IWdsTransportServer,
@@ -599,6 +667,10 @@ pub struct IWdsTransportServer2 {
     pub TftpManager: unsafe extern "system" fn(this: *mut *mut Self, ppwdstransporttftpmanager: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     TftpManager: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWdsTransportServer2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 628005279, data2: 28148, data3: 17720, data4: [129, 185, 133, 123, 154, 184, 251, 71] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -630,6 +702,10 @@ pub struct IWdsTransportServicePolicy {
     pub SetNetworkProfile: unsafe extern "system" fn(this: *mut *mut Self, profiletype: WDSTRANSPORT_NETWORK_PROFILE_TYPE) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWdsTransportServicePolicy {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3108406648, data2: 40747, data3: 18636, data4: [178, 122, 166, 7, 153, 194, 117, 12] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IWdsTransportServicePolicy2 {
     pub base__: IWdsTransportServicePolicy,
@@ -639,6 +715,10 @@ pub struct IWdsTransportServicePolicy2 {
     pub SetTftpMaximumBlockSize: unsafe extern "system" fn(this: *mut *mut Self, ultftpmaximumblocksize: u32) -> ::windows_sys::core::HRESULT,
     pub EnableTftpVariableWindowExtension: unsafe extern "system" fn(this: *mut *mut Self, pbenabletftpvariablewindowextension: *mut i16) -> ::windows_sys::core::HRESULT,
     pub SetEnableTftpVariableWindowExtension: unsafe extern "system" fn(this: *mut *mut Self, benabletftpvariablewindowextension: i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWdsTransportServicePolicy2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1707187804, data2: 43646, data3: 19345, data4: [137, 68, 145, 224, 229, 87, 39, 151] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -666,6 +746,10 @@ pub struct IWdsTransportSession {
     pub Terminate: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWdsTransportSession {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4109363848, data2: 26033, data3: 20272, data4: [164, 185, 39, 147, 152, 119, 150, 251] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IWdsTransportSetupManager {
     pub base__: super::Com::IDispatch,
@@ -682,6 +766,10 @@ pub struct IWdsTransportSetupManager {
     DeregisterContentProvider: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWdsTransportSetupManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4146299941, data2: 61352, data3: 16548, data4: [174, 249, 201, 141, 150, 156, 11, 117] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IWdsTransportSetupManager2 {
     pub base__: IWdsTransportSetupManager,
@@ -690,6 +778,10 @@ pub struct IWdsTransportSetupManager2 {
     pub ContentProviders: unsafe extern "system" fn(this: *mut *mut Self, ppprovidercollection: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     ContentProviders: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWdsTransportSetupManager2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 46037466, data2: 32414, data3: 17254, data4: [139, 110, 42, 169, 169, 27, 228, 127] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -710,6 +802,10 @@ pub struct IWdsTransportTftpClient {
     pub WindowSize: unsafe extern "system" fn(this: *mut *mut Self, pulwindowsize: *mut u32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWdsTransportTftpClient {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2955072430, data2: 34893, data3: 19845, data4: [177, 70, 83, 50, 14, 118, 239, 98] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IWdsTransportTftpManager {
     pub base__: super::Com::IDispatch,
@@ -717,6 +813,10 @@ pub struct IWdsTransportTftpManager {
     pub RetrieveTftpClients: unsafe extern "system" fn(this: *mut *mut Self, ppwdstransporttftpclients: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     RetrieveTftpClients: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWdsTransportTftpManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 321365960, data2: 44682, data3: 20403, data4: [129, 80, 19, 98, 39, 195, 126, 154] };
 }
 #[doc = "*Required features: `\"Win32_System_DeploymentServices\"`*"]
 pub const MC_SERVER_CURRENT_VERSION: u32 = 1u32;

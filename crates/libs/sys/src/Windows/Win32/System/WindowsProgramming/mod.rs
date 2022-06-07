@@ -1774,6 +1774,9 @@ pub struct ICameraUIControl {
     GetSelectedItems: usize,
     pub RemoveCapturedItem: unsafe extern "system" fn(this: *mut *mut Self, pszpath: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ICameraUIControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3094559455, data2: 15720, data3: 19343, data4: [187, 8, 226, 138, 11, 237, 3, 118] };
+}
 #[repr(C)]
 pub struct ICameraUIControlEventCallback {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1783,6 +1786,9 @@ pub struct ICameraUIControlEventCallback {
     pub OnItemDeleted: unsafe extern "system" fn(this: *mut *mut Self, pszpath: ::windows_sys::core::PCWSTR),
     pub OnClosed: unsafe extern "system" fn(this: *mut *mut Self),
 }
+impl ::windows_sys::core::Interface for ICameraUIControlEventCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 469371948, data2: 64461, data3: 18294, data4: [189, 164, 136, 191, 151, 78, 116, 244] };
+}
 #[repr(C)]
 pub struct IClipServiceNotificationHelper {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1791,10 +1797,16 @@ pub struct IClipServiceNotificationHelper {
     #[cfg(not(feature = "Win32_Foundation"))]
     ShowToast: usize,
 }
+impl ::windows_sys::core::Interface for IClipServiceNotificationHelper {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3281602800, data2: 24898, data3: 17661, data4: [152, 202, 225, 104, 26, 141, 104, 181] };
+}
 #[repr(C)]
 pub struct IContainerActivationHelper {
     pub base__: ::windows_sys::core::IUnknown,
     pub CanActivateClientVM: unsafe extern "system" fn(this: *mut *mut Self, isallowed: *mut i16) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IContainerActivationHelper {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3039099199, data2: 32981, data3: 20167, data4: [174, 158, 214, 110, 147, 173, 225, 250] };
 }
 #[repr(C)]
 pub struct IDefaultBrowserSyncSettings {
@@ -1804,10 +1816,16 @@ pub struct IDefaultBrowserSyncSettings {
     #[cfg(not(feature = "Win32_Foundation"))]
     IsEnabled: usize,
 }
+impl ::windows_sys::core::Interface for IDefaultBrowserSyncSettings {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2049440429, data2: 23270, data3: 16981, data4: [144, 48, 197, 48, 147, 98, 146, 227] };
+}
 #[repr(C)]
 pub struct IDeleteBrowsingHistory {
     pub base__: ::windows_sys::core::IUnknown,
     pub DeleteBrowsingHistory: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDeleteBrowsingHistory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3476614475, data2: 11239, data3: 17505, data4: [139, 94, 154, 70, 109, 200, 42, 227] };
 }
 #[doc = "*Required features: `\"Win32_System_WindowsProgramming\"`*"]
 pub const IE4_BACKNEW: u32 = 2u32;
@@ -1862,6 +1880,9 @@ pub struct IEditionUpgradeBroker {
     pub ShowProductKeyUI: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub CanUpgrade: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEditionUpgradeBroker {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4279880655, data2: 37973, data3: 18743, data4: [184, 114, 107, 121, 41, 164, 96, 175] };
+}
 #[repr(C)]
 pub struct IEditionUpgradeHelper {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1876,6 +1897,9 @@ pub struct IEditionUpgradeHelper {
     pub GetGenuineLocalStatus: unsafe extern "system" fn(this: *mut *mut Self, isgenuine: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetGenuineLocalStatus: usize,
+}
+impl ::windows_sys::core::Interface for IEditionUpgradeHelper {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3555320642, data2: 24043, data3: 17334, data4: [132, 158, 105, 19, 184, 93, 80, 58] };
 }
 #[doc = "*Required features: `\"Win32_System_WindowsProgramming\"`*"]
 pub const IF_GENERIC: u32 = 512u32;
@@ -2198,6 +2222,9 @@ pub struct IWindowsLockModeHelper {
     pub GetSMode: unsafe extern "system" fn(this: *mut *mut Self, issmode: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetSMode: usize,
+}
+impl ::windows_sys::core::Interface for IWindowsLockModeHelper {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4081242526, data2: 52258, data3: 17992, data4: [187, 93, 3, 204, 247, 91, 71, 197] };
 }
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_WindowsProgramming\"`, `\"Win32_Foundation\"`*"]

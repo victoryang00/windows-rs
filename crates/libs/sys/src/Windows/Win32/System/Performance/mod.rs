@@ -371,6 +371,10 @@ pub const Counters: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data
 pub struct DICounterItem {
     pub base__: super::Com::IDispatch,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DICounterItem {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3230420978, data2: 3630, data3: 4559, data4: [148, 44, 0, 128, 41, 0, 67, 71] };
+}
 pub const DIID_DICounterItem: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3230420978, data2: 3630, data3: 4559, data4: [148, 44, 0, 128, 41, 0, 67, 71] };
 pub const DIID_DILogFileItem: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2366193660, data2: 63351, data3: 18711, data4: [130, 209, 131, 63, 188, 84, 197, 143] };
 pub const DIID_DISystemMonitor: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 332873089, data2: 49966, data3: 4559, data4: [147, 152, 0, 170, 0, 163, 221, 234] };
@@ -382,9 +386,17 @@ pub struct DILogFileItem {
     pub base__: super::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DILogFileItem {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2366193660, data2: 63351, data3: 18711, data4: [130, 209, 131, 63, 188, 84, 197, 143] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DISystemMonitor {
     pub base__: super::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DISystemMonitor {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 332873089, data2: 49966, data3: 4559, data4: [147, 152, 0, 170, 0, 163, 221, 234] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -392,9 +404,17 @@ pub struct DISystemMonitorEvents {
     pub base__: super::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DISystemMonitorEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2224527664, data2: 19123, data3: 4559, data4: [148, 58, 0, 128, 41, 0, 67, 71] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DISystemMonitorInternal {
     pub base__: super::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DISystemMonitorInternal {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 424587842, data2: 49964, data3: 4559, data4: [147, 152, 0, 170, 0, 163, 221, 234] };
 }
 pub const DataCollectorSet: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 58946849, data2: 2443, data3: 4568, data4: [148, 20, 80, 80, 84, 80, 48, 48] };
 pub const DataCollectorSetCollection: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 58946853, data2: 2443, data3: 4568, data4: [148, 20, 80, 80, 84, 80, 48, 48] };
@@ -534,6 +554,10 @@ pub struct IAlertDataCollector {
     SetTriggerDataCollectorSet: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IAlertDataCollector {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 58946838, data2: 2443, data3: 4568, data4: [148, 20, 80, 80, 84, 80, 48, 48] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IApiTracingDataCollector {
     pub base__: IDataCollector,
@@ -583,6 +607,10 @@ pub struct IApiTracingDataCollector {
     SetExcludeApis: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IApiTracingDataCollector {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 58946842, data2: 2443, data3: 4568, data4: [148, 20, 80, 80, 84, 80, 48, 48] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IConfigurationDataCollector {
     pub base__: IDataCollector,
@@ -629,6 +657,10 @@ pub struct IConfigurationDataCollector {
     #[cfg(not(feature = "Win32_Foundation"))]
     SetSystemStateFile: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IConfigurationDataCollector {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 58946836, data2: 2443, data3: 4568, data4: [148, 20, 80, 80, 84, 80, 48, 48] };
+}
 #[repr(C)]
 pub struct ICounterItem {
     pub base__: ::windows_sys::core::IUnknown,
@@ -648,6 +680,9 @@ pub struct ICounterItem {
     pub GetValue: unsafe extern "system" fn(this: *mut *mut Self, value: *mut f64, status: *mut i32) -> ::windows_sys::core::HRESULT,
     pub GetStatistics: unsafe extern "system" fn(this: *mut *mut Self, max: *mut f64, min: *mut f64, avg: *mut f64, status: *mut i32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ICounterItem {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1998230816, data2: 60968, data3: 4558, data4: [148, 30, 0, 128, 41, 0, 67, 71] };
+}
 #[repr(C)]
 pub struct ICounterItem2 {
     pub base__: ICounterItem,
@@ -659,6 +694,9 @@ pub struct ICounterItem2 {
     pub GetDataAt: unsafe extern "system" fn(this: *mut *mut Self, iindex: i32, iwhich: SysmonDataType, pvariant: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     GetDataAt: usize,
+}
+impl ::windows_sys::core::Interface for ICounterItem2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4009546977, data2: 59932, data3: 17461, data4: [183, 244, 227, 65, 186, 3, 180, 249] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -678,6 +716,10 @@ pub struct ICounters {
     pub Remove: unsafe extern "system" fn(this: *mut *mut Self, index: ::core::mem::ManuallyDrop<super::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     Remove: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICounters {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2031516002, data2: 10492, data3: 4559, data4: [148, 47, 0, 128, 41, 0, 67, 71] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -752,6 +794,10 @@ pub struct IDataCollector {
     CreateOutputLocation: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IDataCollector {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 58946815, data2: 2443, data3: 4568, data4: [148, 20, 80, 80, 84, 80, 48, 48] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IDataCollectorCollection {
     pub base__: super::Com::IDispatch,
@@ -782,6 +828,10 @@ pub struct IDataCollectorCollection {
     pub CreateDataCollector: unsafe extern "system" fn(this: *mut *mut Self, r#type: DataCollectorType, collector: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     CreateDataCollector: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IDataCollectorCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 58946818, data2: 2443, data3: 4568, data4: [148, 20, 80, 80, 84, 80, 48, 48] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -963,6 +1013,10 @@ pub struct IDataCollectorSet {
     GetValue: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IDataCollectorSet {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 58946848, data2: 2443, data3: 4568, data4: [148, 20, 80, 80, 84, 80, 48, 48] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IDataCollectorSetCollection {
     pub base__: super::Com::IDispatch,
@@ -989,6 +1043,10 @@ pub struct IDataCollectorSetCollection {
     pub GetDataCollectorSets: unsafe extern "system" fn(this: *mut *mut Self, server: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, filter: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetDataCollectorSets: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IDataCollectorSetCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 58946852, data2: 2443, data3: 4568, data4: [148, 20, 80, 80, 84, 80, 48, 48] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1060,6 +1118,10 @@ pub struct IDataManager {
     Extract: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IDataManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 58946881, data2: 2443, data3: 4568, data4: [148, 20, 80, 80, 84, 80, 48, 48] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFolderAction {
     pub base__: super::Com::IDispatch,
@@ -1077,6 +1139,10 @@ pub struct IFolderAction {
     pub SetSendCabTo: unsafe extern "system" fn(this: *mut *mut Self, bstrdestination: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     SetSendCabTo: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFolderAction {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 58946883, data2: 2443, data3: 4568, data4: [148, 20, 80, 80, 84, 80, 48, 48] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1106,6 +1172,10 @@ pub struct IFolderActionCollection {
     #[cfg(not(feature = "Win32_System_Com"))]
     CreateFolderAction: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFolderActionCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 58946884, data2: 2443, data3: 4568, data4: [148, 20, 80, 80, 84, 80, 48, 48] };
+}
 #[repr(C)]
 pub struct ILogFileItem {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1113,6 +1183,9 @@ pub struct ILogFileItem {
     pub Path: unsafe extern "system" fn(this: *mut *mut Self, pstrvalue: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     Path: usize,
+}
+impl ::windows_sys::core::Interface for ILogFileItem {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3602192605, data2: 1479, data3: 16778, data4: [137, 230, 79, 156, 232, 198, 132, 30] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1132,6 +1205,10 @@ pub struct ILogFiles {
     pub Remove: unsafe extern "system" fn(this: *mut *mut Self, index: ::core::mem::ManuallyDrop<super::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     Remove: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ILogFiles {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1781176294, data2: 26705, data3: 16874, data4: [135, 173, 42, 130, 37, 51, 88, 101] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1159,6 +1236,10 @@ pub struct IPerformanceCounterDataCollector {
     pub SetSampleInterval: unsafe extern "system" fn(this: *mut *mut Self, interval: u32) -> ::windows_sys::core::HRESULT,
     pub SegmentMaxRecords: unsafe extern "system" fn(this: *mut *mut Self, records: *mut u32) -> ::windows_sys::core::HRESULT,
     pub SetSegmentMaxRecords: unsafe extern "system" fn(this: *mut *mut Self, records: u32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IPerformanceCounterDataCollector {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 58946822, data2: 2443, data3: 4568, data4: [148, 20, 80, 80, 84, 80, 48, 48] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1192,6 +1273,10 @@ pub struct ISchedule {
     pub SetDays: unsafe extern "system" fn(this: *mut *mut Self, days: WeekDays) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISchedule {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 58946874, data2: 2443, data3: 4568, data4: [148, 20, 80, 80, 84, 80, 48, 48] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IScheduleCollection {
     pub base__: super::Com::IDispatch,
@@ -1218,6 +1303,10 @@ pub struct IScheduleCollection {
     pub CreateSchedule: unsafe extern "system" fn(this: *mut *mut Self, schedule: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     CreateSchedule: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IScheduleCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 58946877, data2: 2443, data3: 4568, data4: [148, 20, 80, 80, 84, 80, 48, 48] };
 }
 #[repr(C)]
 pub struct ISystemMonitor {
@@ -1344,6 +1433,9 @@ pub struct ISystemMonitor {
     #[cfg(not(feature = "Win32_Foundation"))]
     SqlLogSetName: usize,
 }
+impl ::windows_sys::core::Interface for ISystemMonitor {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 424587841, data2: 49964, data3: 4559, data4: [147, 152, 0, 170, 0, 163, 221, 234] };
+}
 #[repr(C)]
 pub struct ISystemMonitor2 {
     pub base__: ISystemMonitor,
@@ -1377,6 +1469,9 @@ pub struct ISystemMonitor2 {
     #[cfg(not(feature = "Win32_Foundation"))]
     LoadSettings: usize,
 }
+impl ::windows_sys::core::Interface for ISystemMonitor2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 149102698, data2: 24530, data3: 20446, data4: [168, 165, 140, 179, 182, 61, 38, 119] };
+}
 #[repr(C)]
 pub struct ISystemMonitorEvents {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1385,6 +1480,9 @@ pub struct ISystemMonitorEvents {
     pub OnCounterDeleted: unsafe extern "system" fn(this: *mut *mut Self, index: i32),
     pub OnSampleCollected: unsafe extern "system" fn(this: *mut *mut Self),
     pub OnDblClick: unsafe extern "system" fn(this: *mut *mut Self, index: i32),
+}
+impl ::windows_sys::core::Interface for ISystemMonitorEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3999665824, data2: 19133, data3: 4559, data4: [148, 58, 0, 128, 41, 0, 67, 71] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1439,6 +1537,10 @@ pub struct ITraceDataCollector {
     pub TraceDataProviders: unsafe extern "system" fn(this: *mut *mut Self, providers: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     TraceDataProviders: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ITraceDataCollector {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 58946827, data2: 2443, data3: 4568, data4: [148, 20, 80, 80, 84, 80, 48, 48] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1504,6 +1606,10 @@ pub struct ITraceDataProvider {
     GetRegisteredProcesses: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ITraceDataProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 58946834, data2: 2443, data3: 4568, data4: [148, 20, 80, 80, 84, 80, 48, 48] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ITraceDataProviderCollection {
     pub base__: super::Com::IDispatch,
@@ -1538,6 +1644,10 @@ pub struct ITraceDataProviderCollection {
     pub GetTraceDataProvidersByProcess: unsafe extern "system" fn(this: *mut *mut Self, server: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pid: u32) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetTraceDataProvidersByProcess: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ITraceDataProviderCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 58946832, data2: 2443, data3: 4568, data4: [148, 20, 80, 80, 84, 80, 48, 48] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1586,6 +1696,10 @@ pub struct IValueMap {
     CreateValueMapItem: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IValueMap {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 58946868, data2: 2443, data3: 4568, data4: [148, 20, 80, 80, 84, 80, 48, 48] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IValueMapItem {
     pub base__: super::Com::IDispatch,
@@ -1617,6 +1731,10 @@ pub struct IValueMapItem {
     SetValue: usize,
     pub ValueMapType: unsafe extern "system" fn(this: *mut *mut Self, r#type: *mut ValueMapType) -> ::windows_sys::core::HRESULT,
     pub SetValueMapType: unsafe extern "system" fn(this: *mut *mut Self, r#type: ValueMapType) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IValueMapItem {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 58946867, data2: 2443, data3: 4568, data4: [148, 20, 80, 80, 84, 80, 48, 48] };
 }
 pub const LIBID_SystemMonitor: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 460799554, data2: 9481, data3: 4559, data4: [148, 47, 0, 128, 41, 0, 67, 71] };
 pub const LegacyDataCollectorSet: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 58946854, data2: 2443, data3: 4568, data4: [148, 20, 80, 80, 84, 80, 48, 48] };
@@ -3188,6 +3306,9 @@ pub struct _ICounterItemUnion {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     GetDataAt: usize,
 }
+impl ::windows_sys::core::Interface for _ICounterItemUnion {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3726273396, data2: 37250, data3: 19521, data4: [142, 44, 36, 194, 205, 48, 238, 131] };
+}
 #[repr(C)]
 pub struct _ISystemMonitorUnion {
     pub base__: ::windows_sys::core::IUnknown,
@@ -3341,4 +3462,7 @@ pub struct _ISystemMonitorUnion {
     pub LoadSettings: unsafe extern "system" fn(this: *mut *mut Self, bstrsettingfilename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     LoadSettings: usize,
+}
+impl ::windows_sys::core::Interface for _ISystemMonitorUnion {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3366417208, data2: 9823, data3: 19941, data4: [170, 37, 199, 218, 28, 229, 168, 244] };
 }

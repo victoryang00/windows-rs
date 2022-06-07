@@ -25,6 +25,9 @@ pub struct IMdmAlert {
     pub Type: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub SetType: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMdmAlert {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2969289511, data2: 10433, data3: 19282, data4: [165, 72, 197, 128, 124, 175, 112, 182] };
+}
 #[repr(C)]
 pub struct IMdmSession {
     pub base__: ::windows_sys::core::IInspectable,
@@ -49,6 +52,9 @@ pub struct IMdmSession {
     #[cfg(not(feature = "Foundation_Collections"))]
     StartWithAlertsAsync: usize,
 }
+impl ::windows_sys::core::Interface for IMdmSession {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4270403916, data2: 36708, data3: 18327, data4: [169, 215, 157, 136, 248, 106, 225, 102] };
+}
 #[repr(C)]
 pub struct IMdmSessionManagerStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -59,6 +65,9 @@ pub struct IMdmSessionManagerStatics {
     pub TryCreateSession: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub DeleteSessionById: unsafe extern "system" fn(this: *mut *mut Self, sessionid: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub GetSessionById: unsafe extern "system" fn(this: *mut *mut Self, sessionid: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMdmSessionManagerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3477789017, data2: 63301, data3: 19321, data4: [155, 92, 222, 11, 248, 239, 228, 75] };
 }
 pub type MdmAlert = *mut ::core::ffi::c_void;
 #[doc = "*Required features: `\"Management\"`*"]

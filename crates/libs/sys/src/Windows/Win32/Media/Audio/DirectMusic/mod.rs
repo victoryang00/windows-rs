@@ -1087,10 +1087,16 @@ pub struct IDirectMusic {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Media_Audio_DirectSound")))]
     SetDirectSound: usize,
 }
+impl ::windows_sys::core::Interface for IDirectMusic {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1698042202, data2: 31533, data3: 4562, data4: [186, 24, 0, 0, 248, 117, 172, 18] };
+}
 #[repr(C)]
 pub struct IDirectMusic8 {
     pub base__: IDirectMusic,
     pub SetExternalMasterClock: unsafe extern "system" fn(this: *mut *mut Self, pclock: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDirectMusic8 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 758524407, data2: 33085, data3: 18745, data4: [133, 8, 240, 92, 107, 117, 253, 151] };
 }
 #[repr(C)]
 pub struct IDirectMusicBuffer {
@@ -1109,26 +1115,41 @@ pub struct IDirectMusicBuffer {
     pub SetStartTime: unsafe extern "system" fn(this: *mut *mut Self, rt: i64) -> ::windows_sys::core::HRESULT,
     pub SetUsedBytes: unsafe extern "system" fn(this: *mut *mut Self, cb: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDirectMusicBuffer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3534497912, data2: 45979, data3: 4561, data4: [135, 4, 0, 96, 8, 147, 177, 189] };
+}
 #[repr(C)]
 pub struct IDirectMusicCollection {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetInstrument: unsafe extern "system" fn(this: *mut *mut Self, dwpatch: u32, ppinstrument: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub EnumInstrument: unsafe extern "system" fn(this: *mut *mut Self, dwindex: u32, pdwpatch: *mut u32, pwszname: ::windows_sys::core::PCWSTR, dwnamelen: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDirectMusicCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3534497916, data2: 45979, data3: 4561, data4: [135, 4, 0, 96, 8, 147, 177, 189] };
+}
 #[repr(C)]
 pub struct IDirectMusicDownload {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetBuffer: unsafe extern "system" fn(this: *mut *mut Self, ppvbuffer: *mut *mut ::core::ffi::c_void, pdwsize: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDirectMusicDownload {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3534497915, data2: 45979, data3: 4561, data4: [135, 4, 0, 96, 8, 147, 177, 189] };
+}
 #[repr(C)]
 pub struct IDirectMusicDownloadedInstrument {
     pub base__: ::windows_sys::core::IUnknown,
+}
+impl ::windows_sys::core::Interface for IDirectMusicDownloadedInstrument {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3534497918, data2: 45979, data3: 4561, data4: [135, 4, 0, 96, 8, 147, 177, 189] };
 }
 #[repr(C)]
 pub struct IDirectMusicInstrument {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetPatch: unsafe extern "system" fn(this: *mut *mut Self, pdwpatch: *mut u32) -> ::windows_sys::core::HRESULT,
     pub SetPatch: unsafe extern "system" fn(this: *mut *mut Self, dwpatch: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDirectMusicInstrument {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3534497917, data2: 45979, data3: 4561, data4: [135, 4, 0, 96, 8, 147, 177, 189] };
 }
 #[repr(C)]
 pub struct IDirectMusicPort {
@@ -1163,6 +1184,9 @@ pub struct IDirectMusicPort {
     SetDirectSound: usize,
     pub GetFormat: unsafe extern "system" fn(this: *mut *mut Self, pwaveformatex: *mut super::WAVEFORMATEX, pdwwaveformatexsize: *mut u32, pdwbuffersize: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDirectMusicPort {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 150132937, data2: 14274, data3: 4562, data4: [185, 249, 0, 0, 248, 117, 172, 18] };
+}
 #[repr(C)]
 pub struct IDirectMusicPortDownload {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1172,6 +1196,9 @@ pub struct IDirectMusicPortDownload {
     pub GetAppend: unsafe extern "system" fn(this: *mut *mut Self, pdwappend: *mut u32) -> ::windows_sys::core::HRESULT,
     pub Download: unsafe extern "system" fn(this: *mut *mut Self, pidmdownload: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Unload: unsafe extern "system" fn(this: *mut *mut Self, pidmdownload: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDirectMusicPortDownload {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3534497914, data2: 45979, data3: 4561, data4: [135, 4, 0, 96, 8, 147, 177, 189] };
 }
 #[repr(C)]
 pub struct IDirectMusicSynth {
@@ -1206,6 +1233,9 @@ pub struct IDirectMusicSynth {
     pub GetFormat: unsafe extern "system" fn(this: *mut *mut Self, pwaveformatex: *mut super::WAVEFORMATEX, pdwwaveformatexsize: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetAppend: unsafe extern "system" fn(this: *mut *mut Self, pdwappend: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDirectMusicSynth {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 159528545, data2: 23685, data3: 4562, data4: [175, 166, 0, 170, 0, 36, 216, 182] };
+}
 #[repr(C)]
 pub struct IDirectMusicSynth8 {
     pub base__: IDirectMusicSynth,
@@ -1217,6 +1247,9 @@ pub struct IDirectMusicSynth8 {
     GetVoiceState: usize,
     pub Refresh: unsafe extern "system" fn(this: *mut *mut Self, dwdownloadid: u32, dwflags: u32) -> ::windows_sys::core::HRESULT,
     pub AssignChannelToBuses: unsafe extern "system" fn(this: *mut *mut Self, dwchannelgroup: u32, dwchannel: u32, pdwbuses: *mut u32, cbuses: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDirectMusicSynth8 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1405793829, data2: 10001, data3: 19615, data4: [157, 231, 27, 127, 146, 95, 111, 200] };
 }
 #[repr(C)]
 pub struct IDirectMusicSynthSink {
@@ -1236,10 +1269,16 @@ pub struct IDirectMusicSynthSink {
     SetDirectSound: usize,
     pub GetDesiredBufferSize: unsafe extern "system" fn(this: *mut *mut Self, pdwbuffersizeinsamples: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDirectMusicSynthSink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 159528547, data2: 23685, data3: 4562, data4: [175, 166, 0, 170, 0, 36, 216, 182] };
+}
 #[repr(C)]
 pub struct IDirectMusicThru {
     pub base__: ::windows_sys::core::IUnknown,
     pub ThruChannel: unsafe extern "system" fn(this: *mut *mut Self, dwsourcechannelgroup: u32, dwsourcechannel: u32, dwdestinationchannelgroup: u32, dwdestinationchannel: u32, pdestinationport: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDirectMusicThru {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3469824999, data2: 13830, data3: 4562, data4: [185, 249, 0, 0, 248, 117, 172, 18] };
 }
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Media_Audio_DirectMusic\"`*"]

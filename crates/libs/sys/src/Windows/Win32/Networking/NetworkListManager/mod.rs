@@ -18,6 +18,10 @@ pub struct IEnumNetworkConnections {
     Clone: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IEnumNetworkConnections {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3702521862, data2: 22287, data3: 19099, data4: [141, 105, 25, 159, 219, 165, 114, 59] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IEnumNetworks {
     pub base__: super::super::System::Com::IDispatch,
@@ -35,6 +39,10 @@ pub struct IEnumNetworks {
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenumnetwork: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     Clone: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IEnumNetworks {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3702521859, data2: 22287, data3: 19099, data4: [141, 105, 25, 159, 219, 165, 114, 59] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -70,6 +78,10 @@ pub struct INetwork {
     pub SetCategory: unsafe extern "system" fn(this: *mut *mut Self, newcategory: NLM_NETWORK_CATEGORY) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for INetwork {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3702521858, data2: 22287, data3: 19099, data4: [141, 105, 25, 159, 219, 165, 114, 59] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct INetworkConnection {
     pub base__: super::super::System::Com::IDispatch,
@@ -84,6 +96,10 @@ pub struct INetworkConnection {
     pub GetAdapterId: unsafe extern "system" fn(this: *mut *mut Self, pgdadapterid: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub GetDomainType: unsafe extern "system" fn(this: *mut *mut Self, pdomaintype: *mut NLM_DOMAIN_TYPE) -> ::windows_sys::core::HRESULT,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for INetworkConnection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3702521861, data2: 22287, data3: 19099, data4: [141, 105, 25, 159, 219, 165, 114, 59] };
+}
 #[repr(C)]
 pub struct INetworkConnectionCost {
     pub base__: ::windows_sys::core::IUnknown,
@@ -93,17 +109,26 @@ pub struct INetworkConnectionCost {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetDataPlanStatus: usize,
 }
+impl ::windows_sys::core::Interface for INetworkConnectionCost {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3702521866, data2: 22287, data3: 19099, data4: [141, 105, 25, 159, 219, 165, 114, 59] };
+}
 #[repr(C)]
 pub struct INetworkConnectionCostEvents {
     pub base__: ::windows_sys::core::IUnknown,
     pub ConnectionCostChanged: unsafe extern "system" fn(this: *mut *mut Self, connectionid: ::windows_sys::core::GUID, newcost: u32) -> ::windows_sys::core::HRESULT,
     pub ConnectionDataPlanStatusChanged: unsafe extern "system" fn(this: *mut *mut Self, connectionid: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for INetworkConnectionCostEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3702521867, data2: 22287, data3: 19099, data4: [141, 105, 25, 159, 219, 165, 114, 59] };
+}
 #[repr(C)]
 pub struct INetworkConnectionEvents {
     pub base__: ::windows_sys::core::IUnknown,
     pub NetworkConnectionConnectivityChanged: unsafe extern "system" fn(this: *mut *mut Self, connectionid: ::windows_sys::core::GUID, newconnectivity: NLM_CONNECTIVITY) -> ::windows_sys::core::HRESULT,
     pub NetworkConnectionPropertyChanged: unsafe extern "system" fn(this: *mut *mut Self, connectionid: ::windows_sys::core::GUID, flags: NLM_CONNECTION_PROPERTY_CHANGE) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for INetworkConnectionEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3702521863, data2: 22287, data3: 19099, data4: [141, 105, 25, 159, 219, 165, 114, 59] };
 }
 #[repr(C)]
 pub struct INetworkCostManager {
@@ -115,11 +140,17 @@ pub struct INetworkCostManager {
     GetDataPlanStatus: usize,
     pub SetDestinationAddresses: unsafe extern "system" fn(this: *mut *mut Self, length: u32, pdestipaddrlist: *const NLM_SOCKADDR, bappend: i16) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for INetworkCostManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3702521864, data2: 22287, data3: 19099, data4: [141, 105, 25, 159, 219, 165, 114, 59] };
+}
 #[repr(C)]
 pub struct INetworkCostManagerEvents {
     pub base__: ::windows_sys::core::IUnknown,
     pub CostChanged: unsafe extern "system" fn(this: *mut *mut Self, newcost: u32, pdestaddr: *const NLM_SOCKADDR) -> ::windows_sys::core::HRESULT,
     pub DataPlanStatusChanged: unsafe extern "system" fn(this: *mut *mut Self, pdestaddr: *const NLM_SOCKADDR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for INetworkCostManagerEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3702521865, data2: 22287, data3: 19099, data4: [141, 105, 25, 159, 219, 165, 114, 59] };
 }
 #[repr(C)]
 pub struct INetworkEvents {
@@ -128,6 +159,9 @@ pub struct INetworkEvents {
     pub NetworkDeleted: unsafe extern "system" fn(this: *mut *mut Self, networkid: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub NetworkConnectivityChanged: unsafe extern "system" fn(this: *mut *mut Self, networkid: ::windows_sys::core::GUID, newconnectivity: NLM_CONNECTIVITY) -> ::windows_sys::core::HRESULT,
     pub NetworkPropertyChanged: unsafe extern "system" fn(this: *mut *mut Self, networkid: ::windows_sys::core::GUID, flags: NLM_NETWORK_PROPERTY_CHANGE) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for INetworkEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3702521860, data2: 22287, data3: 19099, data4: [141, 105, 25, 159, 219, 165, 114, 59] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -155,10 +189,17 @@ pub struct INetworkListManager {
     pub SetSimulatedProfileInfo: unsafe extern "system" fn(this: *mut *mut Self, psimulatedinfo: *const NLM_SIMULATED_PROFILE_INFO) -> ::windows_sys::core::HRESULT,
     pub ClearSimulatedProfileInfo: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for INetworkListManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3702521856, data2: 22287, data3: 19099, data4: [141, 105, 25, 159, 219, 165, 114, 59] };
+}
 #[repr(C)]
 pub struct INetworkListManagerEvents {
     pub base__: ::windows_sys::core::IUnknown,
     pub ConnectivityChanged: unsafe extern "system" fn(this: *mut *mut Self, newconnectivity: NLM_CONNECTIVITY) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for INetworkListManagerEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3702521857, data2: 22287, data3: 19099, data4: [141, 105, 25, 159, 219, 165, 114, 59] };
 }
 #[doc = "*Required features: `\"Win32_Networking_NetworkListManager\"`*"]
 pub const NA_AllowMerge: &str = "NA_AllowMerge";

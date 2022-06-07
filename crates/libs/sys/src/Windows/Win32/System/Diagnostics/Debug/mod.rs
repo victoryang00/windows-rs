@@ -1276,6 +1276,9 @@ pub struct AsyncIDebugApplicationNodeEvents {
     pub Begin_onAttach: unsafe extern "system" fn(this: *mut *mut Self, prddpparent: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Finish_onAttach: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for AsyncIDebugApplicationNodeEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2732829243, data2: 43661, data3: 20159, data4: [132, 205, 100, 139, 115, 123, 140, 19] };
+}
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
 pub const BIND_ALL_IMAGES: u32 = 4u32;
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -5515,9 +5518,15 @@ pub const DUMP_SUMMARY_VALID_KERNEL_VA: u32 = 1u32;
 pub struct DebugBaseEventCallbacks {
     pub base__: IDebugEventCallbacks,
 }
+impl ::windows_sys::core::Interface for DebugBaseEventCallbacks {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID::zeroed();
+}
 #[repr(C)]
 pub struct DebugBaseEventCallbacksWide {
     pub base__: IDebugEventCallbacksWide,
+}
+impl ::windows_sys::core::Interface for DebugBaseEventCallbacksWide {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID::zeroed();
 }
 pub const DebugHelper: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 201113696, data2: 35869, data3: 4560, data4: [172, 205, 0, 170, 0, 96, 39, 92] };
 #[repr(C)]
@@ -6485,6 +6494,9 @@ pub struct IActiveScript {
     InterruptScriptThread: usize,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppscript: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IActiveScript {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3139054305, data2: 42233, data3: 4559, data4: [143, 32, 0, 128, 95, 44, 208, 100] };
+}
 #[repr(C)]
 pub struct IActiveScriptAuthor {
     pub base__: ::windows_sys::core::IUnknown,
@@ -6515,6 +6527,9 @@ pub struct IActiveScriptAuthor {
     #[cfg(not(feature = "Win32_Foundation"))]
     IsCommitChar: usize,
 }
+impl ::windows_sys::core::Interface for IActiveScriptAuthor {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2618334624, data2: 28678, data3: 4561, data4: [179, 108, 0, 160, 201, 17, 232, 178] };
+}
 #[repr(C)]
 pub struct IActiveScriptAuthorProcedure {
     pub base__: ::windows_sys::core::IUnknown,
@@ -6523,6 +6538,9 @@ pub struct IActiveScriptAuthorProcedure {
     #[cfg(not(feature = "Win32_System_Com"))]
     ParseProcedureText: usize,
 }
+impl ::windows_sys::core::Interface for IActiveScriptAuthorProcedure {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2116897648, data2: 48538, data3: 4560, data4: [147, 54, 0, 160, 201, 13, 202, 169] };
+}
 #[repr(C)]
 pub struct IActiveScriptDebug32 {
     pub base__: ::windows_sys::core::IUnknown,
@@ -6530,12 +6548,18 @@ pub struct IActiveScriptDebug32 {
     pub GetScriptletTextAttributes: unsafe extern "system" fn(this: *mut *mut Self, pstrcode: ::windows_sys::core::PCWSTR, unumcodechars: u32, pstrdelimiter: ::windows_sys::core::PCWSTR, dwflags: u32, pattr: *mut u16) -> ::windows_sys::core::HRESULT,
     pub EnumCodeContextsOfPosition: unsafe extern "system" fn(this: *mut *mut Self, dwsourcecontext: u32, ucharacteroffset: u32, unumchars: u32, ppescc: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IActiveScriptDebug32 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1368865808, data2: 51980, data3: 4560, data4: [181, 201, 0, 160, 36, 74, 14, 122] };
+}
 #[repr(C)]
 pub struct IActiveScriptDebug64 {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetScriptTextAttributes: unsafe extern "system" fn(this: *mut *mut Self, pstrcode: ::windows_sys::core::PCWSTR, unumcodechars: u32, pstrdelimiter: ::windows_sys::core::PCWSTR, dwflags: u32, pattr: *mut u16) -> ::windows_sys::core::HRESULT,
     pub GetScriptletTextAttributes: unsafe extern "system" fn(this: *mut *mut Self, pstrcode: ::windows_sys::core::PCWSTR, unumcodechars: u32, pstrdelimiter: ::windows_sys::core::PCWSTR, dwflags: u32, pattr: *mut u16) -> ::windows_sys::core::HRESULT,
     pub EnumCodeContextsOfPosition: unsafe extern "system" fn(this: *mut *mut Self, dwsourcecontext: u64, ucharacteroffset: u32, unumchars: u32, ppescc: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IActiveScriptDebug64 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3158539811, data2: 62904, data3: 18420, data4: [187, 121, 125, 28, 229, 72, 59, 134] };
 }
 #[repr(C)]
 pub struct IActiveScriptEncode {
@@ -6546,6 +6570,9 @@ pub struct IActiveScriptEncode {
     pub GetEncodeProgId: unsafe extern "system" fn(this: *mut *mut Self, pbstrout: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetEncodeProgId: usize,
+}
+impl ::windows_sys::core::Interface for IActiveScriptEncode {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3139054307, data2: 42233, data3: 4559, data4: [143, 32, 0, 128, 95, 44, 208, 100] };
 }
 #[repr(C)]
 pub struct IActiveScriptError {
@@ -6560,10 +6587,16 @@ pub struct IActiveScriptError {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetSourceLineText: usize,
 }
+impl ::windows_sys::core::Interface for IActiveScriptError {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3940661857, data2: 42221, data3: 4559, data4: [143, 32, 0, 128, 95, 44, 208, 100] };
+}
 #[repr(C)]
 pub struct IActiveScriptError64 {
     pub base__: IActiveScriptError,
     pub GetSourcePosition64: unsafe extern "system" fn(this: *mut *mut Self, pdwsourcecontext: *mut u64, pullinenumber: *mut u32, plcharacterposition: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IActiveScriptError64 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2988421793, data2: 23439, data3: 18787, data4: [140, 33, 33, 69, 15, 132, 237, 127] };
 }
 #[repr(C)]
 pub struct IActiveScriptErrorDebug {
@@ -6571,15 +6604,24 @@ pub struct IActiveScriptErrorDebug {
     pub GetDocumentContext: unsafe extern "system" fn(this: *mut *mut Self, ppssc: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetStackFrame: unsafe extern "system" fn(this: *mut *mut Self, ppdsf: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IActiveScriptErrorDebug {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1368865810, data2: 51980, data3: 4560, data4: [181, 201, 0, 160, 36, 74, 14, 122] };
+}
 #[repr(C)]
 pub struct IActiveScriptErrorDebug110 {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetExceptionThrownKind: unsafe extern "system" fn(this: *mut *mut Self, pexceptionkind: *mut SCRIPT_ERROR_DEBUG_EXCEPTION_THROWN_KIND) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IActiveScriptErrorDebug110 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1366180534, data2: 35240, data3: 17712, data4: [147, 123, 95, 7, 8, 67, 20, 66] };
+}
 #[repr(C)]
 pub struct IActiveScriptGarbageCollector {
     pub base__: ::windows_sys::core::IUnknown,
     pub CollectGarbage: unsafe extern "system" fn(this: *mut *mut Self, scriptgctype: SCRIPTGCTYPE) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IActiveScriptGarbageCollector {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1789052064, data2: 11091, data3: 4564, data4: [162, 160, 0, 16, 75, 211, 80, 144] };
 }
 #[repr(C)]
 pub struct IActiveScriptHostEncode {
@@ -6588,6 +6630,9 @@ pub struct IActiveScriptHostEncode {
     pub EncodeScriptHostFile: unsafe extern "system" fn(this: *mut *mut Self, bstrinfile: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, pbstroutfile: *mut super::super::super::Foundation::BSTR, cflags: u32, bstrdefaultlang: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     EncodeScriptHostFile: usize,
+}
+impl ::windows_sys::core::Interface for IActiveScriptHostEncode {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3202987886, data2: 53219, data3: 4561, data4: [183, 71, 0, 192, 79, 194, 176, 133] };
 }
 #[repr(C)]
 pub struct IActiveScriptParse32 {
@@ -6602,6 +6647,9 @@ pub struct IActiveScriptParse32 {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     ParseScriptText: usize,
 }
+impl ::windows_sys::core::Interface for IActiveScriptParse32 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3139054306, data2: 42233, data3: 4559, data4: [143, 32, 0, 128, 95, 44, 208, 100] };
+}
 #[repr(C)]
 pub struct IActiveScriptParse64 {
     pub base__: ::windows_sys::core::IUnknown,
@@ -6615,13 +6663,22 @@ pub struct IActiveScriptParse64 {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     ParseScriptText: usize,
 }
+impl ::windows_sys::core::Interface for IActiveScriptParse64 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3354359384, data2: 57838, data3: 18446, data4: [151, 234, 213, 44, 180, 215, 109, 23] };
+}
 #[repr(C)]
 pub struct IActiveScriptParseProcedure2_32 {
     pub base__: IActiveScriptParseProcedure32,
 }
+impl ::windows_sys::core::Interface for IActiveScriptParseProcedure2_32 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1911446304, data2: 64260, data3: 4561, data4: [179, 168, 0, 160, 201, 17, 232, 178] };
+}
 #[repr(C)]
 pub struct IActiveScriptParseProcedure2_64 {
     pub base__: IActiveScriptParseProcedure64,
+}
+impl ::windows_sys::core::Interface for IActiveScriptParseProcedure2_64 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4269556337, data2: 8460, data3: 17549, data4: [159, 84, 118, 218, 183, 4, 123, 40] };
 }
 #[repr(C)]
 pub struct IActiveScriptParseProcedure32 {
@@ -6631,6 +6688,9 @@ pub struct IActiveScriptParseProcedure32 {
     #[cfg(not(feature = "Win32_System_Com"))]
     ParseProcedureText: usize,
 }
+impl ::windows_sys::core::Interface for IActiveScriptParseProcedure32 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2858117760, data2: 47156, data3: 4560, data4: [147, 47, 0, 160, 201, 13, 202, 169] };
+}
 #[repr(C)]
 pub struct IActiveScriptParseProcedure64 {
     pub base__: ::windows_sys::core::IUnknown,
@@ -6638,6 +6698,9 @@ pub struct IActiveScriptParseProcedure64 {
     pub ParseProcedureText: unsafe extern "system" fn(this: *mut *mut Self, pstrcode: ::windows_sys::core::PCWSTR, pstrformalparams: ::windows_sys::core::PCWSTR, pstrprocedurename: ::windows_sys::core::PCWSTR, pstritemname: ::windows_sys::core::PCWSTR, punkcontext: *mut ::core::ffi::c_void, pstrdelimiter: ::windows_sys::core::PCWSTR, dwsourcecontextcookie: u64, ulstartinglinenumber: u32, dwflags: u32, ppdisp: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     ParseProcedureText: usize,
+}
+impl ::windows_sys::core::Interface for IActiveScriptParseProcedure64 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3326546870, data2: 57385, data3: 19653, data4: [146, 0, 67, 139, 114, 137, 11, 106] };
 }
 #[repr(C)]
 pub struct IActiveScriptParseProcedureOld32 {
@@ -6647,6 +6710,9 @@ pub struct IActiveScriptParseProcedureOld32 {
     #[cfg(not(feature = "Win32_System_Com"))]
     ParseProcedureText: usize,
 }
+impl ::windows_sys::core::Interface for IActiveScriptParseProcedureOld32 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 486473808, data2: 28637, data3: 4560, data4: [147, 40, 0, 160, 201, 13, 202, 169] };
+}
 #[repr(C)]
 pub struct IActiveScriptParseProcedureOld64 {
     pub base__: ::windows_sys::core::IUnknown,
@@ -6654,6 +6720,9 @@ pub struct IActiveScriptParseProcedureOld64 {
     pub ParseProcedureText: unsafe extern "system" fn(this: *mut *mut Self, pstrcode: ::windows_sys::core::PCWSTR, pstrformalparams: ::windows_sys::core::PCWSTR, pstritemname: ::windows_sys::core::PCWSTR, punkcontext: *mut ::core::ffi::c_void, pstrdelimiter: ::windows_sys::core::PCWSTR, dwsourcecontextcookie: u64, ulstartinglinenumber: u32, dwflags: u32, ppdisp: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     ParseProcedureText: usize,
+}
+impl ::windows_sys::core::Interface for IActiveScriptParseProcedureOld64 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 569733416, data2: 2249, data3: 17976, data4: [186, 18, 34, 209, 93, 136, 220, 92] };
 }
 #[repr(C)]
 pub struct IActiveScriptProfilerCallback {
@@ -6665,16 +6734,25 @@ pub struct IActiveScriptProfilerCallback {
     pub OnFunctionEnter: unsafe extern "system" fn(this: *mut *mut Self, scriptid: i32, functionid: i32) -> ::windows_sys::core::HRESULT,
     pub OnFunctionExit: unsafe extern "system" fn(this: *mut *mut Self, scriptid: i32, functionid: i32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IActiveScriptProfilerCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1947126307, data2: 32157, data3: 17125, data4: [186, 157, 248, 178, 75, 28, 122, 155] };
+}
 #[repr(C)]
 pub struct IActiveScriptProfilerCallback2 {
     pub base__: IActiveScriptProfilerCallback,
     pub OnFunctionEnterByName: unsafe extern "system" fn(this: *mut *mut Self, pwszfunctionname: ::windows_sys::core::PCWSTR, r#type: PROFILER_SCRIPT_TYPE) -> ::windows_sys::core::HRESULT,
     pub OnFunctionExitByName: unsafe extern "system" fn(this: *mut *mut Self, pwszfunctionname: ::windows_sys::core::PCWSTR, r#type: PROFILER_SCRIPT_TYPE) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IActiveScriptProfilerCallback2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 834140333, data2: 42551, data3: 16540, data4: [178, 47, 4, 9, 149, 182, 16, 61] };
+}
 #[repr(C)]
 pub struct IActiveScriptProfilerCallback3 {
     pub base__: IActiveScriptProfilerCallback2,
     pub SetWebWorkerId: unsafe extern "system" fn(this: *mut *mut Self, webworkerid: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IActiveScriptProfilerCallback3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1791339813, data2: 8247, data3: 18055, data4: [145, 223, 181, 153, 121, 217, 61, 115] };
 }
 #[repr(C)]
 pub struct IActiveScriptProfilerControl {
@@ -6683,26 +6761,41 @@ pub struct IActiveScriptProfilerControl {
     pub SetProfilerEventMask: unsafe extern "system" fn(this: *mut *mut Self, dweventmask: u32) -> ::windows_sys::core::HRESULT,
     pub StopProfiling: unsafe extern "system" fn(this: *mut *mut Self, hrshutdownreason: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IActiveScriptProfilerControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2018205680, data2: 27056, data3: 18385, data4: [167, 220, 37, 24, 244, 35, 14, 144] };
+}
 #[repr(C)]
 pub struct IActiveScriptProfilerControl2 {
     pub base__: IActiveScriptProfilerControl,
     pub CompleteProfilerStart: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub PrepareProfilerStop: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IActiveScriptProfilerControl2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1199636837, data2: 18831, data3: 16574, data4: [148, 241, 101, 53, 87, 233, 231, 218] };
+}
 #[repr(C)]
 pub struct IActiveScriptProfilerControl3 {
     pub base__: IActiveScriptProfilerControl2,
     pub EnumHeap: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IActiveScriptProfilerControl3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 188755989, data2: 62337, data3: 16419, data4: [165, 208, 111, 237, 7, 109, 231, 22] };
 }
 #[repr(C)]
 pub struct IActiveScriptProfilerControl4 {
     pub base__: IActiveScriptProfilerControl3,
     pub SummarizeHeap: unsafe extern "system" fn(this: *mut *mut Self, heapsummary: *mut PROFILER_HEAP_SUMMARY) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IActiveScriptProfilerControl4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 370119933, data2: 40380, data3: 16596, data4: [158, 172, 43, 113, 219, 49, 50, 244] };
+}
 #[repr(C)]
 pub struct IActiveScriptProfilerControl5 {
     pub base__: IActiveScriptProfilerControl4,
     pub EnumHeap2: unsafe extern "system" fn(this: *mut *mut Self, enumflags: PROFILER_HEAP_ENUM_FLAGS, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IActiveScriptProfilerControl5 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 469869265, data2: 36623, data3: 18085, data4: [151, 32, 13, 126, 210, 198, 47, 10] };
 }
 #[repr(C)]
 pub struct IActiveScriptProfilerHeapEnum {
@@ -6714,6 +6807,9 @@ pub struct IActiveScriptProfilerHeapEnum {
     GetOptionalInfo: usize,
     pub FreeObjectAndOptionalInfo: unsafe extern "system" fn(this: *mut *mut Self, celt: u32, heapobjects: *const *const PROFILER_HEAP_OBJECT) -> ::windows_sys::core::HRESULT,
     pub GetNameIdMap: unsafe extern "system" fn(this: *mut *mut Self, pnamelist: *mut *mut *mut ::windows_sys::core::PWSTR, pcelt: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IActiveScriptProfilerHeapEnum {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 853829966, data2: 3383, data3: 16795, data4: [185, 61, 250, 32, 222, 214, 232, 234] };
 }
 #[repr(C)]
 pub struct IActiveScriptProperty {
@@ -6727,10 +6823,16 @@ pub struct IActiveScriptProperty {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     SetProperty: usize,
 }
+impl ::windows_sys::core::Interface for IActiveScriptProperty {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1230299344, data2: 64455, data3: 4561, data4: [132, 16, 0, 96, 8, 195, 251, 252] };
+}
 #[repr(C)]
 pub struct IActiveScriptSIPInfo {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetSIPOID: unsafe extern "system" fn(this: *mut *mut Self, poid_sip: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IActiveScriptSIPInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1984319952, data2: 14558, data3: 4564, data4: [162, 163, 0, 16, 75, 211, 80, 144] };
 }
 #[repr(C)]
 pub struct IActiveScriptSite {
@@ -6753,6 +6855,9 @@ pub struct IActiveScriptSite {
     pub OnEnterScript: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub OnLeaveScript: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IActiveScriptSite {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3674317283, data2: 42027, data3: 4559, data4: [143, 32, 0, 128, 95, 44, 208, 100] };
+}
 #[repr(C)]
 pub struct IActiveScriptSiteDebug32 {
     pub base__: ::windows_sys::core::IUnknown,
@@ -6763,6 +6868,9 @@ pub struct IActiveScriptSiteDebug32 {
     pub OnScriptErrorDebug: unsafe extern "system" fn(this: *mut *mut Self, perrordebug: *mut ::core::ffi::c_void, pfenterdebugger: *mut super::super::super::Foundation::BOOL, pfcallonscripterrorwhencontinuing: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     OnScriptErrorDebug: usize,
+}
+impl ::windows_sys::core::Interface for IActiveScriptSiteDebug32 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1368865809, data2: 51980, data3: 4560, data4: [181, 201, 0, 160, 36, 74, 14, 122] };
 }
 #[repr(C)]
 pub struct IActiveScriptSiteDebug64 {
@@ -6775,6 +6883,9 @@ pub struct IActiveScriptSiteDebug64 {
     #[cfg(not(feature = "Win32_Foundation"))]
     OnScriptErrorDebug: usize,
 }
+impl ::windows_sys::core::Interface for IActiveScriptSiteDebug64 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3602475786, data2: 29795, data3: 16428, data4: [146, 172, 137, 152, 66, 38, 148, 47] };
+}
 #[repr(C)]
 pub struct IActiveScriptSiteDebugEx {
     pub base__: ::windows_sys::core::IUnknown,
@@ -6783,20 +6894,32 @@ pub struct IActiveScriptSiteDebugEx {
     #[cfg(not(feature = "Win32_Foundation"))]
     OnCanNotJITScriptErrorDebug: usize,
 }
+impl ::windows_sys::core::Interface for IActiveScriptSiteDebugEx {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3144821963, data2: 27346, data3: 16838, data4: [183, 128, 175, 156, 3, 238, 105, 245] };
+}
 #[repr(C)]
 pub struct IActiveScriptSiteInterruptPoll {
     pub base__: ::windows_sys::core::IUnknown,
     pub QueryContinue: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IActiveScriptSiteInterruptPoll {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1402378400, data2: 52682, data3: 4559, data4: [165, 235, 0, 170, 0, 71, 160, 99] };
 }
 #[repr(C)]
 pub struct IActiveScriptSiteTraceInfo {
     pub base__: ::windows_sys::core::IUnknown,
     pub SendScriptTraceInfo: unsafe extern "system" fn(this: *mut *mut Self, stieventtype: SCRIPTTRACEINFO, guidcontextid: ::windows_sys::core::GUID, dwscriptcontextcookie: u32, lscriptstatementstart: i32, lscriptstatementend: i32, dwreserved: u64) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IActiveScriptSiteTraceInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1265791662, data2: 6485, data3: 19454, data4: [152, 176, 120, 6, 33, 136, 133, 105] };
+}
 #[repr(C)]
 pub struct IActiveScriptSiteUIControl {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetUIBehavior: unsafe extern "system" fn(this: *mut *mut Self, uicitem: SCRIPTUICITEM, puichandling: *mut SCRIPTUICHANDLING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IActiveScriptSiteUIControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2933582206, data2: 55278, data3: 18326, data4: [185, 96, 127, 9, 42, 232, 68, 171] };
 }
 #[repr(C)]
 pub struct IActiveScriptSiteWindow {
@@ -6810,12 +6933,18 @@ pub struct IActiveScriptSiteWindow {
     #[cfg(not(feature = "Win32_Foundation"))]
     EnableModeless: usize,
 }
+impl ::windows_sys::core::Interface for IActiveScriptSiteWindow {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3507447649, data2: 33769, data3: 4559, data4: [143, 32, 0, 128, 95, 44, 208, 100] };
+}
 #[repr(C)]
 pub struct IActiveScriptStats {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetStat: unsafe extern "system" fn(this: *mut *mut Self, stid: u32, pluhi: *mut u32, plulo: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetStatEx: unsafe extern "system" fn(this: *mut *mut Self, guid: *const ::windows_sys::core::GUID, pluhi: *mut u32, plulo: *mut u32) -> ::windows_sys::core::HRESULT,
     pub ResetStats: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IActiveScriptStats {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3101319952, data2: 57755, data3: 4560, data4: [147, 60, 0, 160, 201, 13, 202, 169] };
 }
 #[repr(C)]
 pub struct IActiveScriptStringCompare {
@@ -6825,11 +6954,17 @@ pub struct IActiveScriptStringCompare {
     #[cfg(not(feature = "Win32_Foundation"))]
     StrComp: usize,
 }
+impl ::windows_sys::core::Interface for IActiveScriptStringCompare {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1482041193, data2: 60754, data3: 17143, data4: [132, 3, 73, 99, 81, 78, 31, 17] };
+}
 #[repr(C)]
 pub struct IActiveScriptTraceInfo {
     pub base__: ::windows_sys::core::IUnknown,
     pub StartScriptTracing: unsafe extern "system" fn(this: *mut *mut Self, psitetraceinfo: *mut ::core::ffi::c_void, guidcontextid: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub StopScriptTracing: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IActiveScriptTraceInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3277084391, data2: 48831, data3: 18971, data4: [134, 169, 36, 213, 107, 232, 179, 105] };
 }
 #[repr(C)]
 pub struct IActiveScriptWinRTErrorDebug {
@@ -6847,6 +6982,9 @@ pub struct IActiveScriptWinRTErrorDebug {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetCapabilitySid: usize,
 }
+impl ::windows_sys::core::Interface for IActiveScriptWinRTErrorDebug {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1940125738, data2: 4073, data3: 19251, data4: [186, 59, 254, 9, 95, 105, 126, 10] };
+}
 #[repr(C)]
 pub struct IApplicationDebugger {
     pub base__: ::windows_sys::core::IUnknown,
@@ -6857,11 +6995,17 @@ pub struct IApplicationDebugger {
     pub onClose: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub onDebuggerEvent: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, punk: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IApplicationDebugger {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1368865834, data2: 51980, data3: 4560, data4: [181, 201, 0, 160, 36, 74, 14, 122] };
+}
 #[repr(C)]
 pub struct IApplicationDebuggerUI {
     pub base__: ::windows_sys::core::IUnknown,
     pub BringDocumentToTop: unsafe extern "system" fn(this: *mut *mut Self, pddt: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub BringDocumentContextToTop: unsafe extern "system" fn(this: *mut *mut Self, pddc: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IApplicationDebuggerUI {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1368865835, data2: 51980, data3: 4560, data4: [181, 201, 0, 160, 36, 74, 14, 122] };
 }
 #[repr(C)]
 pub struct IBindEventHandler {
@@ -6871,15 +7015,24 @@ pub struct IBindEventHandler {
     #[cfg(not(feature = "Win32_System_Com"))]
     BindHandler: usize,
 }
+impl ::windows_sys::core::Interface for IBindEventHandler {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1674427568, data2: 49585, data3: 4560, data4: [147, 54, 0, 160, 201, 13, 202, 169] };
+}
 #[repr(C)]
 pub struct ICodeAddressConcept {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetContainingSymbol: unsafe extern "system" fn(this: *mut *mut Self, pcontextobject: *mut ::core::ffi::c_void, ppsymbol: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ICodeAddressConcept {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3342275944, data2: 23672, data3: 18944, data4: [164, 171, 110, 248, 130, 49, 132, 203] };
+}
 #[repr(C)]
 pub struct IComparableConcept {
     pub base__: ::windows_sys::core::IUnknown,
     pub CompareObjects: unsafe extern "system" fn(this: *mut *mut Self, contextobject: *mut ::core::ffi::c_void, otherobject: *mut ::core::ffi::c_void, comparisonresult: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IComparableConcept {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2810381894, data2: 40716, data3: 18993, data4: [186, 25, 80, 63, 51, 230, 200, 163] };
 }
 #[repr(C)]
 pub struct IDataModelConcept {
@@ -6889,6 +7042,9 @@ pub struct IDataModelConcept {
     pub GetName: unsafe extern "system" fn(this: *mut *mut Self, modelname: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetName: usize,
+}
+impl ::windows_sys::core::Interface for IDataModelConcept {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4240018717, data2: 4372, data3: 20415, data4: [178, 76, 239, 252, 181, 222, 240, 211] };
 }
 #[repr(C)]
 pub struct IDataModelManager {
@@ -6920,6 +7076,9 @@ pub struct IDataModelManager {
     pub UnregisterNamedModel: unsafe extern "system" fn(this: *mut *mut Self, modelname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
     pub AcquireNamedModel: unsafe extern "system" fn(this: *mut *mut Self, modelname: ::windows_sys::core::PCWSTR, modelobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDataModelManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1946032628, data2: 41232, data3: 17664, data4: [142, 217, 60, 40, 137, 111, 80, 140] };
+}
 #[repr(C)]
 pub struct IDataModelManager2 {
     pub base__: IDataModelManager,
@@ -6929,6 +7088,9 @@ pub struct IDataModelManager2 {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     CreateTypedIntrinsicObjectEx: usize,
 }
+impl ::windows_sys::core::Interface for IDataModelManager2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4094871018, data2: 8836, data3: 17954, data4: [166, 96, 166, 151, 22, 13, 51, 18] };
+}
 #[repr(C)]
 pub struct IDataModelNameBinder {
     pub base__: ::windows_sys::core::IUnknown,
@@ -6936,6 +7098,9 @@ pub struct IDataModelNameBinder {
     pub BindReference: unsafe extern "system" fn(this: *mut *mut Self, contextobject: *mut ::core::ffi::c_void, name: ::windows_sys::core::PCWSTR, reference: *mut *mut ::core::ffi::c_void, metadata: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub EnumerateValues: unsafe extern "system" fn(this: *mut *mut Self, contextobject: *mut ::core::ffi::c_void, enumerator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub EnumerateReferences: unsafe extern "system" fn(this: *mut *mut Self, contextobject: *mut ::core::ffi::c_void, enumerator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDataModelNameBinder {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2939497339, data2: 33426, data3: 19457, data4: [179, 96, 45, 195, 105, 108, 101, 231] };
 }
 #[repr(C)]
 pub struct IDataModelScript {
@@ -6954,10 +7119,16 @@ pub struct IDataModelScript {
     pub IsInvocable: unsafe extern "system" fn(this: *mut *mut Self, isinvocable: *mut bool) -> ::windows_sys::core::HRESULT,
     pub InvokeMain: unsafe extern "system" fn(this: *mut *mut Self, client: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDataModelScript {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2068656380, data2: 45386, data3: 18936, data4: [141, 135, 217, 161, 72, 12, 151, 247] };
+}
 #[repr(C)]
 pub struct IDataModelScriptClient {
     pub base__: ::windows_sys::core::IUnknown,
     pub ReportError: unsafe extern "system" fn(this: *mut *mut Self, errclass: ErrorClass, hrfail: ::windows_sys::core::HRESULT, message: ::windows_sys::core::PCWSTR, line: u32, position: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDataModelScriptClient {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 993405710, data2: 35312, data3: 18118, data4: [166, 99, 223, 220, 149, 25, 74, 239] };
 }
 #[repr(C)]
 pub struct IDataModelScriptDebug {
@@ -6976,10 +7147,16 @@ pub struct IDataModelScriptDebug {
     pub StartDebugging: unsafe extern "system" fn(this: *mut *mut Self, debugclient: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub StopDebugging: unsafe extern "system" fn(this: *mut *mut Self, debugclient: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDataModelScriptDebug {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3733850437, data2: 38736, data3: 17521, data4: [171, 118, 168, 247, 157, 110, 195, 80] };
+}
 #[repr(C)]
 pub struct IDataModelScriptDebug2 {
     pub base__: IDataModelScriptDebug,
     pub SetBreakpointAtFunction: unsafe extern "system" fn(this: *mut *mut Self, functionname: ::windows_sys::core::PCWSTR, breakpoint: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDataModelScriptDebug2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3417378515, data2: 33694, data3: 17004, data4: [146, 67, 226, 53, 53, 193, 174, 26] };
 }
 #[repr(C)]
 pub struct IDataModelScriptDebugBreakpoint {
@@ -6994,22 +7171,34 @@ pub struct IDataModelScriptDebugBreakpoint {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetPosition: usize,
 }
+impl ::windows_sys::core::Interface for IDataModelScriptDebugBreakpoint {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1806859061, data2: 742, data3: 18379, data4: [144, 160, 83, 113, 36, 64, 50, 222] };
+}
 #[repr(C)]
 pub struct IDataModelScriptDebugBreakpointEnumerator {
     pub base__: ::windows_sys::core::IUnknown,
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub GetNext: unsafe extern "system" fn(this: *mut *mut Self, breakpoint: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDataModelScriptDebugBreakpointEnumerator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 961038965, data2: 46323, data3: 18329, data4: [134, 218, 105, 26, 250, 87, 178, 153] };
+}
 #[repr(C)]
 pub struct IDataModelScriptDebugClient {
     pub base__: ::windows_sys::core::IUnknown,
     pub NotifyDebugEvent: unsafe extern "system" fn(this: *mut *mut Self, peventinfo: *const ScriptDebugEventInformation, pscript: *mut ::core::ffi::c_void, peventdataobject: *mut ::core::ffi::c_void, resumeeventkind: *mut ScriptExecutionKind) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDataModelScriptDebugClient {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1393924973, data2: 54468, data3: 18203, data4: [168, 99, 91, 17, 12, 168, 0, 202] };
 }
 #[repr(C)]
 pub struct IDataModelScriptDebugStack {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetFrameCount: unsafe extern "system" fn(this: *mut *mut Self) -> u64,
     pub GetStackFrame: unsafe extern "system" fn(this: *mut *mut Self, framenumber: u64, stackframe: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDataModelScriptDebugStack {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 85157085, data2: 58441, data3: 17470, data4: [151, 98, 254, 87, 143, 74, 84, 115] };
 }
 #[repr(C)]
 pub struct IDataModelScriptDebugStackFrame {
@@ -7028,6 +7217,9 @@ pub struct IDataModelScriptDebugStackFrame {
     pub EnumerateLocals: unsafe extern "system" fn(this: *mut *mut Self, variablesenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub EnumerateArguments: unsafe extern "system" fn(this: *mut *mut Self, variablesenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDataModelScriptDebugStackFrame {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3737578846, data2: 25440, data3: 18753, data4: [171, 76, 162, 100, 9, 222, 79, 130] };
+}
 #[repr(C)]
 pub struct IDataModelScriptDebugVariableSetEnumerator {
     pub base__: ::windows_sys::core::IUnknown,
@@ -7037,11 +7229,17 @@ pub struct IDataModelScriptDebugVariableSetEnumerator {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetNext: usize,
 }
+impl ::windows_sys::core::Interface for IDataModelScriptDebugVariableSetEnumerator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 262139607, data2: 53317, data3: 19139, data4: [152, 168, 169, 137, 66, 207, 106, 53] };
+}
 #[repr(C)]
 pub struct IDataModelScriptHostContext {
     pub base__: ::windows_sys::core::IUnknown,
     pub NotifyScriptChange: unsafe extern "system" fn(this: *mut *mut Self, script: *mut ::core::ffi::c_void, changekind: ScriptChangeKind) -> ::windows_sys::core::HRESULT,
     pub GetNamespaceObject: unsafe extern "system" fn(this: *mut *mut Self, namespaceobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDataModelScriptHostContext {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 21837418, data2: 7971, data3: 18817, data4: [146, 25, 178, 219, 139, 64, 32, 84] };
 }
 #[repr(C)]
 pub struct IDataModelScriptManager {
@@ -7052,6 +7250,9 @@ pub struct IDataModelScriptManager {
     pub FindProviderForScriptType: unsafe extern "system" fn(this: *mut *mut Self, scripttype: ::windows_sys::core::PCWSTR, provider: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub FindProviderForScriptExtension: unsafe extern "system" fn(this: *mut *mut Self, scriptextension: ::windows_sys::core::PCWSTR, provider: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub EnumerateScriptProviders: unsafe extern "system" fn(this: *mut *mut Self, enumerator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDataModelScriptManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1875975731, data2: 58797, data3: 16651, data4: [128, 17, 104, 198, 188, 75, 248, 13] };
 }
 #[repr(C)]
 pub struct IDataModelScriptProvider {
@@ -7068,11 +7269,17 @@ pub struct IDataModelScriptProvider {
     pub GetDefaultTemplateContent: unsafe extern "system" fn(this: *mut *mut Self, templatecontent: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub EnumerateTemplates: unsafe extern "system" fn(this: *mut *mut Self, enumerator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDataModelScriptProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1362387424, data2: 20426, data3: 18638, data4: [134, 88, 50, 243, 226, 5, 111, 59] };
+}
 #[repr(C)]
 pub struct IDataModelScriptProviderEnumerator {
     pub base__: ::windows_sys::core::IUnknown,
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub GetNext: unsafe extern "system" fn(this: *mut *mut Self, provider: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDataModelScriptProviderEnumerator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2511995106, data2: 28746, data3: 20450, data4: [168, 241, 167, 231, 216, 251, 9, 65] };
 }
 #[repr(C)]
 pub struct IDataModelScriptTemplate {
@@ -7090,17 +7297,26 @@ pub struct IDataModelScriptTemplate {
     #[cfg(not(feature = "Win32_System_Com"))]
     GetContent: usize,
 }
+impl ::windows_sys::core::Interface for IDataModelScriptTemplate {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 319020740, data2: 64059, data3: 20251, data4: [146, 36, 185, 83, 209, 107, 171, 181] };
+}
 #[repr(C)]
 pub struct IDataModelScriptTemplateEnumerator {
     pub base__: ::windows_sys::core::IUnknown,
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub GetNext: unsafe extern "system" fn(this: *mut *mut Self, templatecontent: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDataModelScriptTemplateEnumerator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1775135458, data2: 8808, data3: 20079, data4: [176, 98, 32, 206, 98, 191, 230, 119] };
+}
 #[repr(C)]
 pub struct IDebugAdvanced {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetThreadContext: unsafe extern "system" fn(this: *mut *mut Self, context: *mut ::core::ffi::c_void, contextsize: u32) -> ::windows_sys::core::HRESULT,
     pub SetThreadContext: unsafe extern "system" fn(this: *mut *mut Self, context: *const ::core::ffi::c_void, contextsize: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDebugAdvanced {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4074725203, data2: 1823, data3: 18365, data4: [157, 230, 87, 52, 195, 254, 214, 137] };
 }
 #[repr(C)]
 pub struct IDebugAdvanced2 {
@@ -7112,6 +7328,9 @@ pub struct IDebugAdvanced2 {
     pub FindSourceFileAndToken: unsafe extern "system" fn(this: *mut *mut Self, startelement: u32, modaddr: u64, file: ::windows_sys::core::PCSTR, flags: u32, filetoken: *const ::core::ffi::c_void, filetokensize: u32, foundelement: *mut u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, foundsize: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetSymbolInformation: unsafe extern "system" fn(this: *mut *mut Self, which: u32, arg64: u64, arg32: u32, buffer: *mut ::core::ffi::c_void, buffersize: u32, infosize: *mut u32, stringbuffer: ::windows_sys::core::PSTR, stringbuffersize: u32, stringsize: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetSystemObjectInformation: unsafe extern "system" fn(this: *mut *mut Self, which: u32, arg64: u64, arg32: u32, buffer: *mut ::core::ffi::c_void, buffersize: u32, infosize: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDebugAdvanced2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1902974153, data2: 4507, data3: 19365, data4: [175, 31, 8, 144, 230, 114, 65, 106] };
 }
 #[repr(C)]
 pub struct IDebugAdvanced3 {
@@ -7126,6 +7345,9 @@ pub struct IDebugAdvanced3 {
     pub GetSourceFileInformationWide: unsafe extern "system" fn(this: *mut *mut Self, which: u32, sourcefile: ::windows_sys::core::PCWSTR, arg64: u64, arg32: u32, buffer: *mut ::core::ffi::c_void, buffersize: u32, infosize: *mut u32) -> ::windows_sys::core::HRESULT,
     pub FindSourceFileAndTokenWide: unsafe extern "system" fn(this: *mut *mut Self, startelement: u32, modaddr: u64, file: ::windows_sys::core::PCWSTR, flags: u32, filetoken: *const ::core::ffi::c_void, filetokensize: u32, foundelement: *mut u32, buffer: ::windows_sys::core::PWSTR, buffersize: u32, foundsize: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetSymbolInformationWide: unsafe extern "system" fn(this: *mut *mut Self, which: u32, arg64: u64, arg32: u32, buffer: *mut ::core::ffi::c_void, buffersize: u32, infosize: *mut u32, stringbuffer: ::windows_sys::core::PWSTR, stringbuffersize: u32, stringsize: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDebugAdvanced3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3416566708, data2: 33988, data3: 17485, data4: [135, 202, 160, 78, 19, 40, 103, 57] };
 }
 #[repr(C)]
 pub struct IDebugAdvanced4 {
@@ -7142,6 +7364,9 @@ pub struct IDebugAdvanced4 {
     pub GetSymbolInformationWide: unsafe extern "system" fn(this: *mut *mut Self, which: u32, arg64: u64, arg32: u32, buffer: *mut ::core::ffi::c_void, buffersize: u32, infosize: *mut u32, stringbuffer: ::windows_sys::core::PWSTR, stringbuffersize: u32, stringsize: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetSymbolInformationWideEx: unsafe extern "system" fn(this: *mut *mut Self, which: u32, arg64: u64, arg32: u32, buffer: *mut ::core::ffi::c_void, buffersize: u32, infosize: *mut u32, stringbuffer: ::windows_sys::core::PWSTR, stringbuffersize: u32, stringsize: *mut u32, pinfoex: *mut SYMBOL_INFO_EX) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDebugAdvanced4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3506868327, data2: 10853, data3: 19440, data4: [174, 151, 118, 24, 75, 103, 133, 107] };
+}
 #[repr(C)]
 pub struct IDebugApplication11032 {
     pub base__: IRemoteDebugApplication110,
@@ -7152,6 +7377,9 @@ pub struct IDebugApplication11032 {
     #[cfg(not(feature = "Win32_Foundation"))]
     CallableWaitForHandles: usize,
 }
+impl ::windows_sys::core::Interface for IDebugApplication11032 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3182671326, data2: 35314, data3: 19985, data4: [132, 165, 151, 68, 95, 148, 28, 125] };
+}
 #[repr(C)]
 pub struct IDebugApplication11064 {
     pub base__: IRemoteDebugApplication110,
@@ -7161,6 +7389,9 @@ pub struct IDebugApplication11064 {
     pub CallableWaitForHandles: unsafe extern "system" fn(this: *mut *mut Self, handlecount: u32, phandles: *const super::super::super::Foundation::HANDLE, pindex: *mut u32) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     CallableWaitForHandles: usize,
+}
+impl ::windows_sys::core::Interface for IDebugApplication11064 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 540662104, data2: 20203, data3: 18794, data4: [135, 187, 46, 82, 1, 234, 222, 239] };
 }
 #[repr(C)]
 pub struct IDebugApplication32 {
@@ -7195,6 +7426,9 @@ pub struct IDebugApplication32 {
     pub AddGlobalExpressionContextProvider: unsafe extern "system" fn(this: *mut *mut Self, pdsfs: *mut ::core::ffi::c_void, pdwcookie: *mut u32) -> ::windows_sys::core::HRESULT,
     pub RemoveGlobalExpressionContextProvider: unsafe extern "system" fn(this: *mut *mut Self, dwcookie: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDebugApplication32 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1368865842, data2: 51980, data3: 4560, data4: [181, 201, 0, 160, 36, 74, 14, 122] };
+}
 #[repr(C)]
 pub struct IDebugApplication64 {
     pub base__: IRemoteDebugApplication,
@@ -7228,6 +7462,9 @@ pub struct IDebugApplication64 {
     pub AddGlobalExpressionContextProvider: unsafe extern "system" fn(this: *mut *mut Self, pdsfs: *mut ::core::ffi::c_void, pdwcookie: *mut u64) -> ::windows_sys::core::HRESULT,
     pub RemoveGlobalExpressionContextProvider: unsafe extern "system" fn(this: *mut *mut Self, dwcookie: u64) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDebugApplication64 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1307428692, data2: 1223, data3: 20240, data4: [158, 96, 22, 163, 144, 254, 110, 98] };
+}
 #[repr(C)]
 pub struct IDebugApplicationNode {
     pub base__: IDebugDocumentProvider,
@@ -7238,12 +7475,18 @@ pub struct IDebugApplicationNode {
     pub Attach: unsafe extern "system" fn(this: *mut *mut Self, pdanparent: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Detach: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDebugApplicationNode {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1368865844, data2: 51980, data3: 4560, data4: [181, 201, 0, 160, 36, 74, 14, 122] };
+}
 #[repr(C)]
 pub struct IDebugApplicationNode100 {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetFilterForEventSink: unsafe extern "system" fn(this: *mut *mut Self, dwcookie: u32, filter: APPLICATION_NODE_EVENT_FILTER) -> ::windows_sys::core::HRESULT,
     pub GetExcludedDocuments: unsafe extern "system" fn(this: *mut *mut Self, filter: APPLICATION_NODE_EVENT_FILTER, pdocuments: *mut TEXT_DOCUMENT_ARRAY) -> ::windows_sys::core::HRESULT,
     pub QueryIsChildNode: unsafe extern "system" fn(this: *mut *mut Self, psearchkey: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDebugApplicationNode100 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2426893134, data2: 33819, data3: 20343, data4: [147, 132, 162, 137, 30, 118, 231, 226] };
 }
 #[repr(C)]
 pub struct IDebugApplicationNodeEvents {
@@ -7253,6 +7496,9 @@ pub struct IDebugApplicationNodeEvents {
     pub onDetach: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub onAttach: unsafe extern "system" fn(this: *mut *mut Self, prddpparent: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDebugApplicationNodeEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1368865845, data2: 51980, data3: 4560, data4: [181, 201, 0, 160, 36, 74, 14, 122] };
+}
 #[repr(C)]
 pub struct IDebugApplicationThread {
     pub base__: IRemoteDebugApplicationThread,
@@ -7261,6 +7507,9 @@ pub struct IDebugApplicationThread {
     pub QueryIsDebuggerThread: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub SetDescription: unsafe extern "system" fn(this: *mut *mut Self, pstrdescription: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
     pub SetStateString: unsafe extern "system" fn(this: *mut *mut Self, pstrstate: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDebugApplicationThread {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1368865848, data2: 51980, data3: 4560, data4: [181, 201, 0, 160, 36, 74, 14, 122] };
 }
 #[repr(C)]
 pub struct IDebugApplicationThread11032 {
@@ -7276,6 +7525,9 @@ pub struct IDebugApplicationThread11032 {
     IsThreadCallable: usize,
     pub AsynchronousCallIntoThread: unsafe extern "system" fn(this: *mut *mut Self, pptc: *mut ::core::ffi::c_void, dwparam1: usize, dwparam2: usize, dwparam3: usize) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDebugApplicationThread11032 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 563391580, data2: 25953, data3: 16458, data4: [162, 233, 245, 125, 114, 222, 55, 2] };
+}
 #[repr(C)]
 pub struct IDebugApplicationThread11064 {
     pub base__: ::windows_sys::core::IUnknown,
@@ -7290,10 +7542,16 @@ pub struct IDebugApplicationThread11064 {
     IsThreadCallable: usize,
     pub AsynchronousCallIntoThread: unsafe extern "system" fn(this: *mut *mut Self, pptc: *mut ::core::ffi::c_void, dwparam1: usize, dwparam2: usize, dwparam3: usize) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDebugApplicationThread11064 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1107993804, data2: 61400, data3: 19884, data4: [152, 59, 71, 18, 120, 38, 145, 125] };
+}
 #[repr(C)]
 pub struct IDebugApplicationThread64 {
     pub base__: IDebugApplicationThread,
     pub SynchronousCallIntoThread64: unsafe extern "system" fn(this: *mut *mut Self, pstcb: *mut ::core::ffi::c_void, dwparam1: u64, dwparam2: u64, dwparam3: u64) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDebugApplicationThread64 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2645317766, data2: 56237, data3: 17773, data4: [157, 238, 93, 236, 57, 171, 61, 218] };
 }
 #[repr(C)]
 pub struct IDebugApplicationThreadEvents110 {
@@ -7302,6 +7560,9 @@ pub struct IDebugApplicationThreadEvents110 {
     pub OnResumeFromBreakPoint: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub OnThreadRequestComplete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub OnBeginThreadRequest: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDebugApplicationThreadEvents110 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2229658728, data2: 54746, data3: 18600, data4: [131, 244, 64, 54, 100, 41, 0, 123] };
 }
 #[repr(C)]
 pub struct IDebugAsyncOperation {
@@ -7312,10 +7573,16 @@ pub struct IDebugAsyncOperation {
     pub QueryIsComplete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub GetResult: unsafe extern "system" fn(this: *mut *mut Self, phrresult: *mut ::windows_sys::core::HRESULT, ppunkresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDebugAsyncOperation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1368865819, data2: 51980, data3: 4560, data4: [181, 201, 0, 160, 36, 74, 14, 122] };
+}
 #[repr(C)]
 pub struct IDebugAsyncOperationCallBack {
     pub base__: ::windows_sys::core::IUnknown,
     pub onComplete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDebugAsyncOperationCallBack {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1368865820, data2: 51980, data3: 4560, data4: [181, 201, 0, 160, 36, 74, 14, 122] };
 }
 #[repr(C)]
 pub struct IDebugBreakpoint {
@@ -7341,6 +7608,9 @@ pub struct IDebugBreakpoint {
     pub GetOffsetExpression: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, expressionsize: *mut u32) -> ::windows_sys::core::HRESULT,
     pub SetOffsetExpression: unsafe extern "system" fn(this: *mut *mut Self, expression: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
     pub GetParameters: unsafe extern "system" fn(this: *mut *mut Self, params: *mut DEBUG_BREAKPOINT_PARAMETERS) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDebugBreakpoint {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1541002356, data2: 22901, data3: 16954, data4: [184, 139, 101, 168, 231, 17, 14, 101] };
 }
 #[repr(C)]
 pub struct IDebugBreakpoint2 {
@@ -7371,6 +7641,9 @@ pub struct IDebugBreakpoint2 {
     pub GetOffsetExpressionWide: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PWSTR, buffersize: u32, expressionsize: *mut u32) -> ::windows_sys::core::HRESULT,
     pub SetOffsetExpressionWide: unsafe extern "system" fn(this: *mut *mut Self, expression: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDebugBreakpoint2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 455576864, data2: 31218, data3: 17006, data4: [163, 249, 193, 221, 243, 117, 212, 142] };
+}
 #[repr(C)]
 pub struct IDebugBreakpoint3 {
     pub base__: ::windows_sys::core::IUnknown,
@@ -7400,6 +7673,9 @@ pub struct IDebugBreakpoint3 {
     pub GetOffsetExpressionWide: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PWSTR, buffersize: u32, expressionsize: *mut u32) -> ::windows_sys::core::HRESULT,
     pub SetOffsetExpressionWide: unsafe extern "system" fn(this: *mut *mut Self, expression: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
     pub GetGuid: unsafe extern "system" fn(this: *mut *mut Self, guid: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDebugBreakpoint3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 955630153, data2: 46152, data3: 17339, data4: [152, 53, 87, 157, 78, 192, 34, 73] };
 }
 #[repr(C)]
 pub struct IDebugClient {
@@ -7449,6 +7725,9 @@ pub struct IDebugClient {
     pub GetEventCallbacks: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetEventCallbacks: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub FlushCallbacks: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDebugClient {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 670979641, data2: 33799, data3: 20295, data4: [131, 100, 238, 17, 143, 176, 138, 200] };
 }
 #[repr(C)]
 pub struct IDebugClient2 {
@@ -7506,6 +7785,9 @@ pub struct IDebugClient2 {
     pub TerminateCurrentProcess: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub DetachCurrentProcess: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub AbandonCurrentProcess: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDebugClient2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3988706869, data2: 14126, data3: 19883, data4: [187, 254, 237, 13, 47, 99, 190, 129] };
 }
 #[repr(C)]
 pub struct IDebugClient3 {
@@ -7567,6 +7849,9 @@ pub struct IDebugClient3 {
     pub GetRunningProcessDescriptionWide: unsafe extern "system" fn(this: *mut *mut Self, server: u64, systemid: u32, flags: u32, exename: ::windows_sys::core::PWSTR, exenamesize: u32, actualexenamesize: *mut u32, description: ::windows_sys::core::PWSTR, descriptionsize: u32, actualdescriptionsize: *mut u32) -> ::windows_sys::core::HRESULT,
     pub CreateProcessWide: unsafe extern "system" fn(this: *mut *mut Self, server: u64, commandline: ::windows_sys::core::PCWSTR, createflags: u32) -> ::windows_sys::core::HRESULT,
     pub CreateProcessAndAttachWide: unsafe extern "system" fn(this: *mut *mut Self, server: u64, commandline: ::windows_sys::core::PCWSTR, createflags: u32, processid: u32, attachflags: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDebugClient3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3712560511, data2: 29112, data3: 19158, data4: [168, 220, 28, 136, 116, 121, 255, 145] };
 }
 #[repr(C)]
 pub struct IDebugClient4 {
@@ -7634,6 +7919,9 @@ pub struct IDebugClient4 {
     pub GetNumberDumpFiles: unsafe extern "system" fn(this: *mut *mut Self, number: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetDumpFile: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, namesize: *mut u32, handle: *mut u64, r#type: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetDumpFileWide: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PWSTR, buffersize: u32, namesize: *mut u32, handle: *mut u64, r#type: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDebugClient4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3397632990, data2: 20617, data3: 19704, data4: [147, 200, 216, 146, 56, 127, 42, 94] };
 }
 #[repr(C)]
 pub struct IDebugClient5 {
@@ -7730,6 +8018,9 @@ pub struct IDebugClient5 {
     pub SetQuitLockString: unsafe extern "system" fn(this: *mut *mut Self, string: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
     pub GetQuitLockStringWide: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PWSTR, buffersize: u32, stringsize: *mut u32) -> ::windows_sys::core::HRESULT,
     pub SetQuitLockStringWide: unsafe extern "system" fn(this: *mut *mut Self, string: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDebugClient5 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3819747799, data2: 32450, data3: 20236, data4: [160, 218, 232, 30, 12, 187, 230, 40] };
 }
 #[repr(C)]
 pub struct IDebugClient6 {
@@ -7828,6 +8119,9 @@ pub struct IDebugClient6 {
     pub SetQuitLockStringWide: unsafe extern "system" fn(this: *mut *mut Self, string: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
     pub SetEventContextCallbacks: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDebugClient6 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4247303365, data2: 50328, data3: 18054, data4: [162, 142, 98, 202, 210, 21, 78, 179] };
+}
 #[repr(C)]
 pub struct IDebugClient7 {
     pub base__: ::windows_sys::core::IUnknown,
@@ -7925,6 +8219,9 @@ pub struct IDebugClient7 {
     pub SetQuitLockStringWide: unsafe extern "system" fn(this: *mut *mut Self, string: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
     pub SetEventContextCallbacks: unsafe extern "system" fn(this: *mut *mut Self, callbacks: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetClientContext: unsafe extern "system" fn(this: *mut *mut Self, context: *const ::core::ffi::c_void, contextsize: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDebugClient7 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 324561891, data2: 21550, data3: 18462, data4: [177, 242, 132, 151, 186, 116, 249, 169] };
 }
 #[repr(C)]
 pub struct IDebugClient8 {
@@ -8025,11 +8322,17 @@ pub struct IDebugClient8 {
     pub SetClientContext: unsafe extern "system" fn(this: *mut *mut Self, context: *const ::core::ffi::c_void, contextsize: u32) -> ::windows_sys::core::HRESULT,
     pub OpenDumpFileWide2: unsafe extern "system" fn(this: *mut *mut Self, filename: ::windows_sys::core::PCWSTR, filehandle: u64, alternatearch: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDebugClient8 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3468966621, data2: 25461, data3: 18078, data4: [131, 213, 65, 78, 64, 51, 193, 154] };
+}
 #[repr(C)]
 pub struct IDebugCodeContext {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetDocumentContext: unsafe extern "system" fn(this: *mut *mut Self, ppsc: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetBreakPoint: unsafe extern "system" fn(this: *mut *mut Self, bps: BREAKPOINT_STATE) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDebugCodeContext {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1368865811, data2: 51980, data3: 4560, data4: [181, 201, 0, 160, 36, 74, 14, 122] };
 }
 #[repr(C)]
 pub struct IDebugControl {
@@ -8156,6 +8459,9 @@ pub struct IDebugControl {
     pub SetExceptionFilterSecondCommand: unsafe extern "system" fn(this: *mut *mut Self, index: u32, command: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
     pub WaitForEvent: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, timeout: u32) -> ::windows_sys::core::HRESULT,
     pub GetLastEventInformation: unsafe extern "system" fn(this: *mut *mut Self, r#type: *mut u32, processid: *mut u32, threadid: *mut u32, extrainformation: *mut ::core::ffi::c_void, extrainformationsize: u32, extrainformationused: *mut u32, description: ::windows_sys::core::PSTR, descriptionsize: u32, descriptionused: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDebugControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1367533160, data2: 4190, data3: 16750, data4: [173, 146, 36, 239, 128, 4, 36, 186] };
 }
 #[repr(C)]
 pub struct IDebugControl2 {
@@ -8290,6 +8596,9 @@ pub struct IDebugControl2 {
     pub SetTextReplacement: unsafe extern "system" fn(this: *mut *mut Self, srctext: ::windows_sys::core::PCSTR, dsttext: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
     pub RemoveTextReplacements: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub OutputTextReplacements: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, flags: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDebugControl2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3560335139, data2: 17631, data3: 19437, data4: [140, 126, 76, 5, 66, 79, 69, 136] };
 }
 #[repr(C)]
 pub struct IDebugControl3 {
@@ -8437,6 +8746,9 @@ pub struct IDebugControl3 {
     pub GetEventIndexDescription: unsafe extern "system" fn(this: *mut *mut Self, index: u32, which: u32, buffer: ::windows_sys::core::PCSTR, buffersize: u32, descsize: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetCurrentEventIndex: unsafe extern "system" fn(this: *mut *mut Self, index: *mut u32) -> ::windows_sys::core::HRESULT,
     pub SetNextEventIndex: unsafe extern "system" fn(this: *mut *mut Self, relation: u32, value: u32, nextindex: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDebugControl3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2113358470, data2: 45119, data3: 16511, data4: [144, 171, 162, 13, 173, 206, 173, 8] };
 }
 #[repr(C)]
 pub struct IDebugControl4 {
@@ -8655,6 +8967,9 @@ pub struct IDebugControl4 {
     pub GetManagedStatus: unsafe extern "system" fn(this: *mut *mut Self, flags: *mut u32, whichstring: u32, string: ::windows_sys::core::PSTR, stringsize: u32, stringneeded: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetManagedStatusWide: unsafe extern "system" fn(this: *mut *mut Self, flags: *mut u32, whichstring: u32, string: ::windows_sys::core::PWSTR, stringsize: u32, stringneeded: *mut u32) -> ::windows_sys::core::HRESULT,
     pub ResetManagedStatus: unsafe extern "system" fn(this: *mut *mut Self, flags: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDebugControl4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2498104553, data2: 39745, data3: 19225, data4: [159, 192, 109, 158, 179, 82, 114, 179] };
 }
 #[repr(C)]
 pub struct IDebugControl5 {
@@ -8890,6 +9205,9 @@ pub struct IDebugControl5 {
     #[cfg(not(feature = "Win32_Foundation"))]
     OutputContextStackTraceEx: usize,
     pub GetBreakpointByGuid: unsafe extern "system" fn(this: *mut *mut Self, guid: *const ::windows_sys::core::GUID, bp: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDebugControl5 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3003113826, data2: 9234, data3: 17055, data4: [141, 29, 91, 246, 221, 130, 70, 150] };
 }
 #[repr(C)]
 pub struct IDebugControl6 {
@@ -9127,6 +9445,9 @@ pub struct IDebugControl6 {
     pub GetBreakpointByGuid: unsafe extern "system" fn(this: *mut *mut Self, guid: *const ::windows_sys::core::GUID, bp: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetExecutionStatusEx: unsafe extern "system" fn(this: *mut *mut Self, status: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetSynchronizationStatus: unsafe extern "system" fn(this: *mut *mut Self, sendsattempted: *mut u32, secondssincelastresponse: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDebugControl6 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3154991167, data2: 4717, data3: 17313, data4: [156, 196, 168, 96, 171, 29, 83, 123] };
 }
 #[repr(C)]
 pub struct IDebugControl7 {
@@ -9366,10 +9687,16 @@ pub struct IDebugControl7 {
     pub GetSynchronizationStatus: unsafe extern "system" fn(this: *mut *mut Self, sendsattempted: *mut u32, secondssincelastresponse: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetDebuggeeType2: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, class: *mut u32, qualifier: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDebugControl7 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3094328241, data2: 32980, data3: 18267, data4: [174, 163, 207, 6, 83, 156, 246, 58] };
+}
 #[repr(C)]
 pub struct IDebugCookie {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetDebugCookie: unsafe extern "system" fn(this: *mut *mut Self, dwdebugappcookie: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDebugCookie {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1368865849, data2: 51980, data3: 4560, data4: [181, 201, 0, 160, 36, 74, 14, 122] };
 }
 #[repr(C)]
 pub struct IDebugDataSpaces {
@@ -9394,6 +9721,9 @@ pub struct IDebugDataSpaces {
     pub CheckLowMemory: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub ReadDebuggerData: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: *mut ::core::ffi::c_void, buffersize: u32, datasize: *mut u32) -> ::windows_sys::core::HRESULT,
     pub ReadProcessorSystemData: unsafe extern "system" fn(this: *mut *mut Self, processor: u32, index: u32, buffer: *mut ::core::ffi::c_void, buffersize: u32, datasize: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDebugDataSpaces {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2297946027, data2: 16039, data3: 19514, data4: [174, 251, 196, 232, 16, 97, 115, 170] };
 }
 #[repr(C)]
 pub struct IDebugDataSpaces2 {
@@ -9427,6 +9757,9 @@ pub struct IDebugDataSpaces2 {
     pub QueryVirtual: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, info: *mut super::super::Memory::MEMORY_BASIC_INFORMATION64) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Memory"))]
     QueryVirtual: usize,
+}
+impl ::windows_sys::core::Interface for IDebugDataSpaces2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2053014831, data2: 38633, data3: 18063, data4: [172, 27, 11, 58, 221, 196, 160, 73] };
 }
 #[repr(C)]
 pub struct IDebugDataSpaces3 {
@@ -9465,6 +9798,9 @@ pub struct IDebugDataSpaces3 {
     pub StartEnumTagged: unsafe extern "system" fn(this: *mut *mut Self, handle: *mut u64) -> ::windows_sys::core::HRESULT,
     pub GetNextTagged: unsafe extern "system" fn(this: *mut *mut Self, handle: u64, tag: *mut ::windows_sys::core::GUID, size: *mut u32) -> ::windows_sys::core::HRESULT,
     pub EndEnumTagged: unsafe extern "system" fn(this: *mut *mut Self, handle: u64) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDebugDataSpaces3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 603430252, data2: 35503, data3: 20348, data4: [166, 7, 153, 149, 245, 64, 126, 99] };
 }
 #[repr(C)]
 pub struct IDebugDataSpaces4 {
@@ -9514,15 +9850,24 @@ pub struct IDebugDataSpaces4 {
     pub ReadPhysical2: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, flags: u32, buffer: *mut ::core::ffi::c_void, buffersize: u32, bytesread: *mut u32) -> ::windows_sys::core::HRESULT,
     pub WritePhysical2: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, flags: u32, buffer: *const ::core::ffi::c_void, buffersize: u32, byteswritten: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDebugDataSpaces4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3649755679, data2: 10729, data3: 20213, data4: [166, 192, 229, 51, 73, 136, 50, 18] };
+}
 #[repr(C)]
 pub struct IDebugDocument {
     pub base__: IDebugDocumentInfo,
+}
+impl ::windows_sys::core::Interface for IDebugDocument {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1368865825, data2: 51980, data3: 4560, data4: [181, 201, 0, 160, 36, 74, 14, 122] };
 }
 #[repr(C)]
 pub struct IDebugDocumentContext {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetDocument: unsafe extern "system" fn(this: *mut *mut Self, ppsd: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub EnumCodeContexts: unsafe extern "system" fn(this: *mut *mut Self, ppescc: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDebugDocumentContext {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1368865832, data2: 51980, data3: 4560, data4: [181, 201, 0, 160, 36, 74, 14, 122] };
 }
 #[repr(C)]
 pub struct IDebugDocumentHelper32 {
@@ -9549,6 +9894,9 @@ pub struct IDebugDocumentHelper32 {
     pub BringDocumentToTop: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub BringDocumentContextToTop: unsafe extern "system" fn(this: *mut *mut Self, pddc: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDebugDocumentHelper32 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1368865830, data2: 51980, data3: 4560, data4: [181, 201, 0, 160, 36, 74, 14, 122] };
+}
 #[repr(C)]
 pub struct IDebugDocumentHelper64 {
     pub base__: ::windows_sys::core::IUnknown,
@@ -9574,6 +9922,9 @@ pub struct IDebugDocumentHelper64 {
     pub BringDocumentToTop: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub BringDocumentContextToTop: unsafe extern "system" fn(this: *mut *mut Self, pddc: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDebugDocumentHelper64 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3301389884, data2: 8445, data3: 18425, data4: [189, 130, 72, 85, 224, 21, 8, 113] };
+}
 #[repr(C)]
 pub struct IDebugDocumentHost {
     pub base__: ::windows_sys::core::IUnknown,
@@ -9590,6 +9941,9 @@ pub struct IDebugDocumentHost {
     GetFileName: usize,
     pub NotifyChanged: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDebugDocumentHost {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1368865831, data2: 51980, data3: 4560, data4: [181, 201, 0, 160, 36, 74, 14, 122] };
+}
 #[repr(C)]
 pub struct IDebugDocumentInfo {
     pub base__: ::windows_sys::core::IUnknown,
@@ -9599,10 +9953,16 @@ pub struct IDebugDocumentInfo {
     GetName: usize,
     pub GetDocumentClassId: unsafe extern "system" fn(this: *mut *mut Self, pclsiddocument: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDebugDocumentInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1368865823, data2: 51980, data3: 4560, data4: [181, 201, 0, 160, 36, 74, 14, 122] };
+}
 #[repr(C)]
 pub struct IDebugDocumentProvider {
     pub base__: IDebugDocumentInfo,
     pub GetDocument: unsafe extern "system" fn(this: *mut *mut Self, ppssd: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDebugDocumentProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1368865824, data2: 51980, data3: 4560, data4: [181, 201, 0, 160, 36, 74, 14, 122] };
 }
 #[repr(C)]
 pub struct IDebugDocumentText {
@@ -9615,12 +9975,18 @@ pub struct IDebugDocumentText {
     pub GetPositionOfContext: unsafe extern "system" fn(this: *mut *mut Self, psc: *mut ::core::ffi::c_void, pccharacterposition: *mut u32, cnumchars: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetContextOfPosition: unsafe extern "system" fn(this: *mut *mut Self, ccharacterposition: u32, cnumchars: u32, ppsc: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDebugDocumentText {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1368865826, data2: 51980, data3: 4560, data4: [181, 201, 0, 160, 36, 74, 14, 122] };
+}
 #[repr(C)]
 pub struct IDebugDocumentTextAuthor {
     pub base__: IDebugDocumentText,
     pub InsertText: unsafe extern "system" fn(this: *mut *mut Self, ccharacterposition: u32, cnumtoinsert: u32, pchartext: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
     pub RemoveText: unsafe extern "system" fn(this: *mut *mut Self, ccharacterposition: u32, cnumtoremove: u32) -> ::windows_sys::core::HRESULT,
     pub ReplaceText: unsafe extern "system" fn(this: *mut *mut Self, ccharacterposition: u32, cnumtoreplace: u32, pchartext: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDebugDocumentTextAuthor {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1368865828, data2: 51980, data3: 4560, data4: [181, 201, 0, 160, 36, 74, 14, 122] };
 }
 #[repr(C)]
 pub struct IDebugDocumentTextEvents {
@@ -9631,6 +9997,9 @@ pub struct IDebugDocumentTextEvents {
     pub onReplaceText: unsafe extern "system" fn(this: *mut *mut Self, ccharacterposition: u32, cnumtoreplace: u32) -> ::windows_sys::core::HRESULT,
     pub onUpdateTextAttributes: unsafe extern "system" fn(this: *mut *mut Self, ccharacterposition: u32, cnumtoupdate: u32) -> ::windows_sys::core::HRESULT,
     pub onUpdateDocumentAttributes: unsafe extern "system" fn(this: *mut *mut Self, textdocattr: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDebugDocumentTextEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1368865827, data2: 51980, data3: 4560, data4: [181, 201, 0, 160, 36, 74, 14, 122] };
 }
 #[repr(C)]
 pub struct IDebugDocumentTextExternalAuthor {
@@ -9644,6 +10013,9 @@ pub struct IDebugDocumentTextExternalAuthor {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetFileName: usize,
     pub NotifyChanged: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDebugDocumentTextExternalAuthor {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1368865829, data2: 51980, data3: 4560, data4: [181, 201, 0, 160, 36, 74, 14, 122] };
 }
 #[repr(C)]
 pub struct IDebugEventCallbacks {
@@ -9666,6 +10038,9 @@ pub struct IDebugEventCallbacks {
     pub ChangeEngineState: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, argument: u64) -> ::windows_sys::core::HRESULT,
     pub ChangeSymbolState: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, argument: u64) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDebugEventCallbacks {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 863756939, data2: 20534, data3: 19826, data4: [182, 191, 196, 95, 187, 159, 46, 170] };
+}
 #[repr(C)]
 pub struct IDebugEventCallbacksWide {
     pub base__: ::windows_sys::core::IUnknown,
@@ -9686,6 +10061,9 @@ pub struct IDebugEventCallbacksWide {
     pub ChangeDebuggeeState: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, argument: u64) -> ::windows_sys::core::HRESULT,
     pub ChangeEngineState: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, argument: u64) -> ::windows_sys::core::HRESULT,
     pub ChangeSymbolState: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, argument: u64) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDebugEventCallbacksWide {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 110157894, data2: 39971, data3: 17836, data4: [160, 79, 152, 122, 194, 154, 208, 211] };
 }
 #[repr(C)]
 pub struct IDebugEventContextCallbacks {
@@ -9708,6 +10086,9 @@ pub struct IDebugEventContextCallbacks {
     pub ChangeEngineState: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, argument: u64, context: *const ::core::ffi::c_void, contextsize: u32) -> ::windows_sys::core::HRESULT,
     pub ChangeSymbolState: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, argument: u64) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDebugEventContextCallbacks {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1638174811, data2: 9209, data3: 16967, data4: [179, 197, 83, 208, 135, 82, 154, 183] };
+}
 #[repr(C)]
 pub struct IDebugExpression {
     pub base__: ::windows_sys::core::IUnknown,
@@ -9720,10 +10101,16 @@ pub struct IDebugExpression {
     GetResultAsString: usize,
     pub GetResultAsDebugProperty: unsafe extern "system" fn(this: *mut *mut Self, phrresult: *mut ::windows_sys::core::HRESULT, ppdp: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDebugExpression {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1368865812, data2: 51980, data3: 4560, data4: [181, 201, 0, 160, 36, 74, 14, 122] };
+}
 #[repr(C)]
 pub struct IDebugExpressionCallBack {
     pub base__: ::windows_sys::core::IUnknown,
     pub onComplete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDebugExpressionCallBack {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1368865814, data2: 51980, data3: 4560, data4: [181, 201, 0, 160, 36, 74, 14, 122] };
 }
 #[repr(C)]
 pub struct IDebugExpressionContext {
@@ -9734,6 +10121,9 @@ pub struct IDebugExpressionContext {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetLanguageInfo: usize,
 }
+impl ::windows_sys::core::Interface for IDebugExpressionContext {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1368865813, data2: 51980, data3: 4560, data4: [181, 201, 0, 160, 36, 74, 14, 122] };
+}
 #[repr(C)]
 pub struct IDebugExtendedProperty {
     pub base__: IDebugProperty,
@@ -9742,6 +10132,9 @@ pub struct IDebugExtendedProperty {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage", feature = "Win32_System_Ole")))]
     GetExtendedPropertyInfo: usize,
     pub EnumExtendedMembers: unsafe extern "system" fn(this: *mut *mut Self, dwfieldspec: u32, nradix: u32, ppeepi: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDebugExtendedProperty {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1368865874, data2: 51980, data3: 4560, data4: [181, 201, 0, 160, 36, 74, 14, 122] };
 }
 #[repr(C)]
 pub struct IDebugFormatter {
@@ -9759,6 +10152,9 @@ pub struct IDebugFormatter {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     GetStringForVarType: usize,
 }
+impl ::windows_sys::core::Interface for IDebugFormatter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1368865797, data2: 51980, data3: 4560, data4: [181, 201, 0, 160, 36, 74, 14, 122] };
+}
 #[repr(C)]
 pub struct IDebugHelper {
     pub base__: ::windows_sys::core::IUnknown,
@@ -9775,6 +10171,9 @@ pub struct IDebugHelper {
     #[cfg(not(feature = "Win32_System_Com"))]
     CreateSimpleConnectionPoint: usize,
 }
+impl ::windows_sys::core::Interface for IDebugHelper {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1368865855, data2: 51980, data3: 4560, data4: [181, 201, 0, 160, 36, 74, 14, 122] };
+}
 #[repr(C)]
 pub struct IDebugHost {
     pub base__: ::windows_sys::core::IUnknown,
@@ -9782,10 +10181,16 @@ pub struct IDebugHost {
     pub GetCurrentContext: unsafe extern "system" fn(this: *mut *mut Self, context: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetDefaultMetadata: unsafe extern "system" fn(this: *mut *mut Self, defaultmetadatastore: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDebugHost {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3100068163, data2: 27436, data3: 20203, data4: [181, 197, 53, 211, 120, 166, 217, 157] };
+}
 #[repr(C)]
 pub struct IDebugHostBaseClass {
     pub base__: IDebugHostSymbol,
     pub GetOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDebugHostBaseClass {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3108853714, data2: 14603, data3: 16631, data4: [181, 180, 182, 219, 137, 125, 151, 75] };
 }
 #[repr(C)]
 pub struct IDebugHostConstant {
@@ -9795,10 +10200,16 @@ pub struct IDebugHostConstant {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     GetValue: usize,
 }
+impl ::windows_sys::core::Interface for IDebugHostConstant {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1652063964, data2: 64118, data3: 18064, data4: [189, 113, 94, 140, 62, 41, 55, 236] };
+}
 #[repr(C)]
 pub struct IDebugHostContext {
     pub base__: ::windows_sys::core::IUnknown,
     pub IsEqualTo: unsafe extern "system" fn(this: *mut *mut Self, pcontext: *mut ::core::ffi::c_void, pisequal: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDebugHostContext {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2794221784, data2: 24256, data3: 18149, data4: [183, 117, 49, 52, 164, 142, 162, 227] };
 }
 #[repr(C)]
 pub struct IDebugHostData {
@@ -9810,10 +10221,16 @@ pub struct IDebugHostData {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     GetValue: usize,
 }
+impl ::windows_sys::core::Interface for IDebugHostData {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2748729747, data2: 33388, data3: 17658, data4: [137, 125, 146, 111, 47, 231, 173, 11] };
+}
 #[repr(C)]
 pub struct IDebugHostErrorSink {
     pub base__: ::windows_sys::core::IUnknown,
     pub ReportError: unsafe extern "system" fn(this: *mut *mut Self, errclass: ErrorClass, hrerror: ::windows_sys::core::HRESULT, message: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDebugHostErrorSink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3372158731, data2: 64745, data3: 18046, data4: [139, 179, 93, 105, 239, 16, 156, 0] };
 }
 #[repr(C)]
 pub struct IDebugHostEvaluator {
@@ -9821,16 +10238,25 @@ pub struct IDebugHostEvaluator {
     pub EvaluateExpression: unsafe extern "system" fn(this: *mut *mut Self, context: *mut ::core::ffi::c_void, expression: ::windows_sys::core::PCWSTR, bindingcontext: *mut ::core::ffi::c_void, result: *mut *mut ::core::ffi::c_void, metadata: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub EvaluateExtendedExpression: unsafe extern "system" fn(this: *mut *mut Self, context: *mut ::core::ffi::c_void, expression: ::windows_sys::core::PCWSTR, bindingcontext: *mut ::core::ffi::c_void, result: *mut *mut ::core::ffi::c_void, metadata: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDebugHostEvaluator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 267360801, data2: 22398, data3: 18839, data4: [172, 123, 28, 72, 131, 36, 29, 153] };
+}
 #[repr(C)]
 pub struct IDebugHostEvaluator2 {
     pub base__: IDebugHostEvaluator,
     pub AssignTo: unsafe extern "system" fn(this: *mut *mut Self, assignmentreference: *mut ::core::ffi::c_void, assignmentvalue: *mut ::core::ffi::c_void, assignmentresult: *mut *mut ::core::ffi::c_void, assignmentmetadata: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDebugHostEvaluator2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2702681141, data2: 8116, data3: 16530, data4: [162, 171, 169, 41, 87, 108, 30, 135] };
 }
 #[repr(C)]
 pub struct IDebugHostExtensibility {
     pub base__: ::windows_sys::core::IUnknown,
     pub CreateFunctionAlias: unsafe extern "system" fn(this: *mut *mut Self, aliasname: ::windows_sys::core::PCWSTR, functionobject: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub DestroyFunctionAlias: unsafe extern "system" fn(this: *mut *mut Self, aliasname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDebugHostExtensibility {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1009460449, data2: 4560, data3: 20358, data4: [138, 229, 77, 241, 102, 247, 50, 83] };
 }
 #[repr(C)]
 pub struct IDebugHostField {
@@ -9842,6 +10268,9 @@ pub struct IDebugHostField {
     pub GetValue: unsafe extern "system" fn(this: *mut *mut Self, value: *mut super::super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     GetValue: usize,
+}
+impl ::windows_sys::core::Interface for IDebugHostField {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3765396629, data2: 5820, data3: 19657, data4: [177, 29, 42, 107, 35, 250, 114, 243] };
 }
 #[repr(C)]
 pub struct IDebugHostMemory {
@@ -9855,10 +10284,16 @@ pub struct IDebugHostMemory {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetDisplayStringForLocation: usize,
 }
+impl ::windows_sys::core::Interface for IDebugHostMemory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 555829705, data2: 37251, data3: 19006, data4: [176, 14, 79, 209, 220, 149, 51, 155] };
+}
 #[repr(C)]
 pub struct IDebugHostMemory2 {
     pub base__: IDebugHostMemory,
     pub LinearizeLocation: unsafe extern "system" fn(this: *mut *mut Self, context: *mut ::core::ffi::c_void, location: Location, plinearizedlocation: *mut Location) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDebugHostMemory2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4003476446, data2: 14582, data3: 16747, data4: [162, 81, 29, 55, 113, 0, 18, 112] };
 }
 #[repr(C)]
 pub struct IDebugHostModule {
@@ -9873,15 +10308,24 @@ pub struct IDebugHostModule {
     pub FindSymbolByRVA: unsafe extern "system" fn(this: *mut *mut Self, rva: u64, symbol: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub FindSymbolByName: unsafe extern "system" fn(this: *mut *mut Self, symbolname: ::windows_sys::core::PCWSTR, symbol: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDebugHostModule {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3384426008, data2: 53360, data3: 17272, data4: [187, 208, 52, 97, 59, 52, 110, 30] };
+}
 #[repr(C)]
 pub struct IDebugHostModule2 {
     pub base__: IDebugHostModule,
     pub FindContainingSymbolByRVA: unsafe extern "system" fn(this: *mut *mut Self, rva: u64, symbol: *mut *mut ::core::ffi::c_void, offset: *mut u64) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDebugHostModule2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3038283752, data2: 48336, data3: 20111, data4: [168, 199, 67, 67, 152, 183, 140, 55] };
+}
 #[repr(C)]
 pub struct IDebugHostModuleSignature {
     pub base__: ::windows_sys::core::IUnknown,
     pub IsMatch: unsafe extern "system" fn(this: *mut *mut Self, pmodule: *mut ::core::ffi::c_void, ismatch: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDebugHostModuleSignature {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 837106266, data2: 494, data3: 19387, data4: [184, 153, 75, 70, 174, 125, 89, 92] };
 }
 #[repr(C)]
 pub struct IDebugHostPublic {
@@ -9889,15 +10333,24 @@ pub struct IDebugHostPublic {
     pub GetLocationKind: unsafe extern "system" fn(this: *mut *mut Self, locationkind: *mut LocationKind) -> ::windows_sys::core::HRESULT,
     pub GetLocation: unsafe extern "system" fn(this: *mut *mut Self, location: *mut Location) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDebugHostPublic {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1817803465, data2: 64333, data3: 20333, data4: [159, 57, 34, 72, 133, 57, 248, 244] };
+}
 #[repr(C)]
 pub struct IDebugHostScriptHost {
     pub base__: ::windows_sys::core::IUnknown,
     pub CreateContext: unsafe extern "system" fn(this: *mut *mut Self, script: *mut ::core::ffi::c_void, scriptcontext: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDebugHostScriptHost {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3070440612, data2: 47404, data3: 17776, data4: [147, 161, 211, 235, 104, 102, 73, 160] };
+}
 #[repr(C)]
 pub struct IDebugHostStatus {
     pub base__: ::windows_sys::core::IUnknown,
     pub PollUserInterrupt: unsafe extern "system" fn(this: *mut *mut Self, interruptrequested: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDebugHostStatus {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1329470690, data2: 34482, data3: 19578, data4: [156, 101, 208, 169, 208, 238, 207, 68] };
 }
 #[repr(C)]
 pub struct IDebugHostSymbol {
@@ -9913,16 +10366,25 @@ pub struct IDebugHostSymbol {
     pub GetContainingModule: unsafe extern "system" fn(this: *mut *mut Self, containingmodule: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub CompareAgainst: unsafe extern "system" fn(this: *mut *mut Self, pcomparisonsymbol: *mut ::core::ffi::c_void, comparisonflags: u32, pmatches: *mut bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDebugHostSymbol {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 260149507, data2: 34782, data3: 20118, data4: [130, 119, 224, 92, 212, 65, 251, 34] };
+}
 #[repr(C)]
 pub struct IDebugHostSymbol2 {
     pub base__: IDebugHostSymbol,
     pub GetLanguage: unsafe extern "system" fn(this: *mut *mut Self, pkind: *mut LanguageKind) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDebugHostSymbol2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 558979943, data2: 26400, data3: 16983, data4: [138, 104, 7, 125, 201, 68, 71, 28] };
 }
 #[repr(C)]
 pub struct IDebugHostSymbolEnumerator {
     pub base__: ::windows_sys::core::IUnknown,
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub GetNext: unsafe extern "system" fn(this: *mut *mut Self, symbol: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDebugHostSymbolEnumerator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 685337734, data2: 4259, data3: 18806, data4: [177, 78, 234, 239, 71, 144, 170, 31] };
 }
 #[repr(C)]
 pub struct IDebugHostSymbols {
@@ -9934,6 +10396,9 @@ pub struct IDebugHostSymbols {
     pub FindModuleByName: unsafe extern "system" fn(this: *mut *mut Self, context: *mut ::core::ffi::c_void, modulename: ::windows_sys::core::PCWSTR, module: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub FindModuleByLocation: unsafe extern "system" fn(this: *mut *mut Self, context: *mut ::core::ffi::c_void, modulelocation: Location, module: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetMostDerivedObject: unsafe extern "system" fn(this: *mut *mut Self, pcontext: *mut ::core::ffi::c_void, location: Location, objecttype: *mut ::core::ffi::c_void, derivedlocation: *mut Location, derivedtype: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDebugHostSymbols {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2236602193, data2: 49889, data3: 20146, data4: [181, 37, 102, 25, 203, 151, 165, 136] };
 }
 #[repr(C)]
 pub struct IDebugHostType {
@@ -9958,6 +10423,9 @@ pub struct IDebugHostType {
     pub GetGenericArgumentCount: unsafe extern "system" fn(this: *mut *mut Self, argcount: *mut u64) -> ::windows_sys::core::HRESULT,
     pub GetGenericArgumentAt: unsafe extern "system" fn(this: *mut *mut Self, i: u64, argument: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDebugHostType {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 984466259, data2: 11028, data3: 19131, data4: [152, 147, 94, 3, 69, 142, 7, 238] };
+}
 #[repr(C)]
 pub struct IDebugHostType2 {
     pub base__: IDebugHostType,
@@ -9967,6 +10435,9 @@ pub struct IDebugHostType2 {
     pub GetFunctionVarArgsKind: unsafe extern "system" fn(this: *mut *mut Self, varargskind: *mut VarArgsKind) -> ::windows_sys::core::HRESULT,
     pub GetFunctionInstancePointerType: unsafe extern "system" fn(this: *mut *mut Self, instancepointertype: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDebugHostType2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2995139257, data2: 34054, data3: 18038, data4: [135, 206, 143, 126, 5, 229, 152, 118] };
+}
 #[repr(C)]
 pub struct IDebugHostTypeSignature {
     pub base__: ::windows_sys::core::IUnknown,
@@ -9974,16 +10445,25 @@ pub struct IDebugHostTypeSignature {
     pub IsMatch: unsafe extern "system" fn(this: *mut *mut Self, r#type: *mut ::core::ffi::c_void, ismatch: *mut bool, wildcardmatches: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub CompareAgainst: unsafe extern "system" fn(this: *mut *mut Self, typesignature: *mut ::core::ffi::c_void, result: *mut SignatureComparison) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDebugHostTypeSignature {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 984466259, data2: 11028, data3: 19131, data4: [152, 147, 94, 3, 69, 142, 7, 238] };
+}
 #[repr(C)]
 pub struct IDebugInputCallbacks {
     pub base__: ::windows_sys::core::IUnknown,
     pub StartInput: unsafe extern "system" fn(this: *mut *mut Self, buffersize: u32) -> ::windows_sys::core::HRESULT,
     pub EndInput: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDebugInputCallbacks {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2672878636, data2: 61750, data3: 18846, data4: [154, 151, 115, 3, 108, 148, 237, 45] };
+}
 #[repr(C)]
 pub struct IDebugOutputCallbacks {
     pub base__: ::windows_sys::core::IUnknown,
     pub Output: unsafe extern "system" fn(this: *mut *mut Self, mask: u32, text: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDebugOutputCallbacks {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1274380357, data2: 54868, data3: 19520, data4: [176, 175, 104, 48, 144, 243, 86, 220] };
 }
 #[repr(C)]
 pub struct IDebugOutputCallbacks2 {
@@ -9992,26 +10472,41 @@ pub struct IDebugOutputCallbacks2 {
     pub GetInterestMask: unsafe extern "system" fn(this: *mut *mut Self, mask: *mut u32) -> ::windows_sys::core::HRESULT,
     pub Output2: unsafe extern "system" fn(this: *mut *mut Self, which: u32, flags: u32, arg: u64, text: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDebugOutputCallbacks2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1735532521, data2: 22226, data3: 19012, data4: [163, 37, 43, 101, 81, 60, 230, 235] };
+}
 #[repr(C)]
 pub struct IDebugOutputCallbacksWide {
     pub base__: ::windows_sys::core::IUnknown,
     pub Output: unsafe extern "system" fn(this: *mut *mut Self, mask: u32, text: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDebugOutputCallbacksWide {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1283446371, data2: 50068, data3: 20006, data4: [142, 241, 52, 173, 94, 211, 118, 76] };
 }
 #[repr(C)]
 pub struct IDebugOutputStream {
     pub base__: ::windows_sys::core::IUnknown,
     pub Write: unsafe extern "system" fn(this: *mut *mut Self, psz: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDebugOutputStream {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2005063922, data2: 11141, data3: 16473, data4: [171, 136, 40, 206, 221, 202, 28, 128] };
+}
 #[repr(C)]
 pub struct IDebugPlmClient {
     pub base__: ::windows_sys::core::IUnknown,
     pub LaunchPlmPackageForDebugWide: unsafe extern "system" fn(this: *mut *mut Self, server: u64, timeout: u32, packagefullname: ::windows_sys::core::PCWSTR, appname: ::windows_sys::core::PCWSTR, arguments: ::windows_sys::core::PCWSTR, processid: *mut u32, threadid: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDebugPlmClient {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2687198916, data2: 44707, data3: 16948, data4: [169, 247, 254, 76, 56, 61, 78, 41] };
 }
 #[repr(C)]
 pub struct IDebugPlmClient2 {
     pub base__: ::windows_sys::core::IUnknown,
     pub LaunchPlmPackageForDebugWide: unsafe extern "system" fn(this: *mut *mut Self, server: u64, timeout: u32, packagefullname: ::windows_sys::core::PCWSTR, appname: ::windows_sys::core::PCWSTR, arguments: ::windows_sys::core::PCWSTR, processid: *mut u32, threadid: *mut u32) -> ::windows_sys::core::HRESULT,
     pub LaunchPlmBgTaskForDebugWide: unsafe extern "system" fn(this: *mut *mut Self, server: u64, timeout: u32, packagefullname: ::windows_sys::core::PCWSTR, backgroundtaskid: ::windows_sys::core::PCWSTR, processid: *mut u32, threadid: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDebugPlmClient2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1501337613, data2: 59325, data3: 17161, data4: [150, 44, 157, 155, 105, 167, 55, 44] };
 }
 #[repr(C)]
 pub struct IDebugPlmClient3 {
@@ -10028,6 +10523,9 @@ pub struct IDebugPlmClient3 {
     pub LaunchAndDebugPlmAppWide: unsafe extern "system" fn(this: *mut *mut Self, server: u64, packagefullname: ::windows_sys::core::PCWSTR, appname: ::windows_sys::core::PCWSTR, arguments: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
     pub ActivateAndDebugPlmBgTaskWide: unsafe extern "system" fn(this: *mut *mut Self, server: u64, packagefullname: ::windows_sys::core::PCWSTR, backgroundtaskid: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDebugPlmClient3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3567639505, data2: 51714, data3: 19856, data4: [133, 106, 42, 146, 191, 208, 242, 15] };
+}
 #[repr(C)]
 pub struct IDebugProperty {
     pub base__: ::windows_sys::core::IUnknown,
@@ -10043,6 +10541,9 @@ pub struct IDebugProperty {
     pub EnumMembers: unsafe extern "system" fn(this: *mut *mut Self, dwfieldspec: u32, nradix: u32, refiid: *const ::windows_sys::core::GUID, ppepi: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetParent: unsafe extern "system" fn(this: *mut *mut Self, ppdebugprop: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDebugProperty {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1368865872, data2: 51980, data3: 4560, data4: [181, 201, 0, 160, 36, 74, 14, 122] };
+}
 #[repr(C)]
 pub struct IDebugPropertyEnumType_All {
     pub base__: ::windows_sys::core::IUnknown,
@@ -10051,21 +10552,36 @@ pub struct IDebugPropertyEnumType_All {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetName: usize,
 }
+impl ::windows_sys::core::Interface for IDebugPropertyEnumType_All {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1368865877, data2: 51980, data3: 4560, data4: [181, 201, 0, 160, 36, 74, 14, 122] };
+}
 #[repr(C)]
 pub struct IDebugPropertyEnumType_Arguments {
     pub base__: IDebugPropertyEnumType_All,
+}
+impl ::windows_sys::core::Interface for IDebugPropertyEnumType_Arguments {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1368865879, data2: 51980, data3: 4560, data4: [181, 201, 0, 160, 36, 74, 14, 122] };
 }
 #[repr(C)]
 pub struct IDebugPropertyEnumType_Locals {
     pub base__: IDebugPropertyEnumType_All,
 }
+impl ::windows_sys::core::Interface for IDebugPropertyEnumType_Locals {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1368865878, data2: 51980, data3: 4560, data4: [181, 201, 0, 160, 36, 74, 14, 122] };
+}
 #[repr(C)]
 pub struct IDebugPropertyEnumType_LocalsPlusArgs {
     pub base__: IDebugPropertyEnumType_All,
 }
+impl ::windows_sys::core::Interface for IDebugPropertyEnumType_LocalsPlusArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1368865880, data2: 51980, data3: 4560, data4: [181, 201, 0, 160, 36, 74, 14, 122] };
+}
 #[repr(C)]
 pub struct IDebugPropertyEnumType_Registers {
     pub base__: IDebugPropertyEnumType_All,
+}
+impl ::windows_sys::core::Interface for IDebugPropertyEnumType_Registers {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1368865881, data2: 51980, data3: 4560, data4: [181, 201, 0, 160, 36, 74, 14, 122] };
 }
 #[repr(C)]
 pub struct IDebugRegisters {
@@ -10093,6 +10609,9 @@ pub struct IDebugRegisters {
     pub GetInstructionOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: *mut u64) -> ::windows_sys::core::HRESULT,
     pub GetStackOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: *mut u64) -> ::windows_sys::core::HRESULT,
     pub GetFrameOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: *mut u64) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDebugRegisters {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3458765094, data2: 40580, data3: 17831, data4: [147, 126, 103, 187, 24, 105, 20, 147] };
 }
 #[repr(C)]
 pub struct IDebugRegisters2 {
@@ -10148,10 +10667,16 @@ pub struct IDebugRegisters2 {
     pub GetStackOffset2: unsafe extern "system" fn(this: *mut *mut Self, source: u32, offset: *mut u64) -> ::windows_sys::core::HRESULT,
     pub GetFrameOffset2: unsafe extern "system" fn(this: *mut *mut Self, source: u32, offset: *mut u64) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDebugRegisters2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 374779817, data2: 6598, data3: 20026, data4: [151, 231, 93, 201, 22, 12, 249, 196] };
+}
 #[repr(C)]
 pub struct IDebugSessionProvider {
     pub base__: ::windows_sys::core::IUnknown,
     pub StartDebugSession: unsafe extern "system" fn(this: *mut *mut Self, pda: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDebugSessionProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1368865833, data2: 51980, data3: 4560, data4: [181, 201, 0, 160, 36, 74, 14, 122] };
 }
 #[repr(C)]
 pub struct IDebugStackFrame {
@@ -10168,26 +10693,41 @@ pub struct IDebugStackFrame {
     pub GetThread: unsafe extern "system" fn(this: *mut *mut Self, ppat: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetDebugProperty: unsafe extern "system" fn(this: *mut *mut Self, ppdebugprop: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDebugStackFrame {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1368865815, data2: 51980, data3: 4560, data4: [181, 201, 0, 160, 36, 74, 14, 122] };
+}
 #[repr(C)]
 pub struct IDebugStackFrame110 {
     pub base__: IDebugStackFrame,
     pub GetStackFrameType: unsafe extern "system" fn(this: *mut *mut Self, pstackframekind: *mut DEBUG_STACKFRAME_TYPE) -> ::windows_sys::core::HRESULT,
     pub GetScriptInvocationContext: unsafe extern "system" fn(this: *mut *mut Self, ppinvocationcontext: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDebugStackFrame110 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1263572497, data2: 46826, data3: 19236, data4: [173, 203, 208, 204, 253, 26, 126, 51] };
+}
 #[repr(C)]
 pub struct IDebugStackFrameSniffer {
     pub base__: ::windows_sys::core::IUnknown,
     pub EnumStackFrames: unsafe extern "system" fn(this: *mut *mut Self, ppedsf: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDebugStackFrameSniffer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1368865816, data2: 51980, data3: 4560, data4: [181, 201, 0, 160, 36, 74, 14, 122] };
 }
 #[repr(C)]
 pub struct IDebugStackFrameSnifferEx32 {
     pub base__: IDebugStackFrameSniffer,
     pub EnumStackFramesEx32: unsafe extern "system" fn(this: *mut *mut Self, dwspmin: u32, ppedsf: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDebugStackFrameSnifferEx32 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1368865817, data2: 51980, data3: 4560, data4: [181, 201, 0, 160, 36, 74, 14, 122] };
+}
 #[repr(C)]
 pub struct IDebugStackFrameSnifferEx64 {
     pub base__: IDebugStackFrameSniffer,
     pub EnumStackFramesEx64: unsafe extern "system" fn(this: *mut *mut Self, dwspmin: u64, ppedsf: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDebugStackFrameSnifferEx64 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2362518260, data2: 18881, data3: 19794, data4: [141, 138, 193, 70, 244, 117, 129, 170] };
 }
 #[repr(C)]
 pub struct IDebugSymbolGroup {
@@ -10205,6 +10745,9 @@ pub struct IDebugSymbolGroup {
     pub OutputSymbols: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, flags: u32, start: u32, count: u32) -> ::windows_sys::core::HRESULT,
     pub WriteSymbol: unsafe extern "system" fn(this: *mut *mut Self, index: u32, value: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
     pub OutputAsType: unsafe extern "system" fn(this: *mut *mut Self, index: u32, r#type: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDebugSymbolGroup {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4065493782, data2: 3866, data3: 17457, data4: [174, 237, 17, 208, 150, 225, 226, 171] };
 }
 #[repr(C)]
 pub struct IDebugSymbolGroup2 {
@@ -10235,6 +10778,9 @@ pub struct IDebugSymbolGroup2 {
     pub GetSymbolValueText: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, namesize: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetSymbolValueTextWide: unsafe extern "system" fn(this: *mut *mut Self, index: u32, buffer: ::windows_sys::core::PWSTR, buffersize: u32, namesize: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetSymbolEntryInformation: unsafe extern "system" fn(this: *mut *mut Self, index: u32, entry: *mut DEBUG_SYMBOL_ENTRY) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDebugSymbolGroup2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1786563679, data2: 64350, data3: 19916, data4: [180, 28, 108, 32, 48, 123, 204, 199] };
 }
 #[repr(C)]
 pub struct IDebugSymbols {
@@ -10294,6 +10840,9 @@ pub struct IDebugSymbols {
     pub AppendSourcePath: unsafe extern "system" fn(this: *mut *mut Self, addition: ::windows_sys::core::PCSTR) -> ::windows_sys::core::HRESULT,
     pub FindSourceFile: unsafe extern "system" fn(this: *mut *mut Self, startelement: u32, file: ::windows_sys::core::PCSTR, flags: u32, foundelement: *mut u32, buffer: ::windows_sys::core::PSTR, buffersize: u32, foundsize: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetSourceFileLineOffsets: unsafe extern "system" fn(this: *mut *mut Self, file: ::windows_sys::core::PCSTR, buffer: *mut u64, bufferlines: u32, filelines: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDebugSymbols {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2352081292, data2: 38970, data3: 18597, data4: [144, 22, 111, 229, 214, 103, 169, 80] };
 }
 #[repr(C)]
 pub struct IDebugSymbols2 {
@@ -10361,6 +10910,9 @@ pub struct IDebugSymbols2 {
     pub AddTypeOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
     pub RemoveTypeOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
     pub SetTypeOptions: unsafe extern "system" fn(this: *mut *mut Self, options: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDebugSymbols2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 980447761, data2: 45021, data3: 17557, data4: [173, 79, 86, 254, 205, 248, 22, 63] };
 }
 #[repr(C)]
 pub struct IDebugSymbols3 {
@@ -10494,6 +11046,9 @@ pub struct IDebugSymbols3 {
     pub GetSourceEntryStringWide: unsafe extern "system" fn(this: *mut *mut Self, entry: *const DEBUG_SYMBOL_SOURCE_ENTRY, which: u32, buffer: ::windows_sys::core::PWSTR, buffersize: u32, stringsize: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetSourceEntryOffsetRegions: unsafe extern "system" fn(this: *mut *mut Self, entry: *const DEBUG_SYMBOL_SOURCE_ENTRY, flags: u32, regions: *mut DEBUG_OFFSET_REGION, regionscount: u32, regionsavail: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetSourceEntryBySourceEntry: unsafe extern "system" fn(this: *mut *mut Self, fromentry: *const DEBUG_SYMBOL_SOURCE_ENTRY, flags: u32, toentry: *mut DEBUG_SYMBOL_SOURCE_ENTRY) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDebugSymbols3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4029660876, data2: 20652, data3: 20278, data4: [154, 217, 201, 117, 232, 243, 47, 248] };
 }
 #[repr(C)]
 pub struct IDebugSymbols4 {
@@ -10640,6 +11195,9 @@ pub struct IDebugSymbols4 {
     pub GetLineByInlineContext: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, inlinecontext: u32, line: *mut u32, filebuffer: ::windows_sys::core::PSTR, filebuffersize: u32, filesize: *mut u32, displacement: *mut u64) -> ::windows_sys::core::HRESULT,
     pub GetLineByInlineContextWide: unsafe extern "system" fn(this: *mut *mut Self, offset: u64, inlinecontext: u32, line: *mut u32, filebuffer: ::windows_sys::core::PWSTR, filebuffersize: u32, filesize: *mut u32, displacement: *mut u64) -> ::windows_sys::core::HRESULT,
     pub OutputSymbolByInlineContext: unsafe extern "system" fn(this: *mut *mut Self, outputcontrol: u32, flags: u32, offset: u64, inlinecontext: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDebugSymbols4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3817978840, data2: 40332, data3: 17432, data4: [132, 11, 192, 6, 89, 42, 23, 82] };
 }
 #[repr(C)]
 pub struct IDebugSymbols5 {
@@ -10789,12 +11347,18 @@ pub struct IDebugSymbols5 {
     pub GetCurrentScopeFrameIndexEx: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, index: *mut u32) -> ::windows_sys::core::HRESULT,
     pub SetScopeFrameByIndexEx: unsafe extern "system" fn(this: *mut *mut Self, flags: u32, index: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDebugSymbols5 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3328157758, data2: 7785, data3: 18270, data4: [142, 14, 181, 215, 158, 156, 193, 126] };
+}
 #[repr(C)]
 pub struct IDebugSyncOperation {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetTargetThread: unsafe extern "system" fn(this: *mut *mut Self, ppattarget: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Execute: unsafe extern "system" fn(this: *mut *mut Self, ppunkresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub InProgressAbort: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDebugSyncOperation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1368865818, data2: 51980, data3: 4560, data4: [181, 201, 0, 160, 36, 74, 14, 122] };
 }
 #[repr(C)]
 pub struct IDebugSystemObjects {
@@ -10828,6 +11392,9 @@ pub struct IDebugSystemObjects {
     pub GetCurrentProcessHandle: unsafe extern "system" fn(this: *mut *mut Self, handle: *mut u64) -> ::windows_sys::core::HRESULT,
     pub GetProcessIdByHandle: unsafe extern "system" fn(this: *mut *mut Self, handle: u64, id: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetCurrentProcessExecutableName: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, exesize: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDebugSystemObjects {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1804009004, data2: 11343, data3: 20236, data4: [157, 162, 23, 67, 17, 172, 195, 39] };
 }
 #[repr(C)]
 pub struct IDebugSystemObjects2 {
@@ -10866,6 +11433,9 @@ pub struct IDebugSystemObjects2 {
     pub SetImplicitThreadDataOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: u64) -> ::windows_sys::core::HRESULT,
     pub GetImplicitProcessDataOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: *mut u64) -> ::windows_sys::core::HRESULT,
     pub SetImplicitProcessDataOffset: unsafe extern "system" fn(this: *mut *mut Self, offset: u64) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDebugSystemObjects2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 183105023, data2: 6226, data3: 18041, data4: [176, 85, 73, 75, 238, 100, 7, 238] };
 }
 #[repr(C)]
 pub struct IDebugSystemObjects3 {
@@ -10913,6 +11483,9 @@ pub struct IDebugSystemObjects3 {
     pub GetCurrentSystemServer: unsafe extern "system" fn(this: *mut *mut Self, server: *mut u64) -> ::windows_sys::core::HRESULT,
     pub GetSystemByServer: unsafe extern "system" fn(this: *mut *mut Self, server: u64, id: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetCurrentSystemServerName: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PSTR, buffersize: u32, namesize: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDebugSystemObjects3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3915869743, data2: 57990, data3: 20131, data4: [176, 249, 223, 229, 217, 252, 51, 14] };
 }
 #[repr(C)]
 pub struct IDebugSystemObjects4 {
@@ -10963,15 +11536,24 @@ pub struct IDebugSystemObjects4 {
     pub GetCurrentProcessExecutableNameWide: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PWSTR, buffersize: u32, exesize: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetCurrentSystemServerNameWide: unsafe extern "system" fn(this: *mut *mut Self, buffer: ::windows_sys::core::PWSTR, buffersize: u32, namesize: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDebugSystemObjects4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1217685734, data2: 32015, data3: 19189, data4: [135, 171, 37, 32, 116, 84, 213, 83] };
+}
 #[repr(C)]
 pub struct IDebugThreadCall32 {
     pub base__: ::windows_sys::core::IUnknown,
     pub ThreadCallHandler: unsafe extern "system" fn(this: *mut *mut Self, dwparam1: u32, dwparam2: u32, dwparam3: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDebugThreadCall32 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1368865846, data2: 51980, data3: 4560, data4: [181, 201, 0, 160, 36, 74, 14, 122] };
+}
 #[repr(C)]
 pub struct IDebugThreadCall64 {
     pub base__: ::windows_sys::core::IUnknown,
     pub ThreadCallHandler: unsafe extern "system" fn(this: *mut *mut Self, dwparam1: u64, dwparam2: u64, dwparam3: u64) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDebugThreadCall64 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3409945397, data2: 59769, data3: 17149, data4: [159, 207, 167, 84, 106, 15, 57, 5] };
 }
 #[repr(C)]
 pub struct IDynamicConceptProviderConcept {
@@ -10982,12 +11564,18 @@ pub struct IDynamicConceptProviderConcept {
     pub NotifyParentChange: unsafe extern "system" fn(this: *mut *mut Self, parentmodel: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub NotifyDestruct: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDynamicConceptProviderConcept {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2510813149, data2: 24622, data3: 18495, data4: [157, 6, 161, 92, 14, 225, 49, 116] };
+}
 #[repr(C)]
 pub struct IDynamicKeyProviderConcept {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetKey: unsafe extern "system" fn(this: *mut *mut Self, contextobject: *mut ::core::ffi::c_void, key: ::windows_sys::core::PCWSTR, keyvalue: *mut *mut ::core::ffi::c_void, metadata: *mut *mut ::core::ffi::c_void, haskey: *mut bool) -> ::windows_sys::core::HRESULT,
     pub SetKey: unsafe extern "system" fn(this: *mut *mut Self, contextobject: *mut ::core::ffi::c_void, key: ::windows_sys::core::PCWSTR, keyvalue: *mut ::core::ffi::c_void, metadata: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub EnumerateKeys: unsafe extern "system" fn(this: *mut *mut Self, contextobject: *mut ::core::ffi::c_void, ppenumerator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDynamicKeyProviderConcept {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3885514657, data2: 32935, data3: 18828, data4: [152, 143, 81, 141, 220, 93, 64, 37] };
 }
 #[repr(C)]
 pub struct IEnumDebugApplicationNodes {
@@ -10997,6 +11585,9 @@ pub struct IEnumDebugApplicationNodes {
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, pperddp: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEnumDebugApplicationNodes {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1368865850, data2: 51980, data3: 4560, data4: [181, 201, 0, 160, 36, 74, 14, 122] };
+}
 #[repr(C)]
 pub struct IEnumDebugCodeContexts {
     pub base__: ::windows_sys::core::IUnknown,
@@ -11005,6 +11596,9 @@ pub struct IEnumDebugCodeContexts {
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppescc: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEnumDebugCodeContexts {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1368865821, data2: 51980, data3: 4560, data4: [181, 201, 0, 160, 36, 74, 14, 122] };
+}
 #[repr(C)]
 pub struct IEnumDebugExpressionContexts {
     pub base__: ::windows_sys::core::IUnknown,
@@ -11012,6 +11606,9 @@ pub struct IEnumDebugExpressionContexts {
     pub Skip: unsafe extern "system" fn(this: *mut *mut Self, celt: u32) -> ::windows_sys::core::HRESULT,
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppedec: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IEnumDebugExpressionContexts {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1368865856, data2: 51980, data3: 4560, data4: [181, 201, 0, 160, 36, 74, 14, 122] };
 }
 #[repr(C)]
 pub struct IEnumDebugExtendedPropertyInfo {
@@ -11025,6 +11622,9 @@ pub struct IEnumDebugExtendedPropertyInfo {
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, pedpe: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, pcelt: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEnumDebugExtendedPropertyInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1368865875, data2: 51980, data3: 4560, data4: [181, 201, 0, 160, 36, 74, 14, 122] };
+}
 #[repr(C)]
 pub struct IEnumDebugPropertyInfo {
     pub base__: ::windows_sys::core::IUnknown,
@@ -11037,6 +11637,9 @@ pub struct IEnumDebugPropertyInfo {
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppepi: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, pcelt: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEnumDebugPropertyInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1368865873, data2: 51980, data3: 4560, data4: [181, 201, 0, 160, 36, 74, 14, 122] };
+}
 #[repr(C)]
 pub struct IEnumDebugStackFrames {
     pub base__: ::windows_sys::core::IUnknown,
@@ -11048,6 +11651,9 @@ pub struct IEnumDebugStackFrames {
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppedsf: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEnumDebugStackFrames {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1368865822, data2: 51980, data3: 4560, data4: [181, 201, 0, 160, 36, 74, 14, 122] };
+}
 #[repr(C)]
 pub struct IEnumDebugStackFrames64 {
     pub base__: IEnumDebugStackFrames,
@@ -11056,11 +11662,17 @@ pub struct IEnumDebugStackFrames64 {
     #[cfg(not(feature = "Win32_Foundation"))]
     Next64: usize,
 }
+impl ::windows_sys::core::Interface for IEnumDebugStackFrames64 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 230918227, data2: 49584, data3: 16758, data4: [169, 132, 178, 152, 54, 16, 39, 175] };
+}
 #[repr(C)]
 pub struct IEnumJsStackFrames {
     pub base__: ::windows_sys::core::IUnknown,
     pub Next: unsafe extern "system" fn(this: *mut *mut Self, cframecount: u32, pframes: *mut __MIDL___MIDL_itf_jscript9diag_0000_0007_0001, pcfetched: *mut u32) -> ::windows_sys::core::HRESULT,
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IEnumJsStackFrames {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1585292107, data2: 64337, data3: 18321, data4: [171, 231, 203, 91, 223, 65, 151, 85] };
 }
 #[repr(C)]
 pub struct IEnumRemoteDebugApplicationThreads {
@@ -11070,6 +11682,9 @@ pub struct IEnumRemoteDebugApplicationThreads {
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, pperdat: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEnumRemoteDebugApplicationThreads {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1368865852, data2: 51980, data3: 4560, data4: [181, 201, 0, 160, 36, 74, 14, 122] };
+}
 #[repr(C)]
 pub struct IEnumRemoteDebugApplications {
     pub base__: ::windows_sys::core::IUnknown,
@@ -11078,10 +11693,16 @@ pub struct IEnumRemoteDebugApplications {
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppessd: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEnumRemoteDebugApplications {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1368865851, data2: 51980, data3: 4560, data4: [181, 201, 0, 160, 36, 74, 14, 122] };
+}
 #[repr(C)]
 pub struct IEquatableConcept {
     pub base__: ::windows_sys::core::IUnknown,
     pub AreObjectsEqual: unsafe extern "system" fn(this: *mut *mut Self, contextobject: *mut ::core::ffi::c_void, otherobject: *mut ::core::ffi::c_void, isequal: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IEquatableConcept {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3308084541, data2: 24733, data3: 19805, data4: [138, 130, 70, 176, 172, 222, 196, 244] };
 }
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
 pub const IG_DISASSEMBLE_BUFFER: u32 = 44u32;
@@ -11188,6 +11809,9 @@ pub struct IHostDataModelAccess {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetDataModel: unsafe extern "system" fn(this: *mut *mut Self, manager: *mut *mut ::core::ffi::c_void, host: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IHostDataModelAccess {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4072465742, data2: 18485, data3: 20362, data4: [131, 110, 121, 129, 226, 153, 4, 209] };
+}
 #[repr(C)]
 pub struct IIndexableConcept {
     pub base__: ::windows_sys::core::IUnknown,
@@ -11195,16 +11819,25 @@ pub struct IIndexableConcept {
     pub GetAt: unsafe extern "system" fn(this: *mut *mut Self, contextobject: *mut ::core::ffi::c_void, indexercount: u64, indexers: *const *mut ::core::ffi::c_void, object: *mut *mut ::core::ffi::c_void, metadata: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetAt: unsafe extern "system" fn(this: *mut *mut Self, contextobject: *mut ::core::ffi::c_void, indexercount: u64, indexers: *const *mut ::core::ffi::c_void, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IIndexableConcept {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3522877855, data2: 16211, data3: 17495, data4: [133, 12, 128, 81, 223, 45, 63, 181] };
+}
 #[repr(C)]
 pub struct IIterableConcept {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetDefaultIndexDimensionality: unsafe extern "system" fn(this: *mut *mut Self, contextobject: *mut ::core::ffi::c_void, dimensionality: *mut u64) -> ::windows_sys::core::HRESULT,
     pub GetIterator: unsafe extern "system" fn(this: *mut *mut Self, contextobject: *mut ::core::ffi::c_void, iterator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IIterableConcept {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4124351756, data2: 2818, data3: 17153, data4: [156, 155, 179, 166, 3, 118, 40, 243] };
+}
 #[repr(C)]
 pub struct IJsDebug {
     pub base__: ::windows_sys::core::IUnknown,
     pub OpenVirtualProcess: unsafe extern "system" fn(this: *mut *mut Self, processid: u32, runtimejsbaseaddress: u64, pdatatarget: *mut ::core::ffi::c_void, ppprocess: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IJsDebug {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3188623834, data2: 10949, data3: 19460, data4: [172, 94, 89, 149, 106, 174, 54, 19] };
 }
 #[repr(C)]
 pub struct IJsDebugBreakPoint {
@@ -11217,6 +11850,9 @@ pub struct IJsDebugBreakPoint {
     pub Disable: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Delete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub GetDocumentPosition: unsafe extern "system" fn(this: *mut *mut Self, pdocumentid: *mut u64, pcharacteroffset: *mut u32, pstatementcharcount: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IJsDebugBreakPoint {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3748099043, data2: 60813, data3: 18571, data4: [138, 62, 88, 18, 87, 125, 21, 66] };
 }
 #[repr(C)]
 pub struct IJsDebugDataTarget {
@@ -11236,6 +11872,9 @@ pub struct IJsDebugDataTarget {
     ReadNullTerminatedString: usize,
     pub CreateStackFrameEnumerator: unsafe extern "system" fn(this: *mut *mut Self, threadid: u32, ppenumerator: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetThreadContext: unsafe extern "system" fn(this: *mut *mut Self, threadid: u32, contextflags: u32, contextsize: u32, pcontext: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IJsDebugDataTarget {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1404209527, data2: 21409, data3: 18661, data4: [144, 0, 93, 13, 250, 137, 57, 49] };
 }
 #[repr(C)]
 pub struct IJsDebugFrame {
@@ -11257,6 +11896,9 @@ pub struct IJsDebugFrame {
     #[cfg(not(feature = "Win32_Foundation"))]
     Evaluate: usize,
 }
+impl ::windows_sys::core::Interface for IJsDebugFrame {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3373884983, data2: 43933, data3: 17586, data4: [186, 210, 19, 185, 91, 63, 57, 14] };
+}
 #[repr(C)]
 pub struct IJsDebugProcess {
     pub base__: ::windows_sys::core::IUnknown,
@@ -11268,6 +11910,9 @@ pub struct IJsDebugProcess {
     pub PerformAsyncBreak: unsafe extern "system" fn(this: *mut *mut Self, threadid: u32) -> ::windows_sys::core::HRESULT,
     pub GetExternalStepAddress: unsafe extern "system" fn(this: *mut *mut Self, pcodeaddress: *mut u64) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IJsDebugProcess {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1029206376, data2: 27181, data3: 16449, data4: [189, 59, 13, 230, 116, 80, 40, 98] };
+}
 #[repr(C)]
 pub struct IJsDebugProperty {
     pub base__: ::windows_sys::core::IUnknown,
@@ -11277,16 +11922,25 @@ pub struct IJsDebugProperty {
     GetPropertyInfo: usize,
     pub GetMembers: unsafe extern "system" fn(this: *mut *mut Self, members: JS_PROPERTY_MEMBERS, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IJsDebugProperty {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4177514283, data2: 15012, data3: 17184, data4: [133, 195, 82, 163, 18, 186, 150, 51] };
+}
 #[repr(C)]
 pub struct IJsDebugStackWalker {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetNext: unsafe extern "system" fn(this: *mut *mut Self, ppframe: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IJsDebugStackWalker {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3676614804, data2: 29636, data3: 17772, data4: [164, 236, 233, 14, 160, 11, 223, 227] };
 }
 #[repr(C)]
 pub struct IJsEnumDebugProperty {
     pub base__: ::windows_sys::core::IUnknown,
     pub Next: unsafe extern "system" fn(this: *mut *mut Self, count: u32, ppdebugproperty: *mut *mut ::core::ffi::c_void, pactualcount: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, pcount: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IJsEnumDebugProperty {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1083327279, data2: 12047, data3: 20449, data4: [182, 56, 91, 116, 165, 44, 220, 190] };
 }
 #[repr(C)]
 pub struct IKeyEnumerator {
@@ -11297,6 +11951,9 @@ pub struct IKeyEnumerator {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetNext: usize,
 }
+impl ::windows_sys::core::Interface for IKeyEnumerator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 878684462, data2: 24064, data3: 17177, data4: [156, 174, 151, 31, 118, 1, 205, 207] };
+}
 #[repr(C)]
 pub struct IKeyStore {
     pub base__: ::windows_sys::core::IUnknown,
@@ -11305,6 +11962,9 @@ pub struct IKeyStore {
     pub GetKeyValue: unsafe extern "system" fn(this: *mut *mut Self, key: ::windows_sys::core::PCWSTR, object: *mut *mut ::core::ffi::c_void, metadata: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetKeyValue: unsafe extern "system" fn(this: *mut *mut Self, key: ::windows_sys::core::PCWSTR, object: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub ClearKeys: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IKeyStore {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 264721789, data2: 16413, data3: 20426, data4: [147, 101, 218, 30, 152, 80, 105, 124] };
 }
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -12979,6 +13639,9 @@ pub struct IMachineDebugManager {
     pub RemoveApplication: unsafe extern "system" fn(this: *mut *mut Self, dwappcookie: u32) -> ::windows_sys::core::HRESULT,
     pub EnumApplications: unsafe extern "system" fn(this: *mut *mut Self, ppeda: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMachineDebugManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1368865836, data2: 51980, data3: 4560, data4: [181, 201, 0, 160, 36, 74, 14, 122] };
+}
 #[repr(C)]
 pub struct IMachineDebugManagerCookie {
     pub base__: ::windows_sys::core::IUnknown,
@@ -12986,17 +13649,26 @@ pub struct IMachineDebugManagerCookie {
     pub RemoveApplication: unsafe extern "system" fn(this: *mut *mut Self, dwdebugappcookie: u32, dwappcookie: u32) -> ::windows_sys::core::HRESULT,
     pub EnumApplications: unsafe extern "system" fn(this: *mut *mut Self, ppeda: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMachineDebugManagerCookie {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1368865837, data2: 51980, data3: 4560, data4: [181, 201, 0, 160, 36, 74, 14, 122] };
+}
 #[repr(C)]
 pub struct IMachineDebugManagerEvents {
     pub base__: ::windows_sys::core::IUnknown,
     pub onAddApplication: unsafe extern "system" fn(this: *mut *mut Self, pda: *mut ::core::ffi::c_void, dwappcookie: u32) -> ::windows_sys::core::HRESULT,
     pub onRemoveApplication: unsafe extern "system" fn(this: *mut *mut Self, pda: *mut ::core::ffi::c_void, dwappcookie: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMachineDebugManagerEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1368865838, data2: 51980, data3: 4560, data4: [181, 201, 0, 160, 36, 74, 14, 122] };
+}
 #[repr(C)]
 pub struct IModelIterator {
     pub base__: ::windows_sys::core::IUnknown,
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub GetNext: unsafe extern "system" fn(this: *mut *mut Self, object: *mut *mut ::core::ffi::c_void, dimensions: u64, indexers: *mut *mut ::core::ffi::c_void, metadata: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IModelIterator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3831636278, data2: 37501, data3: 17552, data4: [135, 79, 88, 31, 62, 78, 54, 136] };
 }
 #[repr(C)]
 pub struct IModelKeyReference {
@@ -13012,15 +13684,24 @@ pub struct IModelKeyReference {
     pub SetKey: unsafe extern "system" fn(this: *mut *mut Self, object: *mut ::core::ffi::c_void, metadata: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetKeyValue: unsafe extern "system" fn(this: *mut *mut Self, object: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IModelKeyReference {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1381227768, data2: 23295, data3: 19554, data4: [179, 2, 86, 162, 137, 224, 9, 152] };
+}
 #[repr(C)]
 pub struct IModelKeyReference2 {
     pub base__: IModelKeyReference,
     pub OverrideContextObject: unsafe extern "system" fn(this: *mut *mut Self, newcontextobject: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IModelKeyReference2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2162358213, data2: 29017, data3: 20114, data4: [136, 126, 126, 3, 71, 232, 132, 6] };
+}
 #[repr(C)]
 pub struct IModelMethod {
     pub base__: ::windows_sys::core::IUnknown,
     pub Call: unsafe extern "system" fn(this: *mut *mut Self, pcontextobject: *mut ::core::ffi::c_void, argcount: u64, pparguments: *const *mut ::core::ffi::c_void, ppresult: *mut *mut ::core::ffi::c_void, ppmetadata: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IModelMethod {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2153778207, data2: 47371, data3: 18582, data4: [130, 173, 28, 0, 32, 121, 9, 232] };
 }
 #[repr(C)]
 pub struct IModelObject {
@@ -13065,11 +13746,17 @@ pub struct IModelObject {
     pub Compare: unsafe extern "system" fn(this: *mut *mut Self, other: *mut ::core::ffi::c_void, ppresult: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub IsEqualTo: unsafe extern "system" fn(this: *mut *mut Self, other: *mut ::core::ffi::c_void, equal: *mut bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IModelObject {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3800856723, data2: 16203, data3: 19350, data4: [186, 202, 41, 60, 220, 85, 244, 93] };
+}
 #[repr(C)]
 pub struct IModelPropertyAccessor {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetValue: unsafe extern "system" fn(this: *mut *mut Self, key: ::windows_sys::core::PCWSTR, contextobject: *mut ::core::ffi::c_void, value: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetValue: unsafe extern "system" fn(this: *mut *mut Self, key: ::windows_sys::core::PCWSTR, contextobject: *mut ::core::ffi::c_void, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IModelPropertyAccessor {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1510761433, data2: 1318, data3: 17080, data4: [150, 12, 149, 22, 163, 37, 76, 133] };
 }
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
 pub const INCORRECT_VERSION_INFO: u32 = 7u32;
@@ -13207,6 +13894,9 @@ pub struct IObjectSafety {
     pub GetInterfaceSafetyOptions: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, pdwsupportedoptions: *mut u32, pdwenabledoptions: *mut u32) -> ::windows_sys::core::HRESULT,
     pub SetInterfaceSafetyOptions: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, dwoptionsetmask: u32, dwenabledoptions: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IObjectSafety {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3411795073, data2: 37825, data3: 4559, data4: [143, 32, 0, 128, 95, 44, 208, 100] };
+}
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
 pub const IPMI_IOCTL_INDEX: u32 = 1024u32;
 #[repr(C, packed(1))]
@@ -13269,10 +13959,16 @@ pub struct IPerPropertyBrowsing2 {
     GetPredefinedStrings: usize,
     pub SetPredefinedValue: unsafe extern "system" fn(this: *mut *mut Self, dispid: i32, dwcookie: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPerPropertyBrowsing2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1368865876, data2: 51980, data3: 4560, data4: [181, 201, 0, 160, 36, 74, 14, 122] };
+}
 #[repr(C)]
 pub struct IPreferredRuntimeTypeConcept {
     pub base__: ::windows_sys::core::IUnknown,
     pub CastToPreferredRuntimeType: unsafe extern "system" fn(this: *mut *mut Self, contextobject: *mut ::core::ffi::c_void, object: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPreferredRuntimeTypeConcept {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2641108347, data2: 42863, data3: 17944, data4: [128, 104, 95, 118, 189, 154, 78, 138] };
 }
 #[repr(C)]
 pub struct IProcessDebugManager32 {
@@ -13283,6 +13979,9 @@ pub struct IProcessDebugManager32 {
     pub RemoveApplication: unsafe extern "system" fn(this: *mut *mut Self, dwappcookie: u32) -> ::windows_sys::core::HRESULT,
     pub CreateDebugDocumentHelper: unsafe extern "system" fn(this: *mut *mut Self, punkouter: *mut ::core::ffi::c_void, pddh: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IProcessDebugManager32 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1368865839, data2: 51980, data3: 4560, data4: [181, 201, 0, 160, 36, 74, 14, 122] };
+}
 #[repr(C)]
 pub struct IProcessDebugManager64 {
     pub base__: ::windows_sys::core::IUnknown,
@@ -13292,10 +13991,16 @@ pub struct IProcessDebugManager64 {
     pub RemoveApplication: unsafe extern "system" fn(this: *mut *mut Self, dwappcookie: u32) -> ::windows_sys::core::HRESULT,
     pub CreateDebugDocumentHelper: unsafe extern "system" fn(this: *mut *mut Self, punkouter: *mut ::core::ffi::c_void, pddh: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IProcessDebugManager64 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1455029276, data2: 25513, data3: 19649, data4: [172, 33, 8, 125, 105, 161, 127, 171] };
+}
 #[repr(C)]
 pub struct IProvideExpressionContexts {
     pub base__: ::windows_sys::core::IUnknown,
     pub EnumExpressionContexts: unsafe extern "system" fn(this: *mut *mut Self, ppedec: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IProvideExpressionContexts {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1368865857, data2: 51980, data3: 4560, data4: [181, 201, 0, 160, 36, 74, 14, 122] };
 }
 #[repr(C)]
 pub struct IRawEnumerator {
@@ -13305,6 +14010,9 @@ pub struct IRawEnumerator {
     pub GetNext: unsafe extern "system" fn(this: *mut *mut Self, name: *mut super::super::super::Foundation::BSTR, kind: *mut SymbolKind, value: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetNext: usize,
+}
+impl ::windows_sys::core::Interface for IRawEnumerator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3778417657, data2: 14908, data3: 16565, data4: [143, 72, 30, 94, 191, 185, 178, 27] };
 }
 #[repr(C)]
 pub struct IRemoteDebugApplication {
@@ -13324,12 +14032,18 @@ pub struct IRemoteDebugApplication {
     pub GetRootNode: unsafe extern "system" fn(this: *mut *mut Self, ppdanroot: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub EnumGlobalExpressionContexts: unsafe extern "system" fn(this: *mut *mut Self, ppedec: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IRemoteDebugApplication {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1368865840, data2: 51980, data3: 4560, data4: [181, 201, 0, 160, 36, 74, 14, 122] };
+}
 #[repr(C)]
 pub struct IRemoteDebugApplication110 {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetDebuggerOptions: unsafe extern "system" fn(this: *mut *mut Self, mask: SCRIPT_DEBUGGER_OPTIONS, value: SCRIPT_DEBUGGER_OPTIONS) -> ::windows_sys::core::HRESULT,
     pub GetCurrentDebuggerOptions: unsafe extern "system" fn(this: *mut *mut Self, pcurrentoptions: *mut SCRIPT_DEBUGGER_OPTIONS) -> ::windows_sys::core::HRESULT,
     pub GetMainThread: unsafe extern "system" fn(this: *mut *mut Self, ppthread: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IRemoteDebugApplication110 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3590193243, data2: 10294, data3: 18526, data4: [177, 249, 137, 217, 26, 162, 79, 212] };
 }
 #[repr(C)]
 pub struct IRemoteDebugApplicationEvents {
@@ -13344,6 +14058,9 @@ pub struct IRemoteDebugApplicationEvents {
     pub OnCreateThread: unsafe extern "system" fn(this: *mut *mut Self, prdat: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub OnDestroyThread: unsafe extern "system" fn(this: *mut *mut Self, prdat: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub OnBreakFlagChange: unsafe extern "system" fn(this: *mut *mut Self, abf: u32, prdatsteppingthread: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IRemoteDebugApplicationEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1368865843, data2: 51980, data3: 4560, data4: [181, 201, 0, 160, 36, 74, 14, 122] };
 }
 #[repr(C)]
 pub struct IRemoteDebugApplicationThread {
@@ -13361,6 +14078,9 @@ pub struct IRemoteDebugApplicationThread {
     pub Resume: unsafe extern "system" fn(this: *mut *mut Self, pdwcount: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetSuspendCount: unsafe extern "system" fn(this: *mut *mut Self, pdwcount: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IRemoteDebugApplicationThread {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1368865847, data2: 51980, data3: 4560, data4: [181, 201, 0, 160, 36, 74, 14, 122] };
+}
 #[repr(C)]
 pub struct IRemoteDebugCriticalErrorEvent110 {
     pub base__: ::windows_sys::core::IUnknown,
@@ -13369,6 +14089,9 @@ pub struct IRemoteDebugCriticalErrorEvent110 {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetErrorInfo: usize,
 }
+impl ::windows_sys::core::Interface for IRemoteDebugCriticalErrorEvent110 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 795461137, data2: 27412, data3: 18408, data4: [146, 96, 75, 183, 197, 47, 80, 75] };
+}
 #[repr(C)]
 pub struct IRemoteDebugInfoEvent110 {
     pub base__: ::windows_sys::core::IUnknown,
@@ -13376,6 +14099,9 @@ pub struct IRemoteDebugInfoEvent110 {
     pub GetEventInfo: unsafe extern "system" fn(this: *mut *mut Self, pmessagetype: *mut DEBUG_EVENT_INFO_TYPE, pbstrmessage: *mut super::super::super::Foundation::BSTR, pbstrurl: *mut super::super::super::Foundation::BSTR, pplocation: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetEventInfo: usize,
+}
+impl ::windows_sys::core::Interface for IRemoteDebugInfoEvent110 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2683661238, data2: 60297, data3: 19471, data4: [136, 35, 204, 42, 76, 11, 127, 38] };
 }
 #[repr(C)]
 pub struct IScriptEntry {
@@ -13410,6 +14136,9 @@ pub struct IScriptEntry {
     SetSignature: usize,
     pub GetRange: unsafe extern "system" fn(this: *mut *mut Self, pichmin: *mut u32, pcch: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IScriptEntry {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 183380629, data2: 48315, data3: 4560, data4: [140, 114, 0, 192, 79, 194, 176, 133] };
+}
 #[repr(C)]
 pub struct IScriptInvocationContext {
     pub base__: ::windows_sys::core::IUnknown,
@@ -13419,6 +14148,9 @@ pub struct IScriptInvocationContext {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetContextDescription: usize,
     pub GetContextObject: unsafe extern "system" fn(this: *mut *mut Self, ppcontextobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IScriptInvocationContext {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1568096695, data2: 44926, data3: 18986, data4: [133, 229, 199, 127, 77, 6, 89, 251] };
 }
 #[repr(C)]
 pub struct IScriptNode {
@@ -13440,6 +14172,9 @@ pub struct IScriptNode {
     #[cfg(not(feature = "Win32_System_Com"))]
     CreateChildHandler: usize,
 }
+impl ::windows_sys::core::Interface for IScriptNode {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 183380628, data2: 48315, data3: 4560, data4: [140, 114, 0, 192, 79, 194, 176, 133] };
+}
 #[repr(C)]
 pub struct IScriptScriptlet {
     pub base__: IScriptEntry,
@@ -13459,6 +14194,9 @@ pub struct IScriptScriptlet {
     GetSimpleEventName: usize,
     pub SetSimpleEventName: unsafe extern "system" fn(this: *mut *mut Self, psz: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IScriptScriptlet {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 183380630, data2: 48315, data3: 4560, data4: [140, 114, 0, 192, 79, 194, 176, 133] };
+}
 #[repr(C)]
 pub struct ISimpleConnectionPoint {
     pub base__: ::windows_sys::core::IUnknown,
@@ -13473,6 +14211,9 @@ pub struct ISimpleConnectionPoint {
     Advise: usize,
     pub Unadvise: unsafe extern "system" fn(this: *mut *mut Self, dwcookie: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISimpleConnectionPoint {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1368865854, data2: 51980, data3: 4560, data4: [181, 201, 0, 160, 36, 74, 14, 122] };
+}
 #[repr(C)]
 pub struct IStringDisplayableConcept {
     pub base__: ::windows_sys::core::IUnknown,
@@ -13480,6 +14221,9 @@ pub struct IStringDisplayableConcept {
     pub ToDisplayString: unsafe extern "system" fn(this: *mut *mut Self, contextobject: *mut ::core::ffi::c_void, metadata: *mut ::core::ffi::c_void, displaystring: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     ToDisplayString: usize,
+}
+impl ::windows_sys::core::Interface for IStringDisplayableConcept {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3532557680, data2: 27648, data3: 16901, data4: [148, 13, 80, 16, 22, 96, 30, 163] };
 }
 #[repr(C)]
 pub struct ITridentEventSink {
@@ -13489,6 +14233,9 @@ pub struct ITridentEventSink {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     FireEvent: usize,
 }
+impl ::windows_sys::core::Interface for ITridentEventSink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 499763792, data2: 1775, data3: 4562, data4: [132, 21, 0, 96, 8, 195, 251, 252] };
+}
 #[repr(C)]
 pub struct IWebAppDiagnosticsObjectInitialization {
     pub base__: ::windows_sys::core::IUnknown,
@@ -13497,11 +14244,17 @@ pub struct IWebAppDiagnosticsObjectInitialization {
     #[cfg(not(feature = "Win32_Foundation"))]
     Initialize: usize,
 }
+impl ::windows_sys::core::Interface for IWebAppDiagnosticsObjectInitialization {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 385825346, data2: 42485, data3: 17195, data4: [182, 37, 142, 142, 22, 245, 126, 21] };
+}
 #[repr(C)]
 pub struct IWebAppDiagnosticsSetup {
     pub base__: ::windows_sys::core::IUnknown,
     pub DiagnosticsSupported: unsafe extern "system" fn(this: *mut *mut Self, pretval: *mut i16) -> ::windows_sys::core::HRESULT,
     pub CreateObjectWithSiteAtWebApp: unsafe extern "system" fn(this: *mut *mut Self, rclsid: *const ::windows_sys::core::GUID, dwclscontext: u32, riid: *const ::windows_sys::core::GUID, hpasstoobject: usize) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWebAppDiagnosticsSetup {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 932969441, data2: 50889, data3: 17194, data4: [147, 225, 109, 23, 101, 108, 83, 140] };
 }
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
 pub type IntrinsicKind = i32;

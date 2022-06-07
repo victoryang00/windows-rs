@@ -237,6 +237,9 @@ pub struct IFhConfigMgr {
     #[cfg(not(feature = "Win32_Foundation"))]
     QueryProtectionStatus: usize,
 }
+impl ::windows_sys::core::Interface for IFhConfigMgr {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1784670811, data2: 49039, data3: 20197, data4: [184, 195, 68, 216, 160, 215, 51, 28] };
+}
 #[repr(C)]
 pub struct IFhReassociation {
     pub base__: ::windows_sys::core::IUnknown,
@@ -258,6 +261,9 @@ pub struct IFhReassociation {
     #[cfg(not(feature = "Win32_Foundation"))]
     PerformReassociation: usize,
 }
+impl ::windows_sys::core::Interface for IFhReassociation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1698996874, data2: 63117, data3: 18348, data4: [145, 239, 22, 178, 179, 106, 163, 238] };
+}
 #[repr(C)]
 pub struct IFhScopeIterator {
     pub base__: ::windows_sys::core::IUnknown,
@@ -267,6 +273,9 @@ pub struct IFhScopeIterator {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetItem: usize,
 }
+impl ::windows_sys::core::Interface for IFhScopeIterator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 832023502, data2: 21290, data3: 17606, data4: [134, 21, 243, 102, 101, 102, 167, 32] };
+}
 #[repr(C)]
 pub struct IFhTarget {
     pub base__: ::windows_sys::core::IUnknown,
@@ -275,4 +284,7 @@ pub struct IFhTarget {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetStringProperty: usize,
     pub GetNumericalProperty: unsafe extern "system" fn(this: *mut *mut Self, propertytype: FH_TARGET_PROPERTY_TYPE, propertyvalue: *mut u64) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IFhTarget {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3631834621, data2: 11181, data3: 18007, data4: [189, 59, 149, 103, 235, 48, 12, 237] };
 }

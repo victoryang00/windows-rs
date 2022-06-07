@@ -123,6 +123,9 @@ pub struct IBluetoothLEAdvertisement {
     #[cfg(not(feature = "Foundation_Collections"))]
     GetSectionsByType: usize,
 }
+impl ::windows_sys::core::Interface for IBluetoothLEAdvertisement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 107983543, data2: 13265, data3: 20093, data4: [131, 103, 207, 129, 208, 247, 150, 83] };
+}
 #[repr(C)]
 pub struct IBluetoothLEAdvertisementBytePattern {
     pub base__: ::windows_sys::core::IInspectable,
@@ -139,6 +142,9 @@ pub struct IBluetoothLEAdvertisementBytePattern {
     #[cfg(not(feature = "Storage_Streams"))]
     SetData: usize,
 }
+impl ::windows_sys::core::Interface for IBluetoothLEAdvertisementBytePattern {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4227520498, data2: 47557, data3: 18952, data4: [188, 81, 80, 47, 142, 246, 138, 121] };
+}
 #[repr(C)]
 pub struct IBluetoothLEAdvertisementBytePatternFactory {
     pub base__: ::windows_sys::core::IInspectable,
@@ -146,6 +152,9 @@ pub struct IBluetoothLEAdvertisementBytePatternFactory {
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, datatype: u8, offset: i16, data: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Storage_Streams"))]
     Create: usize,
+}
+impl ::windows_sys::core::Interface for IBluetoothLEAdvertisementBytePatternFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3269610867, data2: 64860, data3: 20163, data4: [190, 42, 156, 166, 250, 17, 183, 189] };
 }
 #[repr(C)]
 pub struct IBluetoothLEAdvertisementDataSection {
@@ -161,6 +170,9 @@ pub struct IBluetoothLEAdvertisementDataSection {
     #[cfg(not(feature = "Storage_Streams"))]
     SetData: usize,
 }
+impl ::windows_sys::core::Interface for IBluetoothLEAdvertisementDataSection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3609277204, data2: 14915, data3: 16633, data4: [182, 240, 146, 191, 239, 195, 74, 227] };
+}
 #[repr(C)]
 pub struct IBluetoothLEAdvertisementDataSectionFactory {
     pub base__: ::windows_sys::core::IInspectable,
@@ -168,6 +180,9 @@ pub struct IBluetoothLEAdvertisementDataSectionFactory {
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, datatype: u8, data: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Storage_Streams"))]
     Create: usize,
+}
+impl ::windows_sys::core::Interface for IBluetoothLEAdvertisementDataSectionFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3886287170, data2: 43077, data3: 16453, data4: [191, 126, 62, 153, 113, 219, 138, 107] };
 }
 #[repr(C)]
 pub struct IBluetoothLEAdvertisementDataTypesStatics {
@@ -195,6 +210,9 @@ pub struct IBluetoothLEAdvertisementDataTypesStatics {
     pub AdvertisingInterval: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u8) -> ::windows_sys::core::HRESULT,
     pub ManufacturerSpecificData: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u8) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IBluetoothLEAdvertisementDataTypesStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1001801519, data2: 1542, data3: 17227, data4: [167, 110, 116, 21, 159, 6, 132, 211] };
+}
 #[repr(C)]
 pub struct IBluetoothLEAdvertisementFilter {
     pub base__: ::windows_sys::core::IInspectable,
@@ -204,6 +222,9 @@ pub struct IBluetoothLEAdvertisementFilter {
     pub BytePatterns: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     BytePatterns: usize,
+}
+impl ::windows_sys::core::Interface for IBluetoothLEAdvertisementFilter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 320778451, data2: 53326, data3: 18353, data4: [131, 126, 73, 64, 91, 246, 248, 15] };
 }
 #[repr(C)]
 pub struct IBluetoothLEAdvertisementPublisher {
@@ -220,6 +241,9 @@ pub struct IBluetoothLEAdvertisementPublisher {
     pub RemoveStatusChanged: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     RemoveStatusChanged: usize,
+}
+impl ::windows_sys::core::Interface for IBluetoothLEAdvertisementPublisher {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3454542073, data2: 55802, data3: 17366, data4: [162, 100, 221, 216, 183, 218, 139, 120] };
 }
 #[repr(C)]
 pub struct IBluetoothLEAdvertisementPublisher2 {
@@ -239,16 +263,25 @@ pub struct IBluetoothLEAdvertisementPublisher2 {
     pub IncludeTransmitPowerLevel: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub SetIncludeTransmitPowerLevel: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IBluetoothLEAdvertisementPublisher2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4225455198, data2: 22257, data3: 20751, data4: [164, 52, 33, 127, 189, 158, 123, 210] };
+}
 #[repr(C)]
 pub struct IBluetoothLEAdvertisementPublisherFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, advertisement: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IBluetoothLEAdvertisementPublisherFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1549731422, data2: 47203, data3: 18817, data4: [161, 175, 28, 84, 77, 139, 12, 13] };
 }
 #[repr(C)]
 pub struct IBluetoothLEAdvertisementPublisherStatusChangedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub Status: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut BluetoothLEAdvertisementPublisherStatus) -> ::windows_sys::core::HRESULT,
     pub Error: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::BluetoothError) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IBluetoothLEAdvertisementPublisherStatusChangedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 163757471, data2: 11775, data3: 19235, data4: [134, 238, 13, 20, 251, 148, 174, 174] };
 }
 #[repr(C)]
 pub struct IBluetoothLEAdvertisementPublisherStatusChangedEventArgs2 {
@@ -257,6 +290,9 @@ pub struct IBluetoothLEAdvertisementPublisherStatusChangedEventArgs2 {
     pub SelectedTransmitPowerLevelInDBm: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     SelectedTransmitPowerLevelInDBm: usize,
+}
+impl ::windows_sys::core::Interface for IBluetoothLEAdvertisementPublisherStatusChangedEventArgs2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2405595406, data2: 56456, data3: 23691, data4: [179, 78, 16, 179, 33, 133, 15, 136] };
 }
 #[repr(C)]
 pub struct IBluetoothLEAdvertisementReceivedEventArgs {
@@ -269,6 +305,9 @@ pub struct IBluetoothLEAdvertisementReceivedEventArgs {
     #[cfg(not(feature = "Foundation"))]
     Timestamp: usize,
     pub Advertisement: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IBluetoothLEAdvertisementReceivedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 664305119, data2: 58774, data3: 16830, data4: [141, 67, 158, 103, 49, 212, 169, 19] };
 }
 #[repr(C)]
 pub struct IBluetoothLEAdvertisementReceivedEventArgs2 {
@@ -283,6 +322,9 @@ pub struct IBluetoothLEAdvertisementReceivedEventArgs2 {
     pub IsScannable: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub IsDirected: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub IsScanResponse: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IBluetoothLEAdvertisementReceivedEventArgs2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 316262523, data2: 921, data3: 24334, data4: [163, 72, 83, 176, 43, 107, 22, 46] };
 }
 #[repr(C)]
 pub struct IBluetoothLEAdvertisementWatcher {
@@ -329,21 +371,33 @@ pub struct IBluetoothLEAdvertisementWatcher {
     #[cfg(not(feature = "Foundation"))]
     RemoveStopped: usize,
 }
+impl ::windows_sys::core::Interface for IBluetoothLEAdvertisementWatcher {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2796303215, data2: 62419, data3: 17047, data4: [141, 108, 200, 30, 166, 98, 63, 64] };
+}
 #[repr(C)]
 pub struct IBluetoothLEAdvertisementWatcher2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub AllowExtendedAdvertisements: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub SetAllowExtendedAdvertisements: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IBluetoothLEAdvertisementWatcher2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 29304508, data2: 45412, data3: 22533, data4: [144, 163, 232, 167, 153, 127, 242, 37] };
+}
 #[repr(C)]
 pub struct IBluetoothLEAdvertisementWatcherFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, advertisementfilter: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IBluetoothLEAdvertisementWatcherFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2595171670, data2: 14764, data3: 17726, data4: [179, 42, 133, 198, 87, 224, 23, 241] };
+}
 #[repr(C)]
 pub struct IBluetoothLEAdvertisementWatcherStoppedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub Error: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::BluetoothError) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IBluetoothLEAdvertisementWatcherStoppedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3712022605, data2: 59321, data3: 17379, data4: [156, 4, 6, 133, 208, 133, 253, 140] };
 }
 #[repr(C)]
 pub struct IBluetoothLEManufacturerData {
@@ -359,6 +413,9 @@ pub struct IBluetoothLEManufacturerData {
     #[cfg(not(feature = "Storage_Streams"))]
     SetData: usize,
 }
+impl ::windows_sys::core::Interface for IBluetoothLEManufacturerData {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2435693080, data2: 26979, data3: 17715, data4: [176, 97, 70, 148, 218, 251, 52, 229] };
+}
 #[repr(C)]
 pub struct IBluetoothLEManufacturerDataFactory {
     pub base__: ::windows_sys::core::IInspectable,
@@ -366,4 +423,7 @@ pub struct IBluetoothLEManufacturerDataFactory {
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, companyid: u16, data: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Storage_Streams"))]
     Create: usize,
+}
+impl ::windows_sys::core::Interface for IBluetoothLEManufacturerDataFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3231398392, data2: 12698, data3: 17438, data4: [141, 229, 102, 168, 30, 135, 122, 108] };
 }

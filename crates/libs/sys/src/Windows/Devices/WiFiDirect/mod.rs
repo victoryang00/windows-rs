@@ -17,6 +17,9 @@ pub struct IWiFiDirectAdvertisement {
     pub SetIsAutonomousGroupOwnerEnabled: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
     pub LegacySettings: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWiFiDirectAdvertisement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2874219053, data2: 10758, data3: 18849, data4: [165, 132, 97, 67, 92, 121, 5, 166] };
+}
 #[repr(C)]
 pub struct IWiFiDirectAdvertisement2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -24,6 +27,9 @@ pub struct IWiFiDirectAdvertisement2 {
     pub SupportedConfigurationMethods: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     SupportedConfigurationMethods: usize,
+}
+impl ::windows_sys::core::Interface for IWiFiDirectAdvertisement2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3076106822, data2: 55318, data3: 18715, data4: [145, 122, 180, 13, 125, 196, 3, 162] };
 }
 #[repr(C)]
 pub struct IWiFiDirectAdvertisementPublisher {
@@ -41,11 +47,17 @@ pub struct IWiFiDirectAdvertisementPublisher {
     pub Start: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Stop: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWiFiDirectAdvertisementPublisher {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3009031450, data2: 39711, data3: 17881, data4: [146, 90, 105, 77, 102, 223, 104, 239] };
+}
 #[repr(C)]
 pub struct IWiFiDirectAdvertisementPublisherStatusChangedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub Status: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut WiFiDirectAdvertisementPublisherStatus) -> ::windows_sys::core::HRESULT,
     pub Error: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut WiFiDirectError) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWiFiDirectAdvertisementPublisherStatusChangedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2868766012, data2: 21633, data3: 18150, data4: [144, 221, 50, 17, 101, 24, 241, 146] };
 }
 #[repr(C)]
 pub struct IWiFiDirectConnectionListener {
@@ -59,11 +71,17 @@ pub struct IWiFiDirectConnectionListener {
     #[cfg(not(feature = "Foundation"))]
     RemoveConnectionRequested: usize,
 }
+impl ::windows_sys::core::Interface for IWiFiDirectConnectionListener {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1771838221, data2: 36115, data3: 20201, data4: [185, 236, 156, 114, 248, 37, 31, 125] };
+}
 #[repr(C)]
 pub struct IWiFiDirectConnectionParameters {
     pub base__: ::windows_sys::core::IInspectable,
     pub GroupOwnerIntent: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i16) -> ::windows_sys::core::HRESULT,
     pub SetGroupOwnerIntent: unsafe extern "system" fn(this: *mut *mut Self, value: i16) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWiFiDirectConnectionParameters {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3001373701, data2: 22274, data3: 19222, data4: [160, 44, 187, 205, 33, 239, 96, 152] };
 }
 #[repr(C)]
 pub struct IWiFiDirectConnectionParameters2 {
@@ -75,6 +93,9 @@ pub struct IWiFiDirectConnectionParameters2 {
     pub PreferredPairingProcedure: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut WiFiDirectPairingProcedure) -> ::windows_sys::core::HRESULT,
     pub SetPreferredPairingProcedure: unsafe extern "system" fn(this: *mut *mut Self, value: WiFiDirectPairingProcedure) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWiFiDirectConnectionParameters2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2872774590, data2: 43650, data3: 17588, data4: [136, 200, 227, 5, 107, 137, 128, 29] };
+}
 #[repr(C)]
 pub struct IWiFiDirectConnectionParametersStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -82,6 +103,9 @@ pub struct IWiFiDirectConnectionParametersStatics {
     pub GetDevicePairingKinds: unsafe extern "system" fn(this: *mut *mut Self, configurationmethod: WiFiDirectConfigurationMethod, result__: *mut super::Enumeration::DevicePairingKinds) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Devices_Enumeration"))]
     GetDevicePairingKinds: usize,
+}
+impl ::windows_sys::core::Interface for IWiFiDirectConnectionParametersStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1502278803, data2: 30274, data3: 17775, data4: [185, 216, 232, 169, 235, 31, 64, 26] };
 }
 #[repr(C)]
 pub struct IWiFiDirectConnectionRequest {
@@ -91,10 +115,16 @@ pub struct IWiFiDirectConnectionRequest {
     #[cfg(not(feature = "Devices_Enumeration"))]
     DeviceInformation: usize,
 }
+impl ::windows_sys::core::Interface for IWiFiDirectConnectionRequest {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2394527237, data2: 37199, data3: 18883, data4: [166, 20, 209, 141, 197, 177, 155, 67] };
+}
 #[repr(C)]
 pub struct IWiFiDirectConnectionRequestedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub GetConnectionRequest: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWiFiDirectConnectionRequestedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4187824318, data2: 54157, data3: 18511, data4: [130, 21, 231, 182, 90, 191, 36, 76] };
 }
 #[repr(C)]
 pub struct IWiFiDirectDevice {
@@ -114,6 +144,9 @@ pub struct IWiFiDirectDevice {
     #[cfg(not(all(feature = "Foundation_Collections", feature = "Networking")))]
     GetConnectionEndpointPairs: usize,
 }
+impl ::windows_sys::core::Interface for IWiFiDirectDevice {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1927195304, data2: 29419, data3: 19886, data4: [138, 40, 133, 19, 53, 93, 39, 119] };
+}
 #[repr(C)]
 pub struct IWiFiDirectDeviceStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -123,6 +156,9 @@ pub struct IWiFiDirectDeviceStatics {
     #[cfg(not(feature = "Foundation"))]
     FromIdAsync: usize,
 }
+impl ::windows_sys::core::Interface for IWiFiDirectDeviceStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3899438460, data2: 15020, data3: 18513, data4: [167, 146, 72, 42, 175, 147, 27, 4] };
+}
 #[repr(C)]
 pub struct IWiFiDirectDeviceStatics2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -131,6 +167,9 @@ pub struct IWiFiDirectDeviceStatics2 {
     pub FromIdAsync: unsafe extern "system" fn(this: *mut *mut Self, deviceid: ::windows_sys::core::HSTRING, connectionparameters: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     FromIdAsync: usize,
+}
+impl ::windows_sys::core::Interface for IWiFiDirectDeviceStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 445988425, data2: 45315, data3: 17278, data4: [146, 38, 171, 103, 151, 19, 66, 249] };
 }
 #[repr(C)]
 pub struct IWiFiDirectInformationElement {
@@ -154,6 +193,9 @@ pub struct IWiFiDirectInformationElement {
     #[cfg(not(feature = "Storage_Streams"))]
     SetValue: usize,
 }
+impl ::windows_sys::core::Interface for IWiFiDirectInformationElement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2952491734, data2: 30395, data3: 18814, data4: [172, 139, 220, 114, 131, 139, 195, 9] };
+}
 #[repr(C)]
 pub struct IWiFiDirectInformationElementStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -165,6 +207,9 @@ pub struct IWiFiDirectInformationElementStatics {
     pub CreateFromDeviceInformation: unsafe extern "system" fn(this: *mut *mut Self, deviceinformation: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Devices_Enumeration", feature = "Foundation_Collections")))]
     CreateFromDeviceInformation: usize,
+}
+impl ::windows_sys::core::Interface for IWiFiDirectInformationElementStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3687853846, data2: 4517, data3: 20064, data4: [140, 170, 52, 119, 33, 72, 55, 138] };
 }
 #[repr(C)]
 pub struct IWiFiDirectLegacySettings {
@@ -181,6 +226,9 @@ pub struct IWiFiDirectLegacySettings {
     pub SetPassphrase: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Security_Credentials"))]
     SetPassphrase: usize,
+}
+impl ::windows_sys::core::Interface for IWiFiDirectLegacySettings {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2790251450, data2: 62205, data3: 17767, data4: [169, 27, 245, 194, 245, 50, 16, 87] };
 }
 pub type WiFiDirectAdvertisement = *mut ::core::ffi::c_void;
 #[doc = "*Required features: `\"Devices_WiFiDirect\"`*"]

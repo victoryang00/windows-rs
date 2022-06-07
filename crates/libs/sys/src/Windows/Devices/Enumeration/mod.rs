@@ -204,10 +204,16 @@ pub struct IDeviceAccessChangedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub Status: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut DeviceAccessStatus) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDeviceAccessChangedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3738831820, data2: 20381, data3: 20312, data4: [157, 186, 169, 188, 128, 4, 8, 213] };
+}
 #[repr(C)]
 pub struct IDeviceAccessChangedEventArgs2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub Id: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDeviceAccessChangedEventArgs2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2186424930, data2: 37707, data3: 19248, data4: [161, 120, 173, 195, 159, 47, 43, 227] };
 }
 #[repr(C)]
 pub struct IDeviceAccessInformation {
@@ -222,6 +228,9 @@ pub struct IDeviceAccessInformation {
     RemoveAccessChanged: usize,
     pub CurrentStatus: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut DeviceAccessStatus) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDeviceAccessInformation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 195730035, data2: 28133, data3: 18709, data4: [141, 221, 154, 5, 84, 166, 245, 69] };
+}
 #[repr(C)]
 pub struct IDeviceAccessInformationStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -229,15 +238,24 @@ pub struct IDeviceAccessInformationStatics {
     pub CreateFromDeviceClassId: unsafe extern "system" fn(this: *mut *mut Self, deviceclassid: ::windows_sys::core::GUID, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub CreateFromDeviceClass: unsafe extern "system" fn(this: *mut *mut Self, deviceclass: DeviceClass, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDeviceAccessInformationStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1464587219, data2: 24368, data3: 17869, data4: [138, 148, 114, 79, 229, 151, 48, 132] };
+}
 #[repr(C)]
 pub struct IDeviceConnectionChangeTriggerDetails {
     pub base__: ::windows_sys::core::IInspectable,
     pub DeviceId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDeviceConnectionChangeTriggerDetails {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3092745228, data2: 48065, data3: 18507, data4: [191, 250, 123, 49, 220, 194, 0, 178] };
+}
 #[repr(C)]
 pub struct IDeviceDisconnectButtonClickedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub Device: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDeviceDisconnectButtonClickedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2386867565, data2: 63746, data3: 18944, data4: [181, 54, 243, 121, 146, 230, 162, 167] };
 }
 #[repr(C)]
 pub struct IDeviceInformation {
@@ -261,11 +279,17 @@ pub struct IDeviceInformation {
     #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
     GetGlyphThumbnailAsync: usize,
 }
+impl ::windows_sys::core::Interface for IDeviceInformation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2879454101, data2: 17304, data3: 18589, data4: [142, 68, 230, 19, 9, 39, 1, 31] };
+}
 #[repr(C)]
 pub struct IDeviceInformation2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub Kind: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut DeviceInformationKind) -> ::windows_sys::core::HRESULT,
     pub Pairing: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDeviceInformation2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4048987704, data2: 31127, data3: 18649, data4: [161, 12, 38, 157, 70, 83, 63, 72] };
 }
 #[repr(C)]
 pub struct IDeviceInformationCustomPairing {
@@ -291,6 +315,9 @@ pub struct IDeviceInformationCustomPairing {
     #[cfg(not(feature = "Foundation"))]
     RemovePairingRequested: usize,
 }
+impl ::windows_sys::core::Interface for IDeviceInformationCustomPairing {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2232650754, data2: 20198, data3: 18708, data4: [131, 112, 16, 122, 57, 20, 76, 14] };
+}
 #[repr(C)]
 pub struct IDeviceInformationPairing {
     pub base__: ::windows_sys::core::IInspectable,
@@ -304,6 +331,9 @@ pub struct IDeviceInformationPairing {
     pub PairWithProtectionLevelAsync: unsafe extern "system" fn(this: *mut *mut Self, minprotectionlevel: DevicePairingProtectionLevel, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     PairWithProtectionLevelAsync: usize,
+}
+impl ::windows_sys::core::Interface for IDeviceInformationPairing {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 742877685, data2: 63108, data3: 16597, data4: [132, 105, 232, 219, 170, 183, 4, 133] };
 }
 #[repr(C)]
 pub struct IDeviceInformationPairing2 {
@@ -319,15 +349,24 @@ pub struct IDeviceInformationPairing2 {
     #[cfg(not(feature = "Foundation"))]
     UnpairAsync: usize,
 }
+impl ::windows_sys::core::Interface for IDeviceInformationPairing2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4135981821, data2: 2798, data3: 17192, data4: [133, 204, 28, 116, 43, 177, 121, 13] };
+}
 #[repr(C)]
 pub struct IDeviceInformationPairingStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub TryRegisterForAllInboundPairingRequests: unsafe extern "system" fn(this: *mut *mut Self, pairingkindssupported: DevicePairingKinds, result__: *mut bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDeviceInformationPairingStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3910517768, data2: 14036, data3: 18849, data4: [191, 19, 81, 65, 115, 121, 155, 107] };
+}
 #[repr(C)]
 pub struct IDeviceInformationPairingStatics2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub TryRegisterForAllInboundPairingRequestsWithProtectionLevel: unsafe extern "system" fn(this: *mut *mut Self, pairingkindssupported: DevicePairingKinds, minprotectionlevel: DevicePairingProtectionLevel, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDeviceInformationPairingStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 81679218, data2: 47031, data3: 18283, data4: [167, 79, 197, 131, 106, 112, 77, 152] };
 }
 #[repr(C)]
 pub struct IDeviceInformationStatics {
@@ -364,6 +403,9 @@ pub struct IDeviceInformationStatics {
     #[cfg(not(feature = "Foundation_Collections"))]
     CreateWatcherAqsFilterAndAdditionalProperties: usize,
 }
+impl ::windows_sys::core::Interface for IDeviceInformationStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3246329870, data2: 14918, data3: 19064, data4: [128, 19, 118, 157, 201, 185, 115, 144] };
+}
 #[repr(C)]
 pub struct IDeviceInformationStatics2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -381,6 +423,9 @@ pub struct IDeviceInformationStatics2 {
     #[cfg(not(feature = "Foundation_Collections"))]
     CreateWatcherWithKindAqsFilterAndAdditionalProperties: usize,
 }
+impl ::windows_sys::core::Interface for IDeviceInformationStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1228623668, data2: 43087, data3: 17917, data4: [145, 103, 21, 209, 203, 27, 209, 249] };
+}
 #[repr(C)]
 pub struct IDeviceInformationUpdate {
     pub base__: ::windows_sys::core::IInspectable,
@@ -390,10 +435,16 @@ pub struct IDeviceInformationUpdate {
     #[cfg(not(feature = "Foundation_Collections"))]
     Properties: usize,
 }
+impl ::windows_sys::core::Interface for IDeviceInformationUpdate {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2402374405, data2: 55666, data3: 17591, data4: [163, 126, 158, 130, 44, 120, 33, 59] };
+}
 #[repr(C)]
 pub struct IDeviceInformationUpdate2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub Kind: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut DeviceInformationKind) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDeviceInformationUpdate2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1570575500, data2: 43123, data3: 18526, data4: [186, 166, 170, 98, 7, 136, 227, 204] };
 }
 #[repr(C)]
 pub struct IDevicePairingRequestedEventArgs {
@@ -408,6 +459,9 @@ pub struct IDevicePairingRequestedEventArgs {
     #[cfg(not(feature = "Foundation"))]
     GetDeferral: usize,
 }
+impl ::windows_sys::core::Interface for IDevicePairingRequestedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4145544278, data2: 56939, data3: 18559, data4: [131, 118, 1, 128, 172, 166, 153, 99] };
+}
 #[repr(C)]
 pub struct IDevicePairingRequestedEventArgs2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -416,15 +470,24 @@ pub struct IDevicePairingRequestedEventArgs2 {
     #[cfg(not(feature = "Security_Credentials"))]
     AcceptWithPasswordCredential: usize,
 }
+impl ::windows_sys::core::Interface for IDevicePairingRequestedEventArgs2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3359068889, data2: 58579, data3: 19888, data4: [163, 96, 161, 5, 228, 55, 219, 220] };
+}
 #[repr(C)]
 pub struct IDevicePairingResult {
     pub base__: ::windows_sys::core::IInspectable,
     pub Status: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut DevicePairingResultStatus) -> ::windows_sys::core::HRESULT,
     pub ProtectionLevelUsed: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut DevicePairingProtectionLevel) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDevicePairingResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 120259263, data2: 56725, data3: 16421, data4: [155, 55, 222, 81, 173, 186, 55, 183] };
+}
 #[repr(C)]
 pub struct IDevicePairingSettings {
     pub base__: ::windows_sys::core::IInspectable,
+}
+impl ::windows_sys::core::Interface for IDevicePairingSettings {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1210888828, data2: 33723, data3: 16910, data4: [190, 81, 102, 2, 178, 34, 222, 84] };
 }
 #[repr(C)]
 pub struct IDevicePicker {
@@ -477,6 +540,9 @@ pub struct IDevicePicker {
     PickSingleDeviceAsyncWithPlacement: usize,
     pub Hide: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub SetDisplayStatus: unsafe extern "system" fn(this: *mut *mut Self, device: *mut ::core::ffi::c_void, status: ::windows_sys::core::HSTRING, options: DevicePickerDisplayStatusOptions) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDevicePicker {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2224650914, data2: 842, data3: 17472, data4: [136, 19, 125, 11, 212, 121, 191, 90] };
 }
 #[repr(C)]
 pub struct IDevicePickerAppearance {
@@ -532,6 +598,9 @@ pub struct IDevicePickerAppearance {
     #[cfg(not(feature = "UI"))]
     SetSelectedAccentColor: usize,
 }
+impl ::windows_sys::core::Interface for IDevicePickerAppearance {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3868857030, data2: 58919, data3: 20184, data4: [155, 108, 70, 10, 244, 69, 229, 109] };
+}
 #[repr(C)]
 pub struct IDevicePickerFilter {
     pub base__: ::windows_sys::core::IInspectable,
@@ -544,15 +613,24 @@ pub struct IDevicePickerFilter {
     #[cfg(not(feature = "Foundation_Collections"))]
     SupportedDeviceSelectors: usize,
 }
+impl ::windows_sys::core::Interface for IDevicePickerFilter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2447086242, data2: 22475, data3: 18673, data4: [155, 89, 165, 155, 122, 31, 2, 162] };
+}
 #[repr(C)]
 pub struct IDeviceSelectedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub SelectedDevice: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDeviceSelectedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 647944926, data2: 7471, data3: 18752, data4: [132, 2, 65, 86, 184, 29, 60, 119] };
+}
 #[repr(C)]
 pub struct IDeviceUnpairingResult {
     pub base__: ::windows_sys::core::IInspectable,
     pub Status: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut DeviceUnpairingResultStatus) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDeviceUnpairingResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1727285971, data2: 31193, data3: 17483, data4: [146, 207, 169, 46, 247, 37, 113, 199] };
 }
 #[repr(C)]
 pub struct IDeviceWatcher {
@@ -601,6 +679,9 @@ pub struct IDeviceWatcher {
     pub Start: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Stop: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDeviceWatcher {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3387603325, data2: 36715, data3: 20374, data4: [169, 244, 171, 200, 20, 226, 34, 113] };
+}
 #[repr(C)]
 pub struct IDeviceWatcher2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -609,12 +690,18 @@ pub struct IDeviceWatcher2 {
     #[cfg(not(all(feature = "ApplicationModel_Background", feature = "Foundation_Collections")))]
     GetBackgroundTrigger: usize,
 }
+impl ::windows_sys::core::Interface for IDeviceWatcher2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4278732142, data2: 60692, data3: 18921, data4: [154, 105, 129, 23, 197, 74, 233, 113] };
+}
 #[repr(C)]
 pub struct IDeviceWatcherEvent {
     pub base__: ::windows_sys::core::IInspectable,
     pub Kind: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut DeviceWatcherEventKind) -> ::windows_sys::core::HRESULT,
     pub DeviceInformation: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub DeviceInformationUpdate: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDeviceWatcherEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1957338123, data2: 7613, data3: 18429, data4: [182, 53, 60, 197, 86, 208, 255, 139] };
 }
 #[repr(C)]
 pub struct IDeviceWatcherTriggerDetails {
@@ -624,6 +711,9 @@ pub struct IDeviceWatcherTriggerDetails {
     #[cfg(not(feature = "Foundation_Collections"))]
     DeviceWatcherEvents: usize,
 }
+impl ::windows_sys::core::Interface for IDeviceWatcherTriggerDetails {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 947945753, data2: 19639, data3: 20055, data4: [165, 109, 119, 109, 7, 203, 254, 249] };
+}
 #[repr(C)]
 pub struct IEnclosureLocation {
     pub base__: ::windows_sys::core::IInspectable,
@@ -631,10 +721,16 @@ pub struct IEnclosureLocation {
     pub InLid: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub Panel: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut Panel) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEnclosureLocation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1110706727, data2: 22544, data3: 17820, data4: [170, 187, 198, 94, 31, 129, 62, 207] };
+}
 #[repr(C)]
 pub struct IEnclosureLocation2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub RotationAngleInDegreesClockwise: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IEnclosureLocation2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 679844187, data2: 57469, data3: 18525, data4: [138, 158, 189, 242, 154, 239, 79, 102] };
 }
 #[doc = "*Required features: `\"Devices_Enumeration\"`*"]
 #[repr(transparent)]

@@ -41,6 +41,9 @@ pub struct IDnssdRegistrationResult {
     pub IPAddress: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub HasInstanceNameChanged: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDnssdRegistrationResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1031301842, data2: 58886, data3: 21328, data4: [115, 234, 126, 151, 240, 102, 22, 47] };
+}
 #[repr(C)]
 pub struct IDnssdServiceInstance {
     pub base__: ::windows_sys::core::IInspectable,
@@ -75,10 +78,16 @@ pub struct IDnssdServiceInstance {
     #[cfg(not(all(feature = "Foundation", feature = "Networking_Connectivity", feature = "Networking_Sockets")))]
     RegisterDatagramSocketAsync2: usize,
 }
+impl ::windows_sys::core::Interface for IDnssdServiceInstance {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3796294526, data2: 39077, data3: 19617, data4: [185, 228, 194, 83, 211, 60, 53, 255] };
+}
 #[repr(C)]
 pub struct IDnssdServiceInstanceFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, dnssdserviceinstancename: ::windows_sys::core::HSTRING, hostname: *mut ::core::ffi::c_void, port: u16, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDnssdServiceInstanceFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1823498657, data2: 50296, data3: 17201, data4: [150, 132, 74, 242, 24, 108, 10, 43] };
 }
 #[repr(C)]
 pub struct IDnssdServiceWatcher {
@@ -110,4 +119,7 @@ pub struct IDnssdServiceWatcher {
     pub Status: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut DnssdServiceWatcherStatus) -> ::windows_sys::core::HRESULT,
     pub Start: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Stop: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDnssdServiceWatcher {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3426015681, data2: 56189, data3: 19305, data4: [152, 61, 198, 248, 63, 32, 86, 130] };
 }

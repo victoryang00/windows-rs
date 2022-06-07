@@ -3385,6 +3385,9 @@ pub struct IDirect3D9 {
     #[cfg(not(feature = "Win32_Foundation"))]
     CreateDevice: usize,
 }
+impl ::windows_sys::core::Interface for IDirect3D9 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2176699338, data2: 25812, data3: 17005, data4: [174, 141, 173, 1, 71, 244, 39, 92] };
+}
 #[repr(C)]
 pub struct IDirect3D9Ex {
     pub base__: IDirect3D9,
@@ -3400,6 +3403,9 @@ pub struct IDirect3D9Ex {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetAdapterLUID: usize,
 }
+impl ::windows_sys::core::Interface for IDirect3D9Ex {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 35091009, data2: 27132, data3: 16396, data4: [143, 241, 147, 164, 77, 246, 134, 29] };
+}
 #[repr(C)]
 pub struct IDirect3DBaseTexture9 {
     pub base__: IDirect3DResource9,
@@ -3409,6 +3415,9 @@ pub struct IDirect3DBaseTexture9 {
     pub SetAutoGenFilterType: unsafe extern "system" fn(this: *mut *mut Self, filtertype: D3DTEXTUREFILTERTYPE) -> ::windows_sys::core::HRESULT,
     pub GetAutoGenFilterType: unsafe extern "system" fn(this: *mut *mut Self) -> D3DTEXTUREFILTERTYPE,
     pub GenerateMipSubLevels: unsafe extern "system" fn(this: *mut *mut Self),
+}
+impl ::windows_sys::core::Interface for IDirect3DBaseTexture9 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1477224574, data2: 7484, data3: 19796, data4: [153, 29, 183, 211, 227, 194, 152, 206] };
 }
 #[repr(C)]
 pub struct IDirect3DCubeTexture9 {
@@ -3424,6 +3433,9 @@ pub struct IDirect3DCubeTexture9 {
     pub AddDirtyRect: unsafe extern "system" fn(this: *mut *mut Self, facetype: D3DCUBEMAP_FACES, pdirtyrect: *const super::super::Foundation::RECT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     AddDirtyRect: usize,
+}
+impl ::windows_sys::core::Interface for IDirect3DCubeTexture9 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4294127489, data2: 55635, data3: 18234, data4: [146, 35, 147, 214, 82, 171, 169, 63] };
 }
 #[repr(C)]
 pub struct IDirect3DDevice9 {
@@ -3650,6 +3662,9 @@ pub struct IDirect3DDevice9 {
     pub DeletePatch: unsafe extern "system" fn(this: *mut *mut Self, handle: u32) -> ::windows_sys::core::HRESULT,
     pub CreateQuery: unsafe extern "system" fn(this: *mut *mut Self, r#type: D3DQUERYTYPE, ppquery: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDirect3DDevice9 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3491904406, data2: 49018, data3: 17405, data4: [146, 189, 164, 59, 13, 130, 185, 235] };
+}
 #[repr(C)]
 pub struct IDirect3DDevice9Ex {
     pub base__: IDirect3DDevice9,
@@ -3687,6 +3702,9 @@ pub struct IDirect3DDevice9Ex {
     ResetEx: usize,
     pub GetDisplayModeEx: unsafe extern "system" fn(this: *mut *mut Self, iswapchain: u32, pmode: *mut D3DDISPLAYMODEEX, protation: *mut D3DDISPLAYROTATION) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDirect3DDevice9Ex {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2978681038, data2: 9801, data3: 16474, data4: [135, 15, 149, 247, 119, 212, 49, 58] };
+}
 #[repr(C)]
 pub struct IDirect3DIndexBuffer9 {
     pub base__: IDirect3DResource9,
@@ -3694,11 +3712,17 @@ pub struct IDirect3DIndexBuffer9 {
     pub Unlock: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub GetDesc: unsafe extern "system" fn(this: *mut *mut Self, pdesc: *mut D3DINDEXBUFFER_DESC) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDirect3DIndexBuffer9 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2090718814, data2: 54263, data3: 17705, data4: [172, 238, 120, 88, 48, 172, 222, 53] };
+}
 #[repr(C)]
 pub struct IDirect3DPixelShader9 {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetDevice: unsafe extern "system" fn(this: *mut *mut Self, ppdevice: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetFunction: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut ::core::ffi::c_void, psizeofdata: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDirect3DPixelShader9 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1832639452, data2: 23298, data3: 17429, data4: [184, 82, 206, 94, 139, 204, 178, 137] };
 }
 #[repr(C)]
 pub struct IDirect3DQuery9 {
@@ -3708,6 +3732,9 @@ pub struct IDirect3DQuery9 {
     pub GetDataSize: unsafe extern "system" fn(this: *mut *mut Self) -> u32,
     pub Issue: unsafe extern "system" fn(this: *mut *mut Self, dwissueflags: u32) -> ::windows_sys::core::HRESULT,
     pub GetData: unsafe extern "system" fn(this: *mut *mut Self, pdata: *mut ::core::ffi::c_void, dwsize: u32, dwgetdataflags: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDirect3DQuery9 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3648459872, data2: 42645, data3: 20262, data4: [187, 211, 39, 184, 64, 181, 65, 204] };
 }
 #[repr(C)]
 pub struct IDirect3DResource9 {
@@ -3721,12 +3748,18 @@ pub struct IDirect3DResource9 {
     pub PreLoad: unsafe extern "system" fn(this: *mut *mut Self),
     pub GetType: unsafe extern "system" fn(this: *mut *mut Self) -> D3DRESOURCETYPE,
 }
+impl ::windows_sys::core::Interface for IDirect3DResource9 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 99532893, data2: 36733, data3: 17250, data4: [185, 153, 209, 186, 243, 87, 199, 4] };
+}
 #[repr(C)]
 pub struct IDirect3DStateBlock9 {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetDevice: unsafe extern "system" fn(this: *mut *mut Self, ppdevice: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Capture: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Apply: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDirect3DStateBlock9 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2960936933, data2: 12557, data3: 19368, data4: [162, 60, 79, 15, 32, 111, 33, 139] };
 }
 #[repr(C)]
 pub struct IDirect3DSurface9 {
@@ -3746,6 +3779,9 @@ pub struct IDirect3DSurface9 {
     pub ReleaseDC: unsafe extern "system" fn(this: *mut *mut Self, hdc: super::Gdi::HDC) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Graphics_Gdi"))]
     ReleaseDC: usize,
+}
+impl ::windows_sys::core::Interface for IDirect3DSurface9 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 217820986, data2: 40950, data3: 17050, data4: [153, 179, 162, 121, 106, 248, 184, 155] };
 }
 #[repr(C)]
 pub struct IDirect3DSwapChain9 {
@@ -3767,12 +3803,18 @@ pub struct IDirect3DSwapChain9 {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetPresentParameters: usize,
 }
+impl ::windows_sys::core::Interface for IDirect3DSwapChain9 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2034847986, data2: 44540, data3: 17802, data4: [144, 94, 16, 161, 11, 11, 80, 59] };
+}
 #[repr(C)]
 pub struct IDirect3DSwapChain9Ex {
     pub base__: IDirect3DSwapChain9,
     pub GetLastPresentCount: unsafe extern "system" fn(this: *mut *mut Self, plastpresentcount: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetPresentStats: unsafe extern "system" fn(this: *mut *mut Self, ppresentationstatistics: *mut D3DPRESENTSTATS) -> ::windows_sys::core::HRESULT,
     pub GetDisplayModeEx: unsafe extern "system" fn(this: *mut *mut Self, pmode: *mut D3DDISPLAYMODEEX, protation: *mut D3DDISPLAYROTATION) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDirect3DSwapChain9Ex {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2441637039, data2: 7229, data3: 19758, data4: [160, 171, 62, 76, 125, 141, 51, 3] };
 }
 #[repr(C)]
 pub struct IDirect3DTexture9 {
@@ -3789,6 +3831,9 @@ pub struct IDirect3DTexture9 {
     #[cfg(not(feature = "Win32_Foundation"))]
     AddDirtyRect: usize,
 }
+impl ::windows_sys::core::Interface for IDirect3DTexture9 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2244153895, data2: 15845, data3: 20224, data4: [155, 58, 241, 26, 195, 140, 24, 181] };
+}
 #[repr(C)]
 pub struct IDirect3DVertexBuffer9 {
     pub base__: IDirect3DResource9,
@@ -3796,17 +3841,26 @@ pub struct IDirect3DVertexBuffer9 {
     pub Unlock: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub GetDesc: unsafe extern "system" fn(this: *mut *mut Self, pdesc: *mut D3DVERTEXBUFFER_DESC) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDirect3DVertexBuffer9 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3058414005, data2: 64880, data3: 19958, data4: [191, 145, 25, 208, 161, 36, 85, 227] };
+}
 #[repr(C)]
 pub struct IDirect3DVertexDeclaration9 {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetDevice: unsafe extern "system" fn(this: *mut *mut Self, ppdevice: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetDeclaration: unsafe extern "system" fn(this: *mut *mut Self, pelement: *mut D3DVERTEXELEMENT9, pnumelements: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDirect3DVertexDeclaration9 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3709060508, data2: 14074, data3: 16536, data4: [168, 251, 199, 237, 57, 220, 133, 70] };
+}
 #[repr(C)]
 pub struct IDirect3DVertexShader9 {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetDevice: unsafe extern "system" fn(this: *mut *mut Self, ppdevice: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetFunction: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut ::core::ffi::c_void, psizeofdata: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDirect3DVertexShader9 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4022687102, data2: 25189, data3: 17939, data4: [138, 148, 67, 133, 120, 137, 235, 54] };
 }
 #[repr(C)]
 pub struct IDirect3DVolume9 {
@@ -3820,6 +3874,9 @@ pub struct IDirect3DVolume9 {
     pub LockBox: unsafe extern "system" fn(this: *mut *mut Self, plockedvolume: *mut D3DLOCKED_BOX, pbox: *const D3DBOX, flags: u32) -> ::windows_sys::core::HRESULT,
     pub UnlockBox: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDirect3DVolume9 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 619976422, data2: 8039, data3: 19111, data4: [184, 142, 211, 63, 111, 49, 40, 161] };
+}
 #[repr(C)]
 pub struct IDirect3DVolumeTexture9 {
     pub base__: IDirect3DBaseTexture9,
@@ -3828,6 +3885,9 @@ pub struct IDirect3DVolumeTexture9 {
     pub LockBox: unsafe extern "system" fn(this: *mut *mut Self, level: u32, plockedvolume: *mut D3DLOCKED_BOX, pbox: *const D3DBOX, flags: u32) -> ::windows_sys::core::HRESULT,
     pub UnlockBox: unsafe extern "system" fn(this: *mut *mut Self, level: u32) -> ::windows_sys::core::HRESULT,
     pub AddDirtyBox: unsafe extern "system" fn(this: *mut *mut Self, pdirtybox: *const D3DBOX) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDirect3DVolumeTexture9 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 622350956, data2: 59273, data3: 16657, data4: [167, 185, 71, 239, 50, 141, 19, 230] };
 }
 #[doc = "*Required features: `\"Win32_Graphics_Direct3D9\"`*"]
 pub const MAXD3DDECLLENGTH: u32 = 64u32;

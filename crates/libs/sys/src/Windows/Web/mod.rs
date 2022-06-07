@@ -14,10 +14,16 @@ pub struct IUriToStreamResolver {
     #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
     UriToStreamAsync: usize,
 }
+impl ::windows_sys::core::Interface for IUriToStreamResolver {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2964039786, data2: 39659, data3: 19770, data4: [149, 144, 0, 62, 60, 167, 226, 144] };
+}
 #[repr(C)]
 pub struct IWebErrorStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub GetStatus: unsafe extern "system" fn(this: *mut *mut Self, hresult: i32, result__: *mut WebErrorStatus) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWebErrorStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4267796326, data2: 48935, data3: 16484, data4: [135, 183, 101, 99, 187, 17, 206, 46] };
 }
 #[doc = "*Required features: `\"Web\"`*"]
 #[repr(transparent)]

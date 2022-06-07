@@ -26,6 +26,9 @@ pub type GlobalSystemMediaTransportControlsSessionTimelineProperties = *mut ::co
 pub struct ICurrentSessionChangedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
 }
+impl ::windows_sys::core::Interface for ICurrentSessionChangedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1768540985, data2: 3066, data3: 24544, data4: [141, 115, 9, 204, 94, 84, 8, 225] };
+}
 #[repr(C)]
 pub struct IGlobalSystemMediaTransportControlsSession {
     pub base__: ::windows_sys::core::IInspectable,
@@ -121,6 +124,9 @@ pub struct IGlobalSystemMediaTransportControlsSession {
     #[cfg(not(feature = "Foundation"))]
     RemoveMediaPropertiesChanged: usize,
 }
+impl ::windows_sys::core::Interface for IGlobalSystemMediaTransportControlsSession {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1900595253, data2: 39700, data3: 23266, data4: [171, 133, 220, 155, 28, 20, 225, 168] };
+}
 #[repr(C)]
 pub struct IGlobalSystemMediaTransportControlsSessionManager {
     pub base__: ::windows_sys::core::IInspectable,
@@ -146,6 +152,9 @@ pub struct IGlobalSystemMediaTransportControlsSessionManager {
     #[cfg(not(feature = "Foundation"))]
     RemoveSessionsChanged: usize,
 }
+impl ::windows_sys::core::Interface for IGlobalSystemMediaTransportControlsSessionManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3402534572, data2: 59502, data3: 20554, data4: [171, 49, 95, 248, 255, 27, 206, 73] };
+}
 #[repr(C)]
 pub struct IGlobalSystemMediaTransportControlsSessionManagerStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -153,6 +162,9 @@ pub struct IGlobalSystemMediaTransportControlsSessionManagerStatics {
     pub RequestAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     RequestAsync: usize,
+}
+impl ::windows_sys::core::Interface for IGlobalSystemMediaTransportControlsSessionManagerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 542164206, data2: 4512, data3: 22494, data4: [174, 215, 201, 124, 112, 51, 130, 69] };
 }
 #[repr(C)]
 pub struct IGlobalSystemMediaTransportControlsSessionMediaProperties {
@@ -177,6 +189,9 @@ pub struct IGlobalSystemMediaTransportControlsSessionMediaProperties {
     #[cfg(not(feature = "Storage_Streams"))]
     Thumbnail: usize,
 }
+impl ::windows_sys::core::Interface for IGlobalSystemMediaTransportControlsSessionMediaProperties {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1753574646, data2: 44468, data3: 21682, data4: [172, 22, 5, 131, 121, 7, 172, 182] };
+}
 #[repr(C)]
 pub struct IGlobalSystemMediaTransportControlsSessionPlaybackControls {
     pub base__: ::windows_sys::core::IInspectable,
@@ -195,6 +210,9 @@ pub struct IGlobalSystemMediaTransportControlsSessionPlaybackControls {
     pub IsRepeatEnabled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub IsPlaybackRateEnabled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub IsPlaybackPositionEnabled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IGlobalSystemMediaTransportControlsSessionPlaybackControls {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1694606310, data2: 48250, data3: 20538, data4: [187, 27, 104, 241, 88, 243, 251, 3] };
 }
 #[repr(C)]
 pub struct IGlobalSystemMediaTransportControlsSessionPlaybackInfo {
@@ -217,6 +235,9 @@ pub struct IGlobalSystemMediaTransportControlsSessionPlaybackInfo {
     pub IsShuffleActive: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     IsShuffleActive: usize,
+}
+impl ::windows_sys::core::Interface for IGlobalSystemMediaTransportControlsSessionPlaybackInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2494871247, data2: 59578, data3: 20909, data4: [135, 167, 193, 10, 222, 16, 97, 39] };
 }
 #[repr(C)]
 pub struct IGlobalSystemMediaTransportControlsSessionTimelineProperties {
@@ -246,21 +267,36 @@ pub struct IGlobalSystemMediaTransportControlsSessionTimelineProperties {
     #[cfg(not(feature = "Foundation"))]
     LastUpdatedTime: usize,
 }
+impl ::windows_sys::core::Interface for IGlobalSystemMediaTransportControlsSessionTimelineProperties {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3991093558, data2: 28453, data3: 22669, data4: [142, 207, 234, 91, 103, 53, 170, 165] };
+}
 #[repr(C)]
 pub struct IMediaPropertiesChangedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
+}
+impl ::windows_sys::core::Interface for IMediaPropertiesChangedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2100773323, data2: 44528, data3: 23791, data4: [145, 186, 207, 171, 205, 215, 118, 120] };
 }
 #[repr(C)]
 pub struct IPlaybackInfoChangedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
 }
+impl ::windows_sys::core::Interface for IPlaybackInfoChangedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2020038338, data2: 48141, data3: 20645, data4: [136, 7, 5, 66, 145, 254, 241, 57] };
+}
 #[repr(C)]
 pub struct ISessionsChangedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
 }
+impl ::windows_sys::core::Interface for ISessionsChangedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3153120562, data2: 17092, data3: 23128, data4: [179, 23, 243, 75, 191, 189, 38, 224] };
+}
 #[repr(C)]
 pub struct ITimelinePropertiesChangedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
+}
+impl ::windows_sys::core::Interface for ITimelinePropertiesChangedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 688077359, data2: 51491, data3: 23159, data4: [188, 175, 5, 95, 244, 21, 173, 50] };
 }
 pub type MediaPropertiesChangedEventArgs = *mut ::core::ffi::c_void;
 pub type PlaybackInfoChangedEventArgs = *mut ::core::ffi::c_void;

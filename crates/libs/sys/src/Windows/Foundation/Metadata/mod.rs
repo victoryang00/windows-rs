@@ -91,6 +91,9 @@ pub struct IApiInformationStatics {
     pub IsApiContractPresentByMajor: unsafe extern "system" fn(this: *mut *mut Self, contractname: ::windows_sys::core::HSTRING, majorversion: u16, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub IsApiContractPresentByMajorAndMinor: unsafe extern "system" fn(this: *mut *mut Self, contractname: ::windows_sys::core::HSTRING, majorversion: u16, minorversion: u16, result__: *mut bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IApiInformationStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2574531070, data2: 63105, data3: 18961, data4: [180, 22, 193, 58, 71, 232, 186, 54] };
+}
 #[doc = "*Required features: `\"Foundation_Metadata\"`*"]
 #[repr(transparent)]
 pub struct MarshalingType(pub i32);

@@ -757,6 +757,9 @@ pub struct IPrintDialogCallback {
     #[cfg(not(feature = "Win32_Foundation"))]
     HandleMessage: usize,
 }
+impl ::windows_sys::core::Interface for IPrintDialogCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1481810627, data2: 25904, data3: 4561, data4: [182, 163, 0, 0, 248, 117, 123, 249] };
+}
 #[repr(C)]
 pub struct IPrintDialogServices {
     pub base__: ::windows_sys::core::IUnknown,
@@ -766,6 +769,9 @@ pub struct IPrintDialogServices {
     GetCurrentDevMode: usize,
     pub GetCurrentPrinterName: unsafe extern "system" fn(this: *mut *mut Self, pprintername: ::windows_sys::core::PWSTR, pcchsize: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetCurrentPortName: unsafe extern "system" fn(this: *mut *mut Self, pportname: ::windows_sys::core::PWSTR, pcchsize: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPrintDialogServices {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1352314586, data2: 22073, data3: 4561, data4: [182, 161, 0, 0, 248, 117, 123, 249] };
 }
 #[doc = "*Required features: `\"Win32_UI_Controls_Dialogs\"`*"]
 pub const LBSELCHSTRING: &str = "commdlg_LBSelChangedNotify";

@@ -152,10 +152,16 @@ pub struct ICallFrame {
     ReleaseMarshalData: usize,
     pub Invoke: unsafe extern "system" fn(this: *mut *mut Self, pvreceiver: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ICallFrame {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3581129904, data2: 35150, data3: 4562, data4: [184, 182, 0, 192, 79, 185, 97, 138] };
+}
 #[repr(C)]
 pub struct ICallFrameEvents {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnCall: unsafe extern "system" fn(this: *mut *mut Self, pframe: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ICallFrameEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4250798147, data2: 64657, data3: 4560, data4: [151, 215, 0, 192, 79, 185, 97, 138] };
 }
 #[repr(C)]
 pub struct ICallFrameWalker {
@@ -164,6 +170,9 @@ pub struct ICallFrameWalker {
     pub OnWalkInterface: unsafe extern "system" fn(this: *mut *mut Self, iid: *const ::windows_sys::core::GUID, ppvinterface: *const *const ::core::ffi::c_void, fin: super::super::super::Foundation::BOOL, fout: super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     OnWalkInterface: usize,
+}
+impl ::windows_sys::core::Interface for ICallFrameWalker {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 145897753, data2: 14637, data3: 4562, data4: [184, 164, 0, 192, 79, 185, 97, 138] };
 }
 #[repr(C)]
 pub struct ICallIndirect {
@@ -179,11 +188,17 @@ pub struct ICallIndirect {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetIID: usize,
 }
+impl ::windows_sys::core::Interface for ICallIndirect {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3581129905, data2: 35150, data3: 4562, data4: [184, 182, 0, 192, 79, 185, 97, 138] };
+}
 #[repr(C)]
 pub struct ICallInterceptor {
     pub base__: ICallIndirect,
     pub RegisterSink: unsafe extern "system" fn(this: *mut *mut Self, psink: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetRegisteredSink: unsafe extern "system" fn(this: *mut *mut Self, ppsink: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ICallInterceptor {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1623706229, data2: 35181, data3: 4562, data4: [184, 182, 0, 192, 79, 185, 97, 138] };
 }
 #[repr(C)]
 pub struct ICallUnmarshal {
@@ -197,9 +212,15 @@ pub struct ICallUnmarshal {
     #[cfg(not(feature = "Win32_Foundation"))]
     ReleaseMarshalData: usize,
 }
+impl ::windows_sys::core::Interface for ICallUnmarshal {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1395896323, data2: 11842, data3: 4562, data4: [184, 157, 0, 192, 79, 185, 97, 138] };
+}
 #[repr(C)]
 pub struct IInterfaceRelated {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetIID: unsafe extern "system" fn(this: *mut *mut Self, iid: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub GetIID: unsafe extern "system" fn(this: *mut *mut Self, piid: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IInterfaceRelated {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3522910841, data2: 30470, data3: 4561, data4: [173, 186, 0, 192, 79, 194, 173, 192] };
 }

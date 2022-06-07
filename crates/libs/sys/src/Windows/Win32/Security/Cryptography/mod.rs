@@ -10587,6 +10587,10 @@ pub struct ICertSrvSetup {
     pub PostUnInstall: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICertSrvSetup {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3076563387, data2: 18308, data3: 17600, data4: [143, 18, 85, 95, 7, 128, 255, 37] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ICertSrvSetupKeyInformation {
     pub base__: super::super::System::Com::IDispatch,
@@ -10628,6 +10632,10 @@ pub struct ICertSrvSetupKeyInformation {
     SetExistingCACertificate: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICertSrvSetupKeyInformation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1806120824, data2: 14042, data3: 19513, data4: [138, 133, 188, 250, 125, 0, 7, 147] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ICertSrvSetupKeyInformationCollection {
     pub base__: super::super::System::Com::IDispatch,
@@ -10641,6 +10649,10 @@ pub struct ICertSrvSetupKeyInformationCollection {
     pub Add: unsafe extern "system" fn(this: *mut *mut Self, pikeyinformation: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     Add: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICertSrvSetupKeyInformationCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3864824576, data2: 58767, data3: 16889, data4: [169, 236, 162, 141, 116, 39, 200, 68] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -10664,6 +10676,10 @@ pub struct ICertificateEnrollmentPolicyServerSetup {
     pub UnInstall: unsafe extern "system" fn(this: *mut *mut Self, pauthkeybasedrenewal: *const super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     UnInstall: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICertificateEnrollmentPolicyServerSetup {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2240959180, data2: 9100, data3: 19080, data4: [184, 253, 163, 126, 125, 4, 230, 139] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -10691,6 +10707,10 @@ pub struct ICertificateEnrollmentServerSetup {
     pub UnInstall: unsafe extern "system" fn(this: *mut *mut Self, pcaconfig: *const super::super::System::Com::VARIANT, pauthentication: *const super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     UnInstall: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICertificateEnrollmentServerSetup {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1879211995, data2: 40409, data3: 18721, data4: [137, 68, 179, 92, 179, 27, 210, 236] };
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]
 pub const IFX_RSA_KEYGEN_VUL_AFFECTED_LEVEL_1: u32 = 1u32;
@@ -10732,6 +10752,10 @@ pub struct IMSCEPSetup {
     pub Install: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub PreUnInstall: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub PostUnInstall: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IMSCEPSetup {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1333223867, data2: 40763, data3: 17810, data4: [158, 224, 154, 115, 37, 156, 49, 62] };
 }
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Cryptography\"`*"]

@@ -19,6 +19,9 @@ pub struct IWalletItemSystemStore {
     #[cfg(not(feature = "Foundation"))]
     LaunchAppForItemAsync: usize,
 }
+impl ::windows_sys::core::Interface for IWalletItemSystemStore {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1378757631, data2: 38562, data3: 18967, data4: [141, 25, 254, 29, 159, 131, 117, 97] };
+}
 #[repr(C)]
 pub struct IWalletItemSystemStore2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -31,6 +34,9 @@ pub struct IWalletItemSystemStore2 {
     #[cfg(not(feature = "Foundation"))]
     RemoveItemsChanged: usize,
 }
+impl ::windows_sys::core::Interface for IWalletItemSystemStore2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4186782286, data2: 48640, data3: 20445, data4: [151, 52, 108, 17, 60, 26, 193, 203] };
+}
 #[repr(C)]
 pub struct IWalletManagerSystemStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -38,6 +44,9 @@ pub struct IWalletManagerSystemStatics {
     pub RequestStoreAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     RequestStoreAsync: usize,
+}
+impl ::windows_sys::core::Interface for IWalletManagerSystemStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3202935689, data2: 9780, data3: 19354, data4: [139, 35, 238, 137, 3, 201, 31, 224] };
 }
 #[doc = "*Required features: `\"ApplicationModel_Wallet_System\"`*"]
 #[repr(transparent)]

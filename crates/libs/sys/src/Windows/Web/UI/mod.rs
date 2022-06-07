@@ -199,10 +199,16 @@ pub struct IWebViewControl {
     #[cfg(not(feature = "Foundation"))]
     RemoveWebResourceRequested: usize,
 }
+impl ::windows_sys::core::Interface for IWebViewControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1066537750, data2: 48240, data3: 19418, data4: [145, 54, 201, 67, 112, 137, 159, 171] };
+}
 #[repr(C)]
 pub struct IWebViewControl2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub AddInitializeScript: unsafe extern "system" fn(this: *mut *mut Self, script: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWebViewControl2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1295779577, data2: 51423, data3: 16844, data4: [139, 213, 42, 148, 123, 32, 69, 3] };
 }
 #[repr(C)]
 pub struct IWebViewControlContentLoadingEventArgs {
@@ -212,6 +218,9 @@ pub struct IWebViewControlContentLoadingEventArgs {
     #[cfg(not(feature = "Foundation"))]
     Uri: usize,
 }
+impl ::windows_sys::core::Interface for IWebViewControlContentLoadingEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2587872434, data2: 47547, data3: 16459, data4: [162, 43, 102, 220, 205, 18, 80, 198] };
+}
 #[repr(C)]
 pub struct IWebViewControlDOMContentLoadedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
@@ -219,6 +228,9 @@ pub struct IWebViewControlDOMContentLoadedEventArgs {
     pub Uri: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     Uri: usize,
+}
+impl ::windows_sys::core::Interface for IWebViewControlDOMContentLoadedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3196829704, data2: 38209, data3: 17733, data4: [159, 242, 45, 245, 133, 178, 159, 125] };
 }
 #[repr(C)]
 pub struct IWebViewControlDeferredPermissionRequest {
@@ -232,6 +244,9 @@ pub struct IWebViewControlDeferredPermissionRequest {
     pub Allow: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Deny: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWebViewControlDeferredPermissionRequest {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 753093088, data2: 55129, data3: 17500, data4: [153, 38, 137, 149, 41, 143, 21, 43] };
+}
 #[repr(C)]
 pub struct IWebViewControlLongRunningScriptDetectedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
@@ -241,6 +256,9 @@ pub struct IWebViewControlLongRunningScriptDetectedEventArgs {
     ExecutionTime: usize,
     pub StopPageScriptExecution: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub SetStopPageScriptExecution: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWebViewControlLongRunningScriptDetectedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 711875514, data2: 39092, data3: 17852, data4: [187, 235, 15, 105, 206, 73, 197, 153] };
 }
 #[repr(C)]
 pub struct IWebViewControlNavigationCompletedEventArgs {
@@ -252,6 +270,9 @@ pub struct IWebViewControlNavigationCompletedEventArgs {
     pub IsSuccess: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub WebErrorStatus: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::WebErrorStatus) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWebViewControlNavigationCompletedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 541104408, data2: 18965, data3: 19526, data4: [165, 93, 247, 158, 219, 11, 222, 139] };
+}
 #[repr(C)]
 pub struct IWebViewControlNavigationStartingEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
@@ -261,6 +282,9 @@ pub struct IWebViewControlNavigationStartingEventArgs {
     Uri: usize,
     pub Cancel: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub SetCancel: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWebViewControlNavigationStartingEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 210786245, data2: 2568, data3: 16839, data4: [134, 59, 113, 227, 169, 84, 145, 55] };
 }
 #[repr(C)]
 pub struct IWebViewControlNewWindowRequestedEventArgs {
@@ -276,6 +300,9 @@ pub struct IWebViewControlNewWindowRequestedEventArgs {
     pub Handled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub SetHandled: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWebViewControlNewWindowRequestedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1039420347, data2: 41252, data3: 18133, data4: [160, 131, 208, 44, 172, 223, 245, 173] };
+}
 #[repr(C)]
 pub struct IWebViewControlNewWindowRequestedEventArgs2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -285,6 +312,9 @@ pub struct IWebViewControlNewWindowRequestedEventArgs2 {
     pub GetDeferral: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     GetDeferral: usize,
+}
+impl ::windows_sys::core::Interface for IWebViewControlNewWindowRequestedEventArgs2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3040631974, data2: 10926, data3: 19452, data4: [146, 185, 195, 14, 146, 180, 128, 152] };
 }
 #[repr(C)]
 pub struct IWebViewControlPermissionRequest {
@@ -300,10 +330,16 @@ pub struct IWebViewControlPermissionRequest {
     pub Allow: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Deny: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWebViewControlPermissionRequest {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3854336876, data2: 61999, data3: 16610, data4: [149, 178, 119, 41, 248, 64, 235, 127] };
+}
 #[repr(C)]
 pub struct IWebViewControlPermissionRequestedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub PermissionRequest: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWebViewControlPermissionRequestedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 656428369, data2: 9352, data3: 19653, data4: [150, 142, 10, 119, 30, 89, 193, 71] };
 }
 #[repr(C)]
 pub struct IWebViewControlScriptNotifyEventArgs {
@@ -313,6 +349,9 @@ pub struct IWebViewControlScriptNotifyEventArgs {
     #[cfg(not(feature = "Foundation"))]
     Uri: usize,
     pub Value: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWebViewControlScriptNotifyEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1226696059, data2: 28489, data3: 16827, data4: [181, 145, 81, 184, 91, 129, 112, 55] };
 }
 #[repr(C)]
 pub struct IWebViewControlSettings {
@@ -324,6 +363,9 @@ pub struct IWebViewControlSettings {
     pub SetIsScriptNotifyAllowed: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
     pub IsScriptNotifyAllowed: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWebViewControlSettings {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3382083519, data2: 24216, data3: 19709, data4: [140, 206, 39, 176, 145, 30, 61, 232] };
+}
 #[repr(C)]
 pub struct IWebViewControlUnsupportedUriSchemeIdentifiedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
@@ -333,6 +375,9 @@ pub struct IWebViewControlUnsupportedUriSchemeIdentifiedEventArgs {
     Uri: usize,
     pub Handled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub SetHandled: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWebViewControlUnsupportedUriSchemeIdentifiedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3820493124, data2: 58620, data3: 17372, data4: [148, 202, 249, 128, 243, 11, 197, 29] };
 }
 #[repr(C)]
 pub struct IWebViewControlUnviewableContentIdentifiedEventArgs {
@@ -346,6 +391,9 @@ pub struct IWebViewControlUnviewableContentIdentifiedEventArgs {
     #[cfg(not(feature = "Foundation"))]
     Referrer: usize,
     pub MediaType: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWebViewControlUnviewableContentIdentifiedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1251377371, data2: 35058, data3: 20000, data4: [182, 147, 180, 226, 223, 74, 165, 129] };
 }
 #[repr(C)]
 pub struct IWebViewControlWebResourceRequestedEventArgs {
@@ -366,6 +414,9 @@ pub struct IWebViewControlWebResourceRequestedEventArgs {
     pub Response: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Web_Http"))]
     Response: usize,
+}
+impl ::windows_sys::core::Interface for IWebViewControlWebResourceRequestedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1154896461, data2: 21924, data3: 19851, data4: [137, 28, 147, 29, 142, 37, 212, 46] };
 }
 pub type WebViewControlContentLoadingEventArgs = *mut ::core::ffi::c_void;
 pub type WebViewControlDOMContentLoadedEventArgs = *mut ::core::ffi::c_void;

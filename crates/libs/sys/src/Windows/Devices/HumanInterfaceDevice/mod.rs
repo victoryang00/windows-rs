@@ -51,6 +51,9 @@ pub struct IHidBooleanControl {
     pub SetIsActive: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
     pub ControlDescription: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IHidBooleanControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1380840586, data2: 13973, data3: 16524, data4: [187, 162, 226, 235, 90, 191, 188, 32] };
+}
 #[repr(C)]
 pub struct IHidBooleanControlDescription {
     pub base__: ::windows_sys::core::IInspectable,
@@ -64,10 +67,16 @@ pub struct IHidBooleanControlDescription {
     #[cfg(not(feature = "Foundation_Collections"))]
     ParentCollections: usize,
 }
+impl ::windows_sys::core::Interface for IHidBooleanControlDescription {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1637279043, data2: 10712, data3: 18986, data4: [134, 131, 132, 158, 32, 123, 190, 49] };
+}
 #[repr(C)]
 pub struct IHidBooleanControlDescription2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub IsAbsolute: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IHidBooleanControlDescription2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3371094762, data2: 35447, data3: 19510, data4: [170, 0, 95, 240, 68, 157, 62, 115] };
 }
 #[repr(C)]
 pub struct IHidCollection {
@@ -76,6 +85,9 @@ pub struct IHidCollection {
     pub Type: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut HidCollectionType) -> ::windows_sys::core::HRESULT,
     pub UsagePage: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
     pub UsageId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IHidCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1904866723, data2: 13041, data3: 18147, data4: [190, 253, 68, 210, 102, 59, 126, 106] };
 }
 #[repr(C)]
 pub struct IHidDevice {
@@ -130,6 +142,9 @@ pub struct IHidDevice {
     #[cfg(not(feature = "Foundation"))]
     RemoveInputReportReceived: usize,
 }
+impl ::windows_sys::core::Interface for IHidDevice {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1602884839, data2: 8704, data3: 17198, data4: [149, 218, 208, 155, 135, 213, 116, 168] };
+}
 #[repr(C)]
 pub struct IHidDeviceStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -139,6 +154,9 @@ pub struct IHidDeviceStatics {
     pub FromIdAsync: unsafe extern "system" fn(this: *mut *mut Self, deviceid: ::windows_sys::core::HSTRING, accessmode: super::super::Storage::FileAccessMode, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Foundation", feature = "Storage")))]
     FromIdAsync: usize,
+}
+impl ::windows_sys::core::Interface for IHidDeviceStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2656666084, data2: 38998, data3: 16780, data4: [159, 115, 119, 222, 12, 216, 87, 84] };
 }
 #[repr(C)]
 pub struct IHidFeatureReport {
@@ -156,6 +174,9 @@ pub struct IHidFeatureReport {
     pub GetBooleanControlByDescription: unsafe extern "system" fn(this: *mut *mut Self, controldescription: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetNumericControl: unsafe extern "system" fn(this: *mut *mut Self, usagepage: u16, usageid: u16, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetNumericControlByDescription: unsafe extern "system" fn(this: *mut *mut Self, controldescription: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IHidFeatureReport {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2216532857, data2: 23269, data3: 18147, data4: [130, 239, 31, 236, 92, 137, 66, 244] };
 }
 #[repr(C)]
 pub struct IHidInputReport {
@@ -178,10 +199,16 @@ pub struct IHidInputReport {
     pub GetNumericControl: unsafe extern "system" fn(this: *mut *mut Self, usagepage: u16, usageid: u16, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetNumericControlByDescription: unsafe extern "system" fn(this: *mut *mut Self, controldescription: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IHidInputReport {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3277655632, data2: 63463, data3: 20109, data4: [178, 62, 202, 187, 229, 107, 144, 233] };
+}
 #[repr(C)]
 pub struct IHidInputReportReceivedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub Report: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IHidInputReportReceivedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1884931531, data2: 22962, data3: 19906, data4: [152, 92, 10, 220, 97, 54, 250, 45] };
 }
 #[repr(C)]
 pub struct IHidNumericControl {
@@ -195,6 +222,9 @@ pub struct IHidNumericControl {
     pub ScaledValue: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i64) -> ::windows_sys::core::HRESULT,
     pub SetScaledValue: unsafe extern "system" fn(this: *mut *mut Self, value: i64) -> ::windows_sys::core::HRESULT,
     pub ControlDescription: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IHidNumericControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3817476773, data2: 13735, data3: 19317, data4: [137, 200, 251, 31, 40, 177, 8, 35] };
 }
 #[repr(C)]
 pub struct IHidNumericControlDescription {
@@ -219,6 +249,9 @@ pub struct IHidNumericControlDescription {
     #[cfg(not(feature = "Foundation_Collections"))]
     ParentCollections: usize,
 }
+impl ::windows_sys::core::Interface for IHidNumericControlDescription {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1670209158, data2: 7575, data3: 19573, data4: [146, 127, 95, 245, 139, 160, 94, 50] };
+}
 #[repr(C)]
 pub struct IHidOutputReport {
     pub base__: ::windows_sys::core::IInspectable,
@@ -235,4 +268,7 @@ pub struct IHidOutputReport {
     pub GetBooleanControlByDescription: unsafe extern "system" fn(this: *mut *mut Self, controldescription: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetNumericControl: unsafe extern "system" fn(this: *mut *mut Self, usagepage: u16, usageid: u16, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetNumericControlByDescription: unsafe extern "system" fn(this: *mut *mut Self, controldescription: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IHidOutputReport {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1657480516, data2: 51350, data3: 17507, data4: [147, 193, 223, 157, 176, 83, 196, 80] };
 }

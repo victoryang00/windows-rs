@@ -16,12 +16,19 @@ pub struct IPrintDocumentPackageStatusEvent {
     pub base__: super::super::super::System::Com::IDispatch,
     pub PackageStatusUpdated: unsafe extern "system" fn(this: *mut *mut Self, packagestatus: *const PrintDocumentPackageStatus) -> ::windows_sys::core::HRESULT,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IPrintDocumentPackageStatusEvent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3985688749, data2: 23604, data3: 19717, data4: [161, 236, 14, 138, 155, 58, 215, 175] };
+}
 #[repr(C)]
 pub struct IPrintDocumentPackageTarget {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetPackageTargetTypes: unsafe extern "system" fn(this: *mut *mut Self, targetcount: *mut u32, targettypes: *mut *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub GetPackageTarget: unsafe extern "system" fn(this: *mut *mut Self, guidtargettype: *const ::windows_sys::core::GUID, riid: *const ::windows_sys::core::GUID, ppvtarget: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Cancel: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPrintDocumentPackageTarget {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 462356164, data2: 12313, data3: 19495, data4: [150, 78, 54, 114, 2, 21, 105, 6] };
 }
 #[repr(C)]
 pub struct IPrintDocumentPackageTargetFactory {
@@ -31,17 +38,27 @@ pub struct IPrintDocumentPackageTargetFactory {
     #[cfg(not(feature = "Win32_System_Com"))]
     CreateDocumentPackageTargetForPrintJob: usize,
 }
+impl ::windows_sys::core::Interface for IPrintDocumentPackageTargetFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3533020151, data2: 45851, data3: 19005, data4: [150, 0, 113, 46, 177, 51, 91, 164] };
+}
 #[repr(C)]
 pub struct IXpsPrintJob {
     pub base__: ::windows_sys::core::IUnknown,
     pub Cancel: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub GetJobStatus: unsafe extern "system" fn(this: *mut *mut Self, jobstatus: *mut XPS_JOB_STATUS) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IXpsPrintJob {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1522047750, data2: 33172, data3: 16991, data4: [171, 59, 215, 169, 110, 53, 1, 97] };
+}
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IXpsPrintJobStream {
     pub base__: super::super::super::System::Com::ISequentialStream,
     pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IXpsPrintJobStream {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2054675551, data2: 17878, data3: 19967, data4: [147, 7, 216, 203, 132, 99, 71, 202] };
 }
 #[doc = "*Required features: `\"Win32_Storage_Xps_Printing\"`*"]
 pub type PrintDocumentPackageCompletion = i32;

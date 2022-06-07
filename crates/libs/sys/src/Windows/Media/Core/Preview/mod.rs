@@ -11,3 +11,6 @@ pub struct ISoundLevelBrokerStatics {
     #[cfg(not(feature = "Foundation"))]
     RemoveSoundLevelChanged: usize,
 }
+impl ::windows_sys::core::Interface for ISoundLevelBrokerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1784887649, data2: 56301, data3: 17996, data4: [160, 154, 51, 65, 47, 92, 170, 63] };
+}

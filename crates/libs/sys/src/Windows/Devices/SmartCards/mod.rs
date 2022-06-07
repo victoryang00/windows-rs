@@ -5,10 +5,16 @@ pub struct ICardAddedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub SmartCard: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ICardAddedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 414969752, data2: 61835, data3: 19923, data4: [177, 24, 223, 178, 200, 226, 60, 198] };
+}
 #[repr(C)]
 pub struct ICardRemovedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub SmartCard: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ICardRemovedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 355670703, data2: 8919, data3: 18757, data4: [175, 201, 3, 180, 111, 66, 166, 205] };
 }
 #[repr(C)]
 pub struct IKnownSmartCardAppletIds {
@@ -22,6 +28,9 @@ pub struct IKnownSmartCardAppletIds {
     #[cfg(not(feature = "Storage_Streams"))]
     ProximityPaymentSystemEnvironment: usize,
 }
+impl ::windows_sys::core::Interface for IKnownSmartCardAppletIds {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2063915224, data2: 38324, data3: 19592, data4: [140, 234, 65, 30, 85, 81, 30, 252] };
+}
 #[repr(C)]
 pub struct ISmartCard {
     pub base__: ::windows_sys::core::IInspectable,
@@ -34,6 +43,9 @@ pub struct ISmartCard {
     pub GetAnswerToResetAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
     GetAnswerToResetAsync: usize,
+}
+impl ::windows_sys::core::Interface for ISmartCard {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 460425329, data2: 25652, data3: 17396, data4: [181, 90, 106, 41, 98, 56, 112, 170] };
 }
 #[repr(C)]
 pub struct ISmartCardAppletIdGroup {
@@ -50,6 +62,9 @@ pub struct ISmartCardAppletIdGroup {
     pub SetSmartCardEmulationType: unsafe extern "system" fn(this: *mut *mut Self, value: SmartCardEmulationType) -> ::windows_sys::core::HRESULT,
     pub AutomaticEnablement: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub SetAutomaticEnablement: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISmartCardAppletIdGroup {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2108777958, data2: 25188, data3: 22260, data4: [94, 3, 200, 99, 133, 57, 94, 177] };
 }
 #[repr(C)]
 pub struct ISmartCardAppletIdGroup2 {
@@ -71,6 +86,9 @@ pub struct ISmartCardAppletIdGroup2 {
     pub SecureUserAuthenticationRequired: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub SetSecureUserAuthenticationRequired: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISmartCardAppletIdGroup2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1796143580, data2: 39254, data3: 19042, data4: [141, 78, 211, 122, 104, 235, 195, 166] };
+}
 #[repr(C)]
 pub struct ISmartCardAppletIdGroupFactory {
     pub base__: ::windows_sys::core::IInspectable,
@@ -78,6 +96,9 @@ pub struct ISmartCardAppletIdGroupFactory {
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, displayname: ::windows_sys::core::HSTRING, appletids: *mut ::core::ffi::c_void, emulationcategory: SmartCardEmulationCategory, emulationtype: SmartCardEmulationType, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Foundation_Collections", feature = "Storage_Streams")))]
     Create: usize,
+}
+impl ::windows_sys::core::Interface for ISmartCardAppletIdGroupFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2433084237, data2: 19045, data3: 20033, data4: [128, 97, 203, 232, 63, 54, 149, 229] };
 }
 #[repr(C)]
 pub struct ISmartCardAppletIdGroupRegistration {
@@ -94,6 +115,9 @@ pub struct ISmartCardAppletIdGroupRegistration {
     #[cfg(not(feature = "Foundation_Collections"))]
     SetAutomaticResponseApdusAsync: usize,
 }
+impl ::windows_sys::core::Interface for ISmartCardAppletIdGroupRegistration {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3742501073, data2: 12731, data3: 21910, data4: [67, 177, 109, 105, 160, 37, 123, 58] };
+}
 #[repr(C)]
 pub struct ISmartCardAppletIdGroupRegistration2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -103,10 +127,16 @@ pub struct ISmartCardAppletIdGroupRegistration2 {
     #[cfg(not(feature = "Foundation_Collections"))]
     SetPropertiesAsync: usize,
 }
+impl ::windows_sys::core::Interface for ISmartCardAppletIdGroupRegistration2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1599408344, data2: 39079, data3: 20270, data4: [145, 217, 108, 252, 206, 218, 64, 127] };
+}
 #[repr(C)]
 pub struct ISmartCardAppletIdGroupStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub MaxAppletIds: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u16) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISmartCardAppletIdGroupStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2871564713, data2: 59244, data3: 17871, data4: [191, 29, 144, 234, 166, 32, 89, 39] };
 }
 #[repr(C)]
 pub struct ISmartCardAutomaticResponseApdu {
@@ -146,6 +176,9 @@ pub struct ISmartCardAutomaticResponseApdu {
     #[cfg(not(feature = "Storage_Streams"))]
     SetResponseApdu: usize,
 }
+impl ::windows_sys::core::Interface for ISmartCardAutomaticResponseApdu {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1377119147, data2: 50750, data3: 17713, data4: [168, 87, 215, 86, 217, 155, 152, 106] };
+}
 #[repr(C)]
 pub struct ISmartCardAutomaticResponseApdu2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -166,11 +199,17 @@ pub struct ISmartCardAutomaticResponseApdu2 {
     #[cfg(not(feature = "Foundation"))]
     SetOutputState: usize,
 }
+impl ::windows_sys::core::Interface for ISmartCardAutomaticResponseApdu2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1152301844, data2: 21917, data3: 17713, data4: [78, 81, 137, 219, 111, 168, 165, 122] };
+}
 #[repr(C)]
 pub struct ISmartCardAutomaticResponseApdu3 {
     pub base__: ::windows_sys::core::IInspectable,
     pub AllowWhenCryptogramGeneratorNotPrepared: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub SetAllowWhenCryptogramGeneratorNotPrepared: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISmartCardAutomaticResponseApdu3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3208895092, data2: 25974, data3: 17298, data4: [147, 103, 254, 59, 201, 226, 212, 150] };
 }
 #[repr(C)]
 pub struct ISmartCardAutomaticResponseApduFactory {
@@ -179,6 +218,9 @@ pub struct ISmartCardAutomaticResponseApduFactory {
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, commandapdu: *mut ::core::ffi::c_void, responseapdu: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Storage_Streams"))]
     Create: usize,
+}
+impl ::windows_sys::core::Interface for ISmartCardAutomaticResponseApduFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3917390586, data2: 53292, data3: 19541, data4: [176, 42, 140, 255, 127, 169, 240, 91] };
 }
 #[repr(C)]
 pub struct ISmartCardChallengeContext {
@@ -204,6 +246,9 @@ pub struct ISmartCardChallengeContext {
     #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
     ChangeAdministrativeKeyAsync: usize,
 }
+impl ::windows_sys::core::Interface for ISmartCardChallengeContext {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 422204185, data2: 51652, data3: 18759, data4: [129, 204, 68, 121, 74, 97, 239, 145] };
+}
 #[repr(C)]
 pub struct ISmartCardConnect {
     pub base__: ::windows_sys::core::IInspectable,
@@ -212,6 +257,9 @@ pub struct ISmartCardConnect {
     #[cfg(not(feature = "Foundation"))]
     ConnectAsync: usize,
 }
+impl ::windows_sys::core::Interface for ISmartCardConnect {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 803178469, data2: 653, data3: 18718, data4: [160, 88, 51, 130, 195, 152, 111, 64] };
+}
 #[repr(C)]
 pub struct ISmartCardConnection {
     pub base__: ::windows_sys::core::IInspectable,
@@ -219,6 +267,9 @@ pub struct ISmartCardConnection {
     pub TransmitAsync: unsafe extern "system" fn(this: *mut *mut Self, command: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
     TransmitAsync: usize,
+}
+impl ::windows_sys::core::Interface for ISmartCardConnection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2128320794, data2: 43034, data3: 18364, data4: [166, 73, 21, 107, 230, 183, 242, 49] };
 }
 #[repr(C)]
 pub struct ISmartCardCryptogramGenerator {
@@ -272,6 +323,9 @@ pub struct ISmartCardCryptogramGenerator {
     #[cfg(not(feature = "Foundation"))]
     DeleteCryptogramMaterialPackageAsync: usize,
 }
+impl ::windows_sys::core::Interface for ISmartCardCryptogramGenerator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3818870907, data2: 60883, data3: 20041, data4: [181, 148, 15, 245, 228, 208, 199, 111] };
+}
 #[repr(C)]
 pub struct ISmartCardCryptogramGenerator2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -296,6 +350,9 @@ pub struct ISmartCardCryptogramGenerator2 {
     #[cfg(not(feature = "Foundation"))]
     GetAllCryptogramMaterialCharacteristicsAsync: usize,
 }
+impl ::windows_sys::core::Interface for ISmartCardCryptogramGenerator2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1897310772, data2: 23917, data3: 19274, data4: [150, 163, 239, 164, 125, 42, 126, 37] };
+}
 #[repr(C)]
 pub struct ISmartCardCryptogramGeneratorStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -304,10 +361,16 @@ pub struct ISmartCardCryptogramGeneratorStatics {
     #[cfg(not(feature = "Foundation"))]
     GetSmartCardCryptogramGeneratorAsync: usize,
 }
+impl ::windows_sys::core::Interface for ISmartCardCryptogramGeneratorStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 160643344, data2: 52124, data3: 16405, data4: [150, 125, 82, 52, 243, 176, 41, 0] };
+}
 #[repr(C)]
 pub struct ISmartCardCryptogramGeneratorStatics2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub IsSupported: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISmartCardCryptogramGeneratorStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 163444197, data2: 46269, data3: 20003, data4: [165, 136, 116, 70, 146, 4, 193, 40] };
 }
 #[repr(C)]
 pub struct ISmartCardCryptogramGetAllCryptogramMaterialCharacteristicsResult {
@@ -318,6 +381,9 @@ pub struct ISmartCardCryptogramGetAllCryptogramMaterialCharacteristicsResult {
     #[cfg(not(feature = "Foundation_Collections"))]
     Characteristics: usize,
 }
+impl ::windows_sys::core::Interface for ISmartCardCryptogramGetAllCryptogramMaterialCharacteristicsResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 664330281, data2: 54919, data3: 19602, data4: [134, 198, 57, 158, 154, 14, 203, 9] };
+}
 #[repr(C)]
 pub struct ISmartCardCryptogramGetAllCryptogramMaterialPackageCharacteristicsResult {
     pub base__: ::windows_sys::core::IInspectable,
@@ -327,6 +393,9 @@ pub struct ISmartCardCryptogramGetAllCryptogramMaterialPackageCharacteristicsRes
     #[cfg(not(feature = "Foundation_Collections"))]
     Characteristics: usize,
 }
+impl ::windows_sys::core::Interface for ISmartCardCryptogramGetAllCryptogramMaterialPackageCharacteristicsResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1315605084, data2: 38771, data3: 18116, data4: [163, 47, 177, 229, 67, 21, 158, 4] };
+}
 #[repr(C)]
 pub struct ISmartCardCryptogramGetAllCryptogramStorageKeyCharacteristicsResult {
     pub base__: ::windows_sys::core::IInspectable,
@@ -335,6 +404,9 @@ pub struct ISmartCardCryptogramGetAllCryptogramStorageKeyCharacteristicsResult {
     pub Characteristics: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     Characteristics: usize,
+}
+impl ::windows_sys::core::Interface for ISmartCardCryptogramGetAllCryptogramStorageKeyCharacteristicsResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2356996183, data2: 42983, data3: 18589, data4: [185, 214, 54, 128, 97, 81, 80, 18] };
 }
 #[repr(C)]
 pub struct ISmartCardCryptogramMaterialCharacteristics {
@@ -357,6 +429,9 @@ pub struct ISmartCardCryptogramMaterialCharacteristics {
     pub ProtectionVersion: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i32) -> ::windows_sys::core::HRESULT,
     pub MaterialLength: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISmartCardCryptogramMaterialCharacteristics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4238001612, data2: 49623, data3: 16723, data4: [146, 59, 162, 212, 60, 108, 141, 73] };
+}
 #[repr(C)]
 pub struct ISmartCardCryptogramMaterialPackageCharacteristics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -368,6 +443,9 @@ pub struct ISmartCardCryptogramMaterialPackageCharacteristics {
     DateImported: usize,
     pub PackageFormat: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut SmartCardCryptogramMaterialPackageFormat) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISmartCardCryptogramMaterialPackageCharacteristics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4290088479, data2: 1682, data3: 19527, data4: [147, 207, 52, 217, 31, 157, 205, 0] };
+}
 #[repr(C)]
 pub struct ISmartCardCryptogramMaterialPossessionProof {
     pub base__: ::windows_sys::core::IInspectable,
@@ -376,6 +454,9 @@ pub struct ISmartCardCryptogramMaterialPossessionProof {
     pub Proof: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Storage_Streams"))]
     Proof: usize,
+}
+impl ::windows_sys::core::Interface for ISmartCardCryptogramMaterialPossessionProof {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3854150540, data2: 41281, data3: 16693, data4: [154, 221, 176, 210, 227, 170, 31, 201] };
 }
 #[repr(C)]
 pub struct ISmartCardCryptogramPlacementStep {
@@ -405,6 +486,9 @@ pub struct ISmartCardCryptogramPlacementStep {
     pub ChainedOutputStep: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetChainedOutputStep: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISmartCardCryptogramPlacementStep {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2491089899, data2: 33602, data3: 18322, data4: [162, 229, 146, 86, 54, 55, 138, 83] };
+}
 #[repr(C)]
 pub struct ISmartCardCryptogramStorageKeyCharacteristics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -415,6 +499,9 @@ pub struct ISmartCardCryptogramStorageKeyCharacteristics {
     DateCreated: usize,
     pub Algorithm: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut SmartCardCryptogramStorageKeyAlgorithm) -> ::windows_sys::core::HRESULT,
     pub Capabilities: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut SmartCardCryptogramStorageKeyCapabilities) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISmartCardCryptogramStorageKeyCharacteristics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2236765294, data2: 17495, data3: 18469, data4: [180, 100, 99, 84, 113, 163, 159, 92] };
 }
 #[repr(C)]
 pub struct ISmartCardCryptogramStorageKeyInfo {
@@ -439,15 +526,24 @@ pub struct ISmartCardCryptogramStorageKeyInfo {
     AttestationCertificateChain: usize,
     pub Capabilities: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut SmartCardCryptogramStorageKeyCapabilities) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISmartCardCryptogramStorageKeyInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2008084493, data2: 45207, data3: 20321, data4: [162, 106, 149, 97, 99, 156, 156, 58] };
+}
 #[repr(C)]
 pub struct ISmartCardCryptogramStorageKeyInfo2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub OperationalRequirements: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISmartCardCryptogramStorageKeyInfo2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 278777, data2: 63485, data3: 16765, data4: [137, 225, 251, 176, 56, 42, 220, 77] };
+}
 #[repr(C)]
 pub struct ISmartCardEmulator {
     pub base__: ::windows_sys::core::IInspectable,
     pub EnablementPolicy: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut SmartCardEmulatorEnablementPolicy) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISmartCardEmulator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3753445042, data2: 34654, data3: 18405, data4: [128, 119, 232, 191, 241, 177, 198, 251] };
 }
 #[repr(C)]
 pub struct ISmartCardEmulator2 {
@@ -471,6 +567,9 @@ pub struct ISmartCardEmulator2 {
     pub Start: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub IsHostCardEmulationSupported: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISmartCardEmulator2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4265590968, data2: 34089, data3: 16666, data4: [128, 123, 72, 237, 194, 160, 171, 68] };
+}
 #[repr(C)]
 pub struct ISmartCardEmulatorApduReceivedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
@@ -485,6 +584,9 @@ pub struct ISmartCardEmulatorApduReceivedEventArgs {
     TryRespondAsync: usize,
     pub AutomaticResponseStatus: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut SmartCardAutomaticResponseStatus) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISmartCardEmulatorApduReceivedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3579647350, data2: 27090, data3: 21299, data4: [91, 95, 248, 192, 214, 233, 240, 159] };
+}
 #[repr(C)]
 pub struct ISmartCardEmulatorApduReceivedEventArgs2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -493,6 +595,9 @@ pub struct ISmartCardEmulatorApduReceivedEventArgs2 {
     pub TryRespondWithStateAsync: unsafe extern "system" fn(this: *mut *mut Self, responseapdu: *mut ::core::ffi::c_void, nextstate: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
     TryRespondWithStateAsync: usize,
+}
+impl ::windows_sys::core::Interface for ISmartCardEmulatorApduReceivedEventArgs2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2348367344, data2: 8929, data3: 16952, data4: [134, 16, 148, 206, 74, 150, 84, 37] };
 }
 #[repr(C)]
 pub struct ISmartCardEmulatorApduReceivedEventArgsWithCryptograms {
@@ -506,17 +611,26 @@ pub struct ISmartCardEmulatorApduReceivedEventArgsWithCryptograms {
     #[cfg(not(all(feature = "Foundation_Collections", feature = "Storage_Streams")))]
     TryRespondWithCryptogramsAndStateAsync: usize,
 }
+impl ::windows_sys::core::Interface for ISmartCardEmulatorApduReceivedEventArgsWithCryptograms {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3578837703, data2: 47039, data3: 20009, data4: [146, 148, 12, 74, 195, 201, 65, 189] };
+}
 #[repr(C)]
 pub struct ISmartCardEmulatorConnectionDeactivatedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub ConnectionProperties: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Reason: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut SmartCardEmulatorConnectionDeactivatedReason) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISmartCardEmulatorConnectionDeactivatedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 562485459, data2: 50667, data3: 21090, data4: [67, 223, 98, 160, 161, 181, 85, 87] };
+}
 #[repr(C)]
 pub struct ISmartCardEmulatorConnectionProperties {
     pub base__: ::windows_sys::core::IInspectable,
     pub Id: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub Source: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut SmartCardEmulatorConnectionSource) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISmartCardEmulatorConnectionProperties {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1311548910, data2: 63849, data3: 20605, data4: [108, 249, 52, 226, 209, 141, 243, 17] };
 }
 #[repr(C)]
 pub struct ISmartCardEmulatorStatics {
@@ -525,6 +639,9 @@ pub struct ISmartCardEmulatorStatics {
     pub GetDefaultAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     GetDefaultAsync: usize,
+}
+impl ::windows_sys::core::Interface for ISmartCardEmulatorStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2057043019, data2: 50387, data3: 18767, data4: [184, 162, 98, 21, 216, 30, 133, 178] };
 }
 #[repr(C)]
 pub struct ISmartCardEmulatorStatics2 {
@@ -543,10 +660,16 @@ pub struct ISmartCardEmulatorStatics2 {
     UnregisterAppletIdGroupAsync: usize,
     pub MaxAppletIdGroupRegistrations: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u16) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISmartCardEmulatorStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1773051786, data2: 46965, data3: 18571, data4: [132, 54, 108, 30, 40, 237, 115, 31] };
+}
 #[repr(C)]
 pub struct ISmartCardEmulatorStatics3 {
     pub base__: ::windows_sys::core::IInspectable,
     pub IsSupported: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISmartCardEmulatorStatics3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1508512810, data2: 40713, data3: 17397, data4: [133, 101, 207, 168, 20, 142, 76, 178] };
 }
 #[repr(C)]
 pub struct ISmartCardPinPolicy {
@@ -564,10 +687,16 @@ pub struct ISmartCardPinPolicy {
     pub SpecialCharacters: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut SmartCardPinCharacterPolicyOption) -> ::windows_sys::core::HRESULT,
     pub SetSpecialCharacters: unsafe extern "system" fn(this: *mut *mut Self, value: SmartCardPinCharacterPolicyOption) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISmartCardPinPolicy {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 406643076, data2: 19894, data3: 18497, data4: [172, 158, 42, 193, 243, 155, 115, 4] };
+}
 #[repr(C)]
 pub struct ISmartCardPinResetDeferral {
     pub base__: ::windows_sys::core::IInspectable,
     pub Complete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISmartCardPinResetDeferral {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 415845036, data2: 30725, data3: 16388, data4: [133, 228, 187, 239, 172, 143, 104, 132] };
 }
 #[repr(C)]
 pub struct ISmartCardPinResetRequest {
@@ -585,6 +714,9 @@ pub struct ISmartCardPinResetRequest {
     pub SetResponse: unsafe extern "system" fn(this: *mut *mut Self, response: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Storage_Streams"))]
     SetResponse: usize,
+}
+impl ::windows_sys::core::Interface for ISmartCardPinResetRequest {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 318651469, data2: 24505, data3: 20110, data4: [159, 246, 97, 244, 117, 18, 79, 239] };
 }
 #[repr(C)]
 pub struct ISmartCardProvisioning {
@@ -611,6 +743,9 @@ pub struct ISmartCardProvisioning {
     #[cfg(not(feature = "Foundation"))]
     RequestPinResetAsync: usize,
 }
+impl ::windows_sys::core::Interface for ISmartCardProvisioning {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 435088829, data2: 8107, data3: 18300, data4: [183, 18, 26, 44, 90, 241, 253, 110] };
+}
 #[repr(C)]
 pub struct ISmartCardProvisioning2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -618,6 +753,9 @@ pub struct ISmartCardProvisioning2 {
     pub GetAuthorityKeyContainerNameAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     GetAuthorityKeyContainerNameAsync: usize,
+}
+impl ::windows_sys::core::Interface for ISmartCardProvisioning2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 285026539, data2: 16249, data3: 19302, data4: [155, 124, 17, 193, 73, 183, 208, 188] };
 }
 #[repr(C)]
 pub struct ISmartCardProvisioningStatics {
@@ -639,6 +777,9 @@ pub struct ISmartCardProvisioningStatics {
     #[cfg(not(feature = "Foundation"))]
     RequestVirtualSmartCardDeletionAsync: usize,
 }
+impl ::windows_sys::core::Interface for ISmartCardProvisioningStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 327690312, data2: 3347, data3: 20080, data4: [151, 53, 81, 218, 236, 165, 37, 79] };
+}
 #[repr(C)]
 pub struct ISmartCardProvisioningStatics2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -650,6 +791,9 @@ pub struct ISmartCardProvisioningStatics2 {
     pub RequestAttestedVirtualSmartCardCreationAsyncWithCardId: unsafe extern "system" fn(this: *mut *mut Self, friendlyname: ::windows_sys::core::HSTRING, administrativekey: *mut ::core::ffi::c_void, pinpolicy: *mut ::core::ffi::c_void, cardid: ::windows_sys::core::GUID, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
     RequestAttestedVirtualSmartCardCreationAsyncWithCardId: usize,
+}
+impl ::windows_sys::core::Interface for ISmartCardProvisioningStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 877119144, data2: 51616, data3: 19414, data4: [181, 13, 37, 31, 78, 141, 58, 98] };
 }
 #[repr(C)]
 pub struct ISmartCardReader {
@@ -682,6 +826,9 @@ pub struct ISmartCardReader {
     #[cfg(not(feature = "Foundation"))]
     RemoveCardRemoved: usize,
 }
+impl ::windows_sys::core::Interface for ISmartCardReader {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 276083936, data2: 21698, data3: 19952, data4: [129, 122, 20, 193, 67, 120, 240, 108] };
+}
 #[repr(C)]
 pub struct ISmartCardReaderStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -691,6 +838,9 @@ pub struct ISmartCardReaderStatics {
     pub FromIdAsync: unsafe extern "system" fn(this: *mut *mut Self, deviceid: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     FromIdAsync: usize,
+}
+impl ::windows_sys::core::Interface for ISmartCardReaderStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 272368865, data2: 41418, data3: 18674, data4: [162, 129, 91, 111, 102, 154, 241, 7] };
 }
 #[repr(C)]
 pub struct ISmartCardTriggerDetails {
@@ -705,6 +855,9 @@ pub struct ISmartCardTriggerDetails {
     #[cfg(not(feature = "Storage_Streams"))]
     TriggerData: usize,
 }
+impl ::windows_sys::core::Interface for ISmartCardTriggerDetails {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1604055326, data2: 14831, data3: 20267, data4: [180, 79, 10, 145, 85, 177, 119, 188] };
+}
 #[repr(C)]
 pub struct ISmartCardTriggerDetails2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -718,10 +871,16 @@ pub struct ISmartCardTriggerDetails2 {
     #[cfg(not(feature = "Foundation"))]
     TryLaunchCurrentAppWithBehaviorAsync: usize,
 }
+impl ::windows_sys::core::Interface for ISmartCardTriggerDetails2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 692438377, data2: 35189, data3: 19025, data4: [158, 26, 95, 138, 118, 238, 81, 175] };
+}
 #[repr(C)]
 pub struct ISmartCardTriggerDetails3 {
     pub base__: ::windows_sys::core::IInspectable,
     pub SmartCard: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISmartCardTriggerDetails3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3017982589, data2: 6342, data3: 19368, data4: [131, 118, 239, 3, 212, 145, 38, 102] };
 }
 pub type SmartCard = *mut ::core::ffi::c_void;
 #[doc = "*Required features: `\"Devices_SmartCards\"`*"]

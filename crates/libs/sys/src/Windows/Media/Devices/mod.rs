@@ -218,6 +218,9 @@ pub struct IAdvancedPhotoCaptureSettings {
     pub Mode: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut AdvancedPhotoMode) -> ::windows_sys::core::HRESULT,
     pub SetMode: unsafe extern "system" fn(this: *mut *mut Self, value: AdvancedPhotoMode) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAdvancedPhotoCaptureSettings {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 150177338, data2: 24, data3: 17499, data4: [147, 210, 100, 109, 28, 94, 208, 92] };
+}
 #[repr(C)]
 pub struct IAdvancedPhotoControl {
     pub base__: ::windows_sys::core::IInspectable,
@@ -229,16 +232,25 @@ pub struct IAdvancedPhotoControl {
     pub Mode: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut AdvancedPhotoMode) -> ::windows_sys::core::HRESULT,
     pub Configure: unsafe extern "system" fn(this: *mut *mut Self, settings: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAdvancedPhotoControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3316733062, data2: 36865, data3: 18050, data4: [147, 9, 104, 234, 224, 8, 14, 236] };
+}
 #[repr(C)]
 pub struct IAdvancedVideoCaptureDeviceController {
     pub base__: ::windows_sys::core::IInspectable,
     pub SetDeviceProperty: unsafe extern "system" fn(this: *mut *mut Self, propertyid: ::windows_sys::core::HSTRING, propertyvalue: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetDeviceProperty: unsafe extern "system" fn(this: *mut *mut Self, propertyid: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAdvancedVideoCaptureDeviceController {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3731879123, data2: 11158, data3: 17795, data4: [128, 171, 181, 176, 29, 198, 168, 215] };
+}
 #[repr(C)]
 pub struct IAdvancedVideoCaptureDeviceController10 {
     pub base__: ::windows_sys::core::IInspectable,
     pub CameraOcclusionInfo: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAdvancedVideoCaptureDeviceController10 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3324098605, data2: 55024, data3: 23579, data4: [163, 136, 166, 233, 56, 64, 113, 70] };
 }
 #[repr(C)]
 pub struct IAdvancedVideoCaptureDeviceController2 {
@@ -257,6 +269,9 @@ pub struct IAdvancedVideoCaptureDeviceController2 {
     pub PrimaryUse: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut CaptureUse) -> ::windows_sys::core::HRESULT,
     pub SetPrimaryUse: unsafe extern "system" fn(this: *mut *mut Self, value: CaptureUse) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAdvancedVideoCaptureDeviceController2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2344177551, data2: 61722, data3: 17371, data4: [180, 2, 17, 147, 11, 128, 174, 86] };
+}
 #[repr(C)]
 pub struct IAdvancedVideoCaptureDeviceController3 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -267,6 +282,9 @@ pub struct IAdvancedVideoCaptureDeviceController3 {
     pub PhotoConfirmationControl: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub ZoomControl: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAdvancedVideoCaptureDeviceController3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2844495668, data2: 60941, data3: 18188, data4: [185, 240, 66, 41, 196, 187, 208, 137] };
+}
 #[repr(C)]
 pub struct IAdvancedVideoCaptureDeviceController4 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -276,6 +294,9 @@ pub struct IAdvancedVideoCaptureDeviceController4 {
     pub HdrVideoControl: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub OpticalImageStabilizationControl: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub AdvancedPhotoControl: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAdvancedVideoCaptureDeviceController4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3936337839, data2: 54129, data3: 16835, data4: [154, 23, 130, 74, 135, 235, 223, 210] };
 }
 #[repr(C)]
 pub struct IAdvancedVideoCaptureDeviceController5 {
@@ -292,25 +313,40 @@ pub struct IAdvancedVideoCaptureDeviceController5 {
     GetDevicePropertyByExtendedId: usize,
     pub SetDevicePropertyByExtendedId: unsafe extern "system" fn(this: *mut *mut Self, extendedPropertyId_array_size: u32, extendedpropertyid: *const u8, propertyValue_array_size: u32, propertyvalue: *const u8, result__: *mut VideoDeviceControllerSetDevicePropertyStatus) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAdvancedVideoCaptureDeviceController5 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 860957463, data2: 47563, data3: 18979, data4: [184, 117, 249, 234, 171, 83, 84, 146] };
+}
 #[repr(C)]
 pub struct IAdvancedVideoCaptureDeviceController6 {
     pub base__: ::windows_sys::core::IInspectable,
     pub VideoTemporalDenoisingControl: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAdvancedVideoCaptureDeviceController6 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3059104339, data2: 26785, data3: 17591, data4: [159, 137, 181, 250, 151, 172, 12, 190] };
 }
 #[repr(C)]
 pub struct IAdvancedVideoCaptureDeviceController7 {
     pub base__: ::windows_sys::core::IInspectable,
     pub InfraredTorchControl: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAdvancedVideoCaptureDeviceController7 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2368284656, data2: 41044, data3: 20711, data4: [183, 223, 124, 4, 35, 77, 16, 240] };
+}
 #[repr(C)]
 pub struct IAdvancedVideoCaptureDeviceController8 {
     pub base__: ::windows_sys::core::IInspectable,
     pub PanelBasedOptimizationControl: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAdvancedVideoCaptureDeviceController8 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3628331024, data2: 59387, data3: 22875, data4: [154, 120, 14, 84, 196, 83, 43, 67] };
+}
 #[repr(C)]
 pub struct IAdvancedVideoCaptureDeviceController9 {
     pub base__: ::windows_sys::core::IInspectable,
     pub DigitalWindowControl: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAdvancedVideoCaptureDeviceController9 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2346494301, data2: 597, data3: 20924, data4: [161, 13, 90, 22, 158, 193, 98, 90] };
 }
 #[repr(C)]
 pub struct IAudioDeviceController {
@@ -319,6 +355,9 @@ pub struct IAudioDeviceController {
     pub Muted: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub SetVolumePercent: unsafe extern "system" fn(this: *mut *mut Self, value: f32) -> ::windows_sys::core::HRESULT,
     pub VolumePercent: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAudioDeviceController {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3990135688, data2: 31175, data3: 20348, data4: [144, 232, 239, 147, 75, 33, 88, 10] };
 }
 #[repr(C)]
 pub struct IAudioDeviceModule {
@@ -333,6 +372,9 @@ pub struct IAudioDeviceModule {
     #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
     SendCommandAsync: usize,
 }
+impl ::windows_sys::core::Interface for IAudioDeviceModule {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2261756982, data2: 18369, data3: 19251, data4: [152, 82, 135, 115, 236, 75, 225, 35] };
+}
 #[repr(C)]
 pub struct IAudioDeviceModuleNotificationEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
@@ -341,6 +383,9 @@ pub struct IAudioDeviceModuleNotificationEventArgs {
     pub NotificationData: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Storage_Streams"))]
     NotificationData: usize,
+}
+impl ::windows_sys::core::Interface for IAudioDeviceModuleNotificationEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3823357103, data2: 8780, data3: 18622, data4: [149, 107, 154, 19, 19, 78, 150, 232] };
 }
 #[repr(C)]
 pub struct IAudioDeviceModulesManager {
@@ -362,10 +407,16 @@ pub struct IAudioDeviceModulesManager {
     #[cfg(not(feature = "Foundation_Collections"))]
     FindAll: usize,
 }
+impl ::windows_sys::core::Interface for IAudioDeviceModulesManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1789135949, data2: 38410, data3: 19740, data4: [179, 24, 0, 34, 96, 69, 71, 237] };
+}
 #[repr(C)]
 pub struct IAudioDeviceModulesManagerFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, deviceid: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAudioDeviceModulesManagerFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2377135728, data2: 58957, data3: 18291, data4: [150, 192, 188, 126, 191, 14, 6, 63] };
 }
 #[repr(C)]
 pub struct ICallControl {
@@ -424,11 +475,17 @@ pub struct ICallControl {
     #[cfg(not(feature = "Foundation"))]
     RemoveAudioTransferRequested: usize,
 }
+impl ::windows_sys::core::Interface for ICallControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2770391254, data2: 44685, data3: 17883, data4: [128, 17, 202, 73, 211, 179, 229, 120] };
+}
 #[repr(C)]
 pub struct ICallControlStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub GetDefault: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub FromId: unsafe extern "system" fn(this: *mut *mut Self, deviceid: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ICallControlStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 60054229, data2: 34219, data3: 16609, data4: [175, 25, 86, 201, 67, 3, 176, 25] };
 }
 #[repr(C)]
 pub struct ICameraOcclusionInfo {
@@ -444,16 +501,25 @@ pub struct ICameraOcclusionInfo {
     #[cfg(not(feature = "Foundation"))]
     RemoveStateChanged: usize,
 }
+impl ::windows_sys::core::Interface for ICameraOcclusionInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2943109840, data2: 43085, data3: 23990, data4: [190, 88, 165, 218, 33, 207, 224, 17] };
+}
 #[repr(C)]
 pub struct ICameraOcclusionState {
     pub base__: ::windows_sys::core::IInspectable,
     pub IsOccluded: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub IsOcclusionKind: unsafe extern "system" fn(this: *mut *mut Self, occlusionkind: CameraOcclusionKind, result__: *mut bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ICameraOcclusionState {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1124785848, data2: 26690, data3: 24149, data4: [155, 222, 4, 180, 239, 58, 138, 87] };
+}
 #[repr(C)]
 pub struct ICameraOcclusionStateChangedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub State: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ICameraOcclusionStateChangedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2232604744, data2: 49374, data3: 22474, data4: [161, 202, 251, 44, 61, 35, 223, 85] };
 }
 #[repr(C)]
 pub struct IDefaultAudioDeviceChangedEventArgs {
@@ -461,11 +527,17 @@ pub struct IDefaultAudioDeviceChangedEventArgs {
     pub Id: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub Role: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut AudioDeviceRole) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDefaultAudioDeviceChangedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 286230575, data2: 7173, data3: 18007, data4: [161, 142, 71, 201, 182, 159, 7, 171] };
+}
 #[repr(C)]
 pub struct IDialRequestedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub Handled: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Contact: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDialRequestedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 58430110, data2: 38204, data3: 17030, data4: [136, 102, 79, 15, 55, 108, 133, 90] };
 }
 #[repr(C)]
 pub struct IDigitalWindowBounds {
@@ -476,6 +548,9 @@ pub struct IDigitalWindowBounds {
     pub SetNormalizedOriginLeft: unsafe extern "system" fn(this: *mut *mut Self, value: f64) -> ::windows_sys::core::HRESULT,
     pub Scale: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f64) -> ::windows_sys::core::HRESULT,
     pub SetScale: unsafe extern "system" fn(this: *mut *mut Self, value: f64) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDigitalWindowBounds {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3712950749, data2: 53619, data3: 23659, data4: [140, 37, 189, 210, 109, 81, 34, 177] };
 }
 #[repr(C)]
 pub struct IDigitalWindowCapability {
@@ -489,6 +564,9 @@ pub struct IDigitalWindowCapability {
     pub NormalizedFieldOfViewLimit: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Foundation::Rect) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     NormalizedFieldOfViewLimit: usize,
+}
+impl ::windows_sys::core::Interface for IDigitalWindowCapability {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3616255276, data2: 63265, data3: 21060, data4: [161, 150, 181, 108, 203, 236, 96, 108] };
 }
 #[repr(C)]
 pub struct IDigitalWindowControl {
@@ -505,6 +583,9 @@ pub struct IDigitalWindowControl {
     SupportedCapabilities: usize,
     pub GetCapabilityForSize: unsafe extern "system" fn(this: *mut *mut Self, width: i32, height: i32, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDigitalWindowControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 599170815, data2: 26066, data3: 21482, data4: [135, 128, 222, 88, 43, 72, 181, 68] };
+}
 #[repr(C)]
 pub struct IExposureCompensationControl {
     pub base__: ::windows_sys::core::IInspectable,
@@ -517,6 +598,9 @@ pub struct IExposureCompensationControl {
     pub SetValueAsync: unsafe extern "system" fn(this: *mut *mut Self, value: f32, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     SetValueAsync: usize,
+}
+impl ::windows_sys::core::Interface for IExposureCompensationControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2177427508, data2: 56556, data3: 16401, data4: [166, 16, 31, 56, 71, 230, 74, 202] };
 }
 #[repr(C)]
 pub struct IExposureControl {
@@ -548,12 +632,18 @@ pub struct IExposureControl {
     #[cfg(not(feature = "Foundation"))]
     SetValueAsync: usize,
 }
+impl ::windows_sys::core::Interface for IExposureControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 166251490, data2: 44438, data3: 20264, data4: [160, 224, 150, 237, 126, 27, 95, 210] };
+}
 #[repr(C)]
 pub struct IExposurePriorityVideoControl {
     pub base__: ::windows_sys::core::IInspectable,
     pub Supported: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub Enabled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub SetEnabled: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IExposurePriorityVideoControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 749879459, data2: 20840, data3: 17009, data4: [158, 165, 71, 98, 26, 152, 163, 82] };
 }
 #[repr(C)]
 pub struct IFlashControl {
@@ -570,12 +660,18 @@ pub struct IFlashControl {
     pub PowerPercent: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f32) -> ::windows_sys::core::HRESULT,
     pub SetPowerPercent: unsafe extern "system" fn(this: *mut *mut Self, value: f32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IFlashControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3740540350, data2: 32104, data3: 17891, data4: [140, 15, 190, 123, 179, 40, 55, 208] };
+}
 #[repr(C)]
 pub struct IFlashControl2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub AssistantLightSupported: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub AssistantLightEnabled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub SetAssistantLightEnabled: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IFlashControl2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2099891358, data2: 30177, data3: 19191, data4: [189, 125, 78, 56, 225, 192, 108, 214] };
 }
 #[repr(C)]
 pub struct IFocusControl {
@@ -607,6 +703,9 @@ pub struct IFocusControl {
     #[cfg(not(feature = "Foundation"))]
     FocusAsync: usize,
 }
+impl ::windows_sys::core::Interface for IFocusControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3235416566, data2: 21032, data3: 17491, data4: [177, 83, 133, 96, 101, 146, 178, 56] };
+}
 #[repr(C)]
 pub struct IFocusControl2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -636,6 +735,9 @@ pub struct IFocusControl2 {
     LockAsync: usize,
     pub Configure: unsafe extern "system" fn(this: *mut *mut Self, settings: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IFocusControl2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1065156424, data2: 50484, data3: 20126, data4: [148, 195, 82, 239, 42, 253, 93, 7] };
+}
 #[repr(C)]
 pub struct IFocusSettings {
     pub base__: ::windows_sys::core::IInspectable,
@@ -664,6 +766,9 @@ pub struct IFocusSettings {
     pub DisableDriverFallback: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub SetDisableDriverFallback: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IFocusSettings {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2039844715, data2: 12899, data3: 17013, data4: [133, 214, 174, 174, 137, 28, 150, 238] };
+}
 #[repr(C)]
 pub struct IHdrVideoControl {
     pub base__: ::windows_sys::core::IInspectable,
@@ -674,6 +779,9 @@ pub struct IHdrVideoControl {
     SupportedModes: usize,
     pub Mode: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut HdrVideoMode) -> ::windows_sys::core::HRESULT,
     pub SetMode: unsafe extern "system" fn(this: *mut *mut Self, value: HdrVideoMode) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IHdrVideoControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1440277200, data2: 12480, data3: 17343, data4: [155, 154, 151, 153, 215, 12, 237, 148] };
 }
 #[repr(C)]
 pub struct IInfraredTorchControl {
@@ -690,6 +798,9 @@ pub struct IInfraredTorchControl {
     pub PowerStep: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i32) -> ::windows_sys::core::HRESULT,
     pub Power: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i32) -> ::windows_sys::core::HRESULT,
     pub SetPower: unsafe extern "system" fn(this: *mut *mut Self, value: i32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IInfraredTorchControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 481963139, data2: 27830, data3: 23044, data4: [166, 252, 59, 231, 179, 63, 240, 86] };
 }
 #[repr(C)]
 pub struct IIsoSpeedControl {
@@ -708,6 +819,9 @@ pub struct IIsoSpeedControl {
     #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
     SetPresetAsync: usize,
 }
+impl ::windows_sys::core::Interface for IIsoSpeedControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 666288930, data2: 9645, data3: 20251, data4: [170, 171, 82, 74, 179, 118, 202, 51] };
+}
 #[repr(C)]
 pub struct IIsoSpeedControl2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -725,10 +839,16 @@ pub struct IIsoSpeedControl2 {
     #[cfg(not(feature = "Foundation"))]
     SetAutoAsync: usize,
 }
+impl ::windows_sys::core::Interface for IIsoSpeedControl2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1863678194, data2: 28023, data3: 20362, data4: [140, 47, 97, 48, 182, 57, 80, 83] };
+}
 #[repr(C)]
 pub struct IKeypadPressedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub TelephonyKey: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut TelephonyKey) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IKeypadPressedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3550755072, data2: 46330, data3: 18893, data4: [148, 66, 137, 175, 101, 104, 246, 1] };
 }
 #[repr(C)]
 pub struct ILowLagPhotoControl {
@@ -754,6 +874,9 @@ pub struct ILowLagPhotoControl {
     pub DesiredThumbnailSize: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
     pub SetDesiredThumbnailSize: unsafe extern "system" fn(this: *mut *mut Self, value: u32) -> ::windows_sys::core::HRESULT,
     pub HardwareAcceleratedThumbnailSupported: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ILowLagPhotoControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1834765776, data2: 64223, data3: 16733, data4: [174, 230, 59, 170, 82, 147, 0, 201] };
 }
 #[repr(C)]
 pub struct ILowLagPhotoSequenceControl {
@@ -787,6 +910,9 @@ pub struct ILowLagPhotoSequenceControl {
     pub SetDesiredThumbnailSize: unsafe extern "system" fn(this: *mut *mut Self, value: u32) -> ::windows_sys::core::HRESULT,
     pub HardwareAcceleratedThumbnailSupported: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ILowLagPhotoSequenceControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1037013149, data2: 27926, data3: 16540, data4: [186, 254, 185, 165, 148, 198, 253, 230] };
+}
 #[repr(C)]
 pub struct IMediaDeviceControl {
     pub base__: ::windows_sys::core::IInspectable,
@@ -795,6 +921,9 @@ pub struct IMediaDeviceControl {
     pub TrySetValue: unsafe extern "system" fn(this: *mut *mut Self, value: f64, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub TryGetAuto: unsafe extern "system" fn(this: *mut *mut Self, value: *mut bool, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub TrySetAuto: unsafe extern "system" fn(this: *mut *mut Self, value: bool, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMediaDeviceControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4020821929, data2: 28533, data3: 18531, data4: [186, 11, 88, 63, 48, 54, 180, 222] };
 }
 #[repr(C)]
 pub struct IMediaDeviceControlCapabilities {
@@ -805,6 +934,9 @@ pub struct IMediaDeviceControlCapabilities {
     pub Step: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f64) -> ::windows_sys::core::HRESULT,
     pub Default: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f64) -> ::windows_sys::core::HRESULT,
     pub AutoModeSupported: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMediaDeviceControlCapabilities {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 587225110, data2: 60293, data3: 17378, data4: [185, 43, 130, 64, 213, 238, 112, 236] };
 }
 #[repr(C)]
 pub struct IMediaDeviceController {
@@ -821,6 +953,9 @@ pub struct IMediaDeviceController {
     pub SetMediaStreamPropertiesAsync: unsafe extern "system" fn(this: *mut *mut Self, mediastreamtype: super::Capture::MediaStreamType, mediaencodingproperties: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Foundation", feature = "Media_Capture", feature = "Media_MediaProperties")))]
     SetMediaStreamPropertiesAsync: usize,
+}
+impl ::windows_sys::core::Interface for IMediaDeviceController {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4143510990, data2: 8346, data3: 18683, data4: [134, 252, 212, 69, 120, 243, 23, 230] };
 }
 #[repr(C)]
 pub struct IMediaDeviceStatics {
@@ -847,6 +982,9 @@ pub struct IMediaDeviceStatics {
     #[cfg(not(feature = "Foundation"))]
     RemoveDefaultAudioRenderDeviceChanged: usize,
 }
+impl ::windows_sys::core::Interface for IMediaDeviceStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2855115328, data2: 37023, data3: 19386, data4: [191, 139, 12, 13, 41, 111, 20, 240] };
+}
 #[repr(C)]
 pub struct IModuleCommandResult {
     pub base__: ::windows_sys::core::IInspectable,
@@ -855,6 +993,9 @@ pub struct IModuleCommandResult {
     pub Result: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Storage_Streams"))]
     Result: usize,
+}
+impl ::windows_sys::core::Interface for IModuleCommandResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1376591540, data2: 4980, data3: 19581, data4: [177, 228, 57, 220, 223, 62, 174, 78] };
 }
 #[repr(C)]
 pub struct IOpticalImageStabilizationControl {
@@ -866,6 +1007,9 @@ pub struct IOpticalImageStabilizationControl {
     SupportedModes: usize,
     pub Mode: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut OpticalImageStabilizationMode) -> ::windows_sys::core::HRESULT,
     pub SetMode: unsafe extern "system" fn(this: *mut *mut Self, value: OpticalImageStabilizationMode) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IOpticalImageStabilizationControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3215825949, data2: 188, data3: 16955, data4: [142, 178, 160, 23, 140, 169, 66, 71] };
 }
 #[repr(C)]
 pub struct IPanelBasedOptimizationControl {
@@ -879,6 +1023,9 @@ pub struct IPanelBasedOptimizationControl {
     pub SetPanel: unsafe extern "system" fn(this: *mut *mut Self, value: super::super::Devices::Enumeration::Panel) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Devices_Enumeration"))]
     SetPanel: usize,
+}
+impl ::windows_sys::core::Interface for IPanelBasedOptimizationControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 858927651, data2: 25159, data3: 21529, data4: [165, 164, 61, 128, 134, 69, 217, 23] };
 }
 #[repr(C)]
 pub struct IPhotoConfirmationControl {
@@ -895,10 +1042,16 @@ pub struct IPhotoConfirmationControl {
     #[cfg(not(feature = "Media_MediaProperties"))]
     SetPixelFormat: usize,
 }
+impl ::windows_sys::core::Interface for IPhotoConfirmationControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3371430755, data2: 65374, data3: 17794, data4: [169, 168, 5, 80, 248, 90, 74, 118] };
+}
 #[repr(C)]
 pub struct IRedialRequestedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub Handled: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IRedialRequestedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2125812233, data2: 30379, data3: 19505, data4: [180, 14, 75, 88, 55, 157, 88, 12] };
 }
 #[repr(C)]
 pub struct IRegionOfInterest {
@@ -918,6 +1071,9 @@ pub struct IRegionOfInterest {
     #[cfg(not(feature = "Foundation"))]
     SetBounds: usize,
 }
+impl ::windows_sys::core::Interface for IRegionOfInterest {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3857500212, data2: 52838, data3: 19973, data4: [167, 143, 207, 57, 26, 94, 194, 209] };
+}
 #[repr(C)]
 pub struct IRegionOfInterest2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -927,6 +1083,9 @@ pub struct IRegionOfInterest2 {
     pub SetBoundsNormalized: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
     pub Weight: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
     pub SetWeight: unsafe extern "system" fn(this: *mut *mut Self, value: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IRegionOfInterest2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 436087441, data2: 29610, data3: 19793, data4: [138, 157, 86, 204, 247, 219, 127, 84] };
 }
 #[repr(C)]
 pub struct IRegionsOfInterestControl {
@@ -948,6 +1107,9 @@ pub struct IRegionsOfInterestControl {
     pub AutoWhiteBalanceSupported: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub AutoExposureSupported: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IRegionsOfInterestControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3273913639, data2: 43787, data3: 17752, data4: [139, 91, 223, 86, 147, 219, 3, 120] };
+}
 #[repr(C)]
 pub struct ISceneModeControl {
     pub base__: ::windows_sys::core::IInspectable,
@@ -961,6 +1123,9 @@ pub struct ISceneModeControl {
     #[cfg(not(feature = "Foundation"))]
     SetValueAsync: usize,
 }
+impl ::windows_sys::core::Interface for ISceneModeControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3566099191, data2: 36185, data3: 18516, data4: [140, 98, 18, 199, 11, 168, 155, 124] };
+}
 #[repr(C)]
 pub struct ITorchControl {
     pub base__: ::windows_sys::core::IInspectable,
@@ -970,6 +1135,9 @@ pub struct ITorchControl {
     pub SetEnabled: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
     pub PowerPercent: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f32) -> ::windows_sys::core::HRESULT,
     pub SetPowerPercent: unsafe extern "system" fn(this: *mut *mut Self, value: f32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ITorchControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2785359461, data2: 33360, data3: 16748, data4: [145, 154, 114, 66, 150, 175, 163, 6] };
 }
 #[repr(C)]
 pub struct IVideoDeviceController {
@@ -994,11 +1162,17 @@ pub struct IVideoDeviceController {
     #[cfg(not(feature = "Media_Capture"))]
     TryGetPowerlineFrequency: usize,
 }
+impl ::windows_sys::core::Interface for IVideoDeviceController {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2572506485, data2: 11822, data3: 16568, data4: [182, 199, 248, 45, 16, 1, 50, 16] };
+}
 #[repr(C)]
 pub struct IVideoDeviceControllerGetDevicePropertyResult {
     pub base__: ::windows_sys::core::IInspectable,
     pub Status: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut VideoDeviceControllerGetDevicePropertyStatus) -> ::windows_sys::core::HRESULT,
     pub Value: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IVideoDeviceControllerGetDevicePropertyResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3319301013, data2: 28373, data3: 18320, data4: [139, 93, 14, 241, 57, 53, 208, 248] };
 }
 #[repr(C)]
 pub struct IVideoTemporalDenoisingControl {
@@ -1010,6 +1184,9 @@ pub struct IVideoTemporalDenoisingControl {
     SupportedModes: usize,
     pub Mode: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut VideoTemporalDenoisingMode) -> ::windows_sys::core::HRESULT,
     pub SetMode: unsafe extern "system" fn(this: *mut *mut Self, value: VideoTemporalDenoisingMode) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IVideoTemporalDenoisingControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2058569525, data2: 15914, data3: 18994, data4: [186, 255, 67, 88, 196, 251, 221, 87] };
 }
 #[repr(C)]
 pub struct IWhiteBalanceControl {
@@ -1029,6 +1206,9 @@ pub struct IWhiteBalanceControl {
     #[cfg(not(feature = "Foundation"))]
     SetValueAsync: usize,
 }
+impl ::windows_sys::core::Interface for IWhiteBalanceControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2015298686, data2: 29026, data3: 18888, data4: [168, 249, 148, 129, 197, 101, 54, 62] };
+}
 #[repr(C)]
 pub struct IZoomControl {
     pub base__: ::windows_sys::core::IInspectable,
@@ -1038,6 +1218,9 @@ pub struct IZoomControl {
     pub Step: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f32) -> ::windows_sys::core::HRESULT,
     pub Value: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f32) -> ::windows_sys::core::HRESULT,
     pub SetValue: unsafe extern "system" fn(this: *mut *mut Self, value: f32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IZoomControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 975047442, data2: 13018, data3: 19479, data4: [191, 215, 141, 12, 115, 200, 245, 165] };
 }
 #[repr(C)]
 pub struct IZoomControl2 {
@@ -1049,6 +1232,9 @@ pub struct IZoomControl2 {
     pub Mode: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ZoomTransitionMode) -> ::windows_sys::core::HRESULT,
     pub Configure: unsafe extern "system" fn(this: *mut *mut Self, settings: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IZoomControl2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1770274224, data2: 11929, data3: 17985, data4: [133, 41, 24, 79, 49, 157, 22, 113] };
+}
 #[repr(C)]
 pub struct IZoomSettings {
     pub base__: ::windows_sys::core::IInspectable,
@@ -1056,6 +1242,9 @@ pub struct IZoomSettings {
     pub SetMode: unsafe extern "system" fn(this: *mut *mut Self, value: ZoomTransitionMode) -> ::windows_sys::core::HRESULT,
     pub Value: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f32) -> ::windows_sys::core::HRESULT,
     pub SetValue: unsafe extern "system" fn(this: *mut *mut Self, value: f32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IZoomSettings {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1792437028, data2: 5300, data3: 19453, data4: [177, 143, 136, 254, 36, 70, 59, 82] };
 }
 pub type InfraredTorchControl = *mut ::core::ffi::c_void;
 #[doc = "*Required features: `\"Media_Devices\"`*"]

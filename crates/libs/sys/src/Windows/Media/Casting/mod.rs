@@ -86,11 +86,17 @@ pub struct ICastingConnection {
     #[cfg(not(feature = "Foundation"))]
     DisconnectAsync: usize,
 }
+impl ::windows_sys::core::Interface for ICastingConnection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3449099859, data2: 49905, data3: 17560, data4: [139, 120, 95, 180, 205, 54, 64, 221] };
+}
 #[repr(C)]
 pub struct ICastingConnectionErrorOccurredEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub ErrorStatus: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut CastingConnectionErrorStatus) -> ::windows_sys::core::HRESULT,
     pub Message: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ICastingConnectionErrorOccurredEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2818260073, data2: 34585, data3: 20224, data4: [129, 251, 150, 24, 99, 199, 154, 50] };
 }
 #[repr(C)]
 pub struct ICastingDevice {
@@ -106,6 +112,9 @@ pub struct ICastingDevice {
     #[cfg(not(feature = "Foundation"))]
     GetSupportedCastingPlaybackTypesAsync: usize,
     pub CreateCastingConnection: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ICastingDevice {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3732020355, data2: 19011, data3: 19153, data4: [166, 210, 36, 146, 167, 150, 195, 242] };
 }
 #[repr(C)]
 pub struct ICastingDevicePicker {
@@ -141,6 +150,9 @@ pub struct ICastingDevicePicker {
     ShowWithPlacement: usize,
     pub Hide: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ICastingDevicePicker {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3704854820, data2: 1425, data3: 18878, data4: [170, 203, 75, 130, 238, 117, 106, 149] };
+}
 #[repr(C)]
 pub struct ICastingDevicePickerFilter {
     pub base__: ::windows_sys::core::IInspectable,
@@ -155,10 +167,16 @@ pub struct ICastingDevicePickerFilter {
     #[cfg(not(feature = "Foundation_Collections"))]
     SupportedCastingSources: usize,
 }
+impl ::windows_sys::core::Interface for ICastingDevicePickerFilter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3196871068, data2: 46435, data3: 17236, data4: [174, 51, 159, 218, 173, 140, 98, 145] };
+}
 #[repr(C)]
 pub struct ICastingDeviceSelectedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub SelectedCastingDevice: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ICastingDeviceSelectedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3695419014, data2: 56663, data3: 19725, data4: [148, 0, 175, 69, 228, 251, 54, 99] };
 }
 #[repr(C)]
 pub struct ICastingDeviceStatics {
@@ -177,6 +195,9 @@ pub struct ICastingDeviceStatics {
     #[cfg(not(all(feature = "Devices_Enumeration", feature = "Foundation")))]
     DeviceInfoSupportsCastingAsync: usize,
 }
+impl ::windows_sys::core::Interface for ICastingDeviceStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3889780951, data2: 19731, data3: 16951, data4: [163, 101, 76, 79, 106, 76, 253, 47] };
+}
 #[repr(C)]
 pub struct ICastingSource {
     pub base__: ::windows_sys::core::IInspectable,
@@ -188,4 +209,7 @@ pub struct ICastingSource {
     pub SetPreferredSourceUri: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     SetPreferredSourceUri: usize,
+}
+impl ::windows_sys::core::Interface for ICastingSource {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4096387698, data2: 13415, data3: 18406, data4: [160, 39, 82, 41, 35, 233, 215, 39] };
 }

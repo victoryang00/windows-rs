@@ -86,17 +86,26 @@ pub struct IHttpBaseProtocolFilter {
     pub UseProxy: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub SetUseProxy: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IHttpBaseProtocolFilter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1908972297, data2: 57649, data3: 19284, data4: [165, 60, 235, 67, 255, 55, 233, 187] };
+}
 #[repr(C)]
 pub struct IHttpBaseProtocolFilter2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub MaxVersion: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::HttpVersion) -> ::windows_sys::core::HRESULT,
     pub SetMaxVersion: unsafe extern "system" fn(this: *mut *mut Self, value: super::HttpVersion) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IHttpBaseProtocolFilter2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 784531475, data2: 37927, data3: 18688, data4: [160, 23, 250, 125, 163, 181, 201, 174] };
+}
 #[repr(C)]
 pub struct IHttpBaseProtocolFilter3 {
     pub base__: ::windows_sys::core::IInspectable,
     pub CookieUsageBehavior: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut HttpCookieUsageBehavior) -> ::windows_sys::core::HRESULT,
     pub SetCookieUsageBehavior: unsafe extern "system" fn(this: *mut *mut Self, value: HttpCookieUsageBehavior) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IHttpBaseProtocolFilter3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3560918348, data2: 48450, data3: 17326, data4: [135, 23, 173, 44, 143, 75, 41, 55] };
 }
 #[repr(C)]
 pub struct IHttpBaseProtocolFilter4 {
@@ -111,6 +120,9 @@ pub struct IHttpBaseProtocolFilter4 {
     RemoveServerCustomValidationRequested: usize,
     pub ClearAuthenticationCache: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IHttpBaseProtocolFilter4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2682481871, data2: 10627, data3: 18579, data4: [148, 31, 235, 81, 140, 168, 206, 249] };
+}
 #[repr(C)]
 pub struct IHttpBaseProtocolFilter5 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -118,6 +130,9 @@ pub struct IHttpBaseProtocolFilter5 {
     pub User: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "System"))]
     User: usize,
+}
+impl ::windows_sys::core::Interface for IHttpBaseProtocolFilter5 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1097746835, data2: 12771, data3: 18454, data4: [191, 9, 224, 24, 238, 141, 193, 245] };
 }
 #[repr(C)]
 pub struct IHttpBaseProtocolFilterStatics {
@@ -127,6 +142,9 @@ pub struct IHttpBaseProtocolFilterStatics {
     #[cfg(not(feature = "System"))]
     CreateForUser: usize,
 }
+impl ::windows_sys::core::Interface for IHttpBaseProtocolFilterStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1833823756, data2: 59656, data3: 18766, data4: [181, 163, 18, 99, 201, 184, 36, 42] };
+}
 #[repr(C)]
 pub struct IHttpCacheControl {
     pub base__: ::windows_sys::core::IInspectable,
@@ -135,6 +153,9 @@ pub struct IHttpCacheControl {
     pub WriteBehavior: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut HttpCacheWriteBehavior) -> ::windows_sys::core::HRESULT,
     pub SetWriteBehavior: unsafe extern "system" fn(this: *mut *mut Self, value: HttpCacheWriteBehavior) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IHttpCacheControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3346930868, data2: 15594, data3: 20149, data4: [172, 133, 4, 225, 134, 230, 58, 183] };
+}
 #[repr(C)]
 pub struct IHttpFilter {
     pub base__: ::windows_sys::core::IInspectable,
@@ -142,6 +163,9 @@ pub struct IHttpFilter {
     pub SendRequestAsync: unsafe extern "system" fn(this: *mut *mut Self, request: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     SendRequestAsync: usize,
+}
+impl ::windows_sys::core::Interface for IHttpFilter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2764795349, data2: 2306, data3: 17310, data4: [191, 215, 225, 37, 82, 177, 101, 206] };
 }
 #[repr(C)]
 pub struct IHttpServerCustomValidationRequestedEventArgs {
@@ -168,4 +192,7 @@ pub struct IHttpServerCustomValidationRequestedEventArgs {
     pub GetDeferral: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     GetDeferral: usize,
+}
+impl ::windows_sys::core::Interface for IHttpServerCustomValidationRequestedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 828767794, data2: 59357, data3: 18615, data4: [163, 97, 147, 156, 117, 14, 99, 204] };
 }

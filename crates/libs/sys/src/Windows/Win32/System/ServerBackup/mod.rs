@@ -4,10 +4,16 @@ pub struct IWsbApplicationAsync {
     pub QueryStatus: unsafe extern "system" fn(this: *mut *mut Self, phrresult: *mut ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
     pub Abort: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWsbApplicationAsync {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 138671863, data2: 35164, data3: 17574, data4: [176, 194, 5, 165, 2, 42, 163, 161] };
+}
 #[repr(C)]
 pub struct IWsbApplicationBackupSupport {
     pub base__: ::windows_sys::core::IUnknown,
     pub CheckConsistency: unsafe extern "system" fn(this: *mut *mut Self, wszwritermetadata: ::windows_sys::core::PCWSTR, wszcomponentname: ::windows_sys::core::PCWSTR, wszcomponentlogicalpath: ::windows_sys::core::PCWSTR, cvolumes: u32, rgwszsourcevolumepath: *const ::windows_sys::core::PWSTR, rgwszsnapshotvolumepath: *const ::windows_sys::core::PWSTR, ppasync: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWsbApplicationBackupSupport {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 520041744, data2: 18983, data3: 18093, data4: [185, 224, 8, 51, 47, 15, 79, 109] };
 }
 #[repr(C)]
 pub struct IWsbApplicationRestoreSupport {
@@ -22,6 +28,9 @@ pub struct IWsbApplicationRestoreSupport {
     PostRestore: usize,
     pub OrderComponents: unsafe extern "system" fn(this: *mut *mut Self, ccomponents: u32, rgcomponentname: *const ::windows_sys::core::PWSTR, rgcomponentlogicalpaths: *const ::windows_sys::core::PWSTR, prgcomponentname: *mut *mut ::windows_sys::core::PWSTR, prgcomponentlogicalpath: *mut *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
     pub IsRollForwardSupported: unsafe extern "system" fn(this: *mut *mut Self, pbrollforwardsupported: *mut u8) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWsbApplicationRestoreSupport {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2369510200, data2: 20200, data3: 18200, data4: [133, 249, 199, 219, 196, 171, 119, 170] };
 }
 #[doc = "*Required features: `\"Win32_System_ServerBackup\"`*"]
 pub const WSBAPP_ASYNC_IN_PROGRESS: ::windows_sys::core::HRESULT = 7995396i32;

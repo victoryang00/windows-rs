@@ -17,3 +17,6 @@ pub struct ICompositorController {
     #[cfg(not(feature = "Foundation"))]
     RemoveCommitNeeded: usize,
 }
+impl ::windows_sys::core::Interface for ICompositorController {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 762704730, data2: 28839, data3: 17301, data4: [186, 45, 206, 240, 177, 131, 153, 249] };
+}

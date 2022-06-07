@@ -10,6 +10,9 @@ pub struct IDisplayDeviceInterop {
     #[cfg(not(feature = "Win32_Foundation"))]
     OpenSharedHandle: usize,
 }
+impl ::windows_sys::core::Interface for IDisplayDeviceInterop {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1681097560, data2: 13930, data3: 18203, data4: [189, 86, 221, 142, 244, 142, 67, 155] };
+}
 #[repr(C)]
 pub struct IDisplayPathInterop {
     pub base__: ::windows_sys::core::IUnknown,
@@ -18,4 +21,7 @@ pub struct IDisplayPathInterop {
     #[cfg(not(feature = "Win32_Foundation"))]
     CreateSourcePresentationHandle: usize,
     pub GetSourceId: unsafe extern "system" fn(this: *mut *mut Self, psourceid: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDisplayPathInterop {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2797224453, data2: 58782, data3: 20081, data4: [178, 91, 78, 67, 109, 33, 238, 61] };
 }

@@ -16,6 +16,9 @@ pub struct ILanguageFont {
     FontStyle: usize,
     pub ScaleFactor: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f64) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ILanguageFont {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2972605498, data2: 46957, data3: 17819, data4: [190, 235, 144, 17, 81, 205, 119, 209] };
+}
 #[repr(C)]
 pub struct ILanguageFontGroup {
     pub base__: ::windows_sys::core::IInspectable,
@@ -31,10 +34,16 @@ pub struct ILanguageFontGroup {
     pub DocumentAlternate1Font: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub DocumentAlternate2Font: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ILanguageFontGroup {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4080697283, data2: 14940, data3: 19178, data4: [185, 255, 179, 159, 178, 66, 247, 246] };
+}
 #[repr(C)]
 pub struct ILanguageFontGroupFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub CreateLanguageFontGroup: unsafe extern "system" fn(this: *mut *mut Self, languagetag: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ILanguageFontGroupFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4239305831, data2: 20087, data3: 18887, data4: [184, 86, 221, 233, 52, 252, 115, 91] };
 }
 pub type LanguageFont = *mut ::core::ffi::c_void;
 pub type LanguageFontGroup = *mut ::core::ffi::c_void;

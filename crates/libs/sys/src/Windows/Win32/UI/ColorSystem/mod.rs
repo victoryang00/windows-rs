@@ -998,6 +998,9 @@ pub struct IDeviceModelPlugIn {
     pub GetNeutralAxisSize: unsafe extern "system" fn(this: *mut *mut Self, pccolors: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetNeutralAxis: unsafe extern "system" fn(this: *mut *mut Self, ccolors: u32, pxyzcolors: *mut XYZColorF) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDeviceModelPlugIn {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 483800181, data2: 1988, data3: 18174, data4: [169, 3, 214, 85, 49, 109, 17, 253] };
+}
 #[repr(C)]
 pub struct IGamutMapModelPlugIn {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1006,6 +1009,9 @@ pub struct IGamutMapModelPlugIn {
     #[cfg(not(feature = "Win32_Foundation"))]
     Initialize: usize,
     pub SourceToDestinationAppearanceColors: unsafe extern "system" fn(this: *mut *mut Self, ccolors: u32, pinputcolors: *const JChColorF, poutputcolors: *mut JChColorF) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IGamutMapModelPlugIn {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 769130773, data2: 44318, data3: 16886, data4: [162, 25, 164, 244, 181, 131, 209, 249] };
 }
 #[doc = "*Required features: `\"Win32_UI_ColorSystem\"`*"]
 pub const INDEX_DONT_CARE: u32 = 0u32;

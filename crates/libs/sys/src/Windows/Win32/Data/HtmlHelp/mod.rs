@@ -737,6 +737,9 @@ pub struct IITDatabase {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetObjectPersistence: usize,
 }
+impl ::windows_sys::core::Interface for IITDatabase {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2409682338, data2: 57055, data3: 4560, data4: [154, 97, 0, 192, 79, 182, 139, 247] };
+}
 #[repr(C)]
 pub struct IITGroup(pub u8);
 #[cfg(feature = "Win32_System_Com")]
@@ -783,6 +786,10 @@ pub struct IITPropList {
     pub LoadFromMem: unsafe extern "system" fn(this: *mut *mut Self, lpvdata: *mut ::core::ffi::c_void, dwbufsize: u32) -> ::windows_sys::core::HRESULT,
     pub SaveToMem: unsafe extern "system" fn(this: *mut *mut Self, lpvdata: *mut ::core::ffi::c_void, dwbufsize: u32) -> ::windows_sys::core::HRESULT,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IITPropList {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 524303281, data2: 39319, data3: 4560, data4: [168, 80, 0, 170, 0, 108, 125, 1] };
+}
 #[repr(C)]
 pub struct IITQuery(pub u8);
 #[repr(C)]
@@ -825,6 +832,9 @@ pub struct IITResultSet {
     pub GetRowStatus: unsafe extern "system" fn(this: *mut *mut Self, lrowfirst: i32, crows: i32, lprowstatus: *mut ROWSTATUS) -> ::windows_sys::core::HRESULT,
     pub GetColumnStatus: unsafe extern "system" fn(this: *mut *mut Self, lpcolstatus: *mut COLUMNSTATUS) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IITResultSet {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1001987393, data2: 39307, data3: 4560, data4: [168, 80, 0, 170, 0, 108, 125, 1] };
+}
 #[repr(C)]
 pub struct IITStopWordList(pub u8);
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
@@ -851,11 +861,17 @@ pub struct IITWordWheel {
     pub GetData: unsafe extern "system" fn(this: *mut *mut Self, lentry: i32, lpitresult: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetDataColumns: unsafe extern "system" fn(this: *mut *mut Self, prs: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IITWordWheel {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2409682340, data2: 57055, data3: 4560, data4: [154, 97, 0, 192, 79, 182, 139, 247] };
+}
 #[repr(C)]
 pub struct IStemSink {
     pub base__: ::windows_sys::core::IUnknown,
     pub PutAltWord: unsafe extern "system" fn(this: *mut *mut Self, pwcinbuf: ::windows_sys::core::PCWSTR, cwc: u32) -> ::windows_sys::core::HRESULT,
     pub PutWord: unsafe extern "system" fn(this: *mut *mut Self, pwcinbuf: ::windows_sys::core::PCWSTR, cwc: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IStemSink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4269261616, data2: 32578, data3: 4558, data4: [190, 87, 0, 170, 0, 81, 254, 32] };
 }
 #[repr(C)]
 pub struct IStemmerConfig {
@@ -868,6 +884,9 @@ pub struct IStemmerConfig {
     pub LoadExternalStemmerData: unsafe extern "system" fn(this: *mut *mut Self, pstream: *mut ::core::ffi::c_void, dwextdatatype: u32) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     LoadExternalStemmerData: usize,
+}
+impl ::windows_sys::core::Interface for IStemmerConfig {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2409682343, data2: 57055, data3: 4560, data4: [154, 97, 0, 192, 79, 182, 139, 247] };
 }
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
 pub const ITWW_CBKEY_MAX: u32 = 1024u32;
@@ -900,6 +919,9 @@ pub struct IWordBreakerConfig {
     pub GetWordStemmer: unsafe extern "system" fn(this: *mut *mut Self, ppstemmer: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Search"))]
     GetWordStemmer: usize,
+}
+impl ::windows_sys::core::Interface for IWordBreakerConfig {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2409682342, data2: 57055, data3: 4560, data4: [154, 97, 0, 192, 79, 182, 139, 247] };
 }
 #[doc = "*Required features: `\"Win32_Data_HtmlHelp\"`*"]
 pub const MAX_COLUMNS: u32 = 256u32;

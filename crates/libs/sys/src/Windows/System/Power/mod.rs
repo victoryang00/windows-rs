@@ -83,6 +83,10 @@ pub struct IBackgroundEnergyManagerStatics {
     RemoveRecentEnergyUsageReturnedToLow: usize,
 }
 #[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for IBackgroundEnergyManagerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3004571029, data2: 4480, data3: 17270, data4: [150, 225, 64, 149, 86, 129, 71, 206] };
+}
+#[cfg(feature = "deprecated")]
 #[repr(C)]
 pub struct IForegroundEnergyManagerStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -126,6 +130,10 @@ pub struct IForegroundEnergyManagerStatics {
     pub RemoveRecentEnergyUsageReturnedToLow: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
     RemoveRecentEnergyUsageReturnedToLow: usize,
+}
+#[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for IForegroundEnergyManagerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2683857010, data2: 58999, data3: 18452, data4: [154, 32, 83, 55, 202, 115, 43, 152] };
 }
 #[repr(C)]
 pub struct IPowerManagerStatics {
@@ -178,6 +186,9 @@ pub struct IPowerManagerStatics {
     pub RemoveRemainingDischargeTimeChanged: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     RemoveRemainingDischargeTimeChanged: usize,
+}
+impl ::windows_sys::core::Interface for IPowerManagerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 328499805, data2: 25294, data3: 17252, data4: [152, 213, 170, 40, 199, 251, 209, 91] };
 }
 #[doc = "*Required features: `\"System_Power\"`*"]
 #[repr(transparent)]

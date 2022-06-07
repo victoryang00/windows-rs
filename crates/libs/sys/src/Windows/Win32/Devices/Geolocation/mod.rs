@@ -1267,6 +1267,9 @@ pub struct ICivicAddressReport {
     GetCountryRegion: usize,
     pub GetDetailLevel: unsafe extern "system" fn(this: *mut *mut Self, pdetaillevel: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ICivicAddressReport {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3232866160, data2: 19167, data3: 17501, data4: [135, 242, 202, 216, 253, 113, 23, 146] };
+}
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ICivicAddressReportFactory {
@@ -1276,11 +1279,18 @@ pub struct ICivicAddressReportFactory {
     #[cfg(not(feature = "Win32_System_Com"))]
     CivicAddressReport: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICivicAddressReportFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3212262291, data2: 50767, data3: 19438, data4: [190, 178, 103, 192, 184, 223, 102, 224] };
+}
 #[repr(C)]
 pub struct IDefaultLocation {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetReport: unsafe extern "system" fn(this: *mut *mut Self, reporttype: *const ::windows_sys::core::GUID, plocationreport: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetReport: unsafe extern "system" fn(this: *mut *mut Self, reporttype: *const ::windows_sys::core::GUID, pplocationreport: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDefaultLocation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2790979454, data2: 38554, data3: 18990, data4: [138, 202, 51, 187, 124, 187, 18, 53] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1314,6 +1324,10 @@ pub struct IDispCivicAddressReport {
     pub Timestamp: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut f64) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IDispCivicAddressReport {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 385817140, data2: 40496, data3: 17091, data4: [180, 77, 226, 37, 19, 181, 118, 122] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IDispLatLongReport {
     pub base__: super::super::System::Com::IDispatch,
@@ -1324,6 +1338,10 @@ pub struct IDispLatLongReport {
     pub AltitudeError: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut f64) -> ::windows_sys::core::HRESULT,
     pub Timestamp: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut f64) -> ::windows_sys::core::HRESULT,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IDispLatLongReport {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2330142499, data2: 14491, data3: 18961, data4: [153, 87, 91, 221, 72, 252, 150, 23] };
+}
 #[repr(C)]
 pub struct ILatLongReport {
     pub base__: ILocationReport,
@@ -1333,6 +1351,9 @@ pub struct ILatLongReport {
     pub GetAltitude: unsafe extern "system" fn(this: *mut *mut Self, paltitude: *mut f64) -> ::windows_sys::core::HRESULT,
     pub GetAltitudeError: unsafe extern "system" fn(this: *mut *mut Self, paltitudeerror: *mut f64) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ILatLongReport {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2146271341, data2: 3832, data3: 20231, data4: [128, 172, 54, 160, 190, 174, 49, 52] };
+}
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ILatLongReportFactory {
@@ -1341,6 +1362,10 @@ pub struct ILatLongReportFactory {
     pub LatLongReport: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     LatLongReport: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ILatLongReportFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1057490123, data2: 45332, data3: 17533, data4: [131, 221, 57, 1, 116, 235, 176, 130] };
 }
 #[repr(C)]
 pub struct ILocation {
@@ -1364,17 +1389,26 @@ pub struct ILocation {
     #[cfg(not(feature = "Win32_Foundation"))]
     RequestPermissions: usize,
 }
+impl ::windows_sys::core::Interface for ILocation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2871971433, data2: 22233, data3: 20264, data4: [181, 37, 222, 27, 14, 228, 66, 55] };
+}
 #[repr(C)]
 pub struct ILocationEvents {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnLocationChanged: unsafe extern "system" fn(this: *mut *mut Self, reporttype: *const ::windows_sys::core::GUID, plocationreport: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub OnStatusChanged: unsafe extern "system" fn(this: *mut *mut Self, reporttype: *const ::windows_sys::core::GUID, newstatus: LOCATION_REPORT_STATUS) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ILocationEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3403688895, data2: 31115, data3: 17672, data4: [162, 7, 53, 167, 144, 109, 199, 61] };
+}
 #[repr(C)]
 pub struct ILocationPower {
     pub base__: ::windows_sys::core::IUnknown,
     pub Connect: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Disconnect: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ILocationPower {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 423524137, data2: 43883, data3: 19218, data4: [134, 23, 117, 150, 225, 187, 25, 28] };
 }
 #[repr(C)]
 pub struct ILocationReport {
@@ -1389,6 +1423,9 @@ pub struct ILocationReport {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem")))]
     GetValue: usize,
 }
+impl ::windows_sys::core::Interface for ILocationReport {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3367499758, data2: 30160, data3: 19897, data4: [182, 45, 122, 15, 54, 156, 164, 86] };
+}
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ILocationReportFactory {
@@ -1401,6 +1438,10 @@ pub struct ILocationReportFactory {
     pub DesiredAccuracy: unsafe extern "system" fn(this: *mut *mut Self, pdesiredaccuracy: *mut u32) -> ::windows_sys::core::HRESULT,
     pub SetDesiredAccuracy: unsafe extern "system" fn(this: *mut *mut Self, desiredaccuracy: u32) -> ::windows_sys::core::HRESULT,
     pub RequestPermissions: unsafe extern "system" fn(this: *mut *mut Self, hwnd: *const u32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ILocationReportFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 766427938, data2: 37042, data3: 18404, data4: [187, 8, 13, 168, 65, 147, 90, 107] };
 }
 #[doc = "*Required features: `\"Win32_Devices_Geolocation\"`*"]
 pub const IOCTL_GNSS_CONFIG_SUPL_CERT: u32 = 2228488u32;
@@ -1487,7 +1528,15 @@ pub struct _ICivicAddressReportFactoryEvents {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for _ICivicAddressReportFactoryEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3378526719, data2: 29420, data3: 17943, data4: [137, 189, 132, 216, 139, 237, 199, 34] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct _ILatLongReportFactoryEvents {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for _ILatLongReportFactoryEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 384724151, data2: 43836, data3: 16971, data4: [132, 159, 38, 155, 229, 81, 252, 188] };
 }

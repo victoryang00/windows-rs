@@ -635,6 +635,10 @@ pub struct IADsTSUserEx {
     #[cfg(not(feature = "Win32_Foundation"))]
     SetTerminalServicesInitialProgram: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IADsTSUserEx {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3297971833, data2: 10633, data3: 17506, data4: [138, 96, 47, 207, 47, 41, 85, 239] };
+}
 #[repr(C)]
 pub struct IAudioDeviceEndpoint {
     pub base__: ::windows_sys::core::IUnknown,
@@ -648,6 +652,9 @@ pub struct IAudioDeviceEndpoint {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetEventDrivenCapable: usize,
     pub WriteExclusiveModeParametersToSharedMemory: unsafe extern "system" fn(this: *mut *mut Self, htargetprocess: usize, hnsperiod: i64, hnsbufferduration: i64, u32latencycoefficient: u32, pu32sharedmemorysize: *mut u32, phsharedmemory: *mut usize) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAudioDeviceEndpoint {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3566546778, data2: 41138, data3: 19652, data4: [139, 130, 147, 88, 72, 141, 216, 172] };
 }
 #[repr(C)]
 pub struct IAudioEndpoint {
@@ -664,12 +671,18 @@ pub struct IAudioEndpoint {
     #[cfg(not(feature = "Win32_Foundation"))]
     SetEventHandle: usize,
 }
+impl ::windows_sys::core::Interface for IAudioEndpoint {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 816420117, data2: 5415, data3: 17489, data4: [175, 159, 0, 197, 240, 35, 77, 175] };
+}
 #[repr(C)]
 pub struct IAudioEndpointControl {
     pub base__: ::windows_sys::core::IUnknown,
     pub Start: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Stop: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAudioEndpointControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3330586410, data2: 28148, data3: 18292, data4: [189, 249, 118, 183, 117, 9, 182, 83] };
 }
 #[repr(C)]
 pub struct IAudioEndpointRT {
@@ -678,6 +691,9 @@ pub struct IAudioEndpointRT {
     pub ProcessingComplete: unsafe extern "system" fn(this: *mut *mut Self),
     pub SetPinInactive: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub SetPinActive: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAudioEndpointRT {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3755081823, data2: 42725, data3: 19769, data4: [162, 101, 147, 154, 218, 159, 187, 77] };
 }
 #[repr(C)]
 pub struct IAudioInputEndpointRT {
@@ -689,6 +705,9 @@ pub struct IAudioInputEndpointRT {
     pub ReleaseInputDataPointer: unsafe extern "system" fn(this: *mut *mut Self, u32framecount: u32, pdatapointer: usize),
     pub PulseEndpoint: unsafe extern "system" fn(this: *mut *mut Self),
 }
+impl ::windows_sys::core::Interface for IAudioInputEndpointRT {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2150017889, data2: 37554, data3: 17345, data4: [161, 223, 92, 55, 235, 208, 141, 130] };
+}
 #[repr(C)]
 pub struct IAudioOutputEndpointRT {
     pub base__: ::windows_sys::core::IUnknown,
@@ -698,6 +717,9 @@ pub struct IAudioOutputEndpointRT {
     #[cfg(not(feature = "Win32_Media_Audio_Apo"))]
     ReleaseOutputDataPointer: usize,
     pub PulseEndpoint: unsafe extern "system" fn(this: *mut *mut Self),
+}
+impl ::windows_sys::core::Interface for IAudioOutputEndpointRT {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2410219236, data2: 49948, data3: 20017, data4: [147, 46, 25, 166, 99, 133, 233, 170] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -733,6 +755,10 @@ pub struct IRemoteDesktopClient {
     detachEvent: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IRemoteDesktopClient {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1473402472, data2: 25178, data3: 18693, data4: [190, 78, 48, 76, 170, 19, 248, 156] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IRemoteDesktopClientActions {
     pub base__: super::Com::IDispatch,
@@ -743,6 +769,10 @@ pub struct IRemoteDesktopClientActions {
     pub GetSnapshot: unsafe extern "system" fn(this: *mut *mut Self, snapshotencoding: SnapshotEncodingType, snapshotformat: SnapshotFormatType, snapshotwidth: u32, snapshotheight: u32, snapshotdata: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetSnapshot: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IRemoteDesktopClientActions {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2102705230, data2: 4136, data3: 17876, data4: [139, 10, 185, 182, 191, 251, 161, 118] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -766,6 +796,10 @@ pub struct IRemoteDesktopClientSettings {
     SetRdpProperty: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IRemoteDesktopClientSettings {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1218507431, data2: 10003, data3: 17183, data4: [187, 172, 111, 69, 88, 231, 214, 77] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IRemoteDesktopClientTouchPointer {
     pub base__: super::Com::IDispatch,
@@ -776,10 +810,17 @@ pub struct IRemoteDesktopClientTouchPointer {
     pub SetPointerSpeed: unsafe extern "system" fn(this: *mut *mut Self, pointerspeed: u32) -> ::windows_sys::core::HRESULT,
     pub PointerSpeed: unsafe extern "system" fn(this: *mut *mut Self, pointerspeed: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IRemoteDesktopClientTouchPointer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 638501421, data2: 36028, data3: 17589, data4: [158, 136, 42, 55, 246, 201, 58, 233] };
+}
 #[repr(C)]
 pub struct IRemoteSystemAdditionalInfoProvider {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetAdditionalInfo: unsafe extern "system" fn(this: *mut *mut Self, deduplicationid: *mut ::windows_sys::core::HSTRING, riid: *const ::windows_sys::core::GUID, mapview: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IRemoteSystemAdditionalInfoProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4004134239, data2: 60515, data3: 19751, data4: [175, 56, 232, 107, 29, 114, 146, 203] };
 }
 #[repr(C)]
 pub struct ITSGAccountingEngine {
@@ -788,6 +829,9 @@ pub struct ITSGAccountingEngine {
     pub DoAccounting: unsafe extern "system" fn(this: *mut *mut Self, accountingdatatype: AAAccountingDataType, accountingdata: ::core::mem::ManuallyDrop<AAAccountingData>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     DoAccounting: usize,
+}
+impl ::windows_sys::core::Interface for ITSGAccountingEngine {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1289920713, data2: 59508, data3: 20250, data4: [134, 244, 6, 187, 185, 17, 83, 56] };
 }
 #[repr(C)]
 pub struct ITSGAuthenticateUserSink {
@@ -800,16 +844,25 @@ pub struct ITSGAuthenticateUserSink {
     pub ReauthenticateUser: unsafe extern "system" fn(this: *mut *mut Self, context: usize) -> ::windows_sys::core::HRESULT,
     pub DisconnectUser: unsafe extern "system" fn(this: *mut *mut Self, context: usize) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ITSGAuthenticateUserSink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 742272627, data2: 42882, data3: 18425, data4: [141, 251, 119, 238, 30, 210, 122, 3] };
+}
 #[repr(C)]
 pub struct ITSGAuthenticationEngine {
     pub base__: ::windows_sys::core::IUnknown,
     pub AuthenticateUser: unsafe extern "system" fn(this: *mut *mut Self, mainsessionid: ::windows_sys::core::GUID, cookiedata: *const u8, numcookiebytes: u32, context: usize, psink: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub CancelAuthentication: unsafe extern "system" fn(this: *mut *mut Self, mainsessionid: ::windows_sys::core::GUID, context: usize) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ITSGAuthenticationEngine {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2665735615, data2: 1195, data3: 18065, data4: [153, 140, 215, 246, 34, 50, 26, 86] };
+}
 #[repr(C)]
 pub struct ITSGAuthorizeConnectionSink {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnConnectionAuthorized: unsafe extern "system" fn(this: *mut *mut Self, hrin: ::windows_sys::core::HRESULT, mainsessionid: ::windows_sys::core::GUID, cbsohresponse: u32, pbsohresponse: *const u8, idletimeout: u32, sessiontimeout: u32, sessiontimeoutaction: SESSION_TIMEOUT_ACTION_TYPE, trustclass: AATrustClassID, policyattributes: *const u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ITSGAuthorizeConnectionSink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3263090227, data2: 30593, data3: 17176, data4: [152, 239, 28, 242, 218, 123, 112, 5] };
 }
 #[repr(C)]
 pub struct ITSGAuthorizeResourceSink {
@@ -818,6 +871,9 @@ pub struct ITSGAuthorizeResourceSink {
     pub OnChannelAuthorized: unsafe extern "system" fn(this: *mut *mut Self, hrin: ::windows_sys::core::HRESULT, mainsessionid: ::windows_sys::core::GUID, subsessionid: i32, allowedresourcenames: *const super::super::Foundation::BSTR, numallowedresourcenames: u32, failedresourcenames: *const super::super::Foundation::BSTR, numfailedresourcenames: u32) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     OnChannelAuthorized: usize,
+}
+impl ::windows_sys::core::Interface for ITSGAuthorizeResourceSink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4275961044, data2: 64018, data3: 17461, data4: [174, 85, 122, 209, 169, 119, 154, 247] };
 }
 #[repr(C)]
 pub struct ITSGPolicyEngine {
@@ -836,11 +892,17 @@ pub struct ITSGPolicyEngine {
     #[cfg(not(feature = "Win32_Foundation"))]
     IsQuarantineEnabled: usize,
 }
+impl ::windows_sys::core::Interface for ITSGPolicyEngine {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2344767240, data2: 25123, data3: 17140, data4: [165, 180, 142, 55, 205, 19, 91, 189] };
+}
 #[repr(C)]
 pub struct ITsSbBaseNotifySink {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnError: unsafe extern "system" fn(this: *mut *mut Self, hrerror: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
     pub OnReportStatus: unsafe extern "system" fn(this: *mut *mut Self, messagetype: CLIENT_MESSAGE_TYPE, messageid: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ITsSbBaseNotifySink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2156553527, data2: 4738, data3: 18825, data4: [158, 9, 244, 57, 56, 183, 23, 34] };
 }
 #[repr(C)]
 pub struct ITsSbClientConnection {
@@ -888,10 +950,17 @@ pub struct ITsSbClientConnection {
     pub UserSidString: unsafe extern "system" fn(this: *mut *mut Self, pszusersidstring: *mut *mut i8) -> ::windows_sys::core::HRESULT,
     pub GetDisconnectedSession: unsafe extern "system" fn(this: *mut *mut Self, ppsession: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ITsSbClientConnection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 411399321, data2: 44385, data3: 19227, data4: [183, 223, 203, 205, 65, 251, 131, 56] };
+}
 #[cfg(feature = "Win32_System_Com_StructuredStorage")]
 #[repr(C)]
 pub struct ITsSbClientConnectionPropertySet {
     pub base__: ITsSbPropertySet,
+}
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+impl ::windows_sys::core::Interface for ITsSbClientConnectionPropertySet {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3843659184, data2: 18134, data3: 4573, data4: [170, 33, 206, 220, 85, 216, 149, 147] };
 }
 #[repr(C)]
 pub struct ITsSbEnvironment {
@@ -910,10 +979,17 @@ pub struct ITsSbEnvironment {
     #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
     SetEnvironmentPropertySet: usize,
 }
+impl ::windows_sys::core::Interface for ITsSbEnvironment {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2357721079, data2: 48977, data3: 19036, data4: [135, 191, 142, 148, 251, 110, 34, 86] };
+}
 #[cfg(feature = "Win32_System_Com_StructuredStorage")]
 #[repr(C)]
 pub struct ITsSbEnvironmentPropertySet {
     pub base__: ITsSbPropertySet,
+}
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+impl ::windows_sys::core::Interface for ITsSbEnvironmentPropertySet {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3503406974, data2: 31439, data3: 4573, data4: [162, 67, 229, 17, 86, 216, 149, 147] };
 }
 #[repr(C)]
 pub struct ITsSbFilterPluginStore {
@@ -931,6 +1007,9 @@ pub struct ITsSbFilterPluginStore {
     #[cfg(not(feature = "Win32_Foundation"))]
     DeleteProperties: usize,
 }
+impl ::windows_sys::core::Interface for ITsSbFilterPluginStore {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2243185423, data2: 60792, data3: 16703, data4: [151, 2, 250, 109, 59, 94, 231, 85] };
+}
 #[repr(C)]
 pub struct ITsSbGenericNotifySink {
     pub base__: ::windows_sys::core::IUnknown,
@@ -939,6 +1018,9 @@ pub struct ITsSbGenericNotifySink {
     pub GetWaitTimeout: unsafe extern "system" fn(this: *mut *mut Self, pfttimeout: *mut super::super::Foundation::FILETIME) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetWaitTimeout: usize,
+}
+impl ::windows_sys::core::Interface for ITsSbGenericNotifySink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1280085071, data2: 12299, data3: 18093, data4: [145, 100, 132, 104, 167, 231, 86, 140] };
 }
 #[repr(C)]
 pub struct ITsSbGlobalStore {
@@ -972,6 +1054,9 @@ pub struct ITsSbGlobalStore {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     GetFarmProperty: usize,
 }
+impl ::windows_sys::core::Interface for ITsSbGlobalStore {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2595622779, data2: 48498, data3: 19871, data4: [138, 58, 160, 234, 85, 116, 230, 53] };
+}
 #[repr(C)]
 pub struct ITsSbLoadBalanceResult {
     pub base__: ::windows_sys::core::IUnknown,
@@ -980,10 +1065,16 @@ pub struct ITsSbLoadBalanceResult {
     #[cfg(not(feature = "Win32_Foundation"))]
     TargetName: usize,
 }
+impl ::windows_sys::core::Interface for ITsSbLoadBalanceResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 620607404, data2: 65190, data3: 4572, data4: [150, 114, 154, 137, 86, 216, 149, 147] };
+}
 #[repr(C)]
 pub struct ITsSbLoadBalancing {
     pub base__: ITsSbPlugin,
     pub GetMostSuitableTarget: unsafe extern "system" fn(this: *mut *mut Self, pconnection: *mut ::core::ffi::c_void, plbsink: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ITsSbLoadBalancing {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 607294068, data2: 40631, data3: 4572, data4: [174, 152, 242, 180, 86, 216, 149, 147] };
 }
 #[repr(C)]
 pub struct ITsSbLoadBalancingNotifySink {
@@ -993,25 +1084,40 @@ pub struct ITsSbLoadBalancingNotifySink {
     #[cfg(not(feature = "Win32_Foundation"))]
     OnGetMostSuitableTarget: usize,
 }
+impl ::windows_sys::core::Interface for ITsSbLoadBalancingNotifySink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1602912919, data2: 12868, data3: 20074, data4: [149, 138, 39, 200, 34, 193, 225, 65] };
+}
 #[repr(C)]
 pub struct ITsSbOrchestration {
     pub base__: ITsSbPlugin,
     pub PrepareTargetForConnect: unsafe extern "system" fn(this: *mut *mut Self, pconnection: *mut ::core::ffi::c_void, porchestrationnotifysink: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ITsSbOrchestration {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1694241138, data2: 40631, data3: 4572, data4: [139, 0, 58, 186, 86, 216, 149, 147] };
 }
 #[repr(C)]
 pub struct ITsSbOrchestrationNotifySink {
     pub base__: ITsSbBaseNotifySink,
     pub OnReadyToConnect: unsafe extern "system" fn(this: *mut *mut Self, ptarget: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ITsSbOrchestrationNotifySink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 918781281, data2: 37483, data3: 17455, data4: [188, 165, 17, 140, 109, 80, 220, 242] };
+}
 #[repr(C)]
 pub struct ITsSbPlacement {
     pub base__: ITsSbPlugin,
     pub QueryEnvironmentForTarget: unsafe extern "system" fn(this: *mut *mut Self, pconnection: *mut ::core::ffi::c_void, pplacementsink: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ITsSbPlacement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3668831839, data2: 27954, data3: 18446, data4: [158, 54, 221, 171, 35, 41, 240, 109] };
+}
 #[repr(C)]
 pub struct ITsSbPlacementNotifySink {
     pub base__: ITsSbBaseNotifySink,
     pub OnQueryEnvironmentCompleted: unsafe extern "system" fn(this: *mut *mut Self, penvironment: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ITsSbPlacementNotifySink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1755366535, data2: 11087, data3: 18114, data4: [148, 161, 108, 230, 133, 24, 54, 52] };
 }
 #[repr(C)]
 pub struct ITsSbPlugin {
@@ -1022,11 +1128,17 @@ pub struct ITsSbPlugin {
     Initialize: usize,
     pub Terminate: unsafe extern "system" fn(this: *mut *mut Self, hr: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ITsSbPlugin {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1221424134, data2: 51883, data3: 18015, data4: [165, 214, 186, 168, 99, 185, 234, 79] };
+}
 #[repr(C)]
 pub struct ITsSbPluginNotifySink {
     pub base__: ITsSbBaseNotifySink,
     pub OnInitialized: unsafe extern "system" fn(this: *mut *mut Self, hr: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
     pub OnTerminated: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ITsSbPluginNotifySink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1155523339, data2: 50110, data3: 16629, data4: [191, 130, 122, 149, 187, 121, 90, 223] };
 }
 #[cfg(feature = "Win32_System_Com_StructuredStorage")]
 #[repr(C)]
@@ -1034,9 +1146,17 @@ pub struct ITsSbPluginPropertySet {
     pub base__: ITsSbPropertySet,
 }
 #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+impl ::windows_sys::core::Interface for ITsSbPluginPropertySet {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2499833396, data2: 32511, data3: 19308, data4: [187, 64, 73, 164, 253, 167, 206, 166] };
+}
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 #[repr(C)]
 pub struct ITsSbPropertySet {
     pub base__: super::Com::StructuredStorage::IPropertyBag,
+}
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+impl ::windows_sys::core::Interface for ITsSbPropertySet {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1543655793, data2: 47902, data3: 19375, data4: [162, 18, 109, 94, 151, 116, 179, 59] };
 }
 #[repr(C)]
 pub struct ITsSbProvider {
@@ -1081,6 +1201,9 @@ pub struct ITsSbProvider {
     #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
     CreateEnvironmentPropertySetObject: usize,
 }
+impl ::windows_sys::core::Interface for ITsSbProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2275674511, data2: 28027, data3: 17629, data4: [188, 23, 140, 228, 78, 55, 13, 82] };
+}
 #[repr(C)]
 pub struct ITsSbProvisioning {
     pub base__: ITsSbPlugin,
@@ -1101,6 +1224,9 @@ pub struct ITsSbProvisioning {
     #[cfg(not(feature = "Win32_Foundation"))]
     CancelJob: usize,
 }
+impl ::windows_sys::core::Interface for ITsSbProvisioning {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 795807163, data2: 40527, data3: 17963, data4: [156, 63, 252, 204, 61, 203, 98, 50] };
+}
 #[repr(C)]
 pub struct ITsSbProvisioningPluginNotifySink {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1120,12 +1246,18 @@ pub struct ITsSbProvisioningPluginNotifySink {
     #[cfg(not(feature = "Win32_Foundation"))]
     OnVirtualMachineHostStatusChanged: usize,
 }
+impl ::windows_sys::core::Interface for ITsSbProvisioningPluginNotifySink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2896722574, data2: 33163, data3: 17793, data4: [160, 50, 73, 195, 223, 185, 199, 1] };
+}
 #[repr(C)]
 pub struct ITsSbResourceNotification {
     pub base__: ::windows_sys::core::IUnknown,
     pub NotifySessionChange: unsafe extern "system" fn(this: *mut *mut Self, changetype: TSSESSION_STATE, psession: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub NotifyTargetChange: unsafe extern "system" fn(this: *mut *mut Self, targetchangetype: u32, ptarget: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub NotifyClientConnectionStateChange: unsafe extern "system" fn(this: *mut *mut Self, changetype: CONNECTION_CHANGE_NOTIFICATION, pconnection: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ITsSbResourceNotification {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1708386394, data2: 50075, data3: 4572, data4: [185, 45, 60, 210, 85, 216, 149, 147] };
 }
 #[repr(C)]
 pub struct ITsSbResourceNotificationEx {
@@ -1143,9 +1275,15 @@ pub struct ITsSbResourceNotificationEx {
     #[cfg(not(feature = "Win32_Foundation"))]
     NotifyClientConnectionStateChangeEx: usize,
 }
+impl ::windows_sys::core::Interface for ITsSbResourceNotificationEx {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2829352926, data2: 51857, data3: 17618, data4: [184, 151, 58, 162, 138, 67, 178, 183] };
+}
 #[repr(C)]
 pub struct ITsSbResourcePlugin {
     pub base__: ITsSbPlugin,
+}
+impl ::windows_sys::core::Interface for ITsSbResourcePlugin {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3935155244, data2: 39149, data3: 17717, data4: [168, 139, 42, 22, 79, 53, 73, 15] };
 }
 #[repr(C)]
 pub struct ITsSbResourcePluginStore {
@@ -1242,11 +1380,17 @@ pub struct ITsSbResourcePluginStore {
     #[cfg(not(feature = "Win32_Foundation"))]
     SetServerDrainMode: usize,
 }
+impl ::windows_sys::core::Interface for ITsSbResourcePluginStore {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1547236959, data2: 48369, data3: 16438, data4: [166, 191, 158, 60, 204, 174, 11, 99] };
+}
 #[repr(C)]
 pub struct ITsSbServiceNotification {
     pub base__: ::windows_sys::core::IUnknown,
     pub NotifyServiceFailure: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub NotifyServiceSuccess: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ITsSbServiceNotification {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2261477550, data2: 34528, data3: 20311, data4: [138, 100, 187, 116, 6, 188, 85, 80] };
 }
 #[repr(C)]
 pub struct ITsSbSession {
@@ -1298,6 +1442,9 @@ pub struct ITsSbSession {
     pub SetClientDisplay: unsafe extern "system" fn(this: *mut *mut Self, pclientdisplay: CLIENT_DISPLAY) -> ::windows_sys::core::HRESULT,
     pub ProtocolType: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut u32) -> ::windows_sys::core::HRESULT,
     pub SetProtocolType: unsafe extern "system" fn(this: *mut *mut Self, val: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ITsSbSession {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3562252999, data2: 45528, data3: 19550, data4: [186, 52, 154, 251, 76, 140, 85, 16] };
 }
 #[repr(C)]
 pub struct ITsSbTarget {
@@ -1358,10 +1505,17 @@ pub struct ITsSbTarget {
     pub NumPendingConnections: unsafe extern "system" fn(this: *mut *mut Self, pnumpendingconnections: *mut u32) -> ::windows_sys::core::HRESULT,
     pub TargetLoad: unsafe extern "system" fn(this: *mut *mut Self, ptargetload: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ITsSbTarget {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 375484108, data2: 10029, data3: 16669, data4: [179, 36, 18, 104, 147, 3, 56, 86] };
+}
 #[cfg(feature = "Win32_System_Com_StructuredStorage")]
 #[repr(C)]
 pub struct ITsSbTargetPropertySet {
     pub base__: ITsSbPropertySet,
+}
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
+impl ::windows_sys::core::Interface for ITsSbTargetPropertySet {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4156401110, data2: 39244, data3: 19985, data4: [160, 121, 39, 99, 182, 24, 48, 172] };
 }
 #[repr(C)]
 pub struct ITsSbTaskInfo {
@@ -1400,6 +1554,9 @@ pub struct ITsSbTaskInfo {
     Plugin: usize,
     pub Status: unsafe extern "system" fn(this: *mut *mut Self, pstatus: *mut RDV_TASK_STATUS) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ITsSbTaskInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1379733635, data2: 35262, data3: 18653, data4: [153, 234, 4, 232, 47, 250, 114, 101] };
+}
 #[repr(C)]
 pub struct ITsSbTaskPlugin {
     pub base__: ITsSbPlugin,
@@ -1408,6 +1565,9 @@ pub struct ITsSbTaskPlugin {
     pub SetTaskQueue: unsafe extern "system" fn(this: *mut *mut Self, pszhostname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, sbtaskinfosize: u32, pitssbtaskinfo: *const *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     SetTaskQueue: usize,
+}
+impl ::windows_sys::core::Interface for ITsSbTaskPlugin {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4196593423, data2: 34565, data3: 16830, data4: [147, 188, 68, 189, 188, 241, 201, 196] };
 }
 #[repr(C)]
 pub struct ITsSbTaskPluginNotifySink {
@@ -1429,10 +1589,16 @@ pub struct ITsSbTaskPluginNotifySink {
     #[cfg(not(feature = "Win32_Foundation"))]
     OnReportTasks: usize,
 }
+impl ::windows_sys::core::Interface for ITsSbTaskPluginNotifySink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1789888926, data2: 49900, data3: 17902, data4: [170, 55, 69, 230, 8, 149, 38, 26] };
+}
 #[repr(C)]
 pub struct IWRdsEnhancedFastReconnectArbitrator {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetSessionForEnhancedFastReconnect: unsafe extern "system" fn(this: *mut *mut Self, psessionidarray: *const i32, dwsessioncount: u32, presultsessionid: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWRdsEnhancedFastReconnectArbitrator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1461235355, data2: 18418, data3: 18847, data4: [182, 52, 216, 23, 91, 213, 17, 49] };
 }
 #[repr(C)]
 pub struct IWRdsGraphicsChannel {
@@ -1440,6 +1606,9 @@ pub struct IWRdsGraphicsChannel {
     pub Write: unsafe extern "system" fn(this: *mut *mut Self, cbsize: u32, pbuffer: *const u8, pcontext: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Open: unsafe extern "system" fn(this: *mut *mut Self, pchannelevents: *mut ::core::ffi::c_void, popencontext: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWRdsGraphicsChannel {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1749776907, data2: 60927, data3: 17325, data4: [213, 162, 74, 141, 83, 136, 244, 1] };
 }
 #[repr(C)]
 pub struct IWRdsGraphicsChannelEvents {
@@ -1453,10 +1622,16 @@ pub struct IWRdsGraphicsChannelEvents {
     OnDataSent: usize,
     pub OnMetricsUpdate: unsafe extern "system" fn(this: *mut *mut Self, bandwidth: u32, rtt: u32, lastsentbyteindex: u64) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWRdsGraphicsChannelEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1743926924, data2: 54900, data3: 20398, data4: [102, 165, 210, 6, 40, 166, 64, 210] };
+}
 #[repr(C)]
 pub struct IWRdsGraphicsChannelManager {
     pub base__: ::windows_sys::core::IUnknown,
     pub CreateChannel: unsafe extern "system" fn(this: *mut *mut Self, pszchannelname: *const u8, channeltype: WRdsGraphicsChannelType, ppvirtualchannel: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWRdsGraphicsChannelManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 265646425, data2: 59454, data3: 18282, data4: [168, 185, 74, 121, 118, 231, 30, 24] };
 }
 #[repr(C)]
 pub struct IWRdsProtocolConnection {
@@ -1510,6 +1685,9 @@ pub struct IWRdsProtocolConnection {
     pub GetShadowConnection: unsafe extern "system" fn(this: *mut *mut Self, ppshadowconnection: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub NotifyCommandProcessCreated: unsafe extern "system" fn(this: *mut *mut Self, sessionid: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWRdsProtocolConnection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 844028239, data2: 64943, data3: 20470, data4: [129, 168, 66, 171, 231, 85, 131, 11] };
+}
 #[repr(C)]
 pub struct IWRdsProtocolConnectionCallback {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1519,11 +1697,17 @@ pub struct IWRdsProtocolConnectionCallback {
     pub RedrawWindow: unsafe extern "system" fn(this: *mut *mut Self, rect: *const WTS_SMALL_RECT) -> ::windows_sys::core::HRESULT,
     pub GetConnectionId: unsafe extern "system" fn(this: *mut *mut Self, pconnectionid: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWRdsProtocolConnectionCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4057400114, data2: 53360, data3: 20209, data4: [160, 136, 120, 49, 53, 54, 194, 214] };
+}
 #[repr(C)]
 pub struct IWRdsProtocolConnectionSettings {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetConnectionSetting: unsafe extern "system" fn(this: *mut *mut Self, propertyid: ::windows_sys::core::GUID, ppropertyentriesin: *const WTS_PROPERTY_VALUE) -> ::windows_sys::core::HRESULT,
     pub GetConnectionSetting: unsafe extern "system" fn(this: *mut *mut Self, propertyid: ::windows_sys::core::GUID, ppropertyentriesout: *mut WTS_PROPERTY_VALUE) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWRdsProtocolConnectionSettings {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2214393299, data2: 63220, data3: 60052, data4: [156, 210, 50, 242, 128, 225, 229, 16] };
 }
 #[repr(C)]
 pub struct IWRdsProtocolLicenseConnection {
@@ -1536,12 +1720,18 @@ pub struct IWRdsProtocolLicenseConnection {
     pub RequestClientLicense: unsafe extern "system" fn(this: *mut *mut Self, reserve1: *const u8, reserve2: u32, ppclientlicense: *mut u8, pcbclientlicense: *mut u32) -> ::windows_sys::core::HRESULT,
     pub ProtocolComplete: unsafe extern "system" fn(this: *mut *mut Self, ulcomplete: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWRdsProtocolLicenseConnection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 493491295, data2: 53397, data3: 17444, data4: [149, 122, 64, 127, 174, 130, 45, 132] };
+}
 #[repr(C)]
 pub struct IWRdsProtocolListener {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetSettings: unsafe extern "system" fn(this: *mut *mut Self, wrdslistenersettinglevel: WRDS_LISTENER_SETTING_LEVEL, pwrdslistenersettings: *mut WRDS_LISTENER_SETTINGS) -> ::windows_sys::core::HRESULT,
     pub StartListen: unsafe extern "system" fn(this: *mut *mut Self, pcallback: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub StopListen: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWRdsProtocolListener {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4240184091, data2: 50822, data3: 17693, data4: [167, 115, 226, 121, 226, 48, 245, 64] };
 }
 #[repr(C)]
 pub struct IWRdsProtocolListenerCallback {
@@ -1551,6 +1741,9 @@ pub struct IWRdsProtocolListenerCallback {
     #[cfg(not(feature = "Win32_Foundation"))]
     OnConnected: usize,
 }
+impl ::windows_sys::core::Interface for IWRdsProtocolListenerCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 984776283, data2: 17481, data3: 19905, data4: [183, 74, 145, 98, 29, 79, 233, 132] };
+}
 #[repr(C)]
 pub struct IWRdsProtocolLogonErrorRedirector {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1558,6 +1751,9 @@ pub struct IWRdsProtocolLogonErrorRedirector {
     pub RedirectStatus: unsafe extern "system" fn(this: *mut *mut Self, pszmessage: ::windows_sys::core::PCWSTR, presponse: *mut WTS_LOGON_ERROR_REDIRECTOR_RESPONSE) -> ::windows_sys::core::HRESULT,
     pub RedirectMessage: unsafe extern "system" fn(this: *mut *mut Self, pszcaption: ::windows_sys::core::PCWSTR, pszmessage: ::windows_sys::core::PCWSTR, utype: u32, presponse: *mut WTS_LOGON_ERROR_REDIRECTOR_RESPONSE) -> ::windows_sys::core::HRESULT,
     pub RedirectLogonError: unsafe extern "system" fn(this: *mut *mut Self, ntsstatus: i32, ntssubstatus: i32, pszcaption: ::windows_sys::core::PCWSTR, pszmessage: ::windows_sys::core::PCWSTR, utype: u32, presponse: *mut WTS_LOGON_ERROR_REDIRECTOR_RESPONSE) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWRdsProtocolLogonErrorRedirector {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1369434171, data2: 5162, data3: 16672, data4: [163, 213, 164, 5, 211, 21, 40, 26] };
 }
 #[repr(C)]
 pub struct IWRdsProtocolManager {
@@ -1577,6 +1773,9 @@ pub struct IWRdsProtocolManager {
     NotifySettingsChange: usize,
     pub Uninitialize: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWRdsProtocolManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3698944359, data2: 15035, data3: 16589, data4: [164, 70, 16, 82, 118, 181, 137, 80] };
+}
 #[repr(C)]
 pub struct IWRdsProtocolSettings {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1589,11 +1788,17 @@ pub struct IWRdsProtocolSettings {
     #[cfg(not(feature = "Win32_Foundation"))]
     MergeSettings: usize,
 }
+impl ::windows_sys::core::Interface for IWRdsProtocolSettings {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1699371626, data2: 9552, data3: 18411, data4: [182, 247, 235, 214, 55, 71, 82, 101] };
+}
 #[repr(C)]
 pub struct IWRdsProtocolShadowCallback {
     pub base__: ::windows_sys::core::IUnknown,
     pub StopShadow: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub InvokeTargetShadow: unsafe extern "system" fn(this: *mut *mut Self, ptargetservername: ::windows_sys::core::PCWSTR, targetsessionid: u32, pparam1: *const u8, param1size: u32, pparam2: *const u8, param2size: u32, pparam3: *const u8, param3size: u32, pparam4: *const u8, param4size: u32, pclientname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWRdsProtocolShadowCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3764813024, data2: 882, data3: 16598, data4: [173, 178, 160, 243, 50, 38, 116, 214] };
 }
 #[repr(C)]
 pub struct IWRdsProtocolShadowConnection {
@@ -1601,6 +1806,9 @@ pub struct IWRdsProtocolShadowConnection {
     pub Start: unsafe extern "system" fn(this: *mut *mut Self, ptargetservername: ::windows_sys::core::PCWSTR, targetsessionid: u32, hotkeyvk: u8, hotkeymodifiers: u16, pshadowcallback: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Stop: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub DoTarget: unsafe extern "system" fn(this: *mut *mut Self, pparam1: *const u8, param1size: u32, pparam2: *const u8, param2size: u32, pparam3: *const u8, param3size: u32, pparam4: *const u8, param4size: u32, pclientname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWRdsProtocolShadowConnection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2598919398, data2: 51934, data3: 17736, data4: [143, 235, 153, 1, 101, 151, 246, 10] };
 }
 #[repr(C)]
 pub struct IWRdsWddmIddProps {
@@ -1616,10 +1824,16 @@ pub struct IWRdsWddmIddProps {
     #[cfg(not(feature = "Win32_Foundation"))]
     EnableWddmIdd: usize,
 }
+impl ::windows_sys::core::Interface for IWRdsWddmIddProps {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 327343949, data2: 41609, data3: 17361, data4: [161, 132, 20, 71, 38, 249, 175, 144] };
+}
 #[repr(C)]
 pub struct IWTSBitmapRenderService {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetMappedRenderer: unsafe extern "system" fn(this: *mut *mut Self, mappingid: u64, pmappedrenderercallback: *mut ::core::ffi::c_void, ppmappedrenderer: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWTSBitmapRenderService {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3929170065, data2: 1534, data3: 16577, data4: [180, 156, 61, 46, 244, 98, 106, 14] };
 }
 #[repr(C)]
 pub struct IWTSBitmapRenderer {
@@ -1627,6 +1841,9 @@ pub struct IWTSBitmapRenderer {
     pub Render: unsafe extern "system" fn(this: *mut *mut Self, imageformat: ::windows_sys::core::GUID, dwwidth: u32, dwheight: u32, cbstride: i32, cbimagebuffer: u32, pimagebuffer: *const u8) -> ::windows_sys::core::HRESULT,
     pub GetRendererStatistics: unsafe extern "system" fn(this: *mut *mut Self, pstatistics: *mut BITMAP_RENDERER_STATISTICS) -> ::windows_sys::core::HRESULT,
     pub RemoveMapping: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWTSBitmapRenderer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1534774423, data2: 62409, data3: 18167, data4: [140, 91, 250, 104, 93, 52, 65, 177] };
 }
 #[repr(C)]
 pub struct IWTSBitmapRendererCallback {
@@ -1636,6 +1853,9 @@ pub struct IWTSBitmapRendererCallback {
     #[cfg(not(feature = "Win32_Foundation"))]
     OnTargetSizeChanged: usize,
 }
+impl ::windows_sys::core::Interface for IWTSBitmapRendererCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3615658638, data2: 65102, data3: 20087, data4: [174, 144, 156, 208, 179, 227, 179, 83] };
+}
 #[repr(C)]
 pub struct IWTSListener {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1643,6 +1863,9 @@ pub struct IWTSListener {
     pub GetConfiguration: unsafe extern "system" fn(this: *mut *mut Self, pppropertybag: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
     GetConfiguration: usize,
+}
+impl ::windows_sys::core::Interface for IWTSListener {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2703426054, data2: 39481, data3: 19800, data4: [134, 116, 205, 180, 223, 244, 231, 59] };
 }
 #[repr(C)]
 pub struct IWTSListenerCallback {
@@ -1652,6 +1875,9 @@ pub struct IWTSListenerCallback {
     #[cfg(not(feature = "Win32_Foundation"))]
     OnNewChannelConnection: usize,
 }
+impl ::windows_sys::core::Interface for IWTSListenerCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2703426051, data2: 54951, data3: 4568, data4: [185, 253, 0, 11, 219, 209, 241, 152] };
+}
 #[repr(C)]
 pub struct IWTSPlugin {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1660,10 +1886,16 @@ pub struct IWTSPlugin {
     pub Disconnected: unsafe extern "system" fn(this: *mut *mut Self, dwdisconnectcode: u32) -> ::windows_sys::core::HRESULT,
     pub Terminated: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWTSPlugin {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2703426049, data2: 5177, data3: 20066, data4: [164, 20, 25, 13, 10, 195, 212, 14] };
+}
 #[repr(C)]
 pub struct IWTSPluginServiceProvider {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetService: unsafe extern "system" fn(this: *mut *mut Self, serviceid: ::windows_sys::core::GUID, ppunkobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWTSPluginServiceProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3554702179, data2: 2172, data3: 18284, data4: [134, 167, 219, 177, 95, 70, 221, 180] };
 }
 #[repr(C)]
 pub struct IWTSProtocolConnection {
@@ -1716,6 +1948,9 @@ pub struct IWTSProtocolConnection {
     pub QueryProperty: unsafe extern "system" fn(this: *mut *mut Self, querytype: ::windows_sys::core::GUID, ulnumentriesin: u32, ulnumentriesout: u32, ppropertyentriesin: *const WTS_PROPERTY_VALUE, ppropertyentriesout: *mut WTS_PROPERTY_VALUE) -> ::windows_sys::core::HRESULT,
     pub GetShadowConnection: unsafe extern "system" fn(this: *mut *mut Self, ppshadowconnection: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWTSProtocolConnection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 587741029, data2: 37013, data3: 17992, data4: [152, 191, 239, 129, 201, 20, 3, 45] };
+}
 #[repr(C)]
 pub struct IWTSProtocolConnectionCallback {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1724,6 +1959,9 @@ pub struct IWTSProtocolConnectionCallback {
     pub StopScreenUpdates: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub RedrawWindow: unsafe extern "system" fn(this: *mut *mut Self, rect: *const WTS_SMALL_RECT) -> ::windows_sys::core::HRESULT,
     pub DisplayIOCtl: unsafe extern "system" fn(this: *mut *mut Self, displayioctl: *const WTS_DISPLAY_IOCTL) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWTSProtocolConnectionCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 587741029, data2: 30187, data3: 16894, data4: [180, 251, 224, 134, 36, 42, 250, 15] };
 }
 #[repr(C)]
 pub struct IWTSProtocolLicenseConnection {
@@ -1736,16 +1974,25 @@ pub struct IWTSProtocolLicenseConnection {
     pub RequestClientLicense: unsafe extern "system" fn(this: *mut *mut Self, reserve1: *const u8, reserve2: u32, ppclientlicense: *mut u8, pcbclientlicense: *mut u32) -> ::windows_sys::core::HRESULT,
     pub ProtocolComplete: unsafe extern "system" fn(this: *mut *mut Self, ulcomplete: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWTSProtocolLicenseConnection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 587741029, data2: 6028, data3: 16505, data4: [142, 74, 254, 166, 73, 106, 77, 112] };
+}
 #[repr(C)]
 pub struct IWTSProtocolListener {
     pub base__: ::windows_sys::core::IUnknown,
     pub StartListen: unsafe extern "system" fn(this: *mut *mut Self, pcallback: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub StopListen: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWTSProtocolListener {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 587741029, data2: 17904, data3: 17300, data4: [143, 105, 50, 178, 188, 14, 244, 202] };
+}
 #[repr(C)]
 pub struct IWTSProtocolListenerCallback {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnConnected: unsafe extern "system" fn(this: *mut *mut Self, pconnection: *mut ::core::ffi::c_void, pcallback: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWTSProtocolListenerCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 587741029, data2: 6701, data3: 19938, data4: [151, 222, 74, 53, 242, 96, 240, 179] };
 }
 #[repr(C)]
 pub struct IWTSProtocolLogonErrorRedirector {
@@ -1754,6 +2001,9 @@ pub struct IWTSProtocolLogonErrorRedirector {
     pub RedirectStatus: unsafe extern "system" fn(this: *mut *mut Self, pszmessage: ::windows_sys::core::PCWSTR, presponse: *mut WTS_LOGON_ERROR_REDIRECTOR_RESPONSE) -> ::windows_sys::core::HRESULT,
     pub RedirectMessage: unsafe extern "system" fn(this: *mut *mut Self, pszcaption: ::windows_sys::core::PCWSTR, pszmessage: ::windows_sys::core::PCWSTR, utype: u32, presponse: *mut WTS_LOGON_ERROR_REDIRECTOR_RESPONSE) -> ::windows_sys::core::HRESULT,
     pub RedirectLogonError: unsafe extern "system" fn(this: *mut *mut Self, ntsstatus: i32, ntssubstatus: i32, pszcaption: ::windows_sys::core::PCWSTR, pszmessage: ::windows_sys::core::PCWSTR, utype: u32, presponse: *mut WTS_LOGON_ERROR_REDIRECTOR_RESPONSE) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWTSProtocolLogonErrorRedirector {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4254818727, data2: 10518, data3: 17959, data4: [141, 238, 67, 40, 113, 26, 214, 203] };
 }
 #[repr(C)]
 pub struct IWTSProtocolManager {
@@ -1764,11 +2014,17 @@ pub struct IWTSProtocolManager {
     pub NotifySessionOfServiceStop: unsafe extern "system" fn(this: *mut *mut Self, sessionid: *const WTS_SESSION_ID) -> ::windows_sys::core::HRESULT,
     pub NotifySessionStateChange: unsafe extern "system" fn(this: *mut *mut Self, sessionid: *const WTS_SESSION_ID, eventid: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWTSProtocolManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4192925388, data2: 60793, data3: 20225, data4: [130, 29, 31, 136, 27, 159, 102, 204] };
+}
 #[repr(C)]
 pub struct IWTSProtocolShadowCallback {
     pub base__: ::windows_sys::core::IUnknown,
     pub StopShadow: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub InvokeTargetShadow: unsafe extern "system" fn(this: *mut *mut Self, ptargetservername: ::windows_sys::core::PCWSTR, targetsessionid: u32, pparam1: *const u8, param1size: u32, pparam2: *const u8, param2size: u32, pparam3: *const u8, param3size: u32, pparam4: *const u8, param4size: u32, pclientname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWTSProtocolShadowCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1345987844, data2: 43749, data3: 19121, data4: [147, 224, 109, 28, 75, 198, 247, 26] };
 }
 #[repr(C)]
 pub struct IWTSProtocolShadowConnection {
@@ -1776,6 +2032,9 @@ pub struct IWTSProtocolShadowConnection {
     pub Start: unsafe extern "system" fn(this: *mut *mut Self, ptargetservername: ::windows_sys::core::PCWSTR, targetsessionid: u32, hotkeyvk: u8, hotkeymodifiers: u16, pshadowcallback: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Stop: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub DoTarget: unsafe extern "system" fn(this: *mut *mut Self, pparam1: *const u8, param1size: u32, pparam2: *const u8, param2size: u32, pparam3: *const u8, param3size: u32, pparam4: *const u8, param4size: u32, pclientname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWTSProtocolShadowConnection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3996847124, data2: 14331, data3: 17771, data4: [186, 179, 109, 108, 213, 30, 19, 191] };
 }
 #[repr(C)]
 pub struct IWTSSBPlugin {
@@ -1790,11 +2049,17 @@ pub struct IWTSSBPlugin {
     pub Terminated: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub WTSSBX_GetUserExternalSession: unsafe extern "system" fn(this: *mut *mut Self, username: ::windows_sys::core::PCWSTR, domainname: ::windows_sys::core::PCWSTR, applicationtype: ::windows_sys::core::PCWSTR, redirectorinternalip: *const WTSSBX_IP_ADDRESS, psessionid: *mut u32, pmachineconnectinfo: *mut WTSSBX_MACHINE_CONNECT_INFO) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWTSSBPlugin {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3695492728, data2: 45453, data3: 17305, data4: [178, 16, 100, 27, 246, 122, 0, 44] };
+}
 #[repr(C)]
 pub struct IWTSVirtualChannel {
     pub base__: ::windows_sys::core::IUnknown,
     pub Write: unsafe extern "system" fn(this: *mut *mut Self, cbsize: u32, pbuffer: *const u8, preserved: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWTSVirtualChannel {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2703426055, data2: 54951, data3: 4568, data4: [185, 253, 0, 11, 219, 209, 241, 152] };
 }
 #[repr(C)]
 pub struct IWTSVirtualChannelCallback {
@@ -1802,10 +2067,16 @@ pub struct IWTSVirtualChannelCallback {
     pub OnDataReceived: unsafe extern "system" fn(this: *mut *mut Self, cbsize: u32, pbuffer: *const u8) -> ::windows_sys::core::HRESULT,
     pub OnClose: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWTSVirtualChannelCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2703426052, data2: 54951, data3: 4568, data4: [185, 253, 0, 11, 219, 209, 241, 152] };
+}
 #[repr(C)]
 pub struct IWTSVirtualChannelManager {
     pub base__: ::windows_sys::core::IUnknown,
     pub CreateListener: unsafe extern "system" fn(this: *mut *mut Self, pszchannelname: *const u8, uflags: u32, plistenercallback: *mut ::core::ffi::c_void, pplistener: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWTSVirtualChannelManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2703426053, data2: 54951, data3: 4568, data4: [185, 253, 0, 11, 219, 209, 241, 152] };
 }
 #[repr(C)]
 pub struct IWorkspace {
@@ -1820,6 +2091,9 @@ pub struct IWorkspace {
     StartRemoteApplication: usize,
     pub GetProcessId: unsafe extern "system" fn(this: *mut *mut Self, pulprocessid: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWorkspace {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3106061240, data2: 19541, data3: 20458, data4: [132, 150, 190, 176, 180, 66, 133, 229] };
+}
 #[repr(C)]
 pub struct IWorkspace2 {
     pub base__: IWorkspace,
@@ -1827,6 +2101,9 @@ pub struct IWorkspace2 {
     pub StartRemoteApplicationEx: unsafe extern "system" fn(this: *mut *mut Self, bstrworkspaceid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrrequestingappid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrrequestingappfamilyname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, blaunchintoimmersiveclient: i16, bstrimmersiveclientactivationcontext: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, psaparams: *const super::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     StartRemoteApplicationEx: usize,
+}
+impl ::windows_sys::core::Interface for IWorkspace2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2530793423, data2: 30782, data3: 17030, data4: [131, 76, 235, 192, 233, 95, 120, 60] };
 }
 #[repr(C)]
 pub struct IWorkspace3 {
@@ -1839,6 +2116,9 @@ pub struct IWorkspace3 {
     pub SetClaimsToken: unsafe extern "system" fn(this: *mut *mut Self, bstraccesstoken: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ullaccesstokenexpiration: u64, bstrrefreshtoken: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     SetClaimsToken: usize,
+}
+impl ::windows_sys::core::Interface for IWorkspace3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 468500042, data2: 54868, data3: 16955, data4: [175, 235, 190, 141, 83, 44, 19, 198] };
 }
 #[repr(C)]
 pub struct IWorkspaceClientExt {
@@ -1853,11 +2133,17 @@ pub struct IWorkspaceClientExt {
     GetResourceDisplayName: usize,
     pub IssueDisconnect: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWorkspaceClientExt {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 314135284, data2: 16842, data3: 20257, data4: [168, 41, 166, 208, 125, 154, 22, 229] };
+}
 #[repr(C)]
 pub struct IWorkspaceRegistration {
     pub base__: ::windows_sys::core::IUnknown,
     pub AddResource: unsafe extern "system" fn(this: *mut *mut Self, punk: *mut ::core::ffi::c_void, pdwcookie: *mut u32) -> ::windows_sys::core::HRESULT,
     pub RemoveResource: unsafe extern "system" fn(this: *mut *mut Self, dwcookieconnection: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWorkspaceRegistration {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3106061240, data2: 19541, data3: 20458, data4: [132, 150, 190, 176, 180, 66, 133, 230] };
 }
 #[repr(C)]
 pub struct IWorkspaceRegistration2 {
@@ -1867,6 +2153,9 @@ pub struct IWorkspaceRegistration2 {
     #[cfg(not(feature = "Win32_Foundation"))]
     AddResourceEx: usize,
     pub RemoveResourceEx: unsafe extern "system" fn(this: *mut *mut Self, dwcookieconnection: u32, correlationid: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWorkspaceRegistration2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3478779476, data2: 14779, data3: 17624, data4: [148, 208, 70, 53, 114, 137, 87, 233] };
 }
 #[repr(C)]
 pub struct IWorkspaceReportMessage {
@@ -1883,6 +2172,9 @@ pub struct IWorkspaceReportMessage {
     pub RegisterErrorEvent: unsafe extern "system" fn(this: *mut *mut Self, bstrwkspid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, dwerrortype: u32, bstrerrormessagetype: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, dwerrorcode: u32) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     RegisterErrorEvent: usize,
+}
+impl ::windows_sys::core::Interface for IWorkspaceReportMessage {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2814404409, data2: 20495, data3: 20108, data4: [153, 168, 43, 214, 149, 88, 153, 235] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1908,6 +2200,10 @@ pub struct IWorkspaceResTypeRegistry {
     pub ModifyResourceType: unsafe extern "system" fn(this: *mut *mut Self, fmachinewide: i16, bstrfileextension: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrlauncher: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     ModifyResourceType: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWorkspaceResTypeRegistry {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 490900601, data2: 28206, data3: 17233, data4: [163, 97, 192, 64, 26, 3, 160, 186] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1940,6 +2236,10 @@ pub struct IWorkspaceScriptable {
     DisconnectWorkspaceByFriendlyName: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWorkspaceScriptable {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4025108898, data2: 56741, data3: 17053, data4: [143, 66, 178, 59, 146, 196, 195, 71] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IWorkspaceScriptable2 {
     pub base__: IWorkspaceScriptable,
@@ -1953,6 +2253,10 @@ pub struct IWorkspaceScriptable2 {
     ResourceDismissed: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWorkspaceScriptable2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4025108898, data2: 56741, data3: 17053, data4: [143, 66, 179, 59, 162, 196, 195, 72] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IWorkspaceScriptable3 {
     pub base__: IWorkspaceScriptable2,
@@ -1961,6 +2265,10 @@ pub struct IWorkspaceScriptable3 {
         unsafe extern "system" fn(this: *mut *mut Self, bstrworkspaceid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrworkspacefriendlyname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrredirectorname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrusername: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrpassword: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrappcontainer: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrworkspaceparams: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ltimeout: i32, lflags: i32, bstreventloguploadaddress: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, correlationid: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     StartWorkspaceEx2: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWorkspaceScriptable3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1394500882, data2: 11455, data3: 19410, data4: [128, 165, 217, 10, 113, 99, 106, 154] };
 }
 #[repr(C)]
 pub struct ItsPubPlugin {
@@ -1978,6 +2286,9 @@ pub struct ItsPubPlugin {
     pluginVersion: usize,
     pub ResolveResource: unsafe extern "system" fn(this: *mut *mut Self, resourcetype: *mut u32, resourcelocation: ::windows_sys::core::PWSTR, endpointname: ::windows_sys::core::PWSTR, userid: ::windows_sys::core::PCWSTR, alias: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ItsPubPlugin {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1891650309, data2: 62279, data3: 16683, data4: [130, 47, 54, 201, 156, 84, 202, 69] };
+}
 #[repr(C)]
 pub struct ItsPubPlugin2 {
     pub base__: ItsPubPlugin,
@@ -1985,6 +2296,9 @@ pub struct ItsPubPlugin2 {
     pub GetResource2: unsafe extern "system" fn(this: *mut *mut Self, alias: ::windows_sys::core::PCWSTR, flags: i32, resource: *mut pluginResource2) -> ::windows_sys::core::HRESULT,
     pub ResolvePersonalDesktop: unsafe extern "system" fn(this: *mut *mut Self, userid: ::windows_sys::core::PCWSTR, poolid: ::windows_sys::core::PCWSTR, epdresolutiontype: TSPUB_PLUGIN_PD_RESOLUTION_TYPE, ppdassignmenttype: *mut TSPUB_PLUGIN_PD_ASSIGNMENT_TYPE, endpointname: ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
     pub DeletePersonalDesktopAssignment: unsafe extern "system" fn(this: *mut *mut Self, userid: ::windows_sys::core::PCWSTR, poolid: ::windows_sys::core::PCWSTR, endpointname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ItsPubPlugin2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4199343128, data2: 43735, data3: 20166, data4: [186, 209, 10, 50, 27, 164, 101, 213] };
 }
 #[doc = "*Required features: `\"Win32_System_RemoteDesktop\"`*"]
 pub const KEEP_EXISTING_SESSIONS: u32 = 8u32;
@@ -4472,6 +4786,10 @@ pub const Workspace: ::windows_sys::core::GUID = ::windows_sys::core::GUID { dat
 #[repr(C)]
 pub struct _ITSWkspEvents {
     pub base__: super::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for _ITSWkspEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3106061240, data2: 19541, data3: 20458, data4: [132, 150, 190, 176, 180, 66, 133, 233] };
 }
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_RemoteDesktop\"`, `\"Win32_Foundation\"`*"]

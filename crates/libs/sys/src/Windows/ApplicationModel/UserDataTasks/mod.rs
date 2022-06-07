@@ -55,6 +55,9 @@ pub struct IUserDataTask {
     #[cfg(not(feature = "Foundation"))]
     SetStartDate: usize,
 }
+impl ::windows_sys::core::Interface for IUserDataTask {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2087028177, data2: 57556, data3: 20377, data4: [174, 226, 188, 45, 93, 218, 223, 76] };
+}
 #[repr(C)]
 pub struct IUserDataTaskBatch {
     pub base__: ::windows_sys::core::IInspectable,
@@ -62,6 +65,9 @@ pub struct IUserDataTaskBatch {
     pub Tasks: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     Tasks: usize,
+}
+impl ::windows_sys::core::Interface for IUserDataTaskBatch {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 942515710, data2: 8373, data3: 17180, data4: [143, 66, 165, 210, 146, 236, 147, 12] };
 }
 #[repr(C)]
 pub struct IUserDataTaskList {
@@ -104,6 +110,9 @@ pub struct IUserDataTaskList {
     #[cfg(not(feature = "Foundation"))]
     SaveAsync: usize,
 }
+impl ::windows_sys::core::Interface for IUserDataTaskList {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1229008441, data2: 31773, data3: 19953, data4: [190, 211, 49, 75, 124, 191, 94, 78] };
+}
 #[repr(C)]
 pub struct IUserDataTaskListLimitedWriteOperations {
     pub base__: ::windows_sys::core::IInspectable,
@@ -123,6 +132,9 @@ pub struct IUserDataTaskListLimitedWriteOperations {
     pub TrySkipOccurrenceAsync: unsafe extern "system" fn(this: *mut *mut Self, userdatataskid: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     TrySkipOccurrenceAsync: usize,
+}
+impl ::windows_sys::core::Interface for IUserDataTaskListLimitedWriteOperations {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2057463794, data2: 24696, data3: 16771, data4: [145, 158, 79, 41, 241, 156, 250, 233] };
 }
 #[repr(C)]
 pub struct IUserDataTaskListSyncManager {
@@ -158,6 +170,9 @@ pub struct IUserDataTaskListSyncManager {
     #[cfg(not(feature = "Foundation"))]
     RemoveSyncStatusChanged: usize,
 }
+impl ::windows_sys::core::Interface for IUserDataTaskListSyncManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2388204181, data2: 7631, data3: 18079, data4: [147, 236, 186, 72, 187, 85, 60, 107] };
+}
 #[repr(C)]
 pub struct IUserDataTaskManager {
     pub base__: ::windows_sys::core::IInspectable,
@@ -170,6 +185,9 @@ pub struct IUserDataTaskManager {
     #[cfg(not(feature = "System"))]
     User: usize,
 }
+impl ::windows_sys::core::Interface for IUserDataTaskManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2219952404, data2: 58891, data3: 18601, data4: [146, 17, 127, 184, 165, 108, 184, 76] };
+}
 #[repr(C)]
 pub struct IUserDataTaskManagerStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -179,6 +197,9 @@ pub struct IUserDataTaskManagerStatics {
     #[cfg(not(feature = "System"))]
     GetForUser: usize,
 }
+impl ::windows_sys::core::Interface for IUserDataTaskManagerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3008707064, data2: 50434, data3: 18428, data4: [168, 30, 16, 8, 131, 113, 157, 85] };
+}
 #[repr(C)]
 pub struct IUserDataTaskQueryOptions {
     pub base__: ::windows_sys::core::IInspectable,
@@ -187,6 +208,9 @@ pub struct IUserDataTaskQueryOptions {
     pub Kind: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut UserDataTaskQueryKind) -> ::windows_sys::core::HRESULT,
     pub SetKind: unsafe extern "system" fn(this: *mut *mut Self, value: UserDataTaskQueryKind) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IUserDataTaskQueryOptions {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2510235629, data2: 37018, data3: 19760, data4: [140, 27, 51, 29, 143, 230, 103, 226] };
+}
 #[repr(C)]
 pub struct IUserDataTaskReader {
     pub base__: ::windows_sys::core::IInspectable,
@@ -194,6 +218,9 @@ pub struct IUserDataTaskReader {
     pub ReadBatchAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     ReadBatchAsync: usize,
+}
+impl ::windows_sys::core::Interface for IUserDataTaskReader {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 65439921, data2: 19663, data3: 17664, data4: [136, 59, 231, 98, 144, 207, 237, 99] };
 }
 #[repr(C)]
 pub struct IUserDataTaskRecurrenceProperties {
@@ -251,6 +278,9 @@ pub struct IUserDataTaskRecurrenceProperties {
     #[cfg(not(feature = "Foundation"))]
     SetDay: usize,
 }
+impl ::windows_sys::core::Interface for IUserDataTaskRecurrenceProperties {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1944027312, data2: 10182, data3: 16590, data4: [177, 73, 156, 212, 20, 133, 166, 158] };
+}
 #[repr(C)]
 pub struct IUserDataTaskRegenerationProperties {
     pub base__: ::windows_sys::core::IInspectable,
@@ -275,6 +305,9 @@ pub struct IUserDataTaskRegenerationProperties {
     pub Interval: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i32) -> ::windows_sys::core::HRESULT,
     pub SetInterval: unsafe extern "system" fn(this: *mut *mut Self, value: i32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IUserDataTaskRegenerationProperties {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2460680199, data2: 2318, data3: 18180, data4: [187, 92, 132, 252, 11, 13, 156, 49] };
+}
 #[repr(C)]
 pub struct IUserDataTaskStore {
     pub base__: ::windows_sys::core::IInspectable,
@@ -294,6 +327,9 @@ pub struct IUserDataTaskStore {
     pub GetListAsync: unsafe extern "system" fn(this: *mut *mut Self, tasklistid: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     GetListAsync: usize,
+}
+impl ::windows_sys::core::Interface for IUserDataTaskStore {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4033518768, data2: 61915, data3: 17850, data4: [138, 98, 8, 96, 4, 192, 33, 61] };
 }
 pub type UserDataTask = *mut ::core::ffi::c_void;
 pub type UserDataTaskBatch = *mut ::core::ffi::c_void;

@@ -287,6 +287,9 @@ pub struct IEnumWIA_DEV_CAPS {
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppienum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, pcelt: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEnumWIA_DEV_CAPS {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 533480071, data2: 44198, data3: 4562, data4: [160, 147, 0, 192, 79, 114, 220, 60] };
+}
 #[repr(C)]
 pub struct IEnumWIA_DEV_INFO {
     pub base__: ::windows_sys::core::IUnknown,
@@ -295,6 +298,9 @@ pub struct IEnumWIA_DEV_INFO {
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppienum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, celt: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IEnumWIA_DEV_INFO {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1580775484, data2: 36081, data3: 4561, data4: [191, 146, 0, 96, 8, 30, 216, 17] };
 }
 #[repr(C)]
 pub struct IEnumWIA_FORMAT_INFO {
@@ -305,6 +311,9 @@ pub struct IEnumWIA_FORMAT_INFO {
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppienum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, pcelt: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEnumWIA_FORMAT_INFO {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2176777307, data2: 25965, data3: 17649, data4: [178, 76, 212, 29, 81, 180, 220, 129] };
+}
 #[repr(C)]
 pub struct IEnumWiaItem {
     pub base__: ::windows_sys::core::IUnknown,
@@ -314,6 +323,9 @@ pub struct IEnumWiaItem {
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppienum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, celt: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEnumWiaItem {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1585677308, data2: 13201, data3: 4562, data4: [154, 51, 0, 192, 79, 163, 97, 69] };
+}
 #[repr(C)]
 pub struct IEnumWiaItem2 {
     pub base__: ::windows_sys::core::IUnknown,
@@ -322,6 +334,9 @@ pub struct IEnumWiaItem2 {
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppienum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, celt: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IEnumWiaItem2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1503070964, data2: 52493, data3: 17625, data4: [171, 36, 82, 41, 86, 48, 229, 130] };
 }
 #[doc = "*Required features: `\"Win32_Devices_ImageAcquisition\"`*"]
 pub const IMPRINTER: u32 = 65536u32;
@@ -358,10 +373,16 @@ pub struct IWiaAppErrorHandler {
     GetWindow: usize,
     pub ReportStatus: unsafe extern "system" fn(this: *mut *mut Self, lflags: i32, pwiaitem2: *mut ::core::ffi::c_void, hrstatus: ::windows_sys::core::HRESULT, lpercentcomplete: i32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWiaAppErrorHandler {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1813387372, data2: 53414, data3: 16396, data4: [128, 244, 210, 105, 134, 160, 231, 52] };
+}
 #[repr(C)]
 pub struct IWiaDataCallback {
     pub base__: ::windows_sys::core::IUnknown,
     pub BandedDataCallback: unsafe extern "system" fn(this: *mut *mut Self, lmessage: i32, lstatus: i32, lpercentcomplete: i32, loffset: i32, llength: i32, lreserved: i32, lreslength: i32, pbbuffer: *mut u8) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWiaDataCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2774050918, data2: 42416, data3: 4562, data4: [160, 143, 0, 192, 79, 114, 220, 60] };
 }
 #[repr(C)]
 pub struct IWiaDataTransfer {
@@ -377,6 +398,9 @@ pub struct IWiaDataTransfer {
     pub idtQueryGetData: unsafe extern "system" fn(this: *mut *mut Self, pfe: *const WIA_FORMAT_INFO) -> ::windows_sys::core::HRESULT,
     pub idtEnumWIA_FORMAT_INFO: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub idtGetExtendedTransferInfo: unsafe extern "system" fn(this: *mut *mut Self, pextendedtransferinfo: *mut WIA_EXTENDED_TRANSFER_INFO) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWiaDataTransfer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2798582168, data2: 42416, data3: 4562, data4: [160, 143, 0, 192, 79, 114, 220, 60] };
 }
 #[repr(C)]
 pub struct IWiaDevMgr {
@@ -415,6 +439,9 @@ pub struct IWiaDevMgr {
     #[cfg(not(feature = "Win32_Foundation"))]
     AddDeviceDlg: usize,
 }
+impl ::windows_sys::core::Interface for IWiaDevMgr {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1588744234, data2: 36081, data3: 4561, data4: [191, 146, 0, 96, 8, 30, 216, 17] };
+}
 #[repr(C)]
 pub struct IWiaDevMgr2 {
     pub base__: ::windows_sys::core::IUnknown,
@@ -448,6 +475,9 @@ pub struct IWiaDevMgr2 {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetImageDlg: usize,
 }
+impl ::windows_sys::core::Interface for IWiaDevMgr2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2042658033, data2: 52189, data3: 16878, data4: [142, 195, 240, 0, 128, 202, 218, 122] };
+}
 #[repr(C)]
 pub struct IWiaDrvItem {
     pub base__: ::windows_sys::core::IUnknown,
@@ -480,6 +510,9 @@ pub struct IWiaDrvItem {
     #[cfg(not(feature = "Win32_Foundation"))]
     DumpItemData: usize,
 }
+impl ::windows_sys::core::Interface for IWiaDrvItem {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 520271301, data2: 45068, data3: 4562, data4: [160, 148, 0, 192, 79, 114, 220, 60] };
+}
 #[repr(C)]
 pub struct IWiaErrorHandler {
     pub base__: ::windows_sys::core::IUnknown,
@@ -492,6 +525,9 @@ pub struct IWiaErrorHandler {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetStatusDescription: usize,
 }
+impl ::windows_sys::core::Interface for IWiaErrorHandler {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 239751601, data2: 48159, data3: 17469, data4: [168, 53, 114, 232, 144, 117, 158, 243] };
+}
 #[repr(C)]
 pub struct IWiaEventCallback {
     pub base__: ::windows_sys::core::IUnknown,
@@ -499,6 +535,9 @@ pub struct IWiaEventCallback {
     pub ImageEventCallback: unsafe extern "system" fn(this: *mut *mut Self, peventguid: *const ::windows_sys::core::GUID, bstreventdescription: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrdeviceid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrdevicedescription: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, dwdevicetype: u32, bstrfullitemname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, puleventtype: *mut u32, ulreserved: u32) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     ImageEventCallback: usize,
+}
+impl ::windows_sys::core::Interface for IWiaEventCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2925692848, data2: 132, data3: 4562, data4: [151, 59, 0, 160, 201, 6, 143, 46] };
 }
 #[repr(C)]
 pub struct IWiaImageFilter {
@@ -510,6 +549,9 @@ pub struct IWiaImageFilter {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     FilterPreviewImage: usize,
     pub ApplyProperties: unsafe extern "system" fn(this: *mut *mut Self, pwiapropertystorage: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWiaImageFilter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2829557754, data2: 17675, data3: 16881, data4: [143, 135, 132, 156, 205, 148, 235, 246] };
 }
 #[repr(C)]
 pub struct IWiaItem {
@@ -548,6 +590,9 @@ pub struct IWiaItem {
     DumpTreeItemData: usize,
     pub Diagnostic: unsafe extern "system" fn(this: *mut *mut Self, ulsize: u32, pbuffer: *const u8) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWiaItem {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1303489808, data2: 13201, data3: 4562, data4: [154, 51, 0, 192, 79, 163, 97, 69] };
+}
 #[repr(C)]
 pub struct IWiaItem2 {
     pub base__: ::windows_sys::core::IUnknown,
@@ -583,6 +628,9 @@ pub struct IWiaItem2 {
     pub EnumRegisterEventInfo: unsafe extern "system" fn(this: *mut *mut Self, lflags: i32, peventguid: *const ::windows_sys::core::GUID, ppienum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Diagnostic: unsafe extern "system" fn(this: *mut *mut Self, ulsize: u32, pbuffer: *const u8) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWiaItem2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1824129141, data2: 4743, data3: 16509, data4: [155, 119, 207, 14, 3, 4, 53, 204] };
+}
 #[repr(C)]
 pub struct IWiaItemExtras {
     pub base__: ::windows_sys::core::IUnknown,
@@ -593,6 +641,9 @@ pub struct IWiaItemExtras {
     pub Escape: unsafe extern "system" fn(this: *mut *mut Self, dwescapecode: u32, lpindata: *const u8, cbindatasize: u32, poutdata: *mut u8, dwoutdatasize: u32, pdwactualdatasize: *mut u32) -> ::windows_sys::core::HRESULT,
     pub CancelPendingIO: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWiaItemExtras {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1653731116, data2: 14063, data3: 17714, data4: [135, 106, 142, 19, 37, 147, 119, 141] };
+}
 #[repr(C)]
 pub struct IWiaLog {
     pub base__: ::windows_sys::core::IUnknown,
@@ -602,6 +653,9 @@ pub struct IWiaLog {
     pub Log: unsafe extern "system" fn(this: *mut *mut Self, lflags: i32, lresid: i32, ldetail: i32, bstrtext: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     Log: usize,
+}
+impl ::windows_sys::core::Interface for IWiaLog {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2685145270, data2: 33441, data3: 17711, data4: [139, 108, 134, 6, 42, 173, 104, 144] };
 }
 #[repr(C)]
 pub struct IWiaLogEx {
@@ -617,6 +671,9 @@ pub struct IWiaLogEx {
     pub LogEx: unsafe extern "system" fn(this: *mut *mut Self, lmethodid: i32, lflags: i32, lresid: i32, ldetail: i32, bstrtext: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     LogEx: usize,
+}
+impl ::windows_sys::core::Interface for IWiaLogEx {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2938053292, data2: 31296, data3: 18311, data4: [180, 33, 174, 180, 122, 31, 189, 11] };
 }
 #[repr(C)]
 pub struct IWiaMiniDrv {
@@ -657,6 +714,9 @@ pub struct IWiaMiniDrv {
     drvNotifyPnpEvent: usize,
     pub drvUnInitializeWia: unsafe extern "system" fn(this: *mut *mut Self, __midl__iwiaminidrv0064: *const u8) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWiaMiniDrv {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3637374484, data2: 15468, data3: 4562, data4: [154, 53, 0, 192, 79, 163, 97, 69] };
+}
 #[repr(C)]
 pub struct IWiaMiniDrvCallBack {
     pub base__: ::windows_sys::core::IUnknown,
@@ -664,6 +724,9 @@ pub struct IWiaMiniDrvCallBack {
     pub MiniDrvCallback: unsafe extern "system" fn(this: *mut *mut Self, lreason: i32, lstatus: i32, lpercentcomplete: i32, loffset: i32, llength: i32, ptranctx: *const MINIDRV_TRANSFER_CONTEXT, lreserved: i32) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     MiniDrvCallback: usize,
+}
+impl ::windows_sys::core::Interface for IWiaMiniDrvCallBack {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 866483546, data2: 15848, data3: 4562, data4: [154, 54, 0, 192, 79, 163, 97, 69] };
 }
 #[repr(C)]
 pub struct IWiaMiniDrvTransferCallback {
@@ -674,10 +737,16 @@ pub struct IWiaMiniDrvTransferCallback {
     GetNextStream: usize,
     pub SendMessage: unsafe extern "system" fn(this: *mut *mut Self, lflags: i32, pwiatransferparams: *const WiaTransferParams) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWiaMiniDrvTransferCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2849173129, data2: 11493, data3: 20464, data4: [138, 219, 201, 97, 209, 215, 116, 202] };
+}
 #[repr(C)]
 pub struct IWiaNotifyDevMgr {
     pub base__: ::windows_sys::core::IUnknown,
     pub NewDeviceArrival: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWiaNotifyDevMgr {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1885871776, data2: 59327, data3: 17041, data4: [159, 177, 78, 136, 19, 163, 247, 142] };
 }
 #[repr(C)]
 pub struct IWiaPreview {
@@ -686,6 +755,9 @@ pub struct IWiaPreview {
     pub UpdatePreview: unsafe extern "system" fn(this: *mut *mut Self, lflags: i32, pchildwiaitem2: *mut ::core::ffi::c_void, pwiatransfercallback: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub DetectRegions: unsafe extern "system" fn(this: *mut *mut Self, lflags: i32) -> ::windows_sys::core::HRESULT,
     pub Clear: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWiaPreview {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2512565501, data2: 13298, data3: 19846, data4: [173, 64, 148, 49, 240, 223, 8, 247] };
 }
 #[repr(C)]
 pub struct IWiaPropertyStorage {
@@ -734,6 +806,9 @@ pub struct IWiaPropertyStorage {
     #[cfg(not(feature = "Win32_System_Com"))]
     SetPropertyStream: usize,
 }
+impl ::windows_sys::core::Interface for IWiaPropertyStorage {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2562058400, data2: 10700, data3: 18714, data4: [170, 192, 230, 219, 79, 220, 206, 182] };
+}
 #[repr(C)]
 pub struct IWiaSegmentationFilter {
     pub base__: ::windows_sys::core::IUnknown,
@@ -741,6 +816,9 @@ pub struct IWiaSegmentationFilter {
     pub DetectRegions: unsafe extern "system" fn(this: *mut *mut Self, lflags: i32, pinputstream: *mut ::core::ffi::c_void, pwiaitem2: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     DetectRegions: usize,
+}
+impl ::windows_sys::core::Interface for IWiaSegmentationFilter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3964053143, data2: 44036, data3: 17479, data4: [143, 101, 255, 99, 213, 21, 75, 33] };
 }
 #[repr(C)]
 pub struct IWiaTransfer {
@@ -753,6 +831,9 @@ pub struct IWiaTransfer {
     pub Cancel: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub EnumWIA_FORMAT_INFO: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWiaTransfer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3281873218, data2: 12110, data3: 19716, data4: [146, 254, 78, 244, 211, 161, 222, 90] };
+}
 #[repr(C)]
 pub struct IWiaTransferCallback {
     pub base__: ::windows_sys::core::IUnknown,
@@ -761,6 +842,9 @@ pub struct IWiaTransferCallback {
     pub GetNextStream: unsafe extern "system" fn(this: *mut *mut Self, lflags: i32, bstritemname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrfullitemname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppdestination: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     GetNextStream: usize,
+}
+impl ::windows_sys::core::Interface for IWiaTransferCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 668265135, data2: 10406, data3: 19621, data4: [154, 171, 230, 120, 22, 139, 149, 39] };
 }
 #[repr(C)]
 pub struct IWiaUIExtension {
@@ -778,6 +862,9 @@ pub struct IWiaUIExtension {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi")))]
     GetDeviceBitmapLogo: usize,
 }
+impl ::windows_sys::core::Interface for IWiaUIExtension {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3660681491, data2: 20718, data3: 19584, data4: [180, 96, 87, 208, 5, 212, 74, 44] };
+}
 #[repr(C)]
 pub struct IWiaUIExtension2 {
     pub base__: ::windows_sys::core::IUnknown,
@@ -789,6 +876,9 @@ pub struct IWiaUIExtension2 {
     pub GetDeviceIcon: unsafe extern "system" fn(this: *mut *mut Self, bstrdeviceid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, phicon: *mut super::super::UI::WindowsAndMessaging::HICON, nsize: u32) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging")))]
     GetDeviceIcon: usize,
+}
+impl ::windows_sys::core::Interface for IWiaUIExtension2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 810942679, data2: 20616, data3: 18135, data4: [154, 21, 183, 123, 9, 205, 186, 122] };
 }
 #[repr(C)]
 pub struct IWiaVideo {
@@ -833,6 +923,9 @@ pub struct IWiaVideo {
     #[cfg(not(feature = "Win32_Foundation"))]
     ResizeVideo: usize,
     pub GetCurrentState: unsafe extern "system" fn(this: *mut *mut Self, pstate: *mut WIAVIDEO_STATE) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWiaVideo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3576242346, data2: 56200, data3: 16880, data4: [148, 108, 224, 13, 192, 161, 156, 250] };
 }
 #[doc = "*Required features: `\"Win32_Devices_ImageAcquisition\"`*"]
 pub const LAMP_ERR: u32 = 2048u32;

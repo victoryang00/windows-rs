@@ -27,6 +27,9 @@ pub struct INamedPolicyData {
     #[cfg(not(feature = "Foundation"))]
     RemoveChanged: usize,
 }
+impl ::windows_sys::core::Interface for INamedPolicyData {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 953987480, data2: 38316, data3: 16503, data4: [166, 67, 128, 120, 202, 226, 100, 0] };
+}
 #[repr(C)]
 pub struct INamedPolicyStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -35,6 +38,9 @@ pub struct INamedPolicyStatics {
     pub GetPolicyFromPathForUser: unsafe extern "system" fn(this: *mut *mut Self, user: *mut ::core::ffi::c_void, area: ::windows_sys::core::HSTRING, name: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "System"))]
     GetPolicyFromPathForUser: usize,
+}
+impl ::windows_sys::core::Interface for INamedPolicyStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2138651623, data2: 30404, data3: 16472, data4: [140, 173, 103, 102, 44, 208, 95, 13] };
 }
 pub type NamedPolicyData = *mut ::core::ffi::c_void;
 #[doc = "*Required features: `\"Management_Policies\"`*"]

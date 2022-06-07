@@ -44,6 +44,9 @@ pub struct IAtomPubClient {
     DeleteResourceItemAsync: usize,
     pub CancelAsyncOperations: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAtomPubClient {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 892939320, data2: 52717, data3: 19788, data4: [150, 55, 5, 241, 92, 28, 148, 6] };
+}
 #[repr(C)]
 pub struct IAtomPubClientFactory {
     pub base__: ::windows_sys::core::IInspectable,
@@ -51,6 +54,9 @@ pub struct IAtomPubClientFactory {
     pub CreateAtomPubClientWithCredentials: unsafe extern "system" fn(this: *mut *mut Self, servercredential: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Security_Credentials"))]
     CreateAtomPubClientWithCredentials: usize,
+}
+impl ::windows_sys::core::Interface for IAtomPubClientFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1238716434, data2: 22475, data3: 19422, data4: [171, 159, 38, 16, 177, 114, 119, 123] };
 }
 #[repr(C)]
 pub struct IResourceCollection {
@@ -72,6 +78,9 @@ pub struct IResourceCollection {
     #[cfg(not(feature = "Foundation_Collections"))]
     Accepts: usize,
 }
+impl ::windows_sys::core::Interface for IResourceCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2136987145, data2: 48264, data3: 16852, data4: [136, 250, 61, 230, 112, 77, 66, 142] };
+}
 #[repr(C)]
 pub struct IServiceDocument {
     pub base__: ::windows_sys::core::IInspectable,
@@ -79,6 +88,9 @@ pub struct IServiceDocument {
     pub Workspaces: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     Workspaces: usize,
+}
+impl ::windows_sys::core::Interface for IServiceDocument {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2340341617, data2: 10931, data3: 19902, data4: [139, 204, 119, 143, 146, 183, 94, 81] };
 }
 #[repr(C)]
 pub struct IWorkspace {
@@ -91,6 +103,9 @@ pub struct IWorkspace {
     pub Collections: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     Collections: usize,
+}
+impl ::windows_sys::core::Interface for IWorkspace {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3021841979, data2: 42168, data3: 16438, data4: [137, 197, 131, 195, 18, 102, 186, 73] };
 }
 pub type ResourceCollection = *mut ::core::ffi::c_void;
 pub type ServiceDocument = *mut ::core::ffi::c_void;

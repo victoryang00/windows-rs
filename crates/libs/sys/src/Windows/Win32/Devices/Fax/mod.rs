@@ -1522,6 +1522,10 @@ pub struct IFaxAccount {
     pub RegisteredEvents: unsafe extern "system" fn(this: *mut *mut Self, pregisteredevents: *mut FAX_ACCOUNT_EVENTS_TYPE_ENUM) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFaxAccount {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1750293299, data2: 24004, data3: 16518, data4: [190, 38, 183, 111, 155, 113, 16, 6] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFaxAccountFolders {
     pub base__: super::super::System::Com::IDispatch,
@@ -1543,6 +1547,10 @@ pub struct IFaxAccountFolders {
     OutgoingArchive: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFaxAccountFolders {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1684273309, data2: 9176, data3: 18089, data4: [143, 134, 196, 123, 119, 202, 121, 38] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFaxAccountIncomingArchive {
     pub base__: super::super::System::Com::IDispatch,
@@ -1559,6 +1567,10 @@ pub struct IFaxAccountIncomingArchive {
     GetMessage: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFaxAccountIncomingArchive {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2829432559, data2: 57558, data3: 19182, data4: [149, 92, 145, 98, 91, 236, 157, 180] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFaxAccountIncomingQueue {
     pub base__: super::super::System::Com::IDispatch,
@@ -1572,9 +1584,17 @@ pub struct IFaxAccountIncomingQueue {
     GetJob: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFaxAccountIncomingQueue {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3709087122, data2: 390, data3: 19093, data4: [160, 144, 203, 195, 234, 219, 166, 180] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFaxAccountNotify {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFaxAccountNotify {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 190733265, data2: 47273, data3: 18336, data4: [163, 35, 239, 74, 41, 59, 160, 106] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1593,6 +1613,10 @@ pub struct IFaxAccountOutgoingArchive {
     GetMessage: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFaxAccountOutgoingArchive {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1415776109, data2: 60436, data3: 18719, data4: [146, 110, 179, 206, 218, 94, 86, 98] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFaxAccountOutgoingQueue {
     pub base__: super::super::System::Com::IDispatch,
@@ -1604,6 +1628,10 @@ pub struct IFaxAccountOutgoingQueue {
     pub GetJob: unsafe extern "system" fn(this: *mut *mut Self, bstrjobid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pfaxoutgoingjob: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     GetJob: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFaxAccountOutgoingQueue {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 252978409, data2: 61997, data3: 17747, data4: [183, 165, 13, 36, 189, 13, 126, 70] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1627,6 +1655,10 @@ pub struct IFaxAccountSet {
     RemoveAccount: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFaxAccountSet {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1948842926, data2: 33822, data3: 18360, data4: [134, 244, 34, 136, 148, 109, 202, 27] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFaxAccounts {
     pub base__: super::super::System::Com::IDispatch,
@@ -1638,6 +1670,10 @@ pub struct IFaxAccounts {
     pub Count: unsafe extern "system" fn(this: *mut *mut Self, plcount: *mut i32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFaxAccounts {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2481619298, data2: 35815, data3: 17105, data4: [174, 123, 236, 116, 226, 217, 137, 218] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFaxActivity {
     pub base__: super::super::System::Com::IDispatch,
@@ -1646,6 +1682,10 @@ pub struct IFaxActivity {
     pub OutgoingMessages: unsafe extern "system" fn(this: *mut *mut Self, ploutgoingmessages: *mut i32) -> ::windows_sys::core::HRESULT,
     pub QueuedMessages: unsafe extern "system" fn(this: *mut *mut Self, plqueuedmessages: *mut i32) -> ::windows_sys::core::HRESULT,
     pub Refresh: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFaxActivity {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1259368343, data2: 15861, data3: 16626, data4: [188, 60, 68, 203, 129, 21, 235, 223] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1665,6 +1705,10 @@ pub struct IFaxActivityLogging {
     SetDatabasePath: usize,
     pub Refresh: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Save: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFaxActivityLogging {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 506005387, data2: 23145, data3: 18811, data4: [149, 146, 73, 183, 231, 250, 221, 181] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1718,6 +1762,10 @@ pub struct IFaxConfiguration {
     pub SetIncomingFaxesArePublic: unsafe extern "system" fn(this: *mut *mut Self, bincomingfaxesarepublic: i16) -> ::windows_sys::core::HRESULT,
     pub Refresh: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Save: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFaxConfiguration {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 284479735, data2: 2452, data3: 17731, data4: [171, 110, 80, 105, 73, 18, 140, 64] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1787,6 +1835,10 @@ pub struct IFaxDevice {
     pub AnswerCall: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFaxDevice {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1227910233, data2: 46382, data3: 18535, data4: [157, 244, 202, 88, 65, 201, 86, 208] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFaxDeviceIds {
     pub base__: super::super::System::Com::IDispatch,
@@ -1796,6 +1848,10 @@ pub struct IFaxDeviceIds {
     pub Add: unsafe extern "system" fn(this: *mut *mut Self, ldeviceid: i32) -> ::windows_sys::core::HRESULT,
     pub Remove: unsafe extern "system" fn(this: *mut *mut Self, lindex: i32) -> ::windows_sys::core::HRESULT,
     pub SetOrder: unsafe extern "system" fn(this: *mut *mut Self, ldeviceid: i32, lneworder: i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFaxDeviceIds {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 789545279, data2: 19689, data3: 17470, data4: [140, 161, 115, 140, 250, 238, 225, 73] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1830,6 +1886,10 @@ pub struct IFaxDeviceProvider {
     DeviceIds: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFaxDeviceProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 688827491, data2: 33772, data3: 17564, data4: [132, 23, 241, 72, 223, 140, 104, 42] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFaxDeviceProviders {
     pub base__: super::super::System::Com::IDispatch,
@@ -1839,6 +1899,10 @@ pub struct IFaxDeviceProviders {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     get_Item: usize,
     pub Count: unsafe extern "system" fn(this: *mut *mut Self, plcount: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFaxDeviceProviders {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2679598946, data2: 19582, data3: 17317, data4: [182, 253, 80, 40, 147, 247, 225, 62] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1854,6 +1918,10 @@ pub struct IFaxDevices {
     pub get_ItemById: unsafe extern "system" fn(this: *mut *mut Self, lid: i32, ppfaxdevice: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     get_ItemById: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFaxDevices {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2655418430, data2: 62287, data3: 18478, data4: [163, 96, 4, 22, 190, 203, 189, 150] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1949,6 +2017,10 @@ pub struct IFaxDocument {
     pub SetAttachFaxToReceipt: unsafe extern "system" fn(this: *mut *mut Self, battachfax: i16) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFaxDocument {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2986844742, data2: 2531, data3: 19022, data4: [167, 220, 254, 163, 29, 41, 69, 143] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFaxDocument2 {
     pub base__: IFaxDocument,
@@ -1974,6 +2046,10 @@ pub struct IFaxDocument2 {
     ConnectedSubmit2: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFaxDocument2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3778311777, data2: 63983, data3: 19821, data4: [180, 165, 192, 160, 104, 182, 92, 255] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFaxEventLogging {
     pub base__: super::super::System::Com::IDispatch,
@@ -1987,6 +2063,10 @@ pub struct IFaxEventLogging {
     pub SetGeneralEventsLevel: unsafe extern "system" fn(this: *mut *mut Self, generaleventlevel: FAX_LOG_LEVEL_ENUM) -> ::windows_sys::core::HRESULT,
     pub Refresh: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Save: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFaxEventLogging {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 142661989, data2: 8424, data3: 17124, data4: [142, 23, 148, 79, 25, 44, 170, 212] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2010,6 +2090,10 @@ pub struct IFaxFolders {
     OutgoingArchive: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFaxFolders {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3705909928, data2: 42923, data3: 17084, data4: [157, 10, 49, 73, 69, 114, 97, 160] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFaxInboundRouting {
     pub base__: super::super::System::Com::IDispatch,
@@ -2021,6 +2105,10 @@ pub struct IFaxInboundRouting {
     pub GetMethods: unsafe extern "system" fn(this: *mut *mut Self, pfaxinboundroutingmethods: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     GetMethods: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFaxInboundRouting {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2169029135, data2: 40274, data3: 17841, data4: [191, 150, 56, 252, 18, 113, 53, 39] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2051,6 +2139,10 @@ pub struct IFaxInboundRoutingExtension {
     Methods: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFaxInboundRoutingExtension {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2287689224, data2: 49772, data3: 20217, data4: [175, 131, 81, 88, 10, 117, 11, 225] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFaxInboundRoutingExtensions {
     pub base__: super::super::System::Com::IDispatch,
@@ -2060,6 +2152,10 @@ pub struct IFaxInboundRoutingExtensions {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     get_Item: usize,
     pub Count: unsafe extern "system" fn(this: *mut *mut Self, plcount: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFaxInboundRoutingExtensions {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 795645555, data2: 31526, data3: 17118, data4: [142, 176, 145, 93, 205, 42, 79, 76] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2091,6 +2187,10 @@ pub struct IFaxInboundRoutingMethod {
     pub Save: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFaxInboundRoutingMethod {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1164968033, data2: 44445, data3: 18294, data4: [168, 196, 100, 6, 84, 146, 207, 75] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFaxInboundRoutingMethods {
     pub base__: super::super::System::Com::IDispatch,
@@ -2100,6 +2200,10 @@ pub struct IFaxInboundRoutingMethods {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     get_Item: usize,
     pub Count: unsafe extern "system" fn(this: *mut *mut Self, plcount: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFaxInboundRoutingMethods {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2017446416, data2: 35080, data3: 17523, data4: [157, 105, 246, 127, 190, 160, 198, 185] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2135,6 +2239,10 @@ pub struct IFaxIncomingArchive {
     pub GetMessage: unsafe extern "system" fn(this: *mut *mut Self, bstrmessageid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pfaxincomingmessage: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     GetMessage: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFaxIncomingArchive {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1980116167, data2: 63252, data3: 20413, data4: [170, 6, 237, 110, 74, 75, 112, 243] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2182,6 +2290,10 @@ pub struct IFaxIncomingJob {
     CopyTiff: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFaxIncomingJob {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 544549350, data2: 25930, data3: 18710, data4: [159, 136, 77, 35, 46, 232, 161, 7] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFaxIncomingJobs {
     pub base__: super::super::System::Com::IDispatch,
@@ -2191,6 +2303,10 @@ pub struct IFaxIncomingJobs {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     get_Item: usize,
     pub Count: unsafe extern "system" fn(this: *mut *mut Self, plcount: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFaxIncomingJobs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 18810089, data2: 20438, data3: 19491, data4: [149, 19, 182, 182, 107, 178, 107, 233] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2230,6 +2346,10 @@ pub struct IFaxIncomingMessage {
     #[cfg(not(feature = "Win32_Foundation"))]
     CopyTiff: usize,
     pub Delete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFaxIncomingMessage {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2091616506, data2: 12025, data3: 18513, data4: [178, 243, 29, 20, 143, 237, 132, 71] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2277,6 +2397,10 @@ pub struct IFaxIncomingMessage2 {
     pub Refresh: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFaxIncomingMessage2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4179657987, data2: 58044, data3: 18675, data4: [158, 192, 230, 35, 111, 155, 80, 154] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFaxIncomingMessageIterator {
     pub base__: super::super::System::Com::IDispatch,
@@ -2289,6 +2413,10 @@ pub struct IFaxIncomingMessageIterator {
     pub AtEOF: unsafe extern "system" fn(this: *mut *mut Self, pbeof: *mut i16) -> ::windows_sys::core::HRESULT,
     pub MoveFirst: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub MoveNext: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFaxIncomingMessageIterator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4252232900, data2: 28422, data3: 20306, data4: [130, 168, 247, 186, 6, 174, 49, 8] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2306,6 +2434,10 @@ pub struct IFaxIncomingQueue {
     pub GetJob: unsafe extern "system" fn(this: *mut *mut Self, bstrjobid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pfaxincomingjob: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     GetJob: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFaxIncomingQueue {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2418959599, data2: 36824, data3: 19317, data4: [151, 37, 96, 20, 223, 22, 21, 69] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2345,6 +2477,10 @@ pub struct IFaxJobStatus {
     RoutingInformation: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFaxJobStatus {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2340877445, data2: 64895, data3: 18468, data4: [136, 107, 64, 197, 202, 166, 23, 204] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFaxLoggingOptions {
     pub base__: super::super::System::Com::IDispatch,
@@ -2356,6 +2492,10 @@ pub struct IFaxLoggingOptions {
     pub ActivityLogging: unsafe extern "system" fn(this: *mut *mut Self, pfaxactivitylogging: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     ActivityLogging: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFaxLoggingOptions {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 887508921, data2: 27441, data3: 19762, data4: [139, 39, 210, 134, 192, 195, 54, 6] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2371,6 +2511,10 @@ pub struct IFaxOutboundRouting {
     GetRules: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFaxOutboundRouting {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 635176356, data2: 39177, data3: 16829, data4: [169, 91, 126, 93, 29, 236, 29, 67] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFaxOutboundRoutingGroup {
     pub base__: super::super::System::Com::IDispatch,
@@ -2383,6 +2527,10 @@ pub struct IFaxOutboundRoutingGroup {
     pub DeviceIds: unsafe extern "system" fn(this: *mut *mut Self, pfaxdeviceids: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     DeviceIds: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFaxOutboundRoutingGroup {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3395455393, data2: 32293, data3: 20359, data4: [154, 11, 147, 54, 87, 52, 150, 44] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2402,6 +2550,10 @@ pub struct IFaxOutboundRoutingGroups {
     pub Remove: unsafe extern "system" fn(this: *mut *mut Self, vindex: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     Remove: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFaxOutboundRoutingGroups {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 593280759, data2: 49886, data3: 19453, data4: [184, 218, 117, 9, 124, 130, 200, 127] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2426,6 +2578,10 @@ pub struct IFaxOutboundRoutingRule {
     pub Save: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFaxOutboundRoutingRule {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3791099349, data2: 1986, data3: 18079, data4: [176, 39, 172, 172, 194, 50, 25, 218] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFaxOutboundRoutingRules {
     pub base__: super::super::System::Com::IDispatch,
@@ -2445,6 +2601,10 @@ pub struct IFaxOutboundRoutingRules {
     pub Add: unsafe extern "system" fn(this: *mut *mut Self, lcountrycode: i32, lareacode: i32, busedevice: i16, bstrgroupname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ldeviceid: i32, pfaxoutboundroutingrule: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     Add: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFaxOutboundRoutingRules {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3706692071, data2: 44669, data3: 20182, data4: [133, 33, 54, 158, 220, 202, 81, 32] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2480,6 +2640,10 @@ pub struct IFaxOutgoingArchive {
     pub GetMessage: unsafe extern "system" fn(this: *mut *mut Self, bstrmessageid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pfaxoutgoingmessage: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     GetMessage: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFaxOutgoingArchive {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3384971072, data2: 36224, data3: 20051, data4: [129, 15, 154, 121, 145, 155, 73, 253] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2548,6 +2712,10 @@ pub struct IFaxOutgoingJob {
     pub Cancel: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFaxOutgoingJob {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1666636461, data2: 26132, data3: 17795, data4: [191, 122, 58, 214, 123, 191, 199, 28] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFaxOutgoingJob2 {
     pub base__: IFaxOutgoingJob,
@@ -2559,6 +2727,10 @@ pub struct IFaxOutgoingJob2 {
     pub ScheduleType: unsafe extern "system" fn(this: *mut *mut Self, pscheduletype: *mut FAX_SCHEDULE_TYPE_ENUM) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFaxOutgoingJob2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1099599254, data2: 22944, data3: 18313, data4: [177, 118, 237, 243, 220, 143, 168, 247] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFaxOutgoingJobs {
     pub base__: super::super::System::Com::IDispatch,
@@ -2568,6 +2740,10 @@ pub struct IFaxOutgoingJobs {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     get_Item: usize,
     pub Count: unsafe extern "system" fn(this: *mut *mut Self, plcount: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFaxOutgoingJobs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 743889126, data2: 35887, data3: 17779, data4: [148, 76, 229, 5, 248, 245, 174, 237] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2624,6 +2800,10 @@ pub struct IFaxOutgoingMessage {
     pub Delete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFaxOutgoingMessage {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4041881054, data2: 51877, data3: 19068, data4: [130, 199, 43, 96, 186, 95, 43, 226] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFaxOutgoingMessage2 {
     pub base__: IFaxOutgoingMessage,
@@ -2639,6 +2819,10 @@ pub struct IFaxOutgoingMessage2 {
     pub Refresh: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFaxOutgoingMessage2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3011376775, data2: 48264, data3: 19270, data4: [179, 190, 180, 88, 179, 234, 158, 127] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFaxOutgoingMessageIterator {
     pub base__: super::super::System::Com::IDispatch,
@@ -2651,6 +2835,10 @@ pub struct IFaxOutgoingMessageIterator {
     pub SetPrefetchSize: unsafe extern "system" fn(this: *mut *mut Self, lprefetchsize: i32) -> ::windows_sys::core::HRESULT,
     pub MoveFirst: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub MoveNext: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFaxOutgoingMessageIterator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4125908303, data2: 47168, data3: 17199, data4: [153, 128, 17, 47, 228, 42, 155, 122] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2686,6 +2874,10 @@ pub struct IFaxOutgoingQueue {
     pub GetJob: unsafe extern "system" fn(this: *mut *mut Self, bstrjobid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pfaxoutgoingjob: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     GetJob: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFaxOutgoingQueue {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2159140644, data2: 55724, data3: 17203, data4: [179, 115, 72, 124, 237, 200, 12, 229] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2735,6 +2927,10 @@ pub struct IFaxReceiptOptions {
     pub SetUseForInboundRouting: unsafe extern "system" fn(this: *mut *mut Self, buseforinboundrouting: i16) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFaxReceiptOptions {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 932117227, data2: 24523, data3: 19195, data4: [178, 238, 225, 110, 128, 97, 68, 135] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFaxRecipient {
     pub base__: super::super::System::Com::IDispatch,
@@ -2756,6 +2952,10 @@ pub struct IFaxRecipient {
     SetName: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFaxRecipient {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2587730848, data2: 21389, data3: 17078, data4: [148, 68, 170, 165, 125, 12, 226, 188] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFaxRecipients {
     pub base__: super::super::System::Com::IDispatch,
@@ -2770,6 +2970,10 @@ pub struct IFaxRecipients {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     Add: usize,
     pub Remove: unsafe extern "system" fn(this: *mut *mut Self, lindex: i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFaxRecipients {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3117014618, data2: 35150, data3: 17554, data4: [159, 163, 8, 198, 39, 193, 29, 93] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2790,6 +2994,10 @@ pub struct IFaxSecurity {
     pub SetInformationType: unsafe extern "system" fn(this: *mut *mut Self, linformationtype: i32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFaxSecurity {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2008352961, data2: 2496, data3: 18338, data4: [145, 235, 252, 231, 253, 242, 105, 14] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFaxSecurity2 {
     pub base__: super::super::System::Com::IDispatch,
@@ -2806,6 +3014,10 @@ pub struct IFaxSecurity2 {
     pub Save: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub InformationType: unsafe extern "system" fn(this: *mut *mut Self, plinformationtype: *mut i32) -> ::windows_sys::core::HRESULT,
     pub SetInformationType: unsafe extern "system" fn(this: *mut *mut Self, linformationtype: i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFaxSecurity2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 400052724, data2: 53403, data3: 18684, data4: [153, 201, 143, 36, 196, 219, 154, 177] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2943,6 +3155,10 @@ pub struct IFaxSender {
     pub SaveDefaultSender: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFaxSender {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 226991485, data2: 62842, data3: 19654, data4: [166, 249, 62, 229, 213, 39, 180, 106] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFaxServer {
     pub base__: super::super::System::Com::IDispatch,
@@ -3025,6 +3241,10 @@ pub struct IFaxServer {
     pub APIVersion: unsafe extern "system" fn(this: *mut *mut Self, papiversion: *mut FAX_SERVER_APIVERSION_ENUM) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFaxServer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1197171817, data2: 37029, data3: 18552, data4: [165, 119, 23, 168, 110, 142, 52, 98] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFaxServer2 {
     pub base__: IFaxServer,
@@ -3046,14 +3266,26 @@ pub struct IFaxServer2 {
     Security2: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFaxServer2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1461513487, data2: 22025, data3: 20288, data4: [145, 118, 84, 126, 58, 114, 202, 124] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFaxServerNotify {
     pub base__: super::super::System::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFaxServerNotify {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 771980071, data2: 53130, data3: 19133, data4: [177, 224, 87, 4, 148, 59, 234, 111] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFaxServerNotify2 {
     pub base__: super::super::System::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFaxServerNotify2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1634511062, data2: 42874, data3: 16482, data4: [171, 253, 14, 71, 18, 65, 199, 170] };
 }
 #[doc = "*Required features: `\"Win32_Devices_Fax\"`*"]
 pub const IS_DIGITAL_CAMERA_STR: &str = "IsDigitalCamera";
@@ -3098,6 +3330,9 @@ pub struct IStiDevice {
     pub UnSubscribe: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub GetLastErrorInfo: unsafe extern "system" fn(this: *mut *mut Self, plasterrorinfo: *mut _ERROR_INFOW) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IStiDevice {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1828346496, data2: 11720, data3: 4560, data4: [144, 234, 0, 170, 0, 96, 248, 108] };
+}
 #[repr(C)]
 pub struct IStiDeviceControl {
     pub base__: ::windows_sys::core::IUnknown,
@@ -3127,6 +3362,9 @@ pub struct IStiDeviceControl {
     GetMyDeviceHandle: usize,
     pub GetMyDeviceOpenMode: unsafe extern "system" fn(this: *mut *mut Self, pdwopenmode: *mut u32) -> ::windows_sys::core::HRESULT,
     pub WriteToErrorLog: unsafe extern "system" fn(this: *mut *mut Self, dwmessagetype: u32, pszmessage: ::windows_sys::core::PCWSTR, dwerrorcode: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IStiDeviceControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 311072864, data2: 21212, data3: 4560, data4: [158, 223, 68, 69, 83, 84, 0, 0] };
 }
 #[repr(C)]
 pub struct IStiDeviceW(pub u8);
@@ -3168,6 +3406,9 @@ pub struct IStiUSD {
     pub GetNotificationData: unsafe extern "system" fn(this: *mut *mut Self, lpnotify: *mut STINOTIFY) -> ::windows_sys::core::HRESULT,
     pub GetLastErrorInfo: unsafe extern "system" fn(this: *mut *mut Self, plasterrorinfo: *mut _ERROR_INFOW) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IStiUSD {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 211530848, data2: 20908, data3: 4560, data4: [144, 234, 0, 170, 0, 96, 248, 108] };
+}
 #[repr(C)]
 pub struct IStillImageW {
     pub base__: ::windows_sys::core::IUnknown,
@@ -3195,6 +3436,9 @@ pub struct IStillImageW {
     pub LaunchApplicationForDevice: unsafe extern "system" fn(this: *mut *mut Self, pwszdevicename: ::windows_sys::core::PCWSTR, pwszappname: ::windows_sys::core::PCWSTR, pstinotify: *const STINOTIFY) -> ::windows_sys::core::HRESULT,
     pub SetupDeviceParameters: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut STI_DEVICE_INFORMATIONW) -> ::windows_sys::core::HRESULT,
     pub WriteToErrorLog: unsafe extern "system" fn(this: *mut *mut Self, dwmessagetype: u32, pszmessage: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IStillImageW {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1679546496, data2: 11720, data3: 4560, data4: [144, 234, 0, 170, 0, 96, 248, 108] };
 }
 #[doc = "*Required features: `\"Win32_Devices_Fax\"`*"]
 pub const JS_DELETING: u32 = 2u32;
@@ -3940,6 +4184,10 @@ pub struct _IFaxAccountNotify {
     OnServerShutDown: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for _IFaxAccountNotify {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3115564161, data2: 44059, data3: 18163, data4: [179, 157, 10, 220, 48, 225, 183, 136] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct _IFaxServerNotify2 {
     pub base__: super::super::System::Com::IDispatch,
@@ -4047,6 +4295,10 @@ pub struct _IFaxServerNotify2 {
     pub OnGeneralServerConfigChanged: unsafe extern "system" fn(this: *mut *mut Self, pfaxserver: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     OnGeneralServerConfigChanged: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for _IFaxServerNotify2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3969673657, data2: 24551, data3: 18437, data4: [148, 103, 130, 252, 217, 106, 249, 3] };
 }
 #[doc = "*Required features: `\"Win32_Devices_Fax\"`*"]
 pub const lDEFAULT_PREFETCH_SIZE: i32 = 100i32;

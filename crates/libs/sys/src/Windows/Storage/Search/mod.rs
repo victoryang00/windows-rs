@@ -97,6 +97,9 @@ pub struct IContentIndexer {
     RetrievePropertiesAsync: usize,
     pub Revision: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u64) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IContentIndexer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2977333133, data2: 63128, data3: 18818, data4: [176, 95, 58, 110, 140, 171, 1, 162] };
+}
 #[repr(C)]
 pub struct IContentIndexerQuery {
     pub base__: ::windows_sys::core::IInspectable,
@@ -122,6 +125,9 @@ pub struct IContentIndexerQuery {
     GetRangeAsync: usize,
     pub QueryFolder: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IContentIndexerQuery {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1893970168, data2: 19452, data3: 17034, data4: [136, 137, 204, 81, 218, 154, 123, 157] };
+}
 #[repr(C)]
 pub struct IContentIndexerQueryOperations {
     pub base__: ::windows_sys::core::IInspectable,
@@ -138,11 +144,17 @@ pub struct IContentIndexerQueryOperations {
     #[cfg(not(feature = "Foundation_Collections"))]
     CreateQuery: usize,
 }
+impl ::windows_sys::core::Interface for IContentIndexerQueryOperations {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 679624208, data2: 18310, data3: 17137, data4: [151, 48, 121, 43, 53, 102, 177, 80] };
+}
 #[repr(C)]
 pub struct IContentIndexerStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub GetIndexerWithName: unsafe extern "system" fn(this: *mut *mut Self, indexname: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetIndexer: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IContentIndexerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2353562485, data2: 45950, data3: 19552, data4: [155, 168, 183, 96, 253, 163, 229, 157] };
 }
 #[repr(C)]
 pub struct IIndexableContent {
@@ -163,6 +175,9 @@ pub struct IIndexableContent {
     SetStream: usize,
     pub StreamContentType: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub SetStreamContentType: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IIndexableContent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3438387295, data2: 54453, data3: 18490, data4: [176, 110, 224, 219, 30, 196, 32, 228] };
 }
 #[repr(C)]
 pub struct IQueryOptions {
@@ -198,6 +213,9 @@ pub struct IQueryOptions {
     #[cfg(not(all(feature = "Foundation_Collections", feature = "Storage_FileProperties")))]
     SetPropertyPrefetch: usize,
 }
+impl ::windows_sys::core::Interface for IQueryOptions {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 509495022, data2: 3909, data3: 18488, data4: [168, 233, 208, 71, 157, 68, 108, 48] };
+}
 #[repr(C)]
 pub struct IQueryOptionsFactory {
     pub base__: ::windows_sys::core::IInspectable,
@@ -207,6 +225,9 @@ pub struct IQueryOptionsFactory {
     CreateCommonFileQuery: usize,
     pub CreateCommonFolderQuery: unsafe extern "system" fn(this: *mut *mut Self, query: CommonFolderQuery, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IQueryOptionsFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 53354380, data2: 43457, data3: 20081, data4: [128, 17, 13, 238, 157, 72, 17, 163] };
+}
 #[repr(C)]
 pub struct IQueryOptionsWithProviderFilter {
     pub base__: ::windows_sys::core::IInspectable,
@@ -214,6 +235,9 @@ pub struct IQueryOptionsWithProviderFilter {
     pub StorageProviderIdFilter: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     StorageProviderIdFilter: usize,
+}
+impl ::windows_sys::core::Interface for IQueryOptionsWithProviderFilter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1537019942, data2: 5572, data3: 17629, data4: [184, 154, 71, 165, 155, 125, 124, 79] };
 }
 #[repr(C)]
 pub struct IStorageFileQueryResult {
@@ -227,6 +251,9 @@ pub struct IStorageFileQueryResult {
     #[cfg(not(feature = "Foundation_Collections"))]
     GetFilesAsyncDefaultStartAndCount: usize,
 }
+impl ::windows_sys::core::Interface for IStorageFileQueryResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1392354375, data2: 11178, data3: 16684, data4: [178, 159, 212, 177, 119, 142, 250, 30] };
+}
 #[repr(C)]
 pub struct IStorageFileQueryResult2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -234,6 +261,9 @@ pub struct IStorageFileQueryResult2 {
     pub GetMatchingPropertiesWithRanges: unsafe extern "system" fn(this: *mut *mut Self, file: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Data_Text", feature = "Foundation_Collections")))]
     GetMatchingPropertiesWithRanges: usize,
+}
+impl ::windows_sys::core::Interface for IStorageFileQueryResult2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1314765277, data2: 28993, data3: 18116, data4: [139, 227, 233, 220, 158, 39, 39, 92] };
 }
 #[repr(C)]
 pub struct IStorageFolderQueryOperations {
@@ -274,6 +304,9 @@ pub struct IStorageFolderQueryOperations {
     pub IsCommonFolderQuerySupported: unsafe extern "system" fn(this: *mut *mut Self, query: CommonFolderQuery, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub IsCommonFileQuerySupported: unsafe extern "system" fn(this: *mut *mut Self, query: CommonFileQuery, result__: *mut bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IStorageFolderQueryOperations {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3410218185, data2: 17515, data3: 19023, data4: [190, 151, 117, 119, 113, 190, 82, 3] };
+}
 #[repr(C)]
 pub struct IStorageFolderQueryResult {
     pub base__: ::windows_sys::core::IInspectable,
@@ -285,6 +318,9 @@ pub struct IStorageFolderQueryResult {
     pub GetFoldersAsyncDefaultStartAndCount: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     GetFoldersAsyncDefaultStartAndCount: usize,
+}
+impl ::windows_sys::core::Interface for IStorageFolderQueryResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1716832529, data2: 32102, data3: 18170, data4: [174, 207, 228, 164, 186, 169, 58, 184] };
 }
 #[repr(C)]
 pub struct IStorageItemQueryResult {
@@ -298,11 +334,17 @@ pub struct IStorageItemQueryResult {
     #[cfg(not(feature = "Foundation_Collections"))]
     GetItemsAsyncDefaultStartAndCount: usize,
 }
+impl ::windows_sys::core::Interface for IStorageItemQueryResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3902046329, data2: 40280, data3: 18360, data4: [178, 178, 65, 176, 127, 71, 149, 249] };
+}
 #[repr(C)]
 pub struct IStorageLibraryChangeTrackerTriggerDetails {
     pub base__: ::windows_sys::core::IInspectable,
     pub Folder: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub ChangeTracker: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IStorageLibraryChangeTrackerTriggerDetails {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 499622761, data2: 47011, data3: 19954, data4: [157, 97, 235, 168, 90, 3, 67, 210] };
 }
 #[repr(C)]
 pub struct IStorageLibraryContentChangedTriggerDetails {
@@ -312,6 +354,9 @@ pub struct IStorageLibraryContentChangedTriggerDetails {
     pub CreateModifiedSinceQuery: unsafe extern "system" fn(this: *mut *mut Self, lastquerytime: super::super::Foundation::DateTime, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     CreateModifiedSinceQuery: usize,
+}
+impl ::windows_sys::core::Interface for IStorageLibraryContentChangedTriggerDetails {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 708254071, data2: 43967, data3: 19997, data4: [138, 165, 99, 133, 216, 136, 71, 153] };
 }
 #[repr(C)]
 pub struct IStorageQueryResultBase {
@@ -344,6 +389,9 @@ pub struct IStorageQueryResultBase {
     pub GetCurrentQueryOptions: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub ApplyNewQueryOptions: unsafe extern "system" fn(this: *mut *mut Self, newqueryoptions: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IStorageQueryResultBase {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3264730893, data2: 29523, data3: 18347, data4: [186, 88, 140, 97, 66, 93, 197, 75] };
+}
 #[repr(C)]
 pub struct IValueAndLanguage {
     pub base__: ::windows_sys::core::IInspectable,
@@ -351,6 +399,9 @@ pub struct IValueAndLanguage {
     pub SetLanguage: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub Value: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetValue: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IValueAndLanguage {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3113306241, data2: 41454, data3: 19396, data4: [146, 165, 70, 105, 104, 227, 4, 54] };
 }
 pub type IndexableContent = *mut ::core::ffi::c_void;
 #[doc = "*Required features: `\"Storage_Search\"`*"]

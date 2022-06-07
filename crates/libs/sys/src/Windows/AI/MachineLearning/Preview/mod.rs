@@ -47,6 +47,10 @@ pub struct IImageVariableDescriptorPreview {
     Height: usize,
 }
 #[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for IImageVariableDescriptorPreview {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2061630066, data2: 670, data3: 19909, data4: [162, 248, 95, 183, 99, 21, 65, 80] };
+}
+#[cfg(feature = "deprecated")]
 #[repr(C)]
 pub struct IInferencingOptionsPreview {
     pub base__: ::windows_sys::core::IInspectable,
@@ -92,6 +96,10 @@ pub struct IInferencingOptionsPreview {
     SetReclaimMemoryAfterEvaluation: usize,
 }
 #[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for IInferencingOptionsPreview {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1203536389, data2: 19766, data3: 18345, data4: [143, 104, 255, 203, 51, 157, 208, 252] };
+}
+#[cfg(feature = "deprecated")]
 #[repr(C)]
 pub struct ILearningModelBindingPreview {
     pub base__: ::windows_sys::core::IInspectable,
@@ -109,6 +117,10 @@ pub struct ILearningModelBindingPreview {
     Clear: usize,
 }
 #[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for ILearningModelBindingPreview {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2479423976, data2: 27768, data3: 19279, data4: [174, 193, 166, 187, 158, 105, 22, 36] };
+}
+#[cfg(feature = "deprecated")]
 #[repr(C)]
 pub struct ILearningModelBindingPreviewFactory {
     pub base__: ::windows_sys::core::IInspectable,
@@ -116,6 +128,10 @@ pub struct ILearningModelBindingPreviewFactory {
     pub CreateFromModel: unsafe extern "system" fn(this: *mut *mut Self, model: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "deprecated"))]
     CreateFromModel: usize,
+}
+#[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for ILearningModelBindingPreviewFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1220026783, data2: 7761, data3: 19831, data4: [174, 80, 62, 193, 100, 173, 52, 128] };
 }
 #[cfg(feature = "deprecated")]
 #[repr(C)]
@@ -155,6 +171,10 @@ pub struct ILearningModelDescriptionPreview {
     OutputFeatures: usize,
 }
 #[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for ILearningModelDescriptionPreview {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4113304006, data2: 34321, data3: 16557, data4: [142, 89, 222, 63, 215, 3, 10, 64] };
+}
+#[cfg(feature = "deprecated")]
 #[repr(C)]
 pub struct ILearningModelEvaluationResultPreview {
     pub base__: ::windows_sys::core::IInspectable,
@@ -166,6 +186,10 @@ pub struct ILearningModelEvaluationResultPreview {
     pub Outputs: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Foundation_Collections", feature = "deprecated")))]
     Outputs: usize,
+}
+#[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for ILearningModelEvaluationResultPreview {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3743804063, data2: 39011, data3: 16520, data4: [132, 152, 135, 161, 244, 104, 111, 146] };
 }
 #[cfg(feature = "deprecated")]
 #[repr(C)]
@@ -193,6 +217,10 @@ pub struct ILearningModelPreview {
     SetInferencingOptions: usize,
 }
 #[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for ILearningModelPreview {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 77342314, data2: 37812, data3: 18316, data4: [174, 184, 112, 21, 123, 240, 255, 148] };
+}
+#[cfg(feature = "deprecated")]
 #[repr(C)]
 pub struct ILearningModelPreviewStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -204,6 +232,10 @@ pub struct ILearningModelPreviewStatics {
     pub LoadModelFromStreamAsync: unsafe extern "system" fn(this: *mut *mut Self, modelstream: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams", feature = "deprecated")))]
     LoadModelFromStreamAsync: usize,
+}
+#[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for ILearningModelPreviewStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 374061920, data2: 33893, data3: 18310, data4: [139, 147, 44, 22, 168, 146, 137, 215] };
 }
 #[cfg(feature = "deprecated")]
 #[repr(C)]
@@ -227,6 +259,10 @@ pub struct ILearningModelVariableDescriptorPreview {
     IsRequired: usize,
 }
 #[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for ILearningModelVariableDescriptorPreview {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2973628034, data2: 64560, data3: 18731, data4: [142, 160, 237, 31, 83, 192, 176, 56] };
+}
+#[cfg(feature = "deprecated")]
 #[repr(C)]
 pub struct IMapVariableDescriptorPreview {
     pub base__: ::windows_sys::core::IInspectable,
@@ -248,6 +284,10 @@ pub struct IMapVariableDescriptorPreview {
     Fields: usize,
 }
 #[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for IMapVariableDescriptorPreview {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1018397552, data2: 49195, data3: 16950, data4: [179, 232, 107, 220, 164, 156, 49, 41] };
+}
+#[cfg(feature = "deprecated")]
 #[repr(C)]
 pub struct ISequenceVariableDescriptorPreview {
     pub base__: ::windows_sys::core::IInspectable,
@@ -255,6 +295,10 @@ pub struct ISequenceVariableDescriptorPreview {
     pub ElementType: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "deprecated"))]
     ElementType: usize,
+}
+#[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for ISequenceVariableDescriptorPreview {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2631463570, data2: 39090, data3: 17712, data4: [161, 182, 45, 237, 95, 236, 188, 38] };
 }
 #[cfg(feature = "deprecated")]
 #[repr(C)]
@@ -268,6 +312,10 @@ pub struct ITensorVariableDescriptorPreview {
     pub Shape: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Foundation_Collections", feature = "deprecated")))]
     Shape: usize,
+}
+#[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for ITensorVariableDescriptorPreview {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2819575834, data2: 39596, data3: 16947, data4: [151, 132, 172, 234, 249, 37, 16, 181] };
 }
 pub type ImageVariableDescriptorPreview = *mut ::core::ffi::c_void;
 pub type InferencingOptionsPreview = *mut ::core::ffi::c_void;

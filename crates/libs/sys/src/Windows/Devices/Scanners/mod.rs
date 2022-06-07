@@ -17,6 +17,9 @@ pub struct IImageScanner {
     #[cfg(not(all(feature = "Foundation", feature = "Storage")))]
     ScanFilesToFolderAsync: usize,
 }
+impl ::windows_sys::core::Interface for IImageScanner {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1403555704, data2: 21144, data3: 18592, data4: [141, 163, 128, 135, 81, 150, 101, 224] };
+}
 #[repr(C)]
 pub struct IImageScannerFeederConfiguration {
     pub base__: ::windows_sys::core::IInspectable,
@@ -56,6 +59,9 @@ pub struct IImageScannerFeederConfiguration {
     pub ScanAhead: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub SetScanAhead: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IImageScannerFeederConfiguration {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1958587630, data2: 64151, data3: 19479, data4: [130, 128, 64, 227, 156, 109, 204, 103] };
+}
 #[repr(C)]
 pub struct IImageScannerFormatConfiguration {
     pub base__: ::windows_sys::core::IInspectable,
@@ -64,11 +70,17 @@ pub struct IImageScannerFormatConfiguration {
     pub SetFormat: unsafe extern "system" fn(this: *mut *mut Self, value: ImageScannerFormat) -> ::windows_sys::core::HRESULT,
     pub IsFormatSupported: unsafe extern "system" fn(this: *mut *mut Self, value: ImageScannerFormat, result__: *mut bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IImageScannerFormatConfiguration {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2921815313, data2: 56031, data3: 16400, data4: [191, 16, 204, 165, 200, 61, 203, 176] };
+}
 #[repr(C)]
 pub struct IImageScannerPreviewResult {
     pub base__: ::windows_sys::core::IInspectable,
     pub Succeeded: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub Format: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ImageScannerFormat) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IImageScannerPreviewResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 146275982, data2: 34961, data3: 17437, data4: [190, 156, 23, 111, 161, 9, 200, 187] };
 }
 #[repr(C)]
 pub struct IImageScannerScanResult {
@@ -77,6 +89,9 @@ pub struct IImageScannerScanResult {
     pub ScannedFiles: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Foundation_Collections", feature = "Storage")))]
     ScannedFiles: usize,
+}
+impl ::windows_sys::core::Interface for IImageScannerScanResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3373671629, data2: 36919, data3: 20040, data4: [132, 193, 172, 9, 117, 7, 107, 197] };
 }
 #[repr(C)]
 pub struct IImageScannerSourceConfiguration {
@@ -123,6 +138,9 @@ pub struct IImageScannerSourceConfiguration {
     pub Contrast: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i32) -> ::windows_sys::core::HRESULT,
     pub SetContrast: unsafe extern "system" fn(this: *mut *mut Self, value: i32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IImageScannerSourceConfiguration {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3216310357, data2: 2884, data3: 19586, data4: [158, 137, 32, 95, 156, 35, 78, 89] };
+}
 #[repr(C)]
 pub struct IImageScannerStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -131,6 +149,9 @@ pub struct IImageScannerStatics {
     #[cfg(not(feature = "Foundation"))]
     FromIdAsync: usize,
     pub GetDeviceSelector: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IImageScannerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3159877390, data2: 55300, data3: 17527, data4: [159, 181, 185, 17, 181, 71, 56, 151] };
 }
 pub type ImageScanner = *mut ::core::ffi::c_void;
 pub type ImageScannerAutoConfiguration = *mut ::core::ffi::c_void;

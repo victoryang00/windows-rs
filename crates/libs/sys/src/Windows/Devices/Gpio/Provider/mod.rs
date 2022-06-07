@@ -5,6 +5,9 @@ pub struct IGpioControllerProvider {
     pub PinCount: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i32) -> ::windows_sys::core::HRESULT,
     pub OpenPinProvider: unsafe extern "system" fn(this: *mut *mut Self, pin: i32, sharingmode: ProviderGpioSharingMode, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IGpioControllerProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2903625415, data2: 6634, data3: 19233, data4: [135, 79, 185, 26, 237, 74, 37, 219] };
+}
 #[repr(C)]
 pub struct IGpioPinProvider {
     pub base__: ::windows_sys::core::IInspectable,
@@ -32,15 +35,24 @@ pub struct IGpioPinProvider {
     pub Write: unsafe extern "system" fn(this: *mut *mut Self, value: ProviderGpioPinValue) -> ::windows_sys::core::HRESULT,
     pub Read: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ProviderGpioPinValue) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IGpioPinProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1110723767, data2: 27324, data3: 16639, data4: [156, 231, 115, 184, 83, 1, 185, 0] };
+}
 #[repr(C)]
 pub struct IGpioPinProviderValueChangedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub Edge: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ProviderGpioPinEdge) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IGpioPinProviderValueChangedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 849794802, data2: 15707, data3: 17613, data4: [143, 190, 19, 166, 159, 46, 219, 36] };
+}
 #[repr(C)]
 pub struct IGpioPinProviderValueChangedEventArgsFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, edge: ProviderGpioPinEdge, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IGpioPinProviderValueChangedEventArgsFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1053494105, data2: 22156, data3: 17298, data4: [178, 74, 138, 89, 169, 2, 177, 241] };
 }
 #[repr(C)]
 pub struct IGpioProvider {
@@ -49,6 +61,9 @@ pub struct IGpioProvider {
     pub GetControllers: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     GetControllers: usize,
+}
+impl ::windows_sys::core::Interface for IGpioProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1156065031, data2: 2250, data3: 17226, data4: [175, 224, 214, 21, 128, 68, 111, 126] };
 }
 #[doc = "*Required features: `\"Devices_Gpio_Provider\"`*"]
 #[repr(transparent)]

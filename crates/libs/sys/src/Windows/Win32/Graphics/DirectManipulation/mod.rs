@@ -203,6 +203,9 @@ pub struct IDirectManipulationAutoScrollBehavior {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetConfiguration: unsafe extern "system" fn(this: *mut *mut Self, motiontypes: DIRECTMANIPULATION_MOTION_TYPES, scrollmotion: DIRECTMANIPULATION_AUTOSCROLL_CONFIGURATION) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDirectManipulationAutoScrollBehavior {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1834570964, data2: 8195, data3: 17238, data4: [155, 49, 208, 81, 201, 255, 10, 247] };
+}
 #[repr(C)]
 pub struct IDirectManipulationCompositor {
     pub base__: ::windows_sys::core::IUnknown,
@@ -211,10 +214,16 @@ pub struct IDirectManipulationCompositor {
     pub SetUpdateManager: unsafe extern "system" fn(this: *mut *mut Self, updatemanager: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Flush: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDirectManipulationCompositor {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1400506405, data2: 903, data3: 20218, data4: [182, 47, 113, 235, 31, 8, 90, 126] };
+}
 #[repr(C)]
 pub struct IDirectManipulationCompositor2 {
     pub base__: IDirectManipulationCompositor,
     pub AddContentWithCrossProcessChaining: unsafe extern "system" fn(this: *mut *mut Self, content: *mut ::core::ffi::c_void, device: *mut ::core::ffi::c_void, parentvisual: *mut ::core::ffi::c_void, childvisual: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDirectManipulationCompositor2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3549198370, data2: 61899, data3: 17355, data4: [180, 185, 172, 12, 118, 122, 65, 46] };
 }
 #[repr(C)]
 pub struct IDirectManipulationContent {
@@ -234,6 +243,9 @@ pub struct IDirectManipulationContent {
     pub GetContentTransform: unsafe extern "system" fn(this: *mut *mut Self, matrix: *mut f32, pointcount: u32) -> ::windows_sys::core::HRESULT,
     pub SyncContentTransform: unsafe extern "system" fn(this: *mut *mut Self, matrix: *const f32, pointcount: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDirectManipulationContent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3097060043, data2: 15753, data3: 17451, data4: [187, 88, 80, 152, 250, 15, 159, 22] };
+}
 #[repr(C)]
 pub struct IDirectManipulationDeferContactService {
     pub base__: ::windows_sys::core::IUnknown,
@@ -241,26 +253,41 @@ pub struct IDirectManipulationDeferContactService {
     pub CancelContact: unsafe extern "system" fn(this: *mut *mut Self, pointerid: u32) -> ::windows_sys::core::HRESULT,
     pub CancelDeferral: unsafe extern "system" fn(this: *mut *mut Self, pointerid: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDirectManipulationDeferContactService {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1697471601, data2: 65120, data3: 19096, data4: [190, 112, 229, 242, 18, 145, 231, 241] };
+}
 #[repr(C)]
 pub struct IDirectManipulationDragDropBehavior {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetConfiguration: unsafe extern "system" fn(this: *mut *mut Self, configuration: DIRECTMANIPULATION_DRAG_DROP_CONFIGURATION) -> ::windows_sys::core::HRESULT,
     pub GetStatus: unsafe extern "system" fn(this: *mut *mut Self, status: *mut DIRECTMANIPULATION_DRAG_DROP_STATUS) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDirectManipulationDragDropBehavior {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2169199349, data2: 49864, data3: 17008, data4: [169, 183, 161, 152, 206, 141, 2, 250] };
+}
 #[repr(C)]
 pub struct IDirectManipulationDragDropEventHandler {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnDragDropStatusChange: unsafe extern "system" fn(this: *mut *mut Self, viewport: *mut ::core::ffi::c_void, current: DIRECTMANIPULATION_DRAG_DROP_STATUS, previous: DIRECTMANIPULATION_DRAG_DROP_STATUS) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDirectManipulationDragDropEventHandler {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 530651920, data2: 28699, data3: 16814, data4: [181, 242, 73, 227, 107, 213, 149, 170] };
 }
 #[repr(C)]
 pub struct IDirectManipulationFrameInfoProvider {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetNextFrameInfo: unsafe extern "system" fn(this: *mut *mut Self, time: *mut u64, processtime: *mut u64, compositiontime: *mut u64) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDirectManipulationFrameInfoProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4218789306, data2: 28492, data3: 19457, data4: [135, 78, 25, 200, 160, 89, 7, 249] };
+}
 #[repr(C)]
 pub struct IDirectManipulationInteractionEventHandler {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnInteraction: unsafe extern "system" fn(this: *mut *mut Self, viewport: *mut ::core::ffi::c_void, interaction: DIRECTMANIPULATION_INTERACTION_TYPE) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDirectManipulationInteractionEventHandler {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3829351864, data2: 17076, data3: 16446, data4: [177, 242, 39, 59, 143, 81, 8, 48] };
 }
 #[repr(C)]
 pub struct IDirectManipulationManager {
@@ -288,15 +315,24 @@ pub struct IDirectManipulationManager {
     CreateViewport: usize,
     pub CreateContent: unsafe extern "system" fn(this: *mut *mut Self, frameinfo: *mut ::core::ffi::c_void, clsid: *const ::windows_sys::core::GUID, riid: *const ::windows_sys::core::GUID, object: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDirectManipulationManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4227191732, data2: 28871, data3: 16739, data4: [147, 34, 90, 111, 102, 13, 111, 188] };
+}
 #[repr(C)]
 pub struct IDirectManipulationManager2 {
     pub base__: IDirectManipulationManager,
     pub CreateBehavior: unsafe extern "system" fn(this: *mut *mut Self, clsid: *const ::windows_sys::core::GUID, riid: *const ::windows_sys::core::GUID, object: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDirectManipulationManager2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4195354089, data2: 15638, data3: 18508, data4: [191, 201, 98, 182, 30, 86, 236, 78] };
+}
 #[repr(C)]
 pub struct IDirectManipulationManager3 {
     pub base__: IDirectManipulationManager2,
     pub GetService: unsafe extern "system" fn(this: *mut *mut Self, clsid: *const ::windows_sys::core::GUID, riid: *const ::windows_sys::core::GUID, object: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDirectManipulationManager3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 750170941, data2: 65512, data3: 18572, data4: [183, 80, 251, 223, 232, 141, 202, 140] };
 }
 #[repr(C)]
 pub struct IDirectManipulationPrimaryContent {
@@ -311,10 +347,16 @@ pub struct IDirectManipulationPrimaryContent {
     pub GetInertiaEndTransform: unsafe extern "system" fn(this: *mut *mut Self, matrix: *mut f32, pointcount: u32) -> ::windows_sys::core::HRESULT,
     pub GetCenterPoint: unsafe extern "system" fn(this: *mut *mut Self, centerx: *mut f32, centery: *mut f32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDirectManipulationPrimaryContent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3240645092, data2: 5784, data3: 17957, data4: [185, 177, 124, 163, 236, 24, 99, 11] };
+}
 #[repr(C)]
 pub struct IDirectManipulationUpdateHandler {
     pub base__: ::windows_sys::core::IUnknown,
     pub Update: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDirectManipulationUpdateHandler {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2030789431, data2: 25848, data3: 20469, data4: [162, 105, 179, 43, 194, 175, 39, 167] };
 }
 #[repr(C)]
 pub struct IDirectManipulationUpdateManager {
@@ -325,6 +367,9 @@ pub struct IDirectManipulationUpdateManager {
     RegisterWaitHandleCallback: usize,
     pub UnregisterWaitHandleCallback: unsafe extern "system" fn(this: *mut *mut Self, cookie: u32) -> ::windows_sys::core::HRESULT,
     pub Update: unsafe extern "system" fn(this: *mut *mut Self, frameinfo: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDirectManipulationUpdateManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2964218621, data2: 48692, data3: 18151, data4: [156, 170, 211, 97, 250, 203, 185, 204] };
 }
 #[repr(C)]
 pub struct IDirectManipulationViewport {
@@ -370,6 +415,9 @@ pub struct IDirectManipulationViewport {
     pub Stop: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Abandon: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDirectManipulationViewport {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 683170365, data2: 24736, data3: 18621, data4: [155, 161, 92, 232, 217, 234, 58, 109] };
+}
 #[repr(C)]
 pub struct IDirectManipulationViewport2 {
     pub base__: IDirectManipulationViewport,
@@ -377,10 +425,16 @@ pub struct IDirectManipulationViewport2 {
     pub RemoveBehavior: unsafe extern "system" fn(this: *mut *mut Self, cookie: u32) -> ::windows_sys::core::HRESULT,
     pub RemoveAllBehaviors: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDirectManipulationViewport2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2453457580, data2: 25057, data3: 17285, data4: [183, 38, 1, 122, 241, 137, 136, 42] };
+}
 #[repr(C)]
 pub struct IDirectManipulationViewportEventHandler {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnViewportStatusChanged: unsafe extern "system" fn(this: *mut *mut Self, viewport: *mut ::core::ffi::c_void, current: DIRECTMANIPULATION_STATUS, previous: DIRECTMANIPULATION_STATUS) -> ::windows_sys::core::HRESULT,
     pub OnViewportUpdated: unsafe extern "system" fn(this: *mut *mut Self, viewport: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub OnContentUpdated: unsafe extern "system" fn(this: *mut *mut Self, viewport: *mut ::core::ffi::c_void, content: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDirectManipulationViewportEventHandler {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2501976538, data2: 54943, data3: 17913, data4: [176, 249, 242, 57, 68, 50, 26, 109] };
 }

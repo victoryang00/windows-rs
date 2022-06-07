@@ -46,6 +46,10 @@ pub struct ISocialFeedChildItem {
     SetSharedItem: usize,
 }
 #[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for ISocialFeedChildItem {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 191535194, data2: 54685, data3: 16574, data4: [152, 12, 72, 138, 42, 179, 10, 131] };
+}
+#[cfg(feature = "deprecated")]
 #[repr(C)]
 pub struct ISocialFeedContent {
     pub base__: ::windows_sys::core::IInspectable,
@@ -73,6 +77,10 @@ pub struct ISocialFeedContent {
     pub SetTargetUri: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
     SetTargetUri: usize,
+}
+#[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for ISocialFeedContent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2721375273, data2: 15929, data3: 18765, data4: [163, 124, 244, 98, 162, 73, 69, 20] };
 }
 #[cfg(feature = "deprecated")]
 #[repr(C)]
@@ -160,6 +168,10 @@ pub struct ISocialFeedItem {
     SetStyle: usize,
 }
 #[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for ISocialFeedItem {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1326682795, data2: 8050, data3: 19763, data4: [182, 149, 222, 62, 29, 182, 3, 23] };
+}
+#[cfg(feature = "deprecated")]
 #[repr(C)]
 pub struct ISocialFeedSharedItem {
     pub base__: ::windows_sys::core::IInspectable,
@@ -201,6 +213,10 @@ pub struct ISocialFeedSharedItem {
     Thumbnail: usize,
 }
 #[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for ISocialFeedSharedItem {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2080087616, data2: 42666, data3: 17831, data4: [159, 246, 84, 196, 33, 5, 221, 31] };
+}
+#[cfg(feature = "deprecated")]
 #[repr(C)]
 pub struct ISocialItemThumbnail {
     pub base__: ::windows_sys::core::IInspectable,
@@ -232,6 +248,10 @@ pub struct ISocialItemThumbnail {
     pub SetImageAsync: unsafe extern "system" fn(this: *mut *mut Self, image: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams", feature = "deprecated")))]
     SetImageAsync: usize,
+}
+#[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for ISocialItemThumbnail {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1556054810, data2: 16136, data3: 18815, data4: [145, 127, 87, 224, 157, 132, 177, 65] };
 }
 #[cfg(feature = "deprecated")]
 #[repr(C)]
@@ -269,6 +289,10 @@ pub struct ISocialUserInfo {
     pub SetTargetUri: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
     SetTargetUri: usize,
+}
+#[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for ISocialUserInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2656967633, data2: 37072, data3: 19997, data4: [149, 84, 132, 77, 70, 96, 127, 97] };
 }
 pub type SocialFeedChildItem = *mut ::core::ffi::c_void;
 pub type SocialFeedContent = *mut ::core::ffi::c_void;

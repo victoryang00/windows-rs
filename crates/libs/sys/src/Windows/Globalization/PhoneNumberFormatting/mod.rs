@@ -7,6 +7,9 @@ pub struct IPhoneNumberFormatter {
     pub FormatString: unsafe extern "system" fn(this: *mut *mut Self, number: ::windows_sys::core::HSTRING, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub FormatStringWithLeftToRightMarkers: unsafe extern "system" fn(this: *mut *mut Self, number: ::windows_sys::core::HSTRING, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPhoneNumberFormatter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 358003870, data2: 47828, data3: 19274, data4: [144, 13, 68, 7, 173, 183, 201, 129] };
+}
 #[repr(C)]
 pub struct IPhoneNumberFormatterStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -14,6 +17,9 @@ pub struct IPhoneNumberFormatterStatics {
     pub GetCountryCodeForRegion: unsafe extern "system" fn(this: *mut *mut Self, regioncode: ::windows_sys::core::HSTRING, result__: *mut i32) -> ::windows_sys::core::HRESULT,
     pub GetNationalDirectDialingPrefixForRegion: unsafe extern "system" fn(this: *mut *mut Self, regioncode: ::windows_sys::core::HSTRING, stripnondigit: bool, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub WrapWithLeftToRightMarkers: unsafe extern "system" fn(this: *mut *mut Self, number: ::windows_sys::core::HSTRING, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPhoneNumberFormatterStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1554446641, data2: 34009, data3: 16715, data4: [171, 78, 160, 85, 44, 135, 134, 2] };
 }
 #[repr(C)]
 pub struct IPhoneNumberInfo {
@@ -27,16 +33,25 @@ pub struct IPhoneNumberInfo {
     pub GetGeographicRegionCode: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub CheckNumberMatch: unsafe extern "system" fn(this: *mut *mut Self, othernumber: *mut ::core::ffi::c_void, result__: *mut PhoneNumberMatchResult) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPhoneNumberInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 477947101, data2: 51380, data3: 20131, data4: [154, 239, 179, 66, 226, 197, 180, 23] };
+}
 #[repr(C)]
 pub struct IPhoneNumberInfoFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, number: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPhoneNumberInfoFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2181216612, data2: 44458, data3: 19711, data4: [143, 207, 23, 231, 81, 106, 40, 255] };
 }
 #[repr(C)]
 pub struct IPhoneNumberInfoStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub TryParse: unsafe extern "system" fn(this: *mut *mut Self, input: ::windows_sys::core::HSTRING, phonenumber: *mut *mut ::core::ffi::c_void, result__: *mut PhoneNumberParseResult) -> ::windows_sys::core::HRESULT,
     pub TryParseWithRegion: unsafe extern "system" fn(this: *mut *mut Self, input: ::windows_sys::core::HSTRING, regioncode: ::windows_sys::core::HSTRING, phonenumber: *mut *mut ::core::ffi::c_void, result__: *mut PhoneNumberParseResult) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPhoneNumberInfoStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1530875754, data2: 34473, data3: 16617, data4: [134, 73, 109, 97, 22, 25, 40, 212] };
 }
 #[doc = "*Required features: `\"Globalization_PhoneNumberFormatting\"`*"]
 #[repr(transparent)]

@@ -22,6 +22,9 @@ pub struct IInjectedInputGamepadInfo {
     pub RightTrigger: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f64) -> ::windows_sys::core::HRESULT,
     pub SetRightTrigger: unsafe extern "system" fn(this: *mut *mut Self, value: f64) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IInjectedInputGamepadInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 548313663, data2: 57105, data3: 17778, data4: [169, 171, 215, 91, 138, 94, 72, 173] };
+}
 #[repr(C)]
 pub struct IInjectedInputGamepadInfoFactory {
     pub base__: ::windows_sys::core::IInspectable,
@@ -29,6 +32,9 @@ pub struct IInjectedInputGamepadInfoFactory {
     pub CreateInstanceFromGamepadReading: unsafe extern "system" fn(this: *mut *mut Self, reading: super::super::super::super::Gaming::Input::GamepadReading, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Gaming_Input"))]
     CreateInstanceFromGamepadReading: usize,
+}
+impl ::windows_sys::core::Interface for IInjectedInputGamepadInfoFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1499031670, data2: 27705, data3: 20164, data4: [139, 42, 41, 239, 125, 225, 138, 202] };
 }
 #[repr(C)]
 pub struct IInjectedInputKeyboardInfo {
@@ -39,6 +45,9 @@ pub struct IInjectedInputKeyboardInfo {
     pub SetScanCode: unsafe extern "system" fn(this: *mut *mut Self, value: u16) -> ::windows_sys::core::HRESULT,
     pub VirtualKey: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u16) -> ::windows_sys::core::HRESULT,
     pub SetVirtualKey: unsafe extern "system" fn(this: *mut *mut Self, value: u16) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IInjectedInputKeyboardInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1262932288, data2: 11114, data3: 24570, data4: [126, 174, 189, 7, 123, 5, 42, 205] };
 }
 #[repr(C)]
 pub struct IInjectedInputMouseInfo {
@@ -53,6 +62,9 @@ pub struct IInjectedInputMouseInfo {
     pub SetDeltaX: unsafe extern "system" fn(this: *mut *mut Self, value: i32) -> ::windows_sys::core::HRESULT,
     pub TimeOffsetInMilliseconds: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
     pub SetTimeOffsetInMilliseconds: unsafe extern "system" fn(this: *mut *mut Self, value: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IInjectedInputMouseInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2532666987, data2: 58490, data3: 23796, data4: [65, 141, 138, 95, 185, 103, 12, 125] };
 }
 #[repr(C)]
 pub struct IInjectedInputPenInfo {
@@ -72,6 +84,9 @@ pub struct IInjectedInputPenInfo {
     pub TiltY: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i32) -> ::windows_sys::core::HRESULT,
     pub SetTiltY: unsafe extern "system" fn(this: *mut *mut Self, value: i32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IInjectedInputPenInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1799400707, data2: 51742, data3: 21799, data4: [126, 2, 40, 40, 84, 11, 177, 212] };
+}
 #[repr(C)]
 pub struct IInjectedInputTouchInfo {
     pub base__: ::windows_sys::core::IInspectable,
@@ -85,6 +100,9 @@ pub struct IInjectedInputTouchInfo {
     pub SetPressure: unsafe extern "system" fn(this: *mut *mut Self, value: f64) -> ::windows_sys::core::HRESULT,
     pub TouchParameters: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut InjectedInputTouchParameters) -> ::windows_sys::core::HRESULT,
     pub SetTouchParameters: unsafe extern "system" fn(this: *mut *mut Self, value: InjectedInputTouchParameters) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IInjectedInputTouchInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 575656415, data2: 17384, data3: 24309, data4: [81, 10, 105, 202, 140, 155, 76, 40] };
 }
 #[repr(C)]
 pub struct IInputInjector {
@@ -108,6 +126,9 @@ pub struct IInputInjector {
     pub UninitializePenInjection: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub InjectShortcut: unsafe extern "system" fn(this: *mut *mut Self, shortcut: InjectedInputShortcut) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IInputInjector {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2395107204, data2: 2818, data3: 19410, data4: [173, 122, 61, 70, 88, 190, 62, 24] };
+}
 #[repr(C)]
 pub struct IInputInjector2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -115,15 +136,24 @@ pub struct IInputInjector2 {
     pub InjectGamepadInput: unsafe extern "system" fn(this: *mut *mut Self, input: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub UninitializeGamepadInjection: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IInputInjector2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2390397021, data2: 5203, data3: 17319, data4: [155, 203, 6, 214, 215, 179, 5, 247] };
+}
 #[repr(C)]
 pub struct IInputInjectorStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub TryCreate: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IInputInjectorStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3735972163, data2: 29698, data3: 16705, data4: [165, 198, 12, 1, 170, 87, 177, 106] };
+}
 #[repr(C)]
 pub struct IInputInjectorStatics2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub TryCreateForAppBroadcastOnly: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IInputInjectorStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2765830395, data2: 56716, data3: 16719, data4: [149, 234, 248, 126, 244, 192, 174, 108] };
 }
 #[doc = "*Required features: `\"UI_Input_Preview_Injection\"`*"]
 #[repr(transparent)]

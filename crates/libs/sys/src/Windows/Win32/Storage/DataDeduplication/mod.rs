@@ -184,6 +184,9 @@ pub struct IDedupBackupSupport {
     #[cfg(not(feature = "Win32_Foundation"))]
     RestoreFiles: usize,
 }
+impl ::windows_sys::core::Interface for IDedupBackupSupport {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3340360035, data2: 11053, data3: 16734, data4: [172, 247, 126, 183, 202, 89, 111, 244] };
+}
 #[repr(C)]
 pub struct IDedupChunkLibrary {
     pub base__: ::windows_sys::core::IUnknown,
@@ -194,6 +197,9 @@ pub struct IDedupChunkLibrary {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     SetParameter: usize,
     pub StartChunking: unsafe extern "system" fn(this: *mut *mut Self, iiditeratorinterfaceid: ::windows_sys::core::GUID, ppchunksenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDedupChunkLibrary {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3142665431, data2: 10016, data3: 19916, data4: [135, 119, 120, 89, 116, 22, 236, 35] };
 }
 #[repr(C)]
 pub struct IDedupDataPort {
@@ -226,6 +232,9 @@ pub struct IDedupDataPort {
     pub GetRequestStatus: unsafe extern "system" fn(this: *mut *mut Self, requestid: ::windows_sys::core::GUID, pstatus: *mut DedupDataPortRequestStatus) -> ::windows_sys::core::HRESULT,
     pub GetRequestResults: unsafe extern "system" fn(this: *mut *mut Self, requestid: ::windows_sys::core::GUID, maxwaitms: u32, pbatchresult: *mut ::windows_sys::core::HRESULT, pbatchcount: *mut u32, pstatus: *mut DedupDataPortRequestStatus, ppitemresults: *mut *mut ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDedupDataPort {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2036586292, data2: 16553, data3: 20131, data4: [187, 246, 90, 137, 210, 111, 122, 232] };
+}
 #[repr(C)]
 pub struct IDedupDataPortManager {
     pub base__: ::windows_sys::core::IUnknown,
@@ -239,6 +248,9 @@ pub struct IDedupDataPortManager {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetVolumeDataPort: usize,
 }
+impl ::windows_sys::core::Interface for IDedupDataPortManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1147630674, data2: 47370, data3: 17502, data4: [129, 146, 205, 207, 232, 21, 17, 251] };
+}
 #[repr(C)]
 pub struct IDedupIterateChunksHash32 {
     pub base__: ::windows_sys::core::IUnknown,
@@ -246,6 +258,9 @@ pub struct IDedupIterateChunksHash32 {
     pub Next: unsafe extern "system" fn(this: *mut *mut Self, ulmaxchunks: u32, parrchunks: *mut DEDUP_CHUNK_INFO_HASH32, pulfetched: *mut u32) -> ::windows_sys::core::HRESULT,
     pub Drain: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDedupIterateChunksHash32 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2427815123, data2: 29354, data3: 16399, data4: [151, 103, 202, 216, 102, 165, 162, 216] };
 }
 #[repr(C)]
 pub struct IDedupReadFileCallback {
@@ -262,4 +277,7 @@ pub struct IDedupReadFileCallback {
     pub PreviewContainerRead: unsafe extern "system" fn(this: *mut *mut Self, filefullpath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, numberofreads: u32, readoffsets: *const DDP_FILE_EXTENT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     PreviewContainerRead: usize,
+}
+impl ::windows_sys::core::Interface for IDedupReadFileCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2074920570, data2: 12061, data3: 17104, data4: [137, 126, 111, 246, 45, 213, 51, 187] };
 }

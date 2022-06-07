@@ -12,8 +12,14 @@ pub struct IHolographicKeyboard {
     SetPlacementOverrideWithMaxSize: usize,
     pub ResetPlacementOverride: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IHolographicKeyboard {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 131926163, data2: 43553, data3: 24175, data4: [169, 27, 17, 178, 179, 253, 123, 227] };
+}
 #[repr(C)]
 pub struct IHolographicKeyboardStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub GetDefault: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IHolographicKeyboardStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3061237284, data2: 25559, data3: 22735, data4: [176, 107, 8, 186, 160, 50, 162, 63] };
 }

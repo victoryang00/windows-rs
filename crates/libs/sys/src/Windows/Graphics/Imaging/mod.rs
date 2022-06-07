@@ -172,6 +172,9 @@ pub struct IBitmapBuffer {
     pub GetPlaneCount: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i32) -> ::windows_sys::core::HRESULT,
     pub GetPlaneDescription: unsafe extern "system" fn(this: *mut *mut Self, index: i32, result__: *mut BitmapPlaneDescription) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IBitmapBuffer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2772305092, data2: 14748, data3: 17292, data4: [178, 143, 166, 58, 107, 131, 209, 161] };
+}
 #[repr(C)]
 pub struct IBitmapCodecInformation {
     pub base__: ::windows_sys::core::IInspectable,
@@ -185,6 +188,9 @@ pub struct IBitmapCodecInformation {
     pub MimeTypes: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     MimeTypes: usize,
+}
+impl ::windows_sys::core::Interface for IBitmapCodecInformation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1074572018, data2: 50352, data3: 17298, data4: [163, 176, 111, 111, 155, 169, 92, 180] };
 }
 #[repr(C)]
 pub struct IBitmapDecoder {
@@ -200,6 +206,9 @@ pub struct IBitmapDecoder {
     pub GetFrameAsync: unsafe extern "system" fn(this: *mut *mut Self, frameindex: u32, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     GetFrameAsync: usize,
+}
+impl ::windows_sys::core::Interface for IBitmapDecoder {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2901353146, data2: 7540, data3: 19601, data4: [157, 252, 150, 32, 116, 82, 51, 230] };
 }
 #[repr(C)]
 pub struct IBitmapDecoderStatics {
@@ -224,11 +233,17 @@ pub struct IBitmapDecoderStatics {
     #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
     CreateWithIdAsync: usize,
 }
+impl ::windows_sys::core::Interface for IBitmapDecoderStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1133300518, data2: 48367, data3: 20117, data4: [186, 214, 35, 168, 34, 229, 141, 1] };
+}
 #[repr(C)]
 pub struct IBitmapDecoderStatics2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub HeifDecoderId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub WebpDecoderId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IBitmapDecoderStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1354393834, data2: 39329, data3: 16580, data4: [128, 217, 174, 240, 218, 250, 108, 63] };
 }
 #[repr(C)]
 pub struct IBitmapEncoder {
@@ -256,6 +271,9 @@ pub struct IBitmapEncoder {
     pub FlushAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     FlushAsync: usize,
+}
+impl ::windows_sys::core::Interface for IBitmapEncoder {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 734292195, data2: 57848, data3: 19284, data4: [149, 232, 50, 145, 149, 81, 206, 98] };
 }
 #[repr(C)]
 pub struct IBitmapEncoderStatics {
@@ -287,15 +305,24 @@ pub struct IBitmapEncoderStatics {
     #[cfg(not(feature = "Foundation"))]
     CreateForInPlacePropertyEncodingAsync: usize,
 }
+impl ::windows_sys::core::Interface for IBitmapEncoderStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2806208167, data2: 42212, data3: 20153, data4: [142, 64, 86, 77, 231, 225, 204, 178] };
+}
 #[repr(C)]
 pub struct IBitmapEncoderStatics2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub HeifEncoderId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IBitmapEncoderStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 868991577, data2: 65073, data3: 16817, data4: [184, 18, 8, 109, 33, 232, 126, 22] };
+}
 #[repr(C)]
 pub struct IBitmapEncoderWithSoftwareBitmap {
     pub base__: ::windows_sys::core::IInspectable,
     pub SetSoftwareBitmap: unsafe extern "system" fn(this: *mut *mut Self, bitmap: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IBitmapEncoderWithSoftwareBitmap {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1751962177, data2: 17200, data3: 19575, data4: [172, 228, 3, 52, 150, 139, 23, 104] };
 }
 #[repr(C)]
 pub struct IBitmapFrame {
@@ -322,6 +349,9 @@ pub struct IBitmapFrame {
     #[cfg(not(feature = "Foundation"))]
     GetPixelDataTransformedAsync: usize,
 }
+impl ::windows_sys::core::Interface for IBitmapFrame {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1923389980, data2: 32897, data3: 17293, data4: [145, 188, 148, 236, 252, 129, 133, 198] };
+}
 #[repr(C)]
 pub struct IBitmapFrameWithSoftwareBitmap {
     pub base__: ::windows_sys::core::IInspectable,
@@ -338,6 +368,9 @@ pub struct IBitmapFrameWithSoftwareBitmap {
     #[cfg(not(feature = "Foundation"))]
     GetSoftwareBitmapTransformedAsync: usize,
 }
+impl ::windows_sys::core::Interface for IBitmapFrameWithSoftwareBitmap {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4264066202, data2: 16908, data3: 18787, data4: [135, 173, 105, 20, 54, 224, 131, 131] };
+}
 #[repr(C)]
 pub struct IBitmapProperties {
     pub base__: ::windows_sys::core::IInspectable,
@@ -346,6 +379,9 @@ pub struct IBitmapProperties {
     #[cfg(not(feature = "Foundation_Collections"))]
     SetPropertiesAsync: usize,
 }
+impl ::windows_sys::core::Interface for IBitmapProperties {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3936309019, data2: 46341, data3: 17488, data4: [164, 209, 232, 202, 148, 82, 157, 141] };
+}
 #[repr(C)]
 pub struct IBitmapPropertiesView {
     pub base__: ::windows_sys::core::IInspectable,
@@ -353,6 +389,9 @@ pub struct IBitmapPropertiesView {
     pub GetPropertiesAsync: unsafe extern "system" fn(this: *mut *mut Self, propertiestoretrieve: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     GetPropertiesAsync: usize,
+}
+impl ::windows_sys::core::Interface for IBitmapPropertiesView {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2114971770, data2: 14960, data3: 18680, data4: [156, 85, 25, 108, 245, 165, 69, 245] };
 }
 #[repr(C)]
 pub struct IBitmapTransform {
@@ -370,6 +409,9 @@ pub struct IBitmapTransform {
     pub Bounds: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut BitmapBounds) -> ::windows_sys::core::HRESULT,
     pub SetBounds: unsafe extern "system" fn(this: *mut *mut Self, value: BitmapBounds) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IBitmapTransform {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2926924612, data2: 57960, data3: 19765, data4: [173, 207, 233, 149, 211, 26, 141, 52] };
+}
 #[repr(C)]
 pub struct IBitmapTypedValue {
     pub base__: ::windows_sys::core::IInspectable,
@@ -379,6 +421,9 @@ pub struct IBitmapTypedValue {
     #[cfg(not(feature = "Foundation"))]
     Type: usize,
 }
+impl ::windows_sys::core::Interface for IBitmapTypedValue {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3447735465, data2: 9283, data3: 16384, data4: [176, 205, 121, 49, 108, 86, 245, 137] };
+}
 #[repr(C)]
 pub struct IBitmapTypedValueFactory {
     pub base__: ::windows_sys::core::IInspectable,
@@ -387,10 +432,16 @@ pub struct IBitmapTypedValueFactory {
     #[cfg(not(feature = "Foundation"))]
     Create: usize,
 }
+impl ::windows_sys::core::Interface for IBitmapTypedValueFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2463872409, data2: 52755, data3: 18107, data4: [149, 69, 203, 58, 63, 99, 235, 139] };
+}
 #[repr(C)]
 pub struct IPixelDataProvider {
     pub base__: ::windows_sys::core::IInspectable,
     pub DetachPixelData: unsafe extern "system" fn(this: *mut *mut Self, result_size__: *mut u32, result__: *mut *mut u8) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPixelDataProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3716357925, data2: 6236, data3: 17813, data4: [159, 185, 204, 190, 110, 193, 138, 111] };
 }
 #[repr(C)]
 pub struct ISoftwareBitmap {
@@ -416,11 +467,17 @@ pub struct ISoftwareBitmap {
     CopyToBuffer: usize,
     pub GetReadOnlyView: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISoftwareBitmap {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1755186952, data2: 32495, data3: 18495, data4: [150, 63, 218, 147, 136, 24, 224, 115] };
+}
 #[repr(C)]
 pub struct ISoftwareBitmapFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, format: BitmapPixelFormat, width: i32, height: i32, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub CreateWithAlpha: unsafe extern "system" fn(this: *mut *mut Self, format: BitmapPixelFormat, width: i32, height: i32, alpha: BitmapAlphaMode, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISoftwareBitmapFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3382700905, data2: 11618, data3: 19783, data4: [166, 179, 79, 219, 106, 7, 253, 248] };
 }
 #[repr(C)]
 pub struct ISoftwareBitmapStatics {
@@ -444,6 +501,9 @@ pub struct ISoftwareBitmapStatics {
     pub CreateCopyWithAlphaFromSurfaceAsync: unsafe extern "system" fn(this: *mut *mut Self, surface: *mut ::core::ffi::c_void, alpha: BitmapAlphaMode, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Foundation", feature = "Graphics_DirectX_Direct3D11")))]
     CreateCopyWithAlphaFromSurfaceAsync: usize,
+}
+impl ::windows_sys::core::Interface for ISoftwareBitmapStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3741550043, data2: 26415, data3: 19101, data4: [128, 110, 194, 68, 47, 52, 62, 134] };
 }
 pub type ImageStream = *mut ::core::ffi::c_void;
 #[doc = "*Required features: `\"Graphics_Imaging\"`*"]

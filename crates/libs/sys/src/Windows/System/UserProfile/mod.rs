@@ -27,15 +27,24 @@ pub struct IAdvertisingManagerForUser {
     pub AdvertisingId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub User: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAdvertisingManagerForUser {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2458645456, data2: 53116, data3: 19120, data4: [167, 220, 109, 197, 188, 212, 66, 82] };
+}
 #[repr(C)]
 pub struct IAdvertisingManagerStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub AdvertisingId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAdvertisingManagerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2916304524, data2: 41587, data3: 18635, data4: [179, 70, 53, 68, 82, 45, 85, 129] };
+}
 #[repr(C)]
 pub struct IAdvertisingManagerStatics2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub GetForUser: unsafe extern "system" fn(this: *mut *mut Self, user: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAdvertisingManagerStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3708372911, data2: 6765, data3: 18096, data4: [149, 188, 243, 249, 214, 190, 185, 251] };
 }
 #[repr(C)]
 pub struct IAssignedAccessSettings {
@@ -44,11 +53,17 @@ pub struct IAssignedAccessSettings {
     pub IsSingleAppKioskMode: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub User: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAssignedAccessSettings {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 465927964, data2: 59761, data3: 22359, data4: [184, 224, 81, 47, 139, 140, 70, 210] };
+}
 #[repr(C)]
 pub struct IAssignedAccessSettingsStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub GetDefault: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetForUser: unsafe extern "system" fn(this: *mut *mut Self, user: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAssignedAccessSettingsStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 883432717, data2: 35369, data3: 24307, data4: [167, 190, 97, 142, 106, 195, 189, 1] };
 }
 #[repr(C)]
 pub struct IDiagnosticsSettings {
@@ -56,20 +71,32 @@ pub struct IDiagnosticsSettings {
     pub CanUseDiagnosticsToTailorExperiences: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub User: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDiagnosticsSettings {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3857312973, data2: 10001, data3: 17632, data4: [151, 60, 73, 29, 120, 4, 141, 36] };
+}
 #[repr(C)]
 pub struct IDiagnosticsSettingsStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub GetDefault: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetForUser: unsafe extern "system" fn(this: *mut *mut Self, user: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDiagnosticsSettingsStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1926424591, data2: 21392, data3: 18323, data4: [153, 11, 60, 204, 125, 106, 201, 200] };
+}
 #[repr(C)]
 pub struct IFirstSignInSettings {
     pub base__: ::windows_sys::core::IInspectable,
+}
+impl ::windows_sys::core::Interface for IFirstSignInSettings {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1049907539, data2: 14942, data3: 17710, data4: [166, 1, 245, 186, 173, 42, 72, 112] };
 }
 #[repr(C)]
 pub struct IFirstSignInSettingsStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub GetDefault: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IFirstSignInSettingsStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 484544271, data2: 7233, data3: 20128, data4: [183, 162, 111, 12, 28, 126, 132, 56] };
 }
 #[repr(C)]
 pub struct IGlobalizationPreferencesForUser {
@@ -97,6 +124,9 @@ pub struct IGlobalizationPreferencesForUser {
     #[cfg(not(feature = "Globalization"))]
     WeekStartsOn: usize,
 }
+impl ::windows_sys::core::Interface for IGlobalizationPreferencesForUser {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 353306517, data2: 20334, data3: 16570, data4: [160, 16, 226, 125, 129, 189, 167, 245] };
+}
 #[repr(C)]
 pub struct IGlobalizationPreferencesStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -122,6 +152,9 @@ pub struct IGlobalizationPreferencesStatics {
     #[cfg(not(feature = "Globalization"))]
     WeekStartsOn: usize,
 }
+impl ::windows_sys::core::Interface for IGlobalizationPreferencesStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 29311782, data2: 60727, data3: 20118, data4: [176, 233, 193, 52, 13, 30, 161, 88] };
+}
 #[repr(C)]
 pub struct IGlobalizationPreferencesStatics2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -131,10 +164,16 @@ pub struct IGlobalizationPreferencesStatics2 {
     #[cfg(not(feature = "Foundation_Collections"))]
     TrySetLanguages: usize,
 }
+impl ::windows_sys::core::Interface for IGlobalizationPreferencesStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4241393137, data2: 17152, data3: 19664, data4: [156, 172, 26, 142, 123, 126, 24, 244] };
+}
 #[repr(C)]
 pub struct IGlobalizationPreferencesStatics3 {
     pub base__: ::windows_sys::core::IInspectable,
     pub GetForUser: unsafe extern "system" fn(this: *mut *mut Self, user: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IGlobalizationPreferencesStatics3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 503682867, data2: 13813, data3: 16600, data4: [185, 232, 174, 243, 239, 133, 111, 206] };
 }
 #[repr(C)]
 pub struct ILockScreenImageFeedStatics {
@@ -144,6 +183,9 @@ pub struct ILockScreenImageFeedStatics {
     #[cfg(not(feature = "Foundation"))]
     RequestSetImageFeedAsync: usize,
     pub TryRemoveImageFeed: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ILockScreenImageFeedStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 739079158, data2: 937, data3: 16806, data4: [155, 1, 73, 82, 81, 255, 81, 213] };
 }
 #[repr(C)]
 pub struct ILockScreenStatics {
@@ -164,6 +206,9 @@ pub struct ILockScreenStatics {
     pub SetImageStreamAsync: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
     SetImageStreamAsync: usize,
+}
+impl ::windows_sys::core::Interface for ILockScreenStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1055511469, data2: 46599, data3: 16558, data4: [180, 38, 118, 49, 217, 130, 18, 105] };
 }
 #[cfg(feature = "deprecated")]
 #[repr(C)]
@@ -230,6 +275,10 @@ pub struct IUserInformationStatics {
     #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
     GetDomainNameAsync: usize,
 }
+#[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for IUserInformationStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2012457232, data2: 18682, data3: 18588, data4: [147, 78, 42, 232, 91, 168, 247, 114] };
+}
 #[repr(C)]
 pub struct IUserProfilePersonalizationSettings {
     pub base__: ::windows_sys::core::IInspectable,
@@ -242,11 +291,17 @@ pub struct IUserProfilePersonalizationSettings {
     #[cfg(not(all(feature = "Foundation", feature = "Storage")))]
     TrySetWallpaperImageAsync: usize,
 }
+impl ::windows_sys::core::Interface for IUserProfilePersonalizationSettings {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2364398260, data2: 31128, data3: 18133, data4: [141, 211, 24, 79, 28, 95, 154, 185] };
+}
 #[repr(C)]
 pub struct IUserProfilePersonalizationSettingsStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub Current: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub IsSupported: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUserProfilePersonalizationSettingsStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2444015681, data2: 20535, data3: 17739, data4: [152, 131, 187, 119, 45, 8, 221, 22] };
 }
 #[doc = "*Required features: `\"System_UserProfile\"`, `\"deprecated\"`*"]
 #[cfg(feature = "deprecated")]

@@ -85,12 +85,18 @@ pub struct IAsymmetricAlgorithmNamesStatics {
     pub RsaSignPssSha384: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub RsaSignPssSha512: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAsymmetricAlgorithmNamesStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3405184228, data2: 26560, data3: 18090, data4: [132, 249, 117, 46, 119, 68, 159, 155] };
+}
 #[repr(C)]
 pub struct IAsymmetricAlgorithmNamesStatics2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub EcdsaSha256: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub EcdsaSha384: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub EcdsaSha512: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAsymmetricAlgorithmNamesStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4047618262, data2: 19455, data3: 20259, data4: [186, 102, 96, 69, 177, 55, 213, 223] };
 }
 #[repr(C)]
 pub struct IAsymmetricKeyAlgorithmProvider {
@@ -114,16 +120,25 @@ pub struct IAsymmetricKeyAlgorithmProvider {
     #[cfg(not(feature = "Storage_Streams"))]
     ImportPublicKeyWithBlobType: usize,
 }
+impl ::windows_sys::core::Interface for IAsymmetricKeyAlgorithmProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3906142007, data2: 25177, data3: 20104, data4: [183, 224, 148, 25, 31, 222, 105, 158] };
+}
 #[repr(C)]
 pub struct IAsymmetricKeyAlgorithmProvider2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub CreateKeyPairWithCurveName: unsafe extern "system" fn(this: *mut *mut Self, curvename: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub CreateKeyPairWithCurveParameters: unsafe extern "system" fn(this: *mut *mut Self, parameters_array_size: u32, parameters: *const u8, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAsymmetricKeyAlgorithmProvider2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1311910526, data2: 31821, data3: 18839, data4: [172, 79, 27, 132, 139, 54, 48, 110] };
+}
 #[repr(C)]
 pub struct IAsymmetricKeyAlgorithmProviderStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub OpenAlgorithm: unsafe extern "system" fn(this: *mut *mut Self, algorithm: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAsymmetricKeyAlgorithmProviderStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1113316888, data2: 42995, data3: 18342, data4: [168, 210, 196, 141, 96, 51, 166, 92] };
 }
 #[repr(C)]
 pub struct ICryptographicEngineStatics {
@@ -157,6 +172,9 @@ pub struct ICryptographicEngineStatics {
     #[cfg(not(feature = "Storage_Streams"))]
     DeriveKeyMaterial: usize,
 }
+impl ::windows_sys::core::Interface for ICryptographicEngineStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2682914361, data2: 28663, data3: 19589, data4: [160, 149, 149, 235, 49, 113, 94, 185] };
+}
 #[repr(C)]
 pub struct ICryptographicEngineStatics2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -181,6 +199,9 @@ pub struct ICryptographicEngineStatics2 {
     #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
     SignHashedDataAsync: usize,
 }
+impl ::windows_sys::core::Interface for ICryptographicEngineStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1733904638, data2: 57247, data3: 16785, data4: [146, 199, 108, 230, 245, 132, 32, 224] };
+}
 #[repr(C)]
 pub struct ICryptographicKey {
     pub base__: ::windows_sys::core::IInspectable,
@@ -201,6 +222,9 @@ pub struct ICryptographicKey {
     pub ExportPublicKeyWithBlobType: unsafe extern "system" fn(this: *mut *mut Self, blobtype: CryptographicPublicKeyBlobType, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Storage_Streams"))]
     ExportPublicKeyWithBlobType: usize,
+}
+impl ::windows_sys::core::Interface for ICryptographicKey {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3978967920, data2: 36475, data3: 16393, data4: [132, 1, 255, 209, 166, 46, 235, 39] };
 }
 #[repr(C)]
 pub struct IEccCurveNamesStatics {
@@ -255,6 +279,9 @@ pub struct IEccCurveNamesStatics {
     #[cfg(not(feature = "Foundation_Collections"))]
     AllEccCurveNames: usize,
 }
+impl ::windows_sys::core::Interface for IEccCurveNamesStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3019870988, data2: 44779, data3: 16542, data4: [183, 212, 155, 149, 41, 90, 174, 207] };
+}
 #[repr(C)]
 pub struct IEncryptedAndAuthenticatedData {
     pub base__: ::windows_sys::core::IInspectable,
@@ -267,6 +294,9 @@ pub struct IEncryptedAndAuthenticatedData {
     #[cfg(not(feature = "Storage_Streams"))]
     AuthenticationTag: usize,
 }
+impl ::windows_sys::core::Interface for IEncryptedAndAuthenticatedData {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1873031143, data2: 7883, data3: 19200, data4: [190, 165, 96, 184, 63, 134, 47, 23] };
+}
 #[repr(C)]
 pub struct IHashAlgorithmNamesStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -275,6 +305,9 @@ pub struct IHashAlgorithmNamesStatics {
     pub Sha256: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub Sha384: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub Sha512: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IHashAlgorithmNamesStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1801323798, data2: 56982, data3: 20234, data4: [141, 87, 220, 201, 218, 227, 108, 118] };
 }
 #[repr(C)]
 pub struct IHashAlgorithmProvider {
@@ -287,10 +320,16 @@ pub struct IHashAlgorithmProvider {
     HashData: usize,
     pub CreateHash: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IHashAlgorithmProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3197841536, data2: 45763, data3: 16939, data4: [188, 225, 236, 144, 239, 181, 215, 181] };
+}
 #[repr(C)]
 pub struct IHashAlgorithmProviderStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub OpenAlgorithm: unsafe extern "system" fn(this: *mut *mut Self, algorithm: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IHashAlgorithmProviderStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2678888257, data2: 23748, data3: 17206, data4: [174, 56, 98, 18, 183, 90, 145, 90] };
 }
 #[repr(C)]
 pub struct IHashComputation {
@@ -303,6 +342,9 @@ pub struct IHashComputation {
     pub GetValueAndReset: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Storage_Streams"))]
     GetValueAndReset: usize,
+}
+impl ::windows_sys::core::Interface for IHashComputation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1493488054, data2: 44337, data3: 17923, data4: [163, 164, 177, 189, 169, 142, 37, 98] };
 }
 #[repr(C)]
 pub struct IKeyDerivationAlgorithmNamesStatics {
@@ -323,6 +365,9 @@ pub struct IKeyDerivationAlgorithmNamesStatics {
     pub Sp80056aConcatSha384: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub Sp80056aConcatSha512: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IKeyDerivationAlgorithmNamesStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2070820414, data2: 38098, data3: 18233, data4: [165, 123, 2, 46, 12, 58, 64, 42] };
+}
 #[repr(C)]
 pub struct IKeyDerivationAlgorithmNamesStatics2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -331,6 +376,9 @@ pub struct IKeyDerivationAlgorithmNamesStatics2 {
     pub CapiKdfSha256: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub CapiKdfSha384: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub CapiKdfSha512: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IKeyDerivationAlgorithmNamesStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1469398955, data2: 24644, data3: 18031, data4: [151, 244, 51, 123, 120, 8, 56, 77] };
 }
 #[repr(C)]
 pub struct IKeyDerivationAlgorithmProvider {
@@ -341,10 +389,16 @@ pub struct IKeyDerivationAlgorithmProvider {
     #[cfg(not(feature = "Storage_Streams"))]
     CreateKey: usize,
 }
+impl ::windows_sys::core::Interface for IKeyDerivationAlgorithmProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3791366203, data2: 18033, data3: 17335, data4: [145, 88, 118, 58, 170, 152, 182, 191] };
+}
 #[repr(C)]
 pub struct IKeyDerivationAlgorithmProviderStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub OpenAlgorithm: unsafe extern "system" fn(this: *mut *mut Self, algorithm: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IKeyDerivationAlgorithmProviderStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 170002810, data2: 2588, data3: 17467, data4: [148, 24, 185, 73, 138, 235, 22, 3] };
 }
 #[repr(C)]
 pub struct IKeyDerivationParameters {
@@ -359,11 +413,17 @@ pub struct IKeyDerivationParameters {
     SetKdfGenericBinary: usize,
     pub IterationCount: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IKeyDerivationParameters {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2079349095, data2: 1147, data3: 19084, data4: [150, 74, 70, 159, 253, 85, 34, 226] };
+}
 #[repr(C)]
 pub struct IKeyDerivationParameters2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub Capi1KdfTargetAlgorithm: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut Capi1KdfTargetAlgorithm) -> ::windows_sys::core::HRESULT,
     pub SetCapi1KdfTargetAlgorithm: unsafe extern "system" fn(this: *mut *mut Self, value: Capi1KdfTargetAlgorithm) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IKeyDerivationParameters2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3443615441, data2: 16766, data3: 20300, data4: [182, 102, 192, 216, 121, 243, 248, 224] };
 }
 #[repr(C)]
 pub struct IKeyDerivationParametersStatics {
@@ -381,10 +441,16 @@ pub struct IKeyDerivationParametersStatics {
     #[cfg(not(feature = "Storage_Streams"))]
     BuildForSP80056a: usize,
 }
+impl ::windows_sys::core::Interface for IKeyDerivationParametersStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3935707070, data2: 62335, data3: 16710, data4: [157, 254, 164, 86, 241, 115, 95, 75] };
+}
 #[repr(C)]
 pub struct IKeyDerivationParametersStatics2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub BuildForCapi1Kdf: unsafe extern "system" fn(this: *mut *mut Self, capi1kdftargetalgorithm: Capi1KdfTargetAlgorithm, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IKeyDerivationParametersStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2776120789, data2: 22755, data3: 20219, data4: [178, 131, 161, 101, 49, 38, 225, 190] };
 }
 #[repr(C)]
 pub struct IMacAlgorithmNamesStatics {
@@ -396,6 +462,9 @@ pub struct IMacAlgorithmNamesStatics {
     pub HmacSha512: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub AesCmac: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMacAlgorithmNamesStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1094788728, data2: 64286, data3: 17316, data4: [137, 94, 169, 2, 110, 67, 144, 163] };
+}
 #[repr(C)]
 pub struct IMacAlgorithmProvider {
     pub base__: ::windows_sys::core::IInspectable,
@@ -406,6 +475,9 @@ pub struct IMacAlgorithmProvider {
     #[cfg(not(feature = "Storage_Streams"))]
     CreateKey: usize,
 }
+impl ::windows_sys::core::Interface for IMacAlgorithmProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1245693379, data2: 7357, data3: 16846, data4: [160, 146, 170, 11, 197, 210, 210, 245] };
+}
 #[repr(C)]
 pub struct IMacAlgorithmProvider2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -414,10 +486,16 @@ pub struct IMacAlgorithmProvider2 {
     #[cfg(not(feature = "Storage_Streams"))]
     CreateHash: usize,
 }
+impl ::windows_sys::core::Interface for IMacAlgorithmProvider2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1839409685, data2: 55601, data3: 17133, data4: [142, 126, 195, 1, 202, 238, 17, 156] };
+}
 #[repr(C)]
 pub struct IMacAlgorithmProviderStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub OpenAlgorithm: unsafe extern "system" fn(this: *mut *mut Self, algorithm: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMacAlgorithmProviderStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3384656199, data2: 52343, data3: 19952, data4: [158, 78, 185, 33, 224, 128, 100, 76] };
 }
 #[repr(C)]
 pub struct IPersistedKeyProviderStatics {
@@ -430,6 +508,9 @@ pub struct IPersistedKeyProviderStatics {
     pub OpenPublicKeyFromCertificate: unsafe extern "system" fn(this: *mut *mut Self, certificate: *mut ::core::ffi::c_void, hashalgorithmname: ::windows_sys::core::HSTRING, padding: CryptographicPadding, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Security_Cryptography_Certificates"))]
     OpenPublicKeyFromCertificate: usize,
+}
+impl ::windows_sys::core::Interface for IPersistedKeyProviderStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1999063060, data2: 55764, data3: 19701, data4: [182, 104, 224, 69, 125, 243, 8, 148] };
 }
 #[repr(C)]
 pub struct ISymmetricAlgorithmNamesStatics {
@@ -454,6 +535,9 @@ pub struct ISymmetricAlgorithmNamesStatics {
     pub Rc2EcbPkcs7: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub Rc4: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISymmetricAlgorithmNamesStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1752199803, data2: 51606, data3: 20142, data4: [132, 215, 121, 178, 174, 183, 59, 156] };
+}
 #[repr(C)]
 pub struct ISymmetricKeyAlgorithmProvider {
     pub base__: ::windows_sys::core::IInspectable,
@@ -464,10 +548,16 @@ pub struct ISymmetricKeyAlgorithmProvider {
     #[cfg(not(feature = "Storage_Streams"))]
     CreateSymmetricKey: usize,
 }
+impl ::windows_sys::core::Interface for ISymmetricKeyAlgorithmProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1031686707, data2: 15312, data3: 18690, data4: [138, 200, 71, 13, 80, 210, 19, 118] };
+}
 #[repr(C)]
 pub struct ISymmetricKeyAlgorithmProviderStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub OpenAlgorithm: unsafe extern "system" fn(this: *mut *mut Self, algorithm: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISymmetricKeyAlgorithmProviderStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2369463078, data2: 7991, data3: 18719, data4: [182, 14, 245, 67, 27, 38, 180, 131] };
 }
 pub type KeyDerivationAlgorithmProvider = *mut ::core::ffi::c_void;
 pub type KeyDerivationParameters = *mut ::core::ffi::c_void;

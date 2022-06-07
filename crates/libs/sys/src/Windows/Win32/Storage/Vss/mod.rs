@@ -11,6 +11,9 @@ pub struct IVssAdmin {
     pub QueryProviders: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub AbortAllSnapshotsInProgress: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IVssAdmin {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2012043670, data2: 12131, data3: 4563, data4: [138, 57, 0, 192, 79, 114, 216, 227] };
+}
 #[repr(C)]
 pub struct IVssAdminEx {
     pub base__: IVssAdmin,
@@ -18,12 +21,18 @@ pub struct IVssAdminEx {
     pub GetProviderContext: unsafe extern "system" fn(this: *mut *mut Self, providerid: ::windows_sys::core::GUID, plcontext: *mut i32) -> ::windows_sys::core::HRESULT,
     pub SetProviderContext: unsafe extern "system" fn(this: *mut *mut Self, providerid: ::windows_sys::core::GUID, lcontext: i32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IVssAdminEx {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2019076600, data2: 45562, data3: 16806, data4: [150, 79, 185, 179, 107, 140, 216, 216] };
+}
 #[repr(C)]
 pub struct IVssAsync {
     pub base__: ::windows_sys::core::IUnknown,
     pub Cancel: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Wait: unsafe extern "system" fn(this: *mut *mut Self, dwmilliseconds: u32) -> ::windows_sys::core::HRESULT,
     pub QueryStatus: unsafe extern "system" fn(this: *mut *mut Self, phrresult: *mut ::windows_sys::core::HRESULT, preserved: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IVssAsync {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1350318004, data2: 53083, data3: 20117, data4: [176, 175, 20, 235, 151, 103, 70, 126] };
 }
 #[repr(C)]
 pub struct IVssComponent {
@@ -115,6 +124,9 @@ pub struct IVssComponent {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetDifferencedFile: usize,
 }
+impl ::windows_sys::core::Interface for IVssComponent {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3536268438, data2: 49441, data3: 17688, data4: [182, 39, 229, 169, 61, 1, 14, 173] };
+}
 #[repr(C)]
 pub struct IVssComponentEx {
     pub base__: IVssComponent,
@@ -138,6 +150,9 @@ pub struct IVssComponentEx {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetRestoreName: usize,
 }
+impl ::windows_sys::core::Interface for IVssComponentEx {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 359435102, data2: 61745, data3: 19415, data4: [156, 151, 209, 146, 59, 231, 225, 250] };
+}
 #[repr(C)]
 pub struct IVssComponentEx2 {
     pub base__: IVssComponentEx,
@@ -146,6 +161,9 @@ pub struct IVssComponentEx2 {
     pub GetFailure: unsafe extern "system" fn(this: *mut *mut Self, phr: *mut ::windows_sys::core::HRESULT, phrapplication: *mut ::windows_sys::core::HRESULT, pbstrapplicationmessage: *mut super::super::Foundation::BSTR, pdwreserved: *mut u32) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetFailure: usize,
+}
+impl ::windows_sys::core::Interface for IVssComponentEx2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 995877106, data2: 1961, data3: 20043, data4: [189, 211, 207, 220, 142, 44, 13, 45] };
 }
 #[repr(C)]
 pub struct IVssCreateExpressWriterMetadata {
@@ -160,6 +178,9 @@ pub struct IVssCreateExpressWriterMetadata {
     pub SaveAsXML: unsafe extern "system" fn(this: *mut *mut Self, pbstrxml: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     SaveAsXML: usize,
+}
+impl ::windows_sys::core::Interface for IVssCreateExpressWriterMetadata {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2625056375, data2: 45678, data3: 17023, data4: [146, 221, 201, 150, 244, 30, 165, 227] };
 }
 #[repr(C)]
 pub struct IVssCreateWriterMetadata {
@@ -182,6 +203,9 @@ pub struct IVssCreateWriterMetadata {
     #[cfg(not(feature = "Win32_Foundation"))]
     SaveAsXML: usize,
 }
+impl ::windows_sys::core::Interface for IVssCreateWriterMetadata {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID::zeroed();
+}
 #[repr(C)]
 pub struct IVssDifferentialSoftwareSnapshotMgmt {
     pub base__: ::windows_sys::core::IUnknown,
@@ -191,6 +215,9 @@ pub struct IVssDifferentialSoftwareSnapshotMgmt {
     pub QueryDiffAreasForVolume: unsafe extern "system" fn(this: *mut *mut Self, pwszvolumename: *const u16, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub QueryDiffAreasOnVolume: unsafe extern "system" fn(this: *mut *mut Self, pwszvolumename: *const u16, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub QueryDiffAreasForSnapshot: unsafe extern "system" fn(this: *mut *mut Self, snapshotid: ::windows_sys::core::GUID, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IVssDifferentialSoftwareSnapshotMgmt {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 558501672, data2: 46903, data3: 16422, data4: [184, 71, 79, 158, 55, 215, 149, 41] };
 }
 #[repr(C)]
 pub struct IVssDifferentialSoftwareSnapshotMgmt2 {
@@ -202,6 +229,9 @@ pub struct IVssDifferentialSoftwareSnapshotMgmt2 {
     pub MigrateDiffAreas: unsafe extern "system" fn(this: *mut *mut Self, pwszvolumename: *const u16, pwszdiffareavolumename: *const u16, pwsznewdiffareavolumename: *const u16) -> ::windows_sys::core::HRESULT,
     pub QueryMigrationStatus: unsafe extern "system" fn(this: *mut *mut Self, pwszvolumename: *const u16, pwszdiffareavolumename: *const u16, ppasync: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetSnapshotPriority: unsafe extern "system" fn(this: *mut *mut Self, idsnapshot: ::windows_sys::core::GUID, priority: u8) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IVssDifferentialSoftwareSnapshotMgmt2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2493346643, data2: 26463, data3: 17013, data4: [137, 105, 240, 68, 198, 39, 120, 21] };
 }
 #[repr(C)]
 pub struct IVssDifferentialSoftwareSnapshotMgmt3 {
@@ -215,6 +245,9 @@ pub struct IVssDifferentialSoftwareSnapshotMgmt3 {
     pub DeleteUnusedDiffAreas: unsafe extern "system" fn(this: *mut *mut Self, pwszdiffareavolumename: *const u16) -> ::windows_sys::core::HRESULT,
     pub QuerySnapshotDeltaBitmap: unsafe extern "system" fn(this: *mut *mut Self, idsnapshotolder: ::windows_sys::core::GUID, idsnapshotyounger: ::windows_sys::core::GUID, pcblocksizeperbit: *mut u32, pcbitmaplength: *mut u32, ppbbitmap: *mut *mut u8) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IVssDifferentialSoftwareSnapshotMgmt3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 943685233, data2: 42181, data3: 16415, data4: [178, 127, 248, 38, 40, 159, 132, 88] };
+}
 #[repr(C)]
 pub struct IVssEnumMgmtObject {
     pub base__: ::windows_sys::core::IUnknown,
@@ -223,6 +256,9 @@ pub struct IVssEnumMgmtObject {
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IVssEnumMgmtObject {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 26562155, data2: 37460, data3: 20078, data4: [128, 140, 201, 224, 93, 0, 118, 150] };
+}
 #[repr(C)]
 pub struct IVssEnumObject {
     pub base__: ::windows_sys::core::IUnknown,
@@ -230,6 +266,9 @@ pub struct IVssEnumObject {
     pub Skip: unsafe extern "system" fn(this: *mut *mut Self, celt: u32) -> ::windows_sys::core::HRESULT,
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IVssEnumObject {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2921099536, data2: 12128, data3: 4563, data4: [138, 57, 0, 192, 79, 114, 216, 227] };
 }
 #[repr(C)]
 pub struct IVssExamineWriterMetadata(pub u8);
@@ -240,6 +279,9 @@ pub struct IVssExpressWriter {
     pub LoadMetadata: unsafe extern "system" fn(this: *mut *mut Self, metadata: ::windows_sys::core::PCWSTR, reserved: u32) -> ::windows_sys::core::HRESULT,
     pub Register: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Unregister: unsafe extern "system" fn(this: *mut *mut Self, writerid: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IVssExpressWriter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3812294620, data2: 22983, data3: 18353, data4: [151, 213, 66, 102, 89, 143, 98, 53] };
 }
 #[repr(C)]
 pub struct IVssFileShareSnapshotProvider {
@@ -264,6 +306,9 @@ pub struct IVssFileShareSnapshotProvider {
     pub SetSnapshotProperty: unsafe extern "system" fn(this: *mut *mut Self, snapshotid: ::windows_sys::core::GUID, esnapshotpropertyid: VSS_SNAPSHOT_PROPERTY_ID, vproperty: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     SetSnapshotProperty: usize,
+}
+impl ::windows_sys::core::Interface for IVssFileShareSnapshotProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3361955936, data2: 31790, data3: 4575, data4: [140, 74, 8, 0, 32, 12, 154, 102] };
 }
 #[repr(C)]
 pub struct IVssHardwareSnapshotProvider {
@@ -293,6 +338,9 @@ pub struct IVssHardwareSnapshotProvider {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Storage_VirtualDiskService")))]
     OnLunEmpty: usize,
 }
+impl ::windows_sys::core::Interface for IVssHardwareSnapshotProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2509480279, data2: 17641, data3: 17220, data4: [187, 235, 68, 251, 249, 176, 107, 16] };
+}
 #[repr(C)]
 pub struct IVssHardwareSnapshotProviderEx {
     pub base__: IVssHardwareSnapshotProvider,
@@ -310,6 +358,9 @@ pub struct IVssHardwareSnapshotProviderEx {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Storage_VirtualDiskService")))]
     OnReuseLuns: usize,
 }
+impl ::windows_sys::core::Interface for IVssHardwareSnapshotProviderEx {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2136713509, data2: 52657, data3: 19729, data4: [167, 31, 51, 158, 183, 231, 9, 253] };
+}
 #[repr(C)]
 pub struct IVssProviderCreateSnapshotSet {
     pub base__: ::windows_sys::core::IUnknown,
@@ -321,6 +372,9 @@ pub struct IVssProviderCreateSnapshotSet {
     pub PostFinalCommitSnapshots: unsafe extern "system" fn(this: *mut *mut Self, snapshotsetid: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub AbortSnapshots: unsafe extern "system" fn(this: *mut *mut Self, snapshotsetid: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IVssProviderCreateSnapshotSet {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1602834011, data2: 7737, data3: 18296, data4: [142, 35, 154, 186, 217, 240, 224, 140] };
+}
 #[repr(C)]
 pub struct IVssProviderNotifications {
     pub base__: ::windows_sys::core::IUnknown,
@@ -330,6 +384,9 @@ pub struct IVssProviderNotifications {
     #[cfg(not(feature = "Win32_Foundation"))]
     OnUnload: usize,
 }
+impl ::windows_sys::core::Interface for IVssProviderNotifications {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3848376351, data2: 933, data3: 19198, data4: [134, 208, 114, 186, 238, 206, 112, 4] };
+}
 #[repr(C)]
 pub struct IVssSnapshotMgmt {
     pub base__: ::windows_sys::core::IUnknown,
@@ -337,10 +394,16 @@ pub struct IVssSnapshotMgmt {
     pub QueryVolumesSupportedForSnapshots: unsafe extern "system" fn(this: *mut *mut Self, providerid: ::windows_sys::core::GUID, lcontext: i32, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub QuerySnapshotsByVolume: unsafe extern "system" fn(this: *mut *mut Self, pwszvolumename: *const u16, providerid: ::windows_sys::core::GUID, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IVssSnapshotMgmt {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4202559305, data2: 26343, data3: 18822, data4: [162, 127, 226, 240, 74, 229, 55, 114] };
+}
 #[repr(C)]
 pub struct IVssSnapshotMgmt2 {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetMinDiffAreaSize: unsafe extern "system" fn(this: *mut *mut Self, pllmindiffareasize: *mut i64) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IVssSnapshotMgmt2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 258075705, data2: 65154, data3: 17906, data4: [163, 240, 118, 139, 93, 66, 113, 2] };
 }
 #[repr(C)]
 pub struct IVssSoftwareSnapshotProvider {
@@ -368,6 +431,9 @@ pub struct IVssSoftwareSnapshotProvider {
     pub RevertToSnapshot: unsafe extern "system" fn(this: *mut *mut Self, snapshotid: ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub QueryRevertStatus: unsafe extern "system" fn(this: *mut *mut Self, pwszvolume: *const u16, ppasync: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IVssSoftwareSnapshotProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1620972094, data2: 11354, data3: 17619, data4: [143, 1, 11, 29, 154, 71, 209, 255] };
+}
 #[repr(C)]
 pub struct IVssWMDependency {
     pub base__: ::windows_sys::core::IUnknown,
@@ -380,6 +446,9 @@ pub struct IVssWMDependency {
     pub GetComponentName: unsafe extern "system" fn(this: *mut *mut Self, pbstrcomponentname: *mut super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetComponentName: usize,
+}
+impl ::windows_sys::core::Interface for IVssWMDependency {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID::zeroed();
 }
 #[repr(C)]
 pub struct IVssWMFiledesc {
@@ -399,11 +468,17 @@ pub struct IVssWMFiledesc {
     GetAlternateLocation: usize,
     pub GetBackupTypeMask: unsafe extern "system" fn(this: *mut *mut Self, pdwtypemask: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IVssWMFiledesc {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID::zeroed();
+}
 #[repr(C)]
 pub struct IVssWriterComponents {
     pub GetComponentCount: unsafe extern "system" fn(this: *mut *mut Self, pccomponents: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetWriterInfo: unsafe extern "system" fn(this: *mut *mut Self, pidinstance: *mut ::windows_sys::core::GUID, pidwriter: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub GetComponent: unsafe extern "system" fn(this: *mut *mut Self, icomponent: u32, ppcomponent: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IVssWriterComponents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID::zeroed();
 }
 #[repr(C)]
 pub struct IVssWriterImpl {
@@ -430,6 +505,9 @@ pub struct IVssWriterImpl {
     pub SetWriterFailureEx: unsafe extern "system" fn(this: *mut *mut Self, hr: ::windows_sys::core::HRESULT, hrapplication: ::windows_sys::core::HRESULT, wszapplicationmessage: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
     pub GetSessionId: unsafe extern "system" fn(this: *mut *mut Self, idsession: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub IsWriterShuttingDown: unsafe extern "system" fn(this: *mut *mut Self) -> bool,
+}
+impl ::windows_sys::core::Interface for IVssWriterImpl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID::zeroed();
 }
 pub const VSSCoordinator: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3849956191, data2: 7364, data3: 17588, data4: [190, 217, 222, 9, 145, 255, 6, 35] };
 #[doc = "*Required features: `\"Win32_Storage_Vss\"`*"]

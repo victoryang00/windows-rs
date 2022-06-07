@@ -23,6 +23,9 @@ pub struct IFindSimilarResults {
     pub GetSize: unsafe extern "system" fn(this: *mut *mut Self, size: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetNextFileId: unsafe extern "system" fn(this: *mut *mut Self, numtraitsmatched: *mut u32, similarityfileid: *mut SimilarityFileId) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IFindSimilarResults {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2518903425, data2: 40380, data3: 4570, data4: [158, 63, 0, 17, 17, 74, 227, 17] };
+}
 #[repr(C)]
 pub struct IRdcComparator {
     pub base__: ::windows_sys::core::IUnknown,
@@ -30,6 +33,9 @@ pub struct IRdcComparator {
     pub Process: unsafe extern "system" fn(this: *mut *mut Self, endofinput: super::super::Foundation::BOOL, endofoutput: *mut super::super::Foundation::BOOL, inputbuffer: *mut RdcBufferPointer, outputbuffer: *mut RdcNeedPointer, rdc_errorcode: *mut RDC_ErrorCode) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     Process: usize,
+}
+impl ::windows_sys::core::Interface for IRdcComparator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2518903415, data2: 40380, data3: 4570, data4: [158, 63, 0, 17, 17, 74, 227, 17] };
 }
 #[repr(C)]
 pub struct IRdcFileReader {
@@ -41,12 +47,18 @@ pub struct IRdcFileReader {
     Read: usize,
     pub GetFilePosition: unsafe extern "system" fn(this: *mut *mut Self, offsetfromstart: *mut u64) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IRdcFileReader {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2518903412, data2: 40380, data3: 4570, data4: [158, 63, 0, 17, 17, 74, 227, 17] };
+}
 #[repr(C)]
 pub struct IRdcFileWriter {
     pub base__: IRdcFileReader,
     pub Write: unsafe extern "system" fn(this: *mut *mut Self, offsetfilestart: u64, bytestowrite: u32, buffer: *mut u8) -> ::windows_sys::core::HRESULT,
     pub Truncate: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub DeleteOnClose: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IRdcFileWriter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2518903413, data2: 40380, data3: 4570, data4: [158, 63, 0, 17, 17, 74, 227, 17] };
 }
 #[repr(C)]
 pub struct IRdcGenerator {
@@ -57,6 +69,9 @@ pub struct IRdcGenerator {
     #[cfg(not(feature = "Win32_Foundation"))]
     Process: usize,
 }
+impl ::windows_sys::core::Interface for IRdcGenerator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2518903411, data2: 40380, data3: 4570, data4: [158, 63, 0, 17, 17, 74, 227, 17] };
+}
 #[repr(C)]
 pub struct IRdcGeneratorFilterMaxParameters {
     pub base__: ::windows_sys::core::IUnknown,
@@ -65,6 +80,9 @@ pub struct IRdcGeneratorFilterMaxParameters {
     pub GetHashWindowSize: unsafe extern "system" fn(this: *mut *mut Self, hashwindowsize: *mut u32) -> ::windows_sys::core::HRESULT,
     pub SetHashWindowSize: unsafe extern "system" fn(this: *mut *mut Self, hashwindowsize: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IRdcGeneratorFilterMaxParameters {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2518903410, data2: 40380, data3: 4570, data4: [158, 63, 0, 17, 17, 74, 227, 17] };
+}
 #[repr(C)]
 pub struct IRdcGeneratorParameters {
     pub base__: ::windows_sys::core::IUnknown,
@@ -72,6 +90,9 @@ pub struct IRdcGeneratorParameters {
     pub GetParametersVersion: unsafe extern "system" fn(this: *mut *mut Self, currentversion: *mut u32, minimumcompatibleappversion: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetSerializeSize: unsafe extern "system" fn(this: *mut *mut Self, size: *mut u32) -> ::windows_sys::core::HRESULT,
     pub Serialize: unsafe extern "system" fn(this: *mut *mut Self, size: u32, parametersblob: *mut u8, byteswritten: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IRdcGeneratorParameters {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2518903409, data2: 40380, data3: 4570, data4: [158, 63, 0, 17, 17, 74, 227, 17] };
 }
 #[repr(C)]
 pub struct IRdcLibrary {
@@ -84,6 +105,9 @@ pub struct IRdcLibrary {
     pub CreateSignatureReader: unsafe extern "system" fn(this: *mut *mut Self, ifilereader: *mut ::core::ffi::c_void, isignaturereader: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetRDCVersion: unsafe extern "system" fn(this: *mut *mut Self, currentversion: *mut u32, minimumcompatibleappversion: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IRdcLibrary {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2518903416, data2: 40380, data3: 4570, data4: [158, 63, 0, 17, 17, 74, 227, 17] };
+}
 #[repr(C)]
 pub struct IRdcSignatureReader {
     pub base__: ::windows_sys::core::IUnknown,
@@ -93,11 +117,17 @@ pub struct IRdcSignatureReader {
     #[cfg(not(feature = "Win32_Foundation"))]
     ReadSignatures: usize,
 }
+impl ::windows_sys::core::Interface for IRdcSignatureReader {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2518903414, data2: 40380, data3: 4570, data4: [158, 63, 0, 17, 17, 74, 227, 17] };
+}
 #[repr(C)]
 pub struct IRdcSimilarityGenerator {
     pub base__: ::windows_sys::core::IUnknown,
     pub EnableSimilarity: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Results: unsafe extern "system" fn(this: *mut *mut Self, similaritydata: *mut SimilarityData) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IRdcSimilarityGenerator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2518903424, data2: 40380, data3: 4570, data4: [158, 63, 0, 17, 17, 74, 227, 17] };
 }
 #[repr(C)]
 pub struct ISimilarity {
@@ -119,6 +149,9 @@ pub struct ISimilarity {
     pub CopyAndSwap: unsafe extern "system" fn(this: *mut *mut Self, newsimilaritytables: *mut ::core::ffi::c_void, reportprogress: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetRecordCount: unsafe extern "system" fn(this: *mut *mut Self, recordcount: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISimilarity {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2518903427, data2: 40380, data3: 4570, data4: [158, 63, 0, 17, 17, 74, 227, 17] };
+}
 #[repr(C)]
 pub struct ISimilarityFileIdTable {
     pub base__: ::windows_sys::core::IUnknown,
@@ -139,10 +172,16 @@ pub struct ISimilarityFileIdTable {
     pub Invalidate: unsafe extern "system" fn(this: *mut *mut Self, similarityfileindex: u32) -> ::windows_sys::core::HRESULT,
     pub GetRecordCount: unsafe extern "system" fn(this: *mut *mut Self, recordcount: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISimilarityFileIdTable {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2518903423, data2: 40380, data3: 4570, data4: [158, 63, 0, 17, 17, 74, 227, 17] };
+}
 #[repr(C)]
 pub struct ISimilarityReportProgress {
     pub base__: ::windows_sys::core::IUnknown,
     pub ReportProgress: unsafe extern "system" fn(this: *mut *mut Self, percentcompleted: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISimilarityReportProgress {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2518903418, data2: 40380, data3: 4570, data4: [158, 63, 0, 17, 17, 74, 227, 17] };
 }
 #[repr(C)]
 pub struct ISimilarityTableDumpState {
@@ -151,6 +190,9 @@ pub struct ISimilarityTableDumpState {
     pub GetNextData: unsafe extern "system" fn(this: *mut *mut Self, resultssize: u32, resultsused: *mut u32, eof: *mut super::super::Foundation::BOOL, results: *mut SimilarityDumpData) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetNextData: usize,
+}
+impl ::windows_sys::core::Interface for ISimilarityTableDumpState {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2518903419, data2: 40380, data3: 4570, data4: [158, 63, 0, 17, 17, 74, 227, 17] };
 }
 #[repr(C)]
 pub struct ISimilarityTraitsMappedView {
@@ -163,6 +205,9 @@ pub struct ISimilarityTraitsMappedView {
     Get: usize,
     pub GetView: unsafe extern "system" fn(this: *mut *mut Self, mappedpagebegin: *mut *mut u8, mappedpageend: *mut *mut u8),
 }
+impl ::windows_sys::core::Interface for ISimilarityTraitsMappedView {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2518903420, data2: 40380, data3: 4570, data4: [158, 63, 0, 17, 17, 74, 227, 17] };
+}
 #[repr(C)]
 pub struct ISimilarityTraitsMapping {
     pub base__: ::windows_sys::core::IUnknown,
@@ -173,6 +218,9 @@ pub struct ISimilarityTraitsMapping {
     pub ResizeMapping: unsafe extern "system" fn(this: *mut *mut Self, accessmode: RdcMappingAccessMode, begin: u64, end: u64, actualend: *mut u64) -> ::windows_sys::core::HRESULT,
     pub GetPageSize: unsafe extern "system" fn(this: *mut *mut Self, pagesize: *mut u32),
     pub CreateView: unsafe extern "system" fn(this: *mut *mut Self, minimummappedpages: u32, accessmode: RdcMappingAccessMode, mappedview: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISimilarityTraitsMapping {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2518903421, data2: 40380, data3: 4570, data4: [158, 63, 0, 17, 17, 74, 227, 17] };
 }
 #[repr(C)]
 pub struct ISimilarityTraitsTable {
@@ -193,6 +241,9 @@ pub struct ISimilarityTraitsTable {
     pub FindSimilarFileIndex: unsafe extern "system" fn(this: *mut *mut Self, similaritydata: *const SimilarityData, numberofmatchesrequired: u16, findsimilarfileindexresults: *mut FindSimilarFileIndexResults, resultssize: u32, resultsused: *mut u32) -> ::windows_sys::core::HRESULT,
     pub BeginDump: unsafe extern "system" fn(this: *mut *mut Self, similaritytabledumpstate: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetLastIndex: unsafe extern "system" fn(this: *mut *mut Self, fileindex: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISimilarityTraitsTable {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2518903422, data2: 40380, data3: 4570, data4: [158, 63, 0, 17, 17, 74, 227, 17] };
 }
 #[doc = "*Required features: `\"Win32_Networking_RemoteDifferentialCompression\"`*"]
 pub const MSRDC_DEFAULT_COMPAREBUFFER: u32 = 3200000u32;

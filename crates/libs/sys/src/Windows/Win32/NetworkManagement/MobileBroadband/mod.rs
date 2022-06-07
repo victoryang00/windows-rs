@@ -3,6 +3,10 @@
 pub struct IDummyMBNUCMExt {
     pub base__: super::super::System::Com::IDispatch,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IDummyMBNUCMExt {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3703290550, data2: 65535, data3: 19387, data4: [170, 238, 51, 142, 54, 138, 246, 250] };
+}
 #[repr(C)]
 pub struct IMbnConnection {
     pub base__: ::windows_sys::core::IUnknown,
@@ -23,6 +27,9 @@ pub struct IMbnConnection {
     pub GetVoiceCallState: unsafe extern "system" fn(this: *mut *mut Self, voicecallstate: *mut MBN_VOICE_CALL_STATE) -> ::windows_sys::core::HRESULT,
     pub GetActivationNetworkError: unsafe extern "system" fn(this: *mut *mut Self, networkerror: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMbnConnection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3703290550, data2: 8205, data3: 19387, data4: [170, 238, 51, 142, 54, 138, 246, 250] };
+}
 #[repr(C)]
 pub struct IMbnConnectionContext {
     pub base__: ::windows_sys::core::IUnknown,
@@ -35,11 +42,17 @@ pub struct IMbnConnectionContext {
     #[cfg(not(feature = "Win32_Foundation"))]
     SetProvisionedContext: usize,
 }
+impl ::windows_sys::core::Interface for IMbnConnectionContext {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3703290550, data2: 8203, data3: 19387, data4: [170, 238, 51, 142, 54, 138, 246, 250] };
+}
 #[repr(C)]
 pub struct IMbnConnectionContextEvents {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnProvisionedContextListChange: unsafe extern "system" fn(this: *mut *mut Self, newinterface: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub OnSetProvisionedContextComplete: unsafe extern "system" fn(this: *mut *mut Self, newinterface: *mut ::core::ffi::c_void, requestid: u32, status: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMbnConnectionContextEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3703290550, data2: 8204, data3: 19387, data4: [170, 238, 51, 142, 54, 138, 246, 250] };
 }
 #[repr(C)]
 pub struct IMbnConnectionEvents {
@@ -48,6 +61,9 @@ pub struct IMbnConnectionEvents {
     pub OnDisconnectComplete: unsafe extern "system" fn(this: *mut *mut Self, newconnection: *mut ::core::ffi::c_void, requestid: u32, status: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
     pub OnConnectStateChange: unsafe extern "system" fn(this: *mut *mut Self, newconnection: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub OnVoiceCallStateChange: unsafe extern "system" fn(this: *mut *mut Self, newconnection: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMbnConnectionEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3703290550, data2: 8206, data3: 19387, data4: [170, 238, 51, 142, 54, 138, 246, 250] };
 }
 #[repr(C)]
 pub struct IMbnConnectionManager {
@@ -58,11 +74,17 @@ pub struct IMbnConnectionManager {
     #[cfg(not(feature = "Win32_System_Com"))]
     GetConnections: usize,
 }
+impl ::windows_sys::core::Interface for IMbnConnectionManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3703290550, data2: 8221, data3: 19387, data4: [170, 238, 51, 142, 54, 138, 246, 250] };
+}
 #[repr(C)]
 pub struct IMbnConnectionManagerEvents {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnConnectionArrival: unsafe extern "system" fn(this: *mut *mut Self, newconnection: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub OnConnectionRemoval: unsafe extern "system" fn(this: *mut *mut Self, oldconnection: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMbnConnectionManagerEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3703290550, data2: 8222, data3: 19387, data4: [170, 238, 51, 142, 54, 138, 246, 250] };
 }
 #[repr(C)]
 pub struct IMbnConnectionProfile {
@@ -74,10 +96,16 @@ pub struct IMbnConnectionProfile {
     pub UpdateProfile: unsafe extern "system" fn(this: *mut *mut Self, strprofile: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
     pub Delete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMbnConnectionProfile {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3703290550, data2: 8208, data3: 19387, data4: [170, 238, 51, 142, 54, 138, 246, 250] };
+}
 #[repr(C)]
 pub struct IMbnConnectionProfileEvents {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnProfileUpdate: unsafe extern "system" fn(this: *mut *mut Self, newprofile: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMbnConnectionProfileEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3703290550, data2: 8209, data3: 19387, data4: [170, 238, 51, 142, 54, 138, 246, 250] };
 }
 #[repr(C)]
 pub struct IMbnConnectionProfileManager {
@@ -89,11 +117,17 @@ pub struct IMbnConnectionProfileManager {
     pub GetConnectionProfile: unsafe extern "system" fn(this: *mut *mut Self, mbninterface: *mut ::core::ffi::c_void, profilename: ::windows_sys::core::PCWSTR, connectionprofile: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub CreateConnectionProfile: unsafe extern "system" fn(this: *mut *mut Self, xmlprofile: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMbnConnectionProfileManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3703290550, data2: 8207, data3: 19387, data4: [170, 238, 51, 142, 54, 138, 246, 250] };
+}
 #[repr(C)]
 pub struct IMbnConnectionProfileManagerEvents {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnConnectionProfileArrival: unsafe extern "system" fn(this: *mut *mut Self, newconnectionprofile: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub OnConnectionProfileRemoval: unsafe extern "system" fn(this: *mut *mut Self, oldconnectionprofile: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMbnConnectionProfileManagerEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3703290550, data2: 8223, data3: 19387, data4: [170, 238, 51, 142, 54, 138, 246, 250] };
 }
 #[repr(C)]
 pub struct IMbnDeviceService {
@@ -132,6 +166,9 @@ pub struct IMbnDeviceService {
     #[cfg(not(feature = "Win32_Foundation"))]
     IsDataSessionOpen: usize,
 }
+impl ::windows_sys::core::Interface for IMbnDeviceService {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3015416433, data2: 56432, data3: 19433, data4: [164, 218, 120, 134, 174, 139, 25, 27] };
+}
 #[repr(C)]
 pub struct IMbnDeviceServiceStateEvents {
     pub base__: ::windows_sys::core::IUnknown,
@@ -139,6 +176,9 @@ pub struct IMbnDeviceServiceStateEvents {
     pub OnSessionsStateChange: unsafe extern "system" fn(this: *mut *mut Self, interfaceid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, statechange: MBN_DEVICE_SERVICE_SESSIONS_STATE) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     OnSessionsStateChange: usize,
+}
+impl ::windows_sys::core::Interface for IMbnDeviceServiceStateEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1564471702, data2: 35310, data3: 18904, data4: [139, 96, 51, 255, 221, 255, 197, 141] };
 }
 #[repr(C)]
 pub struct IMbnDeviceServicesContext {
@@ -153,6 +193,9 @@ pub struct IMbnDeviceServicesContext {
     GetDeviceService: usize,
     pub MaxCommandSize: unsafe extern "system" fn(this: *mut *mut Self, maxcommandsize: *mut u32) -> ::windows_sys::core::HRESULT,
     pub MaxDataSize: unsafe extern "system" fn(this: *mut *mut Self, maxdatasize: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMbnDeviceServicesContext {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4233806663, data2: 5522, data3: 16488, data4: [128, 187, 106, 87, 88, 1, 80, 216] };
 }
 #[repr(C)]
 pub struct IMbnDeviceServicesEvents {
@@ -187,6 +230,9 @@ pub struct IMbnDeviceServicesEvents {
     #[cfg(not(feature = "Win32_Foundation"))]
     OnInterfaceStateChange: usize,
 }
+impl ::windows_sys::core::Interface for IMbnDeviceServicesEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 177212441, data2: 26660, data3: 20119, data4: [183, 110, 207, 35, 157, 12, 166, 66] };
+}
 #[repr(C)]
 pub struct IMbnDeviceServicesManager {
     pub base__: ::windows_sys::core::IUnknown,
@@ -194,6 +240,9 @@ pub struct IMbnDeviceServicesManager {
     pub GetDeviceServicesContext: unsafe extern "system" fn(this: *mut *mut Self, networkinterfaceid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, mbndevicescontext: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetDeviceServicesContext: usize,
+}
+impl ::windows_sys::core::Interface for IMbnDeviceServicesManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 547512920, data2: 26641, data3: 17528, data4: [172, 29, 19, 50, 78, 69, 228, 28] };
 }
 #[repr(C)]
 pub struct IMbnInterface {
@@ -228,6 +277,9 @@ pub struct IMbnInterface {
     pub ScanNetwork: unsafe extern "system" fn(this: *mut *mut Self, requestid: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetConnection: unsafe extern "system" fn(this: *mut *mut Self, mbnconnection: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMbnInterface {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3703290550, data2: 8193, data3: 19387, data4: [170, 238, 51, 142, 54, 138, 246, 250] };
+}
 #[repr(C)]
 pub struct IMbnInterfaceEvents {
     pub base__: ::windows_sys::core::IUnknown,
@@ -240,6 +292,9 @@ pub struct IMbnInterfaceEvents {
     pub OnSetPreferredProvidersComplete: unsafe extern "system" fn(this: *mut *mut Self, newinterface: *mut ::core::ffi::c_void, requestid: u32, status: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
     pub OnScanNetworkComplete: unsafe extern "system" fn(this: *mut *mut Self, newinterface: *mut ::core::ffi::c_void, requestid: u32, status: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMbnInterfaceEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3703290550, data2: 8194, data3: 19387, data4: [170, 238, 51, 142, 54, 138, 246, 250] };
+}
 #[repr(C)]
 pub struct IMbnInterfaceManager {
     pub base__: ::windows_sys::core::IUnknown,
@@ -249,11 +304,17 @@ pub struct IMbnInterfaceManager {
     #[cfg(not(feature = "Win32_System_Com"))]
     GetInterfaces: usize,
 }
+impl ::windows_sys::core::Interface for IMbnInterfaceManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3703290550, data2: 8219, data3: 19387, data4: [170, 238, 51, 142, 54, 138, 246, 250] };
+}
 #[repr(C)]
 pub struct IMbnInterfaceManagerEvents {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnInterfaceArrival: unsafe extern "system" fn(this: *mut *mut Self, newinterface: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub OnInterfaceRemoval: unsafe extern "system" fn(this: *mut *mut Self, oldinterface: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMbnInterfaceManagerEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3703290550, data2: 8220, data3: 19387, data4: [170, 238, 51, 142, 54, 138, 246, 250] };
 }
 #[repr(C)]
 pub struct IMbnMultiCarrier {
@@ -277,6 +338,9 @@ pub struct IMbnMultiCarrier {
     pub GetCurrentCellularClass: unsafe extern "system" fn(this: *mut *mut Self, currentcellularclass: *mut MBN_CELLULAR_CLASS) -> ::windows_sys::core::HRESULT,
     pub ScanNetwork: unsafe extern "system" fn(this: *mut *mut Self, requestid: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMbnMultiCarrier {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3703290550, data2: 8224, data3: 19387, data4: [170, 238, 51, 142, 54, 138, 246, 250] };
+}
 #[repr(C)]
 pub struct IMbnMultiCarrierEvents {
     pub base__: ::windows_sys::core::IUnknown,
@@ -285,6 +349,9 @@ pub struct IMbnMultiCarrierEvents {
     pub OnPreferredProvidersChange: unsafe extern "system" fn(this: *mut *mut Self, mbninterface: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub OnScanNetworkComplete: unsafe extern "system" fn(this: *mut *mut Self, mbninterface: *mut ::core::ffi::c_void, requestid: u32, status: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
     pub OnInterfaceCapabilityChange: unsafe extern "system" fn(this: *mut *mut Self, mbninterface: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMbnMultiCarrierEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3705526966, data2: 8225, data3: 19387, data4: [170, 238, 51, 142, 54, 138, 246, 250] };
 }
 #[repr(C)]
 pub struct IMbnPin {
@@ -301,6 +368,9 @@ pub struct IMbnPin {
     pub Unblock: unsafe extern "system" fn(this: *mut *mut Self, puk: ::windows_sys::core::PCWSTR, newpin: ::windows_sys::core::PCWSTR, requestid: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetPinManager: unsafe extern "system" fn(this: *mut *mut Self, pinmanager: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMbnPin {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3703290550, data2: 8199, data3: 19387, data4: [170, 238, 51, 142, 54, 138, 246, 250] };
+}
 #[repr(C)]
 pub struct IMbnPinEvents {
     pub base__: ::windows_sys::core::IUnknown,
@@ -309,6 +379,9 @@ pub struct IMbnPinEvents {
     pub OnEnterComplete: unsafe extern "system" fn(this: *mut *mut Self, pin: *mut ::core::ffi::c_void, pininfo: *const MBN_PIN_INFO, requestid: u32, status: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
     pub OnChangeComplete: unsafe extern "system" fn(this: *mut *mut Self, pin: *mut ::core::ffi::c_void, pininfo: *const MBN_PIN_INFO, requestid: u32, status: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
     pub OnUnblockComplete: unsafe extern "system" fn(this: *mut *mut Self, pin: *mut ::core::ffi::c_void, pininfo: *const MBN_PIN_INFO, requestid: u32, status: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMbnPinEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3703290550, data2: 8200, data3: 19387, data4: [170, 238, 51, 142, 54, 138, 246, 250] };
 }
 #[repr(C)]
 pub struct IMbnPinManager {
@@ -320,11 +393,17 @@ pub struct IMbnPinManager {
     pub GetPin: unsafe extern "system" fn(this: *mut *mut Self, pintype: MBN_PIN_TYPE, pin: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetPinState: unsafe extern "system" fn(this: *mut *mut Self, requestid: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMbnPinManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3703290550, data2: 8197, data3: 19387, data4: [170, 238, 51, 142, 54, 138, 246, 250] };
+}
 #[repr(C)]
 pub struct IMbnPinManagerEvents {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnPinListAvailable: unsafe extern "system" fn(this: *mut *mut Self, pinmanager: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub OnGetPinStateComplete: unsafe extern "system" fn(this: *mut *mut Self, pinmanager: *mut ::core::ffi::c_void, pininfo: MBN_PIN_INFO, requestid: u32, status: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMbnPinManagerEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3703290550, data2: 8198, data3: 19387, data4: [170, 238, 51, 142, 54, 138, 246, 250] };
 }
 #[repr(C)]
 pub struct IMbnRadio {
@@ -333,11 +412,17 @@ pub struct IMbnRadio {
     pub HardwareRadioState: unsafe extern "system" fn(this: *mut *mut Self, hardwareradiostate: *mut MBN_RADIO) -> ::windows_sys::core::HRESULT,
     pub SetSoftwareRadioState: unsafe extern "system" fn(this: *mut *mut Self, radiostate: MBN_RADIO, requestid: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMbnRadio {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3704408758, data2: 8223, data3: 19387, data4: [170, 238, 51, 142, 54, 138, 246, 250] };
+}
 #[repr(C)]
 pub struct IMbnRadioEvents {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnRadioStateChange: unsafe extern "system" fn(this: *mut *mut Self, newinterface: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub OnSetSoftwareRadioStateComplete: unsafe extern "system" fn(this: *mut *mut Self, newinterface: *mut ::core::ffi::c_void, requestid: u32, status: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMbnRadioEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3705526966, data2: 8223, data3: 19387, data4: [170, 238, 51, 142, 54, 138, 246, 250] };
 }
 #[repr(C)]
 pub struct IMbnRegistration {
@@ -362,6 +447,9 @@ pub struct IMbnRegistration {
     pub GetPacketAttachNetworkError: unsafe extern "system" fn(this: *mut *mut Self, packetattachnetworkerror: *mut u32) -> ::windows_sys::core::HRESULT,
     pub SetRegisterMode: unsafe extern "system" fn(this: *mut *mut Self, registermode: MBN_REGISTER_MODE, providerid: ::windows_sys::core::PCWSTR, dataclass: u32, requestid: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMbnRegistration {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3703290550, data2: 8201, data3: 19387, data4: [170, 238, 51, 142, 54, 138, 246, 250] };
+}
 #[repr(C)]
 pub struct IMbnRegistrationEvents {
     pub base__: ::windows_sys::core::IUnknown,
@@ -369,6 +457,9 @@ pub struct IMbnRegistrationEvents {
     pub OnRegisterStateChange: unsafe extern "system" fn(this: *mut *mut Self, newinterface: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub OnPacketServiceStateChange: unsafe extern "system" fn(this: *mut *mut Self, newinterface: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub OnSetRegisterModeComplete: unsafe extern "system" fn(this: *mut *mut Self, newinterface: *mut ::core::ffi::c_void, requestid: u32, status: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMbnRegistrationEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3703290550, data2: 8202, data3: 19387, data4: [170, 238, 51, 142, 54, 138, 246, 250] };
 }
 #[repr(C)]
 pub struct IMbnServiceActivation {
@@ -378,6 +469,9 @@ pub struct IMbnServiceActivation {
     #[cfg(not(feature = "Win32_System_Com"))]
     Activate: usize,
 }
+impl ::windows_sys::core::Interface for IMbnServiceActivation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3703290550, data2: 8215, data3: 19387, data4: [170, 238, 51, 142, 54, 138, 246, 250] };
+}
 #[repr(C)]
 pub struct IMbnServiceActivationEvents {
     pub base__: ::windows_sys::core::IUnknown,
@@ -386,16 +480,25 @@ pub struct IMbnServiceActivationEvents {
     #[cfg(not(feature = "Win32_System_Com"))]
     OnActivationComplete: usize,
 }
+impl ::windows_sys::core::Interface for IMbnServiceActivationEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3703290550, data2: 8216, data3: 19387, data4: [170, 238, 51, 142, 54, 138, 246, 250] };
+}
 #[repr(C)]
 pub struct IMbnSignal {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetSignalStrength: unsafe extern "system" fn(this: *mut *mut Self, signalstrength: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetSignalError: unsafe extern "system" fn(this: *mut *mut Self, signalerror: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMbnSignal {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3703290550, data2: 8195, data3: 19387, data4: [170, 238, 51, 142, 54, 138, 246, 250] };
+}
 #[repr(C)]
 pub struct IMbnSignalEvents {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnSignalStateChange: unsafe extern "system" fn(this: *mut *mut Self, newinterface: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMbnSignalEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3703290550, data2: 8196, data3: 19387, data4: [170, 238, 51, 142, 54, 138, 246, 250] };
 }
 #[repr(C)]
 pub struct IMbnSms {
@@ -415,6 +518,9 @@ pub struct IMbnSms {
     pub SmsDelete: unsafe extern "system" fn(this: *mut *mut Self, smsfilter: *const MBN_SMS_FILTER, requestid: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetSmsStatus: unsafe extern "system" fn(this: *mut *mut Self, smsstatusinfo: *mut MBN_SMS_STATUS_INFO) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMbnSms {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3703290550, data2: 8213, data3: 19387, data4: [170, 238, 51, 142, 54, 138, 246, 250] };
+}
 #[repr(C)]
 pub struct IMbnSmsConfiguration {
     pub base__: ::windows_sys::core::IUnknown,
@@ -427,6 +533,9 @@ pub struct IMbnSmsConfiguration {
     pub CdmaShortMsgSize: unsafe extern "system" fn(this: *mut *mut Self, shortmsgsize: *mut u32) -> ::windows_sys::core::HRESULT,
     pub SmsFormat: unsafe extern "system" fn(this: *mut *mut Self, smsformat: *mut MBN_SMS_FORMAT) -> ::windows_sys::core::HRESULT,
     pub SetSmsFormat: unsafe extern "system" fn(this: *mut *mut Self, smsformat: MBN_SMS_FORMAT) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMbnSmsConfiguration {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3703290550, data2: 8210, data3: 19387, data4: [170, 238, 51, 142, 54, 138, 246, 250] };
 }
 #[repr(C)]
 pub struct IMbnSmsEvents {
@@ -445,6 +554,9 @@ pub struct IMbnSmsEvents {
     pub OnSmsDeleteComplete: unsafe extern "system" fn(this: *mut *mut Self, sms: *mut ::core::ffi::c_void, requestid: u32, status: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
     pub OnSmsStatusChange: unsafe extern "system" fn(this: *mut *mut Self, sms: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMbnSmsEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3703290550, data2: 8214, data3: 19387, data4: [170, 238, 51, 142, 54, 138, 246, 250] };
+}
 #[repr(C)]
 pub struct IMbnSmsReadMsgPdu {
     pub base__: ::windows_sys::core::IUnknown,
@@ -458,6 +570,9 @@ pub struct IMbnSmsReadMsgPdu {
     pub Message: unsafe extern "system" fn(this: *mut *mut Self, message: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     Message: usize,
+}
+impl ::windows_sys::core::Interface for IMbnSmsReadMsgPdu {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3703290550, data2: 8211, data3: 19387, data4: [170, 238, 51, 142, 54, 138, 246, 250] };
 }
 #[repr(C)]
 pub struct IMbnSmsReadMsgTextCdma {
@@ -480,6 +595,9 @@ pub struct IMbnSmsReadMsgTextCdma {
     #[cfg(not(feature = "Win32_System_Com"))]
     Message: usize,
 }
+impl ::windows_sys::core::Interface for IMbnSmsReadMsgTextCdma {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3703290550, data2: 8212, data3: 19387, data4: [170, 238, 51, 142, 54, 138, 246, 250] };
+}
 #[repr(C)]
 pub struct IMbnSubscriberInformation {
     pub base__: ::windows_sys::core::IUnknown,
@@ -496,6 +614,9 @@ pub struct IMbnSubscriberInformation {
     #[cfg(not(feature = "Win32_System_Com"))]
     TelephoneNumbers: usize,
 }
+impl ::windows_sys::core::Interface for IMbnSubscriberInformation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1168034883, data2: 48373, data3: 4572, data4: [168, 168, 0, 19, 33, 241, 64, 95] };
+}
 #[repr(C)]
 pub struct IMbnVendorSpecificEvents {
     pub base__: ::windows_sys::core::IUnknown,
@@ -508,6 +629,9 @@ pub struct IMbnVendorSpecificEvents {
     #[cfg(not(feature = "Win32_System_Com"))]
     OnSetVendorSpecificComplete: usize,
 }
+impl ::windows_sys::core::Interface for IMbnVendorSpecificEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3703290550, data2: 8218, data3: 19387, data4: [170, 238, 51, 142, 54, 138, 246, 250] };
+}
 #[repr(C)]
 pub struct IMbnVendorSpecificOperation {
     pub base__: ::windows_sys::core::IUnknown,
@@ -515,6 +639,9 @@ pub struct IMbnVendorSpecificOperation {
     pub SetVendorSpecific: unsafe extern "system" fn(this: *mut *mut Self, vendorspecificdata: *const super::super::System::Com::SAFEARRAY, requestid: *mut u32) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     SetVendorSpecific: usize,
+}
+impl ::windows_sys::core::Interface for IMbnVendorSpecificOperation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3703290550, data2: 8217, data3: 19387, data4: [170, 238, 51, 142, 54, 138, 246, 250] };
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_MobileBroadband\"`*"]
 pub type MBN_ACTIVATION_STATE = i32;

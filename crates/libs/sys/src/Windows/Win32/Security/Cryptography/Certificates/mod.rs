@@ -2505,6 +2505,10 @@ pub struct IAlternativeName {
     get_RawData: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IAlternativeName {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692435, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IAlternativeNames {
     pub base__: super::super::super::System::Com::IDispatch,
@@ -2520,6 +2524,10 @@ pub struct IAlternativeNames {
     Add: usize,
     pub Remove: unsafe extern "system" fn(this: *mut *mut Self, index: i32) -> ::windows_sys::core::HRESULT,
     pub Clear: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IAlternativeNames {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692436, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2539,6 +2547,10 @@ pub struct IBinaryConverter {
     StringToVariantByteArray: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IBinaryConverter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692418, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IBinaryConverter2 {
     pub base__: IBinaryConverter,
@@ -2550,6 +2562,10 @@ pub struct IBinaryConverter2 {
     pub VariantArrayToStringArray: unsafe extern "system" fn(this: *mut *mut Self, pvarvariantarray: *const super::super::super::System::Com::VARIANT, pvarstringarray: *mut super::super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     VariantArrayToStringArray: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IBinaryConverter2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2373527732, data2: 19991, data3: 17037, data4: [154, 23, 114, 141, 240, 13, 27, 43] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2733,6 +2749,10 @@ pub struct ICEnroll {
     SetHashAlgorithm: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICEnroll {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1140388488, data2: 31264, data3: 4560, data4: [143, 6, 0, 192, 79, 194, 149, 225] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ICEnroll2 {
     pub base__: ICEnroll,
@@ -2760,6 +2780,10 @@ pub struct ICEnroll2 {
     pub SetEnableT61DNEncoding: unsafe extern "system" fn(this: *mut *mut Self, fbool: super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     SetEnableT61DNEncoding: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICEnroll2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1884071728, data2: 51467, data3: 4561, data4: [155, 236, 0, 192, 79, 194, 149, 225] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2806,6 +2830,10 @@ pub struct ICEnroll3 {
     pub EnableSMIMECapabilities: unsafe extern "system" fn(this: *mut *mut Self, fenablesmimecapabilities: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     EnableSMIMECapabilities: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICEnroll3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3263966613, data2: 47070, data3: 4562, data4: [164, 33, 0, 192, 79, 121, 254, 142] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2926,6 +2954,10 @@ pub struct ICEnroll4 {
     #[cfg(not(feature = "Win32_Foundation"))]
     IncludeSubjectKeyID: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICEnroll4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3253803146, data2: 11957, data3: 19072, data4: [132, 27, 126, 114, 154, 53, 109, 144] };
+}
 #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
 pub const ICF_ALLOWFOREIGN: u32 = 65536u32;
 #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
@@ -2971,6 +3003,10 @@ pub struct ICertAdmin {
     pub ImportCertificate: unsafe extern "system" fn(this: *mut *mut Self, strconfig: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, strcertificate: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, flags: CERT_IMPORT_FLAGS, prequestid: *mut i32) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     ImportCertificate: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICertAdmin {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 887056720, data2: 32694, data3: 4560, data4: [136, 23, 0, 160, 201, 3, 184, 60] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -3022,6 +3058,10 @@ pub struct ICertAdmin2 {
     DeleteRow: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICertAdmin2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4156795969, data2: 47310, data3: 20404, data4: [170, 88, 61, 29, 192, 227, 107, 57] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ICertConfig {
     pub base__: super::super::super::System::Com::IDispatch,
@@ -3037,6 +3077,10 @@ pub struct ICertConfig {
     GetConfig: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICertConfig {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 925879860, data2: 17188, data3: 4560, data4: [136, 16, 0, 160, 201, 3, 184, 60] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ICertConfig2 {
     pub base__: ICertConfig,
@@ -3044,6 +3088,10 @@ pub struct ICertConfig2 {
     pub SetSharedFolder: unsafe extern "system" fn(this: *mut *mut Self, strsharedfolder: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     SetSharedFolder: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICertConfig2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2048454110, data2: 32376, data3: 16739, data4: [141, 237, 120, 226, 201, 206, 233, 36] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -3070,6 +3118,10 @@ pub struct ICertEncodeAltName {
     Encode: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICertEncodeAltName {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 479890544, data2: 4721, data3: 4561, data4: [155, 212, 0, 192, 79, 182, 131, 250] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ICertEncodeAltName2 {
     pub base__: ICertEncodeAltName,
@@ -3091,6 +3143,10 @@ pub struct ICertEncodeAltName2 {
     SetNameEntryBlob: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICertEncodeAltName2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4135575927, data2: 24305, data3: 17717, data4: [180, 206, 41, 223, 21, 226, 224, 195] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ICertEncodeBitString {
     pub base__: super::super::super::System::Com::IDispatch,
@@ -3109,6 +3165,10 @@ pub struct ICertEncodeBitString {
     Encode: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICertEncodeBitString {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1840588222, data2: 4728, data3: 4561, data4: [155, 212, 0, 192, 79, 182, 131, 250] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ICertEncodeBitString2 {
     pub base__: ICertEncodeBitString,
@@ -3124,6 +3184,10 @@ pub struct ICertEncodeBitString2 {
     pub GetBitStringBlob: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, pstrbitstring: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetBitStringBlob: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICertEncodeBitString2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3765491431, data2: 9199, data3: 19922, data4: [130, 66, 235, 217, 201, 40, 203, 48] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -3152,6 +3216,10 @@ pub struct ICertEncodeCRLDistInfo {
     Encode: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICertEncodeCRLDistInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 26576448, data2: 48127, data3: 4560, data4: [136, 37, 0, 160, 201, 3, 184, 60] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ICertEncodeCRLDistInfo2 {
     pub base__: ICertEncodeCRLDistInfo,
@@ -3163,6 +3231,10 @@ pub struct ICertEncodeCRLDistInfo2 {
     pub EncodeBlob: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, pstrencodeddata: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     EncodeBlob: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICertEncodeCRLDistInfo2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3022478667, data2: 15920, data3: 17519, data4: [173, 54, 9, 208, 49, 32, 176, 120] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -3182,6 +3254,10 @@ pub struct ICertEncodeDateArray {
     Encode: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICertEncodeDateArray {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 798255520, data2: 42096, data3: 4560, data4: [136, 33, 0, 160, 201, 3, 184, 60] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ICertEncodeDateArray2 {
     pub base__: ICertEncodeDateArray,
@@ -3193,6 +3269,10 @@ pub struct ICertEncodeDateArray2 {
     pub EncodeBlob: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, pstrencodeddata: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     EncodeBlob: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICertEncodeDateArray2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2577722805, data2: 11150, data3: 17549, data4: [191, 149, 187, 168, 215, 120, 157, 200] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -3212,6 +3292,10 @@ pub struct ICertEncodeLongArray {
     Encode: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICertEncodeLongArray {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 367194672, data2: 41122, data3: 4560, data4: [136, 33, 0, 160, 201, 3, 184, 60] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ICertEncodeLongArray2 {
     pub base__: ICertEncodeLongArray,
@@ -3223,6 +3307,10 @@ pub struct ICertEncodeLongArray2 {
     pub EncodeBlob: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, pstrencodeddata: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     EncodeBlob: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICertEncodeLongArray2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1325262922, data2: 48539, data3: 20418, data4: [161, 8, 195, 71, 212, 120, 132, 15] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -3249,6 +3337,10 @@ pub struct ICertEncodeStringArray {
     Encode: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICertEncodeStringArray {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 313034784, data2: 29844, data3: 4560, data4: [136, 22, 0, 160, 201, 3, 184, 60] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ICertEncodeStringArray2 {
     pub base__: ICertEncodeStringArray,
@@ -3260,6 +3352,10 @@ pub struct ICertEncodeStringArray2 {
     pub EncodeBlob: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, pstrencodeddata: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     EncodeBlob: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICertEncodeStringArray2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2624064915, data2: 39805, data3: 20117, data4: [144, 24, 79, 254, 16, 186, 90, 218] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -3276,6 +3372,10 @@ pub struct ICertExit {
     GetDescription: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICertExit {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3785023904, data2: 29540, data3: 4560, data4: [136, 22, 0, 160, 201, 3, 184, 60] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ICertExit2 {
     pub base__: ICertExit,
@@ -3285,6 +3385,10 @@ pub struct ICertExit2 {
     GetManageModule: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICertExit2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 180308043, data2: 53321, data3: 17997, data4: [167, 237, 85, 46, 117, 41, 176, 255] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ICertGetConfig {
     pub base__: super::super::super::System::Com::IDispatch,
@@ -3292,6 +3396,10 @@ pub struct ICertGetConfig {
     pub GetConfig: unsafe extern "system" fn(this: *mut *mut Self, flags: CERT_GET_CONFIG_FLAGS, pstrout: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetConfig: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICertGetConfig {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3354003904, data2: 52759, data3: 4560, data4: [136, 51, 0, 160, 201, 3, 184, 60] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -3309,6 +3417,10 @@ pub struct ICertManageModule {
     pub Configure: unsafe extern "system" fn(this: *mut *mut Self, strconfig: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, strstoragelocation: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, flags: i32) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     Configure: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICertManageModule {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3889671490, data2: 48445, data3: 4561, data4: [154, 77, 0, 192, 79, 194, 151, 235] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -3329,6 +3441,10 @@ pub struct ICertPolicy {
     pub ShutDown: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICertPolicy {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 951802368, data2: 30262, data3: 4560, data4: [180, 19, 0, 160, 201, 27, 191, 140] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ICertPolicy2 {
     pub base__: ICertPolicy,
@@ -3336,6 +3452,10 @@ pub struct ICertPolicy2 {
     pub GetManageModule: unsafe extern "system" fn(this: *mut *mut Self, ppmanagemodule: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     GetManageModule: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICertPolicy2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1035243790, data2: 32769, data3: 19441, data4: [170, 27, 244, 58, 128, 131, 23, 160] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -3357,6 +3477,10 @@ pub struct ICertProperties {
     pub InitializeFromCertificate: unsafe extern "system" fn(this: *mut *mut Self, machinecontext: i16, encoding: EncodingType, strcertificate: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     InitializeFromCertificate: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICertProperties {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692463, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -3386,11 +3510,19 @@ pub struct ICertProperty {
     SetValueOnCertificate: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICertProperty {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692462, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ICertPropertyArchived {
     pub base__: ICertProperty,
     pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, archivedvalue: i16) -> ::windows_sys::core::HRESULT,
     pub Archived: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICertPropertyArchived {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692471, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -3406,6 +3538,10 @@ pub struct ICertPropertyArchivedKeyHash {
     get_ArchivedKeyHash: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICertPropertyArchivedKeyHash {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692475, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ICertPropertyAutoEnroll {
     pub base__: ICertProperty,
@@ -3419,6 +3555,10 @@ pub struct ICertPropertyAutoEnroll {
     TemplateName: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICertPropertyAutoEnroll {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692466, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ICertPropertyBackedUp {
     pub base__: ICertProperty,
@@ -3426,6 +3566,10 @@ pub struct ICertPropertyBackedUp {
     pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, backedupvalue: i16, date: f64) -> ::windows_sys::core::HRESULT,
     pub BackedUpValue: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i16) -> ::windows_sys::core::HRESULT,
     pub BackedUpTime: unsafe extern "system" fn(this: *mut *mut Self, pdate: *mut f64) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICertPropertyBackedUp {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692472, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -3439,6 +3583,10 @@ pub struct ICertPropertyDescription {
     pub Description: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     Description: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICertPropertyDescription {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692465, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -3461,6 +3609,10 @@ pub struct ICertPropertyEnrollment {
     pub FriendlyName: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     FriendlyName: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICertPropertyEnrollment {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692473, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -3492,6 +3644,10 @@ pub struct ICertPropertyEnrollmentPolicyServer {
     pub GetEnrollmentServerAuthentication: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut X509EnrollmentAuthFlags) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICertPropertyEnrollmentPolicyServer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692490, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ICertPropertyFriendlyName {
     pub base__: ICertProperty,
@@ -3505,6 +3661,10 @@ pub struct ICertPropertyFriendlyName {
     FriendlyName: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICertPropertyFriendlyName {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692464, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ICertPropertyKeyProvInfo {
     pub base__: ICertProperty,
@@ -3516,6 +3676,10 @@ pub struct ICertPropertyKeyProvInfo {
     pub PrivateKey: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     PrivateKey: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICertPropertyKeyProvInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692470, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -3535,6 +3699,10 @@ pub struct ICertPropertyRenewal {
     get_Renewal: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICertPropertyRenewal {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692474, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ICertPropertyRequestOriginator {
     pub base__: ICertProperty,
@@ -3549,6 +3717,10 @@ pub struct ICertPropertyRequestOriginator {
     RequestOriginator: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICertPropertyRequestOriginator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692467, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ICertPropertySHA1Hash {
     pub base__: ICertProperty,
@@ -3560,6 +3732,10 @@ pub struct ICertPropertySHA1Hash {
     pub get_SHA1Hash: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     get_SHA1Hash: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICertPropertySHA1Hash {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692468, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -3587,6 +3763,10 @@ pub struct ICertRequest {
     pub GetCertificate: unsafe extern "system" fn(this: *mut *mut Self, flags: i32, pstrcertificate: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetCertificate: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICertRequest {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 21907520, data2: 21795, data3: 4560, data4: [136, 18, 0, 160, 201, 3, 184, 60] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -3618,6 +3798,10 @@ pub struct ICertRequest2 {
     GetFullResponseProperty: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICertRequest2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2759272840, data2: 19077, data3: 20393, data4: [130, 78, 181, 207, 92, 22, 64, 90] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ICertRequest3 {
     pub base__: ICertRequest2,
@@ -3635,12 +3819,19 @@ pub struct ICertRequest3 {
     GetIssuedCertificate2: usize,
     pub GetRefreshPolicy: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i16) -> ::windows_sys::core::HRESULT,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICertRequest3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2949183787, data2: 13218, data3: 18529, data4: [191, 54, 41, 51, 183, 205, 103, 179] };
+}
 #[repr(C)]
 pub struct ICertRequestD {
     pub base__: ::windows_sys::core::IUnknown,
     pub Request: unsafe extern "system" fn(this: *mut *mut Self, dwflags: u32, pwszauthority: ::windows_sys::core::PCWSTR, pdwrequestid: *mut u32, pdwdisposition: *mut u32, pwszattributes: ::windows_sys::core::PCWSTR, pctbrequest: *const CERTTRANSBLOB, pctbcertchain: *mut CERTTRANSBLOB, pctbencodedcert: *mut CERTTRANSBLOB, pctbdispositionmessage: *mut CERTTRANSBLOB) -> ::windows_sys::core::HRESULT,
     pub GetCACert: unsafe extern "system" fn(this: *mut *mut Self, fchain: u32, pwszauthority: ::windows_sys::core::PCWSTR, pctbout: *mut CERTTRANSBLOB) -> ::windows_sys::core::HRESULT,
     pub Ping: unsafe extern "system" fn(this: *mut *mut Self, pwszauthority: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ICertRequestD {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3651038832, data2: 64648, data3: 4560, data4: [180, 152, 0, 160, 201, 3, 18, 243] };
 }
 #[repr(C)]
 pub struct ICertRequestD2 {
@@ -3649,6 +3840,9 @@ pub struct ICertRequestD2 {
     pub GetCAProperty: unsafe extern "system" fn(this: *mut *mut Self, pwszauthority: ::windows_sys::core::PCWSTR, propid: i32, propindex: i32, proptype: i32, pctbpropertyvalue: *mut CERTTRANSBLOB) -> ::windows_sys::core::HRESULT,
     pub GetCAPropertyInfo: unsafe extern "system" fn(this: *mut *mut Self, pwszauthority: ::windows_sys::core::PCWSTR, pcproperty: *mut i32, pctbpropinfo: *mut CERTTRANSBLOB) -> ::windows_sys::core::HRESULT,
     pub Ping2: unsafe extern "system" fn(this: *mut *mut Self, pwszauthority: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ICertRequestD2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1411579194, data2: 54456, data3: 19695, data4: [161, 46, 232, 125, 76, 162, 46, 144] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -3684,6 +3878,10 @@ pub struct ICertServerExit {
     #[cfg(not(feature = "Win32_Foundation"))]
     EnumerateAttributes: usize,
     pub EnumerateAttributesClose: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICertServerExit {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1269427088, data2: 29484, data3: 4560, data4: [136, 22, 0, 160, 201, 3, 184, 60] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -3729,6 +3927,10 @@ pub struct ICertServerPolicy {
     pub EnumerateAttributesClose: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICertServerPolicy {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2852129058, data2: 65470, data3: 4559, data4: [136, 0, 0, 160, 201, 3, 184, 60] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ICertView {
     pub base__: super::super::super::System::Com::IDispatch,
@@ -3757,10 +3959,18 @@ pub struct ICertView {
     OpenView: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICertView {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3287991108, data2: 7812, data3: 4561, data4: [155, 214, 0, 192, 79, 182, 131, 250] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ICertView2 {
     pub base__: ICertView,
     pub SetTable: unsafe extern "system" fn(this: *mut *mut Self, table: CVRC_TABLE) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICertView2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3583292034, data2: 34897, data3: 19297, data4: [156, 102, 62, 218, 223, 132, 136, 99] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -3780,6 +3990,10 @@ pub struct ICertificateAttestationChallenge {
     RequestID: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICertificateAttestationChallenge {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1863801468, data2: 19002, data3: 16558, data4: [157, 186, 89, 47, 214, 187, 249, 184] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ICertificateAttestationChallenge2 {
     pub base__: ICertificateAttestationChallenge,
@@ -3791,6 +4005,10 @@ pub struct ICertificateAttestationChallenge2 {
     pub put_KeyBlob: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, value: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     put_KeyBlob: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICertificateAttestationChallenge2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1177629517, data2: 57958, data3: 18390, data4: [189, 121, 190, 83, 203, 46, 39, 83] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -3810,6 +4028,10 @@ pub struct ICertificatePolicies {
     pub Clear: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICertificatePolicies {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692447, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ICertificatePolicy {
     pub base__: super::super::super::System::Com::IDispatch,
@@ -3825,6 +4047,10 @@ pub struct ICertificatePolicy {
     pub PolicyQualifiers: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     PolicyQualifiers: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICertificatePolicy {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692446, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -3849,6 +4075,10 @@ pub struct ICertificationAuthorities {
     get_ItemByName: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICertificationAuthorities {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 330797061, data2: 8577, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ICertificationAuthority {
     pub base__: super::super::super::System::Com::IDispatch,
@@ -3856,6 +4086,10 @@ pub struct ICertificationAuthority {
     pub get_Property: unsafe extern "system" fn(this: *mut *mut Self, property: EnrollmentCAProperty, pvalue: *mut super::super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     get_Property: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICertificationAuthority {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2203918177, data2: 7829, data3: 19400, data4: [180, 211, 151, 108, 66, 185, 104, 247] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -3877,6 +4111,10 @@ pub struct ICryptAttribute {
     pub Values: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     Values: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICryptAttribute {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692460, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -3904,6 +4142,10 @@ pub struct ICryptAttributes {
     AddRange: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICryptAttributes {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692461, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ICspAlgorithm {
     pub base__: super::super::super::System::Com::IDispatch,
@@ -3926,6 +4168,10 @@ pub struct ICspAlgorithm {
     Name: usize,
     pub Type: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut AlgorithmType) -> ::windows_sys::core::HRESULT,
     pub Operations: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut AlgorithmOperationFlags) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICspAlgorithm {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692421, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -3951,6 +4197,10 @@ pub struct ICspAlgorithms {
     pub get_IndexByObjectId: unsafe extern "system" fn(this: *mut *mut Self, pobjectid: *mut ::core::ffi::c_void, pindex: *mut i32) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     get_IndexByObjectId: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICspAlgorithms {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692422, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -3993,6 +4243,10 @@ pub struct ICspInformation {
     GetCspStatusFromOperations: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICspInformation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692423, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ICspInformations {
     pub base__: super::super::super::System::Com::IDispatch,
@@ -4031,6 +4285,10 @@ pub struct ICspInformations {
     GetHashAlgorithms: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICspInformations {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692424, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ICspStatus {
     pub base__: super::super::super::System::Com::IDispatch,
@@ -4056,6 +4314,10 @@ pub struct ICspStatus {
     pub DisplayName: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     DisplayName: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICspStatus {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692425, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -4089,6 +4351,10 @@ pub struct ICspStatuses {
     pub get_ItemByProvider: unsafe extern "system" fn(this: *mut *mut Self, pcspstatus: *mut ::core::ffi::c_void, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     get_ItemByProvider: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ICspStatuses {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692426, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
 }
 #[repr(C)]
 pub struct IEnroll {
@@ -4209,6 +4475,9 @@ pub struct IEnroll {
     #[cfg(not(feature = "Win32_Foundation"))]
     CreatePKCS7RequestFromRequest: usize,
 }
+impl ::windows_sys::core::Interface for IEnroll {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2896853048, data2: 17797, data3: 4561, data4: [171, 87, 0, 192, 79, 194, 149, 225] };
+}
 #[repr(C)]
 pub struct IEnroll2 {
     pub base__: IEnroll,
@@ -4251,6 +4520,9 @@ pub struct IEnroll2 {
     pub EnableSMIMECapabilities: unsafe extern "system" fn(this: *mut *mut Self, fenablesmimecapabilities: *mut super::super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     EnableSMIMECapabilities: usize,
+}
+impl ::windows_sys::core::Interface for IEnroll2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3229671833, data2: 47071, data3: 4562, data4: [164, 33, 0, 192, 79, 121, 254, 142] };
 }
 #[repr(C)]
 pub struct IEnroll4 {
@@ -4312,6 +4584,9 @@ pub struct IEnroll4 {
     #[cfg(not(feature = "Win32_Foundation"))]
     IncludeSubjectKeyID: usize,
 }
+impl ::windows_sys::core::Interface for IEnroll4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4161093605, data2: 30964, data3: 17551, data4: [160, 219, 65, 214, 27, 115, 68, 107] };
+}
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IEnumCERTVIEWATTRIBUTE {
@@ -4331,6 +4606,10 @@ pub struct IEnumCERTVIEWATTRIBUTE {
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     Clone: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IEnumCERTVIEWATTRIBUTE {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3883775574, data2: 30291, data3: 4561, data4: [155, 222, 0, 192, 79, 182, 131, 250] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -4360,6 +4639,10 @@ pub struct IEnumCERTVIEWCOLUMN {
     Clone: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IEnumCERTVIEWCOLUMN {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2624805858, data2: 22437, data3: 4561, data4: [155, 219, 0, 192, 79, 182, 131, 250] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IEnumCERTVIEWEXTENSION {
     pub base__: super::super::super::System::Com::IDispatch,
@@ -4379,6 +4662,10 @@ pub struct IEnumCERTVIEWEXTENSION {
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     Clone: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IEnumCERTVIEWEXTENSION {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3890025574, data2: 30291, data3: 4561, data4: [155, 222, 0, 192, 79, 182, 131, 250] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -4404,6 +4691,10 @@ pub struct IEnumCERTVIEWROW {
     #[cfg(not(feature = "Win32_System_Com"))]
     Clone: usize,
     pub GetMaxIndex: unsafe extern "system" fn(this: *mut *mut Self, pindex: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IEnumCERTVIEWROW {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3507846988, data2: 23282, data3: 4561, data4: [155, 220, 0, 192, 79, 182, 131, 250] };
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
 pub const IF_ENABLEADMINASAUDITOR: u32 = 4096u32;
@@ -4444,6 +4735,9 @@ pub struct INDESPolicy {
     #[cfg(not(feature = "Win32_Foundation"))]
     VerifyRequest: usize,
     pub Notify: unsafe extern "system" fn(this: *mut *mut Self, pwszchallenge: ::windows_sys::core::PCWSTR, pwsztransactionid: ::windows_sys::core::PCWSTR, disposition: X509SCEPDisposition, lasthresult: i32, pctbissuedcertencoded: *mut CERTTRANSBLOB) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for INDESPolicy {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 332026205, data2: 17181, data3: 18124, data4: [140, 46, 29, 162, 105, 187, 214, 37] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -4489,6 +4783,10 @@ pub struct IOCSPAdmin {
     pub GetHashAlgorithms: unsafe extern "system" fn(this: *mut *mut Self, bstrservername: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, bstrcaid: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, pval: *mut super::super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     GetHashAlgorithms: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IOCSPAdmin {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 841909005, data2: 26587, data3: 20457, data4: [149, 119, 69, 150, 217, 240, 146, 148] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -4571,6 +4869,10 @@ pub struct IOCSPCAConfiguration {
     SetCAConfig: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IOCSPCAConfiguration {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2932419392, data2: 15686, data3: 17215, data4: [135, 209, 184, 77, 92, 30, 121, 13] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IOCSPCAConfigurationCollection {
     pub base__: super::super::super::System::Com::IDispatch,
@@ -4594,6 +4896,10 @@ pub struct IOCSPCAConfigurationCollection {
     DeleteCAConfiguration: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IOCSPCAConfigurationCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 736881163, data2: 24270, data3: 20264, data4: [169, 28, 134, 180, 187, 32, 240, 211] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IOCSPProperty {
     pub base__: super::super::super::System::Com::IDispatch,
@@ -4610,6 +4916,10 @@ pub struct IOCSPProperty {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     SetValue: usize,
     pub Modified: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IOCSPProperty {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1727756345, data2: 24324, data3: 19493, data4: [173, 24, 159, 241, 168, 55, 110, 224] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -4643,6 +4953,10 @@ pub struct IOCSPPropertyCollection {
     GetAllProperties: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IOCSPPropertyCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 630702477, data2: 21734, data3: 19316, data4: [159, 169, 166, 191, 218, 153, 203, 190] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IObjectId {
     pub base__: super::super::super::System::Com::IDispatch,
@@ -4674,6 +4988,10 @@ pub struct IObjectId {
     GetAlgorithmName: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IObjectId {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692416, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IObjectIds {
     pub base__: super::super::super::System::Com::IDispatch,
@@ -4693,6 +5011,10 @@ pub struct IObjectIds {
     pub AddRange: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     AddRange: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IObjectIds {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692417, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -4717,6 +5039,10 @@ pub struct IPolicyQualifier {
     get_RawData: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IPolicyQualifier {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692444, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IPolicyQualifiers {
     pub base__: super::super::super::System::Com::IDispatch,
@@ -4732,6 +5058,10 @@ pub struct IPolicyQualifiers {
     Add: usize,
     pub Remove: unsafe extern "system" fn(this: *mut *mut Self, index: i32) -> ::windows_sys::core::HRESULT,
     pub Clear: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IPolicyQualifiers {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692445, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
 pub const ISSCERT_DEFAULT_DS: u32 = 256u32;
@@ -4787,6 +5117,10 @@ pub struct ISignerCertificate {
     SignatureInformation: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISignerCertificate {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692477, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISignerCertificates {
     pub base__: super::super::super::System::Com::IDispatch,
@@ -4806,6 +5140,10 @@ pub struct ISignerCertificates {
     pub Find: unsafe extern "system" fn(this: *mut *mut Self, psignercert: *mut ::core::ffi::c_void, pisignercert: *mut i32) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     Find: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISignerCertificates {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692478, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -4830,6 +5168,10 @@ pub struct ISmimeCapabilities {
     pub AddAvailableSmimeCapabilities: unsafe extern "system" fn(this: *mut *mut Self, machinecontext: i16) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISmimeCapabilities {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692442, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISmimeCapability {
     pub base__: super::super::super::System::Com::IDispatch,
@@ -4842,6 +5184,10 @@ pub struct ISmimeCapability {
     #[cfg(not(feature = "Win32_System_Com"))]
     ObjectId: usize,
     pub BitCount: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISmimeCapability {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692441, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -4865,6 +5211,10 @@ pub struct IX500DistinguishedName {
     get_EncodedName: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IX500DistinguishedName {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692419, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IX509Attribute {
     pub base__: super::super::super::System::Com::IDispatch,
@@ -4880,6 +5230,10 @@ pub struct IX509Attribute {
     pub get_RawData: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     get_RawData: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IX509Attribute {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692450, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -4904,6 +5258,10 @@ pub struct IX509AttributeArchiveKey {
     pub EncryptionStrength: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IX509AttributeArchiveKey {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692455, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IX509AttributeArchiveKeyHash {
     pub base__: IX509Attribute,
@@ -4919,6 +5277,10 @@ pub struct IX509AttributeArchiveKeyHash {
     pub get_EncryptedKeyHashBlob: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     get_EncryptedKeyHashBlob: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IX509AttributeArchiveKeyHash {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692456, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -4947,6 +5309,10 @@ pub struct IX509AttributeClientId {
     ProcessName: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IX509AttributeClientId {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692453, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IX509AttributeCspProvider {
     pub base__: IX509Attribute,
@@ -4969,6 +5335,10 @@ pub struct IX509AttributeCspProvider {
     get_Signature: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IX509AttributeCspProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692459, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IX509AttributeExtensions {
     pub base__: IX509Attribute,
@@ -4984,6 +5354,10 @@ pub struct IX509AttributeExtensions {
     pub X509Extensions: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     X509Extensions: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IX509AttributeExtensions {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692452, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -5003,6 +5377,10 @@ pub struct IX509AttributeOSVersion {
     OSVersion: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IX509AttributeOSVersion {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692458, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IX509AttributeRenewalCertificate {
     pub base__: IX509Attribute,
@@ -5020,6 +5398,10 @@ pub struct IX509AttributeRenewalCertificate {
     get_RenewalCertificate: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IX509AttributeRenewalCertificate {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692454, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IX509Attributes {
     pub base__: super::super::super::System::Com::IDispatch,
@@ -5035,6 +5417,10 @@ pub struct IX509Attributes {
     Add: usize,
     pub Remove: unsafe extern "system" fn(this: *mut *mut Self, index: i32) -> ::windows_sys::core::HRESULT,
     pub Clear: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IX509Attributes {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692451, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -5097,6 +5483,10 @@ pub struct IX509CertificateRequest {
     get_RawData: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IX509CertificateRequest {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692481, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IX509CertificateRequestCertificate {
     pub base__: IX509CertificateRequestPkcs10,
@@ -5134,6 +5524,10 @@ pub struct IX509CertificateRequestCertificate {
     SetSignerCertificate: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IX509CertificateRequestCertificate {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692483, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IX509CertificateRequestCertificate2 {
     pub base__: IX509CertificateRequestCertificate,
@@ -5153,6 +5547,10 @@ pub struct IX509CertificateRequestCertificate2 {
     pub Template: unsafe extern "system" fn(this: *mut *mut Self, pptemplate: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     Template: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IX509CertificateRequestCertificate2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692506, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -5231,6 +5629,10 @@ pub struct IX509CertificateRequestCmc {
     SignerCertificates: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IX509CertificateRequestCmc {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692485, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IX509CertificateRequestCmc2 {
     pub base__: IX509CertificateRequestCmc,
@@ -5255,6 +5657,10 @@ pub struct IX509CertificateRequestCmc2 {
     pub CheckCertificateSignature: unsafe extern "system" fn(this: *mut *mut Self, psignercertificate: *mut ::core::ffi::c_void, validatecertificatechain: i16) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     CheckCertificateSignature: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IX509CertificateRequestCmc2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692509, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -5356,6 +5762,10 @@ pub struct IX509CertificateRequestPkcs10 {
     GetCspStatuses: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IX509CertificateRequestPkcs10 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692482, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IX509CertificateRequestPkcs10V2 {
     pub base__: IX509CertificateRequestPkcs10,
@@ -5379,6 +5789,10 @@ pub struct IX509CertificateRequestPkcs10V2 {
     pub Template: unsafe extern "system" fn(this: *mut *mut Self, pptemplate: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     Template: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IX509CertificateRequestPkcs10V2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692507, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -5418,6 +5832,10 @@ pub struct IX509CertificateRequestPkcs10V3 {
     NameValuePairs: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IX509CertificateRequestPkcs10V3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1424660802, data2: 15718, data3: 17712, data4: [183, 110, 124, 145, 112, 211, 236, 82] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IX509CertificateRequestPkcs10V4 {
     pub base__: IX509CertificateRequestPkcs10V3,
@@ -5425,6 +5843,10 @@ pub struct IX509CertificateRequestPkcs10V4 {
     pub SetClaimType: unsafe extern "system" fn(this: *mut *mut Self, value: KeyAttestationClaimType) -> ::windows_sys::core::HRESULT,
     pub AttestPrivateKeyPreferred: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i16) -> ::windows_sys::core::HRESULT,
     pub SetAttestPrivateKeyPreferred: unsafe extern "system" fn(this: *mut *mut Self, value: i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IX509CertificateRequestPkcs10V4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692515, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -5464,6 +5886,10 @@ pub struct IX509CertificateRequestPkcs7 {
     SetSignerCertificate: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IX509CertificateRequestPkcs7 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692484, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IX509CertificateRequestPkcs7V2 {
     pub base__: IX509CertificateRequestPkcs7,
@@ -5480,6 +5906,10 @@ pub struct IX509CertificateRequestPkcs7V2 {
     #[cfg(not(feature = "Win32_System_Com"))]
     Template: usize,
     pub CheckCertificateSignature: unsafe extern "system" fn(this: *mut *mut Self, validatecertificatechain: i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IX509CertificateRequestPkcs7V2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692508, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -5569,6 +5999,10 @@ pub struct IX509CertificateRevocationList {
     get_Signature: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IX509CertificateRevocationList {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692512, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IX509CertificateRevocationListEntries {
     pub base__: super::super::super::System::Com::IDispatch,
@@ -5592,6 +6026,10 @@ pub struct IX509CertificateRevocationListEntries {
     pub AddRange: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     AddRange: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IX509CertificateRevocationListEntries {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692511, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -5618,6 +6056,10 @@ pub struct IX509CertificateRevocationListEntry {
     CriticalExtensions: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IX509CertificateRevocationListEntry {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692510, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IX509CertificateTemplate {
     pub base__: super::super::super::System::Com::IDispatch,
@@ -5625,6 +6067,10 @@ pub struct IX509CertificateTemplate {
     pub get_Property: unsafe extern "system" fn(this: *mut *mut Self, property: EnrollmentTemplateProperty, pvalue: *mut super::super::super::System::Com::VARIANT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     get_Property: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IX509CertificateTemplate {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1411664403, data2: 21850, data3: 20002, data4: [137, 109, 27, 14, 82, 247, 100, 6] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -5652,6 +6098,10 @@ pub struct IX509CertificateTemplateWritable {
     Template: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IX509CertificateTemplateWritable {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4103366311, data2: 14682, data3: 20126, data4: [182, 231, 50, 179, 49, 96, 13, 192] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IX509CertificateTemplates {
     pub base__: super::super::super::System::Com::IDispatch,
@@ -5675,6 +6125,10 @@ pub struct IX509CertificateTemplates {
     pub get_ItemByOid: unsafe extern "system" fn(this: *mut *mut Self, poid: *mut ::core::ffi::c_void, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     get_ItemByOid: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IX509CertificateTemplates {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 330797059, data2: 8577, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -5709,6 +6163,10 @@ pub struct IX509EndorsementKey {
     ExportPublicKey: usize,
     pub Open: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IX509EndorsementKey {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2971457621, data2: 62660, data3: 20422, data4: [183, 16, 68, 34, 35, 127, 9, 233] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -5784,6 +6242,10 @@ pub struct IX509Enrollment {
     CAConfigString: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IX509Enrollment {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692486, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IX509Enrollment2 {
     pub base__: IX509Enrollment,
@@ -5809,6 +6271,10 @@ pub struct IX509Enrollment2 {
     RequestIdString: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IX509Enrollment2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692496, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IX509EnrollmentHelper {
     pub base__: super::super::super::System::Com::IDispatch,
@@ -5825,6 +6291,10 @@ pub struct IX509EnrollmentHelper {
     #[cfg(not(feature = "Win32_Foundation"))]
     Enroll: usize,
     pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, context: X509CertificateEnrollmentContext) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IX509EnrollmentHelper {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692497, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -5895,6 +6365,10 @@ pub struct IX509EnrollmentPolicyServer {
     pub SetCost: unsafe extern "system" fn(this: *mut *mut Self, value: u32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IX509EnrollmentPolicyServer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 330797094, data2: 8577, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IX509EnrollmentStatus {
     pub base__: super::super::super::System::Com::IDispatch,
@@ -5924,6 +6398,10 @@ pub struct IX509EnrollmentStatus {
     ErrorText: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IX509EnrollmentStatus {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692420, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IX509EnrollmentWebClassFactory {
     pub base__: super::super::super::System::Com::IDispatch,
@@ -5931,6 +6409,10 @@ pub struct IX509EnrollmentWebClassFactory {
     pub CreateObject: unsafe extern "system" fn(this: *mut *mut Self, strprogid: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, ppiunknown: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     CreateObject: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IX509EnrollmentWebClassFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692489, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -5952,6 +6434,10 @@ pub struct IX509Extension {
     pub SetCritical: unsafe extern "system" fn(this: *mut *mut Self, value: i16) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IX509Extension {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692429, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IX509ExtensionAlternativeNames {
     pub base__: IX509Extension,
@@ -5967,6 +6453,10 @@ pub struct IX509ExtensionAlternativeNames {
     pub AlternativeNames: unsafe extern "system" fn(this: *mut *mut Self, ppvalue: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     AlternativeNames: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IX509ExtensionAlternativeNames {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692437, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -5986,6 +6476,10 @@ pub struct IX509ExtensionAuthorityKeyIdentifier {
     get_AuthorityKeyIdentifier: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IX509ExtensionAuthorityKeyIdentifier {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692440, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IX509ExtensionBasicConstraints {
     pub base__: IX509Extension,
@@ -5996,6 +6490,10 @@ pub struct IX509ExtensionBasicConstraints {
     InitializeDecode: usize,
     pub IsCA: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i16) -> ::windows_sys::core::HRESULT,
     pub PathLenConstraint: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IX509ExtensionBasicConstraints {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692438, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -6015,6 +6513,10 @@ pub struct IX509ExtensionCertificatePolicies {
     Policies: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IX509ExtensionCertificatePolicies {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692448, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IX509ExtensionEnhancedKeyUsage {
     pub base__: IX509Extension,
@@ -6032,6 +6534,10 @@ pub struct IX509ExtensionEnhancedKeyUsage {
     EnhancedKeyUsage: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IX509ExtensionEnhancedKeyUsage {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692432, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IX509ExtensionKeyUsage {
     pub base__: IX509Extension,
@@ -6041,6 +6547,10 @@ pub struct IX509ExtensionKeyUsage {
     #[cfg(not(feature = "Win32_Foundation"))]
     InitializeDecode: usize,
     pub KeyUsage: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut X509KeyUsageFlags) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IX509ExtensionKeyUsage {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692431, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -6060,6 +6570,10 @@ pub struct IX509ExtensionMSApplicationPolicies {
     Policies: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IX509ExtensionMSApplicationPolicies {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692449, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IX509ExtensionSmimeCapabilities {
     pub base__: IX509Extension,
@@ -6077,6 +6591,10 @@ pub struct IX509ExtensionSmimeCapabilities {
     SmimeCapabilities: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IX509ExtensionSmimeCapabilities {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692443, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IX509ExtensionSubjectKeyIdentifier {
     pub base__: IX509Extension,
@@ -6092,6 +6610,10 @@ pub struct IX509ExtensionSubjectKeyIdentifier {
     pub get_SubjectKeyIdentifier: unsafe extern "system" fn(this: *mut *mut Self, encoding: EncodingType, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     get_SubjectKeyIdentifier: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IX509ExtensionSubjectKeyIdentifier {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692439, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -6113,6 +6635,10 @@ pub struct IX509ExtensionTemplate {
     pub MinorVersion: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut i32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IX509ExtensionTemplate {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692434, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IX509ExtensionTemplateName {
     pub base__: IX509Extension,
@@ -6128,6 +6654,10 @@ pub struct IX509ExtensionTemplateName {
     pub TemplateName: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     TemplateName: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IX509ExtensionTemplateName {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692433, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -6155,6 +6685,10 @@ pub struct IX509Extensions {
     AddRange: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IX509Extensions {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692430, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IX509MachineEnrollmentFactory {
     pub base__: super::super::super::System::Com::IDispatch,
@@ -6162,6 +6696,10 @@ pub struct IX509MachineEnrollmentFactory {
     pub CreateObject: unsafe extern "system" fn(this: *mut *mut Self, strprogid: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, ppihelper: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     CreateObject: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IX509MachineEnrollmentFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692498, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -6181,6 +6719,10 @@ pub struct IX509NameValuePair {
     Name: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IX509NameValuePair {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692479, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IX509NameValuePairs {
     pub base__: super::super::super::System::Com::IDispatch,
@@ -6196,6 +6738,10 @@ pub struct IX509NameValuePairs {
     Add: usize,
     pub Remove: unsafe extern "system" fn(this: *mut *mut Self, index: i32) -> ::windows_sys::core::HRESULT,
     pub Clear: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IX509NameValuePairs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692480, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -6214,6 +6760,10 @@ pub struct IX509PolicyServerListManager {
     pub Remove: unsafe extern "system" fn(this: *mut *mut Self, index: i32) -> ::windows_sys::core::HRESULT,
     pub Clear: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Initialize: unsafe extern "system" fn(this: *mut *mut Self, context: X509CertificateEnrollmentContext, flags: PolicyServerUrlFlags) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IX509PolicyServerListManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821451, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -6246,6 +6796,10 @@ pub struct IX509PolicyServerUrl {
     SetStringProperty: usize,
     pub UpdateRegistry: unsafe extern "system" fn(this: *mut *mut Self, context: X509CertificateEnrollmentContext) -> ::windows_sys::core::HRESULT,
     pub RemoveFromRegistry: unsafe extern "system" fn(this: *mut *mut Self, context: X509CertificateEnrollmentContext) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IX509PolicyServerUrl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2286821450, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -6398,6 +6952,10 @@ pub struct IX509PrivateKey {
     SetDescription: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IX509PrivateKey {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692428, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IX509PrivateKey2 {
     pub base__: IX509PrivateKey,
@@ -6431,6 +6989,10 @@ pub struct IX509PrivateKey2 {
     pub SetParametersExportType: unsafe extern "system" fn(this: *mut *mut Self, value: X509KeyParametersExportType) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IX509PrivateKey2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692514, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IX509PublicKey {
     pub base__: super::super::super::System::Com::IDispatch,
@@ -6459,6 +7021,10 @@ pub struct IX509PublicKey {
     pub ComputeKeyIdentifier: unsafe extern "system" fn(this: *mut *mut Self, algorithm: KeyIdentifierHashAlgorithm, encoding: EncodingType, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     ComputeKeyIdentifier: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IX509PublicKey {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692427, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -6539,6 +7105,10 @@ pub struct IX509SCEPEnrollment {
     pub DeleteRequest: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IX509SCEPEnrollment {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692513, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IX509SCEPEnrollment2 {
     pub base__: IX509SCEPEnrollment,
@@ -6565,6 +7135,10 @@ pub struct IX509SCEPEnrollment2 {
     SetActivityId: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IX509SCEPEnrollment2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692516, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IX509SCEPEnrollmentHelper {
     pub base__: super::super::super::System::Com::IDispatch,
@@ -6586,6 +7160,10 @@ pub struct IX509SCEPEnrollmentHelper {
     pub ResultMessageText: unsafe extern "system" fn(this: *mut *mut Self, pvalue: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     ResultMessageText: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IX509SCEPEnrollmentHelper {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692517, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -6625,6 +7203,10 @@ pub struct IX509SignatureInformation {
     #[cfg(not(feature = "Win32_System_Com"))]
     GetSignatureAlgorithm: usize,
     pub SetDefaultValues: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IX509SignatureInformation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1921692476, data2: 8573, data3: 4570, data4: [178, 164, 0, 14, 123, 187, 43, 9] };
 }
 #[doc = "*Required features: `\"Win32_Security_Cryptography_Certificates\"`*"]
 pub type ImportPFXFlags = i32;

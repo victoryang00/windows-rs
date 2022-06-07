@@ -318,6 +318,9 @@ pub struct IAppointment {
     #[cfg(not(feature = "Foundation"))]
     SetUri: usize,
 }
+impl ::windows_sys::core::Interface for IAppointment {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3707776815, data2: 11229, data3: 16502, data4: [144, 163, 34, 194, 117, 49, 41, 101] };
+}
 #[repr(C)]
 pub struct IAppointment2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -351,6 +354,9 @@ pub struct IAppointment2 {
     pub IsOrganizedByUser: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub SetIsOrganizedByUser: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAppointment2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1585813564, data2: 21519, data3: 13394, data4: [155, 92, 13, 215, 173, 76, 101, 162] };
+}
 #[repr(C)]
 pub struct IAppointment3 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -359,6 +365,9 @@ pub struct IAppointment3 {
     pub SetRemoteChangeNumber: unsafe extern "system" fn(this: *mut *mut Self, value: u64) -> ::windows_sys::core::HRESULT,
     pub DetailsKind: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut AppointmentDetailsKind) -> ::windows_sys::core::HRESULT,
     pub SetDetailsKind: unsafe extern "system" fn(this: *mut *mut Self, value: AppointmentDetailsKind) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAppointment3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3217835433, data2: 35169, data3: 18833, data4: [147, 75, 196, 135, 104, 229, 169, 108] };
 }
 #[repr(C)]
 pub struct IAppointmentCalendar {
@@ -435,6 +444,9 @@ pub struct IAppointmentCalendar {
     #[cfg(not(feature = "Foundation"))]
     SaveAppointmentAsync: usize,
 }
+impl ::windows_sys::core::Interface for IAppointmentCalendar {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1383301533, data2: 33593, data3: 15695, data4: [160, 47, 100, 8, 68, 82, 187, 93] };
+}
 #[repr(C)]
 pub struct IAppointmentCalendar2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -482,6 +494,9 @@ pub struct IAppointmentCalendar2 {
     #[cfg(not(feature = "Foundation"))]
     TryUpdateMeetingResponseAsync: usize,
 }
+impl ::windows_sys::core::Interface for IAppointmentCalendar2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 417850402, data2: 9319, data3: 19996, data4: [164, 89, 216, 162, 147, 3, 208, 146] };
+}
 #[repr(C)]
 pub struct IAppointmentCalendar3 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -489,6 +504,9 @@ pub struct IAppointmentCalendar3 {
     pub RegisterSyncManagerAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     RegisterSyncManagerAsync: usize,
+}
+impl ::windows_sys::core::Interface for IAppointmentCalendar3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3944993323, data2: 42629, data3: 17070, data4: [132, 149, 179, 17, 154, 219, 65, 103] };
 }
 #[repr(C)]
 pub struct IAppointmentCalendarSyncManager {
@@ -515,6 +533,9 @@ pub struct IAppointmentCalendarSyncManager {
     #[cfg(not(feature = "Foundation"))]
     RemoveSyncStatusChanged: usize,
 }
+impl ::windows_sys::core::Interface for IAppointmentCalendarSyncManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 723628960, data2: 19199, data3: 17298, data4: [188, 95, 86, 69, 255, 207, 251, 23] };
+}
 #[repr(C)]
 pub struct IAppointmentCalendarSyncManager2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -528,6 +549,9 @@ pub struct IAppointmentCalendarSyncManager2 {
     #[cfg(not(feature = "Foundation"))]
     SetLastAttemptedSyncTime: usize,
 }
+impl ::windows_sys::core::Interface for IAppointmentCalendarSyncManager2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1685399725, data2: 3369, data3: 19580, data4: [170, 167, 191, 153, 104, 5, 83, 124] };
+}
 #[repr(C)]
 pub struct IAppointmentConflictResult {
     pub base__: ::windows_sys::core::IInspectable,
@@ -536,6 +560,9 @@ pub struct IAppointmentConflictResult {
     pub Date: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Foundation::DateTime) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     Date: usize,
+}
+impl ::windows_sys::core::Interface for IAppointmentConflictResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3587043518, data2: 12079, data3: 15229, data4: [175, 10, 167, 226, 15, 58, 70, 227] };
 }
 #[repr(C)]
 pub struct IAppointmentException {
@@ -547,6 +574,9 @@ pub struct IAppointmentException {
     ExceptionProperties: usize,
     pub IsDeleted: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAppointmentException {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2718394215, data2: 5878, data3: 19406, data4: [159, 90, 134, 0, 184, 1, 159, 203] };
+}
 #[repr(C)]
 pub struct IAppointmentInvitee {
     pub base__: ::windows_sys::core::IInspectable,
@@ -554,6 +584,9 @@ pub struct IAppointmentInvitee {
     pub SetRole: unsafe extern "system" fn(this: *mut *mut Self, value: AppointmentParticipantRole) -> ::windows_sys::core::HRESULT,
     pub Response: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut AppointmentParticipantResponse) -> ::windows_sys::core::HRESULT,
     pub SetResponse: unsafe extern "system" fn(this: *mut *mut Self, value: AppointmentParticipantResponse) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAppointmentInvitee {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 331286422, data2: 38978, data3: 18779, data4: [176, 231, 239, 143, 121, 192, 112, 29] };
 }
 #[repr(C)]
 pub struct IAppointmentManagerForUser {
@@ -615,6 +648,9 @@ pub struct IAppointmentManagerForUser {
     #[cfg(not(feature = "System"))]
     User: usize,
 }
+impl ::windows_sys::core::Interface for IAppointmentManagerForUser {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1881543715, data2: 29644, data3: 18016, data4: [179, 24, 176, 19, 101, 48, 42, 3] };
+}
 #[repr(C)]
 pub struct IAppointmentManagerStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -655,6 +691,9 @@ pub struct IAppointmentManagerStatics {
     #[cfg(not(feature = "Foundation"))]
     ShowTimeFrameAsync: usize,
 }
+impl ::windows_sys::core::Interface for IAppointmentManagerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 976288257, data2: 23616, data3: 18845, data4: [179, 63, 164, 48, 80, 247, 79, 196] };
+}
 #[repr(C)]
 pub struct IAppointmentManagerStatics2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -675,6 +714,9 @@ pub struct IAppointmentManagerStatics2 {
     #[cfg(not(feature = "Foundation"))]
     RequestStoreAsync: usize,
 }
+impl ::windows_sys::core::Interface for IAppointmentManagerStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 176289293, data2: 53327, data3: 16436, data4: [175, 114, 163, 101, 115, 180, 95, 240] };
+}
 #[repr(C)]
 pub struct IAppointmentManagerStatics3 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -683,6 +725,9 @@ pub struct IAppointmentManagerStatics3 {
     #[cfg(not(feature = "System"))]
     GetForUser: usize,
 }
+impl ::windows_sys::core::Interface for IAppointmentManagerStatics3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 798679196, data2: 45900, data3: 19911, data4: [163, 93, 202, 253, 136, 174, 62, 198] };
+}
 #[repr(C)]
 pub struct IAppointmentParticipant {
     pub base__: ::windows_sys::core::IInspectable,
@@ -690,6 +735,9 @@ pub struct IAppointmentParticipant {
     pub SetDisplayName: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub Address: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub SetAddress: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAppointmentParticipant {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1633560834, data2: 38680, data3: 18043, data4: [131, 251, 178, 147, 161, 145, 33, 222] };
 }
 #[repr(C)]
 pub struct IAppointmentPropertiesStatics {
@@ -721,12 +769,18 @@ pub struct IAppointmentPropertiesStatics {
     #[cfg(not(feature = "Foundation_Collections"))]
     DefaultProperties: usize,
 }
+impl ::windows_sys::core::Interface for IAppointmentPropertiesStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 622075881, data2: 26798, data3: 15022, data4: [133, 95, 188, 68, 65, 202, 162, 52] };
+}
 #[repr(C)]
 pub struct IAppointmentPropertiesStatics2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub ChangeNumber: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub RemoteChangeNumber: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub DetailsKind: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAppointmentPropertiesStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3757851467, data2: 45079, data3: 17885, data4: [138, 245, 209, 99, 209, 8, 1, 187] };
 }
 #[repr(C)]
 pub struct IAppointmentRecurrence {
@@ -760,6 +814,9 @@ pub struct IAppointmentRecurrence {
     pub Day: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
     pub SetDay: unsafe extern "system" fn(this: *mut *mut Self, value: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAppointmentRecurrence {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3631955587, data2: 5542, data3: 18555, data4: [185, 89, 12, 54, 30, 96, 233, 84] };
+}
 #[repr(C)]
 pub struct IAppointmentRecurrence2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -767,10 +824,16 @@ pub struct IAppointmentRecurrence2 {
     pub TimeZone: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub SetTimeZone: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAppointmentRecurrence2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1039377120, data2: 1447, data3: 20304, data4: [159, 134, 176, 63, 148, 54, 37, 77] };
+}
 #[repr(C)]
 pub struct IAppointmentRecurrence3 {
     pub base__: ::windows_sys::core::IInspectable,
     pub CalendarIdentifier: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAppointmentRecurrence3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2315228889, data2: 55885, data3: 18967, data4: [141, 210, 28, 235, 194, 181, 255, 157] };
 }
 #[repr(C)]
 pub struct IAppointmentStore {
@@ -857,6 +920,9 @@ pub struct IAppointmentStore {
     #[cfg(not(feature = "Foundation_Collections"))]
     FindLocalIdsFromRoamingIdAsync: usize,
 }
+impl ::windows_sys::core::Interface for IAppointmentStore {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2757857676, data2: 31303, data3: 19862, data4: [150, 201, 21, 205, 138, 5, 167, 53] };
+}
 #[repr(C)]
 pub struct IAppointmentStore2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -873,10 +939,16 @@ pub struct IAppointmentStore2 {
     #[cfg(not(feature = "Foundation"))]
     CreateAppointmentCalendarInAccountAsync: usize,
 }
+impl ::windows_sys::core::Interface for IAppointmentStore2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 633637920, data2: 7233, data3: 16975, data4: [128, 132, 103, 193, 207, 224, 168, 84] };
+}
 #[repr(C)]
 pub struct IAppointmentStore3 {
     pub base__: ::windows_sys::core::IInspectable,
     pub GetChangeTracker: unsafe extern "system" fn(this: *mut *mut Self, identity: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAppointmentStore3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1112642571, data2: 45176, data3: 18186, data4: [154, 64, 194, 224, 23, 97, 247, 47] };
 }
 #[repr(C)]
 pub struct IAppointmentStoreChange {
@@ -884,10 +956,16 @@ pub struct IAppointmentStoreChange {
     pub Appointment: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub ChangeType: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut AppointmentStoreChangeType) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAppointmentStoreChange {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2779177013, data2: 2611, data3: 13908, data4: [132, 99, 181, 67, 233, 12, 59, 121] };
+}
 #[repr(C)]
 pub struct IAppointmentStoreChange2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub AppointmentCalendar: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAppointmentStoreChange2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3011317198, data2: 21009, data3: 17410, data4: [166, 8, 169, 111, 231, 11, 142, 226] };
 }
 #[repr(C)]
 pub struct IAppointmentStoreChangeReader {
@@ -899,6 +977,9 @@ pub struct IAppointmentStoreChangeReader {
     pub AcceptChanges: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub AcceptChangesThrough: unsafe extern "system" fn(this: *mut *mut Self, lastchangetoaccept: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAppointmentStoreChangeReader {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2334394865, data2: 26099, data3: 17056, data4: [150, 29, 76, 32, 155, 243, 3, 112] };
+}
 #[repr(C)]
 pub struct IAppointmentStoreChangeTracker {
     pub base__: ::windows_sys::core::IInspectable,
@@ -906,24 +987,39 @@ pub struct IAppointmentStoreChangeTracker {
     pub Enable: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAppointmentStoreChangeTracker {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 455472305, data2: 36558, data3: 20247, data4: [147, 200, 230, 65, 36, 88, 253, 92] };
+}
 #[repr(C)]
 pub struct IAppointmentStoreChangeTracker2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub IsTracking: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAppointmentStoreChangeTracker2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3060444997, data2: 38210, data3: 19703, data4: [133, 80, 235, 55, 14, 12, 8, 211] };
 }
 #[repr(C)]
 pub struct IAppointmentStoreChangedDeferral {
     pub base__: ::windows_sys::core::IInspectable,
     pub Complete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAppointmentStoreChangedDeferral {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1287135270, data2: 65243, data3: 19395, data4: [150, 98, 149, 169, 190, 253, 244, 223] };
+}
 #[repr(C)]
 pub struct IAppointmentStoreChangedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub GetDeferral: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAppointmentStoreChangedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 579205305, data2: 1937, data3: 16766, data4: [191, 234, 204, 109, 65, 99, 108, 140] };
+}
 #[repr(C)]
 pub struct IAppointmentStoreNotificationTriggerDetails {
     pub base__: ::windows_sys::core::IInspectable,
+}
+impl ::windows_sys::core::Interface for IAppointmentStoreNotificationTriggerDetails {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2603862801, data2: 49921, data3: 16926, data4: [175, 239, 4, 126, 207, 167, 106, 219] };
 }
 #[repr(C)]
 pub struct IFindAppointmentsOptions {
@@ -940,6 +1036,9 @@ pub struct IFindAppointmentsOptions {
     pub SetIncludeHidden: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
     pub MaxCount: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
     pub SetMaxCount: unsafe extern "system" fn(this: *mut *mut Self, value: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IFindAppointmentsOptions {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1442307157, data2: 39234, data3: 12422, data4: [130, 181, 44, 178, 159, 100, 213, 245] };
 }
 #[doc = "*Required features: `\"ApplicationModel_Appointments\"`*"]
 #[repr(transparent)]

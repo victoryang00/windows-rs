@@ -20,6 +20,9 @@ pub struct IXboxLiveDeviceAddress {
     pub IsLocal: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub NetworkAccessKind: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut XboxLiveNetworkAccessKind) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IXboxLiveDeviceAddress {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4122727033, data2: 15494, data3: 19287, data4: [163, 26, 185, 70, 36, 8, 253, 1] };
+}
 #[repr(C)]
 pub struct IXboxLiveDeviceAddressStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -31,6 +34,9 @@ pub struct IXboxLiveDeviceAddressStatics {
     pub CreateFromSnapshotBytes: unsafe extern "system" fn(this: *mut *mut Self, buffer_array_size: u32, buffer: *const u8, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetLocal: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub MaxSnapshotBytesSize: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IXboxLiveDeviceAddressStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1498720281, data2: 19065, data3: 18737, data4: [130, 124, 127, 80, 62, 150, 50, 99] };
 }
 #[repr(C)]
 pub struct IXboxLiveEndpointPair {
@@ -57,6 +63,9 @@ pub struct IXboxLiveEndpointPair {
     pub LocalHostName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub LocalPort: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IXboxLiveEndpointPair {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 513442715, data2: 33086, data3: 17632, data4: [184, 127, 200, 122, 9, 52, 117, 228] };
+}
 #[repr(C)]
 pub struct IXboxLiveEndpointPairCreationResult {
     pub base__: ::windows_sys::core::IInspectable,
@@ -65,17 +74,26 @@ pub struct IXboxLiveEndpointPairCreationResult {
     pub IsExistingPathEvaluation: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub EndpointPair: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IXboxLiveEndpointPairCreationResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3651713941, data2: 10923, data3: 19742, data4: [151, 148, 51, 236, 192, 220, 240, 254] };
+}
 #[repr(C)]
 pub struct IXboxLiveEndpointPairStateChangedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub OldState: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut XboxLiveEndpointPairState) -> ::windows_sys::core::HRESULT,
     pub NewState: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut XboxLiveEndpointPairState) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IXboxLiveEndpointPairStateChangedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1496202069, data2: 56840, data3: 17639, data4: [172, 59, 185, 185, 161, 105, 88, 58] };
+}
 #[repr(C)]
 pub struct IXboxLiveEndpointPairStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub FindEndpointPairBySocketAddressBytes: unsafe extern "system" fn(this: *mut *mut Self, localSocketAddress_array_size: u32, localsocketaddress: *const u8, remoteSocketAddress_array_size: u32, remotesocketaddress: *const u8, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub FindEndpointPairByHostNamesAndPorts: unsafe extern "system" fn(this: *mut *mut Self, localhostname: *mut ::core::ffi::c_void, localport: ::windows_sys::core::HSTRING, remotehostname: *mut ::core::ffi::c_void, remoteport: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IXboxLiveEndpointPairStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1680960304, data2: 8570, data3: 16963, data4: [142, 225, 103, 41, 40, 29, 39, 219] };
 }
 #[repr(C)]
 pub struct IXboxLiveEndpointPairTemplate {
@@ -115,6 +133,9 @@ pub struct IXboxLiveEndpointPairTemplate {
     #[cfg(not(feature = "Foundation_Collections"))]
     EndpointPairs: usize,
 }
+impl ::windows_sys::core::Interface for IXboxLiveEndpointPairTemplate {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1797811919, data2: 13399, data3: 16590, data4: [185, 161, 192, 207, 224, 33, 62, 167] };
+}
 #[repr(C)]
 pub struct IXboxLiveEndpointPairTemplateStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -124,10 +145,16 @@ pub struct IXboxLiveEndpointPairTemplateStatics {
     #[cfg(not(feature = "Foundation_Collections"))]
     Templates: usize,
 }
+impl ::windows_sys::core::Interface for IXboxLiveEndpointPairTemplateStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 504566651, data2: 29563, data3: 18979, data4: [188, 100, 8, 112, 247, 86, 85, 186] };
+}
 #[repr(C)]
 pub struct IXboxLiveInboundEndpointPairCreatedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub EndpointPair: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IXboxLiveInboundEndpointPairCreatedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3692575586, data2: 8890, data3: 18642, data4: [128, 222, 194, 57, 104, 189, 25, 139] };
 }
 #[repr(C)]
 pub struct IXboxLiveQualityOfServiceMeasurement {
@@ -170,6 +197,9 @@ pub struct IXboxLiveQualityOfServiceMeasurement {
     #[cfg(not(feature = "Foundation_Collections"))]
     PrivatePayloadResults: usize,
 }
+impl ::windows_sys::core::Interface for IXboxLiveQualityOfServiceMeasurement {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1298672590, data2: 42454, data3: 18406, data4: [162, 54, 207, 222, 95, 189, 242, 237] };
+}
 #[repr(C)]
 pub struct IXboxLiveQualityOfServiceMeasurementStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -191,6 +221,9 @@ pub struct IXboxLiveQualityOfServiceMeasurementStatics {
     SetPublishedPrivatePayload: usize,
     pub MaxPrivatePayloadSize: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IXboxLiveQualityOfServiceMeasurementStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1848978890, data2: 9167, data3: 17418, data4: [176, 119, 94, 48, 133, 122, 130, 52] };
+}
 #[repr(C)]
 pub struct IXboxLiveQualityOfServiceMetricResult {
     pub base__: ::windows_sys::core::IInspectable,
@@ -198,6 +231,9 @@ pub struct IXboxLiveQualityOfServiceMetricResult {
     pub DeviceAddress: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Metric: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut XboxLiveQualityOfServiceMetric) -> ::windows_sys::core::HRESULT,
     pub Value: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u64) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IXboxLiveQualityOfServiceMetricResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2934723537, data2: 13665, data3: 18306, data4: [176, 207, 211, 174, 41, 217, 250, 135] };
 }
 #[repr(C)]
 pub struct IXboxLiveQualityOfServicePrivatePayloadResult {
@@ -208,6 +244,9 @@ pub struct IXboxLiveQualityOfServicePrivatePayloadResult {
     pub Value: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Storage_Streams"))]
     Value: usize,
+}
+impl ::windows_sys::core::Interface for IXboxLiveQualityOfServicePrivatePayloadResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1516438190, data2: 28472, data3: 16832, data4: [159, 204, 234, 108, 185, 120, 202, 252] };
 }
 pub type XboxLiveDeviceAddress = *mut ::core::ffi::c_void;
 pub type XboxLiveEndpointPair = *mut ::core::ffi::c_void;

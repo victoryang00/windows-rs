@@ -10,3 +10,6 @@ pub struct IGraphicsCaptureItemInterop {
     #[cfg(not(feature = "Win32_Graphics_Gdi"))]
     CreateForMonitor: usize,
 }
+impl ::windows_sys::core::Interface for IGraphicsCaptureItemInterop {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 908650523, data2: 15532, data3: 19552, data4: [183, 244, 35, 206, 14, 12, 51, 86] };
+}

@@ -51,6 +51,9 @@ pub struct IBackgroundAudioTrack {
     #[cfg(not(all(feature = "Foundation_Collections", feature = "Media_Effects")))]
     AudioEffectDefinitions: usize,
 }
+impl ::windows_sys::core::Interface for IBackgroundAudioTrack {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1267839933, data2: 40481, data3: 16998, data4: [169, 194, 103, 221, 1, 26, 35, 87] };
+}
 #[repr(C)]
 pub struct IBackgroundAudioTrackStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -60,6 +63,9 @@ pub struct IBackgroundAudioTrackStatics {
     #[cfg(not(all(feature = "Foundation", feature = "Storage")))]
     CreateFromFileAsync: usize,
 }
+impl ::windows_sys::core::Interface for IBackgroundAudioTrackStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3652305111, data2: 53272, data3: 17064, data4: [165, 89, 203, 77, 158, 151, 230, 100] };
+}
 #[repr(C)]
 pub struct IEmbeddedAudioTrack {
     pub base__: ::windows_sys::core::IInspectable,
@@ -67,6 +73,9 @@ pub struct IEmbeddedAudioTrack {
     pub GetAudioEncodingProperties: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Media_MediaProperties"))]
     GetAudioEncodingProperties: usize,
+}
+impl ::windows_sys::core::Interface for IEmbeddedAudioTrack {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1441684090, data2: 11568, data3: 16314, data4: [161, 144, 79, 26, 100, 84, 248, 143] };
 }
 #[repr(C)]
 pub struct IMediaClip {
@@ -129,6 +138,9 @@ pub struct IMediaClip {
     #[cfg(not(all(feature = "Foundation_Collections", feature = "Media_Effects")))]
     VideoEffectDefinitions: usize,
 }
+impl ::windows_sys::core::Interface for IMediaClip {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1408389990, data2: 24506, data3: 16036, data4: [134, 147, 36, 118, 24, 17, 20, 10] };
+}
 #[repr(C)]
 pub struct IMediaClipStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -145,6 +157,9 @@ pub struct IMediaClipStatics {
     #[cfg(not(all(feature = "Foundation", feature = "Storage")))]
     CreateFromImageFileAsync: usize,
 }
+impl ::windows_sys::core::Interface for IMediaClipStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4198509416, data2: 37519, data3: 17348, data4: [188, 110, 120, 58, 26, 53, 150, 86] };
+}
 #[repr(C)]
 pub struct IMediaClipStatics2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -152,6 +167,9 @@ pub struct IMediaClipStatics2 {
     pub CreateFromSurface: unsafe extern "system" fn(this: *mut *mut Self, surface: *mut ::core::ffi::c_void, originalduration: super::super::Foundation::TimeSpan, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Foundation", feature = "Graphics_DirectX_Direct3D11")))]
     CreateFromSurface: usize,
+}
+impl ::windows_sys::core::Interface for IMediaClipStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1528682419, data2: 34126, data3: 19867, data4: [135, 125, 71, 116, 165, 86, 205, 18] };
 }
 #[repr(C)]
 pub struct IMediaComposition {
@@ -214,6 +232,9 @@ pub struct IMediaComposition {
     #[cfg(not(feature = "Media_Core"))]
     GeneratePreviewMediaStreamSource: usize,
 }
+impl ::windows_sys::core::Interface for IMediaComposition {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 772204037, data2: 56433, data3: 16854, data4: [184, 55, 45, 43, 193, 74, 41, 71] };
+}
 #[repr(C)]
 pub struct IMediaComposition2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -222,6 +243,9 @@ pub struct IMediaComposition2 {
     #[cfg(not(feature = "Foundation_Collections"))]
     OverlayLayers: usize,
 }
+impl ::windows_sys::core::Interface for IMediaComposition2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2778616690, data2: 9062, data3: 18732, data4: [190, 200, 230, 223, 186, 109, 2, 129] };
+}
 #[repr(C)]
 pub struct IMediaCompositionStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -229,6 +253,9 @@ pub struct IMediaCompositionStatics {
     pub LoadAsync: unsafe extern "system" fn(this: *mut *mut Self, file: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Foundation", feature = "Storage")))]
     LoadAsync: usize,
+}
+impl ::windows_sys::core::Interface for IMediaCompositionStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2275446532, data2: 58154, data3: 17870, data4: [143, 102, 163, 13, 240, 118, 98, 36] };
 }
 #[repr(C)]
 pub struct IMediaOverlay {
@@ -256,6 +283,9 @@ pub struct IMediaOverlay {
     pub AudioEnabled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub SetAudioEnabled: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMediaOverlay {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2835525213, data2: 30825, data3: 18480, data4: [138, 177, 148, 220, 1, 192, 95, 164] };
+}
 #[repr(C)]
 pub struct IMediaOverlayFactory {
     pub base__: ::windows_sys::core::IInspectable,
@@ -264,6 +294,9 @@ pub struct IMediaOverlayFactory {
     pub CreateWithPositionAndOpacity: unsafe extern "system" fn(this: *mut *mut Self, clip: *mut ::core::ffi::c_void, position: super::super::Foundation::Rect, opacity: f64, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     CreateWithPositionAndOpacity: usize,
+}
+impl ::windows_sys::core::Interface for IMediaOverlayFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3045360266, data2: 24968, data3: 20367, data4: [162, 224, 170, 85, 45, 89, 142, 24] };
 }
 #[repr(C)]
 pub struct IMediaOverlayLayer {
@@ -278,6 +311,9 @@ pub struct IMediaOverlayLayer {
     #[cfg(not(feature = "Media_Effects"))]
     CustomCompositorDefinition: usize,
 }
+impl ::windows_sys::core::Interface for IMediaOverlayLayer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2799286871, data2: 61146, data3: 18118, data4: [187, 229, 227, 152, 200, 65, 104, 172] };
+}
 #[repr(C)]
 pub struct IMediaOverlayLayerFactory {
     pub base__: ::windows_sys::core::IInspectable,
@@ -285,6 +321,9 @@ pub struct IMediaOverlayLayerFactory {
     pub CreateWithCompositorDefinition: unsafe extern "system" fn(this: *mut *mut Self, compositordefinition: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Media_Effects"))]
     CreateWithCompositorDefinition: usize,
+}
+impl ::windows_sys::core::Interface for IMediaOverlayLayerFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2491200627, data2: 41886, data3: 17250, data4: [171, 191, 159, 139, 80, 112, 160, 98] };
 }
 pub type MediaClip = *mut ::core::ffi::c_void;
 pub type MediaComposition = *mut ::core::ffi::c_void;

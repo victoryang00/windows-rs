@@ -66,11 +66,17 @@ pub struct IBufferProtectUnprotectResult {
     Buffer: usize,
     pub ProtectionInfo: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IBufferProtectUnprotectResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1201233628, data2: 27884, data3: 20026, data4: [178, 81, 158, 116, 133, 215, 158, 122] };
+}
 #[repr(C)]
 pub struct IDataProtectionInfo {
     pub base__: ::windows_sys::core::IInspectable,
     pub Status: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut DataProtectionStatus) -> ::windows_sys::core::HRESULT,
     pub Identity: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDataProtectionInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2216734913, data2: 24113, data3: 17413, data4: [149, 64, 63, 148, 58, 240, 203, 38] };
 }
 #[repr(C)]
 pub struct IDataProtectionManagerStatics {
@@ -100,6 +106,9 @@ pub struct IDataProtectionManagerStatics {
     #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
     GetStreamProtectionInfoAsync: usize,
 }
+impl ::windows_sys::core::Interface for IDataProtectionManagerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3054803828, data2: 37188, data3: 20196, data4: [138, 138, 48, 181, 243, 97, 67, 14] };
+}
 #[repr(C)]
 pub struct IFileProtectionInfo {
     pub base__: ::windows_sys::core::IInspectable,
@@ -107,10 +116,16 @@ pub struct IFileProtectionInfo {
     pub IsRoamable: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub Identity: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IFileProtectionInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1323918470, data2: 5246, data3: 19920, data4: [143, 175, 82, 83, 237, 145, 173, 12] };
+}
 #[repr(C)]
 pub struct IFileProtectionInfo2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub IsProtectWhileOpenSupported: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IFileProtectionInfo2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2182232652, data2: 21882, data3: 18829, data4: [142, 148, 148, 76, 213, 131, 100, 50] };
 }
 #[repr(C)]
 pub struct IFileProtectionManagerStatics {
@@ -144,6 +159,9 @@ pub struct IFileProtectionManagerStatics {
     #[cfg(not(all(feature = "Foundation", feature = "Storage")))]
     CreateProtectedAndOpenAsync: usize,
 }
+impl ::windows_sys::core::Interface for IFileProtectionManagerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1481047195, data2: 58899, data3: 17003, data4: [187, 56, 136, 203, 161, 220, 154, 219] };
+}
 #[repr(C)]
 pub struct IFileProtectionManagerStatics2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -160,6 +178,9 @@ pub struct IFileProtectionManagerStatics2 {
     #[cfg(not(all(feature = "Foundation_Collections", feature = "Storage")))]
     SaveFileAsContainerWithSharingAsync: usize,
 }
+impl ::windows_sys::core::Interface for IFileProtectionManagerStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2211620677, data2: 1155, data3: 16811, data4: [178, 213, 188, 127, 35, 215, 78, 187] };
+}
 #[repr(C)]
 pub struct IFileProtectionManagerStatics3 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -171,6 +192,9 @@ pub struct IFileProtectionManagerStatics3 {
     pub UnprotectWithOptionsAsync: unsafe extern "system" fn(this: *mut *mut Self, target: *mut ::core::ffi::c_void, options: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Foundation", feature = "Storage")))]
     UnprotectWithOptionsAsync: usize,
+}
+impl ::windows_sys::core::Interface for IFileProtectionManagerStatics3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1763214490, data2: 25167, data3: 18134, data4: [178, 65, 233, 205, 95, 223, 62, 63] };
 }
 #[cfg(feature = "deprecated")]
 #[repr(C)]
@@ -193,16 +217,26 @@ pub struct IFileRevocationManagerStatics {
     #[cfg(not(all(feature = "Foundation", feature = "Storage", feature = "deprecated")))]
     GetStatusAsync: usize,
 }
+#[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for IFileRevocationManagerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 627817533, data2: 7261, data3: 16992, data4: [140, 117, 145, 68, 207, 183, 139, 169] };
+}
 #[repr(C)]
 pub struct IFileUnprotectOptions {
     pub base__: ::windows_sys::core::IInspectable,
     pub SetAudit: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
     pub Audit: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IFileUnprotectOptions {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2098402033, data2: 15117, data3: 19928, data4: [161, 248, 30, 197, 56, 34, 226, 243] };
+}
 #[repr(C)]
 pub struct IFileUnprotectOptionsFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, audit: bool, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IFileUnprotectOptionsFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1370403740, data2: 55948, data3: 19519, data4: [155, 251, 203, 115, 167, 204, 224, 221] };
 }
 #[repr(C)]
 pub struct IProtectedAccessResumedEventArgs {
@@ -211,6 +245,9 @@ pub struct IProtectedAccessResumedEventArgs {
     pub Identities: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     Identities: usize,
+}
+impl ::windows_sys::core::Interface for IProtectedAccessResumedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2890779225, data2: 23936, data3: 20117, data4: [140, 95, 133, 57, 69, 14, 235, 224] };
 }
 #[repr(C)]
 pub struct IProtectedAccessSuspendingEventArgs {
@@ -228,6 +265,9 @@ pub struct IProtectedAccessSuspendingEventArgs {
     #[cfg(not(feature = "Foundation"))]
     GetDeferral: usize,
 }
+impl ::windows_sys::core::Interface for IProtectedAccessSuspendingEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1973523424, data2: 41796, data3: 17055, data4: [185, 117, 4, 252, 31, 136, 193, 133] };
+}
 #[repr(C)]
 pub struct IProtectedContainerExportResult {
     pub base__: ::windows_sys::core::IInspectable,
@@ -236,6 +276,9 @@ pub struct IProtectedContainerExportResult {
     pub File: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Storage"))]
     File: usize,
+}
+impl ::windows_sys::core::Interface for IProtectedContainerExportResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 961081237, data2: 63483, data3: 19266, data4: [175, 176, 223, 112, 180, 21, 67, 193] };
 }
 #[repr(C)]
 pub struct IProtectedContainerImportResult {
@@ -246,6 +289,9 @@ pub struct IProtectedContainerImportResult {
     #[cfg(not(feature = "Storage"))]
     File: usize,
 }
+impl ::windows_sys::core::Interface for IProtectedContainerImportResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3451355345, data2: 59323, data3: 19738, data4: [147, 57, 52, 220, 65, 20, 159, 155] };
+}
 #[repr(C)]
 pub struct IProtectedContentRevokedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
@@ -253,6 +299,9 @@ pub struct IProtectedContentRevokedEventArgs {
     pub Identities: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     Identities: usize,
+}
+impl ::windows_sys::core::Interface for IProtectedContentRevokedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1667786785, data2: 22713, data3: 18414, data4: [147, 217, 240, 247, 65, 207, 67, 240] };
 }
 #[repr(C)]
 pub struct IProtectedFileCreateResult {
@@ -267,6 +316,9 @@ pub struct IProtectedFileCreateResult {
     Stream: usize,
     pub ProtectionInfo: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IProtectedFileCreateResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 686026090, data2: 59879, data3: 18947, data4: [159, 83, 189, 177, 97, 114, 105, 155] };
+}
 #[repr(C)]
 pub struct IProtectionPolicyAuditInfo {
     pub base__: ::windows_sys::core::IInspectable,
@@ -279,11 +331,17 @@ pub struct IProtectionPolicyAuditInfo {
     pub SetTargetDescription: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub TargetDescription: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IProtectionPolicyAuditInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1113241572, data2: 65207, data3: 17660, data4: [179, 187, 195, 196, 215, 236, 190, 187] };
+}
 #[repr(C)]
 pub struct IProtectionPolicyAuditInfoFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, action: ProtectionPolicyAuditAction, datadescription: ::windows_sys::core::HSTRING, sourcedescription: ::windows_sys::core::HSTRING, targetdescription: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub CreateWithActionAndDataDescription: unsafe extern "system" fn(this: *mut *mut Self, action: ProtectionPolicyAuditAction, datadescription: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IProtectionPolicyAuditInfoFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2127829003, data2: 37608, data3: 17109, data4: [131, 212, 37, 68, 11, 66, 53, 73] };
 }
 #[repr(C)]
 pub struct IProtectionPolicyManager {
@@ -291,11 +349,17 @@ pub struct IProtectionPolicyManager {
     pub SetIdentity: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub Identity: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IProtectionPolicyManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3580902936, data2: 41101, data3: 18406, data4: [162, 64, 153, 52, 215, 22, 94, 181] };
+}
 #[repr(C)]
 pub struct IProtectionPolicyManager2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub SetShowEnterpriseIndicator: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
     pub ShowEnterpriseIndicator: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IProtectionPolicyManager2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2885112442, data2: 33845, data3: 16767, data4: [153, 182, 81, 190, 175, 54, 88, 136] };
 }
 #[repr(C)]
 pub struct IProtectionPolicyManagerStatics {
@@ -340,6 +404,9 @@ pub struct IProtectionPolicyManagerStatics {
     #[cfg(not(feature = "Foundation"))]
     RequestAccessAsync: usize,
 }
+impl ::windows_sys::core::Interface for IProtectionPolicyManagerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3233807462, data2: 35901, data3: 19798, data4: [136, 4, 198, 143, 10, 211, 46, 197] };
+}
 #[repr(C)]
 pub struct IProtectionPolicyManagerStatics2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -365,6 +432,9 @@ pub struct IProtectionPolicyManagerStatics2 {
     RemovePolicyChanged: usize,
     pub IsProtectionEnabled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IProtectionPolicyManagerStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3062864524, data2: 14816, data3: 17993, data4: [178, 228, 7, 10, 184, 165, 121, 179] };
+}
 #[repr(C)]
 pub struct IProtectionPolicyManagerStatics3 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -385,6 +455,9 @@ pub struct IProtectionPolicyManagerStatics3 {
     #[cfg(not(feature = "Foundation"))]
     RequestAccessForAppWithMessageAsync: usize,
     pub LogAuditEvent: unsafe extern "system" fn(this: *mut *mut Self, sourceidentity: ::windows_sys::core::HSTRING, targetidentity: ::windows_sys::core::HSTRING, auditinfo: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IProtectionPolicyManagerStatics3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1224711820, data2: 27247, data3: 19871, data4: [188, 237, 24, 171, 83, 122, 160, 21] };
 }
 #[repr(C)]
 pub struct IProtectionPolicyManagerStatics4 {
@@ -425,9 +498,15 @@ pub struct IProtectionPolicyManagerStatics4 {
     pub PrimaryManagedIdentity: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub GetPrimaryManagedIdentityForIdentity: unsafe extern "system" fn(this: *mut *mut Self, identity: ::windows_sys::core::HSTRING, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IProtectionPolicyManagerStatics4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 548902107, data2: 52413, data3: 18703, data4: [140, 131, 73, 204, 183, 122, 234, 108] };
+}
 #[repr(C)]
 pub struct IThreadNetworkContext {
     pub base__: ::windows_sys::core::IInspectable,
+}
+impl ::windows_sys::core::Interface for IThreadNetworkContext {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4199459049, data2: 61203, data3: 16474, data4: [177, 44, 215, 52, 140, 111, 65, 252] };
 }
 pub type ProtectedAccessResumedEventArgs = *mut ::core::ffi::c_void;
 pub type ProtectedAccessSuspendingEventArgs = *mut ::core::ffi::c_void;

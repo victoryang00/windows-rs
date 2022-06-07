@@ -28,6 +28,9 @@ pub struct AsyncIAssociatedIdentityProvider {
     Begin_ChangeCredential: usize,
     pub Finish_ChangeCredential: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for AsyncIAssociatedIdentityProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 674551533, data2: 10622, data3: 20082, data4: [138, 81, 150, 30, 134, 240, 81, 82] };
+}
 #[repr(C)]
 pub struct AsyncIConnectedIdentityProvider {
     pub base__: ::windows_sys::core::IUnknown,
@@ -51,11 +54,17 @@ pub struct AsyncIConnectedIdentityProvider {
     pub Begin_GetAccountState: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Finish_GetAccountState: unsafe extern "system" fn(this: *mut *mut Self, pstate: *mut ACCOUNT_STATE) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for AsyncIConnectedIdentityProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2632274241, data2: 48361, data3: 19989, data4: [130, 77, 67, 215, 159, 81, 47, 147] };
+}
 #[repr(C)]
 pub struct AsyncIIdentityAdvise {
     pub base__: ::windows_sys::core::IUnknown,
     pub Begin_IdentityUpdated: unsafe extern "system" fn(this: *mut *mut Self, dwidentityupdateevents: u32, lpszuniqueid: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
     pub Finish_IdentityUpdated: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for AsyncIIdentityAdvise {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 984926426, data2: 53304, data3: 18480, data4: [141, 217, 50, 83, 197, 90, 18, 127] };
 }
 #[repr(C)]
 pub struct AsyncIIdentityAuthentication {
@@ -70,6 +79,9 @@ pub struct AsyncIIdentityAuthentication {
     pub Finish_ValidateIdentityCredential: unsafe extern "system" fn(this: *mut *mut Self, ppidentityproperties: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
     Finish_ValidateIdentityCredential: usize,
+}
+impl ::windows_sys::core::Interface for AsyncIIdentityAuthentication {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4188207384, data2: 65226, data3: 20124, data4: [150, 51, 97, 203, 241, 62, 211, 77] };
 }
 #[repr(C)]
 pub struct AsyncIIdentityProvider {
@@ -115,6 +127,9 @@ pub struct AsyncIIdentityProvider {
     pub Begin_UnAdvise: unsafe extern "system" fn(this: *mut *mut Self, dwcookie: u32) -> ::windows_sys::core::HRESULT,
     pub Finish_UnAdvise: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for AsyncIIdentityProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3338443009, data2: 50227, data3: 17990, data4: [143, 72, 78, 70, 135, 170, 226, 160] };
+}
 #[repr(C)]
 pub struct AsyncIIdentityStore {
     pub base__: ::windows_sys::core::IUnknown,
@@ -137,6 +152,9 @@ pub struct AsyncIIdentityStore {
     pub Begin_Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Finish_Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for AsyncIIdentityStore {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4009367062, data2: 18654, data3: 18546, data4: [170, 100, 110, 98, 6, 83, 90, 81] };
+}
 #[repr(C)]
 pub struct AsyncIIdentityStoreEx {
     pub base__: ::windows_sys::core::IUnknown,
@@ -144,6 +162,9 @@ pub struct AsyncIIdentityStoreEx {
     pub Finish_CreateConnectedIdentity: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Begin_DeleteConnectedIdentity: unsafe extern "system" fn(this: *mut *mut Self, connectedname: ::windows_sys::core::PCWSTR, providerguid: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub Finish_DeleteConnectedIdentity: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for AsyncIIdentityStoreEx {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4238585754, data2: 35335, data3: 20142, data4: [134, 50, 236, 61, 230, 88, 163, 106] };
 }
 pub const CIdentityProfileHandler: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3975528262, data2: 58294, data3: 17562, data4: [181, 107, 67, 245, 143, 134, 120, 20] };
 pub const CoClassIdentityStore: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 819237446, data2: 53783, data3: 18015, data4: [176, 11, 172, 157, 221, 101, 46, 183] };
@@ -163,6 +184,9 @@ pub struct IAssociatedIdentityProvider {
     #[cfg(not(feature = "Win32_Foundation"))]
     ChangeCredential: usize,
 }
+impl ::windows_sys::core::Interface for IAssociatedIdentityProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 720398003, data2: 19643, data3: 19642, data4: [167, 152, 32, 75, 106, 246, 140, 192] };
+}
 #[repr(C)]
 pub struct IConnectedIdentityProvider {
     pub base__: ::windows_sys::core::IUnknown,
@@ -177,6 +201,9 @@ pub struct IConnectedIdentityProvider {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     GetUrl: usize,
     pub GetAccountState: unsafe extern "system" fn(this: *mut *mut Self, pstate: *mut ACCOUNT_STATE) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IConnectedIdentityProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3074521940, data2: 57484, data3: 17051, data4: [150, 200, 103, 141, 19, 105, 236, 177] };
 }
 #[doc = "*Required features: `\"Win32_Security_Authentication_Identity_Provider\"`*"]
 pub const IDENTITY_KEYWORD_ASSOCIATED: &str = "associated";
@@ -213,6 +240,9 @@ pub struct IIdentityAdvise {
     pub base__: ::windows_sys::core::IUnknown,
     pub IdentityUpdated: unsafe extern "system" fn(this: *mut *mut Self, dwidentityupdateevents: IdentityUpdateEvent, lpszuniqueid: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IIdentityAdvise {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1318596589, data2: 53579, data3: 17420, data4: [184, 214, 187, 56, 100, 83, 211, 134] };
+}
 #[repr(C)]
 pub struct IIdentityAuthentication {
     pub base__: ::windows_sys::core::IUnknown,
@@ -221,6 +251,9 @@ pub struct IIdentityAuthentication {
     pub ValidateIdentityCredential: unsafe extern "system" fn(this: *mut *mut Self, credbuffer: *const u8, credbufferlength: u32, ppidentityproperties: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
     ValidateIdentityCredential: usize,
+}
+impl ::windows_sys::core::Interface for IIdentityAuthentication {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1585377876, data2: 38815, data3: 17333, data4: [183, 78, 6, 228, 235, 125, 240, 249] };
 }
 #[repr(C)]
 pub struct IIdentityProvider {
@@ -252,6 +285,9 @@ pub struct IIdentityProvider {
     pub Advise: unsafe extern "system" fn(this: *mut *mut Self, pidentityadvise: *mut ::core::ffi::c_void, dwidentityupdateevents: IdentityUpdateEvent, pdwcookie: *mut u32) -> ::windows_sys::core::HRESULT,
     pub UnAdvise: unsafe extern "system" fn(this: *mut *mut Self, dwcookie: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IIdentityProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 219913740, data2: 59578, data3: 20309, data4: [168, 27, 188, 233, 52, 185, 72, 245] };
+}
 #[repr(C)]
 pub struct IIdentityStore {
     pub base__: ::windows_sys::core::IUnknown,
@@ -265,11 +301,17 @@ pub struct IIdentityStore {
     EnumerateIdentities: usize,
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IIdentityStore {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3747114917, data2: 28469, data3: 17649, data4: [178, 9, 179, 142, 22, 151, 114, 235] };
+}
 #[repr(C)]
 pub struct IIdentityStoreEx {
     pub base__: ::windows_sys::core::IUnknown,
     pub CreateConnectedIdentity: unsafe extern "system" fn(this: *mut *mut Self, localname: ::windows_sys::core::PCWSTR, connectedname: ::windows_sys::core::PCWSTR, providerguid: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub DeleteConnectedIdentity: unsafe extern "system" fn(this: *mut *mut Self, connectedname: ::windows_sys::core::PCWSTR, providerguid: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IIdentityStoreEx {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4193905560, data2: 36735, data3: 20024, data4: [149, 119, 105, 128, 17, 76, 227, 43] };
 }
 #[doc = "*Required features: `\"Win32_Security_Authentication_Identity_Provider\"`*"]
 pub type IdentityUpdateEvent = u32;

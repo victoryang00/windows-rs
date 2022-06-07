@@ -2409,6 +2409,9 @@ pub struct IDialBranding {
     #[cfg(not(feature = "Win32_Graphics_Gdi"))]
     GetBitmap: usize,
 }
+impl ::windows_sys::core::Interface for IDialBranding {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2330767273, data2: 17158, data3: 17356, data4: [140, 90, 118, 95, 41, 121, 204, 22] };
+}
 #[repr(C)]
 pub struct IDialEngine {
     pub base__: ::windows_sys::core::IUnknown,
@@ -2420,10 +2423,16 @@ pub struct IDialEngine {
     pub GetConnectedState: unsafe extern "system" fn(this: *mut *mut Self, pdwstate: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetConnectHandle: unsafe extern "system" fn(this: *mut *mut Self, pdwhandle: *mut usize) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDialEngine {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 972912683, data2: 30981, data3: 16597, data4: [145, 72, 60, 155, 25, 4, 35, 213] };
+}
 #[repr(C)]
 pub struct IDialEventSink {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnEvent: unsafe extern "system" fn(this: *mut *mut Self, dwevent: u32, dwstatus: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDialEventSink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 763819263, data2: 28205, data3: 17544, data4: [178, 233, 105, 52, 175, 212, 27, 234] };
 }
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`*"]
 pub const IMMUTABLE_CACHE_ENTRY: u32 = 524288u32;
@@ -4095,10 +4104,16 @@ pub struct IProofOfPossessionCookieInfoManager {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetCookieInfoForUri: unsafe extern "system" fn(this: *mut *mut Self, uri: ::windows_sys::core::PCWSTR, cookieinfocount: *mut u32, cookieinfo: *mut *mut ProofOfPossessionCookieInfo) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IProofOfPossessionCookieInfoManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3450785366, data2: 20191, data3: 17375, data4: [177, 19, 136, 228, 85, 111, 161, 187] };
+}
 #[repr(C)]
 pub struct IProofOfPossessionCookieInfoManager2 {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetCookieInfoWithUriForAccount: unsafe extern "system" fn(this: *mut *mut Self, webaccount: *mut ::core::ffi::c_void, uri: ::windows_sys::core::PCWSTR, cookieinfocount: *mut u32, cookieinfo: *mut *mut ProofOfPossessionCookieInfo) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IProofOfPossessionCookieInfoManager2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 367268871, data2: 46127, data3: 19175, data4: [153, 102, 52, 160, 135, 178, 215, 19] };
 }
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`*"]
 pub const IRF_ASYNC: u32 = 1u32;

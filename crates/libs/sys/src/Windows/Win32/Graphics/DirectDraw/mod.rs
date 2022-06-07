@@ -7441,6 +7441,9 @@ pub struct IDDVideoPortContainer {
     #[cfg(not(feature = "Win32_Foundation"))]
     QueryVideoPortStatus: usize,
 }
+impl ::windows_sys::core::Interface for IDDVideoPortContainer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1813260128, data2: 42803, data3: 4558, data4: [165, 33, 0, 32, 175, 11, 229, 96] };
+}
 #[repr(C)]
 pub struct IDirectDraw {
     pub base__: ::windows_sys::core::IUnknown,
@@ -7473,6 +7476,9 @@ pub struct IDirectDraw {
     pub WaitForVerticalBlank: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: super::super::Foundation::HANDLE) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     WaitForVerticalBlank: usize,
+}
+impl ::windows_sys::core::Interface for IDirectDraw {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1813306240, data2: 42803, data3: 4558, data4: [165, 33, 0, 32, 175, 11, 229, 96] };
 }
 #[repr(C)]
 pub struct IDirectDraw2 {
@@ -7507,6 +7513,9 @@ pub struct IDirectDraw2 {
     #[cfg(not(feature = "Win32_Foundation"))]
     WaitForVerticalBlank: usize,
     pub GetAvailableVidMem: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut DDSCAPS, param1: *mut u32, param2: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDirectDraw2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3014063072, data2: 11075, data3: 4559, data4: [162, 222, 0, 170, 0, 185, 51, 86] };
 }
 #[repr(C)]
 pub struct IDirectDraw4 {
@@ -7551,6 +7560,9 @@ pub struct IDirectDraw4 {
     pub GetDeviceIdentifier: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut DDDEVICEIDENTIFIER, param1: u32) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetDeviceIdentifier: usize,
+}
+impl ::windows_sys::core::Interface for IDirectDraw4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2623099034, data2: 14781, data3: 4561, data4: [140, 74, 0, 192, 79, 217, 48, 197] };
 }
 #[repr(C)]
 pub struct IDirectDraw7 {
@@ -7601,6 +7613,9 @@ pub struct IDirectDraw7 {
     StartModeTest: usize,
     pub EvaluateMode: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDirectDraw7 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 367419072, data2: 15260, data3: 4562, data4: [185, 47, 0, 96, 151, 151, 234, 91] };
+}
 #[repr(C)]
 pub struct IDirectDrawClipper {
     pub base__: ::windows_sys::core::IUnknown,
@@ -7626,11 +7641,17 @@ pub struct IDirectDrawClipper {
     #[cfg(not(feature = "Win32_Foundation"))]
     SetHWnd: usize,
 }
+impl ::windows_sys::core::Interface for IDirectDrawClipper {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1813306245, data2: 42803, data3: 4558, data4: [165, 33, 0, 32, 175, 11, 229, 96] };
+}
 #[repr(C)]
 pub struct IDirectDrawColorControl {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetColorControls: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut DDCOLORCONTROL) -> ::windows_sys::core::HRESULT,
     pub SetColorControls: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut DDCOLORCONTROL) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDirectDrawColorControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1268715232, data2: 3454, data3: 4560, data4: [155, 6, 0, 160, 201, 3, 163, 184] };
 }
 #[repr(C)]
 pub struct IDirectDrawGammaControl {
@@ -7638,12 +7659,18 @@ pub struct IDirectDrawGammaControl {
     pub GetGammaRamp: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: *mut DDGAMMARAMP) -> ::windows_sys::core::HRESULT,
     pub SetGammaRamp: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: *mut DDGAMMARAMP) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDirectDrawGammaControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1774263358, data2: 46187, data3: 4561, data4: [173, 122, 0, 192, 79, 194, 155, 78] };
+}
 #[repr(C)]
 pub struct IDirectDrawKernel {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetCaps: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut DDKERNELCAPS) -> ::windows_sys::core::HRESULT,
     pub GetKernelHandle: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut usize) -> ::windows_sys::core::HRESULT,
     pub ReleaseKernelHandle: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDirectDrawKernel {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2371272992, data2: 27144, data3: 4560, data4: [155, 6, 0, 160, 201, 3, 163, 184] };
 }
 #[repr(C)]
 pub struct IDirectDrawPalette {
@@ -7661,6 +7688,9 @@ pub struct IDirectDrawPalette {
     pub SetEntries: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: u32, param2: u32, param3: *mut super::Gdi::PALETTEENTRY) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Graphics_Gdi"))]
     SetEntries: usize,
+}
+impl ::windows_sys::core::Interface for IDirectDrawPalette {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1813306244, data2: 42803, data3: 4558, data4: [165, 33, 0, 32, 175, 11, 229, 96] };
 }
 #[repr(C)]
 pub struct IDirectDrawSurface {
@@ -7722,6 +7752,9 @@ pub struct IDirectDrawSurface {
     UpdateOverlay: usize,
     pub UpdateOverlayDisplay: unsafe extern "system" fn(this: *mut *mut Self, param0: u32) -> ::windows_sys::core::HRESULT,
     pub UpdateOverlayZOrder: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDirectDrawSurface {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1813306241, data2: 42803, data3: 4558, data4: [165, 33, 0, 32, 175, 11, 229, 96] };
 }
 #[repr(C)]
 pub struct IDirectDrawSurface2 {
@@ -7787,6 +7820,9 @@ pub struct IDirectDrawSurface2 {
     pub PageLock: unsafe extern "system" fn(this: *mut *mut Self, param0: u32) -> ::windows_sys::core::HRESULT,
     pub PageUnlock: unsafe extern "system" fn(this: *mut *mut Self, param0: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDirectDrawSurface2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1468029061, data2: 28396, data3: 4559, data4: [148, 65, 168, 35, 3, 193, 14, 39] };
+}
 #[repr(C)]
 pub struct IDirectDrawSurface3 {
     pub base__: ::windows_sys::core::IUnknown,
@@ -7851,6 +7887,9 @@ pub struct IDirectDrawSurface3 {
     pub PageLock: unsafe extern "system" fn(this: *mut *mut Self, param0: u32) -> ::windows_sys::core::HRESULT,
     pub PageUnlock: unsafe extern "system" fn(this: *mut *mut Self, param0: u32) -> ::windows_sys::core::HRESULT,
     pub SetSurfaceDesc: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut DDSURFACEDESC, param1: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDirectDrawSurface3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3657715200, data2: 27058, data3: 4560, data4: [161, 213, 0, 170, 0, 184, 223, 187] };
 }
 #[repr(C)]
 pub struct IDirectDrawSurface4 {
@@ -7924,6 +7963,9 @@ pub struct IDirectDrawSurface4 {
     pub FreePrivateData: unsafe extern "system" fn(this: *mut *mut Self, param0: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     pub GetUniquenessValue: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut u32) -> ::windows_sys::core::HRESULT,
     pub ChangeUniquenessValue: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDirectDrawSurface4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 187401776, data2: 44341, data3: 4560, data4: [142, 166, 0, 96, 151, 151, 234, 91] };
 }
 #[repr(C)]
 pub struct IDirectDrawSurface7 {
@@ -8002,11 +8044,17 @@ pub struct IDirectDrawSurface7 {
     pub SetLOD: unsafe extern "system" fn(this: *mut *mut Self, param0: u32) -> ::windows_sys::core::HRESULT,
     pub GetLOD: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDirectDrawSurface7 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 107436672, data2: 15259, data3: 4562, data4: [185, 47, 0, 96, 151, 151, 234, 91] };
+}
 #[repr(C)]
 pub struct IDirectDrawSurfaceKernel {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetKernelHandle: unsafe extern "system" fn(this: *mut *mut Self, param0: *mut usize) -> ::windows_sys::core::HRESULT,
     pub ReleaseKernelHandle: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDirectDrawSurfaceKernel {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1618304416, data2: 27200, data3: 4560, data4: [155, 6, 0, 160, 201, 3, 163, 184] };
 }
 #[repr(C)]
 pub struct IDirectDrawVideoPort {
@@ -8032,6 +8080,9 @@ pub struct IDirectDrawVideoPort {
     UpdateVideo: usize,
     pub WaitForSync: unsafe extern "system" fn(this: *mut *mut Self, param0: u32, param1: u32, param2: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDirectDrawVideoPort {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3010302944, data2: 11075, data3: 4559, data4: [162, 222, 0, 170, 0, 185, 51, 86] };
+}
 #[repr(C)]
 pub struct IDirectDrawVideoPortNotify {
     pub base__: ::windows_sys::core::IUnknown,
@@ -8043,6 +8094,9 @@ pub struct IDirectDrawVideoPortNotify {
     pub ReleaseNotification: unsafe extern "system" fn(this: *mut *mut Self, param0: super::super::Foundation::HANDLE) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     ReleaseNotification: usize,
+}
+impl ::windows_sys::core::Interface for IDirectDrawVideoPortNotify {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2790652820, data2: 1417, data3: 20055, data4: [179, 51, 86, 122, 137, 70, 140, 136] };
 }
 #[doc = "*Required features: `\"Win32_Graphics_DirectDraw\"`*"]
 pub const IRQINFO_HANDLED: u32 = 1u32;

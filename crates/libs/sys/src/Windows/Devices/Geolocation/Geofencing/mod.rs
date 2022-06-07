@@ -66,6 +66,9 @@ pub struct IGeofence {
     pub Geoshape: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SingleUse: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IGeofence {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2617837603, data2: 60856, data3: 18400, data4: [130, 69, 91, 246, 29, 50, 31, 45] };
+}
 #[repr(C)]
 pub struct IGeofenceFactory {
     pub base__: ::windows_sys::core::IInspectable,
@@ -79,6 +82,9 @@ pub struct IGeofenceFactory {
     pub CreateWithMonitorStatesDwellTimeStartTimeAndDuration: unsafe extern "system" fn(this: *mut *mut Self, id: ::windows_sys::core::HSTRING, geoshape: *mut ::core::ffi::c_void, monitoredstates: MonitoredGeofenceStates, singleuse: bool, dwelltime: super::super::super::Foundation::TimeSpan, starttime: super::super::super::Foundation::DateTime, duration: super::super::super::Foundation::TimeSpan, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     CreateWithMonitorStatesDwellTimeStartTimeAndDuration: usize,
+}
+impl ::windows_sys::core::Interface for IGeofenceFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2216649291, data2: 12895, data3: 19344, data4: [188, 167, 43, 128, 34, 169, 55, 150] };
 }
 #[repr(C)]
 pub struct IGeofenceMonitor {
@@ -110,10 +116,16 @@ pub struct IGeofenceMonitor {
     #[cfg(not(feature = "Foundation"))]
     RemoveStatusChanged: usize,
 }
+impl ::windows_sys::core::Interface for IGeofenceMonitor {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1276075896, data2: 7199, data3: 17953, data4: [187, 189, 131, 59, 146, 36, 114, 38] };
+}
 #[repr(C)]
 pub struct IGeofenceMonitorStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub Current: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IGeofenceMonitorStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 768815055, data2: 32373, data3: 18585, data4: [172, 227, 43, 208, 166, 92, 206, 6] };
 }
 #[repr(C)]
 pub struct IGeofenceStateChangeReport {
@@ -122,6 +134,9 @@ pub struct IGeofenceStateChangeReport {
     pub Geofence: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Geoposition: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub RemovalReason: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut GeofenceRemovalReason) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IGeofenceStateChangeReport {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2586065944, data2: 9316, data3: 19593, data4: [190, 5, 179, 255, 255, 91, 171, 197] };
 }
 #[doc = "*Required features: `\"Devices_Geolocation_Geofencing\"`*"]
 #[repr(transparent)]

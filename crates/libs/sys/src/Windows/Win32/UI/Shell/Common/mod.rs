@@ -52,6 +52,9 @@ pub struct IObjectArray {
     pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, pcobjects: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetAt: unsafe extern "system" fn(this: *mut *mut Self, uiindex: u32, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IObjectArray {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2462752205, data2: 22050, data3: 19386, data4: [168, 5, 94, 159, 84, 27, 216, 201] };
+}
 #[repr(C)]
 pub struct IObjectCollection {
     pub base__: IObjectArray,
@@ -59,6 +62,9 @@ pub struct IObjectCollection {
     pub AddFromArray: unsafe extern "system" fn(this: *mut *mut Self, poasource: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub RemoveObjectAt: unsafe extern "system" fn(this: *mut *mut Self, uiindex: u32) -> ::windows_sys::core::HRESULT,
     pub Clear: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IObjectCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1446162852, data2: 58250, data3: 16394, data4: [146, 138, 212, 205, 99, 35, 2, 149] };
 }
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_UI_Shell_Common\"`*"]

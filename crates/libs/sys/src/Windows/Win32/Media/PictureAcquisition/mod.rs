@@ -73,6 +73,9 @@ pub struct IPhotoAcquire {
     #[cfg(not(feature = "Win32_System_Com"))]
     EnumResults: usize,
 }
+impl ::windows_sys::core::Interface for IPhotoAcquire {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 15872851, data2: 58139, data3: 18773, data4: [168, 173, 202, 94, 191, 49, 226, 206] };
+}
 #[repr(C)]
 pub struct IPhotoAcquireDeviceSelectionDialog {
     pub base__: ::windows_sys::core::IUnknown,
@@ -82,6 +85,9 @@ pub struct IPhotoAcquireDeviceSelectionDialog {
     pub DoModal: unsafe extern "system" fn(this: *mut *mut Self, hwndparent: super::super::Foundation::HWND, dwdeviceflags: u32, pbstrdeviceid: *mut super::super::Foundation::BSTR, pndevicetype: *mut DEVICE_SELECTION_DEVICE_TYPE) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     DoModal: usize,
+}
+impl ::windows_sys::core::Interface for IPhotoAcquireDeviceSelectionDialog {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 15894583, data2: 21981, data3: 20279, data4: [170, 245, 104, 85, 169, 100, 4, 103] };
 }
 #[repr(C)]
 pub struct IPhotoAcquireItem {
@@ -114,6 +120,9 @@ pub struct IPhotoAcquireItem {
     pub GetSubItemCount: unsafe extern "system" fn(this: *mut *mut Self, pncount: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetSubItemAt: unsafe extern "system" fn(this: *mut *mut Self, nitemindex: u32, ppphotoacquireitem: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPhotoAcquireItem {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 15867031, data2: 10431, data3: 19458, data4: [184, 66, 94, 78, 144, 19, 154, 48] };
+}
 #[repr(C)]
 pub struct IPhotoAcquireOptionsDialog {
     pub base__: ::windows_sys::core::IUnknown,
@@ -129,6 +138,9 @@ pub struct IPhotoAcquireOptionsDialog {
     DoModal: usize,
     pub SaveData: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPhotoAcquireOptionsDialog {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 15905774, data2: 48996, data3: 18414, data4: [137, 244, 77, 237, 215, 150, 67, 242] };
+}
 #[repr(C)]
 pub struct IPhotoAcquirePlugin {
     pub base__: ::windows_sys::core::IUnknown,
@@ -142,6 +154,9 @@ pub struct IPhotoAcquirePlugin {
     pub DisplayConfigureDialog: unsafe extern "system" fn(this: *mut *mut Self, hwndparent: super::super::Foundation::HWND) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     DisplayConfigureDialog: usize,
+}
+impl ::windows_sys::core::Interface for IPhotoAcquirePlugin {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 15916267, data2: 60600, data3: 20343, data4: [142, 71, 231, 169, 135, 200, 61, 208] };
 }
 #[repr(C)]
 pub struct IPhotoAcquireProgressCB {
@@ -178,6 +193,9 @@ pub struct IPhotoAcquireProgressCB {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
     GetUserInput: usize,
 }
+impl ::windows_sys::core::Interface for IPhotoAcquireProgressCB {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 15912478, data2: 37726, data3: 16968, data4: [137, 44, 19, 15, 50, 196, 92, 180] };
+}
 #[repr(C)]
 pub struct IPhotoAcquireSettings {
     pub base__: ::windows_sys::core::IUnknown,
@@ -213,6 +231,9 @@ pub struct IPhotoAcquireSettings {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetAcquisitionTime: usize,
 }
+impl ::windows_sys::core::Interface for IPhotoAcquireSettings {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 15906920, data2: 56679, data3: 18556, data4: [149, 83, 4, 146, 64, 118, 126, 145] };
+}
 #[repr(C)]
 pub struct IPhotoAcquireSource {
     pub base__: ::windows_sys::core::IUnknown,
@@ -237,6 +258,9 @@ pub struct IPhotoAcquireSource {
     GetDeviceId: usize,
     pub BindToObject: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPhotoAcquireSource {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 15910659, data2: 34323, data3: 17026, data4: [165, 59, 110, 197, 156, 88, 131, 172] };
+}
 #[repr(C)]
 pub struct IPhotoProgressActionCB {
     pub base__: ::windows_sys::core::IUnknown,
@@ -244,6 +268,9 @@ pub struct IPhotoProgressActionCB {
     pub DoAction: unsafe extern "system" fn(this: *mut *mut Self, hwndparent: super::super::Foundation::HWND) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     DoAction: usize,
+}
+impl ::windows_sys::core::Interface for IPhotoProgressActionCB {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 15876816, data2: 45574, data3: 20093, data4: [180, 193, 71, 85, 188, 187, 156, 159] };
 }
 #[repr(C)]
 pub struct IPhotoProgressDialog {
@@ -294,6 +321,9 @@ pub struct IPhotoProgressDialog {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
     GetUserInput: usize,
 }
+impl ::windows_sys::core::Interface for IPhotoProgressDialog {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 15877881, data2: 1872, data3: 20232, data4: [147, 129, 44, 216, 233, 6, 164, 174] };
+}
 #[repr(C)]
 pub struct IUserInputString {
     pub base__: ::windows_sys::core::IUnknown,
@@ -328,6 +358,9 @@ pub struct IUserInputString {
     pub GetImage: unsafe extern "system" fn(this: *mut *mut Self, nsize: u32, phbitmap: *mut super::super::Graphics::Gdi::HBITMAP, phicon: *mut super::super::UI::WindowsAndMessaging::HICON) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging")))]
     GetImage: usize,
+}
+impl ::windows_sys::core::Interface for IUserInputString {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 15877025, data2: 8283, data3: 17850, data4: [174, 38, 171, 188, 83, 170, 122, 111] };
 }
 #[doc = "*Required features: `\"Win32_Media_PictureAcquisition\"`*"]
 pub const PAPS_CLEANUP: u32 = 2u32;

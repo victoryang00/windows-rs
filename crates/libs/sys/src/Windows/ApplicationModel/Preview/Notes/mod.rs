@@ -3,11 +3,17 @@ pub struct INotePlacementChangedPreviewEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub ViewId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for INotePlacementChangedPreviewEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1226659767, data2: 63360, data3: 20095, data4: [169, 57, 154, 76, 175, 150, 82, 20] };
+}
 #[repr(C)]
 pub struct INoteVisibilityChangedPreviewEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub ViewId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i32) -> ::windows_sys::core::HRESULT,
     pub IsVisible: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for INoteVisibilityChangedPreviewEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 238314654, data2: 14357, data3: 20470, data4: [131, 179, 161, 77, 23, 18, 14, 36] };
 }
 #[repr(C)]
 pub struct INotesWindowManagerPreview {
@@ -58,6 +64,9 @@ pub struct INotesWindowManagerPreview {
     #[cfg(not(feature = "Foundation"))]
     RemoveNoteVisibilityChanged: usize,
 }
+impl ::windows_sys::core::Interface for INotesWindowManagerPreview {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3693789758, data2: 18512, data3: 20243, data4: [156, 199, 255, 72, 126, 253, 252, 222] };
+}
 #[repr(C)]
 pub struct INotesWindowManagerPreview2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -72,16 +81,25 @@ pub struct INotesWindowManagerPreview2 {
     #[cfg(not(all(feature = "Foundation", feature = "Graphics_Imaging")))]
     SetThumbnailImageForTaskSwitcherAsync: usize,
 }
+impl ::windows_sys::core::Interface for INotesWindowManagerPreview2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3992880714, data2: 8020, data3: 19209, data4: [152, 35, 255, 71, 127, 111, 163, 188] };
+}
 #[repr(C)]
 pub struct INotesWindowManagerPreviewShowNoteOptions {
     pub base__: ::windows_sys::core::IInspectable,
     pub ShowWithFocus: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub SetShowWithFocus: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for INotesWindowManagerPreviewShowNoteOptions {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2288716246, data2: 42670, data3: 16391, data4: [165, 109, 28, 167, 12, 132, 192, 210] };
+}
 #[repr(C)]
 pub struct INotesWindowManagerPreviewStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub GetForCurrentApp: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for INotesWindowManagerPreviewStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1718144136, data2: 2702, data3: 16679, data4: [163, 142, 153, 84, 69, 134, 138, 120] };
 }
 pub type NotePlacementChangedPreviewEventArgs = *mut ::core::ffi::c_void;
 pub type NoteVisibilityChangedPreviewEventArgs = *mut ::core::ffi::c_void;

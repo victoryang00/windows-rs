@@ -95,10 +95,16 @@ pub struct IAnimationDescription {
     DelayLimit: usize,
     pub ZOrder: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAnimationDescription {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2098308425, data2: 48701, data3: 16862, data4: [176, 129, 5, 193, 73, 150, 47, 155] };
+}
 #[repr(C)]
 pub struct IAnimationDescriptionFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub CreateInstance: unsafe extern "system" fn(this: *mut *mut Self, effect: AnimationEffect, target: AnimationEffectTarget, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAnimationDescriptionFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3336731326, data2: 49659, data3: 18613, data4: [146, 113, 236, 199, 10, 200, 110, 240] };
 }
 #[repr(C)]
 pub struct IOpacityAnimation {
@@ -108,6 +114,9 @@ pub struct IOpacityAnimation {
     #[cfg(not(feature = "Foundation"))]
     InitialOpacity: usize,
     pub FinalOpacity: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IOpacityAnimation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2151328741, data2: 61054, data3: 17759, data4: [132, 233, 37, 6, 175, 184, 210, 180] };
 }
 #[repr(C)]
 pub struct IPropertyAnimation {
@@ -130,6 +139,9 @@ pub struct IPropertyAnimation {
     #[cfg(not(feature = "Foundation"))]
     Control2: usize,
 }
+impl ::windows_sys::core::Interface for IPropertyAnimation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 973190362, data2: 19852, data3: 16670, data4: [182, 21, 26, 222, 104, 58, 153, 3] };
+}
 #[repr(C)]
 pub struct IScaleAnimation {
     pub base__: ::windows_sys::core::IInspectable,
@@ -147,6 +159,9 @@ pub struct IScaleAnimation {
     pub NormalizedOrigin: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::super::Foundation::Point) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     NormalizedOrigin: usize,
+}
+impl ::windows_sys::core::Interface for IScaleAnimation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 37049031, data2: 29099, data3: 17036, data4: [156, 159, 211, 23, 128, 150, 73, 149] };
 }
 pub type OpacityAnimation = *mut ::core::ffi::c_void;
 pub type PropertyAnimation = *mut ::core::ffi::c_void;

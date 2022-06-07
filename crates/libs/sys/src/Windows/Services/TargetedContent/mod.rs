@@ -6,6 +6,9 @@ pub struct ITargetedContentAction {
     #[cfg(not(feature = "Foundation"))]
     InvokeAsync: usize,
 }
+impl ::windows_sys::core::Interface for ITargetedContentAction {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3613092126, data2: 27862, data3: 19616, data4: [157, 143, 71, 40, 176, 183, 230, 182] };
+}
 #[repr(C)]
 pub struct ITargetedContentAvailabilityChangedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
@@ -13,6 +16,9 @@ pub struct ITargetedContentAvailabilityChangedEventArgs {
     pub GetDeferral: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     GetDeferral: usize,
+}
+impl ::windows_sys::core::Interface for ITargetedContentAvailabilityChangedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3774192934, data2: 22823, data3: 17488, data4: [150, 92, 28, 235, 123, 236, 222, 101] };
 }
 #[repr(C)]
 pub struct ITargetedContentChangedEventArgs {
@@ -22,6 +28,9 @@ pub struct ITargetedContentChangedEventArgs {
     #[cfg(not(feature = "Foundation"))]
     GetDeferral: usize,
     pub HasPreviousContentExpired: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ITargetedContentChangedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2580842697, data2: 22654, data3: 17798, data4: [142, 247, 181, 76, 169, 69, 58, 22] };
 }
 #[repr(C)]
 pub struct ITargetedContentCollection {
@@ -43,6 +52,9 @@ pub struct ITargetedContentCollection {
     #[cfg(not(feature = "Foundation_Collections"))]
     Items: usize,
 }
+impl ::windows_sys::core::Interface for ITargetedContentCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 759916229, data2: 61795, data3: 17594, data4: [159, 110, 225, 164, 194, 187, 85, 157] };
+}
 #[repr(C)]
 pub struct ITargetedContentContainer {
     pub base__: ::windows_sys::core::IInspectable,
@@ -55,6 +67,9 @@ pub struct ITargetedContentContainer {
     pub Content: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SelectSingleObject: unsafe extern "system" fn(this: *mut *mut Self, path: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ITargetedContentContainer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3156513993, data2: 34871, data3: 18370, data4: [133, 15, 215, 157, 100, 89, 89, 38] };
+}
 #[repr(C)]
 pub struct ITargetedContentContainerStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -63,11 +78,17 @@ pub struct ITargetedContentContainerStatics {
     #[cfg(not(feature = "Foundation"))]
     GetAsync: usize,
 }
+impl ::windows_sys::core::Interface for ITargetedContentContainerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1531439099, data2: 8512, data3: 19487, data4: [167, 54, 197, 149, 131, 242, 39, 216] };
+}
 #[repr(C)]
 pub struct ITargetedContentImage {
     pub base__: ::windows_sys::core::IInspectable,
     pub Height: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
     pub Width: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ITargetedContentImage {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2812642777, data2: 30623, data3: 19230, data4: [187, 177, 142, 175, 83, 251, 234, 178] };
 }
 #[repr(C)]
 pub struct ITargetedContentItem {
@@ -85,11 +106,17 @@ pub struct ITargetedContentItem {
     #[cfg(not(feature = "Foundation_Collections"))]
     Collections: usize,
 }
+impl ::windows_sys::core::Interface for ITargetedContentItem {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 941002180, data2: 10092, data3: 19506, data4: [150, 186, 86, 92, 110, 64, 110, 116] };
+}
 #[repr(C)]
 pub struct ITargetedContentItemState {
     pub base__: ::windows_sys::core::IInspectable,
     pub ShouldDisplay: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub AppInstallationState: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut TargetedContentAppInstallationState) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ITargetedContentItemState {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1939035220, data2: 19557, data3: 19271, data4: [164, 65, 71, 45, 229, 60, 121, 182] };
 }
 #[repr(C)]
 pub struct ITargetedContentObject {
@@ -99,6 +126,9 @@ pub struct ITargetedContentObject {
     pub Item: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Value: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ITargetedContentObject {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 69040489, data2: 8722, data3: 17105, data4: [157, 250, 136, 168, 227, 3, 58, 163] };
+}
 #[repr(C)]
 pub struct ITargetedContentStateChangedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
@@ -106,6 +136,9 @@ pub struct ITargetedContentStateChangedEventArgs {
     pub GetDeferral: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     GetDeferral: usize,
+}
+impl ::windows_sys::core::Interface for ITargetedContentStateChangedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2585587517, data2: 32883, data3: 17430, data4: [141, 242, 84, 104, 53, 166, 65, 79] };
 }
 #[repr(C)]
 pub struct ITargetedContentSubscription {
@@ -140,6 +173,9 @@ pub struct ITargetedContentSubscription {
     #[cfg(not(feature = "Foundation"))]
     RemoveStateChanged: usize,
 }
+impl ::windows_sys::core::Interface for ITargetedContentSubscription {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2284596297, data2: 50770, data3: 19578, data4: [172, 173, 31, 127, 162, 152, 108, 115] };
+}
 #[repr(C)]
 pub struct ITargetedContentSubscriptionOptions {
     pub base__: ::windows_sys::core::IInspectable,
@@ -156,6 +192,9 @@ pub struct ITargetedContentSubscriptionOptions {
     LocalFilters: usize,
     pub Update: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ITargetedContentSubscriptionOptions {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1643014864, data2: 11395, data3: 16923, data4: [132, 103, 65, 62, 175, 26, 235, 151] };
+}
 #[repr(C)]
 pub struct ITargetedContentSubscriptionStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -164,6 +203,9 @@ pub struct ITargetedContentSubscriptionStatics {
     #[cfg(not(feature = "Foundation"))]
     GetAsync: usize,
     pub GetOptions: unsafe extern "system" fn(this: *mut *mut Self, subscriptionid: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ITargetedContentSubscriptionStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4208852608, data2: 13837, data3: 18710, data4: [181, 60, 126, 162, 112, 144, 208, 42] };
 }
 #[repr(C)]
 pub struct ITargetedContentValue {
@@ -211,6 +253,9 @@ pub struct ITargetedContentValue {
     pub Actions: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     Actions: usize,
+}
+impl ::windows_sys::core::Interface for ITargetedContentValue {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2868765875, data2: 16917, data3: 19448, data4: [134, 127, 67, 240, 72, 101, 249, 191] };
 }
 pub type TargetedContentAction = *mut ::core::ffi::c_void;
 #[doc = "*Required features: `\"Services_TargetedContent\"`*"]

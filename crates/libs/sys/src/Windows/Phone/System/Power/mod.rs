@@ -11,10 +11,16 @@ pub struct IPowerManagerStatics {
     #[cfg(not(feature = "Foundation"))]
     RemovePowerSavingModeChanged: usize,
 }
+impl ::windows_sys::core::Interface for IPowerManagerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 635342800, data2: 7259, data3: 4577, data4: [189, 219, 8, 0, 32, 12, 154, 102] };
+}
 #[repr(C)]
 pub struct IPowerManagerStatics2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub PowerSavingModeEnabled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPowerManagerStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1499608783, data2: 6424, data3: 17745, data4: [164, 102, 197, 26, 174, 55, 59, 248] };
 }
 #[doc = "*Required features: `\"Phone_System_Power\"`*"]
 #[repr(transparent)]

@@ -47,10 +47,16 @@ pub struct IUPnPAddressFamilyControl {
     pub SetAddressFamily: unsafe extern "system" fn(this: *mut *mut Self, dwflags: i32) -> ::windows_sys::core::HRESULT,
     pub GetAddressFamily: unsafe extern "system" fn(this: *mut *mut Self, pdwflags: *mut i32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IUPnPAddressFamilyControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3820970360, data2: 26958, data3: 17823, data4: [165, 166, 25, 30, 160, 255, 161, 199] };
+}
 #[repr(C)]
 pub struct IUPnPAsyncResult {
     pub base__: ::windows_sys::core::IUnknown,
     pub AsyncOperationComplete: unsafe extern "system" fn(this: *mut *mut Self, ullrequestid: u64) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUPnPAsyncResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1298529544, data2: 53566, data3: 17012, data4: [156, 139, 221, 141, 2, 140, 134, 68] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -76,10 +82,17 @@ pub struct IUPnPDescriptionDocument {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     DeviceByUDN: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IUPnPDescriptionDocument {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 298959282, data2: 32170, data3: 19614, data4: [149, 149, 127, 130, 237, 32, 109, 30] };
+}
 #[repr(C)]
 pub struct IUPnPDescriptionDocumentCallback {
     pub base__: ::windows_sys::core::IUnknown,
     pub LoadComplete: unsafe extern "system" fn(this: *mut *mut Self, hrloadresult: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUPnPDescriptionDocumentCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2000243817, data2: 21638, data3: 16598, data4: [155, 195, 73, 145, 152, 62, 2, 218] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -156,6 +169,10 @@ pub struct IUPnPDevice {
     #[cfg(not(feature = "Win32_System_Com"))]
     Services: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IUPnPDevice {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1027920081, data2: 39113, data3: 18569, data4: [172, 209, 249, 214, 116, 191, 34, 33] };
+}
 #[repr(C)]
 pub struct IUPnPDeviceControl {
     pub base__: ::windows_sys::core::IUnknown,
@@ -168,6 +185,9 @@ pub struct IUPnPDeviceControl {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     GetServiceObject: usize,
 }
+impl ::windows_sys::core::Interface for IUPnPDeviceControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 541593786, data2: 29618, data3: 4564, data4: [191, 66, 0, 176, 208, 17, 139, 86] };
+}
 #[repr(C)]
 pub struct IUPnPDeviceControlHttpHeaders {
     pub base__: ::windows_sys::core::IUnknown,
@@ -175,6 +195,9 @@ pub struct IUPnPDeviceControlHttpHeaders {
     pub GetAdditionalResponseHeaders: unsafe extern "system" fn(this: *mut *mut Self, bstrhttpresponseheaders: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetAdditionalResponseHeaders: usize,
+}
+impl ::windows_sys::core::Interface for IUPnPDeviceControlHttpHeaders {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 541593787, data2: 29618, data3: 4564, data4: [191, 66, 0, 176, 208, 17, 139, 86] };
 }
 #[repr(C)]
 pub struct IUPnPDeviceDocumentAccess {
@@ -184,6 +207,9 @@ pub struct IUPnPDeviceDocumentAccess {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetDocumentURL: usize,
 }
+impl ::windows_sys::core::Interface for IUPnPDeviceDocumentAccess {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3883345924, data2: 12935, data3: 16782, data4: [144, 114, 207, 43, 71, 35, 137, 129] };
+}
 #[repr(C)]
 pub struct IUPnPDeviceDocumentAccessEx {
     pub base__: ::windows_sys::core::IUnknown,
@@ -191,6 +217,9 @@ pub struct IUPnPDeviceDocumentAccessEx {
     pub GetDocument: unsafe extern "system" fn(this: *mut *mut Self, pbstrdocument: *mut super::super::super::Foundation::BSTR) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetDocument: usize,
+}
+impl ::windows_sys::core::Interface for IUPnPDeviceDocumentAccessEx {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3300671568, data2: 24952, data3: 19409, data4: [164, 184, 99, 152, 50, 31, 50, 71] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -211,6 +240,10 @@ pub struct IUPnPDeviceFinder {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     FindByUDN: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IUPnPDeviceFinder {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2916760917, data2: 28530, data3: 17177, data4: [191, 249, 24, 96, 10, 83, 155, 16] };
+}
 #[repr(C)]
 pub struct IUPnPDeviceFinderAddCallbackWithInterface {
     pub base__: ::windows_sys::core::IUnknown,
@@ -218,6 +251,9 @@ pub struct IUPnPDeviceFinderAddCallbackWithInterface {
     pub DeviceAddedWithInterface: unsafe extern "system" fn(this: *mut *mut Self, lfinddata: i32, pdevice: *mut ::core::ffi::c_void, pguidinterface: *const ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     DeviceAddedWithInterface: usize,
+}
+impl ::windows_sys::core::Interface for IUPnPDeviceFinderAddCallbackWithInterface {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2554199051, data2: 6038, data3: 17631, data4: [137, 117, 202, 84, 91, 98, 14, 229] };
 }
 #[repr(C)]
 pub struct IUPnPDeviceFinderCallback {
@@ -232,6 +268,9 @@ pub struct IUPnPDeviceFinderCallback {
     DeviceRemoved: usize,
     pub SearchComplete: unsafe extern "system" fn(this: *mut *mut Self, lfinddata: i32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IUPnPDeviceFinderCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1096456266, data2: 34995, data3: 18931, data4: [146, 175, 5, 8, 190, 223, 13, 108] };
+}
 #[repr(C)]
 pub struct IUPnPDeviceProvider {
     pub base__: ::windows_sys::core::IUnknown,
@@ -240,6 +279,9 @@ pub struct IUPnPDeviceProvider {
     #[cfg(not(feature = "Win32_Foundation"))]
     Start: usize,
     pub Stop: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUPnPDeviceProvider {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 541593784, data2: 29618, data3: 4564, data4: [191, 66, 0, 176, 208, 17, 139, 86] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -252,6 +294,10 @@ pub struct IUPnPDevices {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     get_Item: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IUPnPDevices {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4256959603, data2: 48547, data3: 19558, data4: [172, 79, 242, 217, 111, 218, 214, 140] };
+}
 #[repr(C)]
 pub struct IUPnPEventSink {
     pub base__: ::windows_sys::core::IUnknown,
@@ -261,11 +307,17 @@ pub struct IUPnPEventSink {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     OnStateChangedSafe: usize,
 }
+impl ::windows_sys::core::Interface for IUPnPEventSink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 541593780, data2: 29618, data3: 4564, data4: [191, 66, 0, 176, 208, 17, 139, 86] };
+}
 #[repr(C)]
 pub struct IUPnPEventSource {
     pub base__: ::windows_sys::core::IUnknown,
     pub Advise: unsafe extern "system" fn(this: *mut *mut Self, pessubscriber: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Unadvise: unsafe extern "system" fn(this: *mut *mut Self, pessubscriber: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUPnPEventSource {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 541593781, data2: 29618, data3: 4564, data4: [191, 66, 0, 176, 208, 17, 139, 86] };
 }
 #[repr(C)]
 pub struct IUPnPHttpHeaderControl {
@@ -274,6 +326,9 @@ pub struct IUPnPHttpHeaderControl {
     pub AddRequestHeaders: unsafe extern "system" fn(this: *mut *mut Self, bstrhttpheaders: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     AddRequestHeaders: usize,
+}
+impl ::windows_sys::core::Interface for IUPnPHttpHeaderControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 67481423, data2: 35676, data3: 17532, data4: [128, 242, 183, 89, 132, 163, 31, 60] };
 }
 #[repr(C)]
 pub struct IUPnPRegistrar {
@@ -303,6 +358,9 @@ pub struct IUPnPRegistrar {
     #[cfg(not(feature = "Win32_Foundation"))]
     UnregisterDeviceProvider: usize,
 }
+impl ::windows_sys::core::Interface for IUPnPRegistrar {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 541593782, data2: 29618, data3: 4564, data4: [191, 66, 0, 176, 208, 17, 139, 86] };
+}
 #[repr(C)]
 pub struct IUPnPRemoteEndpointInfo {
     pub base__: ::windows_sys::core::IUnknown,
@@ -319,6 +377,9 @@ pub struct IUPnPRemoteEndpointInfo {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetGuidValue: usize,
 }
+impl ::windows_sys::core::Interface for IUPnPRemoteEndpointInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3375282275, data2: 617, data3: 19199, data4: [156, 114, 117, 50, 27, 186, 41, 82] };
+}
 #[repr(C)]
 pub struct IUPnPReregistrar {
     pub base__: ::windows_sys::core::IUnknown,
@@ -330,6 +391,9 @@ pub struct IUPnPReregistrar {
     pub ReregisterRunningDevice: unsafe extern "system" fn(this: *mut *mut Self, bstrdeviceidentifier: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, bstrxmldesc: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, punkdevicecontrol: *mut ::core::ffi::c_void, bstrinitstring: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, bstrresourcepath: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, nlifetime: i32) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     ReregisterRunningDevice: usize,
+}
+impl ::windows_sys::core::Interface for IUPnPReregistrar {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 541593783, data2: 29618, data3: 4564, data4: [191, 66, 0, 176, 208, 17, 139, 86] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -353,6 +417,10 @@ pub struct IUPnPService {
     #[cfg(not(feature = "Win32_Foundation"))]
     Id: usize,
     pub LastTransportStatus: unsafe extern "system" fn(this: *mut *mut Self, plvalue: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IUPnPService {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2727674268, data2: 56421, data3: 18397, data4: [144, 220, 127, 233, 24, 161, 171, 68] };
 }
 #[repr(C)]
 pub struct IUPnPServiceAsync {
@@ -382,6 +450,9 @@ pub struct IUPnPServiceAsync {
     EndSCPDDownload: usize,
     pub CancelAsyncOperation: unsafe extern "system" fn(this: *mut *mut Self, ullrequestid: u64) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IUPnPServiceAsync {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 160160501, data2: 24257, data3: 18919, data4: [162, 96, 179, 161, 29, 216, 104, 12] };
+}
 #[repr(C)]
 pub struct IUPnPServiceCallback {
     pub base__: ::windows_sys::core::IUnknown,
@@ -393,6 +464,9 @@ pub struct IUPnPServiceCallback {
     pub ServiceInstanceDied: unsafe extern "system" fn(this: *mut *mut Self, pus: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     ServiceInstanceDied: usize,
+}
+impl ::windows_sys::core::Interface for IUPnPServiceCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 838524073, data2: 43891, data3: 17995, data4: [182, 125, 92, 29, 15, 131, 200, 184] };
 }
 #[repr(C)]
 pub struct IUPnPServiceDocumentAccess {
@@ -406,10 +480,16 @@ pub struct IUPnPServiceDocumentAccess {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetDocument: usize,
 }
+impl ::windows_sys::core::Interface for IUPnPServiceDocumentAccess {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 563107113, data2: 2654, data3: 17801, data4: [130, 93, 126, 109, 135, 234, 105, 152] };
+}
 #[repr(C)]
 pub struct IUPnPServiceEnumProperty {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetServiceEnumProperty: unsafe extern "system" fn(this: *mut *mut Self, dwmask: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IUPnPServiceEnumProperty {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 948386615, data2: 37307, data3: 18932, data4: [178, 73, 46, 142, 251, 184, 168, 22] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -421,6 +501,10 @@ pub struct IUPnPServices {
     pub get_Item: unsafe extern "system" fn(this: *mut *mut Self, bstrserviceid: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, ppservice: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     get_Item: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IUPnPServices {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1066176158, data2: 39546, data3: 19912, data4: [188, 65, 255, 49, 250, 55, 73, 86] };
 }
 #[doc = "*Required features: `\"Win32_Devices_Enumeration_Pnp\"`*"]
 pub const REMOTE_ADDRESS_VALUE_NAME: &str = "RemoteAddress";

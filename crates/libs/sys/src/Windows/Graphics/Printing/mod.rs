@@ -10,6 +10,9 @@ pub mod Workflow;
 pub struct IPrintDocumentSource {
     pub base__: ::windows_sys::core::IInspectable,
 }
+impl ::windows_sys::core::Interface for IPrintDocumentSource {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3738962992, data2: 61931, data3: 18399, data4: [170, 230, 237, 84, 39, 81, 31, 1] };
+}
 #[repr(C)]
 pub struct IPrintManager {
     pub base__: ::windows_sys::core::IInspectable,
@@ -22,6 +25,9 @@ pub struct IPrintManager {
     #[cfg(not(feature = "Foundation"))]
     RemovePrintTaskRequested: usize,
 }
+impl ::windows_sys::core::Interface for IPrintManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4280981140, data2: 35993, data3: 17661, data4: [174, 74, 25, 217, 170, 154, 15, 10] };
+}
 #[repr(C)]
 pub struct IPrintManagerStatic {
     pub base__: ::windows_sys::core::IInspectable,
@@ -31,10 +37,16 @@ pub struct IPrintManagerStatic {
     #[cfg(not(feature = "Foundation"))]
     ShowPrintUIAsync: usize,
 }
+impl ::windows_sys::core::Interface for IPrintManagerStatic {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1477991885, data2: 58932, data3: 18004, data4: [132, 240, 224, 21, 42, 130, 23, 172] };
+}
 #[repr(C)]
 pub struct IPrintManagerStatic2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub IsSupported: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPrintManagerStatic2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 900307285, data2: 59051, data3: 16697, data4: [154, 189, 184, 106, 114, 155, 53, 152] };
 }
 #[repr(C)]
 pub struct IPrintPageInfo {
@@ -56,17 +68,26 @@ pub struct IPrintPageInfo {
     pub SetOrientation: unsafe extern "system" fn(this: *mut *mut Self, value: PrintOrientation) -> ::windows_sys::core::HRESULT,
     pub Orientation: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut PrintOrientation) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPrintPageInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3712739785, data2: 42657, data3: 19162, data4: [147, 14, 218, 135, 42, 79, 35, 211] };
+}
 #[repr(C)]
 pub struct IPrintPageRange {
     pub base__: ::windows_sys::core::IInspectable,
     pub FirstPageNumber: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i32) -> ::windows_sys::core::HRESULT,
     pub LastPageNumber: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPrintPageRange {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4171263060, data2: 28284, data3: 20933, data4: [87, 253, 6, 96, 194, 215, 21, 19] };
+}
 #[repr(C)]
 pub struct IPrintPageRangeFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub Create: unsafe extern "system" fn(this: *mut *mut Self, firstpage: i32, lastpage: i32, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub CreateWithSinglePage: unsafe extern "system" fn(this: *mut *mut Self, page: i32, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPrintPageRangeFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1083167839, data2: 57415, data3: 24453, data4: [113, 41, 251, 8, 90, 79, 173, 20] };
 }
 #[repr(C)]
 pub struct IPrintPageRangeOptions {
@@ -77,6 +98,9 @@ pub struct IPrintPageRangeOptions {
     pub AllowCurrentPage: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub SetAllowCustomSetOfPages: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
     pub AllowCustomSetOfPages: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPrintPageRangeOptions {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3463296808, data2: 4951, data3: 18098, data4: [169, 35, 121, 249, 149, 244, 72, 252] };
 }
 #[repr(C)]
 pub struct IPrintTask {
@@ -120,16 +144,25 @@ pub struct IPrintTask {
     #[cfg(not(feature = "Foundation"))]
     RemoveCompleted: usize,
 }
+impl ::windows_sys::core::Interface for IPrintTask {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1641546311, data2: 27894, data3: 20397, data4: [132, 226, 165, 232, 46, 45, 76, 235] };
+}
 #[repr(C)]
 pub struct IPrintTask2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub SetIsPreviewEnabled: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
     pub IsPreviewEnabled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPrintTask2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 908281975, data2: 15955, data3: 19869, data4: [143, 94, 49, 106, 200, 222, 218, 225] };
+}
 #[repr(C)]
 pub struct IPrintTaskCompletedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub Completion: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut PrintTaskCompletion) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPrintTaskCompletedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1540175023, data2: 9449, data3: 19472, data4: [141, 7, 20, 195, 70, 186, 63, 206] };
 }
 #[repr(C)]
 pub struct IPrintTaskOptions {
@@ -141,6 +174,9 @@ pub struct IPrintTaskOptions {
     #[cfg(not(feature = "Storage_Streams"))]
     GetPagePrintTicket: usize,
 }
+impl ::windows_sys::core::Interface for IPrintTaskOptions {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1510631099, data2: 53897, data3: 16827, data4: [150, 221, 87, 226, 131, 56, 174, 63] };
+}
 #[repr(C)]
 pub struct IPrintTaskOptions2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -150,6 +186,9 @@ pub struct IPrintTaskOptions2 {
     #[cfg(not(feature = "Foundation_Collections"))]
     CustomPageRanges: usize,
 }
+impl ::windows_sys::core::Interface for IPrintTaskOptions2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3952809478, data2: 39478, data3: 19289, data4: [134, 23, 178, 23, 132, 146, 98, 225] };
+}
 #[repr(C)]
 pub struct IPrintTaskOptionsCore {
     pub base__: ::windows_sys::core::IInspectable,
@@ -157,6 +196,9 @@ pub struct IPrintTaskOptionsCore {
     pub GetPageDescription: unsafe extern "system" fn(this: *mut *mut Self, jobpagenumber: u32, result__: *mut PrintPageDescription) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     GetPageDescription: usize,
+}
+impl ::windows_sys::core::Interface for IPrintTaskOptionsCore {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 467383412, data2: 20177, data3: 16875, data4: [190, 60, 114, 209, 142, 214, 115, 55] };
 }
 #[repr(C)]
 pub struct IPrintTaskOptionsCoreProperties {
@@ -186,6 +228,9 @@ pub struct IPrintTaskOptionsCoreProperties {
     pub SetNumberOfCopies: unsafe extern "system" fn(this: *mut *mut Self, value: u32) -> ::windows_sys::core::HRESULT,
     pub NumberOfCopies: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPrintTaskOptionsCoreProperties {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3250001970, data2: 40595, data3: 20053, data4: [129, 75, 51, 38, 165, 158, 252, 225] };
+}
 #[repr(C)]
 pub struct IPrintTaskOptionsCoreUIConfiguration {
     pub base__: ::windows_sys::core::IInspectable,
@@ -194,10 +239,16 @@ pub struct IPrintTaskOptionsCoreUIConfiguration {
     #[cfg(not(feature = "Foundation_Collections"))]
     DisplayedOptions: usize,
 }
+impl ::windows_sys::core::Interface for IPrintTaskOptionsCoreUIConfiguration {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1659280931, data2: 39454, data3: 17206, data4: [183, 79, 60, 199, 244, 207, 247, 9] };
+}
 #[repr(C)]
 pub struct IPrintTaskProgressingEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub DocumentPageCount: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPrintTaskProgressingEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2165101515, data2: 46096, data3: 17026, data4: [160, 115, 90, 195, 120, 35, 65, 116] };
 }
 #[repr(C)]
 pub struct IPrintTaskRequest {
@@ -209,15 +260,24 @@ pub struct IPrintTaskRequest {
     pub CreatePrintTask: unsafe extern "system" fn(this: *mut *mut Self, title: ::windows_sys::core::HSTRING, handler: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetDeferral: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPrintTaskRequest {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1878400558, data2: 10018, data3: 16960, data4: [166, 124, 243, 100, 132, 154, 23, 243] };
+}
 #[repr(C)]
 pub struct IPrintTaskRequestedDeferral {
     pub base__: ::windows_sys::core::IInspectable,
     pub Complete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPrintTaskRequestedDeferral {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3488592880, data2: 52798, data3: 17095, data4: [148, 150, 100, 128, 12, 98, 44, 68] };
+}
 #[repr(C)]
 pub struct IPrintTaskRequestedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub Request: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPrintTaskRequestedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3501193508, data2: 41755, data3: 17740, data4: [167, 182, 93, 12, 197, 34, 252, 22] };
 }
 #[repr(C)]
 pub struct IPrintTaskSourceRequestedArgs {
@@ -229,10 +289,16 @@ pub struct IPrintTaskSourceRequestedArgs {
     pub SetSource: unsafe extern "system" fn(this: *mut *mut Self, source: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetDeferral: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPrintTaskSourceRequestedArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4193281982, data2: 62550, data3: 16880, data4: [156, 152, 92, 231, 62, 133, 20, 16] };
+}
 #[repr(C)]
 pub struct IPrintTaskSourceRequestedDeferral {
     pub base__: ::windows_sys::core::IInspectable,
     pub Complete: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPrintTaskSourceRequestedDeferral {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1242915025, data2: 27026, data3: 19869, data4: [133, 85, 76, 164, 86, 63, 177, 102] };
 }
 #[repr(C)]
 pub struct IPrintTaskTargetDeviceSupport {
@@ -241,6 +307,9 @@ pub struct IPrintTaskTargetDeviceSupport {
     pub IsPrinterTargetEnabled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub SetIs3DManufacturingTargetEnabled: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
     pub Is3DManufacturingTargetEnabled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPrintTaskTargetDeviceSupport {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 693989568, data2: 49867, data3: 19325, data4: [176, 234, 147, 9, 80, 145, 162, 32] };
 }
 #[repr(C)]
 pub struct IStandardPrintTaskOptionsStatic {
@@ -259,15 +328,24 @@ pub struct IStandardPrintTaskOptionsStatic {
     pub NUp: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub InputBin: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IStandardPrintTaskOptionsStatic {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3024633126, data2: 3536, data3: 19668, data4: [186, 255, 147, 15, 199, 214, 165, 116] };
+}
 #[repr(C)]
 pub struct IStandardPrintTaskOptionsStatic2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub Bordering: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IStandardPrintTaskOptionsStatic2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1004768244, data2: 31300, data3: 17001, data4: [154, 82, 129, 38, 30, 40, 158, 233] };
+}
 #[repr(C)]
 pub struct IStandardPrintTaskOptionsStatic3 {
     pub base__: ::windows_sys::core::IInspectable,
     pub CustomPageRanges: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IStandardPrintTaskOptionsStatic3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3153497734, data2: 14424, data3: 16819, data4: [167, 153, 85, 221, 152, 136, 212, 117] };
 }
 #[doc = "*Required features: `\"Graphics_Printing\"`*"]
 #[repr(transparent)]

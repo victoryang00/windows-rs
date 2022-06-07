@@ -47,6 +47,9 @@ pub struct IExtendedExecutionRevokedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub Reason: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ExtendedExecutionRevokedReason) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IExtendedExecutionRevokedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3216809750, data2: 25525, data3: 19467, data4: [170, 214, 130, 138, 245, 55, 62, 195] };
+}
 #[repr(C)]
 pub struct IExtendedExecutionSession {
     pub base__: ::windows_sys::core::IInspectable,
@@ -68,4 +71,7 @@ pub struct IExtendedExecutionSession {
     pub RequestExtensionAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     RequestExtensionAsync: usize,
+}
+impl ::windows_sys::core::Interface for IExtendedExecutionSession {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2945485357, data2: 4491, data3: 18673, data4: [147, 8, 12, 79, 196, 30, 32, 15] };
 }

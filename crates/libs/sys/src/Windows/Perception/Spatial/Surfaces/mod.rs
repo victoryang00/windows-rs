@@ -19,6 +19,9 @@ pub struct ISpatialSurfaceInfo {
     #[cfg(not(feature = "Foundation"))]
     TryComputeLatestMeshWithOptionsAsync: usize,
 }
+impl ::windows_sys::core::Interface for ISpatialSurfaceInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4176079847, data2: 14775, data3: 14690, data4: [187, 3, 87, 245, 110, 31, 176, 161] };
+}
 #[repr(C)]
 pub struct ISpatialSurfaceMesh {
     pub base__: ::windows_sys::core::IInspectable,
@@ -31,6 +34,9 @@ pub struct ISpatialSurfaceMesh {
     #[cfg(not(feature = "Foundation_Numerics"))]
     VertexPositionScale: usize,
     pub VertexNormals: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISpatialSurfaceMesh {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 277829593, data2: 57101, data3: 14672, data4: [160, 253, 249, 114, 199, 124, 39, 180] };
 }
 #[repr(C)]
 pub struct ISpatialSurfaceMeshBuffer {
@@ -45,6 +51,9 @@ pub struct ISpatialSurfaceMeshBuffer {
     pub Data: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Storage_Streams"))]
     Data: usize,
+}
+impl ::windows_sys::core::Interface for ISpatialSurfaceMeshBuffer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2479839712, data2: 34591, data3: 13304, data4: [152, 178, 3, 209, 1, 69, 143, 111] };
 }
 #[repr(C)]
 pub struct ISpatialSurfaceMeshOptions {
@@ -76,6 +85,9 @@ pub struct ISpatialSurfaceMeshOptions {
     pub IncludeVertexNormals: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub SetIncludeVertexNormals: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISpatialSurfaceMeshOptions {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3530923913, data2: 13682, data3: 15661, data4: [161, 13, 95, 238, 147, 148, 170, 55] };
+}
 #[repr(C)]
 pub struct ISpatialSurfaceMeshOptionsStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -91,6 +103,9 @@ pub struct ISpatialSurfaceMeshOptionsStatics {
     pub SupportedVertexNormalFormats: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Foundation_Collections", feature = "Graphics_DirectX")))]
     SupportedVertexNormalFormats: usize,
+}
+impl ::windows_sys::core::Interface for ISpatialSurfaceMeshOptionsStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2603879103, data2: 38785, data3: 17669, data4: [137, 53, 1, 53, 117, 202, 174, 94] };
 }
 #[repr(C)]
 pub struct ISpatialSurfaceObserver {
@@ -113,6 +128,9 @@ pub struct ISpatialSurfaceObserver {
     #[cfg(not(feature = "Foundation"))]
     RemoveObservedSurfacesChanged: usize,
 }
+impl ::windows_sys::core::Interface for ISpatialSurfaceObserver {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 280401945, data2: 56778, data3: 13443, data4: [172, 58, 116, 143, 232, 200, 109, 245] };
+}
 #[repr(C)]
 pub struct ISpatialSurfaceObserverStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -121,10 +139,16 @@ pub struct ISpatialSurfaceObserverStatics {
     #[cfg(not(feature = "Foundation"))]
     RequestAccessAsync: usize,
 }
+impl ::windows_sys::core::Interface for ISpatialSurfaceObserverStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 374952429, data2: 8456, data3: 16744, data4: [145, 117, 135, 224, 39, 188, 146, 133] };
+}
 #[repr(C)]
 pub struct ISpatialSurfaceObserverStatics2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub IsSupported: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISpatialSurfaceObserverStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 257114721, data2: 50525, data3: 20075, data4: [168, 149, 161, 157, 230, 154, 66, 227] };
 }
 pub type SpatialSurfaceInfo = *mut ::core::ffi::c_void;
 pub type SpatialSurfaceMesh = *mut ::core::ffi::c_void;

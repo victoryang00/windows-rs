@@ -46,6 +46,10 @@ pub struct ISensLogon {
     StopScreenSaver: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISensLogon {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3583490739, data2: 23455, data3: 4561, data4: [141, 210, 0, 170, 0, 74, 189, 94] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISensLogon2 {
     pub base__: super::Com::IDispatch,
@@ -69,6 +73,10 @@ pub struct ISensLogon2 {
     pub PostShell: unsafe extern "system" fn(this: *mut *mut Self, bstrusername: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, dwsessionid: u32) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     PostShell: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISensLogon2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3583490740, data2: 23455, data3: 4561, data4: [141, 210, 0, 170, 0, 74, 189, 94] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -96,12 +104,20 @@ pub struct ISensNetwork {
     DestinationReachableNoQOCInfo: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISensNetwork {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3583490737, data2: 23455, data3: 4561, data4: [141, 210, 0, 170, 0, 74, 189, 94] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct ISensOnNow {
     pub base__: super::Com::IDispatch,
     pub OnACPower: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub OnBatteryPower: unsafe extern "system" fn(this: *mut *mut Self, dwbatterylifepercent: u32) -> ::windows_sys::core::HRESULT,
     pub BatteryLow: unsafe extern "system" fn(this: *mut *mut Self, dwbatterylifepercent: u32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for ISensOnNow {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3583490738, data2: 23455, data3: 4561, data4: [141, 210, 0, 170, 0, 74, 189, 94] };
 }
 #[doc = "*Required features: `\"Win32_System_EventNotificationService\"`*"]
 pub const NETWORK_ALIVE_AOL: u32 = 4u32;

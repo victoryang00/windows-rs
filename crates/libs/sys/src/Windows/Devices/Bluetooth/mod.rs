@@ -233,17 +233,26 @@ pub struct IBluetoothAdapter {
     #[cfg(not(all(feature = "Devices_Radios", feature = "Foundation")))]
     GetRadioAsync: usize,
 }
+impl ::windows_sys::core::Interface for IBluetoothAdapter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2037706828, data2: 24442, data3: 18996, data4: [146, 37, 168, 85, 248, 75, 26, 139] };
+}
 #[repr(C)]
 pub struct IBluetoothAdapter2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub AreClassicSecureConnectionsSupported: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub AreLowEnergySecureConnectionsSupported: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IBluetoothAdapter2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2895433420, data2: 9429, data3: 16819, data4: [145, 109, 16, 151, 197, 11, 16, 43] };
+}
 #[repr(C)]
 pub struct IBluetoothAdapter3 {
     pub base__: ::windows_sys::core::IInspectable,
     pub IsExtendedAdvertisingSupported: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub MaxAdvertisementDataLength: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IBluetoothAdapter3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2407933152, data2: 52137, data3: 21009, data4: [159, 137, 58, 172, 98, 180, 198, 184] };
 }
 #[repr(C)]
 pub struct IBluetoothAdapterStatics {
@@ -258,6 +267,9 @@ pub struct IBluetoothAdapterStatics {
     #[cfg(not(feature = "Foundation"))]
     GetDefaultAsync: usize,
 }
+impl ::windows_sys::core::Interface for IBluetoothAdapterStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2332228458, data2: 44108, data3: 18241, data4: [134, 97, 142, 171, 125, 23, 234, 159] };
+}
 #[repr(C)]
 pub struct IBluetoothClassOfDevice {
     pub base__: ::windows_sys::core::IInspectable,
@@ -266,11 +278,17 @@ pub struct IBluetoothClassOfDevice {
     pub MinorClass: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut BluetoothMinorClass) -> ::windows_sys::core::HRESULT,
     pub ServiceCapabilities: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut BluetoothServiceCapabilities) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IBluetoothClassOfDevice {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3594527358, data2: 55255, data3: 18017, data4: [148, 84, 101, 3, 156, 161, 122, 43] };
+}
 #[repr(C)]
 pub struct IBluetoothClassOfDeviceStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub FromRawValue: unsafe extern "system" fn(this: *mut *mut Self, rawvalue: u32, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub FromParts: unsafe extern "system" fn(this: *mut *mut Self, majorclass: BluetoothMajorClass, minorclass: BluetoothMinorClass, servicecapabilities: BluetoothServiceCapabilities, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IBluetoothClassOfDeviceStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3831575997, data2: 4002, data3: 16748, data4: [145, 180, 193, 228, 140, 160, 97, 193] };
 }
 #[repr(C)]
 pub struct IBluetoothDevice {
@@ -317,6 +335,9 @@ pub struct IBluetoothDevice {
     #[cfg(not(feature = "Foundation"))]
     RemoveConnectionStatusChanged: usize,
 }
+impl ::windows_sys::core::Interface for IBluetoothDevice {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 590721366, data2: 37074, data3: 18948, data4: [174, 245, 14, 32, 185, 230, 183, 7] };
+}
 #[repr(C)]
 pub struct IBluetoothDevice2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -324,6 +345,9 @@ pub struct IBluetoothDevice2 {
     pub DeviceInformation: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Devices_Enumeration"))]
     DeviceInformation: usize,
+}
+impl ::windows_sys::core::Interface for IBluetoothDevice2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 20183380, data2: 45398, data3: 19920, data4: [177, 245, 193, 27, 195, 26, 81, 99] };
 }
 #[repr(C)]
 pub struct IBluetoothDevice3 {
@@ -353,15 +377,24 @@ pub struct IBluetoothDevice3 {
     #[cfg(not(all(feature = "Devices_Bluetooth_Rfcomm", feature = "Foundation")))]
     GetRfcommServicesForIdWithCacheModeAsync: usize,
 }
+impl ::windows_sys::core::Interface for IBluetoothDevice3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1476392843, data2: 25882, data3: 17492, data4: [185, 15, 235, 33, 239, 11, 13, 113] };
+}
 #[repr(C)]
 pub struct IBluetoothDevice4 {
     pub base__: ::windows_sys::core::IInspectable,
     pub BluetoothDeviceId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IBluetoothDevice4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2172400813, data2: 3740, data3: 17074, data4: [168, 220, 62, 128, 148, 148, 13, 18] };
+}
 #[repr(C)]
 pub struct IBluetoothDevice5 {
     pub base__: ::windows_sys::core::IInspectable,
     pub WasSecureConnectionUsedForPairing: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IBluetoothDevice5 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3051402117, data2: 24197, data3: 17753, data4: [161, 13, 28, 114, 129, 55, 159, 150] };
 }
 #[repr(C)]
 pub struct IBluetoothDeviceId {
@@ -370,10 +403,16 @@ pub struct IBluetoothDeviceId {
     pub IsClassicDevice: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub IsLowEnergyDevice: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IBluetoothDeviceId {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3245951407, data2: 22465, data3: 17986, data4: [188, 206, 230, 192, 107, 32, 174, 118] };
+}
 #[repr(C)]
 pub struct IBluetoothDeviceIdStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub FromId: unsafe extern "system" fn(this: *mut *mut Self, deviceid: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IBluetoothDeviceIdStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2810728039, data2: 16123, data3: 20273, data4: [187, 194, 129, 14, 9, 151, 116, 4] };
 }
 #[repr(C)]
 pub struct IBluetoothDeviceStatics {
@@ -392,6 +431,9 @@ pub struct IBluetoothDeviceStatics {
     FromBluetoothAddressAsync: usize,
     pub GetDeviceSelector: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IBluetoothDeviceStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 160554833, data2: 22491, data3: 18213, data4: [187, 215, 132, 246, 67, 39, 236, 44] };
+}
 #[repr(C)]
 pub struct IBluetoothDeviceStatics2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -401,12 +443,18 @@ pub struct IBluetoothDeviceStatics2 {
     pub GetDeviceSelectorFromBluetoothAddress: unsafe extern "system" fn(this: *mut *mut Self, bluetoothaddress: u64, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub GetDeviceSelectorFromClassOfDevice: unsafe extern "system" fn(this: *mut *mut Self, classofdevice: *mut ::core::ffi::c_void, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IBluetoothDeviceStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3265170991, data2: 19988, data3: 17527, data4: [170, 27, 184, 180, 126, 91, 126, 206] };
+}
 #[repr(C)]
 pub struct IBluetoothLEAppearance {
     pub base__: ::windows_sys::core::IInspectable,
     pub RawValue: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u16) -> ::windows_sys::core::HRESULT,
     pub Category: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u16) -> ::windows_sys::core::HRESULT,
     pub SubCategory: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u16) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IBluetoothLEAppearance {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1562409458, data2: 26280, data3: 16984, data4: [152, 94, 2, 180, 217, 80, 159, 24] };
 }
 #[repr(C)]
 pub struct IBluetoothLEAppearanceCategoriesStatics {
@@ -434,11 +482,17 @@ pub struct IBluetoothLEAppearanceCategoriesStatics {
     pub WeightScale: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u16) -> ::windows_sys::core::HRESULT,
     pub OutdoorSportActivity: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u16) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IBluetoothLEAppearanceCategoriesStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1833784574, data2: 1130, data3: 16773, data4: [170, 182, 130, 76, 240, 97, 8, 97] };
+}
 #[repr(C)]
 pub struct IBluetoothLEAppearanceStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub FromRawValue: unsafe extern "system" fn(this: *mut *mut Self, rawvalue: u16, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub FromParts: unsafe extern "system" fn(this: *mut *mut Self, appearancecategory: u16, appearancesubcategory: u16, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IBluetoothLEAppearanceStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2710814919, data2: 17668, data3: 20298, data4: [155, 165, 205, 16, 84, 229, 224, 101] };
 }
 #[repr(C)]
 pub struct IBluetoothLEAppearanceSubcategoriesStatics {
@@ -472,6 +526,9 @@ pub struct IBluetoothLEAppearanceSubcategoriesStatics {
     pub LocationPod: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u16) -> ::windows_sys::core::HRESULT,
     pub LocationNavigationPod: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u16) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IBluetoothLEAppearanceSubcategoriesStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3850085894, data2: 8516, data3: 16730, data4: [131, 18, 113, 204, 242, 145, 248, 209] };
+}
 #[repr(C)]
 pub struct IBluetoothLEConnectionParameters {
     pub base__: ::windows_sys::core::IInspectable,
@@ -479,11 +536,17 @@ pub struct IBluetoothLEConnectionParameters {
     pub ConnectionLatency: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u16) -> ::windows_sys::core::HRESULT,
     pub ConnectionInterval: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u16) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IBluetoothLEConnectionParameters {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 868943729, data2: 36265, data3: 20623, data4: [163, 102, 28, 163, 136, 201, 41, 171] };
+}
 #[repr(C)]
 pub struct IBluetoothLEConnectionPhy {
     pub base__: ::windows_sys::core::IInspectable,
     pub TransmitInfo: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub ReceiveInfo: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IBluetoothLEConnectionPhy {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2015256136, data2: 25118, data3: 23166, data4: [139, 230, 27, 149, 97, 255, 99, 201] };
 }
 #[repr(C)]
 pub struct IBluetoothLEConnectionPhyInfo {
@@ -491,6 +554,9 @@ pub struct IBluetoothLEConnectionPhyInfo {
     pub IsUncoded1MPhy: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub IsUncoded2MPhy: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub IsCodedPhy: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IBluetoothLEConnectionPhyInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2584742877, data2: 24622, data3: 23591, data4: [161, 174, 178, 48, 1, 90, 99, 148] };
 }
 #[repr(C)]
 pub struct IBluetoothLEDevice {
@@ -532,6 +598,9 @@ pub struct IBluetoothLEDevice {
     #[cfg(not(feature = "Foundation"))]
     RemoveConnectionStatusChanged: usize,
 }
+impl ::windows_sys::core::Interface for IBluetoothLEDevice {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3052285819, data2: 19160, data3: 17986, data4: [172, 72, 128, 160, 181, 0, 232, 135] };
+}
 #[repr(C)]
 pub struct IBluetoothLEDevice2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -541,6 +610,9 @@ pub struct IBluetoothLEDevice2 {
     DeviceInformation: usize,
     pub Appearance: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub BluetoothAddressType: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut BluetoothAddressType) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IBluetoothLEDevice2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 653288115, data2: 31470, data3: 19761, data4: [186, 186, 177, 185, 119, 95, 89, 22] };
 }
 #[repr(C)]
 pub struct IBluetoothLEDevice3 {
@@ -570,15 +642,24 @@ pub struct IBluetoothLEDevice3 {
     #[cfg(not(all(feature = "Devices_Bluetooth_GenericAttributeProfile", feature = "Foundation")))]
     GetGattServicesForUuidWithCacheModeAsync: usize,
 }
+impl ::windows_sys::core::Interface for IBluetoothLEDevice3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2934563987, data2: 17580, data3: 16604, data4: [175, 51, 178, 193, 60, 1, 202, 70] };
+}
 #[repr(C)]
 pub struct IBluetoothLEDevice4 {
     pub base__: ::windows_sys::core::IInspectable,
     pub BluetoothDeviceId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IBluetoothLEDevice4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 727732273, data2: 8776, data3: 19247, data4: [172, 240, 124, 238, 54, 252, 88, 112] };
+}
 #[repr(C)]
 pub struct IBluetoothLEDevice5 {
     pub base__: ::windows_sys::core::IInspectable,
     pub WasSecureConnectionUsedForPairing: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IBluetoothLEDevice5 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2640974432, data2: 21127, data3: 17806, data4: [149, 186, 23, 200, 183, 187, 50, 110] };
 }
 #[repr(C)]
 pub struct IBluetoothLEDevice6 {
@@ -603,6 +684,9 @@ pub struct IBluetoothLEDevice6 {
     #[cfg(not(feature = "Foundation"))]
     RemoveConnectionPhyChanged: usize,
 }
+impl ::windows_sys::core::Interface for IBluetoothLEDevice6 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3396440303, data2: 3246, data3: 22332, data4: [161, 202, 225, 252, 91, 252, 57, 226] };
+}
 #[repr(C)]
 pub struct IBluetoothLEDeviceStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -615,6 +699,9 @@ pub struct IBluetoothLEDeviceStatics {
     #[cfg(not(feature = "Foundation"))]
     FromBluetoothAddressAsync: usize,
     pub GetDeviceSelector: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IBluetoothLEDeviceStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3369015833, data2: 61622, data3: 19440, data4: [134, 137, 65, 48, 61, 226, 217, 244] };
 }
 #[repr(C)]
 pub struct IBluetoothLEDeviceStatics2 {
@@ -630,6 +717,9 @@ pub struct IBluetoothLEDeviceStatics2 {
     #[cfg(not(feature = "Foundation"))]
     FromBluetoothAddressWithBluetoothAddressTypeAsync: usize,
 }
+impl ::windows_sys::core::Interface for IBluetoothLEDeviceStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1595064427, data2: 15276, data3: 17384, data4: [173, 22, 86, 50, 113, 189, 65, 194] };
+}
 #[repr(C)]
 pub struct IBluetoothLEPreferredConnectionParameters {
     pub base__: ::windows_sys::core::IInspectable,
@@ -638,10 +728,16 @@ pub struct IBluetoothLEPreferredConnectionParameters {
     pub MinConnectionInterval: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u16) -> ::windows_sys::core::HRESULT,
     pub MaxConnectionInterval: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u16) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IBluetoothLEPreferredConnectionParameters {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4076094276, data2: 29554, data3: 24443, data4: [155, 52, 41, 201, 68, 245, 167, 21] };
+}
 #[repr(C)]
 pub struct IBluetoothLEPreferredConnectionParametersRequest {
     pub base__: ::windows_sys::core::IInspectable,
     pub Status: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut BluetoothLEPreferredConnectionParametersRequestStatus) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IBluetoothLEPreferredConnectionParametersRequest {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2318881398, data2: 42280, data3: 21094, data4: [182, 97, 204, 230, 165, 255, 151, 57] };
 }
 #[repr(C)]
 pub struct IBluetoothLEPreferredConnectionParametersStatics {
@@ -649,6 +745,9 @@ pub struct IBluetoothLEPreferredConnectionParametersStatics {
     pub Balanced: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub ThroughputOptimized: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub PowerOptimized: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IBluetoothLEPreferredConnectionParametersStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 238980828, data2: 10065, data3: 21930, data4: [168, 56, 143, 174, 238, 129, 141, 114] };
 }
 #[repr(C)]
 pub struct IBluetoothSignalStrengthFilter {
@@ -686,6 +785,9 @@ pub struct IBluetoothSignalStrengthFilter {
     #[cfg(not(feature = "Foundation"))]
     SetSamplingInterval: usize,
 }
+impl ::windows_sys::core::Interface for IBluetoothSignalStrengthFilter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3749409681, data2: 27573, data3: 19710, data4: [144, 177, 93, 115, 36, 237, 207, 127] };
+}
 #[repr(C)]
 pub struct IBluetoothUuidHelperStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -694,4 +796,7 @@ pub struct IBluetoothUuidHelperStatics {
     pub TryGetShortId: unsafe extern "system" fn(this: *mut *mut Self, uuid: ::windows_sys::core::GUID, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     TryGetShortId: usize,
+}
+impl ::windows_sys::core::Interface for IBluetoothUuidHelperStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 400493784, data2: 53108, data3: 19233, data4: [175, 230, 245, 122, 17, 188, 222, 160] };
 }

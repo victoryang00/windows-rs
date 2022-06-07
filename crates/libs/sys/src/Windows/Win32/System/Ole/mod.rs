@@ -1873,6 +1873,10 @@ pub struct IAdviseSinkEx {
     pub base__: super::Com::IAdviseSink,
     pub OnViewStatusChange: unsafe extern "system" fn(this: *mut *mut Self, dwviewstatus: u32),
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IAdviseSinkEx {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 988955280, data2: 3222, data3: 4558, data4: [160, 207, 0, 170, 0, 96, 10, 184] };
+}
 #[repr(C)]
 pub struct ICanHandleException {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1880,6 +1884,9 @@ pub struct ICanHandleException {
     pub CanHandleException: unsafe extern "system" fn(this: *mut *mut Self, pexcepinfo: *const super::Com::EXCEPINFO, pvar: *const super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     CanHandleException: usize,
+}
+impl ::windows_sys::core::Interface for ICanHandleException {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3310980704, data2: 45831, data3: 4561, data4: [178, 125, 0, 96, 8, 195, 251, 251] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1898,16 +1905,26 @@ pub struct IClassFactory2 {
     #[cfg(not(feature = "Win32_Foundation"))]
     CreateInstanceLic: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IClassFactory2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2979443343, data2: 47796, data3: 4122, data4: [182, 156, 0, 170, 0, 52, 29, 7] };
+}
 #[repr(C)]
 pub struct IContinue {
     pub base__: ::windows_sys::core::IUnknown,
     pub FContinue: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IContinue {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 298, data2: 0, data3: 0, data4: [192, 0, 0, 0, 0, 0, 0, 70] };
 }
 #[repr(C)]
 pub struct IContinueCallback {
     pub base__: ::windows_sys::core::IUnknown,
     pub FContinue: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub FContinuePrinting: unsafe extern "system" fn(this: *mut *mut Self, ncntprinted: i32, ncurpage: i32, pwszprintstatus: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IContinueCallback {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3072507082, data2: 20072, data3: 4123, data4: [162, 188, 0, 170, 0, 64, 71, 112] };
 }
 #[repr(C)]
 pub struct ICreateErrorInfo {
@@ -1917,6 +1934,9 @@ pub struct ICreateErrorInfo {
     pub SetDescription: unsafe extern "system" fn(this: *mut *mut Self, szdescription: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
     pub SetHelpFile: unsafe extern "system" fn(this: *mut *mut Self, szhelpfile: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
     pub SetHelpContext: unsafe extern "system" fn(this: *mut *mut Self, dwhelpcontext: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ICreateErrorInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 586167104, data2: 21629, data3: 4123, data4: [142, 101, 8, 0, 43, 43, 209, 25] };
 }
 #[repr(C)]
 pub struct ICreateTypeInfo {
@@ -1963,6 +1983,9 @@ pub struct ICreateTypeInfo {
     SetTypeIdldesc: usize,
     pub LayOut: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ICreateTypeInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 132101, data2: 0, data3: 0, data4: [192, 0, 0, 0, 0, 0, 0, 70] };
+}
 #[repr(C)]
 pub struct ICreateTypeInfo2 {
     pub base__: ICreateTypeInfo,
@@ -2000,6 +2023,9 @@ pub struct ICreateTypeInfo2 {
     pub Invalidate: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub SetName: unsafe extern "system" fn(this: *mut *mut Self, szname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ICreateTypeInfo2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 132110, data2: 0, data3: 0, data4: [192, 0, 0, 0, 0, 0, 0, 70] };
+}
 #[repr(C)]
 pub struct ICreateTypeLib {
     pub base__: ::windows_sys::core::IUnknown,
@@ -2017,6 +2043,9 @@ pub struct ICreateTypeLib {
     pub SetLibFlags: unsafe extern "system" fn(this: *mut *mut Self, ulibflags: u32) -> ::windows_sys::core::HRESULT,
     pub SaveAllChanges: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ICreateTypeLib {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 132102, data2: 0, data3: 0, data4: [192, 0, 0, 0, 0, 0, 0, 70] };
+}
 #[repr(C)]
 pub struct ICreateTypeLib2 {
     pub base__: ICreateTypeLib,
@@ -2027,6 +2056,9 @@ pub struct ICreateTypeLib2 {
     SetCustData: usize,
     pub SetHelpStringContext: unsafe extern "system" fn(this: *mut *mut Self, dwhelpstringcontext: u32) -> ::windows_sys::core::HRESULT,
     pub SetHelpStringDll: unsafe extern "system" fn(this: *mut *mut Self, szfilename: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ICreateTypeLib2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 132111, data2: 0, data3: 0, data4: [192, 0, 0, 0, 0, 0, 0, 70] };
 }
 #[doc = "*Required features: `\"Win32_System_Ole\"`*"]
 pub const IDC_BZ_ICON: u32 = 601u32;
@@ -2325,6 +2357,9 @@ pub struct IDispError {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetDescription: usize,
 }
+impl ::windows_sys::core::Interface for IDispError {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2800719969, data2: 50976, data3: 4560, data4: [147, 55, 0, 160, 201, 13, 202, 169] };
+}
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IDispatchEx {
@@ -2350,6 +2385,10 @@ pub struct IDispatchEx {
     pub GetNextDispID: unsafe extern "system" fn(this: *mut *mut Self, grfdex: u32, id: i32, pid: *mut i32) -> ::windows_sys::core::HRESULT,
     pub GetNameSpaceParent: unsafe extern "system" fn(this: *mut *mut Self, ppunk: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IDispatchEx {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2800719968, data2: 50976, data3: 4560, data4: [147, 55, 0, 160, 201, 13, 202, 169] };
+}
 #[repr(C)]
 pub struct IDropSource {
     pub base__: ::windows_sys::core::IUnknown,
@@ -2359,6 +2398,9 @@ pub struct IDropSource {
     QueryContinueDrag: usize,
     pub GiveFeedback: unsafe extern "system" fn(this: *mut *mut Self, dweffect: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDropSource {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 289, data2: 0, data3: 0, data4: [192, 0, 0, 0, 0, 0, 0, 70] };
+}
 #[repr(C)]
 pub struct IDropSourceNotify {
     pub base__: ::windows_sys::core::IUnknown,
@@ -2367,6 +2409,9 @@ pub struct IDropSourceNotify {
     #[cfg(not(feature = "Win32_Foundation"))]
     DragEnterTarget: usize,
     pub DragLeaveTarget: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDropSourceNotify {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 299, data2: 0, data3: 0, data4: [192, 0, 0, 0, 0, 0, 0, 70] };
 }
 #[repr(C)]
 pub struct IDropTarget {
@@ -2385,6 +2430,9 @@ pub struct IDropTarget {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     Drop: usize,
 }
+impl ::windows_sys::core::Interface for IDropTarget {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 290, data2: 0, data3: 0, data4: [192, 0, 0, 0, 0, 0, 0, 70] };
+}
 #[repr(C)]
 pub struct IEnterpriseDropTarget {
     pub base__: ::windows_sys::core::IUnknown,
@@ -2394,6 +2442,9 @@ pub struct IEnterpriseDropTarget {
     #[cfg(not(feature = "Win32_Foundation"))]
     IsEvaluatingEdpPolicy: usize,
 }
+impl ::windows_sys::core::Interface for IEnterpriseDropTarget {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 957233272, data2: 64853, data3: 19992, data4: [129, 157, 70, 130, 8, 28, 12, 253] };
+}
 #[repr(C)]
 pub struct IEnumOLEVERB {
     pub base__: ::windows_sys::core::IUnknown,
@@ -2401,6 +2452,9 @@ pub struct IEnumOLEVERB {
     pub Skip: unsafe extern "system" fn(this: *mut *mut Self, celt: u32) -> ::windows_sys::core::HRESULT,
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IEnumOLEVERB {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 260, data2: 0, data3: 0, data4: [192, 0, 0, 0, 0, 0, 0, 70] };
 }
 #[repr(C)]
 pub struct IEnumOleDocumentViews {
@@ -2410,6 +2464,9 @@ pub struct IEnumOleDocumentViews {
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEnumOleDocumentViews {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3072507080, data2: 20072, data3: 4123, data4: [162, 188, 0, 170, 0, 64, 71, 112] };
+}
 #[repr(C)]
 pub struct IEnumOleUndoUnits {
     pub base__: ::windows_sys::core::IUnknown,
@@ -2417,6 +2474,9 @@ pub struct IEnumOleUndoUnits {
     pub Skip: unsafe extern "system" fn(this: *mut *mut Self, celt: u32) -> ::windows_sys::core::HRESULT,
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IEnumOleUndoUnits {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3018310464, data2: 61335, data3: 4558, data4: [155, 201, 0, 170, 0, 96, 142, 1] };
 }
 #[repr(C)]
 pub struct IEnumVARIANT {
@@ -2428,6 +2488,9 @@ pub struct IEnumVARIANT {
     pub Skip: unsafe extern "system" fn(this: *mut *mut Self, celt: u32) -> ::windows_sys::core::HRESULT,
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IEnumVARIANT {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 132100, data2: 0, data3: 0, data4: [192, 0, 0, 0, 0, 0, 0, 70] };
 }
 #[repr(C)]
 pub struct IFont {
@@ -2508,15 +2571,26 @@ pub struct IFont {
     #[cfg(not(feature = "Win32_Graphics_Gdi"))]
     SetHdc: usize,
 }
+impl ::windows_sys::core::Interface for IFont {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3203850242, data2: 43124, data3: 4122, data4: [139, 186, 0, 170, 0, 48, 12, 171] };
+}
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFontDisp {
     pub base__: super::Com::IDispatch,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFontDisp {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3203850243, data2: 43124, data3: 4122, data4: [139, 186, 0, 170, 0, 48, 12, 171] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFontEventsDisp {
     pub base__: super::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFontEventsDisp {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1324748810, data2: 44936, data3: 4560, data4: [152, 70, 0, 192, 79, 194, 153, 147] };
 }
 #[doc = "*Required features: `\"Win32_System_Ole\"`*"]
 pub type IGNOREMIME = i32;
@@ -2529,10 +2603,16 @@ pub struct IGetOleObject {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetOleObject: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppvobj: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IGetOleObject {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2322603424, data2: 20459, data3: 4123, data4: [168, 46, 8, 0, 43, 43, 35, 55] };
+}
 #[repr(C)]
 pub struct IGetVBAObject {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetObject: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppvobj: *mut *mut ::core::ffi::c_void, dwreserved: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IGetVBAObject {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2440247904, data2: 16204, data3: 4123, data4: [163, 246, 0, 170, 0, 52, 228, 233] };
 }
 #[doc = "*Required features: `\"Win32_System_Ole\"`*"]
 pub const IMPLTYPEFLAG_FDEFAULT: u32 = 1u32;
@@ -2596,11 +2676,17 @@ pub struct IObjectIdentity {
     pub base__: ::windows_sys::core::IUnknown,
     pub IsEqualObject: unsafe extern "system" fn(this: *mut *mut Self, punk: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IObjectIdentity {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3389306854, data2: 3361, data3: 4561, data4: [140, 197, 0, 192, 79, 194, 176, 133] };
+}
 #[repr(C)]
 pub struct IObjectWithSite {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetSite: unsafe extern "system" fn(this: *mut *mut Self, punksite: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetSite: unsafe extern "system" fn(this: *mut *mut Self, riid: *const ::windows_sys::core::GUID, ppvsite: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IObjectWithSite {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4232577443, data2: 11177, data3: 4559, data4: [162, 41, 0, 170, 0, 61, 115, 82] };
 }
 #[repr(C)]
 pub struct IOleAdviseHolder {
@@ -2620,6 +2706,9 @@ pub struct IOleAdviseHolder {
     SendOnRename: usize,
     pub SendOnSave: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub SendOnClose: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IOleAdviseHolder {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 273, data2: 0, data3: 0, data4: [192, 0, 0, 0, 0, 0, 0, 70] };
 }
 #[repr(C)]
 pub struct IOleCache {
@@ -2642,6 +2731,9 @@ pub struct IOleCache {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_System_Com_StructuredStorage")))]
     SetData: usize,
 }
+impl ::windows_sys::core::Interface for IOleCache {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 286, data2: 0, data3: 0, data4: [192, 0, 0, 0, 0, 0, 0, 70] };
+}
 #[repr(C)]
 pub struct IOleCache2 {
     pub base__: IOleCache,
@@ -2651,6 +2743,9 @@ pub struct IOleCache2 {
     UpdateCache: usize,
     pub DiscardCache: unsafe extern "system" fn(this: *mut *mut Self, dwdiscardoptions: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IOleCache2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 296, data2: 0, data3: 0, data4: [192, 0, 0, 0, 0, 0, 0, 70] };
+}
 #[repr(C)]
 pub struct IOleCacheControl {
     pub base__: ::windows_sys::core::IUnknown,
@@ -2659,6 +2754,9 @@ pub struct IOleCacheControl {
     #[cfg(not(feature = "Win32_System_Com"))]
     OnRun: usize,
     pub OnStop: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IOleCacheControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 297, data2: 0, data3: 0, data4: [192, 0, 0, 0, 0, 0, 0, 70] };
 }
 #[repr(C)]
 pub struct IOleClientSite {
@@ -2676,6 +2774,9 @@ pub struct IOleClientSite {
     OnShowWindow: usize,
     pub RequestNewObjectLayout: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IOleClientSite {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 280, data2: 0, data3: 0, data4: [192, 0, 0, 0, 0, 0, 0, 70] };
+}
 #[repr(C)]
 pub struct IOleCommandTarget {
     pub base__: ::windows_sys::core::IUnknown,
@@ -2684,6 +2785,9 @@ pub struct IOleCommandTarget {
     pub Exec: unsafe extern "system" fn(this: *mut *mut Self, pguidcmdgroup: *const ::windows_sys::core::GUID, ncmdid: u32, ncmdexecopt: u32, pvain: *const super::Com::VARIANT, pvaout: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     Exec: usize,
+}
+impl ::windows_sys::core::Interface for IOleCommandTarget {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3072507083, data2: 20072, data3: 4123, data4: [162, 188, 0, 170, 0, 64, 71, 112] };
 }
 #[repr(C)]
 pub struct IOleContainer {
@@ -2696,6 +2800,9 @@ pub struct IOleContainer {
     pub LockContainer: unsafe extern "system" fn(this: *mut *mut Self, flock: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     LockContainer: usize,
+}
+impl ::windows_sys::core::Interface for IOleContainer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 283, data2: 0, data3: 0, data4: [192, 0, 0, 0, 0, 0, 0, 70] };
 }
 #[repr(C)]
 pub struct IOleControl {
@@ -2713,6 +2820,9 @@ pub struct IOleControl {
     pub FreezeEvents: unsafe extern "system" fn(this: *mut *mut Self, bfreeze: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     FreezeEvents: usize,
+}
+impl ::windows_sys::core::Interface for IOleControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2979443336, data2: 47796, data3: 4122, data4: [182, 156, 0, 170, 0, 52, 29, 7] };
 }
 #[repr(C)]
 pub struct IOleControlSite {
@@ -2740,6 +2850,9 @@ pub struct IOleControlSite {
     OnFocus: usize,
     pub ShowPropertyFrame: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IOleControlSite {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2979443337, data2: 47796, data3: 4122, data4: [182, 156, 0, 170, 0, 52, 29, 7] };
+}
 #[repr(C)]
 pub struct IOleDocument {
     pub base__: ::windows_sys::core::IUnknown,
@@ -2750,10 +2863,16 @@ pub struct IOleDocument {
     pub GetDocMiscStatus: unsafe extern "system" fn(this: *mut *mut Self, pdwstatus: *mut u32) -> ::windows_sys::core::HRESULT,
     pub EnumViews: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void, ppview: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IOleDocument {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3072507077, data2: 20072, data3: 4123, data4: [162, 188, 0, 170, 0, 64, 71, 112] };
+}
 #[repr(C)]
 pub struct IOleDocumentSite {
     pub base__: ::windows_sys::core::IUnknown,
     pub ActivateMe: unsafe extern "system" fn(this: *mut *mut Self, pviewtoactivate: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IOleDocumentSite {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3072507079, data2: 20072, data3: 4123, data4: [162, 188, 0, 170, 0, 64, 71, 112] };
 }
 #[repr(C)]
 pub struct IOleDocumentView {
@@ -2793,6 +2912,9 @@ pub struct IOleDocumentView {
     ApplyViewState: usize,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, pipsitenew: *mut ::core::ffi::c_void, ppviewnew: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IOleDocumentView {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3072507078, data2: 20072, data3: 4123, data4: [162, 188, 0, 170, 0, 64, 71, 112] };
+}
 #[repr(C)]
 pub struct IOleInPlaceActiveObject {
     pub base__: IOleWindow,
@@ -2816,6 +2938,9 @@ pub struct IOleInPlaceActiveObject {
     pub EnableModeless: unsafe extern "system" fn(this: *mut *mut Self, fenable: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     EnableModeless: usize,
+}
+impl ::windows_sys::core::Interface for IOleInPlaceActiveObject {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 279, data2: 0, data3: 0, data4: [192, 0, 0, 0, 0, 0, 0, 70] };
 }
 #[repr(C)]
 pub struct IOleInPlaceFrame {
@@ -2842,6 +2967,9 @@ pub struct IOleInPlaceFrame {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging")))]
     TranslateAccelerator: usize,
 }
+impl ::windows_sys::core::Interface for IOleInPlaceFrame {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 278, data2: 0, data3: 0, data4: [192, 0, 0, 0, 0, 0, 0, 70] };
+}
 #[repr(C)]
 pub struct IOleInPlaceObject {
     pub base__: IOleWindow,
@@ -2853,6 +2981,9 @@ pub struct IOleInPlaceObject {
     SetObjectRects: usize,
     pub ReactivateAndUndo: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IOleInPlaceObject {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 275, data2: 0, data3: 0, data4: [192, 0, 0, 0, 0, 0, 0, 70] };
+}
 #[repr(C)]
 pub struct IOleInPlaceObjectWindowless {
     pub base__: IOleInPlaceObject,
@@ -2861,6 +2992,9 @@ pub struct IOleInPlaceObjectWindowless {
     #[cfg(not(feature = "Win32_Foundation"))]
     OnWindowMessage: usize,
     pub GetDropTarget: unsafe extern "system" fn(this: *mut *mut Self, ppdroptarget: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IOleInPlaceObjectWindowless {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 471881420, data2: 24308, data3: 4123, data4: [139, 200, 0, 170, 0, 62, 59, 41] };
 }
 #[repr(C)]
 pub struct IOleInPlaceSite {
@@ -2888,6 +3022,9 @@ pub struct IOleInPlaceSite {
     #[cfg(not(feature = "Win32_Foundation"))]
     OnPosRectChange: usize,
 }
+impl ::windows_sys::core::Interface for IOleInPlaceSite {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 281, data2: 0, data3: 0, data4: [192, 0, 0, 0, 0, 0, 0, 70] };
+}
 #[repr(C)]
 pub struct IOleInPlaceSiteEx {
     pub base__: IOleInPlaceSite,
@@ -2900,6 +3037,9 @@ pub struct IOleInPlaceSiteEx {
     #[cfg(not(feature = "Win32_Foundation"))]
     OnInPlaceDeactivateEx: usize,
     pub RequestUIActivate: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IOleInPlaceSiteEx {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2620173696, data2: 13348, data3: 4559, data4: [182, 112, 0, 170, 0, 76, 214, 216] };
 }
 #[repr(C)]
 pub struct IOleInPlaceSiteWindowless {
@@ -2944,6 +3084,9 @@ pub struct IOleInPlaceSiteWindowless {
     #[cfg(not(feature = "Win32_Foundation"))]
     OnDefWindowMessage: usize,
 }
+impl ::windows_sys::core::Interface for IOleInPlaceSiteWindowless {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2452532640, data2: 13348, data3: 4559, data4: [182, 112, 0, 170, 0, 76, 214, 216] };
+}
 #[repr(C)]
 pub struct IOleInPlaceUIWindow {
     pub base__: IOleWindow,
@@ -2961,6 +3104,9 @@ pub struct IOleInPlaceUIWindow {
     SetBorderSpace: usize,
     pub SetActiveObject: unsafe extern "system" fn(this: *mut *mut Self, pactiveobject: *mut ::core::ffi::c_void, pszobjname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IOleInPlaceUIWindow {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 277, data2: 0, data3: 0, data4: [192, 0, 0, 0, 0, 0, 0, 70] };
+}
 #[repr(C)]
 pub struct IOleItemContainer {
     pub base__: IOleContainer,
@@ -2973,6 +3119,9 @@ pub struct IOleItemContainer {
     #[cfg(not(feature = "Win32_System_Com"))]
     GetObjectStorage: usize,
     pub IsRunning: unsafe extern "system" fn(this: *mut *mut Self, pszitem: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IOleItemContainer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 284, data2: 0, data3: 0, data4: [192, 0, 0, 0, 0, 0, 0, 70] };
 }
 #[repr(C)]
 pub struct IOleLink {
@@ -3000,6 +3149,9 @@ pub struct IOleLink {
     pub Update: unsafe extern "system" fn(this: *mut *mut Self, pbc: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     Update: usize,
+}
+impl ::windows_sys::core::Interface for IOleLink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 285, data2: 0, data3: 0, data4: [192, 0, 0, 0, 0, 0, 0, 70] };
 }
 #[repr(C)]
 pub struct IOleObject {
@@ -3056,6 +3208,9 @@ pub struct IOleObject {
     #[cfg(not(feature = "Win32_Graphics_Gdi"))]
     SetColorScheme: usize,
 }
+impl ::windows_sys::core::Interface for IOleObject {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 274, data2: 0, data3: 0, data4: [192, 0, 0, 0, 0, 0, 0, 70] };
+}
 #[repr(C)]
 pub struct IOleParentUndoUnit {
     pub base__: IOleUndoUnit,
@@ -3067,6 +3222,9 @@ pub struct IOleParentUndoUnit {
     pub Add: unsafe extern "system" fn(this: *mut *mut Self, puu: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub FindUnit: unsafe extern "system" fn(this: *mut *mut Self, puu: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetParentState: unsafe extern "system" fn(this: *mut *mut Self, pdwstate: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IOleParentUndoUnit {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2717578032, data2: 61335, data3: 4558, data4: [155, 201, 0, 170, 0, 96, 142, 1] };
 }
 #[repr(C)]
 pub struct IOleUILinkContainerA {
@@ -3089,6 +3247,9 @@ pub struct IOleUILinkContainerA {
     UpdateLink: usize,
     pub CancelLink: unsafe extern "system" fn(this: *mut *mut Self, dwlink: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IOleUILinkContainerA {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID::zeroed();
+}
 #[repr(C)]
 pub struct IOleUILinkContainerW {
     pub base__: ::windows_sys::core::IUnknown,
@@ -3110,6 +3271,9 @@ pub struct IOleUILinkContainerW {
     UpdateLink: usize,
     pub CancelLink: unsafe extern "system" fn(this: *mut *mut Self, dwlink: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IOleUILinkContainerW {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID::zeroed();
+}
 #[repr(C)]
 pub struct IOleUILinkInfoA {
     pub base__: IOleUILinkContainerA,
@@ -3118,6 +3282,9 @@ pub struct IOleUILinkInfoA {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetLastUpdate: usize,
 }
+impl ::windows_sys::core::Interface for IOleUILinkInfoA {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID::zeroed();
+}
 #[repr(C)]
 pub struct IOleUILinkInfoW {
     pub base__: IOleUILinkContainerW,
@@ -3125,6 +3292,9 @@ pub struct IOleUILinkInfoW {
     pub GetLastUpdate: unsafe extern "system" fn(this: *mut *mut Self, dwlink: u32, lplastupdate: *mut super::super::Foundation::FILETIME) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetLastUpdate: usize,
+}
+impl ::windows_sys::core::Interface for IOleUILinkInfoW {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID::zeroed();
 }
 #[repr(C)]
 pub struct IOleUIObjInfoA {
@@ -3138,6 +3308,9 @@ pub struct IOleUIObjInfoA {
     #[cfg(not(feature = "Win32_Foundation"))]
     SetViewInfo: usize,
 }
+impl ::windows_sys::core::Interface for IOleUIObjInfoA {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID::zeroed();
+}
 #[repr(C)]
 pub struct IOleUIObjInfoW {
     pub base__: ::windows_sys::core::IUnknown,
@@ -3149,6 +3322,9 @@ pub struct IOleUIObjInfoW {
     pub SetViewInfo: unsafe extern "system" fn(this: *mut *mut Self, dwobject: u32, hmetapict: isize, dvaspect: u32, ncurrentscale: i32, brelativetoorig: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     SetViewInfo: usize,
+}
+impl ::windows_sys::core::Interface for IOleUIObjInfoW {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID::zeroed();
 }
 #[repr(C)]
 pub struct IOleUndoManager {
@@ -3178,6 +3354,9 @@ pub struct IOleUndoManager {
     #[cfg(not(feature = "Win32_Foundation"))]
     Enable: usize,
 }
+impl ::windows_sys::core::Interface for IOleUndoManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3489788416, data2: 61335, data3: 4558, data4: [155, 201, 0, 170, 0, 96, 142, 1] };
+}
 #[repr(C)]
 pub struct IOleUndoUnit {
     pub base__: ::windows_sys::core::IUnknown,
@@ -3188,6 +3367,9 @@ pub struct IOleUndoUnit {
     GetDescription: usize,
     pub GetUnitType: unsafe extern "system" fn(this: *mut *mut Self, pclsid: *mut ::windows_sys::core::GUID, plid: *mut i32) -> ::windows_sys::core::HRESULT,
     pub OnNextAdd: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IOleUndoUnit {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2303382448, data2: 61335, data3: 4558, data4: [155, 201, 0, 170, 0, 96, 142, 1] };
 }
 #[repr(C)]
 pub struct IOleWindow {
@@ -3201,6 +3383,9 @@ pub struct IOleWindow {
     #[cfg(not(feature = "Win32_Foundation"))]
     ContextSensitiveHelp: usize,
 }
+impl ::windows_sys::core::Interface for IOleWindow {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 276, data2: 0, data3: 0, data4: [192, 0, 0, 0, 0, 0, 0, 70] };
+}
 #[repr(C)]
 pub struct IParseDisplayName {
     pub base__: ::windows_sys::core::IUnknown,
@@ -3208,6 +3393,9 @@ pub struct IParseDisplayName {
     pub ParseDisplayName: unsafe extern "system" fn(this: *mut *mut Self, pbc: *mut ::core::ffi::c_void, pszdisplayname: ::windows_sys::core::PCWSTR, pcheaten: *mut u32, ppmkout: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     ParseDisplayName: usize,
+}
+impl ::windows_sys::core::Interface for IParseDisplayName {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 282, data2: 0, data3: 0, data4: [192, 0, 0, 0, 0, 0, 0, 70] };
 }
 #[repr(C)]
 pub struct IPerPropertyBrowsing {
@@ -3222,6 +3410,9 @@ pub struct IPerPropertyBrowsing {
     pub GetPredefinedValue: unsafe extern "system" fn(this: *mut *mut Self, dispid: i32, dwcookie: u32, pvarout: *mut super::Com::VARIANT) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     GetPredefinedValue: usize,
+}
+impl ::windows_sys::core::Interface for IPerPropertyBrowsing {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 929813418, data2: 14405, data3: 4123, data4: [132, 237, 8, 0, 43, 46, 199, 19] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -3238,6 +3429,10 @@ pub struct IPersistPropertyBag {
     Save: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IPersistPropertyBag {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 936922976, data2: 17099, data3: 4558, data4: [129, 53, 0, 170, 0, 75, 184, 81] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IPersistPropertyBag2 {
     pub base__: super::Com::IPersist,
@@ -3251,6 +3446,10 @@ pub struct IPersistPropertyBag2 {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
     Save: usize,
     pub IsDirty: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IPersistPropertyBag2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 586504321, data2: 10251, data3: 4560, data4: [168, 169, 0, 160, 201, 12, 32, 4] };
 }
 #[repr(C)]
 pub struct IPicture {
@@ -3288,6 +3487,9 @@ pub struct IPicture {
     SaveAsFile: usize,
     pub Attributes: unsafe extern "system" fn(this: *mut *mut Self, pdwattr: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPicture {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2079852928, data2: 48946, data3: 4122, data4: [139, 187, 0, 170, 0, 48, 12, 171] };
+}
 #[repr(C)]
 pub struct IPicture2 {
     pub base__: ::windows_sys::core::IUnknown,
@@ -3324,10 +3526,17 @@ pub struct IPicture2 {
     SaveAsFile: usize,
     pub Attributes: unsafe extern "system" fn(this: *mut *mut Self, pdwattr: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPicture2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4112014808, data2: 8210, data3: 19211, data4: [170, 217, 240, 82, 198, 189, 72, 43] };
+}
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IPictureDisp {
     pub base__: super::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IPictureDisp {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2079852929, data2: 48946, data3: 4122, data4: [139, 187, 0, 170, 0, 48, 12, 171] };
 }
 #[repr(C)]
 pub struct IPointerInactive {
@@ -3342,6 +3551,9 @@ pub struct IPointerInactive {
     #[cfg(not(feature = "Win32_Foundation"))]
     OnInactiveSetCursor: usize,
 }
+impl ::windows_sys::core::Interface for IPointerInactive {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1436027808, data2: 13738, data3: 4559, data4: [182, 113, 0, 170, 0, 76, 214, 216] };
+}
 #[repr(C)]
 pub struct IPrint {
     pub base__: ::windows_sys::core::IUnknown,
@@ -3352,11 +3564,17 @@ pub struct IPrint {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_System_Com_StructuredStorage")))]
     Print: usize,
 }
+impl ::windows_sys::core::Interface for IPrint {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3072507081, data2: 20072, data3: 4123, data4: [162, 188, 0, 170, 0, 64, 71, 112] };
+}
 #[repr(C)]
 pub struct IPropertyNotifySink {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnChanged: unsafe extern "system" fn(this: *mut *mut Self, dispid: i32) -> ::windows_sys::core::HRESULT,
     pub OnRequestEdit: unsafe extern "system" fn(this: *mut *mut Self, dispid: i32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPropertyNotifySink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2616966146, data2: 61425, data3: 4122, data4: [132, 237, 0, 170, 0, 52, 29, 7] };
 }
 #[repr(C)]
 pub struct IPropertyPage {
@@ -3385,10 +3603,16 @@ pub struct IPropertyPage {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging")))]
     TranslateAccelerator: usize,
 }
+impl ::windows_sys::core::Interface for IPropertyPage {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2979443341, data2: 47796, data3: 4122, data4: [182, 156, 0, 170, 0, 52, 29, 7] };
+}
 #[repr(C)]
 pub struct IPropertyPage2 {
     pub base__: IPropertyPage,
     pub EditProperty: unsafe extern "system" fn(this: *mut *mut Self, dispid: i32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPropertyPage2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 31737445, data2: 9388, data3: 4123, data4: [132, 237, 8, 0, 43, 46, 199, 19] };
 }
 #[repr(C)]
 pub struct IPropertyPageSite {
@@ -3401,6 +3625,9 @@ pub struct IPropertyPageSite {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging")))]
     TranslateAccelerator: usize,
 }
+impl ::windows_sys::core::Interface for IPropertyPageSite {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2979443340, data2: 47796, data3: 4122, data4: [182, 156, 0, 170, 0, 52, 29, 7] };
+}
 #[repr(C)]
 pub struct IProtectFocus {
     pub base__: ::windows_sys::core::IUnknown,
@@ -3408,6 +3635,9 @@ pub struct IProtectFocus {
     pub AllowFocusChange: unsafe extern "system" fn(this: *mut *mut Self, pfallow: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     AllowFocusChange: usize,
+}
+impl ::windows_sys::core::Interface for IProtectFocus {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3625947299, data2: 33110, data3: 17655, data4: [173, 40, 90, 187, 135, 0, 50, 116] };
 }
 #[repr(C)]
 pub struct IProtectedModeMenuServices {
@@ -3425,6 +3655,9 @@ pub struct IProtectedModeMenuServices {
     #[cfg(not(feature = "Win32_UI_WindowsAndMessaging"))]
     LoadMenuID: usize,
 }
+impl ::windows_sys::core::Interface for IProtectedModeMenuServices {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1942029806, data2: 40447, data3: 18951, data4: [184, 60, 126, 255, 41, 12, 38, 110] };
+}
 #[repr(C)]
 pub struct IProvideClassInfo {
     pub base__: ::windows_sys::core::IUnknown,
@@ -3433,10 +3666,16 @@ pub struct IProvideClassInfo {
     #[cfg(not(feature = "Win32_System_Com"))]
     GetClassInfo: usize,
 }
+impl ::windows_sys::core::Interface for IProvideClassInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2979443331, data2: 47796, data3: 4122, data4: [182, 156, 0, 170, 0, 52, 29, 7] };
+}
 #[repr(C)]
 pub struct IProvideClassInfo2 {
     pub base__: IProvideClassInfo,
     pub GetGUID: unsafe extern "system" fn(this: *mut *mut Self, dwguidkind: u32, pguid: *mut ::windows_sys::core::GUID) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IProvideClassInfo2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2797353664, data2: 56234, data3: 4558, data4: [157, 227, 0, 170, 0, 75, 184, 81] };
 }
 #[repr(C)]
 pub struct IProvideMultipleClassInfo {
@@ -3447,10 +3686,16 @@ pub struct IProvideMultipleClassInfo {
     #[cfg(not(feature = "Win32_System_Com"))]
     GetInfoOfIndex: usize,
 }
+impl ::windows_sys::core::Interface for IProvideMultipleClassInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2813045185, data2: 35203, data3: 4559, data4: [143, 32, 0, 128, 95, 44, 208, 100] };
+}
 #[repr(C)]
 pub struct IProvideRuntimeContext {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetCurrentSourceContext: unsafe extern "system" fn(this: *mut *mut Self, pdwcontext: *mut usize, pfexecutingglobalcode: *mut i16) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IProvideRuntimeContext {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 283263306, data2: 60505, data3: 18898, data4: [188, 81, 90, 221, 44, 54, 254, 188] };
 }
 #[repr(C)]
 pub struct IQuickActivate {
@@ -3467,6 +3712,9 @@ pub struct IQuickActivate {
     pub GetContentExtent: unsafe extern "system" fn(this: *mut *mut Self, psizel: *mut super::super::Foundation::SIZE) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     GetContentExtent: usize,
+}
+impl ::windows_sys::core::Interface for IQuickActivate {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3478252816, data2: 25342, data3: 4559, data4: [191, 134, 0, 160, 201, 3, 72, 54] };
 }
 #[repr(C)]
 pub struct IRecordInfo {
@@ -3512,6 +3760,9 @@ pub struct IRecordInfo {
     pub RecordCreateCopy: unsafe extern "system" fn(this: *mut *mut Self, pvsource: *const ::core::ffi::c_void, ppvdest: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub RecordDestroy: unsafe extern "system" fn(this: *mut *mut Self, pvrecord: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IRecordInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 47, data2: 0, data3: 0, data4: [192, 0, 0, 0, 0, 0, 0, 70] };
+}
 #[repr(C)]
 pub struct ISimpleFrameSite {
     pub base__: ::windows_sys::core::IUnknown,
@@ -3524,10 +3775,16 @@ pub struct ISimpleFrameSite {
     #[cfg(not(feature = "Win32_Foundation"))]
     PostMessageFilter: usize,
 }
+impl ::windows_sys::core::Interface for ISimpleFrameSite {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1948978689, data2: 5350, data3: 4123, data4: [145, 78, 0, 170, 0, 48, 12, 171] };
+}
 #[repr(C)]
 pub struct ISpecifyPropertyPages {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetPages: unsafe extern "system" fn(this: *mut *mut Self, ppages: *mut CAUUID) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISpecifyPropertyPages {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2979443339, data2: 47796, data3: 4122, data4: [182, 156, 0, 170, 0, 52, 29, 7] };
 }
 #[repr(C)]
 pub struct ITypeChangeEvents {
@@ -3541,6 +3798,9 @@ pub struct ITypeChangeEvents {
     #[cfg(not(feature = "Win32_System_Com"))]
     AfterTypeChange: usize,
 }
+impl ::windows_sys::core::Interface for ITypeChangeEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 132112, data2: 0, data3: 0, data4: [192, 0, 0, 0, 0, 0, 0, 70] };
+}
 #[repr(C)]
 pub struct ITypeFactory {
     pub base__: ::windows_sys::core::IUnknown,
@@ -3548,6 +3808,9 @@ pub struct ITypeFactory {
     pub CreateFromTypeInfo: unsafe extern "system" fn(this: *mut *mut Self, ptypeinfo: *mut ::core::ffi::c_void, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     CreateFromTypeInfo: usize,
+}
+impl ::windows_sys::core::Interface for ITypeFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 46, data2: 0, data3: 0, data4: [192, 0, 0, 0, 0, 0, 0, 70] };
 }
 #[repr(C)]
 pub struct ITypeMarshal {
@@ -3557,6 +3820,9 @@ pub struct ITypeMarshal {
     pub Unmarshal: unsafe extern "system" fn(this: *mut *mut Self, pvtype: *mut ::core::ffi::c_void, dwflags: u32, cbbufferlength: u32, pbuffer: *const u8, pcbread: *mut u32) -> ::windows_sys::core::HRESULT,
     pub Free: unsafe extern "system" fn(this: *mut *mut Self, pvtype: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ITypeMarshal {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 45, data2: 0, data3: 0, data4: [192, 0, 0, 0, 0, 0, 0, 70] };
+}
 #[repr(C)]
 pub struct IVBFormat {
     pub base__: ::windows_sys::core::IUnknown,
@@ -3564,6 +3830,9 @@ pub struct IVBFormat {
     pub Format: unsafe extern "system" fn(this: *mut *mut Self, vdata: *mut super::Com::VARIANT, bstrformat: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, lpbuffer: *mut ::core::ffi::c_void, cb: u16, lcid: i32, sfirstdayofweek: i16, sfirstweekofyear: u16, rcb: *mut u16) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     Format: usize,
+}
+impl ::windows_sys::core::Interface for IVBFormat {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2554985824, data2: 14184, data3: 4123, data4: [141, 114, 174, 97, 100, 255, 227, 207] };
 }
 #[repr(C)]
 pub struct IVBGetControl {
@@ -3573,6 +3842,9 @@ pub struct IVBGetControl {
     #[cfg(not(feature = "Win32_System_Com"))]
     EnumControls: usize,
 }
+impl ::windows_sys::core::Interface for IVBGetControl {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1084248224, data2: 15409, data3: 4123, data4: [168, 46, 8, 0, 43, 43, 35, 55] };
+}
 #[repr(C)]
 pub struct IVariantChangeType {
     pub base__: ::windows_sys::core::IUnknown,
@@ -3580,6 +3852,9 @@ pub struct IVariantChangeType {
     pub ChangeType: unsafe extern "system" fn(this: *mut *mut Self, pvardst: *mut super::Com::VARIANT, pvarsrc: *const super::Com::VARIANT, lcid: u32, vtnew: u16) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     ChangeType: usize,
+}
+impl ::windows_sys::core::Interface for IVariantChangeType {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2800719970, data2: 50976, data3: 4560, data4: [147, 55, 0, 160, 201, 13, 202, 169] };
 }
 #[repr(C)]
 pub struct IViewObject {
@@ -3603,6 +3878,9 @@ pub struct IViewObject {
     #[cfg(not(feature = "Win32_System_Com"))]
     GetAdvise: usize,
 }
+impl ::windows_sys::core::Interface for IViewObject {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 269, data2: 0, data3: 0, data4: [192, 0, 0, 0, 0, 0, 0, 70] };
+}
 #[repr(C)]
 pub struct IViewObject2 {
     pub base__: IViewObject,
@@ -3610,6 +3888,9 @@ pub struct IViewObject2 {
     pub GetExtent: unsafe extern "system" fn(this: *mut *mut Self, dwdrawaspect: u32, lindex: i32, ptd: *const super::Com::DVTARGETDEVICE, lpsizel: *mut super::super::Foundation::SIZE) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     GetExtent: usize,
+}
+impl ::windows_sys::core::Interface for IViewObject2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 295, data2: 0, data3: 0, data4: [192, 0, 0, 0, 0, 0, 0, 70] };
 }
 #[repr(C)]
 pub struct IViewObjectEx {
@@ -3632,10 +3913,16 @@ pub struct IViewObjectEx {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_System_Com")))]
     GetNaturalExtent: usize,
 }
+impl ::windows_sys::core::Interface for IViewObjectEx {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 988955282, data2: 3222, data3: 4558, data4: [160, 207, 0, 170, 0, 96, 10, 184] };
+}
 #[repr(C)]
 pub struct IZoomEvents {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnZoomPercentChanged: unsafe extern "system" fn(this: *mut *mut Self, ulzoompercent: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IZoomEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1102479696, data2: 36940, data3: 19991, data4: [160, 186, 164, 56, 24, 46, 53, 157] };
 }
 #[doc = "*Required features: `\"Win32_System_Ole\"`*"]
 pub type LIBFLAGS = i32;

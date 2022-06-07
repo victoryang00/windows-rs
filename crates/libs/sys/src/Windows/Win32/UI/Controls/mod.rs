@@ -2433,6 +2433,9 @@ pub struct IImageList {
     pub GetItemFlags: unsafe extern "system" fn(this: *mut *mut Self, i: i32, dwflags: *mut IMAGE_LIST_ITEM_FLAGS) -> ::windows_sys::core::HRESULT,
     pub GetOverlayImage: unsafe extern "system" fn(this: *mut *mut Self, ioverlay: i32, piindex: *mut i32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IImageList {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1189828902, data2: 22574, data3: 16407, data4: [159, 223, 232, 153, 141, 170, 9, 80] };
+}
 #[repr(C)]
 pub struct IImageList2 {
     pub base__: IImageList,
@@ -2454,6 +2457,9 @@ pub struct IImageList2 {
     #[cfg(not(feature = "Win32_Graphics_Gdi"))]
     Replace2: usize,
     pub ReplaceFromImageList: unsafe extern "system" fn(this: *mut *mut Self, i: i32, pil: *mut ::core::ffi::c_void, isrc: i32, punk: *mut ::core::ffi::c_void, dwflags: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IImageList2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 422288771, data2: 20732, data3: 17787, data4: [144, 160, 43, 130, 168, 181, 218, 225] };
 }
 #[doc = "*Required features: `\"Win32_UI_Controls\"`*"]
 pub const ILDI_PURGE: u32 = 1u32;

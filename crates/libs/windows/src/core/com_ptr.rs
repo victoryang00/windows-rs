@@ -17,6 +17,10 @@ impl<T> ComPtr<T> {
         self.release();
         unsafe { std::mem::transmute(&mut self.0) }
     }
+    pub fn put_void(&mut self) -> *mut *mut core::ffi::c_void {
+        self.release();
+        unsafe { std::mem::transmute(&mut self.0) }
+    }
     pub fn release(&mut self) {
         if !self.0.is_null() {
             unsafe {

@@ -124,9 +124,15 @@ pub struct IContentLinkInfo {
     pub LinkContentKind: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub SetLinkContentKind: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IContentLinkInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 517285157, data2: 7263, data3: 18635, data4: [179, 53, 120, 181, 10, 46, 230, 66] };
+}
 #[repr(C)]
 pub struct IFontWeights {
     pub base__: ::windows_sys::core::IInspectable,
+}
+impl ::windows_sys::core::Interface for IFontWeights {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2021696580, data2: 427, data3: 18839, data4: [133, 23, 223, 130, 42, 12, 69, 241] };
 }
 #[repr(C)]
 pub struct IFontWeightsStatics {
@@ -143,11 +149,17 @@ pub struct IFontWeightsStatics {
     pub SemiLight: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut FontWeight) -> ::windows_sys::core::HRESULT,
     pub Thin: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut FontWeight) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IFontWeightsStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3015014869, data2: 7081, data3: 18667, data4: [157, 173, 192, 149, 232, 194, 59, 163] };
+}
 #[repr(C)]
 pub struct IRichEditTextRange {
     pub base__: ::windows_sys::core::IInspectable,
     pub ContentLinkInfo: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetContentLinkInfo: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IRichEditTextRange {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 927872277, data2: 47754, data3: 19054, data4: [140, 89, 13, 222, 61, 12, 245, 205] };
 }
 #[repr(C)]
 pub struct ITextCharacterFormat {
@@ -203,6 +215,9 @@ pub struct ITextCharacterFormat {
     pub GetClone: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub IsEqual: unsafe extern "system" fn(this: *mut *mut Self, format: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ITextCharacterFormat {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1524560859, data2: 1531, data3: 17453, data4: [128, 101, 100, 42, 254, 160, 44, 237] };
+}
 #[repr(C)]
 pub struct ITextConstantsStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -214,6 +229,9 @@ pub struct ITextConstantsStatics {
     pub UndefinedInt32Value: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut i32) -> ::windows_sys::core::HRESULT,
     pub UndefinedFontStretch: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut FontStretch) -> ::windows_sys::core::HRESULT,
     pub UndefinedFontStyle: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut FontStyle) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ITextConstantsStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2006875187, data2: 6301, data3: 19450, data4: [151, 200, 16, 219, 19, 93, 151, 110] };
 }
 #[repr(C)]
 pub struct ITextDocument {
@@ -255,6 +273,9 @@ pub struct ITextDocument {
     pub SetText: unsafe extern "system" fn(this: *mut *mut Self, options: TextSetOptions, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub Undo: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ITextDocument {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3203288539, data2: 37042, data3: 16524, data4: [162, 246, 10, 10, 195, 30, 51, 228] };
+}
 #[repr(C)]
 pub struct ITextDocument2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -263,10 +284,16 @@ pub struct ITextDocument2 {
     pub IgnoreTrailingCharacterSpacing: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub SetIgnoreTrailingCharacterSpacing: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ITextDocument2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4063301906, data2: 35977, data3: 18889, data4: [145, 24, 240, 87, 203, 184, 20, 238] };
+}
 #[repr(C)]
 pub struct ITextDocument3 {
     pub base__: ::windows_sys::core::IInspectable,
     pub ClearUndoRedoHistory: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ITextDocument3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1974141857, data2: 42744, data3: 17437, data4: [170, 24, 10, 133, 29, 110, 94, 60] };
 }
 #[repr(C)]
 pub struct ITextDocument4 {
@@ -274,6 +301,9 @@ pub struct ITextDocument4 {
     pub SetMath: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub GetMath: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub SetMathMode: unsafe extern "system" fn(this: *mut *mut Self, mode: RichEditMathMode) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ITextDocument4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1637622002, data2: 52027, data3: 17697, data4: [152, 31, 40, 101, 177, 185, 63, 4] };
 }
 #[repr(C)]
 pub struct ITextParagraphFormat {
@@ -326,6 +356,9 @@ pub struct ITextParagraphFormat {
     pub SetClone: unsafe extern "system" fn(this: *mut *mut Self, format: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetIndents: unsafe extern "system" fn(this: *mut *mut Self, start: f32, left: f32, right: f32) -> ::windows_sys::core::HRESULT,
     pub SetLineSpacing: unsafe extern "system" fn(this: *mut *mut Self, rule: LineSpacingRule, spacing: f32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ITextParagraphFormat {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 754503590, data2: 18038, data3: 18826, data4: [147, 245, 187, 219, 252, 11, 216, 131] };
 }
 #[repr(C)]
 pub struct ITextRange {
@@ -401,6 +434,9 @@ pub struct ITextRange {
     SetTextViaStream: usize,
     pub StartOf: unsafe extern "system" fn(this: *mut *mut Self, unit: TextRangeUnit, extend: bool, result__: *mut i32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ITextRange {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1537101399, data2: 49266, data3: 17056, data4: [137, 69, 175, 80, 62, 229, 71, 104] };
+}
 #[repr(C)]
 pub struct ITextSelection {
     pub base__: ::windows_sys::core::IInspectable,
@@ -414,6 +450,9 @@ pub struct ITextSelection {
     pub MoveRight: unsafe extern "system" fn(this: *mut *mut Self, unit: TextRangeUnit, count: i32, extend: bool, result__: *mut i32) -> ::windows_sys::core::HRESULT,
     pub MoveUp: unsafe extern "system" fn(this: *mut *mut Self, unit: TextRangeUnit, count: i32, extend: bool, result__: *mut i32) -> ::windows_sys::core::HRESULT,
     pub TypeText: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ITextSelection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2798872356, data2: 62095, data3: 17162, data4: [178, 207, 195, 67, 103, 30, 192, 233] };
 }
 #[doc = "*Required features: `\"UI_Text\"`*"]
 #[repr(transparent)]

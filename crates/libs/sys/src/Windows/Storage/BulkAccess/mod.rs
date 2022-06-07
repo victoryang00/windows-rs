@@ -32,6 +32,9 @@ pub struct IFileInformationFactory {
     pub GetVirtualizedFilesVector: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetVirtualizedFoldersVector: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IFileInformationFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1075677374, data2: 38415, data3: 19821, data4: [167, 208, 26, 56, 97, 231, 108, 131] };
+}
 #[repr(C)]
 pub struct IFileInformationFactoryFactory {
     pub base__: ::windows_sys::core::IInspectable,
@@ -51,6 +54,9 @@ pub struct IFileInformationFactoryFactory {
     pub CreateWithModeAndSizeAndOptionsAndFlags: unsafe extern "system" fn(this: *mut *mut Self, queryresult: *mut ::core::ffi::c_void, mode: super::FileProperties::ThumbnailMode, requestedthumbnailsize: u32, thumbnailoptions: super::FileProperties::ThumbnailOptions, delayload: bool, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Storage_FileProperties", feature = "Storage_Search")))]
     CreateWithModeAndSizeAndOptionsAndFlags: usize,
+}
+impl ::windows_sys::core::Interface for IFileInformationFactoryFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2229931645, data2: 58530, data3: 20224, data4: [138, 250, 175, 94, 15, 130, 107, 213] };
 }
 #[repr(C)]
 pub struct IStorageItemInformation {
@@ -95,4 +101,7 @@ pub struct IStorageItemInformation {
     pub RemovePropertiesUpdated: unsafe extern "system" fn(this: *mut *mut Self, eventcookie: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     RemovePropertiesUpdated: usize,
+}
+impl ::windows_sys::core::Interface for IStorageItemInformation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2275789707, data2: 35186, data3: 20288, data4: [141, 224, 216, 111, 177, 121, 216, 250] };
 }

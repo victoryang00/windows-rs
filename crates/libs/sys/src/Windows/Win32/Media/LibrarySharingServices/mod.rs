@@ -14,6 +14,10 @@ pub struct IWindowsMediaLibrarySharingDevice {
     Properties: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWindowsMediaLibrarySharingDevice {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1036829331, data2: 20441, data3: 16785, data4: [162, 91, 142, 87, 197, 210, 123, 212] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IWindowsMediaLibrarySharingDeviceProperties {
     pub base__: super::super::System::Com::IDispatch,
@@ -26,6 +30,10 @@ pub struct IWindowsMediaLibrarySharingDeviceProperties {
     pub GetProperty: unsafe extern "system" fn(this: *mut *mut Self, name: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, property: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     GetProperty: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWindowsMediaLibrarySharingDeviceProperties {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3294769684, data2: 27398, data3: 16581, data4: [166, 35, 178, 255, 76, 7, 107, 253] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -41,6 +49,10 @@ pub struct IWindowsMediaLibrarySharingDeviceProperty {
     Value: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWindowsMediaLibrarySharingDeviceProperty {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2179098919, data2: 31357, data3: 16551, data4: [129, 212, 189, 220, 2, 150, 14, 62] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IWindowsMediaLibrarySharingDevices {
     pub base__: super::super::System::Com::IDispatch,
@@ -53,6 +65,10 @@ pub struct IWindowsMediaLibrarySharingDevices {
     pub GetDevice: unsafe extern "system" fn(this: *mut *mut Self, deviceid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, device: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     GetDevice: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWindowsMediaLibrarySharingDevices {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 402913750, data2: 65133, data3: 17734, data4: [191, 91, 153, 47, 232, 236, 18, 209] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -101,6 +117,10 @@ pub struct IWindowsMediaLibrarySharingServices {
     #[cfg(not(feature = "Win32_System_Com"))]
     getAllDevices: usize,
     pub customSettingsApplied: unsafe extern "system" fn(this: *mut *mut Self, customsettingsapplied: *mut i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWindowsMediaLibrarySharingServices {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 32897118, data2: 2689, data3: 16602, data4: [167, 200, 33, 239, 58, 248, 68, 12] };
 }
 #[doc = "*Required features: `\"Win32_Media_LibrarySharingServices\"`*"]
 pub type WindowsMediaLibrarySharingDeviceAuthorizationStatus = i32;

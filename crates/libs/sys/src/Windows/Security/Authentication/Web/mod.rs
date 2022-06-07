@@ -18,6 +18,9 @@ pub struct IWebAuthenticationBrokerStatics {
     #[cfg(not(feature = "Foundation"))]
     GetCurrentApplicationCallbackUri: usize,
 }
+impl ::windows_sys::core::Interface for IWebAuthenticationBrokerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 789880602, data2: 58995, data3: 16565, data4: [188, 34, 32, 26, 104, 100, 163, 123] };
+}
 #[repr(C)]
 pub struct IWebAuthenticationBrokerStatics2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -42,12 +45,18 @@ pub struct IWebAuthenticationBrokerStatics2 {
     #[cfg(not(feature = "Foundation"))]
     AuthenticateSilentlyWithOptionsAsync: usize,
 }
+impl ::windows_sys::core::Interface for IWebAuthenticationBrokerStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1942879134, data2: 5351, data3: 16858, data4: [169, 113, 170, 244, 65, 11, 98, 30] };
+}
 #[repr(C)]
 pub struct IWebAuthenticationResult {
     pub base__: ::windows_sys::core::IInspectable,
     pub ResponseData: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub ResponseStatus: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut WebAuthenticationStatus) -> ::windows_sys::core::HRESULT,
     pub ResponseErrorDetail: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWebAuthenticationResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1677732683, data2: 60905, data3: 18186, data4: [165, 205, 3, 35, 250, 246, 226, 98] };
 }
 #[doc = "*Required features: `\"Security_Authentication_Web\"`*"]
 #[repr(transparent)]

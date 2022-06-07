@@ -316,6 +316,10 @@ pub struct IRDPSRAPIApplication {
     pub Flags: unsafe extern "system" fn(this: *mut *mut Self, pdwflags: *mut u32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IRDPSRAPIApplication {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1105698973, data2: 60282, data3: 17262, data4: [147, 93, 120, 12, 162, 98, 131, 36] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IRDPSRAPIApplicationFilter {
     pub base__: super::Com::IDispatch,
@@ -331,6 +335,10 @@ pub struct IRDPSRAPIApplicationFilter {
     pub SetEnabled: unsafe extern "system" fn(this: *mut *mut Self, newval: i16) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IRDPSRAPIApplicationFilter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3524202698, data2: 26167, data3: 20230, data4: [177, 213, 39, 126, 167, 229, 22, 13] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IRDPSRAPIApplicationList {
     pub base__: super::Com::IDispatch,
@@ -339,6 +347,10 @@ pub struct IRDPSRAPIApplicationList {
     pub get_Item: unsafe extern "system" fn(this: *mut *mut Self, item: i32, papplication: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     get_Item: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IRDPSRAPIApplicationList {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3568610995, data2: 8924, data3: 18487, data4: [179, 182, 66, 234, 37, 23, 132, 154] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -360,6 +372,10 @@ pub struct IRDPSRAPIAttendee {
     pub ConnectivityInfo: unsafe extern "system" fn(this: *mut *mut Self, ppval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IRDPSRAPIAttendee {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3959845299, data2: 7032, data3: 19328, data4: [164, 100, 145, 50, 36, 117, 67, 227] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IRDPSRAPIAttendeeDisconnectInfo {
     pub base__: super::Com::IDispatch,
@@ -371,6 +387,10 @@ pub struct IRDPSRAPIAttendeeDisconnectInfo {
     pub Code: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IRDPSRAPIAttendeeDisconnectInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3246876831, data2: 17532, data3: 17569, data4: [156, 20, 255, 251, 179, 183, 236, 23] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IRDPSRAPIAttendeeManager {
     pub base__: super::Com::IDispatch,
@@ -379,6 +399,10 @@ pub struct IRDPSRAPIAttendeeManager {
     pub get_Item: unsafe extern "system" fn(this: *mut *mut Self, id: i32, ppitem: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     get_Item: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IRDPSRAPIAttendeeManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3124377576, data2: 13274, data3: 18249, data4: [141, 160, 7, 250, 52, 218, 121, 68] };
 }
 #[repr(C)]
 pub struct IRDPSRAPIAudioStream {
@@ -389,6 +413,9 @@ pub struct IRDPSRAPIAudioStream {
     pub GetBuffer: unsafe extern "system" fn(this: *mut *mut Self, ppbdata: *mut *mut u8, pcbdata: *mut u32, ptimestamp: *mut u64) -> ::windows_sys::core::HRESULT,
     pub FreeBuffer: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IRDPSRAPIAudioStream {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3823308537, data2: 35270, data3: 17729, data4: [186, 59, 25, 51, 106, 198, 211, 28] };
+}
 #[repr(C)]
 pub struct IRDPSRAPIClipboardUseEvents {
     pub base__: ::windows_sys::core::IUnknown,
@@ -396,6 +423,9 @@ pub struct IRDPSRAPIClipboardUseEvents {
     pub OnPasteFromClipboard: unsafe extern "system" fn(this: *mut *mut Self, clipboardformat: u32, pattendee: *mut ::core::ffi::c_void, pretval: *mut i16) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     OnPasteFromClipboard: usize,
+}
+impl ::windows_sys::core::Interface for IRDPSRAPIClipboardUseEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3579442586, data2: 31271, data3: 16696, data4: [135, 99, 36, 124, 229, 246, 89, 168] };
 }
 #[repr(C)]
 pub struct IRDPSRAPIDebug {
@@ -409,6 +439,9 @@ pub struct IRDPSRAPIDebug {
     #[cfg(not(feature = "Win32_Foundation"))]
     CLXCmdLine: usize,
 }
+impl ::windows_sys::core::Interface for IRDPSRAPIDebug {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2854109877, data2: 18797, data3: 19620, data4: [166, 144, 52, 141, 203, 46, 196, 173] };
+}
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IRDPSRAPIFrameBuffer {
@@ -420,6 +453,10 @@ pub struct IRDPSRAPIFrameBuffer {
     pub GetFrameBufferBits: unsafe extern "system" fn(this: *mut *mut Self, x: i32, y: i32, width: i32, heigth: i32, ppbits: *mut *mut super::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     GetFrameBufferBits: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IRDPSRAPIFrameBuffer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1030219730, data2: 45691, data3: 17550, data4: [129, 179, 198, 17, 14, 216, 180, 190] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -443,6 +480,10 @@ pub struct IRDPSRAPIInvitation {
     pub SetRevoked: unsafe extern "system" fn(this: *mut *mut Self, newval: i16) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IRDPSRAPIInvitation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1336679747, data2: 64593, data3: 17851, data4: [177, 180, 43, 83, 170, 86, 47, 163] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IRDPSRAPIInvitationManager {
     pub base__: super::Com::IDispatch,
@@ -457,10 +498,17 @@ pub struct IRDPSRAPIInvitationManager {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     CreateInvitation: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IRDPSRAPIInvitationManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1193455689, data2: 37571, data3: 19501, data4: [138, 101, 247, 52, 143, 100, 77, 207] };
+}
 #[repr(C)]
 pub struct IRDPSRAPIPerfCounterLogger {
     pub base__: ::windows_sys::core::IUnknown,
     pub LogValue: unsafe extern "system" fn(this: *mut *mut Self, lvalue: i64) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IRDPSRAPIPerfCounterLogger {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 119285043, data2: 4004, data3: 20111, data4: [174, 131, 156, 16, 180, 48, 90, 181] };
 }
 #[repr(C)]
 pub struct IRDPSRAPIPerfCounterLoggingManager {
@@ -469,6 +517,9 @@ pub struct IRDPSRAPIPerfCounterLoggingManager {
     pub CreateLogger: unsafe extern "system" fn(this: *mut *mut Self, bstrcountername: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pplogger: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     CreateLogger: usize,
+}
+impl ::windows_sys::core::Interface for IRDPSRAPIPerfCounterLoggingManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2589011078, data2: 44142, data3: 19086, data4: [177, 164, 252, 239, 54, 63, 110, 100] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -482,6 +533,10 @@ pub struct IRDPSRAPISessionProperties {
     pub put_Property: unsafe extern "system" fn(this: *mut *mut Self, propertyname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, newval: ::core::mem::ManuallyDrop<super::Com::VARIANT>) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     put_Property: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IRDPSRAPISessionProperties {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 865805554, data2: 39872, data3: 20246, data4: [154, 172, 241, 101, 67, 61, 19, 212] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -521,6 +576,10 @@ pub struct IRDPSRAPISharingSession {
     pub GetDesktopSharedRect: unsafe extern "system" fn(this: *mut *mut Self, pleft: *mut i32, ptop: *mut i32, pright: *mut i32, pbottom: *mut i32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IRDPSRAPISharingSession {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4004644998, data2: 58480, data3: 19702, data4: [132, 43, 39, 57, 192, 236, 92, 251] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IRDPSRAPISharingSession2 {
     pub base__: IRDPSRAPISharingSession,
@@ -538,6 +597,10 @@ pub struct IRDPSRAPISharingSession2 {
     SendControlLevelChangeResponse: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IRDPSRAPISharingSession2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4276416087, data2: 58344, data3: 16901, data4: [143, 176, 143, 209, 208, 103, 92, 33] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IRDPSRAPITcpConnectionInfo {
     pub base__: super::Com::IDispatch,
@@ -553,6 +616,10 @@ pub struct IRDPSRAPITcpConnectionInfo {
     #[cfg(not(feature = "Win32_Foundation"))]
     PeerIP: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IRDPSRAPITcpConnectionInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4148185508, data2: 15622, data3: 16424, data4: [129, 147, 10, 140, 41, 188, 36, 82] };
+}
 #[repr(C)]
 pub struct IRDPSRAPITransportStream {
     pub base__: ::windows_sys::core::IUnknown,
@@ -562,6 +629,9 @@ pub struct IRDPSRAPITransportStream {
     pub ReadBuffer: unsafe extern "system" fn(this: *mut *mut Self, pbuffer: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Open: unsafe extern "system" fn(this: *mut *mut Self, pcallbacks: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IRDPSRAPITransportStream {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 919576677, data2: 17339, data3: 20215, data4: [174, 215, 155, 136, 165, 5, 48, 54] };
 }
 #[repr(C)]
 pub struct IRDPSRAPITransportStreamBuffer {
@@ -577,12 +647,18 @@ pub struct IRDPSRAPITransportStreamBuffer {
     pub Context: unsafe extern "system" fn(this: *mut *mut Self, ppcontext: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetContext: unsafe extern "system" fn(this: *mut *mut Self, pcontext: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IRDPSRAPITransportStreamBuffer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2177368720, data2: 20613, data3: 17584, data4: [180, 96, 248, 101, 195, 156, 180, 169] };
+}
 #[repr(C)]
 pub struct IRDPSRAPITransportStreamEvents {
     pub base__: ::windows_sys::core::IUnknown,
     pub OnWriteCompleted: unsafe extern "system" fn(this: *mut *mut Self, pbuffer: *mut ::core::ffi::c_void),
     pub OnReadCompleted: unsafe extern "system" fn(this: *mut *mut Self, pbuffer: *mut ::core::ffi::c_void),
     pub OnStreamClosed: unsafe extern "system" fn(this: *mut *mut Self, hrreason: ::windows_sys::core::HRESULT),
+}
+impl ::windows_sys::core::Interface for IRDPSRAPITransportStreamEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3934372436, data2: 62895, data3: 20032, data4: [152, 46, 62, 99, 187, 89, 82, 118] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -631,6 +707,10 @@ pub struct IRDPSRAPIViewer {
     StartReverseConnectListener: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IRDPSRAPIViewer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3334458680, data2: 36073, data3: 16461, data4: [138, 232, 243, 29, 0, 198, 92, 181] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IRDPSRAPIVirtualChannel {
     pub base__: super::Com::IDispatch,
@@ -647,6 +727,10 @@ pub struct IRDPSRAPIVirtualChannel {
     pub Priority: unsafe extern "system" fn(this: *mut *mut Self, ppriority: *mut CHANNEL_PRIORITY) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IRDPSRAPIVirtualChannel {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 98643861, data2: 10419, data3: 19610, data4: [135, 128, 208, 36, 133, 116, 161, 224] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IRDPSRAPIVirtualChannelManager {
     pub base__: super::Com::IDispatch,
@@ -659,6 +743,10 @@ pub struct IRDPSRAPIVirtualChannelManager {
     pub CreateVirtualChannel: unsafe extern "system" fn(this: *mut *mut Self, bstrchannelname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, priority: CHANNEL_PRIORITY, channelflags: u32, ppchannel: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     CreateVirtualChannel: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IRDPSRAPIVirtualChannelManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 219268705, data2: 23821, data3: 20196, data4: [137, 223, 33, 102, 174, 31, 223, 237] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -679,6 +767,10 @@ pub struct IRDPSRAPIWindow {
     pub Flags: unsafe extern "system" fn(this: *mut *mut Self, pdwflags: *mut u32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IRDPSRAPIWindow {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3199197433, data2: 51067, data3: 18739, data4: [186, 159, 162, 76, 221, 204, 39, 207] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IRDPSRAPIWindowList {
     pub base__: super::Com::IDispatch,
@@ -687,6 +779,10 @@ pub struct IRDPSRAPIWindowList {
     pub get_Item: unsafe extern "system" fn(this: *mut *mut Self, item: i32, pwindow: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     get_Item: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IRDPSRAPIWindowList {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2315636292, data2: 29018, data3: 16662, data4: [161, 137, 161, 24, 243, 10, 7, 189] };
 }
 #[repr(C)]
 pub struct IRDPViewerInputSink {
@@ -699,6 +795,9 @@ pub struct IRDPViewerInputSink {
     pub BeginTouchFrame: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub AddTouchInput: unsafe extern "system" fn(this: *mut *mut Self, contactid: u32, event: u32, x: i32, y: i32) -> ::windows_sys::core::HRESULT,
     pub EndTouchFrame: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IRDPViewerInputSink {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3143174227, data2: 42693, data3: 19067, data4: [141, 212, 118, 182, 158, 234, 18, 213] };
 }
 #[doc = "*Required features: `\"Win32_System_DesktopSharing\"`*"]
 pub type RDPENCOMAPI_ATTENDEE_FLAGS = i32;
@@ -763,6 +862,10 @@ pub const RDPViewer: ::windows_sys::core::GUID = ::windows_sys::core::GUID { dat
 #[repr(C)]
 pub struct _IRDPSessionEvents {
     pub base__: super::Com::IDispatch,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for _IRDPSessionEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2561241154, data2: 26264, data3: 16617, data4: [142, 253, 179, 32, 9, 144, 0, 75] };
 }
 #[doc = "*Required features: `\"Win32_System_DesktopSharing\"`*"]
 pub type __MIDL___MIDL_itf_rdpencomapi_0000_0027_0001 = i32;

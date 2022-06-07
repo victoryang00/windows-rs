@@ -4,6 +4,9 @@ pub struct IWCNConnectNotify {
     pub ConnectSucceeded: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub ConnectFailed: unsafe extern "system" fn(this: *mut *mut Self, hrfailure: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWCNConnectNotify {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3238051487, data2: 54074, data3: 19019, data4: [191, 35, 187, 239, 70, 99, 208, 23] };
+}
 #[repr(C)]
 pub struct IWCNDevice {
     pub base__: ::windows_sys::core::IUnknown,
@@ -18,6 +21,9 @@ pub struct IWCNDevice {
     pub SetVendorExtension: unsafe extern "system" fn(this: *mut *mut Self, pvendorextspec: *const WCN_VENDOR_EXTENSION_SPEC, cbbuffer: u32, pbbuffer: *const u8) -> ::windows_sys::core::HRESULT,
     pub Unadvise: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub SetNFCPasswordParams: unsafe extern "system" fn(this: *mut *mut Self, r#type: WCN_PASSWORD_TYPE, dwoobpasswordid: u32, dwpasswordlength: u32, pbpassword: *const u8, dwremotepublickeyhashlength: u32, pbremotepublickeyhash: *const u8, dwdhkeybloblength: u32, pbdhkeyblob: *const u8) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWCNDevice {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3238051484, data2: 54074, data3: 19019, data4: [191, 35, 187, 239, 70, 99, 208, 23] };
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_WindowsConnectNow\"`, `\"Win32_UI_Shell_PropertiesSystem\"`*"]
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]

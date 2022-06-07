@@ -44,10 +44,16 @@ pub struct IGazeDevicePreview {
     #[cfg(not(all(feature = "Devices_HumanInterfaceDevice", feature = "Foundation_Collections")))]
     GetBooleanControlDescriptions: usize,
 }
+impl ::windows_sys::core::Interface for IGazeDevicePreview {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3885924073, data2: 45961, data3: 4583, data4: [178, 1, 200, 211, 255, 183, 87, 33] };
+}
 #[repr(C)]
 pub struct IGazeDeviceWatcherAddedPreviewEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub Device: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IGazeDeviceWatcherAddedPreviewEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3885924077, data2: 45961, data3: 4583, data4: [178, 1, 200, 211, 255, 183, 87, 33] };
 }
 #[repr(C)]
 pub struct IGazeDeviceWatcherPreview {
@@ -87,15 +93,24 @@ pub struct IGazeDeviceWatcherPreview {
     pub Start: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Stop: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IGazeDeviceWatcherPreview {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3885924071, data2: 45961, data3: 4583, data4: [178, 1, 200, 211, 255, 183, 87, 33] };
+}
 #[repr(C)]
 pub struct IGazeDeviceWatcherRemovedPreviewEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub Device: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IGazeDeviceWatcherRemovedPreviewEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4066582280, data2: 3647, data3: 17183, data4: [166, 6, 80, 179, 90, 249, 74, 28] };
+}
 #[repr(C)]
 pub struct IGazeDeviceWatcherUpdatedPreviewEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub Device: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IGazeDeviceWatcherUpdatedPreviewEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2145923311, data2: 32520, data3: 18231, data4: [136, 225, 74, 131, 174, 78, 72, 133] };
 }
 #[repr(C)]
 pub struct IGazeEnteredPreviewEventArgs {
@@ -104,12 +119,18 @@ pub struct IGazeEnteredPreviewEventArgs {
     pub SetHandled: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
     pub CurrentPoint: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IGazeEnteredPreviewEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 627556163, data2: 4645, data3: 18591, data4: [157, 209, 218, 167, 197, 15, 191, 75] };
+}
 #[repr(C)]
 pub struct IGazeExitedPreviewEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub Handled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub SetHandled: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
     pub CurrentPoint: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IGazeExitedPreviewEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1560998014, data2: 32131, data3: 16623, data4: [159, 10, 251, 193, 187, 220, 197, 172] };
 }
 #[repr(C)]
 pub struct IGazeInputSourcePreview {
@@ -139,11 +160,17 @@ pub struct IGazeInputSourcePreview {
     #[cfg(not(feature = "Foundation"))]
     RemoveGazeExited: usize,
 }
+impl ::windows_sys::core::Interface for IGazeInputSourcePreview {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3885924072, data2: 45961, data3: 4583, data4: [178, 1, 200, 211, 255, 183, 87, 33] };
+}
 #[repr(C)]
 pub struct IGazeInputSourcePreviewStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub GetForCurrentView: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub CreateWatcher: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IGazeInputSourcePreviewStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3885924070, data2: 45961, data3: 4583, data4: [178, 1, 200, 211, 255, 183, 87, 33] };
 }
 #[repr(C)]
 pub struct IGazeMovedPreviewEventArgs {
@@ -155,6 +182,9 @@ pub struct IGazeMovedPreviewEventArgs {
     pub GetIntermediatePoints: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     GetIntermediatePoints: usize,
+}
+impl ::windows_sys::core::Interface for IGazeMovedPreviewEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3885924075, data2: 45961, data3: 4583, data4: [178, 1, 200, 211, 255, 183, 87, 33] };
 }
 #[repr(C)]
 pub struct IGazePointPreview {
@@ -173,4 +203,7 @@ pub struct IGazePointPreview {
     pub HidInputReport: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Devices_HumanInterfaceDevice"))]
     HidInputReport: usize,
+}
+impl ::windows_sys::core::Interface for IGazePointPreview {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3885924074, data2: 45961, data3: 4583, data4: [178, 1, 200, 211, 255, 183, 87, 33] };
 }

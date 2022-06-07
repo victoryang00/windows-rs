@@ -20,6 +20,9 @@ pub struct IEnumOfflineFilesItems {
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEnumOfflineFilesItems {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3664832533, data2: 50017, data3: 17415, data4: [188, 11, 13, 112, 70, 229, 242, 205] };
+}
 #[repr(C)]
 pub struct IEnumOfflineFilesSettings {
     pub base__: ::windows_sys::core::IUnknown,
@@ -27,6 +30,9 @@ pub struct IEnumOfflineFilesSettings {
     pub Skip: unsafe extern "system" fn(this: *mut *mut Self, celt: u32) -> ::windows_sys::core::HRESULT,
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IEnumOfflineFilesSettings {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1922465988, data2: 6712, data3: 18364, data4: [158, 92, 2, 197, 21, 98, 172, 48] };
 }
 #[repr(C)]
 pub struct IOfflineFilesCache {
@@ -76,6 +82,9 @@ pub struct IOfflineFilesCache {
     #[cfg(not(feature = "Win32_Foundation"))]
     IsPathCacheable: usize,
 }
+impl ::windows_sys::core::Interface for IOfflineFilesCache {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2237489667, data2: 30996, data3: 18617, data4: [141, 64, 76, 86, 245, 172, 255, 197] };
+}
 #[repr(C)]
 pub struct IOfflineFilesCache2 {
     pub base__: IOfflineFilesCache,
@@ -83,6 +92,9 @@ pub struct IOfflineFilesCache2 {
     pub RenameItemEx: unsafe extern "system" fn(this: *mut *mut Self, pszpathoriginal: ::windows_sys::core::PCWSTR, pszpathnew: ::windows_sys::core::PCWSTR, breplaceifexists: super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     RenameItemEx: usize,
+}
+impl ::windows_sys::core::Interface for IOfflineFilesCache2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2349289529, data2: 5457, data3: 20185, data4: [135, 129, 86, 112, 92, 4, 211, 192] };
 }
 #[repr(C)]
 pub struct IOfflineFilesChangeInfo {
@@ -112,6 +124,9 @@ pub struct IOfflineFilesChangeInfo {
     #[cfg(not(feature = "Win32_Foundation"))]
     IsLocallyModifiedTime: usize,
 }
+impl ::windows_sys::core::Interface for IOfflineFilesChangeInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2842587044, data2: 57553, data3: 19497, data4: [150, 11, 238, 80, 143, 230, 140, 114] };
+}
 #[repr(C)]
 pub struct IOfflineFilesConnectionInfo {
     pub base__: ::windows_sys::core::IUnknown,
@@ -129,15 +144,24 @@ pub struct IOfflineFilesConnectionInfo {
     #[cfg(not(feature = "Win32_Foundation"))]
     TransitionOffline: usize,
 }
+impl ::windows_sys::core::Interface for IOfflineFilesConnectionInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4021434889, data2: 43111, data3: 19432, data4: [131, 166, 134, 150, 154, 125, 8, 86] };
+}
 #[repr(C)]
 pub struct IOfflineFilesDirectoryItem {
     pub base__: IOfflineFilesItem,
+}
+impl ::windows_sys::core::Interface for IOfflineFilesDirectoryItem {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 577984890, data2: 41100, data3: 18944, data4: [163, 122, 193, 174, 78, 154, 28, 253] };
 }
 #[repr(C)]
 pub struct IOfflineFilesDirtyInfo {
     pub base__: ::windows_sys::core::IUnknown,
     pub LocalDirtyByteCount: unsafe extern "system" fn(this: *mut *mut Self, pdirtybytecount: *mut i64) -> ::windows_sys::core::HRESULT,
     pub RemoteDirtyByteCount: unsafe extern "system" fn(this: *mut *mut Self, pdirtybytecount: *mut i64) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IOfflineFilesDirtyInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 256953907, data2: 47817, data3: 20138, data4: [161, 29, 218, 14, 82, 125, 4, 125] };
 }
 #[repr(C)]
 pub struct IOfflineFilesErrorInfo {
@@ -147,6 +171,9 @@ pub struct IOfflineFilesErrorInfo {
     #[cfg(not(feature = "Win32_System_Com"))]
     GetRawData: usize,
     pub GetDescription: unsafe extern "system" fn(this: *mut *mut Self, ppszdescription: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IOfflineFilesErrorInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1897069151, data2: 30065, data3: 17242, data4: [142, 183, 25, 92, 124, 20, 41, 188] };
 }
 #[repr(C)]
 pub struct IOfflineFilesEvents {
@@ -195,6 +222,9 @@ pub struct IOfflineFilesEvents {
     pub DataLost: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Ping: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IOfflineFilesEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3797255617, data2: 3242, data3: 20145, data4: [135, 59, 28, 174, 91, 119, 195, 20] };
+}
 #[repr(C)]
 pub struct IOfflineFilesEvents2 {
     pub base__: IOfflineFilesEvents,
@@ -208,6 +238,9 @@ pub struct IOfflineFilesEvents2 {
     pub PreferenceChangeDetected: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub SettingsChangesApplied: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IOfflineFilesEvents2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 514690902, data2: 65398, data3: 20394, data4: [167, 149, 111, 110, 247, 146, 73, 139] };
+}
 #[repr(C)]
 pub struct IOfflineFilesEvents3 {
     pub base__: IOfflineFilesEvents2,
@@ -218,11 +251,17 @@ pub struct IOfflineFilesEvents3 {
     pub PrefetchFileBegin: unsafe extern "system" fn(this: *mut *mut Self, pszpath: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
     pub PrefetchFileEnd: unsafe extern "system" fn(this: *mut *mut Self, pszpath: ::windows_sys::core::PCWSTR, hrresult: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IOfflineFilesEvents3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2610973253, data2: 61033, data3: 17136, data4: [154, 177, 125, 181, 200, 128, 88, 8] };
+}
 #[repr(C)]
 pub struct IOfflineFilesEvents4 {
     pub base__: IOfflineFilesEvents3,
     pub PrefetchCloseHandleBegin: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub PrefetchCloseHandleEnd: unsafe extern "system" fn(this: *mut *mut Self, dwclosedhandlecount: u32, dwopenhandlecount: u32, hrresult: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IOfflineFilesEvents4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3688274718, data2: 51154, data3: 18238, data4: [179, 95, 157, 140, 36, 192, 196, 132] };
 }
 #[repr(C)]
 pub struct IOfflineFilesEventsFilter {
@@ -230,6 +269,9 @@ pub struct IOfflineFilesEventsFilter {
     pub GetPathFilter: unsafe extern "system" fn(this: *mut *mut Self, ppszfilter: *mut ::windows_sys::core::PWSTR, pmatch: *mut OFFLINEFILES_PATHFILTER_MATCH) -> ::windows_sys::core::HRESULT,
     pub GetIncludedEvents: unsafe extern "system" fn(this: *mut *mut Self, celements: u32, prgevents: *mut OFFLINEFILES_EVENTS, pcevents: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetExcludedEvents: unsafe extern "system" fn(this: *mut *mut Self, celements: u32, prgevents: *mut OFFLINEFILES_EVENTS, pcevents: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IOfflineFilesEventsFilter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 872173083, data2: 1814, data3: 16634, data4: [186, 101, 110, 98, 168, 74, 132, 111] };
 }
 #[repr(C)]
 pub struct IOfflineFilesFileItem {
@@ -243,6 +285,9 @@ pub struct IOfflineFilesFileItem {
     #[cfg(not(feature = "Win32_Foundation"))]
     IsEncrypted: usize,
 }
+impl ::windows_sys::core::Interface for IOfflineFilesFileItem {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2382028461, data2: 9922, data3: 20223, data4: [138, 114, 107, 80, 114, 61, 154, 0] };
+}
 #[repr(C)]
 pub struct IOfflineFilesFileSysInfo {
     pub base__: ::windows_sys::core::IUnknown,
@@ -253,6 +298,9 @@ pub struct IOfflineFilesFileSysInfo {
     GetTimes: usize,
     pub GetFileSize: unsafe extern "system" fn(this: *mut *mut Self, copy: OFFLINEFILES_ITEM_COPY, psize: *mut i64) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IOfflineFilesFileSysInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3155826239, data2: 31741, data3: 19848, data4: [156, 102, 150, 234, 154, 106, 61, 107] };
+}
 #[repr(C)]
 pub struct IOfflineFilesGhostInfo {
     pub base__: ::windows_sys::core::IUnknown,
@@ -260,6 +308,9 @@ pub struct IOfflineFilesGhostInfo {
     pub IsGhosted: unsafe extern "system" fn(this: *mut *mut Self, pbghosted: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     IsGhosted: usize,
+}
+impl ::windows_sys::core::Interface for IOfflineFilesGhostInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 722064524, data2: 35509, data3: 17999, data4: [167, 85, 165, 157, 146, 249, 148, 41] };
 }
 #[repr(C)]
 pub struct IOfflineFilesItem {
@@ -273,11 +324,17 @@ pub struct IOfflineFilesItem {
     #[cfg(not(feature = "Win32_Foundation"))]
     IsMarkedForDeletion: usize,
 }
+impl ::windows_sys::core::Interface for IOfflineFilesItem {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1249197478, data2: 57412, data3: 20242, data4: [167, 24, 93, 20, 208, 121, 169, 6] };
+}
 #[repr(C)]
 pub struct IOfflineFilesItemContainer {
     pub base__: ::windows_sys::core::IUnknown,
     pub EnumItems: unsafe extern "system" fn(this: *mut *mut Self, dwqueryflags: u32, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub EnumItemsEx: unsafe extern "system" fn(this: *mut *mut Self, pincludefilefilter: *mut ::core::ffi::c_void, pincludedirfilter: *mut ::core::ffi::c_void, pexcludefilefilter: *mut ::core::ffi::c_void, pexcludedirfilter: *mut ::core::ffi::c_void, dwenumflags: u32, dwqueryflags: u32, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IOfflineFilesItemContainer {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 943124553, data2: 37907, data3: 17885, data4: [191, 70, 181, 170, 168, 45, 195, 16] };
 }
 #[repr(C)]
 pub struct IOfflineFilesItemFilter {
@@ -288,6 +345,9 @@ pub struct IOfflineFilesItemFilter {
     #[cfg(not(feature = "Win32_Foundation"))]
     GetTimeFilter: usize,
     pub GetPatternFilter: unsafe extern "system" fn(this: *mut *mut Self, pszpattern: ::windows_sys::core::PWSTR, cchpattern: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IOfflineFilesItemFilter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4105544300, data2: 56325, data3: 20256, data4: [173, 164, 85, 31, 16, 119, 190, 92] };
 }
 #[repr(C)]
 pub struct IOfflineFilesPinInfo {
@@ -313,6 +373,9 @@ pub struct IOfflineFilesPinInfo {
     #[cfg(not(feature = "Win32_Foundation"))]
     IsPinnedForFolderRedirection: usize,
 }
+impl ::windows_sys::core::Interface for IOfflineFilesPinInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1529546325, data2: 46077, data3: 18813, data4: [173, 235, 189, 21, 107, 200, 53, 91] };
+}
 #[repr(C)]
 pub struct IOfflineFilesPinInfo2 {
     pub base__: IOfflineFilesPinInfo,
@@ -320,6 +383,9 @@ pub struct IOfflineFilesPinInfo2 {
     pub IsPartlyPinned: unsafe extern "system" fn(this: *mut *mut Self, pbpartlypinned: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     IsPartlyPinned: usize,
+}
+impl ::windows_sys::core::Interface for IOfflineFilesPinInfo2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1648122018, data2: 17133, data3: 19159, data4: [182, 154, 15, 27, 48, 167, 45, 13] };
 }
 #[repr(C)]
 pub struct IOfflineFilesProgress {
@@ -334,9 +400,15 @@ pub struct IOfflineFilesProgress {
     QueryAbort: usize,
     pub End: unsafe extern "system" fn(this: *mut *mut Self, hrresult: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IOfflineFilesProgress {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4208341559, data2: 50523, data3: 18705, data4: [152, 80, 188, 249, 109, 76, 151, 158] };
+}
 #[repr(C)]
 pub struct IOfflineFilesServerItem {
     pub base__: IOfflineFilesItem,
+}
+impl ::windows_sys::core::Interface for IOfflineFilesServerItem {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2602341750, data2: 43307, data3: 16721, data4: [142, 158, 124, 123, 62, 194, 224, 22] };
 }
 #[repr(C)]
 pub struct IOfflineFilesSetting {
@@ -363,6 +435,9 @@ pub struct IOfflineFilesSetting {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     GetValue: usize,
 }
+impl ::windows_sys::core::Interface for IOfflineFilesSetting {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3631338487, data2: 62995, data3: 18593, data4: [130, 126, 122, 52, 229, 96, 255, 246] };
+}
 #[repr(C)]
 pub struct IOfflineFilesShareInfo {
     pub base__: ::windows_sys::core::IUnknown,
@@ -373,15 +448,24 @@ pub struct IOfflineFilesShareInfo {
     #[cfg(not(feature = "Win32_Foundation"))]
     IsShareDfsJunction: usize,
 }
+impl ::windows_sys::core::Interface for IOfflineFilesShareInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2076984295, data2: 12750, data3: 19620, data4: [140, 205, 28, 255, 45, 196, 148, 218] };
+}
 #[repr(C)]
 pub struct IOfflineFilesShareItem {
     pub base__: IOfflineFilesItem,
+}
+impl ::windows_sys::core::Interface for IOfflineFilesShareItem {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3132613773, data2: 18436, data3: 16821, data4: [164, 77, 15, 25, 155, 6, 177, 69] };
 }
 #[repr(C)]
 pub struct IOfflineFilesSimpleProgress {
     pub base__: IOfflineFilesProgress,
     pub ItemBegin: unsafe extern "system" fn(this: *mut *mut Self, pszfile: ::windows_sys::core::PCWSTR, presponse: *mut OFFLINEFILES_OP_RESPONSE) -> ::windows_sys::core::HRESULT,
     pub ItemResult: unsafe extern "system" fn(this: *mut *mut Self, pszfile: ::windows_sys::core::PCWSTR, hrresult: ::windows_sys::core::HRESULT, presponse: *mut OFFLINEFILES_OP_RESPONSE) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IOfflineFilesSimpleProgress {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3276767131, data2: 50237, data3: 20381, data4: [167, 118, 192, 235, 109, 229, 212, 1] };
 }
 #[repr(C)]
 pub struct IOfflineFilesSuspend {
@@ -391,6 +475,9 @@ pub struct IOfflineFilesSuspend {
     #[cfg(not(feature = "Win32_Foundation"))]
     SuspendRoot: usize,
 }
+impl ::windows_sys::core::Interface for IOfflineFilesSuspend {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1657034255, data2: 48139, data3: 18634, data4: [173, 157, 52, 203, 82, 141, 153, 169] };
+}
 #[repr(C)]
 pub struct IOfflineFilesSuspendInfo {
     pub base__: ::windows_sys::core::IUnknown,
@@ -399,10 +486,16 @@ pub struct IOfflineFilesSuspendInfo {
     #[cfg(not(feature = "Win32_Foundation"))]
     IsSuspended: usize,
 }
+impl ::windows_sys::core::Interface for IOfflineFilesSuspendInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2757214811, data2: 20124, data3: 19204, data4: [133, 175, 137, 50, 204, 217, 120, 137] };
+}
 #[repr(C)]
 pub struct IOfflineFilesSyncConflictHandler {
     pub base__: ::windows_sys::core::IUnknown,
     pub ResolveConflict: unsafe extern "system" fn(this: *mut *mut Self, pszpath: ::windows_sys::core::PCWSTR, fstateknown: u32, state: OFFLINEFILES_SYNC_STATE, fchangedetails: u32, pconflictresolution: *mut OFFLINEFILES_SYNC_CONFLICT_RESOLVE, ppsznewname: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IOfflineFilesSyncConflictHandler {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3067957394, data2: 50780, data3: 18102, data4: [151, 184, 250, 221, 8, 231, 225, 190] };
 }
 #[repr(C)]
 pub struct IOfflineFilesSyncErrorInfo {
@@ -421,6 +514,9 @@ pub struct IOfflineFilesSyncErrorInfo {
     pub GetRemoteInfo: unsafe extern "system" fn(this: *mut *mut Self, ppinfo: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetOriginalInfo: unsafe extern "system" fn(this: *mut *mut Self, ppinfo: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IOfflineFilesSyncErrorInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1509514822, data2: 60244, data3: 18897, data4: [190, 118, 222, 149, 69, 141, 1, 176] };
+}
 #[repr(C)]
 pub struct IOfflineFilesSyncErrorItemInfo {
     pub base__: ::windows_sys::core::IUnknown,
@@ -431,11 +527,17 @@ pub struct IOfflineFilesSyncErrorItemInfo {
     GetFileTimes: usize,
     pub GetFileSize: unsafe extern "system" fn(this: *mut *mut Self, psize: *mut i64) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IOfflineFilesSyncErrorItemInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3973820173, data2: 27160, data3: 19797, data4: [128, 23, 16, 143, 118, 96, 186, 68] };
+}
 #[repr(C)]
 pub struct IOfflineFilesSyncProgress {
     pub base__: IOfflineFilesProgress,
     pub SyncItemBegin: unsafe extern "system" fn(this: *mut *mut Self, pszfile: ::windows_sys::core::PCWSTR, presponse: *mut OFFLINEFILES_OP_RESPONSE) -> ::windows_sys::core::HRESULT,
     pub SyncItemResult: unsafe extern "system" fn(this: *mut *mut Self, pszfile: ::windows_sys::core::PCWSTR, hrresult: ::windows_sys::core::HRESULT, perrorinfo: *mut ::core::ffi::c_void, presponse: *mut OFFLINEFILES_OP_RESPONSE) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IOfflineFilesSyncProgress {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1764881562, data2: 28615, data3: 19483, data4: [178, 101, 86, 121, 63, 196, 81, 183] };
 }
 #[repr(C)]
 pub struct IOfflineFilesTransparentCacheInfo {
@@ -444,6 +546,9 @@ pub struct IOfflineFilesTransparentCacheInfo {
     pub IsTransparentlyCached: unsafe extern "system" fn(this: *mut *mut Self, pbtransparentlycached: *mut super::super::Foundation::BOOL) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     IsTransparentlyCached: usize,
+}
+impl ::windows_sys::core::Interface for IOfflineFilesTransparentCacheInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3165604353, data2: 23400, data3: 19286, data4: [166, 161, 141, 39, 134, 237, 232, 227] };
 }
 #[doc = "*Required features: `\"Win32_Storage_OfflineFiles\"`*"]
 pub type OFFLINEFILES_CACHING_MODE = i32;

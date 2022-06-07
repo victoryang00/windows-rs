@@ -18,6 +18,9 @@ pub struct IPhotoImportDeleteImportedItemsFromSourceResult {
     pub TotalCount: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
     pub TotalSizeInBytes: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u64) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPhotoImportDeleteImportedItemsFromSourceResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4108391160, data2: 33853, data3: 17034, data4: [161, 166, 129, 81, 2, 146, 176, 174] };
+}
 #[repr(C)]
 pub struct IPhotoImportFindItemsResult {
     pub base__: ::windows_sys::core::IInspectable,
@@ -76,6 +79,9 @@ pub struct IPhotoImportFindItemsResult {
     #[cfg(not(feature = "Foundation"))]
     RemoveItemImported: usize,
 }
+impl ::windows_sys::core::Interface for IPhotoImportFindItemsResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 957736519, data2: 27768, data3: 18731, data4: [132, 78, 143, 229, 232, 246, 191, 185] };
+}
 #[repr(C)]
 pub struct IPhotoImportFindItemsResult2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -83,6 +89,9 @@ pub struct IPhotoImportFindItemsResult2 {
     pub AddItemsInDateRangeToSelection: unsafe extern "system" fn(this: *mut *mut Self, rangestart: super::super::Foundation::DateTime, rangelength: super::super::Foundation::TimeSpan) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     AddItemsInDateRangeToSelection: usize,
+}
+impl ::windows_sys::core::Interface for IPhotoImportFindItemsResult2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4225591867, data2: 60665, data3: 16490, data4: [129, 94, 80, 21, 98, 91, 10, 136] };
 }
 #[repr(C)]
 pub struct IPhotoImportImportItemsResult {
@@ -107,6 +116,9 @@ pub struct IPhotoImportImportItemsResult {
     pub DeleteImportedItemsFromSourceAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     DeleteImportedItemsFromSourceAsync: usize,
+}
+impl ::windows_sys::core::Interface for IPhotoImportImportItemsResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3839161464, data2: 54297, data3: 17475, data4: [168, 78, 240, 106, 133, 12, 11, 0] };
 }
 #[repr(C)]
 pub struct IPhotoImportItem {
@@ -143,15 +155,24 @@ pub struct IPhotoImportItem {
     #[cfg(not(feature = "Foundation_Collections"))]
     DeletedFileNames: usize,
 }
+impl ::windows_sys::core::Interface for IPhotoImportItem {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2849013366, data2: 39932, data3: 17336, data4: [179, 86, 99, 59, 106, 152, 140, 158] };
+}
 #[repr(C)]
 pub struct IPhotoImportItem2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub Path: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPhotoImportItem2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4043650309, data2: 62779, data3: 18083, data4: [158, 48, 54, 16, 121, 26, 145, 16] };
+}
 #[repr(C)]
 pub struct IPhotoImportItemImportedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub ImportedItem: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPhotoImportItemImportedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1120612317, data2: 32104, data3: 18357, data4: [188, 124, 206, 183, 62, 12, 119, 220] };
 }
 #[repr(C)]
 pub struct IPhotoImportManagerStatics {
@@ -168,6 +189,9 @@ pub struct IPhotoImportManagerStatics {
     pub GetPendingOperations: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     GetPendingOperations: usize,
+}
+impl ::windows_sys::core::Interface for IPhotoImportManagerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 661753917, data2: 41030, data3: 20230, data4: [155, 156, 191, 214, 98, 232, 50, 135] };
 }
 #[repr(C)]
 pub struct IPhotoImportOperation {
@@ -187,10 +211,16 @@ pub struct IPhotoImportOperation {
     #[cfg(not(feature = "Foundation"))]
     ContinueDeletingImportedItemsFromSourceAsync: usize,
 }
+impl ::windows_sys::core::Interface for IPhotoImportOperation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3656882148, data2: 41114, data3: 20196, data4: [164, 177, 32, 148, 2, 119, 165, 190] };
+}
 #[repr(C)]
 pub struct IPhotoImportSelectionChangedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub IsSelectionEmpty: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPhotoImportSelectionChangedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 273028994, data2: 64157, data3: 19504, data4: [139, 201, 77, 100, 145, 21, 114, 213] };
 }
 #[repr(C)]
 pub struct IPhotoImportSession {
@@ -216,6 +246,9 @@ pub struct IPhotoImportSession {
     #[cfg(not(feature = "Foundation"))]
     FindItemsAsync: usize,
 }
+impl ::windows_sys::core::Interface for IPhotoImportSession {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2858652014, data2: 60635, data3: 20222, data4: [148, 198, 95, 92, 175, 227, 76, 251] };
+}
 #[repr(C)]
 pub struct IPhotoImportSession2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -223,6 +256,9 @@ pub struct IPhotoImportSession2 {
     pub SubfolderDateFormat: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut PhotoImportSubfolderDateFormat) -> ::windows_sys::core::HRESULT,
     pub SetRememberDeselectedItems: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
     pub RememberDeselectedItems: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPhotoImportSession2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 710043408, data2: 16070, data3: 18077, data4: [163, 117, 43, 159, 71, 133, 57, 30] };
 }
 #[repr(C)]
 pub struct IPhotoImportSidecar {
@@ -233,6 +269,9 @@ pub struct IPhotoImportSidecar {
     pub Date: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Foundation::DateTime) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     Date: usize,
+}
+impl ::windows_sys::core::Interface for IPhotoImportSidecar {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1188550487, data2: 63490, data3: 17607, data4: [156, 152, 122, 113, 244, 188, 20, 134] };
 }
 #[repr(C)]
 pub struct IPhotoImportSource {
@@ -270,6 +309,9 @@ pub struct IPhotoImportSource {
     Thumbnail: usize,
     pub CreateImportSession: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IPhotoImportSource {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 529441630, data2: 5211, data3: 19670, data4: [135, 241, 84, 150, 90, 152, 47, 239] };
+}
 #[repr(C)]
 pub struct IPhotoImportSourceStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -282,6 +324,9 @@ pub struct IPhotoImportSourceStatics {
     #[cfg(not(all(feature = "Foundation", feature = "Storage")))]
     FromFolderAsync: usize,
 }
+impl ::windows_sys::core::Interface for IPhotoImportSourceStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 86566278, data2: 13016, data3: 18044, data4: [140, 238, 35, 161, 178, 244, 62, 133] };
+}
 #[repr(C)]
 pub struct IPhotoImportStorageMedium {
     pub base__: ::windows_sys::core::IInspectable,
@@ -293,6 +338,9 @@ pub struct IPhotoImportStorageMedium {
     pub CapacityInBytes: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u64) -> ::windows_sys::core::HRESULT,
     pub AvailableSpaceInBytes: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u64) -> ::windows_sys::core::HRESULT,
     pub Refresh: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IPhotoImportStorageMedium {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4072255635, data2: 64645, data3: 18559, data4: [135, 194, 88, 214, 117, 208, 91, 7] };
 }
 #[repr(C)]
 pub struct IPhotoImportVideoSegment {
@@ -308,6 +356,9 @@ pub struct IPhotoImportVideoSegment {
     pub Sidecars: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     Sidecars: usize,
+}
+impl ::windows_sys::core::Interface for IPhotoImportVideoSegment {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1648099977, data2: 12826, data3: 16856, data4: [145, 102, 140, 98, 163, 51, 39, 108] };
 }
 #[doc = "*Required features: `\"Media_Import\"`*"]
 #[repr(transparent)]

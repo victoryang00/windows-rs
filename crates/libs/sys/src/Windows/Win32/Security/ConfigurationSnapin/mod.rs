@@ -10,6 +10,9 @@ pub struct ISceSvcAttachmentData {
     pub FreeBuffer: unsafe extern "system" fn(this: *mut *mut Self, pvdata: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub CloseHandle: unsafe extern "system" fn(this: *mut *mut Self, scesvchandle: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ISceSvcAttachmentData {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 398680030, data2: 8205, data3: 4561, data4: [175, 251, 0, 192, 79, 185, 132, 249] };
+}
 #[repr(C)]
 pub struct ISceSvcAttachmentPersistInfo {
     pub base__: ::windows_sys::core::IUnknown,
@@ -19,6 +22,9 @@ pub struct ISceSvcAttachmentPersistInfo {
     Save: usize,
     pub IsDirty: unsafe extern "system" fn(this: *mut *mut Self, lptemplatename: *mut i8) -> ::windows_sys::core::HRESULT,
     pub FreeBuffer: unsafe extern "system" fn(this: *mut *mut Self, pvdata: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISceSvcAttachmentPersistInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1838211280, data2: 8205, data3: 4561, data4: [175, 251, 0, 192, 79, 185, 132, 249] };
 }
 #[doc = "*Required features: `\"Win32_Security_ConfigurationSnapin\"`*"]
 pub type PFSCE_FREE_INFO = ::core::option::Option<unsafe extern "system" fn(pvserviceinfo: *mut ::core::ffi::c_void) -> u32>;

@@ -529,6 +529,9 @@ pub struct IAdvancedCapturedPhoto {
     Mode: usize,
     pub Context: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAdvancedCapturedPhoto {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4034032267, data2: 45714, data3: 17553, data4: [157, 65, 153, 128, 122, 85, 11, 191] };
+}
 #[repr(C)]
 pub struct IAdvancedCapturedPhoto2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -536,6 +539,9 @@ pub struct IAdvancedCapturedPhoto2 {
     pub FrameBoundsRelativeToReferencePhoto: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     FrameBoundsRelativeToReferencePhoto: usize,
+}
+impl ::windows_sys::core::Interface for IAdvancedCapturedPhoto2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 416247000, data2: 53246, data3: 17112, data4: [129, 4, 1, 123, 179, 24, 244, 161] };
 }
 #[repr(C)]
 pub struct IAdvancedPhotoCapture {
@@ -569,6 +575,9 @@ pub struct IAdvancedPhotoCapture {
     #[cfg(not(feature = "Foundation"))]
     FinishAsync: usize,
 }
+impl ::windows_sys::core::Interface for IAdvancedPhotoCapture {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2214570746, data2: 26215, data3: 17628, data4: [151, 60, 166, 188, 229, 150, 170, 15] };
+}
 #[repr(C)]
 pub struct IAppBroadcastBackgroundService {
     pub base__: ::windows_sys::core::IInspectable,
@@ -592,6 +601,9 @@ pub struct IAppBroadcastBackgroundService {
     #[cfg(not(feature = "Foundation"))]
     RemoveHeartbeatRequested: usize,
     pub TitleId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAppBroadcastBackgroundService {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3134318378, data2: 64148, data3: 18169, data4: [149, 252, 215, 21, 17, 205, 167, 11] };
 }
 #[repr(C)]
 pub struct IAppBroadcastBackgroundService2 {
@@ -625,6 +637,9 @@ pub struct IAppBroadcastBackgroundService2 {
     pub RemoveBroadcastChannelChanged: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     RemoveBroadcastChannelChanged: usize,
+}
+impl ::windows_sys::core::Interface for IAppBroadcastBackgroundService2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4237085631, data2: 21833, data3: 19335, data4: [149, 159, 35, 202, 64, 31, 212, 115] };
 }
 #[repr(C)]
 pub struct IAppBroadcastBackgroundServiceSignInInfo {
@@ -661,6 +676,9 @@ pub struct IAppBroadcastBackgroundServiceSignInInfo {
     #[cfg(not(feature = "Foundation"))]
     RemoveSignInStateChanged: usize,
 }
+impl ::windows_sys::core::Interface for IAppBroadcastBackgroundServiceSignInInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1584616053, data2: 35016, data3: 20170, data4: [137, 186, 72, 37, 152, 93, 184, 128] };
+}
 #[repr(C)]
 pub struct IAppBroadcastBackgroundServiceSignInInfo2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -672,6 +690,9 @@ pub struct IAppBroadcastBackgroundServiceSignInInfo2 {
     pub RemoveUserNameChanged: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     RemoveUserNameChanged: usize,
+}
+impl ::windows_sys::core::Interface for IAppBroadcastBackgroundServiceSignInInfo2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2432968796, data2: 25295, data3: 19004, data4: [167, 238, 174, 181, 7, 64, 70, 69] };
 }
 #[repr(C)]
 pub struct IAppBroadcastBackgroundServiceStreamInfo {
@@ -709,16 +730,25 @@ pub struct IAppBroadcastBackgroundServiceStreamInfo {
     #[cfg(not(feature = "Foundation"))]
     RemoveVideoEncodingBitrateChanged: usize,
 }
+impl ::windows_sys::core::Interface for IAppBroadcastBackgroundServiceStreamInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 836502204, data2: 39178, data3: 18692, data4: [170, 150, 254, 54, 67, 129, 241, 54] };
+}
 #[repr(C)]
 pub struct IAppBroadcastBackgroundServiceStreamInfo2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub ReportProblemWithStream: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAppBroadcastBackgroundServiceStreamInfo2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3172900717, data2: 38108, data3: 20430, data4: [149, 65, 169, 241, 41, 89, 99, 52] };
 }
 #[repr(C)]
 pub struct IAppBroadcastCameraCaptureStateChangedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub State: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut AppBroadcastCameraCaptureState) -> ::windows_sys::core::HRESULT,
     pub ErrorCode: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAppBroadcastCameraCaptureStateChangedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 506678480, data2: 47234, data3: 19336, data4: [134, 146, 5, 153, 154, 206, 183, 15] };
 }
 #[repr(C)]
 pub struct IAppBroadcastGlobalSettings {
@@ -748,11 +778,17 @@ pub struct IAppBroadcastGlobalSettings {
     pub SetIsCursorImageCaptureEnabled: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
     pub IsCursorImageCaptureEnabled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAppBroadcastGlobalSettings {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2999658405, data2: 28924, data3: 19991, data4: [128, 189, 107, 160, 253, 63, 243, 160] };
+}
 #[repr(C)]
 pub struct IAppBroadcastHeartbeatRequestedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub SetHandled: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
     pub Handled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAppBroadcastHeartbeatRequestedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3466936963, data2: 61009, data3: 19903, data4: [148, 114, 121, 169, 237, 78, 33, 101] };
 }
 #[repr(C)]
 pub struct IAppBroadcastManagerStatics {
@@ -762,11 +798,17 @@ pub struct IAppBroadcastManagerStatics {
     pub GetProviderSettings: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub ApplyProviderSettings: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAppBroadcastManagerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 911081867, data2: 7758, data3: 16671, data4: [171, 62, 146, 149, 152, 68, 193, 86] };
+}
 #[repr(C)]
 pub struct IAppBroadcastMicrophoneCaptureStateChangedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub State: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut AppBroadcastMicrophoneCaptureState) -> ::windows_sys::core::HRESULT,
     pub ErrorCode: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAppBroadcastMicrophoneCaptureStateChangedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2825573865, data2: 37952, data3: 18696, data4: [157, 9, 101, 183, 227, 21, 215, 149] };
 }
 #[repr(C)]
 pub struct IAppBroadcastPlugIn {
@@ -779,6 +821,9 @@ pub struct IAppBroadcastPlugIn {
     Logo: usize,
     pub DisplayName: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAppBroadcastPlugIn {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1376525926, data2: 25875, data3: 17780, data4: [172, 84, 35, 183, 151, 41, 97, 91] };
+}
 #[repr(C)]
 pub struct IAppBroadcastPlugInManager {
     pub base__: ::windows_sys::core::IInspectable,
@@ -790,6 +835,9 @@ pub struct IAppBroadcastPlugInManager {
     pub DefaultPlugIn: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetDefaultPlugIn: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAppBroadcastPlugInManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3847281017, data2: 10145, data3: 18855, data4: [187, 244, 215, 169, 233, 208, 118, 104] };
+}
 #[repr(C)]
 pub struct IAppBroadcastPlugInManagerStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -799,10 +847,16 @@ pub struct IAppBroadcastPlugInManagerStatics {
     #[cfg(not(feature = "System"))]
     GetForUser: usize,
 }
+impl ::windows_sys::core::Interface for IAppBroadcastPlugInManagerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4066663456, data2: 23670, data3: 19676, data4: [147, 100, 130, 254, 158, 182, 83, 77] };
+}
 #[repr(C)]
 pub struct IAppBroadcastPlugInStateChangedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub PlugInState: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut AppBroadcastPlugInState) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAppBroadcastPlugInStateChangedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1216467186, data2: 43973, data3: 20422, data4: [132, 176, 137, 55, 11, 180, 114, 18] };
 }
 #[repr(C)]
 pub struct IAppBroadcastPreview {
@@ -823,11 +877,17 @@ pub struct IAppBroadcastPreview {
     RemovePreviewStateChanged: usize,
     pub PreviewStreamReader: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAppBroadcastPreview {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 347475802, data2: 28234, data3: 19328, data4: [161, 79, 103, 238, 119, 209, 83, 231] };
+}
 #[repr(C)]
 pub struct IAppBroadcastPreviewStateChangedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub PreviewState: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut AppBroadcastPreviewState) -> ::windows_sys::core::HRESULT,
     pub ErrorCode: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAppBroadcastPreviewStateChangedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1515713246, data2: 36330, data3: 20102, data4: [144, 173, 3, 252, 38, 185, 101, 60] };
 }
 #[repr(C)]
 pub struct IAppBroadcastPreviewStreamReader {
@@ -853,6 +913,9 @@ pub struct IAppBroadcastPreviewStreamReader {
     #[cfg(not(feature = "Foundation"))]
     RemoveVideoFrameArrived: usize,
 }
+impl ::windows_sys::core::Interface for IAppBroadcastPreviewStreamReader {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2451737936, data2: 56127, data3: 16552, data4: [140, 212, 244, 227, 113, 221, 171, 55] };
+}
 #[repr(C)]
 pub struct IAppBroadcastPreviewStreamVideoFrame {
     pub base__: ::windows_sys::core::IInspectable,
@@ -861,6 +924,9 @@ pub struct IAppBroadcastPreviewStreamVideoFrame {
     pub VideoBuffer: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Storage_Streams"))]
     VideoBuffer: usize,
+}
+impl ::windows_sys::core::Interface for IAppBroadcastPreviewStreamVideoFrame {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 17809057, data2: 38142, data3: 17561, data4: [184, 192, 141, 36, 66, 121, 251, 18] };
 }
 #[repr(C)]
 pub struct IAppBroadcastPreviewStreamVideoHeader {
@@ -879,6 +945,9 @@ pub struct IAppBroadcastPreviewStreamVideoHeader {
     Duration: usize,
     pub FrameId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u64) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAppBroadcastPreviewStreamVideoHeader {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2347720979, data2: 55940, data3: 17561, data4: [167, 171, 135, 17, 140, 180, 161, 87] };
+}
 #[repr(C)]
 pub struct IAppBroadcastProviderSettings {
     pub base__: ::windows_sys::core::IInspectable,
@@ -896,6 +965,9 @@ pub struct IAppBroadcastProviderSettings {
     pub VideoEncodingBitrateMode: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut AppBroadcastVideoEncodingBitrateMode) -> ::windows_sys::core::HRESULT,
     pub SetVideoEncodingResolutionMode: unsafe extern "system" fn(this: *mut *mut Self, value: AppBroadcastVideoEncodingResolutionMode) -> ::windows_sys::core::HRESULT,
     pub VideoEncodingResolutionMode: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut AppBroadcastVideoEncodingResolutionMode) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAppBroadcastProviderSettings {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3272335202, data2: 39240, data3: 17807, data4: [173, 80, 170, 6, 236, 3, 218, 8] };
 }
 #[repr(C)]
 pub struct IAppBroadcastServices {
@@ -922,11 +994,17 @@ pub struct IAppBroadcastServices {
     StartPreview: usize,
     pub State: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAppBroadcastServices {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2254484694, data2: 38555, data3: 20028, data4: [172, 58, 139, 4, 46, 228, 238, 99] };
+}
 #[repr(C)]
 pub struct IAppBroadcastSignInStateChangedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub SignInState: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut AppBroadcastSignInState) -> ::windows_sys::core::HRESULT,
     pub Result: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut AppBroadcastSignInResult) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAppBroadcastSignInStateChangedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 45519524, data2: 22809, data3: 19102, data4: [141, 94, 201, 187, 13, 211, 55, 122] };
 }
 #[repr(C)]
 pub struct IAppBroadcastState {
@@ -1018,6 +1096,9 @@ pub struct IAppBroadcastState {
     #[cfg(not(feature = "Foundation"))]
     RemoveCaptureTargetClosed: usize,
 }
+impl ::windows_sys::core::Interface for IAppBroadcastState {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3993503085, data2: 32921, data3: 19933, data4: [146, 46, 197, 109, 172, 88, 171, 251] };
+}
 #[repr(C)]
 pub struct IAppBroadcastStreamAudioFrame {
     pub base__: ::windows_sys::core::IInspectable,
@@ -1026,6 +1107,9 @@ pub struct IAppBroadcastStreamAudioFrame {
     pub AudioBuffer: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Storage_Streams"))]
     AudioBuffer: usize,
+}
+impl ::windows_sys::core::Interface for IAppBroadcastStreamAudioFrame {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4020980424, data2: 8634, data3: 17727, data4: [139, 183, 94, 147, 138, 46, 154, 116] };
 }
 #[repr(C)]
 pub struct IAppBroadcastStreamAudioHeader {
@@ -1044,6 +1128,9 @@ pub struct IAppBroadcastStreamAudioHeader {
     Duration: usize,
     pub HasDiscontinuity: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub FrameId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u64) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAppBroadcastStreamAudioHeader {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3206653296, data2: 27512, data3: 16918, data4: [159, 7, 90, 255, 82, 86, 241, 183] };
 }
 #[repr(C)]
 pub struct IAppBroadcastStreamReader {
@@ -1077,10 +1164,16 @@ pub struct IAppBroadcastStreamReader {
     #[cfg(not(feature = "Foundation"))]
     RemoveVideoFrameArrived: usize,
 }
+impl ::windows_sys::core::Interface for IAppBroadcastStreamReader {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3006840057, data2: 13156, data3: 17504, data4: [181, 241, 60, 194, 121, 106, 138, 162] };
+}
 #[repr(C)]
 pub struct IAppBroadcastStreamStateChangedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub StreamState: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut AppBroadcastStreamState) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAppBroadcastStreamStateChangedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1359521587, data2: 53256, data3: 19081, data4: [147, 190, 88, 174, 217, 97, 55, 78] };
 }
 #[repr(C)]
 pub struct IAppBroadcastStreamVideoFrame {
@@ -1090,6 +1183,9 @@ pub struct IAppBroadcastStreamVideoFrame {
     pub VideoBuffer: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Storage_Streams"))]
     VideoBuffer: usize,
+}
+impl ::windows_sys::core::Interface for IAppBroadcastStreamVideoFrame {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 261607211, data2: 51684, data3: 20104, data4: [129, 148, 216, 20, 203, 213, 133, 216] };
 }
 #[repr(C)]
 pub struct IAppBroadcastStreamVideoHeader {
@@ -1110,15 +1206,24 @@ pub struct IAppBroadcastStreamVideoHeader {
     pub HasDiscontinuity: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub FrameId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u64) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAppBroadcastStreamVideoHeader {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 194952910, data2: 32306, data3: 17197, data4: [140, 162, 54, 191, 16, 185, 244, 98] };
+}
 #[repr(C)]
 pub struct IAppBroadcastTriggerDetails {
     pub base__: ::windows_sys::core::IInspectable,
     pub BackgroundService: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAppBroadcastTriggerDetails {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3739986741, data2: 60510, data3: 19855, data4: [177, 192, 93, 166, 232, 199, 86, 56] };
+}
 #[repr(C)]
 pub struct IAppBroadcastViewerCountChangedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub ViewerCount: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAppBroadcastViewerCountChangedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3873511461, data2: 21505, data3: 19166, data4: [139, 210, 193, 78, 206, 230, 128, 125] };
 }
 #[repr(C)]
 pub struct IAppCapture {
@@ -1133,6 +1238,9 @@ pub struct IAppCapture {
     pub RemoveCapturingChanged: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     RemoveCapturingChanged: usize,
+}
+impl ::windows_sys::core::Interface for IAppCapture {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2538198099, data2: 41626, data3: 17901, data4: [143, 41, 34, 208, 153, 66, 207, 247] };
 }
 #[repr(C)]
 pub struct IAppCaptureAlternateShortcutKeys {
@@ -1218,6 +1326,9 @@ pub struct IAppCaptureAlternateShortcutKeys {
     #[cfg(not(feature = "System"))]
     ToggleRecordingIndicatorKeyModifiers: usize,
 }
+impl ::windows_sys::core::Interface for IAppCaptureAlternateShortcutKeys {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 434692335, data2: 9068, data3: 16633, data4: [179, 143, 155, 125, 214, 93, 28, 204] };
+}
 #[repr(C)]
 pub struct IAppCaptureAlternateShortcutKeys2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -1237,6 +1348,9 @@ pub struct IAppCaptureAlternateShortcutKeys2 {
     pub ToggleMicrophoneCaptureKeyModifiers: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::System::VirtualKeyModifiers) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "System"))]
     ToggleMicrophoneCaptureKeyModifiers: usize,
+}
+impl ::windows_sys::core::Interface for IAppCaptureAlternateShortcutKeys2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3278278800, data2: 56599, data3: 18416, data4: [149, 229, 206, 66, 40, 108, 243, 56] };
 }
 #[repr(C)]
 pub struct IAppCaptureAlternateShortcutKeys3 {
@@ -1274,6 +1388,9 @@ pub struct IAppCaptureAlternateShortcutKeys3 {
     #[cfg(not(feature = "System"))]
     ToggleBroadcastKeyModifiers: usize,
 }
+impl ::windows_sys::core::Interface for IAppCaptureAlternateShortcutKeys3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2072069260, data2: 16782, data3: 18076, data4: [164, 154, 69, 181, 151, 200, 38, 182] };
+}
 #[repr(C)]
 pub struct IAppCaptureDurationGeneratedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
@@ -1281,6 +1398,9 @@ pub struct IAppCaptureDurationGeneratedEventArgs {
     pub Duration: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Foundation::TimeSpan) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     Duration: usize,
+}
+impl ::windows_sys::core::Interface for IAppCaptureDurationGeneratedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3254081083, data2: 65441, data3: 17609, data4: [151, 95, 39, 251, 235, 85, 59, 53] };
 }
 #[repr(C)]
 pub struct IAppCaptureFileGeneratedEventArgs {
@@ -1290,11 +1410,17 @@ pub struct IAppCaptureFileGeneratedEventArgs {
     #[cfg(not(feature = "Storage"))]
     File: usize,
 }
+impl ::windows_sys::core::Interface for IAppCaptureFileGeneratedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1099561972, data2: 18014, data3: 17855, data4: [144, 127, 22, 91, 63, 178, 55, 88] };
+}
 #[repr(C)]
 pub struct IAppCaptureManagerStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub GetCurrentSettings: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub ApplySettings: unsafe extern "system" fn(this: *mut *mut Self, appcapturesettings: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAppCaptureManagerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2107522727, data2: 25218, data3: 18229, data4: [141, 78, 170, 69, 249, 15, 103, 35] };
 }
 #[repr(C)]
 pub struct IAppCaptureMetadataWriter {
@@ -1317,11 +1443,17 @@ pub struct IAppCaptureMetadataWriter {
     #[cfg(not(feature = "Foundation"))]
     RemoveMetadataPurged: usize,
 }
+impl ::windows_sys::core::Interface for IAppCaptureMetadataWriter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3771615351, data2: 39599, data3: 18100, data4: [173, 49, 106, 96, 180, 65, 199, 128] };
+}
 #[repr(C)]
 pub struct IAppCaptureMicrophoneCaptureStateChangedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub State: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut AppCaptureMicrophoneCaptureState) -> ::windows_sys::core::HRESULT,
     pub ErrorCode: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAppCaptureMicrophoneCaptureStateChangedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 843916446, data2: 17852, data3: 19509, data4: [188, 53, 228, 105, 252, 122, 105, 224] };
 }
 #[repr(C)]
 pub struct IAppCaptureRecordOperation {
@@ -1369,11 +1501,17 @@ pub struct IAppCaptureRecordOperation {
     #[cfg(not(feature = "Foundation"))]
     RemoveFileGenerated: usize,
 }
+impl ::windows_sys::core::Interface for IAppCaptureRecordOperation {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3328188585, data2: 5432, data3: 18780, data4: [155, 187, 43, 168, 112, 236, 88, 97] };
+}
 #[repr(C)]
 pub struct IAppCaptureRecordingStateChangedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub State: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut AppCaptureRecordingState) -> ::windows_sys::core::HRESULT,
     pub ErrorCode: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAppCaptureRecordingStateChangedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 620529426, data2: 58117, data3: 18701, data4: [180, 21, 107, 28, 144, 73, 115, 107] };
 }
 #[repr(C)]
 pub struct IAppCaptureServices {
@@ -1385,6 +1523,9 @@ pub struct IAppCaptureServices {
     RecordTimeSpan: usize,
     pub CanCapture: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub State: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAppCaptureServices {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1157546165, data2: 13557, data3: 20248, data4: [174, 140, 185, 18, 58, 187, 252, 13] };
 }
 #[repr(C)]
 pub struct IAppCaptureSettings {
@@ -1444,17 +1585,26 @@ pub struct IAppCaptureSettings {
     pub IsMemoryConstrained: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub HasHardwareEncoder: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAppCaptureSettings {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 342375046, data2: 34823, data3: 18643, data4: [136, 58, 151, 14, 228, 83, 42, 57] };
+}
 #[repr(C)]
 pub struct IAppCaptureSettings2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub IsGpuConstrained: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub AlternateShortcutKeys: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAppCaptureSettings2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4239970023, data2: 57963, data3: 18287, data4: [155, 26, 236, 52, 45, 42, 143, 222] };
+}
 #[repr(C)]
 pub struct IAppCaptureSettings3 {
     pub base__: ::windows_sys::core::IInspectable,
     pub SetIsMicrophoneCaptureEnabled: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
     pub IsMicrophoneCaptureEnabled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAppCaptureSettings3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2838823678, data2: 35010, data3: 17110, data4: [170, 170, 64, 254, 255, 215, 90, 236] };
 }
 #[repr(C)]
 pub struct IAppCaptureSettings4 {
@@ -1468,6 +1618,9 @@ pub struct IAppCaptureSettings4 {
     pub SetVideoEncodingFrameRateMode: unsafe extern "system" fn(this: *mut *mut Self, value: AppCaptureVideoEncodingFrameRateMode) -> ::windows_sys::core::HRESULT,
     pub VideoEncodingFrameRateMode: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut AppCaptureVideoEncodingFrameRateMode) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAppCaptureSettings4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 130185036, data2: 6785, data3: 18479, data4: [162, 68, 4, 157, 149, 242, 91, 11] };
+}
 #[repr(C)]
 pub struct IAppCaptureSettings5 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -1475,6 +1628,9 @@ pub struct IAppCaptureSettings5 {
     pub IsEchoCancellationEnabled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub SetIsCursorImageCaptureEnabled: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
     pub IsCursorImageCaptureEnabled: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAppCaptureSettings5 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 411649314, data2: 45288, data3: 19360, data4: [143, 19, 62, 170, 95, 164, 1, 59] };
 }
 #[repr(C)]
 pub struct IAppCaptureState {
@@ -1503,10 +1659,16 @@ pub struct IAppCaptureState {
     #[cfg(not(feature = "Foundation"))]
     RemoveCaptureTargetClosed: usize,
 }
+impl ::windows_sys::core::Interface for IAppCaptureState {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1930642290, data2: 54507, data3: 17614, data4: [149, 56, 70, 95, 80, 106, 196, 234] };
+}
 #[repr(C)]
 pub struct IAppCaptureStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub GetForCurrentView: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAppCaptureStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4179811692, data2: 2686, data3: 20084, data4: [139, 32, 156, 31, 144, 45, 8, 161] };
 }
 #[repr(C)]
 pub struct IAppCaptureStatics2 {
@@ -1515,6 +1677,9 @@ pub struct IAppCaptureStatics2 {
     pub SetAllowedAsync: unsafe extern "system" fn(this: *mut *mut Self, allowed: bool, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     SetAllowedAsync: usize,
+}
+impl ::windows_sys::core::Interface for IAppCaptureStatics2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3000533460, data2: 33644, data3: 19876, data4: [175, 215, 250, 204, 4, 30, 28, 243] };
 }
 #[repr(C)]
 pub struct ICameraCaptureUI {
@@ -1525,6 +1690,9 @@ pub struct ICameraCaptureUI {
     pub CaptureFileAsync: unsafe extern "system" fn(this: *mut *mut Self, mode: CameraCaptureUIMode, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Foundation", feature = "Storage")))]
     CaptureFileAsync: usize,
+}
+impl ::windows_sys::core::Interface for ICameraCaptureUI {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1213756736, data2: 28563, data3: 19380, data4: [184, 243, 232, 158, 72, 148, 140, 145] };
 }
 #[repr(C)]
 pub struct ICameraCaptureUIPhotoCaptureSettings {
@@ -1552,6 +1720,9 @@ pub struct ICameraCaptureUIPhotoCaptureSettings {
     pub AllowCropping: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub SetAllowCropping: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ICameraCaptureUIPhotoCaptureSettings {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3119890071, data2: 13426, data3: 18088, data4: [138, 158, 4, 206, 66, 204, 201, 125] };
+}
 #[repr(C)]
 pub struct ICameraCaptureUIVideoCaptureSettings {
     pub base__: ::windows_sys::core::IInspectable,
@@ -1564,16 +1735,25 @@ pub struct ICameraCaptureUIVideoCaptureSettings {
     pub AllowTrimming: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub SetAllowTrimming: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for ICameraCaptureUIVideoCaptureSettings {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1693003039, data2: 41613, data3: 16986, data4: [184, 79, 229, 104, 51, 95, 242, 78] };
+}
 #[repr(C)]
 pub struct ICameraOptionsUIStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub Show: unsafe extern "system" fn(this: *mut *mut Self, mediacapture: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ICameraOptionsUIStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 990731828, data2: 14598, data3: 19325, data4: [148, 108, 123, 222, 132, 68, 153, 174] };
 }
 #[repr(C)]
 pub struct ICapturedFrame {
     pub base__: ::windows_sys::core::IInspectable,
     pub Width: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
     pub Height: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ICapturedFrame {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 500358687, data2: 22299, data3: 17624, data4: [142, 128, 160, 138, 21, 120, 118, 110] };
 }
 #[repr(C)]
 pub struct ICapturedFrame2 {
@@ -1583,6 +1763,9 @@ pub struct ICapturedFrame2 {
     pub BitmapProperties: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Foundation_Collections", feature = "Graphics_Imaging")))]
     BitmapProperties: usize,
+}
+impl ::windows_sys::core::Interface for ICapturedFrame2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1413457617, data2: 48504, data3: 18534, data4: [173, 218, 36, 49, 75, 198, 93, 234] };
 }
 #[repr(C)]
 pub struct ICapturedFrameControlValues {
@@ -1624,6 +1807,9 @@ pub struct ICapturedFrameControlValues {
     #[cfg(not(feature = "Foundation"))]
     ZoomFactor: usize,
 }
+impl ::windows_sys::core::Interface for ICapturedFrameControlValues {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2428918655, data2: 19981, data3: 19620, data4: [136, 45, 122, 20, 79, 237, 10, 144] };
+}
 #[repr(C)]
 pub struct ICapturedFrameControlValues2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -1648,6 +1834,9 @@ pub struct ICapturedFrameControlValues2 {
     #[cfg(not(feature = "Foundation"))]
     WhiteBalanceGain: usize,
 }
+impl ::windows_sys::core::Interface for ICapturedFrameControlValues2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1342909320, data2: 1746, data3: 19111, data4: [167, 219, 211, 122, 247, 51, 33, 216] };
+}
 #[repr(C)]
 pub struct ICapturedFrameWithSoftwareBitmap {
     pub base__: ::windows_sys::core::IInspectable,
@@ -1656,11 +1845,17 @@ pub struct ICapturedFrameWithSoftwareBitmap {
     #[cfg(not(feature = "Graphics_Imaging"))]
     SoftwareBitmap: usize,
 }
+impl ::windows_sys::core::Interface for ICapturedFrameWithSoftwareBitmap {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3046017902, data2: 34051, data3: 18869, data4: [158, 134, 137, 125, 38, 163, 255, 61] };
+}
 #[repr(C)]
 pub struct ICapturedPhoto {
     pub base__: ::windows_sys::core::IInspectable,
     pub Frame: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Thumbnail: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ICapturedPhoto {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2966322778, data2: 53196, data3: 19820, data4: [138, 209, 8, 105, 32, 138, 202, 22] };
 }
 #[repr(C)]
 pub struct IGameBarServices {
@@ -1681,11 +1876,17 @@ pub struct IGameBarServices {
     #[cfg(not(feature = "Foundation"))]
     RemoveCommandReceived: usize,
 }
+impl ::windows_sys::core::Interface for IGameBarServices {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 767470935, data2: 20646, data3: 18846, data4: [140, 108, 211, 48, 167, 49, 23, 150] };
+}
 #[repr(C)]
 pub struct IGameBarServicesCommandEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub Command: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut GameBarCommand) -> ::windows_sys::core::HRESULT,
     pub Origin: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut GameBarCommandOrigin) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IGameBarServicesCommandEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2806130354, data2: 61814, data3: 20431, data4: [143, 187, 207, 105, 139, 46, 184, 224] };
 }
 #[repr(C)]
 pub struct IGameBarServicesManager {
@@ -1699,15 +1900,24 @@ pub struct IGameBarServicesManager {
     #[cfg(not(feature = "Foundation"))]
     RemoveGameBarServicesCreated: usize,
 }
+impl ::windows_sys::core::Interface for IGameBarServicesManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 978033914, data2: 32651, data3: 19552, data4: [157, 187, 11, 205, 38, 45, 255, 198] };
+}
 #[repr(C)]
 pub struct IGameBarServicesManagerGameBarServicesCreatedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub GameBarServices: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IGameBarServicesManagerGameBarServicesCreatedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3991780764, data2: 5182, data3: 18851, data4: [165, 234, 11, 25, 149, 200, 212, 110] };
+}
 #[repr(C)]
 pub struct IGameBarServicesManagerStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub GetDefault: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IGameBarServicesManagerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 885110294, data2: 65317, data3: 18322, data4: [152, 242, 211, 117, 63, 21, 172, 19] };
 }
 #[repr(C)]
 pub struct IGameBarServicesTargetInfo {
@@ -1716,6 +1926,9 @@ pub struct IGameBarServicesTargetInfo {
     pub AppId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub TitleId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub DisplayMode: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut GameBarServicesDisplayMode) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IGameBarServicesTargetInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3022008210, data2: 5649, data3: 19973, data4: [182, 239, 223, 215, 55, 174, 51, 176] };
 }
 #[repr(C)]
 pub struct ILowLagMediaRecording {
@@ -1733,6 +1946,9 @@ pub struct ILowLagMediaRecording {
     #[cfg(not(feature = "Foundation"))]
     FinishAsync: usize,
 }
+impl ::windows_sys::core::Interface for ILowLagMediaRecording {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1103674103, data2: 65343, data3: 18928, data4: [164, 119, 241, 149, 227, 206, 81, 8] };
+}
 #[repr(C)]
 pub struct ILowLagMediaRecording2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -1744,6 +1960,9 @@ pub struct ILowLagMediaRecording2 {
     pub ResumeAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     ResumeAsync: usize,
+}
+impl ::windows_sys::core::Interface for ILowLagMediaRecording2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1667876696, data2: 22084, data3: 16866, data4: [151, 175, 142, 245, 106, 37, 226, 37] };
 }
 #[repr(C)]
 pub struct ILowLagMediaRecording3 {
@@ -1757,6 +1976,9 @@ pub struct ILowLagMediaRecording3 {
     #[cfg(not(feature = "Foundation"))]
     StopWithResultAsync: usize,
 }
+impl ::windows_sys::core::Interface for ILowLagMediaRecording3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1546890002, data2: 18679, data3: 18394, data4: [180, 30, 144, 136, 10, 95, 224, 236] };
+}
 #[repr(C)]
 pub struct ILowLagPhotoCapture {
     pub base__: ::windows_sys::core::IInspectable,
@@ -1768,6 +1990,9 @@ pub struct ILowLagPhotoCapture {
     pub FinishAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     FinishAsync: usize,
+}
+impl ::windows_sys::core::Interface for ILowLagPhotoCapture {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2742178231, data2: 27460, data3: 18237, data4: [143, 36, 247, 3, 214, 192, 236, 68] };
 }
 #[repr(C)]
 pub struct ILowLagPhotoSequenceCapture {
@@ -1792,6 +2017,9 @@ pub struct ILowLagPhotoSequenceCapture {
     pub RemovePhotoCaptured: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     RemovePhotoCaptured: usize,
+}
+impl ::windows_sys::core::Interface for ILowLagPhotoSequenceCapture {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2093172411, data2: 47529, data3: 19601, data4: [143, 250, 40, 126, 156, 102, 134, 105] };
 }
 #[repr(C)]
 pub struct IMediaCapture {
@@ -1874,6 +2102,9 @@ pub struct IMediaCapture {
     pub SetRecordRotation: unsafe extern "system" fn(this: *mut *mut Self, value: VideoRotation) -> ::windows_sys::core::HRESULT,
     pub GetRecordRotation: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut VideoRotation) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMediaCapture {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3323657140, data2: 64272, data3: 18996, data4: [172, 24, 202, 128, 217, 200, 231, 238] };
+}
 #[repr(C)]
 pub struct IMediaCapture2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -1906,6 +2137,9 @@ pub struct IMediaCapture2 {
     #[cfg(not(all(feature = "Foundation_Collections", feature = "Media_MediaProperties")))]
     SetEncodingPropertiesAsync: usize,
 }
+impl ::windows_sys::core::Interface for IMediaCapture2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2630255200, data2: 32161, data3: 16451, data4: [182, 82, 33, 184, 135, 141, 175, 249] };
+}
 #[repr(C)]
 pub struct IMediaCapture3 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -1929,6 +2163,9 @@ pub struct IMediaCapture3 {
     pub RemovePhotoConfirmationCaptured: unsafe extern "system" fn(this: *mut *mut Self, token: super::super::Foundation::EventRegistrationToken) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     RemovePhotoConfirmationCaptured: usize,
+}
+impl ::windows_sys::core::Interface for IMediaCapture3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3558043440, data2: 5476, data3: 18030, data4: [188, 10, 175, 148, 224, 42, 176, 22] };
 }
 #[repr(C)]
 pub struct IMediaCapture4 {
@@ -1983,6 +2220,9 @@ pub struct IMediaCapture4 {
     #[cfg(not(all(feature = "Foundation", feature = "Media_MediaProperties")))]
     PrepareAdvancedPhotoCaptureAsync: usize,
 }
+impl ::windows_sys::core::Interface for IMediaCapture4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3134025686, data2: 64264, data3: 18759, data4: [174, 162, 206, 20, 239, 240, 206, 19] };
+}
 #[repr(C)]
 pub struct IMediaCapture5 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -2015,6 +2255,9 @@ pub struct IMediaCapture5 {
     #[cfg(not(all(feature = "Foundation", feature = "Graphics_Imaging", feature = "Media_Capture_Frames")))]
     CreateFrameReaderWithSubtypeAndSizeAsync: usize,
 }
+impl ::windows_sys::core::Interface for IMediaCapture5 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3665329186, data2: 15003, data3: 18208, data4: [167, 30, 151, 144, 10, 49, 110, 90] };
+}
 #[repr(C)]
 pub struct IMediaCapture6 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -2031,6 +2274,9 @@ pub struct IMediaCapture6 {
     #[cfg(not(all(feature = "Foundation_Collections", feature = "Media_Capture_Frames")))]
     CreateMultiSourceFrameReaderAsync: usize,
 }
+impl ::windows_sys::core::Interface for IMediaCapture6 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 579422397, data2: 19232, data3: 19377, data4: [159, 214, 165, 131, 33, 42, 16, 18] };
+}
 #[repr(C)]
 pub struct IMediaCapture7 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -2039,17 +2285,26 @@ pub struct IMediaCapture7 {
     #[cfg(not(feature = "UI_WindowManagement"))]
     CreateRelativePanelWatcher: usize,
 }
+impl ::windows_sys::core::Interface for IMediaCapture7 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2439639298, data2: 34952, data3: 21530, data4: [149, 188, 36, 228, 212, 98, 84, 42] };
+}
 #[repr(C)]
 pub struct IMediaCaptureDeviceExclusiveControlStatusChangedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub DeviceId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub Status: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut MediaCaptureDeviceExclusiveControlStatus) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMediaCaptureDeviceExclusiveControlStatusChangedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2637140493, data2: 42376, data3: 17350, data4: [137, 214, 90, 211, 34, 175, 0, 106] };
+}
 #[repr(C)]
 pub struct IMediaCaptureFailedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub Message: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub Code: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMediaCaptureFailedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2164122612, data2: 21700, data3: 17088, data4: [141, 25, 206, 161, 168, 124, 161, 139] };
 }
 #[repr(C)]
 pub struct IMediaCaptureFocusChangedEventArgs {
@@ -2058,6 +2313,9 @@ pub struct IMediaCaptureFocusChangedEventArgs {
     pub FocusState: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::Devices::MediaCaptureFocusState) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Media_Devices"))]
     FocusState: usize,
+}
+impl ::windows_sys::core::Interface for IMediaCaptureFocusChangedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2179054719, data2: 8823, data3: 18750, data4: [171, 238, 211, 244, 79, 249, 140, 4] };
 }
 #[repr(C)]
 pub struct IMediaCaptureInitializationSettings {
@@ -2071,6 +2329,9 @@ pub struct IMediaCaptureInitializationSettings {
     pub SetPhotoCaptureSource: unsafe extern "system" fn(this: *mut *mut Self, value: PhotoCaptureSource) -> ::windows_sys::core::HRESULT,
     pub PhotoCaptureSource: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut PhotoCaptureSource) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMediaCaptureInitializationSettings {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2541927024, data2: 60005, data3: 18688, data4: [147, 86, 140, 168, 135, 114, 104, 132] };
+}
 #[repr(C)]
 pub struct IMediaCaptureInitializationSettings2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -2078,6 +2339,9 @@ pub struct IMediaCaptureInitializationSettings2 {
     pub MediaCategory: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut MediaCategory) -> ::windows_sys::core::HRESULT,
     pub SetAudioProcessing: unsafe extern "system" fn(this: *mut *mut Self, value: super::AudioProcessing) -> ::windows_sys::core::HRESULT,
     pub AudioProcessing: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::AudioProcessing) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMediaCaptureInitializationSettings2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1078855206, data2: 51676, data3: 17385, data4: [174, 228, 230, 191, 27, 87, 180, 76] };
 }
 #[repr(C)]
 pub struct IMediaCaptureInitializationSettings3 {
@@ -2099,6 +2363,9 @@ pub struct IMediaCaptureInitializationSettings3 {
     #[cfg(not(feature = "Media_Core"))]
     VideoSource: usize,
 }
+impl ::windows_sys::core::Interface for IMediaCaptureInitializationSettings3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1096831389, data2: 48712, data3: 18224, data4: [129, 4, 12, 246, 233, 233, 121, 72] };
+}
 #[repr(C)]
 pub struct IMediaCaptureInitializationSettings4 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -2110,6 +2377,9 @@ pub struct IMediaCaptureInitializationSettings4 {
     pub SetRecordMediaDescription: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub PhotoMediaDescription: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetPhotoMediaDescription: unsafe extern "system" fn(this: *mut *mut Self, value: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMediaCaptureInitializationSettings4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4110591287, data2: 19639, data3: 19752, data4: [149, 237, 79, 159, 1, 46, 5, 24] };
 }
 #[repr(C)]
 pub struct IMediaCaptureInitializationSettings5 {
@@ -2127,11 +2397,17 @@ pub struct IMediaCaptureInitializationSettings5 {
     pub MemoryPreference: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut MediaCaptureMemoryPreference) -> ::windows_sys::core::HRESULT,
     pub SetMemoryPreference: unsafe extern "system" fn(this: *mut *mut Self, value: MediaCaptureMemoryPreference) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMediaCaptureInitializationSettings5 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3584222136, data2: 9766, data3: 20116, data4: [183, 179, 83, 8, 160, 246, 75, 26] };
+}
 #[repr(C)]
 pub struct IMediaCaptureInitializationSettings6 {
     pub base__: ::windows_sys::core::IInspectable,
     pub AlwaysPlaySystemShutterSound: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub SetAlwaysPlaySystemShutterSound: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMediaCaptureInitializationSettings6 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3001183047, data2: 15793, data3: 19763, data4: [171, 99, 15, 250, 9, 5, 101, 133] };
 }
 #[repr(C)]
 pub struct IMediaCaptureInitializationSettings7 {
@@ -2153,6 +2429,9 @@ pub struct IMediaCaptureInitializationSettings7 {
     #[cfg(not(feature = "Foundation"))]
     SetDeviceUri: usize,
 }
+impl ::windows_sys::core::Interface for IMediaCaptureInitializationSettings7 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1096051047, data2: 62858, data3: 23938, data4: [158, 244, 237, 87, 47, 181, 227, 78] };
+}
 #[repr(C)]
 pub struct IMediaCapturePauseResult {
     pub base__: ::windows_sys::core::IInspectable,
@@ -2161,6 +2440,9 @@ pub struct IMediaCapturePauseResult {
     pub RecordDuration: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Foundation::TimeSpan) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     RecordDuration: usize,
+}
+impl ::windows_sys::core::Interface for IMediaCapturePauseResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2932112547, data2: 17527, data3: 19204, data4: [160, 111, 44, 28, 81, 130, 254, 157] };
 }
 #[repr(C)]
 pub struct IMediaCaptureRelativePanelWatcher {
@@ -2180,6 +2462,9 @@ pub struct IMediaCaptureRelativePanelWatcher {
     pub Start: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Stop: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMediaCaptureRelativePanelWatcher {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2106156390, data2: 1214, data3: 23433, data4: [179, 14, 189, 52, 169, 241, 45, 176] };
+}
 #[repr(C)]
 pub struct IMediaCaptureSettings {
     pub base__: ::windows_sys::core::IInspectable,
@@ -2188,6 +2473,9 @@ pub struct IMediaCaptureSettings {
     pub StreamingCaptureMode: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut StreamingCaptureMode) -> ::windows_sys::core::HRESULT,
     pub PhotoCaptureSource: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut PhotoCaptureSource) -> ::windows_sys::core::HRESULT,
     pub VideoDeviceCharacteristic: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut VideoDeviceCharacteristic) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IMediaCaptureSettings {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 495168254, data2: 27973, data3: 17527, data4: [141, 196, 172, 91, 192, 28, 64, 145] };
 }
 #[repr(C)]
 pub struct IMediaCaptureSettings2 {
@@ -2210,6 +2498,9 @@ pub struct IMediaCaptureSettings2 {
     pub MediaCategory: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut MediaCategory) -> ::windows_sys::core::HRESULT,
     pub AudioProcessing: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::AudioProcessing) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IMediaCaptureSettings2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1872657659, data2: 64159, data3: 19219, data4: [156, 190, 90, 185, 79, 31, 52, 147] };
+}
 #[repr(C)]
 pub struct IMediaCaptureSettings3 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -2217,6 +2508,9 @@ pub struct IMediaCaptureSettings3 {
     pub Direct3D11Device: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Graphics_DirectX_Direct3D11"))]
     Direct3D11Device: usize,
+}
+impl ::windows_sys::core::Interface for IMediaCaptureSettings3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 809265090, data2: 32856, data3: 19227, data4: [184, 119, 140, 46, 243, 82, 132, 64] };
 }
 #[repr(C)]
 pub struct IMediaCaptureStatics {
@@ -2235,6 +2529,9 @@ pub struct IMediaCaptureStatics {
     #[cfg(not(feature = "Foundation_Collections"))]
     FindKnownVideoProfiles: usize,
 }
+impl ::windows_sys::core::Interface for IMediaCaptureStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2901377535, data2: 39405, data3: 17989, data4: [150, 94, 25, 37, 207, 198, 56, 52] };
+}
 #[repr(C)]
 pub struct IMediaCaptureStopResult {
     pub base__: ::windows_sys::core::IInspectable,
@@ -2243,6 +2540,9 @@ pub struct IMediaCaptureStopResult {
     pub RecordDuration: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Foundation::TimeSpan) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     RecordDuration: usize,
+}
+impl ::windows_sys::core::Interface for IMediaCaptureStopResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4191906346, data2: 41106, data3: 19153, data4: [151, 212, 242, 1, 249, 208, 130, 219] };
 }
 #[repr(C)]
 pub struct IMediaCaptureVideoPreview {
@@ -2263,6 +2563,9 @@ pub struct IMediaCaptureVideoPreview {
     pub StopPreviewAsync: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     StopPreviewAsync: usize,
+}
+impl ::windows_sys::core::Interface for IMediaCaptureVideoPreview {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 661811315, data2: 21662, data3: 17535, data4: [162, 10, 79, 3, 196, 121, 216, 192] };
 }
 #[repr(C)]
 pub struct IMediaCaptureVideoProfile {
@@ -2286,6 +2589,9 @@ pub struct IMediaCaptureVideoProfile {
     #[cfg(not(feature = "Foundation_Collections"))]
     GetConcurrency: usize,
 }
+impl ::windows_sys::core::Interface for IMediaCaptureVideoProfile {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 564163519, data2: 41966, data3: 20175, data4: [158, 246, 80, 176, 188, 78, 19, 5] };
+}
 #[repr(C)]
 pub struct IMediaCaptureVideoProfile2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -2297,6 +2603,9 @@ pub struct IMediaCaptureVideoProfile2 {
     pub Properties: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     Properties: usize,
+}
+impl ::windows_sys::core::Interface for IMediaCaptureVideoProfile2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2547894623, data2: 38094, data3: 18063, data4: [147, 22, 252, 91, 194, 99, 143, 107] };
 }
 #[repr(C)]
 pub struct IMediaCaptureVideoProfileMediaDescription {
@@ -2313,6 +2622,9 @@ pub struct IMediaCaptureVideoProfileMediaDescription {
     #[cfg(not(feature = "deprecated"))]
     IsHdrVideoSupported: usize,
 }
+impl ::windows_sys::core::Interface for IMediaCaptureVideoProfileMediaDescription {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2148708335, data2: 46737, data3: 18943, data4: [131, 242, 193, 231, 110, 170, 234, 27] };
+}
 #[repr(C)]
 pub struct IMediaCaptureVideoProfileMediaDescription2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -2322,11 +2634,17 @@ pub struct IMediaCaptureVideoProfileMediaDescription2 {
     #[cfg(not(feature = "Foundation_Collections"))]
     Properties: usize,
 }
+impl ::windows_sys::core::Interface for IMediaCaptureVideoProfileMediaDescription2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3332828947, data2: 12845, data3: 16698, data4: [184, 90, 104, 168, 142, 2, 244, 233] };
+}
 #[repr(C)]
 pub struct IOptionalReferencePhotoCapturedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub Frame: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Context: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IOptionalReferencePhotoCapturedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1192200371, data2: 7789, data3: 16465, data4: [156, 139, 241, 216, 90, 240, 71, 183] };
 }
 #[repr(C)]
 pub struct IPhotoCapturedEventArgs {
@@ -2338,6 +2656,9 @@ pub struct IPhotoCapturedEventArgs {
     #[cfg(not(feature = "Foundation"))]
     CaptureTimeOffset: usize,
 }
+impl ::windows_sys::core::Interface for IPhotoCapturedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 926677953, data2: 38990, data3: 20464, data4: [191, 133, 28, 0, 170, 188, 90, 69] };
+}
 #[repr(C)]
 pub struct IPhotoConfirmationCapturedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
@@ -2346,6 +2667,9 @@ pub struct IPhotoConfirmationCapturedEventArgs {
     pub CaptureTimeOffset: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut super::super::Foundation::TimeSpan) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     CaptureTimeOffset: usize,
+}
+impl ::windows_sys::core::Interface for IPhotoConfirmationCapturedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2873570930, data2: 49802, data3: 18471, data4: [143, 141, 54, 54, 211, 190, 181, 30] };
 }
 #[repr(C)]
 pub struct IScreenCapture {
@@ -2369,16 +2693,25 @@ pub struct IScreenCapture {
     #[cfg(not(feature = "Foundation"))]
     RemoveSourceSuspensionChanged: usize,
 }
+impl ::windows_sys::core::Interface for IScreenCapture {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2300026615, data2: 52498, data3: 19982, data4: [166, 212, 91, 61, 233, 139, 46, 155] };
+}
 #[repr(C)]
 pub struct IScreenCaptureStatics {
     pub base__: ::windows_sys::core::IInspectable,
     pub GetForCurrentView: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IScreenCaptureStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3365454768, data2: 51365, data3: 4578, data4: [139, 139, 8, 0, 32, 12, 154, 102] };
 }
 #[repr(C)]
 pub struct ISourceSuspensionChangedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub IsAudioSuspended: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub IsVideoSuspended: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for ISourceSuspensionChangedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 785283934, data2: 54427, data3: 17300, data4: [188, 50, 249, 125, 108, 237, 236, 28] };
 }
 #[repr(C)]
 pub struct IVideoStreamConfiguration {
@@ -2391,6 +2724,9 @@ pub struct IVideoStreamConfiguration {
     pub OutputProperties: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Media_MediaProperties"))]
     OutputProperties: usize,
+}
+impl ::windows_sys::core::Interface for IVideoStreamConfiguration {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3631680111, data2: 17296, data3: 19294, data4: [173, 62, 15, 138, 240, 150, 52, 144] };
 }
 #[doc = "*Required features: `\"Media_Capture\"`*"]
 #[repr(transparent)]

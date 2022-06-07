@@ -41,6 +41,9 @@ pub struct IWiFiDirectService {
     #[cfg(not(feature = "Foundation"))]
     ConnectAsyncWithPin: usize,
 }
+impl ::windows_sys::core::Interface for IWiFiDirectService {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1353366456, data2: 24433, data3: 17900, data4: [132, 241, 161, 228, 252, 120, 121, 163] };
+}
 #[repr(C)]
 pub struct IWiFiDirectServiceAdvertiser {
     pub base__: ::windows_sys::core::IInspectable,
@@ -114,10 +117,16 @@ pub struct IWiFiDirectServiceAdvertiser {
     pub Start: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Stop: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IWiFiDirectServiceAdvertiser {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2762612449, data2: 40335, data3: 20303, data4: [147, 238, 125, 222, 162, 227, 127, 70] };
+}
 #[repr(C)]
 pub struct IWiFiDirectServiceAdvertiserFactory {
     pub base__: ::windows_sys::core::IInspectable,
     pub CreateWiFiDirectServiceAdvertiser: unsafe extern "system" fn(this: *mut *mut Self, servicename: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWiFiDirectServiceAdvertiserFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 822520845, data2: 46150, data3: 20243, data4: [159, 154, 138, 233, 37, 254, 186, 43] };
 }
 #[repr(C)]
 pub struct IWiFiDirectServiceAutoAcceptSessionConnectedEventArgs {
@@ -128,11 +137,17 @@ pub struct IWiFiDirectServiceAutoAcceptSessionConnectedEventArgs {
     #[cfg(not(feature = "Storage_Streams"))]
     SessionInfo: usize,
 }
+impl ::windows_sys::core::Interface for IWiFiDirectServiceAutoAcceptSessionConnectedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3705266206, data2: 33759, data3: 17381, data4: [143, 67, 203, 232, 71, 158, 132, 235] };
+}
 #[repr(C)]
 pub struct IWiFiDirectServiceProvisioningInfo {
     pub base__: ::windows_sys::core::IInspectable,
     pub SelectedConfigurationMethod: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut WiFiDirectServiceConfigurationMethod) -> ::windows_sys::core::HRESULT,
     pub IsGroupFormationNeeded: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWiFiDirectServiceProvisioningInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2346417406, data2: 38873, data3: 17826, data4: [142, 153, 219, 80, 145, 15, 182, 166] };
 }
 #[repr(C)]
 pub struct IWiFiDirectServiceRemotePortAddedEventArgs {
@@ -142,6 +157,9 @@ pub struct IWiFiDirectServiceRemotePortAddedEventArgs {
     #[cfg(not(all(feature = "Foundation_Collections", feature = "Networking")))]
     EndpointPairs: usize,
     pub Protocol: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut WiFiDirectServiceIPProtocol) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWiFiDirectServiceRemotePortAddedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3570318017, data2: 16339, data3: 20238, data4: [183, 189, 120, 41, 6, 244, 68, 17] };
 }
 #[repr(C)]
 pub struct IWiFiDirectServiceSession {
@@ -182,6 +200,9 @@ pub struct IWiFiDirectServiceSession {
     #[cfg(not(feature = "Foundation"))]
     RemoveRemotePortAdded: usize,
 }
+impl ::windows_sys::core::Interface for IWiFiDirectServiceSession {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2165580131, data2: 58406, data3: 18379, data4: [134, 64, 225, 179, 88, 139, 242, 111] };
+}
 #[repr(C)]
 pub struct IWiFiDirectServiceSessionDeferredEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
@@ -189,6 +210,9 @@ pub struct IWiFiDirectServiceSessionDeferredEventArgs {
     pub DeferredSessionInfo: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Storage_Streams"))]
     DeferredSessionInfo: usize,
+}
+impl ::windows_sys::core::Interface for IWiFiDirectServiceSessionDeferredEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2382109055, data2: 4609, data3: 20255, data4: [182, 244, 93, 241, 183, 185, 251, 46] };
 }
 #[repr(C)]
 pub struct IWiFiDirectServiceSessionRequest {
@@ -203,10 +227,16 @@ pub struct IWiFiDirectServiceSessionRequest {
     #[cfg(not(feature = "Storage_Streams"))]
     SessionInfo: usize,
 }
+impl ::windows_sys::core::Interface for IWiFiDirectServiceSessionRequest {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2699197579, data2: 20683, data3: 19032, data4: [155, 207, 228, 114, 185, 159, 186, 4] };
+}
 #[repr(C)]
 pub struct IWiFiDirectServiceSessionRequestedEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub GetSessionRequest: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IWiFiDirectServiceSessionRequestedEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1958595601, data2: 21462, data3: 18841, data4: [180, 248, 108, 142, 204, 23, 113, 231] };
 }
 #[repr(C)]
 pub struct IWiFiDirectServiceStatics {
@@ -220,6 +250,9 @@ pub struct IWiFiDirectServiceStatics {
     pub FromIdAsync: unsafe extern "system" fn(this: *mut *mut Self, deviceid: ::windows_sys::core::HSTRING, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation"))]
     FromIdAsync: usize,
+}
+impl ::windows_sys::core::Interface for IWiFiDirectServiceStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2108948549, data2: 64884, data3: 18056, data4: [183, 37, 93, 206, 134, 172, 242, 51] };
 }
 pub type WiFiDirectService = *mut ::core::ffi::c_void;
 #[doc = "*Required features: `\"Devices_WiFiDirect_Services\"`*"]

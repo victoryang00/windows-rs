@@ -1318,6 +1318,9 @@ pub struct IAccountingProviderConfig {
     pub Activate: unsafe extern "system" fn(this: *mut *mut Self, uconnectionparam: usize, ureserved1: usize, ureserved2: usize) -> ::windows_sys::core::HRESULT,
     pub Deactivate: unsafe extern "system" fn(this: *mut *mut Self, uconnectionparam: usize, ureserved1: usize, ureserved2: usize) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAccountingProviderConfig {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1721948952, data2: 55046, data3: 4560, data4: [163, 123, 0, 192, 79, 201, 218, 4] };
+}
 #[repr(C)]
 pub struct IAuthenticationProviderConfig {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1329,6 +1332,9 @@ pub struct IAuthenticationProviderConfig {
     Configure: usize,
     pub Activate: unsafe extern "system" fn(this: *mut *mut Self, uconnectionparam: usize, ureserved1: usize, ureserved2: usize) -> ::windows_sys::core::HRESULT,
     pub Deactivate: unsafe extern "system" fn(this: *mut *mut Self, uconnectionparam: usize, ureserved1: usize, ureserved2: usize) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAuthenticationProviderConfig {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1721948951, data2: 55046, data3: 4560, data4: [163, 123, 0, 192, 79, 201, 218, 4] };
 }
 #[repr(C)]
 pub struct IEAPProviderConfig {
@@ -1348,6 +1354,9 @@ pub struct IEAPProviderConfig {
     #[cfg(not(feature = "Win32_Foundation"))]
     RouterInvokeCredentialsUI: usize,
 }
+impl ::windows_sys::core::Interface for IEAPProviderConfig {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1721948953, data2: 55046, data3: 4560, data4: [163, 123, 0, 192, 79, 201, 218, 4] };
+}
 #[repr(C)]
 pub struct IEAPProviderConfig2 {
     pub base__: IEAPProviderConfig,
@@ -1357,6 +1366,9 @@ pub struct IEAPProviderConfig2 {
     ServerInvokeConfigUI2: usize,
     pub GetGlobalConfig: unsafe extern "system" fn(this: *mut *mut Self, dweaptypeid: u32, ppconfigdataout: *mut *mut u8, pdwsizeofconfigdataout: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEAPProviderConfig2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3580203386, data2: 34244, data3: 17510, data4: [133, 110, 103, 28, 55, 66, 234, 154] };
+}
 #[repr(C)]
 pub struct IEAPProviderConfig3 {
     pub base__: IEAPProviderConfig2,
@@ -1364,6 +1376,9 @@ pub struct IEAPProviderConfig3 {
     pub ServerInvokeCertificateConfigUI: unsafe extern "system" fn(this: *mut *mut Self, dweaptypeid: u32, uconnectionparam: usize, hwnd: super::super::Foundation::HWND, pconfigdatain: *const u8, dwsizeofconfigdatain: u32, ppconfigdataout: *mut *mut u8, pdwsizeofconfigdataout: *mut u32, ureserved: usize) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     ServerInvokeCertificateConfigUI: usize,
+}
+impl ::windows_sys::core::Interface for IEAPProviderConfig3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3079589138, data2: 26811, data3: 20358, data4: [155, 240, 132, 56, 221, 59, 233, 130] };
 }
 #[repr(C)]
 pub struct IRouterProtocolConfig {
@@ -1376,6 +1391,9 @@ pub struct IRouterProtocolConfig {
     pub RemoveProtocol: unsafe extern "system" fn(this: *mut *mut Self, pszmachinename: ::windows_sys::core::PCWSTR, dwtransportid: u32, dwprotocolid: u32, hwnd: super::super::Foundation::HWND, dwflags: u32, prouter: *mut ::core::ffi::c_void, ureserved1: usize) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     RemoveProtocol: usize,
+}
+impl ::windows_sys::core::Interface for IRouterProtocolConfig {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1721948950, data2: 55046, data3: 4560, data4: [163, 123, 0, 192, 79, 201, 218, 4] };
 }
 #[doc = "*Required features: `\"Win32_Security_ExtensibleAuthenticationProtocol\"`*"]
 pub type ISOLATION_STATE = i32;

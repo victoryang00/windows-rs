@@ -117,12 +117,18 @@ pub struct IAppInstallItem {
     #[cfg(not(feature = "Foundation"))]
     RemoveStatusChanged: usize,
 }
+impl ::windows_sys::core::Interface for IAppInstallItem {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1238622123, data2: 5770, data3: 19647, data4: [169, 58, 158, 68, 140, 130, 115, 125] };
+}
 #[repr(C)]
 pub struct IAppInstallItem2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub CancelWithTelemetry: unsafe extern "system" fn(this: *mut *mut Self, correlationvector: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub PauseWithTelemetry: unsafe extern "system" fn(this: *mut *mut Self, correlationvector: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub RestartWithTelemetry: unsafe extern "system" fn(this: *mut *mut Self, correlationvector: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAppInstallItem2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3549899512, data2: 16576, data3: 20439, data4: [170, 108, 10, 161, 60, 166, 24, 140] };
 }
 #[repr(C)]
 pub struct IAppInstallItem3 {
@@ -133,11 +139,17 @@ pub struct IAppInstallItem3 {
     Children: usize,
     pub ItemOperationsMightAffectOtherItems: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAppInstallItem3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1866320280, data2: 56647, data3: 17212, data4: [146, 52, 86, 1, 114, 214, 122, 69] };
+}
 #[repr(C)]
 pub struct IAppInstallItem4 {
     pub base__: ::windows_sys::core::IInspectable,
     pub LaunchAfterInstall: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub SetLaunchAfterInstall: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAppInstallItem4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3268529682, data2: 29183, data3: 20424, data4: [181, 64, 69, 61, 75, 55, 225, 209] };
 }
 #[repr(C)]
 pub struct IAppInstallItem5 {
@@ -152,6 +164,9 @@ pub struct IAppInstallItem5 {
     pub SetCompletedInstallToastNotificationMode: unsafe extern "system" fn(this: *mut *mut Self, value: AppInstallationToastNotificationMode) -> ::windows_sys::core::HRESULT,
     pub InstallInProgressToastNotificationMode: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut AppInstallationToastNotificationMode) -> ::windows_sys::core::HRESULT,
     pub SetInstallInProgressToastNotificationMode: unsafe extern "system" fn(this: *mut *mut Self, value: AppInstallationToastNotificationMode) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAppInstallItem5 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1427171276, data2: 16502, data3: 18955, data4: [148, 114, 194, 29, 157, 56, 14, 85] };
 }
 #[repr(C)]
 pub struct IAppInstallManager {
@@ -212,6 +227,9 @@ pub struct IAppInstallManager {
     #[cfg(not(feature = "Foundation"))]
     GetIsAppAllowedToInstallAsync: usize,
 }
+impl ::windows_sys::core::Interface for IAppInstallManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2471747952, data2: 33857, data3: 19269, data4: [189, 114, 124, 47, 169, 37, 190, 238] };
+}
 #[repr(C)]
 pub struct IAppInstallManager2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -238,6 +256,9 @@ pub struct IAppInstallManager2 {
     pub CancelWithTelemetry: unsafe extern "system" fn(this: *mut *mut Self, productid: ::windows_sys::core::HSTRING, correlationvector: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub PauseWithTelemetry: unsafe extern "system" fn(this: *mut *mut Self, productid: ::windows_sys::core::HSTRING, correlationvector: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub RestartWithTelemetry: unsafe extern "system" fn(this: *mut *mut Self, productid: ::windows_sys::core::HSTRING, correlationvector: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAppInstallManager2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 378763345, data2: 60727, data3: 18445, data4: [131, 20, 82, 226, 124, 3, 240, 74] };
 }
 #[repr(C)]
 pub struct IAppInstallManager3 {
@@ -272,6 +293,9 @@ pub struct IAppInstallManager3 {
     GetIsApplicableForUserAsync: usize,
     pub MoveToFrontOfDownloadQueue: unsafe extern "system" fn(this: *mut *mut Self, productid: ::windows_sys::core::HSTRING, correlationvector: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAppInstallManager3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2511489815, data2: 59754, data3: 19726, data4: [132, 225, 200, 203, 65, 122, 1, 120] };
+}
 #[repr(C)]
 pub struct IAppInstallManager4 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -288,6 +312,9 @@ pub struct IAppInstallManager4 {
     #[cfg(not(feature = "Foundation"))]
     GetFreeDeviceEntitlementAsync: usize,
 }
+impl ::windows_sys::core::Interface for IAppInstallManager4 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 638200342, data2: 23198, data3: 20157, data4: [185, 68, 242, 186, 117, 195, 17, 89] };
+}
 #[repr(C)]
 pub struct IAppInstallManager5 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -295,6 +322,9 @@ pub struct IAppInstallManager5 {
     pub AppInstallItemsWithGroupSupport: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     AppInstallItemsWithGroupSupport: usize,
+}
+impl ::windows_sys::core::Interface for IAppInstallManager5 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1020771916, data2: 7145, data3: 20351, data4: [182, 117, 170, 29, 100, 165, 41, 178] };
 }
 #[repr(C)]
 pub struct IAppInstallManager6 {
@@ -332,15 +362,24 @@ pub struct IAppInstallManager6 {
     #[cfg(not(all(feature = "Foundation", feature = "System")))]
     GetIsPackageIdentityAllowedToInstallForUserAsync: usize,
 }
+impl ::windows_sys::core::Interface for IAppInstallManager6 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3387413512, data2: 62074, data3: 17521, data4: [178, 244, 231, 110, 252, 190, 188, 202] };
+}
 #[repr(C)]
 pub struct IAppInstallManager7 {
     pub base__: ::windows_sys::core::IInspectable,
     pub CanInstallForAllUsers: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAppInstallManager7 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2783869744, data2: 54756, data3: 18851, data4: [152, 83, 61, 176, 50, 3, 50, 29] };
+}
 #[repr(C)]
 pub struct IAppInstallManagerItemEventArgs {
     pub base__: ::windows_sys::core::IInspectable,
     pub Item: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAppInstallManagerItemEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3159381827, data2: 18036, data3: 19921, data4: [149, 126, 194, 86, 130, 8, 106, 20] };
 }
 #[repr(C)]
 pub struct IAppInstallOptions {
@@ -364,6 +403,9 @@ pub struct IAppInstallOptions {
     pub LaunchAfterInstall: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub SetLaunchAfterInstall: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAppInstallOptions {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3380642560, data2: 7352, data3: 20150, data4: [140, 159, 106, 48, 198, 74, 91, 81] };
+}
 #[repr(C)]
 pub struct IAppInstallOptions2 {
     pub base__: ::windows_sys::core::IInspectable,
@@ -386,6 +428,9 @@ pub struct IAppInstallOptions2 {
     pub ExtendedCampaignId: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
     pub SetExtendedCampaignId: unsafe extern "system" fn(this: *mut *mut Self, value: ::windows_sys::core::HSTRING) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAppInstallOptions2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2315567319, data2: 51531, data3: 16990, data4: [149, 180, 191, 39, 250, 234, 238, 137] };
+}
 #[repr(C)]
 pub struct IAppInstallStatus {
     pub base__: ::windows_sys::core::IInspectable,
@@ -394,6 +439,9 @@ pub struct IAppInstallStatus {
     pub BytesDownloaded: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut u64) -> ::windows_sys::core::HRESULT,
     pub PercentComplete: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut f64) -> ::windows_sys::core::HRESULT,
     pub ErrorCode: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAppInstallStatus {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2473446650, data2: 9296, data3: 16678, data4: [136, 177, 97, 39, 166, 68, 221, 92] };
 }
 #[repr(C)]
 pub struct IAppInstallStatus2 {
@@ -404,10 +452,16 @@ pub struct IAppInstallStatus2 {
     User: usize,
     pub ReadyForLaunch: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAppInstallStatus2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2531754378, data2: 24210, data3: 19113, data4: [142, 220, 88, 254, 212, 184, 126, 0] };
+}
 #[repr(C)]
 pub struct IAppInstallStatus3 {
     pub base__: ::windows_sys::core::IInspectable,
     pub IsStaged: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IAppInstallStatus3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3414690902, data2: 33659, data3: 19276, data4: [158, 187, 109, 68, 160, 169, 99, 7] };
 }
 #[repr(C)]
 pub struct IAppUpdateOptions {
@@ -417,14 +471,23 @@ pub struct IAppUpdateOptions {
     pub AllowForcedAppRestart: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub SetAllowForcedAppRestart: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAppUpdateOptions {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 653307951, data2: 49907, data3: 19178, data4: [175, 140, 99, 8, 221, 157, 184, 95] };
+}
 #[repr(C)]
 pub struct IAppUpdateOptions2 {
     pub base__: ::windows_sys::core::IInspectable,
     pub AutomaticallyDownloadAndInstallUpdateIfFound: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut bool) -> ::windows_sys::core::HRESULT,
     pub SetAutomaticallyDownloadAndInstallUpdateIfFound: unsafe extern "system" fn(this: *mut *mut Self, value: bool) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IAppUpdateOptions2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4100222472, data2: 60710, data3: 19449, data4: [150, 121, 72, 246, 40, 229, 61, 248] };
+}
 #[repr(C)]
 pub struct IGetEntitlementResult {
     pub base__: ::windows_sys::core::IInspectable,
     pub Status: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut GetEntitlementStatus) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IGetEntitlementResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1962705983, data2: 6814, data3: 17929, data4: [142, 77, 129, 144, 134, 208, 138, 61] };
 }

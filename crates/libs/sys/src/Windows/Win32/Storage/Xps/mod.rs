@@ -162,6 +162,9 @@ pub struct IXpsDocumentPackageTarget {
     pub GetXpsOMFactory: unsafe extern "system" fn(this: *mut *mut Self, xpsfactory: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetXpsType: unsafe extern "system" fn(this: *mut *mut Self, documenttype: *mut XPS_DOCUMENT_TYPE) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IXpsDocumentPackageTarget {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 990604600, data2: 21421, data3: 16858, data4: [178, 18, 211, 118, 55, 166, 113, 78] };
+}
 #[repr(C)]
 pub struct IXpsDocumentPackageTarget3D {
     pub base__: ::windows_sys::core::IUnknown,
@@ -171,11 +174,17 @@ pub struct IXpsDocumentPackageTarget3D {
     GetXpsOMPackageWriter3D: usize,
     pub GetXpsOMFactory: unsafe extern "system" fn(this: *mut *mut Self, xpsfactory: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IXpsDocumentPackageTarget3D {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1622831544, data2: 12545, data3: 18820, data4: [145, 153, 244, 234, 119, 95, 240, 29] };
+}
 #[repr(C)]
 pub struct IXpsOMBrush {
     pub base__: IXpsOMShareable,
     pub GetOpacity: unsafe extern "system" fn(this: *mut *mut Self, opacity: *mut f32) -> ::windows_sys::core::HRESULT,
     pub SetOpacity: unsafe extern "system" fn(this: *mut *mut Self, opacity: f32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IXpsOMBrush {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1453586444, data2: 59980, data3: 16775, data4: [165, 123, 162, 164, 115, 178, 180, 43] };
 }
 #[repr(C)]
 pub struct IXpsOMCanvas {
@@ -200,6 +209,9 @@ pub struct IXpsOMCanvas {
     pub SetDictionaryResource: unsafe extern "system" fn(this: *mut *mut Self, remotedictionaryresource: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, canvas: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IXpsOMCanvas {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 572331090, data2: 13086, data3: 18374, data4: [135, 233, 108, 206, 251, 155, 91, 163] };
+}
 #[repr(C)]
 pub struct IXpsOMColorProfileResource {
     pub base__: IXpsOMResource,
@@ -211,6 +223,9 @@ pub struct IXpsOMColorProfileResource {
     pub SetContent: unsafe extern "system" fn(this: *mut *mut Self, sourcestream: *mut ::core::ffi::c_void, partname: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
     SetContent: usize,
+}
+impl ::windows_sys::core::Interface for IXpsOMColorProfileResource {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1740471657, data2: 7919, data3: 19377, data4: [181, 231, 111, 79, 135, 190, 138, 190] };
 }
 #[repr(C)]
 pub struct IXpsOMColorProfileResourceCollection {
@@ -225,6 +240,9 @@ pub struct IXpsOMColorProfileResourceCollection {
     pub GetByPartName: unsafe extern "system" fn(this: *mut *mut Self, partname: *mut ::core::ffi::c_void, part: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
     GetByPartName: usize,
+}
+impl ::windows_sys::core::Interface for IXpsOMColorProfileResourceCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 309696048, data2: 24506, data3: 17027, data4: [143, 125, 204, 168, 73, 128, 158, 219] };
 }
 #[repr(C)]
 pub struct IXpsOMCoreProperties {
@@ -282,6 +300,9 @@ pub struct IXpsOMCoreProperties {
     pub SetVersion: unsafe extern "system" fn(this: *mut *mut Self, version: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, coreproperties: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IXpsOMCoreProperties {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 859897487, data2: 16423, data3: 19105, data4: [143, 95, 211, 90, 228, 95, 229, 151] };
+}
 #[repr(C)]
 pub struct IXpsOMDashCollection {
     pub base__: ::windows_sys::core::IUnknown,
@@ -291,6 +312,9 @@ pub struct IXpsOMDashCollection {
     pub RemoveAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32) -> ::windows_sys::core::HRESULT,
     pub SetAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32, dash: *const XPS_DASH) -> ::windows_sys::core::HRESULT,
     pub Append: unsafe extern "system" fn(this: *mut *mut Self, dash: *const XPS_DASH) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IXpsOMDashCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 135664628, data2: 29931, data3: 18674, data4: [131, 179, 55, 169, 206, 45, 125, 198] };
 }
 #[repr(C)]
 pub struct IXpsOMDictionary {
@@ -306,6 +330,9 @@ pub struct IXpsOMDictionary {
     pub SetAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32, key: ::windows_sys::core::PCWSTR, entry: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, dictionary: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IXpsOMDictionary {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2306639544, data2: 36527, data3: 19171, data4: [189, 222, 86, 65, 159, 207, 66, 54] };
+}
 #[repr(C)]
 pub struct IXpsOMDocument {
     pub base__: IXpsOMPart,
@@ -318,6 +345,9 @@ pub struct IXpsOMDocument {
     pub GetSignatureBlockResources: unsafe extern "system" fn(this: *mut *mut Self, signatureblockresources: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, document: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IXpsOMDocument {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 741119179, data2: 44127, data3: 16980, data4: [142, 233, 35, 148, 131, 9, 217, 240] };
+}
 #[repr(C)]
 pub struct IXpsOMDocumentCollection {
     pub base__: ::windows_sys::core::IUnknown,
@@ -328,6 +358,9 @@ pub struct IXpsOMDocumentCollection {
     pub SetAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32, document: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Append: unsafe extern "system" fn(this: *mut *mut Self, document: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IXpsOMDocumentCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3519577869, data2: 59719, data3: 18260, data4: [138, 37, 151, 20, 120, 247, 232, 62] };
+}
 #[repr(C)]
 pub struct IXpsOMDocumentSequence {
     pub base__: IXpsOMPart,
@@ -335,6 +368,9 @@ pub struct IXpsOMDocumentSequence {
     pub GetDocuments: unsafe extern "system" fn(this: *mut *mut Self, documents: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetPrintTicketResource: unsafe extern "system" fn(this: *mut *mut Self, printticketresource: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetPrintTicketResource: unsafe extern "system" fn(this: *mut *mut Self, printticketresource: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IXpsOMDocumentSequence {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1447636660, data2: 55509, data3: 16990, data4: [130, 86, 76, 43, 100, 173, 2, 100] };
 }
 #[repr(C)]
 pub struct IXpsOMDocumentStructureResource {
@@ -349,6 +385,9 @@ pub struct IXpsOMDocumentStructureResource {
     #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
     SetContent: usize,
 }
+impl ::windows_sys::core::Interface for IXpsOMDocumentStructureResource {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2248064138, data2: 27491, data3: 18601, data4: [175, 7, 112, 100, 228, 236, 255, 48] };
+}
 #[repr(C)]
 pub struct IXpsOMFontResource {
     pub base__: IXpsOMResource,
@@ -361,6 +400,9 @@ pub struct IXpsOMFontResource {
     #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
     SetContent: usize,
     pub GetEmbeddingOption: unsafe extern "system" fn(this: *mut *mut Self, embeddingoption: *mut XPS_FONT_EMBEDDING) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IXpsOMFontResource {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2831439624, data2: 18393, data3: 19188, data4: [141, 32, 51, 180, 140, 155, 132, 133] };
 }
 #[repr(C)]
 pub struct IXpsOMFontResourceCollection {
@@ -376,6 +418,9 @@ pub struct IXpsOMFontResourceCollection {
     #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
     GetByPartName: usize,
 }
+impl ::windows_sys::core::Interface for IXpsOMFontResourceCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1890887355, data2: 35028, data3: 20392, data4: [170, 249, 109, 156, 89, 111, 219, 173] };
+}
 #[repr(C)]
 pub struct IXpsOMGeometry {
     pub base__: IXpsOMShareable,
@@ -388,6 +433,9 @@ pub struct IXpsOMGeometry {
     pub GetTransformLookup: unsafe extern "system" fn(this: *mut *mut Self, lookup: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
     pub SetTransformLookup: unsafe extern "system" fn(this: *mut *mut Self, lookup: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, geometry: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IXpsOMGeometry {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1694299095, data2: 19800, data3: 17594, data4: [173, 115, 161, 58, 246, 73, 32, 114] };
 }
 #[repr(C)]
 pub struct IXpsOMGeometryFigure {
@@ -426,6 +474,9 @@ pub struct IXpsOMGeometryFigure {
     pub GetSegmentStrokePattern: unsafe extern "system" fn(this: *mut *mut Self, segmentstrokepattern: *mut XPS_SEGMENT_STROKE_PATTERN) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, geometryfigure: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IXpsOMGeometryFigure {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3557874819, data2: 37004, data3: 17470, data4: [137, 71, 177, 121, 93, 60, 22, 90] };
+}
 #[repr(C)]
 pub struct IXpsOMGeometryFigureCollection {
     pub base__: ::windows_sys::core::IUnknown,
@@ -435,6 +486,9 @@ pub struct IXpsOMGeometryFigureCollection {
     pub RemoveAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32) -> ::windows_sys::core::HRESULT,
     pub SetAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32, geometryfigure: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Append: unsafe extern "system" fn(this: *mut *mut Self, geometryfigure: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IXpsOMGeometryFigureCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4249404403, data2: 42382, data3: 19290, data4: [136, 38, 29, 229, 74, 190, 114, 178] };
 }
 #[repr(C)]
 pub struct IXpsOMGlyphs {
@@ -470,6 +524,9 @@ pub struct IXpsOMGlyphs {
     pub GetGlyphsEditor: unsafe extern "system" fn(this: *mut *mut Self, editor: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, glyphs: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IXpsOMGlyphs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2174431641, data2: 2650, data3: 19300, data4: [190, 199, 169, 225, 126, 120, 13, 226] };
+}
 #[repr(C)]
 pub struct IXpsOMGlyphsEditor {
     pub base__: ::windows_sys::core::IUnknown,
@@ -498,6 +555,9 @@ pub struct IXpsOMGlyphsEditor {
     pub GetDeviceFontName: unsafe extern "system" fn(this: *mut *mut Self, devicefontname: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
     pub SetDeviceFontName: unsafe extern "system" fn(this: *mut *mut Self, devicefontname: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IXpsOMGlyphsEditor {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2779481622, data2: 23318, data3: 19359, data4: [150, 41, 137, 179, 35, 237, 121, 9] };
+}
 #[repr(C)]
 pub struct IXpsOMGradientBrush {
     pub base__: IXpsOMBrush,
@@ -512,6 +572,9 @@ pub struct IXpsOMGradientBrush {
     pub GetColorInterpolationMode: unsafe extern "system" fn(this: *mut *mut Self, colorinterpolationmode: *mut XPS_COLOR_INTERPOLATION) -> ::windows_sys::core::HRESULT,
     pub SetColorInterpolationMode: unsafe extern "system" fn(this: *mut *mut Self, colorinterpolationmode: XPS_COLOR_INTERPOLATION) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IXpsOMGradientBrush {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3988100642, data2: 24994, data3: 17091, data4: [186, 206, 172, 242, 40, 108, 6, 191] };
+}
 #[repr(C)]
 pub struct IXpsOMGradientStop {
     pub base__: ::windows_sys::core::IUnknown,
@@ -521,6 +584,9 @@ pub struct IXpsOMGradientStop {
     pub GetColor: unsafe extern "system" fn(this: *mut *mut Self, color: *mut XPS_COLOR, colorprofile: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetColor: unsafe extern "system" fn(this: *mut *mut Self, color: *const XPS_COLOR, colorprofile: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, gradientstop: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IXpsOMGradientStop {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1559557580, data2: 14697, data3: 18869, data4: [167, 10, 85, 80, 182, 24, 254, 73] };
 }
 #[repr(C)]
 pub struct IXpsOMGradientStopCollection {
@@ -532,6 +598,9 @@ pub struct IXpsOMGradientStopCollection {
     pub SetAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32, stop: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Append: unsafe extern "system" fn(this: *mut *mut Self, stop: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IXpsOMGradientStopCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3373747258, data2: 15571, data3: 17177, data4: [189, 164, 17, 163, 147, 146, 206, 239] };
+}
 #[repr(C)]
 pub struct IXpsOMImageBrush {
     pub base__: IXpsOMTileBrush,
@@ -540,6 +609,9 @@ pub struct IXpsOMImageBrush {
     pub GetColorProfileResource: unsafe extern "system" fn(this: *mut *mut Self, colorprofileresource: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetColorProfileResource: unsafe extern "system" fn(this: *mut *mut Self, colorprofileresource: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, imagebrush: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IXpsOMImageBrush {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1039184998, data2: 54146, data3: 18927, data4: [133, 80, 221, 148, 200, 2, 66, 228] };
 }
 #[repr(C)]
 pub struct IXpsOMImageResource {
@@ -553,6 +625,9 @@ pub struct IXpsOMImageResource {
     #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
     SetContent: usize,
     pub GetImageType: unsafe extern "system" fn(this: *mut *mut Self, imagetype: *mut XPS_IMAGE_TYPE) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IXpsOMImageResource {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1035485565, data2: 44624, data3: 18526, data4: [154, 68, 215, 117, 143, 120, 162, 63] };
 }
 #[repr(C)]
 pub struct IXpsOMImageResourceCollection {
@@ -568,6 +643,9 @@ pub struct IXpsOMImageResourceCollection {
     #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
     GetByPartName: usize,
 }
+impl ::windows_sys::core::Interface for IXpsOMImageResourceCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2051676785, data2: 40158, data3: 19313, data4: [179, 63, 98, 222, 132, 62, 171, 254] };
+}
 #[repr(C)]
 pub struct IXpsOMLinearGradientBrush {
     pub base__: IXpsOMGradientBrush,
@@ -577,6 +655,9 @@ pub struct IXpsOMLinearGradientBrush {
     pub SetEndPoint: unsafe extern "system" fn(this: *mut *mut Self, endpoint: *const XPS_POINT) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, lineargradientbrush: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IXpsOMLinearGradientBrush {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 6170527, data2: 49933, data3: 16639, data4: [147, 236, 25, 80, 211, 197, 40, 219] };
+}
 #[repr(C)]
 pub struct IXpsOMMatrixTransform {
     pub base__: IXpsOMShareable,
@@ -584,11 +665,17 @@ pub struct IXpsOMMatrixTransform {
     pub SetMatrix: unsafe extern "system" fn(this: *mut *mut Self, matrix: *const XPS_MATRIX) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, matrixtransform: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IXpsOMMatrixTransform {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3077779711, data2: 47927, data3: 17665, data4: [169, 62, 241, 177, 229, 11, 252, 70] };
+}
 #[repr(C)]
 pub struct IXpsOMNameCollection {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, count: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32, name: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IXpsOMNameCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1272838380, data2: 51477, data3: 16923, data4: [161, 102, 209, 115, 210, 86, 83, 210] };
 }
 #[repr(C)]
 pub struct IXpsOMObjectFactory {
@@ -691,6 +778,9 @@ pub struct IXpsOMObjectFactory {
     #[cfg(not(feature = "Win32_System_Com"))]
     CreateReadOnlyStreamOnFile: usize,
 }
+impl ::windows_sys::core::Interface for IXpsOMObjectFactory {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4189234821, data2: 42253, data3: 20418, data4: [183, 100, 181, 110, 9, 62, 160, 202] };
+}
 #[repr(C)]
 pub struct IXpsOMObjectFactory1 {
     pub base__: IXpsOMObjectFactory,
@@ -731,6 +821,9 @@ pub struct IXpsOMObjectFactory1 {
     #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
     CreateRemoteDictionaryResourceFromStream1: usize,
 }
+impl ::windows_sys::core::Interface for IXpsOMObjectFactory1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 177321495, data2: 54802, data3: 16769, data4: [191, 124, 190, 88, 36, 233, 204, 143] };
+}
 #[repr(C)]
 pub struct IXpsOMPackage {
     pub base__: ::windows_sys::core::IUnknown,
@@ -757,6 +850,9 @@ pub struct IXpsOMPackage {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     WriteToStream: usize,
 }
+impl ::windows_sys::core::Interface for IXpsOMPackage {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 415489893, data2: 33249, data3: 18036, data4: [145, 220, 252, 69, 47, 90, 65, 111] };
+}
 #[repr(C)]
 pub struct IXpsOMPackage1 {
     pub base__: IXpsOMPackage,
@@ -770,6 +866,9 @@ pub struct IXpsOMPackage1 {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     WriteToStream1: usize,
 }
+impl ::windows_sys::core::Interface for IXpsOMPackage1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2510898014, data2: 4795, data3: 17947, data4: [142, 127, 198, 173, 176, 76, 217, 106] };
+}
 #[repr(C)]
 pub struct IXpsOMPackageTarget {
     pub base__: ::windows_sys::core::IUnknown,
@@ -777,6 +876,9 @@ pub struct IXpsOMPackageTarget {
     pub CreateXpsOMPackageWriter: unsafe extern "system" fn(this: *mut *mut Self, documentsequencepartname: *mut ::core::ffi::c_void, documentsequenceprintticket: *mut ::core::ffi::c_void, discardcontrolpartname: *mut ::core::ffi::c_void, packagewriter: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
     CreateXpsOMPackageWriter: usize,
+}
+impl ::windows_sys::core::Interface for IXpsOMPackageTarget {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 563781040, data2: 18777, data3: 18384, data4: [128, 52, 177, 206, 132, 244, 26, 77] };
 }
 #[repr(C)]
 pub struct IXpsOMPackageWriter {
@@ -793,6 +895,9 @@ pub struct IXpsOMPackageWriter {
     #[cfg(not(feature = "Win32_Foundation"))]
     IsClosed: usize,
 }
+impl ::windows_sys::core::Interface for IXpsOMPackageWriter {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1311416706, data2: 42051, data3: 17094, data4: [180, 27, 79, 142, 157, 231, 63, 249] };
+}
 #[repr(C)]
 pub struct IXpsOMPackageWriter3D {
     pub base__: IXpsOMPackageWriter,
@@ -804,6 +909,9 @@ pub struct IXpsOMPackageWriter3D {
     pub SetModelPrintTicket: unsafe extern "system" fn(this: *mut *mut Self, printticketpartname: *mut ::core::ffi::c_void, printticketdata: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
     SetModelPrintTicket: usize,
+}
+impl ::windows_sys::core::Interface for IXpsOMPackageWriter3D {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3903082547, data2: 25614, data3: 17402, data4: [155, 223, 253, 222, 170, 49, 198, 160] };
 }
 #[repr(C)]
 pub struct IXpsOMPage {
@@ -840,6 +948,9 @@ pub struct IXpsOMPage {
     pub GenerateUnusedLookupKey: unsafe extern "system" fn(this: *mut *mut Self, r#type: XPS_OBJECT_TYPE, key: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, page: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IXpsOMPage {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3554773128, data2: 61728, data3: 20462, data4: [140, 104, 53, 41, 110, 174, 145, 212] };
+}
 #[repr(C)]
 pub struct IXpsOMPage1 {
     pub base__: IXpsOMPage,
@@ -848,6 +959,9 @@ pub struct IXpsOMPage1 {
     pub Write1: unsafe extern "system" fn(this: *mut *mut Self, stream: *mut ::core::ffi::c_void, optimizemarkupsize: super::super::Foundation::BOOL, documenttype: XPS_DOCUMENT_TYPE) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     Write1: usize,
+}
+impl ::windows_sys::core::Interface for IXpsOMPage1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 811294959, data2: 26770, data3: 19930, data4: [156, 187, 58, 166, 89, 116, 80, 138] };
 }
 #[repr(C)]
 pub struct IXpsOMPageReference {
@@ -876,6 +990,9 @@ pub struct IXpsOMPageReference {
     HasRestrictedFonts: usize,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, pagereference: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IXpsOMPageReference {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3979739520, data2: 28562, data3: 18840, data4: [137, 13, 47, 32, 133, 49, 160, 160] };
+}
 #[repr(C)]
 pub struct IXpsOMPageReferenceCollection {
     pub base__: ::windows_sys::core::IUnknown,
@@ -885,6 +1002,9 @@ pub struct IXpsOMPageReferenceCollection {
     pub RemoveAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32) -> ::windows_sys::core::HRESULT,
     pub SetAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32, pagereference: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Append: unsafe extern "system" fn(this: *mut *mut Self, pagereference: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IXpsOMPageReferenceCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3390487117, data2: 59321, data3: 17861, data4: [149, 139, 249, 128, 34, 71, 55, 69] };
 }
 #[repr(C)]
 pub struct IXpsOMPart {
@@ -898,6 +1018,9 @@ pub struct IXpsOMPart {
     #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
     SetPartName: usize,
 }
+impl ::windows_sys::core::Interface for IXpsOMPart {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1961570059, data2: 43294, data3: 17542, data4: [175, 172, 15, 171, 236, 163, 223, 198] };
+}
 #[repr(C)]
 pub struct IXpsOMPartResources {
     pub base__: ::windows_sys::core::IUnknown,
@@ -905,6 +1028,9 @@ pub struct IXpsOMPartResources {
     pub GetImageResources: unsafe extern "system" fn(this: *mut *mut Self, imageresources: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetColorProfileResources: unsafe extern "system" fn(this: *mut *mut Self, colorprofileresources: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetRemoteDictionaryResources: unsafe extern "system" fn(this: *mut *mut Self, dictionaryresources: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IXpsOMPartResources {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4107237161, data2: 18532, data3: 17013, data4: [153, 179, 168, 113, 113, 99, 236, 175] };
 }
 #[repr(C)]
 pub struct IXpsOMPartUriCollection {
@@ -927,6 +1053,9 @@ pub struct IXpsOMPartUriCollection {
     pub Append: unsafe extern "system" fn(this: *mut *mut Self, parturi: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
     Append: usize,
+}
+impl ::windows_sys::core::Interface for IXpsOMPartUriCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1472614612, data2: 1660, data3: 18579, data4: [140, 51, 246, 42, 6, 51, 115, 15] };
 }
 #[repr(C)]
 pub struct IXpsOMPath {
@@ -975,6 +1104,9 @@ pub struct IXpsOMPath {
     pub SetFillBrushLookup: unsafe extern "system" fn(this: *mut *mut Self, lookup: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, path: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IXpsOMPath {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 936610742, data2: 16105, data3: 16656, data4: [147, 18, 20, 177, 148, 22, 51, 55] };
+}
 #[repr(C)]
 pub struct IXpsOMPrintTicketResource {
     pub base__: IXpsOMResource,
@@ -987,6 +1119,9 @@ pub struct IXpsOMPrintTicketResource {
     #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
     SetContent: usize,
 }
+impl ::windows_sys::core::Interface for IXpsOMPrintTicketResource {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3892261586, data2: 13482, data3: 18843, data4: [187, 233, 156, 212, 238, 108, 89, 247] };
+}
 #[repr(C)]
 pub struct IXpsOMRadialGradientBrush {
     pub base__: IXpsOMGradientBrush,
@@ -998,11 +1133,17 @@ pub struct IXpsOMRadialGradientBrush {
     pub SetGradientOrigin: unsafe extern "system" fn(this: *mut *mut Self, origin: *const XPS_POINT) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, radialgradientbrush: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IXpsOMRadialGradientBrush {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1978796005, data2: 2239, data3: 16700, data4: [150, 177, 184, 43, 64, 100, 23, 107] };
+}
 #[repr(C)]
 pub struct IXpsOMRemoteDictionaryResource {
     pub base__: IXpsOMResource,
     pub GetDictionary: unsafe extern "system" fn(this: *mut *mut Self, dictionary: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetDictionary: unsafe extern "system" fn(this: *mut *mut Self, dictionary: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IXpsOMRemoteDictionaryResource {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3384638676, data2: 57706, data3: 19448, data4: [140, 132, 201, 80, 175, 122, 48, 97] };
 }
 #[repr(C)]
 pub struct IXpsOMRemoteDictionaryResource1 {
@@ -1012,6 +1153,9 @@ pub struct IXpsOMRemoteDictionaryResource1 {
     pub Write1: unsafe extern "system" fn(this: *mut *mut Self, stream: *mut ::core::ffi::c_void, documenttype: XPS_DOCUMENT_TYPE) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     Write1: usize,
+}
+impl ::windows_sys::core::Interface for IXpsOMRemoteDictionaryResource1 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3213869524, data2: 40262, data3: 16705, data4: [186, 95, 148, 187, 146, 80, 208, 65] };
 }
 #[repr(C)]
 pub struct IXpsOMRemoteDictionaryResourceCollection {
@@ -1027,15 +1171,24 @@ pub struct IXpsOMRemoteDictionaryResourceCollection {
     #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
     GetByPartName: usize,
 }
+impl ::windows_sys::core::Interface for IXpsOMRemoteDictionaryResourceCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1547230049, data2: 32748, data3: 17994, data4: [135, 189, 65, 227, 190, 240, 24, 190] };
+}
 #[repr(C)]
 pub struct IXpsOMResource {
     pub base__: IXpsOMPart,
+}
+impl ::windows_sys::core::Interface for IXpsOMResource {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3660234914, data2: 29602, data3: 18805, data4: [173, 20, 116, 9, 124, 63, 243, 165] };
 }
 #[repr(C)]
 pub struct IXpsOMShareable {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetOwner: unsafe extern "system" fn(this: *mut *mut Self, owner: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub GetType: unsafe extern "system" fn(this: *mut *mut Self, r#type: *mut XPS_OBJECT_TYPE) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IXpsOMShareable {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1899444623, data2: 12225, data3: 17741, data4: [140, 106, 44, 49, 21, 161, 110, 206] };
 }
 #[repr(C)]
 pub struct IXpsOMSignatureBlockResource {
@@ -1049,6 +1202,9 @@ pub struct IXpsOMSignatureBlockResource {
     pub SetContent: unsafe extern "system" fn(this: *mut *mut Self, sourcestream: *mut ::core::ffi::c_void, partname: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
     SetContent: usize,
+}
+impl ::windows_sys::core::Interface for IXpsOMSignatureBlockResource {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1198959925, data2: 11780, data3: 17239, data4: [135, 67, 235, 246, 193, 113, 169, 5] };
 }
 #[repr(C)]
 pub struct IXpsOMSignatureBlockResourceCollection {
@@ -1064,12 +1220,18 @@ pub struct IXpsOMSignatureBlockResourceCollection {
     #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
     GetByPartName: usize,
 }
+impl ::windows_sys::core::Interface for IXpsOMSignatureBlockResourceCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2878299534, data2: 13595, data3: 19763, data4: [170, 237, 250, 86, 240, 2, 41, 49] };
+}
 #[repr(C)]
 pub struct IXpsOMSolidColorBrush {
     pub base__: IXpsOMBrush,
     pub GetColor: unsafe extern "system" fn(this: *mut *mut Self, color: *mut XPS_COLOR, colorprofile: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub SetColor: unsafe extern "system" fn(this: *mut *mut Self, color: *const XPS_COLOR, colorprofile: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, solidcolorbrush: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IXpsOMSolidColorBrush {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2691669765, data2: 15337, data3: 18275, data4: [152, 168, 9, 79, 198, 114, 228, 136] };
 }
 #[repr(C)]
 pub struct IXpsOMStoryFragmentsResource {
@@ -1084,6 +1246,9 @@ pub struct IXpsOMStoryFragmentsResource {
     #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
     SetContent: usize,
 }
+impl ::windows_sys::core::Interface for IXpsOMStoryFragmentsResource {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3266562569, data2: 1139, data3: 17026, data4: [135, 174, 23, 128, 134, 50, 35, 240] };
+}
 #[repr(C)]
 pub struct IXpsOMThumbnailGenerator {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1091,6 +1256,9 @@ pub struct IXpsOMThumbnailGenerator {
     pub GenerateThumbnail: unsafe extern "system" fn(this: *mut *mut Self, page: *mut ::core::ffi::c_void, thumbnailtype: XPS_IMAGE_TYPE, thumbnailsize: XPS_THUMBNAIL_SIZE, imageresourcepartname: *mut ::core::ffi::c_void, imageresource: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
     GenerateThumbnail: usize,
+}
+impl ::windows_sys::core::Interface for IXpsOMThumbnailGenerator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 364409813, data2: 6513, data3: 16872, data4: [131, 163, 101, 120, 64, 48, 100, 199] };
 }
 #[repr(C)]
 pub struct IXpsOMTileBrush {
@@ -1106,6 +1274,9 @@ pub struct IXpsOMTileBrush {
     pub SetViewport: unsafe extern "system" fn(this: *mut *mut Self, viewport: *const XPS_RECT) -> ::windows_sys::core::HRESULT,
     pub GetTileMode: unsafe extern "system" fn(this: *mut *mut Self, tilemode: *mut XPS_TILE_MODE) -> ::windows_sys::core::HRESULT,
     pub SetTileMode: unsafe extern "system" fn(this: *mut *mut Self, tilemode: XPS_TILE_MODE) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IXpsOMTileBrush {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 264385165, data2: 55074, data3: 19028, data4: [178, 236, 190, 144, 33, 138, 120, 158] };
 }
 #[repr(C)]
 pub struct IXpsOMVisual {
@@ -1148,6 +1319,9 @@ pub struct IXpsOMVisual {
     pub GetLanguage: unsafe extern "system" fn(this: *mut *mut Self, language: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
     pub SetLanguage: unsafe extern "system" fn(this: *mut *mut Self, language: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IXpsOMVisual {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3158209331, data2: 64267, data3: 19187, data4: [168, 25, 11, 78, 170, 208, 210, 253] };
+}
 #[repr(C)]
 pub struct IXpsOMVisualBrush {
     pub base__: IXpsOMTileBrush,
@@ -1158,6 +1332,9 @@ pub struct IXpsOMVisualBrush {
     pub SetVisualLookup: unsafe extern "system" fn(this: *mut *mut Self, lookup: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, visualbrush: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IXpsOMVisualBrush {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2548208815, data2: 23351, data3: 18100, data4: [128, 87, 135, 77, 47, 100, 17, 155] };
+}
 #[repr(C)]
 pub struct IXpsOMVisualCollection {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1167,6 +1344,9 @@ pub struct IXpsOMVisualCollection {
     pub RemoveAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32) -> ::windows_sys::core::HRESULT,
     pub SetAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32, object: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub Append: unsafe extern "system" fn(this: *mut *mut Self, object: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IXpsOMVisualCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2497227742, data2: 43921, data3: 18088, data4: [130, 183, 245, 176, 94, 240, 26, 150] };
 }
 #[repr(C)]
 pub struct IXpsSignature {
@@ -1202,6 +1382,9 @@ pub struct IXpsSignature {
     pub GetSignatureXml: unsafe extern "system" fn(this: *mut *mut Self, signaturexml: *mut *mut u8, count: *mut u32) -> ::windows_sys::core::HRESULT,
     pub SetSignatureXml: unsafe extern "system" fn(this: *mut *mut Self, signaturexml: *const u8, count: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IXpsSignature {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1793378622, data2: 6878, data3: 17147, data4: [137, 139, 58, 86, 88, 40, 72, 87] };
+}
 #[repr(C)]
 pub struct IXpsSignatureBlock {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1217,6 +1400,9 @@ pub struct IXpsSignatureBlock {
     GetDocumentName: usize,
     pub CreateRequest: unsafe extern "system" fn(this: *mut *mut Self, requestid: ::windows_sys::core::PCWSTR, signaturerequest: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IXpsSignatureBlock {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 354397193, data2: 2967, data3: 19142, data4: [163, 35, 94, 66, 151, 212, 50, 43] };
+}
 #[repr(C)]
 pub struct IXpsSignatureBlockCollection {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1224,12 +1410,18 @@ pub struct IXpsSignatureBlockCollection {
     pub GetAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32, signatureblock: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub RemoveAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IXpsSignatureBlockCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 590966864, data2: 65177, data3: 18042, data4: [141, 206, 146, 55, 240, 116, 255, 228] };
+}
 #[repr(C)]
 pub struct IXpsSignatureCollection {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, count: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32, signature: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub RemoveAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IXpsSignatureCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2731661661, data2: 44498, data3: 19967, data4: [171, 39, 107, 156, 100, 95, 243, 34] };
 }
 #[repr(C)]
 pub struct IXpsSignatureManager {
@@ -1267,6 +1459,9 @@ pub struct IXpsSignatureManager {
     #[cfg(not(feature = "Win32_System_Com"))]
     SavePackageToStream: usize,
 }
+impl ::windows_sys::core::Interface for IXpsSignatureManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3555251000, data2: 64964, data3: 19196, data4: [128, 181, 213, 50, 161, 120, 46, 225] };
+}
 #[repr(C)]
 pub struct IXpsSignatureRequest {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1286,12 +1481,18 @@ pub struct IXpsSignatureRequest {
     pub GetRequestId: unsafe extern "system" fn(this: *mut *mut Self, requestid: *mut ::windows_sys::core::PWSTR) -> ::windows_sys::core::HRESULT,
     pub GetSignature: unsafe extern "system" fn(this: *mut *mut Self, signature: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IXpsSignatureRequest {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2891486475, data2: 29192, data3: 19245, data4: [178, 196, 149, 16, 131, 211, 184, 235] };
+}
 #[repr(C)]
 pub struct IXpsSignatureRequestCollection {
     pub base__: ::windows_sys::core::IUnknown,
     pub GetCount: unsafe extern "system" fn(this: *mut *mut Self, count: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32, signaturerequest: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     pub RemoveAt: unsafe extern "system" fn(this: *mut *mut Self, index: u32) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IXpsSignatureRequestCollection {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4028972648, data2: 40729, data3: 16686, data4: [155, 79, 84, 211, 176, 172, 108, 217] };
 }
 #[repr(C)]
 pub struct IXpsSigningOptions {
@@ -1334,6 +1535,9 @@ pub struct IXpsSigningOptions {
     GetCertificateSet: usize,
     pub GetFlags: unsafe extern "system" fn(this: *mut *mut Self, flags: *mut XPS_SIGN_FLAGS) -> ::windows_sys::core::HRESULT,
     pub SetFlags: unsafe extern "system" fn(this: *mut *mut Self, flags: XPS_SIGN_FLAGS) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IXpsSigningOptions {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1998121700, data2: 12821, data3: 18878, data4: [175, 91, 89, 79, 239, 127, 207, 166] };
 }
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
 pub type PRINT_WINDOW_FLAGS = u32;

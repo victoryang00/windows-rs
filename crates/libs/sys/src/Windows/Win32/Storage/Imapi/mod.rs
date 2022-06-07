@@ -50,6 +50,10 @@ pub struct DDiscFormat2DataEvents {
     Update: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DDiscFormat2DataEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 657801532, data2: 32612, data3: 23311, data4: [143, 0, 93, 119, 175, 190, 38, 30] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DDiscFormat2EraseEvents {
     pub base__: super::super::System::Com::IDispatch,
@@ -57,6 +61,10 @@ pub struct DDiscFormat2EraseEvents {
     pub Update: unsafe extern "system" fn(this: *mut *mut Self, object: *mut ::core::ffi::c_void, elapsedseconds: i32, estimatedtotalseconds: i32) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     Update: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DDiscFormat2EraseEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 657801530, data2: 32612, data3: 23311, data4: [143, 0, 93, 119, 175, 190, 38, 30] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -68,6 +76,10 @@ pub struct DDiscFormat2RawCDEvents {
     Update: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DDiscFormat2RawCDEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 657801538, data2: 32612, data3: 23311, data4: [143, 0, 93, 119, 175, 190, 38, 30] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DDiscFormat2TrackAtOnceEvents {
     pub base__: super::super::System::Com::IDispatch,
@@ -75,6 +87,10 @@ pub struct DDiscFormat2TrackAtOnceEvents {
     pub Update: unsafe extern "system" fn(this: *mut *mut Self, object: *mut ::core::ffi::c_void, progress: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     Update: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DDiscFormat2TrackAtOnceEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 657801535, data2: 32612, data3: 23311, data4: [143, 0, 93, 119, 175, 190, 38, 30] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -90,6 +106,10 @@ pub struct DDiscMaster2Events {
     NotifyDeviceRemoved: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DDiscMaster2Events {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 657801521, data2: 32612, data3: 23311, data4: [143, 0, 93, 119, 175, 190, 38, 30] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DFileSystemImageEvents {
     pub base__: super::super::System::Com::IDispatch,
@@ -99,6 +119,10 @@ pub struct DFileSystemImageEvents {
     Update: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DFileSystemImageEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 747904991, data2: 38747, data3: 22974, data4: [169, 96, 154, 42, 38, 40, 83, 165] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct DFileSystemImageImportEvents {
     pub base__: super::super::System::Com::IDispatch,
@@ -106,6 +130,10 @@ pub struct DFileSystemImageImportEvents {
     pub UpdateImport: unsafe extern "system" fn(this: *mut *mut Self, object: *mut ::core::ffi::c_void, filesystem: FsiFileSystems, currentitem: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, importeddirectoryitems: i32, totaldirectoryitems: i32, importedfileitems: i32, totalfileitems: i32) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     UpdateImport: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DFileSystemImageImportEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3529257209, data2: 16519, data3: 17254, data4: [158, 36, 229, 91, 226, 134, 66, 75] };
 }
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
 pub type DISC_RECORDER_STATE_FLAGS = u32;
@@ -468,6 +496,10 @@ pub struct DWriteEngine2Events {
     #[cfg(not(feature = "Win32_System_Com"))]
     Update: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for DWriteEngine2Events {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 657801527, data2: 32612, data3: 23311, data4: [143, 0, 93, 119, 175, 190, 38, 30] };
+}
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
 pub type EmulationType = i32;
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
@@ -517,6 +549,10 @@ pub struct IBlockRange {
     pub EndLba: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IBlockRange {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3037186597, data2: 8708, data3: 4573, data4: [150, 106, 0, 26, 160, 27, 188, 88] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IBlockRangeList {
     pub base__: super::super::System::Com::IDispatch,
@@ -524,6 +560,10 @@ pub struct IBlockRangeList {
     pub BlockRanges: unsafe extern "system" fn(this: *mut *mut Self, value: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     BlockRanges: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IBlockRangeList {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3037186598, data2: 8708, data3: 4573, data4: [150, 106, 0, 26, 160, 27, 188, 88] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -551,11 +591,18 @@ pub struct IBootOptions {
     #[cfg(not(feature = "Win32_System_Com"))]
     AssignBootImage: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IBootOptions {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 747904980, data2: 38747, data3: 22974, data4: [169, 96, 154, 42, 38, 40, 83, 165] };
+}
 #[repr(C)]
 pub struct IBurnVerification {
     pub base__: ::windows_sys::core::IUnknown,
     pub SetBurnVerificationLevel: unsafe extern "system" fn(this: *mut *mut Self, value: IMAPI_BURN_VERIFICATION_LEVEL) -> ::windows_sys::core::HRESULT,
     pub BurnVerificationLevel: unsafe extern "system" fn(this: *mut *mut Self, value: *mut IMAPI_BURN_VERIFICATION_LEVEL) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IBurnVerification {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3539982388, data2: 38283, data3: 17005, data4: [132, 112, 42, 19, 135, 156, 106, 145] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -575,6 +622,10 @@ pub struct IDiscFormat2 {
     pub SupportedMediaTypes: unsafe extern "system" fn(this: *mut *mut Self, value: *mut *mut super::super::System::Com::SAFEARRAY) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     SupportedMediaTypes: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IDiscFormat2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 657801554, data2: 36708, data3: 23311, data4: [143, 0, 93, 119, 175, 190, 38, 30] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -638,6 +689,10 @@ pub struct IDiscFormat2Data {
     pub SetWriteSpeed: unsafe extern "system" fn(this: *mut *mut Self, requestedsectorspersecond: i32, rotationtypeispurecav: i16) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IDiscFormat2Data {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 657801555, data2: 40804, data3: 23311, data4: [143, 0, 93, 119, 175, 190, 38, 30] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IDiscFormat2DataEventArgs {
     pub base__: IWriteEngine2EventArgs,
@@ -645,6 +700,10 @@ pub struct IDiscFormat2DataEventArgs {
     pub RemainingTime: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
     pub TotalTime: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
     pub CurrentAction: unsafe extern "system" fn(this: *mut *mut Self, value: *mut IMAPI_FORMAT2_DATA_WRITE_ACTION) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IDiscFormat2DataEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 657801533, data2: 32612, data3: 23311, data4: [143, 0, 93, 119, 175, 190, 38, 30] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -670,6 +729,10 @@ pub struct IDiscFormat2Erase {
     #[cfg(not(feature = "Win32_Foundation"))]
     ClientName: usize,
     pub EraseMedia: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IDiscFormat2Erase {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 657801558, data2: 36708, data3: 23311, data4: [143, 0, 93, 119, 175, 190, 38, 30] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -728,12 +791,20 @@ pub struct IDiscFormat2RawCD {
     SupportedWriteSpeedDescriptors: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IDiscFormat2RawCD {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 657801557, data2: 36708, data3: 23311, data4: [143, 0, 93, 119, 175, 190, 38, 30] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IDiscFormat2RawCDEventArgs {
     pub base__: IWriteEngine2EventArgs,
     pub CurrentAction: unsafe extern "system" fn(this: *mut *mut Self, value: *mut IMAPI_FORMAT2_RAW_CD_WRITE_ACTION) -> ::windows_sys::core::HRESULT,
     pub ElapsedTime: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
     pub RemainingTime: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IDiscFormat2RawCDEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 657801539, data2: 32612, data3: 23311, data4: [143, 0, 93, 119, 175, 190, 38, 30] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -790,6 +861,10 @@ pub struct IDiscFormat2TrackAtOnce {
     SupportedWriteSpeedDescriptors: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IDiscFormat2TrackAtOnce {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 657801556, data2: 36708, data3: 23311, data4: [143, 0, 93, 119, 175, 190, 38, 30] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IDiscFormat2TrackAtOnceEventArgs {
     pub base__: IWriteEngine2EventArgs,
@@ -797,6 +872,10 @@ pub struct IDiscFormat2TrackAtOnceEventArgs {
     pub CurrentAction: unsafe extern "system" fn(this: *mut *mut Self, value: *mut IMAPI_FORMAT2_TAO_WRITE_ACTION) -> ::windows_sys::core::HRESULT,
     pub ElapsedTime: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
     pub RemainingTime: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IDiscFormat2TrackAtOnceEventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 657801536, data2: 32612, data3: 23311, data4: [143, 0, 93, 119, 175, 190, 38, 30] };
 }
 #[repr(C)]
 pub struct IDiscMaster {
@@ -814,6 +893,9 @@ pub struct IDiscMaster {
     pub RecordDisc: unsafe extern "system" fn(this: *mut *mut Self, bsimulate: u8, bejectafterburn: u8) -> ::windows_sys::core::HRESULT,
     pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDiscMaster {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1376569954, data2: 20901, data3: 4563, data4: [145, 68, 0, 16, 75, 161, 28, 94] };
+}
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IDiscMaster2 {
@@ -829,6 +911,10 @@ pub struct IDiscMaster2 {
     pub Count: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
     pub IsSupportedEnvironment: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i16) -> ::windows_sys::core::HRESULT,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IDiscMaster2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 657801520, data2: 32612, data3: 23311, data4: [143, 0, 93, 119, 175, 190, 38, 30] };
+}
 #[repr(C)]
 pub struct IDiscMasterProgressEvents {
     pub base__: ::windows_sys::core::IUnknown,
@@ -841,6 +927,9 @@ pub struct IDiscMasterProgressEvents {
     pub NotifyClosingDisc: unsafe extern "system" fn(this: *mut *mut Self, nestimatedseconds: i32) -> ::windows_sys::core::HRESULT,
     pub NotifyBurnComplete: unsafe extern "system" fn(this: *mut *mut Self, status: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
     pub NotifyEraseComplete: unsafe extern "system" fn(this: *mut *mut Self, status: ::windows_sys::core::HRESULT) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDiscMasterProgressEvents {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3969798593, data2: 20061, data3: 4563, data4: [145, 68, 0, 16, 75, 161, 28, 94] };
 }
 #[repr(C)]
 pub struct IDiscRecorder {
@@ -875,6 +964,9 @@ pub struct IDiscRecorder {
     pub Eject: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Erase: unsafe extern "system" fn(this: *mut *mut Self, bfullerase: u8) -> ::windows_sys::core::HRESULT,
     pub Close: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IDiscRecorder {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2242680694, data2: 51848, data3: 19698, data4: [137, 78, 9, 89, 140, 7, 138, 65] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -944,6 +1036,10 @@ pub struct IDiscRecorder2 {
     #[cfg(not(feature = "Win32_Foundation"))]
     ExclusiveAccessOwner: usize,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IDiscRecorder2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 657801523, data2: 32612, data3: 23311, data4: [143, 0, 93, 119, 175, 190, 38, 30] };
+}
 #[repr(C)]
 pub struct IDiscRecorder2Ex {
     pub base__: ::windows_sys::core::IUnknown,
@@ -975,6 +1071,9 @@ pub struct IDiscRecorder2Ex {
     pub GetMaximumNonPageAlignedTransferSize: unsafe extern "system" fn(this: *mut *mut Self, value: *mut u32) -> ::windows_sys::core::HRESULT,
     pub GetMaximumPageAlignedTransferSize: unsafe extern "system" fn(this: *mut *mut Self, value: *mut u32) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IDiscRecorder2Ex {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 657801522, data2: 32612, data3: 23311, data4: [143, 0, 93, 119, 175, 190, 38, 30] };
+}
 #[repr(C)]
 pub struct IEnumDiscMasterFormats {
     pub base__: ::windows_sys::core::IUnknown,
@@ -983,6 +1082,9 @@ pub struct IEnumDiscMasterFormats {
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEnumDiscMasterFormats {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3723773409, data2: 21690, data3: 4563, data4: [145, 68, 0, 16, 75, 161, 28, 94] };
+}
 #[repr(C)]
 pub struct IEnumDiscRecorders {
     pub base__: ::windows_sys::core::IUnknown,
@@ -990,6 +1092,9 @@ pub struct IEnumDiscRecorders {
     pub Skip: unsafe extern "system" fn(this: *mut *mut Self, crecorders: u32) -> ::windows_sys::core::HRESULT,
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IEnumDiscRecorders {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2602115553, data2: 21676, data3: 4563, data4: [145, 68, 0, 16, 75, 161, 28, 94] };
 }
 #[repr(C)]
 pub struct IEnumFsiItems {
@@ -1002,6 +1107,9 @@ pub struct IEnumFsiItems {
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
 }
+impl ::windows_sys::core::Interface for IEnumFsiItems {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 747904986, data2: 38747, data3: 22974, data4: [169, 96, 154, 42, 38, 40, 83, 165] };
+}
 #[repr(C)]
 pub struct IEnumProgressItems {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1012,6 +1120,9 @@ pub struct IEnumProgressItems {
     pub Skip: unsafe extern "system" fn(this: *mut *mut Self, celt: u32) -> ::windows_sys::core::HRESULT,
     pub Reset: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut *mut Self, ppenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IEnumProgressItems {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 747904982, data2: 38747, data3: 22974, data4: [169, 96, 154, 42, 38, 40, 83, 165] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1138,6 +1249,10 @@ pub struct IFileSystemImage {
     SetMultisessionInterfaces: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFileSystemImage {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 747904993, data2: 38747, data3: 22974, data4: [169, 96, 154, 42, 38, 40, 83, 165] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFileSystemImage2 {
     pub base__: IFileSystemImage,
@@ -1151,12 +1266,20 @@ pub struct IFileSystemImage2 {
     SetBootImageOptionsArray: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFileSystemImage2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3613674284, data2: 5431, data3: 18279, data4: [182, 47, 241, 56, 123, 2, 221, 253] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFileSystemImage3 {
     pub base__: IFileSystemImage2,
     pub CreateRedundantUdfMetadataFiles: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i16) -> ::windows_sys::core::HRESULT,
     pub SetCreateRedundantUdfMetadataFiles: unsafe extern "system" fn(this: *mut *mut Self, newval: i16) -> ::windows_sys::core::HRESULT,
     pub ProbeSpecificFileSystem: unsafe extern "system" fn(this: *mut *mut Self, filesystemtoprobe: FsiFileSystems, isappendable: *mut i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFileSystemImage3 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2097120300, data2: 32407, data3: 18439, data4: [131, 4, 145, 13, 216, 247, 192, 81] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1178,6 +1301,10 @@ pub struct IFileSystemImageResult {
     DiscId: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFileSystemImageResult {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 747904984, data2: 38747, data3: 22974, data4: [169, 96, 154, 42, 38, 40, 83, 165] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFileSystemImageResult2 {
     pub base__: IFileSystemImageResult,
@@ -1185,6 +1312,10 @@ pub struct IFileSystemImageResult2 {
     pub ModifiedBlocks: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     ModifiedBlocks: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFileSystemImageResult2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3037186601, data2: 8708, data3: 4573, data4: [150, 106, 0, 26, 160, 27, 188, 88] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1226,6 +1357,10 @@ pub struct IFsiDirectoryItem {
     RemoveTree: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFsiDirectoryItem {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 747904988, data2: 38747, data3: 22974, data4: [169, 96, 154, 42, 38, 40, 83, 165] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFsiDirectoryItem2 {
     pub base__: IFsiDirectoryItem,
@@ -1233,6 +1368,10 @@ pub struct IFsiDirectoryItem2 {
     pub AddTreeWithNamedStreams: unsafe extern "system" fn(this: *mut *mut Self, sourcedirectory: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, includebasedirectory: i16) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_Foundation"))]
     AddTreeWithNamedStreams: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFsiDirectoryItem2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 4160441243, data2: 28054, data3: 19835, data4: [145, 21, 32, 27, 20, 72, 17, 239] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1249,6 +1388,10 @@ pub struct IFsiFileItem {
     pub SetData: unsafe extern "system" fn(this: *mut *mut Self, newval: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     SetData: usize,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFsiFileItem {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 747904987, data2: 38747, data3: 22974, data4: [169, 96, 154, 42, 38, 40, 83, 165] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1269,6 +1412,10 @@ pub struct IFsiFileItem2 {
     RemoveStream: usize,
     pub IsRealTime: unsafe extern "system" fn(this: *mut *mut Self, pval: *mut i16) -> ::windows_sys::core::HRESULT,
     pub SetIsRealTime: unsafe extern "system" fn(this: *mut *mut Self, newval: i16) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFsiFileItem2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 429722649, data2: 4577, data3: 16619, data4: [142, 194, 200, 200, 34, 160, 119, 146] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1300,6 +1447,10 @@ pub struct IFsiItem {
     FileSystemPath: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFsiItem {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 747904985, data2: 38747, data3: 22974, data4: [169, 96, 154, 42, 38, 40, 83, 165] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IFsiNamedStreams {
     pub base__: super::super::System::Com::IDispatch,
@@ -1313,6 +1464,10 @@ pub struct IFsiNamedStreams {
     get_Item: usize,
     pub Count: unsafe extern "system" fn(this: *mut *mut Self, count: *mut i32) -> ::windows_sys::core::HRESULT,
     pub EnumNamedStreams: unsafe extern "system" fn(this: *mut *mut Self, newenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IFsiNamedStreams {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3984177750, data2: 21140, data3: 16976, data4: [141, 70, 249, 174, 206, 226, 52, 89] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -1336,6 +1491,10 @@ pub struct IIsoImageManager {
     SetStream: usize,
     pub Validate: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IIsoImageManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1822657509, data2: 64443, data3: 18432, data4: [149, 161, 164, 56, 134, 94, 176, 212] };
+}
 #[repr(C)]
 pub struct IJolietDiscMaster {
     pub base__: ::windows_sys::core::IUnknown,
@@ -1354,6 +1513,9 @@ pub struct IJolietDiscMaster {
     pub SetJolietProperties: unsafe extern "system" fn(this: *mut *mut Self, ppropstg: *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
     SetJolietProperties: usize,
+}
+impl ::windows_sys::core::Interface for IJolietDiscMaster {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3820765902, data2: 20060, data3: 4563, data4: [145, 68, 0, 16, 75, 161, 28, 94] };
 }
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
 pub const IMAPI2FS_BOOT_ENTRY_COUNT_MAX: u32 = 32u32;
@@ -2087,12 +2249,20 @@ pub struct IMultisession {
     ImportRecorder: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IMultisession {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 657801552, data2: 32612, data3: 23311, data4: [143, 0, 93, 119, 175, 190, 38, 30] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IMultisessionRandomWrite {
     pub base__: IMultisession,
     pub WriteUnitSize: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
     pub LastWrittenAddress: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
     pub TotalSectorsOnMedia: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IMultisessionRandomWrite {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3037186595, data2: 8708, data3: 4573, data4: [150, 106, 0, 26, 160, 27, 188, 88] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2105,10 +2275,18 @@ pub struct IMultisessionSequential {
     pub FreeSectorsOnMedia: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IMultisessionSequential {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 657801553, data2: 32612, data3: 23311, data4: [143, 0, 93, 119, 175, 190, 38, 30] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IMultisessionSequential2 {
     pub base__: IMultisessionSequential,
     pub WriteUnitSize: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IMultisessionSequential2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3037186594, data2: 8708, data3: 4573, data4: [150, 106, 0, 26, 160, 27, 188, 88] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2121,6 +2299,10 @@ pub struct IProgressItem {
     pub FirstBlock: unsafe extern "system" fn(this: *mut *mut Self, block: *mut u32) -> ::windows_sys::core::HRESULT,
     pub LastBlock: unsafe extern "system" fn(this: *mut *mut Self, block: *mut u32) -> ::windows_sys::core::HRESULT,
     pub BlockCount: unsafe extern "system" fn(this: *mut *mut Self, blocks: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IProgressItem {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 747904981, data2: 38747, data3: 22974, data4: [169, 96, 154, 42, 38, 40, 83, 165] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2144,6 +2326,10 @@ pub struct IProgressItems {
     #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
     ProgressItemFromDescription: usize,
     pub EnumProgressItems: unsafe extern "system" fn(this: *mut *mut Self, newenum: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IProgressItems {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 747904983, data2: 38747, data3: 22974, data4: [169, 96, 154, 42, 38, 40, 83, 165] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2194,6 +2380,10 @@ pub struct IRawCDImageCreator {
     ExpectedTableOfContents: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IRawCDImageCreator {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 630732112, data2: 40293, data3: 18894, data4: [179, 53, 64, 99, 13, 144, 18, 39] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IRawCDImageTrackInfo {
     pub base__: super::super::System::Com::IDispatch,
@@ -2220,6 +2410,10 @@ pub struct IRawCDImageTrackInfo {
     pub AddTrackIndex: unsafe extern "system" fn(this: *mut *mut Self, lbaoffset: i32) -> ::windows_sys::core::HRESULT,
     pub ClearTrackIndex: unsafe extern "system" fn(this: *mut *mut Self, lbaoffset: i32) -> ::windows_sys::core::HRESULT,
 }
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IRawCDImageTrackInfo {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 630732113, data2: 40293, data3: 18894, data4: [179, 53, 64, 99, 13, 144, 18, 39] };
+}
 #[repr(C)]
 pub struct IRedbookDiscMaster {
     pub base__: ::windows_sys::core::IUnknown,
@@ -2231,6 +2425,9 @@ pub struct IRedbookDiscMaster {
     pub CreateAudioTrack: unsafe extern "system" fn(this: *mut *mut Self, nblocks: i32) -> ::windows_sys::core::HRESULT,
     pub AddAudioTrackBlocks: unsafe extern "system" fn(this: *mut *mut Self, pby: *const u8, cb: i32) -> ::windows_sys::core::HRESULT,
     pub CloseAudioTrack: unsafe extern "system" fn(this: *mut *mut Self) -> ::windows_sys::core::HRESULT,
+}
+impl ::windows_sys::core::Interface for IRedbookDiscMaster {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3820765901, data2: 20060, data3: 4563, data4: [145, 68, 0, 16, 75, 161, 28, 94] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2254,6 +2451,10 @@ pub struct IStreamConcatenate {
     Append2: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IStreamConcatenate {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 657801542, data2: 32612, data3: 23311, data4: [143, 0, 93, 119, 175, 190, 38, 30] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IStreamInterleave {
     pub base__: super::super::System::Com::IStream,
@@ -2263,6 +2464,10 @@ pub struct IStreamInterleave {
     Initialize: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IStreamInterleave {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 657801543, data2: 32612, data3: 23311, data4: [143, 0, 93, 119, 175, 190, 38, 30] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IStreamPseudoRandomBased {
     pub base__: super::super::System::Com::IStream,
@@ -2270,6 +2475,10 @@ pub struct IStreamPseudoRandomBased {
     pub Seed: unsafe extern "system" fn(this: *mut *mut Self, value: *mut u32) -> ::windows_sys::core::HRESULT,
     pub put_ExtendedSeed: unsafe extern "system" fn(this: *mut *mut Self, values: *const u32, ecount: u32) -> ::windows_sys::core::HRESULT,
     pub get_ExtendedSeed: unsafe extern "system" fn(this: *mut *mut Self, values: *mut *mut u32, ecount: *mut u32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IStreamPseudoRandomBased {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 657801541, data2: 32612, data3: 23311, data4: [143, 0, 93, 119, 175, 190, 38, 30] };
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
@@ -2293,6 +2502,10 @@ pub struct IWriteEngine2 {
     pub WriteInProgress: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i16) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWriteEngine2 {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 657801525, data2: 32612, data3: 23311, data4: [143, 0, 93, 119, 175, 190, 38, 30] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IWriteEngine2EventArgs {
     pub base__: super::super::System::Com::IDispatch,
@@ -2305,12 +2518,20 @@ pub struct IWriteEngine2EventArgs {
     pub FreeSystemBuffer: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWriteEngine2EventArgs {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 657801526, data2: 32612, data3: 23311, data4: [143, 0, 93, 119, 175, 190, 38, 30] };
+}
+#[cfg(feature = "Win32_System_Com")]
 #[repr(C)]
 pub struct IWriteSpeedDescriptor {
     pub base__: super::super::System::Com::IDispatch,
     pub MediaType: unsafe extern "system" fn(this: *mut *mut Self, value: *mut IMAPI_MEDIA_PHYSICAL_TYPE) -> ::windows_sys::core::HRESULT,
     pub RotationTypeIsPureCAV: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i16) -> ::windows_sys::core::HRESULT,
     pub WriteSpeed: unsafe extern "system" fn(this: *mut *mut Self, value: *mut i32) -> ::windows_sys::core::HRESULT,
+}
+#[cfg(feature = "Win32_System_Com")]
+impl ::windows_sys::core::Interface for IWriteSpeedDescriptor {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 657801540, data2: 32612, data3: 23311, data4: [143, 0, 93, 119, 175, 190, 38, 30] };
 }
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
 pub type MEDIA_FLAGS = i32;

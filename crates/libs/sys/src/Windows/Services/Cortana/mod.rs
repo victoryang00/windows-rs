@@ -84,6 +84,10 @@ pub struct ICortanaActionableInsights {
     ShowInsightsWithOptionsAsync: usize,
 }
 #[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for ICortanaActionableInsights {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2501822129, data2: 64643, data3: 22637, data4: [139, 132, 36, 82, 200, 152, 22, 37] };
+}
+#[cfg(feature = "deprecated")]
 #[repr(C)]
 pub struct ICortanaActionableInsightsOptions {
     pub base__: ::windows_sys::core::IInspectable,
@@ -105,6 +109,10 @@ pub struct ICortanaActionableInsightsOptions {
     SetSurroundingText: usize,
 }
 #[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for ICortanaActionableInsightsOptions {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2864888783, data2: 38786, data3: 21536, data4: [184, 30, 122, 229, 106, 243, 24, 21] };
+}
+#[cfg(feature = "deprecated")]
 #[repr(C)]
 pub struct ICortanaActionableInsightsStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -116,6 +124,10 @@ pub struct ICortanaActionableInsightsStatics {
     pub GetForUser: unsafe extern "system" fn(this: *mut *mut Self, user: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(all(feature = "System", feature = "deprecated")))]
     GetForUser: usize,
+}
+#[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for ICortanaActionableInsightsStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 3051279378, data2: 40239, data3: 23733, data4: [155, 5, 53, 106, 11, 131, 108, 16] };
 }
 #[cfg(feature = "deprecated")]
 #[repr(C)]
@@ -139,6 +151,10 @@ pub struct ICortanaPermissionsManager {
     RevokePermissionsAsync: usize,
 }
 #[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for ICortanaPermissionsManager {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 420688096, data2: 34453, data3: 17290, data4: [149, 69, 61, 164, 232, 34, 221, 180] };
+}
+#[cfg(feature = "deprecated")]
 #[repr(C)]
 pub struct ICortanaPermissionsManagerStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -146,6 +162,10 @@ pub struct ICortanaPermissionsManagerStatics {
     pub GetDefault: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "deprecated"))]
     GetDefault: usize,
+}
+#[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for ICortanaPermissionsManagerStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1991370362, data2: 45125, data3: 17428, data4: [157, 109, 42, 211, 165, 254, 58, 126] };
 }
 #[cfg(feature = "deprecated")]
 #[repr(C)]
@@ -165,6 +185,10 @@ pub struct ICortanaSettings {
     SetIsVoiceActivationEnabled: usize,
 }
 #[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for ICortanaSettings {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 1423274407, data2: 32866, data3: 16628, data4: [171, 231, 222, 223, 214, 151, 176, 25] };
+}
+#[cfg(feature = "deprecated")]
 #[repr(C)]
 pub struct ICortanaSettingsStatics {
     pub base__: ::windows_sys::core::IInspectable,
@@ -176,4 +200,8 @@ pub struct ICortanaSettingsStatics {
     pub GetDefault: unsafe extern "system" fn(this: *mut *mut Self, result__: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT,
     #[cfg(not(feature = "deprecated"))]
     GetDefault: usize,
+}
+#[cfg(feature = "deprecated")]
+impl ::windows_sys::core::Interface for ICortanaSettingsStatics {
+    const IID: ::windows_sys::core::GUID = ::windows_sys::core::GUID { data1: 2334969214, data2: 11968, data3: 17517, data4: [146, 133, 51, 240, 124, 232, 172, 4] };
 }
