@@ -1,3 +1,6 @@
+// TODO: replace (panic) From<T> with fallible TryFrom<&str> etc for all types
+// to report allocation failure.
+
 mod hstring;
 mod literals;
 mod pcstr;

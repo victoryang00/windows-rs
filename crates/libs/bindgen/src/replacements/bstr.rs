@@ -1,5 +1,7 @@
 use super::*;
 
+// TODO: move BSTR to windows::core::strings
+
 pub fn gen() -> TokenStream {
     quote! {
         #[repr(transparent)]
@@ -52,6 +54,7 @@ pub fn gen() -> TokenStream {
         }
         impl ::core::convert::From<&str> for BSTR {
             fn from(value: &str) -> Self {
+                // TODO: avoid double allocation by using HSTRING from_wide_iter trick 
                 let value: ::windows::core::alloc::vec::Vec<u16> = value.encode_utf16().collect();
                 Self::from_wide(&value)
             }

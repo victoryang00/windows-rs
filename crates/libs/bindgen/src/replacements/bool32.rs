@@ -1,5 +1,7 @@
 use super::*;
 
+// TODO: move BOOL to windows::core
+
 pub fn gen() -> TokenStream {
     quote! {
         #[repr(transparent)]

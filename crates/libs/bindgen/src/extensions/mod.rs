@@ -11,6 +11,7 @@ mod vector2;
 mod vector3;
 mod vector4;
 mod win32_error;
+mod variant;
 
 pub fn gen(type_name: TypeName) -> TokenStream {
     match type_name {
@@ -26,6 +27,7 @@ pub fn gen(type_name: TypeName) -> TokenStream {
         TypeName::Vector3 => vector3::gen(),
         TypeName::Vector4 => vector4::gen(),
         TypeName::WIN32_ERROR => win32_error::gen(),
+        TypeName::VARIANT => variant::gen(),
         _ => quote! {},
     }
 }
