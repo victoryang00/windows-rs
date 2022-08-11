@@ -8915,11 +8915,80 @@ impl ::core::default::Default for IORING_HANDLE_REF_0 {
 }
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
+pub struct IORING_COMPLETION_QUEUE {
+    pub Head: u32,
+    pub Tail: u32,
+    pub Entries: *mut IORING_CQE,
+}
+impl ::core::marker::Copy for IORING_COMPLETION_QUEUE {}
+impl ::core::clone::Clone for IORING_COMPLETION_QUEUE {
+    fn clone(&self) -> Self {
+        *self
+    }
+}
+impl ::core::fmt::Debug for IORING_COMPLETION_QUEUE {
+    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
+        f.debug_struct("IORING_COMPLETION_QUEUE").field("Head", &self.Head).field("Tail", &self.Tail).finish()
+    }
+}
+unsafe impl ::windows::core::Abi for IORING_COMPLETION_QUEUE {
+    type Abi = Self;
+}
+impl ::core::cmp::PartialEq for IORING_COMPLETION_QUEUE {
+    fn eq(&self, other: &Self) -> bool {
+        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IORING_COMPLETION_QUEUE>()) == 0 }
+    }
+}
+impl ::core::cmp::Eq for IORING_COMPLETION_QUEUE {}
+impl ::core::default::Default for IORING_COMPLETION_QUEUE {
+    fn default() -> Self {
+        unsafe { ::core::mem::zeroed() }
+    }
+}
+#[repr(C)]
+#[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
+pub struct IORING_SUBMISSION_QUEUE {
+    pub Head: u32,
+    pub Tail: u32,
+    pub Flags: IORING_SQE_FLAGS,
+    pub Entries: *mut IORING_SQE,
+}
+impl ::core::marker::Copy for IORING_SUBMISSION_QUEUE {}
+impl ::core::clone::Clone for IORING_SUBMISSION_QUEUE {
+    fn clone(&self) -> Self {
+        *self
+    }
+}
+impl ::core::fmt::Debug for IORING_SUBMISSION_QUEUE {
+    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
+        f.debug_struct("IORING_SUBMISSION_QUEUE").field("Head", &self.Head).field("Tail", &self.Tail).field("Flags", &self.Flags).finish()
+    }
+}
+unsafe impl ::windows::core::Abi for IORING_SUBMISSION_QUEUE {
+    type Abi = Self;
+}
+impl ::core::cmp::PartialEq for IORING_SUBMISSION_QUEUE {
+    fn eq(&self, other: &Self) -> bool {
+        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IORING_SUBMISSION_QUEUE>()) == 0 }
+    }
+}
+impl ::core::cmp::Eq for IORING_SUBMISSION_QUEUE {}
+impl ::core::default::Default for IORING_SUBMISSION_QUEUE {
+    fn default() -> Self {
+        unsafe { ::core::mem::zeroed() }
+    }
+}
+#[repr(C)]
+#[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
 pub struct IORING_INFO {
     pub IoRingVersion: IORING_VERSION,
     pub Flags: IORING_CREATE_FLAGS,
     pub SubmissionQueueSize: u32,
+    pub SubmissionQueueSizeMask: u32,
     pub CompletionQueueSize: u32,
+    pub CompletionQueueSizeMask: u32,
+    pub SubmissionQueue: *mut IORING_SUBMISSION_QUEUE,
+    pub CompletionQueue: *mut IORING_COMPLETION_QUEUE,
 }
 impl ::core::marker::Copy for IORING_INFO {}
 impl ::core::clone::Clone for IORING_INFO {
@@ -9099,6 +9168,10 @@ pub struct IORING_VERSION(pub i32);
 pub const IORING_VERSION_INVALID: IORING_VERSION = IORING_VERSION(0i32);
 #[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
 pub const IORING_VERSION_1: IORING_VERSION = IORING_VERSION(1i32);
+#[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
+pub const IORING_VERSION_2: IORING_VERSION = IORING_VERSION(2i32);
+#[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
+pub const IORING_VERSION_3: IORING_VERSION = IORING_VERSION(3i32);
 impl ::core::marker::Copy for IORING_VERSION {}
 impl ::core::clone::Clone for IORING_VERSION {
     fn clone(&self) -> Self {
