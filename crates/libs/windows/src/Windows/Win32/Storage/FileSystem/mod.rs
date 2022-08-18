@@ -8659,6 +8659,11 @@ impl ::core::cmp::PartialEq for IORING_BUFFER_REF {
         unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IORING_BUFFER_REF>()) == 0 }
     }
 }
+impl ::core::fmt::Debug for IORING_HANDLE_REF {
+    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
+        f.debug_tuple("IORING_HANDLE_REF").field(&self.Kind).finish()
+    }
+}
 impl ::core::cmp::Eq for IORING_BUFFER_REF {}
 impl ::core::default::Default for IORING_BUFFER_REF {
     fn default() -> Self {
@@ -8766,11 +8771,8 @@ impl ::core::default::Default for IORING_OP_READ_ST {
 pub struct IORING_OP_REGISTER_FILES_ST {
     pub CommonOpFlags: IORING_OP_FLAGS,
     pub Flags: IORING_REG_FILES_FLAGS,
-    pub File: IORING_HANDLE_REF,
-    pub Buffer: IORING_BUFFER_REF,
-    pub Offset: u64 ,
-    pub Length: u32,
-    pub Key:u32,
+    pub Count: u32,
+    pub Files: *mut IORING_HANDLE_REF,
 }
 impl ::core::marker::Copy for IORING_OP_REGISTER_FILES_ST {}
 impl ::core::clone::Clone for IORING_OP_REGISTER_FILES_ST {
@@ -8780,7 +8782,7 @@ impl ::core::clone::Clone for IORING_OP_REGISTER_FILES_ST {
 }
 impl ::core::fmt::Debug for IORING_OP_REGISTER_FILES_ST {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_struct("IORING_OP_REGISTER_FILES_ST").field("CommonOpFlags", &self.CommonOpFlags).field("Length", &self.Length).field("Key", &self.Key).finish()
+        f.debug_struct("IORING_OP_REGISTER_FILES_ST").field("CommonOpFlags", &self.CommonOpFlags).field("Count", &self.Count).finish()
     }
 }
 unsafe impl ::windows::core::Abi for IORING_OP_REGISTER_FILES_ST {
@@ -9271,6 +9273,11 @@ impl ::core::marker::Copy for IORING_HANDLE_REF {}
 impl ::core::clone::Clone for IORING_HANDLE_REF {
     fn clone(&self) -> Self {
         *self
+    }
+}
+impl ::core::fmt::Debug for IORING_HANDLE_REF {
+    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
+        f.debug_tuple("IORING_HANDLE_REF").field(&self.Kind).finish()
     }
 }
 #[cfg(feature = "Win32_Foundation")]
