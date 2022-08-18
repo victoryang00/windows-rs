@@ -8692,7 +8692,7 @@ impl ::core::cmp::PartialEq for IORING_BUFFER_REF_0 {
 }
 impl ::core::fmt::Debug for IORING_BUFFER_REF_0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("IORING_BUFFER_REF_0").field(&self.IndexAndOffset).finish()
+        f.debug_tuple("IORING_BUFFER_REF_0").finish()
     }
 }
 impl ::core::cmp::Eq for IORING_BUFFER_REF_0 {}
@@ -9324,7 +9324,7 @@ unsafe impl ::windows::core::Abi for IORING_HANDLE_REF_0 {
 }
 impl ::core::fmt::Debug for IORING_HANDLE_REF_0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("IORING_HANDLE_REF_0").field(&self.Handle).finish()
+        f.debug_tuple("IORING_HANDLE_REF_0").finish()
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -9600,7 +9600,7 @@ pub const IORING_VERSION_1: IORING_VERSION = IORING_VERSION(1i32);
 #[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
 pub const IORING_VERSION_2: IORING_VERSION = IORING_VERSION(2i32);
 #[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
-pub const IORING_VERSION_3: IORING_VERSION = IORING_VERSION(3i32);
+pub const IORING_VERSION_3: IORING_VERSION = IORING_VERSION(300i32);
 impl ::core::marker::Copy for IORING_VERSION {}
 impl ::core::clone::Clone for IORING_VERSION {
     fn clone(&self) -> Self {
