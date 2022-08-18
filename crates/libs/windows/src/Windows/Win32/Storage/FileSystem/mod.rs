@@ -5729,6 +5729,65 @@ impl ::core::ops::Not for FILE_SHARE_MODE {
         Self(self.0.not())
     }
 }
+#[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
+#[repr(transparent)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct FILE_FLUSH_MODE(pub u32);
+#[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
+pub const FILE_FLUSH_DEFUALT: FILE_FLUSH_MODE = FILE_FLUSH_MODE(0u32);
+#[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
+pub const FILE_FLUSH_DATA: FILE_FLUSH_MODE = FILE_FLUSH_MODE(1u32);
+#[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
+pub const FILE_FLUSH_MIN_METADATA: FILE_FLUSH_MODE = FILE_FLUSH_MODE(2u32);
+#[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
+pub const FILE_FLUSH_NO_SYNC: FILE_FLUSH_MODE = FILE_FLUSH_MODE(3u32);
+impl ::core::marker::Copy for FILE_FLUSH_MODE {}
+impl ::core::clone::Clone for FILE_FLUSH_MODE {
+    fn clone(&self) -> Self {
+        *self
+    }
+}
+impl ::core::default::Default for FILE_FLUSH_MODE {
+    fn default() -> Self {
+        Self(0)
+    }
+}
+unsafe impl ::windows::core::Abi for FILE_FLUSH_MODE {
+    type Abi = Self;
+}
+impl ::core::fmt::Debug for FILE_FLUSH_MODE {
+    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
+        f.debug_tuple("FILE_FLUSH_MODE").field(&self.0).finish()
+    }
+}
+impl ::core::ops::BitOr for FILE_FLUSH_MODE {
+    type Output = Self;
+    fn bitor(self, other: Self) -> Self {
+        Self(self.0 | other.0)
+    }
+}
+impl ::core::ops::BitAnd for FILE_FLUSH_MODE {
+    type Output = Self;
+    fn bitand(self, other: Self) -> Self {
+        Self(self.0 & other.0)
+    }
+}
+impl ::core::ops::BitOrAssign for FILE_FLUSH_MODE {
+    fn bitor_assign(&mut self, other: Self) {
+        self.0.bitor_assign(other.0)
+    }
+}
+impl ::core::ops::BitAndAssign for FILE_FLUSH_MODE {
+    fn bitand_assign(&mut self, other: Self) {
+        self.0.bitand_assign(other.0)
+    }
+}
+impl ::core::ops::Not for FILE_FLUSH_MODE {
+    type Output = Self;
+    fn not(self) -> Self {
+        Self(self.0.not())
+    }
+}
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Storage_FileSystem\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
@@ -8665,20 +8724,291 @@ impl ::core::default::Default for IORING_CAPABILITIES {
         unsafe { ::core::mem::zeroed() }
     }
 }
+#[repr(C)]
+#[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
+pub struct IORING_OP_READ_ST {
+    pub CommonOpFlags: IORING_OP_FLAGS,
+    pub Padding: u32 ,
+    pub File: IORING_HANDLE_REF,
+    pub Buffer: IORING_BUFFER_REF,
+    pub Offset: u64,
+    pub Length: u32,
+    pub Key:u32,
+}
+impl ::core::marker::Copy for IORING_OP_READ_ST {}
+impl ::core::clone::Clone for IORING_OP_READ_ST {
+    fn clone(&self) -> Self {
+        *self
+    }
+}
+impl ::core::fmt::Debug for IORING_OP_READ_ST {
+    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
+        f.debug_struct("IORING_OP_READ_ST").field("CommonOpFlags", &self.CommonOpFlags).field("Length", &self.Length).field("Key", &self.Key).finish()
+    }
+}
+unsafe impl ::windows::core::Abi for IORING_OP_READ_ST {
+    type Abi = Self;
+}
+impl ::core::cmp::PartialEq for IORING_OP_READ_ST {
+    fn eq(&self, other: &Self) -> bool {
+        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IORING_OP_READ_ST>()) == 0 }
+    }
+}
+impl ::core::cmp::Eq for IORING_OP_READ_ST {}
+impl ::core::default::Default for IORING_OP_READ_ST {
+    fn default() -> Self {
+        unsafe { ::core::mem::zeroed() }
+    }
+}
 
+#[repr(C)]
+#[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
+pub struct IORING_OP_REGISTER_FILES_ST {
+    pub CommonOpFlags: IORING_OP_FLAGS,
+    pub Flags: IORING_REG_FILES_FLAGS,
+    pub File: IORING_HANDLE_REF,
+    pub Buffer: IORING_BUFFER_REF,
+    pub Offset: u64 ,
+    pub Length: u32,
+    pub Key:u32,
+}
+impl ::core::marker::Copy for IORING_OP_REGISTER_FILES_ST {}
+impl ::core::clone::Clone for IORING_OP_REGISTER_FILES_ST {
+    fn clone(&self) -> Self {
+        *self
+    }
+}
+impl ::core::fmt::Debug for IORING_OP_REGISTER_FILES_ST {
+    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
+        f.debug_struct("IORING_OP_REGISTER_FILES_ST").field("CommonOpFlags", &self.CommonOpFlags).field("Length", &self.Length).field("Key", &self.Key).finish()
+    }
+}
+unsafe impl ::windows::core::Abi for IORING_OP_REGISTER_FILES_ST {
+    type Abi = Self;
+}
+impl ::core::cmp::PartialEq for IORING_OP_REGISTER_FILES_ST {
+    fn eq(&self, other: &Self) -> bool {
+        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IORING_OP_REGISTER_FILES_ST>()) == 0 }
+    }
+}
+impl ::core::cmp::Eq for IORING_OP_REGISTER_FILES_ST {}
+impl ::core::default::Default for IORING_OP_REGISTER_FILES_ST {
+    fn default() -> Self {
+        unsafe { ::core::mem::zeroed() }
+    }
+}
+#[repr(C)]
+#[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
+pub struct IORING_OP_REGISTER_BUFFERS_ST {
+    pub CommonOpFlags: IORING_OP_FLAGS,
+    pub Flags: IORING_REG_FILES_FLAGS,
+    pub Count: u32,
+    pub Buffers: *const IORING_BUFFER_INFO,
+}
+impl ::core::marker::Copy for IORING_OP_REGISTER_BUFFERS_ST {}
+impl ::core::clone::Clone for IORING_OP_REGISTER_BUFFERS_ST {
+    fn clone(&self) -> Self {
+        *self
+    }
+}
+impl ::core::fmt::Debug for IORING_OP_REGISTER_BUFFERS_ST {
+    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
+        f.debug_struct("IORING_OP_REGISTER_BUFFERS_ST").field("CommonOpFlags", &self.CommonOpFlags).field("Count", &self.Count).finish()
+    }
+}
+unsafe impl ::windows::core::Abi for IORING_OP_REGISTER_BUFFERS_ST {
+    type Abi = Self;
+}
+impl ::core::cmp::PartialEq for IORING_OP_REGISTER_BUFFERS_ST {
+    fn eq(&self, other: &Self) -> bool {
+        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IORING_OP_REGISTER_BUFFERS_ST>()) == 0 }
+    }
+}
+impl ::core::cmp::Eq for IORING_OP_REGISTER_BUFFERS_ST {}
+impl ::core::default::Default for IORING_OP_REGISTER_BUFFERS_ST {
+    fn default() -> Self {
+        unsafe { ::core::mem::zeroed() }
+    }
+}
+#[repr(C)]
+#[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
+pub struct IORING_OP_CANCEL_ST {
+    pub CommonOpFlags: IORING_OP_FLAGS,
+    pub File: IORING_HANDLE_REF,
+    pub CancelId: u64,
+}
+impl ::core::marker::Copy for IORING_OP_CANCEL_ST {}
+impl ::core::clone::Clone for IORING_OP_CANCEL_ST {
+    fn clone(&self) -> Self {
+        *self
+    }
+}
+impl ::core::fmt::Debug for IORING_OP_CANCEL_ST {
+    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
+        f.debug_struct("IORING_OP_CANCEL_ST").field("CommonOpFlags", &self.CommonOpFlags).field("CancelId", &self.CancelId).finish()
+    }
+}
+unsafe impl ::windows::core::Abi for IORING_OP_CANCEL_ST {
+    type Abi = Self;
+}
+impl ::core::cmp::PartialEq for IORING_OP_CANCEL_ST {
+    fn eq(&self, other: &Self) -> bool {
+        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IORING_OP_CANCEL_ST>()) == 0 }
+    }
+}
+impl ::core::cmp::Eq for IORING_OP_CANCEL_ST {}
+impl ::core::default::Default for IORING_OP_CANCEL_ST {
+    fn default() -> Self {
+        unsafe { ::core::mem::zeroed() }
+    }
+}
+#[repr(C)]
+#[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
+pub struct IORING_OP_WRITE_ST {
+    pub CommonOpFlags: IORING_OP_FLAGS,
+    pub Padding: u32 ,
+    pub File: IORING_HANDLE_REF,
+    pub Buffer: IORING_BUFFER_REF,
+    pub Offset: u64,
+    pub Length: u32,
+    pub Key:u32,
+}
+impl ::core::marker::Copy for IORING_OP_WRITE_ST {}
+impl ::core::clone::Clone for IORING_OP_WRITE_ST {
+    fn clone(&self) -> Self {
+        *self
+    }
+}
+impl ::core::fmt::Debug for IORING_OP_WRITE_ST {
+    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
+        f.debug_struct("IORING_OP_WRITE_ST").field("CommonOpFlags", &self.CommonOpFlags).field("Length", &self.Length).field("Key", &self.Key).finish()
+    }
+}
+unsafe impl ::windows::core::Abi for IORING_OP_WRITE_ST {
+    type Abi = Self;
+}
+impl ::core::cmp::PartialEq for IORING_OP_WRITE_ST {
+    fn eq(&self, other: &Self) -> bool {
+        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IORING_OP_WRITE_ST>()) == 0 }
+    }
+}
+impl ::core::cmp::Eq for IORING_OP_WRITE_ST {}
+impl ::core::default::Default for IORING_OP_WRITE_ST {
+    fn default() -> Self {
+        unsafe { ::core::mem::zeroed() }
+    }
+}
+#[repr(C)]
+#[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
+pub struct IORING_OP_FLUSH_ST {
+    pub CommonOpFlags: IORING_OP_FLAGS,
+    pub FlushMode: FILE_FLUSH_MODE,
+    pub File: IORING_HANDLE_REF,
+}
+impl ::core::marker::Copy for IORING_OP_FLUSH_ST {}
+impl ::core::clone::Clone for IORING_OP_FLUSH_ST {
+    fn clone(&self) -> Self {
+        *self
+    }
+}
+impl ::core::fmt::Debug for IORING_OP_FLUSH_ST {
+    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
+        f.debug_struct("IORING_OP_FLUSH_ST").field("CommonOpFlags", &self.CommonOpFlags).field("FlushMode", &self.FlushMode).finish()
+    }
+}
+unsafe impl ::windows::core::Abi for IORING_OP_FLUSH_ST {
+    type Abi = Self;
+}
+impl ::core::cmp::PartialEq for IORING_OP_FLUSH_ST {
+    fn eq(&self, other: &Self) -> bool {
+        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IORING_OP_FLUSH_ST>()) == 0 }
+    }
+}
+impl ::core::cmp::Eq for IORING_OP_FLUSH_ST {}
+impl ::core::default::Default for IORING_OP_FLUSH_ST {
+    fn default() -> Self {
+        unsafe { ::core::mem::zeroed() }
+    }
+}
+#[repr(C)]
+#[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
+pub struct IORING_OP_RESERVED_ST {
+    pub Arguent1: u64,
+    pub Arguent2: u64,
+    pub Arguent3: u64,
+    pub Arguent4: u64,
+    pub Arguent5: u64,
+    pub Arguent6: u64,
+}
+impl ::core::marker::Copy for IORING_OP_RESERVED_ST {}
+impl ::core::clone::Clone for IORING_OP_RESERVED_ST {
+    fn clone(&self) -> Self {
+        *self
+    }
+}
+impl ::core::fmt::Debug for IORING_OP_RESERVED_ST {
+    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
+        f.debug_struct("IORING_OP_RESERVED_ST").finish()
+    }
+}
+unsafe impl ::windows::core::Abi for IORING_OP_RESERVED_ST {
+    type Abi = Self;
+}
+impl ::core::cmp::PartialEq for IORING_OP_RESERVED_ST {
+    fn eq(&self, other: &Self) -> bool {
+        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IORING_OP_RESERVED_ST>()) == 0 }
+    }
+}
+impl ::core::cmp::Eq for IORING_OP_RESERVED_ST {}
+impl ::core::default::Default for IORING_OP_RESERVED_ST {
+    fn default() -> Self {
+        unsafe { ::core::mem::zeroed() }
+    }
+}
+#[repr(C)]
+#[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
+pub union IORING_OP{
+    pub Read: IORING_OP_READ_ST,
+    pub RegisterFiles:IORING_OP_REGISTER_FILES_ST,
+    pub RegisterBuffers:IORING_OP_REGISTER_BUFFERS_ST,
+    pub Cancel:IORING_OP_CANCEL_ST,
+    pub Write:IORING_OP_WRITE_ST,
+    pub Flush:IORING_OP_FLUSH_ST,
+    pub ReservedMaxSizePadding:IORING_OP_RESERVED_ST,
+ }
+ #[cfg(feature = "Win32_Foundation")]
+impl ::core::marker::Copy for IORING_OP {}
+#[cfg(feature = "Win32_Foundation")]
+impl ::core::clone::Clone for IORING_OP {
+    fn clone(&self) -> Self {
+        *self
+    }
+}
+#[cfg(feature = "Win32_Foundation")]
+unsafe impl ::windows::core::Abi for IORING_OP {
+    type Abi = Self;
+}
+#[cfg(feature = "Win32_Foundation")]
+impl ::core::cmp::PartialEq for IORING_OP {
+    fn eq(&self, other: &Self) -> bool {
+        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IORING_OP>()) == 0 }
+    }
+}
+#[cfg(feature = "Win32_Foundation")]
+impl ::core::cmp::Eq for IORING_OP {}
+#[cfg(feature = "Win32_Foundation")]
+impl ::core::default::Default for IORING_OP {
+    fn default() -> Self {
+        unsafe { ::core::mem::zeroed() }
+    }
+}
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
 pub struct IORING_SQE {
     pub OpCode: IORING_OP_CODE,
     pub Flags: IORING_SQE_FLAGS,
     pub UserData: u64,
-    pub CommonOpFlags: IORING_OP_FLAGS,
-    pub Padding: u32,
-    pub File: IORING_HANDLE_REF,
-    pub Buffer:IORING_BUFFER_REF,
-    pub Offset: u64,
-    pub Length: u32,
-    pub Key:u32,
+    pub Op: IORING_OP,
 }
 impl ::core::marker::Copy for IORING_SQE {}
 impl ::core::clone::Clone for IORING_SQE {
@@ -8688,7 +9018,7 @@ impl ::core::clone::Clone for IORING_SQE {
 }
 impl ::core::fmt::Debug for IORING_SQE {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_struct("IORING_SQE").field("UserData", &self.UserData).field("Length", &self.Length).field("Key", &self.Key).finish()
+        f.debug_struct("IORING_SQE").field("UserData", &self.UserData).finish()
     }
 }
 unsafe impl ::windows::core::Abi for IORING_SQE {
@@ -8816,6 +9146,87 @@ unsafe impl ::windows::core::Abi for IORING_CREATE_REQUIRED_FLAGS {
 impl ::core::fmt::Debug for IORING_CREATE_REQUIRED_FLAGS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("IORING_CREATE_REQUIRED_FLAGS").field(&self.0).finish()
+    }
+}
+#[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
+#[repr(transparent)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct IORING_REG_FILES_ADVISORY_FLAGS(pub i32);
+#[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
+pub const IORING_REG_FILES_ADVISORY_FLAGS_NONE: IORING_REG_FILES_ADVISORY_FLAGS = IORING_REG_FILES_ADVISORY_FLAGS(0i32);
+impl ::core::marker::Copy for IORING_REG_FILES_ADVISORY_FLAGS {}
+impl ::core::clone::Clone for IORING_REG_FILES_ADVISORY_FLAGS {
+    fn clone(&self) -> Self {
+        *self
+    }
+}
+impl ::core::default::Default for IORING_REG_FILES_ADVISORY_FLAGS {
+    fn default() -> Self {
+        Self(0)
+    }
+}
+unsafe impl ::windows::core::Abi for IORING_REG_FILES_ADVISORY_FLAGS {
+    type Abi = Self;
+}
+impl ::core::fmt::Debug for IORING_REG_FILES_ADVISORY_FLAGS {
+    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
+        f.debug_tuple("IORING_REG_FILES_ADVISORY_FLAGS").field(&self.0).finish()
+    }
+}
+#[repr(C)]
+#[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
+pub struct IORING_REG_FILES_FLAGS {
+    pub Required: IORING_REG_FILES_REQUIRED_FLAGS,
+    pub Advisory: IORING_REG_FILES_ADVISORY_FLAGS,
+}
+impl ::core::marker::Copy for IORING_REG_FILES_FLAGS {}
+impl ::core::clone::Clone for IORING_REG_FILES_FLAGS {
+    fn clone(&self) -> Self {
+        *self
+    }
+}
+impl ::core::fmt::Debug for IORING_REG_FILES_FLAGS {
+    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
+        f.debug_struct("IORING_REG_FILES_FLAGS").field("Required", &self.Required).field("Advisory", &self.Advisory).finish()
+    }
+}
+unsafe impl ::windows::core::Abi for IORING_REG_FILES_FLAGS {
+    type Abi = Self;
+}
+impl ::core::cmp::PartialEq for IORING_REG_FILES_FLAGS {
+    fn eq(&self, other: &Self) -> bool {
+        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IORING_REG_FILES_FLAGS>()) == 0 }
+    }
+}
+impl ::core::cmp::Eq for IORING_REG_FILES_FLAGS {}
+impl ::core::default::Default for IORING_REG_FILES_FLAGS {
+    fn default() -> Self {
+        unsafe { ::core::mem::zeroed() }
+    }
+}
+#[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
+#[repr(transparent)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct IORING_REG_FILES_REQUIRED_FLAGS(pub i32);
+#[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
+pub const IORING_REG_FILES_REQUIRED_FLAGS_NONE: IORING_REG_FILES_REQUIRED_FLAGS = IORING_REG_FILES_REQUIRED_FLAGS(0i32);
+impl ::core::marker::Copy for IORING_REG_FILES_REQUIRED_FLAGS {}
+impl ::core::clone::Clone for IORING_REG_FILES_REQUIRED_FLAGS {
+    fn clone(&self) -> Self {
+        *self
+    }
+}
+impl ::core::default::Default for IORING_REG_FILES_REQUIRED_FLAGS {
+    fn default() -> Self {
+        Self(0)
+    }
+}
+unsafe impl ::windows::core::Abi for IORING_REG_FILES_REQUIRED_FLAGS {
+    type Abi = Self;
+}
+impl ::core::fmt::Debug for IORING_REG_FILES_REQUIRED_FLAGS {
+    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
+        f.debug_tuple("IORING_REG_FILES_REQUIRED_FLAGS").field(&self.0).finish()
     }
 }
 #[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
