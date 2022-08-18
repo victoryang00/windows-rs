@@ -8690,6 +8690,11 @@ impl ::core::cmp::PartialEq for IORING_BUFFER_REF_0 {
         unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IORING_BUFFER_REF_0>()) == 0 }
     }
 }
+impl ::core::fmt::Debug for IORING_BUFFER_REF_0 {
+    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
+        f.debug_tuple("IORING_BUFFER_REF_0").field(&self.IndexAndOffset).finish()
+    }
+}
 impl ::core::cmp::Eq for IORING_BUFFER_REF_0 {}
 impl ::core::default::Default for IORING_BUFFER_REF_0 {
     fn default() -> Self {
@@ -8734,8 +8739,8 @@ impl ::core::default::Default for IORING_CAPABILITIES {
 pub struct IORING_OP_READ_ST {
     pub CommonOpFlags: IORING_OP_FLAGS,
     pub Padding: u32 ,
-    pub File: IORING_HANDLE_REF,
-    pub Buffer: IORING_BUFFER_REF,
+    pub File: IORING_HANDLE_REF_0,
+    pub Buffer: IORING_BUFFER_REF_0,
     pub Offset: u64,
     pub Length: u32,
     pub Key:u32,
@@ -8772,7 +8777,7 @@ pub struct IORING_OP_REGISTER_FILES_ST {
     pub CommonOpFlags: IORING_OP_FLAGS,
     pub Flags: IORING_REG_FILES_FLAGS,
     pub Count: u32,
-    pub Files: *mut IORING_HANDLE_REF,
+    pub Files: *mut IORING_HANDLE_REF_0,
 }
 impl ::core::marker::Copy for IORING_OP_REGISTER_FILES_ST {}
 impl ::core::clone::Clone for IORING_OP_REGISTER_FILES_ST {
@@ -8836,7 +8841,7 @@ impl ::core::default::Default for IORING_OP_REGISTER_BUFFERS_ST {
 #[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
 pub struct IORING_OP_CANCEL_ST {
     pub CommonOpFlags: IORING_OP_FLAGS,
-    pub File: IORING_HANDLE_REF,
+    pub File: IORING_HANDLE_REF_0,
     pub CancelId: u64,
 }
 impl ::core::marker::Copy for IORING_OP_CANCEL_ST {}
@@ -8869,8 +8874,8 @@ impl ::core::default::Default for IORING_OP_CANCEL_ST {
 pub struct IORING_OP_WRITE_ST {
     pub CommonOpFlags: IORING_OP_FLAGS,
     pub Padding: u32 ,
-    pub File: IORING_HANDLE_REF,
-    pub Buffer: IORING_BUFFER_REF,
+    pub File: IORING_HANDLE_REF_0,
+    pub Buffer: IORING_BUFFER_REF_0,
     pub Offset: u64,
     pub Length: u32,
     pub Key:u32,
@@ -8905,7 +8910,7 @@ impl ::core::default::Default for IORING_OP_WRITE_ST {
 pub struct IORING_OP_FLUSH_ST {
     pub CommonOpFlags: IORING_OP_FLAGS,
     pub FlushMode: FILE_FLUSH_MODE,
-    pub File: IORING_HANDLE_REF,
+    pub File: IORING_HANDLE_REF_0,
 }
 impl ::core::marker::Copy for IORING_OP_FLUSH_ST {}
 impl ::core::clone::Clone for IORING_OP_FLUSH_ST {
@@ -9275,9 +9280,9 @@ impl ::core::clone::Clone for IORING_HANDLE_REF {
         *self
     }
 }
-impl ::core::fmt::Debug for IORING_HANDLE_REF {
+impl ::core::fmt::Debug for IORING_BUFFER_REF {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("IORING_HANDLE_REF").field(&self.Kind).finish()
+        f.debug_tuple("IORING_BUFFER_REF").field(&self.Kind).finish()
     }
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -9316,6 +9321,11 @@ impl ::core::clone::Clone for IORING_HANDLE_REF_0 {
 #[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows::core::Abi for IORING_HANDLE_REF_0 {
     type Abi = Self;
+}
+impl ::core::fmt::Debug for IORING_HANDLE_REF_0 {
+    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
+        f.debug_tuple("IORING_HANDLE_REF_0").field(&self.Handle).finish()
+    }
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for IORING_HANDLE_REF_0 {
@@ -9495,6 +9505,7 @@ impl ::core::fmt::Debug for IORING_OP_FLAGS {
         f.debug_tuple("IORING_OP_FLAGS").field(&self.0).finish()
     }
 }
+
 #[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
 #[repr(transparent)]
 #[derive(::core::cmp::PartialEq, ::core::cmp::Eq)]
