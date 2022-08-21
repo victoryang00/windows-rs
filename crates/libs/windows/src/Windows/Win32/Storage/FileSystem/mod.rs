@@ -2712,13 +2712,13 @@ where
 }
 #[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
 #[inline]
-pub unsafe fn CreateIoRing(ioringversion: IORING_VERSION, flags: IORING_CREATE_FLAGS, submissionqueuesize: u32, completionqueuesize: u32) -> ::windows::core::Result<*mut HIORING__> {
+pub unsafe fn CreateIoRing(IoRingHandle:*mut RawHandle, CreateParametersSize: u32, CreateParameters: *mut IORING_STRUCTV1, OutputParametersSize: u32,RingInfo: *mut IORING_INFO) -> ::windows::core::Result<*mut HIORING__> {
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
-        fn CreateIoRing(ioringversion: IORING_VERSION, flags: IORING_CREATE_FLAGS, submissionqueuesize: u32, completionqueuesize: u32, h: *mut *mut HIORING__) -> ::windows::core::HRESULT;
+        fn CreateIoRing(IoRingHandle:*mut RawHandle, CreateParametersSize: u32, CreateParameters: *mut IORING_STRUCTV1, OutputParametersSize: u32,RingInfo: *mut IORING_INFO) -> ::windows::core::HRESULT;
     }
     let mut result__ = ::core::mem::MaybeUninit::zeroed();
-    CreateIoRing(ioringversion, ::core::mem::transmute(flags), submissionqueuesize, completionqueuesize, ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut HIORING__>(result__)
+    CreateIoRing(IoRingHandle, CreateParametersSize, CreateParameters, OutputParametersSize, RingInfo).from_abi::<*mut HIORING__>(result__)
 }
 #[doc = "*Required features: `\"Win32_Storage_FileSystem\"`, `\"Win32_Foundation\"`, `\"Win32_System_IO\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
@@ -8635,6 +8635,39 @@ impl ::core::cmp::PartialEq for IORING_BUFFER_INFO {
 }
 impl ::core::cmp::Eq for IORING_BUFFER_INFO {}
 impl ::core::default::Default for IORING_BUFFER_INFO {
+    fn default() -> Self {
+        unsafe { ::core::mem::zeroed() }
+    }
+}
+#[repr(C)]
+#[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
+pub struct IORING_STRUCTV1 {
+    pub IoRingVersion: IORING_VERSION,
+    pub SubmissionQueueSize: u32,
+    pub CompletionQueueSize: u32,
+    pub Flags: IORING_CREATE_FLAGS,
+}
+impl ::core::marker::Copy for IORING_STRUCTV1 {}
+impl ::core::clone::Clone for IORING_STRUCTV1 {
+    fn clone(&self) -> Self {
+        *self
+    }
+}
+impl ::core::fmt::Debug for IORING_STRUCTV1 {
+    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
+        f.debug_struct("IORING_STRUCTV1").field("SubmissionQueueSize", &self.SubmissionQueueSize).field("CompletionQueueSize", &self.CompletionQueueSize).finish()
+    }
+}
+unsafe impl ::windows::core::Abi for IORING_STRUCTV1 {
+    type Abi = Self;
+}
+impl ::core::cmp::PartialEq for IORING_STRUCTV1 {
+    fn eq(&self, other: &Self) -> bool {
+        unsafe { ::windows::core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IORING_STRUCTV1>()) == 0 }
+    }
+}
+impl ::core::cmp::Eq for IORING_STRUCTV1 {}
+impl ::core::default::Default for IORING_STRUCTV1 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
